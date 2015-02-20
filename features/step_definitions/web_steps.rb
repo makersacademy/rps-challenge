@@ -1,9 +1,9 @@
 Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit('/')
 end
 
-Given(/^I enter a name into the form$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I enter a name into the form "(.*?)"$/) do |player_name|
+  fill_in(player_name, :with => "Chris")
 end
 
 When(/^I click "(.*?)"$/) do |arg1|

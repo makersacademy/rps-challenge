@@ -5,6 +5,6 @@ Feature: Starting the game
 
   Scenario: Registering
     Given I am on the homepage
-    And I enter a name into the form
+    And I enter a name into the form "player_name"
     When I click "submit"
     Then I should be taken to a new page "Welcome to the game"
