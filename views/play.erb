@@ -1,0 +1,12 @@
+<% if @end_match == "Draw" %>
+  <p>Draw!</p>
+  <p>You both had <%= @player1_choice %></p>
+
+<% elsif @end_match == "Win!" %>
+  <p>You won! <%= @player_choice1%> beats <%= @opponent_choice %></p>
+
+<% elsif @end_match == "Lost!" %>
+  <p>You lost! <%= @opponent_choice %> beats <%= @player1_choice %></p>
+<% end %>
+
+<a href="/game">Play again!</a>
