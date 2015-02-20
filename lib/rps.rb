@@ -3,7 +3,7 @@ class Rps
 	attr_accessor :content
 
 	def initialize
-		@content = 'rock'
+		@content = 'lizard'
 	end
 
 	def change_to_paper

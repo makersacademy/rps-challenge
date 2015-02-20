@@ -6,6 +6,7 @@ describe Game do
 	let(:player) { double :player }
 	let(:player_loser) {double :player, content: 'scissors' }
 	let(:player_winner) {double :player, content: 'rock' }
+	let(:player_draw) {double :player, content: 'scissors' }
 
 	it 'should be able to add a player' do
 		game.add(player)
@@ -20,6 +21,12 @@ describe Game do
   	game.add(player_loser)
   	game.add(player_winner)
   	expect(game.winner).to eq('player 2 wins!')
+  end
+
+  it 'should recognise a draw' do
+  	game.add(player_draw)
+  	game.add(player_draw)
+  	expect(game.winner).to eq('draw!')
   end
 	
 end

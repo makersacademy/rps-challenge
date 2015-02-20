@@ -6,8 +6,8 @@ describe Rps do
 
 	let(:rps) {Rps.new}
 
-	it 'should have a default value of rock' do
-		expect(rps.content).to eq('rock')
+	it 'should have a default value' do
+		expect(rps.content).to eq('lizard')
 	end
 
 	it 'should be able to change to paper' do

@@ -19,7 +19,7 @@ class Player
 	end
 
 	def choose_rock
-		@rps_holder.change_to_scissors
+		@rps_holder.change_to_rock
 	end
 
 end

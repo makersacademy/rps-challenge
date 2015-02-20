@@ -1,11 +1,10 @@
 class Game
 
-	# attr_accessor :turn
+	attr_reader :players
 
 	def initialize
 		@players = []
 		# @turn = false
-		@winner = []
 	end
 
 	def add(player)
@@ -18,8 +17,19 @@ class Game
 	end
 
 	def winner
-		if @players[0].content = 'scissors'
-			return 'player 2 wins!' if @players[1].content == 'rock'
+
+		if @players.first.rps_holder.content == 'scissors'
+			return 'player 2 wins!' if @players.last.rps_holder.content == 'rock'
+			return 'player 1 wins!' if @players.last.rps_holder.content == 'paper'
+			return 'draw!' if @players.last.rps_holder.content == 'scissors'
+		elsif @players.first.rps_holder.content == 'rock'
+			return 'player 2 wins!' if @players.last.rps_holder.content == 'paper'
+			return 'player 1 wins!' if @players.last.rps_holder.content == 'scissors'
+			return 'draw!' if @players.last.rps_holder.content == 'rock'
+		elsif @players.first.rps_holder.content == 'paper'
+			return 'player 2 wins!' if @players.last.rps_holder.content == 'scissors'
+			return 'player 1 wins!' if @players.last.rps_holder.content == 'rock'
+			return 'draw!' if @players.last.rps_holder.content == 'paper'
 		end
 
 	end
