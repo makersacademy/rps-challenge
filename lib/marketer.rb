@@ -1,6 +1,6 @@
 class Marketer
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   def initialize
     @name = []
@@ -10,8 +10,8 @@ class Marketer
     @name << name
   end
 
-  def choice(weapon)
-    weapon
+  def chosen_option(weapon)
+    @choice = weapon
   end
 
 

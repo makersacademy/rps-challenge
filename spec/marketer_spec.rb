@@ -14,15 +14,15 @@ describe 'Marketer' do
   end
 
   it 'should have a choice between rock, paper and scissors' do
-    expect(marketer.choice("scissors")).to eq "scissors"
+    expect(marketer.chosen_option("scissors")).to eq "scissors"
   end
 
   it 'should have a choice between rock, paper and scissors' do
-    expect(marketer.choice("paper")).to eq "paper"
+    expect(marketer.chosen_option("paper")).to eq "paper"
   end
 
   it 'should have a choice between rock, paper and scissors' do
-    expect(marketer.choice("rock")).to eq "rock"
+    expect(marketer.chosen_option("rock")).to eq "rock"
   end
 
 end
