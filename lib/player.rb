@@ -1,4 +1,8 @@
+require_relative 'moves'
+
 class Player
+
+  include Moves
 
   attr_accessor :name
 

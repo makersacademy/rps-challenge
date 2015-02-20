@@ -3,20 +3,18 @@ require 'game'
 describe Game do
 
   let(:game){Game.new}
-  let(:computer){double :player, name: "Computer"}
-  let(:player){double :player, name: "Player"}
+  let(:computer1){double :computer, name: "Computer", choice: "paper"}
+  let(:computer2){double :computer, name: "Computer", choice: "rock"}
+  let(:player){double :player, name: "Player", choice: "paper"}
 
-  it 'can display a list of possible moves' do
-    expect(game.moves).to eq({ 1 => "rock", 2 => "paper", 3 => "scissors", 4 => "lizard", 5 => "spock" })
+  it 'can return a draw when player and computer make the same choice' do
+    game.compare(player, computer1)
+    expect(game.winner).to eq "DRAW"
   end
 
-  it 'can select a specific move' do
-    expect(game.moves[1]).to eq "rock"
+  it 'can compare players and computers choice to decide a winner' do
+    game.compare(player, computer2)
+    expect(game.winner).to eq player
   end
-
-  it 'can select a move at random' do
-    expect(game.random_move).to satisfy{|m| ["rock", "paper", "scissors", "lizard", "spock"].include?(m)}
-  end
-
 
 end
