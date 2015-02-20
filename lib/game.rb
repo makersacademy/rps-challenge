@@ -27,3 +27,9 @@ class Game
     result_value
   end
 end
+
+# rock: :scissors || :lizard
+# paper: :rock || :spock
+# scissors: :paper || :lizard
+# lizard: :paper || :spock
+# spock: :scissors || :rock
