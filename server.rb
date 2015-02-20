@@ -3,7 +3,6 @@ require 'sinatra/base'
 class Server < Sinatra::Base
 
   get '/' do
-    @name =''
     erb :index
   end
 
@@ -14,6 +13,10 @@ class Server < Sinatra::Base
       @name = params[:player_name]
       erb :game
     end
+  end
+
+  post '/game' do
+    erb :game
   end
 
   # start the server if ruby file executed directly

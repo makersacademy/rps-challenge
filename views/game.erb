@@ -1,7 +1,7 @@
 <h1>Please make a selection<h1>
 <h3>
-  <form action="/" method="post">
-    <question>What would you like to be?</question><br>
+  <form action="/game" method="post">
+    <question>What would you like to be  <%= @name %>?</question><br>
     <input type="radio" name="player_choice" value ="rock">Rock<br>
     <input type="radio" name="player_choice" value ="paper">Paper<br>
     <input type="radio" name="player_choice" value ="scissors">Scissors<br>
