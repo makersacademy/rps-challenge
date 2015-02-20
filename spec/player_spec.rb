@@ -4,7 +4,8 @@ describe Player do
   let(:player){Player.new}
 
   it 'should have a name' do
-    expect(player.name).to eq "Player1"
+    player.player_name("Sebastien")
+    expect(player.name).to eq ["Sebastien"]
   end
 
   it 'should be able to pick rock in option' do
