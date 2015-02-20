@@ -7,8 +7,16 @@ describe Player do
     expect(player.name).to eq "Player1"
   end
 
-  it 'should pick an available option' do
+  it 'should be able to pick rock in option' do
     expect(player.choose('rock')).to eq :rock
+  end
+
+  it 'should be able to pick paper in option' do
+    expect(player.choose('paper')).to eq :paper
+  end
+
+  it 'should be able to pick scissors in option' do
+    expect(player.choose('scissors')).to eq :scissors
   end
 
 end
