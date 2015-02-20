@@ -8,3 +8,6 @@ Feature: Starting a game
 		When I enter "Tom"
     	And I press "submit"
 		Then I should see "Choose your weapon, Tom"
+
+	Scenario: Press the submit button without entering a name
+		Given I am on the homepage

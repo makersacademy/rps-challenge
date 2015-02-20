@@ -6,7 +6,7 @@ Feature: Choosing a weapon
 	Background:
 		Given I am on the homepage
 		When I enter "Tom"
-    	And I press "submit"
+  	And I press "submit"
 		Then I should see "Choose your weapon, Tom"
 
 	Scenario: Choosing Rock as a weapon
@@ -16,3 +16,7 @@ Feature: Choosing a weapon
 	Scenario: Choosing Paper as a weapon
 		When I click "Paper"
     Then I should see "Your selection is: Paper"
+
+  Scenario: Choosing Scissors as a weapon
+    When I click "Scissors"
+    Then I should see "Your selection is: Scissors"
