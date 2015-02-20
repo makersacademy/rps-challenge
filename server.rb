@@ -7,7 +7,11 @@ class RPS < Sinatra::Base
 
   post '/game' do
     @name = params[:name]
-    erb :game
+    if @name.empty?
+      erb :index
+    else
+      erb :game
+    end
   end
 
   get '/outcome' do
