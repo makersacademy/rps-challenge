@@ -22,3 +22,6 @@ Then(/^I should stay on the home page and see "(.*?)"MAM$/) do |text|
   expect(page).to have_content text
 end
 
+When(/^I choose a radio button "(.*?)"$/) do |weapon|
+  page.choose(weapon)
+end

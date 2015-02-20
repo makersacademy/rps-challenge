@@ -1,10 +1,10 @@
 <h1>Please make a selection<h1>
 <h3>
-  <form action="/game" method="post">
-    <question>What would you like to be  <%= @name %>?</question><br>
-    <input type="radio" name="player_choice" value ="rock">Rock<br>
-    <input type="radio" name="player_choice" value ="paper">Paper<br>
-    <input type="radio" name="player_choice" value ="scissors">Scissors<br>
+  <form action="/result" method="post">
+    <question>What would you like to be <%= @player_name %>?</question><br>
+    <input id="rock" type="radio" name="weapon_choice" value="rock">Rock<br>
+    <input id="paper" type="radio" name="weapon_choice" value="paper">Paper<br>
+    <input id="scissors" type="radio" name="weapon_choice" value="scissors">Scissors<br>
     <input type="submit" value="submit" name="submit">
   </form>
 </h3>
