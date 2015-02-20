@@ -4,12 +4,20 @@ require 'sinatra/base'
 
 class RockServer < Sinatra::Base
 
+  game = Game.new
+
+  enable :sessions
 
   get '/' do
     erb :index
   end
 
   post '/' do
+
+    player = Player.new(params[:name])
+    game.add_player(player)
+    @game = game
+    puts game.inspect
     erb :play
   end
 

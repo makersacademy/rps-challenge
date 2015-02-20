@@ -22,5 +22,7 @@ When(/^I enter my name$/) do
 end
 
 Then(/^I Player 1s name should be "(.*?)"$/) do |name|
-  pending # express the regexp above with the code you wish you had
+  # ?? So confused on how to structure these tests
+  # expect(game.player1.name).to eq name
+  pending
 end
