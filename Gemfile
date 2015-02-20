@@ -6,4 +6,4 @@ gem 'cucumber-sinatra'
 gem 'rspec'
 gem 'shotgun'
 gem 'rack'
-
+end
