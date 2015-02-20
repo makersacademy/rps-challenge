@@ -22,7 +22,7 @@ Given(/^I am on the homepage after choosing a name$/) do
   visit('/game')
 end
 
-And(/^I click on the "(.*?)" link/) do |link|
+And(/^I click on"(.*?)"/) do |arg1|
   click_on('Play')
 end
 

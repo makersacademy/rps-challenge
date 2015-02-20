@@ -20,7 +20,7 @@ class Element
   end 
 
   def beat(element)
-    @win = true if element.loses_to == "rock"
-    @win = false if element.loses_to == "scissors"
+   element.loses_to == self.name ? @win = true : @win = false
   end
+
 end
