@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
-reauire './lib/player'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   set :views, Proc.new { File.join(root, "..", "views") }
@@ -13,6 +13,10 @@ class RockPaperScissors < Sinatra::Base
   get '/name' do
   @name = params[:name]
   erb :name
+  end
+
+  post '/board' do
+  erb :board
   end
 
   # start the server if ruby file executed directly
