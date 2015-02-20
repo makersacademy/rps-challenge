@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class rock_paper_scissors < Sinatra::Base
+class Rock_paper_scissors < Sinatra::Base
   get '/' do
     'Hello rock_paper_scissors!'
   end
