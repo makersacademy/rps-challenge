@@ -6,4 +6,8 @@ class Player
     @name = "Player1"
   end
 
+  def choose(option)
+    option.to_sym
+  end
+
 end
