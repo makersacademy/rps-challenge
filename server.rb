@@ -8,8 +8,12 @@ class Server < Sinatra::Base
   end
 
   post '/' do
-    @name = params[:player_name]
-    erb :index
+    if params[:player_name].empty?
+      erb :index
+    else
+      @name = params[:player_name]
+      erb :game
+    end
   end
 
   # start the server if ruby file executed directly
