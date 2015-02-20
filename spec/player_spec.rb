@@ -8,4 +8,8 @@ describe Player do
     expect(player.name).to eq "Kevin"
   end
 
+  it 'should start game without making a choice' do
+    expect(player.choice).to eq nil
+  end
+
 end
