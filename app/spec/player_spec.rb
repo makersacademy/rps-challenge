@@ -11,7 +11,6 @@ describe Player do
     end
 
     it "should be able to select an element" do
-      rock = double :rock, name: "rock"
       player.select_element(rock)
       expect(player.element_selected).to eq("rock")
     end
