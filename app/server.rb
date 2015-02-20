@@ -15,8 +15,9 @@ class RockPaperScissors < Sinatra::Base
   erb :name
   end
 
-  post '/board' do
-  erb :board
+  post '/game' do
+  @name = params[:name]
+  erb :game
   end
 
   # start the server if ruby file executed directly

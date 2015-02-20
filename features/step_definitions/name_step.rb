@@ -7,5 +7,5 @@ When(/^I enter "(.*?)"$/) do |name|
 end
 
 Then(/^I should see the board$/) do
-  visit '/board'
+  visit '/game'
 end
