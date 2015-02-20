@@ -6,5 +6,5 @@ Feature: Starting a game
 	Scenario: Registering my name
 		Given I am on the homepage
 		When I enter "Tom"
-    And I press "submit"
+    	And I press "submit"
 		Then I should see "Choose your weapon, Tom"

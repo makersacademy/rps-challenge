@@ -10,6 +10,11 @@ When(/^I press "(.*?)"$/) do |button|
   click_button('submit')
 end
 
+When(/^I click "(.*?)"$/) do |link|
+  click_link(link)
+end
+
 Then(/^I should see "(.*?)"$/) do |displayed|
   expect(page).to have_content(displayed)
 end
+
