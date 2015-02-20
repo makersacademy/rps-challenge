@@ -8,15 +8,9 @@ class Game
   end
 
   def add_player(player)
-    if @player1 == :no_player
-      @player1 = player
-    else
-      if @player2 == :no_player
-        @player2 = player
-      else
-        raise 'Already 2 people playing!'
-      end
-    end
+    @player1 == :no_player ? (return @player1 = player) : @player1
+    @player2 == :no_player ? (return @player2 = player) : @player2
+    raise 'Already two people playing!'
   end
 
 
