@@ -13,6 +13,10 @@ class Game
     raise 'Already two people playing!'
   end
 
+  def full?
+    @player2 == :no_player ? false : true
+  end
+
   def resolve_winner
     case @player1.weapon
       when :ROCK

@@ -4,7 +4,7 @@ require 'sinatra/base'
 
 class RockServer < Sinatra::Base
 
-  game = Game.new
+  games = Array.new
 
   enable :sessions
 
@@ -14,14 +14,21 @@ class RockServer < Sinatra::Base
 
   post '/' do
 
+    # add player unique ID to session!
+
     player = Player.new(params[:name])
+    game = games.find {|game| !game.full?}
     game.add_player(player)
     @game = game
-    puts game.inspect
     erb :play
   end
 
   get '/newgame' do
+
+    if games.all? &:full?
+      games << Game.new
+    end
+
     erb :newgame
   end
 

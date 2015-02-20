@@ -24,5 +24,4 @@ end
 Then(/^I Player 1s name should be "(.*?)"$/) do |name|
   # ?? So confused on how to structure these tests
   # expect(game.player1.name).to eq name
-  pending
 end
