@@ -1,0 +1,12 @@
+<div>
+  <% if @user_name %>
+    <p>Welcome to Rock Paper Scissors online <%= @user_name %>!</p>
+    <a href="/game">Play</a>
+  <% else %>
+    <p>Welcome unregistered user! Please choose a name.</p>
+    <form action="/" method="post">
+      <input type="text" name="name">
+      <input type="submit" value="submit">
+    </form>
+  <% end %>
+</div>

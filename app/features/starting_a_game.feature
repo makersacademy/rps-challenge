@@ -7,7 +7,6 @@ Scenario: Sign up
 Given I am on the homepage
 And I fill the "name" form
 And I press the "submit" button
-When I visit the "player" page
 Then I should receive a "Welcome" with my chosen name
 
 Scenario: Make a move

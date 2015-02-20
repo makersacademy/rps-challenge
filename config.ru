@@ -1,4 +1,4 @@
 require 'rubygems'
 require File.join(File.dirname(__FILE__), './server.rb')
 
-run rock_paper_scissors
+run Rock_paper_scissors
