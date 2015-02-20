@@ -4,10 +4,13 @@ class GameItems
 
   def initialize(options)
     @items = {}
-    @items[:rock] = "rock"
-    @items[:paper] = "paper"
-    @items[:scissors] = "scissors"
   end
 
+  def add_weapon(weapon)
+    @items.merge!(weapon)
+  end
+
+  def weapon_keys
+  end
 
 end
