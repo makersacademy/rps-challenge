@@ -5,12 +5,29 @@
     Waiting for other player to join...
     <br>
     <a href="/nopage">Play a silly computer</a>
-<% else %>
+<% end %>
 
     READY TO PLAY!
     <br>
+
+        <a href="/play?weapon=rock">ROCK</a>
+        ..
+        <a href="/play?weapon=paper">PAPER</a>
+        ..
+        <a href="/play?weapon=scissors">SCISSORS</a>
+
+
+
+    <br>
+
+    <% puts @game.player1.inspect %>
+
+    <br>
+
+
+
+
     ROCK..PAPER..SCISSORS
 
-<% end %>
 
 

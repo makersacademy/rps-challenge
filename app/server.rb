@@ -32,6 +32,20 @@ class RockServer < Sinatra::Base
     erb :newgame
   end
 
+  get '/play' do
+
+    # Temporary code, just playing
+
+    weapon = params[:weapon]
+    weapon.upcase.to_sym
+
+    @game = games.first
+
+    @game.player1.choose(weapon)
+
+    erb :play
+  end
+
 
 
 
