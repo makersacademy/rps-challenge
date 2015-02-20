@@ -10,21 +10,17 @@ class Game
     @winner = nil
   end
 
-  RULES = {
-    "rock" => ["scissors"],
-    "scissors" => ["paper"],
-    "paper" => ["rock"]
-  }
+  RULES = {"rock" => ["scissors"], "scissors" => ["paper"], "paper" => ["rock"]}
 
   def choose_randomly
-    @computer_choice = ["rock", "paper", "scissors"].sample
+    @computer_choice = ["rock", "paper", "scissors"].shuffle.sample
   end
 
   def result
     choose_randomly
-    @winner = 'Draw' if @player.choice == @computer_choice
     @winner = @player.name if RULES[@player.choice].include? @computer_choice
-    @winner = 'Computer' if RULES[@computer_choice].include? @player.choice
+    @winner = "Computer wins!" if RULES[@computer_choice].include? @player.choice
+    @winner = "You tied with the computer. Try again!" if @player.choice == @computer_choice
   end
 
 end
