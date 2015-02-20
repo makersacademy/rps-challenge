@@ -2,9 +2,9 @@ require 'player'
 
 describe Player do
 
-  let(:player)   { Player.new("Mario") }
-  let(:rock)     { double :rock, name: "rock"}
-  let(:scissors) { double :scissors, name: "scissors"}
+  let(:player)   { Player.new("Mario")                                  }
+  let(:rock)     { double :rock, name: "rock", loses_to: "paper"        }
+  let(:scissors) { double :scissors, name: "scissors", loses_to: "rock" }
 
     it "should have a name" do
       expect(player.name).to eq("Mario")
