@@ -22,6 +22,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
+  @name = params[:name]
   erb :play
   end
 
