@@ -13,6 +13,55 @@ class Game
     raise 'Already two people playing!'
   end
 
+  def resolve_winner
+    case @player1.weapon
+      when :ROCK
+        result = p1_has_rock
+      when :PAPER
+        result = p1_has_paper
+      when :SCISSORS
+        result = p1_has_scissors
+    end
+  end
+
+  # # # # # # # # # # #
+
+  private
+
+  def p1_has_rock
+    case @player2.weapon
+      when :ROCK
+        return :TIE
+      when :PAPER
+        return player2
+      when :SCISSORS
+        return player1
+    end
+  end
+
+  def p1_has_paper
+    case @player2.weapon
+      when :ROCK
+        return player1
+      when :PAPER
+        return :TIE
+      when :SCISSORS
+        return player2
+    end
+  end
+
+  def p1_has_scissors
+    case @player2.weapon
+      when :ROCK
+        return player2
+      when :PAPER
+        return player1
+      when :SCISSORS
+        return :TIE
+    end
+  end
+
+
 
 
 
