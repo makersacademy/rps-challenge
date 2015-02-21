@@ -4,8 +4,13 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <h2>Enter First Players Name</h2>
-    <form action='/enter_second_name' method="post">
+    <form method="post">
       <input type="text" name="player1_name" id="button" required>
+      <input type="submit" value="Begin" id="button">
+    </form>
+     <h2>Enter First Players Choice</h2>
+    <form action='/enter_second_name' method="post">
+      <input type="text" name="player1_pick" id="button" required>
       <input type="submit" value="Begin" id="button">
     </form>
   </body>

@@ -10,5 +10,4 @@ class Player
     @picks
   end
 
-
 end
