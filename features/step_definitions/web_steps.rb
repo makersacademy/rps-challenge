@@ -1,3 +1,5 @@
+require_relative '../../lib/computer.rb'
+
 Given(/^I am on the homepage$/) do
   visit('/')
 end
@@ -18,3 +20,6 @@ Then(/^I should see "(.*?)"$/) do |displayed|
   expect(page).to have_content(displayed)
 end
 
+Given(/^the computer has chosen Scissors$/) do
+# Need to find a way of stubbing this...
+end

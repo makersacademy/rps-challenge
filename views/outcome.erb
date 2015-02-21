@@ -1,1 +1,7 @@
 <p>Your selection is: <%= @selected_weapon %></p>
+<p>The computer chose: <%= @computer_weapon %></p>
+<% if @winner == @player %>
+  <p>You've won the game!</p>
+<% else %>
+  <p>You lost!</p>
+<% end %>
