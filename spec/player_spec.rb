@@ -3,11 +3,6 @@ require 'player.rb'
 describe Player do
   let(:player){Player.new}
 
-  # it 'should have a name' do
-  #   game.add_player_one("Sebastien")
-  #   expect(game.add_player_one).to eq ["Sebastien"]
-  # end
-
   it 'should be able to pick rock in option' do
     expect(player.pick('rock')).to eq :rock
   end

@@ -12,8 +12,8 @@ class Game
     randomness.sample
   end
 
-  def add_player_one(player)
-    @player_one = player1
+  def add_player(player)
+    @player_one = player
   end
 
   def result(player_choice, opponent_choice)

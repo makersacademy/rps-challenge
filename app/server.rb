@@ -33,8 +33,8 @@ class RockPaperScissors < Sinatra::Base
   post '/result' do
     player = session[:player]
     @computer = game.random
-    @player1 = player.pick(params[:game])
-    @result = game.result(@player1, @computer)
+    @player = player.pick(params[:game])
+    @result = game.result(@player, @computer)
     erb :result
   end
 

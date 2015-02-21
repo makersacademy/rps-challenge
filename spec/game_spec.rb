@@ -6,7 +6,7 @@ describe Game do
   context 'Adding players' do
 
   it 'should be able to add a player' do
-    expect(game.add_player_one("Sebastien")).to eq "player1"
+    expect(game.add_player("Sebastien")).to eq "Sebastien"
   end
   end
 
