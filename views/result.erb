@@ -2,17 +2,16 @@
 <div class="text-center">
 <% if @result == "Win!" %>
   <h3>You won! <%= @player.capitalize %> beats <%= @computer.capitalize %></h3>
-  <br><img src="/public/images/win.jpg"/><br>
+  <br><img src="http://imgur.com/YFS3vMS.jpg"/><br>
 <% elsif @result == "Lost!" %>
   <h3>You lost! <%= @computer.capitalize %> beats <%= @player.capitalize %></h3>
-  <br><img src="/public/images/lost.jpg"/><br>
+  <br><img src="http://imgur.com/UOY1gfA.jpg"/><br>
 <% elsif @result == "Draw!" %>
   <h3>Draw! You both had <%= @player.capitalize %></h3>
-  <br><img src="/public/images/draw.jpg"/><br>
+  <br><img src="http://i.imgur.com/LZ9G17p.jpg"/><br>
 <% end %>
   <br>
   <form action='/player' method='post' class="text-center">
   <a href="/game" class="btn btn-primary text-center">Play again!</a>
   </form>
 </div>
-/images/kitten.png
