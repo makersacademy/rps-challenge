@@ -1,11 +1,12 @@
 class Game
 
-  attr_reader :combinations, :randomness
+  attr_reader :combinations, :randomness, :name
 
   def initialize
     @combinations = { rock: :scissors, paper: :rock, scissors: :paper }
     @randomness = combinations.keys
     @player_one = nil
+    @name = name
   end
 
   def random

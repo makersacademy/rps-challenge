@@ -13,27 +13,33 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/player' do
+    @name = params[:name]
     erb :player
   end
 
   post '/player' do
     session[:player] = player
-    @player_name = params[:name]
+    @name = params[:name]
     erb :game
   end
 
   get '/game' do
+    session[:player] = player
+    @name = params[:name]
     erb :game
   end
 
   post '/game' do
+    session[:player] = player
+    @name = params[:name]
     erb :result
   end
 
   post '/result' do
+    @name = params[:name]
     player = session[:player]
     @computer = game.random
-    @player = player.pick(params[:game])
+    @player = player.choice(params[:game])
     @result = game.result(@player, @computer)
     erb :result
   end

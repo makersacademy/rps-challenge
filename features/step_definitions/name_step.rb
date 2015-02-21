@@ -1,5 +1,5 @@
 Given(/^I am on the name page$/) do
-  visit '/name'
+  visit '/player'
 end
 
 When(/^I enter "(.*?)"$/) do |name|

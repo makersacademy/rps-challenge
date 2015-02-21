@@ -12,3 +12,8 @@ Feature: Starting the game
       Given I am on the name page
       When I enter "My name"
       Then I should see the game
+
+      Scenario: Playing game
+      Given that I am on the game page
+      When I click on the "Rock" button
+      Then I should see my result
