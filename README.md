@@ -4,7 +4,7 @@ I built this app during Week 3 of Makers Academy, following strict BDD and TDD p
 
 At the time of writing, the randomness of the computer's selection isn't stubbed in the Cucumber tests. I hope to fix this shortly.
 
-You can check out my app here: ...
+You can check out my app here: https://rockpaperscissors-tomcoakes.herokuapp.com
 
 ### Tested with:
 - Cucumber
