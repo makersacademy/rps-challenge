@@ -1,20 +1,11 @@
+/***************
+GLOBAL
+***************/
+
 body {
   margin: 0 auto;
   text-align: center;
   background-color: #ecf0f1;
-}
-
-header {
-  padding: 20px;
-  background-color: #ecf0f1;
-  color: #435a6b;
-  font-size: 1.4em;
-}
-
-section {
-  padding: 20;
-  background-color: #435a6b;
-  color: #ecf0f1;
 }
 
 h1 {
@@ -29,11 +20,28 @@ img {
   padding: 20px;
 }
 
-input[type=text] {
-  border: 5px solid white;
+/***************
+HEADER
+***************/
+
+header {
+  padding: 20px;
+  background-color: #ecf0f1;
+  color: #435a6b;
+  font-size: 1.4em;
 }
 
-a {
+/***************
+SECTION
+***************/
+
+section {
+  padding: 20;
+  background-color: #435a6b;
+  color: #ecf0f1;
+}
+
+section a {
   font-family: Open Sans, sans-serif;
   position: relative;
   display: inline-block;
@@ -48,6 +56,44 @@ a {
   font-size: 1.35em;
 }
 
+section a:hover,
+section a:focus {
+  outline: none;
+}
+
+section a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  content: '';
+  opacity: 0;
+  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+section a:hover::after,
+section a:focus::after {
+  height: 3px;
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  transform: translateY(5px);
+}
+
+/***************
+INPUT FIELDS
+***************/
+
+input[type=text] {
+  border: 5px solid white;
+}
 
 input[type=submit] {
   display: inline-block;
@@ -75,37 +121,15 @@ input[type=submit]:active {
   }
 
 
-a:hover,
-a:focus {
-  outline: none;
+/***************
+FOOTER
+***************/
+
+footer {
+  margin-top: 30;
 }
 
-a {
-  color: white;
+footer a {
+  color: rgba(67, 90, 107, 0.4);
 }
 
-a::after {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  content: '';
-  opacity: 0;
-  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-  transition: height 0.3s, opacity 0.3s, transform 0.3s;
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  transform: translateY(-10px);
-}
-
-a:hover::after,
-a:focus::after {
-  height: 3px;
-  opacity: 1;
-  -webkit-transform: translateY(5px);
-  -moz-transform: translateY(5px);
-  transform: translateY(5px);
-}
