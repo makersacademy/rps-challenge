@@ -11,7 +11,7 @@ Feature: The game has an end
   Scenario: I beat the computer
     Given the computer has chosen "Scissors"
     When I click "Rock"
-    Then I should see "You've won the game!"
+    Then I should see "You won!"
 
   Scenario: The computer beats me
     Given the computer has chosen "Paper"
