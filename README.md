@@ -4,16 +4,6 @@ Knowing how to build web applications is getting us almost there as web develope
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Instructions
--------
-
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your challenge solution by 9am Monday morning
-
-Task
------
-
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following features:
 
 - the marketeer has to enter their name before the game
@@ -22,7 +12,7 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 - the game will choose a random option
 - a winner will be declared
 
-As always you can use google your notes and everything else. This is a challenge for you and you only!
+As always you can use google your notes and everything else. This is a challenge for you and you only! And you must submit a pull request to this repo with your challenge solution (or partial solution) by 9am Monday morning.
 
 **Rōnin BANZAI!!!!**
 
