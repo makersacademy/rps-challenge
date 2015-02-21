@@ -8,8 +8,7 @@ class GameWeapons
 
 
   def random_weapon
-    rand_key = weapons.keys.sample
-    weapons[rand_key]
+    weapons.sample
   end
 
   def select_weapon(weapon)

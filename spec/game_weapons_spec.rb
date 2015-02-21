@@ -12,4 +12,8 @@ describe GameWeapons do
   it "will rasie and error if player selects unavalible weapon" do
     expect{ weapons.select_weapon(:gun) }.to raise_error(RuntimeError, "Can't select that weapon")
   end
+
+  it "will randomly choose one weapon from the avalible weapons only" do
+    expect(weapons.weapons).to include(weapons.random_weapon)
+  end
 end
