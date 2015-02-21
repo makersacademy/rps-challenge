@@ -9,21 +9,27 @@ describe GameResult do
 
 
   it "can say 'player wins' when the player wins" do
-    allow(umpire).to receive(:rule_logic).and_return(:rock)
-    expect(result.announcement({rock: :player, scissors: :computer})).to eq "Player Wins"
-
+    set_up_match_helper(:rock, :scissors, :rock)
+    expect(result.announcement).to eq "Jim is the winner"
   end
 
   it "can say 'computer wins' when the computer wins" do
-    allow(umpire).to receive(:rule_logic).and_return(:scissors)
-    expect(result.announcement({paper: :player, scissors: :computer})).to eq "Computer Wins"
-
+    set_up_match_helper(:paper, :scissors, :scissors)
+    expect(result.announcement).to eq "imac is the winner"
   end
 
   it "can say 'draw' when it was a draw" do
     allow(umpire).to receive(:rule_logic).and_return(:draw)
-    expect(result.announcement({paper: :player, paper: :computer})).to eq "It's a draw"
+    set_up_match_helper(:paper, :paper, :draw)
+    expect(result.announcement).to eq "It's a draw"
+  end
 
+  def set_up_match_helper(weapon_player, weapon_comp, winning_weapon)
+    allow(umpire).to receive(:rule_logic).and_return(winning_weapon)
+    allow(jim).to receive(:weapon).and_return(weapon_player)
+    allow(jim).to receive(:name).and_return("Jim")
+    allow(imac).to receive(:weapon).and_return(weapon_comp)
+    allow(imac).to receive(:name).and_return("imac")
   end
 
 end

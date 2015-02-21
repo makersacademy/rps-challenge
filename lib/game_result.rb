@@ -1,40 +1,34 @@
 class GameResult
 
+    attr_reader :weapons_users
+
   def initialize(umpire, player, computer)
     @umpire = umpire
     @player = player
     @computer = computer
+    @weapons_users = {}
   end
 
-  def played_weapons
-    weapons = [@player.weapon, @computer.weapon]
+  def get_weapon_choices
+    weapons_users.merge!({ @player.weapon =>  @player.name })
+    weapons_users.merge!({ @computer.weapon => @computer.name })
   end
 
   def announcement
-    winner = check_weapons(played_weapons)
-
-    if winner == :draw
-      result_headliner(winner)
-    else
-      result_headliner(match_up[winner])
-    end
+    get_weapon_choices
+    winning_weapon = check_weapons(weapons_users.keys)
+    result_headliner(winning_weapon)
   end
 
-  private def check_weapons(match_up)
-    weapons = match_up.keys
+  private def check_weapons(weapons)
     @umpire.rule_logic(weapons)
   end
 
-  private def result_headliner(winner)
-    case winner
-    when :player
-      "Player Wins"
-    when :computer
-      "Computer Wins"
-    when :draw
+  private def result_headliner(winning_weapon)
+    if winning_weapon == :draw
       "It's a draw"
     else
-      "No result found"
+      "#{weapons_users[winning_weapon]} is the winner"
     end
   end
 
