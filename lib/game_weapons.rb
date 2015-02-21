@@ -3,16 +3,9 @@ class GameWeapons
   attr_reader :weapons
 
   def initialize()
-    @weapons = {}
+    @weapons = [:rock, :paper, :scissors]
   end
 
-  def add_weapon(weapon)
-    @weapons.merge!(weapon)
-  end
-
-  def weapon_text(weapon)
-    weapons[weapon]
-  end
 
   def random_weapon
     rand_key = weapons.keys.sample
@@ -20,8 +13,8 @@ class GameWeapons
   end
 
   def select_weapon(weapon)
-    if weapons.has_key?(weapon)
-      weapons[weapon]
+    if weapons.include?(weapon)
+      return weapon
     else
       raise "Can't select that weapon"
     end

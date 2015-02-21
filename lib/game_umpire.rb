@@ -1,12 +1,23 @@
 class GameUmpire
 
-  ROCK_SCISSORS   = [:rock, :scissors]
-  ROCK_PAPER      = [:rock, :paper]
-  PAPER_SCISSORS  = [:paper, :scissors]
+  ROCK_BEATS_SCISSORS   = [:rock, :scissors]
+  PAPER_BEATS_ROCK      = [:paper, :rock]
+  SCISSORS_BEATS_PAPER  = [:paper, :scissors]
 
 
-  def rule_logic(weapon_one, weapon_two)
-    matcher = [weapon_one, weapon_two]
+  def rule_logic(weapons)
+    played_weapons = weapons.sort
+
+    case
+    when ROCK_BEATS_SCISSORS == played_weapons
+      :rock
+    when PAPER_BEATS_ROCK == played_weapons
+      :paper
+    when SCISSORS_BEATS_PAPER == played_weapons
+      :scissors
+    else
+      :draw
+    end
 
   end
 
