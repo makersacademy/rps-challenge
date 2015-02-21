@@ -13,6 +13,8 @@ class Game
       return @players[1]
     elsif @players[0].weapon == :Paper && @players[1].weapon == :Rock
       return @players[0]
+    elsif @players[0].weapon == @players[1].weapon
+      return nil
     end
   end
 

@@ -31,4 +31,15 @@ describe Game do
     computer.weapon = :Paper
     expect(game.winner).to eq computer
   end
+
+  it "declares the game to be a draw when the player chooses rock and the computer chooses rock" do
+    computer = Computer.new
+    player = Player.new
+    game.add_player(computer)
+    game.add_player(player)
+    player.weapon = :Rock
+    computer.weapon = :Rock
+    expect(game.winner).to eq nil
+  end
+
 end

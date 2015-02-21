@@ -20,6 +20,6 @@ Then(/^I should see "(.*?)"$/) do |displayed|
   expect(page).to have_content(displayed)
 end
 
-Given(/^the computer has chosen Scissors$/) do
-# Need to find a way of stubbing this...
+Given(/^the computer has chosen "(.*?)"$/) do |weapon|
+  # Need to find a way of stubbing this... may need to use sessions?
 end

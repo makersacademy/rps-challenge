@@ -9,6 +9,16 @@ Feature: The game has an end
     And I press "submit"
 
   Scenario: I beat the computer
-    Given the computer has chosen Scissors
+    Given the computer has chosen "Scissors"
     When I click "Rock"
     Then I should see "You've won the game!"
+
+  Scenario: The computer beats me
+    Given the computer has chosen "Paper"
+    When I click "Rock"
+    Then I should see "You lost!"
+
+  Scenario: I draw with the computer
+    Given the computer has chosen "Rock"
+    When I click "Rock"
+    Then I should see "It's a draw."
