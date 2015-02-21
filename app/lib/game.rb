@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :uuid
 
   def initialize(player1= :no_player, player2= :no_player)
     @player1 = player1
     @player2 = player2
+    @uuid = make_uuid
   end
 
   def add_player(player)
@@ -31,6 +32,10 @@ class Game
   # # # # # # # # # # #
 
   private
+
+  def make_uuid
+    SecureRandom.hex
+  end
 
   def p1_has_rock
     case @player2.weapon

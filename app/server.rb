@@ -9,6 +9,14 @@ class RockServer < Sinatra::Base
   enable :sessions
 
   get '/' do
+
+    puts "!!!" * 15
+    puts session[:session_id]
+    puts "***" * 15
+
+
+    session[:game_id =>
+
     erb :index
   end
 
@@ -34,14 +42,10 @@ class RockServer < Sinatra::Base
 
   get '/play' do
 
-    # Temporary code, just playing
-
-    weapon = params[:weapon]
-    weapon.upcase.to_sym
+    # Need to use session ID to get correct game.
 
     @game = games.first
 
-    @game.player1.choose(weapon)
 
     erb :play
   end

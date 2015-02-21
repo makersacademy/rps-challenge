@@ -11,17 +11,27 @@ Then(/^I should see "(.*?)"$/) do |prompt|
 end
 
 
-Given(/^I have started a new game$/) do
+Given(/^I have clicked new game$/) do
   visit('/')
   click_link('New Game')
 end
 
-When(/^I enter my name$/) do
-  fill_in('name', with: "Erik")
-  click_button('Submit')
+When(/^I enter my name "(.*?)"$/) do |name|
+  fill_in("name", with: name)
+  click_button("Submit")
 end
 
-Then(/^I Player 1s name should be "(.*?)"$/) do |name|
-  # ?? So confused on how to structure these tests
-  # expect(game.player1.name).to eq name
+Then(/^the page should show "(.*?)"$/) do |message|
+  expect(page).to have_content message
 end
+
+Then(/^offer a link to "(.*?)"$/) do |play_computer|
+  expect(page).to have_content play_computer
+end
+
+# !! ** !!
+# Okay so all these links are executed in sequence..
+# Meaning that by going through the steps again to visit
+# The waiting page adds a second player to the game, which I do not want.
+# SO.. do I just do nothing in the Given step here?
+# Hmm.

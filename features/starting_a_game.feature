@@ -8,7 +8,8 @@ Feature: Starting a New Game
     When I click 'New Game'
     Then I should see "Your name please?"
 
-  Scenario: Getting player name
-    Given I have started a new game
-    When I enter my name
-    Then I Player 1s name should be "Erik"
+  Scenario: Starting a game against the Computer
+    Given I have clicked new game
+    When I enter my name "Erik"
+    Then the page should show "Waiting for another player to join..."
+    And offer a link to "Play Computer"
