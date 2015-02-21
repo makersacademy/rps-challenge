@@ -28,3 +28,14 @@ form {
   font-family: 'Oswald', serif;
   font-size: 48px;
 }
+
+input {
+  font-family: 'Oswald', serif;
+  background-color:red;
+  color:#fff;
+  text-align: center;
+  font-size:18px;
+  line-height:30px;
+  border-radius:20px;
+
+}
