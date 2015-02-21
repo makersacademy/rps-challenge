@@ -1,7 +1,30 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+
 body {
-    background-color: lightblue;
+    background-image: url(../images/rocks.jpg);
 }
 h1 {
-    color: navy;
-    margin-left: 20px;
+    color: red;
+    text-align: center;
+    font-family: 'Oswald', serif;
+    font-size: 78px;
+}
+
+h2 {
+  color: red;
+  text-align: center;
+  font-size: 48px;
+
+}
+
+a {
+  color: yellow;
+  text-align: center;
+}
+
+form {
+  color: red;
+  text-align: center;
+  font-family: 'Oswald', serif;
+  font-size: 48px;
 }

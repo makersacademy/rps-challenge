@@ -7,6 +7,7 @@ require_relative '../lib/player'
 
 
 class RockPaperScissor < Sinatra::Base
+  set :public_folder, Proc.new { File.join(root, '..', "public") }
   set :views, Proc.new { File.join(root, "..", "views") }
 
   enable :sessions
