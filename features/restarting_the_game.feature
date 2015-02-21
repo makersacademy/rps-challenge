@@ -11,4 +11,4 @@ Feature: The player can start another game
 
   Scenario: I can restart the game
     When I click "Click to play again"
-    Then I should see "Choose your weapon, Tom"
+    Then I should see "What's your weapon of choice, Tom?"

@@ -1,5 +1,8 @@
-<h2>Choose your weapon, <%= @player.name %></h2>
+<header><h1>What's your weapon of choice, <%= @player.name %>?</h1></header>
 
-<a href="/outcome?weapon=Rock">Rock</a>
-<a href="/outcome?weapon=Paper">Paper</a>
-<a href="/outcome?weapon=Scissors">Scissors</a>
+<section>
+
+<a href="/outcome?weapon=Rock" class="links"><img src="/images/rock.png"><br/>Rock</a>
+<a href="/outcome?weapon=Paper"><img src="/images/paper.png"><br/>Paper</a>
+<a href="/outcome?weapon=Scissors"><img src="/images/scissors.png"><br/>Scissors</a>
+</section>

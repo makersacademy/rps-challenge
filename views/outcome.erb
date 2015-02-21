@@ -1,11 +1,21 @@
-<p>Your selection is: <%= @selected_weapon %></p>
-<p>The computer chose: <%= @computer_weapon %></p>
+<header>
+
 <% if @winner == @player %>
-  <p>You won!</p>
+  <h1>You won!</h1>
 <% elsif @winner == @computer %>
-  <p>You lost!</p>
+  <h1>You lost!</h1>
 <% else %>
-  <p>It's a draw.</p>
+  <h1>It's a draw.</h1>
 <% end %>
 
+</header>
+
+<section>
+
+<h2>You chose: <%= @selected_weapon %></h2>
+<h2>The computer chose: <%= @computer_weapon %></h2>
+
+
 <a href="/game">Click to play again</a>
+
+</section>

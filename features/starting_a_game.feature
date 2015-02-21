@@ -7,9 +7,9 @@ Feature: Starting a game
 		Given I am on the homepage
 		When I enter "Tom"
     And I press "submit"
-		Then I should see "Choose your weapon, Tom"
+		Then I should see "What's your weapon of choice, Tom?"
 
 	Scenario: Press the submit button without entering a name
 		Given I am on the homepage
     When I press "submit"
-    Then I should see "To play RPS, first enter your name."
+    Then I should see "To play, enter your name."

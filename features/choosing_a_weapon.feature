@@ -7,16 +7,16 @@ Feature: Choosing a weapon
 		Given I am on the homepage
 		When I enter "Tom"
   	And I press "submit"
-		Then I should see "Choose your weapon, Tom"
+		Then I should see "What's your weapon of choice, Tom?"
 
 	Scenario: Choosing Rock as a weapon
 		When I click "Rock"
-		Then I should see "Your selection is: Rock"
+		Then I should see "You chose: Rock"
 
 	Scenario: Choosing Paper as a weapon
 		When I click "Paper"
-    Then I should see "Your selection is: Paper"
+    Then I should see "You chose: Paper"
 
   Scenario: Choosing Scissors as a weapon
     When I click "Scissors"
-    Then I should see "Your selection is: Scissors"
+    Then I should see "You chose: Scissors"
