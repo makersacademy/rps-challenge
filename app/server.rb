@@ -3,6 +3,7 @@ require './lib/game.rb'
 require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
+  set :public_folder, Proc.new { File.join(root, "public") }
   set :views, Proc.new {File.join(root, "..", "views")}
   enable :sessions
   game = Game.new
@@ -18,26 +19,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player' do
-    session[:player] = player
     @name = params[:name]
+    session[:player] = player
     erb :game
   end
 
   get '/game' do
-    session[:player] = player
     @name = params[:name]
+    session[:player] = player
     erb :game
   end
 
   post '/game' do
-    session[:player] = player
     @name = params[:name]
+    session[:player] = player
     erb :result
   end
 
   post '/result' do
-    @name = params[:name]
     player = session[:player]
+    @name = params[:name]
     @computer = game.random
     @player = player.choice(params[:game])
     @result = game.result(@player, @computer)
