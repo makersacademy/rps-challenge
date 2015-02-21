@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'Hello RockPaperScissors!'
+    " <a href='/new_game'>New Game</a> "
   end
 
   # start the server if ruby file executed directly
