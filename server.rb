@@ -5,8 +5,6 @@ require_relative './lib/player'
 
 class RPS < Sinatra::Base
   
-  enable :sessions
-
   game = Game.new
   computer = Computer.new
   game.add_player(computer)
