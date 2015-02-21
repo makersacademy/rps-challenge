@@ -9,24 +9,15 @@ class RockServer < Sinatra::Base
   enable :sessions
 
   get '/' do
-
-    puts "!!!" * 15
-    puts session[:session_id]
-    puts "***" * 15
-
-
-    session[:game_id =>
-
     erb :index
   end
 
   post '/' do
 
-    # add player unique ID to session!
-
     player = Player.new(params[:name])
     game = games.find {|game| !game.full?}
     game.add_player(player)
+    session.store(:game_id, game.uuid)
     @game = game
     erb :play
   end
