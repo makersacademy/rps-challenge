@@ -7,8 +7,8 @@ class Player
     @weapon = String.new
   end
 
-  def select_weapon(choice, item)
-    @weapon = item.items[choice]
+  def select_player_weapon(choice, game_weapons)
+    @weapon = game_weapons.select_weapon(choice)
   end
 
 end

@@ -6,8 +6,8 @@ class Computer
     @weapon = {}
   end
 
-  def random_weapon(item)
-    @weapon = item.values.sample
+  def random_weapon(game_weapons)
+    @weapon = game_weapons.random_weapon
   end
 
 end
