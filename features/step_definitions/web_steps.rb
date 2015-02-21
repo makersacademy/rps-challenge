@@ -23,4 +23,18 @@ Then(/^I will see "(.*?)"$/) do |text|
 end
 
 
+Given(/^sign in as "(.*?)"$/) do |text|
+  fill_in("player", :with => text)
+  click_on("Submit")
+end
+
+When(/^I enter in "(.*?)" as my weapon choice$/) do |text|
+  fill_in("weapon", :with => text)
+  click_on("Submit")
+end
+
+Then(/^I will see a result$/) do
+  expect(page).to have_content("The winner is:")
+end
+
 
