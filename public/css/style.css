@@ -1,4 +1,4 @@
-@import url('http://fonts.googleapis.com/css?family=Oswald');
+@import url('http://fonts.googleapis.com/css?family=VT323');
 
 body {
     background-image: url(../images/rocks.jpg);
@@ -6,13 +6,14 @@ body {
 h1 {
     color: red;
     text-align: center;
-    font-family: 'Oswald', serif;
+    font-family: 'VT323', serif;
     font-size: 78px;
 }
 
 h2 {
   color: red;
   text-align: center;
+  font-family: 'VT323', serif;
   font-size: 48px;
 
 }
@@ -20,18 +21,19 @@ h2 {
 a {
   color: yellow;
   text-align: center;
+  font-family: 'VT323', serif;
   font-size: 48px;
 }
 
 form {
   color: red;
   text-align: center;
-  font-family: 'Oswald', serif;
+  font-family: 'VT323', serif;
   font-size: 48px;
 }
 
 input {
-  font-family: 'Oswald', serif;
+  font-family: 'VT323', serif;
   background-color:red;
   color:#fff;
   text-align: center;
