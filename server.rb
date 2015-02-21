@@ -28,12 +28,12 @@ class RPS < Sinatra::Base
 
   get '/outcome' do
     game.players[1].weapon = params[:weapon].to_sym
-    @selected_weapon = game.players[1].weapon
     game.players[0].choose_weapon
+    @computer_weapon = game.players[0].weapon
+    @selected_weapon = game.players[1].weapon
     @player = game.players[1]
     @computer = game.players[0]
     @winner = game.winner
-    @computer_weapon = game.players[0].weapon
     erb :outcome
   end
 
@@ -43,6 +43,5 @@ class RPS < Sinatra::Base
     erb :game
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

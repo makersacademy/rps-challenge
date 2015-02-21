@@ -1,31 +1,20 @@
-# Challenge: Rōnin Badge Test
+# Rock, Paper, Scissors (Single Player)
 
-Knowing how to build web applications is getting us almost there as web developers!
+I built this app during Week 3 of Makers Academy, following strict BDD and TDD principles (no code was written without a preceding test!)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+At the time of writing, the randomness of the computer's selection isn't stubbed in the Cucumber tests. I hope to fix this shortly.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following features:
+You can check out my app here: ...
 
-- the marketeer has to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Tested with:
+- Cucumber
+- Capybara
+- RSpec
 
-As always you can use google your notes and everything else. This is a challenge for you and you only!
+### Built with:
+- Sinatra
+- Ruby
+- HTML/CSS
 
-**Rōnin BANZAI!!!!**
-
-## Bonus 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+### Deployed with:
+- Heroku
