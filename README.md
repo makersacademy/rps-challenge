@@ -1,16 +1,12 @@
 # Challenge: Rōnin Badge Test
 
- _Rock, Paper, Scissors_ game that can be played for them so they can play on the web with the following features:
+ _Rock, Paper, Scissors_ game that can be played on the web with the following features:
 
 - the marketeer has to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-As always you can use google your notes and everything else. This is a challenge for you and you only!
-
-**Rōnin BANZAI!!!!**
 
 ## Bonus 1: Multiplayer
 
