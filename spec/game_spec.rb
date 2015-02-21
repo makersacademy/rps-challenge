@@ -6,11 +6,7 @@ describe Game do
   context 'Adding players' do
 
   it 'should be able to add a player' do
-    expect(game.add_player1("Sebastien")).to eq ["Sebastien"]
-  end
-
-  it 'should be able to add a second player' do
-    expect(game.add_player2("Opponent")).to eq ["Opponent"]
+    expect(game.add_player_one("Sebastien")).to eq "player1"
   end
   end
 
@@ -46,15 +42,15 @@ describe Game do
 
   context 'Draw game' do
   it 'should return draw when player1 and player2 both choose rock' do
-      expect(game.result(:rock, :rock)).to eq 'Draw'
+      expect(game.result(:rock, :rock)).to eq 'Draw!'
   end
 
   it 'should return draw when player1 and player2 both choose paper' do
-      expect(game.result(:paper, :paper)).to eq 'Draw'
+      expect(game.result(:paper, :paper)).to eq 'Draw!'
   end
 
   it 'should return draw when player1 and player2 both choose scissors' do
-      expect(game.result(:scissors, :scissors)).to eq 'Draw'
+      expect(game.result(:scissors, :scissors)).to eq 'Draw!'
   end
   end
 

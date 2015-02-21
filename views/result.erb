@@ -1,0 +1,13 @@
+<p class="text-center">Sweet, here are the results:</p>
+<div class="text-center">
+<% if @result == "Win!" %>
+  <h3>You won! <%= @player1.capitalize %> beats <%= @computer.capitalize %></h3>
+<% elsif @result == "Lost!" %>
+  <h3>You lost! <%= @computer.capitalize %> beats <%= @player1.capitalize %></h3>
+<% elsif @result == "Draw!" %>
+  <h3>Draw! You both had <%= @player1.capitalize %></h3>
+<% end %>
+  <a href="/game" class="btn btn-primary text-center">Play again!</a>
+  <br><br>
+  <img class="img-responsive center-block" src="http://bit.ly/1Gc1POi">
+</div>
