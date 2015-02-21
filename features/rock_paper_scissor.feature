@@ -29,5 +29,11 @@ Feature: Start game
   Scenario: Choose a weapon
     Given I am on the "new_player" page
     And sign in as "Maverick"
-    When I enter in "rock" as my weapon choice
+    When I press on "Rock" as my weapon choice
     Then I will see a result
+
+  Scenario: New Player
+    Given I am on the "new_player" page
+    And sign in as "Maverick"
+    When I press "New Player"
+    Then I will be back on the homepage

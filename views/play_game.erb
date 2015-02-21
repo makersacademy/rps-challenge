@@ -1,7 +1,7 @@
 <h1>Begin game</h1>
 <h2>Today <%=session[:player].name%> you are playing the mighty <%=session[:computer].name%> machine</h2>
 
-<%=session[:player].name%> take your time and choose your weapon <br>
+<h1><%=session[:player].name%> take your time and choose your weapon</h1> <br>
 
 <form action="/result" method="post">
   <input type="submit" name="weapon" value="Rock" />

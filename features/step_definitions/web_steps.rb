@@ -28,13 +28,18 @@ Given(/^sign in as "(.*?)"$/) do |text|
   click_on("Submit")
 end
 
-When(/^I enter in "(.*?)" as my weapon choice$/) do |text|
-  fill_in("weapon", :with => text)
-  click_on("Submit")
+When(/^I press on "(.*?)" as my weapon choice$/) do |button|
+  click_on(button)
 end
 
 Then(/^I will see a result$/) do
-  expect(page).to have_content("The winner is:")
+  expect(page).to have_content("draw")
 end
 
+When(/^I press "(.*?)"$/) do |button|
+  click_on(button)
+end
 
+Then(/^I will be back on the homepage$/) do
+  expect(page).to have_content("Welcome to Rock Paper Scissors")
+end
