@@ -5,9 +5,10 @@ require_relative './lib/player'
 
 class RPS < Sinatra::Base
   
+  enable :sessions
+
   game = Game.new
   computer = Computer.new
-  game.add_player(computer)
 
   get '/' do
     erb :index
@@ -18,7 +19,9 @@ class RPS < Sinatra::Base
     if name.empty?
       erb :index
     else
+      game.players = []
       @player = Player.new(name)
+      game.add_player(computer)
       game.add_player(@player)
       erb :game
     end
