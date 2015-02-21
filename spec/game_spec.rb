@@ -15,5 +15,10 @@ describe Game do
     expect{game.add_player(player1)}.to raise_error(RuntimeError, 'Only 2 players allowed')
   end
 
+  it' should know who has won' do
+
+  end
+
+
 end
 
