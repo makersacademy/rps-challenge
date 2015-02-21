@@ -1,67 +1,88 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
-# require './lib/choice'
+require './lib/computer'
 
 class RPS_challenge < Sinatra::Base
 
-set :views, Proc.new {File.join(root, "..", "views")}
+enable :sessions
 
-RPS_array = ["Rock", "Paper", "Scissors"]
-# player1 = Player.new
-# computer = Player.new
+set :views, Proc.new {File.join(root, "..", "views")}
+  
+  player1 = Player.new
+  player2 = Player.new
+  game = Game.new
+  computer = Computer.new
 
   get '/' do
     erb :index
   end
 
-  get '/name' do
-    erb :name
+  get '/name1' do
+    erb :name1
   end
 
-  post '/name' do
-    if params[:name].empty?
+  post '/name1' do
+    if params[:name1].empty?
       @message = "Please enter your name"
-      erb :name
+      erb :name1
     else
-      redirect '/choice'
+      session[:name1] = params[:name1]
+      redirect '/name2'
     end
   end
 
-  get '/choice' do
-    erb :choice
+  get '/name2' do
+    erb :name2
   end
 
-  post '/choice' do
-    player1 = Player.new
-    player2 = Player.new
-    game = Game.new
+  post '/name2' do
+    if params[:name2].empty?
+      @message = "Please enter your name"
+      erb :name2
+    else
+      session[:name2] = params[:name2]
+      redirect '/choice1'
+    end
+  end
 
+  get '/choice1' do
     game.add_player(player1)
+    @player1_message = "#{session[:name1]}, please choose:"
+    erb :choice1
+  end
+
+  post '/choice1' do
+    player1.name = session[:name1]
+    session[:player1_choice] = params[:group1]
+    redirect '/choice2'
+   end 
+
+  get '/choice2' do
     game.add_player(player2)
+    @player2_message = "#{session[:name2]}, please choose:"
+    erb :choice2
+  end
 
-    player1.name = "Joe"
-    player2.name = "Computer"
-
-    player1.choice = params[:group1]
-    player2.choice = RPS_array.sample
-
-    @player_choice = "You chose #{player1.choice}"
-    @other_choice = "The computer chose #{player2.choice}"
-    
-    @outcome = "The winner is #{game.winner(player1,player2)}"
-
-    erb :choice
+  post '/choice2' do
+    player2.name = session[:name2]
+    session[:player2_choice] = params[:group2]
+    redirect '/outcome'
    end 
 
   get '/outcome' do
+    player1.name = session[:name1]
+    player2.name = session[:name2]
+    player1.choice = session[:player1_choice].to_sym
+    player2.choice = session[:player2_choice].to_sym
+    outcome = game.winner(player1, player2)
 
 
+    @player1_message = "#{player1.name} chose: #{player1.choice}"
+    @player2_message = "#{player2.name} chose: #{player2.choice}"
+    @result_message = "The winner is #{outcome}"
+    erb :outcome
   end
-
-
-
-
 
 
   # start the server if ruby file executed directly
