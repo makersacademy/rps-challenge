@@ -8,5 +8,10 @@ let(:player) {Player.new("Carrie")}
 		expect(player.name).to eq "Carrie"
 	end
 
+	it 'can pick a weapon' do 
+		player.pick(:paper)
+		expect(player.weapon).to eq :paper
+	end
+
 
 end

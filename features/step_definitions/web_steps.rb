@@ -28,8 +28,8 @@ Given(/^I am on the game page$/) do
 	click_on("submit")
 end
 
-Given(/^I enter a choice \(rock, paper, or scissors\) into the form$/) do
-  fill_in('player_choice', :with => 'rock')
+Given(/^I enter a choice \(Rock, Paper, or Scissors\) into the form$/) do
+  fill_in('player_choice', :with => 'Rock')
 end
 
 Then(/^I should be taken to _________\?\?$/) do

@@ -1,9 +1,13 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/computer'
+require_relative 'lib/game'
 
 class Rock_Paper_Scissors < Sinatra::Base
 
 	enable :sessions
+  game = Game.new
+  computer = Computer.new
 
 	set :views, Proc.new { File.join(root, ".", "views")}
 
@@ -17,6 +21,8 @@ post '/' do
       erb :index
     else
       player = Player.new(params[:player_name])
+      game.add_player(computer)
+      game.add_player(player)
       session[:me] = player
       @name = session[:me].name
       erb :game
@@ -29,7 +35,15 @@ get '/game' do
   end
 
   post '/game' do
-    erb :game
+    if params[:player_choice].empty?
+      @choice = "Please choose your weapon to play the game."
+      erb :game
+    else
+      player.pick(params[:player_choice])
+      session[:me] = player
+      @player_weapon = session[:me].weapon
+      erb :result
+    end
   end
 
 

@@ -18,6 +18,6 @@ Then I should stay on the homepage "Hello Makers Marketer!"
 
 Scenario: Take a Turn
 Given I am on the game page
-And I enter a choice (rock, paper, or scissors) into the form
+And I enter a choice (Rock, Paper, or Scissors) into the form
 When I click "submit"
 Then I should be taken to _________??

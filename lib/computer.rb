@@ -1,9 +1,9 @@
 class Computer
 
-attr_accessor :rps
+attr_accessor :weapon
 
-	def pick_rps
-		@rps = [:rock, :paper, :scissors].sample
+	def pick_weapon
+		@weapon = [:Rock, :Paper, :Scissors].sample
 	end
 
 
