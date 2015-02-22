@@ -1,8 +1,8 @@
-require 'AI'
+require 'Ai'
 
-describe AI do
+describe Ai do
   
-  let(:cpu)  { AI.new("CPU")   }
+  let(:cpu)  { Ai.new("CPU")   }
   let(:rock) { double :element }
 
   it "should be able to know if an element is available" do

@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './app/lib/player'
 require './app/lib/element'
-require './app/lib/AI.rb'
+require './app/lib/Ai'
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -10,7 +10,7 @@ class Rock_paper_scissors < Sinatra::Base
   rock = Element.rock
   paper = Element.paper
   scissors = Element.scissors
-  cpu = AI.new('CPU')
+  cpu = Ai.new('CPU')
     
   get '/' do
     erb :index

@@ -1,6 +1,6 @@
 require_relative 'Player'
 
-class AI < Player
+class Ai < Player
 
   attr_reader :elements_available, :rand_num
 
