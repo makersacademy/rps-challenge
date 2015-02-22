@@ -14,6 +14,10 @@ class Game
     raise 'Already two people playing!'
   end
 
+  def player_of(player_id)
+    [@player1, @player2].find {|player| player.browser_id == player_id}
+  end
+
   def opponent_of(player_id)
     if @player1.browser_id == player_id
       return @player2

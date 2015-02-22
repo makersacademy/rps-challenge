@@ -30,7 +30,11 @@ describe 'Game' do
     expect{game.add_player(third_wheel)}.to raise_error 'Already two people playing!'
   end
 
-  it 'will return the opponent player object when prompeted with a players id' do
+  it 'will return the player when prompted with its id' do
+    expect(game.player_of('01a28808f7')).to eq player1
+  end
+
+  it 'will return the opponent player when prompeted with a players id' do
     game.add_player(player2)
     expect(game.opponent_of('c362f6ea2f')).to eq player1
   end

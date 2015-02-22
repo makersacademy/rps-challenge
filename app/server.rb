@@ -18,6 +18,7 @@ class RockServer < Sinatra::Base
     @game = games.find {|game| !game.full?}
     @game.add_player(player)
     session.store(:game_id, @game.uuid)
+
     erb :play
   end
 
@@ -34,9 +35,11 @@ class RockServer < Sinatra::Base
     @game = games.find { |game| game.uuid == session[:game_id] }
     @game.add_player(:computer) if params[:computer] == "yes"
 
+    weapon = params[:weapon].upcase.to_sym
+
+
     erb :play
   end
-
 
 
 
