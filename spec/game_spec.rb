@@ -43,6 +43,10 @@ describe Game do
       expect(game.winner?(:scissor,:scissor)).to eq(:draw)
     end
 
+    it "should be able to track the score" do
+      game.winner?(:paper,:rock)
+      expect(game.player_score).to eq(1)
+    end
 
 
   end
