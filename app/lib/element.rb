@@ -19,8 +19,12 @@ class Element
     new(:name => "scissors", :loses_to => "rock")
   end 
 
-  def beat(element)
+  def confront(element)
    element.loses_to == self.name ? @win = true : @win = false
+  end
+
+  def win?
+    @win
   end
 
 end

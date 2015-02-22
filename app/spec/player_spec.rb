@@ -17,8 +17,8 @@ describe Player do
 
     it "should be able to win" do
       player.select_element(rock)
-      allow(rock).to receive(:beat).with(scissors)
+      allow(rock).to receive(:confront).with(scissors)
       allow(rock).to receive(:win).and_return(true)
-      expect(player.score_win).to eq(true)
+      expect(player.win?).to eq(true)
     end
 end

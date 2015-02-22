@@ -1,4 +1,4 @@
-require 'Ai'
+require 'ai'
 
 describe Ai do
   

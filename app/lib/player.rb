@@ -11,11 +11,7 @@ class Player
     @element_selected = element
   end
 
-  def score_win
-   @element_selected.win == true ? @win = true : @win = false
-  end
-
   def win?
-    @win
+   @element_selected.win == true ? @win = true : @win = false
   end
 end

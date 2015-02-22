@@ -11,12 +11,12 @@ describe Element do
   end
 
   it "should beat scissors" do
-    rock.beat(scissors)
+    rock.confront(scissors)
     expect(rock.win).to eq(true)
   end
 
   it "should lose against paper" do
-    rock.beat(paper)
-    expect(rock.win).to eq(false)
+    rock.confront(paper)
+    expect(rock.win?).to eq(false)
   end
 end

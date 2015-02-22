@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require './app/lib/player'
-require './app/lib/element'
-require './app/lib/Ai'
+require 'player.rb'
+require 'element.rb'
+require 'ai.rb'
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -44,8 +44,7 @@ class Rock_paper_scissors < Sinatra::Base
 
     player_move = @player.select_element(@element)
     cpu_move = cpu.random_selection
-    player_move.beat(cpu_move)
-    @player.score_win
+    player_move.confront(cpu_move)
     outcome = @player.win?
     @cpu_selection = cpu.element_selected.name
     
