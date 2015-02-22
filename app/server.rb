@@ -13,26 +13,24 @@ class RockServer < Sinatra::Base
   end
 
   post '/' do
-
-    player = Player.new(params[:name])
-    game = games.find {|game| !game.full?}
-    game.add_player(player)
-    session.store(:game_id, game.uuid)
-    @game = game
+    @browser_id = session[:session_id]
+    player = Player.new(params[:name],@browser_id)
+    @game = games.find {|game| !game.full?}
+    @game.add_player(player)
+    session.store(:game_id, @game.uuid)
     erb :play
   end
 
   get '/newgame' do
-
     if games.all? &:full?
       games << Game.new
     end
-
     erb :newgame
   end
 
   get '/play' do
 
+    @browser_id = session[:session_id]
     @game = games.find { |game| game.uuid == session[:game_id] }
     @game.add_player(:computer) if params[:computer] == "yes"
 
