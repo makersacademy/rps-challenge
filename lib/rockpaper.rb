@@ -12,14 +12,13 @@ class RockPaper < Sinatra::Base
     erb :index
   end
 
-  post '/' do
+post '/' do
     if params[:player_name].empty?
       @name = "Please tell me your name!"
       erb :index
     else
       player = Player.new(params[:player_name])
       session[:me] = player
-      add_player(player)
       @name = session[:me].name
       erb :newgame
     end

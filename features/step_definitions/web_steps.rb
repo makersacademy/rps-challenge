@@ -10,6 +10,6 @@ When(/^I press submit$/) do
   click_button('submit')
 end
 
-Then(/^I should be taken to a new page "(.*?)"$/) do |newgame|
+Then(/^I should be taken to the game$/) do
   visit('/newgame')
 end

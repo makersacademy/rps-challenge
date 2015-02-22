@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   
-  let(:player){Player.new}
+  let(:player){Player.new("Alex Kidd")}
   let(:computer){Computer.new}
   let(:game){Game.new(player, computer)}
 
