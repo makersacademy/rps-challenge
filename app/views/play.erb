@@ -16,7 +16,7 @@
 
     <% else # There are two players %>
 
-        You are playing <%= @game.opponent_of(@browser_id) %>
+        You are playing <%= @game.opponent_of(@browser_id).name %>
         <br>
 
         <a href="/play?weapon=ROCK"><img src="/images/rock.png"></a>
