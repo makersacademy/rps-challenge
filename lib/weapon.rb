@@ -1,6 +1,6 @@
 class Weapon
 
-  attr_accessor :type
+  attr_accessor :type, :paper, :scissors, :rock
 
   def paper
     @type = "paper"

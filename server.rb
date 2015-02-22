@@ -33,7 +33,13 @@ class Server < Sinatra::Base
     player_weapon = params[:weapon_choice]
     @player_name = params[:player_name]
     human = Player.new({name: @player_name})
-    human.weapon_choice = Weapon.new.(player_weapon)
+    if player_weapon == "rock"
+      human.weapon_choice = Weapon.new.rock
+    elsif player_weapon = "paper"
+       human.weapon_choice = Weapon.new.paper
+    else
+       human.weapon_choice = Weapon.new.scissors
+    end
     @game = session[:game]
     @game.add_player(human)
     winner = @game.result
