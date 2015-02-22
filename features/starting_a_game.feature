@@ -1,10 +1,10 @@
 Feature: Starting the game
   In order to play Rock, Paper, Scissors
+  Seeing as I love to play
   I want to start a new game
 
-  Scenario: Registering Your Name
+  Scenario: Visiting the Homepage
     Given I am on the homepage
-    When I click "New Game"
-    Then I should see "Please enter your name:"
-    When I enter the name "Kev" in "Name"
-    Then I should see "Welcome Kev!"
+    When I fill in "Name" with "Kev"
+    And click on "Start Game!"
+    Then I should see "Welcome Kev, please choose your weapon!"

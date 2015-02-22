@@ -1,11 +1,15 @@
 Given(/^I am on the homepage$/) do
+  visit '/'
 end
 
-When(/^I click "(.*?)"$/) do |arg1|
+When(/^I fill in "(.*?)" with "(.*?)"$/) do |player, name|
+  fill_in(player, :with => name)
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
+When(/^click on "(.*?)"$/) do |link|
+  click_on(link)
 end
 
-When(/^I enter the name "(.*?)" in "(.*?)"$/) do |arg1, arg2|
+Then(/^I should see "(.*?)"$/) do |text|
+  expect(page).to have_content(text)
 end
