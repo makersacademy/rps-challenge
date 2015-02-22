@@ -12,11 +12,12 @@ class RockServer < Sinatra::Base
     erb :index
   end
 
-  post '/' do
+  post '/play' do
     @browser_id = session[:session_id]
-    @player = Player.new(params[:name],@browser_id)
     @game = games.find {|game| !game.full?}
+    @player = Player.new(params[:name],@browser_id)
     @game.add_player(@player)
+    @opponent = @game.opponent_of(@browser_id)
     session.store(:game_id, @game.uuid)
 
     erb :play

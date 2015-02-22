@@ -1,29 +1,28 @@
 <h1>Rock..Paper..Scissors</h1>
 
+<% if @player.weapon == :no_weapon %>
 
-<% if @game.player2 == :no_player %>
+    <% if @game.player2 == :no_player %>
 
-    Waiting for another player to join...
-    <br>
-    <a href="/play?computer=yes">Play Computer</a>
-<% else %>
-    <% if @game.player2 == :computer %>
-        You are playing the computer
+        Waiting for another player to join...
         <br>
-        <a href="/play?weapon=rock"><img src="/images/rock.png"></a>
-        <a href="/play?weapon=paper"><img src="/images/paper.png"></a>
-        <a href="/play?weapon=scissors"><img src="/images/scissors.png"></a>
+        <a href="/play?computer=yes">Play Computer</a>
         <br>
+        <a href="/play">Refresh</a>
+    <% else %>
 
-    <% else # There are two players %>
-
-        You are playing <%= @opponent.name %>
+        You are playing <%= @opponent == :computer ? 'the computer' : @opponent.name %>
         <br>
-
         <a href="/play?weapon=rock"><img src="/images/rock.png"></a>
         <a href="/play?weapon=paper"><img src="/images/paper.png"></a>
         <a href="/play?weapon=scissors"><img src="/images/scissors.png"></a>
         <br>
 
     <% end %>
+<% else # Player has a weapon %>
+
+    HEY!.. Some result..stuff..will go here..
+    <br>Eventually..
+
+
 <% end %>
