@@ -13,7 +13,7 @@ And(/^I press the "(.*?)" button$/) do |arg1|
 end
 
 Then(/^I should receive a "(.*?)" with my chosen name$/) do |arg1|
-  page.has_content('Welcome "(.*?)"')
+  page.should have_content('Welcome to Rock Paper Scissors online John117! Play')
 end
 
 # Scenario 2: Make a move
@@ -22,8 +22,8 @@ Given(/^I am on the homepage after choosing a name$/) do
   visit('/game')
 end
 
-And(/^I click on"(.*?)"/) do |arg1|
-  click_on('Play')
+And(/^I click on "(.*?)"/) do |arg1|
+  click_on("Play")
 end
 
 When(/^I select the "(.*?)"$/) do |arg1|

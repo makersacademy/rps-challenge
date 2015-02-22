@@ -11,6 +11,6 @@ Then I should receive a "Welcome" with my chosen name
 
 Scenario: Make a move
 Given I am on the homepage after choosing a name
-And I click on the "Play" link
+And I click on "Play"
 When I select the "element"
 Then I should receive a "result"

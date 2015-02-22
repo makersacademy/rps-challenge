@@ -8,11 +8,11 @@ class Player
   end
 
   def select_element(element)
-    @element_selected = element.name
+    @element_selected = element
   end
 
-  def score_win(element)
-    @win = true if element.win == true
+  def score_win
+   @element_selected.win == true ? @win = true : @win = false
   end
 
   def win?
