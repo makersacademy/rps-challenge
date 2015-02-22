@@ -18,5 +18,10 @@ describe 'Player' do
     expect(player.weapon).to eq :ROCK
   end
 
+  it 'can be given a broswer_id' do
+    player.set_browser_id('769e9216f20adfa5bf7c64a')
+    expect(player.browser_id).to eq '769e9216f20adfa5bf7c64a'
+  end
+
 
 end

@@ -33,10 +33,8 @@ class RockServer < Sinatra::Base
 
   get '/play' do
 
-    # Need to use session ID to get correct game.
-
-    @game = games.first
-
+    @game = games.find { |game| game.uuid == session[:game_id] }
+    @game.add_player(:computer) if params[:computer] == "yes"
 
     erb :play
   end
