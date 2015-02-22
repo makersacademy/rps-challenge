@@ -3,7 +3,7 @@ Given(/^I am on the homepage$/) do
 end
 
 Given(/^I enter a name into the form$/) do
-   fill_in('player_name', :with => 'Carrie')
+  fill_in('player_name', :with => 'Carrie')
 end
 
 When(/^I click "(.*?)"$/) do |link|
@@ -15,7 +15,7 @@ Then(/^I should be taken to a new page "(.*?)"$/) do |text|
 end
 
 Given(/^I do not enter a name into the form$/) do
-     fill_in('player_name', :with => '')
+  fill_in('player_name', :with => '')
 end
 
 Then(/^I should stay on the homepage "(.*?)"$/) do |text|
@@ -37,7 +37,7 @@ Then(/^I should be taken to the result page "(.*?)"$/) do |text|
 end
 
 Given(/^I do not enter a choice into the form$/) do
-   fill_in('player_choice', :with => '')
+  fill_in('player_choice', :with => '')
 end
 
 Then(/^I should stay on the game page "(.*?)"$/) do |text|

@@ -3,7 +3,6 @@ In order to play rock paper scissors
 As a marketeer at Makers Academy
 I want to start a new game
 
-
 Scenario: Enter Name
 Given I am on the homepage
 And I enter a name into the form
