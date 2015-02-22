@@ -26,10 +26,6 @@ class RPS < Sinatra::Base
     player.name = @name
     player.weapon = @weapon
     computer.pick
-    p computer.weapon.to_s.capitalize
-    p player.name
-    p player.weapon
-    p game.winner
     @winner = game.winner
     erb :new_game
   end
