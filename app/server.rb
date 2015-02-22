@@ -14,9 +14,9 @@ class RockServer < Sinatra::Base
 
   post '/' do
     @browser_id = session[:session_id]
-    player = Player.new(params[:name],@browser_id)
+    @player = Player.new(params[:name],@browser_id)
     @game = games.find {|game| !game.full?}
-    @game.add_player(player)
+    @game.add_player(@player)
     session.store(:game_id, @game.uuid)
 
     erb :play
@@ -35,9 +35,12 @@ class RockServer < Sinatra::Base
     @game = games.find { |game| game.uuid == session[:game_id] }
     @game.add_player(:computer) if params[:computer] == "yes"
 
-    weapon = params[:weapon].upcase.to_sym
-
-
+    @player = @game.player_of(@browser_id)
+    @opponent = @game.opponent_of(@browser_id)
+    if params[:weapon]
+      weapon = params[:weapon].upcase.to_sym
+      @player.choose(weapon)
+    end
     erb :play
   end
 

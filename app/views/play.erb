@@ -1,5 +1,6 @@
 <h1>Rock..Paper..Scissors</h1>
 
+
 <% if @game.player2 == :no_player %>
 
     Waiting for another player to join...
@@ -16,7 +17,7 @@
 
     <% else # There are two players %>
 
-        You are playing <%= @game.opponent_of(@browser_id).name %>
+        You are playing <%= @opponent.name %>
         <br>
 
         <a href="/play?weapon=rock"><img src="/images/rock.png"></a>
