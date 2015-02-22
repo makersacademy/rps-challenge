@@ -32,15 +32,15 @@ describe Game do
     end
 
     it "should be able to declare a winner" do
-      game.add(player)
-      allow(game).to receive(:get_random_choice).and_return(:rock)
-      expect(game.winner?(player)).to eq true
+      expect(game.winner?(:paper,:rock)).to eq(:win)
     end
 
     it "should be able to declare a loser" do
-      game.add(player)
-      allow(game).to receive(:get_random_choice).and_return(:scissor)
-      expect(game.winner?(player)).to eq false
+      expect(game.winner?(:rock,:paper)).to eq(:lose)
+    end
+
+    it "should be able to declare a draw" do
+      expect(game.winner?(:scissor,:scissor)).to eq(:draw)
     end
 
 

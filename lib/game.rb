@@ -1,4 +1,4 @@
-require 'player'
+require_relative './player'
 
 class Game
 
@@ -22,8 +22,14 @@ class Game
     player.choice = choice
   end
 
-  def winner?(player)
-    @combinations[get_random_choice] == player.choice
+  def winner?(player_choice,rand_choice)
+    if @combinations[rand_choice] == player_choice
+      :win
+    elsif rand_choice == player_choice
+      :draw
+    else
+      :lose
+    end
   end
 
   def get_random_choice
