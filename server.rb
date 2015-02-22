@@ -28,7 +28,7 @@ class Rock_paper_scissors < Sinatra::Base
     erb :game
   end
 
-  post '/game' do
+  post '/game' do # This function is a huge mess of code, still have to work on it
     @player = session[:player]
     session[:cpu] = cpu
     cpu.add_element(rock, paper, scissors)
