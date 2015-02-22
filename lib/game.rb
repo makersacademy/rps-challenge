@@ -28,11 +28,11 @@ class Game
       else
         "draw"
       end
-    else #rock
-      if @players.last.weapon_choice.type == "paper"
-        @players.last
-      elsif @players.last.wweapon_choice.type == "scissors"
+    else #paper
+      if @players.last.weapon_choice.type == "rock"
         @players.first
+      elsif @players.last.weapon_choice.type == "scissors"
+        @players.last
       else
         "draw"
       end
