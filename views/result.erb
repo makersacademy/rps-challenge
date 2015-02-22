@@ -1,0 +1,10 @@
+<p>You chose <%= @user_shape %></p>
+<p>Your opponent chose <%=	@computer_shape %></p>
+
+<% if @winner == :computer %>
+	Sorry <%= @name %>, you lose
+<% elsif @winner == :user %>
+	Congratulations <%= @name %>, you win!
+<% else %>
+	This game is a tie
+<% end %>
