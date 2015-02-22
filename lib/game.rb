@@ -10,12 +10,12 @@ class Game
 
    def winner
      if @computer.weapon == "Rock" && @player.weapon == "Scissors"
-      "computer wins"
+      "Computer wins"
      elsif @computer.weapon == "Paper" && @player.weapon == "Rock"
-       "computer wins"
+       "Computer wins"
      elsif @computer.weapon == "Scissors" && @player.weapon == "Paper"
-       "computer wins"
-     elsif @player.weapon == "Rock" && @computer.weapon == "Raper"
+       "Computer wins"
+     elsif @player.weapon == "Rock" && @computer.weapon == "Scissors"
        "#{@player.name} wins"
      elsif @player.weapon == "Paper" && @computer.weapon == "Rock"
        "#{@player.name} wins"

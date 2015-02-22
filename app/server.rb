@@ -6,6 +6,7 @@ require_relative '../lib/computer'
 class RPS < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "..", "views") }
+  set :public_folder, Proc.new { File.join(root, '..', "public") }
 
   player = Player.new
   computer = Computer.new
@@ -29,6 +30,7 @@ class RPS < Sinatra::Base
     p player.name
     p player.weapon
     p game.winner
+    @winner = game.winner
     erb :new_game
   end
 

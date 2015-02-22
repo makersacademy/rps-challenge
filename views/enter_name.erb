@@ -1,12 +1,16 @@
 <html>
-  <head></head>
+  <head><link rel="stylesheet" type="text/css" href="css/style.css"></head>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+  <audio controls autoplay>
+    <source src="name.mp3" type="audio/mpeg">
+  </audio>
   <body>
     <h1>Enter Name</h1>
     <form action='/new_game' method="post">
-    <input type="text" name="name" id="button" required>
-    <input type="submit" name="weapon" value="Rock" />
-    <input type="submit" name="weapon" value="Paper" />
-    <input type="submit" name="weapon" value="Scissors" />
+    <input type="text" name="name" id="submit" required>
+    <input type="submit" name="weapon" value="Rock" id="submit"/>
+    <input type="submit" name="weapon" value="Paper" id="submit"/>
+    <input type="submit" name="weapon" value="Scissors" id="submit" />
     </form>
   </body>
 </html>

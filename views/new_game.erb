@@ -1,2 +1,12 @@
-<h1>Hello <%= @name %> </h1>
-<h1>You have chosen a <%= @weapon %></h1>
+<html>
+  <head><link rel="stylesheet" type="text/css" href="css/style.css"></head>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+  <audio controls autoplay>
+    <source src="finish.mp3" type="audio/mpeg">
+  </audio>
+  <body>
+   <h1>Hello <%= @name %> </h1>
+  <h1>You have chosen <%= @weapon %></h1>
+  <h1>Result: <%= @winner %></h1>
+  </body>
+</html>

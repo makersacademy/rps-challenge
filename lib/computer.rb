@@ -5,11 +5,11 @@ class Computer
   def pick
     number = rand(1..9)
       if number <= 3
-        @weapon = "rock"
+        @weapon = "Rock"
       elsif number <=6
-        @weapon = "paper"
+        @weapon = "Paper"
       else
-        @weapon = "scissors"
+        @weapon = "Scissors"
       end
   end
 
