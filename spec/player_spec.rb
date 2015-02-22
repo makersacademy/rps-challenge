@@ -2,13 +2,14 @@ require 'player'
 
 describe Player do
 
-  let (:player) { Player.new('Phil') }
+  let (:player) { Player.new }
 
   it 'can have a name' do
     expect(player).to respond_to(:name)
   end
 
-  it 'is assigned a name when initialized' do
+  it 'can be given a name' do
+    player.name_player('Phil')
     expect(player.name).to eq('Phil')
   end
 
