@@ -1,5 +1,7 @@
 # Challenge: Rōnin Badge Test
 
+[You can check my app here!](http://awesome-rock-paper-scissors.herokuapp.com/)
+
 Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
