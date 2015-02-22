@@ -2,9 +2,13 @@ require 'game'
 
 describe 'Game' do
 
-  let(:player1) {double :player}
-  let(:player2) {double :player}
+  let(:player1) {double :player, browser_id: '01a28808f7'}
+  let(:player2) {double :player, browser_id: 'c362f6ea2f'}
   let(:game) {Game.new(player1)}
+
+  it 'has a unique game id (uuid)' do
+    expect(game.uuid).to_not eq nil
+  end
 
   it 'can be initalized with 1 player.' do
     expect(game.player1).to eq player1
@@ -24,6 +28,11 @@ describe 'Game' do
     third_wheel = double :player
     game.add_player(player2)
     expect{game.add_player(third_wheel)}.to raise_error 'Already two people playing!'
+  end
+
+  it 'will return the opponent player object when prompeted with a players id' do
+    game.add_player(player2)
+    expect(game.opponent_of('c362f6ea2f')).to eq player1
   end
 
   describe 'Winning and Losing' do

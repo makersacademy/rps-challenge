@@ -14,6 +14,14 @@ class Game
     raise 'Already two people playing!'
   end
 
+  def opponent_of(player_id)
+    if @player1.browser_id == player_id
+      return @player2
+    else
+      @player2.browser_id == player_id ? (return @player1) : (raise 'Player ID Mismatch!')
+    end
+  end
+
   def full?
     @player2 == :no_player ? false : true
   end

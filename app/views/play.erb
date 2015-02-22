@@ -7,8 +7,8 @@
     <a href="/play?computer=yes">Play Computer</a>
 <% else %>
     <% if @game.player2 == :computer %>
-
-
+        You are playing the computer
+        <br>
         <a href="/play?weapon=ROCK"><img src="/images/rock.png"></a>
         <a href="/play?weapon=PAPER"><img src="/images/paper.png"></a>
         <a href="/play?weapon=SCISSORS"><img src="/images/scissors.png"></a>
@@ -16,8 +16,8 @@
 
     <% else # There are two players %>
 
-
-
+        You are playing <%= @game.opponent_of(@browser_id) %>
+        <br>
 
         <a href="/play?weapon=ROCK"><img src="/images/rock.png"></a>
         <a href="/play?weapon=PAPER"><img src="/images/paper.png"></a>
