@@ -1,5 +1,15 @@
 # Challenge: Rōnin Badge Test
 
+Basic challenge completed.
+
+Next features to implement:
+- ability to play again without reloading from '/'
+- multiplayer (bonus chalenge)
+- possibly more ambitious HTML and/or some CSS
+
+(Please note I worked on this challenge in [my sandbox repo](https://github.com/GabeMaker/makers-sandbox) and commited the final version directly to the forked repo)
+
+
 Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
