@@ -22,14 +22,15 @@ Given(/^I am on the homepage after choosing a name$/) do
   visit('/game')
 end
 
-And(/^I click on "(.*?)"/) do |arg1|
+And(/^I click on the "(.*?)" link$/) do |arg1|
   click_on("Play")
 end
 
-When(/^I select the "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I select "(.*?)"$/) do |arg1|
+  fill_in('element', :with => 'rock')
 end
 
 Then(/^I should receive a "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  page.should have_content('You selected rock')
 end
+
