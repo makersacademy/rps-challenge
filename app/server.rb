@@ -6,16 +6,16 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  game = Game.new
+  GAME = Game.new
 
   get '/' do
     erb :index
   end
 
   post '/game' do
-    game.player = Player.new(session[:Name])
+    GAME.player = Player.new(session[:Name])
     session[:Name] = params[:Name]
-    erb :game
+    redirect to '/game'
   end
 
   get '/game' do
@@ -23,10 +23,20 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/scores' do
+    GAME.player.choice = params[:choice]
+    @player = session[:Name]
+    redirect to '/scores'
+  end
 
-
-
-
+  get '/scores' do
+    GAME.result
+    @winner = GAME.winner
+    @player = session[:Name]
+    @choice = GAME.player.choice
+    @computer = GAME.computer_choice
+    erb :scores
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -1,11 +1,12 @@
+require_relative 'player'
+
 class Game
 
-  attr_accessor :player, :name
-  attr_reader :computer_choice, :winner
+  attr_accessor :name, :player, :computer_choice, :winner
 
   def initialize
-    @player = nil
     @name = name
+    @player = nil
     @computer_choice = nil
     @winner = nil
   end
@@ -13,14 +14,14 @@ class Game
   RULES = {"rock" => ["scissors"], "scissors" => ["paper"], "paper" => ["rock"]}
 
   def choose_randomly
-    @computer_choice = ["rock", "paper", "scissors"].shuffle.sample
+    @computer_choice = ["rock", "paper", "scissors"].sample
   end
 
   def result
     choose_randomly
+    @winner = "You tied. Try again!" if @player.choice == @computer_choice
     @winner = @player.name if RULES[@player.choice].include? @computer_choice
     @winner = "Computer wins!" if RULES[@computer_choice].include? @player.choice
-    @winner = "You tied with the computer. Try again!" if @player.choice == @computer_choice
   end
 
 end

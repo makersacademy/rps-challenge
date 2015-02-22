@@ -8,3 +8,8 @@ Feature: Starting the game
     When I fill in "Name" with "Kev"
     And click on "Start Game!"
     Then I should see "Welcome Kev, please choose your weapon!"
+
+  Scenario: Choosing Rock
+    Given I have added my name
+    When I click on "rock"
+    Then I should see "You have chosen rock"
