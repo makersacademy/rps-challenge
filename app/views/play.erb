@@ -21,8 +21,23 @@
     <% end %>
 <% else # Player has a weapon %>
 
-    HEY!.. Some result..stuff..will go here..
-    <br>Eventually..
+    <% if @opponent.weapon != :no_weapon %>
+        <% winner = @game.resolve_winner %>
+
+        <% if winner == :TIE %>
+            The game was a draw. PLAY AGAIN!
+        <% else %>
+            <% winner == :computer ? (winner = "The computer") : (winner = winner.name) %>
+            <%= winner %> is the winner!!
+            <br>
+            <br>
+            <img src="/images/<%=@player.weapon.downcase.to_s%>.png">
+            <img src="/images/<%=@opponent.weapon.downcase.to_s%>.png">
+
+        <% end %>
+    <% else %>
+        <a href="/play?weapon=<%=@player.weapon.downcase.to_s%>">Refresh</a>
+    <% end %>
 
 
 <% end %>
