@@ -20,11 +20,7 @@ class Server < Sinatra::Base
     if params[:player_name].empty?
       erb :index
     else
-      player_name = params[:player_name]
-      human = Player.new({name: player_name})
-      @player_name = player_name
-      @game = session[:game]
-      @game.add_player(human)
+      @player_name = params[:player_name]
       erb :game
     end
   end
@@ -34,9 +30,14 @@ class Server < Sinatra::Base
   end
 
   post '/result' do
-    @player_weapon = params[:weapon_choice]
+    player_weapon = params[:weapon_choice]
+    @player_name = params[:player_name]
+    human = Player.new({name: @player_name})
+    human.weapon_choice = Weapon.new.(player_weapon)
     @game = session[:game]
-
+    @game.add_player(human)
+    winner = @game.result
+    @winner = winner.name
     erb :result
   end
 
