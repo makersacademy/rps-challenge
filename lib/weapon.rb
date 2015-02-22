@@ -1,14 +1,21 @@
 class Weapon
 
+  attr_accessor :type
+
   def paper
-    "paper"
+    @type = "paper"
   end
 
   def scissors
-    "scissors"
+    @type = "scissors"
   end
 
   def rock
-    "rock"
+    @type = "rock"
   end
+
+  def random_weapon
+    [rock,scissors,paper].shuffle.last
+  end
+
 end

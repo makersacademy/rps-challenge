@@ -14,4 +14,6 @@ describe Player do
     expect(player.weapon_choice).to eq paper
   end
 
+
+
 end

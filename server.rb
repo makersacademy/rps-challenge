@@ -11,6 +11,10 @@ class Server < Sinatra::Base
     @player_name = session[:me]
   end
 
+  def create_computer
+
+  end
+
   get '/' do
     erb :index
   end

@@ -6,7 +6,6 @@ describe Game do
   let(:player1) {double :player}
 
   it 'should be able to add a player' do
-    game = Game.new
     expect(game.add_player(player1)).to eq [player1]
   end
 
@@ -16,6 +15,7 @@ describe Game do
   end
 
   it' should know who has won' do
+
 
   end
 
