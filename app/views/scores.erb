@@ -1,13 +1,19 @@
+<center>
+
 <h1>Rock, Paper, Scissors</h1>
 
-<% if @winner != 'Draw' %>
+<% if @winner != 'tie' %>
 
-<h2>You have chosen <%= @choice %>.</h2>
+<h2>You have chosen <%= @choice %>
 
-<h2>The computer has chosen <%= @computer %>. <%= @winner %>wins!</h2>
+<p>The computer has chosen <%= @computer %></p>
+
+<p><%= @winner %> wins!</h2></p>
 
 <% else %>
 
-<h2>You have chosen <%= @choice %> The computer has chosen <%= @computer %>. It's a <%= @winner %>!</h2>
+<h2>You have chosen <%= @choice %>. The computer has chosen <%= @computer %>. It's a <%= @winner %></h2>
 
 <% end %>
+
+</center>

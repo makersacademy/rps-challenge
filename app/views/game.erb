@@ -1,15 +1,22 @@
+<center>
+
 <h1>Rock, Paper, Scissors</h1>
 
 <% if @player %>
 
-<h2> Welcome <%= @player %>, please choose your weapon! </h2>
+<h2>Welcome <%= @player.capitalize %>
+
+<p>Please choose your weapon!</p></h2>
 
 <% end %>
 
 <form method="post" action="/scores">
   <input type="image" src=http://1000awesomethings.files.wordpress.com/2008/08/rock.jpg width='200' height='200' name="choice" value="rock">
+  <input type="image" src=http://1000awesomethings.files.wordpress.com/2008/08/paper.jpg width='200' height='200' name="choice" value="paper">
+  <input type="image" src=http://1000awesomethings.files.wordpress.com/2008/08/scissors.jpg width='200' height='200' name="choice" value="scissors">
 </form>
 
+</center>
 
 
 
