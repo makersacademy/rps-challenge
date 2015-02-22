@@ -11,7 +11,7 @@
         <a href="/play">Refresh</a>
     <% else %>
 
-        You are playing <%= @opponent == :computer ? 'the computer' : @opponent.name %>
+        You are playing <%= @opponent.name %>
         <br>
         <a href="/play?weapon=rock"><img src="/images/rock.png"></a>
         <a href="/play?weapon=paper"><img src="/images/paper.png"></a>
@@ -27,8 +27,7 @@
         <% if winner == :TIE %>
             The game was a draw. PLAY AGAIN!
         <% else %>
-            <% winner == :computer ? (winner = "The computer") : (winner = winner.name) %>
-            <%= winner %> is the winner!!
+            <%= winner.name %> is the winner!!
             <br>
             <br>
             <img src="/images/<%=@player.weapon.downcase.to_s%>.png">

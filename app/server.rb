@@ -1,10 +1,12 @@
 require_relative './lib/game'
 require_relative './lib/player'
+require_relative './lib/computer'
 require 'sinatra/base'
 
 class RockServer < Sinatra::Base
 
   games = Array.new
+  computer = Computer.new
 
   enable :sessions
 
@@ -34,7 +36,7 @@ class RockServer < Sinatra::Base
 
     @browser_id = session[:session_id]
     @game = games.find { |game| game.uuid == session[:game_id] }
-    @game.add_player(:computer) if params[:computer] == "yes"
+    @game.add_player(computer) if params[:computer] == "yes"
 
     @player = @game.player_of(@browser_id)
     @opponent = @game.opponent_of(@browser_id)

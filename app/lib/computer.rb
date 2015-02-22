@@ -5,7 +5,11 @@ class Computer
   end
 
   def weapon
-    [:ROCK,:PAPER,:SCISSORS].sample
+    @weapon ||= :no_weapon
+  end
+
+  def choose_weapon
+    @weapon = [:ROCK,:PAPER,:SCISSORS].sample
   end
 
 
