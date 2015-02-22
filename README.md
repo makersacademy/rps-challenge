@@ -1,6 +1,6 @@
 # Challenge: Rōnin Badge Test
 
-[You can check my app here!](http://awesome-rock-paper-scissors.herokuapp.com/)
+[You can check my app directly here!](http://awesome-rock-paper-scissors.herokuapp.com/)
 
 Knowing how to build web applications is getting us almost there as web developers!
 
