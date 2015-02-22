@@ -27,4 +27,6 @@ class Game
   def random_weapon
     self.weapon = @weapons.sample
   end
+
+
 end

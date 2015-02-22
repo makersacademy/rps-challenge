@@ -11,7 +11,6 @@ When(/^click on "(.*?)"$/) do |arg1|
 end
 
 Then(/^I will see three options "(.*?)", "(.*?)", "(.*?)"$/) do |arg1, arg2, arg3|
-  
   expect(page).to have_content(arg1)
   expect(page).to have_content(arg2)
   expect(page).to have_content(arg3)

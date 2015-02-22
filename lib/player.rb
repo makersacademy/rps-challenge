@@ -9,4 +9,8 @@ class Player
     @weapon = choice.to_sym
   end
 
+  def choose_random_weapon
+    @weapon = [:scisor, :rock, :paper].sample
+  end
+
 end
