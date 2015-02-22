@@ -1,17 +1,20 @@
 Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/'
 end
 
 When(/^I enter my name$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in('playername', :with=>'Thomas') 
 end
 
 When(/^click on "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_button('Start Game')
 end
 
 Then(/^I will see three options "(.*?)", "(.*?)", "(.*?)"$/) do |arg1, arg2, arg3|
-  pending # express the regexp above with the code you wish you had
+  
+  expect(page).to have_content(arg1)
+  expect(page).to have_content(arg2)
+  expect(page).to have_content(arg3)
 end
 
 #

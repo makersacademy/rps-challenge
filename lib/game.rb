@@ -1,8 +1,10 @@
 class Game
-  attr_accessor :players
+  attr_accessor :players 
   
   def initialize
   @players = []
+  @beats = { paper: :scisor, rock: :paper, scisor: :rock}
+  @weapons = @beats.keys
   end
 
   def add_player(name)
@@ -13,23 +15,16 @@ class Game
   end
 
   def beater?(player1, player2)
-    if player1.weapon == :scisor && player2.weapon ==:paper
-      player1 
-    elsif player1.weapon == :rock && player2.weapon == :paper
-      player2 
-    elsif player1.weapon == :scisor && player2.weapon == :rock
-      player2 
-    elsif player1.weapon == :paper && player2.weapon == :rock
-      player1 
-    elsif player1.weapon == :rock && player2.weapon == :scisor
-      player1 
-    elsif player1.weapon == :paper && player2.weapon == :scisor
-      player2 
-    else 
-      raise "Tie. Choose again"
+    if player1.weapon == player2.weapon
+      "Tie. Choose again"
+    elsif player1.weapon == @beats[player2.weapon]
+      player1
+    else
+      player2
     end
   end
 
-
-
+  def random_weapon
+    self.weapon = @weapons.sample
+  end
 end

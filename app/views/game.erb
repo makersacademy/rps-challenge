@@ -1,0 +1,12 @@
+<h1>Rock, Paper, Scisors</h1>
+<p>Hello <%= @name %>, if you want to play please choose one of the following weapons:</p>
+
+<form action="/game" method="POST">
+  <input type="radio" name="weapon" value="Rock">Rock
+  <br>
+  <input type="radio" name="weapon" value="Paper">Paper
+  <br>
+  <input type="radio" name="weapon" value="Scisor">Scisor
+  <br>
+  <input type="submit" name="choose_weapon" value="Choose">
+</form>

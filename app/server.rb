@@ -1,8 +1,28 @@
 require 'sinatra/base'
 
 class RockPaperScisors < Sinatra::Base
+  
   get '/' do
-    'Hello RockPaperScisors!'
+    if params[:playername]
+      erb :game
+    else 
+      erb :register
+    end
+  end
+
+get '/register' do
+  erb :register
+end
+
+
+  post '/register' do
+    if params[:name]
+        erb :game
+      else 
+
+      @name = params[:playername]
+      erb :game
+    end
   end
 
   # start the server if ruby file executed directly
