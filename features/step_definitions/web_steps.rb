@@ -32,7 +32,16 @@ Given(/^I enter a choice \(Rock, Paper, or Scissors\) into the form$/) do
   fill_in('player_choice', :with => 'Rock')
 end
 
-Then(/^I should be taken to _________\?\?$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should be taken to the result page "(.*?)"$/) do |text|
+  expect(page).to have_content text
 end
+
+Given(/^I do not enter a choice into the form$/) do
+   fill_in('player_choice', :with => '')
+end
+
+Then(/^I should stay on the game page "(.*?)"$/) do |text|
+  expect(page).to have_content text
+end
+
 
