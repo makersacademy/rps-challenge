@@ -6,9 +6,12 @@
 
         Waiting for another player to join...
         <br>
-        <a href="/play?computer=yes">Play Computer</a>
-        <br>
         <a href="/play">Refresh</a>
+        <br>
+        or...
+        <br>
+        <a href="/play?computer=yes">Play Computer</a>
+
     <% else %>
 
         You are playing <%= @opponent.name %>
@@ -21,6 +24,8 @@
     <% end %>
 <% else # Player has a weapon %>
 
+    <% @opponent.choose_weapon if @opponent.name == 'the Computer' %>
+
     <% if @opponent.weapon != :no_weapon %>
         <% winner = @game.resolve_winner %>
 
@@ -28,12 +33,13 @@
             The game was a draw. PLAY AGAIN!
         <% else %>
             <%= winner.name %> is the winner!!
+        <% end %>
             <br>
             <br>
             <img src="/images/<%=@player.weapon.downcase.to_s%>.png">
             <img src="/images/<%=@opponent.weapon.downcase.to_s%>.png">
-
-        <% end %>
+            <br>
+            <%=@player.name%> ..... <%=@opponent.name%>
     <% else %>
         <a href="/play?weapon=<%=@player.weapon.downcase.to_s%>">Refresh</a>
     <% end %>
