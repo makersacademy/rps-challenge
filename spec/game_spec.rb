@@ -1,26 +1,25 @@
 require 'game'
 
 describe Game do
-
-  let(:game){Game.new}
-  let(:first_player){Player.new 'Player 1'}
-  let(:second_player){Player.new 'Player 2'}
-
-context "Adding a player" do
-
-  it 'should be able to add a player' do
-    game.add_player(first_player)
-    expect(game.first_player).to eq first_player
-  end
-
-  it 'should be able to add a second player' do
-    game.add_player(first_player)
-    game.add_player(second_player)
-    expect(game.second_player).to eq second_player
-  end
-
-end
-
-
   
+  let(:player){Player.new}
+  let(:computer){Computer.new}
+  let(:game){Game.new(player, computer)}
+
+  it "should have two players on initialisation" do
+    expect(game.players.count).to eq 2
+  end
+
+  it "should know if there is a winner" do
+    allow(player).to receive(:pick).and_return "rock"
+    allow(computer).to receive(:pick).and_return "scissors"
+    expect(game.winner).to eq "You win!"
+  end
+
+  it "should know if there is a draw" do
+    allow(player).to receive(:pick).and_return "rock"
+    allow(computer).to receive(:pick).and_return "rock"
+    expect(game.winner).to eq "Draw! Try again"
+  end
+
 end
