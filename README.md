@@ -1,6 +1,6 @@
 # Challenge: Rōnin Badge Test
 
-Basic challenge completed.
+Basic challenge completed. It's up on [Heroku](https://morning-mesa-7567.herokuapp.com)
 
 Next features to implement:
 - ability to play again without reloading from '/'
