@@ -1,16 +1,17 @@
-require 'player'
+require './lib/player'
 
 describe Player do
 
   it 'has a name' do
-    player = Player.new("Paul")
-    expect(player.name).to eq "Paul"
+    paul = Player.new
+    paul.name = "Paul"
+    expect(paul.name).to eq "Paul"
   end
 
-  it 'can pick a move' do
-    player = Player.new("Paul")
-    player.picks = "Rock"
-    expect(player.pick).to eq "Rock"
+  it 'can choose a weapon' do
+    paul = Player.new
+    paul.weapon = "Scissors"
+    expect(paul.weapon).to eq "Scissors"
   end
 
 end

@@ -1,36 +1,29 @@
-require 'game'
+require './lib/game'
 
-describe Game  do
+describe Game do
 
-  let(:game) {Game.new(player1, player2)}
-  let(:player1) { double :player }
-  let(:player2) {double :player }
-
-  it 'should have two players when created' do
+  it 'enables two players to join the game' do
+    paul = double(:player)
+    computer = double(:computer)
+    game = Game.new(paul, computer)
     expect(game.players.count).to eq 2
   end
 
-  it 'if player1 picks rock and player2 picks scissors player1 wins' do
-    allow(player1).to receive(:pick).and_return "Rock"
-    allow(player2).to receive(:pick).and_return "Scissors"
-    expect(game.winner).to eq player1
+  it 'knows if there is a winner' do
+    paul = double(:player, name: "Paul")
+    computer = double(:computer)
+    game = Game.new(paul, computer)
+    allow(paul).to receive(:weapon).and_return "Paper"
+    allow(computer).to receive(:weapon).and_return "Rock"
+    expect(game.winner).to eq "Paul wins"
   end
 
-  it 'if player1 picks paper and player2 picks rock' do
-    allow(player1).to receive(:pick).and_return "Paper"
-    allow(player2).to receive(:pick).and_return "Rock"
-    expect(game.winner).to eq player1
-  end
-
-  it 'if player1 picks scissors and player2 picks paper' do
-    allow(player1).to receive(:pick).and_return "Scissors"
-    allow(player2).to receive(:pick).and_return "Paper"
-    expect(game.winner).to eq player1
-  end
-
-    it 'if player1 picks paper and player2 picks paper' do
-    allow(player1).to receive(:pick).and_return "Paper"
-    allow(player2).to receive(:pick).and_return "Paper"
+  it 'knows when its a draw' do
+    paul = double(:player, name: "Paul")
+    computer = double(:computer)
+    game = Game.new(paul, computer)
+    allow(paul).to receive(:weapon).and_return "Rock"
+    allow(computer).to receive(:weapon).and_return "Rock"
     expect(game.winner).to eq "Draw"
   end
 

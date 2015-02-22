@@ -1,12 +1,7 @@
+
 source "https://rubygems.org"
- gem 'sinatra'
-
-group :development, :test do
-  gem 'capybara'
-  gem 'cucumber'
-  gem 'cucumber-sinatra'
-  gem 'launchy'
-  gem 'rspec'
-  gem 'shotgun'
-end
-
+gem "rspec"
+gem "launchy"
+gem 'sinatra'
+gem 'shotgun'
+gem 'cucumber-sinatra'
