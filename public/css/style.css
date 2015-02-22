@@ -1,44 +1,53 @@
 @import url('http://fonts.googleapis.com/css?family=VT323');
+@import url("http://fonts.googleapis.com/css?family=Coustard");
 
 body {
-    background-image: url(../images/rocks.jpg);
+    background-image: url(../images/rock1.jpg);
 }
 h1 {
-    color: red;
+    color: black;
     text-align: center;
-    font-family: 'VT323', serif;
+    font-family: 'Coustard', normal;
     font-size: 78px;
 }
 
 h2 {
-  color: red;
+  color: black;
   text-align: center;
-  font-family: 'VT323', serif;
+  font-family: 'Coustard', serif;
   font-size: 48px;
 
 }
 
 a {
-  color: yellow;
+  color: black;
   text-align: center;
-  font-family: 'VT323', serif;
+  font-family: 'Coustard', serif;
   font-size: 48px;
 }
 
 form {
-  color: red;
+  color: black;
   text-align: center;
-  font-family: 'VT323', serif;
+  font-family: 'Coustard', serif;
   font-size: 48px;
 }
 
 input {
-  font-family: 'VT323', serif;
-  background-color:red;
-  color:#fff;
+  font-family: 'Coustard', serif;
+  background-color:black;
+  color:red;
   text-align: center;
-  font-size:18px;
-  line-height:30px;
+  font-size:30px;
+  vertical-align: top;
+  line-height:5px;
   border-radius:20px;
+  position:absolute
+  display: inline; width: 250px; height: 60px; padding: 0px 0 0 0; margin: 0 auto;
 
+}
+
+
+audio {
+  display: none;
 }
