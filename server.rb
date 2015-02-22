@@ -1,21 +1,18 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
+require_relative 'lib/weapon'
 
 class Server < Sinatra::Base
 
   enable :sessions
 
-  def set_player
-    player_name = params[:player_name]
-    session[:me] = Player.new({name: player_name})
-    @player_name = session[:me]
-  end
-
-  def create_computer
-
-  end
-
   get '/' do
+    computer = Player.new({:name => "Computer"})
+    computer.weapon_choice = Weapon.new.random_weapon
+    @game = Game.new
+    session[:game] = @game
+    @game.add_player(computer)
     erb :index
   end
 
@@ -23,7 +20,11 @@ class Server < Sinatra::Base
     if params[:player_name].empty?
       erb :index
     else
-      set_player
+      player_name = params[:player_name]
+      human = Player.new({name: player_name})
+      @player_name = player_name
+      @game = session[:game]
+      @game.add_player(human)
       erb :game
     end
   end
@@ -33,6 +34,9 @@ class Server < Sinatra::Base
   end
 
   post '/result' do
+    @player_weapon = params[:weapon_choice]
+    @game = session[:game]
+
     erb :result
   end
 
