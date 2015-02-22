@@ -24,7 +24,7 @@ attr_accessor :players
 				return @players[1]
 			when @players[1].weapon == :Paper && @players[0].weapon == :Rock
 				return @players[1]
-			else
+			when @players[0].weapon == @players[1].weapon
 				return nil
 		end
 	end
