@@ -12,7 +12,7 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 - the game will choose a random option
 - a winner will be declared
 
-As always you can use google your notes and everything else. This is a challenge for you and you only! And you must submit a pull request to this repo with your challenge solution (or partial solution) by 9am Monday morning.
+As always you can use google your notes and everything else. This is a challenge for you and you only!
 
 **Rōnin BANZAI!!!!**
 
