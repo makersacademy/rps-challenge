@@ -1,0 +1,12 @@
+<%= session[:player_name] %> V/S computer
+
+<h3>Please choose one of the following options</h3>
+Rock
+Paper
+Scissors
+
+<form action='/result' method='post'align=center>
+  Please enter your choice:
+  <input type='text' name='player_choice'>
+  <input type='submit' value='submit' name='submit'>
+</form>

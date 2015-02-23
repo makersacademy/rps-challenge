@@ -1,13 +1,23 @@
-Given(/^I am on the homepage$/) do
-  visit ('/')
+Given(/^I am on the '\/' page$/) do
+  visit '/'
 end
 
-When(/^I follow "(.*?)"$/) do |link|
-  click_link(link)
+When(/^I fill in 'name'$/) do
+  fill_in('player_name', :with => 'Guido')
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  save_and_open_page
-  pending # express the regexp above with the code you wish you had
+When(/^i click 'submit'$/) do
+  click_on('submit')
+end
+
+Then(/^I should see hello "(.*?)"$/) do |arg1|
+  page.has_content?('foo')
+end
+
+Given(/^I am on the '\/new_player' page$/) do
+  visit '/new_player'
+end
+
+When(/^I fill in 'choice'$/) do
 end
 
