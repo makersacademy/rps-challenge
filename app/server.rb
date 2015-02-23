@@ -7,11 +7,7 @@ class RockPaperScisors < Sinatra::Base
 enable :sessions
 
 get '/' do
-  if params[:playername]
-    erb :game
-  else 
     erb :register
-  end
 end
 
 get '/register' do
@@ -19,40 +15,37 @@ get '/register' do
 end
 
 post '/register' do
-  if params[:name]
-      erb :game
-    else
     RPS = Game.new
     session[:playername] = params[:playername]
-    @@playerone = Player.new("#{session[:playername]}")
-    RPS.add_player(@@playerone)
-    @@playertwo = Player.new("Computer")
-    RPS.add_player(@@playertwo)
+    @@player_one = Player.new("#{session[:playername]}")
+    RPS.add_player(@@player_one)
+    @@player_two = Player.new("Computer")
+    RPS.add_player(@@player_two)
     erb :game
-  end
 end
 
 post '/game' do
-  @gameover = RPS.over?
-  @weapon = params[:weapon]
-  @@playerone.choose_weapon(@weapon)
-  @@playertwo.choose_random_weapon
-  #Decides who won or tell if it was a tie:
+  @game_over = RPS.over?
+  @weapon = params[:weapon].to_sym
+  @@player_one.weapon = @weapon
+  @@player_two.random_weapon
   @beater = RPS.beater?
-  if @beater == "Tie. Choose again"
-    @tie = "Tie. Choose again"
-    erb :game
-  else
-    @countmessage = "You: #{RPS.count[@@playerone.name]} - your opponent: #{RPS.count[@@playertwo.name]}" 
-    erb :game
-  end
+  @player_one_count = RPS.count(@@player_one.name) 
+  @player_two_count = RPS.count(@@player_two.name)
+  @tie = :tie if @beater == :tie
+  @winner = RPS.winner
+  erb :game
+end
+
+get '/game' do
+  @player_one_count = RPS.count(@@player_one.name)
+  @player_two_count = RPS.count(@@player_two.name)
+
 end
 
 get '/playagain' do
-redirect '/'
+  redirect '/'
 end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

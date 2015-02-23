@@ -3,20 +3,19 @@ class Game
   attr_reader :count 
   
   def initialize
-  @players = []
-  @beats = { paper: :scissor, rock: :paper, scissor: :rock}
-  @weapons = @beats.keys
-  @turns = []
+    @players = []
+    @turns = []
   end
 
+  BEATS = { paper: :scissor, rock: :paper, scissor: :rock}
+
   def add_player(name)
-       @players << name 
+    @players << name 
   end
 
   def beater?
-    if players[0].weapon == players[1].weapon
-      "Tie. Choose again"
-    elsif players[0].weapon == @beats[players[1].weapon]
+   if players[0].weapon == players[1].weapon; :tie
+    elsif players[0].weapon == BEATS[players[1].weapon]
       @turns << players[0].name
       players[0]
     else
@@ -25,12 +24,16 @@ class Game
     end
   end
 
-  def count
-    @count = @turns.each_with_object(Hash.new(0)) { |player,beats| beats[player] += 1 }
+  def count(player)
+    @turns.count { |turn| turn == player }
   end
 
   def over?
-    @turns.length < 2 ? false : true
+    @turns.length >= 2 ? true : false
+  end
+
+  def winner
+    count(players[0].name) < count(players[1].name) ? players[1].name : players[0].name
   end
 
 end

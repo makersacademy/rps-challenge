@@ -18,11 +18,6 @@ describe Game do
     expect(game.players).to eq([thomas, computer])
   end
 
-  xit "shouldn't add more then two players" do
-    add_players_to_game
-    expect{game.add_player(computer)}.to raise_error(RuntimeError, "Sorry, this game can only be played by two players at a time")
-  end
-
   it "can decide, when a player has beaten the other" do
     add_players_to_game
     expect(game.beater?).to eq(thomas)
@@ -34,21 +29,21 @@ describe Game do
     expect(game.beater?).to eq(player3)
   end
 
-  it "should tell the player to try again when he has tied with his opponent" do
+  it "tells the player to try again when he has tied with his opponent" do
     game.add_player(thomas)
     game.add_player(thomas_alias)
-    expect(game.beater?).to eq("Tie. Choose again")
+    expect(game.beater?).to eq(:tie)
   end
 
-  it "should keep track of the turns" do
+  it "keeps track of the turns" do
     add_players_to_game
     game.beater?
     add_players_to_game
     game.beater?
-    expect(game.count[:thomas]).to eq(2)
+    expect(game.count(:thomas)).to eq(2)
   end
 
-  it "should know that the geme is over after three beats" do
+  it "knows that the game is over after three beats" do
     add_players_to_game
     game.beater?
     add_players_to_game
@@ -57,8 +52,21 @@ describe Game do
     expect(game).to be_over
   end
 
-  it "shouldn't break when asked over? and no turn has happend" do
+  it "when there are games left, game shouldn't be over" do
+    add_players_to_game
+    game.beater?
     expect(game).not_to be_over
   end
+
+  it "can tell who is the overall winner" do
+    game.add_player(thomas)
+    game.add_player(player3)
+    game.beater?
+    game.add_player(thomas)
+    game.add_player(player3)
+    game.beater?
+    expect(game.winner).to eq(player3.name)
+  end
+
 
 end

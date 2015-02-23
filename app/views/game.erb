@@ -1,28 +1,38 @@
 <h1>Rock, Paper, Scissors</h1>
+<% unless @game_over %>
+  <p>Your count:<%= @player_one_count %></p>
+  <p>The Computers count:<%= @player_two_count %></p>
 
-<!-- <p><i>Staring <b><%= @players %></b> against <b><%= @players %></b> </i></p>  -->
-
-<% if !@gameover %>
+  <% if @tie %><p style="color: red" >You have tied with the Computer. Please choose again.</p><% end %>
   
-  <p><%= @countmessage %></p>
-  <p style="color: red" ><%= @tie %></p>
-  
-
   <p>Hello <%= session[:playername] %>, please choose one of the following weapons:</p>
 
   <form action="/game" method="POST" id="rps">
-    <input type="radio" name="weapon" value="rock" id="rock" >Rock
-    <br>
-    <input type="radio" name="weapon" value="paper" id="paper">Paper
-    <br>
-    <input type="radio" name="weapon" value="scissor" id="scissor">Scissor
-    <br>
-    <input type="submit" name="choose_weapon" value="Choose">
+    <fieldset>
+      <legend>Weapons you can choose:</legend>
+      <p>
+        <input type="radio" name="weapon" value="rock" id="weapon_1" >
+        <label for="weapon_1">Rock</label>
+      </p>
+      <p>
+        <input type="radio" name="weapon" value="paper" id="weapon_2">
+        <label for="weapon_2">Paper</label>
+      </p>
+      <p>
+        <input type="radio" name="weapon" value="scissor" id="weapon_3">
+        <label for="weapon_3">Scissor</label>
+      </p>
+     </fieldset> 
+    <p>
+      <input type="submit" name="choose_weapon" value="Choose">
+    </p>
   </form>
 
 <% else %>
-  <p><%= @countmessage %></p>
-  <p>Game is over</p>
+  <!-- Code that's being displayed when the game is over: -->
+  <p style="color: red">Game is over, <%= @winner %> has won</p>
+  <p>Your count:<%= @player_one_count %></p>
+  <p>The Computers count:<%= @player_two_count %></p>
   <a href="/playagain">Play again</a>
 <% end %>
 

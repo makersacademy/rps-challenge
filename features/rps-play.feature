@@ -11,5 +11,4 @@ Feature: Play Rock Paper Scissors
 
   Scenario: Declaring the winner
     Given the players have taken three turns each
-    When one player has a higher score
     Then he should know that he is the winner

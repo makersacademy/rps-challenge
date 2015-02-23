@@ -1,16 +1,12 @@
 class Player
-
-  attr_reader :name, :weapon
+  attr_accessor :weapon
+  attr_reader :name
+  
   def initialize(name)
     @name=name
   end
 
-  def choose_weapon(choice)
-    @weapon = choice.to_sym
-  end
-
-  def choose_random_weapon
+  def random_weapon
     @weapon = [:scissor, :rock, :paper].sample
   end
-
 end

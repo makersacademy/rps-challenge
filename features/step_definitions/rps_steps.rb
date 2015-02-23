@@ -16,7 +16,7 @@ Then(/^I will see three options "(.*?)", "(.*?)", "(.*?)"$/) do |arg1, arg2, arg
   expect(page).to have_content(arg3)
 end
 
-#
+#________________
 
 Given(/^I have registered and see the options$/) do
   visit('/register')
@@ -26,16 +26,16 @@ Given(/^I have registered and see the options$/) do
 end
 
 When(/^I choose a weapon$/) do
-  choose('rock')
+  choose('weapon_1')
   click_button('Choose')
 end
 
 
 Then(/^I should see my score$/) do
-  expect(page).to have_content("You:")
+  expect(page).to have_content("Your count:")
 end
 
-# 
+#________________
 
 Given(/^the players have taken three turns each$/) do
   visit('/register')
@@ -43,22 +43,18 @@ Given(/^the players have taken three turns each$/) do
   click_button('Start Game')
   
   find('form#rps')
-  choose('rock')
+  choose('weapon_1')
   click_button('Choose')
 
-  # find('form#rps')
-  # choose('scissor')
-  # click_button('Choose')
+  find('form#rps')
+  choose('weapon_1')
+  click_button('Choose')
 
-  # find('form#rps')
-  # choose('paper')
-  # click_button('Choose')
-end
-
-When(/^one player has a higher score$/) do
-  pending # express the regexp above with the code you wish you had
+  find('form#rps')
+  choose('weapon_1')
+  click_button('Choose')
 end
 
 Then(/^he should know that he is the winner$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content("Thomas has won")
 end
