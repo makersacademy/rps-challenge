@@ -33,13 +33,15 @@ class Rock_paper_scissors < Sinatra::Base
     session[:cpu] = cpu
     cpu.add_element(rock, paper, scissors)
     element_chosen = params[:element]
-    
+
     if element_chosen == 'rock'
       element = rock
     elsif element_chosen == 'paper'
       element = paper
-    else
+    elsif element_chosen == 'scissors'
       element = scissors
+    else
+      redirect '/game'
     end 
 
     player_move = @player.select_element(element)
