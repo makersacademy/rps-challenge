@@ -1,6 +1,6 @@
 class Game
 
-attr_reader :players, :winning
+attr_reader :players, :winning, :possibilities
 
   def initialize
     @players = []
@@ -8,22 +8,27 @@ attr_reader :players, :winning
       "scissors" => "paper",
       "paper" => "rock"
     }
+    @possibilities = possibilities
   end
 
   def add_player(player)
     @players << player
   end
 
-  def draw?
-    return "draw" if players[0].choice == players[1].choice
+
+  def winner?(players)
+    if players[1].choice == winning[players[0].choice]
+      return "win"
+    elsif players[0].choice == winning[players[1].choice]
+      return "lost"
+    else
+      return "draw"
+    end
   end
 
-  def lost?
-    return "lost" if players[0].choice == winning[players[1].choice]
-  end
-
-  def win?
-    return "win" if players[1].choice == winning[players[0].choice]
+  def random_answer
+    possibilities = ["rock", "paper", "scissors"].shuffle
+    return possibilities[0]
   end
 
 end

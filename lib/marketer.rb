@@ -1,6 +1,6 @@
 class Marketer
 
-  attr_reader :name, :choice
+  attr_reader :name, :choice,
 
   def initialize
     @name = []

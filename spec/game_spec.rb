@@ -18,19 +18,19 @@ describe Game do
   it 'should know when there is a draw' do
     game.add_player(jordan)
     game.add_player(steve)
-    expect(game.draw?).to eq "draw"
+    expect(game.winner?).to eq "draw"
   end
 
   it 'should know where a player loses' do
     game.add_player(henry)
     game.add_player(roy)
-    expect(game.lost?).to eq "lost"
+    expect(game.winner?).to eq "lost"
   end
 
   it 'should know when a player wins' do
     game.add_player(mihai)
     game.add_player(ben)
-    expect(game.win?).to eq "win"
+    expect(game.winner?).to eq "win"
   end
 
 end
