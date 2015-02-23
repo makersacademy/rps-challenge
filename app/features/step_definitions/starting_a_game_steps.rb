@@ -28,12 +28,12 @@ And(/^I click on the "(.*?)" link$/) do |arg1|
   click_on(arg1)
 end
 
-When(/^I select "(.*?)"$/) do |arg1|
-  click_on('rock')
+When(/^I fill the form with "(.*?)"$/) do |arg1|
+  fill_in('element', :with => 'rock')
   click_on('submit')
 end
 
 Then(/^I should receive a "(.*?)"$/) do |arg1|
-  page.should have_content('You win')
+  page.should have_content('You chose rock')
 end
 

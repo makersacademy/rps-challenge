@@ -47,6 +47,7 @@ class Rock_paper_scissors < Sinatra::Base
     player_move.confront(cpu_move)
     outcome = @player.win?
     @cpu_selection = cpu.element_selected.name
+    @player_selection = @player.element_selected.name
     
     if outcome == true
       @win = 'You win!'
