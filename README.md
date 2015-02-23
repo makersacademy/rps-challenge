@@ -16,6 +16,11 @@ As always you can use google your notes and everything else. This is a challenge
 
 **Rōnin BANZAI!!!!**
 
+To run
+
+https://pure-brook-4821.herokuapp.com/
+
+
 ## Bonus 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
