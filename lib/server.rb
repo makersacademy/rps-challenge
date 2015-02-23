@@ -13,6 +13,7 @@ class Rps < Sinatra::Base
   end
 
   post '/' do
+  	session[:current] = params[:name]
   	@name = params[:name]
     @game = game
     if params[:name].empty?
@@ -23,7 +24,6 @@ class Rps < Sinatra::Base
       game.add_player(@@player1)
       @@player2 = Player.new("AI")
       game.add_player(@@player2)
-      puts @game.inspect
       erb :index
     end
   end
@@ -33,16 +33,13 @@ class Rps < Sinatra::Base
   end
 
   post '/player' do
+  	@game = game
+  	session[:current] = params[:choice]
   	@choice = params[:choice]
   	@@player1.make_choice(@choice)
-  	@@player2.computer_choice
-  	puts @player.inspect
-  	@@winner = game.winner?(@@player1, @@player2)
+  	@comchoice = @@player2.computer_choice
+  	@winner = game.winner?(@@player1, @@player2)
     erb :player
-  end
-
-  post '/result' do
-  	erb :result
   end
 
   # start the server if ruby file executed directly

@@ -11,7 +11,7 @@ class Player
   end
 
   def computer_choice
-    @choice = [:rock, :paper, :scissors].sample
+    @choice = ["paper", "rock","scissors"].sample
   end
 
 end

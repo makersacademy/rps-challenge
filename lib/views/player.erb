@@ -1,6 +1,10 @@
 <div>
 	<% if @choice %>
-	You have entered <%= @choice %>
+	You chose <%= @choice %>
+	<br>
+	Player Two chose <%= @comchoice  %>
+	<br>
+	<%= @winner %>
 	<% else %>
 	<p>Please choose from one of the following choices:</p>
 	<form action="/player" method="post">
