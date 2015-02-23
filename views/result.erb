@@ -8,7 +8,7 @@
 <h3>
   <form action="/game" method="post">
     <question>Would you like to play again <%= @player_name %>?</question><br>
-    <input type="hiddden" value="<%= @player_name %>" name="player_name">
+    <input style="display: none" type="hiddden" value="<%= @player_name %>" name="player_name">
     <input type="submit" value="Yes Please!" name="submit">
   </form>
 </h3>
