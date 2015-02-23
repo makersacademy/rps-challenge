@@ -21,6 +21,8 @@ class Server < Sinatra::Base
       erb :index
     else
       @player_name = params[:player_name]
+      human = Player.new({name: @player_name})
+      session[:human] = human
       erb :game
     end
   end
@@ -30,20 +32,32 @@ class Server < Sinatra::Base
   end
 
   post '/result' do
-    player_weapon = params[:weapon_choice]
+    @player_weapon = params[:weapon_choice]
     @player_name = params[:player_name]
-    human = Player.new({name: @player_name})
-    if player_weapon == "rock"
+
+    human = session[:human]
+
+    if @player_weapon == "rock"
       human.weapon_choice = Weapon.new.rock
-    elsif player_weapon = "paper"
+    elsif @player_weapon = "paper"
        human.weapon_choice = Weapon.new.paper
     else
        human.weapon_choice = Weapon.new.scissors
     end
+
     @game = session[:game]
     @game.add_player(human)
+
+    computer = @game.players.select{|player| player.name == "Computer"}.first
+    @computer_weapon = computer.weapon_choice
+
     winner = @game.result
-    @winner = winner.name
+    if winner == "draw"
+      @winner = winner
+    else
+      @winner = winner.name
+    end
+
     erb :result
   end
 
