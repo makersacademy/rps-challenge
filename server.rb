@@ -23,6 +23,8 @@ class Server < Sinatra::Base
       @player_name = params[:player_name]
       human = Player.new({name: @player_name})
       session[:human] = human
+      @game = session[:game]
+      @game.add_player(human)
       erb :game
     end
   end
@@ -46,16 +48,14 @@ class Server < Sinatra::Base
     end
 
     @game = session[:game]
-    @game.add_player(human)
-
     computer = @game.players.select{|player| player.name == "Computer"}.first
     @computer_weapon = computer.weapon_choice
 
     winner = @game.result
     if winner == "draw"
-      @winner = winner
+      @winner = "It's a " + winner +"!"
     else
-      @winner = winner.name
+      @winner = winner.name + " wins!"
     end
 
     erb :result
