@@ -38,7 +38,7 @@ post '/game' do
   @@playerone.choose_weapon(@weapon)
   @@playertwo.choose_random_weapon
   #Decides who won or tell if it was a tie:
-  @beater = RPS.beater?(@@playertwo, @@playerone)
+  @beater = RPS.beater?
   if @beater == "Tie. Choose again"
     @tie = "Tie. Choose again"
     erb :game

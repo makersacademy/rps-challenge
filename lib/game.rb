@@ -13,16 +13,15 @@ class Game
        @players << name 
   end
 
-  def beater?(player2, player1)
-
-    if player1.weapon == player2.weapon
+  def beater?
+    if players[0].weapon == players[1].weapon
       "Tie. Choose again"
-    elsif player1.weapon == @beats[player2.weapon]
-      @turns << player1.name
-      player1
+    elsif players[0].weapon == @beats[players[1].weapon]
+      @turns << players[0].name
+      players[0]
     else
-      @turns << player2.name
-      player2
+      @turns << players[1].name
+      players[1]
     end
   end
 

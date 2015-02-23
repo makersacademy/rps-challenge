@@ -25,32 +25,35 @@ describe Game do
 
   it "can decide, when a player has beaten the other" do
     add_players_to_game
-    expect(game.beater?(thomas, computer)).to eq(thomas)
+    expect(game.beater?).to eq(thomas)
   end
 
   it "can decide, when a player has beaten the other" do
     game.add_player(thomas)
     game.add_player(player3)
-    expect(game.beater?(thomas, player3)).to eq(player3)
+    expect(game.beater?).to eq(player3)
   end
 
   it "should tell the player to try again when he has tied with his opponent" do
     game.add_player(thomas)
     game.add_player(thomas_alias)
-    expect(game.beater?(thomas, thomas_alias)).to eq("Tie. Choose again")
+    expect(game.beater?).to eq("Tie. Choose again")
   end
 
   it "should keep track of the turns" do
-    game.beater?(thomas, computer)
-    game.beater?(thomas, computer)
+    add_players_to_game
+    game.beater?
+    add_players_to_game
+    game.beater?
     expect(game.count[:thomas]).to eq(2)
   end
 
   it "should know that the geme is over after three beats" do
-    game.beater?(thomas, computer)
-    game.beater?(thomas, computer)
-    game.beater?(thomas_alias, thomas)
-    game.beater?(thomas, computer)
+    add_players_to_game
+    game.beater?
+    add_players_to_game
+    game.beater?
+    add_players_to_game
     expect(game).to be_over
   end
 

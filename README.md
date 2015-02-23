@@ -21,7 +21,7 @@ I like the way I found to let the game decide who has won a round.
 TODO:
 - Layout
 - I haven't found a way around packing most of the game into the same POST route and using if-Statements to control the output.
-- If I want to play again without restarting the server I get an error I haven't understood so far.
+- FIXED: If I want to play again without restarting the server I get an error I haven't understood so far.
 - My cucumber tests are not complete
 
 
