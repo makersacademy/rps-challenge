@@ -15,7 +15,7 @@
 - Paper beats Rock
 
 ##Comment
-The game against the computer works fine. After three rounds the game is over. I implemented a score count. And if player and computer chose the same weapon, the player is asked to choose again. 
+The game against the computer works fine. Playable at https://rps-challenge.herokuapp.com/ After three rounds the game is over. I implemented a score count. And if player and computer chose the same weapon, the player is asked to choose again. 
 I like the way I found to let the game decide who has won a round.  
 
 TODO:
