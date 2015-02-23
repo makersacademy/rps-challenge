@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require '~/Projects/rps-challenge/lib/game.rb'
-require '~/Projects/rps-challenge/lib/player.rb'
-require '~/Projects/rps-challenge/lib/rps.rb'
+require 'game'
+require 'player'
+require 'rps'
 
 class RpsChallenge < Sinatra::Base
 
