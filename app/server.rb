@@ -4,12 +4,10 @@ require './lib/player'
 
 class RockPaperScisors < Sinatra::Base
 
-configure do
-  enable :session
-end
+
+enable :sessions
 
 RPS = Game.new
-TURNS = []
 
 get '/' do
   if params[:playername]
@@ -27,8 +25,8 @@ post '/register' do
   if params[:name]
       erb :game
     else 
-    @name = params[:playername]
-    @@playerone = Player.new("#{@name}")
+    session[:playername] = params[:playername]
+    @@playerone = Player.new("#{session[:playername]}")
     RPS.add_player(@@playerone)
     @@playertwo = Player.new("Computer")
     RPS.add_player(@@playertwo)
@@ -37,6 +35,7 @@ post '/register' do
 end
 
 post '/game' do
+  @gameover = RPS.over?
   @weapon = params[:weapon]
   @@playerone.choose_weapon(@weapon)
   @@playertwo.choose_random_weapon
@@ -46,13 +45,8 @@ post '/game' do
     @tie = "Tie. Choose again"
     erb :game
   else
-  #Saves to TURNS the beater of each round
-  TURNS << @beater.name
-  #Saves a count into COUNT Hash
-  @count = TURNS.each_with_object(Hash.new(0)) { |player,beats| beats[player] += 1 }
-  #Saves count into variable
-  @countmessage = "You: #{@count[@@playerone.name]} - your opponent: #{@count[@@playertwo.name]}" 
-  erb :game
+    @countmessage = "You: #{RPS.count[@@playerone.name]} - your opponent: #{RPS.count[@@playertwo.name]}" 
+    erb :game
   end
 end
 

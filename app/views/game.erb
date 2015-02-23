@@ -2,29 +2,27 @@
 
 <!-- <p><i>Staring <b><%= @players %></b> against <b><%= @players %></b> </i></p>  -->
 
-<p style="color: red" ><%= @tie %></p>
+<% if !@gameover %>
+  
+  <p><%= @countmessage %></p>
+  <p style="color: red" ><%= @tie %></p>
+  
 
-<% if TURNS.length < 3 %>
+  <p>Hello <%= session[:playername] %>, please choose one of the following weapons:</p>
 
-<h3>Round <%= TURNS.length %> of 3</h3>
-
-<%unless TURNS.length == 0 %><p id="countmessage"><%= @countmessage %></p><% end %>
-
-<p>Hello <%= @name %>, please choose one of the following weapons:</p>
-
-<form action="/game" method="POST" id="rps">
-  <input type="radio" name="weapon" value="rock" id="rock" >Rock
-  <br>
-  <input type="radio" name="weapon" value="paper" id="paper">Paper
-  <br>
-  <input type="radio" name="weapon" value="scissor" id="scissor">Scissor
-  <br>
-  <input type="submit" name="choose_weapon" value="Choose">
-</form>
+  <form action="/game" method="POST" id="rps">
+    <input type="radio" name="weapon" value="rock" id="rock" >Rock
+    <br>
+    <input type="radio" name="weapon" value="paper" id="paper">Paper
+    <br>
+    <input type="radio" name="weapon" value="scissor" id="scissor">Scissor
+    <br>
+    <input type="submit" name="choose_weapon" value="Choose">
+  </form>
 
 <% else %>
-  <p> <%= @beater.name %> has won this round.</p>
   <p><%= @countmessage %></p>
+  <p>Game is over</p>
   <a href="/playagain">Play again</a>
-
 <% end %>
+

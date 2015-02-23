@@ -3,10 +3,10 @@ require 'game'
 describe Game do
   
   let(:game){Game.new}
-  let(:thomas){double :player, weapon: :scissor}
-  let(:computer){double :player, weapon: :paper}
-  let(:thomas_alias){double :player, weapon: :scissor}
-  let(:player3){double :player, weapon: :rock}
+  let(:thomas){double :player, weapon: :scissor, name: :thomas}
+  let(:computer){double :player, weapon: :paper, name: :computer}
+  let(:thomas_alias){double :player, weapon: :scissor, name: :thomas_alias}
+  let(:player3){double :player, weapon: :rock, name: :player3}
 
   def add_players_to_game
     game.add_player(thomas)
@@ -38,6 +38,24 @@ describe Game do
     game.add_player(thomas)
     game.add_player(thomas_alias)
     expect(game.beater?(thomas, thomas_alias)).to eq("Tie. Choose again")
+  end
+
+  it "should keep track of the turns" do
+    game.beater?(thomas, computer)
+    game.beater?(thomas, computer)
+    expect(game.count[:thomas]).to eq(2)
+  end
+
+  it "should know that the geme is over after three beats" do
+    game.beater?(thomas, computer)
+    game.beater?(thomas, computer)
+    game.beater?(thomas_alias, thomas)
+    game.beater?(thomas, computer)
+    expect(game).to be_over
+  end
+
+  it "shouldn't break when asked over? and no turn has happend" do
+    expect(game).not_to be_over
   end
 
 end

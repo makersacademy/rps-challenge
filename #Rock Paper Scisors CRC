@@ -29,3 +29,13 @@ Game tracks count
 Game switches turns
 Game declares winner
 
+
+
+
+Backup:
+
+<% if @turns.length < 3 %>
+
+<h3>Round <%= @turns.length %> of 3</h3>
+
+<%unless @turns.length == 0 %><p id="countmessage"><%= @countmessage %></p><% end %>
