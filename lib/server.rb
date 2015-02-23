@@ -35,7 +35,7 @@ class Rps < Sinatra::Base
   post '/player' do
   	@choice = params[:choice]
   	@@player1.make_choice(@choice)
-  	@@player2.choose_random_weapon
+  	@@player2.computer_choice
   	puts @player.inspect
   	@@winner = game.winner?(@@player1, @@player2)
     erb :player
