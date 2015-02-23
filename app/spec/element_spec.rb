@@ -19,4 +19,9 @@ describe Element do
     rock.confront(paper)
     expect(rock.win?).to eq(false)
   end
+
+  it "should draw a tie if the other element is rock" do
+    rock.confront(rock)
+    expect(rock.win?).to eq(nil)
+  end
 end

@@ -20,7 +20,13 @@ class Element
   end 
 
   def confront(element)
-   element.loses_to == self.name ? @win = true : @win = false
+    if element.loses_to == self.name 
+      @win = true 
+    elsif element.name == self.name
+      @win = nil
+    else 
+      @win = false
+    end
   end
 
   def win?

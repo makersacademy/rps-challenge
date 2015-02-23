@@ -53,8 +53,13 @@ class Rock_paper_scissors < Sinatra::Base
       @cpu_selection
       cpu.random_selection
       erb :game
-    else
+    elsif outcome == false
       @lose = 'You lose!'
+      @cpu_selection
+      cpu.random_selection
+      erb :game
+    else 
+      @tie = 'Tie!'
       @cpu_selection
       cpu.random_selection
       erb :game
