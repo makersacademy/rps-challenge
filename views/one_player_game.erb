@@ -1,0 +1,25 @@
+
+	<% if @draw==true%> 
+		<h2><%=@message%></h2>
+	<% else %>
+		<% if @winner == true %>
+			<h2><%=@message%></h2>
+		<% end %>
+		<% if PLAYER.selection!=nil %>	
+			<p>You chose <%=PLAYER.selection.upcase %>, and the computer chose <%=@computer_move.upcase %></p>
+		<% end %>			
+	<% end %>
+
+	<h2>One Player Game</h2>
+	<h2><%= PLAYER.name %>, please select your move!</h2>	
+
+	<form action='/one_player_game' method="post">
+	    Go Rock!<input id="rock" type="radio" name="selection" value="rock">
+	    Go Paper!<input id="paper" type="radio" name="selection" value="paper">
+	    Go Scissors!<input id="scissors" type="radio" name="selection" value="scissors">
+		<input type="submit" name="go" value="Go!">
+	</form>
+ 
+ 	<form action='/' method='get'>
+ 		<input type="submit" name="quit" value="Quit current game">	
+ 	</form>
