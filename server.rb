@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require 'player.rb'
-require 'element.rb'
-require 'ai.rb'
+require './app/lib/player.rb'
+require './app/lib/element.rb'
+require './app/lib/ai.rb'
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -51,10 +51,12 @@ class Rock_paper_scissors < Sinatra::Base
     if outcome == true
       @win = 'You win!'
       @cpu_selection
+      cpu.random_selection
       erb :game
     else
       @lose = 'You lose!'
       @cpu_selection
+      cpu.random_selection
       erb :game
     end
   end

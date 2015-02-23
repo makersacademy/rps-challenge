@@ -13,6 +13,7 @@ class Ai < Player
   end
 
   def random_selection
+    rand_num_generator
     if rand_num == 1
       select_element(elements_available[0])
     elsif rand_num == 2
