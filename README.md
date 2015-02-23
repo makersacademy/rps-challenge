@@ -1,3 +1,5 @@
+# rock_paper_scissor
+=======
 # Challenge: Rōnin Badge Test
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -29,3 +31,4 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
