@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require './app/lib/player'
-require './app/lib/element'
-require './app/lib/ai'
+require_relative './app/lib/player'
+require_relative './app/lib/element'
+require_relative './app/lib/ai'
 
 class Rock_paper_scissors < Sinatra::Base
 
