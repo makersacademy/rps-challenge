@@ -7,3 +7,6 @@ Feature: Starting the game
     Given I am on the homepage
     When I click on "New Game"
     Then I should see "Enter your name:"
+    When I enter the name "John" in the "name" field
+    And I click on "Submit"
+    Then I should see "Game on John!"

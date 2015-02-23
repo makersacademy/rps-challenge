@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPSLS < Sinatra::Base
 
@@ -10,6 +11,16 @@ class RPSLS < Sinatra::Base
     erb :newgame
   end
 
+  post '/newgame' do
+    if params[:name].empty?
+      @message = "What is your name?"
+      erb :newgame
+    else
+      player1 = Player.new(params[:name])
+      @player = player1.name
+      erb :newgame
+    end
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

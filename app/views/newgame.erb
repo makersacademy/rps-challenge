@@ -1,5 +1,18 @@
-<form action="/play" method="post" align="center">
-  Enter your name:
-  <input type="text" name="name">
-  <input type="submit" value="Submit">
-</form>
+<div align = "center">
+
+<% if @player1 %>
+  Game on <%= @player1 %>!
+  <a href="/play">Start Game</a>
+<% else %>
+  <form action="/newgame" method="post">
+    Enter your name:
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% end %>
+
+<% if @message %>
+  <h1><%= @message %></h1>
+<% end %>
+
+</div>

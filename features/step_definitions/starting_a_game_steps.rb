@@ -9,3 +9,7 @@ end
 Then(/^I should see "(.*?)"$/) do |text|
   body.should match(text)
 end
+
+When(/^I enter the name "(.*?)" in the "(.*?)" field$/) do |player, field|
+  fill_in(field, :with => player)
+end
