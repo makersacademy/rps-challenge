@@ -1,7 +1,17 @@
 <html>
-<head></head>
-  <body>
-  <h1>You have chosen <%= @weapon %></h1>
-  <h1>the computer chose <%= @computer_weapon %></h1>
-  <h1>Result: <%= @winner %></h1>
-  </body>
+	<head><link rel="stylesheet" type="text/css" href="css/style.css"></head>
+	<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+	  <body>
+	  	<p>
+	  	<h1>Result: <%= @winner %></h1>
+	  	<br>
+	  	<br>
+	  	<br>
+		  <h3>You have chosen <%= @weapon %></h3>
+		  <h3>the computer chose <%= @computer_weapon %></h3>
+		  <form action='/game'>
+		  	<input type="submit" value="New Game?" id="submit">
+		  </form>
+		 	<audio src="101137__cgeffex__play-ball.wav"  autoplay></audio>
+		 	<audio src="tumblr_lsgp97uZOk1qkn96bo1.mp3"  autoplay></audio>
+	  </body>

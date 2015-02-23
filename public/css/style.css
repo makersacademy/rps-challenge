@@ -1,3 +1,35 @@
-body{text-align:center;}
+body{
+	background-image: url("http://38.media.tumblr.com/f62fc79c5a4e678c03443a0a31424a04/tumblr_my2izeX64U1t0cscho1_400.gif");
+	background-size: 100% 100%;
+	text-align:center;
+	font-family: 'Fontdiner Swanky', cursive;
+}
 
-h1{}
+h1{
+  margin-top: 100px;
+  color: black;
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+#submit {
+  margin-top: 40px;
+  background-color: green;
+  border-radius:15px;
+  color: black;
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border:none;
+}
+
+#submit:hover {
+  border: none;
+  background:white;
+  box-shadow: 0px 0px 1px #777;
+}
+
+
+/*you won gif http://i.imgur.com/YrpjjHg.gif*/
+
+/*song: http://a.tumblr.com/tumblr_lfupopWxgI1qaywxjo1.mp3*/
