@@ -24,25 +24,20 @@ class Rock_Paper_Scissors < Sinatra::Base
       player.name=(params[:player_name])
       game.add_player(player)
       game.add_player(computer)
-      session[:me] = player
-      @name = session[:me].name
+      session[:me] = player.name
+      @name = session[:me]
+      puts @name
       erb :game
     end
   end
 
   get '/game' do
-    @player_name = params[:name]
-    erb :game
-  end
-
-  post '/game' do
     if params[:player_choice].empty?
       @choice = "Please choose your weapon to play the game."
       erb :game
     else
       player.pick(params[:player_choice])
-      session[:me] = player
-      @player_weapon = session[:me].weapon
+      @player_weapon = player.weapon
       computer.pick_weapon
       @computer_weapon = computer.weapon
       @result = "You lose!" if game.winner == computer

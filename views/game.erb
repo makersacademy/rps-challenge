@@ -1,8 +1,9 @@
 <div>Welcome to your game <%= @name %></div>
 <div>You have three choices: Rock, Paper or Scissors.</div>
-<form action="/game" method="post">
 	<question>What would you like to play?</question>
-	<input type="text" name="player_choice">
-	<input type="submit" value="submit" name="submit">
+
+<a href="/game?player_choice=Rock">Rock</a>
+<a href="/game?player_choice=Paper">Paper</a>
+<a href="/game?player_choice=Scissors">Scissors</a>
 	<%= @choice %>
-</form>
+

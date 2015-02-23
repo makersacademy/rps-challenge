@@ -1,6 +1,6 @@
 class Game
 
-attr_accessor :players
+attr_reader :players
 
 	def initialize(players = [])
 		@players = players
@@ -28,8 +28,6 @@ attr_accessor :players
 				return nil
 		end
 	end
-
-
 
 
 end
