@@ -30,6 +30,8 @@ class Game
 			return 'player 2 wins!' if @players.last.rps_holder.content == 'scissors'
 			return 'player 1 wins!' if @players.last.rps_holder.content == 'rock'
 			return 'draw!' if @players.last.rps_holder.content == 'paper'
+		else
+			return 'something has gone wrong'
 		end
 
 	end
