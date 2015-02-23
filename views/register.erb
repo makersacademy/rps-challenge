@@ -1,0 +1,9 @@
+<form action ="/register" method='post'>
+      What's your name?
+      <input type="text" name="name">
+      <input type="submit" id="submit">
+</form>
+
+<% if @message %>
+<h2><font color="red"><%= @message %></font></h2>
+<% end %>
