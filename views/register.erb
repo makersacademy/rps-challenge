@@ -1,9 +1,9 @@
-<form action ="/register" method='post'>
+<form action ="/register" method='post' align='center'>
       What's your name?
       <input type="text" name="name">
       <input type="submit" id="submit">
 </form>
 
 <% if @message %>
-<h2><font color="red"><%= @message %></font></h2>
+<h2 align='center'><font color="red"><%= @message %></font></h2>
 <% end %>

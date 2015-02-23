@@ -4,14 +4,23 @@ Feature: Starting a game
   I want to start a new game
 
 
-  Scenario: Registering
+  Scenario: Getting to the registration form
     Given I am on the homepage
     When I follow "New Game"
     Then I should see "What's your name?"
 
-  Scenario: no name
+  Scenario: Registration process
     Given I am on the register page
-    When I don't enter my name
-    Then I see "Please enter your name"
+    When I type in my name
+    Then I should be successfully registered
+
+  Scenario: Choose a weapon
+    Given I am on the game page
+    When I select an option and submit
+    Then I should see the title "You chose"
+
+  Scenario: Results
+    Given I am on the result page
+    Then I should see a mention "Your opponent has chosen"
 
 
