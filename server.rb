@@ -51,14 +51,18 @@ class Rock_paper_scissors < Sinatra::Base
     
     if outcome == true
       @win = 'You win!'
-      erb :game
+      erb :result
     elsif outcome == false
       @lose = 'You lose!'
-      erb :game
+      erb :result
     else 
       @tie = 'Tie!'
-      erb :game
+      erb :result
     end
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly

@@ -34,6 +34,7 @@ When(/^I fill the form with "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should receive a "(.*?)"$/) do |arg1|
+  visit('/result')
   page.should have_content('You chose rock')
 end
 
