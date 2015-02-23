@@ -17,7 +17,7 @@ class RPSLS < Sinatra::Base
       erb :newgame
     else
       player1 = Player.new(params[:name])
-      @player = player1.name
+      @player1 = player1.name
       erb :newgame
     end
   end
