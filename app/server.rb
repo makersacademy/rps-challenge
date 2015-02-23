@@ -4,10 +4,7 @@ require './lib/player'
 
 class RockPaperScisors < Sinatra::Base
 
-
 enable :sessions
-
-RPS = Game.new
 
 get '/' do
   if params[:playername]
@@ -24,7 +21,8 @@ end
 post '/register' do
   if params[:name]
       erb :game
-    else 
+    else
+    RPS = Game.new
     session[:playername] = params[:playername]
     @@playerone = Player.new("#{session[:playername]}")
     RPS.add_player(@@playerone)
