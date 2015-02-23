@@ -1,0 +1,12 @@
+<div>
+	<% if @choice %>
+	You have entered <%= @choice %>
+	<% else %>
+	<p>Please choose from one of the following choices:</p>
+	<form action="/player" method="post">
+	<button type="submit" value="rock" name="choice">Rock</button>
+	<button type="submit" value="paper" name="choice">Paper</button>
+	<button type="submit" value="scissors" name="choice">Scissors</button>
+	</form>
+	<% end %>
+</div>

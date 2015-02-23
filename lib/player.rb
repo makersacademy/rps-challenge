@@ -10,4 +10,8 @@ class Player
     @choice = choice
   end
 
+  def computer_choice
+    @choice = [:rock, :paper, :scissors].sample
+  end
+
 end
