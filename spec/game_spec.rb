@@ -4,6 +4,11 @@ describe 'Game' do
   let(:game){Game.new}
   let(:player){double :player, :selection=>:scissors}
 
+  it 'knows when it is a draw' do 
+    allow(game).to receive(:selection).and_return(:scissors)
+    expect(game.determine_winner(player)).to eq(:draw)
+  end  
+
   it 'can choose a selection for itself' do 
     allow(game).to receive(:selection).and_return(:rock)
     expect(game.selection).to eq(:rock)

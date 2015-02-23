@@ -7,6 +7,18 @@ class TwoPlayerGame
     @player_two=nil
   end
 
+  def add_player(player)
+    self.player_one ? self.player_two = player : self.player_one = player unless has_two_players?
+  end
+
+  def has_two_players?
+    !player_two.nil?
+  end
+
+  def players
+    [player_one, player_two]
+  end  
+
   def selections_equal?
     player_one.selection==player_two.selection 
   end

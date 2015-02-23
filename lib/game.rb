@@ -2,23 +2,20 @@ class Game
 
   attr_reader :selection
 
-  def initialize
+  def get_selection
     @selection = [:rock,:paper,:scissors].sample
   end  
 
-  def selection
-    @selection
-  end  
-
   def selections_equal?(player)
-    player.selection==selection 
+    self.get_selection
+    player.selection==selection
   end
 
   def determine_winner(player)
     if selections_equal?(player) 
-      self.selection
+      :draw
     else
-       check_selections(player)           
+      check_selections(player)           
     end   
   end
 
