@@ -10,8 +10,8 @@ describe Player do
   end
 
   it 'can take a turn' do
-    player.turns("paper")
-    expect(player.turn).to eq "paper"
+    player.pick("paper")
+    expect(player.pick("paper")).to eq "paper"
   end
   
 end

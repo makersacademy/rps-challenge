@@ -1,10 +1,15 @@
 require 'sinatra/base'
 require_relative 'player'
+require_relative 'computer'
 require_relative 'game'
 
 class RockPaper < Sinatra::Base
 
   enable :sessions
+
+  player = Player.new(:player_name)
+  computer = Computer.new
+  game = Game.new(player, computer)
 
   set :views, Proc.new { File.join("views")}
 
@@ -12,19 +17,22 @@ class RockPaper < Sinatra::Base
     erb :index
   end
 
-post '/' do
+  post '/' do
     if params[:player_name].empty?
       @name = "Please tell me your name!"
       erb :index
     else
-      player = Player.new(params[:player_name])
-      session[:me] = player
-      @name = session[:me].name
-      erb :newgame
+      @name = params[:name]
+      @weapon = params[:weapon]
+      player.name = @name
+      player.pick = @pick
+      computer.pick
+      erb :welcome
     end
   end
 
-  get '/newgame' do
+  post '/newgame' do
+    @winner = game.winner
     erb :newgame
   end
 

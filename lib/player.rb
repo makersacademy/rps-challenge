@@ -10,11 +10,7 @@ class Player
     @name
   end
 
-  def turns(value)
-    @turns = value
-  end
-
-  def turn
-    @turns
+  def pick(value)
+    @pick = value
   end
 end

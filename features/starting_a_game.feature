@@ -8,3 +8,9 @@ Feature: Starting the game
   And I enter a name into the form
   When I press submit
   Then I should be taken to the game
+
+  Scenario: No input into form
+  Given I am on the homepage
+  And I do not enter a name into the form
+  When I press submit
+  Then I should stay on the homepage

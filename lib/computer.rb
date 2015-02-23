@@ -2,14 +2,14 @@ class Computer
 
   attr_reader :pick
 
-  def turn
+  def pick
     number == rand(1..9)
     if number <= 3
-      @turns = "rock"
+      @pick = "rock"
     elsif number <= 6
-      @turns = "paper"
+      @pick = "paper"
     else
-      @turns = "scissors"
+      @pick = "scissors"
     end
   end
 
