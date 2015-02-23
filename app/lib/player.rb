@@ -12,9 +12,9 @@ class Player
   end
 
   def win?
-    if @element_selected.win == true
+    if @element_selected.win? == true
       @win = true
-    elsif @element_selected.win == false
+    elsif @element_selected.win? == false
       @win = false
     else 
       @win = nil

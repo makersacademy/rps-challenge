@@ -12,8 +12,7 @@ describe Ai do
 
   it "should be able to randomly select an element" do
     cpu.add_element(rock)
-    allow(cpu).to receive(:rand_num).and_return(1)
-    cpu.random_selection
+    cpu.random_selection #stubbing is giving me 'nil'
     expect(cpu.element_selected).to eq(rock)
   end
 end

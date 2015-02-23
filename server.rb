@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require './app/lib/player.rb'
-require './app/lib/element.rb'
-require './app/lib/ai.rb'
+require './app/lib/player'
+require './app/lib/element'
+require './app/lib/ai'
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -35,14 +35,14 @@ class Rock_paper_scissors < Sinatra::Base
     element_chosen = params[:element]
     
     if element_chosen == 'rock'
-      @element = rock
-    elsif params[:element] == 'paper'
-      @element = paper
+      element = rock
+    elsif element_chosen == 'paper'
+      element = paper
     else
-      @element = scissors
+      element = scissors
     end 
 
-    player_move = @player.select_element(@element)
+    player_move = @player.select_element(element)
     cpu_move = cpu.random_selection
     player_move.confront(cpu_move)
     outcome = @player.win?
@@ -50,18 +50,12 @@ class Rock_paper_scissors < Sinatra::Base
     
     if outcome == true
       @win = 'You win!'
-      @cpu_selection
-      cpu.random_selection
       erb :game
     elsif outcome == false
       @lose = 'You lose!'
-      @cpu_selection
-      cpu.random_selection
       erb :game
     else 
       @tie = 'Tie!'
-      @cpu_selection
-      cpu.random_selection
       erb :game
     end
   end

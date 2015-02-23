@@ -1,8 +1,8 @@
 <div>
 <form action="/game" method="post">
-  <input type="radio" value="rock">rock
-  <input type="radio" value="paper">paper
-  <input type="radio" value="scissors">scissors
+  <input id="rock" type="radio" value="rock">rock
+  <input id="paper" type="radio" value="paper">paper
+  <input id="scissors" type="radio" value="scissors">scissors
   <input type="submit" value="submit">
 </form>
 </div>
@@ -13,7 +13,7 @@
 <% elsif @lose %>
  <p>The opponent has chosen <%= @cpu_selection %></p>
   <h3><%= @lose %></h3>
-<% elsif%>
+<% elsif %>
   <p>The opponent has chosen <%= @cpu_selection %></p>
    <h3><%= @tie %></h3>
 <% else %>
