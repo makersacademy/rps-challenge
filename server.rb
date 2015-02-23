@@ -34,31 +34,35 @@ class Server < Sinatra::Base
   end
 
   post '/result' do
-    @player_weapon = params[:weapon_choice]
-    @player_name = params[:player_name]
-
-    human = session[:human]
-
-    if @player_weapon == "rock"
-      human.weapon_choice = Weapon.new.rock
-    elsif @player_weapon = "paper"
-       human.weapon_choice = Weapon.new.paper
+    if params[:weapon_choice] == "no_weapon"
+      erb :game
     else
-       human.weapon_choice = Weapon.new.scissors
+      @player_weapon = params[:weapon_choice]
+      @player_name = params[:player_name]
+
+      human = session[:human]
+
+      if @player_weapon == "rock"
+        human.weapon_choice = Weapon.new.rock
+      elsif @player_weapon = "paper"
+         human.weapon_choice = Weapon.new.paper
+      else
+         human.weapon_choice = Weapon.new.scissors
+      end
+
+      @game = session[:game]
+      computer = @game.players.select{|player| player.name == "Computer"}.first
+      @computer_weapon = computer.weapon_choice
+
+      winner = @game.result
+      if winner == "draw"
+        @winner = "It's a " + winner +"!"
+      else
+        @winner = winner.name + " wins!"
+      end
+
+      erb :result
     end
-
-    @game = session[:game]
-    computer = @game.players.select{|player| player.name == "Computer"}.first
-    @computer_weapon = computer.weapon_choice
-
-    winner = @game.result
-    if winner == "draw"
-      @winner = "It's a " + winner +"!"
-    else
-      @winner = winner.name + " wins!"
-    end
-
-    erb :result
   end
 
   # start the server if ruby file executed directly

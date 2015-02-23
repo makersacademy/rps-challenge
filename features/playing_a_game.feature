@@ -13,7 +13,7 @@ Feature: Playing the game
 
   Scenario: Playing another game
     Given I am on the result page
-    When I cick "submit"
+    When I click "Yes Please!"
     Then I should be taken to a new page "Please make a selection"
 
   Scenario: No weapon selected

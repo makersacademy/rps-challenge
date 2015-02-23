@@ -18,7 +18,7 @@ Given(/^I do not enter a name into the form "(.*?)"$/) do |player_name|
   fill_in(player_name, :with => "")
 end
 
-Then(/^I should stay on the home page and see "(.*?)"MAM$/) do |text|
+Then(/^I should stay on the home page and see "(.*?)"$/) do |text|
   expect(page).to have_content text
 end
 
@@ -27,7 +27,7 @@ When(/^I choose a radio button "(.*?)"$/) do |weapon|
 end
 
 When(/^I do not choose a radio button$/) do
-  # express the regexp above with the code you wish you had
+
 end
 
 Given(/^I am on the result page$/) do
@@ -38,6 +38,6 @@ Given(/^I am on the result page$/) do
   click_on("Fight!")
 end
 
-When(/^I cick "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
+
+
+
