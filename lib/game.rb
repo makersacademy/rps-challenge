@@ -2,8 +2,7 @@ require_relative './player'
 
 class Game
 
-  attr_accessor :player
-  attr_reader :computer_score, :player_score 
+  attr_accessor :player,:computer_score, :player_score 
 
 
   def initialize
@@ -21,14 +20,16 @@ class Game
     has_a_player?
   end
 
-  def winner?(player_choice,rand_choice)
+  def assign_score(outcome)
+    outcome == :win ? @player_score += 1 : (outcome == :lose ? @computer_score =+ 1 : nil)
+  end
+
+  def outcome?(player_choice,rand_choice)
     if @combinations[rand_choice] == player_choice
-      @player_score =+ 1
       :win
     elsif rand_choice == player_choice
       :draw
     else
-      @computer_score =+ 1
       :lose
     end
   end

@@ -27,8 +27,9 @@ class Rps < Sinatra::Base
       erb :play_game, locals: {outcome: @outcome, player_score: @player_score, computer_score: @computer_score}
     else
       computer_choice = session[:game].get_random_choice
-      win_lose_draw = session[:game].winner?(choice.to_sym,computer_choice).to_s
-      @outcome = "The computer played the #{computer_choice}, you #{win_lose_draw}"
+      win_lose_draw = session[:game].outcome?(choice.to_sym,computer_choice)
+      session[:game].assign_score(win_lose_draw)
+      @outcome = "The computer played the #{computer_choice}, you #{win_lose_draw.to_s}"
       @computer_score = "Computer score: #{session[:game].computer_score}" 
       @player_score = "Player score: #{session[:game].player_score}"
       erb :play_game, locals: {outcome: @outcome, player_score: @player_score, computer_score: @computer_score}

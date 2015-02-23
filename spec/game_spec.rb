@@ -32,20 +32,22 @@ describe Game do
     end
 
     it "should be able to declare a winner" do
-      expect(game.winner?(:paper,:rock)).to eq(:win)
+      expect(game.outcome?(:paper,:rock)).to eq(:win)
     end
 
     it "should be able to declare a loser" do
-      expect(game.winner?(:rock,:paper)).to eq(:lose)
+      expect(game.outcome?(:rock,:paper)).to eq(:lose)
     end
 
     it "should be able to declare a draw" do
-      expect(game.winner?(:scissor,:scissor)).to eq(:draw)
+      expect(game.outcome?(:scissor,:scissor)).to eq(:draw)
     end
 
     it "should be able to track the score" do
-      game.winner?(:paper,:rock)
-      expect(game.player_score).to eq(1)
+      outcome = game.outcome?(:paper,:rock)
+      game.assign_score(outcome)
+      game.assign_score(outcome)
+      expect(game.player_score).to eq(2)
     end
 
 
