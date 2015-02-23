@@ -19,3 +19,5 @@ describe Paper do
 
 
 end
+
+#Same thing as the file paper.rb => this file should have been deleted from this version
