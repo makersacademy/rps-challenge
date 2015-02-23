@@ -1,24 +1,22 @@
 class GameUmpire
 
-  ROCK_BEATS_SCISSORS   = [:rock, :scissors]
-  PAPER_BEATS_ROCK      = [:paper, :rock]
-  SCISSORS_BEATS_PAPER  = [:paper, :scissors]
 
+  RESULTS = {
+    [:rock, :scissors] => :rock,
+    [:paper, :rock] => :paper,
+    [:paper, :scissors] => :scissors
+      }
 
   def rule_logic(weapons)
     played_weapons = weapons.sort
+    return :draw if played_weapons.all?{|weapon| weapon == played_weapons[0]}
+    weapons_compare(played_weapons)
+  end
 
-    case
-    when ROCK_BEATS_SCISSORS == played_weapons
-      :rock
-    when PAPER_BEATS_ROCK == played_weapons
-      :paper
-    when SCISSORS_BEATS_PAPER == played_weapons
-      :scissors
-    else
-      :draw
-    end
-
+  def weapons_compare(played_weapons)
+    RESULTS.each_pair do |weapons, result|
+      return result if played_weapons == weapons
+      end
   end
 
 end
