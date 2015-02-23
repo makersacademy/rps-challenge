@@ -7,7 +7,7 @@
 	<% if @name %>
 	Welcome <%= @name %>
 	<form method="get" action="/player">
-	<button type="submit">Ready!</button>
+	<button type="submit" id="ready">Ready!</button>
 		<% else %>
 		<form action="/" method="post">
 		Please enter your name:
