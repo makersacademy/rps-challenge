@@ -8,13 +8,9 @@ describe Player do
   end
 
   it 'can choose either rock,scissors, or paper' do
-      player = Player.new("Rizwan")
-      player_choice = player.choice("rock")
-      expect(player_choice).to eq("rock")
+    player = Player.new("Rizwan")
+    player_choice = player.choice("rock")
+    expect(player_choice).to eq("rock")
   end
-
-
-
-
 
 end

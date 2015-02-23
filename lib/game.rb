@@ -1,6 +1,5 @@
 class Game
 
-
   def add_player(player)
     @player = player
   end
@@ -8,7 +7,6 @@ class Game
   def player
     @player
   end
-
 
   def winner(player_choice, computer_choice)
 
@@ -21,12 +19,7 @@ class Game
         "YOU WIN!"
     else
         "COMPUTER WIN!"
-
-
-
-
     end
   end
-
 
 end

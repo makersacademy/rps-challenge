@@ -1,9 +1,14 @@
 class Computer
+  OPTIONS = ["rock", "paper", "scissors"]
 
   def choice
-    choices = ["rock", "paper", "scissors"]
-    choice = choices[rand(choices.length)]
-    @choice =choice
+    OPTIONS.sample
   end
 
 end
+
+
+# array = {:sample =>  do; self[rand(self.length)]; end}
+
+
+# array = {:sample =>  do; 'rock'; end}

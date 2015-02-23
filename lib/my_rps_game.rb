@@ -4,7 +4,8 @@ require './lib/game'
 require './lib/computer'
 
 class RpsApp < Sinatra::Base
-    set :views, Proc.new { File.join(root, "..", "views") }
+  set :views, Proc.new { File.join(root, "..", "views") }
+  set :public_dir, Proc.new {File.join(root, "..", "public")}
 
   game = Game.new
   enable  :sessions
@@ -16,7 +17,10 @@ class RpsApp < Sinatra::Base
   get '/hello' do
     @name = session[:me].name
     erb :index
+  end
 
+  get '/new_player' do
+    erb :choice
   end
 
   post '/new_player' do
@@ -29,18 +33,24 @@ class RpsApp < Sinatra::Base
 
   get '/game' do
     @name = session[:player_name]
-
     erb :choice
   end
 
   get '/result' do
-    @choice = params[:choice]
-    game.player.choice = @choice
-    session[:choice] = @choice
-
     erb :result
   end
 
+  post '/result' do
+    computer = Computer.new
+    player_choice = game.player.choice(params[:choice])
+    p session[:choice] = params[:choice]
+
+    p player_choice
+    @computer_choice = computer.choice
+    p @computer_choice
+    @match_result = game.winner(player_choice, @computer_choice)
+    erb :result
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
