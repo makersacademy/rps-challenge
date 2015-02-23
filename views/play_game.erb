@@ -1,0 +1,28 @@
+<audio controls autoplay>
+  <source src="/sounds/zza.mp3" type="audio/mpeg">
+</audio>
+
+<h1>Begin game</h1>
+<h2>Today <%=session[:player].name%> you are playing the mighty <%=session[:computer].name%> machine</h2>
+
+<h1>
+  <%=session[:player].name%>
+  take your time and choose your weapon
+</h1>
+<br>
+
+<form action="/result" method="post">
+  <input type="submit" name="weapon" value="Rock" />
+  <input type="submit" name="weapon" value="Paper" />
+  <input type="submit" name="weapon" value="Scissors" />
+</form>
+
+<form action="/" >
+  <input type="submit" value="New Player" />
+</form>
+
+<h1>
+    <u><%=@result%></u>
+</h1>
+
+<h2><%=@error_message%></h2>
