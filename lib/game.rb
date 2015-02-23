@@ -30,7 +30,8 @@ class Game
     else
       @winner = :tie
     end
-
+    
+    # Alternative logic - in progress
 
     # players.each do |player|
     #   # opponent = players.reject { player == player }.
@@ -43,38 +44,8 @@ class Game
     #     @winner = player.flatten
     #   end
     # end
-  end
 
-  def clear_game
-    @players = nil
-    @player_one = nil
-    @player_two = nil
   end
 
 end
-
-
-
-#   def player_two
-#     Player.new
-#   end
-# end
-
-
-# class Game
-
-
-
-#   attr_reader :pick
-
-#   def choose(pick)
-#     @pick = pick
-#   end
-
-#   def random_pick
-
-#   end
-
-# end
-
 

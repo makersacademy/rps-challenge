@@ -11,11 +11,6 @@ class Player
   end
 end
 
-# class Computer < Player
-#   def choose_weapon
-#     # @pick = [1,2,3].sample
-#   end
-# end
 
 
 
