@@ -21,4 +21,11 @@ describe Player do
     allow(rock).to receive(:win).and_return(true)
     expect(player.win?).to eq(true)
   end
+
+  it "should be able to have a draw" do
+    player.select_element(rock)
+    allow(rock).to receive(:confront).with(rock)
+    allow(rock).to receive(:win).and_return(nil)
+    expect(player.win?).to eq(nil)
+  end
 end

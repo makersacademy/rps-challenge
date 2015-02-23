@@ -13,6 +13,9 @@
 <% elsif @lose %>
  <p>The opponent has chosen <%= @cpu_selection %></p>
   <h3><%= @lose %></h3>
+<% elsif%>
+  <p>The opponent has chosen <%= @cpu_selection %></p>
+   <h3><%= @tie %></h3>
 <% else %>
   <p>Please type the element in the blank space</p>
 <% end %>
