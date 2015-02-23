@@ -3,7 +3,11 @@ require 'sinatra/base'
 class RPSLS < Sinatra::Base
 
   get '/' do
-    'Hello RPSLS!'
+    erb :index
+  end
+
+  get '/newgame' do
+    erb :newgame
   end
 
 

@@ -3,9 +3,9 @@ Given(/^I am on the homepage$/) do
 end
 
 When(/^I click on "(.*?)"$/) do |link|
-
+  click_on link
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "(.*?)"$/) do |text|
+  body.should match(text)
 end
