@@ -1,6 +1,8 @@
 # A sample Gemfile
-ruby '2.0.0'
 source "https://rubygems.org"
+
+ruby '2.0.0'
+
 
 gem 'sinatra'
 
@@ -11,7 +13,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec'
   gem 'shotgun'
-  ruby '2.0.0'
 end
 
 #yo dawg
