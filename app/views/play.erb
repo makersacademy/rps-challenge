@@ -1,1 +1,30 @@
 
+<% if @winner %>
+  <% if @winner != "DRAW" %>
+    <%= @winner %> wins!
+    <a href="/play">Play Again</a>
+  <% else %>
+    It's a draw!
+    <a href="/play">Play Again</a>
+  <% end %>
+<% else %>
+  <head align = "center">
+    Select Your Weapon
+  </head>
+  <div>
+    <p>
+    <form action="/play" method="post">
+    <input type="radio" name="weapons" value= 1 > Rock<br>
+    <input type="radio" name="weapons" value= 2 >Paper<br>
+    <input type="radio" name="weapons" value= 3 >Scissors<br>
+    <input type="radio" name="weapons" value= 4 >Lizard<br>
+    <input type="radio" name="weapons" value= 5 >Spock<br>
+    <p>
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+<% end %>
+
+<% if @message2 %>
+  <h1><%= @message2 %></h1>
+<% end %>
