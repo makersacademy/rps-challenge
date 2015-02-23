@@ -1,0 +1,28 @@
+<div style='border: 3px dashed red'>
+    <h1 align=center> Welcome to Rock, Scissors, Paper Game </h1>
+</div>
+<br>
+
+<div style='border: 3px red' align =center>
+
+<%= session[:player_name] %> v/s Computer
+
+
+  <h3> Enter one of the following choices <p>
+            rock <br><br>
+            paper <br><br>
+            scissors <br><br>
+  </h3>
+
+<%=@choice  %>
+
+      <%= session.inspect %>
+
+
+
+    <form action='/result' align=center>
+      Your choice:
+      <input type="text" name="choice">
+      <input type="submit"  value="submit" name="submit">
+    </form>
+
