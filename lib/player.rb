@@ -1,18 +1,10 @@
 class Player
 
-  attr_accessor :selection, :name
+  attr_accessor :name
+  attr_reader :selection
 
-  def initialize
-    @selection=nil
-    @name = nil
-  end  
-
-  def selection=(choice)
+  def make_selection=(choice)
     @selection=choice
   end   
-
-  def selection
-    @selection
-  end  
 
 end  

@@ -8,4 +8,9 @@ describe 'Player' do
     expect(player.selection).to eq(:rock)
   end
 
+  it 'can have a name' do 
+    allow(player).to receive(player.name=('Julian'))
+    expect(player.name).to eq('Julian')
+  end  
+
 end
