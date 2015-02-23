@@ -1,7 +1,7 @@
-require 'sinatra/base'
-require 'game'
-require 'player'
-require 'rps'
+require_relative 'sinatra/base'
+require_relative 'game'
+require_relative 'player'
+require_relative 'rps'
 
 class RpsChallenge < Sinatra::Base
 
