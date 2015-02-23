@@ -13,8 +13,14 @@ class Game
 			'Player wins!'
 		elsif player == 'paper' && computer == 'rock'
 			'Player wins!'
+		elsif computer == 'rock' && player == 'scissors'
+			'Computer wins!'
+		elsif computer == 'paper' && player == 'rock'
+			'Computer wins!'
+		elsif computer == 'scissors' && player == 'paper'
+			'Computer wins!'	
 		else
-			'You lose!'
+			'It is a Draw'
 		end
 	end
 
