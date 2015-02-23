@@ -45,10 +45,9 @@ class RpsApp < Sinatra::Base
     player_choice = game.player.choice(params[:choice])
     p session[:choice] = params[:choice]
 
-    p player_choice
     @computer_choice = computer.choice
     p @computer_choice
-    @match_result = game.winner(player_choice, @computer_choice)
+    @match_result = game.winner(player_choice.capitalize, @computer_choice.capitalize)
     erb :result
   end
 

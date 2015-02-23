@@ -22,5 +22,20 @@ When(/^I fill_in my choice "(.*?)"$/) do |choices|
   fill_in 'choice', :with => choices
 end
 
+Then(/^I should see the page with "(.*?)"$/) do |content|
+    expect(page).to have_content content
+end
 
+
+Given(/^I am on the '\/result' page$/) do
+  visit '/result'
+end
+
+When(/^I click link "(.*?)"$/) do |button|
+  click_button(button)
+end
+
+Then(/^should see the "(.*?)" page$/) do |arg1|
+  visit '/game'
+end
 

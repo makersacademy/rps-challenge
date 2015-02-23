@@ -2,11 +2,8 @@
 <div style='border: 3px dashed red'>
   <h1 align=center> Welcome to Rock, Scissors, Paper Game </h1>
 </div>
-
 <br>
-
 <div style='border: 3px red' align =center>
-
 <h1><%= session[:player_name] %> v/s Computer</h1>
 <h3>
   Enter one of the following choices in small case <p>
@@ -17,10 +14,10 @@
 
 <%= @choice  %>
 
-  <form action='/result' method="post" align=center >
-    <h2>Your choice:
+<form action='/result' method="post" align=center >
+  <h2>Your choice:
     <input type="text" name="choice">
     <input type="submit"  value="submit" name="submit">
   </h2>
-  </form>
+</form>
 

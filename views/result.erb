@@ -1,15 +1,15 @@
 <div style='border: 3px dashed red'>
-    <h1 align=center> Welcome to Rock, Scissors, Paper Game </h1>
+  <h1 align=center> Welcome to Rock, Scissors, Paper Game </h1>
 </div>
 
 <h2> <p align=center>
-  Hey <%= session[:player_name]%>
-  <br><br>you chose: <%= session[:choice] %> </h2>
-  </p>
+Hey <%= session[:player_name]%>
+<br><br>you chose: <%= session[:choice] %> </h2>
+</p>
 
-  <h2 align=center> computer chose: <%= @computer_choice %> </h2> </p>
-  <br><br>
-  <h2 align= center> Match result: <%= @match_result %> </h2>
-  <br><br>
+<h2 align=center> computer chose: <%= @computer_choice %> </h2> </p>
+<br><br>
+<h2 align= center> Match result: <%= @match_result %> </h2>
+<br><br>
 
-  <h2 align=center> Click here to play again </h2>
+<h2 align=center><button type="button" name="Replay"onclick="window.location.href='/game'">Replay</button></h2>
