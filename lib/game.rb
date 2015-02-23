@@ -21,7 +21,7 @@ class Game
   end
 
   def assign_score(outcome)
-    outcome == :win ? @player_score += 1 : (outcome == :lose ? @computer_score =+ 1 : nil)
+    outcome == :win ? @player_score += 1 : (outcome == :lose ? @computer_score += 1 : nil)
   end
 
   def outcome?(player_choice,rand_choice)
