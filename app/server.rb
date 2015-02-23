@@ -24,9 +24,6 @@ class RockPaperScissor < Sinatra::Base
     erb :new_player
   end
 
-  get '/two_player' do
-    erb :new_player
-  end
 
   get '/begin' do
     erb :play_game
@@ -43,46 +40,12 @@ class RockPaperScissor < Sinatra::Base
     end
   end
 
-  get '/begin_two' do
-    erb :play_game
-  end
-
-  get '/begin_two' do
-    if params[:player].empty?
-      @enter_name = "You Must Enter Your Name"
-      erb :new_player
-    else
-      session[:player] = Player.new(params[:player])
-      session[:player2] = Player.new(params[:player])
-      erb :play_game
-    end
-  end
-
-
   get '/result' do
     @result = "#{session[:result].announcement}"
     erb :play_game
   end
 
   post '/result' do
-    begin
-      session[:player].select_player_weapon(params[:weapon], weapons)
-      session[:computer].random_weapon(weapons)
-      session[:result] = GameResult.new(umpire, session[:player], session[:computer])
-      redirect '/result'
-    rescue
-      @error_message = "weapons selection was wrong go back and try again"
-    end
-  end
-
-
-
-get '/result_two' do
-    @result = "#{session[:result].announcement}"
-    erb :play_game
-  end
-
-  post '/result_two' do
     begin
       session[:player].select_player_weapon(params[:weapon], weapons)
       session[:computer].random_weapon(weapons)

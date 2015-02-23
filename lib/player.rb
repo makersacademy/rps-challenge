@@ -4,7 +4,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @weapon = String.new
   end
 
   def select_player_weapon(choice, game_weapons)

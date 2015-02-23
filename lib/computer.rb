@@ -3,7 +3,6 @@ class Computer
   attr_reader :weapon, :name
 
   def initialize(name = 'computer')
-    @weapon = {}
     @name = name
   end
 

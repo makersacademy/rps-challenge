@@ -2,7 +2,7 @@ class GameWeapons
 
   attr_reader :weapons
 
-  def initialize()
+  def initialize
     @weapons = [:rock, :paper, :scissors]
   end
 
@@ -15,7 +15,7 @@ class GameWeapons
     if weapons.include?(weapon)
       return weapon
     else
-      raise "Can't select that weapon"
+      false
     end
   end
 

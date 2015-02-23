@@ -45,15 +45,6 @@ Then(/^I will be back on the homepage$/) do
 end
 
 
-Given(/^I am on the (\d+) player page$/) do |arg1|
-  visit '/two_player'
-end
-
-When(/^I enter "(.*?)" called "(.*?)"$/) do |player, name|
-  fill_in(player, :with => name)
-  click_on("Submit")
-end
-
 
 
 

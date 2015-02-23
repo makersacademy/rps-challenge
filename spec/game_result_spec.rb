@@ -24,12 +24,6 @@ describe GameResult do
     expect(result.announcement).to eq "It's a draw"
   end
 
-  it "knows who the last winner was" do
-    set_up_match_helper(:paper, :scissors, :scissors)
-    result.announcement
-    expect(result.last_winner).to eq "imac"
-  end
-
   def set_up_match_helper(weapon_player, weapon_comp, winning_weapon)
     allow(umpire).to receive(:rule_logic).and_return(winning_weapon)
     allow(jim).to receive(:weapon).and_return(weapon_player)

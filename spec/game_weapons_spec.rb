@@ -9,8 +9,8 @@ describe GameWeapons do
     expect(weapons.weapons).to match_array [:rock, :scissors, :paper]
   end
 
-  it "will rasie and error if player selects unavalible weapon" do
-    expect{ weapons.select_weapon(:gun) }.to raise_error(RuntimeError, "Can't select that weapon")
+  it "will return false if player selects unavalible weapon" do
+    expect(weapons.select_weapon(:gun)).to be false
   end
 
   it "will randomly choose one weapon from the avalible weapons only" do

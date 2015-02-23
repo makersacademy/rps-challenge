@@ -5,7 +5,7 @@ Feature: Start game
 
   Scenario: Go to new player page
     Given I am on the homepage
-    When I follow "Click To Begin"
+    When I follow "1 Player Game"
     Then I will see "Enter players name"
 
   Scenario: Successfully creating a new player
@@ -37,18 +37,6 @@ Feature: Start game
     And sign in as "Maverick"
     When I press "New Player"
     Then I will be back on the homepage
-
-  Scenario: 2 player game option
-    Given I am on the homepage
-    When I follow "2Player"
-    Then I will see "2 Player Game"
-
-  Scenario: Enter in 2 player
-    Given I am on the 2 player page
-    When I enter "Player1" called "Jim"
-    And I enter "Player2" called "Bill"
-    Then I will see "Jim"
-    And I will see "Bill"
 
 
 
