@@ -1,12 +1,31 @@
-#Rock Paper Scisors CRC
+#Rock Paper Scissors CRC
+
 
 ##Player
+- Has a name
+- Can have weapon
+- Can win and loose
+
 
 ##Weapons
+- can be Scissor
+- can be Paper
+- can be Rock
 
 
 ##Game
+- manages turns
+- counts fights
+- declares winner ()
 
+____________________________________________
 
-##
+####Steps:
+
+Player registers
+Player chooses weapon
+Game decides which player beats
+Game tracks count
+Game switches turns
+Game declares winner
 

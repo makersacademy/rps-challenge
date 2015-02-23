@@ -10,7 +10,7 @@ class Player
   end
 
   def choose_random_weapon
-    @weapon = [:scisor, :rock, :paper].sample
+    @weapon = [:scissor, :rock, :paper].sample
   end
 
 end

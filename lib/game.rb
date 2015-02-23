@@ -3,18 +3,15 @@ class Game
   
   def initialize
   @players = []
-  @beats = { paper: :scisor, rock: :paper, scisor: :rock}
+  @beats = { paper: :scissor, rock: :paper, scissor: :rock}
   @weapons = @beats.keys
   end
 
   def add_player(name)
-    if @players.length < 2
        @players << name 
-      else raise "Sorry, this game can only be played by two players at a time"
-    end
   end
 
-  def beater?(player1, player2)
+  def beater?(player2, player1)
     if player1.weapon == player2.weapon
       "Tie. Choose again"
     elsif player1.weapon == @beats[player2.weapon]
@@ -23,10 +20,5 @@ class Game
       player2
     end
   end
-
-  def random_weapon
-    self.weapon = @weapons.sample
-  end
-
 
 end

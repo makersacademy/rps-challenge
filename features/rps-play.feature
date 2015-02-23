@@ -1,18 +1,12 @@
-Feature: Play Rock Paper Scisors
+Feature: Play Rock Paper Scissors
   In order to play RPS
   As a Makers Academy marketeer
-  I can choose between "Rock", "Paper" and "Scisor"
+  I can choose between "Rock", "Paper" and "Scissor"
 
 
   Scenario: Making a turn
     Given I have registered and see the options
     When I choose a weapon
-    Then the opponent chooses a weapon
-    And I know if I have won or lost
-
-  Scenario: I should see my score
-    Given I have made a turn
-    When I know if I have won or lost
     Then I should see my score
 
   Scenario: Declaring the winner

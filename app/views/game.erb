@@ -1,20 +1,30 @@
-<h1>Rock, Paper, Scisors</h1>
+<h1>Rock, Paper, Scissors</h1>
 
 <!-- <p><i>Staring <b><%= @players %></b> against <b><%= @players %></b> </i></p>  -->
 
-<% if !WEAPON %>
+<p style="color: red" ><%= @tie %></p>
 
-<p>Hello <%= @name %>, if you want to play please choose one of the following weapons:</p>
+<% if TURNS.length < 3 %>
 
-<form action="/game" method="POST">
-  <input type="radio" name="weapon" value="Rock">Rock
+<h3>Round <%= TURNS.length %> of 3</h3>
+
+<%unless TURNS.length == 0 %><p id="countmessage"><%= @countmessage %></p><% end %>
+
+<p>Hello <%= @name %>, please choose one of the following weapons:</p>
+
+<form action="/game" method="POST" id="rps">
+  <input type="radio" name="weapon" value="rock" id="rock" >Rock
   <br>
-  <input type="radio" name="weapon" value="Paper">Paper
+  <input type="radio" name="weapon" value="paper" id="paper">Paper
   <br>
-  <input type="radio" name="weapon" value="Scisor">Scisor
+  <input type="radio" name="weapon" value="scissor" id="scissor">Scissor
   <br>
   <input type="submit" name="choose_weapon" value="Choose">
 </form>
 
-<% else %> <p> <%= @beater.name %> has won this round.</p>
+<% else %>
+  <p> <%= @beater.name %> has won this round.</p>
+  <p><%= @countmessage %></p>
+  <a href="/playagain">Play again</a>
+
 <% end %>

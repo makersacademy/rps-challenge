@@ -19,39 +19,40 @@ end
 #
 
 Given(/^I have registered and see the options$/) do
-  pending # express the regexp above with the code you wish you had
+  visit('/register')
+  fill_in('playername', :with=>'Thomas') 
+  click_button('Start Game')
+  find('form#rps')
 end
 
 When(/^I choose a weapon$/) do
-  pending # express the regexp above with the code you wish you had
+  choose('rock')
+  click_button('Choose')
 end
 
-Then(/^the opponent chooses a weapon$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I know if I have won or lost$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-#
-
-Given(/^I have made a turn$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I know if I have won or lost$/) do
-  pending # express the regexp above with the code you wish you had
-end
 
 Then(/^I should see my score$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content("You:")
 end
 
 # 
 
 Given(/^the players have taken three turns each$/) do
-  pending # express the regexp above with the code you wish you had
+  visit('/register')
+  fill_in('playername', :with=>'Thomas') 
+  click_button('Start Game')
+  
+  find('form#rps')
+  choose('rock')
+  click_button('Choose')
+
+  # find('form#rps')
+  # choose('scissor')
+  # click_button('Choose')
+
+  # find('form#rps')
+  # choose('paper')
+  # click_button('Choose')
 end
 
 When(/^one player has a higher score$/) do
