@@ -20,7 +20,6 @@ When(/^I push the "(.*?)" button$/) do |button|
 end
 
 Given(/^opponent randomly picks "(.*?)"$/) do |pick|
-  # we want to set the computer's pick to 'pick'
   Capybara.app::GAME.player_one.pick(pick.downcase.to_sym)
 end
 
@@ -29,5 +28,4 @@ Given(/^I have already registered$/) do
     When I am on the homepage
     And I enter "Gabe" in the "name" field
   }
-  # save_and_open_page
 end
