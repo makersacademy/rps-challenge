@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <link rel='stylesheet' type='text/css' href='css/style.css'
+
+</head>
+
+<body>
+  
+  <h1>Make a Choice <%= @player.name %> . . .</h1>
+
+  <div id="main"> 
+    <ul>
+
+      <% @choices.each do |choice| %>
+        <a href='/take_turn?choice=<%= choice %>'><li><img src='css/<%= choice %>.png' width='125px' height='50px'></li></a>
+      <% end %>
+    </ul>
+  </div>
+
+  <% if @game_choice %>
+    <div id='result'>
+          <img src='css/<%= @player.choice %>.png' width='125px' height='50px'><%= @message %><img src='css/<%= @game_choice %>.png' width='125px' height='50px'>
+    </div>
+  <% end %>
+
+</body>
+
+</html>

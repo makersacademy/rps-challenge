@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'fat';
+    src: url('fbsbltc.ttf');
+}
+
+body
+{
+  background-color: black;
+  text-align: center;
+  font-family: fat;
+}
+
+h1
+{
+  color: white;
+  font-size: 50px;
+  -webkit-margin-after: 0;
+}
+
+.button:hover
+{
+  background-color: silver;
+}
+
+.button
+{
+  border-radius: 100px;
+  color: white;
+  background-color: black;
+  font-size:20px;
+}
+
+form
+{
+  margin: 20px;
+}
+
+#button
+{
+  padding: 10px;
+  width: 200px;
+}
+
+#enter_name
+{
+  padding: 10px;
+  width: 200px;
+}
+
+ul
+{
+  padding-top: 50px;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+}
+
+ul li
+{
+  list-style: none;
+  display: inline;
+  color: white;
+  padding: 20px;
+  width: 150px;
+  font-size: 100px;
+}
+
+#result
+{
+  color: white;
+  font-size: 50px;
+}
+
+img
+{
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+#main
+{
+  margin-bottom: 100px;
+}
