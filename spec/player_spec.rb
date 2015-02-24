@@ -22,10 +22,4 @@ describe Player do
     expect(player.choice).to eq(:scissors)
   end
 
-  it 'can play the game' do
-    game = double :game
-    expect(game).to receive(:play_with).with (player)
-    player.play(game)
-  end
-
 end

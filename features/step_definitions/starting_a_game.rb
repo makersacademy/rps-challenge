@@ -3,9 +3,9 @@ Given(/^I am on the homepage$/) do
 end
 
 When(/^I follow "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_button(arg1)
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  (page).should have_content(arg1)
 end

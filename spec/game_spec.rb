@@ -5,13 +5,10 @@ describe Game do
   let (:game)   { Game.new                          }
   let (:player) { double :player, choice: :Scissors }
 
-  it 'can generate a random option' do
-    game.generate_choice
-    expect(game.choice).to satisfy{ :Rock || :Paper || :Scissors || :Lizard || :Spock }
-  end
-
-  it 'can play the game with a player' do
-    expect(game).to respond_to(:play_with)
+  def play_with(choice)
+    player2 = double :player2, choice: choice
+    game.add(player)
+    game.add(player2)
   end
 
   it 'knows which moves win against other moves' do
@@ -19,18 +16,38 @@ describe Game do
   end
 
   it 'knows when the game is tied' do
-    game.choice = :Scissors
-    expect(game.play_with(player)).to eq('Ties With')
+    play_with(:Scissors)
+    expect(game.play).to eq('Its a Tie')
   end
 
-  it 'knows when the player wins' do
-    game.choice = :Paper
-    expect(game.play_with(player)).to eq('Defeats')
+  it 'knows when a player wins' do
+    play_with(:Paper)
+    expect(game.play).to eq('Player 1 Wins')
   end
 
   it 'knows when the player loses' do
-    game.choice = :Rock
-    expect(game.play_with(player)).to eq('Loses To')
+    play_with(:Rock)
+    expect(game.play).to eq('Player 2 Wins')
+  end
+
+  it 'can add a player' do
+    game.add(player)
+    expect(game.player1).to eq(player)
+  end
+
+  it 'can add a second player' do
+    game.add(player)
+    player2 = double :player2
+    game.add(player2)
+    expect(game.player2).to eq(player2)
+  end
+
+  it 'can assign a random choice to player2' do
+    game.add(player)
+    player2 = double :player2
+    game.add(player2)
+    allow(player2).to receive(:choose).and_return(:Scissors)
+    game.generate_choice
   end
 
 end

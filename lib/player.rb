@@ -15,8 +15,4 @@ class Player
     @choice = choice
   end
 
-  def play(game)
-    game.play_with(self)
-  end
-
 end

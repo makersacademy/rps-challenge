@@ -11,6 +11,9 @@ class RockPaperScissors < Sinatra::Base
 
   game = Game.new
   player = Player.new
+  computer = Player.new
+  game.add(player)
+  game.add(computer)
 
   get('/') do
     erb :index
@@ -22,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
 
   post('/play') do
     player.name_player(params[:player_name].capitalize.to_s)
-    @player = player
+    @player = game.player1
     @choices = game.results.keys
     erb :play_game
   end
@@ -31,9 +34,9 @@ class RockPaperScissors < Sinatra::Base
     @choices = game.results.keys
     player.choose(params[:choice].to_sym)
     game.generate_choice
-    @game_choice = game.choice
-    @message = player.play(game)
-    @player = player
+    @game_choice = game.player2.choice
+    @message = game.play
+    @player = game.player1
     erb :play_game
   end
 

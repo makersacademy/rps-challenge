@@ -5,5 +5,5 @@ Feature: Starting the game
 
   Scenario: Registering
     Given I am on the homepage
-    When I follow "New Game"
-    Then I should see "ENTER NAME"
+    When I follow "PLAY"
+    Then I should see "Enter your Name"
