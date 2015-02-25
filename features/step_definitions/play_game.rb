@@ -3,7 +3,7 @@ Given(/^I am on the Play page$/) do
 end
 
 When(/^I choose a weapon$/) do
-  choose('weapon')
+  choose('rock')
 end
 
 Then(/^I should see the results page$/) do

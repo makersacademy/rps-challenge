@@ -1,8 +1,10 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
-  set :views, Proc.new { File.join(root, "..", "views") }
+  set :views, Proc.new { File.join(root, "views") }
 
   get '/' do
     erb :index
@@ -10,13 +12,12 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @player = Player.new(params[:name])
-    if params[:player].empty
-      redirect to ('/no_name')
+    if params[:name].empty?
       erb :no_name
     else
-      player.choice = params[:choice]
+      @player.choice = params[:choice]
       @computer = computer
-      @game = Game.new(player, computer)
+      @game = Game.new(@player, computer)
       erb :play
     end
   end
@@ -27,6 +28,7 @@ class RPS < Sinatra::Base
 
   get "/reset_game" do
     redirect to ('/play')
+    erb :no_name
   end
 
   def computer

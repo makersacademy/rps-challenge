@@ -3,20 +3,16 @@ Given(/^I am on the homepage$/) do
 end
 
 When(/^I submit a name$/) do
-  fill_in('Description', :with => 'Name')
+  fill_in('name', :with => 'Louise')
 end
 
 Then(/^I should be prompted to choose a weapon$/) do
-  page.has_content?('Choose your weapon.')
+  expect(page).to have_content('Choose your weapon')
 end
 
 
 Given(/^I do not submit a name$/) do
-  fill_in('Description', :with => '')
-end
-
-When(/^I click the Start Game button$/) do
-  click_button('Start Game')
+  fill_in('name', :with => '')
 end
 
 Then(/^I should be redirected to the no_name page$/) do
@@ -28,10 +24,10 @@ Given(/^I am on the no_name page$/) do
   visit('/no_name')
 end
 
-When(/^I press the 'Go Back' button$/) do
-  click_button('Go Back')
-end
-
 Then(/^I should be redirected to the homepage$/) do
   visit('/')
+end
+
+When /^(?:|I )press "([^\"]*)"?$/ do |button|
+  click_button(button)
 end

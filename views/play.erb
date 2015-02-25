@@ -1,4 +1,4 @@
-ro<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <head>
@@ -8,16 +8,20 @@ ro<!DOCTYPE html>
   <body>
 <div>
   <center>
-      Greetings, <%= @name %>!
-      <br><br>
-      Choose your weapon.
+      <p><h2>Greetings, <%= @player.name %></h2></p>
+
+      <p><h2>Choose your weapon</h2></p>
+
       <form action="/result" method="post">
-        <input type="radio" id="weapon" name= "rock" value="rock">Rock
-        <br>
-        <input type="radio" id="weapon" value="paper">Paper
-        <br>
-        <input type="radio" id="weapon" value="scissors">Scissors
-        <br>
+        <input type="radio" id="rock" name= "rock" value="rock">
+        <label for="rock">Rock</label>
+        <br><br>
+        <input type="radio" name= "paper" value="paper">
+        <label for="paper">Paper</label>
+        <br><br>
+        <input type="radio" name= "scissors" value="scissors">
+        <label for="scissors">Scissors</label>
+        <br><br>
         <input type="submit" value="submit">
       </form>
 </div>
