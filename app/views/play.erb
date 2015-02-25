@@ -1,0 +1,48 @@
+<h1>Rock..Paper..Scissors</h1>
+
+<% if @player.weapon == :no_weapon %>
+
+    <% if @opponent == :no_player %>
+
+        Waiting for another player to join...
+        <br>
+        <a href="/play">Refresh</a>
+        <br>
+        or...
+        <br>
+        <a href="/play?computer=yes">Play Computer</a>
+
+    <% else %>
+
+        You are playing <%= @opponent.name %>
+        <br>
+        <a href="/play?weapon=rock"><img src="/images/rock.png"></a>
+        <a href="/play?weapon=paper"><img src="/images/paper.png"></a>
+        <a href="/play?weapon=scissors"><img src="/images/scissors.png"></a>
+        <br>
+
+    <% end %>
+<% else # Player has a weapon %>
+
+    <% @opponent.choose_weapon if @opponent.name == 'the Computer' %>
+
+    <% if @opponent.weapon != :no_weapon %>
+        <% winner = @game.resolve_winner %>
+
+        <% if winner == :TIE %>
+            The game was a draw. PLAY AGAIN!
+        <% else %>
+            <%= winner.name %> is the winner!!
+        <% end %>
+            <br>
+            <br>
+            <img src="/images/<%=@player.weapon.downcase.to_s%>.png">
+            <img src="/images/<%=@opponent.weapon.downcase.to_s%>.png">
+            <br>
+            <%=@player.name%> ..... <%=@opponent.name%>
+    <% else %>
+        <a href="/play?weapon=<%=@player.weapon.downcase.to_s%>">Refresh</a>
+    <% end %>
+
+
+<% end %>
