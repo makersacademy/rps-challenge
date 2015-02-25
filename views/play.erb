@@ -6,25 +6,17 @@
   </head>
 
   <body>
-<div>
+
   <center>
       <p><h2>Greetings, <%= @player.name %></h2></p>
 
-      <p><h2>Choose your weapon</h2></p>
+      <p><h3>Choose your weapon</h3></p>
 
       <form action="/result" method="post">
-        <input type="radio" id="rock" name= "rock" value="rock">
-        <label for="rock">Rock</label>
-        <br><br>
-        <input type="radio" name= "paper" value="paper">
-        <label for="paper">Paper</label>
-        <br><br>
-        <input type="radio" name= "scissors" value="scissors">
-        <label for="scissors">Scissors</label>
-        <br><br>
-        <input type="submit" value="submit">
+        <button name="Rock">Rock</button>
+        <button name="Paper">Paper</button>
+        <button name="Scissors">Scissors</button>
       </form>
-</div>
   </center>
 
   </body>
