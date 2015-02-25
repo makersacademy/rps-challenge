@@ -14,6 +14,11 @@ Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play
 
 As always you can use google your notes and everything else. This is a challenge for you and you only! And you must submit a pull request to this repo with your challenge solution (or partial solution) by 9am Monday morning.
 
+As usual please start by
+
+* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
+* Forking this repo
+
 **Rōnin BANZAI!!!!**
 
 ## Bonus 1: Multiplayer
