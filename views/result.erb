@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Rock Paper Scissors!</title>
+  </head>
+
+  <body>
+
+  <center>
+
+    <% if @game.winner == "Draw" %>
+      <h1>Draw!</h1>
+    <% elsif @game.winner.name == "computer" %>
+      <h1>You Lost! Computer Wins.</h1>
+    <% else %>
+      <h1>Wielding <%= @game.winner.choice %>, You Won! Hurrah!</h1>
+    <%end%>
+
+    <form action='/play' method='post'>
+      <button>Play again!</button>
+    </form>
+
+  </center>
+
+  </body>
+
+</html>

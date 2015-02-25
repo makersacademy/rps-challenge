@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Rock Paper Scissors!</title>
+  </head>
+
+  <body>
+
+  <center>
+      <p><h2>Greetings, <%= @player.name %></h2></p>
+
+      <p><h3>Choose your weapon</h3></p>
+
+      <form action="/result" method="post">
+        <button name="Rock">Rock</button>
+        <button name="Paper">Paper</button>
+        <button name="Scissors">Scissors</button>
+      </form>
+  </center>
+
+  </body>
+</html>
