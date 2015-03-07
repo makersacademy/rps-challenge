@@ -1,0 +1,15 @@
+<h1>The result is ........<h1>
+
+<weapon> You chose <%= @player_weapon %> </weapon><br>
+<weapon> The computer chose <%= @computer_weapon %></weapon><br>
+
+<result> <%= @winner %></result><br>
+
+<h3>
+  <form action="/game" method="post">
+    <question>Would you like to play again <%= @player_name %>?</question><br>
+    <input style="display: none" type="hiddden" value="<%= @player_name %>" name="player_name">
+    <input type="submit" value="Yes Please!" name="submit">
+  </form>
+</h3>
+
