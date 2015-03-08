@@ -1,0 +1,36 @@
+body {
+  background-image: url("https://38.media.tumblr.com/68eb4e88c227a451d8269b4818675d23/tumblr_n4rm37mjwe1s0kxw2o1_500.gif");
+  text-align:center;
+}
+
+h1{
+  margin-top: 100px;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#submit {
+  margin-top: 40px;
+  background-color: silver;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius:8px;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border:none;
+}
+
+
+
+#submit:hover {
+  border: none;
+  background:white;
+  box-shadow: 0px 0px 1px #777;
+}
+
+audio {
+  display: none;
+}
