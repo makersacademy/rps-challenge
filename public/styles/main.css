@@ -1,6 +1,35 @@
-body {
-  margin: 0 auto;
+#header {
   text-align: center;
-  background-color: #DCD9D9;
+  font-style: Serif;
 }
 
+body {
+  position: relative;
+  margin: 0;
+  padding: 250px;
+  text-align: center;
+  background-image: url('/../images/background.jpg');
+}
+
+.styled-select {
+  margin: 0 auto;
+  background: darkblue;
+  width: 25%;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 20px ;
+  height: 34px;
+  -webkit-appearance: none;
+  color: white;
+  font-family: courier;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: 15em;
+}

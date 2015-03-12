@@ -5,6 +5,7 @@ require './lib/player'
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
+  set :public_folder, Proc.new { File.join(root, "..", "public") }
 
   Game = Game.new
 

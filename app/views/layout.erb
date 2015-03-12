@@ -2,20 +2,22 @@
 <html>
 
   <head>
-  <style>
-  body {background-color:darkgray}
-  h1   {color:#2F2D2D}
-  h2   {color:#2F2D2D}
-</style>
+  <style></style>
     <title>RockPaperScissors</title>
-    <link href="/styles/main.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="script.js"></script>
   </head>
 
   <body>
-     <center>
-        <%= yield %>
-     </center>
+  <div id="content">
+  <h1 id="header">Welcome to Rock, Paper, Scissors</h1>
+    <%= yield %>
+    </div>
+
+     <div id="footer">
+  <a href="https://github.com/kevinlanzon">Created by Kevin Lanzon | Click to view my code</a>
+</div>
+
   </body>
 
 </html>
