@@ -1,0 +1,44 @@
+  <h2>One Player Game</h2>
+
+  <% if get_player.name %>
+
+    <% if @game && get_player %>
+      <% if @result == :draw %> 
+        <h2>Wooah, that one was a draw</h2>
+      <% elsif @result == get_player.selection %>
+        <h2>Congratulations <%= get_player.name %>, you won!</h2>
+      <% else %>
+        <h2>Unlucky, <%= current_player.name %>, you lost</h2>  
+      <% end %>
+      <% if get_player.selection!=nil %>  
+        <p>You chose <%= get_player.selection.upcase %>, and the computer chose <%= @computer_choice.upcase %></p>
+      <% end %>     
+    <% end %> 
+    
+    <h2><%= get_player.name %>, please select your move!</h2> 
+
+    <form action='/one_player' method="post">
+      Go Rock!<input id="rock" type="radio" name="selection" value="rock">
+      Go Paper!<input id="paper" type="radio" name="selection" value="paper">
+      Go Scissors!<input id="scissors" type="radio" name="selection" value="scissors">
+      <input type="submit" name="go" value="Go!">
+    </form>
+
+    <form action='/' method='get'>
+      <input type="submit" name="quit" value="Quit current game"> 
+    </form>
+  
+  <% else %>
+    
+    <h2>Please enter your name below!</h2>
+
+    <form action='/one_player' method="post">
+        <input type="text" name="name">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+  <% end %>  
+
+
+
+

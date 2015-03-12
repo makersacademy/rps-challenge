@@ -21,3 +21,7 @@ end
 When(/^click the go button$/) do
   click_button('Go!')
 end
+
+When(/^The computer selected rock$/) do |pick|
+  Capybara.app::GAME.computer.pick = :rock
+end

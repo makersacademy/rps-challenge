@@ -9,5 +9,8 @@ Feature: Playing the game
 		When I click the submit button
 		Then I should see "Julian, please select your move!"
 		When I select the rock option
+		And The computer selected "rock"
 		And click the go button
 		Then I should see "Julian"
+
+

@@ -1,4 +1,4 @@
-class Game 
+class OnePlayerGame 
 
   attr_accessor :computer, :player
 
