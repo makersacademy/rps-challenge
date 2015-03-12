@@ -6,14 +6,14 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  GAME = Game.new
+  Game = Game.new
 
   get '/' do
     erb :index
   end
 
   post '/game' do
-    GAME.player = Player.new(session[:Name])
+    Game.player = Player.new(session[:Name])
     session[:Name] = params[:Name]
     redirect to '/game'
   end
@@ -24,17 +24,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/scores' do
-    GAME.player.choice = params[:choice]
+    Game.player.choice = params[:choice]
     @player = session[:Name]
     redirect to '/scores'
   end
 
   get '/scores' do
-    GAME.result
-    @winner = GAME.winner
+    Game.result
+    @winner = Game.winner
     @player = session[:Name]
-    @choice = GAME.player.choice
-    @computer = GAME.computer_choice
+    @choice = Game.player.choice
+    @computer = Game.computer_choice
     erb :scores
   end
 

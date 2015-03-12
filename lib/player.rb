@@ -7,5 +7,4 @@ class Player
     @choice = choice
     @score = 0
   end
-
 end

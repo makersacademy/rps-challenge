@@ -25,5 +25,4 @@ describe Player do
     player.score += 1
     expect(player.score).to eq(1)
   end
-
 end

@@ -6,9 +6,9 @@ class Game
 
   def initialize
     @name = name
-    @player = nil
-    @computer_choice = nil
-    @winner = nil
+    @player = player
+    @computer_choice = computer_choice
+    @winner = winner
   end
 
   RULES = {"rock" => ["scissors"], "scissors" => ["paper"], "paper" => ["rock"]}
@@ -21,7 +21,6 @@ class Game
     choose_randomly
     @winner = "tie" if @player.choice == @computer_choice
     @winner = @player.name if RULES[@player.choice].include? @computer_choice
-    @winner = "The computer" if RULES[@computer_choice].include? @player.choice
+    @winner = "The computer is the" if RULES[@computer_choice].include? @player.choice
   end
-
 end
