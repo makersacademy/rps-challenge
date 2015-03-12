@@ -1,6 +1,6 @@
 Rock, Paper, Scissors
 ==========
-Makers Academy Week 3 Challenge
+[Makers Academy](http://www.makersacademy.com) Week 3 Challenge
 
 Requirements
 ----
