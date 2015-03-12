@@ -1,31 +1,55 @@
-# Challenge: Rōnin Badge Test
+Rock, Paper, Scissors
+==========
+Makers Academy Week 3 Challenge
 
-Knowing how to build web applications is getting us almost there as web developers!
+Requirements
+----
+-  the marketeer has to enter their name before the game
+-  the marketeer will be presented with the choices (rock, paper and scissors)
+-  the marketeer can choose one option
+-  the game will choose a random option
+-  a winner will be declared
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following features:
+Technologies used
+----
+- Sinatra
+- Cucumber
+- Capybara
+- Ruby
+- Html
+- CSS
+- Git
+- Atom
 
-- the marketeer has to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
 
-As always you can use google your notes and everything else. This is a challenge for you and you only!
+Screenshot
+---
+<div align="center">
+        <img width="40%" src="public/images/Screen Shot 2015-03-12 at 14.32.12.png">
+</div>
+Heroku (live)
+-----
 
-**Rōnin BANZAI!!!!**
+[Rock, Paper, Scissors](https://rock-paper-scissors-lanzon.herokuapp.com/)
 
-## Bonus 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+How to clone this repo
+----
+```sh
+git clone git@github.com:kevinlanzon/rps-challenge.git
+```
 
-## Bonus 2: Rock, Paper, Scissors, Spock, Lizard
+How to run tests
+----
+```sh
+cd rps-challenge
+rspec
+```
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+How to rackup
+----
+```sh
+rackup
+```
+enter localhost:9292 into the browser
