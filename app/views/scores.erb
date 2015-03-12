@@ -1,0 +1,11 @@
+<% if @winner != 'tie' %>
+  <h2>You have chosen <%= @choice %>
+  <p>The computer has chosen <%= @computer %></p>
+    <p><%= @winner %> winner!</h2></p>
+   <a href="/game">Play Again!</a>
+    <% else %>
+  <h2>You have chosen <%= @choice %>. The computer has chosen <%= @computer %>. It's a <%= @winner %></h2>
+
+  <a href="/game">Play Again!</a>
+
+<% end %>
