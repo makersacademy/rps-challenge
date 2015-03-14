@@ -3,7 +3,7 @@ Given(/^I am on the homepage$/) do
 end
 
 Given(/^I start a one player game$/) do
-  pending # express the regexp above with the code you wish you had
+  click_link('One player')  
 end
 
 Given(/^I enter my name "(.*?)"$/) do |arg1|

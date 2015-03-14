@@ -1,11 +1,7 @@
+<h2>Please select the number of players...</h2>
 
-<% if !@no_of_players %>
+<main>
+<a href="/one_player">One player</a>
+<a href="/two_player">Two players</a>
+</main>		
 
-	<h2>Please select the number of players...</h2>
-	<form action='/' method="post">
-		1 Player!<input id="1_player" type="radio" name="no_of_players" value="1">
-		2 Players!<input id="2_players" type="radio" name="no_of_players" value="2">
-    <input type="submit" name="choice" value="Go!">
-	</form>				
-
-<% end %>	
