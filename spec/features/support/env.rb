@@ -27,3 +27,5 @@ require 'capybara'
 require 'capybara/cucumber'
 
 Capybara.app = Sinatra::Application
+
+include Capybara::DSL

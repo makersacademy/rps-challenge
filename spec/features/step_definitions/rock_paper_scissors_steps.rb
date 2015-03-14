@@ -23,8 +23,24 @@ Given(/^I have started a one player game$/) do
   visit '/one_player'
 end
 
+Given(/^I submit the form$/) do
+  click_on('Submit')
+end
+
 Given(/^I choose scissors and the computer chooses paper$/) do
-  click_button('scissors')
+  click_on('scissors')
   make_choice
 end
+
+Given(/^I choose paper and the computer chooses scissors$/) do
+  click_on('paper')
+  make_choice   
+end
+
+Given(/^I choose scissors and the computer chooses scissors$/) do
+  click_on('scissors')
+  make_choice
+end
+
+
 
