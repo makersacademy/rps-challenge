@@ -18,10 +18,9 @@
     <h2><%= get_player.name %>, please select your move!</h2> 
 
     <form action='/one_player' method="post">
-      Go Rock!<input id="rock" type="radio" name="selection" value="rock">
-      Go Paper!<input id="paper" type="radio" name="selection" value="paper">
-      Go Scissors!<input id="scissors" type="radio" name="selection" value="scissors">
-      <input type="submit" name="go" value="Go!">
+      <input id="rock" type="submit" name="rock" value="Rock">
+      <input id="paper" type="submit" name="paper" value="Paper">
+      <input id="scissors" type="submit" name="scissors" value="Scissors">
     </form>
 
     <form action='/' method='get'>
