@@ -7,7 +7,7 @@ Given(/^I start a one player game$/) do
 end
 
 Given(/^I enter my name "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  fill_in('name', :with => arg1)
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
