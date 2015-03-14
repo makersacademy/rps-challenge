@@ -1,32 +1,29 @@
-require 'game'
+require_relative '../app/models/one_player_game'
 
-describe 'Game' do 
-  let(:game){Game.new}
+describe 'OnePlayerGame' do 
+  let(:game){OnePlayerGame.new}
   let(:player){double :player, :selection=>:scissors}
+  let(:computer){double :computer, :selection=>:scissors}
 
-  it 'knows when it is a draw' do 
-    allow(game).to receive(:selection).and_return(:scissors)
-    expect(game.determine_winner(player)).to eq(:draw)
+  def set_players
+    game.player = player
+    game.computer = computer
   end  
 
-  it 'can choose a selection for itself' do 
-    allow(game).to receive(:selection).and_return(:rock)
-    expect(game.selection).to eq(:rock)
+  it 'knows when it is a draw' do   
+    set_players
+    expect(game.determine_winner).to eq(:draw)       
   end  
 
-  it 'can compare its selection against a players selection' do 
-    allow(game).to receive(:selection).and_return(:rock)
-    expect(game.selections_equal?(player)).to eq(false)
-  end  
+  it 'knows that paper beats rock' do 
+    allow(player).to receive(:selection) { :paper }
+    allow(computer).to receive(:selection) { :rock }
+    set_players
+    expect(game.determine_winner).to eq(player)
+  end
 
-  it 'knows when its selection has beaten the players selection' do 
-    allow(game).to receive(:selection).and_return(:rock)
-    expect(game.check_selections(player)).to eq(game)
-  end   
+  it 'knows that rock beats scissors' do
 
-  it 'knows when its selection has been beaten' do
-    allow(game).to receive(:selection).and_return(:paper)
-    expect(game.check_selections(player)).to eq(player)
-  end  
-
+  end 
+    
 end  

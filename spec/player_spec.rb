@@ -1,10 +1,10 @@
-require 'player'
+require_relative '../app/models/player'
 
 describe 'Player' do
   let(:player){Player.new}
   
   it 'can choose an option' do
-    allow(player).to receive(player.selection=(:rock)).and_return(:rock)
+    allow(player).to receive(player.selection=(:rock))
     expect(player.selection).to eq(:rock)
   end
 
