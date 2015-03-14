@@ -11,7 +11,7 @@ Given(/^I enter my name "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  page.has_content?(arg1)
 end
 
 
