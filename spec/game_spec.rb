@@ -23,7 +23,10 @@ describe 'OnePlayerGame' do
   end
 
   it 'knows that rock beats scissors' do
-
+    allow(player).to receive(:selection) { :scissors }
+    allow(computer).to receive(:selection) { :rock }
+    set_players
+    expect(game.determine_winner).to eq(computer)
   end 
     
 end  
