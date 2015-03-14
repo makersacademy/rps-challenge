@@ -1,3 +1,8 @@
+def make_choice
+  computer = Computer.new
+  computer.selection = :scissors
+end  
+
 Given(/^I am on the homepage$/) do
   visit '/'
 end
@@ -18,11 +23,8 @@ Given(/^I have started a one player game$/) do
   visit '/one_player'
 end
 
-Given(/^I choose scissors$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^the computer chooses paper$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I choose scissors and the computer chooses paper$/) do
+  click_button('scissors')
+  make_choice
 end
 

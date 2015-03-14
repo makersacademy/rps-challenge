@@ -1,3 +1,5 @@
+GAME = Game.new
+
 get '/one_player' do
 
   player = Player.new 
@@ -7,15 +9,20 @@ get '/one_player' do
 end  
 
 post '/one_player' do
-  
+    
+  computer = Computer.new
+  GAME.player1 = get_player
+  GAME.player2 = computer  
   get_player.name = params[:name]
-  
-  if get_player.name
-    @game = Game.new
-    @computer = Computer.new
-    @game.player1 = get_player
-    @game.player2 = @computer
-  end  
 
   erb :one_player
 end 
+
+post '/one_player_game' do 
+
+  p get_player.selection = params[:choice].to_sym
+  p @computer_choice = GAME.player2.get_selection
+  p @result = GAME.determine_winner
+
+  erb :one_player
+end  
