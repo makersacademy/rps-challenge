@@ -1,13 +1,13 @@
-require_relative '../app/models/one_player_game'
+require_relative '../app/models/game'
 
-describe 'OnePlayerGame' do 
-  let(:game){OnePlayerGame.new}
+describe 'Game' do 
+  let(:game){Game.new}
   let(:player){double :player, :selection=>:scissors}
   let(:computer){double :computer, :selection=>:scissors}
 
   def set_players
-    game.player = player
-    game.computer = computer
+    game.player1 = player
+    game.player2 = computer
   end  
 
   it 'knows when it is a draw' do   

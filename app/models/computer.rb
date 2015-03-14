@@ -2,7 +2,7 @@ class Computer
 
   attr_reader :selection
 
-  def make_selection
+  def selection
     @selection=[:rock, :paper, :scissors].sample
   end   
 
