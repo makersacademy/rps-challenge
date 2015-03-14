@@ -2,7 +2,7 @@
 
   <% if get_player.name %>
 
-    <% if @game && get_player %>
+    <% if @game && get_player.selection %>
       <% if @result == :draw %> 
         <h2>Wooah, that one was a draw</h2>
       <% elsif @result == get_player.selection %>
@@ -10,7 +10,7 @@
       <% else %>
         <h2>Unlucky, <%= current_player.name %>, you lost</h2>  
       <% end %>
-      <% if get_player.selection != nil %>  
+      <% if get_player.selection %>  
         <p>You chose <%= get_player.selection.upcase %>, and the computer chose <%= @computer_choice.upcase %></p>
       <% end %>     
     <% end %> 
