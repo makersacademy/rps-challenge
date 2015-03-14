@@ -29,4 +29,10 @@ describe 'OnePlayerGame' do
     expect(game.determine_winner).to eq(computer)
   end 
     
+  it 'knows that scissors beats paper' do
+    allow(player).to receive(:selection) { :scissors }
+    allow(computer).to receive(:selection) { :paper }
+    set_players
+    expect(game.determine_winner).to eq(player)
+  end   
 end  
