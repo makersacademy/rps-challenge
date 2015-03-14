@@ -10,7 +10,7 @@
       <% else %>
         <h2>Unlucky, <%= current_player.name %>, you lost</h2>  
       <% end %>
-      <% if get_player.selection!=nil %>  
+      <% if get_player.selection != nil %>  
         <p>You chose <%= get_player.selection.upcase %>, and the computer chose <%= @computer_choice.upcase %></p>
       <% end %>     
     <% end %> 
