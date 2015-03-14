@@ -5,15 +5,10 @@ end
 
 post '/one_player' do
 
-  current_player.name = params[:name]
- 
-  current_player.make_selection = params[:selection].to_sym
-  @game = OnePlayerGame.new
-  @computer = Computer.new
-  @game.computer = @computer
-  @game.player = get_player
-  @computer_choice = @computer.make_selection
-  @result = @game.determine_winner     
+  player = Player.new 
+  session[:player_id] = player.object_id
+  
+  get_player.name = params[:name]
 
   erb :one_player
 end 

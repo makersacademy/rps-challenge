@@ -1,8 +1,6 @@
 get '/' do
   
   session.clear
-  player = Player.new 
-  session[:player_id] = player.object_id
 
   erb :index
 end  
