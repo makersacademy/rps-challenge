@@ -1,3 +1,5 @@
+@ready = true
+
 get '/' do
   
   session.clear
