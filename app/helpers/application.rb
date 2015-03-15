@@ -1,7 +1,7 @@
 helpers do 
 
   def get_player
-    @get_player ||= ObjectSpace._id2ref(session[:player_id]) if session[:player_id]
+    GAME.player1.object_id == session[:player_id] ? GAME.player1 : GAME.player2 
   end
 
   def get_opponent

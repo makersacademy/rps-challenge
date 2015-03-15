@@ -1,15 +1,16 @@
 GAME = Game.new
 @ready = true
+@result = nil
 
 get '/two_player' do
   player = Player.new 
+  GAME.player1 ? GAME.player2 = player : GAME.player1 = player 
   session[:player_id] = player.object_id
   erb :two_player
 end  
 
 post '/two_player' do
-  get_player.name = params[:name]    
-  GAME.player1 ? GAME.player2 = get_player : GAME.player1 = get_player    
+  get_player.name = params[:name]        
   erb :two_player
 end 
 
@@ -27,9 +28,9 @@ post '/two_player_game' do
 end  
 
 get '/go_again' do 
-  @result = nil
-  get_player.selection = nil
-  get_opponent.selection = nil
+  if @result then @result = nil end
+  if get_player.selection then get_player.selection = nil end
+  if get_opponent.selection then get_opponent.selection = nil end
   @ready = true
 
   erb :two_player
