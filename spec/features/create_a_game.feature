@@ -7,4 +7,6 @@ Feature:  As a player
     Given I am on the homepage
     And I start a one player game
     And I enter my name "Julian"
+    And I submit the form
     Then I should see "Julian"         
+
