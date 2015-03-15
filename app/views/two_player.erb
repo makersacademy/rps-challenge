@@ -1,29 +1,34 @@
   <h2>Two Player Game</h2>
 
   <% if get_player.name %>
-    <% if @ready %>
-      <% if get_player.selection %>
-        <% if @result == :draw %> 
-          <h2>Wooah, that one was a draw</h2>
-        <% elsif @result == get_player %>
-          <h2>Congratulations <%= get_player.name %>, you won!</h2>
-        <% else %>
-          <h2>Unlucky, <%= get_player.name %>, you lost</h2>  
-        <% end %>  
-         <p>You chose <%= get_player.selection.upcase %>, and your opponent chose <%= get_opponent.selection.upcase %></p> 
-      <% end %> 
-      
+    <% if @ready && @result %>
+     
+      <% if @result == :draw %> 
+        <h2>Wooah, that one was a draw</h2>
+      <% elsif @result == get_player %>
+        <h2>Congratulations <%= get_player.name %>, you won!</h2>
+      <% else %>
+        <h2>Unlucky, <%= get_player.name %>, you lost</h2>  
+      <% end %>  
+      <p>You chose <%= get_player.selection.upcase %>, and your opponent chose <%= get_opponent.selection.upcase %></p> 
+
+      <form action='/go_again' method='get'>
+        <input type="submit" name="go-again" value="Go again!"> 
+      </form>  
+
     <% else %>
       <p>Waiting...</p>
     <% end %>  
-    
-    <h2><%= get_player.name %>, please select your move!</h2> 
+  
+    <% if !get_player.selection %>
+      <h2><%= get_player.name %>, please select your move!</h2> 
 
       <form action='/two_player_game' method="post">
         <button id="rock" name="choice" value="rock">Rock</button>
         <button id="paper" name="choice" value="paper">Paper</button>
         <button id="scissors" name="choice" value="scissors">Scissors</button>
       </form>
+    <% end %>
 
       <form action='/' method='get'>
         <input type="submit" name="quit" value="Quit current game"> 
