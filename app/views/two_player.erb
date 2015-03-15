@@ -1,0 +1,37 @@
+<h2>Two Player Game</h2>
+
+<% if get_player.name %>
+
+    <% if get_player.selection %>
+      <% if @result == :draw %> 
+        <h2>Wooah, that one was a draw</h2>
+      <% elsif @result == get_player %>
+        <h2>Congratulations <%= get_player.name %>, you won!</h2>
+      <% else %>
+        <h2>Unlucky, <%= get_player.name %>, you lost</h2>  
+      <% end %>  
+       <p>You chose <%= get_player.selection.upcase %>, and your opponent chose <%= @opponent_choice.upcase %></p> 
+    <% end %> 
+    
+    <h2><%= get_player.name %>, please select your move!</h2> 
+
+    <form action='/two_player_game' method="post">
+      <button id="rock" name="choice" value="rock">Rock</button>
+      <button id="paper" name="choice" value="paper">Paper</button>
+      <button id="scissors" name="choice" value="scissors">Scissors</button>
+    </form>
+
+    <form action='/' method='get'>
+      <input type="submit" name="quit" value="Quit current game"> 
+    </form>
+  
+  <% else %>
+    
+    <h2>Please enter your name below!</h2>
+
+    <form action='/two_player' method="post">
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+  <% end %>  
