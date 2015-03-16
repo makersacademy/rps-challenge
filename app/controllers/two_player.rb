@@ -15,15 +15,24 @@ post '/two_player' do
 end 
 
 get '/two_player_game' do 
-  get_opponent.selection ? @ready = true : @ready = false
-  @result = GAME.determine_winner
+  if get_opponent  
+    get_opponent.selection && get_player.selection ? @ready = true : @ready = false
+    @result = GAME.determine_winner
+  else
+    @ready = false
+  end  
+
   erb :two_player
 end  
 
 post '/two_player_game' do 
   get_player.selection = params[:choice].to_sym  
-  get_opponent.selection ? @ready = true : @ready = false
-  @result = GAME.determine_winner
+  if get_opponent
+ get_opponent.selection && get_player.selection ? @ready = true : @ready = false
+    @result = GAME.determine_winner
+  else 
+    @ready = false
+  end  
   erb :two_player
 end  
 
