@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
@@ -110,7 +109,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-=======
 require 'byebug'
 require 'capybara/rspec'
 require 'coveralls'
@@ -120,4 +118,3 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
->>>>>>> 4ae085a (adds files for travis, hound, coveralls)
