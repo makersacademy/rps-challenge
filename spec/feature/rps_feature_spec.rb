@@ -1,4 +1,6 @@
 require 'capybara/rspec'
+require 'game'
+require 'player'
 
 feature 'Playing rock, paper scissors' do
   let(:player1) { Player.new "Bob" }
