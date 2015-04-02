@@ -12,7 +12,7 @@ class Game
 
   # eventually make this private and have another method call it
   # Currently can be called multiple times(fail if counter exceeds some number)
-  # consider making a checker function to dry out failures
+  # consider making a checker function to DRY out failures
   def victory(player)
     fail "That's not a player!" unless player == player_1 || player == player_2
     @won = "#{player} has won!"

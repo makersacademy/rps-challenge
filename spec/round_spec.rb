@@ -1,6 +1,6 @@
-require 'actions'
+require 'round'
 
-describe Actions do
+describe Round do
   let(:game) { double :game }
   context 'it can report wins or losses' do
     it 'has a method which can report a win to the game' do

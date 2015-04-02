@@ -1,4 +1,4 @@
-class Actions
+class Round
   def win!
     "Win"
   end
