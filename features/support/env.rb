@@ -7,7 +7,10 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/features/step_definitions/web_steps.rb'
+  add_filter '/features/support/paths.rb'
+end
 
 ENV['RACK_ENV'] = 'test'
 
@@ -18,6 +21,7 @@ require File.join(File.dirname(__FILE__), '..', '..', app_file)
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'byebug'
 
 Capybara.app = RockPaperScissors
 
