@@ -38,6 +38,7 @@ As usual please start by
 
 * Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
 * Forking this repo
+* TEST driving development of your app
 
 **Rōnin BANZAI!!!!**
 
