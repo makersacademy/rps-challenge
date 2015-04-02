@@ -7,6 +7,8 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 
+SimpleCov.start
+
 ENV['RACK_ENV'] = 'test'
 
 app_file = 'lib/rock_paper_scissors.rb'
