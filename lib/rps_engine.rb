@@ -1,11 +1,16 @@
 class RpsGame
-  attr_reader :p1_move, :winner
+  attr_reader :p1_move, :p2_move, :winner
 
   MOVES = [:rock, :paper, :scissors]
 
   def p1_go move
     fail 'not a valid move' unless MOVES.include? move
     @p1_move = move
+  end
+
+  def p2_go move
+    fail 'not a valid move' unless MOVES.include? move
+    @p2_move = move
   end
 
   def compare player1_move, player2_move

@@ -10,11 +10,14 @@ describe RpsGame do
       moves.each do |move|
         game.p1_go move
         expect(game.p1_move).to eq move
+        game.p2_go move
+        expect(game.p2_move).to eq move
       end
     end
 
     it 'raises an error if input move is incorrect' do
       expect{game.p1_go :not_a_move}.to raise_error 'not a valid move'
+      expect{game.p2_go :not_a_move}.to raise_error 'not a valid move'
     end
 
   end
@@ -35,7 +38,6 @@ describe RpsGame do
     end
   
   end
-
 
 
 end
