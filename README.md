@@ -1,12 +1,23 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
+
+Use
+---
+Just go to here:
+http://rock-paper-scissors-rps.herokuapp.com/
+
+Approach
+--------
+May have taken 'see name in lights' too literally.
+Rock paper scissors lizard spock. Press a button, see the result.
+Fully test-driven primarily with cucumber/capybara. Game logic tested with Rspec and randomness stubbed by Rspec.
 
 Instructions
--------
+------------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
