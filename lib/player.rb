@@ -1,7 +1,8 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :browser
 
-  def initialize name
-    @name = name
+  def initialize(options)
+    @name = options.fetch(:name)
+    @browser = options.fetch(:browser)
   end
 end
