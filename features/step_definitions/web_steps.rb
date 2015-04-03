@@ -1,3 +1,4 @@
+
 Given(/^I am on the homepage$/) do
   visit "/"
 end
@@ -16,4 +17,11 @@ end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content arg1
+end
+
+Given(/^I filled out the registration page$/) do
+  visit "/"
+  click_link "1 player game"
+  fill_in('name', :with => 'Bob')
+  click_button 'submit'
 end
