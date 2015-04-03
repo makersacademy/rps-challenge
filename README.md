@@ -1,11 +1,5 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task 
 ----
 
@@ -34,11 +28,6 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
 
 **Rōnin BANZAI!!!!**
 
