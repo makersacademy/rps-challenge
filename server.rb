@@ -27,7 +27,7 @@ class RPSWeb < Sinatra::Base
   end
 
 
-  post '/move' do
+  post '/play_game' do
     # params are reset in each of these blocks because of sessions
     @move1 = params[:move].to_sym
     @move2 = comp.make_move

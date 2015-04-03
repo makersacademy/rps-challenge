@@ -25,3 +25,10 @@ Given(/^I filled out the registration page$/) do
   step 'I enter "Bob" in the "name" field'
   click_button 'submit'
 end
+
+Then(/^I am redirected back to the "([^"]*)" page$/) do |arg1|
+  uri = URI.parse(current_url)
+  expect(uri.path).to eq arg1
+end
+
+  
