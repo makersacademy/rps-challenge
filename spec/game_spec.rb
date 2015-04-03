@@ -28,6 +28,7 @@ describe Game do
   end
 
   it 'chooses a move' do
-    expect([:rock, :paper, :scissors]).to include(game_dummy.other_move)
+    expect([:rock, :paper, :scissors, :lizard, :spock]).to include(
+      game_dummy.other_move)
   end
 end
