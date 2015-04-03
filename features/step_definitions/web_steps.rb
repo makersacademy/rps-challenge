@@ -21,5 +21,5 @@ Then(/^I see "([^"]*)" with class "([^"]*)"$/) do |_text, klass|
 end
 
 When(/^the computer chooses "([^"]*)"$/) do |move|
-  Game.any_instance.stub(:other_move) { move.to_sym }
+  Rps.any_instance.stub(:other_move) { move.to_sym }
 end

@@ -6,23 +6,28 @@
     from {color: DarkGreen;}
     to {color: Chartreuse;}
 }
-
+* {
+  -webkit-text-size-adjust: none;
+}
 .flashing {
-/*  color: green; */
-  -webkit-animation-name: example; /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
-  animation-name: example; /* Chrome, Safari, Opera */
-  animation-duration: 1s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 h1 {
-  font-size: 64px;
+  font-size: 64;
   text-align: center;
  }
 
 p {
+  font-size: 32px;
   text-align: center;
+}
+button {
+  font-size: 48px;
 }

@@ -23,3 +23,13 @@ Feature: Play rock-paper-scissors
     And I press the "Scissors" button
     Then I see "You Win!"
 
+  Scenario: Shows what moves were chosen, so why I won
+    When the computer chooses "paper"
+    And I press the "Scissors" button
+    Then I see "Computer took move paper, and you played scissors."
+
+  Scenario: Draw with same move
+    When the computer chooses "scissors"
+    And I press the "Scissors" button
+    Then I see "Draw!"
+

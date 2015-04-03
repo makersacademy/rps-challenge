@@ -3,17 +3,17 @@ require_relative 'game'
 
 class Rps < Sinatra::Base
   enable :sessions
+  include Game
 
   get '/' do
     erb :index
   end
 
   post '/game' do
-    # puts @other = other_move
+    @other_move = other_move
     session[:name] = params[:name] if params[:name]
-    params[:win] = true if params[:move] && Game.new.win?(params[:move].to_sym)
-    puts session.inspect
-    puts params.inspect
+    @move = params[:move]
+    params[:result] = result(@move, @other_move) if @move
     erb :game
   end
 
