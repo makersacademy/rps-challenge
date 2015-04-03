@@ -11,7 +11,7 @@ class Game
 
   def play
     fail 'Players are not ready' unless ready?
-    check_elements(player1.chosed_element, player2.chosed_element)
+    check_winner(player1.chosed_element, player2.chosed_element)
   end
 
   def ready?
@@ -20,14 +20,10 @@ class Game
 
   private
 
-  def check_elements element1, element2
-    if @win_cases.include?([element1, element2])
-      player1_win
-    elsif @win_cases.include?([element2, element1])
-      player2_win
-    else
-      draw
-    end
+  def check_winner element1, element2
+    draw if element1 == element2
+    player1_win if @win_cases.include?([element1, element2])
+    player2_win if @win_cases.include?([element2, element1])
   end
 
   def player1_win
