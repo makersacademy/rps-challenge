@@ -20,8 +20,8 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
 end
 
 Given(/^I filled out the registration page$/) do
-  visit "/"
-  click_link "1 player game"
-  fill_in('name', :with => 'Bob')
+  step 'I am on the homepage'
+  step 'I click "1 player game"'
+  step 'I enter "Bob" in the "name" field'
   click_button 'submit'
 end

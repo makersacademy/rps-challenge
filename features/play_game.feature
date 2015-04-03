@@ -19,3 +19,10 @@ Feature:
     When  I enter "rock" in the "move" field
     And   I click the "play" button
     Then  I should see "You played rock, Computer played "
+
+  Scenario:
+    Given I filled out the registration page
+    When  I enter "wrong move" in the "move" field
+    And   I click the "play" button
+    Then  I should see "please enter rock, paper or scissors"
+    And   I am redirected back to the "play game page"

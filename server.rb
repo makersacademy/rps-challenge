@@ -4,6 +4,8 @@ require_relative 'lib/computer_player.rb'
 
 class RPSWeb < Sinatra::Base
 
+  enable :sessions
+
   RPS = RpsGame.new
   comp = ComputerPlayer.new
 
@@ -14,23 +16,30 @@ class RPSWeb < Sinatra::Base
   get '/one_player_game' do
     # @1player = true might be a good way to reuse the same move forms
     @player_two = "Computer"
+    session[:player_two] = @player_two
     erb :one_player_game
   end
 
   post '/submit_name' do
     @player_one = params[:name]
+    session[:player_one] = @player_one
     erb :play_game
   end
 
 
   post '/move' do
+    # params are reset in each of these blocks because of sessions
     @move1 = params[:move].to_sym
     @move2 = comp.make_move
-    look_up = (RPS.compare @move1, @move2).keys.last
-    p look_up
+    begin
+      look_up = (RPS.compare @move1, @move2).keys.last
+    rescue 
+      @user_error = true
+      return erb :play_game
+    end
     results = {
-          :player_1 => "#{@player_one} Wins!",
-          :player_2 => "#{@player_two} Wins!",
+          :player_1 => "#{session[:player_one]} Wins!",
+          :player_2 => "#{session[:player_two]} Wins!",
           :draw     => "Draw!"
         }
     @result = results[look_up]

@@ -1,6 +1,7 @@
+<%= "please enter rock, paper or scissors" if @user_error %>
 Player 1: <%=@player_one %>
 <form action="/move" method="post">
 Enter Move<br>
-<input type="text" name="move" placeholder "rock/paper/scissors">
+<input type="text" name="move" placeholder="rock/paper/scissors">
 <input type="submit" value="play">
 <br>
