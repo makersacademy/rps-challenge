@@ -1,2 +1,11 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
-<h1 class='flashing'><%= @name %></h1>
+<h1 class='flashing'><%= session[:name] %></h1>
+<% if params[:move] %>
+  <h1>You Win!</h1>
+<% else %>
+<form action='/game' method='post' align='center'>
+  <button type='submit' name='move' value='rock'>Rock</button>
+  <button type='submit' name='move' value='paper'>Paper</button>
+  <button type='submit' name='move' value='scissors'>Scissors</button>
+</form>
+<% end %>

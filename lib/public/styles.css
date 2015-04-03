@@ -2,15 +2,23 @@
     from {color: DarkGreen;}
     to {color: Chartreuse;}
 }
-
+@keyframes example {
+    from {color: DarkGreen;}
+    to {color: Chartreuse;}
+}
 
 .flashing {
 /*  color: green; */
-  font-size: 64px;
-  text-align: center;
-  color: red;
   -webkit-animation-name: example; /* Chrome, Safari, Opera */
   -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
+  animation-name: example; /* Chrome, Safari, Opera */
+  animation-duration: 1s; /* Chrome, Safari, Opera */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+ h1 {
+  font-size: 64px;
+  text-align: center;
+ }
