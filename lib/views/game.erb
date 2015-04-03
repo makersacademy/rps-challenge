@@ -3,15 +3,15 @@
 <% if params[:move] %>
   <% if params[:result] == :win %>
     <h1>You Win!</h1>
-    <p>Computer took move <%= @other_move %>, and you played <%= params[:move] %>.</p>
+    <p>Computer took move `<%= @other_move %>`, and you played `<%= params[:move] %>`.</p>
     <p>Play again:</p>
   <% elsif params[:result] == :lose %>
     <h1>You Lose!</h1>
-    <p>Computer took move <%= @other_move %>, and you played <%= params[:move] %>.</p>
+    <p>Computer took move `<%= @other_move %>`, and you played `<%= params[:move] %>`.</p>
     <p>Play again:</p>
   <% else %>
     <h1>Draw!</h1>
-    <p>You both played <%= params[:move] %>.</p>
+    <p>You both played `<%= params[:move] %>`.</p>
     <p>Play again:</p>
   <% end %>
 <% end  %>

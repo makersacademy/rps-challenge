@@ -2,13 +2,16 @@
     from {color: DarkGreen;}
     to {color: Chartreuse;}
 }
+
 @keyframes example {
     from {color: DarkGreen;}
     to {color: Chartreuse;}
 }
+
 * {
   -webkit-text-size-adjust: none;
 }
+
 .flashing {
   -webkit-animation-name: example;
   -webkit-animation-duration: 1s;
@@ -19,15 +22,19 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 h1 {
   font-size: 64;
   text-align: center;
  }
 
-p {
+p, form, input {
   font-size: 32px;
   text-align: center;
 }
+
 button {
+  margin: 20px;
+  text-align: center;
   font-size: 48px;
 }

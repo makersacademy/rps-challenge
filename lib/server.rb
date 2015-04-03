@@ -10,11 +10,19 @@ class Rps < Sinatra::Base
   end
 
   post '/game' do
-    @other_move = other_move
     session[:name] = params[:name] if params[:name]
-    @move = params[:move]
-    puts params[:result] = result(@move, @other_move) if @move
+    if params[:move]
+      @other_move = other_move
+      other_move
+      @move = params[:move]
+      params[:result] = result(@move, @other_move)
+      params.inspect
+    end
     erb :game
+  end
+
+  get '/game' do
+    erb :index
   end
 
   run! if app_file == $PROGRAM_NAME

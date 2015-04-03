@@ -23,3 +23,7 @@ end
 When(/^the computer chooses "([^"]*)"$/) do |move|
   Rps.any_instance.stub(:other_move) { move.to_sym }
 end
+
+When(/^I am on the "([^"]*)" page$/) do |page|
+  visit('/' << page)
+end

@@ -26,9 +26,28 @@ Feature: Play rock-paper-scissors
   Scenario: Shows what moves were chosen, so why I won
     When the computer chooses "paper"
     And I press the "Scissors" button
-    Then I see "Computer took move paper, and you played scissors."
+    Then I see "Computer took move `paper`, and you played `scissors`."
 
   Scenario: Draw with same move
     When the computer chooses "scissors"
     And I press the "Scissors" button
     Then I see "Draw!"
+
+  Scenario: Goes to beginning if I try to get `/game`
+    When I am on the "game" page
+    Then I see "Start Game"
+
+  Scenario: Lose with rock
+    When the computer chooses "paper"
+    And I press the "Rock" button
+    Then I see "You Lose!"
+
+  Scenario: Lose with paper
+    When the computer chooses "scissors"
+    And I press the "Paper" button
+    Then I see "You Lose!"
+
+  Scenario: Lose with scissors
+    When the computer chooses "rock"
+    And I press the "Scissors" button
+    Then I see "You Lose!"
