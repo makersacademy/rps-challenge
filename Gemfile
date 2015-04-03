@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 
-gem 'sinatra'
-
 group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
@@ -12,4 +10,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'cucumber-sinatra'
+  gem 'sinatra'
+  gem 'shotgun'
 end
