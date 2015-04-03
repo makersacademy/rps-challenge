@@ -1,31 +1,29 @@
 class RpsGame
-  attr_reader :p1_move, :p2_move, :winner
+  attr_reader :winner
 
   MOVES = [:rock, :paper, :scissors]
 
-  def p1_go move
-    fail 'not a valid move' unless MOVES.include? move
-    @p1_move = move
-  end
-
-  def p2_go move
-    fail 'not a valid move' unless MOVES.include? move
-    @p2_move = move
+  def check_move move
+    MOVES.include? move
   end
 
   def compare player1_move, player2_move
-    @winner = :draw if player1_move == player2_move
+
+    fail 'not a valid move' unless check_move player1_move
+    fail 'not a valid move' unless check_move player2_move
+
+    @winner = { :draw => player1_move } if player1_move == player2_move
 
     case player1_move
     when :rock
-      @winner = player1_move if player2_move == :scissors
-      @winner = player2_move if player2_move == :paper
+      @winner = { :player_1 => player1_move } if player2_move == :scissors
+      @winner = { :player_2 => player2_move } if player2_move == :paper
     when :paper
-      @winner = player1_move if player2_move == :rock
-      @winner = player2_move if player2_move == :scissors
+      @winner = { :player_1 => player1_move } if player2_move == :rock
+      @winner = { :player_2 => player2_move } if player2_move == :scissors
     when :scissors
-      @winner = player1_move if player2_move == :paper
-      @winner = player2_move if player2_move == :rock
+      @winner = { :player_1 => player1_move } if player2_move == :paper
+      @winner = { :player_2 => player2_move } if player2_move == :rock
     end
     @winner
   end
