@@ -9,3 +9,11 @@ end
 Then(/^I see "([^"]*)"$/) do |text|
   expect(page).to have_content(text)
 end
+
+When(/^I press the "([^"]*)" button$/) do |button|
+  click_button(button)
+end
+
+Then(/^I see "([^"]*)" with class "([^"]*)"$/) do |_text, klass|
+  expect(page).to have_css("h1.#{klass}")
+end
