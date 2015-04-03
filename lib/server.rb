@@ -13,7 +13,7 @@ class Rps < Sinatra::Base
     @other_move = other_move
     session[:name] = params[:name] if params[:name]
     @move = params[:move]
-    params[:result] = result(@move, @other_move) if @move
+    puts params[:result] = result(@move, @other_move) if @move
     erb :game
   end
 

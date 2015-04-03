@@ -7,11 +7,13 @@ module Game
     end
   end
 
-  def beats
-    { rock: :scissors, scissors: :paper, paper: :rock }
-  end
-
   def other_move
     beats.keys.sample
+  end
+
+  private
+
+  def beats
+    { rock: :scissors, scissors: :paper, paper: :rock }
   end
 end

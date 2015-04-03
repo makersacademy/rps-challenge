@@ -21,4 +21,8 @@ describe Game do
     result = game_dummy.result('paper', :paper)
     expect(result).to be :draw
   end
+
+  it 'chooses a move' do
+    expect([:rock, :paper, :scissors]).to include(game_dummy.other_move)
+  end
 end

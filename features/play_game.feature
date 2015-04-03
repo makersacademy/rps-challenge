@@ -32,4 +32,3 @@ Feature: Play rock-paper-scissors
     When the computer chooses "scissors"
     And I press the "Scissors" button
     Then I see "Draw!"
-
