@@ -27,3 +27,16 @@ end
 When(/^I am on the "([^"]*)" page$/) do |page|
   visit('/' << page)
 end
+
+When(/^I am in (.*) browser$/) do |name|
+  Capybara.session_name = name
+end
+
+When(/^(?!I am in)(.*(?= in)) in (.*) browser$/) do |other_step, name|
+  step "I am in #{name} browser"
+  step other_step
+end
+
+Then(/^I see a "([^"]*)" button$/) do |button|
+  expect(page).to have_selector("button[value='#{button}']")
+end

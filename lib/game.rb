@@ -1,4 +1,7 @@
 module Game
+  class << self
+    attr_accessor :players
+  end
   def result(move, other_choice)
     if beats[move.to_sym].include?(other_choice)
       :win

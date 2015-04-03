@@ -6,7 +6,7 @@ Feature: Play rock-paper-scissors
   Background:
     Given I am on the home page
     When I enter "Joseph the Wondrous" in the "name" field
-    And I press the "Start Game" button
+    And I press the "Solo Game" button
 
   Scenario: Win with rock
     When the computer chooses "scissors"
@@ -35,7 +35,7 @@ Feature: Play rock-paper-scissors
 
   Scenario: Goes to beginning if I try to get `/game`
     When I am on the "game" page
-    Then I see "Start Game"
+    Then I see "Solo Game"
 
   Scenario: Lose with rock
     When the computer chooses "paper"
