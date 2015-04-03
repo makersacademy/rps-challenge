@@ -1,57 +1,6 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/Gwasanaethau/rps-challenge.svg)](https://travis-ci.org/Gwasanaethau/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/Gwasanaethau/rps-challenge/badge.svg)](https://coveralls.io/r/Gwasanaethau/rps-challenge)
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+###Rock, Paper, Scissors Challenge###
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+The purpose of the Rock, Paper, Scissors Challenge is to test the knowledge of and skills in BDD, TDD, OOP and web-integration gained over the previous few weeks to build a working two-player version of the classic game ‘Rock, Paper, Scissors’ (Lizard, Spock optional!). The challenge is outlined in the [Instructions](./Instructions.md) and is to be completed over the bank-holiday weekend, and the progress submitted by 09:00 on Tuesday 7th April.
