@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/AI'
 
 class RPS < Sinatra::Base
   enable :sessions
