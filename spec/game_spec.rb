@@ -1,0 +1,73 @@
+require 'game'
+
+describe Game do
+
+  let(:player1) { double :player, name: 'Fred' }
+  let(:player2) { double :player, name: 'Barney' }
+  let(:game) { described_class.new player1, player2 }
+
+  before { allow(player1).to receive(:assign_weapon) }
+  before { allow(player2).to receive(:assign_weapon) }
+
+  context 'when created' do
+
+    it 'has two players' do
+      expect(game.player1.nil? || game.player2.nil?).to eq false
+    end
+
+  end
+
+  context 'players choose weapons' do
+
+    before { allow(player1).to receive(:has_weapon?) }
+    before { allow(player2).to receive(:has_weapon?) }
+
+    it 'allows the players to choose their weapons' do
+      expect(player1).to receive(:assign_weapon).with(:rock)
+      game.assign_weapon player1, :rock
+    end
+
+    it 'knows if it is not ready yet' do
+      allow(player1).to receive(:has_weapon?).and_return(true)
+      allow(player2).to receive(:has_weapon?).and_return(false)
+      expect(game.ready?).to eq false
+    end
+
+    it 'knows when both players are ready' do
+      allow(player1).to receive(:has_weapon?).and_return(true)
+      allow(player2).to receive(:has_weapon?).and_return(true)
+      expect(game.ready?).to eq true
+    end
+
+  end
+
+  context 'knows who has won' do
+
+    def weapon_assignment players
+      players.each do |player, weapon|
+        allow(player).to receive(:weapon).and_return(weapon)
+        allow(player).to receive(:has_weapon?).and_return(true)
+        game.assign_weapon player, weapon
+      end
+    end
+
+    before { allow(player2).to receive(:has_weapon?).and_return(false) }
+
+    it 'knows that rock beats scissors' do
+      weapon_assignment player1 => :rock, player2 => :scissors
+      expect(game.winner).to eq player1
+    end
+
+    it 'knows that scissors beats paper' do
+      weapon_assignment player1 => :paper, player2 => :scissors
+      expect(game.winner).to eq player2
+    end
+
+    it 'knows that paper beats rock' do
+      weapon_assignment player1 => :paper, player2 => :rock
+      expect(game.winner).to eq player1
+    end
+
+  end
+
+end
