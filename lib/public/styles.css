@@ -18,7 +18,11 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
- h1 {
+h1 {
   font-size: 64px;
   text-align: center;
  }
+
+p {
+  text-align: center;
+}

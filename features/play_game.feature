@@ -8,14 +8,18 @@ Feature: Play rock-paper-scissors
     When I enter "Joseph the Wondrous" in the "name" field
     And I press the "Start Game" button
 
-  Scenario: Clicks on rock
-    When I press the "Rock" button
+  Scenario: Win with rock
+    When the computer chooses "scissors"
+    And I press the "Rock" button
     Then I see "You Win!"
 
-  Scenario: Clicks on paper
-    When I press the "Paper" button
+  Scenario: Win with paper
+    When the computer chooses "rock"
+    And I press the "Paper" button
     Then I see "You Win!"
 
-  Scenario: Clicks on scissors
-    When I press the "Scissors" button
+  Scenario: Win with scissors
+    When the computer chooses "paper"
+    And I press the "Scissors" button
     Then I see "You Win!"
+

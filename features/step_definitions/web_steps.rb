@@ -1,3 +1,5 @@
+require 'cucumber/rspec/doubles'
+
 Given(/^I am on the home page$/) do
   visit('/')
 end
@@ -16,4 +18,8 @@ end
 
 Then(/^I see "([^"]*)" with class "([^"]*)"$/) do |_text, klass|
   expect(page).to have_css("h1.#{klass}")
+end
+
+When(/^the computer chooses "([^"]*)"$/) do |move|
+  Rps.any_instance.stub(:other_move) { move }
 end
