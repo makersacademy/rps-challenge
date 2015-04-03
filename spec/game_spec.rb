@@ -12,6 +12,11 @@ describe Game do
     expect(result).to be :win
   end
 
+  it 'reveals a Spock win correctly' do
+    result = game_dummy.result('spock', :scissors)
+    expect(result).to be :win
+  end
+
   it 'reveals a loss correctly' do
     result = game_dummy.result('paper', :scissors)
     expect(result).to be :lose

@@ -51,3 +51,23 @@ Feature: Play rock-paper-scissors
     When the computer chooses "rock"
     And I press the "Scissors" button
     Then I see "You Lose!"
+
+  Scenario: Win with Lizard
+    When the computer chooses "paper"
+    And I press the "Lizard" button
+    Then I see "You Win!"
+
+  Scenario: Win with Spock
+    When the computer chooses "rock"
+    And I press the "Spock" button
+    Then I see "You Win!"
+
+  Scenario: Lose with Lizard
+    When the computer chooses "scissors"
+    And I press the "Lizard" button
+    Then I see "You Lose!"
+
+  Scenario: Lose with Spock
+    When the computer chooses "paper"
+    And I press the "Spock" button
+    Then I see "You Lose!"

@@ -1,6 +1,6 @@
 module Game
   def result(move, other_choice)
-    if beats[move.to_sym] == other_choice
+    if beats[move.to_sym].include?(other_choice)
       :win
     else
       move.to_sym == other_choice ? :draw : :lose
@@ -14,6 +14,10 @@ module Game
   private
 
   def beats
-    { rock: :scissors, scissors: :paper, paper: :rock }
+    { rock: [:scissors, :lizard],
+      scissors: [:lizard, :paper],
+      paper: [:rock, :spock],
+      lizard: [:spock, :paper],
+      spock: [:rock, :scissors] }
   end
 end
