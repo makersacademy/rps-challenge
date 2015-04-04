@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/rps_engine.rb'
 require_relative 'lib/computer_player.rb'
+require_relative 'lib/2_player_holder.rb'
 
 class RPSWeb < Sinatra::Base
 
@@ -8,8 +9,11 @@ class RPSWeb < Sinatra::Base
 
   RPS = RpsGame.new
   comp = ComputerPlayer.new
+  PLAYERS = PlayerHolder.new
 
   get '/' do
+    @has_1_player = true unless PLAYERS.player1_name.nil?
+    p PLAYERS.player1_name
     erb :homepage
   end
 
@@ -44,6 +48,31 @@ class RPSWeb < Sinatra::Base
         }
     @result = results[look_up]
     erb :result
+  end
+
+
+  get '/start_two_player_game' do
+    erb :submit_p1_name
+  end
+
+  post '/submit_player1_name' do
+    @player_one = params[:name]
+    # sessions wouldn't work with capybara 
+    # but worked with rackup 
+    # so I did this instead
+    PLAYERS.player1_name = @player_one
+    "Player 1: #{@player_one}, waiting for player 2 to join"
+  end
+
+  get '/join_two_player_game' do
+    # redirect if no game, set bool in start game
+    erb :submit_p2_name
+  end
+
+  post '/submit_player2_name' do
+    @player_two = params[:name]
+    PLAYERS.player2_name = @player_two
+    "Player 1: #{PLAYERS.player1_name}, Player 2: #{@player_two}"
   end
 
   # start the server if ruby file executed directly

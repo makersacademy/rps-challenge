@@ -26,3 +26,22 @@ Feature:
     And   I click the "play" button
     And   I am redirected back to the "/play_game" page
     Then  I should see "please enter rock, paper or scissors"
+
+  Scenario: Starting a 2 player game
+    Given I am on the hompage
+    When  I click "Start 2 player game"
+    And   I enter "Bob" in the "name" field
+    And   I click the "submit" button
+    Then  I should see "Player 1: Bob, waiting for player 2 to join"
+
+  Scenario: Joining a 2 player game
+    Given I am on the hompage
+    And   A player has already started a game
+    When  I click "Join 2 player game"
+    And   I enter "Rich" in the "name" field
+    And   I click the "submit" button
+    Then  I should see "Player 1: Bob, Player 2: Rich"
+
+  Scenario: Trying to join an empty game
+    Given I am first on the hompage
+    Then  I should not see "Join 2 player game"
