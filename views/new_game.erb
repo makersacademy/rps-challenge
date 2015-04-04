@@ -1,3 +1,9 @@
 <div>
-  Welcome <%= params[:name] %>!
+  Welcome <%= @player.name %>! <br>
+  Choose a hand to play: <br>
+  <form action="/round_result">
+    <input type="submit" name="hand" value="rock">
+    <input type="submit" name="hand" value="paper">
+    <input type="submit" name="hand" value="scissors">
+  </form>
 </div>
