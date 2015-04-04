@@ -7,4 +7,8 @@ class CPU < Player
   def make_hand
     'rock' || 'paper' || 'scissors'
   end
+
+  def ready?
+    true
+  end
 end
