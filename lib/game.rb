@@ -15,12 +15,12 @@ class Game
   end
 
   def assign_weapon player, weapon
-    player.assign_weapon weapon
+    player.weapon = weapon
     play_game if ready?
   end
 
   def ready?
-    player1.has_weapon? && player2.has_weapon?
+    player1.ready? && player2.ready?
   end
 
   private
@@ -32,7 +32,12 @@ class Game
   end
 
   def play_game
-    @winner = (win_value.odd? ? player1 : player2)
+    @winner = decide_winner
+  end
+
+  def decide_winner
+    return 'draw' if win_value == 0
+    win_value.odd? ? player1 : player2
   end
 
   def win_value

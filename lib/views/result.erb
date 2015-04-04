@@ -1,0 +1,8 @@
+<div>
+You chose: <%= @game.player1.weapon.to_s %>
+</div>
+<div>
+<%= @game.player2.name %> chose: <%= @game.player2.weapon.to_s %>
+</div>
+
+<%= @game.winner == 'draw' ? "Draw!" : "#{@game.winner.name} wins!" %>

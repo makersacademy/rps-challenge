@@ -1,4 +1,4 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), 'lib/rock_paper_scissors.rb')
+require File.join(File.dirname(__FILE__), 'lib/rps.rb')
 
 run RockPaperScissors
