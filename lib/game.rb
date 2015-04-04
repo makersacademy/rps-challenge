@@ -4,5 +4,6 @@ class Game
   def initialize player1, player2
     @player_one = player1
     @player_two = player2
+    @turn = player1
   end
 end
