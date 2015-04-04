@@ -20,4 +20,10 @@ describe Game do
     allow(player2).to receive(:weapon).and_return('scissors')
     expect(game.play).to eq 'DRAW!'
   end
+
+  it 'puts playerN wins if one player wins' do
+    allow(player1).to receive(:weapon).and_return('scissors')
+    allow(player2).to receive(:weapon).and_return('rock')
+    expect(game.play).to eq 'Player 2 Wins!!!'
+  end
 end

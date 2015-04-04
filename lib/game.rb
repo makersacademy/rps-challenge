@@ -13,9 +13,9 @@ class Game
   def play
     return 'DRAW!' if @player1.weapon == @player2.weapon
     if @player1.weapon == RULES[player2.weapon.to_sym]
-      'Player2 wins'
+      'Player 2 Wins!!!'
     else
-      'Player 1 wins'
+      'Player 1 Wins!!!'
     end
   end
 end
