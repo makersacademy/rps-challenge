@@ -1,0 +1,2 @@
+class AutoPlayer
+end
