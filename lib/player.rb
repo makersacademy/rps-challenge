@@ -1,19 +1,20 @@
 class Player
-  attr_reader :choice
+  attr_reader :name
+  attr_accessor :choice
+  alias_method :choose, :choice=
 
-  def initialize options
-    @options = options
+  def initialize name
+    @name = name
     @choice = nil
+    @game = nil
   end
 
-  def choose hand
-    unless options.include?(hand)
-      fail 'Invalid Choice: only rock, paper or scissors available'
-    end
-    @choice = hand
+  def join current_game
+    current_game.add self
+    @game = current_game
   end
 
-  private
-
-  attr_reader :options
+  def quit
+    @game.remove self
+  end
 end

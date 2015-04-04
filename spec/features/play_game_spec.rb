@@ -1,13 +1,20 @@
-require 'capybara/rspec'
-require 'player'
+require 'spec_helper'
 
 feature 'play game of Rock-Paper-Scissors' do
-  scenario 'player chooses his hand' do
-    player = Player.new([:rock, :paper, :scissors])
-    player.choose :rock
-    expect(player.choice).to eq :rock
-    expect do
-      player.choose :item
-    end.to raise_error 'Invalid Choice: only rock, paper or scissors available'
+  # let(:gamemaster) { GameMaster.new }
+  # let(:player1) { Player.new('James') }
+  # computer = double :computer, name: 'R1D1', choice: :paper
+
+  scenario 'player plays the game against computer' do
+    g = GameMaster.new
+    p1 = Player.new('Alan')
+    p2 = Player.new('Homer')
+    p1.join(g)
+    p2.join(g)
+    p1.choose :rock
+    p2.choose :scissors
+    expect(g.winner).to eq 'Alan'
+    p1.quit
+    p2.quit
   end
 end
