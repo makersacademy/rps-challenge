@@ -26,4 +26,19 @@ class Game
     return @player_one if hand1 == 'rock' && hand2 == 'scissors'
     return @player_two if hand1 == 'rock' && hand2 == 'paper'
   end
+
+  # Todo, refactor
+  def player param
+    if param.is_a? String
+      return @player_one if @player_one.name == param
+      return @player_two if @player_two.name == param
+      return nil
+    elsif param.is_a? Fixnum
+      return @player_one if @player_one.object_id == param
+      return @player_two if @player_two.object_id == param
+      return nil
+    else
+      fail 'Can not search for player with anything except name or obj_id'
+    end
+  end
 end

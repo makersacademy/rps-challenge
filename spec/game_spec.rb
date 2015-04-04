@@ -38,4 +38,20 @@ describe Game do
     allow(player2).to receive(:ready?).and_return(false)
     expect { game.carry_out_round }.to raise_error 'Players are not ready'
   end
+
+  it 'can tell if specified player is in the game (by player name)' do
+    expect(game.player('Jack')).to eq player1
+    expect(game.player('Alex')).to eq player2
+    expect(game.player('Oliver')).to eq nil
+  end
+
+  it 'can tell if specified player is in the game (by player object id)' do
+    expect(game.player(player1.object_id)).to eq player1
+    expect(game.player(player2.object_id)).to eq player2
+    object_identifier = "Hello my friend".object_id
+    expect(game.player(object_identifier)).to eq nil
+
+  end
+
+
 end
