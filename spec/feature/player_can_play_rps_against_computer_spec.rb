@@ -3,7 +3,6 @@ feature 'player can play Rock, paper, scissors against the computer' do
     player = Player.new("Jade")
     round = Game.new
     allow(round).to receive(:computer_move).and_return("scissors")
-    round.computer_move
-    expect(round.play("rock")).to eq "Jade wins!"
+    expect(round.play("rock", round.computer_move)).to eq "Jade wins!"
   end
 end
