@@ -8,7 +8,7 @@ Create an app to satisfy the user stories
 
 User Stories 
 ----
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -20,7 +20,7 @@ I would like to be able to play rock/paper/scissors
 
 Tests
 -----
-```sh
+```
 Feature: Pleasing the Makers Academy Marketeers
   In order to unwind after a hard day
   As a fan of simple games
