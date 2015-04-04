@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
 <h1 class='flashing'><%= session[:name] %></h1>
 <% if @total_players.odd? %>
-<p>No other player</p><br>
+<p>Waiting for other player</p><br>
 <form action='/multi' method='post'>
 <p><button value='Check again'>Check again</button></p>
 </form>

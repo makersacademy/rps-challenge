@@ -20,7 +20,7 @@ Feature: Play multiplayer rock-paper-scissors
     And I am on the home page
     And I enter "Bob the Subservient" in the "name" field
     And I press the "Multiplayer Game" button
-    Then I see "No other player" in Bob's browser
+    Then I see "Waiting for other player" in Bob's browser
     And I see a "Check again" button in Bob's browser
     When I am in Shiela's browser
     And I am on the home page
@@ -33,7 +33,7 @@ Feature: Play multiplayer rock-paper-scissors
     And I enter "Bob the Subservient" in the "name" field
     And I press the "Multiplayer Game" button
     When I press the "Check again" button in Bob's browser
-    Then I see "No other player" in Bob's browser
+    Then I see "Waiting for other player" in Bob's browser
     When I am in Shiela's browser
     And I am on the home page
     And I enter "Shiela the Person" in the "name" field in Shiela's browser
@@ -50,7 +50,8 @@ Feature: Play multiplayer rock-paper-scissors
     And I am on the home page
     And I enter "Bob the Subservient" in the "name" field
     And I press the "Multiplayer Game" button
-    When the computer chooses "scissors"
+    When I press the "Check again" button in Shiela's browser
+    And I press the "Lizard" button in Shiela's browser
     And I press the "Rock" button in Bob's browser
     Then I see "You Win!"
 
@@ -63,6 +64,7 @@ Feature: Play multiplayer rock-paper-scissors
     And I am on the home page
     And I enter "Bob the Subservient" in the "name" field
     And I press the "Multiplayer Game" button
-    When the computer chooses "paper"
+    When I press the "Check again" button in Shiela's browser
+    And I press the "Paper" button in Shiela's browser
     And I press the "Spock" button in Bob's browser
     Then I see "You Lose!"
