@@ -11,13 +11,13 @@ Feature: Pleasing the Makers Academy Marketeers
   Scenario: Enter the game without a name
     Given I am on the homepage
     And I click "Play"
-    Then I should be on the Game page
+    Then I should be on the "/game" page
 
   Scenario: Enter the game with a name
     Given I am on the homepage
     And I fill in "Name" with "Bob"
     And I click "Play"
-    Then I should be on the Game page
+    Then I should be on the "/game" page
     Then I should see "Welcome Bob"
 
   Scenario: Play the game and see your choices
@@ -27,15 +27,6 @@ Feature: Pleasing the Makers Academy Marketeers
     Then the page should have "Rock" button
     Then the page should have "Paper" button
     Then the page should have "Scissors" button
-
-  Scenario: Select a choice and get a result
-    Given I am on the homepage
-    And I fill in "Name" with "Bob"
-    And I click "Play"
-    Then I should be on the Game page
-    Then I should see "Welcome Bob"
-    And I click "Rock"
-    Then I should see "You win" or "You lose"
 
   Scenario: Program knows what my choice was
     Given I am on the homepage
@@ -65,68 +56,68 @@ Feature: Pleasing the Makers Academy Marketeers
     And I follow link "Homepage"
     And I fill in "Name" with "Sue"
     And I click "Play"
-    Then I should be on the Game page
+    Then I should be on the "/game" page
     Then I should see "Welcome Sue"
 
   Scenario: Win with Rock
     Given I am on the homepage
     And I click "Play"
-    And I click "Rock"
     And my opponent chooses "Scissors"
+    And I click "Rock"
     Then I should see "You win"
 
   Scenario: Win with Paper
     Given I am on the homepage
     And I click "Play"
-    And I click "Paper"
     And my opponent chooses "Rock"
+    And I click "Paper"
     Then I should see "You win"
 
   Scenario: Win with Scissors
     Given I am on the homepage
     And I click "Play"
-    And I click "Scissor"
     And my opponent chooses "Paper"
+    And I click "Scissor"
     Then I should see "You win"
 
   Scenario: Lose with Rock
     Given I am on the homepage
     And I click "Play"
-    And I click "Rock"
     And my opponent chooses "Paper"
+    And I click "Rock"
     Then I should see "You lose"
 
   Scenario: Lose with Paper
     Given I am on the homepage
     And I click "Play"
-    And I click "Paper"
     And my opponent chooses "Scissors"
+    And I click "Paper"
     Then I should see "You lose"
 
   Scenario: Lose with Scissors
     Given I am on the homepage
     And I click "Play"
-    And I click "Scissors"
     And my opponent chooses "Rock"
+    And I click "Scissors"
     Then I should see "You lose"
 
   Scenario: Tie with Rock
     Given I am on the homepage
     And I click "Play"
-    And I click "Rock"
     And my opponent chooses "Rock"
-    Then I should see "You tied"
+    And I click "Rock"
+    Then I should see "You tie"
 
   Scenario: Tie with Paper
     Given I am on the homepage
     And I click "Play"
-    And I click "Paper"
     And my opponent chooses "Paper"
-    Then I should see "You tied"
+    And I click "Paper"
+    Then I should see "You tie"
 
   Scenario: Tie with Scissors
     Given I am on the homepage
     And I click "Play"
-    And I click "Scissors"
     And my opponent chooses "Scissors"
-    Then I should see "You tied"
+    And I click "Scissors"
+    Then I should see "You tie"
