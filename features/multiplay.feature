@@ -6,13 +6,13 @@ Feature: Play multiplayer rock-paper-scissors
   Background:
     When I am in Bob's browser
     And I am on the home page
-    When I enter "Bob the Subservient" in the "name" field
+    And I enter "Bob the Subservient" in the "name" field
     And I press the "Multiplayer Game" button
 
   Scenario: Both see own names
     When I am in Shiela's browser
     And I am on the home page
-    When I enter "Shiela the Person" in the "name" field
+    And I enter "Shiela the Person" in the "name" field
     And I press the "Multiplayer Game" button
     Then I see "Shiela the Person" in Shiela's browser
     And I see "Bob the Subservient" in Bob's browser

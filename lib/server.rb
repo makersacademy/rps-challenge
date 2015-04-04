@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
     end
     @total_players = Game.players.length
     puts session.inspect
-    puts Game.players
+    puts Game.players.inspect
     erb :multi
   end
 
@@ -36,11 +36,11 @@ class Rps < Sinatra::Base
   end
 
   get '/game' do
-    erb :index
+    redirect '/'
   end
 
   get '/multi' do
-    erb :index
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME
