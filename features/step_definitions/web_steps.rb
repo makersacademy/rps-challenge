@@ -29,7 +29,6 @@ When(/^I am on the "([^"]*)" page$/) do |page|
 end
 
 When(/^I am in (.*) browser$/) do |name|
-  puts "name is #{name}"
   Capybara.session_name = name
 end
 

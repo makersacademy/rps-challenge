@@ -68,3 +68,23 @@ Feature: Play multiplayer rock-paper-scissors
     And I press the "Paper" button in Shiela's browser
     And I press the "Spock" button in Bob's browser
     Then I see "You Lose!"
+
+  Scenario: Can check results if they make a move second
+    When I am in Shiela's browser
+    And I am on the home page
+    And I enter "Shiela the Person" in the "name" field in Shiela's browser
+    And I press the "Multiplayer Game" button in Shiela's browser
+    When I am in Bob's browser
+    And I am on the home page
+    And I enter "Bob the Subservient" in the "name" field
+    And I press the "Multiplayer Game" button
+    When I press the "Check again" button in Shiela's browser
+    And I press the "Paper" button in Shiela's browser
+    And I press the "Spock" button in Bob's browser
+    Then I see "You Lose!"
+    And I press the "Check again" button in Shiela's browser
+    Then I see "You Win!"
+
+
+
+
