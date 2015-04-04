@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require 'cpu'
-require 'game'
-require 'player'
+require_relative 'cpu'
+require_relative 'game'
+require_relative 'player'
 
 class RPS < Sinatra::Base
   set :views, proc { File.join(root, "..", "views") }
@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   get '/round_result' do
-
+    @player_move = params[:hand]
     erb :round_result
   end
 

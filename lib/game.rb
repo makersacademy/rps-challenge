@@ -14,14 +14,13 @@ class Game
     end
   end
 
-  def winner
+  # Todo, refactor
+  def winner # rubocop: disable all
     hand1 = @player_one.make_hand
     hand2 = @player_two.make_hand
     return 'It\'s a tie!' if hand1 == hand2
-
-    # Covering all combinations?
     return @player_one if hand1 == 'paper' && hand2 == 'rock'
-    return   @player_two if hand1 == 'paper' && hand2 == 'scissors'
+    return @player_two if hand1 == 'paper' && hand2 == 'scissors'
     return @player_one if hand1 == 'scissors' && hand2 == 'paper'
     return @player_two if hand1 == 'scissors' && hand2 == 'rock'
     return @player_one if hand1 == 'rock' && hand2 == 'scissors'
