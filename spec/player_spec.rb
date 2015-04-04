@@ -20,5 +20,4 @@ describe Player do
     allow(player2).to receive(:computer_weapon).and_return('Rock')
     expect(player2.computer_weapon).to eq('Rock')
   end
-
 end
