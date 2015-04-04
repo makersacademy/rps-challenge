@@ -24,7 +24,6 @@ Instructions
 
 Task
 ----
-
 Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
@@ -39,6 +38,14 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+As a marketeer
+So that Me and a colleague can enjoy ourselves away from the daily grind
+I would like to be able to play rock/paper/scissors with them
+
+As a marketeer
+So that I can satisfy my competitive needs
+I would like to be able to keep score
 ```
 
 Hints on functionality
