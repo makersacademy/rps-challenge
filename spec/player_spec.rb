@@ -7,9 +7,20 @@ describe Player do
     expect(player.name).to eq 'Jack'
   end
 
+  it 'knows what hand to play next' do
+    player.next_hand = 'rock'
+    expect(player.next_hand).to eq 'rock'
+  end
+
+  it 'knows if he/she is ready' do
+    expect(player).not_to be_ready
+    player.next_hand = 'rock'
+    expect(player).to be_ready
+  end
+
   it 'can make a hand' do
-    expect(player.make_hand 'rock').to eq 'rock'
-    expect(player.make_hand 'paper').to eq 'paper'
-    expect(player.make_hand 'scissors').to eq 'scissors'
+    player.next_hand = 'paper'
+    expect(player.make_hand).to eq 'paper'
+    expect(player.next_hand).to eq nil
   end
 end
