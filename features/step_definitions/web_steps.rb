@@ -3,15 +3,15 @@ Given(/^I am on the homepage$/) do
 end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
-  expect(page).to have_content(arg1)
+  expect(page).to have_content arg1
 end
 
 Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  fill_in(arg1, :with => arg2)
+  fill_in arg1, :with => arg2
 end
 
 Given(/^I click "([^"]*)"$/) do |arg1|
-  click_button(arg1)
+  click_button arg1
 end
 
 Then(/^I should be on the Game page$/) do
@@ -19,7 +19,11 @@ Then(/^I should be on the Game page$/) do
 end
 
 Then(/^the page should have "([^"]*)" button$/) do |arg1|
-  expect(page).to have_button(arg1)
+  expect(page).to have_button arg1
+end
+
+Then(/^I should see "([^"]*)" or "([^"]*)"$/) do |arg1, arg2|
+  expect(page).to have_content arg1 || arg2
 end
 
 

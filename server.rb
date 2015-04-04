@@ -13,8 +13,12 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:Name] = params[:Name] if params[:Name]
-    erb :game
+    if params[:Choice]
+      erb :result
+    else
+      session[:Name] = params[:Name] if params[:Name]
+      erb :game
+    end
   end
 
   # start the server if ruby file executed directly
