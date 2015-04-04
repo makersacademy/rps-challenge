@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
 <h1 class='flashing'><%= session[:name] %></h1>
+<h1 class='flashing'><%= "Vs #{@their_name}" if @their_name %></h1>
 <% if @waiting %>
 <p>Waiting for other player</p><br>
 <form action='/multi' method='post'>
@@ -10,11 +11,11 @@
     <% @result = result(@my_move, @their_move.to_sym) %>
     <% if @result == :win %>
       <h1>You Win!</h1>
-      <p>Other person took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
       <p>Play again:</p>
     <% elsif @result == :lose %>
       <h1>You Lose!</h1>
-      <p>Other move took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
       <p>Play again:</p>
     <% else %>
       <h1>Draw!</h1>

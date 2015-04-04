@@ -30,8 +30,10 @@ class Rps < Sinatra::Base
 
     if @player_number.even?
       @their_move = Game.moves[@player_number + 1]
+      @their_name = Game.players[@player_number + 1]
     else
       @their_move = Game.moves[@player_number - 1]
+      @their_name = Game.players[@player_number - 1]
     end
 
     @my_move = Game.moves[@player_number]
