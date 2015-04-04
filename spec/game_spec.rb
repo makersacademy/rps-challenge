@@ -10,9 +10,6 @@ describe Game do
     allow(subject).to receive(:computer_move).and_return('Scissors')
     expect(subject.computer_move).to eq 'Scissors'
   end
-  it 'accepts a players move' do
-    expect(subject.play('Rock')).to eq 'Rock'
-  end
   it 'compares players move against the computers move and returns winner' do
     allow(subject).to receive(:computer_move).and_return('Scissors')
     expect(subject.play('Rock', subject.computer_move)).to eq 'Player'
