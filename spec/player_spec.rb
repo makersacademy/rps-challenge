@@ -12,8 +12,14 @@ describe Player do
     expect(player.browser).to eq "Chrome"
   end
 
-  # it 'can choose a move' do
-  #   allow(move).to receive(:choice)
-  #   expect(player.choose("Rock")).to eq "Rock"
-  # end
+  it 'can be ready' do
+    player.choose(:move)
+    expect(player.chosen?).to eq true
+  end
+
+  it 'can make a choice' do
+    expect(player).to receive(:choose).with :move
+    player.choose(:move)
+    # expect(:choice).to be "Rock"
+  end
 end
