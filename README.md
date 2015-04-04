@@ -1,6 +1,6 @@
 #RPS Challenge: Rōnin Badge Test
 
-##[Available on Heroku - Click Here](afternoon-castle-6417.herokuapp.com)
+##[Available on Heroku - Click Here](https://afternoon-castle-6417.herokuapp.com)
 
 Task
 -------
