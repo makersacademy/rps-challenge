@@ -31,14 +31,13 @@ class Rps < Sinatra::Base
     Game.moves[@player_number] = params[:move] if params[:move]
 
     if @player_number.even?
-      @their_move = Game.moves[@player_number + 1]
-      @their_name = Game.players[@player_number + 1]
-      @their_score = Game.scores[@player_number + 1]
+      @their_number = @player_number + 1
     else
-      @their_move = Game.moves[@player_number - 1]
-      @their_name = Game.players[@player_number - 1]
-      @their_score = Game.scores[@player_number - 1]
+      @their_number = @player_number - 1
     end
+    @their_move = Game.moves[@their_number]
+    @their_name = Game.players[@their_number]
+    @their_score = Game.scores[@their_number]
 
     @my_move = Game.moves[@player_number]
     @my_score = Game.scores[@player_number]
