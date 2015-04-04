@@ -41,7 +41,7 @@ Feature: Pleasing the Makers Academy Marketeers
     Given I am on the homepage
     And I click "Play"
     And I click "Rock"
-    Then I should see "your opponent chose"
+    Then I should see "your opponent chose" "Rock", "Paper" or "Scissors"
 
   Scenario: Get a result and play again
     Given I am on the homepage

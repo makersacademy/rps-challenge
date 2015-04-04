@@ -1,4 +1,4 @@
-class Cpu
+class CPU
   def choice
     %w(Rock Paper Scissors).sample
   end

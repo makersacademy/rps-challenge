@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require_relative 'lib/cpu'
 
 class RPS < Sinatra::Base
   enable :sessions
   set :views, Proc.new { File.join(root, "views") }
+
+  cpu = CPU.new
 
   get '/' do
     erb :index
@@ -14,6 +17,7 @@ class RPS < Sinatra::Base
 
   post '/game' do
     if params[:Choice]
+      @p2_choice = cpu.choice
       erb :result
     else
       session[:Name] = params[:Name] if params[:Name]

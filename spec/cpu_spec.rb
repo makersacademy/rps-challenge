@@ -1,7 +1,7 @@
 require 'cpu'
 
-describe Cpu do
-  let(:cpu) { Cpu.new }
+describe CPU do
+  let(:cpu) { described_class.new }
 
   it 'can choose Rock, Paper or Scissors' do
     choice_array = []
