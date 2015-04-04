@@ -1,13 +1,27 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
 <h1 class='flashing'><%= session[:name] %></h1>
-<% if @total_players.odd? %>
+<% if @waiting %>
 <p>Waiting for other player</p><br>
 <form action='/multi' method='post'>
 <p><button value='Check again'>Check again</button></p>
 </form>
 <% else %>
-  <%= erb :game %>
-<% end %>
+  <% if @my_move && @their_move  %>
+    <% @result = result(@my_move, @their_move.to_sym) %>
+    <% if @result == :win %>
+      <h1>You Win!</h1>
+      <p>Other person took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p>Play again:</p>
+    <% elsif @result == :lose %>
+      <h1>You Lose!</h1>
+      <p>Other move took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p>Play again:</p>
+    <% else %>
+      <h1>Draw!</h1>
+      <p>You both played `<%= @my_move %>`.</p>
+      <p>Play again:</p>
+    <% end %>
+  <% end  %>
 <form action='/multi' method='post' align='center'>
   <button type='submit' name='move' value='rock'>Rock</button>
   <button type='submit' name='move' value='paper'>Paper</button>
@@ -15,3 +29,4 @@
   <button type='submit' name='move' value='lizard'>Lizard</button>
   <button type='submit' name='move' value='spock'>Spock</button>
 </form>
+<% end %>

@@ -6,7 +6,7 @@ class Rps < Sinatra::Base
   include Game
 
   Game.players = []
-
+  Game.moves = []
   get '/' do
     erb :index
   end
@@ -18,7 +18,24 @@ class Rps < Sinatra::Base
       session[:name] = @name
       session[:number] = Game.players.length
     end
+    @player_number = session[:number] - 1
     @total_players = Game.players.length
+    if session[:both_names].nil? && @total_players.even?
+      session[:both_names] = Game.players[-2..-1]
+    end
+    if params[:move]
+      Game.moves[@player_number] = params[:move]
+    end
+    if @player_number.even?
+      @their_move = Game.moves[@player_number + 1]
+    else
+      @their_move = Game.moves[@player_number - 1]
+    end
+    @my_move = Game.moves[@player_number]
+    puts "my move #{@my_move.inspect}
+          theirs #{@their_move.inspect}, all #{Game.moves.inspect}"
+    puts "names are #{session[:both_names].inspect}"
+    @waiting = session[:both_names].nil?
     puts session.inspect
     puts Game.players.inspect
     erb :multi
@@ -31,7 +48,6 @@ class Rps < Sinatra::Base
       other_move
       @move = params[:move]
       params[:result] = result(@move, @other_move)
-      params.inspect
     end
     erb :game
   end
