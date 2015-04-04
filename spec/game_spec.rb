@@ -4,6 +4,6 @@ describe Game do
     expect(subject.choose_move).to be_between(0, 2)
   end
   it 'translates a number to rock, paper or scissors' do
-    expect(subject.tranlate_move(2)).to eq "Scissors"
+    expect(subject.translate_move(2)).to eq "Scissors"
   end
 end
