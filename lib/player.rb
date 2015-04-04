@@ -5,4 +5,8 @@ class Player
     @name = options.fetch(:name)
     @browser = options.fetch(:browser)
   end
+
+  # def make_move(choice)
+  #   player.make
+  # end
 end
