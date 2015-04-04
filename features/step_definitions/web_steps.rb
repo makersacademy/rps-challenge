@@ -18,10 +18,6 @@ Then(/^I should be on the Game page$/) do
   expect(current_path).to eq '/game'
 end
 
-Given(/^I am on the Game page$/) do
-  visit '/game'
-end
-
 Then(/^the page should have "([^"]*)" button$/) do |arg1|
   expect(page).to have_button(arg1)
 end
