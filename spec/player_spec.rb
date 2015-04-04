@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  let(:player) { Player.new 'Jack' }
+  let(:player) { described_class.new 'Jack' }
 
   it 'has a name' do
     expect(player.name).to eq 'Jack'
