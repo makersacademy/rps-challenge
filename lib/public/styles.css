@@ -24,17 +24,17 @@
 }
 
 h1 {
-  font-size: 64;
+  font-size: 48;
   text-align: center;
  }
 
 p, form, input {
-  font-size: 32px;
+  font-size: 26px;
   text-align: center;
 }
 
 button {
   margin: 20px;
   text-align: center;
-  font-size: 48px;
+  font-size: 32px;
 }
