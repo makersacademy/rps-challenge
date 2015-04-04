@@ -41,7 +41,8 @@ class Rps < Sinatra::Base
     puts "names are #{session[:both_names].inspect}
           player number#{@player_number}"
 
-    @waiting = session[:both_names].nil?
+    @waiting = session[:both_names].nil? ||
+               (@my_move && !@their_move)
     puts session.inspect
     puts Game.players.inspect
 
