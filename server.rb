@@ -17,6 +17,7 @@ class RPS < Sinatra::Base
 
   post '/game' do
     if params[:Choice]
+      @p1_choice = params[:Choice]
       @p2_choice = cpu.choice
       erb :result
     else

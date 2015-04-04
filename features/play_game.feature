@@ -37,11 +37,17 @@ Feature: Pleasing the Makers Academy Marketeers
     And I click "Rock"
     Then I should see "You win" or "You lose"
 
+  Scenario: Program knows what my choice was
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Rock"
+    Then I should see "You chose Rock"
+
   Scenario: See opponent's result
     Given I am on the homepage
     And I click "Play"
     And I click "Rock"
-    Then I should see "your opponent chose" "Rock", "Paper" or "Scissors"
+    Then I should see "your opponent chose"
 
   Scenario: Get a result and play again
     Given I am on the homepage
