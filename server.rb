@@ -4,10 +4,9 @@ require_relative 'lib/decide'
 
 class RPS < Sinatra::Base
   enable :sessions
-  set :views, Proc.new { File.join(root, "views") }
-
   cpu = CPU.new
   decide = Decide.new
+  set :views, Proc.new { File.join(root, "views") }
 
   get '/' do
     erb :index
