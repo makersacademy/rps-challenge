@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/joejknowles/rps-challenge.svg?branch=multiplayer)](https://travis-ci.org/joejknowles/rps-challenge) [![Coverage Status](https://coveralls.io/repos/joejknowles/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/joejknowles/rps-challenge?branch=master)
 # RPS Challenge
 
 Use
