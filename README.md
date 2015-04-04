@@ -1,4 +1,5 @@
 #RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 
 ##[Available on Heroku - Click Here](https://afternoon-castle-6417.herokuapp.com)
 
