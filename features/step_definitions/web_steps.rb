@@ -1,11 +1,8 @@
 def in_browser name
-  p Capybara.session_name
   old_session = Capybara.session_name
   Capybara.session_name = name
-  p Capybara.session_name
   yield
   Capybara.session_name = old_session
-  p Capybara.session_name
 end
 
 
@@ -45,6 +42,18 @@ Given(/^I am on the hompage$/) do
   visit '/'
 end
 
+Given(/^I am first on the hompage$/) do
+  in_browser :firefox do
+    visit '/'
+  end
+end
+
+Then(/^I should not see "([^"]*)"$/) do |arg1|
+in_browser :firefox do
+    expect(page).not_to have_content arg1
+  end
+end
+
 Given(/^A player has already started a game$/) do
   in_browser :chrome do
     step 'I am on the hompage'
@@ -54,13 +63,3 @@ Given(/^A player has already started a game$/) do
   end
 end
 
-in_browser :firefox do
-  Given(/^I am first on the hompage$/) do
-      visit '/'
-  end
-
-  Then(/^I should not see "([^"]*)"$/) do |arg1|
-      expect(page).not_to have_content arg1
-  end
-
-end

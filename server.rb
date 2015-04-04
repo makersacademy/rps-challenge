@@ -13,7 +13,6 @@ class RPSWeb < Sinatra::Base
 
   get '/' do
     @has_1_player = true unless PLAYERS.player1_name.nil?
-    p PLAYERS.player1_name
     erb :homepage
   end
 

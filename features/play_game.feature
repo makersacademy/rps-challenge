@@ -27,6 +27,10 @@ Feature:
     And   I am redirected back to the "/play_game" page
     Then  I should see "please enter rock, paper or scissors"
 
+  Scenario: Trying to join an empty game
+    Given I am first on the hompage
+    Then  I should not see "Join 2 player game"
+
   Scenario: Starting a 2 player game
     Given I am on the hompage
     When  I click "Start 2 player game"
@@ -41,7 +45,3 @@ Feature:
     And   I enter "Rich" in the "name" field
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, Player 2: Rich"
-
-  Scenario: Trying to join an empty game
-    Given I am first on the hompage
-    Then  I should not see "Join 2 player game"
