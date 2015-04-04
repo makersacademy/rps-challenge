@@ -1,3 +1,5 @@
+require 'cucumber/rspec/doubles'
+
 Given(/^I am on the homepage$/) do
   visit '/'
 end
@@ -28,6 +30,10 @@ end
 
 Given(/^I follow link "([^"]*)"$/) do |arg1|
   click_link arg1
+end
+
+Given(/^my opponent chooses "([^"]*)"$/) do |arg1|
+  CPU.any_instance.stub(:choice) { arg1 }
 end
 
 # Then(/^I should see "([^"]*)" "([^"]*)", "([^"]*)" or "([^"]*)"$/) do |arg1, arg2, arg3, arg4|

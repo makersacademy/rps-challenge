@@ -67,3 +67,66 @@ Feature: Pleasing the Makers Academy Marketeers
     And I click "Play"
     Then I should be on the Game page
     Then I should see "Welcome Sue"
+
+  Scenario: Win with Rock
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Rock"
+    And my opponent chooses "Scissors"
+    Then I should see "You win"
+
+  Scenario: Win with Paper
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Paper"
+    And my opponent chooses "Rock"
+    Then I should see "You win"
+
+  Scenario: Win with Scissors
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Scissor"
+    And my opponent chooses "Paper"
+    Then I should see "You win"
+
+  Scenario: Lose with Rock
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Rock"
+    And my opponent chooses "Paper"
+    Then I should see "You lose"
+
+  Scenario: Lose with Paper
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Paper"
+    And my opponent chooses "Scissors"
+    Then I should see "You lose"
+
+  Scenario: Lose with Scissors
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Scissors"
+    And my opponent chooses "Rock"
+    Then I should see "You lose"
+
+  Scenario: Tie with Rock
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Rock"
+    And my opponent chooses "Rock"
+    Then I should see "You tied"
+
+  Scenario: Tie with Paper
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Paper"
+    And my opponent chooses "Paper"
+    Then I should see "You tied"
+
+  Scenario: Tie with Scissors
+    Given I am on the homepage
+    And I click "Play"
+    And I click "Scissors"
+    And my opponent chooses "Scissors"
+    Then I should see "You tied"
