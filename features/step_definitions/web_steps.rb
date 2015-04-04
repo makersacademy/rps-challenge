@@ -29,6 +29,7 @@ When(/^I am on the "([^"]*)" page$/) do |page|
 end
 
 When(/^I am in (.*) browser$/) do |name|
+  puts "name is #{name}"
   Capybara.session_name = name
 end
 
@@ -39,4 +40,8 @@ end
 
 Then(/^I see a "([^"]*)" button$/) do |button|
   expect(page).to have_selector("button[value='#{button}']")
+end
+
+When(/^I wait (\d+) seconds$/) do |seconds|
+  sleep(seconds.to_i)
 end

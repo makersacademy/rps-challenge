@@ -13,7 +13,7 @@ class Rps < Sinatra::Base
 
   post '/multi' do
     if params[:name]
-      Game.players << session[:session_id]
+      Game.players << params[:name]
       session[:name] = params[:name]
       session[:number] = Game.players.length
     end
