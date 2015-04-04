@@ -1,6 +1,6 @@
 Feature: Pleasing the Makers Academy Marketeers
   In order to unwind after a hard day
-  As a fan of games
+  As a fan of simple games
   I want to register my name and play RPS
 
   Scenario: Homepage
