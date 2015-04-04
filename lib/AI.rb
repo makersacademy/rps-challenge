@@ -1,5 +1,11 @@
 class AI
-  def choice
-    ['rock', 'paper', 'scissors'].sample
+  attr_reader :choice
+
+  def initialize
+    @choice = %w(rock paper scissors).sample
+  end
+
+  def name
+    "Computer"
   end
 end

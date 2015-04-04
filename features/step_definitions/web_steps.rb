@@ -27,3 +27,11 @@ end
 Then(/^I should see a photo of a "([^"]*)"$/) do |arg1|
   expect(page).to have_selector("##{arg1}")
 end
+
+Then(/^I should see who won$/) do
+  expect(page).to have_selector("#result")
+end
+
+Then(/^I should what the computer picked$/) do
+  expect(page).to have_selector("#computers-pick")
+end

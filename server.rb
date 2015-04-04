@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/AI'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,6 +16,12 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    user = Player.new(session[:name])
+    computer = AI.new
+    current_game = Game.new(user, computer)
+    user.choose(params[:choice])
+    @computers_choice = computer.choice
+    @result = current_game.winner
     erb :result
   end
 
