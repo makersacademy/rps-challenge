@@ -11,4 +11,8 @@ class Game
   def computer_move
     translate_move(choose_move)
   end
+
+  def play(move)
+    move
+  end
 end
