@@ -4,7 +4,7 @@
 
 The end of the 3rd week challenge at Makers Academy.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The Makers Academy Marketing Array have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 The user stories have been extracted below:
 
@@ -17,6 +17,7 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors in my browser
 ```
+
 ##MVP Roadmap##
 
 - MVp1(a) - A marketeer can sign in, be greeted, select rps, the game will select a random option, a winner will be declared. In the terminal
@@ -33,7 +34,7 @@ I would like to be able to play rock/paper/scissors in my browser
 
 - MVP3 - Multiplayer formatted playable game in browser.
 
-- MVP4(a) - Game logic expanded to RPSLS. In terminal.
+- MVp4(a) - Game logic expanded to RPSLS. In terminal.
 
 - MVP4 - Multiplayer formatted playable RPSLS game in browser.
 
@@ -43,8 +44,8 @@ I would like to be able to play rock/paper/scissors in my browser
 
 This project is being developed in a BDD approach and therefore the domain design below will emerge as it develops, the classes identified in the process are:
 
--Player - Responsible for picking an item
--Game - Responsible for calling the result
+- Player - Responsible for picking an item
+- Game - Responsible for calling the result
 
 
 ##Testing##
