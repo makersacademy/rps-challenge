@@ -6,13 +6,12 @@ Feature: Pleasing the Makers Academy Marketeers
   Scenario: Homepage
     Given I am on the homepage
     Then I should see "Play Rock-Paper-Scissors!"
-    Then I should see "Enter your name"
+    Then the page should have "Play" button
 
   Scenario: Entering the game without a name
     Given I am on the homepage
     And I click "Play"
     Then I should be on the Game page
-    Then I should see "Welcome"
 
   Scenario: Entering the game with a name
     Given I am on the homepage

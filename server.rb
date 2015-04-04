@@ -13,9 +13,7 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    @name_1 = params[:Name]
-    # session[:Name] ||= @name_1
-    session[:Name] = @name_1
+    session[:Name] = params[:Name] if params[:Name]
     erb :game
   end
 
