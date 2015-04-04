@@ -12,16 +12,25 @@
     <% if @result == :win %>
       <h1>You Win!</h1>
       <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
-      <p>Play again:</p>
     <% elsif @result == :lose %>
       <h1>You Lose!</h1>
       <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
-      <p>Play again:</p>
     <% else %>
       <h1>Draw!</h1>
       <p>You both played `<%= @my_move %>`.</p>
-      <p>Play again:</p>
     <% end %>
+    <% Game.scores[@player_number] ||= 0
+       Game.scores[@player_number] += 1 if @result == :win
+       if @player_number.even?
+         @their_score = Game.scores[@player_number + 1]
+       else
+         @their_score = Game.scores[@player_number - 1]
+       end
+       @my_score = Game.scores[@player_number]%>
+    <%= scores = "<p>You: #{@my_score},"
+        scores << " #{@their_name.split(' ')[0]}:"
+        scores << " #{@their_score}</p>"%>
+    <p>Play again:</p>
   <% end  %>
 <form action='/multi' method='post' align='center'>
   <button type='submit' name='move' value='rock'>Rock</button>

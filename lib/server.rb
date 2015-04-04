@@ -7,6 +7,8 @@ class Rps < Sinatra::Base
 
   Game.players = []
   Game.moves = []
+  Game.scores = []
+
   get '/' do
     erb :index
   end
@@ -31,12 +33,15 @@ class Rps < Sinatra::Base
     if @player_number.even?
       @their_move = Game.moves[@player_number + 1]
       @their_name = Game.players[@player_number + 1]
+      @their_score = Game.scores[@player_number + 1]
     else
       @their_move = Game.moves[@player_number - 1]
       @their_name = Game.players[@player_number - 1]
+      @their_score = Game.scores[@player_number - 1]
     end
 
     @my_move = Game.moves[@player_number]
+    @my_score = Game.scores[@player_number]
 
     puts "my move #{@my_move.inspect}
           theirs #{@their_move.inspect}, all #{Game.moves.inspect}"
