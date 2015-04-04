@@ -11,7 +11,10 @@ describe Game do
     expect(subject.computer_move).to eq 'Scissors'
   end
   it 'compares players move against the computers move and returns winner' do
+    player = double :player
+    allow(player).to receive(:name).and_return('Jade')
     allow(subject).to receive(:computer_move).and_return('Scissors')
-    expect(subject.play('Rock', subject.computer_move)).to eq 'Jade wins!'
+    expect(subject.play(player.name, 'Rock', subject.computer_move)).to eq
+    'Jade wins!'
   end
 end
