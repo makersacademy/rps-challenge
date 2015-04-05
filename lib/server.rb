@@ -6,7 +6,6 @@ class Rps < Sinatra::Base
   enable :sessions
   include Game, Players
 
-  Players.players = []
   Players.data = []
 
   get '/' do
@@ -14,26 +13,8 @@ class Rps < Sinatra::Base
   end
 
   post '/multi' do
-    #############################################
-    # set-up
-    ########################################
-    @name = params[:name]
-    setup_player if @name
-
-    @player_number = session[:number]
-    @total_players = Players.players.length
-    @my_data = Players.data[@player_number]
-    if session[:both_names].nil? && @total_players.even?
-      session[:both_names] = Players.players[-2..-1]
-    end
-
-    @their_data = setup_opponent
-    ###########################################
-    # Moves
-    ###########################################
-    @their_move = @their_data[:move]
-    @their_name = @their_data[:name]
-
+    setup_player if params[:name]
+    collect_data
     remember_moves
     calculate_scores
 

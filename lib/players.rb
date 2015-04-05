@@ -1,25 +1,19 @@
 module Players
   class << self
-    attr_accessor :players, :moves, :scores, :data
+    attr_accessor :data
   end
 
   private
 
-  def setup_opponent
-    if @player_number.even?
-      @their_number = @player_number + 1
-    else
-      @their_number = @player_number - 1
-    end
+  def opponent
+    @player_number.even? ? dif = 1 : dif = -1
+    @their_number = @player_number + dif
     Players.data[@their_number] || {}
   end
 
   def setup_player
-    @player_number = Players.players.length
-    session[:number] = @player_number
-    Players.players << @name
-    session[:name] = @name
-    Players.data[@player_number] = { name: @name }
+    session[:number] = Players.data.length
+    Players.data[session[:number]] = { name: params[:name] }
   end
 
   def remember_moves
@@ -28,7 +22,7 @@ module Players
   end
 
   def waiting?
-    session[:both_names].nil? ||
+    @their_data[:name].nil? ||
       (@my_move && !@their_move)
   end
 
@@ -38,5 +32,13 @@ module Players
     @my_data[:score] += 1 if @result == :win
     @their_score = @their_data[:score]
     @my_score = @my_data[:score]
+  end
+
+  def collect_data
+    @player_number = session[:number]
+    @my_data = Players.data[@player_number]
+    @their_data = opponent
+    @their_move = @their_data[:move]
+    @their_name = @their_data[:name]
   end
 end
