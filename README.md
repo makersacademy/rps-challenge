@@ -8,7 +8,7 @@ Fast paced Multiplayer Rock Paper Scissors Lizard Spock game.
 Use
 ---
 Just go to here:
-http://rock-paper-scissors-rps.herokuapp.com/
+http://rock-paper-scissors-ls.herokuapp.com/
 
 Approach
 --------
