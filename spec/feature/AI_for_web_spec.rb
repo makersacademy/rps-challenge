@@ -1,4 +1,4 @@
-require 'ai'
+require 'ai_computer'
 
 feature "The computer announces what is has picked" do
 

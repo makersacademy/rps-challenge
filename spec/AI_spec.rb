@@ -1,4 +1,4 @@
-require 'ai'
+require 'ai_computer'
 
 describe AI do
 
