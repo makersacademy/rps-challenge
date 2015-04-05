@@ -8,6 +8,6 @@ class Game
       player_move == move && comp_move == computer_mv
     end
     result = winner == true ? name : 'Computer'
-    "#{result} wins!"
+    "#{name} chose: #{move} Computer chose: #{computer_mv}, #{result} wins!"
   end
 end
