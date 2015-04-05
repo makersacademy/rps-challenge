@@ -16,22 +16,13 @@ class RpsGame
     fail 'not a valid move' unless check_move player1_move
     fail 'not a valid move' unless check_move player2_move
 
-    return (@winner = { :draw => player1_move }) if player1_move == player2_move
+    return (@winner = { draw: player1_move }) if player1_move == player2_move
 
-    # look_up = []
-    # look_up << player1_move, player2_move
-
-    case player1_move
-    when :rock
-      @winner = { :player_1 => player1_move } if player2_move == :scissors
-      @winner = { :player_2 => player2_move } if player2_move == :paper
-    when :paper
-      @winner = { :player_1 => player1_move } if player2_move == :rock
-      @winner = { :player_2 => player2_move } if player2_move == :scissors
-    when :scissors
-      @winner = { :player_1 => player1_move } if player2_move == :paper
-      @winner = { :player_2 => player2_move } if player2_move == :rock
-    end
-    @winner
+    look_up = []
+    look_up << player1_move
+    look_up << player2_move
+    win_move = MATCHES[look_up]
+    win_move == player1_move ? key = :player_1 : key = :player_2
+    @winner = { key => win_move }
   end
 end
