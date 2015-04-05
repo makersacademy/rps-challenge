@@ -1,3 +1,11 @@
+This is my first attempt at the RPS game. I will look into the RPSSL one later.
+
+First, I looked at TDD and my classes.
+I can see 2
+- marketeer (that we will call player in case other people than marketeers also want to play), that has a name and chooses a hand
+- game, that also choses a hand, compare to the marketeer's hand and give result. Then the game can repeat the process.
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
