@@ -9,6 +9,11 @@ Use
 ---
 Just go to here:
 http://rock-paper-scissors-ls.herokuapp.com/
+####Multiplayer
+  Just enter your name, press multiplayer, and wait for an opponent to arrive. Choose a move and when you've both taken your turn you will see the result, along with a score so you can keep playing for hours.
+    "A minute to learn, a lifetime to master!"
+####Solo
+  Enter your name, press solo, and try to outfox the machine!
 
 Approach
 --------
