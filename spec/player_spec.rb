@@ -18,4 +18,8 @@ describe Player do
   it "returns the players name when asked" do
     expect(subject.name).to eq 'Dan'
   end
+
+  it 'raises an error if given invalid input' do
+    expect { subject.choose 'donald' }. to raise_error "That's not a valid weapon!"
+  end
 end

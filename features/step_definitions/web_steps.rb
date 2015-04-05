@@ -14,9 +14,8 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1)
 end
 
-Given(/^I register$/) do
-  visit '/'
-  fill_in('name', with: 'Dan')
+Given(/^I register as "([^"]*)"$/) do |arg1|
+  fill_in('name', with: arg1)
   click_button("Start Game")
 end
 
@@ -35,3 +34,16 @@ end
 Then(/^I should what the computer picked$/) do
   expect(page).to have_selector("#computers-pick")
 end
+
+When(/^I am in "([^"]*)"'s browser\.$/) do |arg1|
+  Capybara.session_name = arg1
+end
+
+Given(/^I choose "([^"]*)"$/) do |arg1|
+  choose(arg1)
+end
+
+Given(/^I click 'Try Again'$/) do
+  click_link('try_again')
+end
+
