@@ -66,9 +66,7 @@ Could potentialy also add lizard and spock options to game.
 How to use:
 ----
 
-Visit the link here https://cryptic-cove-8924.herokuapp.com/, to play live! (Share with your friends to play multiplayer! How many people can you play with at once? ;) )
-
-You can also download and run 'rackup' in the root, to run this on your own machine. (Multiple players will need be on the same machine in different browsers)
+Simply download and run 'rackup' in the root, to run this on your own machine. (Multiple players will need be on the same machine in different browsers)
 
 If you'd like to run tests, just run 'rake'.
 
