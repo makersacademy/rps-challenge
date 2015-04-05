@@ -113,5 +113,18 @@ Given(/^A second player has joined and played paper$/) do
   end
 end
 
+Given(/^A second player has joined and played rock$/) do
+    in_browser :firefox do
+      step 'I am on the hompage'
+      step 'A player has already started a game'
+      step 'I click "Join 2 player game"'
+      step 'I enter "Rich" in the "name" field'
+      step 'I enter "rock" in the "move" field'
+      step 'I click the "submit" button'
+      step 'I should see "Player 1: Bob, Player 2: Rich"' 
+    end
+end
+
+
  
 

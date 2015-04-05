@@ -11,6 +11,21 @@ class RPSWeb < Sinatra::Base
   comp = ComputerPlayer.new
   PLAYERS = PlayerHolder.new
 
+  def find_winner 
+    result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
+      if result.keys == [:draw]
+        @win = 'draw'
+      elsif result.keys == [:player_1] 
+        @win = @player_one
+        @win_move = PLAYERS.player1_move
+        @lose_move = PLAYERS.player2_move 
+      else
+        @win = @player_two
+        @win_move = PLAYERS.player2_move
+        @lose_move = PLAYERS.player1_move 
+      end
+  end
+
   get '/' do
     @has_1_player = true unless PLAYERS.player1_name.nil?
     erb :homepage
@@ -83,18 +98,7 @@ class RPSWeb < Sinatra::Base
     @player_one = PLAYERS.player1_name
     @player_two = PLAYERS.player2_name
     @ready = true unless @player_two.nil?
-    if @ready
-      result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
-      if result.keys == [:player_1] 
-        @win = @player_one
-        @win_move = PLAYERS.player1_move
-        @lose_move = PLAYERS.player2_move 
-      else
-        @win = @player_two
-        @win_move = PLAYERS.player2_move
-        @lose_move = PLAYERS.player1_move 
-      end
-    end
+    find_winner if @ready
     erb :two_players_ready
   end
 

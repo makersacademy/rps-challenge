@@ -57,4 +57,9 @@ Feature:
     Given I have started a game and played rock
     And   A second player has joined and played paper
     Then  I should see "Rich played paper and won vs rock" when the page reloads
+
+  Scenario: Draw
+    Given I have started a game and played rock
+    And   A second player has joined and played rock
+    Then  I should see "Draw" when the page reloads
     
