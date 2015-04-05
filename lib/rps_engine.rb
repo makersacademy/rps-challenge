@@ -2,6 +2,11 @@ class RpsGame
   attr_reader :winner
 
   MOVES = [:rock, :paper, :scissors]
+  MATCHES = { 
+      [:rock, :paper] => :paper, 
+      [:rock, :scissors] => :rock,
+      [:scissors, :paper] => :scissors
+    }
 
   def check_move move
     MOVES.include? move
@@ -12,7 +17,10 @@ class RpsGame
     fail 'not a valid move' unless check_move player1_move
     fail 'not a valid move' unless check_move player2_move
 
-    @winner = { :draw => player1_move } if player1_move == player2_move
+    return (@winner = { :draw => player1_move }) if player1_move == player2_move
+
+    # look_up = []
+    # look_up << player1_move, player2_move
 
     case player1_move
     when :rock

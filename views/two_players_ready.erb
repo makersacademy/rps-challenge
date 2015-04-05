@@ -1,0 +1,7 @@
+<% if @ready %>
+Player 1: <%= @player_one %>, Player 2: <%= @player_two %>
+Game ready
+<% else %>
+Player 1: <%= @player_one %>, waiting for player 2 to join
+<meta http-equiv="refresh" content="3">
+<% end %>

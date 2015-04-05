@@ -26,6 +26,12 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content arg1
 end
 
+Then(/^I should see "([^"]*)" it's move$/) do |arg1|
+ moves = ['rock', 'paper', 'scissor']
+  expect(page).to have_content arg1 
+  # how to test computer move shows up?
+end
+
 Given(/^I filled out the registration page$/) do
   step 'I am on the homepage'
   step 'I click "1 player game"'
@@ -62,4 +68,34 @@ Given(/^A player has already started a game$/) do
     step 'I click the "submit" button'
   end
 end
+
+
+Given(/^I have started a game$/) do
+  in_browser :chrome do
+    step 'I am on the hompage'
+    step 'I click "Start 2 player game"'
+    step 'I enter "Bob" in the "name" field'
+    step 'I click the "submit" button'
+  end 
+end
+
+Given(/^A second player has joined$/) do
+  in_browser :firefox do
+    step 'I am on the hompage'
+    step 'A player has already started a game'
+    step 'I click "Join 2 player game"'
+    step 'I enter "Rich" in the "name" field'
+    step 'I click the "submit" button'
+    step 'I should see "Player 1: Bob, Player 2: Rich"' 
+  end
+end
+
+Then(/^I should see "([^"]*)" when the page reloads$/) do |arg1|
+  in_browser :chrome do
+    visit 'two_players_ready'
+    expect(page).to have_content arg1
+  end
+end
+
+ 
 

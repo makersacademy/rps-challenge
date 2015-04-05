@@ -51,7 +51,8 @@ class RPSWeb < Sinatra::Base
 
 
   get '/start_two_player_game' do
-    erb :submit_p1_name
+    # erb :submit_p1_name
+      erb :submit_p1_name
   end
 
   post '/submit_player1_name' do
@@ -60,7 +61,7 @@ class RPSWeb < Sinatra::Base
     # but worked with rackup 
     # so I did this instead
     PLAYERS.player1_name = @player_one
-    "Player 1: #{@player_one}, waiting for player 2 to join"
+    redirect '/two_players_ready'
   end
 
   get '/join_two_player_game' do
@@ -71,7 +72,16 @@ class RPSWeb < Sinatra::Base
   post '/submit_player2_name' do
     @player_two = params[:name]
     PLAYERS.player2_name = @player_two
-    "Player 1: #{PLAYERS.player1_name}, Player 2: #{@player_two}"
+    # @player_one = PLAYERS.player1_name
+    # erb :two_players_ready
+    redirect '/two_players_ready'
+  end
+
+  get '/two_players_ready' do
+    @player_one = PLAYERS.player1_name
+    @player_two = PLAYERS.player2_name
+    @ready = true unless @player_two.nil?
+    erb :two_players_ready
   end
 
   # start the server if ruby file executed directly

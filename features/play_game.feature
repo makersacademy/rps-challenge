@@ -18,7 +18,7 @@ Feature:
     Given I filled out the registration page
     When  I enter "rock" in the "move" field
     And   I click the "play" button
-    Then  I should see "You played rock, Computer played "
+    Then  I should see "You played rock, Computer played " it's move
 
   Scenario: Entering a none valid move
     Given I filled out the registration page
@@ -45,3 +45,9 @@ Feature:
     And   I enter "Rich" in the "name" field
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, Player 2: Rich"
+
+  Scenario: Player 1 is sat Player 2 joins
+    Given I have started a game
+    And   A second player has joined
+    Then  I should see "Game ready" when the page reloads
+    
