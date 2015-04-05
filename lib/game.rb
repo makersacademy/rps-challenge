@@ -7,17 +7,17 @@ class Game
 
   def play_game
     if @player1.human_weapon == 'Rock' && @player2.weapon == 'Paper'
-      return 'Paper beats Rock: The Computer wins!'
+      return "The computer chose #{@player2.weapon} which wraps your Rock: The Computer wins!"
     elsif @player1.human_weapon == 'Paper' && @player2.weapon == 'Scissors'
-      return 'Scissors beat Paper: The Computer wins!'
+      return "The computer chose #{@player2.weapon} which cut your Paper: The Computer wins!"
     elsif @player1.human_weapon == 'Scissors' && @player2.weapon == 'Rock'
-      return 'Rock beats Scissors: The Computer wins!'
+      return "The computer chose #{@player2.weapon} which smashes your Scissors: The Computer wins!"
     elsif @player1.human_weapon == 'Rock' && @player2.weapon == 'Scissors'
-      return 'Rock beats Scissors: You win!'
+      return "The computer chose #{@player2.weapon} that are smashed by your Rock: You win!"
     elsif @player1.human_weapon == 'Paper' && @player2.weapon == 'Rock'
-      return 'Paper beats Rock: You win!'
+      return "The computer chose #{@player2.weapon} which is wrapped by your Paper: You win!"
     elsif @player1.human_weapon == 'Scissors' && @player2.weapon == 'Paper'
-      return 'Scissors beat Paper: You win!'
+      return "The computer chose #{@player2.weapon} which is cut by your Scissors: You win!"
     else
       return "You both chose #{@player1.human_weapon}, its a tie: Try again!"
     end
