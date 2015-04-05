@@ -3,7 +3,8 @@ require 'game'
 describe Game do
   let(:player1) { double(:player1) }
   let(:player2) { double(:player2) }
-  let(:game) { described_class.new player1, player2 }
+  let(:turns) { double(:turns) }
+  let(:game) { described_class.new player1, player2, turns }
   it 'has instance variables that are player names' do
     allow(player1).to receive(:name)
     expect(game.player1).to eq player1
@@ -11,7 +12,6 @@ describe Game do
 
   it 'has a constant containing rules' do
     stub_const("Game::RULES", scissors: 'paper')
-    game = described_class.new player1, player2
     expect(Game::RULES).to eq(scissors: 'paper')
   end
 
@@ -21,9 +21,13 @@ describe Game do
     expect(game.play).to eq 'DRAW!'
   end
 
-  it 'puts playerN wins if one player wins' do
+  it 'puts playerN wins if one playerN wins' do
+    allow(turns).to receive(:player_2)
+    allow(turns).to receive(:record_play)
     allow(player1).to receive(:weapon).and_return('scissors')
     allow(player2).to receive(:weapon).and_return('rock')
-    expect(game.play).to eq 'Player 2 Wins!!!'
+    expect(STDOUT).to receive(:puts).and_return('Player 2 Wins!!!')
   end
+
+  it ''
 end
