@@ -1,10 +1,11 @@
 require 'sinatra/base'
 require_relative 'game'
 require_relative 'players'
+require_relative 'game_play'
 
 class Rps < Sinatra::Base
   enable :sessions
-  include Game, Players
+  include Game, Players, GamePlay
 
   Players.data = []
 
@@ -13,7 +14,7 @@ class Rps < Sinatra::Base
   end
 
   post '/multi' do
-    setup_player if params[:name]
+    new_player if params[:name]
     collect_match_data
     remember_moves
     @result = result(@my_move, @their_move)
