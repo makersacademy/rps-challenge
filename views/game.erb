@@ -1,24 +1,23 @@
-<!-- <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css"> -->
 <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<%= url('/styles.css') %>">
 
-<style>
-  body {background-color:#FFC76C; text-align:center; font-family: 'Bangers', cursive;}
-  h1 {font-size:50px; color:#5BFF9A; background-color:#8E42CC; margin:50px; padding:30px;}
-  h2 {font-size:35px; color:#854ECC; margin:40px; padding:20px;}
-  form {font-size:36px; color:black; background-color:#FCD57A; margin:50px; padding:20px;}
-</style>
+<h1>
+  Welcome <%= session[:Name] %>
+</h1>
 
-<h1>Welcome <%= session[:Name] %></h1>
-
-<h2>You are playing against the computer</h2>
+<h2>
+  You are playing against the computer
+</h2>
 
 <p>
-<form action="/game" method="post">
-Make your choice
-  <input type="submit" name="Choice" value="Rock">
-  <input type="submit" name="Choice" value="Paper">
-  <input type="submit" name="Choice" value="Scissors">
-</form>
+  <form action="/game" method="post">
+  Make your choice
+    <input type="submit" name="Choice" value="Rock">
+    <input type="submit" name="Choice" value="Paper">
+    <input type="submit" name="Choice" value="Scissors">
+  </form>
 </p>
 
-<h2><a href="/">Homepage</a></h2>
+<h2>
+  <a href="/">Homepage</a>
+</h2>
