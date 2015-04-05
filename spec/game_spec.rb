@@ -6,7 +6,7 @@ describe Game do
 	context "when registering a player" do
  
 		it "can add a player to the game" do
-			expect(game.add_player("Player1")).to eq "Player1"
+			expect(game.add_player("Name")).to eq "Name"
 		end
 	end
 
@@ -24,5 +24,4 @@ describe Game do
 			expect(game.outcome(:scissors, :paper)).to eq "Congratulations, you have won!"
 		end
 	end
-
 end
