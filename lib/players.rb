@@ -53,4 +53,10 @@ module Players
     @my_data[:move], @their_data[:move] = nil, nil
     @my_data[:calc], @their_data[:calc] = false, false
   end
+
+  def print_scores
+    scores = "<p>You: #{@my_score},"
+    scores << " #{@their_name.split(' ')[0]}:"
+    scores << " #{@their_score}</p>"
+  end
 end

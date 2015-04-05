@@ -3,6 +3,7 @@
 <%= "<h1 class='flashing'>Vs #{@their_name}</h1>" if @their_name %>
 <% if waiting? %>
 <p>Waiting for other player</p><br>
+<%= print_scores if @my_score %>
 <form action='/multi' method='post'>
 <p><button value='Check again'>Check again</button></p>
 </form>
@@ -18,9 +19,7 @@
       <h1>Draw!</h1>
       <p>You both played `<%= @my_move %>`.</p>
     <% end %>
-    <%= scores = "<p>You: #{@my_score},"
-        scores << " #{@their_name.split(' ')[0]}:"
-        scores << " #{@their_score}</p>"%>
+    <%= print_scores %>
     <p>Play again:</p>
   <% end  %>
 <form action='/multi' method='post' align='center'>
