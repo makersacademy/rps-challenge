@@ -6,4 +6,9 @@ describe Player do
     expect(player.name). to eq "Phoebe"
   end
 
+  it 'can choose a move' do
+    player.choose(:rock)
+    expect(player.move). to eq :rock
+  end
+
 end

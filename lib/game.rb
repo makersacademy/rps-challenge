@@ -1,14 +1,13 @@
 class Game
 
-  attr_accessor :player, :choices
+  attr_reader :players
 
-  def initialize
-    player = nil
-    @choices = [:rock, :paper, :scissors]
+  def initialize(players = [])
+    @players = players
   end
 
   def add(player)
-    self.player = player
+    players << player
   end
 
   def ready?
@@ -16,15 +15,7 @@ class Game
   end
 
   def has_a_player?
-    !player.nil?
-  end
-
-  def random_move
-    choices.shuffle.first
-  end
-
-  def player_choice(move)
-    @move = move
+    !players.nil?
   end
 
   def winner?
