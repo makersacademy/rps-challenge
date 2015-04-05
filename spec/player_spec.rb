@@ -2,11 +2,10 @@ require 'player'
 
 describe Player do
 
-  let(:player1) { Player.new }
-  let(:player2) { Player.new }
+  let(:player1) { Player.new('Paul') }
+  let(:player2) { Player.new('Computer') }
 
   it 'Can assign a player name' do
-    player1.name= 'Paul'
     expect(player1.name).to eq ('Paul')
   end
 

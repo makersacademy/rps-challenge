@@ -3,6 +3,10 @@ class Player
   attr_reader :human_weapon, :weapon
   attr_writer :computer_weapon
 
+  def initialize(name)
+    @name = name
+  end
+
   def computer_weapon
     @computer_weapon = ['Rock', 'Paper', 'Scissors'].sample
   end
