@@ -1,7 +1,9 @@
 require 'player'
 
 describe Player do
-  xit 'has a name' do
+  player = described_class.new('Guillaume')
+  it 'has a name' do
+    expect(player.name). to eq 'Guillaume'
   end
 
   xit 'can choose a hand' do
