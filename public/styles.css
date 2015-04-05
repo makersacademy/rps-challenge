@@ -17,8 +17,8 @@ h1 {
 h2 {
   font-size:35px;
   color:#854ECC;
-  margin:40px;
-  padding:20px;
+  margin:10px;
+  padding:10px;
   border-radius:6px;
 }
 
@@ -26,7 +26,7 @@ form {
   font-size:36px;
   color:black;
   background-color:#FCD57A;
-  margin:50px;
+  margin:20px 50px;
   padding:20px;
   border-radius:6px;
 }
@@ -60,8 +60,9 @@ button:hover{
     margin-right: 75px;
     border-width: 1px;
     border-style: solid;
-    border-color: rgba(0,0,0,.2);
+    border-color: rgba(0,0,0,0);
     border-radius: 10px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
     vertical-align: top;
@@ -76,8 +77,9 @@ button:hover{
     margin-left: 75px;
     border-width: 1px;
     border-style: solid;
-    border-color: rgba(0,0,0,.2);
+    border-color: rgba(0,0,0,0);
     border-radius: 10px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
     vertical-align: top;
