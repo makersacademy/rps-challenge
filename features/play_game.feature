@@ -1,4 +1,4 @@
-Feature: Blah
+Feature: play game
 
 Scenario: Testing Capybara sessions
   Given I am on the homepage
