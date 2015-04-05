@@ -1,6 +1,6 @@
 class Turns
   attr_reader :tally
-  attr_accessor :record_play, :player_1, :player_2
+  attr_accessor :record_play, :player_1, :player_2, :wins
   def initialize
     @tally = { tally: 0 }
     @wins = { player1: 0, player2: 0 }

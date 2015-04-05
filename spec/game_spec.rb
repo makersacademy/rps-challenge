@@ -26,7 +26,8 @@ describe Game do
     allow(turns).to receive(:record_play)
     allow(player1).to receive(:weapon).and_return('scissors')
     allow(player2).to receive(:weapon).and_return('rock')
-    expect(STDOUT).to receive(:puts).and_return('Player 2 Wins!!!')
+    game.play
+    expect(STDOUT).to receive(:puts).and_return('Player 1 Wins')
   end
 
   it ''
