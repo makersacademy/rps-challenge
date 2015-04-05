@@ -7,10 +7,10 @@ class Game
     rock: 'scissors'
   }
   attr_reader :player1, :player2, :players
-  def initialize(player_1, player_2, turns)
+  def initialize(player_1, player_2, options = {})
     @player1 = player_1
     @player2 = player_2
-    @turns = turns
+    @turns = options.fetch(:turns, nil)
   end
 
   def play

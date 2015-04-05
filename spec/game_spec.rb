@@ -4,9 +4,10 @@ describe Game do
   let(:player1) { double(:player1) }
   let(:player2) { double(:player2) }
   let(:turns) { double(:turns) }
-  let(:game) { described_class.new player1, player2, turns }
+  let(:game) { described_class.new player1, player2, :turns }
   it 'has instance variables that are player names' do
     allow(player1).to receive(:name)
+    allow(player1).to receive(:fetch).and_return(nil)
     expect(game.player1).to eq player1
   end
 
