@@ -1,10 +1,10 @@
 class Game
 
-  attr_accessor :player
+  attr_accessor :player, :choices
 
-  def initialize player_1=nil, player_2=nil
-    @player_1 = player_1
-    @player_2 = player_2
+  def initialize
+    player = nil
+    @choices = [:rock, :paper, :scissors]
   end
 
   def add(player)
@@ -19,9 +19,20 @@ class Game
     !player.nil?
   end
 
-  def choices
-    choices = [:rock, :paper, :scissors]
-    return choices
+  def random_move
+    choices.shuffle.first
+  end
+
+  def player_choice(move)
+    @move = move
+  end
+
+  def winner?
+    if (self.random_move == :rock && player.move == :scissors) || (self.random_move == :scissors && player.move == :paper) || (self.random_move == :paper && player.move == :rock)
+    return "computer"
+    else 
+    return "player"
+    end
   end
 
 end

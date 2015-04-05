@@ -3,7 +3,7 @@ require 'player'
 
 describe Game do
 
-  let(:player) { double :Player, name: "Phoebe" }
+  let(:player) { double :Player, choice: :rock }
   let(:game) { Game.new }
 
   context "setting up" do
@@ -27,11 +27,16 @@ describe Game do
     end
 
     it 'a player can choose a move' do
-      allow(player).to receive(:choose_move)
+      game.add(player)
+      expect(game.player.choice).to eq (:rock)
     end
 
-    it 'the computer can chooise a move' do
+    it 'the computer will make a random choice of move' do
+      allow(game).to receive(:random_move).and_return(:rock)
+      expect(game.random_move).to eq :rock
     end
+
+    it ''
 
   end
 
