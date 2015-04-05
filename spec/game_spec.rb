@@ -39,4 +39,20 @@ describe Game do
 			expect(game.outcome(:paper, :scissors)).to eq "What a massive loooooooooooser!"
 		end
 	end
+
+
+	context "When the players draw" do
+
+		it "should allow Player1 to draw when Player1 selects rock and the opponent selects rock" do
+			expect(game.outcome(:rock, :rock)).to eq "How boring! Its a draw!"
+		end
+
+		it "should allow Player1 to draw when Player1 selects scissors and the opponent selects scissors" do
+			expect(game.outcome(:scissors, :scissors)).to eq "How boring! Its a draw!"
+		end
+
+		it "should allow Player1 to draw when Player1 selects paper and the opponent selects paper" do
+			expect(game.outcome(:paper, :paper)).to eq "How boring! Its a draw!"
+		end
+	end
 end
