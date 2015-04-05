@@ -1,4 +1,4 @@
-Given (/^I'm on the homepage$/) do
+Given (/^I'm on the home page$/) do
   visit '/'
 end
 

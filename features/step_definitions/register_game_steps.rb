@@ -1,4 +1,4 @@
-Given (/^I'm on the registerpage$/) do
+Given (/^I'm on the register page$/) do
   visit '/register'
 end
 
