@@ -10,4 +10,17 @@ Feature: Can play Rock, Paper, Scissors once registered!
     Then I should see who won
     And I should what the computer picked
 
+  Scenario: I can play against a random AI back to back
+    Given I visit the homepage
+    And I register as "Dan"
+    When I click a photo of a "rock"
+    Then I should see who won
+    And I should what the computer picked
+
+    Given I visit the homepage
+    And I register as "Dan"
+    When I click a photo of a "rock"
+    Then I should see who won
+    And I should what the computer picked
+
 

@@ -9,7 +9,7 @@ module MultiplayerHelper
   end
 
   def waiting_player(player)
-    other_players = MULTIPLAYERS.select { |player| player.object_id != session[:my_player] }
+    other_players = MULTIPLAYERS.select { |saved_player| saved_player.object_id != session[:my_player] }
     return erb :waiting if other_players.empty?
     @result, @computers_choice = battle_the_found_player(player, other_players.first)
     MULTIPLAYERS.delete(other_players.first)
