@@ -10,6 +10,9 @@ class Game
 	def outcome(player1_selection, opponent_selection)
 		if opponent_selection == potential_winning_combinations[player1_selection]
 		message = "Congratulations, you have won!"
+		
+		elsif player1_selection == potential_winning_combinations[opponent_selection]
+		message = "What a massive loooooooooooser!"
 		end
 		return message
 	end
@@ -21,4 +24,5 @@ class Game
 	def random_strategy
 		potential_winning_combinations.keys.sample
 	end
+
 end
