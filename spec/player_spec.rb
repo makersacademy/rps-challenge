@@ -15,4 +15,6 @@ let(:player) {Player.new}
 		expect(player.strategy("scissors")).to eq :scissors
 	end
 
+	
+	
 end
