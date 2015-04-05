@@ -13,16 +13,6 @@ Feature: Play rock-paper-scissors
     And I press the "Rock" button
     Then I see "You Win!"
 
-  Scenario: Win with paper
-    When the computer chooses "rock"
-    And I press the "Paper" button
-    Then I see "You Win!"
-
-  Scenario: Win with scissors
-    When the computer chooses "paper"
-    And I press the "Scissors" button
-    Then I see "You Win!"
-
   Scenario: Shows what moves were chosen, so why I won
     When the computer chooses "paper"
     And I press the "Scissors" button
@@ -40,34 +30,4 @@ Feature: Play rock-paper-scissors
   Scenario: Lose with rock
     When the computer chooses "paper"
     And I press the "Rock" button
-    Then I see "You Lose!"
-
-  Scenario: Lose with paper
-    When the computer chooses "scissors"
-    And I press the "Paper" button
-    Then I see "You Lose!"
-
-  Scenario: Lose with scissors
-    When the computer chooses "rock"
-    And I press the "Scissors" button
-    Then I see "You Lose!"
-
-  Scenario: Win with Lizard
-    When the computer chooses "paper"
-    And I press the "Lizard" button
-    Then I see "You Win!"
-
-  Scenario: Win with Spock
-    When the computer chooses "rock"
-    And I press the "Spock" button
-    Then I see "You Win!"
-
-  Scenario: Lose with Lizard
-    When the computer chooses "scissors"
-    And I press the "Lizard" button
-    Then I see "You Lose!"
-
-  Scenario: Lose with Spock
-    When the computer chooses "paper"
-    And I press the "Spock" button
     Then I see "You Lose!"
