@@ -6,7 +6,7 @@ body {
 
 h1 {
   font-size:50px;
-  color:#5BFF9A;
+  color:white;
   background-color:#8E42CC;
   margin:50px;
   padding:30px;
@@ -21,7 +21,7 @@ h2 {
 
 form {
   font-size:36px;
-  color:black;
+  color:grey;
   background-color:#FCD57A;
   margin:50px;
   padding:20px;
