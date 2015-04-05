@@ -1,4 +1,4 @@
-Feature: play game
+Feature: to define
 
 Scenario: Testing Capybara sessions
   Given I am on the homepage
