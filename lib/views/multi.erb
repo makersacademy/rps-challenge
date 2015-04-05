@@ -3,9 +3,10 @@
 <%= "<h1 class='flashing'>Vs #{@their_name}</h1>" if @their_name %>
 <% if waiting? %>
 <p>Waiting for other player</p><br>
-<%= print_scores if @my_score %>
-<form action='/multi' method='post'>
-<p><button value='Check again'>Check again</button></p>
+<% scores = print_scores if @my_score %>
+<%= scores %>
+<form action='/multi' method='post' name='Check again'>
+<p><button id='check' name='Check again' value='Check again'>Check again</button></p>
 </form>
 <% else %>
   <% if @my_move && @their_move  %>
@@ -30,3 +31,5 @@
   <button type='submit' name='move' value='spock'>Spock</button>
 </form>
 <% end %>
+<script>
+setInterval(function () {document.getElementById("check").click();}, 1000);</script>
