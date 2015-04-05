@@ -1,5 +1,5 @@
-<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<%= url('/styles.css') %>">
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 
 <h1>
   Play Rock-Paper-Scissors!
@@ -7,7 +7,8 @@
 
 <p>
   <form action="/game" method="post">
-    Enter your name: <input type="text" name="Name" value=<%= session[:Name] %>>
-    <input type="submit" value="Play">
+    Enter your name:<br />
+    <input style="margin:15px; padding:5px; border-radius:6px;" type="text" name="Name" value=<%= session[:Name] %>><br />
+    <button type="submit" value="Play">Play!</button>
   </form>
 </p>
