@@ -1,5 +1,7 @@
 #RPS Challenge#
 
+[![Build Status](https://travis-ci.org/RBGeomaticsRob/rps-challenge.svg?branch=master)](https://travis-ci.org/RBGeomaticsRob/rps-challenge) [![Coverage Status](https://coveralls.io/repos/RBGeomaticsRob/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/RBGeomaticsRob/rps-challenge?branch=master)
+
 ##Overview##
 
 The end of the 3rd week challenge at Makers Academy.
