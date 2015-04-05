@@ -2,6 +2,7 @@ body {
   background-color:#FFC76C;
   text-align:center;
   font-family: 'Bangers', cursive;
+  color: orange;
 }
 
 h1 {
@@ -23,7 +24,7 @@ h2 {
 
 form {
   font-size:36px;
-  color:grey;
+  color:black;
   background-color:#FCD57A;
   margin:50px;
   padding:20px;
@@ -50,4 +51,34 @@ button:hover{
  background-image: linear-gradient(to bottom, #ffaf46, #e78404);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffaf46, endColorstr=#e78404);
 }
 
+.left {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    font-size: 26px;
+    padding: 10px;
+    margin-right: 75px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    vertical-align: top;
+}
+
+.right {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    font-size: 26px;
+    padding: 10px;
+    margin-left: 75px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    vertical-align: top;
 }
