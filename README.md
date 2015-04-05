@@ -10,10 +10,10 @@ This was a weekend challenge to develop a sinatra app to allow users to play roc
 Screenshots
 ----
 
-![Scrnsht](/public/images/Scrnsht1)
-![Scrnsht](/public/images/Scrnsht2)
-![Scrnsht](/public/images/Scrnsht3)
-![Scrnsht](/public/images/Scrnsht4)
+![Scrnsht](/public/images/Scrnsht1.png)
+![Scrnsht](/public/images/Scrnsht2.png)
+![Scrnsht](/public/images/Scrnsht3.png)
+![Scrnsht](/public/images/Scrnsht4.png)
 
 User Stories Provided:
 ----
