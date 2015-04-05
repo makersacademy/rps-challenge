@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 require 'game'
-require 'AI'
-require 'Player'
+require 'ai'
+require 'player'
 
 feature "A human can play against an AI and hear who has won" do
 

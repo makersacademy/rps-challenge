@@ -1,3 +1,5 @@
+require 'game'
+
 describe Game do
 
   it "takes two arguments on intitialization" do

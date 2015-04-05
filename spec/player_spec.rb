@@ -1,3 +1,5 @@
+require 'player'
+
 describe Player do
 
   let(:subject) { described_class.new("Dan") }
