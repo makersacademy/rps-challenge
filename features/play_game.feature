@@ -1,8 +1,9 @@
-Feature: displays homepage
-  In order to play the game
+Feature: Starting the game
+  In order to play rock paper scissors
   As a user
-  I want to register as a new player
+  I want to start a new game
 
-  Scenario: A user is on the homepage
-    Given a user is on the homepage
-    Then they see "Enter your player name"
+  Scenario: Registering
+    Given I am on the homepage
+    When I follow "New Game"
+    Then I should see "Enter your player name"
