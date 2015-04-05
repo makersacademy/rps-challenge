@@ -9,7 +9,7 @@ feature 'a player can play a game of rock paper scissors,' do
 
   scenario 'the player can make a move and win or loose' do
     player = Player.new("Rob")
-    game = Game.new(1)
+    game = Game.new
     computer = AutoPlayer.new("Holly")
     play_hash = { player1: player,
                   p1_move: :rock,
