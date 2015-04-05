@@ -1,4 +1,4 @@
-Feature: to define
+Feature: feature test
 
 Scenario: Testing Capybara sessions
   Given I am on the homepage
