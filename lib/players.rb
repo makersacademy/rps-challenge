@@ -19,6 +19,7 @@ module Players
     @player_number = session[:number]
     @my_data = Players.data[@player_number]
     @their_data = opponent
+    reset_game if params[:move] && @their_data[:calc]
     @their_move = @their_data[:move]
     @their_name = @their_data[:name]
   end
