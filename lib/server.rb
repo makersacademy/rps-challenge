@@ -1,12 +1,13 @@
 require 'sinatra/base'
 require_relative 'game'
+require_relative 'players'
 
 class Rps < Sinatra::Base
   enable :sessions
-  include Game
+  include Game, Players
 
-  Game.players = []
-  Game.data = []
+  Players.players = []
+  Players.data = []
 
   get '/' do
     erb :index
@@ -20,10 +21,10 @@ class Rps < Sinatra::Base
     setup_player if @name
 
     @player_number = session[:number]
-    @total_players = Game.players.length
-    @my_data = Game.data[@player_number]
+    @total_players = Players.players.length
+    @my_data = Players.data[@player_number]
     if session[:both_names].nil? && @total_players.even?
-      session[:both_names] = Game.players[-2..-1]
+      session[:both_names] = Players.players[-2..-1]
     end
 
     @their_data = setup_opponent
@@ -37,41 +38,6 @@ class Rps < Sinatra::Base
     calculate_scores
 
     erb :multi
-  end
-
-  def setup_opponent
-    if @player_number.even?
-      @their_number = @player_number + 1
-    else
-      @their_number = @player_number - 1
-    end
-    Game.data[@their_number] || {}
-  end
-
-  def setup_player
-    @player_number = Game.players.length
-    session[:number] = @player_number
-    Game.players << @name
-    session[:name] = @name
-    Game.data[@player_number] = { name: @name }
-  end
-
-  def remember_moves
-    @my_data[:move] = params[:move] if params[:move]
-    @my_move = @my_data[:move]
-  end
-
-  def waiting?
-    session[:both_names].nil? ||
-      (@my_move && !@their_move)
-  end
-
-  def calculate_scores
-    @result = result(@my_move, @their_move)
-    @my_data[:score] ||= 0
-    @my_data[:score] += 1 if @result == :win
-    @their_score = @their_data[:score]
-    @my_score = @my_data[:score]
   end
 
   post '/game' do
