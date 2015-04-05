@@ -13,7 +13,11 @@ class Game
 		
 		elsif player1_selection == potential_winning_combinations[opponent_selection]
 		message = "What a massive loooooooooooser!"
+
+		elsif opponent_selection == player1_selection
+		message = "How boring! Its a draw!"
 		end
+
 		return message
 	end
 
