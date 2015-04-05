@@ -2,10 +2,10 @@ require 'sinatra/base'
 require_relative 'lib/AI'
 require_relative 'lib/player'
 require_relative 'lib/game'
-
-MULTIPLAYERS = []
+require_relative 'lib/multiplayer_helper'
 
 class RPS < Sinatra::Base
+  include MultiplayerHelper
   enable :sessions
 
   get '/' do
@@ -19,31 +19,11 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    if session[:multiplayer] == 'true'
-      player = Player.new(session[:name])
-      player.choose(params[:choice])
-      MULTIPLAYERS.unshift player
-      session[:multiplayer] = 'waiting'
-    end
-    if session[:multiplayer] == 'waiting'
-      if MULTIPLAYERS.length == 1
-        erb :waiting
-      else
-        current_game = Game.new(MULTIPLAYERS[0], MULTIPLAYERS[1])
-        @result = current_game.winner
-        erb :result
-      end
-    else
-      user = Player.new(session[:name])
-      computer = AI.new
-      current_game = Game.new(user, computer)
-      user.choose(params[:choice])
-      @computers_choice = computer.choice
-      @result = current_game.winner
-      erb :result
-    end
+    player = create_player(params[:choice])
+    return single_player(player) if session[:multiplayer].nil?
+    return waiting_player(player) if session[:multiplayer] == 'waiting'
+    multiplayer(player)
   end
-
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
