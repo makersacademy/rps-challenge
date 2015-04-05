@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'lib/AI_computer'
+require_relative 'lib/ai_computer'
 require_relative 'lib/player'
 require_relative 'lib/game'
 require_relative 'lib/multiplayer_helper'
