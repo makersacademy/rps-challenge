@@ -3,7 +3,7 @@
 
 ##[Available on Heroku - Click Here](https://afternoon-castle-6417.herokuapp.com)  
 
-![RPS-v0.1-screenshot](http://sanjsanj.github.io/images/rps-screenshot-01.png "an image title")  
+![RPS-v0.1-screenshot](http://sanjsanj.github.io/images/rps-screenshot-03.png "RPS Game")  
 
 Task
 -------
