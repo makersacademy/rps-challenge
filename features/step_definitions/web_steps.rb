@@ -65,35 +65,51 @@ Given(/^A player has already started a game$/) do
     step 'I am on the hompage'
     step 'I click "Start 2 player game"'
     step 'I enter "Bob" in the "name" field'
+    step 'I enter "rock" in the "move" field'
     step 'I click the "submit" button'
   end
 end
 
 
-Given(/^I have started a game$/) do
+Given(/^I have started a game and played rock$/) do
   in_browser :chrome do
     step 'I am on the hompage'
     step 'I click "Start 2 player game"'
     step 'I enter "Bob" in the "name" field'
+    step 'I enter "rock" in the "move" field'
     step 'I click the "submit" button'
   end 
 end
 
-Given(/^A second player has joined$/) do
+Given(/^A second player has joined and played scissors$/) do
   in_browser :firefox do
     step 'I am on the hompage'
     step 'A player has already started a game'
     step 'I click "Join 2 player game"'
     step 'I enter "Rich" in the "name" field'
+    step 'I enter "scissors" in the "move" field'
     step 'I click the "submit" button'
     step 'I should see "Player 1: Bob, Player 2: Rich"' 
   end
 end
 
+
 Then(/^I should see "([^"]*)" when the page reloads$/) do |arg1|
   in_browser :chrome do
     visit 'two_players_ready'
     expect(page).to have_content arg1
+  end
+end
+
+Given(/^A second player has joined and played paper$/) do
+   in_browser :firefox do
+    step 'I am on the hompage'
+    step 'A player has already started a game'
+    step 'I click "Join 2 player game"'
+    step 'I enter "Rich" in the "name" field'
+    step 'I enter "paper" in the "move" field'
+    step 'I click the "submit" button'
+    step 'I should see "Player 1: Bob, Player 2: Rich"' 
   end
 end
 

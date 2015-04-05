@@ -61,6 +61,7 @@ class RPSWeb < Sinatra::Base
     # but worked with rackup 
     # so I did this instead
     PLAYERS.player1_name = @player_one
+    PLAYERS.player1_move = params[:move].to_sym
     redirect '/two_players_ready'
   end
 
@@ -72,6 +73,7 @@ class RPSWeb < Sinatra::Base
   post '/submit_player2_name' do
     @player_two = params[:name]
     PLAYERS.player2_name = @player_two
+    PLAYERS.player2_move = params[:move].to_sym
     # @player_one = PLAYERS.player1_name
     # erb :two_players_ready
     redirect '/two_players_ready'
@@ -81,6 +83,18 @@ class RPSWeb < Sinatra::Base
     @player_one = PLAYERS.player1_name
     @player_two = PLAYERS.player2_name
     @ready = true unless @player_two.nil?
+    if @ready
+      result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
+      if result.keys == [:player_1] 
+        @win = @player_one
+        @win_move = PLAYERS.player1_move
+        @lose_move = PLAYERS.player2_move 
+      else
+        @win = @player_two
+        @win_move = PLAYERS.player2_move
+        @lose_move = PLAYERS.player1_move 
+      end
+    end
     erb :two_players_ready
   end
 

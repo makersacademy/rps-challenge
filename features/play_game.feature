@@ -35,6 +35,7 @@ Feature:
     Given I am on the hompage
     When  I click "Start 2 player game"
     And   I enter "Bob" in the "name" field
+    And   I enter "rock" in the "move" field
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, waiting for player 2 to join"
 
@@ -43,11 +44,17 @@ Feature:
     And   A player has already started a game
     When  I click "Join 2 player game"
     And   I enter "Rich" in the "name" field
+    And   I enter "paper" in the "move" field
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, Player 2: Rich"
 
-  Scenario: Player 1 is sat Player 2 joins
-    Given I have started a game
-    And   A second player has joined
-    Then  I should see "Game ready" when the page reloads
+  Scenario: Player 1 Wins
+    Given I have started a game and played rock
+    And   A second player has joined and played scissors
+    Then  I should see "Bob played rock and won vs scissors" when the page reloads
+
+  Scenario: Player 2 wins
+    Given I have started a game and played rock
+    And   A second player has joined and played paper
+    Then  I should see "Rich played paper and won vs rock" when the page reloads
     

@@ -13,7 +13,6 @@ class RpsGame
   end
 
   def compare player1_move, player2_move
-
     fail 'not a valid move' unless check_move player1_move
     fail 'not a valid move' unless check_move player2_move
 
