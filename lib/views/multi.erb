@@ -12,13 +12,13 @@
   <% if @my_move && @their_move  %>
     <% if @result == :win %>
       <h1>You Win!</h1>
-      <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p><%= @their_name%> took move '<%= @their_move %>', and you played '<%= @my_move %>'.</p>
     <% elsif @result == :lose %>
       <h1>You Lose!</h1>
-      <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
+      <p><%= @their_name%> took move '<%= @their_move %>', and you played '<%= @my_move %>'.</p>
     <% else %>
       <h1>Draw!</h1>
-      <p>You both played `<%= @my_move %>`.</p>
+      <p>You both played '<%= @my_move %>'.</p>
     <% end %>
     <%= print_scores %>
     <p>Play again:</p>
@@ -32,4 +32,7 @@
 </form>
 <% end %>
 <script>
-setInterval(function () {document.getElementById("check").click();}, 300);</script>
+setInterval(function () {
+  document.getElementById("check").click();
+}, 300);
+</script>
