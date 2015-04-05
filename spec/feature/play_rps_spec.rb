@@ -7,7 +7,7 @@ feature 'a player can play a game of rock paper scissors,' do
     expect(player.name).to eq "Rob"
   end
 
-  scenario 'the player can make a move and win or loose' do
+  scenario 'the player can make a move and win ,lose or draw' do
     player = Player.new("Rob")
     game = Game.new
     computer = AutoPlayer.new("Holly")
