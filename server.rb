@@ -1,8 +1,11 @@
 require 'sinatra/base'
-Dir[File.dirname(__FILE__) + '/*.rb'].each { |file| require file }
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+
 
 
 class RPS < Sinatra::Base
+
+
 
   get '/' do
     erb(:homepage)
@@ -15,10 +18,10 @@ class RPS < Sinatra::Base
   post '/game' do
     player_one = Player.new(params[:Name])
     player_two = Player.new('Computer')
-    player_one.human_weapon=(params[:RPS])
+    player_one.human_weapon=(params[:rps])
     player_two.computer_weapon
     game = Game.new(player_one, player_two)
-    game.play_game
+    @result = game.play_game
     erb(:game)
   end
 
