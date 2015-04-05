@@ -1,1 +1,12 @@
-Welcome to 'Rock Paper Scissors' <%= @player_name %>
+<h1>Welcome to 'Rock Paper Scissors' <%= @player_name %></h1>
+
+<h2>Select a move</h2>
+
+<form action='/result' method='post'>
+  <input type="radio" name="move" value="rock" checked>Rock
+  <br>
+  <input type="radio" name="move" value="paper">Paper
+  <br>
+  <input type="radio" name="move" value="scissors">Scissors
+  <button>Play</button>
+</form>

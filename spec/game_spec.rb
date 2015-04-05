@@ -1,7 +1,7 @@
 require './lib/game'
 
 describe Game do
-  subject { described_class.new(1) }
+  subject { described_class.new }
   let(:player) { double(:player, name: "Rob") }
   let(:auto_player) { double(:auto_player, name: "Holly") }
   let(:play_hash) { { player1: player, p1_move: :rock, player2: auto_player, p2_move: auto_player.move } }
