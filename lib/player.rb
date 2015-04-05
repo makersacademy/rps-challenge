@@ -5,8 +5,15 @@ class Player
   end
 
   def hand_value(choice)
-    # attr_writer :hand_value didn't work at first (before if-statement)
+    # 1) attr_writer :hand_value didn't work at first (before if-statement)
     # need to ask teachers why
-    @hand_value = choice
+    # 2) anyway to write that if-statement in a shorter way?
+    # For Rubocop purposes, I make a ch variable
+    ch = choice.downcase
+    if ch != 'rock' && ch != 'paper' && ch != 'scissors'
+      fail 'This is not a RPS hand!'
+    else
+      @hand_value = choice
+    end
   end
 end
