@@ -5,6 +5,7 @@ describe Game do
   let(:player) { double(:player, name: "Rob") }
   let(:auto_player) { double(:auto_player, name: "Holly") }
   let(:play_hash) { { player1: player, p1_move: :rock, player2: auto_player, p2_move: auto_player.move } }
+
   it 'can recieve a number of rounds as an argument' do
     expect(described_class).to receive(:new).with(instance_of(Fixnum))
     described_class.new(1)
