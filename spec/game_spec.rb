@@ -13,6 +13,14 @@ describe Game do
     expect(game.players).to eq [player1]
   end
 
+  it 'denies access to more than 2 players' do
+    player2 = double :player
+    player3 = double :player
+    game.add_player(player1)
+    game.add_player(player2)
+    expect { game.add_player(player3) }.to raise_error 'Sorry ! 2 players only!'
+  end
+
   xit 'can compare its hand with the player hand' do
   end
 
