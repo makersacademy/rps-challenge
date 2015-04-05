@@ -31,6 +31,10 @@ class RPS < Sinatra::Base
     return waiting_player(player) if session[:multiplayer] == 'waiting'
     multiplayer(player)
   end
+
+  get '/favicon' do
+    "<img src='/images/favicon.ico'>"
+  end
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
