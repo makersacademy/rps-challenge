@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/Gwasanaethau/rps-challenge.svg)](https://travis-ci.org/Gwasanaethau/rps-challenge)
-[![Coverage Status](https://coveralls.io/repos/Gwasanaethau/rps-challenge/badge.svg)](https://coveralls.io/r/Gwasanaethau/rps-challenge)
+[![Build Status](https://travis-ci.org/Gwasanaethau/rps-challenge.svg?branch=master)](https://travis-ci.org/Gwasanaethau/rps-challenge)[![Coverage Status](https://coveralls.io/repos/Gwasanaethau/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/Gwasanaethau/rps-challenge?branch=master)
 
 ###Rock, Paper, Scissors Challenge###
 
