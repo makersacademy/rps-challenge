@@ -37,7 +37,7 @@ module MultiplayerHelper
   end
 
   def single_player(player)
-    @result, @other_players_choice = battle_the_found_player(player, AI.new)
+    @result, @other_players_choice, @other_player_name = battle_the_found_player(player, AI.new)
     erb :result
   end
 end

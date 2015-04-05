@@ -9,6 +9,8 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
+    session[:multiplayer] = nil
+    session[:name] = nil
     erb :index
   end
 
