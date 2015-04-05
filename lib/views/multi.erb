@@ -1,14 +1,13 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
-<h1 class='flashing'><%= session[:name] %></h1>
+<h1 class='flashing'><%= @my_data[:name] %></h1>
 <h1 class='flashing'><%= "Vs #{@their_name}" if @their_name %></h1>
-<% if @waiting %>
+<% if waiting? %>
 <p>Waiting for other player</p><br>
 <form action='/multi' method='post'>
 <p><button value='Check again'>Check again</button></p>
 </form>
 <% else %>
   <% if @my_move && @their_move  %>
-    <% @result = result(@my_move, @their_move.to_sym) %>
     <% if @result == :win %>
       <h1>You Win!</h1>
       <p><%= @their_name%> took move `<%= @their_move %>`, and you played `<%= @my_move %>`.</p>
@@ -19,14 +18,6 @@
       <h1>Draw!</h1>
       <p>You both played `<%= @my_move %>`.</p>
     <% end %>
-    <% Game.scores[@player_number] ||= 0
-       Game.scores[@player_number] += 1 if @result == :win
-       if @player_number.even?
-         @their_score = Game.scores[@player_number + 1]
-       else
-         @their_score = Game.scores[@player_number - 1]
-       end
-       @my_score = Game.scores[@player_number]%>
     <%= scores = "<p>You: #{@my_score},"
         scores << " #{@their_name.split(' ')[0]}:"
         scores << " #{@their_score}</p>"%>

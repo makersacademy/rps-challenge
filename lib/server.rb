@@ -6,53 +6,72 @@ class Rps < Sinatra::Base
   include Game
 
   Game.players = []
-  Game.moves = []
-  Game.scores = []
+  Game.data = []
 
   get '/' do
     erb :index
   end
 
   post '/multi' do
+    #############################################
+    # set-up
+    ########################################
     @name = params[:name]
-    if @name
-      Game.players << @name
-      session[:name] = @name
-      session[:number] = Game.players.length
-    end
+    setup_player if @name
 
-    @player_number = session[:number] - 1
+    @player_number = session[:number]
     @total_players = Game.players.length
-
+    @my_data = Game.data[@player_number]
     if session[:both_names].nil? && @total_players.even?
       session[:both_names] = Game.players[-2..-1]
     end
 
-    Game.moves[@player_number] = params[:move] if params[:move]
+    @their_data = setup_opponent
+    ###########################################
+    # Moves
+    ###########################################
+    @their_move = @their_data[:move]
+    @their_name = @their_data[:name]
 
+    remember_moves
+    calculate_scores
+
+    erb :multi
+  end
+
+  def setup_opponent
     if @player_number.even?
       @their_number = @player_number + 1
     else
       @their_number = @player_number - 1
     end
-    @their_move = Game.moves[@their_number]
-    @their_name = Game.players[@their_number]
-    @their_score = Game.scores[@their_number]
+    Game.data[@their_number] || {}
+  end
 
-    @my_move = Game.moves[@player_number]
-    @my_score = Game.scores[@player_number]
+  def setup_player
+    @player_number = Game.players.length
+    session[:number] = @player_number
+    Game.players << @name
+    session[:name] = @name
+    Game.data[@player_number] = { name: @name }
+  end
 
-    puts "my move #{@my_move.inspect}
-          theirs #{@their_move.inspect}, all #{Game.moves.inspect}"
-    puts "names are #{session[:both_names].inspect}
-          player number#{@player_number}"
+  def remember_moves
+    @my_data[:move] = params[:move] if params[:move]
+    @my_move = @my_data[:move]
+  end
 
-    @waiting = session[:both_names].nil? ||
-               (@my_move && !@their_move)
-    puts session.inspect
-    puts Game.players.inspect
+  def waiting?
+    session[:both_names].nil? ||
+      (@my_move && !@their_move)
+  end
 
-    erb :multi
+  def calculate_scores
+    @result = result(@my_move, @their_move)
+    @my_data[:score] ||= 0
+    @my_data[:score] += 1 if @result == :win
+    @their_score = @their_data[:score]
+    @my_score = @my_data[:score]
   end
 
   post '/game' do

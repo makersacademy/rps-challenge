@@ -116,5 +116,5 @@ Feature: Play multiplayer rock-paper-scissors
     And I press the "Rock" button in Bob's browser
     When I press the "Check again" button in Shiela's browser
     Then I see "You: 0, Bob: 1" in Shiela's browser
-    Then I see "You: 1, Shiela:" in Bob's browser
+    Then I see "You: 1, Shiela: 0" in Bob's browser
 

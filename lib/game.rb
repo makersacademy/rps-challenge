@@ -1,12 +1,13 @@
 module Game
   class << self
-    attr_accessor :players, :moves, :scores
+    attr_accessor :players, :moves, :scores, :data
   end
   def result(move, other_choice)
-    if beats[move.to_sym].include?(other_choice)
+    return nil unless move && other_choice
+    if beats[move.to_sym].include?(other_choice.to_sym)
       :win
     else
-      move.to_sym == other_choice ? :draw : :lose
+      move.to_sym == other_choice.to_sym ? :draw : :lose
     end
   end
 
