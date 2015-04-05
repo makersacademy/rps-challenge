@@ -1,10 +1,14 @@
-Welcome <%= session[:Name] %>
+<!-- <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css"> -->
 
+<h1>Welcome <%= session[:Name] %></h1>
+
+<p>
 <form action="/game" method="post">
-  Make your choice
+Make your choice
   <input type="submit" name="Choice" value="Rock">
   <input type="submit" name="Choice" value="Paper">
   <input type="submit" name="Choice" value="Scissors">
 </form>
+</p>
 
-<a href="/">Homepage</a>
+<h2><a href="/">Homepage</a></h2>

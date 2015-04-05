@@ -1,6 +1,22 @@
-Play Rock-Paper-Scissors!
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="<%= url('/styles.css') %>"> -->
+  <!-- <link rel="stylesheet" href="/styles.css"> -->
+<style>
+  body {background-color:yellow}
+  h1 {color:red; align:center}
+</style>
+</head>
 
+<body>
+<h1>
+  Play Rock-Paper-Scissors!
+</h1>
+<p>
 <form action="/game" method="post">
   Enter your name: <input type="text" name="Name" value=<%= session[:Name] %>>
-  <input type="submit" value="Play">
-</form>
+  <input type="submit" value="Play"></form>
+</p>
+</body>
+</html>

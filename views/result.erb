@@ -1,11 +1,16 @@
-You <%= @decision %>
-You chose <%= @p1_choice %> and your opponent chose <%= @p2_choice %>
+<!-- <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css"> -->
 
+<h1>You <%= @decision %></h1>
+
+<h2>You chose <%= @p1_choice %> and your opponent chose <%= @p2_choice %></h2>
+
+<p>
 <form action="/game" method="post">
   Make your choice
   <input type="submit" name="Choice" value="Rock">
   <input type="submit" name="Choice" value="Paper">
   <input type="submit" name="Choice" value="Scissors">
 </form>
+</p>
 
-<a href="/">Homepage</a>
+<h2><a href="/">Homepage</a></h2>
