@@ -1,4 +1,4 @@
-require 'ai.rb'
+require 'ai'
 
 describe AI do
 
