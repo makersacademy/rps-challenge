@@ -9,7 +9,8 @@ Feature: Starting the game
 		Then I should see "Please enter your name to begin the game:"
 		
 	Scenario: Register for the game
-		When I fill in "name" with "Kanishk"
+		Given I am on the register page
+		When I enter "name"
 		And I press "Register"
 		Then I should see "Hey, Kanishk! Welcome to the Rock Paper Scissors game!"
 
