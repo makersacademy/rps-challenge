@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
 <h1 class='flashing'><%= @my_data[:name] %></h1>
-<h1 class='flashing'><%= "Vs #{@their_name}" if @their_name %></h1>
+<%= "<h1 class='flashing'>Vs #{@their_name}</h1>" if @their_name %>
 <% if waiting? %>
 <p>Waiting for other player</p><br>
 <form action='/multi' method='post'>

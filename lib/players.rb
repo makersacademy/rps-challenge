@@ -7,13 +7,20 @@ module Players
 
   def opponent
     @player_number.even? ? dif = 1 : dif = -1
-    @their_number = @player_number + dif
-    Players.data[@their_number] || {}
+    Players.data[@player_number + dif] || {}
   end
 
   def setup_player
     session[:number] = Players.data.length
     Players.data[session[:number]] = { name: params[:name] }
+  end
+
+  def collect_match_data
+    @player_number = session[:number]
+    @my_data = Players.data[@player_number]
+    @their_data = opponent
+    @their_move = @their_data[:move]
+    @their_name = @their_data[:name]
   end
 
   def remember_moves
@@ -27,18 +34,22 @@ module Players
   end
 
   def calculate_scores
-    @result = result(@my_move, @their_move)
+    @their_data[:score] ||= 0
     @my_data[:score] ||= 0
-    @my_data[:score] += 1 if @result == :win
-    @their_score = @their_data[:score]
-    @my_score = @my_data[:score]
+    if @result == :win
+      @my_data[:score] += 1
+    elsif @result == :lose
+      @their_data[:score] += 1
+    end
+    @my_data[:calc], @their_data[:calc] = true, true
   end
 
-  def collect_data
-    @player_number = session[:number]
-    @my_data = Players.data[@player_number]
-    @their_data = opponent
-    @their_move = @their_data[:move]
-    @their_name = @their_data[:name]
+  def save_scores
+    [@my_data[:score], @their_data[:score]]
+  end
+
+  def reset_game
+    @my_data[:move], @their_data[:move] = nil, nil
+    @my_data[:calc], @their_data[:calc] = false, false
   end
 end

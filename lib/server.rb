@@ -14,10 +14,11 @@ class Rps < Sinatra::Base
 
   post '/multi' do
     setup_player if params[:name]
-    collect_data
+    collect_match_data
     remember_moves
-    calculate_scores
-
+    @result = result(@my_move, @their_move)
+    calculate_scores if @my_move && @their_move && !@my_data[:calc]
+    @my_score, @their_score = save_scores
     erb :multi
   end
 
