@@ -43,7 +43,7 @@ Given(/^I choose "([^"]*)"$/) do |arg1|
   choose(arg1)
 end
 
-Given(/^I click 'Try Again'$/) do
-  click_link('try_again')
+Given(/^I click the link "([^"]*)"$/) do |arg1|
+  page.find_link(arg1).click
 end
 

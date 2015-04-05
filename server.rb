@@ -18,6 +18,11 @@ class RPS < Sinatra::Base
     erb :make_move
   end
 
+  get '/again' do
+    session[:multiplayer] = "true"
+    erb :make_move
+  end
+
   get '/result' do
     player = create_player(params[:choice])
     return single_player(player) if session[:multiplayer].nil?
