@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
     multiplayer(player)
   end
 
-  get '/favicon' do
+  get '/favicon.ico' do
     "<img src='/images/favicon.ico'>"
   end
   # start the server if ruby file executed directly
