@@ -13,4 +13,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'shotgun'
+  gem 'launchy'
+  gem 'rerun'
 end
