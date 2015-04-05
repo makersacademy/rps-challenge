@@ -4,6 +4,10 @@ require_relative 'player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+  set :session_secret, 'super secret'
+
+  set :public_folder, proc { File.join(root, '..', "public") }
+  set :views, proc { File.join(root, "..", "views") }
 
   get '/' do
     erb :homepage

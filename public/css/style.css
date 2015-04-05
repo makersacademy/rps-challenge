@@ -1,0 +1,73 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-image: url('../img/bg1a.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.weapons {
+  padding-top: 50px;
+  text-align: center;
+  display: inline-block;
+}
+
+.weapon {
+  float: left;
+  height: 250px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.result {
+  clear: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.resultw {
+  height: 100px;
+  padding-top: 15px;
+
+}
+
+.outcome {
+  text-align: center;
+  clear: left;
+  font-size: 2em;
+
+}
+
+
+input {
+  height: 30px;
+  width: 200px;
+  border-radius: 4px;
+  margin: 0 10px 0;
+}
+
+.form1 {
+  padding-top: 5px;
+}
+
+.title1 {
+  height: 75px;
+  text-align: center;
+  padding-top: 5px;
+  margin: 20px 0 20px 0;
+}
+
+input.button {
+  font-family: sans-serif;
+  font-size: 1em;
+  height: 50px;
+  width: 150px;
+
+

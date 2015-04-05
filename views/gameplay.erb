@@ -1,0 +1,14 @@
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+<section class="title1">
+  <h2>Hello, <%= @player_name %>!</h2>
+</section>
+<section>
+  <h2>Choose your weapon!</h2>
+</section>
+<section class="weapons">
+<% @available_weapons.each do |weapon| %>
+  <% weapon_name = weapon.to_s %>
+    <a href="/play/weapon?weapon=<%= weapon_name %>"><img class="weapon" src="img/<%= weapon_name %>.png"></a>
+<% end %>
+</section>
