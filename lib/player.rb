@@ -1,10 +1,10 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :hand_value
   def initialize(name = 'Player1')
     @name = name
   end
 
-  def hand_value(choice)
+  def chose_hand(choice)
     # 1) attr_writer :hand_value didn't work at first (before if-statement)
     # need to ask teachers why
     # 2) anyway to write that if-statement in a shorter way?

@@ -8,7 +8,7 @@ describe Game do
   before { game.add_player(player1) }
 
   it 'can choose a random Rock, Paper or Scissors hand' do
-    game.chose_hand
+    game.cpu_random_hand
     expect(game.hand_value).to satisfy { 'Rock' || 'Paper' || 'Scissors' }
   end
 
@@ -29,5 +29,10 @@ describe Game do
   it 'returns Tie! if it\'s a tie' do
     game.add_player(player2b)
     expect { game.winner } .to raise_error 'Tie!'
+  end
+
+  it 'can player with the computer' do
+    allow(game).to receive(:cpu_random_hand).and_return 'paper'
+    expect(game.winner).to eq 'CPU'
   end
 end

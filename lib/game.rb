@@ -5,7 +5,7 @@ class Game
     @number_of_p = 0
   end
 
-  def chose_hand
+  def cpu_random_hand
     @hand_value = %w(Rock Paper Scissors)[rand(3)]
   end
 
@@ -26,8 +26,8 @@ class Game
   def matching_hands_with_players
     @player1 = @players[0]
     if @players.length == 1
-      @player2 = 'The game'
-      @phv2 = chose_hand.downcase
+      @player2 = 'CPU'
+      @phv2 = cpu_random_hand.downcase
     else
       @player2 = @players[1]
       @phv2 = @player2.hand_value.downcase

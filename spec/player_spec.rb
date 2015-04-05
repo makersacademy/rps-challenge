@@ -7,10 +7,10 @@ describe Player do
   end
 
   it 'can choose a hand' do
-    expect(player.hand_value('Rock')).to eq 'Rock'
+    expect(player.chose_hand('Rock')).to eq 'Rock'
   end
 
   it 'can only choose a hand that is Rock, Paper or Scissors' do
-    expect { player.hand_value('yo') } .to raise_error 'This is not a RPS hand!'
+    expect { player.chose_hand('yo') } .to raise_error 'This is not a RPS hand!'
   end
 end
