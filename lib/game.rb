@@ -10,9 +10,15 @@ class Game
     fail "I don't recognise that move, try again" unless valid_move?(move)
     computer_mv = make_move
     moves = "#{name} chose: #{move} Computer chose: #{computer_mv}, "
-    return moves + "Its a draw!" if draw?(move, computer_mv)
-    result = winner?(move, computer_mv) ? name : 'Computer'
-    moves + "#{result} wins!"
+    moves + round_result(name, move, computer_mv)
+  end
+
+  private
+
+  def round_result(name, user_move, computer_move)
+    return "Its a draw!" if draw?(user_move, computer_move)
+    winner = winner?(user_move, computer_move) ? name : 'Computer'
+    "#{winner} wins!"
   end
 
   def winner?(user_move, computer_move)
