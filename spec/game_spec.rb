@@ -1,13 +1,16 @@
 require 'game'
 
 describe Game do
-  game = described_class.new
+  let(:game) { described_class.new }
+  let(:player1) { double :player, hand_value: 'Rock' }
   it 'can choose a random Rock, Paper or Scissors hand' do
     game.chose_hand
     expect(game.hand_value).to satisfy { 'Rock' || 'Paper' || 'Scissors' }
   end
 
-  xit 'knows that there is a player online' do
+  it 'knows the players that are in the game' do
+    game.add_player(player1)
+    expect(game.players).to eq [player1]
   end
 
   xit 'can compare its hand with the player hand' do
