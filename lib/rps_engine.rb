@@ -3,7 +3,10 @@ class RpsGame
   MATCHES = {
     [:rock, :paper] => :paper,
     [:rock, :scissors] => :rock,
-    [:scissors, :paper] => :scissors
+    [:scissors, :paper] => :scissors,
+    [:paper, :rock] => :paper,
+    [:scissors, :rock] => :rock,
+    [:paper, :scissors] => :scissors
   }
 
   def check_move move
