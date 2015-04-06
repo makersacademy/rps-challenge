@@ -38,7 +38,7 @@ I would like to be able to play rock/paper/scissors in my browser
 
 - MVP3 - Multiplayer playable RPSLS game in browser.
 
-- MVP5 - Multiplayer formatted playable RPSLS in browser.
+- MVP4 - Multiplayer formatted playable RPSLS in browser.
 
 - MVP5 - Multiplayer formatted playable RPSLS on the web.
 
@@ -47,6 +47,7 @@ I would like to be able to play rock/paper/scissors in my browser
 This project is being developed in a BDD approach and therefore the domain design below will emerge as it develops, the classes identified in the process are:
 
 - Player - Responsible for allowing a player to make a move
+- AutoPlayer - Responsible for randomly creating a move
 - Game - Responsible for processing the result
 
 

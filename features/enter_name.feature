@@ -6,4 +6,4 @@ Feature: Enter name and move to the play page with that name showing
 Scenario: I want to enter my name
           Given I am on the homepage
           When I enter "Rob", select "single" and click "Play"
-          Then I should see "Welcome to 'Rock Paper Scissors' Rob"
+          Then I should see "Make a move Rob"

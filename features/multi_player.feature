@@ -14,11 +14,11 @@ Scenario: Two Players can play 1 round
           Given I am on the homepage
           When I enter "Sarah", select "multi" and click "Play"
           When I select a "move" and click "Play"
-          Then I should see "Rock Paper Scissors Results"
+          Then I should see "'Rock Paper Scissors Lizard Spock' Results"
 
           When I am in "Dave" browser
           Given I click the "Try Again" button
-          Then I should see "Rock Paper Scissors Results"
+          Then I should see "'Rock Paper Scissors Lizard Spock' Results"
 
 Scenario: Two Players can play multiple rounds
           When I am in "Dave" browser
@@ -31,11 +31,11 @@ Scenario: Two Players can play multiple rounds
           Given I am on the homepage
           When I enter "Sarah", select "multi" and click "Play"
           When I select a "move" and click "Play"
-          Then I should see "Rock Paper Scissors Results"
+          Then I should see "'Rock Paper Scissors Lizard Spock' Results"
 
           When I am in "Dave" browser
           Given I click the "Try Again" button
-          Then I should see "Rock Paper Scissors Results"
+          Then I should see "'Rock Paper Scissors Lizard Spock' Results"
           When I click the "Play Again" button
 
           When I am in "Sarah" browser
@@ -45,4 +45,4 @@ Scenario: Two Players can play multiple rounds
 
           When I am in "Dave" browser
           When I select a "move" and click "Play"
-          Then I should see "Rock Paper Scissors Results"
+          Then I should see "'Rock Paper Scissors Lizard Spock' Results"
