@@ -1,9 +1,9 @@
 body {
   margin: 0 !important;
   padding: 0 !important;
-  background-image: url('../img/bg1a.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('../img/bg2a.png');
+  background-size: initial;
+  background-repeat: repeat;
   font-family: sans-serif;
   color: black;
   text-align: center;
