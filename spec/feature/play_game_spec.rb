@@ -4,9 +4,10 @@ require 'capybara/rspec'
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 feature 'Player can play ‘Rock, Paper, Scissors’ –' do
+  let!(:player) { Player.new 'Player' }
+  let!(:opponent) { Player.new 'Opponent' }
+
   scenario 'Player can win the game' do
-    player = Player.new 'Player'
-    opponent = Player.new 'Opponent'
     player.select_action :rock
     opponent.select_action :scissors
     player_hash = { name: player.name, action: player.action }
@@ -16,8 +17,6 @@ feature 'Player can play ‘Rock, Paper, Scissors’ –' do
   end
 
   scenario 'Player can lose the game' do
-    player = Player.new 'Player'
-    opponent = Player.new 'Opponent'
     player.select_action :paper
     opponent.select_action :scissors
     player_hash = { name: player.name, action: player.action }
@@ -27,8 +26,6 @@ feature 'Player can play ‘Rock, Paper, Scissors’ –' do
   end
 
   scenario 'Player can draw the game' do
-    player = Player.new 'Player'
-    opponent = Player.new 'Opponent'
     player.select_action :paper
     opponent.select_action :paper
     player_hash = { name: player.name, action: player.action }
