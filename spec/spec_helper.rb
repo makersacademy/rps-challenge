@@ -1,4 +1,3 @@
-require 'byebug'
 require 'capybara/rspec'
 require 'coveralls'
 require 'simplecov'
