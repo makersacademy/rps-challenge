@@ -9,9 +9,9 @@
   You chose <%= @p1_choice %> and your opponent chose <%= @p2_choice %>
 </h2>
 
-<div class="left" style="background-color:#FCD57A; background-image: url(https://openclipart.org/image/125px/svg_to_png/213382/rock-paper-scissors.png);"><%= session[:Name] %></div>
+<div class="left" style="background-color:#FCD57A; background-image: url(/<%= @p1_choice %>.png);"><%= session[:Name] %></div>
 
-<div class="right" style="background-color:#FCD57A; background-image: url(https://openclipart.org/image/125px/svg_to_png/213382/rock-paper-scissors.png);">Computer</div>
+<div class="right" style="background-color:#FCD57A; background-image: url(/<%= @p2_choice %>_r.png);">Computer</div>
 
 <p>
   <form action="/game_rpsls" method="post">
