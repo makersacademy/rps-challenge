@@ -1,0 +1,16 @@
+<% if @outcome == "Congratulations, you have won!" %>
+  <h3>Congratulations, you have won!</h3>
+  <br><img src="/images/win.png"/><br>
+<% elsif @outcome == "What a massive loooooooooooser!" %>
+  <h3>What a massive loooooooooooser!</h3>
+  <br><img src="images/loser.png"/><br>
+<% elsif @outcome == "How boring! Its a draw!" %>
+  <h3>How boring! Its a draw!</h3>
+  <br><img src="images/draw.png"/><br>
+<% end %>
+  <br>
+  <br>
+  <form action='/register' method='post'>
+  <a <input type="submit" href="/game">Give it another go!</a>
+  </form>
+</div>

@@ -1,10 +1,11 @@
 class Game
 
-	attr_reader :potential_winning_combinations
+	attr_reader :potential_winning_combinations, :name
 
 	def initialize
 		@new_player = nil
 		@potential_winning_combinations = { paper: :rock, rock: :scissors, scissors: :paper }
+		@name = name
 	end
 
 	def outcome(player1_selection, opponent_selection)

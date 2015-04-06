@@ -11,10 +11,11 @@ Feature: Starting the game
 	Scenario: Register for the game
 		Given I am on the register page
 		When I enter "name"
-		And I press "Register"
-		Then I should see "Hey, Kanishk! Welcome to the Rock Paper Scissors game!"
-
+		And I follow "Register"
+		Then I should see the game page
+		
 	Scenario: Playing the game
 		Given I am on the game page
+		Then I should see "Hey, Kanishk! Welcome to the Rock Paper Scissors game! Pick your strategy!"
 		When I follow "Paper!"
 		Then I should see the outcome page
