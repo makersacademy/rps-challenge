@@ -15,7 +15,6 @@ describe Game do
       expect(game.players).to eq [player]
     end
 
-
     it 'should know when its ready to start' do
       game.add(player)
       expect(game).to be_ready
@@ -25,16 +24,32 @@ describe Game do
 
   context "playing the game" do
 
+    it 'knows that paper beats rock' do
+      game.add(player)
+      game.add(computer)
+      allow(computer).to receive(:move).and_return(:paper)
+      expect(game.winner).to eq computer
+    end
+
     it 'knows that rock beats scissors' do
+      game.add(player)
+      game.add(computer)
+      allow(computer).to receive(:move).and_return(:scissors)
+      expect(game.winner).to eq player
     end
 
-    xit 'knows that scissors beats paper' do
+    it 'knows that scissors beats paper' do
+      game.add(player1)
+      game.add(computer)
+      allow(computer).to receive(:move).and_return(:paper)
+      expect(game.winner).to eq player1
     end
 
-    xit 'knows that paper beats rock' do
-    end
-
-    xit 'knows when there is a draw' do
+    it 'knows when there is a draw' do
+      game.add(player)
+      game.add(computer)
+      allow(computer).to receive(:move).and_return(:rock)
+      expect(game.winner).to eq "draw"
     end
 
   end

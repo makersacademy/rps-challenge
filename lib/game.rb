@@ -18,11 +18,22 @@ class Game
     !players.nil?
   end
 
-  def winner?
-    if (self.random_move == :rock && player.move == :scissors) || (self.random_move == :scissors && player.move == :paper) || (self.random_move == :paper && player.move == :rock)
-    return "computer"
-    else 
-    return "player"
+  def winner
+    case
+      when @players[0].move == :scissors && players[1].move == :paper
+        return @players[0]
+      when @players[0].move == :rock && players[1].move == :scissors
+        return @players[0]
+      when @players[0].move == :paper && players[1].move == :rock
+        return @players[0]
+      when @players[1].move == :scissors && players[0].move == :paper
+        return @players[1]
+      when @players[1].move == :rock && players[0].move == :scissors
+        return @players[1]
+      when @players[1].move == :paper && players[0].move == :rock
+        return @players[1]
+      when @players[0].move == @players[1].move
+        return "draw"
     end
   end
 
