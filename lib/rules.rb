@@ -29,6 +29,5 @@ module Rules
                                 spock: [:draw, 'matches'],
                                 rock: [:win, 'vaporises']
                               }
-
                  }
 end

@@ -84,5 +84,4 @@ class RockPaperScissors < Sinatra::Base
     @@p1_move = params[:move].to_sym if session[:player] == 1
     @@p2_move = params[:move].to_sym if session[:player] == 2
   end
-
 end
