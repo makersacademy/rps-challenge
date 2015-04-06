@@ -59,14 +59,20 @@ I tested the game's random behaviour and functionality using Rspec. This does me
 Future extensions
 ----
 
+There's currently a bug in that when a single player clicks 'play again' it takes them to a multiplayer game.
+
 I'd like to double check and see if i need to deepen test coverage to cover all outcomes of rock, paper, scissors.
+
+I'd also like to improve cucumber tests for testing AI behaviour.
 
 Could potentialy also add lizard and spock options to game.
 
 How to use:
 ----
+Simply visit:
+https://cryptic-cove-8924.herokuapp.com/ and invite your friends! (How many of you can play at once?! :p )
 
-Simply download and run 'rackup' in the root, to run this on your own machine. (Multiple players will need be on the same machine in different browsers)
+Or if you'd like to download and run for yourself, simply type 'rackup' in the root, to run this on your own machine. (Multiple players will need be on the same machine in different browsers)
 
 If you'd like to run tests, just run 'rake'.
 
