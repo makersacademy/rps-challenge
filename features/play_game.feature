@@ -5,13 +5,13 @@ Feature: Play a game of RPS and get the outcome
 
 Scenario: I select a move to make move to play
           Given I am on the homepage
-          When I enter "Rob" and click "Play"
+          When I enter "Rob", select "single" and click "Play"
           When I select a "move" and click "Play"
           Then I should see "Rock Paper Scissors Results"
 
 Scenario: I want to be able to play again
           Given I am on the homepage
-          When I enter "Rob" and click "Play"
+          When I enter "Rob", select "single" and click "Play"
           When I select a "move" and click "Play"
           Then I should see "Rock Paper Scissors Results"
           When I click the "Play Again" button
