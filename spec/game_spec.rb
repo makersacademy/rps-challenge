@@ -17,8 +17,28 @@ describe Game do
     expect(game.comp_generator).to be_an (Array)
   end
   it "knows player selects a hand" do
-    allow(player_1).to receive(:select).and_return(:rock)
-    allow(player_1).to receive(:select).and_return(:paper)
-    allow(player_1).to receive(:select).and_return(:scissors)
+    allow(player_1).to receive(:player_select).and_return(:rock)
+    allow(player_1).to receive(:player_select).and_return(:paper)
+    allow(player_1).to receive(:player_select).and_return(:scissors)
+  end
+  it "player_1 rock beats comp_player scissors" do 
+    allow(player_1).to receive(:player_select).and_return(:rock)
+    allow(comp_player).to receive(:comp_select).and_return(:scissors)
+    expect(game.compare_hands([:rock], [:scissors])).to eq 1
+  end
+  it "player_1 scissors beats comp_player paper" do 
+    allow(player_1).to receive(:player_select).and_return(:scissors)
+    allow(comp_player).to receive(:comp_select).and_return(:paper)
+    expect(game.compare_hands([:scissors], [:paper])).to eq 1
+  end
+  it "player_1 paper beats comp_player rock" do 
+    allow(player_1).to receive(:player_select).and_return(:paper)
+    allow(comp_player).to receive(:comp_select).and_return(:rock)
+    expect(game.compare_hands([:paper], [:rock])).to eq 1
+  end
+  it "draws when player_1 matches comp_player" do
+    allow(player_1).to receive(:player_select).and_return(:paper)
+    allow(comp_player).to receive(:comp_select).and_return(:paper)
+    expect(game.compare_hands([:paper], [:paper])).to eq "Draw"
   end
 end
