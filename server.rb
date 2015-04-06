@@ -35,15 +35,14 @@ class RPS < Sinatra::Base
   post '/game_rpsls' do
     if params[:Choice]
       @p1_choice = params[:Choice]
-      @p2_choice = cpu.choice
+      @p2_choice = cpu.choice_rpsls
       @decision = decide.make @p1_choice, @p2_choice
-      erb :result_rpls
+      erb :result_rpsls
     else
       session[:Name] = params[:Name] if params[:Name]
       erb :game_rpsls
     end
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
