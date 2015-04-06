@@ -23,6 +23,7 @@ class Player
     else
       "DRAW!"
     end
+    over if @win_count >=5 || @lose_count >= 5
     move.clear
   end
 
@@ -47,5 +48,13 @@ class Player
   def player_2
     opponent = %w(Rock, Paper, Scissors).sample
     player_2_move << opponent
+  end
+
+  def over
+    if @win_count >= 5
+      "YOU ARE THE CHAMPION!!!!"
+    elsif @lose_count >= 5
+      "LOOOOOOOOOOOOOOSSSSEEEERRRRRRRRR!!!!"
+    end
   end
 end
