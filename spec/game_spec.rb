@@ -4,10 +4,14 @@ describe Game do
 
   let(:player_1) { :player_1 }
   let(:player_2) { :player_2 }
-  let(:game) { Game.new player_1, player_2 }
-  
+  let(:game) { Game.new }
 
-  it "can have two players" do
+   before(:each) do
+    game.add_player_one player_1
+    game.add_player_two player_2
+  end 
+
+  it "can add two players" do
     expect(game).to have_player_one
     expect(game).to have_player_two
   end

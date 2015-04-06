@@ -1,19 +1,5 @@
 <center>
-<h1>
-  Hello, <%=@player_one%>.  
-</h1>
-<p>  
-  You used <%=@tool_one%>
-</p>
-
-<p>  
-  <%=@player_two%> used <%=@tool_two%>
-</p>
-
-<p>
-  <%=@result%>
-</p>
-
-<a href="/">Click to play again!</a>
-
-</center> 
+<form action="/results_page" method="POST">
+  <input type="submit" value="Submit">
+</form> 
+</center>

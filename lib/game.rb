@@ -1,16 +1,24 @@
 class Game
-  attr_reader :player_one, :player_two,:winner  
-  attr_writer :winner
+  attr_accessor :player_one, :player_two, :winner  
+  
 
-  def initialize player_one, player_two
-    @player_one = { player: player_one }
-    @player_two = { player: player_two }
+  def initialize 
+    @player_one = { }
+    @player_two = { }
     @winner = nil 
   end 
 
+  def add_player_one player
+    player_one[:player] = player
+  end  
+
+  def add_player_two player
+    player_two[:player] = player 
+  end
+
   def choose_tool player, tool
     fail "Game Over" unless winner == nil
-    fail "Choose only either :Rock, :Scissors, or :Paper" unless [:Rock, :Scissors, :Paper].any? { |i| i == tool }
+    # fail "Choose only either :Rock, :Scissors, or :Paper" unless [:Rock, :Scissors, :Paper].any? { |i| i == tool }
     player[:tool] = tool
   end 
 

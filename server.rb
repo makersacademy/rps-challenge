@@ -2,6 +2,10 @@ require 'sinatra/base'
 require_relative 'lib/game.rb'
 
 class RPS < Sinatra::Base
+
+  GAME = Game.new 
+
+  enable :sessions
   
   get '/' do
     erb :homepage
@@ -12,19 +16,24 @@ class RPS < Sinatra::Base
   end
 
   post '/game_page' do
-    @player_one = params[:name]
-    @tool_one = params[:tool]
-    @player_two = "Computer"
-    @tool_two = [:Rock, :Paper, :Scissors].sample
-    game = Game.new @player_one, @player_two 
-    game.choose_tool game.player_one, @tool_one.to_sym
-    game.choose_tool game.player_two, @tool_two
-    @result = game.play
+    session[:player_one] = params[:player_one]
+    session[:tool_one] = params[:tool_one]
+    session[:player_two] = params[:player_two]
+    session[:tool_two] = params[:tool_two]
+    
+    # @player_two = "Computer"
+    # @tool_two = [:Rock, :Paper, :Scissors].sample
+
+    GAME.add_player_one "Nadav" # ession[:player_one] 
+    GAME.add_player_two "Line" # session[:player_two] 
+    GAME.choose_tool GAME.player_one, :Rock # session[:tool_one].to_sym
+    GAME.choose_tool GAME.player_two, :Paper # session[:tool_two]
+    # @result = GAME.play
     erb :game_page 
   end
 
   post '/results_page' do
-    @player_one = params[:name]
+    session[:result] = GAME.play
     erb :results_page
   end
 
