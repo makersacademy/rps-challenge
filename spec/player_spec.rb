@@ -27,6 +27,16 @@ describe Player do
     expect(subject.action).to equal :scissors
   end
 
+  it 'can disclose previously selected valid action ‘:lizard’' do
+    subject.select_action :lizard
+    expect(subject.action).to equal :lizard
+  end
+
+  it 'can disclose previously selected valid action ‘:spock’' do
+    subject.select_action :spock
+    expect(subject.action).to equal :spock
+  end
+
   it 'ignores previously selected invalid action ‘:action’' do
     subject.select_action :action
     expect(subject.action).to be_nil
@@ -35,6 +45,7 @@ describe Player do
   it 'can auto-select a valid action' do
     expect(subject).to respond_to :auto_select_action
     subject.auto_select_action
-    expect(subject.action).to equal(:rock).or equal(:paper).or equal(:scissors)
+    expect(subject.action).to equal(:rock) | equal(:paper) | equal(:scissors) |
+      equal(:lizard) | equal(:spock)
   end
 end

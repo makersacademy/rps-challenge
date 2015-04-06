@@ -3,7 +3,7 @@ require 'capybara/rspec'
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
-feature 'Player can play ‘Rock, Paper, Scissors’ –' do
+feature 'Player can play ‘Rock, Paper, Scissors, Lizard, Spock’ –' do
   let!(:player) { Player.new 'Player' }
   let!(:opponent) { Player.new 'Opponent' }
 
