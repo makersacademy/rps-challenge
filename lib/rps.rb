@@ -13,6 +13,10 @@ class Rps < Sinatra::Base
     erb :game
   end
 
+  get '/cpu' do
+    erb :cpu
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

@@ -8,3 +8,8 @@ Feature: Registering player for the game
     And I input my name
     When I click on "Start"
     Then I should visit game page
+    
+  Scenario: Playing game
+    Given I am on game page
+    When I click on rock/paper/scissors image
+    Then I should visit cpu page
