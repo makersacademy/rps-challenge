@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 # Taken from the cucumber-rails project.
 
 module NavigationHelpers
@@ -12,6 +14,15 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+
+    when /the choose page/
+      '/chose'
+
+    when /the matchmaking page/
+      '/matchmaking'
+
+    when /the play page/
+      '/play'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

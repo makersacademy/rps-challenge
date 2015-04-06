@@ -1,0 +1,30 @@
+<section class="center">
+  <div class="fight">
+    <h2>FIGHT!</h2>
+    <div class="player1">
+      <h2><%= @player_name.upcase %></h2>
+    </div>
+    <div class="element <%= @player_chose %> fade_in"></div> 
+    <div class="vs">VS</div> 
+    <div class="element <%= @opponent_chose %> fade_in"></div>
+    <div class="player2">
+      <h2><%= @opponent_name.upcase %></h2>
+    </div>
+  </div>
+</section>
+
+<section id="result" class="center result fade_in">
+  <h1><%= @result %></h1>
+</section>
+
+<section class="center links">
+  <p><a href="/chose?name=<%= @player_name %>&type=classic">
+    Play Rock Paper Scissors!
+  </a></p>
+  <p><a href="/chose?name=<%= @player_name %>&type=lizspock">
+    Play Rock Paper Scissors Lizard Spock!
+  </a></p>
+  <p><a href="/">
+    Back to Home
+  </a></p>
+</section>
