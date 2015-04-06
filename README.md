@@ -1,4 +1,8 @@
 #RPS Challenge: Rōnin Badge Test
+
+- Play RPS
+- Play RPSLS
+
 [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 
 ##[Available on Heroku - Click Here](https://afternoon-castle-6417.herokuapp.com)  
@@ -23,16 +27,24 @@ I would like to be able to play rock/paper/scissors
 
 Tests
 -----
+
+- Cucumber Tests  
+
 ```
 Feature: Pleasing the Makers Academy Marketeers
   In order to unwind after a hard day
-  As a fan of simple games
-  I want to register my name and play RPS
+  As a fan of casual games
+  I want to play RPS
 
   Scenario: Homepage
     Given I am on the homepage
     Then I should see "Play Rock-Paper-Scissors!"
-    Then the page should have "Play" button
+    Then the page should have "Play RPS" button
+    
+Feature: Giving the player the RPS experience
+  In order to play RPS
+  As someone with far too much spare time
+  I want to register my name and play RPS
 
   Scenario: Enter the game without a name
     Given I am on the homepage
@@ -84,6 +96,11 @@ Feature: Pleasing the Makers Academy Marketeers
     And I click "Play"
     Then I should be on the "/game" page
     Then I should see "Welcome Sue"
+
+Feature: Pleasing the Makers Academy Marketeers
+  In order to know the outcome
+  As a player of RPS
+  I want the game to be declared a win, lose or tie
 
   Scenario: Win with Rock
     Given I am on the homepage
@@ -149,18 +166,30 @@ Feature: Pleasing the Makers Academy Marketeers
     Then I should see "You tie"
 ```
 
+- Rspec Tests
+
+```
+CPU
+  can choose Rock, Paper or Scissors
+  can choose Rock, Paper, Scissors, Lizard or Spock
+
+Decide
+  RPS
+    knows P1 Rock beats P2 Scissors
+    knows P1 Paper beats P2 Rock
+    knows P1 Scissors beats P2 Paper
+    knows P1 Rock loses to P2 Paper
+    knows P1 Paper loses to P2 Scissors
+    knows P1 Scissors loses to P2 Rock
+    knows P1 Rock ties with P2 Rock
+    knows P1 Paper ties with P2 Paper
+    knows P1 Scissors ties with P2 Scissors
+  RPSLS
+    knows P1 Lizard beats P2 Spock
+    knows P1 Lizard beats P2 Paper
+    etc etc etc
+
+13 examples, 0 failures
+```
+
 **Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
