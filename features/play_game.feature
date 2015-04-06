@@ -11,5 +11,13 @@ Feature: Registering player for the game
     
   Scenario: Playing game
     Given I am on game page
-    When I click on rock/paper/scissors image
+    When I click on rock link
+    Then I should visit cpu page
+
+    Given I am on game page
+    When I click on paper link
+    Then I should visit cpu page
+
+    Given I am on game page
+    When I click on scissors link
     Then I should visit cpu page

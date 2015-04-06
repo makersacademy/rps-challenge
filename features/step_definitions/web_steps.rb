@@ -14,15 +14,22 @@ Then(/^I should visit game page$/) do
   visit('/game')
 end
 
-
 Given(/^I am on game page$/) do
   visit('/game')
 end
 
-When(/^I click on rock\/paper\/scissors image$/) do
-  click_link('rps_image')
+When(/^I click on rock link$/) do
+  click_link('rock')
 end
 
 Then(/^I should visit cpu page$/) do
-  visit('/cpu')
+  visit('/cpu?rps=rock')
+end
+
+When(/^I click on paper link$/) do
+  visit('/cpu?rps=paper')
+end
+
+When(/^I click on scissors link$/) do
+  visit('/cpu?rps=scissors')
 end
