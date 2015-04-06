@@ -15,7 +15,7 @@ When(/^I click "([^"]*)"$/) do |arg1|
 end
 
 When(/^I enter "([^"]*)" in the "([^"]*)" field$/) do |arg1, arg2|
-  fill_in(arg2, :with => arg1)
+  fill_in(arg2, with: arg1)
 end
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
@@ -27,9 +27,12 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)" it's move$/) do |arg1|
- moves = ['rock', 'paper', 'scissor']
-  expect(page).to have_content arg1 
+  expect(page).to have_content arg1
   # how to test computer move shows up?
+end
+
+When(/^I select "([^"]*)" in the "([^"]*)" form$/) do |arg1, arg2|
+  select(arg1, :from => arg2)
 end
 
 Given(/^I filled out the registration page$/) do
@@ -55,7 +58,7 @@ Given(/^I am first on the hompage$/) do
 end
 
 Then(/^I should not see "([^"]*)"$/) do |arg1|
-in_browser :firefox do
+  in_browser :firefox do
     expect(page).not_to have_content arg1
   end
 end
@@ -65,20 +68,19 @@ Given(/^A player has already started a game$/) do
     step 'I am on the hompage'
     step 'I click "Start 2 player game"'
     step 'I enter "Bob" in the "name" field'
-    step 'I enter "rock" in the "move" field'
+    step 'I select "rock" in the "move" form'
     step 'I click the "submit" button'
   end
 end
-
 
 Given(/^I have started a game and played rock$/) do
   in_browser :chrome do
     step 'I am on the hompage'
     step 'I click "Start 2 player game"'
     step 'I enter "Bob" in the "name" field'
-    step 'I enter "rock" in the "move" field'
+    step 'I select "rock" in the "move" form'
     step 'I click the "submit" button'
-  end 
+  end
 end
 
 Given(/^A second player has joined and played scissors$/) do
@@ -87,12 +89,11 @@ Given(/^A second player has joined and played scissors$/) do
     step 'A player has already started a game'
     step 'I click "Join 2 player game"'
     step 'I enter "Rich" in the "name" field'
-    step 'I enter "scissors" in the "move" field'
+    step 'I select "scissors" in the "move" form'
     step 'I click the "submit" button'
-    step 'I should see "Player 1: Bob, Player 2: Rich"' 
+    step 'I should see "Player 1: Bob, Player 2: Rich"'
   end
 end
-
 
 Then(/^I should see "([^"]*)" when the page reloads$/) do |arg1|
   in_browser :chrome do
@@ -102,29 +103,25 @@ Then(/^I should see "([^"]*)" when the page reloads$/) do |arg1|
 end
 
 Given(/^A second player has joined and played paper$/) do
-   in_browser :firefox do
+  in_browser :firefox do
     step 'I am on the hompage'
     step 'A player has already started a game'
     step 'I click "Join 2 player game"'
     step 'I enter "Rich" in the "name" field'
-    step 'I enter "paper" in the "move" field'
+    step 'I select "paper" in the "move" form'
     step 'I click the "submit" button'
-    step 'I should see "Player 1: Bob, Player 2: Rich"' 
+    step 'I should see "Player 1: Bob, Player 2: Rich"'
   end
 end
 
 Given(/^A second player has joined and played rock$/) do
-    in_browser :firefox do
-      step 'I am on the hompage'
-      step 'A player has already started a game'
-      step 'I click "Join 2 player game"'
-      step 'I enter "Rich" in the "name" field'
-      step 'I enter "rock" in the "move" field'
-      step 'I click the "submit" button'
-      step 'I should see "Player 1: Bob, Player 2: Rich"' 
-    end
+  in_browser :firefox do
+    step 'I am on the hompage'
+    step 'A player has already started a game'
+    step 'I click "Join 2 player game"'
+    step 'I enter "Rich" in the "name" field'
+    step 'I select "rock" in the "move" form'
+    step 'I click the "submit" button'
+    step 'I should see "Player 1: Bob, Player 2: Rich"'
+  end
 end
-
-
- 
-

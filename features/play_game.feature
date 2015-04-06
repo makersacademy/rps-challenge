@@ -35,7 +35,7 @@ Feature:
     Given I am on the hompage
     When  I click "Start 2 player game"
     And   I enter "Bob" in the "name" field
-    And   I enter "rock" in the "move" field
+    And   I select "rock" in the "move" form
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, waiting for player 2 to join"
 
@@ -44,7 +44,7 @@ Feature:
     And   A player has already started a game
     When  I click "Join 2 player game"
     And   I enter "Rich" in the "name" field
-    And   I enter "paper" in the "move" field
+    And   I select "paper" in the "move" form
     And   I click the "submit" button
     Then  I should see "Player 1: Bob, Player 2: Rich"
 

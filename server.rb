@@ -26,6 +26,11 @@ class RPSWeb < Sinatra::Base
       end
   end
 
+  def find_winner_2 p1_move, p2_move
+    
+    # RPS returns { draw: and move } or { player: move }
+  end
+
   get '/' do
     @has_1_player = true unless PLAYERS.player1_name.nil?
     erb :homepage
@@ -77,6 +82,7 @@ class RPSWeb < Sinatra::Base
     # so I did this instead
     PLAYERS.player1_name = @player_one
     PLAYERS.player1_move = params[:move].to_sym
+    p params
     redirect '/two_players_ready'
   end
 
