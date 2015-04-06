@@ -5,6 +5,7 @@ Feature: Playing the game
 
   Scenario: Single-player game
     Given I have registered as before
+    And the other player has also registered
     When I select 'Rock'
     And my opponent selects 'Scissors'
     Then I should see 'James wins!'

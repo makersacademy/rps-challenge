@@ -1,17 +1,17 @@
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-<section class="result">
-You chose: <%= @game.player1.weapon.to_s %>
-<div>
-<img class="resultw" src="/img/<%= @game.player1.weapon.to_s %>.png">
+<div class="result">
+  <%= @game.player1.name %> chose: <%= @game.player1.weapon.to_s %>
+  <div>
+    <img class="resultw" src="/img/<%= @game.player1.weapon.to_s %>.png">
+  </div>
 </div>
-</section>
-<section class="result">
-<div>
-<%= @game.player2.name %> chose: <%= @game.player2.weapon.to_s %>
+  <div class="result">
+    <div>
+      <%= @game.player2.name %> chose: <%= @game.player2.weapon.to_s %>
+    </div>
+  <img class="resultw" src="/img/<%= @game.player2.weapon.to_s %>.png">
+  </div>
+  <div class="outcome">
+    <%= @game.winner == 'draw' ? "Draw!" : "#{@game.winner.name} wins!" %>
 </div>
-<img class="resultw" src="/img/<%= @game.player2.weapon.to_s %>.png">
-</section>
-<section class="outcome">
-<%= @game.winner == 'draw' ? "Draw!" : "#{@game.winner.name} wins!" %>
-</section>

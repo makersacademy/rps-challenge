@@ -4,14 +4,20 @@ describe Game do
 
   let(:player1) { double :player1, name: 'Fred' }
   let(:player2) { double :player2, name: 'Barney' }
-  let(:game) { described_class.new player1, player2 }
+  let(:game) { described_class.new }
 
   before { allow(player1).to receive(:weapon=) }
   before { allow(player2).to receive(:weapon=) }
 
   context 'when created' do
 
-    it 'has two players' do
+    it 'has no players' do
+      expect(game.player1.nil? && game.player2.nil?).to eq true
+    end
+
+    it 'can have players added' do
+      game.player1 = player1
+      game.player2 = player2
       expect(game.player1.nil? || game.player2.nil?).to eq false
     end
 
@@ -21,6 +27,10 @@ describe Game do
 
     before { allow(player1).to receive(:ready?) }
     before { allow(player2).to receive(:ready?) }
+    before do
+      game.player1 = player1
+      game.player2 = player2
+    end
 
     it 'allows the players to choose their weapons' do
       expect(player1).to receive(:weapon=).with(:rock)
@@ -42,6 +52,11 @@ describe Game do
   end
 
   context 'knows who has won' do
+
+    before do
+      game.player1 = player1
+      game.player2 = player2
+    end
 
     def weapon_assignment players
       players.each do |player, weapon|
