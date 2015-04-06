@@ -1,3 +1,17 @@
-You played <%= @move1 %>, Computer played <%= @move2 %>
+<!-- You played <%= @move1 %>, Computer played <%= @move2 %>
 <br>
-<%= @result %>
+<%= @result %> -->
+<%= "Player 1: #{@p1name}, Player 2: #{@p2name}" %>
+<br>
+<br>
+<%= "#{@p1name} played #{@p1_move}" %>
+<br>
+<%= "#{@p2name} played #{@p2_move}" %>
+<br>
+<% if @result == :draw %>
+  <%= "Draw!" %>
+<% elsif @result == :player_1 %>
+  <%= "#{@p1name} Wins!" %>
+<% else %>
+  <%= "#{@p2name} Wins!" %>
+<% end %>

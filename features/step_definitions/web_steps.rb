@@ -27,7 +27,9 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)" it's move$/) do |arg1|
+# save_and_open_page
   expect(page).to have_content arg1
+
   # how to test computer move shows up?
 end
 

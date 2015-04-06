@@ -11,24 +11,28 @@ class RPSWeb < Sinatra::Base
   comp = ComputerPlayer.new
   PLAYERS = PlayerHolder.new
 
-  def find_winner 
-    result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
-      if result.keys == [:draw]
-        @win = 'draw'
-      elsif result.keys == [:player_1] 
-        @win = @player_one
-        @win_move = PLAYERS.player1_move
-        @lose_move = PLAYERS.player2_move 
-      else
-        @win = @player_two
-        @win_move = PLAYERS.player2_move
-        @lose_move = PLAYERS.player1_move 
-      end
-  end
+  # def find_winner 
+  #   result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
+  #     if result.keys == [:draw]
+  #       @win = 'draw'
+  #     elsif result.keys == [:player_1] 
+  #       @win = @player_one
+  #       @win_move = PLAYERS.player1_move
+  #       @lose_move = PLAYERS.player2_move 
+  #     else
+  #       @win = @player_two
+  #       @win_move = PLAYERS.player2_move
+  #       @lose_move = PLAYERS.player1_move 
+  #     end
+  # end
 
-  def find_winner_2 p1_move, p2_move
-    
-    # RPS returns { draw: and move } or { player: move }
+  def find_winner player1, player2, p1_move, p2_move
+    @result = (RPS.compare p1_move, p2_move).keys.last
+    @p1_move = p1_move
+    @p2_move = p2_move
+    @p1name = player1
+    @p2name = player2
+    erb :result
   end
 
   get '/' do
@@ -52,21 +56,22 @@ class RPSWeb < Sinatra::Base
 
   post '/play_game' do
     # params are reset in each of these blocks because of sessions
-    @move1 = params[:move].to_sym
-    @move2 = comp.make_move
-    begin
-      look_up = (RPS.compare @move1, @move2).keys.last
-    rescue 
-      @user_error = true
-      return erb :play_game
-    end
-    results = {
-          :player_1 => "#{session[:player_one]} Wins!",
-          :player_2 => "#{session[:player_two]} Wins!",
-          :draw     => "Draw!"
-        }
-    @result = results[look_up]
-    erb :result
+    # @move1 = params[:move].to_sym
+    # @move2 = comp.make_move
+    # begin
+    #   look_up = (RPS.compare @move1, @move2).keys.last
+    # rescue 
+    #   @user_error = true
+    #   return erb :play_game
+    # end
+    # results = {
+    #       :player_1 => "#{session[:player_one]} Wins!",
+    #       :player_2 => "#{session[:player_two]} Wins!",
+    #       :draw     => "Draw!"
+    #     }
+    # @result = results[look_up]
+    # erb :result
+    find_winner session[:player_one], session[:player_two], params[:move].to_sym, comp.make_move
   end
 
 
@@ -104,7 +109,7 @@ class RPSWeb < Sinatra::Base
     @player_one = PLAYERS.player1_name
     @player_two = PLAYERS.player2_name
     @ready = true unless @player_two.nil?
-    find_winner if @ready
+    return find_winner PLAYERS.player1_name, PLAYERS.player2_name, PLAYERS.player1_move, PLAYERS.player2_move if @ready
     erb :two_players_ready
   end
 

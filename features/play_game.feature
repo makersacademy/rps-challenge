@@ -18,7 +18,7 @@ Feature:
     Given I filled out the registration page
     When  I select "rock" in the "move" form
     And   I click the "play" button
-    Then  I should see "You played rock, Computer played " it's move
+    Then  I should see "Player 1: Bob, Player 2: Computer Bob played rock Computer played" it's move
 
 #  Scenario: Entering a none valid move
 #    Given I filled out the registration page
@@ -51,12 +51,12 @@ Feature:
   Scenario: Player 1 Wins
     Given I have started a game and played rock
     And   A second player has joined and played scissors
-    Then  I should see "Bob played rock and won vs scissors" when the page reloads
+    Then  I should see "Bob Wins!" when the page reloads
 
   Scenario: Player 2 wins
     Given I have started a game and played rock
     And   A second player has joined and played paper
-    Then  I should see "Rich played paper and won vs rock" when the page reloads
+    Then  I should see "Rich Wins!" when the page reloads
 
   Scenario: Draw
     Given I have started a game and played rock
