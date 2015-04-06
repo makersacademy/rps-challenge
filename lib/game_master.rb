@@ -1,9 +1,8 @@
-class GameMaster
-  attr_reader :game
+require_relative './rule_book'
 
-  CHOICES = {
-    standard: [:rock, :paper, :scissors]
-  }
+class GameMaster
+  include RuleBook
+  attr_reader :game
 
   def initialize game = :standard
     @game = game
@@ -23,7 +22,7 @@ class GameMaster
   end
 
   def show_players
-    players.map { |p| p.name }.join(', ')
+    players.map(&:name).join(', ')
   end
 
   private
@@ -31,8 +30,8 @@ class GameMaster
   attr_reader :players
 
   def compare_choices
-    p1 = CHOICES[game].find_index(players[1].choice)
-    p0 = CHOICES[game].find_index(players[0].choice)
+    p1 = rules(game).find_index(players[1].choice)
+    p0 = rules(game).find_index(players[0].choice)
     outcome = (3 + p1 - p0) % 3
     if outcome.zero?
       'draw'
