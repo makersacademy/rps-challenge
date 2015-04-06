@@ -32,7 +32,7 @@ form {
 }
 
 button {
-border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:30px;font-family:Bangers, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:normal; color: #FFFFFF; width: 127px;
+border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:30px;font-family:Bangers, helvetica, sans-serif; padding: 10px 10px; margin: 5px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:normal; color: #FFFFFF; width: 145px;
  background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
  background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
  background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);

@@ -6,7 +6,7 @@
 </h1>
 
 <h2>
-  You are playing RPS against the computer
+  You are playing RPSLS against the computer
 </h2>
 
 <div class="left" style="background-color:#FCD57A; background-image: url(https://openclipart.org/image/125px/svg_to_png/213382/rock-paper-scissors.png);"><%= session[:Name] %></div>
@@ -14,11 +14,13 @@
 <div class="right" style="background-color:#FCD57A; background-image: url(https://openclipart.org/image/125px/svg_to_png/213382/rock-paper-scissors.png);">Computer</div>
 
 <p>
-  <form action="/game" method="post">
+  <form action="/game_rpsls" method="post">
     Make your choice <br>
     <button type="submit" name="Choice" value="Rock">Rock!</button>
     <button type="submit" name="Choice" value="Paper">Paper!</button>
     <button type="submit" name="Choice" value="Scissors">Scissors!</button>
+    <button type="submit" name="Choice" value="Lizard">Lizard!</button>
+    <button type="submit" name="Choice" value="Spock">Spock!</button>
   </form>
 </p>
 

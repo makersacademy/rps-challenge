@@ -1,12 +1,7 @@
-Feature: Pleasing the Makers Academy Marketeers
-  In order to unwind after a hard day
-  As a fan of simple games
+Feature: Giving the player the RPS experience
+  In order to play RPS
+  As someone with far too much spare time
   I want to register my name and play RPS
-
-  Scenario: Homepage
-    Given I am on the homepage
-    Then I should see "Play Rock-Paper-Scissors!"
-    Then the page should have "Play" button
 
   Scenario: Enter the game without a name
     Given I am on the homepage
@@ -58,66 +53,3 @@ Feature: Pleasing the Makers Academy Marketeers
     And I click "Play"
     Then I should be on the "/game" page
     Then I should see "Welcome Sue"
-
-  Scenario: Win with Rock
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Scissors"
-    And I click "Rock"
-    Then I should see "You win"
-
-  Scenario: Win with Paper
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Rock"
-    And I click "Paper"
-    Then I should see "You win"
-
-  Scenario: Win with Scissors
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Paper"
-    And I click "Scissor"
-    Then I should see "You win"
-
-  Scenario: Lose with Rock
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Paper"
-    And I click "Rock"
-    Then I should see "You lose"
-
-  Scenario: Lose with Paper
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Scissors"
-    And I click "Paper"
-    Then I should see "You lose"
-
-  Scenario: Lose with Scissors
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Rock"
-    And I click "Scissors"
-    Then I should see "You lose"
-
-  Scenario: Tie with Rock
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Rock"
-    And I click "Rock"
-    Then I should see "You tie"
-
-  Scenario: Tie with Paper
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Paper"
-    And I click "Paper"
-    Then I should see "You tie"
-
-  Scenario: Tie with Scissors
-    Given I am on the homepage
-    And I click "Play"
-    And my opponent chooses "Scissors"
-    And I click "Scissors"
-    Then I should see "You tie"
