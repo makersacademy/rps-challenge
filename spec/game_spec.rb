@@ -3,11 +3,16 @@ require 'game'
 # Is it good practice to test private methods using send?
 
 describe Game do
-  let(:player_one) { double :player_one, choice: "rock" }
-  let(:player_two) { double :player_two, choice: "rock" }
+  let(:player_one) { double :player_one, choice: "rock", name: 'mike' }
+  let(:player_two) { double :player_two, choice: "rock", name: 'sarah' }
   let(:game) { described_class.new(player_one, player_two) }
   it 'can make a game with players' do
     expect(game.player_1).to eq player_one
+  end
+
+  it 'can add players to a pre-existing game' do
+    new_game = described_class.new
+    expect(new_game.add_player(player_one)).to eq player_one
   end
 
   it 'can report whether a player has won' do
@@ -16,7 +21,7 @@ describe Game do
 
   it 'can make a player win' do
     game.send(:victory, player_one)
-    expect(game.won).to eq "#{player_one} has won!"
+    expect(game.won).to eq "#{player_one.name} has won!"
   end
 
   it 'raises an error when the victorious player is not a player' do
@@ -39,7 +44,7 @@ describe Game do
 
   it 'will make a player win when the round counter equals 3' do
     3.times { game.send(:win_round, player_one) }
-    expect(game.won).to eq "#{player_one} has won!"
+    expect(game.won).to eq "#{player_one.name} has won!"
   end
 
   it 'can return draw when both players choose the same thing' do

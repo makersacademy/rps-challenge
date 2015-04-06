@@ -1,0 +1,19 @@
+You chose <%= @choice %><br>
+Your opponent chose <%= @comp_choice %><br>
+
+Player 1 has won <%= @p1 %> rounds<br>
+Player 2 has won <%= @p2 %> rounds<br>
+
+<% if @won %>
+  <%= @won %><br>
+<% else %>
+  <form action='/round' method='post'>
+  <input id="rock" type="radio" name="Choice" value="rock" checked>Rock
+  <br>
+  <input id="paper" type="radio" name="Choice" value="paper">Paper
+  <br>
+  <input id="scissors" type="radio" name="Choice" value="scissors" >Scissors
+  <br>
+  <input type="submit" value="Submit">
+  </form>
+<% end %>

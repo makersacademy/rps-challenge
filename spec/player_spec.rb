@@ -8,15 +8,8 @@ describe Player do
     expect(player.name).to eq 'matt'
   end
 
-  it 'can play rock' do
-    expect(player.rock).to eq "rock"
-  end
-
-  it 'can play scissors' do
-    expect(player.scissors).to eq "scissors"
-  end
-
-  it 'can play paper' do
-    expect(player.paper).to eq "paper"
+  it 'can set a player to a particular choice' do
+    player.choice = 'rock'
+    expect(player.choice).to eq 'rock'
   end
 end

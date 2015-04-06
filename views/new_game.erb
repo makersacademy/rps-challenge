@@ -1,0 +1,15 @@
+<p>
+Hello <%= params[:Name] %>
+<br>
+You are Player 1. The game is best of three rounds.
+</p>
+Make your choice:
+<form action='/round' method='post'>
+  <input type="radio" name="Choice" value="rock" id="rock" checked>Rock
+  <br>
+  <input type="radio" name="Choice" value="paper" id="paper">Paper
+  <br>
+  <input type="radio" name="Choice" value="scissors" id="scissors">Scissors
+  <br>
+  <input type="submit" value="Submit">
+</form>
