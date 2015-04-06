@@ -51,6 +51,7 @@ class RockPaperScissors < Sinatra::Base
     end
 
     if @game.player1.weapon && @game.player2.weapon
+      @player_name = session[:player_name]
       erb :result
     else
       erb :waiting

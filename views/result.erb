@@ -15,3 +15,9 @@
   <div class="outcome">
     <%= @game.winner == 'draw' ? "Draw!" : "#{@game.winner.name} wins!" %>
 </div>
+<div class="newlink">
+  <a href="/play?name=<%= @player_name %>">Play again?</a>
+</div>
+<div class="newlink">
+  <a href="/">New game</a>
+</div>
