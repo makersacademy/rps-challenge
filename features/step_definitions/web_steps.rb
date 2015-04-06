@@ -5,7 +5,6 @@ def in_browser name
   Capybara.session_name = old_session
 end
 
-
 Given(/^I am on the homepage$/) do
   visit "/"
 end
@@ -27,14 +26,12 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)" it's move$/) do |arg1|
-# save_and_open_page
   expect(page).to have_content arg1
-
   # how to test computer move shows up?
 end
 
 When(/^I select "([^"]*)" in the "([^"]*)" form$/) do |arg1, arg2|
-  select(arg1, :from => arg2)
+  select(arg1, from: arg2)
 end
 
 Given(/^I filled out the registration page$/) do

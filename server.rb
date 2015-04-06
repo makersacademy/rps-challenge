@@ -4,27 +4,11 @@ require_relative 'lib/computer_player.rb'
 require_relative 'lib/2_player_holder.rb'
 
 class RPSWeb < Sinatra::Base
-
   enable :sessions
 
   RPS = RpsGame.new
   comp = ComputerPlayer.new
   PLAYERS = PlayerHolder.new
-
-  # def find_winner 
-  #   result = RPS.compare PLAYERS.player1_move, PLAYERS.player2_move
-  #     if result.keys == [:draw]
-  #       @win = 'draw'
-  #     elsif result.keys == [:player_1] 
-  #       @win = @player_one
-  #       @win_move = PLAYERS.player1_move
-  #       @lose_move = PLAYERS.player2_move 
-  #     else
-  #       @win = @player_two
-  #       @win_move = PLAYERS.player2_move
-  #       @lose_move = PLAYERS.player1_move 
-  #     end
-  # end
 
   def find_winner player1, player2, p1_move, p2_move
     @result = (RPS.compare p1_move, p2_move).keys.last
@@ -41,7 +25,6 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/one_player_game' do
-    # @1player = true might be a good way to reuse the same move forms
     @player_two = "Computer"
     session[:player_two] = @player_two
     erb :one_player_game
@@ -53,46 +36,25 @@ class RPSWeb < Sinatra::Base
     erb :play_game
   end
 
-
   post '/play_game' do
-    # params are reset in each of these blocks because of sessions
-    # @move1 = params[:move].to_sym
-    # @move2 = comp.make_move
-    # begin
-    #   look_up = (RPS.compare @move1, @move2).keys.last
-    # rescue 
-    #   @user_error = true
-    #   return erb :play_game
-    # end
-    # results = {
-    #       :player_1 => "#{session[:player_one]} Wins!",
-    #       :player_2 => "#{session[:player_two]} Wins!",
-    #       :draw     => "Draw!"
-    #     }
-    # @result = results[look_up]
-    # erb :result
-    find_winner session[:player_one], session[:player_two], params[:move].to_sym, comp.make_move
+    find_winner(session[:player_one],
+                session[:player_two],
+                params[:move].to_sym,
+                comp.make_move)
   end
 
-
   get '/start_two_player_game' do
-    # erb :submit_p1_name
-      erb :submit_p1_name
+    erb :submit_p1_name
   end
 
   post '/submit_player1_name' do
     @player_one = params[:name]
-    # sessions wouldn't work with capybara 
-    # but worked with rackup 
-    # so I did this instead
     PLAYERS.player1_name = @player_one
     PLAYERS.player1_move = params[:move].to_sym
-    p params
     redirect '/two_players_ready'
   end
 
   get '/join_two_player_game' do
-    # redirect if no game, set bool in start game
     erb :submit_p2_name
   end
 
@@ -100,8 +62,6 @@ class RPSWeb < Sinatra::Base
     @player_two = params[:name]
     PLAYERS.player2_name = @player_two
     PLAYERS.player2_move = params[:move].to_sym
-    # @player_one = PLAYERS.player1_name
-    # erb :two_players_ready
     redirect '/two_players_ready'
   end
 
@@ -109,7 +69,10 @@ class RPSWeb < Sinatra::Base
     @player_one = PLAYERS.player1_name
     @player_two = PLAYERS.player2_name
     @ready = true unless @player_two.nil?
-    return find_winner PLAYERS.player1_name, PLAYERS.player2_name, PLAYERS.player1_move, PLAYERS.player2_move if @ready
+    return find_winner(PLAYERS.player1_name,
+                       PLAYERS.player2_name,
+                       PLAYERS.player1_move,
+                       PLAYERS.player2_move) if @ready
     erb :two_players_ready
   end
 
