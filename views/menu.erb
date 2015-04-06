@@ -1,0 +1,16 @@
+<hmtl>
+<head>
+</head>
+
+<body>
+  <h3>What's up <%= @username %>? Select your mode and let's start playing</h3>
+  <form action="/game">
+    <input id="pvc" type="radio" name="game-type" value="pvc">Human <i>vs</i> Machine
+    <br>
+    <input id="pvp" type="radio" name="game-type" value="pvp" disabled>Two Player
+    <br>
+    <br>
+    <input type="submit" value="Start Playing">
+  </form>
+</body>
+</hmtl>

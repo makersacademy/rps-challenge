@@ -8,6 +8,17 @@ feature 'play game of Rock-Paper-Scissors' do
   scenario 'player plays the game against computer' do
     g = GameMaster.new
     p1 = Player.new('Alan')
+    ai = double :R1D1, name: 'R1D1', choice: :paper
+    p1.join g
+    g.add ai
+    p1.choose :rock
+    expect(g.winner).to eq 'R1D1'
+    p1.quit
+  end
+
+  scenario 'player plays the game against another player' do
+    g = GameMaster.new
+    p1 = Player.new('Alan')
     p2 = Player.new('Homer')
     p1.join(g)
     p2.join(g)

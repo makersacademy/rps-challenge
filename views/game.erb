@@ -1,0 +1,18 @@
+<hmtl>
+<head>
+</head>
+
+<body>
+  <h3>Choose your hand, <%= @current_player.name %>.</h3>
+  <form method="post" action="/game">
+    <input id="rock" type="radio" name="hand" value="rock">ROCK
+    <br>
+    <input id="paper" type="radio" name="hand" value="paper">PAPER
+    <br>
+    <input id="scissors" type="radio" name="hand" value="scissors">SCISSORS
+    <br>
+    <br>
+    <input type="submit" value="Choose">
+  </form>
+</body>
+</hmtl>
