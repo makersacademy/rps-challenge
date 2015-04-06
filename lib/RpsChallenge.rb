@@ -18,11 +18,18 @@ class RpsChallenge < Sinatra::Base
   get '/new_game' do
     @num = params[:number]
     erb :enter_names
-    # session[:number] = @num
   end
 
   get '/choose_hands' do
-    erb :enter_names
+    @name1 = params[:name1]
+    @name2 = params[:name2]
+    erb :hands_choices
+  end
+
+  get '/results' do
+    @name1 = params[:name1]
+    @name2 = params[:name2]
+    erb :results
   end
 
   # start the server if ruby file executed directly

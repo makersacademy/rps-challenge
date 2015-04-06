@@ -1,0 +1,42 @@
+
+<CENTER>
+    <img src='http://img4.wikia.nocookie.net/__cb20140704173457/magicite/images/5/5f/Copy-of-rock-paper-scissors.jpg'>
+</CENTER>
+<br><br>
+<table style="width:80%">
+  <tr>
+    <td>
+      <CENTER>
+      <br><br>Choose your destiny <%= @name1 %>!!
+      <br><br>
+      <form action='/results'>
+      <input type="radio" name="choice1" value="rock" checked>Rock
+      <br><br>
+      <input type="radio" name="choice1" value="paper" checked>Paper
+      <br><br>
+      <input type="radio" name="choice1" value="scissors" checked>Scissors
+      <br><br>
+      <input type="submit">
+      </form>
+      </CENTER>      
+      <% if @name2 %>
+    </td>
+    <td>
+      <CENTER>
+      <%= @name2 %>
+      <br><br>Choose your destiny <%= @name2 %> !!
+      <br><br>
+      <form action='/results'>
+      <input type="radio" name="choice2" value="rock" checked>Rock
+      <br><br>
+      <input type="radio" name="choice2" value="paper" checked>Paper
+      <br><br>
+      <input type="radio" name="choice2" value="scissors" checked>Scissors
+      <br><br>
+      <input type="submit">
+      </form>
+      </CENTER>
+    <% end %>
+    </td>
+  </tr>
+</table>
