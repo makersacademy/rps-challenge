@@ -16,16 +16,16 @@ Feature:
 
   Scenario: Playing a game
     Given I filled out the registration page
-    When  I enter "rock" in the "move" field
+    When  I select "rock" in the "move" form
     And   I click the "play" button
     Then  I should see "You played rock, Computer played " it's move
 
-  Scenario: Entering a none valid move
-    Given I filled out the registration page
-    When  I enter "wrong move" in the "move" field
-    And   I click the "play" button
-    And   I am redirected back to the "/play_game" page
-    Then  I should see "please enter rock, paper or scissors"
+#  Scenario: Entering a none valid move
+#    Given I filled out the registration page
+#    When  I enter "wrong move" in the "move" field
+#    And   I click the "play" button
+#    And   I am redirected back to the "/play_game" page
+#    Then  I should see "please enter rock, paper or scissors"
 
   Scenario: Trying to join an empty game
     Given I am first on the hompage
