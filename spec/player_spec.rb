@@ -31,4 +31,10 @@ describe Player do
     subject.select_action :action
     expect(subject.action).to be_nil
   end
+
+  it 'can auto-select a valid action' do
+    expect(subject).to respond_to :auto_select_action
+    subject.auto_select_action
+    expect(subject.action).to equal(:rock).or equal(:paper).or equal(:scissors)
+  end
 end
