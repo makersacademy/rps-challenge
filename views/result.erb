@@ -1,12 +1,19 @@
-<!-- You played <%= @move1 %>, Computer played <%= @move2 %>
-<br>
-<%= @result %> -->
+<%display = {paper: '<img src="paper.png" alt="paper" height="42" width="42">',
+            rock: '<img src="rock.png" alt="rock" height="42" width="42">',
+            scissors: '<img src="scissors.png" alt="scissors" height="42" width="42">'} %>
+
 <%= "Player 1: #{@p1name}, Player 2: #{@p2name}" %>
 <br>
 <br>
 <%= "#{@p1name} played #{@p1_move}" %>
 <br>
+<%= display[@p1_move] %>
+<br>
+<br>
 <%= "#{@p2name} played #{@p2_move}" %>
+<br>
+<%= display[@p2_move] %>
+<br>
 <br>
 <% if @result == :draw %>
   <%= "Draw!" %>

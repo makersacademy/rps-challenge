@@ -1,6 +1,4 @@
 class RpsGame
-  attr_reader :winner
-
   MOVES = [:rock, :paper, :scissors]
   MATCHES = {
     [:rock, :paper] => :paper,

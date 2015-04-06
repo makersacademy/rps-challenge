@@ -20,13 +20,6 @@ Feature:
     And   I click the "play" button
     Then  I should see "Player 1: Bob, Player 2: Computer Bob played rock Computer played" it's move
 
-#  Scenario: Entering a none valid move
-#    Given I filled out the registration page
-#    When  I enter "wrong move" in the "move" field
-#    And   I click the "play" button
-#    And   I am redirected back to the "/play_game" page
-#    Then  I should see "please enter rock, paper or scissors"
-
   Scenario: Trying to join an empty game
     Given I am first on the hompage
     Then  I should not see "Join 2 player game"
