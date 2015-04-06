@@ -15,9 +15,11 @@ class Rpschallenge < Sinatra::Base
   end
 
   get '/play' do
+    @player = Player.new params[:name]
+    @game = Game.new "player_1", "comp_player"
     erb :play
   end
-  
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
