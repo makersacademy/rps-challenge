@@ -40,7 +40,7 @@ I would like to be able to play rock/paper/scissors in my browser
 
 - MVP4 - Multiplayer formatted playable RPSLS in browser.
 
-- MVP5 - Multiplayer formatted playable RPSLS on the web.
+- MVP5 - Multiplayer formatted playable RPSLS on the web. [Deployed to Heroku](https://lit-inlet-8667.herokuapp.com/)
 
 ##Domain Design##
 
