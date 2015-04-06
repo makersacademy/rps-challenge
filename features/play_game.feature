@@ -19,3 +19,8 @@ Feature: Playing The Game
   Scenario: Playing the game
     Given I am on the game page
     Then I should see my possible choices
+
+  Scenario: Making a move
+    Given I am on the game page
+    When I click "Rock" button
+    Then I should have chosen "Rock"

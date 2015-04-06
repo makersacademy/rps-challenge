@@ -26,18 +26,24 @@ When(/^I click "([^"]*)"$/) do |arg1|
   click_button(arg1)
 end
 
-Then(/^I am on the game page$/) do
-  visit('/game')
-end
-
 Then(/^I should see "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  (page).has_content? "Hello #{arg1}"
 end
 
 Given(/^I am on the game page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('/game')
 end
 
 Then(/^I should see my possible choices$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page.has_xpath?('//table/tr')
 end
+
+When(/^I click "([^"]*)" button$/) do |choice|
+  click_button(choice)
+end
+
+Then(/^I should have chosen "([^"]*)"$/) do |arg1|
+move = double :player, @move
+  expect
+end
+

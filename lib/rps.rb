@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative 'player'
+
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
 
 class RockPaperScissors < Sinatra::Base
   set :views, settings.root + '/../views/'
@@ -12,8 +15,10 @@ class RockPaperScissors < Sinatra::Base
     erb :registration
   end
 
-  get '/game' do
-    erb :game
+  post '/choice' do
+    @player_name = params[:Name]
+    player = Player.new params[:Name]
+    erb :choice
   end
 
 
