@@ -14,4 +14,26 @@ feature 'Player can play ‘Rock, Paper, Scissors’ –' do
     round = Round.new player_hash, opponent_hash
     expect(round.winner).to equal player.name
   end
+
+  scenario 'Player can lose the game' do
+    player = Player.new 'Player'
+    opponent = Player.new 'Opponent'
+    player.select_action :paper
+    opponent.select_action :scissors
+    player_hash = { name: player.name, action: player.action }
+    opponent_hash = { name: opponent.name, action: opponent.action }
+    round = Round.new player_hash, opponent_hash
+    expect(round.winner).to equal opponent.name
+  end
+
+  scenario 'Player can draw the game' do
+    player = Player.new 'Player'
+    opponent = Player.new 'Opponent'
+    player.select_action :paper
+    opponent.select_action :paper
+    player_hash = { name: player.name, action: player.action }
+    opponent_hash = { name: opponent.name, action: opponent.action }
+    round = Round.new player_hash, opponent_hash
+    expect(round.winner).to equal nil
+  end
 end
