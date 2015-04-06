@@ -44,10 +44,14 @@ class Game
 
     fail "Game Over" unless winner == nil
     fail "Choose tool" unless ready?
+
+    if player_one[:tool] == player_two[:tool] 
+       player_one[:tool] = nil 
+       player_two[:tool] = nil 
+       return "Draw. Please choose tools again" 
+    end   
       
-    if player_one[:tool] == player_two[:tool]
-      "Draw. Please choose tools again"
-    elsif player_one[:tool] == :Rock && player_two[:tool] == :Scissors 
+    if player_one[:tool] == :Rock && player_two[:tool] == :Scissors 
       @winner = player_one[:player]
     elsif player_one[:tool] == :Scissors && player_two[:tool] == :Paper 
       @winner = player_one[:player]

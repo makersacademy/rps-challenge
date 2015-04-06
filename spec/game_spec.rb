@@ -63,4 +63,18 @@ describe Game do
     game.play
     expect { game.play }.to raise_error "Game Over"
   end 
+
+  it "drwas if both players have the same tool" do
+    game.choose_tool game.player_one, :Rock
+    game.choose_tool game.player_two, :Rock
+    expect(game.play).to eq "Draw. Please choose tools again"
+  end 
+
+  it "ask player to choose tool after a draw" do
+    game.choose_tool game.player_one, :Paper
+    game.choose_tool game.player_two, :Paper
+    game.play
+    expect { game.play }.to raise_error "Choose tool"
+  end
+  
 end
