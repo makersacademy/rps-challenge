@@ -29,6 +29,6 @@ describe Player do
 
   it 'ignores previously selected invalid action ‘:action’' do
     subject.select_action :action
-    expect(subject.action).not_to be
+    expect(subject.action).to be_nil
   end
 end
