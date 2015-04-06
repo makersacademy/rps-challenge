@@ -12,7 +12,7 @@ feature 'a player can play a game of rock paper scissors,' do
     game = Game.new
     computer = AutoPlayer.new("Holly")
     play_hash = { player1: player,
-                  p1_move: :rock,
+                  p1_move: :spock,
                   player2: computer,
                   p2_move: computer.move
                 }

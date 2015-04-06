@@ -28,19 +28,19 @@ I would like to be able to play rock/paper/scissors in my browser
 
 - MVP1 - Unformatted playable game in the browser
 
-- MVP2 - Formatted playable game in the browser
+- MVp2(a) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In the terminal.
 
-- MVp3(a) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In the terminal.
+- MVp2(b) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In Browser
 
-- MVp3(b) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In Browser
+- MVP2 - Non formated multiplayer in the browser
 
-- MVP3 - Multiplayer formatted playable game in browser.
+- MVp3(a) - Game logic expanded to RPSLS. In terminal.
 
-- MVp4(a) - Game logic expanded to RPSLS. In terminal.
+- MVP3 - Multiplayer playable RPSLS game in browser.
 
-- MVP4 - Multiplayer formatted playable RPSLS game in browser.
+- MVP5 - Multiplayer formatted playable RPSLS in browser.
 
-- MVP5 - Multiplayer formatted playable RPSLS game on the web.
+- MVP5 - Multiplayer formatted playable RPSLS on the web.
 
 ##Domain Design##
 

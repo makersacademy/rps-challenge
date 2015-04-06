@@ -8,7 +8,7 @@ describe AutoPlayer do
     described_class.new("Holly")
   end
   it 'can play a random move' do
-    expect([:rock, :paper, :scissors]).to include subject.move
+    expect([:rock, :paper, :scissors, :lizard, :spock]).to include subject.move
   end
   it 'gets a default name if one is not supplied' do
     player = described_class.new

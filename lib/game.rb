@@ -1,22 +1,9 @@
+require_relative 'rules'
 class Game
-  COMBINATIONS = { rock: { paper: [:lose, 'wraps'],
-                           scissors: [:win, 'blunts'],
-                           rock: [:draw, 'matches']
-                         },
-                   paper: { paper: [:draw, 'matches'],
-                            scissors: [:lose, 'cuts'],
-                            rock: [:win, 'wraps']
-                          },
-                   scissors: { paper: [:win, 'cuts'],
-                               scissors: [:draw, 'matches'],
-                               rock: [:lose, 'blunts']
-                             }
-                 }
-
   def result(options)
     player1, p1_move = options[:player1], options[:p1_move]
     player2, p2_move = options[:player2], options[:p2_move]
-    outcome = COMBINATIONS[p1_move][p2_move]
+    outcome = Rules::COMBINATIONS[p1_move][p2_move]
     result_output(player1, player2, p1_move, p2_move, outcome[0], outcome[1])
   end
 
