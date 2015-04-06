@@ -1,38 +1,58 @@
 feature 'Player plays agains computer' do
-  let(:player) { Player.new }
-  let(:computer) { Player.new }
+  let(:rps) { RPS.new }
 
-  scenario 'player and computer have 5 weapons' do
-    any_player = Player.new
-    expect(any_player.weapons.size).to eq 5
+  scenario 'player has a name' do
+    player1 = Player.new 'Iciar'
+    expect(player1.name).to eq 'Iciar'
   end
 
-  xscenario 'player choose weapon' do
-    allow(player).to receive(:choose) { 'paper' }
-    expect(player.choose).to eq 'paper'
+  scenario 'have 5 weapons' do
+    expect(rps.weapons.size).to eq 5
   end
 
-  xscenario 'computer choose weapon'
+  scenario 'player1 choose weapon' do
+    expect(rps.player1_choose('paper')).to eq 'paper'
+  end
 
-  xscenario 'player chooses rock, computer scissors'
+  scenario 'computer choose weapon' do
+    allow(rps).to receive(:computer_choose) { 'Spock' }
+    expect(rps.computer_choose).to eq 'Spock'
+  end
 
-    # Player wins!
+  scenario 'player1 chooses rock, computer scissors' do
+    rps.player1_choose 'rock'
+    allow(rps).to receive(:computer_choose) { :scissors }
+    expect(rps.winner).to eq "Player wins!"
+  end
 
-  xscenario 'player chooses Spock, computer lizard'
+  scenario 'player1 chooses Spock, computer lizard' do
+    rps.player1_choose 'Spock'
+    allow(rps).to receive(:computer_choose) { :lizard }
+    expect(rps.winner).to eq "Computer wins!"
+  end
 
-    # Computer wins!
+  scenario 'player1 chooses paper, computer lizard' do
+    rps.player1_choose 'paper'
+    allow(rps).to receive(:computer_choose) { :lizard }
+    expect(rps.winner).to eq "Computer wins!"
+  end
 
-  xscenario 'player chooses paper, computer lizard'
+  scenario 'player1 chooses lizard, computer scissors' do
+    rps.player1_choose 'lizard'
+    allow(rps).to receive(:computer_choose) { :scissors }
+    expect(rps.winner).to eq "Computer wins!"
+  end
 
-    # Computer wins!
+  scenario 'player1 chooses scissors, computer Spock' do
+    rps.player1_choose 'scissors'
+    allow(rps).to receive(:computer_choose) { :Spock }
+    expect(rps.winner).to eq "Computer wins!"
+  end
 
-  xscenario 'player chooses lizard, computer scissors'
-
-    # Computer wins!
-
-  xscenario 'player chooses scissors, computer Spock'
-
-    # Computer wins!
-
+  scenario 'player1 chooses the same than computer' do
+    rps.player1_choose 'scissors'
+    allow(rps).to receive(:computer_choose) { :scissors }
+    expect(rps.winner).to eq "Tie!"
+  end
 end
 

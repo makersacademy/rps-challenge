@@ -1,7 +1,7 @@
 class Player
-  attr_reader :weapons
+  attr_accessor :name
 
-  def initialize
-    @weapons = %w(rock, Spock, paper, lizard, scissor)
+  def initialize player_name
+    @name = player_name
   end
 end

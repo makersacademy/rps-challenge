@@ -1,0 +1,134 @@
+/* eric meyer's reloaded reset rules ~ thanks, Eric :)
+***************************************************** */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
+
+
+/* /////////////////// general link styling ////////////////////////////// */
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  text-decoration: none;
+}
+
+h1,h2{
+  text-align: center;
+  font-size: 2em;
+  font-style:italic;
+  color: orange;
+}
+
+h2{
+  text-align:center;
+  font-size:.8em;
+}
+
+p{
+  font-size:.65em;
+}
+
+.floatLeft{
+  float: left;
+}
+.floatRight{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+
+.click{
+  font-style: italic;
+  font-size: .6em;
+}
+
+a{
+  display: block;
+  color: #666;
+}
+
+a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+a:focus, a:active{
+  color:#00FFFF;
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration:none;
+}
+
+.clear {
+  clear: both;
+}
+
+/* /////////////////// start theme styling ////////////////////////////// */
+
+/* @group body */
+body {
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-size: 1.45em;
+  line-height: 1.2;
+  color: #fff;
+}
+/* @end */
+
+
+/* @group container */
+#container {
+  width: 990px;
+  margin:20px auto;
+  overflow: hidden;
+}
+
+/* @end */

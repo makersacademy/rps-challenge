@@ -1,7 +1,10 @@
 require 'player'
 
 describe Player do
-  it 'has five weapons' do
-    expect(subject.weapons.size).to eq 5
+
+  let(:player1) { described_class.new 'Iciar' }
+
+  it 'player has a name' do
+    expect(player1.name).to eq 'Iciar'
   end
 end
