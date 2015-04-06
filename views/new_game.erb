@@ -1,0 +1,12 @@
+<form>
+  <h2>What's your name?</h2>
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+</form>
+
+<% if @name == "" %>
+  <h3>Please enter your name</h3>
+<% elsif @name %>
+  <h3>Welcome <%= @name %></h3>
+  <a href="/play?name=<%@name%>">Play</a>
+<% end %>
