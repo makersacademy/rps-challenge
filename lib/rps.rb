@@ -20,8 +20,13 @@ class RPS < Sinatra::Base
   end
 
   get '/round_result' do
+    byebug
     @player_move = params[:hand]
-    erb :round_result
+    if GAME.player(session[:player1])
+      GAME.player(session[:player1]).next_hand = @player_move
+      erb :round_result
+    end
+    'If statement didnt :('
   end
 
   # start the server if ruby file executed directly

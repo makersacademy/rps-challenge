@@ -28,7 +28,7 @@ class Game
   end
 
   # Todo, refactor
-  def player param
+  def player param # rubocop: disable all
     if param.is_a? String
       return @player_one if @player_one.name == param
       return @player_two if @player_two.name == param

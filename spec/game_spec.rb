@@ -52,6 +52,4 @@ describe Game do
     expect(game.player(object_identifier)).to eq nil
 
   end
-
-
 end
