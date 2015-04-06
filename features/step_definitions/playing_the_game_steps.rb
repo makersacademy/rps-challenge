@@ -1,5 +1,8 @@
-When(/^I select "([^"]*)" and click "([^"]*)"$/) do |move, button_name|
-  pending
-  choose('move', match: :first)
-  click(button_name)
+When(/^I select a "([^"]*)" and click "([^"]*)"$/) do |move, button_name|
+  choose(move, match: :first)
+  click_button(button_name)
+end
+
+When(/^I click the "([^"]*)" button$/) do |button_name|
+  click_button(button_name)
 end

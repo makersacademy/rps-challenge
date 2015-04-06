@@ -46,8 +46,8 @@ I would like to be able to play rock/paper/scissors in my browser
 
 This project is being developed in a BDD approach and therefore the domain design below will emerge as it develops, the classes identified in the process are:
 
-- Player - Responsible for picking an item
-- Game - Responsible for calling the result
+- Player - Responsible for allowing a player to make a move
+- Game - Responsible for processing the result
 
 
 ##Testing##

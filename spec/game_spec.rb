@@ -11,9 +11,9 @@ describe Game do
     winning_response = { draw: false,
                          winner: "Rob",
                          loser: "Holly",
-                         p1: :rock,
+                         p1: "rock",
                          verb: "blunts",
-                         p2: :scissors
+                         p2: "scissors"
                        }
     expect(subject.result(play_hash)).to eq winning_response
   end
@@ -23,9 +23,9 @@ describe Game do
     winning_response = { draw: false,
                          winner: "Holly",
                          loser: "Rob",
-                         p1: :paper,
+                         p1: "paper",
                          verb: "wraps",
-                         p2: :rock
+                         p2: "rock"
                        }
     expect(subject.result(play_hash)).to eq winning_response
   end
@@ -35,9 +35,9 @@ describe Game do
     winning_response = { draw: true,
                          winner: "Rob",
                          loser: "Holly",
-                         p1: :rock,
+                         p1: "rock",
                          verb: "matches",
-                         p2: :rock
+                         p2: "rock"
                        }
     expect(subject.result(play_hash)).to eq winning_response
   end

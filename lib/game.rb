@@ -26,9 +26,9 @@ class Game
     { draw: (outcome == :draw ? true : false),
       winner: (outcome == :lose ? player2.name : player1.name),
       loser: (outcome == :lose ? player1.name : player2.name),
-      p1: (outcome == :lose ? p2_move : p1_move),
+      p1: (outcome == :lose ? p2_move.to_s : p1_move.to_s),
       verb: verb,
-      p2: (outcome == :lose ? p1_move : p2_move)
+      p2: (outcome == :lose ? p1_move.to_s : p2_move.to_s)
     }
   end
 end
