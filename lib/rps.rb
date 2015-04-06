@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require_relative 'game'
 require_relative 'player'
-require 'byebug'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
