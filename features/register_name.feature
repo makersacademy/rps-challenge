@@ -15,5 +15,5 @@ Feature: register_name
     When they fill in "Wrong" as the "name"
     And they press the "Start" button
     Then they see "Hello Wrong! Want to play ‘Rock, Paper, Scissors, Lizard, Spock’?"
-    And they press the "Change my name" button
+    And they press the "No, change my name!" button
     Then they see "Enter your name:"
