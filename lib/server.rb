@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require 'player'
-require 'computer'
-require 'game'
+require_relative 'player'
+require_relative 'computer'
+require_relative 'game'
 
 
 class RPS < Sinatra::Base
@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   post '/new_game' do
     if params[:name].empty?
       @message = "Please enter your name"
-      erb :register
+      erb :new_game
     else
       player = Player.new(params[:name])
       @welcome = "Welcome #{params[:name]}"
@@ -31,8 +31,6 @@ class RPS < Sinatra::Base
     game = Game.new
     erb :choose
   end
-
-
 
 # start the server if ruby file executed directly
 run! if app_file == $0
