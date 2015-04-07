@@ -11,7 +11,7 @@ Feature: Starting the game
   Scenario: Accessing the registration page
     Given I am on the registration page
     Then I should see the "Name" field
-    And I should see the "Rock, Paper or Scissors" field
+    And I should see the "Rock, Paper, Scissors, Lizard or Spock?" field
     And I should see a "Start Game" button
 
 

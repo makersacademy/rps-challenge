@@ -24,7 +24,7 @@ end
 
 When(/^I fill in the form$/) do
   fill_in('Name', :with => 'Paul')
-  fill_in('Rock, Paper or Scissors?', :with => 'Rock')
+  fill_in('Rock, Paper, Scissors, Lizard or Spock?', :with => 'Rock')
 end
 
 When(/^I click the "([^"]*)" button$/) do |arg1|

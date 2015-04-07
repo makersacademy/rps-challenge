@@ -7,7 +7,7 @@ class Player
   end
 
   def computer_weapon
-    @computer_weapon = ['Rock', 'Paper', 'Scissors'].sample
+    @computer_weapon = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'].sample
   end
 
   def weapon
