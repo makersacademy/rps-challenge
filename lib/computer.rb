@@ -1,5 +1,5 @@
 class Computer
   def choose
-    [:rock, :paper, :scissors, :spock, :lizard].shuffle.first
+    %w(Rock Paper Scissors).shuffle.first
   end
 end
