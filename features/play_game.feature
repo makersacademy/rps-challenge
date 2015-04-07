@@ -58,3 +58,10 @@ Feature: play_game
     Then they see "You chose ‘Rock’!"
     And they see AI chose "‘Spock’!"
     And they see 'Commiserations: you lost!'
+
+  Scenario: a player wants to play again
+    Then they press the "Yes please!" button
+    Then they press the "Rock" button
+    Then they press the "Play again" button
+    Then they see "Right, Mark; select an action:"
+    
