@@ -6,11 +6,12 @@ Feature: play_game
   Background:
     Given a user is on the "/" page
     Then they see "Enter your name:"
+    When they fill in "Mark" as the "name"
     And they press the "Start" button
 
   Scenario: a user starts the game
     Then they press the "Yes please!" button
-    Then they see "Select an action:"
+    Then they see "Right, Mark; select an action:"
 
   Scenario: a user selects ‘Rock’
     Then they press the "Yes please!" button

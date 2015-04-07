@@ -1,4 +1,4 @@
-require 'actions'
+require_relative 'actions'
 
 class Player
   include Actions
