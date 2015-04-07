@@ -6,9 +6,7 @@ Feature: play_game
   Background:
     Given a user is on the "/" page
     Then they see "Enter your name:"
-    When they fill in "Mark" as the "name"
     And they press the "Start" button
-    Then they see "Hello Mark! Want to play ‘Rock, Paper, Scissors, Lizard, Spock’?"
 
   Scenario: a user starts the game
     And they press the "Yes please!" button
