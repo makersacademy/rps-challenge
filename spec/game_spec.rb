@@ -3,11 +3,11 @@ require 'game'
 describe Game do
   let(:player1) { double(:player1) }
   let(:player2) { double(:player2) }
-  let(:turns) { double(:turns) }
-  let(:game) { described_class.new player1, player2, :turns }
+  # let(:turns) { double(:turns) }
+  let(:game) { described_class.new player1, player2 }
   it 'has instance variables that are player names' do
     allow(player1).to receive(:name)
-    allow(player1).to receive(:fetch).and_return(nil)
+    # allow(player1).to receive(:fetch).and_return(nil)
     expect(game.player1).to eq player1
   end
 
@@ -23,8 +23,8 @@ describe Game do
   end
 
   it 'puts playerN wins if one playerN wins' do
-    allow(turns).to receive(:player_2)
-    allow(turns).to receive(:record_play)
+    # allow(turns).to receive(:player_2)
+    # allow(turns).to receive(:record_play)
     allow(player1).to receive(:weapon).and_return('scissors')
     allow(player2).to receive(:weapon).and_return('rock')
     game.play

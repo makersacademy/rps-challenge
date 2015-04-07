@@ -6,11 +6,16 @@ class Game
     paper: 'rock',
     rock: 'scissors'
   }
-  attr_reader :player1, :player2, :players
-  def initialize(player_1, player_2, options = {})
+  attr_reader :players, :player1, :player2
+  attr_accessor :player_1, :player_2
+  def initialize(player_1 = nil, player_2 = nil, options = {})
     @player1 = player_1
     @player2 = player_2
     @turns = options.fetch(:turns, nil)
+  end
+
+  def add_player player
+    @player1 ? @player2 = player : @player1 = player
   end
 
   def play
