@@ -11,5 +11,5 @@ Feature: player plays againts computer
   Scenario: I can add my name
     Given I am in start_game page
     When I enter my name
-    And I click "Play computer" button
-    Then I should be on play page
+    And I click "Play against computer" button
+    Then I should see my name

@@ -11,17 +11,17 @@ Then(/^I should be on start_game page$/) do
 end
 
 Given(/^I am in start_game page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit('/start_game')
 end
 
 When(/^I enter my name$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in("player_name", with: "Iciar")
 end
 
 When(/^I click "([^"]*)" button$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button(arg1)
 end
 
-Then(/^I should be on play page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see my name$/) do
+  expect(page).to have_content("Iciar")
 end

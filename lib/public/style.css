@@ -119,7 +119,7 @@ body {
   font-family: Georgia, Times New Roman, Times, serif;
   font-size: 1.45em;
   line-height: 1.2;
-  color: #fff;
+  color: #404041;
 }
 /* @end */
 
@@ -129,6 +129,7 @@ body {
   width: 990px;
   margin:20px auto;
   overflow: hidden;
+  background: transparent url('/images/rsl.png') no-repeat;
 }
 
 /* @end */
