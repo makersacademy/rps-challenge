@@ -10,7 +10,7 @@ class Game
 
   def choose_tool player, tool
     fail "Game Over" unless winner == nil
-    fail "Choose only either :Rock, :Scissors, or :Paper" unless [:Rock, :Scissors, :Paper].any? { |i| i == tool }
+    fail "Choose only either :Rock, :Scissors, :Paper, :Lizard, :Spoke" unless [:Rock, :Scissors, :Paper, :Lizard, :Spoke].any? { |i| i == tool }
     player[:tool] = tool
   end 
 
@@ -51,12 +51,17 @@ class Game
        return "Draw. Please choose tools again" 
     end   
       
-    if player_one[:tool] == :Rock && player_two[:tool] == :Scissors 
+    if player_one[:tool] == :Rock && (player_two[:tool] == :Scissors || player_two[:tool] == :Lizard)
       @winner = player_one[:player]
-    elsif player_one[:tool] == :Scissors && player_two[:tool] == :Paper 
+    elsif player_one[:tool] == :Scissors && (player_two[:tool] == :Paper || player_two[:tool] == :Lizard)
       @winner = player_one[:player]
-    elsif  player_one[:tool] == :Paper && player_two[:tool] == :SRock 
-      @winner = player_one[:player]  
+    elsif  player_one[:tool] == :Paper && (player_two[:tool] == :Rock || player_two[:tool] == :Spoke)
+      @winner = player_one[:player] 
+     elsif player_one[:tool] == :Spoke && (player_two[:tool] == :Scissors  || player_two[:tool] == :Rock)
+      @winner = player_one[:player]
+    elsif  player_one[:tool] == :Lizard && (player_two[:tool] == :Paper || player_two[:tool] == :Spoke)
+
+      @winner = player_one[:player]     
     else
       @winner = player_two[:player] 
     end  

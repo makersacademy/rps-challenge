@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
     @player_one = params[:name]
     @tool_one = params[:tool]
     @player_two = "Computer"
-    @tool_two = [:Rock, :Paper, :Scissors].sample
+    @tool_two = [:Rock, :Paper, :Scissors, :Lizard, :Spoke].sample
     game = Game.new @player_one, @player_two 
     game.choose_tool game.player_one, @tool_one.to_sym
     game.choose_tool game.player_two, @tool_two

@@ -17,8 +17,8 @@ describe Game do
     expect(game.player_one[:tool]).to eq :Rock
   end
 
-  it "can let players choose only Rock, Paper, or Scissors" do
-    expect { game.choose_tool game.player_one, :Horse }.to raise_error "Choose only either :Rock, :Scissors, or :Paper"
+  it "can let players choose only :Rock, :Scissors, :Paper, :Lizard, :Spoke" do
+    expect { game.choose_tool game.player_one, :Horse }.to raise_error "Choose only either :Rock, :Scissors, :Paper, :Lizard, :Spoke"
   end
 
   it "be ready when both players chose a tool" do
@@ -54,8 +54,15 @@ describe Game do
   it "let Paper win Rock" do
     game.choose_tool game.player_one, :Paper
     game.choose_tool game.player_two, :Rock
-    expect(game.play).to eq "player_2 is the winner. Game Over!"
+    expect(game.play).to eq "player_1 is the winner. Game Over!"
   end 
+
+  it "let Lizard win Spoke" do
+    game.choose_tool game.player_one, :Lizard
+    game.choose_tool game.player_two, :Spoke
+    expect(game.play).to eq "player_1 is the winner. Game Over!"
+  end 
+
 
   it "can delclare a winner only once" do
     game.choose_tool game.player_one, :Paper
