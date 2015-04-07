@@ -5,8 +5,8 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/action' do
+  post '/start' do
     @name = params[:name]
-    erb :action
+    erb :start
   end
 end
