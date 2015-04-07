@@ -37,3 +37,24 @@ Feature: play_game
     Then they press the "Yes please!" button
     Then they press the "Spock" button
     Then they see "You chose ‘Spock’!"
+
+  Scenario: a user wins
+    Then they press the "Yes please!" button
+    Then they press the "Rock" button
+    Then they see "You chose ‘Rock’!"
+    And they see AI chose "‘Scissors’!"
+    And they see 'Congratulations: you won!'
+
+  Scenario: a user draws
+    Then they press the "Yes please!" button
+    Then they press the "Rock" button
+    Then they see "You chose ‘Rock’!"
+    And they see AI chose "‘Rock’!"
+    And they see 'Well done, I guess: you drew!'
+
+  Scenario: a user loses
+    Then they press the "Yes please!" button
+    Then they press the "Rock" button
+    Then they see "You chose ‘Rock’!"
+    And they see AI chose "‘Spock’!"
+    And they see 'Commiserations: you lost!'

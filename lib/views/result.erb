@@ -1,1 +1,9 @@
-<%= "You chose ‘#{@action}’!" if @action %>
+<%= "You chose ‘#{@action}’!<br>" %>
+<%= "AI chose ‘#{@opponent_action}’!<br>" %>
+<% if @result == @player.name %>
+  <%= "Congratulations: you won!" %>
+<% elsif @result == @opponent.name %>
+  <%= "Commiserations: you lost!" %>
+<% else %>
+  <%= "Well done, I guess: you drew!" %>
+<% end %>

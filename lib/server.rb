@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'player'
+require_relative 'round'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,7 +22,15 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @action = params[:action]
-    session[:player].select_action @action
+    @player = session[:player]
+    @player.select_action @action.downcase.to_sym
+    @opponent = Player.new 'AI'
+    @opponent.auto_select_action
+    @opponent_action = @opponent.action.capitalize
+    player_hash = { name: @player.name, action: @player.action }
+    opponent_hash = { name: @opponent.name, action: @opponent.action }
+    round = Round.new player_hash, opponent_hash
+    @result = round.winner
     erb :result
   end
 end
