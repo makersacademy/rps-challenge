@@ -1,6 +1,5 @@
 class Player
-  attr_accessor :name
-  attr_reader :human_weapon, :weapon
+  attr_reader :human_weapon, :weapon, :name
   attr_writer :computer_weapon
 
   def initialize(name)
@@ -16,6 +15,6 @@ class Player
   end
 
   def human_weapon=(human_weapon)
-    @human_weapon = human_weapon.capitalize
+    @human_weapon = human_weapon.downcase.capitalize
   end
 end
