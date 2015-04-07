@@ -1,17 +1,17 @@
 class Player
-  attr_reader :name, :browser
-  attr_writer :choice
+  attr_reader :name, :browser, :choose
+  alias_method :choice, :choose
 
-  def initialize(options)
-    @name = options.fetch(:name)
-    @browser = options.fetch(:browser)
+  def initialize(name, browser)
+    @name = name
+    @browser = browser
   end
 
   def chosen?
-    true if @choice != nil
+    !@choice.nil?
   end
 
-  def choose move
-    @choice = move
+  def choose choice
+    @choice = choice
   end
 end

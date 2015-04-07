@@ -1,8 +1,8 @@
 require 'player'
 
 describe Player do
-  let(:player) { described_class.new(name: "Arfah", browser: "Chrome") }
-  let(:move) { double :move }
+  let(:player) { described_class.new("Arfah", "Chrome") }
+  let(:move) { double move: "Rock" }
 
   it 'can have a name' do
     expect(player.name).to eq "Arfah"
@@ -20,6 +20,5 @@ describe Player do
   it 'can make a choice' do
     expect(player).to receive(:choose).with :move
     player.choose(:move)
-    # expect(:choice).to be "Rock"
   end
 end
