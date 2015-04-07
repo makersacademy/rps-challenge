@@ -36,10 +36,6 @@ Then(/^I see game modes to choose and button "(.+)"$/) do |bttn|
   expect(page).to have_button bttn
 end
 
-Then(/^result of the game is given$/) do
-  expect(page).to have_content 'has won the game' || 'it is a draw'
-end
-
-Then(/^"([^"]*)" button is made available$/) do |bttn|
-  expect(page).to have_button 'Play Again'
+Then(/^Result of the game is given and "(.+)" button is made available$/) do |bttn|
+  expect(page).to have_button bttn
 end

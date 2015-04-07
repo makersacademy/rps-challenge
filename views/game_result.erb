@@ -3,7 +3,11 @@
 </head>
 
 <body>
+	<% if @winner == 'draw' %>
+		<h3>It was a draw, no winner :(</h3>
+	<% else %>
   <h3><%= @winner %> has won the game</h3>
+  <% end %>
   <form>
     <input type="submit" value="Play Again">
   </form>

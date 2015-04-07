@@ -32,7 +32,7 @@ class GameMaster
   def compare_choices
     p1 = rules(game).find_index(players[1].choice)
     p0 = rules(game).find_index(players[0].choice)
-    outcome = (3 + p1 - p0) % 3
+    outcome = (rule_size(game) + p1 - p0) % rule_size(game)
     if outcome.zero?
       'draw'
     else

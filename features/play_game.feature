@@ -11,7 +11,6 @@ Feature: play a game of RPS
     And I see game modes to choose and button "Start Playing"
 
   Scenario: user plays game against computer
-  	Given I start "pvc" game 
+  	Given I start "pvc" game
   	When I choose "paper" and press "Choose"
-  	Then result of the game is given
-  	And "Play Again" button is made available
+  	Then Result of the game is given and "Play Again" button is made available
