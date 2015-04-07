@@ -7,7 +7,7 @@ class Game
   end
 
   def play(name, move)
-    fail "I don't recognise that move, try again" unless valid_move?(move)
+    # fail "I don't recognise that move, try again" unless valid_move?(move)
     computer_mv = make_move
     moves = "#{name} chose: #{move} Computer chose: #{computer_mv}, "
     moves + round_result(name, move, computer_mv)

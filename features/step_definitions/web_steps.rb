@@ -17,3 +17,11 @@ end
 Then(/^they see "([^"]*)"$/) do |arg1|
   expect(page).to have_content?(arg1)
 end
+
+Given(/^a user is on the game page$/) do
+  visit '/game'
+end
+
+When(/^they choose a move radio button$/) do
+  choose('move_rock')
+end

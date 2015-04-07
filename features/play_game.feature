@@ -12,3 +12,9 @@ Feature: Starting the game
     When they fill in "Jade" in the new_player field
     And they press the "Create Player" button
     Then they should see "Welcome Jade, lets play"
+
+  Scenario: Player chooses move
+    Given a user is on the game page
+    When they choose a move radio button
+    And they press the "Go" button
+    Then they see "Rock"
