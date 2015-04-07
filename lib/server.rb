@@ -9,4 +9,8 @@ class RPS < Sinatra::Base
     @name = params[:name]
     erb :start
   end
+
+  get '/action' do
+    erb :action
+  end
 end
