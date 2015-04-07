@@ -9,5 +9,30 @@ Feature: play_game
     And they press the "Start" button
 
   Scenario: a user starts the game
-    And they press the "Yes please!" button
-    Then they see "Select one of ‘Rock, Paper, Scissors, Lizard, Spock’:"
+    Then they press the "Yes please!" button
+    Then they see "Select an action:"
+
+  Scenario: a user selects ‘Rock’
+    Then they press the "Yes please!" button
+    Then they press the "Rock" button
+    Then they see "You chose ‘Rock’!"
+
+  Scenario: a user selects ‘Paper’
+    Then they press the "Yes please!" button
+    Then they press the "Paper" button
+    Then they see "You chose ‘Paper’!"
+
+  Scenario: a user selects ‘Scissors’
+    Then they press the "Yes please!" button
+    Then they press the "Scissors" button
+    Then they see "You chose ‘Scissors’!"
+
+  Scenario: a user selects ‘Lizard’
+    Then they press the "Yes please!" button
+    Then they press the "Lizard" button
+    Then they see "You chose ‘Lizard’!"
+
+  Scenario: a user selects ‘Spock’
+    Then they press the "Yes please!" button
+    Then they press the "Spock" button
+    Then they see "You chose ‘Spock’!"

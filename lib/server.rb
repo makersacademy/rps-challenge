@@ -13,4 +13,9 @@ class RPS < Sinatra::Base
   get '/action' do
     erb :action
   end
+
+  post '/result' do
+    @action = params[:action]
+    erb :result
+  end
 end
