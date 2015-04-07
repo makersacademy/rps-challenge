@@ -4,55 +4,55 @@ Feature: play_game
   I want to be able to play rock/paper/scissors
 
   Background:
-    Given a user is on the "/" page
+    Given a player is on the "/" page
     Then they see "Enter your name:"
     When they fill in "Mark" as the "name"
     And they press the "Start" button
 
-  Scenario: a user starts the game
+  Scenario: a player starts the game
     Then they press the "Yes please!" button
     Then they see "Right, Mark; select an action:"
 
-  Scenario: a user selects ‘Rock’
+  Scenario: a player selects ‘Rock’
     Then they press the "Yes please!" button
     Then they press the "Rock" button
     Then they see "You chose ‘Rock’!"
 
-  Scenario: a user selects ‘Paper’
+  Scenario: a player selects ‘Paper’
     Then they press the "Yes please!" button
     Then they press the "Paper" button
     Then they see "You chose ‘Paper’!"
 
-  Scenario: a user selects ‘Scissors’
+  Scenario: a player selects ‘Scissors’
     Then they press the "Yes please!" button
     Then they press the "Scissors" button
     Then they see "You chose ‘Scissors’!"
 
-  Scenario: a user selects ‘Lizard’
+  Scenario: a player selects ‘Lizard’
     Then they press the "Yes please!" button
     Then they press the "Lizard" button
     Then they see "You chose ‘Lizard’!"
 
-  Scenario: a user selects ‘Spock’
+  Scenario: a player selects ‘Spock’
     Then they press the "Yes please!" button
     Then they press the "Spock" button
     Then they see "You chose ‘Spock’!"
 
-  Scenario: a user wins
+  Scenario: a player wins
     Then they press the "Yes please!" button
     Then they press the "Rock" button
     Then they see "You chose ‘Rock’!"
     And they see AI chose "‘Scissors’!"
     And they see 'Congratulations: you won!'
 
-  Scenario: a user draws
+  Scenario: a player draws
     Then they press the "Yes please!" button
     Then they press the "Rock" button
     Then they see "You chose ‘Rock’!"
     And they see AI chose "‘Rock’!"
     And they see 'Well done, I guess: you drew!'
 
-  Scenario: a user loses
+  Scenario: a player loses
     Then they press the "Yes please!" button
     Then they press the "Rock" button
     Then they see "You chose ‘Rock’!"

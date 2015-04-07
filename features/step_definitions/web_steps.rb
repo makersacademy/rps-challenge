@@ -1,6 +1,6 @@
 require 'cucumber/rspec/doubles'
 
-Given(/^a user is on the "([^"]*)" page$/) do |page|
+Given(/^a player is on the "([^"]*)" page$/) do |page|
   visit "#{page}"
 end
 
