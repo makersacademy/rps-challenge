@@ -6,6 +6,7 @@ class Game
   end
 
   def cpu_random_hand
+    # Found out that I could have used .sample as well.
     @hand_value = %w(Rock Paper Scissors)[rand(3)]
   end
 
@@ -19,11 +20,11 @@ class Game
   end
 
   def winner
-    matching_hands_with_players
+    player2_person_or_cpu?
     comparing_hands
   end
 
-  def matching_hands_with_players
+  def player2_person_or_cpu?
     @player1 = @players[0]
     if @players.length == 1
       @player2 = 'CPU'
@@ -36,7 +37,7 @@ class Game
   end
 
   def comparing_hands
-    # I know it's ugly. Will need major refactoring! But it works so far!
+    # Any tip on refactoring is welcome! I know it's ugly!
     if @phv1 == @phv2
       fail 'Tie!'
     elsif @phv1 == 'rock' && @phv2 == 'scissors'
