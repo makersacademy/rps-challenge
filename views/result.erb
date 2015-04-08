@@ -1,0 +1,11 @@
+<p>You chose <%= PLAYER.choice %></p>
+
+<% if GAME.winner == "Draw" %>
+  <p>IT'S A BLOODY DRAW</p>
+<% elsif GAME.winner == PLAYER.name %>
+  <p>YOU WIN</p>
+<% else %>
+  <p>YOU LOSE</p>
+<% end %>
+
+<a href="/play_again" method="GET"><button>Play Again</button></a>
