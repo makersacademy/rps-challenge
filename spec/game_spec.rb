@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   let(:game) { described_class.new }
-  let(:player1) { double :player, hand_value: 'Rock' }
-  let(:player2) { double :player, hand_value: 'Scissors' }
+  let(:player1) { double :player, hand_value: 'Rock', name: "bob" }
+  let(:player2) { double :player, hand_value: 'Scissors'  }
   let(:player2b) { double :player, hand_value: 'Rock' }
   before { game.add_player(player1) }
 
@@ -33,6 +33,6 @@ describe Game do
 
   it 'can player with the computer' do
     allow(game).to receive(:cpu_random_hand).and_return 'paper'
-    expect(game.winner).to eq 'CPU'
+    expect(game.winner.name).to eq 'CPU'
   end
 end
