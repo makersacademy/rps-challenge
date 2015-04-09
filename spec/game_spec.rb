@@ -5,11 +5,11 @@ describe Game do
   end
   it 'compares players move against the computers move and returns winner' do
     expect(subject.play('Jade', 'Rock')
-      ).to eq 'Jade chose: Rock Computer chose: Scissors, Jade wins!'
+          ).to eq 'Jade chose: Rock Computer chose: Scissors, Jade wins!'
   end
   it 'returns draw if both play the same move' do
     expect(subject.play('Jade', 'Scissors')
-      ).to eq 'Jade chose: Scissors Computer chose: Scissors, Its a draw!'
+          ).to eq 'Jade chose: Scissors Computer chose: Scissors, Its a draw!'
   end
   it 'raises an error if player inputs incorrect value' do
     expect do

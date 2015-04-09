@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
     session[:player] = @name
     erb :game
   end
+
   post '/play' do
     @move = params[:move_choice]
     # @name = params[:player]
@@ -31,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
     session[:result] = @result
     erb :play
   end
+
   get 'play' do
     @name = session[:player]
     @move = session[:move_choice]
