@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require 'byebug'
-require './lib/player.rb'
-require './lib/game.rb'
-require './lib/multiplayer.rb'
+require_relative 'lib/player'
+require_relative 'lib/game'
+require_relative 'lib/multiplayer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
