@@ -10,7 +10,6 @@ group :test do
   gem 'cucumber'
   gem 'rerun'
   gem 'rspec'
-  gem 'byebug'
   gem 'rubocop'
   gem 'rubocop-rspec'
 end

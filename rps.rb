@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'byebug'
 require_relative 'lib/player'
 require_relative 'lib/game'
 require_relative 'lib/multiplayer'
