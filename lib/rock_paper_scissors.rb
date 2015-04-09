@@ -14,20 +14,23 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:player]
+    @move = session[:move] if session[:move]
+    @result = session[:result] if session[:result]
     erb :game
   end
 
   post '/game' do
-    @name = params[:new_player]
-    PLAYER.name = params[:new_player]
+    @name = params[:new_player] if params[:new_player]
+    @name = session[:player] if session[:player]
+    @result = GAME.play(session[:player], params[:move])
+    # PLAYER.name = params[:new_player]
     session[:player] = @name
+    session[:result] = @result
     erb :game
   end
 
   post '/play' do
-    # @move = params[:move]
     @name = session[:player]
-    # session[:player] = @name
     @result = GAME.play(session[:player], params[:move])
     session[:player] = @name
     session[:result] = @result
