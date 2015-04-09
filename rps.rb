@@ -1,14 +1,11 @@
 require 'sinatra/base'
 require 'byebug'
-require_relative 'player'
-require_relative 'game'
-require_relative 'multiplayer'
+require './lib/player.rb'
+require './lib/game.rb'
+require './lib/multiplayer.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
-
-  set :views, proc { File.join(root, "..", "views") }
-  set :public_folder, proc { File.join(root, '..', "public") }
 
   MULTIPLAYER = Multiplayer.new
 
