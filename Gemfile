@@ -5,6 +5,7 @@ ruby '2.2.1'
 gem 'sinatra'
 
 group :test do
+  gem 'heroku'
   gem 'rspec'
   gem 'rubocop-rspec'
   gem 'cucumber'
