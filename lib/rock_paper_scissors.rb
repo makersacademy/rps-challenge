@@ -3,7 +3,7 @@ require_relative 'player'
 require_relative 'game'
 
 class RockPaperScissors < Sinatra::Base
-  # set :views, proc { File.join(root, "..", "views") }
+  set :views, proc { File.join(root, "..", "views") }
 
   enable :sessions
   PLAYER = Player.new
@@ -25,17 +25,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @move = params[:move_choice]
-    # @name = params[:player]
-    session[:player] = PLAYER.name
-    @result = GAME.play(PLAYER.name, session[:move_choice])
+    # @move = params[:move]
+    @name = session[:player]
+    # session[:player] = @name
+    @result = GAME.play(session[:player], params[:move])
+    session[:player] = @name
     session[:result] = @result
     erb :play
   end
 
   get 'play' do
     @name = session[:player]
-    @move = session[:move_choice]
+    @move = session[:move]
     @result = session[:result]
     erb :play
   end

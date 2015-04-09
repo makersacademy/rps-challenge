@@ -3,7 +3,7 @@ Given(/^a user is on the homepage$/) do
 end
 
 Then(/^they should see "([^"]*)"$/) do |arg1|
-  expect(page).to have_content?(arg1)
+  expect(page).to have_content(arg1)
 end
 
 When(/^they fill in "([^"]*)" in the new_player field$/) do |name|
@@ -22,6 +22,6 @@ Given(/^a user is on the game page$/) do
   visit '/game'
 end
 
-When(/^they choose a move radio button$/) do
-  choose('move_rock')
-end
+# When(/^they press the "([^"]*)" button$/) do |move|
+#   click_button(move)
+# end

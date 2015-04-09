@@ -15,6 +15,5 @@ Feature: Starting the game
 
   Scenario: Player chooses move
     Given a user is on the game page
-    When they choose a move radio button
-    And they press the "Go" button
-    Then they see "Rock"
+    When they press the "Rock" button
+    Then they should see "Rock"
