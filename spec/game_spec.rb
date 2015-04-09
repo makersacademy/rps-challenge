@@ -11,9 +11,4 @@ describe Game do
     expect(subject.play('Jade', 'Scissors')
           ).to eq 'Jade chose: Scissors Computer chose: Scissors, Its a draw!'
   end
-  it 'raises an error if player inputs incorrect value' do
-    expect do
-      subject.play('Jade', "blah")
-    end.to raise_error "I don't recognise that move, try again"
-  end
 end

@@ -13,9 +13,4 @@ feature 'player can play Rock, paper, scissors against the computer' do
     expect(round.play(player.name, "Scissors")
           ).to eq 'Jade chose: Scissors Computer chose: Scissors, Its a draw!'
   end
-  scenario 'player inputs incorrect value' do
-    expect do
-      round.play(player.name, "blah")
-    end.to raise_error "I don't recognise that move, try again"
-  end
 end
