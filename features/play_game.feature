@@ -40,7 +40,7 @@ Feature: Starting the game
     And I should see "Bob Wins!"
 
     When I am in "Bob" browser
-    And I follow "click for search an opponent >"
+    And I get redirect to the play page
     Then I should see the "paper" element
     And I should see the "rock" element
     And I should see "Bob Wins!"

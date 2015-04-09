@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'byebug'
 require_relative 'lib/player'
 require_relative 'lib/game'
 require_relative 'lib/multiplayer'
@@ -22,21 +23,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/matchmaking' do
-    session['chose'] = params[:el].to_sym
+    @search = params[:search]
+    session['chose'] = params[:el].to_sym if @search.nil?
     @sess = session['session_id']
     @player_name = session['name']
     @player_chose = session['chose']
     @game_type = session['type']
+    @ready = @search && MULTIPLAYER.ready?(@sess, @game_type)
 
     redirect to('/play?vs=cpu') if params[:opponent] == 'cpu'
+    redirect to('/play?vs=human') if @ready
 
-    if MULTIPLAYER.games_available? @game_type
-      MULTIPLAYER.add @sess, @player_name, @player_chose, @game_type
-      redirect to('/play?vs=human')
-    else
-      MULTIPLAYER.create @sess, @player_name, @player_chose, @game_type
-      erb :matchmaking
+    if @search.nil?
+      if MULTIPLAYER.games_available?(@game_type)
+        MULTIPLAYER.add @sess, @player_name, @player_chose, @game_type
+        redirect to('/play?vs=human')
+      else
+        MULTIPLAYER.create @sess, @player_name, @player_chose, @game_type
+      end
     end
+    erb :matchmaking
   end
 
   get '/play' do
@@ -53,7 +59,6 @@ class RockPaperScissors < Sinatra::Base
                          :scissors, :lizard,
                          :spock].sample if @game_type == "lizspock"
     elsif params[:vs] == 'human'
-      "waiting..." until MULTIPLAYER.ready? @sess, @game_type
       MULTIPLAYER.begin_game @sess, @game_type
       @curr_game = MULTIPLAYER.find_game @sess, @game_type
       @opponent = MULTIPLAYER.find_opponent @sess, @game_type

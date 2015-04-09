@@ -13,3 +13,7 @@ end
 When(/^I am in (.*) browser$/) do |name|
   Capybara.session_name = name
 end
+
+When(/^I get redirect to the play page$/) do
+  visit '/play?vs=human'
+end

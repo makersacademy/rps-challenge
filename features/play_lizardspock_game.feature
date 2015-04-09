@@ -40,7 +40,7 @@ Feature: Starting the game
     And I should see "John Wins!"
 
     When I am in "Bob" browser
-    And I follow "click for search an opponent >"
+    And I get redirect to the play page
     Then I should see the "lizard" element
     And I should see the "rock" element
     And I should see "John Wins!"
