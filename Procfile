@@ -1,1 +1,1 @@
-web: bundle exec RockPaperScissors -C ./rps.rb
+web: bundle exec rps -C rps.rb
