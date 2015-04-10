@@ -26,3 +26,14 @@ h2 {
   font-size: 0.9em;
   margin: 0 0 10px 0;
 }
+#game_box {
+  border: 1px solid;
+  padding: 5px;
+}
+#game_box div {
+  width: 50%;
+  text-align: center;
+}
+.arena {
+  min-height:100px;
+}
