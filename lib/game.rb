@@ -1,8 +1,9 @@
 class Game
-  attr_reader :combinations
+  attr_reader :combinations, :random
 
   def initialize
     @combinations = { rock: :scissors, paper: :rock, scissors: :paper }
+    @randomness = combinations.keys
     @player1 = []
     @player2 = []
   end
@@ -13,6 +14,14 @@ class Game
 
   def add_player2(player)
     @player2 << player
+  end
+
+  def players
+    @player1 != nil && @player2 != nil
+  end
+
+  def random
+    randomness.sample
   end
 
   def result(player1_choice, player2_choice)

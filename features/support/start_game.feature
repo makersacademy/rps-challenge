@@ -11,4 +11,4 @@ Feature: Starting the game
     Scenario: Registering
       Given I am on the name page
       When I enter "My name"
-      Then I should see the board
+      Then I should see the game
