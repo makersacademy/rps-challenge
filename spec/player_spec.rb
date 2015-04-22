@@ -9,14 +9,14 @@ describe Player do
   end
 
   it 'can pick rock option' do
-    expect(player.choose('rock')).to eq :rock
+    expect(player.choice('rock')).to eq :rock
   end
 
   it 'can pick paper option' do
-    expect(player.choose('paper')).to eq :paper
+    expect(player.choice('paper')).to eq :paper
   end
 
   it 'can pick scissors option' do
-    expect(player.choose('scissors')).to eq :scissors
+    expect(player.choice('scissors')).to eq :scissors
   end
 end
