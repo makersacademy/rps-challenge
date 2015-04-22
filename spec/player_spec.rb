@@ -4,7 +4,8 @@ describe Player do
   let(:player) { described_class.new }
 
   it 'has a name' do
-    expect(player.name).to eq "Player1"
+    player.player_name("Sammy")
+    expect(player.name).to eq ["Sammy"]
   end
 
   it 'can pick rock option' do
