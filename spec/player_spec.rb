@@ -6,4 +6,8 @@ describe Player do
   it 'has a name' do
     expect(player.name).to eq "Player1"
   end
+
+  it 'can pick an option' do
+    expect(player.choose('rock')).to eq :rock
+  end
 end
