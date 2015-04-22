@@ -6,9 +6,14 @@ Feature: Starting the game
   Scenario: Starting game
     Given I'm on the homepage
     When I follow "New Game"
-    Then I should see "What's your name?"
+    Then I should see What's your name?
 
     Scenario: Registering
       Given I am on the name page
       When I enter "My name"
       Then I should see the game
+
+      Scenario: Playing game
+        Given that I am on the game page
+        When I click on the "rock" button
+        Then I should see the result page

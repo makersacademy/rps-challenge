@@ -6,6 +6,6 @@ When(/^I follow "(.*?)"$/) do |button|
   click_on(button)
 end
 
-Then(/^I should see "(.*?)"$/) do |name|
-  should match(/#{name}/m)
+Then(/^I should see What's your name\?$/) do
+  body.should match "What's your name?"
 end

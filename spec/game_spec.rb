@@ -6,11 +6,7 @@ describe Game do
   context 'adding players' do
 
     it 'can add a player' do
-      expect(game.add_player1("Sammy")).to eq ["Sammy"]
-    end
-
-    it 'can add a second player' do
-      expect(game.add_player2("Opponent")).to eq ["Opponent"]
+      expect(game.add_player("Sammy")).to eq "Sammy"
     end
 
   end

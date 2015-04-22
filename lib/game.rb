@@ -1,37 +1,30 @@
 class Game
-  attr_reader :combinations, :random
+
+  attr_reader :combinations, :randomness, :name
 
   def initialize
     @combinations = { rock: :scissors, paper: :rock, scissors: :paper }
     @randomness = combinations.keys
-    @player1 = []
-    @player2 = []
-  end
-
-  def add_player1(player)
-    @player1 << player
-  end
-
-  def add_player2(player)
-    @player2 << player
-  end
-
-  def players
-    @player1 != nil && @player2 != nil
+    @player_one = nil
+    @name = name
   end
 
   def random
     randomness.sample
   end
 
-  def result(player1_choice, player2_choice)
-    if player2_choice == combinations[player1_choice]
-      result_value = "Win!"
-    elsif player1_choice == combinations[player2_choice]
-      result_value = "Lost!"
-    elsif player1_choice == player2_choice
-      result_value = "Draw!"
+  def add_player(player)
+    @player_one = player
+  end
+
+  def result(player_choice, opponent_choice)
+    if opponent_choice == combinations[player_choice]
+      value = "Win!"
+    elsif player_choice == combinations[opponent_choice]
+      value = "Lost!"
+    elsif player_choice == opponent_choice
+      value = "Draw!"
     end
-    result_value
+    return value
   end
 end

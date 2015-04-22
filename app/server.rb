@@ -1,29 +1,47 @@
 require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
-require './app/server.rb'
 
 class RockPaperScissors < Sinatra::Base
+  set :public_folder, Proc.new { File.join(root, "public") }
   set :views, proc { File.join(root, "..", "views") }
   enable :sessions
+  game = Game.new
+  player = Player.new
 
   get '/' do
-    erb :index
+    erb :index  end
+
+  get '/player' do
+    @name = params[:name]
+    erb :player
   end
 
-  get '/name' do
+  post '/player' do
     @name = params[:name]
-    erb :name
+    session[:player] = player
+    erb :game
+  end
+
+  get '/game' do
+    @name = params[:name]
+    session[:player] = player
+    erb :game
   end
 
   post '/game' do
     @name = params[:name]
-    erb :game
+    session[:player] = player
+    erb :result
   end
 
-  post '/play' do
+  post '/result' do
+    player = session[:player]
     @name = params[:name]
-    erb :play
+    @computer = game.random
+    @player = player.choice(params[:game])
+    @result = game.result(@player, @computer)
+    erb :result
   end
 
   # start the server if ruby file executed directly
