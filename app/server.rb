@@ -3,14 +3,15 @@ require './lib/game.rb'
 require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
-  set :public_folder, Proc.new { File.join(root, "public") }
+  set :public_folder, proc { File.join(root, "public") }
   set :views, proc { File.join(root, "..", "views") }
   enable :sessions
   game = Game.new
   player = Player.new
 
   get '/' do
-    erb :index  end
+    erb :index
+  end
 
   get '/player' do
     @name = params[:name]

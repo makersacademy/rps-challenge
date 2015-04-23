@@ -1,5 +1,4 @@
 class Game
-
   attr_reader :combinations, :randomness, :name
 
   def initialize
@@ -25,6 +24,5 @@ class Game
     elsif player_choice == opponent_choice
       value = "Draw!"
     end
-    return value
   end
 end
