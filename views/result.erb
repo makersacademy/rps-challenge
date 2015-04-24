@@ -1,12 +1,12 @@
 <div class="text-center">
 <% if @result == "Win!" %>
-  <h3>You won! The computer chose <%= @player.capitalize %>.</h3>
+  <h2>You won! The computer chose <%= @player.capitalize %>.</h2>
   <br><img src="http://i.imgur.com/fwnb9hc.png"></br>
 <% elsif @result == "Lost!" %>
-  <h3>You lost! The computer chose <%= @player.capitalize %>.</h3>
+  <h2>You lost! The computer chose <%= @player.capitalize %>.</h2>
   <br><img src="http://i.imgur.com/r2GH5OJ.png"></br>
 <% elsif @result == "Draw!" %>
-  <h3>Draw! The computer also chose <%= @player.capitalize %>.</h3>
+  <h2>Draw! The computer also chose <%= @player.capitalize %>.</h2>
   <br><img src="http://i.imgur.com/o4muAhf.png"></br>
 <% end %>
   <br>
