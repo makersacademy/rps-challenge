@@ -1,57 +1,44 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+You can try out this application [**here!**](http://rock-paper-scissors-web.herokuapp.com/)
 
-Task 
-----
+Rock Paper Scissors
+==================
 
-Knowing how to build web applications is getting us almost there as web developers!
+The seventh program I built during my programming bootcamp at [Makers Academy](http://www.makersacademy.com/). 
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Objective
+------------
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The Makers Academy Marketing team have asked to be provided with game. Their daily grind is pretty tough and they need time to let off a little steam.
 
-```sh
+The objective is to provide a rock paper scissors game for them so they can play on the web with the following user stories:
+
+```
 As a marketeer
 So that I can see my name in lights
-I would like to register my name before playing an online game
+I would like to register my name before playing a game
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Here is a snapshot of the landing page: ![landing page](http://i.imgur.com/0cfmaI1.png)
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+And here is a snapshot of all the tests passing =) (including rubocop, RSpec and cucumber): ![passing tests](http://i.imgur.com/x2l45sf.png)
 
+The technologies used include:
 
-As usual please start by
+* [Sinatra](https://github.com/sinatra/sinatra)
+* [Heroku](https://www.heroku.com/)
+* [Cucumber](https://cukes.info/)
+* [RSpec](http://rspec.info/)
+* [Rubocop](http://batsov.com/rubocop/)
+* [Rake](https://github.com/ruby/rake)
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+Planned updates
+-----------------------
 
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+* Add multiplayer functionality so that a user can play against another user.
+* Extend the game to include additional weapons ["Spock" and "Lizard"](http://en.wikipedia.org/wiki/Rock-paper-scissors#Additional_weapons)
