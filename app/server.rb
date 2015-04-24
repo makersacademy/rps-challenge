@@ -3,7 +3,7 @@ require './lib/game.rb'
 require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
-  set :public_folder, proc { File.join(root, "public") }
+  set :public_folder, proc { File.join(root, "..", "public") }
   set :views, proc { File.join(root, "..", "views") }
   enable :sessions
   game = Game.new
