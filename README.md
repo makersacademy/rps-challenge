@@ -1,5 +1,7 @@
 # RPS Challenge: Rōnin Badge Test
 
+###[Try it on Heroku!](https://safe-caverns-7925.herokuapp.com/)
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
