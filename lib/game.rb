@@ -9,32 +9,32 @@ class Game
   end
 
   def process_turn
-    fail "Game already won" if winner?
+    return "Game already won" if winner?
     if player_1.check_turn == player_2.check_turn
-      puts "Go again"
+      "Go again"
     else
       if player_1.check_turn == "Rock" && player_2.check_turn == "Scissors"
-        puts "Player 1 wins"
+         "Player 1 wins"
         player_1.add_round_win
         check_round_wins
       elsif player_1.check_turn == "Rock" && player_2.check_turn == "Paper"
-        puts "Player 2 wins"
+         "Player 2 wins"
         player_2.add_round_win
         check_round_wins
       elsif player_1.check_turn == "Scissors" && player_2.check_turn == "Paper"
-        puts "Player 1 wins"
+         "Player 1 wins"
         player_1.add_round_win
         check_round_wins
       elsif player_1.check_turn == "Scissors" && player_2.check_turn == "Rock"
-        puts "Player 2 wins"
+         "Player 2 wins"
         player_2.add_round_win
         check_round_wins
       elsif player_1.check_turn == "Paper" && player_2.check_turn == "Rock"
-        puts "Player 1 wins"
+         "Player 1 wins"
         player_1.add_round_win
         check_round_wins
       elsif player_1.check_turn == "Paper" && player_2.check_turn == "Scissors"
-        puts "Player 2 wins"
+         "Player 2 wins"
         player_2.add_round_win
         check_round_wins
       end

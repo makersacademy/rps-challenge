@@ -49,3 +49,15 @@ Plan
 >> build feature tests
 >> AIM: have a basic working version before scale to web have name registration working
 
+Plan - left to-do
+>> Full cucumber test coverage
+>> Fix underlying rspec test
+>> Sessions to implement winner's name
+>> Complete 2 player version
+>> Upload to Heroku
+>> Add styling/ CSS across so can share
+>> Complete additional rules (if time and useful)
+>> Refactor system code
+
+
+
