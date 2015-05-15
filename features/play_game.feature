@@ -6,5 +6,5 @@ Feature: Rock, Paper, Scissors WEB'
   Scenario: I am greeted by name
     Given I am on the homepage
     And I fill in "name" with "Jenny"
-    And press "submit"
+    And press "Submit"
     Then I should see "Hey Jenny!"
