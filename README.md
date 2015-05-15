@@ -40,7 +40,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
 
-Test Driven Development with Rspec- Tests to be Implemented
+Test Driven Development with Rspec- Tests to be Implemented --- TO BE UPDATED!!!!!
 --------------------------
 
 Tests for the Game
@@ -119,5 +119,7 @@ Hmm, this is looking good... Now let's see who's won (because, we don't know alr
   $    "YES! YOU WON!!!""
 
 ... And now let the hours of fun begin!
+
+
 
 

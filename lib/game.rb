@@ -2,8 +2,6 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
-  player_choice = player.choice
-  computer_choice = computer.choice
   
   def compare(player_choice, computer_choice)
     if player_choice == 'rock'
