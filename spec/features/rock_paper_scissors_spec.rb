@@ -1,5 +1,3 @@
-
-
 feature 'Player enters the game' do
   
   let(:player){Player.new}
@@ -22,6 +20,4 @@ feature 'Player enters the game' do
   	# NOT SURE HOW THIS CAN BE TEST - TRIED USING PIPES AND DIDN'T WORK?
   end
 
-  xscenario 'Computer cannot choose anything other than rock, paper or scissors' do
-  end
 end

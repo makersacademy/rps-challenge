@@ -43,16 +43,16 @@ I would like to be able to play rock/paper/scissors
 Test Driven Development with Rspec- Tests to be Implemented
 --------------------------
 
-This is the ruby game test
+Tests for the Game
 
-Feature: Game Play
-  Scenarios:
-    Player can choose between rock, paper and scissors
-    Computer makes a choice
+	Feature: Game Play
+	  Scenarios:
+	    Player can choose between rock, paper and scissors
+	    Computer makes a choice
 
-Feature: Win or Lose
-  Scenarios:
-    Player is told whether they won or lost
+	Feature: Win or Lose
+	  Scenarios:
+	    Player is told whether they won or lost
 
 
 
@@ -85,3 +85,9 @@ Unit Testing:
 
 
 
+How This Game Works on IRB
+-------------------------
+
+Create a new game, player and computer player by assigning any variable to Game.new, Player.new and Game.new
+
+As you are the player, you can choose any of the three options: rock, paper and scissors
