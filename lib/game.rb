@@ -25,11 +25,13 @@ class Game
   end
 
   def result(p1_choice, p2_choice)
-    if (p1_choice == 'rock' && p2_choice == 'rock') || (p1_choice == 'paper' && p2_choice == 'paper') || (p1_choice == 'scissors' && p2_choice == 'scissors')
+    if (p1_choice == p2_choice)
       'Draw!'
     elsif (p1_choice == 'paper' && p2_choice == 'rock') || (p1_choice == 'rock' && p2_choice == 'scissors') || (p1_choice == 'scissors' && p2_choice == 'paper')
+      self.player_1.add_win
       self.player_1
     else
+      self.player_2.add_win
       self.player_2
     end
   end
