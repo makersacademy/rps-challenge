@@ -6,4 +6,4 @@ Feature: Playing again
   Scenario: Computer choice
     Given I am on the result page
     When I click on "Play again"
-    Then I should see "Make your selection"
+    Then I should see "Welcome"

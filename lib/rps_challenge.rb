@@ -22,6 +22,11 @@ class RPSChallenge < Sinatra::Base
     erb :lets_play
   end
 
+  get '/playagain' do
+    @name = session[:name]
+    erb :lets_play
+  end
+
   get '/game' do
     @name = session[:name]
     @type = 1
@@ -34,12 +39,20 @@ class RPSChallenge < Sinatra::Base
     erb :game
   end
 
-
   get '/result' do
     session[:selection] = params[:selection]
     @choice = session[:selection]
     @computer_choice = @@game.computer_choose
     @result = @@game.result(@choice, @computer_choice)
+    @name = session[:name]
+    erb :result
+  end
+
+  get '/result2' do
+    session[:selection] = params[:selection]
+    @choice = session[:selection]
+    @computer_choice = @@game.computer_choose_again
+    @result = @@game.new_game_result(@choice, @computer_choice)
     @name = session[:name]
     erb :result
   end
