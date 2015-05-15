@@ -1,13 +1,27 @@
 class GameEngine
-  attr_accessor :player_choice, :cpu_choice
+  attr_accessor :player_choice
 
 
   def result(player_choice)
-     :TIE if player_choice == cpu_choice
+
+    if player_choice == :rock && cpu_choice == :scissors || player_choice == :scissors && cpu_choice == :paper || player_choice == :paper && cpu_choice == :rock
+      :WIN
+    elsif
+      player_choice == cpu_choice
+      :TIE
+    else
+      :LOSE
+    end
   end
 
-  def cpu_choice
+  def cpu_choice(rand_no=3)
     options = [:rock, :paper, :scissors]
-    cpu_choice = options[rand(3)]
+    options[rand_no-1]
   end
+
+
+  def random
+    options[rand(3)]
+  end
+
 end
