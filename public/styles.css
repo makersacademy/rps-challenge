@@ -1,0 +1,86 @@
+body {
+  background-color:#FFC76C;
+  text-align:center;
+  font-family: 'Bangers', cursive;
+  color: orange;
+}
+
+h1 {
+  font-size:50px;
+  color:white;
+  background-color:#8E42CC;
+  margin:50px;
+  padding:30px;
+  border-radius:6px;
+}
+
+h2 {
+  font-size:35px;
+  color:#854ECC;
+  margin:10px;
+  padding:10px;
+  border-radius:6px;
+}
+
+form {
+  font-size:36px;
+  color:black;
+  background-color:#FCD57A;
+  margin:20px 50px;
+  padding:20px;
+  border-radius:6px;
+}
+
+button {
+border:1px solid #ffad41; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:30px;font-family:Bangers, helvetica, sans-serif; padding: 10px 10px; margin: 5px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:normal; color: #FFFFFF; width: 145px;
+ background-color: #ffc579; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#fb9d23));
+ background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -ms-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: -o-linear-gradient(top, #ffc579, #fb9d23);
+ background-image: linear-gradient(to bottom, #ffc579, #fb9d23);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffc579, endColorstr=#fb9d23);
+}
+
+button:hover{
+ border:1px solid #ff9913;
+ background-color: #ffaf46; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffaf46), to(#e78404));
+ background-image: -webkit-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -moz-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -ms-linear-gradient(top, #ffaf46, #e78404);
+ background-image: -o-linear-gradient(top, #ffaf46, #e78404);
+ background-image: linear-gradient(to bottom, #ffaf46, #e78404);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffaf46, endColorstr=#e78404);
+}
+
+.left {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    font-size: 26px;
+    padding: 10px;
+    margin-right: 75px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0);
+    border-radius: 10px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    vertical-align: top;
+}
+
+.right {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    font-size: 26px;
+    padding: 10px;
+    margin-left: 75px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0);
+    border-radius: 10px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    vertical-align: top;
+}
