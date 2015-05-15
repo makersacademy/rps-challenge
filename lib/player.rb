@@ -3,7 +3,7 @@ class Player
   attr_reader :choice
 
   def initialize
-  	@choice = ''
+  	@choice = 'No choice has been made yet!'
   end
 
   def player_choice(choice)
