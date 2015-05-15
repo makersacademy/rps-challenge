@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Seventh commit
+
+Can now see who the winner is
+
 --Sixth commit
 
 Added test for computer choice

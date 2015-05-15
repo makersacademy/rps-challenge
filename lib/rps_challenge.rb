@@ -28,6 +28,7 @@ class Rps_Challenge < Sinatra::Base
     session[:selection] = params[:selection]
     @choice = session[:selection]
     @computer_choice = @@game.computer_choose
+    @result = @@game.result(@choice, @computer_choice)
     erb :result
   end
 
