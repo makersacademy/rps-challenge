@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--
+
+Made it look pretty
+
 --Commit 14
 
 Refactored

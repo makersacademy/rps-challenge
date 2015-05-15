@@ -8,5 +8,5 @@ Feature: Starting the game
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Welcome"
-    When I click on "Try this"
-    Then I should see "Make your selection for extended game"
+    When I click on "Or click here"
+    Then I should see "Choose your weapon"

@@ -5,7 +5,7 @@ Feature: Starting the game
 
   Scenario: Registering for regular game
     Given I am on the homepage
-    Then I should see "Rock Paper Scissors Challenge, by Daryl Watson"
+    Then I should see "Rock Paper Scissors Challenge by Daryl Watson"
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Welcome"
