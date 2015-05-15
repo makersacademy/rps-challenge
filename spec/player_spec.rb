@@ -12,4 +12,11 @@ describe Player do
     expect{ game.player_1.choose 'potato' }.to raise_error 'You must play with rock, paper or scissors!'
   end
 
+  it 'is unable to choose anything other than rock, paper or scissors' do
+    game = Game.new Player
+    expect{ game.player_1.choose 'potato' }.to raise_error 'You must play with rock, paper or scissors!'
+  end
+
+  # Test for computer's random generated response.
+
 end

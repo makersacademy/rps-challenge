@@ -12,6 +12,10 @@ class Player
     rps
   end
 
+  def cpu_choice
+    ['rock', 'paper', 'scissors'].sample
+  end
+
   def add_win
     @wins += 1
   end

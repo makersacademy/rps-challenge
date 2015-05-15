@@ -36,4 +36,14 @@ class Game
     end
   end
 
+  def winner
+    if self.player_1.wins == self.goal
+      self.player_1
+    elsif self.player_2.wins == self.goal
+       self.player_2
+    else
+      nil
+    end
+  end
+
 end

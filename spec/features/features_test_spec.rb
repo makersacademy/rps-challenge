@@ -87,4 +87,20 @@ feature 'Set up a game of rock, paper, scissors' do
     expect(game.player_2.wins).to eq 1
   end
 
+  scenario 'Player 1 reaches goal and wins the entire game' do
+    game = Game.new Player
+    p1_choice = game.player_1.choose 'paper'
+    p2_choice = game.player_2.choose 'rock'
+    game.result(p1_choice, p2_choice)
+    expect(game.winner).to eq game.player_1
+  end
+
+  scenario 'Neither player has yet won game' do
+    game = Game.new Player, 2
+    p1_choice = game.player_1.choose 'paper'
+    p2_choice = game.player_2.choose 'rock'
+    game.result(p1_choice, p2_choice)
+    expect(game.winner).to eq nil
+  end
+
 end
