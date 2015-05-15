@@ -1,0 +1,1 @@
+web: bundle exec ruby lib/rock_paper_scissors.rb -p $PORT
