@@ -12,6 +12,8 @@ feature 'Player enters the game' do
   end
 
   xscenario 'Player cannot choose anything other than rock, paper or scissors' do
+    player = Player.new
+  	expect{ player.player_choice 'orangutan' }.to raise_error "You can\'t use that in a rock, paper, scissors game!"
   end
 
   xscenario 'Computer chooses between rock, paper and scissors' do
