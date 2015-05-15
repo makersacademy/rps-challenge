@@ -6,13 +6,6 @@ Feature: Starting the game
   Scenario: Registering for regular game
     Given I am on the homepage
     Then I should see "Rock Paper Scissors Challenge, by Daryl Watson"
-    When I click on "Click here"
-    Then I should see "Enter name"
-
-  Scenario: Entering a name
-    Given I am on the name entry page
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Welcome"
-    When I click on "Click here!"
-    Then I should see "Make your selection"

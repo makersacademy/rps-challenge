@@ -4,7 +4,7 @@ Feature: Starting the game
   I want to start a new game
 
   Scenario: Registering for extended game
-    Given I am on the name entry page
+    Given I am on the homepage
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Welcome"
