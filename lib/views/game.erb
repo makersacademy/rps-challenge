@@ -1,6 +1,11 @@
-Make your selection
+<body bgcolor="#E6E6FA">
+
 <% if @type == 1 %>
-  <form action="/result">
+  <h1><center>Make your selection
+  <br>
+  <br>
+  <img src="http://images.natureworldnews.com/data/images/full/5316/rock-paper-scissors.jpg?w=600">
+  <center><form action="/result">
     <select name="selection">
       <option value="Rock">Rock</option>
       <option value="Scissors">Scissors</option>
@@ -9,9 +14,14 @@ Make your selection
     <input type="submit" value="Choose">
   </form>
 <% elsif @type == 2 %>
-Make your selection for extended game <%= @name %>:
+<h1><center>Choose your weapon <%= @name %>:
+  <br>
+  <br>
+  <img src="http://a599.phobos.apple.com/us/r1000/105/Purple/v4/b9/8a/30/b98a3075-8ec2-6294-c8bc-beeedea6027d/mzl.xafmpgzv.png" height="350" widht="350">
+  <br>
+  <br>
   <form action="/result2">
-    <select name="selection">
+    <center><select name="selection">
       <option value="Rock">Rock</option>
       <option value="Scissors">Scissors</option>
       <option value="Paper">Paper</option>
