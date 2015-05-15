@@ -24,8 +24,16 @@ class RPSChallenge < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
+    @type = 1
     erb :game
   end
+
+  get '/game2' do
+    @name = session[:name]
+    @type = 2
+    erb :game
+  end
+
 
   get '/result' do
     session[:selection] = params[:selection]

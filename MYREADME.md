@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Twelth commit
+
+Can register for Rock, Paper, Scissors, Lizard, Spock
+
 --Eleventh commit
 
 Stubbed random computer choice
