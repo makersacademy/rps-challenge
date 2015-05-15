@@ -1,0 +1,51 @@
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
+the marketeer should be able to enter their name before the game
+the marketeer will be presented the choices (rock, paper and scissors)
+the marketeer can choose one option
+the game will choose a random option
+a winner will be declared
+
+UI IRB
+
+>> game = Game.new Player, GameHandler
+  >> creates Player1 and Player2 >> give each other an opponent
+>> game.player_1.take_turn :Rock
+>> game.player_2.take_turn :Paper
+    >> def process_result :Rock
+>> game.check_winner?
+
+
+Plan
+>> map-out objects system
+  >> Game
+    Responsibilities >> store 2 players, produce a winner, run the game logic
+    Attributes >> no attributes
+    Actions >> check if winner, initialize 2 players, receive a turn
+    Interactions >> player
+
+  >> Player
+    Responsibilities >> take a turn
+    Attributes >> winnner, loser
+    Actions >>
+    Interactions >>
+
+  >> GameHandler?
+
+>> map-out route Sinatra (MVP) >> add Player 2 route for multi-player
+  >> get a home page that takes to a link
+  >> get a form which takes your name
+  >> post result which shows that your name is Alex
+  >> get a form (game/turn) where ask for rock, paper or scissors
+  >> post a result
+  >> continue posting result until redirect to a winner page
+
+>> build feature tests
+>> AIM: have a basic working version before scale to web have name registration working
+
