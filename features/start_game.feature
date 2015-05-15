@@ -12,4 +12,5 @@ Feature: Starting the game
     When I fill in "name" with "Daniel"
     When I press "Let's go!"
     Then I should be on the Play RPS page
+    Then I should see "Your move, Daniel"
     Then I should see "Choose Rock, Paper, or Scissors:"

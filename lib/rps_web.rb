@@ -8,7 +8,6 @@ class RPSWeb < Sinatra::Base
 
   # Welcome screen and name entry
   get '/' do
-    'Hello RPSWeb!'
     erb :index
   end
 
@@ -16,11 +15,13 @@ class RPSWeb < Sinatra::Base
     # Name entry checks go first
     if params.has_key?('name')
       redirect '/' unless params[:name].length > 0
-      @name = params[:name]
-    elsif not(@name.defined?)
+      @@name = params[:name]
+    elsif not(defined?(@@name))
       redirect '/'
     end
 
+    # Make variables accessible from the ERB file
+    @name = @@name
     erb :play
 
   end

@@ -1,5 +1,10 @@
 Y HALO THAR!
-<form>
+
+Your move, <%= @name %>.
+<br>
+<form action="/play" method="POST">
   Choose Rock, Paper, or Scissors:
-  
+  <input type="submit" name="Rock" value="Rock">
+  <input type="submit" name="Paper" value="Paper">
+  <input type="submit" name="Scissors" value="Scissors">
 </form>
