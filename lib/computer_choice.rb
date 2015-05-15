@@ -28,41 +28,21 @@ class Game
     rand(4)
   end
 
-
   def new_game_result(player, cpu)
     if player == cpu
-      return 'Draw'
-    end
-    if player == 'Rock'
-      if cpu == 'Scissors' || cpu == 'Lizard'
-        return 'Player wins'
-      else
-        return 'Computer wins'
-      end
-    elsif player == 'Scissors'
-      if cpu == 'Paper' || cpu == 'Lizard'
-        return 'Player wins'
-      else
-        return 'Computer wins'
-      end
-    elsif player == 'Paper'
-      if cpu == 'Rock' || cpu == 'Spock'
-        return 'Player wins'
-      else
-        return 'Computer wins'
-      end
-    elsif player == 'Lizard'
-      if cpu == 'Paper' || cpu == 'Spock'
-        return 'Player wins'
-      else
-        return 'Computer wins'
-      end
-    elsif player == 'Spock'
-      if cpu == 'Scissors' || cpu == 'Rock'
-        return 'Player wins'
-      else
-        return 'Computer wins'
-      end
+      'Draw'
+    elsif player == 'Rock' && (cpu == 'Scissors' || cpu == 'Lizard')
+      'Player wins'
+    elsif player == 'Scissors' && (cpu == 'Paper' || cpu == 'Lizard')
+      'Player wins'
+    elsif player == 'Paper' && (cpu == 'Rock' || cpu == 'Spock')
+      'Player wins'
+    elsif player == 'Lizard' && (cpu == 'Paper' || cpu == 'Spock')
+      'Player wins'
+    elsif player == 'Spock' && (cpu == 'Scissors' || cpu == 'Rock')
+      'Player wins'
+    else
+      'Computer wins'
     end
   end
 

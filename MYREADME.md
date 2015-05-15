@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Commit 14
+
+Refactored
+
 --Thirteenth commit
 
 Can play the extended game

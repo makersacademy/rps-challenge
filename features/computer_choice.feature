@@ -9,10 +9,3 @@ Feature: Computer has a choice
     And I click on "Choose"
     Then I should see "Rock" onscreen
     And I should see "Computer chose " onscreen
-
-  Scenario: Computer choice in extended game
-    Given I am on the game page
-    When I select "Lizard"
-    And I click on "Choose"
-    Then I should see "Lizard" onscreen
-    And I should see "Computer chose " onscreen
