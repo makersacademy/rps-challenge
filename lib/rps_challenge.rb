@@ -27,7 +27,7 @@ class RPSChallenge < Sinatra::Base
     erb :game
   end
 
-  post '/game' do
+  get '/result' do
     session[:selection] = params[:selection]
     @choice = session[:selection]
     @computer_choice = @@game.computer_choose

@@ -8,3 +8,5 @@ Feature: Finding out who won
     When I select "Rock"
     And I click on "Choose"
     Then I should see "Result" onscreen
+
+
