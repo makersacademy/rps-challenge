@@ -1,19 +1,23 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+
+- [ ] Write ruby code for game engine (TDD)
+- [ ] Integrate with sinatra (TDD)
+
+CRC Model (Game Engine in Ruby)
+
+- Class GameEngine
+  - Determining win/lose/tie based on player choice
+
+Web interface (Sinatra)
+
+- Name form
+- Gameplay
+  - Result, play again
+
 
 ```sh
 As a marketeer
@@ -32,13 +36,6 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
 
 **Rōnin BANZAI!!!!**
 
