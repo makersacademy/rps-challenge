@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Eleventh commit
+
+Stubbed random computer choice
+
 --Tenth commit
 
 Can play again
