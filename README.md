@@ -88,6 +88,36 @@ Unit Testing:
 How This Game Works on IRB
 -------------------------
 
-Create a new game, player and computer player by assigning any variable to Game.new, Player.new and Game.new
+Create a new game, player and computer player by assigning any variable to Game.new, Player.new and Computer.new.
+So let's say:
 
-As you are the player, you can choose any of the three options: rock, paper and scissors
+  $ game = Game.new
+  $ player = Player.new
+  $ computer = Computer.new
+
+As you are the player, you can choose any of the three options: rock, paper and scissors. The function to make a choice as the player is player_choice('[insert your choice here]'). I'm going to choose 'rock':
+
+  $ player.player_choice('rock')
+
+To check the player's current choice, you can recall it with the 'choice' function:
+
+  $ player.choice
+  $    'rock'
+
+Now we'll tell the computer to make a decision:
+
+  $ computer.computer_choice
+
+We won't need to give them an argument, as they'll be choosing randomly for themself. But we can sneak a peak at their choice with the 'choice' method again:
+
+  $ computer.choice
+  $    'scissors'
+
+Hmm, this is looking good... Now let's see who's won (because, we don't know already, do we...)
+
+  $  game.compare(player.choice, computer.choice)
+  $    "YES! YOU WON!!!""
+
+... And now let the hours of fun begin!
+
+
