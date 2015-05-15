@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require_relative 'computer_choice'
 
 class Rps_Challenge < Sinatra::Base
+
+  @@game = Game.new
 
   set :views, Proc.new { File.join(root, "views") }
   enable :sessions
@@ -24,7 +27,8 @@ class Rps_Challenge < Sinatra::Base
   post '/game' do
     session[:selection] = params[:selection]
     @choice = session[:selection]
-    @choice
+    @computer_choice = @@game.computer_choose
+    erb :result
   end
 
 end
