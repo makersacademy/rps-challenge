@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Sixth commit
+
+Added test for computer choice
+
 --Fifth commit
 
 Computer can choose rock, paper or scissors, via a Game object
