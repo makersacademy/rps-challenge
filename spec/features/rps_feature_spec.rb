@@ -9,7 +9,5 @@ feature 'I can play against the computer and win' do
     player1.play "scissors"
     computer.moves= "paper"
     expect(game.winner?).to eq "player1 wins"
-  end
-
-  
+  end 
 end
