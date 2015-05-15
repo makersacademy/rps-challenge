@@ -17,4 +17,12 @@ class Rps_Challenge < Sinatra::Base
     erb :lets_play
   end
 
+  get '/game' do
+    erb :game
+  end
+
+  post '/game' do
+    "Rock"
+  end
+
 end

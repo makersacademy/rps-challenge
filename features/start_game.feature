@@ -14,3 +14,5 @@ Feature: Starting the game
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Let's play!"
+    When I click on "Let's play!"
+    Then I should see "Make your selection:   "
