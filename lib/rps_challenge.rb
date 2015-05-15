@@ -22,7 +22,9 @@ class Rps_Challenge < Sinatra::Base
   end
 
   post '/game' do
-    "Rock"
+    session[:selection] = params[:selection]
+    @choice = session[:selection]
+    @choice
   end
 
 end
