@@ -2,6 +2,10 @@ Rock Paper Scissors Challenge, by Daryl Watson
 
 Fully TDD with Cucumber
 
+--Ninth commit
+
+Can save a players name
+
 --Eigth commit
 
 Added tests for determining result

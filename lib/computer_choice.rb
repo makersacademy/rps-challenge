@@ -3,41 +3,40 @@ class Game
   def computer_choose
     x = rand(2)
     if x == 0
-      return 'Rock'
+      'Rock'
     elsif x == 1
-      return 'Scissors'
+      'Scissors'
     else
-      return 'Paper'
+      'Paper'
     end
   end
 
   def result(player_choice, computer_choice)
     if player_choice == 'Rock'
       if computer_choice == 'Rock'
-        return 'Draw'
+        'Draw'
       elsif computer_choice == 'Scissors'
-        return 'Player wins'
+        'Player wins'
       else
-        return 'Computer wins'
+        'Computer wins'
       end
     elsif player_choice == 'Scissors'
       if computer_choice == 'Rock'
-        return 'Computer wins'
+        'Computer wins'
       elsif computer_choice == 'Scissors'
-        return 'Draw'
+        'Draw'
       else
-        return 'Player wins'
+        'Player wins'
       end
     else
       if computer_choice == 'Rock'
-        return 'Player wins'
+        'Player wins'
       elsif computer_choice == 'Scissors'
-        return 'Computer wins'
+        'Computer wins'
       else
-        return 'Draw'
+        'Draw'
       end
     end
   end
-
 
 end

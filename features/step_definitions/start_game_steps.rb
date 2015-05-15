@@ -15,5 +15,5 @@ Given(/^I am on the name entry page$/) do
 end
 
 When(/^I enter my name, "([^"]*)"$/) do |my_name|
-  fill_in('name', :with => my_name)
+  fill_in('name', with: my_name)
 end

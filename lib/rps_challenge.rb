@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require_relative 'computer_choice'
 
-class Rps_Challenge < Sinatra::Base
+class RPSChallenge < Sinatra::Base
 
   @@game = Game.new
 
@@ -17,10 +17,13 @@ class Rps_Challenge < Sinatra::Base
   end
 
   post '/name' do
+    session[:name] = params[:name]
+    @name = session[:name]
     erb :lets_play
   end
 
   get '/game' do
+    @name = session[:name]
     erb :game
   end
 
@@ -29,6 +32,7 @@ class Rps_Challenge < Sinatra::Base
     @choice = session[:selection]
     @computer_choice = @@game.computer_choose
     @result = @@game.result(@choice, @computer_choice)
+    @name = session[:name]
     erb :result
   end
 
