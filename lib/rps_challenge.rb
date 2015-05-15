@@ -9,6 +9,12 @@ class Rps_Challenge < Sinatra::Base
     erb :index
   end
 
+  get '/name' do
+    erb :name_entry
+  end
 
+  post '/name' do
+    erb :lets_play
+  end
 
 end
