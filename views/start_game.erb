@@ -1,0 +1,12 @@
+<h2>Welcome <%= @name %></h2>
+<h3>Let's play</h3>
+<br>
+<h3>Please choose an option:</h3>
+<select name="choice">
+  <option value="rock">rock</option>
+  <option value="paper">paper</option>
+  <option value="scissors">scissors</option>
+  <input type="submit" value="Go">
+</select>
+
+<%= puts GAME.play %>
