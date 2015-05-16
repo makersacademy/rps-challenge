@@ -8,7 +8,13 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="screen"/>
   </head>
 
-  <body>
-    <h1><a href="/game/new">New Game</a></h1>
-  </body>
+  <div>
+    <form action="/game/get_ready" method="post">
+    Player 1, enter your name:-
+    <input type="text" name="p1_name">
+    Number of rounds:-
+    <input type="text" name="rounds">
+    <input type="submit" value="submit">
+    </form>
+  </div>
 </center>
