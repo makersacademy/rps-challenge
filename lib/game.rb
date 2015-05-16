@@ -19,11 +19,8 @@ class Game
       return "YOU WON"
     elsif player.shape == "scissors" && computer.random_shape == "paper"
       return "YOU WON"
-    lsif player.shape == "rock" && computer.random_shape == "scissors"
-      return "YOU WON"
-    elsif player.shape == "scissors" && computer.random_shape == "paper"
+    else
       return "YOU LOST"
-    else player.shape == "paper" && computer.random_shape == "rock"
     end
   end
 end
