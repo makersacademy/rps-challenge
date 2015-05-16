@@ -1,12 +1,19 @@
 <div>
-<% if @player_choice.nil? == false %>
+<% if @player_choice.nil? == true %>
+
+
+<h3>Greetings Professor <%= @name %>.</h3>
+<p>Shall we play a game?</p>
+<p>Pick one:</p>
+
+<% else %>
 
   <% if @result == :win %>
-  <div class="alert alert-success text-center" role="alert">You win!</div>
+  <div class="alert alert-success text-center" role="alert"><%= @name %>, you win!</div>
   <% elsif @result == :lose %>
-  <div class="alert alert-danger text-center" role="alert">You lost.</div>
+  <div class="alert alert-danger text-center" role="alert">Hahaha, you lost <%= @name %>.</div>
   <% else @result == :tie %>
-  <div class="alert alert-info text-center" role="alert">It's a tie, try again!</div>
+  <div class="alert alert-info text-center" role="alert"><%= @name %> it's a tie, try again!</div>
   <% end %>
 
   <p><span class="label label-default">You chose:</span> <%= @player_choice %></p>
@@ -14,10 +21,7 @@
 
 
   <p>Play again?</p>
-    <% else %>
-    <h3>Greetings Professor <%= @name %>.</h3>
-    <p>Shall we play a game?</p>
-    <p>Pick one:</p>
+
   <% end %>
 
 </div>
@@ -31,4 +35,4 @@
 <div>
   <br>
 <p><a href = "/" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Change player</a></p>
-<div>
+</div>

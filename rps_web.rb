@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'rps'
+require_relative 'lib/rps'
 class RPSWeb < Sinatra::Base
   enable :sessions
   set :session_secret, 'spock'
