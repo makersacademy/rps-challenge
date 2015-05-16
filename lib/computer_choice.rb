@@ -1,21 +1,20 @@
 class Game
 
   def random_number
-    rand(2)
-  end
-
-  def computer_choose
-    choices = ['Rock', 'Paper', 'Scissors']
-    choices[random_number]
+    rand(3)
   end
 
   def random_number_again
-    rand(4)
+    rand(5)
   end
 
-  def computer_choose_again
+  def computer_choose(game_type)
     choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
-    choices[random_number_again]
+    if game_type == 1
+      choices[random_number]
+    elsif game_type == 2
+      choices[random_number_again]
+    end
   end
 
   def result(player, cpu)

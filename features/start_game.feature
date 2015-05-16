@@ -9,3 +9,9 @@ Feature: Starting the game
     When I enter my name, "Daryl"
     And I click on "Go!"
     Then I should see "Welcome"
+
+  Scenario: Accepting a name
+    Given I am on the homepage
+    When I don't enter anything
+    And I click on "Go!"
+    Then I should see "Start by entering your name"

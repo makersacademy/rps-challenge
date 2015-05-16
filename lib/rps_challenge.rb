@@ -12,14 +12,14 @@ class RPSChallenge < Sinatra::Base
     erb :index
   end
 
-  get '/name' do
-    erb :name_entry
-  end
-
   post '/name' do
     session[:name] = params[:name]
     @name = session[:name]
-    erb :lets_play
+    if @name == ""
+      erb :index
+    else
+      erb :lets_play
+    end
   end
 
   get '/playagain' do
@@ -29,12 +29,14 @@ class RPSChallenge < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
+    session[:game_type] = 1
     @type = 1
     erb :game
   end
 
   get '/game2' do
     @name = session[:name]
+    session[:game_type] = 2
     @type = 2
     erb :game
   end
@@ -42,7 +44,8 @@ class RPSChallenge < Sinatra::Base
   get '/result' do
     session[:selection] = params[:selection]
     @choice = session[:selection]
-    @computer_choice = @@game.computer_choose
+    @game_type = session[:game_type]
+    @computer_choice = @@game.computer_choose(@game_type)
     @result = @@game.result(@choice, @computer_choice)
     @name = session[:name]
     erb :result

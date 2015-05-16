@@ -17,3 +17,7 @@ end
 When(/^I enter my name, "([^"]*)"$/) do |my_name|
   fill_in('name', with: my_name)
 end
+
+When(/^I don't enter anything$/) do
+  fill_in('name', with: "")
+end
