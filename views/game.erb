@@ -1,0 +1,25 @@
+<style>
+  #game_box {
+    border: 1px solid;
+    padding: 5px;
+  }
+  #game_box div {
+    width: 50%;
+    text-align: center;
+  }
+  .arena {
+    min-height:100px;
+  }
+</style>
+<p id="player">Welcome <%= @name %>, lets play</p>
+<div id="game_box" style="max-width:300px;">
+  <div style="float:left;"><%= @name %></div><div style="float:right;">Droid</div>
+  <div class="arena" style="float:left;"><%= @move %></div><div class="arena" style="float:right;"><%= @computer_move %></div>
+  <!-- <p><%= @move %></p> -->
+  <p><%= @result %></p>
+  <form action="/game" method="post">
+    <button type="submit" name="move" value="Rock">Rock</button>
+    <button type="submit" name="move" value="Paper">Paper</button>
+    <button type="submit" name="move" value="Scissors">Scissors</button>
+  </form>
+</div>
