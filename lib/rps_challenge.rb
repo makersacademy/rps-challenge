@@ -30,24 +30,23 @@ class RPSChallenge < Sinatra::Base
   get '/game' do
     @name = session[:name]
     session[:game_type] = 1
-    @type = 1
+    @type = session[:game_type]
     erb :game
   end
 
   get '/game2' do
     @name = session[:name]
     session[:game_type] = 2
-    @type = 2
+    @type = session[:game_type]
     erb :game
   end
 
   get '/result' do
-    session[:selection] = params[:selection]
-    @choice = session[:selection]
+    @name = session[:name]
+    @choice = params[:selection]
     @game_type = session[:game_type]
     @computer_choice = @@game.computer_choose(@game_type)
     @result = @@game.result(@choice, @computer_choice)
-    @name = session[:name]
     erb :result
   end
 

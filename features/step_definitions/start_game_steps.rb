@@ -10,10 +10,6 @@ When(/^I click on "([^"]*)"$/) do |button|
   click_on(button)
 end
 
-Given(/^I am on the name entry page$/) do
-  visit '/name'
-end
-
 When(/^I enter my name, "([^"]*)"$/) do |my_name|
   fill_in('name', with: my_name)
 end

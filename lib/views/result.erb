@@ -27,7 +27,7 @@
   <center><img src="http://startrek.jaafar.net/spock2.jpg" height="200" width="200">
 <% end %>
 <br>
-<% if @result.include?('Computer') %>
+<% if @result == 'Computer wins!' %>
   <h1><center><%= @result %></h1>
 <% elsif @result == 'Draw' %>
   <h1><center>It's a draw!</h1>
