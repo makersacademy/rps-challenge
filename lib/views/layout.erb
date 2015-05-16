@@ -17,22 +17,16 @@
 
 <body>
 <div class="container">
-
-
-
-
-
 <div class="vertical-align">
-
-<div class="jumbotron ">
-
-<%if @error then %>
-<div class="alert alert-error">
-<%=@error%>
+	<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+			<div class="jumbotron ">
+			<%=yield %>
+			</div>
+		</div>
 </div>
-<% end %>
-<%=yield %>
-</div>
+
+
 
 </div>
 </div>

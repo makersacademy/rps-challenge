@@ -1,13 +1,11 @@
-Feature: Enter my name
+Feature: Play a game
 
   As a marketeer
-  So that I can see my name in lights
-  I would like to register my name before playing an online game
+  So that I can enjoy myself away from the daily grind
+  I would like to be able to play rock/paper/scissors
 
-  Scenario: Enter my name and see it on game page
-
-  Given I am on the homepage
-  When I fill in "name" with "Rodney"
-  And I press "Submit"
-  Then I should be on the game page
-  And I should see "Hey Rodney!"
+  Scenario: TIE: Player 1 & CPU both choose paper
+    And I seed with 1
+    Given I am on the game page
+    When I follow "Paper"
+    Then I should see "It's a tie, try again!"
