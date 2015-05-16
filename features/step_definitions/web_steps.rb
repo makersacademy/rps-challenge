@@ -2,20 +2,20 @@ Given(/^I am on the homepage$/) do
   visit('/')
 end
 
-Given(/^I am on the select number of players page$/) do
+Given(/^I am on the register page$/) do
   visit('/game/new')
 end
 
-When(/^I follow "([^"]*)"$/) do |new_game|
-  click_link(new_game)
+When(/^I follow "([^"]*)"$/) do |link|
+  click_link(link)
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
    page.should have_content(text)
 end
 
-When(/^I fill in p1_name with "([^"]*)"$/) do |arg1|
-  fill_in('p1_name', :with => 'Andy')
+When(/^I fill in name with "([^"]*)"$/) do |arg1|
+  fill_in('name', :with => 'Andy')
 end
 
 When(/^I fill in rounds with "([^"]*)"$/) do |arg1|

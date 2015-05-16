@@ -1,0 +1,25 @@
+<center>
+  <head>
+    <style>
+      body {
+        background: url("http://uthmag.com/wp-content/uploads/2015/02/Rock_Paper_Scissors_by_smashmethod.jpg") no-repeat fixed;
+      }
+    </style>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="choice" class="entry">
+    Select rock, paper or scissors
+      <form action="/game/1_player/get_ready" method="post">
+        <input type="radio" name="choice" value="rock"/>ROCK!<br>
+        <input type="radio" name="choice" value="paper"/>PAPER!<br>
+        <input type="radio" name="choice" value="scissors"/>SCISSORS!<br>
+        <input type="submit" value="submit">
+      </form>
+    </div>
+
+
+
+  </body>
+</center>

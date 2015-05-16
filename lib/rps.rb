@@ -14,23 +14,23 @@ enable :sessions
   end
 
   get '/game/new' do
-    erb :select_no_players
-  end
-
-  get '/game/new' do
-    erb :select_no_players
-  end
-
-  get '/game/1_player' do
     erb :register
   end
 
   post '/game/get_ready' do
-    session[:p1_name] = params[:p1_name]
+    session[:name] = params[:name]
     session[:rounds] = params[:rounds]
-    @p1_name = session[:p1_name]
+    @name = session[:name]
     @rounds = session[:rounds]
     erb :get_ready
+  end
+
+  get '/game/choose' do
+    session[:name] = params[:name]
+    session[:rounds] = params[:rounds]
+    @name = session[:name]
+    @rounds = session[:rounds]
+    erb :choose
   end
 
   # start the server if ruby file executed directly

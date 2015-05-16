@@ -1,7 +1,5 @@
 class Player
 
-  attr_reader :wins
-
   def initialize(name)
     @name = name
     @wins = 0
@@ -14,6 +12,10 @@ class Player
 
   def cpu_choice
     ['rock', 'paper', 'scissors'].sample
+  end
+
+  def wins
+    @wins
   end
 
   def add_win
