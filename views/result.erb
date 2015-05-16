@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/global.css" />
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<% image_library = { 'rock' => '<img src="/images/rock.jpg" width="20%" height="40%" id="rock">',
+      'paper' => '<img src="/images/paper.png" width="20%" height="40%" id="paper">',
+      'scissors' => '<img src="/images/scissors.jpg" width="20%" height="40%" id="scissors">'} %>
+
+
+<div id='computers-pick'>
+  <h1><%= @other_player_name %> picked '<%= @other_players_choice.capitalize %>'</h1>
+<br><br>
+  <%= image_library[@other_players_choice] %>
+</div>
+
+<div id='result'>
+  <h1> <%= @result %> </h1>
+</div>
+<a href='/again' id='try_again' class='myButton'>Play Again</a>
