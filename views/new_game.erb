@@ -1,9 +1,36 @@
-<div>
-<h1> What is your name? </h1>
+<link href="http://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+<style>
+body {
+  background-color:#D3D3D3;
+}
+#question {
+  font-size:4em;
+  font-family:'Indie Flower', cursive;
+  color:black;
+}
+.box {
+  width: 25%;
+  height: 60px;
+  border: 15px solid #c6c9cc;
+  border-radius: 10px;
+  color: #888;
+  display: inline-block;
+  margin: 5px 0 27px 0;
+  padding: 5px 8px;
+}
+.submit_button {
+  width: 10%;
+  border: 15px;
+  background: #696969;
+  padding: 11px 30px;
+  font-size: 14px;
+}
+
+</style>
+<h1 id="question">Let's have some fun</h1>
 <h2> <%@visitor%> </h2>
 
 <form action='/game/new' method='post'>
-  <input type='text' name="name">
-  <input type="submit" value ="submit">
+  <input class="box" type='text' name="name" placeholder='Add your name here'>
+  <input class="submit_button" type="submit" value ="Start ;)">
 </form>
-</div>

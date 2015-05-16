@@ -1,8 +1,43 @@
-<h1> Welcome  </h1>
+<link href="http://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+<style>
+body {
+  background-color:#D3D3D3;
+}
+
+#title {
+  margin-right: 25px;
+  margin-left: 400px;
+  margin-top: 25px;
+  font-size:4em;
+  font-family:'Indie Flower', cursive;
+  color:black;
+}
+
+.choice {
+  margin-right: 25px;
+  margin-left: 200px;
+  margin-top: 200px;
+  font-size: 50em;
+  border-radius: 10px;
+}
+.submit_button {
+  margin-right: 25px;
+  margin-left: 400px;
+  margin-top: 100px;
+  border-radius: 40px;
+  background: #696969;
+  padding: 20px 60px;
+  font-size: 2em;
+
+
+}
+</style>
+
+<h1 id = "title"> Welcome  </h1>
 <h2> <%= @shapes%> </h2>
 <form action='/start' method="post">
-  <input type="radio" name="shape" value="rock" id = "rock" checked> Rock
-  <input type="radio" name="shape" value="scissors" id = "scissors"> Scissors
-  <input type="radio" name="shape" value="paper" id = "paper"> Paper
-  <input type="submit" value="Submit">
+  <input class="choice" type="radio" name="shape" value="rock" id = "rock" checked> Rock
+  <input class="choice" type="radio" name="shape" value="scissors" id = "scissors"> Scissors
+  <input class="choice" type="radio" name="shape" value="paper" id = "paper"> Paper
+  <input class='submit_button' type="submit" value="Test your luck">
 </form>

@@ -3,6 +3,7 @@ require_relative 'game'
 
 class RockPaperScissors < Sinatra::Base
    set :views, proc { File.join(root, '..', 'views') }
+   set :images, Proc.new { File.join(root, "..", "images") }
    player = Player.new
    computer = Computer.new
    @@game = Game.new(player, computer)
