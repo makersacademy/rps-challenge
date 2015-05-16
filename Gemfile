@@ -12,4 +12,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'cucumber-sinatra'
+  gem 'launchy'
+  gem 'shotgun'
 end
