@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="/styles.css">
+<h1 class='flashing'><%= session[:name] %></h1>
+<% if params[:move] %>
+  <% if params[:result] == :win %>
+    <h1>You Win!</h1>
+    <p>Computer took move '<%= @other_move %>', and you played '<%= params[:move] %>'.</p>
+    <p>Play again:</p>
+  <% elsif params[:result] == :lose %>
+    <h1>You Lose!</h1>
+    <p>Computer took move '<%= @other_move %>', and you played '<%= params[:move] %>'.</p>
+    <p>Play again:</p>
+  <% else %>
+    <h1>Draw!</h1>
+    <p>You both played '<%= params[:move] %>'.</p>
+    <p>Play again:</p>
+  <% end %>
+<% end  %>
+<form action='/game' method='post' align='center'>
+  <button type='submit' name='move' value='rock'>Rock</button>
+  <button type='submit' name='move' value='paper'>Paper</button>
+  <button type='submit' name='move' value='scissors'>Scissors</button><br>
+  <button type='submit' name='move' value='lizard'>Lizard</button>
+  <button type='submit' name='move' value='spock'>Spock</button>
+</form>
