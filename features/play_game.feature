@@ -13,7 +13,7 @@ Feature: Starting the game
     Then I should see "Enter your name"
     When I fill in name with "Andy"
     When I fill in rounds with "6"
-    And I click "submit"
+    And I click "Submit"
     Then I should see "Hello, Andy!"
     Then I should see "6 rounds"
 
@@ -21,7 +21,7 @@ Feature: Starting the game
     Given I am on the register page
     When I fill in name with "Andy"
     When I fill in rounds with "6"
-    And I click "submit"
+    And I click "Submit"
     When I follow "Play!"
     Then I should see "Select rock, paper or scissors"
 
@@ -29,9 +29,9 @@ Feature: Starting the game
     Given I am on the register page
     When I fill in name with "Andy"
     When I fill in rounds with "6"
-    And I click "submit"
+    And I click "Submit"
     When I follow "Play!"
     Then I should see "Select rock, paper or scissors"
     When I choose 'Rock'
-    And I click "submit"
+    And I click "Submit"
     Then I should see "Result"

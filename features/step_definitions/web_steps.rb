@@ -15,19 +15,19 @@ When(/^I follow "([^"]*)"$/) do |link|
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
-   page.should have_content(text)
+  page.should have_content(text)
 end
 
-When(/^I fill in name with "([^"]*)"$/) do |arg1|
-  fill_in('name', :with => 'Andy')
+When(/^I fill in name with "([^"]*)"$/) do |text|
+  fill_in('name', with: text)
 end
 
-When(/^I fill in rounds with "([^"]*)"$/) do |arg1|
-  fill_in('rounds', :with => '6')
+When(/^I fill in rounds with "([^"]*)"$/) do |integer|
+  fill_in('rounds', with: integer)
 end
 
-When(/^I click "([^"]*)"$/) do |arg1|
-  click_button('SUBMIT')
+When(/^I click "([^"]*)"$/) do |button|
+  click_button(button)
 end
 
 When(/^I choose 'Rock'$/) do

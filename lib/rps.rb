@@ -35,7 +35,8 @@ enable :sessions
     @name = @@game.player_1.name
     @choice = params[:choice]
     @cpu_choice = @@game.player_2.cpu_choice
-    @winner = @@game.result(@choice, @cpu_choice)
+    @result = @@game.result(@choice, @cpu_choice)
+    @result == 'draw' ? @winner = 'Draw!' : @winner = "#{@result.name} is the winner!"
     @wins = @@game.player_1.wins
     @cpu_wins = @@game.player_2.wins
     @rounds = @@game.goal

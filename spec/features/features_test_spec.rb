@@ -10,7 +10,7 @@ feature 'Set up a game of rock, paper, scissors' do
     game = Game.new Player
     p1_choice = game.player_1.choose 'rock'
     p2_choice = game.player_2.choose 'rock'
-    expect(game.result(p1_choice, p2_choice)).to eq 'Draw!'
+    expect(game.result(p1_choice, p2_choice)).to eq 'draw'
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 0
   end
@@ -19,7 +19,7 @@ feature 'Set up a game of rock, paper, scissors' do
     game = Game.new Player
     p1_choice = game.player_1.choose 'paper'
     p2_choice = game.player_2.choose 'paper'
-    expect(game.result(p1_choice, p2_choice)).to eq 'Draw!'
+    expect(game.result(p1_choice, p2_choice)).to eq 'draw'
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 0
   end
@@ -28,7 +28,7 @@ feature 'Set up a game of rock, paper, scissors' do
     game = Game.new Player
     p1_choice = game.player_1.choose 'scissors'
     p2_choice = game.player_2.choose 'scissors'
-    expect(game.result(p1_choice, p2_choice)).to eq 'Draw!'
+    expect(game.result(p1_choice, p2_choice)).to eq 'draw'
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 0
   end
