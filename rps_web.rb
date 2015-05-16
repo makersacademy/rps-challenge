@@ -9,7 +9,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/game' do
-    session[:name] = params[:name] if params[:name]
+    session[:name] = params[:name].empty? ? 'Human' :  params[:name] 
     @name = session[:name]
     erb :game
   end

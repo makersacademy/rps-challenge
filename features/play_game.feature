@@ -8,4 +8,4 @@ Feature: Play a game
     And I seed with 2
     Given I am on the game page
     When I follow "Rock"
-    Then I should see "it's a tie, try again!"
+    Then I should see "It's a tie, try again!"

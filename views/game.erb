@@ -1,4 +1,4 @@
-<div>
+<div class = "text-center">
 <% if @player_choice.nil? == true %>
 
 
@@ -9,18 +9,32 @@
 <% else %>
 
   <% if @result == :win %>
-  <div class="alert alert-success text-center" role="alert"><%= @name %>, you win!</div>
+  <div class="alert alert-success" role="alert">You win!</div>
   <% elsif @result == :lose %>
-  <div class="alert alert-danger text-center" role="alert">Hahaha, you lost <%= @name %>.</div>
+  <div class="alert alert-danger" role="alert">Hahaha, you lost.</div>
   <% else @result == :tie %>
-  <div class="alert alert-info text-center" role="alert"><%= @name %> it's a tie, try again!</div>
+  <div class="alert alert-info" role="alert">It's a tie, try again!</div>
   <% end %>
+  <div>
+    <div class = "col-md-5">
+      <p><span class="label label-default"><%= @name %></span></p>
+      <h1><%= @player_choice %></h1>
+    </div>
+    <div class = "col-md-2" >
+      <br>
+      <br>
+      <br>
+      <h2>vs.</h2>
+    </div>
+    <div class = "col-md-5">
+      <p><span class="label label-default">CPU</span></p>
+      <h1><%= @cpu_choice %></h1>
+    </div>
+  </div>
+  <div>
+    <p>Play again?</p>
+  </div>
 
-  <p><span class="label label-default">You chose:</span> <%= @player_choice %></p>
-  <p><span class="label label-default">CPU chose:</span> <%= @cpu_choice %></p>
-
-
-  <p>Play again?</p>
 
   <% end %>
 
