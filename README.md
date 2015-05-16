@@ -1,12 +1,18 @@
-[![Build Status](https://travis-ci.org/rodcul/rps-challenge.svg)](https://travis-ci.org/rodcul/rps-challenge) [![Build Status](https://travis-ci.org/rodcul/rps-challenge.svg)](https://travis-ci.org/rodcul/rps-challenge)
+[![Build Status](https://travis-ci.org/rodcul/rps-challenge.svg)](https://travis-ci.org/rodcul/rps-challenge) [![Coverage Status](https://coveralls.io/repos/rodcul/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/rodcul/rps-challenge?branch=master)
 
 # Challenge: Rock, Paper, Scissors
+
+LIVE DEMO: https://rps-rodcul.herokuapp.com
 
 Week 3 challenge as part of [Makers Academy](http://www.makersacademy.com/)
 
 Built using ruby + sinatra, tested using Cucumber
 
+- [x] Basic version (Rock, paper, scissors)
+- [ ] Bonus 1 (Multiplayer - pending JS magic)
+- [x] Bonus 2 (Rock, paper, scissors, lizard, spock)
 
+![Screenshot](/public/img/screenshot.png)
 
 
 ```sh
