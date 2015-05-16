@@ -48,13 +48,4 @@ class RPSChallenge < Sinatra::Base
     erb :result
   end
 
-  get '/result2' do
-    session[:selection] = params[:selection]
-    @choice = session[:selection]
-    @computer_choice = @@game.computer_choose_again
-    @result = @@game.new_game_result(@choice, @computer_choice)
-    @name = session[:name]
-    erb :result
-  end
-
 end

@@ -44,7 +44,7 @@ describe Game do
     end
 
     it 'a computer winning' do
-      expect(subject.result("Paper", "Scissors")).to eq "Computer wins"
+      expect(subject.result("Paper", "Scissors")).to eq "Computer wins!"
     end
 
     it 'a draw' do
@@ -54,18 +54,16 @@ describe Game do
 
   context 'Can determine in an extended game' do
 
-    it { is_expected.to respond_to(:new_game_result).with(2).arguments }
-
     it 'a player winning' do
-      expect(subject.new_game_result("Lizard", "Paper")).to eq "Player wins"
+      expect(subject.result("Lizard", "Paper")).to eq "Player wins"
     end
 
     it 'a computer winning' do
-      expect(subject.new_game_result("Rock", "Spock")).to eq "Computer wins"
+      expect(subject.result("Rock", "Spock")).to eq "Computer wins!"
     end
 
     it 'a draw' do
-      expect(subject.new_game_result("Spock", "Spock")).to eq "Draw"
+      expect(subject.result("Spock", "Spock")).to eq "Draw"
     end
   end
 

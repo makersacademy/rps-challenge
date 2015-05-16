@@ -7,4 +7,4 @@ Feature: Finding out who won
     Given I am on the game page
     When I select "Rock"
     And I click on "Choose"
-    Then I should see "Result" onscreen
+    Then I should see the result of the game

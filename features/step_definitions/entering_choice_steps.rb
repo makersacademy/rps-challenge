@@ -9,3 +9,7 @@ end
 Then(/^I should see "([^"]*)" onscreen$/) do |choice|
   expect(page).to have_content(choice)
 end
+
+Then(/^I should see the result of the game$/) do
+  expect(page).to have_content(@result)
+end
