@@ -1,5 +1,9 @@
 class Stone
   def versus move
-    :draw
+      if move.class == Scissors
+        :win
+      else
+        :draw
+      end
   end
 end

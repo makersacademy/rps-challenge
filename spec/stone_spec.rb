@@ -10,4 +10,9 @@ describe Stone do
     expect(stone1.versus(stone2)).to eq :draw
   end
 
+  it 'should declare a win when playing vs scissors' do
+    stone = Stone.new
+    scissors = Scissors.new
+    expect(stone.versus(scissors)).to eq :win
+  end
 end
