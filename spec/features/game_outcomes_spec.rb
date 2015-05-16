@@ -4,7 +4,7 @@ feature '' do
     player = Player.new
     computer = Computer.new
     player.player_choice('rock')
-    expect(computer).to_receive(computer_choice).and_return('rock')
+    expect(computer).to_receive(:computer_choice).and_return('rock')
     expect(game.compare(player.choice, computer.choice)).to eq("You've both drawn...")
   end
 	

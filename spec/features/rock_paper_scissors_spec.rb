@@ -18,6 +18,10 @@ feature 'Player enters the game' do
 
   xscenario 'Computer chooses randomly between rock, paper and scissors' do
   	# NOT SURE HOW THIS CAN BE TEST - TRIED USING PIPES AND DIDN'T WORK?
+    game = Game.new
+    computer = Computer.new
+    expect(computer).to receive(:computer_choice).and_return('monkey')
+    expect(computer.choice).to eq 'paper'
   end
 
 end
