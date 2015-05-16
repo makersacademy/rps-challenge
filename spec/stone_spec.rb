@@ -15,4 +15,10 @@ describe Stone do
     scissors = Scissors.new
     expect(stone.versus(scissors)).to eq :win
   end
+
+  it 'should declare a loss when playing vs paper' do
+    stone = Stone.new
+    paper = Paper.new
+    expect(stone.versus(paper)).to eq :loss
+  end
 end
