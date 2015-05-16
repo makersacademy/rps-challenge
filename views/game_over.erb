@@ -10,11 +10,11 @@
 
   <body>
     <h1>
-      <u>Result</u></br>
+      <u>Game Over</u></br>
       <%= @name %>, you chose <%= @choice %> (Wins: <%= @wins %>/<%= @goal %>)</br>
       The computer chose <%= @cpu_choice %> (Wins: <%= @cpu_wins %>/<%= @goal %>)</br>
-      <%= @winner %></br>
-      <a href="/game/choose">Next Round</a>
+      <%= @winner %> is the overall winner!</br>
+      <a href="/game/new">Play Again?</a>
     </h1>
   </body>
 </center>

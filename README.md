@@ -1,12 +1,26 @@
 # RPS Challenge: Rōnin Badge Test
 
+TO DO
+-----
+*   Round wins are not being counted properly and so game continues after goal has been reached, i.e. 3/2 wins...
+*   Add game over scenario tests (will require mocks (or Cucumber equivalent - before/after hooks? - apply elsewhere where required)):-
+    Scenario: Ending the game and starting over
+    Given I am on the game over page
+    Then I should see "Game Over"
+    When I follow "Play Again?"
+    Then I should see "Enter your name"
+*   N.B. choose.erb radio button to see how 'id' must be added to make Cucumber features test work.
+*   Function to show reasoning for outcome, i.e. 'scissors cuts paper / paper covers rock / rock crushes scissors' - perhaps use hashes with key being phrase and element being array - compare two choices again the element array; will be especially useful when expanding to Spock and lizard.
+*   Two player mode.
+*   Rock paper scissors lizard spock mode.
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!

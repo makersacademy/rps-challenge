@@ -10,9 +10,10 @@
 
   <body>
     <h1>
+      <u>Get Ready</u></br>
       Hello, <%= @name %>!</br>
       Get ready to play Rock, Paper, Scissors!</br>
-      The winner is the first to win <%= @rounds %> rounds.</br>
+      The winner is the first to win <%= @goal %> round<% if @goal > 1 %>s<% end %>.</br>
       <a href="/game/choose">Play!
     </h1>
   </body>
