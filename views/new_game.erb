@@ -1,0 +1,9 @@
+<form action ="/new_game" method='post' align='center'>
+    Enter your name?
+    <input type="text" name="name">
+    <input type="submit" id="submit">
+</form>
+
+<% if @message %>
+<h2><%= @message %></h2>
+<% end %>
