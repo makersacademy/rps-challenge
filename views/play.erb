@@ -1,11 +1,25 @@
-<p>Fire at the ships</p>
+<div class="container-fluid">
+  <div align="center">
+    <form action="/game" method = "post">
+      <div class="row text-center">
+          <div class="col-xs-12 col-sm-4">
+            <div class="form-group">
+              <label for="move">Select your move <%= session["user"] %></label>
+              <select name="move"class="form-control" id="sel1">
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+              </select>
+            </div>
+          </div>
+      </div>
+      <div class="row text-center">
+        <div class = "col-sm-12 col-offset-3">
+      <input type="submit" value="Submit">
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
 
-<% if @word == true %>
-Game over sucker!
-<% else %>
-<form action="/shoot" method="post">
-    <input type="text" name="position">
-    </br>
-    <button>Submit</button>
-    </form>
-<% end %>
+

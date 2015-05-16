@@ -5,15 +5,32 @@ require './lib/computer'
 
 class Rps < Sinatra::Base
     set :views, Proc.new { File.join(root, "..", "views") }
+    enable :sessions
 
 
   get '/' do
+    session["user"] ||= nil
     erb :index
   end
 
+  post '/game' do
+    session["user"] = params[:value]
+    erb :game
+
+  end
+
   get '/game/new' do
+    session["game"] = Game.new Player.new, Computer.new
     erb :game_new
   end
+
+  get '/game' do
+    erb :play
+  end
+
+
+
+
 
 
 
