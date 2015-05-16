@@ -1,6 +1,4 @@
-require 'paper'
 require 'stone'
-require 'scissors'
 
 describe Paper do
 
@@ -10,12 +8,6 @@ describe Paper do
     paper1 = Paper.new
     paper2 = Paper.new
     expect(paper1.versus(paper2)).to eq :draw
-  end
-
-  it 'should declare a win when paper plays over stone' do
-    paper = Paper.new
-    stone = Stone.new
-    expect(paper.versus(stone)).to eq :win
   end
 
 end
