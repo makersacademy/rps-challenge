@@ -1,11 +1,12 @@
 class Paper
 
   def versus(move)
-    if move.class == Paper
+      if move.class == Paper
       :draw
-    else
+      elsif move.class == Scissors
+      :loss
+      else
       :win
     end
   end
-
 end

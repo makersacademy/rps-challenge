@@ -12,10 +12,16 @@ describe Paper do
     expect(paper1.versus(paper2)).to eq :draw
   end
 
-  it 'should declare a win when paper plays over stone' do
+  it 'should declare a win when paper plays vs stone' do
     paper = Paper.new
     stone = Stone.new
     expect(paper.versus(stone)).to eq :win
+  end
+
+  it 'should declare a loss when paper plays vs scissors' do
+    paper = Paper.new
+    scissors = Scissors.new
+    expect(paper.versus(scissors)).to eq :loss
   end
 
 end
