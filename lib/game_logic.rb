@@ -4,7 +4,7 @@ require_relative './player'
 class GameLogic
 
   def initialize
-    @game_rules = {"Rock" => "Scissors",  "Paper" => "Rock", "Scissors" => "Paper"}
+    @game_rules = { "Rock" => "Scissors",  "Paper" => "Rock", "Scissors" => "Paper" }
   end
 
   def result cpu, player

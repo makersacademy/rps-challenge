@@ -4,7 +4,7 @@ require './lib/player'
 require './lib/game_logic'
 
 class RPS < Sinatra::Base
-  set :public_folder, Proc.new { File.join('..','public') }
+  set :public_folder, proc { File.join('..', 'public') }
 
   get '/' do
     erb :index
@@ -37,5 +37,5 @@ class RPS < Sinatra::Base
   # end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
