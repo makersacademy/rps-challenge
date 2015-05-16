@@ -41,4 +41,10 @@ feature 'Can play Rock Paper Scissors' do
     scissors2 = Scissors.new
     expect(scissors1.versus scissors2).to eq :draw
   end
+
+    scenario 'Can play scissors against paper and scissors wins' do
+    scissors = Scissors.new
+    paper = Paper.new
+    expect(scissors.versus paper).to eq :win
+  end
 end

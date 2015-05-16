@@ -2,11 +2,17 @@ require 'paper'
 require 'scissors'
 require 'stone'
 
-describe Stone do
+describe Scissors do
 
-  it 'should declare a draw when playing stone against stone' do
-    stone1 = Stone.new
-    stone2 = Stone.new
-    expect(stone1.versus(stone2)).to eq :draw
+  it 'should declare a draw when playing scissors against scissors' do
+    scissors1 = Scissors.new
+    scissors2 = Scissors.new
+    expect(scissors1.versus(scissors2)).to eq :draw
+  end
+
+  it 'should declare a win when playing against paper' do
+    scissors = Scissors.new
+    paper = Paper.new
+    expect(scissors.versus(paper)).to eq :win
   end
 end

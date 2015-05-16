@@ -1,5 +1,9 @@
 class Scissors
   def versus move
-    :draw
+    if move.class == Paper
+      :win
+    else
+      :draw
+    end
   end
 end

@@ -4,8 +4,6 @@ require 'scissors'
 
 describe Paper do
 
-  it { is_expected.to respond_to :versus }
-
   it 'should declare a draw when playing paper against paper' do
     paper1 = Paper.new
     paper2 = Paper.new
