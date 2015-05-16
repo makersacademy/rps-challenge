@@ -1,8 +1,14 @@
 <h1> Roocck, Papeerrr, Scissorss </h1>
 
 <div>
-  <form action='/play' method="post">
+  <form action='/' method="post">
     <input type="text" name="name">
     <button>Submit</button>
   </form>
 </div>
+
+<% if params[:name] %>
+  <p> Welcome <%= @player_name %>, <a href="/play">let's play </p>
+<% else %>
+  <p></p>
+<% end %>

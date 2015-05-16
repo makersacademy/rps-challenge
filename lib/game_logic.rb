@@ -1,7 +1,7 @@
 require_relative './cpu'
 require_relative './player'
 
-class Game_Logic
+class GameLogic
 
   def initialize
     @game_rules = {"Rock" => "Scissors",  "Paper" => "Rock", "Scissors" => "Paper"}
@@ -11,9 +11,9 @@ class Game_Logic
     if cpu.choice == player.choice
       "It's a tie"
     elsif @game_rules[player.choice] == cpu.choice
-      "Player wins"
+      "You win"
     else
-      "CPU wins"
+      "The computer wins"
     end
   end
 
