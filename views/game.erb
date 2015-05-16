@@ -1,0 +1,19 @@
+
+<div>
+  Let's play Rock, Paper, Scissors<br/>
+  <br/>
+  <br/>
+  Please choose:
+  <br/>
+  <br/>
+  <form action="/game" method="post">
+    <input type="radio" name="choice" value="Rock">Rock<br/>
+    <input type="radio" name="choice" value="Paper">Paper<br/>
+    <input type="radio" name="choice" value="Scissors">Scissors<br/>
+    <br/>
+    <input type="submit" name="submit">
+  </form>
+  Your choice: <%=@choice%><br/>
+  Computer choice: <%=@computerchoice%><br/>
+  The winner is <%=@winner%>!
+</div>
