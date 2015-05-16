@@ -1,0 +1,11 @@
+<p>Fire at the ships</p>
+
+<% if @word == true %>
+Game over sucker!
+<% else %>
+<form action="/shoot" method="post">
+    <input type="text" name="position">
+    </br>
+    <button>Submit</button>
+    </form>
+<% end %>
