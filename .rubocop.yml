@@ -60,3 +60,6 @@ Style/Semicolon:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-semicolon
   Enabled: false
   AllowAsExpressionSeparator: false
+
+Style/FileName:
+  Enabled: false

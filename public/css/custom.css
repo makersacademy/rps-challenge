@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(216, 216, 216); 
+  font-family: 'Roboto Slab', serif;
+}
+
+.intro-img {
+  margin-top: 40px;
+  height: 440px
+}
+
+.new-game-btn {
+  margin-top: 50px;
+}
