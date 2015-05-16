@@ -1,10 +1,22 @@
 class RPS
+  attr_reader :rules
+
+  def initialize
+    @rules = {
+      rock: [:scissors, :lizard],
+      paper: [:spock, :rock],
+      scissors: [:paper, :lizard],
+      lizard: [:spock, :paper],
+      spock: [:scissors, :rock]
+    }
+  end
+
   def results(player_choice)
     cpu_choice = random
 
     if player_choice == cpu_choice
       result = :tie
-    elsif player_choice == :paper && cpu_choice == :rock || player_choice == :scissors && cpu_choice == :paper || player_choice == :rock && cpu_choice == :scissors
+    elsif rules[player_choice].include? cpu_choice
       result = :win
     else
       result = :lose
@@ -13,10 +25,8 @@ class RPS
     { cpu_choice: cpu_choice, result: result }
   end
 
-  # private
-
   def random
-    options = [:rock, :paper, :scissors]
-    options[rand(3)]
+    options = [:rock, :paper, :scissors, :lizard, :spock]
+    options[rand(5)]
   end
 end
