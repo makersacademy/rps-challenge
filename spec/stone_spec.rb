@@ -1,13 +1,13 @@
+require 'paper'
 require 'stone'
+require 'scissors'
 
-describe Paper do
+describe Stone do
 
-  it { is_expected.to respond_to :versus }
-
-  it 'should declare a draw when playing paper against paper' do
-    paper1 = Paper.new
-    paper2 = Paper.new
-    expect(paper1.versus(paper2)).to eq :draw
+  it 'should declare a draw when playing stone against stone' do
+    stone1 = Stone.new
+    stone2 = Stone.new
+    expect(stone1.versus(stone2)).to eq :draw
   end
 
 end
