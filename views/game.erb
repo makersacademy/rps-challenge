@@ -1,0 +1,38 @@
+<div>
+<% if @player_choice.nil? == true %>
+
+
+<h3>Greetings Professor <%= @name %>.</h3>
+<p>Shall we play a game?</p>
+<p>Pick one:</p>
+
+<% else %>
+
+  <% if @result == :win %>
+  <div class="alert alert-success text-center" role="alert"><%= @name %>, you win!</div>
+  <% elsif @result == :lose %>
+  <div class="alert alert-danger text-center" role="alert">Hahaha, you lost <%= @name %>.</div>
+  <% else @result == :tie %>
+  <div class="alert alert-info text-center" role="alert"><%= @name %> it's a tie, try again!</div>
+  <% end %>
+
+  <p><span class="label label-default">You chose:</span> <%= @player_choice %></p>
+  <p><span class="label label-default">CPU chose:</span> <%= @cpu_choice %></p>
+
+
+  <p>Play again?</p>
+
+  <% end %>
+
+</div>
+
+
+<div class="btn-group btn-group-justified" role="group">
+<a href = "/game?choice=rock" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-certificate" aria-hidden="true" name = "rock"></span> Rock</a>
+<a href = "/game?choice=paper" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Paper</a>
+<a href = "/game?choice=scissors" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-scissors" aria-hidden="true"></span> Scissors</a>
+</div>
+<div>
+  <br>
+<p><a href = "/" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Change player</a></p>
+</div>
