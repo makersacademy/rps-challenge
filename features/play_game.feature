@@ -24,3 +24,14 @@ Feature: Starting the game
     And I click "submit"
     When I follow "Play!"
     Then I should see "Select rock, paper or scissors"
+
+  Scenario: Making a choice
+    Given I am on the register page
+    When I fill in name with "Andy"
+    When I fill in rounds with "6"
+    And I click "submit"
+    When I follow "Play!"
+    Then I should see "Select rock, paper or scissors"
+    When I choose 'Rock'
+    And I click "submit"
+    Then I should see "Result"

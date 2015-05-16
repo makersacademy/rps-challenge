@@ -18,19 +18,28 @@ enable :sessions
   end
 
   post '/game/get_ready' do
-    session[:name] = params[:name]
-    session[:rounds] = params[:rounds]
-    @name = session[:name]
-    @rounds = session[:rounds]
+    @@game.player_1.name = params[:name]
+    @@game.set_goal(params[:rounds]) if params[:rounds] =~ /\d/
+    @name = @@game.player_1.name
+    @rounds = @@game.goal
     erb :get_ready
   end
 
   get '/game/choose' do
-    session[:name] = params[:name]
-    session[:rounds] = params[:rounds]
-    @name = session[:name]
-    @rounds = session[:rounds]
+    @name = @@game.player_1.name
+    @rounds = @@game.goal
     erb :choose
+  end
+
+  post '/game/result' do
+    @name = @@game.player_1.name
+    @choice = params[:choice]
+    @cpu_choice = @@game.player_2.cpu_choice
+    @winner = @@game.result(@choice, @cpu_choice)
+    @wins = @@game.player_1.wins
+    @cpu_wins = @@game.player_2.wins
+    @rounds = @@game.goal
+    erb :result
   end
 
   # start the server if ruby file executed directly

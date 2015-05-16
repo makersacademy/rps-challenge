@@ -9,11 +9,9 @@
   </head>
 
   <body>
-    <h1>
-      Hello, <%= @name %>!</br>
-      Get ready to play Rock, Paper, Scissors!</br>
-      The winner is the first to win <%= @rounds %> rounds.</br>
-      <a href="/game/choose">Play!
-    </h1>
+    <h1><u>Result</u></br>
+    <%= @name %>, you chose <%= @choice %> (Wins: <%= @wins %>/<%= @rounds %>)</br>
+    The computer chose <%= @cpu_choice %> (Wins: <%= @cpu_wins %>/<%= @rounds %>)</br>
+    <%= @winner %></h1>
   </body>
 </center>

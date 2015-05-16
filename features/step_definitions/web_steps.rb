@@ -6,6 +6,10 @@ Given(/^I am on the register page$/) do
   visit('/game/new')
 end
 
+Given(/^I am on the choose page$/) do
+  visit('/game/choose')
+end
+
 When(/^I follow "([^"]*)"$/) do |link|
   click_link(link)
 end
@@ -23,5 +27,9 @@ When(/^I fill in rounds with "([^"]*)"$/) do |arg1|
 end
 
 When(/^I click "([^"]*)"$/) do |arg1|
-  click_button('submit')
+  click_button('SUBMIT')
+end
+
+When(/^I choose 'Rock'$/) do
+  choose('choice_rock')
 end
