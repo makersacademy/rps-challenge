@@ -1,6 +1,6 @@
 require 'paper'
-require 'stone'
 require 'scissors'
+require 'stone'
 
 describe Stone do
 
