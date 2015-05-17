@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/player1'
+require './lib/player'
 require './lib/computer'
 
 class Rps < Sinatra::Base
@@ -9,7 +9,7 @@ class Rps < Sinatra::Base
 
 
   get '/' do
-    session["user"] ||= nil
+    session["user"] = nil
     erb :index
   end
 
@@ -19,7 +19,9 @@ class Rps < Sinatra::Base
   end
 
   get '/game/new' do
+
     if session["user"] != nil
+      session["game"].restart_game
       redirect '/game'
     else
       session["game"] = Game.new Player.new, Computer.new
@@ -31,19 +33,12 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/game/result' do
     session["move"] = session["game"].player1.play params[:move]
     session["move"] = session["game"].player2.play
-    p session["game"].player2.moves
-    @result = session["game"].winner?
+    @result = session["game"].referee
     erb :result
   end
-
-
-
-
-
-
 
 
   # start the server if ruby file executed directly

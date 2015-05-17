@@ -1,17 +1,24 @@
 <div align="center">
-  <% if @result == "draw" %>
-    <p style="color:red">DRAW!</p>
-    </br>
-    <a href='/game'>Replay?</a>
+
+  <% if @result == "Keep playing to win" %>
+      <%= @result %>
+        <p>Computer = <%= session["game"].player2.won %></p>
+        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
+        <a href='/game'>Replay?</a>
+
   <% elsif @result == "Player1 wins" %>
+        <p>Computer = <%= session["game"].player2.won %></p>
+        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
     <p><span style="color:red"><%= session["user"] %>, you have won!</span></p>
     </br>
     <a href='/game/new'>New Game?</a>
     <% else %>
+        <p>Computer = <%= session["game"].player2.won %></p>
+        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
       <p><span style="color:red"><%= session["user"] %>, you have lost!</span></p>
       </br>
       <a href='/game/new'>New Game?</a>
-  <% end %>
+    <% end %>
 </div>
 
 
