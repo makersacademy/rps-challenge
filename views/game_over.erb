@@ -13,6 +13,7 @@
       <u>Game Over</u></br>
       <%= @name %>, you chose <%= @choice %> (Wins: <%= @wins %>/<%= @goal %>)</br>
       The computer chose <%= @cpu_choice %> (Wins: <%= @cpu_wins %>/<%= @goal %>)</br>
+      <em><%= @reason %></em></br>
       <%= @winner %> is the overall winner!</br>
       <a href="/game/new">Play Again?</a>
     </h1>

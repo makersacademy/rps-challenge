@@ -6,6 +6,7 @@
 
 TO DO
 -----
+*   Coverage: 'cpu_choice' method not tested.
 *   Add 'game over' scenario tests:-
     Scenario: Ending the game and starting over
     Given I am on the game over page
@@ -13,9 +14,8 @@ TO DO
     When I follow "Play Again?"
     Then I should see "Enter your name"
     (http://www.sinatrarb.com/testing.html- Testing Sinatra with Rack::Test required)
-*   Function to show reasoning for outcome, i.e. 'scissors cuts paper / paper covers rock / rock crushes scissors' - perhaps use hashes with key being phrase and element being array - compare two choices again the element array; will be especially useful when expanding to Spock and lizard.
+*   Rock paper scissors lizard Spock mode.
 *   Two player mode.
-*   Rock paper scissors lizard spock mode.
 
 N.B.
 ----

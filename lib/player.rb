@@ -8,14 +8,12 @@ class Player
     @wins = 0
   end
 
-  def choose(choice)
-    rps = ['rock', 'paper', 'scissors']
-    fail 'You must play with rock, paper or scissors!' unless rps.include?(choice)
-    choice
+  def cpu_choice_rps
+    ['rock', 'paper', 'scissors'].sample
   end
 
-  def cpu_choice
-    ['rock', 'paper', 'scissors'].sample
+  def cpu_choice_rpsls
+    ['rock', 'paper', 'scissors', 'lizard', 'Spock'].sample
   end
 
   def add_win

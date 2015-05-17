@@ -13,6 +13,7 @@
       <u>Result</u></br>
       <%= @name %>, you chose <%= @choice %> (Wins: <%= @wins %>/<%= @goal %>)</br>
       The computer chose <%= @cpu_choice %> (Wins: <%= @cpu_wins %>/<%= @goal %>)</br>
+      <% if !@reason.nil? %><em><%= @reason %></em></br><% end %>
       <%= @winner %></br>
       <a href="/game/choose">Next Round</a>
     </h1>

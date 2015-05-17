@@ -10,13 +10,17 @@
 
   <body>
     <h1>
-      <u>Select rock, paper or scissors</u></br>
-      <%= @name %>, make your choice!</br>
+      <u>Select rock, paper<% if @rules == 'rps' %> or scissors<% else %>, scissors, lizard or Spock<% end %>!</br>
+      <%= @name %>, make your choice!</u></br>
 
       <form action="/game/result" method="post">
         <input checked type="radio" name="choice" value="rock" id="choice_rock"/> ROCK!</br>
         <input type="radio" name="choice" value="paper" id="choice_paper"/> PAPER!</br>
         <input type="radio" name="choice" value="scissors" id="choice_scissors"/> SCISSORS!</br>
+        <% if @rules == 'rpsls' %>
+        <input type="radio" name="choice" value="lizard" id="choice_lizard"/> LIZARD!</br>
+        <input type="radio" name="choice" value="Spock" id="choice_spock"/> SPOCK!</br>
+        <% end %>
         <input type="submit" value="Submit">
       </form>
     </h1>

@@ -20,6 +20,15 @@ describe Game do
       expect(game.goal).to eq 5
     end
 
+    it 'Will be set to traditional rules be default' do
+      expect(game.rules).to eq 'rps'
+    end
+
+    it 'Can have rules set to include lizard, Spock' do
+      game.rules='rpsls'
+      expect(game.rules).to eq 'rpsls'
+    end
+
   end
 
 end
