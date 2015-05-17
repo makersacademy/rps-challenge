@@ -3,7 +3,7 @@ Feature: Finding out who won
   As a player
   I want to see who won the game
 
-  Scenario: Computer choice
+  Scenario: Seeing the result
     Given I am on the game page
     When I select "Rock"
     And I click on "Choose"

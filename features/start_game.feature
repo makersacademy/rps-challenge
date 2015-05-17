@@ -15,3 +15,11 @@ Feature: Starting the game
     When I don't enter anything
     And I click on "Go!"
     Then I should see "Start by entering your name"
+
+  Scenario: Registering for Rock Paper Scissors Lizard Spock
+    Given I am on the homepage
+    When I enter my name, "Daryl"
+    And I click on "Go!"
+    Then I should see "Welcome"
+    When I click on "Or click here"
+    Then I should see "Choose your weapon"
