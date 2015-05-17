@@ -7,7 +7,9 @@ gem 'sinatra'
 group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
+  gem 'create_awesome_readme'
   gem 'cucumber'
+  gem 'cucumber-sinatra'
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'

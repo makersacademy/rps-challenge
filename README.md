@@ -1,4 +1,5 @@
 # RPS Challenge: Rōnin Badge Test
+# RPS Challenge: Rōnin Badge Test
 
 Instructions
 -------
@@ -6,7 +7,7 @@ Instructions
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!

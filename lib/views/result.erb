@@ -1,0 +1,39 @@
+<body bgcolor="#E6E6FA">
+<h1><center><%= @name %> chose: <%= @choice %> </h1>
+<br>
+<% if @choice == 'Rock' %>
+  <center><img src="https://1000awesomethings.files.wordpress.com/2008/08/rock.jpg" height="200" width="200">
+<% elsif @choice == 'Paper' %>
+  <center><img src="http://fc05.deviantart.net/fs71/f/2012/174/4/6/stained_paper_by_paulinemoss-d54jc6u.jpg" height="200" width="200">
+<% elsif @choice == 'Scissors' %>
+  <center><img src="http://specialtydesignmfg.com/images/Red_Ceremonial_Scissors1.jpg" height="200" width="200">
+<% elsif @choice == 'Lizard' %>
+  <center><img src="http://upload.wikimedia.org/wikipedia/commons/e/e0/Large_Scaled_Forest_Lizard.jpg" height="200" width="200">
+<% elsif @choice == 'Spock' %>
+  <center><img src="http://startrek.jaafar.net/spock2.jpg" height="200" width="200">
+<% end %>
+<br>
+<h1><center>Computer chose: <%= @computer_choice %></h1>
+<br>
+<% if @computer_choice == 'Rock' %>
+  <center><img src="https://1000awesomethings.files.wordpress.com/2008/08/rock.jpg" height="200" width="200">
+<% elsif @computer_choice == 'Paper' %>
+  <center><img src="http://fc05.deviantart.net/fs71/f/2012/174/4/6/stained_paper_by_paulinemoss-d54jc6u.jpg" height="200" width="200">
+<% elsif @computer_choice == 'Scissors' %>
+  <center><img src="http://specialtydesignmfg.com/images/Red_Ceremonial_Scissors1.jpg" height="200" width="200">
+<% elsif @computer_choice == 'Lizard' %>
+  <center><img src="http://upload.wikimedia.org/wikipedia/commons/e/e0/Large_Scaled_Forest_Lizard.jpg" height="200" width="200">
+<% elsif @computer_choice == 'Spock' %>
+  <center><img src="http://startrek.jaafar.net/spock2.jpg" height="200" width="200">
+<% end %>
+<br>
+<% if @result == 'Computer wins!' %>
+  <h1><center><%= @result %></h1>
+<% elsif @result == 'Draw' %>
+  <h1><center>It's a draw!</h1>
+<% else %>
+  <h1><center><%= @name %> wins!</h1>
+<% end %>
+<br>
+<br>
+<center><a href="/playagain">Play again</a>
