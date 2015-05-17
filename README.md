@@ -2,10 +2,17 @@
 
 [![Coverage Status](https://coveralls.io/repos/andygout/rps-challenge/badge.png)](https://coveralls.io/r/andygout/rps-challenge)
 
-# RPS Challenge: Rōnin Badge Test
+# Rock, Paper, Scissors Challenge
+
+TECHNOLOGIES USED
+-----------------
+*   Sinatra web application framework in Ruby
+*   Back-end unit and feature tests with RSpec
+*   Front end tests with Cucumber
 
 TO DO
 -----
+*   Symbols a better choice than strings for game choices.
 *   Add 'game over' (and start over) scenario tests:-
     Scenario: Ending the game and starting over
     Given I am on the game over page
@@ -19,21 +26,8 @@ N.B.
 ----
 *   N.B. choose.erb radio button to see how 'id' must be added to make Cucumber features test work.
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+User Stories
+------------
 ```sh
 As a marketeer
 So that I can see my name in lights
@@ -44,22 +38,13 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
+Required functionality
+----------------------
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
 
 ## Bonus level 1: Multiplayer
 

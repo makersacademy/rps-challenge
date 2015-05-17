@@ -22,16 +22,11 @@ class Game
   def result p1_choice, p2_choice
     if p1_choice == p2_choice
       'draw'
-    elsif (p1_choice == 'lizard' && p2_choice == 'paper') ||
-          (p1_choice == 'lizard' && p2_choice == 'Spock') ||
-          (p1_choice == 'paper' && p2_choice == 'rock') ||
-          (p1_choice == 'paper' && p2_choice == 'Spock') ||
-          (p1_choice == 'rock' && p2_choice == 'lizard') ||
-          (p1_choice == 'rock' && p2_choice == 'scissors') ||
-          (p1_choice == 'scissors' && p2_choice == 'lizard') ||
-          (p1_choice == 'scissors' && p2_choice == 'paper') ||
-          (p1_choice == 'Spock' && p2_choice == 'rock') ||
-          (p1_choice == 'Spock' && p2_choice == 'scissors')
+    elsif (p1_choice == 'lizard' && (p2_choice == 'paper' || p2_choice == 'Spock')) ||
+          (p1_choice == 'paper' && (p2_choice == 'rock' || p2_choice == 'Spock')) ||
+          (p1_choice == 'rock' && (p2_choice == 'lizard' || p2_choice == 'scissors')) ||
+          (p1_choice == 'scissors' && (p2_choice == 'lizard' || p2_choice == 'paper')) ||
+          (p1_choice == 'Spock' && (p2_choice == 'rock' || p2_choice == 'scissors'))
       self.player_1.add_win
       self.player_1
     else
