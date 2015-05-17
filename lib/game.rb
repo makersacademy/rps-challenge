@@ -3,37 +3,24 @@ class Game
   GOAL = 1
 
   attr_accessor :rules
+  attr_accessor :player_1
+  attr_accessor :player_2
+  attr_accessor :goal
 
-  def initialize(playerClass, goal = GOAL)
-    @player_1 = initialize_player(playerClass, "Player 1")
-    @player_2 = initialize_player(playerClass, "The computer")
+  def initialize playerClass, goal = GOAL
+    @player_1 = initialize_player playerClass, "Player 1"
+    @player_2 = initialize_player playerClass, "The computer"
     @rules = 'rps'
     @goal = goal
     @rounds_played = 0
   end
 
-  def initialize_player(playerClass, name)
+  def initialize_player playerClass, name
     player = playerClass.new name
   end
 
-  def player_1
-    @player_1
-  end
-
-  def player_2
-    @player_2
-  end
-
-  def goal
-    @goal
-  end
-
-  def set_goal(n)
-    @goal = n
-  end
-
-  def result(p1_choice, p2_choice)
-    if (p1_choice == p2_choice)
+  def result p1_choice, p2_choice
+    if p1_choice == p2_choice
       'draw'
     elsif (p1_choice == 'lizard' && p2_choice == 'paper') ||
           (p1_choice == 'lizard' && p2_choice == 'Spock') ||
@@ -53,7 +40,7 @@ class Game
     end
   end
 
-  def reason(p1_choice, p2_choice)
+  def reason p1_choice, p2_choice
     key = []
     combs = { 'lizard-paper': 'Lizard eats paper',
               'lizard-rock': 'Rock crushes lizard',

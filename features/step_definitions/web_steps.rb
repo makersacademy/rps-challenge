@@ -37,3 +37,7 @@ end
 When(/^I choose 'Rock'$/) do
   choose('choice_rock')
 end
+
+When(/^I choose 'RPSLS rules'$/) do
+  choose('rules_rpsls')
+end

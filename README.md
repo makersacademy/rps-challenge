@@ -6,15 +6,13 @@
 
 TO DO
 -----
-*   Coverage: 'cpu_choice' method not tested.
-*   Add 'game over' scenario tests:-
+*   Add 'game over' (and start over) scenario tests:-
     Scenario: Ending the game and starting over
     Given I am on the game over page
     Then I should see "Game Over"
     When I follow "Play Again?"
     Then I should see "Enter your name"
-    (http://www.sinatrarb.com/testing.html- Testing Sinatra with Rack::Test required)
-*   Rock paper scissors lizard Spock mode.
+    (http://www.sinatrarb.com/testing.html- Testing Sinatra with Rack::Test / 'seed' function required?)
 *   Two player mode.
 
 N.B.
