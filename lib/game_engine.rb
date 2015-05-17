@@ -1,5 +1,6 @@
 class GameEngine
   attr_accessor :player_choice
+  attr_accessor :cpu_choice
 
 
   def result(player_choice)

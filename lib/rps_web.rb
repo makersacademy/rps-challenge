@@ -1,20 +1,43 @@
 require 'sinatra/base'
+require_relative 'game_engine'
 
 class RPSWeb < Sinatra::Base
   set :public_dir, Proc.new{File.join( root, '..', "public") }
+  enable :sessions
+
+  @@game = GameEngine.new
+
   get '/' do
 
     erb :index
   end
 
-  post '/game' do
-    @name = params[:name]
-    erb :game
+  post '/game1' do
+    session[:name] = params[:name]
+      @name = params[:name]
+       @player_choice = params[:choice]
+    erb :game1
   end
 
 
+  post '/game_choice' do
+      puts 'is this thing working?'
+      puts params
+      @name = session[:name]
+      @player_choice = params[:choice]
+    erb :game_choice
+  end
 
 
+  post '/results' do
+      puts 'is this thing really working?'
+      puts params
+      @name = session[:name]
+      @player_choice = params[:choice]
+      @mac_choice = @@game.cpu_choice
+      @outcome = @@game.result(@player_choice)
+    erb :results
+  end
 
 
 
