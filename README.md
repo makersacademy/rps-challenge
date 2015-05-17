@@ -3,6 +3,7 @@
 TO DO
 -----
 *   Round wins are not being counted properly and so game continues after goal has been reached, i.e. 3/2 wins...
+*   Scenario in which no radio box is checked - a nil value is passed; should redirect to choose page.
 *   Add game over scenario tests (will require mocks (or Cucumber equivalent - before/after hooks? - apply elsewhere where required)):-
     Scenario: Ending the game and starting over
     Given I am on the game over page

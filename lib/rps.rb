@@ -18,9 +18,9 @@ enable :sessions
 
   post '/game/get_ready' do
     @@game.player_1.name = params[:name]
-    @@game.set_goal(params[:goal]) if params[:goal] =~ /\d/
+    @@game.set_goal(params[:goal].to_i) if params[:goal] =~ /\d/
     @name = @@game.player_1.name
-    @goal = @@game.goal.to_i
+    @goal = @@game.goal
     erb :get_ready
   end
 
@@ -41,7 +41,7 @@ enable :sessions
     @wins = @@game.player_1.wins
     @cpu_wins = @@game.player_2.wins
     @goal = @@game.goal
-    if @wins == @goal || @cpu_wins == @goal
+    if @@game.won?
       redirect '/game/game_over'
     else
       erb :result
