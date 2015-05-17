@@ -19,6 +19,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game/new' do
     @name = params[:name]
+    session["name"] = @name
     if @name && !@name.empty?
       redirect '/start'
     else
@@ -27,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start' do
-    @name = params[:name]
+    @name = session["name"]
     erb :start
   end
 

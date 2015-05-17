@@ -7,6 +7,6 @@ class Computer
   end
 
   def random_choice
-  @random_shape = ['rock', 'scissors', 'paper'].sample
+    @random_shape = ['rock', 'scissors', 'paper'].sample
   end
 end

@@ -2,13 +2,14 @@
 
 #   describe Game do
 
-#     let(:player) {double :player}
-#     let(:computer) {double :computer}
+#     it "player wins"
 
 #     it 'can have a winner' do
-#     allow(player).to receive(:choice).with("paper")
-#     allow(computer).to receive(:random_shape).and_return "rock"
+#     player = double :player
+#     computer = double :computer
 #     game = Game.new(player, computer)
+#     allow(computer).to receive(:random_choice).and_return "rock"
+#     allow(player).to receive(:choice).with("paper")
 #     expect(game.result).to eq "YOU WON"
 #   end
 # end
