@@ -33,6 +33,20 @@ feature "A game of Rock, Paper, Scissors can be played" do
     expect(GameLogic.new.result cpu, player).to eq("The computer wins")
   end
 
+  scenario "Spcok beats Rock" do
+    player = Player.new "Rock"
+    cpu = CPU.new
+    allow(cpu).to receive(:choice) { "Spock" }
+    expect(GameLogic.new.result cpu, player).to eq("The computer wins")
+  end
+
+  scenario "Lizard beats Paper" do
+    player = Player.new "Lizard"
+    cpu = CPU.new
+    allow(cpu).to receive(:choice) { "Paper" }
+    expect(GameLogic.new.result cpu, player).to eq("You win")
+  end
+
 end
 
 
