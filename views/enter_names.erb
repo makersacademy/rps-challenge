@@ -1,0 +1,37 @@
+
+<table style="width:100%">
+  <tr>
+    <td>
+    <CENTER>
+    <img src='http://www.quiterly.com/wp-content/uploads/2012/09/Whats-your-stripper-name.jpg'>
+    </CENTER>
+    </td>
+    <CENTER>
+    <td>
+    <div>
+      <br><br>
+      <form action='/choose_hands'>
+      PLAYER 1: Enter your name
+      <br>(suggestions below if really needed!!)
+      <br><br>
+      <input type="text" name="name1">
+      <br><br>
+      <% if @num == '1' %>
+      <input type="submit">
+      </form>
+      <% elsif @num == '2' %>
+      <br><br>
+      PLAYER 2: Enter your name
+      <br><br>
+      <input type="text" name="name2">
+      <br><br>
+      <input type="submit">
+      </form>
+      <% end %>
+     </div>  
+    </td>
+    </CENTER>
+  </tr>
+</table>
+
+

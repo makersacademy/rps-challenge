@@ -1,3 +1,22 @@
+This is my first attempt at the RPS game. I didn't look at the RPSSL version. I wanted to start with a RPS working one, with 1 or 2 players.
+
+First, I looked at TDD and my classes:
+I created 2:
+- player. name in initialize and a RPS hand to chose in a method.
+- game, that can add players (1 or 2), and gives a winner of the hands that the player chose previously. If 1 player only, there is a method that defines the CPU as the 2nd player and choses a random hand.
+
+Tested in IRB and in rspec, my ruby game seems to work.
+
+For Web, I have erb pages that navigate well, BUT it's completely independant from the ruby game. At this point I cannot figure out how to link my instance variables with a web version. I still find it very confusing and I was trying different things that kept failing failing and failing so I'd like to se a working solution from Makers to understand how it works.
+
+Also, I wrote some cucumber tests that I do not like at all. They pass but I would like to get a better understanding of given, when, then, with radios, with different cases. I followed some steps from web_steps which I thought would work and they didn't, for reasons I cannot understand. I think we need more guidance on the web_steps.rb document and see more examples of cucumber tests (different options)
+
+Also images I wantd to put as static files in my pages don't work and I have no idea why.
+
+I'm keen to get Makers' feedback on what I did already.
+
+----------------------------------------------------------------------
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
