@@ -9,8 +9,6 @@ I would like to be able to play rock/paper/scissors
     When I press "Submit"
     Then I should see "Rock"
 
-  Scenario:
-
   Scenario: Player wins a game
     Given I am on the Take Turn page
     And I choose radio button "Rock"

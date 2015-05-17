@@ -17,10 +17,6 @@ class Player
     @winner
   end
 
-  def loser?
-    !@winner
-  end
-
   def wins
     @winner = true if @round_wins >=2
   end
