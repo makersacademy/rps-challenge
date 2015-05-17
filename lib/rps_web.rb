@@ -22,7 +22,6 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :newgame
   end
 
-
   get '/game' do
     erb :game
   end
@@ -47,7 +46,6 @@ class RockPaperScissorsWeb < Sinatra::Base
       @winner = "Computer"
     end
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
