@@ -1,0 +1,20 @@
+<div align="center">
+  <% if @result == "draw" %>
+    <p style="color:red">DRAW!</p>
+    </br>
+    <a href='/game'>Replay?</a>
+  <% elsif @result == "Player1 wins" %>
+    <p><span style="color:red"><%= session["user"] %>, you have won!</span></p>
+    </br>
+    <a href='/game/new'>New Game?</a>
+    <% else %>
+      <p><span style="color:red"><%= session["user"] %>, you have lost!</span></p>
+      </br>
+      <a href='/game/new'>New Game?</a>
+  <% end %>
+</div>
+
+
+
+
+
