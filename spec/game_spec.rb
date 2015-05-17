@@ -1,4 +1,4 @@
-require 'computer_choice'
+require 'game'
 
 describe Game do
 
