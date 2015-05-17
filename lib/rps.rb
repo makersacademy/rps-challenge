@@ -27,6 +27,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game/choose' do
+    @rules = @@game.rules
     @name = @@game.player_1.name
     @goal = @@game.goal
     erb :choose
