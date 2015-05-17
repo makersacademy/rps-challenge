@@ -4,6 +4,7 @@ require_relative 'game'
 class RockPaperScissors < Sinatra::Base
  set :views, proc { File.join(root, '..', 'views') }
  enable :sessions
+ set :static, true #to try and rectify rackup serving issue
 
  @@game = Game.new Player
 

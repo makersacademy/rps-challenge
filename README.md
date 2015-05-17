@@ -1,15 +1,7 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge: Week3
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -25,33 +17,23 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Checklist
+----
+-[x] Basic 1 player web game of Rock, Paper, Scissors
+-[x] Multi-player version
+-[x] Special rules web game Rock, Paper, Scissors, Spock, Lizard (in separate branch - 1player)
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Screenshots
+----
 
+![](https://github.com/github/training-kit/blob/master/images/professortocat.png)
 
-As usual please start by
+![](https://github.com/github/training-kit/blob/master/images/professortocat.png)
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+Commentary/ To-do
+----
 
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+* Adopted a BDD approach employing Cucumber for UI and Rspec for backend >> 90%+ coverage. Final Cucumber test requires finalising.
+* Added basic CSS template styling as highlighted in screenshots >> further features and styling to be added
+* Launched previous master version on Heroku >> new 1player version pending
+* Multiplayer game functions as an MVP on functionality but UI requires further work
