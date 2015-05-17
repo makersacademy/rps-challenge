@@ -20,8 +20,12 @@ class Rps < Sinatra::Base
   end
 
   get '/game/new' do
+    if session["user"] != nil
+      redirect '/game'
+    else
     session["game"] = Game.new Player.new, Computer.new
     erb :game_new
+    end
   end
 
   get '/game' do
@@ -30,9 +34,10 @@ class Rps < Sinatra::Base
 
   post '/result' do
     session["move"] = session["game"].player1.play params[:move]
+    session["move"] = session["game"].player2.play
+    p session["game"].player2.moves
     @result = session["game"].winner?
     erb :result
-
   end
 
 

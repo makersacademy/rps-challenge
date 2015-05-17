@@ -1,1 +1,15 @@
-<%= @result %>
+  <% if @result == "draw" %>
+     <a href='/game'>Replay?</a>
+
+      <p>DRAW!</p>
+      </br>
+
+  <% else %>
+    <%= @result %>
+     <a href='/game/new'>New Game</a>
+  <% end %>
+
+
+
+
+

@@ -1,8 +1,13 @@
 class Computer
 
-  attr_accessor :moves
+  attr_reader :moves
   def initialize
-    @moves = ["rock","paper","scissors"].sample
+    @moves = ""
+  end
+
+  def play
+    @moves = ["rock", "paper", "scissors"].sample
   end
 end
 
+# aggiungere un metodo per creare una mossa

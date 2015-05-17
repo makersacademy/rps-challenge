@@ -23,7 +23,7 @@ Then(/^I see "([^"]*)" and "([^"]*)"$/) do |text, start|
   expect(find_link(start).visible?).to be true
 end
 
-Given(/^I've submitted my name$/) do
+Given(/^I have submitted my name$/) do
   visit("game/new")
   fill_in("value", :with => "name")
   click_button("Submit")
@@ -34,6 +34,18 @@ When(/^I select "([^"]*)"$/) do |move|
 end
 
 Then(/^I should see a result$/) do
+
+end
+
+Given(/^I choose "([^"]*)"$/) do |move|
+  visit("game/new")
+  fill_in("value", :with => "name")
+  click_button("Submit")
+  click_link("Play Game")
+  select(move, :from => "move")
+end
+
+Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |arg1, arg2|
 
 end
 
