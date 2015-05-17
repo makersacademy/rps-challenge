@@ -13,6 +13,10 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :newplayer
   end
 
+  post '/newplayer' do
+    @name = params[:name]
+  end
+
   get '/newgame' do
     erb :newgame
   end
@@ -23,6 +27,7 @@ class RockPaperScissorsWeb < Sinatra::Base
   end
 
   get '/game' do
+    @name
     erb :game
   end
 
