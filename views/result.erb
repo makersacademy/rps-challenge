@@ -1,0 +1,45 @@
+<link href="http://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+<head>
+<h1 id= "comp">Computer choice: <%= @comp_choice %>
+<h2 id="result"> <%= @final %> </h2>
+</head>
+<style>
+body {
+  background-color:#D3D3D3;
+}
+#comp {
+  text-decoration: none;
+  font-size:3em;
+  font-family:'Indie Flower', cursive;
+  position: fixed;
+  color:black;
+}
+
+#result {
+  text-decoration: none;
+  font-size:10em;
+  font-family:'Indie Flower', cursive;
+  position: fixed;
+  margin-right: 25px;
+  margin-left: 200px;
+  margin-top: 150px;
+  color:black;
+}
+
+#play_again {
+ text-decoration: none;
+  font-size:5em;
+  font-family:'Indie Flower', cursive;
+  position: fixed;
+  margin-right: 25px;
+  margin-left: 750px;
+  margin-top: 500px;
+  color:#696969;
+}
+#play_again:hover {
+ font-size:7em;
+}
+</style>
+<body>
+<a id="play_again" href ='/start'>Play again</a>
+</body>
