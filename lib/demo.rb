@@ -8,29 +8,39 @@ cpu_wins_counter = 0
 
   until p1_wins_counter >= 2 || cpu_wins_counter >= 2
     p1 = $stdin.gets.chomp
-    cpu = ["Rock", "Paper", "Scissors"].sample
+    cpu = ["Rock", "Paper", "Scissors", "Spock", "Lizard"].sample
     p p1
     p cpu
 
     if p1 == cpu
       puts "Go again"
     else
-      if p1 == "Rock" && cpu == "Scissors"
+      if p1 == "Rock" && cpu == "Scissors" ||
+        p1 == "Rock" && cpu == "Lizard" ||
+        p1 == "Scissors" && cpu == "Paper" ||
+        p1 == "Scissors" && cpu == "Lizard" ||
+        p1 == "Paper" && cpu == "Rock" ||
+        p1 == "Paper" && cpu == "Spock" ||
+        p1 == "Spock" && cpu == "Scissors" ||
+        p1 == "Spock" && cpu == "Rock" ||
+        p1 == "Lizard" && cpu == "Spock" ||
+        p1 == "Lizard" && cpu == "Paper"
         puts "You win"
         p1_wins_counter += 1
-      elsif p1 == "Rock" && cpu == "Paper"
-        puts "CPU wins"
-        cpu_wins_counter += 1
-      elsif p1 == "Scissors" && cpu == "Paper"
-        puts "You win"
-        p1_wins_counter += 1
-      elsif p1 == "Scissors" && cpu == "Rock"
-        puts "CPU wins"
-        cpu_wins_counter += 1
-      elsif p1 == "Paper" && cpu == "Rock"
-        puts "You win"
-        p1_wins_counter += 1
-      elsif p1 == "Paper" && cpu == "Scissors"
+      else
+      # elsif p1 == "Rock" && cpu == "Paper"
+      #   puts "CPU wins"
+      #   cpu_wins_counter += 1
+      # elsif p1 == "Scissors" && cpu == "Paper"
+      #   puts "You win"
+      #   p1_wins_counter += 1
+      # elsif p1 == "Scissors" && cpu == "Rock"
+      #   puts "CPU wins"
+      #   cpu_wins_counter += 1
+      # elsif p1 == "Paper" && cpu == "Rock"
+      #   puts "You win"
+      #   p1_wins_counter += 1
+      # elsif p1 == "Paper" && cpu == "Scissors"
         puts "CPU win"
         cpu_wins_counter += 1
       end

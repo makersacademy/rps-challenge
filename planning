@@ -46,15 +46,11 @@ Plan
   >> post a result
   >> continue posting result until redirect to a winner page
 
->> build feature tests
->> AIM: have a basic working version before scale to web have name registration working
 
 Plan - left to-do
 >> Full cucumber test coverage
 >> Fix underlying rspec test
->> Sessions to implement winner's name
->> Complete 2 player version
->> Upload to Heroku
+>> Need to go for third time to complete end of game
 >> Add styling/ CSS across so can share
 >> Complete additional rules (if time and useful)
 >> Refactor system code

@@ -9,34 +9,24 @@ class Game
   end
 
   def process_turn
+    check_round_wins
     return "Game already won" if winner?
     if player_1.check_turn == player_2.check_turn
       "Go again"
     else
-      if player_1.check_turn == "Rock" && player_2.check_turn == "Scissors"
-         "Player 1 wins"
-        player_1.add_round_win
-        check_round_wins
-      elsif player_1.check_turn == "Rock" && player_2.check_turn == "Paper"
-         "Player 2 wins"
+      if player_1.check_turn == "Rock" && player_2.check_turn == "Scissors" ||
+        player_1.check_turn == "Rock" && player_2.check_turn == "Lizard" ||
+         player_1.check_turn == "Scissors" && player_2.check_turn == "Paper" ||
+         player_1.check_turn == "Scissors" && player_2.check_turn == "Lizard" ||
+         player_1.check_turn == "Paper" && player_2.check_turn == "Rock" ||
+         player_1.check_turn == "Paper" && player_2.check_turn == "Spock" ||
+         player_1.check_turn == "Spock" && player_2.check_turn == "Scissors" ||
+         player_1.check_turn == "Spock" && player_2.check_turn == "Rock" ||
+         player_1.check_turn == "Lizard" && player_2.check_turn == "Spock" ||
+         player_1.check_turn == "Lizard" && player_2.check_turn == "Paper"
+         player_1.add_round_win
+      else
         player_2.add_round_win
-        check_round_wins
-      elsif player_1.check_turn == "Scissors" && player_2.check_turn == "Paper"
-         "Player 1 wins"
-        player_1.add_round_win
-        check_round_wins
-      elsif player_1.check_turn == "Scissors" && player_2.check_turn == "Rock"
-         "Player 2 wins"
-        player_2.add_round_win
-        check_round_wins
-      elsif player_1.check_turn == "Paper" && player_2.check_turn == "Rock"
-         "Player 1 wins"
-        player_1.add_round_win
-        check_round_wins
-      elsif player_1.check_turn == "Paper" && player_2.check_turn == "Scissors"
-         "Player 2 wins"
-        player_2.add_round_win
-        check_round_wins
       end
     end
   end

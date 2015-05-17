@@ -9,11 +9,13 @@ I would like to be able to play rock/paper/scissors
     When I press "Submit"
     Then I should see "Rock"
 
+  Scenario:
+
   Scenario: Player wins a game
     Given I am on the Take Turn page
     And I choose radio button "Rock"
-    And my opponent chooses Scissors
+    Given my opponent chooses "Scissors" next
     And I choose radio button "Rock"
-    And my opponent choose Scissors
-    Then I should go to the Game Won page
-    And I should see "Congratulations, you won, game over"
+    Given my opponent chooses "Scissors" next
+    Then I should be on the Game Won page
+    And I should see "Congratulations, Alex, you won!"

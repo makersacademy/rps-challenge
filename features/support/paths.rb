@@ -22,6 +22,9 @@ module NavigationHelpers
     when /Take Turn/
       '/game/turn'
 
+    when /Game Won/
+      '/game/won'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
