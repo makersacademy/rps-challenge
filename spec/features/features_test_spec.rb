@@ -36,8 +36,32 @@ feature 'Set up a game of rock, paper, scissors' do
     expect(game.player_2.wins).to eq 0
   end
 
+  scenario 'Player 1 beats player 2 with lizard against paper and tallies win' do
+    expect(game.result('lizard', 'paper')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
+  scenario 'Player 1 beats player 2 with lizard against Spock and tallies win' do
+    expect(game.result('lizard', 'Spock')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
   scenario 'Player 1 beats player 2 with paper against rock and tallies win' do
     expect(game.result('paper', 'rock')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
+  scenario 'Player 1 beats player 2 with paper against Spock and tallies win' do
+    expect(game.result('paper', 'Spock')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
+  scenario 'Player 1 beats player 2 with rock against lizard and tallies win' do
+    expect(game.result('rock', 'lizard')).to eq game.player_1
     expect(game.player_1.wins).to eq 1
     expect(game.player_2.wins).to eq 0
   end
@@ -48,14 +72,56 @@ feature 'Set up a game of rock, paper, scissors' do
     expect(game.player_2.wins).to eq 0
   end
 
+  scenario 'Player 1 beats player 2 with scissors against lizard and tallies win' do
+    expect(game.result('scissors', 'lizard')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
   scenario 'Player 1 beats player 2 with scissors against paper and tallies win' do
     expect(game.result('scissors', 'paper')).to eq game.player_1
     expect(game.player_1.wins).to eq 1
     expect(game.player_2.wins).to eq 0
   end
 
+  scenario 'Player 1 beats player 2 with Spock against rock and tallies win' do
+    expect(game.result('Spock', 'rock')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
+  scenario 'Player 1 beats player 2 with Spock against scissors and tallies win' do
+    expect(game.result('Spock', 'scissors')).to eq game.player_1
+    expect(game.player_1.wins).to eq 1
+    expect(game.player_2.wins).to eq 0
+  end
+
+  scenario 'Player 2 beats player 1 with lizard against paper and tallies win' do
+    expect(game.result('paper', 'lizard')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
+  scenario 'Player 2 beats player 1 with lizard against Spock and tallies win' do
+    expect(game.result('Spock', 'lizard')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
   scenario 'Player 2 beats player 1 with paper against rock and tallies win' do
     expect(game.result('rock', 'paper')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
+  scenario 'Player 2 beats player 1 with paper against Spock and tallies win' do
+    expect(game.result('Spock', 'paper')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
+  scenario 'Player 2 beats player 1 with rock against lizard and tallies win' do
+    expect(game.result('lizard', 'rock')).to eq game.player_2
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 1
   end
@@ -66,8 +132,26 @@ feature 'Set up a game of rock, paper, scissors' do
     expect(game.player_2.wins).to eq 1
   end
 
+  scenario 'Player 2 beats player 1 with scissors against lizard and tallies win' do
+    expect(game.result('lizard', 'scissors')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
   scenario 'Player 2 beats player 1 with scissors against paper and tallies win' do
     expect(game.result('paper', 'scissors')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
+  scenario 'Player 2 beats player 1 with Spock against rock and tallies win' do
+    expect(game.result('rock', 'Spock')).to eq game.player_2
+    expect(game.player_1.wins).to eq 0
+    expect(game.player_2.wins).to eq 1
+  end
+
+  scenario 'Player 2 beats player 1 with Spock against scissors and tallies win' do
+    expect(game.result('scissors', 'Spock')).to eq game.player_2
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 1
   end
