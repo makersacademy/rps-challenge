@@ -23,9 +23,9 @@ Then(/^I see "([^"]*)" and "([^"]*)"$/) do |text, start|
   expect(find_link(start).visible?).to be true
 end
 
-Given(/^I have submitted my name$/) do
+Given(/^I have submitted "([^"]*)" as my name$/) do|name|
   visit("game/new")
-  fill_in("value", :with => "name")
+  fill_in("value", :with => name)
   click_button("Submit")
 end
 
@@ -48,5 +48,8 @@ end
 Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |arg1, arg2|
 
 end
+
+
+
 
 

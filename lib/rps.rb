@@ -22,8 +22,8 @@ class Rps < Sinatra::Base
     if session["user"] != nil
       redirect '/game'
     else
-    session["game"] = Game.new Player.new, Computer.new
-    erb :game_new
+      session["game"] = Game.new Player.new, Computer.new
+      erb :game_new
     end
   end
 

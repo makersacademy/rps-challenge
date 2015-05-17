@@ -1,8 +1,8 @@
 class Computer
 
-  attr_reader :moves
+  attr_accessor :moves
   def initialize
-    @moves = ""
+    @moves = nil
   end
 
   def play
@@ -10,4 +10,3 @@ class Computer
   end
 end
 
-# aggiungere un metodo per creare una mossa
