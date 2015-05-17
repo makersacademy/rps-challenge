@@ -1,5 +1,24 @@
-<h2>OK, time to play</h2>
+<div class="text-center">
+  <h2>OK, time to play : Best of 3</h2>
+  <div class="col-md-5">
+    <h3> You: <%= @player_turn %> </h3>
+  </div>
 
+  <div class="col-md-2">
+    <br>
+    <p> plays </p>
+    <br>
+  </div>
+
+  <div class="col-md-5">
+    <h3> CPU: <%= @CPU_turn %> </h3>
+  </div>
+
+</div>
+
+<div class='btn-group btn-group-justified' role='group'>
+<p> Make your selection </p>
+<p id="error"> <%= @message %> </p>
 <form action='/game/turn' method="post">
   <input type="radio" name="choice" value="Rock" id = "Rock" checked> Rock
   <input type="radio" name="choice" value="Scissors" id = "Scissors"> Scissors
@@ -9,7 +28,4 @@
   <input type="submit" value="Submit">
 </form>
 
-<h3> Your last go: <%= @player_turn %> </h3>
-<h3> Computer's last go: <%= @CPU_turn %> </h3>
-
-<h3> <%= @message %> </h3>
+</div>
