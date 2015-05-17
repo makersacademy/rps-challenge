@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'computer_choice'
+require_relative 'game'
 
 class RPSChallenge < Sinatra::Base
 
