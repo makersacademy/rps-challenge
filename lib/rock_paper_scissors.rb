@@ -46,6 +46,10 @@ class RockPaperScissors < Sinatra::Base
 
     if @result == "Go again"
       @message = "You matched, go again"
+    elsif @result == "You win"
+      @message = "You won that round"
+    elsif @result == "Computer wins"
+      @message = "You lost that round"
     else
       @message = nil
     end

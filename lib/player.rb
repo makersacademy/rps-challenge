@@ -10,7 +10,7 @@ class Player
   end
 
   def random_selection
-    @turn << ["Rock", "Paper", "Scissors"].sample
+    @turn << ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
   end
 
   def winner?
