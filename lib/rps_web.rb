@@ -15,11 +15,12 @@ class RockPaperScissors < Sinatra::Base
   	erb :game
   end
 
-  put '/game' do
-  	if Name != ''
-  	  redirect '/game/new'
-  	else
+  post '/game' do
+  	@visitorname = params[:name]
+  	if @visitorname && !@visitorname.empty?
   	  redirect '/game'
+  	else
+  	  redirect '/game/new'
   	end
   end
 
