@@ -38,7 +38,7 @@ describe Game do
     end
 
     it 'Can define reason for scissors beating lizard' do
-      expect(game.reason 'scissors', 'lizard').to eq 'Scissors decapitates lizard'
+      expect(game.reason 'scissors', 'lizard').to eq 'Scissors decapitate lizard'
     end
 
     it 'Can define reason for lizard beating Spock' do
