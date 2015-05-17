@@ -1,5 +1,0 @@
-- visit homepage
--click on new game button
--type your name click submit
--enter the shape choice
--be told if you won or lost

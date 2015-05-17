@@ -19,13 +19,14 @@ class RockPaperScissors < Sinatra::Base
 
 
   post '/game/new' do
-    @visitor = params[:name]
-    if @visitor && !@visitor.empty?
+    @name = params[:name]
+    if @name && !@name.empty?
       redirect '/start'
     else
       redirect '/game/new'
     end
   end
+
 
   get '/start' do
     erb :start

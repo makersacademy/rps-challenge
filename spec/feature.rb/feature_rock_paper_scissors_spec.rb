@@ -16,7 +16,7 @@ feature '' do
    expect(computer.random_choice).to eq ("rock")
   end
 
-  scenario 'one of the player win' do
+  scenario 'player can  win' do
     player = Player.new
     computer = Computer.new
     game = Game.new(player, computer)

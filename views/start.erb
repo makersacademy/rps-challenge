@@ -33,8 +33,8 @@ body {
 }
 </style>
 
-<h1 id = "title"> Welcome  </h1>
-<h2> <%= @shapes%> </h2>
+<h1 id = "title"> Welcome <%= @name %> </h1>
+
 <form action='/start' method="post">
   <input class="choice" type="radio" name="shape" value="rock" id = "rock" checked> Rock
   <input class="choice" type="radio" name="shape" value="scissors" id = "scissors"> Scissors
