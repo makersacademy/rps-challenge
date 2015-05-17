@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/andygout/rps-challenge.png)](https://travis-ci.org/andygout/takeaway-challenge)
+[![Build Status](https://travis-ci.org/andygout/rps-challenge.png)](https://travis-ci.org/andygout/rps-challenge)
 
-[![Coverage Status](https://coveralls.io/repos/andygout/rps-challenge/badge.png)](https://coveralls.io/r/andygout/takeaway-challenge)
+[![Coverage Status](https://coveralls.io/repos/andygout/rps-challenge/badge.png)](https://coveralls.io/r/andygout/rps-challenge)
 
 # RPS Challenge: Rōnin Badge Test
 
