@@ -21,7 +21,7 @@ Checklist
 ----
 
 - [x] Basic 1 player web game of Rock, Paper, Scissors
-- [x] Multi-player version
+- [x] Multi-player version (in master branch >> no styling)
 - [x] Special rules web game Rock, Paper, Scissors, Spock, Lizard (in separate branch - 1player)
 
 Screenshots
