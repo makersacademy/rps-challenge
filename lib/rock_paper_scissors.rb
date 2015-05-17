@@ -40,6 +40,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+     @comp_choice = @@game.computer.random_choice
      @outcome = @@game.result
      if @outcome == "TIE"
       @final = "TIE"

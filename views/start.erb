@@ -1,4 +1,7 @@
 <link href="http://fonts.googleapis.com/css?family=Indie+Flower" rel='stylesheet' type='text/css'>
+<head>
+<h1 id = "title"> Welcome <%= @name %> </h1>
+</head>
 <style>
 body {
   background-color:#D3D3D3;
@@ -28,16 +31,13 @@ body {
   background: #696969;
   padding: 20px 60px;
   font-size: 2em;
-
-
 }
 </style>
-
-<h1 id = "title"> Welcome <%= @name %> </h1>
-
+<body>
 <form action='/start' method="post">
   <input class="choice" type="radio" name="shape" value="rock" id = "rock" checked> Rock
   <input class="choice" type="radio" name="shape" value="scissors" id = "scissors"> Scissors
   <input class="choice" type="radio" name="shape" value="paper" id = "paper"> Paper
   <input class='submit_button' type="submit" value="Test your luck">
 </form>
+</body>
