@@ -13,21 +13,16 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :newplayer
   end
 
-  post '/newplayer' do
-    @name = params[:name]
-  end
-
   get '/newgame' do
+    @name = params[:name]
     erb :newgame
   end
 
   post '/newgame' do
-    @name = params[:name]
     erb :newgame
   end
 
   get '/game' do
-    @name
     erb :game
   end
 
