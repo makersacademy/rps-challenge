@@ -7,11 +7,11 @@
   <br/>
   <br/>
   <form action="/game" method="post">
-    <input type="radio" name="choice" value="Rock">Rock<br/>
-    <input type="radio" name="choice" value="Paper">Paper<br/>
-    <input type="radio" name="choice" value="Scissors">Scissors<br/>
+    <input type="radio" name="choice" id="rock" value="Rock">Rock<br/>
+    <input type="radio" name="choice" id="paper" value="Paper">Paper<br/>
+    <input type="radio" name="choice" id="scissors" value="Scissors">Scissors<br/>
     <br/>
-    <input type="submit" name="submit">
+    <input type="submit" value="submit">
   </form>
   Your choice: <%=@choice%><br/>
   Computer choice: <%=@computerchoice%><br/>

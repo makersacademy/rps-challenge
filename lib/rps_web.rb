@@ -13,12 +13,12 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :newplayer
   end
 
-  get '/newgame' do
-    @name = params[:name]
+  get '/game/new' do
     erb :newgame
   end
 
-  post '/newgame' do
+  post '/game/new' do
+    @name = params[:name]
     erb :newgame
   end
 
@@ -35,11 +35,11 @@ class RockPaperScissorsWeb < Sinatra::Base
 
   def winner
     if @choice == "Rock" && @computerchoice == "Scissors"
-      @winner = @name
+      @winner = "You! Congratulations!"
     elsif @choice == "Paper" && @computerchoice == "Rock"
-      @winner = @name
+      @winner = "You! Congratulations!"
     elsif @choice == "Scissors" && @computerchoice == "Paper"
-      @winner = @name
+      @winner = "You! Congratulations!"
     elsif @choice == @computerchoice
       @winner = "Nobody"
     else
