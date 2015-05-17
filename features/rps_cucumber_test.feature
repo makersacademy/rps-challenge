@@ -14,8 +14,9 @@ Feature: Starting the game
   Scenario: I start playing a game vs the computer
     Given I've submitted my name
     When I click "Play Game"
-    When I select "Rock"
-    Then I should see a"result"
+    When I select "rock"
+    And I hit "Submit"
+    Then I should see a result
 
 
 

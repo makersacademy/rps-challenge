@@ -28,6 +28,14 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    session["move"] = session["game"].player1.play params[:move]
+    @result = session["game"].winner?
+    erb :result
+
+  end
+
+
 
 
 

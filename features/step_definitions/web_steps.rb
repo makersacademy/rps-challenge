@@ -33,7 +33,8 @@ When(/^I select "([^"]*)"$/) do |move|
   select(move, :from => "move")
 end
 
-Then(/^I should see a"([^"]*)"$/) do |result|
+Then(/^I should see a result$/) do
 
 end
+
 
