@@ -6,4 +6,8 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :index
   end
 
+  get '/new_game' do
+    erb :new_game
+  end
+
 end

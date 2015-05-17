@@ -9,4 +9,4 @@ Scenario: Putting the name in the form
   When I fill in "name" with "Dan"
   And I press "Play"
   Then I should be on the game page
-  And I should see "choose your weapon!"
+  And I should see "CHOOSE YOUR WEAPON!"
