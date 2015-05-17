@@ -39,7 +39,7 @@ class Game
     key = []
     combs = { 'lizard-paper': 'Lizard eats paper',
               'lizard-rock': 'Rock crushes lizard',
-              'lizard-scissors': 'Scissors decapitates lizard',
+              'lizard-scissors': 'Scissors decapitate lizard',
               'lizard-spock': 'Lizard poisons Spock',
               'paper-rock': 'Paper covers rock',
               'paper-scissors': 'Scissors cut paper',
