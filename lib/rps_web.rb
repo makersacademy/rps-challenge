@@ -22,6 +22,7 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :newgame
   end
 
+
   get '/game' do
     erb :game
   end
