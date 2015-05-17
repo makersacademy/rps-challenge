@@ -19,16 +19,17 @@ I would like to be able to play rock/paper/scissors
 
 Checklist
 ----
--[x] Basic 1 player web game of Rock, Paper, Scissors
--[x] Multi-player version
--[x] Special rules web game Rock, Paper, Scissors, Spock, Lizard (in separate branch - 1player)
+
+- [x] Basic 1 player web game of Rock, Paper, Scissors
+- [x] Multi-player version
+- [x] Special rules web game Rock, Paper, Scissors, Spock, Lizard (in separate branch - 1player)
 
 Screenshots
 ----
 
-![](https://github.com/github/training-kit/blob/master/images/professortocat.png)
+![Welcome Page](https://github.com/AlexHandy1/rps-challenge/blob/1player/public/img/RPS_Welcome_SS.png)
 
-![](https://github.com/github/training-kit/blob/master/images/professortocat.png)
+![Game Page](https://github.com/AlexHandy1/rps-challenge/blob/1player/public/img/RPS_Game_page_SS.png)
 
 Commentary/ To-do
 ----
