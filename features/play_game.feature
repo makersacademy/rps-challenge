@@ -29,14 +29,8 @@ Feature: Playing a game
     And I click "Submit"
     When I follow "Play!"
     Then I should see "Select rock, paper or scissors"
-    When I choose 'Rock'
     And I click "Submit"
     Then I should see "Result"
-
-  Scenario: Not making a choice and returning to choice page
-    Given I am on the choose page
-    And I click "Submit"
-    Then I should see "Select rock, paper or scissors"
 
   Scenario: Playing another round
     Given I am on the choose page

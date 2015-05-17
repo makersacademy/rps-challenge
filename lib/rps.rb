@@ -21,21 +21,17 @@ class RockPaperScissors < Sinatra::Base
     @@game.set_goal(params[:goal].to_i) if params[:goal] =~ /\d/
     @name = @@game.player_1.name
     @goal = @@game.goal
-    session[:no_choice_err] = nil
     erb :get_ready
   end
 
   get '/game/choose' do
     @name = @@game.player_1.name
     @goal = @@game.goal
-    @no_choice_err = session[:no_choice_err]
     erb :choose
   end
 
   post '/game/result' do
     if params[:choice].nil?
-      session[:no_choice_err] = 'You have to make a selection!'
-      @no_choice_err = session[:no_choice_err]
       redirect '/game/choose'
     else
       @name = @@game.player_1.name
@@ -51,7 +47,6 @@ class RockPaperScissors < Sinatra::Base
       if @@game.won?
         redirect '/game/game_over'
       else
-        session[:no_choice_err] = nil
         erb :result
       end
     end

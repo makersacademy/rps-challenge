@@ -11,11 +11,10 @@
   <body>
     <h1>
       <u>Select rock, paper or scissors</u></br>
-      <p class="error"><%= @no_choice_err %></p>
       <%= @name %>, make your choice!</br>
 
       <form action="/game/result" method="post">
-        <input type="radio" name="choice" value="rock" id="choice_rock"/> ROCK!</br>
+        <input checked type="radio" name="choice" value="rock" id="choice_rock"/> ROCK!</br>
         <input type="radio" name="choice" value="paper" id="choice_paper"/> PAPER!</br>
         <input type="radio" name="choice" value="scissors" id="choice_scissors"/> SCISSORS!</br>
         <input type="submit" value="Submit">
