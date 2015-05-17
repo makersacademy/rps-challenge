@@ -3,9 +3,9 @@ require_relative 'game'
 require_relative 'player'
 
 class RockPaperScissors < Sinatra::Base
-set :views, Proc.new { File.join(root, "..", "views") }
-set :public_folder, 'public'
-enable :sessions
+  set :views, Proc.new { File.join(root, "..", "views") }
+  set :public_folder, 'public'
+  enable :sessions
 
   get '/' do
     erb :start_page
