@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - 'features/step_definitions/web_steps.rb'
+
 EmptyLinesAroundBlockBody:
   Enabled: false
 
@@ -7,7 +11,7 @@ Style/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines
   SupportedStyles:
   - empty_lines
-  - no_empty_lines  
+  - no_empty_lines
 
 Style/StringLiterals:
   Enabled: false

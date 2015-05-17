@@ -1,0 +1,66 @@
+<div class = "text-center">
+<% if @p1_choice.nil? == true %>
+
+
+<h3>Greetings Professor <%= @name %>.</h3>
+<p>Shall we play a game?</p>
+<p>Pick one:</p>
+
+<% else %>
+
+  <% if @result == :win %>
+  <div class="alert alert-success" role="alert">You win!</div>
+  <% elsif @result == :lose %>
+  <div class="alert alert-danger" role="alert">Hahaha, you lost.</div>
+  <% else @result == :tie %>
+  <div class="alert alert-info" role="alert">It's a tie, try again!</div>
+  <% end %>
+  <div>
+    <div class = "col-md-5">
+      <p><span class="label label-default"><%= @name %></span></p>
+      <h1><%= @p1_choice %></h1>
+    </div>
+    <div class = "col-md-2" >
+      <br>
+      <br>
+      <h2>vs.</h2>
+    </div>
+    <div class = "col-md-5">
+      <p><span class="label label-default">CPU</span></p>
+      <h1><%= @cpu_choice %></h1>
+    </div>
+  </div>
+  <div>
+    <p>Play again?</p>
+  </div>
+
+
+  <% end %>
+
+</div>
+
+
+<div class="btn-group btn-group-justified" role="group">
+<a href = "/game?choice=rock" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-certificate" aria-hidden="true" name = "rock"></span> Rock</a>
+<a href = "/game?choice=paper" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Paper</a>
+<a href = "/game?choice=scissors" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-scissors" aria-hidden="true"></span> Scissors</a>
+<% unless @mode == :rps %>
+<a href = "/game?choice=lizard" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Lizard</a>
+<a href = "/game?choice=spock" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Spock</a>
+<% end %>
+</div>
+<div>
+  <br>
+<p><a href = "/" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Change player</a></p>
+</div>
+
+<div class = "text-right">
+<a href="#"  data-toggle="modal" data-target=".bs-example-modal-sm">Show rules</a>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <img src = "/img/rpssl-diagram.png"
+    </div>
+  </div>
+</div>
