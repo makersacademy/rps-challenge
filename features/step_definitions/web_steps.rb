@@ -85,11 +85,11 @@ When /^(?:|I )uncheck "([^\"]*)"(?: within "([^\"]*)")?$/ do |field, selector|
   end
 end
 
-# When /^(?:|I )choose "([^\"]*)"(?: within "([^\"]*)")?$/ do |field, selector|
-#   with_scope(selector) do
-#     choose(field)
-#   end
-# end
+When /^(?:|I )choose "([^\"]*)"(?: within "([^\"]*)")?$/ do |field, selector|
+  with_scope(selector) do
+    choose(field)
+  end
+end
 
 When /^(?:|I )attach the file "([^\"]*)" to "([^\"]*)"(?: within "([^\"]*)")?$/ do |path, field, selector|
   with_scope(selector) do
@@ -224,12 +224,5 @@ end
 
 When(/^I don't fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in('name', :with => '')
-end
-When(/^I choose "([^"]*)"$/) do |shape|
-  choose('rock')
-end
-
-When(/^computer choose "([^"]*)"$/) do |shape|
-  choose('paper')
 end
 

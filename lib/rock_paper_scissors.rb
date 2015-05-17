@@ -3,7 +3,7 @@ require_relative 'game'
 
 class RockPaperScissors < Sinatra::Base
    set :views, proc { File.join(root, '..', 'views') }
-   set :images, Proc.new { File.join(root, "..", "images") }
+   enable :sessions
    player = Player.new
    computer = Computer.new
    @@game = Game.new(player, computer)
@@ -17,7 +17,6 @@ class RockPaperScissors < Sinatra::Base
     erb :new_game
   end
 
-
   post '/game/new' do
     @name = params[:name]
     if @name && !@name.empty?
@@ -27,8 +26,8 @@ class RockPaperScissors < Sinatra::Base
     end
   end
 
-
   get '/start' do
+    @name = params[:name]
     erb :start
   end
 

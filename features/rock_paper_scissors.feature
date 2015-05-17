@@ -1,5 +1,5 @@
 Feature: Starting game
-In order to play rock paper scissors
+In order to play rock paper and scissors
 As a excited player
 I want to start a new game
 
@@ -22,6 +22,10 @@ Then I should see "Let's have some fun"
 Scenario: Playing game
 Given I am on the startpage
 When I choose "rock"
-When computer choose "paper"
 And I press "Test your luck"
-Then I should see "YOU LOST"
+Then I should see "Play again"
+
+Scenario: Playing another game
+Given I am on the resultpage
+When I follow "Play again"
+Then I should see "Welcome"
