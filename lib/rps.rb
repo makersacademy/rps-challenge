@@ -17,34 +17,43 @@ enable :sessions
   end
 
   post '/game/get_ready' do
-    @@game.player_1.name = params[:name]
+    @@game.player_1.name = params[:name] if params[:name] =~ /\S+/
     @@game.set_goal(params[:goal].to_i) if params[:goal] =~ /\d/
     @name = @@game.player_1.name
     @goal = @@game.goal
+    session[:no_choice_err] = nil
     erb :get_ready
   end
 
   get '/game/choose' do
     @name = @@game.player_1.name
     @goal = @@game.goal
+    @no_choice_err = session[:no_choice_err]
     erb :choose
   end
 
   post '/game/result' do
-    @name = @@game.player_1.name
-    session[:choice] = params[:choice]
-    session[:cpu_choice] = @@game.player_2.cpu_choice
-    @choice = session[:choice]
-    @cpu_choice = session[:cpu_choice]
-    @result = @@game.result(@choice, @cpu_choice)
-    @result == 'draw' ? @winner = 'Draw!' : @winner = "#{@result.name} wins the round!"
-    @wins = @@game.player_1.wins
-    @cpu_wins = @@game.player_2.wins
-    @goal = @@game.goal
-    if @@game.won?
-      redirect '/game/game_over'
+    if params[:choice].nil?
+      session[:no_choice_err] = 'You have to make a selection!'
+      @no_choice_err = session[:no_choice_err]
+      redirect '/game/choose'
     else
-      erb :result
+      @name = @@game.player_1.name
+      session[:choice] = params[:choice]
+      session[:cpu_choice] = @@game.player_2.cpu_choice
+      @choice = session[:choice]
+      @cpu_choice = session[:cpu_choice]
+      @result = @@game.result(@choice, @cpu_choice)
+      @result == 'draw' ? @winner = 'Draw!' : @winner = "#{@result.name} wins the round!"
+      @wins = @@game.player_1.wins
+      @cpu_wins = @@game.player_2.wins
+      @goal = @@game.goal
+      if @@game.won?
+        redirect '/game/game_over'
+      else
+        session[:no_choice_err] = nil
+        erb :result
+      end
     end
   end
 

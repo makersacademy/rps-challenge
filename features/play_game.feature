@@ -1,4 +1,4 @@
-Feature: Starting the game
+Feature: Playing a game
   In order to play Rock, Paper, Scissors
   As an office worker seeking distraction
   I want to start a new game
@@ -17,7 +17,7 @@ Feature: Starting the game
     Then I should see "Hello, Andy!"
     Then I should see "6 rounds"
 
-  Scenario: Playing a game
+  Scenario: Beginning a game
     Given I am on the register page
     And I click "Submit"
     When I follow "Play!"
@@ -25,7 +25,6 @@ Feature: Starting the game
 
   Scenario: Making a choice and seeing results
     Given I am on the register page
-    When I fill in name with "Andy"
     When I fill in goal with "6"
     And I click "Submit"
     When I follow "Play!"
@@ -34,7 +33,12 @@ Feature: Starting the game
     And I click "Submit"
     Then I should see "Result"
 
-  Scenario: Playing another game
+  Scenario: Not making a choice and returning to choice page
+    Given I am on the choose page
+    And I click "Submit"
+    Then I should see "Select rock, paper or scissors"
+
+  Scenario: Playing another round
     Given I am on the choose page
     When I choose 'Rock'
     And I click "Submit"

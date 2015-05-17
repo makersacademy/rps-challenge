@@ -1,19 +1,25 @@
+[![Build Status](https://travis-ci.org/andygout/rps-challenge.png)](https://travis-ci.org/andygout/takeaway-challenge)
+
+[![Coverage Status](https://coveralls.io/repos/andygout/rps-challenge/badge.png)](https://coveralls.io/r/andygout/takeaway-challenge)
+
 # RPS Challenge: Rōnin Badge Test
 
 TO DO
 -----
-*   Round wins are not being counted properly and so game continues after goal has been reached, i.e. 3/2 wins...
-*   Scenario in which no radio box is checked - a nil value is passed; should redirect to choose page.
-*   Add game over scenario tests (will require mocks (or Cucumber equivalent - before/after hooks? - apply elsewhere where required)):-
+*   Add 'game over' scenario tests:-
     Scenario: Ending the game and starting over
     Given I am on the game over page
     Then I should see "Game Over"
     When I follow "Play Again?"
     Then I should see "Enter your name"
-*   N.B. choose.erb radio button to see how 'id' must be added to make Cucumber features test work.
+    (http://www.sinatrarb.com/testing.html- Testing Sinatra with Rack::Test required)
 *   Function to show reasoning for outcome, i.e. 'scissors cuts paper / paper covers rock / rock crushes scissors' - perhaps use hashes with key being phrase and element being array - compare two choices again the element array; will be especially useful when expanding to Spock and lizard.
 *   Two player mode.
 *   Rock paper scissors lizard spock mode.
+
+N.B.
+----
+*   N.B. choose.erb radio button to see how 'id' must be added to make Cucumber features test work.
 
 Instructions
 -------
