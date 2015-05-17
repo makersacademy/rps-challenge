@@ -6,13 +6,13 @@ feature 'Can play Rock Paper Scissors' do
     expect(paper1.versus paper2).to eq :draw
   end
 
-  scenario 'Can play stone against paper, and paper wins' do
+  scenario 'Can play paper against stone, and paper wins' do
     paper = Paper.new
     stone = Stone.new
     expect(paper.versus stone).to eq :win
   end
 
-  scenario 'Can play scissors against paper, and paper loses' do
+  scenario 'Can play paper against scissors, and paper loses' do
     paper = Paper.new
     scissors = Scissors.new
     expect(paper.versus scissors).to eq :loss
@@ -30,7 +30,7 @@ feature 'Can play Rock Paper Scissors' do
     expect(stone.versus scissors).to eq :win
   end
 
-  scenario 'Can play stone against paper, and paper wins' do
+  scenario 'Can play stone against paper, and paper loses' do
     stone = Stone.new
     paper = Paper.new
     expect(stone.versus paper).to eq :loss
@@ -46,5 +46,11 @@ feature 'Can play Rock Paper Scissors' do
     scissors = Scissors.new
     paper = Paper.new
     expect(scissors.versus paper).to eq :win
+  end
+
+    scenario 'Can play scissors against stone and scissors loses' do
+    scissors = Scissors.new
+    stone = Stone.new
+    expect(scissors.versus stone).to eq :loss
   end
 end
