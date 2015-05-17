@@ -12,7 +12,7 @@ Feature: Play a game
     When I follow "Rock"
     Then I should see "It's a tie, try again!"
 
-  Scenario: WIN rpsls mode: Player 1 & CPU both choose paper
+  Scenario: WIN rpsls mode: Player 1 chooses Spock & CPU chooses paper
     Given I am on the homepage
     And I choose "rpsls"
     And I seed with 2
