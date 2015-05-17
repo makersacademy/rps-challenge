@@ -25,11 +25,11 @@ describe RPS do
     end
 
     it 'LOSE: Player chooses scissors & CPU chooses spock' do
-      expect(subject.results(:scissors)[:result]).to eq :lose
+      expect(subject.results(:scissors, :rpsls)[:result]).to eq :lose
     end
 
     it 'WIN: Player chooses lizard & CPU chooses spock' do
-      expect(subject.results(:lizard)[:result]).to eq :win
+      expect(subject.results(:lizard, :rpsls)[:result]).to eq :win
     end
   end
 end

@@ -11,6 +11,10 @@ Built using ruby + sinatra, tested using Cucumber
 - [x] Basic version (Rock, paper, scissors)
 - [ ] Bonus 1 (Multiplayer - pending JS magic)
 - [x] Bonus 2 (Rock, paper, scissors, lizard, spock)
+  - Allows playing both modes
+
+
+![Screenshot home](/public/img/screenshot-home.png)
 
 ![Screenshot](/public/img/screenshot.png)
 

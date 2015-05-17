@@ -8,19 +8,26 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
+  post '/game/config' do
+    session[:name] = params[:name].empty? ? 'Anonymous' : params[:name]
+    session[:mode] = params[:mode]
+    redirect '/game'
+
+  end
+
   post '/game' do
-    session[:name] = params[:name].empty? ? 'Human' :  params[:name]
     @name = session[:name]
+    @mode = session[:mode]
     erb :game
   end
 
   get '/game' do
-    session[:name] = params[:name] if params[:name]
     @name = session[:name]
+    @mode = session[:mode].to_sym
     unless params[:choice].nil?
       game = RPS.new
-      @player_choice = params[:choice]
-      @results = game.results(@player_choice.to_sym)
+      @p1_choice = params[:choice]
+      @results = game.results(@p1_choice.to_sym, @mode)
       @cpu_choice = @results[:cpu_choice]
       @result = @results[:result]
     end

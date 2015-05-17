@@ -11,22 +11,22 @@ class RPS
     }
   end
 
-  def results(player_choice)
-    cpu_choice = random
-
-    if player_choice == cpu_choice
+  def results(p1, mode = :rps)
+    p2 = random(mode)
+    if p1 == p2
       result = :tie
-    elsif rules[player_choice].include? cpu_choice
+    elsif rules[p1].include? p2
       result = :win
     else
       result = :lose
     end
-
-    { cpu_choice: cpu_choice, result: result }
+    { cpu_choice: p2, result: result }
   end
 
-  def random
+  def random(mode)
+    n = 3 if mode == :rps
+    n = 5 if mode == :rpsls
     options = [:rock, :paper, :scissors, :lizard, :spock]
-    options[rand(5)]
+    options[rand(n)]
   end
 end
