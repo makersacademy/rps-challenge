@@ -16,7 +16,6 @@ class Rps < Sinatra::Base
   post '/game' do
     session["user"] = params[:value]
     erb :game
-
   end
 
   get '/game/new' do

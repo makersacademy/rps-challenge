@@ -1,13 +1,14 @@
+<div align="center">
   <% if @result == "draw" %>
-     <a href='/game'>Replay?</a>
-
-      <p>DRAW!</p>
-      </br>
-
+    <p style="color:red">DRAW!</p>
+    </br>
+    <a href='/game'>Replay?</a>
   <% else %>
-    <%= @result %>
-     <a href='/game/new'>New Game</a>
+    <p><span style="color:red"><%= @result %></span></p>
+    </br>
+    <a href='/game/new'>New Game?</a>
   <% end %>
+</div>
 
 
 
