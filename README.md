@@ -1,15 +1,7 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -33,25 +25,28 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+Project Status
+----
 
-As usual please start by
+* User stories satisfied
+* A player can enter their name and see that name returned
+* A player can choose an option of Rock, Paper or Scissors
+* A response in randomly generated
+* A winner is returned
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+To do
+----
+
+* Add error message if name is not entered
+* Add styling
+* Make it possible for a two player game
+
+How to run
+----
+
+* rackup in terminal
+* go to localhost:9292
+
 
 **Rōnin BANZAI!!!!**
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
