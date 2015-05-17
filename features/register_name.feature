@@ -6,5 +6,7 @@ Feature: Registering your name
 Scenario: Putting the name in the form
   Given I am on the homepage
   Then I should see "What's Your name"
-  And enter my name
-  And I should see "Hello Dan!"
+  When I fill in "name" with "Rodney"
+  And I press "Play"
+  Then I should be on the game page
+  And I should see "choose your weapon!"
