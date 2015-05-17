@@ -16,7 +16,7 @@ describe Game do
     end
 
     it 'Will set a specified win goal of five' do
-      game.goal=5
+      game.goal = 5
       expect(game.goal).to eq 5
     end
 
@@ -25,7 +25,7 @@ describe Game do
     end
 
     it 'Can have rules set to include lizard, Spock' do
-      game.rules='rpsls'
+      game.rules = 'rpsls'
       expect(game.rules).to eq 'rpsls'
     end
 

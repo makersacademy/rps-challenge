@@ -133,7 +133,7 @@ feature 'Set up a game of rock, paper, scissors' do
   end
 
   scenario 'Player 2 beats player 1 with scissors against lizard and tallies win' do
-    expect(game.result'lizard', 'scissors').to eq game.player_2
+    expect(game.result 'lizard', 'scissors').to eq game.player_2
     expect(game.player_1.wins).to eq 0
     expect(game.player_2.wins).to eq 1
   end
@@ -184,7 +184,7 @@ feature 'Set up a game of rock, paper, scissors' do
   end
 
   scenario 'Can have CPU make random choice depending on rules (rpsls)' do
-    cpu_choice = game.player_2.cpu_choice 'rps'
+    cpu_choice = game.player_2.cpu_choice 'rpsls'
     rps = ['rock', 'paper', 'scissors', 'lizard', 'Spock']
     expect(rps).to include cpu_choice
   end

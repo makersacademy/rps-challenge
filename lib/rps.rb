@@ -18,8 +18,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game/get_ready' do
     @@game.player_1.name = params[:name] if params[:name] =~ /\S+/
-    @@game.goal=params[:goal].to_i if params[:goal] =~ /\d/
-    @@game.rules=params[:rules]
+    @@game.goal = params[:goal].to_i if params[:goal] =~ /\d/
+    @@game.rules = params[:rules]
     @rules = @@game.rules
     @name = @@game.player_1.name
     @goal = @@game.goal

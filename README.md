@@ -59,3 +59,11 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+![Screenshot Get Ready](/public/img/rps_get_ready.png)
+
+![Screenshot Select](/public/img/rps_select.png)
+
+![Screenshot Result](/public/img/rps_result.png)
+
+![Screenshot Game Over](/public/img/rps_game_over.png)
