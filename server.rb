@@ -1,12 +1,14 @@
 require 'sinatra/base'
 
 class RPSWeb < Sinatra::Base
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/game' do
-  @name = params[:name]
+  session[:name] = params[:name]
   erb :game
   end
 
