@@ -1,5 +1,6 @@
 Feature: Play a game of Rock Paper Scissors
-  scenario:When I am on the homepage
-  Given I fill in my name
-  When I press submit
-  Then I will see my name 
+  Scenario: Enter my name
+  Given I am on the homepage
+  When I fill in "name" with "Jo"
+  And I press "submit"
+  Then I should see "Jo"
