@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 
-gem 'sinatra'
+gem 'sinatra', git: 'git@github.com:sinatra/sinatra.git'
 
 group :test do
   gem 'rspec'
