@@ -20,10 +20,10 @@ class RPSWeb < Sinatra::Base
 
   post '/play' do
     # Create game if it doesn't exist yet
-    # Unimplemented: type of game, type of opponent
+    # Unimplemented: Spock and Lizard
     @@game ||= Game.new Player, params[:score].to_i
 
-    # Name entry checks
+    # Check if a player name's been entered, store if so
     if params.has_key?('name')
       redirect '/' unless params[:name].length > 0
       @@name ||= {}
@@ -32,32 +32,54 @@ class RPSWeb < Sinatra::Base
       redirect '/'
     end
 
-    # Check if it's my turn, hold if not
-    # Waiting on setup of two player mode
-
     # Check if a move's been submitted
     if params.has_key?('Choice')
       @@game.send(session[:player_id]).play params[:Choice]
     end
+  end
 
-    # Use game.players to check no. of players and decide what to do
-    # In this version, game.players will always == 1
+  # This handles non-form activities
+  get '/play' do
+
+    # In a one player game, take computer's move
     if @@game.players == 1
-      @@game.player_2.play :auto
-
+      @@game.player_2.autoplay
     end
 
-    # Make variables accessible from the ERB file
+    # End the turn if both players have made a move
+    if @@game.turn_over?
+      @outcome = @@game.end_turn
+      @my_play = @@game.send(session[:player_id]).played
+      @their_play = @@game.send(session[:player_id]).played
+
+
+      erb :turnResult
+    else
+      # If waiting on other player, divert to a holding screen
+      redirect '/wait'
+    end
+
+    # Check if the game's won and redirect if so
+    redirect '/gameover' if @@game.game_over?
+
+    # Show the 'choose your play' form
     @name = @@name[session[:player_id]]
     erb :play
-
   end
 
-  get '/play' do
-    # THIS SHOULD NEVER BE CALLED?!
-    erb :play
+  # Shows a holding page. Gets re-called every 4s until turn completion
+  get '/wait' do
+    redirect '/play' if @@game.turn_over?
+    erb :waitToPlay
   end
 
+  get '/gameover' do
+    if @@game.send(session[:player_id]).won_game?
+      erb :gameWon
+    else
+      erb :gameLost
+    end
+  end
 
 
   # start the server if ruby file executed directly

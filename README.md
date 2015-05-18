@@ -9,7 +9,7 @@ The following are the main components of the actual program:
 * Sinatra class and ERB files for the UI. GET / for the homepage, GET and POST /play for in-progress games, and GET /gameover for completed games.
 * Session cookies for user identification.
 * Game class to store individual games. Contains Player objects through dependency injection. Has .points_required method which returns the number of points required to win the game (passed in via initial argument), and game_over? method to return if a player has won the game.
-* Player class to store individual players. Has .play method which returns :rock, :paper, :scissors, and can be given :auto to return one selected at random. Has .won? and .lost? methods to check if the player has lost the game. Has .points method to see score for current player.
+* Player class to store individual players. Has .play method which returns :rock, :paper, :scissors, and .autoplay method to return one selected at random. Has .won_game? method to check if the player has lost the game. Has .points method to see score for current player.
 * Tbc: some way of selecting and storing whether a player is a bot or a real person.
 * Tbc: add support for Spock and Lizard.
 
