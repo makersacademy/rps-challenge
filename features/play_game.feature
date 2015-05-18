@@ -9,19 +9,17 @@ Feature: Rock, Paper, Scissors WEB'
     And press "Lets Play"
     Then I should see "Hey Jenny!"
 
-
   Scenario: Starting a game
     Given I am on the game page
-    When I press "IMAGE"
+    When I choose "Rock"
+    And press "submit"
     Then I should see "Jenny has chosen rock"
-
-    ----------------------------------------------
 
   Scenario: Playing against the computer
   Given I am on the game page
-  And I choose "rock"
+  And I choose "Paper"
   And I press "submit"
-  Then I see "Computer choice: Paper"
+  Then I see "Mac choice: Paper"
 
   Scenario: Knowing who has won
   Given I am on the game page

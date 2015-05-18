@@ -15,7 +15,6 @@ class RPSWeb < Sinatra::Base
   post '/game1' do
     session[:name] = params[:name]
       @name = params[:name]
-       @player_choice = params[:choice]
     erb :game1
   end
 
@@ -24,7 +23,7 @@ class RPSWeb < Sinatra::Base
       puts 'is this thing working?'
       puts params
       @name = session[:name]
-      @player_choice = params[:choice]
+      session[:player_choice] = params['choice']
     erb :game_choice
   end
 
@@ -33,13 +32,11 @@ class RPSWeb < Sinatra::Base
       puts 'is this thing really working?'
       puts params
       @name = session[:name]
-      @player_choice = params[:choice]
-      @mac_choice = @@game.cpu_choice
+      @player_choice = session[:player_choice]
+      @mac_choice = :cpu
       @outcome = @@game.result(@player_choice)
     erb :results
   end
-
-
 
 
   # start the server if ruby file executed directly
