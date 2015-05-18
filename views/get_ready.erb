@@ -1,0 +1,20 @@
+<center>
+  <head>
+    <style>
+      body {
+        background: url("http://uthmag.com/wp-content/uploads/2015/02/Rock_Paper_Scissors_by_smashmethod.jpg") no-repeat fixed;
+      }
+    </style>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <h1>
+      <u>Get Ready</u></br>
+      Hello, <%= @name %>!</br>
+      Get ready to play Rock, Paper, Scissors<% if @rules == 'rpsls' %>, Lizard, Spock<% end %>!</br>
+      The winner is the first to win <%= @goal %> round<% if @goal > 1 %>s<% end %>.</br>
+      <a href="/game/choose">Play!
+    </h1>
+  </body>
+</center>

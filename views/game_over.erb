@@ -1,0 +1,21 @@
+<center>
+  <head>
+    <style>
+      body {
+        background: url("http://uthmag.com/wp-content/uploads/2015/02/Rock_Paper_Scissors_by_smashmethod.jpg") no-repeat fixed;
+      }
+    </style>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <h1>
+      <u>Game Over</u></br>
+      <%= @name %>, you chose <%= @choice %> (Wins: <%= @wins %>/<%= @goal %>)</br>
+      The computer chose <%= @cpu_choice %> (Wins: <%= @cpu_wins %>/<%= @goal %>)</br>
+      <em><%= @reason %></em></br>
+      <%= @winner %> is the overall winner!</br>
+      <a href="/game/new">Play Again?</a>
+    </h1>
+  </body>
+</center>

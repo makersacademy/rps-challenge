@@ -1,0 +1,27 @@
+<center>
+  <head>
+    <style>
+      body {
+        background: url("http://uthmag.com/wp-content/uploads/2015/02/Rock_Paper_Scissors_by_smashmethod.jpg") no-repeat fixed;
+      }
+    </style>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <h1>
+      <u>Register Name</u></br>
+      <form action="/game/get_ready" method="post">
+        Enter your name:
+        <input type="text" name="name"></br>
+        First to (how many?):
+        <input type="text" name="goal"></br>
+        </br>
+        Which rules?:</br>
+        <input checked type="radio" name="rules" value="rps" id="rules_rps"/> ROCK, PAPER, SCISSORS!</br>
+        <input type="radio" name="rules" value="rpsls" id="rules_rpsls"/> ROCK, PAPER, SCISSORS, LIZARD, SPOCK!</br>
+        <input type="submit" value="Submit">
+      </form>
+    </h1>
+  </body>
+</center>
