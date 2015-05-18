@@ -36,7 +36,9 @@ class Rps < Sinatra::Base
   post '/game/result' do
     session["move"] = session["game"].player1.play params[:move]
     session["move"] = session["game"].player2.play
-    @result = session["game"].referee
+    @result = session["game"].check
+    p @result
+    @winner = session["game"].winner?
     erb :result
   end
 

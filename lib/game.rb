@@ -14,7 +14,7 @@ class Game
     @player2.won = 0
   end
 
-  def referee
+  def check
     a = player1.moves
     b = player2.moves
 
@@ -31,7 +31,6 @@ class Game
     else
       @player2.won += 1
     end
-    winner?
   end
 
   def winner?
