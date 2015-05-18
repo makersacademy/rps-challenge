@@ -1,0 +1,25 @@
+<div>
+<form action="/" method = "get">
+ <div class="container">
+ <div class="jumbotron">
+      <h1><%= @name %>!</h1>
+        <h2>You chose <%=@player_choice%><h2><br/>
+        <h2>Mac chose <%=@mac_choice%><h2><br/>
+<br>
+      <% if @outcome == :LOSE %>
+        <h1><center>YOU LOSE!!</h1>
+      <% elsif @outcome == :TIE %>
+        <h1><center>Hmmmmmm, it is a tie!</h1>
+      <% else %>
+        <h1><center><%= @name %> wins! You got lucky!</h1>
+      <% end %>
+<br>
+<br>
+ <p class="lead">Do you want to play again?
+        <p><button type="submit" class="btn btn-primary">For sure!</button></p>
+        <p><button type="submit" class="btn btn-primary">No, I'm beat!</button></p>
+<br>
+<br>
+<div>
+
+

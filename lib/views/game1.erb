@@ -1,0 +1,19 @@
+<div>
+<form action="/game_choice" method = "post">
+<div class="container">
+<div class="jumbotron">
+      <h1>Hey <%= @name %>!</h1>
+      <p class="lead">Pick an image: Rock, Paper or Scissors?</p>
+      <form action="/game" method="post">
+    <input type="radio" name="choice" id="rock" value="Rock">Rock<br/>
+    <br/>
+    <input type="radio" name="choice" id="paper" value="Paper">Paper<br/>
+    <br/>
+    <input type="radio" name="choice" id="scissors" value="Scissors">Scissors<br/>
+    <br/>
+    <br/>
+    <input type="submit" value="submit">
+    </form>
+      </div>
+      </div>
+
