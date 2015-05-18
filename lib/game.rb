@@ -14,13 +14,13 @@ class Game
 
     if a == b 
       "draw"
-    elsif a = "rock" && b = "scissors"
+    elsif a == "rock" && b == "scissors"
       "player1 wins"
-    elsif a = "paper" && b = "scissors" 
+    elsif a == "paper" && b == "scissors" 
      "player2 wins"
-    elsif a = "scissors" && b = "paper"
+    elsif a == "scissors" && b == "paper"
      "player1 wins"
-    elsif a = "paper" && b = "rock"
+    elsif a == "paper" && b == "rock"
       "player1 wins"
     else 
       "player2 wins"

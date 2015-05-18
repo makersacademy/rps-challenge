@@ -8,4 +8,15 @@ Scenario: Signing in
   When I click on "New Game"
   Then I should see "What's your name?"
 
+  Scenario: Entering the game
+  Given I am on the register page
+  When I click "Submit"
+  Then I should see "Rock","Paper" and "Scissors"
+
+  Scenario: Playing the game
+  Given I am on the game page
+  When I choose my 'move'
+  And the computer chooses their 'move'
+  Then the page will display the result
+
   
