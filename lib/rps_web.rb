@@ -20,8 +20,8 @@ class RPSWeb < Sinatra::Base
 
   post '/play' do
     # Create game if it doesn't exist yet
-    # Unimplemented: choose winning score, type of game, type of opponent
-    @@game ||= Game.new Player
+    # Unimplemented: type of game, type of opponent
+    @@game ||= Game.new Player, params[:score].to_i
 
     # Name entry checks
     if params.has_key?('name')
@@ -36,12 +36,8 @@ class RPSWeb < Sinatra::Base
     # Waiting on setup of two player mode
 
     # Check if a move's been submitted
-    if params.has_key?('Rock')
-      @@game.send(session[:player_id]).play :Rock
-    elsif params.has_key?('Paper')
-      @@game.send(session[:player_id]).play :Paper
-    elsif params.has_key?('Scissors')
-      @@game.send(session[:player_id]).play :Scissors
+    if params.has_key?('Choice')
+      @@game.send(session[:player_id]).play params[:Choice]
     end
 
     # Use game.players to check no. of players and decide what to do
