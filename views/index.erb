@@ -1,0 +1,13 @@
+<div>
+  <h1> Hello, and welcome to Rock Paper, Scissors </h1>
+
+    <form action="/" method="post">   <!-- this is a PUT -->
+      What's your name?
+      <input type="text" name="player1">
+      <input type="submit" value="submit">  <!-- need value so capybara knows it exists -->
+    </form>
+
+  <% if @errormsg %>
+      <div> Name entered is rubbish </div>
+    <% end %>
+</div>
