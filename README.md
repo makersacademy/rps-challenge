@@ -2,6 +2,10 @@
 
 ## Completion notes
 
+### Current status
+
+I've failed to get this one working in time. Wasn't a great weekend, and the time I did have I spent more on relatively minor aspects of the project such as figuring out how to stub methods in Cucumber. The initial design and code phases worked fine, but cascading that down into actual code turned into spaghetti. A large part of that was the transition from Sinatra frontend code to backend unit tests and code. Another large part was trying to fit it into an OO framework and falling over - injecting players into the game made everything horrible. Annoying, as I could manage a basic RPS game playable through IRB in minutes.
+
 ### Domain modelling
 
 The following are the main components of the actual program:

@@ -25,7 +25,7 @@ attr_reader :players
     # Figure out who won, add a point accordingly
     if @player_1.played == @player_2.played
       outcome = :draw
-    elsif @plays.index(@player_1.played) == (@plays.index(@player_2.played) - 1) % 3
+    elsif @plays.index(@player_1.played) == ((@plays.index(@player_2.played)) -1) % 3
       @player_1.add_point
       outcome = :player_1
       if @player_1.points >= @winning_score

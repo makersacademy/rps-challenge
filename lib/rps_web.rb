@@ -29,8 +29,8 @@ class RPSWeb < Sinatra::Base
         session[:player_id] ||= :player_2
         @@game.player_2.join_game
       else
-        session[:player_id] ||= :player_2
-        @@game.player_2.join_game
+        session[:player_id] ||= :player_1
+        @@game.player_1.join_game
       end
     end
 

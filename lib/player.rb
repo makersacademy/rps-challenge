@@ -23,6 +23,7 @@ class Player
   # This method is stubbed in feature tests to control randomness
   def autoplay
     @played = [:Rock, :Paper, :Scissors].select
+    @has_played = true
   end
 
   def new_turn
