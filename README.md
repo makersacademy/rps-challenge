@@ -1,5 +1,9 @@
 # RPS Challenge: Rōnin Badge Test
 
+Benny's Notes
+-------
+* I finished the one player version. Today I got "NoMethodError: undefined method `join' for #<String:0x007fb000b3cb50>" which I could not figure out. I believe it points to a file in the Sinatra framework, and when referring to previous commits of my project (where everything was working perfectly fine) this problem still pursued. Looking forward to figuring out what the problem was.
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
