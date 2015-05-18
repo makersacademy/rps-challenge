@@ -1,0 +1,35 @@
+<% if @player_name.nil? || @player_name.empty? %>
+  <section class="center">
+    <h2>You have to provide a name!</h2>
+    <form action="/chose">
+      <input type="text" name="name"> <br>
+      <input id="classic" class="classic" type="submit" name="type" value="classic">
+      <input id="lizspock" class="lizspock" type="submit" name="type" value="lizspock">
+    </form>
+  </section>
+<% else %>
+  <section class="center">
+    <h2>Hello <%= @player_name %>!</h2>
+    <h2>Make your choice</h2>
+  </section>
+  
+  <section class="center">
+    <form action="/matchmaking"> 
+      <input id="rock" type="radio" name="el" value="rock" required>
+      <label for="rock"><img src="css/img/rock.png"></label>
+      <input id="paper" type="radio" name="el" value="paper" required>
+      <label for="paper"><img src="css/img/paper.png"></label>
+      <input id="scissors" type="radio" name="el" value="scissors" required>
+      <label for="scissors"><img src="css/img/scissors.png"></label>
+    <% if @game_type == "lizspock" %><br><br>
+      <input id="lizard" type="radio" name="el" value="lizard" required>
+      <label for="lizard"><img src="css/img/lizard.png"></label>
+      <input id="spock" type="radio" name="el" value="spock" required>
+      <label for="spock"><img src="css/img/spock.png"></label>
+    <% end %><br><br>
+      <h2>And choose your opponent</h2>
+      <input id="human" class="human" type="submit" name="opponent" value="human">
+      <input id="cpu" class="cpu" type="submit" name="opponent" value="cpu">
+    </form> 
+  </section>
+<% end %>

@@ -1,0 +1,218 @@
+/* General */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: gold;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+
+/* Buttons */
+
+input:focus {outline:0;}
+
+input {
+  height: 32px;
+  width: 216px;
+  margin: 0 0 50px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  font-family: gooddogregular;
+  font-size: 1.2em;
+  box-shadow: 3px 2px 5px #1E1E1E;
+}
+
+input.classic {
+  background: transparent url("img/rps.png") no-repeat scroll center;
+  height: 365px;
+  width: 400px;
+  color:transparent;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+input.lizspock {
+  height: 365px;
+  width: 400px;
+  background: transparent url("img/rpsls.png") no-repeat scroll center;
+  color:transparent;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+input.human {
+  height:100px;
+  width:100px;
+  margin-right: 15px;
+  background: transparent url("img/human.png") no-repeat scroll center;
+  color:transparent;
+  cursor: pointer;
+  box-shadow:none; 
+}
+
+input.cpu {
+  height:100px;
+  width:100px;
+  margin-left: 15px;
+  background: transparent url("img/cpu.png") no-repeat scroll center;
+  color:transparent;
+  cursor: pointer;
+  box-shadow:none;
+}
+
+/* Selection */
+
+input[type="radio"]{
+  display: none;
+}
+
+input[type=radio] + label {
+  display:inline-block;
+  margin:0 25px;
+  padding: 3px 2px 0px 2px;
+  border-color: #ddd;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type=radio]:checked + label { 
+  border: 3px solid forestgreen;
+  border-radius: 65px;
+}
+
+/* Layout */
+
+.top-bar {
+  padding: 1px 0px;
+  background-color: forestgreen;
+  font-size: 2.5em;
+  text-align: center;
+  box-shadow: 3px 2px 5px #1E1E1E;
+}
+
+.top-bar a {
+  color: gold;
+}
+
+.center {
+  display: table;
+  margin: 10px auto 8px;
+  text-align: center;
+}
+
+.fight {
+  margin-top: 18px;
+  margin-bottom: -70px;
+  padding: 1px;
+  border-radius: 210px;
+  background-color: rgba(255, 136, 32, 0.32);
+}
+
+.player1 {
+  margin: -15px 0 -30px 0;
+  text-align:left;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.5em;
+}
+
+.player2 {
+  margin: -37px 0 0 0 !important; 
+  text-align:right;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.5em;
+}
+
+.vs {
+  display:inline;
+  font-size: 1.8em;
+}
+
+.result {
+  margin-top: -30;
+  font-size: 2em;
+}
+
+.links {
+  line-height: 0.7em;
+}
+
+.links a {
+  margin-top: 25px;
+  color: forestgreen;
+}
+
+/* Element Icons */
+
+.element {
+  display: inline-flex;
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  margin: 0 35px;
+}
+
+.rock {
+  background-image: url('img/rock.png');
+}
+.paper {
+  background-image: url('img/paper.png');
+}
+.scissors {
+  background-image: url('img/scissors.png');
+}
+.lizard {
+  background-image: url('img/lizard.png');
+}
+.spock {
+  background-image: url('img/spock.png');
+}
+
+/* Transitions */
+
+.fade_in {
+      -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 4s; /* Firefox < 16 */
+        -ms-animation: fadein 4s; /* Internet Explorer */
+         -o-animation: fadein 4s; /* Opera < 12.1 */
+            animation: fadein 4s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

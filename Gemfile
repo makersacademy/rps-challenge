@@ -5,11 +5,11 @@ ruby '2.2.1'
 gem 'sinatra'
 
 group :test do
-  gem 'rspec'
-  gem 'rubocop-rspec'
-  gem 'cucumber'
-  gem 'rubocop'
-  gem 'coveralls', require: false
   gem 'capybara'
-  gem 'byebug'
+  gem 'coveralls', require: false
+  gem 'cucumber'
+  gem 'rerun'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
