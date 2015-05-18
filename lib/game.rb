@@ -3,6 +3,8 @@ require_relative 'computer'
 
 class Game
   
+  
+  
   def compare(player_choice, computer_choice)
     if player_choice == 'rock'
       if computer_choice == 'rock'
