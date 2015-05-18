@@ -21,6 +21,7 @@ TO DO
     Then I should see "Enter your name"
     (http://www.sinatrarb.com/testing.html- Testing Sinatra with Rack::Test / 'seed' function required?)
 *   Two player mode.
+*   Add styling to submit button (larger).
 
 N.B.
 ----
