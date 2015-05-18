@@ -1,13 +1,18 @@
 EmptyLinesAroundBlockBody:
   Enabled: false
 
+AllCops:
+  Exclude:
+    - 'features/step_definitions/web_steps.rb'
+    - 'spec/spec_helper.rb'
+
 Style/EmptyLinesAroundClassBody:
   Description: Keeps track of empty lines around class bodies.
   Enabled: false
   EnforcedStyle: empty_lines
   SupportedStyles:
   - empty_lines
-  - no_empty_lines  
+  - no_empty_lines
 
 Style/StringLiterals:
   Enabled: false

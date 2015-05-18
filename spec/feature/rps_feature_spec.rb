@@ -11,6 +11,6 @@ feature 'I can play against a computer'do
   end
   scenario 'A winner is decide based on game logic'do
     game = Game.new
-    expect(game).to respond_to( :result).with(2).arguments
+    expect(game).to respond_to(:result).with(2).arguments
   end
 end
