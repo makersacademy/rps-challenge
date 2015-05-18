@@ -44,6 +44,13 @@ class RPSWeb < Sinatra::Base
       @@game.send(session[:player_id]).play :Scissors
     end
 
+    # Use game.players to check no. of players and decide what to do
+    # In this version, game.players will always == 1
+    if @@game.players == 1
+      @@game.player_2.play :auto
+
+    end
+
     # Make variables accessible from the ERB file
     @name = @@name[session[:player_id]]
     erb :play
