@@ -1,19 +1,14 @@
-# RPS Challenge: Rōnin Badge Test
+#RPS Challenge#
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+[![Build Status](https://travis-ci.org/RBGeomaticsRob/rps-challenge.svg?branch=master)](https://travis-ci.org/RBGeomaticsRob/rps-challenge) [![Coverage Status](https://coveralls.io/repos/RBGeomaticsRob/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/RBGeomaticsRob/rps-challenge?branch=master)
 
-Task 
-----
+##Overview##
 
-Knowing how to build web applications is getting us almost there as web developers!
+The end of the 3rd week challenge at Makers Academy.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+The Makers Academy Marketing Array have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The user stories have been extracted below:
 
 ```sh
 As a marketeer
@@ -22,36 +17,55 @@ I would like to register my name before playing an online game
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I would like to be able to play rock/paper/scissors in my browser
 ```
 
-Hints on functionality
+##MVP Roadmap##
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- MVp1(a) - A marketeer can sign in, be greeted, select rps, the game will select a random option, a winner will be declared. In the terminal
+
+- MVp1(b) - As MVp1(a) but running in a browser without formatting.
+
+- MVP1 - Unformatted playable game in the browser
+
+- MVp2(a) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In the terminal.
+
+- MVp2(b) - Multiple marketters can sign in, be shown their names, select rps and be shown the winner. In Browser
+
+- MVP2 - Non formated multiplayer in the browser
+
+- MVp3(a) - Game logic expanded to RPSLS. In terminal.
+
+- MVP3 - Multiplayer playable RPSLS game in browser.
+
+- MVP4 - Multiplayer formatted playable RPSLS in browser.
+
+- MVP5 - Multiplayer formatted playable RPSLS on the web. [Deployed to Heroku](https://lit-inlet-8667.herokuapp.com/)
+
+##Domain Design##
+
+This project is being developed in a BDD approach and therefore the domain design below will emerge as it develops, the classes identified in the process are:
+
+- Player - Responsible for allowing a player to make a move
+- AutoPlayer - Responsible for randomly creating a move
+- Game - Responsible for processing the result
 
 
-As usual please start by
+##Testing##
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+The development will be test driven using both Rspec and Cucumber with Capybara for both the ruby business logic and web interface testing.
 
-**Rōnin BANZAI!!!!**
+##OOP##
 
-## Bonus level 1: Multiplayer
+I will be trying to implement the ruby adhering to SOLID principles and trialling techniques learnt so far.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+##Structure and Styling##
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+This is a first attempt at HTML structuring and CSS styling a web application from scratch. Hence I will be trialling as many elements as possible in the commits and heading for both a positive UX and UI in the final MVP.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+##Contributing##
 
-## Basic Rules
+This is a challenge set to identify progress in Wk3 at Makers Academy, therefore is designed to be tackled individually.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+However comment on the quality of the code and it's implementation would be very welcome.
+

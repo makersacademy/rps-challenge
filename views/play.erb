@@ -1,0 +1,17 @@
+<h1>Welcome to 'Rock Paper Scissors Lizard Spock'</h1>
+
+<h2>Make a move <%= @player_name %></h2>
+
+<form action='/result' method='post'>
+  <input type="radio" name="move" value="rock" checked>&#x1F48E Rock &#x1F48E
+  <br>
+  <input type="radio" name="move" value="paper">&#x1F4F0 Paper &#x1F4F0
+  <br>
+  <input type="radio" name="move" value="scissors">&#x2702 Scissors &#x2702
+  <br>
+  <input type="radio" name="move" value="lizard">&#x1F432 Lizard &#x1F432
+  <br>
+  <input type="radio" name="move" value="spock">&#x1F47D Spock &#x1F47D
+  <br>
+  <button>Play</button>
+</form>

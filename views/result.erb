@@ -1,0 +1,13 @@
+<h1>'Rock Paper Scissors Lizard Spock' Results</h1>
+
+<%if @results[:draw] == true%>
+  <h2><%= "#{@results[:winner]} draws with #{@results[:loser]} " %></h2>
+<% else %>
+  <h2><%= "#{@results[:winner]} wins!!" %></h2>
+<% end %>
+
+<h2><%= "#{@results[:p1].capitalize} #{@results[:verb]} #{@results[:p2].capitalize} " %></h2>
+
+<form action='/play' method='get'>
+  <button>Play Again</button>
+</form>
