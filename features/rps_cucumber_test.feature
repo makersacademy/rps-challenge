@@ -1,4 +1,4 @@
-Feature: Starting the game
+Feature: Playing the game
   In order to play rps
   As a bored office worker
   I want to start a "New Game"
@@ -15,8 +15,7 @@ Scenario: Signing in
 
   Scenario: Playing the game
   Given I am on the game page
-  When I choose my 'move'
-  And the computer chooses their 'move'
-  Then the page will display the result
+  When I select "Rock"
+  Then the page will display "wins"
 
   

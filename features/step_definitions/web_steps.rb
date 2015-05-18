@@ -16,20 +16,6 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-When(/^I click on "([^"]*)"$/) do |newgame|
-visit('/register')
-end
-
-When(/^I click "([^"]*)"$/) do |playgame|
-visit('/game/new')
-end
-
-Then(/^I should see "([^"]*)","([^"]*)" and "([^"]*)"$/) do |arg1, arg2, arg3|
-  arg1 = "Rock"
-  arg2 = "Paper"
-  arg3 = "Scissors"
-end
-
 
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
