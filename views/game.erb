@@ -1,0 +1,22 @@
+<div>
+Welcome <%= session[:name] %>! Lets begin...
+<br>
+What you going to play
+</br>
+</div>
+<form method="post">
+<select name = "choices">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<input type = "submit" value = "Let's Play!">
+</form>
+
+<br>
+<%= @final_result %>
+<br>
+p1 <%= @p1_choice %>
+</br>
+
+p2 <%= @p2_choice %>
