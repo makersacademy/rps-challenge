@@ -8,53 +8,56 @@ class RPSWeb < Sinatra::Base
   set :public_folder, Proc.new { File.join(root, "..", "public") }
   enable :sessions
 
-  # Welcome screen and name entry
+  # Welcome screen and game selection / name entry
   get '/' do
-    # player id - basic one player version
-    unless session.has_key?('player_id')
-      session[:player_id] = :player_1
-    end
-
     erb :index
   end
 
   post '/play' do
     # Create game if it doesn't exist yet
     # Unimplemented: Spock and Lizard
-    @@game ||= Game.new Player, params[:score].to_i
+    multiplayer = true if params.has_key?('players')
+    @@game ||= Game.new Player, params[:score].to_i, multiplayer
 
     # Check if a player name's been entered, store if so
     if params.has_key?('name')
       redirect '/' unless params[:name].length > 0
       @@name ||= {}
       @@name[session[:player_id]] = params[:name]
-    elsif not(defined?(@@name))
-      redirect '/'
+      # Also, set player 1 or 2
+      if @@game.player_1.in_game?
+        session[:player_id] ||= :player_2
+        @@game.player_2.join_game
+      else
+        session[:player_id] ||= :player_2
+        @@game.player_2.join_game
+      end
     end
 
     # Check if a move's been submitted
     if params.has_key?('Choice')
       @@game.send(session[:player_id]).play params[:Choice]
+      # In a one player game, take computer's move
+      @@game.player_2.autoplay if @@game.players == 1
     end
+
+    redirect '/play'
   end
 
   # This handles non-form activities
   get '/play' do
-
-    # In a one player game, take computer's move
-    if @@game.players == 1
-      @@game.player_2.autoplay
-    end
-
     # End the turn if both players have made a move
     if @@game.turn_over?
-      @outcome = @@game.end_turn
+      whoWon = @@game.end_turn
+      if whoWon == session[:player_id]
+        @outcome = "You won this round!"
+      else
+        @outcome = "You lost this round!"
+      end
       @my_play = @@game.send(session[:player_id]).played
       @their_play = @@game.send(session[:player_id]).played
-
-
       erb :turnResult
-    else
+    elsif @@game.send(session[:player_id]).has_played?
       # If waiting on other player, divert to a holding screen
       redirect '/wait'
     end
@@ -80,7 +83,6 @@ class RPSWeb < Sinatra::Base
       erb :gameLost
     end
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

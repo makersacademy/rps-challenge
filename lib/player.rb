@@ -4,6 +4,15 @@ class Player
     @points = 0
     @won = nil
     @has_played = false
+    @in_game = false
+  end
+
+  def join_game
+    @in_game = true
+  end
+
+  def in_game?
+    @in_game
   end
 
   def play what_to_play
