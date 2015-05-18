@@ -11,11 +11,14 @@ class Game
   def result(p1)
     p2 = computer_choice
     if p1 == p2
-      'Draw'
+      @result = 'Draw'
     elsif (p1 == 'Rock' && p2 == 'Scissors') || (p1 == 'Scissors' && p2 == 'Paper') || (p1 == 'Paper' && p2 == 'Rock')
-      'You win!'
+      @result = 'You win!'
     else
-      'Computer wins'
+      @result = 'Computer wins'
     end
+    [@result,p2]
   end
+
+
 end

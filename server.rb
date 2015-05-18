@@ -12,7 +12,9 @@ class RPSWeb < Sinatra::Base
     session[:name] = params[:name]
     @p1_choice = params[:choices]
     game = Game.new
-    @final_result = game.result(@p1_choice)
+    @round = game.result(@p1_choice)
+    @final_result = @round[0]
+    @p2_choice = @round[1]
     erb :game
   end
 
