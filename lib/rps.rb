@@ -7,6 +7,8 @@ class RPS
   def play_round(human)
     computer = go
 
+    #code smell  'v's in code - in out indentation
+    #code smell - lots of word repetition.
     if computer == human
       return computer, "draw"
     elsif (computer == "rock" && human == "scissors") || (computer == "paper" && human == "rock") || (computer == "scissors" && human == "paper")

@@ -1,10 +1,21 @@
-ga<div>
-  <h1> Hello <%=@player1 %>, and welcome to Rock Paper, Scissors </h1>
-  play another game?
-  <select name = "human_choice">
+<div>
+  <h1> Hello <%= @player1 %>, and welcome to Rock, Paper, Scissors </h1>
+  <% if @publish_result %>
+    play another game?
+  <%else%>
+    play game?
+  <% end %>
+  <form action="/gamepage" method="post">
+  <select name = "human_choice" >
         <option value="rock">rock</option>
         <option value="paper">paper</option>
         <option value="scissors">scissors</option>
   </select>
-   <input type="submit" value="play">
+
+    <input type="submit" value="play">
+  </form>
+   <% if @publish_result %>
+      Computer played <%= @computer %> therefore <%= @winner %> won!
+      The scores on the doors are Computer <%= session['computer'] %>, Human <%= session['human'] %>
+   <% end %>
 </div>

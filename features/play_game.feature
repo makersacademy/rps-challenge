@@ -17,7 +17,7 @@ Feature: play rock paper scissors
   Scenario: Playing a game
     Given I am on the homepage
     Given I am on the gamepage
-    When I select "rock" in "option"
-    And I click "play game"
-    Then I should see "Well done, you won"
+    When I select "rock" in "human_choice"
+    And I click "play"
+    Then I should see "therefore bob won!"
 
