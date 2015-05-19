@@ -4,7 +4,7 @@ Feature: play rock paper scissors
   and then I want the option to play a game.
 
 
- Scenario: Observing the home page
+  Scenario: Observing the home page
     Given I am on the homepage
     Then I should see "What's your name?"
 
@@ -14,10 +14,17 @@ Feature: play rock paper scissors
     And I click submit
     Then I should see "Hello bob"
 
-  Scenario: Playing a game
-    Given I am on the homepage
-    Given I am on the gamepage
+  Scenario: Playing a game with human winning
+    Given I am playing the game as "bob"
+    And the computer chooses "scissors"
     When I select "rock" in "human_choice"
     And I click "play"
     Then I should see "therefore bob won!"
 
+
+  Scenario: Playing a game with human losing
+    Given I am playing the game as "bob"
+    And the computer chooses "scissors"
+    When I select "paper" in "human_choice"
+    And I click "play"
+    Then I should see "therefore computer won!"

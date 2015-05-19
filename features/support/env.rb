@@ -7,6 +7,8 @@ require File.join(File.dirname(__FILE__), '..', '..', 'lib/Rpsweb.rb')
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'cucumber/rspec/doubles'
+
 
 Capybara.app = RpsWeb
 

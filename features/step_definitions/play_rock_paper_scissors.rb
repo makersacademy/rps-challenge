@@ -3,7 +3,7 @@ Given(/^I am on the homepage$/) do
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
-  expect(current_path).to have_content(text)
+  expect(page).to have_content(text)
 end
 
 When(/^I enter "([^"]*)" in "([^"]*)"$/) do |name, name_field|
@@ -24,4 +24,14 @@ end
 
 When(/^I click "([^"]*)"$/) do |button|
   click_button(button)
+end
+
+Given(/^I am playing the game as "([^"]*)"$/) do |name|
+  visit('/')
+  fill_in('player1', with: name)
+  click_button('submit')
+end
+
+Given(/^the computer chooses "([^"]*)"$/) do |choice|
+  allow_any_instance_of(RPS).to receive(:go).and_return(choice)
 end
