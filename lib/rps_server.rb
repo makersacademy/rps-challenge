@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     player = Player.new params[:choice]
-    cpu = CPU.new
+    cpu = Player.new(['Rock', 'Paper', 'Scissors'].sample)
 
     @player_choice = params[:choice]
     @cpu_choice = cpu.choice
@@ -29,12 +29,6 @@ class RPS < Sinatra::Base
     @result = GameLogic.new.result cpu, player
     erb :play
   end
-
-  # post '/winner' do
-  #   p @button_name
-  #   p params
-  #   erb :winner
-  # end
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
