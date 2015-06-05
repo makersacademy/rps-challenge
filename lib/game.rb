@@ -7,6 +7,9 @@ class Game
   def initialize player1, player2
     @player1 = player1
     @player2 = player2
+    @message = {:player1 => "#{@user} wins!",
+               :player2 => "Computer wins!",
+               :play => "Keep playing to win"}
   end
 
   def restart_game
@@ -19,28 +22,31 @@ class Game
     b = player2.moves
 
     if a == b
-      "draw"
-    elsif a == "rock" && b == "scissors"
+      :draw
+    elsif a == :rock && b == :scissors
       @player1.won += 1
-    elsif a == "paper" && b == "scissors"
-     @player2.won += 1
-    elsif a == "scissors" && b == "paper"
+    elsif a == :scissors && b == :paper
      @player1.won += 1
-    elsif a == "paper" && b == "rock"
+    elsif a == :paper && b == :rock
       @player1.won += 1
     else
       @player2.won += 1
     end
+    winner
   end
 
-  def winner?
+  def winner
     if @player1.won == 3
-      "Player1 wins"
+      winning_message(:player1)
     elsif @player2.won == 3
-      "Player2 wins"
+      winning_message(:player2)
     else
-      "Keep playing to win"
+      winning_message(:play)
     end
+  end
+
+  def winning_message winner
+    @message[winner]
   end
 end
 

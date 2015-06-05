@@ -1,9 +1,9 @@
 
-<% if session["player1"] == true %>
+<% if @user == true %>
   "hello"
   <% else %>
 <div align="center">
-<p>Hello <%= session["user"] %></p>
+<p>Hello <%= @user %></p>
 </b>
   <a href="/game">Play Game</a>
 </div>

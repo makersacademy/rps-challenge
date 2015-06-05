@@ -1,13 +1,18 @@
 class Player
 
+  MOVES = {:rock => "rock",
+           :paper => "paper",
+           :scissors => "scissors"}
+
   attr_accessor :moves, :won
   def initialize
-    @moves = nil
+
     @won = 0
+
   end
 
   def play move
-    @moves = move.downcase
+    @moves = MOVES.key(move)
   end
 end
 

@@ -15,6 +15,8 @@ class Rps < Sinatra::Base
 
   post '/game' do
     session["user"] = params[:value]
+    @user = session["user"]
+
     erb :game
   end
 
@@ -34,11 +36,13 @@ class Rps < Sinatra::Base
   end
 
   post '/game/result' do
-    session["move"] = session["game"].player1.play params[:move]
-    session["move"] = session["game"].player2.play
-    @result = session["game"].check
-    p @result
-    @winner = session["game"].winner?
+
+    @move1 = session["game"].player1.play params[:move]
+    @move2 = session["game"].player2.play
+    @winner = session["game"].check
+    @user = session["user"]
+    @computer_score = session["game"].player2.won
+    @player1_score = session["game"].player1.won
     erb :result
   end
 

@@ -7,7 +7,7 @@ class Computer
   end
 
   def play
-    @moves = ["rock", "paper", "scissors"].sample
+    @moves = [:rock, :paper, :scissors].sample
   end
 end
 

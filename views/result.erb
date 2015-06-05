@@ -1,29 +1,29 @@
 <div align="center">
 
-   <% if @result == "draw" %>
+   <% if @winner == :draw %>
       DRAW!
     </br>
       <%= @winner %>
-        <p>Computer = <%= session["game"].player2.won %></p>
-        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
+        <p>Computer = <%= @computer_score %></p>
+        <p><%=@user %> = <%= @player1_score %> </p>
         <a href='/game'>Next move</a>
 
   <% elsif @winner == "Keep playing to win" %>
       <%= @winner %>
-        <p>Computer = <%= session["game"].player2.won %></p>
-        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
+        <p>Computer = <%= @computer_score %></p>
+        <p><%=@user %> = <%= @player1_score %> </p>
         <a href='/game'>Next move</a>
 
   <% elsif @winner == "Player1 wins" %>
-        <p>Computer = <%= session["game"].player2.won %></p>
-        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
-    <p><span style="color:red"><%= session["user"] %>, you have won!</span></p>
+        <p>Computer = <%= @computer_score %></p>
+        <p><%=@user %> = <%= @player1_score %> </p>
+    <p><span style="color:red"><%= @user %>, you have won!</span></p>
     </br>
     <a href='/game/new'>New Game?</a>
     <% else %>
-        <p>Computer = <%= session["game"].player2.won %></p>
-        <p><%=session["user"] %> = <%= session["game"].player1.won %> </p>
-      <p><span style="color:red"><%= session["user"] %>, you have lost!</span></p>
+        <p>Computer = <%= @computer_score %></p>
+        <p><%=@user %> = <%= @player1_score %> </p>
+      <p><span style="color:red"><%= @user %>, you have lost!</span></p>
       </br>
       <a href='/game/new'>New Game?</a>
     <% end %>
