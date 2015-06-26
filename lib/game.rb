@@ -9,6 +9,6 @@ class Game
   end
 
   def winner?
-
+    true if (@player_1.won? == true) || (@player_2.won? == true)
   end
 end

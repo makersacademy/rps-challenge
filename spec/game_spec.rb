@@ -12,10 +12,11 @@ describe Game do
 
   it { is_expected.to respond_to(:winner?) }
 
-  xit 'knows if a player has won' do
-    subject.player_1.choose('rock')
-    subject.player_1.receive('scissors')
-    expect(subject.winner).to eq('player 1')
+  define 'winner?' do
+    xit 'knows if a player has won' do
+      player = double :player
+      allow(player).to_receive (:won?)
+    end
   end
 
   xit 'creates a player' do
