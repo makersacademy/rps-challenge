@@ -14,12 +14,11 @@ class RockPaperScissors
   end
 
   def initialize_player playerClass
-    player = playerClass.new
-    player
+    playerClass.new
   end
 
   def over?
-
+    !player_1.choice.nil? and !player_1.opponent.choice.nil?
   end
 
   def won_lost_or_tied player
@@ -27,9 +26,9 @@ class RockPaperScissors
     fail 'Erm, you have no opponent :/' unless player.opponent
     fail 'Still waiting for your opponent to decide' unless player.opponent.choice
 
-    if tied?
+    if tied? player
       "You've tied"
-    elsif winner?
+    elsif winner? player
       "You won! :)"
     else
       "You lost :("
@@ -38,8 +37,8 @@ class RockPaperScissors
 
   private
 
-  def winner?
-    rock_paper_scissors
+  def winner? player
+    rock_paper_scissors player
   end
 
   def tied? player

@@ -9,8 +9,7 @@ describe RockPaperScissors do
 
 
   it 'cannot return the result of the game if a player has not made a choice' do
-    player = double :player
-    allow(player).to receive(:choice).and_return(nil)
+    player = double :player, choice: nil
     expect{ subject.won_lost_or_tied player }.to raise_error 'You have to choose between rock, paper or scissors'
   end
 
@@ -23,12 +22,6 @@ describe RockPaperScissors do
     opponent = double :opponent, choice: nil
     player = double :player, choice: 'rock', opponent: opponent
     expect{ subject.won_lost_or_tied player }.to raise_error 'Still waiting for your opponent to decide'
-  end
-
-  it 'knows if the game is over' do
-    opponent = double :opponent, choice: 'scissors', opponent: player
-    player = double :player, choice: 'rock', opponent: opponent
-    expect(subject).to be_over
   end
 
 end
