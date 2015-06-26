@@ -8,7 +8,7 @@ describe Player do
       expect(subject).to respond_to(:choose).with(1).argument
     end
 
-    it 'knows which out of rock, paper or scissors it has chosen' do
+    it 'has a choice attribute' do
       expect(subject).to respond_to(:choice)
     end
 
@@ -19,4 +19,18 @@ describe Player do
     it 'can win or lose' do
       expect(subject).to respond_to(:win_lose)
     end
+
+    describe 'choose' do
+
+      it 'records which out of rock, paper or scissors it has chosen' do
+        subject.choose('rock')
+        expect(subject.choice).to eq 'rock'
+      end
+
+    end
+
+    # describe 'win_lose' do
+    #   it knows which out of rock, paper or scissors it has chosen
+    #
+    # end
 end
