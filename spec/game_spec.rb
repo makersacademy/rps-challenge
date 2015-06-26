@@ -11,6 +11,12 @@ describe Game do
     expect(game).to respond_to(:challenge)
   end
 
+  it 'can change from a list of options' do
+    expect(game.options).to eq(['rock', 'paper','scissors','spock','lizard'])
+  end
+
+
+
 
 
 end
