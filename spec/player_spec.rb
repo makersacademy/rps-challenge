@@ -16,7 +16,7 @@ describe Player do
     expect { player.winner? }.to raise_error 'Erm, you have no opponent :/'
   end
 
-  xit 'knows if it has won' do
+  it 'knows if it has won' do
     player.choose_rock_paper_or_scissors 'rock'
     player2 = Player.new 'Charlie'
     player.opponent = player2
