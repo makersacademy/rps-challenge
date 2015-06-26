@@ -10,8 +10,7 @@ describe Game do
     expect(subject).to respond_to(:player_2)
   end
 
-  it { is_expected.to respond_to(:result) }
-
+  it { is_expected.to respond_to(:winner?) }
 
   xit 'knows if a player has won' do
     subject.player_1.choose('rock')

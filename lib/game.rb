@@ -8,7 +8,7 @@ class Game
     @player_2 = Player.new
   end
 
-  def result
+  def winner?
 
   end
 end
