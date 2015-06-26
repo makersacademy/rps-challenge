@@ -17,7 +17,7 @@ describe Player do
     end
 
     it 'knows if it has won or lost' do
-      expect(subject).to respond_to(:win?)
+      expect(subject).to respond_to(:won?)
     end
 
     describe 'choose' do
@@ -32,5 +32,14 @@ describe Player do
         subject.receive('paper')
         expect(subject.opponent_choice).to eq 'paper'
       end
+    end
+
+    describe 'won?' do
+      it 'records whether the player has won or lost' do
+        subject.choose('rock')
+        subject.receive('scissors')
+        expect(subject.won?).to eq true
+      end
+
     end
 end

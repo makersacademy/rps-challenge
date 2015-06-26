@@ -17,7 +17,11 @@ class Player
     @opponent_choice = arg
   end
 
-  def win?
-    
+  def won?
+    if (@own_choice == 'rock' && @opponent_choice == 'scissors') || (@own_choice == 'scissors' && @opponent_choice == 'paper') || (@own_choice == 'paper' && @opponent_choice == 'rock')
+      return true
+    else
+      return false
+    end
   end
 end
