@@ -8,4 +8,8 @@ describe Player do
       expect(subject).to respond_to(:select).with(1).argument
     end
 
+    it 'can receive rock, paper or scissors' do
+      expect(subject).to respond_to(:receive).with(1).argument
+    end
+
 end

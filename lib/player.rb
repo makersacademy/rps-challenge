@@ -4,4 +4,8 @@ class Player
   def select(arg)
 
   end
+
+  def receive(arg)
+
+  end
 end
