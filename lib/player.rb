@@ -1,7 +1,7 @@
 require_relative 'game'
 
 class Player
-  attr_accessor :name
+  attr_accessor :name, :choice
   attr_reader   :opponent
 
   def choose(arg)

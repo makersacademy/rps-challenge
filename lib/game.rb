@@ -6,6 +6,9 @@ class Game
   def initialize
     @player_1 = Player.new
     @player_2 = Player.new
-    
+  end
+
+  def winner
+
   end
 end

@@ -10,9 +10,15 @@ describe Game do
     expect(subject).to respond_to(:player_2)
   end
 
-  # it 'creates a player' do
-  #   expect(subject.player_1).to eq (player)
-  # end
+  xit 'knows if a player has won' do
+    subject.player_1.choose('rock')
+    subject.player_1.receive('scissors')
+    expect(subject.winner).to eq('player 1')
+  end
+
+  xit 'creates a player' do
+    expect(subject.player_1).to eq (player)
+  end
 end
 
 #  check what be matcher is as opposed to equal matcher
