@@ -2,8 +2,8 @@ class Player
 
   attr_accessor :opponent, :name, :choice
 
-  def initialize name
-    @name = name
+  def initialize
+    @name = nil
     @choice = nil
   end
 
