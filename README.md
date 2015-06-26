@@ -1,21 +1,13 @@
-# RPS Challenge: Rōnin Badge Test
+RPS Challenge
+===============
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Synopsis
 
-Task 
-----
+Project involves creating Rock, Paper, Scissors game that can be played on the web. App built using test driven development using a combination of feature and unit tests.
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+USER STORIES
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -23,24 +15,40 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
+## Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+
+
+## Technologies Used
+
+- Ruby
+- Rspec
+- Capybara 
+- Sinatra
+
+
+## Job List
+
+- INPUT - marketeers name entered before game starts
+- options for player/marketeer = rock, paper and scissors (only one can be selected at each turn/go)
 - the game will choose a random option
 - a winner will be declared
 
+-
+-
+-
 
-As usual please start by
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
 
-**Rōnin BANZAI!!!!**
+## Still to complete/refactor
+
+
 
 ## Bonus level 1: Multiplayer
 
@@ -50,8 +58,3 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
