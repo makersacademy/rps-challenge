@@ -18,6 +18,10 @@ class RockPaperScissors
     player
   end
 
+  def over?
+
+  end
+
   def won_lost_or_tied player
     fail 'You have to choose between rock, paper or scissors' unless player.choice
     fail 'Erm, you have no opponent :/' unless player.opponent
