@@ -12,4 +12,7 @@ describe Player do
       expect(subject).to respond_to(:receive).with(1).argument
     end
 
+    it 'can win or lose' do
+      expect(subject).to respond_to(:win_lose) 
+    end
 end

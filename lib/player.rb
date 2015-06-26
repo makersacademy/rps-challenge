@@ -8,4 +8,8 @@ class Player
   def receive(arg)
     arg
   end
+
+  def win_lose
+
+  end
 end
