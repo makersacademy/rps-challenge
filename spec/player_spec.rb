@@ -2,7 +2,12 @@ require './lib/player'
 describe Player do
 
   it 'intialized with not winning' do
-    expect(subject.won?).to eq false 
+    expect(subject.won?).to eq false
+  end
+
+  it 'can win' do
+    subject.wins
+    expect(subject.won?).to eq true
   end
 
   describe 'Can choose' do
