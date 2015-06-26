@@ -7,24 +7,25 @@ class Player
     @choice = nil
   end
 
-  def choose_rock_paper_or_scissors choice
-    @choice = choice
-    choice
-  end
-
   def winner?
+    has_not_made_choice
     no_opponent
     opponent_has_not_made_choice
     rock_paper_scissors
   end
 
   def tied?
+    has_not_made_choice
     no_opponent
     opponent_has_not_made_choice
     choice == opponent.choice
   end
 
   private
+
+  def has_not_made_choice
+    fail 'You have to choose between rock, paper or scissors' unless choice
+  end
 
   def opponent_has_not_made_choice
     fail 'Still waiting for your opponent to decide' unless opponent.choice
