@@ -13,6 +13,10 @@ class Player
     @won
   end
 
+  def wins
+    @won = true
+  end
+
   private
   def correct_input?(input)
     input == :Rock || input == :Paper || input == :Scissors
