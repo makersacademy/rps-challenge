@@ -9,7 +9,7 @@ describe Player do
     end
 
     it 'has a choice attribute' do
-      expect(subject).to respond_to(:choice)
+      expect(subject).to respond_to(:own_choice)
     end
 
     it 'can receive rock, paper or scissors' do
@@ -21,12 +21,17 @@ describe Player do
     end
 
     describe 'choose' do
-
       it 'records which out of rock, paper or scissors it has chosen' do
         subject.choose('rock')
-        expect(subject.choice).to eq 'rock'
+        expect(subject.own_choice).to eq 'rock'
       end
+    end
 
+    describe 'receive' do
+      it 'records which out of rock, paper or scissors the opponent has chosen' do
+        subject.receive('paper')
+        expect(subject.opponent_choice).to eq 'paper'
+      end
     end
 
     # describe 'win_lose' do

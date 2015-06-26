@@ -1,19 +1,20 @@
 require_relative 'game'
 
 class Player
-  attr_accessor :name, :choice
-  attr_reader   :opponent,
+  attr_accessor :name, :own_choice, :opponent_choice
+  attr_reader   :opponent
 
   def initialize
-    @choice = ''
+    @own_choice = ''
+    @opponent_choice = ''
   end
 
   def choose(arg)
-    @choice = 'rock'
+    @own_choice = arg
   end
 
   def receive(arg)
-    arg
+    @opponent_choice = arg
   end
 
   def win_lose
