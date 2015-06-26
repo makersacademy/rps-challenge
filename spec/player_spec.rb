@@ -16,6 +16,10 @@ describe Player do
       expect(subject).to respond_to(:receive).with(1).argument
     end
 
+    it 'knows if it has won or lost' do
+      expect(subject).to respond_to(:win?)
+    end
+
     describe 'choose' do
       it 'records which out of rock, paper or scissors it has chosen' do
         subject.choose('rock')

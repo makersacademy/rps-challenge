@@ -16,4 +16,8 @@ class Player
   def receive(arg)
     @opponent_choice = arg
   end
+
+  def win?
+    
+  end
 end
