@@ -6,4 +6,8 @@ class Player
     @name = name
   end
 
+  def choose_rock_paper_or_scissors choice
+    choice
+  end
+
 end
