@@ -46,17 +46,15 @@ class RockPaperScissors
   end
 
   def choice_to_number player
-    choice = player.choice
+    to_convert = player.choice
     rps_hash = { "rock" => 0, "scissors" => 2, "paper" => 1 }
-    rps_hash[choice]
+    rps_hash[to_convert]
   end
 
   def rock_paper_scissors player
 
-    opponent_choice = player.opponent.choice
-
     your_number = choice_to_number(player)
-    opponents_number = choice_to_number(opponent_choice)
+    opponents_number = choice_to_number(player.opponent)
 
     (your_number - opponents_number) % 3 == 1
 

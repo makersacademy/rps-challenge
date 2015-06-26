@@ -24,4 +24,25 @@ describe RockPaperScissors do
     expect{ subject.won_lost_or_tied player }.to raise_error 'Still waiting for your opponent to decide'
   end
 
+  it 'knows if the players have tied' do
+    opponent = double :opponent, choice: 'rock'
+    player = double :player, choice: 'rock', opponent: opponent
+    allow(opponent).to receive(:opponent).and_return(player)
+    expect(subject.won_lost_or_tied player).to eq "You've tied"
+  end
+
+  it 'knows if a player has won' do
+    opponent = double :opponent, choice: 'scissors'
+    player = double :player, choice: 'rock', opponent: opponent
+    allow(opponent).to receive(:opponent).and_return(player)
+    expect(subject.won_lost_or_tied player).to eq "You won! :)"
+  end
+
+  it 'knows if a player has lost' do
+    opponent = double :opponent, choice: 'paper'
+    player = double :player, choice: 'rock', opponent: opponent
+    allow(opponent).to receive(:opponent).and_return(player)
+    expect(subject.won_lost_or_tied player).to eq "You lost :("
+  end
+
 end
