@@ -1,7 +1,8 @@
 class Player
   attr_accessor :name
+  attr_reader   :opponent
 
-  def select(arg)
+  def choose(arg)
     arg
   end
 
