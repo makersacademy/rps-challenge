@@ -10,4 +10,9 @@ class Player
     choice
   end
 
+  def winner?
+    fail 'Erm, you have no opponent :/' unless opponent
+
+  end
+
 end
