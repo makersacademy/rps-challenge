@@ -14,6 +14,10 @@ describe Player do
     it 'Scissors' do
       expect(subject.choose(choice.scissors)).to eq :Scissors
     end
+
+    it 'fails when wrong argument provided' do
+      expect{subject.choose('hello')}.to raise_error 'Pick Rock Paper or Scissors'
+    end
   end
 
 end
