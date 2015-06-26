@@ -1,8 +1,10 @@
 require_relative 'player'
 
-class RockPaperScissors
+class Game
 
   attr_reader :player_1, :player_2
+
+  OPTIONS = ["rock", "paper", "scissors"]
 
   def initialize playerClass
     @player_1 = initialize_player playerClass
@@ -47,8 +49,7 @@ class RockPaperScissors
 
   def choice_to_number player
     to_convert = player.choice
-    rps_hash = { "rock" => 0, "scissors" => 2, "paper" => 1 }
-    rps_hash[to_convert]
+    OPTIONS.index(to_convert)
   end
 
   def rock_paper_scissors player
@@ -56,7 +57,7 @@ class RockPaperScissors
     your_number = choice_to_number(player)
     opponents_number = choice_to_number(player.opponent)
 
-    (your_number - opponents_number) % 3 == 1
+    (your_number - opponents_number) % OPTIONS.count > 0 and (your_number - opponents_number) % OPTIONS.count <= OPTIONS.count / 2 
 
   end
 

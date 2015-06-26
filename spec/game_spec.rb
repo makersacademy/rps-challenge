@@ -1,9 +1,9 @@
 require './lib/game'
 
 
-describe RockPaperScissors do
+describe Game do
 
-  subject { RockPaperScissors.new Player }
+  subject { Game.new Player }
 
   it { is_expected.to respond_to(:initialize_player).with(1).argument }
 
