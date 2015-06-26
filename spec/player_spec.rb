@@ -1,6 +1,10 @@
 require './lib/player'
 describe Player do
 
+  it 'intialized with not winning' do
+    expect(subject.won?).to eq false 
+  end
+
   describe 'Can choose' do
 
     let(:choice) {double :Choices, rock: :Rock, paper: :Paper, scissors: :Scissors}
