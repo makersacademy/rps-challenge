@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 
-group :development, :test do
-  gem 'capybara'
-  gem 'launchy'
+group :test do
   gem 'rspec'
-  gem 'rspec-sinatra'
-  gem 'shotgun'
+  gem 'rubocop-rspec'
+  gem 'cucumber'
+  gem 'rubocop'
+  gem 'coveralls', require: false
+  gem 'capybara'
+  gem 'byebug'
 end
