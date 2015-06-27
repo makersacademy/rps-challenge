@@ -1,20 +1,25 @@
-<div>
-  <p class="error">* please fill in your name</p>
-  <% if !@name || @name == "" %>
-    <form action="/start">
-      <label>Please enter your name:</label>
-      <input type="text" name="name">
-      <input type="submit" value="Submit">
-    </form>
-  <% else %>
-  <p>Hello <%= @name%>, rules for the game are as follows:</p>
-    <ul>
-      <li>Rock beats Scissors</li>
-      <li>Scissors beats Paper</li>
-      <li>Paper beats Rock</li>
-    </ul>
-    <div class="start-button">
-      <a href="/new_game">Start</a>
-    </div>
-  <% end %>
+<div class="wrapper">
+  <div class="content">
+    <% if !@name || @name == "" %>
+      <form action="/start">
+        <label>Please enter your name:</label>
+        <input type="text" name="name"><br />
+        <input type="submit" value="Submit" class="form-button">
+      </form>
+    <% else %>
+    <p>Hello <%= @name%>, rules for the game are as follows:</p>
+      <ul>
+        <li>Rock beats Scissors</li>
+        <li>Scissors beats Paper</li>
+        <li>Paper beats Rock</li>
+      </ul>
+      <!-- <div class="start-button">
+        <a href="/new_game">Start</a>
+      </div> -->
+      <form action="/new_game">
+        <input type="submit" value="Start" class="form-button">
+      </form>
+    <% end %>
+    <p class="error">* please fill in your name</p>
+  </div>
 </div>
