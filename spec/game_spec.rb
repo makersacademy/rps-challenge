@@ -12,6 +12,14 @@ describe Game do
 
   it { is_expected.to respond_to(:winner?) }
 
+  xit 'creates a player' do
+    expect(subject.player_1).to eq (player)
+  end
+
+  xit 'creates an opponent for each player' do
+    expect(subject.player_1.opponent).to be(player_2)
+  end
+
   define 'winner?' do
     xit 'knows if a player has won' do
       player = double :player
@@ -19,9 +27,6 @@ describe Game do
     end
   end
 
-  xit 'creates a player' do
-    expect(subject.player_1).to eq (player)
-  end
 end
 
 #  check what be matcher is as opposed to equal matcher

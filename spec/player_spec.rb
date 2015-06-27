@@ -25,6 +25,11 @@ describe Player do
         subject.choose('rock')
         expect(subject.own_choice).to eq 'rock'
       end
+
+      it 'makes the player\'s opponent receive the player\'s choice' do
+        expect(subject.opponent).to receive(:receive).with('rock')
+        subject.choose('rock')
+      end
     end
 
     describe 'receive' do

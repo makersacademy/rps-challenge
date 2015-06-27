@@ -1,8 +1,8 @@
 require_relative 'game'
+require_relative 'selection_handler'
 
 class Player
-  attr_accessor :name, :own_choice, :opponent_choice
-  attr_reader   :opponent
+  attr_accessor :name, :own_choice, :opponent_choice, :opponent
 
   def initialize
     @own_choice = ''
@@ -11,6 +11,7 @@ class Player
 
   def choose(arg)
     @own_choice = arg
+    opponent.receive(arg)
   end
 
   def receive(arg)
