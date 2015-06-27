@@ -1,6 +1,10 @@
 require 'sinatra/base'
 
-class rps-challenge < Sinatra::Base
+class Rps_Challenge < Sinatra::Base
+
+  set :public_folder, proc { File.join(root, '..', "public") }
+  #set :views, proc { File.join(root, '..', 'views') }
+
   get '/' do
     'Hello rps-challenge!'
   end
