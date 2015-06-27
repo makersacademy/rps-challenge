@@ -1,13 +1,20 @@
-require "game"
+# require "game"
 
-describe Game do
+# describe Game do
 
-  let(:player) { double :player}
-  let(:game) { subject Game.new players: players}
-  let(:playerClass) { double :playerClass, :new => :player}
+#   let(:playercreator) { double :playercreator}
+#   let(:player_creator) { double :player_creator}
+#   let(:number_of_players) {double :number_of_players}
+  
+#   let(:game) { Game.new player_creator: playercreator, number_of_players: number_of_players}
 
-  before do
-    allow(player).to receive(:comparator)
-  end
+#   describe "#initialize_players" do
 
-end
+#     it "initialize the players" do
+#       expect(player_creator).to receive(:create).with(number_of_players)
+#       game
+#     end
+
+#   end
+
+# end
