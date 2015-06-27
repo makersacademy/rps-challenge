@@ -6,4 +6,6 @@ feature 'Landing page' do
     visit '/'
     fill_in('name', with: 'James')
   end
+
+
 end

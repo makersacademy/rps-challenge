@@ -10,8 +10,10 @@ class Rpsweb < Sinatra::Base
     session[:name] = @name
     if $game
       session[:playername] = "Player 2: #{@name}"
+      @playernum = 2
     else
       session[:playername] = "Player 1: #{@name}"
+      @playernum = 1
     end
     erb :index
   end
@@ -20,21 +22,20 @@ class Rpsweb < Sinatra::Base
     p session[:playername]
     @playername = session[:playername]
     if @playername.include?("Player 2:")
-      session[:player] = $game.player2
-      p session[:player]
+      #do nothing
     else
       $game = Game.new(Player)
-      session[:player] = $game.player1
-      p session[:player]
     end
     erb :start
   end
 
   post '/choose' do
     choice = params[:choice]
-    player = session[:player]
-    player.choose(choice)
-    p session[:player]
+    if session[:playername].include?("Player 1:")
+      $game.player1.choose(choice)
+    else
+      $game.player2.choose(choice)
+    end
     redirect '/waiting_room'
   end
 
