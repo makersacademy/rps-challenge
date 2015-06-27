@@ -1,5 +1,4 @@
 require_relative 'player'
-require_relative 'selection_handler'
 
 class Game
   attr_accessor :player_1, :player_2, :player_1_choice, :player_2_choice
