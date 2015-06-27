@@ -5,13 +5,9 @@ class Player
 
   attr_reader :picked
 
-  def initialize
-    @picked = ""
-  end
 
-  def choice option
+  def pick option
     @picked = option
-
   end
 
 

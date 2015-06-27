@@ -3,50 +3,33 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :comp_pick
+  attr_reader :comp_pick, :winner, :computer_choice
 
-  def initialize
-    # @comp_pick = ""
-  end
 
   def comp_choice 
-    # @comp_pick = 
     ['rock','paper','scissors'].sample
   end
 
   def play player_choice
 
-    comp = comp_choice
+    logic = {
+      paper: {paper: "tie", rock: "wins", scissors: "lose"},
+      rock: {paper: "lose", rock: "tie", scissors: "wins"},
+      scissors: {paper: "wins", rock: "lose", scissors: "tie"}  
+    }
+    @computer_choice = comp_choice
+    @winner = logic[player_choice.to_sym][@computer_choice.to_sym] 
 
-    print "Player choice: " + "#{player_choice}\n" 
-    print "Computer choice: " + comp
+  end
 
-    comp = comp.to_sym
-    
-    if player_choice == 'paper'
-      a = {paper: "tie", rock: "wins", scissors: "lose"}
-      a[comp]
-    elsif player_choice == 'rock'
-      a = {paper: "lose", rock: "tie", scissors: "wins"}
-      b = (comp_choice).to_sym
-      a[comp]
-    else player_choice == 'scissors'
-      a = {paper: "win", rock: "lose", scissors: "tie"}
-      b = (comp_choice).to_sym
-      a[comp]
+  def winner
+    if @winner == 'wins'
+      'Player'
+    elsif @winner == 'lose'
+      'Computer'
+    else 
+      'Tie'       
     end
-
   end
-
-  def logic
-
-
-
-  end
-
-
-
-
-
 
 end
