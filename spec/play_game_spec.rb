@@ -10,56 +10,29 @@ feature 'Start a new game' do
     expect(page).to have_content "Please enter your name:"
   end
 
-  scenario 'Gives you a form to fill in your name' do
-    visit '/'
-    click_link 'Start'
+  scenario 'presents a form to enter name' do
+    visit '/start'
     fill_in('name', with: 'Henry')
-    click_button('See rules')
-    expect(page).to have_content "Hello James, you are the chosen one. Now, click the magic button to see your board on which you will place your ships"
+    click_button('Submit')
+    expect(page).to have_content "Hello Henry, rules for the game are as follows:"
   end
 
-scenario 'Filled in empty form' do
-  visit '/new_game'
-  fill_in('name', with: '')
-  click_button('submit')
-  expect(page).to have_content "Please enter your name"
-end
-
-scenario 'player can select new board button once they have entered a name' do
-   visit '/new_game'
-   fill_in('name', with: 'James')
-   click_button('submit')
-   expect(page).to have_content "HUZZAH"
-   click_link('HUZZAH')
- end
-
-
-  scenario 'request that marketeer enters their name' do
+  scenario 'presents an error page if name field is empty when form submitted' do
     visit '/start'
-    expect(page).to have_content "Please enter your name:"
-  end
-
-  scenario 'allows the marketeer to input their name' do
-    visit '/start'
-    expect(page).to have_content "Please enter your name:"
-    fill_in('name', with: 'Bob')
-    click_button('Start')
-    expect(page).to have_content "Welcome to the game Bob!"
-  end
-
-  scenario 'if no name is entered generic greeting appears' do
-    visit '/start'
-    expect(page).to have_content "Please enter your name:"
     fill_in('name', with: '')
-    click_button('Start')
-    expect(page).to have_content "Welcome to the game anonymous!"
+    click_button('Submit')
+    visit '/error'
+    expect(page).to have_content "* please fill in your name"
   end
 
-  scenario 'name' do
+  scenario 'new game started' do
     visit '/start'
-    click_button('Start')
-    expect(page).to have_content "Welcome to the game anonymous!"
-    # expect(page).to have_content "..."
+    fill_in('name', with: 'Henry')
+    click_button('Submit')
+    expect(page).to have_content "Hello Henry, rules for the game are as follows:"
+    click_link('Start')
+    visit '/new_game'
+    expect(page).to have_content "Hello Henry!"
   end
 
 end
