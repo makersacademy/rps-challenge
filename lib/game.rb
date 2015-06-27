@@ -15,7 +15,7 @@ class Game
 
   def decider
     case
-    when (self.player1.choice == 'rock' and self.player2.choice == 'rock')
+    when (self.player1.choice == "rock" and self.player2.choice == "rock")
       "Player 1 chose #{self.player1.choice} while player 2 chose #{self.player2.choice}! It's a tie!"
     when (self.player1.choice == 'rock' and self.player2.choice == 'scissors')
       "Player 1 chose #{self.player1.choice} while player 2 chose #{self.player2.choice}! Player 1 wins!"

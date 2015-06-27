@@ -5,6 +5,8 @@ require 'player'
 require 'byebug'
 require 'capybara/rspec'
 require 'coveralls'
+require 'capybara'
+require 'rspec'
 require 'simplecov'
 
 Capybara.app = Rpsweb
