@@ -12,7 +12,6 @@ form input[type=text], textarea, select {
   -o-transition: all 0.30s ease-in-out;
   outline: none;
   border: 1px solid #666;
-  text-transform: uppercase;
 }
 
 form input[type=text]:focus, textarea:focus, select:focus {

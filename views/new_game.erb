@@ -1,9 +1,13 @@
 <div>
-  <p>Hello <%= @name %>!</p>
-  <p>
-    select your button
-    <!-- <form method="POST" action="/new_game">
-      <input type="submit" value="Start game">
-    </form> -->
-  </p>
+  <!-- <p>Hello <%= @name %>!</p> -->
+  <form action="/new_game" method="post">
+    <p>Select one of the following options:</p>
+      <label for="rock">Rock</label>
+      <input type="radio" name="option" value="rock" id="rock" checked="checked" /><br />
+      <label for="paper">Paper</label>
+      <input type="radio" name="option" value="paper" id="paper" /><br />
+      <label for="scissors">Scissors</label>
+      <input type="radio" name="option" value="scissors" id="scissors" /><br />
+      <input type="submit" value="Enter">
+  </form>
 </div>

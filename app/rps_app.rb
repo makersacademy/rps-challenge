@@ -1,8 +1,7 @@
 require 'sinatra/base'
 
 class RSP < Sinatra::Base
-  # enable :sessions
-  enable :static
+  enable :sessions, :static
 
   set :views, proc { File.join(root, '..', 'views')}
   set :public_folder, Proc.new { File.join(root, '..', 'public') }
@@ -13,6 +12,7 @@ class RSP < Sinatra::Base
 
   get '/start' do
     @name = params[:name]
+    session[:name] = @name
     redirect "/error" if @name == ""
     erb :start
   end
@@ -24,7 +24,6 @@ class RSP < Sinatra::Base
   end
 
   get '/new_game' do
-    @name = params[:name]
     erb :new_game
   end
 
