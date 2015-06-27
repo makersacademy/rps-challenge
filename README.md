@@ -35,7 +35,8 @@ I would like to be able to play rock/paper/scissors
 
 ## Job List
 
-- Registration - create input field before start of the game so that marketeer can enter their name before starting the same, if no name is entered a generic error message appears requesting the marketeer enter their name
+- Registration - create input field before start of the game so that marketeer can enter their name before starting the same, if no name is redirected to an error page and encourage to enter their name again
+- css animation used on text to give appearance of name appearing 'in lights' by using css animations (please note that these animations are not supported in all browsers - IE9 and below)
 
 - options for player/marketeer = rock, paper and scissors (only one can be selected at each turn/go)
 - the game will choose a random option

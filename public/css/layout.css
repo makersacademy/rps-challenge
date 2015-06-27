@@ -74,9 +74,24 @@ ul li {
 }
 
 
+/* 'lights' blink effect animation */
+.flashit {
+  color: #ffc125;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
 
+@-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
 
-
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
 
 /*.start-button {
   margin: 0 auto;
