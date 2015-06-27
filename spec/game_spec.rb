@@ -12,11 +12,25 @@ describe Game do
   end
 
   it 'can change from a list of options' do
-    expect(game.options).to eq(['rock', 'paper','scissors','spock','lizard'])
+    expect(game.options).to eq(['Rock', 'Paper','Scissors','Lizard','Spock'])
   end
 
 
+  describe 'challenge' do
 
+    let(:player) { player.play 'Rock' }
+
+    it 'can let the player win if he plays Rock and the computer plays scissors' do
+      allow(player).to receive(:random_choice) { 'Scissors' }
+      expect(game.challenge player.play('Rock')).to eq 'You won! Rock crushes Scissors'
+    end
+
+  end
+
+
+  it 'can generate a random choice for the computer' do
+    allow(game).to receive(:random_choice).and_return 'Paper'
+  end
 
 
 end

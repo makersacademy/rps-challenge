@@ -6,8 +6,14 @@ class Player
 
   def initialize
 
-    @options = ['rock', 'paper','scissors','spock','lizard']
+    @options = ['Rock', 'Paper','Scissors','Lizard','Spock']
 
+  end
+
+
+  def play choice
+    fail "choice not available" unless @options.include? choice
+    choice
   end
 
 
