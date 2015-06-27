@@ -6,7 +6,7 @@ class Rock
     :rock
   end
 
-  def <=> other
+  def <=> other.to_sym
    case other
    when :paper   then -1
    when :scissor then  1

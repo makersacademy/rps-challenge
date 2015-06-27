@@ -6,7 +6,7 @@ class Paper
     :paper
   end
 
-  def <=> other
+  def <=> other.to_sym
     case other
     when :paper   then  0
     when :scissor then -1

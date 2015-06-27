@@ -5,7 +5,7 @@ describe Player do
 let(:random_move_creator){double :random_move_creator}
 let(:comparator) {double :comparator}
 
-let(:player) { Player.new comparator, random_move_creator}
+let(:player) {Player.new comparator, random_move_creator}
 
   describe "#play" do
     
@@ -20,11 +20,11 @@ let(:player) { Player.new comparator, random_move_creator}
 
   end
 #shall i do context¿// .and_return false
-  describe "#win?" do
-    it "returns the result" do
-      expect(comparator).to receive(:veredict)
-      player.win?
-    end
-  end
+  # describe "#win?" do
+  #   it "returns the result" do
+  #     expect(comparator).to receive(:veredict)
+  #     player.win?
+  #   end
+  # end
 
 end

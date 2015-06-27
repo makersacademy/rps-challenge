@@ -9,17 +9,12 @@ class Player
 
 #is it correct you got the result here?
   def play move = (option_chosen || random_move_creator)
-    comparator.compair ShapeCreator(move), self
-  end
-
-  def win?
-    comparator.veredict
+    comparator.compair [ShapeCreator(move), self]
   end
 
 
 end
 
+Player::ShapeCreator = -> (shape) {shape.capitalize.new}
 
-Player::ShapeCreator = -> (shape) { shape.capitalize.new }
-
-SHAPES = [rock, scissor, paper]
+SHAPES = [:rock, :scissor, :paper]
