@@ -1,0 +1,20 @@
+<div>
+  <% if !@name || @name == "" %>
+    <form action="/start">
+      <label>Please enter your name:</label>
+      <input type="text" name="name">
+      <input type="submit" value="Submit">
+    </form>
+  <% else %>
+  <p>Hello <%= @name%>, rules for the game are as follows:</p>
+    <ul>
+      <li>Rock beats Scissors</li>
+      <li>Scissors beats Paper</li>
+      <li>Paper beats Rock</li>
+    </ul>
+    Now click on the button to start the game
+    <div class="start-button">
+      <a href="/new_game">Start</a>
+    </div>
+  <% end %>
+</div>

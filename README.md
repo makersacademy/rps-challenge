@@ -35,7 +35,8 @@ I would like to be able to play rock/paper/scissors
 
 ## Job List
 
-- INPUT - marketeers name entered before game starts
+- Registration - create input field before start of the game so that marketeer can enter their name before starting the same, if no name is entered a generic error message appears requesting the marketeer enter their name
+
 - options for player/marketeer = rock, paper and scissors (only one can be selected at each turn/go)
 - the game will choose a random option
 - a winner will be declared
@@ -43,7 +44,8 @@ I would like to be able to play rock/paper/scissors
 -
 -
 -
-
+BDD
+...
 
 
 ## Still to complete/refactor

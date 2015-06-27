@@ -7,10 +7,24 @@ class RSP < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views')}
   set :public_folder, Proc.new { File.join(root, '..', 'public') }
 
-
-
   get '/' do
-    'Hello RSP!'
+    erb :index
+  end
+
+  get '/start' do
+    @name = params[:name]
+    redirect "/error" if @name == ""
+    erb :start
+  end
+
+  get '/error' do
+    @name = params[:name]
+    redirect "/error" if @name == ""
+    erb :error
+  end
+
+  get '/new_game' do
+    erb :new_game
   end
 
   # start the server if ruby file executed directly
