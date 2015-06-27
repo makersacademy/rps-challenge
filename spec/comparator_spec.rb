@@ -6,7 +6,8 @@ end
 
 describe ClassComparator do
 
-  decribe "self.compair" do
+
+  describe "self.compair" do
     it "compairs the 2 players move and returns the winner" do
       
 

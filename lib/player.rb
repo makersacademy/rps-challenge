@@ -21,3 +21,5 @@ end
 
 
 Player::ShapeCreator = -> (shape) { shape.capitalize.new }
+
+SHAPES = [rock, scissor, paper]
