@@ -1,3 +1,5 @@
+require 'game'
+require 'player'
 require 'byebug'
 require 'capybara/rspec'
 require 'coveralls'
