@@ -22,4 +22,15 @@ feature 'ending the game' do
     expect(page).to have_content "You won! :)"
   end
 
+  scenario 'the user knows if she has lost' do
+    visit '/start'
+    fill_in('name', with: 'Nicola')
+    click_button('Submit')
+    choose('rock')
+    allow($game.player_2).to receive(:choice).and_return('paper')
+    click_button('Choose')
+    expect(page).to have_content "You lost :("
+  end
+
+
 end
