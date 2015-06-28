@@ -3,7 +3,9 @@ require_relative 'rps'
 
 class RPSWeb < Sinatra::Base
 enable :sessions
-set :views, proc { File.join(root, '..', 'views') }
+
+  run! if app_file == $0
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
     erb :index
@@ -15,7 +17,14 @@ set :views, proc { File.join(root, '..', 'views') }
   end
 
 get '/result' do
-  params[:choice]
+  @result = RPS.play params[:choice].to_sym, RPS.random_choice
+  if @result == 'Player 1 Wins'
+    "#{session[:name]} Wins!"
+  elsif @result == 'Player 2 Wins'
+    "Computer Wins!"
+  else
+    "Draw"
+  end
 end
 
 end

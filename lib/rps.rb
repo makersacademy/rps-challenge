@@ -14,4 +14,8 @@ def self.play p1choice, p2choice
   end
 end
 
+def self.random_choice
+  [:rock, :paper, :scissors].sample
+end
+
 end

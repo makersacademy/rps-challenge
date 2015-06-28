@@ -31,7 +31,7 @@ feature 'Starting a game' do
     end
 
     scenario 'player can choose rock' do
-      click button 'Rock'
+      click_button 'rock'
       expect(page).to have_content 'David Wins!'
     end
   end
