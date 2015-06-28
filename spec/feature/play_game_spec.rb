@@ -30,9 +30,9 @@ feature 'Start a new game' do
     fill_in('name', with: 'Basil')
     click_button('Submit')
     expect(page).to have_content "Hello Basil, rules for the game are as follows:"
-    click_link('Start')
+    click_button('Start')
     visit '/new_game?name=Basil'
-    expect(page).to have_content "Select one of the following options: Rock Paper Scissors"
+    expect(page).to have_content "Please choose from one of the following options: Rock Paper Scissors"
   end
 
 end

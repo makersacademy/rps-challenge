@@ -38,6 +38,14 @@ I would like to be able to play rock/paper/scissors
 - Registration - create input field before start of the game so that marketeer can enter their name before starting the same, if no name is redirected to an error page and encourage to enter their name again
 - css animation used on text to give appearance of name appearing 'in lights' by using css animations (please note that these animations are not supported in all browsers - IE9 and below)
 
+- Built Player class - to include what?
+
+- I want the player to be able to choose different options - rock, paper, scissors
+
+- Built Game class - to include what?
+
+
+
 - options for player/marketeer = rock, paper and scissors (only one can be selected at each turn/go)
 - the game will choose a random option
 - a winner will be declared
@@ -52,6 +60,7 @@ BDD
 ## Still to complete/refactor
 
 
+- I did not get time to look at the following - to review/add in LAB week possibly
 
 ## Bonus level 1: Multiplayer
 
