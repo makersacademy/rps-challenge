@@ -30,8 +30,11 @@ class RockPaperScissors < Sinatra::Base
     @username = $game.player_1.name
     @choice = params.key('on')
     $game.player_1.choice = @choice
+    $game.player_1.opponent.name = "Computer"
+    @opponent_name = $game.player_1.opponent.name
+    $game.player_2.choice = Game::OPTIONS.sample
+    @opponent_choice = $game.player_1.opponent.choice
     erb :outcome
-
   end
 
   run! if app_file == $0
