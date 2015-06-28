@@ -9,7 +9,7 @@ attr_reader :options, :choice
 
   def selection choice
     fail selection_error unless options.include? choice
-    @choice << choice
+    @choice = choice
   end
 
   def selection_error
