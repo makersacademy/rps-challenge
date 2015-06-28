@@ -2,10 +2,11 @@ require_relative 'player'
 
 class Game
 
-attr_reader :player
+attr_reader :player, :computer_choice
 
   def initialize player
     @player = player
+    @computer_choice = ''
   end
 
   def random_choice
@@ -14,7 +15,7 @@ attr_reader :player
 
   def result
     player_choice = player.choice
-    computer_choice = random_choice
+    @computer_choice = random_choice
 
       if player_choice == computer_choice
         tie
@@ -34,15 +35,17 @@ attr_reader :player
   end
 
   def scissors computer_choice
-    computer_choice == 'Paper' ? win : lose 
+    computer_choice == 'Paper' ? win : loses 
   end
 
   def win
-    "You win!"
+    player_choice = player.choice
+    "#{player_choice} beats #{computer_choice}. You win!"
   end
 
   def lose
-    "You lose!"
+    player_choice = player.choice
+    "#{computer_choice} beats #{player_choice}. You lose!"
   end
 
   def tie

@@ -29,12 +29,12 @@ let (:game){Game.new player}
 
     it 'can show the player has lost' do
       allow(game).to receive(:random_choice).and_return 'Paper'
-      expect(game.result).to eq "You lose!"
+      expect(game.result).to eq "Paper beats Rock. You lose!"
     end
 
     it 'can show the player has won' do
       allow(game).to receive(:random_choice).and_return 'Scissors'
-      expect(game.result).to eq "You win!"
+      expect(game.result).to eq "Rock beats Scissors. You win!"
     end
 
   end
