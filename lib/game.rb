@@ -3,8 +3,18 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :comp_pick, :winner, :computer_choice
+  attr_reader :comp_pick, :winner, :computer_choice, :player
 
+  #NOT SURE WHAT THESE TWO LINES BELOW ARE DOING - BUT SEEM TO BE 
+  #INITIALIZING WITH AN INSTANCE OF PLAYER? NEED TO TEST.
+  def initialize(playerClass)
+    @player = initialize_player playerClass
+  end
+
+  def initialize_player(playerClass)
+    player = playerClass.new
+    player
+  end
 
   def comp_choice 
     ['rock','paper','scissors'].sample

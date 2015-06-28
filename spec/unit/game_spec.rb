@@ -2,7 +2,18 @@ require 'game'
 
 describe Game do 
 
-  subject{Game.new} #Do I need this?
+  let(:player){double :player}
+  let(:playerClass){double :Player, new: player}
+  #I'm not sure what these lines above do. Copied from Ben's file.
+
+  subject{Game.new playerClass} #Do I to create a new instance
+  #of the Game for every test - or will 'subject' do the job?
+
+  it 'will create a player' do
+    expect(subject.player). to equal player
+  end
+
+
 
   it { is_expected.to respond_to :comp_choice }
 

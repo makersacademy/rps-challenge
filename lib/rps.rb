@@ -15,7 +15,8 @@ class RPSchallenge < Sinatra::Base
   end
 
   get '/game' do
-    $game = Game.new 
+    # $game = Game.new 
+    # @player_choice = $game.play 
 
     erb :game
   end
