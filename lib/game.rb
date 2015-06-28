@@ -6,7 +6,7 @@ class Game
 
   OPTIONS = ["rock", "paper", "scissors"]
 
-  RULES = ["Rock blunts scissors", "Scissors cuts paper", "Paper wraps rock"]
+  RULES = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
 
   def initialize playerClass
     @player_1 = initialize_player playerClass
