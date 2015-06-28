@@ -20,5 +20,7 @@ feature "Starting the game" do
     click_button('Start Game')
   end
 
+  scenario 'Player '
+
 
 end

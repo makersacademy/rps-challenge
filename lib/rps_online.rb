@@ -4,6 +4,7 @@ require './lib/game'
 class RPSOnline < Sinatra::Base
   
   set :views, proc { File.join(root,'..','views') }
+  enable :sessions
 
   get '/' do
     erb :homepage
@@ -21,6 +22,15 @@ class RPSOnline < Sinatra::Base
       erb :new_game
     end
   end
+
+  get '/battlefield' do
+    
+
+  end
+
+
+
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
