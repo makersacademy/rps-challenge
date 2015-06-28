@@ -1,8 +1,17 @@
 require 'sinatra/base'
 
 class RPSchallenge < Sinatra::Base
+  
+  set :views, proc { File.join(root, '..', 'views')}
+
   get '/' do
-    'What is your name?'
+    erb :index
+  end
+
+  post '/game' do
+  	@name = params[:name]
+  	redirect '/' if @name == ""  
+    erb :game
   end
 
   # start the server if ruby file executed directly
