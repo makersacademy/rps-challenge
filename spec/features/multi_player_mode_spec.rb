@@ -14,18 +14,14 @@ feature 'multi player game' do
     expect(page).to have_content 'Enter your name'
   end
 
-  scenario 'when your opponent has yet to make a choice the player gets a holding page' do
+  scenario 'when opponent has made a choice player gets the outcome' do
     visit '/'
     fill_in('name', with: 'Nicola')
     click_button('Submit')
     choose('rock')
+    $game.player_1.choice = 'scissors'
     click_button('Choose')
-    expect(page).to have_content 'Still waiting for your opponent to decide'
-  end
-
-  scenario 'when opponent has made a choice player gets the outcome' do
-    allow($game).to receive(:won_lost_or_tied).and_return 'You won! :)'
-    expect(page).to have_content 'You won! :)'
+    expect(page).to have_content "You won! :)"
   end
 
 end

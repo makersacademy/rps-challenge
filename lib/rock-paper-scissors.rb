@@ -56,13 +56,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
 
-    begin
+    if $game.over?
       @username = player_from_session.name
       @choice = player_from_session.choice
       @opponent_name = player_from_session.opponent.name
       @opponent_choice = player_from_session.opponent.choice
       @result = $game.won_lost_or_tied player_from_session
-    rescue
+    else
       redirect '/holding'
     end
 
@@ -70,13 +70,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/holding' do
-    begin
-      @result = $game.won_lost_or_tied player_from_session
-      redirect '/outcome'
-    rescue RuntimeError => @error
-      erb :holding
-      redirect '/holding'
+
+    while !$game.over?
     end
+
+    redirect '/outcome'
   end
 
   def player_from_session
