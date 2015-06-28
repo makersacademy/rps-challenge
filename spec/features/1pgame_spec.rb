@@ -24,7 +24,7 @@ feature 'Game' do
   context 'Playing game' do
 
     before(:each) do
-      visit '/'
+      visit '/welcome'
       fill_in 'name', with: 'Salman'
       click_button 'Submit'
     end

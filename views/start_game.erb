@@ -1,7 +1,4 @@
-<%= params[:gametype] %>
-<%= session[:name] %>
-<%= $game.player_1.class %>
-<%= $game.player_2.class %>
+<%= defined?($game) == true %>
 
 Welcome, <%= session[:name] %>!
 <br>

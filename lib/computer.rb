@@ -1,14 +1,14 @@
 
 class Computer
 
-attr_reader :weapons, :random_weapon
+attr_reader :weapons, :selected_weapon
 
   def initialize
     @weapons = [:rock,:paper,:scissors]
   end
 
   def randomize_weapon
-    @random_weapon = weapons.sample
+    @selected_weapon = weapons.sample
   end
 
 end

@@ -1,27 +1,27 @@
 
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player_1, :player_2
 
-  def initialize (player, computer)
-    @player = player.new
-    @computer = computer.new
+  def initialize (player1, player2)
+    @player_1 = player1.new
+    @player_2 = player2.new
   end
 
-  def draw_weapons(player_selection)
-    player.select_weapon(player_selection.to_sym)
-    computer.randomize_weapon
+  def draw_with_computer(player_selection)
+    player_1.select_weapon(player_selection.to_sym)
+    player_2.randomize_weapon
   end
 
-  def determine_winner(player,computer)
-    if player.selected_weapon == computer.random_weapon
+  def determine_winner(player1,player2)
+    if player1.selected_weapon == player2.selected_weapon
       "Draw!"
-    elsif (player.selected_weapon == :rock && computer.random_weapon == :scissors) ||
-          (player.selected_weapon == :paper && computer.random_weapon == :rock) ||
-          (player.selected_weapon == :scissors && computer.random_weapon == :paper)
+    elsif (player1.selected_weapon == :rock && player2.selected_weapon == :scissors) ||
+          (player1.selected_weapon == :paper && player2.selected_weapon == :rock) ||
+          (player1.selected_weapon == :scissors && player2.selected_weapon == :paper)
       "You win!"
     else
-      "Computer wins!"
+      "Opponent wins!"
     end
   end
 end
