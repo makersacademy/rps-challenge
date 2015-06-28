@@ -40,7 +40,6 @@ class RockPaperScissors < Sinatra::Base
       end
 
       player_from_session.name = @user
-      @options = Game::OPTIONS
       erb :choice
     else
       erb :start

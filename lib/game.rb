@@ -6,6 +6,8 @@ class Game
 
   OPTIONS = ["rock", "paper", "scissors"]
 
+  RULES = ["Rock blunts scissors", "Scissors cuts paper", "Paper wraps rock"]
+
   def initialize playerClass
     @player_1 = initialize_player playerClass
     @player_2 = initialize_player playerClass
@@ -57,7 +59,7 @@ class Game
     your_number = choice_to_number(player)
     opponents_number = choice_to_number(player.opponent)
 
-    (your_number - opponents_number) % OPTIONS.count > 0 and (your_number - opponents_number) % OPTIONS.count <= OPTIONS.count / 2 
+    (your_number - opponents_number) % OPTIONS.count > 0 and (your_number - opponents_number) % OPTIONS.count <= OPTIONS.count / 2
 
   end
 
