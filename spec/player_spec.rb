@@ -17,19 +17,19 @@ describe Player do
     describe '#user_choice' do
 
       it 'can select rock as an option' do
-        expect(player.user_choice("rock")).to eq "rock"
+        expect(player.choice("rock")).to eq "rock"
       end
 
       it 'can select paper as an option' do
-        expect(player.user_choice("paper")).to eq "paper"
+        expect(player.choice("paper")).to eq "paper"
       end
 
       it 'can select scissors as an option' do
-        expect(player.user_choice("scissors")).to eq "scissors"
+        expect(player.choice("scissors")).to eq "scissors"
       end
 
       it 'raises error if no option is selected' do
-        expect { player.user_choice("banana") }.to raise_error "You have not made a valid selection"
+        expect { player.choice("banana") }.to raise_error "You have not made a valid selection"
       end
 
     end

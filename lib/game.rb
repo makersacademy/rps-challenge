@@ -14,7 +14,10 @@ class Game
     ["paper", "scissors", "rock"][rand(3)]
   end
 
-  def win_loose_draw
+  
+
+
+  def win_loose_draw player_choice
     # LOGIC
 
     # Draw

@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-  subject(:game) { Game.new }
   let(:player) { double :player }
-  let(:game) { Game.new player }
+  # let(:game) { Game.new player }
+  subject(:game) { Game.new player }
 
   it 'has 3 options to choose from' do
     expect(game.selection).to eq ["rock", "paper", "scissors" ]
@@ -21,11 +21,13 @@ describe Game do
 
   describe 'win_loose_draw' do
 
-    let(:player) { player.user_choice 'Rock' }
+    let(:player) do
+      double :player, choice: 'Rock'
+    end
 
     it 'allows player to draw if he plays Rock and computer plays Rock' do
       allow(game).to receive(:computer_choice).and_return "Rock"
-      expect(game.win_loose_draw player.user_choice).to eq "Draw!"
+      expect(game.win_loose_draw player.choice).to eq "Draw!"
     end
     #
     # it 'allows player to win if he plays Rock and computer plays Scissors' do
