@@ -14,25 +14,31 @@ class Game
     player
   end
 
+
+
+# case is a conditional statement, that means it relies on BOOLEANS.
+# it therefore MUST be self.player1.choice because the 'choose' method does not return true/false
+# choice does.
+
   def result
-    case rock_paper_scissors
-    when (self.player1.choose == :rock and self.player2.choose == :rock)
+    case
+    when (self.player1.choice == :rock and self.player2.choice == :rock)
       'Player 1 - rock, Player 2 - rock. Its a draw. Keep going!'
-    when (self.player1.choose == :rock and self.player2.choose == :paper)
+    when (self.player1.choice == :rock and self.player2.choice == :paper)
       'Player 1 - rock, Player 2 - paper. Paper loses to rock (weird, right?). Player 2 wins!'
-    when (self.player1.choose == :rock and self.player2.choose == :scissors)
+    when (self.player1.choice == :rock and self.player2.choice == :scissors)
       'Player 1 - rock, Player 2 - scissors. Scissors should lose to a rock. Player 1 wins!'
-    when (self.player1.choose == :paper and self.player2.choose == :rock)
+    when (self.player1.choice == :paper and self.player2.choice == :rock)
       'Player 1 - paper, Player 2 - rock. paper covers rock. Player 1 wins!'
-    when (self.player1.choose == :paper and self.player2.choose == :paper)
+    when (self.player1.choice == :paper and self.player2.choice == :paper)
       'Player 1 - paper, Player 2 - paper. What do you think was going to happen? Draw!'
-    when (self.player1.choose == :paper and self.player2.choose == :scissors)
+    when (self.player1.choice == :paper and self.player2.choice == :scissors)
       'Player 1 - paper, Player 2 - scissors. Scissors cut paper, obviously. Player 2 wins!'
-    when (self.player1.choose == :scissors and self.player2.choose == :rock)
+    when (self.player1.choice == :scissors and self.player2.choice == :rock)
       'Player 1 - scissors, Player 2 - rock. Rock smash scissor. Player 2 wins!'
-    when (self.player1.choose == :scissors and self.player2.choose == :paper)
+    when (self.player1.choice == :scissors and self.player2.choice == :paper)
       'Player 1 - scissors, Player 2 - paper. Scissors cut paper. Player 1 wins!'
-    when (self.player1.choose == :scissors and self.player2.choose == :scissors)
+    when (self.player1.choice == :scissors and self.player2.choice == :scissors)
       'Player 1 - scissors, Player 2 - scissors. Ermm... cutting match? no. Draw!'
     else
       "you dun goof'd somehow"

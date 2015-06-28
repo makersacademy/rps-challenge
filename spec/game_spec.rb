@@ -18,9 +18,9 @@ def game; Game.new(playerClass); end
 
     it 'can determine the winner of a game' do
       game
-      allow(game.player1).to receive(:choose) {:rock}
-      allow(game.player2).to receive(:choose) {:rock}
-      expect(game.result).to eq 'Its a tie!'
+      allow(game.player1).to receive(:choice) {:rock}
+      allow(game.player2).to receive(:choice) {:rock}
+      expect(game.result).to eq 'Player 1 - rock, Player 2 - rock. Its a draw. Keep going!'
     end
 
 end
