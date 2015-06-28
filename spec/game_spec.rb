@@ -2,7 +2,7 @@ require './lib/game'
 describe Game do
     let(:player) { double :player, wins: true }
     let(:playerClass) { double :Player, new: player }
-    let(:ai) { double :ai, choose: :Paper }
+    let(:ai) { double :ai, choose: :Paper, wins: true }
 
 
   it 'does not have winner on init' do
