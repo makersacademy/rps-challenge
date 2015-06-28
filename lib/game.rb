@@ -1,9 +1,8 @@
 require_relative 'player'
-require_relative 'computer'
 
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :choices
 
   def initialize(playerClass)
     @player1 = initialize_player playerClass
@@ -13,6 +12,16 @@ class Game
   def initialize_player playerClass
     player = playerClass.new
     player
+  end
+
+  def result
+    case 
+    when (self.player1.choose == :rock and self.player2.choose == :scissors)
+      'Player 1 wins!' 
+    else
+      'Player 2 wins!'
+    end
+
   end
 
 # rules = { 
