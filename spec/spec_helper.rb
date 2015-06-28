@@ -1,7 +1,15 @@
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'lib/rock-paper-scissors.rb')
+
 require 'byebug'
+require 'capybara'
 require 'capybara/rspec'
 require 'coveralls'
+require 'rspec'
 require 'simplecov'
+
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
@@ -27,6 +35,7 @@ Coveralls.wear!
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include Capybara::DSL
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
