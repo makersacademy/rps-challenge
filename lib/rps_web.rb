@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class RPSWeb < Sinatra::Base
+  set :views, proc { File.join(root, '..', 'views') }
   get '/' do
     'Hello RPSWeb!'
   end
