@@ -11,17 +11,13 @@ class Game
     player_2.opponent = player_1
   end
 
-  def round(player, choice)
-
-  end
-
   def winner?
     if (@player_1.won? == true)
-      return 'player_1 won'
+      return 'Player 1 won!'
     elsif (@player_2.won? == true)
-      return 'player_2 won'
+      return 'Player 2 won!'
     else
-      return 'no winner yet!'
+      return 'Ther\'es no winner yet!'
     end
   end
 end

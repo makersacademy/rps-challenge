@@ -39,7 +39,20 @@ class Rpsweb < Sinatra::Base
   end
 
   get '/result' do
-    @winner = $game.winner?
+    @winner = ''
+    if session[:player] == 'player_1'
+      if $game.winner? == 'Player 1 won!'
+        @winner = 'You won!'
+      elsif $game.winner? == 'Player 2 won!'
+        @winner = 'You lost :('
+      end
+    elsif session[:player] == 'player_2'
+      if $game.winner? == 'Player 1 won!'
+        @winner = 'You lost :('
+      elsif $game.winner? == 'Player 2 won!'
+        @winner = 'You won!'
+      end
+    end
 
     erb :result
   end
