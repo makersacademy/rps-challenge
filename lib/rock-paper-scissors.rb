@@ -19,7 +19,7 @@ class RockPaperScissors < Sinatra::Base
   get '/start' do
     $game ||= Game.new Player
 
-    if params[:advanced] == 'on'
+    if params[:advanced] == 'on' and !game_extended?
       extend_lizard_spock
     end
 
@@ -88,6 +88,10 @@ class RockPaperScissors < Sinatra::Base
     (Game::OPTIONS).insert(1, "spock")
     (Game::OPTIONS).insert(3, "lizard")
     Game::RULES += ["Lizard poisons Spock", "Rock crushes Lizard", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vapourizes Rock"]
+  end
+
+  def game_extended?
+    (Game::OPTIONS).count == 5
   end
 
   run! if app_file == $0

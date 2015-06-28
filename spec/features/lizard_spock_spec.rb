@@ -23,12 +23,12 @@ feature 'extending the game to Rock Paper Scissors Lizard Spock' do
     expect(page).to have_content 'Spock smashes Scissors'
   end
 
-  scenario 'Spock loses to Rock' do
+  scenario 'Spock loses to Paper' do
     nicola_in_single_player_advanced_mode
     choose('spock', :match => :first)
-    allow($game.player_2).to receive(:choice).and_return('rock')
+    allow($game.player_2).to receive(:choice).and_return('paper')
     click_button('Choose')
-    expect(page).to have_content 'Spock vapourizes Rock'
+    expect(page).to have_content 'You lost'
   end
 
   scenario 'Lizard beats Paper' do
