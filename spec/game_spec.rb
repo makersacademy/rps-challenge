@@ -2,29 +2,23 @@ require 'rps_game'
 
 describe RPSGame do
 
-  it 'randomly generates rock, paper or scissors' do
-    expect(["rock", "paper", "scissors"]).to include (subject.computer_choice)
-  end
+  describe 'play' do
 
-  describe 'winner' do
+    context "allows players to enter choice and checks for winner" do
 
-    context "computer chooses rock" do
-      before (:each) do
-        expect(subject).to receive(:computer) {"rock"}
+      it 'declares a tie computer and player choose rock' do
+        allow(subject).to receive(:computer) {"rock"}
+        expect(subject.play "rock").to eq "you tie"
       end
 
-      it 'declares tie when player chooses rock ' do
-        subject.player_1 "rock"
-        expect(subject.winner).to eq "you tie"
+      it 'declares player winner when they choose scissors against paper' do
+        allow(subject).to receive(:computer) {"paper"}
+        expect(subject.play "scissors").to eq "you win"
       end
 
-      it 'declares player winner when they choose paper' do
-        subject.player_1 "paper"
-        expect(subject.winner).to eq "you win"
-      end
-      it 'declares player loser they choose scissors' do
-        subject.player_1 "scissors"
-        expect(subject.winner).to eq "you loose"
+      it 'declares player loser when they choose scissors against rock' do
+        allow(subject).to receive(:computer) {"rock"}
+        expect(subject.play "scissors").to eq "you loose"
       end
     end
   end

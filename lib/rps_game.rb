@@ -1,105 +1,30 @@
 
 class RPSGame
 
-attr_accessor :player_1
-
-
-  def initialize
-    @player1_choice
-  end
-
-  def player_1 rockpaperscissors
-    @player1_choice = rockpaperscissors
-  end
-
-  def computer_choice
-    computer
-  end
-
-
-  def winner
+  def play rockpaperscissors
+    player1_choice = rockpaperscissors
     case
-      when @player1_choice == "rock" && rock?
-        "you tie"
-      when @player1_choice == "rock" && paper?
+      when player1_choice == "rock" && self.computer == "paper"
         "you loose"
-      when @player1_choice == "rock" && scissors?
+      when player1_choice == "rock" && self.computer == "scissors"
         "you win"
-      when @player1_choice == "paper" && rock?
+      when player1_choice == "paper" && self.computer == "rock"
         "you win"
-      when @player1_choice == "paper" && paper?
-        "you tie"
-      when  @player1_choice == "paper" && scissors?
+      when  player1_choice == "paper" && self.computer == "scissors"
         "you loose"
-      when @player1_choice == "scissors"  && rock?
+      when player1_choice == "scissors"  && self.computer == "rock"
         "you loose"
-      when @player1_choice == "scissors" && paper?
+      when player1_choice == "scissors" && self.computer == "paper"
         "you win"
-      when  @player1_choice == "scissors" && scissors?
+      when player1_choice == self.computer
         "you tie"
       else
-        "try again"
+        "wrong input!"
       end
   end
-
-  private
-
 
   def computer
     ["rock", "paper", "scissors"].sample
   end
-
-  def rock?
-    computer == "rock"
-  end
-
-  def paper?
-    computer == "paper"
-  end
-
-  def scissors?
-    computer == "scissors"
-  end
-
-
-
-  #
-  # def rock_choice
-  #   case
-  #   when @player
-  #       "you tie"
-  #     when paper?
-  #       "you loose"
-  #     when scissors?
-  #       "you win"
-  #     else
-  #       "wrong input"
-  #     end
-  # end
-  #
-  # def paper_choice
-  #   case @choice = "paper"
-  #     when rock?
-  #       "you loose"
-  #     when paper?
-  #       "you tie"
-  #     when scissors?
-  #       "you loose"
-  #     else
-  #       "wrong input"
-  #     end
-  # end
-  #
-  # def scissors_choice scissors
-  #   case @choice = "scissors"
-  #     when rock?
-  #       "you loose"
-  #     when paper?
-  #       "you win"
-  #     when scissors?
-  #       "you tie"
-  #     else
-  #       "wrong input"
-  #     end
-  # end
+  
 end
