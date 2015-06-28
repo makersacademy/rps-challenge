@@ -1,4 +1,4 @@
-require 'scissors'
+require './app/scissors'
 
 describe Scissors do
   it 'draws against scissors' do

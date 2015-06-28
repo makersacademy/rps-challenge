@@ -1,3 +1,7 @@
+require_relative 'rock'
+require_relative 'paper'
+require_relative 'scissors'
+
 class HandGameHandler # change to SignGame. Rock paper scissors can inherit from it?
   def initialize *choices
     @choices = choices

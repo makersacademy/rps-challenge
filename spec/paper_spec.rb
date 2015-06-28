@@ -1,4 +1,4 @@
-require 'paper'
+require './app/paper'
 
 describe Paper do
   it 'loses against scissors' do

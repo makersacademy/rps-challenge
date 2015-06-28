@@ -1,4 +1,4 @@
-require 'rock'
+require './app/rock'
 
 describe Rock do
   it 'loses against paper' do
@@ -11,6 +11,10 @@ describe Rock do
 
   it 'draws against rock' do
     expect(subject.result_against_rock).to eq "rock draws"
+  end
+
+  xit 'can be updated with result against new signs' do
+
   end
 
   describe '#versus' do

@@ -1,6 +1,6 @@
-require 'rps'
+require './app/game_handler'
 
-describe SignGame do
+describe HandGameHandler do
 
   let(:rock) { double :rock, versus: 'rock loses', result_against_paper: 'rock loses', result_against_scissors: 'rock wins', result_against_rock: 'rock draws'}
   let(:paper) { double :paper }
