@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPSOnline < Sinatra::Base
   
@@ -13,7 +14,12 @@ class RPSOnline < Sinatra::Base
   end
 
   post '/start_game' do
-    
+    @user = params[:name]
+    if @user == nil or @user == ''
+      erb :start_game
+    else
+      erb :new_game
+    end
   end
 
   # start the server if ruby file executed directly
