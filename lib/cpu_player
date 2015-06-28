@@ -1,0 +1,10 @@
+class Cpu_player
+
+def initialize
+	@options = [:rock, :paper, :scissors]
+end
+
+	def cpu_choice
+    options.sample
+  end
+end
