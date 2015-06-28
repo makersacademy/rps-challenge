@@ -12,7 +12,11 @@ enable :sessions
   end
 
   post '/new_game' do
-    session[:name] = params[:name]
+    if params[:name] == ''
+      session[:name] = "Player"
+    else
+      session[:name] = params[:name]
+    end
     erb :new_game
   end
 

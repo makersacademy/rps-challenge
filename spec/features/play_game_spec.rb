@@ -22,6 +22,12 @@ feature 'Starting a game' do
     expect(page).to have_content 'Welcome, Peter'
   end
 
+  scenario 'player name defaults to Player when none given' do
+    visit '/'
+    click_button 'Submit'
+    expect(page).to have_content 'Welcome, Player'
+  end
+
   context 'Playing a game' do
 
     before(:each) do
