@@ -2,7 +2,7 @@
 
 <form action='/outcome' method='POST'>
   <% (Game::OPTIONS).each do |option| %>
-    <input type='radio' name='<%= option %>'><%= option.capitalize %>
+    <input type='radio' name='<%= option %>'><label><%= option.capitalize %></label>
     <br>
   <% end %>
   <input type='submit' value='Choose'>
