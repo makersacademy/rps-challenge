@@ -22,7 +22,7 @@ class Rpsweb < Sinatra::Base
     p session[:playername]
     @playername = session[:playername]
     if @playername.include?("Player 2:")
-      #do nothing
+      # do nothing
     else
       $game = Game.new(Player)
     end
@@ -31,7 +31,7 @@ class Rpsweb < Sinatra::Base
 
   post '/choose' do
     choice = params[:choice]
-    if session[:playername].include?("Player 1:")
+    if session[:playername].include?("1:")
       $game.player1.choose(choice)
     else
       $game.player2.choose(choice)
@@ -41,6 +41,9 @@ class Rpsweb < Sinatra::Base
 
   get '/waiting_room' do
     p $game
+    if $game.player2.choice == nil
+      $game.player2.choice = ['rock', 'paper', 'scissors'].sample
+    end
     erb :waiting_room
   end
 
