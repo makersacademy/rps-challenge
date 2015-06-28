@@ -2,10 +2,12 @@ require 'game'
 
 describe Game do
 
-  it 'must take two players choice as an argument' do
+  it 'must take two choices as an argument' do
     expect(subject). to respond_to(:game).with(2).argument
   end
 
-
+  it 'must know that paper vs paper is a tie' do
+    expect(subject.game "paper", "paper").to eq "CPU chooses paper - It's a tie!"
+  end
 
 end

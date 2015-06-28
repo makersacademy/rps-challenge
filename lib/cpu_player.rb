@@ -1,5 +1,7 @@
 class Cpu_player
 
+attr_reader :cpu_choice
+
 def initialize
 	@options = [:rock, :paper, :scissors]
 end
