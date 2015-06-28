@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<div>
+
+  <p>Your choice: <%= @player_choice %></p>
+  <p>Computer's choice: <%= @computer_choice %></p>
+
+  <% if @winner == 'Player'%>
+    <p>Player is the winner</p>
+  <% elsif @winner == 'Computer' %>
+    <p>Computer is the winner</p>
+  <% else %>
+    <p>It is a tie</p>
+  <% end %>
+
+  <form action='/game'>
+    <input type='submit' value='Play Again!'>
+  </form>
+
+
+
+
+
+
+
+
+
+
+</div>
