@@ -1,6 +1,7 @@
 <div>
+  <p>You chose <%=@choice %> </p>
   <%= $game.result @player_1.choose @choice %>
-  <form action='/game'>
+  <form action='/computer'>
     <input type='submit' value='Play again'>
   </form>
 <div>

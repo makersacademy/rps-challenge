@@ -15,17 +15,38 @@ class RPS < Sinatra::Base
     erb :name
   end
 
-  get '/game' do 
+  get '/computer_or_player' do 
     @name = params[:name]
-    erb :game
+    erb :computer_or_player
+  end 
+
+  get '/computer' do 
+    @name = params[:name]
+    erb :computer
+  end
+
+  get '/player' do 
+    erb :player2
+  end
+
+  get '/player_1_choice' do 
+    erb :player_1_choice 
   end 
 
   get '/result' do 
     @choice = params[:Option]
-    p @choice
     $game = Game.new
     @player_1 = Player.new
     erb :result
+  end
+
+  get '/two_player_result' do 
+    @choice1 = params[:Option]
+    @choice2 = params[:Option2]
+    $game = Game.new
+    @player_1 = Player.new.choose @choice1
+    @player_2 = Player.new.choose @choice2
+    erb :two_player_result
   end
 
 end
