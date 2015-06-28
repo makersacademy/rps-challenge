@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Rps_Challenge < Sinatra::Base
 
   set :public_folder, proc { File.join(root, '..', "public") }
-  #set :views, proc { File.join(root, '..', 'views') }
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
     'Hello rps-challenge!'
