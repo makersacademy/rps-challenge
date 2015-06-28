@@ -19,7 +19,7 @@ class Game
     elsif (player.selected_weapon == :rock && computer.random_weapon == :scissors) ||
           (player.selected_weapon == :paper && computer.random_weapon == :rock) ||
           (player.selected_weapon == :scissors && computer.random_weapon == :paper)
-      "#{player} wins!"
+      "You win!"
     else
       "Computer wins!"
     end

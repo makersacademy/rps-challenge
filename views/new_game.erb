@@ -1,9 +1,13 @@
 Welcome, <%= session[:name] %>!
-
+<br>
+<br>
 Please select your weapon:
 
-<select name="weapon">
-  <option value="Rock">Rock</option>
-  <option value="Paper">Paper</option>
-  <option value="Scissors">Scissors</option>
-</select>
+<form action = "/result" method="post">
+  <select name="weapon">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select><br>
+  <input type="submit" value="Play!">
+</form>
