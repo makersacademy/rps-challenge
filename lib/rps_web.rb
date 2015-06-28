@@ -22,6 +22,7 @@ class RPS < Sinatra::Base
 
   get '/computer' do 
     @name = params[:name]
+
     erb :computer
   end
 

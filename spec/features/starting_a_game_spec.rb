@@ -51,9 +51,11 @@ scenario 'allows two players to playe against each other' do
     fill_in('name', with:'Jon')
     click_button "Submit"
     click_button "Another Player"
+    fill_in("name2", with: "Bob")
+    click_button "Submit"
     select 'Paper', from:"Option"
-    click_button "Draw"
     select 'Scissors', from:"Option2"
-    expect(page).to have_content "Player 2 Wins"
+    click_button "Draw"
+    expect(page).to have_content "Player 2 wins"
   end
 end
