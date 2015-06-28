@@ -11,7 +11,7 @@ require 'capybara'
 require 'rspec'
 require 'simplecov'
 
-#Capybara.app = Rps-Challenge
+Capybara.app = Rps_Challenge
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
