@@ -1,16 +1,15 @@
 class Player
 
   def rock
-    true
+    :rock
   end
 
   def paper
-   true
+    :paper
   end
 
   def scissors
-    true
+    :scissors
   end
 
-  
 end

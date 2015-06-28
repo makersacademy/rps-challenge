@@ -2,13 +2,18 @@ require 'game'
 
 
 describe Game do 
+let(:player) {double :player}
+let(:playerClass) {double :Player, new: player}
 
-it 'can determine if the player has won' do
-  player = (double :player, rock: true)
-  computer = (double :computer, choose: :scissors)
-  game = Game.new player, computer
-  expect(game.player_wins?).to eq true
-end
+subject { Game.new(playerClass) }
+
+  it 'creates player 1' do
+    expect(subject.player1).to be player
+  end
+
+  it 'creates player 1' do
+    expect(subject.player2).to be player
+  end
 
 
 end
