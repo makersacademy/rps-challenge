@@ -20,7 +20,21 @@ class AppWeb < Sinatra::Base
   end
 
   post '/set_up_game' do
-    byebug
+    $game = Game.new(game_mode_parser(params[:game_mode]))
+
+    redirect_to '/play'
   end
+
+  get '/play' do
+    
+  end
+
+  def game_mode_parser params
+   if params == "play against the machine"
+      play_mode = :solo 
+   else
+      play_mode = params.to_sym
+   end
+ end
 
 end
