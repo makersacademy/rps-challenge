@@ -1,0 +1,11 @@
+<% if @name == '' or @name == nil %>
+  <form action='/'>
+    Enter your name here:
+    <input type='text' name='name'>
+    <input type='submit' value='Submit'>
+  </form>
+<% else %>
+  <%= @name %>, you are player <%= @playernum %>. Click begin to start playing rock paper scissors
+  <br>
+  <a href='/start'>Begin</a>
+<% end %>
