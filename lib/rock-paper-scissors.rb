@@ -48,13 +48,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/outcome' do
-    @username = player_from_session.name
+
     @choice = params.key('on')
     player_from_session.choice = @choice
-    @opponent_name = player_from_session.opponent.name
-    @opponent_choice = player_from_session.opponent.choice
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
 
     begin
+      @username = player_from_session.name
+      @choice = player_from_session.choice
+      @opponent_name = player_from_session.opponent.name
+      @opponent_choice = player_from_session.opponent.choice
       @result = $game.won_lost_or_tied player_from_session
     rescue
       redirect '/holding'
@@ -66,9 +72,10 @@ class RockPaperScissors < Sinatra::Base
   get '/holding' do
     begin
       @result = $game.won_lost_or_tied player_from_session
-      redirect '/outcome', 307
+      redirect '/outcome'
     rescue RuntimeError => @error
       erb :holding
+      redirect '/holding'
     end
   end
 

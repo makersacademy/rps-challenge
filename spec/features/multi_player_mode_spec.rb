@@ -23,4 +23,9 @@ feature 'multi player game' do
     expect(page).to have_content 'Still waiting for your opponent to decide'
   end
 
+  scenario 'when opponent has made a choice player gets the outcome' do
+    allow($game).to receive(:won_lost_or_tied).and_return 'You won! :)'
+    expect(page).to have_content 'You won! :)'
+  end
+
 end
