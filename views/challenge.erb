@@ -1,0 +1,31 @@
+<div id="title_challenge_page" class="top_space">
+  <h3>Welcome <%= $player1 %>, Sheldon has challenged you to a game</h3>
+</div>
+
+
+  <h4>Choose Wisely</h4>
+
+
+
+<div>
+<form method="POST">
+
+  <input type="submit" name="choice" value="Rock" class="button">
+
+  <input type="submit" name="choice" value="Paper" class="button">
+
+  <input type="submit" name="choice" value="Scissors" class="button">
+
+  <input type="submit" name="choice" value="Lizard" class="button">
+
+  <input type="submit" name="choice" value="Spock" class="button">
+
+</form>
+
+<div id="result">
+
+<%= @played %>
+
+</div>
+
+</div>
