@@ -1,20 +1,17 @@
 class Player
 
-  attr_reader :options
-
   attr_accessor :selected
+  attr_reader :selection
 
   def initialize
-    @options = ["rock", "paper", "scissors" ]
+    @selection = ["rock", "paper", "scissors" ]
     @selected = ""
   end
 
-  def choice(selection)
-
-    case selection
+  def user_choice(guess)
+    case guess
     when "rock"
       self.selected = "rock"
-      # (selection ||= "") << "rock"
     when "paper"
       self.selected = "paper"
     when "scissors"
