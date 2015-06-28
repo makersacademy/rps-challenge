@@ -14,4 +14,13 @@ feature 'multi player game' do
     expect(page).to have_content 'Enter your name'
   end
 
+  scenario 'when your opponent has yet to make a choice the player gets a holding page' do
+    visit '/'
+    fill_in('name', with: 'Nicola')
+    click_button('Submit')
+    choose('rock')
+    click_button('Choose')
+    expect(page).to have_content 'Still waiting for your opponent to decide'
+  end
+
 end

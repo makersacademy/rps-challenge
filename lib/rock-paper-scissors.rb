@@ -38,7 +38,7 @@ class RockPaperScissors < Sinatra::Base
       unless session[:player] == 'player_1'
         session[:player] = 'player_2'
       end
-      
+
       player_from_session.name = @user
       @options = Game::OPTIONS
       erb :choice
@@ -53,8 +53,23 @@ class RockPaperScissors < Sinatra::Base
     player_from_session.choice = @choice
     @opponent_name = player_from_session.opponent.name
     @opponent_choice = player_from_session.opponent.choice
-    @result = $game.won_lost_or_tied player_from_session
+
+    begin
+      @result = $game.won_lost_or_tied player_from_session
+    rescue
+      redirect '/holding'
+    end
+
     erb :outcome
+  end
+
+  get '/holding' do
+    begin
+      @result = $game.won_lost_or_tied player_from_session
+      redirect '/outcome', 307
+    rescue RuntimeError => @error
+      erb :holding
+    end
   end
 
   def player_from_session
