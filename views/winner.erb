@@ -1,0 +1,13 @@
+<div>
+<p>
+You chose: <%= @weapon %><br>
+Computer chose: <%= @opponent_weapon %>
+</p>
+<p>
+  <%= @weapon %> beats <%= @opponent_weapon %>, you win!</p>
+<p>
+<form action='/choose' method ='get'>
+  <input type='submit' value='Play again?' id='play_again'>
+</form>
+</p>
+</div>
