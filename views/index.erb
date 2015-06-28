@@ -1,13 +1,13 @@
 <div>
-  <% if @name %>
-    <p> Hello <%= @name %> </p>
-    <p> Click here to
-    <a href='/playing'> start the game</a></p>
-  <% else %>
-    <p> Please enter your name </p>
+  <% if !@name || @name == '' %>
+   <p> Please enter your name </p>
     <form action='/' method='GET'>
       <input type='text' name='name'>
       <input type='submit' value='Submit'>
     </form>
+  <% else %>
+     <p> Hello <%= @name %> </p>
+    <p> Click here to
+    <a href='/playing'> start the game</a></p>
   <% end %>
 </div>
