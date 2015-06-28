@@ -1,4 +1,4 @@
-# RPS Challenge: Rōnin Badge Test
+# A basic version of Rock, Paper, Scissors, Lizard, Spock game
 
 
 ```sh
