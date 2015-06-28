@@ -1,3 +1,4 @@
+# add module HandSign which covers results against unknown things and adding new types of opponent
 class Rock
   def versus opponent
     opponent.result_against_rock

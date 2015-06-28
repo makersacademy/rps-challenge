@@ -10,7 +10,6 @@ feature 'One-player game' do
     click_on 'play'
     expect(page).to have_content 'Pick your weapon:'
     choose 'rock'
-    #fill_in 'choice', with: 'rock'
     click_on 'Submit'
     expect(page).to have_content 'Result:'
     click_on 'play again?'
