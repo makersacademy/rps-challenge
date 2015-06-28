@@ -10,7 +10,8 @@ class RPSchallenge < Sinatra::Base
 
   post '/game' do
   	@name = params[:name]
-  	redirect '/' if @name == ""  
+  	@option = params[:moves]
+  	redirect '/' if @name == ""
     erb :game
   end
 

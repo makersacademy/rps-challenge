@@ -7,7 +7,7 @@ feature 'Starting a new game' do
     expect(page).to have_content('What is your name?')
   end
 
-  scenario 'allows user to enter their name' do
+  xscenario 'allows user to enter their name' do
     visit '/'
     fill_in('name', with: 'Bob')
     click_button("Let's play!")
@@ -30,4 +30,12 @@ feature 'Playing a game' do
     expect(page).to have_selector ('select')
   end
 
+  scenario 'displays the chosen option' do
+    visit '/'
+    fill_in('name', with: 'Bob')
+    click_button("Let's play!")
+    select 'Rock', from: 'moves'
+    click_button('Submit')
+    expect(page).to have_content('You chose Rock')
+  end
 end
