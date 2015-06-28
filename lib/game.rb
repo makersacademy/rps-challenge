@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1
+  attr_reader :player_1, :selection_2
 
   def initialize(player,ai)
     @power_hash = {Rock: :Paper,
@@ -17,12 +17,12 @@ class Game
   end
 
   def play(selection_1)
-    selection_2 = @ai.choose
+    @selection_2 = @ai.choose
     if @power_hash[selection_1] == selection_2
-      @player_1.wins
+      @ai.wins
       @won = true
     elsif @power_hash[selection_2] == selection_1
-      @ai.wins
+      @player_1.wins
       @won = true
     else
       @won = 'Tie'
