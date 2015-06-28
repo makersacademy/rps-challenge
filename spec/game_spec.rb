@@ -3,19 +3,19 @@ require 'game'
 describe Game do
 
   it 'must take two choices as an argument' do
-    expect(subject). to respond_to(:game).with(2).argument
+    expect(subject). to respond_to(:play).with(2).argument
   end
 
   it 'must know that paper vs paper is a tie' do
-    expect(subject.game "paper", "paper").to eq "CPU chooses paper - It's a tie!"
+    expect(subject.play "Paper", "Paper").to eq "CPU chooses Paper - It's a tie!"
   end
 
   it 'must know that paper beats rock' do
-    expect(subject.game "paper", "rock").to eq "CPU chooses rock - YOU WIN!"
+    expect(subject.play "Paper", "Rock").to eq "CPU chooses Rock - YOU WIN!"
   end
 
   it 'must know that paper loses to scissors' do
-    expect(subject.game "paper", "scissors").to eq "CPU chooses scissors - YOU LOSE!"
+    expect(subject.play "Paper", "Scissors").to eq "CPU chooses Scissors - YOU LOSE!"
   end
 
 end

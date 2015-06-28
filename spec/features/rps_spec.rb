@@ -19,6 +19,7 @@ feature 'Starting a new game' do
     click_button("Submit")
     select 'Rock', from: "Option"
     click_button("PLAY!")
-    expect(page).to have_content "You selected Rock..."
+    expect(page).to have_content "You selected Rock ..."
   end
+
 end

@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/game'
+require_relative 'game'
 
 class RPS < Sinatra::Base
 
@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
 
 
   get '/' do
-  	@name = params[:name]
+  	$game = Game.new
     erb :index
   end
 
@@ -18,4 +18,14 @@ class RPS < Sinatra::Base
     @name = params[:name]
     erb :make_choice
   end
+
+  get '/outcome' do
+    @choice = params[:Option]
+    @cpu = Cpu_player.new
+    @cpu_choice = @cpu.cpu_choice
+    erb :outcome
+  end
+
+
+
 end
