@@ -5,7 +5,7 @@ class Game
 
   attr_reader :comp_pick, :winner, :computer_choice, :player
 
-  #Are these two lines initializing with an instance of player
+  #Are these two lines initializing with an instance of player?
   def initialize(playerClass)
     @player = initialize_player playerClass
   end
