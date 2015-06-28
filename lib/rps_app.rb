@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'player'
 require 'game'
 
 class RSP < Sinatra::Base

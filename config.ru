@@ -1,4 +1,4 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), 'app/rps_app.rb')
+require File.join(File.dirname(__FILE__), 'lib/rps_app.rb')
 
 run RSP

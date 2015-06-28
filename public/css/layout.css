@@ -38,19 +38,20 @@ form input.form-button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   vertical-align: middle;
-  height: 30px;
-  line-height: 16px;
-  padding: 0 10px;
+  height: 33px;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 0 15px;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -64,7 +65,6 @@ form input.form-button {
 ul li {
   list-style: none;
 }
-
 
 
 /* Error msg styles */
@@ -92,18 +92,3 @@ ul li {
 	50% { opacity: .1; }
 	100% { opacity: 1; }
 }
-
-/*.start-button {
-  margin: 0 auto;
-  text-transform: uppercase;
-  font-family: Arial, sans-serif;
-  background-color:#ccc;
-  border:1px solid #212121;
-  width:80px;
-  height:40px;
-}
-
-.start-button a {
-  color:#212121;
-  text-decoration:none;
-}*/

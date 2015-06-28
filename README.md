@@ -45,22 +45,23 @@ I would like to be able to play rock/paper/scissors
 - Built Game class - to include what?
 
 
-
 - options for player/marketeer = rock, paper and scissors (only one can be selected at each turn/go)
-- the game will choose a random option
-- a winner will be declared
+- the computer chooses a random option - computer_choice
+- player plays against computer
+- after selecting an option and clicking the enter button, player is notified about whether they have won, drawn or lost
 
--
--
--
-BDD
-...
+
+
 
 
 ## Still to complete/refactor
 
+- Refactor the win? method - it's pretty long and unsightly at the moment
+- Tidy up player class and test - do you actually need most of the methods in this class now or are some redundant now that the game class has the functionality?
+- Are the correct methods in the correct classes - OOD? Separation of concerns etc.
 
-- I did not get time to look at the following - to review/add in LAB week possibly
+
+- I also did not get time to look at the following - to review/add in LAB week possibly?
 
 ## Bonus level 1: Multiplayer
 

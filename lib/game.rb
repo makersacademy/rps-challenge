@@ -2,7 +2,6 @@ require_relative 'player'
 
 class Game
 
-
   attr_reader :selection
 
   def initialize player
@@ -11,31 +10,29 @@ class Game
   end
 
   def computer_choice
-    ["paper", "scissors", "rock"][rand(3)]
+    selection[rand(3)]
   end
 
-  
-
-
-  def win_loose_draw player_choice
-    # LOGIC
-
-    # Draw
-    # player.user_choice == 'rock' && computer_choice == 'rock'
-    # player.user_choice == 'scissors' && computer_choice == 'scissors'
-    # player.user_choice == 'paper' && computer_choice == 'paper'
-
-    # Win
-    # player.user_choice == 'rock' && computer_choice == 'scissors'
-    # player.user_choice == 'scissors' && computer_choice == 'paper'
-    # player.user_choice == 'paper' && computer_choice == 'rock'
-
-    # Loose
-    # player.user_choice == 'rock' && computer_choice == 'paper'
-    # player.user_choice == 'scissors' && computer_choice == 'rock'
-    # player.user_choice == 'paper' && computer_choice == 'scissors'
+  def result player
+    fail 'Please choose one of the options: rock, scissors or paper' if player.choice == ""
+    if win? player
+      "You win!"
+    elsif draw? player
+      "Draw!"
+    else
+      "You lost, sorry!"
+    end
   end
 
+  def win? player
+    # TODO refactor opportunity here - christ knows how though
+    player.choice == 'rock' && computer_choice == 'scissors' ||
+    player.choice == 'scissors' && computer_choice == 'paper' ||
+    player.choice == 'paper' && computer_choice == 'rock'
+  end
 
+  def draw? player
+    player.choice == computer_choice
+  end
 
 end
