@@ -1,0 +1,13 @@
+ROCK PAPER SCISSORS!
+
+<% if @visitor %>
+  <p>Welcome, <%= @visitor %>!</p>
+  <p>Click here to start the game :)</p>
+  <a href="/gameplay">PLAY!</a>
+<% else %>
+  <form action="/">
+    Please enter your name here:
+    <input name="name" type="text">
+    <input type="submit" value="Submit">
+  </form>
+<% end %>

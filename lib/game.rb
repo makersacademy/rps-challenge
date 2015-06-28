@@ -20,6 +20,8 @@ class Game
       return 'player_1 won'
     elsif (@player_2.won? == true)
       return 'player_2 won'
+    else
+      return 'no winner yet!'
     end
   end
 end
