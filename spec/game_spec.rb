@@ -6,7 +6,7 @@ describe Game do
   end
 
   it 'can be won' do
-    subject.selections(:Rock,:Paper)
+    subject.play(:Rock,:Paper)
     expect(subject.has_winner?).to eq true
   end
 

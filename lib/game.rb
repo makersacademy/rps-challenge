@@ -11,9 +11,14 @@ class Game
     @won
   end
 
-  def selections(selection_1,selection_2)
+  def play(selection_1,selection_2)
     if @power_hash[selection_1] == selection_2
       @won = true
+    end
+    if @power_hash[selection_2] == selection_1
+      @won = true
+    else
+      @won = 'Tie'
     end
   end
 
