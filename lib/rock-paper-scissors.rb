@@ -19,6 +19,10 @@ class RockPaperScissors < Sinatra::Base
   get '/start' do
     $game ||= Game.new Player
 
+    if params[:advanced] == 'on'
+      extend_lizard_spock
+    end
+
     if params[:single] == 'on'
       session[:player] = 'player_1'
       $game.player_1.opponent.name = "Computer"
@@ -78,6 +82,12 @@ class RockPaperScissors < Sinatra::Base
 
   def player_from_session
     session[:player] == 'player_2' ? $game.player_2 : $game.player_1
+  end
+
+  def extend_lizard_spock
+    (Game::OPTIONS).insert(1, "spock")
+    (Game::OPTIONS).insert(3, "lizard")
+    Game::RULES += ["Lizard poisons Spock", "Rock crushes Lizard", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vapourizes Rock"]
   end
 
   run! if app_file == $0
