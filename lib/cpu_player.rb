@@ -7,6 +7,6 @@ def initialize
 end
 
 	def cpu_choice
-    options.sample
+    @options.sample
   end
 end

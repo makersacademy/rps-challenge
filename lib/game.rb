@@ -1,5 +1,5 @@
-require 'player'
-require 'cpu_player'
+require_relative 'player'
+require_relative 'cpu_player'
 
 class Game
 
@@ -21,3 +21,5 @@ class Game
     end
   end
 end
+
+
