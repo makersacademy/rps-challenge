@@ -11,13 +11,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start' do
+    $game = Game.new Player
+    if params[:single] == 'on'
+      $game.player_1.opponent.name = "Computer"
+      $game.player_1.opponent.choice = Game::OPTIONS.sample
+    end
     erb :start
   end
 
   post '/start' do
     @user = params[:name]
     if @user and @user.strip != ''
-      $game = Game.new Player
+
       $game.player_1.name = @user
       @options = Game::OPTIONS
       erb :choice
@@ -30,9 +35,7 @@ class RockPaperScissors < Sinatra::Base
     @username = $game.player_1.name
     @choice = params.key('on')
     $game.player_1.choice = @choice
-    $game.player_1.opponent.name = "Computer"
     @opponent_name = $game.player_1.opponent.name
-    $game.player_2.choice = Game::OPTIONS.sample
     @opponent_choice = $game.player_1.opponent.choice
     @result = $game.won_lost_or_tied $game.player_1
     erb :outcome

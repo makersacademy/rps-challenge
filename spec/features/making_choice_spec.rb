@@ -13,7 +13,9 @@ feature 'making a choice' do
   end
 
   def nicola_chooses_rock
-    visit '/start'
+    visit '/'
+    choose('single')
+    click_button('Start Game')
     fill_in('name', with: 'Nicola')
     click_button('Submit')
     choose('rock')
