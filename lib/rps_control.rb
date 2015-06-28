@@ -11,20 +11,21 @@ enable :sessions
     erb :index
   end
 
-  get '/new_game' do
+  post '/new_game' do
     session[:name] = params[:name]
     erb :new_game
   end
 
-get '/result' do
-  @result = RPS.play params[:choice].to_sym, RPS.random_choice
-  if @result == 'Player 1 Wins'
-    "#{session[:name]} Wins!"
-  elsif @result == 'Player 2 Wins'
-    "Computer Wins!"
-  else
-    "Draw"
+  post '/result' do
+    winner = RPS.play params[:choice].to_sym, RPS.random_choice
+    if winner == 'Player 1 Wins'
+      @result = "#{session[:name]} Wins!"
+    elsif winner == 'Player 2 Wins'
+      @result = "Computer Wins!"
+    else
+      @result = "Draw!"
+    end
+    erb :result
   end
-end
 
 end

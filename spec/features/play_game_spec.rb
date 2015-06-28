@@ -30,9 +30,22 @@ feature 'Starting a game' do
       click_button 'Submit'
     end
 
-    scenario 'player can choose rock' do
+    scenario 'player can win' do
+      allow(RPS).to receive(:random_choice).and_return(:scissors)
       click_button 'rock'
       expect(page).to have_content 'David Wins!'
+    end
+
+    scenario 'player can lose' do
+      allow(RPS).to receive(:random_choice).and_return(:paper)
+      click_button 'rock'
+      expect(page).to have_content 'Computer Wins!'
+    end
+
+    scenario 'player can draw' do
+      allow(RPS).to receive(:random_choice).and_return(:rock)
+      click_button 'rock'
+      expect(page).to have_content 'Draw!'
     end
   end
 
