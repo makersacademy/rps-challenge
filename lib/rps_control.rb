@@ -30,6 +30,7 @@ enable :sessions
   end
 
   get '/vs_rps' do
+    erb :vs_rps
   end
 
   post '/result' do

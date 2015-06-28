@@ -24,11 +24,11 @@ feature 'Starting a game' do
 
   scenario 'player name defaults to Player when none given' do
     visit '/'
-    click_button 'vs Computer'
+    click_button 'vs Human'
     expect(page).to have_content 'Welcome, Player'
   end
 
-  context 'Playing a game' do
+  context 'Playing a game against the computer' do
 
     before(:each) do
       visit '/'
@@ -54,6 +54,33 @@ feature 'Starting a game' do
       expect(page).to have_content 'Draw!'
     end
   end
+
+  # context 'Playing a game against a human opponent' do
+
+  #   before(:each) do
+  #     visit '/'
+  #     fill_in 'name', :with => 'David'
+  #     click_button 'vs Human Opponent'
+  #   end
+
+  #   scenario 'player can win' do
+  #     allow(RPS).to receive(:random_choice).and_return(:scissors)
+  #     click_button 'rock'
+  #     expect(page).to have_content 'David Wins!'
+  #   end
+
+  #   scenario 'player can lose' do
+  #     allow(RPS).to receive(:random_choice).and_return(:paper)
+  #     click_button 'rock'
+  #     expect(page).to have_content 'Computer Wins!'
+  #   end
+
+  #   scenario 'player can draw' do
+  #     allow(RPS).to receive(:random_choice).and_return(:rock)
+  #     click_button 'rock'
+  #     expect(page).to have_content 'Draw!'
+  #   end
+  # end
 
 
 
