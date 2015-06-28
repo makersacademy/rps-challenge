@@ -34,6 +34,7 @@ class RockPaperScissors < Sinatra::Base
     @opponent_name = $game.player_1.opponent.name
     $game.player_2.choice = Game::OPTIONS.sample
     @opponent_choice = $game.player_1.opponent.choice
+    @result = $game.won_lost_or_tied $game.player_1
     erb :outcome
   end
 
