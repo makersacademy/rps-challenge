@@ -7,6 +7,6 @@ def initialize
 end
 
 	def cpu_choice
-    @options.sample
+    cpu_choice = @options[(rand(3)-1)]
   end
 end
