@@ -12,11 +12,20 @@ enable :sessions
   end
 
   post '/new_game' do
-    if params[:name] == ''
+    if (session[:name] == nil && params[:name] == '')
       session[:name] = "Player"
-    else
+    elsif session[:name] == nil
       session[:name] = params[:name]
     end
+
+    if params[:gametype] == "vs Computer"
+      redirect '/computer_rps'
+    else
+      redirect '/vs_rps'
+    end
+  end
+
+  get '/computer_rps' do
     erb :new_game
   end
 

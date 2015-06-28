@@ -11,20 +11,20 @@ feature 'Starting a game' do
   scenario 'player can input their name' do
     visit '/'
     fill_in 'name', :with => 'David'
-    click_button 'Submit'
+    click_button 'vs Computer'
     expect(page).to have_content 'Welcome, David'
   end
 
   scenario 'player can input a different name' do
     visit '/'
     fill_in 'name', :with => 'Peter'
-    click_button 'Submit'
+    click_button 'vs Computer'
     expect(page).to have_content 'Welcome, Peter'
   end
 
   scenario 'player name defaults to Player when none given' do
     visit '/'
-    click_button 'Submit'
+    click_button 'vs Computer'
     expect(page).to have_content 'Welcome, Player'
   end
 
@@ -33,7 +33,7 @@ feature 'Starting a game' do
     before(:each) do
       visit '/'
       fill_in 'name', :with => 'David'
-      click_button 'Submit'
+      click_button 'vs Computer'
     end
 
     scenario 'player can win' do
