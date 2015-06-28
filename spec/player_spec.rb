@@ -7,8 +7,8 @@ def player; Player.new; end
     expect(player.choose :rock).to eq :rock
   end
 
-  it 'cant choose anything other than rock, paper, scissors' do
-    expect{ player.choose :sausages }.to raise_error 'Please choose rock, paper or scissors!'
+  xit 'cant choose anything other than rock, paper, scissors' do
+    expect{ player.choose :sausage }.to raise_error 'Please choose rock, paper or scissors!'
   end
 
 end

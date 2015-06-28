@@ -1,14 +1,14 @@
 class Player
 
-  attr_accessor :choices
+  attr_accessor :choice
 
   def initialize
-    @choices = [:rock, :paper, :scissors]
+    @choice
   end
 
-  def choose rps
-    fail 'Please choose rock, paper or scissors!' unless choices.include? rps
-    rps 
+  def choose rock_paper_scissors
+    # fail 'Please choose rock, paper or scissors!' if @
+    self.choice = rock_paper_scissors
   end
 
 end
