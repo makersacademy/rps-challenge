@@ -14,4 +14,5 @@ group :test do
   gem 'capybara'
   gem 'byebug'
   gem 'launchy'
+  gem 'create_awesome_readme'
 end
