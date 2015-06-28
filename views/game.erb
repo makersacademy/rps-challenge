@@ -3,13 +3,21 @@
   
   <p>Choose your weapon</p>
   
-  <form method='GET' action='/result'>
+  <form method='POST' action='/result'>
     <select name='weapon'>
       <option value="rock">rock</option>
       <option value="paper">paper</option>
-      <option value="scissors">pcissors</option>
+      <option value="scissors">scissors</option>
     </select>
-    <input type="submit" value="Fight!" style="margin-left: 18px"></input>
+    
+    <form action ='POST'>
+
+      <input type="submit" value="Fight" style="margin-left: 18px"></input>
+      
+    </form>
+
   </form>
+
+   
 
 </div>
