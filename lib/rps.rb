@@ -7,12 +7,16 @@ class RPSchallenge < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
-    $player = params[:name]
     if $player == ''
       erb :challenge
     else
       erb :index
     end
+  end
+
+  get '/challenge' do
+    $player = params[:name]
+    erb :challenge
   end
 
 
