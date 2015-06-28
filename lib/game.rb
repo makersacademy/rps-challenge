@@ -11,13 +11,11 @@ class Game
   end
 
   def game(player_choice, cpu_choice)
-   puts player_choice
-   puts cpu_choice
     if player_choice == cpu_choice
       "CPU chooses #{cpu_choice} - It's a tie!"
     elsif
-      @rules[player_choice].include? cpu_choice
-      "CPU chooses #{cpu_choice} - YOU LOSE"
+      @rules[player_choice.to_sym].include? cpu_choice.to_sym
+      "CPU chooses #{cpu_choice} - YOU LOSE!"
     else
       "CPU chooses #{cpu_choice} - YOU WIN!"
     end

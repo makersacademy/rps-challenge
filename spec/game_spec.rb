@@ -10,4 +10,12 @@ describe Game do
     expect(subject.game "paper", "paper").to eq "CPU chooses paper - It's a tie!"
   end
 
+  it 'must know that paper beats rock' do
+    expect(subject.game "paper", "rock").to eq "CPU chooses rock - YOU WIN!"
+  end
+
+  it 'must know that paper loses to scissors' do
+    expect(subject.game "paper", "scissors").to eq "CPU chooses scissors - YOU LOSE!"
+  end
+
 end
