@@ -29,9 +29,6 @@ enable :sessions
     erb :computer_rps
   end
 
-  get '/vs_rps' do
-    erb :vs_rps
-  end
 
   post '/result' do
     winner = RPS.play params[:choice].to_sym, RPS.random_choice
@@ -41,6 +38,37 @@ enable :sessions
       @result = "Computer Wins!"
     else
       @result = "Draw!"
+    end
+    erb :result
+  end
+
+  get '/vs_rps' do
+    unless $gamestart == "started"
+      $gamestart = "started"
+      session[:id] = "Player 1"
+    else
+      session[:id] = "Player 2"
+    end
+    erb :vs_rps
+  end
+
+  post '/vs_result' do
+    if session[:id] == "Player 1"
+      $p1choice = params[:choice].to_sym
+    else
+      $p2choice = params[:choice].to_sym
+    end
+    erb :please_wait
+  end
+
+  post '/vs_winner' do
+    winner = RPS.play $p1choice, $p2choice
+    if winner == 'Player 1 Wins!'
+      @result = "Player 1 Wins!"
+    elsif winner == 'Player 2 Wins'
+      @result = "Player 2 Wins!"
+    else
+      @result = $p1choice + $p2choice
     end
     erb :result
   end
