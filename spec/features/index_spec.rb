@@ -4,14 +4,14 @@ feature 'Starting a new game' do
 
   scenario "asking for the user's name" do
   visit '/'
-  expect(page).to have_content "What's your name?"
+  expect(page).to have_content "Ready to play? Digit yor name and press enter!"
 end
 
   scenario "user can login with his name" do
   visit '/'
   fill_in 'name', with: 'Massi'
   click_button ('Submit')
-  expect(page).to have_content "Welcome Massi, have a look to the rules and let's star playing!"
+  expect(page).to have_content "Welcome Massi, Sheldon has challenged you to a game"
 end
 
 
