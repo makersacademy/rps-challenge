@@ -10,6 +10,12 @@ h1 {
   font-size: 40px;
 }
 
+h2 {
+  font-family: sans-serif;
+  color: magenta;
+  font-size: 30px;
+}
+
 p {
   font-family: sans-serif;
   color: black;
