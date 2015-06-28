@@ -1,1 +1,9 @@
 <h1>Welcome <%= @user %></h1>
+
+<form action='/outcome' method='POST'>
+  <% @options.each do |option| %>
+    <input type='radio' name='<%= option %>'><%= option.capitalize %>
+    <br>
+  <% end %>
+  <input type='submit' value='Choose'>
+</form>

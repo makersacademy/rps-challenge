@@ -26,6 +26,14 @@ class RockPaperScissors < Sinatra::Base
     end
   end
 
+  post '/outcome' do
+    @username = $game.player_1.name
+    @choice = params.key('on')
+    $game.player_1.choice = @choice
+    erb :outcome
+
+  end
+
   run! if app_file == $0
 
 end
