@@ -2,6 +2,8 @@ require 'spec_helper'
 
 feature 'starting a game' do
 
+  before(:each) { $game = nil }
+
   scenario 'the welcome page allows a player to start a single player game' do
     visit '/'
     choose('single')

@@ -24,6 +24,7 @@ feature 'ending the game' do
   end
 
   def nicola_selects_rock
+    $game = nil
     visit '/'
     choose('single')
     click_button('Start Game')

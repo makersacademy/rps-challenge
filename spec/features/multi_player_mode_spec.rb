@@ -2,7 +2,8 @@ require 'spec_helper'
 
 feature 'multi player game' do
 
-  scenario 'the welcome page allows a player to start a multi player game' do
+  scenario 'if there is no current game the welcome page allows a player to start a multi player game' do
+    $game = nil
     visit '/'
     choose('multi')
     click_button('Start Game')

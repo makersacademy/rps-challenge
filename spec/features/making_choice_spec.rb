@@ -13,6 +13,7 @@ feature 'making a choice' do
   end
 
   def nicola_chooses_rock
+    $game = nil
     visit '/'
     choose('single')
     click_button('Start Game')
