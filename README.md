@@ -1,4 +1,4 @@
-# A basic version of Rock, Paper, Scissors, Lizard, Spock game
+# A basic ruby version of Rock, Paper, Scissors, Lizard, Spock game
 
 
 ```sh
@@ -11,10 +11,10 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/Lizard/Spock
 ```
 
-Hints on functionality
+Functionality
 
-- the user should be able to enter their name before the game
-- the user will be presented the choices (rock, paper and scissors)
+- the user can enter his name before the game
+- the user will be presented the choices (rock, paper, scissors, lizard and spock)
 - the user can choose one option
 - the game will choose a random option
 - a winner will be declared
