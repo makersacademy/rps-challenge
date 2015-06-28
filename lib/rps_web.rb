@@ -21,22 +21,26 @@ class Rpsweb < Sinatra::Base
   end
 
   get '/gameplay' do
-    if session[:player] == 'player_1'
-      choice = params[:choice]
-      $game.player_1.choose(choice)
-    else
-      choice = params[:choice]
-      $game.player_2.choose(choice)
-    end
     erb :gameplay
   end
 
-  get '/result' do
+  get '/choices' do
+    choice = params[:choice]
     if session[:player] == 'player_1'
-      @otherchoice = $game.player_1.opponent_choice
+      $game.player_1.choose(choice)
     elsif session[:player] == 'player_2'
-      @otherchoice = $game.player_2.opponent_choice
+      $game.player_2.choose(choice)
     end
+    redirect '/waiting_room'
+  end
+
+  get '/waiting_room' do
+    erb :waiting_room
+  end
+
+  get '/result' do
+    @winner = $game.winner?
+
     erb :result
   end
 
