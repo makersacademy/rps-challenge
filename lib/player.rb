@@ -2,11 +2,12 @@ class Player
 
   attr_reader :choice
 
-  def chosen?
-    !@choice.nil?
-  end
-
-  def choose choice
-    @choice = choice
+  def invalid_choice
+    if
+      @choice.downcase == 'rock' || 'paper' || 'scissors'
+      return false
+    else
+      true
+    end
   end
 end
