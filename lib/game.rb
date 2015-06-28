@@ -5,8 +5,7 @@ class Game
 
   attr_reader :comp_pick, :winner, :computer_choice, :player
 
-  #NOT SURE WHAT THESE TWO LINES BELOW ARE DOING - BUT SEEM TO BE 
-  #INITIALIZING WITH AN INSTANCE OF PLAYER? NEED TO TEST.
+  #Are these two lines initializing with an instance of player
   def initialize(playerClass)
     @player = initialize_player playerClass
   end
@@ -41,7 +40,5 @@ class Game
       'Tie'       
     end
   end
-
-  
 
 end

@@ -15,7 +15,6 @@ class RPSchallenge < Sinatra::Base
 
   get '/game' do
     $game = Game.new Player
-
     erb :game
   end
 
@@ -37,8 +36,6 @@ class RPSchallenge < Sinatra::Base
     @computer_choice = $game.computer_choice
 
     @winner = $game.winner
-
-
 
     erb :result
   end

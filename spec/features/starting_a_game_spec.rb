@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 feature 'Starting a new game' do
   scenario 'I am asked to enter my name' do 
     visit '/'
@@ -22,8 +21,5 @@ feature 'Starting a new game' do
     click_link('Start Game')
     expect(page).to have_selector('div#play.game')
   end
-
-  
-
 
 end
