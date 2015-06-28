@@ -2,14 +2,16 @@ require_relative 'player'
 
 module PlayerCreator
 
-  def self.create(number_of_players, player_class,
-                  comparator, random_move_creator)
-
-    players = Array.new
-    number_of_players.times do players << player_class.new comparator,
-                                                            random_move_creator
+  def self.create(play_mode, player_class,
+                  move_holder)
+    if(play_mode != :solo)
+      @player_1, @player_2 = [player_class.new(move_holder),
+                              player_class.new(move_holder)]
+    else 
+      @player_1 = player_class.new(move_holder)
     end
-    players
   end
+
+  attr_reader :player_1, :player_2
 
 end

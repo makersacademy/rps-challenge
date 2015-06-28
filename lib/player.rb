@@ -1,20 +1,19 @@
 class Player
 
-  attr_reader :comparator, :random_move_creator
-
-  def initialize comparator, random_move_creator
-    @comparator          = comparator
-    @random_move_creator = random_move_creator
+  def initialize move_holder
+    @move_holder = move_holder
   end
 
-#is it correct you got the result here?
-  def play move = (option_chosen || random_move_creator)
-    comparator.compair [ShapeCreator(move), self]
+  def to_sym
+    :player
   end
 
+  def play shape
+    move_holder.hold([shape, self])
+  end
+
+  private
+
+  attr_reader :move_holder
 
 end
-
-Player::ShapeCreator = -> (shape) {shape.capitalize.new}
-
-SHAPES = [:rock, :scissor, :paper]

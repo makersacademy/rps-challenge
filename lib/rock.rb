@@ -6,12 +6,13 @@ class Rock
     :rock
   end
 
-  def <=> other.to_sym
-   case other
-   when :paper   then -1
-   when :scissor then  1
-   when :rock    then  0
-   else nil
+  def <=> other
+    case other.to_sym
+    when :paper   then -1
+    when :scissor then  1
+    when :rock    then  0
+    else nil
+    end
   end
 
 end
