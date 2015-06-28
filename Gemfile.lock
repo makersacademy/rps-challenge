@@ -110,3 +110,6 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   sinatra
+
+BUNDLED WITH
+   1.10.4
