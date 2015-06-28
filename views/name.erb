@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<div>
+  <% if @name %>
+    <p>Welcome <%= @name %>.</p>
+    <p>Click the button to start the game</p>
+    <a href='/game'>Start Game</a>
+  <% else %>
+    <form action='/name'>
+    What's your name?
+    <input name='name' type='text'>
+    <input type='submit' value="Submit">
+    </form>
+  <% end %>
 
-  <form action='/game'>
-      What's your name?
-      <input name='name' type='text'>
-      <input type='submit' value="Start Game">
-  </form>
-
-</html>
+</div>

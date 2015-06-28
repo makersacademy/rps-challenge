@@ -11,7 +11,19 @@ feature 'Starting a new game' do
   scenario 'It can receive a name' do
     visit '/name'
     fill_in 'name', with: 'Elin'
-    click_button('Start Game')
-    expect(page).to have_content 'Choose your weapon'
+    click_button('Submit')
+    expect(page).to have_content 'Welcome Elin'
   end
+
+  scenario 'It can take me to the file that contains the game' do
+    visit '/name'
+    fill_in 'name', with: 'Elin'
+    click_button('Submit')
+    click_link('Start Game')
+    expect(page).to have_selector('div#play.game')
+  end
+
+  
+
+
 end

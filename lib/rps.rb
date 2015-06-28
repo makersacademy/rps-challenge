@@ -10,12 +10,19 @@ class RPSchallenge < Sinatra::Base
   end
 
   get '/name' do
+    @name = params[:name]
     erb :name
   end
 
   get '/game' do
     erb :game
   end
+
+  get '/result' do
+    
+    erb :result
+  end
+
  
 
   # start the server if ruby file executed directly
