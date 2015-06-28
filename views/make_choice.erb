@@ -1,0 +1,17 @@
+<div>
+
+	Welcome to Rock, Paper, Scissors, <%= @name.capitalize %>!
+
+
+	Please make your selection:
+
+  <form action = '/outcome'>
+    <select name="Option" method="POST">
+      <option value="Rock">Rock!</option>
+      <option value="Paper">Paper!</option>
+      <option value="Scissors">Scissors!</option>
+    </select>
+    <input type="submit" value="PLAY!">
+  </form>
+
+</div>
