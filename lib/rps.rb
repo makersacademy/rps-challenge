@@ -15,11 +15,13 @@ class RPSchallenge < Sinatra::Base
   end
 
   get '/game' do
+    $game = Game.new 
+
     erb :game
   end
 
   get '/result' do
-    
+
     erb :result
   end
 
