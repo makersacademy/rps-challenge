@@ -10,6 +10,11 @@ describe Player do
     expect(subject.won?).to eq true
   end
 
+  it 'can loose' do
+    subject.looses
+    expect(subject.lost?).to eq true
+  end
+
   describe 'Can choose' do
 
     let(:choice) {double :Choices, rock: :Rock, paper: :Paper, scissors: :Scissors}

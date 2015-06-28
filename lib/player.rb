@@ -2,6 +2,7 @@ class Player
 
   def initialize
     @won = false
+    @lost = false
   end
 
   def choose(choice)
@@ -15,6 +16,14 @@ class Player
 
   def wins
     @won = true
+  end
+
+  def lost?
+    @lost
+  end
+
+  def looses
+    @lost = true
   end
 
   private

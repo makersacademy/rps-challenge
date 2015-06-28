@@ -18,4 +18,9 @@ describe AI do
     subject.wins
     expect(subject.won?).to eq true
   end
+
+  it 'can loose' do
+    subject.looses
+    expect(subject.lost?).to eq true
+  end
 end
