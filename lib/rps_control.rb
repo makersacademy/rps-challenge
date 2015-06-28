@@ -26,7 +26,10 @@ enable :sessions
   end
 
   get '/computer_rps' do
-    erb :new_game
+    erb :computer_rps
+  end
+
+  get '/vs_rps' do
   end
 
   post '/result' do
