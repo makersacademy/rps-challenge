@@ -2,7 +2,11 @@ class Player
 
   attr_reader :choice
 
-  def invalid_choice
+  def initialize choice
+    @choice = :choice
+  end
+
+  def invalid_choice?
     if
       @choice.downcase == 'rock' || 'paper' || 'scissors'
       return false

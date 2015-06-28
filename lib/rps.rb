@@ -10,8 +10,8 @@ set :views, proc { File.join(root, '..', 'views') }
   end
 
   get '/playing' do
+    @choice = params[:choice]
     erb :playing
-    @choice = choice == 'rock' || 'paper' || 'scissors' => params[:choice]
   end
 
   # start the server if ruby file executed directly

@@ -1,3 +1,5 @@
+require 'player'
+
 class RockPaperScissors
 
   attr_reader :player_1, :player_2

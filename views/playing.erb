@@ -1,10 +1,9 @@
 <div>
-  <% if @choice %>
+  <% if !@choice %>
     <p> Will you choose rock, paper or scissors? </p>
     <form action='/winning'>
       <input type='text' name='choice'>
       <input type='submit' value='Your choice is final!'>
     </form>
-  <% else %>
-    <p> Please choose again </p>
+  <% end %>
 </div>
