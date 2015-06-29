@@ -7,4 +7,8 @@ class Game
   def play
     %w(Rock Paper Scissors).sample
   end
+
+  def winner
+    
+  end
 end

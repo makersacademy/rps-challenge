@@ -3,19 +3,21 @@ require_relative 'game'
 
 class RPSchallenge < Sinatra::Base
   
-  set :views, proc { File.join(root, '..', 'views')}
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
     erb :index
   end
 
   post '/game' do
-  	@name = params[:name]
-  	redirect '/' if @name == ""
+    @name = params[:name]
+    redirect '/' if @name == ""
     game = Game.new
-  	@player_option = params[:moves]
-  	@computer_option = game.play
-    
+    @player_option = params[:moves]
+    @computer_option = game.play
+    if @player_option == @computer_option
+      @outcome = 'Draw!'
+    end
     erb :new_game
   end
   

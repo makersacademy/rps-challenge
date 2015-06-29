@@ -19,10 +19,10 @@ feature 'Starting a new game' do
     click_button("Let's play!")
     expect(page).to have_content ('What is your name?')
   end
-end 
+end
 
 feature 'Playing a game' do
-  
+
   before(:each) do
     game = nil
   end
@@ -45,11 +45,21 @@ feature 'Playing a game' do
   
   scenario 'displays a computer generated option' do
     allow_any_instance_of(Game).to receive(:play) { 'Scissors' }
-    visit '/'  
+    visit '/'
     fill_in('name', with: 'Bob')
     click_button("Let's play!")
     select 'Rock', from: 'moves'
     click_button('Submit')
     expect(page).to have_content('The computer chose Scissors')
+  end
+
+  scenario 'displays a message when game is drawn' do
+    allow_any_instance_of(Game).to receive(:play) { 'Rock' }
+    visit '/'
+    fill_in('name', with: 'Bob')
+    click_button("Let's play!")
+    select 'Rock', from: 'moves'
+    click_button('Submit')
+    expect(page).to have_content('Draw!')
   end
 end
