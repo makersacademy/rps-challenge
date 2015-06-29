@@ -17,6 +17,8 @@ class RPSchallenge < Sinatra::Base
     @computer_option = game.play
     if @player_option == @computer_option
       @outcome = 'Draw!'
+    else
+      @outcome = game.winner @player_option, @computer_option, @name
     end
     erb :new_game
   end

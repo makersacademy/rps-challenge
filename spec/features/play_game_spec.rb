@@ -62,4 +62,15 @@ feature 'Playing a game' do
     click_button('Submit')
     expect(page).to have_content('Draw!')
   end
+
+  scenario 'displays a message when computer wins' do
+    allow_any_instance_of(Game).to receive(:play) { 'Scissors' }
+    visit '/'
+    fill_in('name', with: 'Bob')
+    click_button("Let's play!")
+    select 'Rock', from: 'moves'
+    click_button('Submit')
+    expect(page).to have_content('You win!')
+  end
+
 end
