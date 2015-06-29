@@ -1,0 +1,8 @@
+Welcome, <%= session[:name] %>
+You are <%= session[:id] %>
+Choose rock paper or scissors:
+<form action="/vs_result" method="POST">
+<input type="submit" name="choice" value="rock">
+<input type="submit" name="choice" value="paper">
+<input type="submit" name="choice" value="scissors">
+</form>
