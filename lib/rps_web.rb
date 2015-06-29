@@ -56,11 +56,6 @@ enable :sessions
       $game.player_2
     end
   end
-  #
-  # get '/process_result' do
-  #   erb :process_result
-  # end
-
 
   get '/start_game' do
     if $game.player_2.is_a?(Computer)
