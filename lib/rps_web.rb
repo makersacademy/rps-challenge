@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps_game.rb'
 
 class RpsApp < Sinatra::Base
 
@@ -15,7 +16,9 @@ class RpsApp < Sinatra::Base
 
   post '/played' do
     @player_selection = params[:selections]
-    @opponent_selection = ['Rock', 'Paper', 'Scissors'].sample
+    new_game = RockPaperScissors.new @player_selection
+    @opponents_selection = new_game.opponents_selection
+    @result = new_game.result
     erb :played
   end
   # start the server if ruby file executed directly
