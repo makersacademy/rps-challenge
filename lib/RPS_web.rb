@@ -15,11 +15,11 @@ enable :sessions
   end
 
   get '/RPS' do
-    session[:choice] = params[:choice]
     erb :RPS
   end
 
   post '/RPS' do
+    session[:choice] = params[:choice]
     @choice = session[:choice]
     rps = RPS.new
     @user_choice = rps.user_choice @choice
