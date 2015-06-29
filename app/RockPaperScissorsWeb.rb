@@ -15,7 +15,7 @@ class RockPaperScissorsWeb < Sinatra::Base # this could be HandGame, and the mod
   end
 
   post '/register' do
-    session[:name] = params[:name_box]
+    register
     redirect '/reset'
   end
 

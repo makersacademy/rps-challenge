@@ -8,6 +8,10 @@ module RPSSetterUpper
     SignGame.new rock: Rock.new, paper: Paper.new, scissors: Scissors.new
   end
 
+  def register
+    session[:name] = params[:name_box]
+  end
+
   def update_status
     session[:player_count]   += 1 if @result.split(" ")[1] == "wins"
     session[:computer_count] += 1 if @result.split(" ")[1] == "loses"
