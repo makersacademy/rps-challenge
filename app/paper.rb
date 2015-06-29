@@ -4,15 +4,15 @@ class Paper
   end
 
   def result_against_scissors
-    'scissors wins'
+    'Scissors wins against paper'
   end
 
   def result_against_rock
-    'rock loses'
+    'Rock loses against paper'
   end
 
   def result_against_paper
-    'paper draws'
+    'Paper draws against paper'
   end
 
 end

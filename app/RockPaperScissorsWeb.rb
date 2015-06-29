@@ -10,13 +10,28 @@ class RockPaperScissorsWeb < Sinatra::Base # this could be HandGame, and the mod
     erb :index
   end
 
-  post '/play' do
+  get '/register' do
+    erb :register
+  end
+
+  post '/register' do
     session[:name] = params[:name_box]
+    redirect '/reset'
+  end
+
+  get '/reset' do
+    reset
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play_page
   end
 
-  post '/result-page' do
+  post '/play' do
     @result = new_game.choose params[:choice]
-    erb :result
+    update_status
+    check_for_winner
+    erb :play_page
   end
 end
