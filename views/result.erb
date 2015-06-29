@@ -1,4 +1,12 @@
 <%= @result %>
+<div>
+<% if @congrats == session[:id] %>
+Congratulations <%= session[:name] %>
+<% elsif @result == 'Draw!' %>
+<% else %>
+You Lose!
+<% end %>
+</div>
 
 <div>
 Would you like to play again, <%= session[:name] %>?

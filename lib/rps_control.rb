@@ -65,11 +65,14 @@ enable :sessions
     winner = RPS.play $p1choice, $p2choice
     if winner == 'Player 1 Wins!'
       @result = "Player 1 Wins!"
+      @congrats = 'Player 1'
     elsif winner == 'Player 2 Wins'
       @result = "Player 2 Wins!"
+      @congrats = 'Player 2'
     else
-      @result = $p1choice + $p2choice
+      @result = 'Draw!'
     end
+    $gamestart = "stopped"
     erb :result
   end
 
