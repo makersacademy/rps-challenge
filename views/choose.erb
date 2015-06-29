@@ -1,0 +1,14 @@
+<div>
+<%= @name %>, when you're ready make your choice...<br>
+Rock, paper or scissors? <br>
+
+<% if @error %>
+  <b><%= @error %></b>
+<% end %>
+
+ <form action='/play' method='post'>
+    <input type='text' name='weapon'>
+    <input type='submit' value='Play' id='Play'>
+  </form>
+
+</div>
