@@ -4,12 +4,12 @@ ruby '2.2.1'
 
 gem 'sinatra'
 
-group :test do
-  gem 'rspec'
-  gem 'rubocop-rspec'
-  gem 'cucumber'
-  gem 'rubocop'
-  gem 'coveralls', require: false
+group :development, :test do
+  gem 'byebug'  
   gem 'capybara'
-  gem 'byebug'
+  gem 'coveralls', require: false
+  gem 'launchy'
+  gem 'rspec'
+  gem 'rspec-sinatra'
+  gem 'shotgun'
 end

@@ -1,0 +1,21 @@
+<link href="/css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<body>
+<h1>ROCK PAPER SCISSORS!</h1>
+<% if @visitor %>
+<div>
+  <p>Welcome, <%= @visitor %>!</p>
+  <p>Click here to start the game :)</p>
+</div>
+<div>
+  <a href="/gameplay">PLAY!</a>
+</div>
+<% else %>
+<div>
+  <form action="/">
+    <p>Please enter your name here:</p>
+    <input name="name" type="text">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+<% end %>
