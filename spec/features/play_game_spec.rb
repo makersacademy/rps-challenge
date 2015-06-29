@@ -10,10 +10,4 @@ feature 'Starting a new game' do
     visit '/playing'
     expect(page).to have_content "Will you choose"
   end
-
-  scenario 'user can only enter rock, paper or scissors' do
-    visit '/playing'
-    click_button 'Your choice is final!'
-    expect(page).to have_content "Invalid choice"
-  end
 end
