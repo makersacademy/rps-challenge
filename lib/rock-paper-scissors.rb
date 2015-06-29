@@ -64,6 +64,7 @@ class RockPaperScissors < Sinatra::Base
       @choice = player_from_session.choice
       @opponent_name = player_from_session.opponent.name
       @opponent_choice = player_from_session.opponent.choice
+      @message = message @choice, @opponent_choice
       @result = $game.won_lost_or_tied player_from_session
     else
       redirect '/holding'
@@ -92,6 +93,10 @@ class RockPaperScissors < Sinatra::Base
 
   def game_extended?
     (Game::OPTIONS).count == 5
+  end
+
+  def message choice1, choice2
+    (Game::RULES).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
   end
 
   run! if app_file == $0

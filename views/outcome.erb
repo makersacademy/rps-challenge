@@ -1,10 +1,6 @@
 <h2><%= @username %>, you chose <%= @choice.capitalize %></h2>
 <h2><%= @opponent_name %>, chose <%= @opponent_choice.capitalize %></h2>
 
-<% (Game::RULES).each do |rule| %>
-  <% if rule.include?(@choice.capitalize) and rule.include?(@opponent_choice.capitalize)%>
-  <h2><%= rule %></h2>
-  <% end %>
-<% end %>
+<h2><%= @message %></h2>
 
 <h2><%= @result %></h2>
