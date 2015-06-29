@@ -33,15 +33,15 @@ class RPSChallenge < Sinatra::Base
   post '/play' do
     @weapon = params[:weapon]
     begin
-    $game.player.choose(@weapon)
-    @opponent_weapon = $game.opponent.weapon
-    if $game.winner?
-      erb :winner
-    elsif $game.draw?
-      erb :draw
-    else
-      erb :loser
-    end
+      $game.player.choose(@weapon)
+      @opponent_weapon = $game.opponent.weapon
+      if $game.winner?
+        erb :winner
+      elsif $game.draw?
+        erb :draw
+      else
+        erb :loser
+      end
     rescue RuntimeError => @error
       @name = session[:name]
       erb :choose
