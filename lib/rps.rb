@@ -9,7 +9,7 @@ class RPSchallenge < Sinatra::Base
   end
 
   get '/playing' do
-    @choice = params[:choice]
+    @choice = params[:Option]
     erb :playing
   end
 
