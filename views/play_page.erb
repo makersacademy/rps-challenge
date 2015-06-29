@@ -1,0 +1,37 @@
+<%if @result%>
+
+  <%=@result%>
+
+<%end%>
+
+<%unless @winner%>
+
+  <p>Choose your weapon:</p>
+
+  <form action='/play' method='POST'>
+
+    <input type='radio' id='rock' name='choice' value='rock'>Rock
+    <input type='radio' id='paper' name='choice' value='paper'>Paper
+    <input type='radio' id='scissors' name='choice' value='scissors'>Scissors
+
+    <input type='submit' value='Submit'>
+
+  </form>
+
+<%end%>
+
+<p><%=session[:name].capitalize%>: <%=session[:player_count]%></p>
+
+<p>Computer: <%=session[:computer_count]%></p>
+
+<%if @winner%>
+
+  <p>Winner is: <%=@winner.capitalize%></p>
+
+<%end%>
+
+<%if @winner%>
+
+  <a href='/reset'>play again?</a>
+
+<%end%>
