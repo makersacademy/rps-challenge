@@ -11,6 +11,7 @@ class RPSchallenge < Sinatra::Base
 
   post '/game' do
     @name = params[:name]
+    session[:name] = @name
     redirect '/' if @name == ""
     game = Game.new
     @player_option = params[:moves]

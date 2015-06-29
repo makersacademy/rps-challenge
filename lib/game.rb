@@ -11,11 +11,11 @@ class Game
   def winner player, computer, name
     case player
     when 'Scissors'
-      computer == 'Rock' ? @output = 'Computer wins' : @output = "You win!"
+      @output = (computer == 'Rock' ? 'Computer wins' : (name + ' wins!'))
     when 'Rock'
-      computer == 'Paper' ? @output = 'Computer wins' : @output = "You win!"
+      @output = (computer == 'Paper' ? 'Computer wins' : (name + ' wins!'))
     else
-      computer == 'Scissors' ? @output = 'Computer wins' : @output = "You win!"
+      @output = (computer == 'Scissors' ? 'Computer wins' : (name + ' wins!'))
     end
   end
 end
