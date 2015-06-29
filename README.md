@@ -1,4 +1,4 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
 
 Task:
 
