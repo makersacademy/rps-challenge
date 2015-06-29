@@ -7,7 +7,7 @@ describe Player do
   end
 
   it 'should only accept a valid choice as an argument to player_choice' do
-  	expect{subject.player_choice("monkey")}.to raise_error "Not a valid selection!"
+  	expect{ subject.player_choice("monkey") }.to raise_error "Not a valid selection!"
   end
 
 end
