@@ -10,7 +10,4 @@ describe Player do
       expect(subject.choice).to eq :rock
     end
   end
-
-
-
 end

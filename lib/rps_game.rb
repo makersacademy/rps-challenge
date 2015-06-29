@@ -1,30 +1,47 @@
+require_relative 'player'
 
 class RPSGame
 
-  def play rockpaperscissors
-    player1_choice = rockpaperscissors
+  attr_reader :player_1
+
+  def initialize
+    @player_1 = Player.new
+  end
+
+
+  def play choose
+    @player1_choice = choose
     case
-      when player1_choice == "rock" && self.computer == "paper"
-        "you loose"
-      when player1_choice == "rock" && self.computer == "scissors"
-        "you win"
-      when player1_choice == "paper" && self.computer == "rock"
-        "you win"
-      when  player1_choice == "paper" && self.computer == "scissors"
-        "you loose"
-      when player1_choice == "scissors"  && self.computer == "rock"
-        "you loose"
-      when player1_choice == "scissors" && self.computer == "paper"
-        "you win"
-      when player1_choice == self.computer
-        "you tie"
-      else
-        "wrong input!"
-      end
+      when @player1_choice == "rock" && self.computer == "paper"
+        @player_1.lost
+      when @player1_choice == "rock" && self.computer == "scissors"
+        @player_1.win
+
+      when @player1_choice == "paper" && self.computer == "rock"
+        @player_1.win
+
+      when  @player1_choice == "paper" && self.computer == "scissors"
+        @player_1.lost
+
+      when @player1_choice == "scissors"  && self.computer == "rock"
+        @player_1.lost
+
+      when @player1_choice == "scissors" && self.computer == "paper"
+        @player_1.win
+
+      when  @player1_choice == "rock" && self.computer == "rock"
+        @player_1.tie
+
+      when @player1_choice == "paper" && self.computer == "payer"
+        @player_1.tie
+
+      else @player1_choice == "scissors" && self.computer == "scissors"
+        @player_1.tie
+    end
   end
 
   def computer
     ["rock", "paper", "scissors"].sample
   end
-  
+
 end
