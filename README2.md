@@ -1,0 +1,1 @@
+I struggled to create the Rock, Paper, Scissors engine using BDD. Suddenly switching from feature to unit testing was more difficult than I had expected. I would like to have implimented a whole bunch of stuff like invalid choice, two players, a winner's page.
