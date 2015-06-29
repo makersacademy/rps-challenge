@@ -3,9 +3,9 @@ require_relative 'game'
 
 class RPSChallenge < Sinatra::Base
 
-enable :sessions
+  enable :sessions
 
-set :views, proc { File.join(root, '..', 'views')}
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
     erb :index
@@ -47,8 +47,6 @@ set :views, proc { File.join(root, '..', 'views')}
       erb :choose
     end
   end
-
-
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

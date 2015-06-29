@@ -47,7 +47,6 @@ feature 'the player can begin a game' do
 
 end
 
-
 feature 'player can win or lose and start a new game' do
   before(:each) do
     visit '/'
@@ -80,7 +79,6 @@ feature 'player can win or lose and start a new game' do
     click_on('Play again?')
     expect(page).to have_content 'Kate, when you\'re ready make your choice...'
   end
-
 
 end
 

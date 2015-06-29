@@ -2,10 +2,10 @@ require 'game'
 
 describe Game do
 
-let(:player){Player.new}
-let(:opponent){Opponent.new}
+  let(:player) { Player.new }
+  let(:opponent) { Opponent.new }
 
-#need some doubles in here!! Need to stub opponents 'weapon'
+  #need some doubles in here!! Need to stub opponents 'weapon'
 
   describe 'winner?' do
     xit 'compares the items passed in by player and opponent' do
