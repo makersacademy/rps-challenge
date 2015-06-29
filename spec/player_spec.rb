@@ -11,7 +11,7 @@ describe Player do
     end
 
     it 'raises error message if choice is invalid' do
-      expect{ subject.choose('banana') }.to raise_error 'Please choose either rock, paper or scissors'
+      expect { subject.choose('banana') }.to raise_error 'Please choose either rock, paper or scissors'
     end
 
   end

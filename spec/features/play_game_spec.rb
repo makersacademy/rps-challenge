@@ -81,5 +81,3 @@ feature 'player can win or lose and start a new game' do
   end
 
 end
-
-

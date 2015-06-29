@@ -6,7 +6,6 @@ describe Game do
   let(:opponent) { Opponent.new }
 
   #need some doubles in here!! Need to stub opponents 'weapon'
-
   describe 'winner?' do
     xit 'compares the items passed in by player and opponent' do
       subject.player.choose('rock')

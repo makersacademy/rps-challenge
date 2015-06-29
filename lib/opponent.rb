@@ -1,5 +1,5 @@
 class Opponent
-  WEAPONS = ['rock','paper','scissors']
+  WEAPONS = ['rock', 'paper', 'scissors']
 
   attr_reader :weapon
 
