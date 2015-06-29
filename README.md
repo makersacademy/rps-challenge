@@ -31,9 +31,9 @@ Functionality
 
 ## Multiplayer
 
-Two marketeers can play against each other
+Two players can play against each other
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Bonus level 2: Rock, Paper, Scissors, Lizard, Spock
 
 Advanced mode uses these _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
