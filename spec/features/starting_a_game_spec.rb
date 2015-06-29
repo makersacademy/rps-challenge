@@ -45,7 +45,7 @@ feature 'Starting a new game' do
     expect(page).to have_content "Player 2: Enter Name"
 end
 
-scenario 'allows two players to playe against each other' do 
+scenario 'allows two players to play against each other' do 
    visit '/'
     click_link 'New Game'
     fill_in('name', with:'Jon')
@@ -54,6 +54,7 @@ scenario 'allows two players to playe against each other' do
     fill_in("name2", with: "Bob")
     click_button "Submit"
     select 'Paper', from:"Option"
+    click_button "Draw"
     select 'Scissors', from:"Option2"
     click_button "Draw"
     expect(page).to have_content "Player 2 wins"
