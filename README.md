@@ -1,19 +1,9 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Task:
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The Makers Academy Marketing Array ( **MAMA** ) asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Our task was to provide a _Rock, Paper, Scissors_ game for MAMA so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -25,7 +15,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -33,25 +23,21 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+My program and app
+
+- The game can be played either in IRB or using the web application, as a one player game where the user plays against the computer.
+- An instance of the 'Game' class is initialised with a player (instance of class 'Player') and an opponent (instance of class 'Opponent')
+- The player then has the ability to choose rock, paper or scissors (game.player.choose('rock' or 'paper' or 'scissors') - an error message is raised both in IRB and in my web application if the player tries to input anything other than one of those options.
+- The opponent's choice is randomly selected from the three options. 
+- game.outcome tells the player if they've won, lost or drawn based on the basic rules.
+
+Things I'd like to implement
+
+- Web app currently has no css - would like to work on this so it's nicer to look at!
+- Wanted to use buttons instead of a text input for the players choice, but couldn't get this to work - when I tried to set it up the choice was not being passed into url in params
