@@ -2,6 +2,8 @@ feature 'starting a game' do
 
   scenario 'players can start a game' do
 
+    $game = nil
+
     in_browser(:one) do
       visit '/'
       expect(page).to have_content 'Welcome to: Rock, Paper, Scissors, Spock, Lizard!'

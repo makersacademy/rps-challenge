@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :games_played
 
   def initialize(player_1, player_2)
 
@@ -34,6 +34,12 @@ class Game
     @player_2.wins += 1
     @player_1.losses += 1
     return "#{@player_2.name} wins! #{@player_2.current_selection.to_s.capitalize} beats #{@player_1.current_selection.to_s}."
+  end
+
+  def overall_winner
+    return "#{@player_2.name} is victorious!" if @player_2.wins > @player_1.wins
+    return "#{@player_1.name} is victorious!" if @player_1.wins > @player_2.wins
+    'The overall result is a draw!'
   end
 
   private

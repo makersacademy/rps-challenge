@@ -1,3 +1,4 @@
-<p>Thank you <%= $temporary_name_holder.capitalize %>. This is a 2 player game. Waiting for player 2 to register.</p>
+<p>Thank you <%= $game.send(session[:name]).name %>. This is a 2 player game. Waiting for player 2 to register.</p>
+
 
 <a href='/setup_holding'>Reload</a>
