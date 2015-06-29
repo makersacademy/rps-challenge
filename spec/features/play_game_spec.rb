@@ -23,6 +23,10 @@ end
 
 feature 'Playing a game' do
   
+  before(:each) do
+    game = nil
+  end
+
   scenario 'allows user to pick an option' do
     visit '/'
     fill_in('name', with: 'Bob')
@@ -37,5 +41,15 @@ feature 'Playing a game' do
     select 'Rock', from: 'moves'
     click_button('Submit')
     expect(page).to have_content('You chose Rock')
+  end
+  
+  scenario 'displays a computer generated option' do
+    allow_any_instance_of(Game).to receive(:play) { 'Scissors' }
+    visit '/'  
+    fill_in('name', with: 'Bob')
+    click_button("Let's play!")
+    select 'Rock', from: 'moves'
+    click_button('Submit')
+    expect(page).to have_content('The computer chose Scissors')
   end
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'game'
 
 class RPSchallenge < Sinatra::Base
   
@@ -10,11 +11,14 @@ class RPSchallenge < Sinatra::Base
 
   post '/game' do
   	@name = params[:name]
-  	@option = params[:moves]
   	redirect '/' if @name == ""
-    erb :game
+    game = Game.new
+  	@player_option = params[:moves]
+  	@computer_option = game.play
+    
+    erb :new_game
   end
-
+  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

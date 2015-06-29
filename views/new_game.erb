@@ -7,7 +7,12 @@
     </select>
     <input type="submit" value="Submit">
   </form>
+  <% if @player_option %>
   <p>
-    You chose <%= @option %>
+    You chose <%= @player_option %>
   </p>
+  <p>
+    The computer chose <%= @computer_option %>
+  </p>
+  <% end %>
 </div>
