@@ -1,0 +1,21 @@
+<h3>Result!</h3>
+
+<p> What a game, <%= session[:name] %>! Your opponent chose:</p>
+
+  <%=@lastComputerGuess%>
+
+<p> And you chose: </p>
+
+  <%=@playerGuess%>
+
+<p>Which means the result is: </p>
+
+<% if @winner == 'tied' %>
+  <p> The game was a tie! </p>
+<% else %>
+  <p> <%=@winner%> WON! </p>
+<% end %>
+Would you like to play again?
+<form action='/one_player' method='post'>
+<button type='submit' action='/one_player'> yes! </button>
+</form>

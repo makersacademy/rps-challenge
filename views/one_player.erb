@@ -1,0 +1,11 @@
+<h3>Welcome to one player RPS, <%= session[:name] %> </h3>
+
+<p> Please make your selection from the following three options:</p>
+
+<form method='post' action='/result'>
+  </select>
+      <input id='Scissors' type="radio" name="element" value="scissors">Scissors</input>
+      <input id='Paper' type="radio" name="element" value="paper">Paper</input>
+      <input id='Rock' type="radio" name="element" value="rock">Rock</input>
+  <button type='submit'>Submit</button>
+</form>

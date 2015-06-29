@@ -1,0 +1,20 @@
+<h3>Result!</h3>
+
+<p> What a game, <%= session[:name] %>, and <%= session[:name_2] %>!</p>
+<p> <%= session[:name] %> chose:</p>
+
+  <%=session[:element1]%>
+
+<p> And <%= session[:name_2] %> chose: </p>
+
+  <%=session[:element2]%>
+
+<p>Which means the result is: </p>
+
+<% if @winner == 'tied' %>
+  <p> The game was a tie! </p>
+<% else %>
+  <p> <%=@winner%> WON! </p>
+<% end %>
+
+</form>
