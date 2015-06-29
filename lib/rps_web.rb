@@ -18,6 +18,7 @@ enable :sessions
     elsif params[:gametype] == "1 player game"
       session[:name] = params[:name]
       $game = Game.new Player, Computer
+      session[:player] = :player1
     elsif $game.nil?
       session[:name] = params[:name]
       $game = Game.new Player, Player
@@ -26,7 +27,8 @@ enable :sessions
       session[:name] = params[:name]
       session[:player] = :player2
     end
-    erb :welcome
+    session[:gametype] = params[:gametype]
+    redirect '/new_game'
   end
 
     #
@@ -43,6 +45,7 @@ enable :sessions
 
 
   get '/new_game' do
+    session[:weapon] = params[:weapon]
     erb :new_game
   end
 
@@ -53,18 +56,27 @@ enable :sessions
       $game.player_2
     end
   end
+  #
+  # get '/process_result' do
+  #   erb :process_result
+  # end
 
-  post '/start_game' do
+
+  get '/start_game' do
     if $game.player_2.is_a?(Computer)
-      session[:weapon] = params[:weapon]
       $game.draw_with_computer(session[:weapon])
       @result= $game.determine_winner($game.player_1,$game.player_2)
       erb :result
     else
-      session[:weapon] = params[:weapon]
       player.select_weapon(session[:weapon])
-      @result = $game.determine_winner($game.player_1,$game.player_2)
-      erb :result
+      erb :process_result
     end
   end
+
+  get '/2presult' do
+    @result = $game.determine_winner(player, player.opponent)
+    erb :result
+  end
+
+
 end

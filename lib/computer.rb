@@ -2,6 +2,7 @@
 class Computer
 
 attr_reader :weapons, :selected_weapon
+attr_accessor :opponent
 
   def initialize
     @weapons = [:rock,:paper,:scissors]

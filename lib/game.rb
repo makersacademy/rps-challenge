@@ -6,6 +6,9 @@ class Game
   def initialize (player1, player2)
     @player_1 = player1.new
     @player_2 = player2.new
+
+    player_1.opponent = player_2
+    player_2.opponent = player_1
   end
 
   def draw_with_computer(player_selection)

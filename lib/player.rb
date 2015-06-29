@@ -2,6 +2,7 @@
 class Player
 
 attr_reader :name, :weapons, :selected_weapon
+attr_accessor :opponent
 
   def initialize
     # @name = name
