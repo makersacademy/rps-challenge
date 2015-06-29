@@ -1,8 +1,7 @@
 require 'sinatra/base'
 
-class RPSchallenge < Sinatra::Base
-  
-set :views, proc { File.join(root, '..', 'views') }
+class RPSchallenge < Sinatra::Base 
+  set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
     @name = params[:name]
