@@ -1,15 +1,19 @@
 <div class="wrapper">
   <div class="content">
-  <!-- <p>Hello <%= @name %>!</p> -->
+  <!-- <p>Hello #{params[:name]}!</p> -->
     <form action="/new_game" method="post">
       <p>Please choose from one of the following options:</p>
-        <label for="rock">Rock</label>
-        <input type="radio" name="option" value="rock" id="rock" checked="checked" /><br />
-        <label for="paper">Paper</label>
-        <input type="radio" name="option" value="paper" id="paper" /><br />
-        <label for="scissors">Scissors</label>
-        <input type="radio" name="option" value="scissors" id="scissors" /><br />
-        <input type="submit" value="Enter" class="form-button">
+        <input type="submit" name="choice" value="rock" class="button">
+        <input type="submit" name="choice" value="paper" class="button">
+        <input type="submit" name="choice" value="scissors" class="button">
     </form>
+    <div>
+      <%= @result %>
+    </div>
+    <!-- <% if @error %>
+      <div class="error">
+        <%= @error %>
+      </div>
+    <% end %> -->
   </div>
 </div>

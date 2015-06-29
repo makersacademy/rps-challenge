@@ -8,30 +8,30 @@ describe Player do
   #   expect(player.selection).not_to be_empty
   # end
 
-  it 'has 3 options to choose from' do
-    expect(player.selection).to eq ["rock", "paper", "scissors" ]
-  end
+  # it 'has 3 options to choose from' do
+  #   expect(player.selection).to eq ["rock", "paper", "scissors" ]
+  # end
 
-  it { is_expected.to respond_to(:choice).with(1).argument }
+  it { is_expected.to respond_to(:select).with(1).argument }
 
-    describe '#choice' do
-
-      it 'can select rock as an option' do
-        expect(player.choice("rock")).to eq "rock"
-      end
-
-      it 'can select paper as an option' do
-        expect(player.choice("paper")).to eq "paper"
-      end
-
-      it 'can select scissors as an option' do
-        expect(player.choice("scissors")).to eq "scissors"
-      end
-
-      it 'raises error if no option is selected' do
-        expect { player.choice("banana") }.to raise_error "You have not made a valid selection"
-      end
-
-    end
+    # describe '#choice' do
+    #
+    #   it 'can select rock as an option' do
+    #     expect(player.select("rock")).to eq "rock"
+    #   end
+    #
+    #   it 'can select paper as an option' do
+    #     expect(player.select("paper")).to eq "paper"
+    #   end
+    #
+    #   it 'can select scissors as an option' do
+    #     expect(player.select("scissors")).to eq "scissors"
+    #   end
+    #
+    #   it 'raises error if no option is selected' do
+    #     expect { player.select("banana") }.to raise_error "You have not made a valid selection"
+    #   end
+    #
+    # end
 
 end

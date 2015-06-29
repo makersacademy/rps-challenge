@@ -10,8 +10,8 @@ class Player
     @selected = ""
   end
 
-  def choice(guess)
-    case guess
+  def select(choice)
+    case choice
     when "rock"
       self.selected = "rock"
     when "paper"

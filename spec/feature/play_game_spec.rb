@@ -31,8 +31,8 @@ feature 'Start a new game' do
     click_button('Submit')
     expect(page).to have_content "Hello Basil, rules for the game are as follows:"
     click_button('Start')
-    visit '/new_game?name=Basil'
-    expect(page).to have_content "Please choose from one of the following options: Rock Paper Scissors"
+    visit '/new_game'
+    expect(page).to have_content "Please choose from one of the following options:"
   end
 
 end
@@ -46,13 +46,15 @@ feature 'Playing game' do
    $game = nil
   end
 
-  # scenario 'I can select checkbox rock' do
-  #   visit 'new_game'
-  #   choose('Rock')
-  #   click_on('Enter')
-  #   expect(extract_results(@name)['rock']).to eq("rock")
-  # end
-  #
+  scenario 'I can select rock button' do
+    visit '/new_game'
+    allow($game).to receive(:computer_choice).and_return "scissors"
+    click_button('rock')
+    visit '/win'
+    expect(page).to have_content "You win!"
+  end
+
+
   # scenario 'I can select checkbox paper' do
   #   visit 'new_game'
   #   choose('Paper')
