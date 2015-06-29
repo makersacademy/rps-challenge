@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="content">
+  <!-- <p>Hello #{params[:name]}!</p> -->
+    <form action="/new_game" method="post">
+      <p>Please choose from one of the following options:</p>
+        <input type="submit" name="choice" value="rock" class="button">
+        <input type="submit" name="choice" value="paper" class="button">
+        <input type="submit" name="choice" value="scissors" class="button">
+    </form>
+    <div>
+      <%= @result %>
+    </div>
+    <!-- <% if @error %>
+      <div class="error">
+        <%= @error %>
+      </div>
+    <% end %> -->
+  </div>
+</div>
