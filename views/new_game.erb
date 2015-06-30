@@ -1,0 +1,23 @@
+<%= session[:gametype] %><br>
+<%= session[:name] %><br>
+<%= session[:player] %><br>
+
+Welcome, <%= session[:name] %>!
+<br>
+<br>
+Please select your weapon:
+
+<form>
+  <select name="weapon">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select><br><br>
+  <input type="submit" value="Select">
+</form>
+
+<br><br>
+
+<form action = "/start_game">
+  <input type="submit" value="Submit">
+</form>

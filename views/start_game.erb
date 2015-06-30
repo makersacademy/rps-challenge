@@ -1,0 +1,18 @@
+<%= defined?($game) == true %>
+
+Welcome, <%= session[:name] %>!
+<br>
+<br>
+Please select your weapon:
+
+<form action = "/start_game" method="post">
+  <select name="weapon">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select><br><br>
+  <input type="submit" value="Play!">
+</form>
+
+
+<br><br>
