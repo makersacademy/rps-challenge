@@ -49,7 +49,7 @@ Single player mode against the computer. [Player class](https://github.com/DataM
 
 Multi player mode. Here the logic in the controller sets it such that once one player chooses a multi player game than the next person into the game joins that game at the point where they set their name. The outcome cannot be given until both players make their choice. A while loop has been used in the controller to keep the page trying to load until both players have made their move.
 
-v3.0 Final version
-------------------
+[v3.0](https://github.com/DataMinerUK/rps-challenge/releases/tag/v3.0)
+------
 
-Advanced mode Rock Paper Scissors Lizard Spock has been implemented by injecting elements into the OPTIONS and RULES array. Views pull out rules and options from these constants.
+Advanced mode Rock Paper Scissors Lizard Spock has been implemented by creating a Game::RulesOptions class within Game which allows the controller to set new rules and options.
