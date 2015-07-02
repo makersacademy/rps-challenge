@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
     if params[:single] == 'on'
       session[:player] = 'player_1'
       $game.player_1.opponent.name = "Computer"
-      $game.player_1.opponent.choice = Game.options.sample
+      $game.player_1.opponent.choice = Game::RulesOptions::options.sample
     elsif params[:multi] == 'on'
       session[:player] = 'player_1'
     end
@@ -95,11 +95,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def game_extended?
-    (Game.options).count == 5
+    (Game::RulesOptions::options).count == 5
   end
 
   def message choice1, choice2
-    (Game.rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
+    (Game::RulesOptions::rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
   end
 
   run! if app_file == $0

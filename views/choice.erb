@@ -1,7 +1,7 @@
 <h1>Welcome <%= @user %></h1>
 
 <form action='/outcome' method='POST'>
-  <% (Game.options).each do |option| %>
+  <% (Game::RulesOptions::options).each do |option| %>
     <input type='radio' name='<%= option %>'><label><%= option.capitalize %></label>
     <br>
   <% end %>
@@ -11,7 +11,7 @@
 
 <h2>Rules</h2>
 <ul>
-  <% (Game.rules).each do |rule| %>
+  <% (Game::RulesOptions::rules).each do |rule| %>
     <li><%= rule %></li>
   <% end %>
 </ul>

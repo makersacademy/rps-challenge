@@ -1,17 +1,14 @@
 require_relative 'player'
+require_relative 'rules_options_module'
 
 class Game
 
+  extend RulesOptions
   attr_reader :player_1, :player_2
-
-  @@options = ["rock", "paper", "scissors"]
-
-  @@rules = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
 
   def initialize playerClass
     @player_1 = initialize_player playerClass
     @player_2 = initialize_player playerClass
-
 
     player_1.opponent = player_2
     player_2.opponent = player_1
@@ -19,22 +16,6 @@ class Game
 
   def initialize_player playerClass
     playerClass.new
-  end
-
-  def self.options
-    @@options
-  end
-
-  def self.rules
-    @@rules
-  end
-
-  def self.set_options(options)
-    @@options = options
-  end
-
-  def self.set_rules(rules)
-    @@rules = rules
   end
 
   def over?
@@ -67,7 +48,7 @@ class Game
 
   def choice_to_number player
     to_convert = player.choice
-    @@options.index(to_convert)
+    Game::RulesOptions::options.index(to_convert)
   end
 
   def rock_paper_scissors player
@@ -80,8 +61,8 @@ class Game
     # (your choice - opponents choice) modulus the number of choices is greater
     # than 0 and less than or equal to the number of choices divided by two.
     # Thus, if the last line of the method rock_paper_scissors is true then you have won.
-    (your_number - opponents_number) % @@options.count > 0 &&
-    (your_number - opponents_number) % @@options.count <= @@options.count / 2
+    (your_number - opponents_number) % Game::RulesOptions::options.count > 0 &&
+    (your_number - opponents_number) % Game::RulesOptions::options.count <= Game::RulesOptions::options.count / 2
 
   end
 
