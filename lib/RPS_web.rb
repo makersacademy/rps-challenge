@@ -24,9 +24,7 @@ class RockPaperScissors < Sinatra::Base
     session[:choice] = params[:choice]
     @choice = session[:choice]
     rps = RPS.new
-    @user_choice = rps.user_choice @choice
-    @computer_choice = rps.computer_choice
-    @result = rps.play @user_choice, @computer_choice
+    @result = rps.play @choice
     erb :RPS
   end
 
