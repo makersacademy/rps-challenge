@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
     if params[:single] == 'on'
       session[:player] = 'player_1'
       $game.player_1.opponent.name = "Computer"
-      $game.player_1.opponent.choice = Game::OPTIONS.sample
+      $game.player_1.opponent.choice = Game.options.sample
     elsif params[:multi] == 'on'
       session[:player] = 'player_1'
     end
@@ -86,17 +86,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def extend_lizard_spock
-    (Game::OPTIONS).insert(1, "spock")
-    (Game::OPTIONS).insert(3, "lizard")
-    Game::RULES += ["Lizard poisons Spock", "Rock crushes Lizard", "Spock smashes Scissors", "Scissors decapitates Lizard", "Lizard eats Paper", "Paper disproves Spock", "Spock vapourizes Rock"]
+    Game.set_options(["rock","spock", "paper", "lizard","scissors"])
+    Game.set_rules(["Rock blunts Scissors", "Scissors cuts Paper",
+                    "Paper wraps Rock", "Lizard poisons Spock",
+                    "Rock crushes Lizard", "Spock smashes Scissors",
+                    "Scissors decapitates Lizard", "Lizard eats Paper",
+                    "Paper disproves Spock", "Spock vapourizes Rock"])
   end
 
   def game_extended?
-    (Game::OPTIONS).count == 5
+    (Game.options).count == 5
   end
 
   def message choice1, choice2
-    (Game::RULES).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
+    (Game.rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
   end
 
   run! if app_file == $0

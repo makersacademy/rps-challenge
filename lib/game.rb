@@ -4,9 +4,9 @@ class Game
 
   attr_reader :player_1, :player_2
 
-  OPTIONS = ["rock", "paper", "scissors"]
+  @@options = ["rock", "paper", "scissors"]
 
-  RULES = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
+  @@rules = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
 
   def initialize playerClass
     @player_1 = initialize_player playerClass
@@ -19,6 +19,22 @@ class Game
 
   def initialize_player playerClass
     playerClass.new
+  end
+
+  def self.options
+    @@options
+  end
+
+  def self.rules
+    @@rules
+  end
+
+  def self.set_options(options)
+    @@options = options
+  end
+
+  def self.set_rules(rules)
+    @@rules = rules
   end
 
   def over?
@@ -51,17 +67,16 @@ class Game
 
   def choice_to_number player
     to_convert = player.choice
-    OPTIONS.index(to_convert)
+    @@options.index(to_convert)
   end
 
   def rock_paper_scissors player
 
     your_number = choice_to_number(player)
     opponents_number = choice_to_number(player.opponent)
-
-    (your_number - opponents_number) % OPTIONS.count > 0 and (your_number - opponents_number) % OPTIONS.count <= OPTIONS.count / 2
+    # Add comment
+    (your_number - opponents_number) % @@options.count > 0 and (your_number - opponents_number) % @@options.count <= @@options.count / 2
 
   end
-
 
 end
