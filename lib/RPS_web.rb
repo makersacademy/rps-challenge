@@ -2,8 +2,10 @@ require 'sinatra/base'
 require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
-enable :sessions
+  enable :sessions, :static
+
   set :views, proc { File.join(root, '..', 'views') }
+  set :public_folder, Proc.new { File.join(root, '..', 'public') }
 
   get '/' do
     if (params[:name] == '' || params[:name] == nil)
