@@ -12,7 +12,7 @@ class RPS
     elsif human == 'scissors' && computer == 'paper'
       'You win, scissors cuts the computers paper'
     elsif human == computer
-      "Tie, you both chose #{human}"
+      "Tie. You both chose #{human}"
     elsif human == 'rock' && computer == 'paper'
       'You lose, computer had paper, paper covers rock'
     elsif human == 'scissors' && computer == 'rock'
@@ -23,5 +23,5 @@ class RPS
       'You did something wrong'
     end
   end
-  
+
 end

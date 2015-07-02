@@ -22,7 +22,7 @@ feature 'Starting a new game' do
     visit '/RPS'
     select 'rock', :from => 'choice'
     click_button 'submit'
-    expect(page).to have_content 'result'
+    expect(page).to have_content 'You'
   end
 
 end
