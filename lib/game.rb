@@ -23,4 +23,5 @@ class RPS
       'You did something wrong'
     end
   end
+  
 end

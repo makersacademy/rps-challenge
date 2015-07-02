@@ -5,7 +5,6 @@ ruby '2.2.1'
 gem 'sinatra'
 gem 'rspec-sinatra'
 
-
 group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
