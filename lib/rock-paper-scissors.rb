@@ -86,8 +86,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def extend_lizard_spock
-    Game.set_options(["rock","spock", "paper", "lizard","scissors"])
-    Game.set_rules(["Rock blunts Scissors", "Scissors cuts Paper",
+    Game::RulesOptions.set_options(["rock","spock", "paper", "lizard","scissors"])
+    Game::RulesOptions.set_rules(["Rock blunts Scissors", "Scissors cuts Paper",
                     "Paper wraps Rock", "Lizard poisons Spock",
                     "Rock crushes Lizard", "Spock smashes Scissors",
                     "Scissors decapitates Lizard", "Lizard eats Paper",

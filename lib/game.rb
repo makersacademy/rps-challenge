@@ -1,9 +1,31 @@
 require_relative 'player'
-require_relative 'rules_options_module'
+# require_relative 'rules_options_module'
 
 class Game
 
-  extend RulesOptions
+  class Game::RulesOptions
+
+    @@options = ["rock", "paper", "scissors"]
+    @@rules = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
+
+    def self.options
+      @@options
+    end
+
+    def self.rules
+      @@rules
+    end
+
+    def self.set_options(options)
+      @@options = options
+    end
+
+    def self.set_rules(rules)
+      @@rules = rules
+    end
+
+  end
+
   attr_reader :player_1, :player_2
 
   def initialize playerClass
