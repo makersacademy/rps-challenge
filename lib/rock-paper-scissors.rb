@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -17,16 +16,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start' do
-    $game ||= Game.new Player
 
-    if params[:advanced] == 'on' and !game_extended?
-      extend_lizard_spock
+    if params[:advanced] == 'on'
+      $game ||= Game.new Player, RPSLS
+    else
+      $game ||= Game.new Player, RPS
     end
 
     if params[:single] == 'on'
       session[:player] = 'player_1'
       $game.player_1.opponent.name = "Computer"
-      $game.player_1.opponent.choice = Game::RulesOptions::options.sample
+      $game.player_1.opponent.choice = $game.options.sample
     elsif params[:multi] == 'on'
       session[:player] = 'player_1'
     end
@@ -85,21 +85,8 @@ class RockPaperScissors < Sinatra::Base
     session[:player] == 'player_2' ? $game.player_2 : $game.player_1
   end
 
-  def extend_lizard_spock
-    Game::RulesOptions.set_options(["rock","spock", "paper", "lizard","scissors"])
-    Game::RulesOptions.set_rules(["Rock blunts Scissors", "Scissors cuts Paper",
-                    "Paper wraps Rock", "Lizard poisons Spock",
-                    "Rock crushes Lizard", "Spock smashes Scissors",
-                    "Scissors decapitates Lizard", "Lizard eats Paper",
-                    "Paper disproves Spock", "Spock vapourizes Rock"])
-  end
-
-  def game_extended?
-    (Game::RulesOptions::options).count == 5
-  end
-
   def message choice1, choice2
-    (Game::RulesOptions::rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
+    ($game.rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
   end
 
   run! if app_file == $0

@@ -3,7 +3,7 @@ require './lib/game'
 
 describe Game do
 
-  subject { Game.new Player }
+  subject { Game.new Player, RPS }
 
   it { is_expected.to respond_to(:initialize_player).with(1).argument }
 

@@ -6,6 +6,7 @@ feature 'starting a game' do
 
   scenario 'the welcome page allows a player to start a single player game' do
     visit '/'
+    choose('normal')
     choose('single')
     click_button('Start Game')
     expect(page).to have_content 'Enter your name'

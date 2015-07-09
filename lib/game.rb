@@ -1,36 +1,15 @@
 require_relative 'player'
-# require_relative 'rules_options_module'
+require_relative 'rps'
+require_relative 'rpls'
 
 class Game
 
-  class Game::RulesOptions
-
-    @@options = ["rock", "paper", "scissors"]
-    @@rules = ["Rock blunts Scissors", "Scissors cuts Paper", "Paper wraps Rock"]
-
-    def self.options
-      @@options
-    end
-
-    def self.rules
-      @@rules
-    end
-
-    def self.set_options(options)
-      @@options = options
-    end
-
-    def self.set_rules(rules)
-      @@rules = rules
-    end
-
-  end
-
   attr_reader :player_1, :player_2
 
-  def initialize playerClass
+  def initialize playerClass, version
     @player_1 = initialize_player playerClass
     @player_2 = initialize_player playerClass
+    self.class.send(:include, version)
 
     player_1.opponent = player_2
     player_2.opponent = player_1
@@ -48,7 +27,7 @@ class Game
     fail 'You have to choose between rock, paper or scissors' unless player.choice
     fail 'Erm, you have no opponent :/' unless player.opponent
     fail 'Still waiting for your opponent to decide' unless player.opponent.choice
-
+    
     if tied? player
       "You've tied"
     elsif winner? player
@@ -56,36 +35,6 @@ class Game
     else
       "You lost :("
     end
-  end
-
-  private
-
-  def winner? player
-    rock_paper_scissors player
-  end
-
-  def tied? player
-    player.choice == player.opponent.choice
-  end
-
-  def choice_to_number player
-    to_convert = player.choice
-    Game::RulesOptions::options.index(to_convert)
-  end
-
-  def rock_paper_scissors player
-
-    your_number = choice_to_number(player)
-    opponents_number = choice_to_number(player.opponent)
-    # If all options are ordered such that, when wrapped circularly,
-    # each option beats half the remaining elements counter clockwise and loses
-    # to the other half clockwise then the logic states that
-    # (your choice - opponents choice) modulus the number of choices is greater
-    # than 0 and less than or equal to the number of choices divided by two.
-    # Thus, if the last line of the method rock_paper_scissors is true then you have won.
-    (your_number - opponents_number) % Game::RulesOptions::options.count > 0 &&
-    (your_number - opponents_number) % Game::RulesOptions::options.count <= Game::RulesOptions::options.count / 2
-
   end
 
 end
