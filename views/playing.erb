@@ -1,0 +1,13 @@
+<div>
+  <% if !@choice %>
+    <p> Will you choose rock, paper or scissors? </p>
+    <form action='/winning'>
+      <select name='Option'>
+        <option value='Rock'>Rock</option>
+        <option value='Paper'>Paper</option>
+        <option value='Scissors'>Scissors</option>
+      </select>
+      <input type='submit' value='Your choice is final!'>
+    </form>
+  <% end %>
+</div>
