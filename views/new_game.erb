@@ -1,0 +1,25 @@
+<div>
+  <p>
+    <%= @name %> is playing
+  </p>
+  <form action="/game" method="post">
+    <select name="moves">
+  	  <option value="Rock">Rock</option>
+  	  <option value="Paper">Paper</option>
+  	  <option value="Scissors">Scissors</option>
+    </select>
+    <input type="hidden" name="name" value=<%= @name %>> 
+    <input type="submit" value="Submit">
+  </form>
+  <% if @player_option %>
+  <p>
+    You chose <%= @player_option %>
+  </p>
+  <p>
+    The computer chose <%= @computer_option %>
+  </p>
+  <p>
+    <%= @outcome %>
+  </p>
+  <% end %>
+</div>
