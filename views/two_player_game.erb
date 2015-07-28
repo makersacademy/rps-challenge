@@ -1,0 +1,25 @@
+<% if !session[:element1] %>
+
+<p> <%= session[:name] %>, please make your selection from the following three options:</p>
+
+<form method='post' action='/two_player_game'>
+  </select>
+      <input id='Scissors' type="radio" name="element1" value="scissors">Scissors</input>
+      <input id='Paper' type="radio" name="element1" value="paper">Paper</input>
+      <input id='Rock' type="radio" name="element1" value="rock">Rock</input>
+  <button type='submit'>Submit</button>
+</form>
+
+<% else %>
+
+<p> <%= session[:name_2] %>, please make your selection from the following three options:</p>
+
+<form method='post' action='/result_2_player'>
+  </select>
+      <input id='Scissors' type="radio" name="element2" value="scissors">Scissors</input>
+      <input id='Paper' type="radio" name="element2" value="paper">Paper</input>
+      <input id='Rock' type="radio" name="element2" value="rock">Rock</input>
+  <button type='submit'>Submit</button>
+</form>
+
+<% end %>
