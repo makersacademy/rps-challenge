@@ -1,0 +1,22 @@
+<h1>Hello <%= session[:name] %>!</h1>
+
+<p>
+<h2>
+Let's get started.
+</p>
+
+Choose either rock, paper, or scissors:
+
+<form method="POST">
+<select name="choice">
+  <option value="rock">rock</option>
+  <option value="paper">paper</option>
+  <option value="scissors">scissors</option>
+</select> <br>
+<input type="submit" value="submit">
+</form>
+</h2>
+
+
+<h3>
+<%= @result %>
