@@ -1,3 +1,7 @@
+Game Super class instead of a module, since the methods for games are only for games...think I want to reserve module code for methods that are more generic
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions

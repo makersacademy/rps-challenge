@@ -10,8 +10,4 @@ class Player
     weapon
   end
 
-  def join game
-    "#{self.name} has joined the game"
-  end
-
 end
