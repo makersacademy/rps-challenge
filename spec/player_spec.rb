@@ -11,13 +11,4 @@ describe Player do
       expect(subject.throw weapon).to eq weapon
     end
   end
-
-  describe 'join' do
-    it 'can join a game' do
-      game = double()
-      expect(subject.join game).to eq "#{subject.name} has joined the game"
-    end
-  end
-
-
 end
