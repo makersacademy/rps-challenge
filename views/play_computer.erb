@@ -1,0 +1,19 @@
+<div style='width: 400px; height: 600px; border: 3px solid red; text-align:center; margin:0 auto; '>
+  <p><font size="8"><strong>ROCK PAPER SCISSORS</strong></font></p>
+    <p><% if @name != "" %>
+        <font size="6"><strong><u>Hello <%= @name %></u></strong></font>
+        <% session[:player1] = @name %>
+     <% else %>
+        <font size="6"><strong><u>Hello Mr Anonymous</u></strong></font>
+        <% session[:player1] = "Mr Anonymous" %>
+      <% end %></p>
+  <font size="4"><p>Choose wisely</p>
+  <p><form action="/play_computer" method="post"> 
+  <select name="choice">
+      <option value = "rock">Rock</option>
+      <option value = "paper">Paper</option>
+  <option value = "scissors">Scissors</option>
+  </select></p>
+    <p><input type="submit" value ="Present Choice"></p></font>
+<p><img src='http://4.bp.blogspot.com/-rv1RtwNygpM/VcUjl55O0FI/AAAAAAAAQus/PW0HhBPFFLw/s1600/rps2.jpg' width="380"></p>
+<div>
