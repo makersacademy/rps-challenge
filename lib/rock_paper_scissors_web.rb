@@ -5,9 +5,9 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/user' do
-    @user_name = params[:name]
-    "Hi there #{user_name}!"
+  post '/start' do
+    @user_name = params[:player_name]
+    erb :start
   end
 
   set :views, Proc.new { File.join(root, "..", "views") }
