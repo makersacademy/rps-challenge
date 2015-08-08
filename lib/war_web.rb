@@ -2,10 +2,9 @@ require 'sinatra/base'
 require_relative 'war.rb'
 
 class WarWeb < Sinatra::Base
-
   set :views, Proc.new { File.join(root, "..", "views") }
-
   enable :sessions
+  $player_count = 0
 
   get '/' do
     session[:name] ? @visitor = session[:name] : @visitor = nil
@@ -13,6 +12,9 @@ class WarWeb < Sinatra::Base
   end
 
   get '/weapon' do
+    $player_count += 1
+    $player_count == 1 ? @your_number = 1 : @your_number = 2
+    params[:name] == "" ? params[:name] = "anon#{rand(1000000)}" : params[:name]
     session[:name] ? @visitor = session[:name] : @visitor = params[:name]
     @number_of_weapons = params[:type]
     session[:type] = @number_of_weapons
@@ -23,7 +25,7 @@ class WarWeb < Sinatra::Base
   end
 
   get '/result' do
-    $war = War.new
+    $war ? $war : $war = War.new
     @number_of_weapons = session[:type]
     $war.weapons_available(@number_of_weapons)
     @visitor = session[:name]
@@ -34,6 +36,7 @@ class WarWeb < Sinatra::Base
     @computer_weapon_of_3 = %w[rock paper scissors].sample
     @result_of_5_game = $war.decide_winner(@user_weapon, @computer_weapon_of_5)
     @result_of_3_game = $war.decide_winner(@user_weapon, @computer_weapon_of_3)
+    p $war
     erb :result
   end
 
