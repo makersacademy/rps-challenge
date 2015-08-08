@@ -1,0 +1,14 @@
+<div>
+    <h1>Player 1: <%= $GAME2.player_1.name %></h1>
+    <h3>You played: <%= $move1.capitalize %></h3>
+    <br>
+    <br>
+    <h1>Player 2: <%= $GAME2.player_2.name %></h1>
+    <h3>You played: <%= $move2.capitalize %></h3>
+    <br>
+    <br>
+    <h2>Match Outcome: <%= @outcome %></h2>
+    <form action='/two_player_gameplay_2' method='get'>
+      <input type='submit' value='Next Round'>
+    </form>
+</div>
