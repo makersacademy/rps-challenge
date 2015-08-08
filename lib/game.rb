@@ -10,8 +10,16 @@ class Game
   end
 
   def check_win
-    raise "Only one player has made their choice" if (player_1.choice == nil || player_2.choice == nil)
-    raise "Draw!" if (player_1.choice == player_2.choice)
+    raise "Only one player has made their selection" if (player_1.selection == nil || player_2.selection == nil)
+    raise "Draw!" if (player_1.selection == player_2.selection)
+    case player_1.selection
+    when :rock
+      player_2.selection == :paper ? player_2 : player_1
+    when :paper
+      player_2.selection == :scissors ? player_2 : player_1
+    when :scissors
+      player_2.selection == :rock ? player_2 : player_1
+    end
   end
 
 end
