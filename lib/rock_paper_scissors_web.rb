@@ -65,17 +65,58 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/welcome' do
+    @name = session[:name2]
     id = session[:session_id]
     $all_sessions << id unless $all_sessions.include?(id)
-    redirect '/two_player_gameplay' if $all_sessions.length.even?
+    if identify_id_even?
+      $player1 = Player.new(@name)
+    else
+      $player2 = Player.new(@name)
+    end
+    redirect '/make_game_class' if $all_sessions.length.even?
     erb :waiting_page
   end
 
-  get '/two_player_gameplay' do
+  get '/make_game_class' do
+    $GAME2 = Game.new($player1, $player2)
+    redirect '/two_player_gameplay'
+  end
 
+  get '/two_player_gameplay' do
+    @name = session[:name2]
+    erb :player_two_player
+  end
+
+  post '/two_player_gameplay' do
+    session[:move] = params[:move]
+    $moves = 0
+    redirect '/lobby'
+  end
+
+  get '/lobby' do
+    @move = session[:move]
+    if identify_id_even?
+      $GAME2.player_1.choose(@move.downcase.to_sym)
+      $move1 = @move
+      $moves += 1
+    else
+      $GAME2.player_2.choose(@move.downcase.to_sym)
+      $move2 = @move
+      $moves += 1
+    end
+    redirect '/process_game' if $moves.even?
+    erb :lobby
+  end
+
+  get '/process_game' do
+    @outcome = $GAME2.each_round_outcome.capitalize
+    erb :two_player_processing_round
   end
 
 
+  def identify_id_even?
+    $all_sessions.index(session[:session_id]).even?
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
