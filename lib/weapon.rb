@@ -1,6 +1,6 @@
 class Weapon
 
-attr_accessor :weaker_weapons
+attr_accessor :weaker_weapons, :name
 
   def initialize 
     @weaker_weapons = []

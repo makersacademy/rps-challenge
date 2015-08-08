@@ -16,9 +16,9 @@ describe Game do
     expect(subject.moves).to include({player => 'weapon'})
   end
 
-  it 'can make weapons availble' do
+    it 'can make weapons availble'do
     weapon = double()
-    expect(subject.available_weapons).to include(subject.make_available weapon)
+    expect{ subject.make_available weapon }.to change { subject.available_weapons.include?(weapon) }.from(false).to(true)
   end
 
   it 'can generate random throw for computer player' do

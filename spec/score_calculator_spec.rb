@@ -11,8 +11,8 @@ let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
     it 'has a method called rank' do
       expect(game).to respond_to(:rank).with(1).argument
     end
-    it 'returns surviving players if more than one player submits same weapon' do
-      expect(game.rank tie_move).to match_array tie_move.keys
+    it 'recognizes a draw' do
+      expect(game.rank tie_move).to eq nil
     end
     it 'returns the winning player if there is a winner' do
       rock = double()

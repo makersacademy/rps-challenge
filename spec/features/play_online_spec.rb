@@ -1,3 +1,5 @@
+
+
 feature 'playing a game against the computer' do
 
   scenario 'Home page asks for a player name' do
@@ -9,6 +11,13 @@ feature 'playing a game against the computer' do
     visit '/'
     click_button 'submit'
     expect(page).to have_content "What do you want to throw?"
+  end
+    
+  scenario 'player can throw a weapon' do
+      visit '/choose'
+      fill_in('choice', with: 'Rock')
+      click_button('Throw')
+      expect(page).to have_content "And the result is:" 
   end
 
 end
