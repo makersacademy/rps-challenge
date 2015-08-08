@@ -13,9 +13,9 @@ class WarWeb < Sinatra::Base
 
   get '/weapon' do
     @number_of_weapons = params[:type]
+    session[:type] = @number_of_weapons
     @visitor = params[:name]
     session[:name] = @visitor
-    session[:type] = @number_of_weapons
     @opponent = params[:opponent]
     session[:opponent] = @opponent
     erb :weapon
@@ -29,11 +29,10 @@ class WarWeb < Sinatra::Base
     @opponent = session[:opponent]
     @user_weapon = params[:weapon]
     session[:user_weapon] = @user_weapon
-    @computer_weapon_5_options = %w[rock paper scissors lizard spock].sample
-    @computer_weapon_3_options = %w[rock paper scissors].sample
+    @computer_weapon_of_5 = %w[rock paper scissors lizard spock].sample
+    @computer_weapon_of_3 = %w[rock paper scissors].sample
     @result_of_5_game = $war.decide_winner(@user_weapon, @computer_weapon_of_5)
     @result_of_3_game = $war.decide_winner(@user_weapon, @computer_weapon_of_3)
-    # p $war.decide_winner(:rock, :paper)
     erb :result
   end
 
