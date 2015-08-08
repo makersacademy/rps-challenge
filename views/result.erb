@@ -1,0 +1,12 @@
+<p>You played <%= @move %>!</p>
+<p>The computer played <%= @computer_move %>!</p>
+<% if @win %>
+  <p>You won!</p>
+<% elsif @draw %>
+  <p>It's a draw...</p>
+<% else %>
+  <p>You lost!</p>
+<% end %>
+<form action="/singleplayer" method="get">
+  <input type="submit" value="Play again!">
+</form>
