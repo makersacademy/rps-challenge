@@ -6,7 +6,7 @@ class Player
   @name
   end 
 
-  def throw weapon
+  def throws weapon
     weapon
   end
 

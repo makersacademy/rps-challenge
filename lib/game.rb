@@ -19,6 +19,5 @@ class Game
   gamers << player
   player
   end
-
   
 end

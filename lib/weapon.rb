@@ -1,17 +1,17 @@
 class Weapon
 
-attr_reader :is_superior_to
+attr_accessor :weaker_weapons
 
   def initialize 
-    @is_superior_to = []
+    @weaker_weapons = []
   end
 
-  def is_now_superior_to other_weapon
-    is_superior_to << other_weapon
+  def is_superior_to other_weapon
+    weaker_weapons << other_weapon
   end
 
-  def beats other_weapon
-    is_superior_to.include?(other_weapon)
+  def beats? other_weapon
+    weaker_weapons.include?(other_weapon)
   end
 
 end
