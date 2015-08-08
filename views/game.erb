@@ -1,1 +1,19 @@
 Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
+
+<form method="post">
+  Now select an option!
+  <select name="option">
+    <option>select</option>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input value="Throw!" type="submit">
+</form>
+
+<% if params[:option] == "select" %>
+  <!-- ^ Would not work with @my_choice. Why? -->
+    Please select a valid option
+<% elsif params[:option] != nil %>
+  You threw <%= params[:option] %>!
+<% end %>
