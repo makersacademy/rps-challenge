@@ -13,24 +13,19 @@ class RockPaperScissors < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
 
   get '/' do
-    @player1score = 0
-    @player2score = 0
-    @computerscore = 0
     erb :index
   end
 
   get '/computer' do
-    session[:player1score] = @player1score
-    session[:computerscore] = @computerscore
     erb :enter_name
   end
   
-  get '/play_computer' do
-    @name = params[:name]
+  get '/play_computer' do    
+    @name = params[:name] 
     erb :play_computer
   end
   
-  post '/play_computer' do
+  post '/play_computer' do   
     @choice = params[:choice]
     @computer = rand(3)
     erb :computer_result
