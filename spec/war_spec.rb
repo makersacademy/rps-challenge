@@ -8,12 +8,12 @@ describe War do
 
   it "chooses :paper as a winner over :rock" do
     subject.weapons_available(5)
-    expect(subject.decide_winner("rock", "paper")).to eq :player_2_win
+    expect(subject.decide_winner("rock", "paper")).to eq "you lose"
   end
 
   it "chooses :lizard as a winner over :spock" do
     subject.weapons_available(5)
-    expect(subject.decide_winner("spock", "lizard")).to eq :player_2_win
+    expect(subject.decide_winner("lizard", "spock")).to eq "you win"
   end
 
   it "shows a draw when drawn" do

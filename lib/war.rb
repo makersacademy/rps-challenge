@@ -43,7 +43,7 @@ class War
   end
 
   def non_draw(player_1, player_2)
-    weapon_modulo(player_1, player_2).to_i % 2 == 0 ? :player_2_win : :player_1_win
+    weapon_modulo(player_1, player_2).to_i % 2 == 0 ? "you lose" : "you win"
   end
 
   def weapon_modulo(player_1, player_2)

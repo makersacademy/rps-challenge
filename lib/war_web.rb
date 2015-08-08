@@ -13,7 +13,7 @@ class WarWeb < Sinatra::Base
 
   get '/weapon' do
     $player_count += 1
-    $player_count == 1 ? @your_number = 1 : @your_number = 2
+    $player_count == 1 ? @your_number = 1 : @your_number = $player_count
     params[:name] == "" ? params[:name] = "anon#{rand(1000000)}" : params[:name]
     session[:name] ? @visitor = session[:name] : @visitor = params[:name]
     @number_of_weapons = params[:type]
@@ -21,6 +21,7 @@ class WarWeb < Sinatra::Base
     session[:name] = @visitor
     @opponent = params[:opponent]
     session[:opponent] = @opponent
+    session[:player_number] = @your_number
     erb :weapon
   end
 
@@ -28,6 +29,7 @@ class WarWeb < Sinatra::Base
     $war ? $war : $war = War.new
     @number_of_weapons = session[:type]
     $war.weapons_available(@number_of_weapons)
+    @your_number = session[:player_number]
     @visitor = session[:name]
     @opponent = session[:opponent]
     @user_weapon = params[:weapon]
