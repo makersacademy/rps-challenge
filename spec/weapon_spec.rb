@@ -1,10 +1,15 @@
 require 'weapon'
 
 describe Weapon do
-    it 'has rocks, papers and scissors available for use' do
-    expect(Weapon).to respond_to :rock
-    expect(Weapon).to respond_to :paper
-    expect(Weapon).to respond_to :scissors
+
+    it 'results in an array of items it beats upon initialization' do
+      subject.is_now_superior_to 'rock'
+      expect(subject.is_superior_to).to include 'rock'
     end
 
-  end
+    it 'can determine if it beats another weapon' do
+      scissors = Weapon.new
+      subject.is_now_superior_to scissors
+      expect(subject.beats scissors).to eq true
+    end
+end

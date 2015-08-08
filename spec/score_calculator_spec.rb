@@ -6,7 +6,6 @@ describe Score_Calculator do
 let(:dummy_class) { Class.new { include Score_Calculator } }
 let(:game) { dummy_class.new }
 let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
-let(:win_move) { {:player_1 => 'rock', :player_2 => 'scissors'} }
 
   describe '#rank' do
     it 'has a method called rank' do
@@ -15,8 +14,15 @@ let(:win_move) { {:player_1 => 'rock', :player_2 => 'scissors'} }
     it 'returns surviving players if more than one player submits same weapon' do
       expect(game.rank tie_move).to match_array tie_move.keys
     end
-
-    xit 'returns the winning player if there is a winner' do
+    it 'returns the winning player if there is a winner' do
+      rock = double()
+      scissors = double()
+      allow(rock).to receive(:beats?).with(scissors).and_return true
+      allow(scissors).to receive(:beats?).with(rock).and_return false
+      rock.beats?(scissors)
+      scissors.beats?(rock)
+      move = {p1: rock, p2: scissors}
+      expect(game.rank move).to eq :p1
     end
   end
 
