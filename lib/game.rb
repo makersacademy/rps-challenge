@@ -1,8 +1,11 @@
 require_relative 'player'
 require_relative 'weapon'
+require_relative 'score_calculator'
 
 
-class Rock_Paper_Scissors
+class Game
+
+  include Score_Calculator 
 
   attr_reader :available_weapons, :gamers
   attr_accessor :moves

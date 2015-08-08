@@ -1,6 +1,6 @@
-require 'rock_paper_scissors'
+require 'game'
 
-describe Rock_Paper_Scissors do
+describe Game do
   it{ is_expected.to respond_to :available_weapons }
 
   it 'can register a player' do
