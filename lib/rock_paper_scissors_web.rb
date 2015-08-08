@@ -15,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
   post '/' do
     session[:mode] = params[:mode]
     redirect '/register' if session[:mode] == 'singleplayer'
+    redirect '/register_two_player'
   end
 
   get '/register' do
@@ -51,6 +52,29 @@ class RockPaperScissors < Sinatra::Base
     @winner = $GAME.player_1.win_counter == 2
     erb :single_player_result_page
   end
+
+  get '/register_two_player' do
+    $all_sessions = []
+    erb :name_two_player_mode
+  end
+
+  post '/register_two_player' do
+    session[:name2] = params[:name]
+    redirect '/register_two_player' if session[:name2] == ''
+    redirect '/welcome'
+  end
+
+  get '/welcome' do
+    id = session[:session_id]
+    $all_sessions << id unless $all_sessions.include?(id)
+    redirect '/two_player_gameplay' if $all_sessions.length.even?
+    erb :waiting_page
+  end
+
+  get '/two_player_gameplay' do
+
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
