@@ -1,0 +1,11 @@
+<div>
+  <% if @winner %>
+    <h1>You lost <%= $GAME2.player_1.name %>!
+    <br>
+    Perhaps you'll have more luck next time.</h1>
+    <img src='/images/crying_baby.png'>
+  <% else %>
+    <h1>Congratulations <%= $GAME2.player_2.name %>! You have won!</h1>
+    <img src='/images/fireworks.png'>
+  <% end %>
+</div>

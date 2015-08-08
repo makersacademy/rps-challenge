@@ -16,10 +16,6 @@ describe Player do
     it 'should contain a win counter' do
       expect(subject.win_counter).to eq 0
     end
-
-    it 'should have a default move' do
-      expect(subject.final_move).to eq Player::DEFAULT_MOVE
-    end
   end
 
   context '#choose' do

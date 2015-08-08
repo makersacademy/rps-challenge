@@ -110,7 +110,17 @@ class RockPaperScissors < Sinatra::Base
 
   get '/process_game' do
     @outcome = $GAME2.each_round_outcome.capitalize
+    redirect '/two_player_result' if $GAME2.has_winner?
     erb :two_player_processing_round
+  end
+
+  get '/two_player_result' do
+    @winner = $GAME.player_1.win_counter == 2
+    if $GAME.player_1.win_counter == 2
+      erb :two_player_first_player_won
+    else
+      erb :two_player_second_player_won
+    end
   end
 
 
