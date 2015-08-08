@@ -22,7 +22,7 @@ $game = Game.new
   end
 
   post '/throw' do
-    $game.available_weapons.each { |x| @throw = x if x.name == params[:throw] }
+    $game.available_weapons.each { |x| @throw = x if x.name == params[:choice] }
     $game.moves[$player_1] = @throw
     $game.computer_throw
     @winner = $game.rank $game.moves
