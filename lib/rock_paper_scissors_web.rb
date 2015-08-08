@@ -84,33 +84,35 @@ class RockPaperScissors < Sinatra::Base
 
   get '/two_player_gameplay' do
     @name = session[:name2]
+    $moves = 0
     erb :player_two_player
   end
 
   post '/two_player_gameplay' do
     session[:move] = params[:move]
-    $moves = 0
+    if identify_id_even?
+      $GAME2.player_1.choose(session[:move].downcase.to_sym)
+      $move1 = session[:move]
+      $moves += 1
+    else
+      $GAME2.player_2.choose(session[:move].downcase.to_sym)
+      $move2 = session[:move]
+      $moves += 1
+    end
     redirect '/lobby'
   end
 
   get '/lobby' do
-    @move = session[:move]
-    if identify_id_even?
-      $GAME2.player_1.choose(@move.downcase.to_sym)
-      $move1 = @move
-      $moves += 1
-    else
-      $GAME2.player_2.choose(@move.downcase.to_sym)
-      $move2 = @move
-      $moves += 1
-    end
     redirect '/process_game' if $moves.even?
     erb :lobby
   end
 
   get '/process_game' do
     @outcome = $GAME2.each_round_outcome.capitalize
-    redirect '/two_player_result' if $GAME2.has_winner?
+    p '-------------------------'
+    p $GAME2.has_winner?
+    p '-------------------------'
+    # redirect '/two_player_result' if $GAME2.has_winner?
     erb :two_player_processing_round
   end
 
