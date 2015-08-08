@@ -21,21 +21,9 @@ describe Game do
   context '#each_round_outcome' do
 
     context 'draws' do
-      it 'should return draw when both players play rock' do
+      it 'should return draw if both players choose the same move' do
         allow(player_1).to receive(:final_move) { :rock }
         allow(player_2).to receive(:final_move) { :rock }
-        expect(subject.each_round_outcome).to eq :draw
-      end
-
-      it 'should return draw when both players play scissors' do
-        allow(player_1).to receive(:final_move) { :scissors }
-        allow(player_2).to receive(:final_move) { :scissors }
-        expect(subject.each_round_outcome).to eq :draw
-      end
-
-      it 'should return draw when both players play paper' do
-        allow(player_1).to receive(:final_move) { :paper }
-        allow(player_2).to receive(:final_move) { :paper }
         expect(subject.each_round_outcome).to eq :draw
       end
     end

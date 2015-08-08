@@ -14,16 +14,16 @@ class RockPaperScissors < Sinatra::Base
 
   post '/' do
     session[:mode] = params[:mode]
-    redirect 'single_player' if session[:mode] == 'singleplayer'
+    redirect '/register' if session[:mode] == 'singleplayer'
   end
 
-  get '/single_player' do
+  get '/register' do
     erb :name
   end
 
-  post '/single_player' do
+  post '/register' do
     session[:name] = params[:name]
-    redirect '/single_player' if session[:name] == ''
+    redirect '/register' if session[:name] == ''
     redirect '/single_gameplay'
   end
 
