@@ -33,15 +33,32 @@ feature 'Starting a single player game against computer' do
       click_button 'Submit'
       expect(current_path).to eq '/single_player'
     end
-  end
 
-  context '#single_gameplay' do
-    scenario 'page should move to single gameplay path' do
+    scenario 'page should move to single gameplay path if user fills in a name' do
       visit '/'
       click_button 'Single Player Mode'
       fill_in('name', with: 'Leon')
       click_button 'Submit'
       expect(current_path).to eq '/single_gameplay'
+    end
+
+  end
+
+  context '#single_gameplay' do
+    scenario 'page should say player 1 with name' do
+      visit '/'
+      click_button 'Single Player Mode'
+      fill_in('name', with: 'Leon')
+      click_button 'Submit'
+      expect(page).to have_content 'Player 1: Leon'
+    end
+
+    scenario 'page should have a submit button' do
+      visit '/'
+      click_button 'Single Player Mode'
+      fill_in('name', with: 'Leon')
+      click_button 'Submit'
+      expect(page).to have_button 'Submit'
     end
   end
 end
