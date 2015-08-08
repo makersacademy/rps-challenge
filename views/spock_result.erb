@@ -1,0 +1,128 @@
+<div style='width: 400px; height: 600px; border: 3px solid #b10d19; text-align:center; margin:0 auto; '> 
+  <img src='http://1.bp.blogspot.com/-m_OvTCAXR7Y/VcWhhdQBjlI/AAAAAAAAQwA/hBD5NnDr6lg/s1600/rpslz1.jpg' width="400">
+  <% session[:choice] = @choice %>
+  <% session[:computer] = @computer %>  
+  <p><font size="5"><%=session[:player1]%> presented <%=session[:choice]%></font></p>
+  <div style='width: 400px' >
+    <div style="float: left; width: 200px; height: 120px">
+    <% if session[:choice] == "rock" %>
+    <p><img src='http://4.bp.blogspot.com/-QKw7nAW6ywk/VcUrWGBVjLI/AAAAAAAAQvA/OIdn2Xb0JpY/s320/rps%2Brock%2B2.jpg' width="190" align="left" ></p>
+    <% elsif session[:choice] == "paper" %>
+    <p><img src='http://2.bp.blogspot.com/-ouu82H4h-fY/VcUrW4GGJ2I/AAAAAAAAQvM/erhSlPpB-cI/s320/rps%2Bpaper%2B2' width="190" align="left"></p>   
+    <% elsif session[:choice] == "scissors" %>
+    <p><img src='http://2.bp.blogspot.com/-O0BS21v3AlA/VcUrW_g-85I/AAAAAAAAQvQ/B0twTnkeyPY/s320/rps%2Bscissors%2B2.jpg' width="190" align="left" ></p> 
+    <% elsif session[:choice] == "lizard" %>
+    <p><img src='http://3.bp.blogspot.com/-qLNK7Rk3YYA/VcZ499G_oLI/AAAAAAAAQxY/qIa_j9mU1v8/s1600/lizard%2B2.jpg' width="190" align="left"></p>  
+    <% else %>
+    <p><img src='http://1.bp.blogspot.com/-mIFOVoPzRrI/VcZ2pRtcMUI/AAAAAAAAQxE/UPS8qrHS8tY/s1600/spock%2B4.jpg' height="100" align="left"></p>  
+    <% end %>
+    </div>
+    <div style="float: left; width: 200px; height: 120px">
+      <% if session[:computer] == 0 %>
+    <p><img src='http://1.bp.blogspot.com/-g5vqDC63upk/VcUrWCwL1YI/AAAAAAAAQu8/hfGPzVBaV6Y/s320/rps%2Bpaper.jpg' width="190" align="right" ></p>
+      <% elsif session[:computer] == 1 %>
+    <p><img src='http://1.bp.blogspot.com/-_4g-uc5kcZo/VcUrWrzDYYI/AAAAAAAAQvI/q8AcOzXlmNA/s320/rps%2Brock.jpg' width="190" align="right"></p>    
+      <% elsif session[:computer] == 2 %>
+    <p><img src='http://1.bp.blogspot.com/-ScUkHgSi9vY/VcUrXEOaL_I/AAAAAAAAQvU/6utl4YopsFc/s320/rps%2Bscissors.jpg' width="190" align="right" ></p>  
+      <% elsif session[:computer] == 3 %>
+    <p><img src='http://2.bp.blogspot.com/-oTkxf7L9cuo/VcZ49xOUKsI/AAAAAAAAQxc/avnSxPyCFDo/s1600/lizard%2B1.jpg' width="190" align="right" ></p>
+      <% else %>
+    <p><img src='http://3.bp.blogspot.com/-0ueAsJX4NZk/VcZ3ZhnkleI/AAAAAAAAQxM/IKiecFUqZ0w/s1600/spock%2B5.jpg' height="100" align="right" ></p>        
+    <% end %>     
+    </div>
+  </div>
+      <% if session[:computer] == 0 %>
+  <p><font size="5">The computer presented paper</font></p>
+      <% elsif session[:computer] == 1 %>
+  <p><font size="5">The computer presented rock</font></p>
+    <% elsif session[:computer] == 2 %>
+  <p><font size="5">The computer presented scissors</font></p>
+    <% elsif session[:computer] == 3 %>
+  <p><font size="5">The computer presented lizard</font></p> 
+  <% else %>
+  <p><font size="5">The computer presented Spock</font></p>  
+    <% end %> 
+  <p><font size="5">
+    <% if session[:choice] == "paper" %>
+        <% if session[:computer] == 0 %>
+          It's a tie!
+        <% elsif session[:computer] == 1 %>
+          Paper covers rock<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 2 %>
+          Scissors cuts paper<br />Computer wins!
+        <% elsif session[:computer] == 3 %>
+          Lizard eats paper<br />Computer wins!    
+        <% else %>
+          Paper disproves Spock<br /><%=session[:player1]%> wins!    
+        <% end %>
+    <% elsif session[:choice] == "rock" %>
+        <% if session[:computer] == 0 %>
+          Paper covers rock<br />Computer wins!
+        <% elsif session[:computer] == 1 %>
+          It's a tie!
+        <% elsif session[:computer] == 2 %>
+          Rock crushes scissors<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 3 %>
+          Rock crushes lizard<br /><%=session[:player1]%> wins!    
+        <% else %>
+          Spock vaporizes rock<br />Computer wins!    
+        <% end %>  
+    <% elsif session[:choice] == "scissors" %>
+        <% if session[:computer] == 0 %>
+          Scissors cuts paper<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 1 %>
+          Rock crushes scissors<br />Computer wins!
+        <% elsif session[:computer] == 2 %>
+          It's a tie!
+        <% elsif session[:computer] == 3 %>
+          Scissors decapitates lizard<br /><%=session[:player1]%> wins!    
+        <% else %>
+          Spock smashes scissors<br />Computer wins!    
+        <% end %>  
+    <% elsif session[:choice] == "lizard" %>
+        <% if session[:computer] == 0 %>
+          Lizard eats paper<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 1 %>
+          Rock crushes lizard<br />Computer wins!
+        <% elsif session[:computer] == 2 %>
+          Scissors decapitates lizard<br />Computer wins!
+        <% elsif session[:computer] == 3 %>
+          It's a tie!    
+        <% else %>
+          Lizard poisons Spock<br /><%=session[:player1]%> wins!    
+        <% end %> 
+    <% else %>
+        <% if session[:computer] == 0 %>
+          Paper disproves Spock<br />Computer wins!
+        <% elsif session[:computer] == 1 %>
+          Spock vaporizes rock<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 2 %>
+          Spock smashes scissors<br /><%=session[:player1]%> wins!
+        <% elsif session[:computer] == 3 %>
+          Lizard poisons Spock<br />Computer wins!    
+        <% else %>
+    Two Spocks?<br />It's highly illogical Captain! <font size="4">And a tie.</font>    
+        <% end %>     
+  <% end %>
+<p><hr /><p>
+    <font size="4"><p>Rematch?</p>
+ <div style="float: left; width: 130px; ">     
+ <form action="/play_spock" method="post"> 
+  <select name="choice">
+      <option value = "rock">Rock</option>
+      <option value = "paper">Paper</option>
+  <option value = "scissors">Scissors</option>
+    <option value = "lizard">Lizard</option>
+  <option value = "Spock">Spock</option>    
+  </select>
+      </div>
+      <div style="float: left; width: 130px; ">
+    <input type="submit" value ="Present Choice">
+      </div>
+      <div style="float: left; width: 40px; ">   
+        or
+   </div>
+      <div style="float: left; width: 100px; ">
+       <a href='/'><button type="button">Quit</button></a>
+      </div>
+</div>
