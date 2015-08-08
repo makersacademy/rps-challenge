@@ -8,19 +8,12 @@ class WarWeb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    if session[:name]
-      @visitor = session[:name]
-    else
-    end
+    session[:name] ? @visitor = session[:name] : @visitor = nil
     erb :homepage
   end
 
   get '/weapon' do
-    if session[:name]
-      @visitor = session[:name]
-    else
-      @visitor = params[:name]
-    end
+    session[:name] ? @visitor = session[:name] : @visitor = params[:name]
     @number_of_weapons = params[:type]
     session[:type] = @number_of_weapons
     session[:name] = @visitor

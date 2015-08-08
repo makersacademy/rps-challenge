@@ -1,6 +1,7 @@
 <% if @visitor == '' || @visitor != nil %>
 
   <div>
+    <p> Hi <%= @visitor %>!</p>
     <form action="/weapon">
       Which version of the game do you want to play?
       <select name="type">
