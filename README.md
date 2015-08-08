@@ -19,4 +19,36 @@ I would like to be able to play rock/paper/scissors
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
+How to execute 2 player
+
+assign each player an ID based on a ticker (done)
+if you're player 1, your move is saved as global variable $player_1_move
+if you're player 2, your move is saved as global variable $player_2_move
+$war.decide_winner($player_1_move, $player_2_move)
+
+
+if $player_1_move == nil || $player_2_move == nil
+  MOVE PENDING, PLEASE REFRESH
+
+
+
+reset p moves to nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+done
