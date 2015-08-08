@@ -1,18 +1,16 @@
 class Player
-  attr_reader :name, :moves, :current_move
+  attr_reader :name, :current_move
+  attr_accessor :name, :wins, :losses
 
-  def initialize name
+  def initialize name = 'COMPUTER'
     @name = name
-    @moves = %w(Rock Paper Scissors)
-    @current_move
+    @moves = [:rock, :paper, :scissors]
+    @wins = 0
+    @losses = 0
   end
 
   def make_move move
-    fail 'Invalid move' unless @moves.include?(move)
     @current_move = move
   end
 
-  def random_move
-    @moves.sample
-  end
 end
