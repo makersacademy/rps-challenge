@@ -39,7 +39,7 @@ class Game
   end
 
   def has_winner?
-    any_player_wins_at_least_twice ? true : false
+    any_player_wins_at_least_twice
   end
 
   private
