@@ -3,16 +3,17 @@
   <div>
     <p> Hi <%= @visitor %>!</p>
     <form action="/weapon">
-      Which version of the game do you want to play?
+    <p>Which version of the game do you want to play?</p>
       <select name="type">
-        <option value= 3 >ROCK/PAPER/SCISSORS</option>
         <option value= 5 >ROCK/PAPER/SCISSORS/LIZARD/SPOCK</option>
+        <option value= 3 >ROCK/PAPER/SCISSORS</option>
       </select>
-      Who would you like to play against?
+      <p>Who would you like to play against?</p>
       <select name="opponent">
-        <option value="the computer">the computer</option>
         <option value="another human being">another human being</option>
+        <option value="the computer">the computer</option>
       </select>
+      <p>If you want to play against a human opponent, wait for them to be on this page before clicking this button:</p>
       <input type="submit" value="START GAME">
     </form>
   </div>
@@ -23,16 +24,17 @@
     <form action="/weapon">
       What's your name?
       <input name="name" type="text">
-      Which version of the game do you want to play?
+      <p>Which version of the game do you want to play?</p>
       <select name="type">
-        <option value= 3 >ROCK/PAPER/SCISSORS</option>
         <option value= 5 >ROCK/PAPER/SCISSORS/LIZARD/SPOCK</option>
+        <option value= 3 >ROCK/PAPER/SCISSORS</option>
       </select>
-      Who would you like to play against?
+      <p>Who would you like to play against?</p>
       <select name="opponent">
-        <option value="the computer">the computer</option>
         <option value="another human being">another human being</option>
+        <option value="the computer">the computer</option>
       </select>
+      <p>If you want to play against a human opponent, wait for them to be on this page before clicking this button:</p>
       <input type="submit" value="START GAME">
     </form>
   </div>

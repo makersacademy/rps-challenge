@@ -29,15 +29,18 @@ $war.decide_winner($player_1_move, $player_2_move)
 
 if $player_1_move == nil || $player_2_move == nil
   MOVE PENDING, PLEASE REFRESH
-
-
-
 reset p moves to nil
 
 
 
 
+Problems:
 
+player IDs only work if both players load up "/" before either move on to "/weapon".
+this is fair enough though.
+1 player can play RPS and the other RPSLS, which seems stupid BUT it honestly doesn't matter at all.
+- it doesn't break the site, and there's no tactical advantage either way, even if someone chooses
+- different rules on purpose.
 
 
 

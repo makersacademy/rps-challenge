@@ -15,7 +15,13 @@ class WarWeb < Sinatra::Base
 
   get '/weapon' do
     $player_count += 1
-    $player_count == 1 ? @your_number = 1 : @your_number = 2
+    @opponent = params[:opponent]
+    session[:opponent] = @opponent
+    if @opponent = "the computer"
+      @your_number = 1
+    else
+      $player_count == 1 ? @your_number = 1 : @your_number = 2
+    end
     params[:name] == "" ? params[:name] = "anon#{rand(1000000)}" : params[:name]
     session[:name] ? @visitor = session[:name] : @visitor = params[:name]
     @number_of_weapons = params[:type]
