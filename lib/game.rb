@@ -1,23 +1,37 @@
 require_relative './player'
 
 class Game
-  attr_accessor :p_1, :p_2, :matches_played
+  attr_reader :p_1, :p_2, :matches_played
 
-  def initialize
+  def initialize(p_1, p_2)
+    @beats = { rock: [:scissors],
+               paper: [:rock],
+               scissors: [:paper] }
+    @p_1 = p_1
+    @p_2 = p_2
     @matches_played = 0
   end
 
-  def play moves
-    @matches_played += 1
-    p_1.make_move moves[0]
-    p_2.name == 'COMPUTER' ? (p_2.random_move) : (p_2.make_move moves[1])
+  def select_moves move_1, move_2
+    p_1.make_move move_1
+    p_2.name == 'COMPUTER' ? p_2.make_move(random_move) : p_2.make_move(move_2)
   end
 
-  def check_winner(move_1, move_2)
-    move_1 = p_1.move
-    move_2 = p_2.move
-    (move_1 == :rock && move_2 == :paper) ? false : true
+  def random_move
+    @beats.keys.sample
   end
+
+  # def play moves
+  #   @matches_played += 1
+  #   p_1.make_move moves[0]
+  #   p_2.name == 'COMPUTER' ? (p_2.random_move) : (p_2.make_move moves[1])
+  # end
+
+  # def check_winner(move_1, move_2)
+  #   move_1 = p_1.move
+  #   move_2 = p_2.move
+  #   (move_1 == :rock && move_2 == :paper) ? false : true
+  # end
 
 end
 
