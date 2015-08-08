@@ -9,3 +9,10 @@ Feature: Starting the game
   And I click "Submit"
   When I click "Single Player"
   Then I should see "Single Player Game"
+
+  Scenario: Choosing two player
+  Given that I am on the homepage
+  When I fill in "player_name" with "Rebecca"
+  And I click "Submit"
+  When I click "Two Players"
+  Then I should see "Two Player Game"
