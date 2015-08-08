@@ -23,4 +23,12 @@ describe Game do
     end
   end
 
+  context '#match_result' do
+    it 'should return 0 if it\'s a draw' do
+      allow(subject).to receive(:random_move) { :rock }
+      subject.select_moves(:rock, :paper)
+      expect(subject.match_result).to eq 0
+    end
+   end
+
 end

@@ -21,6 +21,10 @@ class Game
     @beats.keys.sample
   end
 
+  def match_result
+    0 if p_1.current_move == p_2.current_move
+  end
+
   # def play moves
   #   @matches_played += 1
   #   p_1.make_move moves[0]
