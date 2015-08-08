@@ -5,20 +5,34 @@ describe Player do
   let(:moves) { instance_double Moves }
   before(:each) do
     subject.opponent = opponent
+    allow(opponent).to receive(:choice) { [:rock] }
     subject.moves = moves
-    allow(moves).to receive(:list) { [:rock, :paper, :scissors] }
+    allow(moves).to receive(:list) { [:rock, :paper, :scissors, :spock, :lizard] }
   end
 
   it 'can choose the rock move' do
-    expect(subject.choose(:rock)).to eq [:rock]
+    subject.choose(:rock)
+    expect(subject.choice).to eq [:rock]
   end
 
   it 'can choose the paper move' do
-    expect(subject.choose(:paper)).to eq [:paper]
+    subject.choose(:paper)
+    expect(subject.choice).to eq [:paper]
   end
 
   it 'can choose the scissors move' do
-    expect(subject.choose(:scissors)).to eq [:scissors]
+    subject.choose(:scissors)
+    expect(subject.choice).to eq [:scissors]
+  end
+
+  it 'can choose the spock move' do
+    subject.choose(:spock)
+    expect(subject.choice).to eq [:spock]
+  end
+
+  it 'can choose the lizard move' do
+    subject.choose(:lizard)
+    expect(subject.choice).to eq [:lizard]
   end
 
   it 'cannot choose other moves' do
@@ -35,39 +49,8 @@ describe Player do
     expect(subject.opponent).to be opponent
   end
 
-  it 'rock beats scissors' do
-    subject.choose(:rock)
-    allow(subject.opponent).to receive(:choice) { [:scissors] }
-    expect(subject.winner?).to eq true
-  end
-
-  it 'paper beats rock' do
-    subject.choose(:paper)
-    allow(subject.opponent).to receive(:choice) { [:rock] }
-    expect(subject.winner?).to eq true
-  end
-
-  it 'scissors beats paper' do
-    subject.choose(:scissors)
-    allow(subject.opponent).to receive(:choice) { [:paper] }
-    expect(subject.winner?).to eq true
-  end
-
-  it 'winner? method returns false when both players choose rock' do
-    subject.choose(:rock)
-    allow(subject.opponent).to receive(:choice) { [:rock] }
-    expect(subject.winner?).to eq false
-  end
-
-  it 'winner? method returns false when both players choose paper' do
-    subject.choose(:paper)
-    allow(subject.opponent).to receive(:choice) { [:paper] }
-    expect(subject.winner?).to eq false
-  end
-
-  it 'winner? method returns false when both players choose scissors' do
-    subject.choose(:scissors)
-    allow(subject.opponent).to receive(:choice) { [:scissors] }
-    expect(subject.winner?).to eq false
+  it 'winner? method receives beats? when called' do
+    expect(subject.moves).to receive(:beats?)
+    subject.winner?
   end
 end

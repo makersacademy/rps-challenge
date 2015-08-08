@@ -17,11 +17,6 @@ class Player
   end
 
   def winner?
-    opponent_move = opponent.choice.last
-    case choice.last
-    when :rock then opponent_move == :scissors ? true : false
-    when :paper then opponent_move == :rock ? true : false
-    when :scissors then opponent_move == :paper ? true : false
-    end
+    moves.beats?(choice.last, opponent.choice.last)
   end
 end

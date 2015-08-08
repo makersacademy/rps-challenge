@@ -80,6 +80,20 @@ feature 'Multiplayer game' do
     end
   end
 
+  scenario 'Players can select spock for rps' do
+    setup_multiplayer_gameplay
+    browser(:one) do
+      expect(page).to have_field('Spock')
+    end
+  end
+
+  scenario 'Players can select lizard for rps' do
+    setup_multiplayer_gameplay
+    browser(:one) do
+      expect(page).to have_field('Lizard')
+    end
+  end
+
   scenario 'Players can play the move' do
     setup_multiplayer_gameplay
     browser(:one) do

@@ -51,19 +51,29 @@ feature 'Singleplayer game' do
     expect(current_path).to eq('/singleplayer')
   end
 
-  scenario 'User can select rock for rps' do
+  scenario 'User can select rock for rpssl' do
     setup_singleplayer
     expect(page).to have_field('Rock')
   end
 
-  scenario 'User can select paper for rps' do
+  scenario 'User can select paper for rpssl' do
     setup_singleplayer
     expect(page).to have_field('Paper')
   end
 
-  scenario 'User can select scissors for rps' do
+  scenario 'User can select scissors for rpssl' do
     setup_singleplayer
     expect(page).to have_field('Scissors')
+  end
+
+  scenario 'User can select spock for rpssl' do
+    setup_singleplayer
+    expect(page).to have_field('Spock')
+  end
+
+  scenario 'User can select lizard for rpssl' do
+    setup_singleplayer
+    expect(page).to have_field('Lizard')
   end
 
   scenario 'User can play the move' do
