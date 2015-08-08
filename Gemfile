@@ -11,4 +11,5 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  #gem 'rack', '~> 1.6.4'
 end
