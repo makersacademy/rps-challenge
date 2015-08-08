@@ -1,0 +1,13 @@
+<div>
+  <center>
+    <% if @name %>
+      Welcome <%= @name == "" ? session[:name] = "Player" : session[:name] = @name %>
+    <% else %>
+      Please enter your name so you can start playing Rock, Paper, Scissors<br>
+      <form action="/" method="post">
+        <input type="text" name="name">
+        <br><input type="submit" value="continue">
+      </form>
+    <% end %>
+  </center>
+</div>
