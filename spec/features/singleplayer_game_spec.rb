@@ -102,7 +102,7 @@ feature 'Singleplayer game' do
     expect(page).to have_content("It's a draw...")
   end
 
-  scenario 'User can play again on the results page' do
+  scenario 'User can play again on the result page' do
     setup_singleplayer
     choose('Rock')
     click_button('Play')
