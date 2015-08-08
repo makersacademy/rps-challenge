@@ -1,0 +1,18 @@
+<% if @visitor %>
+  <p>Welcome, <%= @visitor %>!</p>
+  Select your gesture:
+  <form action = "/result" method = "post">
+  <label for = "rock">Rock</label>
+  <input type = "radio" name = "gesture" value = "Rock" >
+  <br />
+  <label for = "paper">Paper</label>
+  <input type = "radio" name = "gesture" value = "Paper" >
+  <br />
+  <label for = "scissors">Scissors</label>
+  <input type = "radio" name = "gesture" value = "Scissors" >
+  <br />
+  <input type = "submit" value = "Submit">
+  </form>
+<% else %>
+  <% redirect to("/register") %>
+<% end %>

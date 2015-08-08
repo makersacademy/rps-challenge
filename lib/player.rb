@@ -2,10 +2,11 @@ class Player
 
   DEFAULT_GESTURE_OPTIONS = [:rock, :paper, :scissors]
 
-  attr_reader :gesture
+  attr_reader :gesture, :name
 
-  def initialize gesture_options = DEFAULT_GESTURE_OPTIONS
+  def initialize name, gesture_options = DEFAULT_GESTURE_OPTIONS
     @gesture_options = gesture_options
+    @name = name
   end
 
   def throw_gesture *choice
