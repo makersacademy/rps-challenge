@@ -11,4 +11,11 @@ feature 'Playing a game' do
     click_button 'Throw!'
     expect(page).to have_content "You threw Rock!"
   end
+  scenario 'Computer throws random option' do
+    visit '/game?myname=Antonio'
+    select 'Rock', from: 'option'
+    click_button 'Throw!'
+    @computer_move = 'Paper'
+    expect(page).to have_content "Computer threw Paper!"
+  end
 end

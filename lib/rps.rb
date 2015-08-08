@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'game'
+require_relative 'computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -18,6 +20,7 @@ class RockPaperScissors < Sinatra::Base
   post '/game' do
     @visitor = params[:myname]
     @my_choice = params[:option]
+    @computer_move = Computer.new.move
     session[:option] = @my_choice
     p params
     erb :game

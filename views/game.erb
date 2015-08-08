@@ -16,4 +16,5 @@ Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
     Please select a valid option
 <% elsif params[:option] != nil %>
   You threw <%= params[:option] %>!
+  Computer threw <%=@computer_move %>!
 <% end %>
