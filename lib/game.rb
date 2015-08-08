@@ -14,8 +14,9 @@ class Game
 
   def match move_1, move_2
     select_moves move_1, move_2
-    match_result
     wins_incrementer
+    match_result
+    match_winner
   end
 
   def select_moves move_1, move_2
