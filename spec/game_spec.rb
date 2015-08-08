@@ -130,6 +130,19 @@ describe Game do
       end
     end
 
+  end
 
+  context '#has_winner?' do
+    it 'should return true if there is a winner' do
+      allow(player_1).to receive(:win_counter) { 2 }
+      allow(player_2).to receive(:win_counter) { 1 }
+      expect(subject.has_winner?).to eq true
+    end
+
+    it 'should return false if no winner' do
+      allow(player_1).to receive(:win_counter) { 1 }
+      allow(player_2).to receive(:win_counter) { 1 }
+      expect(subject.has_winner?).to eq false
+    end
   end
 end
