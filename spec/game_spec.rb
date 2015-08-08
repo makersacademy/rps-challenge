@@ -8,8 +8,6 @@ describe Game do
   before do
     allow(p_1).to receive(:make_move)
     allow(p_2).to receive(:make_move)
-    allow(p_1).to receive(:move)
-    allow(p_2).to receive(:move)
   end
 
   context '#select_moves' do
@@ -42,6 +40,52 @@ describe Game do
       allow(p_1).to receive(:move) { :scissors }
       allow(p_2).to receive(:move) { :rock }
       expect(subject.match_result).to eq 2
+    end
+  end
+
+  context '#wins_incrementer' do
+    it 'should increment the wins of player 1' do
+      allow(subject).to receive(:match_result) { 1 }
+      expect(subject.p_1).to receive(:win)
+      subject.wins_incrementer
+    end
+    it 'should increment the wins of player 1' do
+      allow(subject).to receive(:match_result) { 2 }
+      expect(subject.p_2).to receive(:win)
+      subject.wins_incrementer
+    end
+  end
+
+  context '#match_winner' do
+    it 'should declare player 1 as the match winner' do
+      allow(subject).to receive(:match_result) { 1 }
+      expect(subject.match_winner).to eq "#{p_1.name.capitalize} wins the match"
+    end
+    it 'should declare player 1 as the match winner' do
+      allow(subject).to receive(:match_result) { 2 }
+      expect(subject.match_winner).to eq "#{p_2.name.capitalize} wins the match"
+    end
+    it 'should declare a draw' do
+      allow(subject).to receive(:match_result) { 0 }
+      expect(subject.match_winner).to eq "This match is a draw"
+    end
+  end
+
+  context '#final_winner' do
+    it 'should declare player 1 as the final winner' do
+      allow(p_1).to receive(:wins) { 3 }
+      allow(p_2).to receive(:wins) { 2 }
+      expect(subject.final_winner).to eq "#{p_1.name.capitalize} wins the game!"
+    end
+    it 'should declare player 2 as the final winner' do
+      allow(p_1).to receive(:wins) { 2 }
+      allow(p_2).to receive(:wins) { 3 }
+      expect(subject.final_winner).to eq "#{p_2.name.capitalize} wins the game!"
+    end
+    it 'should declare a draw' do
+      allow(p_1).to receive(:wins) { 2 }
+      allow(p_2).to receive(:wins) { 2 }
+      expect(subject.final_winner).to eq "It's a draw!"
     end
   end
 end
