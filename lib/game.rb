@@ -13,11 +13,22 @@ class Game
   def initialize
     @gamers = []
     @moves = {}
+    @available_weapons = []
   end
 
   def register player
-  gamers << player
-  player
+    gamers << player
+    player
   end
-  
+
+  def make_available weapon
+    available_weapons << weapon
+    weapon
+  end
+
+  def computer_throw
+    throw = available_weapons.sample
+    moves[:computer] = throw
+  end
+
 end

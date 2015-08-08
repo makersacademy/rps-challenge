@@ -11,17 +11,27 @@ $game = Game.new
   end
 
   post '/choose' do
-    new_game
-
+    @name=params[:name]
+    player_2 = 'Computer' if params[:computer] = 'Yes'
+    new_game(@name, @computer)
+    erb :choose
   end
 
-  def new_game
+  def new_game name, computer
+    $game = Game.new
+    player_1 = Player.new
+    player_2 = Player.new
+    player_1.name = name
+    player_2.name = computer
     $rock = Weapon.new
     $paper = Weapon.new
     $scissors = Weapon.new
     $rock.is_superior_to scissors
     $paper.is_superior_to rock
     $scissors.is_superior_to paper
+    $game.make_available $rock
+    $game.make_available $paper
+    $game.make_available $scissors
   end
 
   # start the server if ruby file executed directly
