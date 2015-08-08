@@ -7,13 +7,22 @@ class RPS < Sinatra::Base
   set :public, proc { File.join(root, '..', 'public') }
 
   get '/' do
-  	
     erb :index
   end
 
-  get '/gameplay' do
+  # post '/' do
+  # 	@name = params[:name]
+  # 	erb :index
+  # end
 
+  get '/gameplay' do
   	erb :gameplay
+  end
+
+
+  post '/gameplay' do
+  	@name = params[:name]
+  	erb :gameplay 
   end
 
   # start the server if ruby file executed directly
