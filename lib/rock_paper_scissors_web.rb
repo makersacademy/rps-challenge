@@ -24,14 +24,14 @@ class RockPaperScissors < Sinatra::Base
   post '/register' do
     session[:name] = params[:name]
     redirect '/register' if session[:name] == ''
+    @player_1 = Player.new(@name)
+    @computer = ComputerPlayer.new
+    $GAME = Game.new(@player_1, @computer)
     redirect '/single_gameplay'
   end
 
   get '/single_gameplay' do
     @name = session[:name]
-    @player_1 = Player.new(@name)
-    @computer = ComputerPlayer.new
-    $GAME = Game.new(@player_1, @computer)
     erb :single_mode
   end
 
@@ -42,7 +42,14 @@ class RockPaperScissors < Sinatra::Base
     $GAME.player_1.choose(@move.downcase.to_sym)
     @computer_move = $GAME.player_2.randomly_choose.capitalize
     @outcome = $GAME.each_round_outcome.capitalize
+    redirect '/result' if $GAME.has_winner?
     erb :processing_round
+  end
+
+  get '/result' do
+    @name = session[:name]
+    @winner = $GAME.player_1.win_counter == 2
+    erb :single_player_result_page
   end
 
   # start the server if ruby file executed directly

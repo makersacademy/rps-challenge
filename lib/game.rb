@@ -13,11 +13,11 @@ class Game
     return :draw if both_players_chooses_same_move
     case player_1.final_move
     when :rock
-      player_2_plays_scissors ? player_1_wins : player_2_wins
+      player_2.final_move == :scissors ? player_1_wins : player_2_wins
     when :scissors
-      player_2_plays_paper ? player_1_wins : player_2_wins
+      player_2.final_move == :paper ? player_1_wins : player_2_wins
     when :paper
-      player_2_plays_rock ? player_1_wins : player_2_wins
+      player_2.final_move == :rock ? player_1_wins : player_2_wins
     end
   end
 
@@ -43,19 +43,8 @@ class Game
     player_1.final_move == player_2.final_move
   end
 
-  def player_2_plays_scissors
-    player_2.final_move == :scissors
-  end
-
-  def player_2_plays_paper
-    player_2.final_move == :paper
-  end
-
-  def player_2_plays_rock
-    player_2.final_move == :rock
-  end
-
   def any_player_wins_at_least_twice
     player_1.win_counter >= 2 || player_2.win_counter >= 2
   end
+
 end
