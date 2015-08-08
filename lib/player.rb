@@ -10,5 +10,5 @@ class Player
     fail "Choose only: 'rock', 'paper' or 'scissors'" unless @hands.include?(hand)
     hand
   end
-
+  
 end
