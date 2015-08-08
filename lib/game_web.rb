@@ -26,9 +26,9 @@ $game = Game.new
     $rock = Weapon.new
     $paper = Weapon.new
     $scissors = Weapon.new
-    $rock.is_superior_to scissors
-    $paper.is_superior_to rock
-    $scissors.is_superior_to paper
+    $rock.is_superior_to $scissors
+    $paper.is_superior_to $rock
+    $scissors.is_superior_to $paper
     $game.make_available $rock
     $game.make_available $paper
     $game.make_available $scissors
