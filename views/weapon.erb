@@ -1,0 +1,12 @@
+<p> Hi <%= @visitor %>! </p>
+<p> You're playing with <%= @number_of_weapons %> choices of weapon against <%=
+@opponent %> </p>
+
+<form action="/result">
+  Choose your weapon!
+  <select name="weapon">
+  <option value="rock">ROCK</option>
+  <option value="paper">PAPER</option>
+  <option value="scissors">SCISSORS</option>
+  <input value="BATTLE!" type="submit">
+</form>

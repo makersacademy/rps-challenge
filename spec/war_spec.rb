@@ -8,12 +8,17 @@ describe War do
 
   it "chooses :paper as a winner over :rock" do
     subject.weapons_available(5)
-    expect(subject.decide_winner(:rock, :paper)).to eq :player_2_win
+    expect(subject.decide_winner("rock", "paper")).to eq :player_2_win
+  end
+
+  it "chooses :lizard as a winner over :spock" do
+    subject.weapons_available(5)
+    expect(subject.decide_winner("spock", "lizard")).to eq :player_2_win
   end
 
   it "shows a draw when drawn" do
     subject.weapons_available(3)
-    expect(subject.decide_winner(:paper,:paper)).to eq :draw
+    expect(subject.decide_winner("paper","paper")).to eq :draw
   end
 
   it "converts weapons to numbers" do
@@ -21,6 +26,7 @@ describe War do
   end
 
   it "converts :rock to 1" do
-    expect(subject.weapon_to_number(:rock)).to eq 1
+    expect(subject.weapon_to_number("rock")).to eq 1
   end
+
 end

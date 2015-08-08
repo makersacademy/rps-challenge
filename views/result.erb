@@ -1,0 +1,15 @@
+<p>war is over</p>
+<p>name: <%= @visitor %></p>
+<p>number of weapon options: <%= @number_of_weapons %></p>
+<p>playing against: <%= @opponent %></p>
+<p>weapon used: <%= @user_weapon %></p>
+<p>weapon computer would have used, given 3 options: <%= @computer_weapon_of_3.to_sym %></p>
+<p>result of 3 game: <%= @result_of_3_game %></p>
+<p>weapon computer would have used, given 5 options: <%= @computer_weapon_of_5.to_sym %></p>
+<p>result of 5 game: <%= @result_of_5_game %></p>
+
+<div>
+  <form action="/">
+    <input type="submit" value="PLAY AGAIN">
+  </form>
+</div>
