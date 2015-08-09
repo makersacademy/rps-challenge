@@ -37,6 +37,12 @@ class RpsWeb < Sinatra::Base
     erb :playmatch
   end
 
+  get '/matchresult' do
+    session[:move_single_player] = params[:move]
+    @move_single_player = session[:move_single_player].to_sym
+    erb :matchresultsingle
+  end
+
   get '/waiting-area' do
     if($player_1 && $player_2)
       redirect 'multi-mode'
@@ -54,22 +60,26 @@ class RpsWeb < Sinatra::Base
   get '/play-match-double' do
     if session[:session_id] == session[:id_1]
       @name = $player_1.name
-      $moves += 1
-      erb :playmatch
+      erb :playmatch_double
     elsif session[:session_id] == session[:id_2]
       @name = $player_2.name
-      $moves += 1
-      erb :playmatch
+      erb :playmatch_double
     end
   end
 
-  get '/matchresult' do
-    if $player_2.name == 'COMPUTER'
-      session[:move_single_player] = params[:move]
-      @move_single_player = session[:move_single_player].to_sym
-      erb :matchresultsingle
-    else
+  get '/waitingarea-two' do
+    if session[:session_id] == session[:id_1]
+      $moves += 1
+      session[:move_1] = params[:move]
+    elsif session[:session_id] == session[:id_2]
+      $moves += 1
+      session[:move_2] = params[:move]
     end
+    redirect '/match-result-double' if ($moves.even? && $moves > 0)
+    erb :waitingarea_two
+  end
+
+  get '/match-result-double' do
   end
 
   get '/gameresult' do

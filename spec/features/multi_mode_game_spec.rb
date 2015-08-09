@@ -16,7 +16,7 @@ feature 'Two player mode game' do
       expect(page).to have_content("Please wait for the other player...")
     end
   end
-  context 'second player joins' do
+  context 'Second player joins' do
     before do
       in_browser(:safari) do
         visit '/registration'
@@ -48,6 +48,41 @@ feature 'Two player mode game' do
       in_browser(:safari) do
         expect(page).to have_content "Ok, Mario"
       end
+    end
+
+    scenario 'First user should be in the waiting area two' do
+      in_browser(:chrome) do
+        click_button "Play"
+        expect(current_path).to eq '/waitingarea-two'
+      end
+    end
+
+    scenario 'Second user should now be in the waiting area two' do
+      in_browser(:safari) do
+        click_button "Play"
+        expect(current_path).to eq '/waitingarea-two'
+      end
+    end
+
+    context 'When both users make a move, the match result is shown' do
+      before do
+        in_browser(:safari) do
+          click_button "Play"
+        end
+        in_browser(:chrome) do
+          click_button "Play"
+        end
+      end
+      scenario 'to the first user' do
+        in_browser(:chrome) do
+          expect(current_path).to eq '/match-result-double'
+        end
+      end
+      # scenario 'to the second user' do
+      #   in_browser(:safari) do
+      #     expect(current_path).to eq '/match-result-double'
+      #   end
+      # end
     end
   end
 
