@@ -37,12 +37,10 @@ feature 'Two player mode game' do
         expect(current_path).to eq('/play-match-double')
       end
     end
-    # scenario 'User two can be created' do
-    #   in_browser(:safari) do
-    #     visit '/registration'
-    #     fill_in 'name', :with => 'Mario'
-    #     click_button "Submit"
-    #     expect(page).to have_content "Hello Mario, you will play against Giuseppe"
+
+    # scenario 'First user is recognized when playing a match' do
+    #   in_browser(:chrome) do
+    #     expect(page).to have_content "Ok, Giuseppe"
     #   end
     # end
   end

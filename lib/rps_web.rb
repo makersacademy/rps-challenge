@@ -15,7 +15,13 @@ class RpsWeb < Sinatra::Base
 
   get '/choose-mode' do
     session[:name] = params[:name]
-    $player_1 ? $player_2 = Player.new(params[:name].capitalize) : $player_1 = Player.new(params[:name].capitalize)
+    if $player_1
+      $player_2 = Player.new(params[:name].capitalize)
+      session[:id_2] = session[:session_id]
+    else
+     $player_1 = Player.new(params[:name].capitalize)
+     session[:id_1] = session[:session_id]
+    end
     redirect '/registration' if session[:name] == ''
     erb :mode
   end
@@ -45,8 +51,12 @@ class RpsWeb < Sinatra::Base
     redirect '/play-match-double'
   end
 
-  get '/play-match-double' do
-  end
+  # get '/play-match-double' do
+  #   if $moves.even?
+  #     @name = $player_1.name
+  #   else
+  #   end
+  # end
 
   get '/matchresult' do
     if $player_2.name == 'COMPUTER'
