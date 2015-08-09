@@ -17,7 +17,7 @@ class WarWeb < Sinatra::Base
     $player_count += 1
     @opponent = params[:opponent]
     session[:opponent] = @opponent
-    if @opponent = "the computer"
+    if @opponent == "the computer"
       @your_number = 1
     else
       $player_count == 1 ? @your_number = 1 : @your_number = 2

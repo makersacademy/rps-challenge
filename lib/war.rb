@@ -38,7 +38,7 @@ class War
     @weapon_values[weapon].to_i
   end
 
-  def weapons_available(number)
+  def weapons_available(number = 3)
     @weapons_available = number.to_i
   end
 

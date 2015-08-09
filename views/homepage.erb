@@ -1,7 +1,7 @@
 <% if @visitor == '' || @visitor != nil %>
 
   <div>
-    <p> Hi <%= @visitor %>!</p>
+    <h1><p> Hi <%= @visitor %>, back for more?</p></h1>
     <form action="/weapon">
     <p>Which version of the game do you want to play?</p>
       <select name="type">
@@ -21,6 +21,7 @@
 <% else %>
 
 <div>
+  <h1><p> Hello stranger, welcome to ROCK PAPER SCISSORS</p></h1>
     <form action="/weapon">
       What's your name?
       <input name="name" type="text">

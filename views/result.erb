@@ -1,4 +1,4 @@
-<p>war is over</p>
+<h1><p>RESULTS TIME!</p></h1>
 <p>name: <%= @visitor %></p>
 <p> You're player <%= @your_number %></p>
 <p>number of weapon options: <%= @number_of_weapons %></p>
@@ -15,7 +15,7 @@
     <p>weapon you used: <%= @user_weapon %></p>
     <p>weapon computer used: <%= @computer_weapon_of_5 %></p>
     <p>the computer is player 2</p>
-    <p>result: <%= @result_of_5_game %></p>
+    <h1><marquee><p>result: <%= @result_of_5_game %></p></marquee></h1>
   <% end %>
 
 <% else %>
@@ -27,11 +27,11 @@
     <% if @number_of_weapons.to_i == 3 %>
       <p>weapon player 1 used: <%= $player_1_weapon %></p>
       <p>weapon player 2 used: <%= $player_2_weapon %></p>
-      <p>result: <%= @result_human_game %></p>
+      <h1><marquee><p>result: <%= @result_human_game %></p></marquee></h1>
     <% else %>
       <p>weapon player 1 used: <%= $player_1_weapon %></p>
       <p>weapon player 2 used: <%= $player_2_weapon %></p>
-      <p>result: <%= @result_human_game %></p>
+      <h1><marquee><p>result: <%= @result_human_game %></p></marquee></h1>
     <% end %>
   <% end %>
 <% end %>

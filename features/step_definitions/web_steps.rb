@@ -217,3 +217,10 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Given(/^a game type has been chosen$/) do
+  @weapons_available = 5
+  @vistor = "tom"
+  $war = War.new
+  
+end
