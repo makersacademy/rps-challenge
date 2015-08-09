@@ -30,6 +30,9 @@ class RpsWeb < Sinatra::Base
     erb :singlemode
   end
 
+  get '/multi-mode' do
+  end
+
   get '/play-match' do
     @name_1 = $name_1
     erb :playmatch

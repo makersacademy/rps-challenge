@@ -60,43 +60,29 @@ feature 'Single mode game' do
     expect(current_path).to eq '/play-match'
   end
 
-  # the following tests are not working, will try to find out why
-  # the feature is working when launching the website in rackup
   context 'playing multiple matches' do
-    before do
+    before(:each) do
       visit '/registration'
       fill_in 'name', :with => 'Giuseppe'
       click_button "Submit"
       click_link "Single Player Mode"
-    end
-    scenario 'User should see the result page of the game after 5 matches' do
       visit '/play-match'
       4.times do
         click_button "Play"
         click_link "Play again"
       end
       click_button "Play"
+    end
+    scenario 'User should see the result page of the game after 5 matches' do
       expect(page).to have_link "View winner"
     end
 
     scenario 'User should see who won the game after 5 matches' do
-      visit '/play-match'
-      4.times do
-        click_button "Play"
-        click_link "Play again"
-      end
-      click_button "Play"
       click_link "View winner"
       expect(page).to have_content "game"
     end
 
     scenario 'User should be able to play a new game after 5 matches' do
-      visit '/play-match'
-      4.times do
-        click_button "Play"
-        click_link "Play again"
-      end
-      click_button "Play"
       click_link "View winner"
       click_link "Play another game"
       expect(current_path).to eq '/registration'
