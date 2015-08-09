@@ -39,10 +39,12 @@ class Rpschallenge < Sinatra::Base
       @session = session['session_id']
       @name = params[:name]
       new_game(@name, @session)
-      erb :waiting_page
+      redirect '/waiting_page'
     end
 
-    get 'waiting_page' do
+    get '/waiting_page' do
+      p "HEEELELLLLOOOOO!!!!"
+      p Game.existing_games_getter
       erb :waiting_page
     end
 
@@ -69,30 +71,31 @@ class Rpschallenge < Sinatra::Base
     end
 
     def new_game name, session
-      $game = Game.new
-      $score = Score_Calculator.new
-      $game.gamers << session
-
-      $rock = Weapon.new
-      $rock.name = 'Rock'
-      $paper = Weapon.new
-      $paper.name = 'Paper'
-      $scissors = Weapon.new
-      $scissors.name = 'Scissors'
-      $spock = Weapon.new
-      $spock.name = 'Spock'
-      $lizard = Weapon.new
-      $lizard.name = 'Lizard'
-      $rock.is_superior_to $scissors
-      $rock.is_superior_to $lizard
-      $paper.is_superior_to $rock
-      $paper.is_superior_to $spock
-      $scissors.is_superior_to $paper
-      $scissors.is_superior_to $lizard
-      $spock.is_superior_to $rock
-      $spock.is_superior_to $scissors
-      $lizard.is_superior_to $spock
-      $lizard.is_superior_to $paper
+        $name = name
+        $game = Game.new
+        Game.existing_games_setter $game
+        $score = Score_Calculator.new
+        $game.gamers << session
+        $rock = Weapon.new
+        $rock.name = 'Rock'
+        $paper = Weapon.new
+        $paper.name = 'Paper'
+        $scissors = Weapon.new
+        $scissors.name = 'Scissors'
+        $spock = Weapon.new
+        $spock.name = 'Spock'
+        $lizard = Weapon.new
+        $lizard.name = 'Lizard'
+        $rock.is_superior_to $scissors
+        $rock.is_superior_to $lizard
+        $paper.is_superior_to $rock
+        $paper.is_superior_to $spock
+        $scissors.is_superior_to $paper
+        $scissors.is_superior_to $lizard
+        $spock.is_superior_to $rock
+        $spock.is_superior_to $scissors
+        $lizard.is_superior_to $spock
+        $lizard.is_superior_to $paper
     end
 
     # start the server if ruby file executed directly

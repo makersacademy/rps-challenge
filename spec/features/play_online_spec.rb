@@ -28,6 +28,14 @@ end
 
 feature 'if there are existing games to join' do
   scenario 'show existing games if there any' do
+    visit '/'
+    select('Human', from: 'Opponents')
+    click_button('Next') 
+    fill_in('game', with: "New Game")
+    click_button('Next')
+    fill_in('name', with: 'Bob')
+    click_button('Next')
+    expect(Game.existing_games_getter.size).to eq 1
   end
 end
 
