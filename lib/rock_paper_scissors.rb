@@ -30,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
     player = Player.new({ hands: [ :rock, :paper, :scissors ] })
     game = Game.new({player_1: player})
     player.set_hand :rock
-    game.play_hand player
+    game.play_hand_single_player player
   end
 
   def get_player_name params
