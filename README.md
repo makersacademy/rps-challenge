@@ -64,3 +64,4 @@ emily = Player.new
 # => #<Player:0x007fc4d18329d8>
 emily.pick "rock"
 # => nil
+# created rspec test to return error if not "rock", "paper" or "scissors"
