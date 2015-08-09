@@ -29,10 +29,11 @@ describe Game do
       it 'only allows to make correct move' do
         expect(new_game.player_move 'spaghetti').to eq "scissors, paper or rock - Choose your move wisely!"
       end
-    describe '#player_1_winner?'
+    describe '#computer_beats_player?'
       it 'tells player he/she won' do
         new_game.player_move 'scissors'
-        expect(new_game.player_1_winner?).to be eq true
+        allow(new_game).to receive(:computer_beats_player?).with('scissors').and_return(true)
+        expect(new_game.computer_beats_player? 'scissors').to eq true
       end
     end
 

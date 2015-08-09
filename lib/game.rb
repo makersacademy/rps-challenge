@@ -14,9 +14,9 @@ class Game
     send (option.to_sym) ? @current_move = option : false rescue 'scissors, paper or rock - Choose your move wisely!'
   end
 
-  def player_1_winner?
-    player_2.is_a_computer? ? computer_beats_player(current_move) : 'Player 2 not a computer'
-  end
+  # def player_1_winner?
+  #   return computer_beats_player(current_move) if player_2.is_a_computer? || player_1.is_a_computer?
+  # end
 
 
 
