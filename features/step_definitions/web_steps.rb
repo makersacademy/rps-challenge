@@ -70,26 +70,12 @@ Then(/^we should see the result$/) do
   end
 end
 
-# Given(/^I play the game$/) do
-#   in_browser(:chrome) do
-#     visit '/'
-#     click_link 'New Game'
-#     fill_in 'first_name', with: 'Sarah'
-#     select "Two Player", from: "game_type"
-#     click_on 'Submit'
-#     choose "gesture", option: "rock"
-#     click_on "Submit"
-#   end
-# end
-
 Given(/^I play the game$/) do
   in_browser(:chrome) do
     choose "gesture", option: "rock"
     click_on "Submit"
   end
 end
-
-
 
 Given(/^Someone else plays the game$/) do
   in_browser(:safari) do
@@ -100,7 +86,7 @@ end
 
 Given(/^I click button "([^"]*)" in chrome$/) do |arg1|
   in_browser(:chrome) do
-    click_on "Result"
+    click_on arg1
   end
 end
 

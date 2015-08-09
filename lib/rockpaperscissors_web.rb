@@ -23,7 +23,7 @@ class RPSWeb < Sinatra::Base
       $player_2 = Player.new(@visitor)
       session[:user] = "player_2"
     end
-    session[:game_type] = params[:game_type]
+  session[:game_type] = params[:game_type]
   if session[:game_type] == "one_player" then $player_2 = Player.new ("COMPUTER") end
     $game = Game.new($player_1, $player_2)
     erb :start_game
