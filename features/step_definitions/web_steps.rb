@@ -1,18 +1,27 @@
 Given(/^I am on the homepage$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/'
 end
 
-When(/^I fill in "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I fill in "([^"]*)"$/) do |name|
+  fill_in "name", with: "Raph"
 end
 
 Then(/^I press "([^"]*)"$/) do |arg1|
+  click_on(arg1)
+end
+
+Then(/^I should be on "([^"]*)"$/) do |page|
+  visit '/game'
+end
+
+Given(/^I am on the "([^"]*)" page$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^I should be on "([^"]*)"$/) do |arg1|
+When(/^I choose my element$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
+
 
 
 # Taken from the cucumber-rails project.

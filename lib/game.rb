@@ -31,7 +31,7 @@ class Game
 
   def play element
    raise 'You need to set a player to play this game' if @player == nil
-   @player.chooses(element)
+   @player.chooses(element.to_sym)
    beat element, self.computer
   end
 

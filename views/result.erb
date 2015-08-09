@@ -1,0 +1,7 @@
+<% if <% $game.play session[:choice] == true %>
+You won!
+<% elsif $game.play session[:choice] == nil %>
+Draw!
+<% else %>
+You lost!
+<% end %>
