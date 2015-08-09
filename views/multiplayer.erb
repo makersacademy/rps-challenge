@@ -1,0 +1,24 @@
+<% if session_id_even? %>
+<h3> Player <%= @current_player %> </h3>
+<form action="/multiplayer" method="post">
+<p>Pick one</p>
+  <select name="rps">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissor">Scissor</option>
+  </select>
+  <input type="submit" value="Go!">
+</form>
+
+<% elsif session_id_odd? %>
+<h3> Player <%= @current_player %> </h3>
+<form action="/multiplayer" method="post">
+<p>Pick one</p>
+  <select name="rps">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissor">Scissor</option>
+  </select>
+  <input type="submit" value="Go!">
+</form>
+<% end %>

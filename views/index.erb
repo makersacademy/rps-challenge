@@ -1,0 +1,21 @@
+<h2>Welcome to Rock Paper Scissors Online</h2>
+
+<% if @name == '' || @name.nil? %>
+<p> Please enter your name below </p>
+<form action="/" method="post">
+  <input type="text" name='first_name'>
+  <input type="submit" value="Begin Game">
+</form>
+<% else %>
+<p> Welcome <%= @name.capitalize %> </p>
+<br>
+<p> Pick your game mode </p>
+<ul>
+  <li>
+    <form action="/botgame"><input type="submit" value="Against Computer"></form>
+  </li>
+  <li>
+    <form action="/lobby"><input type="submit" value="Multiplayer"></form>
+  </li>
+</ul>
+<% end %>

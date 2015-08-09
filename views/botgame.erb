@@ -1,0 +1,11 @@
+<form action="/botgame" method="post">
+<p>Pick one</p>
+  <select name="rps">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissor">Scissor</option>
+  </select>
+  <input type="submit" value="Go!">
+</form>
+
+<%= $game.player_1_win? %>
