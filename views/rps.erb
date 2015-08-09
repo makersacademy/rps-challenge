@@ -1,0 +1,27 @@
+<div>
+  <center>
+    <% if @choice %>
+      <% cpu = CPU.new.choice %>
+      <% outcome = rps @choice, cpu %>
+      <% if outcome == "win" %>
+        Congratulations <%=session[:name]%>
+        <br><%= @choice %> beats <%= cpu %>
+        <br> You win!
+      <% elsif outcome == "draw" %>
+        Consider yourself lucky <%=session[:name]%>!
+        <br>You got away with only a draw.
+      <% else %>
+        Better luck next time <%=session[:name]%>!
+        <br><%= cpu %> beats <%= @choice %>
+        <br>You lose!
+      <% end %>
+      <a href="/rpscpu"><button type="button">Play Again</button></a>
+    <% else %> 
+      Hi <%= session[:name] %>
+      <br>Please choose Rock, Paper or Scissors
+      <a href="/rpscpu/rock"><button type="button">Rock</button></a>
+      <a href="/rpscpu/paper"><button type="button">Paper</button></a>
+      <a href="/rpscpu/scissors"><button type="button">Scissors</button></a>
+    <% end %>
+  </center>
+</div>

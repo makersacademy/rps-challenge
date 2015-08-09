@@ -2,6 +2,7 @@
   <center>
     <% if @name %>
       Welcome <%= @name == "" ? session[:name] = "Player" : session[:name] = @name %>
+      <br><a href="/rpscpu"><button type="button">Start Game</button></a>
     <% else %>
       Please enter your name so you can start playing Rock, Paper, Scissors<br>
       <form action="/" method="post">
