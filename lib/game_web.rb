@@ -24,7 +24,7 @@ set :views, proc { File.join(root, '..', 'views') }
     $game.available_weapons.each { |x| @throw = x if x.name == params[:Weapons] }
     $game.moves[$player_1] = @throw
     $game.computer_throw $player_2
-    $winner = $game.rank($game.moves)
+    $winner = $score.rank($game.moves)
     $winner == 'Draw' ? $result = 'Draw' : $result = $winner.name 
     p $result
     erb :result
@@ -32,6 +32,7 @@ set :views, proc { File.join(root, '..', 'views') }
 
   def new_game name
     $game = Game.new
+    $score = Score_Calculator.new
     $player_1 = Player.new
     $player_2 = Player.new
     $player_1.name = name

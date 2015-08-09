@@ -5,8 +5,6 @@ require_relative 'score_calculator'
 
 class Game
 
-  include Score_Calculator 
-
   attr_reader :available_weapons, :gamers
   attr_accessor :moves
 

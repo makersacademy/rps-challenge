@@ -3,16 +3,14 @@ require 'score_calculator'
 
 describe Score_Calculator do
 
-let(:dummy_class) { Class.new { include Score_Calculator } }
-let(:game) { dummy_class.new }
 let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
 
   describe '#rank' do
     it 'has a method called rank' do
-      expect(game).to respond_to(:rank).with(1).argument
+      expect(subject).to respond_to(:rank).with(1).argument
     end
     it 'recognizes a draw' do
-      expect(game.rank tie_move).to eq 'Draw'
+      expect(subject.rank tie_move).to eq 'Draw'
     end
     it 'returns the winning player if there is a winner' do
       rock = double()
@@ -22,7 +20,7 @@ let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
       rock.beats?(scissors)
       scissors.beats?(rock)
       move = {'p1'=> rock, 'p2'=> scissors}
-      expect(game.rank move).to eq 'p1'
+      expect(subject.rank move).to eq 'p1'
     end
   end
 

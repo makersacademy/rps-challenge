@@ -1,4 +1,4 @@
-module Score_Calculator
+class Score_Calculator
 
   def rank moves
     return 'Draw' if moves.values[0] == moves.values[1]
