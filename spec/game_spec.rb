@@ -33,7 +33,6 @@ describe Game do
     end
 
     context 'when player chooses :paper' do
-
       it 'returns :win when computer chooses :rock' do
         computer_chooses :rock
         expect(subject.play :paper).to eq :win
