@@ -8,11 +8,11 @@ Feature: Starting the game
   When I fill in "player_name" with "Rebecca"
   And I click "Submit"
   When I click "Single Player"
-  Then I should see "Single Player Game"
+  Then I should see "Rebecca make your choice!"
 
   Scenario: Choosing two player
   Given that I am on the homepage
   When I fill in "player_name" with "Rebecca"
   And I click "Submit"
   When I click "Two Players"
-  Then I should see "Two Player Game"
+  Then I should see "Waiting for Player Two."

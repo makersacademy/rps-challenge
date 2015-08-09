@@ -6,7 +6,7 @@ feature 'Starting the game' do
       fill_in('player_name', with: 'Rebecca')
       click_button('Submit')
       click_button('Single Player')
-      expect(page).to have_content('Single Player Game')
+      expect(page).to have_content('Rebecca make your choice!')
   end
 
   scenario 'I choose two player' do
@@ -14,6 +14,7 @@ feature 'Starting the game' do
       fill_in('player_name', with: 'Rebecca')
       click_button('Submit')
       click_button('Two Players')
-      expect(page).to have_content('Two Player Game')
+      expect(page).to have_content('Waiting for Player Two.')
   end
+
 end

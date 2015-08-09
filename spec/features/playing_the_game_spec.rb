@@ -6,9 +6,9 @@ feature 'Playing the game' do
   end
 
   scenario 'Playing again' do
-    visit 'one_player_game'
+    visit '/one_player_game'
     click_button('paper')
     click_button('Play Again?')
-    expect(page).to have_content('Single Player Game')
+    expect(page).to have_content('make your choice!')
   end
 end

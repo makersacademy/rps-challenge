@@ -5,6 +5,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   $game = Game.new
   $computer = ComputerPlayer.new
+  $players = []
 
   get '/' do
     erb :index
@@ -12,13 +13,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/start' do
     session[:name] = params[:player_name]
-    @user_name = params[:player_name]
+    @user_name = session[:name]
+    $players << session[:session_id]
     erb :start
   end
 
   get '/one_player_game' do
     @user_name = session[:name]
-    erb :one_player_game
+    erb :game_play
   end
 
   post '/one_player_game' do
@@ -29,7 +31,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/two_player_game' do
-    "Two Player Game"
+    @user_name = session[:name]
+    erb :multi_game_play
+  end
+
+  post '/two_player_game' do
+    @player1 = $players[0]
+    @player2 = $players[1]
+    @player1_choice = params['choice'].to_sym
+    @player2_choice = params['choice'].to_sym
+    #if session[:session_id] == $players[0]
+
+  end
+
+  get '/pending' do
+    redirect '/two_player_game' if $players.count == 2
+    erb :pending
   end
 
   set :views, Proc.new { File.join(root, "..", "views") }

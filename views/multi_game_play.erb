@@ -1,0 +1,11 @@
+<div>
+    <h2><%= "#{@user_name}" %> make your choice!</h2>
+    <form method='post'>
+      <button name="choice" value="rock"><img src="/public/images/rock.jpg" alt="Rock" width='230' height='230'></button>
+      <button name="choice" value="paper"><img src="/public/images/paper.jpg" alt="Paper" width='230' height='230'></button>
+      <button name="choice" value="scissors"><img src="/public/images/scissors.jpg" alt="Scissors" width='230' height='230'></button>
+      <% if @player1_choice && @player2_choice %>
+        <input type='submit' value='Go!'>
+      <% end %>
+    </form>
+  </div>
