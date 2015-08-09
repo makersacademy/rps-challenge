@@ -50,4 +50,23 @@ feature 'Starting a two player game' do
       expect(current_path).to eq '/two_player_gameplay'
     end
   end
+
+  scenario 'Player 2 goes into two player mode gameplay when Player 1 joins' do
+    browser(:one) do
+      setup_two_player('Leon')
+    end
+
+    browser(:two) do
+      setup_two_player('Ryan')
+    end
+
+    browser(:one) do
+      visit '/welcome'
+    end
+
+    browser(:two) do
+      visit '/welcome'
+      expect(current_path).to eq '/two_player_gameplay'
+    end
+  end
 end

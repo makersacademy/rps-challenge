@@ -21,17 +21,6 @@ class Game
     end
   end
 
-  def player_1_wins
-    player_1.wins
-    'Player 1 Wins This Round!'
-  end
-
-  def player_2_wins
-    player_2.wins
-    'Player 2 Wins This Round!'
-  end
-
-
   def has_winner?
     any_player_wins_at_least_twice
   end
@@ -45,6 +34,16 @@ class Game
 
   def any_player_wins_at_least_twice
     player_1.win_counter >= 2 || player_2.win_counter >= 2
+  end
+
+  def player_1_wins
+    player_1.wins
+    'Player 1 Wins This Round!'
+  end
+
+  def player_2_wins
+    player_2.wins
+    'Player 2 Wins This Round!'
   end
 
 end
