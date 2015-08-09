@@ -32,7 +32,6 @@ feature "Starting a new game" do
     expect(page).to have_selector("input[type=submit][name='hand']")
   end
 
-
   scenario "I see result of my hand" do
     visit "/"
     click_button "start game"

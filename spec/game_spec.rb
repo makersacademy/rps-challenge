@@ -31,4 +31,10 @@ describe Game do
     expect(subject_2_player.winner).to eq(player_1)
   end
 
+  describe "winner_exists?" do
+    it "returns true if there is a winner" do
+      subject_2_player.play_hand_two_player
+      expect(subject_2_player.winner_exists?).to be true
+    end
+  end
 end

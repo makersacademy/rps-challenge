@@ -32,6 +32,10 @@ class Game
      winner
   end
 
+  def winner_exists?
+    return true if @winner
+  end
+
   private
 
   def check_for_draw? hand_one, hand_two
