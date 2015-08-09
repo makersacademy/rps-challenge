@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-<style>
-body  { background-image: url("/images/background.jpeg"); }
-</style>
 <body>
 
-<h1 style="background-color:White">Welcome: <%= session[:playername] %></h1>
+<h1>Welcome: <%= session[:playername] %></h1>
 
 <form method="post" action="/result">
 <label>Please select a weapon:
