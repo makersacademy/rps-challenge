@@ -22,7 +22,6 @@ class RockPaperScissors < Sinatra::Base
     @my_move = params[:option]
     @computer_move = Computer.new.move
     @result = Game.new.result(@my_move, @computer_move)
-    session[:option] = @my_move
     p params
     erb :game
   end

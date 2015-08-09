@@ -5,6 +5,14 @@ feature 'Playing a game' do
   before(:each) do
     allow_any_instance_of(Computer).to receive(:move).and_return('Paper')
   end
+  scenario 'player can choose to play against cpu' do
+    visit '/'
+    expect(page).to have_button 'New Game'
+  end
+  scenario 'player is taken to the game' do
+    visit '/game?myname=Antonio'
+    expect(page).to have_selector('option')
+  end
   scenario 'Player can choose an option' do
     visit '/game?myname=Antonio'
     expect(page).to have_content 'Now select an option!'
