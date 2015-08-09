@@ -29,6 +29,26 @@ class RockPaperScissors < Sinatra::Base
     @computer = rand(3)
     erb :computer_result
   end
+  
+  get '/friend' do
+    erb :enter_name_2
+  end
+  
+  get '/play_friend' do    
+    @name1 = params[:name1] 
+    @name2 = params[:name2]
+    erb :play_friend
+  end  
+  
+  post '/play_friend' do   
+    @choice1 = params[:choice1]
+    erb :play_friend2
+  end
+  
+  get '/friend_result' do   
+    @choice2 = params[:choice2]
+    erb :friend_result
+  end  
 
   get '/spock' do
     erb :enter_name_spock
