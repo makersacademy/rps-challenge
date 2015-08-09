@@ -5,10 +5,10 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   $game = Game.new
   $computer = ComputerPlayer.new
-  $players = []
-  $choices = {}
 
   get '/' do
+    $players = []
+    $choices = {}
     erb :index
   end
 
@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
     @user_name = session[:name]
     $players << session[:session_id]
     if session[:version] == 'RPSLS'
-      @ext = '_rpsls'
+      @next = '/_rpsls'
     end
     erb :start
   end
@@ -34,24 +34,37 @@ class RockPaperScissors < Sinatra::Base
 
   get '/one_player_game' do
     @user_name = session[:name]
-    erb :game_play
+    if session[:version] == 'RPSLS'
+      erb :game_play_rpsls
+    else
+      erb :game_play
+    end
   end
 
   post '/one_player_game' do
     @player_choice = params['choice'].to_sym
-    @computer_choice = $computer.choice_rps
-    @result = $game.result_rps(@player_choice, @computer_choice)
+    if session[:version] == 'RPSLS'
+      @computer_choice = $computer.choice_rpsls
+      @result = $game.result_rpsls(@player_choice, @computer_choice)
+    else
+      @computer_choice = $computer.choice_rps
+      @result = $game.result_rps(@player_choice, @computer_choice)
+    end
     erb :post_game
   end
 
   get '/two_player_game' do
     @user_name = session[:name]
-    erb :multi_game_play
+    if session[:version] == 'RPSLS'
+      erb :game_play_rpsls
+    else
+      erb :game_play
+    end
   end
 
   post '/two_player_game' do
-      @player_choice = params['choice'].to_sym
-      $choices[session[:session_id]] = @player_choice
+    @player_choice = params['choice'].to_sym
+    $choices[session[:session_id]] = @player_choice
     redirect '/result'
   end
 
@@ -65,7 +78,11 @@ class RockPaperScissors < Sinatra::Base
      @player_choice = $choices[session[:session_id]]
     @opponent_choice_hash = $choices.reject { |k, v| k == session[:session_id] }
     @opponent_choice = @opponent_choice_hash.to_a[0][1]
-    @result = $game.result_rps(@player_choice, @opponent_choice)
+    if session[:version] == 'RPSLS'
+      @result = $game.result_rpsls(@player_choice, @opponent_choice)
+    else
+      @result = $game.result_rps(@player_choice, @opponent_choice)
+    end
     erb :gameover
   end
 
