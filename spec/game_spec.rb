@@ -10,9 +10,14 @@ describe Game do
       allow(subject).to receive(:random_weapon).and_return weapon
     end
 
-    it 'returns :win or :loss' do
+    it 'returns :win, :loss or :draw' do
       possible_outcomes = [:win, :loss, :draw]
       expect(possible_outcomes).to include subject.play :rock
+    end
+
+    it 'returns :draw when player weapon and opponent weapon are the same' do
+      computer_chooses :rock
+      expect(subject.play :rock).to eq :draw
     end
 
     context 'when player chooses :rock' do
@@ -24,11 +29,6 @@ describe Game do
       it 'returns :loss when computer chooses :paper' do
         computer_chooses :paper
         expect(subject.play :rock).to eq :loss
-      end
-
-      it 'returns :draw when computer chooses :rock' do
-        computer_chooses :rock
-        expect(subject.play :rock).to eq :draw
       end
     end
 
@@ -43,11 +43,6 @@ describe Game do
         computer_chooses :scissors
         expect(subject.play :paper).to eq :loss
       end
-      
-      it 'returns :draw when computer chooses :paper' do
-        computer_chooses :paper
-        expect(subject.play :paper).to eq :draw
-      end
     end
 
     context 'when player chooses :scissors' do
@@ -59,11 +54,6 @@ describe Game do
       it 'returns :loss when computer chooses :rock' do
         computer_chooses :rock
         expect(subject.play :scissors).to eq :loss
-      end
-
-      it 'returns :draw when computer chooses :scissors' do
-        computer_chooses :scissors
-        expect(subject.play :scissors).to eq :draw
       end
     end
 
