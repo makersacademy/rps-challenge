@@ -1,0 +1,14 @@
+<div>
+    <h1>Player 1: <%= $GAME.player_1.name %></h1>
+    <h3>You played: <%= @move %></h3>
+    <br>
+    <br>
+    <h1>Player 2: Computer</h1>
+    <h3>You played: <%= @computer_move %></h3>
+    <br>
+    <br>
+    <h2>Match Outcome: <%= @outcome %></h2>
+    <form action='/single_gameplay' method='get'>
+      <input type='submit' value='Next Round'>
+    </form>
+</div>
