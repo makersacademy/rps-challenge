@@ -23,6 +23,15 @@ class RockPaperScissors < Sinatra::Base
   	erb :newgame
   end
 
+  get '/result' do
+  	player = Player.new
+  	p "SESSION -----------------------"
+  	p session
+  	p params[:rockpaperscissors]
+  	p "-------------------------------"
+  	player.pick params[:rockpaperscissors].to_s
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
