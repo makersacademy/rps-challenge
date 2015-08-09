@@ -1,0 +1,16 @@
+<div>
+  <h1> Welcome to the game <%= @name %>, you are player 1 </h1>
+  <br>
+  <form action="/PlayGame" method="post">
+    Please select your piece of equipment:
+      <select name="Selection">
+        <option value="Rock"> Rock </option>
+        <option value="Scissors"> Scissors </option>
+        <option value="Paper"> Paper </option>
+      </select>
+      </form>
+      <br>
+      <form action='/Result'>
+        <input type="submit" value="Play">
+      </form>
+</div>
