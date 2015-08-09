@@ -1,10 +1,11 @@
 
 module Roshambo
 
-  def computer_beats_player? move
-    return true if move.to_sym == rock && random_move == scissors
-    return true if move.to_sym == scissors && random_move == paper
-    return true if move.to_sym == paper && random_move == rock
+  def first_move_winner? move1, move2
+    move_one, move_two  = move1.to_sym.downcase, move2.to_sym.downcase
+    return true if move_one == rock && move_two == scissors
+    return true if move_one == scissors && move_two == paper
+    return true if move_one == paper && move_two == rock
     false
   end
 

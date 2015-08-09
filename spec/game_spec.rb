@@ -3,11 +3,16 @@ require 'roshambo'
 include Roshambo
 
 describe Game do
-  let(:player_1) {double 'diego', :is_a_computer? => false }
+  let(:player_1) {double 'diego', :is_a_computer? => false}
 
   context 'against a computer' do
     let(:computer_player) {double 'computer', :is_a_computer? => true}
-    let(:new_game) {Game.new player_1, computer_player}
+    let(:new_game) {Game.new }
+
+    before do
+      new_game.player_1 = player_1
+      new_game.player_2 = computer_player
+    end
 
     it 'registers player_1' do
       expect(new_game.player_1).to be player_1
@@ -17,23 +22,37 @@ describe Game do
       expect(new_game.player_2).to eq computer_player
     end
 
-    describe '#player_move' do
-      it 'responds to #player_move ' do
-        expect(new_game).to respond_to(:player_move).with(1).argument
+    describe '#first_move_winner?' do
+      it 'responds to #first_move_winner? ' do
+        expect(new_game).to respond_to(:first_move_winner?).with(2).arguments
       end
 
-      it 'returns move for player' do
-        expect(new_game.player_move 'scissors').to eq(:scissors)
+      context 'winning moves' do
+        it 'rock beats scissors' do
+          expect(new_game.first_move_winner?('rock','scissors')).to be true
+        end
+
+        it 'scissors beats paper' do
+          expect(new_game.first_move_winner?('scissors','paper')).to be true
+        end
+
+        it 'paper beats rock' do
+          expect(new_game.first_move_winner?('paper','rock')).to be true
+        end
       end
 
-      it 'only allows to make correct move' do
-        expect(new_game.player_move 'spaghetti').to eq "scissors, paper or rock - Choose your move wisely!"
-      end
-    describe '#computer_beats_player?'
-      it 'tells player he/she won' do
-        new_game.player_move 'scissors'
-        allow(new_game).to receive(:computer_beats_player?).with('scissors').and_return(true)
-        expect(new_game.computer_beats_player? 'scissors').to eq true
+      context 'losing moves' do
+        it 'scissors cannot beat rock' do
+          expect(new_game.first_move_winner?('scissors','rock')).to be false
+        end
+
+        it 'paper cannot beat scissors' do
+          expect(new_game.first_move_winner?('paper','scissors')).to be false
+        end
+
+        it 'rock cannot beat paper' do
+          expect(new_game.first_move_winner?('rock','paper')).to be false
+        end
       end
     end
 
@@ -42,7 +61,6 @@ describe Game do
         allow(new_game).to receive(:random_move).and_return(:scissors)
         expect(new_game.random_move).to eq(:scissors)
       end
-
     end
 
   end

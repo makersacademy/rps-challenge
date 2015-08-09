@@ -3,21 +3,9 @@ require_relative 'roshambo'
 class Game
   include Roshambo
 
-  attr_reader :player_1, :player_2, :current_move
+  attr_accessor :player_1, :player_2
 
-  def initialize player_1, player_2
-    @player_1 = player_1
-    @player_2 = player_2
-  end
-
-  def player_move option
-    send (option.to_sym) ? @current_move = option : false rescue 'scissors, paper or rock - Choose your move wisely!'
-  end
-
-  # def player_1_winner?
-  #   return computer_beats_player(current_move) if player_2.is_a_computer? || player_1.is_a_computer?
+  # def player_move option
+  #   send (option.to_sym) ? player_1.move = option : false rescue 'scissors, paper or rock - Choose your move wisely!'
   # end
-
-
-
 end

@@ -12,16 +12,16 @@ class RoshamboWeb < Sinatra::Base
 
   get '/welcome' do
     session[:name] = params[:player_name]
-    @player_1 = Player.new session[:name]
-    @player_2 = Player.new 'computer'
-    $game = Game.new @player_1, @player_2
+    $game = Game.new
+    $game.player_1, $game.player_2 = Player.new(session[:name]), Player.new('computer')
     erb :welcome
   end
 
   get '/game' do
     session[:move] = params[:move].downcase
-    player_1_move = $game.player_move(session[:move])
-    $game.player_2.is_a_computer? ? @won = $game.computer_beats_player?(player_1_move) : "Wait for Player 2"
+    $game.player_1.move = session[:move]
+    $game.player_2.move = $game.random_move
+    @player_1_winner = $game.first_move_winner?($game.player_1.move, $game.player_2.move)
     erb :game
   end
   # start the server if ruby file executed directly
