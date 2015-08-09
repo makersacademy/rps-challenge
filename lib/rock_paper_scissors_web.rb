@@ -25,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
   post '/register' do
     session[:name] = params[:name]
     redirect '/register' if session[:name] == ''
-    @player_1 = Player.new(@name)
+    @player_1 = Player.new(session[:name])
     @computer = ComputerPlayer.new
     $GAME = Game.new(@player_1, @computer)
     redirect '/single_gameplay'
@@ -37,7 +37,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/single_gameplay' do
-    @name = session[:name]
     session[:move] = params[:move]
     @move = session[:move].capitalize
     $GAME.player_1.choose(@move.downcase.to_sym)
@@ -54,12 +53,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/register_two_player' do
-    $all_sessions = []
     erb :name_two_player_mode
   end
 
   post '/register_two_player' do
     session[:name2] = params[:name]
+    $all_sessions = []
     redirect '/register_two_player' if session[:name2] == ''
     redirect '/welcome'
   end
@@ -116,11 +115,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/two_player_result' do
-    if $GAME2.player_1.win_counter == 4
-      erb :two_player_first_player_won
-    else
-      erb :two_player_second_player_won
-    end
+    return erb :two_player_first_player_won if $GAME2.player_1.win_counter == 4
+    return erb :two_player_second_player_won
   end
 
 
