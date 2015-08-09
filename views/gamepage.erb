@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <style>
+  * { margin: 0; padding: 0;
+      text-align: center !important;
+      margin: auto !important;
+      color: Black;
+      background-size: cover;
+      font-family: helvetica;
+    }
+  </style>
+</head>
+<header>
+<h1>Hello, <%= @name %>! Let the games begin!</h1><br>
+</header>
+<body>
+<div>
+  <h2>Make your selection!<h2>
+  <form action="shoot" method="post">
+    <div>
+      <ul>
+      <li><input type="radio" name="choice" value="Rock" class="radio" checked>Rock
+      <br>
+      <li><input type="radio" name="choice" value="Paper" class="radio">Paper
+      <br>
+      <li><input type="radio" name="choice" value="Scissors" class="radio">Scissors
+      <br>
+    </ul>
+    </div>
+    <input type="submit" value="Shoot!"></input>
+  </form>
+</div>
+<div>
+  <% if @win == true%>
+    <h1>You win!</h1>
+    <h3>Computer Played <%= @comp_choice %><h3>
+  <% elsif @win == false %>
+    <h1>You Lose! Computer Played <%= @comp_choice %>!</h1>
+  <% elsif @win == "Draw" %>
+    <h1>Draw! Try again!</h1>
+  <% end %>
+  <% if @no_play == true %>
+    <h3>Nothing is not a valid play! Choose, Rock, Paper, or Scissors!</h3>
+  <% end %>
+</div>
+</body>
+</html>

@@ -11,4 +11,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'launchy'
+  gem 'shotgun'
+  gem 'rspec-sinatra'
 end
