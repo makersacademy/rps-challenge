@@ -7,6 +7,7 @@ Feature: Starting the game
     Given I am on the homepage
     When I click "New Game"
     And I enter "Sarah" in "first_name"
+    And I select "One Player" in "game_type"
     And I click button "Submit"
     Then I should see "Welcome, Sarah!"
 
@@ -15,4 +16,11 @@ Feature: Starting the game
     When I click "New Game"
     And I click button "Submit"
     Then I should see "Please enter your name:"
+
+  Scenario: Two players registering to play
+    Given I join the game
+    Given Someone else joins the game
+    Then we should see different things :)
+
+
 

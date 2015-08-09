@@ -19,3 +19,8 @@ end
 World do
   RPSWebWorld.new
 end
+
+Before do
+  $player_1 = nil
+  $player_2 = nil
+end

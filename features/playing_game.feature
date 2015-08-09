@@ -7,6 +7,7 @@ Feature: Playing the game
     Given I am on the homepage
     When I click "New Game"
     And I enter "Sarah" in "first_name"
+    And I select "One Player" in "game_type"
     And I click button "Submit"
     Then I should see "Select your gesture:"
 
@@ -14,6 +15,7 @@ Feature: Playing the game
     Given I am on the homepage
     When I click "New Game"
     And I enter "Sarah" in "first_name"
+    And I select "One Player" in "game_type"
     And I click button "Submit"
     Then I should see "Rock"
 
@@ -21,7 +23,19 @@ Feature: Playing the game
     Given I am on the homepage
     When I click "New Game"
     And I enter "Sarah" in "first_name"
+    And I select "One Player" in "game_type"
     And I click button "Submit"
-    And I select "Rock" as "gesture"
+    And I select "rock" as "gesture"
     And I click button "Submit"
     Then I should see "Result:"
+
+  Scenario: Two player finding out who won
+    Given I join the game
+    Given Someone else joins the game
+    Given I play the game
+    Given Someone else plays the game
+    And I click button "Result" in chrome
+    Then we should see the result
+
+
+
