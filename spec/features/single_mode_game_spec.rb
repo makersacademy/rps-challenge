@@ -25,6 +25,25 @@ feature 'Single mode game' do
     fill_in 'name', :with => 'Giuseppe'
     click_button "Submit"
     click_link "Single Player Mode"
-    expect(current_path).to eq('/single-player')
+    expect(current_path).to eq('/single-mode')
+  end
+
+  context 'Test #radio_buttons' do
+    scenario 'User can select a move' do
+      visit '/single-mode'
+      expect(page).to have_field('move')
+    end
+  end
+
+  scenario 'User should get to the result page after selecting a move' do
+    visit '/single-mode'
+    click_button "Play"
+    expect(current_path).to eq('/result')
+  end
+
+  scenario 'User should see the result of the match on the result page' do
+    visit '/single-mode'
+    click_button "Play"
+    expect(page).to have_content "match"
   end
 end

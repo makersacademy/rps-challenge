@@ -14,14 +14,26 @@ class RpsWeb < Sinatra::Base
   end
 
   get '/choose-mode' do
-    session[:name_1] = params[:name]
-    @name_1 = session[:name_1].capitalize
+    session[:name_1] = params[:name].capitalize
+    $name_1 = session[:name_1]
+    @name_1 = $name_1
     redirect '/registration' if session[:name_1] == ''
     erb :mode
   end
 
-  get '/single-player' do
+  get '/single-mode' do
+    @name_1 = $name_1
+    $name_2 = 'COMPUTER'
+    $player_1 = Player.new $name_1
+    $player_2 = Player.new $name_2
+    $game_single = Game.new($player_1, $player_2)
     erb :singlemode
+  end
+
+  get '/result' do
+    session[:move_single_player] = params[:move]
+    @move_single_player = session[:move_single_player].to_sym
+    $game_single.match(@move_single_player, :rock)
   end
 
   # start the server if ruby file executed directly
