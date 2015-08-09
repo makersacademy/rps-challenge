@@ -1,8 +1,11 @@
 <form method="post">
-    <select name="selection">
-       <option value="rock">Rock</option>
-       <option value="paper">Paper</option>
-       <option value="scissors">Scissors</option>
-     </select>
+      <input type="radio" name="selection" value="rock">Rock
+      <br>
+      <input type="radio" name="selection" value="paper">Paper
+      <br>
+      <input type="radio" name="selection" value="scissors">Scissors
+      <br>
      <input type="submit" value="Play">
 </form>
+
+<%= $game.winner %>

@@ -14,12 +14,29 @@ class Game
     return "Draw!" if (player_1.selection == player_2.selection)
     case player_1.selection
     when :rock
-      player_2.selection == :paper ? player_2 : player_1
+      rock
     when :paper
-      player_2.selection == :scissors ? player_2 : player_1
+      paper
     when :scissors
-      player_2.selection == :rock ? player_2 : player_1
+      scissors
     end
   end
 
+  def winner
+    self.check_win
+  end
+
+  private
+
+  def rock
+    player_2.selection == :paper ? "Computer wins" : "Player 1 wins"
+  end
+
+  def paper
+    player_2.selection == :scissors ? "Computer wins" : "Player 1 wins"
+  end
+
+  def scissors
+    player_2.selection == :rock ? "Computer wins" : "Player 1 wins"
+  end
 end

@@ -24,6 +24,7 @@ class RockPaperScissors < Sinatra::Base
     $player_1 = Player.new "#{@visitor}"
     $player_2 = Player.new "computer"
     $game = Game.new $player_1, $player_2
+    $game.winner
     erb :newgame
   end
 
@@ -31,7 +32,6 @@ class RockPaperScissors < Sinatra::Base
     @selection = params[:selection]
     $player_1.choice @selection.to_sym
     $player_2.choice random_selection
-    $game.check_win
     erb :newgame
   end
 
