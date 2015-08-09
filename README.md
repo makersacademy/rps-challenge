@@ -55,3 +55,54 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+IRB tests:
+
+EXPECTED OUTCOME:
+- emily = Player.new
+- => #<Player:0x007fc4d18329d8>
+- emily.pick "rock"
+- => "You win!"/"You lost!"/"It's a tie!"
+
+- emily = Player.new
+- => NameError: uninitialized constant Player
+- created rspec test and class
+- => #<Player:0x007fc4d18329d8>
+- emily.pick "rock"
+- => nil
+- created rspec test to return error if not "rock", "paper", "scissors", "lizard" or "spock"
+- created rspec test to stub 'computer' and to return "you win!"
+- irb(main):002:0> emily.pick "rock"
+=> "You lose!"
+irb(main):003:0> emily.pick "rock"
+=> "You lose!"
+irb(main):004:0> emily.pick "rock"
+=> "You lose!"
+irb(main):005:0> emily.pick "rock"
+=> "You lose!"
+irb(main):006:0> emily.pick "rock"
+=> "You win!"
+irb(main):007:0> emily.pick "rock"
+=> "It's a tie!"
+irb(main):008:0> emily.pick "rock"
+=> "It's a tie!"
+irb(main):009:0> emily.pick "rock"
+=> "You lose!"
+irb(main):010:0> emily.pick "rock"
+=> "It's a tie!"
+irb(main):011:0> emily.pick "rock"
+=> "It's a tie!"
+irb(main):012:0> emily.pick "rock"
+=> "It's a tie!"
+irb(main):013:0> emily.pick "rock"
+=> "You win!"
+irb(main):014:0> emily.pick "rock"
+=> "You lose!"
+
+Ruby logic to work out winner:
+
+- Convert "rock", "paper", "scissors", "lizard" or "spock" to number from 1-5.
+- Computer is rand(1..5).
+- If the two numbers are both odd or both even, the the smaller number wins.
+- If one number is even and the other is odd, the larger number wins.
+- Or if the numbers are the same, it is a tie!
