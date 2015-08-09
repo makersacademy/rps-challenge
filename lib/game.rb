@@ -2,23 +2,24 @@ require_relative './player'
 
 class Game
   
-  attr_reader :options, :player
+  attr_reader :player1, :player2
 
-  def initialize
-    @options = ['Rock', 'Paper', 'Scissors']
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
-  def computer_choice
-    @options.sample
-  end
 
-  def result(player)
-    "You have tied" if player.choice == computer_choice
-    "Player wins" if player.choice == 'Rock' && computer_choice == 'Scissors'
-    "Player wins" if player.choice == 'Paper' && computer_choice == 'Rock'
-    "Player wins" if player.choice == 'Scissors' && computer_choice == 'Paper'
-    "Computer wins"
+  def result
+    return "You have tied" if player1.choice == player2.choice
+    case player1.choice
+    when :rock
+      player2.choice == :paper ? "Computer Wins" : "Player Wins"
+    when :paper
+      player2.choice == :scissors ? "Computer Wins": "Player Wins"
+    when :scissors
+      player2.choice == :rock ? "Computer Wins" : "Player Wins"
+    end
   end
-
 
 end

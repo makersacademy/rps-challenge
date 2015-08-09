@@ -1,0 +1,18 @@
+
+<div style="text-align: center; border: 5px black">
+<% if session[:name] != '' %>
+<h1>Player: <%= session[:name] %></h1>
+<% else %>
+<h1>Player:  Player 1</h1>
+<% end %>
+<p>Please choose your weapon!</p>
+      <form action="/results" method="post">
+        <!-- <input type="hidden">  -->
+        Weapon: <select name="weapon">
+          <option name="weapon" value="rock">Rock</option>
+          <option name="weapon" value="paper">Paper</option>
+          <option name="weapon" value="scissors">Scissors</option>
+
+          <input type="submit" value="Deploy!">
+        </form>
+</div>

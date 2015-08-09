@@ -2,17 +2,17 @@ require 'game'
 
 describe Game do 
 
-  let(:player) {double :player}
+  let(:player_rock) {double :player_rock }
+  let(:player_paper) { double :player_paper }
 
-  it 'returns options when asked for them' do
-    expect(subject.options).to eq(['Rock', 'Paper', 'Scissors'])
-  end
+  # let (:playerClass){double :Player, new: player }
+  subject { Game.new(player_rock, player_paper) }
+  
 
   it 'returns result after game is played' do
-    subject.computer_choice == "Paper"
-    allow(player).to receive(:choice)
-    player.choice("Rock")
-    expect(subject.result(player)).to eq("Computer wins")
+    allow(player_rock).to receive(:choice) { :rock }
+    allow(player_paper).to receive(:choice) { :paper }
+    expect(subject.result).to eq("Computer Wins")
   end
 
 end
