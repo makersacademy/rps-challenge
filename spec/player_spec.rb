@@ -8,7 +8,7 @@ describe Player do
   end
 
   it 'should raise an error if an incorrect choice has been made' do
-    expect{subject.choice "test"}.to raise_error "Not a valid option"
+    expect { subject.choice "test" }.to raise_error "Not a valid option"
   end
 
 end

@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:player) { double (:player), selection: nil}
+  let(:player) { double (:player), selection: nil }
   let(:rock_player) { double (:player), selection: :rock }
   let(:paper_player) { double (:player), selection: :paper }
   let(:scissors_player) { double (:player), selection: :scissors }
