@@ -44,6 +44,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rockpaperscissors (0.0.1)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -92,10 +93,11 @@ DEPENDENCIES
   byebug
   capybara
   coveralls
+  rockpaperscissors
   rspec
   rubocop
   rubocop-rspec
   sinatra
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
