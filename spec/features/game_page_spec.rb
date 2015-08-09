@@ -2,10 +2,12 @@ require 'spec_helper'
 
 feature 'Game Page' do
   before :each do
-    visit '/game_page'
+    visit '/'
+    fill_in "name", with: "Andy"
+    click_on 'New Game'
   end
 
-  scenario "User sees radio buttons to select a weapon" do
+  scenario "has radio buttons to select a weapon" do
     expect(page).to have_field "weapon"
   end
 
@@ -16,4 +18,36 @@ feature 'Game Page' do
       expect(page).to have_field("weapon", with: weapon.to_s)
     end
   end
+
+  scenario "has 'GO!' button" do
+    expect(page).to have_button "GO!"
+  end
+
+  scenario "does NOT have 'YOU WON!'" do
+    expect(page).to_not have_content "YOU WON!"
+  end
+
+  context "if user has selected a weapon and clicked 'GO!'" do
+    scenario 'user is told they have won if they win the game' do
+      allow_any_instance_of(Game).to receive(:play).with(:rock).and_return :win
+      choose('rock')
+      click_on 'GO!'
+      expect(page).to have_content "YOU WON!"
+    end
+
+    scenario 'user is told they have lost if they lose the game' do
+      allow_any_instance_of(Game).to receive(:play).with(:rock).and_return :loss
+      choose('rock')
+      click_on 'GO!'
+      expect(page).to have_content "YOU LOST!"
+    end
+
+    scenario 'user is told they have drawn if they draw the game' do
+      allow_any_instance_of(Game).to receive(:play).with(:rock).and_return :draw
+      choose 'rock'
+      click_on 'GO!'
+      expect(page).to have_content "Draw! Try again!"
+    end
+  end
+
 end

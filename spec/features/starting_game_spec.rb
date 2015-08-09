@@ -14,10 +14,18 @@ feature 'Home Page' do
   end
 
   context "when user clicks 'new game' button after filling-in their name" do
-    scenario 'user is taken to game page' do
+    before :each do
+      visit '/'
       fill_in "name", with: "Andy"
       click_on 'New Game'
+    end
+
+    scenario 'user is taken to game page' do
       expect(page).to have_content 'Select your weapon of choice:'
+    end
+
+    scenario 'user sees their name on the page' do
+      expect(page).to have_content "Andy"
     end
   end
 end

@@ -1,7 +1,18 @@
+<h2>Hello, <%= $game.name %></h2>
 <h3>Select your weapon of choice:</h3>
 
-<form action="">
+<form action='/play', method='post'>
   <% RandomWeaponGenerator::AVAILABLE_WEAPONS.each do |weapon| %>
-    <input type="radio" name="weapon" value="<%= weapon.to_s %>"><%= weapon.to_s.capitalize %>
-  <% end %>
+    <label for="<%= weapon %>"><%= weapon.to_s.capitalize %></label>
+    <input type='radio' name='weapon' id="<%= weapon %>" required value="<%= weapon.to_s %>">
+  <% end %><br>
+  <input type='submit' value='GO!'>
 </form>
+
+<% if @result == :win %>
+  <h2>YOU WON!</h2>
+<% elsif @result == :loss %>
+  <h2>YOU LOST!</h2>
+<% elsif @result == :draw %>
+  <h2>Draw! Try again!</h2>
+<% end %>
