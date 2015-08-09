@@ -20,7 +20,7 @@ class RpsWeb < Sinatra::Base
   end
 
   get '/botgame' do
-    $game = Game.new(Player)
+    $game ? $game : $game = Game.new(Player)
     erb :botgame
   end
 
@@ -40,7 +40,7 @@ class RpsWeb < Sinatra::Base
 
   get '/multiplayer' do
     @current_player = ($all_session.index(session[:session_id]) + 1).to_s
-    $game = Game.new(Player)
+    $game ? $game : $game = Game.new(Player)
     $game.reset_last_played
     erb :multiplayer
   end
