@@ -3,9 +3,6 @@ body {
 }
 
 div {
-
-	background-color: #ffffff;
-	border-radius: 5px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -36,55 +33,3 @@ button:hover {
 	border: 3px solid #45d3f7;
 }
 
-#play, #play_again {
-	border-radius: 3px;
-	border: 1px solid #838399;
-	margin: auto;
-	text-align: center;
-	background-color: #f3f3f3;
-	padding-top: 9px;
-	font-weight: bold;
-	height: 30px;
-}
-
-#play {
-	width: 60px;
-
-}
-
-#play_again {
-	width: 120px;
-	display: none;
-}
-
-#play:hover {
-	cursor: pointer;
-}
-
-#play_again:hover {
-	cursor: pointer;
-}
-
-#rules {
-	display: none;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-#win, #lose {
-	margin-top: 30px;
-	width: 50%;
-	display: none;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-.highlighted_user {
-	border: 3px solid #45d3f7;
-
-}
-
-.highlighted_computer {
-	border: 3px solid #f71a0e;
-
-}

@@ -1,14 +1,20 @@
-require_relative 'player'
 require_relative 'computer_player'
 
 class Game
   def initialize
-    @trumps = { :rock => :scissors, :paper => :rock, :scissors => :paper }
+    @trumps_rps = { :rock => :scissors, :paper => :rock, :scissors => :paper }
+    @trumps_rpsls = { :scissors => [:paper, :lizard], :paper => [:spock, :rock], :rock => [:scissors, :lizard], :lizard => [:paper, :spock], :spock => [:rock, :scissors] }
   end
 
-  def result(choice1, choice2)
-    return :win if @trumps[choice1] == choice2
-    return :lose if @trumps[choice2] == choice1
+  def result_rps(choice1, choice2)
+    return :win if @trumps_rps[choice1] == choice2
+    return :lose if @trumps_rps[choice2] == choice1
+    return :draw if choice1 == choice2
+  end
+
+  def result_rpsls(choice1, choice2)
+    return :win if @trumps_rpsls[choice1].include?(choice2)
+    return :lose if @trumps_rpsls[choice2].include?(choice1)
     return :draw if choice1 == choice2
   end
 end
