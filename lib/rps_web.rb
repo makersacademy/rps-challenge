@@ -30,10 +30,18 @@ class RpsWeb < Sinatra::Base
     erb :singlemode
   end
 
-  get '/result' do
+  get '/play-match' do
+    @name_1 = $name_1
+    erb :playmatch
+  end
+
+  get '/matchresult' do
     session[:move_single_player] = params[:move]
     @move_single_player = session[:move_single_player].to_sym
-    $game_single.match(@move_single_player, :rock)
+    erb :matchresult
+  end
+
+  get '/gameresult' do
   end
 
   # start the server if ruby file executed directly

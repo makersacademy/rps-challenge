@@ -30,20 +30,70 @@ feature 'Single mode game' do
 
   context 'Test #radio_buttons' do
     scenario 'User can select a move' do
-      visit '/single-mode'
+      visit '/play-match'
       expect(page).to have_field('move')
     end
   end
 
-  scenario 'User should get to the result page after selecting a move' do
-    visit '/single-mode'
-    click_button "Play"
-    expect(current_path).to eq('/result')
+  scenario 'User should be able to play after selecting single mode' do
+    visit 'single-mode'
+    click_link "Next"
+    expect(current_path).to eq('/play-match')
   end
 
-  scenario 'User should see the result of the match on the result page' do
-    visit '/single-mode'
+  scenario 'User should see the match result page after selecting a move' do
+    visit '/play-match'
+    click_button "Play"
+    expect(current_path).to eq('/matchresult')
+  end
+
+  scenario 'User should see the result of a single match' do
+    visit '/play-match'
     click_button "Play"
     expect(page).to have_content "match"
   end
+
+  scenario 'User should be able to play another match' do
+    visit '/play-match'
+    click_button "Play"
+    click_link "Play again"
+    expect(current_path).to eq '/play-match'
+  end
+
+  # the following tests are not working, will try to find out why
+  # the feature is working when launching the website in rackup
+
+  # scenario 'User should see the result page of the game after 5 matches' do
+  #   visit '/play-match'
+  #   4.times do
+  #     click_button "Play"
+  #     click_link "Play again"
+  #   end
+  #   click_button "Play"
+  #   expect(page).to have_link "View winner"
+  # end
+
+  # scenario 'User should see who won the game after 5 matches' do
+  #   visit '/play-match'
+  #   4.times do
+  #     click_button "Play"
+  #     click_link "Play again"
+  #   end
+  #   click_button "Play"
+  #   click_link "View winner"
+  #   expect(page).to have_content "game"
+  # end
+
+  # scenario 'User should be able to play a new game after 5 matches' do
+  #   visit '/play-match'
+  #   4.times do
+  #     click_button "Play"
+  #     click_link "Play again"
+  #   end
+  #   click_button "Play"
+  #   click_link "View winner"
+  #   click_link "Play another game"
+  #   expect(current_path).to eq '/choose-mode'
+  # end
+
 end

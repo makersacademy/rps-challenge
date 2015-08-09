@@ -1,7 +1,7 @@
 require_relative './player'
 
 class Game
-  attr_reader :p_1, :p_2, :matches_played, :beats
+  attr_reader :p_1, :p_2, :played_matches, :beats
 
   def initialize(p_1, p_2)
     @beats = { rock: [:scissors, :lizard],
@@ -11,10 +11,11 @@ class Game
                lizard: [:paper, :spock] }
     @p_1 = p_1
     @p_2 = p_2
-    @matches_played = 0
+    @played_matches = 0
   end
 
   def match move_1, move_2
+    @played_matches += 1
     select_moves move_1, move_2
     wins_incrementer
     match_result
