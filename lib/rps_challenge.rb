@@ -2,10 +2,8 @@ require 'sinatra/base'
 require_relative 'game'
 
 class RockPaperScissors < Sinatra::Base
-
-  enable :sessions
-
   set :views, proc { File.join(root, '..', 'views') }
+  enable :sessions
 
   get '/' do
     erb :index
@@ -21,20 +19,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start_game' do
-    $game = Game.new Player
+    session[:game] = Game.new(Player)
     erb :start_game
   end
 
   post '/start_game' do
-    $hand_selection = params[:hand_selection]
+    session[:game].player_1.choose_hand params[:hand_selection]
     erb :start_game
   end
 
   get '/game' do
+    @hand_selected = session[:game].player_1.hand
     erb :game
   end
 
-
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

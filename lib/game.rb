@@ -18,25 +18,25 @@ class Game
   end
 
   def play
-    fail 'Player has not picked a hand to play!' unless (self.player_1.chosen_hand? && self.player_2.chosen_hand?)
+    fail 'Player has not picked a hand to play!' unless self.player_1.chosen_hand? && self.player_2.chosen_hand?
 
     if (self.player_1.hand == 'rock') && (self.player_2.hand == 'scissors')
       return  "#{self.player_1.name} wins!"
       self.player_1.winner = true
     elsif (self.player_1.hand == 'rock') && (self.player_2.hand == 'paper')
       return  "#{self.player_2.name} wins!"
-      self.player_2.winner= true
+      self.player_2.winner = true
     elsif (self.player_1.hand == 'rock') && (self.player_2.hand == 'rock')
       return  "It's a tie!"
     elsif (self.player_1.hand == 'scissors') && (self.player_2.hand == 'paper')
       return  "#{self.player_1.name} wins!"
       self.player_1.winner = true
-    elsif (self.player_1.hand == 'scissors')  && (self.player_2.hand == 'rock')
+    elsif (self.player_1.hand == 'scissors') && (self.player_2.hand == 'rock')
       return  "#{self.player_2.name} wins!"
       self.player_2.winner = true
-    elsif (self.player_1.hand == 'scissors')  && (self.player_2.hand == 'scissors')
+    elsif (self.player_1.hand == 'scissors') && (self.player_2.hand == 'scissors')
       return  "It's a tie!"
-    elsif (self.player_1.hand == 'paper')  && (self.player_2.hand == 'rock')
+    elsif (self.player_1.hand == 'paper') && (self.player_2.hand == 'rock')
       return  "#{self.player_1.name} wins!"
       self.player_1.winner = true
     elsif (self.player_1.hand == 'paper') && (self.player_2.hand == 'scissors')
@@ -45,13 +45,12 @@ class Game
     elsif (self.player_1.hand == 'paper') && (self.player_2.hand == 'paper')
       return  "It's a tie!"
     end
-
   end
 
   private
 
   def players
-      [player_1, player_2]
+    [player_1, player_2]
   end
 
 end

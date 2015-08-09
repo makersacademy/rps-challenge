@@ -1,7 +1,7 @@
 class Player
 
   def initialize
-    @hands = ['rock','paper', 'scissors']
+    @hands = %w(rock paper scissors)
     @name = 'anonymous'
     @winner = false
   end
