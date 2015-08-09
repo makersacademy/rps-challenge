@@ -22,6 +22,14 @@ When(/^I press "([^"]*)"$/) do |arg1|
   click_button(arg1)
 end
 
+Given(/^I am on "([^"]*)"$/) do |arg1|
+  visit '/game'
+end
+
+
+When(/^I select "([^"]*)" from "([^"]*)"$/) do |arg1, arg2|
+    select(arg1, :from => arg2)
+end
 
 
 # Taken from the cucumber-rails project.

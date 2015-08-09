@@ -10,6 +10,5 @@ class Player
 	def choose object
 		fail 'Please choose between rock paper and scissors' unless allowed_objects.include?(object.capitalize)
 		@chosen_object = object.capitalize
-		"You have chosen #{@chosen_object}"
 	end 
 end 

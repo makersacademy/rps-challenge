@@ -14,4 +14,9 @@ Feature: Starting the game
 		When I press "Submit"
 		Then I should see "Welcome to Rock Paper Scissors"
 
+	Scenario: Choosing object
+		Given I am on "/game"
+		When I select "Rock" from "object"
+		When I press "Submit"
+		Then I should see "Result:" 
 		
