@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require_relative 'game'
+require_relative 'player'
 
 class RockPaperScissors < Sinatra::Base
 
   DEFAULT_PLAYER_NAME = "Anonymous"
+  RPS_HANDS = [ :rock, :paper, :scissors ]
 
   enable :sessions
 

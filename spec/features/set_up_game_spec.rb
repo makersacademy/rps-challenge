@@ -26,4 +26,23 @@ feature "Starting a new game" do
     expect(page).to have_content "Choose your hand"
   end
 
+  scenario "I select my choice of hand" do
+    visit "/"
+    click_button "start game"
+    expect(page).to have_selector("input[type=submit][name='rock']")
+  end
+
+  scenario "I select my choice of hand" do
+    visit "/"
+    click_button "start game"
+    expect(page).to have_selector("input[type=submit][name='paper']")
+  end
+
+  scenario "I select my choice of hand" do
+    visit "/"
+    click_button "start game"
+    expect(page).to have_selector("input[type=submit][name='paper']")
+  end
+
+
 end
