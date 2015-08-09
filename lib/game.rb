@@ -4,9 +4,11 @@ class Game
   attr_reader :p_1, :p_2, :matches_played, :beats
 
   def initialize(p_1, p_2)
-    @beats = { rock: [:scissors],
-               paper: [:rock],
-               scissors: [:paper] }
+    @beats = { rock: [:scissors, :lizard],
+               paper: [:rock, :spock],
+               scissors: [:paper, :lizard],
+               spock: [:scissors, :rock],
+               lizard: [:paper, :spock] }
     @p_1 = p_1
     @p_2 = p_2
     @matches_played = 0
