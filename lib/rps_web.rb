@@ -42,6 +42,7 @@ class RpsWeb < Sinatra::Base
   end
 
   get '/gameresult' do
+    erb :gameresult
   end
 
   # start the server if ruby file executed directly

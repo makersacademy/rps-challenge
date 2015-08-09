@@ -93,7 +93,7 @@ feature 'Single mode game' do
   #   click_button "Play"
   #   click_link "View winner"
   #   click_link "Play another game"
-  #   expect(current_path).to eq '/choose-mode'
+  #   expect(current_path).to eq '/registration'
   # end
 
 end
