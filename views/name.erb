@@ -1,12 +1,12 @@
 <body style="background:#429786">
 <% if @visitor != '' && @visitor != nil %>
-  Hello <%= @visitor %>, welcome to Rock Paper Scissors Spock Lizard!
-  <form action="/newgame">
-    <input type="submit" value="New Game" >
+  <h1 style="text-align:center">Hello <%= @visitor %>, welcome to Rock Paper Scissors Spock Lizard!</h1>
+  <form action="/newgame" style="text-align:center">
+    <input type="submit" value="New Game" style="text-align:center">
   </form>
 
 <% else %>
-  <form action="/name">
+  <form action="/name" style="text-align:center">
     What's your name?
     <input name="name" type="text">
     <input type="submit" value="Submit">

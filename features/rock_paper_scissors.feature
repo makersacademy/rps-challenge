@@ -22,6 +22,7 @@ Feature: initiating a game
 
   Scenario: Playing the game
     Given I am on the new game page
-    And I select "scissors" from rockpaperscissors
     When I press "Submit"
     Then I should see "Game over"
+    When I press "Play again!"
+    Then I should be on the new game page

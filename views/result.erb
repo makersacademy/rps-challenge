@@ -1,8 +1,8 @@
 <body style="background:#429786">
 <body style="font-family:courier; line-height: 0">
-  <p>Game over <%=@visitor%>!</p>
-  <p><%=@outcome %></p>
-  <form action="/newgame">
+  <h1 style="text-align:center">Game over <%=@visitor%>!</h1>
+  <h2 style="text-align:center"><%=@outcome %></h2>
+  <form action="/newgame" style="text-align:center">
   <input type="submit" value="Play again!" >
   </form>
 </body>

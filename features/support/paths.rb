@@ -19,6 +19,9 @@ module NavigationHelpers
     when /the new game page/
       '/newgame'
 
+    when /the result page/
+      '/result'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
