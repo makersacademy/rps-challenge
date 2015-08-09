@@ -110,7 +110,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/process_game' do
-    @outcome = $GAME2.each_round_outcome
+    @outcome = $GAME2.each_round_outcome.to_s.capitalize
     redirect '/two_player_result' if there_is_a_winner?
     erb :two_player_processing_round
   end
