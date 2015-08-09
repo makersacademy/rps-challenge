@@ -83,6 +83,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/two_player_gameplay' do
+    redirect '/two_player_result' if there_is_a_winner?
     @name = session[:name2]
     $moves = 0
     erb :player_two_player
@@ -90,13 +91,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/two_player_gameplay' do
     session[:move] = params[:move]
+    @move = session[:move]
     if identify_id_even?
-      $GAME2.player_1.choose(session[:move].downcase.to_sym)
-      $move1 = session[:move]
+      $GAME2.player_1.choose(@move.downcase.to_sym)
+      $move1 = @move
       $moves += 1
     else
-      $GAME2.player_2.choose(session[:move].downcase.to_sym)
-      $move2 = session[:move]
+      $GAME2.player_2.choose(@move.downcase.to_sym)
+      $move2 = @move
       $moves += 1
     end
     redirect '/lobby'
@@ -108,26 +110,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/process_game' do
-    @outcome = $GAME2.each_round_outcome.capitalize
-    p '-------------------------'
-    p $GAME2.has_winner?
-    p '-------------------------'
-    # redirect '/two_player_result' if $GAME2.has_winner?
+    @outcome = $GAME2.each_round_outcome
+    redirect '/two_player_result' if there_is_a_winner?
     erb :two_player_processing_round
   end
 
   get '/two_player_result' do
-    @winner = $GAME.player_1.win_counter == 2
-    if $GAME.player_1.win_counter == 2
-      erb :two_player_first_player_won
-    else
-      erb :two_player_second_player_won
-    end
+    # @winner = $GAME.player_1.win_counter == 2
+    # if $GAME.player_1.win_counter == 2
+    #   erb :two_player_first_player_won
+    # else
+    #   erb :two_player_second_player_won
+    # end
   end
 
 
   def identify_id_even?
     $all_sessions.index(session[:session_id]).even?
+  end
+
+  def there_is_a_winner?
+    $GAME2.player_1.win_counter >= 4 || $GAME2.player_2.win_counter >= 4
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
