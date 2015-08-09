@@ -1,4 +1,4 @@
-Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
+<h1>Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!</h1>
 
 <form method="post">
   Now select an option!
@@ -10,10 +10,8 @@ Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
   <input value="Throw!" type="submit">
 </form>
 
-<% if params[:option] == "select" %>
-  <!-- ^ Would not work with @my_choice. Why? -->
-    Please select a valid option
-<% elsif params[:option] != nil %>
+
+<% if params[:option] != nil %>
   You threw <%= params[:option] %>!
   Computer threw <%=@computer_move %>!
 <% end %>

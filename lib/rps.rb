@@ -19,10 +19,10 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game' do
     @visitor = params[:myname]
-    @my_choice = params[:option]
+    @my_move = params[:option]
     @computer_move = Computer.new.move
-    @result = Game.new.result(@my_choice, @computer_move)
-    session[:option] = @my_choice
+    @result = Game.new.result(@my_move, @computer_move)
+    session[:option] = @my_move
     p params
     erb :game
   end
