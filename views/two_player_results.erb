@@ -1,0 +1,31 @@
+<head>
+  <meta http-equiv="refresh" content="3" >
+</head>
+
+<% if @player_1_count == @player_2_count %>
+
+<% if session_id_even? %>
+<% if @winner == 'Player 1 win' %>
+  You win!
+  <% elsif @winner == 'Draw' %>
+  'Draw'
+  <% else %>
+  You Lose!
+  <% end %>
+<% end %>
+
+<% if session_id_odd? %>
+<% if @winner == 'Player 2 win' %>
+  You win!
+  <% elsif @winner == 'Draw' %>
+  'Draw'
+  <% else %>
+  You Lose!
+  <% end %>
+<% end %>
+
+<form action="/lobby"><input type="submit" value="Play Again"></form>
+
+<% else %>
+Waiting for other play
+<% end %>
