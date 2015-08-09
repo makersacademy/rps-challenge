@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
-class rps-challenge < Sinatra::Base
+class Rps < Sinatra::Base
   get '/' do
-    'Hello rps-challenge!'
+    'Hello Rps!'
   end
 
   # start the server if ruby file executed directly

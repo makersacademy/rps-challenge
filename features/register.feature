@@ -5,4 +5,7 @@ Feature: Register
 
 Scenario: Create a player
   Given I am on the homepage
+  And I enter my name
+  When I press "start"
+  Then I should see "Hello, Raph"
 
