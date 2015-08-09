@@ -26,9 +26,8 @@ class Game
     weapon
   end
 
-  def computer_throw
-    throw = available_weapons.sample
-    moves[:computer] = throw
+  def computer_throw player
+    moves[player] = available_weapons.sample
   end
 
 end

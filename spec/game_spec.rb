@@ -23,9 +23,10 @@ describe Game do
 
   it 'can generate random throw for computer player' do
     rock = double()
+    player = double()
     subject.make_available rock
-    subject.computer_throw
-    expect(subject.moves).to include( {:computer => rock} )
+    subject.computer_throw player
+    expect(subject.moves).to include( {player => rock} )
   end
 
 end

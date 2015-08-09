@@ -12,7 +12,7 @@ let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
       expect(game).to respond_to(:rank).with(1).argument
     end
     it 'recognizes a draw' do
-      expect(game.rank tie_move).to eq nil
+      expect(game.rank tie_move).to eq 'Draw'
     end
     it 'returns the winning player if there is a winner' do
       rock = double()

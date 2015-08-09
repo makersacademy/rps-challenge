@@ -16,26 +16,32 @@ set :views, proc { File.join(root, '..', 'views') }
 
   post '/choose' do
     @name=params[:name]
-    player_2 = 'Computer' if params[:computer] = 'Yes'
-    new_game(@name, @computer)
+    new_game(@name)
     erb :choose
   end
 
   post '/throw' do
-    $game.available_weapons.each { |x| @throw = x if x.name == params[:choice] }
+    $game.available_weapons.each { |x| @throw = x if x.name == params[:Weapons] }
     $game.moves[$player_1] = @throw
-    $game.computer_throw
+    $game.computer_throw $player_2
     $winner = $game.rank($game.moves)
-    p $winner
+    
+    if $winner == 'Draw'
+      $result = 'Draw'
+    else
+      $result = $winner.name
+    end
+    
+    p $result
     erb :result
   end
 
-  def new_game name, computer
+  def new_game name
     $game = Game.new
     $player_1 = Player.new
     $player_2 = Player.new
     $player_1.name = name
-    $player_2.name = computer
+    $player_2.name = 'computer'
     $rock = Weapon.new
     $rock.name = 'Rock'
     $paper = Weapon.new
