@@ -5,8 +5,6 @@ class RpsWeb < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
   enable :sessions
 
-  $moves = 0
-
   get '/' do
     erb :index
   end
@@ -28,6 +26,11 @@ class RpsWeb < Sinatra::Base
     erb :singlemode
   end
 
+  get '/play-match' do
+    @name = $name_1
+    erb :playmatch
+  end
+
   get '/waiting-area' do
     if($player_1 && $player_2)
       redirect 'multi-mode'
@@ -38,18 +41,20 @@ class RpsWeb < Sinatra::Base
 
   get '/multi-mode' do
     $game_single = Game.new($player_1, $player_2)
-
+    $moves = 0
+    redirect '/play-match-double'
   end
 
-  get '/play-match' do
-    @name_1 = $name_1
-    erb :playmatch
+  get '/play-match-double' do
   end
 
   get '/matchresult' do
-    session[:move_single_player] = params[:move]
-    @move_single_player = session[:move_single_player].to_sym
-    erb :matchresultsingle
+    if $player_2.name == 'COMPUTER'
+      session[:move_single_player] = params[:move]
+      @move_single_player = session[:move_single_player].to_sym
+      erb :matchresultsingle
+    else
+    end
   end
 
   get '/gameresult' do

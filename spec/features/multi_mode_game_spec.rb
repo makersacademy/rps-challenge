@@ -26,15 +26,15 @@ feature 'Two player mode game' do
       end
     end
 
-    scenario 'First user should now be on the multi-mode page' do
+    scenario 'First user should now be on the play-match-double page' do
       in_browser(:chrome) do
-        expect(current_path).to eq('/multi-mode')
+        expect(current_path).to eq('/play-match-double')
       end
     end
 
-    scenario 'Second user should also now be on the multi-mode page' do
+    scenario 'Second user should also now be on the play-match-double page' do
       in_browser(:safari) do
-        expect(current_path).to eq('/multi-mode')
+        expect(current_path).to eq('/play-match-double')
       end
     end
     # scenario 'User two can be created' do
