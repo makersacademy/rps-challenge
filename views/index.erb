@@ -1,10 +1,13 @@
 <% if @player_name %>
 <h2>Player: <%= @player_name %><h2>
+  <% if @display_result %>
+    <h2>Result: <%= @display_result %></h2>
+  <% end %>
 <h2>Choose your hand</h2>
   <form action="/" method="POST">
-    <input type="submit" value="rock" name="rock">
-    <input type="submit" value="paper" name="paper">
-    <input type="submit" value="scissors" name="scissors">
+    <input type="submit" value="rock" name="hand">
+    <input type="submit" value="paper" name="hand">
+    <input type="submit" value="scissors" name="hand">
   </form>
 <% else %>
 <h1>Enter name</h1>

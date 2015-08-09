@@ -29,20 +29,15 @@ feature "Starting a new game" do
   scenario "I select my choice of hand" do
     visit "/"
     click_button "start game"
-    expect(page).to have_selector("input[type=submit][name='rock']")
+    expect(page).to have_selector("input[type=submit][name='hand']")
   end
 
-  scenario "I select my choice of hand" do
+
+  scenario "I see result of my hand" do
     visit "/"
     click_button "start game"
-    expect(page).to have_selector("input[type=submit][name='paper']")
+    click_button "paper"
+    expect(page).to have_content "Result:"
   end
-
-  scenario "I select my choice of hand" do
-    visit "/"
-    click_button "start game"
-    expect(page).to have_selector("input[type=submit][name='paper']")
-  end
-
 
 end
