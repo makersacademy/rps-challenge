@@ -15,8 +15,13 @@ OPTIONS = { :rock => :paper,
   	end
 	end
 
+	#How much are these needed?
+	def user_choice (choice)
+		@choice = choice
+	end
 
-	def random_choice
+
+	def computer_choice
 		[:rock, :paper, :scissors].sample
 	end
 
