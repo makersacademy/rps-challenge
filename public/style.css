@@ -22,3 +22,13 @@ font-family: 'Open Sans', sans-serif;
   height: auto;
   padding: 50px;
 }
+
+
+.results {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.results h4 {
+  text-align: center;
+}
