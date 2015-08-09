@@ -1,0 +1,15 @@
+<% if $game.player1.choice && $game.player2.choice %>
+  <% if $game.player1.choice == $game.player2.choice %>
+    <%= "It's a draw!!" %>
+  <% else %>
+    <% @winner = $game.check_winner.name %>
+    <% if @winner == session[:player_name] %>
+      <%= "Congratulations #{session[:player_name]}: You are victorious!!" %>
+    <% else %>
+      <%= "Bad luck #{session[:player_name]}: You're a loser..." %>
+    <% end %>
+  <% end %>
+<% else %>
+  <h2>Still waiting on your opponent to make a move...</h2>
+  <a href='/result'>Click here to refresh</a>
+<% end %>

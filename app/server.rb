@@ -13,7 +13,25 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/update-game' do
-    
+    session[:player_name] = params[:name_field].capitalize
+    if not $game
+      $game = Game.new(Player.new(session[:player_name]), Player.new)
+      @player_1 = $game.player1
+    else
+      $game.player2.name = session[:player_name]
+      @player_2 = $game.player2
+    end
+    erb :game
+  end
+
+  post '/result' do
+    puts session[:player_move]
+    $game.player1.name == session[:player_name] ? $game.player1.set_choice(params[:player_move]) : $game.player2.set_choice(params[:player_move])
+    erb :result
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly
