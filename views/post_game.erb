@@ -1,0 +1,7 @@
+  <div>
+    <h3>You chose <%= "#{@player_choice}" %> and your opponent chose <%= "#{@computer_choice}" %>.</h3>
+    <h3>You <%= "#{@result}!" %></h3>
+    <form action='/one_player_game'>
+      <input type='submit' value='Play Again?'>
+    </form>
+  </div>

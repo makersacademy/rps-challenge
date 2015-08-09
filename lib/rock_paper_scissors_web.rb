@@ -24,7 +24,8 @@ class RockPaperScissors < Sinatra::Base
   post '/one_player_game' do
     @player_choice = params['choice'].to_sym
     @computer_choice = $computer.choice
-    "You chose #{@player_choice} and the computer chose #{@computer_choice}."
+    @result = $game.result(@player_choice, @computer_choice)
+    erb :post_game
   end
 
   get '/two_player_game' do

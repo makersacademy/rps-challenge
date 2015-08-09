@@ -1,18 +1,16 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double(:player) }
-  let(:player2) { double(:player) }
   context '#winner'
-    it 'can return the winner' do
-      allow(player1).to receive(:choice) { :rock }
-      allow(player2).to receive(:choice) { :paper }
-      expect(subject.winner(player1, player2)).to eq(player2)
+    it 'can return the winning choice' do
+      expect(subject.result(:paper, :rock)).to eq(:win)
     end
 
     it 'can return a draw' do
-      allow(player1).to receive(:choice) { :rock }
-      allow(player2).to receive(:choice) { :rock }
-      expect(subject.winner(player1, player2)).to eq(:draw)
+      expect(subject.result(:paper, :paper)).to eq(:draw)
+    end
+
+    it 'can return the losing choice' do
+      expect(subject.result(:rock, :paper)).to eq(:lose)
     end
 end
