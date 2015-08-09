@@ -3,7 +3,6 @@ Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
 <form method="post">
   Now select an option!
   <select name="option">
-    <option>select</option>
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
@@ -17,4 +16,13 @@ Hello <%= @visitor %>, welcome to Rock, Paper, Scissors!
 <% elsif params[:option] != nil %>
   You threw <%= params[:option] %>!
   Computer threw <%=@computer_move %>!
+<% end %>
+
+<% case %>
+<% when @result == 'player 1' %>
+  You win!
+<% when @result == 'draw' %>
+  Draw!
+<% when @result == 'player 2' %>
+  Computer wins!
 <% end %>

@@ -21,6 +21,7 @@ class RockPaperScissors < Sinatra::Base
     @visitor = params[:myname]
     @my_choice = params[:option]
     @computer_move = Computer.new.move
+    @result = Game.new.result(@my_choice, @computer_move)
     session[:option] = @my_choice
     p params
     erb :game

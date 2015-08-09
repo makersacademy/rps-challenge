@@ -15,7 +15,21 @@ feature 'Playing a game' do
     visit '/game?myname=Antonio'
     select 'Rock', from: 'option'
     click_button 'Throw!'
-    @computer_move = 'Paper'
+    #computer needs to be stubbed for paper
     expect(page).to have_content "Computer threw Paper!"
+  end
+  scenario 'Draw' do
+    visit '/game?myname=Antonio'
+    select 'Rock', from: 'option'
+    click_button 'Throw!'
+    #computer needs to be stubbed for rock
+    expect(page).to have_content "Draw!"
+  end
+  scenario 'A winner is declared' do
+    visit '/game?myname=Antonio'
+    select 'Rock', from: 'option'
+    click_button 'Throw!'
+    #computer needs to be stubbed for paper
+    expect(page).to have_content "Computer wins!"
   end
 end
