@@ -14,12 +14,12 @@ describe Game do
 
   it 'raises an error if only one player has made a choice' do
     subject = Game.new player, rock_player
-    expect{ subject.check_win }.to raise_error("Only one player has made their selection")
+    expect(subject.check_win).to eq("Only one player has made their selection")
   end
 
   it 'lets you know when there has been a draw' do
     subject = Game.new rock_player, rock_player
-    expect{ subject.check_win }.to raise_error("Draw!")
+    expect(subject.check_win).to eq("Draw!")
   end
 
   it 'paper beats rock' do
