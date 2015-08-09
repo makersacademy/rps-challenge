@@ -11,4 +11,6 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'cucumber'
+  gem 'cucumber-sinatra'
 end
