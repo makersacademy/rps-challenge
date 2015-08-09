@@ -21,3 +21,11 @@ Feature: starting a game
     Then I should see "Hello Sivan, lets play Rock, Paper, Scissors!"
     When I press "Single Player"
     Then I should see "Rock Paper Scissors"
+
+  Scenario: Winning a game
+    Given I am on the namepage
+    When I fill in "name" with "Sivan"
+    And I press "Submit"
+    Then I press "Single Player"
+    Then I press "Play"
+    Then I should see "wins"
