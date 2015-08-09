@@ -1,12 +1,18 @@
 # RPS Challenge: Rōnin Badge Test
 
+[![Build Status](https://travis-ci.org/adrianw1832/rps-challenge.svg?branch=master)](https://travis-ci.org/adrianw1832/rps-challenge)
+
+How I approached it
+-------------------
+I approached it pretty much the same way I did for BattleshipsWeb this week. Following the feature then unit test cycle, I actually wrote a couple of webpages before doing the app logic. For the app logic, I largely followed Ben's Battleships as a good template. After that, I finished up on the Single Player Mode and went on to do the Multiplayer Mode. The process was largely similar to the single player with the exception of tracking the session ids and using refreshing lobby as a means to match the players. I am not sure if this is a good way to implement it but it certainly works. Doing multiplayer on battleships helped a lot with the bonus part since they are pretty similar in the implementation. I wasn't planning on doing the second bonus because it could easily be done with a bunch of case when codes. However, I gave it some thought and I wanted to see if there was a more elegant solution than that. The idea struck me suddenly and I would like to think that my implementation is quite a bit better, so I just added a bunch of tests and implemented the second bonus.
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!

@@ -1,0 +1,8 @@
+<p>You played <%= @move %>!</p>
+<p>The computer played <%= @computer_move %>!</p>
+<%= result_message %>
+<br>
+<br>
+<form action="/singleplayer" method="get">
+  <input type="submit" value="Play again!">
+</form>

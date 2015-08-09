@@ -1,0 +1,14 @@
+<% if identify_player_1 %>
+  <p>You played <%= @player_1_move %>!</p>
+  <p>Your opponent played <%= @player_2_move %>!</p>
+  <%= result2_message('player_1') %>
+<% else %>
+  <p>You played <%= @player_2_move %>!</p>
+  <p>Your opponent played <%= @player_1_move %>!</p>
+  <%= result2_message('player_2') %>
+<% end %>
+<br>
+<br>
+<form action="/multiplayer" method="get">
+  <input type="submit" value="Play again!">
+</form>
