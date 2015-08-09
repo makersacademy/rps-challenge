@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
   set :public, proc { File.join(root, '..', 'public') }
 
   get '/' do
-    erb :index, layout: false
+    erb :index
   end
 
   get '/gameplay' do

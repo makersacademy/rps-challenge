@@ -22,10 +22,10 @@
 <div class="results">
 <h4>The computer selected <%= @computer_choice %> </h4>
 <% if @computer_choice == :rock %> 
-<a href="/rock" id="r"><img class="rps" src="rock.png"></a>
+<img class="rps" src="rock.png">
 <% elsif @computer_choice == :paper %>
-<a href="/paper" id="p"><img class="rps" src="paper.jpg"></a>
+<img class="rps" src="paper.jpg">
 <% elsif @computer_choice == :scissors %>
-<a href="/scissors" id="s"><img class="rps" src="scissors.png"></a>
+<img class="rps" src="scissors.png">
 <% end %>
 </div>

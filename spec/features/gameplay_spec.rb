@@ -13,14 +13,22 @@ feature "User makes a RPS selection" do
 	scenario "I choose R, P or S and am shown the result" do
 		visit "/gameplay"
 		click_link "r"
-		expect(page).to have_content "You selected rock"
+		expect(page).to have_content "You selected Rock"
 	end
 
 	scenario "Player is shown they are the winner or loser (& the computer choice)" do
 		visit "/gameplay"
 		click_link "r"
-		expect(page).to have_content "You are the"
+		expect(page).to have_content "Hi"
 	end
+
+	scenario "User can go back to play again" do
+		visit "/gameplay"
+		click_link "r"
+		click_link "play_again"
+		expect(page).to have_content "Choose Rock, Paper or Scissors"
+	endx
+
 end
 
 

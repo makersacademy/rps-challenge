@@ -30,11 +30,12 @@ describe Game do
 	 		expect(subject.play(:scissors, :rock)).to eq "Player 2 Wins"
 	 	end
 	end
-
-	#need to stub out random nature of .sample
-  xit "creates a random choice of RPS for computer player" do
-  	subject.random_choice
-    expect(subject.CHOICES).to eq [:rock, :paper, :scissors]
+	 
+	#need to stub out random nature of .sample. Unsure if correct?
+  it "creates a random choice of RPS for computer player" do
+  	game = double("game")
+  	allow(game).to receive(:computer_choice).and_return(:rock)
+  	expect(game.computer_choice).to eq :rock
  	end
 
 end 

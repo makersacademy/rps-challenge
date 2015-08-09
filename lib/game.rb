@@ -12,7 +12,7 @@ OPTIONS = { :rock => :paper,
     	"Player 2 Wins"
   	else
     	"Player 1 Wins"
-  	end
+		end
 	end
 
 	#How much are these needed?
@@ -24,5 +24,7 @@ OPTIONS = { :rock => :paper,
 	def computer_choice
 		[:rock, :paper, :scissors].sample
 	end
+
+	def count
 
 end
