@@ -38,11 +38,17 @@ feature 'Two player mode game' do
       end
     end
 
-    # scenario 'First user is recognized when playing a match' do
-    #   in_browser(:chrome) do
-    #     expect(page).to have_content "Ok, Giuseppe"
-    #   end
-    # end
+    scenario 'First user is recognized when playing a match' do
+      in_browser(:chrome) do
+        expect(page).to have_content "Ok, Giuseppe"
+      end
+    end
+
+    scenario 'Second user is recognized when playing a match' do
+      in_browser(:safari) do
+        expect(page).to have_content "Ok, Mario"
+      end
+    end
   end
 
 end

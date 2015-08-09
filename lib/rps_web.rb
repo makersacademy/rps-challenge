@@ -51,12 +51,17 @@ class RpsWeb < Sinatra::Base
     redirect '/play-match-double'
   end
 
-  # get '/play-match-double' do
-  #   if $moves.even?
-  #     @name = $player_1.name
-  #   else
-  #   end
-  # end
+  get '/play-match-double' do
+    if session[:session_id] == session[:id_1]
+      @name = $player_1.name
+      $moves += 1
+      erb :playmatch
+    elsif session[:session_id] == session[:id_2]
+      @name = $player_2.name
+      $moves += 1
+      erb :playmatch
+    end
+  end
 
   get '/matchresult' do
     if $player_2.name == 'COMPUTER'
