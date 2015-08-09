@@ -1,0 +1,15 @@
+<div>
+  <h1>Player: <%= session[:name] %></h1>
+  <h1>Welcome to Rock Paper Scissors</h1>
+  <form method='post'>
+    <label>Please choose between Rock Paper and Scissors:
+       <select name='object'>
+        <option value='Rock'>Rock</option>
+        <option value='Paper'>Paper</option>
+        <option value='Scissors'>Scissors</option>
+      </select>
+    </label>
+     <br>
+      <input type='submit' value='Submit'>
+  </form>
+</div>
