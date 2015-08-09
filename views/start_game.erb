@@ -1,0 +1,18 @@
+<div>
+  <strong>Choose Your Hand!</strong>
+  <p></p>
+  <br>
+  <form action='/start_game' method='POST'>
+  Select either 'Rock', 'Scissors' or 'Paper':
+    <select name="hand_selection">
+      <option value="rock">Rock</option>
+      <option value="scissors">Scissors</option>
+      <option value="paper">Paper</option>
+    </select>
+  </form>
+  <br>
+  <br>
+  <form action="/game">
+    <input type="submit" value="Click to Confirm">
+  </form>
+</div>

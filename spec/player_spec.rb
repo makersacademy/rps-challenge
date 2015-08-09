@@ -24,10 +24,10 @@ describe Player do
     end
   end
 
-  describe '#winner?' do
-    xit 'knows when it is the winner' do
-      allow(opponent).to receive(:winner?).and_return false
-      expect(subject).to be_winner
-    end
-  end
+  # describe '#winner?' do
+  #   xit 'knows when it is the winner' do
+  #     allow(opponent).to receive(:winner?).and_return false
+  #     expect(subject).to be_winner
+  #   end
+  # end
 end
