@@ -1,0 +1,14 @@
+<% if @visitor != '' && @visitor != nil %>
+  Hello <%= @visitor %>, welcome to Rock Paper Scissors Spock Lizard!
+  <form action="/newgame">
+    <input type="submit" value="New Game" >
+  </form>
+
+<% else %>
+  <form action="/name">
+    What's your name?
+    <input name="name" type="text">
+    <input type="submit" value="Submit">
+  </form>
+
+<% end %>
