@@ -1,0 +1,12 @@
+Welcome: <%= session[:playername] %>
+
+<form method="post" action="/result">
+<label>Please select a weapon:
+<select name="weapon">
+  <option value="rock">Rock</option>
+  <option value="paper">Paper</option>
+  <option value="scissors">Scissors</option>
+</select>
+<input type="submit" value="Go!">
+</label>
+</form>
