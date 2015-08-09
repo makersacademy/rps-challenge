@@ -12,7 +12,7 @@ feature "Starting a new game" do
     visit "/register"
     fill_in('first_name', with: 'Zaid')
     click_button('Play!')
-    expect(page).to have_content("Rufio, select your move!")
+    expect(page).to have_content("Zaid, select your weapon of choice!")
   end
 
 #   scenario "" do
