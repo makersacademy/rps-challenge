@@ -59,20 +59,20 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 IRB tests:
 
 EXPECTED OUTCOME:
-emily = Player.new
-=> #<Player:0x007fc4d18329d8>
-emily.pick "rock"
-=> "You win!"/"You lost!"/"It's a tie!"
+- emily = Player.new
+- => #<Player:0x007fc4d18329d8>
+- emily.pick "rock"
+- => "You win!"/"You lost!"/"It's a tie!"
 
-emily = Player.new
-=> NameError: uninitialized constant Player
-created rspec test and class
-=> #<Player:0x007fc4d18329d8>
-emily.pick "rock"
-=> nil
-created rspec test to return error if not "rock", "paper", "scissors", "lizard" or "spock"
-created rspec test to stub 'computer' and to return "you win!"
-irb(main):002:0> emily.pick "rock"
+- emily = Player.new
+- => NameError: uninitialized constant Player
+- created rspec test and class
+- => #<Player:0x007fc4d18329d8>
+- emily.pick "rock"
+- => nil
+- created rspec test to return error if not "rock", "paper", "scissors", "lizard" or "spock"
+- created rspec test to stub 'computer' and to return "you win!"
+- irb(main):002:0> emily.pick "rock"
 => "You lose!"
 irb(main):003:0> emily.pick "rock"
 => "You lose!"
@@ -105,4 +105,4 @@ Ruby logic to work out winner:
 - Computer is rand(1..5).
 - If the two numbers are both odd or both even, the the smaller number wins.
 - If one number is even and the other is odd, the larger number wins.
-Or if the numbers are the same, it is a tie!
+- Or if the numbers are the same, it is a tie!

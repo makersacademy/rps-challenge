@@ -23,6 +23,5 @@ Feature: initiating a game
   Scenario: Playing the game
     Given I am on the new game page
     And I select "scissors" from rockpaperscissors
-    And my "name" is "Fred"
     When I press "Submit"
-    Then I should see "Game over Fred!"
+    Then I should see "Game over"
