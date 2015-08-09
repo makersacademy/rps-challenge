@@ -1,23 +1,57 @@
 class Game
 
-  def game_choices player_1_turn, player_2_turn
+  OPTIONS = ['rock', 'paper', 'scissors']
 
-  player_1 = player_1_turn
-  player_2 = player_2_turn
+  attr_reader :player_selection, :opponents_selection
 
-    if player_1_turn == :rock && player_2_turn == :scissors
-      "rock smashes scissors!!! Player 1 wins"
-    elsif
-      player_1_turn == :paper && player_2_turn == :rock
-        "paper covers rock!!! Player 1 wins"
-    elsif
-      player_1_turn == :scissors && player_2_turn == :paper
-        "Scissors cuts paper!!! Player 1 wins"
-    elsif
-      player_1_turn == player_2_turn
-       return "Game drawn"
+  def initialize player_selection
+    @player_selection = player_selection
+    @opponents_selection = ['rock', 'paper', 'scissors'].sample
+  end
+
+  def result
+    return 'Draw' if player_selection == opponents_selection
+    if player_selection == 'rock'
+      rock_results
+    elsif player_selection == 'paper'
+      paper_results
+    elsif player_selection == 'scissors'
+      scissors_results
+    end
+  end
+
+  def winner
+    "Winner"
+  end
+
+  def loser
+    "Loser"
+  end
+
+  def rock_results
+    if opponents_selection == 'scissors'
+      return winner
     else
-      "Player 2 wins"
+      opponents_selection == 'paper'
+      return loser
+    end
+  end
+
+  def paper_results
+    if opponents_selection == 'rock'
+      return winner
+    else
+      opponents_selection == 'scissors'
+      return loser
+    end
+  end
+
+  def scissors_results
+    if opponents_selection == 'paper'
+      return winner
+    else
+      opponents_selection == 'rock'
+      return loser
     end
   end
 
