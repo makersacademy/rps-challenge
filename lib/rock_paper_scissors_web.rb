@@ -92,11 +92,11 @@ class RockPaperScissors < Sinatra::Base
     session[:move] = params[:move]
     @move = session[:move]
     if identify_id_even?
-      $GAME2.player_1.choose(@move.downcase.to_sym)
+      $GAME2.player_1.choose(@move.to_sym)
       $move1 = @move
       $moves += 1
     else
-      $GAME2.player_2.choose(@move.downcase.to_sym)
+      $GAME2.player_2.choose(@move.to_sym)
       $move2 = @move
       $moves += 1
     end

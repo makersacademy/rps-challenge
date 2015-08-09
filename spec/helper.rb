@@ -18,7 +18,6 @@ def setup_two_players_gameplay
     click_button 'Two Player Mode'
     fill_in('name', with: 'Leon')
     click_button 'Submit'
-    visit '/welcome'
   end
 
   browser(:one) do
@@ -26,7 +25,6 @@ def setup_two_players_gameplay
     click_button 'Two Player Mode'
     fill_in('name', with: 'Ryan')
     click_button 'Submit'
-    visit '/welcome'
   end
 
   browser(:two) do
