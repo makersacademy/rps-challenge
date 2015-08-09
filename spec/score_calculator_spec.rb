@@ -21,8 +21,8 @@ let(:tie_move) { {:player_1 => 'rock', :player_2 => 'rock'} }
       allow(scissors).to receive(:beats?).with(rock).and_return false
       rock.beats?(scissors)
       scissors.beats?(rock)
-      move = {p1: rock, p2: scissors}
-      expect(game.rank move).to eq :p1
+      move = {'p1'=> rock, 'p2'=> scissors}
+      expect(game.rank move).to eq 'p1'
     end
   end
 

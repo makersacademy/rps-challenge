@@ -4,7 +4,7 @@ require_relative 'game'
 class Rpschallenge < Sinatra::Base
   
 set :views, proc { File.join(root, '..', 'views') }
-$game = Game.new
+
 
   get '/' do
     erb :index
@@ -25,7 +25,8 @@ $game = Game.new
     $game.available_weapons.each { |x| @throw = x if x.name == params[:choice] }
     $game.moves[$player_1] = @throw
     $game.computer_throw
-    @winner = $game.rank $game.moves
+    $winner = $game.rank($game.moves)
+    p $winner
     erb :result
   end
 
