@@ -1,18 +1,16 @@
 require_relative 'random_weapon_generator'
 
 class Game
+  include RandomWeaponGenerator
+
   attr_reader :name
 
   def initialize(name="Player 1")
     @name = name
   end
 
-  include RandomWeaponGenerator
-
   def play weapon
-    opponent_weapon = random_weapon
-
-    game_outcome(weapon, opponent_weapon)
+    game_outcome(weapon, random_weapon)
   end
 
 
