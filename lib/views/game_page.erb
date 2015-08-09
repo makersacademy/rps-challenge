@@ -9,6 +9,10 @@
   <input type='submit' value='GO!'>
 </form>
 
+<% if @result %>
+  <h3>Opponent chose <%= "#{@opponent_weapon.capitalize}" %>...</h3>
+<% end %>
+
 <% if @result == :win %>
   <h2>YOU WON!</h2>
 <% elsif @result == :loss %>

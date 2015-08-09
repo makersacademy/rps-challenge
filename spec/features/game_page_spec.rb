@@ -28,16 +28,23 @@ feature 'Game Page' do
   end
 
   context "if user has selected a weapon and clicked 'GO!'" do
+    scenario "user is informed of opponent's choice" do
+      allow_any_instance_of(Game).to receive(:random_weapon).and_return :paper
+      choose 'rock'
+      click_on 'GO!'
+      expect(page).to have_content "Opponent chose paper..."
+    end
+
     scenario 'user is told they have won if they win the game' do
       allow_any_instance_of(Game).to receive(:play).with(:rock).and_return :win
-      choose('rock')
+      choose 'rock'
       click_on 'GO!'
       expect(page).to have_content "YOU WON!"
     end
 
     scenario 'user is told they have lost if they lose the game' do
       allow_any_instance_of(Game).to receive(:play).with(:rock).and_return :loss
-      choose('rock')
+      choose 'rock'
       click_on 'GO!'
       expect(page).to have_content "YOU LOST!"
     end
