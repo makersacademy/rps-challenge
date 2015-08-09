@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 
 class Rps_challenge < Sinatra::Base
-  set :views, Proc.new { File.join(root, "..", "views")}
+  set :views, Proc.new { File.join(root, "..", "views") }
 
   get '/' do
     'Hello rps-challenge!'

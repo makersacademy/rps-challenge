@@ -16,14 +16,14 @@ Then(/^I should see "([^"]*)"$/) do |arg1|
 end
 
 Given(/^I am on the SignIn page$/) do
-  visit  '/SignIn'
+  visit '/SignIn'
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in "name", with: "Richard"
 end
 
-When(/^press "([^"]*)"$/) do |arg1|
+When(/^I press "([^"]*)"$/) do |arg1|
   click_link(arg1)
 end
 
