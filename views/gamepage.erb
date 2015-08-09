@@ -33,15 +33,12 @@
 </div>
 <div>
   <% if @win == true%>
-    <h1>You win!</h1>
+    <h1>And the winner is...You!</h1>
     <h3>Computer Played <%= @comp_choice %><h3>
   <% elsif @win == false %>
-    <h1>You Lose! Computer Played <%= @comp_choice %>!</h1>
+    <h1>And the winner is...Computer. Computer Played <%= @comp_choice %>!</h1>
   <% elsif @win == "Draw" %>
-    <h1>Draw! Try again!</h1>
-  <% end %>
-  <% if @no_play == true %>
-    <h3>Nothing is not a valid play! Choose, Rock, Paper, or Scissors!</h3>
+    <h1>And the winner is...Draw! Try again!</h1>
   <% end %>
 </div>
 </body>

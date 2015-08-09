@@ -1,29 +1,21 @@
 require 'spec_helper'
 
 feature 'Starting a new game' do
-
-  context 'when on new game screen' do
-    scenario 'user is asked to enter name' do
-      visit '/register'
-      expect(page).to have_field("name")
-    end
+  scenario 'user is asked to enter name' do
+    visit '/'
+    expect(page).to have_content("Welcome to Rock Paper Scissors Online!")
   end
 
-  context 'when user enters name' do
-    scenario 'user is taken to the game page' do
-      visit '/register'
-      fill_in('name', with: 'Owen')
-      click_button('Submit')
-      expect(current_path).to eq '/game_page'
-    end
+  scenario 'user is taken to the game page' do
+    visit '/'
+    fill_in('name', with: 'Owen')
+    click_button('Submit')
+    expect(current_path).to eq '/gamepage'
   end
 
-  context 'when user does not enter name' do
-    scenario "user is given name 'Player1' and is taken to the game page" do
-      visit '/register'
-      click_button('Submit')
-      expect(page).to have_content("Hello, Player1! Rock Paper Scissors Shoot!")
-    end
+  scenario "user is given name 'Player1' and is taken to the game page" do
+    visit '/'
+    click_button('Submit')
+    expect(page).to have_content("Hello, Player 1! Let the games begin! Make your selection! Rock Paper Scissors")
   end
-
 end
