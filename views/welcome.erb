@@ -1,9 +1,16 @@
 <div>
-  <p> Let's play Roshambo, <%= @player_name %> ! </p>
+  <p> Let's play Roshambo, <%= @player_1.name %> ! </p>
   <p> Select one option: </p>
-  <select id='move'>
-    <option value='rock'> Rock </option>
-    <option value='scissors'> Scissors </option>
-    <option value='paper'> Paper </option>
-  </select>
+  <div>
+    <select name='move' form="moveform">
+        <option value='rock'> Rock </option>
+        <option value='scissors'> Scissors </option>
+        <option value='paper'> Paper </option>
+    </select>
+  </div>
+  <div>
+    <form action="/game" id="moveform">
+      <input type='submit' value='Play'>
+    </form>
+  </div>
 </div>
