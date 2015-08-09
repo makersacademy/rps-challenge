@@ -4,7 +4,7 @@ attr_reader :opponent_choice
 
   def play(player_choice)
     fail "Not a valid option" unless valid_choice?(player_choice)
-    @opponent_choice = opponent_choice
+    @opponent_choice = opponent_weapon
     if player_choice == @opponent_choice
       "It's a draw!"
     elsif player_choice == :rock
@@ -16,7 +16,7 @@ attr_reader :opponent_choice
     end
   end
 
-  def opponent_choice
+  def opponent_weapon
     [:rock, :paper, :scissors].sample
   end
 

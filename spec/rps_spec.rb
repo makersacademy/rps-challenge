@@ -11,17 +11,17 @@ describe Game do
   end
 
   it 'should allow for a draw' do
-    allow(subject).to receive(:opponent_choice) { :rock }
+    allow(subject).to receive(:opponent_weapon) { :rock }
     expect(subject.play(:rock)).to eq "It's a draw!"
   end
 
   it 'should allow for a win' do
-    allow(subject).to receive(:opponent_choice) { :scissors }
+    allow(subject).to receive(:opponent_weapon) { :scissors }
     expect(subject.play(:rock)).to eq "You win!"
   end
 
   it 'should allow for a loss' do
-    allow(subject).to receive(:opponent_choice) { :paper }
+    allow(subject).to receive(:opponent_weapon) { :paper }
     expect(subject.play(:rock)).to eq "You lose!"
   end
 end

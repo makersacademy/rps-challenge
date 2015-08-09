@@ -1,1 +1,24 @@
-Results: <%= @result %>
+<!DOCTYPE html>
+<html>
+<style>
+body { background-image: url("/images/background.jpeg"); }
+</style>
+<body>
+
+<h1 style="background-color:White">Results: <%= @result %></h1>
+<h2>You chose:</h2>
+<img src=/images/<%=@weapon%>.png style="width:128px;height:128px;">
+<p><%= @weapon %></p>
+
+<br>
+
+<h2>Your opponent chose:</h2>
+<img src=/images/<%=@opponent_choice%>.png style="width:128px;height:128px;">
+<p><%= @opponent_choice %></p>
+
+<form action="/game">
+  <button type="submit">New Game</button>
+</form>
+
+</body>
+</html>

@@ -29,6 +29,7 @@ class RPSWeb < Sinatra::Base
   post '/result' do
     @weapon = params[:weapon].to_sym
     @result = $game.play(@weapon)
+    @opponent_choice = $game.opponent_choice
     erb :result
   end
 
