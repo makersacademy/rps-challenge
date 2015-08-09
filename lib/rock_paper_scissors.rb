@@ -17,6 +17,7 @@ class RockPaperScissors < Sinatra::Base
     @player_name = session[:player_name] if session[:player_name]
     @player_name = set_player_name params if params[:name]
     session[:player_name] = @player_name
+
     erb :index
   end
 
