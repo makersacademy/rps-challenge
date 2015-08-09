@@ -25,13 +25,7 @@ set :views, proc { File.join(root, '..', 'views') }
     $game.moves[$player_1] = @throw
     $game.computer_throw $player_2
     $winner = $game.rank($game.moves)
-    
-    if $winner == 'Draw'
-      $result = 'Draw'
-    else
-      $result = $winner.name
-    end
-    
+    $winner == 'Draw' ? $result = 'Draw' : $result = $winner.name 
     p $result
     erb :result
   end
@@ -41,19 +35,32 @@ set :views, proc { File.join(root, '..', 'views') }
     $player_1 = Player.new
     $player_2 = Player.new
     $player_1.name = name
-    $player_2.name = 'computer'
+    $player_2.name = 'Computer'
     $rock = Weapon.new
     $rock.name = 'Rock'
     $paper = Weapon.new
     $paper.name = 'Paper'
     $scissors = Weapon.new
     $scissors.name = 'Scissors'
-    $rock.is_superior_to $scissors
-    $paper.is_superior_to $rock
-    $scissors.is_superior_to $paper
+    $spock = Weapon.new
+    $spock.name = 'Spock'
+    $lizard = Weapon.new
+    $lizard.name = 'Lizard'
     $game.make_available $rock
     $game.make_available $paper
     $game.make_available $scissors
+    $game.make_available $spock
+    $game.make_available $lizard
+    $rock.is_superior_to $scissors
+    $rock.is_superior_to $lizard
+    $paper.is_superior_to $rock
+    $paper.is_superior_to $spock
+    $scissors.is_superior_to $paper
+    $scissors.is_superior_to $lizard
+    $spock.is_superior_to $rock
+    $spock.is_superior_to $scissors
+    $lizard.is_superior_to $spock
+    $lizard.is_superior_to $paper
   end
 
   # start the server if ruby file executed directly

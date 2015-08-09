@@ -34,6 +34,18 @@ feature 'playing a game against the computer' do
         click_button('Throw')
         expect(page).to have_content "And the result is:" 
     end
+    scenario 'player can get a result with Spock' do
+        visit '/choose'
+        select('Spock', from: 'Weapons')
+        click_button('Throw')
+        expect(page).to have_content "And the result is:" 
+    end
+    scenario 'player can get a result with Lizard' do
+        visit '/choose'
+        select('Lizard', from: 'Weapons')
+        click_button('Throw')
+        expect(page).to have_content "And the result is:" 
+    end
 
   end
 
