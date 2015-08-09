@@ -19,12 +19,12 @@ class RockPaperScissors < Sinatra::Base
     erb :enter_name
   end
   
-  get '/play_computer' do    
+  get '/play_computer' do
     @name = params[:name] 
     erb :play_computer
   end
   
-  post '/play_computer' do   
+  post '/play_computer' do
     @choice = params[:choice]
     @computer = rand(3)
     erb :computer_result
@@ -34,21 +34,21 @@ class RockPaperScissors < Sinatra::Base
     erb :enter_name_2
   end
   
-  get '/play_friend' do    
-    @name1 = params[:name1] 
+  get '/play_friend' do   
+    @name1 = params[:name1]
     @name2 = params[:name2]
     erb :play_friend
-  end  
+  end
   
-  post '/play_friend' do   
+  post '/play_friend' do
     @choice1 = params[:choice1]
     erb :play_friend2
   end
   
-  get '/friend_result' do   
+  get '/friend_result' do
     @choice2 = params[:choice2]
     erb :friend_result
-  end  
+  end
 
   get '/spock' do
     erb :enter_name_spock
@@ -56,10 +56,10 @@ class RockPaperScissors < Sinatra::Base
   
   get '/play_spock' do
     @name = params[:name] 
-    erb :play_spock   
+    erb :play_spock
   end
   
-  post '/play_spock' do   
+  post '/play_spock' do
     @choice = params[:choice]
     @computer = rand(5)
     erb :spock_result
