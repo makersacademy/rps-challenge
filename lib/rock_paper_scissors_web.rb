@@ -3,6 +3,8 @@ require_relative 'game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+  $game = Game.new
+  $computer = ComputerPlayer.new
 
   get '/' do
     erb :index
@@ -17,6 +19,12 @@ class RockPaperScissors < Sinatra::Base
   get '/one_player_game' do
     @user_name = session[:name]
     erb :one_player_game
+  end
+
+  post '/one_player_game' do
+    @player_choice = params['choice'].to_sym
+    @computer_choice = $computer.choice
+    "You chose #{@player_choice} and the computer chose #{@computer_choice}."
   end
 
   get '/two_player_game' do

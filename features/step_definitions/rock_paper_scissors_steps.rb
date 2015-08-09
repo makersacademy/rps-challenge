@@ -6,6 +6,10 @@ Given(/^that I am on the start page$/) do
   visit '/start'
 end
 
+Given(/^that I am on the one_player_game page$/) do
+  visit '/one_player_game'
+end
+
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in(arg1, with: arg2)
 end

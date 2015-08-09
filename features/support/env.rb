@@ -7,6 +7,7 @@ require File.join(File.dirname(__FILE__), '..', '..', 'lib/rock_paper_scissors_w
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'cucumber/rspec/doubles'
 
 Capybara.app = RockPaperScissors
 

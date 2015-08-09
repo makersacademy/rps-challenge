@@ -3,7 +3,7 @@ body {
 }
 
 div {
-	
+
 	background-color: #ffffff;
 	border-radius: 5px;
 	text-align: center;
@@ -18,20 +18,22 @@ div {
 	letter-spacing: -2px;
 }
 
-#buttons {
+button {
 	margin: auto;
-
+	border: 0;
+	padding: 0;
 }
 
-img {
-	width: 20%;
+button img {
+	width: 230px;
 	height: 230px;
-	margin: 18px;
-	padding:20px;
+	margin: 0;
+	padding: 0;
 }
 
-img:hover {
+button:hover {
 	cursor: pointer;
+	border: 3px solid #45d3f7;
 }
 
 #play, #play_again {
@@ -47,7 +49,7 @@ img:hover {
 
 #play {
 	width: 60px;
-	
+
 }
 
 #play_again {
