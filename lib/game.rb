@@ -2,11 +2,17 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :computer
 
   def initialize
     @player_1 = player_1
     @player_2 = player_2
+    @win = win
+    @computer = computer
+  end
+
+  def computer_choice
+    @computer = [:Paper, :Scissors, :Rock].sample
   end
 
   def win

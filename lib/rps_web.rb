@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require_relative 'game'
-
+require_relative 'player'
 class RpsWeb < Sinatra::Base
   set :views, Proc.new { File.join(root, "..", "views") }
   enable :sessions
@@ -19,12 +19,21 @@ class RpsWeb < Sinatra::Base
     erb :game
   end
 
-  get '/single_player' do
 
-  end
-
-  post '/single_player' do
-
+  get '/result' do
+    game = Game.new
+  @player_choice = $game.choice(params[:choice])
+   @comp_choice = $game.computer_choice
+   outcome = $game.win
+   if outcome == true
+     @win = true
+   elsif outcome == false
+     @win = false
+   elsif outcome == :draw
+     @win = "Draw"
+   end
+   @name = session[:name]
+    erb :result
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
