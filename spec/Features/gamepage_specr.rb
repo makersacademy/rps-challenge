@@ -16,5 +16,4 @@ feature "Playing the game" do
       expect(page).to have_content("And the winner is...")
     end
   end
-
 end
