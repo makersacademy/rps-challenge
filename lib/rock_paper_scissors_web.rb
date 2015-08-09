@@ -116,12 +116,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/two_player_result' do
-    # @winner = $GAME.player_1.win_counter == 2
-    # if $GAME.player_1.win_counter == 2
-    #   erb :two_player_first_player_won
-    # else
-    #   erb :two_player_second_player_won
-    # end
+    if $GAME2.player_1.win_counter == 4
+      erb :two_player_first_player_won
+    else
+      erb :two_player_second_player_won
+    end
   end
 
 
@@ -130,7 +129,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def there_is_a_winner?
-    $GAME2.player_1.win_counter >= 4 || $GAME2.player_2.win_counter >= 4
+    ($GAME2.player_1.win_counter / 2) >= 2 || ($GAME2.player_2.win_counter / 2) >= 2
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
