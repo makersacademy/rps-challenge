@@ -55,3 +55,12 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+IRB tests:
+
+emily = Player.new
+# => NameError: uninitialized constant Player
+# created rspec test and class
+# => #<Player:0x007fc4d18329d8>
+emily.pick "rock"
+# => nil
