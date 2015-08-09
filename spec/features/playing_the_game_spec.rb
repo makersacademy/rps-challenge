@@ -11,4 +11,10 @@ feature 'Playing the game' do
     click_button('Play Again?')
     expect(page).to have_content('make your choice!')
   end
+
+  scenario 'Going back to the start' do
+    visit '/one_player_game'
+    click_button('Back to Start')
+    expect(page).to have_content('Which version would you like to play?')
+  end
 end

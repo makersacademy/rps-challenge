@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'Starting the game' do
   scenario 'I choose single player' do
       visit '/'
+      click_button('Classic RPS')
       fill_in('player_name', with: 'Rebecca')
       click_button('Submit')
       click_button('Single Player')
@@ -11,6 +12,7 @@ feature 'Starting the game' do
 
   scenario 'I choose two player' do
       visit '/'
+      click_button('Classic RPS')
       fill_in('player_name', with: 'Rebecca')
       click_button('Submit')
       click_button('Two Players')

@@ -19,6 +19,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/start' do
     session[:name] = params[:player_name]
+    session[:name] = "Anonymous" if session[:name] == ""
     @user_name = session[:name]
     $players << session[:session_id]
     if session[:version] == 'RPSLS'
