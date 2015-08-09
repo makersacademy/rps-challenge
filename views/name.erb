@@ -1,0 +1,14 @@
+<% if @visitor != '' && @visitor != nil %>
+  "Hello <%= @visitor %>, lets play Rock, Paper, Scissors!""
+  <form action="/newgame">
+    <input type="submit" value="Single Player" >
+  </form>
+
+<% else %>
+  <form action="/name">
+    What's your name?
+    <input name="name" type="text">
+    <input type="submit" value="Submit">
+  </form>
+
+<% end %>
