@@ -1,0 +1,6 @@
+<%= $game_single.match(@move_single_player, :rock) %>
+<% if $game_single.played_matches < 5 %>
+  <a href="/play-match">Play again</a>
+<% elsif $game_single.played_matches == 5 %>
+  <a href="/gameresult">View winner</a>
+<% end %>
