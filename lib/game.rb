@@ -2,11 +2,11 @@ class Game
 
   attr_reader :players
 
-  def initialize player_1, player_2
+  def initialize player_1, player_2, *win_conditions
     @player_1 = player_1
     @player_2 = player_2
     @players =[@player_1, @player_2]
-    @win_conditions = { "rock, paper" => @player_2,
+    @win_conditions = win_conditions[0] || { "rock, paper" => @player_2,
     "rock, scissors" => @player_1,
     "paper, scissors" => @player_2,
     "paper, rock" => @player_1,

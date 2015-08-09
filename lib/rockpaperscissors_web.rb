@@ -3,7 +3,7 @@ require_relative 'game'
 require_relative 'player'
 
 class RPSWeb < Sinatra::Base
-  set :views, Proc.new {File.join(root, "..", "views") }
+  set :views, Proc.new { File.join(root, "..", "views") }
   enable :sessions
 
   get '/' do
@@ -24,7 +24,7 @@ class RPSWeb < Sinatra::Base
       session[:user] = "player_2"
     end
     session[:game_type] = params[:game_type]
-   if session[:game_type] == "one_player" then $player_2 = Player.new ("COMPUTER") end
+  if session[:game_type] == "one_player" then $player_2 = Player.new ("COMPUTER") end
     $game = Game.new($player_1, $player_2)
     erb :start_game
   end
@@ -32,8 +32,8 @@ class RPSWeb < Sinatra::Base
   post '/result' do
     $player_2.throw_gesture if session[:game_type] == "one_player"
     if session[:user] == "player_1" && $player_1.gesture == nil
-    $player_1.throw_gesture((params[:gesture]).downcase)
-    elsif (session[:user] == "player_2" && $player_2.gesture == nil)
+      $player_1.throw_gesture((params[:gesture]).downcase)
+    elsif session[:user] == "player_2" && $player_2.gesture == nil
       $player_2.throw_gesture((params[:gesture]).downcase)
     end
     erb :result
