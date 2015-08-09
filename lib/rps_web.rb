@@ -10,33 +10,31 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  # post '/' do
-  # 	@name = params[:name]
-  # 	erb :index
-  # end
-
   get '/gameplay' do
   	erb :gameplay
   end
 
   post '/gameplay' do
+  	$name = params[:name]
   	$g = Game.new
-  	@name = params[:name]
   	erb :gameplay 
   end
 
   get '/rock' do
   	@computer_choice = $g.computer_choice
+  	@result = $g.play(:rock, @computer_choice)
   	erb :rock
   end
 
    get '/paper' do
   	@computer_choice = $g.computer_choice
+  	@result = $g.play(:paper, @computer_choice)
   	erb :paper
   end
 
    get '/scissors' do
   	@computer_choice = $g.computer_choice
+  	@result = $g.play(:scissors, @computer_choice)
   	erb :scissors
   end
 

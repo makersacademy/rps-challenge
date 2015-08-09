@@ -15,8 +15,13 @@ feature "User makes a RPS selection" do
 		click_link "r"
 		expect(page).to have_content "You selected rock"
 	end
-end
 
+	scenario "Player is shown they are the winner or loser (& the computer choice)" do
+		visit "/gameplay"
+		click_link "r"
+		expect(page).to have_content "You are the"
+	end
+end
 
 
 
