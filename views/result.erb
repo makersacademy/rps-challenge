@@ -1,0 +1,10 @@
+<% if $player_1.gesture && $player_2.gesture %>
+  <%= $player_1.name %> chose <%= $player_1.gesture %>.<br />
+  <%= $player_2.name %> chose <%= $player_2.gesture %>.<br />
+  Result: <%= $game.reveal_winner %>
+<% else %>
+  <form method = "post">
+  Waiting for opponent to select option... click to get result
+  <input type = "submit" value = "Result">
+  </form>
+<% end %>
