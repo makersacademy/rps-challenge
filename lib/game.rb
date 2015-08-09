@@ -1,31 +1,28 @@
-require_relative 'player'
 require_relative 'weapon'
 require_relative 'score_calculator'
 
 
 class Game
 
-  attr_reader :available_weapons, :gamers
-  attr_accessor :moves
+  attr_accessor :name, :gamers
+  @@existing_games=[]
 
   def initialize
     @gamers = []
-    @moves = {}
-    @available_weapons = []
+    @name
   end
 
-  def register player
-    gamers << player
-    player
+  def register session_id
+    gamers << session_id
+    session_id
   end
 
-  def make_available weapon
-    available_weapons << weapon
-    weapon
+  def self.existing_games_getter
+    @@existing_games
   end
 
-  def computer_throw player
-    moves[player] = available_weapons.sample
+  def self.existing_games_setter game
+    @@existing_games << game
   end
 
 end

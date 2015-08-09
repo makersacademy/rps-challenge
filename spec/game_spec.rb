@@ -1,32 +1,16 @@
 require 'game'
 
 describe Game do
-  it{ is_expected.to respond_to :available_weapons }
 
-  it 'can register a player' do
-    player = double()
-    expect(subject.gamers).to include(subject.register player)
+  it 'can register a session' do
+    session = double()
+    expect(subject.gamers).to include(subject.register session)
   end
 
-  it 'can register a throw by a player' do
-    player = double()
-    allow(player).to receive(:throw).and_return('weapon')
-    player.throw 'weapon'   
-    subject.moves[player] = 'weapon'
-    expect(subject.moves).to include({player => 'weapon'})
-  end
-
-    it 'can make weapons availble'do
-    weapon = double()
-    expect{ subject.make_available weapon }.to change { subject.available_weapons.include?(weapon) }.from(false).to(true)
-  end
-
-  it 'can generate random throw for computer player' do
-    rock = double()
-    player = double()
-    subject.make_available rock
-    subject.computer_throw player
-    expect(subject.moves).to include( {player => rock} )
+  it 'can add a new game' do
+    new_game = Game.new
+    Game.existing_games_setter(new_game)
+    expect(Game.existing_games_getter).to include new_game
   end
 
 end

@@ -1,21 +1,38 @@
-
-
-feature 'playing a game against the computer' do
-
-  scenario 'Home page asks for a player name' do
+feature 'Game is set up: ' do
+  scenario 'Home page checks if player wants to play computer' do
     visit '/'
+    expect(page).to have_content "Would you like to play against:"
+  end
+  scenario 'if player does not want to play computer, available games are shown' do
+    visit '/'
+    select('Human', from: 'Opponents')
+    click_button('Next')
+    expect(page).to have_content "The following games are available"
+  end
+end
+
+feature 'if there are no exsting games' do
+  scenario 'player can set up a new game' do
+    visit '/available_games'
+    fill_in('game', with: "New Game")
+    click_button('Next')
     expect(page).to have_content "Enter Your Name."
   end
-
-  scenario 'After entering name, player is asked to choose a throw' do
-    visit '/'
+  scenario 'acknowledged if new name/game is initiated' do
+    visit '/new_game'
     fill_in('name', with: 'Bob')
-    click_button 'submit'
-    expect(page).to have_content "Ok Bob; what do you want to throw?"
+    click_button('Next')
+    expect(page).to have_content "Bob you are now waiting for an opponent"
   end
-    
-  feature'After throwing a weapon' do
+end
 
+feature 'if there are existing games to join' do
+  scenario 'show existing games if there any' do
+  end
+end
+
+feature'After throwing a weapon' do
+    
     scenario 'player can get a result with Paper' do
         visit '/choose'
         select('Paper', from: 'Weapons')
@@ -46,7 +63,5 @@ feature 'playing a game against the computer' do
         click_button('Throw')
         expect(page).to have_content "And the result is:" 
     end
-
-  end
 
 end
