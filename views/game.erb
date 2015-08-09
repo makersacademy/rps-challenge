@@ -1,0 +1,10 @@
+<h2><%= "#{session[:player_name]}, select your move!" %></h2>
+<form action="/result" method="post">
+  <input type="radio" name="player_move" value="Rock" id='radio_Rock' checked>Rock
+  <br>
+  <input type="radio" name="player_move" value="Paper" id='radio_Paper'>Paper
+  <br>
+  <input type="radio" name="player_move" value="Scissors" id='radio_Scissors'>Scissors
+  <br>
+  <input type="submit" value="Bring it on!">
+</form>
