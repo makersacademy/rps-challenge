@@ -19,3 +19,10 @@ Feature: initiating a game
     And I fill in "name" with "Fred"
     When I press "Submit"
     Then I should see "Hello Fred, welcome to Rock Paper Scissors Spock Lizard!"
+
+  Scenario: Playing the game
+    Given I am on the new game page
+    And I select "scissors" from rockpaperscissors
+    And my "name" is "Fred"
+    When I press "Submit"
+    Then I should see "Game over Fred!"

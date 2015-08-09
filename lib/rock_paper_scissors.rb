@@ -24,12 +24,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+  	@visitor = session[:name]
   	player = Player.new
-  	p "SESSION -----------------------"
-  	p session
-  	p params[:rockpaperscissors]
-  	p "-------------------------------"
-  	player.pick params[:rockpaperscissors].to_s
+  	@outcome = player.pick params[:rockpaperscissors].to_s
+  	erb :result
   end
 
   # start the server if ruby file executed directly
