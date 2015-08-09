@@ -1,5 +1,9 @@
+<% if @player_name %>
+<h2>Player: <%= @player_name %><h2>
+<% else %>
 <h1>Enter name</h1>
-  <form action="/game" method="POST">
+  <form action="/" method="POST">
     <input type="text" name="name">
-    <input type="submit" value="Submit">
+    <input type="submit" value="start_game">
   </form>
+<% end %>
