@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'random_weapon_generator'
 
 class RpsWeb < Sinatra::Base
   get '/' do
