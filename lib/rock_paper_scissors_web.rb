@@ -76,7 +76,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/end' do
-     @player_choice = $choices[session[:session_id]]
+    @player_choice = $choices[session[:session_id]]
     @opponent_choice_hash = $choices.reject { |k, v| k == session[:session_id] }
     @opponent_choice = @opponent_choice_hash.to_a[0][1]
     if session[:version] == 'RPSLS'
