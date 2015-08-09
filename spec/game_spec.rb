@@ -22,19 +22,8 @@ describe Game do
     expect(subject.check_win).to eq("Draw!")
   end
 
-  it 'paper beats rock' do
-  subject = Game.new rock_player, paper_player
-  expect(subject.check_win).to be(paper_player)
+  it 'returns a winner' do
+    subject = Game.new scissors_player, rock_player
+    expect(subject.winner).to eq("Computer wins")
   end
-
-  it 'rock beats scissors' do
-    subject = Game.new rock_player, scissors_player
-    expect(subject.check_win).to be(rock_player)
-  end
-
-  it 'scissors beats paper' do
-    subject = Game.new paper_player, scissors_player
-    expect(subject.check_win).to be(scissors_player)
-  end
-
 end
