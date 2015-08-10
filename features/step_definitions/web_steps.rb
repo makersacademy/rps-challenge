@@ -222,5 +222,4 @@ Given(/^a game type has been chosen$/) do
   @weapons_available = 5
   @vistor = "tom"
   $war = War.new
-  
 end
