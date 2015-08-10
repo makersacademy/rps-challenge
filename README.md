@@ -1,12 +1,13 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge: Rōnin Badge Test [![Build Status](https://travis-ci.org/7091lapS/rps-challenge.svg?branch=master)](https://travis-ci.org/7091lapS/rps-challenge)
 
-Instructions
+What I did
 -------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* I made a Rock, Paper, Scissors game class. The game will take options at runtime from two players
+* I made a separate Computer class, which throws a random rock/paper/scissors option
+* I made a Rock, Paper, Scissors website with Sinatra, which uses the business logic to allow one player play against the computer
+* Technologies I've used : Ruby, html, Rspec, Capybara, Sinatra
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
