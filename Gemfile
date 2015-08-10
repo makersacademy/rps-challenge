@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.1'
 
 gem 'sinatra'
 
@@ -10,5 +10,8 @@ group :test do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
+  gem 'cucumber'
+  gem 'cucumber-sinatra'
+  gem 'launchy'
   gem 'byebug'
 end
