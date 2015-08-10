@@ -15,7 +15,6 @@ OPTIONS = { :rock => :paper,
 		end
 	end
 
-	#How much are these needed?
 	def user_choice (choice)
 		@choice = choice
 	end
@@ -25,6 +24,5 @@ OPTIONS = { :rock => :paper,
 		[:rock, :paper, :scissors].sample
 	end
 
-	def count
 
 end
