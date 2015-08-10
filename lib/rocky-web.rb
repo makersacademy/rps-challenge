@@ -1,27 +1,27 @@
-# # require 'sinatra'
-# # require 'rocky'
+require 'sinatra/base'
 
-# # get '/' do
-# #   'hello!'
-# # end
+class RockyWeb < Sinatra::Base
 
-# # before do
-# # content_type :txt
-# # @defeat = {rock: :scissors, paper: :rock, scissors: :paper}
-# # @throws = @defeat.keys
-# # end
-# # get '/throw/:type' do
+  enable :sessions
 
-# # player_throw = params[:type].to_sym
+  get '/' do
+    erb :index
+  end
 
-# # if !@throws.include?(player_throw)
-# # halt 403, "You must throw one of the following: #{@throws}" end
-# # computer_throw = @throws.sample
-# # if player_throw == computer_throw
-# # "You tied with the computer. Try again!"
-# elsif computer_throw == @defeat[player_throw]
-# "Nicely done; #{player_throw} beats #{computer_throw}!"
-# else
-# "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
-# end
-# end
+  post '/game_page' do
+    $game = initialize_game
+    erb :new_game
+  end
+
+  def initialize_game
+    game = Game.new
+    game
+  end
+
+
+  set :views, proc { File.join(root, '..', 'views') }
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
+
+end
