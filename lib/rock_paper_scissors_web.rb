@@ -4,11 +4,10 @@ require_relative 'game'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   $game = Game.new
-  $computer = ComputerPlayer.new
+  $players = []
+  $choices = {}
 
   get '/' do
-    $players = []
-    $choices = {}
     erb :index
   end
 
@@ -28,8 +27,7 @@ class RockPaperScissors < Sinatra::Base
     erb :start
   end
 
-  get '/number_of_players' do
-
+  get '/number_of_players' do #Do I need this?? Seems to break if I take it out?
     erb :number_of_players
   end
 
@@ -44,11 +42,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/one_player_game' do
     @player_choice = params['choice'].to_sym
+    computer = ComputerPlayer.new
     if session[:version] == 'RPSLS'
-      @computer_choice = $computer.choice_rpsls
+      @computer_choice = computer.choice_rpsls
       @result = $game.result_rpsls(@player_choice, @computer_choice)
     else
-      @computer_choice = $computer.choice_rps
+      @computer_choice = computer.choice_rps
       @result = $game.result_rps(@player_choice, @computer_choice)
     end
     erb :post_game
