@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Welcome: <%= session[:playername] %></h1>
+
+<form method="post" action="/result">
+<label>Please select a weapon:
+<select name="weapon">
+  <option value="rock">Rock</option>
+  <option value="paper">Paper</option>
+  <option value="scissors">Scissors</option>
+</select>
+<input type="submit" value="Go!">
+</label>
+</form>
+<br>
+<img src=/images/rock.png style="width:128px;height:128px;">
+<img src=/images/paper.png style="width:128px;height:128px;">
+<img src=/images/scissors.png style="width:128px;height:128px;">
+
+</body>
+</html>
