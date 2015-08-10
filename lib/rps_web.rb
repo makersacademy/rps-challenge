@@ -16,25 +16,22 @@ class RpsWeb < Sinatra::Base
   end
 
   get '/game' do
+    @player = session[:name]
+    $player_1 = Player.new "#{@player}"
+    $player_2 = Player.new "AI"
+    $game = Game.new $player_1, $player_2
     erb :game
   end
 
 
-  get '/result' do
-    game = Game.new
-  @player_choice = $game.choice(params[:choice])
-   @comp_choice = $game.computer_choice
-   outcome = $game.win
-   if outcome == true
-     @win = true
-   elsif outcome == false
-     @win = false
-   elsif outcome == :draw
-     @win = "Draw"
-   end
-   @name = session[:name]
+  post '/game' do
+    @choice = params[:selection]
+    @p1select = $player_1.pick @choice
+    @p2select = $player_2.pick($game.computer_choice)
+    @result = $game.check_winner(@p1select, @p2select)
     erb :result
   end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

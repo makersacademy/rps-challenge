@@ -9,8 +9,8 @@ class Player
     @choice = nil
   end
 
-  def pick(selection)
-    raise "Not a valid choice" if OPTIONS.include?(selection.to_sym) == false
-    @choice = selection.to_sym
+  def pick(option)
+    raise "Not a valid choice" if OPTIONS.include?(option.to_sym) == false
+    choice = option.to_sym
   end
 end

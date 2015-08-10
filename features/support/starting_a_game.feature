@@ -16,4 +16,4 @@ Scenario: The player does not put a name
 
   Scenario: On the game page
   Given I am on "new game"
-  Then I should see "PLAY"
+  Then I should see "Play"
