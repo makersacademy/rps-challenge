@@ -1,0 +1,44 @@
+<h1><p>RESULTS TIME!</p></h1>
+<p>name: <%= @visitor %></p>
+<p> You're player <%= @your_number %></p>
+<p>number of weapon options: <%= @number_of_weapons %></p>
+<p>playing against: <%= @opponent %></p>
+
+<% if @opponent == "the computer"%>
+
+  <% if @number_of_weapons.to_i == 3 %>
+    <p>weapon you used: <%= @user_weapon %></p>
+    <p>weapon computer used: <%= @computer_weapon_of_3 %></p>
+    <p>the computer is player 2</p>
+    <p>result: <%= @result_of_3_game %></p>
+  <% else %>
+    <p>weapon you used: <%= @user_weapon %></p>
+    <p>weapon computer used: <%= @computer_weapon_of_5 %></p>
+    <p>the computer is player 2</p>
+    <h1><marquee><p>result: <%= @result_of_5_game %></p></marquee></h1>
+  <% end %>
+
+<% else %>
+  <% if $player_1_weapon == nil || $player_2_weapon == nil %>
+  <p> Opponent hasn't chosen their weapon, hassle them to do so and refresh the page!</p>
+  <p> Also, it's possible that you didn't wait for your opponent to visit the home page before you moved on to the weapon selection page.
+    if this sounds correct, just click new game, and this time wait for them to be on the same page before you move off, you impatient millenial </p>
+  <% else %>
+    <% if @number_of_weapons.to_i == 3 %>
+      <p>weapon player 1 used: <%= $player_1_weapon %></p>
+      <p>weapon player 2 used: <%= $player_2_weapon %></p>
+      <h1><marquee><p>result: <%= @result_human_game %></p></marquee></h1>
+    <% else %>
+      <p>weapon player 1 used: <%= $player_1_weapon %></p>
+      <p>weapon player 2 used: <%= $player_2_weapon %></p>
+      <h1><marquee><p>result: <%= @result_human_game %></p></marquee></h1>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<div>
+  <form action="/">
+    <input type="submit" value="PLAY AGAIN">
+  </form>
+</div>

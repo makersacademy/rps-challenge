@@ -1,0 +1,44 @@
+<% if @visitor == '' || @visitor != nil %>
+
+  <div>
+    <h1><p> Hi <%= @visitor %>, back for more?</p></h1>
+
+    <form action="/weapon">
+    <p>Which version of the game do you want to play?</p>
+      <select name="type">
+        <option value= 5 >ROCK/PAPER/SCISSORS/LIZARD/SPOCK</option>
+        <option value= 3 >ROCK/PAPER/SCISSORS</option>
+      </select>
+      <p>Who would you like to play against?</p>
+      <select name="opponent">
+        <option value="another human being">another human being</option>
+        <option value="the computer">the computer</option>
+      </select>
+      <p>If you want to play against a human opponent, wait for them to be on this page before clicking this button:</p>
+      <input type="submit" value="START GAME">
+    </form>
+  </div>
+
+<% else %>
+
+<div>
+  <h1><p> Hello stranger, welcome to ROCK PAPER SCISSORS</p></h1>
+    <form action="/weapon">
+      What's your name?
+      <input name="name" type="text">
+      <p>Which version of the game do you want to play?</p>
+      <select name="type">
+        <option value= 5 >ROCK/PAPER/SCISSORS/LIZARD/SPOCK</option>
+        <option value= 3 >ROCK/PAPER/SCISSORS</option>
+      </select>
+      <p>Who would you like to play against?</p>
+      <select name="opponent">
+        <option value="another human being">another human being</option>
+        <option value="the computer">the computer</option>
+      </select>
+      <p>If you want to play against a human opponent, wait for them to be on this page before clicking this button:</p>
+      <input type="submit" value="START GAME">
+    </form>
+  </div>
+
+<% end %>
