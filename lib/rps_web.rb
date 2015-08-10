@@ -21,17 +21,17 @@ class RockPaperScissors < Sinatra::Base
 
   get '/newgame' do
     @visitor = session[:name]
-    $player_1 = Player.new "#{@visitor}"
-    $player_2 = Player.new "computer"
-    $game = Game.new $player_1, $player_2
+    player_1 = Player.new "#{@visitor}" # changed to local variable
+    player_2 = Player.new "computer"
+    $game = Game.new player_1, player_2
     $game.winner
     erb :newgame
   end
 
   post '/newgame' do
     @selection = params[:selection]
-    $player_1.choice @selection.to_sym
-    $player_2.choice random_selection
+    $game.player_1.choice @selection.to_sym # refrenced players from game object
+    $game.player_2.choice random_selection
     erb :newgame
   end
 

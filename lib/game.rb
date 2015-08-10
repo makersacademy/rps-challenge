@@ -10,7 +10,7 @@ class Game
   end
 
   def check_win
-    return "Only one player has made their selection" if player_1.selection == nil || player_2.selection == nil
+    return "Only one player has made their selection" if player_1.selection == nil || player_2.selection == nil # extract to method
     return "Draw!" if player_1.selection == player_2.selection
     case player_1.selection
     when :rock
@@ -22,6 +22,7 @@ class Game
     end
   end
 
+  # extra method
   def winner
     self.check_win
   end
