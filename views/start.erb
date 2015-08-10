@@ -1,0 +1,11 @@
+<body>
+  <div>
+    <h3>Hi there <%= "#{@user_name}" %>!  Are you ready to play?</h3>
+    <form action="/one_player_game">
+      <input type='submit' value='Single Player'>
+    </form>
+    <form action='pending'>
+      <input type='submit' value='Two Players'>
+    </form>
+  </div>
+</body>
