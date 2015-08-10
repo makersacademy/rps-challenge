@@ -1,0 +1,16 @@
+<div>
+  <p> Let's play Roshambo, <%= session[:player] %> ! </p>
+  <p> Select one option: </p>
+  <div>
+    <select name='move' form="moveform">
+        <option value='rock'> Rock </option>
+        <option value='scissors'> Scissors </option>
+        <option value='paper'> Paper </option>
+    </select>
+  </div>
+  <div>
+    <form action="/game" id="moveform">
+      <input type='submit' value='Play'>
+    </form>
+  </div>
+</div>

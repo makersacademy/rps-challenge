@@ -1,0 +1,9 @@
+<div>
+  <% if $game.player_2.nil? %>
+    <p> You just have to wait a bit.. for player 2</p>
+    <a href='/results'> C'mon! </a>
+  <% else %>
+    <p> Awesome! </p>
+    <a href='/results'> Let's do it </a>
+  <% end %>
+</div>
