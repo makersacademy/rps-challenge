@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<h1> Hi, <%= $name.capitalize %>! <% if @result == "Draw" %> 
+	It's a Draw!
+<% elsif @result == "Player 2 Wins" %>
+	You lose!
+<% elsif @result == "Player 1 Wins" %>
+	You win!
+<% end %>
+</h1>
+
+<p>Let's keep track of the score...</p>
+<p> <%= $name.capitalize %> count = <%= $p1 %> </p>
+<p> Computer player count = <%= $p2 %> </p>
+
+<div>
+<a href="/gameplay"><button type="button">Play again</button></a>
+</div>
+
+<div class="results">
+<h4>You selected Scissors</h4>
+<img class="rps" src="scissors.png">
+</div>
+
+<div class="results">
+<h4>The computer selected <%= @computer_choice %> </h4>
+<% if @computer_choice == :rock %> 
+<img class="rps" src="rock.png">
+<% elsif @computer_choice == :paper %>
+<img class="rps" src="paper.jpg">
+<% elsif @computer_choice == :scissors %>
+<img class="rps" src="scissors.png">
+<% end %>
+</div>
