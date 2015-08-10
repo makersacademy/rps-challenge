@@ -2,7 +2,7 @@
 module Roshambo
 
   def first_move_winner? move1, move2
-    move_one, move_two  = move1.to_sym.downcase, move2.to_sym.downcase
+    move_one, move_two  = move1.downcase.to_sym, move2.downcase.to_sym
     return true if move_one == rock && move_two == scissors
     return true if move_one == scissors && move_two == paper
     return true if move_one == paper && move_two == rock

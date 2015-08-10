@@ -1,0 +1,9 @@
+<div>
+  <% if @player_1_winner && session[:player] == $game.player_1.name %>
+    <p> <%= session[:player] %> WINS! </p>
+  <% elsif !@player_1_winner && session[:player] == $game.player_2.name %>
+    <p> <%= session[:player] %> WINS! </p>
+  <% else %>
+    <p> You lose, loser</p>
+  <%end%>
+</div>
