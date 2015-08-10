@@ -14,38 +14,38 @@ feature 'Playing a game' do
   end
 
   scenario 'player is taken to the game' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     expect(page).to have_selector('option')
   end
 
   scenario 'Player can choose an option' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     expect(page).to have_content 'Now select an option!'
   end
 
   scenario 'Player chooses an option' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     select 'Rock', from: 'option'
     click_button 'Throw!'
     expect(page).to have_content "You threw Rock!"
   end
 
   scenario 'Computer throws random option' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     select 'Rock', from: 'option'
     click_button 'Throw!'
     expect(page).to have_content "Computer threw Paper!"
   end
 
   scenario 'Draw' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     select 'Paper', from: 'option'
     click_button 'Throw!'
     expect(page).to have_content "Draw!"
   end
 
   scenario 'A winner is declared' do
-    visit '/game?myname=Antonio'
+    visit '/game?playername=Antonio'
     select 'Rock', from: 'option'
     click_button 'Throw!'
     expect(page).to have_content "Computer wins!"
