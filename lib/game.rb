@@ -23,7 +23,7 @@ class Game
   end
 
   def check_player_winner?
-    return true if RULES[@player_1_hand] == @computer_hand
+    RULES[@player_1_hand] == @computer_hand
   end
 
   def check_two_player_winner
@@ -39,7 +39,7 @@ class Game
   private
 
   def check_for_draw? hand_one, hand_two
-    return true if hand_one == hand_two
+    hand_one == hand_two
   end
 
   def computer_hand

@@ -7,7 +7,7 @@ describe Game do
   let(:player_2) { double(:player, hand_to_play: :scissors) }
   let(:subject_2_player) { described_class.new( { player_1: player_1, player_2: player_2 } ) }
 
-  describe "#play_hand_single_player" do
+  describe "a single player game" do
 
     it "player can win" do
       allow(subject).to receive(:computer_hand) { :scissors }
@@ -25,10 +25,11 @@ describe Game do
     end
   end
 
-  describe "#play_hand_two_player"
+  describe "#play_hand_two_player" do
     it "player 1 can win" do
-    subject_2_player.play_hand_two_player
-    expect(subject_2_player.winner).to eq(player_1)
+      subject_2_player.play_hand_two_player
+      expect(subject_2_player.winner).to eq(player_1)
+    end
   end
 
   describe "winner_exists?" do
