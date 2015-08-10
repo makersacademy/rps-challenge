@@ -1,27 +1,41 @@
-<div>
-  <center>
-    <% if @choice %>
-      <% cpu = CPU.new.choice %>
-      <% outcome = rps @choice, cpu %>
-      <% if outcome == "win" %>
-        Congratulations <%=session[:name]%>
-        <br><%= @choice %> beats <%= cpu %>
-        <br> You win!
-      <% elsif outcome == "draw" %>
-        Consider yourself lucky <%=session[:name]%>!
-        <br>You got away with only a draw.
-      <% else %>
-        Better luck next time <%=session[:name]%>!
-        <br><%= cpu %> beats <%= @choice %>
-        <br>You lose!
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div>
+    <center>
+      <% if @choice %>
+        <% cpu = CPU.new.choice %>
+        <% outcome = rps @choice, cpu %>
+        <% if outcome == "win" %>
+          <h1>Congratulations <%=session[:name]%>!</h1>
+          <br><%= @choice %> beats <%= cpu %>
+          <br> You win!
+          <br><img src="win.jpg">
+        <% elsif outcome == "draw" %>
+          <h1>Consider yourself lucky <%=session[:name]%>!</h1>
+          <br>You got away with only a draw.
+          <br><img src="draw.jpg">
+        <% else %>
+          <h1>Better luck next time <%=session[:name]%>!</h1>
+          <br><%= cpu %> beats <%= @choice %>
+          <br>You lose!
+          <br><img src="lose.jpg">
+        <% end %>
+        <br><a href="/rpscpu"><button type="button">Play Again</button></a>
+      <% else %> 
+        <h1>Hi <%= session[:name] %></h1>
+        <br>Please choose Rock, Paper or Scissors<br>
+        <img src="rock.png">
+        <img src="paper.png">
+        <img src="scissors.png"><br>
+        <a href="/rpscpu/rock"><button type="button">Rock</button></a>
+        <a href="/rpscpu/paper"><button type="button">Paper</button></a>
+        <a href="/rpscpu/scissors"><button type="button">Scissors</button></a>
       <% end %>
-      <a href="/rpscpu"><button type="button">Play Again</button></a>
-    <% else %> 
-      Hi <%= session[:name] %>
-      <br>Please choose Rock, Paper or Scissors
-      <a href="/rpscpu/rock"><button type="button">Rock</button></a>
-      <a href="/rpscpu/paper"><button type="button">Paper</button></a>
-      <a href="/rpscpu/scissors"><button type="button">Scissors</button></a>
-    <% end %>
-  </center>
-</div>
+    </center>
+  </div>
+</body>
+</html>

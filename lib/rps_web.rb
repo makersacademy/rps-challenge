@@ -5,7 +5,8 @@ require_relative "cpu"
 class RPS < Sinatra::Base
 
   set :views, proc { File.join(root, '..', 'views') }
-
+  set :public, proc { File.join(root, '..', 'public') }
+  
   enable :sessions
 
   get '/' do
@@ -35,7 +36,6 @@ class RPS < Sinatra::Base
     @choice = "Scissors"
     erb :rps
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

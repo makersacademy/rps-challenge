@@ -1,0 +1,17 @@
+
+
+body {  
+  background-color:#00CC00;
+  width: 900px;
+  margin: auto;
+  padding-top: 25px;
+}
+
+h1 { 
+  font-size: 20px
+}
+
+img {
+  height: 140px;
+  width: 250px;
+}

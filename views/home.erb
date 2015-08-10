@@ -1,14 +1,22 @@
-<div>
-  <center>
-    <% if @name %>
-      Welcome <%= @name == "" ? session[:name] = "Player" : session[:name] = @name %>
-      <br><a href="/rpscpu"><button type="button">Start Game</button></a>
-    <% else %>
-      Please enter your name so you can start playing Rock, Paper, Scissors<br>
-      <form action="/" method="post">
-        <input type="text" name="name">
-        <br><input type="submit" value="continue">
-      </form>
-    <% end %>
-  </center>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div>
+    <center>
+      <% if @name %>
+        <h1>Welcome <%= @name == "" ? session[:name] = "Player" : session[:name] = @name %></h1>
+        <br><a href="/rpscpu"><button type="button">Start Game</button></a>
+      <% else %>
+        <h1>Please enter your name so you can start playing Rock, Paper, Scissors</h1><br>
+        <form action="/" method="post">
+          <input type="text" name="name">
+          <br><input type="submit" value="continue">
+        </form>
+      <% end %>
+    </center>
+  </div>
+</body>
+</html>
