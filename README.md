@@ -1,57 +1,29 @@
-# RPS Challenge: Rōnin Badge Test
+To Makers Coaches:
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+I completed (or pretty much completed) the basic challenge + Spock and lizard, which is reflected in the following commit:
 
-Task 
-----
+ 9bfc93d 2015-08-09 | Added spock and lizard [Haroon]
 
-Knowing how to build web applications is getting us almost there as web developers!
+ After that I decided to play around with the domain before implementing a two player version. I have not had time to finish that strategy, so the Head is woefully incomplete (see notes below on the change in my approach to the domain).
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+ ----The Domain----
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+ Upto  9bfc93d the domain consists of Player, Game, and Weapon, with a Score_Calculator module adding some functionality to Game. The rational for the module is that Game class in my view should be free to impliment a diversity of scoring regimes which could become quite complexity. That potential ompexity is not for a Game class to manage.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+Player simply throws weapons. Weapons simply defines relative weapon strength, and Game registers players, and makes weapons available for game play. Score_calculator functions determine win, loss draw. 
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+By having a Weapon class extension to Spock and lizard was easy (no changes to existing code) since it merely involved initializing new weapon types.
 
-Hints on functionality
+The main remaining dependency in this scheme is score_calculator's reliance on Weapon. That can be somewhat managed with with dependency injection and by making parameter order moot, but I never had time. Once those class level dependencies are removed, Score_Calculator module and Weapon class are inevitably linked by the former's #beats? method.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+---The big model change ----
+
+After 9bfc93d, the model is changed. Player class is removed and Score_calculator becomes a class rather than a module, alongside Game and Weapon. There are no dependcies in the model layer, with communication being achieved between classes via Get and Posts in the web controller. In effect Player class has been replaced by the client, through which the classes in the model communicate. It is not clear if this strategy makes sense.
 
 
-As usual please start by
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
 
-**Rōnin BANZAI!!!!**
 
-## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
