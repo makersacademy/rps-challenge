@@ -15,17 +15,17 @@ describe '#beat' do
     end
 
     it 'compares two elements and returns true if the first one is wining' do
-      expect(subject.beat :rock, :scissors).to eq true
-      expect(subject.beat :rock, :rock).to eq nil
-      expect(subject.beat :rock, :paper).to eq false
+      expect(subject.beat :rock, :scissors).to eq "won"
+      expect(subject.beat :rock, :rock).to eq "draw"
+      expect(subject.beat :rock, :paper).to eq "lost"
 
-      expect(subject.beat :paper, :rock).to eq true
-      expect(subject.beat :paper, :paper).to eq nil
-      expect(subject.beat :paper, :scissors).to eq false
+      expect(subject.beat :paper, :rock).to eq "won"
+      expect(subject.beat :paper, :paper).to eq "draw"
+      expect(subject.beat :paper, :scissors).to eq "lost"
 
-      expect(subject.beat :scissors, :paper).to eq true
-      expect(subject.beat :scissors, :scissors).to eq nil
-      expect(subject.beat :scissors, :rock).to eq false
+      expect(subject.beat :scissors, :paper).to eq "won"
+      expect(subject.beat :scissors, :scissors).to eq "draw"
+      expect(subject.beat :scissors, :rock).to eq "lost"
     end
 
 
@@ -49,7 +49,7 @@ describe '#beat' do
       game.set_player player
       allow(player).to receive(:chooses).and_return(:paper)
       allow(game).to receive(:computer).and_return(:rock)
-      expect(game.play :paper).to eq true
+      expect(game.play :paper).to eq "won"
     end
 
   end

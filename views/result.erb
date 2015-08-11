@@ -1,0 +1,12 @@
+computer's move
+<%= @computer %>
+outcome
+<%= @outcome %>
+
+<% if @outcome == "won" %>
+You won!
+<% elsif @outcome == "draw" %>
+Draw!
+<% else %>
+You lost!
+<% end %>

@@ -9,21 +9,17 @@ class Game
   end
 
   def beat element1, element2
-      raise 'No such element in the rules' if @choices.include?(element1) == false || @choices.include?(element2)== false
+    raise 'No such element in the rules' if @choices.include?(element1.to_sym) == false || @choices.include?(element2.to_sym)== false
 
-      return true if element1 == :rock && element2 == :scissors
-      return nil if element1 == :rock && element2 == :rock
-      return false if element1 == :rock && element2 == :paper
-
-      return true if element1 == :paper && element2 == :rock
-      return nil if element1 == :paper && element2 == :paper
-      return false if element1 == :paper && element2 == :scissors
-
-      return true if element1 == :scissors && element2 == :paper
-      return nil if element1 == :scissors && element2 == :scissors
-      return false if element1 == :scissors && element2 == :rock
-
-    end
+     if element1 == element2
+      return "draw"
+     elsif
+        (element1 == :rock && element2 == :scissors)|| (element1 == :paper && element2 == :rock) || (element1 == :scissors && element2 == :paper)
+        return "won"
+      else
+        return "lost"
+      end
+   end
 
   def set_player player
    @player = player
