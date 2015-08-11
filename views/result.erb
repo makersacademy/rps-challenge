@@ -1,6 +1,11 @@
-<% if <% $game.play session[:choice] == true %>
+computer's move
+<%= @computer %>
+outcome
+<%= @outcome %>
+
+<% if @outcome == "won" %>
 You won!
-<% elsif $game.play session[:choice] == nil %>
+<% elsif @outcome == "draw" %>
 Draw!
 <% else %>
 You lost!

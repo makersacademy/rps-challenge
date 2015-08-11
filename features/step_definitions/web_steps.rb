@@ -11,15 +11,22 @@ Then(/^I press "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should be on "([^"]*)"$/) do |page|
-  visit '/game'
+
 end
 
-Given(/^I am on the "([^"]*)" page$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+# When(/^I fill in choice$/) do
+#   visit '/'
+#   fill_in "name", with: "Raph"
+#   click_on(arg1)
+#   fill_in "choice", with: "paper"
+# end
+
+Given(/^I am on the "([^"]*)" page$/) do |page|
+  visit page
 end
 
-When(/^I choose my element$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I fill in choice$/) do
+  fill_in "choice", with: "paper"
 end
 
 
