@@ -1,9 +1,12 @@
 <div>
 
-<h1> Let's play <%= @name %> !</h1>
+<h1> Let's play <%= @name1 %> vs. <%= @name2 %> !</h1>
 
 <form action="/result" method="post">
-  <input type="text" name="choice">
+  Player1:
+  <input type="password" name="choice1">
+  Player2:
+  <input type="password" name="choice2">
   <input type="submit" value="Play">
 </form>
 

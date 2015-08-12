@@ -4,7 +4,8 @@ require './lib/player'
 
 describe Game do
 
-let(:player) { double(:player, name: "Unknown", choice: nil) }
+let(:player1) { double(:player1, name: "Unknown1", choice: nil) }
+let(:player2) { double(:player2, name: "Unknown2", choice: nil) }
 
 describe '#beat' do
     it'returns an error if the user chooses an element outside of the rules\'s choices' do
@@ -33,23 +34,25 @@ describe '#beat' do
 
   describe '#set_player' do
     it'creates a new player' do
-      expect(subject.set_player player).to eq player
+      expect(subject.set_player player1).to eq player1
     end
   end
 
   describe '#play' do
 
     it'should raise an error if not player was created' do
-      element = :paper
-      expect{subject.play element}.to raise_error 'You need to set a player to play this game'
+      element1 = :paper
+      element2 = :rock
+      expect{subject.play element1, element2}.to raise_error 'You need to set two players to play this game'
     end
 
     it'should return true if the player\'s choice is beating the computer' do
       game = Game.new
-      game.set_player player
-      allow(player).to receive(:chooses).and_return(:paper)
-      allow(game).to receive(:computer).and_return(:rock)
-      expect(game.play :paper).to eq "won"
+      game.set_player player1
+      game.set_player player2
+      allow(player1).to receive(:chooses).and_return(:paper)
+      allow(player2).to receive(:chooses).and_return(:rock)
+      expect(game.play :paper, :rock).to eq "won"
     end
 
   end

@@ -1,12 +1,8 @@
-computer's move
-<%= @computer %>
-outcome
-<%= @outcome %>
 
 <% if @outcome == "won" %>
-You won!
+<%= @name1%> won!
 <% elsif @outcome == "draw" %>
 Draw!
 <% else %>
-You lost!
+<%= @name2%> won!
 <% end %>
