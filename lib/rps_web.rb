@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'local'
+# require 'local'
 
 class RpsWeb < Sinatra::Base
 
