@@ -1,11 +1,11 @@
-require 'spec_helper'
+require "spec_helper"
 
 feature 'I can play against the computer' do
   scenario 'I can enter my name' do
     visit '/'
     click_link 'Play Against Computer'
     expect(page).to have_content "What's your name?"
-    our_name="Richard"
+    our_name = "Richard"
     fill_in "name", with: our_name
     click_button 'Submit'
     expect(page).to have_content "Hello #{our_name}"
@@ -48,8 +48,8 @@ feature 'I can play against a human' do
     visit '/'
     click_link 'Play Against A Friend'
     expect(page).to have_content "What's your name?"
-    our_name="Richard"
-    their_name="Dave"
+    our_name = "Richard"
+    their_name = "Dave"
     fill_in "name1", with: our_name
     fill_in "name2", with: their_name
     click_button 'Submit'
@@ -100,7 +100,7 @@ feature 'I can play Rock Paper Scissors Lizard Spock' do
     visit '/'
     click_link 'Play Rock Paper Scissors Lizard Spock'
     expect(page).to have_content "What's your name?"
-    our_name="Richard"
+    our_name = "Richard"
     fill_in "name", with: our_name
     click_button 'Submit'
     expect(page).to have_content "Hello #{our_name}"
