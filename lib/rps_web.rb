@@ -10,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
   set :views, proc { File.join(root, '..', 'views') }
+  set :public, proc { File.join(root, '..', 'public_folder') }
 
   get '/' do
     erb :index
