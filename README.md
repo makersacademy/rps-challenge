@@ -1,7 +1,7 @@
 Rock Paper Scissors
 -------
 
-![alt text](public/images/rps-screen.jpg "RPS screen shot")
+![alt text](public_folder/images/rps-screen.jpg "RPS screen shot")
 
 A Rock Paper Scissors app in Ruby.
 
