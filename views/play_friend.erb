@@ -1,0 +1,25 @@
+<div style='width: 400px; border: 3px solid #b10d19; text-align:center; margin:0 auto; '>
+  <img src='http://4.bp.blogspot.com/-lYz_ZrnPp4Q/VcWhhY_wIqI/AAAAAAAAQv4/Cq2pe41m-64/s1600/rps%2B1.jpg' width="400">
+    <% if @name1 != "" %>
+        <% session[:player1] = @name1 %>
+     <% else %>
+    <% session[:player1] = "Player 1" %>
+      <% end %>
+    <% if @name2 != "" %>
+        <% session[:player2] = @name2 %>
+     <% else %>
+    <% session[:player2] = "Player 2" %>
+      <% end %>
+  <p><font size="5"><strong><u><%= session[:player1] %> vs <%= session[:player2] %></u></strong></font></p>
+  <p><img src='http://4.bp.blogspot.com/-wSBkxJavuVo/VcWkAqKILAI/AAAAAAAAQwM/7ESBpHcCUqw/s320/rps%2Brules%2B2.gif' width="340"></p>
+  <p><font size="3"><strong>(<%= session[:player2] %>, no peeking!)</strong></font></p>
+  <p><font size="5"><strong><%= session[:player1] %> make your choice</strong></font></p>
+  <font size="4"><p>Choose wisely</p>
+  <form action="/play_friend" method="post">
+  <select name="choice1">
+      <option value = "rock">Rock</option>
+      <option value = "paper">Paper</option>
+  <option value = "scissors">Scissors</option>
+  </select>
+  <input type="submit" value ="Present Choice"></font>
+</div>

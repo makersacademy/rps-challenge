@@ -1,0 +1,23 @@
+body {
+	width:100%;
+	text-align:left;
+	padding:0px;
+	border:0px
+	background-color:#ffffff;
+}
+#content {
+  margin:0px auto;
+  width: 400px;
+  height: 500px;
+  border: 3px solid #b10d19;
+  text-align:center;
+}
+#panel {
+  float: left;
+  width: 200px;
+}
+#text {
+  font-size: 30px;
+  padding-top: 14px;
+  padding-bottom: 20px;
+}
