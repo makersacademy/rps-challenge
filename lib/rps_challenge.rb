@@ -1,9 +1,13 @@
 require 'sinatra/base'
 
 class Rps_Challenge < Sinatra::Base
-  
+  set :views, proc {File.join(root,'..','/views')}
   get '/' do
-    'Hello Rps_Challenge!'
+  erb :index
+  end
+
+  get '/new_game' do
+  erb :new_game
   end
 
   # start the server if ruby file executed directly
