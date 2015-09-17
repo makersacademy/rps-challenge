@@ -7,6 +7,7 @@ class Rps_Challenge < Sinatra::Base
   end
 
   get '/new_game' do
+  redirect to('/new_game') if params[:name] == ""
   erb :new_game
   end
 
