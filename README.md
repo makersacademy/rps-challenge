@@ -59,7 +59,7 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 Notes on test coverage
 ----------------------
 
-Please ensure you have the following in your spec_helper.rb in order to have test coverage stats generated
+Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
 on your pull request:
 
 ```
