@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+ruby '2.2.3'
 
 gem 'sinatra'
 
@@ -15,5 +15,4 @@ group :development, :test do
   gem 'capybara'
   gem 'byebug'
   gem 'shotgun'
-
 end
