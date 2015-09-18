@@ -9,9 +9,9 @@ feature 'Starting the game.' do
 
   scenario 'lets user enter name and remembers it' do
     visit '/'
-    fill_in 'player_name', :with => 'Steerpike'
+    fill_in 'player_name', with: 'Steerpike'
     click_button 'GO'
-    expect(page).to have_content 'Choose your weapon, Steerpike:'
+    expect(page).to have_content 'Choose your weapon, Steerpike.'
   end
 
 end
