@@ -36,7 +36,7 @@ Hints on functionality
 
 As usual please start by
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
+* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
 * Forking this repo
 * TEST driving development of your app
 
