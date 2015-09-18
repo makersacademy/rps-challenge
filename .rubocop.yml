@@ -2,6 +2,9 @@ AllCops:
   DisabledByDefault: true
   DisplayCopNames: true
   DisplayStyleGuide: true
+  RunRailsCops: false
+  Exclude:
+    - 'spec/spec_helper.rb'
 
 inherit_from:
   - enabled.yml
@@ -28,7 +31,7 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/LineLength:
-  Max: 80
+  Max: 90
   # To make it possible to copy or click on URIs in the code, we allow lines
   # contaning a URI to be longer than Max.
   AllowURI: true
