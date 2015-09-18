@@ -3,7 +3,7 @@
 class View
 
 	def welcome_player
-		puts 'Welcome to Rock Paper Scissors!'
+		'Welcome to Rock Paper Scissors!'
 	end
 
 	def players_next_move
