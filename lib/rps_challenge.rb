@@ -7,8 +7,13 @@ class Rps_Challenge < Sinatra::Base
   end
 
   get '/new_game' do
-  redirect to('/new_game') if params[:name] == ""
+  $name = params[:name]
   erb :new_game
+  end
+
+  get '/new_session' do
+  
+  erb :new_session
   end
 
   # start the server if ruby file executed directly

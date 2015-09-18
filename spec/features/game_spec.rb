@@ -11,9 +11,11 @@ feature "Starting a new game" do
   scenario "Cannot proceed without a name" do
   visit "/"
   click_link "Click here to get started!"
-  fill_in 'name', :with => 'bob'
+  fill_in 'name', :with => ''
   click_button "Let's do this"
-  expect(page).to have_content "Hello human. Do you want to play a game? :)"
+  expect(page).to have_content "No."
   end
+
+
 
 end
