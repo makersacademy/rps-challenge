@@ -10,11 +10,11 @@ feature "Playing game" do
   end
 
   scenario "rock beats scissors" do
+    player1 = Player.new
     player2 = Player.new
     visit "/game"
-    choose("Rock")
-    allow(opponent).to receive(:show).and_return("Scissors")
-    opponent.show
+    choose("rock")
+    player1.rock.vs(player2.scissors)
     expect(page).to have_content("You Win!")
   end
 
