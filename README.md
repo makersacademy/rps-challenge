@@ -1,12 +1,15 @@
 # RPS Challenge: Rōnin Badge Test
 
+This is my version - this does not work!
+
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
