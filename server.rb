@@ -13,17 +13,19 @@ class RPS < Sinatra::Base
   post '/sign_up' do
     redirect to('/no_name') if params[:username] == ''
     session[:username] = params[:username]
-    @username = session[:username]
     redirect to('/welcome')
   end
 
   get '/no_name' do
-    'hi'
     erb :sign_up
   end
 
   get '/welcome' do
     erb :welcome
+  end
+
+  get '/game' do
+    erb :game
   end
 
   # start the server if ruby file executed directly
