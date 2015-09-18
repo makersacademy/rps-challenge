@@ -58,3 +58,24 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+Notes on test coverage
+----------------------
+
+Please ensure you have the following in your spec_helper.rb in order to have test coverage stats generated
+on your pull request:
+
+```
+require 'coveralls'
+require 'simplecov'
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+Coveralls.wear! 
+```
+
+Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
+Then run `open coverage/index.html` from the command line to view details
+

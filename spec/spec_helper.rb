@@ -1,6 +1,7 @@
 require 'rps'
 require 'byebug'
 require 'capybara/rspec'
+# ensure the following is in your spec_helper.rb to get test coverage stats
 require 'coveralls'
 require 'simplecov'
 
@@ -102,3 +103,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
