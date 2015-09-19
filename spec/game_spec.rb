@@ -39,5 +39,5 @@ describe Game do
     it 'should display the result of the game' do
     expect(subject).to respond_to(:result)
     end
-  end 
+  end
 end
