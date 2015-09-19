@@ -3,8 +3,8 @@ require 'rockpaperscissors'
 describe Rockpaperscissors do
 
   describe 'computer opponent' do
-    it 'computer opponent returns :rock, :paper or :scissors' do
-      expect(subject.computer_choice).to eq(:rock).or eq(:paper).or eq(:scissors)
+    it 'computer opponent returns :rock, :paper, :scissors, :spock, or :lizard' do
+      expect(subject.computer_choice).to eq(:rock).or eq(:paper).or eq(:scissors).or eq(:lizard).or eq(:spock)
     end
   end
 
@@ -17,6 +17,12 @@ describe Rockpaperscissors do
     end
     it 'returns :scissors when scissors selected' do
       expect(subject.scissors).to eq(:scissors)
+    end
+    it 'returns :spock when spock selected' do
+      expect(subject.spock).to eq(:spock)
+    end
+    it 'returns :lizard when lizard selected' do
+      expect(subject.lizard).to eq(:lizard)
     end
   end
 
@@ -34,4 +40,9 @@ describe Rockpaperscissors do
     end
   end
 
+  describe 'returns draw' do
+    it 'returns :draw if players choose same' do
+      expect(subject.winner(:rock, :rock)).to eq(:draw)  
+    end
+  end
 end
