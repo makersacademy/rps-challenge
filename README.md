@@ -36,7 +36,7 @@ Hints on functionality
 
 As usual please start by
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
+* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
 * Forking this repo
 * TEST driving development of your app
 
@@ -55,3 +55,24 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+Notes on test coverage
+----------------------
+
+Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
+on your pull request:
+
+```ruby
+require 'coveralls'
+require 'simplecov'
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+Coveralls.wear! 
+```
+
+Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
+Then run `open coverage/index.html` from the command line to view details
+
