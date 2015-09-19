@@ -3,7 +3,7 @@ class HumanPlayer
   attr_reader :name
   attr_accessor :choice
 
-  def initialize(name='Human_Player')
+  def initialize(name='Human Player')
     @name = name
   end
 

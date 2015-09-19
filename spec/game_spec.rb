@@ -2,68 +2,77 @@ require 'game'
 
 describe Game do
 
-  describe "play" do
+  describe "#play" do
     it 'Player wins when player choose rock and computer choose scissors' do
-      computer_player = double(:fake_computer_player, choice:'scissors'.to_sym)
+      human_player = double(name:'Joe',choice:'rock'.to_sym)
+      computer_player = double(name:'Comp',choice:'scissors'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :rock
-      expect(subject.play(player_choice,computer_choice)).to eq('Player1 wins!')
-    end
-
-    it 'Player wins when player choose scissors and computer choose paper' do
-      computer_player = double(:fake_computer_player, choice:'paper'.to_sym)
-      computer_choice = computer_player.choice
-      player_choice = :scissors
-      expect(subject.play(player_choice,computer_choice)).to eq('Player1 wins!')
+      expect(subject.play(human_player,computer_player)).to eq('Joe wins!')
     end
 
     it 'Player wins when player choose paper and computer choose rock' do
-      computer_player = double(:fake_computer_player, choice:'rock'.to_sym)
+      human_player = double(name:'Joe',choice:'paper'.to_sym)
+      computer_player = double(name:'Comp',choice:'rock'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :paper
-      expect(subject.play(player_choice,computer_choice)).to eq('Player1 wins!')
+      expect(subject.play(human_player,computer_player)).to eq('Joe wins!')
     end
 
-    it 'Game is a draw when both players choose rock' do
-      computer_player = double(:fake_computer_player, choice:'rock'.to_sym)
+    it 'Player wins when player choose scissors and computer choose paper' do
+      human_player = double(name:'Joe',choice:'scissors'.to_sym)
+      computer_player = double(name:'Comp',choice:'paper'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :rock
-      expect(subject.play(player_choice,computer_choice)).to eq('Draw!')
+      expect(subject.play(human_player,computer_player)).to eq('Joe wins!')
     end
 
-    it 'Game is a draw when both players choose paper' do
-      computer_player = double(:fake_computer_player, choice:'paper'.to_sym)
+    it 'End in a draw when both players choose rock' do
+      human_player = double(name:'Joe',choice:'rock'.to_sym)
+      computer_player = double(name:'Comp',choice:'rock'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :paper
-      expect(subject.play(player_choice,computer_choice)).to eq('Draw!')
+      expect(subject.play(human_player,computer_player)).to eq('Draw!')
     end
 
-    it 'Game is a draw when both players choose scissors' do
-      computer_player = double(:fake_computer_player, choice:'scissors'.to_sym)
+    it 'End in a draw when both players choose paper' do
+      human_player = double(name:'Joe',choice:'paper'.to_sym)
+      computer_player = double(name:'Comp',choice:'paper'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :scissors
-      expect(subject.play(player_choice,computer_choice)).to eq('Draw!')
+      expect(subject.play(human_player,computer_player)).to eq('Draw!')
     end
 
-    it 'Player looses when player choose rock and computer choose paper' do
-      computer_player = double(:fake_computer_player, choice:'paper'.to_sym)
+    it 'End in a draw when both players choose scissors' do
+      human_player = double(name:'Joe',choice:'scissors'.to_sym)
+      computer_player = double(name:'Comp',choice:'scissors'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :rock
-      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
+      expect(subject.play(human_player,computer_player)).to eq('Draw!')
     end
 
-    it 'Player looses when player choose paper and computer choose scissors' do
-      computer_player = double(:fake_computer_player, choice:'scissors'.to_sym)
+    it 'Computer wins when player choose rock and computer choose paper' do
+      human_player = double(name:'Joe',choice:'rock'.to_sym)
+      computer_player = double(name:'Comp',choice:'paper'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :paper
-      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
+      expect(subject.play(human_player,computer_player)).to eq('Comp wins!')
     end
 
-    it 'Player looses when player choose scissors and computer choose rock' do
-      computer_player = double(:fake_computer_player, choice:'rock'.to_sym)
+    it 'Computer wins when player choose paper and computer choose scissors' do
+      human_player = double(name:'Joe',choice:'paper'.to_sym)
+      computer_player = double(name:'Comp',choice:'scissors'.to_sym)
+      player_choice = human_player.choice
       computer_choice = computer_player.choice
-      player_choice = :scissors
-      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
+      expect(subject.play(human_player,computer_player)).to eq('Comp wins!')
+    end
+
+    it 'Computer wins when player choose scissors and computer choose rock' do
+      human_player = double(name:'Joe',choice:'scissors'.to_sym)
+      computer_player = double(name:'Comp',choice:'rock'.to_sym)
+      player_choice = human_player.choice
+      computer_choice = computer_player.choice
+      expect(subject.play(human_player,computer_player)).to eq('Comp wins!')
     end
 
   end

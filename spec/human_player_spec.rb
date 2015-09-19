@@ -3,7 +3,7 @@ require 'human_player'
 describe HumanPlayer do
   describe "#new/initialize" do
       it 'initialize with default instance variables name of Human_Player' do
-        expect(subject.name).to eq('Human_Player')
+        expect(subject.name).to eq('Human Player')
       end
 
       it 'can set name of the player on initialization, which can be read' do
