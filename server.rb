@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -28,6 +29,17 @@ class RPS < Sinatra::Base
     erb :game
   end
 
+  post '/game' do
+    session[:rps] = params[:rps]
+    redirect to('/result')
+  end
+
+  get '/result' do
+    player1 = Player.new
+    player2 = Player.new
+    @result = player1.compare(session[:rps], player2.random_rps)
+    erb :result
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
