@@ -13,19 +13,22 @@ describe ComputerPlayer do
     end
   end
 
-  describe '#choice' do
+  describe '#make_choice' do
     it 'sometimes plays rock' do
       srand(999)
+      subject.make_choice
       expect(subject.choice).to eq(:rock)
     end
 
     it 'sometimes plays scissors' do
       srand(1004)
+      subject.make_choice
       expect(subject.choice).to eq(:scissors)
     end
 
     it 'sometimes plays paper' do
       srand(1001)
+      subject.make_choice
       expect(subject.choice).to eq(:paper)
     end
   end
