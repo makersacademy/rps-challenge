@@ -10,6 +10,7 @@ describe Game do
     expect(subject).to respond_to(:user_choice).with(1).arguments
   end
 
+
   # xit 'should return "scissors" when comp_choice is run' do
   #   expect(Game.new).to receive(:comp_choice).and_return(:scissors)
   # end
@@ -26,6 +27,19 @@ describe Game do
       subject.user_choice("scissors")
       expect(subject.winner?).to eql(true)
     end
+
+    it 'should win if user_choice is paper and comp_choice is rock' do
+      subject.user_choice("paper")
+      allow(subject).to receive(:comp_choice).and_return("rock")
+      expect(subject.winner?).to eql(true)
+    end
+
+    it 'should win if user_choice is rock and comp_choice is scissors' do
+      subject.user_choice("rock")
+      allow(subject).to receive(:comp_choice).and_return("scissors")
+      expect(subject.winner?).to eql(true)
+    end
+
   end
 
   describe 'lose?' do
@@ -40,4 +54,5 @@ describe Game do
     expect(subject).to respond_to(:result)
     end
   end
+
 end
