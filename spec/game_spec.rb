@@ -23,6 +23,7 @@ describe Game do
   end
 
   describe 'winner?' do
+
     it 'should win if user_choice is scissors and comp_choice is paper' do
       subject.user_choice("scissors")
       expect(subject.winner?).to eql(true)
@@ -43,6 +44,7 @@ describe Game do
   end
 
   describe 'lose?' do
+
     it 'should lose if player chooses rock and comp chooses paper' do
       subject.user_choice("rock")
       expect(subject.lose?).to eql(true)
@@ -50,6 +52,7 @@ describe Game do
   end
 
   describe 'result' do
+    
     it 'should display the result of the game' do
     expect(subject).to respond_to(:result)
     end

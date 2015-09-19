@@ -1,5 +1,7 @@
 class Game
 
+  attr_writer :choices 
+
   def initialize
     @choices = ["rock","paper","scissors"]
   end
