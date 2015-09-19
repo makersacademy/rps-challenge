@@ -16,10 +16,10 @@ describe 'Game' do
 
   it 'can return a hand from the game engine' do
     player = double(:fakeplayer)
-    my_hand = double(:my_fake_hand)
+    p1_hand = double(:p1_fake_hand)
     rock = double(:fake_rock)
     game = Game.new(player)
-    expect(game.play(my_hand)).to be_a(Symbol)
+    expect(game.play(p1_hand)).to be_a(Symbol)
   end
 
 #Not happy with below test
@@ -27,10 +27,7 @@ describe 'Game' do
     game = Game.new(Player.new("Matt"))
     allow(game).to receive(:play).and_return [:rock]
     game.play(:rock)
-    expect(game.winner?).to eq("Draw!")
+    expect(game.winner).to eq("It's a draw!")
   end
-
-
-
 
 end

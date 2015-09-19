@@ -6,4 +6,5 @@ describe Player do
     p1 = Player.new(:matt)
     expect(p1.name).to eq(:matt)
   end
+
 end
