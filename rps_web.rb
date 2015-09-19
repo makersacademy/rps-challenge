@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/computer'
 
 class Rps_challenge < Sinatra::Base
 
@@ -19,16 +21,23 @@ class Rps_challenge < Sinatra::Base
   end
 
   post '/result' do
+    game = Game.new
+    comp = Computer.new
+    session[:game] = game
     session[:player_choice] = params[:rps]
-    session[:computer_choice] = 'scissor'
+    session[:computer_choice] = comp.choice(game.options)
     redirect '/result'
   end
 
   get '/result' do
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
-    @winner = session[:name]
+    @winner = session[:game].winner(@player_choice, @computer_choice)
     erb :result
+  end
+
+  get '/exit' do
+    'Bye-bye'
   end
 
   # start the server if ruby file executed directly

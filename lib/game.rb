@@ -1,5 +1,7 @@
 class Game
 
+  attr_reader :options
+
   def initialize
     @options = ['rock', 'paper', 'scissors']
     @result = {rock: 'scissors', scissors: 'paper', paper: 'rock'}
