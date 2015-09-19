@@ -5,11 +5,8 @@
 <form action="/play_rps" method="post">
   <% @game.weapons.each.with_index do |weapon, index| %>
     <p>
-    <% if index == 0 %>
-      <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>" checked>
-    <% else %>
-      <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>">
-    <% end %>
+    <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>"
+    <%= index == 0 ? "checked" : "" %>>
     <label for="<%= weapon %>"><%= weapon %></label>
     </p>
   <% end %>

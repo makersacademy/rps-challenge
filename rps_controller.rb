@@ -3,8 +3,6 @@ require_relative 'lib/rps_game'
 
 class RockPaperScissors < Sinatra::Base
 
-  $game = nil # stores the game object
-
   # enable :sessions
 
   get '/' do
@@ -20,6 +18,9 @@ class RockPaperScissors < Sinatra::Base
     @game = $game
     @name = $game.player_name
     erb :play_rps
+  end
+
+  post '/play_rps' do
   end
 
   # start the server if ruby file executed directly
