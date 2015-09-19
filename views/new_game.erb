@@ -16,21 +16,16 @@ input, a {
 }
 </style>
 
-<% if $name == nil %>
-  <h1>Hello human.
-    <br> Do you want to play a game? :) <br>
-  </h1>
+<h1>Hello human.
+  <br> Do you want to play a game? :) <br>
+</h1>
 <br>
-  <form action='/new_game'>
-    <input type="text" name="name" placeholder='Human name required'>
-      <br>
-      <input type="submit" value="Let's do this">
-    </form>
-<% elsif $name == "" %>
-    <div class="warning">No. Enter a name.<br> <a href="/new_game">Back</a></div>
-<% else %>
-    <a href="/new_session">Lets do this...</a> 
-<% end %>
+<form action='/new_session'>
+  <input type="text" name="name" placeholder='Human name required'>
+  <br>
+  <input type="submit" value="Let's do this">
+</form>
+
 
 
 
