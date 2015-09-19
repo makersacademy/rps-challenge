@@ -5,7 +5,3 @@ feature "Starting a new game"
     visit '/'
     click link 'New Game'
     expect(page).to have_content "What's your name?"
-
-
-
-end
