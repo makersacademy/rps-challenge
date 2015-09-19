@@ -29,4 +29,10 @@ describe Game do
   expect(game.play).to eql("The computer won")
   end
 
+  it "tells you if you have won" do
+  game = Game.new("rock")
+  allow(game).to receive(:computer_choice) {'scissors'}
+  expect(game.play).to eql("You won")
+  end
+
 end

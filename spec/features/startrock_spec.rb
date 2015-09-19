@@ -8,7 +8,7 @@ feature 'Starting a new game' do
   expect(page).to have_content "Rock, Paper, Scissors"
   end
 
-  scenario 'When I go to the game I am giving some instructions on how to play' do
+  scenario 'When I go to the game I am given some instructions on how to play' do
   visit '/'
   expect(page).to have_content "How to Play"
   end

@@ -1,18 +1,19 @@
 class Game
 
-  attr_reader :result, :player_choice
+  attr_reader :result, :player_choice, :computer_player
 
   def initialize(player_choice)
     @player_choice = player_choice
     @result = result
     @choices = ["rock","paper","scissors"]
+    @computer_player
 
   end
 
   def computer_choice
-  @choices.sample
-
+  @computer_player = @choices.sample
   end
+
 
 
   def player_choice
@@ -20,13 +21,16 @@ class Game
 
   end
 
+  def computer_player
+    @computer_player
+  end
+
+
   def play
-    computer = computer_choice
-    p computer
-    p player_choice
-    if computer == player_choice
-     puts "It was a draw"
-   elsif (computer == "rock" && player_choice == "paper") || (computer == "paper" && player_choice == "scissors") || (computer == "scissors" && player_choice == "rock")
+  computer_choice
+    if @computer_player == @player_choice
+     "It was a draw"
+   elsif (@computer_player == "rock" && @player_choice == "paper") || (@computer_player == "paper" && @player_choice == "scissors") || (@computer_player == "scissors" && @player_choice == "rock")
      "You won"
     else
      "The computer won"
