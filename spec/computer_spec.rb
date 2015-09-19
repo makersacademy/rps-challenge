@@ -7,8 +7,7 @@ describe Computer do
     expect(subject.auto).to eq :rock
   end
 
-  it 'makes the weather stormy' do
-    subject.auto
-    expect(subject.auto).to eq(:rock).or eq(:paper).or eq(:sunny)
+  it 'should only select one out of rock, paper and scissors' do
+    expect(subject.auto).to eq(:rock).or eq(:paper).or eq(:scissors)
   end
 end
