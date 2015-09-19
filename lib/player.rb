@@ -9,7 +9,7 @@ class Player
     elsif move == :scissors
       :scissors
     else
-      fail "Please select 'Rock', 'Paper' or 'Scissors'."
+      fail "Select 'Rock', 'Paper' or 'Scissors'."
     end
   end
 
