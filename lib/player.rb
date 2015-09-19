@@ -1,14 +1,15 @@
 class Player
 
   def initialize
-    @rps = ["Rock", "Scissors", "Paper"]
-  end
-  def scissors
-    rps[1]
+    @rps = [:rock, :scissors, :paper]
   end
 
   def rock
     rps[0]
+  end
+
+  def scissors
+    rps[1]
   end
 
   def paper
@@ -21,17 +22,17 @@ class Player
 
   def compare(a, b)
     return "Tie" if a == b
-    if a == "Rock"
-      return "Rock" if b == "Scissors"
-      return "Paper" if b == "Paper"
+    if a == :rock
+      return :rock if b == :scissors
+      return :paper if b == :paper
     end
-    if a == "Scissors"
-      return "Rock" if b == "Rock"
-      return "Scissors" if b == "Paper"
+    if a == :scissors
+      return :rock if b == :rock
+      return :scissors if b == :paper
     end
-    if a == "Paper"
-      return "Paper" if b == "Rock"
-      return "Scissors" if b == "Scissors"
+    if a == :paper
+      return :paper if b == :rock
+      return :scissors if b == :scissors
     end
   end
 
