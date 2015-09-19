@@ -8,25 +8,25 @@ feature 'Starting a new game' do
 
   scenario 'Input box for entering player name, redirect to game play page' do
     visit '/'
-    fill_in('player_name', :with => 'Joe')
+    fill_in('player_name', with:'Joe')
     click_button("Start Game")
     expect(page).to have_content "Please enter your choice Joe."
   end
 
   scenario 'Player can enter choice into an input box and play a game' do
     visit '/'
-    fill_in('player_name', :with => 'Joe')
+    fill_in('player_name', with:'Joe')
     click_button("Start Game")
-    fill_in('player_choice', :with => 'rock')
+    fill_in('player_choice', with:'rock')
     click_button("Submit my choice")
     expect(page).to have_content("Game result:")
   end
 
   scenario 'Player can click on the play another round button' do
     visit '/'
-    fill_in('player_name', :with => 'Joe')
+    fill_in('player_name', with:'Joe')
     click_button("Start Game")
-    fill_in('player_choice', :with => 'rock')
+    fill_in('player_choice', with:'rock')
     click_button("Submit my choice")
     click_button("Play again")
     expect(page).to have_content("Please enter your choice Joe")
@@ -34,9 +34,9 @@ feature 'Starting a new game' do
 
   scenario 'Player can click on the New Player button' do
     visit '/'
-    fill_in('player_name', :with => 'Joe')
+    fill_in('player_name', with:'Joe')
     click_button("Start Game")
-    fill_in('player_choice', :with => 'rock')
+    fill_in('player_choice', with:'rock')
     click_button("Submit my choice")
     click_button("New Player")
     expect(page).to have_content("Please enter your name:")
@@ -44,12 +44,12 @@ feature 'Starting a new game' do
 
   scenario 'New player can come in enter new name and play' do
     visit '/'
-    fill_in('player_name', :with => 'Joe')
+    fill_in('player_name', with:'Joe')
     click_button("Start Game")
-    fill_in('player_choice', :with => 'rock')
+    fill_in('player_choice', with:'rock')
     click_button("Submit my choice")
     click_button("New Player")
-    fill_in('player_name', :with => 'Steven')
+    fill_in('player_name', with:'Steven')
     click_button("Start Game")
     expect(page).to have_content "Please enter your choice Steven."
   end
