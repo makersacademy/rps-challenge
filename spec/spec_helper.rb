@@ -13,3 +13,5 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+require_relative '../rps_web.rb'
+Capybara.app = RockPaperScissorsWeb

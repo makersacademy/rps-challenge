@@ -1,0 +1,6 @@
+<p>Welcome to Rock Paper Scissors!</p>
+<p>Please select your choice <%= @player_name %>.</p>
+<form action='/game-result' method="post">
+  <input type="text" name="player_choice" required>
+  <input type="submit" value="Submit my choice">
+</form>
