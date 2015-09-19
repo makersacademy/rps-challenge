@@ -1,4 +1,4 @@
-require 'Rockpaperscissors'
+require 'rockpaperscissors'
 
 describe Rockpaperscissors do
 
