@@ -23,7 +23,8 @@ class RPSChallenge < Sinatra::Base
   end
 
   get '/game' do
-  
+    @move = params[:move]
+    erb :game
   end
 
 
