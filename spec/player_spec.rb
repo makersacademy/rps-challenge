@@ -10,7 +10,7 @@ describe Player do
 
   it 'can choose rock' do
     player.choose("rock")
-    expect(player.chosen_shape).to eq "rock"
+    expect(player.shape).to eq :rock
   end
 
   it 'can only choose from rock, paper or scissors' do
