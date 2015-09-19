@@ -3,7 +3,7 @@ require './lib/game'
 require './lib/computer'
 require './lib/player'
 
-class RPS_web < Sinatra::Base
+class Rps_web < Sinatra::Base
 
   enable :sessions
   set :views, proc { File.join(root, 'views') }
