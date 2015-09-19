@@ -7,7 +7,11 @@ describe RpsGame do
   end
 
   it 'let the user select a weapon' do
-    expect(subject.choose_weapon("Paper")).to eq :paper
+    expect(subject.choose_player_weapon("Paper")).to eq :paper
+  end
+
+  it 'can randomly choose the computer weapon' do
+    expect(subject.choose_computer_weapon.class).to eq Symbol
   end
 
 end

@@ -40,3 +40,20 @@ feature 'Playing the game:' do
   end
 
 end
+
+feature 'Displaying the results:' do
+
+  before do
+    srand(0) # seeds RNG to ensure computer_weapon is :scissors
+    visit '/'
+    fill_in 'player_name', with: 'Steerpike'
+    click_button 'GO'
+    choose 'Scissors'
+    click_button 'THROW SHAPE'
+  end
+
+  scenario 'summarises the contest' do
+    expect(page).to have_content 'Rock blunts Scissors!'
+  end
+
+end
