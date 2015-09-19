@@ -19,7 +19,16 @@ class Rps_challenge < Sinatra::Base
   end
 
   post '/result' do
+    session[:player_choice] = params[:rps]
+    session[:computer_choice] = 'scissor'
+    redirect '/result'
+  end
 
+  get '/result' do
+    @player_choice = session[:player_choice]
+    @computer_choice = session[:computer_choice]
+    @winner = session[:name]
+    erb :result
   end
 
   # start the server if ruby file executed directly
