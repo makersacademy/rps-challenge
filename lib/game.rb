@@ -13,7 +13,9 @@ class Game
   end
 
   def player1_win?(player1_choice,player2_choice)
-    player1_choice == :rock && player2_choice == :scissors || player1_choice == :paper && player2_choice == :rock || player1_choice == :scissors && player2_choice == :paper
+    boolean = player1_choice == :rock && player2_choice == :scissors
+    boolean = boolean || player1_choice == :paper && player2_choice == :rock
+    boolean = boolean || player1_choice == :scissors && player2_choice == :paper
   end
 
 end
