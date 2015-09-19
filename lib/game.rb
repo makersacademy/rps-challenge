@@ -4,12 +4,33 @@ require_relative 'computer'
 class Game
 
   RULES = {
-   rock:     {rock: :draw, paper: :paper, scissors: :rock},
-   paper:    {rock: :paper, paper: :draw,  scissors: :scissors},
-   scissors: {rock: :rock, paper: :scissors, scissors: :draw}
+   rock:     {rock: :draw, paper: :computer_wins, scissors: :player_wins},
+   paper:    {rock: :player_wins, paper: :draw,  scissors: :computer_wins},
+   scissors: {rock: :computer_wins, paper: :player_wins, scissors: :draw}
   }
 
   def play(player, computer)
     RULES[player.object][computer.auto]
+    if :draw
+      draw
+    elsif :computer_wins
+      looser
+    else
+      winner
+    end
+  end
+
+  # private
+
+  def winner
+    "You are the winner!"
+  end
+
+  def looser
+    "You loose!"
+  end
+
+  def draw
+    "That's a draw!"
   end
 end
