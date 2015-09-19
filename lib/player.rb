@@ -1,12 +1,8 @@
 class Player
 
-  def initialize(choice)
-    @choice
-  end
-
   def choose(move)
     moves = [:rock, :paper, :scissors]
-    moves.include?(move) ? move : 'choose one of these options - :rock, :paper, :scissors'
+    fail "uh-oh, that's not a valid choice" unless moves.include?(move)
+    move
   end
-
 end
