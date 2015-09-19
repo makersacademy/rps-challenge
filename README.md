@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/anitacanita/rps-challenge.svg)](https://travis-ci.org/anitacanita/rps-challenge)
+
 ## Rock Paper Scissors
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
