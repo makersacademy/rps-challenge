@@ -27,10 +27,7 @@ class RockPaperScissorsWeb < Sinatra::Base
 
   get '/game-result' do
     player_choice = session[:player_choice].downcase.to_sym
-    game = Game.new
-    computer_player = ComputerPlayer.new
-    computer_player_choice = computer_player.choice
-    @result = game.play(player_choice,computer_player_choice)
+    @result = Game.new.play(player_choice,ComputerPlayer.new.choice)
     erb :game_result
   end
 
