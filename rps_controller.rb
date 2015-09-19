@@ -1,20 +1,24 @@
 require 'sinatra/base'
+require_relative 'lib/rps_game'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
+  $game = nil # stores the game object
+
+  # enable :sessions
 
   get '/' do
     erb :index
   end
 
   post '/' do
-    session[:name] = params[:player_name]
+    $game = RpsGame.new(params[:player_name])
     redirect '/play_rps'
   end
 
   get '/play_rps' do
-    @name = session[:name]
+    @game = $game
+    @name = $game.player_name
     erb :play_rps
   end
 
