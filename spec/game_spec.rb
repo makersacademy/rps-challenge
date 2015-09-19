@@ -49,21 +49,21 @@ describe Game do
       computer_player = double(:fake_computer_player, choice:'paper'.to_sym)
       computer_choice = computer_player.choice
       player_choice = :rock
-      expect(subject.play(player_choice,computer_choice)).to eq('Compt wins!')
+      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
     end
 
     it 'Player looses when player choose paper and computer choose scissors' do
       computer_player = double(:fake_computer_player, choice:'scissors'.to_sym)
       computer_choice = computer_player.choice
       player_choice = :paper
-      expect(subject.play(player_choice,computer_choice)).to eq('Compt wins!')
+      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
     end
 
     it 'Player looses when player choose scissors and computer choose rock' do
       computer_player = double(:fake_computer_player, choice:'rock'.to_sym)
       computer_choice = computer_player.choice
       player_choice = :scissors
-      expect(subject.play(player_choice,computer_choice)).to eq('Compt wins!')
+      expect(subject.play(player_choice,computer_choice)).to eq('Player2 wins!')
     end
 
   end
