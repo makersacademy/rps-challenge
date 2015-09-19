@@ -22,12 +22,21 @@ class Game
 
   def play
     @winning_move = rules[@p1_move][@p2_move]
-    return :p1 if @p1_move == @winning_move
-    return :p2 if @p2_move == @winning_move
+    return :p1_wins! if @p1_move == @winning_move
+    return :p2_wins! if @p2_move == @winning_move
     return :draw
 	end
 
 end
+
+game = Game.new
+cpu = Cpu.new
+game.p1_move(:r)
+cpu_move = cpu.cpu_move
+p cpu_move
+game.p2_move(cpu_move)
+p game.play
+
 
 # loop do 
 #   result = game.play(view.players_next_move, bot.next_move)

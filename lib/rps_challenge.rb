@@ -3,6 +3,8 @@ require 'sinatra/base'
 class Rps_Challenge < Sinatra::Base
   set :views, proc {File.join(root,'..','/views')}
 
+  enable :sessions
+
   before do
     require_relative 'rps_helper'
   end
