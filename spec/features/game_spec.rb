@@ -16,6 +16,4 @@ feature "Starting a new game" do
   expect(page).to have_content "No."
   end
 
-
-
 end
