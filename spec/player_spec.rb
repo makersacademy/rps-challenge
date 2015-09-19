@@ -1,4 +1,4 @@
-require 'player.rb'
+require "player"
 
 describe Player do
 
@@ -13,5 +13,9 @@ describe Player do
   it "can select scissors" do
     expect(subject.select(:scissors)).to be :scissors
   end
-  
+
+  it "receives an error message if they select non-valid move" do
+    expect{subject.select(:coffee)}.to raise_error "Please select from either 'Rock', 'Paper' or 'Scissors'."
+  end
+
 end

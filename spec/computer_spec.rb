@@ -1,4 +1,4 @@
-require 'computer.rb'
+require "computer"
 
 describe Computer do
 
