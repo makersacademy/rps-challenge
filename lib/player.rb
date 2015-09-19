@@ -1,14 +1,16 @@
 class Player
 
-  attr_reader :name, :chosen_object
+  attr_reader :name, :chosen_shape
 
   def initialize(name)
     @name = name
-    @chosen_object = nil
+    @chosen_shape = nil
+    @shapes = ["rock", "paper", "scissors"]
   end
 
   def choose(shape)
-    @chosen_object = shape.capitalize
+    fail "Please choose between rock, paper or scissors." unless @shapes.include?(shape)
+    @chosen_shape = shape
   end
 
 end
