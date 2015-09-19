@@ -1,5 +1,4 @@
 require_relative 'rps_game/game'
-
 $game = Game.new
 $cpu = Cpu.new
 
@@ -12,3 +11,4 @@ $cpu = Cpu.new
 #   result = game.play(view.players_next_move, bot.next_move)
 #   view.display_result(result)
 # end
+

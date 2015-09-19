@@ -6,9 +6,9 @@ class Game
 
   def initialize
   @rules = {
-  :r => {:r => :draw, :p => :p, :s => :r},
-  :p => {:r => :p, :p => :draw, :s => :s},
-  :s => {:r => :r, :p => :s, :s => :draw}
+  :rock => {:rock => :draw, :paper => :paper, :scissors => :rock},
+  :paper => {:rock => :paper, :paper => :draw, :scissors => :scissors},
+  :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
 }
   end
 

@@ -6,8 +6,8 @@ class Rps_Challenge < Sinatra::Base
   enable :sessions
 
   before do
-    #move this to /new_session
     require_relative 'rps_helper'
+    $result = nil
   end
 
   get '/' do
@@ -15,33 +15,32 @@ class Rps_Challenge < Sinatra::Base
   end
 
   get '/new_game' do
-    $name = params[:name]
     erb :new_game
   end
 
   get '/new_session' do
-    $name = params[:name]
-    session[:name] = $name
-    redirect '/new_game' if $name == nil || $name == ""
+    redirect '/new_game' if params[:name] == ""
+    session[:name] = params[:name]
+    $name = session[:name]
     erb :new_session
   end
 
   get '/rock' do
-    $game.p1_move(:r)
+    $game.p1_move(:rock)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
     erb :new_session
   end
 
   get '/paper' do
-    $game.p1_move(:p)
+    $game.p1_move(:paper)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
     erb :new_session
   end
 
   get '/scissors' do
-    $game.p1_move(:s)
+    $game.p1_move(:scissors)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
     erb :new_session

@@ -20,20 +20,20 @@ describe Game do
   context "When playing"
   
     it "Logic can return a draw" do
-      subject.p1_move(:r)
-      subject.p2_move(:r)
+      subject.p1_move(:rock)
+      subject.p2_move(:rock)
       expect(subject.play).to eq :draw
     end
 
     it "Logic can return win (p1)" do
-      subject.p1_move(:r)
-      subject.p2_move(:s)
+      subject.p1_move(:rock)
+      subject.p2_move(:scissors)
       expect(subject.play).to eq :p1_wins!
     end
 
     it "Logic can return a win (p2)" do
-      subject.p1_move(:s)
-      subject.p2_move(:r)
+      subject.p1_move(:scissors)
+      subject.p2_move(:rock)
       expect(subject.play).to eq :p2_wins!
     end
 

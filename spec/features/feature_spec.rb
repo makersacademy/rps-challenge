@@ -15,7 +15,7 @@ feature "FEATURES:" do
       click_link "Click here to get started!"
       fill_in 'name', :with => ''
       click_button "Let's do this"
-      expect(page).to have_content "No."
+      expect(page).to have_content "Hello human. Do you want to play a game? :)"
     end
   end
 end
