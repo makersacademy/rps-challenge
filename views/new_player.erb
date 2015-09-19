@@ -1,0 +1,10 @@
+<% if @player %>
+  Hello, <%= @player %>!
+  <a href='/game'>Rock, scissors or paper?</a>
+<% else %>
+  <form action="/new_player" method='post'>
+    What's your name?
+    <input type="text" name="name" required>
+    <input type="submit" value="submit">
+  </form>
+<% end %>
