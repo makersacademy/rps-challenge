@@ -34,4 +34,9 @@ feature 'Playing the game:' do
     expect(page).to have_content 'Steerpike threw Scissors.'
   end
 
+  scenario 'makes the computer choose a weapon' do
+    click_button 'THROW SHAPE'
+    expect(page).to have_content 'The computer threw'
+  end
+
 end

@@ -21,6 +21,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play_rps' do
+    $game.choose_weapon(params[:weapon])
+    redirect '/results'
+  end
+
+  get '/results' do
+    @name = $game.player_name
+    @player_weapon = $game.weapons_hash[$game.player_weapon]
+    erb :results
   end
 
   # start the server if ruby file executed directly
