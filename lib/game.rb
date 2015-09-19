@@ -21,4 +21,12 @@ class Game
    return true if  @choice == "rock" && comp_choice == "scissors"
   end
 
+  def lose?
+   return true if @choice == "scissors" && comp_choice == "rock"
+   return true if @choice == "paper" && comp_choice == "scissors"
+   return true if  @choice == "rock" && comp_choice == "paper"
+  end
+
+
+
 end

@@ -25,5 +25,14 @@ describe Game do
     end
   end
 
+  describe 'lose?' do
+    it 'should lose if player chooses rock and comp chooses paper' do
+      subject.user_choice("rock")
+      allow(subject).to receive(:comp_choice).and_return("paper")
+      expect(subject.lose?).to eql(true)
+    end
+
+  end
+
 
 end
