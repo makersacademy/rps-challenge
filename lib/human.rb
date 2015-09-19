@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Human < Player
 
   def chooses(choice)

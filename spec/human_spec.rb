@@ -1,5 +1,5 @@
-require 'Player'
-require 'Human'
+require 'player'
+require 'human'
 
 describe Human do
 

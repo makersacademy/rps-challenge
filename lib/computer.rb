@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Computer < Player
 
   def rand_choice

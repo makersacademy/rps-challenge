@@ -1,4 +1,4 @@
-require 'Player'
+require 'player'
 require 'computer'
 
 describe Computer do
