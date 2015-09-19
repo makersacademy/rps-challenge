@@ -11,10 +11,11 @@ feature "Playing game" do
 
   scenario "rock beats scissors" do
     player1 = Player.new
-    player2 = Player.new
+    computer = Player.new
     visit "/game"
     choose("rock")
-    player1.rock.vs(player2.scissors)
+    click_button("Play")
+    player1.compare("Rock", computer.scissors)
     expect(page).to have_content("You Win!")
   end
 
