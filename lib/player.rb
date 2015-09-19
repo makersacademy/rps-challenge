@@ -1,7 +1,6 @@
 class Player
 
-  attr_reader :hand
-  attr_reader :options
+  attr_reader :hand, :options
 
   def initialize
     @hand = nil
