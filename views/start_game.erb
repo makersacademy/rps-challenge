@@ -1,0 +1,14 @@
+<div style='height: 100px; width: 250px; border: 3px solid red'>
+  <br>
+  <%= @name %>, choose your object...
+  <br>
+  <br>
+  <form action='/start_game' method="post">
+    <select name="object">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+      <input type="submit" value="Submit">
+    </select>
+  </form>
+</div>
