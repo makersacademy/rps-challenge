@@ -1,4 +1,4 @@
-class Opponent
+class Computer
 
   attr_reader :hand, :options
 

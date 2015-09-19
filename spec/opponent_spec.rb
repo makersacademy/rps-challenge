@@ -1,8 +1,6 @@
-require 'opponent'
+require 'computer'
 
-describe Opponent do
-
-  let(:rand) { 0 }
+describe Computer do
 
   it { is_expected.to respond_to :hand }
 
@@ -16,7 +14,7 @@ describe Opponent do
 
     it 'should assign random choice to hand' do
       subject.rand_choice
-      expect(subject.hand).to be :rock
+      expect(subject.options.include?(subject.hand)).to be true 
     end
   end
 end

@@ -1,6 +1,6 @@
-require 'player'
+require 'Human'
 
-describe Player do
+describe Human do
 
   it { is_expected.to respond_to :hand }
 
