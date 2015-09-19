@@ -1,4 +1,4 @@
-require_relative 'player'  # => true
+require_relative 'player'
 class Game
 
   attr_reader :players
@@ -25,7 +25,7 @@ class Game
   end
 
 
-private
+  private
 
   def equal?
     "Draw!" if  (@comp_hand == @p1_hand)
@@ -41,8 +41,3 @@ private
   end
 
 end
-
-
-
-
-game = Game.new(Player.new("Matt"))  # => #<Game:0x007f94c30a2e68 @players=[[#<Player:0x007f94c30a2dc8 @name="Matt">]]>
