@@ -9,17 +9,20 @@ describe Game do
   # xit 'should return "scissors" when comp_choice is run' do
   #   expect(Game.new).to receive(:comp_choice).and_return(:scissors)
   # end
-
-  it 'should draw if comp_choice and user_choice are equal' do
-    subject.user_choice("paper")
-    allow(subject).to receive(:comp_choice).and_return("paper")
-    expect(subject.draw?).to eql(true)
+  describe 'draw?' do
+    it 'should draw if comp_choice and user_choice are equal' do
+      subject.user_choice("paper")
+      allow(subject).to receive(:comp_choice).and_return("paper")
+      expect(subject.draw?).to eql(true)
+    end
   end
 
-  it 'should win if user_choice is rock and comp_choice is scissors' do
-    subject.user_choice("rock")
-    allow(subject).to receive(:comp_choice).and_return("scissors")
-    expect(subject).to receive(:winner?).and_return(true)
+  describe 'winner?' do
+    it 'should win if user_choice is rock and comp_choice is scissors' do
+      subject.user_choice("rock")
+      allow(subject).to receive(:comp_choice).and_return("scissors")
+      expect(subject.winner?).to eql(true)
+    end
   end
 
 
