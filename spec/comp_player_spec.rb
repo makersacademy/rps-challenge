@@ -15,7 +15,6 @@ describe Computer do
   it "sometimes play scissors" do
     srand(1004)
     expect(subject.choice).to eq (:scissors)
-    # allow(subject).to receive(:choice).and_return(:rock)
   end
 
 end

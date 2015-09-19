@@ -14,18 +14,18 @@ RULES = {
   end
 
   def winner(player, computer)
-     @winner = RULES[player.shape][computer.choice]
+    @winner = RULES[player.shape][computer.choice]
 
-     if @winner == :draw
-       "It is a tie!"
-     elsif player.shape == :rock     && computer.choice == :scissors ||
-           player.shape == :paper    && computer.choice == :rock     ||
-           player.shape == :scissors && computer.choice == :paper
-
+    if @winner == :draw
+      "It is a tie!"
+    elsif player.shape == :rock     && computer.choice == :scissors ||
+          player.shape == :paper    && computer.choice == :rock     ||
+          player.shape == :scissors && computer.choice == :paper
        "#{player.name}, you are the winner!"
-     else
-       "#{player.name}, you are the loser!"
-     end
-   end
+    else
+      "#{player.name}, you are the loser!"
+    end
+    
+  end
 
 end
