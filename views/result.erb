@@ -1,11 +1,32 @@
-Hello <%= @name %>!
-You chose <%= @player_choice %>
-<% if @player_choice == "rock" %>
-  <% @player.rock %>
-<% elsif @player_choice == "paper" %>
-  <% @player.paper %>
-<% else %>
-  <% @player.scissors %>
-<% end %>
+<head>
+<link rel="stylesheet" href="/css/bootstrap.css"/>
+</head>
 
-<%= @game.result(@player) %>
+<body>
+  <div class="jumbotron">
+    <div class="col-md-12 text-center">
+      <h1>Rock, Paper, Scissors!</h1>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2>Hello <%= @name %>! You chose:</h2>
+            <br>
+          <h2><%= @player_choice.capitalize %></h2>
+            <br>
+            <img src="/img/<%= @player_choice %>.png" width="256px" height="256px">
+              <% if @player_choice == "rock" %>
+                <% @player.rock %>
+              <% elsif @player_choice == "paper" %>
+                <% @player.paper %>
+              <% else %>
+                <% @player.scissors %>
+              <% end %>
+            <br>
+          <p><%= @game.result(@player) %></p>
+          <p><a href = "/">Play again?</a>
+      </div>
+    </div>
+  </div>
+</body>
