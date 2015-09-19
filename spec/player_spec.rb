@@ -2,19 +2,19 @@ require 'player'
 
 describe Player do
 
-  it 'Should initialize with a choice of nil' do
-
+  it 'Should initialize with a hand of nil' do
+    expect(subject.hand).to be nil
   end
 
-  context '#choice' do
+  context '#chooses' do
 
-    it { is_expected.to respond_to :choice }
+    it { is_expected.to respond_to :hand }
 
-    to 'should change players choice' do
+    it 'should change players hand' do
 
     end
 
-    to 'should raise error if choice is invalid' do
+    it 'should raise error if choice is invalid' do
 
     end
   end
