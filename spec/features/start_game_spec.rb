@@ -20,4 +20,11 @@ feature 'start a new game' do
     expect(page).to have_content "Let's play Rock, Paper, Scissors."
   end
 
+  scenario "I can choose a move" do
+    visit '/'
+    fill_in('player_name', :with => 'Ana')
+    click_button 'Start Game!'
+    expect(page).to have_content "Choose your move:"
+  end
+
 end
