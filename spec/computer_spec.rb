@@ -2,13 +2,12 @@ require 'computer'
 
 describe Computer do
 
-  it 'has a name The Unbeatable' do
-    expect(subject.name).to eq "The Unbeatable"
-  end
+  let(:array) { double :array}
 
-  it 'can generate a random option' do
-    options = [:rock, :paper, :scissors]
-    expect(options).to include(subject.choose)
+  xit 'can choose a random option' do
+    allow(array).to receive(choices).and_return([:rock, :paper])
+    computer = Computer.new(array)
+    expect(computer.options).to include(computer.choose)
   end
 
 end

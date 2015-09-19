@@ -1,20 +1,15 @@
-# You should have two players. Players have a
-# name attribute.
-# A player can choose rock,paper or scissor
-#
-# Computer: will generate a random option from paper,
-# rock scissors
-# A winner will be declared.
-#
-# Computer class, which generates a random option.
-# Then discplays that
-# option
-#
-# Game class compares the player option and the computer
-# option and displays a winner. It knows which choice wins.
-#
-#
-# Player: @name and turns.
-#
-# Computer: generate random from rock,paper,scissor.
-# Has turns array.
+require 'game'
+
+describe Game do
+
+  let(:player1) { double :player, choose: :rock}
+  let(:computer1) {double :computer, choose: :paper}
+
+  it 'player can beat the computer' do
+    game = Game.new(player1, computer1)
+    expect(game.play :rock).to eq 'You lose!'
+  end
+
+
+
+end

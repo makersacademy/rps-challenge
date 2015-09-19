@@ -1,9 +1,8 @@
 <html>
 <body>
-<h1 style="text-align:center"> Welcome <%= @name %> </h1>
-<form action=/computer>
-  Please select an option.
-  <input type='text'    name="player_choice">
-  <input type="submit"  value="Submit">
-</form>
+<h1 style="text-align:center"> Welcome <%= $player1.name %> </h1>
+  Click the Start button to begin the game.
+  <form action="/options" method="get">
+    <input type='submit' value="Start">
+  </form>
 </body>

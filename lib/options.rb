@@ -6,9 +6,9 @@ class Options
     @choices = []
   end
 
-  def add_choice(choice)
-    fail "You have already added this." if choice_added?(choice)
-    @choices << choice
+ # Need to test
+  def add_choice(*new_entries)
+    new_entries.each { |new_entry| choices << new_entry unless choice_added?(new_entry) }
   end
 
   private

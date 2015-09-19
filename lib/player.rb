@@ -9,6 +9,7 @@ class Player
 
   def choose(option)
     turns << option
+    option
   end
 
 end

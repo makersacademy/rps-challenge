@@ -1,19 +1,15 @@
+require_relative 'options'
+
 class Computer
 
-  attr_reader :name
+  attr_reader :options
 
-  def initialize
-    @name = "The Unbeatable"
+  def initialize(options)
+    @options = options.choices
   end
 
   def choose
-    option
-  end
-
-  private
-
-  def option
-    [:rock, :paper, :scissors].sample
+    options.sample
   end
 
 end
