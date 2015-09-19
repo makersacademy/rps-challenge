@@ -9,7 +9,7 @@ describe Game do
       # allow(computer_player).to receive(:choice).and_return(:rock)
       computer_choice = computer_player.choice
       player_choice = :rock
-      expect(game.play(player_choice,computer_choice)).to eq('Player wins!')
+      expect(game.play(player_choice,computer_choice)).to eq('Player1 wins!')
     end
   end
 
