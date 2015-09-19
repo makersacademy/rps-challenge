@@ -53,6 +53,22 @@ describe Game do
     it 'should display the result of the game' do
     expect(subject).to respond_to(:result)
     end
+
+    it 'should congratulate the winner if computer is beaten' do
+      subject.user_choice("scissors")
+      expect(subject.result).to eql("CONGRATULATIONS! YOU BEAT A MACHINE. Computer chose #{@comp_choice}")
+    end
+
+    it 'inform the user there is a draw' do
+      subject.user_choice("paper")
+      expect(subject.result).to eql("You drew. Computer chose #{@comp_choice}")
+    end
+
+    it 'inform the user they have lost the game' do
+      subject.user_choice("rock")
+      expect(subject.result).to eql("YOU LOST. THIS DUMB, ILLITERATE MACHINE BEAT YOU! Computer chose #{@comp_choice}")
+    end
+
   end
 
 end
