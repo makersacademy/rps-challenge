@@ -10,7 +10,7 @@ feature 'Starting a new game' do
     visit '/'
     fill_in('player_name', :with => 'Joe')
     click_button("Start Game")
-    expect(page).to have_content "Please select your choice Joe."
+    expect(page).to have_content "Please enter your choice Joe."
   end
 
   scenario 'Player can enter choice into an input box and play a game' do
