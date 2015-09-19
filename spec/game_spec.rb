@@ -37,4 +37,20 @@ describe Game do
     expect(subject.play(player, computer)).to eq("That's a draw!")
   end
 
+  it 'should declare player is the looser' do
+    player = Player.new
+    player.choose(:scissors)
+    computer = Computer.new
+    allow(computer).to receive(:auto).and_return(:rock)
+    expect(subject.play(player, computer)).to eq("You loose!")
+  end
+
+  it 'should declare player is the winner' do
+    player = Player.new
+    player.choose(:rock)
+    computer = Computer.new
+    allow(computer).to receive(:auto).and_return(:scissors)
+    expect(subject.play(player, computer)).to eq("You are the winner!")
+  end
+
 end
