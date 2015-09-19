@@ -15,7 +15,7 @@ describe Player do
   end
 
   it "receives an error message if they select non-valid move" do
-    expect{subject.select(:coffee)}.to raise_error "Please select from either 'Rock', 'Paper' or 'Scissors'."
+    expect{subject.select(:cake)}.to raise_error "Please select 'Rock', 'Paper' or 'Scissors'."
   end
 
 end
