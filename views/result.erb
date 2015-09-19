@@ -1,0 +1,11 @@
+Hello <%= @name %>!
+You chose <%= @player_choice %>
+<% if @player_choice == "rock" %>
+  <% @player.rock %>
+<% elsif @player_choice == "paper" %>
+  <% @player.paper %>
+<% else %>
+  <% @player.scissors %>
+<% end %>
+
+<%= @game.result(@player) %>
