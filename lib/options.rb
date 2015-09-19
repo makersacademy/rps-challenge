@@ -6,7 +6,6 @@ class Options
     @choices = []
   end
 
- # Need to test
   def add_choice(*new_entries)
     new_entries.each { |new_entry| choices << new_entry unless choice_added?(new_entry) }
   end
