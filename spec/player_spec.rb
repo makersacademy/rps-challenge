@@ -12,4 +12,10 @@ describe Player do
     expect{ subject.select 'bird' }.to raise_error(message)
   end
 
+  it "if there's only one player, a computer can generate a random choice" do
+    allow(subject.options).to receive(:sample) { :rock }
+    expect(subject.computer).to eq :rock
+  end
+
+
 end

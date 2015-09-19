@@ -1,11 +1,14 @@
 class Player
 
-  RPS = [:rock, :paper, :scissors]
-
-  attr_reader :choice
+  attr_reader :choice, :options
 
   def initialize
+    @options = [:rock, :paper, :scissors]
     @choice = ""
+  end
+
+  def computer
+    @choice = options.sample
   end
 
   def select(choice)
@@ -16,7 +19,7 @@ class Player
   private
 
   def valid?(choice)
-    RPS.include?(choice.to_sym)
+    options.include?(choice.to_sym)
   end
 
 end
