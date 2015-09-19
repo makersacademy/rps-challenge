@@ -18,8 +18,9 @@ end
 feature 'Playing the game' do
   scenario "When I enter 'Rock' I am told I have won" do
   visit '/'
-  fill_in('your_choice', :with => 'Rock')
-  expect(page).to have_content "The computer chose Scissors - you won!"
+  fill_in('your_choice', :with => 'rock')
+  click_button('Play')
+  expect(page).to have_content "The result is"
   end
 
 end

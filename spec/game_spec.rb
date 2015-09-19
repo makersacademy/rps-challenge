@@ -2,7 +2,6 @@ require 'game'
 
 describe Game do
 
-  let(:double_computer_choice){double(:computer_choice, choice: 'scissors')}
 
 
   it "creates a computer_choice" do
@@ -18,9 +17,9 @@ describe Game do
   end
 
   it "tells you if the game is a draw" do
-  game = Game.new("scissors")
+  game = Game.new('scissors')
   allow(game).to receive(:computer_choice) {'scissors'}
-  expect(game.play).to eql("It was a draw")
+  expect(game.play).to eql('It was a draw')
   end
 
   it "tells you if the computer has won" do

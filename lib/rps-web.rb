@@ -21,7 +21,7 @@ enable :sessions
   @choice = session[:choice]
   game = Game.new(@choice)
   @result = game.play
-  @computer_choice = game.computer_player
+  @computer = game.computer_choice
 
   erb:result
   end
