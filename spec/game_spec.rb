@@ -1,8 +1,11 @@
 require 'game'
 
 describe Game do
-  it {is_expected.to respond_to :play}
 
+  it "should create a random choice " do
+  expect(subject).to respond_to(:computer_choice)
+
+  end
 
 
 
