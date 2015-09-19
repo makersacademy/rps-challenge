@@ -25,7 +25,7 @@ RULES = {
     else
       "#{player.name}, you are the loser!"
     end
-    
+
   end
 
 end

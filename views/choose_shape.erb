@@ -1,6 +1,11 @@
+
 <h3>Choose your shape <%= @name %>.</h3>
-<form action="/choose_shape">
-  <button type="submit" value="rock" name="game">Rock</button>
-  <button type="submit" value="paper" name="game">Paper</button>
-  <button type="submit" value="scissors" name="game">Scissors</button>
+<form action="/choose_shape"  method="post">
+  <input type="text" name="player_choice" required="">
+  <input type="submit" value="Play game">
 </form>
+
+  <!-- <button type="submit" value="rock" name="game">Rock</button>
+  <button type="submit" value="paper" name="game">Paper</button>
+  <button type="submit" value="scissors" name="game">Scissors</button> -->
+  <!-- </form> -->
