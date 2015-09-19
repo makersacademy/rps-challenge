@@ -1,11 +1,4 @@
-class Human
-
-  attr_reader :hand, :options
-
-  def initialize
-    @hand = nil
-    @options = [:rock, :paper, :scissors]
-  end
+class Human < Player
 
   def chooses(choice)
     @hand = choice

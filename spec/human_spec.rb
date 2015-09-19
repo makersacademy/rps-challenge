@@ -1,3 +1,4 @@
+require 'Player'
 require 'Human'
 
 describe Human do

@@ -1,3 +1,4 @@
+require 'Player'
 require 'computer'
 
 describe Computer do
@@ -14,7 +15,7 @@ describe Computer do
 
     it 'should assign random choice to hand' do
       subject.rand_choice
-      expect(subject.options.include?(subject.hand)).to be true 
+      expect(subject.options.include?(subject.hand)).to be true
     end
   end
 end

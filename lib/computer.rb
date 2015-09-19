@@ -1,11 +1,4 @@
-class Computer
-
-  attr_reader :hand, :options
-
-  def initialize
-    @hand = nil
-    @options = [:rock, :paper, :scissors]
-  end
+class Computer < Player
 
   def rand_choice
     @hand = options[rand(3)]
