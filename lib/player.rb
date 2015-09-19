@@ -1,10 +1,6 @@
 class Player
 
-  attr_reader :current_selection
-
-  def select(shape)
-    @current_selection = shape
-  end
+  attr_accessor :current_selection, :name
 
   def clear_selection
     @current_selection = nil
