@@ -3,7 +3,7 @@ class Player
   attr_reader :object, :name
 
   def choose(object)
-    @object = object
+
     if object == :rock
       :rock
     elsif object == :paper
@@ -13,5 +13,6 @@ class Player
     else
       fail 'Incorrect option selected'
     end
+      @object = object
   end
 end
