@@ -9,12 +9,6 @@ class Rps_web < Sinatra::Base
   set :views, proc { File.join(root, 'views') }
 
   get '/' do
-    @game = Game.new
-    session[:game] = @game
-    @player = Player.new
-    session[:player] = @player
-    @computer = Computer.new
-    session[:computer] = @computer
     erb :index
   end
 
@@ -26,11 +20,17 @@ class Rps_web < Sinatra::Base
 
   get '/start_game' do
     if session[:object]
-      p session[:player].choose(session[:object])
-      p session[:game].play(session[:player], session[:computer])
+      session[:player].choose(session[:object])
+      session[:game].play(session[:player], session[:computer])
       erb :game
     else
-      p @name = session[:name]
+      @name = session[:name]
+      @game = Game.new
+      session[:game] = @game
+      @player = Player.new
+      session[:player] = @player
+      @computer = Computer.new
+      session[:computer] = @computer
       erb :start_game
     end
   end
