@@ -13,4 +13,5 @@ group :test do
   gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'shotgun'
+  gem 'simplecov', '~> 0.10.0'
 end

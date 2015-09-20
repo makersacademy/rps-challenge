@@ -105,6 +105,7 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   shotgun
+  simplecov (~> 0.10.0)
   sinatra
 
 BUNDLED WITH

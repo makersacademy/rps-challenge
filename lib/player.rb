@@ -6,11 +6,11 @@ class Player
   end
 
   def select(move)
-    if move == :rock
+    if move.to_sym == :rock
       @move = move
-    elsif move == :paper
+    elsif move.to_sym == :paper
       @move = move
-    elsif move == :scissors
+    elsif move.to_sym == :scissors
       @move = move
     else
       fail "Select 'Rock', 'Paper' or 'Scissors'."

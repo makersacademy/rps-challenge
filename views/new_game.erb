@@ -1,0 +1,18 @@
+<% if @name==nil %>
+  <form action="/new_game">
+    <p>What's your name?</p>
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% elsif @name=="" %>
+  <form action="/new_game">
+    <p>Please enter your name</p>
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+  </form>
+<% else %>
+  <form action="/start_game">
+    <p>Hi <%= @name %>, welcome to RPS!  Click "Start Game" to begin!</p>
+    <input type="submit" value="Start Game">
+  </form>
+<% end %>
