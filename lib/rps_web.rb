@@ -5,6 +5,8 @@ class RPSWeb < Sinatra::Base
 
   $previous_result = :none
   enable :sessions
+  set :static, true
+  set :root, File.dirname(__FILE__)
   
   get '/' do
     erb :index
