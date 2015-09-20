@@ -10,3 +10,24 @@ h2 {
 p {
   color: white;
 }
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+#rules {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: red;
+}

@@ -33,6 +33,12 @@ feature 'Account' do
     click_button 'Submit'
     expect(page).to have_selector("input[type='radio'][value='two-player']")
   end
+  scenario 'Has link to the rules' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    expect(page).to have_link("Rules")
+  end
 end
 
 feature 'Game' do

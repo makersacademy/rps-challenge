@@ -1,12 +1,18 @@
 <body>
-<form action="/two-player-game-player2" method="post">
-<select id='selection2' name="selection2">
-  <option value="rock">Rock</option>
-  <option value="paper">Paper</option>
-  <option value="scissors">Scissors</option>
-  <option value="lizard">Lizard</option>
-  <option value="spock">Spock</option>
-</select>
-<input type="submit" value="Selection">
-</form>
+  <div class="container-fluid">
+    <p>Player 2, please make your selection</p>
+    <form action="/two-player-game-player2" method="post">
+    <select id='selection2' name="selection2">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+      <option value="lizard">Lizard</option>
+      <option value="spock">Spock</option>
+    </select>
+    <input type="submit" value="Selection">
+    </form>
+  </div>
+  <div id="footer">
+    <a href="/account">Back to account</a>
+  </div>
 </body>

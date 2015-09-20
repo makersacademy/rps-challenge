@@ -1,13 +1,18 @@
 <body>
-  <p> Please make your selection </p>
-  <form action="/one-player-game" method="post">
-  <select id='selection' name="selection">
-    <option value="rock">Rock</option>
-    <option value="paper">Paper</option>
-    <option value="scissors">Scissors</option>
-    <option value="lizard">Lizard</option>
-    <option value="spock">Spock</option>
-  </select>
-  <input type="submit" value="Selection">
-  </form>
+  <div class="container-fluid">
+    <h2> Please make your selection </h2>
+    <form action="/one-player-game" method="post">
+    <select id='selection' name="selection">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+      <option value="lizard">Lizard</option>
+      <option value="spock">Spock</option>
+    </select>
+    <input type="submit" value="Selection">
+    </form>
+  </div>
+  <div id="footer">
+    <a href="/account">Back to account</a>
+  </div>
 </body>

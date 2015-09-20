@@ -1,12 +1,20 @@
 <% if @user %>
+<div class="container-fluid">
+  <h2>Welcome to your account, <%= @user %></h2>
+  <p>Do you want to play a one or two player game?</p>
+  <form action='/account' method="post">
+    <input id='one-player' type="radio" name="game" value="one-player" checked> One Player
+    <br>
+    <input id='two-player' type="radio" name="game" value="two-player"> Two Player
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div id="footer">
+  <p>Don't know the rules? for a quick explanation <a href='/rules'>click here</a></p>
+<div>
 
-<h1>Welcome to your account, <%= @user %></h1>
-<p>What game do you want to play?</p>
-<form action='/account' method="post">
-  <input id='one-player' type="radio" name="game" value="one-player" checked>One Player
-  <input id='two-player' type="radio" name="game" value="two-player">Two Player
-  <input type="submit" value="Submit">
-</form>
 
 <% else %>
 
