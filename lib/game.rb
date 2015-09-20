@@ -10,7 +10,7 @@ class Game
   end
 
   def play
-		if player.choice == computer.choice
+    if player.choice == computer.choice
       "It's a tie!"
     elsif
       player.choice == :rock && computer.choice == :scissors ||

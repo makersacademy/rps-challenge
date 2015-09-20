@@ -1,7 +1,25 @@
-<form action="/result" method='post'>
-  <p style="font-family: calibri">Choose your hand:</p>
-  <input type="radio" name="choice" value="rock">rock
-  <input type="radio" name="choice" value="paper">paper
-  <input type="radio" name="choice" value="scissors">scissors
-  <input type="submit" value="submit">
+<form action="/result" method='post' style="font-family: calibri">
+  <p>Choose your weapon:</p>
+
+  <div style='display:inline-block'>
+    <label for="rock">
+      <img src="http://localhost:9292/images/rock.png" alt="rock" />
+      <input type="radio" name="choice" value="rock">rock<br>
+    </label>
+  </div>
+
+  <div style='display:inline-block'>
+    <label for="paper">
+      <img src="http://localhost:9292/images/paper.png" alt="paper" />
+      <input type="radio" name="choice" value="paper">paper<br>
+    </label>
+  </div>
+
+  <div style='display:inline-block'>
+    <label for="scissors">
+      <img src="http://localhost:9292/images/scissors.png" alt="scissors" />
+      <input type="radio" name="choice" value="scissors">scissors<br>
+    </label>
+  </div><br>
+  <input type="submit" value="submit" style='float: right;'>
 </form>
