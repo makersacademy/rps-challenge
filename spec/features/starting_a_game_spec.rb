@@ -29,5 +29,16 @@ feature 'Starting a new game' do
     expect(current_path).to eq '/play_game'
   end
 
+  feature 'multiplayer' do
+
+    scenario 'I have a multiplayer option available' do
+      visit '/'
+      fill_in 'name', with: "Mick"
+      click_button 'Enter'
+      expect(page).to have_css('input', exact: "Buddy")
+    end
+
+  end
+
 
 end

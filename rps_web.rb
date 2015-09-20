@@ -17,17 +17,13 @@ class RPS_Challenge < Sinatra::Base
   end
 
   post '/' do
-    redirect ('/') if params[:name].to_s == ""
+    redirect ('/') if no_params_name
     session[:name] = params[:name]
     redirect ('/')
   end
 
   post '/play_game' do
-    p1 = Player.new
-    p2 = Player.new
-    p1.name = session[:name]
-    p2.name = "Computer"
-    session[:game] = Game.new(p1,p2)
+    game_setup_vs_computer
     redirect ('/play_game')
   end
 
@@ -36,18 +32,38 @@ class RPS_Challenge < Sinatra::Base
   end
 
   post '/result' do
-    session[:game].player1.current_selection = Object.const_get(params[:weapon]).new
-    session[:game].player2.random_selector
+    arm_weapons_vs_computer
     redirect ('/result')
   end
 
   get '/result' do
+    assign_name_and_weapon_vars
+    @result = session[:game].challenge
+    erb :result
+  end
+
+  def game_setup_vs_computer
+    player1 = Player.new
+    player2 = Player.new
+    player1.name = session[:name]
+    player2.name = "Computer"
+    session[:game] = Game.new(player1,player2)
+  end
+
+  def no_params_name
+    params[:name].to_s == ""
+  end
+
+  def arm_weapons_vs_computer
+    session[:game].player1.current_selection = Object.const_get(params[:weapon]).new
+    session[:game].player2.random_selector
+  end
+
+  def assign_name_and_weapon_vars
     @name1 = session[:game].player1.name
     @weapon1 = session[:game].player1.current_selection.class.to_s
     @name2 = session[:game].player2.name
     @weapon2 = session[:game].player2.current_selection.class.to_s
-    @result = session[:game].challenge
-    erb :result
   end
 
   # start the server if ruby file executed directly
