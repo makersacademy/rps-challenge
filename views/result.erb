@@ -1,1 +1,20 @@
-<p> You chose <%= $game.take_turn($choiceTest) %>! </p>
+<body style = "background-image: url('images/rps.jpg'); no-repeat;
+background-size: 100%;">
+<div style="font-size: 40px">
+<% if $game.take_turn($choiceTest) == 'Player wins' %>
+  <p> The result is: <%= $game.take_turn($choiceTest) %>! Well done, you're awesome! </p>
+  <% elsif $game.take_turn($choiceTest) == 'Computer wins' %>
+  <p> The result is: <%= $game.take_turn($choiceTest) %>! Outsmarted by a computer...you suck. </p>
+  <% elsif $game.take_turn($choiceTest) == 'Draw' %>
+  <p> The result is: <%= $game.take_turn($choiceTest) %>! How boring. </p>
+  <% elsif $game.take_turn($choiceTest) == "Please enter either rock, paper or scissors" %>
+  <p> Woops...<%= $game.take_turn($choiceTest) %> </p>
+  <% end %>
+
+<form action="/game">
+    <input type="submit" value="Click here to play again!">
+</form>
+</div>
+</body>
+
+
