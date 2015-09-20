@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    Rock-Paper-Scissors-Lizard-Spock
+  </head>
+  <body>
+    <form action='/throw' method='post'>
+      Pick a shape to throw <%= @name %>!
+      <select name='shape' required>
+        <option value='Rock'>Rock</option>
+        <option value='Paper'>Paper</option>
+        <option value='Scissors'>Scissors</option>
+        <option value='Lizard'>Lizard</option>
+        <option value='Spock'>Spock</option>
+      </select>
+      <input type='submit' value='Throw'>
+    </form>
+  </body>
+</html>
