@@ -1,9 +1,9 @@
 class Computer
 
-  attr_reader :choice
+  attr_reader :shape
 
-  def choice
-    @choice = [:rock, :paper, :scissors][rand(0..2)]
+  def shape
+    @shape = [:rock, :paper, :scissors][rand(0..2)]
   end
 
 end

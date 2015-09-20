@@ -24,6 +24,11 @@ class RPSWeb < Sinatra::Base
     erb :choose_shape
   end
 
+  get '/game_result' do
+    @player_choice = params[:player_choice]
+    session[:player_choice] = params[:player_choice]
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
