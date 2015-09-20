@@ -53,10 +53,17 @@ class RPS < Sinatra::Base
     end
   end
 
+  get '/play_again' do
+    session[:player1_rps] = nil
+    session[:player2_rps] = nil
+    redirect to('/vs_friends')
+  end
+
   get '/player1_result' do
     @player = Player.new
     if session[:player1_rps] && session[:player2_rps]
-      @result = @player.compare(session[:player1_rps].to_sym, session[:player2_rps].to_sym)
+      @result = @player.compare(session[:player1_rps].to_sym,
+        session[:player2_rps].to_sym)
     end
     erb :player1_result
   end
@@ -64,7 +71,8 @@ class RPS < Sinatra::Base
   get '/player2_result' do
     @player = Player.new
     if session[:player1_rps] && session[:player2_rps]
-      @result = @player.compare(session[:player2_rps].to_sym, session[:player1_rps].to_sym)
+      @result = @player.compare(session[:player2_rps].to_sym,
+        session[:player1_rps].to_sym)
     end
     erb :player2_result
   end

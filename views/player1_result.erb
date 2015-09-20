@@ -6,6 +6,7 @@
   <% else %>
     <h2><%= @player.compare(session[:player1_rps].to_sym,
       session[:player2_rps].to_sym) %></h2>
+      <a href="/play_again" style="text-decoration: none">Play again</a>
   <% end %>
-  <a href="/vs_friends" style="text-decoration: none">Play again</a>
 </div>
+<%= session.each { |s| s } %>
