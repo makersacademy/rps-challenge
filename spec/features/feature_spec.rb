@@ -37,8 +37,8 @@ feature 'Playing the game,' do
     expect(page).to have_content 'You chose rock and the computer chose'
   end
 
-  xscenario 'I want to be offered the chance to play again.' do
-    expect(page).to have_content 'You chose rock and the computer chose'
+  scenario 'I want to be offered the chance to play again.' do
+    expect(page).to have_content 'Play again'
   end
 
 end

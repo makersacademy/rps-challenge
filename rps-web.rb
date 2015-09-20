@@ -15,6 +15,11 @@ class RPSWeb < Sinatra::Base
     erb :new_game
   end
 
+  get '/new_game' do
+    @user_name = session[:user_name]
+    erb :new_game
+  end
+
   post '/result' do
     @user_name = session[:user_name]
     @user_shape = params[:shape]
