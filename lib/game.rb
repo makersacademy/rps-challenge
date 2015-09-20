@@ -15,7 +15,7 @@ class Game
   end
 
   def draw?
-    return true if comp_choice == @choice
+    return true if @choice == comp_choice
   end
 
   def winner?
@@ -32,7 +32,7 @@ class Game
 
   def result
    if winner?
-     "CONGRATULATIONS! YOU BEAT A MACHINE. Computer chose #{@comp_choice}"
+    "CONGRATULATIONS! YOU BEAT A MACHINE. Computer chose #{@comp_choice}"
    elsif draw?
     "You drew. Computer chose #{@comp_choice}"
    elsif lose?

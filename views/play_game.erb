@@ -1,7 +1,16 @@
-<p>Choose from your weapon! And choose carefully...</p>
+<p>Choose your weapon, <%=@name%>! And choose carefully...</p>
 
-  <input type="radio" weapon="weapon" value="Rock" required>Rock<br>
-  <input type="radio" weapon="weapon" value="Paper" required>Paper<br>
-  <input type="radio" weapon="weapon" value="Scissors" required>Scissors<br>
+  <form action = "/play-game" method = "post">
+    Rock
+  <input type="radio" name="weapon" value ="rock">
+    <br>
+    <br>
+    Paper
+  <input type="radio" name="weapon" value ="paper">
+    <br>
+    <br>
+    Scissors
+  <input type="radio" name="weapon" value ="scissors">
+  </form>
   <input type="submit" value="PLAY!">
 </form>

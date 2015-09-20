@@ -6,12 +6,16 @@ class RPSWeb < Sinatra::Base
   set :views, proc{File.join(root, '' , 'views')}
 
   get '/' do
+    @name = session[:name]
     erb :index
   end
 
-  post'/play-game' do
+  post '/play-game' do
+    session[:name] = params[:name]
+    @name = params[:name]
     erb :play_game
   end
+
 
   run! if app_file == $0
 end
