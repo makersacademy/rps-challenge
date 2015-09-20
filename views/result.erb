@@ -1,0 +1,12 @@
+<div>ROUND <%= @round %>:</div>
+<% if @round_winner == 'DRAW'%>
+<div style="font-size: 20pt">DRAW</div>
+<% else %>
+<div style="font-size: 20pt"><%= @round_winner %> WINS!!</div>
+<% end %>
+<div><%= $scores.keys[0] %> <%= $scores.values[0].to_i %> : <%= $scores.values[1].to_i %> <%= $scores.keys[1] %>
+
+
+<form action="/choice" method="get">
+<input type="submit" value="NEXT ROUND">
+</form>
