@@ -40,9 +40,10 @@ class Rps_web < Sinatra::Base
     player1 = Human.new
     player2 = Computer.new
     player1.chooses(choice.to_sym)
-    erb :winner if game.winner?(player1, player2)
-    erb :loser if game.loser?(player1, player2)
-    erb :draw if game.draw?(player1, player2)
+    player2.rand_choice
+    return erb :winner if game.winner?(player1, player2)
+    return erb :loser if game.loser?(player1, player2)
+    return erb :draw if game.draw?(player1, player2)
   end
 
   run! if app_file == $0
