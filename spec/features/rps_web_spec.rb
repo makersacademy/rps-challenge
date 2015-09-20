@@ -4,7 +4,7 @@ feature 'playing rock paper scissors' do
 
   scenario 'player is asked to enter their name' do
     visit '/'
-    fill_in 'name', :with => 'Emily'
+    fill_in 'name', with: 'Emily'
     click_button 'New Game'
     expect(page).to have_content 'Hi, Emily!'
   end
