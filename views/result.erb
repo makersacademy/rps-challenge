@@ -1,7 +1,12 @@
 <body style="background-image: url('/images/rsz_rps-background.png')">
 
 <div style="font-family: 'Fira Mono', 'Lucida Console', monospace; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); text-align: center; background: white; padding: 60px; border-radius: 100%">
-<%= @message %>
+<div style="font-size: 200%; padding: 10px">
+  <%= @message1 %>
+</div>
+<div style="font-size: 100%; padding: 10px">
+  <%= @message2 %>
+</div>
   <form action="/game" style="padding: 10px">
     <input type="submit" value="Play again">
   </form>

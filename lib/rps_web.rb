@@ -29,15 +29,18 @@ class RPSWeb < Sinatra::Base
     human.choose_option(params[:choice].to_sym)
     computer.generate_turn
     if game.human_winner?(human, computer)
-      @message = "Congratulations, you have won. Computer chose #{computer.choice}" 
+      @message1 = "You win" 
+      @message2 = "Congratulations. Computer chose #{computer.choice}"
       $previous_result = :win
     end
     if game.human_loser?(human, computer)
-      @message = "Commiserations, you have lost. Computer chose #{computer.choice}" 
+      @message1 = "You lose" 
+      @message2 = "Commiserations. Computer chose #{computer.choice}"
       $previous_result = :loss
     end
     if game.draw?(human, computer)
-      @message = "It's a draw. Computer also chose #{computer.choice}" 
+      @message1 = "Draw" 
+      @message2 = "Computer chose #{computer.choice}"
       $previous_result = :draw
     end
     erb :result
