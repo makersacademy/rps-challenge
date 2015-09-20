@@ -25,7 +25,7 @@ feature "Playing rsp with 2 players" do
     click_link("Play with friends")
     choose("rock")
     click_button("Play")
-    expect(page).to have_content("Jongmin wins")
+    expect(page).to have_content("You lose")
   end
-  
+
 end

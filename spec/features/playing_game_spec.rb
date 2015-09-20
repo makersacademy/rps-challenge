@@ -9,16 +9,13 @@ feature "Playing game" do
     expect(page).to have_content("Scissors")
   end
 
-  scenario "rock beats scissors" do
-    player1 = Player.new
-    computer = Player.new
-    visit "/vs_computer"
-    choose("rock")
-    click_button("Play")
-    allow(computer).to receive(:random_rps).and_return(:scissors)
-    player1.compare(:rock, :scissors)
-    expect(page).to have_content("You win")
-  end
+  # scenario "It returns the result of the game" do
+  #   player = Player.new
+  #   visit "/vs_computer"
+  #   choose("rock")
+  #   click_button("Play")
+  #   expect(page).to have_content("You win" || "You lose")
+  # end
 
   scenario "Player can play more than one time" do
     visit "/result"

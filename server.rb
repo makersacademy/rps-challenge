@@ -34,9 +34,8 @@ class RPS < Sinatra::Base
 
   post '/vs_computer' do
     player = Player.new
-    computer = Player.new
     session[:rps] = params[:rps].to_sym
-    session[:result] = player.compare(session[:rps], computer.random_rps)
+    session[:result] = player.compare(session[:rps], player.random_rps)
     redirect to('/result')
   end
 
