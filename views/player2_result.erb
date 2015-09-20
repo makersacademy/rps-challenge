@@ -1,7 +1,11 @@
+<div style="text-align: center; margin-top: 100px">
 <% if @result.nil? %>
-  Waiting for your friend...
-  <a href="/player2_result">See the result</a>
+  <h2>Waiting for your friend...</h2>
+  <a href="/player2_result" style="text-decoration: none">
+    See the result</a>
 <% else %>
-  <%= @player.compare(session[:player2_rps].to_sym,
-    session[:player1_rps].to_sym) %>
+  <h2><%= @player.compare(session[:player2_rps].to_sym,
+    session[:player1_rps].to_sym) %></h2>
 <% end %>
+  <a href="/vs_friends" style="text-decoration: none">Play again</a>
+</div>
