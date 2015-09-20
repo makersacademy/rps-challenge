@@ -23,12 +23,12 @@ feature 'Starting a new game' do
 
   scenario "Once name has been submitted, player can select hand" do
     visit '/game'
-    expect(page).to have_content "Choose your hand:"
+    expect(page).to have_content "Choose your weapon:"
   end
 
   scenario "Once player has chosen hand" do
     visit '/game'
-    choose 'choice', :match => :first
+    choose 'choice', match: :first
     click_button 'submit'
     expect(page).to have_content "Who won?"
   end
@@ -38,7 +38,7 @@ feature 'Starting a new game' do
     choose 'choice', :match => :first
     click_button 'submit'
     click_link 'Play again'
-    expect(page).to have_content "Choose your hand:"
+    expect(page).to have_content "Choose your weapon:"
   end
 
 end
