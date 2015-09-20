@@ -1,21 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <link href="http://localhost:9292/css/bootstrap.css" rel="stylesheet">
-    <link href="http://localhost:9292/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
-  </head>
-  <body>
-  <div class="row">
+
+  <body class = "container">
+    <div class="row">
       <div class="col-md2 col-md col-md-2" style="display: block;">
         <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
-
+            <a class="navbar-brand" href="#">Brand</a>
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
               <li class="active">
-                <a href="www.bbc.co.uk">Home</a>
+                <a href="#">Home</a>
               </li>
               <li>
                 <a href="#">Link</a>
@@ -44,12 +38,71 @@
             </nav>
           </div>
         </nav>
-
-
-    <%= yield %>
-    <!-- Bootstrap jquery plugins -->
+        <div class="jumbotron">
+          <h1>
+            Hello, World!
+          </h1>
+          <p>
+            This is the coolest!
+          </p>
+          <p>
+            <a class="btn btn-primary btn-lg" href="#">Learn more</a>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h3>
+              Span 4
+            </h3>
+            <p>
+              Content
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3>
+              Span 4
+            </h3>
+            <p>
+              Content
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3>
+              Span 4
+            </h3>
+            <p>
+              Content
+            </p>
+          </div>
+        </div>
+        <h3>
+          Span 4
+        </h3>
+        <p>
+          Content
+        </p>
+      </div>
+      <div class="col-md4 col-md8 col-md-8" style="display: block;">
+        <h3>
+          Span 4
+        </h3>
+        <p>
+          Content
+        </p>
+      </div>
+      <div class="col-md2">
+        <h3>
+          Span 4
+        </h3>
+        <p>
+          Content
+        </p>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
- </body>
+    </script>
+  </body>
+
 </html>
