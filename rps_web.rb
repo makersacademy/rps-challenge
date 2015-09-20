@@ -17,6 +17,10 @@ class RPS_Challenge < Sinatra::Base
     redirect ('/')
   end
 
+  post '/play_game' do
+    erb :play_game
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

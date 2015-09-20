@@ -1,5 +1,10 @@
 <% if @name %>
   <h1>Welcome to Rock, Paper, Scissors <%= @name %>!</h1>
+  <p>
+    <form action='/play_game' method='post'>
+      <input type='submit' value='Start new game!'>
+    </form>
+  </p>
 <% else %>
   <h1>Welcome to Rock, Paper, Scissors!</h1>
   <p>
