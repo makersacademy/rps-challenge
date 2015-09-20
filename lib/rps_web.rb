@@ -35,6 +35,4 @@ class RockPaperScissors < Sinatra::Base
     erb :result
   end
 
-
-
 end

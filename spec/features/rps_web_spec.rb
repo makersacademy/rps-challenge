@@ -15,6 +15,11 @@ feature 'playing rock paper scissors' do
     expect(page).to have_content 'Please enter your name'
   end
 
+  scenario 'player is given 3 moves to choose from' do
+    visit '/new_game'
+    expect(page).to have_select('move')
+  end
+
   scenario 'player chooses move and is taken to result page' do
     visit '/new_game'
     select 'rock', from: 'move'

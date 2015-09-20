@@ -1,15 +1,17 @@
-<h1>You chose <%= @player_throw %>!</h1>
-<p>The result is...</p>
+<body bgcolor="#66FFCC">
+
+<h1 style="font-family:'Courier New'">You chose <%= @player_throw %>!</h1>
+<p style="font-family:'Courier New'">The result is...</p>
 
   <% if @player_throw == @computer_throw %>
-    <p>A tie!
+    <p style="font-family:'Courier New'">A tie!
     <a href="/new_game">Try again?</a></p>
   <% elsif @computer_throw == @outcome[@player_throw] %>
-    <p>Congratulations! You've won!
+    <p style="font-family:'Courier New'">Congratulations! You've won!
     <%= @player_throw %> beats <%= @computer_throw %>.
     <a href="/new_game">Try again?</a></p>
   <% else %>
-    <p>Bad luck.
+    <p style="font-family:'Courier New'">Bad luck.
     <%= @computer_throw %> beats <%= @player_throw %>.
     <a href="/new_game">Try again?</a></p>
   <% end %>
