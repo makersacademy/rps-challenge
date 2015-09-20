@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'rack'
+require 'rps_web.rb'
 
 feature 'playing rock paper scissors' do
 
