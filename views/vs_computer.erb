@@ -1,6 +1,4 @@
-<% if session[:username] && session[:username_1] %>
-  <%= session[:username] %> vs. <%= session[:username_1] %>
-<% end %>
+<%= session[:username] %> vs. Computer
 
 <form action="/vs_computer" id="rps_form" method="post">
   <input type="radio" name="rps" id="rock" value="rock">Rock
