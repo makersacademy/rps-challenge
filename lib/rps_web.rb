@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra'
+require_relative 'game'
 
 class RPSChallenge < Sinatra::Base
 
@@ -24,6 +25,7 @@ class RPSChallenge < Sinatra::Base
 
   get '/game' do
     @move = params[:move]
+    @computer_move = Game.new.generate_move
     erb :game
   end
 
