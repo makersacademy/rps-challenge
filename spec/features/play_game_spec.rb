@@ -13,7 +13,7 @@ feature 'Play the game' do
     expect(page).to have_content "Please enter your name:"
   end
 
-  scenario 'after I entered my name I can make my choice' do
+  scenario 'after I entered my name I am welcomed and asked to make my choice' do
     visit '/'
     fill_in('name', :with => 'John')
     click_button('submit')
@@ -25,6 +25,13 @@ feature 'Play the game' do
     fill_in('name', :with => 'John')
     click_button('submit')
     expect(page).to have_select('rps')
+  end
+
+  scenario 'I can choose rock, paper or scissors' do
+    visit '/'
+    fill_in('name', :with => 'John')
+    click_button('submit')
+    expect(page).to have_select 'rps', with_options: ['Rock', 'Paper', 'Scissors']
   end
 
   scenario 'I can see my choice' do
