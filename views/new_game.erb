@@ -1,9 +1,7 @@
 <div style="font-family: arial; padding-left: 15px; padding-right: 15px;">
 <h1>What's your move, <%= @name %>?</h1>
-<p>
 </div>
+<p></p>
 <div>
-<p><a href='/game?move=scissors'><img alt="scissors" src="scissors.png" width="100" height="100" style="padding-left: 15px; padding-right: 15px;"></a>
-   <a href='/game?move=rock'><img alt="rock" src="rock.png" width="100" height="100" style="padding-left: 15px; padding-right: 15px;"></a>
-   <a href='/game?move=paper'><img alt="paper" src="paper.png" width="100" height="100" style="padding-left: 15px; padding-right: 15px;"></a>
+<%= erb :_choices %>
 </div>
