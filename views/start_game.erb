@@ -1,14 +1,11 @@
-<div style='height: 100px; width: 250px; border: 3px solid red'>
+<div style='padding-left: 25px; height: 200px; width: 380px; border: 3px solid red'>
   <br>
   <%= @name %>, choose your object...
   <br>
   <br>
   <form action='/game' method="post">
-    <select name="object">
-      <option value="rock">Rock</option>
-      <option value="paper">Paper</option>
-      <option value="scissors">Scissors</option>
-      <input type="submit" value="Submit">
-    </select>
+    <input type="image" src="http://thumbs.dreamstime.com/t/cartoon-rock-family-illustrated-set-rocks-theme-43969344.jpg" name="object" value="rock" width="150" height="100">
+    <input type="image" src="http://www.pd4pic.com/images/sign-icon-paper-law-cartoon-free-documents.png" name="object" value="paper" width="70" height="100">
+    <input type="image" src="http://content.mycutegraphics.com/graphics/school/scissors-cartoon.png" name="object" value="scissors" width="100" height="100">
   </form>
 </div>
