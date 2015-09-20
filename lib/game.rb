@@ -10,7 +10,7 @@ class Game
   end
 
   def add_player(player)
-    (@player1 ? @player2 = player : @player1 = player) if !two_players?
+    (@player1 ? @player2 = player : @player1 = player) unless two_players?
   end
 
   def winner

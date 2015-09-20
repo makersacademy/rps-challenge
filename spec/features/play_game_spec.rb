@@ -15,28 +15,28 @@ feature 'Play the game' do
 
   scenario 'after I entered my name I am welcomed and asked to make my choice' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     expect(page).to have_content "Hello, John! Please, make your choice!"
   end
 
   scenario 'I can make my rps choise' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     expect(page).to have_select('rps')
   end
 
   scenario 'I can choose rock, paper or scissors' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     expect(page).to have_select 'rps', with_options: ['Rock', 'Paper', 'Scissors']
   end
 
   scenario 'I can see my choice' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
@@ -45,7 +45,7 @@ feature 'Play the game' do
 
   scenario 'I can see computer\'s choice' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
@@ -54,7 +54,7 @@ feature 'Play the game' do
 
   scenario 'I can see the result of the game' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
@@ -63,7 +63,7 @@ feature 'Play the game' do
 
   scenario 'I can continue playing' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
