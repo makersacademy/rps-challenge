@@ -28,28 +28,34 @@ feature 'register for new game' do
   end
 end
 
-feature 'Starts a game ' do
+feature 'Starts a game' do
   scenario "I can chose scissors" do
     visit '/new_game'
     click_link 'scissors'
-    expect(page).to have_content "You chose scissors."
+    expect(page.html).to include "You chose\n<p>\n<img alt=\"scissors\""
   end
 
-    scenario "I can choose paper" do
-      visit '/new_game'
-      click_link 'paper'
-      expect(page).to have_content "You chose paper."
-    end
+  scenario "I can choose paper" do
+    visit '/new_game'
+    click_link 'paper'
+    expect(page.html).to include "You chose\n<p>\n<img alt=\"paper\""
+  end
 
-    scenario "I can choose rock" do
-      visit '/new_game'
-      click_link 'rock'
-      expect(page).to have_content "You chose rock."
-    end
+  scenario "I can choose rock" do
+    visit '/new_game'
+    click_link 'rock'
+    expect(page.html).to include "You chose\n<p>\n<img alt=\"rock\""
+  end
 
-    scenario "I can see the computer's choice" do
-      visit '/new_game'
-      click_link 'rock'
-      expect(page).to have_content "The computer chose"
-    end
+  scenario "I can see the computer's choice" do
+    visit '/new_game'
+    click_link 'rock'
+    expect(page).to have_content "The computer chose"
+  end
+
+  scenario 'I can go for another round' do
+    visit '/new_game'
+    click_link 'rock'
+    expect(page).to have_content "Next round:"
+  end
 end
