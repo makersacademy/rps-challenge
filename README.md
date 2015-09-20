@@ -9,7 +9,7 @@ Tasks
 RPS against a computer (Single-player)
 ----
 Please do the following to start and play the game in irb:
-<img src="images/prs.png">
+<img src="images/rps.png">
 
 
 PRS - Multiplayer
