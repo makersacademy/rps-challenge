@@ -16,7 +16,7 @@ class RpsGame
     attr_reader :weapons, :setup, :results
     private
     attr_reader :rules
-    attr_writer :setup
+    attr_writer :setup, :results
   end
 
   def self.reset_scores
@@ -41,6 +41,8 @@ class RpsGame
     message1 = rules[[weapon1, weapon2]]
     message2 = rules[[weapon2, weapon1]]
     write_report(weapon1, weapon2, message1, message2)
+    update_scores(results[:winner])
+    results
   end
 
   # private class methods
@@ -53,13 +55,11 @@ class RpsGame
     else
       report nil, "#{weapon1} meets #{weapon2}"
     end
-    update_scores(results[:winner])
-    results
   end
 
   def self.report(name, message)
-    @results[:winner] = name
-    @results[:report] = message
+    results[:winner] = name
+    results[:report] = message
   end
 
   def self.update_scores(winner)
