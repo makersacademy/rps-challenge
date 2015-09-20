@@ -31,25 +31,31 @@ class RpsGame
   end
 
   def self.play
-    player_weapon = setup[:player_weapon]
-    computer_weapon = setup[:computer_weapon]
-    message1 = rules[[player_weapon, computer_weapon]]
-    message2 = rules[[computer_weapon, player_weapon]]
+    weapon1 = setup[:player_weapon]
+    weapon2 = setup[:computer_weapon]
+    message1 = rules[[weapon1, weapon2]]
+    message2 = rules[[weapon2, weapon1]]
+    write_report(weapon1, weapon2, message1, message2)
+  end
+
+  # private class methods
+
+  def self.write_report(weapon1, weapon2, message1, message2)
     if message1
-      report setup[:player], "#{player_weapon} #{message1} #{computer_weapon}"
+      report setup[:player], "#{weapon1} #{message1} #{weapon2}"
     elsif message2
-      report 'Computer', "#{computer_weapon} #{message2} #{player_weapon}"
+      report 'Computer', "#{weapon2} #{message2} #{weapon1}"
     else
-      report nil, "#{player_weapon} meets #{computer_weapon}"
+      report nil, "#{weapon1} meets #{weapon2}"
     end
-    results
   end
 
   def self.report(name, message)
     @results[:winner] = name
     @results[:report] = message
+    results
   end
 
-  private_class_method :report
+  private_class_method :write_report, :report
 
 end
