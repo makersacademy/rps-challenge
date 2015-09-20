@@ -8,8 +8,14 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  get '/new-game' do
-    erb :new_game
+  post '/new-game' do
+    session[:username] = params[:username]
+    redirect '/play-game'
+  end
+
+  get '/play-game' do
+    @username = session[:username]
+    erb :play_game
   end
 
 

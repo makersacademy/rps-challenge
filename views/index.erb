@@ -19,8 +19,16 @@
   </head>
   <body>
 
-  <a href="/new-game" > New Game </a>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- <a href="/new-game" > New Game </a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> -->
+
+    <form action ="/new-game" method="post">
+    <div class="form-group">
+      <label for="name">What's your name?</label>
+      <input type="name" class="form-control" id="name" name ="username">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
