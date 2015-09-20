@@ -37,12 +37,62 @@ end
 
 feature 'Game' do
 
-  scenario 'Can make selections in play one player game' do
+  scenario 'Can make selections in one player game' do
     visit '/'
     fill_in 'name', with: 'Harry'
     click_button 'Submit'
     page.choose('one-player')
     click_button 'Submit'
     expect(page).to have_selector("input[type='submit'][value='Selection']")
+  end
+  scenario 'Can make selections and play one player game' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    page.choose('one-player')
+    click_button 'Submit'
+    find('#selection').find(:xpath, 'option[2]').select_option
+    click_button 'Selection'
+    expect(page).to have_content(@result)
+  end
+  scenario 'Can make selections in two player game' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    page.choose('two-player')
+    click_button 'Submit'
+    expect(page).to have_selector("input[type='submit'][value='Selection']")
+  end
+  scenario 'Can make selections and play two player game' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    page.choose('two-player')
+    click_button 'Submit'
+    find('#selection').find(:xpath, 'option[1]').select_option
+    find('#selection2').find(:xpath, 'option[2]').select_option
+    click_button 'Selection'
+    expect(page).to have_content(@result)
+  end
+  scenario 'Can play again after one player game' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    page.choose('one-player')
+    click_button 'Submit'
+    find('#selection').find(:xpath, 'option[2]').select_option
+    click_button 'Selection'
+    expect(page).to have_link('Play Again')
+  end
+  scenario 'Can play again after two player game' do
+    visit '/'
+    fill_in 'name', with: 'Harry'
+    click_button 'Submit'
+    page.choose('two-player')
+    click_button 'Submit'
+    find('#selection').find(:xpath, 'option[2]').select_option
+    find('#selection2').find(:xpath, 'option[2]').select_option
+    click_button 'Selection'
+    expect(page).to have_link('Play Again')
   end
 end

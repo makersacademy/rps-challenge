@@ -23,22 +23,22 @@ describe Game do
       it 'should return a win with rock on scissors' do
         allow(subject.player1).to receive(:selection).and_return(:rock)
         allow(subject.player2).to receive(:selection).and_return(:scissors)
-        expect(subject.result).to eq("Win")
+        expect(subject.result).to eq("Player 1 Win's")
       end
       it 'should return a lose with rock on paper' do
         allow(subject.player1).to receive(:selection).and_return(:rock)
         allow(subject.player2).to receive(:selection).and_return(:paper)
-        expect(subject.result).to eq("Lose")
+        expect(subject.result).to eq("Player 1 Loses")
       end
       it 'should return a win with rock on lizard' do
         allow(subject.player1).to receive(:selection).and_return(:rock)
         allow(subject.player2).to receive(:selection).and_return(:lizard)
-        expect(subject.result).to eq("Win")
+        expect(subject.result).to eq("Player 1 Win's")
       end
       it 'should return a lose with rock on spock' do
         allow(subject.player1).to receive(:selection).and_return(:rock)
         allow(subject.player2).to receive(:selection).and_return(:spock)
-        expect(subject.result).to eq("Lose")
+        expect(subject.result).to eq("Player 1 Loses")
       end
     end
     context 'Paper' do
@@ -50,17 +50,17 @@ describe Game do
       it 'should return a lose with paper on scissors' do
         allow(subject.player1).to receive(:selection).and_return(:paper)
         allow(subject.player2).to receive(:selection).and_return(:scissors)
-        expect(subject.result).to eq("Lose")
+        expect(subject.result).to eq("Player 1 Loses")
       end
       it 'should return a win with paper on spock' do
         allow(subject.player1).to receive(:selection).and_return(:paper)
         allow(subject.player2).to receive(:selection).and_return(:spock)
-        expect(subject.result).to eq("Win")
+        expect(subject.result).to eq("Player 1 Win's")
       end
       it 'should return a lose with paper on lizard' do
         allow(subject.player1).to receive(:selection).and_return(:paper)
         allow(subject.player2).to receive(:selection).and_return(:lizard)
-        expect(subject.result).to eq("Lose")
+        expect(subject.result).to eq("Player 1 Loses")
       end
     end
   context 'Scissors' do
@@ -72,12 +72,12 @@ describe Game do
     it 'should return a win with scissors on lizard' do
       allow(subject.player1).to receive(:selection).and_return(:scissors)
       allow(subject.player2).to receive(:selection).and_return(:lizard)
-      expect(subject.result).to eq("Win")
+      expect(subject.result).to eq("Player 1 Win's")
     end
     it 'should return a lose with scissors on spock' do
       allow(subject.player1).to receive(:selection).and_return(:scissors)
       allow(subject.player2).to receive(:selection).and_return(:spock)
-      expect(subject.result).to eq("Lose")
+      expect(subject.result).to eq("Player 1 Loses")
     end
   end
   context 'Lizard' do
@@ -89,7 +89,7 @@ describe Game do
     it 'should return a win with lizard on spock' do
       allow(subject.player1).to receive(:selection).and_return(:lizard)
       allow(subject.player2).to receive(:selection).and_return(:spock)
-      expect(subject.result).to eq("Win")
+      expect(subject.result).to eq("Player 1 Win's")
     end
   end
   context 'Spock' do
