@@ -18,6 +18,10 @@ class RPSWeb < Sinatra::Base
     erb :play_game
   end
 
+  get '/result' do
+    erb :result
+  end
+
 
 
 
