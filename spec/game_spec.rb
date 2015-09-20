@@ -2,7 +2,7 @@ require_relative '../lib/game.rb'
 
 describe Game do
 
-  let( :player ){ double:player }
+  let( :player ) { double:player }
 
   it 'should respond to result' do
     is_expected.to respond_to(:result).with(1).argument
