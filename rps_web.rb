@@ -25,7 +25,7 @@ class RpsChallenge < Sinatra::Base
 
   post '/result' do
     session[:game].player1.choice = params[:rps]
-    session[:game].player2.choice = session[:game].player2.make_choice(session[:game].options)
+    session[:game].player2.choice = session[:game].computer_choice
     redirect '/result'
   end
 

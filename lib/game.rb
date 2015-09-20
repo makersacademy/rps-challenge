@@ -1,9 +1,8 @@
 class Game
 
-  attr_reader :options, :player1, :player2, :score1, :score2
+  attr_reader :options, :result, :player1, :player2, :score1, :score2
 
   def initialize
-    @options = ['rock', 'paper', 'scissors']
     @result = {rock: 'scissors', scissors: 'paper', paper: 'rock'}
     @player1 = nil
     @player2 = nil
@@ -11,6 +10,11 @@ class Game
 
   def add_player(player)
     (@player1 ? @player2 = player : @player1 = player) unless two_players?
+  end
+
+  def computer_choice
+    player1.make_choice(result.keys).to_s if player1.is_a? Computer
+    player2.make_choice(result.keys).to_s if player2.is_a? Computer
   end
 
   def winner
