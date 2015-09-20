@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require './lib/game.rb'
+require './lib/multiplayer.rb'
 
-class Rock_Paper_Scissors < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
@@ -27,6 +28,25 @@ class Rock_Paper_Scissors < Sinatra::Base
     erb:new_game
   end
 
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  post '/player2-sign-up' do
+    session[:name2] = params[:name]
+    redirect '/player2'
+  end
+
+  get '/player2' do
+    $player2 = Player.new(session[:name2])
+    redirect '/multiplayer-game'
+  end
+
+  get '/multiplayer-game' do
+    $multiplayer = Multiplayer.new($player, $player2)
+    redirect 'start-game'
+  end
+
   get '/options' do
     $options = Options.new
     $options.add_choice :rock, :paper, :scissors
@@ -48,8 +68,24 @@ class Rock_Paper_Scissors < Sinatra::Base
     erb :start_game
   end
 
+  get '/rock' do
+    session[:player_choice] = "rock"
+    redirect '/result'
+  end
+
+  get '/paper' do
+    session[:player_choice] = "paper"
+    redirect '/result'
+  end
+
+  get '/scissors' do
+    session[:player_choice] = "scissors"
+    redirect '/result'
+  end
+
+
   get '/result' do
-    @player_choice = params[:player_choice]
+    @player_choice = session[:player_choice]
     @result = $game.play(@player_choice)
     p @result
     erb :result

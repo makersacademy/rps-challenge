@@ -4,7 +4,7 @@ feature 'Starting a new game' do
 
   before do
     visit '/'
-    fill_in('name', :with => "John")
+    fill_in('name', with: "John")
     click_button('Submit')
   end
 
@@ -15,12 +15,22 @@ feature 'Starting a new game' do
 
   scenario 'have a welcome message after I have entered my name' do
     expect(page).to have_content "Welcome John"
-    expect(page).to have_content "Click the Start button to begin"
+    expect(page).to have_content "Click Start to begin against a computer"
   end
 
   scenario 'can start a game' do
-    click_button('Start')
+    click_link('Start')
     expect(page).to have_content 'Choose Wisely John'
+  end
+
+  scenario 'can choose rock' do
+    click_link("Start")
+    click_link('player_choice')
+    expect(page).to have_content 'The Winner is...'
+  end
+
+  scenario 'can play mutliplayer' do
+    expect(page).to have_content 'Click Multiplayer to begin'
   end
 
 end

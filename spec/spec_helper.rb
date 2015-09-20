@@ -16,4 +16,4 @@ require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 require 'byebug'
 require 'capybara/rspec'
 
-Capybara.app = Rock_Paper_Scissors
+Capybara.app = RockPaperScissors
