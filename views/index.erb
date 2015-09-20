@@ -1,0 +1,13 @@
+<div>
+  <p>Welcome to Rock, Paper, Scissors! Begin the game by entering your name.</p>
+
+<% if @error %>
+<p style="color: red;">Please enter a name to begin the game.</p>
+<% end %>
+  <p>
+    <form method="post" action="/submit_name">
+      <input type="text" name="name">
+      <input type="submit" value="Let's play!">
+    </form>
+  </p>
+</div>
