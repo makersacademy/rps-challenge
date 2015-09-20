@@ -24,17 +24,17 @@ class RPSWeb < Sinatra::Base
 
   post '/account' do
     if params[:game] == "one-player"
-      session[:game1] = Game.new(Player, Computer)
+      session[:game] = Game.new(Player, Computer)
       redirect '/one-player-game'
     else
-      session[:game2] = Game.new(Player, Player)
+      session[:game] = Game.new(Player, Player)
       redirect '/two-player-game'
     end
   end
 
   get '/one-player-game' do
     @user = session[:name]
-    @game = session[:game1]
+    @game = session[:game]
     erb :one_player_game
   end
 
@@ -44,27 +44,36 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/one-player-result' do
-    session[:game1].player1.choice(session[:selection])
-    @result = session[:game1].result
+    session[:game].player1.choice(session[:selection])
+    @result = session[:game].result
     erb :one_player_result
   end
 
   get '/two-player-game' do
     @user = session[:name]
-    @game = session[:game2]
-    erb :two_player_game
+    @game = session[:game]
+    erb :two_player_game_player1
   end
 
-  post '/two-player-game' do
-    session[:selection] = params[:selection]
+  post '/two-player-game-player1' do
+    session[:selection] = params[:selection].to_sym
+    redirect '/two-player-game-player2'
+  end
+
+  get '/two-player-game-player2' do
+    @game = session[:game]
+    erb :two_player_game_player2
+  end
+
+  post '/two-player-game-player2' do
     session[:selection2] = params[:selection2].to_sym
     redirect '/two-player-result'
   end
 
   get '/two-player-result' do
-    session[:game2].player1.choice(session[:selection])
-    session[:game2].player2.choice(session[:selection2])
-    @result = session[:game2].result
+    session[:game].player1.choice(session[:selection])
+    session[:game].player2.choice(session[:selection2])
+    @result = session[:game].result
     erb :two_player_result
   end
 
