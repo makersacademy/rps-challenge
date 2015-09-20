@@ -27,7 +27,7 @@ feature 'Playing the game' do
   fill_in('name', :with => 'Philip')
   select('rock', :from => 'your_choice')
   click_button('Play')
-  expect(page).to have_content "You won"
+  expect(page).to have_content "The result is"
   end
 
 
