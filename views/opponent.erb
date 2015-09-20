@@ -1,0 +1,23 @@
+Hi <%= @username %>, <br><br>
+
+<div id='usernames'>
+  <% if @usernames.count <= 1 %>
+    No one else is online. Please wait ...
+
+  <% else %>
+  Please choose an opponent from those online as shown below: <br>
+    <ul>
+      <% @usernames.each do | username | %>
+        <% if username != @username %>
+          <a href='/invite?opponent=<%= username %>'> <%= username %> </a> <br>
+        <% end %>
+      <% end %>
+    </ul>
+
+  <% end %>
+</div>
+
+<!-- <form action="/sign-up" method="post">
+  <label for="username">Please enter your name
+  </label>
+</form> -->
