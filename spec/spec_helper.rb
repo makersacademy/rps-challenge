@@ -7,12 +7,13 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
-Coveralls.wear!
+SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 require File.join(File.dirname(__FILE__), '..', 'lib/rps_web.rb')
 require 'byebug'
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
+require_relative 'lib/rps_web.rb'
 
 Capybara.app = RockPaperScissors
