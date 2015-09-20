@@ -13,7 +13,13 @@ class RPS < Sinatra::Base
 
   post '/sign_up' do
     redirect to('/no_name') if params[:username] == ''
-    session[:username] = params[:username]
+    if session[:username]
+      session[:username_1] = params[:username]
+    else
+      session[:username] = params[:username]
+    end
+    p "username #{session[:username]}"
+    p "useranme_1 #{session[:username_1]}"
     redirect to('/welcome')
   end
 

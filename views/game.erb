@@ -1,3 +1,7 @@
+<% if session[:username] && session[:username_1] %>
+  <%= session[:username] %> vs. <%= session[:username_1] %>
+<% end %>
+
 <form action="/game" id="rps_form" method="post">
   <input type="radio" name="rps" id="rock" value="rock">Rock
   <input type="radio" name="rps" id="paper" value="paper">Paper
