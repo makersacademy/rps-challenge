@@ -12,8 +12,12 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  get '/game' do 
+  post '/' do
     session[:name] = params[:name]
+    redirect '/game'
+  end
+
+  get '/game' do 
     @name = session[:name]
     erb :game
   end

@@ -7,6 +7,11 @@ feature 'Starting a new game' do
     expect(page).to have_content "Please enter your name"
   end
 
+  scenario 'i can submit my name' do
+    visit '/'
+    expect(page).to have_selector("input[type='submit'][value='Submit']")
+  end
+
   it 'entering my name takes me to a new page with a greeting' do 
     visit '/'
     fill_in('name', :with => 'Dom')
@@ -21,16 +26,21 @@ feature 'Starting a new game' do
     expect(page).to have_content "pick your move"
   end
 
-  scenario 'not entering a name will ask for a name' do
-    visit '/'
-    fill_in('name', :with => '')
-    click_button('Submit')
-    expect(page).to have_content "Please enter a name"
-  end
-
   scenario 'should have default option of rock' do 
     visit '/game'
     expect(find_field("rock")).to be_checked
+  end
+
+  scenario 'i can choose paper option' do 
+    visit '/game'
+    choose('paper')
+    expect(find_field('paper')).to be_checked
+  end
+
+  scenario 'i can choose scissors option' do
+    visit '/game'
+    choose('scissors')
+    expect(find_field('scissors')).to be_checked
   end
 
   scenario 'pressing play takes me to the results page' do
@@ -43,7 +53,7 @@ feature 'Starting a new game' do
     visit '/game'
     click_button('Play')    
     click_button('Play again')
-    expect(page).to have_content "pick your move"
+    expect(page).to have_content "Pick another move"
   end
 
 

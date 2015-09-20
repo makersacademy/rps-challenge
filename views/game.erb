@@ -1,26 +1,16 @@
-<body style="background-image: url("../public/images/rsz_rps-background.png")">
+<body style="background-image: url('/images/rsz_rps-background.png')">
 
-<div style="font-family: 'Fira Mono', 'Lucida Console', monospace; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); text-align: center; ">
-  <% if @name == '' %>
-    <div>
-      Please enter a name
-      <div style='display: inline-block'>
-        <form action="/greeting">
-          <input type="text" name="name">
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </div>
-  <% else %>
+<div style="font-family: 'Fira Mono', 'Lucida Console', monospace; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); text-align: center; background: white; border-radius: 100%"> 
+  <div style="border: black">
     <div style="font-size: 200%; padding: 10px">
     <% if $previous_result == :none %>
       Hello <%= @name %>, pick your move
     <% elsif $previous_result == :win %>
-      <%= ['You\'re awsome', 'Way to go', 'Nice one', 'Great stuff', 'You\'re a natural', 'You\'re making it look easy'].sample %>, <%= @name %>, pick another move
+      <%= ['You\'re awsome', 'Way to go', 'Nice one', 'Great stuff', 'You\'re a natural', 'You\'re making it look easy'].sample %>, <%= @name %>. Pick another move
     <% elsif $previous_result == :loss %>
-      <%= ['Unlucky', 'Stiff upper lip', 'Roll with the punches', 'It\'s a game of chance', 'It\'s a game of two halves', 'Stay strong'].sample %>, <%= @name %>, pick another move
+      <%= ['Unlucky', 'Stiff upper lip', 'Roll with the punches', 'It\'s a game of chance', 'It\'s a game of two halves', 'Stay strong'].sample %>, <%= @name %>. Pick another move
     <% elsif $previous_result == :draw %>
-      <%= ['At least you didn\'t lose', 'So close', 'These things happen', 'You can do this', 'Almost had him', 'Keep your focus'].sample %>, <%= @name %>, pick another move
+      <%= ['At least you didn\'t lose', 'So close', 'These things happen', 'You can do this', 'Almost had him', 'Keep your focus'].sample %>, <%= @name %>. Pick another move
     <% end %>
     </div>
     <div>
@@ -42,9 +32,8 @@
         </div>
       </form>
     </div>
-  <% end %>
+  </div>
 </div>
 
-</body>
 
 
