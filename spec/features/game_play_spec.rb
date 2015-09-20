@@ -28,23 +28,28 @@ feature 'register for new game' do
   end
 end
 
-feature 'I can choose a move to start a game ' do
-  scenario "I can chose 'scissors'" do
+feature 'Starts a game ' do
+  scenario "I can chose scissors" do
     visit '/new_game'
     click_link 'scissors'
     expect(page).to have_content "You chose scissors."
   end
 
-    scenario "I can choose 'paper'" do
+    scenario "I can choose paper" do
       visit '/new_game'
       click_link 'paper'
       expect(page).to have_content "You chose paper."
     end
 
-    scenario "I can choose 'rock'" do
+    scenario "I can choose rock" do
       visit '/new_game'
       click_link 'rock'
       expect(page).to have_content "You chose rock."
     end
 
+    scenario "I can see the computer's choice" do
+      visit '/new_game'
+      click_link 'rock'
+      expect(page).to have_content "The computer chose"
+    end
 end

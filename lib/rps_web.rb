@@ -24,8 +24,10 @@ class RPSChallenge < Sinatra::Base
   end
 
   get '/game' do
-    @move = params[:move]
-    @computer_move = Game.new.generate_move
+    @player_move = params[:move].to_sym
+    game = Game.new
+    @computer_move = game.generate_move
+    @winner = game.outcome(@player_move, @computer_move)
     erb :game
   end
 
