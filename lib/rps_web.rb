@@ -25,8 +25,6 @@ class RpsWeb < Sinatra::Base
     erb :make_move
   end
 
-# choose if u want to play comp or p2. if comp go to comp result. if p2, go to p2 select page then p2 result.
-
   get '/result' do
     names = %w(rock paper scissors lizard spock)
     unless names.include? params[:move]
@@ -43,10 +41,16 @@ class RpsWeb < Sinatra::Base
   end
 
     get '/2pform' do
+      @error = session[:error]
       erb :twoplayerform
     end
 
     post '/submit_name' do #this is telling it what to do when it receives a post request to /submit_name
+      names = %w(rock paper scissors lizard spock)
+      unless names.include? params[:move]
+        session[:error] = "#{params[:move]} is not a valid move try again"
+        redirect '/2pform'
+      end
       if @@two_player_hash[:player1] == true
         @@two_player_hash[:player2] = true
         @@two_player_hash[:player2_move] = params[:move].downcase
@@ -61,7 +65,6 @@ class RpsWeb < Sinatra::Base
     end
 
     get '/waiting' do
-      p @@two_player_hash
       if @@two_player_hash[:player1] == true && @@two_player_hash[:player2] == true
         @player1_move = @@two_player_hash[:player1_move]
         @player2_move = @@two_player_hash[:player2_move]
