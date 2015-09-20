@@ -16,7 +16,7 @@ feature 'Starting the game:' do
 
 end
 
-feature 'Playing the game:' do
+feature 'Playing a round:' do
 
   before do
     visit '/'
@@ -41,7 +41,7 @@ feature 'Playing the game:' do
 
 end
 
-feature 'Displaying the results:' do
+feature 'Displaying round results:' do
 
   before do
     srand(0) # seeds RNG to ensure computer chooses Rock
@@ -56,10 +56,16 @@ feature 'Displaying the results:' do
     expect(page).to have_content 'Rock blunts Scissors.'
   end
 
-  scenario 'announces the winner' do
+  scenario 'announces if player has won' do
     choose 'Paper'
     click_button 'THROW SHAPE'
     expect(page).to have_content 'Steerpike wins!'
+  end
+
+  scenario 'announces if player has lost' do
+    choose 'Scissors'
+    click_button 'THROW SHAPE'
+    expect(page).to have_content 'Computer wins!'
   end
 
   scenario 'deals with ties' do
@@ -68,4 +74,25 @@ feature 'Displaying the results:' do
     expect(page).to have_content 'It\'s a tie... meh.'
   end
 
+end
+
+feature 'Ending the round or game:' do
+
+  before do
+    srand(0) # seeds RNG to ensure computer chooses Rock
+    visit '/'
+    fill_in 'player_name', with: 'Steerpike'
+    click_button 'GO'
+    click_button 'THROW SHAPE'
+  end
+
+  scenario 'offers another round' do
+    expect(page).to have_button 'Again!'
+  end
+
+  scenario 'plays another round on request' do
+    click_button 'Again!'
+    expect(page).to have_content 'Choose your weapon, Steerpike.'
+  end
+  
 end
