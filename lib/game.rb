@@ -2,22 +2,22 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player, :computer
 
-  def initialize(player1 = Player.new, player2 = Player.new)
-    @player1 = player1
-    @player2 = player2
+  def initialize(player = Player.new, computer = Player.new)
+    @player = player
+    @computer = computer
   end
 
   def play
-		if player1.choice == player2.choice
+		if player.choice == computer.choice
       "It's a tie!"
-    elsif player1.choice == :rock && player2.choice == :scissors ||
-       player1.choice == :paper && player2.choice == :rock ||
-       player1.choice == :scissors && player2.choice == :paper
-      "Player 1 wins!"
+    elsif player.choice == :rock && computer.choice == :scissors ||
+       player.choice == :paper && computer.choice == :rock ||
+       player.choice == :scissors && computer.choice == :paper
+      "You win!"
     else
-      "Player 2 wins!"
+      "You lost!"
     end
   end
 

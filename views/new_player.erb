@@ -1,8 +1,8 @@
 <% if @player %>
-  Hello, <%= @player %>!
-  <a href='/game'>Rock, scissors or paper?</a>
+  <p style="font-family: calibri">Hello, <%= @player %>!</p>
+  <a href='/game'>Play</a>
 <% else %>
-  <form action="/new_player" method='post'>
+  <form style="font-family: calibri" action="/new_player" method='post'>
     What's your name?
     <input type="text" name="name" required>
     <input type="submit" value="submit">

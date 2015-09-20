@@ -7,7 +7,7 @@ class Player
     @choice = ""
   end
 
-  def computer
+  def random_choice
     @choice = options.sample
   end
 
