@@ -1,1 +1,21 @@
-Welcome <%= @name %>, GAME ON
+<div style = 'position: fixed; top: 50%; left: 50%;  margin-top: -50px;
+  margin-left: -100px;'>
+
+  <h3>Welcome <%= @name %>, GAME ON</h3>
+  <br>
+  Pick your weapon:
+  <br>
+  <table border="0">
+    <tr>
+      <td><form action="" method="post">
+        <button name="rock" value="rock">Rock</button>
+      </form></td>
+      <td><form action="" method="post">
+        <button name="paper" value="paper">Paper</button>
+      </form></td>
+      <td><form action="" method="post">
+        <button name="scissors" value="scissors">Scissors</button>
+      </form></td>
+    </tr>
+  </table>
+</div>

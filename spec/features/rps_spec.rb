@@ -18,4 +18,11 @@ feature 'Starting a new game' do
     click_button 'Start'
     expect(page).to have_content "Welcome Chris, GAME ON"
   end
+
+  scenario 'Gives options when game starts' do
+    visit '/name'
+    fill_in 'name', with: 'Chris'
+    click_button 'Start'
+    expect(page).to have_button "Rock"
+  end
 end
