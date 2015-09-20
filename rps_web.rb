@@ -11,6 +11,10 @@ class RPS_Challenge < Sinatra::Base
 
   enable :sessions
 
+  $game = nil
+  $name1 = nil
+  $name2 = nil
+
   get '/' do
     @name = session[:name]
     erb :index
@@ -37,17 +41,19 @@ class RPS_Challenge < Sinatra::Base
   end
 
   get '/result' do
-    assign_name_and_weapon_vars
-    @result = session[:game].challenge
+    assign_name_weapon_vars
+    @result = $game.challenge
     erb :result
   end
+
+  private
 
   def game_setup_vs_computer
     player1 = Player.new
     player2 = Player.new
     player1.name = session[:name]
     player2.name = "Computer"
-    session[:game] = Game.new(player1,player2)
+    $game = Game.new(player1,player2)
   end
 
   def no_params_name
@@ -55,15 +61,15 @@ class RPS_Challenge < Sinatra::Base
   end
 
   def arm_weapons_vs_computer
-    session[:game].player1.current_selection = Object.const_get(params[:weapon]).new
-    session[:game].player2.random_selector
+    $game.player1.current_selection = Object.const_get(params[:weapon]).new
+    $game.player2.random_selector
   end
 
-  def assign_name_and_weapon_vars
-    @name1 = session[:game].player1.name
-    @weapon1 = session[:game].player1.current_selection.class.to_s
-    @name2 = session[:game].player2.name
-    @weapon2 = session[:game].player2.current_selection.class.to_s
+  def assign_name_weapon_vars
+    @name1 = $game.player1.name
+    @weapon1 = $game.player1.current_selection.class.to_s
+    @name2 = $game.player2.name
+    @weapon2 = $game.player2.current_selection.class.to_s
   end
 
   # start the server if ruby file executed directly
