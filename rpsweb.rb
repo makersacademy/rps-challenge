@@ -36,7 +36,7 @@ class Rps_web < Sinatra::Base
 
   get '/game' do
     session[:player].choose(session[:object])
-    # p session[:game].play(session[:player], session[:computer])
+    session[:winner] = session[:game].play(session[:player], session[:computer])
     erb :game
   end
 
