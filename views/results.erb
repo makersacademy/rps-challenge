@@ -5,3 +5,9 @@
 <p>The computer threw  <%= @computer_weapon %>.</p>
 
 <p><%= @results[:report] %>.</p>
+
+<% if @results[:winner] %>
+  <p><%= @results[:winner] %> wins!</p>
+<% else %>
+  <p>It's a tie... meh.</p>
+<% end %>

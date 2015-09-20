@@ -61,4 +61,11 @@ feature 'Displaying the results:' do
     click_button 'THROW SHAPE'
     expect(page).to have_content 'Steerpike wins!'
   end
+
+  scenario 'deals with ties' do
+    choose 'Rock'
+    click_button 'THROW SHAPE'
+    expect(page).to have_content 'It\'s a tie... meh.'
+  end
+
 end

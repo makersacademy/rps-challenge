@@ -27,13 +27,13 @@ class RpsGame
 
   def play
     if player_weapon == computer_weapon
-      report "#{player_weapon} meets #{computer_weapon}"
+      report nil, "#{player_weapon} meets #{computer_weapon}"
     end
     if rules.include? [player_weapon, computer_weapon]
-      report "#{player_weapon} #{rules[[player_weapon, computer_weapon]]} #{computer_weapon}"
+      report player_name, "#{player_weapon} #{rules[[player_weapon, computer_weapon]]} #{computer_weapon}"
     end
     if rules.include? [computer_weapon, player_weapon]
-      report "#{computer_weapon} #{rules[[computer_weapon, player_weapon]]} #{player_weapon}"
+      report 'Computer', "#{computer_weapon} #{rules[[computer_weapon, player_weapon]]} #{player_weapon}"
     end
     return results
   end
@@ -43,7 +43,8 @@ class RpsGame
   attr_reader :rules
   attr_writer :player_weapon, :computer_weapon
 
-  def report(message)
+  def report(name, message)
+    @results[:winner] = name
     @results[:report] = message
   end
 
