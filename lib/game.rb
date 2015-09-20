@@ -8,7 +8,7 @@ class Game
   def result
     return 'Draw!' if draw?
     return "#{player1.name} wins!" if player1_win?
-    "#{player2.name} wins!"
+    "#{player2.name} wins!" #assuming both players have made valid choices
   end
 
   private
