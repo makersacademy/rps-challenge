@@ -1,0 +1,14 @@
+<div>
+  <% if @name == "" %>
+  Please enter your name
+  <br><a href="/name">Try Again</a>
+  <% elsif @name %>
+  Hello <%= @name %>. Welcome to your game of rock, paper, scissors.
+  <% else %>
+  <form action="/name", method="post">
+    What's your name?
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+  <% end %>
+</div>
