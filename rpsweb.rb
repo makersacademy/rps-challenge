@@ -19,11 +19,6 @@ class Rps_web < Sinatra::Base
   end
 
   get '/start_game' do
-    if session[:object]
-      session[:player].choose(session[:object])
-      session[:game].play(session[:player], session[:computer])
-      erb :game
-    else
       @name = session[:name]
       @game = Game.new
       session[:game] = @game
@@ -32,12 +27,17 @@ class Rps_web < Sinatra::Base
       @computer = Computer.new
       session[:computer] = @computer
       erb :start_game
-    end
   end
 
-  post '/start_game' do
+  post '/game' do
     session[:object] = params[:object].to_sym
-    redirect ('/start_game')
+    redirect ('/game')
+  end
+
+  get '/game' do
+    p session[:player].choose(session[:object])
+    # p session[:game].play(session[:player], session[:computer])
+    erb :game
   end
 
   # start the server if ruby file executed directly
