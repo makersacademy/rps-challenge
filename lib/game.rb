@@ -8,16 +8,24 @@ class Game
   end
 
   def challenge
-    choice1 = player1.current_selection
-    choice2 = player2.current_selection
-    fail "Both players must choose their weapon" if choice1.nil? || choice2.nil?
-    if choice1.beats?(choice2)
-      "#{player1.name} wins the game!"
-    elsif choice2.beats?(choice1)
-      "#{player2.name} wins the game!"
-    else
-      "Same choice, draw."
-    end
+    fail "Both players must choose their weapon" if not_ready_to_challenge?
+    return "Same choice, draw." if draw?
+    "#{winner.name} wins the game!"
+  end
+
+  private
+
+  def not_ready_to_challenge?
+    player1.current_selection.nil? || player2.current_selection.nil?
+  end
+
+  def draw?
+    player1.current_selection == player2.current_selection
+  end
+
+  def winner
+    return player1 if player1.current_selection.beats?(player2.current_selection)
+    player2
   end
 
 end
