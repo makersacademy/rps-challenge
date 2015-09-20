@@ -13,15 +13,15 @@ class Game
 
   def result
     if player1.selection == :rock
-      rock[player2.selection]
+      @a = rock[player2.selection]
     elsif player1.selection == :paper
-      paper[player2.selection]
+      @a = paper[player2.selection]
     elsif player1.selection == :scissors
-      scissors[player2.selection]
+      @a = scissors[player2.selection]
     elsif player1.selection == :lizard
-      lizard[player2.selection]
+      @a = lizard[player2.selection]
     else
-      spock[player2.selection]
+      @a = spock[player2.selection]
     end
   end
 end

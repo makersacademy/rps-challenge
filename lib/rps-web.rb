@@ -43,14 +43,15 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/one-player-game' do
-    session[:selection] = params[:selection]
+    session[:selection] = params[:selection].to_sym
     redirect '/one-player-result'
   end
 
   get '/one-player-result' do
     session[:game].player1.choice(session[:selection])
-    # @computer = session[:game].player2.selection
     @result = session[:game].result
+    p @result
+    @computer = session[:game].player2.choice
     erb :one_player_result
   end
 

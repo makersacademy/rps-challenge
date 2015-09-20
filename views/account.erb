@@ -2,14 +2,16 @@
 <div class="container-fluid">
   <h2>Welcome to your account, <%= @user %></h2>
   <p>Do you want to play a one or two player game?</p>
-  <form action='/account' method="post">
-    <input id='one-player' type="radio" name="game" value="one-player" checked> One Player
-    <br>
-    <input id='two-player' type="radio" name="game" value="two-player"> Two Player
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="button">
+    <form id='one-player' action='/account' method="post">
+      <input id='one-player' type="submit" name="game" value="one-player">
+    </form>
+  </div>
+  <div class="button">
+    <form action='/account' method='post'>
+      <input id='two-player' type="submit" name="game" value="two-player">
+    </form>
+  </div>
 </div>
 <div id="footer">
   <p>Don't know the rules? for a quick explanation <a href='/rules'>click here</a></p>

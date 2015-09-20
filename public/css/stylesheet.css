@@ -22,6 +22,24 @@ p {
   margin: 0 auto;
   padding-top: 20px;
 }
+#one-player {
+  background-image: url(http://stonehousesigns.com/sites/default/files/products/formatted/Single_Lift_Signs_WJ22.jpg?1291784229);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+}
+#two-player {
+  background-image: url(http://stonehousesigns.com/sites/default/files/products/formatted/Double_Lift_Signs_WJ23.jpg?1291784230);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+}
+.button {
+  float: left;
+  padding-left: 15px;
+}
 a:link {
     color: white;
 }
