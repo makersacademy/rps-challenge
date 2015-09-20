@@ -54,11 +54,11 @@ h1 {
 
   <div class="main_selector">
     <a href="/rock?selection=rock">
-      <img src="http://i59.tinypic.com/2v15doy.png" alt="Rock" style="width:304px;height:226px;"> </a>
+      <img src="http://oi58.tinypic.com/28hel93.jpg" alt="Rock" style="width:304px;height:230px;"> </a>
     <a href="/paper?selection=paper">
-      <img src="http://i62.tinypic.com/wtu5p1.png" alt="Paper" style="width:304px;height:224px;"> </a>
+      <img src="http://oi61.tinypic.com/2w3x3za.jpg" alt="Paper" style="width:304px;height:230px;"> </a>
     <a href="/scissors?selection=scissors">
-      <img src="http://i58.tinypic.com/f2tpqq.png" alt="Scissors" style="width:304px;height:228px;"> </a>
+      <img src="http://oi57.tinypic.com/34xnz9v.jpg" alt="Scissors" style="width:304px;height:230px;"> </a>
   </div>
 
 <!-- Result pages -->
@@ -84,10 +84,11 @@ h1 {
   <div class="result_page">
     Player 2 chose <%= $cpu.last_move %>, you lose!!
     <br> <%= $cpu_move_image_helper %>
-      <br> <a href="/new_session"> Try again </a>
     <% if $game.p2_score > 4 %>
       <br> <a href="/"> New Game </a>
       <% $game.reset %>
+    <% else %>
+    <br> <a href="/new_session"> Try again </a>
     <% end %>
   </div>
 <% elsif $result == :draw %>
