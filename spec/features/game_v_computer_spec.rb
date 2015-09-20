@@ -22,6 +22,26 @@ feature 'Starting a new game' do
     expect(page).to have_content("Game result:")
   end
 
+  scenario 'If player is asked to try again if invalid choice detected' do
+    visit '/'
+    fill_in('player_name', with:'Joe')
+    click_button("Start Game")
+    fill_in('player_choice', with:'anything')
+    click_button("Submit my choice")
+    expect(page).to have_content("Please try again, invalid choice!")
+  end
+
+  scenario 'After trying again with a valid choice, game is played' do
+    visit '/'
+    fill_in('player_name', with:'Joe')
+    click_button("Start Game")
+    fill_in('player_choice', with:'anything')
+    click_button("Submit my choice")
+    fill_in('player_choice', with:'spock')
+    click_button("Submit my choice")
+    expect(page).to have_content("Game result:")
+  end
+
   scenario 'Player can click on the play another round button' do
     visit '/'
     fill_in('player_name', with:'Joe')
