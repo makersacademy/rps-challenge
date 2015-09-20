@@ -15,20 +15,23 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play_rps' do
-    @game = $game
     @player_name = $game.player_name
+    @weapons = $game.weapons
     erb :play_rps
   end
 
   post '/play_rps' do
     $game.choose_player_weapon(params[:weapon])
+    $game.choose_computer_weapon
+    $game.play
     redirect '/results'
   end
 
   get '/results' do
     @player_name = $game.player_name
-    @player_weapon = $game.weapons_hash[$game.player_weapon]
-    @computer_weapon = $game.weapons_hash[$game.choose_computer_weapon]
+    @player_weapon = $game.player_weapon
+    @computer_weapon = $game.computer_weapon
+    @results = $game.results
     erb :results
   end
 

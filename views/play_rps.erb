@@ -2,12 +2,11 @@
 
 <p>Choose your weapon, <%= @player_name %>.</p>
 
-<form action="/play_rps" method="post">
-  <% @game.weapons.each.with_index do |weapon, index| %>
+<form action='/play_rps' method='post'>
+  <% @weapons.each.with_index do |weapon, index| %>
     <p>
-    <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>"
-    <%= index == 0 ? "checked" : "" %>>
-    <label for="<%= weapon %>"><%= weapon %></label>
+    <input type='radio' name='weapon' value='<%= weapon %>' id='<%= weapon %>' <%= index == 0 ? 'checked' : '' %>>
+    <label for='<%= weapon %>'><%= weapon %></label>
     </p>
   <% end %>
   <input type='submit' value='THROW SHAPE'>

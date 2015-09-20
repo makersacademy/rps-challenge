@@ -1,30 +1,50 @@
 class RpsGame
 
-  WEAPONS = { rock: 'Rock', paper: 'Paper', scissors: 'Scissors'}
+  WEAPONS = ['Rock', 'Paper', 'Scissors']
 
-  attr_reader :player_name, :player_weapon, :computer_weapon, :weapons_hash
+  RULES = { ['Rock', 'Scissors']  => 'blunts',
+            ['Scissors', 'Paper'] => 'cuts',
+            ['Paper', 'Rock']     => 'wraps' }
 
-  def initialize(player_name = 'Player 1')
+  attr_reader :weapons, :player_name, :player_weapon, :computer_weapon, :results
+
+  def initialize(player_name = 'Player')
+    @weapons = WEAPONS
+    @rules = RULES
     @player_name = player_name
     @player_weapon = nil
     @computer_weapon = nil
-    @weapons_hash = WEAPONS
+    @results = { winner: nil, report: nil }
   end
 
-  def weapons
-    weapons_hash.values
-  end
-
-  def choose_player_weapon(weapon_string)
-    self.player_weapon = weapons_hash.key(weapon_string)
+  def choose_player_weapon(choice)
+    self.player_weapon = choice
   end
 
   def choose_computer_weapon
-    self.computer_weapon = weapons_hash.keys[rand(3)]
+    self.computer_weapon = weapons[rand(3)]
+  end
+
+  def play
+    if player_weapon == computer_weapon
+      report "#{player_weapon} meets #{computer_weapon}"
+    end
+    if rules.include? [player_weapon, computer_weapon]
+      report "#{player_weapon} #{rules[[player_weapon, computer_weapon]]} #{computer_weapon}"
+    end
+    if rules.include? [computer_weapon, player_weapon]
+      report "#{computer_weapon} #{rules[[computer_weapon, player_weapon]]} #{player_weapon}"
+    end
+    return results
   end
 
   private
 
+  attr_reader :rules
   attr_writer :player_weapon, :computer_weapon
+
+  def report(message)
+    @results[:report] = message
+  end
 
 end
