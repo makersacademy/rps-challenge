@@ -6,24 +6,28 @@ class RpsGame
             ['Scissors', 'Paper'] => 'cuts',
             ['Paper', 'Rock']     => 'wraps' }
 
-  attr_reader :weapons, :setup, :results
+  @weapons = WEAPONS
+  @rules = RULES
+  @setup = { player: 'Player', player_weapon: nil, computer_weapon: nil }
+  @results = { winner: nil, report: nil }
 
-  def initialize(name = 'Player')
-    @weapons = WEAPONS
-    @rules = RULES
-    @setup = { player: name, player_weapon: nil, computer_weapon: nil }
-    @results = { winner: nil, report: nil }
+  class << self
+    attr_reader :weapons, :setup, :results
   end
 
-  def choose_player_weapon(choice)
+  def self.set_player(name)
+    self.setup[:player] = name
+  end
+
+  def self.choose_player_weapon(choice)
     self.setup[:player_weapon] = choice
   end
 
-  def choose_computer_weapon
+  def self.choose_computer_weapon
     self.setup[:computer_weapon] = weapons.sample
   end
 
-  def play
+  def self.play
     player_weapon = setup[:player_weapon]
     computer_weapon = setup[:computer_weapon]
     if player_weapon == computer_weapon
@@ -40,10 +44,12 @@ class RpsGame
 
   private
 
-  attr_reader :rules
-  attr_writer :setup
+  class << self
+    attr_reader :rules
+    attr_writer :setup
+  end
 
-  def report(name, message)
+  def self.report(name, message)
     @results[:winner] = name
     @results[:report] = message
   end
