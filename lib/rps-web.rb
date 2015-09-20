@@ -16,6 +16,12 @@ class RPSWeb < Sinatra::Base
   get '/name' do
     @name = params[:name]
     session[:name] = params[:name]
+    @game = Game.new
+    session[:game] = @game
+    @player = Player.new(@name)
+    session[:player] = @player
+    @comp = Computer.new
+    session[:computer] = @comp
     erb :new_game
   end
 
@@ -24,10 +30,15 @@ class RPSWeb < Sinatra::Base
     erb :choose_shape
   end
 
-  get '/game_result' do
-    @player_choice = params[:player_choice]
-    session[:player_choice] = params[:player_choice]
+  get '/result' do
+    @player_choice = params[:shape]
+    session[:shape] = params[:shape]
+    session[:player].choose(session[:shape])
+    session[:winner] = session[:game].play(session[:player], session[:computer])
+    p session[:computer]
+    erb :result
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME

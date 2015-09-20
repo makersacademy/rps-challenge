@@ -4,7 +4,7 @@ describe Game do
 
   describe "#winner" do
 
-    let(:computer){double Computer.new, shape: :rock}
+    let(:computer){double Computer.new}
     let(:player){Player.new("Harry")}
 
     it "should declare a winner" do
