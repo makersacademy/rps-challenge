@@ -9,7 +9,7 @@ feature 'Starting the game:' do
 
   scenario 'lets player enter name and remembers it' do
     visit '/'
-    fill_in 'player_name', with: 'Steerpike'
+    fill_in 'player', with: 'Steerpike'
     click_button 'GO'
     expect(page).to have_content 'Choose your weapon, Steerpike.'
   end
@@ -20,7 +20,7 @@ feature 'Playing a round:' do
 
   before do
     visit '/'
-    fill_in 'player_name', with: 'Steerpike'
+    fill_in 'player', with: 'Steerpike'
     click_button 'GO'
   end
 
@@ -46,7 +46,7 @@ feature 'Displaying round results:' do
   before do
     srand(0) # seeds RNG to ensure computer chooses Rock
     visit '/'
-    fill_in 'player_name', with: 'Steerpike'
+    fill_in 'player', with: 'Steerpike'
     click_button 'GO'
   end
 
@@ -81,7 +81,7 @@ feature 'Ending the round or game:' do
   before do
     srand(0) # seeds RNG to ensure computer chooses Rock
     visit '/'
-    fill_in 'player_name', with: 'Steerpike'
+    fill_in 'player', with: 'Steerpike'
     click_button 'GO'
     click_button 'THROW SHAPE'
   end

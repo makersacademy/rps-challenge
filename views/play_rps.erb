@@ -1,6 +1,6 @@
 <h1>RockPaperScissors</h1>
 
-<p>Choose your weapon, <%= @player_name %>.</p>
+<p>Choose your weapon, <%= @player %>.</p>
 
 <form action='/play_rps' method='post'>
   <% @weapons.each.with_index do |weapon, index| %>
