@@ -22,6 +22,7 @@ class RPSWeb < Sinatra::Base
     session[:player] = @player
     @comp = Computer.new
     session[:computer] = @comp
+
     erb :new_game
   end
 

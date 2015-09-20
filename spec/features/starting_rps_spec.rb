@@ -24,24 +24,24 @@ feature 'Staring a new RPS game' do
     expect(page).to have_content 'Please enter your name'
   end
 
-  scenario 'Goes to choose shape when start button is pressed and remembers players name' do
+  scenario 'Goes to choose shape page when start button is pressed and remembers players name' do
     visit '/'
     click_link 'New Game'
-    fill_in('name', :with => 'Harry')
+    fill_in('name', with: 'Harry')
     click_button 'Submit'
     click_button 'Start'
     expect(page).to have_content "Choose your shape Harry"
   end
 
-  scenario 'choose ship page has rock button' do
+  scenario 'Choose shape page has shape images' do
     visit '/'
     click_link 'New Game'
-    fill_in('name', :with => 'Harry')
+    fill_in('name', with: 'Harry')
     click_button 'Submit'
     click_button 'Start'
     # find_button('Rock').visible?
   end
-#
+
   scenario 'displays a winner message' do
     visit '/'
     click_link 'New Game'

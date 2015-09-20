@@ -20,5 +20,5 @@ RULES = {
     end
 
   end
-  
+
 end
