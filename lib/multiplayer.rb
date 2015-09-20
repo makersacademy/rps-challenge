@@ -1,13 +1,14 @@
 require_relative 'player'
+require_relative 'game_type'
 
 class Multiplayer
 
   attr_accessor :p1, :p2, :defeat
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, game_type)
     @p1       =   player1
     @p2       =   player2
-    @defeat   =   {rock: :scissors, paper: :rock, scissors: :paper}
+    @defeat   =   game_type.game
   end
 
   def play(player1, player2)

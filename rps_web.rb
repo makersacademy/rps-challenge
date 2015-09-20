@@ -38,12 +38,20 @@ class RockPaperScissors < Sinatra::Base
 
   get '/player2' do
     $player2 = Player.new(session[:name2])
+    redirect '/multiplayer-type'
+  end
+
+  get '/multiplayer-type' do
+    $game_type = GameType.new
+    $game_type.add_scenario :rock, :scissors
+    $game_type.add_scenario :scissors, :paper
+    $game_type.add_scenario :paper, :rock
     redirect '/multiplayer-game'
   end
 
   get '/multiplayer-game' do
     session[:size] = 0
-    $multiplayer = Multiplayer.new($player, $player2)
+    $multiplayer = Multiplayer.new($player, $player2, $game_type)
     redirect 'start-game'
   end
 
@@ -55,11 +63,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/computer' do
     $computer = Computer.new($options)
-    redirect '/set-game'
+    redirect '/rps'
+  end
+
+  get '/rps' do
+    $game_type = GameType.new
+    $game_type.add_scenario :rock, :scissors
+    $game_type.add_scenario :scissors, :paper
+    $game_type.add_scenario :paper, :rock
+    redirect 'set-game'
   end
 
   get '/set-game' do
-    $game = Game.new($player, $computer)
+    $game = Game.new($player, $computer, $game_type)
     redirect '/start-game'
   end
 

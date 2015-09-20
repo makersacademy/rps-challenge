@@ -1,14 +1,15 @@
 require_relative "player"
 require_relative "computer"
+require_relative 'game_type'
 
 class Game
 
   attr_accessor :player, :defeat, :computer
 
-  def initialize(player, computer)
+  def initialize(player, computer, game_type)
     @player   =   player
     @computer =   computer
-    @defeat   =   {rock: :scissors, paper: :rock, scissors: :paper}
+    @defeat   =   game_type.game
   end
 
   def play(player_choice)
