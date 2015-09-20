@@ -1,0 +1,12 @@
+<% if @name %>
+  <h1>Welcome to Rock, Paper, Scissors <%= @name %>!</h1>
+<% else %>
+  <h1>Welcome to Rock, Paper, Scissors!</h1>
+  <p>
+    <form action='/' method='post'>
+      What's your name?
+      <input type='text' name='name' required>
+      <input type='submit' value='Enter'>
+    </form>
+  </p>
+<% end %>

@@ -1,8 +1,20 @@
 require 'sinatra/base'
 
 class RPS_Challenge < Sinatra::Base
+
+  set :views, proc { File.join(root, '.', 'views') }
+
+  enable :sessions
+
   get '/' do
-    'Hello RPS_Challenge!'
+    @name = session[:name]
+    erb :index
+  end
+
+  post '/' do
+    redirect ('/') if params[:name].to_s == ""
+    session[:name] = params[:name]
+    redirect ('/')
   end
 
   # start the server if ruby file executed directly
