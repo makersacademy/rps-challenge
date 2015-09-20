@@ -10,5 +10,8 @@ class Rps_web < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :name
+    erb :index
   end
+
+  run! if app_file == $0
+end
