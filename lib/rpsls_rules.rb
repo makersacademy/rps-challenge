@@ -10,6 +10,6 @@ class RPSLS
   end
 
   def shapes
-    ['rock', 'paper', 'scissors', 'lizard', 'spock']
+    ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
   end
 end
