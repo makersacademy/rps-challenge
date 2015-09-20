@@ -102,27 +102,26 @@ end
 feature 'Ending the round or game:' do
 
   before do
+    srand(0) # seeds RNG to ensure computer chooses Rock
     visit '/'
     fill_in 'player', with: 'Steerpike'
     click_button 'GO'
+    choose 'Scissors'
     click_button 'THROW SHAPE'
   end
 
-  scenario 'offers another round' do
-    expect(page).to have_button 'Again!'
-  end
-
   scenario 'plays another round on request' do
-    click_button 'Again!'
+    click_button 'Play another round'
     expect(page).to have_content 'Choose your weapon, Steerpike.'
   end
 
-  scenario 'offers a new game' do
-    expect(page).to have_button 'Restart'
+  scenario 'resets the scores on request' do
+    click_button 'Reset the scores'
+    expect(page).to have_content 'Scores: Steerpike 0, Computer 0'
   end
 
   scenario 'restarts the game on request' do
-    click_button 'Restart'
+    click_button 'Log out and restart'
     expect(page).to have_content 'Welcome, brave marketeer.'
   end
 

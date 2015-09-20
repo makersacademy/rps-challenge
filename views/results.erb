@@ -15,9 +15,13 @@
 <% end %>
 
 <form action='/play_rps'>
-  <input type='submit' value='Again!' autofocus>
+  <input type='submit' value='Play another round' autofocus>
+</form>
+
+<form action='/?player=<%= @player %>' method='post'>
+  <input type='submit' value='Reset the scores' autofocus>
 </form>
 
 <form action='/'>
-  <input type='submit' value='Restart' autofocus>
+  <input type='submit' value='Log out and restart' autofocus>
 </form>
