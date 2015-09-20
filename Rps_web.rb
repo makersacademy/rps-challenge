@@ -19,7 +19,7 @@ class Rps_web < Sinatra::Base
   end
 
   post '/name' do
-    p session[:name] = params[:name]
+    session[:name] = params[:name]
     redirect ('/name') if params[:name].empty?
     redirect ('/game')
   end
@@ -27,6 +27,22 @@ class Rps_web < Sinatra::Base
   get '/game' do
     @name = session[:name]
     erb :game
+  end
+
+  post '/result' do
+    session[:choice] = params[:choice]
+    redirect ('/result')
+  end
+
+  get '/result' do
+    choice = session[:choice]
+    game = Game.new
+    player1 = Human.new
+    player2 = Computer.new
+    player1.chooses(choice.to_sym)
+    erb :winner if game.winner?(player1, player2)
+    erb :loser if game.loser?(player1, player2)
+    erb :draw if game.draw?(player1, player2)
   end
 
   run! if app_file == $0
