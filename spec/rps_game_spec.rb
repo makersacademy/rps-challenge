@@ -2,22 +2,27 @@ require 'rps_game'
 
 describe RpsGame do
 
-  WEAPONS = ['Rock', 'Paper', 'Scissors']
-
   subject = described_class
+
+  it 'can reset the scores' do
+    subject.reset_scores
+    expect(subject.setup[:scores]).to eq [0,0]
+  end
 
   it 'lets the user select a weapon' do
     expect(subject.choose_player_weapon('Paper')).to eq 'Paper'
   end
 
   it 'randomly chooses the computer weapon' do
-    expect(WEAPONS).to include subject.choose_computer_weapon
+    srand(0) # seeds RNG to ensure computer chooses Rock
+    expect(subject.choose_computer_weapon).to eq 'Rock'
   end
 
   context 'after playing a round' do
 
     before do
       srand(0) # seeds RNG to ensure computer chooses Rock
+      subject.reset_scores
       subject.choose_computer_weapon
     end
 
@@ -31,6 +36,9 @@ describe RpsGame do
       end
       it 'declares no winner' do
         expect(subject.results[:winner]).to eq nil
+      end
+      it 'leaves the score unchanged' do
+        expect(subject.setup[:scores]).to eq [0,0]
       end
     end
 
@@ -46,6 +54,9 @@ describe RpsGame do
       it 'declares player has won' do
         expect(subject.results[:winner]).to eq 'Titus'
       end
+      it 'adds one to player score' do
+        expect(subject.setup[:scores]).to eq [1,0]
+      end
     end
 
     context 'in the event of a loss' do
@@ -58,6 +69,9 @@ describe RpsGame do
       end
       it 'declares computer has won' do
         expect(subject.results[:winner]).to eq 'Computer'
+      end
+      it 'adds one to computer score' do
+        expect(subject.setup[:scores]).to eq [0,1]
       end
     end
 

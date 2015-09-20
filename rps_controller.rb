@@ -9,11 +9,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/' do
     RpsGame.choose_player(params[:player])
+    RpsGame.reset_scores
     redirect '/play_rps'
   end
 
   get '/play_rps' do
     @player = RpsGame.setup[:player]
+    @scores = RpsGame.setup[:scores]
     @weapons = RpsGame.weapons
     erb :play_rps
   end
@@ -27,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/results' do
     @player = RpsGame.setup[:player]
+    @scores = RpsGame.setup[:scores]
     @player_weapon = RpsGame.setup[:player_weapon]
     @computer_weapon = RpsGame.setup[:computer_weapon]
     @results = RpsGame.results

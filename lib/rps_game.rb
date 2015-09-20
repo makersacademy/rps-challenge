@@ -8,7 +8,8 @@ class RpsGame
 
   @weapons = WEAPONS
   @rules = RULES
-  @setup = { player: 'Player', player_weapon: 'Rock', computer_weapon: 'Rock' }
+  @setup = { player: 'Player', scores: [0,0],
+             player_weapon: 'Rock', computer_weapon: 'Rock' }
   @results = { winner: nil, report: 'Rock meets Rock' }
 
   class << self
@@ -16,6 +17,10 @@ class RpsGame
     private
     attr_reader :rules
     attr_writer :setup
+  end
+
+  def self.reset_scores
+    self.setup[:scores] = [0,0]
   end
 
   def self.choose_player(name)
@@ -36,6 +41,8 @@ class RpsGame
     message1 = rules[[weapon1, weapon2]]
     message2 = rules[[weapon2, weapon1]]
     write_report(weapon1, weapon2, message1, message2)
+    update_scores(results[:winner])
+    results
   end
 
   # private class methods
@@ -53,9 +60,13 @@ class RpsGame
   def self.report(name, message)
     @results[:winner] = name
     @results[:report] = message
-    results
   end
 
-  private_class_method :write_report, :report
+  def self.update_scores(winner)
+    self.setup[:scores][0] += (winner == setup[:player] ? 1 : 0)
+    self.setup[:scores][1] += (winner == 'Computer' ? 1 : 0)
+  end
+
+  private_class_method :write_report, :report, :update_scores
 
 end
