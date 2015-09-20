@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    You threw <%= @player_shape %>!<br>
+    Computer threw <%= @computer_shape %>!<br>
+    <%= @outcome %>!<br>
+    The score is <%= @score.flatten.join(':') %><br>
+  </body>
+  <form action="/throw">
+    <button>Let's Rock Again</button>
+  </form>
+  <!-- <a href="/name">Proceed</a> -->
+</html>
