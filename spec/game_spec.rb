@@ -52,7 +52,7 @@ describe Game do
   end
 
   describe 'result' do
-    
+
     it 'should display the result of the game' do
     expect(subject).to respond_to(:result)
     end
