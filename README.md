@@ -1,12 +1,17 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
+About
 -------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* This is my week 3 challenge at Makers Academy
+* I have made a Rock Paper Scissors game which can be played against the computer.
 
-Task 
+## Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -15,7 +20,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -50,12 +55,6 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
 Notes on test coverage
 ----------------------
 
@@ -70,9 +69,8 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
 Then run `open coverage/index.html` from the command line to view details
-
