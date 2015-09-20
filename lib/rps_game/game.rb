@@ -6,9 +6,9 @@ class Game
 
   def initialize
     @rules = {
-    :rock => {:rock => :draw, :paper => :paper, :scissors => :rock},
-    :paper => {:rock => :paper, :paper => :draw, :scissors => :scissors},
-    :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
+    rock: {rock: :draw, paper: :paper, scissors: :rock},
+    paper: {rock: :paper, paper: :draw, scissors: :scissors},
+    scissors: {rock: :rock, paper: :scissors, scissors: :draw}
   }
     @p1_score = 0
     @p2_score = 0
@@ -27,7 +27,7 @@ class Game
     update_score
     return :p1_wins! if @p1_move == @winning_move
     return :p2_wins! if @p2_move == @winning_move
-    return :draw
+    :draw
   end
 
   def update_score
