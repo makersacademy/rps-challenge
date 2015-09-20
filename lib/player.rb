@@ -1,7 +1,7 @@
 class Player
 
-  attr_accessor:name
-  attr_reader:choice
+  attr_accessor :name
+  attr_reader :choice
 
   def rock
     @choice = :rock
