@@ -1,5 +1,12 @@
-<%if @result == "Draw" %>
-  No-one wins. Draw.
-<% else %>
-  <%= @result %> wins!
-<% end %>
+<div>
+  <h3><%= @name1 %> is armed with <%= @weapon1 %></h3>
+  <h3><%= @name2 %> is armed with <%= @weapon2 %></h3>
+</div>
+
+<div>
+  <%if @result == "Draw" %>
+    No-one wins. Draw.
+  <% else %>
+    <%= @result %> wins!
+  <% end %>
+</div>

@@ -28,6 +28,16 @@ feature 'Playing the game' do
       expect(page).to have_content "wins"
     end
 
+    scenario 'shows my selection along with the result' do
+      click_button 'Paper'
+      expect(page).to have_content "Mick is armed with Paper"
+    end
+
+    scenario 'shows the computer\'s selection along with the result' do
+      click_button 'Scissors'
+      expect(page).to have_content "Computer is armed with"
+    end
+
   end
 
 end

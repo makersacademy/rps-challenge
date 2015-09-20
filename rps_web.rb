@@ -42,6 +42,10 @@ class RPS_Challenge < Sinatra::Base
   end
 
   get '/result' do
+    @name1 = session[:game].player1.name
+    @weapon1 = session[:game].player1.current_selection.class.to_s
+    @name2 = session[:game].player2.name
+    @weapon2 = session[:game].player2.current_selection.class.to_s
     @result = session[:game].challenge
     erb :result
   end
