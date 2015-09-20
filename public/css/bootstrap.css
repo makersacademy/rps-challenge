@@ -80,11 +80,18 @@ sup {
 sup {
   top: -.5em;
 }
+#v-align {
+  padding-top: 50%;
+}
+#right-image {
+  margin-top: 30px;
+}
 sub {
   bottom: -.25em;
 }
 img {
   border: 0;
+  margin-bottom: 15px;
 }
 svg:not(:root) {
   overflow: hidden;

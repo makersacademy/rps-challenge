@@ -11,22 +11,46 @@
     <div class="col-md-8 col-md-offset-2 text-center">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h2>Hello <%= @name %>! You chose:</h2>
+          <h2>Fight!</h2>
             <br>
-          <h2><%= @player_choice.capitalize %></h2>
+            <div class="row">
+              <div class="col-md-5 text-center">
+                <h2><%= @name %>: <%= @player_choice.capitalize %></h2>
+                  <% if @player_choice == "rock" %>
+                    <% @player.rock %>
+                  <% elsif @player_choice == "paper" %>
+                    <% @player.paper %>
+                  <% else %>
+                    <% @player.scissors %>
+                  <% end %>
+                  <% @result = @game.result(@player) %>
+                  <br>
+                <img src="/img/<%= @player_choice %>.png" width="256px" height="256px">
+              </div>
+
+              <div class="col-md-2 text-center">
+                <div id="v-align">
+                  <h1>VS</h1>
+                </div>
+              </div>
+
+              <div class="col-md-5 text-center">
+                <h2>Computer: <%= @game.opponent.capitalize %></h2>
+                <div id="right-image">
+                  <img src="/img/<%= @game.opponent %>.png" width="256px" height="256px">
+                </div>
+              </div>
+            </div>
             <br>
-            <img src="/img/<%= @player_choice %>.png" width="256px" height="256px">
-              <% if @player_choice == "rock" %>
-                <% @player.rock %>
-              <% elsif @player_choice == "paper" %>
-                <% @player.paper %>
-              <% else %>
-                <% @player.scissors %>
-              <% end %>
-            <br>
-          <p><%= @game.result(@player) %></p>
-          <p><a href = "/">Play again?</a>
+
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p><%= @result %>
+                <p><a href = "/">Play again?</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </body>

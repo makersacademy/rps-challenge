@@ -5,6 +5,8 @@ class Game
 
   include Computer
 
+  attr_reader :opponent
+
   def initialize
     @rock_hash = { rock: "Draw, Computer chose rock too!",
                    paper: "Computer wins! It chose paper!",
@@ -21,16 +23,16 @@ class Game
   end
 
   def result(player)
-    opponent = comp_move
+    @opponent = comp_move
     if player.move.include?("rock")
       player.move.clear
-      @rock_hash[opponent]
+      @rock_hash[@opponent]
     elsif player.move.include?("paper")
       player.move.clear
-      @paper_hash[opponent]
+      @paper_hash[@opponent]
     else
       player.move.clear
-      @scissors_hash[opponent]
+      @scissors_hash[@opponent]
     end
   end
 
