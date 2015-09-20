@@ -12,3 +12,13 @@ Coveralls.wear!
 
 require 'byebug'
 require 'capybara/rspec'
+
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'lib/rps_web.rb')
+
+require 'capybara'
+require 'rspec'
+
+Capybara.app = RPSWeb
