@@ -24,7 +24,7 @@ feature 'playing rock paper scissors' do
 
   scenario 'player chooses move and is taken to result page' do
     visit '/new_game'
-    select 'rock', from: 'move'
+    select 'Rock', from: 'move'
     click_button 'Throw!'
     expect(page).to have_content 'You chose rock!'
   end
