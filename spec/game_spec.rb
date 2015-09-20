@@ -17,7 +17,7 @@ describe Game do
   
   end
 
-  context "When playing"
+  context "When playing" do
   
     it "Logic can return a draw" do
       subject.p1_move(:rock)
@@ -37,4 +37,11 @@ describe Game do
       expect(subject.play).to eq :p2_wins!
     end
 
+    it "records player score" do
+      subject.p1_move(:scissors)
+      subject.p2_move(:rock)
+      subject.play
+      expect(subject.p2_score).to eq 1
+    end
+  end
 end

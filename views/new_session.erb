@@ -1,16 +1,10 @@
 <style>
 h1 {
-    font-family: Arial;
+  font-family: Arial;
 
 }
 
 .p1_selector {
-  display: inline-block;
-  margin-left: 250px;
-  margin-top: 250px;
-}
-
-.p2_choice {
   display: inline-block;
   margin-left: 250px;
   margin-top: 250px;
@@ -26,17 +20,24 @@ h1 {
     <img src="http://i62.tinypic.com/wtu5p1.png" alt="Paper" style="width:304px;height:224px;"></a>
     <a href="/scissors?selection=scissors">
     <img src="http://i58.tinypic.com/f2tpqq.png" alt="Scissors" style="width:304px;height:228px;"></a>
-  </div>
+    <br>
+    Player 1: <%= $p1_score %> Player 2:<%= $p2_score %>
+    <% if $p1_score > 4 %>
+      <% $spockliz_unlocked = true %>
+      rock paper scissors, spock lizard?
+      <% end %>
 <% elsif $result == :p1_wins! %>
-  <h1>Player 2 chose <%= $cpu.last_move %>, you win!! </h1>
-  <a href="/new_session">Win some more</a>
+    <h1>Player 2 chose <%= $cpu.last_move %>, you win!! </h1>
+    <a href="/new_session">Win some more</a>
 <% elsif $result == :p2_wins! %>
-  <h1>Player 2 chose <%= $cpu.last_move %>, you lose!! </h1>
-  <a href="/new_session">Try again</a>
+    <h1>Player 2 chose <%= $cpu.last_move %>, you lose!! </h1>
+    <a href="/new_session">Try again</a>
 <% elsif $result == :draw %>
-  <h1>Player 2 chose <%= $cpu.last_move %>, it's a draw... </h1>
-  <a href="/new_session">Try again</a>
-  <% if $cpu.last_move == :scissors %> 
-    <% "<h1>scissorimage</h1>" %>
-  <% end %>
+    <h1>Player 2 chose <%= $cpu.last_move %>, it's a draw... </h1>
+    <a href="/new_session">Try again</a>
+    <% if $cpu.last_move == :scissors %>
+    <img src="http://i.imgur.com/wbkoEyU.jpg" alt="Scissors" style="width:304px;height:228px;">
+    <a href="/new_session">Try again</a>
+<% end %>
+</div>
 <% end %>
