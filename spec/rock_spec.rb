@@ -10,8 +10,12 @@ describe Rock do
     expect(rock.beats?(scissors)).to be true
   end
 
-  it 'loses to paper' do
+  it 'does not beat paper' do
     expect(rock.beats?(paper)).not_to be true
+  end
+
+  it 'does not beat itself' do
+    expect(rock.beats?(rock)).not_to be true
   end
 
 end

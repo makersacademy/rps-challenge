@@ -11,7 +11,7 @@ class Game
     fail "Both players must choose their weapon" if not_ready_to_challenge?
     string = outcome_message
     reset_player_options
-    return string
+    string
   end
 
   private
