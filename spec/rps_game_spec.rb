@@ -9,19 +9,24 @@ describe RpsGame do
     expect(subject.setup[:scores]).to eq [0,0]
   end
 
+  it 'can enable extended weapons' do
+    subject.enable_extended(true)
+    expect(subject.weapons).to include 'Lizard'
+  end
+
   it 'lets the user select a weapon' do
     expect(subject.choose_player_weapon('Paper')).to eq 'Paper'
   end
 
   it 'randomly chooses the computer weapon' do
-    srand(0) # seeds RNG to ensure computer chooses Rock
+    srand(2) # seeds RNG to ensure computer chooses Rock
     expect(subject.choose_computer_weapon).to eq 'Rock'
   end
 
   context 'after playing a round' do
 
     before do
-      srand(0) # seeds RNG to ensure computer chooses Rock
+      srand(2) # seeds RNG to ensure computer chooses Rock
       subject.reset_scores
       subject.choose_computer_weapon
     end

@@ -2,13 +2,15 @@ require 'spec_helper'
 
 feature 'Starting the game:' do
 
-  scenario 'displays welcome message' do
+  before do
     visit '/'
+  end
+
+  scenario 'displays welcome message' do
     expect(page).to have_content 'Welcome, brave marketeer.'
   end
 
   scenario 'lets player enter name and remembers it' do
-    visit '/'
     fill_in 'player', with: 'Steerpike'
     click_button 'GO'
     expect(page).to have_content 'Choose your weapon, Steerpike.'
@@ -19,7 +21,7 @@ end
 feature 'Playing a round:' do
 
   before do
-    srand(0) # seeds RNG to ensure computer chooses Rock
+    srand(2) # seeds RNG to ensure computer chooses Rock
     visit '/'
     fill_in 'player', with: 'Steerpike'
     click_button 'GO'
@@ -49,7 +51,7 @@ end
 feature 'Displaying round results:' do
 
   before do
-    srand(0) # seeds RNG to ensure computer chooses Rock
+    srand(2) # seeds RNG to ensure computer chooses Rock
     visit '/'
     fill_in 'player', with: 'Steerpike'
     click_button 'GO'
@@ -102,7 +104,7 @@ end
 feature 'Ending the round or game:' do
 
   before do
-    srand(0) # seeds RNG to ensure computer chooses Rock
+    srand(2) # seeds RNG to ensure computer chooses Rock
     visit '/'
     fill_in 'player', with: 'Steerpike'
     click_button 'GO'
@@ -123,6 +125,46 @@ feature 'Ending the round or game:' do
   scenario 'restarts the game on request' do
     click_button 'Log out and restart'
     expect(page).to have_content 'Welcome, brave marketeer.'
+  end
+
+end
+
+feature 'Playing with extended rules:' do
+
+  scenario 'offers extended rules option' do
+    visit '/'
+    expect(page).to have_content 'Enable Lizard and Spock'
+  end
+
+  scenario 'offers a wider choice of weapons' do
+    visit '/'
+    fill_in 'player', with: 'Steerpike'
+    find('input[type=checkbox][name="lizard"]').set(true)
+    click_button 'GO'
+    expect(page).to have_selector 'input[type=radio][value="Lizard"]'
+  end
+
+  scenario 'deals with wider choice of weapons' do
+    srand(2) # seeds RNG to ensure computer chooses Rock
+    visit '/'
+    fill_in 'player', with: 'Steerpike'
+    find('input[type=checkbox][name="lizard"]').set(true)
+    click_button 'GO'
+    choose 'Spock'
+    click_button 'THROW SHAPE'
+    expect(page).to have_content 'Spock vapourises Rock.'
+  end
+
+  scenario 'preserves extended rules if scores are reset' do
+    srand(2) # seeds RNG to ensure computer chooses Rock
+    visit '/'
+    fill_in 'player', with: 'Steerpike'
+    find('input[type=checkbox][name="lizard"]').set(true)
+    click_button 'GO'
+    choose 'Spock'
+    click_button 'THROW SHAPE'
+    click_button 'Reset the scores'
+    expect(page).to have_content 'Lizard'
   end
 
 end

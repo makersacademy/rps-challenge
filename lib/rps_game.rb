@@ -6,6 +6,19 @@ class RpsGame
             ['Scissors', 'Paper'] => 'cuts',
             ['Paper', 'Rock']     => 'wraps' }
 
+  MORE_WEAPONS = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+
+  MORE_RULES = { ['Rock', 'Scissors']   => 'blunts',
+                 ['Rock', 'Lizard']     => 'crushes',
+                 ['Scissors', 'Paper']  => 'cuts',
+                 ['Scissors', 'Lizard'] => 'decapitates',
+                 ['Paper', 'Rock']      => 'wraps',
+                 ['Paper', 'Spock']     => 'disproves',
+                 ['Lizard', 'Paper']    => 'eats',
+                 ['Lizard', 'Spock']    => 'poisons',
+                 ['Spock', 'Scissors']  => 'disassembles',
+                 ['Spock', 'Rock']      => 'vapourises'  }
+
   @weapons = WEAPONS
   @rules = RULES
   @setup = { player: 'Player', scores: [0,0],
@@ -21,6 +34,11 @@ class RpsGame
 
   def self.reset_scores
     self.setup[:scores] = [0,0]
+  end
+
+  def self.enable_extended(flag)
+    @weapons = flag ? MORE_WEAPONS : WEAPONS
+    @rules = flag ? MORE_RULES : RULES
   end
 
   def self.choose_player(name)

@@ -10,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
   post '/' do
     RpsGame.choose_player(params[:player])
     RpsGame.reset_scores
+    RpsGame.enable_extended(params[:lizard])
     redirect '/play_rps'
   end
 
