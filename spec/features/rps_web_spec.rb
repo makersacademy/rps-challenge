@@ -29,4 +29,11 @@ feature 'playing rock paper scissors' do
     expect(page).to have_content 'You chose rock!'
   end
 
+  scenario 'player is asked whether they want to try again' do
+    visit '/new_game'
+    select 'Rock', from: 'move'
+    click_button 'Throw!'
+    expect(page).to have_content 'Try again?'
+  end
+
 end
