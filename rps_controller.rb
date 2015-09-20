@@ -8,7 +8,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/' do
-    RpsGame.set_player(params[:player])
+    RpsGame.choose_player(params[:player])
     redirect '/play_rps'
   end
 

@@ -7,7 +7,7 @@ describe RpsGame do
   subject = described_class
 
   it 'lets the user select a weapon' do
-    expect(subject::choose_player_weapon('Paper')).to eq 'Paper'
+    expect(subject.choose_player_weapon('Paper')).to eq 'Paper'
   end
 
   it 'randomly chooses the computer weapon' do
@@ -36,8 +36,8 @@ describe RpsGame do
 
     context 'in the event of a win' do
       before do
+        subject.choose_player('Titus')
         subject.choose_player_weapon('Paper')
-        subject.set_player('Titus')
         subject.play
       end
       it 'reports round as won' do

@@ -8,14 +8,17 @@ class RpsGame
 
   @weapons = WEAPONS
   @rules = RULES
-  @setup = { player: 'Player', player_weapon: nil, computer_weapon: nil }
-  @results = { winner: nil, report: nil }
+  @setup = { player: 'Player', player_weapon: 'Rock', computer_weapon: 'Rock' }
+  @results = { winner: nil, report: 'Rock meets Rock' }
 
   class << self
     attr_reader :weapons, :setup, :results
+    private
+    attr_reader :rules
+    attr_writer :setup
   end
 
-  def self.set_player(name)
+  def self.choose_player(name)
     self.setup[:player] = name
   end
 
@@ -30,28 +33,23 @@ class RpsGame
   def self.play
     player_weapon = setup[:player_weapon]
     computer_weapon = setup[:computer_weapon]
-    if player_weapon == computer_weapon
+    message1 = rules[[player_weapon, computer_weapon]]
+    message2 = rules[[computer_weapon, player_weapon]]
+    if message1
+      report setup[:player], "#{player_weapon} #{message1} #{computer_weapon}"
+    elsif message2
+      report 'Computer', "#{computer_weapon} #{message2} #{player_weapon}"
+    else
       report nil, "#{player_weapon} meets #{computer_weapon}"
     end
-    if rules.include? [player_weapon, computer_weapon]
-      report setup[:player], "#{player_weapon} #{rules[[player_weapon, computer_weapon]]} #{computer_weapon}"
-    end
-    if rules.include? [computer_weapon, player_weapon]
-      report 'Computer', "#{computer_weapon} #{rules[[computer_weapon, player_weapon]]} #{player_weapon}"
-    end
-    return results
-  end
-
-  private
-
-  class << self
-    attr_reader :rules
-    attr_writer :setup
+    results
   end
 
   def self.report(name, message)
     @results[:winner] = name
     @results[:report] = message
   end
+
+  private_class_method :report
 
 end
