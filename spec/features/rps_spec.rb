@@ -14,4 +14,11 @@ feature 'Creates a game of Rock, Paper, Scissors' do
     expect(page).to have_content "Welcome Anthony"
   end
 
+  it 'clicking submit choice will take you to the results page' do
+    visit '/game'
+    fill_in 'choice', :with => 'rock'
+    click_button('Submit')
+    expect(page).to have_content "You chose rock!"
+  end
+
 end

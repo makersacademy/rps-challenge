@@ -1,8 +1,11 @@
 require 'sinatra'
+require './lib/game.rb'
 
 class RPSWeb < Sinatra::Base
 
-  enable :sessions
+enable :sessions
+
+$game = Game.new
 
 set :views, proc { File.join(root, 'views') }
 
@@ -14,6 +17,12 @@ end
 get '/game' do
   @name = params[:name]
   erb :game
+end
+
+get '/result' do
+  $choice = params[:choice]
+  $choiceTest = $choice.to_s
+  erb :result
 end
 
 end

@@ -1,1 +1,7 @@
-<p> Welcome <%= @name %>! </p>
+<p> Welcome <%= @name %>! Enjoy your game and good luck!</p>
+
+<form action="/result">
+  Please enter either rock, paper or scissors
+  <input type="text" name="choice" required>
+  <input type="submit" value="Submit">
+</form>
