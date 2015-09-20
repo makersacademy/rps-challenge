@@ -18,17 +18,24 @@ feature 'Starting a new game' do
   expect(page).to have_content "How to Play"
   end
 
+  scenario 'I am asked whether I would like to play a two player game' do
+  visit '/'
+  expect(page).to have_content "Would you like to try the two player game?"
+  end
+
+
 end
 
 feature 'Playing the game' do
 
-  scenario "When I enter 'Rock' I am told I have won" do
+  scenario "When I submit 'Rock' I am told if I have won" do
   visit '/'
   fill_in('name', :with => 'Philip')
   select('rock', :from => 'your_choice')
   click_button('Play')
   expect(page).to have_content "The result is"
   end
+
 
 
 end

@@ -61,6 +61,10 @@ enable :sessions
     erb:selectletter
   end
 
+  get '/twoplayer' do
+    erb:twoplayer
+  end
+
 
 
   # start the server if ruby file executed directly
