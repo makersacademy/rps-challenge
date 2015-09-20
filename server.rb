@@ -30,14 +30,14 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:rps] = params[:rps]
+    player = Player.new
+    computer = Player.new
+    session[:rps] = params[:rps].to_sym
+    session[:result] = player.compare(session[:rps], computer.random_rps)
     redirect to('/result')
   end
 
   get '/result' do
-    player1 = Player.new
-    player2 = Player.new
-    @result = player1.compare(session[:rps], player2.random_rps)
     erb :result
   end
   # start the server if ruby file executed directly

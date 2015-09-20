@@ -15,8 +15,9 @@ feature "Playing game" do
     visit "/game"
     choose("rock")
     click_button("Play")
+    allow(computer).to receive(:random_rps).and_return(:scissors)
     player1.compare("Rock", computer.scissors)
-    expect(page).to have_content("You Win!")
+    expect(page).to have_content("Rock wins")
   end
 
 end
