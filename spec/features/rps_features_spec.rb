@@ -94,5 +94,14 @@ feature 'Ending the round or game:' do
     click_button 'Again!'
     expect(page).to have_content 'Choose your weapon, Steerpike.'
   end
-  
+
+  scenario 'offers a new game' do
+    expect(page).to have_button 'Restart'
+  end
+
+  scenario 'restarts the game on request' do
+    click_button 'Restart'
+    expect(page).to have_content 'Welcome, brave marketeer.'
+  end
+
 end
