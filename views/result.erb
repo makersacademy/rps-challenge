@@ -1,0 +1,25 @@
+<div style="font-family:'Courier New'">
+  <style> h1 {text-align: center;}
+          p {text-align: center;}
+          form {text-align: center;}
+          body {background-image: url("hands.png");
+          background-repeat: no-repeat;}
+  </style>
+    <body bgcolor="#66FFCC">
+
+      <h1>You chose <%= @player_throw %>!</h1>
+      <p>The result is...</p>
+
+        <% if @player_throw == @computer_throw %>
+          <p>A tie!
+          <a href="/new_game">Try again?</a></p>
+        <% elsif @computer_throw == @outcome[@player_throw] %>
+          <p>Congratulations! You've won!
+          <%= @player_throw.capitalize %> beats <%= @computer_throw %>.
+          <a href="/new_game">Try again?</a></p>
+        <% else %>
+          <p>Bad luck.
+          <%= @computer_throw.capitalize %> beats <%= @player_throw %>.
+          <a href="/new_game">Try again?</a></p>
+        <% end %>
+</div>
