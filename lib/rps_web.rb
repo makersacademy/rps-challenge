@@ -15,10 +15,13 @@ class RPSWeb < Sinatra::Base
 
   get '/play-game' do
     @username = session[:username]
+    $game = Game.new(Player.new(@username))
     erb :play_game
+    # <%= params %>
   end
 
   get '/result' do
+    $game.play(params[:name])
     erb :result
   end
 
@@ -31,7 +34,7 @@ class RPSWeb < Sinatra::Base
 
 
   # start the server if ruby file executed directly
-run! if app_file == $0
+run! if app_file == $PROGRAM_NAME
 set :views, proc { File.join(root, '..', 'views') }
 #Apparently this is the place to link to stylesheets ??? Not currently working!
 # set :styles, proc { File.join(root, '..', 'styles/styles.css') }

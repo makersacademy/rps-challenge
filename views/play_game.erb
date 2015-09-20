@@ -29,17 +29,24 @@
 <form action="/result" method="get">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="Rock_Submit" class="btn btn-default">Rock</button>
+            <button type="Rock_Submit" class="btn btn-default" name=":rock">Rock</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="Paper_Submit" class="btn btn-default">Paper</button>
+            <button type="Paper_Submit" class="btn btn-default" name=":paper">Paper</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="Scissor_Submit" class="btn btn-default">Scissors</button>
+            <button type="Scissor_Submit" class="btn btn-default" name=":scissors">Scissors</button>
           </div>
               <!-- <button type="submit" class="btn btn-default">Submit</button> -->
     </div>
 </form>
+
+<%= session %>
+<% session.each do |s| %>
+<%= s %>
+<% end %> -->
+
+
 
 
 
