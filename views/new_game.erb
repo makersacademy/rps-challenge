@@ -1,13 +1,21 @@
-<body bgcolor="#66FFCC">
+<div style="font-family:'Courier New'">
+  <style> h1 {text-align: center;}
+          p {text-align: center;}
+          form {text-align: center;}
+          body {background-image: url("hands.png");
+          background-repeat: no-repeat;}
+  </style>
+    <body bgcolor="#66FFCC">
 
-<h1 style="font-family:'Courier New'">Hi, <%= @name %>! Let's play.</h1>
-<p style="font-family:'Courier New'">Choose a move</p>
+      <h1>Hi, <%= @name %>! Let's play.</h1>
+      <p>Choose a move</p>
 
-<form action="/new_game" method="post">
-  <select name='move' required>
-    <option value='rock'>rock</option>
-    <option value='paper'>paper</option>
-    <option value='scissors'>scissors</option>
-  </select>
-  <input type="submit" value="Throw!">
-</form>
+      <form action="/new_game" method="post">
+        <select name='move' required>
+          <option value='rock'>Rock</option>
+          <option value='paper'>Paper</option>
+          <option value='scissors'>Scissors</option>
+        </select>
+        <input type="submit" value="Throw!">
+      </form>
+</div>
