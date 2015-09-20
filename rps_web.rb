@@ -8,8 +8,6 @@ class RockPaperScissors < Sinatra::Base
 
   set :views, proc { File.join(root, 'views') }
 
-# Stage 1 - Signing up & Beginning the game
-
   get '/' do
     erb :index
   end
@@ -20,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/player' do
+    session[:size] = 0
     $player = Player.new(session[:name])
     redirect '/new-game'
   end
@@ -43,6 +42,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/multiplayer-game' do
+    session[:size] = 0
     $multiplayer = Multiplayer.new($player, $player2)
     redirect 'start-game'
   end
@@ -55,7 +55,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/computer' do
     $computer = Computer.new($options)
-    p $computer
     redirect '/set-game'
   end
 
@@ -65,29 +64,53 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start-game' do
+    session[:size] += 1
     erb :start_game
   end
 
   get '/rock' do
     session[:player_choice] = "rock"
-    redirect '/result'
+    redirect '/check'
   end
 
   get '/paper' do
     session[:player_choice] = "paper"
-    redirect '/result'
+    redirect '/check'
   end
 
   get '/scissors' do
     session[:player_choice] = "scissors"
-    redirect '/result'
+    redirect '/check'
   end
 
+  get '/check' do
+    if $player2.nil?
+      redirect '/result'
+    else
+      redirect '/multi-result'
+    end
+  end
+
+  get '/multi-result' do
+    if  session[:size] == 1
+      session[:player1_choice] = session[:player_choice]
+      session[:size] += 1
+      redirect 'start-game'
+    else
+      session[:player2_choice] = session[:player_choice]
+      session[:size] = 0
+      redirect '/result2'
+    end
+  end
+
+  get '/result2' do
+    @result = $multiplayer.play(session[:player1_choice], session[:player2_choice])
+    erb :result
+  end
 
   get '/result' do
     @player_choice = session[:player_choice]
     @result = $game.play(@player_choice)
-    p @result
     erb :result
   end
 

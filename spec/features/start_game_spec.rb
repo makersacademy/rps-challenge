@@ -25,12 +25,48 @@ feature 'Starting a new game' do
 
   scenario 'can choose rock' do
     click_link("Start")
-    click_link('player_choice')
+    click_link('rock')
     expect(page).to have_content 'The Winner is...'
   end
 
   scenario 'can play mutliplayer' do
     expect(page).to have_content 'Click Multiplayer to begin'
+  end
+
+  scenario 'multiplayer game - draw' do
+    click_link('Multiplayer')
+    fill_in("name", with: "Ben")
+    click_button "Submit"
+    click_link("paper")
+    click_link("paper")
+    expect(page).to have_content "It's a draw!"
+  end
+
+  scenario 'multiplayer game - player2 wins' do
+    click_link("Multiplayer")
+    fill_in("name", with: "Ben")
+    click_button "Submit"
+    click_link("paper")
+    click_link("scissors")
+    expect(page).to have_content "Ben wins!"
+  end
+
+  scenario 'multiplayer game - player1 wins' do
+    click_link("Multiplayer")
+    fill_in("name", with: "Ben")
+    click_button "Submit"
+    click_link("rock")
+    click_link("scissors")
+    expect(page).to have_content "John wins!"
+  end
+
+  scenario 'can play more games' do
+    click_link("Multiplayer")
+    fill_in("name", with: "Ben")
+    click_button "Submit"
+    click_link("rock")
+    click_link("scissors")
+    expect(page).to have_content "Play again"
   end
 
 end
