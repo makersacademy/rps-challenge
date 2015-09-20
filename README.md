@@ -1,5 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/Harryandrew/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/Harryandrew/rps-challenge?branch=master)
 [![Code Climate](https://codeclimate.com/github/Harryandrew/rps-challenge/badges/gpa.svg)](https://codeclimate.com/github/Harryandrew/rps-challenge)
+[![Build Status](https://travis-ci.org/Harryandrew/rps-challenge.svg?branch=master)](https://travis-ci.org/Harryandrew/rps-challenge)
 
 **RPS - Challenge: Rock, Paper, Scissors**
 =================
