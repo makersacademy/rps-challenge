@@ -7,6 +7,7 @@ describe Game do
   
   context "when initialized" do
   
+    it {is_expected.to respond_to(:reset)}
     it {is_expected.to respond_to(:rules)}
     it {is_expected.to respond_to(:p1_move).with(1).argument}
     it {is_expected.to respond_to(:p2_move).with(1).argument}
