@@ -13,6 +13,17 @@ feature 'Entering the page' do
     click_button("Start Game")
     expect(page).to have_content("Choose your weapon, Adrian!")
   end
+
+  # scenario 'I can see the result of the game' do
+  #   visit '/'
+  #   fill_in('name', with:'Adrian')
+  #   click_button("Start Game")
+  #   choose("rock")
+  #   click_button("PLAY!")
+  #   expect(page).to have_content("The winner is")
+  # end
+
+
 end
 
 # feature 'displays whether you have won or lost' do

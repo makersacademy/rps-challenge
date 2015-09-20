@@ -12,10 +12,13 @@ class RPSWeb < Sinatra::Base
 
   post '/play-game' do
     session[:name] = params[:name]
-    @name = params[:name]
-    erb :play_game
+    redirect '/play-game'
   end
 
+  get '/play-game' do
+    @name = session[:name]
+    erb :play_game
+  end
 
   run! if app_file == $0
 end
