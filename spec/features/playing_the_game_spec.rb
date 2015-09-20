@@ -23,7 +23,7 @@ feature 'Playing the game' do
 
   feature 'playing against the computer (randomly selecting its option)' do
 
-    scenario 'after selecting my option I see who won' do
+    scenario 'after selecting my option I see the result' do
       click_button 'Rock'
       expect(page).to have_content "wins the game!"
     end
