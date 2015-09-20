@@ -73,7 +73,7 @@ feature 'Play the game' do
 
   scenario 'I can exit' do
     visit '/'
-    fill_in('name', :with => 'John')
+    fill_in('name', with: 'John')
     click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
