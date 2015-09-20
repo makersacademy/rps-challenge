@@ -1,1 +1,5 @@
-<%= @result %>
+<%if @result == "Draw" %>
+  No-one wins. Draw.
+<% else %>
+  <%= @result %> wins!
+<% end %>

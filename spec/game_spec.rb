@@ -30,19 +30,19 @@ describe Game do
     it 'declares player1 the winner when they beat player2' do
       allow(shape1).to receive(:beats?) {true}
       allow(shape2).to receive(:beats?) {false}
-      expect(game.challenge).to eq "Player1 wins the game!"
+      expect(game.challenge).to eq "Player1"
     end
 
     it 'declares player2 the winner when they beat player1' do
       allow(shape1).to receive(:beats?) {false}
       allow(shape2).to receive(:beats?) {true}
-      expect(game.challenge).to eq "Player2 wins the game!"
+      expect(game.challenge).to eq "Player2"
     end
 
     it 'declares a draw when players have chosen the same type of object' do
       game = Game.new(player1, player1)
       allow(shape1).to receive(:beats?) {false}
-      expect(game.challenge).to eq "Same choice, draw."
+      expect(game.challenge).to eq "Draw"
     end
 
     it 'raises an error if a player has not made a selection' do

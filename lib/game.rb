@@ -9,9 +9,9 @@ class Game
 
   def challenge
     fail "Both players must choose their weapon" if not_ready_to_challenge?
-    string = outcome_message
+    outcome = winner_string
     reset_player_options
-    string
+    outcome
   end
 
   private
@@ -24,14 +24,14 @@ class Game
     player1.current_selection.class == player2.current_selection.class
   end
 
-  def winner
-    return player1 if player1.current_selection.beats?(player2.current_selection)
-    player2
+  def winner_string
+    return "Draw" if draw?
+    return "#{player1.name}" if player1_beats_player2?
+    "#{player2.name}"
   end
 
-  def outcome_message
-    return "Same choice, draw." if draw?
-    "#{winner.name} wins the game!"
+  def player1_beats_player2?
+    player1.current_selection.beats?(player2.current_selection)
   end
 
   def reset_player_options

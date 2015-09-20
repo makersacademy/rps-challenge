@@ -25,7 +25,7 @@ feature 'Playing the game' do
 
     scenario 'after selecting my option I see the result' do
       click_button 'Rock'
-      expect(page).to have_content "wins the game!"
+      expect(page).to have_content "wins"
     end
 
   end
