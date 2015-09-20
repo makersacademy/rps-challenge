@@ -13,13 +13,7 @@ class RPS < Sinatra::Base
 
   post '/sign_up' do
     redirect to('/no_name') if params[:username] == ''
-    if session[:username]
-      session[:username_1] = params[:username]
-    else
-      session[:username] = params[:username]
-    end
-    p "username #{session[:username]}"
-    p "useranme_1 #{session[:username_1]}"
+    session[:username] = params[:username]
     redirect to('/welcome')
   end
 
@@ -28,19 +22,52 @@ class RPS < Sinatra::Base
   end
 
   get '/welcome' do
+    unless session[:username_1]
+      session[:username_1] = session[:username]
+    end
     erb :welcome
   end
 
-  get '/game' do
-    erb :game
+  get '/vs_computer' do
+    erb :vs_computer
   end
 
-  post '/game' do
+  post '/vs_computer' do
     player = Player.new
     computer = Player.new
     session[:rps] = params[:rps].to_sym
     session[:result] = player.compare(session[:rps], computer.random_rps)
     redirect to('/result')
+  end
+
+  get '/vs_friends' do
+    erb :vs_friends
+  end
+
+  post '/vs_friends' do
+    if session[:player1_rps].nil?
+      session[:player1_rps] = params[:rps]
+      redirect to('player1_result')
+    else
+      session[:player2_rps] = params[:rps]
+      redirect to('player2_result')
+    end
+  end
+
+  get '/player1_result' do
+    @player = Player.new
+    if session[:player1_rps] && session[:player2_rps]
+      @result = @player.compare(session[:player1_rps].to_sym, session[:player2_rps].to_sym)
+    end
+    erb :player1_result
+  end
+
+  get '/player2_result' do
+    @player = Player.new
+    if session[:player1_rps] && session[:player2_rps]
+      @result = @player.compare(session[:player2_rps].to_sym, session[:player1_rps].to_sym)
+    end
+    erb :player2_result
   end
 
   get '/result' do

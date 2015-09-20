@@ -25,4 +25,10 @@ feature "Sign up" do
     click_button("Sign Up")
     expect(page).to have_content("Thank you for signing up, Jongmin!")
   end
+
+  scenario "You can choose one option out of two" do
+    visit "/welcome"
+    expect(page).to have_content("Play with computer")
+    expect(page).to have_content("Play with friends")
+  end
 end

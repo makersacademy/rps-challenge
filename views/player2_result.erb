@@ -1,0 +1,5 @@
+<% if @result.nil? %>
+  Waiting for your friend...<a href="/player2_result">See the result</a>
+<% else %>
+  <%= @player.compare(session[:player2_rps].to_sym, session[:player1_rps].to_sym) %>
+<% end %>
