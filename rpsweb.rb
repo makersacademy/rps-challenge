@@ -35,7 +35,7 @@ class Rps_web < Sinatra::Base
   end
 
   get '/game' do
-    p session[:player].choose(session[:object])
+    session[:player].choose(session[:object])
     # p session[:game].play(session[:player], session[:computer])
     erb :game
   end
