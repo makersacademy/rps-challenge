@@ -4,7 +4,7 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'sinatra-partial'
-
+gem 'simplecov', :require => false, :group => :test
 
 group :development,  :test do
   gem 'byebug'

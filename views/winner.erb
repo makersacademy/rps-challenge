@@ -1,0 +1,16 @@
+<div>
+
+<% if @winner == :draw %>
+  <p> Draw!</p>
+<%elsif @winner == @p1name %>
+  <p><%= @p1name %> wins</p>
+  <p><%= @p1move.capitalize %> beats <%= @p2move %>
+<%else%>
+  <p><%= @p2name %> Wins</p>
+  <p><%= @p2move %> beats <%= @p1move %>
+<%end%>
+
+<p><a href='/play'> Click to start new game <a></p>
+
+
+</div>

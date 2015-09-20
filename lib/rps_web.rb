@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/partial'
 require './lib/rockpaperscissors'
+require './lib/player'
+require './lib/computer'
 
 
 
@@ -12,7 +14,7 @@ class Rps < Sinatra::Base
 
 
   get '/' do
-    erb :index
+    redirect '/name'
   end
 
   get '/name' do
@@ -25,22 +27,34 @@ class Rps < Sinatra::Base
     redirect '/name'
   end
 
+  get '/new_game' do
+    @name = session[:name]
+    redirect '/name' if @name=="" || @name==nil
+    session[:game] = Rockpaperscissors.new
+    session[:player1] = Player.new
+    session[:player1].name=@name
+    session[:player2] = Computer.new
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    erb :new_game
+  end
+
   get '/play' do
-    erb :game#start new game, play moves
+    erb :game
   end
 
   post '/play' do
-    session[:game] = Rockpaperscissors.new
-    session[:player_move] = params[:move]
-    session[:computer_move] = session[:game].computer_choice
-    session[:winner] = session[:game].winner(session[:player_move], session[:computer_move])
+    move = params[:move]
+    session[:player1].public_send(move.to_sym)
     redirect '/winner'
   end
 
   get '/winner' do
-    @winner = session[:winner]
-    @player = session[:player_move]
-    @computer = session[:computer_move]
+    @p1name = session[:player1].name
+    @p2name = session[:player2].name
+    @p1move = session[:player1].choice
+    @p2move = session[:player2].choice
+    @winner = session[:game].winner(@p1name, @p1move, @p2name, @p2move)
     erb :winner
   end
 
