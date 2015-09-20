@@ -8,13 +8,9 @@ class Rps_Challenge < Sinatra::Base
 
   before do
     $result = nil
-    $p1_score = $game.p1_score
-    $p2_score = $game.p2_score
   end
 
   get '/' do
-    $p1_score = 0
-    $p2_score = 0
     erb :index
   end
 

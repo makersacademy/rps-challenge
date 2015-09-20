@@ -35,4 +35,11 @@ class Game
     @p1_score += 1 if @p1_move == @winning_move
     @p2_score += 1 if @p2_move == @winning_move
   end
+
+  def reset
+    @p1_score = 0
+    @p2_score = 0
+    @result = nil
+  end
+
 end

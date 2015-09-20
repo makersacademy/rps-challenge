@@ -7,4 +7,3 @@ def cpu_move_image
   return "<img src='http://i62.tinypic.com/wtu5p1.png'>" if $cpu.last_move == :paper
   return "<img src='http://i58.tinypic.com/f2tpqq.png'>" if $cpu.last_move == :scissors
 end
-
