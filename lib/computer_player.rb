@@ -7,7 +7,7 @@ class ComputerPlayer
   end
 
   def make_choice
-    @choice = [:rock, :paper, :scissors][rand(0..2)]
+    @choice = [:rock, :paper, :scissors, :lizard, :spock][rand(0..4)]
   end
 
 end

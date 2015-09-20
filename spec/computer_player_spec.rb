@@ -20,16 +20,29 @@ describe ComputerPlayer do
       expect(subject.choice).to eq(:rock)
     end
 
+    it 'sometimes plays paper' do
+      srand(1001)
+      subject.make_choice
+      expect(subject.choice).to eq(:paper)
+    end
+
     it 'sometimes plays scissors' do
       srand(1004)
       subject.make_choice
       expect(subject.choice).to eq(:scissors)
     end
 
-    it 'sometimes plays paper' do
-      srand(1001)
+
+    it 'sometimes plays lizard' do
+      srand(1005)
       subject.make_choice
-      expect(subject.choice).to eq(:paper)
+      expect(subject.choice).to eq(:lizard)
+    end
+
+    it 'sometimes plays spock' do
+      srand(1010)
+      subject.make_choice
+      expect(subject.choice).to eq(:spock)
     end
   end
 
