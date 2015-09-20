@@ -1,13 +1,17 @@
-require "game"
-
 class Player
+  attr_reader :name, :move
+
+  def initialize(name)
+    @name = name
+  end
+
   def select(move)
     if move == :rock
-      :rock
+      @move = move
     elsif move == :paper
-      :paper
+      @move = move
     elsif move == :scissors
-      :scissors
+      @move = move
     else
       fail "Select 'Rock', 'Paper' or 'Scissors'."
     end

@@ -1,8 +1,8 @@
 class Computer
+  attr_reader :select
 
   def select
-    options = [:rock, :paper, :scissors]
-    options.shuffle.first
+    @select = [:rock, :paper, :scissors].shuffle.first
   end
 
 end

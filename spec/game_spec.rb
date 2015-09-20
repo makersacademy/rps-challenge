@@ -1,84 +1,67 @@
 require "game"
 
 describe Game do
-  let(:player)   {double :player}
-  let(:computer) {double :computer}
+  let(:game)     {Game.new}
+  let(:player)   {Player.new(:Tim)}
+  let(:computer) {double Computer.new}
 
-  context "Player wins point" do
-    it "is Player's point if Player chooses rock and Computer chooses scissors" do
-      player = Player.new
+  context "Player wins round" do
+    it "is Player's round if Player chooses rock and Computer chooses scissors" do
       player.select(:rock)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:scissors)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      expect(game.play(player, computer)).to eq("You win!")
     end
 
-    it "is Player's point if Player chooses paper and Computer chooses rock" do
-      player = Player.new
+    it "is Player's round if Player chooses paper and Computer chooses rock" do
       player.select(:paper)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:rock)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      expect(game.play(player, computer)).to eq("You win!")
     end
 
-    it "is Player's point if Player chooses scissors and Computer chooses paper" do
-      player = Player.new
+    it "is Player's round if Player chooses scissors and Computer chooses paper" do
       player.select(:scissors)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:paper)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      expect(game.play(player, computer)).to eq("You win!")
     end
   end
 
-  context "Computer wins point" do
-    it "is Computer's point if Player chooses rock and Computer chooses paper" do
-      player = Player.new
+  context "Computer wins round" do
+    it "is Computer's round if Player chooses rock and Computer chooses paper" do
       player.select(:rock)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:paper)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      expect(game.play(player, computer)).to eq("The computer wins!")
     end
 
-    it "is Computer's point if Player chooses paper and Computer chooses scissors" do
-      player = Player.new
+    it "is Computer's round if Player chooses paper and Computer chooses scissors" do
       player.select(:paper)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:scissors)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      expect(game.play(player, computer)).to eq("The computer wins!")
     end
 
-    it "is Computer's point if Player chooses scissors and Computer chooses rock" do
-      player = Player.new
+    it "is Computer's round if Player chooses scissors and Computer chooses rock" do
       player.select(:scissors)
-      computer = Computer.new
-      allow(computer).to receive(:select).and_return(:scissors)
-      expect{subject.counter_increment}.to change{subject.count}.from(0).to(1)
+      allow(computer).to receive(:select).and_return(:rock)
+      expect(game.play(player, computer)).to eq("The computer wins!")
     end
   end
 
-  context "Point is a draw" do
-    xit "is a draw if Player chooses rock and Computer chooses rock" do
-      player = Player.new
+  context "Round is a draw" do
+    it "is a draw if Player chooses rock and Computer chooses rock" do
       player.select(:rock)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:rock)
-      expect{subject.counter_increment}.to_not change{subject.count}
+      expect(game.play(player, computer)).to eq("That was a tie!")
     end
 
-    xit "is a draw if Player chooses paper and Computer chooses paper" do
-      player = Player.new
+    it "is a draw if Player chooses paper and Computer chooses paper" do
       player.select(:paper)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:paper)
-      expect{subject.counter_increment}.to_not change{subject.count}
+      expect(game.play(player, computer)).to eq("That was a tie!")
     end
 
-    xit "is a draw if Player chooses scissors and Computer chooses scissors" do
-      player = Player.new
+    it "is a draw if Player chooses scissors and Computer chooses scissors" do
       player.select(:scissors)
-      computer = Computer.new
       allow(computer).to receive(:select).and_return(:scissors)
-      expect{subject.counter_increment}.to_not change{subject.count}
+      expect(game.play(player, computer)).to eq("That was a tie!")
     end
   end
 end
