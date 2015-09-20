@@ -1,43 +1,84 @@
 <style>
+
 h1 {
   font-family: Arial;
-
+  font-size: 15px;
+  margin-left: 50px;
 }
 
-.p1_selector {
+.main_selector {
   display: inline-block;
   margin-left: 250px;
-  margin-top: 250px;
+  margin-top: 130px;
+}
+
+.result_page {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-family: Arial;
+}
+
+.scoreboard {
+  width: 110px;
+  margin-left: 50px;
+  margin-top: 50px;
+  font-family: Arial;
+  font-size: 20px;
+  border-bottom-style: solid;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+.scoreboard:hover {
+  width: 290px;
+}
+
+.spock_lizard:visited {
+  style: :inherit;
 }
 
 </style>
 
 <% if $result == nil %>
-  <div class="p1_selector">
+
+  <div class="scoreboard">
+    Player 1:   <%= $p1_score %> <br>Player 2:   <%= $p2_score %>
+  </div>
+      <% if $p1_score > 4 %>
+      <!-- transition on page load -->
+        <a href="/spock_lizard">
+        <h1 class="spock_lizard">rock paper scissors, spock lizard?</h1>
+        </a>
+        <% else %>
+        <h1> Score 5 points to unlock the bonus level </h1>
+      <% end %>
+
+  <br>
+
+  <div class="main_selector">
     <a href="/rock?selection=rock">
     <img src="http://i59.tinypic.com/2v15doy.png" alt="Rock" style="width:304px;height:226px;"></a>
     <a href="/paper?selection=paper">
     <img src="http://i62.tinypic.com/wtu5p1.png" alt="Paper" style="width:304px;height:224px;"></a>
     <a href="/scissors?selection=scissors">
     <img src="http://i58.tinypic.com/f2tpqq.png" alt="Scissors" style="width:304px;height:228px;"></a>
-    <br>
-    Player 1: <%= $p1_score %> Player 2:<%= $p2_score %>
-    <% if $p1_score > 4 %>
-      <% $spockliz_unlocked = true %>
-      rock paper scissors, spock lizard?
-      <% end %>
+  </div>
+  
 <% elsif $result == :p1_wins! %>
-    <h1>Player 2 chose <%= $cpu.last_move %>, you win!! </h1>
-    <a href="/new_session">Win some more</a>
+  <div class="result_page">
+    Player 2 chose <%= $cpu.last_move %>, you win!!
+    <br><%= $cpu_move_image_helper %>
+    <br><a href="/new_session">Win some more</a>
 <% elsif $result == :p2_wins! %>
-    <h1>Player 2 chose <%= $cpu.last_move %>, you lose!! </h1>
-    <a href="/new_session">Try again</a>
+  <div class="result_page">
+    Player 2 chose <%= $cpu.last_move %>, you lose!!
+    <br><%= $cpu_move_image_helper %>
+    <br><a href="/new_session">Try again</a>
 <% elsif $result == :draw %>
-    <h1>Player 2 chose <%= $cpu.last_move %>, it's a draw... </h1>
-    <a href="/new_session">Try again</a>
-    <% if $cpu.last_move == :scissors %>
-    <img src="http://i.imgur.com/wbkoEyU.jpg" alt="Scissors" style="width:304px;height:228px;">
-    <a href="/new_session">Try again</a>
+  <div class="result_page">
+    Player 2 chose <%= $cpu.last_move %>, it's a draw...
+    <br><%= $cpu_move_image_helper %>
+    <br><a href="/new_session">Try again</a>
 <% end %>
-</div>
-<% end %>
+  </div>
+

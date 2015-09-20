@@ -33,6 +33,7 @@ class Rps_Challenge < Sinatra::Base
     $game.p1_move(:rock)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
+    $cpu_move_image_helper = cpu_move_image
     erb :new_session
   end
 
@@ -40,6 +41,7 @@ class Rps_Challenge < Sinatra::Base
     $game.p1_move(:paper)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
+    $cpu_move_image_helper = cpu_move_image
     erb :new_session
   end
 
@@ -47,6 +49,7 @@ class Rps_Challenge < Sinatra::Base
     $game.p1_move(:scissors)
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
+    $cpu_move_image_helper = cpu_move_image
     erb :new_session
   end
 

@@ -35,5 +35,4 @@ class Game
     @p1_score += 1 if @p1_move == @winning_move
     @p2_score += 1 if @p2_move == @winning_move
   end
-
 end
