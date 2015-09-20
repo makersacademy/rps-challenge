@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/computer'
+require './lib/player'
 
 class Rps_challenge < Sinatra::Base
 
@@ -11,28 +12,27 @@ class Rps_challenge < Sinatra::Base
   end
 
   post '/' do
-    session[:name] = params[:name]
+    session[:game] = Game.new
+    session[:player] = Player.new (params[:name])
+    session[:comp] = Computer.new
     redirect '/new_game'
   end
 
   get '/new_game' do
-    @name = session[:name]
+    @name = session[:player].name
     erb :new_game
   end
 
   post '/result' do
-    game = Game.new
-    comp = Computer.new
-    session[:game] = game
-    session[:player_choice] = params[:rps]
-    session[:computer_choice] = comp.choice(game.options)
+    session[:player].choice = params[:rps]
+    session[:comp].choice = session[:comp].make_choice(session[:game].options)
     redirect '/result'
   end
 
   get '/result' do
-    @player_choice = session[:player_choice]
-    @computer_choice = session[:computer_choice]
-    @winner = session[:game].winner(@player_choice, @computer_choice)
+    @player_choice = session[:player].choice
+    @computer_choice = session[:comp].choice
+    @winner = session[:game].winner(session[:player], session[:comp])
     erb :result
   end
 

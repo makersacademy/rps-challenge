@@ -1,7 +1,13 @@
-class Computer
+require_relative 'player'
 
-  def choice(options)
-    options.sample
+class Computer < Player
+
+  def initialize
+    super('Computer')
+  end
+
+  def make_choice(options)
+    @choice = options.sample
   end
 
 end

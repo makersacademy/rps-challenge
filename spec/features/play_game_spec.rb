@@ -23,19 +23,23 @@ feature 'Play the game' do
   scenario 'I can make my rps choise' do
     visit '/'
     fill_in('name', :with => 'John')
-    visit '/new_game'
+    click_button('submit')
     expect(page).to have_select('rps')
   end
 
   scenario 'I can see my choice' do
-    visit '/new_game'
+    visit '/'
+    fill_in('name', :with => 'John')
+    click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
     expect(page).to have_content('Your choice is rock')
   end
 
   scenario 'I can see computer\'s choice' do
-    visit '/new_game'
+    visit '/'
+    fill_in('name', :with => 'John')
+    click_button('submit')
     find("option[value='rock']").click
     click_button('Play!')
     expect(page).to have_content('Computer\'s choice is ')

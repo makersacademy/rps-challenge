@@ -3,7 +3,8 @@ require 'computer'
 describe Computer do
 
   it 'can make a choice' do
-    expect(subject.choice(['apple'])).to eq('apple')
+    options = ['rock', 'paper', 'scissors']
+    expect(options).to include subject.make_choice(options)
   end
 
 end
