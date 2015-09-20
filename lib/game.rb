@@ -6,7 +6,6 @@ class Game
   end
 
   def outcome player_move, computer_move
-    
     return "It's a draw!" if player_move == computer_move
     case player_move
     when :scissors

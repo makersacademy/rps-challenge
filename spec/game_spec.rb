@@ -2,12 +2,6 @@ require 'game'
 
   describe Game do
 
-    xit "Raises error if player's move isn't valid" do
-      computer_move = subject.generate_move
-      player_move = :banana
-      expect{subject.outcome(player_move, computer_move)}.to raise_error "That's not a valid move"
-    end
-
     context "When the computer's move is rock" do
       before(:each) do
         allow(subject).to receive(:generate_move){:rock}
