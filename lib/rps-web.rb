@@ -39,11 +39,13 @@ enable :sessions
 
   post '/' do
    session[:choice] = params[:your_choice]
+   session[:name] = params[:name]
    redirect('/result')
   end
 
   get '/result' do
     @choice = session[:choice]
+    @name = session[:name]
     game = Game.new(@choice)
     @result = game.play
     @computer = game.computer_choice
@@ -53,6 +55,12 @@ enable :sessions
   get '/testpage' do
     erb:testpage
   end
+
+  post '/selectletter' do
+    @pick_a_letter = params[:pick_an_order]
+    erb:selectletter
+  end
+
 
 
   # start the server if ruby file executed directly
