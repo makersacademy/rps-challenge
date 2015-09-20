@@ -12,4 +12,5 @@ group :test do
   gem 'rspec-sinatra'
   gem 'rubocop-rspec'
   gem 'rubocop'
+  gem 'rerun'
 end
