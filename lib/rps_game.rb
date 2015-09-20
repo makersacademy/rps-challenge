@@ -21,15 +21,15 @@ class RpsGame
 
   @weapons = WEAPONS
   @rules = RULES
-  @setup = { player: 'Player', scores: [0,0],
+  @setup = { player: 'Player', scores: [0,0], extended: false,
              player_weapon: 'Rock', computer_weapon: 'Rock' }
   @results = { winner: nil, report: 'Rock meets Rock' }
 
   class << self
-    attr_reader :weapons, :setup, :results
+    attr_reader :weapons, :setup, :results, :extended
     private
     attr_reader :rules
-    attr_writer :setup, :results
+    attr_writer :setup, :results, :extended
   end
 
   def self.reset_scores
@@ -37,6 +37,7 @@ class RpsGame
   end
 
   def self.enable_extended(flag)
+    self.setup[:extended] = flag
     @weapons = flag ? MORE_WEAPONS : WEAPONS
     @rules = flag ? MORE_RULES : RULES
   end

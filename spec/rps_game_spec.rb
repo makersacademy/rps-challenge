@@ -14,6 +14,11 @@ describe RpsGame do
     expect(subject.weapons).to include 'Lizard'
   end
 
+  it 'can disable extended weapons' do
+    subject.enable_extended(false)
+    expect(subject.weapons).not_to include 'Lizard'
+  end
+
   it 'lets the user select a weapon' do
     expect(subject.choose_player_weapon('Paper')).to eq 'Paper'
   end

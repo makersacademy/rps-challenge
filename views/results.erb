@@ -15,13 +15,14 @@
 <% end %>
 
 <form action='/play_rps'>
-  <input type='submit' value='Play another round' autofocus>
+  <input type='submit' value='ANOTHER ROUND' autofocus>
 </form>
 
-<form action='/?player=<%= @player %>' method='post'>
-  <input type='submit' value='Reset the scores' autofocus>
+<% lizard = (@extended ? '&lizard=true' : '') %>
+<form action='/?player=<%= @player %><%= lizard %>' method='post'>
+  <input type='submit' value='RESET THE SCORES' autofocus>
 </form>
 
 <form action='/'>
-  <input type='submit' value='Log out and restart' autofocus>
+  <input type='submit' value='LOG OUT AND RESTART' autofocus>
 </form>

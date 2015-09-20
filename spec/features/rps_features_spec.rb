@@ -113,17 +113,17 @@ feature 'Ending the round or game:' do
   end
 
   scenario 'plays another round on request' do
-    click_button 'Play another round'
+    click_button 'ANOTHER ROUND'
     expect(page).to have_content 'Choose your weapon, Steerpike.'
   end
 
   scenario 'resets the scores on request' do
-    click_button 'Reset the scores'
+    click_button 'RESET THE SCORES'
     expect(page).to have_content 'Scores: Steerpike 0, Computer 0'
   end
 
   scenario 'restarts the game on request' do
-    click_button 'Log out and restart'
+    click_button 'LOG OUT AND RESTART'
     expect(page).to have_content 'Welcome, brave marketeer.'
   end
 
@@ -163,7 +163,7 @@ feature 'Playing with extended rules:' do
     click_button 'GO'
     choose 'Spock'
     click_button 'THROW SHAPE'
-    click_button 'Reset the scores'
+    click_button 'RESET THE SCORES'
     expect(page).to have_content 'Lizard'
   end
 

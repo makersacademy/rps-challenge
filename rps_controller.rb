@@ -31,6 +31,7 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @player = RpsGame.setup[:player]
     @scores = RpsGame.setup[:scores]
+    @extended = RpsGame.setup[:extended]
     @player_weapon = RpsGame.setup[:player_weapon]
     @computer_weapon = RpsGame.setup[:computer_weapon]
     @results = RpsGame.results
