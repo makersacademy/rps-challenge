@@ -1,0 +1,10 @@
+<div>
+
+<% if (@user_name != nil) && (@user_name != '') %>
+  <h2>Welcome to Rock, Paper, Scissors, <%= @user_name %>!</h2>
+  Game goes here...
+<% else %>
+  Sorry, you must enter a name. Please <a href="/">try again</a>.
+<% end %>
+
+</div>
