@@ -8,6 +8,10 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
+  get '/new-game' do
+    erb :new_game
+  end
+
 
 
 

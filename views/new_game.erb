@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Rock Paper Scissors!</title>
+    <title>Please enter your name</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,7 +19,15 @@
   </head>
   <body>
 
-  <a href="/new-game" > New Game </a>
+    <form role="form">
+    <div class="form-group">
+      <label for="name">What's your name?</label>
+      <input type="name" class="form-control" id="name">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+    <!-- <button type="button" name="What's yur name?"></button> -->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
