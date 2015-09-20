@@ -6,9 +6,18 @@ class Game
   include Computer
 
   def initialize
-    @rock_hash = {:rock=>"Draw, Computer chose rock too!", :paper=>"Computer wins! It chose paper!", :scissors=>"You win! Computer chose scissors!"}
-    @paper_hash = {:rock=>"You win! Computer chose rock!", :paper=>"Draw, Computer chose paper too!", :scissors=>"Computer wins! It chose scissors!"}
-    @scissors_hash = {:rock=>"Computer wins! It chose rock!", :paper=>"You win! Computer chose paper!", :scissors=>"Draw, Computer chose scissors too!"}
+    @rock_hash = { rock: "Draw, Computer chose rock too!",
+                   paper: "Computer wins! It chose paper!",
+                   scissors: "You win! Computer chose scissors!"
+                 }
+    @paper_hash = { rock: "You win! Computer chose rock!",
+                    paper: "Draw, Computer chose paper too!",
+                    scissors: "Computer wins! It chose scissors!"
+                  }
+    @scissors_hash = { rock: "Computer wins! It chose rock!",
+                       paper: "You win! Computer chose paper!",
+                       scissors: "Draw, Computer chose scissors too!"
+                     }
   end
 
   def result(player)
