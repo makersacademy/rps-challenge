@@ -1,10 +1,17 @@
-<div>
-  What's your name?
+<div style="font-family: 'Fira Mono', 'Lucida Console', monospace; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); text-align: center; ">
+  <div style="font-size: 200%">
+    Welcome to RPS
+  </div>
+
+  <div style="font-size: 80%; padding: 8px">
+    Please enter your name
+  </div>
+
+  <div>
+    <form action="/game">
+      <input type="text" name="name">
+      <input type="submit" value="Submit" style="font-family: 'Fira Mono', 'Lucida Console', monospace; font-size: 70%">
+    </form> 
+  </div>
 </div>
 
-<div>
-  <form action="/greeting">
-    <input type="text" name="name">
-    <input type="submit" value="Submit">
-  </form> 
-</div>

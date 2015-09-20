@@ -1,12 +1,47 @@
-<div>
-  Please choose your move
+<div style="font-family: 'Fira Mono', 'Lucida Console', monospace; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); text-align: center; ">
+  <% if @name == '' %>
+    <div>
+      Please enter a name
+      <div style='display: inline-block'>
+        <form action="/greeting">
+          <input type="text" name="name">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  <% else %>
+    <div style="font-size: 200%; padding: 10px">
+    <% if $previous_result == :none %>
+      Hello <%= @name %>, pick your move
+    <% elsif $previous_result == :win %>
+      <%= ['You\'re awsome', 'Way to go', 'Nice one', 'Great stuff', 'You\'re a natural', 'You\'re making it look easy'].sample %>, <%= @name %>, pick another move
+    <% elsif $previous_result == :loss %>
+      <%= ['Unlucky', 'Stiff upper lip', 'Roll with the punches', 'It\'s a game of chance', 'It\'s a game of two halves', 'Stay strong'].sample %>, <%= @name %>, pick another move
+    <% elsif $previous_result == :draw %>
+      <%= ['At least you didn\'t lose', 'So close', 'These things happen', 'You can do this', 'Almost had him', 'Keep your focus'].sample %>, <%= @name %>, pick another move
+    <% end %>
+    </div>
+    <div>
+      <form action="/result">
+        <div style="display: inline-block; padding: 10px">
+            <label for="rock" style="display: block; text-align: center; padding-bottom: 20px"><img src="/images/rsz_rock1.png" alt="Rock" /></label>
+            <input type="radio" id="rock" name="choice" value="rock" checked />
+         </div>
+        <div style="display: inline-block; padding: 10px">    
+          <label for="paper" style="display: block; text-align: center; padding-bottom: 20px"><img src="/images/rsz_paper1.png" alt="Paper" /></label>   
+          <input type="radio" id="paper" name="choice" value="paper"/>
+        </div>
+        <div style="display: inline-block; padding: 10px"> 
+          <label for="scissors" style="display: block; text-align: center; padding-bottom: 20px"><img src="/images/rsz_scissors2.png" alt="Scissors" /></label>
+          <input type="radio" id="scissors" name="choice" value="scissors" />
+        </div>
+        <div style="padding: 10px">
+          <input type="submit" value="Play">
+        </div>
+      </form>
+    </div>
+  <% end %>
 </div>
 
-<div>
-  <form action="/result">
-    <input type="radio" id="rock" name="choice" value="rock" checked> Rock
-    <input type="radio" id="paper" name="choice" value="paper"> Paper
-    <input type="radio" id="scissors" name="choice" value="scissors"> Scissors
-    <input type="submit" value="Play">
-  </form>
-</div>
+
+

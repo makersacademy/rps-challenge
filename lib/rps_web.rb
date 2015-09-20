@@ -2,17 +2,17 @@ require 'sinatra/base'
 require_relative 'game'
 
 class RPSWeb < Sinatra::Base
+
+  $previous_result = :none
+  enable :sessions
   
   get '/' do
     erb :index
   end
 
-  get '/greeting' do 
-    @name = params[:name]
-    erb :greeting
-  end
-
-  get '/game' do
+  get '/game' do 
+    session[:name] = params[:name]
+    @name = session[:name]
     erb :game
   end
 
@@ -22,9 +22,18 @@ class RPSWeb < Sinatra::Base
     game = Game.new
     human.choose_option(params[:choice].to_sym)
     computer.generate_turn
-    @message = "Congratulations, you have won. Computer chose #{computer.choice}" if game.human_winner?(human, computer)
-    @message = "Commiserations, you have lost. Computer chose #{computer.choice}" if game.human_loser?(human, computer)
-    @message = "It's a draw, computer also chose #{computer.choice}" if game.draw?(human, computer)
+    if game.human_winner?(human, computer)
+      @message = "Congratulations, you have won. Computer chose #{computer.choice}" 
+      $previous_result = :win
+    end
+    if game.human_loser?(human, computer)
+      @message = "Commiserations, you have lost. Computer chose #{computer.choice}" 
+      $previous_result = :loss
+    end
+    if game.draw?(human, computer)
+      @message = "It's a draw. Computer also chose #{computer.choice}" 
+      $previous_result = :draw
+    end
     erb :result
   end
 
