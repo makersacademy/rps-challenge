@@ -33,6 +33,7 @@ class Rps_challenge < Sinatra::Base
     @player_choice = session[:player].choice
     @computer_choice = session[:comp].choice
     @winner = session[:game].winner(session[:player], session[:comp])
+    @score = session[:game].score(session[:player], session[:comp])
     erb :result
   end
 
