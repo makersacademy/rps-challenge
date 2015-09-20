@@ -3,7 +3,7 @@ class Game
   attr_reader :result, :computer_choice, :player_choice
 
   def initialize(player_choice)
-    @player_choice = player_choice
+    @player_choice = player_choice.downcase
     @result = result
     @computer_choice = ['rock','paper','scissors'].sample
 
