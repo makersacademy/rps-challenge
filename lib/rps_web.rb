@@ -23,14 +23,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/new_game' do
-    session[:player_throw] = params[:move].to_sym
+    session[:player_throw] = params[:move]
+    session[:computer_throw] = session[:game].moves.sample
     redirect ('/result')
   end
 
   get '/result' do
-    @player_throw = session[:player_throw]
-    @computer_throw = session[:game].moves.sample
+    @player_throw = session[:player_throw].to_sym
+    @computer_throw = session[:computer_throw].to_sym
+    @outcome = session[:game].defeat
     erb :result
   end
+
+
 
 end
