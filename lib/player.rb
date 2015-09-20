@@ -23,16 +23,16 @@ class Player
   def compare(a, b)
     return "Tie" if a == b
     if a == :rock
-      return "Rock wins" if b == :scissors
-      return "Paper wins" if b == :paper
+      return "You win" if b == :scissors
+      return "You lose" if b == :paper
     end
     if a == :scissors
-      return "Rock wins" if b == :rock
-      return "Scissors win" if b == :paper
+      return "You lose" if b == :rock
+      return "You win" if b == :paper
     end
     if a == :paper
-      return "Paper wins" if b == :rock
-      return "Scissors win" if b == :scissors
+      return "You win" if b == :rock
+      return "You lose" if b == :scissors
     end
   end
 
