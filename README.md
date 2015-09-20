@@ -15,11 +15,24 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+### My approach
 
-Hints on functionality
+I started this project by writing feature tests in Capybara until I was happy with basic front end feature, then moved to writing Rspec tests for a single Game class, that was supposed to hold the game logic. Then moved back to front end, to had a 'new round' feature.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This game version allows the player to:
+
+- enter their name before the game
+
+- choose one of 3 possible moves: rock, paper or scissors
+
+- see the computer's move
+
+- know if they won or lost the round
+
+- chose a move for a next round, until the player gets bored of the game
+
+For future versions, I'd like to:
+
+- add a functionality of 3 rounds per game and then declare a winner
+
+- make the game look nicer on the browser
