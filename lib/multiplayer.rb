@@ -5,8 +5,8 @@ class Multiplayer
   attr_accessor :p1, :p2, :defeat
 
   def initialize(player1, player2)
-    @p1  =   player1
-    @p2  =   player2
+    @p1       =   player1
+    @p2       =   player2
     @defeat   =   {rock: :scissors, paper: :rock, scissors: :paper}
   end
 

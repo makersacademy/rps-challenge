@@ -20,7 +20,11 @@ class Rock_Paper_Scissors < Sinatra::Base
 
   get '/player' do
     $player = Player.new(session[:name])
-    redirect '/options'
+    redirect '/new-game'
+  end
+
+  get '/new-game' do
+    erb:new_game
   end
 
   get '/options' do

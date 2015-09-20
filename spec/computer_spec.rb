@@ -2,13 +2,11 @@ require 'computer'
 
 describe Computer do
 
-  let(:array) { double :array}
+  let(:options) { double :options}
 
-# To have a look tomorrow
-  xit 'can choose a random option' do
-    allow(array).to receive(choices).and_return([:rock, :paper])
-    allow_any_instance_of(Options).to receive(:choices).and_return([:rock, :paper])
-    computer = Computer.new(array)
+  it 'can choose a random option' do
+    allow(options).to receive(:choices).and_return([:rock, :paper])
+    computer = Computer.new(options)
     expect(computer.options).to include(computer.choose)
   end
 

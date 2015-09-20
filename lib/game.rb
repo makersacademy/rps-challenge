@@ -15,8 +15,8 @@ class Game
     player_choice = player.choose(player_choice.to_sym)
     computer_choice = computer.choose
     return "It's a draw!" if is_a_draw?(player_choice, computer_choice)
-    return "You lose, #{player.name}!" if computer_wins?(player_choice, computer_choice)
     return "#{player.name} wins!" if player_wins?(player_choice, computer_choice)
+    return "You lose, #{player.name}!"
   end
 
   private
@@ -27,10 +27,6 @@ class Game
 
   def player_wins?(player_choice, computer_choice)
     computer_choice == defeat[player_choice]
-  end
-
-  def computer_wins?(player_choice, computer_choice)
-    player_choice == defeat[computer_choice]
   end
 
 end
