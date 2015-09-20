@@ -1,6 +1,12 @@
 <% if @user %>
 
 <h1>Welcome to your account, <%= @user %></h1>
+<p>What game do you want to play?</p>
+<form action='/account' method="post">
+  <input id='one-player' type="radio" name="game" value="one-player" checked>One Player
+  <input id='two-player' type="radio" name="game" value="two-player">Two Player
+  <input type="submit" value="Submit">
+</form>
 
 <% else %>
 
