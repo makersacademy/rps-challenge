@@ -12,22 +12,24 @@ class RockPaperScissors < Sinatra::Base
 
   post '/' do
     session[:name] = params[:name]
-    session[:game] = Game.new
     redirect ('/') if params[:name].empty?
     redirect ('/new_game')
   end
 
   get '/new_game' do
     @name = session[:name]
+    session[:game] = Game.new
     erb :new_game
   end
 
   post '/new_game' do
-    session[:move] = params[:move]
+    session[:player_throw] = params[:move].to_sym
     redirect ('/result')
   end
 
   get '/result' do
+    @player_throw = session[:player_throw]
+    @computer_throw = session[:game].moves.sample
     erb :result
   end
 
