@@ -17,6 +17,22 @@ feature "FEATURES:" do
       click_button "Let's do this"
       expect(page).to have_content "Hello human. Do you want to play a game? :)"
     end
+
+    scenario "Can proceed with a name" do
+      visit "/new_game"
+      fill_in 'name', :with => 'name'
+      click_button "Let's do this"
+      expect(page).to have_content "First to five point wins!"
+    end
+  
+  context "when playing the game" do
+
+    scenario "player can make a play" do
+      visit "/new_session"
+      click_link "Rock"
+      expect(page).to have_content "Player 2 chose"
+    end
+  end
   end
 end
 
