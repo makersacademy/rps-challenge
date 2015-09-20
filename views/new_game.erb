@@ -2,7 +2,13 @@
 
 <% if (@user_name != nil) && (@user_name != '') %>
   <h2>Welcome to Rock, Paper, Scissors, <%= @user_name %>!</h2>
-  Game goes here...
+  Please choose an RPS shape and try your luck against your formidable computer opponent, who is definitely not just choosing shapes at random! :) <p>
+  <form method="POST" action="/result">
+    <input id="rock_radio" type="radio" name="shape" value="rock" checked> Rock <br>
+    <input id="paper_radio" type="radio" name="shape" value="paper"> Paper <br>
+    <input id="scissors_radio" type="radio" name="shape" value="scissors"> Scissors <p>
+    <input type="submit" value="Submit">
+  </form>
 <% else %>
   Sorry, you must enter a name. Please <a href="/">try again</a>.
 <% end %>
