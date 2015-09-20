@@ -1,11 +1,11 @@
+<center><font color=red><%= @error if @error%></font>
 <div><center><font size=10>
-  Enter your move! Rock, paper or scissors?!</font><center></div>
-
+  Enter your move! Rock, paper, scissors, lizard or spock?!</font><center></div><br>
+    <center><form action='/result' method='get'>
+    <input type='text' name='move'>
   <div>
-    <center>
-      <form action='/result' method='get'>
-        <input type='text' name='move'>
+    <center><font size=10>
         Enter your name! <br>
-        <input type='text' name='name'>
-      <input type='submit' value='Submit'>
+      <input type='text' name='name'><br>
+      <center><input type='submit' value='Submit'>
 </form>
