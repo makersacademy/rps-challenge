@@ -13,8 +13,8 @@ describe Player do
     expect(player.shape).to eq :rock
   end
 
-  it 'can only choose from rock, paper or scissors' do
-    expect{player.choose "water"}.to raise_error "Please choose between rock, paper or scissors."
+  it 'can only choose from rock, paper, scissors, lizard or spock' do
+    expect{player.choose "water"}.to raise_error "Please choose between rock, paper, scissors, lizard or spock."
   end
 
 end

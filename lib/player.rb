@@ -8,7 +8,7 @@ class Player
   end
 
   def choose(shape)
-    fail "Please choose between rock, paper or scissors." unless @shapes.include?(shape)
+    fail "Please choose between rock, paper, scissors, lizard or spock." unless @shapes.include?(shape)
     @shape = shape.to_sym
   end
 

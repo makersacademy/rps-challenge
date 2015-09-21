@@ -8,7 +8,7 @@ class RPSWeb < Sinatra::Base
   set :public_folder, proc {File.join(root, '..', 'public')}
   set :views, proc { File.join(root, '..', 'views') }
   enable :sessions, :static
-  
+
 
   get '/' do
     erb :index
