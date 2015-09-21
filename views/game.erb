@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheet.css"  type="text/css" />
+</head>
 
-<body style = "background-image: url('images/rps.jpg'); no-repeat;
-background-size: 100%;">
-  <div style= "font-size: 40px;";>
+<body id = "game_body">
+  <div class = "font-size";>
     <p> Welcome <%= @name %>! Enjoy your game and good luck!</p>
-
     <form action="/result">
       Please choose either rock, paper or scissors
       <select name = "choice">
@@ -15,5 +18,6 @@ background-size: 100%;">
     </form>
   </div>
 </body>
+</html>
 
 

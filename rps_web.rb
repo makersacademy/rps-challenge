@@ -11,7 +11,7 @@ class RPSWeb < Sinatra::Base
   $player = Player.new
 
   set :views, proc { File.join(root, 'views') }
-  # set :public_folder, proc { File.join(root, 'public') }  also link in each individual erb.
+  set :public_folder, proc { File.join(root, 'public') }
 
   get '/' do
     erb :name_form

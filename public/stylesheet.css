@@ -1,0 +1,19 @@
+.font-size {
+  font-size: 40px;
+}
+
+#name_body {
+  background-image: url('images/whoareyou.jpg');
+  background-size: 100%;
+  color: gold;
+}
+
+#result_body {
+  background-image: url('images/rps.jpg');
+  background-size: 100%;
+}
+
+#game_body {
+  background-image: url('images/rps.jpg');
+  background-size: 100%;
+}

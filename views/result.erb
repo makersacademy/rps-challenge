@@ -1,6 +1,11 @@
-<body style = "background-image: url('images/rps.jpg'); no-repeat;
-background-size: 100%;">
-<div style="font-size: 40px">
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheet.css"  type="text/css" />
+</head>
+
+<body id = "result_body">
+<div class ="font-size">
 <% $player.choose_weapon($choiceTest) %>
 <p> Computer chose <%= @computer.computer_weapon %> </p>
 <% if $game.player_wins($player, @computer) == 'Player wins' %>
@@ -16,7 +21,7 @@ background-size: 100%;">
 </form>
 </div>
 </body>
-
+</html>
 
 
 
