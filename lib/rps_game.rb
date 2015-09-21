@@ -26,10 +26,9 @@ class RpsGame
   @results = { winner: nil, report: 'Rock meets Rock' }
 
   class << self
-    attr_reader :weapons, :setup, :results, :extended
+    attr_reader :weapons, :setup, :results
     private
     attr_reader :rules
-    attr_writer :setup, :results, :extended
   end
 
   def self.reset_scores
