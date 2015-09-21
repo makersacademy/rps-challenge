@@ -4,7 +4,7 @@ def rps_game_example
   visit '/'
   fill_in('player_name', with:'Joe')
   click_button("Start A Game")
-  click_button("Rock-Paper-Scissors")
+  click_button("Rock-Paper-Scissors the original game")
   click_button("Rock")
 end
 
@@ -33,7 +33,7 @@ feature 'Starting a new game' do
     visit '/'
     fill_in('player_name', with:'Joe')
     click_button("Start A Game")
-    click_button("Rock-Paper-Scissors")
+    click_button("Rock-Paper-Scissors the original game")
     expect(page).to have_content "Welcome to Rock-Paper-Scissors!"
   end
 

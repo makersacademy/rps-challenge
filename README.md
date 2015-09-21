@@ -21,5 +21,4 @@ Features implemented
 
 To do
 ----
-* Version3.
 * Visuals stylings.
