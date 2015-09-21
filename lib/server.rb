@@ -12,16 +12,18 @@ class Rpsgame < Sinatra::Base
   end
 
   get '/request' do
-     @name = params[:name]
-     session[:name] = params[:name]
-     @game = Game.new
-     session[:game] = @game
-     @player = Player.new(@name)
-     session[:player] = @player
-     @comp = Comp.new
-     session[:comp] = @comp
-
      erb :new_game
+   end
+
+   post '/request' do
+     session[:name] = params[:name]
+    #  @game = Game.new
+     session[:game] = Game.new
+    #  @player = Player.new(session[:name])
+     session[:player] = Player.new(session[:name])
+    #  @comp = Comp.new
+     session[:comp] = Comp.new
+     redirect '/game'
    end
 
    get '/game' do
@@ -29,9 +31,14 @@ class Rpsgame < Sinatra::Base
      erb :game
    end
 
-   get '/result' do
-     @player_choice = params[:choice]
+   post '/game' do
      session[:choice] = params[:choice]
+     redirect '/result'
+   end
+
+   get '/result' do
+     @player_choice = session[:choice]
+     name = session[:name]
      session[:player].select1(session[:choice])
      session[:winner] = session[:game].play(session[:player], session[:comp])
      erb :result

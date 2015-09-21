@@ -1,18 +1,16 @@
-<body style='background-image: url(http://lifewallpaperz.com/cat/3/background-image-03.html)'>
 <% if @name==nil %>
-  <form action="/request">
+  <form action="/request" method="post">
     <p style="font-size: 25px; font-family: Times New Roman">
       What's your name?
     </p>
     <input type="text" name="name" required>
     <input type="submit" value="submit">
   </form>
-<% else %>
+<!-- <% else %>
   <form action="/game">
     <p style="font-size: 25px; font-family: Times New Roman">
      "<%= @name %>! press button to start the game"
     </p>
     <input type="submit" value="Start">
   </form>
-<% end %>
-</body>
+<% end %> -->
