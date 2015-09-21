@@ -20,7 +20,7 @@ class RPSWeb < Sinatra::Base
     @game = Game.new
     @user_choice = session[:weapon]
     @game.user_choice @user_choice
-    @computer_choice = @game.comp_choice
+    @computer_choice = @game.comp_decision
     @game_result = @game.result
     erb :result
     # redirect '/result'
