@@ -90,6 +90,7 @@ DEPENDENCIES
   byebug
   capybara
   coveralls
+  rack
   rspec
   rubocop
   rubocop-rspec

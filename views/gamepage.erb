@@ -1,0 +1,62 @@
+<body background="http://i.imgur.com/mtW4Th6.jpg" height="1000px" width="1600px">
+<div style="text-align: center; color:white; font-family:Arial">
+
+  <% if @visitor=="" %>
+    Submit your name before you enter the ring!
+    <form action="/" style="padding: 20px">
+      <input type="submit" value="Go Back">
+    </form>
+  <% elsif @visitor %>
+    <form action="/gamepage">
+      <div style="padding: 20px">
+        Choose Your Weapon, <%= @visitor %>!
+      </div>
+        <label>
+          <input type="radio" name="choice_1" value="rock" >
+          <img src="http://i.imgur.com/VkLlSUc.png" height="120" width="120">
+        </label>
+        <label>
+          <input type="radio" name="choice_1" value="paper">
+          <img src="http://i.imgur.com/jvA9rT2.png" height="120" width="120">
+        </label>
+        <label>
+          <input type="radio" name="choice_1" value="scissors">
+          <img src="http://i.imgur.com/0v99zGN.png" height="120" width="120">
+        </label>
+      <div style="padding: 20px">
+        <input type="submit" value="Fight!">
+      </div>
+    </form>
+  <% end %>
+</div>
+
+<div style="text-align: center; padding: 50px; color: white; font-family:Arial">
+  <% $game.play @choice_1 if @choice_1 %>
+  <% if $game.player_win?(@choice_1) %>
+
+    <div><img src="http://i.imgur.com/CMiaICu.png"></div>
+    <%= @commentary.sample %>
+    YOU WIN! You chose <%= @choice_1 %> and your opponent chose <%= $game.opponent_play_win(@choice_1) %>!
+      <form style="padding: 20px">
+        <input type="button" value="Replay?" onClick="history.go(-1);return true;">
+      </form>
+
+  <% elsif $game.player_lose?(@choice_1) %>
+
+    YOU LOSE! You chose <%= @choice_1 %> and your opponent chose <%= $game.opponent_play_lose(@choice_1) %>!
+      <form style="padding: 20px">
+        <input type="button" value="Replay?" onClick="history.go(-1);return true;">
+      </form>
+
+  <% elsif $game.player_draw?(@choice_1) %>
+
+    IT'S A DRAW! You and your opponent both chose <%= @choice_1 %>!
+      <form style="padding: 20px">
+        <input type="button" value="Replay?" onClick="history.go(-1);return true;">
+      </form>
+
+  <% end %>
+
+
+</div>
+</body>
