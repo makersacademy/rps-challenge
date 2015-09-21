@@ -29,7 +29,7 @@ class Rps < Sinatra::Base
 
   get '/new_game' do
     @name = session[:name]
-    redirect '/name' if @name=="" || @name==nil
+    redirect '/name' if @name=="" || @name.nil?
     session[:game] = Rockpaperscissors.new
     session[:player1] = Player.new
     session[:player1].name=@name
