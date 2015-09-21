@@ -55,4 +55,15 @@ feature 'Starting a new game' do
     click_button 'rock'
     expect(page).to have_content "That's a draw!"
   end
+
+  scenario 'Must take to 2 player game if 2 players' do
+    visit ('/')
+    click_button '2 Player'
+    fill_in('name1', with: "Usman")
+    fill_in('name2', with: "Jamil")
+    click_button 'Start Game'
+    click_button 'rock'
+    click_button 'rock'
+    expect(page).to have_content "That's a draw!"
+  end
 end
