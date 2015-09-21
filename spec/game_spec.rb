@@ -2,8 +2,6 @@ require 'game'
 
 describe '#game' do
 
-# let(:computer_rock){double :}
-
   it 'initializes with a player' do
     game = Game.new
     expect(game.player_1_score).to eq 0
