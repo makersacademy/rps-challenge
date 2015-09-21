@@ -3,6 +3,7 @@ require_relative 'lib/human_player'
 require_relative 'lib/computer_player'
 require_relative 'lib/game'
 
+
 class RockPaperScissorsWeb < Sinatra::Base
   enable :sessions
   set :views, proc{File.join(root, '' , 'views')}
@@ -38,14 +39,14 @@ class RockPaperScissorsWeb < Sinatra::Base
 
   post '/game-result' do
     session[:player].choice = params[:player_choice].to_sym
+    @game_type = session[:game_choice].downcase.to_sym
     redirect '/game-result'
   end
 
   get '/game-result' do
-    game_choice = session[:game_choice].downcase.to_sym
     human_player = session[:player]
-    computer_player = ComputerPlayer.new('Computer',game_choice)
-    game = Game.new(human_player,computer_player,game_choice)
+    computer_player = ComputerPlayer.new('Computer',@game_type)
+    game = Game.new(human_player,computer_player,@game_type)
     @player_choice = human_player.choice
     @computer_choice = computer_player.make_choice
     @result = game.result

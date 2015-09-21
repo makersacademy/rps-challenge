@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chn-challenger/airport_challenge.png)](https://travis-ci.org/chn-challenger/airport_challenge)
+
 # Rock-Paper-Scissors Challenge
 
 Tasks
@@ -13,7 +15,7 @@ Features implemented
 * Human Player class, have name, can enter weapon and read current weapon choice.
 * Added lizard and spock to game logic (Game class).
 * Added tests to include all possible computer v human cases of the game.
-* Added 'try again' page if human choice entered is not valid as well as associated test suites.
+* Added 'try again' page if human choice entered is not valid as well as associated test suites. yeah..
 
 To do
 ----
