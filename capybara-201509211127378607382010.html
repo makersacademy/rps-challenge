@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lets go</title>
+    <title>Result</title>
+
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,33 +19,11 @@
     <![endif]-->
   </head>
   <body>
+    <h2>And the winner is..You win </h2>
 
+    <p> Computer hand is scissors </p>
 
-    <p> Hi, <%= @username %> </p>
-
-    <h1> Lets play RPS! </h1>
-
-    <p> Please choose your option </p>
-
-<form action="/result">
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-          <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="rock">Rock</button>
-          </div>
-          <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="paper">Paper</button>
-          </div>
-          <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="scissors">Scissors</button>
-          </div>
-              <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-    </div>
-</form>
-
-<!-- <%= session %>
-<% session.each do |s| %>
-<%= s %>
-<% end %> -->
+    <p> Player 1 hand is rock </p>
 
 
 

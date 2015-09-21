@@ -30,11 +30,6 @@ class RPSWeb < Sinatra::Base
 
 
 
-
-
-
-
-
   # start the server if ruby file executed directly
 run! if app_file == $PROGRAM_NAME
 set :views, proc { File.join(root, '..', 'views') }

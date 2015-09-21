@@ -22,12 +22,23 @@ describe 'Game' do
     expect(game.play(p1_hand)).to be_a(Symbol)
   end
 
-#Not happy with below test
-  it 'can select a winner for each hand' do
-    game = Game.new(Player.new("Matt"))
-    allow(game).to receive(:play).and_return [:rock]
+  it 'can identify a draw between rocks' do
+    player = double(:fakeplayer)
+    game = Game.new(player)
+
+#Need to get more explanation on this and why its a bad idea to stub.
+
+    # allow(game).to receive(:play ).and_return [:rock]
     game.play(:rock)
+    puts "-"*80
+    puts game.play(:rock)
+    # puts game.p1_hand
+    # puts game.comp_hand
+    puts "-"*80
     expect(game.winner).to eq("It's a draw!")
   end
+
+
+
 
 end

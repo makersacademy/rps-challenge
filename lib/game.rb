@@ -4,14 +4,15 @@ class Game
   attr_reader :players, :p1_hand, :comp_hand
 
 
+
   def initialize(*player)
     @players = []
     @players << player
     @array = [:rock, :paper, :scissors]
   end
 
-  def play(p1_hand)
-    @p1_hand = p1_hand
+  def play(player1_hand)
+    @p1_hand = player1_hand
     @comp_hand = @array.sample
   end
 

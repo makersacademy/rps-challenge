@@ -20,7 +20,7 @@
   <body>
 
 
-    <p> Hi, <%= @username %> </p>
+    <p> Hi, Matt </p>
 
     <h1> Lets play RPS! </h1>
 
@@ -29,22 +29,20 @@
 <form action="/result">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="rock">Rock</button>
+            <button type="Rock_Submit" class="btn btn-default" name="hand" value="rock">Rock</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="paper">Paper</button>
+            <button type="Paper_Submit" class="btn btn-default" name="hand" value="paper">Paper</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-default" name="hand" value="scissors">Scissors</button>
+            <button type="Scissor_Submit" class="btn btn-default" name="hand" value="scissors">Scissors</button>
           </div>
               <!-- <button type="submit" class="btn btn-default">Submit</button> -->
     </div>
 </form>
 
-<!-- <%= session %>
-<% session.each do |s| %>
-<%= s %>
-<% end %> -->
+<!-- #<Rack::Session::Abstract::SessionHash:0x007fb014543898>
+["session_id", "feeb574006ecf847deef3599474a5fdca327c33c4a24f6b3460d2480c4c01da1"]["csrf", "ad934ba92654cd83575118299df23e39"]["tracking", {"HTTP_USER_AGENT"=>"da39a3ee5e6b4b0d3255bfef95601890afd80709", "HTTP_ACCEPT_LANGUAGE"=>"da39a3ee5e6b4b0d3255bfef95601890afd80709"}]["username", "Matt"] -->
 
 
 
