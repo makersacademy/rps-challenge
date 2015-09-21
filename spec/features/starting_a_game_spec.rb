@@ -14,20 +14,18 @@ require 'spec_helper'
   end
 
 
-  scenario 'After player wrote his name, he can see his name and prompt' do
-     visit '/request'
-     fill_in('name', with: 'John')
-     click_button('submit')
-     expect(page).to have_content "John! press button to start the game"
-   end
+  # scenario 'After player wrote his name, he can see his name and prompt' do
+  #    visit '/request'
+  #    fill_in('name', with: 'John')
+  #    click_button('submit')
+  #    expect(page).to have_content "John! press button to start the game"
+  #  end
 
-scenario 'After player submitted his name, he can make a choice' do
-   visit '/request'
-   fill_in('name', with: 'John')
-   click_button('submit')
-   click_button('Start')
+scenario 'After player made choice he is able to see the results' do
    visit '/game'
-   expect(page).to have_content "Make your choice John"
+   click_button('scissors')
+   visit '/result'
+   expect(page).to have_content "scissors"
 end
 
 
