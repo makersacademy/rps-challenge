@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature ' it tells you who won' do
+feature '/winner tells you who won' do
   before(:each) do
     visit '/'
     fill_in 'name', with: 'Bob'

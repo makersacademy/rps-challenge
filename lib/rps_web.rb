@@ -19,9 +19,6 @@ class Rps < Sinatra::Base
 
   get '/name' do
     @name = session[:name]
-    #NO LOGIC IN VIEW
-    #if no name redirec give name with error
-    # if name redirect display page with name
     erb :name
   end
 
