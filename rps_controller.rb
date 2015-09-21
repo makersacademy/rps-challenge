@@ -9,15 +9,17 @@ class RockPaperScissors < Sinatra::Base
 
   post '/' do
     RpsGame.choose_player(params[:player])
-    RpsGame.reset_scores
+    RpsGame.choose_player_weapon('Rock')
     RpsGame.enable_extended(params[:lizard])
+    RpsGame.reset_scores
     redirect '/play_rps'
   end
 
   get '/play_rps' do
     @player = RpsGame.setup[:player]
-    @scores = RpsGame.setup[:scores]
+    @player_weapon = RpsGame.setup[:player_weapon]
     @weapons = RpsGame.weapons
+    @scores = RpsGame.setup[:scores]
     erb :play_rps
   end
 
