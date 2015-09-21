@@ -1,28 +1,26 @@
-<h1>RockPaperScissors</h1>
-
 <p><b>Scores:</b> <%= @player %> <%= @scores[0] %>, Computer <%= @scores[1] %></p>
 
-<p><%= @player %> threw  <%= @player_weapon %>.</p>
+<p><%= @player %> threw  <%= @player_weapon %>. The computer threw  <%= @computer_weapon %>.</p>
 
-<p>The computer threw  <%= @computer_weapon %>.</p>
-
-<p><%= @results[:report] %>.</p>
+<p><%= @results[:report] %>.
 
 <% if @results[:winner] %>
-<p><%= @results[:winner] %> wins!</p>
+<%= @results[:winner] %> wins!</p>
 <% else %>
-<p>It's a tie... meh.</p>
+It's a tie... meh.</p>
 <% end %>
 
+<hr>
+
 <form action='/play_rps'>
-  <input type='submit' value='ANOTHER ROUND' autofocus>
+  <p><input type='submit' value='ANOTHER ROUND' autofocus></p>
 </form>
 
 <% lizard = (@extended ? '&lizard=true' : '') %>
 <form action='/?player=<%= @player %><%= lizard %>' method='post'>
-  <input type='submit' value='RESET THE SCORES' autofocus>
+  <p><input type='submit' value='RESET THE SCORES'></p>
 </form>
 
 <form action='/'>
-  <input type='submit' value='LOG OUT AND RESTART' autofocus>
+  <p><input type='submit' value='LOG OUT AND RESTART' autofocus></p>
 </form>

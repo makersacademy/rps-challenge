@@ -1,13 +1,12 @@
-<h1>RockPaperScissors</h1>
-
 <p><b>Scores:</b> <%= @player %> <%= @scores[0] %>, Computer <%= @scores[1] %></p>
 
 <p>Choose your weapon, <%= @player %>.</p>
 
 <form action='/play_rps' method='post'>
-  <% @weapons.each do |weapon| %>
-  <p><input type='radio' name='weapon' value='<%= weapon %>' id='<%= weapon %>'<%= @player_weapon == weapon ? ' autofocus checked' : '' %>>
-  <label for='<%= weapon %>'><%= weapon %></label></p>
-  <% end %>
-  <input type='submit' value='THROW SHAPE'>
+  <p><% @weapons.each do |weapon| %>
+  <input type='radio' name='weapon' value='<%= weapon %>' id='<%= weapon %>'<%= @player_weapon == weapon ? ' autofocus checked' : '' %>>
+  <label for='<%= weapon %>'><%= weapon %></label>
+  <% end %></p>
+  <hr>
+  <p><input type='submit' value='THROW SHAPE'></p>
 </form>

@@ -1,0 +1,42 @@
+body{
+	margin: 20px 0px 0px 100px;
+	max-width: 800px;
+	background-color: #eeeeee;
+	color: #222222;
+	}
+
+h1{
+	font: 48px 'Courier', monospace;
+	padding: 0px 0px 10px 0px;
+	border-bottom: 1pt solid;
+}
+
+p{
+	font: 20px 'Courier', monospace;
+	line-height: 1.5;
+}
+
+input[type='text']{
+    font: 20px 'Courier', monospace;
+    display: inline-block;
+		line-height: 1.5;
+		text-indent: 5px;
+}
+
+input[type='submit']{
+		font: 20px 'Courier', monospace;
+		padding:5px 10px;
+		background:#cccccc;
+		border:0 none;
+		height: 36px;
+}
+
+input[type='checkbox']{
+		margin-left: 0px;
+}
+label[for='lizard']{
+		padding-left: 0px;
+		display: inline-block;
+		font: 16px 'Courier', monospace;
+
+}

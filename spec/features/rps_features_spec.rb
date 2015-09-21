@@ -133,7 +133,7 @@ feature 'Playing with extended rules:' do
 
   scenario 'offers extended rules option' do
     visit '/'
-    expect(page).to have_content 'Enable Lizard and Spock'
+    expect(page).to have_content 'enable Lizard and Spock'
   end
 
   scenario 'offers a wider choice of weapons' do
