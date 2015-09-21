@@ -1,27 +1,37 @@
-<div style = 'position: fixed; top: 50%; left: 50%;  margin-top: -50px;
-  margin-left: -100px;'>
-
-  <h3>Welcome <%= @name %>, GAME ON</h3>
-  <br>
-  Pick your weapon:
-  <br>
-  <table border="0">
-    <tr>
-      <td><form action='/result' method='post'>
-        <button name='choice' value='rock'>Rock</button>
-      </form></td>
-      <td><form action='result' method='post'>
-        <button name='choice' value='paper'>Paper</button>
-      </form></td>
-      <td><form action='result' method='post'>
-        <button name='choice' value='scissors'>Scissors</button>
-      </form></td>
-      <td><form action='result' method='post'>
-        <button name='choice' value='spock'>Spock</button>
-      </form></td>
-      <td><form action='result' method='post'>
-        <button name='choice' value='lizard'>Lizard</button>
-      </form></td>
-    </tr>
-  </table>
-</div>
+<head>
+<link rel="stylesheet" href="/css/bootstrap.css"/>
+</head>
+<body>
+  <div class="col-md-12 text-center">
+    <h1>Welcome <%=@name%>, GAME ON</h1>
+    <form action = "/result" method = "post">
+      <h3>Choose your weapon:</h3>
+        <br>
+      <div class="col-md-4">
+        <button class = "btn btn-default" type= "submit" name = "choice" value = "rock">
+          <img src="/images/rock.jpg" height="200px" width="200px">
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button class = "btn btn-default" type = "submit" name = "choice" value = "paper">
+          <img src="/images/paper.jpg" height="200px" width="200px">
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button class = "btn btn-default" type = "submit" name = "choice" value = "scissors">
+          <img src="/images/scissors.jpg" height="200px" width="200px">
+          </button>
+      </div>
+      <div class="col-md-6">
+        <button class = "btn btn-default" type = "submit" name = "choice" value = "lizard">
+          <img src="/images/lizard.jpg" height="200px" width="200px">
+          </button>
+      </div>
+      <div class="col-md-6">
+        <button class = "btn btn-default" type = "submit" name = "choice" value = "spock">
+          <img src="/images/spock.jpg" height="200px" width="200px">
+          </button>
+      </div>
+    </form>
+  </div>
+</body>

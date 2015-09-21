@@ -1,6 +1,13 @@
-<div style = 'position: fixed; top: 50%; left: 50%;  margin-top: -50px;
-  margin-left: -100px;'>
-  <h3><%=@name%> wins!</h3>
-  <br>
-  <%=@choice%> beats <%=@comp_choice%>!
-</div>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="col-md-12a text-center">
+      <h1><a href="/game">You Win</a></h1>
+      <br>
+      <h3><%=@choice%> beats <%=@comp_choice%>!</h3>
+    </div>
+  </div>
+</body>

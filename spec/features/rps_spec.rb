@@ -30,7 +30,7 @@ feature 'Gameplay' do
     visit '/name'
     fill_in 'name', with: 'Chris'
     click_button 'Start'
-    expect(page).to have_button "Rock"
+    expect(page).to have_button "rock"
   end
 
   scenario 'Goes to winner page when won' do
@@ -38,7 +38,7 @@ feature 'Gameplay' do
     fill_in 'name', with: 'Chris'
     click_button 'Start'
     click_button 'scissors'
-    expect(page).to have_content 'wins!'
+    expect(page).to have_content 'You Win'
   end
 
   scenario 'Goes to loser page when lost' do
@@ -46,7 +46,7 @@ feature 'Gameplay' do
     fill_in 'name', with: 'Chris'
     click_button 'Start'
     click_button 'rock'
-    expect(page).to have_content 'Loser!'
+    expect(page).to have_content 'You Lose'
   end
 
   scenario 'Goes to draw page when drawn' do
