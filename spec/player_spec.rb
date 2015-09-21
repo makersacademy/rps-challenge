@@ -21,4 +21,8 @@ describe Player do
     expect(subject.player_weapon).to eq("scissors")
   end
 
+  it 'expect to be prompted to enter rock, paper or scissors if something else is entered' do
+    expect(subject.choose_weapon("pineapples")).to eq("Please enter either rock, paper or scissors")
+  end
+
 end

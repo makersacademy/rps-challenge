@@ -88,7 +88,7 @@ describe Game do
       end
   end
 
-    context "when player chooses scissors and computer chooses scissors" do
+  context "when player chooses scissors and computer chooses scissors" do
     let(:computer){double :computer, computer_weapon: "scissors"}
     let(:player){double :player, player_weapon: "scissors"}
 
