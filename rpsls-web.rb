@@ -12,12 +12,12 @@ class RPSLSWeb < Sinatra::Base
   end
 #register player, initialize game & computer
   get '/name' do
+    session[:game] = Game.new
+    session[:computer] = Computer.new
     erb :name
   end
 
   post '/name' do
-    session[:game] = Game.new
-    session[:computer] = Computer.new
     session[:name] = params[:name]
     redirect('/name') if params[:name].empty?
     redirect('/instructions')
