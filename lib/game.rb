@@ -2,7 +2,7 @@ require_relative 'rpsls_rules'
 
 class Game
 
-  attr_reader :rules, :shapes, :score
+  attr_reader :score, :shapes
 
   def initialize(rules=RPSLS.new)
     @rules = rules.outcomes

@@ -3,13 +3,13 @@ require 'game'
 describe Game do
   let(:game){described_class.new}
 
-  it 'has a set of rules' do
-    expect(game).to respond_to(:rules)
-  end
-  
-  it 'has a set of shapes' do
-    expect(game).to respond_to(:shapes)
-  end
+  # it 'has a set of rules' do
+  #   expect(game).to respond_to(:rules)
+  # end
+  #
+  # it 'has a set of shapes' do
+  #   expect(game).to respond_to(:shapes)
+  # end
 
   describe '#result' do
     it 'is expected to keep score' do

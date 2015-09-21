@@ -79,9 +79,13 @@ Rock-Paper-Scissors-Lizard-Spock RULES:
 
 Developement/Feedback
 --------
+After Senior Feedback
+* refactor if, else statement in app logic(game.rb)
+* refactor rpsls rules.rb file
+* double check naming of files (snake_case and CamelCase)
 
+After Coach Feedback
 * Need to make 2 player game.
-
 * Would like to play around with HTML and CSS when I skill up a bit more.
 
 Instructions

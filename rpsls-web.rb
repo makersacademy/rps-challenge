@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/computer'
-
-class RPSLSWeb < Sinatra::Base
+#snake_case and PascalCase
+class RPSLSWeb < Sinatra::Base 
   enable :sessions
   set :views, proc { File.join(root, 'views') }
 

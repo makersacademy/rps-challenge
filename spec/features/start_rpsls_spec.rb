@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#separate features
 feature 'Register name' do
   scenario 'Demands player name' do
     visit '/'
