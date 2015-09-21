@@ -50,7 +50,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/multiplayer-game' do
-    session[:size] = 0
     $multiplayer = Multiplayer.new($player, $player2, $game_type)
     redirect 'start-game'
   end
