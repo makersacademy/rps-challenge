@@ -1,9 +1,12 @@
-<div>
-  Game result:
-  <%= session[:winner]%>
+<div style='margin-top: 30px; padding-left: 30px; height: 250px; width: 500px; border: 3px solid black'>
+<div style='margin-top: 20px; margin-bottom: 20px'>
+  <%= session[:name] %>, choose your object.
 </div>
 <div>
-  <form action="/start_game">
-  <input type="submit" value="Play Again">
+  <form action='/game' method="post">
+    <input type="image" img src="/images/rock.jpg" name="object" value="rock" width="150" height="100">
+    <input type="image" img src="/images/paper.jpg" name="object" value="paper" width="150" height="100">
+    <input type="image" img src="/images/scissors.jpg" name="object" value="scissors" width="150" height="100">
   </form>
+</div>
 </div>

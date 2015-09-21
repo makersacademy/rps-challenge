@@ -1,0 +1,10 @@
+<div style='padding: 20px' >
+  Game result:
+  <%= session[:winner] %>
+</div>
+
+<div style='padding: 20px'>
+  <form action="/game" method="get">
+  <input type="submit" value="Play Again">
+  </form>
+</div>
