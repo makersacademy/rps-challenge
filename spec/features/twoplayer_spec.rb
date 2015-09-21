@@ -24,11 +24,11 @@ feature 'Starting a new game' do
 
 
   scenario "When I submit 'Rock' I am told if I have won" do
-  visit '/twoplayer'
-  fill_in('two_player_name', :with => 'Philip')
-  select('rock', :from => 'your_choice')
-  click_button('Play')
-  expect(page).to have_content "The result is"
+    visit '/twoplayer'
+    fill_in('two_player_name', :with => 'Philip')
+    select('rock', :from => 'your_choice')
+    click_button('Play')
+    expect(page).to have_content "The result is"
   end
 
 end
