@@ -15,6 +15,11 @@ class RPSWeb < Sinatra::Base
     redirect '/play-game'
   end
 
+  get '/play-game' do
+    @name = session[:name]
+    erb :play_game
+  end
+
   post '/result' do
     session[:weapon] = params[:weapon]
     @game = Game.new
@@ -29,11 +34,6 @@ class RPSWeb < Sinatra::Base
   # get '/result' do
   #   erb :result
   # end
-
-  get '/play-game' do
-    @name = session[:name]
-    erb :play_game
-  end
 
   run! if app_file == $0
 end
