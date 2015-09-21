@@ -1,0 +1,26 @@
+<p><b>Scores:</b> <%= @player %> <%= @scores[0] %>, Computer <%= @scores[1] %></p>
+
+<p><%= @player %> threw  <%= @player_weapon %>. The computer threw  <%= @computer_weapon %>.</p>
+
+<p><%= @results[:report] %>.
+
+<% if @results[:winner] %>
+<%= @results[:winner] %> wins!</p>
+<% else %>
+It's a tie... meh.</p>
+<% end %>
+
+<hr>
+
+<form action='/play_rps'>
+  <p><input type='submit' value='ANOTHER ROUND' autofocus></p>
+</form>
+
+<% lizard = (@extended ? '&lizard=true' : '') %>
+<form action='/?player=<%= @player %><%= lizard %>' method='post'>
+  <p><input type='submit' value='RESET THE SCORES'></p>
+</form>
+
+<form action='/'>
+  <p><input type='submit' value='LOG OUT AND RESTART' autofocus></p>
+</form>
