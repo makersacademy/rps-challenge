@@ -6,6 +6,8 @@ wasn't asked for but makes the game much more playable. I didn't have time
 to implement a two-player option, but this shouldn't require too much work.
 The game's pages are styled with rudimentary CSS to make it easier on the eye.
 
+The app is on Heroku at https://secret-basin-1613.herokuapp.com/
+
 ### rps_controller.rb
 
 This is a simple 'skinny controller' with six methods: GET/POST for each of
