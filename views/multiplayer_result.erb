@@ -1,0 +1,20 @@
+<div>
+
+<% if @result == nil %>
+  <h2> You are the first person to choose a shape...</h2>
+<% elsif @result == :hand_1_win %>
+  <h2>You win, <%= @user_name %>!</h2>
+  You chose <%= @user_shape %> and your opponent chose <%= @opponent_shape %>. Yey!<p>
+<% elsif @result == :tie %>
+  <h2>Aha, you tied with each other, <%= @user_name %>.</h2>
+  You chose <%= @user_shape %> and your opponent chose <%= @opponent_shape %>. Coincidence, huh?<p>
+<% else %>
+  <h2>Sorry, you lost, <%= @user_name %>.</h2>
+  You chose <%= @user_shape %> and your opponent chose <%= @opponent_shape %>. Boosticks!<p>
+<% end %>
+
+<form method="POST" action="/reset_multiplayer">
+  <input type="submit" value="Play again">
+</form>
+
+</div>

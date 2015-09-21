@@ -9,18 +9,18 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/new_game' do
+  post '/game_type' do
     session[:user_name] = params[:user_name]
     @user_name = session[:user_name]
-    erb :new_game
+    erb :game_type
   end
 
-  get '/new_game' do
+  get '/new_computer_game' do
     @user_name = session[:user_name]
-    erb :new_game
+    erb :new_computer_game
   end
 
-  post '/result' do
+  post '/computer_result' do
     @user_name = session[:user_name]
     @user_shape = params[:shape]
 
@@ -34,7 +34,37 @@ class RPSWeb < Sinatra::Base
     rps_game = Game.new
     @result = rps_game.run_game(user_hand, computer_hand)
 
-    erb :result
+    erb :computer_result
+  end
+
+  get '/new_multiplayer_game' do
+    @user_name = session[:user_name]
+    erb :new_multiplayer_game
+  end
+
+  post '/multiplayer_result' do
+    @user_name = session[:user_name]
+    @user_shape = params[:shape]
+
+    if $opponent_hand
+      user_hand = Hand.new
+      user_hand.shape! @user_shape.to_sym
+
+      @opponent_shape = $opponent_hand.shape?
+
+      rps_game = Game.new
+      @result = rps_game.run_game(user_hand, $opponent_hand)
+    else
+      $opponent_hand = Hand.new
+      $opponent_hand.shape! @user_shape.to_sym
+    end
+
+    erb :multiplayer_result
+  end
+
+  post '/reset_multiplayer' do
+    $opponent_hand = nil
+    redirect '/new_multiplayer_game'
   end
 
   # start the server if ruby file executed directly

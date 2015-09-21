@@ -1,0 +1,12 @@
+<div>
+
+<% if (@user_name != nil) && (@user_name != '') %>
+  <h2>Welcome to Rock, Paper, Scissors, <%= @user_name %>!</h2>
+  Please choose a game type. <p>
+  <a href="/new_computer_game">Single player - against the computer</a><br>
+  <a href="/new_multiplayer_game">Multiplayer - against an opponent</a><br>
+<% else %>
+  Sorry, you must enter a name. Please <a href="/">try again</a>.
+<% end %>
+
+</div>

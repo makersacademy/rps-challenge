@@ -21,14 +21,23 @@ feature 'Starting a new game,' do
     expect(page).to have_content 'Welcome to Rock, Paper, Scissors, Dobby!'
   end
 
+  scenario 'I am asked whether I want to play the computer or another person with a browser.' do
+    visit '/'
+    fill_in('user_name', :with => 'Dobby')
+    click_button 'Submit'
+    expect(page).to have_link('Single player - against the computer')
+    expect(page).to have_link('Multiplayer - against an opponent')
+  end
+
 end
 
-feature 'Playing the game,' do
+feature 'In single player mode,' do
 
   before do
     visit '/'
     fill_in('user_name', :with => 'Dobby')
     click_button 'Submit'
+    click_link 'Single player - against the computer'
     choose('rock_radio')
     click_button 'Submit'
   end
@@ -39,6 +48,34 @@ feature 'Playing the game,' do
 
   scenario 'I want to be offered the chance to play again.' do
     expect(page).to have_content 'Play again'
+  end
+
+end
+
+feature 'In multiplayer mode,' do
+
+  before do
+    visit '/'
+    fill_in('user_name', :with => 'Dobby')
+    click_button 'Submit'
+    click_link 'Multiplayer - against an opponent'
+    choose('rock_radio')
+    click_button 'Submit'
+
+    visit '/'
+    fill_in('user_name', :with => 'Bobby')
+    click_button 'Submit'
+    click_link 'Multiplayer - against an opponent'
+    choose('paper_radio')
+    click_button 'Submit'
+  end
+
+  scenario 'I want to be able to choose an RPS shape to play and to get a result.' do
+    expect(page).to have_content 'You chose paper and your opponent chose rock. Yey!'
+  end
+
+  scenario 'I want to be offered the chance to play again.' do
+    expect(page).to have_button 'Play again'
   end
 
 end
