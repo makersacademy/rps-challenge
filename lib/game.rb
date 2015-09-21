@@ -36,9 +36,9 @@ class Game
 
   def play(player, computer)
     player.move == computer.select ? "That was a tie!" :
-    player.move == :rock && computer.select == :scissors ||
-    player.move == :paper    && computer.select == :rock ||
-    player.move == :scissors && computer.select == :paper ?
-      "You win!" : "The computer wins!"
+      player.move == :rock && computer.select == :scissors ||
+      player.move == :paper    && computer.select == :rock ||
+      player.move == :scissors && computer.select == :paper ?
+        "You win!" : "The computer wins!"
   end
 end
