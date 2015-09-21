@@ -1,4 +1,3 @@
-# TO DO: https://github.com/makersacademy/rps-challenge/wiki/Common-issues
 require 'sinatra/base'
 require_relative 'rps_helper'
 
@@ -27,7 +26,7 @@ class Rps_Challenge < Sinatra::Base
     $name = session[:name]
     erb :new_session
   end
-# subsitute to one layer
+
   get '/choose' do
     $game.p1_move(params[:selection])
     $game.p2_move($cpu.cpu_move)
@@ -36,6 +35,5 @@ class Rps_Challenge < Sinatra::Base
     erb :new_session
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
