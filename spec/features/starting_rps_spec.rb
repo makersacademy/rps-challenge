@@ -39,7 +39,7 @@ feature 'Staring a new RPS game' do
     fill_in('name', with: 'Harry')
     click_button 'Submit'
     click_button 'Start'
-    # find_button('Rock').visible?
+    find_button('rock').visible?
   end
 
   scenario 'displays a winner message' do
@@ -48,8 +48,8 @@ feature 'Staring a new RPS game' do
     fill_in('name', :with => 'Harry')
     click_button 'Submit'
     click_button 'Start'
-    # click_button 'Rock'
-    # expect(page).to have_content 'Result:'
+    click_button 'rock'
+    expect(page).to have_content 'Result:'
   end
 
 end
