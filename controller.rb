@@ -3,6 +3,7 @@ require './lib/game_manager'
 
 enable :sessions
 
+$game ||= Game_manager.new
 
 get '/' do
   erb :index
@@ -39,7 +40,7 @@ get '/choice' do
   setup_scores
   $choices = {}
   # if $players.values[1] == 'CPU'
-  #   $choices['CPU'] = game.cpu_choice
+  #   $choices['CPU'] = $game.cpu_choice
   # end
   erb :choice
 end
@@ -57,15 +58,14 @@ get '/holdtwo' do
 end
 
 get '/result' do
-  game ||= Game_manager.new
-  if game.new_round == 'DRAW'
+  if $game.new_round == 'DRAW'
     @round_winner = 'DRAW'
   else
-    @round_winner = game.new_round
+    @round_winner = $game.new_round
     $scores[@round_winner] += 0.5
   end
 
-  @round = game.current_round
+  @round = $game.current_round
   erb :result
 end
 
