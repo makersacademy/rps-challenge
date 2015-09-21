@@ -44,7 +44,7 @@ feature 'Starting a new game' do
       click_button 'Enter'
       choose 'opponent', option: 'Buddy'
       click_button 'Start new game!'
-      expect(current_path).to eq '/play_game'
+      expect(current_path).to eq '/play_game_buddy'
     end
 
   end

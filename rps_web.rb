@@ -28,11 +28,18 @@ class RPS_Challenge < Sinatra::Base
     else
       game_setup_vs_computer
     end
+    if params[:opponent] == "Buddy"
+      redirect ('/play_game_buddy')
+    end
     redirect ('/play_game')
   end
 
   get '/play_game' do
     erb :play_game
+  end
+
+  get '/play_game_buddy' do
+    erb :play_game_buddy
   end
 
   post '/result' do

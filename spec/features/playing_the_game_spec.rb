@@ -70,16 +70,20 @@ feature 'Playing the game' do
       click_button 'Start new game!'
     end
 
-    scenario 'expect to have an option to select Rock' do
-      find_button 'Rock'
-    end
+    # scenario 'expect to have an option to select Rock' do
+    #   find_button 'Rock'
+    # end
 
-    scenario 'expect to have an option to select Paper' do
-      find_button 'Paper'
-    end
+    # scenario 'expect to have an option to select Paper' do
+    #   find_button 'Paper'
+    # end
 
-    scenario 'expect to have an option to select Scissors' do
-      find_button 'Scissors'
+    # scenario 'expect to have an option to select Scissors' do
+    #   find_button 'Scissors'
+    # end
+
+    scenario 'waits for player 2 to sign in before allowing me to play' do
+      expect(page).to have_content "Waiting for second player to sign in"
     end
 
   end
