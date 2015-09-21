@@ -31,7 +31,7 @@ third public method `extend` turns the extended rules on and off.
 `RpsGame` stores all the game data. The setup information is stored as a hash
 in a class instance variable `@setup`. The results of a round are also stored
 in a hash called `@results`. Both can be read publicly. The third class
-instance variable `@rules` that just points to `RpsRules`.
+instance variable `@rules` just points to `RpsRules`.
 
 Most of this class's seven public methods query or set the game data in a
 trivial manner. `enable_extended` tells the rules to switch extended mode on
