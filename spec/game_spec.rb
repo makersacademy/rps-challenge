@@ -23,16 +23,6 @@ describe '#game' do
     expect(game.score).to eq('Player 0, Computer 1')
   end
 
-  it 'player can win a round' do
-    game = Game.new
-    expect(game.round(:rock, :scissors)).to eq(:win)
-  end
-
-  it 'player can lose a round' do
-    game = Game.new
-    expect(game.round(:rock, :paper)).to eq(:loss)
-  end
-
   it 'paper beats rock' do
     game = Game.new
     expect(game.round(:paper, :rock)).to eq(:win)
@@ -61,6 +51,21 @@ describe '#game' do
   it 'scissors loses to rock' do
     game = Game.new
     expect(game.round(:scissors, :rock)).to eq(:loss)
+  end
+
+  it 'paper draws with paper' do
+    game = Game.new
+    expect(game.round(:paper, :paper)).to eq(:draw)
+  end
+
+  it 'rock draws with rock' do
+    game = Game.new
+    expect(game.round(:rock, :rock)).to eq(:draw)
+  end
+
+  it 'scissors draws with scissors' do
+    game = Game.new
+    expect(game.round(:scissors, :scissors)).to eq(:draw)
   end
 
 end
