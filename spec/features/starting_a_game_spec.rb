@@ -12,7 +12,7 @@ feature 'Starting a new game' do
     expect(page).to have_selector("input[type='submit'][value='Submit']")
   end
 
-  it 'entering my name takes me to a new page with a greeting' do 
+  scenario 'entering my name takes me to a new page with a greeting' do 
     visit '/'
     fill_in('name', :with => 'Dom')
     click_button('Submit')
