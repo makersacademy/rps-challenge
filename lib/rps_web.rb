@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "pry"
 require_relative "computer"
 require_relative "game"
 require_relative "player"
@@ -11,28 +12,28 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  get '/new_game' do
+  get '/register_player' do
+    erb :register_player
+  end
+
+  post '/new_game' do
     @name = params[:name]
     session[:name] = params[:name]
-    @game = Game.new
-    session[:game] = @game
-    @player = Player.new(@name)
-    session[:player] = @player
-    @computer = Computer.new
-    session[:computer] = @computer
+    session[:game] = Game.new
+    session[:player] = Player.new(@name)
+    session[:computer] = Computer.new
     erb :new_game
   end
 
-  get '/start_game' do
+  post '/start_game' do
     @name = session[:name]
     erb :start_game
   end
 
   get '/outcome' do
     @player_choice = params[:move]
-    session[:move] = params[:move]
-    session[:player].select(session[:move])
-    session[:winner] = session[:game].play(session[:player],session[:computer])
+    session[:player].picks(@player_choice)
+    @winner = session[:game].play(session[:player],session[:computer])
     erb :outcome
   end
 
