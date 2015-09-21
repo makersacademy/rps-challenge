@@ -1,18 +1,19 @@
+<body style="background:#BDBDBD">
 <% if @name==nil %>
-  <form action="/new_game">
-    <p>What's your name?</p>
+  <form action="/new_game" align="center">
+    <p><font face="verdana">What's your name?</font></p>
     <input type="text" name="name">
     <input type="submit" value="Submit">
   </form>
 <% elsif @name=="" %>
-  <form action="/new_game">
-    <p>Please enter your name</p>
+  <form action="/new_game" align="center">
+    <p><font face="verdana">Please enter your name</font></p>
   <input type="text" name="name">
   <input type="submit" value="Submit">
   </form>
 <% else %>
-  <form action="/start_game">
-    <p>Hi <%= @name %>, welcome to RPS!  Click "Start Game" to begin!</p>
+  <form action="/start_game" align="center">
+    <p><font face="verdana">Hi <%= @name %>, welcome to RPS!  Click "Start Game" to begin!</font></p>
     <input type="submit" value="Start Game">
   </form>
 <% end %>
