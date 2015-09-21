@@ -2,10 +2,6 @@ require 'game'
 
 describe Game do
 
-  # before do
-  #   allow(subject).to receive(:comp_choice).and_return("rock")
-  # end
-
   it 'should be able to choose one of three items' do
     expect(subject).to respond_to(:user_choice).with(1).arguments
   end
@@ -19,11 +15,6 @@ describe Game do
     it 'should draw if comp_choice and user_choice are equal' do
       subject.user_choice(:rock)
       allow(subject).to receive(:comp_choice).and_return(:rock)
-      puts "-"*80
-      puts subject.choice
-      puts subject.comp_choice
-      subject.draw?
-      puts "-"*80
       expect(subject).to be_draw
     end
   end
