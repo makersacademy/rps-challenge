@@ -35,7 +35,7 @@ feature 'Starting a new game' do
 
   scenario "Player can play again" do
     visit '/game'
-    choose 'choice', :match => :first
+    choose 'choice', match: :first
     click_button 'submit'
     click_link 'Play again'
     expect(page).to have_content "Choose your weapon:"

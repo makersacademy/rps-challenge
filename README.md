@@ -3,7 +3,7 @@
 About
 -------
 * This is my week 3 challenge at Makers Academy
-* I have made a Rock Paper Scissors game which can be played against the computer.
+* I have made a Rock Paper Scissors game which can be played against a computer player.
 
 ## Basic Rules
 
@@ -38,13 +38,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
 **Rōnin BANZAI!!!!**
 
 ## Bonus level 1: Multiplayer
@@ -54,23 +47,3 @@ Change the game so that two marketeers can play against each other ( _yes there 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear!
-```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details

@@ -11,7 +11,7 @@ class Player
     @choice = options.sample
   end
 
-  def select(choice)
+  def choose(choice)
     fail 'Please choose rock, paper or scissors!' unless valid?(choice)
     @choice = choice.to_sym
   end
