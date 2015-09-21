@@ -2,6 +2,7 @@
 background-size: 100%;">
 <div style="font-size: 40px">
 <% $player.choose_weapon($choiceTest) %>
+<p> Computer chose <%= @computer.computer_weapon %> </p>
 <% if $game.player_wins($player, @computer) == 'Player wins' %>
   <p> The result is: <%=  $game.player_wins($player, @computer) %>! Well done, you're awesome! </p>
   <% elsif $game.computer_wins($player, @computer) == 'Computer wins' %>
