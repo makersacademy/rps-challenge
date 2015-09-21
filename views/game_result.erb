@@ -1,9 +1,15 @@
-<p>Player choice: <%= @player_choice %></p>
-<p>Computer choice: <%= @computer_choice %></p>
-<p>Game result: <%= @result %></p>
+<link rel="stylesheet" href="<%= url('/styles.css') %>">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+<h1>Player choice: <%= @player_choice %>!  Computer choice: <%= @computer_choice %>!</h1>
+
+<div class="left" style="background-color:#FCD57A; background-image: url(/<%= @player_choice %>_l.png);"><%= @player_name %></div>
+<div class="right" style="background-color:#FCD57A; background-image: url(/<%= @computer_choice %>_r.png);">Computer</div>
+
+<h1>Game result: <%= @result %></h1>
 <form action='/play-game'>
-  <input type="submit" value="Play again">
+  <input class="submit_button1" type="submit" value="Play again">
 </form>
 <form action='/'>
-  <input type="submit" value="New Player">
+  <input class="submit_button1" type="submit" value="New Player">
 </form>
