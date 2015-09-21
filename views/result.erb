@@ -1,0 +1,22 @@
+<div>
+  <h3><%= @name1 %> is armed with <%= @weapon1 %>...</h3>
+  <h3><%= @name2 %> is armed with <%= @weapon2 %>...</h3>
+</div>
+
+<div>
+  <h2>
+    <%if @result == "Draw" %>
+      No-one wins. Draw.
+    <% else %>
+      <%= @result %> wins!
+    <% end %>
+  </h2>
+</div>
+
+<div>
+  <form action='/play_game' method='post'>
+    <input type='submit' value='Play again'>
+  </form>
+
+
+</div>
