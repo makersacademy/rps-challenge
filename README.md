@@ -1,4 +1,4 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
 
 Welcome to the Rock Paper Scissors challenge.
 
