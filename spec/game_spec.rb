@@ -2,31 +2,99 @@ require 'game'
 
 describe Game do
 
-  it '# expect game to respond to choice' do
-    expect(subject).to respond_to(:choice)
+
+
+  it '# expect game to respond to player_wins' do
+    expect(subject).to respond_to(:player_wins)
   end
 
-  it '# expect game to respond to computer_turn' do
-    expect(subject).to respond_to(:computer_turn)
+  it '# expect game to respond to computer_wins' do
+    expect(subject).to respond_to(:computer_wins)
   end
 
-  it 'expect player to win if he chooses rock and computer chooses scissors' do
-    allow(subject).to receive(:computer_turn).and_return("scissors")
-    expect(subject.take_turn("rock")).to eq("Player wins")
+  it '# expect game to respond to draw' do
+    expect(subject).to respond_to(:draw)
   end
 
-  it 'expect player to lose if he chooses paper and computer chooses scissors' do
-    allow(subject).to receive(:computer_turn).and_return("scissors")
-    expect(subject.take_turn("paper")).to eq("Computer wins")
+  context "when player chooses rock and computer chooses scissors" do
+    let(:computer){double :computer, computer_weapon: "scissors"}
+    let(:player){double :player, player_weapon: "rock"}
+
+      it 'expect player to win' do
+        expect(subject.player_wins(player, computer)).to eq("Player wins")
+      end
   end
 
-  it 'expect game to be a draw if player chooses rock and computer chooses rock' do
-    allow(subject).to receive(:computer_turn).and_return("rock")
-    expect(subject.take_turn("rock")).to eq("Draw")
+  context "when player chooses rock and computer chooses paper" do
+    let(:computer){double :computer, computer_weapon: "paper"}
+    let(:player){double :player, player_weapon: "rock"}
+
+      it 'expect computer to win' do
+        expect(subject.computer_wins(player, computer)).to eq("Computer wins")
+      end
   end
 
-  it 'expect program to tell player to enter either rock, paper or scissors if anything other is entered' do
-    expect(subject.take_turn("lobster")).to eq("Please enter either rock, paper or scissors")
+  context "when player chooses rock and computer chooses rock" do
+    let(:computer){double :computer, computer_weapon: "rock"}
+    let(:player){double :player, player_weapon: "rock"}
+
+      it 'expect game to be a draw' do
+        expect(subject.draw(player, computer)).to eq("Draw")
+      end
+  end
+
+  context "when player chooses paper and computer chooses rock" do
+    let(:computer){double :computer, computer_weapon: "rock"}
+    let(:player){double :player, player_weapon: "paper"}
+
+      it 'expect player to win' do
+        expect(subject.player_wins(player, computer)).to eq("Player wins")
+      end
+  end
+
+  context "when player chooses paper and computer chooses scissors" do
+    let(:computer){double :computer, computer_weapon: "scissors"}
+    let(:player){double :player, player_weapon: "paper"}
+
+      it 'expect player to lose' do
+        expect(subject.computer_wins(player, computer)).to eq("Computer wins")
+      end
+  end
+
+  context "when player chooses paper and computer chooses paper" do
+    let(:computer){double :computer, computer_weapon: "paper"}
+    let(:player){double :player, player_weapon: "paper"}
+
+      it 'expect game to be a draw' do
+        expect(subject.draw(player, computer)).to eq("Draw")
+      end
+  end
+
+  context "when player chooses scissors and computer chooses paper" do
+    let(:computer){double :computer, computer_weapon: "paper"}
+    let(:player){double :player, player_weapon: "scissors"}
+
+      it 'expect player to win' do
+        expect(subject.player_wins(player, computer)).to eq("Player wins")
+      end
+  end
+
+  context "when player chooses scissors and computer chooses rock" do
+    let(:computer){double :computer, computer_weapon: "rock"}
+    let(:player){double :player, player_weapon: "scissors"}
+
+      it 'expect computer to win' do
+        expect(subject.computer_wins(player, computer)).to eq("Computer wins")
+      end
+  end
+
+    context "when player chooses scissors and computer chooses scissors" do
+    let(:computer){double :computer, computer_weapon: "scissors"}
+    let(:player){double :player, player_weapon: "scissors"}
+
+      it 'expect game to be a draw' do
+        expect(subject.draw(player, computer)).to eq("Draw")
+      end
   end
 
 end
