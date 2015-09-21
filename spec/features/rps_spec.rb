@@ -14,20 +14,32 @@ feature 'Creates a game of Rock, Paper, Scissors' do
     expect(page).to have_content "Welcome Anthony"
   end
 
-  it 'clicking submit will take you to the results page' do
+  it 'choosing rock will take you to the results page' do
     visit '/game'
-    fill_in 'choice', with: 'rock'
+    select "Rock", from: "choice"
     click_button('Submit')
     expect(page).to have_content "The result is:"
   end
 
-  it 'you will be prompted to enter rock, paper, scissors if anything other is entered' do
+  it 'choosing paper will take you to the results page' do
     visit '/game'
-    fill_in 'choice', with: 'pirates'
+    select "Paper", from: "choice"
     click_button('Submit')
-    expect(page).to have_content "Woops...Please enter either rock, paper or scissors"
+    expect(page).to have_content "The result is:"
   end
 
+  it 'choosing scissors will take you to the results page' do
+    visit '/game'
+    select "Scissors", from: "choice"
+    click_button('Submit')
+    expect(page).to have_content "The result is:"
+  end
 
+  it 'the computer choice will be displayed on the results page' do
+    visit '/game'
+    select "Scissors", from: "choice"
+    click_button('Submit')
+    expect(page).to have_content "Computer chose"
+  end
 
 end
