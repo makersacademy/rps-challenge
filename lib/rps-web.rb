@@ -50,7 +50,6 @@ class RPSWeb < Sinatra::Base
   get '/one-player-result' do
     session[:game].player1.choice(session[:selection])
     @result = session[:game].result
-    p @result
     @computer = session[:game].player2.choice
     erb :one_player_result
   end
@@ -77,6 +76,8 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/two-player-result' do
+    @player1_selection = session[:selection].to_s
+    @player2_selection = session[:selection2].to_s
     session[:game].player1.choice(session[:selection])
     session[:game].player2.choice(session[:selection2])
     @result = session[:game].result

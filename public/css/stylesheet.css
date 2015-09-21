@@ -10,6 +10,9 @@ h2 {
 p {
   color: white;
 }
+img {
+  padding-top: 15px;
+}
 #footer {
     position: fixed;
     bottom: 0;
@@ -38,6 +41,9 @@ p {
 }
 .button {
   float: left;
+  padding-left: 15px;
+}
+.play-again {
   padding-left: 15px;
 }
 a:link {

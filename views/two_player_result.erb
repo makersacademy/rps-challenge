@@ -1,6 +1,17 @@
 <body>
   <div class="container-fluid">
-    <%= @result %>
+    <div>
+      <p> Player 1 chose: <%= @player1_selection.capitalize %>,
+        Player 2 chose: <%= @player2_selection.capitalize %></p>
+    <div>
+    <% if @result == "Player 1 Win's" %>
+      <p> Player 1 Win's</p>
+    <% elsif @result == "Draw" %>
+      <p> Draw </p>
+    <% else %>
+      <p> Player 2 Win's </p>
+    <% end %>
+    </div>
     <br>
     <a href="/two-player-game">Play Again</a>
   </div>
