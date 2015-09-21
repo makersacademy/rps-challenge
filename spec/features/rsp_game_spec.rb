@@ -30,7 +30,7 @@ feature 'Starting a new game' do
     visit '/game'
     choose 'choice', match: :first
     click_button 'submit'
-    expect(page).to have_content "Who won?"
+    expect(page).to have_content "So , who won?"
   end
 
   scenario "Player can play again" do
