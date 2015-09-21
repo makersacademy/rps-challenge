@@ -1,10 +1,14 @@
 require_relative 'player.rb'
 require_relative 'computer.rb'
-require_relative 'result_calc.rb'
 
 class Game
-  include ResultCalc
   attr_reader :player1, :player2
+
+  WINNER = {rock: [:scissors, :lizard],
+            scissors: [:paper, :lizard],
+            paper: [:spock, :rock],
+            spock: [:rock, :scissors],
+            lizard: [:paper, :spock]}
 
   def initialize(playerklass, opponentklass)
     @player1  = playerklass.new
@@ -12,16 +16,18 @@ class Game
   end
 
   def result
-    if player1.selection == :rock
-      rock[player2.selection]
-    elsif player1.selection == :paper
-      paper[player2.selection]
-    elsif player1.selection == :scissors
-      scissors[player2.selection]
-    elsif player1.selection == :lizard
-      lizard[player2.selection]
-    else
-      spock[player2.selection]
-    end
+    return "Draw" if draw?
+    win? ? "Player 1 Win's" : "Player 1 Loses"
+  end
+
+  private
+
+  def draw?
+    @player_2_selection = player2.selection
+    player1.selection == @player_2_selection
+  end
+
+  def win?
+    WINNER[player1.selection].include?(@player_2_selection)
   end
 end
