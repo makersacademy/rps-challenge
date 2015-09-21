@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-  let(:shape1){class Shape1; Shape1.new; end}
-  let(:shape2){class Shape2; Shape2.new; end}
+  let(:shape1){double(:shape1, name: "Shape1")}
+  let(:shape2){double(:shape2, name: "Shape2")}
   let(:player1){double(:player1,  :current_selection => shape1,
                                   :current_selection= => nil,
                                   :name => "Player1")}
@@ -50,12 +50,10 @@ describe Game do
       expect{ game.challenge }.to raise_error "Both players must choose their weapon"
     end
 
-    it 'clears the players current selections after a successful challenge' do
-      allow(shape1).to receive(:beats?) {true}
-      expect(player1).to receive(:current_selection=).with(nil)
-      game.challenge
-    end
+  end
 
+  it 'can reset the player options' do
+    expect(game).to respond_to(:reset_player_options)
   end
 
 end

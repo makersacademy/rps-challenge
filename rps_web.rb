@@ -1,9 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
-require_relative 'lib/rock'
-require_relative 'lib/paper'
-require_relative 'lib/scissors'
+require_relative 'lib/weapon'
 
 class RPS_Challenge < Sinatra::Base
 
@@ -12,8 +10,6 @@ class RPS_Challenge < Sinatra::Base
   enable :sessions
 
   $game = nil
-  $name1 = nil
-  $name2 = nil
 
   get '/' do
     @name = session[:name]
@@ -27,7 +23,11 @@ class RPS_Challenge < Sinatra::Base
   end
 
   post '/play_game' do
-    game_setup_vs_computer
+    if $game
+      $game.reset_player_options
+    else
+      game_setup_vs_computer
+    end
     redirect ('/play_game')
   end
 
@@ -36,7 +36,7 @@ class RPS_Challenge < Sinatra::Base
   end
 
   post '/result' do
-    arm_weapons_vs_computer
+    arm_player_and_computer
     redirect ('/result')
   end
 
@@ -60,16 +60,17 @@ class RPS_Challenge < Sinatra::Base
     params[:name].to_s == ""
   end
 
-  def arm_weapons_vs_computer
-    $game.player1.current_selection = Object.const_get(params[:weapon]).new
-    $game.player2.random_selector
+  def arm_player_and_computer
+    $game.player1.current_selection = Weapon.send(params[:weapon].downcase.to_sym)
+    computer_option = [:rock, :paper, :scissors][rand(2)]
+    $game.player2.current_selection = Weapon.send(computer_option)
   end
 
   def assign_name_weapon_vars
     @name1 = $game.player1.name
-    @weapon1 = $game.player1.current_selection.class.to_s
+    @weapon1 = $game.player1.current_selection.name.to_s.capitalize
     @name2 = $game.player2.name
-    @weapon2 = $game.player2.current_selection.class.to_s
+    @weapon2 = $game.player2.current_selection.name.to_s.capitalize
   end
 
   # start the server if ruby file executed directly

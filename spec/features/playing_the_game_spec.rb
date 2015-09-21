@@ -23,6 +23,14 @@ feature 'Playing the game' do
 
   feature 'playing against the computer (randomly selecting its option)' do
 
+    scenario 'assigns the computer a random weapon after I click my option' do
+      srand 123
+      random_choice = [:rock, :paper, :scissors][rand(2)]
+      srand 123
+      click_button 'Rock'
+      expect($game.player2.current_selection.name).to eq random_choice
+    end
+
     scenario 'after selecting my option I see the result' do
       click_button 'Rock'
       expect(page).to have_content "wins"
@@ -38,6 +46,18 @@ feature 'Playing the game' do
       expect(page).to have_content "Computer is armed with"
     end
 
+  end
+
+  scenario 'after the game has finished I can start another game' do
+    click_button 'Rock'
+    click_button 'Play again'
+    find_button 'Rock'
+  end
+
+  scenario 'resets players current selections when restarting' do
+    click_button 'Rock'
+    click_button 'Play again'
+    expect([$game.player1.current_selection, $game.player2.current_selection]).to eq [nil, nil]
   end
 
 end
