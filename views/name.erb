@@ -1,10 +1,10 @@
 <div>
-  Welcome to Rock, Paper, Scissors!
+  Welcome to Rock, Paper, Scissors! <br>
   <% if @name == "" %>
-    Please enter your name
-    <br><a href="/name">Try Again</a>
+    Please enter your name<br>
+    <a href="/name">Try Again</a>
   <% elsif @name %>
-    Hello <%= @name %>. Welcome to your game of rock, paper, scissors.
+    Hello <%= @name %>.
     <br><a href="/new_game">Start a new game</a>
   <% else %>
     <form action="/name", method="post">

@@ -1,5 +1,7 @@
 class Rockpaperscissors
 
+  attr_reader :beaten_by
+
   def initialize
     @beaten_by = {rock: [:paper, :spock],
                   scissors: [:rock, :spock],

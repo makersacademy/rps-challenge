@@ -19,6 +19,9 @@ class Rps < Sinatra::Base
 
   get '/name' do
     @name = session[:name]
+    #NO LOGIC IN VIEW
+    #if no name redirec give name with error
+    # if name redirect display page with name
     erb :name
   end
 
@@ -31,21 +34,26 @@ class Rps < Sinatra::Base
     @name = session[:name]
     redirect '/name' if @name=="" || @name.nil?
     session[:game] = Rockpaperscissors.new
-    session[:player1] = Player.new
-    session[:player1].name=@name
-    session[:player2] = Computer.new
+    @list_of_moves = session[:game].beaten_by.keys
+    session[:player1] = Player.new(@name, @list_of_moves)
+    session[:player2] = Computer.new(@list_of_moves)
     @player1 = session[:player1]
     @player2 = session[:player2]
     erb :new_game
   end
 
   get '/play' do
-    erb :game
+    @name = session[:name]
+    output = ""
+    output << partial(:name)
+    output << partial(:game)
+    output
   end
 
   post '/play' do
     move = params[:move]
-    session[:player1].public_send(move.to_sym)
+    session[:player1].choose(move)
+    session[:player2].choose
     redirect '/winner'
   end
 

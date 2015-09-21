@@ -5,7 +5,7 @@ feature ' it tells you who won' do
     visit '/'
     fill_in 'name', with: 'Bob'
     click_button 'Submit'
-    srand(98) #seed the random computer choice to :lizard
+    srand(3) #seed the random computer choice to :lizard
     visit '/new_game'
     visit '/play'
   end

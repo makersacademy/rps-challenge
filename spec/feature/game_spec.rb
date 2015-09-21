@@ -6,7 +6,7 @@ feature 'it asks you to select a weapon' do
     expect(page).to have_content("Choose your weapon")
   end
 
-  
+  #Test buttons here
 
 
 end

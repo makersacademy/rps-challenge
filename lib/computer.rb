@@ -1,13 +1,15 @@
 class Computer
 
   attr_reader :name
+  attr_reader :choice
 
-  def initialize
+  def initialize(list_of_moves)
+    @list = list_of_moves
     @name = "Computer"
   end
 
-  def choice
-    [:paper, :rock, :scissors, :lizard, :spock].shuffle.first
+  def choose
+    @choice=@list.shuffle.first
   end
 
 end

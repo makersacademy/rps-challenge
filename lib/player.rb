@@ -3,24 +3,13 @@ class Player
   attr_accessor :name
   attr_reader :choice
 
-  def rock
-    @choice = :rock
+  def initialize(name, list_of_moves)
+    @list = list_of_moves
+    @name = name
   end
 
-  def paper
-    @choice = :paper
-  end
-
-  def scissors
-    @choice = :scissors
-  end
-
-  def lizard
-    @choice = :lizard
-  end
-
-  def spock
-    @choice = :spock
+  def choose(weapon)
+    @list.include?(weapon.to_sym) ? @choice = weapon.to_sym : @choice = 'No known weapon'
   end
 
 end
