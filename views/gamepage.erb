@@ -33,6 +33,10 @@
 <div style="text-align: center; padding: 50px; color: white; font-family:Arial">
   <% $game.play @choice_1 if @choice_1 %>
   <% if $game.player_win?(@choice_1) %>
+  <audio autoplay loop>
+    <source src="/music/John Cena Theme Song New Titantron 2012 Green Version.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
     <div><img src="http://i.imgur.com/CMiaICu.png"></div>
     <%= @commentary.sample %>

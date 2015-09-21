@@ -1,10 +1,6 @@
 class Game
 
-  def initialize
-    @paper = :paper
-    @rock = :rock
-    @scissors = :scissors
-  end
+
 
   def computer_play
     [:rock,:paper,:scissors].sample
@@ -13,11 +9,11 @@ class Game
   def play(player_choice)
     @comp = self.computer_play
       if player_choice == @comp
-        "You and your opponent both chose #{player_choice}!"
+        :draw
       elsif player_win?(player_choice)
-        "You Win!"
+        :win
       elsif player_lose?(player_choice)
-        "You Lose!"
+        :lose
       end
   end
 

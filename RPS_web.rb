@@ -3,6 +3,7 @@ require_relative './lib/game.rb'
 
 
 class RPSWeb < Sinatra::Base
+  use Rack::MethodOverride
   enable :sessions
 
   get '/' do
