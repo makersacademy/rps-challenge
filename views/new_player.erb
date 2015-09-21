@@ -1,0 +1,10 @@
+<% if @player %>
+  <p style="font-family: calibri">Hello, <%= @player %>!</p>
+  <a href='/game'>Play</a>
+<% else %>
+  <form style="font-family: calibri" action="/new_player" method='post'>
+    What's your name?
+    <input type="text" name="name" required>
+    <input type="submit" value="submit">
+  </form>
+<% end %>
