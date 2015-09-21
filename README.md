@@ -1,7 +1,20 @@
 # RPS Challenge: Rōnin Badge Test
 
+Self-Appraisal
+--------------
+This is the furthest I've managed to get in any of the weekend challenges so far.
+Writing the game took a large part of the weekend so I lent heavily on google and
+github in order to build the web app.  It was important to me this weekend to see
+something that was working, and which able to interact between classes and pages,
+so although the app is far from perfect, I feel like I have learnt a huge amount
+from the process.
+
+Both the game code and web app code could be significantly refactored but I have
+deliberately left it in its current state as this most accurately reflects where
+I'm at in my coding right now.  In the future I intend to revisit and rework it.  
+
 Instructions
--------
+------------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
