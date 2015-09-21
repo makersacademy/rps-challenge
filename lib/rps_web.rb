@@ -9,6 +9,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/new-game' do
+    p params
     session[:username] = params[:username]
     redirect '/play-game'
   end
@@ -21,7 +22,8 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/result' do
-    $game.play(params[:name])
+    p params
+    $game.play(params[:hand].to_sym)
     erb :result
   end
 
