@@ -5,7 +5,7 @@ def rps_game_example
   fill_in('player_name', with:'Joe')
   click_button("Start A Game")
   click_button("Rock-Paper-Scissors the original game")
-  click_button("Rock")
+  click_button("Rock!")
 end
 
 def rpsls_game_example
@@ -13,7 +13,7 @@ def rpsls_game_example
   fill_in('player_name', with:'Joe')
   click_button("Start A Game")
   click_button("Rock-Paper-Scissors-Lizard-Spock")
-  click_button("Lizard")
+  click_button("Lizard!")
 end
 
 feature 'Starting a new game' do
@@ -45,7 +45,7 @@ feature 'Starting a new game' do
   scenario 'Player can play the same game again' do
     rps_game_example
     click_button("Play again")
-    click_button("Scissors")
+    click_button("Scissors!")
     expect(page).to have_content "Game result:"
   end
 
@@ -65,15 +65,15 @@ feature 'Starting a new game' do
   scenario 'Can play another RPSLS game after playing one' do
     rpsls_game_example
     click_button("Play again")
-    click_button("Spock")
+    click_button("Spock!")
     expect(page).to have_content "Game result:"
   end
 
   scenario 'New Player can come in and play' do
     rps_game_example
     click_button("Play again")
-    click_button("Scissors")
+    click_button("Scissors!")
     click_button("New Player")
-    expect(page).to have_content "Please enter your name:"
+    expect(page).to have_content "Welcome to Rock-Paper-Scissors"
   end
 end

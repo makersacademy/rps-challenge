@@ -102,6 +102,7 @@ class RockPaperScissorsWeb < Sinatra::Base
   end
 
   get '/game-result' do
+    @player_name = session[:player].name
     @game_type = session[:game_choice].downcase.to_sym
     human_player = session[:player]
     computer_player = ComputerPlayer.new('Computer',@game_type)

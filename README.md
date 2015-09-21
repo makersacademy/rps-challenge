@@ -18,7 +18,4 @@ Features implemented
 * Added lizard and spock to game logic (Game class).
 * Added tests to include all possible computer v human cases of the game.
 * Added 'try again' page if human choice entered is not valid as well as associated test suites. yeah..
-
-To do
-----
-* Visuals stylings.
+* Added basic css styling (code smells due to my limited css knowledge).
