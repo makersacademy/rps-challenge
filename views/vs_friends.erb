@@ -1,0 +1,10 @@
+<div style="text-align: center; margin-top: 100px">
+
+  <% if session[:username] && session[:username_1] %>
+    <h2><%= session[:username] %> vs. <%= session[:username_1] %></h2>
+  <% end %>
+
+  <form action="/vs_friends" id="rps_form" method="post">
+    <%= erb :form_features %>
+  </form>
+</div>

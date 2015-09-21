@@ -1,0 +1,7 @@
+<div style="text-align: center; margin-top: 100px">
+  <h2><%= session[:username] %> vs. Computer</h2>
+
+  <form action="/vs_computer" id="rps_form" method="post">
+    <%= erb :form_features %>
+  </form>
+</div>
