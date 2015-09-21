@@ -4,7 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @shapes = ["rock", "paper", "scissors"]
+    @shapes = ["rock", "paper", "scissors", "lizard", "spock"]
   end
 
   def choose(shape)
