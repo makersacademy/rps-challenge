@@ -1,6 +1,10 @@
-<p>Welcome to Rock Paper Scissors!</p>
-<p>Please enter your choice <%= @player_name %>.</p>
-<form action='/game-result' method="post">
-  <input type="text" name="player_choice">
-  <input type="submit" value="Submit my choice">
-</form>
+<p>
+  <form action="/game-result" method="post">
+    Please make your choice <%= @player_name %>.<br>
+    <button type="submit" name="player_choice" value="rock">Rock!</button>
+    <button type="submit" name="player_choice" value="paper">Paper!</button>
+    <button type="submit" name="player_choice" value="scissors">Scissors!</button>
+    <button type="submit" name="player_choice" value="lizard">Lizard!</button>
+    <button type="submit" name="player_choice" value="spock">Spock!</button>
+  </form>
+</p>

@@ -23,17 +23,8 @@ class RockPaperScissorsWeb < Sinatra::Base
   end
 
   post '/game-result' do
-    valid_choices=['rock','paper','scissors','lizard','spock']
-    if valid_choices.include?(params[:player_choice].downcase)
-      session[:player].choice = params[:player_choice].downcase.to_sym
-      redirect '/game-result'
-    else
-      redirect '/try-again'
-    end
-  end
-
-  get '/try-again' do
-    erb :try_again
+    session[:player].choice = params[:player_choice].to_sym
+    redirect '/game-result'
   end
 
   get '/game-result' do
