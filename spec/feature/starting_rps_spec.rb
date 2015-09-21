@@ -14,13 +14,30 @@ feature 'Starting a new game' do
     expect(page).to have_content "Usman, choose your object..."
   end
 
+  scenario 'Must take to 1 player game if only 1 player' do
+    visit ('/')
+    click_button '1 Player'
+    fill_in('name', with: "Usman")
+    click_button 'Start Game'
+    expect(page).to have_content "Usman, choose your object..."
+  end
+
+  scenario 'Must take to 2 player game if 2 players' do
+    visit ('/')
+    click_button '2 Player'
+    fill_in('name1', with: "Usman")
+    fill_in('name2', with: "Jamil")
+    click_button 'Start Game'
+    expect(page).to have_content "Usman, choose your object..."
+  end
+
   scenario 'Must provide a result of the game' do
     visit '/start_game'
     click_button 'rock'
     expect(page).to have_content "Game result:"
   end
 
-  scenario 'asks fr two players name' do
+  scenario 'asks for two players name' do
     visit '/double_player'
     expect(page).to have_content "Enter the name of player 1:" && "
       Enter the name of player 2:"
