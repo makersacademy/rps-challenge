@@ -14,5 +14,5 @@ group :test do
   gem 'rspec-sinatra'
   gem 'byebug'
   gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
-  gem 'sinatra-form-keeper'
+
 end
