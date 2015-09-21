@@ -48,5 +48,5 @@ class Rps_web < Sinatra::Base
     return erb :draw if game.draw?(player1, player2)
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
