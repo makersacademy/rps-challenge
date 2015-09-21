@@ -1,78 +1,44 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+I've implemented the basic game, with an option to use the extended rules
+(ie Lizard and Spock). It also keeps a running total of the score, which
+wasn't asked for but makes the game much more playable. I didn't have time
+to implement a two-player option, but this shouldn't require too much work.
+The game's pages are styled with rudimentary CSS to make it easier on the eye.
 
-Task 
-----
+### controller.rb
 
-Knowing how to build web applications is getting us almost there as web developers!
+This is a simple 'skinny controller' with six methods: GET/POST for each of
+the three pages. The GET methods all read data and pass it to the template.
+The POST methods all change the game state then redirect.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+### lib/*
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The application logic is in two singleton classes, `RpsGame` and `RpsRules`.
+The game data is stored in class instance variables (this avoids using global
+variables or cookies).
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+`RpsRules` stores all the game rules: weapon names, rules for what beats what
+and how. The weapons are stored in an array as strings. The rules are stored in
+a hash – a typical rule is coded as `{ ['Scissors', 'Paper']  => 'cuts' }`,
+meaning that `Scissors` beats `Paper` by cutting it.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+The weapons array and rules hash are private. A public method `weapons` serves
+up a copy of the weapons array. The rules can be queried using `check`. The
+third public method `extend` turns the extended rules on and off.
 
-Hints on functionality
+`RpsGame` stores all the game data. The setup information is stored as a hash
+in a class instance variable `@setup`. The results of a round are also stored
+in a hash called `@results`. Both can be read publicly. The third class
+instance variable `@rules` points to `RpsRules`.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Most of this class's seven public methods query or set the game data in a
+trivial manner. `enable_extended` tells the rules to switch extended mode on
+or off. `play` calculates the results of a round based on the data in `setup`
+and stores it in the `results` hash.
 
+### spec/*
 
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
-
+There are five feature tests covering: initialising a game, playing a round,
+displaying the results, ending the round, dealing with extended rules. The
+remaining spec files cover unit tests for `RpsGame` and `RpsRules` respectively.
