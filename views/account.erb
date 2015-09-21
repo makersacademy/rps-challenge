@@ -1,0 +1,25 @@
+<% if @user %>
+<div class="container-fluid">
+  <h2>Welcome to your account, <%= @user %></h2>
+  <p>Do you want to play a one or two player game?</p>
+  <div class="button">
+    <form id='one-player' action='/account' method="post">
+      <input id='one-player' type="submit" name="game" value="one-player">
+    </form>
+  </div>
+  <div class="button">
+    <form action='/account' method='post'>
+      <input id='two-player' type="submit" name="game" value="two-player">
+    </form>
+  </div>
+</div>
+<div id="footer">
+  <p>Don't know the rules? for a quick explanation <a href='/rules'>click here</a></p>
+<div>
+
+
+<% else %>
+
+<p><a href="/">Please sign up</a> first.</p>
+
+<% end %>

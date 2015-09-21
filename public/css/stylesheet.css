@@ -1,0 +1,57 @@
+body {
+  background-image: url(https://cdn.9cloud.us/images/636/rock_paper_scissors_lizard_spock_1159050479.jpg);
+  background-size: cover;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+img {
+  padding-top: 15px;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+#rules {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+#one-player {
+  background-image: url(http://stonehousesigns.com/sites/default/files/products/formatted/Single_Lift_Signs_WJ22.jpg?1291784229);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+}
+#two-player {
+  background-image: url(http://stonehousesigns.com/sites/default/files/products/formatted/Double_Lift_Signs_WJ23.jpg?1291784230);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+}
+.button {
+  float: left;
+  padding-left: 15px;
+}
+.play-again {
+  padding-left: 15px;
+}
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: red;
+}

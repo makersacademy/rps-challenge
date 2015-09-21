@@ -1,4 +1,23 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
+
+Welcome to the Rock Paper Scissors challenge.
+
+The purpose of the project was to understand the flow of sinatra.
+
+There are several classes used to make the game work;
+Game.rb - controls the game and gives the result
+Player.rb - Creates a player class
+Computer.rb - Creates a computer that randomly generates a result.
+
+rps_web - is the controller
+
+Then there is a variety of erb files.
+
+Gemfile should have all the required gems which were then bundle installed.
+
+To get the css stylesheet working i had to add a layout.erb file and then add the stylesheet.css to a public folder.
+
+Below are the instructions i followed.
 
 Instructions
 -------

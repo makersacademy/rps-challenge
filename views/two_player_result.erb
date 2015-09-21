@@ -1,0 +1,18 @@
+<body>
+  <div class="container-fluid">
+    <div>
+      <p> Player 1 chose: <%= @player1_selection.capitalize %>,
+        Player 2 chose: <%= @player2_selection.capitalize %></p>
+    <div>
+    <% if @result == "Player 1 Win's" %>
+      <img src="http://cdn.meme.am/instances/57638824.jpg">
+    <% elsif @result == "Draw" %>
+      <img src="http://mrboom.mumblecore.org/draw.gif">
+    <% else %>
+      <img src="http://cdn.meme.am/instances/57638849.jpg">
+    <% end %>
+    </div>
+    <br>
+    <a href="/two-player-game">Play Again</a>
+  </div>
+</body>
