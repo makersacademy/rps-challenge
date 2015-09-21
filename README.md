@@ -21,6 +21,5 @@ Features implemented
 
 To do
 ----
-* Feature testing with capybara - find out how to stub random choice made by the computer when playing a game on web powered by Sinatra.
 * Version3.
 * Visuals stylings.
