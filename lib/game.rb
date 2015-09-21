@@ -5,9 +5,9 @@ class Game
 attr_reader :player_1_score
 attr_reader :player_2_score
 
-RULES = { :rock => :scissors,
-          :paper => :rock,
-          :scissors => :paper }
+RULES = { rock: :scissors,
+          paper: :rock,
+          scissors: :paper }
 
 COMPUTER_OPTIONS = [:rock, :paper, :scissors]
 
