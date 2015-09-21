@@ -1,0 +1,35 @@
+
+<% if $player2.nil? %>
+
+<h1 style="font-family:Arial;text-align: center; color:maroon; postion:relative;"> Choose Wisely <%= $player.name %> </h1>
+
+<style type="text/css">
+	.map_image { display: block; width: 750px; height: 422px; position: relative; background-position: 50 50; background-repeat: no-repeat; }
+	.map_image .map_link { display: block; position: absolute; text-indent: -999em; overflow: hidden; }
+	.map_image #map_link_0 { width: 347px; height: 114px; top: 25px; left: 205px; }
+	.map_image #map_link_1 { width: 286px; height: 125px; top: 145px; left: 242px; }
+	.map_image #map_link_2 { width: 308px; height: 108px; top: 281px; left: 228px; }
+</style>
+<div class="map_image" style="position:relative; margin-left: 15%;background-image: url('http://mikeandclaire.com/ALL%20PAGES/ROCK!PAPER!SCISSOR!/rock-paper-scissors-gifs/rock-paper-scissors-opening.gif');">
+	<a class="map_link" id="map_link_0" title="" href="rock">rock</a>
+	<a class="map_link" id="map_link_1" title="" href="paper">paper</a>
+	<a class="map_link" id="map_link_2" title="" href="scissors">scissors</a>
+</div>
+
+<% else %>
+<h1 style="text-align: center; color:maroon"> Choose Wisely... </h1>
+
+<style type="text/css">
+	.map_image { display: block; width: 750px; height: 422px; position: relative; background-position: 50 50; background-repeat: no-repeat; }
+	.map_image .map_link { display: block; position: absolute; text-indent: -999em; overflow: hidden; }
+	.map_image #map_link_0 { width: 347px; height: 114px; top: 25px; left: 205px; }
+	.map_image #map_link_1 { width: 286px; height: 125px; top: 145px; left: 242px; }
+	.map_image #map_link_2 { width: 308px; height: 108px; top: 281px; left: 228px; }
+</style>
+<div class="map_image" style="position:relative; margin-left: 15%;background-image: url('http://mikeandclaire.com/ALL%20PAGES/ROCK!PAPER!SCISSOR!/rock-paper-scissors-gifs/rock-paper-scissors-opening.gif');">
+	<a class="map_link" id="map_link_0" title="" href="rock">rock</a>
+	<a class="map_link" id="map_link_1" title="" href="paper">paper</a>
+	<a class="map_link" id="map_link_2" title="" href="scissors">scissors</a>
+</div>
+
+<% end %>
