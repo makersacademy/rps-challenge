@@ -12,7 +12,7 @@ Coveralls.wear!
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__),'..', 'Rps_web.rb')
+require File.join(File.dirname(__FILE__),'..', 'RpsWeb.rb')
 
 require 'capybara'
 require 'capybara/rspec'
