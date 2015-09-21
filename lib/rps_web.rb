@@ -25,18 +25,19 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/result' do
-    session[:name] = Player.new
+    session[:player] = Player.new
     session[:comp_player] = Player.new
     session[:choice] = params[:choice]
     redirect '/result'
   end
 
   get '/result' do
-    session[:name].choose(session[:choice])
+    @player = session[:name]
+    session[:player].choose(session[:choice])
     session[:comp_player].random_choice
     @player_choice = session[:choice]
     @computer_choice = session[:comp_player].random_choice
-    session[:game] = Game.new(session[:name], session[:comp_player])
+    session[:game] = Game.new(session[:player], session[:comp_player])
     @game = session[:game].play
     erb :result
   end
