@@ -30,10 +30,10 @@ Simply run ```rackup``` in the command line.
 Then go to ```http://localhost:9292/```, enter your name and press 'Submit'.
 <img src='images/one.png'>
 
-Select wether to play against a computer or to have a multiplayer game.
+Select whether to play against a computer or to have a multiplayer game.
 <img src='images/two.png'>
 
-Make your choice by clicking on 'rock','paper' or 'scissors'.
+Make your choice by clicking on 'rock','paper' or 'scissor'.
 <img src='images/three.png'>
 
 You will see the result on the next page. Press 'Play again' if you want to have another game.
