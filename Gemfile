@@ -11,4 +11,5 @@ group :test do
   gem 'byebug'
   gem 'rake'
   gem 'cucumber'
+  gem 'sinatra-simple-assets'
 end

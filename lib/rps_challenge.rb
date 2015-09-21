@@ -1,10 +1,10 @@
-#https://github.com/makersacademy/rps-challenge/wiki/Common-issues
-
+# TO DO: https://github.com/makersacademy/rps-challenge/wiki/Common-issues
 require 'sinatra/base'
 require_relative 'rps_helper'
 
 class Rps_Challenge < Sinatra::Base
   set :views, proc {File.join(root,'..','/views')}
+  set :public, proc {File.join(root,'..','/public')}
 
   enable :sessions
 

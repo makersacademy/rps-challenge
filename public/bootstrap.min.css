@@ -1,0 +1,68 @@
+/*Container for all css styling: index.erb, new_game.erb, new_session.erb*/
+
+/*index.erb*/
+
+.main {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.title {
+  margin-top: 50px;
+  margin-left: 19%;
+  font-family: Arial;
+  font-size: 50px;
+}
+
+
+/*new_game.erb*/
+
+.header {
+  font-family: Arial;
+  margin: 2px;
+  font-size: 40px;
+}
+
+.lds_button {
+  font-size: 80px;
+}
+
+
+/*new_session.erb*/
+
+h1 {
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 50px;
+}
+
+.main_selector {
+  display: inline-block;
+  margin-left: 250px;
+  margin-top: 130px;
+}
+
+.result_page {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-family: Arial;
+  font-size: 20px;
+}
+
+.scoreboard {
+  width: 110px;
+  margin-left: 50px;
+  margin-top: 50px;
+  font-family: Arial;
+  font-size: 20px;
+  border-bottom-style: solid;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+.scoreboard:hover {
+  width: 220px;
+}
+
+.spock_lizard:visited {
+  style: :inherit;
+}

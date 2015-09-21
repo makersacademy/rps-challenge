@@ -1,31 +1,14 @@
 <link rel="icon" href="http://oi58.tinypic.com/10nuftd.jpg" type="image/jpg" />
 
-<style>
+<!-- external styling -->
+<link rel="stylesheet" href="bootstrap.min.css" />
 
-h1 {
-  font-family: Arial;
-  margin: 2px
-}
-
-input, a {
-  font-family: Arial;
-  font-size: 40;
-  border-width: 5px;
-  margin: 2px
-}
-.warning {
-  font-family: Arial;
-  font-size: 40;
-  margin: 2px
-}
-</style>
-
-<h1>Hello human.
+<h1 class="header">Hello human.
   <br> Do you want to play a game? :) <br>
 </h1>
 <br>
 <form action='/new_session'>
-  <input type="text" name="name" placeholder='Human name required'>
+  <input class="header" type="text" name="name" placeholder='Human name required'>
   <br>
-  <input type="submit" value="Let's do this">
+  <input class="lds_button" type="submit" value="Let's do this">
 </form>

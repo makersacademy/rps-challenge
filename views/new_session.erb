@@ -1,51 +1,10 @@
-<link rel="icon" href="http://oi58.tinypic.com/10nuftd.jpg" type="image/jpg" />
+<!-- (harry dix) TO DO: -->
+<!-- DRY out external css refs -->
+<!-- export logic to main model or logic helper -->
 
-<style>
-
-h1 {
-  font-family: Arial;
-  font-size: 15px;
-  margin-left: 50px;
-}
-
-.main_selector {
-  display: inline-block;
-  margin-left: 250px;
-  margin-top: 130px;
-}
-
-.result_page {
-  margin-left: 50px;
-  margin-top: 50px;
-  font-family: Arial;
-  font-size: 20px;
-}
-
-.scoreboard {
-  width: 110px;
-  margin-left: 50px;
-  margin-top: 50px;
-  font-family: Arial;
-  font-size: 20px;
-  border-bottom-style: solid;
-  -webkit-transition: width 2s;
-  transition: width 2s;
-}
-
-.scoreboard:hover {
-  width: 170px;
-}
-
-.spock_lizard:visited {
-  style: :inherit;
-}
-
-</style>
-
-<% if $result == nil %>
 <!-- Main Game Page -->
-
-<!-- !!!Move to Model or Logic layer -->
+<% if $result == nil %>
+<link rel="stylesheet" href="bootstrap.min.css" />
 
 <!-- Scoreboard -->
 
@@ -65,17 +24,18 @@ h1 {
       <img src="http://oi57.tinypic.com/34xnz9v.jpg" alt="Scissors" style="width:304px;height:230px;"> </a>
   </div>
 
-<!-- Result pages -->
+<!-- Result Page -->
 
 <% elsif $result == :p1_wins! %>
+<link rel="stylesheet" href="bootstrap.min.css" />
 <!-- If player 1 wins -->
   <div class="result_page">
     Player 2 chose <%= $cpu.last_move %>, you win!!
     <br> <%= $cpu_move_image_helper %>
     <% if $game.p1_score > 4 %>
-        <!-- !!Spock lizard link -->
+        <!-- TO DO: Spock lizard link -->
         <a href="/">
-        <h1 class="spock_lizard"> New Game </h1>
+        <h1 class="result_page"> New Game </h1>
         </a>
         <% $game.reset %>
       <% else %>        
@@ -83,6 +43,7 @@ h1 {
       <% end %>
   </div>
 <% elsif $result == :p2_wins! %>
+<link rel="stylesheet" href="bootstrap.min.css" />
 <!-- If player 2 wins -->
   <div class="result_page">
     Player 2 chose <%= $cpu.last_move %>, you lose!!
@@ -95,12 +56,12 @@ h1 {
     <% end %>
   </div>
 <% elsif $result == :draw %>
+<link rel="stylesheet" href="bootstrap.min.css" />
 <!-- If it's a draw -->
   <div class="result_page">
     Player 2 chose <%= $cpu.last_move %>, it's a draw...
     <br> <%= $cpu_move_image_helper %>
     <br> <a href="/new_session"> Try again </a>
   </div>
-
 <% end %>
 
