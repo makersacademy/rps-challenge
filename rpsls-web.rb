@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/computer'
 #snake_case and PascalCase
-class RPSLSWeb < Sinatra::Base 
+class RPSLSWeb < Sinatra::Base
   enable :sessions
   set :views, proc { File.join(root, 'views') }
 
@@ -47,5 +47,5 @@ class RPSLSWeb < Sinatra::Base
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $RPSLSWeb
 end
