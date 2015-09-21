@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/chn-challenger/rps-challenge.png)](https://travis-ci.org/chn-challenger/rps-challenge)
-
+[![Code Climate](https://codeclimate.com/github/chn-challenger/rps-challenge/badges/gpa.svg)](https://codeclimate.com/github/chn-challenger/rps-challenge)
 # Rock-Paper-Scissors Challenge
 
 Tasks
