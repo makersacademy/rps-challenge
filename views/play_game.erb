@@ -1,16 +1,15 @@
 <p>Choose your weapon, <%=@name%>! And choose carefully...</p>
 
-  <form action = "/play-game" method = "post">
+  <form action = "/result" method = "post">
     Rock
-  <input type="radio" name="weapon" id = 'rock' value ="rock">
-    <br>
-    <br>
-    Paper
-  <input type="radio" name="weapon" id = 'paper' value ="paper">
-    <br>
-    <br>
-    Scissors
-  <input type="radio" name="weapon" id = 'scissors' value ="scissors">
-  </form>
-  <input type="submit" value="PLAY!">
+    <input type="radio" name="weapon" id='rock' value ="rock">
+      <br>
+      <br>
+      Paper
+    <input type="radio" name="weapon" id='paper' value="paper">
+      <br>
+      <br>
+      Scissors
+    <input type="radio" name="weapon" id='scissors' value="scissors">
+    <input type="submit" value="PLAY!">
 </form>

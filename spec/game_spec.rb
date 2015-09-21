@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-  before do
-    allow(subject).to receive(:comp_choice).and_return("paper")
-  end
+  # before do
+  #   allow(subject).to receive(:comp_choice).and_return("rock")
+  # end
 
   it 'should be able to choose one of three items' do
     expect(subject).to respond_to(:user_choice).with(1).arguments
@@ -17,8 +17,14 @@ describe Game do
 
   describe 'draw?' do
     it 'should draw if comp_choice and user_choice are equal' do
-      subject.user_choice("paper")
-      expect(subject.draw?).to eql(true)
+      subject.user_choice(:rock)
+      allow(subject).to receive(:comp_choice).and_return(:rock)
+      puts "-"*80
+      puts subject.choice
+      puts subject.comp_choice
+      subject.draw?
+      puts "-"*80
+      expect(subject).to be_draw
     end
   end
 
@@ -26,6 +32,7 @@ describe Game do
 
     it 'should win if user_choice is scissors and comp_choice is paper' do
       subject.user_choice("scissors")
+      allow(subject).to receive(:comp_choice).and_return("paper")
       expect(subject.winner?).to eql(true)
     end
 
@@ -47,6 +54,7 @@ describe Game do
 
     it 'should lose if player chooses rock and comp chooses paper' do
       subject.user_choice("rock")
+      allow(subject).to receive(:comp_choice).and_return("paper")
       expect(subject.lose?).to eql(true)
     end
   end
@@ -59,17 +67,20 @@ describe Game do
 
     it 'should congratulate the winner if computer is beaten' do
       subject.user_choice("scissors")
-      expect(subject.result).to eql("CONGRATULATIONS! YOU BEAT A MACHINE. Computer chose #{@comp_choice}")
+      allow(subject).to receive(:comp_choice).and_return("paper")
+      expect(subject.result).to eql("CONGRATULATIONS! YOU BEAT A MACHINE.")
     end
 
     it 'inform the user there is a draw' do
       subject.user_choice("paper")
-      expect(subject.result).to eql("You drew. Computer chose #{@comp_choice}")
+      allow(subject).to receive(:comp_choice).and_return("paper")
+      expect(subject.result).to eql("You drew.")
     end
 
     it 'inform the user they have lost the game' do
       subject.user_choice("rock")
-      expect(subject.result).to eql("YOU LOST. THIS DUMB, ILLITERATE MACHINE BEAT YOU! Computer chose #{@comp_choice}")
+      allow(subject).to receive(:comp_choice).and_return("paper")
+      expect(subject.result).to eql("YOU LOST. THIS DUMB, ILLITERATE MACHINE BEAT YOU!")
     end
 
   end
