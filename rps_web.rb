@@ -7,9 +7,6 @@ class RPSWeb < Sinatra::Base
 
   enable :sessions
 
-  $game = Game.new
-  $player = Player.new
-
   set :views, proc { File.join(root, 'views') }
   set :public_folder, proc { File.join(root, 'public') }
 
@@ -23,6 +20,8 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/result' do
+    @game = Game.new
+    @player = Player.new
     @computer = Computer.new
     $choice = params[:choice]
     $choiceTest = $choice.to_s
