@@ -19,11 +19,11 @@ describe '#game' do
     expect(game.computer_select).not_to be nil
   end
 
-  it 'will give the score so far' do
-    game = Game.new
-    allow(game.rock).to receive('Paper').and_return('Loss!')
-    expect(game.score).to eq('Player 0, Computer 1')
-  end
+  # it 'will give the score so far' do
+  #   game = Game.new
+  #   allow(game.rock).to receive('Paper').and_return('Loss!')
+  #   expect(game.score).to eq('Player 0, Computer 1')
+  # end
 
   # it 'player can win a round' do
   #   game = Game.new
