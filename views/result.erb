@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheet.css"  type="text/css" />
+</head>
+
+<body id = "result_body">
+<div class ="font-size">
+<% @player.choose_weapon($choiceTest) %>
+<p> Computer chose <%= @computer.computer_weapon %> </p>
+<% if @game.player_wins(@player, @computer) == 'Player wins' %>
+  <p> The result is: <%= @game.player_wins(@player, @computer) %>! Well done, you're awesome! </p>
+  <% elsif @game.computer_wins(@player, @computer) == 'Computer wins' %>
+  <p> The result is: <%= @game.computer_wins(@player, @computer) %>! Outsmarted by a computer...you suck. </p>
+  <% elsif @game.draw(@player, @computer) == 'Draw' %>
+  <p> The result is: <%= @game.draw(@player, @computer) %>! How boring. </p>
+  <% end %>
+
+<form action="/game">
+    <input type="submit" value="Click here to play again!">
+</form>
+</div>
+</body>
+</html>
+
+
+

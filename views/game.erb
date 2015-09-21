@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheet.css"  type="text/css" />
+</head>
+
+<body id = "game_body">
+  <div class = "font-size";>
+    <p> Welcome <%= @name %>! Enjoy your game and good luck!</p>
+    <form action="/result">
+      Please choose either rock, paper or scissors
+      <select name = "choice">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+        <input type="submit" value="Submit">
+      </select>
+    </form>
+  </div>
+</body>
+</html>
+
+
