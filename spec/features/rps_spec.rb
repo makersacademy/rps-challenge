@@ -9,7 +9,7 @@ feature 'Creates a game of Rock, Paper, Scissors' do
 
   it 'clicking submit takes you to a new game of Rock, Paper, Scissors' do
     visit '/'
-    fill_in 'name', :with => 'Anthony'
+    fill_in 'name', with: 'Anthony'
     click_button('Submit')
     expect(page).to have_content "Welcome Anthony"
   end
