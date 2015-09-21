@@ -5,10 +5,6 @@
   <% end %>
 
   <form action="/vs_friends" id="rps_form" method="post">
-    <input type="radio" name="rps" id="rock" value="rock" checked>Rock
-    <input type="radio" name="rps" id="paper" value="paper">Paper
-    <input type="radio" name="rps" id="scissors" value="scissors">Scissors
-    <br><br>
-    <input type="submit" value="Play">
+    <%= erb :form_features %>
   </form>
 </div>

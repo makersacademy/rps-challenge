@@ -11,10 +11,12 @@ feature "Playing game" do
 
   # scenario "It returns the result of the game" do
   #   player = Player.new
+  #   computer = Player.new
   #   visit "/vs_computer"
   #   choose("rock")
+  #   allow(computer).to receive(:randome_rps).and_return(:scissors)
   #   click_button("Play")
-  #   expect(page).to have_content("You win" || "You lose")
+  #   expect(page).to have_content("You win")
   # end
 
   scenario "Player can play more than one time" do

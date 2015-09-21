@@ -2,10 +2,6 @@
   <h2><%= session[:username] %> vs. Computer</h2>
 
   <form action="/vs_computer" id="rps_form" method="post">
-    <input type="radio" name="rps" id="rock" value="rock" checked>Rock
-    <input type="radio" name="rps" id="paper" value="paper">Paper
-    <input type="radio" name="rps" id="scissors" value="scissors">Scissors
-    <br><br>
-    <input type="submit" value="Play">
+    <%= erb :form_features %>
   </form>
 </div>
