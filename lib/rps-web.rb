@@ -5,9 +5,10 @@ require_relative 'comp_player'
 
 class RPSWeb < Sinatra::Base
 
-  enable :sessions
-
-  set :views, proc { File.join(root, '..', 'views')}
+  set :public_folder, proc {File.join(root, '..', 'public')}
+  set :views, proc { File.join(root, '..', 'views') }
+  enable :sessions, :static
+  
 
   get '/' do
     erb :index
@@ -36,14 +37,13 @@ class RPSWeb < Sinatra::Base
     session[:shape] = params[:shape]
     session[:player].choose(session[:shape])
     session[:winner] = session[:game].play(session[:player], session[:computer])
-    p session[:computer]
+    # p session[:computer]
     erb :result
   end
 
   get '/' do
     erb :index
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME

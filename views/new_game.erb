@@ -1,13 +1,13 @@
 <% if @name==nil %>
   <form action="/name">
-    <p style="font-size: 20px; font-family: Arial">
+    <p style="font-size: 20px">
       What's your name?
     </p>
     <input type="text" name="name">
     <input type="submit" value="Submit">
   </form>
-<% elsif @name=='' %>
-  <p style="font-size: 16px; font-family: Arial">
+<% elsif @name =='' %>
+  <p style="font-size: 16px">
     Please enter your name.
   </p>
   <form action="/name">
@@ -17,7 +17,7 @@
   </form>
 <% else %>
   <form action="/choose_shape">
-    <p style="font-size: 22px; font-family: Arial">
+    <p style="font-size: 22px">
       Hello <%= @name %>! Please press 'Start' to begin Rock, Paper, Scissors:
     </p>
     <input type="submit" value="Start">
