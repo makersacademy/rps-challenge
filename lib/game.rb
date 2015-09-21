@@ -1,7 +1,8 @@
 class Game
   attr_reader :player1, :player2, :variant
 
-  RPS_WINNING_RULES = {:rock=>:scissors,:paper=>:rock,:scissors=>:paper}
+  RPS_WINNING_RULES = {rock:'scissors'.to_sym,paper:'rock'.to_sym,
+                       scissors:'paper'.to_sym}
 
   RPSLS_WINNING_RULES = {rock:[:scissors,:lizard],
                    paper:[:rock,:spock],
