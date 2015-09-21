@@ -7,7 +7,7 @@ describe Computer do
     expect(subject.auto).to eq :rock
   end
 
-  it 'should only select one out of rock, paper and scissors' do
-    expect(subject.auto).to eq(:rock).or eq(:paper).or eq(:scissors)
+  it 'should only select one out of rock, paper, scissors, spock or lizard' do
+    expect(subject.auto).to eq(:rock).or eq(:paper).or eq(:scissors).or eq(:spock).or eq(:lizard)
   end
 end
