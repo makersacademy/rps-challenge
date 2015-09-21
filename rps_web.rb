@@ -11,15 +11,29 @@ class RockPaperScissorsWeb < Sinatra::Base
     erb :index
   end
 
-  post '/play-game' do
+  post '/choose-game' do
     player = HumanPlayer.new(params[:player_name])
     session[:player] = player
+    redirect '/choose-game'
+  end
+
+  get '/choose-game' do
+    @player_name = session[:player].name
+    erb :choose_game
+  end
+
+  post '/play-game' do
+    session[:game_choice] = params[:game_choice]
     redirect '/play-game'
   end
 
   get '/play-game' do
-    @player_name = session[:player].name
-    erb :play_game
+    @game_choice = session[:game_choice]
+    if @game_choice == "rps"
+      erb :play_rps_game
+    else
+      erb :play_rpsls_game
+    end
   end
 
   post '/game-result' do
@@ -28,9 +42,10 @@ class RockPaperScissorsWeb < Sinatra::Base
   end
 
   get '/game-result' do
+    game_choice = session[:game_choice].downcase.to_sym
     human_player = session[:player]
-    computer_player = ComputerPlayer.new('Computer')
-    game = Game.new(human_player,computer_player)
+    computer_player = ComputerPlayer.new('Computer',game_choice)
+    game = Game.new(human_player,computer_player,game_choice)
     @player_choice = human_player.choice
     @computer_choice = computer_player.make_choice
     @result = game.result
