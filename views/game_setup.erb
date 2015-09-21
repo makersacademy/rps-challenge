@@ -1,0 +1,8 @@
+<%= "#{@player_name}'s game:" %>
+
+<form action="/game-result" method="post">
+	<input type="checkbox" name="player_shape" value="Rock"> Rock<br>
+	<input type="checkbox" name="player_shape" value="Paper">Paper<br>
+	<input type="checkbox" name="player_shape" value="Scissors">Scissors<br>
+	<input type="submit" value="Submit">
+</form>
