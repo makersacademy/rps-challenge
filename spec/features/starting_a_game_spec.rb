@@ -38,6 +38,15 @@ feature 'Starting a new game' do
       expect(page).to have_css('input', exact: "Buddy")
     end
 
+    scenario 'I can select to play against an opponent' do
+      visit '/'
+      fill_in 'name', with: "Mick"
+      click_button 'Enter'
+      choose 'opponent', option: 'Buddy'
+      click_button 'Start new game!'
+      expect(current_path).to eq '/play_game'
+    end
+
   end
 
 

@@ -2,26 +2,26 @@ require 'spec_helper'
 
 feature 'Playing the game' do
 
-  before do
-    visit '/'
-    fill_in 'name', with: "Mick"
-    click_button 'Enter'
-    click_button 'Start new game!'
-  end
-
-  scenario 'expect to have an option to select Rock' do
-    find_button 'Rock'
-  end
-
-  scenario 'expect to have an option to select Paper' do
-    find_button 'Paper'
-  end
-
-  scenario 'expect to have an option to select Scissors' do
-    find_button 'Scissors'
-  end
-
   feature 'playing against the computer (randomly selecting its option)' do
+
+    before do
+      visit '/'
+      fill_in 'name', with: "Mick"
+      click_button 'Enter'
+      click_button 'Start new game!'
+    end
+
+    scenario 'expect to have an option to select Rock' do
+      find_button 'Rock'
+    end
+
+    scenario 'expect to have an option to select Paper' do
+      find_button 'Paper'
+    end
+
+    scenario 'expect to have an option to select Scissors' do
+      find_button 'Scissors'
+    end
 
     scenario 'assigns the computer a random weapon after I click my option' do
       srand 123
@@ -46,18 +46,42 @@ feature 'Playing the game' do
       expect(page).to have_content "Computer is armed with"
     end
 
+    scenario 'after the game has finished I can start another game' do
+      click_button 'Rock'
+      click_button 'Play again'
+      find_button 'Rock'
+    end
+
+    scenario 'resets players current selections when restarting' do
+      click_button 'Rock'
+      click_button 'Play again'
+      expect([$game.player1.current_selection, $game.player2.current_selection]).to eq [nil, nil]
+    end
+
   end
 
-  scenario 'after the game has finished I can start another game' do
-    click_button 'Rock'
-    click_button 'Play again'
-    find_button 'Rock'
-  end
+  feature 'playing against a buddy' do
 
-  scenario 'resets players current selections when restarting' do
-    click_button 'Rock'
-    click_button 'Play again'
-    expect([$game.player1.current_selection, $game.player2.current_selection]).to eq [nil, nil]
+    before do
+      visit '/'
+      fill_in 'name', with: "Mick"
+      click_button 'Enter'
+      choose 'opponent', option: 'Buddy'
+      click_button 'Start new game!'
+    end
+
+    scenario 'expect to have an option to select Rock' do
+      find_button 'Rock'
+    end
+
+    scenario 'expect to have an option to select Paper' do
+      find_button 'Paper'
+    end
+
+    scenario 'expect to have an option to select Scissors' do
+      find_button 'Scissors'
+    end
+
   end
 
 end
