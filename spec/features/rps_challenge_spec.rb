@@ -12,7 +12,7 @@ feature 'choose opponent' do
   before do
     $usernames = []
     $invites = {}
-    $games = {}
+    $game = nil
   end
 
   scenario 'asked to choose an opponent after entering username' do
@@ -52,7 +52,8 @@ feature 'choose opponent' do
     fill_in 'username', with: 'username2'
     click_button 'Enter'
     within '#usernames' do
-      click_link 'username1'
+      fill_in 'opponent', with: 'username1'
+      click_button 'Invite'
     end
     expect(page).to have_content 'Waiting for acceptance ...'
   end
@@ -66,11 +67,11 @@ feature 'choose opponent' do
   end
 end
 
-feature 'start a game' do
+feature 'game' do
   before do
     $usernames = []
     $invites = {}
-    $games = {}
+    $game = nil
   end
 
   scenario 'asked to choose either Rock, Scissors or Paper' do
@@ -79,7 +80,7 @@ feature 'start a game' do
     $invites['username1'] = 'username2'
     click_button 'Enter'
     click_button 'Accept'
-    expect(page).to have_content 'Please choose one of the three options:'
+    expect(page).to have_content 'Please choose one of the three options: r, p, s'
   end
 
   scenario 'game starts after invite has been accepted' do
@@ -89,20 +90,32 @@ feature 'start a game' do
     visit 'username'
     fill_in 'username', with: 'username2'
     click_button 'Enter'
-    $games['username1' => 'username2'] = :game
+    $game = :game
     within '#usernames' do
-      click_link 'username1'
+      fill_in 'opponent', with: 'username1'
+      click_button 'Invite'
     end
     expect(page).to have_content 'Please choose one of the three options:'
   end
 end
 
 feature 'play' do
-  scenario 'compares choices from 2 players and determine winner' do
-    visit '/start_game'
+  before do
+    $usernames = []
+    $invites = {}
+    $game = Game.new :username1, :username2
+  end
+
+  scenario 'asked to wait for another player to choose' do
+    visit '/game'
     fill_in 'choice', with: 'r'
     click_button 'Submit'
-    visit '/start_game'
+    expect(page).to have_content 'Waiting for the other player to choose ...'
+  end
+
+  scenario 'compares choices from 2 players and determine winner' do
+    $game.choice1 = 'r'
+    visit '/game'
     fill_in 'choice', with: 'r'
     click_button 'Submit'
     expect(page).to have_content 'Draw!'

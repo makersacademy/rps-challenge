@@ -1,5 +1,5 @@
 class Game
-  attr_reader :options
+  attr_reader :options, :player1, :player2
   attr_accessor :choice1, :choice2
 
   def initialize player1, player2
@@ -16,10 +16,10 @@ class Game
     end
   end
 
-  def play choice1, choice2
-    if choice1 == choice2
+  def play
+    if @choice1 == @choice2
       return 'Draw!'
-    elsif @options[choice1] == choice2
+    elsif @options[@choice1] == @choice2
       return "#{@player1} wins"
     else
       return "#{@player2} wins"

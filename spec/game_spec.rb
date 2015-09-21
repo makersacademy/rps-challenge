@@ -3,11 +3,25 @@ require 'game'
 describe Game do
   subject { Game.new :player1, :player2 }
 
-  it 'responds to play with 2 arguments' do
-    expect(subject).to respond_to(:play).with(2).argument
+  it 'responds to all_choices' do
+    expect(subject).to respond_to :all_choices?
+  end
+
+  it 'returns true if choce1 and choice2 are empty' do
+    game = Game.new :player1, :player2
+    game.choice1 = :r
+    game.choice2 = :r
+    expect(game.all_choices?).to eq true
+  end
+
+  it 'responds to play' do
+    expect(subject).to respond_to :play
   end
 
   it 'compares choices from 2 players to determine winner' do
-    expect(subject.play :r, :r).to eq 'Draw!'
+    game = Game.new :player1, :player2
+    game.choice1 = :r
+    game.choice2 = :r
+    expect(game.play).to eq 'Draw!'
   end
 end

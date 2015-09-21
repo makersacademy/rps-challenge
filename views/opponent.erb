@@ -5,19 +5,26 @@ Hi <%= @username %>, <br><br>
     No one else is online. Please wait ...
 
   <% else %>
-  Please choose an opponent from those online as shown below: <br>
-    <ul>
+  Please choose an opponent from those online as shown below: <br><br>
+    <!-- <ul>
       <% @usernames.each do | username | %>
         <% if username != @username %>
-          <a href='/invite?opponent=<%= username %>'> <%= username %> </a> <br>
+          <a href='/invite?opponent=<%= username %>' method='post'> <%= username %> </a> <br>
         <% end %>
       <% end %>
     </ul>
+ -->
+    <form action='/opponent' method='post'>
+      <% @usernames.each do | username | %>
+        <% if username != @username %>
+          <%= username %> <br>
+        <% end %>
+      <% end %>
+      <br>
+      <br>
+        <input type='text' name='opponent'>
+        <input type='submit' value='Invite'>
+    </form>
 
   <% end %>
 </div>
-
-<!-- <form action="/sign-up" method="post">
-  <label for="username">Please enter your name
-  </label>
-</form> -->

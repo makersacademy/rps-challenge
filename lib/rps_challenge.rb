@@ -6,7 +6,6 @@ class RpsChallenge < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Welcome to RPS Challenge!'
     erb :index
   end
 
@@ -29,33 +28,47 @@ class RpsChallenge < Sinatra::Base
     $invites[@username] ? erb(:accept_invite) : erb(:opponent)
   end
 
+  post '/opponent' do
+    session[:opponent] = params[:opponent]
+    $invites[session[:opponent]] = session[:username]
+    redirect '/invite'
+  end
+
   get '/invite' do
-    $invites[params[:opponent]] = session[:username]
-    setup_games
-    session[:game] = $games[params[:opponent] => session[:username]]
-    $games[params[:opponent] => session[:username]] ? redirect('/start_game') : erb(:invite)
+    $game ? redirect('/game') : erb(:invite)
   end
 
-  post '/start_game' do
-    username1 = session[:username]
-    username2 = $invites[session[:username]]
-    $games[username1 => username2] = Game.new username1, username2
-    session[:game] = $games[username1 => username2]
-    redirect '/start_game'
+  post '/invite' do
+    $game = Game.new session[:username], $invites[session[:username]]
+    redirect '/game'
   end
 
-  get '/start_game' do
-    erb :start_game
+  get '/game' do
+    erb :game
   end
 
-  get '/play' do
-    if $invites[session[:username]]
-      session[:game].choice1 = params[:choice]
-      @result = session[:game].play session[:game].choice1, session[:game].choice2 if session[:game].all_choices?
+  post '/game' do
+    if session[:username] == $game.player1
+      $game.choice1 = params[:choice]
+      if $game.all_choices?
+        session[:result] = $game.play
+        redirect '/result'
+      else
+        erb :wait
+      end
     else
-      session[:game].choice2 = params[:choice]
-      @result = session[:game].play session[:game].choice1, session[:game].choice2 if session[:game].all_choices?
+      $game.choice2 = params[:choice]
+      if $game.all_choices?
+        session[:result] = $game.play
+        redirect '/result'
+      else
+        erb :wait
+      end
     end
+  end
+
+  get '/result' do
+    @result = session[:result]
     erb :result
   end
 
@@ -67,10 +80,6 @@ private
 
   def setup_invites
     $invites ||= {}
-  end
-
-  def setup_games
-    $games ||= {}
   end
 
   # start the server if ruby file executed directly
