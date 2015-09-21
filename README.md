@@ -9,6 +9,7 @@ https://en.wikipedia.org/wiki/Rock-paper-scissors
 
 ## To Run
  - Clone into local directory
+
 From cloned directory
  - run 'bundle install'
  - run rackup
