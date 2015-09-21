@@ -1,0 +1,25 @@
+<% if @name==nil %>
+  <form action="/request">
+    <p style="font-size: 25px; font-family: Times New Roman">
+      What's your name?
+    </p>
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% elsif @name=='' %>
+  <p style="font-size: 25px; font-family: Times New Roman">
+    You didn't input your name, please try again.
+  </p>
+  <form action="/request">
+    What's your name?
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% else %>
+  <form action="/game">
+    <p style="font-size: 25px; font-family: Times New Roman">
+     <%= @name %>, press 'Bottom to start:
+    </p>
+    <input type="submit" value="Start">
+  </form>
+<% end %>
