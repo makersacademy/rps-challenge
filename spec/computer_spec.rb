@@ -2,8 +2,8 @@ require 'computer'
 
 describe Computer do
 
-  it "expect computer to contain either rock, paper or scissors" do
-    expect(subject.computer_weapon).to include("rock", "paper", "scissors")
+  it "expect computer_weapon to contain a string" do
+    expect(subject.computer_weapon).to be_an_instance_of(String)
   end
 
 end
