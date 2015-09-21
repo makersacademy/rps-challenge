@@ -11,11 +11,11 @@ class Game
     spock_win = [:rock, :scissors]
     lizard_win = [:spock, :paper]
 
-    winner = { :rock => rock_win,
-               :scissors => scissors_win,
-               :paper => paper_win,
-               :spock => spock_win,
-               :lizard => lizard_win }
+    winner = { rock: rock_win,
+               scissors: scissors_win,
+               paper: paper_win,
+               spock: spock_win,
+               lizard: lizard_win }
 
     winner[human.hand].include?(computer.hand)
   end
@@ -28,11 +28,11 @@ class Game
     spock_lose = [:paper, :lizard]
     lizard_lose = [:rock, :scissors]
 
-    loser = { :rock => rock_lose,
-              :scissors => scissors_lose,
-              :paper => paper_lose,
-              :spock => spock_lose,
-              :lizard => lizard_lose}
+    loser = { rock: rock_lose,
+              scissors: scissors_lose,
+              paper: paper_lose,
+              spock: spock_lose,
+              lizard: lizard_lose}
 
     loser[human.hand].include?(computer.hand)
   end

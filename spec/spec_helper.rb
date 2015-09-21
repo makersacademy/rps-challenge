@@ -19,7 +19,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'byebug'
 
-Capybara.app = Rps_web
+Capybara.app = RpsWeb
 
 RSpec.configure do |config|
   config.include Capybara::DSL
