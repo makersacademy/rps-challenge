@@ -36,3 +36,4 @@ feature "FEATURES:" do
   end
 end
 
+# check winner/loser/draw outcomes

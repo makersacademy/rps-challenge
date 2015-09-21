@@ -1,3 +1,5 @@
+#https://github.com/makersacademy/rps-challenge/wiki/Common-issues
+
 require 'sinatra/base'
 require_relative 'rps_helper'
 
@@ -25,25 +27,9 @@ class Rps_Challenge < Sinatra::Base
     $name = session[:name]
     erb :new_session
   end
-
-  get '/rock' do
-    $game.p1_move(:rock)
-    $game.p2_move($cpu.cpu_move)
-    $result = $game.play
-    $cpu_move_image_helper = cpu_move_image
-    erb :new_session
-  end
-
-  get '/paper' do
-    $game.p1_move(:paper)
-    $game.p2_move($cpu.cpu_move)
-    $result = $game.play
-    $cpu_move_image_helper = cpu_move_image
-    erb :new_session
-  end
-
-  get '/scissors' do
-    $game.p1_move(:scissors)
+# subsitute to one layer
+  get '/choose' do
+    $game.p1_move(params[:selection])
     $game.p2_move($cpu.cpu_move)
     $result = $game.play
     $cpu_move_image_helper = cpu_move_image

@@ -2,6 +2,8 @@ require_relative 'cpu_player'
 
 class Game
 
+
+# P1/P2_move required???
   attr_reader :rules, :p1_move, :p2_move, :winning_move, :p1_score, :p2_score
 
   def initialize
@@ -15,15 +17,15 @@ class Game
   end
 
   def p1_move(move)
-    @p1_move = move
+    @p1_move = move.to_sym
   end
 
   def p2_move(move)
-    @p2_move = move
+    @p2_move = move.to_sym
   end
 
   def play
-    @winning_move = rules[@p1_move][@p2_move]
+    @winning_move = @rules[@p1_move][@p2_move]
     update_score
     return :p1_wins! if @p1_move == @winning_move
     return :p2_wins! if @p2_move == @winning_move

@@ -45,6 +45,8 @@ h1 {
 <% if $result == nil %>
 <!-- Main Game Page -->
 
+<!-- !!!Move to Model or Logic layer -->
+
 <!-- Scoreboard -->
 
   <div class="scoreboard">
@@ -55,16 +57,15 @@ h1 {
 <!-- Rock, Paper, Scissors links -->
 
   <div class="main_selector">
-    <a href="/rock?selection=rock">
+    <a href="/choose?selection=rock">
       <img src="http://oi58.tinypic.com/28hel93.jpg" alt="Rock" style="width:304px;height:230px;"> </a>
-    <a href="/paper?selection=paper">
+    <a href="/choose?selection=paper">
       <img src="http://oi61.tinypic.com/2w3x3za.jpg" alt="Paper" style="width:304px;height:230px;"> </a>
-    <a href="/scissors?selection=scissors">
+    <a href="/choose?selection=scissors">
       <img src="http://oi57.tinypic.com/34xnz9v.jpg" alt="Scissors" style="width:304px;height:230px;"> </a>
   </div>
 
 <!-- Result pages -->
-
 
 <% elsif $result == :p1_wins! %>
 <!-- If player 1 wins -->
