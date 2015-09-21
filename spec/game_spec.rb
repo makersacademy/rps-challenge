@@ -10,19 +10,19 @@ require 'game'
       it "Player wins when their move is paper" do
         computer_move = subject.generate_move
         player_move = :paper
-        expect(subject.outcome(player_move, computer_move)).to eq "You win!"
+        expect(subject.outcome(player_move, computer_move)).to eq :win
       end
 
       it "Player loses when their move is scissors" do
         computer_move = subject.generate_move
         player_move = :scissors
-        expect(subject.outcome(player_move, computer_move)).to eq "You lose!"
+        expect(subject.outcome(player_move, computer_move)).to eq :lose
       end
 
       it "It's a draw when the player's move is rock" do
        computer_move = subject.generate_move
        player_move = :rock
-       expect(subject.outcome(player_move, computer_move)).to eq "It's a draw!"
+       expect(subject.outcome(player_move, computer_move)).to eq :draw
       end
     end
 
@@ -34,19 +34,19 @@ require 'game'
       it "Player wins when their move is scissors" do
         computer_move = subject.generate_move
         player_move = :scissors
-        expect(subject.outcome(player_move, computer_move)).to eq "You win!"
+        expect(subject.outcome(player_move, computer_move)).to eq :win
       end
 
       it "Player loses when their move is rock" do
         computer_move = subject.generate_move
         player_move = :rock
-        expect(subject.outcome(player_move, computer_move)).to eq "You lose!"
+        expect(subject.outcome(player_move, computer_move)).to eq :lose
       end
 
       it "It's a draw when the player's move is paper" do
        computer_move = subject.generate_move
        player_move = :paper
-       expect(subject.outcome(player_move, computer_move)).to eq "It's a draw!"
+       expect(subject.outcome(player_move, computer_move)).to eq :draw
       end
     end
 
@@ -58,19 +58,19 @@ require 'game'
       it "Player wins when their move is rock" do
         computer_move = subject.generate_move
         player_move = :rock
-        expect(subject.outcome(player_move, computer_move)).to eq "You win!"
+        expect(subject.outcome(player_move, computer_move)).to eq :win
       end
 
       it "Player loses when their move is paper" do
         computer_move = subject.generate_move
         player_move = :paper
-        expect(subject.outcome(player_move, computer_move)).to eq "You lose!"
+        expect(subject.outcome(player_move, computer_move)).to eq :lose
       end
 
       it "It's a draw when the player's move is scissors" do
        computer_move = subject.generate_move
        player_move = :scissors
-       expect(subject.outcome(player_move, computer_move)).to eq "It's a draw!"
+       expect(subject.outcome(player_move, computer_move)).to eq :draw
       end
     end
 
