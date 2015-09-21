@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/chn-challenger/airport_challenge.png)](https://travis-ci.org/chn-challenger/airport_challenge)
+[![Build Status](https://travis-ci.org/chn-challenger/rps-challenge.png)](https://travis-ci.org/chn-challenger/rps-challenge)
 
 # Rock-Paper-Scissors Challenge
 
