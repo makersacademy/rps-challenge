@@ -4,6 +4,6 @@ class Player
 
   def initialize
     @hand = nil
-    @options = [:rock, :paper, :scissors]
+    @options = [:rock, :paper, :scissors, :lizard, :spock]
   end
 end

@@ -41,6 +41,8 @@ class Rps_web < Sinatra::Base
     player2 = Computer.new
     player1.chooses(choice.to_sym)
     player2.rand_choice
+    @choice = player1.hand
+    @comp_choice = player2.hand
     return erb :winner if game.winner?(player1, player2)
     return erb :loser if game.loser?(player1, player2)
     return erb :draw if game.draw?(player1, player2)
