@@ -1,12 +1,12 @@
 require 'sinatra/base'
 require 'sinatra'
-require_relative 'game'
+require_relative './lib/game'
 
 class RPSChallenge < Sinatra::Base
 
   enable :sessions
 
-  set :views, proc { File.join(root, '..', 'views') }
+  set :views, proc { File.join(root, 'views') }
 
   get '/' do
     erb :index

@@ -1,25 +1,29 @@
-<div style="font-family: arial">
+<div>
   <p>
-  <%if @outcome == :draw%>
+  <% if @outcome == :draw %>
     <h1>It's a <%= @outcome %>!</h1>
-  <%else%>
+  <% else %>
     <h1>You <%= @outcome %>!</h1>
-  <%end%>
+  <% end %>
   </p>
-Your move:
-  <p>
-    <img alt="<%= @player_move %>" src="<%= @player_move %>.png" width="100" height="100" style="padding-left: 15px; padding-right: 15px;">
-  </p>
-  <p>
-    The computer's move:
-  </p>
-  <p>
-    <img alt="<%= @computer_move %>" src="<%= @computer_move %>.png" width="100" height="100" style="padding-left: 15px; padding-right: 15px;">
-  </p>
-  <p>
-    Choose your next move:
-  </p>
-  <p>
-    <%= erb :_choices %>
-  </p>
+  <div class="results">
+    <div class="player-pick">
+      <p>
+        <h2>You</h2>
+        <img alt="<%= @player_move %>" src="images/<%= @player_move %>.png">
+      </p>
+    </div>
+    <div class="player-pick">
+      <p>
+        <h2>Computer</h2>
+        <img alt="<%= @computer_move %>" src="images/<%= @computer_move %>.png">
+      </p>
+    </div>
+  </div>
+  <div class="next-move">
+    <h3>Choose your next move:</h3>
+    <p>
+      <%= erb :_choices  %>
+    </p>
+  </div>
 </div>

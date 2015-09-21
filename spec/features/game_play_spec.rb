@@ -50,7 +50,7 @@ feature 'Starts a game' do
   scenario "I can see the computer's choice" do
     visit '/new_game'
     click_link 'rock'
-    expect(page).to have_content "The computer's move:"
+    expect(page).to have_content "Computer"
   end
 
   scenario 'I can go for another round' do

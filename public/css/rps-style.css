@@ -1,0 +1,43 @@
+body {
+  font-family: helvetica;
+  text-align: center;
+}
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+a.choice-button:nth-of-type(2n) {
+  padding: 0 15px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+h3 {
+  clear: both;
+}
+
+.player-pick {
+  width: 50%;
+  float: left;
+}
+ .next-move {
+   width: 90%;
+   margin: 0 auto;
+ }
+ .results {
+   width: 60%;
+   margin: 10px auto;
+ }
