@@ -52,4 +52,14 @@ feature 'Staring a new RPS game' do
     expect(page).to have_content 'Result:'
   end
 
+  scenario 'User is offered to start a new game' do
+    visit '/'
+    click_link 'New Game'
+    fill_in('name', with: 'Harry')
+    click_button 'Submit'
+    click_button 'Start'
+    click_button 'rock'
+    click_link 'New Game'
+  end
+
 end
