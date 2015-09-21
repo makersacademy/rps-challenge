@@ -4502,7 +4502,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-form .input-append,
 .navbar-form .input-prepend {
   margin-top: 5px;
-  white-space: nowrap;
+  white-space: nowrap;d
 }
 
 .navbar-form .input-append input,

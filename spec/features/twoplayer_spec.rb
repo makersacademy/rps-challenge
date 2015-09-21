@@ -8,10 +8,20 @@ feature 'Starting a new game' do
     expect(page).to have_content "Rock, Paper, Scissors - Two Player Game"
   end
 
-  scenario 'I am asked to enter my name' do
+  scenario 'As Player1 I am asked to enter my name' do
     visit '/twoplayer'
-    expect(page).to have_content "Please enter your name"
+    expect(page).to have_content "Player 1 Please enter your name"
   end
+
+  scenario 'As Player2 I am asked to enter my name' do
+    visit'/twoplayer'
+    fill_in('two_player_name', :with => 'Philip')
+    select('rock', :from => 'your_choice')
+    click_button('Play')
+    visit'/twoplayer'
+    expect(page).to have_content "Player 2 Please enter your name"
+  end
+
 
   scenario "When I submit 'Rock' I am told if I have won" do
   visit '/twoplayer'
