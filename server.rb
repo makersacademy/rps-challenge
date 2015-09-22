@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra'
 require_relative './lib/game'
+require_relative './lib/player'
+
 
 class RPSChallenge < Sinatra::Base
 
@@ -24,13 +26,14 @@ class RPSChallenge < Sinatra::Base
   end
 
   get '/game' do
-    @player_move = params[:move].to_sym
+    player = Player.new(session[:name])
+    player.choose_move(params[:move])
+    @player_move = player.move
     game = Game.new
     @computer_move = game.generate_move
     @outcome = game.outcome(@player_move, @computer_move)
     erb :game
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

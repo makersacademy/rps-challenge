@@ -6,6 +6,7 @@ gem 'sinatra'
 
 group :test do
   gem 'byebug'
+  gem 'pry'
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'rspec'
