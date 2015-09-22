@@ -5,10 +5,14 @@ ruby '2.2.3'
 gem 'sinatra'
 
 group :test do
-  gem 'rspec'
-  gem 'rubocop-rspec'
-  gem 'rubocop'
-  gem 'coveralls', require: false
-  gem 'capybara'
   gem 'byebug'
+  gem 'pry'
+  gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'rspec'
+  gem 'rspec-sinatra'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'shotgun'
+  gem 'simplecov', '~> 0.10.0'
 end
