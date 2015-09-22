@@ -90,14 +90,8 @@ After Coach Feedback
 
 Instructions
 ---------
-In project directory, run rackup.
-```ruby
-$ rackup
-[2015-09-20 13:38:31] INFO  WEBrick 1.3.1
-[2015-09-20 13:38:31] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin14]
-[2015-09-20 13:38:31] INFO  WEBrick::HTTPServer start: pid=37710 port=9292
-```
-Go to which ever port the app is being hosted on.
+Click link below to play game(disclaimer...once you enter the game there is no coming back at the moment...)
+https://mighty-retreat-1536.herokuapp.com
 Author
 -----
 Dan St Paul
