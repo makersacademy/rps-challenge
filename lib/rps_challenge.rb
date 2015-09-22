@@ -10,6 +10,7 @@ class RpsChallenge < Sinatra::Base
   end
 
   get '/username' do
+    p session
     erb :username
   end
 
@@ -50,20 +51,14 @@ class RpsChallenge < Sinatra::Base
   post '/game' do
     if session[:username] == $game.player1
       $game.choice1 = params[:choice]
-      if $game.all_choices?
-        session[:result] = $game.play
-        redirect '/result'
-      else
-        erb :wait
-      end
     else
       $game.choice2 = params[:choice]
-      if $game.all_choices?
-        session[:result] = $game.play
-        redirect '/result'
-      else
-        erb :wait
-      end
+    end
+    if $game.all_choices?
+      session[:result] = $game.play
+      redirect '/result'
+    else
+      erb :wait
     end
   end
 

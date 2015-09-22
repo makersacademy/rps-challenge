@@ -18,11 +18,11 @@ class Game
 
   def play
     if @choice1 == @choice2
-      return 'Draw!'
+      'Draw!'
     elsif @options[@choice1] == @choice2
-      return "#{@player1} wins"
+      "#{@player1} wins"
     else
-      return "#{@player2} wins"
+      "#{@player2} wins"
     end
   end
 
