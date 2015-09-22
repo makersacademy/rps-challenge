@@ -9,14 +9,14 @@ feature "Starting a new game" do
 
   xscenario "I am prompted for my name if I don't enter it" do
     visit "/register_player"
-    fill_in("name", :with => "")
+    fill_in "name", with: ""
     click_button "Submit"
     expect(page).to have_content "Please enter your name"
   end
 
   scenario "I am greeted by name after I enter my name" do
     visit "/register_player"
-    fill_in("name", :with => "Tim")
+    fill_in "name", with: "Tim"
     click_button "Submit"
     expect(page).to have_content "Hi Tim, welcome to RPS"
   end
@@ -25,7 +25,7 @@ end
 feature "Playing the game" do
   scenario "I am prompted to start a new game" do
     visit "/register_player"
-    fill_in("name", :with => "Tim")
+    fill_in "name", with: "Tim"
     click_button "Submit"
     click_button "Start Game"
     expect(page).to have_content "Let battle commence..."
@@ -33,7 +33,7 @@ feature "Playing the game" do
 
   scenario "I can select rock" do
     visit "/register_player"
-    fill_in("name", :with => "Tim")
+    fill_in "name", with: "Tim"
     click_button "Submit"
     click_button "Start Game"
     click_button "rock"
@@ -42,7 +42,7 @@ feature "Playing the game" do
 
   scenario "I can select paper" do
     visit "/register_player"
-    fill_in("name", :with => "Tim")
+    fill_in "name", with: "Tim"
     click_button "Submit"
     click_button "Start Game"
     click_button "paper"
@@ -51,7 +51,7 @@ feature "Playing the game" do
 
   scenario "I can select scissors" do
     visit "/register_player"
-    fill_in("name", :with => "Tim")
+    fill_in "name", with: "Tim"
     click_button "Submit"
     click_button "Start Game"
     click_button "scissors"
