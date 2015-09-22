@@ -1,0 +1,29 @@
+<div>
+  <p>
+  <% if @outcome == :draw %>
+    <h1>It's a <%= @outcome %>!</h1>
+  <% else %>
+    <h1>You <%= @outcome %>!</h1>
+  <% end %>
+  </p>
+  <div class="results">
+    <div class="player-pick">
+      <p>
+        <h2>You</h2>
+        <img alt="<%= @player_move %>" src="images/<%= @player_move %>.png">
+      </p>
+    </div>
+    <div class="player-pick">
+      <p>
+        <h2>Computer</h2>
+        <img alt="<%= @computer_move %>" src="images/<%= @computer_move %>.png">
+      </p>
+    </div>
+  </div>
+  <div class="next-move">
+    <h3>Choose your next move:</h3>
+    <p>
+      <%= erb :_choices  %>
+    </p>
+  </div>
+</div>
