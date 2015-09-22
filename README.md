@@ -2,77 +2,96 @@
 
 Instructions
 -------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* Challenge time: Rock-Paper-Scissors-Lizard-Spock!
+* I've just completed my third week at Makers Academy, and this weekend we were given the task of creating an online RPS game(mutiplayer) from scratch.
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Our task is to provide a _Rock, Paper, Scissors, Lizard, Spock_ game for them so they can play on the web with the following user stories:
 
-```sh
+User Stories
+-----
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I would like to be able to play rock/paper/scissors/lizard/spock
 ```
 
-Hints on functionality
+Hints on functionality:
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- the game will choose a random option(or another player will choose a second option)
+- a winner will be declared!
 
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
+Model
+------
+```ruby
+$ game = Game.new
+=> #<Game:0x007f826c22fe98
+ @rules=
+  {:rock=>
+    {:rock=>:tie, :paper=>:lose, :scissors=>:win, :lizard=>:win, :spock=>:lose},
+   :paper=>
+    {:rock=>:win, :paper=>:tie, :scissors=>:lose, :lizard=>:lose, :spock=>:win},
+   :scissors=>
+    {:rock=>:lose, :paper=>:win, :scissors=>:tie, :lizard=>:win, :spock=>:lose},
+   :lizard=>
+    {:rock=>:lose, :paper=>:win, :scissors=>:lose, :lizard=>:tie, :spock=>:win},
+   :spock=>
+    {:rock=>:win, :paper=>:lose, :scissors=>:win, :lizard=>:lose, :spock=>:tie}},
+ @score=[0, 0],
+ @shapes=["rock", "paper", "scissors", "lizard", "spock"]>
+$ comp = Computer.new
+=> #<Computer:0x007f826b8c7c48>
+$ game.result('Rock', comp.throws(game.shapes))
+=> "LOSER!"
+$ game.result('Lizard', comp.throws(game.shapes))
+=> "LOSER!"
+$ game.result('Paper', comp.throws(game.shapes))
+=> "WINNER!"
+$ game.score
+=> [1, 2]
+```
+Bonus
+------
 ## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Change the game so that two marketeers can play against each other.
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Change game so that it includes a Lizard and Spock!
 
-## Basic Rules
+Rock-Paper-Scissors-Lizard-Spock RULES:
+-------
+![rpsls_rules](http://pre06.deviantart.net/549c/th/pre/i/2011/125/7/7/rpsls_by_credesign-d3foo3v.jpg)
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+Developement/Feedback
+--------
+After Senior Feedback
+* refactor if, else statement in app logic(game.rb)
+* refactor rpsls rules.rb file
+* double check naming of files (snake_case and CamelCase)
 
-Notes on test coverage
-----------------------
+After Coach Feedback
+* Need to make 2 player game.
+* Would like to play around with HTML and CSS when I skill up a bit more.
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
-
+Instructions
+---------
+Click link below to play game(disclaimer...once you enter the game there is no coming back at the moment...)
+https://mighty-retreat-1536.herokuapp.com
+Author
+-----
+Dan St Paul
