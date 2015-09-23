@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="<%= url('/styles.css') %>">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+<h1>Welcome to Rock-Paper-Scissors!</h1>
+<p>
+  <form action="/game-result" method="post">
+    Please make your choice <%= @player_name %>.<br>
+    <button class="submit_button2" type="submit" name="player_choice" value="rock">Rock!</button>
+    <button class="submit_button2" type="submit" name="player_choice" value="paper">Paper!</button>
+    <button class="submit_button2" type="submit" name="player_choice" value="scissors">Scissors!</button>
+  </form>
+</p>

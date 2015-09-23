@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="<%= url('/styles.css') %>">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+<div style="height:25px">
+</div>
+  <div style="font-size:50px;color:white;display:inline-block"><%= @player_name %></div>
+  <div class="left" style="background-image: url(/<%= @player_choice %>_l.png);"></div>
+  <div class="right" style="background-image: url(/<%= @computer_choice %>_r.png);"></div>
+  <div style="font-size:50px;color:white;display:inline-block">Computer</div>
+
+
+<h1>Game result:   <%= @result %></h1>
+
+<form action="/play-game">
+  <button class="submit_button1" type="submit">Play again</button>
+  <button class="submit_button1" type="submit" onclick="this.form.action='/'">New Player</button>
+</form>

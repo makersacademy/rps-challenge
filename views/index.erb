@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="<%= url('/styles.css') %>">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+<h1>
+Hello! Welcome to Rock Paper Scissors!
+</h1>
+<form action='/choose-game' method="post">
+  Please enter your name:<br />
+  <input class="text_box" type="text" name="player_name" required><br />
+  <input class="submit_button" type="submit" value="Start A Game">
+</form>
