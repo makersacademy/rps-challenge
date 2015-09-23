@@ -19,5 +19,5 @@ Features implemented
 * Added tests to include all possible computer v human cases of the game.
 * Added 'try again' page if human choice entered is not valid as well as associated test suites. yeah..
 * Added basic css styling (code smells due to my limited css knowledge).
-* pushed to [Heroku](https://nameless-atoll-5909.herokuapp.com/):
+* pushed to [Heroku](https://limitless-island-5706.herokuapp.com/):
 ![](http://i.imgur.com/cLxqtLu.png)
