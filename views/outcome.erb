@@ -1,0 +1,9 @@
+You chose: <%= @shape.capitalize %>
+
+<% if @computer_choice == :win %>
+You lose!
+<% elsif @computer_choice == :lose %>
+You win!
+<% else %>
+You draw!
+<% end %>
