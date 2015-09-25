@@ -9,12 +9,16 @@ class RPSWeb < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
   enable :sessions, :static
 
-
   get '/' do
     erb :index
   end
 
-  get '/name' do
+  get '/new_game' do
+    session[:name] = params[:name]
+    erb :new_game
+  end
+
+  post '/new_game' do
     @name = params[:name]
     session[:name] = params[:name]
     @game = Game.new
@@ -23,7 +27,7 @@ class RPSWeb < Sinatra::Base
     session[:player] = @player
     @comp = Computer.new
     session[:computer] = @comp
-    erb :new_game
+    redirect '/choose_shape'
   end
 
   get '/choose_shape' do
@@ -32,16 +36,17 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/result' do
+    session[:shape] = params[:shape]
+    erb :result
+  end
+
+  post '/result' do
     @player_choice = params[:shape]
     session[:shape] = params[:shape]
     session[:player].choose(session[:shape])
     session[:winner] = session[:game].play(session[:player], session[:computer])
-    # p session[:computer]
+    p session[:computer]
     erb :result
-  end
-
-  get '/' do
-    erb :index
   end
 
   # start the server if ruby file executed directly

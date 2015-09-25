@@ -1,5 +1,6 @@
 require_relative 'player'
 require_relative 'comp_player'
+require_relative 'result'
 
 class Game
 
@@ -14,13 +15,24 @@ RULES = {
     @winner = RULES[player.shape][computer.shape]
 
     if @winner == :draw
-      "It is a tie!"
+      draw
     elsif @winner == :winner
-       "#{player.name}, you are the winner!"
+      winner
     else
-      "#{player.name}, you are the loser!"
+      loser
+    end
+  end
+
+    def draw
+      "It is a tie!"
     end
 
-  end
+    def winner
+      "Congratulations, you are the winner!"
+    end
+
+    def loser
+      "Sorry, you are the loser!"
+    end
 
 end

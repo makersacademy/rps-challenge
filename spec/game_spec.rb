@@ -10,7 +10,7 @@ describe Game do
     it "should declare a winner" do
       player.choose("rock")
       allow(computer).to receive(:shape).and_return(:scissors)
-      expect(subject.play(player, computer)).to eq "Harry, you are the winner!"
+      expect(subject.play(player, computer)).to eq "Congratulations, you are the winner!"
     end
 
     it "should declare a tie" do
@@ -22,7 +22,7 @@ describe Game do
     it "should declare a loser" do
       player.choose("rock")
       allow(computer).to receive(:shape).and_return(:paper)
-      expect(subject.play(player, computer)).to eq "Harry, you are the loser!"
+      expect(subject.play(player, computer)).to eq "Sorry, you are the loser!"
     end
 
   end
