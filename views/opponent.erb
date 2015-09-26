@@ -1,0 +1,32 @@
+<META HTTP-EQUIV="refresh" CONTENT="4">
+
+Hi <%= @username %>, <br><br>
+
+<div id='usernames'>
+  <% if @usernames.count <= 1 %>
+    No one else is online. Please wait ...
+
+  <% else %>
+  Please choose an opponent from those online as shown below: <br><br>
+    <!-- <ul>
+      <% @usernames.each do | username | %>
+        <% if username != @username %>
+          <a href='/invite?opponent=<%= username %>' method='post'> <%= username %> </a> <br>
+        <% end %>
+      <% end %>
+    </ul>
+ -->
+    <form action='/opponent' method='post'>
+      <% @usernames.each do | username | %>
+        <% if username != @username %>
+          <%= username %> <br>
+        <% end %>
+      <% end %>
+      <br>
+      <br>
+        <input type='text' name='opponent' required>
+        <input type='submit' value='Invite'>
+    </form>
+
+  <% end %>
+</div>
