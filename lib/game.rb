@@ -9,11 +9,7 @@ class Game
   end
 
   def all_choices?
-    if (@choice1 != '') && (@choice2 != '')
-      true
-    else
-      false
-    end
+    (@choice1 != '') && (@choice2 != '')
   end
 
   def play
