@@ -1,0 +1,25 @@
+<% if @name==nil %>
+  <form action="/new_game" method="post">
+    <p style="font-size: 50px">
+      What's your name?
+    </p>
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% elsif @name =="" || @name = " " %>
+  <p style="font-size: 40px">
+    Please enter your name.
+  </p>
+  <form action="/new_game" method="post">
+    What's your name?
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+<% else %>
+  <form action="/choose_shape">
+    <p style="font-size: 50px">
+      Hello <%= @name %>! Please press 'Start' to begin Rock, Paper, Scissors:
+    </p>
+    <input type="submit" value="Start">
+  </form>
+<% end %>
