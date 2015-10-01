@@ -6,7 +6,7 @@
     <input type="text" name="name">
     <input type="submit" value="Submit">
   </form>
-<% elsif @name =='' %>
+<% elsif @name =="" || @name = " " %>
   <p style="font-size: 40px">
     Please enter your name.
   </p>

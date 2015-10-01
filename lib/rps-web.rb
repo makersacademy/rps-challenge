@@ -14,20 +14,23 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/new_game' do
-    session[:name] = params[:name]
     erb :new_game
   end
 
   post '/new_game' do
-    @name = params[:name]
-    session[:name] = params[:name]
-    @game = Game.new
-    session[:game] = @game
-    @player = Player.new(@name)
-    session[:player] = @player
-    @comp = Computer.new
-    session[:computer] = @comp
-    redirect '/choose_shape'
+    if params[:name] == "" || params[:name] == " "
+      erb :new_game
+    else
+      @name = params[:name]
+      session[:name] = params[:name]
+      @game = Game.new
+      session[:game] = @game
+      @player = Player.new(@name)
+      session[:player] = @player
+      @comp = Computer.new
+      session[:computer] = @comp
+      redirect '/choose_shape'
+    end
   end
 
   get '/choose_shape' do

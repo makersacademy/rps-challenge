@@ -1,9 +1,12 @@
 class Computer
-
-  attr_reader :shape
-
   def shape
-    @shape = [:rock, :paper, :scissors, :lizard, :spock][rand(0..2)]
+    [:rock, :paper, :scissors, :lizard, :spock].sample
   end
-
 end
+
+# class Computer < Player
+#   def initialize(shape)
+#     super(shape)
+#     shape = @shapes.sample
+#   end
+# end

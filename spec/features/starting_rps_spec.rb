@@ -11,9 +11,17 @@ feature 'Staring a new RPS game' do
   scenario 'Does not recieve name' do
     visit '/'
     click_link 'New Game'
-    fill_in('name', with: '')
+    fill_in('name', with: "")
     click_button 'Submit'
-    expect(page).to have_content 'Please enter your name'
+    expect(page).to have_content "What's your name?"
+  end
+
+  scenario 'Recieves an empty string for name' do
+    visit '/'
+    click_link 'New Game'
+    fill_in('name', with: " ")
+    click_button 'Submit'
+    expect(page).to have_content "What's your name?"
   end
 
   scenario 'Recieves name and session remembers name' do
