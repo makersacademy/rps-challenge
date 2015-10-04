@@ -1,17 +1,8 @@
-<p>Choose your weapon, <%=@name%>! And choose carefully...</p>
+<h1> Welcome <%=@name%>. Choose your weapon! </h1>
 
-  <form action = "/result" method = "post">
-    Rock
-    <input type="radio" name="weapon" id='rock' value ="rock">
-      <br>
-      <br>
-      Paper
-    <input type="radio" name="weapon" id='paper' value="paper">
-      <br>
-      <br>
-      Scissors
-    <input type="radio" name="weapon" id='scissors' value="scissors">
-      <br>
-      <br>
-    <input type="submit" value="PLAY!">
+<form method="post" action="/result">
+  <input type="radio" name="weapon" value="rock">Rock</input><br>
+  <input type="radio" name="weapon" value="paper">Paper</input><br>
+  <input type="radio" name="weapon" value="scissors">Scissors</input><br>
+  <input type="submit" name="submit" value="PLAY!"></input>
 </form>

@@ -6,11 +6,6 @@ describe Game do
     expect(subject).to respond_to(:user_choice).with(1).arguments
   end
 
-
-  # xit 'should return "scissors" when comp_choice is run' do
-  #   expect(Game.new).to receive(:comp_choice).and_return(:scissors)
-  # end
-
   describe 'draw?' do
     it 'should draw if comp_choice and user_choice are equal' do
       subject.user_choice(:rock)

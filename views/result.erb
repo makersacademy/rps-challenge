@@ -1,7 +1,6 @@
-<p>You chose <%= @user_choice %></p>
-<p>Computer chose <%= @computer_choice %></p>
-<p><%=@game_result %> </p>
-
-<form action='/' method="get">
-  <input type="submit" value="Play Again?">
+<h1> You chose <%=@user_choice%> </h1>
+<h2> Computer chose <%=@computer_choice%> </h2>
+<h2> <%=@result%> </h2>
+<form action="/play_game">
+  <input type="submit" value="Play Again"></input>
 </form>
