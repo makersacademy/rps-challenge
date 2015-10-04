@@ -1,12 +1,7 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -25,26 +20,9 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
 ## Bonus level 1: Multiplayer
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Change the game so that two marketeers can play against each other.
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
@@ -56,23 +34,16 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-Notes on test coverage
-----------------------
+# Functionality I plan to implement:
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+- the marketeer should be able to enter their name before the game
+- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer can choose one option
+- the game will choose a random option
+- a winner will be declared
 
-```
-require 'coveralls'
-require 'simplecov'
+### Technologies Used:
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
-
+1. Ruby
+2. Rspec
+3. Github
