@@ -1,10 +1,9 @@
 # RPS Challenge
 
+Week three weekend challenge at Makers Academy. My task is to test drive, using RSpec, the creation of a set of classes/modules to satisfy all the user stories below. In addition, I will use the Sinatra web application framework to convert my ruby code to a web application. Capybara will be used to feature test the application. 
 
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -41,5 +40,8 @@ Change the game so that two marketeers can play against each other.
 ### Technologies Used:
 
 1. Ruby
-2. Rspec
+2. RSpec
+3. Sinatra
+4. Capybara
+5. HTML and CSS
 3. Github
