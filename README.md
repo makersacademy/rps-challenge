@@ -20,13 +20,13 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-## Basic Rules of game:
+### Basic rules of the game:
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-## Functionality I plan to implement:
+### Functionality I plan to implement:
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -34,7 +34,7 @@ I would like to be able to play rock/paper/scissors
 - the game will choose a random option
 - a winner will be declared
 
-## Bonus level: Multiplayer
+### Bonus level: Multiplayer
 
 Change the game so that two marketeers can play against each other.
 
