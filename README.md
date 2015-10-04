@@ -20,27 +20,23 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other.
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+## Basic Rules of game:
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-# Functionality I plan to implement:
+## Functionality I plan to implement:
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+## Bonus level: Multiplayer
+
+Change the game so that two marketeers can play against each other.
 
 ### Technologies Used:
 
