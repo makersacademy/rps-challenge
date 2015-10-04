@@ -1,12 +1,24 @@
 # RPS Challenge: Rōnin Badge Test
 
+Game Logic
+-------
+* This is a simple Rock, Paper, Scissors game built in Ruby with the Sinatra framework, tested with Rspec and deployed on Heroku at https://glacial-refuge-4338.herokuapp.com/?
+* There is a single class called 'Game' with a selection of 6 methods. One method requests the users choice, one sets the computers choice, 3 methods together decide if it's a win, lose or draw. 1 method displays the result.
+* The game logic works as follows in irb:
+  *   game = Game.new
+  *   game.user_choice("scissors")
+  *   game.comp_decision
+  *   game.result
+* Enter the project directory and type in 'rackup' to create a server, visit the local    host in your browser via the port specified, or play the game online at https://glacial-refuge-4338.herokuapp.com/?
+
+
 Instructions
 -------
 * Challenge time: Friday, the entire day + the weekend if you need it
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -70,9 +82,8 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
 Then run `open coverage/index.html` from the command line to view details
-
