@@ -46,9 +46,7 @@ enable :sessions
   get '/result' do
     game = Game.new(session[:choice])
     @name = session[:name]
-    @choice = session[:choice]
     @result = game.play
-    @computer = game.computer_choice
     erb:result
   end
 
