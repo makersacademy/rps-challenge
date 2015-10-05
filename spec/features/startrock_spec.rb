@@ -1,8 +1,5 @@
 require 'spec_helper'
 
-
-
-
 feature 'Starting a new game' do
     scenario 'When go to the game I am told it is called Rock, Paper, Scissors' do
     visit '/'
@@ -10,8 +7,8 @@ feature 'Starting a new game' do
   end
 
   scenario 'I am asked to enter my name' do
-      visit '/'
-      expect(page).to have_content "Please enter your name"
+    visit '/'
+    expect(page).to have_content "Please enter your name"
   end
 
   scenario 'When I go to the game I am given some instructions on how to play' do

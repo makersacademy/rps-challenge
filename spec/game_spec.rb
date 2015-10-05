@@ -2,8 +2,6 @@ require 'game'
 
 describe Game do
 
-
-
   it "creates a computer_choice" do
     game = Game.new("rock")
     expect(game).to respond_to(:computer_choice)

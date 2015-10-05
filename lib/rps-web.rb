@@ -28,7 +28,7 @@ assets  {
 
     js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
     css_compression :simple   # :simple | :sass | :yui | :sqwish
-  }
+}
 
 enable :sessions
 
@@ -38,9 +38,9 @@ enable :sessions
   end
 
   post '/' do
-   session[:choice] = params[:your_choice]
-   session[:name] = params[:name]
-   redirect('/result')
+    session[:choice] = params[:your_choice]
+    session[:name] = params[:name]
+    redirect('/result')
   end
 
   get '/result' do
