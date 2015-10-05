@@ -10,7 +10,7 @@ describe Computer do
   end
 
   it 'should only select one out of rock, paper, scissors, spock or lizard' do
-    expect(subject.auto).to eq(:rock).or eq(
-      :paper).or eq(:scissors).or eq(:spock).or eq(:lizard)
+    weapons = [:paper,:scissors,:rock, :spock, :lizard]
+    expect(subject.auto).to satisfy { |weapon| weapons.include?(weapon) }
   end
 end

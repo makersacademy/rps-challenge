@@ -108,6 +108,5 @@ class Rps_web < Sinatra::Base
     erb :game_double
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == Rps_web
 end
