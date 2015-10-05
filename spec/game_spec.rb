@@ -2,17 +2,11 @@ require 'game'
 
 describe Game do
 
-  it "creates a computer_choice" do
-    game = Game.new("rock")
-    expect(game).to respond_to(:computer_choice)
+  subject { Game.new('rock') }
+    it { is_expected.to respond_to(:computer_choice) }
 
-  end
-
-  it "enables a player to enter choice" do
-    game = Game.new("rock")
-    expect(game).to respond_to(:player_choice)
-
-  end
+    subject { Game.new('rock') }
+      it { is_expected.to respond_to(:player_choice) }
 
   it "tells you if the game is a draw" do
     game = Game.new('scissors')
