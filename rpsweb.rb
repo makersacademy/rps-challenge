@@ -77,23 +77,21 @@ class Rps_web < Sinatra::Base
   end
 
   get '/start_game_double2' do
-    @name2 = session[:name2]
-    session[:player2]
-    erb :start_game_double2
+    if @name2 == nil
+      @name2 = session[:name2]
+      session[:player2]
+      erb :start_game_double2
+    else
+      session[:player1].choose(session[:object1])
+      session[:player2].choose(session[:object2])
+      session[:winner] = session[:game].play(session[:player], session[:computer])
+      erb :game
+    end
   end
 
   post '/start_game_double2' do
     session[:object2] = params[:object2].to_sym
     redirect ('/game_double')
-  end
-
-
-
-  get '/start_game_double2' do
-    session[:player1].choose(session[:object1])
-    session[:player2].choose(session[:object2])
-    session[:winner] = session[:game].play(session[:player], session[:computer])
-    erb :game
   end
 
   post '/game_double' do
