@@ -2,6 +2,7 @@ require 'spec_helper'
 
 
 
+
 feature 'Starting a new game' do
     scenario 'When go to the game I am told it is called Rock, Paper, Scissors' do
     visit '/'
