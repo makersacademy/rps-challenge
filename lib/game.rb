@@ -17,49 +17,10 @@ class Game
   }
 
   def play(player, computer)
-    @winner = RULES[player.object][computer.auto]
-
-    if @winner == :draw
-      draw
-    elsif @winner == :computer_wins
-      looser
-    else
-      winner
-    end
+      @winner = RULES[player.object][computer.auto]
   end
 
   def play2(player1, player2)
     @winner = RULES[player1.object][player2.object]
-
-    if @winner == :draw
-      draw
-    elsif @winner == :computer_wins
-      looser1
-    else
-      winner1
-    end
-  end
-
-
-  # private
-
-  def winner
-    "You are the winner!"
-  end
-
-  def looser
-    "You lose!"
-  end
-
-  def draw
-    "That's a draw!"
-  end
-
-  def winner1
-    "Player 1 wins!"
-  end
-
-  def looser1
-    "Player 2 wins!"
   end
 end

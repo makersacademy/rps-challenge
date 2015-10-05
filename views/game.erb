@@ -3,10 +3,19 @@
   Game result:
   <br>
   <br>
-  <%= session[:winner]%>
+
+  <% if session[:winner] == :draw %>
+  <%= "Thats a draw!" %>
+  <% end %>
+  <% if session[:winner] == :player_wins %>
+  <%= "You win!" %>
+  <% end %>
+  <% if session[:winner] == :computer_wins %>
+  <%= "You lose!" %>
+  <% end %>
+
   <form action="/start_game">
     <br>
-    <!-- <input type="submit" value="Play Again"> -->
       <input type="image" src="images/play_again.png" value="Play Again" width="150" height="40">
   </form>
   <form action="/">

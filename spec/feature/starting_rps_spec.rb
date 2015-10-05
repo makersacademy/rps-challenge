@@ -53,7 +53,7 @@ feature 'Starting a new game' do
     visit ('/start_game_double')
     click_button 'rock'
     click_button 'rock'
-    expect(page).to have_content "That's a draw!"
+    expect(page).to have_content "draw"
   end
 
   scenario 'Must allow game to be a draw' do
@@ -64,7 +64,7 @@ feature 'Starting a new game' do
     click_button 'Start Game'
     click_button 'rock'
     click_button 'rock'
-    expect(page).to have_content "That's a draw!"
+    expect(page).to have_content "draw"
   end
 
   scenario 'Must allow a player to win' do

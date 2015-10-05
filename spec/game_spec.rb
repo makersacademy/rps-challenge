@@ -12,24 +12,24 @@ describe Game do
   end
 
   it 'should declare if there is a draw' do
-    expect(subject.play(player, computer)).to eq("That's a draw!")
+    expect(subject.play(player, computer)).to eq(:draw)
   end
 
   it 'should declare player is the looser' do
     allow(computer).to receive(:auto).and_return(:rock)
-    expect(subject.play(player, computer)).to eq("You lose!")
+    expect(subject.play(player, computer)).to eq(:computer_wins)
   end
 
   it 'should declare player is the winner' do
     allow(computer).to receive(:auto).and_return(:paper)
-    expect(subject.play(player, computer)).to eq("You are the winner!")
+    expect(subject.play(player, computer)).to eq(:player_wins)
   end
 
   it 'should declare player 1 is the winner' do
-    expect(subject.play2(player, player3)).to eq("Player 1 wins!")
+    expect(subject.play2(player, player3)).to eq(:player_wins)
   end
 
   it 'should declare player 2 is the winner' do
-    expect(subject.play2(player, player2)).to eq("Player 2 wins!")
+    expect(subject.play2(player, player2)).to eq(:computer_wins)
   end
 end
