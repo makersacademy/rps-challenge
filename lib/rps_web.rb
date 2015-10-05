@@ -2,19 +2,12 @@ require 'sinatra/base'
 require_relative 'game'
 require_relative 'computer'
 require_relative 'player'
+require_relative 'twoplayer'
 
 class RpsWeb < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
 
-  @@two_player_hash =  {:player1 => nil, :player2 => nil}
-
   enable :sessions
-
-  #root for p1 name and root for p2 name
-  #submit names to two player hash
-  #sent to waiting room, constantly refreshing to
-  #check if tph contains both players names
-  #if it does, redirect to /2pResult
 
   get '/' do
     erb :index
@@ -26,8 +19,7 @@ class RpsWeb < Sinatra::Base
   end
 
   get '/result' do
-    names = %w(rock paper scissors lizard spock)
-    unless names.include? params[:move]
+    unless Game::POSSIBLE_MOVES.include? params[:move].to_sym
       session[:error] = "#{params[:move]} is not a valid move try again"
       redirect '/form'
     end
@@ -45,37 +37,29 @@ class RpsWeb < Sinatra::Base
       erb :twoplayerform
     end
 
-    post '/submit_name' do #this is telling it what to do when it receives a post request to /submit_name
-      names = %w(rock paper scissors lizard spock)
-      unless names.include? params[:move]
-        session[:error] = "#{params[:move]} is not a valid move try again"
-        redirect '/2pform'
-      end
-      if @@two_player_hash[:player1] == true
-        @@two_player_hash[:player2] = true
-        @@two_player_hash[:player2_move] = params[:move].downcase
-        @@two_player_hash[:player1_name] = params[:name].capitalize
-      end
-      if @@two_player_hash[:player1] == nil && @@two_player_hash[:player2] == nil
-        @@two_player_hash[:player1] = true
-        @@two_player_hash[:player1_move] = params[:move].downcase
-        @@two_player_hash[:player2_name] = params[:name].capitalize
-      end
-      redirect '/waiting' #this is a get request made by keyword request
+  post '/submit_name' do
+    unless Game::POSSIBLE_MOVES.include? params[:move].to_sym
+      session[:error] = "#{params[:move]} is not a valid move try again"
+      redirect '/2pform'
     end
+      move = params[:move].downcase
+      name = params[:name].capitalize
+      TwoPlayer.start_two_player_game(move, name)
+      redirect '/waiting'
+  end
 
-    get '/waiting' do
-      if @@two_player_hash[:player1] == true && @@two_player_hash[:player2] == true
-        @player1_move = @@two_player_hash[:player1_move]
-        @player2_move = @@two_player_hash[:player2_move]
-        @player1_name = @@two_player_hash[:player1_name]
-        @player2_name = @@two_player_hash[:player2_name]
-        game = Game.new
-        @result = game.result(@player1_move, @player2_move)
-        erb :two_player_result
+  get '/waiting' do
+    if  TwoPlayer.two_player_hash[:player1] == true && TwoPlayer.two_player_hash[:player2] == true
+      @player1_move = TwoPlayer.two_player_hash[:player1_move]
+      @player2_move = TwoPlayer.two_player_hash[:player2_move]
+      @player1_name = TwoPlayer.two_player_hash[:player1_name]
+      @player2_name = TwoPlayer.two_player_hash[:player2_name]
+      game = Game.new
+      @result = game.result(@player1_move, @player2_move)
+      erb :two_player_result
       else
         erb :waiting
       end
-    end
+  end
 
 end

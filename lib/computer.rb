@@ -1,13 +1,9 @@
 class Computer
 
-  attr_reader :moves_array
-
-  def initialize
-    @moves_array = [:rock, :paper, :scissors]
-  end
+COMPUTER_MOVES = [:rock, :paper, :scissors, :lizard, :spock]
 
   def play
-    moves_array.sample
+    COMPUTER_MOVES.sample
   end
 
 end

@@ -80,7 +80,7 @@ feature 'Starting a new game' do
     fill_in 'move', with: 'scissors'
     fill_in 'name', with: 'loser'
     click_button 'Submit'
-    expect(page).to have_content "Loser chose rock Kyle chose scissors ROCK WINS"
+    expect(page).to have_content "Kyle chose rock Loser chose scissors ROCK WINS"
   end
 
 
