@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/catherinestevenson/rps-challenge.svg?branch=master)](https://travis-ci.org/catherinestevenson/rps-challenge)  [![Coverage Status](https://coveralls.io/repos/catherinestevenson/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/catherinestevenson/rps-challenge?branch=master)
+
 # RPS Challenge
 
 Week three weekend challenge at Makers Academy. My task is to test drive the creation of a set of classes/modules to satisfy all the user stories below. In addition, I will use the Sinatra web application framework to convert my ruby code to a web application. Capybara will be used to write acceptance tests for the application.
@@ -33,15 +35,15 @@ I would like to be able to play rock/paper/scissors
 5. HTML and CSS
 3. Github
 
-## Functionality I plan to implement:
+## Functionality I implemented:
 
-- the marketeer will be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer is able to enter their name before the game
+- the marketeer is presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
 
-## Approach I will take:
+## Approach I took:
 
 I started by breaking down each user story and outlining possible classes and methods. I decided to have three classes: Player, Computer and Game. I experimented using irb to figure out how my classes/objects would interact what method names to use. I then built the system using TTD, a RED -> GREEN -> REFACTOR approach, and wrote each test first, watched it fail, made it pass and then refactored if needed. This ensures that bugs can be eliminated.
 
