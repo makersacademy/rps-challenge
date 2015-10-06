@@ -1,78 +1,37 @@
-# RPS Challenge: Rōnin Badge Test
+Rock, paper, scissors, lizard and spock!		[![Build Status](https://travis-ci.org/UsmanJ/takeaway-challenge.svg?branch=master)](https://travis-ci.org/UsmanJ/takeaway-challenge)	[![Coverage Status](https://coveralls.io/repos/UsmanJ/takeaway-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/UsmanJ/takeaway-challenge?branch=master)
+======================
 
 Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+-----
 
-Task 
-----
+The task set was to build a rock, paper, scissors game. The advanced part of the challenge was to turn the game into a multiplayer game and also add lizard and spock to the game.
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Approach towards solving the challenge
+--------------------------------------
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+In order to solve the challenge I decided on creating three seperate classes. One for the game itself, another for the human players and last but not least, a class for the computer player.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+I built the system using test-driven development to ensure that bugs can be eliminated. As you can see the build has 100% coveralls and all rSpec tests are passing.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+The RPSLS game is fully functional. If you feel that there are any errors or improvements can be made then please let me know.
+
+
+Steps of playing the game
+---------------------------------
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+irb(main):001:0> require './lib/game.rb'
+=> true
+irb(main):002:0> g = Game.new
+=> #<Game:0x007fd78a8587c0>
+irb(main):003:0> p1 = Player.new
+=> #<Player:0x007fd78a82b158>
+irb(main):004:0> p2 = Player.new
+=> #<Player:0x007fd78a810088>
+irb(main):005:0> p1.choose(:rock)
+=> :rock
+irb(main):006:0> p2.choose(:lizard)
+=> :lizard
+irb(main):007:0> g.play(p1,p2)
+=> :player_wins
 ```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
-
