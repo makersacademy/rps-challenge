@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Week three weekend challenge at Makers Academy. My task is to test drive the creation of a set of classes/modules to satisfy all the user stories below. In addition, I will use the Sinatra web application framework to convert my ruby code to a web application. Capybara will be used to feature test the application.
+Week three weekend challenge at Makers Academy. My task is to test drive the creation of a set of classes/modules to satisfy all the user stories below. In addition, I will use the Sinatra web application framework to convert my ruby code to a web application. Capybara will be used to write acceptance tests for the application.
 
 ## Task
 
@@ -17,9 +17,6 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-### Bonus level: Multiplayer
-
-Change the game so that two marketeers can play against each other.
 
 ### Basic rules of the game:
 
@@ -38,7 +35,7 @@ Change the game so that two marketeers can play against each other.
 
 ## Functionality I plan to implement:
 
-- the marketeer should be able to enter their name before the game
+- the marketeer will be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
@@ -46,17 +43,37 @@ Change the game so that two marketeers can play against each other.
 
 ## Approach I will take:
 
-I will start by breaking down each user story and outlining possible classes and methods. I will then experiment using irb to see how I would like my classes/objects to interact with one another and what method names to use. Next, I will take a RED -> GREEN -> REFACTOR approach and write each test first, watch it fail, make it pass and then refactor if needed.
+I started by breaking down each user story and outlining possible classes and methods. I decided to have three classes: Player, Computer and Game. I experimented using irb to figure out how my classes/objects would interact what method names to use. I then built the system using TTD, a RED -> GREEN -> REFACTOR approach, and wrote each test first, watched it fail, made it pass and then refactored if needed. This ensures that bugs can be eliminated.
 
 ## How the app works:
 
 ```
 → irb
-
-
+2.2.3 :001 > require './lib/game.rb'
+ => true
+2.2.3 :002 > game = Game.new
+ => #<Game:0x007ffb1b8f12e0>
+2.2.3 :003 > player = Player.new
+ => #<Player:0x007ffb1b901a50>
+2.2.3 :004 > computer = Computer.new
+ => #<Computer:0x007ffb1b909fe8>
+2.2.3 :005 > player.choose(:paper)
+ => :paper
+2.2.3 :006 > game.play(player,computer)
+ => "You loose!"
+2.2.3 :007 > player.choose(:rock)
+ => :rock
+2.2.3 :008 > game.play(player,computer)
+ => "It's a draw!"
+2.2.3 :009 >
 ```
 
 ## Progress
 
+App completed and all tests passing
 
 ## New things I learnt/improved on:
+
+1. Sinatra web application
+2. Capybara
+3. HTML

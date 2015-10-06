@@ -1,12 +1,13 @@
-<div style='margin-top: 30px; padding-left: 30px; height: 250px; width: 500px; border: 3px solid black'>
+<div align="center" style="margin-top: 200px; margin-left: 400px; padding:50px; height: 250px; width: 500px; border: 3px solid black">
 <div style='margin-top: 20px; margin-bottom: 20px'>
-  <%= session[:name] %>, choose your object.
+  <%= session[:name] %>, choose your object:
 </div>
 <div>
   <form action='/game' method="post">
-    <input type="image" img src="/images/rock.jpg" name="object" value="rock" width="150" height="100">
-    <input type="image" img src="/images/paper.jpg" name="object" value="paper" width="150" height="100">
-    <input type="image" img src="/images/scissors.jpg" name="object" value="scissors" width="150" height="100">
+    <!--  cant get images folder to upload images -->
+    <input type="image" src="http://vectortoons.com/wp-content/uploads/2015/05/rock-emoji-collection-001-575x481.jpg" name="object" value="rock" width="150" height="130">
+    <input type="image" src="https://cdn.vectorstock.com/i/composite/64,13/cartoon-notebook-paper-holding-a-pencil-vector-1986413.jpg" name="object" value="paper" width="150" height="160">
+    <input type="image" src="https://cdn.vectorstock.com/i/composite/95,51/scissors-clip-art-cartoon-vector-1509551.jpg" name="object" value="scissors" width="150" height="160">
   </form>
 </div>
 </div>

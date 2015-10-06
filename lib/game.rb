@@ -31,5 +31,4 @@ class Game
   def draw
     "It's a draw!"
   end
-
 end

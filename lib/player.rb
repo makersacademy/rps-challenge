@@ -14,5 +14,4 @@ class Player
     end
     @object = object
   end
-  
 end

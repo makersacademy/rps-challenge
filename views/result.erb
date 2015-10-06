@@ -1,10 +1,11 @@
-<div style='padding: 20px' >
-  Game result:
-  <%= session[:winner] %>
+<div align="center" style="margin-top: 200px; margin-left: 400px; padding:50px; height: 250px; width: 500px; border: 3px solid black">
+  Game result: <%= session[:winner] %>
+<div align="center" style="padding: 20px">
+  <img src= "http://www.teampedia.net/wiki/images/0/0b/Rock.png", height="180px">
 </div>
-
 <div style='padding: 20px'>
   <form action="/game" method="get">
   <input type="submit" value="Play Again">
   </form>
+</div>
 </div>

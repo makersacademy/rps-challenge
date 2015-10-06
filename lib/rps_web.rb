@@ -1,14 +1,12 @@
-#a little too much code repetition, could be refactored but good overall
-
 require 'sinatra/base'
 require './lib/game'
 require './lib/computer'
 require './lib/player'
 
 class RPS < Sinatra::Base
+
   enable :sessions
   set :views, proc { File.join(root, '..', 'views') }
-  # run! if app_file == $0
 
   get '/' do
     erb :index
@@ -20,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    @name = session[:name]
+    session[:name]
     erb :game
   end
 
@@ -37,6 +35,5 @@ class RPS < Sinatra::Base
     session[:winner] = game.play(player, computer)
     erb :result
   end
-
   run! if app_file == RPS
 end
