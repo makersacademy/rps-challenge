@@ -8,7 +8,7 @@ describe Game do
   let(:computer) {double :computer}
 
   before :each do
-    allow(computer).to receive(:auto).and_return(:scissors)
+    allow(computer).to receive(:object).and_return(:scissors)
   end
 
   it 'should declare if there is a draw' do
@@ -16,20 +16,20 @@ describe Game do
   end
 
   it 'should declare player is the looser' do
-    allow(computer).to receive(:auto).and_return(:rock)
+    allow(computer).to receive(:object).and_return(:rock)
     expect(subject.play(player, computer)).to eq(:computer_wins)
   end
 
   it 'should declare player is the winner' do
-    allow(computer).to receive(:auto).and_return(:paper)
+    allow(computer).to receive(:object).and_return(:paper)
     expect(subject.play(player, computer)).to eq(:player_wins)
   end
 
   it 'should declare player 1 is the winner' do
-    expect(subject.play2(player, player3)).to eq(:player_wins)
+    expect(subject.play(player, player3)).to eq(:player_wins)
   end
 
   it 'should declare player 2 is the winner' do
-    expect(subject.play2(player, player2)).to eq(:computer_wins)
+    expect(subject.play(player, player2)).to eq(:computer_wins)
   end
 end

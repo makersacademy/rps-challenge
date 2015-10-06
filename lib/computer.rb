@@ -1,6 +1,6 @@
 class Computer
 
-  def auto
+  def object
     [:rock, :paper, :scissors].shuffle.first
   end
 

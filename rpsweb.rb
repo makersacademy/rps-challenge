@@ -82,7 +82,7 @@ class Rps_web < Sinatra::Base
     elsif session[:players] == '2 Player' && session[:object2] != nil
       session[:player1].choose(session[:object1])
       session[:player2].choose(session[:object2])
-      session[:winner_double] = session[:game].play2(session[:player1], session[:player2])
+      session[:winner_double] = session[:game].play(session[:player1], session[:player2])
       erb :game_double
     else
       session[:player].choose(session[:object])

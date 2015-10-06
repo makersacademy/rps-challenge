@@ -59,7 +59,7 @@ feature 'Starting a new game' do
     expect(page).to have_content "draw"
   end
 
-  scenario 'Must allow a player to win' do
+  scenario 'Must allow player2 to win' do
     visit ('/')
     click_button '2 Player'
     fill_in('name1', with: "Usman")
@@ -70,7 +70,7 @@ feature 'Starting a new game' do
     expect(page).to have_content "Player 2 wins!"
   end
 
-  scenario 'Must allow a player to win' do
+  scenario 'Must allow player1 to win' do
     visit ('/')
     click_button '2 Player'
     fill_in('name1', with: "Usman")

@@ -16,11 +16,7 @@ class Game
      spock: :player_wins, lizard: :draw}
   }
 
-  def play(player, computer)
-      @winner = RULES[player.object][computer.auto]
-  end
-
-  def play2(player1, player2)
-    @winner = RULES[player1.object][player2.object]
+  def play(player, player2)
+      @winner = RULES[player.object][player2.object]
   end
 end
