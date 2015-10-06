@@ -1,4 +1,4 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), 'rpsweb.rb')
+require File.join(File.dirname(__FILE__), 'RpsWeb.rb')
 
-run Rps_web
+run RpsWeb

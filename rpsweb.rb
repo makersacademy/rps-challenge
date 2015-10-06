@@ -3,7 +3,7 @@ require './lib/game'
 require './lib/computer'
 require './lib/player'
 
-class Rps_web < Sinatra::Base
+class RpsWeb < Sinatra::Base
 
   enable :sessions
   set :views, proc { File.join(root, 'views') }
@@ -62,7 +62,7 @@ class Rps_web < Sinatra::Base
   end
 
   post '/game' do
-    if session[:players] == '2 Player' && session[:object1] == nil
+    if session[:players] == '2 Player' && session[:object1].nil?
       session[:object1] = params[:object1].to_sym
       redirect ('/game')
     elsif session[:players] == '2 Player'
@@ -75,11 +75,11 @@ class Rps_web < Sinatra::Base
   end
 
   get '/game' do
-    if session[:players] == '2 Player' && session[:object2] == nil
+    if session[:players] == '2 Player' && session[:object2].nil?
       @name2 = session[:name2]
       session[:player2]
       erb :start_game_double2
-    elsif session[:players] == '2 Player' && session[:object2] != nil
+    elsif session[:players] == '2 Player' && !session[:object2].nil?
       session[:player1].choose(session[:object1])
       session[:player2].choose(session[:object2])
       session[:winner_double] = session[:game].play(session[:player1], session[:player2])
@@ -91,5 +91,5 @@ class Rps_web < Sinatra::Base
     end
   end
 
-  run! if app_file == Rps_web
+  run! if app_file == RpsWeb
 end
