@@ -1,4 +1,4 @@
-Rock, paper, scissors, lizard and spock!		[![Build Status](https://travis-ci.org/UsmanJ/takeaway-challenge.svg?branch=master)](https://travis-ci.org/UsmanJ/takeaway-challenge)	[![Coverage Status](https://coveralls.io/repos/UsmanJ/takeaway-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/UsmanJ/takeaway-challenge?branch=master)
+Rock, paper, scissors, lizard and spock!		[![Build Status](https://travis-ci.org/UsmanJ/rps-challenge.svg?branch=master)](https://travis-ci.org/UsmanJ/rps-challenge)	[![Coverage Status](https://coveralls.io/repos/UsmanJ/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/UsmanJ/rps-challenge?branch=master)
 ======================
 
 Instructions
