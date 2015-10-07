@@ -1,0 +1,18 @@
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+
+<center><font color=red><%= @error if @error%></font>
+<div><center><font size=10>
+  Enter your move! Rock, paper, scissors, lizard or spock?!</font><center></div><br>
+    <center><form action='/result' method='get'>
+    <input type='text' name='move'>
+  <div>
+    <center><font size=10>
+        Enter your name! <br>
+      <input type='text' name='name'><br>
+      <center><input type='submit' value='Submit'>
+</form>
+</body>
