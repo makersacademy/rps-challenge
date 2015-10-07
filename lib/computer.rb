@@ -1,9 +1,9 @@
 class Computer
 
-COMPUTER_MOVES = [:rock, :paper, :scissors, :lizard, :spock]
+MOVES = [:rock, :paper, :scissors, :lizard, :spock]
 
   def play
-    COMPUTER_MOVES.sample
+    MOVES.sample
   end
 
 end
