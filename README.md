@@ -29,10 +29,9 @@ I would like to be able to play rock/paper/scissors
 ## Technologies Used:
 
 1. Ruby
-2. RSpec
+2. RSpec and Capybara for testing
 3. Sinatra
-4. Capybara
-5. HTML and CSS
+4. HTML and CSS
 3. Github
 
 ## Functionality I implemented:
@@ -45,7 +44,7 @@ I would like to be able to play rock/paper/scissors
 
 ## Approach I took:
 
-I started by breaking down each user story and outlining possible classes and methods. I decided to have three classes: Player, Computer and Game. I experimented using irb to figure out how my classes/objects would interact what method names to use. I then built the system using TTD, a RED -> GREEN -> REFACTOR approach, and wrote each test first, watched it fail, made it pass and then refactored if needed. This ensures that bugs can be eliminated.
+I started by breaking down each user story and outlining possible classes and methods. I decided to have three classes: Player, Computer and Game. I experimented using irb to figure out how my classes/objects would interact what method names to use. I then built the system using TTD, a RED -> GREEN -> REFACTOR approach, and wrote each test first, watched it fail, made it pass and then refactored if needed. This ensures that bugs can be eliminated. Next, I moved onto to using Sinatra to create my application on the browser. I finished with some HTML styling to make the app look more appealing. 
 
 ## How the app works:
 
@@ -74,8 +73,22 @@ I started by breaking down each user story and outlining possible classes and me
 
 App completed and all tests passing
 
-## New things I learnt/improved on:
+## Instructions on installing and running tests:
 
-1. Sinatra web application
-2. Capybara
-3. HTML
+Clone this repository:
+```
+$ git clone https://github.com/catherinestevenson/rps-challenge
+```
+Once cloned change into the directory and run bundle install to install all gems. 
+```
+$ cd rps_challenge
+$ bundle install
+```
+You can then use RSpec to check tests:
+```
+$ rspec
+```
+To run the app on your localhost browser use rackup:
+```
+$ rackup
+```
