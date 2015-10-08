@@ -21,19 +21,9 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/computer_result' do
-    @user_name = session[:user_name]
-    @user_shape = params[:shape]
-
-    user_hand = Hand.new
-    user_hand.shape! @user_shape.to_sym
-
-    computer_hand = Hand.new
-    computer_hand.randomise
-    @computer_shape = computer_hand.shape?
-
-    rps_game = Game.new
-    @result = rps_game.run_game(user_hand, computer_hand)
-
+    user= Hand.new(name: session[:user_name]).throw_hand(params[:shape].to_sym)
+    computer = Hand.new(name: "Computer").throw_hand
+    @game = Game.new(user, computer)
     erb :computer_result
   end
 

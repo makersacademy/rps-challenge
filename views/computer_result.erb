@@ -1,15 +1,11 @@
 <div>
 
-<% if @result == :hand_1_win %>
-  <h2>You win, <%= @user_name %>!</h2>
-  You chose <%= @user_shape %> and the computer chose <%= @computer_shape %>. Yey!<p>
-<% elsif @result == :tie %>
-  <h2>Aha, you tied with the computer, <%= @user_name %>.</h2>
-  You chose <%= @user_shape %> and the computer chose <%= @computer_shape %>. Coincidence, huh?<p>
-  <% else %>
-  <h2>Sorry, you lost, <%= @user_name %>.</h2>
-  You chose <%= @user_shape %> and the computer chose <%= @computer_shape %>. Boosticks!<p>
-<% end %>
+<% unless @game.draw?%>
+  <h2>Aha, you tied with the computer. </h2>
+<%else%>
+ <%= @game.winner.name%>  beats <%= @game.loser.name %>
+<%end%>
+
 <a href='/new_computer_game'>Play again</a>
 
 </div>
