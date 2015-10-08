@@ -1,0 +1,12 @@
+<div>
+
+<h2>Welcome to Rock, Paper, Scissors, <%= @user_name %>!</h2>
+Please choose an RPS shape and try your luck against your flesh-and-blood opponent! :) <p>
+<form method="POST" action="/multiplayer_result">
+  <input id="rock_radio" type="radio" name="shape" value="rock" checked> Rock <br>
+  <input id="paper_radio" type="radio" name="shape" value="paper"> Paper <br>
+  <input id="scissors_radio" type="radio" name="shape" value="scissors"> Scissors <p>
+  <input type="submit" value="Submit">
+</form>
+
+</div>
