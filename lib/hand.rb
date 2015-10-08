@@ -12,7 +12,7 @@ class Hand
     self
   end
 
-private
+  private
 
   def randomise
     @shape = ALLOWED_SHAPES[ rand(3) ]

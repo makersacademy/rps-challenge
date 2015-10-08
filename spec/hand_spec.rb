@@ -13,7 +13,8 @@ subject { Hand.new('Tim') }
     end
 
     it 'rejects an incorrect RPS shape.' do
-      expect { subject.throw_hand('rock') }.to raise_error 'This is not a recognised RPS shape.'
+      expect { subject.throw_hand('rock') }.to raise_error 'This ' \
+      'is not a recognised RPS shape.'
     end
 
     it 'throws a random RPS hand if none is set.' do
