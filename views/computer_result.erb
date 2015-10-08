@@ -1,11 +1,11 @@
 <div>
 
-<% unless @game.draw?%>
-  <h2>Aha, you tied with the computer. </h2>
-<%else%>
- <%= @game.winner.name%>  beats <%= @game.loser.name %>
-<%end%>
+<% if @game.tie? %>
+Aha, you tied with the computer, beats a slap in the face with a wet fish.
+<% else %>
+<%= @game.winner.name %> beats <%= @game.loser.name %>!
+<% end %>
 
-<a href='/new_computer_game'>Play again</a>
+<p><a href='/new_computer_game'>Play again</a></p>
 
 </div>

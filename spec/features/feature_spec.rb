@@ -43,7 +43,7 @@ feature 'In single player mode,' do
   end
 
   scenario 'I want to be able to choose an RPS shape to play and to get a result.' do
-    expect(page).to have_content 'You chose rock and the computer chose'
+    expect(page).to have_content 'beats'
   end
 
   scenario 'I want to be offered the chance to play again.' do
@@ -71,7 +71,7 @@ feature 'In multiplayer mode,' do
   end
 
   scenario 'I want to be able to choose an RPS shape to play and to get a result.' do
-    expect(page).to have_content 'You chose paper and your opponent chose rock. Yey!'
+    expect(page).to have_content 'Bobby beats Dobby!'
   end
 
   scenario 'I want to be offered the chance to play again.' do
