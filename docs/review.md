@@ -86,13 +86,9 @@ Ruby class files should be named with the snake_case version of the class name. 
 - `class RPS_web` -> `rps_web.rb`
 - `class RPSWeb` -> `rps.rb`
 
-## Not initializing capybara correctly
+## Not initializing capybara/ spec_helper correctly
 
-In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten, so you may want to save all the CI first.
-
-## Overwriting spec_helper
-
-When using generators such as `rspec-sinatra` beware that spec_helper.rb will be rewritten. Make sure you make a copy of all the pre-written CI code, otherwise you will break your coveralls CI, causing silent failure of your pull request.
+In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten; make sure you copy all the pre-written CI code, otherwise you will break your coveralls CI, causing silent failure of your pull request.
 
 ## Not removing comments before committing
 
