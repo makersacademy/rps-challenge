@@ -13,9 +13,25 @@ Please checkout your reviewee's code and run their tests. Read the code and try 
 
 ## Instructions in README
 
-[as we saw previously] The README is a great place to show the full story of how your app is used (from a user's perspective), e.g.
+As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instruction for how to download and run the app, e.g.:
 
-TODO - include how to run it, include a screenshot etc.
+```sh
+git clone git@github.com:[USERNAME]/rps-challenge.git
+cs rps-challenge
+bundle
+rackup
+```
+
+And maybe include some screenshots?  For more info on embedding images in a README: https://guides.github.com/features/mastering-markdown/
+
+e.g.:
+```
+![Screenshot](https://path_to_your_image)
+```
+
+You will need to host your images somewhere, e.g.:
+* http://imgur.com/
+* http://dropbox.com/
 
 ## Inconsistent folder layout (Sinatra structure)
 
@@ -25,14 +41,35 @@ Structure is an important decision in your design as it affects readability.  On
 
 Here is a checklist to consider:
 If the structure has an `/app` folder:
-* Is the server file (e.g server.rb or app.rb) at the top level of the `/app` folder?
+* Is the server file (e.g rps_web.rb or app.rb) at the top level of the `/app` folder?
 * Is the `/views` folder in `/app`?
 * Is the `/lib` folder in the project root folder?
 
+```
+├── app
+│   └── rps_web.rb
+│   └── views
+│       └── index.erb
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+└── spec
+    └── spec_helper.rb
+```
 If the structure does not have an `/app` folder:
-* Is the server file (e.g server.rb or app.rb) in the project root folder?
-
-[Note: should we have some example trees?]
+* Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
+```
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+├── spec
+│   └── spec_helper.rb
+├── views
+│   └── index.erb
+└── rps_web.rb
+```
 
 ## Inconsistent file naming
 
@@ -181,17 +218,18 @@ RULES = { rock: [scissors, lizard],
 ```ruby
 class Weapon
   attr_reader :type
+
   def initialize(type)
     @type = type.to_sym
   end
 
   def beats?(other)
-    RULES[type][other]
+    RULES[type][other.type]
   end
 end
 
-$ rock = Weapon.new(:rock)
-$ rock.beats?(Weapon.new(:scissors))
+rock = Weapon.new(:rock)
+rock.beats?(Weapon.new(:scissors))
 ```
 
 ## Not encapsulating the 'computer' in a separate class
