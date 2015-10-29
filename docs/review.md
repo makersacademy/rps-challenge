@@ -32,6 +32,8 @@ If the structure has an `/app` folder:
 If the structure does not have an `/app` folder:
 * Is the server file (e.g server.rb or app.rb) in the project root folder?
 
+[Note: should we have some example trees?]
+
 ## Inconsistent file naming
 
 Ruby class files should be named with the snake_case version of the class name.  Class names should be PascalCase.  Hence:
@@ -138,26 +140,22 @@ end
 ```ruby
 class Game
   def result
-    :win
+    :win # hard coded for example purposes
   end
 end
 
 class RPSWeb < Sinatra::Application
   get '/result' do
     @game = Game.new
-    erb :result
+    erb @game.result
   end
 end
 ```
 
+in `views/win.erb`:
+
 ```html
-<h1>
-<% if @game.result == :win %>
-  Congratulations - you won
-<% else %>
-  Sorry - you lost
-<% end %>
-</h1>
+<h1>Congratulations - you won</h1>
 ```
 
 ### Use of `if/elsif` conditionals for business logic
@@ -233,36 +231,43 @@ end
 
 ### Use of global variables
 
-It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But *global variables are evil*.  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
+It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But [*global variables are evil*](http://c2.com/cgi/wiki?GlobalVariablesAreBad).  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
 
 ```ruby
+class Player
+
+  # class methods
+
+  def self.find(id)
+    players[id]
+  end
+
+  def self.add(id, player)
+    players[id] = player
+  end
+
+  def self.players
+    @players ||= {}
+  end
+
+  # instance methods
+
+  attr_reader :name
+
+  # ... other instance methods
+end
+
 class RpsWeb < Sinatra::Application
   enable :sessions
 
-  class << self
-    def player(id)
-      players[id]
-    end
-
-    def add_player(id, player)
-      players[id] = player
-    end
-
-    private
-
-    def players
-      @players ||= {}
-    end
-  end
-
   helpers do
     def current_player
-      RpsWeb.player(session[:player_id])
+      Player.find(session[:player_id])
     end
 
     def add_player(player)
       id = player.object_id
-      RpsWeb.add_player(id, player)
+      Player.add(id, player)
       session[:player_id] = id
     end
   end
