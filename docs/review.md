@@ -13,13 +13,13 @@ Please checkout your reviewee's code and run their tests. Read the code and try 
 
 ## Instructions in README
 
-As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instruction for how to download and run the app, e.g.:
+As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instructions for how to download and run the app, e.g.:
 
 ```sh
-git clone git@github.com:[USERNAME]/rps-challenge.git
-cs rps-challenge
-bundle
-rackup
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 ```
 
 And maybe include some screenshots?  For more info on embedding images in a README: https://guides.github.com/features/mastering-markdown/
@@ -57,8 +57,10 @@ If the structure has an `/app` folder:
 └── spec
     └── spec_helper.rb
 ```
+
 If the structure does not have an `/app` folder:
 * Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
+
 ```
 ├── lib
 │   ├── game.rb
@@ -85,12 +87,15 @@ Ruby class files should be named with the snake_case version of the class name. 
 - `class RPSWeb` -> `rps.rb`
 
 ## Not initializing capybara correctly
+
 In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten, so you may want to save all the CI first.
 
 ## Overwriting spec_helper
+
 When using generators such as `rspec-sinatra` beware that spec_helper.rb will be rewritten. Make sure you make a copy of all the pre-written CI code, otherwise you will break your coveralls CI, causing silent failure of your pull request.
 
 ## Not removing comments before committing
+
 Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
 
@@ -116,11 +121,11 @@ Although you do not need to test all possible combinations, your feature tests s
 
 to ensure the user interface logic is correct.
 
-### Feature tests can have more than one expect statement per it block (i)
+### Feature tests can have more than one expect statement per it block
 
 * feature tests can have more than one expect statement per it block
 
-### Stub out random behaviour (i)
+### Stub out random behaviour
 
 * stub out random behaviour to ensure your feature tests pass consistently, e.g. (i)
 
@@ -136,10 +141,6 @@ feature 'Playing the game' do
   end
 end
 ```
-
-### Feature tests with multiple users (i)
-
-* to get feature tests working for multiple users you need to work with Capybara sessions, see: http://blog.bruzilla.com/2012/04/10/using-multiple-capybara-sessions-in-rspec-request.html  TODO - say google this?
 
 # Step 3: Application code and \*.rb files
 
@@ -200,12 +201,15 @@ Long `if` and `elsif` trees are very difficult to read and nested `if` statement
 There are a number of approaches to the game logic of Rock Paper Scissors,  e.g.:
 
 - Use a hash to map the rules:
+
 ```ruby
 RULES = { rock: :scissors,
           paper: :rock,
           scissors: :paper }
 ```
+
 or for RPSLS:
+
 ```ruby
 RULES = { rock: [scissors, lizard],
           paper: [:rock, :spock],
@@ -311,12 +315,15 @@ end
 ## Not storing the weapons in a constant
 
 If you have something like this:
+
 ```ruby
 def weapons
   ['Rock', 'Paper', 'Scissors']
 end
 ```
+
 Then *four* new objects will be created *every time you call `weapons`*  (what are the four objects?).  Use a constant with symbols instead:
+
 ```ruby
 WEAPONS = [:rock, :paper, :scissors]
 ```
@@ -325,16 +332,16 @@ WEAPONS = [:rock, :paper, :scissors]
 
 Routes should not have dual purposes.  Each discrete action of your programme should have its own dedicated route (N.B. the route comprises both the verb and the path).
 
-The preferred convention for naming routes is snake_case, e.g. `new_game` over `NewGame`.
+The preferred convention for naming routes is snake_case, e.g. `game` over `Game`.
 
 ```ruby
 class RPSWeb < Sinatra::Application
 
-  get '/new_game' do
+  get '/game' do
     erb :new_game
   end
 
-  post '/new_game' do
+  post '/game' do
     @game = Game.new(params)
     redirect to '/play'
   end
@@ -342,9 +349,7 @@ end
 
 ```
 
-[Note: should the route be 'game' rather than 'new_game'?]
-
-In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new_game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
+In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
 
 ## Defining weapons in more than one place
 
@@ -370,7 +375,6 @@ class Player
   end
 end
 ```
-
 
 ## Calling business logic from the view
 
@@ -405,7 +409,7 @@ end
 </h1>
 ```
 
-**good**
+**better**
 
 ```ruby
 class Game
@@ -417,19 +421,15 @@ end
 class RPSWeb < Sinatra::Application
   get '/choose' do
     @game.player1_choice(params[:choice])
-    erb :result
+    erb @game.result
   end
 end
 ```
 
+in `views/win.erb`:
+
 ```html
-<h1>
-<% if @game.result == :win %>
-  Congratulations - you won
-<% else %>
-  Sorry - you lost
-<% end %>
-</h1>
+<h1>Congratulations - you won</h1>
 ```
 
 ## Fat controllers
@@ -467,24 +467,20 @@ class Game
     @player_choice = weapon
   end
   def result
-    RULES[player_choice][computer.choice()]
+    RULES[player_choice][computer.choice()] ? :win : :lose
   end
 end
 
 class RPSWeb < Sinatra::Application
   get '/play' do
     @game.player1_choice = params[:choice]
-    erb :result
+    erb @game.result
   end
 end
 ```
 
+in `views/win.erb`:
+
 ```html
-<h1>
-<% if @game.result == :win %>
-  Congratulations - you won
-<% else %>
-  Sorry - you lost
-<% end %>
-</h1>
+<h1>Congratulations - you won</h1>
 ```
