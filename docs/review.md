@@ -112,7 +112,53 @@ Your `Game` class (or similar) should not return presentation strings like `"Con
 
 This approach makes it possible to change the presentation layer (e.g. to add support for a different language) without changing the lower-level code (**open/closed principle**).
 
-[code example?]
+**bad**
+
+```ruby
+class Game
+  def result
+    'Congratulations - you won!'
+  end
+end
+
+class RPSWeb < Sinatra::Application
+  get '/result' do
+    @game = Game.new
+    erb :result
+  end
+end
+```
+
+```html
+<h1><%= @game.result%></h1>
+```
+
+**good**
+
+```ruby
+class Game
+  def result
+    :win
+  end
+end
+
+class RPSWeb < Sinatra::Application
+  get '/result' do
+    @game = Game.new
+    erb :result
+  end
+end
+```
+
+```html
+<h1>
+<% if @game.result == :win %>
+  Congratulations - you won
+<% else %>
+  Sorry - you lost
+<% end %>
+</h1>
+```
 
 ### Use of `if/elsif` conditionals for business logic
 
@@ -122,13 +168,13 @@ There are a number of approaches to the game logic of Rock Paper Scissors,  e.g.
 
 - Use a hash to map the rules:
 ```
-rules = { rock: :scissors,
+RULES = { rock: :scissors,
           paper: :rock,
           scissors: :paper }
 ```
 or for RPSLS:
 ```
-rules = { rock: [scissors, lizard],
+RULES = { rock: [scissors, lizard],
           paper: [:rock, :spock],
           scissors: [:paper, :lizard],
           lizard: [:paper, :spock],
@@ -136,13 +182,54 @@ rules = { rock: [scissors, lizard],
 ```
 - Use individual classes for each weapon (i.e. `Rock`, `Paper` etc.) with a `beats?` or similar method that takes another weapon as a parameter.
 
-[code example?]
+```ruby
+class RPS
+  def wins?(strategy1, strategy2)
+    RULES[strategy1][strategy2]
+  end
+end
+
+$ rps = RPS.new
+$ rps.wins(:rock, :scissors)
+```
+
+NOTE: makes me want to write something like:
+
+```ruby
+class Scissors
+end
+
+class Rock
+  def self.beats?(strategy)
+    strategy == Scissors
+  end
+end
+
+$ Rock.beats? Scissors
+=> true
+
+```
 
 ### Not encapsulating the 'computer' in a separate class
 
 By creating a `Computer` class, you can take advantage of duck-typing in the game class.  The game does not need to know if it's comparing two players or one player vs a computer or even two computers!
 
-[code example?]
+```ruby
+class Computer
+  def strategy
+    [:rock, :paper, :scissors].sample
+  end
+end
+
+class Player
+  attr_reader :strategy
+
+  def strategy=(strategy)
+    fail 'not a possible strategy' unless [:rock, :paper, :scissors].includes? strategy
+    @strategy = strategy
+  end
+end
+```
 
 ### Use of global variables
 
@@ -211,13 +298,15 @@ Routes should not have dual purposes.  Each discrete action of your programme sh
 
 The preferred convention for naming routes is snake_case, e.g. `new_game` over `NewGame`.
 
-### Defining weapons in more than one place
-
-Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
 
 ### POSTing to `/result`
 
 Sending a `POST` to `/result` implies that you are _setting_ the result rather than submitting a go.  `/play` would be better.
+
+### Defining weapons in more than one place
+
+Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
+
 
 ### Calling business logic from the view
 
