@@ -99,13 +99,6 @@ end
 
 * to get feature tests working for multiple users you need to work with Capybara sessions, see: http://blog.bruzilla.com/2012/04/10/using-multiple-capybara-sessions-in-rspec-request.html  TODO - say google this?
 
-
-
-### Cleaning the global variable in a `before` block
-By doing this, you are modifying the code before you execute any steps - how do you know the code works in an unmodified state? Better to 'clean' the global variable _after_ each test.
-
-[TODO check the deal with globals]
-
 # Step 3: Application code and \*.rb files
 
 ### Including presentation strings in business logic layer
@@ -146,17 +139,13 @@ By creating a `Computer` class, you can take advantage of duck-typing in the gam
 
 [code example?]
 
-### Encapsulating the computer into a separate class, but not making it a duck type with Player
-
-The game does not need to know if it's comparing two players or one player vs a computer or even two computers. Computer and Player should share the same interface, so that one can be substituted for another.
-
-[same as above]
-
 ### Using global variables
 
 You may use _one_ and only one global variable or class variable to store the game.  All other objects should be referenced within the game if necessary.
 
 [check with coaches what the deal is here?]
+
+[can we present an alternative here?]
 
 ### Not storing the weapons in a constant
 
