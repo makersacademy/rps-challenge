@@ -298,20 +298,164 @@ Routes should not have dual purposes.  Each discrete action of your programme sh
 
 The preferred convention for naming routes is snake_case, e.g. `new_game` over `NewGame`.
 
+```ruby
+class RPSWeb < Sinatra::Application
 
-### POSTing to `/result`
+  get '/new_game' do
+    erb :new_game
+  end
 
-Sending a `POST` to `/result` implies that you are _setting_ the result rather than submitting a go.  `/play` would be better.
+  post '/new_game' do
+    @game = Game.new(params)
+    redirect to '/play'
+  end
+end
+
+```
+
+[Note: should the route be 'game' rather than 'new_game'?]
+
+In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new_game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
 
 ### Defining weapons in more than one place
 
 Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
+
+Let's DRY the code from the encapsulation example above:
+
+```ruby
+STRATEGIES = [:rock, :paper, :scissors]
+
+class Computer
+  def strategy
+    STRATEGIES.sample
+  end
+end
+
+class Player
+  attr_reader :strategy
+
+  def strategy=(strategy)
+    fail 'not a possible strategy' unless STRATEGIES.includes? strategy
+    @strategy = strategy
+  end
+end
+```
 
 
 ### Calling business logic from the view
 
 It is the controller's responsibility to pass the player's weapon to the game and get the result.  Use instance variables or helper methods to represent or convert this result for rendering in the view.
 
+**bad**
+
+```ruby
+class Game
+  def result
+    :win
+  end
+end
+
+class RPSWeb < Sinatra::Application
+  get '/choose' do
+    @player1_choice = params[:choice]
+    @game = Game.current_game(session[:game_id])
+    erb :result
+  end
+end
+```
+
+```html
+<h1>
+<% @game.player1_choice(@player1_choice) %>
+<% if @game.result == :win %>
+  Congratulations - you won
+<% else %>
+  Sorry - you lost
+<% end %>
+</h1>
+```
+
+**good**
+
+```ruby
+class Game
+  def result
+    :win
+  end
+end
+
+class RPSWeb < Sinatra::Application
+  get '/choose' do
+    @game.player1_choice(params[:choice])
+    erb :result
+  end
+end
+```
+
+```html
+<h1>
+<% if @game.result == :win %>
+  Congratulations - you won
+<% else %>
+  Sorry - you lost
+<% end %>
+</h1>
+```
+
 ### Fat controllers
 
 Game logic should be executed in your lib files. You should minimise the amount of logic in the controller by extracting it to the lib files. This helps to ensure your code is testable, maintainable and reusable.
+
+**bad**
+
+```ruby
+class RPSWeb < Sinatra::Application
+  get '/choose' do
+    @player1_choice = params[:choice]
+    @computer_choice = [:rock, :scissors, :paper].sample
+    @result = 'you lose!'
+    if RULES[@player1_choice][@computer_choice]
+      @result = 'you win!'
+    end
+    erb :result
+  end
+end
+```
+
+```html
+<h1><%= @result %></h1>
+```
+
+**good**
+
+```ruby
+STRATEGIES = [:rock, :paper, :scissors]
+
+class Game
+  def player1_choice=(player1_choice)
+    fail 'not a possible strategy' unless STRATEGIES.includes? strategy
+    @player1_choice = player1_choice
+  end
+  def result
+    RULES[player1_choice][computer.choice()]
+  end
+end
+
+class RPSWeb < Sinatra::Application
+  get '/choose' do
+    @game.player1_choice = params[:choice]
+    erb :result
+  end
+end
+```
+
+```html
+<h1>
+<% if @game.result == :win %>
+  Congratulations - you won
+<% else %>
+  Sorry - you lost
+<% end %>
+</h1>
+```
