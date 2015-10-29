@@ -13,9 +13,25 @@ Please checkout your reviewee's code and run their tests. Read the code and try 
 
 ## Instructions in README
 
-[as we saw previously] The README is a great place to show the full story of how your app is used (from a user's perspective), e.g.
+As we have seen previously, the README is a great place to show the full story of how your app is used (from a user's perspective).  For a web app, include instruction for how to download and run the app, e.g.:
 
-TODO - include how to run it, include a screenshot etc.
+```sh
+git clone git@github.com:[USERNAME]/rps-challenge.git
+cs rps-challenge
+bundle
+rackup
+```
+
+And maybe include some screenshots?  For more info on embedding images in a README: https://guides.github.com/features/mastering-markdown/
+
+e.g.:
+```
+![Screenshot](https://path_to_your_image)
+```
+
+You will need to host your images somewhere, e.g.:
+* http://imgur.com/
+* http://dropbox.com/
 
 ## Inconsistent folder layout (Sinatra structure)
 
@@ -25,27 +41,48 @@ Structure is an important decision in your design as it affects readability.  On
 
 Here is a checklist to consider:
 If the structure has an `/app` folder:
-* Is the server file (e.g server.rb or app.rb) at the top level of the `/app` folder?
+* Is the server file (e.g rps_web.rb or app.rb) at the top level of the `/app` folder?
 * Is the `/views` folder in `/app`?
 * Is the `/lib` folder in the project root folder?
 
+```
+├── app
+│   └── rps_web.rb
+│   └── views
+│       └── index.erb
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+└── spec
+    └── spec_helper.rb
+```
 If the structure does not have an `/app` folder:
-* Is the server file (e.g server.rb or app.rb) in the project root folder?
+* Is the server file (e.g rps_web.rb or app.rb) in the project root folder?
+```
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+├── spec
+│   └── spec_helper.rb
+├── views
+│   └── index.erb
+└── rps_web.rb
+```
 
 ## Inconsistent file naming
 
 Ruby class files should be named with the snake_case version of the class name.  Class names should be PascalCase.  Hence:
 ### Good
 
-- `class Rps` -> `rps.rb`
-- `class RpsWeb` -> `rps_web.rb`
+- `class RPS` -> `rps.rb`
+- `class RPSWeb` -> `rps_web.rb`
 
 ### Bad
 
 - `class RPS_web` -> `rps_web.rb`
-- `class RpsWeb` -> `rps.rb`
-
-Note, naming conventions tend to prefer acronyms to be 'wordified' i.e.  `RPS` becomes `Rps` or `rps` as appropriate.
+- `class RPSWeb` -> `rps.rb`
 
 ## Not initializing capybara correctly
 In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten, so you may want to save all the CI first.
@@ -106,7 +143,7 @@ end
 
 # Step 3: Application code and \*.rb files
 
-### Including presentation strings in business logic layer
+## Including presentation strings in business logic layer
 
 Your `Game` class (or similar) should not return presentation strings like `"Congratulations - you won!"`.  This is a presentation concern and should be handled in another layer of code (**separation of concerns**).  Instead, return representative codes, such as `:win` and `:draw` from the `Game` class which can be translated by the presentation layer.
 
@@ -138,131 +175,123 @@ end
 ```ruby
 class Game
   def result
-    :win
+    :win # hard coded for example purposes
   end
 end
 
 class RPSWeb < Sinatra::Application
   get '/result' do
     @game = Game.new
-    erb :result
+    erb @game.result
   end
 end
 ```
 
+in `views/win.erb`:
+
 ```html
-<h1>
-<% if @game.result == :win %>
-  Congratulations - you won
-<% else %>
-  Sorry - you lost
-<% end %>
-</h1>
+<h1>Congratulations - you won</h1>
 ```
 
-### Use of `if/elsif` conditionals for business logic
+## Use of `if/elsif` conditionals for business logic
 
 Long `if` and `elsif` trees are very difficult to read and nested `if` statements require too much working memory for a reader to quickly scan.
 
 There are a number of approaches to the game logic of Rock Paper Scissors,  e.g.:
 
 - Use a hash to map the rules:
-```
+```ruby
 RULES = { rock: :scissors,
           paper: :rock,
           scissors: :paper }
 ```
 or for RPSLS:
-```
+```ruby
 RULES = { rock: [scissors, lizard],
           paper: [:rock, :spock],
           scissors: [:paper, :lizard],
           lizard: [:paper, :spock],
           spock: [:rock, :scissors] }
 ```
-- Use individual classes for each weapon (i.e. `Rock`, `Paper` etc.) with a `beats?` or similar method that takes another weapon as a parameter.
+- Use a `Weapon` class with a `beats?` or similar method that takes another weapon instance as a parameter.
 
 ```ruby
-class RPS
-  def wins?(strategy1, strategy2)
-    RULES[strategy1][strategy2]
+class Weapon
+  attr_reader :type
+
+  def initialize(type)
+    @type = type.to_sym
+  end
+
+  def beats?(other)
+    RULES[type][other.type]
   end
 end
 
-$ rps = RPS.new
-$ rps.wins(:rock, :scissors)
+rock = Weapon.new(:rock)
+rock.beats?(Weapon.new(:scissors))
 ```
 
-NOTE: makes me want to write something like:
-
-```ruby
-class Scissors
-end
-
-class Rock
-  def self.beats?(strategy)
-    strategy == Scissors
-  end
-end
-
-$ Rock.beats? Scissors
-=> true
-
-```
-
-### Not encapsulating the 'computer' in a separate class
+## Not encapsulating the 'computer' in a separate class
 
 By creating a `Computer` class, you can take advantage of duck-typing in the game class.  The game does not need to know if it's comparing two players or one player vs a computer or even two computers!
 
 ```ruby
 class Computer
-  def strategy
+  def weapon
     [:rock, :paper, :scissors].sample
   end
 end
 
 class Player
-  attr_reader :strategy
+  attr_reader :weapon
 
-  def strategy=(strategy)
-    fail 'not a possible strategy' unless [:rock, :paper, :scissors].includes? strategy
-    @strategy = strategy
+  def weapon=(weapon)
+    fail 'not a possible weapon' unless [:rock, :paper, :scissors].includes? weapon
+    @weapon = weapon
   end
 end
 ```
 
-### Use of global variables
+## Use of global variables
 
-It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But *global variables are evil*.  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
+It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But [*global variables are evil*](http://c2.com/cgi/wiki?GlobalVariablesAreBad).  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
 
 ```ruby
-class RpsWeb < Sinatra::Application
-  enable :sessions
+class Player
 
-  class << self
-    def player(id)
-      players[id]
-    end
+  # class methods
 
-    def add_player(id, player)
-      players[id] = player
-    end
-
-    private
-
-    def players
-      @players ||= {}
-    end
+  def self.find(id)
+    players[id]
   end
+
+  def self.add(id, player)
+    players[id] = player
+  end
+
+  def self.players
+    @players ||= {}
+  end
+
+  # instance methods
+
+  attr_reader :name
+
+  # ... other instance methods
+end
+
+class RPSWeb < Sinatra::Application
+  enable :sessions
 
   helpers do
     def current_player
-      RpsWeb.player(session[:player_id])
+      Player.find(session[:player_id])
     end
 
     def add_player(player)
       id = player.object_id
-      RpsWeb.add_player(id, player)
+      Player.add(id, player)
       session[:player_id] = id
     end
   end
@@ -292,7 +321,7 @@ Then *four* new objects will be created *every time you call `weapons`*  (what a
 WEAPONS = [:rock, :paper, :scissors]
 ```
 
-### Inconsistent routing and route naming
+## Inconsistent routing and route naming
 
 Routes should not have dual purposes.  Each discrete action of your programme should have its own dedicated route (N.B. the route comprises both the verb and the path).
 
@@ -317,33 +346,33 @@ end
 
 In the above example the first route GETs the form that allows a user to create a new game.  This action does not change any state on the server so it's important that we use the GET action, and not POST.  The second route corresponds to the POSTed submission of the new_game form.  This action does create some state on the server, i.e. the creation of a particular game, so it makes sense to use the active verb POST here.
 
-### Defining weapons in more than one place
+## Defining weapons in more than one place
 
 Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in only one place.  It can be passed around or referenced or injected, but not duplicated!
 
 Let's DRY the code from the encapsulation example above:
 
 ```ruby
-STRATEGIES = [:rock, :paper, :scissors]
+WEAPONS = [:rock, :paper, :scissors]
 
 class Computer
-  def strategy
-    STRATEGIES.sample
+  def weapon
+    WEAPONS.sample
   end
 end
 
 class Player
-  attr_reader :strategy
+  attr_reader :weapon
 
-  def strategy=(strategy)
-    fail 'not a possible strategy' unless STRATEGIES.includes? strategy
-    @strategy = strategy
+  def weapon=(weapon)
+    fail 'not a possible weapon' unless WEAPONS.includes? weapon
+    @weapon = weapon
   end
 end
 ```
 
 
-### Calling business logic from the view
+## Calling business logic from the view
 
 It is the controller's responsibility to pass the player's weapon to the game and get the result.  Use instance variables or helper methods to represent or convert this result for rendering in the view.
 
@@ -403,7 +432,7 @@ end
 </h1>
 ```
 
-### Fat controllers
+## Fat controllers
 
 Game logic should be executed in your lib files. You should minimise the amount of logic in the controller by extracting it to the lib files. This helps to ensure your code is testable, maintainable and reusable.
 
@@ -412,10 +441,10 @@ Game logic should be executed in your lib files. You should minimise the amount 
 ```ruby
 class RPSWeb < Sinatra::Application
   get '/choose' do
-    @player1_choice = params[:choice]
+    @player_choice = params[:choice]
     @computer_choice = [:rock, :scissors, :paper].sample
     @result = 'you lose!'
-    if RULES[@player1_choice][@computer_choice]
+    if RULES[@player_choice][@computer_choice]
       @result = 'you win!'
     end
     erb :result
@@ -427,23 +456,23 @@ end
 <h1><%= @result %></h1>
 ```
 
-**good**
+**better**
 
 ```ruby
-STRATEGIES = [:rock, :paper, :scissors]
+WEAPONS = [:rock, :paper, :scissors]
 
 class Game
-  def player1_choice=(player1_choice)
-    fail 'not a possible strategy' unless STRATEGIES.includes? strategy
-    @player1_choice = player1_choice
+  def player_choice=(weapon)
+    fail 'not a possible weapon' unless WEAPONS.includes? weapon
+    @player_choice = weapon
   end
   def result
-    RULES[player1_choice][computer.choice()]
+    RULES[player_choice][computer.choice()]
   end
 end
 
 class RPSWeb < Sinatra::Application
-  get '/choose' do
+  get '/play' do
     @game.player1_choice = params[:choice]
     erb :result
   end
