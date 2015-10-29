@@ -17,38 +17,43 @@ Please checkout your reviewee's code and run their tests. Read the code and try 
 
 TODO - include how to run it, include a screenshot etc.
 
-## Folder layout (sinatra config)
+## Inconsistent folder layout (Sinatra structure)
 
-TODO
+Sinatra is not a particularly opinionated framework (unlike Rails).  This means it does not mandate folder structures and naming conventions.  This gives developers the freedom to choose their own structures according to the needs of a project.
 
-* lib vs app Folder
-* location of server file (e.g server.rb or app.rb)
-* sinatra's lack of opinionation
-* relation to config.ru, Procfile?
-* filename conventions (matching class and filename) - see rubocop
+Structure is an important decision in your design as it affects readability.  One of the most important considerations is the *separation of concerns*
 
-### Inconsistent file naming
+Here is a checklist to consider:
+If the structure has an `/app` folder:
+* Is the server file (e.g server.rb or app.rb) at the top level of the `/app` folder?
+* Is the `/views` folder in `/app`?
+* Is the `/lib` folder in the project root folder?
+
+If the structure does not have an `/app` folder:
+* Is the server file (e.g server.rb or app.rb) in the project root folder?
+
+## Inconsistent file naming
 
 Ruby class files should be named with the snake_case version of the class name.  Class names should be PascalCase.  Hence:
-#### Good
+### Good
 
 - `class Rps` -> `rps.rb`
 - `class RpsWeb` -> `rps_web.rb`
 
-#### Bad
+### Bad
 
 - `class RPS_web` -> `rps_web.rb`
 - `class RpsWeb` -> `rps.rb`
 
 Note, naming conventions tend to prefer acronyms to be 'wordified' i.e.  `RPS` becomes `Rps` or `rps` as appropriate.
 
-### Not initialising capybara correctly
+## Not initializing capybara correctly
 In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten, so you may want to save all the CI first.
 
-### Overwriting spec_helper
+## Overwriting spec_helper
 When using generators such as `rspec-sinatra` beware that spec_helper.rb will be rewritten. Make sure you make a copy of all the pre-written CI code, otherwise you will break your coveralls CI, causing silent failure of your pull request.
 
-### Not removing comments before committing
+## Not removing comments before committing
 Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
 
@@ -139,24 +144,64 @@ By creating a `Computer` class, you can take advantage of duck-typing in the gam
 
 [code example?]
 
-### Using global variables
+### Use of global variables
 
-You may use _one_ and only one global variable or class variable to store the game.  All other objects should be referenced within the game if necessary.
+It is tempting to use global variables to ensure instances of a game or players are persisted across calls to the server.  But *global variables are evil*.  There are a number of other ways to achieve the same thing.  While some may argue these also introduce 'globally accessible' state, the critical difference is we have more control over this state and it is properly **namespaced**.  Here is an example using a class methods inside the server and Sinatra helper methods to encapsulate the interface:
 
-[check with coaches what the deal is here?]
+```ruby
+class RpsWeb < Sinatra::Application
+  enable :sessions
 
-[can we present an alternative here?]
+  class << self
+    def player(id)
+      players[id]
+    end
 
-### Not storing the weapons in a constant
+    def add_player(id, player)
+      players[id] = player
+    end
+
+    private
+
+    def players
+      @players ||= {}
+    end
+  end
+
+  helpers do
+    def current_player
+      RpsWeb.player(session[:player_id])
+    end
+
+    def add_player(player)
+      id = player.object_id
+      RpsWeb.add_player(id, player)
+      session[:player_id] = id
+    end
+  end
+
+  get '/' do
+    "Hello #{current_player.name}" if current_player
+  end
+
+  post '/player' do
+    player = Player.new(params[:name])
+    add_player(player)
+    redirect_to '/'
+  end
+end
+```
+
+## Not storing the weapons in a constant
 
 If you have something like this:
-```
+```ruby
 def weapons
   ['Rock', 'Paper', 'Scissors']
 end
 ```
-Then 4 new objects will be created every time you call `weapons`.  Use a constant with symbols instead:
-```
+Then *four* new objects will be created *every time you call `weapons`*  (what are the four objects?).  Use a constant with symbols instead:
+```ruby
 WEAPONS = [:rock, :paper, :scissors]
 ```
 
