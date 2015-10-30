@@ -117,10 +117,6 @@ Although you do not need to test all possible combinations, your feature tests s
 
 to ensure the user interface logic is correct.
 
-### Feature tests can have more than one expect statement per it block
-
-* feature tests can have more than one expect statement per it block
-
 ### Stub out random behaviour
 
 * stub out random behaviour to ensure your feature tests pass consistently, e.g. (i)
@@ -354,11 +350,13 @@ Don't Repeat Yourself (DRY)!  The list of available weapons should be defined in
 Let's DRY the code from the encapsulation example above:
 
 ```ruby
-WEAPONS = [:rock, :paper, :scissors]
+class Game
+  WEAPONS = [:rock, :paper, :scissors]
+end
 
 class Computer
   def weapon
-    WEAPONS.sample
+    Game::WEAPONS.sample
   end
 end
 
@@ -366,7 +364,7 @@ class Player
   attr_reader :weapon
 
   def weapon=(weapon)
-    fail 'not a possible weapon' unless WEAPONS.includes? weapon
+    fail 'not a possible weapon' unless Game::WEAPONS.includes? weapon
     @weapon = weapon
   end
 end
@@ -455,9 +453,8 @@ end
 **better**
 
 ```ruby
-WEAPONS = [:rock, :paper, :scissors]
-
 class Game
+  WEAPONS = [:rock, :paper, :scissors]
   def player_choice=(weapon)
     fail 'not a possible weapon' unless WEAPONS.includes? weapon
     @player_choice = weapon
