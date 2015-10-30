@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/gamer'
 
 class Game < Sinatra::Base
 
@@ -7,18 +8,25 @@ class Game < Sinatra::Base
   run! if app_file == $0
 
   get '/' do
-    'Please enter your name:'
     erb(:index)
   end
 
   post '/registered' do
-    $p_name = params[:Player_name]
+    $p_name = Gamer.new(params[:Player_name])
     redirect('/play')
   end
 
-  get '/play' do
+  post '/play' do
     @p_name = $p_name
     erb(:play)
+    $player_choice = params[:rps]
+    redirect('/result')
   end
 
+  get '/result' do
+    @p_name = $p_name
+    @player_choice = $player_choice
+    @p_name.option(@player_choice)
+    erb(:result)
+  end
 end
