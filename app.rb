@@ -1,12 +1,17 @@
 require 'sinatra/base'
 
 class Game < Sinatra::Base
-# start the server if ruby file executed directly
 
+  enable :sessions
   run! if app_file == $0
-  get '/' do
-    'Hello Game!'
 
+  get '/' do
+    'Please enter your name:'
+    erb(:index)
+  end
+
+  post '/registered' do
+    session['name'] = params[:Player_name]
   end
 
 end
