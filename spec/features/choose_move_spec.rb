@@ -1,6 +1,8 @@
 require 'spec_helper'
+require 'game'
 
 feature 'Choose move' do
+  let(:game) { Game.new }
 
   scenario 'A player can choose Rock' do
     sign_in_and_play
@@ -21,9 +23,9 @@ feature 'Choose move' do
   end
 
   scenario 'Computer chooses random move' do
-    allow(game).to receive(:computer_move).and_return('Rock')
+    srand(67809)
     sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content('Computor chose Rock')
+    expect(page).to have_content('Computer chose Scissors')
   end
 end

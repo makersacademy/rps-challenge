@@ -23,7 +23,8 @@ class Rps < Sinatra::Base
   end
 
   get '/duel' do
-    @move = session[:move]
+    @player1_move = session[:move]
+    @player2_move = Game.new.computer_move
     erb :duel
   end
 
