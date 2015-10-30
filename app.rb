@@ -17,6 +17,16 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    session[:move] = params[:move]
+    redirect :duel
+  end
+
+  get '/duel' do
+    @move = session[:move]
+    erb :duel
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
