@@ -3,6 +3,7 @@ require 'sinatra/base'
 class Game < Sinatra::Base
 
   enable :sessions
+  set :sessions, 'my username'
   run! if app_file == $0
 
   get '/' do
@@ -11,7 +12,13 @@ class Game < Sinatra::Base
   end
 
   post '/registered' do
-    session['name'] = params[:Player_name]
+    $p_name = params[:Player_name]
+    redirect('/play')
+  end
+
+  get '/play' do
+    @p_name = $p_name
+    erb(:play)
   end
 
 end

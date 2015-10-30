@@ -1,13 +1,11 @@
 require 'capybara'
+require 'web_helpers'
 
   feature 'registers player name' do
 
     scenario 'asks to enter name' do
 
-      visit('/')
-      expect(page).to have_content('Please enter your name:')
-      fill_in('Player_name', with: 'SuperMarketer')
-      click_button('Submit')
+      register_and_play
       expect(page).to have_content('SuperMarketer')
 
     end
