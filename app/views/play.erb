@@ -1,7 +1,7 @@
 <h2>Current Player: <%= @player_name %></h2>
 
-<form action="/go" method="get">
-  <p><input type="submit" value="Rock"></p>
-  <p><input type="submit" value="Paper"></p>
-  <p><input type="submit" value="Scissors"></p>
+<form action="/go" method="post">
+  <p><input type="submit" value="Rock" name="hand"></p>
+  <p><input type="submit" value="Paper" name="hand"></p>
+  <p><input type="submit" value="Scissors" name="hand"></p>
 </form>

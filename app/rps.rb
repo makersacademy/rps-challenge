@@ -7,11 +7,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = params[:name]
+    $player_name = params[:name]
+    @player_name = $player_name
     erb :play
   end
 
+  post '/go' do
+    $hand = params[:hand]
+    redirect '/go'
+  end
+
   get '/go' do
-    p params
+    @player_name = $player_name
+    @hand = $hand
+    erb :go
   end
 end
