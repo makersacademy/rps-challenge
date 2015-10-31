@@ -7,21 +7,21 @@ class Game
 		@computer = computer
 	end
 
-	def winner#(player, computer) crearia un objeto game metiendo dos args player 1 y computer y se analizaria el resultado
+	def winner
 		if @player == :Rock && @computer == :Paper
-			@computer
+			"Computer wins!"
 		elsif @player == :Rock && @computer == :Scissors
-			@player
+			"Human wins!"
 		elsif @player == :Paper && @computer == :Rock
-			@player
+			"Human wins!"
 		elsif @player == :Paper && @computer == :Scissors
-			@computer
+			"Computer wins!"
 		elsif @player == :Scissors && @computer == :Rock
-			@computer
+			"Computer wins!"
 		elsif @player == :Scissors && @computer == :Paper
-			@player
+			"Human wins!"
 		else
-			"draw"
+			"It's a draw"
 		end
 	end
 

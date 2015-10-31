@@ -7,6 +7,16 @@ class Rps < Sinatra::Base
   
   enable :sessions
 
+  def save_state
+  	player = Player.new(session[:symbol])
+  	computer = Computer.new
+
+  	@player_selection = player.character
+  	@computer_selection = computer.random_select
+  	@game = Game.new(@player_selection, @computer_selection)
+  	@winner = @game.winner
+  end
+
   get '/' do
     erb(:index)
   end
@@ -22,28 +32,21 @@ class Rps < Sinatra::Base
   	erb(:start)
   end
 
-  get '/rock' do
-
+  post '/rock' do
   	session[:symbol] = :Rock
-  	player = Player.new(session[:symbol])
-  	computer = Computer.new
-
-  	@symbol = player.character
-  	@computer = computer.random_select
-  	@game = Game.new(@symbol, @computer)
-  	@winner = @game.winner
+  	save_state
   	erb(:play)
   end
 
-  get '/paper' do
+  post '/paper' do
   	session[:symbol] = :Paper
-  	@symbol = session[:symbol]
+  	save_state
   	erb(:play)
   end
 
-  get '/scissors' do
+  post '/scissors' do
   	session[:symbol] = :Scissors
-  	@symbol = session[:symbol]
+  	save_state
   	erb(:play)
   end
 
