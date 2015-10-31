@@ -1,6 +1,6 @@
 feature "play page:" do
 
-  before { submit_names("Ed") }
+  before { submit_single_name("Ed") }
 
   scenario "user sees name" do
     expect(page).to have_content "Ed's turn"
@@ -13,15 +13,15 @@ feature "play page:" do
   end
 
   scenario "user can choose rock" do
-    within('div#options') { within('div#rock') { click_button 'Submit' } }
+    choose_rock
   end
 
   scenario "user can choose paper" do
-    within('div#options') { within('div#paper') { click_button 'Submit' } }
+    choose_paper
   end
 
   scenario "user can choose scissors" do
-    within('div#options') { within('div#scissors') { click_button 'Submit' } }
+    choose_scissors
   end
 
 end

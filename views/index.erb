@@ -5,11 +5,17 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <form action="/names" method="post">
-    <label for="player_1_name">
-      Player 1: <input type='text' name='player_1'>
-    <input type='submit' value='Submit'>
-  </form>
+
+  <h1>Welcome to Rock Paper Scissors</h1>
+
+  <div id="gametype">
+    <form action="/single_player">
+      <input type='submit' value='single-player'>
+    </form>
+    <form action="/multi_player">
+      <input type='submit' value='multi-player'>
+    </form>
+  </div>
 
 </body>
 </html
