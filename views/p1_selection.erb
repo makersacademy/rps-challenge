@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game on!</title>
+</head>
+<body>
+Please select your attack, <%=@game.p1_name%>
+
+<form action='/p1' method='post'>
+  <input type='submit' value='Rock' name='selection'>
+  <input type='submit' value='Paper' name='selection'>
+  <input type='submit' value='Scissors' name='selection'>
+</form>
+</body>
+</html>

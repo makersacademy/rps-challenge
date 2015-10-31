@@ -1,0 +1,684 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"heal",
+				"heal_amount"
+			],
+			[
+				"atta",
+				"attack_message"
+			],
+			[
+				"dama",
+				"damage_model"
+			],
+			[
+				"game",
+				"game-over"
+			],
+			[
+				"receive",
+				"receive_damage"
+			],
+			[
+				"DEFAUL",
+				"DEFAULT_ATTACK"
+			],
+			[
+				"describ",
+				"described_class"
+			],
+			[
+				"play",
+				"player_1"
+			],
+			[
+				"quantit",
+				"quantity_ordered"
+			],
+			[
+				"menu",
+				"menu_types2"
+			],
+			[
+				"quan",
+				"quantity_ordered"
+			],
+			[
+				"quant",
+				"quantity_ordered"
+			],
+			[
+				"price",
+				"price_str"
+			],
+			[
+				"desc",
+				"description_str"
+			],
+			[
+				"cate",
+				"category_str"
+			],
+			[
+				"ls",
+				"list_items"
+			],
+			[
+				"total",
+				"total_correct"
+			],
+			[
+				"journ",
+				"journey_entry"
+			],
+			[
+				"jour",
+				"journey_klass"
+			],
+			[
+				"entry",
+				"entry_station"
+			],
+			[
+				"test",
+				"test_capacity_30"
+			],
+			[
+				"stormy",
+				"stormy_weather"
+			],
+			[
+				"storm",
+				"stormy_weather"
+			],
+			[
+				"pass",
+				"passed_30_on_creation"
+			],
+			[
+				"alpa",
+				"alphabet_even"
+			],
+			[
+				"alph",
+				"alphabet_combined"
+			],
+			[
+				"alpha",
+				"alphabet_num"
+			],
+			[
+				"alp",
+				"alphabet_chars"
+			],
+			[
+				"release",
+				"release_bike"
+			],
+			[
+				"row",
+				"rowcount"
+			],
+			[
+				"corr",
+				"correct_response"
+			],
+			[
+				"map",
+				"mapwi-	map_with_index { |e, i| .. }"
+			],
+			[
+				"str",
+				"strcount"
+			],
+			[
+				"shuffle",
+				"shuffled_arr"
+			],
+			[
+				"arr",
+				"arr_size"
+			],
+			[
+				"sorte",
+				"sorted_array"
+			],
+			[
+				"add",
+				"add_to_array"
+			],
+			[
+				"st",
+				"strcount"
+			],
+			[
+				"tou",
+				"tough_var"
+			],
+			[
+				"num",
+				"num_times_2"
+			],
+			[
+				"do",
+				"dob	Insert do |variable| … end"
+			],
+			[
+				"tex",
+				"text_seen"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 2358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.erb",
+			"settings":
+			{
+				"buffer_size": 302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/play.erb",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.rb",
+			"settings":
+			{
+				"buffer_size": 253,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"View: Toggle Side Bar"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/andydowell/Projects/Makers-Academy/rps",
+		"/Users/andydowell/Projects/Makers-Academy/rps/spec",
+		"/Users/andydowell/Projects/Makers-Academy/rps/views"
+	],
+	"file_history":
+	[
+		"/Users/andydowell/Projects/Makers-Academy/rps/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/player.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/game.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/damage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/app.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/damage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/player_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/game_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/game_over.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/play.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/index.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/attack.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/game_over_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/new_game_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/user_names_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/switch_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/hit_points_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/attack_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/battle-weds.sublime-project",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/public/css/application.css",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/test.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/web_helpers.rb",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/User/Ruby.sublime-settings",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/config.ru",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/Gemfile",
+		"/Users/andydowell/Projects/Personal/pixelcount/config.ru",
+		"/Users/andydowell/Projects/Personal/pixelcount/lib/my_app.rb",
+		"/Users/andydowell/Projects/Personal/pixelcount/Gemfile",
+		"/Users/andydowell/Projects/Personal/pixelcount/views/index.erb",
+		"/Users/andydowell/Projects/Personal/pixelcount/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Personal/pixelcount/README.md",
+		"/Users/andydowell/Projects/Personal/pixelcount/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/battle-tues/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-tues/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/battle-norm/sinatra/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/.rspec",
+		"/Users/andydowell/Desktop/installed_gems.txt",
+		"/Users/andydowell/Projects/Makers-Academy/battle-norm/sinatra/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/sinatra_test/app.rb",
+		"/Users/andydowell/Desktop/battleshiptest.rb",
+		"/Users/andydowell/.bash_profile",
+		"/Users/andydowell/Desktop/tests/takeaway-challenge/.env",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/spec/order_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/menu_types.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/order.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/spec/menu_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/takeaway.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-pablo/lib/journey.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/journey_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/journey.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/oystercard_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-jay/oystercard/spec/station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard2/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/lib/station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/spec/oystercard_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/.rspec",
+		"/Users/andydowell/Desktop/hello.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/plane.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/Gemfile",
+		"/Users/andydowell/Desktop/test.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/airport.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/airport_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/weather_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/weather.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/README.md",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/airport_fiasco.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/features/airport_fiasco.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/plane_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/Gemfile",
+		"/Users/andydowell/.profile",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/userstories.md",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/docking_station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/docking_station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/bike_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/van.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/van_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/garage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/garage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/bike.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/garage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/garage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/bike.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/bike_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/docking_station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/docking_station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/DockingStation_spec.rb",
+		"/Users/andydowell/~.bash_profile",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/fizzbuzz_alternate_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/fizzbuzz_spec.rb",
+		"/Users/andydowell/Downloads/FizzBuzz/spec/fizzbuzz_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/lib/fizzbuzz_alternate.rb",
+		"/Users/andydowell/Desktop/Testing/motivational-posters/views/index.erb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/lib/fizzbuzz.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session1/4-spec/3.rb",
+		"/Users/andydowell/Projects/Makers-Academy/learn_to_program/spec/ch09/ask_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/learn_to_program/spec/ch10/english_number_spec.rb",
+		"/Users/andydowell/Desktop/Testing/respec/greeter.rb",
+		"/Users/andydowell/Desktop/Testing/respec/greeter_spec.rb",
+		"/Users/andydowell/Desktop/Testing/respec/rspectest_1.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/12_classes.rb",
+		"/Users/andydowell/Desktop/motivational-posters/app.rb",
+		"/Users/andydowell/Desktop/motivational-posters/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1_build_an_app/main.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1_build_an_app/lib/caesar_cipher.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/3-challenge/1_instructions.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session5/3-challenge/6_regex.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session4/3-challenge/9_exceptions.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session4/3-challenge/6_singleton_class_string.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session3/3-challenge/16_hash.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session3/3-challenge/1_blocks.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/13_classes_iterating_sorting.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/11_classes.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/10_classes.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/5-solved/9.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/README.mdown",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/9_input_output_logic_string.rb"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sprintf",
+			"entry_station",
+			", zone",
+			"in_use",
+			"subject",
+			"check_weather",
+			"plane6",
+			"bike.new",
+			"fizzbuzz(i)",
+			"type",
+			"number",
+			"img",
+			"str",
+			"case",
+			"num",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"station",
+			"",
+			"oystercard",
+			"weather_check",
+			"i.self",
+			"self",
+			"dna",
+			"when"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1213.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "views/index.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/play.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "app.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 259.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Ruby/Ruby.sublime-build",
+	"project": "rps.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 174.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
