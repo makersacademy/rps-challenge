@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   
@@ -20,19 +23,26 @@ class Rps < Sinatra::Base
   end
 
   get '/rock' do
-  	session[:symbol] = "Rock"
-  	@symbol = session[:symbol]
+
+  	session[:symbol] = :Rock
+  	player = Player.new(session[:symbol])
+  	computer = Computer.new
+
+  	@symbol = player.character
+  	@computer = computer.random_select
+  	@game = Game.new(@symbol, @computer)
+  	@winner = @game.winner
   	erb(:play)
   end
 
   get '/paper' do
-  	session[:symbol] = "Paper"
+  	session[:symbol] = :Paper
   	@symbol = session[:symbol]
   	erb(:play)
   end
 
   get '/scissors' do
-  	session[:symbol] = "Scissors"
+  	session[:symbol] = :Scissors
   	@symbol = session[:symbol]
   	erb(:play)
   end
