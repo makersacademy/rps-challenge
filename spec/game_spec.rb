@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   
-  let(:player) { double :player }
-  let(:cpu_player) { double :cpu_player }
+  let(:player) { double :player, name: 'Player 1' }
+  let(:cpu_player) { double :cpu_player, name: 'Computer' }
   subject(:game) { described_class.new(player,cpu_player)}
 
   describe 'initialization' do
@@ -38,6 +38,14 @@ describe Game do
     end
   end
 
+  describe '#random_choice' do
+    it 'makes a choice' do
+      allow(Game::PLAY_OPTIONS).to receive(:sample).and_return(:rock)
+      allow(player).to receive(:rock).and_return("ROCK")
+      expect(game.random_choice).to eq "ROCK"
+    end
+  end
+
   describe '#switch_turns' do
     it {is_expected.to respond_to(:switch_turns)}
     
@@ -55,11 +63,13 @@ describe Game do
     end
   end
 
-  describe '#random_choice' do
-    it 'makes a choice' do
-      allow(Game::PLAY_OPTIONS).to receive(:sample).and_return('Rock')
-      allow(player).to receive(:rock).and_return("ROCK")
-      expect(game.random_choice).to eq "ROCK"
+  describe '#winner' do
+    it {is_expected.to respond_to(:winner)}
+
+    it 'returns the winning player' do
+      allow(player).to receive(:hand).and_return(:paper)
+      allow(cpu_player).to receive(:hand).and_return(:rock)
+      expect(game.winner).to eq player.name
     end
   end
 

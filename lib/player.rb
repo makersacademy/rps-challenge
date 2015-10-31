@@ -8,15 +8,15 @@ class Player
   end
 
   def rock
-    @hand = 'ROCK'
+    @hand = :rock
   end
 
   def paper
-    @hand = 'PAPER'
+    @hand = :paper
   end
 
   def scissors
-    @hand = 'SCISSORS'
+    @hand = :scissors
   end
 
 end

@@ -7,14 +7,24 @@ class Rps < Sinatra::Base
   def game_state
     @player = $game.player
     @cpu_player = $game.cpu_player
-    @player_hand = @player.hand
-    @cpu_hand = @cpu_player.hand
+    @player_hand = @player.hand.to_s.upcase
+    @cpu_hand = @cpu_player.hand.to_s.upcase
+    @winner = $game.winner
   end
 
-  def switch_cpu_play_and_switch
+  def switch_play_switch
     $game.switch_turns
     $game.random_choice
     $game.switch_turns
+  end
+
+  def check_draw
+    game_state
+    if @winner == :draw
+      redirect :draw
+    else
+      redirect :game
+    end
   end
 
   get '/' do
@@ -39,22 +49,27 @@ class Rps < Sinatra::Base
     erb :game
   end
 
+  get '/draw' do
+    game_state
+    erb :draw
+  end
+
   post '/rock' do
     $game.rock
-    switch_cpu_play_and_switch
-    redirect :game
+    switch_play_switch
+    check_draw
   end
 
   post '/paper' do
     $game.paper
-    switch_cpu_play_and_switch
-    redirect :game
+    switch_play_switch
+    check_draw
   end
 
   post '/scissors' do
     $game.scissors
-    switch_cpu_play_and_switch
-    redirect :game
+    switch_play_switch
+    check_draw
   end
 
   # start the server if ruby file executed directly

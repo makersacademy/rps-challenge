@@ -1,8 +1,13 @@
 class Game
 
-  attr_reader :player, :cpu_player, :current_player
+  attr_reader :player, :cpu_player, :current_player, :loser
  
-  PLAY_OPTIONS = ['Rock', 'Paper', 'Scissors']
+  PLAY_OPTIONS = [:rock, :paper, :scissors]
+
+  BEATS =   { rock: :scissors,
+              paper: :rock,
+              scissors: :paper
+            }
 
   def initialize player,cpu_player
     @players = [player,cpu_player]
@@ -32,11 +37,11 @@ class Game
   def random_choice
     choice = PLAY_OPTIONS.sample
     case 
-      when choice == 'Rock'
+      when choice == :rock
         rock
-      when choice == 'Paper'
+      when choice == :paper
         paper
-      when choice == 'Scissors'
+      when choice == :scissors
         scissors
     end    
   end
@@ -46,7 +51,13 @@ class Game
   end
 
   def opponent(current_player)
-    @players.select {|player| player != current_player}.first
+    @players.select { |player| player != current_player }.first
+  end
+
+  def winner
+    return :draw if player.hand == cpu_player.hand
+    return player.name if cpu_player.hand == BEATS[player.hand]
+    return cpu_player.name if player.hand == BEATS[cpu_player.hand] 
   end
 
 end

@@ -13,21 +13,21 @@ describe Player do
   describe '#rock' do
     it 'sets player hand to ROCK' do
       player.rock
-      expect(player.hand).to eq 'ROCK'
+      expect(player.hand).to eq :rock
     end
   end
 
   describe '#paper' do
     it 'sets player hand to PAPER' do
       player.paper
-      expect(player.hand).to eq 'PAPER'
+      expect(player.hand).to eq :paper
     end
   end
 
   describe '#scissors' do
     it 'sets player hand to SCISSORS' do
       player.scissors
-      expect(player.hand).to eq 'SCISSORS'
+      expect(player.hand).to eq :scissors
     end
   end
 
