@@ -7,6 +7,28 @@ describe Player do
 
   describe 'initialization' do
     it {is_expected.to respond_to(:name)}
+    it {is_expected.to respond_to(:hand)}
+  end
+
+  describe '#rock' do
+    it 'sets player hand to ROCK' do
+      player.rock
+      expect(player.hand).to eq 'ROCK'
+    end
+  end
+
+  describe '#paper' do
+    it 'sets player hand to PAPER' do
+      player.paper
+      expect(player.hand).to eq 'PAPER'
+    end
+  end
+
+  describe '#scissors' do
+    it 'sets player hand to SCISSORS' do
+      player.scissors
+      expect(player.hand).to eq 'SCISSORS'
+    end
   end
 
 end

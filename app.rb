@@ -6,7 +6,15 @@ class Rps < Sinatra::Base
 
   def game_state
     @player = $game.player
-    @player_hand = $game.player_hand
+    @cpu_player = $game.cpu_player
+    @player_hand = @player.hand
+    @cpu_hand = @cpu_player.hand
+  end
+
+  def switch_cpu_play_and_switch
+    $game.switch_turns
+    $game.random_choice
+    $game.switch_turns
   end
 
   get '/' do
@@ -16,7 +24,8 @@ class Rps < Sinatra::Base
   post '/name' do
     p params
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    cpu_player = Player.new('Computer')
+    $game = Game.new(player,cpu_player)
     redirect '/play'
   end
 
@@ -25,27 +34,27 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/game' do
+  get '/game' do
     game_state
     erb :game
   end
 
   post '/rock' do
     $game.rock
-    game_state
-    erb :game
+    switch_cpu_play_and_switch
+    redirect :game
   end
 
   post '/paper' do
     $game.paper
-    game_state
-    erb :game
+    switch_cpu_play_and_switch
+    redirect :game
   end
 
   post '/scissors' do
     $game.scissors
-    game_state
-    erb :game
+    switch_cpu_play_and_switch
+    redirect :game
   end
 
   # start the server if ruby file executed directly
