@@ -15,10 +15,10 @@ feature 'registration page' do
   end
 end
 
-feature 'battleground page' do
-  scenario 'there is a rock button' do
-    visit '/battleground'
-    expect(page).to have_button 'Rock'
+feature 'play page' do
+  scenario 'the player can choose an action' do
+    visit '/play'
+    expect(page).to have_content 'Write Rock, Paper or Scissors in the following box'
   end
 
 
