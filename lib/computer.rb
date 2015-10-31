@@ -10,7 +10,7 @@ class Computer
   end
 
   def comp_choice
-    CHOICES.sample
+    @selection = CHOICES.sample
   end
 
 end

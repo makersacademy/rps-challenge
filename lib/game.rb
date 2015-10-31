@@ -35,5 +35,8 @@ class Game
     @round_history.length
   end
 
+  def fight_message
+
+  end
 
 end
