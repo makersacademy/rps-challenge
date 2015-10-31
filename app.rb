@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,13 +8,19 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    $username = params[:username]
+    $game = Game.new(params[:username], Computer.new)
     redirect('/play')
   end
 
   get '/play' do
-    @username = $username
+    @game = $game
     erb :play
+  end
+
+  get '/result' do
+    @game = $game
+    @game.selection((params[:selection]).to_sym)
+    erb :result
   end
 
   # start the server if ruby file executed directly
