@@ -43,14 +43,9 @@ class AltGame
 
   def random_choice
     choice = PLAY_OPTIONS.sample
-    case 
-    when choice == :rock
-      rock
-    when choice == :paper
-      paper
-    when choice == :scissors
-      scissors
-    end    
+    return rock if choice == :rock
+    return paper if choice == :paper
+    return scissors if choice == :scissors
   end
 
   def switch_turns
