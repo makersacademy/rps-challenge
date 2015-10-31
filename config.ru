@@ -1,2 +1,2 @@
 require_relative './app/rps'
-run Sinatra::Application
+run chilling-cemetery-3530::Server
