@@ -39,8 +39,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
+    p params
     @game = $game
-
+    @game.current_player.choose(params.keys.first)
+    p @game
     @game.finished? ? (redirect '/outcome') : (redirect '/play')
   end
 
