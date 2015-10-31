@@ -3,11 +3,12 @@ class Player
 
   include GameVersions
 
-  attr_reader :name, :move_chosen, :move
+  attr_reader :name, :move_chosen, :move, :wins
 
   def initialize(name)
     @name = name
     @move_chosen = false
+    @wins = 0
   end
 
   def choose(move)
@@ -17,6 +18,10 @@ class Player
 
   def reset
     @move_chosen = false
+  end
+
+  def win_game
+    @wins += 1
   end
 
   private

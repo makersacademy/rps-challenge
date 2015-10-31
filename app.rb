@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/computer_player'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -25,7 +26,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/playernames' do
+    p params
     $game.add_players(params.map { |k,name| Player.new(name) })
+    $game.set_player_2(ComputerPlayer.new) if $game.computer_needed?
+    p $game
     redirect '/play'
   end
 
@@ -36,6 +40,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
+    p params
     @game = $game
     @game.current_player.choose(params.keys.first)
     @game.finished? ? (redirect '/outcome') : (redirect '/play')
@@ -43,6 +48,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @game = $game
+    p @game
     @outcome = @game.result
     erb :outcome
   end

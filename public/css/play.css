@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+#options {
+  width: 1750px;
+  margin: 0 auto;
+}
+
+#rock {
+  float: left;
+  width: 350px;
+  height: 350px;
+}
+
+#paper {
+  float: left;
+  width: 350px;
+  height: 350px;
+}
+
+#scissors {
+  float: left;
+  width: 350px;
+  height: 350px;
+}
+
+#lizard {
+  float: left;
+  width: 350px;
+  height: 350px;
+}
+
+#spock {
+  float: left;
+  width: 350px;
+  height: 350px;
+}

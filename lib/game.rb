@@ -4,7 +4,7 @@ class Game
 
   include GameVersions
 
-  attr_reader :players, :current_player
+  attr_reader :players, :current_player, :player_1, :player_2, :choices
 
   def initialize(type)
     @version = Versions[type]
@@ -14,6 +14,10 @@ class Game
 
   def add_players(players)
     players.each { |player| @players << player }
+  end
+
+  def set_player_2(player)
+    @player_2 = player
   end
 
   def turn_randomizer
@@ -32,38 +36,45 @@ class Game
     players.each { |player| player.reset }
   end
 
-  private
+  def history
+    "#{@player_1.wins} : #{@player_2.wins}"
+  end
 
   def computer_needed?
     players.count == 1
   end
 
-  def computer_opponent
-    rand(1..@choices)
+  private
+
+  def set_computer
+    @player_2.random_move(@choices)
   end
 
   def check_for_draw
     outcome == 0 ? draw : winner
   end
 
+  def set_player_1(player)
+    @player_1 = player
+  end
+
   def outcome
-    if computer_needed?
-      (@players[0].move-computer_opponent) % @choices
-    else
-      (@players[0].move-@players[1].move) % @choices
-    end
+    set_player_1(@players[0])
+    computer_needed? ? set_computer : set_player_2(@players[1])
+    (@player_1.move-@player_2.move) % @choices
   end
 
   def draw
-    "it's a draw!"
+    "It's a draw!"
   end
 
   def winner
-    if computer_needed?
-      outcome.odd? ? @players[0].name : "Computer"
-    else
-      outcome.odd? ? @players[0].name : @players[1].name
-    end
+    outcome.odd? ? wins_game(@player_1) : wins_game(@player_2)
+  end
+
+  def wins_game(player)
+    player.win_game
+    "#{player.name} wins!"
   end
 
 end

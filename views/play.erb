@@ -6,25 +6,40 @@
 </head>
 <body>
   <h1><%=@game.current_player.name%>'s turn</h1>
+  <h2>Choose your move!</h2>
   <div id="options">
     <div id="rock">
-      <p>ROCK</p>
+      <img src="/images/rock.png">
       <form action="/game" method="post">
-        <input type='submit' name='rock' value='Submit'>
+        <input type='submit' name='rock' value='ROCK'>
       </form>
     </div>
     <div id="paper">
-      <p>PAPER</p>
+      <img src="/images/paper.png">
       <form action="/game" method="post">
-        <input type='submit' name='paper' value='Submit'>
+        <input type='submit' name='paper' value='PAPER'>
       </form>
     </div>
     <div id="scissors">
-      <p>SCISSORS</p>
+      <img src="/images/scissors.png">
       <form action="/game" method="post">
-        <input type='submit' name='scissors' value='Submit'>
+        <input type='submit' name='scissors' value='SCISSORS'>
       </form>
     </div>
+    <% if @game.choices == 5 %>
+    <div id="lizard">
+      <img src="/images/lizard.png">
+      <form action="/game" method="post">
+        <input type='submit' name='lizard' value='LIZARD'>
+      </form>
+    </div>
+    <div id="spock">
+      <img src="/images/spock.png">
+      <form action="/game" method="post">
+        <input type='submit' name='spock' value='SPOCK'>
+      </form>
+    </div>
+    <% end %>
   </div>
 </body>
 </html>

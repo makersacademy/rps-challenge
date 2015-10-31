@@ -5,16 +5,14 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-
-  <h1><%=@outcome%></h1>
-
+  <h3>Game Menu</h3>
   <form action="/">
     <input type='submit' value='new game'>
   </form>
-
   <form action="/reset" method="post">
     <input type='submit' value='play again'>
   </form>
-
+  <h1><%=@outcome%>!</h1>
+  <h2><%=@game.history%></h2>
 </body>
 </html
