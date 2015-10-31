@@ -15,9 +15,26 @@ class Rps < Sinatra::Base
   end
 
   get '/start' do
-  	p params
   	@name = session[:name]
   	erb(:start)
+  end
+
+  get '/rock' do
+  	session[:symbol] = "Rock"
+  	@symbol = session[:symbol]
+  	erb(:play)
+  end
+
+  get '/paper' do
+  	session[:symbol] = "Paper"
+  	@symbol = session[:symbol]
+  	erb(:play)
+  end
+
+  get '/scissors' do
+  	session[:symbol] = "Scissors"
+  	@symbol = session[:symbol]
+  	erb(:play)
   end
 
   # start the server if ruby file executed directly
