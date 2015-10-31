@@ -1,6 +1,6 @@
-<h1> <%= @game.player %> vs Machine </h1>
+<h1> <%= @game.player.name %> vs Machine </h1>
 
-<form action="/result">
+<form action="/result" method="post">
   <h3> Rock: <input type="radio" name="selection" id="rock" value="rock"> </h3>
   <h3> Paper: <input type="radio" name="selection" id="paper" value="paper"> </h3>
   <h3> Scissors: <input type="radio" name="selection" id="scissors" value="scissors"> </h3>

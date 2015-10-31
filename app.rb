@@ -1,14 +1,19 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 require './lib/computer'
 
 class RPS < Sinatra::Base
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/play' do
-    $game = Game.new(params[:username], Computer.new)
+    player = Player.new(params[:username])
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect('/play')
   end
 
@@ -17,9 +22,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/result' do
+  post '/result' do
     @game = $game
-    @game.selection((params[:selection]).to_sym)
+    @game.player.player_choice((params[:selection]).to_sym)
     erb :result
   end
 

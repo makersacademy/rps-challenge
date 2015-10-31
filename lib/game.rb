@@ -11,20 +11,19 @@ class Game
     @computer = computer
   end
 
-  def selection(choice)
-    raise 'Invalid choice' if invalid_choice?(choice)
-    @selection = choice
-  end
-
   def result
-    return :draw if @selection == @computer.choice
-    RULES[@selection] == @computer.choice ? :win :(:lose)
+    return :draw if draw?
+    win? ? :win :(:lose)
   end
 
   private
 
-  def invalid_choice?(choice)
-    !(RULES.include?(choice))
+  def draw?
+    @player.player_weapon == @computer.computer_choice
+  end
+
+  def win?
+    RULES[@player.player_weapon] == @computer.computer_choice
   end
 
 end

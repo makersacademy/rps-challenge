@@ -1,12 +1,13 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new('Alaan', computer) }
+  subject(:game) { described_class.new(player, computer) }
+  let(:player) { double(:player)}
   let(:computer) { double(:computer) }
 
-  context "When a new game begins" do
-    it "stores our user's name" do
-      expect(game.player).to eq('Alaan')
+  context "when a new game begins" do
+    it "stores our player" do
+      expect(game.player).to eq(player)
     end
 
     it "stores our computer" do
@@ -14,32 +15,18 @@ describe Game do
     end
   end
 
-  describe "#selection" do
-    context "when I select rock" do
-      it "returns rock" do
-        expect(game.selection(:rock)).to eq(:rock)
-      end
-    end
-
-    context "when I select an invalid choice" do
-      it "raises an error" do
-        expect{game.selection(:invalid_choice)}.to raise_error 'Invalid choice'
-      end
-    end
-  end
-
   describe "#result" do
-    context "when I select rock" do
-      it "lets me know if I have won or not" do
-        game.selection(:rock)
-        allow(computer).to receive(:choice).and_return(:scissors)
+    context "when a player selects rock" do
+      it "lets the player know if they have won or not" do
+        allow(player).to receive(:player_weapon).and_return(:rock)
+        allow(computer).to receive(:computer_choice).and_return(:scissors)
         expect(game.result).to eq(:win)
       end
     end
 
-    it "lets me know if we draw" do
-      game.selection(:rock)
-      allow(computer).to receive(:choice).and_return(:rock)
+    it "lets the player know if the result is a  draw" do
+      allow(player).to receive(:player_weapon).and_return(:rock)
+      allow(computer).to receive(:computer_choice).and_return(:rock)
       expect(game.result).to eq(:draw)
     end
   end
