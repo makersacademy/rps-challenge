@@ -6,7 +6,7 @@ class Computer
     @hand = nil
   end
 
-  def set_hand(hand = nil)
+  def hand=(_hand = nil)
     @hand = HANDS.sample
   end
 end

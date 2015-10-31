@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require 'game'
-require 'player'
-require 'computer'
+require_relative '../lib/game'
+require_relative '../lib/player'
+require_relative '../lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -18,8 +18,8 @@ class RPS < Sinatra::Base
   end
 
   post '/go' do
-    $game.set_player1_hand(params[:hand])
-    $game.set_player2_hand(nil)
+    $game.player1_hand = params[:hand]
+    $game.player2_hand = nil
     $game.play
     redirect '/go'
   end

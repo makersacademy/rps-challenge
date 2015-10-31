@@ -5,7 +5,7 @@ class Player
     @hand = nil
   end
 
-  def set_hand(hand)
+  def hand=(hand)
     @hand = hand
   end
 end

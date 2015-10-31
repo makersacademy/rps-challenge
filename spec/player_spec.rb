@@ -13,11 +13,11 @@ describe Player do
   end
 
   context 'Storing the players hand' do
-    it {is_expected.to respond_to(:set_hand)}
+    it {is_expected.to respond_to(:hand=)}
     it {is_expected.to respond_to(:hand)}
 
     it 'Stores the hand' do
-      player.set_hand(:rock)
+      player.hand = :rock
       expect(player.hand).to eq :rock
     end
   end

@@ -13,11 +13,11 @@ describe Computer do
   end
 
   context 'Storing the players hand' do
-    it {is_expected.to respond_to(:set_hand).with(1).argument}
+    it {is_expected.to respond_to(:hand=).with(1).argument}
     it {is_expected.to respond_to(:hand)}
 
     it 'Stores the hand' do
-      computer.set_hand
+      computer.hand = nil
       expect(computer.hand).to satisfy {|hand| Computer::HANDS.include? hand}
     end
   end

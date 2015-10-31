@@ -27,14 +27,14 @@ describe Game do
   end
 
   context 'Setting players hands' do
-    it {is_expected.to respond_to(:set_player1_hand).with(1).argument}
-    it {is_expected.to respond_to(:set_player2_hand).with(1).argument}
+    it {is_expected.to respond_to(:player1_hand=).with(1).argument}
+    it {is_expected.to respond_to(:player2_hand=).with(1).argument}
 
     it 'delegates setting of hands to colaborators' do
-      expect(human).to receive(:set_hand)
-      expect(robot).to receive(:set_hand)
-      game.set_player1_hand(:rock)
-      game.set_player2_hand(:paper)
+      expect(human).to receive(:hand=)
+      expect(robot).to receive(:hand=)
+      game.player1_hand = :rock
+      game.player2_hand = :paper
     end
   end
   context 'Getting players hands' do

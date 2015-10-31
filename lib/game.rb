@@ -2,10 +2,10 @@ class Game
   attr_reader :outcome
 
   RULES = {
-    # This      | Loses to this
-    :rock     => :paper,
-    :paper    => :scissors,
-    :scissors => :rock
+    # This    | Loses to this
+    rock:     :paper,
+    paper:    :scissors,
+    scissors: :rock
   }
   def initialize(player1, player2)
     @player1 = player1
@@ -21,12 +21,12 @@ class Game
     @player2.name
   end
 
-  def set_player1_hand(hand)
-    @player1.set_hand(hand)
+  def player1_hand=(hand)
+    @player1.hand=(hand)
   end
 
-  def set_player2_hand(hand)
-    @player2.set_hand(hand)
+  def player2_hand=(hand)
+    @player2.hand=(hand)
   end
 
   def player1_hand
