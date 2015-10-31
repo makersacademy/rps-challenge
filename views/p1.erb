@@ -11,12 +11,16 @@
 <h2>Sign in to play!</h2>
 
 <form action="/1pname" method="post">
-	<label for="player_name">
-		Your name:
-		<input type="text" name="player_name">
-	</label>
-   <input type="submit" value="Submit">
- </form>
+  <label for="player_name"> 
+  	Your name:
+    <input type="text" name="player_name" autofocus>
+  </label>
+  <select name='game_mode'>
+    <option value="classic_game">Classic Mode</option>
+    <option value="alt_game">Rock, Paper, Scissors, Spock, Lizard</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
  
 
 </body>

@@ -1,4 +1,4 @@
-class Game
+class AltGame
 
   attr_reader :game_type,
               :player_count, 
@@ -6,7 +6,7 @@ class Game
               :cpu_player, 
               :current_player, 
               :loser
- 
+
   PLAY_OPTIONS = [:rock, :paper, :scissors]
 
   BEATS =   { rock: :scissors,
@@ -15,7 +15,7 @@ class Game
             }
 
   def initialize player,cpu_player,player_count
-    @game_type = :classic
+    @game_type = :alt
     @player_count = player_count
     @players = [player,cpu_player]
     @current_player = player

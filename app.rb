@@ -1,10 +1,12 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/alt_game'
 
 class Rps < Sinatra::Base
 
   def game_state
+    @game_type = $game.game_type.to_s
     @players = $game.player_count
     @player = $game.player
     @cpu_player = $game.cpu_player
@@ -48,7 +50,11 @@ class Rps < Sinatra::Base
     player = Player.new(params[:player_name])
     cpu_player = Player.new('Computer')
     players = 1
-    $game = Game.new(player,cpu_player,players)
+    if params[:game_mode]=='classic_game'
+      $game = Game.new(player,cpu_player,players)
+    else
+      $game = AltGame.new(player,cpu_player,players)
+    end
     redirect '/play'
   end
 
@@ -57,7 +63,11 @@ class Rps < Sinatra::Base
     player = Player.new(params[:player_name])
     cpu_player = Player.new(params[:player2_name])
     players = 2
-    $game = Game.new(player,cpu_player,players)
+    if params[:game_mode]=='classic_game'
+      $game = Game.new(player,cpu_player,players)
+    else
+      $game = AltGame.new(player,cpu_player,players) 
+    end
     redirect '/play'
   end
 
