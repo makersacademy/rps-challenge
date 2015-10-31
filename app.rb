@@ -1,8 +1,21 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
+  end
+
+  post '/game-version' do
+    p params
+    $game = Game.new(params[:version])
+    p $game
+    redirect '/player-count'
+  end
+
+  get '/player-count' do
+    erb :player_count
   end
 
   get '/single_player' do
@@ -14,18 +27,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/playernames' do
-    $player_1 = params[:player_1]
+    p params
+    $game.add_players(params.map { |k,name| Player.new(name) })
+    p $game
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = $player_1
+    @game = $game
     erb :play
   end
 
   post '/game' do
-    # Game.new(params.keys.first)
-    redirect '/outcome'
+    @game = $game
+
+    @game.finished? ? (redirect '/outcome') : (redirect '/play')
   end
 
   get '/outcome' do

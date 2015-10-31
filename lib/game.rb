@@ -1,11 +1,30 @@
+require_relative 'versions'
 
 class Game
 
-  # attr_reader
+  include GameVersions
 
-  def initialize(player_1, player_2=player_klass)
-    @player_1 = player_1
-    @player_2 = player_2
+  attr_reader :players
+
+  def initialize(type)
+    @version = Versions[type]
+    @players = []
+  end
+
+  def add_players(players)
+    players.each { |player| @players << player }
+  end
+
+  def current_player
+    @players.first
+  end
+
+  def computer_needed?
+    @players.count == 1
+  end
+
+  def finished?
+    @players.all? { |player| player.made_a_move }
   end
 
   def outcome
