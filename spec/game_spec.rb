@@ -55,49 +55,41 @@ describe Game do
     end
 
     it {is_expected.to respond_to(:play)}
-    it {is_expected.to respond_to(:outcome)}
 
     it 'is a draw when both players play the same hand' do
       allow(human).to receive(:hand).and_return(:rock)
       allow(robot).to receive(:hand).and_return(:rock)
-      game.play
-      expect(game.outcome).to eq "A Draw!"
+      expect(game.play).to eq :draw
     end
    it "Player 1's Rock blunts Player 2's Scissors" do
       allow(human).to receive(:hand).and_return(:rock)
       allow(robot).to receive(:hand).and_return(:scissors)
-      game.play
-      expect(game.outcome).to eq "#{human.name} Won!"
+      expect(game.play).to eq :win
    end
    it "Player 2's Rock blunts Player 1's Scissors" do
       allow(human).to receive(:hand).and_return(:scissors)
       allow(robot).to receive(:hand).and_return(:rock)
-      game.play
-      expect(game.outcome).to eq "#{robot.name} Won!"
+      expect(game.play).to eq :lose
    end
    it "Player 1's Paper covers Player 2's Rock" do
       allow(human).to receive(:hand).and_return(:paper)
       allow(robot).to receive(:hand).and_return(:rock)
-      game.play
-      expect(game.outcome).to eq "#{human.name} Won!"
+      expect(game.play).to eq :win
    end
    it "Player 2's Paper covers Player 1's Rock" do
       allow(human).to receive(:hand).and_return(:rock)
       allow(robot).to receive(:hand).and_return(:paper)
-      game.play
-      expect(game.outcome).to eq "#{robot.name} Won!"
+      expect(game.play).to eq :lose
    end
    it "Player 1's Scissors cut Player 2's Paper" do
       allow(human).to receive(:hand).and_return(:scissors)
       allow(robot).to receive(:hand).and_return(:paper)
-      game.play
-      expect(game.outcome).to eq "#{human.name} Won!"
+      expect(game.play).to eq :win
    end
    it "Player 2's Scissors Player 1's Paper" do
       allow(human).to receive(:hand).and_return(:paper)
       allow(robot).to receive(:hand).and_return(:scissors)
-      game.play
-      expect(game.outcome).to eq "#{robot.name} Won!"
+      expect(game.play).to eq :lose
    end
 
   end

@@ -14,10 +14,23 @@ feature 'Player plays' do
     click_button 'Paper'
     expect(page).to have_content 'Norm played paper'
   end
-  scenario "Outcome is shown" do
+  scenario "There is a draw" do
     sign_in_and_play
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    click_button 'Scissors'
+    expect(page).to have_content 'Draw'
+  end
+  scenario "Player wins" do
+    sign_in_and_play
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    click_button 'Rock'
+    expect(page).to have_content 'win'
+  end
+  scenario "Computer wins" do
+    sign_in_and_play
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     click_button 'Paper'
-    expect(page).not_to have_content 'No game played yet'
+    expect(page).to have_content 'lose'
   end
 end
 

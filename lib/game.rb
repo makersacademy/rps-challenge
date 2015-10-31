@@ -1,5 +1,4 @@
 class Game
-  attr_reader :outcome
 
   RULES = {
     # This    | Loses to this
@@ -10,7 +9,6 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @outcome = "No game played yet"
   end
 
   def player1_name
@@ -38,9 +36,9 @@ class Game
   end
 
   def play
-    @outcome = "A Draw!" if @player1.hand == @player2.hand
-    @outcome = "#{player1_name} Won!" if rules(@player2.hand) == @player1.hand
-    @outcome = "#{player2_name} Won!" if rules(@player1.hand) == @player2.hand
+    return :draw if @player1.hand == @player2.hand
+    return :win if rules(@player2.hand) == @player1.hand
+    return :lose if rules(@player1.hand) == @player2.hand
   end
 
   private
