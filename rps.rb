@@ -17,6 +17,10 @@ class RPS < Sinatra::Base
     erb(:start)
   end
 
+  post "/outcome" do
+    
+  end
+
 
 
   # start the server if ruby file executed directly
