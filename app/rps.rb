@@ -22,14 +22,19 @@ class RPS < Sinatra::Base
     erb :register
   end
 
-  get '/play' do
+  post '/setup' do
     player1 = Player.new(params[:name])
     store(player1)
+    redirect '/play'
+  end
+
+  get '/play' do
+    player1 = retrieve
     @player_name = player1.name
     erb :play
   end
 
-  get '/go' do
+  post '/go' do
     player1 = retrieve
     player2 = Computer.new
     game = Game.new(player1, player2)
@@ -49,7 +54,7 @@ class RPS < Sinatra::Base
     when "New Game?"
       redirect '/'
     when "Continue?"
-      redirect "/play?name=#{player1.name}"
+      redirect '/play'
     end
   end
 
