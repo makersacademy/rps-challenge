@@ -31,5 +31,35 @@
         <% end %>
       </p>
       <p>
+          <% if @Player_selection == 'Rock' && @computer_selection == 'Rock' %>
+            <h1> No body wins</h1>
+          <% end %>
+          <% if @Player_selection == 'Rock' && @computer_selection == 'Scissors' %>
+            <h1> Rock blunts Scissors <%=@Player_1%> wins!!</h1>
+          <% end %>
+          <% if @Player_selection == 'Scissors' && @computer_selection == 'Paper' %>
+            <h1> Scissors cuts Paper <%=@Player_1%> wins!!</h1>
+          <% end %>
+          <% if @Player_selection == 'Paper' && @computer_selection == 'Rock' %>
+              <h1> Paper wraps Rock <%=@Player_1%> wins!!</h1>
+          <% end %>
+          <% if @Player_selection == 'Scissors' && @computer_selection == 'Scissors' %>
+            <h1> No body wins</h1>
+          <% end %>
+          <% if @Player_selection == 'Paper' && @computer_selection == 'Paper' %>
+            <h1> No body wins</h1>
+          <% end %>
+
+          <% if @computer_selection == 'Rock' && @Player_selection == 'Scissors' %>
+            <h1> Rock blunts Scissors computer wins!!</h1>
+          <% end %>
+          <% if @computer_selection == 'Scissors' && @Player_selection == 'Paper' %>
+            <h1> Scissors cuts Paper computer wins!!</h1>
+          <% end %>
+          <% if @computer_selection == 'Paper' && @Player_selection == 'Rock' %>
+              <h1> Paper wraps Rock computer wins!!</h1>
+          <% end %>
+
+      </p>
     </body>
 </html>
