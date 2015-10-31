@@ -8,9 +8,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game-version' do
-    p params
     $game = Game.new(params[:version])
-    p $game
     redirect '/player-count'
   end
 
@@ -27,9 +25,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/playernames' do
-    p params
     $game.add_players(params.map { |k,name| Player.new(name) })
-    p $game
     redirect '/play'
   end
 
@@ -40,22 +36,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-    p params
     @game = $game
     @game.current_player.choose(params.keys.first)
-    p @game
     @game.finished? ? (redirect '/outcome') : (redirect '/play')
   end
 
   get '/outcome' do
-    p $game
     @game = $game
+    @outcome = @game.result
     erb :outcome
   end
 
   post '/reset' do
     $game.reset_players
-    p $game
     redirect '/play'
   end
 
