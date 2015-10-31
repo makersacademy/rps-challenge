@@ -1,25 +1,26 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-  set :session_secret, 'string'
+  # enable :sessions
+  # set :session_secret, 'string'
 
   get '/' do
     erb :registration
   end
 
   post '/name' do
-    session[:player_1_name] = params[:player_1_name]
+    $player1 = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:player_1_name]
+    @player1 = $player1.name
     erb :play
   end
 
   post '/result' do
-    @player1 = session[:player_1_name]
+    @player1 = $player1.name
     erb :result
   end
 

@@ -6,4 +6,13 @@ describe Player do
   it 'has a name' do
     expect(player.name).to eq 'Eric'
   end
+
+  it 'has a choice of weapons' do
+    expect(player.weapon(:rock)).to eq :rock
+  end
+
+  it 'only has three weapons' do
+    expect{ player.weapon(:gun) }.to raise_error \
+    'You can only select rock, paper or scissors in this game'
+  end
 end
