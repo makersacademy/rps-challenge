@@ -1,8 +1,21 @@
 require 'sinatra/base'
 
 class RPSWeb < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
-    'Hello RPSWeb!'
+    erb :index
+  end
+
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
