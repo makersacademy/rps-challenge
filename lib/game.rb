@@ -51,7 +51,7 @@ class Game
   end
 
   def opponent(current_player)
-    @players.find { |player| player != current_player }
+    @players.detect { |player| player != current_player }
   end
 
   def winner

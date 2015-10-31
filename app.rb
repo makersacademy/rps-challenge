@@ -31,6 +31,14 @@ class Rps < Sinatra::Base
     erb :index
   end
 
+  post '/p1' do
+    erb :p1
+  end
+
+  post '/p2' do
+    erb :p2
+  end
+
   post '/name' do
     p params
     player = Player.new(params[:player_name])
