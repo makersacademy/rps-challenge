@@ -1,4 +1,3 @@
-require 'pry'
 class Game
   attr_reader :outcome
 
@@ -39,7 +38,6 @@ class Game
   end
 
   def play
-    binding.pry
     @outcome = "A Draw!" if @player1.hand == @player2.hand
     @outcome = "#{player1_name} Won!" if rules(@player2.hand) == @player1.hand
     @outcome = "#{player2_name} Won!" if rules(@player1.hand) == @player2.hand

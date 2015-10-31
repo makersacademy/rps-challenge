@@ -6,7 +6,7 @@ class Player
   end
 
   def hand=(hand)
-    @hand = hand
+    @hand = hand.downcase.to_sym
   end
 end
 
