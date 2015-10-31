@@ -37,12 +37,12 @@ class Game
   def random_choice
     choice = PLAY_OPTIONS.sample
     case 
-      when choice == :rock
-        rock
-      when choice == :paper
-        paper
-      when choice == :scissors
-        scissors
+    when choice == :rock
+      rock
+    when choice == :paper
+      paper
+    when choice == :scissors
+      scissors
     end    
   end
 
@@ -51,7 +51,7 @@ class Game
   end
 
   def opponent(current_player)
-    @players.select { |player| player != current_player }.first
+    @players.find { |player| player != current_player }
   end
 
   def winner
