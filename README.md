@@ -1,3 +1,6 @@
+A demo of this app is available at https://chilling-cemetery-3530.herokuapp.com/go
+
+
 # RPS Challenge: Rōnin Badge Test
 
 My approach
