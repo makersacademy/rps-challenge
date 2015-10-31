@@ -9,6 +9,13 @@
 <header>Rock-Paper-Scissors</header>
 
 <h2><%= $player.name %> has logged in!</h2>
+<h2>What hand would you like to play?</h2>
+<br>
+<form action='/game' method='post'>
+  <input type='submit' value='ROCK' name='ROCK'>
+  <input type='submit' value='PAPER' name='PAPER'>
+  <input type='submit' value='SCISSORS' name='SCISSORS'>
+</form>
 
 </body>
 </html>
