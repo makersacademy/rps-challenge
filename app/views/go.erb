@@ -1,3 +1,8 @@
 <h2> <%= @player1_name %> played <%= @player1_hand %> </h2>
 <h2> <%= @player2_name %> played <%= @player2_hand %> </h2>
 <h2> <%= @outcome  %> </h2>
+
+<form action="/continue" method="post">
+  <p><input type="submit" value="New Game?" name="decision"></p>
+  <p><input type="submit" value="Continue?" name="decision"></p>
+</form>

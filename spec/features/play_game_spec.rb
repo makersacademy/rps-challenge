@@ -14,5 +14,10 @@ feature 'Player plays' do
     click_button 'Paper'
     expect(page).to have_content 'Norm played Paper'
   end
+  scenario "Outcome is shown" do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).not_to have_content 'No game played yet'
+  end
 end
 

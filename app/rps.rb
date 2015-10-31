@@ -32,4 +32,16 @@ class RPS < Sinatra::Base
     @outcome = $game.outcome
     erb :go
   end
+
+  post '/continue' do
+    case params[:decision]
+    when "New Game?"
+      redirect '/'
+    when "Continue?"
+      redirect "/play?name=#{$game.player1_name}"
+    end
+  end
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end

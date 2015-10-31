@@ -10,6 +10,6 @@ group :test do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
-  gem 'byebug'
+  gem 'pry-byebug'
   gem 'guard-rspec'
 end
