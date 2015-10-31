@@ -4,7 +4,7 @@ describe Game do
   
   let(:player) { double :player, name: 'Player 1' }
   let(:cpu_player) { double :cpu_player, name: 'Computer' }
-  subject(:game) { described_class.new(player,cpu_player)}
+  subject(:game) { described_class.new(player,cpu_player,1)}
 
   describe 'initialization' do
     it {is_expected.to respond_to(:player)}

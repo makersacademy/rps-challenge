@@ -5,8 +5,10 @@ require_relative './lib/game'
 class Rps < Sinatra::Base
 
   def game_state
+    @players = $game.player_count
     @player = $game.player
     @cpu_player = $game.cpu_player
+    @current_player = $game.current_player
     @player_hand = @player.hand.to_s.upcase
     @cpu_hand = @cpu_player.hand.to_s.upcase
     @winner = $game.winner
@@ -20,7 +22,9 @@ class Rps < Sinatra::Base
 
   def check_draw
     game_state
-    if @winner == :draw
+    if @winner == nil
+      redirect :play  
+    elsif @winner == :draw
       redirect :draw
     else
       redirect :game
@@ -39,11 +43,21 @@ class Rps < Sinatra::Base
     erb :p2
   end
 
-  post '/name' do
+  post '/1pname' do
     p params
     player = Player.new(params[:player_name])
     cpu_player = Player.new('Computer')
-    $game = Game.new(player,cpu_player)
+    players = 1
+    $game = Game.new(player,cpu_player,players)
+    redirect '/play'
+  end
+
+  post '/2pname' do
+    p params
+    player = Player.new(params[:player_name])
+    cpu_player = Player.new(params[:player2_name])
+    players = 2
+    $game = Game.new(player,cpu_player,players)
     redirect '/play'
   end
 
@@ -62,21 +76,31 @@ class Rps < Sinatra::Base
     erb :draw
   end
 
+  post '/clear_hands' do
+    game_state
+    @player.clear_hand
+    @cpu_player.clear_hand
+    redirect '/play'
+  end
+
   post '/rock' do
     $game.rock
-    switch_play_switch
+    switch_play_switch if $game.player_count==1
+    $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/paper' do
     $game.paper
-    switch_play_switch
+    switch_play_switch if $game.player_count==1
+    $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/scissors' do
     $game.scissors
-    switch_play_switch
+    switch_play_switch if $game.player_count==1
+    $game.switch_turns if $game.player_count==2
     check_draw
   end
 

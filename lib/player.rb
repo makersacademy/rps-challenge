@@ -19,4 +19,8 @@ class Player
     @hand = :scissors
   end
 
+  def clear_hand
+    @hand = nil
+  end
+
 end

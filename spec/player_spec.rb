@@ -31,4 +31,13 @@ describe Player do
     end
   end
 
+  describe '#clear_hand' do
+    it { is_expected.to respond_to(:clear_hand)}
+
+    it "clears the player's hand" do
+      player.rock
+      player.clear_hand
+      expect(player.hand).to eq nil
+    end
+  end
 end

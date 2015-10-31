@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :cpu_player, :current_player, :loser
+  attr_reader :player_count, :player, :cpu_player, :current_player, :loser
  
   PLAY_OPTIONS = [:rock, :paper, :scissors]
 
@@ -9,7 +9,8 @@ class Game
               scissors: :paper
             }
 
-  def initialize player,cpu_player
+  def initialize player,cpu_player,player_count
+    @player_count = player_count
     @players = [player,cpu_player]
     @current_player = player
   end
