@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock-Paper-Scissors</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header>Rock-Paper-Scissors</header>
+
+<h2><%= @player.name %> chose: SOMETHING</h2>
+<h2>Computer chose: SOMETHING</h2>
+<h2>Maybe you lost? Maybe you won?</h2>
+
+<form action="/play" method="get">
+   <input type="submit" value="Play again">
+ </form>
+ 
+
+</body>
+</html>
