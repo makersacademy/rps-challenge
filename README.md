@@ -24,15 +24,15 @@ Instructions
 
 When visiting the root URL, you are presented with a registration screen as shown below:
 
-![Screenshot](https://www.dropbox.com/s/7bmo4fvc5ueohee/register.tiff?dl=0)
+![Screenshot](https://www.dropbox.com/s/ez9k5k8m0mvt86x/register.png?dl=0)
 
 Once you fill in your name, you are taken to the main play screen where you can make your choice:
 
-![Screenshot] (https://www.dropbox.com/s/2726rfsq9x1eysp/play.tiff?dl=0)
+![Screenshot] (https://www.dropbox.com/s/30b2fd0rn7mdp9p/play.png?dl=0)
 
 You are then taken to a Win, Lose or Draw page. From there you can opt to play another game and you will be taken to the play screen again. You can also opt to start a new game and you will be taken to the Registration page again:
 
-![Screenshot] (https://www.dropbox.com/s/0k389772jptf3c5/win.tiff?dl=0)
+![Screenshot] (https://www.dropbox.com/s/ev8ky1ibilwizqt/win.png?dl=0)
 
 To install this program, carry out the following steps:
 
