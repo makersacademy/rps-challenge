@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    erb (:register)
+    erb :register
   end
 
   get '/play' do
