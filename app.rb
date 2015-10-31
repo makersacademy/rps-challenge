@@ -6,6 +6,7 @@ class Rps < Sinatra::Base
 
   def game_state
     @player = $game.player
+    @player_hand = $game.player_hand
   end
 
   get '/' do
@@ -25,6 +26,24 @@ class Rps < Sinatra::Base
   end
 
   post '/game' do
+    game_state
+    erb :game
+  end
+
+  post '/rock' do
+    $game.rock
+    game_state
+    erb :game
+  end
+
+  post '/paper' do
+    $game.paper
+    game_state
+    erb :game
+  end
+
+  post '/scissors' do
+    $game.scissors
     game_state
     erb :game
   end
