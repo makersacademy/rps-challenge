@@ -15,6 +15,10 @@ class Player
     make_move
   end
 
+  def reset
+    @move_chosen = false
+  end
+
   private
 
   def make_move

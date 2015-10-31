@@ -4,7 +4,7 @@ class Game
 
   include GameVersions
 
-  attr_reader :players
+  attr_reader :players, :current_player
 
   def initialize(type)
     @version = Versions[type]
@@ -15,8 +15,8 @@ class Game
     players.each { |player| @players << player }
   end
 
-  def current_player
-    players.select { |player| !player.move_chosen }.sample
+  def turn_randomizer
+    @current_player = players.select { |player| !player.move_chosen }.sample
   end
 
   def computer_needed?
@@ -25,6 +25,10 @@ class Game
 
   def finished?
     players.all? { |player| player.move_chosen }
+  end
+
+  def reset_players
+    players.each { |player| player.reset }
   end
 
   # def outcome

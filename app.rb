@@ -35,6 +35,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @game.turn_randomizer
     erb :play
   end
 
@@ -47,7 +48,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
+    p $game
+    @game = $game
     erb :outcome
+  end
+
+  post '/reset' do
+    $game.reset_players
+    p $game
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
