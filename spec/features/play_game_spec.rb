@@ -4,5 +4,15 @@ feature 'Player plays' do
     click_button 'Rock'
     expect(page).to have_content 'Norm played Rock'
   end
+  scenario "Player plays 'Scissors'" do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content 'Norm played Scissors'
+  end
+  scenario "Player plays 'Paper'" do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Norm played Paper'
+  end
 end
 
