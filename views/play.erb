@@ -1,0 +1,26 @@
+<h1><%= @game.player_1_name %> vs. <%= @game.player_2_name %></h1>
+<div></div>
+<h2> <%= @game.current_player_name %>'s Go! </h2>
+<h3> Hide the screen and choose wisely!</h3>
+
+<form action='/rock' method = 'post'>
+  <input type='submit' value='Rock'>
+</form>
+<form action='/paper' method = 'post'>
+  <input type='submit' value='Paper'>
+</form>
+<form action='/scissors' method = 'post'>
+  <input type='submit' value='Scissors'>
+</form>
+<form action='/spock' method = 'post'>
+  <input type='submit' value='Spock'>
+</form>
+<form action='/lizard' method = 'post'>
+  <input type='submit' value='Lizard'>
+</form>
+
+
+
+
+<%= @game.player_1_name %>: <%= @game.player_1_score %> 		
+<%= @game.player_2_name %>: <%= @game.player_2_score %>
