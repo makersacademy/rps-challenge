@@ -18,3 +18,8 @@ class RPS < Sinatra::Base
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
+# the marketeer will be presented the choices (rock, paper and scissors)
+# the marketeer can choose one option
+# the game will choose a random option
+# a winner will be declared
