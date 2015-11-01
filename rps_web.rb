@@ -1,22 +1,34 @@
 require 'sinatra/base'
+require './lib/computer.rb'
+require './lib/game.rb'
+require './lib/player.rb'
 
 class RPSWeb < Sinatra::Base
-
-  enable :sessions
 
   get '/' do
     erb :registration
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    $player = Player.new(params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:name]
+    @player_name = $player.name
     erb :play
- end
+  end
+
+  post '/weapon' do
+    $player.weapon=(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @comp_wp = Computer.weapon
+    @player_wp = $player.weapon
+    erb Game.play(@comp_wp, @player_wp)
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
