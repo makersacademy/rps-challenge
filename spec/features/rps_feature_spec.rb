@@ -2,7 +2,7 @@
 feature "Rock, Paper, Scissors" do
   scenario "As a new user I would like to sign in" do
     sign_in_and_play
-    expect(page).to have_content("Hello Andrew! Welcome to Rock, Paper, Scissors!")
+    expect(page).to have_content("Hello Andrew!")
   end
   scenario 'choose rock, paper or scissors' do
     sign_in_and_play
@@ -20,6 +20,6 @@ feature "Rock, Paper, Scissors" do
     sign_in_and_play
     click_button('Paper')
     click_link("Computer's turn")
-    expect(page).to have_content("The winner is:")
+    expect(page).to have_content("Outcome:")
   end
 end

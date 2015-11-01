@@ -5,7 +5,18 @@
   <title>Outcome</title>
 </head>
 <body>
-  <h2><%="You chose #{@player.choice}"%></h2>
-  <h2><%="Computer chose #{@computer_decision}"%></h2>
+  <div>
+  <h2><%="You chose #{@game.player.choice}"%></h2>
+  <h2><%="Computer chose #{@game.computer.choice}"%></h2>
+  <h1><%= "Outcome: #{@game.calculate}"%></h1>
+  </div>
+  <div>
+    <form action="/">
+      <input type="submit" value="Return to Login?">
+    </form>
+    <form action="/play">
+      <input type="submit" value="Play Again?">
+    </form>
+  </div>
 </body>
 </html>

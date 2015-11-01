@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,6 +11,8 @@ class RPS < Sinatra::Base
 
   post '/form' do
     session[:player] = Player.new(params[:username])
+    session[:computer] = Computer.new
+    session[:game] = Game.new((session[:player]),(session[:computer]))
     redirect('/play')
   end
 
@@ -20,9 +23,9 @@ class RPS < Sinatra::Base
 
   post '/decision' do
     @player = session[:player]
-    p @player.choice = (params[:rock]) unless (params[:rock]).nil?
-    p @player.choice = (params[:paper]) unless (params[:paper]).nil?
-    p @player.choice = (params[:scissors]) unless (params[:scissors]).nil?
+    @player.choice = (params[:rock]) unless (params[:rock]).nil?
+    @player.choice = (params[:paper]) unless (params[:paper]).nil?
+    @player.choice = (params[:scissors]) unless (params[:scissors]).nil?
     redirect('/player_decision')
   end
 
@@ -32,8 +35,8 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do
-    @player = session[:player]
-    @computer_decision = Game.new.choose
+    @game = session[:game]
+    @game.computer.choose
     erb(:outcome)
   end
   # start the server if ruby file executed directly
