@@ -1,8 +1,8 @@
 class Computer
 
-attr_reader :move_choice
+attr_reader :comp_choice
 
   def initialize
-    @move_choice = ["rock", "paper", "scissors"].sample
+    @comp_choice = ["rock", "paper", "scissors"].sample
   end
 end
