@@ -9,18 +9,17 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player_name = params[:player_name]
+    session[:player_name] = params[:player_name]
     redirect ('/play')
   end
 
   get '/play' do
-    @player_name = $player_name
+    @player_name = session[:player_name]
     erb(:play)
   end
 
   post '/result' do
     @option = params[:option]
-    srand(1)
     @computer_move = ['rock', 'paper', 'scissors'].sample
     erb(:result)
   end
