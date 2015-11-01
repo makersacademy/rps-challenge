@@ -20,7 +20,7 @@ class Rps < Sinatra::Base
     @player_choice = game.player_choice
     @player_name = game.player_name
     @winner = game.calculate_winner
-    @computer_choice = game.computer_choice
+    @computer_choice = game.set_computer_choice
     erb :play
   end
 
