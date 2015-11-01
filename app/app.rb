@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
   post '/result' do
     @option = params[:option]
     @computer_move = $game.computer_move
+    @winner = $game.winner(@computer_move, @option)
     erb(:result)
   end
 
