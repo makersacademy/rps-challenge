@@ -4,8 +4,8 @@ def sign_in_and_play
   click_button('Submit')
 end
 
-def make_choice
+def make_choice(choice)
   sign_in_and_play
-  choose('rock')
+  choose(choice)
   click_button('Submit')
 end
