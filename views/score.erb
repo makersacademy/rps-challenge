@@ -1,0 +1,10 @@
+<h1><%= "#{@player} you #{@game.play}" %>
+<h2><%= "you chose #{@game.player.hand} and the computer chose #{@game.computer.hand}" %></h2>
+
+<form action="/play" method="get">
+  <input type="Submit" value="new game"></form>
+  <form action="/" method="get">
+  <input type="Submit" value="new player"></form>
+  <form action="/end" method="get">
+  <input type="Submit" value="quit game">
+</form>
