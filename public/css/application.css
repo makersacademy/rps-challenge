@@ -1,0 +1,30 @@
+#registration-body {
+  background-image: url(/images/congruent_outline.png);
+  text-align: center;
+  color: white;
+  font-family: Papyrus, fantasy;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+  margin-top: auto;
+  padding: 40px;
+}
+
+#player-name {
+  width: 200px;
+  text-align: center;
+}
+
+#reg-button {
+  padding: 18px;
+}
+
+#register-button {
+  font-size: 36px;
+}
+
+#rps-image {
+  padding: 14px;
+}
