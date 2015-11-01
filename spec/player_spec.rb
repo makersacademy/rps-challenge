@@ -10,5 +10,12 @@ describe Player do
         expect(player.name).to eq 'Chuka'
       end
     end
+
+    describe '#choose' do
+      it 'will select a weapon' do
+        player.choose('Rock')
+        expect(player.weapon).to eq 'Rock'
+      end
+    end
   end
 end

@@ -1,5 +1,5 @@
 feature 'Playing the game' do
-  scenario 'I can choose an image' do
+  scenario 'I can choose a weapon' do
     register_and_play 'Chuka'
     select "Rock", :from => "choose"
     click_button 'Submit'
