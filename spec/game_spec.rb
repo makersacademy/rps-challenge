@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let (:player) {double :player, name: 'Rob'}
-  let (:weapons) {double :weapons, random_weapon: :paper}
+  let(:player) {double :player, name: 'Rob'}
+  let(:weapons) {double :weapons, random_weapon: :paper}
   subject(:game) {Game.new(player, weapons)}
 
   describe '#initialize player' do
@@ -30,7 +30,7 @@ describe Game do
   end
 
   describe '#result' do
-    let (:weapons) {double :weapons, random_weapon: :paper, rules: :loose}
+    let(:weapons) {double :weapons, random_weapon: :paper, rules: :loose}
     it 'player :rock vs opponent :paper result loose' do
       game.attack(:rock)
       expect(game.result()).to eq :loose
