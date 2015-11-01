@@ -1,0 +1,27 @@
+body {
+  color: #01DFD7;
+  font-size: 40px;
+  font-style: italic;
+  font-family: helvetica;
+  background-color: black }
+
+.img {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  border:0;}
+
+#paper {
+  background-image: url(paper.gif);
+  background-size: 110% 110%;
+}
+
+#rock {
+  background-image: url(rock.gif);
+  background-size: 110% 110%;
+}
+
+#scissors {
+  background-image: url(scissors.gif);
+  background-size: 110% 110%;
+}

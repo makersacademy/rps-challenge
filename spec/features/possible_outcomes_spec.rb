@@ -8,17 +8,17 @@ feature "plays the game" do
   end
 
   scenario "can win" do
-    find("img[alt='paper']").click
+    click_link(@id='paper')
     expect(page).to have_content('PAPER BEATS ROCK')
   end
 
   scenario "can draw" do
-    find("img[alt='rock']").click
+    click_link(@id='rock')
     expect(page).to have_content('DRAAAAW')
   end
 
   scenario "can loose" do
-    find("img[alt='scissors']").click
+    click_link(@id='scissors')
     expect(page).to have_content('ROCK BEATS SCISSORS')
   end
 end

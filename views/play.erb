@@ -1,41 +1,16 @@
-<style type="text/css">
-body {
-  color: #01DFD7;
-  font-size: 40px;
-  font-style: italic;
-  font-family: helvetica;
-  background-color: black }
-</style>
-<div id="title">
-  <%= @name %> VS THE WORLD</br>
-</div>
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
 
-<div id="choices">
-  <% @img_style = "width:100px;height:100px;border:0;" %>
-  <a href="/paper">
-  <img src="paper.gif" alt="paper" style="<%=@img_style%>" >
-  </a>
-  <a href="/rock">
-  <img src="rock.gif" alt="rock" style="<%=@img_style%>">
-  </a>
-
-  <a href="/scissors">
-  <img src="scissors.gif" alt="scissors" style="<%=@img_style%>">
-  </a>
-</div>
-
-<div id="container">
-  </br><%= @result %></br>
-</div>
-<div id="turn_number">
-  TURN: <%= @turn %></br>
-</div>
+<%= @name %> VS THE WORLD</br>
+<div>
+<a href="/rock" class='img' id='rock'></a>
+<a href="/paper" class='img' id='paper'></a>
+<a href="/scissors" class='img' id='scissors'></a>
+</div></br>
+<%= @result %></br>
+TURN: <%= @turn %></br>
 SCORE: <%= @name %>-<%= @score %>-COMPUTER</br>
 
-<img src="<%= @user_choice %>.gif" alt="result user" style="<%=@img_style%>">
- YOU CHOSE
-</a></br>
-
-<img src="<%= @ai_choice %>.gif" alt="result ai" style="<%=@img_style%>" >
- COMPUTER CHOSE
-</a></br>
+<a class='img' id='<%= @user_choice %>'></a> YOU CHOSE</br>
+<a class='img' id='<%= @ai_choice %>'></a> COMPUTER CHOSE</br>
