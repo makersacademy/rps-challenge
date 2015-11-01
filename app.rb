@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   get '/' do
@@ -22,8 +24,10 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @weapon = $player.weapon
-    erb(:result)
+    @player_weapon = $player.weapon
+    @comp_weapon = Computer.weapon
+    p @comp_weapon
+    erb Game.play(@player_weapon, @comp_weapon)
   end
 
   # start the server if ruby file executed directly
