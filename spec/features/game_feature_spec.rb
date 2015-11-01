@@ -11,27 +11,41 @@ feature "Register name before playing the game" do
   scenario 'displays massage that the game can begin' do
     visit ("/")
     fill_in(:player_name, with: 'Rajeev')
-    click_button("Submit")
-    expect(page).to have_content "Hello Rajeev, you can start the game now"
-    expect(page).to have_content "Your opponent is computer!"
+    click_button("Register")
+    expect(page).to have_content "Hello Rajeev, your opponent is computer!"
   end
 
   scenario 'player can choose rock or paper or scissors' do
     visit ("/")
     fill_in(:player_name, with: 'Rajeev')
-    click_button("Submit")
-    click_button("Start")
-    expect(page).to have_content 'Make a choice'
+    click_button("Register")
+    expect(page).to have_content "Select one of"
    end
 
    scenario "player defeats computer" do
+     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
      visit ("/")
      fill_in(:player_name, with: 'Rajeev')
-     click_button("Submit")
-     click_button("Start")
-     click_button("rock")
-     expect(page).to have_content "You have won, Rajeev"
+     click_button("Register")
+     click_link("rock")
+     expect(page).to have_content "You have won, Rajeev!"
     end
 
+    scenario "computer defeats player" do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+      visit ("/")
+      fill_in(:player_name, with: 'Rajeev')
+      click_button("Register")
+      click_link("paper")
+      expect(page).to have_content "You have lost, Rajeev!"
+     end
 
+     scenario "there can be a tie" do
+       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+       visit ("/")
+       fill_in(:player_name, with: 'Rajeev')
+       click_button("Register")
+       click_link("scissors")
+       expect(page).to have_content "You have a tie, Rajeev!"
+      end
 end

@@ -1,0 +1,28 @@
+<h1 align="center">Hello <%=@player_name%>, your opponent is computer!</h1>
+
+<h1 align="center">Select one of rock, scissors or paper</h1>
+
+<h2 align="center">
+<a id="rock" href="/rock"><img src="images/rock.jpg" height="80" width="80"></a>
+<a id="scissors" href="/scissors">
+  <img src="images/scissors.jpg" height="80" width="80"></a>
+<a id="paper" href="/paper"><img src="images/paper.jpg" height="80" width="80"></a>
+</h2>
+
+<h2 align="center">
+You chose <img src=<%=@player_image%> height="80" width="80" align="middle">
+and Computer chose <img src=<%=@computer_image%> height="80" width="80" align="middle">
+</h2>
+
+<h1 align="center">You have <%=@result%>, <%=@player_name%>!</h1>
+<h2 align="center">Score </h2>
+<h3 align="center"><%=@player_name%>: <%=@player_score%> Computer: <%=@computer_score%>  Tie: <%=@tie%></h3>
+
+
+
+
+<h2 align="center">Choose again above or <a href="/"></h2>
+
+<h2 align="center">
+  <img src="images/home.jpg" height="80" width="80" align="bottom"></a>
+</h2>
