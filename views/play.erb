@@ -6,5 +6,6 @@
     <a href="/choice?player_choice=scissors"><img src="scissors.jpg" alt="scissors.jpg"></a>
   </p>
 <% else %>
-  <%= @player_name %>'s choice: <%= @player_choice %>.
+  <p><%= @player_name %>'s choice: <%= @player_choice %>.</p>
+  <p>Computer's choice: <%= @computer_choice %>.</p>  
 <% end %>
