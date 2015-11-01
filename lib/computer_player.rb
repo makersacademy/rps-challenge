@@ -3,15 +3,24 @@ class ComputerPlayer
 
   include GameVersions
 
-  attr_reader :name, :move, :wins
+  attr_reader :name, :wins, :move_name, :version
 
-  def initialize(name='Computer')
+  def initialize(version, name='Computer')
     @name = name
     @wins = 0
+    @version = version
   end
 
-  def random_move(choices)
-    @move = rand(1..choices)
+  def possible_moves
+    version.keys
+  end
+
+  def random_move
+    @move_name = possible_moves.sample
+  end
+
+  def move
+    version[move_name]
   end
 
   def win_game

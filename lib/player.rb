@@ -3,7 +3,7 @@ class Player
 
   include GameVersions
 
-  attr_reader :name, :move_chosen, :move, :wins
+  attr_reader :name, :move_chosen, :move, :wins, :move_name
 
   def initialize(name)
     @name = name
@@ -13,6 +13,7 @@ class Player
 
   def choose(move)
     @move = Versions['Advanced'][move]
+    @move_name = move
     make_move
   end
 

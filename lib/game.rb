@@ -4,11 +4,11 @@ class Game
 
   include GameVersions
 
-  attr_reader :players, :current_player, :player_1, :player_2, :choices
+  attr_reader :players, :current_player, :player_1, :player_2, :version, :choices
 
   def initialize(type)
     @version = Versions[type]
-    @choices = @version.count
+    @choices = version.count
     @players = []
   end
 
@@ -29,6 +29,7 @@ class Game
   end
 
   def result
+    set_up
     check_for_draw
   end
 
@@ -37,7 +38,7 @@ class Game
   end
 
   def history
-    "#{@player_1.wins} : #{@player_2.wins}"
+    "#{player_1.wins} : #{player_2.wins}"
   end
 
   def computer_needed?
@@ -47,21 +48,24 @@ class Game
   private
 
   def set_computer
-    @player_2.random_move(@choices)
-  end
-
-  def check_for_draw
-    outcome == 0 ? draw : winner
+    player_2.random_move
   end
 
   def set_player_1(player)
     @player_1 = player
   end
 
+  def check_for_draw
+    outcome == 0 ? draw : winner
+  end
+
+  def set_up
+    set_player_1(players[0])
+    computer_needed? ? set_computer : set_player_2(players[1])
+  end
+
   def outcome
-    set_player_1(@players[0])
-    computer_needed? ? set_computer : set_player_2(@players[1])
-    (@player_1.move-@player_2.move) % @choices
+    (player_1.move-player_2.move) % choices
   end
 
   def draw
@@ -69,7 +73,7 @@ class Game
   end
 
   def winner
-    outcome.odd? ? wins_game(@player_1) : wins_game(@player_2)
+    outcome.odd? ? wins_game(player_1) : wins_game(player_2)
   end
 
   def wins_game(player)

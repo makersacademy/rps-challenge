@@ -36,7 +36,9 @@ class RockPaperScissors < Sinatra::Base
   post '/playernames' do
     p params
     $game.add_players(params.map { |k,name| Player.new(name) })
-    $game.set_player_2(ComputerPlayer.new) if $game.computer_needed?
+    p $game
+    @version = $game.version
+    $game.set_player_2(ComputerPlayer.new(@version)) if $game.computer_needed?
     p $game
     redirect '/play'
   end
@@ -48,16 +50,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-    p params
     @game = $game
     @game.current_player.choose(params.keys.first)
     @game.finished? ? (redirect '/outcome') : (redirect '/play')
   end
 
   get '/outcome' do
+    p $game
     @game = $game
-    p @game
-    @outcome = @game.result
+    @result = @game.result
     erb :outcome
   end
 

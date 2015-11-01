@@ -12,7 +12,13 @@
   <form action="/reset" method="post">
     <input type='submit' value='play again'>
   </form>
-  <h1><%=@outcome%>!</h1>
+  <h1><%=@result%>!</h1>
   <h2><%=@game.history%></h2>
+  <div>
+  </div>
+    <h3><%=@game.player_1.name%> played <%=@game.player_1.move_name%>!</h3>
+  <div>
+    <h3><%=@game.player_2.name%> played <%=@game.player_2.move_name%>!</h3>
+  </div>
 </body>
 </html
