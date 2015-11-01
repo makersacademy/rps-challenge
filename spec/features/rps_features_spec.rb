@@ -36,4 +36,11 @@ feature 'result page' do
     click_button('Play')
     expect(page).to have_content 'The computer chose'
   end
+
+  scenario 'the result of the match is shown' do
+    visit '/play'
+    fill_in('player_1_choice', with: 'rock')
+    click_button('Play')
+    expect(page).to have_content 'And the result is...'
+  end
 end

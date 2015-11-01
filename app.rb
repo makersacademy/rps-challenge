@@ -12,24 +12,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player1 = Player.new(params[:player_1_name])
+    $game = Game.new(Player.new(params[:player_1_name]), Computer.new)
+    @game = $game
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = $player1.name
+    @player1 = $game.player.name
     erb :play
   end
 
   post '/selection' do
-    $player1_choice = $player1.choose_weapon(params[:player_1_choice])
+    $player1_choice = $game.player.choose_weapon(params[:player_1_choice])
     redirect 'result'
   end
 
   get '/result' do
     @player1_choice = $player1_choice
-    $computer = Computer.new
-    @computer_choice = $computer.weapon
+    @computer_choice = $game.computer.weapon
     erb :result
   end
 

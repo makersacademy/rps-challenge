@@ -17,21 +17,22 @@ describe Game do
   context 'rock plays other weapons' do
     before do
       allow(player).to receive(:choose_weapon) { :rock }
+      allow(player).to receive(:weapon) { :rock }
     end
 
     it 'rock beats scissors' do
       allow(computer).to receive(:weapon) { :scissors }
-      expect(game.result).to eq win
+      expect(game.result).to eq :win
     end
 
-    xit 'rock loses to paper' do
+    it 'rock loses to paper' do
       allow(computer).to receive(:weapon) { :paper }
-      expect(game.result).to eq lose
+      expect(game.result).to eq :lose
     end
 
-    xit 'rock draws with rock' do
+    it 'rock draws with rock' do
       allow(computer).to receive(:weapon) { :rock }
-      expect(game.result).to eq draw
+      expect(game.result).to eq :draw
     end
   end
 
