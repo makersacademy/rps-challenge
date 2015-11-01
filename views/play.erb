@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play</title>
+</head>
+<body>
+<header> <%= @game.player_name%> Plays Rock Paper Scissors </header>
+<header>Choose your weapon</header>
+<form action='/rock' method='post'>
+  <input type='submit' value='Rock' name='Weapon'>
+</form>
+<form action='/paper' method='post'>
+  <input type='submit' value='Paper' name='Weapon'>
+</form>
+<form action='/scissors' method='post'>
+  <input type='submit' value='Scissors' name='Weapon'>
+</form>
+</body>
+</html>
