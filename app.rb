@@ -21,8 +21,8 @@ class Rps < Sinatra::Base
 
   post '/choice' do
     @game = $game
-    @game.set_player_choice(params[:choice].to_sym)
-    @game.set_game_choice
+    @game.select_player_choice(params[:choice].to_sym)
+    @game.select_game_choice
     redirect '/result'
   end
 
@@ -33,7 +33,6 @@ class Rps < Sinatra::Base
 
   post '/reset' do
     @game = $game
-    @game.reset
     redirect '/play'
   end
 

@@ -11,14 +11,14 @@ describe Game do
 
   context 'Player picks rock, paper or scissors' do
     it 'allows the user to choose' do
-      expect(game.set_player_choice(:rock)).to eq :rock
+      expect(game.select_player_choice(:rock)).to eq :rock
     end
   end
 
   context 'Game picks rock, paper or scissors' do
     it 'allows the game to choose' do
       allow(game).to receive(:random_number) {0}
-      expect(game.set_game_choice).to eq :rock
+      expect(game.select_game_choice).to eq :rock
     end
   end
 
@@ -26,7 +26,7 @@ describe Game do
     it 'returns the winner based on what was picked' do
       allow(game).to receive(:player_choice) {:rock}
       allow(game).to receive(:game_choice) {:paper}
-      expect(game.who_wins).to eq ('Computer')
+      expect(game.who_wins).to eq 'Computer'
     end
   end
 end

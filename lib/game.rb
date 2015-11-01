@@ -9,11 +9,11 @@ class Game
     @game_choice = nil
   end
 
-  def set_player_choice(choice)
+  def select_player_choice(choice)
     @player_choice = choice
   end
 
-  def set_game_choice
+  def select_game_choice
     @game_choice = @possibilities[random_number]
   end
 
