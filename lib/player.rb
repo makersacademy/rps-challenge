@@ -10,7 +10,7 @@ class Player
 	end
 
 	def log move
-		move == :comp ? @move = computer_choice : @move = move
+		move == :comp ? computer_choice : @move = move
 	end
 
 	def win
@@ -20,6 +20,6 @@ class Player
 	private
 
 		def computer_choice
-			@moves.sample
+			@move = @moves.sample
 		end
 end

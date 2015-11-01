@@ -110,14 +110,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/computer' do
-    load_state
-    @game.log_move(@current_player)
-    redirect'/computer'
-  end
-
   get '/computer' do
     @game = $game
+    @game.log_move(@current_player, :comp)
     @game.switch
     erb(:results)
   end

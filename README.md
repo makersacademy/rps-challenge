@@ -1,3 +1,7 @@
+I approached this similarly to battle. I started by thinking about the user interface and what information I would need. I then created the back end of the website, i.e. game & player and then developed the website.
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions

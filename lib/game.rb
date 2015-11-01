@@ -12,26 +12,26 @@ class Game
 	end
 
 	def player_1_name
-		@player_1.name
+		player_1.name
 	end
 
 	def player_2_name
-		@player_2.name
+		player_2.name
 	end
 
 	def player_1_score
-		@player_1.score
+		player_1.score
 	end
 
 	def player_2_score
-		@player_2.score
+		player_2.score
 	end
 
 	def current_player_name
-		@current_player.name
+		current_player.name
 	end
 
-	def log_move(player, move=:comp)
+	def log_move(player, move)
 		current_player.log(move)
 	end
 
@@ -64,7 +64,7 @@ class Game
 
 	  def opposite_player
 	  	add_count
-	    player_1 == @current_turn ? player_1 : player_2
+	  	@current_player == player_1 ?  player_2 : player_1 
 	  end
 
 	  def add_count
@@ -76,3 +76,21 @@ class Game
 			player_2
 		end
 end
+
+# d = Player.new("dan")
+# e = Player.new("Computer")
+
+# p g = Game.new(d,e)
+# puts g.log_move(@current_player,:rock)
+# puts g.switch
+# puts g.current_player_computer?
+# puts g.log_move(@current_player, :comp)
+# puts g.player_2.move
+# puts g.winners_name
+# puts g.switch
+# puts g.switch
+# puts g.current_player_name
+# puts g.current_player_computer?
+# puts g.player_2.move
+# puts g.player_1.move
+
