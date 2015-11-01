@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
+require './lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
   # enable :sessions
@@ -26,7 +28,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @player1_choice = $player1_choice
-    # @computer_choice = $computer.weapon
+    $computer = Computer.new
+    @computer_choice = $computer.weapon
     erb :result
   end
 

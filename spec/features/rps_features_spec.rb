@@ -29,4 +29,11 @@ feature 'result page' do
     click_button('Play')
     expect(page).to have_content 'You chose rock'
   end
+
+  scenario 'the computer randomly selects a weapon' do
+    visit '/play'
+    fill_in('player_1_choice', with: 'rock')
+    click_button('Play')
+    expect(page).to have_content 'The computer chose'
+  end
 end
