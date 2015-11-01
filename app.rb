@@ -34,12 +34,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/playernames' do
-    p params
     $game.add_players(params.map { |k,name| Player.new(name) })
-    p $game
-    @version = $game.version
-    $game.set_player_2(ComputerPlayer.new(@version)) if $game.computer_needed?
-    p $game
+    $game.set_player_2(ComputerPlayer.new($game.version)) if $game.computer_needed?
     redirect '/play'
   end
 
@@ -56,7 +52,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    p $game
     @game = $game
     @result = @game.result
     erb :outcome
@@ -67,6 +62,5 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

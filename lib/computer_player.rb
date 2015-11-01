@@ -11,10 +11,6 @@ class ComputerPlayer
     @version = version
   end
 
-  def possible_moves
-    version.keys
-  end
-
   def random_move
     @move_name = possible_moves.sample
   end
@@ -25,6 +21,12 @@ class ComputerPlayer
 
   def win_game
     @wins += 1
+  end
+
+  private
+
+  def possible_moves
+    version.keys
   end
 
 end
