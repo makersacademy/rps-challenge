@@ -8,7 +8,7 @@ class Player
   end
 
   def choose(weapon)
-    @weapon << weapon
+    @weapon = weapon
   end
 
 end

@@ -1,7 +1,7 @@
 class Computer
 
   attr_reader :weapon
-  
+
   def initialize
     @weapon = ''
   end
@@ -13,7 +13,7 @@ class Computer
   private
 
   def choose
-    t = ['Scissors','Rock','Paper'].sample
+    t = ['scissors','rock','paper'].sample
     @weapon = t
     t
   end

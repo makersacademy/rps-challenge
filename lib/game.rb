@@ -3,7 +3,7 @@ require_relative 'computer'
 
 class Game
 
-  WEAPONS = {"Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock"}
+  WEAPONS = {"rock" => "scissors", "scissors" => "paper", "paper" => "rock"}
   attr_reader :player, :computer
 
   def initialize(player, computer)
@@ -17,5 +17,13 @@ class Game
 
   def computer_choose
     @computer.choose_weapon
+  end
+
+  def result
+    if @player.weapon != @computer.weapon
+      WEAPONS[@player.weapon] == @computer.weapon ? 'Congratulations!' : 'Better luck next time'
+    else
+      "It's a tie"
+    end
   end
 end

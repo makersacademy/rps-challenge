@@ -19,12 +19,15 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-    session[:weapon] = $game.player_choose(params[:weapon])
+    $game.player_choose(params[:weapon])
+    $game.computer_choose
     redirect '/decision'
   end
 
   get '/decision' do
     @player = $game.player
+    @computer = $game.computer
+    @result = $game.result
     erb :decision
   end
 
