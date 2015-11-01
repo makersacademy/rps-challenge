@@ -9,6 +9,4 @@ describe Game do
       expect(game.choices).to include(game.choice)
     end
   end
-
-
 end

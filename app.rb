@@ -1,39 +1,38 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
   get '/' do
-    'Welcome to Rock Paper Scissors!'
     erb(:index)
   end
 
   post '/form' do
-    session[:username] = params[:username]
+    session[:player] = Player.new(params[:username])
     redirect('/play')
   end
 
   get '/play' do
-    @username = session[:username]
+    @player = session[:player]
     erb(:play)
   end
 
   post '/decision' do
-    session[:decision] = params[:rock] unless (params[:rock]).nil?
-    session[:decision] = params[:paper] unless (params[:paper]).nil?
-    session[:decision] = params[:scissors] unless (params[:scissors]).nil?
+    @player = session[:player]
+    p @player.choice = (params[:rock]) unless (params[:rock]).nil?
+    p @player.choice = (params[:paper]) unless (params[:paper]).nil?
+    p @player.choice = (params[:scissors]) unless (params[:scissors]).nil?
     redirect('/player_decision')
   end
 
   get '/player_decision' do
-    @username = session[:username]
-    @decision = session[:decision]
+    @player = session[:player]
     erb(:player_decision)
   end
 
   get '/outcome' do
-    @username = session[:username]
-    @decision = session[:decision]
+    @player = session[:player]
     @computer_decision = Game.new.choose
     erb(:outcome)
   end

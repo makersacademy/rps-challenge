@@ -16,5 +16,10 @@ feature "Rock, Paper, Scissors" do
     click_link("Computer's turn")
     expect(page).to have_content("Computer chose")
   end
-
+  scenario 'A winner is declared' do
+    sign_in_and_play
+    click_button('Paper')
+    click_link("Computer's turn")
+    expect(page).to have_content("The winner is:")
+  end
 end
