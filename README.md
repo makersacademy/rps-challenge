@@ -1,78 +1,40 @@
-# RPS Challenge: Rōnin Badge Test
+Rock, Paper, Scissors
+======================
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Challenge
+---------
+This is the web application I submitted for my third weekend challenge at Maker's Academy. The challenge was simple: create a Rock, Paper, Scissors game using the basic web skills I learned over the week.
 
-Task 
-----
+Here are the user stories I followed:
 
-Knowing how to build web applications is getting us almost there as web developers!
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
+```
+As a player
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
-As a marketeer
+As a player
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Approach
+--------
+My main aim was to consolidate what I had learned over the week; the client/server relationship, ERB and frameworks like Sinatra were all new to me. I wanted the game to be easy to run and play.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+I used Ruby and HTML to create a simple program that allows the user to enter his or her name and then presents a choice between rock, paper or scissors. The computer will also choose (via a random number generator) and a winner will be declared. The user can then click a button to play another round.
 
+Here are some notes:
 
-As usual please start by
+* The essential elements of the game are handled via a Game class; this allows for relatively skinny controller and views files.
+* A global variable was used to reference the Game class within the app.rb file - the only reason for this is that I have not yet learned to use databases effectively (this should be handled in Week 4). I am aware that global variables are a bad code smell and should never be used normally.
+* ERB is used to render the pages. These files are located within the `./views` folder.
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+Setup
+-----
+1. Fork this repository and then clone it using `git clone <url>`
+2. cd to the project's root folder, run `gem install bundle` and then run `bundle`
+3. Host the app locally using Sinatra by running `ruby app.rb` - note the port number (e.g. 4567)
+4. In your browser, visit `localhost:<port number>`
 
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
-
+Have fun and use the game to settle any lingering arguments!
