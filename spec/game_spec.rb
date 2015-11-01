@@ -64,9 +64,6 @@ describe 'Game' do
         game.set_player_choice(:rock)
         expect(game.winner).to eq (:name)
       end
-
     end
-
   end
-
 end
