@@ -12,11 +12,11 @@ I identified three main classes to begin with.
 * Player
 * Computer
 
-The Game class takes care of storing players, playing the game and deciding the outcome. I did not attempt the Rock, Paper, Scissors, Lizard, Spock challenge. Had I done so, I would have pulled out the rules of the game and injected the dependency into Game. So there is room for improvement in terms of SRP. 
+The Game class takes care of storing players and delegating the playing of the game to a rules class which is injected at initialization.
 
-The Player class just models a human player of the game. It stores a hand (Rock, Paper or Scissors) and the players name. Alhough it is unusual to have a public setter method for a class in OOD, I felt it was OK in such a trivial class which is not much more than a struct.
+The Player class just models a human player of the game. It stores a hand which is set by the users choice and the players name. 
 
-The Computer class models a computer player. Both the Player and Computer classes have exactly the same interface so that I could take advantage of Duck Typing. The Game class is instantiated with to players and it doesn't matter if one is a Computer player or not. It simply retrieves the 'hand' played by each player and determines if player one i the winner. The Computer class chooses what to play at random.
+The Computer class models a computer player. Both the Player and Computer classes have exactly the same interface so that I could take advantage of Duck Typing. The Game class is instantiated with two players and it doesn't matter if one is a Computer player or not. It simply retrieves the 'hand' played by each player and determines if player one i the winner. It does this by calling the #play method of the rules_klass that was injected into Game. The Computer class chooses what to play at random.
 
 The main class of the App is RPS. This is derived from Sinatra::Base and drives the whole game. During development, I identified the need for a helper class to store the current player and retrieve it as needed. This is called PlayerStore although it is generic enough to hold any Ruby object and retrieve it using its object ID.
 
