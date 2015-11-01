@@ -1,11 +1,19 @@
-<h1>Welcome <%= @player_name %> </h1>
-
-<p>Choose between Rock, Paper or Scissors:</p>
-
-<form action="/weapon" method="post">
-  <div class="row">
-    <input type="submit" value="Rock" name="weapon">
-    <input type="submit" value="Paper" name="weapon">
-    <input type="submit" value="Scissors" name="weapon">
-  </div>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" type="text/css" href="/css/application.css">
+</head>
+  <body>
+    <h1><%= @player_name %> VS. Computer </h1>
+      <p>Choose between Rock, Paper or Scissors:</p>
+      <form action="/weapon" method="post">
+        <div id="row">
+        <div><img id="img-rps" src="/images/rps_sep.png"/></div>
+        <input id="weapon-button" type="submit" value="Rock" name="weapon">
+        <input id="weapon-button" type="submit" value="Paper" name="weapon">
+        <input id="weapon-button" type="submit" value="Scissors" name="weapon">
+        </div>
+      </form>
+  </body>
+</html>

@@ -1,13 +1,13 @@
-#registration-body {
+body {
   background-image: url(/images/congruent_outline.png);
   text-align: center;
   color: white;
   font-family: Papyrus, fantasy;
 	font-size: 24px;
 	font-style: normal;
-	font-variant: normal;
+	font-variant: italic;
 	font-weight: 500;
-	line-height: 26px;
+	line-height: 30px;
   margin-top: auto;
   padding: 40px;
 }
@@ -27,4 +27,21 @@
 
 #rps-image {
   padding: 14px;
+}
+
+#row {
+  padding-top: 50px;
+}
+
+#weapon-button {
+  font-size: 20px;
+  margin: 20px 30px 20px 20px;
+  width: 100px;
+  height: 20px;
+  color: blue;
+}
+
+#img-rps {
+  height: 200px;
+  margin-right: 30px;
 }
