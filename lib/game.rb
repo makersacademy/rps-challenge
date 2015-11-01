@@ -7,7 +7,9 @@ class Game
 		@player_1 = player_1
 		@player_2 = player_2
 		@current_player = player_1
-		@results = {paper: [:rock, :spock], rock: [:scissors, :lizard], scissors: [:paper, :lizard], spock: [:scissors, :rock], lizard: [:spock, :paper]}
+		@results = {paper: [:rock, :spock], rock: [:scissors, :lizard],
+								scissors: [:paper, :lizard], spock: [:scissors, :rock],
+								lizard: [:spock, :paper]}
 		@count = 0
 	end
 
@@ -31,7 +33,7 @@ class Game
 		current_player.name
 	end
 
-	def log_move(player, move)
+	def log_move move
 		current_player.log(move)
 	end
 
@@ -60,37 +62,20 @@ class Game
   	player_1.move == player_2.move
   end
 
-	private
+		private
 
-	  def opposite_player
-	  	add_count
-	  	@current_player == player_1 ?  player_2 : player_1 
-	  end
+  def opposite_player
+  	add_count
+  	@current_player == player_1 ?  player_2 : player_1 
+  end
 
-	  def add_count
-	  	@count += 1
-	  end
+  def add_count
+  	@count += 1
+  end
 
-	  def winner
-			return player_1 if @results[@player_1.move].include? @player_2.move 
-			player_2
-		end
+  def winner
+		return player_1 if @results[@player_1.move].include? @player_2.move 
+		player_2
+	end
 end
-
-# d = Player.new("dan")
-# e = Player.new("Computer")
-
-# p g = Game.new(d,e)
-# puts g.log_move(@current_player,:rock)
-# puts g.switch
-# puts g.current_player_computer?
-# puts g.log_move(@current_player, :comp)
-# puts g.player_2.move
-# puts g.winners_name
-# puts g.switch
-# puts g.switch
-# puts g.current_player_name
-# puts g.current_player_computer?
-# puts g.player_2.move
-# puts g.player_1.move
 

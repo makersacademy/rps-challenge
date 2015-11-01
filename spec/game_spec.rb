@@ -48,7 +48,7 @@ describe Game do
 	describe '#log_move' do
 		it 'logs a players move' do
 			expect(player_1).to receive(:log)
-			game.log_move(player_1, :move)
+			game.log_move(:move)
 		end
 	end
 

@@ -14,8 +14,3 @@ def sign_in_single_player
 	fill_in(:player_1, with: 'dan')
   click_button 'Submit'
 end
-
-def choose_move
-  click_button()
-  click_button('OK')
-end

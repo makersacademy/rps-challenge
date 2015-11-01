@@ -47,7 +47,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/rock' do
     load_state
-    @game.log_move(@current_player, :rock)
+    @game.log_move(:rock)
     redirect'/rock'
   end
 
@@ -60,7 +60,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/paper' do
     load_state
-    @game.log_move(@current_player, :paper)
+    @game.log_move(:paper)
     redirect'/paper'
   end
 
@@ -73,7 +73,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/scissors' do
     load_state
-    @game.log_move(@current_player, :scissors)
+    @game.log_move(:scissors)
     redirect'/scissors'
   end
 
@@ -86,7 +86,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/spock' do
     load_state
-    @game.log_move(@current_player, :spock)
+    @game.log_move(:spock)
     redirect'/spock'
   end
 
@@ -99,7 +99,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/lizard' do
     load_state
-    @game.log_move(@current_player, :lizard)
+    @game.log_move (:lizard)
     redirect'/lizard'
   end
 
@@ -112,7 +112,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/computer' do
     @game = $game
-    @game.log_move(@current_player, :comp)
+    @game.log_move(:comp)
     @game.switch
     erb(:results)
   end

@@ -11,5 +11,4 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
-  gem 'seselenium-webdriver'
 end

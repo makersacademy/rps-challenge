@@ -17,9 +17,9 @@ class Player
 		@score += 1
 	end
 
-	private
+		private
 
-		def computer_choice
-			@move = @moves.sample
-		end
+	def computer_choice
+		@move = @moves.sample
+	end
 end
