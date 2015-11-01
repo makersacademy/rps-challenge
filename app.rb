@@ -10,12 +10,23 @@ class Game < Sinatra::Base
 
   post '/name' do
     session[:player] = params[:player]
+    p session[:player]
     redirect :play
   end
 
   get '/play' do
     @player = session[:player]
     erb :play
+  end
+
+  post '/user_vs_pc' do
+    session[:rps] = params[:rps]
+    redirect :game
+  end
+
+  get '/game' do
+    @user_value = session[:rps]
+    erb :game
   end
 
   # start the server if ruby file executed directly

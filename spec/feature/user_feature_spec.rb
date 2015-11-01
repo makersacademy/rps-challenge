@@ -12,4 +12,17 @@ feature 'user story' do
     click_button('start the game')
     expect(page).to have_content('welcome to the game: Edward scisorhands')
   end
+
+  # As a marketeer
+  # So that I can enjoy myself away from the daily grind
+  # I would like to be able to play rock/paper/scissors
+
+  scenario 'choose between srp' do
+    visit('/')
+    fill_in('player', with: 'Edward scisorhands')
+    click_button('start the game')
+    find('div.radio').choose('rock')
+    click_button('submit')
+    expect(page).to have_content('rock')
+  end
 end
