@@ -22,8 +22,8 @@ Hints on functionality
 - a winner will be declared
 
 ```
-## Tasks 
-### 1: Player should be able to enter their name and click submit
+*Tasks*
+*1: Player should be able to enter their name and click submit*
 ```
 
 ## Bonus level 1: Multiplayer
