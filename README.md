@@ -1,9 +1,10 @@
-Insructions for running
-=======================
+Instructions for running RPS app
+================================
 git clone https://github.com/youngmanr/rps-challenge.git
 cd rps-challenge
 bundle
 ruby app.rb
+open address localhost:4567 in broswer 
 
 Screen Shots
 ============
