@@ -51,3 +51,40 @@ My aim was to create a **Minimum Viable Product (MVP)**. Therefore I decided to 
 After having completed the **RSpec** [testing](https://github.com/hsheikhm/rps-challenge/tree/master/spec) for the above classes I then moved onto web app side of things and therefore used **Sinatra** and **Capybara** to build and test the main features. In order to achieve the ***separation of concerns*** I made sure to keep my [controller](https://github.com/hsheikhm/rps-challenge/blob/master/rps_web.rb) *skinny* so that it didn't have too many responsibilities. Instead of using global variables I also used the handy Sinatra *helper methods*.
 
 Once all the features of the web app had been tested and implemented it was then just a case of applying styling to the app through [HTML](https://github.com/hsheikhm/rps-challenge/tree/master/views) and [CSS](https://github.com/hsheikhm/rps-challenge/blob/master/public/css/application.css).
+
+Directory Structure
+---------------------
+```
+├── lib/
+│   ├── computer.rb
+│   ├── game.rb
+│   └── player.rb
+│
+├── public/
+│   │── css/
+│   │   └── application.css
+│   └── images/        
+│
+├── spec/
+│   │── features/
+│   │   ├── change_player_spec.rb
+│   │   ├── play_again_spec.rb
+│   │   ├── player_draws_spec.rb
+│   │   ├── player_loses_spec.rb
+│   │   ├── player_wins_spec.rb
+│   │   └── register_name_spec.rb
+│   ├── computer_spec.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── spec_helper.rb
+│   ├── web_helpers.rb
+│
+├── views/
+│   ├── draw.erb
+│   ├── lose.erb
+│   ├── play.erb
+│   ├── registration.erb
+│   └── win.erb
+│
+└── rps_web.rb
+```
