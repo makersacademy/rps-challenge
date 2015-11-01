@@ -6,12 +6,16 @@ feature "Home page:" do
     expect(page).to have_content('Welcome to Rock Paper Scissors')
   end
 
-  scenario "user can choose single player" do
-    click_button 'single-player'
+  scenario "user can choose original version" do
+    click_button 'Original'
   end
 
-  scenario "user can choose multi player" do
-    click_button 'multi-player'
+  scenario "user can choose advanced rules" do
+    click_button 'Advanced'
+  end
+
+  scenario "user can choose to view rules" do
+    click_button 'rules'
   end
 
 end

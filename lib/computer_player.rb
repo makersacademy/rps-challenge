@@ -1,7 +1,4 @@
-require_relative 'versions'
 class ComputerPlayer
-
-  include GameVersions
 
   attr_reader :name, :wins, :move_name, :version
 
