@@ -1,8 +1,8 @@
-require 'computer'
-
 describe Computer do
   let(:name) {"Computer"}
-  subject(:computer) {described_class.new}
+  let(:rules) {double :rules, hands: [:choice1, :choice2, :choice3]}
+  let(:rules_klass) {double :rules_klass, new: rules}
+  subject(:computer) {described_class.new(rules_klass)}
 
   context 'Initialization' do
     it {is_expected.to respond_to(:name)}
@@ -16,9 +16,11 @@ describe Computer do
     it {is_expected.to respond_to(:hand=).with(1).argument}
     it {is_expected.to respond_to(:hand)}
 
-    it 'Stores the hand' do
+    it 'Picks a hand at random' do
       computer.hand = nil
-      expect(computer.hand).to satisfy {|hand| Computer::HANDS.include? hand}
+      expect(computer.hand).to satisfy do |hand|
+        rules.hands.include? hand
+      end
     end
   end
 end

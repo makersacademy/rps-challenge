@@ -5,8 +5,9 @@ require 'computer'
 describe Game do
   let(:human) {instance_double "Player"}
   let(:robot) {instance_double "Computer"}
-
-  subject(:game) {described_class.new(human, robot)}
+  let(:rules) {double :rules}
+  let(:rules_klass) {double :rules_klass, new: rules}
+  subject(:game) {described_class.new(rules_klass, human, robot)}
 
   context 'initialisation' do
     before(:each) do
@@ -48,49 +49,16 @@ describe Game do
       expect(game.player2_hand).to eq :rock
     end
   end
-  context 'Playing a game' do
-    before(:each) do
-      allow(human).to receive(:name).and_return("Norm")
-      allow(robot).to receive(:name).and_return("Computer")
-    end
+  context 'Play game' do
 
     it {is_expected.to respond_to(:play)}
 
-    it 'is a draw when both players play the same hand' do
-      allow(human).to receive(:hand).and_return(:rock)
-      allow(robot).to receive(:hand).and_return(:rock)
-      expect(game.play).to eq :draw
-    end
-   it "Player 1's Rock blunts Player 2's Scissors" do
-      allow(human).to receive(:hand).and_return(:rock)
-      allow(robot).to receive(:hand).and_return(:scissors)
-      expect(game.play).to eq :win
-   end
-   it "Player 2's Rock blunts Player 1's Scissors" do
-      allow(human).to receive(:hand).and_return(:scissors)
-      allow(robot).to receive(:hand).and_return(:rock)
-      expect(game.play).to eq :lose
-   end
-   it "Player 1's Paper covers Player 2's Rock" do
-      allow(human).to receive(:hand).and_return(:paper)
-      allow(robot).to receive(:hand).and_return(:rock)
-      expect(game.play).to eq :win
-   end
-   it "Player 2's Paper covers Player 1's Rock" do
-      allow(human).to receive(:hand).and_return(:rock)
-      allow(robot).to receive(:hand).and_return(:paper)
-      expect(game.play).to eq :lose
-   end
-   it "Player 1's Scissors cut Player 2's Paper" do
-      allow(human).to receive(:hand).and_return(:scissors)
-      allow(robot).to receive(:hand).and_return(:paper)
-      expect(game.play).to eq :win
-   end
-   it "Player 2's Scissors Player 1's Paper" do
-      allow(human).to receive(:hand).and_return(:paper)
-      allow(robot).to receive(:hand).and_return(:scissors)
-      expect(game.play).to eq :lose
-   end
+    it 'delegates the play to collaborator' do
+      allow(human).to receive(:hand)
+      allow(robot).to receive(:hand)
 
+      expect(rules).to receive(:play)
+      game.play
+    end
   end
 end

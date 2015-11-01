@@ -1,13 +1,13 @@
 class Computer
-  HANDS = [:rock, :paper, :scissors]
   attr_reader :name, :hand
-  def initialize
+  def initialize(rules_klass)
+    @rules = rules_klass.new
     @name = "Computer"
     @hand = nil
   end
 
   def hand=(_hand = nil)
-    @hand = HANDS.sample
+    @hand = @rules.hands.sample
   end
 end
 

@@ -2,8 +2,8 @@ require 'sinatra/base'
 require_relative '../lib/game'
 require_relative '../lib/player'
 require_relative '../lib/computer'
-require_relative '../lib/player_store.rb'
-
+require_relative '../lib/player_store'
+require_relative '../lib/standard_rules'
 class RPS < Sinatra::Base
 
   enable :sessions
@@ -36,8 +36,8 @@ class RPS < Sinatra::Base
 
   post '/go' do
     player1 = retrieve
-    player2 = Computer.new
-    game = Game.new(player1, player2)
+    player2 = Computer.new(StandardRules)
+    game = Game.new(StandardRules, player1, player2)
     game.player1_hand = params[:hand]
     game.player2_hand = nil
     result = game.play

@@ -1,12 +1,7 @@
 class Game
 
-  RULES = {
-    # This    | Loses to this
-    rock:     :paper,
-    paper:    :scissors,
-    scissors: :rock
-  }
-  def initialize(player1, player2)
+  def initialize(rules_klass, player1, player2)
+    @rules = rules_klass.new
     @player1 = player1
     @player2 = player2
   end
@@ -34,15 +29,7 @@ class Game
   def player2_hand
     @player2.hand
   end
-
   def play
-    return :draw if @player1.hand == @player2.hand
-    return :win if rules(@player2.hand) == @player1.hand
-    return :lose if rules(@player1.hand) == @player2.hand
-  end
-
-  private
-  def rules(hand)
-    RULES[hand]
+    @rules.play(player1_hand, player2_hand)
   end
 end
