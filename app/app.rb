@@ -20,6 +20,8 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @option = params[:option]
+    srand(1)
+    @computer_move = ['rock', 'paper', 'scissors'].sample
     erb(:result)
   end
 
