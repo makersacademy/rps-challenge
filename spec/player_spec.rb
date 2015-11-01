@@ -11,13 +11,6 @@ describe Player do
     end
   end
 
-  context "#weapon error" do
-
-    it "raises an error if player chooses unidentified weapon" do
-      expect{player.weapon=('x')}.to raise_error described_class::WEAPON_ERROR
-    end
-  end
-
   context "player can be:" do
 
     it "#rock" do
