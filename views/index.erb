@@ -5,16 +5,18 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-
   <h1>Welcome to Rock Paper Scissors</h1>
-  <img src="/images/rps.png">
-  <img src="/images/rps-advanced.png">
-  <div id="gametype">
+  <div id="gamemenu">
+    <h2>Game Menu</h2>
     <form action="/game-version" method="post">
       <input type='submit' name='version' value='Original'>
+    </form>
+    <form action="/game-version" method="post">
       <input type='submit' name='version' value='Advanced'>
     </form>
+    <form action="/get-rules" method="post">
+      <input type='submit' value='rules'>
+    </form>
   </div>
-
 </body>
 </html

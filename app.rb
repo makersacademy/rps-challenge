@@ -8,6 +8,14 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/get-rules' do
+    redirect '/rules'
+  end
+
+  get '/rules' do
+    erb :rules
+  end
+
   post '/game-version' do
     $game = Game.new(params[:version])
     redirect '/player-count'
@@ -17,12 +25,12 @@ class RockPaperScissors < Sinatra::Base
     erb :player_count
   end
 
-  get '/single_player' do
-    erb :single_player_name
+  get '/oneplayer' do
+    erb :oneplayer
   end
 
-  get '/multi_player' do
-    erb :multi_player_name
+  get '/twoplayer' do
+    erb :twoplayer
   end
 
   post '/playernames' do
