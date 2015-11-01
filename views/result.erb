@@ -2,9 +2,13 @@
   <link rel="stylesheet" href="/css/master.css">
 </head>
 
-You picked <%= @player_choice %>. The computer picked <%= @game.computer_weapon_choice %>.
-You <%= @game.result %>!
-
+You picked <%= @game.player.player_weapon %>.
+The computer picked <%= @game.computer.choice %>.
+<% if @game.result == :draw %>
+It's a draw.
+<% else %>
+You <%= @game.result %>
+<% end %>
 
 <footer>
 RPS-Challenge

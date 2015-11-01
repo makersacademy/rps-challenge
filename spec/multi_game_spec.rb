@@ -16,29 +16,29 @@ describe MultiGame do
   end
 
   describe "#result" do
+
       context "when a player selects rock" do
-        it "wins vs scissors" do
-          allow(player_1).to receive(:player_weapon).and_return(:rock)
-          allow(player_2).to receive(:player_weapon).and_return(:scissors)
-          expect(multi_game.result).to eq(:wins)
-        end
-        it "draws vs rock" do
-          allow(player_1).to receive(:player_weapon).and_return(:rock)
-          allow(player_2).to receive(:player_weapon).and_return(:rock)
-          expect(multi_game.result).to eq(:draw)
-        end
-        it "loses vs paper" do
-          allow(player_1).to receive(:player_weapon).and_return(:rock)
-          allow(player_2).to receive(:player_weapon).and_return(:paper)
-          expect(multi_game.result).to eq(:loses)
-        end
-        it "wins vs lizard" do
-          allow(player_1).to receive(:player_weapon).and_return(:rock)
-          allow(player_2).to receive(:player_weapon).and_return(:lizard)
-          expect(multi_game.result).to eq(:wins)
+          before do
+              allow(player_1).to receive(:player_weapon).and_return(:rock)
+          end
+          it "wins vs scissors" do
+            allow(player_2).to receive(:player_weapon).and_return(:scissors)
+            expect(multi_game.result).to eq(:wins)
+          end
+          it "draws vs rock" do
+            allow(player_2).to receive(:player_weapon).and_return(:rock)
+            expect(multi_game.result).to eq(:draw)
+          end
+          it "loses vs paper" do
+            allow(player_2).to receive(:player_weapon).and_return(:paper)
+            expect(multi_game.result).to eq(:loses)
+          end
+          it "wins vs lizard" do
+            allow(player_2).to receive(:player_weapon).and_return(:lizard)
+            expect(multi_game.result).to eq(:wins)
+          end
         end
       end
-    end
 
 
 

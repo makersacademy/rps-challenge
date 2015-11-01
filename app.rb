@@ -29,7 +29,8 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = $game
-    @player_choice = @game.player.player_choice((params[:selection]).to_sym)
+    @game.player.player_choice((params[:selection]).to_sym)
+    @game.computer_weapon_choice
     erb :result
   end
 

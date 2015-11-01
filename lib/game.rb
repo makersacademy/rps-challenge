@@ -27,11 +27,11 @@ class Game
   private
 
   def draw?
-    @player.player_weapon == @computer.computer_choice
+    @player.player_weapon == @computer.choice
   end
 
   def win?
-    RULES[@player.player_weapon].include?(@computer.computer_choice)
+    RULES[@player.player_weapon].include?(@computer.choice)
   end
 
 end
