@@ -19,8 +19,15 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/selection' do
     @player1 = $player1.name
+    $player1_choice = $player1.weapon(params[:player_1_choice])
+    redirect 'result'
+  end
+
+  get '/result' do
+    @player1_choice = $player1_choice
+    # @computer_choice = $computer.weapon
     erb :result
   end
 
