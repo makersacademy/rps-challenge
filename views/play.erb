@@ -6,5 +6,11 @@
 </head>
 <body>
   <h1><%= "Hello #{@username}! Welcome to Rock, Paper, Scissors!"%></h1>
+  <h3>To Play: choose Rock, Paper or Scissors!</h3>
+  <form action="/decision" method="post" >
+    <input type="submit" name="rock" value="Rock">
+    <input type="submit" name="paper" value="Paper">
+    <input type="submit" name="scissors" value="Scissors">
+  </form>
 </body>
 </html>
