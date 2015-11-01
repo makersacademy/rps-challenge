@@ -1,8 +1,6 @@
-feature 'Enter name' do
+feature 'Enter user name' do
   scenario 'user registration' do
-    visit('/')
-    fill_in :player, with: 'Bob'
-    click_button('Play')
+    sign_in_and_play
     expect(page).to have_content 'Bob vs. Computer'
   end
 end
