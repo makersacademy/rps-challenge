@@ -32,8 +32,8 @@ describe Game do
     it {is_expected.to respond_to(:player2_hand=).with(1).argument}
 
     it 'delegates setting of hands to colaborators' do
-      expect(human).to receive(:hand=)
-      expect(robot).to receive(:hand=)
+      expect(human).to receive(:give_hand)
+      expect(robot).to receive(:give_hand)
       game.player1_hand = :rock
       game.player2_hand = :paper
     end

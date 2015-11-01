@@ -5,7 +5,7 @@ class Player
     @hand = nil
   end
 
-  def hand=(hand)
+  def give_hand(hand)
     @hand = hand.downcase.to_sym
   end
 end

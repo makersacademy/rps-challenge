@@ -15,11 +15,11 @@ class Game
   end
 
   def player1_hand=(hand)
-    @player1.hand=(hand)
+    @player1.give_hand(hand)
   end
 
   def player2_hand=(hand)
-    @player2.hand=(hand)
+    @player2.give_hand(hand)
   end
 
   def player1_hand
