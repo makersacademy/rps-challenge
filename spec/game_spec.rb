@@ -29,14 +29,4 @@ describe Game do
       expect(game.who_wins).to eq ('Computer')
     end
   end
-
-  context 'Reset choices' do
-      it 'resets the player\'s and computer\'s choices' do
-      game.set_player_choice(:rock)
-      game.set_game_choice
-      game.reset
-      expect(game.player_choice).to eq nil
-      expect(game.game_choice).to eq nil
-    end
-  end
 end

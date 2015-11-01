@@ -26,11 +26,6 @@ class Game
     end
   end
 
-  def reset
-    @player_choice = nil
-    @game_choice = nil
-  end
-
   private
 
   def random_number
