@@ -12,6 +12,14 @@ The program uses the following:
 - capybara
 - sinatra 1.4.6
 
+To play the game please do the following:
+```ruby
+$ git clone https://github.com/rochester234/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
 
 ###**Approach**
 
