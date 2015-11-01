@@ -1,9 +1,10 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(opponent_klass)}
+  subject(:game) {described_class.new(opponent_klass,result_klass)}
   let(:opponent_klass) {double(:opponent_klass)}
   let(:opponent) {double(:opponent)}
+  let(:result_klass) {double(:result_klass)}
   before do
    allow(opponent_klass).to receive(:new).and_return(opponent)
   end
@@ -21,6 +22,11 @@ describe Game do
       allow(opponent).to receive(:choose_hand).and_return(:paper)
       game.set_opponent_hand
       expect(game.opponent_hand).to eq :paper
+    end
+
+    it "checks the result of the two hands clashing" do
+      expect(result_klass).to receive(:run)
+      game.result
     end
   end
 end

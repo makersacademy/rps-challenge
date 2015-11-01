@@ -1,3 +1,4 @@
 <body>You chose <%= "#{@player_1_hand}\n" %></br>
   Your opponent chose <%= "#{@player_2_hand}" %>
+<%= @result == :draw ? "Draw - play again!" : "#{@result} wins!" %>
 </body>
