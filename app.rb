@@ -45,8 +45,7 @@ class RPS < Sinatra::Base
       $computer = Computer.new
       @computer_1_move_choice = $computer.move_choice
       @player_1_move_choice = $p1.move_choice
-      $game = Game.new
-      @game_outcome = $game.winner
+      @game_outcome = Game.new.winner($p1, $computer)
       erb(:computer)
   end
 
