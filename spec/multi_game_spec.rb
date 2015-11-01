@@ -20,7 +20,7 @@ describe MultiGame do
       it "lets the player know if they have won or not" do
         allow(player_1).to receive(:player_weapon).and_return(:rock)
         allow(player_2).to receive(:player_weapon).and_return(:scissors)
-        expect(multi_game.result).to eq(:win)
+        expect(multi_game.result).to eq(:wins)
       end
     end
 

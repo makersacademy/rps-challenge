@@ -13,7 +13,7 @@ class MultiGame
 
   def result
     return :draw if draw?
-    win? ? :win :(:lose)
+    win? ? :wins :(:loses)
   end
 
   private
