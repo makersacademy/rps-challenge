@@ -1,29 +1,26 @@
-feature 'rock paper scissors game page' do
+require 'game'
 
+describe Game do
+  subject(:game) {described_class.new(opponent_klass)}
+  let(:opponent_klass) {double(:opponent_klass)}
+  let(:opponent) {double(:opponent)}
   before do
-    visit('/')
-    fill_in('Player 1 Name', with: 'Deon')
-    click_button('Submit')
+   allow(opponent_klass).to receive(:new).and_return(opponent)
+  end
+  it "can initialize with a new opponent" do
+    expect(game.opponent).to eq opponent
   end
 
-  scenario "the page exists" do
-    expect(current_path).to eq '/game'
-  end
+  context "when playing a game of RPS" do
+    it "can store the player's hand" do
+      game.set_player_1_hand(:paper)
+      expect(game.player_1_hand).to eq :paper
+    end
 
-  scenario "the player's name is displayed" do
-    expect(page).to have_content('Deon')
+    it "can store the opponent's hand" do
+      allow(opponent).to receive(:choose_hand).and_return(:paper)
+      game.set_opponent_hand
+      expect(game.opponent_hand).to eq :paper
+    end
   end
-
-  scenario "there is a 'paper' button" do
-    find_button('Paper').value
-  end
-
-  scenario "there is a 'rock' button" do
-    find_button('Rock').value
-  end
-
-  scenario "there is a 'scissors' button" do
-    find_button('Scissors').value
-  end
-
 end
