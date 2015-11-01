@@ -1,7 +1,5 @@
 require 'sinatra/base'
-require './lib/computer.rb'
-require './lib/game.rb'
-require './lib/player.rb'
+Dir["./lib/*.rb"].each {|file| require file }
 
 class RPSWeb < Sinatra::Base
 
