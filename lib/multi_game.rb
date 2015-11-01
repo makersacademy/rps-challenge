@@ -1,8 +1,10 @@
 class MultiGame
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  RULES = { rock: [:scissors, :lizard],
+            paper: [:lizard, :rock],
+            scissors: [:paper, :lizard],
+            spock: [:scissors, :rock],
+            lizard: [:spock, :paper] }
 
   attr_reader :player_1, :player_2
 
@@ -23,7 +25,7 @@ class MultiGame
   end
 
   def win?
-    RULES[@player_1.player_weapon] == @player_2.player_weapon
+    RULES[@player_1.player_weapon].include?(@player_2.player_weapon)
   end
 
 end

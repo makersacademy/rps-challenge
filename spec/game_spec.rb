@@ -17,20 +17,26 @@ describe Game do
 
   describe "#result" do
     context "when a player selects rock" do
-      it "lets the player know if they have won or not" do
+      it "wins vs scissors" do
         allow(player).to receive(:player_weapon).and_return(:rock)
         allow(computer).to receive(:computer_choice).and_return(:scissors)
         expect(game.result).to eq(:win)
       end
-    end
-
-    it "lets the player know if the result is a  draw" do
-      allow(player).to receive(:player_weapon).and_return(:rock)
-      allow(computer).to receive(:computer_choice).and_return(:rock)
-      expect(game.result).to eq(:draw)
+      it "draws vs rock" do
+        allow(player).to receive(:player_weapon).and_return(:rock)
+        allow(computer).to receive(:computer_choice).and_return(:rock)
+        expect(game.result).to eq(:draw)
+      end
+      it "loses vs paper" do
+        allow(player).to receive(:player_weapon).and_return(:rock)
+        allow(computer).to receive(:computer_choice).and_return(:paper)
+        expect(game.result).to eq(:lose)
+      end
+      it "wins vs lizard" do
+        allow(player).to receive(:player_weapon).and_return(:rock)
+        allow(computer).to receive(:computer_choice).and_return(:lizard)
+        expect(game.result).to eq(:win)
+      end
     end
   end
-
-
-
 end
