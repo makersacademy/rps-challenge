@@ -1,4 +1,4 @@
-<% if @player_choice == nil %>
+<% if @winner == nil %>
   <p>Let's play, <%= @player_name %> goes first!</p>
   <p>
     <a href="/choice?player_choice=rock"><img src="rock.jpg" alt="rock.jpg"></a>
@@ -7,5 +7,6 @@
   </p>
 <% else %>
   <p><%= @player_name %>'s choice: <%= @player_choice %>.</p>
-  <p>Computer's choice: <%= @computer_choice %>.</p>  
+  <p>Computer's choice: <%= @computer_choice %>.</p>
+  <%= @winner %> wins!
 <% end %>
