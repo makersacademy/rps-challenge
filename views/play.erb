@@ -1,0 +1,15 @@
+<html>
+<h1>Game is starting!</h1>
+<h2>Player name: <%=@player_name %></h2>
+<h2>Select an option:</h2>
+<form action='/selecting-option' method='post'>
+<input type="submit" name="option_rock" value="Rock">
+</form>
+<form action='/selecting-option' method='post'>
+<input type="submit" name="option_scissors" value="Scissors">
+</form>
+<form action='/selecting-option' method='post'>
+<input type="submit" name="option_paper" value="Paper">
+</form>
+<h2>Game returned its choice.</h2>
+</html>
