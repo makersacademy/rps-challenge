@@ -21,26 +21,26 @@ class RPS < Sinatra::Base
   get "/play" do
     s = session[:game]
     @name = s.name
+    @turn = s.turn
+    @score = s.score
     @result = s.battle_check
     @ai_choice = s.ai_choice
     @user_choice = s.user_choice
-    @score = s.score
-    @turn = s.turn
     erb(:play)
   end
 
   get "/rock" do
-    session[:game].choice('rock')
+    session[:game].choice('cat')
     redirect :play
   end
 
   get "/paper" do
-    session[:game].choice('paper')
+    session[:game].choice('goku')
     redirect :play
   end
 
   get "/scissors" do
-    session[:game].choice('scissors')
+    session[:game].choice('patrick')
     redirect :play
   end
 
