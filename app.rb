@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   post '/select_hand' do
-    $game.set_player_1_hand(params['player_1_hand'])
+    $game.set_player_1_hand(params['player_1_hand'].to_sym)
     session['player_2_hand'] = $game.set_opponent_hand
     redirect('/showdown')
   end
@@ -29,10 +29,18 @@ class RPS < Sinatra::Base
   get '/showdown' do
     @player_1_hand = $game.player_1_hand
     @player_2_hand = session['player_2_hand']
-    p "player 1 hand: #{@player_1_hand}"
-    p "player 2 hand: #{@player_2_hand}"
-    # @result = $game.result
+    # p "player 1 hand: #{@player_1_hand}"
+    # p "player 2 hand: #{@player_2_hand}"
+    # p "game.opponent #{$game.opponent}"
+    # p "game.player_1_hand #{$game.player_1_hand}"
+    # p "game.player_2_hand #{$game.opponent_hand}"
+    @result = $game.result.to_s.gsub("_"," ")
+    # @result = @result.to_s.gsub("_"," ")
     erb :showdown
+  end
+
+  post '/rps' do
+    redirect '/rps'
   end
 
   # start the server if ruby file executed directly
