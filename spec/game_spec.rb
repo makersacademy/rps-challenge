@@ -65,5 +65,22 @@ describe 'Game' do
         expect(game.winner).to eq (:name)
       end
     end
+    context 'Nobody wins' do
+      it 'when computer chooses rock, player chooses rock' do
+        allow(Kernel).to receive(:rand) { 0.332 }
+        game.set_player_choice(:rock)
+        expect(game.winner).to eq ('Nobody')
+      end
+      it 'when computer chooses paper, player chooses paper' do
+        allow(Kernel).to receive(:rand) { 0.665 }
+        game.set_player_choice(:paper)
+        expect(game.winner).to eq ('Nobody')
+      end
+      it 'when computer chooses scissors, player chooses scissors' do
+        allow(Kernel).to receive(:rand) { 0.999 }
+        game.set_player_choice(:scissors)
+        expect(game.winner).to eq ('Nobody')
+      end
+    end
   end
 end

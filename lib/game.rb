@@ -17,11 +17,16 @@ class Game
   def winner
     return nil if @player_choice.nil?
     set_computer_choice
+    return 'Nobody' if draw?
     index = @choices.index(@player_choice.to_sym)
     (@choices[index-1] == @computer_choice) ? @player_name : 'Computer'
   end
 
   private
+
+  def draw?
+    @player_choice == @computer_choice
+  end
 
   def set_computer_choice
     @computer_choice = random_choice
