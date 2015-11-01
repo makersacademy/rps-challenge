@@ -1,5 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/makersacademy/rps-challenge/badge.svg?branch=zdajani&service=github)](https://coveralls.io/github/makersacademy/rps-challenge?branch=zdajani)
-[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
+
 
 Features
 ---
