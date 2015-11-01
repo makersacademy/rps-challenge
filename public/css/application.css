@@ -45,3 +45,17 @@ body {
   height: 200px;
   margin-right: 30px;
 }
+
+#rematch-button {
+  font-size: 20px;
+  margin: 20px 30px 20px 20px;
+  width: 100px;
+  height: 20px;
+}
+
+#change-player-button {
+  font-size: 20px;
+  margin: 20px 30px 20px 20px;
+  width: 140px;
+  height: 20px;
+}
