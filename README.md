@@ -30,7 +30,9 @@ Hints on functionality
 
 #### 3: Player should be able to pick rock, paper, or scissors
 
-#### 4: Once the player picks their weapon, a game should start between the computer
+#### 4: Once the player picks their weapon, a game should start between the computer, at this point computer should also choose a weapon
+
+#### 5: Check the player's and computer's weapons and see the result, win, lose or draw should take you to the relevant erb file
 
 ## Bonus level 1: Multiplayer
 
