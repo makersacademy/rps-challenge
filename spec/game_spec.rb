@@ -31,8 +31,8 @@ describe Game do
   context 'when the player wins' do
     describe '#result' do
         it 'should print a congratulatory message' do
-        allow(computer).to receive(:weapon).and_return('scissors')
-        expect(game.result).to eq 'Congratulations!'
+          allow(computer).to receive(:weapon).and_return('scissors')
+          expect(game.result).to eq 'Congratulations!'
       end
     end
   end
