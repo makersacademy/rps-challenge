@@ -23,8 +23,14 @@ Hints on functionality
 
 
 ### Tasks
+
 #### 1: Player should be able to enter their name and click submit
 
+#### 2: Player name should be displayed in play.erb file
+
+#### 3: Player should be able to pick rock, paper, or scissors
+
+#### 4: Once the player picks their weapon, a game should start between the computer
 
 ## Bonus level 1: Multiplayer
 
