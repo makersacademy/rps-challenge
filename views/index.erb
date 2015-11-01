@@ -1,6 +1,10 @@
 <h1> Rock-Paper-Scissors </h1>
-<h3> Sign up to play! </h3>
-<h3> <form action="/play" method="post">
-  <input type="text" name="username">
-  <input type="submit" value="Play!">
+<h3> Select a mode </h3>
+<h3> Single Player: </h3>
+<form action="/single_player_sign_in">
+  <input type="submit" id="single_player" value="Play">
+</form>
+<h3> Multi Player: </h3>
+<form action="/multi_player_sign_in">
+  <input type="submit" id="multi_player" value="Play">
 </form>

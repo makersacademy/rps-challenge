@@ -2,12 +2,17 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/player'
 require './lib/computer'
+require './lib/multi_game'
 
 class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
     erb :index
+  end
+
+  get '/single_player_sign_in' do
+    erb :single_player
   end
 
   post '/play' do
@@ -28,11 +33,29 @@ class RPS < Sinatra::Base
     erb :result
   end
 
+  get '/multi_player_sign_in' do
+    erb :multi_player
+  end
+
+  post '/multi_player_play' do
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    $multi_game = MultiGame.new(player_1, player_2)
+    redirect('/multi_play')
+  end
+
+  get '/multi_play' do
+    @multi_game = $multi_game
+    erb :multi_play
+  end
+
+  post '/multi_result' do
+    @multi_game = $multi_game
+    @multi_game.player_1.player_choice((params[:player_1_selection]).to_sym)
+    @multi_game.player_2.player_choice((params[:player_2_selection]).to_sym)
+    erb :multi_result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
-
-# the marketeer will be presented the choices (rock, paper and scissors)
-# the marketeer can choose one option
-# the game will choose a random option
-# a winner will be declared

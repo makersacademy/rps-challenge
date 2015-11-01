@@ -1,0 +1,13 @@
+<h1> <%= @multi_game.player_1.name %> vs <%= @multi_game.player_2.name %> </h1>
+
+<form action="/multi_result" method="post">
+  <h3> Player 1: </h3>
+  <h3> Rock: <input type="radio" name="player_1_selection" id="rock" value="rock"> </h3>
+  <h3> Paper: <input type="radio" name="player_1_selection" id="paper" value="paper"> </h3>
+  <h3> Scissors: <input type="radio" name="player_1_selection" id="scissors" value="scissors"> </h3>
+  <h3> Player 2: </h3>
+  <h3> Rock: <input type="radio" name="player_2_selection" id="rock" value="rock"> </h3>
+  <h3> Paper: <input type="radio" name="player_2_selection" id="paper" value="paper"> </h3>
+  <h3> Scissors: <input type="radio" name="player_2_selection" id="scissors" value="scissors"> </h3>
+  <h3> <input type="submit" value="Submit"> </h3>
+</form>
