@@ -59,7 +59,6 @@ class Rps < Sinatra::Base
   end
 
   post '/2pname' do
-    p params
     player = Player.new(params[:player_name])
     cpu_player = Player.new(params[:player2_name])
     players = 2
@@ -73,7 +72,9 @@ class Rps < Sinatra::Base
 
   get '/play' do
     game_state
-    erb :play
+    p params
+    return erb :play if @game_type == 'classic'
+    return erb :alt_play if @game_type == 'alt'
   end
 
   get '/game' do
@@ -94,21 +95,35 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    $game.rock
+    $game.weopon(:rock)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/paper' do
-    $game.paper
+    $game.weopon(:paper)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/scissors' do
-    $game.scissors
+    $game.weopon(:scissors)
+    switch_play_switch if $game.player_count==1
+    $game.switch_turns if $game.player_count==2
+    check_draw
+  end
+
+    post '/lizard' do
+    $game.weopon(:lizard)
+    switch_play_switch if $game.player_count==1
+    $game.switch_turns if $game.player_count==2
+    check_draw
+  end
+
+    post '/spock' do
+    $game.weopon(:spock)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw

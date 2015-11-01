@@ -7,16 +7,8 @@ class Player
     @hand = nil
   end
 
-  def rock
-    @hand = :rock
-  end
-
-  def paper
-    @hand = :paper
-  end
-
-  def scissors
-    @hand = :scissors
+  def weopon weopon
+    @hand = weopon
   end
 
   def clear_hand
