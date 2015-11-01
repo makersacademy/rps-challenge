@@ -1,3 +1,20 @@
+Insructions for running
+=======================
+git clone https://github.com/youngmanr/rps-challenge.git
+cd rps-challenge
+bundle
+ruby app.rb
+
+Screen Shots
+============
+
+The following screen shots of the app working are provided in the repo
+Register.PNG - Screen allow marketeer to enter their name before playing
+Play.PNG - Screen provides rock, paper, scissors buttons for the player initiate one game
+Result.PNG - Screen shows the player's choice of weapon, the opponents weapon and the result.
+
+Note: The opponents weapon is randomly selcected from rock, paper, scissors.
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
