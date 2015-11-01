@@ -1,3 +1,8 @@
-<p>You chose <%= @player1_move %></p>
-<p>Computer chose <%= @player2_move %></p>
-<%= @result %>
+<div style="text-align: center">
+  <p>You chose <%= @player1_move %></p>
+  <p>Computer chose <%= @player2_move %></p>
+  <p><%= @result %></p>
+  <p><form method='get' action='/play'>
+    <input type='submit' value='Play again'>
+  </form>
+
