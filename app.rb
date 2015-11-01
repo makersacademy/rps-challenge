@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
 require './lib/computer.rb'
+require './lib/weapon.rb'
 
 class RockPaperScissors < Sinatra::Base
   # enable :sessions

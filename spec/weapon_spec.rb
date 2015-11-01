@@ -7,4 +7,5 @@ describe Weapon do
   it 'has a type' do
     expect(weapon.type).to eq :rock
   end
+
 end
