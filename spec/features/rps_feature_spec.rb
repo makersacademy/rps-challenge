@@ -10,4 +10,11 @@ feature "Rock, Paper, Scissors" do
     click_button('Rock')
     expect(page).to have_content('Andrew chose Rock')
   end
+  scenario 'computer chooses rock, paper or scissors' do
+    sign_in_and_play
+    click_button('Rock')
+    click_link("Computer's turn")
+    expect(page).to have_content("Computer chose")
+  end
+
 end

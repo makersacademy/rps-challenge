@@ -13,10 +13,10 @@ Features Implemented
 ---------------------
 * Single player sign in
 * Ability to choose rock paper or scissors
+* Game should be able to choose rock paper or scissors at random
 
 Features to implement in the future
 -----------------------------------
-* Game should be able to choose rock paper or scissors at random
 * The winner of the game should be declared
 
 Lessons learned
