@@ -1,9 +1,18 @@
 require 'game'
 
 describe Game do
-
-  it 'returns rock,paper or scissors' do
-    allow(subject).to receive(:picker).and_return('what')
-    expect(subject.picker).to eq 'what'
+  before(:each) do
+    (subject).to receive(:picker).and_return('rock')
   end
+
+  it 'allows input of a choice' do
+    subject.choice('paper')
+    expect(subject.user_choice).to eq("paper")
+  end
+
+  it 'increments the turn' do
+    expect {subject.battle}.to change{subject.turn}.by(1)
+  end
+
+
 end
