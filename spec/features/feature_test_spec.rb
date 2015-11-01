@@ -30,11 +30,11 @@ feature 'Rock, Paper, Scissors' do
       click_button('rock')
     end
     scenario 'Announces a winner' do
-      expect(page).to have_content "The winner is..."
+      expect(page).to have_content 'The winner is...'
     end
     scenario 'User can play again' do
       click_button('Click here to play again')
-      expect(page).to have_xpath('/play')
+      expect(page).to have_content 'Please choose from the following options'
     end
   end
 end
