@@ -3,6 +3,7 @@
 # I would like to register my name before playing an online game
 
 feature "Register name before playing the game" do
+
   scenario "enter your name" do
     visit ("/")
     expect(page).to have_content("Please enter your name")
@@ -20,32 +21,32 @@ feature "Register name before playing the game" do
     fill_in(:player_name, with: 'Rajeev')
     click_button("Register")
     expect(page).to have_content "Select one of"
-   end
+  end
 
-   scenario "player defeats computer" do
-     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
-     visit ("/")
-     fill_in(:player_name, with: 'Rajeev')
-     click_button("Register")
-     click_link("rock")
-     expect(page).to have_content "You have won, Rajeev!"
-    end
+  scenario "player defeats computer" do
+   allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+   visit ("/")
+   fill_in(:player_name, with: 'Rajeev')
+   click_button("Register")
+   click_link("rock")
+   expect(page).to have_content "You have won, Rajeev!"
+  end
 
-    scenario "computer defeats player" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
-      visit ("/")
-      fill_in(:player_name, with: 'Rajeev')
-      click_button("Register")
-      click_link("paper")
-      expect(page).to have_content "You have lost, Rajeev!"
-     end
+  scenario "computer defeats player" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    visit ("/")
+    fill_in(:player_name, with: 'Rajeev')
+    click_button("Register")
+    click_link("paper")
+    expect(page).to have_content "You have lost, Rajeev!"
+  end
 
-     scenario "there can be a tie" do
-       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
-       visit ("/")
-       fill_in(:player_name, with: 'Rajeev')
-       click_button("Register")
-       click_link("scissors")
-       expect(page).to have_content "You have a tie, Rajeev!"
-      end
+  scenario "there can be a tie" do
+   allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+   visit ("/")
+   fill_in(:player_name, with: 'Rajeev')
+   click_button("Register")
+   click_link("scissors")
+   expect(page).to have_content "You have a tie, Rajeev!"
+  end
 end
