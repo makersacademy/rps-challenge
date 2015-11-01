@@ -19,6 +19,18 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  post '/choice' do
+    @game = $game
+    @game.set_player_choice(params[:choice].to_sym)
+    @game.set_game_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
+    erb(:result)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
