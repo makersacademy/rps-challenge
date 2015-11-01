@@ -20,8 +20,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/selection' do
-    @player1 = $player1.name
-    $player1_choice = $player1.weapon(params[:player_1_choice])
+    $player1_choice = $player1.choose_weapon(params[:player_1_choice])
     redirect 'result'
   end
 

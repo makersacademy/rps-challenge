@@ -8,11 +8,11 @@ describe Player do
   end
 
   it 'has a choice of weapons' do
-    expect(player.weapon(:rock)).to eq :rock
+    expect(player.choose_weapon(:rock)).to eq :rock
   end
 
   it 'only has three weapons' do
-    expect{ player.weapon(:gun) }.to raise_error \
+    expect{ player.choose_weapon(:gun) }.to raise_error \
     'You can only select rock, paper or scissors in this game'
   end
 end
