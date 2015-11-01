@@ -23,6 +23,8 @@ body {
 
 #register-button {
   font-size: 36px;
+  width: 100px;
+  height: 20px;
 }
 
 #rps-image {
@@ -30,7 +32,7 @@ body {
 }
 
 #row {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 #weapon-button {
