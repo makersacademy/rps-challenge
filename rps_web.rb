@@ -5,7 +5,7 @@ class RPSWeb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :index
+    erb :registration
   end
 
   post '/name' do
@@ -16,7 +16,7 @@ class RPSWeb < Sinatra::Base
   get '/play' do
     @player_name = session[:name]
     erb :play
-  end
+ end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
