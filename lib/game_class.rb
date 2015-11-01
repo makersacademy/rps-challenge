@@ -1,3 +1,5 @@
+require_relative 'game_randomizer'
+
 class Game
 
   def initialize(player_option)
@@ -6,15 +8,15 @@ class Game
 
   def winner(game_option)
     @game << game_option
-    combinations = { ["scissors","scissors"] => "Nobody wins",
-                    ["scissors","paper"] => "Player wins",
-                    ["scissors","rock"] => "Game wins",
-                    ["rock","rock"] => "Nobody wins",
-                    ["rock","paper"] => "Game wins",
-                    ["rock","scissors"] => "Player wins",
-                    ["paper","paper"] => "Nobody wins",
-                    ["paper","rock"] => "Player wins",
-                    ["paper","scissors"] => "Game wins" }
+    combinations = { ["Scissors","Scissors"] => "Nobody wins",
+                    ["Scissors","Paper"] => "Player wins",
+                    ["Scissors","Rock"] => "Game wins",
+                    ["Rock","Rock"] => "Nobody wins",
+                    ["Rock","Paper"] => "Game wins",
+                    ["Rock","Scissors"] => "Player wins",
+                    ["Paper","Paper"] => "Nobody wins",
+                    ["Paper","Rock"] => "Player wins",
+                    ["Paper","Scissors"] => "Game wins" }
     combinations[@game]
   end
 
