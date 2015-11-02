@@ -53,6 +53,12 @@ describe AltGame do
       allow(cpu_player).to receive(:hand).and_return(:rock)
       expect(game.winner).to eq player.name
     end
+
+    it 'returns nil if there is only one player has taken their turn' do
+      allow(player).to receive(:hand).and_return(:paper)
+      allow(cpu_player).to receive(:hand).and_return(nil)
+      expect(game.winner).to eq nil
+    end
   end
 
 end
