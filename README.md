@@ -13,7 +13,7 @@ To play the game, enter the number of players and then player names. If playing 
 
 I'm sure the classic version of this game is familiar to you, but perhaps you haven't heard of the alternative version available here. The rules can be explaned in this infographic:
 
-![RPSLS](https://dl.dropboxusercontent.com/content_link/6UfHxIXV3IcTbtXEk75CdzCHAPZ2EtmuYJlBmf1ADD01B4aGcKq6JwyAOZm8fzax/file)
+![RPSLS](https://github.com/forty9er/rps-challenge/blob/master/Rock_paper_scissors_lizard_spock.png)
 
 
 ### TODO
