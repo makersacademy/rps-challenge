@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+</head>
+<body>
+<header> <%=@game.player_name%> attacks with <%=@game.player_weapon%>!</header>
+<header> Opponent attacks with <%=@game.opponent_weapon%>!</header>
+<header> <%=@game.player_name%> <%=@game.result.to_s%>!</header>
+<form action='/play'>
+  <input type='submit' value='New Game'>
+</form>
+</body>
+</html>
