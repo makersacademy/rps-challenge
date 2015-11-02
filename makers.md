@@ -1,7 +1,19 @@
-# RPS Challenge:
+# RPS Challenge: Rōnin Badge Test
 
-Creating a rock, papers, scissors game.
+Instructions
 -------
+* Challenge time: Friday, the entire day + the weekend if you need it
+* Feel free to use google, your notes, books, etc but work on your own
+* You must submit a pull request to this repo with your code by 9am Monday morning
+
+Task
+----
+
+Knowing how to build web applications is getting us almost there as web developers!
+
+The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+
+Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -22,17 +34,13 @@ Hints on functionality
 - a winner will be declared
 
 
-### Tasks
+As usual please start by
 
-#### 1: Player should be able to enter their name and click submit
+* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
+* Forking this repo
+* TEST driving development of your app
 
-#### 2: Player name should be displayed in play.erb file
-
-#### 3: Player should be able to pick rock, paper, or scissors
-
-#### 4: Once the player picks their weapon, a game should start between the computer, at this point computer should also choose a weapon
-
-#### 5: Check the player's and computer's weapons and see the result, win, lose or draw should take you to the relevant erb file
+**Rōnin BANZAI!!!!**
 
 ## Bonus level 1: Multiplayer
 
