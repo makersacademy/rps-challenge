@@ -1,40 +1,45 @@
+require_relative 'player'
+require 'forwardable'
+
 class Game
+  extend Forwardable
 
-  attr_reader :choices, :player_choice, :computer_choice, :player_name
+  attr_reader :players, :choices
 
-  def initialize
+  def_delegator :player1, :set_name, :set_player_name
+  def_delegator :player1, :set_choice, :set_player_choice
+  def_delegator :player1, :name, :player_name
+  def_delegator :player1, :choice, :player_choice
+
+  def_delegator :player2, :choice, :computer_choice
+
+  def initialize(player1 = Player.new, player2 = Player.new)
+    @players = [player1, player2]
     @choices = [:rock, :paper, :scissors]
   end
 
-  def set_player_name(name)
-    @player_name = name
-  end
-
-  def set_player_choice(choice)
-    @player_choice = choice.to_sym
-  end
-
   def winner
-    return nil if @player_choice.nil?
+    return nil if player_choice.nil?
     set_computer_choice
     return 'Nobody' if draw?
-    index = @choices.index(@player_choice)
-    (@choices[index-1] == @computer_choice) ? @player_name : 'Computer'
+    index = @choices.index(player_choice)
+    (@choices[index-1] == computer_choice) ? player_name : 'Computer'
   end
 
   private
 
+  def_delegator :player2, :set_choice, :set_computer_choice
+
+  def player1
+    @players[0]
+  end
+
+  def player2
+    @players[1]
+  end
+
   def draw?
-    @player_choice == @computer_choice
-  end
-
-  def set_computer_choice
-    @computer_choice = random_choice
-  end
-
-  def random_choice
-    rand_num = Kernel.rand
-    rand_num < 0.333 ? :rock : ( rand_num < 0.666 ? :paper : :scissors )
+    player_choice == computer_choice
   end
 
 end

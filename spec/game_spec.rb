@@ -1,84 +1,73 @@
 require 'game'
 
 describe 'Game' do
-  subject(:game){ Game.new }
+
+  let(:player){ double(:player1, name: :name, choice: nil) }
+  let(:computer){ double(:player2, set_choice: nil) }
+
+  subject(:game){ Game.new(player, computer) }
+
   context '#initialize' do
-    it 'has an array of options' do
+    it 'sets an array of choices' do
       expect(game.choices).to eq ([:rock, :paper, :scissors])
     end
-  end
-  context '#set_player_choice' do
-    it 'sets the player\'s choice' do
-      game.set_player_choice(:choice)
-      expect(game.player_choice).to eq (:choice)
+    it 'sets an array of 2 players' do
+      expect(game.players).to eq ([player, computer])
     end
   end
-  context '#player_choice' do
-    it 'is nil if @player_choice has not been set' do
-      expect(game.player_choice).to be_nil
-    end
-  end
-  context '#set_player_name' do
-    it 'sets the player\'s name' do
-      game.set_player_name(:name)
-      expect(game.player_name).to eq (:name)
-    end
-  end
+
   context '#winner' do
     it 'is nil if @player_choice is nil' do
       expect(game.winner).to be_nil
     end
     context 'computer wins' do
       it 'when player chooses rock, computer chooses paper' do
-        allow(Kernel).to receive(:rand) { 0.665 }
-        game.set_player_choice(:rock)
+        allow(player).to receive(:choice){ :rock }
+        allow(computer).to receive(:choice){ :paper }
         expect(game.winner).to eq ('Computer')
       end
       it 'when player chooses paper, computer chooses scissors' do
-        allow(Kernel).to receive(:rand) { 0.999 }
-        game.set_player_choice(:paper)
+        allow(player).to receive(:choice){ :paper }
+        allow(computer).to receive(:choice){ :scissors }
         expect(game.winner).to eq ('Computer')
       end
       it 'when player chooses scissors, computer chooses rock' do
-        allow(Kernel).to receive(:rand) { 0.332 }
-        game.set_player_choice(:scissors)
+        allow(player).to receive(:choice){ :scissors }
+        allow(computer).to receive(:choice){ :rock }
         expect(game.winner).to eq ('Computer')
       end
     end
     context 'player wins' do
-      before :each do
-        game.set_player_name(:name)
-      end
       it 'when computer chooses rock, player chooses paper' do
-        allow(Kernel).to receive(:rand) { 0.332 }
-        game.set_player_choice(:paper)
+        allow(player).to receive(:choice){ :paper }
+        allow(computer).to receive(:choice){ :rock }
         expect(game.winner).to eq (:name)
       end
       it 'when computer chooses paper, player chooses scissors' do
-        allow(Kernel).to receive(:rand) { 0.665 }
-        game.set_player_choice(:scissors)
+        allow(player).to receive(:choice){ :scissors }
+        allow(computer).to receive(:choice){ :paper }
         expect(game.winner).to eq (:name)
       end
       it 'when computer chooses scissors, player chooses rock' do
-        allow(Kernel).to receive(:rand) { 0.999 }
-        game.set_player_choice(:rock)
+        allow(player).to receive(:choice){ :rock }
+        allow(computer).to receive(:choice){ :scissors }
         expect(game.winner).to eq (:name)
       end
     end
     context 'Nobody wins' do
       it 'when computer chooses rock, player chooses rock' do
-        allow(Kernel).to receive(:rand) { 0.332 }
-        game.set_player_choice(:rock)
+        allow(player).to receive(:choice){ :rock }
+        allow(computer).to receive(:choice){ :rock }
         expect(game.winner).to eq ('Nobody')
       end
       it 'when computer chooses paper, player chooses paper' do
-        allow(Kernel).to receive(:rand) { 0.665 }
-        game.set_player_choice(:paper)
+        allow(player).to receive(:choice){ :paper }
+        allow(computer).to receive(:choice){ :paper }
         expect(game.winner).to eq ('Nobody')
       end
       it 'when computer chooses scissors, player chooses scissors' do
-        allow(Kernel).to receive(:rand) { 0.999 }
-        game.set_player_choice(:scissors)
+        allow(player).to receive(:choice){ :scissors }
+        allow(computer).to receive(:choice){ :scissors }
         expect(game.winner).to eq ('Nobody')
       end
     end
