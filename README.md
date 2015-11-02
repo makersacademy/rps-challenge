@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/forty9er/rps-challenge.svg)](https://travis-ci.org/forty9er/rps-challenge)
+
 # Usage
 
 Visit:
