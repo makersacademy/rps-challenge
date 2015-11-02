@@ -4,8 +4,8 @@ RPS Web App [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.s
 * [Task](#task)
 * [My Approach](#my-approach)
 * [Directory Structure](#directory-structure)
-* [App Usage](#app-usage)
-* [Demo App](#demo-app) - ENTER HEROKU LINK!
+* [App Usage / Features](#app-usage-/-features)
+* [Demo App](#demo-app)
 * [Download Instructions](#download-instructions)
 
 Task
@@ -89,7 +89,35 @@ Directory Structure
 └── rps_web.rb
 ```
 
-App Usage
-----------
+App Usage / Features
+--------------------
+***User can register their name before playing:***
 
 ![Registration Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/registration-page.png)
+
+***User sees their name and are faced with three options: Rock, Paper, Scissors:***
+
+![Play Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/play-page.png)
+
+***User sees who won and can then choose a rematch or to change player:***
+
+![Result Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/result-page.png)
+
+
+Demo App
+--------
+
+
+
+Download Instructions
+---------------------
+Follow the below instructions on your terminal to download the game:
+
+```
+$ git clone https://github.com/hsheikhm/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Author: [Hamza Sheikh](https://github.com/hsheikhm)
