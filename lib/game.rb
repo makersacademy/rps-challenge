@@ -1,0 +1,2 @@
+require 'computer'
+require 'player'
