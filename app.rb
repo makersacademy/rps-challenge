@@ -111,8 +111,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/computer' do
-    load_switch
+    @game = $game
     @game.log_move(:comp)
+    @game.switch
     erb(:results)
   end
 

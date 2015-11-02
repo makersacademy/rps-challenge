@@ -8,7 +8,6 @@ class Player
 		@name = name.capitalize
 		@computer = computer
 		@move = nil
-		@moves = [:rock, :paper, :scissors, :spock, :lizard]
 		@score = 0
 	end
 
