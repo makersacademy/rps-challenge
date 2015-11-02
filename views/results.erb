@@ -1,0 +1,11 @@
+<h1>Congradulations<h1>
+<h2><%=@game.winners_name%> wins with <%= @game.winners_move %>!</h2>
+
+<form action='/play' method = 'get'>
+  <input type='submit' value='Play Again'>
+</form>
+
+
+
+<%= @game.player_1_name %>: <%= @game.player_1_score %> 		
+<%= @game.player_2_name %>: <%= @game.player_2_score %>
