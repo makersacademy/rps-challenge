@@ -18,11 +18,12 @@ feature 'user story' do
   # I would like to be able to play rock/paper/scissors
 
   scenario 'choose between srp' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     visit('/')
     fill_in('player', with: 'Edward scisorhands')
     click_button('start the game')
     find('div.radio').choose('rock')
     click_button('submit')
-    expect(page).to have_content('rock')
+    expect(page).to have_content "You won"
   end
 end
