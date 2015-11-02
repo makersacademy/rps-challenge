@@ -1,8 +1,8 @@
 class Game
   RULES = { rock: :scissors, scissors: :paper, paper: :rock }
 
-  def winner move1, move2
-    return :draw if move1 == move2
-    RULES[move1.to_sym] == move2.to_sym ? :win : :lose
+  def winner player_move, computer_move
+    return :draw if player_move == computer_move
+    RULES[player_move.to_sym] == computer_move.to_sym ? :win : :lose
   end
 end
