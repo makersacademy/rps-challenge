@@ -25,7 +25,6 @@ class Game_rps < Sinatra::Base
 
   post '/user_vs_pc' do
     rps = params[:rps].to_sym
-    p rps
     $game = Game.new($player.user_choose_weapon(rps), $computer.choose_rand)
     redirect :result
   end
@@ -34,6 +33,7 @@ class Game_rps < Sinatra::Base
     @game = $game
     erb :result
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
