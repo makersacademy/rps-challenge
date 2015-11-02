@@ -5,7 +5,8 @@ Instructions for running RPS app
 * bundle
 * ruby app.rb
 * open address localhost:4567 in broswer 
-
+* also deployed on Heroku at https://murmuring-everglades-7784.herokuapp.com/
+ 
 Screen Shots
 ============
 
