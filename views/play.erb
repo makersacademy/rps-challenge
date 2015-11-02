@@ -1,10 +1,10 @@
-<p>Hello, <%=@p_name.name%></p>
+<p>Hello, <%=@p_name%></p>
 
 <p>Please enter Rock, Paper or Scissors:</p>
 
-<form action="/result" method="post">
+<form action="/result" method="get">
 
-  <input type="text" choice="rps">
+  <input type="text" name="rps">
   <button type='submit'> Shoot! </button>
 
 </form>

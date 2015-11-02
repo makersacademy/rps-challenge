@@ -1,32 +1,34 @@
 require 'sinatra/base'
-require './lib/gamer'
+# require './lib/gamer'
 
 class Game < Sinatra::Base
 
   enable :sessions
-  set :sessions, 'my username'
+
   run! if app_file == $0
 
   get '/' do
-    erb(:index)
+    erb :index
   end
 
-  post '/registered' do
-    $p_name = Gamer.new(params[:Player_name])
+  post '/' do
+    session[:player_name] = params[:player_name]
     redirect('/play')
   end
 
+  get '/play' do
+    @p_name = session[:player_name]
+    erb :play
+  end
+
   post '/play' do
-    @p_name = $p_name
-    erb(:play)
-    $player_choice = params[:rps]
     redirect('/result')
   end
 
   get '/result' do
-    @p_name = $p_name
-    @player_choice = $player_choice
-    @p_name.option(@player_choice)
-    erb(:result)
+    session[:player_choice] = params[:rps]
+    @player_choice = session[:player_choice]
+    # @p_name.option(@player_choice)
+    erb :result
   end
 end
