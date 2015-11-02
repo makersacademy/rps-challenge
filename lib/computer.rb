@@ -1,8 +1,13 @@
+require_relative 'game'
+
 class Computer
   attr_reader :name, :shape
 
   def initialize
     @name = "Computer"
-    @shape = nil
+  end
+
+  def shape
+    Game::SHAPES.sample
   end
 end
