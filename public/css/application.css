@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-image: url("poifect-mosaic.png");
+    -webkit-font-feature-settings: "kern", "liga", "pnum";
+    -moz-font-feature-settings: "kern", "liga", "pnum";
+    -ms-font-feature-settings: "kern", "liga", "pnum";
+    font-feature-settings: "kern", "liga", "pnum";
+    -webkit-font-smoothing: antialiased;
+    color: #7D002A;
+    font-family: "futura-pt", Futura, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 1.5rem;
+    margin-left: 35%;
+    margin-top: 15%;
+}

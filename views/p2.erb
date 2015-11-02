@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock-Paper-Scissors</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header>Rock-Paper-Scissors</header>
+
+<h2>Sign in to play!</h2>
+
+<form action="/2pname" method="post">
+  <label for="player_name">
+		Player 1 name:
+  <input type="text" name="player_name" autofocus>
+  </label>
+  <label for="player2_name">
+		Player 2 name:
+  <input type="text" name="player2_name">
+  </label>
+  <select name='game_mode'>
+    <option value="classic_game">Classic Mode</option>
+    <option value="alt_game">Rock, Paper, Scissors, Lizard, Spock</option>
+  </select>
+  <input type="submit" value="Play!">
+</form>
+ 
+
+</body>
+</html>

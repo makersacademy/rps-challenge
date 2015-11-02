@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock-Paper-Scissors</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header>Rock-Paper-Scissors: <%= @game_type %></header>
+
+<h2>Hi, <%= @current_player.name %>!</h2>
+<h2>What hand would you like to play?</h2>
+<br>
+
+<form action='/rock' method='post'>
+  <input type='submit' value='ROCK' name='ROCK'>
+</form>
+
+<form action='/paper' method='post'>
+  <input type='submit' value='PAPER' name='PAPER'>
+</form>
+
+<form action='/scissors' method='post'>
+  <input type='submit' value='SCISSORS' name='SCISSORS'>
+</form>
+
+<form action='/lizard' method='post'>
+  <input type='submit' value='LIZARD' name='LIZARD'>
+</form>
+
+<form action='/spock' method='post'>
+  <input type='submit' value='SPOCK' name='SPOCK'>
+</form>
+
+</body>
+</html>

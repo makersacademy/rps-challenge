@@ -1,4 +1,48 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/forty9er/rps-challenge.svg)](https://travis-ci.org/forty9er/rps-challenge)
+
+# Usage
+
+Visit:
+https://possessed-wizard-2975.herokuapp.com/
+
+Alternatively, download the files in the repo and run via a Sinatra server on your local machine. The controller is contained in 'app.rb' in the root directory.
+
+```
+ruby app.rb
+```
+
+To play the game, enter the number of players and then player names. If playing one player, you will be pitted against a computer opponent.
+
+I'm sure the classic version of this game is familiar to you, but perhaps you haven't heard of the alternative version available here. The rules can be explaned in this infographic:
+
+![RPSLS](https://github.com/forty9er/rps-challenge/blob/master/Rock_paper_scissors_lizard_spock.png)
+
+
+### TODO
+
+* Remove Global variables (replace with session cookie).
+* Define a Computer class and extrapolate computer logic - the game doesn't need to know if there is a computer player.
+* Remove repetition of weapons list (currently an array and hash).
+* Put that controller on a diet!
+* Remove redundant tests.
+* Combine game and alt_game models into one file.
+* Feature tests for 2-player mode.
+* More CSS/styling.
+
+
+### Technologies used
+
+* Ruby
+* HTML
+* CSS
+* Sinatra
+* TDD (via Rspec & Capybara)
+* Heroku
+
+
+# Original instructions
+
+## RPS Challenge: Rōnin Badge Test
 
 Instructions
 -------
