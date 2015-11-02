@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" href="/css/master.css">
+</head>
+
+
+<%= @multi_game.player_1.name %> picked <%= @multi_game.player_1.player_weapon %>.
+<%= @multi_game.player_2.name %> picked <%= @multi_game.player_2.player_weapon %>.
+<% if @multi_game.result == :draw %>
+It's a draw!
+<% else %>
+<%= @multi_game.player_1.name %> <%= @multi_game.result %>!
+<% end %>
+
+
+<footer>
+RPS-Challenge
+</footer>

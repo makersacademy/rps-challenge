@@ -1,0 +1,28 @@
+body {
+  background-image: url(/images/footer_lodyas.png);
+  font-family: "Tahoma";
+  text-align: center;
+  margin: 5% auto 5% auto;
+  max-width: 50%;
+  color: white;
+}
+
+div {
+  background-color: rgba(255,255,255,0.1);
+}
+
+h1 {
+  color: orange;
+}
+
+h2 {
+  color: violet;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255,153,0,0.3)
+}
