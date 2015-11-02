@@ -10,6 +10,14 @@ describe Player do
     end
   end
 
+  context '#reset' do
+    it 'resets the player\'s choice' do
+      player.set_choice
+      player.reset
+      expect(player.choice).to eq (nil)
+    end
+  end
+
   context '#set_choice' do
     it 'sets the player\'s choice if given as an argument' do
       player.set_choice(:choice)

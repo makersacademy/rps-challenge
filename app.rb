@@ -32,6 +32,13 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
+  get '/restart' do
+    game = session[:game]
+    game.restart
+    session[:game] = game
+    redirect '/play'
+  end
+
   run! if app_file == $0
 
 end

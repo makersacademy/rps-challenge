@@ -8,5 +8,8 @@
 <% else %>
   <p><%= @player_name %>'s choice: <%= @player_choice %>.</p>
   <p>Computer's choice: <%= @computer_choice %>.</p>
-  <%= @winner %> wins!
+  <p><%= @winner %> wins!</p>
+  <form action='/restart' method='get'>
+    <input type='submit' value='Restart' />
+  </form>
 <% end %>

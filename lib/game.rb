@@ -18,6 +18,10 @@ class Game
     @choices = [:rock, :paper, :scissors]
   end
 
+  def restart
+    @players.each { |player| player.reset }
+  end
+
   def winner
     return nil if player_choice.nil?
     set_computer_choice

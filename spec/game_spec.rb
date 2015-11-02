@@ -2,7 +2,7 @@ require 'game'
 
 describe 'Game' do
 
-  let(:player){ double(:player1, name: :name, choice: nil) }
+  let(:player){ double(:player1, name: :name, choice: nil, set_choice: nil) }
   let(:computer){ double(:player2, set_choice: nil) }
 
   subject(:game){ Game.new(player, computer) }
@@ -13,6 +13,21 @@ describe 'Game' do
     end
     it 'sets an array of 2 players' do
       expect(game.players).to eq ([player, computer])
+    end
+  end
+
+  context '#restart' do
+    before :each do
+      allow(player).to receive(:reset)
+      allow(computer).to receive(:reset)
+    end
+    it 'resets the player\'s choice' do
+      expect(player).to receive(:reset)
+      game.restart
+    end
+    it 'resets the computer\'s choice' do
+      expect(computer).to receive(:reset)
+      game.restart
     end
   end
 

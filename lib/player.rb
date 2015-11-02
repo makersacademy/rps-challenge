@@ -11,6 +11,10 @@ class Player
     @choice = choice.to_sym
   end
 
+  def reset
+    @choice = nil
+  end
+
   private
 
   def set_random_choice

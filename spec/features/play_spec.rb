@@ -80,4 +80,14 @@ feature '/play' do
     end
   end
 
+  context 'Play again' do
+    scenario 'allows player to start the game again' do
+      enter_name_and_play
+      click_link('rock.jpg')
+      click_button('Restart')
+      expect(page).to_not have_content 'playerX\'s choice: rock.'
+      expect(page).to have_content 'Let\'s play, playerX goes first!'
+    end
+  end
+
 end
