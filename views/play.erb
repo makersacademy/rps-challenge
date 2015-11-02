@@ -1,8 +1,8 @@
 <h1> Current player : <%= @player_name %> </h1>
 <form action = '/rock' method = 'post'>
-  <input type = 'submit' value = 'Rock'>
-<form action = '/paper' method = 'post'>
-  <input type = 'submit' value = 'Paper'>
-<form action = '/scissor' method = 'post'>
-  <input type = 'submit' value = 'Scissor'>
+  <input type = 'submit' name = "selection" value = 'Rock'>
+  <form action = '/paper' method = 'post'>
+  <input type = 'submit' name = "selection" value = 'Paper'>
+  <form action = '/scissor' method = 'post'>
+  <input type = 'submit' name = "selection" value = 'Scissor'>
 </form>
