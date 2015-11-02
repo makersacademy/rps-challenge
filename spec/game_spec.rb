@@ -10,10 +10,6 @@ describe Game do
     expect(Game::WEAPONS).to eq [:rock, :paper, :scissors]
   end
 
-  it 'has a rules table' do
-    expect(Game::RULES).to eq {{ scissors: :paper, paper: :rock, rock: :scissors }}
-  end
-
   context 'rock plays other weapons' do
     before do
       allow(player).to receive(:choose_weapon) { :rock }

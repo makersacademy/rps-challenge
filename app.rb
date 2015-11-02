@@ -23,14 +23,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/selection' do
-    $player1_choice = $game.player.choose_weapon(params[:player_1_choice])
+    $player1_choice = $game.player.choose_weapon(params[:weapon])
     redirect 'result'
   end
 
   get '/result' do
     @player1_choice = $player1_choice
     @computer_choice = $game.computer.weapon
+    @game_result = $game.result
     erb :result
+  end
+
+  get '/play' do
+    erb :play
   end
 
   run! if app_file == $0

@@ -18,29 +18,29 @@ end
 feature 'play page' do
   scenario 'the player can choose an action' do
     visit '/play'
-    expect(page).to have_content 'Write rock, paper or scissors in the following box'
+    expect(page).to have_content 'Select one of the options below'
   end
 end
 
 feature 'result page' do
   scenario 'the player sees his or her choice on the results page' do
     visit '/play'
-    fill_in('player_1_choice', with: 'rock')
-    click_button('Play')
+    select 'rock', :from => "choose"
+    click_button 'Submit'
     expect(page).to have_content 'You chose rock'
   end
 
   scenario 'the computer randomly selects a weapon' do
     visit '/play'
-    fill_in('player_1_choice', with: 'rock')
-    click_button('Play')
+    select 'rock', :from => "choose"
+    click_button 'Submit'
     expect(page).to have_content 'The computer chose'
   end
 
   scenario 'the result of the match is shown' do
     visit '/play'
-    fill_in('player_1_choice', with: 'rock')
-    click_button('Play')
+    select 'rock', :from => "choose"
+    click_button 'Submit'
     expect(page).to have_content 'And the result is...'
   end
 end

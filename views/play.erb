@@ -1,4 +1,4 @@
-<h1> Thank you for registering to play <%= @player1 %>, you won't regret it!
+<h1> Thank you for registering to play <%= @player1 %>!
 </h1>
 
 <h2> The rules are as follows:<p>
@@ -10,10 +10,11 @@
 
 </h2>
 
-<form action="/selection" method="post">
-  <label for="player_1_choice">
-    Write rock, paper or scissors in the following box:
-    <input type="text" name="player_1_choice">
-  </label>
-  <button type="submit">Play</button>
+<form action = '/selection' method = 'post'>
+    <select name = 'weapon' id = 'choose'>
+      <option value="rock">rock</option>
+      <option value="paper">paper</option>
+      <option value="scissors">scissors</option>
+    </select>
+  <input type = 'submit' value = 'Submit'>
 </form>
