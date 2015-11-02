@@ -54,6 +54,7 @@ class AltGame
   end
 
   def winner
+    return nil if cpu_player.hand == nil
     return :draw if player.hand == cpu_player.hand
     return player.name if cpu_player.hand == LOSES_TO[player.hand].first
     return player.name if cpu_player.hand == LOSES_TO[player.hand].last
