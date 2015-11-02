@@ -6,6 +6,7 @@ This weekend challenge is to create a functioning web-based game of rock, paper 
 
 How to play
 -------------
+Visit Heroku: [Rock, Paper, Scissors](https://pure-hollows-5308.herokuapp.com/)
 In single player mode:
 Simply choose Rock, Paper or Scissors and try to outwit the computer!
 
@@ -19,10 +20,10 @@ Features Implemented
 * Created Computer class
 * The winner of the game should be declared
 * CSS to make the interface look pretty
+* Deploy to Heroku
 
 Features to implement in the future
 -----------------------------------
-* Upload to Heroku
 * Multiplayer
 * Update the game to play rock paper scissors lizard spock!
 
