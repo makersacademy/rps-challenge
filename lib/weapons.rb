@@ -6,28 +6,32 @@ class Weapons
   end
 
   def rules( weapon1, weapon2)
-    if weapon1 == :rock
-      if weapon2 == :rock
+    case weapon1
+    when :rock
+      case weapon2
+      when :rock
         return :draws
-      elsif weapon2 == :paper
+      when :paper
         return :looses
       else
         #scissors
         return :wins
       end
-    elsif weapon1 == :paper
-      if weapon2 == :rock
+    when :paper
+      case weapon2
+      when :rock
         return :wins
-      elsif weapon2 == :paper
+      when :paper
         return :draws
       else
         #scissors
         return :looses
       end
-    else weapon1 == :scissors
-      if weapon2 == :rock
+    when :scissors
+      case weapon2
+      when :rock
         return :looses
-      elsif weapon2 == :paper
+      when :paper
         return :wins
       else
         # scissors
