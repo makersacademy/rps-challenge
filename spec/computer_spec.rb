@@ -1,7 +1,7 @@
 require 'computer'
 
 describe Computer do
-  subject(:computer) { described_class.new }
+  subject(:computer) { described_class.new(name) }
   let(:name) { 'Computer' }
 
   context '#initialization' do
@@ -12,18 +12,18 @@ describe Computer do
 
   context '#selection of hand gestures' do
     it 'can be a shape Rock' do
-      allow(computer).to receive(:shape).and_return(:rock)
-      expect(computer.shape).to eq :rock
+      allow(computer).to receive(:random_choice).and_return(:rock)
+      expect(computer.random_choice).to eq :rock
     end
 
     it 'can be a shape Paper' do
-      allow(computer).to receive(:shape).and_return(:paper)
-      expect(computer.shape).to eq :paper
+      allow(computer).to receive(:random_choice).and_return(:paper)
+      expect(computer.random_choice).to eq :paper
     end
 
     it 'can be a shape Scissors' do
-      allow(computer).to receive(:shape).and_return(:scissors)
-      expect(computer.shape).to eq :scissors
+      allow(computer).to receive(:random_choice).and_return(:scissors)
+      expect(computer.random_choice).to eq :scissors
     end
   end  
 end
