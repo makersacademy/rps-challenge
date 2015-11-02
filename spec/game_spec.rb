@@ -17,8 +17,9 @@ let(:computer_choice) {double(:computer_choice)}
 
   describe "#game_result" do
     it "announce the result of the game" do
-      allow(game).to receive(:dual).and_return([:rock, :rock])
-      expect(game.result).to eq "It's a tie"
+      # allow(game).to receive(:dual).and_return([:rock, :rock])
+      dual= [:rock, :rock]
+      expect(game.result(dual)).to eq "It's a tie"
     end
   end
 end
