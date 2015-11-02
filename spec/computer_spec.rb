@@ -1,10 +1,10 @@
 require 'computer'
 
 describe Computer do
-  context '#move' do
+  context '#choose_move' do
     it 'returns a random weapon choice' do
       srand(67_809)
-      expect(subject.move).to eq :scissors
+      expect(subject.choose_move).to eq :scissors
     end
   end
 end
