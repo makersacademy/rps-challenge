@@ -1,4 +1,4 @@
-require 'Game'
+require './lib/game'
 
 describe Game do
 
