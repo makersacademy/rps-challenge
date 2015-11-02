@@ -1,6 +1,6 @@
 <div style="text-align: center">
   <h1>
-    <%= "#{@player_name} wins" if @result == :win %>
+    <%= "#{@player.name} wins" if @result == :win %>
     <%= "Computer wins" if @result == :lose %>
     <%= "It is a draw" if @result == :draw %>
   </h1>
