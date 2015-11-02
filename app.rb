@@ -30,7 +30,4 @@ class Rps < Sinatra::Base
     @result = game.winner @player1_move, @player2_move 
     erb :duel
   end
-
-  # start the server if ruby file executed directly
-  run! if app_file == $0
 end

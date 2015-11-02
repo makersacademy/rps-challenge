@@ -23,7 +23,7 @@ feature 'Choose move' do
   end
 
   scenario 'Computer chooses random move' do
-    srand(67809)
+    srand(67_809)
     sign_in_and_play
     click_button('Rock')
     expect(page).to have_content('Computer chose Scissors')
