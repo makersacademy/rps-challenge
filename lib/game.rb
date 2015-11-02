@@ -21,10 +21,6 @@ class Game
     @current_player = player
   end
 
-  # def self.type
-  #   @game_type
-  # end
-
   def player
     @players.first
   end

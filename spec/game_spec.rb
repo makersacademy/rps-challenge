@@ -11,10 +11,6 @@ describe Game do
     it {is_expected.to respond_to(:current_player)}
   end
 
-  # describe 'type' do
-  #   it {is_expected.to respond_to :type}
-  # end
-
   describe '#weapon' do
     it {is_expected.to respond_to(:weapon)}
 
