@@ -2,13 +2,12 @@ class Game
   attr_reader :score, :ai_choice, :user_choice, :name, :turn
   CHOICES = ['rock','paper','scissors']
   CHOICES2 = ['cat','goku','patrick']
-  def initialize(name)
+  def initialize(name='')
     @score = [0,0]
-    @beats = {rock: 'scissors',paper: 'rock', scissors: 'paper'}
-    @beats2 = {cat: 'patrick',goku: 'cat', patrick: 'goku'}
+    @beats = {cat: 'patrick', goku: 'cat', patrick: 'goku'}
     @name = name
     @user_choice = ''
-    @turn = 0
+    @turn = 1
   end
 
   def battle_check
@@ -44,7 +43,7 @@ class Game
   end
 
   def winner?
-    @beats2[@user_choice.to_sym] == @ai_choice
+    @beats[@user_choice.to_sym] == @ai_choice
   end
 
 end

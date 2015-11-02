@@ -29,17 +29,17 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get "/rock" do
+  get "/cat" do
     session[:game].choice('cat')
     redirect :play
   end
 
-  get "/paper" do
+  get "/goku" do
     session[:game].choice('goku')
     redirect :play
   end
 
-  get "/scissors" do
+  get "/patrick" do
     session[:game].choice('patrick')
     redirect :play
   end

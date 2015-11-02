@@ -2,22 +2,31 @@ readme todo
 *include technology
 *possible implementations
 *gems
-*intro
+*intro*
 
 
 CAT GOKU PATRICK CHALLENGE
+
+## Intro
+A take on the classic rock - paper - scissors
+
+## Upcoming features
+3d ultracolour graphics
+prize money
+*donut* giveaways
+multiplayer
+
+## Revised Rules
+
+- CAT BEATS PATRICK
+-  GOKU BEATS CAT
+-  PATRICK BEATS GOKU
 
 Instructions
 -------
 1. visit https://nameless-inlet-7662.herokuapp.com/
 2. enter name
 3. select a picture
-
-## Basic Rules
-
-- CAT BEATS PATRICK
--  GOKU BEATS CAT
--  PATRICK BEATS GOKU
 
 Screenshots
 -------
@@ -29,6 +38,25 @@ step 2
 
 step 3
 ![picture alt](./public/3.png "")
+
+##Technology involved
+-----
+ruby
+sinatra
+capybara
+rspec
+heroku
+
+##Gems used
+---
+rspec
+rubocop-rspec
+rubocop
+coveralls
+capybara
+byebug
+rspec-sinatra
+
 
 Task
 ----
