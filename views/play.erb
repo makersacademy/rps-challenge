@@ -1,0 +1,20 @@
+<h1> Thank you for registering to play <%= @player1 %>!
+</h1>
+
+<h2> The rules are as follows:<p>
+  Select one of the options below by clicking on the appropriate button. The
+  computer will then select an option at random and the winner will be decided.
+  </p>
+
+  <p>Rock beats Scissors / Scissors beats Paper / Paper beats Rock</p>
+
+</h2>
+
+<form action = '/selection' method = 'post'>
+    <select name = 'weapon' id = 'choose'>
+      <option value="rock">rock</option>
+      <option value="paper">paper</option>
+      <option value="scissors">scissors</option>
+    </select>
+  <input type = 'submit' value = 'Submit'>
+</form>

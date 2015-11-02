@@ -1,0 +1,23 @@
+<h1>You chose <%= @player1_choice %>
+</h1>
+
+<h1>The computer chose <%= @computer_choice %>
+</h1>
+
+<h1>And the result is... </h1>
+
+<% if @game_result == :win %>
+<h1>Congratulations you won!</h1>
+<% end %>
+
+<% if @game_result == :lose %>
+<h1>Unlucky you lost!</h1>
+<% end %>
+
+<% if @game_result == :draw %>
+<h1>You drew!</h1>
+<% end %>
+
+<form action="/play" method="get">
+  <button type="submit">Play again</button>
+</form>
