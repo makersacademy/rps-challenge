@@ -1,10 +1,10 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new ('Eric') }
+  subject(:player) { described_class.new ('Eleni') }
 
   it 'has a name' do
-    expect(player.name).to eq 'Eric'
+    expect(player.name).to eq 'Eleni'
   end
 
   it 'has a choice of weapons' do

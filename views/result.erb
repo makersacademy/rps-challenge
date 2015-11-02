@@ -6,17 +6,7 @@
 
 <h1>And the result is... </h1>
 
-<% if @game_result == :win %>
-<h1>Congratulations you won!</h1>
-<% end %>
-
-<% if @game_result == :lose %>
-<h1>Unlucky you lost!</h1>
-<% end %>
-
-<% if @game_result == :draw %>
-<h1>You drew!</h1>
-<% end %>
+<h1> You <%= @game_result %> </h1>
 
 <form action="/play" method="get">
   <button type="submit">Play again</button>

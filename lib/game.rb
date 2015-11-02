@@ -15,4 +15,5 @@ class Game
     return :lose if player.weapon == RULES[computer.weapon]
     return :draw if player.weapon == computer.weapon
   end
+
 end

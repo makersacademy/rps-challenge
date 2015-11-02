@@ -31,7 +31,7 @@ Functionality
 - Scissors beats Paper
 - Paper beats Rock
 
-Test
+Unit Testing
 ----------------------
 
 ```ruby
