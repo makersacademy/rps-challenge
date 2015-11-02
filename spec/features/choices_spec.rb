@@ -16,4 +16,11 @@ feature 'Player choose a gesture' do
     click_button('Scissors')
     expect(page).to have_content('Bob\'s choice is Scissors')
   end
+
+  scenario 'Computer selects a random shape' do
+    allow(Game::SHAPES).to receive(:sample).and_return(:paper)
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content('Computer\'s choice is Paper')
+  end
 end
