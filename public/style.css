@@ -1,0 +1,42 @@
+body {
+  color: #01DFD7;
+  font-size: 40px;
+  font-style: italic;
+  font-family: helvetica;
+  background-color: black }
+
+.img {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  border:0;}
+
+#paper {
+  background-image: url(paper.gif);
+  background-size: 110% 110%;
+}
+
+#rock {
+  background-image: url(rock.gif);
+  background-size: 110% 110%;
+}
+
+#scissors {
+  background-image: url(scissors.gif);
+  background-size: 110% 110%;
+}
+
+#goku {
+  background-image: url(goku.gif);
+  background-size: 110% 110%;
+}
+
+#cat {
+  background-image: url(cat.gif);
+  background-size: 110% 110%;
+}
+
+#patrick {
+  background-image: url(patrick.gif);
+  background-size: 110% 110%;
+}

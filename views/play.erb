@@ -1,0 +1,18 @@
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<embed name="mwaha" loop="false" hidden="true" src="pow.mp3"></embed>
+
+CHOOSE NOW <%= @name %></br>
+<div>
+<a href="/cat" class='img' id='cat'></a>
+<a href="/goku" class='img' id='goku'></a>
+<a href="/patrick" class='img' id='patrick'></a>
+</div></br>
+<%= @result %></br>
+TURN: <%= @turn %></br>
+SCORE: <%= @name %>-<%= @score %>-COMPUTER</br>
+
+<a class='img' id='<%= @user_choice %>'></a> YOU CHOSE</br>
+<a class='img' id='<%= @ai_choice %>'></a> COMPUTER CHOSE</br>
