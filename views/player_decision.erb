@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player Decision</title>
+  <link rel="stylesheet" href="css/master.css" type="text/css"/>
+</head>
+<body>
+  <h1><%= "#{@player.name} chose #{@player.choice}"%></h1>
+  <form action="/outcome">
+    <input type="submit" value="Computer's turn" class="round-button">
+  </form>
+</body>
+</html>

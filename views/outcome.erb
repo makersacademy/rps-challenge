@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Outcome</title>
+   <link rel="stylesheet" href="css/master.css" type="text/css"/>
+</head>
+<body>
+  <div>
+  <h1><%= "Outcome: #{@game.calculate}"%></h1>
+  <h2><%="You chose #{@game.player.choice}"%></h2>
+  <h2><%="Computer chose #{@game.computer.choice}"%></h2>
+  </div>
+  <div>
+    <form action="/">
+      <input type="submit" value="Return to Login?" class="round-button">
+    </form>
+    <form action="/play">
+      <input type="submit" value="Play Again?" class="round-button">
+    </form>
+  </div>
+</body>
+</html>
