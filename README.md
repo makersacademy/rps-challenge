@@ -21,9 +21,15 @@ Features Implemented
 
 Features to implement in the future
 -----------------------------------
+* Upload to Heroku
 * CSS to make the interface look pretty
 * Multiplayer
 * Update the game to play rock paper scissors lizard spock!
 
-Lessons learned
+Technologies used
+-----------------
+This project was written in Ruby, HTML and CSS using the Capybara testing framework
+
+Contributing
 ---------------
+If you would like to contribute to this project please fork make changes and then submit a pull request.

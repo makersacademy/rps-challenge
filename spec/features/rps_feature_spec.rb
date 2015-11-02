@@ -13,13 +13,13 @@ feature "Rock, Paper, Scissors" do
   scenario 'computer chooses rock, paper or scissors' do
     sign_in_and_play
     click_button('Rock')
-    click_link("Computer's turn")
+    click_button("Computer's turn")
     expect(page).to have_content("Computer chose")
   end
   scenario 'A winner is declared' do
     sign_in_and_play
     click_button('Paper')
-    click_link("Computer's turn")
+    click_button("Computer's turn")
     expect(page).to have_content("Outcome:")
   end
 end
