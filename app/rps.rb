@@ -30,8 +30,9 @@ class RPS < Sinatra::Base
   get '/result' do
     @player_name = $player.name
     @computer_name = $computer.name
-    @player_shape = $shape
+    @player_shape = $shape.downcase.to_sym
     @computer_shape = $computer.random_choice
+   # require 'byebug'; byebug
     @game = Game.new
     erb @game.result(@player_shape, @computer_shape)
   end

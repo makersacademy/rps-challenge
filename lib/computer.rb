@@ -9,6 +9,6 @@ class Computer
   end
 
   def random_choice
-    @shape = Game::SHAPES.sample.capitalize
+    Game::SHAPES.sample
   end
 end
