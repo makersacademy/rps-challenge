@@ -1,7 +1,7 @@
 class MultiGame
 
   RULES = { rock: [:scissors, :lizard],
-            paper: [:lizard, :rock],
+            paper: [:spock, :rock],
             scissors: [:paper, :lizard],
             spock: [:scissors, :rock],
             lizard: [:spock, :paper] }
