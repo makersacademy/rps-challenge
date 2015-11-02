@@ -18,11 +18,11 @@ Features Implemented
 * Created Game class
 * Created Computer class
 * The winner of the game should be declared
+* CSS to make the interface look pretty
 
 Features to implement in the future
 -----------------------------------
 * Upload to Heroku
-* CSS to make the interface look pretty
 * Multiplayer
 * Update the game to play rock paper scissors lizard spock!
 
