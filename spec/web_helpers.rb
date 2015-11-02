@@ -11,6 +11,6 @@ def sign_in_alt_game
   visit('/')
   click_button("1 PLAYER")
   fill_in(:player_name, with: 'Player 1')
-  select('Rock, Paper, Scissors, Lizard, Spock', :from => 'game_mode')
+  select('Rock, Paper, Scissors, Lizard, Spock', from: :game_mode)
   click_button("Play!")
 end

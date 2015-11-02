@@ -14,7 +14,7 @@ describe Game do
   describe '#weapon' do
     it {is_expected.to respond_to(:weapon)}
 
-   it "sends a message to the current player" do
+    it "sends a message to the current player" do
       allow(player).to receive(:weapon).with(:scissors).and_return("CUT UP THINGS")
       expect(game.weapon(:scissors)).to eq "CUT UP THINGS"
     end
