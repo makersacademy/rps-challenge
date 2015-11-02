@@ -5,16 +5,12 @@ describe Computer do
   subject(:computer) {described_class.new(rules_klass)}
 
   context 'Initialization' do
-    it {is_expected.to respond_to(:name)}
-
     it 'Has a name' do
       expect(computer.name).to eq name
     end
   end
 
   context 'Storing the players hand' do
-    it {is_expected.to respond_to(:give_hand).with(1).argument}
-    it {is_expected.to respond_to(:hand)}
 
     it 'Picks a hand at random' do
       expect(computer.give_hand).to satisfy do |hand|

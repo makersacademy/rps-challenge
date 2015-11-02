@@ -5,17 +5,12 @@ describe PlayerStore do
   subject(:player_store) {described_class}
 
   context 'Add a Player to the store' do
-    it {is_expected.to respond_to(:add).with(2).arguments}
-    it {is_expected.to respond_to(:players)}
-
     it 'stores a player' do
       player_store.add(player.object_id, player)
       expect(player_store.players).not_to be_empty
     end
   end
   context 'finds a player' do
-    it {is_expected.to respond_to(:find).with(1).argument}
-
     it 'finds a previously stored player' do
       id = player.object_id
       player_store.add(id, player)

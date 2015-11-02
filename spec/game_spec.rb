@@ -14,10 +14,6 @@ describe Game do
       allow(human).to receive(:name).and_return("Norm")
       allow(robot).to receive(:name).and_return("Computer")
     end
-    it {is_expected.to respond_to(:player1_name)}
-    it {is_expected.to respond_to(:player2_name)}
-
-
     it 'is initialised with a player 1' do
       expect(game.player1_name).to eq "Norm"
     end
@@ -28,9 +24,6 @@ describe Game do
   end
 
   context 'Setting players hands' do
-    it {is_expected.to respond_to(:player1_hand=).with(1).argument}
-    it {is_expected.to respond_to(:player2_hand=).with(1).argument}
-
     it 'delegates setting of hands to colaborators' do
       expect(human).to receive(:give_hand)
       expect(robot).to receive(:give_hand)
@@ -39,9 +32,6 @@ describe Game do
     end
   end
   context 'Getting players hands' do
-    it {is_expected.to respond_to(:player1_hand)}
-    it {is_expected.to respond_to(:player2_hand)}
-
     it 'delegates getting of hands to collaborators' do
       allow(human).to receive(:hand).and_return(:rock)
       allow(robot).to receive(:hand).and_return(:rock)
@@ -50,9 +40,6 @@ describe Game do
     end
   end
   context 'Play game' do
-
-    it {is_expected.to respond_to(:play)}
-
     it 'delegates the play to collaborator' do
       allow(human).to receive(:hand)
       allow(robot).to receive(:hand)
