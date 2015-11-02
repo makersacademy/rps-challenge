@@ -20,7 +20,7 @@ I'm sure the classic version of this game is familiar to you, but perhaps you ha
 
 * Remove Global variables (replace with session cookie).
 * Define a Computer class and extrapolate computer logic - the game doesn't need to know if there is a computer player.
-* Remove repetition of weapon's list (currently and array and hash).
+* Remove repetition of weapons list (currently an array and hash).
 * Put that controller on a diet!
 * Remove redundant tests.
 * More CSS/styling.
