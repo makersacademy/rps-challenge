@@ -21,8 +21,8 @@ class RpsGame < Sinatra::Base
   end
 
   post '/selecting-option' do
-    session[:player_option] = [params[:option_rock],params[:option_scissors],params[:option_paper]].find{|param| !param.nil?}
-    $game = Game.new(session[:player_option])
+    session[:player_option] = params[:option]
+    session[:game] = Game.new(session[:player_option])
     redirect '/option'
   end
 
@@ -32,13 +32,13 @@ class RpsGame < Sinatra::Base
   end
 
   post '/game-choice' do
-    $game_option = GameRandomizer.new.randomize
+    session[:random] = GameRandomizer.new.randomize
     redirect '/winner'
   end
 
   get '/winner' do
-    @game_choice = $game_option
-    @outcome = $game.winner($game_option)
+    @game_choice = session[:random]
+    @outcome = session[:game].winner(@game_option)
     erb :winner
   end
 

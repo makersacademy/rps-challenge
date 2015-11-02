@@ -16,7 +16,7 @@ let(:game) {described_class.new("Scissors")}
         expect(game.winner("Rock")).to eq "Game wins"
         end
 
-        it 'plays again if game returns "scissors"' do
+        it 'plays again if game returns "Scissors"' do
         expect(game.winner("Scissors")).to eq "Nobody wins"
         end
       end
