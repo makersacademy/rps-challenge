@@ -7,4 +7,11 @@ feature 'Restart the game' do
     click_button('Play again')
     expect(page).to have_content('Darth Vader playing Rock Paper Scissors')
   end
+  scenario 'restart with a new player' do
+    sign_in_and_play
+    click_button('Rock')
+    click_button('New player')
+    fill_in('player_name', with: 'Luke Skywalker')
+    click_button('Start game')
+    expect(page).to have_content('der playing Rock Paper Scissors')
 end
