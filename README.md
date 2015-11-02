@@ -88,3 +88,8 @@ Directory Structure
 │
 └── rps_web.rb
 ```
+
+App Usage
+----------
+
+![Registration Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/registration-page.png)
