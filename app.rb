@@ -26,7 +26,6 @@ class Rps < Sinatra::Base
   get '/result' do
     @player_weapon = $player.weapon
     @comp_weapon = Computer.weapon
-    p @comp_weapon
     erb Game.play(@player_weapon, @comp_weapon)
   end
 
