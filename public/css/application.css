@@ -6,7 +6,6 @@ body {
     -ms-font-feature-settings: "kern", "liga", "pnum";
     font-feature-settings: "kern", "liga", "pnum";
     -webkit-font-smoothing: antialiased;
-/*    color: #444;*/
     color: #7D002A;
     font-family: "futura-pt", Futura, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
     font-size: 18px;
