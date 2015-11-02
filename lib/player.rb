@@ -3,6 +3,9 @@ class Player
 
   def initialize(name)
     @name = name
-    @shape = nil
+  end
+
+  def shape=(shape)
+    @shape = shape.downcase.to_sym
   end
 end
