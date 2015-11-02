@@ -11,7 +11,6 @@ describe Game do
       it 'allows the game to establish the winner' do
         expect(game.battle(player_weapon, computer_weapon)).to eq "you win"
       end
-
     end
 
 end

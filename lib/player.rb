@@ -7,7 +7,6 @@ attr_reader :weapon
 
   def initialize(name)
     @player_name = name
-
   end
 
   def choose(weapon)

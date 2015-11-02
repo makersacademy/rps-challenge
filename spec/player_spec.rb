@@ -2,9 +2,8 @@ require 'game'
 
 describe Player do
 
-  subject(:player) {described_class.new(player_name: "Rebecca")}
+  subject(:player) {described_class.new(player_name: "player_name")}
 
-  # let(:game) {double(:game, weapon: 'rock')}
     describe 'player_name' do
       it {expect(player).to respond_to(:player_name) }
     end

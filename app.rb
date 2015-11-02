@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -22,10 +23,5 @@ class RockPaperScissors < Sinatra::Base
       erb(:play)
     end
 
-    # get '/selected' do
-    #   @player_name = session[:player_name]
-    #   erb(:result)
-    # end
-
-run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

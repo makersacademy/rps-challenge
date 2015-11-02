@@ -9,7 +9,5 @@ describe Computer do
         allow_any_instance_of(Array).to receive(:sample).and_return("paper")
         expect(computer.choose).to eq "paper"
       end
-
     end
-
 end

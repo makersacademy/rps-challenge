@@ -3,7 +3,7 @@ require './lib/player.rb'
 
 class Game
 
-  attr_reader :outcomes, :game_combo, :player_weapon, :computer_weapon
+  attr_reader :outcomes, :game_combo
 
   def initialize
     @outcomes = [
@@ -11,20 +11,16 @@ class Game
       ["paper", "rock"],
       ["scissors", "paper"]
     ]
-
   end
 
   def battle(player_weapon, computer_weapon)
-
       if player_weapon == computer_weapon
          "Its a draw"
-      elsif @outcomes.include?([player_weapon, computer_weapon])
+      elsif outcomes.include?([player_weapon, computer_weapon])
         "you win"
       else
         "computer wins"
       end
-
   end
-
 
 end
