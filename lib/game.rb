@@ -49,7 +49,7 @@ class Game
   def winner
     return :draw if player.hand == cpu_player.hand
     return player.name if cpu_player.hand == LOSES_TO[player.hand]
-    return cpu_player.name if player.hand == LOSES_TO[cpu_player.hand] 
+    return cpu_player.name if player.hand == LOSES_TO[cpu_player.hand]
   end
 
 end
