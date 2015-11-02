@@ -29,13 +29,7 @@ class RPS < Sinatra::Base
   get '/showdown' do
     @player_1_hand = $game.player_1_hand
     @player_2_hand = session['player_2_hand']
-    # p "player 1 hand: #{@player_1_hand}"
-    # p "player 2 hand: #{@player_2_hand}"
-    # p "game.opponent #{$game.opponent}"
-    # p "game.player_1_hand #{$game.player_1_hand}"
-    # p "game.player_2_hand #{$game.opponent_hand}"
-    @result = $game.result.to_s.gsub("_"," ")
-    # @result = @result.to_s.gsub("_"," ")
+    @result = $game.result.to_s.tr("_"," ")
     erb :showdown
   end
 
