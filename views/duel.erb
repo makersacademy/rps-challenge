@@ -1,14 +1,12 @@
 <div style="text-align: center">
-  <p>You chose <%= @player1_move %></p>
-  <p>Computer chose <%= @player2_move %></p>
   <h1>
     <%= "#{@player_name} wins" if @result == :win %>
     <%= "Computer wins" if @result == :lose %>
     <%= "It is a draw" if @result == :draw %>
   </h1>
-
-  <p><form method='get' action='/play'>
+  <h3><%= @player1_move.capitalize %> - <%= @player2_move.capitalize %></h3>
+  <form method='get' action='/play'>
     <input type='submit' value='Play again'></form>
   <form method='get' action='/'>
     <input type='submit' value='New player'>
-  </form></p>
+  </form>
