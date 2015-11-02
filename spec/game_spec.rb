@@ -5,16 +5,16 @@ describe Game do
 
   context '#winner' do
     it 'returns the winner of Rock - Paper' do
-      expect(game.winner 'Rock', 'Paper').to eq 'Computer wins'
+      expect(game.winner 'rock', 'paper').to eq 'Computer wins'
     end
     it 'returns the winner of Rock - Scissors' do
-      expect(game.winner 'Rock', 'Scissors').to eq 'You win'
+      expect(game.winner 'rock', 'scissors').to eq 'You win'
     end
     it 'returns a draw' do
-      expect(game.winner 'Rock', 'Rock').to eq 'It is a draw'
+      expect(game.winner 'rock', 'rock').to eq 'It is a draw'
     end
     it 'returns the winner of Scissors - Paper' do
-      expect(game.winner 'Scissors', 'Paper').to eq 'You win'
+      expect(game.winner 'scissors', 'paper').to eq 'You win'
     end
   end
 end

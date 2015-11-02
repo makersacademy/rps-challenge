@@ -1,9 +1,5 @@
 class Game
-  RULES = { Rock: :Scissors, Scissors: :Paper, Paper: :Rock }
-
-  # def computer_move
-  #   %w(Rock Paper Scissors).sample
-  # end
+  RULES = { rock: :scissors, scissors: :paper, paper: :rock }
 
   def winner move1, move2
     return 'It is a draw' if move1 == move2
