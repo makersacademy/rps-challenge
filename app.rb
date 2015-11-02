@@ -22,6 +22,7 @@ class Rps < Sinatra::Base
 
   post '/name' do
     game = Game.new
+    game.set_num_players(session[:num_players])
     game.set_player_names(params[:player1_name], params[:player2_name])
     session[:game] = game
     redirect '/play'
@@ -29,6 +30,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     game = session[:game]
+    @num_players = session[:num_players]
     @player1_name = game.player1_name
     @player2_name = game.player2_name
     @player1_choice = game.player1_choice
@@ -39,7 +41,7 @@ class Rps < Sinatra::Base
 
   get '/choice' do
     game = session[:game]
-    game.set_player_choice(params[:player_choice])
+    game.set_choice(params[:player_choice])
     session[:game] = game
     redirect '/play'
   end

@@ -1,4 +1,4 @@
-feature '/play' do
+feature 'single player /play' do
   context 'player choice' do
     scenario 'allows the player to choose rock' do
       enter_name_and_play

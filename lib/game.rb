@@ -7,7 +7,6 @@ class Game
   attr_reader :players, :choices
 
   def_delegator :player1, :set_name, :set_player_name
-  def_delegator :player1, :set_choice, :set_player_choice
 
   def_delegator :player2, :name, :player2_name
   def_delegator :player1, :name, :player1_name
@@ -20,10 +19,18 @@ class Game
     @choices = [:rock, :paper, :scissors]
   end
 
+  def set_num_players(num)
+    @num_players = num
+  end
+
   def set_player_names(player1_name, player2_name)
     player2_name ||= 'Computer'
     player1.set_name(player1_name)
     player2.set_name(player2_name)
+  end
+
+  def set_choice(choice)
+    player1_choice.nil? ? player1.set_choice(choice) : player2.set_choice(choice)
   end
 
   def restart
@@ -32,7 +39,9 @@ class Game
 
   def winner
     return nil if player1_choice.nil?
-    set_computer_choice
+    set_computer_choice if @num_players == 1
+    p @num_players
+    return nil if player2_choice.nil?
     return 'Nobody' if draw?
     index = @choices.index(player1_choice)
     (@choices[index-1] == player2_choice) ? player1_name : player2_name
@@ -40,7 +49,10 @@ class Game
 
   private
 
-  def_delegator :player2, :set_choice, :set_computer_choice
+  def set_computer_choice
+    player2.set_choice
+    p 'setting computer choice'
+  end
 
   def player1
     @players[0]
