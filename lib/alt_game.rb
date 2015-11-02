@@ -36,13 +36,13 @@ class AltGame
     @players.last
   end
 
-  def weopon weopon
-    @current_player.weopon(weopon)
+  def weapon weapon
+    @current_player.weapon(weapon)
   end
 
   def random_choice
     choice = PLAY_OPTIONS.sample
-    weopon(choice)
+    weapon(choice)
   end
 
   def switch_turns

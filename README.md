@@ -1,4 +1,43 @@
-# RPS Challenge: Rōnin Badge Test
+# Usage
+
+Visit:
+https://possessed-wizard-2975.herokuapp.com/
+
+Alternatively, download the files in the repo and run via a Sinatra server on your local machine. The controller is contained in 'app.rb' in the root directory.
+
+```
+ruby app.rb
+```
+
+To play the game, enter the number of players and then player names. If playing one player, you will be pitted against a computer opponent.
+
+I'm sure the classic version of this game is familiar to you, but perhaps you haven't heard of the alternative version available here. The rules can be explaned in this infographic:
+
+![RPSLS](https://dl.dropboxusercontent.com/content_link/6UfHxIXV3IcTbtXEk75CdzCHAPZ2EtmuYJlBmf1ADD01B4aGcKq6JwyAOZm8fzax/file)
+
+
+### TODO
+
+* Remove Global variables (replace with session cookie).
+* Define a Computer class and extrapolate computer logic - the game doesn't need to know if there is a computer player.
+* Remove repetition of weapon's list (currently and array and hash).
+* Put that controller on a diet!
+* More CSS/styling.
+
+
+### Technologies used
+
+* Ruby
+* HTML
+* CSS
+* Sinatra
+* TDD (via Rspec & Capybara)
+* Heroku
+
+
+# Original instructions
+
+## RPS Challenge: Rōnin Badge Test
 
 Instructions
 -------

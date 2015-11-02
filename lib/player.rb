@@ -7,8 +7,8 @@ class Player
     @hand = nil
   end
 
-  def weopon weopon
-    @hand = weopon
+  def weapon weapon
+    @hand = weapon
   end
 
   def clear_hand

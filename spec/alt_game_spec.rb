@@ -11,19 +11,19 @@ describe AltGame do
     it {is_expected.to respond_to(:current_player)}
   end
 
-  describe '#weopon' do
-    it {is_expected.to respond_to(:weopon)}
+  describe '#weapon' do
+    it {is_expected.to respond_to(:weapon)}
 
    it "sends a message to the current player" do
-      allow(player).to receive(:weopon).with(:lizard).and_return("OBEY, CONSUME, CONFORM")
-      expect(game.weopon(:lizard)).to eq "OBEY, CONSUME, CONFORM"
+      allow(player).to receive(:weapon).with(:lizard).and_return("OBEY, CONSUME, CONFORM")
+      expect(game.weapon(:lizard)).to eq "OBEY, CONSUME, CONFORM"
     end
   end   
 
   describe '#random_choice' do
     it 'makes a choice' do
       allow(AltGame::PLAY_OPTIONS).to receive(:sample).and_return(:rock)
-      allow(player).to receive(:weopon).with(:rock).and_return("ROCK")
+      allow(player).to receive(:weapon).with(:rock).and_return("ROCK")
       expect(game.random_choice).to eq "ROCK"
     end
   end

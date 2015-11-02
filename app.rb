@@ -5,31 +5,33 @@ require_relative './lib/alt_game'
 
 class Rps < Sinatra::Base
 
-  def game_state
-    @game_type = $game.game_type.to_s
-    @players = $game.player_count
-    @player = $game.player
-    @cpu_player = $game.cpu_player
-    @current_player = $game.current_player
-    @player_hand = @player.hand.to_s.upcase
-    @cpu_hand = @cpu_player.hand.to_s.upcase
-    @winner = $game.winner
-  end
+  helpers do
+    def game_state
+      @game_type = $game.game_type.to_s
+      @players = $game.player_count
+      @player = $game.player
+      @cpu_player = $game.cpu_player
+      @current_player = $game.current_player
+      @player_hand = @player.hand.to_s.upcase
+      @cpu_hand = @cpu_player.hand.to_s.upcase
+      @winner = $game.winner
+    end
 
-  def switch_play_switch
-    $game.switch_turns
-    $game.random_choice
-    $game.switch_turns
-  end
+    def switch_play_switch
+      $game.switch_turns
+      $game.random_choice
+      $game.switch_turns
+    end
 
-  def check_draw
-    game_state
-    if @winner == nil
-      redirect :play  
-    elsif @winner == :draw
-      redirect :draw
-    else
-      redirect :game
+    def check_draw
+      game_state
+      if @winner == nil
+        redirect :play  
+      elsif @winner == :draw
+        redirect :draw
+      else
+        redirect :game
+      end
     end
   end
 
@@ -46,7 +48,6 @@ class Rps < Sinatra::Base
   end
 
   post '/1pname' do
-    p params
     player = Player.new(params[:player_name])
     cpu_player = Player.new('Computer')
     players = 1
@@ -72,7 +73,6 @@ class Rps < Sinatra::Base
 
   get '/play' do
     game_state
-    p params
     return erb :play if @game_type == 'classic'
     return erb :alt_play if @game_type == 'alt'
   end
@@ -95,35 +95,35 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    $game.weopon(:rock)
+    $game.weapon(:rock)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/paper' do
-    $game.weopon(:paper)
+    $game.weapon(:paper)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
   post '/scissors' do
-    $game.weopon(:scissors)
+    $game.weapon(:scissors)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
     post '/lizard' do
-    $game.weopon(:lizard)
+    $game.weapon(:lizard)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw
   end
 
     post '/spock' do
-    $game.weopon(:spock)
+    $game.weapon(:spock)
     switch_play_switch if $game.player_count==1
     $game.switch_turns if $game.player_count==2
     check_draw

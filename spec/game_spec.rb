@@ -11,20 +11,23 @@ describe Game do
     it {is_expected.to respond_to(:current_player)}
   end
 
-  describe '#weopon' do
-    it {is_expected.to respond_to(:weopon)}
+  # describe 'type' do
+  #   it {is_expected.to respond_to :type}
+  # end
+
+  describe '#weapon' do
+    it {is_expected.to respond_to(:weapon)}
 
    it "sends a message to the current player" do
-      allow(player).to receive(:weopon).with(:scissors).and_return("CUT UP THINGS")
-      expect(game.weopon(:scissors)).to eq "CUT UP THINGS"
+      allow(player).to receive(:weapon).with(:scissors).and_return("CUT UP THINGS")
+      expect(game.weapon(:scissors)).to eq "CUT UP THINGS"
     end
   end    
-
 
   describe '#random_choice' do
     it 'makes a choice' do
       allow(Game::PLAY_OPTIONS).to receive(:sample).and_return(:rock)
-      allow(player).to receive(:weopon).with(:rock).and_return("ROCK")
+      allow(player).to receive(:weapon).with(:rock).and_return("ROCK")
       expect(game.random_choice).to eq "ROCK"
     end
   end

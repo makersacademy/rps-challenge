@@ -21,6 +21,10 @@ class Game
     @current_player = player
   end
 
+  # def self.type
+  #   @game_type
+  # end
+
   def player
     @players.first
   end
@@ -29,13 +33,13 @@ class Game
     @players.last
   end
 
-  def weopon weopon
-    @current_player.weopon(weopon)
+  def weapon weapon
+    @current_player.weapon(weapon)
   end
 
   def random_choice
     choice = PLAY_OPTIONS.sample
-    weopon(choice)
+    weapon(choice)
   end
 
   def switch_turns
@@ -51,5 +55,5 @@ class Game
     return player.name if cpu_player.hand == LOSES_TO[player.hand]
     return cpu_player.name if player.hand == LOSES_TO[cpu_player.hand] 
   end
-  
+
 end

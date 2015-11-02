@@ -10,9 +10,9 @@ describe Player do
     it {is_expected.to respond_to(:hand)}
   end
 
-  describe '#weopon' do
-    it "puts a weopon in the player's hand" do
-      player.weopon(:wet_fish)
+  describe '#weapon' do
+    it "puts a weapon in the player's hand" do
+      player.weapon(:wet_fish)
       expect(player.hand).to eq :wet_fish
     end
   end
@@ -21,7 +21,7 @@ describe Player do
     it { is_expected.to respond_to(:clear_hand)}
 
     it "clears the player's hand" do
-      player.weopon(:rock)
+      player.weapon(:rock)
       player.clear_hand
       expect(player.hand).to eq nil
     end
