@@ -13,5 +13,6 @@ feature 'Restart the game' do
     click_button('New player')
     fill_in('player_name', with: 'Luke Skywalker')
     click_button('Start game')
-    expect(page).to have_content('der playing Rock Paper Scissors')
+    expect(page).to have_content('Luke Skywalker playing Rock Paper Scissors')
+  end
 end
