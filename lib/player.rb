@@ -10,8 +10,8 @@ class Player
     @weapon = weapon.downcase.to_sym
   end
 
-  def self.find(id)
-    id
+  def self.find(player)
+    player
   end
 
 end
