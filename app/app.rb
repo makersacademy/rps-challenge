@@ -29,12 +29,12 @@ class RPS < Sinatra::Base
   get '/showdown' do
     @player_1_hand = $game.player_1_hand
     @player_2_hand = session['player_2_hand']
-    @result = $game.result.to_s.tr("_"," ")
+    @result = symbol_to_string($game.result)
     erb :showdown
   end
 
-  post '/rps' do
-    redirect '/rps'
+  def symbol_to_string(result)
+    result.to_s.tr("_"," ")
   end
 
   # start the server if ruby file executed directly

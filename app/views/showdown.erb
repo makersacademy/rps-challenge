@@ -1,6 +1,6 @@
 <div>
-  <body>You chose <b><%= "#{@player_1_hand}\n" %></br></b>
-  Your opponent chose <b><%= "#{@player_2_hand}" %></br></b>
+  <body>You chose <b><%= "#{@player_1_hand}" %></br></b>
+  Your opponent chose <b><%= @player_2_hand %></br></b>
 <b><%= @result == "draw" ? "Draw - play again!" : "#{@result} wins!" %></b>
 </div>
 <div>

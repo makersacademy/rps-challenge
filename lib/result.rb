@@ -10,17 +10,13 @@ class Result
   end
 
   def self.run(hand1, hand2)
-    Result.new(hand1,hand2).run
+    Result.new(hand1, hand2).run
   end
 
   def run
-    if RELATIONSHIPS[@hand1][:beats] == @hand2
-      :player_1
-    elsif RELATIONSHIPS[@hand2][:beats] == @hand1
-      :player_2
-    else
-      :draw
-    end
+    return :player_1 if RELATIONSHIPS[@hand1][:beats] == @hand2
+    return :player_2 if RELATIONSHIPS[@hand2][:beats] == @hand1
+    :draw
   end
 
 end
