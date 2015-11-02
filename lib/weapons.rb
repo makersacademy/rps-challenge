@@ -9,6 +9,6 @@ class Weapons
   def result( weapon1, weapon2)
     return :draws if weapon1 == weapon2
     return :wins if RULES[weapon1] == weapon2
-    return :looses
+    :looses
   end
 end
