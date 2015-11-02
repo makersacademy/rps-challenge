@@ -4,7 +4,7 @@ RPS Web App [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.s
 * [Task](#task)
 * [My Approach](#my-approach)
 * [Directory Structure](#directory-structure)
-* [App Usage / Features](#app-usage-/-features)
+* [App Usage and Features](#app-usage-and-features)
 * [Demo App](#demo-app)
 * [Download Instructions](#download-instructions)
 
@@ -89,7 +89,7 @@ Directory Structure
 └── rps_web.rb
 ```
 
-App Usage / Features
+App Usage and Features
 --------------------
 ***User can register their name before playing:***
 
