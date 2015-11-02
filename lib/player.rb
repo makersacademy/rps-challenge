@@ -12,8 +12,4 @@ class Player
     @choosen = weapon
   end
 
-  def play_game
-
-  end
-
 end

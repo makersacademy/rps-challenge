@@ -28,8 +28,4 @@ describe Player do
     expect(player.choosen).to eq weapon
   end
 
-  it 'expects to start the Game' do
-    expect
-  end
-
 end
