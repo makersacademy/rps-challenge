@@ -15,4 +15,4 @@ The challenge has been approached by having a total of four classes:
 **Player**: Stores the player name and the current selection.  
 **Computer**: When a singleplayer game, stores the computer name and also randomly makes a selection when called.  
 
-
+Winning combinations are stored by a key/value constant.  As I had included Lizard and Spock choices, instead of each choice having only one other choice being able to defeat it, it increased it to two.  I stored these within an array which was accessed by the choice I was checking, to see if it could defeat it (it will probably make sense to look at the round.rb array for a better idea).
