@@ -1,17 +1,20 @@
 feature 'Attack' do
-  scenario 'Rock' do
+  scenario 'Player wins' do
+    allow(Weapons::WEAPONS).to receive(:sample).and_return(:scisors)
     register_and_play
     click_button('Rock')
-    expect(page).to have_content 'Rob attacks with rock!'
+    expect(page).to have_content 'Rob wins!'
   end
-  scenario 'Paper' do
+  scenario 'Player looses' do
+    allow(Weapons::WEAPONS).to receive(:sample).and_return(:scissors)
     register_and_play
     click_button('Paper')
-    expect(page).to have_content 'Rob attacks with paper!'
+    expect(page).to have_content 'Rob looses!'
   end
-  scenario 'Scissors' do
+  scenario 'Player draws' do
+    allow(Weapons::WEAPONS).to receive(:sample).and_return(:scissors)
     register_and_play
     click_button('Scissors')
-    expect(page).to have_content 'Rob attacks with scissors!'
+    expect(page).to have_content 'Rob draws!'
   end
 end
