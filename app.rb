@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   post '/p1' do
     @p1 = $game.p1
     @p2 = $game.p2
-    $game.select(@p1, params[:selection])
+    $game.select(@p1, params[:selection].to_sym)
     redirect '/p2_selection' unless $game.singleplayer
     @p2.comp_choice
     $game.fight
@@ -37,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/p2' do
     @p2 = $game.p2
-    $game.select(@p2, params[:selection])
+    $game.select(@p2, params[:selection].to_sym)
     $game.fight
     redirect '/results'
   end

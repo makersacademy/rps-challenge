@@ -11,3 +11,10 @@ header {
   font-family: Impact;
   text-align: center;
 }
+
+input {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+

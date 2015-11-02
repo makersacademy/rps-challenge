@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, name: 'Andy', rounds_won: 0, selection: 'Rock' }
-  let(:comp) { double :comp, name: 'Computer', rounds_won: 0, selection: 'Paper' }
+  let(:player) { double :player, name: 'Andy', rounds_won: 0, selection: :rock }
+  let(:comp) { double :comp, name: 'Computer', rounds_won: 0, selection: :paper }
   let(:r2) { double :round, find_winner: 'Andy', winner: comp }
   let(:round) { double :round, find_winner: 'Computer', new: r2, winner: comp }
   subject(:m_game) { described_class.new(player, player, round) } #multi game

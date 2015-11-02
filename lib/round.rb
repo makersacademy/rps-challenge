@@ -3,7 +3,7 @@ class Round
   attr_reader :p1, :p2, :winner
 
 
-  WINNERS = {'Paper' => ['Rock', 'Spock'], 'Scissors' => ['Paper', 'Lizard'], 'Rock' => ['Lizard', 'Scissors'], 'Lizard' => ['Spock', 'Paper'], 'Spock' => ['Rock', 'Scissors']}
+  WINNERS = {:paper => [:rock, :spock], :scissors => [:paper, :lizard], :rock => [:lizard, :scissors], :lizard => [:spock, :paper], :spock => [:rock, :scissors]}
 
   def initialize(player_1, player_2)
     @p1 = player_1
@@ -13,7 +13,7 @@ class Round
 
   def message
     return "Draw!  Both sides chose #{@p1.selection}" if draw?
-    return "#{@winner.name} wins with #{@winner.selection}!"
+    return "#{@winner.name} wins with #{@winner.selection.capitalize}!"
   end
 
   def draw?

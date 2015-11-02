@@ -1,8 +1,8 @@
 require 'round'
 
 describe Round do
-  let(:player_1) {double :player, name: 'Andy', selection: 'Rock' }
-  let(:player_2) {double :player, name: 'Leigh-Ann', selection: 'Scissors' }
+  let(:player_1) {double :player, name: 'Andy', selection: :rock }
+  let(:player_2) {double :player, name: 'Leigh-Ann', selection: :scissors }
 
   subject(:round) { described_class.new(player_1, player_2) }
   context 'on initialize' do
@@ -29,8 +29,8 @@ describe Round do
 
   describe '#draw?' do
     it 'should identify when it is a draw' do
-      allow(player_1).to receive(:selection).and_return('Paper')
-      allow(player_2).to receive(:selection).and_return('Paper')
+      allow(player_1).to receive(:selection).and_return(:paper)
+      allow(player_2).to receive(:selection).and_return(:paper)
       expect(round.draw?).to eq true
     end
   end
