@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game on!</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>Please select your attack, <%=@game.p1_name%></header>
+
+<form action='/p1' method='post'>
+  <input type='submit' value='rock' name='selection'>
+  <input type='submit' value='paper' name='selection'>
+  <input type='submit' value='scissors' name='selection'>
+  <input type='submit' value='lizard' name='selection'>
+  <input type='submit' value='spock' name='selection'>
+</form>
+</body>
+</html>

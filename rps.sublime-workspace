@@ -1,0 +1,1226 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"round_",
+				"round_history"
+			],
+			[
+				"round",
+				"round_history"
+			],
+			[
+				"play",
+				"player_1"
+			],
+			[
+				"singl",
+				"singleplayer"
+			],
+			[
+				"single",
+				"Singleplayer"
+			],
+			[
+				"pla",
+				"player2"
+			],
+			[
+				"pl",
+				"player1"
+			],
+			[
+				"playe",
+				"player_2_name"
+			],
+			[
+				"describe",
+				"described_class"
+			],
+			[
+				"choic",
+				"choice_2"
+			],
+			[
+				"choi",
+				"choice_2"
+			],
+			[
+				"chi",
+				"choice_2"
+			],
+			[
+				"ch",
+				"choice_2"
+			],
+			[
+				"wh",
+				"while	while ... end"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"heal",
+				"heal_amount"
+			],
+			[
+				"atta",
+				"attack_message"
+			],
+			[
+				"dama",
+				"damage_model"
+			],
+			[
+				"game",
+				"game-over"
+			],
+			[
+				"receive",
+				"receive_damage"
+			],
+			[
+				"DEFAUL",
+				"DEFAULT_ATTACK"
+			],
+			[
+				"describ",
+				"described_class"
+			],
+			[
+				"quantit",
+				"quantity_ordered"
+			],
+			[
+				"menu",
+				"menu_types2"
+			],
+			[
+				"quan",
+				"quantity_ordered"
+			],
+			[
+				"quant",
+				"quantity_ordered"
+			],
+			[
+				"price",
+				"price_str"
+			],
+			[
+				"desc",
+				"description_str"
+			],
+			[
+				"cate",
+				"category_str"
+			],
+			[
+				"ls",
+				"list_items"
+			],
+			[
+				"total",
+				"total_correct"
+			],
+			[
+				"journ",
+				"journey_entry"
+			],
+			[
+				"jour",
+				"journey_klass"
+			],
+			[
+				"entry",
+				"entry_station"
+			],
+			[
+				"test",
+				"test_capacity_30"
+			],
+			[
+				"stormy",
+				"stormy_weather"
+			],
+			[
+				"storm",
+				"stormy_weather"
+			],
+			[
+				"pass",
+				"passed_30_on_creation"
+			],
+			[
+				"alpa",
+				"alphabet_even"
+			],
+			[
+				"alph",
+				"alphabet_combined"
+			],
+			[
+				"alpha",
+				"alphabet_num"
+			],
+			[
+				"alp",
+				"alphabet_chars"
+			],
+			[
+				"release",
+				"release_bike"
+			],
+			[
+				"row",
+				"rowcount"
+			],
+			[
+				"corr",
+				"correct_response"
+			],
+			[
+				"map",
+				"mapwi-	map_with_index { |e, i| .. }"
+			],
+			[
+				"str",
+				"strcount"
+			],
+			[
+				"shuffle",
+				"shuffled_arr"
+			],
+			[
+				"arr",
+				"arr_size"
+			],
+			[
+				"sorte",
+				"sorted_array"
+			],
+			[
+				"add",
+				"add_to_array"
+			],
+			[
+				"st",
+				"strcount"
+			],
+			[
+				"tou",
+				"tough_var"
+			],
+			[
+				"num",
+				"num_times_2"
+			],
+			[
+				"do",
+				"dob	Insert do |variable| … end"
+			],
+			[
+				"tex",
+				"text_seen"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lib/player.rb",
+			"settings":
+			{
+				"buffer_size": 180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/computer.rb",
+			"settings":
+			{
+				"buffer_size": 234,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/game.rb",
+			"settings":
+			{
+				"buffer_size": 810,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/round.rb",
+			"settings":
+			{
+				"buffer_size": 687,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.erb",
+			"settings":
+			{
+				"buffer_size": 545,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/p2_selection.erb",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/results.erb",
+			"settings":
+			{
+				"buffer_size": 519,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/css/application.css",
+			"settings":
+			{
+				"buffer_size": 229,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/player_spec.rb",
+			"settings":
+			{
+				"buffer_size": 538,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/computer_spec.rb",
+			"settings":
+			{
+				"buffer_size": 443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/game_spec.rb",
+			"settings":
+			{
+				"buffer_size": 2252,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/round_spec.rb",
+			"settings":
+			{
+				"buffer_size": 1045,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.rb",
+			"settings":
+			{
+				"buffer_size": 968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/features/fighting_spec.rb",
+			"settings":
+			{
+				"buffer_size": 228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/web_helpers.rb",
+			"settings":
+			{
+				"buffer_size": 189,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/spec_helper.rb",
+			"settings":
+			{
+				"buffer_size": 4764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/features/user_name_spec.rb",
+			"settings":
+			{
+				"buffer_size": 287,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"View: Toggle Side Bar"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/andydowell/Projects/Makers-Academy/rps",
+		"/Users/andydowell/Projects/Makers-Academy/rps/public",
+		"/Users/andydowell/Projects/Makers-Academy/rps/public/css",
+		"/Users/andydowell/Projects/Makers-Academy/rps/public/images",
+		"/Users/andydowell/Projects/Makers-Academy/rps/spec",
+		"/Users/andydowell/Projects/Makers-Academy/rps/spec/features"
+	],
+	"file_history":
+	[
+		"/Users/andydowell/Projects/Makers-Academy/rps/views/p1_selection.erb",
+		"/Users/andydowell/Projects/Makers-Academy/rps/lib/game.rb",
+		"/Users/andydowell/Projects/Makers-Academy/rps/views/play.erb",
+		"/Users/andydowell/Projects/Makers-Academy/rps/README.md",
+		"/Users/andydowell/Projects/Makers-Academy/rps/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/player.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/game.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/lib/damage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/app.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/damage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/player_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/game_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/game_over.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/play.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/index.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/attack.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/game_over_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/new_game_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/user_names_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/switch_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/hit_points_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/features/attack_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/battle-weds.sublime-project",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/public/css/application.css",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/views/test.erb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/spec/web_helpers.rb",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/User/Ruby.sublime-settings",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/andydowell/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/config.ru",
+		"/Users/andydowell/Projects/Makers-Academy/battle-weds/Gemfile",
+		"/Users/andydowell/Projects/Personal/pixelcount/config.ru",
+		"/Users/andydowell/Projects/Personal/pixelcount/lib/my_app.rb",
+		"/Users/andydowell/Projects/Personal/pixelcount/Gemfile",
+		"/Users/andydowell/Projects/Personal/pixelcount/views/index.erb",
+		"/Users/andydowell/Projects/Personal/pixelcount/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Personal/pixelcount/README.md",
+		"/Users/andydowell/Projects/Personal/pixelcount/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/battle-tues/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/battle-tues/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/battle-norm/sinatra/.rspec",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/.rspec",
+		"/Users/andydowell/Desktop/installed_gems.txt",
+		"/Users/andydowell/Projects/Makers-Academy/battle-norm/sinatra/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/sinatra_test/app.rb",
+		"/Users/andydowell/Desktop/battleshiptest.rb",
+		"/Users/andydowell/.bash_profile",
+		"/Users/andydowell/Desktop/tests/takeaway-challenge/.env",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/spec/order_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/menu_types.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/order.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/spec/menu_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/takeaway-challenge/lib/takeaway.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-pablo/lib/journey.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/journey_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/journey.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/lib/station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-tom/spec/oystercard_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard-jay/oystercard/spec/station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard2/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/lib/oystercard.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/lib/station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/spec/oystercard_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/.rspec",
+		"/Users/andydowell/Desktop/hello.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/plane.rb",
+		"/Users/andydowell/Projects/Makers-Academy/oystercard/Gemfile",
+		"/Users/andydowell/Desktop/test.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/airport.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/airport_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/weather_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/lib/weather.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/README.md",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/airport_fiasco.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/features/airport_fiasco.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/spec/plane_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/Gemfile",
+		"/Users/andydowell/.profile",
+		"/Users/andydowell/Projects/Makers-Academy/airport_challenge/userstories.md",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/docking_station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/docking_station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/bike_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/van.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/van_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/garage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/spec/garage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/solo_boris/lib/bike.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/garage_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/garage.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/bike.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/bike_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/lib/docking_station.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/docking_station_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/boris-bikes/spec/DockingStation_spec.rb",
+		"/Users/andydowell/~.bash_profile",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/fizzbuzz_alternate_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/fizzbuzz_spec.rb",
+		"/Users/andydowell/Downloads/FizzBuzz/spec/fizzbuzz_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/spec/spec_helper.rb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/lib/fizzbuzz_alternate.rb",
+		"/Users/andydowell/Desktop/Testing/motivational-posters/views/index.erb",
+		"/Users/andydowell/Projects/Makers-Academy/fizzbuzz/lib/fizzbuzz.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session1/4-spec/3.rb",
+		"/Users/andydowell/Projects/Makers-Academy/learn_to_program/spec/ch09/ask_spec.rb",
+		"/Users/andydowell/Projects/Makers-Academy/learn_to_program/spec/ch10/english_number_spec.rb",
+		"/Users/andydowell/Desktop/Testing/respec/greeter.rb",
+		"/Users/andydowell/Desktop/Testing/respec/greeter_spec.rb",
+		"/Users/andydowell/Desktop/Testing/respec/rspectest_1.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/12_classes.rb",
+		"/Users/andydowell/Desktop/motivational-posters/app.rb",
+		"/Users/andydowell/Desktop/motivational-posters/Gemfile",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1_build_an_app/main.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1_build_an_app/lib/caesar_cipher.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/5-solved/1.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session6/3-challenge/1_instructions.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session5/3-challenge/6_regex.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session4/3-challenge/9_exceptions.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session4/3-challenge/6_singleton_class_string.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session3/3-challenge/16_hash.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session3/3-challenge/1_blocks.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/13_classes_iterating_sorting.rb",
+		"/Users/andydowell/Projects/Makers-Academy/ruby-kickstart/session2/3-challenge/11_classes.rb"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sprintf",
+			"entry_station",
+			", zone",
+			"in_use",
+			"subject",
+			"check_weather",
+			"plane6",
+			"bike.new",
+			"fizzbuzz(i)",
+			"type",
+			"number",
+			"img",
+			"str",
+			"case",
+			"num",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"station",
+			"",
+			"oystercard",
+			"weather_check",
+			"i.self",
+			"self",
+			"dna",
+			"when"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lib/player.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/computer.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								234,
+								234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/game.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/round.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 687,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								677,
+								677
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "views/index.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/p2_selection.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/results.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/css/application.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "spec/player_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "spec/computer_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "spec/game_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2128,
+								2128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "spec/round_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 259.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 12,
+					"file": "app.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 497.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "spec/features/fighting_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "spec/web_helpers.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								185,
+								185
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "spec/spec_helper.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								153,
+								153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "spec/features/user_name_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 259.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Ruby/Ruby.sublime-build",
+	"project": "rps.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 174.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

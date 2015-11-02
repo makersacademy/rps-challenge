@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Round over!</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>Round <%=@game.round_num%>.  <%=@round.message%></header>
+<form action='/p1_selection'>
+  <input type='submit' value='Next round'>
+</form>
+<form action='/'>
+  <input type='submit' value='New Game'>
+</form>
+
+<p><%=@game.p1_name%> wins: <%=@game.wins(@game.p1)%></p>
+<p><%=@game.p2_name%> wins: <%=@game.wins(@game.p2)%></p>
+<p>Draw: <%=@game.draw%></p>
+</body>
+</html>

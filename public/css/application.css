@@ -1,0 +1,20 @@
+body {
+  background-image: url(/images/binding_light.png);
+  background-repeat: repeat;
+  text-align: center;
+  font-family: Impact;
+  font-size: 22px;
+}
+
+header {
+  font-size: 48px;
+  font-family: Impact;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+
