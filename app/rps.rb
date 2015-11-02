@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative '../lib/game'
+require_relative '../lib/computer'
 require_relative '../lib/player'
 
 class RPS < Sinatra::Base
@@ -9,12 +11,14 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = params[:player]
+    $player = Player.new(params[:name])
+    $computer = Computer.new("Computer")
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @player_name = $player.name
+    @computer_name = $computer.name
     erb :play
   end
 
@@ -24,9 +28,12 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @player = $player
-    @shape = $shape
-    erb :result
+    @player_name = $player.name
+    @computer_name = $computer.name
+    @player_shape = $shape
+    @computer_shape = $computer.random_choice
+    @game = Game.new
+    erb @game.result(@player_shape, @computer_shape)
   end
 
   # start the server if ruby file executed directly
