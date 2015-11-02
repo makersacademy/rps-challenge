@@ -7,4 +7,10 @@ describe Player do
       expect(player.name).to eq 'Darth Vader'
     end
   end
+  context '#add_move' do
+    it 'adds chosen move' do
+      player.add_move :rock
+      expect(player.move).to eq :rock
+    end
+  end
 end
