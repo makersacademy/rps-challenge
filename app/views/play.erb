@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/foundation.min.css" type="text/css">
+  </head>
+  <body>
+    <div class="row">
+      <h2>Current Player: <%= @player_name %></h2>
+    </div>
+    <form action="/go" method="post">
+      <div class="row">
+        <input type="submit" value="Rock" name="hand" class="round button">
+        <input type="submit" value="Paper" name="hand" class="round button">
+        <input type="submit" value="Scissors" name="hand" class="round button">
+      </div>
+    </form>
+  </body>
+</html>
