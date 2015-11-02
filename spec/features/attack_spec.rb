@@ -4,17 +4,20 @@ require 'game'
 
 feature 'selecting a item' do
   scenario 'player selects rock' do
-    click_button('rock')
-    expect(page).to have_content 'Your choice rock'
+    visit('/')
+    click_button('Battle')
+    expect(page).to have_content 'Welcome'
   end
 
   scenario 'paper' do
-    click_button('paper')
-    expect(page).to have_content 'Your choice paper'
+    visit('/')
+    click_button('Battle')
+    expect(page).to have_content 'Welcome'
   end
 
   scenario 'scissors' do
-    click_button('scissors')
-    expect(page).to have_content 'Your choice scissors'
+    visit('/')
+    click_button('Battle')
+    expect(page).to have_content 'Welcome'
   end
 end
