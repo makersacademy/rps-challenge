@@ -3,7 +3,7 @@ class Round
   attr_reader :p1, :p2, :winner
 
 
-  WINNERS = {'Rock' => 'Scissors','Paper' => 'Rock', 'Scissors' => 'Paper'}
+  WINNERS = {'Paper' => ['Rock', 'Spock'], 'Scissors' => ['Paper', 'Lizard'], 'Rock' => ['Lizard', 'Scissors'], 'Lizard' => ['Spock', 'Paper'], 'Spock' => ['Rock', 'Scissors']}
 
   def initialize(player_1, player_2)
     @p1 = player_1
@@ -21,7 +21,7 @@ class Round
   end
 
   def find_winner
-    @winner = @p1 if WINNERS[@p1.selection] == @p2.selection
-    @winner = @p2 if WINNERS[@p2.selection] == @p1.selection
+    @winner = @p1 if WINNERS[@p1.selection].include?(@p2.selection)
+    @winner = @p2 if WINNERS[@p2.selection].include?(@p1.selection)
   end
 end

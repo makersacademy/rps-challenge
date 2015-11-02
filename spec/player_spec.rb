@@ -8,9 +8,6 @@ describe Player do
     it 'should store the players name' do
       expect(player.name).to eq player_name
     end
-    it 'has a rounds_won be empty' do
-      expect(player.rounds_won).to be_empty
-    end
     it 'should have a selection of nil' do
       expect(player.selection).to be_nil
     end

@@ -7,9 +7,6 @@ describe Computer do
     it 'should be named computer' do
       expect(comp.name).to eq 'Computer'
     end
-    it 'has a rounds_won be empty' do
-      expect(comp.rounds_won).to be_empty
-    end
     it 'should have a selection of nil' do
       expect(comp.selection).to be_nil
     end
