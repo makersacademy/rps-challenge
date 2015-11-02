@@ -1,3 +1,10 @@
+readme todo
+*include technology
+*possible implementations
+*gems
+*intro
+
+
 CAT GOKU PATRICK CHALLENGE
 
 Instructions
