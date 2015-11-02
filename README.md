@@ -23,6 +23,7 @@ I'm sure the classic version of this game is familiar to you, but perhaps you ha
 * Remove repetition of weapons list (currently an array and hash).
 * Put that controller on a diet!
 * Remove redundant tests.
+* Combine game and alt_game models into one file.
 * More CSS/styling.
 
 
