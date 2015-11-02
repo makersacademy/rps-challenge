@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" type="text/css" href="/css/application.css">
+</head>
+<body>
+  <div class="neon-text"><%=@player_name %> VS. Computer </div>
+  <link async href="http://fonts.googleapis.com/css?family=Atomic%20Age"
+  data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+      <p>Choose between Rock, Paper or Scissors:</p>
+      <form action="/weapon" method="post">
+        <div id="row">
+        <div><img id="img-rps" src="/images/rps_sep.png"/></div>
+        <input id="weapon-button" type="submit" value="Rock" name="weapon">
+        <input id="weapon-button" type="submit" value="Paper" name="weapon">
+        <input id="weapon-button" type="submit" value="Scissors" name="weapon">
+        </div>
+      </form>
+  </body>
+</html>

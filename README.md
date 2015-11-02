@@ -1,21 +1,21 @@
-# RPS Challenge: Rōnin Badge Test
+RPS Web App [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge) [![Coverage Status](https://coveralls.io/repos/hsheikhm/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/hsheikhm/rps-challenge?branch=master)
+================================
 
-Instructions
--------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use google, your notes, books, etc but work on your own
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* [Task](#task)
+* [My Approach](#my-approach)
+* [Directory Structure](#directory-structure)
+* [App Usage and Features](#app-usage-and-features)
+* [Demo App](#demo-app)
+* [Download Instructions](#download-instructions)
 
-Task 
+Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
+The Makers Academy Marketing Array ( **MAMA** ) have asked you to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Your task is to provide a ***Rock, Paper, Scissors*** game for them so they can play on the web with the following user stories:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -25,54 +25,100 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+Hints on functionality:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- The marketeer should be able to enter their name before the game
+- The marketeer will be presented the choices (rock, paper and scissors)
+- The marketeer can choose one option
+- The game will choose a random option
+- A winner will be declared
 
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+Basic Rules:
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-Notes on test coverage
-----------------------
+My Approach
+------------
+My aim was to create a **Minimum Viable Product (MVP)**. Therefore I decided to keep the features and design of this program as simple and elegant as possible. I first designed the class objects:
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+* [Game](https://github.com/hsheikhm/rps-challenge/blob/master/lib/game.rb) (holds the weapons and game rules)
+* [Computer](https://github.com/hsheikhm/rps-challenge/blob/master/lib/computer.rb) (gives the computer a random weapon)
+* [Player](https://github.com/hsheikhm/rps-challenge/blob/master/lib/player.rb) (for the user to sign up and choose a weapon)
 
-```ruby
-require 'coveralls'
-require 'simplecov'
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+After having completed the **RSpec** [testing](https://github.com/hsheikhm/rps-challenge/tree/master/spec) for the above classes I then moved onto web app side of things and therefore used **Sinatra** and **Capybara** to build and test the main features. In order to achieve the ***separation of concerns*** I made sure to keep my [controller](https://github.com/hsheikhm/rps-challenge/blob/master/rps_web.rb) *skinny* so that it didn't have too many responsibilities. Instead of using global variables I also used the handy Sinatra *helper methods*.
+
+Once all the features of the web app had been tested and implemented it was then just a case of applying styling to the app through [HTML](https://github.com/hsheikhm/rps-challenge/tree/master/views) and [CSS](https://github.com/hsheikhm/rps-challenge/blob/master/public/css/application.css).
+
+Directory Structure
+---------------------
+```
+├── lib/
+│   ├── computer.rb
+│   ├── game.rb
+│   └── player.rb
+│
+├── public/
+│   │── css/
+│   │   └── application.css
+│   └── images/        
+│
+├── spec/
+│   │── features/
+│   │   ├── change_player_spec.rb
+│   │   ├── play_again_spec.rb
+│   │   ├── player_draws_spec.rb
+│   │   ├── player_loses_spec.rb
+│   │   ├── player_wins_spec.rb
+│   │   └── register_name_spec.rb
+│   ├── computer_spec.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── spec_helper.rb
+│   ├── web_helpers.rb
+│
+├── views/
+│   ├── draw.erb
+│   ├── lose.erb
+│   ├── play.erb
+│   ├── registration.erb
+│   └── win.erb
+│
+└── rps_web.rb
 ```
 
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
+App Usage and Features
+--------------------
+***User can register their name before playing:***
 
+![Registration Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/registration-page.png)
+
+***User sees their name and are faced with three options: Rock, Paper, Scissors:***
+
+![Play Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/play-page.png)
+
+***User sees who won and can then choose a rematch or to change player:***
+
+![Result Page](https://github.com/hsheikhm/Github-Images/blob/master/rps-challenge/result-page.png)
+
+
+Demo App
+--------
+Visit the link below to see a live version of the app.
+
+https://mighty-mesa-9710.herokuapp.com/
+
+Download Instructions
+---------------------
+Follow the below instructions on your terminal to download the game:
+
+```
+$ git clone https://github.com/hsheikhm/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Author: [Hamza Sheikh](https://github.com/hsheikhm)
