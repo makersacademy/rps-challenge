@@ -4,9 +4,9 @@ describe Game do
   subject(:game) { described_class }
   let(:computer) { double :computer }
 
-  it "player wins when player is #scissors" do
-    allow(computer).to receive(:weapon) {:paper}
-    expect(game.play(computer.weapon, :scissors)).to eq :win
+  it "player wins when player is #rock" do
+    allow(computer).to receive(:weapon) {:scissors}
+    expect(game.play(:rock, computer.weapon)).to eq :win
   end
 
 end

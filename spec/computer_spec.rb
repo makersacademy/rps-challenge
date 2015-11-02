@@ -1,10 +1,10 @@
 require './lib/computer'
 
-feature 'computer generates a random pick' do
+describe Computer do
   subject(:computer) { Computer }
 
-  scenario 'computer is rock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+  it 'returns weapon as rock' do
+    allow(Game::WEAPONS).to receive(:sample).and_return(:rock)
     expect(computer.weapon).to eq :rock
   end
 end
