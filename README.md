@@ -1,4 +1,16 @@
 # RPS Challenge: Rōnin Badge Test
+Instructions:
+load up game in terminal with
+ruby my_app.rb
+it will take you to localhost
+you then have to enter your name to play agains computer.
+then it will give you a choice to select rock paper or scissors
+if you win it will say congratulations
+if you draw it will say its a draw
+if you lose it will say unlucky
+you then get anpther play again button if you with to play again.
+
+i have a big issue trying to get the tests to pass!!!
 
 Instructions
 -------
@@ -6,7 +18,7 @@ Instructions
 * Feel free to use google, your notes, books, etc but work on your own
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -70,9 +82,8 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
 Then run `open coverage/index.html` from the command line to view details
-
