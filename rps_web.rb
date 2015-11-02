@@ -8,9 +8,7 @@ class RPSWeb < Sinatra::Base
 
   include Rules
 
-  attr_reader :player_name, :player_weapon, :computer_weapon, :result,
-              :weapon, :player_score, :computer_score, :tie,
-              :player_image, :computer_image
+  attr_reader :player_name, :weapon
 
   enable :sessions
 
@@ -47,16 +45,19 @@ class RPSWeb < Sinatra::Base
     @player_weapon   = Weapon.new(@weapon)
     @player_image = Rules::IMAGES[@player_weapon.type]
     @player_name = session[:player_name]
+
     @computer_weapon = Computer.weapon
     @computer_image = Rules::IMAGES[@computer_weapon]
+
     @tie = session[:tie]
     @player_score = session[:player_score]
     @computer_score = session[:computer_score]
+
     if @player_weapon.type == @computer_weapon
       @tie += 1
-      @result="a tie"
+      @result = "a tie"
     else
-      if @player_weapon.beats?(computer_weapon)
+      if @player_weapon.beats?(@computer_weapon)
         @player_score += 1
         @result = "won"
       else
@@ -64,10 +65,13 @@ class RPSWeb < Sinatra::Base
         @result = "lost"
       end
     end
+
     session[:tie] = @tie
     session[:player_score] = @player_score
     session[:computer_score] = @computer_score
+    
     erb(:result)
+
   end
 
   # start the server if ruby file executed directly
