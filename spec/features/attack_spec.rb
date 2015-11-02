@@ -1,6 +1,6 @@
 feature 'Attack' do
   scenario 'Player wins' do
-    allow(Weapons::WEAPONS).to receive(:sample).and_return(:scisors)
+    allow(Weapons::WEAPONS).to receive(:sample).and_return(:scissors)
     register_and_play
     click_button('Rock')
     expect(page).to have_content 'Rob wins!'
