@@ -1,0 +1,18 @@
+<h1> Thank you for joining us, <%= @player1 %>!
+</h1>
+
+<h2> 
+
+  <p>Rules are:</p>
+  <p>Rock beats Scissors, Scissors beats Paper and Paper beats Rock</p>
+
+</h2>
+
+<form action = '/selection' method = 'post'>
+    <select name = 'weapon' id = 'choose'>
+      <option value="rock">rock</option>
+      <option value="paper">paper</option>
+      <option value="scissors">scissors</option>
+    </select>
+  <input type = 'submit' value = 'Submit'>
+</form>

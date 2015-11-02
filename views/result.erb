@@ -1,0 +1,13 @@
+<h1>You chose <%= @player1_choice %>
+</h1>
+
+<h1>The computer chose <%= @computer_choice %>
+</h1>
+
+<h1>And the result is... </h1>
+
+<h1> You <%= @game_result %> </h1>
+
+<form action="/play" method="get">
+  <button type="submit">Play again</button>
+</form>
