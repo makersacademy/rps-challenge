@@ -1,5 +1,5 @@
 class Computer
-  WEAPONS = %w(rock paper scissors)
+  WEAPONS = [:rock, :paper, :scissors]
 
   def move
     WEAPONS.sample

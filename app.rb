@@ -19,12 +19,13 @@ class Rps < Sinatra::Base
   end
 
   post '/move' do
-    session[:move] = params[:move]
+    session[:move] = params[:move].to_sym
     redirect :duel
   end
 
   get '/duel' do
     game = Game.new
+    @player_name = session[:player_name]
     @player1_move = session[:move]
     @player2_move = Computer.new.move
     @result = game.winner @player1_move, @player2_move

@@ -8,7 +8,7 @@ feature 'Win the game' do
 
   scenario 'Rock against Scissors' do
     click_button('rock')
-    expect(page).to have_content('You win')
+    expect(page).to have_content('Darth Vader wins')
   end
   scenario 'Paper against Scissors' do
     click_button('paper')
