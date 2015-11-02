@@ -20,4 +20,16 @@ class Game
   def result
     @weapons.result(@player_weapon, @opponent_weapon)
   end
+
+  def self.add(game)
+    games[game.object_id] = game
+  end
+
+  def self.find(id)
+    games[id]
+  end
+
+  def self.games
+    @games ||= {}
+  end
 end
