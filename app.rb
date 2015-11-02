@@ -8,19 +8,19 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/names' do
-      session[:Player_1] = params[:Player_1]
+      session[:player_1] = params[:player_1]
     redirect '/play'
     end
 
     get '/play' do
-      @Player_1 = session[:Player_1]
-      @Player_selection = params[:selection]
-      @computer_selection = %w(Paper Scissors Rock).sample
+      @player_1 = session[:player_1]
+      @player_selection = params[:selection]
+      @computer_selection = %w(paper scissors rock).sample
       erb(:play)
     end
 
     get '/selected' do
-      @Player_1 = session[:Player_1]
+      @player_1 = session[:player_1]
       erb(:result)
     end
 

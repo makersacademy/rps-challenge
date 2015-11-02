@@ -9,7 +9,6 @@ describe Game do
 
     describe '#battle' do
       it 'allows the game to establish the winner' do
-        allow_any_instance_of(Array).to receive(:sample).and_return("rock")
         expect(game.battle(player_weapon, computer_weapon)).to eq "you win"
       end
 

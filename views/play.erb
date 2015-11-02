@@ -6,58 +6,58 @@
 </head>
     <body>
       <p>
-      <%= @Player_1 %> vs Computer
+      <%= @player_1 %> vs Computer
       </p>
       <form action="/play" >
-        <button name="selection" type="submit" value="Rock">Rock</button>
+        <button name="selection" type="submit" value="rock">rock</button>
       </form>
 
       <form action="/play" >
-        <button name="selection" type="submit" value="Paper">Paper</button>
+        <button name="selection" type="submit" value="paper">paper</button>
       </form>
 
       <form action="/play" >
-        <button name="selection" type="submit" value="Scissors">Scissors</button>
+        <button name="selection" type="submit" value="scissors">scissors</button>
       </form>
 
       <p>
-            <% if @Player_selection %>
-              <h1> <%=@Player_1%> chose attack method <%=@Player_selection%></h1>
+            <% if @player_selection %>
+              <h1> <%=@player_1%> chose attack method <%=@player_selection%></h1>
             <% end %>
       </p>
       <p>
-        <% if @Player_selection %>
+        <% if @player_selection %>
           <h1> Computer randomly choses attack method <%=@computer_selection%></h1>
         <% end %>
       </p>
       <p>
-          <% if @Player_selection == 'Rock' && @computer_selection == 'Rock' %>
+          <% if @player_selection == 'rock' && @computer_selection == 'rock' %>
             <h1> No body wins</h1>
           <% end %>
-          <% if @Player_selection == 'Rock' && @computer_selection == 'Scissors' %>
-            <h1> Rock blunts Scissors <%=@Player_1%> wins!!</h1>
+          <% if @player_selection == 'rock' && @computer_selection == 'scissors' %>
+            <h1> rock blunts scissors <%=@player_1%> wins!!</h1>
           <% end %>
-          <% if @Player_selection == 'Scissors' && @computer_selection == 'Paper' %>
-            <h1> Scissors cuts Paper <%=@Player_1%> wins!!</h1>
+          <% if @player_selection == 'scissors' && @computer_selection == 'paper' %>
+            <h1> scissors cuts paper <%=@player_1%> wins!!</h1>
           <% end %>
-          <% if @Player_selection == 'Paper' && @computer_selection == 'Rock' %>
-              <h1> Paper wraps Rock <%=@Player_1%> wins!!</h1>
+          <% if @player_selection == 'paper' && @computer_selection == 'rock' %>
+              <h1> paper wraps rock <%=@player_1%> wins!!</h1>
           <% end %>
-          <% if @Player_selection == 'Scissors' && @computer_selection == 'Scissors' %>
+          <% if @player_selection == 'scissors' && @computer_selection == 'scissors' %>
             <h1> No body wins</h1>
           <% end %>
-          <% if @Player_selection == 'Paper' && @computer_selection == 'Paper' %>
+          <% if @player_selection == 'paper' && @computer_selection == 'paper' %>
             <h1> No body wins</h1>
           <% end %>
 
-          <% if @computer_selection == 'Rock' && @Player_selection == 'Scissors' %>
-            <h1> Rock blunts Scissors computer wins!!</h1>
+          <% if @computer_selection == 'rock' && @player_selection == 'scissors' %>
+            <h1> rock blunts scissors computer wins!!</h1>
           <% end %>
-          <% if @computer_selection == 'Scissors' && @Player_selection == 'Paper' %>
-            <h1> Scissors cuts Paper computer wins!!</h1>
+          <% if @computer_selection == 'scissors' && @player_selection == 'paper' %>
+            <h1> scissors cuts paper computer wins!!</h1>
           <% end %>
-          <% if @computer_selection == 'Paper' && @Player_selection == 'Rock' %>
-              <h1> Paper wraps Rock computer wins!!</h1>
+          <% if @computer_selection == 'paper' && @player_selection == 'rock' %>
+              <h1> paper wraps rock computer wins!!</h1>
           <% end %>
 
       </p>
