@@ -9,6 +9,11 @@ class RockPaperScissors < Sinatra::Base
     @current_player = @game.current_player
   end
 
+  def load_switch
+    @game = $game
+    @game.switch
+  end
+
   def redirects
     redirect '/computer' if @game.current_player_computer?
     redirect '/results' if @game.finished?
@@ -52,8 +57,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @game = $game
-    @game.switch
+    load_switch
     redirects
     erb(:play)
   end
@@ -65,8 +69,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/paper' do
-    @game = $game
-    @game.switch
+    load_switch
     redirects
     erb(:play)
   end
@@ -78,8 +81,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/scissors' do
-    @game = $game
-    @game.switch
+    load_switch
     redirects
     erb(:play)
   end
@@ -91,8 +93,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/spock' do
-    @game = $game
-    @game.switch
+    load_switch
     redirects
     erb(:play)
   end
@@ -104,16 +105,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/lizard' do
-    @game = $game
-    @game.switch
+    load_switch
     redirects
     erb(:play)
   end
 
   get '/computer' do
-    @game = $game
+    load_switch
     @game.log_move(:comp)
-    @game.switch
     erb(:results)
   end
 

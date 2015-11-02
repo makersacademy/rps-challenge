@@ -3,7 +3,8 @@ require 'game'
 describe Game do 
 	let(:player_1) {double :player, name: "dan", move: :paper, score: 2, win: nil}
 	let(:player_2) {double :player, name: "ed", move: :rock, score: 1, win:nil}
-	subject(:game) {described_class.new(player_1,player_2)}
+	let(:rpssl) { double :rpssl, winner: :paper}
+	subject(:game) {described_class.new(player_1,player_2, rpssl)}
 	moves = [:rock, :paper, :scissors, :spock, :lizard]
 	
 	describe '#initialise' do

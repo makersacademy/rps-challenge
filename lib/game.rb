@@ -1,15 +1,15 @@
 require_relative 'player'
+require_relative 'rpssl'
+
 class Game
 
 	attr_reader :player_1, :player_2, :count, :current_player
 	
-	def initialize(player_1, player_2)
+	def initialize(player_1, player_2, game = Rpssl.new)
+		@game = game
 		@player_1 = player_1
 		@player_2 = player_2
 		@current_player = player_1
-		@results = {paper: [:rock, :spock], rock: [:scissors, :lizard],
-								scissors: [:paper, :lizard], spock: [:scissors, :rock],
-								lizard: [:spock, :paper]}
 		@count = 0
 	end
 
@@ -74,8 +74,7 @@ class Game
   end
 
   def winner
-		return player_1 if @results[@player_1.move].include? @player_2.move 
-		player_2
+		@game.winner(player_1.move,player_2.move) == player_1.move ?  player_1 : player_2 
 	end
 end
 
