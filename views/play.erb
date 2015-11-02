@@ -1,0 +1,21 @@
+<p><%= @player1_name %> vs. <%= @player2_name %></p>
+<% if @player1_choice.nil? %>
+  <p>Let's play, <%= @player1_name %> goes first!</p>
+  <p>
+    <a href="/choice?player_choice=rock"><img src="rock.jpg" alt="rock.jpg"></a>
+    <a href="/choice?player_choice=paper"><img src="paper.jpg" alt="paper.jpg"></a>
+    <a href="/choice?player_choice=scissors"><img src="scissors.jpg" alt="scissors.jpg"></a>
+  </p>
+<% elsif @num_players == 2 && @player2_choice.nil? %>
+  <p>Now <%= @player2_name %> chooses!</p>
+    <a href="/choice?player_choice=rock"><img src="rock.jpg" alt="rock.jpg"></a>
+    <a href="/choice?player_choice=paper"><img src="paper.jpg" alt="paper.jpg"></a>
+    <a href="/choice?player_choice=scissors"><img src="scissors.jpg" alt="scissors.jpg"></a>
+<% else %>
+  <p><%= @player1_name %>'s choice: <%= @player1_choice %>.</p>
+  <p><%= @player2_name %>'s choice: <%= @player2_choice %>.</p>
+  <p><%= @winner %> wins!</p>
+  <form action='/restart' method='get'>
+    <input type='submit' value='Restart' />
+  </form>
+<% end %>

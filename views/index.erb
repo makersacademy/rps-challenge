@@ -1,0 +1,25 @@
+Welcome to Rock Paper Scissors
+
+<% if @num_players.nil? %>
+<form action='/single-player' method='get'>
+  <input type='submit' value='Single player' />
+</form>
+<form action='/two-player' method='get'>
+  <input type='submit' value='Two player' />
+</form>
+<% end %>
+
+<% if @num_players == 1 %>
+<form action='/name' method='post'>
+  <input type='text' name='player1_name' value='Player name' />
+  <input type='submit' value='Play'>
+</form>
+<% end %>
+
+<% if @num_players == 2 %>
+<form action='/name' method='post'>
+  <input type='text' name='player1_name' value='Player 1 name' />
+  <input type='text' name='player2_name' value='Player 2 name' />
+  <input type='submit' value='Play'>
+</form>
+<% end %>
