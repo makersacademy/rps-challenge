@@ -3,13 +3,15 @@ require './lib/game_class'
 describe Game do
 
 let(:game) {described_class.new("Scissors")}
+let(:gamerandomizer) { doubleGameRandomizer.new }
 
   describe "#winner" do
 
       context "when player chooses scissors" do
 
         it 'wins if game returns "Paper"' do
-        expect(game.winner("Paper")).to eq "Player wins"
+        allow(gamerandomizer).to receive(:randomize).and_return("Paper")
+        expect(game.winner(gamerandomizer.randomize)).to eq "Player wins"
         end
 
         it 'loses if game returns "Rock"' do
