@@ -18,6 +18,6 @@ class Game
   end
 
   def result
-    @weapons.rules(@player_weapon, @opponent_weapon)
+    @weapons.result(@player_weapon, @opponent_weapon)
   end
 end

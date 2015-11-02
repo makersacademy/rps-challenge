@@ -1,42 +1,14 @@
 class Weapons
   WEAPONS = [:rock, :paper, :scissors]
+  RULES = {rock: :scissors, paper: :rock, scissors: :paper}
 
   def random_weapon
     WEAPONS.sample
   end
 
-  def rules( weapon1, weapon2)
-    case weapon1
-    when :rock
-      case weapon2
-      when :rock
-        return :draws
-      when :paper
-        return :looses
-      else
-        #scissors
-        return :wins
-      end
-    when :paper
-      case weapon2
-      when :rock
-        return :wins
-      when :paper
-        return :draws
-      else
-        #scissors
-        return :looses
-      end
-    when :scissors
-      case weapon2
-      when :rock
-        return :looses
-      when :paper
-        return :wins
-      else
-        # scissors
-        return :draws
-      end
-    end
+  def result( weapon1, weapon2)
+    return :draws if weapon1 == weapon2
+    return :wins if RULES[weapon1] == weapon2
+    return :looses
   end
 end

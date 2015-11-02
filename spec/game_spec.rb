@@ -30,7 +30,7 @@ describe Game do
   end
 
   describe '#result' do
-    let(:weapons) {double :weapons, random_weapon: :paper, rules: :loose}
+    let(:weapons) {double :weapons, random_weapon: :paper, result: :loose}
     it 'player :rock vs opponent :paper result loose' do
       game.attack(:rock)
       expect(game.result()).to eq :loose
