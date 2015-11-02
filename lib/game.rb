@@ -30,7 +30,7 @@ class Game
   end
 
   def win_logic
-    raise 'Please select weapons' if player_choice == nil || game_choice == nil
+    fail 'Please select weapons' if player_choice.nil? || game_choice.nil?
     return :draw if player_choice == game_choice
     WEAPONS[player_choice] == game_choice ? :player_win : :game_win
   end
