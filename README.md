@@ -1,4 +1,4 @@
-Eleni Skouroupathis - Week 3 Weekend Challenge
+**Eleni Skouroupathi - Week 3 Weekend Challenge**
 
 Challenge
 -------
@@ -30,7 +30,6 @@ Functionality
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
 
 Test
 ----------------------
