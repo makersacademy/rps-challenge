@@ -11,7 +11,9 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/play'
   end
 
@@ -22,25 +24,25 @@ class Rps < Sinatra::Base
 
   post '/rock' do
     session[:player_choice] = :rock
-    erb :game
+    redirect '/game'
   end
 
   post '/paper' do
     session[:player_choice] = :paper
-    erb :game
+    redirect '/game'
   end
 
   post '/scissor' do
     session[:player_choice] = :scissor
-    erb :game
+    redirect '/game'
   end
 
   get '/game' do
-    player = Player.new(session[:player_choice])
-    computer = Compouter.new
-    @player_choice = player.choice
-    @computer_choice = computer.choice
-
+    @game = $game
+    # @game.dual(@game.player_choice, @game.computer_choice)
+    @game.dual(session[:player_choice], @game.computer_choice)
+    @game.result
+    erb :game
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -1,11 +1,11 @@
 class Game
-  attr_reader :player_choice, :computer_choice, :dual, :GAME_COMBO
+  attr_reader :player, :computer, :dual,  :GAME_COMBO
 
   attr_writer :dual
 
-  def initialize(player_choice, computer_choice)
-    @player_choice = player_choice
-    @computer_choice = computer_choice
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
     @dual = [player_choice, computer_choice]
   end
 
@@ -18,6 +18,22 @@ class Game
                [:scissor, :rock] => "You lose",
                [:scissor, :paper] => "You win",
                [:scissor, :scissor] => "It's a tie"}
+
+  def player_name
+    @player.name
+  end
+
+  def player_choice
+    @player.choice
+  end
+
+  def computer_choice
+    @computer.choice
+  end
+
+  def dual
+    @dual << player_choice << computer_choice
+  end
 
   def result
     GAME_COMBO[dual]

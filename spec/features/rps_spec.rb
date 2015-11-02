@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'web_helper'
 
 # As a marketeer
 # So that I can enjoy myself away from the daily grind

@@ -2,19 +2,32 @@ require 'game'
 
 describe Game do
 
-subject(:game) {described_class.new(player_choice,computer_choice)}
-let(:player_choice) {double(:player_choice)}
-let(:computer_choice) {double(:computer_choice)}
+subject(:game) {described_class.new(player,computer)}
+let(:player) {double(:player, name: 'Amy', choice: :rock)}
+let(:computer) {double(:computer, choice: :rock)}
 
 
   describe "#initialization" do
-    it "receives player_choice" do
-      expect(game.player_choice).to eq player_choice
+    it "receives player" do
+      expect(game.player).to eq player
     end
-    it "receives computer_choice" do
-      expect(game.computer_choice).to eq computer_choice
+    it "receives computer" do
+      expect(game.computer).to eq computer
     end
   end
+
+  describe '#player name' do
+    it 'gives player name' do
+      expect(game.player_name).to eq 'Amy'
+    end
+  end
+
+  describe '#player choice'do
+    it 'gives player\'s choice' do
+      expect(game.player_choice). to eq :rock
+    end
+  end
+
 
   describe "#winner" do
     context "when it is a tie" do
@@ -27,7 +40,6 @@ let(:computer_choice) {double(:computer_choice)}
       it "player plays rock & computer plays scissor" do
           allow(game).to receive(:dual).and_return([:rock, :scissor])
           expect(game.result).to eq "You win"
-          p @dual
       end
     end
     context "when player loses" do

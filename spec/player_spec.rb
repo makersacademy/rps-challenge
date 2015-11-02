@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
 
-  subject(:player) {described_class.new(choice)}
+  subject(:player) {described_class.new('Amy', choice)}
   let(:choice){double(:choice)}
 
   describe "#choice"
