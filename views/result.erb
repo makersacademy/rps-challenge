@@ -1,9 +1,9 @@
 <h1>You picked <%= @game.player_choice.to_s %></h1>
 
-<h1>The computer picked... <%= @game.game_choice.to_s %> </h2>
+<h1>The computer picked... <%= @game.game_choice.to_s %> </h1>
 
-<h1> The winner is... <%= @game.who_wins %>!!!!</h2>
+<h1> The winner is... <%= @game.who_wins %>!!!!</h1>
 
-<form action="/reset" method="post">
+<form action="/play">
   <input type="submit" value="Click here to play again">
 </form>

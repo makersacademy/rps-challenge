@@ -23,10 +23,25 @@ describe Game do
   end
 
   context 'Determining the winner' do
-    it 'returns the winner based on what was picked' do
+    it 'correctly returns the player as winner' do
+      allow(game).to receive(:random_number) {1}
       allow(game).to receive(:player_choice) {:rock}
-      allow(game).to receive(:game_choice) {:paper}
+      game.select_game_choice
+      expect(game.who_wins).to eq 'George'
+    end
+
+    it 'correctly returns the computer as winner' do
+      allow(game).to receive(:random_number) {2}
+      allow(game).to receive(:player_choice) {:rock}
+      game.select_game_choice
       expect(game.who_wins).to eq 'Computer'
+    end
+
+    it 'correctly returns a draw' do
+      allow(game).to receive(:random_number) {0}
+      allow(game).to receive(:player_choice) {:rock}
+      game.select_game_choice
+      expect(game.who_wins).to eq 'No one! It\'s a draw'
     end
   end
 end

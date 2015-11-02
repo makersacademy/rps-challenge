@@ -24,15 +24,31 @@ feature 'Rock, Paper, Scissors' do
     end
   end
 
-  describe 'Announces winner and allows user to play again' do
+  describe 'Announces the outcome and allows user to play again' do
     before do
       sign_in_and_play
-      click_button('rock')
     end
-    scenario 'Announces a winner' do
-      expect(page).to have_content 'The winner is...'
+
+    scenario 'Announces a winner (the player)' do
+      srand(2)
+      click_button('paper')
+      expect(page).to have_content 'The winner is... George'
     end
+
+    scenario 'Announces a winner (the computer)' do
+      srand(1)
+      click_button('paper')
+      expect(page).to have_content 'The winner is... Computer'
+    end
+
+    scenario 'Announces a draw' do
+      srand(5)
+      click_button('paper')
+      expect(page).to have_content 'The winner is... No one! It\'s a draw'
+    end
+
     scenario 'User can play again' do
+      click_button('paper')
       click_button 'Click here to play again'
       expect(page).to have_content 'Please choose from the following options'
     end
