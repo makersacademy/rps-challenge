@@ -3,8 +3,8 @@ require 'game'
 describe Game do
   let(:player) { double :player, name: 'Andy', rounds_won: 0, selection: 'Rock' }
   let(:comp) { double :comp, name: 'Computer', rounds_won: 0, selection: 'Paper' }
-  let(:r2) { double :round, find_winner: 'Andy' }
-  let(:round) { double :round, find_winner: 'Andy', new: r2 }
+  let(:r2) { double :round, find_winner: 'Andy', winner: comp }
+  let(:round) { double :round, find_winner: 'Computer', new: r2, winner: comp }
   subject(:m_game) { described_class.new(player, player, round) } #multi game
   subject(:s_game) { described_class.new(player, comp, round) } #single game
 
@@ -55,6 +55,26 @@ describe Game do
     it 'should update to round 1' do
       s_game.fight
       expect(s_game.round_num).to eq 1
+    end
+  end
+
+  describe '#wins' do
+    it 'should display the correct number of wins' do
+      s_game.fight
+      expect(s_game.wins(player)).to eq 0
+      expect(s_game.wins(comp)).to eq 1
+    end
+    it 'should be zero when a game is started' do
+      expect(s_game.wins(player)).to eq 0
+    end
+  end
+
+  describe '#draw' do
+    it 'should display the correct number of draws' do
+      allow(round).to receive(:winner).and_return(nil)
+      allow(r2).to receive(:winner).and_return(nil)
+      s_game.fight
+      expect(s_game.draw).to eq 1
     end
   end
 end

@@ -35,8 +35,11 @@ class Game
     @round_history.length
   end
 
-  def fight_message
-
+  def wins(player)
+    @round_history.select {|elem| elem.winner == player }.length
   end
 
+  def draw
+    @round_history.select {|elem| elem.winner.nil? }.length
+  end
 end

@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Game on!</title>
+  <link href='/css/application.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-Please select your attack, <%=@game.p1_name%>
+<header>Please select your attack, <%=@game.p1_name%></header>
 
 <form action='/p1' method='post'>
   <input type='submit' value='Rock' name='selection'>

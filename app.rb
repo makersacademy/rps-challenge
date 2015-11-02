@@ -38,6 +38,7 @@ class RockPaperScissors < Sinatra::Base
   post '/p2' do
     @p2 = $game.p2
     $game.select(@p2, params[:selection])
+    $game.fight
     redirect '/results'
   end
 
@@ -46,8 +47,6 @@ class RockPaperScissors < Sinatra::Base
     @round = @game.round_history.last
     erb :results
   end
-
-
 
 run! if app_file == $0
 end

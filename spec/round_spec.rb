@@ -16,13 +16,14 @@ describe Round do
 
   describe '#message' do
     it 'should calculate the correct winner' do
+      round.find_winner
       expect(round.message).to eq 'Andy wins with Rock!'
     end
   end
 
   describe '#winner' do
     it 'identifies the winning player' do
-      expect(round.winner).to eq player_1
+      expect{round.find_winner}.to change{round.winner}.from(nil).to(player_1)
     end
   end
 

@@ -4,6 +4,7 @@ ENV['RACK_ENV'] = 'test'
 
 require 'coveralls'
 require 'simplecov'
+require './spec/web_helpers'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
