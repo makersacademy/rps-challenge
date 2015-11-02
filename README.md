@@ -1,4 +1,5 @@
-
+[![Build Status](https://travis-ci.org/dearshrewdwit/rps-challenge.svg?branch=master)](https://travis-ci.org/dearshrewdwit/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/dearshrewdwit/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/dearshrewdwit/rps-challenge?branch=master)
 
 Features
 ---
