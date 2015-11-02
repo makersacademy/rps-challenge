@@ -7,7 +7,7 @@ require 'web_helper'
 
 feature 'Register name'do
   scenario 'player to submit name'do
-    sign_in_and_play
+    register_and_play
     expect(page).to have_content ("Current player : Amy")
   end
 end
