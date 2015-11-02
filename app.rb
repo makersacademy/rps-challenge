@@ -8,21 +8,24 @@ class RockPaperScissors < Sinatra::Base
     end
 
     post '/names' do
-      session[:player_1] = params[:player_1]
+      session[:player_name] = params[:player_name]
     redirect '/play'
     end
 
     get '/play' do
-      @player_1 = session[:player_1]
-      @player_selection = params[:selection]
-      @computer_selection = %w(paper scissors rock).sample
+      @player = Player.new(session[:player_name])
+      @computer = Computer.new
+      @player_selection = @player.choose(params[:selection])
+      @computer_selection = @computer.choose
+      @game = Game.new
+      @result = @game.battle(@player.weapon, @computer.weapon)
       erb(:play)
     end
 
-    get '/selected' do
-      @player_1 = session[:player_1]
-      erb(:result)
-    end
+    # get '/selected' do
+    #   @player_name = session[:player_name]
+    #   erb(:result)
+    # end
 
 run! if app_file == $0
 end

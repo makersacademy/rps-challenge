@@ -6,24 +6,26 @@ feature 'win - loss - draw combinations' do
   end
 
     scenario 'player loses' do
-      sign_in_and_play
+      visit '/'
+      fill_in 'player_name', with: 'He-Man'
+      click_button 'Submit'
       click_button 'rock'
-      expect(page).to have_content("paper wraps rock computer wins!!")
+      expect(page).to have_content("computer wins")
     end
 
     scenario 'player wins' do
       visit '/'
-      fill_in 'Player1', with: 'Rebecca'
+      fill_in 'player_name', with: 'Rebecca'
       click_button 'Submit'
       click_button 'scissors'
-      expect(page).to have_content("scissors cuts paper Rebecca wins!!")
+      expect(page).to have_content("you win")
     end
 
     scenario 'player draws' do
       visit '/'
-      fill_in 'Player1', with: 'Rebecca'
+      fill_in 'player_name', with: 'Rebecca'
       click_button 'Submit'
       click_button 'paper'
-      expect(page).to have_content("No body wins")
+      expect(page).to have_content("Its a draw")
     end
 end

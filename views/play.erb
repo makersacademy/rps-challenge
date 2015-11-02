@@ -6,7 +6,7 @@
 </head>
     <body>
       <p>
-      <%= @player_1 %> vs Computer
+      <%= @player.player_name %> vs Computer
       </p>
       <form action="/play" >
         <button name="selection" type="submit" value="rock">rock</button>
@@ -22,7 +22,7 @@
 
       <p>
             <% if @player_selection %>
-              <h1> <%=@player_1%> chose attack method <%=@player_selection%></h1>
+              <h1> <%=@player.player_name%> chose attack method <%=@player_selection%></h1>
             <% end %>
       </p>
       <p>
@@ -30,36 +30,12 @@
           <h1> Computer randomly choses attack method <%=@computer_selection%></h1>
         <% end %>
       </p>
+
       <p>
-          <% if @player_selection == 'rock' && @computer_selection == 'rock' %>
-            <h1> No body wins</h1>
-          <% end %>
-          <% if @player_selection == 'rock' && @computer_selection == 'scissors' %>
-            <h1> rock blunts scissors <%=@player_1%> wins!!</h1>
-          <% end %>
-          <% if @player_selection == 'scissors' && @computer_selection == 'paper' %>
-            <h1> scissors cuts paper <%=@player_1%> wins!!</h1>
-          <% end %>
-          <% if @player_selection == 'paper' && @computer_selection == 'rock' %>
-              <h1> paper wraps rock <%=@player_1%> wins!!</h1>
-          <% end %>
-          <% if @player_selection == 'scissors' && @computer_selection == 'scissors' %>
-            <h1> No body wins</h1>
-          <% end %>
-          <% if @player_selection == 'paper' && @computer_selection == 'paper' %>
-            <h1> No body wins</h1>
-          <% end %>
-
-          <% if @computer_selection == 'rock' && @player_selection == 'scissors' %>
-            <h1> rock blunts scissors computer wins!!</h1>
-          <% end %>
-          <% if @computer_selection == 'scissors' && @player_selection == 'paper' %>
-            <h1> scissors cuts paper computer wins!!</h1>
-          <% end %>
-          <% if @computer_selection == 'paper' && @player_selection == 'rock' %>
-              <h1> paper wraps rock computer wins!!</h1>
-          <% end %>
-
+        <% if @player_selection %>
+          <h1> <%=@result%></h1>
+        <% end %>
       </p>
+
     </body>
 </html>
