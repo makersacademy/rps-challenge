@@ -106,9 +106,9 @@ App Usage and Features
 
 Demo App
 --------
+Visit the link below to see a live version of the app.
 
-
-
+https://mighty-mesa-9710.herokuapp.com/
 
 Download Instructions
 ---------------------
