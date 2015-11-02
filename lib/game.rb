@@ -8,14 +8,22 @@ class Game
 
   def_delegator :player1, :set_name, :set_player_name
   def_delegator :player1, :set_choice, :set_player_choice
-  def_delegator :player1, :name, :player_name
-  def_delegator :player1, :choice, :player_choice
 
-  def_delegator :player2, :choice, :computer_choice
+  def_delegator :player2, :name, :player2_name
+  def_delegator :player1, :name, :player1_name
+
+  def_delegator :player1, :choice, :player1_choice
+  def_delegator :player2, :choice, :player2_choice
 
   def initialize(player1 = Player.new, player2 = Player.new)
     @players = [player1, player2]
     @choices = [:rock, :paper, :scissors]
+  end
+
+  def set_player_names(player1_name, player2_name)
+    player2_name ||= 'Computer'
+    player1.set_name(player1_name)
+    player2.set_name(player2_name)
   end
 
   def restart
@@ -23,11 +31,11 @@ class Game
   end
 
   def winner
-    return nil if player_choice.nil?
+    return nil if player1_choice.nil?
     set_computer_choice
     return 'Nobody' if draw?
-    index = @choices.index(player_choice)
-    (@choices[index-1] == computer_choice) ? player_name : 'Computer'
+    index = @choices.index(player1_choice)
+    (@choices[index-1] == player2_choice) ? player1_name : player2_name
   end
 
   private
@@ -43,7 +51,7 @@ class Game
   end
 
   def draw?
-    player_choice == computer_choice
+    player1_choice == player2_choice
   end
 
 end
