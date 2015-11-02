@@ -24,12 +24,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/selection' do
     $player1_choice = $game.player.choose_weapon(params[:weapon])
+    $computer_choice = $game.computer.weapon
     redirect 'result'
   end
 
   get '/result' do
     @player1_choice = $player1_choice
-    @computer_choice = $game.computer.weapon
+    @computer_choice = $computer_choice
     @game_result = $game.result
     erb :result
   end
