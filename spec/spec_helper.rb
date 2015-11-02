@@ -11,4 +11,14 @@ SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require 'web_helper'
+
+Capybara.app = RockPaperScissors

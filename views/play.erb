@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="/css/application.css" rel="stylesheet" type="text/css">
+    <title>Classic game</title>
+  </head>
+      <body>
+        <p>
+          <%= @player.player_name %> vs Computer
+        </p>
+        <p>
+          <form action="/play" >
+            <button name="selection" type="submit" value="rock">rock</button>
+          </form>
+
+          <form action="/play" >
+            <button name="selection" type="submit" value="paper">paper</button>
+          </form>
+
+          <form action="/play" >
+            <button name="selection" type="submit" value="scissors">scissors</button>
+          </form>
+        </p>
+
+        <p>
+          <% if @player_selection %>
+            <h1> <%=@player.player_name%> chose attack method <%=@player_selection%></h1>
+          <% end %>
+        </p>
+        <p>
+          <% if @player_selection %>
+            <h1> Computer randomly choses attack method <%=@computer_selection%></h1>
+          <% end %>
+        </p>
+
+        <p>
+          <% if @player_selection %>
+            <h1> <%=@result%></h1>
+          <% end %>
+        </p>
+
+      </body>
+</html>
