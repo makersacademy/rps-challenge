@@ -6,14 +6,6 @@ require './lib/game'
 class Rps < Sinatra::Base
   enable :sessions
 
-  # def satus
-  #   player = Player.new(session[:selection])
-  #   computer = Computer.new(random_selection)
-  #
-  #   @player_name = session[:player_name]
-  #   @player_selection = player.selection
-  # end
-
   get '/' do
     erb :index
   end
@@ -30,26 +22,25 @@ class Rps < Sinatra::Base
 
   post '/rock' do
     @player_name = session[:player_name]
-    session[:selection] = :Rock
-    player = Player.new(session[:selection])
-    @player_selection = player.selection
-
+    session[:choice] = :rock
+    player = Player.new(session[:choice])
+    @player_choice = player.choice
     erb :game
   end
 
   post '/paper' do
     @player_name = session[:player_name]
-    session[:selection] = :Paper
-    player = Player.new(session[:selection])
-    @player_selection = player.selection
+    session[:choice] = :paper
+    player = Player.new(session[:choice])
+    @player_choice = player.choice
     erb :game
   end
 
   post '/scissor' do
     @player_name = session[:player_name]
-    session[:selection] = :Scissor
-    player = Player.new(session[:selection])
-    @player_selection = player.selection
+    session[:choice] = :scissor
+    player = Player.new(session[:choice])
+    @player_choice = player.choice
     erb :game
   end
 

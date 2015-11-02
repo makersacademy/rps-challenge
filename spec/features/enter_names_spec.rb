@@ -6,7 +6,7 @@ require 'web_helper'
 # I would like to register my name before playing an online game
 
 feature 'Register name'do
-  scenario 'player to submit name'do
+  scenario 'player to register name'do
     register_and_play
     expect(page).to have_content ("Current player : Amy")
   end

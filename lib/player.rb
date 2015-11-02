@@ -1,6 +1,6 @@
 class Player
-  attr_reader :selection
-  def initialize (selection)
-    @selection = selection
+  attr_reader :choice
+  def initialize(choice)
+    @choice = choice
   end
 end

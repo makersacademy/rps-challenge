@@ -1,8 +1,8 @@
 class Computer
 
-  attr_reader :random_selection
+  attr_reader :random_choice
 
-  def initialize(random_selection)
-    @random_selection = [:rock, :paper, :scissor].sample
+  def initialize(random_choice)
+    @random_choice = [:rock, :paper, :scissor].sample
   end
 end
