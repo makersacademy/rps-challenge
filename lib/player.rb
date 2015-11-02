@@ -1,15 +1,17 @@
 class Player
-  attr_reader :name, :weapons, :choosen
+  attr_reader :name
 
-  def initialize(name)
+  def initialize(name, weapon=Weapon.new)
     @name = name
-    @weapons = [:scissors, :paper, :rock]
-    @choosen = nil
+    @weapons = weapon
   end
 
-  def choose_weapon(weapon)
-    raise 'Cannot choose this weapon: weapon not present' unless @weapons.include?(weapon)
-    @choosen = weapon
+  def user_choose_weapon(weapon)
+    weapons.choose_weapon(weapon)
   end
+
+  private
+
+  attr_reader :weapons
 
 end

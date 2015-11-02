@@ -1,11 +1,16 @@
+require_relative 'weapon'
+
 class Computer
 
-  attr_reader :hand
-  
-  HAND = [:rock, :scissor, :paper]
+  attr_reader :name
 
-  def choose_rand_weapon
-    @hand = HAND.sample
+  def initialize(name = 'Skynet', weapon = Weapon.new)
+    @name = name
+    @weapon = weapon
+  end
+
+  def choose_rand
+    @weapon.choose_rand_weapon
   end
 
 end

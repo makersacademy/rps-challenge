@@ -6,8 +6,15 @@ class Game
             scissors: :paper }
 
   def initialize (user_weapon, computer_weapon)
-    @user_weapon = user_weapon
-    @computer_weapon = computer_weapon
+    @weapons = [user_weapon, computer_weapon]
+  end
+
+  def user_weapon
+    weapons.first
+  end
+
+  def computer_weapon
+    weapons.last
   end
 
   def play_game
@@ -22,6 +29,6 @@ class Game
 
   private
 
-  attr_reader :user_weapon, :computer_weapon
+  attr_reader :weapons
 
 end
