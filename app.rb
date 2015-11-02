@@ -5,14 +5,14 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-   erb :index 
+   erb :index
   end
 
   post '/name' do
     session[:player_name] = params[:player_name]
     redirect :play
   end
-  
+
   get '/play' do
     @player_name = session[:player_name]
     erb :play
@@ -27,7 +27,7 @@ class Rps < Sinatra::Base
     game = Game.new
     @player1_move = session[:move]
     @player2_move = game.computer_move
-    @result = game.winner @player1_move, @player2_move 
+    @result = game.winner @player1_move, @player2_move
     erb :duel
   end
 end
