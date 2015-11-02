@@ -1,0 +1,9 @@
+<h1>Welcome, <%= "#{@game.player_name}" %>!</h1>
+<h2>Please choose from the following options:</h2>
+
+
+<form action="/choice" method="post">
+  <input type="submit" value="rock" name="choice">
+  <input type="submit" value="paper" name="choice">
+  <input type="submit" value="scissors" name="choice">
+</form>
