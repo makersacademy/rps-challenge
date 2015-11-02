@@ -48,6 +48,10 @@ Approach
   * when both choose same weapon its declared as tie
   * result.erb also shows cumulative score
 
+Play this game at https://fathomless-thicket-5825.herokuapp.com/
+
+Github code repository is at https://github.com/RajeevHejib/rps-challenge˜
+
 A test run is as below
 ----------------------
 
