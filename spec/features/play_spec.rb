@@ -14,7 +14,7 @@ feature 'choosing keyword' do
   scenario 'allows to enter one of the options' do
 
     register_and_play
-
+    fill_in('rps', with: 'Rock')
     click_on 'Shoot!'
     expect(page).to have_content('You have chosen Rock')
 

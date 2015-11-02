@@ -1,5 +1,5 @@
 require 'capybara'
-require 'web_helpers'
+require 'web_helpers.rb'
 
   feature 'registers player name' do
 
