@@ -1,4 +1,10 @@
-<h1><%=@game.play_game%></h1>
+<h1><%=if @game.play_game == :draw
+          'Draw'
+        elsif @game.play_game == :win
+          'You win'
+        else
+          'You lose'
+        end%></h1>
 <h2><%=@player.name%> choice: <%=@user_choice%> </h2>
 <h2><%=@computer.name%> choice: <%=@computer_choice%> </h2>
 <form action="/play" method="get">

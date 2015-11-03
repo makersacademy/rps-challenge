@@ -18,9 +18,9 @@ class Game
   end
 
   def play_game
-    return 'Draw' if user_weapon == computer_weapon
-    return 'You win' if RULES[user_weapon] == computer_weapon
-    'You lose'
+    return :draw if user_weapon == computer_weapon
+    return :win if RULES[user_weapon] == computer_weapon
+    :lose
   end
 
   private
