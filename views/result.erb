@@ -1,6 +1,6 @@
-<body style="text-align: center">
-  <h1><%=@game.play_game%></h1>
-  <form action="/play" method="get">
-    <input type="submit" value="play again">
-  </form>
-</body>
+<h1><%=@game.play_game%></h1>
+<h2>User choice: <%=@user_choice%> </h2>
+<h2>Computer choice: <%=@computer_choice%> </h2>
+<form action="/play" method="get">
+  <input type="submit" value="play again">
+</form>

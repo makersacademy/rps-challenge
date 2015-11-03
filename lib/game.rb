@@ -18,13 +18,9 @@ class Game
   end
 
   def play_game
-    if user_weapon == computer_weapon
-      'Draw'
-    elsif RULES[user_weapon] == computer_weapon
-      'You win'
-    else
-      'You lose'
-    end
+    return 'Draw' if user_weapon == computer_weapon
+    return 'You win' if RULES[user_weapon] == computer_weapon
+    'You lose'
   end
 
   private
