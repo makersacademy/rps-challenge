@@ -1,8 +1,9 @@
 class Game
-  attr_reader :opponent, :player_1_hand, :player_2_hand, :opponent_hand
+  attr_reader :opponent, :player_1_hand, :player_2_hand, :opponent_hand, :history
 
-  def initialize(opponent_klass=Opponent,result_klass=Result)
+  def initialize(opponent_klass=Opponent,result_klass=Result, history_klass = History)
     @opponent = opponent_klass.new
+    @history = history_klass.new
     @result_klass = result_klass
   end
 
@@ -11,17 +12,15 @@ class Game
   end
 
   def set_opponent_hand
-    @opponent_hand = check_hand
+    @opponent_hand = opponent.choose_hand
   end
 
   def result
     @result_klass.run(@player_1_hand, @opponent_hand)
   end
 
-  private
-
-  def check_hand
-    opponent.choose_hand
+  def store_hands
+    @history.store_hands(@player_1_hand, @opponent_hand)
   end
 
 end
