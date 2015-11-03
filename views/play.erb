@@ -1,23 +1,26 @@
-<h1>
-  Nice to see you</h1>
-<h1>welcome to the game:
-  <%=@player.name%> vs
+<div class='play'>
+  <h1>
+    Nice to see you</h1>
+  <h1>welcome to the game:
+    <%=@player.name%>
+    vs
     <%=@computer.name%>
-</h1>
-<div class="radio">
-  <form action="/user_vs_pc" method="post">
-    <label for="rock">Rock</label>
-    <input type="radio" name="rps" id="rock" value="rock">
-    <br>
-    <br>
-    <label for="paper">Paper</label>
-    <input type="radio" name="rps" id="paper" value="paper">
-    <br>
-    <br>
-    <label for="Scissors">Scissors</label>
-    <input type="radio" name="rps" id="scissors" value="scissors">
-    <br>
-    <br>
-    <input type="submit" value="submit">
-  </form>
+  </h1>
+  <div class="radio">
+    <form action="/user_vs_pc" method="post">
+      <label for="rock">Rock</label>
+      <input id="rock" name="rps" type="radio" value="rock">
+      <br>
+      <br>
+      <label for="paper">Paper</label>
+      <input id="paper" name="rps" type="radio" value="paper">
+      <br>
+      <br>
+      <label for="Scissors">Scissors</label>
+      <input id="scissors" name="rps" type="radio" value="scissors">
+      <br>
+      <br>
+      <input type="submit" value="submit">
+    </form>
+  </div>
 </div>

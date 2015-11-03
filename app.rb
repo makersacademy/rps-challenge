@@ -31,6 +31,8 @@ class Game_rps < Sinatra::Base
   end
 
   get '/result' do
+    @player = $player
+    @computer = $computer
     @user_choice = session[:rps]
     @computer_choice = session[:computer]
     @game = $game
