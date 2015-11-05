@@ -1,13 +1,18 @@
-class PatternMatcher
-  def initialize(sequence)
-    @pattern = pattern
-  end
+class RepeatedSequence
+
   def self.run(sequence)
-    PatternMatcher.new(sequence).run
+    RepeatedSequence.new(sequence).run
   end
+
+  def initialize(sequence)
+    @sequence = sequence
+  end
+
   def run
+    repeated_sequence(@sequence)
   end
-end
+
+private
 
   def repeated_sequence(sequence)
     i = 1
@@ -23,11 +28,4 @@ end
     end
     nil
   end
-
-=begin
-  nil if nil or length less than two
-  iterate over the list
-  save the first element as the pattern
-  if the next element is the same, assume continuation of the pattern
-  if not, save the next element and reiterate with the next pattern
-=end
+end
