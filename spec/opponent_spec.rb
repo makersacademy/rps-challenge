@@ -3,6 +3,7 @@ require 'opponent'
 describe Opponent do
   subject(:opponent) {described_class}
   let(:frequency_analyzer_klass) {double(:frequency_analyzer_klass)}
+  let(:pattern_matcher_klass) {double(:pattern_matcher_klass)}
 
   context "When choosing a hand the opponent:" do
 
@@ -11,6 +12,11 @@ describe Opponent do
       allow(frequency_analyzer_klass).to receive(:run).with(nil).and_return(nil)
       expect(opponent.choose_hand(nil, frequency_analyzer_klass)).to eq :paper
     end
+
+    # it "passes history to PatternMatcher to improve its guess" do
+    #   expect(pattern_matcher_klass).to receive(:run).with(:history)
+    #   opponent.choose_hand(:history, frequency_analyzer_klass)
+    # end
 
     it "passes history to FrequencyAnalyzer to improve its guess" do
       expect(frequency_analyzer_klass).to receive(:run).with(:history)
