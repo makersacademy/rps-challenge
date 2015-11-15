@@ -5,6 +5,8 @@ require 'spec_helper'
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
+  PLAYSEED = 221563
+
   # as a marketeer
   # so I can play a game
   # I want to see the shapes I can play
@@ -35,6 +37,15 @@ feature 'playing a game' do
     click_button 'Rock'
     message = find(:css, "#opponent").text
     expect(possible_messages).to include message
+  end
+
+  # As a marketeer
+  # so I can play a game
+  # I want the game to choose a shape to play
+  scenario 'choose a shape' do
+    srand(PLAYSEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent choose Scissors!'
   end
 
   def possible_messages
