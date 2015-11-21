@@ -1,10 +1,23 @@
-<p>Hello, <%=@p_name%></p>
+<p>Hello, <%=@turn.name%></p>
 
 <p>Please enter Rock, Paper or Scissors:</p>
 
-<form action="/result" method="get">
-
-  <input type="text" name="rps">
-  <button type='submit'> Shoot! </button>
-
+<form action="/play" method="post">
+  <input type="submit" name="rps_choice" value = "Rock"/>
+  <input type="submit" name="rps_choice" value="Paper"/>
+  <input type="submit" name="rps_choice" value="Scissors"/>
+  <!-- <button type='submit'> Shoot! </button> -->
 </form>
+
+<div> You have chosen <%=@turn.player_choice.to_s.capitalize%> </div>
+<div id ="opponent">
+Computer chose <%=@turn.computer_choice.to_s.capitalize%>!
+</div>
+
+<% if @turn.win?%>
+You win!
+<% elsif @turn.lose?%>
+You lose!
+<% elsif @turn.draw?%>
+Draw!
+<%end%>

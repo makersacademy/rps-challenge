@@ -1,13 +1,13 @@
 require 'capybara'
-require 'web_helpers.rb'
+require './spec/web_helpers.rb'
 
-  feature 'registers player name' do
+# As a marketeer
+# So that I can see my name in lights
+# I would like to register my name before playing an online game
 
-    scenario 'asks to enter name' do
-
+  feature 'registers player name:' do
+    scenario 'allows to enter name and displays it' do
       register_and_play
-      expect(page).to have_content('SuperMarketer')
-
+      expect(page).to have_content('BoredPerson')
     end
-
   end
