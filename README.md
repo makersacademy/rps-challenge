@@ -39,7 +39,7 @@ Hints on functionality
 
 As usual please start by
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_september2015 (if you haven't already)
+* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_november2015 (if you haven't already)
 * Forking this repo
 * TEST driving development of your app
 
@@ -59,6 +59,14 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
+In code review we'll be hoping to see:
+
+* All tests passing
+* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
+* The code is elegant: every class has a clear responsibility, methods are short etc. 
+
+Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+
 Notes on test coverage
 ----------------------
 
@@ -76,6 +84,11 @@ SimpleCov.formatters = [
 Coveralls.wear! 
 ```
 
-Note that you can replace `Coveralls.wear!` with  `SimpleCov.start` to get coverage stats locally
-Then run `open coverage/index.html` from the command line to view details
+You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+
+```
+$ coveralls report
+```
+
+This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
