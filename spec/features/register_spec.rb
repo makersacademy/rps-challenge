@@ -4,9 +4,7 @@
 
 feature 'register' do
   scenario 'allow player to register name before playing' do
-    visit '/'
-    fill_in(:player_name, with: 'Charlie')
-    click_button('Register!')
+    register
     expect(page).to have_content "Charlie"
   end
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
 
@@ -16,6 +17,10 @@ class Rps < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     erb(:play)
+  end
+
+  post '/set_choice' do
+    $game = Game.new(params[:player_choice])
   end
 
 
