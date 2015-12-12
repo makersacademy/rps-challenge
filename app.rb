@@ -10,24 +10,26 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @@player1 = params[:player_1_name]
+    player1 = Player.new(params[:player_1_name])
+    player2 = ComputerPlayer.new
+    @@game = Game.new(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
-    player1
+    game
     erb :play
   end
 
   post '/process' do
-    player1
+    game
     redirect '/play'
   end
 
 
   helpers do
-    def player1
-      @player1 ||= @@player1
+    def game
+      @game ||= @@game
     end
   end
   # start the server if ruby file executed directly
