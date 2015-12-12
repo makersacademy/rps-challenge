@@ -1,0 +1,16 @@
+<section class=player>
+  <h3><%= @game.player1.name %></h3>
+  <h5>Won 0 / 3</h5>
+  <img src="" alt="" width="200px" height="200px">
+</section>
+<section class=message>
+  <form action="/choose" method="get">
+    <h3>You picked: <%= @game.player1.selection %></h3>
+    <input type="submit" value="Next turn">
+  </form>
+</section>
+<section class=player>
+  <h3>Computer</h3>
+  <h5>Won 0 / 3</h5>
+  <img src="" alt="" width="200px" height="200px">
+</section>

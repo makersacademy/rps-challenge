@@ -1,0 +1,9 @@
+<section id="pick-shape">
+  <h3> Pick shape: </h3>
+  <h3><%= @game.player1.name %></h3>
+  <form action="/selection" method="post">
+    <input type="submit" name="choice" value="Rock">
+    <input type="submit" name="choice" value="Scissors">
+    <input type="submit" name="choice" value="Paper">
+  </form>
+</section>
