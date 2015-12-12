@@ -1,7 +1,7 @@
-require 'capybara'
-require 'selenium-webdriver'
-include Capybara::DSL
-Capybara.default_driver= :selenium
+# require 'capybara'
+# require 'selenium-webdriver'
+# include Capybara::DSL
+# Capybara.default_driver= :selenium
 
 # As a marketeer
 # So that I can see my name in lights
