@@ -8,7 +8,9 @@ class Weapon
   end
 
   def judge
-    draw? ? :Draw : beats?
+    return :Draw if draw?
+    return :Win if beats?
+    return :Lost if !beats?
   end
 
   def draw?

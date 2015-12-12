@@ -21,7 +21,7 @@ describe Weapon do
 
   describe '#judge' do
     it 'displays result' do
-      expect(weapon.judge).to eq true
+      expect(weapon.judge).to eq :Win
     end
   end
 end
