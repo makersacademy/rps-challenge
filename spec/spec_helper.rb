@@ -20,6 +20,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'byebug'
+require 'web_helpers'
 
 
 

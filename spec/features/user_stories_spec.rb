@@ -3,11 +3,9 @@
 describe 'User Stories' do
 
 feature 'enter name' do
-	scenario 'submitting name' do 
-		visit '/'
-		fill_in :name, with: 'Dave'
-		click_button 'submit'
-		expect(page).to have_content 'Your name is Dave'
+	scenario 'submitting and displaying name' do 
+		sign_in_and_play
+		expect(page).to have_content 'Dave'
 	end
 end
 
@@ -15,7 +13,16 @@ end
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 
-
+feature 'Playing the game' do
+  scenario "When I submit 'Rock' I am told if I have won" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    visit '/'
+    fill_in :name, with: 'Dave'
+    select('Rock', from: "Pick a weapon")
+    click_button('Play!')
+    expect(page).to have_content "The result is .... Dave won"
+  end
+end
 
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
