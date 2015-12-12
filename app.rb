@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -7,24 +9,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+    $player = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
+    @player = $player
     erb :play
   end
 
-  get '/rock' do
-    erb :rock
+  post '/weapon' do
+    @player = $player
+    @player.choose_weapon(params[:weapon])
+    redirect '/weapon'
   end
 
-  get '/paper' do
-    erb :paper
-  end
-
-  get '/scissors' do
-    erb :scissors
+  get '/weapon' do
+    @player = $player
+    erb :weapon
   end
 
   run! if app_file == $0

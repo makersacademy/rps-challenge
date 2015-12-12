@@ -1,13 +1,9 @@
 <html>
-  <h1>Emma vs. Computer</h1>
+  <h1><%= @player.name %> vs. Computer</h1>
   <h3>Choose your weapon:</h3>
-  <form action="/rock">
-    <p><input type="submit" value="Rock"></p>
-  </form>
-  <form action="/paper">
-    <p><input type="submit" value="Paper"></p>
-  </form>
-  <form action="/scissors">
-    <p><input type="submit" value="Scissors"></p>
+  <form action="/weapon" method="post">
+    <p><input type="submit" name="weapon" value="Rock"></p>
+    <p><input type="submit" name="weapon" value="Paper"></p>
+    <p><input type="submit" name="weapon" value="Scissors"></p>
   </form>
 </html>
