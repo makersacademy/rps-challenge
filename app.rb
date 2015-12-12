@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer_player'
 
 class RPS < Sinatra::Base
 
@@ -11,6 +12,7 @@ class RPS < Sinatra::Base
 
   post '/players' do
     $player = Player.new(params[:player_1])
+    $computer = ComputerPlayer.new
     redirect :play
   end
 
@@ -36,6 +38,7 @@ class RPS < Sinatra::Base
 
   get '/choice' do
     @player = $player
+    @computer = $computer
     erb :choice
   end
   # start the server if ruby file executed directly

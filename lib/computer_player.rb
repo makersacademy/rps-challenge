@@ -8,15 +8,15 @@ class ComputerPlayer
   end
 
   def rps
-    @choice = 'rock' if selector <= 10
-    @choice = 'paper' if selector == 11...20
-    @choice = 'scissors' if selector == 21...30
+    @choice = 'rock' if selector == 1
+    @choice = 'paper' if selector == 2
+    @choice = 'scissors' if selector == 3
   end
 
   private
 
   def selector
-    Kernel.rand(30)
+    Kernel.rand(1...4)
   end
 
 end

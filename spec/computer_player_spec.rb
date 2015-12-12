@@ -15,25 +15,20 @@ describe ComputerPlayer do
   end
 
   describe '#RPS' do
-    it 'should choose a random RPS option' do
-      computer.rps
-      expect(computer.choice).to_not be nil
-    end
-
-    it 'should choose rock' do
+    it 'should sometimes choose rock' do
       allow(Kernel).to receive(:rand).and_return 1
       computer.rps
       expect(computer.choice).to eq 'rock'
     end
 
-    it 'should choose paper' do
-      allow(Kernel).to receive(:rand).and_return 11
+    it 'should sometimes choose paper' do
+      allow(Kernel).to receive(:rand).and_return 2
       computer.rps
       expect(computer.choice).to eq 'paper'
     end
 
-    it 'should choose scissors' do
-      allow(Kernel).to receive(:rand).and_return 21
+    it 'should someimes choose scissors' do
+      allow(Kernel).to receive(:rand).and_return 3
       computer.rps
       expect(computer.choice).to eq 'scissors'
     end
