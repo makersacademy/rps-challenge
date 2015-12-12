@@ -10,7 +10,7 @@ SimpleCov.formatters = [
 Coveralls.wear! 
 #SimpleCov.start
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '..', 'app/rps.rb')
 require 'byebug'
 require 'capybara/rspec'
 require 'web_helpers'

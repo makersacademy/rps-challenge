@@ -1,6 +1,7 @@
 require 'sinatra/base'
-require_relative 'lib/round.rb'
-require_relative 'lib/player.rb'
+require './lib/round.rb'
+require './lib/human.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,16 +12,18 @@ class RPS < Sinatra::Base
 
   post '/new-game' do
     session.clear
+    session[:ready] = false
     session[:name1] = params[:name1]
-    session[:name2] = 'Computer'
-    session[:ai] = true
-    session[:score1], session[:score2] = 0, 0
+    session[:name2] = 'botty'
+    session[:ai?] = true
     redirect '/play'
   end
 
   get '/play' do
-    @round = Round.new(session, Player)
+    @round = Round.new(session, Human, Computer)
     erb :play
   end
+
+  run! if app_file == $0
 end
     

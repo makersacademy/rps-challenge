@@ -2,12 +2,11 @@ require 'player'
 
 describe Player do
   name = 'J. Bloggs'
-  ai = false
-  subject(:player) { described_class.new(name, ai) }
+  subject(:player) { described_class.new(name) }
 
   describe '#initialize' do
-    it 'stores the name and whether ai controlled' do
-      expect([player.name, player.ai]).to eq [name, ai]
+    it 'stores the player name' do
+      expect(player.name).to eq name
     end
   end
 end
