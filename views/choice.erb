@@ -1,4 +1,5 @@
-<% @computer.rps %>
+<% @game.player2.rps %>
 
-You have chosen the <%= @player.choice %>!
-The computer has chosen <%= @computer.choice %>!
+You have chosen the <%= @game.player1.choice %>!
+
+<form action='/outcome' method='get'><input type="submit" value="Outcome"/></form>

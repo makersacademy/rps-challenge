@@ -5,14 +5,15 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @rules = {rock: 'scissors',
-              paper: 'rock',
-              scissors: 'paper'}
+    @rules = {rock: :scissors,
+              paper: :rock,
+              scissors: :paper}
     @winner = nil
   end
 
-  def who_won
-    draw ? @winner = 'draw' : outcome
+  def outcome
+    @winner = nil
+    draw ? @winner = 'draw' : who_won
   end
 
   private
@@ -21,9 +22,11 @@ class Game
     player1.choice == player2.choice
   end
 
-  def outcome
+  def who_won
     rules.each do |k,v|
-     @player1.choice == k && @player2.choice == v ? @winner = @player2 : @winner = @player1
+      @winner = @player1.name if @player1.choice == k && @player2.choice == v
     end
+    @winner == nil ? @winner = @player2.name : nil
   end
+
 end

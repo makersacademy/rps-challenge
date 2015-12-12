@@ -14,10 +14,24 @@ describe Player do
     end
   end
 
-  describe '#RPS' do
-    it 'should change choice depending on input' do
-      player.rps('Rock')
-      expect(player.choice).to eq 'Rock'
+  describe '#rock' do
+    it 'should change choice to rock' do
+      player.rock
+      expect(player.choice).to eq :rock
+    end
+  end
+
+  describe '#paper' do
+    it 'should change choice to paper' do
+      player.paper
+      expect(player.choice).to eq :paper
+    end
+  end
+
+  describe '#scissors' do
+    it 'should change choice to scissors' do
+      player.scissors
+      expect(player.choice).to eq :scissors
     end
   end
 

@@ -7,8 +7,16 @@ class Player
     @choice = nil
   end
 
-  def rps(choice)
-    @choice = choice
+  def rock
+    @choice = :rock
+  end
+
+  def paper
+    @choice = :paper
+  end
+
+  def scissors
+    @choice = :scissors
   end
 
 end
