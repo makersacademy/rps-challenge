@@ -8,6 +8,9 @@ describe Game do
   it 'stores the name of the players' do
     expect(game.players).to include player1, player2
   end
+  it 'current_turn is set on player1 when start a new game' do
+    expect(game.current_turn).to eq player1
+  end
   describe '#first_player_name' do
     it 'returns the name of the first player' do
       expect(game.first_player_name).to eq 'name1'
