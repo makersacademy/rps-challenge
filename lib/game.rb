@@ -6,6 +6,8 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors]
 
+  RULES = { rock: :scissors, paper: :rock, scissors: :paper }
+
   def initialize(player_klass = Player.new(:name_1))
     @player_1 = player_klass
     @players  = {p1: player_1}
@@ -18,4 +20,6 @@ class Game
   def random_option
     WEAPONS.sample
   end
+
+
 end
