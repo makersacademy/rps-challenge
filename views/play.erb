@@ -1,1 +1,13 @@
-<%= @player_name %>
+<h1><%= @player_name %></h1>
+<div>
+<form action='/choice' method='post'>
+  <input type='submit' name='player_choice' value='Rock' />
+  <input type='submit' name='player_choice' value='Paper' />
+  <input type='submit' name='player_choice' value='Scissors' />
+</form>
+</div>
+<div>
+<% if @player_choice %>
+Your choice : <%= @player_choice %>
+<% end %>
+</div>
