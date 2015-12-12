@@ -1,0 +1,15 @@
+<h1> You picked paper </h1>
+<% if $game.shuffle == 'paper' %>
+  <h2> IT'S A DRAW! </h2>
+    The computer also picked paper and an awkward stand off begins...
+<% elsif $game.shuffle == 'scissors' %>
+  <h2> YOU LOSE! </h2>
+    The computer picked scissors - The scissors cut the paper in two!
+<% else %>
+  <h2> YOU WIN! </h2>
+    The computer picked rock - The paper surrounds the rock and destroys it!
+<%end%>
+<br>
+<form action="/play" method="get">
+<input type="submit" value="OK">
+</form>

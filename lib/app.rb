@@ -18,4 +18,34 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  post '/rock' do
+     redirect '/rock_it'
+  end
+
+  get '/rock_it' do
+    $game.shuffle
+    @player_1_name = $game.player_1.name
+    erb :shuffle
+  end
+
+  post '/paper' do
+     redirect '/paper_it'
+  end
+
+  get '/paper_it' do
+    $game.shuffle
+    @player_1_name = $game.player_1.name
+    erb :shuffle_paper
+  end
+
+  post '/scissors' do
+     redirect '/scissors_it'
+  end
+
+  get '/scissors_it' do
+    $game.shuffle
+    @player_1_name = $game.player_1.name
+    erb :shuffle_scissors
+  end
+
 end

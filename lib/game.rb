@@ -5,4 +5,8 @@ class Game
   def initialize(player_1)
     @player_1 = player_1
   end
+
+  def shuffle
+    ['rock', 'paper', 'scissors'].shuffle.first
+  end
 end

@@ -3,3 +3,7 @@ def sign_in_and_play
   fill_in :player_1_name, with: 'Andrew'
   click_button 'Submit'
 end
+
+def shuffle
+  ['rock', 'paper', 'scissors'].shuffle.first
+end
