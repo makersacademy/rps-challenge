@@ -7,7 +7,7 @@ class Player
     @name = name
   end
 
-  def select_weapon(weapon)
+  def choose_weapon(weapon)
     fail 'Not a valid weapon' unless Game::WEAPONS.include? weapon
     @weapon_choice = weapon
   end
