@@ -7,16 +7,21 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
-    @name = params[:name]
-    p params
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
     erb :play
   end
 
-  get '/result' do
-    erb :result
+  post '/game' do
+    session[:weapon] = params[:weapon]
+    @weapon = session[:weapon]
+    erb :game
   end
-
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

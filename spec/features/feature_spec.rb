@@ -20,21 +20,24 @@ describe 'user specs' do
       visit 'http://localhost:9292/'
       fill_in('name', with: 'Tony')
       click_button('Start Game')
-      find_button('Rock').click
+      click_button('Rock')
+      expect(page).to have_content('You chose Rock')
     end
 
     scenario 'allows user to pick paper' do
       visit 'http://localhost:9292/'
       fill_in('name', with: 'Tony')
       click_button('Start Game')
-      find_button('Paper').click
+      click_button('Paper')
+      expect(page).to have_content('You chose Paper')
     end
 
     scenario 'allows user to pick scissors' do
       visit 'http://localhost:9292/'
       fill_in('name', with: 'Tony')
       click_button('Start Game')
-      find_button('Scissors').click 
+      click_button('Scissors')
+      expect(page).to have_content('You chose Scissors')
     end
   end
 end
