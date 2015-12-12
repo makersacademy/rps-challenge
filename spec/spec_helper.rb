@@ -2,6 +2,8 @@
 require 'coveralls'
 require 'simplecov'
 
+require 'web_helpers.rb'
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
