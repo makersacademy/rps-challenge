@@ -27,10 +27,10 @@ class RPS < Sinatra::Base
   post '/choose' do
     $p1.choose_weapon(params[:choice].to_sym)
     $p2.choose_weapon
-    redirect '/choose'
+    redirect '/result'
   end
 
-  get '/choose' do
+  get '/result' do
     erb $game.victor
   end
 

@@ -4,8 +4,8 @@ describe Computer do
   subject(:computer) { described_class.new }
 
   describe '#name' do
-    it 'should return \'Computer\' when asked it\'s name' do
-      expect(computer.name).to eq('Computer')
+    it 'should return \'The Computer\' when asked it\'s name' do
+      expect(computer.name).to eq('The Computer')
     end
   end
 

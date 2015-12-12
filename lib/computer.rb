@@ -5,7 +5,7 @@ class Computer
   attr_reader :weapon_choice, :name
 
   def initialize
-    @name = "Computer"
+    @name = "The Computer"
   end
 
   def choose_weapon

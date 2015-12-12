@@ -1,14 +1,18 @@
 feature 'Game outcomes' do
-  xscenario 'when I lose, I should get told it' do
+  scenario 'when I lose, I should get told it' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     single_player_login
     choose 'Rock'
     click_button 'Play!'
-    expect(page).to have_content 'The victor is the computer! It must suck to be Michael.'
+    expect(page).to have_content 'The victor is The Computer! It must suck to be Michael.'
   end
 
   scenario 'when I win, I should get told it' do
-
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+    single_player_login
+    choose 'Paper'
+    click_button 'Play!'
+    expect(page).to have_content 'The victor is Michael! The Computer got trounced.'
   end
 
   scenario 'when I draw, I should get told it' do
