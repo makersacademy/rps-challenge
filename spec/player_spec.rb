@@ -13,6 +13,11 @@ describe Player do
     it 'should fail if weapon selected is not within the Game::WEAPONS array' do
       expect{ player.select_weapon(:kitty) }.to raise_error 'Not a valid weapon'
     end
+
+    it 'should set @weapon_choice equal to weapon passed' do
+      player.select_weapon(:rock)
+      expect(player.weapon_choice).to eq :rock
+    end
   end
 
 end
