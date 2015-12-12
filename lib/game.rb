@@ -7,6 +7,6 @@ class Game
   end
 
   def shuffle
-    ['rock', 'paper', 'scissors'].shuffle.first
+    ['rock', 'paper', 'scissors'].sample
   end
 end
