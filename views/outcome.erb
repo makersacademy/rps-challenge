@@ -1,10 +1,10 @@
-The computer has chosen <%= @game.choice2 %>!
+<%=@game.name2 %> has chosen <%= @game.choice2 %>!
 <% @game.outcome %>
 
 <% if @game.winner == 'draw' %>
 This round was a draw!
 <% else %>
-<%= @game.winner %> won this round!
+<%= @game.winner.name %> won this round!
 <%end%>
 
 <form action='/play' method='get'><input type="submit" value="Play again"/></form>

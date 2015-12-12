@@ -12,6 +12,10 @@ describe Player do
     it 'should initialize with a name' do
       expect(player.name).to eq 'Ed'
     end
+
+    it 'should initialize with an empty score' do
+      expect(player.score).to eq 0
+    end
   end
 
   describe '#rock' do
@@ -35,4 +39,10 @@ describe Player do
     end
   end
 
+  describe '#add_score' do
+    it 'should add a point to the score' do
+      player.add_score
+      expect(player.score).to eq 1
+    end
+  end
 end

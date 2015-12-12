@@ -1,5 +1,4 @@
 feature 'RPS Selection' do
-
   scenario 'Player may choose RPS' do
     sign_in_and_play
     expect(page).to have_button('Rock')
@@ -24,9 +23,4 @@ feature 'RPS Selection' do
     click_button('Scissors')
     expect(page).to have_content('You have chosen the scissors!')
   end
-
-
-
-
-
 end

@@ -1,10 +1,11 @@
 class Player
 
-  attr_reader :choice, :name
+  attr_reader :choice, :name, :score
 
   def initialize(name)
     @name = name
     @choice = nil
+    @score = 0
   end
 
   def rock
@@ -17,6 +18,10 @@ class Player
 
   def scissors
     @choice = :scissors
+  end
+
+  def add_score
+    @score += 1
   end
 
 end

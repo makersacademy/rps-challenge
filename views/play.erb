@@ -1,6 +1,10 @@
-<h1>It's Rock, Paper Scissors with <%= $game.name1 %></h1>
+<h1>It's Rock, Paper Scissors! </h1>
+<%= @game.name1 %>'s score: <%= @game.score1 %>
+<%= @game.name2 %>'s score: <%= @game.score2 %>
 
-<p> <%= $game.player1.name %>, make your choice </p>
+Round <%= @game.round %>
+
+<p> <%= @game.name1 %>, make your choice </p>
 <form action='/rock' method='post'><input type="submit" value="Rock"/></form>
 <form action='/paper' method='post'><input type="submit" value="Paper"/></form>
 <form action='/scissors' method='post'><input type="submit" value="Scissors"/></form>
