@@ -10,5 +10,4 @@ describe ComputerPlayer do
       expect(computer_player.is_computer?).to be true
     end
   end
-
 end
