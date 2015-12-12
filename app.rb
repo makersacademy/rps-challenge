@@ -7,7 +7,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    $player_1 = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
@@ -26,6 +26,6 @@ class RockPaperScissors < Sinatra::Base
   get '/scissors' do
     erb :scissors
   end
-  
+
   run! if app_file == $0
 end
