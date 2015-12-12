@@ -29,5 +29,16 @@ class RockPaperScissors < Sinatra::Base
     erb :weapon
   end
 
+  post '/computer' do
+    @player = $player
+    @player.choose_weapon(@player.weapon_choices[Kernel.rand(0..2)])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = $player
+    erb :result
+  end
+
   run! if app_file == $0
 end
