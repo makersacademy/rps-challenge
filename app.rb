@@ -15,16 +15,29 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name = $player.name
+    @player = $player
     erb :play
   end
 
-  post '/choice' do
-    
-    erb :choice
+  post '/rock' do
+    $player.rps('rock')
+    redirect :choice
   end
 
+  post '/paper' do
+    $player.rps('paper')
+    redirect :choice
+  end
 
+  post '/scissors' do
+    $player.rps('scissors')
+    redirect :choice
+  end
+
+  get '/choice' do
+    @player = $player
+    erb :choice
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

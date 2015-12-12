@@ -19,6 +19,14 @@ feature 'RPS Selection' do
     expect(page).to have_content('You have chosen the paper!')
   end
 
+  scenario 'Player chooses Paper' do
+    sign_in_and_play
+    click_button('Scissors')
+    expect(page).to have_content('You have chosen the scissors!')
+  end
+
+
+
 
 
 end
