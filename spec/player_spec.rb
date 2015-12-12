@@ -5,4 +5,9 @@ describe Player do
   it 'has a player name after initialization' do
     expect(player.name).to eq 'Jon'
   end
+  describe '#is_computer?' do
+    it 'returns false by default' do
+      expect(player.is_computer?).to be false
+    end
+  end
 end
