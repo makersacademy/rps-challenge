@@ -13,4 +13,12 @@ class Game
   def second_player_name
     players.last.name
   end
+
+  def current_turn_name
+    current_turn.name
+  end
+
+  def switch
+    @current_turn = players.find { |player| player != current_turn }
+  end
 end
