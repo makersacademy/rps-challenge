@@ -7,16 +7,12 @@ feature 'Sign in' do
   scenario 'signing in' do
     visit('/')
     fill_in :player_1, with: 'Ed'
-    fill_in :player_2, with: 'Hayley'
     expect(page).to have_content 'Welcome to RPS'
   end
 
   scenario 'names on vs screen' do
-    visit('/')
-    fill_in :player_1, with: 'Ed'
-    fill_in :player_2, with: 'Hayley'
-    click_button('Submit')
-    expect(page).to have_content 'It\'s Ed vs. Hayley'
+    sign_in_and_play
+    expect(page).to have_content 'Ed, make your choice'
   end
 
 end
