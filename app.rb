@@ -9,34 +9,35 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:player_1_name])
+    $game = Game.new(Player.new(params[:player_1_name]), Player.new("Computer"))
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @game = $game
     erb :play
   end
 
   post '/weapon' do
-    @player = $player
-    @player.choose_weapon(params[:weapon])
+    @game = $game
+    @game.player_1.choose_weapon(params[:weapon])
     redirect '/weapon'
   end
 
   get '/weapon' do
-    @player = $player
+    @game = $game
     erb :weapon
   end
 
   post '/computer' do
-    @player = $player
-    @player.choose_weapon(@player.weapon_choices[Kernel.rand(0..2)])
+    @game = $game
+    @game.player_2.choose_weapon(@game.player_2.weapon_choices[Kernel.rand(0..2)])
     redirect '/result'
   end
 
   get '/result' do
-    @player = $player
+    @game = $game
+    @game.outcome
     erb :result
   end
 
