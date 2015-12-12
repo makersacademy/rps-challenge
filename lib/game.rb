@@ -4,7 +4,8 @@ class Game
   RULES = {
     rock: :scissors,
     paper: :rock,
-    scissors: :paper}
+    scissors: :paper
+  }
 
   attr_reader :player_1, :player_2
 

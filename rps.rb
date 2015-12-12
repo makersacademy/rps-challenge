@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/computer'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -9,17 +12,25 @@ class RPS < Sinatra::Base
   end
 
   post '/login' do
-    session[:player_name] = params[:player_name]
+    $player = Player.new params[:player_name]
+    $computer = Computer.new
+    $game = Game.new($player, $computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = $player.name
     erb :play
   end
 
+  post '/choose' do
+    $player.choose_weapon(params[:choice].to_sym)
+    $computer.choose_weapon
+    redirect '/choose'
+  end
+
   get '/choose' do
-    erb :outcome
+    erb $game.victor
   end
 
   # start the server if ruby file executed directly
