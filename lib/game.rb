@@ -14,4 +14,8 @@ class Game
   def player_name_1
     players[:p1].name
   end
+
+  def random_option
+    WEAPONS.sample
+  end
 end
