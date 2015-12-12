@@ -1,0 +1,11 @@
+Computer chose <%= @game.computer_choice.to_s.upcase %>!
+
+<% if @game.winner == :draw %>
+  This round is a draw...
+<% elsif @game.winner == :win %>
+  You win!
+<% elsif @game.winner == :lose %>
+  You lose!
+<% else %>
+  What's going on?
+<% end %>
