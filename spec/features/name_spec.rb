@@ -7,5 +7,10 @@ describe 'User Stories - Name' do
       sign_in_and_play_computer
       expect(page).to have_content('Emma vs. Computer')
     end
+
+    scenario 'player 2 enter name' do
+      sign_in_and_play_human
+      expect(page).to have_content('Emma vs. Tobit')
+    end
   end
 end

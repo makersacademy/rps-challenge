@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,7 +10,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player_1_name]), Player.new("Computer"))
+    player_1 = Player.new(params[:player_1_name], params[:computer].empty?)
+    if params[:computer].empty?
+      player_2 = Player.new("Computer", params[:computer].empty?)
+    else
+      player_2 = Player.new(params[:player_2_name], params[:computer].empty?)
+    end
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 

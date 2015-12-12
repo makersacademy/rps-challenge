@@ -1,6 +1,15 @@
 def sign_in_and_play_computer
   visit('/')
   fill_in :player_1_name, with: 'Emma'
+  choose('computer_player')
+  click_button 'Submit'
+end
+
+def sign_in_and_play_human
+  visit('/')
+  fill_in :player_1_name, with: 'Emma'
+  choose('real_person')
+  fill_in :player_2_name, with: 'Tobit'
   click_button 'Submit'
 end
 

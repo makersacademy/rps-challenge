@@ -1,8 +1,8 @@
 require 'player'
 
 describe Player do
-  subject(:player_1) { described_class.new("Emma")}
-  subject(:computer) { described_class.new("Computer")}
+  subject(:player_1) { described_class.new("Emma", false)}
+  subject(:computer) { described_class.new("Computer", true)}
 
   describe 'default' do
     it "returns the player's name" do
