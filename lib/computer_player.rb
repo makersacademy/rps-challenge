@@ -1,0 +1,2 @@
+class ComputerPlayer < Player
+end
