@@ -1,4 +1,4 @@
-class Round
+class Game
   attr_reader :player1, :player2
 
   def initialize(session, human_klass, computer_klass)

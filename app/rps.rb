@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/round.rb'
+require './lib/game.rb'
 require './lib/human.rb'
 require './lib/computer.rb'
 
@@ -9,6 +9,15 @@ class RPS < Sinatra::Base
   get '/' do
     erb :index
   end
+
+
+
+
+
+
+
+
+
 
   post '/new-game' do
     session.clear
@@ -20,7 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @round = Round.new(session, Human, Computer)
+    game = Game.new(session, Human, Computer)
     erb :play
   end
 
