@@ -16,6 +16,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/process' do
+    player1
+    redirect '/play'
+  end
+
 
   helpers do
     def player1
