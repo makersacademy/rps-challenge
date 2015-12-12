@@ -3,7 +3,7 @@ feature 'Game outcomes' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     single_player_login
     choose 'Rock'
-    click 'Play!'
+    click_button 'Play!'
     expect(page).to have_content 'you lost'
   end
 

@@ -1,1 +1,14 @@
 <%= @player_name %>
+
+<form action='/choose'>
+  <label for='rock'>Rock</label>
+  <input type='radio' name='choice' value='rock' id='rock'>
+  
+  <label for='paper'>Paper</label>
+  <input type='radio' name='choice' value='paper' id='paper'>
+
+  <label for='scissors'>Scissors</label>
+  <input type='radio' name='choice' value='scissors' id='scissors'>
+
+  <input type='submit' value='Play!'>
+</form>

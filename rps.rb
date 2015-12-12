@@ -18,6 +18,10 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/choose' do
+    erb :outcome
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
