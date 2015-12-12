@@ -10,12 +10,12 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    $name = params[:player_name]
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = $name
+    @name = session[:player_name]
     erb(:play)
   end
 
@@ -26,7 +26,6 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @game = $game
-    @player_choice = session[:player_choice]
     erb(:result)
   end
 
