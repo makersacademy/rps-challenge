@@ -9,7 +9,12 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @name = params[:name]
+    p params
     erb :play
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly
