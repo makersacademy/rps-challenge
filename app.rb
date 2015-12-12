@@ -12,6 +12,11 @@ class Rps < Sinatra::Base
  		redirect '/game'
  	end
 
+ 	post '/new_choice' do
+ 		session[:pick_a_weapon] = params[:pick_a_weapon]
+ 		@user_choice = Player.new(pick_a_weapon)
+ 		redirect '/game'
+ 	end
 
  	get '/game' do
  		@name = session[:name]
