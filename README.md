@@ -1,5 +1,6 @@
 # RPS Challenge: Rōnin Badge Test
 
+
 Instructions
 -------
 
@@ -91,4 +92,8 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+
+My approach
+------------------
+
 
