@@ -12,20 +12,21 @@ class RPS < Sinatra::Base
   end
 
   post '/login' do
-    $player = Player.new params[:player_name]
-    $computer = Computer.new
-    $game = Game.new($player, $computer)
+    $p1 = Player.new params[:player_name]
+    $p2 = Computer.new
+    $game = Game.new($p1, $p2)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+    @p1_name = $p1.name
+    @p2_name = $p2.name
     erb :play
   end
 
   post '/choose' do
-    $player.choose_weapon(params[:choice].to_sym)
-    $computer.choose_weapon
+    $p1.choose_weapon(params[:choice].to_sym)
+    $p2.choose_weapon
     redirect '/choose'
   end
 
