@@ -4,7 +4,7 @@ feature "Register name" do
   # I would like to register my name before playing an online game
 
   scenario 'the form asks for your name' do
-    visit ('/')
+    visit('/')
     expect(page).to have_content 'Enter your name'
 
   end
