@@ -1,4 +1,8 @@
+require 'Forwardable'
+
 class Game
+
+  extend Forwardable
 
   attr_reader :player1, :player2, :rules, :winner
 
@@ -11,6 +15,16 @@ class Game
     @winner = nil
   end
 
+  def_delegator :@player1, :name, :name1
+  def_delegator :@player2, :name, :name2
+
+  def_delegator :@player1, :choice, :choice1
+  def_delegator :@player2, :choice, :choice2
+
+  def_delegator :@player1, :rock, :rock
+  def_delegator :@player1, :paper, :paper
+  def_delegator :@player1, :scissors, :scissors
+
   def outcome
     @winner = nil
     draw ? @winner = 'draw' : who_won
@@ -19,14 +33,14 @@ class Game
   private
 
   def draw
-    player1.choice == player2.choice
+    choice1 == choice2
   end
 
   def who_won
     rules.each do |k,v|
-      @winner = @player1.name if @player1.choice == k && @player2.choice == v
+      @winner = name1 if choice1 == k && choice2 == v
     end
-    @winner == nil ? @winner = @player2.name : nil
+    @winner == nil ? @winner = name2 : nil
   end
 
 end

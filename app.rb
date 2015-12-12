@@ -17,33 +17,39 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    $game
+    game
     erb :play
   end
 
   post '/rock' do
-    $game.player1.rock
+    game.rock
     redirect :choice
   end
 
   post '/paper' do
-    $game.player1.paper
+    game.paper
     redirect :choice
   end
 
   post '/scissors' do
-    $game.player1.scissors
+    game.scissors
     redirect :choice
   end
 
   get '/choice' do
-    @game = $game
+    game
     erb :choice
   end
 
   get '/outcome' do
-    @game = $game
+    game
     erb :outcome
+  end
+
+  helpers do
+    def game
+      @game ||= $game
+    end
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
