@@ -13,7 +13,7 @@ describe Weapon do
     end
 
     describe 'when are the same' do
-      it '#draw' do
+      it '#draw?' do
         expect(weapon.draw?).to eq false
       end
     end
