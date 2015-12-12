@@ -27,7 +27,7 @@ describe ComputerPlayer do
       expect(computer.choice).to eq 'paper'
     end
 
-    it 'should someimes choose scissors' do
+    it 'should sometimes choose scissors' do
       allow(Kernel).to receive(:rand).and_return 3
       computer.rps
       expect(computer.choice).to eq 'scissors'

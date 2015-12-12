@@ -9,7 +9,7 @@ describe Player do
       expect(player.choice).to eq nil
     end
 
-    it 'should initilaize with a name' do
+    it 'should initialize with a name' do
       expect(player.name).to eq 'Ed'
     end
   end
