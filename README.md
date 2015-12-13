@@ -6,8 +6,12 @@ Once they have selected one they are presented with the result of the match, the
 
 The project is tested using Rspec and Capybara.
 To use this project:
-  Run ruby app.rb in the command line.
-  Follow onscreen instructions.
+  In the command line run the following
+  $ git clone git@github.com:gareth4192/rps-challenge.git
+  $ cd rps-challenge
+  $ bundle
+  $ ruby app.rb 
+  Then follow on screen instructions.
 
 Technologies used in this project:
 Sinatra web framework, Ruby, Css + HTML
