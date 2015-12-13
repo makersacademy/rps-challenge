@@ -18,6 +18,10 @@ header {
   padding: 35px;
   color: rgb(70, 130, 180);
 }
+img {
+  height: 40%;
+  width: 40%;
+}
 #btn, #btn_r1, #btn_p1, #btn_s1, #btn_r2, #btn_p2, #btn_s2 {
   -webkit-appearance: none;
   font-size: 100%;
