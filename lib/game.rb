@@ -2,6 +2,8 @@ class Game
 
   attr_reader :players
 
+  WEAPON = {rock: :scissors, paper: :rock, scissors: :paper}
+
   def initialize
     @players = []
   end
@@ -20,9 +22,7 @@ class Game
 
   def player_win?
     return nil if player.decision == opponent.decision
-    return true if player.decision == 'rock' && opponent.decision == 'scissors'
-    return true if player.decision == 'paper' && opponent.decision == 'rock'
-    return true if player.decision == 'scissors' && opponent.decision == 'paper'
+    return true if WEAPON[player_weapon] == opponent_weapon
     false
   end
 
@@ -30,6 +30,17 @@ class Game
     return nil if player_win?.nil?
     player_win? ? player : opponent
   end
+
+  private
+
+  def player_weapon
+    player.decision.to_sym
+  end
+
+  def opponent_weapon
+    opponent.decision.to_sym
+  end
+
 
 
 end
