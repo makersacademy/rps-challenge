@@ -20,6 +20,10 @@ describe Player do
       player.assign_element
       expect(player.element).to eq 'rock'
     end
+    it 'returns a message about the element chosen' do
+      msg = 'Jon chose rock'
+      expect(player.assign_element('rock')).to eq msg
+    end
     it 'raise an error if element passed is not valid' do
       msg = 'Element not valid'
       expect { player.assign_element('no available') }.to raise_error msg

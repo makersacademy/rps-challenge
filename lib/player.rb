@@ -13,6 +13,7 @@ class Player
   def assign_element(element = random_element)
     fail 'Element not valid' unless valid_element?(element)
     @element = element
+    "#{name} chose #{element}"
   end
 
   private
