@@ -23,3 +23,13 @@ main {
 .login label {
   font-size: 18px;
 }
+
+.play-line {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.play-line label {
+  font-size: 25px;
+  margin-right: 2px;
+}
