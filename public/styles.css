@@ -1,0 +1,22 @@
+body {
+  background-image: url("./images/background.jpg");
+  background-size: auto;
+}
+
+#header {
+  font-family: cursive;
+  font-size: 30px;
+  color: #bbac98;
+}
+
+#player_1 {
+  font-family: cursive;
+  font-size: 30px;
+  color: white;
+}
+
+.results {
+  font-family:fantasy;
+  font-size: 30px;
+  color: white;
+}
