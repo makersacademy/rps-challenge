@@ -54,9 +54,9 @@ class Game
   end
 
   def winner
-    if players[0].element == 'rock' && players[1].element == 'scissors' ||
-       players[0].element == 'scissors' && players[1].element == 'paper' ||
-       players[0].element == 'paper' && players[1].element == 'rock'
+    if players[0].element == :rock && players[1].element == :scissors ||
+       players[0].element == :scissors && players[1].element == :paper ||
+       players[0].element == :paper && players[1].element == :rock
       players[0]
     else
       players[1]

@@ -1,6 +1,6 @@
 class Player
 
-  ELEMENTS = %w(rock paper scissors)
+  ELEMENTS = [:rock, :paper, :scissors]
 
   attr_reader :name, :computer, :element
   alias_method :is_computer?, :computer

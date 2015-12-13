@@ -1,7 +1,7 @@
 feature 'Feedback Messages' do
   before do
     sign_in_and_play_alone
-    allow(Player::ELEMENTS).to receive(:sample).and_return('scissors')
+    allow(Player::ELEMENTS).to receive(:sample).and_return(:scissors)
     click_button('ROCK')
   end
   scenario 'shows the choice of player1' do
