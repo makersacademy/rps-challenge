@@ -3,14 +3,7 @@
 <%= @game.p2_name %>'s Turn
 
 <form action='/p2_choose' method='post'>
-  <label for='rock'>Rock</label>
-  <input type='radio' name='choice' value='rock' id='rock'>
+  <%= erb :selections %>
 
-  <label for='paper'>Paper</label>
-  <input type='radio' name='choice' value='paper' id='paper'>
-
-  <label for='scissors'>Scissors</label>
-  <input type='radio' name='choice' value='scissors' id='scissors'>
-
-  <input type='submit' value='Play!'>
+  <input type='submit' value='Play!' class='btn btn-primary'>
 </form>

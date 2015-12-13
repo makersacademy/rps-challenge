@@ -6,7 +6,7 @@ feature 'Two player turns' do
 
   scenario 'player 2 goes second' do
     two_player_login
-    choose 'Rock'
+    choose 'rock'
     click_button 'Change Turns!'
     expect(page).to have_content 'Lach\'s Turn'
   end
