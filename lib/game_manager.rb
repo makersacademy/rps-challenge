@@ -11,8 +11,8 @@ class GameManager
     store_game(game)
   end
 
-  def current_game session
-    games[session[:current_game_id]]
+  def find_game id
+    games[id]
   end
 
   private
