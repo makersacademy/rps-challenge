@@ -7,7 +7,7 @@ class Game
 
   def initialize(session, human_klass, computer_klass)
     @player1 = human_klass.new(session[:name1])
-    opponent_klass = session[:ai?] ? computer_klass : human_klass
+    opponent_klass = session[:has_ai?] ? computer_klass : human_klass
     @player2 = opponent_klass.new(session[:name2])
   end
 

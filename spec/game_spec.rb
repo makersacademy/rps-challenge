@@ -5,7 +5,7 @@ describe Game do
   let(:computer) { double :computer, choice: :scissors }
   let(:human_klass) { double :human_klass, new: human }
   let(:computer_klass) { double :computer_klass, new: computer }
-  let(:session) { {name1: 'J. Bloggs', name2: 'botty', ai?: true } }
+  let(:session) { {name1: 'J. Bloggs', name2: 'botty', has_ai?: true } }
   
   subject(:game) { described_class.new(session, human_klass, computer_klass) }
 
