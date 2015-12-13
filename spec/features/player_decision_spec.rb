@@ -11,9 +11,9 @@ describe 'User Stories' do
       expect(page).to have_content('Andrew')
     end
 
-    end
+  end
 
-    feature 'Decision page' do
+  feature 'Decision page' do
 
     scenario 'displays RPS rules' do
       expect(page).to have_content('Rock beats Scissors')

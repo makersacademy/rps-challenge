@@ -1,7 +1,7 @@
-require 'sinatra/base'
+require 'sinatra'
 require './lib/player'
 
-class RPS < Sinatra::Base
+class RPS < Sinatra::Application
   enable :sessions
 
   get '/' do
