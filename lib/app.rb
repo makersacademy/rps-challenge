@@ -10,4 +10,8 @@ class Rps < Sinatra::Base
     erb :players1
   end
 
+  get '/players2' do
+    erb :players2
+  end
+
 end
