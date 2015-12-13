@@ -1,5 +1,7 @@
-<%= @round.player1.name %> is playing...
+<%= @game.player1.name %> is playing...
 
-<form action='/ready' method='post'>
-  <input type='submit' value='READY!'>
+<form action='/choice' method='post'>
+  <input type='submit' name='shape1' value='rock'>
+  <input type='submit' name='shape1' value='paper'>
+  <input type='submit' name='shape1' value='scissors'>
 </form>

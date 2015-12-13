@@ -1,0 +1,17 @@
+<%= @game.player1.name %> chose <%= @game.player1.choice %>.
+<%= @game.player2.name %> chose <%= @game.player2.choice %>.
+
+<% if @game.winner == :draw %> 
+  It's a draw!
+<% else %>
+  The winner is <%= @game.winner.name %>!
+<% end %>
+
+<form action='/new-game'>
+  <input type='submit' value='Play Again...'>
+</form>
+
+<form action='/'>
+  <input type='submit' value='Return to Index'>
+</form>
+
