@@ -5,6 +5,7 @@ class Game
   attr_reader :player1, :player2
 
   WEAPONS = ['Paper', 'Rock', 'Scissors']
+  WINNING_SCORE = 3
 
   def initialize(player1, player2 = Player.new('Computer'), turn = Turn)
     @player1 = player1
@@ -21,14 +22,22 @@ class Game
   end
 
   def message
-    return @turn.message if @turn != nil
-    'Welcome!'
+    @turn == nil ? 'Welcome!' : @turn.message
   end
 
-  def over?
+  def win_message
+    if wins?(@player1)
+      "Congratulations! You won against #{@player2.name}"
+    elsif wins?(@player2)
+      "Oh no! You lost against #{@player2.name}"
+    end
   end
 
   private
+
+  def wins?(player)
+    player.score == WINNING_SCORE
+  end
 
   def rand_weapon
     #WEAPONS.sample

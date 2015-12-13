@@ -12,7 +12,7 @@ describe Player do
   end
 
   describe '#selection' do
-    it 'stores the user choice' do
+    it 'stores the selected weapon' do
       expect(player).to respond_to(:selection)
     end
   end

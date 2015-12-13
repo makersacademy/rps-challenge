@@ -5,7 +5,7 @@ feature 'Game start' do
   # I would like to register my name before playing the game
 
   scenario 'On game start, user can submit his name' do
-    sign_in_and_play
+    sign_in
     expect(page).to have_content('John')
   end
 
@@ -14,7 +14,7 @@ feature 'Game start' do
   # I need to be welcomed and invited to press the button pick weapon
 
   scenario 'On game start, user can submit his name' do
-    sign_in_and_play
+    sign_in
     expect(page).to have_content('Welcome')
   end
 

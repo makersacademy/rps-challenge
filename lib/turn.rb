@@ -9,7 +9,6 @@ class Turn
     @player2 = player2
     @p1 = player1.selection
     @p2 = player2.selection
-    @message = nil
   end
 
   def play

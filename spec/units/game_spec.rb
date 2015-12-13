@@ -44,4 +44,18 @@ describe Game do
     end
   end
 
+  describe '#win_message' do
+    it 'returns a win message if player1 reaches score 3' do
+      allow(player1).to receive(:score) { 3 }
+      allow(player2).to receive(:score) { 0 }
+      expect(game.win_message).to eq "Congratulations! You won against Computer"
+    end
+
+    it 'returns a lose message if player2 reaches score 3' do
+      allow(player1).to receive(:score) { 0 }
+      allow(player2).to receive(:score) { 3 }
+      expect(game.win_message).to eq "Oh no! You lost against Computer"
+    end
+  end
+
 end
