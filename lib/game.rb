@@ -8,7 +8,8 @@ class Game
     rock: [:scissors, :lizard],
     paper: [:rock, :spock],
     scissors: [:paper, :lizard],
-    spock: [:rock, :scissors]
+    spock: [:rock, :scissors],
+    lizard: [:paper, :spock]
   }
 
   attr_reader :player_1, :player_2
