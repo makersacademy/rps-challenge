@@ -44,4 +44,23 @@ class Rps < Sinatra::Base
     erb(:play1)
   end
 
+  post '/p_results' do
+    @game = $game
+    @game.add_play1_ans(params[:answer_1])
+    @game.add_play2_ans(params[:answer_2])
+    redirect '/results'
+  end
+
+  get '/results' do
+    @game = $game
+    @game.calc_winner
+    @winsies = @game.winner
+    @game.players[1].computer ? erb(:results1) : erb(:results1)
+  end
+  private
+  
+  def com_play
+    @answer_p2 = rand(1..3).to_s
+  end
+
 end

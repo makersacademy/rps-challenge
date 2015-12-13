@@ -30,4 +30,47 @@ feature 'Enter Player names' do
     sign_in_and_play2
     expect(page).to have_content 'PLAY Gimi VS Tara 1 = Rock 2 = Paper 3 = Scissors Player 1 Select : Player 2 Select :'
   end
+
+  feature 'Enter Chosen attack weapon' do
+
+    scenario '1 Player can select rock paper or scissors' do
+      visit('/')
+      click_button('1 Player')
+      sign_in_and_play1
+      fill_in :answer_1, with: '1'
+      expect(page).to have_content '1'
+    end
+
+    scenario 'Player 2 can select rock paper or scissors' do
+      visit('/')
+      click_button('2 Players')
+      sign_in_and_play2
+      fill_in :answer_1, with: '1'
+      fill_in :answer_2, with: '2'
+      expect(page).to have_content '2'
+    end
+  end
+
+  feature 'Battle Results' do
+
+    scenario '1 Player can see outcome of battle' do
+      visit('/')
+      click_button('1 Player')
+      sign_in_and_play1
+      fill_in :answer_1, with: '1'
+      click_button('Submit')
+      expect(page).to have_content 'player 2 wins Play Again'
+    end
+
+    scenario '2 Player can see outcome of battle' do
+      visit('/')
+      click_button('2 Players')
+      sign_in_and_play2
+      fill_in :answer_1, with: '1'
+      fill_in :answer_2, with: '3'
+      click_button('Submit')
+      expect(page).to have_content "player 1 wins Play Again"
+
+    end
+  end
 end
