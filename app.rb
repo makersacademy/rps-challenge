@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -7,28 +9,32 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    $player_1_name = params[:player_1_name]
-    $player_2_name = params[:player_2_name]
-    erb :play
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = $player_1_name
-    @player_2_name = $player_2_name
+    @game = $game
     erb :play
   end
 
   post '/attack' do
-    $player_1_weapon = params[:weapon]
+    @game = $game
+    @game.player_1.select_weapon(params[:weapon])
     redirect '/attack'
   end
 
   get '/attack' do
-    @player_1_name = $player_1_name
-    @player_2_name = $player_2_name
-    @player_1_weapon = $player_1_weapon
+    @game = $game
+    @game.player_2.select_weapon(@game.player_2.weapons.sample)
     erb :attack
+  end
+
+  get '/result' do
+    @game = $game
+    erb :result
   end
 
 
