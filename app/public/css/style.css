@@ -1,3 +1,7 @@
 body{
   text-align: center;
 }
+
+#title{
+  font-size: 200%;
+}

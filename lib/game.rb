@@ -1,5 +1,7 @@
 class Game
-  RULES = {rock: :scissors, paper: :rock, scissors: :paper}
+  RULES = { rock: :scissors, 
+            paper: :rock, 
+            scissors: :paper }
 
   def self.add(id, game)
     games[id] = game
@@ -22,8 +24,14 @@ class Game
   end
 
   def play params
-    player1.choose params[:shape]
-    player2.choose :_
+    if params[:chooser] == 'player1'
+      player1.choose params[:shape]
+    elsif params[:chooser] == 'player2'
+      player2.choose params[:shape]
+    else
+      player1.choose params[:shape]
+      player2.choose :_
+    end
   end
 
   def winner

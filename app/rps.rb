@@ -31,15 +31,8 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    case params[:chooser] 
-    when 'player1'
-      current_game.player1.choose params[:shape]
-      redirect '/play'
-    when 'player2'
-      current_game.player2.choose params[:shape]
-    else
-      current_game.play params
-    end
+    current_game.play params
+    redirect '/play' if params[:chooser] == 'player1'
     redirect '/winner'
   end
 

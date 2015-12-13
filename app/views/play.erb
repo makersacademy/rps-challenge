@@ -1,12 +1,10 @@
 <% if @game.player2.is_a? Computer %>
-  
   Make your choice <%= @game.player1.name %>...
   <form action='/choice' method='post'>
     <%= erb :choices %>
   </form>
 
 <% else %>
-
   <% if !@game.player1.choice %>
     <%= @game.player2.name %> look away.
     <%= @game.player1.name %> will choose first...
