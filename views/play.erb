@@ -5,7 +5,7 @@
 </head>
 <body>
 <header>
-<h1><%= @player_name %> vs. Computer</h1>
+<h1><%= @player_name %> vs. <%= @opponent_name%></h1>
 </header>
 <div id='main'>
 
@@ -25,13 +25,13 @@
 </div>
 
 <div id='right_column'>
-<% if @computer_choice %>
-Computer has chosen!
+<% if @opponent_choice %>
+<%= @opponent_name%> has chosen!
 <% end %>
 </div>
 
 <div id='central_column'>
-<% if @player_choice && @computer_choice %>
+<% if @player_choice && @opponent_choice %>
 <a href='/winner'>Check who won...</a>
 <% end %>
 </div>
