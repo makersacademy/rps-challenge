@@ -10,7 +10,7 @@ class Player
     @computer = false
   end
 
-  def assign_element(element)
+  def assign_element(element = random_element)
     fail 'Element not valid' unless valid_element?(element)
     @element = element
   end
@@ -19,5 +19,9 @@ class Player
 
   def valid_element?(element)
     ELEMENTS.include?(element)
+  end
+
+  def random_element
+    ELEMENTS.sample
   end
 end
