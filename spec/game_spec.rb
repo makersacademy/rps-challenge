@@ -28,9 +28,11 @@ describe Game do
       expect(weapons).to receive(:compare)
       game.outcome
     end
-
+  end
+  
+  describe '#switch' do
     it 'should switch players' do
-      game.outcome
+      game.switch
       expect(game.current).to be player2
     end
   end

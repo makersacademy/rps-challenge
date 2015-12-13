@@ -26,7 +26,7 @@ feature 'Monitoring the results' do
       expect(page).to have_content 'Round 1'
     end
 
-    scenario 'First round should be 2' do
+    scenario 'Next round should be 2' do
       play_a_round
       expect(page).to have_content 'Round 2'
     end
@@ -42,5 +42,23 @@ feature 'Monitoring the results' do
       play_a_round
       expect(page).to have_content 'Ed\'s score: 1'
     end
+
+    scenario 'Multiplayer should generate scores' do
+      multi_play_sign_in
+      click_button('Paper')
+      click_button('Hayley\'s go')
+      click_button('Scissors')
+      click_button('Outcome')
+      click_button('Play again')
+      click_button('Rock')
+      click_button('Hayley\'s go')
+      click_button('Scissors')
+      click_button('Outcome')
+      click_button('Play again')
+      expect(page).to have_content 'Hayley\'s score: 1'
+      expect(page).to have_content 'Ed\'s score: 1'
+    end
   end
+
+
 end

@@ -4,7 +4,14 @@
 
 Round <%= @game.round %>
 
-<p> <%= @game.name1 %>, make your choice </p>
-<form action='/rock1' method='post'><input type="submit" value="Rock"/></form>
-<form action='/paper1' method='post'><input type="submit" value="Paper"/></form>
-<form action='/scissors1' method='post'><input type="submit" value="Scissors"/></form>
+<% if @game.current == @game.player1 %>
+  <p> <%= @game.name1 %>, make your choice </p>
+  <form action='/rock1' method='post'><input type="submit" value="Rock"/></form>
+  <form action='/paper1' method='post'><input type="submit" value="Paper"/></form>
+  <form action='/scissors1' method='post'><input type="submit" value="Scissors"/></form>
+<% else %>
+  <p> <%= @game.name2 %>, make your choice </p>
+  <form action='/rock2' method='post'><input type="submit" value="Rock"/></form>
+  <form action='/paper2' method='post'><input type="submit" value="Paper"/></form>
+  <form action='/scissors2' method='post'><input type="submit" value="Scissors"/></form>
+<% end %>

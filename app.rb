@@ -27,32 +27,32 @@ class RPS < Sinatra::Base
   end
 
   post '/rock1' do
-    game.rock
+    game.rock1
     redirect :choice
   end
 
   post '/paper1' do
-    game.paper
+    game.paper1
     redirect :choice
   end
 
   post '/scissors1' do
-    game.scissors
+    game.scissors1
     redirect :choice
   end
 
   post '/rock2' do
-    game.rock
+    game.rock2
     redirect :choice
   end
 
   post '/paper2' do
-    game.paper
+    game.paper2
     redirect :choice
   end
 
   post '/scissors2' do
-    game.scissors
+    game.scissors2
     redirect :choice
   end
 

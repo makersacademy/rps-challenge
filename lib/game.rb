@@ -24,9 +24,15 @@ class Game
   def_delegator :@player1, :score, :score1
   def_delegator :@player2, :score, :score2
 
-  def_delegator :@player1, :rock, :rock
-  def_delegator :@player1, :paper, :paper
-  def_delegator :@player1, :scissors, :scissors
+  def_delegator :@player1, :rock, :rock1
+  def_delegator :@player1, :paper, :paper1
+  def_delegator :@player1, :scissors, :scissors1
+
+  def_delegator :@player2, :rock, :rock2
+  def_delegator :@player2, :paper, :paper2
+  def_delegator :@player2, :scissors, :scissors2
+
+  def_delegator :@player2, :rps, :rps
 
   def_delegator :@weapons, :result, :result
 
@@ -35,7 +41,10 @@ class Game
     find_winner
     round_count
     add_score
-    switch
+  end
+
+  def switch
+      @current == @player1 ? @current = @player2 : @current = @player1
   end
 
   def game_over?
@@ -60,10 +69,6 @@ class Game
 
   def add_score
     @winner.add_score unless @winner == :draw
-  end
-
-  def switch
-    @current == @player1 ? @current = @player2 : @current = @player1
   end
 
 end

@@ -25,3 +25,13 @@ def play_5_rounds
     click_button('Play again')
   end
 end
+
+def play_5_multiplayer_rounds
+  5.times do
+    click_button('Paper')
+    click_button('Hayley\'s go')
+    click_button('Scissors')
+    click_button('Outcome')
+    click_button('Play again')
+  end
+end
