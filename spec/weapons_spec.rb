@@ -1,6 +1,6 @@
 require 'weapons'
 
-  describe Weapons do
+describe Weapons do
 
   subject(:weapons) { described_class.new }
 
