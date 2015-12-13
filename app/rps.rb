@@ -2,29 +2,19 @@ require 'sinatra/base'
 require './lib/game.rb'
 require './lib/human.rb'
 require './lib/computer.rb'
+require './lib/game_helpers.rb'
 
 class RPS < Sinatra::Base
+  include GameHelpers
   enable :sessions
-
-  helpers do 
-    def store_game(game)
-      Game.add(game.object_id, game)
-      session[:current_game_id] = game.object_id
-    end
-
-    def current_game
-      Game.find(session[:current_game_id])
-    end
-  end
 
   get '/' do
     erb :index
   end
 
   post '/new-session' do
-    session.clear
-    session[:ai?] = true
     session[:name1] = params[:name1] 
+    session[:ai?] = params[:name2] == ''
     session[:name2] = session[:ai?] ? 'Computer' : params[:name2]
     redirect '/new-game'
   end
@@ -41,7 +31,15 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    current_game.play params
+    case params[:chooser] 
+    when 'player1'
+      current_game.player1.choose params[:shape]
+      redirect '/play'
+    when 'player2'
+      current_game.player2.choose params[:shape]
+    else
+      current_game.play params
+    end
     redirect '/winner'
   end
 
@@ -49,6 +47,4 @@ class RPS < Sinatra::Base
     @game = current_game
     erb :winner
   end
-
-  run! if app_file == $0
 end

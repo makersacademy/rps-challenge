@@ -22,8 +22,8 @@ class Game
   end
 
   def play params
-    player1.choose params[:shape1]
-    player2.choose params[:shape2]
+    player1.choose params[:shape]
+    player2.choose :_
   end
 
   def winner

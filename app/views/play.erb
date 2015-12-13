@@ -1,7 +1,24 @@
-<%= @game.player1.name %> is playing...
+<% if @game.player2.is_a? Computer %>
+  
+  Make your choice <%= @game.player1.name %>...
+  <form action='/choice' method='post'>
+    <%= erb :choices %>
+  </form>
 
-<form action='/choice' method='post'>
-  <input type='submit' name='shape1' value='rock'>
-  <input type='submit' name='shape1' value='paper'>
-  <input type='submit' name='shape1' value='scissors'>
-</form>
+<% else %>
+
+  <% if !@game.player1.choice %>
+    <%= @game.player2.name %> look away.
+    <%= @game.player1.name %> will choose first...
+    <form action='/choice' method='post'>
+      <input type='hidden' name='chooser' value='player1'>
+      <%= erb :choices %>
+    </form>
+  <% else %>
+    OK, now <%= @game.player2.name %> will choose.
+    <form action='/choice' method='post'>
+      <input type='hidden' name='chooser' value='player2'>
+      <%= erb :choices %>
+    </form>
+  <% end %>
+<% end %>
