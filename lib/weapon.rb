@@ -2,22 +2,17 @@ class Weapon
 
   RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
-  def initialize(p1_choice, p2_choice)
-      @p1_choice = p1_choice.to_sym
-      @p2_choice = p2_choice.to_sym
+  def judge(p1_choice, p2_choice)
+    return :Draw if draw(p1_choice, p2_choice)
+    return :Win if beats(p1_choice, p2_choice)
+    return :Lost if !beats(p1_choice, p2_choice)
   end
 
-  def judge
-    return :Draw if draw?
-    return :Win if beats?
-    return :Lost if !beats?
+  def draw(p1_choice, p2_choice)
+    p1_choice == p2_choice
   end
 
-  def draw?
-    @p1_choice == @p2_choice
-  end
-
-  def beats?
-    RULES[@p1_choice] == @p2_choice
+  def beats(p1_choice, p2_choice)
+    RULES[p1_choice] == p2_choice
   end
 end

@@ -8,7 +8,8 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'Play game' do
-  scenario 'Display options' do
+  scenario 'selects rock' do
     sign_in_and_play
+    click_button("Rock")
   end
 end
