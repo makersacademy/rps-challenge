@@ -8,12 +8,10 @@
 
 <body>
 
-  <% if @player.beat?(@opponent).nil? %>
+  <% if @game.winner.nil? %>
   <h1>Draw</h1>
-  <% elsif @player.beat?(@opponent) %>
-  <h1><%=@player.name%> wins</h1>
   <% else %>
-  <h1><%=@opponent.name%> wins</h1>
+  <h1><%=@game.winner.name%> wins</h1>
   <% end %>
 
 

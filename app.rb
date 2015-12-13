@@ -9,41 +9,41 @@ class RPS < Sinatra::Application
   end
 
   post '/names' do
-    $player = Player.new(params[:name])
+    session[:game] = Game.new
+    session[:game].add_player(Player.new(params[:name]))
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @player = session[:game].player
     erb :play
   end
 
   post '/decision' do
-    @player = $player
+    @player = session[:game].player
     @player.decides(params[:decision])
     redirect '/confirmation'
   end
 
   get '/confirmation' do
-    @player = $player
+    @player = session[:game].player
     erb :confirmation
   end
 
   post '/computer' do
-    $opponent = Player.new('Computer')
-    @opponent = $opponent
-    @opponent.decides(@opponent.random_decides)
+    @opponent = Computer.new('Computer')
+    @opponent.random_decides
+    session[:game].add_player(@opponent)
     redirect '/response'
   end
 
   get '/response' do
-    @opponent = $opponent
+    @opponent = session[:game].opponent
     erb :response
   end
 
   get '/result' do
-    @player = $player
-    @opponent = $opponent
+    @game = session[:game]
     erb :result
   end
 
