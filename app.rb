@@ -27,7 +27,7 @@ class RPS < Sinatra::Base
 
   post '/weapon' do
     game
-    @weapon = params[:weapon]
+    game.player_1.choose_weapon(params[:weapon])
     erb :weapon
   end
 

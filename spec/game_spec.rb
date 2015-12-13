@@ -7,7 +7,8 @@ describe Game do
     expect(game.players).to eq [:player_1]
   end
 
-  describe '#result' do
-    
-  end
+  # describe '#result' do
+  #   it ''
+  #
+  # end
 end
