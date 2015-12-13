@@ -1,4 +1,4 @@
-<h1><%= @player_name %></h1>
+<h1><%= @player_name %> vs. Computer</h1>
 <div>
 <form action='/choice' method='post'>
   <input type='submit' name='player_choice' value='Rock' />
@@ -10,5 +10,10 @@
 <% if @player_choice %>
 <%= @player_name %> has chosen!
 <% end %>
+<% if @computer_choice %>
+Computer has chosen!
+<% end %>
 </div>
+<% if @player_choice && @computer_choice %>
 <a href='/winner'>Check who won...</a>
+<% end %>

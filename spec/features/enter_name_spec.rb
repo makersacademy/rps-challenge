@@ -4,6 +4,6 @@
 feature 'Entering names' do
   scenario 'Allows the player to enter their name and displays it' do
     sign_in_and_play
-    expect(page).to have_content 'Marketeer'
+    expect(page).to have_content 'Marketeer vs. Computer'
   end
 end
