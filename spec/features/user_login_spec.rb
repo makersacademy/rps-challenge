@@ -3,4 +3,9 @@ feature 'User Login' do
     single_player_login
     expect(page).to have_content 'Michael'
   end
+
+  scenario 'I should be able to play as 2 players' do
+    two_player_login
+    expect(page).to have_content 'Michael vs. Lach'
+  end
 end
