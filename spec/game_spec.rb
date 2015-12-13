@@ -5,20 +5,31 @@ describe Game do
   let(:players_choice) {"ROCK!"}
   let(:player_chooses_paper) {described_class.new("PAPER!")}
   let(:player_chooses_scissors) {described_class.new("SCISSORS!")}
+  let(:two_player_game) {described_class.new("ROCK!", "PAPER!")}
 
-  describe '#initialie' do
+  describe '#initialize' do
 
     it 'takes one argument' do
       expect{ Game.new(:player_choice) }.not_to raise_error
     end
 
-    it 'converts player_choice to symbol' do
-      expect(game.player_choice).to eq :rock
+    it 'takes two arguments' do
+      expect{ Game.new(:player_choice, :player2_choice) }.not_to raise_error
     end
 
-    it 'creates a computer choice' do
-      expect([:rock, :paper, :scissors]).to include game.computer_choice
+    it 'sets player 2 choice (for computer) by default' do
+      allow(Kernel).to receive(:rand).and_return(1)
+      expect(game.player2_choice).to eq :rock
     end
+
+    it 'sets player 2 choice if provided' do
+      expect(two_player_game.player2_choice).to eq :paper
+    end
+
+    it 'converts player_choice to symbol' do
+      expect(game.player1_choice).to eq :rock
+    end
+
   end
 
   describe '#winner' do

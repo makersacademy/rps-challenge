@@ -1,0 +1,16 @@
+<% if @players == "One" %>
+  <h1> One player game </h1>
+<% elsif @players == "Two" %>
+  <h1> Two player game </h1>
+<% end %>
+
+
+<h1> Enter your name<% if @players == "Two" %>s<%end%> </h1>
+
+<form action='/names' method='post'>
+  <input type='text' name='player1_name' value='Player One'>
+    <% if @players == "Two" %>
+    <input type='text' name='player2_name' value ='Player Two'>
+    <%end%>
+  <input type='submit' value='Submit'>
+</form>

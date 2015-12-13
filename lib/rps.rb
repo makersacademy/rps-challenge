@@ -9,26 +9,51 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    session[:player_name] = params[:player_name]
+  post '/players' do
+    session[:players] = params[:number_of_players]
+    redirect '/names'
+  end
+
+  get '/names' do
+    @players = session[:players]
+    erb(:names)
+  end
+
+  post '/names' do
+    session[:player1_name] = params[:player1_name]
+    session[:player2_name] = params[:player2_name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:player_name]
+    @players = session[:players]
+    @player1_name = session[:player1_name]
+    @player2_name = session[:player2_name]
     erb(:play)
   end
 
   post '/result' do
+    if !!session[:p1_choice]
+      $game = Game.new(session[:p1_choice], params[:player_choice])
+      redirect '/result'
+    elsif !!session[:player2_name]
+      session[:p1_choice] = params[:player_choice]
+      redirect '/play'
+    end
     $game = Game.new(params[:player_choice])
     redirect '/result'
   end
 
   get '/result' do
     @game = $game
+    @player1_name = session[:player1_name]
+    @player2_name = session[:player2_name]
+    p @player2_name
+    session.clear
     erb(:result)
   end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
+
 end

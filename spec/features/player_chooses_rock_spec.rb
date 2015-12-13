@@ -13,14 +13,14 @@ feature "Player chooses rock" do
     allow(Kernel).to receive(:rand).and_return(4)
     visit_page_and_register
     click_button 'ROCK!'
-    expect(page).to have_content 'Computer chose PAPER! You lose!'
+    expect(page).to have_content 'Computer chose PAPER! Computer wins!'
   end
 
   scenario 'computer chooses scissors' do
     allow(Kernel).to receive(:rand).and_return(7)
     visit_page_and_register
     click_button 'ROCK!'
-    expect(page).to have_content 'Computer chose SCISSORS! You win!'
+    expect(page).to have_content 'Computer chose SCISSORS! Vic wins!'
   end
 
 end

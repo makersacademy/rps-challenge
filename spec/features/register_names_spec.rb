@@ -5,6 +5,7 @@ feature "Register name" do
 
   scenario 'the form asks for your name' do
     visit('/')
+    click_button('One')
     expect(page).to have_content 'Enter your name'
 
   end
