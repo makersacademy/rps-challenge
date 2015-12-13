@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
-require './lib/weapon'
 require './lib/computer'
 
 

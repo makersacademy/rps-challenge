@@ -2,16 +2,17 @@ html {
 
 	font-family: melbourne, "League Gothic Regular", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
-  background: url("img/jungle-stream.jpg") no-repeat center center fixed; 
+	text-align: center;
+  background: url(img/jungle-stream.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='background.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='background.jpg', sizingMethod='scale')";
-	text-align: center;
+
 
 }
+
+
 
 h1 {
 
