@@ -1,8 +1,20 @@
-feature 'play rock' do
+feature 'choose weapon' do
   scenario 'click rock button' do
     sign_in_and_play
-    click_button('Rock')
+    click_button('rock')
     expect(page).to have_content 'Jon selected rock'
+  end
+
+  scenario 'click paper button' do
+    sign_in_and_play
+    click_button('paper')
+    expect(page).to have_content 'Jon selected paper'
+  end
+
+  scenario 'click rock button' do
+    sign_in_and_play
+    click_button('scissors')
+    expect(page).to have_content 'Jon selected scissors'
   end
 end
 

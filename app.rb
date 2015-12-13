@@ -19,9 +19,15 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/attack' do
+    $player_1_weapon = params[:weapon]
+    redirect '/attack'
+  end
+
   get '/attack' do
     @player_1_name = $player_1_name
     @player_2_name = $player_2_name
+    @player_1_weapon = $player_1_weapon
     erb :attack
   end
 
