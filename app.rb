@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/computer_player'
 require './lib/game'
+require './lib/weapons'
 
 class RPS < Sinatra::Base
 
@@ -12,7 +13,7 @@ class RPS < Sinatra::Base
   end
 
   post '/players' do
-    $game = Game.new( Player.new(params[:player_1]), ComputerPlayer.new)
+    $game = Game.new( Player.new(params[:player_1]), ComputerPlayer.new, Weapons.new)
     redirect :play
   end
 

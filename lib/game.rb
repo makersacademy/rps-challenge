@@ -4,14 +4,12 @@ class Game
 
   extend Forwardable
 
-  attr_reader :player1, :player2, :rules, :winner, :round
+  attr_reader :player1, :player2, :rules, :winner, :round, :weapons
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, weapons_klass)
     @player1 = player1
     @player2 = player2
-    @rules = {rock: :scissors,
-              paper: :rock,
-              scissors: :paper}
+    @weapons = weapons_klass
     @winner = nil
     @round = 1
   end
@@ -29,28 +27,34 @@ class Game
   def_delegator :@player1, :paper, :paper
   def_delegator :@player1, :scissors, :scissors
 
+  def_delegator :@weapons, :result, :result
+
   def outcome
     @winner = nil
-    draw ? @winner = 'draw' : who_won
-    @round += 1
+    weapons.compare(choice1, choice2)
+    find_winner
+    round_count
     add_score
   end
 
   private
 
-  def draw
-    choice1 == choice2
+  def find_winner
+    if result == :draw
+      @winner = result
+    elsif result == choice1
+      @winner = @player1
+    else
+      @winner = @player2
+    end
   end
 
-  def who_won
-    rules.each do |k,v|
-      @winner = @player1 if choice1 == k && choice2 == v
-    end
-    @winner == nil ? @winner = @player2 : nil
+  def round_count
+    @round += 1
   end
 
   def add_score
-    @winner.add_score unless @winner == 'draw'
+    @winner.add_score unless @winner == :draw
   end
 
 end

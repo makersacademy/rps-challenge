@@ -1,6 +1,8 @@
+<% @game.outcome %>
+
 <%=@game.name2 %> has chosen <%= @game.choice2 %>!
 
-<% if @game.winner == 'draw' %>
+<% if @game.winner == :draw %>
 This round was a draw!
 <% else %>
 <%= @game.winner.name %> won this round!
