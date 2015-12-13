@@ -1,14 +1,7 @@
 <%= @game.p1_name %>
 
 <form action='/choose' method='post'>
-  <label for='rock'>Rock</label>
-  <input type='radio' name='choice' value='rock' id='rock'>
-
-  <label for='paper'>Paper</label>
-  <input type='radio' name='choice' value='paper' id='paper'>
-
-  <label for='scissors'>Scissors</label>
-  <input type='radio' name='choice' value='scissors' id='scissors'>
+  <%= erb :selections %>
 
   <input type='submit' value='Play!'>
 </form>
