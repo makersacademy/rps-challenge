@@ -1,0 +1,32 @@
+body{
+  background: url('/images/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  font-family: Helvetica, Arial;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.form {
+ margin: auto;
+ margin-top: 150px;
+ width: 30%;
+ padding: 10px;
+ background-color: rgba(255,255,255,0.3);
+
+}
+
+/*.form {
+display: inline-block;
+   width: 160px;
+   height: 310px;
+   margin: 10px;
+   background-color: #fff;
+    background-color: rgba(255,255,255,0.3);
+
+ }*/
