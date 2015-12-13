@@ -9,12 +9,12 @@ The project is tested using Rspec and Capybara.
  To use this project:
 -------
 
- *In the command line run the following
-  *$ git clone git@github.com:gareth4192/rps-challenge.git
-  *$ cd rps-challenge
-  *$ bundle
-  *$ ruby app.rb 
-  *Then follow on screen instructions.
+ In the command line run the following
+  * $ git clone git@github.com:gareth4192/rps-challenge.git
+  * $ cd rps-challenge
+  * $ bundle
+  * $ ruby app.rb 
+  * Then follow on screen instructions.
   
 
 Technologies used in this project:
@@ -22,7 +22,6 @@ Technologies used in this project:
 Sinatra web framework, Ruby, Css + HTML
 
 The Instructions for the challenge are below.
-----
 
 # RPS Challenge: Rōnin Badge Test
 
