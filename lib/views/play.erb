@@ -1,29 +1,39 @@
-<h1>Welcome <%= @player1_name %><%= " & #{@player2_name}" if @number_of_players == "Two" %>. Get ready for an epic battle.</h1>
+<html>
+<head>
+  <link href="css/application.css" rel="stylesheet" type="text/css">
+  <title>Rock, Paper, Scissors, Spock, Lizard</title>
+</head>
 
-<h2>
-  <%if !!session[:p1_choice]%>
-    <%=@player2_name%>, make your choice!
-  <%else%>
-    <%=@player1_name%>, make your choice!
-  <%end%>
-</h2>
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h1>Welcome <%= @player1_name %><%= " & #{@player2_name}" if @number_of_players == "Two" %>. Get ready for an epic battle.</h1>
 
-<form action="result" method='post'>
-  <input type="submit" value="ROCK!" name="player_choice">
-</form>
+  <h2>
+    <%if !!session[:p1_choice]%>
+      <%=@player2_name%>, make your choice!
+    <%else%>
+      <%=@player1_name%>, make your choice!
+    <%end%>
+  </h2>
 
-<form action="result" method='post'>
-  <input type="submit" value="PAPER!" name="player_choice">
-</form>
+  <form action="result" method='post'>
+    <input type="submit" value="ROCK!" name="player_choice">
+  </form>
 
-<form action="result" method='post'>
-  <input type="submit" value="SCISSORS!" name="player_choice">
-</form>
+  <form action="result" method='post'>
+    <input type="submit" value="PAPER!" name="player_choice">
+  </form>
 
-<form action="result" method='post'>
-  <input type="submit" value="SPOCK!" name="player_choice">
-</form>
+  <form action="result" method='post'>
+    <input type="submit" value="SCISSORS!" name="player_choice">
+  </form>
 
-<form action="result" method='post'>
-  <input type="submit" value="LIZARD!" name="player_choice">
-</form>
+  <form action="result" method='post'>
+    <input type="submit" value="SPOCK!" name="player_choice">
+  </form>
+
+  <form action="result" method='post'>
+    <input type="submit" value="LIZARD!" name="player_choice">
+  </form>
+</body>
+</html>
