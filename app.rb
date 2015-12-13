@@ -22,8 +22,14 @@ class Rps < Sinatra::Base
   end
 
   post '/process' do
-    game
+    game.play(params[:element])
+    redirect '/game-over' if game.over?
     redirect '/play'
+  end
+
+  get '/game-over' do
+    game
+    erb :game_over
   end
 
 

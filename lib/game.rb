@@ -22,21 +22,21 @@ class Game
     players.last.name
   end
 
+  def over?
+    !players.detect { |player| !player.element }
+  end
+
   def play(element = nil)
     @message << current_turn.assign_element(element) << '<br>'
-    return game_result if game_over?
+    return result if over?
     switch
     play if current_turn.is_computer?
   end
 
   private
 
-  def game_result
+  def result
     draw? ? @message << DRAW_MSG : @message << winner.name << WIN_MSG
-  end
-
-  def game_over?
-    !players.detect { |player| !player.element }
   end
 
   def draw?

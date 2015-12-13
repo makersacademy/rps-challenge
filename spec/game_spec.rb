@@ -25,6 +25,16 @@ describe Game do
       expect(game.current_turn_name).to eq 'name1'
     end
   end
+  describe '#over?' do
+    it 'returns false when the game start' do
+      expect(game.over?).to be false
+    end
+    it 'returns true if both players have their elements' do
+      allow(player1).to receive(:element).and_return('rock')
+      allow(player2).to receive(:element).and_return('rock')
+      expect(game.over?).to be true
+    end
+  end
   describe '#play' do
     before do
       allow(player1).to receive(:element).and_return('rock')
