@@ -1,8 +1,9 @@
 # Rock, Paper, Scissors
+
 ----------------------
 
 ## Single player game
-----------------------
+
 - The player can enter their name on signing in
 - The first round is round 1
 - The player can choose from rock, paper or scissors
@@ -11,17 +12,7 @@
 - The next round begins
 - The first to 5 points is declared the champion!
 
-## The brief
 ----------------------
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
 
 ## The Model
 - There are four Classes: Player, ComputerPlayer, Game and weapons
@@ -30,6 +21,8 @@ I would like to be able to play rock/paper/scissors
 * Game takes three arguments on initialization; two Player classes and one Weapon class. It monitors the winner of the current round, and the round number. Game passes on player choices to the weapon class, and receives information on the round's outcome. Game instructs the winner to `add_score`, and then increases the `round_count` by 1.
 * Weapons is responsible for the rules of the game. It contains a hash-map of winning: losing choices. Game asks Weapons to `compare` the two player choices. Weapons will see if Player 1's choice is equal to Player 2, and declare a draw if so. If not, it will check to see if Player 1's choice is a hash key with Player 2's choice as the value. If so, Player 1 is declared the winner. If not, Player 2 is declared the winner.
 
+----------------------
+
 ## The View
 - There are five Views: index, play, choice, outcome and game_over.
 * index allows the player to register their name and begin a game. index POSTS entered game information to '/players'.
@@ -37,7 +30,9 @@ I would like to be able to play rock/paper/scissors
 * choice shows a confirmation of the players choice.  
 * outcome shows the computers choice, and declares the outcome. If a player has accrued 5 points, they are declared the champion. If not, outcome GETS play for the next round.
 
-*  The Controller
+----------------------
+
+## The Controller
 - The controller has 9 routes - get '/index', post '/players', get '/play', post '/rock', post '/paper', post '/scissors', get '/choice', get '/outcome', and get '/game_over'.  
 - get '/index' gets the splash page, for sign-in.
 - post '/players' takes the player name and initializes a new game. It redirects to play.
