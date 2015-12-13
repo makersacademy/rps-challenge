@@ -1,0 +1,18 @@
+<section class=player>
+  <h3><%= @game.player1.name %></h3>
+  <h5>Won <%= @game.player1.score  %> / 3</h5>
+  <img src="" alt="" width="200px" height="200px">
+</section>
+<section class=message>
+  <form action="/weapons" method="get">
+    <h3><%= @game.player1.name %> picked: <%= @game.player1.selection %></h3>
+    <h3><%= @game.player2.name %> picked: <%= @game.player2.selection %></h3>
+    <h3><%= @game.message %></h3>
+    <input type="submit" value="Next turn">
+  </form>
+</section>
+<section class=player>
+  <h3><%= @game.player2.name %></h3>
+  <h5>Won <%= @game.player2.score  %> / 3</h5>
+  <img src="" alt="" width="200px" height="200px">
+</section>
