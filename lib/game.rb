@@ -8,12 +8,17 @@ class Game
   end
 
   def winner
-    return who_wins_if_player_one_chose_rock if @player1_choice == :rock
-    return who_wins_if_player_one_chose_paper if @player1_choice == :paper
-    return who_wins_if_player_one_chose_scissors if @player1_choice == :scissors
+    return ROCK_RESULTS[player2_choice] if @player1_choice == :rock
+    return PAPER_RESULTS[player2_choice] if @player1_choice == :paper
+    return SCISSOR_RESULTS[player2_choice] if @player1_choice == :scissors
   end
 
   private
+
+  ROCK_RESULTS = {rock: :draw, paper: :lose, scissors: :win}
+  PAPER_RESULTS = {rock: :win, paper: :draw, scissors: :lose}
+  SCISSOR_RESULTS = {rock: :lose, paper: :win, scissors: :draw}
+
 
   def make_choice
     random_number = Kernel.rand(8)
@@ -22,23 +27,23 @@ class Game
     return "SCISSORS!" if (6..8).include? random_number
   end
 
-  def who_wins_if_player_one_chose_rock
-    return :draw if @player2_choice == :rock
-    return :lose if @player2_choice == :paper
-    return :win if @player2_choice == :scissors
-  end
-
-  def who_wins_if_player_one_chose_paper
-    return :win if @player2_choice == :rock
-    return :draw if @player2_choice == :paper
-    return :lose if @player2_choice == :scissors
-  end
-
-  def who_wins_if_player_one_chose_scissors
-    return :lose if @player2_choice == :rock
-    return :win if @player2_choice == :paper
-    return :draw if @player2_choice == :scissors
-  end
+  # def who_wins_if_player_one_chose_rock
+  #   return :draw if @player2_choice == :rock
+  #   return :lose if @player2_choice == :paper
+  #   return :win if @player2_choice == :scissors
+  # end
+  #
+  # def who_wins_if_player_one_chose_paper
+  #   return :win if @player2_choice == :rock
+  #   return :draw if @player2_choice == :paper
+  #   return :lose if @player2_choice == :scissors
+  # end
+  #
+  # def who_wins_if_player_one_chose_scissors
+  #   return :lose if @player2_choice == :rock
+  #   return :win if @player2_choice == :paper
+  #   return :draw if @player2_choice == :scissors
+  # end
 
   def converted_to_symbol(player_choice)
     player_choice[0..-2].downcase.to_sym
