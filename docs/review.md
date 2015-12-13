@@ -203,7 +203,7 @@ RULES = { rock: :scissors,
 or for RPSLS:
 
 ```ruby
-RULES = { rock: [scissors, lizard],
+RULES = { rock: [:scissors, :lizard],
           paper: [:rock, :spock],
           scissors: [:paper, :lizard],
           lizard: [:paper, :spock],
