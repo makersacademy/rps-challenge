@@ -4,6 +4,10 @@ main {
   color: #326a8d;
 }
 
+h2 {
+  margin-top: 40px
+}
+
 .login {
   background-color: #fcfdad;
   color: #326a8d;
@@ -24,12 +28,17 @@ main {
   font-size: 18px;
 }
 
+.well {
+  margin-top: 40px;
+  background-color: #fcfdad;
+}
+
 .play-line {
   display: inline-block;
   margin: 10px 20px;
 }
 
 .play-line label {
-  font-size: 25px;
+  font-size: 35px;
   margin-right: 2px;
 }

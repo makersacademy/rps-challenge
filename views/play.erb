@@ -1,6 +1,7 @@
-<%= @game.p1_name %>
+<h1>Welcome to Rock Paper Scissors Lizard Spock!</h1>
+<h2><%= @game.p1_name %>, select an option!</h2>
 
-<form action='/choose' method='post'>
+<form action='/choose' method='post' class='well col-md-6 col-md-offset-3'>
   <%= erb :selections %>
 
   <input type='submit' value='Play!' class='btn btn-primary'>
