@@ -4,13 +4,14 @@ class Game
 
   extend Forwardable
 
-  attr_reader :player1, :player2, :rules, :winner, :round, :weapons
+  attr_reader :player1, :player2, :rules, :winner, :current, :round, :weapons
 
   def initialize(player1, player2, weapons_klass)
     @player1 = player1
     @player2 = player2
     @weapons = weapons_klass
     @winner = nil
+    @current = @player1
     @round = 1
   end
 
@@ -34,6 +35,7 @@ class Game
     find_winner
     round_count
     add_score
+    switch
   end
 
   def game_over?
@@ -58,6 +60,10 @@ class Game
 
   def add_score
     @winner.add_score unless @winner == :draw
+  end
+
+  def switch
+    @current == @player1 ? @current = @player2 : @current = @player1
   end
 
 end

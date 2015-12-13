@@ -13,7 +13,11 @@ class RPS < Sinatra::Base
   end
 
   post '/players' do
-    $game = Game.new( Player.new(params[:player_1]), ComputerPlayer.new, Weapons.new)
+    if params[:player_2] == ''
+    $game = Game.new(Player.new(params[:player_1]), ComputerPlayer.new, Weapons.new)
+    else
+    $game = Game.new(Player.new(params[:player_1]), Player.new(params[:player_2]), Weapons.new)
+    end
     redirect :play
   end
 
@@ -22,17 +26,32 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
+  post '/rock1' do
     game.rock
     redirect :choice
   end
 
-  post '/paper' do
+  post '/paper1' do
     game.paper
     redirect :choice
   end
 
-  post '/scissors' do
+  post '/scissors1' do
+    game.scissors
+    redirect :choice
+  end
+
+  post '/rock2' do
+    game.rock
+    redirect :choice
+  end
+
+  post '/paper2' do
+    game.paper
+    redirect :choice
+  end
+
+  post '/scissors2' do
     game.scissors
     redirect :choice
   end

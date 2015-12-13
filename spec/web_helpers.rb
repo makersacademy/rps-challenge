@@ -4,6 +4,13 @@ def sign_in_and_play
   click_button('Submit')
 end
 
+def multi_play_sign_in
+  visit('/')
+  fill_in :player_1, with: 'Ed'
+  fill_in :player_2, with: 'Hayley'
+  click_button('Submit')
+end
+
 def play_a_round
   sign_in_and_play
   click_button('Rock')

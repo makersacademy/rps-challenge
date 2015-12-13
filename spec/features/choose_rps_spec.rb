@@ -25,7 +25,6 @@ feature 'RPS Selection' do
     expect(page).to have_content('You have chosen the scissors!')
   end
 
-
   feature 'The Computer may choose RPS' do
 
     before do
@@ -39,4 +38,13 @@ feature 'RPS Selection' do
       expect(page).to have_content('The Computer has chosen')
     end
   end
+
+  feature '2 player' do
+    scenario 'Player 2 should have a turn' do
+      multi_play_sign_in
+      click_button('Scissors')
+      expect(page).to have_button('Now it\'s Hayley\'s turn!')
+    end  
+  end
+
 end

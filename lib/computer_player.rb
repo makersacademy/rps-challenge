@@ -1,6 +1,7 @@
 class ComputerPlayer
 
   attr_reader :name, :choice, :score
+  
 
   def initialize
     @name = 'The Computer'

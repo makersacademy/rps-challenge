@@ -17,12 +17,21 @@ describe Game do
     it 'should initialize with a nil winner' do
       expect(game.winner).to be nil
     end
+
+    it 'should initialize with current player 1' do
+      expect(game.current).to be player1
+    end
   end
 
   describe '#outcome' do
     it 'should call weapons.compare' do
       expect(weapons).to receive(:compare)
       game.outcome
+    end
+
+    it 'should switch players' do
+      game.outcome
+      expect(game.current).to be player2
     end
   end
 
