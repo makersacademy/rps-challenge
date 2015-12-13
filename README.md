@@ -8,7 +8,9 @@ The project is tested using Rspec and Capybara.
 
 Technologies used in this project:
 Sinatra web framework, Ruby, Css + HTML
--------
+
+The Instructions for the challenge are below.
+
 
 # RPS Challenge: Rōnin Badge Test
 
