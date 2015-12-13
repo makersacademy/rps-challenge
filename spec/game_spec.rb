@@ -33,8 +33,18 @@ describe Game do
         expect(game.victor).to eq :p1
       end
 
+      it 'should return :p1 if pc chose lizard' do
+        allow(computer).to receive(:weapon_choice).and_return(:lizard)
+        expect(game.victor).to eq :p1
+      end
+
       it 'should return :p2 if pc chose rock' do
         allow(computer).to receive(:weapon_choice).and_return(:rock)
+        expect(game.victor).to eq :p2
+      end
+
+      it 'should return :p2 if pc chose spock' do
+        allow(computer).to receive(:weapon_choice).and_return(:spock)
         expect(game.victor).to eq :p2
       end
     end

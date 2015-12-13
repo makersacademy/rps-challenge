@@ -3,11 +3,11 @@ require 'forwardable'
 class Game
   extend Forwardable
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
   RULES = {
-    rock: :scissors,
-    paper: :rock,
-    scissors: :paper
+    rock: [:scissors],
+    paper: [:rock],
+    scissors: [:paper, :lizard]
   }
 
   attr_reader :player_1, :player_2
@@ -38,6 +38,6 @@ class Game
   end
 
   def did_p1_win?
-    RULES[player_1.weapon_choice] == player_2.weapon_choice
+    RULES[player_1.weapon_choice].include? player_2.weapon_choice
   end
 end
