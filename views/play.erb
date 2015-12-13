@@ -1,8 +1,8 @@
 <h1>It's Rock, Paper Scissors! </h1>
-<%= @game.name1 %>'s score: <%= @game.score1 %>
-<%= @game.name2 %>'s score: <%= @game.score2 %>
+<p><%= @game.name1 %>'s score: <%= @game.score1 %></p>
+<p><%= @game.name2 %>'s score: <%= @game.score2 %></p>
 
-Round <%= @game.round %>
+<p>Round <%= @game.round %></p>
 
 <% if @game.current == @game.player1 %>
   <p> <%= @game.name1 %>, make your choice </p>
