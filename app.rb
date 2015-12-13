@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/user'
+require './lib/weapon'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,13 +10,24 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:user_name] = params[:user_name]
-    redirect '/play'
+    $user = User.new(params[:user_name])
+    redirect '/weapon'
   end
 
-  get '/play' do
-    @user_name = session[:user_name]
-    erb(:play)
+  get '/weapon' do
+    @user = $user
+    erb(:weapon)
+  end
+
+  post '/play' do
+    $weapon = Weapon.new(params[:weapon_type])
+    redirect '/game'
+  end
+
+  get '/game' do
+    @user = $user
+    @weapon = $weapon
+    erb(:game)
   end
 
   # start the server if ruby file executed directly

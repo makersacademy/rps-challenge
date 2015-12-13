@@ -2,7 +2,7 @@
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 
-feature 'Enter name' do
+feature 'Register name' do
   scenario 'allows user to submit name and see it' do
     visit '/'
       fill_in(:user_name, with: 'Alan')
