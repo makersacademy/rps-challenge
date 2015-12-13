@@ -30,8 +30,14 @@ class RPS < Sinatra::Base
   end
 
   post '/computer' do
-    $computer = Player.new('Computer')
-    @computer = $computer
+    $opponent = Player.new('Computer')
+    @opponent = $opponent
+    @opponent.decides(@opponent.random_decides)
+    redirect '/computer'
+  end
+
+  get '/computer' do
+    @opponent = $opponent
     erb :computer
   end
 
