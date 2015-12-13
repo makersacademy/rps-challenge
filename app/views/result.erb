@@ -1,10 +1,10 @@
-<%= @game.player1.name %> chose <%= @game.player1.choice %>.
-<%= @game.player2.name %> chose <%= @game.player2.choice %>.
+<%= game.player1.name %> chose <%= game.player1.choice %>.
+<%= game.player2.name %> chose <%= game.player2.choice %>.
 
-<% if @game.winner == :draw %> 
+<% if game.winner == :draw %> 
   It's a draw!
 <% else %>
-  The winner is <%= @game.winner.name %>!
+  The winner is <%= game.winner.name %>!
 <% end %>
 
 <form action='/new-game'>

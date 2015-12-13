@@ -26,8 +26,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = current_game
-    erb :play
+    erb :play, :locals => {:game => current_game}
   end
 
   post '/choice' do
@@ -35,7 +34,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = current_game
-    erb :result
+    erb :result, :locals => {:game => current_game}
   end
 end
