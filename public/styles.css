@@ -16,6 +16,7 @@ header {
   display: block;
   text-align: center;
   padding: 35px;
+  color: rgb(70, 130, 180);
 }
 #btn {
   -webkit-appearance: none;
