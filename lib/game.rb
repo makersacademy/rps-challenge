@@ -1,4 +1,9 @@
+require 'forwardable'
+
 class Game
+  extend Forwardable
+  def_delegator :current_turn, :name, :current_turn_name
+
   attr_reader :players, :current_turn
 
   def initialize(player1, player2)
@@ -14,11 +19,7 @@ class Game
     players.last.name
   end
 
-  def current_turn_name
-    current_turn.name
-  end
-
   def switch
-    @current_turn = players.find { |player| player != current_turn }
+    @current_turn = players.detect { |player| player != current_turn }
   end
 end

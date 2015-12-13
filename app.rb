@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:player_1_name])
     player2 = ComputerPlayer.new
-    @@game = Game.new(player1, player2)
+    self.class.game = Game.new(player1, player2)
     redirect '/play'
   end
 
@@ -28,10 +28,18 @@ class Rps < Sinatra::Base
 
 
   helpers do
+    def self.game
+      @game
+    end
+
+    def self.game=(game)
+      @game = game
+    end
+
     def game
-      @game ||= @@game
+      @game ||= self.class.game
     end
   end
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
