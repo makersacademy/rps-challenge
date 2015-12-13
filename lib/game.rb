@@ -1,4 +1,5 @@
 class Game
+  WEAPONS = [:rock, :paper, :scissors]
   extend Forwardable
 
   def_delegator :player_1, :name, :player_1_name

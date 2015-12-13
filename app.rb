@@ -3,7 +3,12 @@ require './lib/game'
 require './lib/player'
 
 class RPS < Sinatra::Base
-  enable :sessions
+
+  helpers do
+    def game
+      @game ||= $game
+    end
+  end
 
   get '/' do
     erb :index
@@ -16,8 +21,18 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_name = $game.player_1_name
+    game
     erb :play
+  end
+
+  post '/weapon' do
+    game
+    @weapon = params[:weapon]
+    erb :weapon
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly

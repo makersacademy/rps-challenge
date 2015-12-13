@@ -1,3 +1,16 @@
-Welcome to RPS, <%= @player_1_name %>!
-<br>
-Please select your weapon:
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <h1>Welcome to RPS, <%= @game.player_1_name %>!</h1>
+  <h2>Please enter your preferred weapon: Rock Paper or Scissors</h2>
+  <form id="weapon" action="/weapon" method="post">
+    <input type="radio" name="weapon" value="rock" checked>Rock<br/>
+    <input type="radio" name="weapon" value="paper">Paper<br/>
+    <input type="radio" name="weapon" value="scissors">Scissors<br/>
+    <input type="submit" value="Choose!">
+  </form>
+</body>
+</html>
