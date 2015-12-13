@@ -1,9 +1,25 @@
-<%= @player_name %> chose: <%= @player_choice %><br>
-<%= @computer_name %> chose: <%= @computer_choice %>
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='styles.css' rel='stylesheet'/>
+</head>
+<body>
+<header>
+  <h1>And the winner is... <%= @winner %></h1>
+</header>
 
-<h1>And the winner is...</h1>
-<%= @winner %>
-<br>
+<div id='main'>
+  <div id='left_column'>
+<%= @player_name %> chose: <%= @player_choice %>
+</div>
+<div id='right_column'>
+<%= @computer_name %> chose: <%= @computer_choice %>
+</div>
+<div id='central_column'>
 <a href='/play'>Play another round</a>
 <br>
 <a href='/'>Start a new game</a>
+</div>
+</div>
+</body>
+</html>

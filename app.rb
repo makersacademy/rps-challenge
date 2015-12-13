@@ -38,10 +38,10 @@ class RPS < Sinatra::Base
     erb :winner
   end
 
-  # after '/winner' do
-  #   $game.player.choice = nil
-  #   $game.computer.choice = nil
-  # end
+  after '/winner' do
+    $game.player.choice = nil
+    $game.computer.choice = nil
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

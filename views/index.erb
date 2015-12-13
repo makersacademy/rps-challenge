@@ -1,7 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='styles.css' rel='stylesheet'/>
+</head>
+
+<body>
+<header>
 <h1>Let's play Rock, Paper, Scissors!</h1>
-<form action='/names' method='post'>
-<label for='player_name'>Enter your name:
-<input type='text' name='player_name' />
-</label>
-<input type='submit' value='Submit' />
-</form>
+</header>
+
+<div id='main'>
+<div id='central_column'>
+  <form action='/names' method='post'>
+  <label for='player_name'>Enter your name:</label>
+  <input id='text_box' type='text' name='player_name' />
+  <input id='btn' type='submit' value='Submit' />
+  </form>
+</div>
+</div>
+
+</body>
+</html>

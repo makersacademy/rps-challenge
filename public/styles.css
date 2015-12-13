@@ -1,0 +1,52 @@
+/** {
+  border: 1px dotted red;
+}*/
+html {
+  margin: 0;
+  height: 100%;
+  background-image: url('geometry2.png');
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  height: 100%;
+  font-size: 1.2em;
+}
+header {
+  display: block;
+  text-align: center;
+  padding: 35px;
+}
+#btn {
+  -webkit-appearance: none;
+  font-size: 100%;
+  width: 100px;
+  height: 30px;
+  vertical-align: middle;
+}
+#text_box {
+  height: 23px;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+#main {
+  height : 100%;
+}
+#central_column {
+  margin: auto;
+  width: 60%;
+  clear: both;
+  text-align: center;
+}
+#left_column {
+  margin: auto;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+#right_column {
+  margin: auto;
+  width: 50%;
+  float: right;
+  text-align: center;
+}

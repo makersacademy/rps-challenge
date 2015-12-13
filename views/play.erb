@@ -1,19 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='styles.css' rel='stylesheet'/>
+</head>
+<body>
+<header>
 <h1><%= @player_name %> vs. Computer</h1>
-<div>
+</header>
+<div id='main'>
+
+<div id='left_column'>
+<p>Make your choice:</p>
 <form action='/choice' method='post'>
-  <input type='submit' name='player_choice' value='Rock' />
-  <input type='submit' name='player_choice' value='Paper' />
-  <input type='submit' name='player_choice' value='Scissors' />
+  <input id='btn' type='submit' name='player_choice' value='Rock' />
+  <input id='btn' type='submit' name='player_choice' value='Paper' />
+  <input id='btn' type='submit' name='player_choice' value='Scissors' />
 </form>
-</div>
-<div>
 <% if @player_choice %>
 <%= @player_name %> has chosen!
 <% end %>
+</div>
+
+<div id='right_column'>
 <% if @computer_choice %>
 Computer has chosen!
 <% end %>
 </div>
+
+<div id='central_column'>
 <% if @player_choice && @computer_choice %>
 <a href='/winner'>Check who won...</a>
 <% end %>
+</div>
+
+</div>
+</body>
+</html>

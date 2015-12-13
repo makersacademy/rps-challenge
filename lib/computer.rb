@@ -1,5 +1,6 @@
 class Computer
-  attr_reader :name, :choice
+  attr_reader :name
+  attr_accessor :choice
 
   OPTIONS = ['Rock', 'Paper', 'Scissors']
 
