@@ -1,11 +1,13 @@
-<%= game.player1.name %> chose <%= game.player1.choice %>.
-<%= game.player2.name %> chose <%= game.player2.choice %>.
+<div class='game-text'>
+  <%= game.player1.name %> chose <%= game.player1.choice %>.<br>
+  <%= game.player2.name %> chose <%= game.player2.choice %>.<br>
 
-<% if game.draw? %> 
-  It's a draw!
-<% else %>
-  The winner is <%= game.winner.name %>!
-<% end %>
+  <% if game.draw? %> 
+    It's a draw!
+  <% else %>
+    The winner is <%= game.winner.name %>!
+  <% end %>
+</div>
 
 <form action='/new-game'>
   <input type='submit' value='Play Again...'>

@@ -1,19 +1,25 @@
 <% if game.player2.computer? %>
-  Make your choice <%= game.player1.name %>...
+  <div class='game-text'>
+    Make your choice <%= game.player1.name %>...
+  </div>
   <form action='/choice' method='post'>
     <%= erb :choices %>
   </form>
 
 <% else %>
   <% if !game.player1.choice %>
-    <%= game.player2.name %> look away.
-    <%= game.player1.name %> will choose first...
+    <div class='game-text'>
+      <%= game.player2.name %> look away.<br>
+      <%= game.player1.name %> will choose first...
+    </div>
     <form action='/choice' method='post'>
       <input type='hidden' name='chooser' value='player1'>
       <%= erb :choices %>
     </form>
   <% else %>
-    OK, now <%= game.player2.name %> will choose.
+    <div class='game-text'>
+      OK, now <%= game.player2.name %> will choose.
+    </div>
     <form action='/choice' method='post'>
       <input type='hidden' name='chooser' value='player2'>
       <%= erb :choices %>

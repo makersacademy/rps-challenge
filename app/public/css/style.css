@@ -1,7 +1,36 @@
 body{
+  background-image: url('../images/background-tile.png');
+  background-repeat;
+  font-family: Helvetica, Arial;
   text-align: center;
+  text-shadow: white 0px 0px 10px; 
 }
 
 #title{
   font-size: 200%;
 }
+
+input[type='submit'] {
+  margin: 10px auto;
+  font-family: Helvetica, Arial;
+  font-size: 100%;
+  width: 135px;
+  text-shadow: white 0px 0px 10px;
+  display:block;
+  background:#ccc;
+  cursor:pointer;
+}
+
+input[type=text] {
+  margin: 10px auto;
+  font-family: Helvetica, Arial;
+  font-size: 100%;
+  text-align: center;
+  width: 200px;
+}
+
+.game-text{
+  font-size: 200%;
+}
+
+
