@@ -3,13 +3,10 @@ require 'weapons'
   describe Weapons do
 
   subject(:weapons) { described_class.new }
-  let(:paper) { double :paper }
-  let(:rock) { double :rock }
-  let(:scissors) { double :scissors }
 
   describe 'defaults' do
     it 'should store a hash detailing the RPS choices' do
-      expect(weapons.rules).to eq(:rock=>:scissors, :paper=>:rock, :scissors=>:paper)
+      expect(weapons.rules).to eq(rock: :scissors, paper: :rock, scissors: :paper)
     end
 
     it 'should have a nil result' do
@@ -53,5 +50,5 @@ require 'weapons'
       expect(weapons.result).to eq :scissors
     end
   end
-  
+
 end
