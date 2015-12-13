@@ -21,6 +21,11 @@ class Game
     @player2 = opponent_klass.new(session[:name2])
   end
 
+  def play params
+    player1.choose params[:shape1]
+    player2.choose params[:shape2]
+  end
+
   def winner
     return :draw if player1.choice == player2.choice
     player1_wins? ? player1 : player2

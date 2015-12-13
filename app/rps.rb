@@ -41,9 +41,7 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    game = current_game
-    game.player1.choose params[:shape1]
-    game.player2.choose params[:shape2]
+    current_game.play params
     redirect '/winner'
   end
 
@@ -54,4 +52,3 @@ class RPS < Sinatra::Base
 
   run! if app_file == $0
 end
-    
