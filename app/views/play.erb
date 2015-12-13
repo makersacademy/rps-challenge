@@ -1,4 +1,4 @@
-<% if @game.player2.is_a? Computer %>
+<% if @game.player2.computer? %>
   Make your choice <%= @game.player1.name %>...
   <form action='/choice' method='post'>
     <%= erb :choices %>
