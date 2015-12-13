@@ -34,13 +34,13 @@ describe Game do
 
   describe '#winner' do
     it 'returns who won' do
-      expect(game.winner(player_1,player_2)).
-      to eq "Ahh unlucky the Computer beat you!"
+        expect(game.winner(player_1,player_2)).
+        to eq "Ahh unlucky the Computer beat you!"
     end
 
     it "allows the computer to win" do
-      expect(subject.winner("rock", "paper")).
-      to eq "Ahh unlucky the Computer beat you!"
+        expect(subject.winner("rock", "paper")).
+        to eq "Ahh unlucky the Computer beat you!"
     end
 
   end
