@@ -2,7 +2,7 @@
 
 #RPSLS Challenge
 
-This is my solution for the [RPS challenge] carried out at the end of my third week at Makers' Academy. It's an interactive Rock-Paper-Scissors-Lizard-Spock that can be played solo or with another player.
+This is my solution for the [RPS challenge](https://github.com/michaellennox/rps-challenge/blob/master/MAKERS_README.md) carried out at the end of my third week at Makers' Academy. It's an interactive Rock-Paper-Scissors-Lizard-Spock that can be played solo or with another player.
 
 ##How I worked
 
