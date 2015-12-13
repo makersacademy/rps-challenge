@@ -1,3 +1,9 @@
+describe 'RPS Game' do
+
+before do
+  allow(Kernel).to receive(:rand).and_return '3'
+end
+
 feature 'Pick Game Mode' do
 
   scenario 'pick 1 player ' do
@@ -35,7 +41,7 @@ feature 'Enter Player names' do
       ' 1 = Rock 2 = Paper 3 = Scissors Choose Your Weapons'\
         ' Gimi Select : Tara Select:'
   end
-
+end
   feature 'Enter Chosen attack weapon' do
 
     scenario '1 Player can select rock paper or scissors' do
@@ -65,7 +71,7 @@ feature 'Enter Player names' do
       fill_in :answer_1, with: '1'
       click_button('Submit')
       expect(page).to have_content 'ROCK | PAPER | SCISSORS'\
-        "Gimi wins! Play Again"
+        " Gimi wins! Play Again"
     end
 
     scenario '2 Player can see outcome of battle' do
