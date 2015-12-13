@@ -23,6 +23,21 @@ class Game
     @player2 = opponent_klass.new(session[:name2])
   end
 
+  def add_choice(chooser, shape)
+    if chooser == 'player1'
+      player1.choose shape
+    elsif chooser == 'player2'
+      player2.choose shape
+    else
+      player1.choose shape
+      player2.choose :_random_choice
+    end
+  end
+
+  def player2_turn?
+    !player2.choice
+  end
+
   def play_and_redirect(chooser, shape)
     if chooser == 'player2'
       player2.choose shape

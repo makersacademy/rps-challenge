@@ -30,9 +30,9 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    chooser = params[:chooser]
-    shape = params[:shape]
-    redirect current_game.play_and_redirect(chooser, shape)
+    current_game.add_choice(params[:chooser], params[:shape])
+    redirect '/play' if current_game.player2_turn?
+    redirect '/result'
   end
 
   get '/result' do
