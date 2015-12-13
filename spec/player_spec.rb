@@ -5,9 +5,6 @@ describe Player do
   subject(:player1) { described_class.new('Gareth') }
   subject(:player2) { described_class.new('Computer') }
 
-  # before do
-  #   allow(Kernel).to receive(:rand) {10}
-  # end
 
   it 'returns player\'s name' do
     expect(player1.name).to eq 'Gareth'

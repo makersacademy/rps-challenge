@@ -30,7 +30,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game_over' do
-    @result = game.winner($player_move, $comp_move)
+    @result = game.winner(player_move, comp_move)
     erb :game_over
   end
 
@@ -38,6 +38,14 @@ class RPS < Sinatra::Base
   helpers do
     def game
       @game ||= $game
+    end
+
+    def player_move
+      @player_move ||= $player_move
+    end
+
+    def comp_move
+      @comp_move ||= $comp_move
     end
   end
 

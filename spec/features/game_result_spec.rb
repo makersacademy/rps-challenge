@@ -25,4 +25,16 @@ feature 'result' do
     expect(page).to have_content 'Gareth vs. Computer'
   end
 
+  scenario 'can see which move you chose' do
+    sign_in_and_play
+    click_button 'rock'
+    expect(page).to have_content 'You played rock'
+  end
+
+  scenario 'can see which move the Computer chose' do
+    sign_in_and_play
+    click_button 'rock'
+    expect(page).to have_content 'The computer played'
+  end
+
 end

@@ -24,6 +24,7 @@ class Game
   end
 
   def winner(player_1_move, player_2_move)
+    return "You drew, try again" if player_1_move == player_2_move
   	case player_2_move
   	when "rock"
   	  return player_wins unless player_1_move == "scissors"

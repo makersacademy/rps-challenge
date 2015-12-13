@@ -6,12 +6,7 @@ describe Game do
   subject(:game) { described_class.new(player1,player2) }
   let(:player_1) { double(:player_1, player_1_move: 'paper')}
   let(:player_2) {double(:player_2, player_2_move:'rock')}
-  # before do
-  #   allow(Kernel).to receive(:rand) {10}
-  #   allow(player2).to receive(:receive_damage)
-  #   allow(player1).to receive(:heal)
-  # end
-
+  
   describe '#player_1_move' do
     it 'returns players chosen move' do
       expect(player1).to receive(:move)
