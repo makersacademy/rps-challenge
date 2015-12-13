@@ -26,3 +26,23 @@ feature 'Shows Turns' do
     expect(page).to have_content 'Jon\'s turn'
   end
 end
+
+feature 'Feedback Messages' do
+  before do
+    sign_in_and_play
+    allow(Player::ELEMENTS).to receive(:sample).and_return('scissors')
+    click_button('ROCK')
+  end
+  scenario 'shows the choice of player1' do
+    msg = 'Jon chose rock'
+    expect(page).to have_content msg
+  end
+  scenario 'shows the choice of player2' do
+    msg = 'Computer chose scissors'
+    expect(page).to have_content msg
+  end
+  scenario 'shows the winner name' do
+    msg = 'Jon wins the game'
+    expect(page).to have_content msg
+  end
+end

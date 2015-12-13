@@ -15,9 +15,9 @@ describe Player do
       player.assign_element('rock')
       expect(player.element).to eq 'rock'
     end
-    it 'set a random element if no argument is passed' do
+    it 'set a random element if nil is passed' do
       allow(described_class::ELEMENTS).to receive(:sample).and_return('rock')
-      player.assign_element
+      player.assign_element(nil)
       expect(player.element).to eq 'rock'
     end
     it 'returns a message about the element chosen' do

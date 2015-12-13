@@ -10,7 +10,8 @@ class Player
     @computer = false
   end
 
-  def assign_element(element = random_element)
+  def assign_element(element)
+    element = random_element unless element
     fail 'Element not valid' unless valid_element?(element)
     @element = element
     "#{name} chose #{element}"
