@@ -5,7 +5,7 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
   RULES = {
-    rock: [:scissors],
+    rock: [:scissors, :lizard],
     paper: [:rock],
     scissors: [:paper, :lizard]
   }
