@@ -40,4 +40,5 @@ describe Game do
       game.outcome
     end
   end
+  
 end

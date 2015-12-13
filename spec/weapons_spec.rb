@@ -53,4 +53,5 @@ require 'weapons'
       expect(weapons.result).to eq :scissors
     end
   end
+  
 end

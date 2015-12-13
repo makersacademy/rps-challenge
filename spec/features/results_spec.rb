@@ -1,10 +1,14 @@
 feature 'Monitoring the results' do
+
+  before do
+    allow(Kernel).to receive(:rand).and_return(2)
+  end
+
   feature 'Declaring the round result'do
     scenario 'Declares rock beats scissors' do
       sign_in_and_play
       click_button('Rock')
       click_button('Outcome')
-      allow(Kernel).to receive(:rand).and_return(2)
       expect(page).to have_content "Ed won this round!"
     end
 
@@ -12,7 +16,6 @@ feature 'Monitoring the results' do
       sign_in_and_play
       click_button('Scissors')
       click_button('Outcome')
-      allow(Kernel).to receive(:rand).and_return(2)
       expect(page).to have_content "This round was a draw!"
     end
   end
@@ -37,7 +40,7 @@ feature 'Monitoring the results' do
 
     scenario 'Winner should have 1 point' do
       play_a_round
-      expect(page).to have_content '\'s score: 1'
+      expect(page).to have_content 'Ed\'s score: 1'
     end
   end
 end

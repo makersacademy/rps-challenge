@@ -30,7 +30,6 @@ class Game
   def_delegator :@weapons, :result, :result
 
   def outcome
-    @winner = nil
     weapons.compare(choice1, choice2)
     find_winner
     round_count
