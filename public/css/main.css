@@ -1,0 +1,25 @@
+main {
+  font-family: 'Arbutus Slab', serif;
+  text-align: center;
+  color: #326a8d;
+}
+
+.login {
+  background-color: #fcfdad;
+  color: #326a8d;
+}
+
+.login h2 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.login .form-control {
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login label {
+  font-size: 18px;
+}
