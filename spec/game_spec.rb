@@ -12,4 +12,26 @@ describe Game do
   it 'retrieves the second player' do
     expect(game.player_2).to eq player_2
   end
+
+  describe '#outome' do
+    it 'sets paper as the winner when rock vs. paper' do
+      game.outcome('rock', 'paper')
+      expect(game.winner).to eq 'paper'
+    end
+
+    it 'sets rock as the winner when rock vs. scissors' do
+      game.outcome('rock', 'scissors')
+      expect(game.winner).to eq 'rock'
+    end
+
+    it 'sets scissors as the winner when paper vs. scissors' do
+      game.outcome('paper', 'scissors')
+      expect(game.winner).to eq 'scissors'
+    end
+
+    it 'sets tie as the winner when weapons are the same' do
+      game.outcome('rock','rock')
+      expect(game.winner).to eq 'tie'
+    end
+  end
 end
