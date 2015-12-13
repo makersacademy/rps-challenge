@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Decision</title>
+  </head>
+
+  <body>
+    <h1><%= @player.name %>, what is your decision?</h1>
+
+    <form action="/decision" method="post">
+      <label for="rock">
+        <input type="radio" id="rock" name="decision" value="rock" checked="checked">Rock<br>
+      </label>
+      <label for="paper">
+        <input type="radio" id="paper" name="decision" value="paper">Paper<br>
+      </label>
+      <label for="scissors">
+        <input type="radio" id="scissors" name="decision" value="scissors">Scissors<br>
+      </label>
+      <input type="submit" value="I have chosen">
+    </form>
+
+
+    <ul id="rules">
+      <li>Rock beats Scissors</li>
+      <li>Scissors beats Paper</li>
+      <li>Paper beats Rock</li>
+    </ul>
+
+
+  </body>
+</html>
