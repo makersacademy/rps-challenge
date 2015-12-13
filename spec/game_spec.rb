@@ -82,4 +82,36 @@ describe Game do
     end
   end
 
+  describe 'delegators' do
+    it 'should call name on player_1 when asked for p1_name' do
+      expect(player).to receive(:name)
+      game.p1_name
+    end
+
+    it 'should call name on player_2 when asked for p2_name' do
+      expect(computer).to receive(:name)
+      game.p2_name
+    end
+
+    it 'should choose weapon on player_1 when told to p1_choose' do
+      expect(player).to receive(:choose_weapon)
+      game.p1_choose
+    end
+
+    it 'should choose weapon on player_2 when told to p2_choose' do
+      expect(computer).to receive(:choose_weapon)
+      game.p2_choose
+    end
+
+    it 'should call weapon_choice on player_1 when asked for p1_choice' do
+      expect(player).to receive(:weapon_choice)
+      game.p1_choice
+    end
+
+    it 'should call weapon_choice on player_2 when asked for p2_choice' do
+      expect(computer).to receive(:weapon_choice)
+      game.p2_choice
+    end
+  end
+
 end
