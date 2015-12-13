@@ -1,8 +1,5 @@
 class Game
 
-RULES = { :"Steve Irwin" => :"Crocodile",
-					:"Crocodile" => :"Stingray", 
-					:"Stingray" => :"Steve Irwin" }
 
 attr_reader :players
 
@@ -23,6 +20,8 @@ private
 		RULES[player1] == computer
 	end
 
-
+RULES = { :"Steve Irwin" => :"Crocodile",
+					:"Crocodile" => :"Stingray", 
+					:"Stingray" => :"Steve Irwin" }
 
 end

@@ -9,4 +9,12 @@ subject(:player){described_class.new(name)}
 		expect(player.name).to eq name
 	end
 	
+	describe "#choose" do
+
+		it "saves a weapon as a symbol" do
+			expect(player.choose("crocodile")).to eq :"crocodile" 
+		end
+
+	end
+
 end
