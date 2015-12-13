@@ -20,7 +20,8 @@ class Game
     :lose
   end
 
-
+  private
+  
   def same_weapons?
     player_1.weapon == player_2.weapon
   end

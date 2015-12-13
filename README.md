@@ -1,3 +1,30 @@
+The Rock Paper Scissors Challenge
+=================================
+This is a program written by Sara Tateno in response to the Maker's Academy Weekend Challenge #3.
+
+To run this program, go to the command line of a project folder and type:
+
+```
+$ git clone git@github.com:saratateno/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+This program allows a player to register their name and play Rock, Paper, Scissors against a computer.
+
+Further builds:-
+1. Provide the option to play against another person
+2. Keep a score tally and play to the best of 3 or 5
+3. Extend to Rock, Paper, Scissors, Spock, Lizard
+4. Make it pretty! Formatting & choose pictures instead of words
+
+
+
+--------
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
@@ -9,7 +36,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -63,7 +90,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -81,7 +108,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -91,4 +118,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-

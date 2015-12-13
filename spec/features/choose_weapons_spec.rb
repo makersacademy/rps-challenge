@@ -1,5 +1,4 @@
 feature 'choose weapons' do
-
   scenario 'asks the player to make a choice' do
     register_and_play
     expect(page).to have_content('Make your choice')
@@ -39,5 +38,4 @@ feature 'choose weapons' do
       expect(page).to have_content('The computer chose paper')
     end
   end
-
 end

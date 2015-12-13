@@ -3,5 +3,4 @@ feature 'sets up the game' do
     register_and_play
     expect(page).to have_content 'Rudolph'
   end
-
 end
