@@ -8,7 +8,7 @@ This round was a draw!
 <%= @game.winner.name %> won this round!
 <%end%>
 
-<% if @game.score1 == 5 || @game.score2 == 5%>
+<% if @game.game_over?%>
 <form action='/game_over' method='get'><input type="submit" value="Play again"/></form>
 <% else %>
 <form action='/play' method='get'><input type="submit" value="Play again"/></form>

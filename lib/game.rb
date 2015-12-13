@@ -36,6 +36,10 @@ class Game
     add_score
   end
 
+  def game_over?
+    score1 == 5 || score2 == 5
+  end
+
   private
 
   def find_winner

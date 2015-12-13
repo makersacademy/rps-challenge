@@ -40,5 +40,12 @@ describe Game do
       game.outcome
     end
   end
-  
+
+  describe '#game_over?' do
+    it 'should know when a game is over' do
+      allow(player1).to receive(:score).and_return(5)
+      expect(game.game_over?).to eq true
+    end
+  end
+
 end
