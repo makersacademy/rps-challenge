@@ -5,6 +5,8 @@ describe Game do
   let(:players_choice) {"ROCK!"}
   let(:player_chooses_paper) {described_class.new("PAPER!")}
   let(:player_chooses_scissors) {described_class.new("SCISSORS!")}
+  let(:player_chooses_spock) {described_class.new("SPOCK!")}
+  let(:player_chooses_lizard) {described_class.new("LIZARD!")}
   let(:two_player_game) {described_class.new("ROCK!", "PAPER!")}
 
   describe '#initialize' do
@@ -43,6 +45,16 @@ describe Game do
         expect(game.winner).to eq :win
       end
 
+      it 'computer choses Spock' do
+        allow(Kernel).to receive(:rand).and_return(10)
+        expect(game.winner).to eq :lose
+      end
+
+      it 'computer choses lizard' do
+        allow(Kernel).to receive(:rand).and_return(13)
+        expect(game.winner).to eq :win
+      end
+
     end
 
     context 'player choses paper' do
@@ -59,6 +71,16 @@ describe Game do
 
       it 'computer choses scissors' do
         allow(Kernel).to receive(:rand).and_return(7)
+        expect(player_chooses_paper.winner).to eq :lose
+      end
+
+      it 'computer choses Spock' do
+        allow(Kernel).to receive(:rand).and_return(10)
+        expect(player_chooses_paper.winner).to eq :win
+      end
+
+      it 'computer choses lizard' do
+        allow(Kernel).to receive(:rand).and_return(13)
         expect(player_chooses_paper.winner).to eq :lose
       end
 
@@ -80,6 +102,75 @@ describe Game do
         allow(Kernel).to receive(:rand).and_return(7)
         expect(player_chooses_scissors.winner).to eq :draw
       end
+
+      it 'computer choses Spock' do
+        allow(Kernel).to receive(:rand).and_return(10)
+        expect(player_chooses_scissors.winner).to eq :lose
+      end
+
+      it 'computer choses lizard' do
+        allow(Kernel).to receive(:rand).and_return(13)
+        expect(player_chooses_scissors.winner).to eq :win
+      end
+
+    end
+
+    context 'player choses Spock' do
+
+      it 'computer choses rock' do
+        allow(Kernel).to receive(:rand).and_return(1)
+        expect(player_chooses_spock.winner).to eq :win
+      end
+
+      it 'computer choses paper' do
+        allow(Kernel).to receive(:rand).and_return(4)
+        expect(player_chooses_spock.winner).to eq :lose
+      end
+
+      it 'computer choses scissors' do
+        allow(Kernel).to receive(:rand).and_return(7)
+        expect(player_chooses_spock.winner).to eq :win
+      end
+
+      it 'computer choses Spock' do
+        allow(Kernel).to receive(:rand).and_return(10)
+        expect(player_chooses_spock.winner).to eq :draw
+      end
+
+      it 'computer choses lizard' do
+        allow(Kernel).to receive(:rand).and_return(13)
+        expect(player_chooses_spock.winner).to eq :lose
+      end
+
+    end
+
+    context 'player choses lizard' do
+
+      it 'computer choses rock' do
+        allow(Kernel).to receive(:rand).and_return(1)
+        expect(player_chooses_lizard.winner).to eq :lose
+      end
+
+      it 'computer choses paper' do
+        allow(Kernel).to receive(:rand).and_return(4)
+        expect(player_chooses_lizard.winner).to eq :win
+      end
+
+      it 'computer choses scissors' do
+        allow(Kernel).to receive(:rand).and_return(7)
+        expect(player_chooses_lizard.winner).to eq :lose
+      end
+
+      it 'computer choses Spock' do
+        allow(Kernel).to receive(:rand).and_return(10)
+        expect(player_chooses_lizard.winner).to eq :win
+      end
+
+      it 'computer choses lizard' do
+        allow(Kernel).to receive(:rand).and_return(13)
+        expect(player_chooses_lizard.winner).to eq :draw
+      end
+
 
     end
   end

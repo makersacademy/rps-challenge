@@ -11,7 +11,7 @@ require 'capybara/rspec'
 require 'selenium-webdriver'
 require File.join(File.dirname(__FILE__), '..', 'lib/rps.rb')
 include Capybara::DSL
-Capybara.default_driver= :selenium
+#Capybara.default_driver= :selenium
 
 
 SimpleCov.formatters = [
