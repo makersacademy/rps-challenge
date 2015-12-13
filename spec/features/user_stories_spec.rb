@@ -18,7 +18,7 @@ feature 'Playing the game' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     visit '/'
     fill_in :name, with: 'Dave'
-    select('Scissors', from: "pick_a_weapon")
+    select('Scissors', from: "weapon")
     click_button('Play!')
     expect(page).to have_content "The result is .... Dave won"
   end
