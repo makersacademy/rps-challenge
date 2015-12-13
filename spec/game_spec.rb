@@ -110,6 +110,37 @@ describe Game do
         expect(game.victor).to eq :p2
       end
     end
+
+    context 'when player chooses spock' do
+      before(:example) do
+        allow(player).to receive(:weapon_choice).and_return(:spock)
+      end
+
+      it 'should return :draw if both choose same weapon' do
+        allow(computer).to receive(:weapon_choice).and_return(:spock)
+        expect(game.victor).to eq :draw
+      end
+
+      it 'should return :p1 if pc chose rock' do
+        allow(computer).to receive(:weapon_choice).and_return(:rock)
+        expect(game.victor).to eq :p1
+      end
+
+      it 'should return :p1 if pc chose scissors' do
+        allow(computer).to receive(:weapon_choice).and_return(:scissors)
+        expect(game.victor).to eq :p1
+      end
+
+      it 'should return :p2 if pc chose paper' do
+        allow(computer).to receive(:weapon_choice).and_return(:paper)
+        expect(game.victor).to eq :p2
+      end
+
+      it 'should return :p2 if pc chose lizard' do
+        allow(computer).to receive(:weapon_choice).and_return(:lizard)
+        expect(game.victor).to eq :p2
+      end
+    end
   end
 
   describe 'delegators' do

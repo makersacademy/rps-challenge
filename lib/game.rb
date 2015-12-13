@@ -7,7 +7,8 @@ class Game
   RULES = {
     rock: [:scissors, :lizard],
     paper: [:rock, :spock],
-    scissors: [:paper, :lizard]
+    scissors: [:paper, :lizard],
+    spock: [:rock, :scissors]
   }
 
   attr_reader :player_1, :player_2
