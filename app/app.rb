@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require_relative 'player'
-require_relative 'game'
+require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
 
@@ -17,20 +17,20 @@ class Rps < Sinatra::Base
   end
 
   post '/names1' do
-     player_1 = Player.new(params[:player_1_name])
-     player_2 = Player.new("Computer")
-     $game = Game.new(player_1, player_2)
-     redirect '/play1'
-   end
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new("Computer")
+    $game = Game.new(player_1, player_2)
+    redirect '/play1'
+  end
 
-   post '/names2' do
-     player_1 = Player.new(params[:player_1_name])
-     player_2 = Player.new(params[:player_2_name])
-     $game = Game.new(player_1, player_2)
-     redirect '/play'
-   end
+  post '/names2' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    $game = Game.new(player_1, player_2)
+    redirect '/play'
+  end
 
-   get '/play' do
+  get '/play' do
     @game = $game
     @player1_name = @game.players[0].name
     @player2_name  = @game.players[1].name
@@ -55,12 +55,13 @@ class Rps < Sinatra::Base
     @game = $game
     @game.calc_winner
     @winsies = @game.winner
-    @game.players[1].computer ? erb(:results1) : erb(:results1)
-  end
-  private
-  
-  def com_play
-    @answer_p2 = rand(1..3).to_s
+    if @winsies == 'Draw' && @game.players[1].computer == true
+      erb(:results_draw1)
+    elsif @winsies == 'Draw'
+      erb(:results_draw)
+    else
+      @game.players[1].computer ? erb(:results1) : erb(:results)
+    end
   end
 
 end

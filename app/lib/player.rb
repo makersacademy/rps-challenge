@@ -5,7 +5,7 @@ class Player
   attr_reader :name, :lives, :computer
 
   def initialize(name= COMP, lives = LIVES, computer = false)
-    @name = name
+    @name = name.capitalize
     @lives = lives
     name == COMP ? @computer = true : @computer = false
   end

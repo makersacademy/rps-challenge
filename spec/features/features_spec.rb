@@ -3,14 +3,16 @@ feature 'Pick Game Mode' do
   scenario 'pick 1 player ' do
     visit('/')
     click_button('1 Player')
-    expect(page).to have_content 'Rock Paper Scissors Sign in to play! Player 1 name'
+    expect(page).to have_content 'Rock Paper Scissors Sign in to play!'\
+      ' Player 1 name'
   end
 
 
-scenario 'pick 2 player ' do
+  scenario 'pick 2 player ' do
     visit('/')
     click_button('2 Player')
-    expect(page).to have_content 'Rock Paper Scissors Sign in to play! Player 1 name Player 2 name'
+    expect(page).to have_content 'Rock Paper Scissors Sign in to play!'\
+      ' Player 1 name Player 2 name'
   end
 
 end
@@ -21,14 +23,17 @@ feature 'Enter Player names' do
     visit('/')
     click_button('1 Player')
     sign_in_and_play1
-    expect(page).to have_content 'PLAY Gimi VS Computer 1 = Rock 2 = Paper 3 = Scissors Player 1 Select :'
+    expect(page).to have_content 'ROCK | PAPER | SCISSORS Gimi VS Computer'\
+      ' 1 = Rock 2 = Paper 3 = Scissors Gimi Choose Your Weapon'
   end
 
   scenario 'submitting 2 Player names' do
     visit('/')
     click_button('2 Players')
     sign_in_and_play2
-    expect(page).to have_content 'PLAY Gimi VS Tara 1 = Rock 2 = Paper 3 = Scissors Player 1 Select : Player 2 Select :'
+    expect(page).to have_content 'ROCK | PAPER | SCISSORS Gimi VS Tara'\
+      ' 1 = Rock 2 = Paper 3 = Scissors Choose Your Weapons'\
+        ' Gimi Select : Tara Select:'
   end
 
   feature 'Enter Chosen attack weapon' do
@@ -51,7 +56,7 @@ feature 'Enter Player names' do
     end
   end
 
-  feature 'Battle Results' do
+  feature 'Game Results' do
 
     scenario '1 Player can see outcome of battle' do
       visit('/')
@@ -59,7 +64,8 @@ feature 'Enter Player names' do
       sign_in_and_play1
       fill_in :answer_1, with: '1'
       click_button('Submit')
-      expect(page).to have_content 'player 2 wins Play Again'
+      expect(page).to have_content 'ROCK | PAPER | SCISSORS'\
+        "Gimi wins! Play Again"
     end
 
     scenario '2 Player can see outcome of battle' do
@@ -69,7 +75,8 @@ feature 'Enter Player names' do
       fill_in :answer_1, with: '1'
       fill_in :answer_2, with: '3'
       click_button('Submit')
-      expect(page).to have_content "player 1 wins Play Again"
+      expect(page).to have_content 'ROCK | PAPER | SCISSORS'\
+        ' Gimi wins! Play Again'
 
     end
   end

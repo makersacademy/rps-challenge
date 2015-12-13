@@ -31,7 +31,7 @@ class Game
     @result = 'player 2 wins' if ans_2 == '2' && ans_1 == '1'
     @result = 'player 2 wins' if ans_2 == '3' && ans_1 == '2'
     @winner = @result
-  end
+ end
 
  private
 
