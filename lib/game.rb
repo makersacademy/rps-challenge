@@ -12,17 +12,17 @@ class Game
     @turn_klass = turn
   end
 
-  def selection(weapon1)
+  def play_turn(weapon1)
     weapon2 = rand_weapon if @player2.name == 'Computer'
-    @player1.selection = weapon1
     @player2.selection = weapon2
+    @player1.selection = weapon1
+    @turn = @turn_klass.new(@player1, @player2)
+    @turn.play
   end
 
-  def turn_result
-    p1 = @player1.selection
-    p2 = @player2.selection
-    turn = @turn_klass.new(p1, p2)
-    turn.result
+  def message
+    return @turn.message if @turn != nil
+    'Welcome!'
   end
 
   def over?

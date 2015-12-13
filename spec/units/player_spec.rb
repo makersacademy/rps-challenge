@@ -11,9 +11,16 @@ describe Player do
     end
   end
 
-  describe '#chooses' do
+  describe '#selection' do
     it 'stores the user choice' do
       expect(player).to respond_to(:selection)
+    end
+  end
+
+  describe '#score_up' do
+    it 'increases player score by 1' do
+      player.score_up
+      expect(player.score).to eq 1
     end
   end
 

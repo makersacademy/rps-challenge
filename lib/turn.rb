@@ -1,21 +1,30 @@
 class Turn
 
-  def initialize(p1,p2)
-    @p1 = p1
-    @p2 = p2
+  MESSAGES = { win: 'You won!', lose: 'You lost!', tie: 'No winners!' }
+
+  attr_reader :message
+
+  def initialize(player1,player2)
+    @player1 = player1
+    @player2 = player2
+    @p1 = player1.selection
+    @p2 = player2.selection
+    @message = nil
   end
 
-  def result
-    return message[:tie] if tie?
-    return message[:lose] if lose?
-    message[:win]
+  def play
+    if tie?
+      @message = MESSAGES[:tie]
+    elsif lose?
+      @player2.score_up
+      @message = MESSAGES[:lose]
+    else
+      @player1.score_up
+      @message = MESSAGES[:win]
+    end
   end
 
   private
-
-  def message
-    { win: 'You won!', lose: 'You lost!', tie: 'No winners!' }
-  end
 
   def tie?
     @p1 == @p2

@@ -28,16 +28,16 @@ So that I can see who won the turn
 I need to see a confirmation of who won the turn
 
 As a user
-So that I can see if the turn was nil
-I need to see a confirmation that the turn was nil
+So that I can see if the turn was tie
+I need to see a confirmation that the turn was tie
 
 As a user
 So that I can see who is more likely to win
-I need to see a summary of the winner for each turn
+I need to see a summary of the score for each turn
 
 As a user
 So that I can see who won the game
-I need to see a confirmation of who won the game
+I need to see a confirmation of who won the game when the score reaches 3
 
 ```
 

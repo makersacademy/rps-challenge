@@ -20,7 +20,6 @@ section {
   width: 20%;
 }
 
-
 input[type=submit] {
     padding:15px 45px;
     font-size: 20px;
@@ -36,6 +35,7 @@ input[type="text"] {
   border: solid 5px #c9c9c9;
   transition: border 0.3s;
 }
+
 input[type="text"]:focus,
 input[type="text"].focus {
   border: solid 5px #969696;
