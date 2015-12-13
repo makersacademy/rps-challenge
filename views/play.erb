@@ -1,0 +1,19 @@
+<%= @player.name %>
+
+<p>Make your choice</p>
+
+<form action="/result" method="post">
+  <label for="Choose rock">
+    <input type="radio" name="weapon" value="rock" checked id="Choose rock">Rock
+  </label>
+  <br>
+  <label for="Choose paper">
+    <input type="radio" name="weapon" value="paper" id="Choose paper">Paper
+  </label>
+  <br>
+  <label for="Choose scissors">
+    <input type="radio" name="weapon" value="scissors" id="Choose scissors">Scissors
+  </label>
+  <br>
+  <input type="submit" value="OK">
+</form>
