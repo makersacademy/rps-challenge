@@ -7,6 +7,6 @@ end
 def two_player_login
   visit '/'
   fill_in :player1_name, with: 'Michael'
-  fill_in :player2_name, with: 'Michael'
+  fill_in :player2_name, with: 'Lach'
   click_button('Play! (2Player)')
 end
