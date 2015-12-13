@@ -1,21 +1,11 @@
 require 'game'
 
 describe Game do
+  subject(:game) { described_class.new(player1,player2) }
   let(:player1) { double(:player1, name: 'Gareth') }
   let(:player2) { double(:player2, name: 'Computer') }
-  subject(:game) { described_class.new(player1,player2) }
   let(:player_1) { double(:player_1, player_1_move: 'paper')}
   let(:player_2) {double(:player_2, player_2_move:'rock')}
-
-  context 'players name is stored' do
-    it 'returns player 1s name' do
-      expect(game.player_1).to eq player1
-    end
-
-    it 'returns player 2s name' do
-      expect(game.player_2).to eq player2
-    end
-  end
 
   describe '#player_1_move' do
     it 'returns players chosen move' do
@@ -36,13 +26,21 @@ describe Game do
     end
   end
 
+  describe '#player_2' do
+    it 'returns player 2s name' do
+      expect(game.player_2).to eq player2
+    end
+  end
+
   describe '#winner' do
     it 'returns who won' do
-      expect(game.winner(player_1,player_2)).to eq "Ahh unlucky the Computer beat you!"
+      expect(game.winner(player_1,player_2)).
+      to eq "Ahh unlucky the Computer beat you!"
     end
 
     it "allows the computer to win" do
-      expect(subject.winner("rock", "paper")).to eq "Ahh unlucky the Computer beat you!"
+      expect(subject.winner("rock", "paper")).
+      to eq "Ahh unlucky the Computer beat you!"
     end
 
   end
