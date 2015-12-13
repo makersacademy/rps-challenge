@@ -1,4 +1,4 @@
-class Game
+class RPS
 
 attr_reader :win, :draw, :computer, :player
 #1 = rock

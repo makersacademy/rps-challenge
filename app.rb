@@ -1,16 +1,14 @@
 require 'sinatra/base'
 require './lib/rps.rb'
 
-class RockPaperScissors < Sinatra::Base
-
-  enable :sessions
+class Game < Sinatra::Base
 
   get '/' do
     erb(:index)
   end
 
   get '/game' do
-    $game = Game.new(params[:player_1])
+    $game = RPS.new(params[:player_1])
     @game = $game
     erb(:game)
   end
@@ -42,5 +40,4 @@ class RockPaperScissors < Sinatra::Base
   end
 
   run! if app_file == $0
-
 end
