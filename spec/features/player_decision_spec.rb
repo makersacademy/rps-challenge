@@ -24,19 +24,19 @@ describe 'User Stories' do
     scenario 'can choose rock' do
       choose('rock')
       click_button('I have chosen')
-      expect(page).to have_content('You choose rock')
+      expect(page).to have_content('Andrew chooses rock')
     end
 
     scenario 'can choose paper' do
       choose('paper')
       click_button('I have chosen')
-      expect(page).to have_content('You choose paper')
+      expect(page).to have_content('Andrew chooses paper')
     end
 
     scenario 'can choose scissors' do
       choose('scissors')
       click_button('I have chosen')
-      expect(page).to have_content('You choose scissors')
+      expect(page).to have_content('Andrew chooses scissors')
     end
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Result</title>
+</head>
+
+<body>
+
+  <% if @player.beat?(@opponent).nil? %>
+  <h1>Draw</h1>
+  <% elsif @player.beat?(@opponent) %>
+  <h1><%=@player.name%> wins</h1>
+  <% else %>
+  <h1><%=@opponent.name%> wins</h1>
+  <% end %>
+
+
+<form action='/' method='get'>
+  <input type='submit' value='End'>
+</form>
+
+</body>
+
+</html>
