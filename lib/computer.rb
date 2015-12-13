@@ -6,7 +6,7 @@ class Computer
   end
 
   def choose_weapon
-    @weapon = [:rock, :paper, :scissors].sample
+    @weapon = Game::WEAPONS.sample
   end
 
 end
