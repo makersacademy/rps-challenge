@@ -5,6 +5,15 @@ describe Game do
   let(:opponent){double(:opponent)}
   subject(:game){described_class.new}
 
+  describe 'games' do
+    it 'stores games' do
+      Game.games
+      id = game.object_id
+      Game.add(id, game)
+      expect(Game.find(id)).to eq game
+    end
+  end
+
   describe '#add_player' do
     it 'adds a player' do
       game.add_player(player)

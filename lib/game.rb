@@ -31,6 +31,18 @@ class Game
     player_win? ? player : opponent
   end
 
+  def self.find(id)
+    @games[id]
+  end
+
+  def self.add(id, game)
+    @games[id] = game
+  end
+
+  def self.games
+    @games ||= {}
+  end
+
   private
 
   def player_weapon
