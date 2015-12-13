@@ -10,12 +10,12 @@ class Rps < Sinatra::Base
   end
 
   post '/players' do
-    session[:players] = params[:number_of_players]
+    session[:number_of_players] = params[:number_of_players]
     redirect '/names'
   end
 
   get '/names' do
-    @players = session[:players]
+    @number_of_players = session[:number_of_players]
     erb(:names)
   end
 
@@ -26,17 +26,17 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @players = session[:players]
+    @number_of_players = session[:number_of_players]
     @player1_name = session[:player1_name]
     @player2_name = session[:player2_name]
     erb(:play)
   end
 
   post '/result' do
-    if !!session[:p1_choice]
+    if session[:p1_choice] != nil
       $game = Game.new(session[:p1_choice], params[:player_choice])
       redirect '/result'
-    elsif !!session[:player2_name]
+    elsif session[:player2_name] != nil
       session[:p1_choice] = params[:player_choice]
       redirect '/play'
     end
@@ -48,7 +48,6 @@ class Rps < Sinatra::Base
     @game = $game
     @player1_name = session[:player1_name]
     @player2_name = session[:player2_name]
-    p @player2_name
     session.clear
     erb(:result)
   end

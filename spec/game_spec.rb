@@ -9,14 +9,6 @@ describe Game do
 
   describe '#initialize' do
 
-    it 'takes one argument' do
-      expect{ Game.new(:player_choice) }.not_to raise_error
-    end
-
-    it 'takes two arguments' do
-      expect{ Game.new(:player_choice, :player2_choice) }.not_to raise_error
-    end
-
     it 'sets player 2 choice (for computer) by default' do
       allow(Kernel).to receive(:rand).and_return(1)
       expect(game.player2_choice).to eq :rock

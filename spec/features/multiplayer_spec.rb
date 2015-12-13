@@ -1,7 +1,7 @@
 feature "Multiplayer" do
 
   # Bonus level 1: Multiplayer
-  # Change the game so that two marketeers can play against each other ( yes there are two of them ).
+  # Change the game so that two marketeers can play against each other.
 
   scenario 'the game asks if you want to play one or two player' do
     visit('/')

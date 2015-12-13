@@ -8,9 +8,9 @@ class Game
   end
 
   def winner
-    return player_chose_rock if @player1_choice == :rock
-    return player_chose_paper if @player1_choice == :paper
-    return player_chose_scissors if @player1_choice == :scissors
+    return who_wins_if_player_one_chose_rock if @player1_choice == :rock
+    return who_wins_if_player_one_chose_paper if @player1_choice == :paper
+    return who_wins_if_player_one_chose_scissors if @player1_choice == :scissors
   end
 
   private
@@ -22,19 +22,19 @@ class Game
     return "SCISSORS!" if (6..8).include? random_number
   end
 
-  def player_chose_rock
+  def who_wins_if_player_one_chose_rock
     return :draw if @player2_choice == :rock
     return :lose if @player2_choice == :paper
     return :win if @player2_choice == :scissors
   end
 
-  def player_chose_paper
+  def who_wins_if_player_one_chose_paper
     return :win if @player2_choice == :rock
     return :draw if @player2_choice == :paper
     return :lose if @player2_choice == :scissors
   end
 
-  def player_chose_scissors
+  def who_wins_if_player_one_chose_scissors
     return :lose if @player2_choice == :rock
     return :win if @player2_choice == :paper
     return :draw if @player2_choice == :scissors

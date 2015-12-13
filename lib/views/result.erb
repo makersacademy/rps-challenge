@@ -1,6 +1,6 @@
 <h1>
   <%=@player1_name%> chose <%= @game.player1_choice.to_s.upcase %>!
-  <% if !@player2_name %>Computer<% else %><%=@player2_name%><% end %> chose <%= @game.player2_choice.to_s.upcase %>!
+  <%= @player2_name || "Computer" %> chose <%= @game.player2_choice.to_s.upcase %>!
 </h1>
 
 <h2>
@@ -9,8 +9,6 @@
   <% elsif @game.winner == :win %>
     <%=@player1_name%> wins!
   <% elsif @game.winner == :lose %>
-    <% if !@player2_name %>Computer<% else %><%=@player2_name%><%end%> wins!
-  <% else %>
-    What's going on?
+    <%= @player2_name || "Computer" %> wins!
   <% end %>
 </h2>

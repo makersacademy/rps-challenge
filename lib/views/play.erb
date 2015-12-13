@@ -1,10 +1,12 @@
-<h1>Welcome <%= @player1_name %><%= " & #{@player2_name}" if @players == "Two" %>. Get ready for an epic battle.</h1>
+<h1>Welcome <%= @player1_name %><%= " & #{@player2_name}" if @number_of_players == "Two" %>. Get ready for an epic battle.</h1>
 
-<%if !!session[:p1_choice]%>
-  <%=@player2_name%>, make your choice!
-<%else%>
-  <%=@player1_name%>, make your choice!
-<%end%>
+<h2>
+  <%if !!session[:p1_choice]%>
+    <%=@player2_name%>, make your choice!
+  <%else%>
+    <%=@player1_name%>, make your choice!
+  <%end%>
+</h2>
 
 <form action="result" method='post'>
   <input type="submit" value="ROCK!" name="player_choice">
