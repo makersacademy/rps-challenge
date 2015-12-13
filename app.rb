@@ -27,6 +27,10 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
+  get '/winner' do
+    erb :winner
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
