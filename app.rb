@@ -19,14 +19,15 @@ class App < Sinatra::Base
     erb(:play)
   end
 
-  get '/choose' do
+  get '/weapons' do
     @game = $game
-    erb(:choose)
+    erb(:weapons)
   end
 
   post '/selection' do
     @game = $game
-    @game.selection(params[:value])
+    weapon = params[:selection]
+    @game.selection(weapon)
     redirect '/play'
   end
 

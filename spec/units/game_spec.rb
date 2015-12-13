@@ -2,9 +2,16 @@ require 'game'
 
 describe Game do
 
-  let(:player1) { double(:player1, name: 'John') }
-  subject(:game) { described_class.new(player1) }
-  before { allow(player1).to receive(:selection=) }
+  let(:player1) { double(:player1, name: 'John', selection: 'Paper') }
+  let(:player2) { double(:player2, name: 'Computer', selection: 'Rock') }
+  let(:turn) { double(:turn, result: 'You won!') }
+  let(:turn_klass) { double(:turn_klass, new: turn)}
+  subject(:game) { described_class.new(player1, player2, turn_klass) }
+
+  before do
+    allow(player1).to receive(:selection=)
+    allow(player2).to receive(:selection=)
+  end
 
   describe '#player1' do
     it 'returns the player1 name' do
@@ -13,9 +20,21 @@ describe Game do
   end
 
   describe '#selection' do
-    it 'saves the user selection' do
+    it 'saves player1 selection' do
       expect(player1).to receive(:selection=)
       game.selection('Paper')
+    end
+
+    it 'saves automatically a rand_weapon if computer is opponent' do
+      expect(player2).to receive(:selection=)
+      game.selection('Paper')
+    end
+  end
+
+  describe '#turn_result' do
+    it 'returns a message for closing the turn' do
+      expect(turn).to receive(:result)
+      game.turn_result
     end
   end
 

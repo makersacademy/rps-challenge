@@ -5,6 +5,7 @@ class Player
 
   def initialize(name)
     @name = name
+    @selection = 'nothing'
   end
 
 end

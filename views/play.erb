@@ -4,8 +4,10 @@
   <img src="" alt="" width="200px" height="200px">
 </section>
 <section class=message>
-  <form action="/choose" method="get">
-    <h3>You picked: <%= @game.player1.selection %></h3>
+  <form action="/weapons" method="get">
+    <h3><%= @game.player1.name %> picked: <%= @game.player1.selection %></h3>
+    <h3><%= @game.player2.name %> picked: <%= @game.player2.selection %></h3>
+    <h3><%= @game.turn_result %></h3>
     <input type="submit" value="Next turn">
   </form>
 </section>
