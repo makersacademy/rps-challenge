@@ -29,8 +29,14 @@ input[type=text] {
   width: 200px;
 }
 
+.game{
+  position: relative;
+  top: 200px;
+}
+
 .game-text{
   font-size: 200%;
+  margin: 50px auto;
 }
 
 
