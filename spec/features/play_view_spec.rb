@@ -16,6 +16,6 @@ end
 feature 'Shows Turns' do
   scenario 'shows the name of the current turn player' do
     sign_in_and_play_alone
-    expect(page).to have_content 'Jon\'s turn'
+    expect(page).to have_content 'Jon your turn'
   end
 end

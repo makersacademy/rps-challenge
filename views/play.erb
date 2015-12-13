@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-4 vcenter">
       <div class="col-md-8 col-md-offset-2">
-        <h2><%= game.first_player_name %></h2>
+        <h1><%= game.first_player_name %></h1>
+        <% if game.current_turn == game.players[0] %><h3>your turn</h3> <% end %>
       </div>
     </div><!--
   --><div class="col-md-4 vcenter">
-    <h2><%= game.current_turn_name %>'s turn</h2>
       <form action="/process" method="post">
         <input type="hidden" name="element" value="rock">
         <input class="btn btn-default" type="submit" value="ROCK">
@@ -22,7 +22,8 @@
     </div><!--
   --><div class="col-md-4 vcenter">
       <div class="col-md-8 col-md-offset-2">
-        <h2><%= game.second_player_name %></h2>
+        <h1><%= game.second_player_name %></h1>
+        <% if game.current_turn == game.players[1] %><h3>your turn</h3> <% end %>
       </div>
     </div>
   </div>
