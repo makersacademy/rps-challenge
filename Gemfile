@@ -11,5 +11,7 @@ group :test do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
+  gem 'rspec-sinatra'
+  gem 'selenium-webdriver'
   gem 'byebug'
 end
