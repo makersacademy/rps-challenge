@@ -11,7 +11,8 @@ class Rps < Sinatra::Base
 
   post '/names' do
     player1 = Player.new(params[:player_1_name])
-    player2 = ComputerPlayer.new
+    player2 = Player.new(params[:player_2_name]) unless params[:vs_computer?]
+    player2 = ComputerPlayer.new if params[:vs_computer?]
     self.class.game = Game.new(player1, player2)
     redirect '/play'
   end
