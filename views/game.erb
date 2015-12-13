@@ -1,5 +1,20 @@
 <h1> The result is .... <%= @player %> won </h1>
 
-<h1> You choose <%= @weapon %> 
+<h1> You choose <%= @choice %> 
 
-<h1> The computer's choice was <%= @computer_choice %>
+<h1> The computer's choice was <%= @computer_choice %> </h1>
+
+
+<% if @choice.to_s == @computer_choice.to_s %>
+Draw
+<% else %> 
+Something else
+<% end %>
+
+<h1> <%= @game.player_result %> </h1>
+<h1> <%= @game.computer_result %> </h1>
+
+
+
+
+ 

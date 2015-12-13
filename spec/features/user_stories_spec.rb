@@ -18,7 +18,7 @@ feature 'Playing the game' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     visit '/'
     fill_in :name, with: 'Dave'
-    select('Scissors', from: "weapon")
+    select('Scissors', from: "choice")
     click_button('Play!')
     expect(page).to have_content "The result is .... Dave won"
   end
@@ -29,7 +29,7 @@ feature 'Computer choice' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
     visit '/'
     fill_in :name, with: 'Dave'
-    select('Scissors', from: "weapon")
+    select('Scissors', from: "choice")
     click_button('Play!')
     expect(page).to have_content "The computer's choice was Paper"
   end

@@ -1,10 +1,14 @@
 require_relative 'game'
 
 class Computer
-	
-	def choose_weapon
-		Game::WEAPONS.sample
+	attr_reader :name
+
+	def initialize
+		@name = 'Computer'
 	end
 
+	def computer_choice
+		@choice = Game::WEAPONS.sample
+	end
 
 end

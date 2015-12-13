@@ -11,7 +11,7 @@ describe Player do
 
 	describe '#weapon' do 
 		it 'returns the weapon' do 
-			expect(richard.weapon).to eq 'Rock'
+			expect(richard.choice).to eq 'Rock'
 		end
 	end
 end
