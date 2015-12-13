@@ -13,6 +13,13 @@ describe Game do
     expect(game.player_2).to eq player_2
   end
 
+  describe '#weapons' do
+    it 'holds the weapons used by both players' do
+      game.outcome('rock', 'paper')
+      expect(game.chosen_weapons).to eq ['rock', 'paper']
+    end
+  end
+
   describe '#outome' do
     it 'sets paper as the winner when rock vs. paper' do
       game.outcome('rock', 'paper')

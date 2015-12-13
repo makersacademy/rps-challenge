@@ -20,16 +20,12 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/attack' do
+  post '/result' do
     @game = $game
     @game.player_1.select_weapon(params[:weapon])
-    redirect '/attack'
-  end
-
-  get '/attack' do
-    @game = $game
     @game.player_2.select_weapon(@game.player_2.weapons.sample)
-    erb :attack
+    @game.outcome(@game.player_1.weapon, @game.player_2.weapon)
+    redirect '/result'
   end
 
   get '/result' do
