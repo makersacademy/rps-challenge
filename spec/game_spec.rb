@@ -50,17 +50,17 @@ describe Game do
 
       it 'rock draws against rock' do
         game = Game.new(session, rocker_klass, rocker_klass)
-        expect(game.winner).to eq :draw
+        expect(game).to be_draw
       end
       
       it 'paper draws against paper' do
         game = Game.new(session, paperteer_klass, paperteer_klass)
-        expect(game.winner).to eq :draw
+        expect(game).to be_draw
       end
 
       it 'scissors draws against scissors' do
         game = Game.new(session, scissorcerer_klass, scissorcerer_klass)
-        expect(game.winner).to eq :draw
+        expect(game).to be_draw
       end
     end
   end

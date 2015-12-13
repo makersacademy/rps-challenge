@@ -1,7 +1,7 @@
 <%= game.player1.name %> chose <%= game.player1.choice %>.
 <%= game.player2.name %> chose <%= game.player2.choice %>.
 
-<% if game.winner == :draw %> 
+<% if game.draw? %> 
   It's a draw!
 <% else %>
   The winner is <%= game.winner.name %>!

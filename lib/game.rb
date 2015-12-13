@@ -23,19 +23,23 @@ class Game
     @player2 = opponent_klass.new(session[:name2])
   end
 
-  def play_and_redirect params
-    if params[:chooser] == 'player2'
-      player2.choose params[:shape]
+  def play_and_redirect(chooser, shape)
+    if chooser == 'player2'
+      player2.choose shape
     else
-      player1.choose params[:shape]
-      return '/play' if params[:chooser] == 'player1'
-      player2.choose :_
+      player1.choose shape
+      return '/play' if chooser == 'player1'
+      player2.choose :_random_choice
     end
     '/result'
   end
 
+  def draw?
+    player1.choice == player2.choice
+  end
+
   def winner
-    return :draw if player1.choice == player2.choice
+    fail 'Theres no winner!' if draw?
     player1_wins? ? player1 : player2
   end
 

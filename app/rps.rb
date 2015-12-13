@@ -26,14 +26,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    erb :play, :locals => {:game => current_game}
+    erb :play, :locals => {game: current_game}
   end
 
   post '/choice' do
-    redirect current_game.play_and_redirect(params)
+    chooser = params[:chooser]
+    shape = params[:shape]
+    redirect current_game.play_and_redirect(chooser, shape)
   end
 
   get '/result' do
-    erb :result, :locals => {:game => current_game}
+    erb :result, :locals => {game: current_game}
   end
 end
