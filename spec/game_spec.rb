@@ -6,7 +6,7 @@ describe Game do
   subject(:game) { described_class.new(player1,player2) }
   let(:player_1) { double(:player_1, player_1_move: 'paper')}
   let(:player_2) {double(:player_2, player_2_move:'rock')}
-  
+
   describe '#player_1_move' do
     it 'returns players chosen move' do
       expect(player1).to receive(:move)
@@ -16,8 +16,8 @@ describe Game do
 
   describe '#player_2_move' do
     it "return the computers move" do
-    expect(["rock", "paper", "scissors"]).to include(game.player_2_move)
-  end
+      expect(["rock", "paper", "scissors"]).to include(game.player_2_move)
+    end
   end
 
   describe '#player_1' do

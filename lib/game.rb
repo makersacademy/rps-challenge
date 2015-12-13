@@ -24,15 +24,15 @@ class Game
   end
 
   def winner(player_1_move, player_2_move)
-    return "You drew, try again" if player_1_move == player_2_move
+      "You drew, try again" if player_1_move == player_2_move
   	case player_2_move
   	when "rock"
-  	  return player_wins unless player_1_move == "scissors"
+  	     player_wins unless player_1_move == "scissors"
   	when "paper"
-  	  return player_wins unless player_1_move == "rock"
+  	     player_wins unless player_1_move == "rock"
   	when "scissors"
-  	  return player_wins unless player_1_move == "paper"
+  	     player_wins unless player_1_move == "paper"
   	end
-  	return comp_wins
+  	     comp_wins
   end
 end
