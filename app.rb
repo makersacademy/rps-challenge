@@ -4,12 +4,6 @@ require './lib/player'
 require './lib/computer'
 
 class RPS < Sinatra::Base
-  # helpers do
-  #   def game
-  #       @game ||= $game
-  #   end
-  # end
-
   get '/' do
     erb :index
   end

@@ -7,7 +7,7 @@ end
 def sign_in_and_play_2_players
   visit '/'
   fill_in(:player_name, with: 'Marketeer')
-  fill_in(:opponent_name, with: 'Katie')
+  fill_in(:opponent_name, with: 'Ruby')
   click_button('Submit')
 end
 

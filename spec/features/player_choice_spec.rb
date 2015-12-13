@@ -1,5 +1,5 @@
 feature 'Making a choice' do
-  scenario 'Does not display the results page link before both players have choosen' do
+  scenario 'Does not display the results page link until both players have choosen' do
     sign_in_and_play
     expect(page).to_not have_selector(:link, 'Check who won...')
   end
@@ -14,7 +14,7 @@ feature 'Making a choice' do
     sign_in_and_play_2_players
     click_button('btn_r1')
     click_button('btn_p2')
-    expect(page).to have_content 'Katie has chosen!'
+    expect(page).to have_content 'Ruby has chosen!'
   end
 
   scenario 'Displays that the computer has chosen' do
