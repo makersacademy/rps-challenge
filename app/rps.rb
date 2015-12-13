@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
 
   post '/new-session' do
     session[:name1] = params[:name1] 
-    session[:ai?] = params[:name2] == ''
+    session[:ai?] = params[:name2].empty?
     session[:name2] = session[:ai?] ? 'Computer' : params[:name2]
     redirect '/new-game'
   end
