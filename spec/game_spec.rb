@@ -6,4 +6,8 @@ describe Game do
   it 'returns the name of the participating players' do
     expect(game.players).to eq [:player_1]
   end
+
+  describe '#result' do
+    
+  end
 end
