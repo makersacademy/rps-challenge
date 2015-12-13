@@ -9,7 +9,7 @@ require 'rspec'
 require 'byebug'
 require 'capybara/rspec'
 require 'selenium-webdriver'
-require File.join(File.dirname(__FILE__), '..', 'lib/rps.rb')
+require File.join(File.dirname(__FILE__), '..', 'rps.rb')
 include Capybara::DSL
 #Capybara.default_driver= :selenium
 
