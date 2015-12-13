@@ -24,29 +24,16 @@ class Game
   end
 
   def add_choice(chooser, shape)
-    if chooser == 'player1'
-      player1.choose shape
-    elsif chooser == 'player2'
-      player2.choose shape
+    if chooser == 'player2'
+      player2.chooser shape
     else
       player1.choose shape
-      player2.choose :_random_choice
+      player2.choose :_random_choice if player2.computer?
     end
   end
 
   def player2_turn?
     !player2.choice
-  end
-
-  def play_and_redirect(chooser, shape)
-    if chooser == 'player2'
-      player2.choose shape
-    else
-      player1.choose shape
-      return '/play' if chooser == 'player1'
-      player2.choose :_random_choice
-    end
-    '/result'
   end
 
   def draw?
