@@ -42,6 +42,12 @@ class RockPaperScissors < Sinatra::Base
     redirect '/result'
   end
 
+  post '/human' do
+    @game = $game
+    @game.player_2.choose_weapon(params[:weapon])
+    redirect '/result'
+  end
+
   get '/result' do
     @game = $game
     @game.outcome

@@ -1,4 +1,5 @@
-Computer chose <%= @game.player_2.weapon.downcase %>.
+<%= @game.player_1.name %> chose <%= @game.player_1.weapon.downcase %>.
+<%= @game.player_2.name %> chose <%= @game.player_2.weapon.downcase %>.
   <% if @game.winner == "None" && @game.loser == "None" %>
     <p>It's a tie!</p>
   <% else %>

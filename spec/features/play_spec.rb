@@ -3,25 +3,32 @@ describe 'User Stories - Play' do
   # So that I can enjoy myself away from the daily grind
   # I would like to be able to play rock/paper/scissors
   feature 'choose Rock, Paper or Scissors' do
-    scenario 'choose Rock' do
+    scenario 'play computer and choose Rock' do
       sign_in_and_play_computer
       click_button 'Rock'
       expect(page).to have_content('You chose rock. What will computer choose?')
       click_button "Let's find out..."
     end
 
-    scenario 'choose Paper' do
+    scenario 'play computer and choose Paper' do
       sign_in_and_play_computer
       click_button 'Paper'
       expect(page).to have_content('You chose paper. What will computer choose?')
       click_button "Let's find out..."
     end
 
-    scenario 'choose Scissors' do
+    scenario 'play computer and choose Scissors' do
       sign_in_and_play_computer
       click_button 'Scissors'
       expect(page).to have_content('You chose scissors. What will computer choose?')
       click_button "Let's find out..."
+    end
+
+    scenario 'Player 1 chooses Rock. Player 2 chooses Scissors' do
+      sign_in_and_play_human
+      click_button 'Rock'
+      expect(page).to have_content("It's Tobit's turn.")
+      click_button "Scissors"
     end
   end
 
@@ -91,8 +98,8 @@ describe 'User Stories - Play' do
     end
   end
 
-  feature 'after seeing the outcome, player can play again' do
-    scenario do
+  feature 'after seeing the outcome' do
+    scenario 'player can play again' do
       sign_in_and_play_computer
       srand(1)
       choose_scissors

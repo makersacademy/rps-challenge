@@ -32,6 +32,6 @@ class Game
   private
 
   def complete_weapons?
-    self.weapons.include?nil
+    self.weapons.include? nil
   end
 end

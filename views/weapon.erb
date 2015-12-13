@@ -1,6 +1,19 @@
-<h3>You chose <%= @game.player_1.weapon.downcase %>. What will computer choose?</h3>
-<p>
-  <form action='/computer' method="post">
-    <input type="submit" value="Let's find out...">
-  </form>
-</p>
+<% if @game.player_2.computer %>
+  <h3>You chose <%= @game.player_1.weapon.downcase %>.
+    What will computer choose?</h3>
+    <p>
+      <form action='/computer' method="post">
+        <input type="submit" value="Let's find out...">
+      </form>
+    </p>
+<% else %>
+  <h2>It's <%= @game.player_2.name %>'s turn.</h2>
+  <h3> Choose your weapon: </h3>
+  <p>
+    <form action="/human" method="post">
+      <p><input type="submit" name="weapon" value="Rock"></p>
+      <p><input type="submit" name="weapon" value="Paper"></p>
+      <p><input type="submit" name="weapon" value="Scissors"></p>
+    </form>
+  </p>
+<% end %>
