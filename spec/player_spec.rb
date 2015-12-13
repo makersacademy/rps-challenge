@@ -1,7 +1,6 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new('Gareth')}
   subject(:player1) { described_class.new('Gareth') }
   subject(:player2) { described_class.new('Computer') }
 
@@ -12,7 +11,7 @@ describe Player do
 
   describe '#move' do
     it 'returns players move' do
-      expect(player.move('rock')).to eq 'rock'
+      expect(player1.move('rock')).to eq 'rock'
     end
   end
 end

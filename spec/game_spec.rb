@@ -7,6 +7,16 @@ describe Game do
   let(:player_1) { double(:player_1, player_1_move: 'paper')}
   let(:player_2) {double(:player_2, player_2_move:'rock')}
 
+  context 'players name is stored' do
+    it 'returns player 1s name' do
+      expect(game.player_1).to eq player1
+    end
+
+    it 'returns player 2s name' do
+      expect(game.player_2).to eq player2
+    end
+  end
+
   describe '#player_1_move' do
     it 'returns players chosen move' do
       expect(player1).to receive(:move)
@@ -29,10 +39,6 @@ describe Game do
   describe '#winner' do
     it 'returns who won' do
       expect(game.winner(player_1,player_2)).to eq "Ahh unlucky the Computer beat you!"
-    end
-
-    it "allows the player to win" do
-      expect(subject.winner("paper", "rock")).to eq "Congratulations Gareth, you win!"
     end
 
     it "allows the computer to win" do
