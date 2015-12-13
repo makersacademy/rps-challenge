@@ -8,7 +8,7 @@ To start the program, simply run '$ rackup' and visit http://localhost:9292/ in 
 
 If you are testing the program, Capybara is used to test the interface. If you wish to see this in action you can enable selenium-webdriver by activating line 14 of the spec helper file.
 
-Thansks,
+Thanks,
 
 Chris
 
