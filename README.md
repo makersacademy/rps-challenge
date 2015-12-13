@@ -1,3 +1,24 @@
+# RPS Challenge
+This project allows users to play a classic game of rock, papper scissors against the computer.
+
+Users can sign in to play, once signed in they are presented with the options of rock, paper or scissors.
+Once they have selected one they are presented with the result of the match, the computer makes its choice by randomly selecting from an array of the same choices. 
+
+The project is tested using Rspec and Capybara.
+To use this project:
+  In the command line run the following
+  $ git clone git@github.com:gareth4192/rps-challenge.git
+  $ cd rps-challenge
+  $ bundle
+  $ ruby app.rb 
+  Then follow on screen instructions.
+
+Technologies used in this project:
+Sinatra web framework, Ruby, Css + HTML
+
+The Instructions for the challenge are below.
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
