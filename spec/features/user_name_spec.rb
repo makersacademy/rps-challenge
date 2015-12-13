@@ -5,9 +5,7 @@ feature 'Enter user names' do
     # So that I can see my name in lights
     # I would like to register my name before playing an online game
 
-    visit '/'
-    fill_in(:player_1_name, with: 'Tom')
-    click_button 'Play!'
+    sign_in_and_play
     expect(page).to have_content 'Welcome to RPS, Tom!'
   end
 end
