@@ -26,6 +26,31 @@ feature 'Game Outcomes' do
   end
 
   context 'while playing in a duo' do
+    scenario 'when p2 wins, it should say so' do
+      two_player_login
+      choose 'Rock'
+      click_button 'Change Turns!'
+      choose 'Paper'
+      click_button 'Play!'
+      expect(page).to have_content 'The victor is Lach'
+    end
 
+    scenario 'when p1 wins, it should say so' do
+      two_player_login
+      choose 'Paper'
+      click_button 'Change Turns!'
+      choose 'Rock'
+      click_button 'Play!'
+      expect(page).to have_content 'The victor is Michael'
+    end
+
+    scenario 'when we draw, it should say so' do
+      two_player_login
+      choose 'Scissors'
+      click_button 'Change Turns!'
+      choose 'Scissors'
+      click_button 'Play!'
+      expect(page).to have_content 'a draw'
+    end
   end
 end
