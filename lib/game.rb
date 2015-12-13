@@ -25,7 +25,7 @@ class Game
 
   def add_choice(chooser, shape)
     if chooser == 'player2'
-      player2.chooser shape
+      player2.choose shape
     else
       player1.choose shape
       player2.choose if player2.computer?
