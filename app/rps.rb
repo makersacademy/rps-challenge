@@ -31,13 +31,11 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    current_game.play params
-    redirect '/play' if params[:chooser] == 'player1'
-    redirect '/winner'
+    redirect current_game.play_and_redirect(params)
   end
 
-  get '/winner' do
+  get '/result' do
     @game = current_game
-    erb :winner
+    erb :result
   end
 end
