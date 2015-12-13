@@ -11,7 +11,8 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/play'
   end
 
