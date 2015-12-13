@@ -2,19 +2,7 @@ class Game
   RULES = { rock: :scissors, 
             paper: :rock, 
             scissors: :paper }
-
-  def self.add(id, game)
-    games[id] = game
-  end
-
-  def self.find(id)
-    games[id]
-  end
   
-  def self.games
-    @games ||= {}
-  end
-
   attr_reader :player1, :player2
 
   def initialize(session, human_klass, computer_klass)
