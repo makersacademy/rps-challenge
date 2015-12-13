@@ -20,3 +20,33 @@ body {
   font-size: 30px;
   color: white;
 }
+
+#link {
+  font-family: inherit;
+  font-size: 20px;
+  color: #eb172f;
+}
+
+#rock    {
+  background:url("./images/rock.png");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
+
+#paper    {
+  background:url("./images/paper.jpeg");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
+
+#scissors   {
+  background:url("./images/scissors.png");
+  background-repeat: no-repeat;
+  width:  150px;
+  height: 150px;
+  border: 0;
+}
