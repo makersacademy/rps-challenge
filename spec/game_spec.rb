@@ -19,7 +19,7 @@ describe Game do
       expect(["rock", "paper", "scissors"]).to include(game.player_2_move)
     end
   end
-
+  
   describe '#player_1' do
     it 'returns the player' do
       expect(game.player_1).to eq player1
@@ -34,13 +34,14 @@ describe Game do
 
   describe '#winner' do
     it 'returns who won' do
-        expect(game.winner(player_1,player_2)).
-        to eq "Ahh unlucky the Computer beat you!"
+      expect(game.winner(player_1,player_2)).
+      to eq "Ahh unlucky the Computer beat you!"
     end
 
     it "allows the computer to win" do
-        expect(subject.winner("rock", "paper")).
-        to eq "Ahh unlucky the Computer beat you!"
+      allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+      expect(subject.winner(player_1,player_2 )).
+      to eq "Ahh unlucky the Computer beat you!"
     end
 
   end
