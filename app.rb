@@ -10,17 +10,17 @@ class Rps < Sinatra::Base
     erb :index
   end
 
- 	post '/name_and_weapon' do 
- 		player = Player.new(params[:name],params[:choice])
- 		computer = Computer.new
- 		$game = Game.new(player, computer)
+ 	post '/name_and_weapon' do
+ 		$player = Player.new(params[:name],params[:choice])
+ 		$computer = Computer.new
+ 		$game = Game.new($player.choice, $computer.computer_choice)
  		redirect '/game'
  	end
 
  	get '/game' do
- 		@player = $game.player.name
- 		@choice = $game.player.choice
- 		@computer_choice = $game.computer.computer_choice
+ 		@player = $player.name
+ 		@choice = $game.player_choice
+ 		@computer_choice = $game.computer_choice
  		@game = $game
  		erb :game
  	end
@@ -28,7 +28,7 @@ class Rps < Sinatra::Base
 
 
 
- 
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

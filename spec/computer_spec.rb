@@ -6,7 +6,7 @@ describe Computer do
 	describe '#choose_weapon' do
 		it 'gets a random weapon from the WEAPONS array' do
 			expect(Game::WEAPONS).to receive(:sample)
-			computer.computer_choice 
-		end 
+			computer.computer_choice
+		end
 	end
 end

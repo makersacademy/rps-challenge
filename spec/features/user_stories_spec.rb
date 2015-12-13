@@ -3,7 +3,7 @@
 describe 'User Stories' do
 
 feature 'enter name' do
-	scenario 'submitting and displaying name' do 
+	scenario 'submitting and displaying name' do
 		sign_in_and_play
 		expect(page).to have_content 'Dave'
 	end

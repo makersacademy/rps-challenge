@@ -1,4 +1,4 @@
-require_relative 'game'
+
 
 class Computer
 	attr_reader :name
@@ -8,7 +8,7 @@ class Computer
 	end
 
 	def computer_choice
-		@choice = Game::WEAPONS.sample
+		Game::WEAPONS.sample
 	end
 
 end
