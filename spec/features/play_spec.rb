@@ -8,8 +8,24 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'Play game' do
-  scenario 'selects rock' do
-    sign_in_and_play
-    click_button("Rock")
-  end
+  # scenario 'selects rock' do
+  #   allow(Array).to receive(:sample).and_return(:scissors)
+  #   sign_in_and_play
+  #   click_button("rock")
+  #   expect(page).to have_content("Win")
+  # end
+  #
+  # scenario 'selects rock' do
+  #   allow(Array).to receive(:sample).and_return(:scissors)
+  #   sign_in_and_play
+  #   click_button("rock")
+  #   expect(page).to have_content("Win")
+  # end
+  #
+  # scenario 'selects rock' do
+  #   allow(Array).to receive(:sample).and_return(:scissors)
+  #   sign_in_and_play
+  #   click_button("rock")
+  #   expect(page).to have_content("Win")
+  # end
 end
