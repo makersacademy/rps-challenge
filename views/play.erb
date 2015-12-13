@@ -6,6 +6,7 @@
       </div>
     </div><!--
   --><div class="col-md-4 vcenter">
+    <h2><%= game.current_turn_name %>'s turn</h2>
       <form action="/process" method="post">
         <input type="hidden" name="element" value="rock">
         <input class="btn btn-default" type="submit" value="ROCK">

@@ -19,3 +19,10 @@ feature 'Shows playing buttons' do
     expect(page).to have_selector(:link_or_button, 'SCISSORS')
   end
 end
+
+feature 'Shows Turns' do
+  scenario 'shows the name of the current turn player' do
+    sign_in_and_play
+    expect(page).to have_content 'Jon\'s turn'
+  end
+end
