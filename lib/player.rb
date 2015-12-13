@@ -17,6 +17,10 @@ class Player
     "#{name} chose #{element}"
   end
 
+  def reset
+    @element = nil
+  end
+
   private
 
   def valid_element?(element)

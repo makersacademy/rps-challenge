@@ -33,6 +33,12 @@ class Game
     play if current_turn.is_computer?
   end
 
+  def reset
+    players.each(&:reset)
+    @message = ''
+    @current_turn = players[0]
+  end
+
   private
 
   def result

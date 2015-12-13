@@ -16,6 +16,11 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
+  post '/play-the-same-game' do
+    game.reset
+    redirect '/play'
+  end
+
   get '/play' do
     game
     erb :play

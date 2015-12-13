@@ -42,7 +42,6 @@ describe Game do
       allow(player1).to receive(:assign_element).and_return 'name1 chose rock'
     end
     it 'adds a string of last player assignment element to message' do
-      allow(player1).to receive(:assign_element).and_return 'name1 chose rock'
       msg = 'name1 chose rock<br>'
       game.play('rock')
       expect(game.message).to eq msg
@@ -85,6 +84,38 @@ describe Game do
             game.play('rock')
           end
         end
+      end
+    end
+  end
+  context 'after a game' do
+    before do
+      allow(player1).to receive(:element).and_return('rock')
+      allow(player2).to receive(:element)
+      allow(player1).to receive(:assign_element).and_return 'name1 chose rock'
+      game.play('rock')
+      allow(player2).to receive(:element).and_return('rock')
+      allow(player2).to receive(:assign_element).and_return 'name2 chose rock'
+      game.play('rock')
+    end
+    describe '#reset' do
+      before do
+        allow(player1).to receive(:reset)
+        allow(player2).to receive(:reset)
+        game.reset
+      end
+      it 'send the message reset to player 1' do
+        expect(player1).to receive(:reset)
+        game.reset
+      end
+      it 'send the message reset to player 2' do
+        expect(player2).to receive(:reset)
+        game.reset
+      end
+      it 'set the message to an empty string' do
+        expect(game.message).to eq ''
+      end
+      it 'set the current turn player to player1' do
+        expect(game.current_turn).to eq player1
       end
     end
   end

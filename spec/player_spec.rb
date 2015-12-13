@@ -10,6 +10,13 @@ describe Player do
       expect(player.is_computer?).to be false
     end
   end
+  describe '#reset' do
+    it 'reset the element chosen by the player' do
+      player.assign_element('rock')
+      player.reset
+      expect(player.element).to be nil
+    end
+  end
   describe '#assign_element' do
     it 'set the element chosen by the player' do
       player.assign_element('rock')

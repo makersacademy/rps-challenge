@@ -46,3 +46,30 @@ feature 'Feedback Messages' do
     expect(page).to have_content msg
   end
 end
+
+feature 'Shows play again buttons' do
+  before do
+    sign_in_and_play
+    click_button('ROCK')
+  end
+  scenario 'shows the play the same game button' do
+    expect(page).to have_selector(:link_or_button, 'PLAY THE SAME GAME')
+  end
+  scenario 'shows the play another game button' do
+    expect(page).to have_selector(:link_or_button, 'PLAY ANOTHER GAME')
+  end
+end
+
+feature 'Clicking play the same game' do
+  before do
+    sign_in_and_play
+    click_button('ROCK')
+    click_button('PLAY THE SAME GAME')
+  end
+  scenario 'shows the player 1 name again' do
+    expect(page).to have_content 'Jon'
+  end
+  scenario 'shows the player 2 name again' do
+    expect(page).to have_content 'Computer'
+  end
+end
