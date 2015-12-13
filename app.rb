@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/player'
+require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Application
   enable :sessions
@@ -47,6 +49,5 @@ class RPS < Sinatra::Application
     erb :result
   end
 
-
-run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

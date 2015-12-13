@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+  background-image: url("symphony.png");
+}
+
+/* Background pattern from subtlepatterns.com */
+
+h1 {
+  color:rgb(100,10,10);
+  background-color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main_title {
+  font-family: cursive;
+}
+
+li{
+  display: inline;
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: white;
+}
+
+form{
+  padding-bottom: 2%
+}
+
+#rock{
+  margin-bottom: 2%
+}
