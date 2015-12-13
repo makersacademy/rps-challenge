@@ -1,3 +1,6 @@
-The victor is <%= @game.p2_name %> with <%= @game.p2_choice %>! It must suck to be <%= @game.p1_name %> after they chose <%= @game.p1_choice %>.
+<section class='results col-md-8 col-md-offset-2'>
+  <h1>The victor is <%= @game.p2_name %> with <%= @game.p2_choice %>!</h1>
+  <h2>It must suck to be <%= @game.p1_name %> after they chose <%= @game.p1_choice %>.</h2>
 
-<a href='/play'>Want to play again?</a>
+  <a href='/play' class='btn btn-danger'>Want to play again?</a>
+</section>

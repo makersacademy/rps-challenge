@@ -1,9 +1,15 @@
-<%= @game.p1_name %> vs. <%= @game.p2_name %>
+<h1><%= @game.p1_name %> vs. <%= @game.p2_name %></h1>
 
-<%= @game.p2_name %>'s Turn
+<h2><%= @game.p2_name %>'s Turn</h2>
 
-<form action='/p2_choose' method='post'>
-  <%= erb :selections %>
+<section class='player_1 well col-md-4 col-md-offset-1'>
+  <i class="fa fa-hand-o-left massive"></i>
+</section>
 
-  <input type='submit' value='Play!' class='btn btn-primary'>
-</form>
+<section class='player_1 well col-md-4 col-md-offset-7'>
+  <form action='/p2_choose' method='post'>
+    <%= erb :selections %>
+
+    <input type='submit' value='Play!' class='btn btn-primary'>
+  </form>
+</section>

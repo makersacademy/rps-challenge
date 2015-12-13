@@ -1,3 +1,6 @@
-The victor is <%= @game.p1_name %> with <%= @game.p1_choice %>! <%= @game.p2_name %> got trounced after choosing <%= @game.p2_choice %>.
+<section class='results col-md-8 col-md-offset-2'>
+  <h1>The victor is <%= @game.p1_name %> with <%= @game.p1_choice %>!</h1>
+  <h2><%= @game.p2_name %> got trounced after choosing <%= @game.p2_choice %>.</h2>
 
-<a href='/play'>Want to play again?</a>
+  <a href='/play' class='btn btn-danger'>Want to play again?</a>
+</section>

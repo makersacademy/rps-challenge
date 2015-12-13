@@ -5,7 +5,8 @@ main {
 }
 
 h2 {
-  margin-top: 40px
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .login {
@@ -15,7 +16,6 @@ h2 {
 
 .login h2 {
   margin-top: 10px;
-  margin-bottom: 40px;
 }
 
 .login .form-control {
@@ -29,7 +29,6 @@ h2 {
 }
 
 .well {
-  margin-top: 40px;
   background-color: #fcfdad;
 }
 
@@ -41,4 +40,13 @@ h2 {
 .play-line label {
   font-size: 35px;
   margin-right: 2px;
+}
+
+.massive {
+  font-size: 200px;
+}
+
+.results {
+  top: 50vh;
+  transform: translateY(-50%);
 }
