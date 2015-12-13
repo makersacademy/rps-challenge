@@ -28,7 +28,7 @@ class Game
       player2.chooser shape
     else
       player1.choose shape
-      player2.choose :_random_choice if player2.computer?
+      player2.choose if player2.computer?
     end
   end
 
