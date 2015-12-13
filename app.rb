@@ -4,6 +4,11 @@ require './lib/player'
 require './lib/computer'
 
 class RPS < Sinatra::Base
+  # helpers do
+  #   def game
+  #       @game ||= $game
+  #   end
+  # end
 
   get '/' do
     erb :index
@@ -11,7 +16,13 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    opponent = Computer.new
+
+    if params[:opponent_name] == ''
+      opponent = Computer.new
+    else
+      opponent = Player.new(params[:opponent_name])
+    end
+
     $game = Game.new(player, opponent)
     redirect '/play'
   end
@@ -25,8 +36,12 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    $game.player.choice = params[:player_choice]
-    $game.opponent.make_choice
+    $game.player.choice ||= params[:player_choice]
+    if $game.human_opponent?
+      $game.opponent.choice = params[:opponent_choice]
+    else
+      $game.opponent.make_choice
+    end
     redirect '/play'
   end
 

@@ -12,6 +12,10 @@ class Game
     @opponent = computer_klass
   end
 
+  def human_opponent?
+    !opponent.respond_to?(:make_choice)
+  end
+
   def winner(player, opponent)
     results_code = RESULT[player.choice][opponent.choice]
     return "It's a draw" if results_code == 0

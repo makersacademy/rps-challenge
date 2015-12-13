@@ -13,6 +13,10 @@ describe Game do
     expect(game.opponent).to eq opponent
   end
 
+  # it 'knows whether the opponent is a Player or Computer' do
+  #   expect(game.human_opponent?).to be false
+  # end
+
   context 'Player wins' do
     it 'returns the player name' do
       allow(opponent).to receive(:choice) { 'Scissors' }
