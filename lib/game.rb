@@ -14,17 +14,20 @@ class Game
   RULES = { rock: :scissors,
             paper: :rock,
             scissors: :paper }
-            
+
+  # def outcome
+  #
+  # end
   def outcome
     @weapons.push(self.player_1.weapon, self.player_2.weapon)
     fail "Can't play: Two weapons need to be selected." if complete_weapons?
-    if weapons.include?("Rock") && weapons.include?("Paper")
+    if weapons.include?(:rock) && weapons.include?(:paper)
       @winner = "Paper"
       @loser = "Rock"
-    elsif weapons.include?("Rock") && weapons.include?("Scissors")
+    elsif weapons.include?(:rock) && weapons.include?(:scissors)
       @winner = "Rock"
       @loser = "Scissors"
-    elsif weapons.include?("Paper") && weapons.include?("Scissors")
+    elsif weapons.include?(:paper) && weapons.include?(:scissors)
       @winner = "Scissors"
       @loser = "Paper"
     else

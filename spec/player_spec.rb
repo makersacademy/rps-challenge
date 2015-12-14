@@ -14,7 +14,7 @@ describe Player do
     context "when it's player 1's turn" do
       it "returns the player's weapon of choice" do
         player_1.choose_weapon("Rock")
-        expect(player_1.weapon).to eq "Rock"
+        expect(player_1.weapon).to eq :rock
       end
     end
 
@@ -22,7 +22,7 @@ describe Player do
       it "returns the computer's weapon of choice" do
         allow(Kernel).to receive(:rand) { 1 }
         computer.computer_chooses_weapon
-        expect(computer.weapon).to eq "Paper"
+        expect(computer.weapon).to eq :paper
       end
     end
 
