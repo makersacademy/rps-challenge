@@ -16,7 +16,7 @@ class Game
   end
 
   def turn_message
-    @turn == nil ? 'Welcome!' : @turn.message
+    @turn.message if @turn
   end
 
   def play_turn(weapon1, weapon2 = nil)

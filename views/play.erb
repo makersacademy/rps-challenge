@@ -2,8 +2,7 @@
   <h3><%= @game.player1.name %></h3>
   <p><span class="score"><%= @game.player1.score  %></span>/3</p>
   <% if @game.turn %>
-    <img src="" alt="" width="200px" height="200px">
-    <h5> <%= @game.player1_weapon %> </h5>
+    <%= "<img src='/images/"+@game.player1_weapon.to_s.downcase+".png' alt='weapon'>" %>
   <% end %>
 </section>
 <section class=message>
@@ -12,18 +11,23 @@
       <form action="/" method="get">
         <input type="submit" value="Play again">
       </form>
-    <% else %>
+    <% elsif @game.turn_message %>
       <h3><%= @game.turn_message %></h3>
       <form action="/weapons" method="get">
-        <input type="submit" value="Pick weapon">
+        <input type="submit" value="Next turn >">
       </form>
+      <% else %>
+        <h3>Welcome!</h3>
+        <p>Play Scissors/Paper/Rock against your computer</p>
+        <form action="/weapons" method="get">
+          <input type="submit" value="Get started >">
+        </form>
     <% end %>
 </section>
 <section class=player>
   <h3><%= @game.player2.name %></h3>
   <p><span class="score"><%= @game.player2.score  %></span>/3</p>
   <% if @game.turn %>
-    <img src="" alt="" width="200px" height="200px">
-    <h5> <%= @game.player2_weapon %> </h5>
+    <%= "<img src='/images/"+@game.player2_weapon.to_s.downcase+"_dx.png' alt='weapon'>" %>
   <% end %>
 </section>

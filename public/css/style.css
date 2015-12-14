@@ -1,6 +1,10 @@
-body {
-  margin: 0 auto;
+html, body {
+  margin: 0;
   padding: 0;
+}
+
+
+body {
   font-family: 'Cabin', sans-serif;
   font-size: 2em;
   color: #021067;
@@ -8,12 +12,22 @@ body {
 
 section {
   text-align: center;
+  height:100vh;
   width: 100%;
   float: left;
 }
 
 .player {
   width: 40%;
+}
+
+.overlay {
+  background-color: #021067;
+  color: white;
+}
+
+section.player img {
+  width: 100%;
 }
 
 .message {
@@ -39,9 +53,14 @@ input[type=submit] {
     border-radius: 5px;
 }
 
+input[type=submit]:hover {
+    background:#cb2152;
+}
+
 input[type="text"] {
   font-family: 'Cabin', sans-serif;
   font-size: 1em;
+  text-align: center;
   color: #021067;
   padding: 10px;
   width: 300px;

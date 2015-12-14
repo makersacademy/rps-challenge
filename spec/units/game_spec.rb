@@ -4,7 +4,7 @@ describe Game do
 
   let(:player1) { double(:player1, name: 'John', selection: 'Paper', score_up: 'Points increased') }
   let(:player2) { double(:player2, name: 'Computer', selection: 'Rock', score_up: 'Points increased') }
-  let(:turn) { double(:turn, play: 666, winner: :player1) }
+  let(:turn) { double(:turn, play: 666, winner: :player1, message: 'You won!') }
   let(:turn_klass) { double(:turn_klass, new: turn)}
   subject(:game) { described_class.new(player1, player2, turn_klass) }
 
@@ -13,9 +13,10 @@ describe Game do
     allow(player2).to receive(:selection=)
   end
 
-  describe '#message' do
-    it 'returns the welcome message at start' do
-      expect(game.turn_message).to eq 'Welcome!'
+  describe '#turn_message' do
+    it 'returns the message after each turn' do
+      game.play_turn('Paper')
+      expect(game.turn_message).to eq 'You won!'
     end
   end
 
