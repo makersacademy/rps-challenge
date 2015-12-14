@@ -31,13 +31,13 @@ class Game
 
 
   def make_choice
-    random_number = Kernel.rand(15)
-    return "ROCK!" if (0..2).include? random_number
-    return "PAPER!" if (3..5).include? random_number
-    return "SCISSORS!" if (6..8).include? random_number
-    return "SPOCK!" if (9..11).include? random_number
-    return "LIZARD!" if (12..14).include? random_number
-
+    # random_number = Kernel.rand(15)
+    # return "ROCK!" if (0..2).include? random_number
+    # return "PAPER!" if (3..5).include? random_number
+    # return "SCISSORS!" if (6..8).include? random_number
+    # return "SPOCK!" if (9..11).include? random_number
+    # return "LIZARD!" if (12..14).include? random_number
+    ["ROCK!", "PAPER!", "SCISSORS!", "SPOCK!", "LIZARD!"].sample
   end
 
   def converted_to_symbol(player_choice)

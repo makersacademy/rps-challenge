@@ -12,7 +12,7 @@ describe Game do
   describe '#initialize' do
 
     it 'sets player 2 choice (for computer) by default' do
-      allow(Kernel).to receive(:rand).and_return(1)
+      allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
       expect(game.player2_choice).to eq :rock
     end
 
@@ -31,27 +31,27 @@ describe Game do
     context 'player choses rock' do
 
       it 'computer choses rock' do
-        allow(Kernel).to receive(:rand).and_return(1)
+        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
         expect(game.winner).to eq :draw
       end
 
       it 'computer choses paper' do
-        allow(Kernel).to receive(:rand).and_return(4)
+        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
         expect(game.winner).to eq :lose
       end
 
       it 'computer choses scissors' do
-        allow(Kernel).to receive(:rand).and_return(7)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
         expect(game.winner).to eq :win
       end
 
       it 'computer choses Spock' do
-        allow(Kernel).to receive(:rand).and_return(10)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
         expect(game.winner).to eq :lose
       end
 
       it 'computer choses lizard' do
-        allow(Kernel).to receive(:rand).and_return(13)
+        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
         expect(game.winner).to eq :win
       end
 
@@ -60,27 +60,27 @@ describe Game do
     context 'player choses paper' do
 
       it 'computer choses rock' do
-        allow(Kernel).to receive(:rand).and_return(1)
+        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
         expect(player_chooses_paper.winner).to eq :win
       end
 
       it 'computer choses paper' do
-        allow(Kernel).to receive(:rand).and_return(4)
+        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
         expect(player_chooses_paper.winner).to eq :draw
       end
 
       it 'computer choses scissors' do
-        allow(Kernel).to receive(:rand).and_return(7)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
         expect(player_chooses_paper.winner).to eq :lose
       end
 
       it 'computer choses Spock' do
-        allow(Kernel).to receive(:rand).and_return(10)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
         expect(player_chooses_paper.winner).to eq :win
       end
 
       it 'computer choses lizard' do
-        allow(Kernel).to receive(:rand).and_return(13)
+        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
         expect(player_chooses_paper.winner).to eq :lose
       end
 
@@ -89,27 +89,27 @@ describe Game do
     context 'player choses scissors' do
 
       it 'computer choses rock' do
-        allow(Kernel).to receive(:rand).and_return(1)
+        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
         expect(player_chooses_scissors.winner).to eq :lose
       end
 
       it 'computer choses paper' do
-        allow(Kernel).to receive(:rand).and_return(4)
+        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
         expect(player_chooses_scissors.winner).to eq :win
       end
 
       it 'computer choses scissors' do
-        allow(Kernel).to receive(:rand).and_return(7)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
         expect(player_chooses_scissors.winner).to eq :draw
       end
 
       it 'computer choses Spock' do
-        allow(Kernel).to receive(:rand).and_return(10)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
         expect(player_chooses_scissors.winner).to eq :lose
       end
 
       it 'computer choses lizard' do
-        allow(Kernel).to receive(:rand).and_return(13)
+        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
         expect(player_chooses_scissors.winner).to eq :win
       end
 
@@ -118,27 +118,27 @@ describe Game do
     context 'player choses Spock' do
 
       it 'computer choses rock' do
-        allow(Kernel).to receive(:rand).and_return(1)
+        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
         expect(player_chooses_spock.winner).to eq :win
       end
 
       it 'computer choses paper' do
-        allow(Kernel).to receive(:rand).and_return(4)
+        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
         expect(player_chooses_spock.winner).to eq :lose
       end
 
       it 'computer choses scissors' do
-        allow(Kernel).to receive(:rand).and_return(7)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
         expect(player_chooses_spock.winner).to eq :win
       end
 
       it 'computer choses Spock' do
-        allow(Kernel).to receive(:rand).and_return(10)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
         expect(player_chooses_spock.winner).to eq :draw
       end
 
       it 'computer choses lizard' do
-        allow(Kernel).to receive(:rand).and_return(13)
+        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
         expect(player_chooses_spock.winner).to eq :lose
       end
 
@@ -147,27 +147,27 @@ describe Game do
     context 'player choses lizard' do
 
       it 'computer choses rock' do
-        allow(Kernel).to receive(:rand).and_return(1)
+        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
         expect(player_chooses_lizard.winner).to eq :lose
       end
 
       it 'computer choses paper' do
-        allow(Kernel).to receive(:rand).and_return(4)
+        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
         expect(player_chooses_lizard.winner).to eq :win
       end
 
       it 'computer choses scissors' do
-        allow(Kernel).to receive(:rand).and_return(7)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
         expect(player_chooses_lizard.winner).to eq :lose
       end
 
       it 'computer choses Spock' do
-        allow(Kernel).to receive(:rand).and_return(10)
+        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
         expect(player_chooses_lizard.winner).to eq :win
       end
 
       it 'computer choses lizard' do
-        allow(Kernel).to receive(:rand).and_return(13)
+        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
         expect(player_chooses_lizard.winner).to eq :draw
       end
 
