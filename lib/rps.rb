@@ -1,4 +1,4 @@
-class Game
+class RPS
 
 attr_reader :win, :draw, :computer, :player
 #1 = rock
@@ -10,7 +10,7 @@ def initialize(player)
 end
 
   def compute
-    @computer = rand(1..3)
+    @computer = 3
   end
 
   def rock

@@ -1,0 +1,11 @@
+<% if @game.p1_win == true %>
+<%= @game.player_1 %> WINS!
+<% elsif @game.draw == true %>
+ITS A DRAW!
+<% elsif @game.p1_win == false %>
+<%= @game.player_2 %> WINS!
+<% end %>
+<br><br><br>
+<form action="/">
+  <input type="submit" value="Play again?">
+</form>
