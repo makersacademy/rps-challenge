@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <% if game.result == :win %>
+  You chose <%= game.player_1_weapon %>. The computer chose <%= game.player_2_weapon %>
+  <% if game.draw? == true %>
+    It's a draw!
+  <% elsif game.result == :win %>
     Congratulations, you win!
-  <% elsif game.result == :lose %>
-    Bad luck, the computer won!
+  <% else %>
+    Bad luck, you lose!
   <% end %>
+  <form action="/" method="get">
+    <input type="submit" value="Play again?">
+  </form>
 </body>
 </html>

@@ -2,13 +2,13 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
+  extend Forwardable
+
   WEAPONS = [:rock, :paper, :scissors]
 
   RULES = { rock: :scissors,
             paper: :rock,
             scissors: :paper }
-
-  extend Forwardable
 
   def_delegator :player_1, :name, :player_1_name
 
@@ -27,15 +27,21 @@ class Game
     @players[1]
   end
 
+  def draw?
+    player_1_weapon == player_2_weapon
+  end
+
+  def result
+    RULES.assoc(player_1_weapon) == [player_1_weapon, player_2_weapon] ? :win : :lose
+  end
+
+  private
+
   def player_1_weapon
     player_1.weapon_choice
   end
 
   def player_2_weapon
     player_2.weapon_choice
-  end
-
-  def result
-    RULES[player_1_weapon][player_2_weapon] ? :win : :lose
   end
 end

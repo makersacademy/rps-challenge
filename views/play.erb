@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
   <h1>Welcome to RPS, <%= game.player_1_name %>!</h1>
   <h2>Please enter your preferred weapon: Rock Paper or Scissors</h2>
-  <form id="weapon" action="/weapon" method="post">
+  <form id="weapon" action="/selection" method="post">
     <input type="radio" name="weapon" value='<%= @weapon_1 = game.weapons[0] %>' checked><%= @weapon_1.capitalize %><br/>
     <input type="radio" name="weapon" value='<%= @weapon_2 = game.weapons[1] %>' ><%= @weapon_2.capitalize %><br/>
     <input type="radio" name="weapon" value='<%= @weapon_3 = game.weapons[2] %>' ><%= @weapon_3.capitalize %><br/>

@@ -2,11 +2,11 @@ class Computer
 
   attr_reader :weapon_choice
 
-  def initialize(weapon_selection = Game::WEAPONS)
-    @weapon_selection = weapon_selection
+  def initialize(weapons_selection = Game::WEAPONS)
+    @weapons_selection = weapons_selection
   end
 
   def choose_weapon
-    @weapon_choice = @weapon_selection.sample
+    @weapon_choice = @weapons_selection.sample
   end
 end
