@@ -31,5 +31,47 @@ describe Game do
       message = "Can't play: Two weapons need to be selected."
       expect{ game.outcome }.to raise_error message
     end
+
+    it 'returns a Tie when Rock and Rock are played' do
+      allow(player_1).to receive(:weapon) {:rock}
+      allow(player_2).to receive(:weapon) {:rock}
+      game.outcome
+      expect(game.winner).to eq "None"
+    end
+
+    it 'returns Paper as winner when Rock and Paper are played' do
+      allow(player_1).to receive(:weapon) {:rock}
+      allow(player_2).to receive(:weapon) {:paper}
+      game.outcome
+      expect(game.winner).to eq "Paper"
+    end
+
+    it 'returns Rock as winner when Rock and Scissors are played' do
+      allow(player_1).to receive(:weapon) {:rock}
+      allow(player_2).to receive(:weapon) {:scissors}
+      game.outcome
+      expect(game.winner).to eq "Rock"
+    end
+
+    it 'returns a Tie when Paper and Paper are played' do
+      allow(player_1).to receive(:weapon) {:paper}
+      allow(player_2).to receive(:weapon) {:paper}
+      game.outcome
+      expect(game.winner).to eq "None"
+    end
+
+    it 'returns Scissors as winner when Paper and Scissors are played' do
+      allow(player_1).to receive(:weapon) {:paper}
+      allow(player_2).to receive(:weapon) {:scissors}
+      game.outcome
+      expect(game.winner).to eq "Scissors"
+    end
+
+    it 'returns a Tie when Scissors and Scissors are played' do
+      allow(player_1).to receive(:weapon) {:paper}
+      allow(player_2).to receive(:weapon) {:paper}
+      game.outcome
+      expect(game.winner).to eq "None"
+    end
   end
 end
