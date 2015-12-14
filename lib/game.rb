@@ -15,7 +15,6 @@ class Game
     return SCISSOR_RESULTS[@player2_choice] if @player1_choice == :scissors
     return SPOCK_RESULTS[@player2_choice] if @player1_choice == :spock
     return LIZARD_RESULTS[@player2_choice] if @player1_choice == :lizard
-
   end
 
   private
@@ -31,5 +30,7 @@ class Game
   LIZARD_RESULTS =  {rock: :lose, paper: :win, scissors: :lose, spock: :win,
                      lizard: :draw}
 
+
+#Use index positions to work out result.
 
 end
