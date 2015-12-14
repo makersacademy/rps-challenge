@@ -24,7 +24,7 @@ class Weapons
     rules.each do |k,v|
       @result = choice1 if choice1 == k && choice2 == v
     end
-    @result.nil? ? @result = choice2 : nil
+    @result = choice2 if @result.nil?
   end
 
 end
