@@ -11,6 +11,7 @@ SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
+<<<<<<< HEAD
 require 'capybara/rspec'
 #require 'pry-byebug'
 
@@ -42,3 +43,6 @@ RSpec.configure do |config|
 
 
 end
+=======
+require 'capybara/rspec'
+>>>>>>> 6fc18dfbfc6f6d00965811f3cbab77ec906803d5
