@@ -1,17 +1,17 @@
-<h1>It's Rock, Paper Scissors! </h1>
+<h1 class="announcement">It's <%= @game.name1 %> vs. <%= @game.name2 %> </h1>
 <p><%= @game.name1 %>'s score: <%= @game.score1 %></p>
 <p><%= @game.name2 %>'s score: <%= @game.score2 %></p>
 
 <p>Round <%= @game.round %></p>
 
 <% if @game.current == @game.player1 %>
-  <p> <%= @game.name1 %>, make your choice </p>
-  <form action='/rock1' method='post'><input type="submit" value="Rock"/></form>
-  <form action='/paper1' method='post'><input type="submit" value="Paper"/></form>
-  <form action='/scissors1' method='post'><input type="submit" value="Scissors"/></form>
+  <h2 class="text"> <%= @game.name1 %>, make your choice </h2>
+  <form action='/rock1' method='post'><input class="button" type="submit" value="Rock"/></form>
+  <form action='/paper1' method='post'><input class="button" type="submit" value="Paper"/></form>
+  <form action='/scissors1' method='post'><input class="button" type="submit" value="Scissors"/></form>
 <% else %>
-  <p> <%= @game.name2 %>, make your choice </p>
-  <form action='/rock2' method='post'><input type="submit" value="Rock"/></form>
-  <form action='/paper2' method='post'><input type="submit" value="Paper"/></form>
-  <form action='/scissors2' method='post'><input type="submit" value="Scissors"/></form>
+  <h2 class="text"> <%= @game.name2 %>, make your choice </h2>
+  <form action='/rock2' method='post'><input class="button" type="submit" value="Rock"/></form>
+  <form action='/paper2' method='post'><input class="button" type="submit" value="Paper"/></form>
+  <form action='/scissors2' method='post'><input class="button" type="submit" value="Scissors"/></form>
 <% end %>

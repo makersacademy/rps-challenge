@@ -1,9 +1,9 @@
-<h1> VICTORY </h1>
+<h1 class="announcement"> VICTORY </h1>
 
-<h2><%=@game.winner.name%> is the champion!</h2>
+<h2 class="text"><%=@game.winner.name%> is the champion!</h2>
 
 Final score
 <p><%=@game.name1 %>: <%= @game.score1 %></p>
 <p><%=@game.name2 %>: <%= @game.score2 %></p>
 
-<form action='/' method='get'><input type="submit" value="Play a new game"/></form>
+<form action='/' method='get'><input class="button" type="submit" value="Play a new game"/></form>

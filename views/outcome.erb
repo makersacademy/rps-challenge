@@ -14,7 +14,7 @@
 <%end%>
 
 <% if @game.game_over?%>
-  <form action='/game_over' method='get'><input type="submit" value="Play again"/></form>
+  <form action='/game_over' method='get'><input class="button" type="submit" value="Play again"/></form>
 <% else %>
-  <form action='/play' method='get'><input type="submit" value="Play again"/></form>
+  <form action='/play' method='get'><input class="button" type="submit" value="Play again"/></form>
 <%end%>
