@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='styles.css' rel='stylesheet'/>
+  </head>
+  <body>
+    <header>
+      <h1>Let's play Rock, Paper, Scissors!</h1>
+    </header>
+      <div id='main'>
+      <div id='central_column'>
+        <form action='/names' method='post'>
+          <label for='player_name'>Enter Player One's name:</label><br>
+          <input id='text_box' type='text' name='player_name' /><br><br>
+          <label for='opponent_name'>Enter Player Two's name (optional):</label><br>
+          <input id='text_box' type='text' name='opponent_name' /><br><br>
+          <input class='btn' id='btn' type='submit' value='Submit' />
+        </form><br>
+        <img src='rock-paper-scissors.svg' />
+      </div>
+    </div>
+  </body>
+</html>
