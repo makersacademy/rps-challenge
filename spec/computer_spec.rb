@@ -11,4 +11,19 @@ describe Computer do
       expect(computer.choose_weapon).to eq 'Rock'
     end
   end
+
+  describe '#result' do
+    context 'possible outcomes of game' do
+      it 'win' do
+        expect(computer.result(:rock, :scissors)).to eq :win
+      end
+      it 'lose' do
+        expect(computer.result(:rock, :paper)).to eq :lose
+      end
+      it 'draw' do
+        expect(computer.result(:rock, :rock)).to eq :draw
+      end
+
+    end
+  end
 end

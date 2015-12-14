@@ -15,19 +15,19 @@ describe 'user specs' do
   end
 
   feature 'making choice' do
-    scenario 'allows user to pick rock' do
+    xscenario 'allows user to pick rock' do
       sign_in_and_play
       click_button('Rock')
       expect(page).to have_content('You chose Rock')
     end
 
-    scenario 'allows user to pick paper' do
+    xscenario 'allows user to pick paper' do
       sign_in_and_play
       click_button('Paper')
       expect(page).to have_content('You chose Paper')
     end
 
-    scenario 'allows user to pick scissors' do
+    xscenario 'allows user to pick scissors' do
       sign_in_and_play
       click_button('Scissors')
       expect(page).to have_content('You chose Scissors')

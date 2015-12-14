@@ -24,7 +24,10 @@ class RPS < Sinatra::Base
   post '/game' do
     session[:weapon] = params[:weapon]
     @weapon = session[:weapon]
-    @computer = $computer.computer_weapon
+    @computer = $computer
+    @computer.computer_weapon
+    @computer.result(@weapon, @computer.choose_weapon)
+
     erb :game
   end
   # start the server if ruby file executed directly

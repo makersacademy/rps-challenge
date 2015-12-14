@@ -1,10 +1,8 @@
 You chose <%= @weapon %>
 <br><br>
-Computer chose <%= @computer %>
+Computer chose <%= @computer.choose_weapon %>
 <br><br>
-<% if @weapon == @computer %>
-<%= 'We have a tie!' %>
-<% end %>
+<%= @computer.result(@weapon, @choose_weapon) %>
 <br><br>
 <form action="/play">
   <input type="submit" name="play_again" value="Play Again">
