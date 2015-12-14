@@ -9,35 +9,35 @@ feature "Player chooses lizard" do
   end
 
   scenario 'Lizard loses to rock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     visit_page_and_register
     click_button 'LIZARD!'
     expect(page).to have_content 'Computer chose ROCK! Computer wins!'
   end
 
   scenario 'Lizard beats paper' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     visit_page_and_register
     click_button 'LIZARD!'
     expect(page).to have_content 'Computer chose PAPER! Vic wins!'
   end
 
   scenario 'Lizard loses to scissors' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     visit_page_and_register
     click_button 'LIZARD!'
     expect(page).to have_content 'Computer chose SCISSORS! Computer wins!'
   end
 
   scenario 'Lizard beats Spock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:spock)
     visit_page_and_register
     click_button 'LIZARD!'
     expect(page).to have_content 'Computer chose SPOCK! Vic wins!'
   end
 
   scenario 'Lizard draws to lizard' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:lizard)
     visit_page_and_register
     click_button 'LIZARD!'
     expect(page).to have_content 'Computer chose LIZARD! This round is a draw...'

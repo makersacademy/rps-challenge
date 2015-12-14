@@ -15,28 +15,28 @@ feature "Player chooses Spock" do
   end
 
   scenario 'Spock beats rock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     visit_page_and_register
     click_button 'SPOCK!'
     expect(page).to have_content 'Computer chose ROCK! Vic wins!'
   end
 
   scenario 'Spock loses to paper' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     visit_page_and_register
     click_button 'SPOCK!'
     expect(page).to have_content 'Computer chose PAPER! Computer wins!'
   end
 
   scenario 'Spock beats scissors' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     visit_page_and_register
     click_button 'SPOCK!'
     expect(page).to have_content 'Computer chose SCISSORS! Vic wins!'
   end
 
   scenario 'Spock draws with Spock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:spock)
     visit_page_and_register
     click_button 'SPOCK!'
     expect(page).to have_content 'Computer chose SPOCK! This round is a draw...'
