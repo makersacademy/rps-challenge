@@ -1,15 +1,15 @@
 require_relative 'player'
-require_relative 'computer'
+require_relative 'machine'
 
 class Game
-  GAME_RULES = { rock: :scissors, paper: :rock, scissors: :paper }
-  Machine::WEAPON
+  RULES = { rock: :scissors, paper: :rock, scissors: :paper }
+  WEAPON = ['rock', 'scissors', 'paper']
 
   attr_reader :player, :machine
 
-  def initialize(player = Player.new, machine = Machine.new)
-    @player = Player
-    @machine = Machine
+  def initialize (player = Player.new, machine = Machine.new)
+    @player = Player.new
+    @machine = Machine.new
   end
 
   def result
@@ -22,4 +22,9 @@ class Game
 
   def same_weapon?
     player.weapon == machine.weapon
+  end
+
+  def better_weapon?
+    RULES[player.weapon] == machine.weapon
+  end
 end

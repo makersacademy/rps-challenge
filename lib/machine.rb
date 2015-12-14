@@ -1,9 +1,12 @@
 class Machine
+  attr_reader :weapon
 
-  WEAPON = ['rock', 'scissors', 'paper']
+  def initialize
+    @weapon = nil
+  end
 
-  def chosen_weapon
-    Machine::WEAPON.sample
+  def choose_weapon
+    @weapon = Game::WEAPON.sample
   end
 
 end
