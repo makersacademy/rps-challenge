@@ -12,7 +12,7 @@ describe Player do
   describe '#weapon_choice'
   it 'allows the player to select a weapon' do
     player.choose_weapon(:rock)
-    expect(player.weapon_choice).to eq(:rock)
+    expect(player.weapon_choice).to eq :rock
   end
 
 end
