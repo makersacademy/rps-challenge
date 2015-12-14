@@ -23,6 +23,7 @@ class RPS < Sinatra::Base
   end
 
   get '/replay' do
+    @game = $game
     erb(:play)
   end
   # start the server if ruby file executed directly
