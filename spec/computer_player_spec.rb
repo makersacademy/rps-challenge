@@ -16,6 +16,10 @@ describe ComputerPlayer do
     it 'should initialize with an empty score' do
       expect(computer.score).to eq 0
     end
+
+    it 'should not be a human' do
+      expect(computer.computer).to be true
+    end
   end
 
   describe '#RPS' do

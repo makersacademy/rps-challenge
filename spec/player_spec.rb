@@ -16,6 +16,10 @@ describe Player do
     it 'should initialize with an empty score' do
       expect(player.score).to eq 0
     end
+
+    it 'should be a human' do
+      expect(player.computer).to be false
+    end
   end
 
   describe '#rock' do
@@ -45,5 +49,5 @@ describe Player do
       expect(player.score).to eq 1
     end
   end
-  
+
 end

@@ -1,11 +1,12 @@
 class ComputerPlayer
 
-  attr_reader :name, :choice, :score
+  attr_reader :name, :choice, :score, :computer
 
   def initialize
     @name = 'The Computer'
     @choice = :rock
     @score = 0
+    @computer = true
   end
 
   def rps

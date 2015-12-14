@@ -4,7 +4,7 @@ class Game
 
   extend Forwardable
 
-  attr_reader :player1, :player2, :rules, :winner, :current, :round, :weapons
+  attr_reader :player1, :player2, :weapons, :winner, :current, :round
 
   def initialize(player1, player2, weapons_klass)
     @player1 = player1
@@ -33,6 +33,7 @@ class Game
   def_delegator :@player2, :scissors, :scissors2
 
   def_delegator :@player2, :rps, :rps
+  def_delegator :@player2, :computer, :computer
 
   def_delegator :@weapons, :result, :result
 
