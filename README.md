@@ -20,7 +20,7 @@ $ rackup
 - The computer makes a random choice of rock, paper or scissors
 - The winner is declared and receives 1 point, unless it is a draw
 - The next round begins
-- The first to 5 points is declared the champion!
+- The first to 3 points is declared the champion!
 
 ## Multi-player game
 
@@ -29,7 +29,7 @@ $ rackup
 - Their choice is confirmed
 - Player 2 can make their choice
 - The choices are compared and points awarded
-- The first to 5 points is declared the champion!
+- The first to 3 points is declared the champion!
 
 ----------------------
 
@@ -59,4 +59,4 @@ $ rackup
 - get '/play' gets the play page, showing player options and current game state.
 - post '/rock', '/paper' and '/scissors' call the appropriate method on game to update player choice, and redirect to '/choice'.
 - get '/choice' declares the computer choice and outcome.
-- get '/game_over' is visited if a player has 5 points.
+- get '/game_over' is visited if a player has 3 points.
