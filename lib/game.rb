@@ -1,11 +1,13 @@
 require_relative 'turn'
+require 'forwardable'
 
 class Game
 
-  attr_reader :player1, :player2
+  extend Forwardable
 
-  WEAPONS = ['Paper', 'Rock', 'Scissors']
-  WINNING_SCORE = 3
+  attr_reader :player1, :player2, :turn
+  def_delegator :turn, :weapon1, :player1_weapon
+  def_delegator :turn, :weapon2, :player2_weapon
 
   def initialize(player1, player2 = Player.new('Computer'), turn = Turn)
     @player1 = player1
@@ -13,35 +15,28 @@ class Game
     @turn_klass = turn
   end
 
-  def play_turn(weapon1)
-    weapon2 = rand_weapon if @player2.name == 'Computer'
-    @player2.selection = weapon2
-    @player1.selection = weapon1
-    @turn = @turn_klass.new(@player1, @player2)
-    @turn.play
-  end
-
-  def message
+  def turn_message
     @turn == nil ? 'Welcome!' : @turn.message
   end
 
+  def play_turn(weapon1, weapon2 = nil)
+    @turn = @turn_klass.new(weapon1, weapon2)
+    score_up(@turn.winner)
+  end
+
   def win_message
-    if wins?(@player1)
-      "Congratulations! You won against #{@player2.name}"
-    elsif wins?(@player2)
-      "Oh no! You lost against #{@player2.name}"
+    if @player1.winner?
+      "Congratulations! You won against "+@player2.name.to_s
+    elsif @player2.winner?
+      "Oh no! You lost against "+@player2.name.to_s
     end
   end
 
   private
 
-  def wins?(player)
-    player.score == WINNING_SCORE
-  end
-
-  def rand_weapon
-    #WEAPONS.sample
-    'Rock'
+  def score_up(turn_winner)
+    @player1.score_up if turn_winner == :player1
+    @player2.score_up if turn_winner == :player2
   end
 
 end

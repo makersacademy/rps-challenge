@@ -1,8 +1,8 @@
-feature 'Game mechanics' do
+# before do
+#   $game.play_turn(weapon2: 'Rock')
+# end
 
-  before do
-    allow($game).to receive(:rand_weapon) { 'Rock' }
-  end
+feature 'Game mechanics' do
 
   # As a user
   # So that I can play my turn
@@ -11,7 +11,7 @@ feature 'Game mechanics' do
   scenario 'Player1 can pick rock/scissors/paper before each turn' do
     sign_in
     play_paper
-    expect(page).to have_content('John picked: Paper')
+    expect(page).to have_content('Paper')
   end
 
   # As a user
@@ -21,7 +21,7 @@ feature 'Game mechanics' do
   scenario 'Computer can pick rock/scissors/paper before each turn' do
     sign_in
     play_paper
-    expect(page).to have_content('Computer picked: Rock')
+    expect(page).to have_content('Rock')
   end
 
   # As a user
@@ -53,7 +53,7 @@ feature 'Game mechanics' do
   scenario 'If player 1 wins the score jumps up of 1' do
     sign_in
     play_paper
-    expect(page).to have_content('Won 1 / 3')
+    expect(page).to have_content('1/3')
   end
 
   # As a user

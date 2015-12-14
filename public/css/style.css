@@ -1,9 +1,9 @@
 body {
   margin: 0 auto;
   padding: 0;
-  /*font-family: font-family: 'Comfortaa', cursive;*/
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Cabin', sans-serif;
   font-size: 2em;
+  color: #021067;
 }
 
 section {
@@ -20,10 +20,19 @@ section {
   width: 20%;
 }
 
+.score {
+  font-size: 2em;
+  color: #E4255C;
+}
+
 input[type=submit] {
+    font-family: 'Cabin', sans-serif;
+    font-size: 2em;
+    color: #021067;
     padding:15px 45px;
     font-size: 20px;
-    background:#ccc;
+    background:#E4255C;
+    color: white;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
@@ -31,12 +40,16 @@ input[type=submit] {
 }
 
 input[type="text"] {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1em;
+  color: #021067;
   padding: 10px;
-  border: solid 5px #c9c9c9;
+  width: 300px;
+  border: solid 5px #021067;
   transition: border 0.3s;
 }
 
 input[type="text"]:focus,
 input[type="text"].focus {
-  border: solid 5px #969696;
+  border: solid 5px #E4255C;
 }

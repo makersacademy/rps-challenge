@@ -2,30 +2,58 @@ require 'turn'
 
 describe Turn do
 
-  let(:player1) { double(:player1, name: 'John', selection: 'Paper', score_up: nil) }
-  let(:player2) { double(:player2, name: 'Computer', selection: 'Rock', score_up: nil) }
-  subject(:turn) { described_class.new(player1, player2) }
+  context 'if player1 winner' do
 
-  describe '#play' do
-    it 'returns a winning message' do
-      expect(turn.play).to eq 'You won!'
+    subject(:turn) { described_class.new('Paper','Rock') }
+    describe '#winner' do
+      it 'returns player1' do
+        expect(turn.winner).to eq :player1
+      end
     end
 
-    it 'returns a lose message' do
-      allow(player1).to receive(:selection) { 'Scissors' }
-      expect(turn.play).to eq 'You lost!'
+    describe '#message' do
+      it 'returns message you won' do
+        turn.winner
+        expect(turn.message).to eq 'You won!'
+      end
     end
 
-    it 'returns a tie message' do
-      allow(player1).to receive(:selection) { 'Rock' }
-      expect(turn.play).to eq 'No winners!'
-    end
   end
 
-  describe '#score_up' do
-    it 'increases the score of the winning player' do
-      expect(player1).to receive(:score_up)
-      turn.play
+  context 'if player2 winner' do
+
+    subject(:turn) { described_class.new('Scissors','Rock') }
+    describe '#winner' do
+      it 'returns player2' do
+        expect(turn.winner).to eq :player2
+      end
     end
+
+    describe '#message' do
+      it 'returns message you lost' do
+        turn.winner
+        expect(turn.message).to eq 'You lost!'
+      end
+    end
+
   end
+
+  context 'if tie' do
+
+    subject(:turn) { described_class.new('Rock','Rock') }
+    describe '#winner' do
+      it 'returns nil' do
+        expect(turn.winner).to eq nil
+      end
+    end
+
+    describe '#message' do
+      it 'returns message no winners' do
+        turn.winner
+        expect(turn.message).to eq 'No winners!'
+      end
+    end
+
+  end
+
 end

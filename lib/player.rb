@@ -1,7 +1,8 @@
 class Player
 
   attr_reader :name, :score
-  attr_accessor :selection
+
+  WINNING_SCORE = 3
 
   def initialize(name)
     @name = name
@@ -10,6 +11,10 @@ class Player
 
   def score_up
     @score += 1
+  end
+
+  def winner?
+    @score == WINNING_SCORE
   end
 
 end

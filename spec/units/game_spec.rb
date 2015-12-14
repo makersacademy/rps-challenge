@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-  let(:player1) { double(:player1, name: 'John', selection: 'Paper') }
-  let(:player2) { double(:player2, name: 'Computer', selection: 'Rock') }
-  let(:turn) { double(:turn, play: 'You won!') }
+  let(:player1) { double(:player1, name: 'John', selection: 'Paper', score_up: 'Points increased') }
+  let(:player2) { double(:player2, name: 'Computer', selection: 'Rock', score_up: 'Points increased') }
+  let(:turn) { double(:turn, play: 666, winner: :player1) }
   let(:turn_klass) { double(:turn_klass, new: turn)}
   subject(:game) { described_class.new(player1, player2, turn_klass) }
 
@@ -15,7 +15,7 @@ describe Game do
 
   describe '#message' do
     it 'returns the welcome message at start' do
-      expect(game.message).to eq 'Welcome!'
+      expect(game.turn_message).to eq 'Welcome!'
     end
   end
 
@@ -25,35 +25,28 @@ describe Game do
     end
   end
 
-  describe '#selection' do
-    it 'saves player1 selection' do
-      expect(player1).to receive(:selection=)
-      game.play_turn('Paper')
-    end
-
-    it 'saves automatically a rand_weapon if computer is opponent' do
-      expect(player2).to receive(:selection=)
-      game.play_turn('Paper')
-    end
-  end
-
   describe '#play_turn' do
-    it 'returns a message for closing the turn' do
-      expect(turn).to receive(:play)
+    it 'plays the turn increasing the winner\'s score' do
+      expect(turn).to receive(:winner)
+      game.play_turn('Paper')
+    end
+
+    it 'increases the score of the winning player' do
+      expect(player1).to receive(:score_up)
       game.play_turn('Paper')
     end
   end
 
   describe '#win_message' do
-    it 'returns a win message if player1 reaches score 3' do
-      allow(player1).to receive(:score) { 3 }
-      allow(player2).to receive(:score) { 0 }
+    it 'returns a win message if player1 is winner' do
+      allow(player1).to receive(:winner?) { true }
+      allow(player2).to receive(:winner?) { false }
       expect(game.win_message).to eq "Congratulations! You won against Computer"
     end
 
-    it 'returns a lose message if player2 reaches score 3' do
-      allow(player1).to receive(:score) { 0 }
-      allow(player2).to receive(:score) { 3 }
+    it 'returns a lose message if player2 is winner' do
+      allow(player1).to receive(:winner?) { false }
+      allow(player2).to receive(:winner?) { true }
       expect(game.win_message).to eq "Oh no! You lost against Computer"
     end
   end

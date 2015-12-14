@@ -11,16 +11,17 @@ describe Player do
     end
   end
 
-  describe '#selection' do
-    it 'stores the selected weapon' do
-      expect(player).to respond_to(:selection)
-    end
-  end
-
   describe '#score_up' do
     it 'increases player score by 1' do
       player.score_up
       expect(player.score).to eq 1
+    end
+  end
+
+  describe '#winner?' do
+    it 'returns true if score is 3' do
+      described_class::WINNING_SCORE.times { player.score_up }
+      expect(player).to be_winner
     end
   end
 

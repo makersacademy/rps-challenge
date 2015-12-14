@@ -1,18 +1,19 @@
 <section class=player>
   <h3><%= @game.player1.name %></h3>
-  <h5>Won <%= @game.player1.score  %> / 3</h5>
-  <img src="" alt="" width="200px" height="200px">
+  <p><span class="score"><%= @game.player1.score  %></span>/3</p>
+  <% if @game.turn %>
+    <img src="" alt="" width="200px" height="200px">
+    <h5> <%= @game.player1_weapon %> </h5>
+  <% end %>
 </section>
 <section class=message>
     <% if @game.win_message %>
       <h3><%= @game.win_message %></h3>
       <form action="/" method="get">
-        <input type="submit" value="Play another game">
+        <input type="submit" value="Play again">
       </form>
     <% else %>
-      <h3><%= @game.player1.name %> picked: <%= @game.player1.selection %></h3>
-      <h3><%= @game.player2.name %> picked: <%= @game.player2.selection %></h3>
-      <h3><%= @game.message %></h3>
+      <h3><%= @game.turn_message %></h3>
       <form action="/weapons" method="get">
         <input type="submit" value="Pick weapon">
       </form>
@@ -20,6 +21,9 @@
 </section>
 <section class=player>
   <h3><%= @game.player2.name %></h3>
-  <h5>Won <%= @game.player2.score  %> / 3</h5>
-  <img src="" alt="" width="200px" height="200px">
+  <p><span class="score"><%= @game.player2.score  %></span>/3</p>
+  <% if @game.turn %>
+    <img src="" alt="" width="200px" height="200px">
+    <h5> <%= @game.player2_weapon %> </h5>
+  <% end %>
 </section>

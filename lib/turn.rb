@@ -1,36 +1,40 @@
 class Turn
 
-  MESSAGES = { win: 'You won!', lose: 'You lost!', tie: 'No winners!' }
+  WEAPONS = ['Paper', 'Rock', 'Scissors']
 
-  attr_reader :message
+  attr_reader :message, :weapon1, :weapon2
 
-  def initialize(player1,player2)
-    @player1 = player1
-    @player2 = player2
-    @p1 = player1.selection
-    @p2 = player2.selection
+  def initialize(weapon1, weapon2)
+    @weapon1 = weapon1
+    @weapon2 = weapon2 || rand_weapon
   end
 
-  def play
+  def winner
     if tie?
-      @message = MESSAGES[:tie]
+      @message = 'No winners!'
+      nil
     elsif lose?
-      @player2.score_up
-      @message = MESSAGES[:lose]
+      @message = 'You lost!'
+      :player2
     else
-      @player1.score_up
-      @message = MESSAGES[:win]
+      @message = 'You won!'
+      :player1
     end
   end
 
   private
 
   def tie?
-    @p1 == @p2
+    @weapon1 == @weapon2
   end
 
   def lose?
-    @p1 == 'Rock' && @p2 == 'Paper' || @p1 == 'Scissors' && @p2 == 'Rock' || @p1 == 'Paper' && @p2 == 'Scissors'
+    @weapon1 == 'Rock' && @weapon2 == 'Paper' || @weapon1 == 'Scissors' && @weapon2 == 'Rock' || @weapon1 == 'Paper' && @weapon2 == 'Scissors'
+  end
+
+  def rand_weapon
+    #WEAPONS.sample
+    'Rock'
   end
 
 end

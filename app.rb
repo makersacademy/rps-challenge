@@ -26,7 +26,7 @@ class App < Sinatra::Base
 
   post '/selection' do
     @game = $game
-    @game.play_turn(params[:weapon])
+    @game.play_turn(params[:weapon1])
     redirect '/play'
   end
 
