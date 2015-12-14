@@ -2,6 +2,16 @@
 
 ----------------------
 
+```
+## Installation instructions
+$ git clone git@github.com:edwardkerry/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+----------------------
+
 ## Single player game
 
 - The player can enter their name on signing in
@@ -24,8 +34,8 @@
 ----------------------
 
 ## The Model
-- There are four Classes: Player, ComputerPlayer, Game and weapons
-* Player has the attributes `name`, `choice`, `current` and `score`. `choice` is updated by three methods `rock`, `paper` and `scissors`, according to player choice during the game. `current` is used to multiplayer to determine player's turn. `score` is updated upon winning a round. 
+- There are four Classes: Player, ComputerPlayer, Game and Weapons
+* Player has the attributes `name`, `choice`, `current` and `score`. `choice` is updated by three methods `rock`, `paper` and `scissors`, according to player choice during the game. `current` is used to multiplayer to determine player's turn. `score` is updated upon winning a round.
 * ComputerPlayer is similar to Player, but distinct enough to not inherit directly. `choice` is updated by one method, `rps`, which is dictated by a private random-number generator.
 * Game takes three arguments on initialization; two Player classes and one Weapon class. It monitors the winner of the current round, and the round number. Game passes on player choices to the weapon class, and receives information on the round's outcome. Game instructs the winner to `add_score`, and then increases the `round_count` by 1.
 * Weapons is responsible for the rules of the game. It contains a hash-map of winning: losing choices. Game asks Weapons to `compare` the two player choices. Weapons will see if Player 1's choice is equal to Player 2, and declare a draw if so. If not, it will check to see if Player 1's choice is a hash key with Player 2's choice as the value. If so, Player 1 is declared the winner. If not, Player 2 is declared the winner.
