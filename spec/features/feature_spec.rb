@@ -23,7 +23,7 @@ describe 'App Features' do
     #I would like to be able to play rock/paper/scissors
     scenario 'player plays a game against the computer' do
       click_button 'rock'
-      expect(page).to have_content('The winner is J. Bloggs!')
+      expect(page).to have_content('J. Bloggs wins!')
     end
   end
 
@@ -48,7 +48,7 @@ describe 'App Features' do
       enter_names_and_play_2_player(name, name2)
       click_button 'rock'
       click_button 'paper'
-      expect(page).to have_content('The winner is ' + name2 + '!')
+      expect(page).to have_content(name2 + ' wins!')
     end
   end
 end

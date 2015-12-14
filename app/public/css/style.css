@@ -31,7 +31,7 @@ input[type=text] {
 
 .game{
   position: relative;
-  top: 200px;
+  top: 10px;
 }
 
 .game-text{
@@ -39,4 +39,7 @@ input[type=text] {
   margin: 50px auto;
 }
 
-
+.win-image{
+  margin: 10px;
+  width: 350px;
+}
