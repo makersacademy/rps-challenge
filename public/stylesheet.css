@@ -1,20 +1,51 @@
 body {
   text-align: center;
   background-image: url("symphony.png");
+  font-size: 1.5em;
 }
 
 /* Background pattern from subtlepatterns.com */
 
+#name_input {
+  font-size: 0.8em;
+  width: 5em;
+  margin-bottom: 1em;
+}
+
+input {
+  vertical-align: baseline;
+  margin-left: 1em;
+}
+
+.submit{
+  width: 10em;
+  height: 2em;
+  font-size: 0.75em;
+  padding: auto;
+  margin-left: auto;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 15%;
+  -webkit-appearance: none;
+  -moz-appearance: none; appearance: none;
+}
+
 h1 {
   color:rgb(100,10,10);
   background-color: white;
-  width: 50%;
+  width: 15em;
   margin-left: auto;
   margin-right: auto;
 }
 
 #main_title {
   font-family: cursive;
+  margin-bottom: 0.5em;
+  margin-top: 0em;
+  padding-bottom: 0.25em;
+  font-size: 5em;
+  width: 10em;
 }
 
 li{

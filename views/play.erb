@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <h1><%= @player.name %>, what is your decision?</h1>
+    <h1><%= @player.name %>, what is your decision?</h1><br>
 
     <form action="/decision" method="post">
       <label for="rock">
@@ -17,7 +17,7 @@
       <label for="scissors">
         <input type="radio" id="scissors" name="decision" value="scissors">Scissors <br>
       </label>
-      <input type="submit" value="I have chosen">
+      <input class="submit" type="submit" value="I have chosen">
     </form>
 
 
