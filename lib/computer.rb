@@ -1,6 +1,12 @@
 class Computer
 
+  attr_reader :name
+
+  def initialize
+    @name = 'Computer'
+  end
+
   def weapon_choice
-    ['rock', 'paper', 'scissors'].sample
+    Weapon::WEAPONS.sample
   end
 end

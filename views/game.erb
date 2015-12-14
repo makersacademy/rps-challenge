@@ -1,7 +1,9 @@
 <h1>RPS</h1>
+<br>
+<h2><%= @user.name %> vs <%= @computer.name %></h2>
+<br>
+You chose <%= @game.user_weapon %>
 <br><br>
-<%= @user.name %> vs Computer
+Computer chose <%= @game.computer_weapon %>
 <br><br>
-You chose <%= @weapon.type %>
-<br><br>
-Computer chose <%= @computer.weapon_choice %>
+<%= @game.result %>

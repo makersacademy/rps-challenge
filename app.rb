@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/user'
 require './lib/weapon'
 require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,14 +22,16 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
+    user = $user
     $weapon = Weapon.new(params[:weapon_type])
     $computer = Computer.new
+    $game = Game.new($weapon.type, $computer.weapon_choice)
     redirect '/game'
   end
 
   get '/game' do
+    @game = $game
     @user = $user
-    @weapon = $weapon
     @computer = $computer
     erb(:game)
   end
