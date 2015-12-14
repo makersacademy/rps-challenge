@@ -1,16 +1,33 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/michaellennox/rps-challenge.svg)](https://travis-ci.org/michaellennox/rps-challenge)
 
-Instructions
--------
+#RPSLS Challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is my solution for the [RPS challenge](https://github.com/michaellennox/rps-challenge/blob/master/MAKERS_README.md) carried out at the end of my third week at Makers' Academy. It's an interactive Rock-Paper-Scissors-Lizard-Spock that can be played solo or with another player.
 
-Task 
-----
+##How I worked
+
+I aimed to complete this challenge in a test driven manner, using automated feature and unit tests with rspec and capybara. I created feature tests using capybara to test how a user would interact with the game, I tested model logic by creating unit tests with rspec for each class.
+
+##Installation Instructions
+
+Clone the game from github and move into the directory from the command line.
+
+```
+$ git clone git@github.com:michaellennox/rps-challenge.git
+$ cd rps-challenge
+```
+
+Start the server with rack.
+
+```
+$ rackup
+```
+
+Go to http://localhost:9292/ in your browser, you can either play solo vs the Computer or against another player.
+
+Enjoy!
+
+##Brief
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -28,67 +45,10 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_november2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
+###Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+###Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-

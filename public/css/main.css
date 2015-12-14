@@ -1,0 +1,52 @@
+main {
+  font-family: 'Arbutus Slab', serif;
+  text-align: center;
+  color: #326a8d;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.login {
+  background-color: #fcfdad;
+  color: #326a8d;
+}
+
+.login h2 {
+  margin-top: 10px;
+}
+
+.login .form-control {
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login label {
+  font-size: 18px;
+}
+
+.well {
+  background-color: #fcfdad;
+}
+
+.play-line {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.play-line label {
+  font-size: 35px;
+  margin-right: 2px;
+}
+
+.massive {
+  font-size: 200px;
+}
+
+.results {
+  top: 50vh;
+  transform: translateY(-50%);
+}
