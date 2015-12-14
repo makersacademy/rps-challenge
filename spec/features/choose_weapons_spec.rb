@@ -20,7 +20,7 @@ feature 'choose weapons' do
       expect(page).to have_content('You chose paper')
     end
 
-    scenario 'player chooses paper' do
+    scenario 'player chooses scissors' do
       register_and_play
       choose("scissors")
       click_button 'OK'
