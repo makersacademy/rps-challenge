@@ -14,4 +14,6 @@ describe Game do
     expect(game.player_2).to eq player_2
   end
 
+  
+
 end

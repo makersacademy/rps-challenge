@@ -17,10 +17,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    $game
     @game = $game
-    # @player_1 = $player_1.name
-    # @player_2 = $player_2.name
     erb :play
   end
 
