@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+
+  <body>
+    <a id="link" href="/play">Back to Play </a>
+    <div class="results">
+      <h2> <%= @game.player_name_1%>, you selected <%= @game.p1_selection%> </h2>
+      <h1> <%= @game.result %></h1>
+      <h2> Your oponent has selected <%= @game.pc_selection%> </h1>
+    </div>
+  </body>
+</html>
