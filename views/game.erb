@@ -1,0 +1,11 @@
+You have selected <%= @weapon %>
+<br><br>
+Computer has selected <%= @computer %>
+<br><br>
+<% if @weapon == @computer %>
+<%= 'Draw!' %>
+<% end %>
+<br><br>
+<form action="/play">
+  <input type="submit" name="play_again" value="Play Again">
+</form>
