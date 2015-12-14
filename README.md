@@ -3,7 +3,7 @@
 ----------------------
 
 ```
-## Installation instructions
+Installation instructions
 $ git clone git@github.com:edwardkerry/rps-challenge.git
 $ cd rps-challenge
 $ bundle

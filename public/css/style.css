@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  background-color: rgba(95,226,246,0.5);
+}
+
+.announcement {
+  font-family: Helvetica, Arial;
+  color: #EF740F;
+}
+
+.sign_in {
+
+}
+
+.button {
+  padding: 10px;
+  border: 20px;
+
+  border-radius: 15px;
+  width: 100px;
+  color: red;
+}
