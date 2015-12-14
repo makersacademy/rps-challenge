@@ -1,8 +1,9 @@
-You chose <%= @weapon %>
+You chose <%= @player_weapon %>
 <br><br>
 Computer chose <%= @computer.choose_weapon %>
 <br><br>
-<%= @computer.result(@weapon, @choose_weapon) %>
+<%= @result %>
+
 <br><br>
 <form action="/play">
   <input type="submit" name="play_again" value="Play Again">

@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
-# require './lib/game'
+require './lib/game'
 require './lib/player'
 
 class RPS < Sinatra::Base
@@ -22,11 +22,10 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:weapon] = params[:weapon]
-    @weapon = session[:weapon]
+    @player_weapon = $player.player_weapon(params[:weapon])
     @computer = $computer
     @computer.computer_weapon
-    @computer.result(@weapon, @computer.choose_weapon)
+    @result = @computer.result(@player_weapon, @computer.choose_weapon)
 
     erb :game
   end
