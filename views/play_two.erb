@@ -1,0 +1,11 @@
+<html>
+  <%= @player_one %>
+  <h1>Choose</h1>
+  <form method="post" action="set_choices">
+    <input type="text" name="player_one_choice">
+    <%= @player_two %>
+    <h1>Choose</h1>
+    <input type="text" name="player_two_choice">
+    <input type="submit" value="Submit">
+  </form>
+</html>

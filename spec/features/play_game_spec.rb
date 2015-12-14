@@ -4,8 +4,10 @@
 
 feature 'game is playable' do
   scenario 'user is able to play rock paper scissors' do
+    allow(Kernel).to receive(:rand).and_return(22)
     register
-    fill_in(:player_choice, with: 'rock')
-    expect(page).to have_content('Good job mate- you smashed him!')
+    fill_in(:player_one_choice, with: 'rock')
+    click_button('Submit')
+    expect(page).to have_content('won')
   end
 end
