@@ -1,46 +1,73 @@
 class RPS
 
-attr_reader :win, :draw, :computer, :player
+attr_reader :win, :draw, :computer, :player, :score, :comp_score
 #1 = rock
 #2 = paper
 #3 = scissors
 
 def initialize(player)
   @player = player
+  @score = 0
+  @comp_score = 0
+  @draw = false
+  @win = false
 end
 
   def compute
-    @computer = 3
+    @computer = Kernel.rand(1..3)
   end
 
   def rock
     if @computer == 1
-      @draw = true
+      draww
     elsif @computer == 2
-      @win = false
+      lose
     elsif @computer == 3
-      @win = true
+      winn
     end
   end
 
   def paper
     if @computer == 1
-      @win = true
+      winn
     elsif @computer == 2
-      @draw = true
+      draww
     elsif @computer == 3
-      @win = false
+      lose
     end
   end
 
   def scissors
     if @computer == 1
-      @win = false
+    lose
     elsif @computer == 2
-      @win = true
+      winn
     elsif @computer == 3
-      @draw = true
+      draww
     end
+  end
+
+  def reset
+    @win = false
+    @draw = false
+  end
+
+private
+
+  def winn
+    @win = true
+    @score += 1
+  end
+
+  def lose
+    @win = false
+    @comp_score += 1
+  end
+
+  def draww
+    @draw = true
+    @score += 1
+    @comp_score += 1
   end
 
 end

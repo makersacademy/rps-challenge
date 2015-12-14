@@ -9,6 +9,7 @@ class Game < Sinatra::Base
   end
 
   get '/1player' do
+
     erb(:singlePlay)
   end
 
@@ -28,11 +29,24 @@ class Game < Sinatra::Base
     erb(:result)
   end
 
+  get '/multiplayer/continue' do
+    @game = $game
+    @game.reset
+    erb(:multiplayer)
+  end
+
   get '/game' do
     $game = RPS.new(params[:player_1])
     @game = $game
     erb(:game)
   end
+
+  get '/game/continue' do
+    @game = $game
+    @game.reset
+    erb(:game)
+  end
+
 
   get '/rock' do
     @game = $game

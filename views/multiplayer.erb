@@ -1,23 +1,30 @@
-<h1>Rock, Paper, Scissors</h1>
+<html>
+<head>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
 
-<h2><%= @game.player_1 %> vs. <%= @game.player_2 %>
-  <br>
-<div>
-<select name="p1choose">
-  <option value=1>Rock</option>
-  <option value=2>Paper</option>
-  <option value=3>Scissors</option>
-</select>
+  <h2><%= @game.player_1 %> vs. <%= @game.player_2 %>
+    <br>
 
-<select name="p2choose">
-  <option value=1>Rock</option>
-  <option value=2>Paper</option>
-  <option value=3>Scissors</option>
-</select>
-</div>
-<br>
-<div>
-<form action="/result" method="post">
-  <input type="submit" value="Go!">
-</form>
-</div>
+  <div>
+    <form action="/result" method="post">
+    <select name="p1choose">
+      <option value='1'>Rock</option>
+      <option value='2'>Paper</option>
+      <option value='3'>Scissors</option>
+    </select>
+
+    <select name="p2choose">
+      <option value='1'>Rock</option>
+      <option value='2'>Paper</option>
+      <option value='3'>Scissors</option>
+    </select>
+      <input type="submit" value="Go!">
+    </form>
+
+  <%= @game.p1_score %> : <%= @game.p2_score %>
+
+</body>
+</html>

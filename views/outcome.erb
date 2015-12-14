@@ -1,25 +1,38 @@
-<% if @game.computer == 1 %>
-Your opponent chose ROCK!<br><br>
-<% elsif @game.computer == 2 %>
-Your opponent chose PAPER!<br><br>
-<% elsif @game.computer == 3 %>
-Your opponent chose SCISSORS!<br><br>
-<% end %>
-
-<% if @game.draw == true %>
-  ITS A DRAW...
-
-<% else %>
-
-  <% if @game.win == true %>
-    YOU WIN!!
-  <% elsif @game.win == false %>
-    YOU LOSE!!
+<html>
+<head>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <% if @game.computer == 1 %>
+  Your opponent chose ROCK!<br><br>
+  <% elsif @game.computer == 2 %>
+  Your opponent chose PAPER!<br><br>
+  <% elsif @game.computer == 3 %>
+  Your opponent chose SCISSORS!<br><br>
   <% end %>
 
-<% end %>
+  <% if @game.draw == true %>
+    ITS A DRAW...
 
-<br><br>
-<form action='/'>
-  <input type='submit' value='Play again?'/>
-</form>
+  <% else %>
+
+    <% if @game.win == true %>
+      YOU WIN!!
+    <% elsif @game.win == false %>
+      YOU LOSE!!
+    <% end %>
+
+  <% end %>
+
+  <br><br>
+  <form action='/game/continue'>
+    <input type='submit' value='Play again?'/>
+  </form>
+  <form action='/'>
+    <input type='submit' value='Home'/>
+  </form>
+
+  You <%= @game.score %> : <%= @game.comp_score %> Computer
+
+</body>
+</html>

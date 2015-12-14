@@ -1,13 +1,23 @@
-<h2>Choose wisely <%= @game.player %>!!</h2>
+<html>
+<head>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h2>Choose wisely <%= @game.player %>!!</h2>
 
-<form action="/rock">
-  <input type="submit" value="Rock"/>
-</form>
+  <form action="/rock">
+    <input type="submit" value="Rock"/>
+  </form>
 
-<form action="/paper">
-  <input type="submit" value="Paper"/>
-</form>
+  <form action="/paper">
+    <input type="submit" value="Paper"/>
+  </form>
 
-<form action="/scissors">
-  <input type="submit" value="Scissors"/>
-</form>
+  <form action="/scissors">
+    <input type="submit" value="Scissors"/>
+  </form>
+
+  You <%= @game.score %> : <%= @game.comp_score %> Computer
+  
+</body>
+</html>
