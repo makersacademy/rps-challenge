@@ -2,6 +2,7 @@ require 'sinatra'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
+require_relative 'helpers'
 
 class RPS < Sinatra::Application
   enable :sessions
@@ -48,17 +49,4 @@ class RPS < Sinatra::Application
     @game = current_game
     erb :result
   end
-
-helpers do
-  def current_game
-    Game.find(session[:game_id])
-  end
-
-  def add_game(game)
-    Game.games
-    id = game.object_id
-    Game.add(id, game)
-    session[:game_id] = id
-  end
-end
 end
