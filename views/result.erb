@@ -1,1 +1,13 @@
-<%= game.result %>
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <% if game.result == :win %>
+    Congratulations, you win!
+  <% elsif game.result == :lose %>
+    Bad luck, the computer won!
+  <% end %>
+</body>
+</html>

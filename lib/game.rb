@@ -38,5 +38,4 @@ class Game
   def result
     RULES[player_1_weapon][player_2_weapon] ? :win : :lose
   end
-
 end
