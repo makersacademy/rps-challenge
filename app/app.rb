@@ -54,14 +54,7 @@ class Rps < Sinatra::Base
   get '/results' do
     @game = $game
     @game.calc_winner
-    @winsies = @game.winner
-    if @winsies == 'Draw' && @game.players[1].computer == true
-      erb(:results_draw1)
-    elsif @winsies == 'Draw'
-      erb(:results_draw)
-    else
-      @game.players[1].computer ? erb(:results1) : erb(:results)
-    end
+    erb (@game.page)
   end
 
 end
