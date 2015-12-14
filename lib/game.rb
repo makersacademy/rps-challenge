@@ -49,7 +49,7 @@ class Game
   end
 
   def game_over?
-    score1 == 5 || score2 == 5
+    score1 == 3 || score2 == 3
   end
 
   private
