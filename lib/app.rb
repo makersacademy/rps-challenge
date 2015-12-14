@@ -15,6 +15,8 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @player_1_name = $game.player_1.name
+    @score = $game.score
+    @computer_score = $game.computer_score
     erb :play
   end
 
@@ -23,7 +25,6 @@ class Battle < Sinatra::Base
   end
 
   get '/rock_it' do
-    $game.shuffle
     @player_1_name = $game.player_1.name
     erb :shuffle
   end
@@ -33,7 +34,6 @@ class Battle < Sinatra::Base
   end
 
   get '/paper_it' do
-    $game.shuffle
     @player_1_name = $game.player_1.name
     erb :shuffle_paper
   end
@@ -43,7 +43,6 @@ class Battle < Sinatra::Base
   end
 
   get '/scissors_it' do
-    $game.shuffle
     @player_1_name = $game.player_1.name
     erb :shuffle_scissors
   end
