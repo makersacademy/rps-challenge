@@ -5,26 +5,29 @@ describe 'App Features' do
   before do
     #make computers always choose scissors
     allow_any_instance_of(Array).to receive(:sample).and_return :scissors
-    allow(Kernel).to receive(:rand).and_return 2
     enter_name_and_play(name)
   end
 
   feature 'enter names' do
-    #As a marketeer
-    #So that I can see my name in lights
-    #I would like to register my name before playing an online game
     scenario 'player enters name and it is displayed' do
       expect(page).to have_content('Make your choice J. Bloggs...')
     end
   end
 
   feature 'play against computer' do
-    #As a marketeer
-    #So that I can enjoy myself away from the daily grind
-    #I would like to be able to play rock/paper/scissors
-    scenario 'player plays a game against the computer' do
+    scenario 'player plays a game against the computer and wins' do
       click_button 'rock'
       expect(page).to have_content('J. Bloggs wins!')
+    end
+
+    scenario 'player plays a game against the computer and loses' do
+      click_button 'paper'
+      expect(page).to have_content('Computer wins!')
+    end
+
+    scenario 'player plays a game against the computer and draws' do
+      click_button 'scissors'
+      expect(page).to have_content("It's a draw!")
     end
   end
 

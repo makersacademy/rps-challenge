@@ -1,5 +1,0 @@
-<%= Manager.session_history(session.object_id).inject('') { |log, game|
-  log + (game.draw? ? 'Draw' : game.winner.name) + "\n"
-}%>
-
-
