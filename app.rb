@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/round'
 
 class RPS < Sinatra::Base
   configure do
@@ -17,9 +18,6 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @round = Round.new(session)
-    @name = session[:name]
-    @shape = session[:shape]
-    @computer_shape = session[:computer_shape]
     erb :game
   end
 
