@@ -1,8 +1,10 @@
+require_relative 'weapons'
+
 class Game
 
   attr_reader :player1_choice, :player2_choice
 
-  def initialize(player1_choice, player2_choice = make_choice)
+  def initialize(player1_choice, player2_choice = Weapons.choose)
     @player1_choice = player1_choice.to_sym
     @player2_choice = player2_choice.to_sym
   end
@@ -28,11 +30,6 @@ class Game
                      lizard: :lose}
   LIZARD_RESULTS =  {rock: :lose, paper: :win, scissors: :lose, spock: :win,
                      lizard: :draw}
-
-
-  def make_choice
-    [:rock, :paper, :scissors, :spock, :lizard].sample
-  end
 
 
 end
