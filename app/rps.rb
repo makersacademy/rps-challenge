@@ -34,7 +34,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     if session[:p1_choice]
-      session[game] = Game.new(session[:p1_choice], params[:player_choice])
+      $game = Game.new(session[:p1_choice], params[:player_choice])
       redirect '/result'
     elsif session[:player2_name]
       session[:p1_choice] = params[:player_choice]    #Move to model.
