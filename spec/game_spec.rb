@@ -12,66 +12,45 @@ describe Game do
     end
   end
 
-  describe '#weapons' do
-    it 'return the weapons used by both players' do
-      game.outcome
-      expect(game.weapons).to eq [:rock, :scissors]
-    end
-  end
-
   describe '#outcome' do
     it 'returns the outcome of the two weapons' do
-      game.outcome
-      expect(game.winner).to eq "Rock"
+      expect(game.outcome).to eq :win
     end
 
-    it 'raise an error if less than two weapons have been selected' do
-      allow(player_1).to receive(:weapon) {:rock}
-      allow(player_2).to receive(:weapon) { nil }
-      message = "Can't play: Two weapons need to be selected."
-      expect{ game.outcome }.to raise_error message
-    end
-
-    it 'returns a Tie when Rock and Rock are played' do
+    it 'returns Draw when Rock and Rock are played' do
       allow(player_1).to receive(:weapon) {:rock}
       allow(player_2).to receive(:weapon) {:rock}
-      game.outcome
-      expect(game.winner).to eq "None"
+      expect(game.outcome).to eq :draw
     end
 
-    it 'returns Paper as winner when Rock and Paper are played' do
+    it 'returns Lose when Rock and Paper are played' do
       allow(player_1).to receive(:weapon) {:rock}
       allow(player_2).to receive(:weapon) {:paper}
-      game.outcome
-      expect(game.winner).to eq "Paper"
+      expect(game.outcome).to eq :lose
     end
 
-    it 'returns Rock as winner when Rock and Scissors are played' do
+    it 'returns Win when Rock and Scissors are played' do
       allow(player_1).to receive(:weapon) {:rock}
       allow(player_2).to receive(:weapon) {:scissors}
-      game.outcome
-      expect(game.winner).to eq "Rock"
+      expect(game.outcome).to eq :win
     end
 
-    it 'returns a Tie when Paper and Paper are played' do
+    it 'returns Draw when Paper and Paper are played' do
       allow(player_1).to receive(:weapon) {:paper}
       allow(player_2).to receive(:weapon) {:paper}
-      game.outcome
-      expect(game.winner).to eq "None"
+      expect(game.outcome).to eq :draw
     end
 
-    it 'returns Scissors as winner when Paper and Scissors are played' do
+    it 'returns Win when Paper and Scissors are played' do
       allow(player_1).to receive(:weapon) {:paper}
       allow(player_2).to receive(:weapon) {:scissors}
-      game.outcome
-      expect(game.winner).to eq "Scissors"
+      expect(game.outcome).to eq :lose
     end
 
-    it 'returns a Tie when Scissors and Scissors are played' do
+    it 'returns Draw when Scissors and Scissors are played' do
       allow(player_1).to receive(:weapon) {:paper}
       allow(player_2).to receive(:weapon) {:paper}
-      game.outcome
-      expect(game.winner).to eq "None"
+      expect(game.outcome).to eq :draw
     end
   end
 end

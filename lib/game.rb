@@ -1,41 +1,21 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player_1, :player_2, :winner, :loser, :weapons
+  attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @winner = nil
-    @loser = nil
-    @weapons = []
   end
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  RULES = {
+    rock: { rock: :draw, paper: :lose, scissors: :win },
+    paper: { rock: :win, paper: :draw, scissors: :lose },
+    scissors: { rock: :lose, paper: :win, scissors: :draw }
+  }
 
   def outcome
-    @weapons.push(self.player_1.weapon, self.player_2.weapon)
-    fail "Can't play: Two weapons need to be selected." if complete_weapons?
-    if weapons.include?(:rock) && weapons.include?(:paper)
-      @winner = "Paper"
-      @loser = "Rock"
-    elsif weapons.include?(:rock) && weapons.include?(:scissors)
-      @winner = "Rock"
-      @loser = "Scissors"
-    elsif weapons.include?(:paper) && weapons.include?(:scissors)
-      @winner = "Scissors"
-      @loser = "Paper"
-    else
-      @winner = "None"
-      @loser = "None"
-    end
+   RULES[player_1.weapon][player_2.weapon]
   end
 
-  private
-
-  def complete_weapons?
-    self.weapons.include? nil
-  end
 end

@@ -24,7 +24,7 @@ The game should meet the following user stories:
 
 User Stories
 ------------
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -50,3 +50,4 @@ This game was developed using Ruby, HTML and Sinatra.  Development was test-driv
 Further Work
 -------------
 Complete Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Styling
