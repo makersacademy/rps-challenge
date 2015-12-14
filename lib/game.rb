@@ -11,6 +11,10 @@ class Game
     @weapons = []
   end
 
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
+            
   def outcome
     @weapons.push(self.player_1.weapon, self.player_2.weapon)
     fail "Can't play: Two weapons need to be selected." if complete_weapons?

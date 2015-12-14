@@ -21,7 +21,7 @@ describe Player do
     context "when it's the computer's turn" do
       it "returns the computer's weapon of choice" do
         allow(Kernel).to receive(:rand) { 1 }
-        computer.choose_weapon(computer.weapon_choices[Kernel.rand(0..2)])
+        computer.computer_chooses_weapon
         expect(computer.weapon).to eq "Paper"
       end
     end
