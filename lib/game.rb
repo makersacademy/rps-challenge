@@ -4,11 +4,13 @@ require_relative 'computer'
 class Game
   extend Forwardable
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors, :spock, :lizard]
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  RULES = { rock:     [:scissors, :lizard],
+            paper:    [:rock,     :spock],
+            scissors: [:paper,    :lizard],
+            spock:    [:scissors, :rock],
+            lizard:   [:spock,    :paper]   }
 
   def_delegator :player_1, :name, :player_1_name
 
@@ -33,7 +35,7 @@ class Game
 
   def result
     return :draw if draw?
-    RULES[player_1_weapon] == player_2_weapon ? :win : :lose
+    RULES[player_1_weapon].include? player_2_weapon
   end
 
   def player_1_weapon

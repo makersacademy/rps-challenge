@@ -12,7 +12,7 @@ describe Game do
 
   describe '#result' do
     it 'calculates the result of the game' do
-      expect(game.result).to eq :win
+      expect(game.result).to eq true
     end
   end
 end
