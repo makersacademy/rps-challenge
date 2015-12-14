@@ -16,7 +16,3 @@ class Weapon
     RULES[p1_choice] == p2_choice
   end
 end
-
-
-j = Weapon.new
-p j.judge(:rock, :rock)
