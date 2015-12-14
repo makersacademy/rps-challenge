@@ -1,0 +1,8 @@
+<html>
+  <h1>Congrats mate- you've won!!! FUCK YEAH</h1>
+  <h2>Specifically, you beat the shit out of the computer's choice of <%=  @game.one_player.computer_choice %>
+    with a wonderfully clever choice of <%= @game.one_player.choice %></h2>
+  <form action="/one_play" method="get">
+    <input type="submit" value="Try again?">
+  </form>
+</html>

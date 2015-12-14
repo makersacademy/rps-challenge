@@ -1,0 +1,13 @@
+
+  <html>
+    <%= @player_one %>
+    <h1>Choose</h1>
+    <form method="post" action="set_choice">
+      <input type="radio" name="player_one_choice" value="rock" checked> Rock
+      <br>
+      <input type="radio" name="player_one_choice" value="paper"> Paper
+      <br>
+      <input type="radio" name="player_one_choice" value="scissors"> Scissors
+      <input type="submit" value="Submit">
+    </form>
+  </html>
