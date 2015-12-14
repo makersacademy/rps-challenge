@@ -14,6 +14,6 @@ class Player
   end
 
   def computer_chooses_weapon
-    @weapon = WEAPONS[Kernel.rand(0..2)]
+    @weapon = WEAPONS.sample
   end
 end

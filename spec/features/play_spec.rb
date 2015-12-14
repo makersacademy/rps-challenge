@@ -35,7 +35,7 @@ describe 'User Stories - Play' do
   feature 'see the outcome of the game' do
     scenario 'player 1 chooses Rock, computer chooses Rock' do
       sign_in_and_play_computer
-      srand(0)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       choose_rock_vs_computer
       expect(page).to have_content('Computer chose rock.')
       expect(page).to have_content("It's a tie!")
@@ -43,7 +43,7 @@ describe 'User Stories - Play' do
 
     scenario 'player 1 chooses Paper, computer chooses Rock' do
       sign_in_and_play_computer
-      srand(0)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       choose_paper_vs_computer
       expect(page).to have_content('Computer chose rock.')
       expect(page).to have_content('Paper beats rock')
@@ -51,7 +51,7 @@ describe 'User Stories - Play' do
 
     scenario 'player 1 chooses Paper, computer chooses Scissors' do
       sign_in_and_play_computer
-      allow(Kernel).to receive(:rand) { 2 }
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       choose_paper_vs_computer
       expect(page).to have_content('Computer chose scissors.')
       expect(page).to have_content('Scissors beats paper')
@@ -59,7 +59,7 @@ describe 'User Stories - Play' do
 
     scenario 'player 1 chooses Scissors, computer chooses Rock' do
       sign_in_and_play_computer
-      srand(0)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       choose_scissors_vs_computer
       expect(page).to have_content('Computer chose rock.')
       expect(page).to have_content('Rock beats scissors')

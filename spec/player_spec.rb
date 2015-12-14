@@ -20,7 +20,7 @@ describe Player do
 
     context "when it's the computer's turn" do
       it "returns the computer's weapon of choice" do
-        allow(Kernel).to receive(:rand) { 1 }
+        allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
         computer.computer_chooses_weapon
         expect(computer.weapon).to eq :paper
       end
