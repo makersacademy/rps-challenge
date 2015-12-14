@@ -1,0 +1,28 @@
+<div class='game'>
+  <div class='game-text'>
+    <%= game.player1.name %> chose <%= game.player1.choice %>.<br>
+    <%= game.player2.name %> chose <%= game.player2.choice %>.<br><br><br>
+
+    <% if game.draw? %> 
+      <img src='../images/draw.png' class='win-image'><br>
+      It's a draw!
+    <% else %>
+      <% if game.winner.choice == :rock %>
+        <img src='../images/rock.png' class='win-image'><br>
+      <% elsif game.winner.choice == :paper %>
+        <img src='../images/paper.png' class='win-image'><br>
+      <% else %>
+        <img src='../images/scissors.png' class='win-image'><br>
+      <% end %>
+        <%= game.winner.name %> wins!
+    <% end %>
+  </div>
+
+  <form action='/new-game'>
+    <input type='submit' value='Play Again...'>
+  </form>
+
+  <form action='/'>
+    <input type='submit' value='Return to Index'>
+  </form>
+</div>
