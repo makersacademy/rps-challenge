@@ -24,10 +24,10 @@ class Game
     check_input
     @winner = players[1].name
     @winner = 'Draw' if ans_1 == ans_2
-    @winner = players[0].name if (ans_1 == "1" && ans_2 == "3") ||
-    (ans_1 == '2' && ans_2 == '1') || (ans_1 == '3' && ans_2 == '2')
+    @winner = players[0].name if
+    (ans_1 == "1" && ans_2 == "3") ||(ans_1 == '2' && ans_2 == '1') ||
+      (ans_1 == '3' && ans_2 == '2')
  end
-
 
    private
 
@@ -36,10 +36,10 @@ class Game
    end
 
    def check_input
-      fail 'incorrect input - select between 1-3' unless @answer_p1 == '1' ||
-        (@answer_p1 ) == '2' || (@answer_p1 ) == '3'
-      fail 'incorrect input - select between 1-3' unless @answer_p2 == '1' ||
-         (@answer_p2) == '2' || (@answer_p2) == '3'
+      fail 'incorrect input - select between 1-3' unless
+        @answer_p1 == '1' || @answer_p1 == '2' || @answer_p1 == '3'
+      fail 'incorrect input - select between 1-3' unless
+        @answer_p2 == '1' || @answer_p2 == '2' || @answer_p2 == '3'
    end
 
 end
