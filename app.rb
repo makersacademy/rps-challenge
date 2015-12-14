@@ -38,7 +38,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/computer' do
     @game = $game
-    @game.player_2.choose_weapon(@game.player_2.weapon_choices[Kernel.rand(0..2)])
+    @game.player_2.computer_chooses_weapon
     redirect '/result'
   end
 
@@ -54,5 +54,5 @@ class RockPaperScissors < Sinatra::Base
     erb :result
   end
 
-  run! if app_file == $PROGRAM_NAME#$0
+  run! if app_file == $PROGRAM_NAME
 end

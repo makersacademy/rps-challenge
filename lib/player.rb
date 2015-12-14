@@ -11,4 +11,8 @@ class Player
   def choose_weapon(weapon)
     @weapon = weapon
   end
+
+  def computer_chooses_weapon
+    @weapon = weapon_choices[Kernel.rand(0..2)]
+  end
 end
