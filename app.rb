@@ -16,6 +16,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
+    @round = Round.new(session)
     @name = session[:name]
     @shape = session[:shape]
     @computer_shape = session[:computer_shape]
