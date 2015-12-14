@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    game.player_1.choose_weapon(params[:weapon])
+    game.player_1.choose_weapon(params[:weapon].to_sym)
     game.player_2.choose_weapon
     redirect '/weapon'
   end
