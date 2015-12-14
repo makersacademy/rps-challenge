@@ -9,6 +9,7 @@ class GameManager
   def new_game(session)
     game = game_klass.new(session, human_klass, computer_klass)
     store_game(game)
+    game
   end
 
   def find_game id
@@ -20,6 +21,5 @@ class GameManager
   
   def store_game(game)
     games[game.object_id] = game
-    game.object_id
   end
 end

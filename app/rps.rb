@@ -24,7 +24,8 @@ class RPS < Sinatra::Base
   end
 
   get '/new-game' do
-    session[:current_game_id] = Manager.new_game(session)
+    game = Manager.new_game(session)
+    session[:current_game_id] = game.object_id 
     redirect '/play'
   end
 
