@@ -4,6 +4,6 @@ class Computer < Player
   SHAPES = [:rock, :paper, :scissors]
 
   def choose
-    @choice = SHAPES[Kernel.rand(3)]
+    @choice = SHAPES.sample
   end
 end

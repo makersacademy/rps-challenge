@@ -29,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    redirect '/' if !current_game
     erb :play, locals: { game: current_game }
   end
 

@@ -4,6 +4,7 @@ describe 'App Features' do
 
   before do
     #make computers always choose scissors
+    allow_any_instance_of(Array).to receive(:sample).and_return :scissors
     allow(Kernel).to receive(:rand).and_return 2
     enter_name_and_play(name)
   end

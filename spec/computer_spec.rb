@@ -12,7 +12,7 @@ describe Computer do
 
   describe '#choose' do
     it 'chooses its hand shape randomly' do
-      allow(Kernel).to receive(:rand).and_return 2
+      allow_any_instance_of(Array).to receive(:sample).and_return :scissors
       computer.choose
       expect(computer.choice).to eq :scissors
     end
