@@ -9,5 +9,6 @@ cd battle && bundle
 rackup
 ```
 and navigate to `http://localhost:1337/` in your browser.
-![desktop screenshot](https://raw.github.com/hibreez/rps-challenge/master/app/public/images/desktop.png)
+![desktop screenshot](https://raw.github.com/hibreez/rps-challenge/master/app/public/images/desktop.png)  
+
 ![mobile screenshot](https://raw.github.com/hibreez/rps-challenge/master/app/public/images/mobile.jpg)
