@@ -7,6 +7,6 @@ feature 'Choice of RPS' do
   scenario 'player can choose a weapon' do
     sign_in_and_play
     click_button 'Choose!'
-    expect(page).to have_content 'You selected rock'
+    expect(page).to have_content 'You selected Rock!'
   end
 end
