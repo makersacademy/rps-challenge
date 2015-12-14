@@ -1,4 +1,5 @@
 require 'app.rb'
+require 'game'
 
 # include Capybara::DSL
 # Capybara.default_driver = :selenium
@@ -27,5 +28,19 @@ feature 'RPS Game' do
     sign_in_and_play
     click_button("Scissors")
     expect(page).to have_content 'You picked scissors'
+  end
+
+  scenario 'it picks a winner' do
+    sign_in_and_play
+    shuffle == 'scissors'
+    click_button("Rock")
+    expect(page).to have_content 'YOU WIN'
+  end
+
+  scenario 'it shows a draw' do
+    sign_in_and_play
+    shuffle == 'paper'
+    click_button("Paper")
+    expect(page).to have_content 'IT\'S A DRAW'
   end
 end
