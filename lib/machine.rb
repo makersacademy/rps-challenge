@@ -1,6 +1,6 @@
 class Machine
 
-  WEAPON = ['rock', 'scissor', 'paper']
+  WEAPON = ['rock', 'scissors', 'paper']
 
   def chosen_weapon
     Machine::WEAPON.sample
