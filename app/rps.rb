@@ -18,8 +18,8 @@ class RPS < Sinatra::Base
 
   post '/new-session' do
     session[:name1] = params[:name1] 
+    session[:name2] = params[:name2]
     session[:has_ai?] = params[:name2].empty?
-    session[:name2] = session[:has_ai?] ? 'Computer' : params[:name2]
     redirect '/new-game'
   end
 
@@ -29,7 +29,6 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    redirect '/' if !current_game
     erb :play, locals: { game: current_game }
   end
 

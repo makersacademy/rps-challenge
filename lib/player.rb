@@ -2,7 +2,8 @@ class Player
   attr_reader :name, :choice
 
   def initialize(name)
-    @name = name.empty? ? 'J. Bloggs' : name
+    @name = name
+    @name = (self.computer? ? 'Computer' : 'J. Bloggs') if name.empty?
   end
 
   def computer?
