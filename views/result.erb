@@ -5,11 +5,11 @@
 </head>
 <body>
   You chose <%= game.player_1_weapon %>. The computer chose <%= game.player_2_weapon %>
-  <% if game.draw? == true %>
+  <% if game.result == :draw %>
     It's a draw!
   <% elsif game.result == :win %>
     Congratulations, you win!
-  <% else %>
+  <% elsif game.result == :lose%>
     Bad luck, you lose!
   <% end %>
   <form action="/" method="get">

@@ -32,6 +32,7 @@ class Game
   end
 
   def result
+    return :draw if draw?
     RULES.assoc(player_1_weapon) == [player_1_weapon, player_2_weapon] ? :win : :lose
   end
 
