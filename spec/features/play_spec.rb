@@ -1,8 +1,4 @@
-# require 'capybara'
-# require 'selenium-webdriver'
-# include Capybara::DSL
-# Capybara.default_driver= :selenium
-
+# User story
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
@@ -17,7 +13,7 @@ feature 'Play game' do
     click_button("rock")
     expect(page).to have_content("Win")
   end
-  
+
   scenario 'selects paper' do
     click_button("paper")
     expect(page).to have_content("Lost")

@@ -1,7 +1,3 @@
-# require 'capybara'
-# require 'selenium-webdriver'
-# include Capybara::DSL
-# Capybara.default_driver= :selenium
 
 feature 'Display choices for game' do
   scenario 'Rock button' do

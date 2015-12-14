@@ -1,8 +1,4 @@
-# require 'capybara'
-# require 'selenium-webdriver'
-# include Capybara::DSL
-# Capybara.default_driver= :selenium
-
+# User story 1
 # As a marketeer
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
