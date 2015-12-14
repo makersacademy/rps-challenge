@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <% if @game.p1_win == true %>
+  <%= @game.player_1 %> WINS!
+  <% elsif @game.draw == true %>
+  ITS A DRAW!
+  <% elsif @game.p1_win == false%>
+  <%= @game.player_2 %> WINS!
+  <% end %>
+  <br><br>
+  <form action="/multiplayer/continue">
+    <input type="submit" value="Play again?">
+  </form>
+  <form action='/'>
+    <input type='submit' value='Home'/>
+  </form>
+
+  <%= @game.player_1 %> <%= @game.p1_score %> : <%= @game.p2_score %> <%= @game.player_2 %>
+
+</body>
+</html>
