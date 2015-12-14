@@ -5,10 +5,25 @@ require 'spec_helper'
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
-  scenario 'see the shape options' do
+  scenario 'see the game options' do
     sign_in
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    find_button('Rock')
+    find_button('Paper')
+    find_button('Scissor')
+  end
+  scenario 'choose the options' do
+    sign_in
+    click_button('Rock')
+    expect(page).to have_content 'You have picked Rock'
+  end
+
+  scenario 'I want the computer to choose an option' do
+    sign_in
+    click_button('Rock')
+    expect(page).to have_content 'Computer chose' #need to revist!
+  end
+
+  scenario '' do
+
   end
 end

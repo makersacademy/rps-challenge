@@ -1,5 +1,11 @@
 <%= @name %>
-
-Rock
-Paper
-Scissors
+<form method='POST' action="/game">
+  <input type="submit" name="shape" value="Rock"/>
+  <input type="submit" name="shape" value="Paper"/>
+  <input type="submit" name="shape" value="Scissors"/>
+</form>
+<div id="your selection">
+You have picked <%= @shape %>
+<div id="computer">
+Computer chose <%= @computer_shape %>
+</div>

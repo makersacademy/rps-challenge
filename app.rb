@@ -17,7 +17,15 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
+    @shape = session[:shape]
+    @computer_shape = session[:computer_shape]
     erb :game
+  end
+
+  post '/game' do
+    session[:shape] = params[:shape]
+    session[:computer_shape] = :rock
+    redirect '/game'
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
