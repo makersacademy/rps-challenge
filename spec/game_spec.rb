@@ -12,7 +12,7 @@ describe Game do
   describe '#initialize' do
 
     it 'sets player 2 choice (for computer) by default' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       expect(game.player2_choice).to eq :rock
     end
 
@@ -31,27 +31,27 @@ describe Game do
     context 'player choses rock' do
 
       it 'computer choses rock' do
-        allow_any_instance_of(Array).to receive(:sample).and_return('ROCK!')
+        allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
         expect(game.winner).to eq :draw
       end
 
       it 'computer choses paper' do
-        allow_any_instance_of(Array).to receive(:sample).and_return('PAPER!')
+        allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
         expect(game.winner).to eq :lose
       end
 
       it 'computer choses scissors' do
-        allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS!')
+        allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
         expect(game.winner).to eq :win
       end
 
       it 'computer choses Spock' do
-        allow_any_instance_of(Array).to receive(:sample).and_return('SPOCK!')
+        allow_any_instance_of(Array).to receive(:sample).and_return(:spock)
         expect(game.winner).to eq :lose
       end
 
       it 'computer choses lizard' do
-        allow_any_instance_of(Array).to receive(:sample).and_return('LIZARD!')
+        allow_any_instance_of(Array).to receive(:sample).and_return(:lizard)
         expect(game.winner).to eq :win
       end
 
