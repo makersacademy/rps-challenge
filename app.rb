@@ -61,6 +61,4 @@ helpers do
     session[:game_id] = id
   end
 end
-
-  run! if app_file == $PROGRAM_NAME
 end
