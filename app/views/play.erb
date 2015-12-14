@@ -1,0 +1,30 @@
+<div class="container-fluid inner">
+  <div class="row">
+    <div class="col-md-4 vcenter">
+      <div class="col-md-8 col-md-offset-2">
+        <h1><%= game.first_player_name %></h1>
+        <% if game.current_turn == game.players[0] %><h3>your turn</h3> <% end %>
+      </div>
+    </div><!--
+  --><div class="col-md-4 vcenter">
+      <form action="/process" method="post">
+        <input type="hidden" name="element" value="rock">
+        <input class="btn btn-default" type="submit" value="ROCK">
+      </form>
+      <form action="/process" method="post">
+        <input type="hidden" name="element" value="paper">
+        <input class="btn btn-default" type="submit" value="PAPER">
+      </form>
+      <form action="/process" method="post">
+        <input type="hidden" name="element" value="scissors">
+        <input class="btn btn-default" type="submit" value="SCISSORS">
+      </form>
+    </div><!--
+  --><div class="col-md-4 vcenter">
+      <div class="col-md-8 col-md-offset-2">
+        <h1><%= game.second_player_name %></h1>
+        <% if game.current_turn == game.players[1] %><h3>your turn</h3> <% end %>
+      </div>
+    </div>
+  </div>
+</div>
