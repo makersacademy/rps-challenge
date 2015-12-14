@@ -4,12 +4,12 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  You chose <%= game.player_1_weapon %>.</br>
-  The computer chose <%= game.player_2_weapon %> </br>
-  <% if game.result == :draw %>
+  You chose <%= $game.player_1_weapon %>.</br>
+  The computer chose <%= $game.player_2_weapon %> </br>
+  <% if $game.result == :draw %>
     It's a draw! </br>
     <img src='draw.jpg'>
-  <% elsif game.result == :win %>
+  <% elsif $game.result == :win %>
     Congratulations, you win! </br>
     <img src='win.jpg'>
   <% else %>

@@ -5,12 +5,6 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
 
-  helpers do
-    def game
-      @game ||= $game
-    end
-  end
-
   get '/' do
     erb :index
   end
@@ -23,23 +17,23 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    game
+    # game
     erb :play
   end
 
   post '/selection' do
-    game.player_1.choose_weapon(params[:weapon].to_sym)
-    game.player_2.choose_weapon
+    $game.player_1.choose_weapon(params[:weapon].to_sym)
+    $game.player_2.choose_weapon
     redirect '/weapon'
   end
 
   get '/weapon' do
-    game
+    # game
     erb :weapon
   end
 
   get '/result' do
-    game
+    # game
     erb :result
   end
 
