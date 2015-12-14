@@ -1,0 +1,10 @@
+Welcome <%= @player_name %>.
+<br><br>
+
+Choose your weapon...
+<br><br>
+<form action="/game" method="post">
+  <input type="submit" name="weapon" value="rock">
+  <input type="submit" name="weapon" value="paper">
+  <input type="submit" name="weapon" value="scissors">
+</form>
