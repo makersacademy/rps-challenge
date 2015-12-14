@@ -1,7 +1,9 @@
 require 'player'
 
 describe Player do
-  let(:player) { described_class.new 'Jon'}
+  let(:element) { double :element }
+  let(:element_klass) { double :element_klass, new: element }
+  let(:player) { described_class.new('Jon', element_klass) }
   it 'has a player name after initialization' do
     expect(player.name).to eq 'Jon'
   end
@@ -11,29 +13,26 @@ describe Player do
     end
   end
   describe '#reset' do
+    before do
+      allow(element).to receive(:type)
+    end
     it 'reset the element chosen by the player' do
-      player.assign_element(:rock)
+      player.assign_element('rock')
       player.reset
       expect(player.element).to be nil
     end
   end
   describe '#assign_element' do
-    it 'set the element chosen by the player' do
-      player.assign_element(:rock)
-      expect(player.element).to eq :rock
+    before do
+      allow(element).to receive(:type).and_return(:rock)
     end
-    it 'set a random element if nil is passed' do
-      allow(described_class::ELEMENTS).to receive(:sample).and_return(:rock)
-      player.assign_element(nil)
-      expect(player.element).to eq :rock
+    it 'set the element chosen by the player' do
+      player.assign_element('rock')
+      expect(player.element_type).to eq :rock
     end
     it 'returns a message about the element chosen' do
       msg = 'Jon chose rock'
-      expect(player.assign_element(:rock)).to eq msg
-    end
-    it 'raise an error if element passed is not valid' do
-      msg = 'Element not valid'
-      expect { player.assign_element(:no_available) }.to raise_error msg
+      expect(player.assign_element('rock')).to eq msg
     end
   end
 end

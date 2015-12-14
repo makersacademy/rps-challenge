@@ -1,20 +1,22 @@
-class Player
+require 'forwardable'
+require_relative './element.rb'
 
-  ELEMENTS = [:rock, :paper, :scissors]
+class Player
+  extend Forwardable
+  def_delegator :element, :type, :element_type
 
   attr_reader :name, :computer, :element
   alias_method :is_computer?, :computer
 
-  def initialize name
+  def initialize(name, element_klass = Element)
     @name = name
     @computer = false
+    @element_klass = element_klass
   end
 
-  def assign_element(element)
-    element = random_element unless element
-    fail 'Element not valid' unless valid_element?(element)
-    @element = element
-    "#{name} chose #{element}"
+  def assign_element(type = nil)
+    @element = element_klass.new type
+    "#{name} chose #{element.type}"
   end
 
   def reset
@@ -23,11 +25,5 @@ class Player
 
   private
 
-  def valid_element?(element)
-    ELEMENTS.include?(element)
-  end
-
-  def random_element
-    ELEMENTS.sample
-  end
+  attr_reader :element_klass
 end

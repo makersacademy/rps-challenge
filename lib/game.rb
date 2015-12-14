@@ -46,7 +46,7 @@ class Game
   end
 
   def draw?
-    players[0].element == players[1].element
+    players[0].element.same_type?(players[1].element)
   end
 
   def switch
@@ -54,12 +54,6 @@ class Game
   end
 
   def winner
-    if players[0].element == :rock && players[1].element == :scissors ||
-       players[0].element == :scissors && players[1].element == :paper ||
-       players[0].element == :paper && players[1].element == :rock
-      players[0]
-    else
-      players[1]
-    end
+    players[0].element.beats?(players[1].element) ? players[0] : players[1]
   end
 end
