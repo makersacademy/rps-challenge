@@ -1,9 +1,10 @@
 require 'sinatra/base'
-require_relative './lib/player'
-require_relative './lib/computer_player'
-require_relative './lib/game'
+require_relative '../lib/player'
+require_relative '../lib/computer_player'
+require_relative '../lib/game'
 
 class Rps < Sinatra::Base
+  set :public, 'public'
 
   get '/' do
     erb :index
