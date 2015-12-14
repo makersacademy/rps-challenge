@@ -21,6 +21,7 @@ class Game
  def calc_winner
     ans_1 = @answer_p1
     ans_2 = @answer_p2
+    check_input
     @winner = players[1].name
     @winner = 'Draw' if ans_1 == ans_2
     @winner = players[0].name if (ans_1 == "1" && ans_2 == "3") ||
@@ -32,6 +33,13 @@ class Game
 
    def com_play
       @answer_p2 = Kernel.rand(1..3).to_s
+   end
+
+   def check_input
+      fail 'incorrect input - select between 1-3' unless @answer_p1 == '1' ||
+        (@answer_p1 ) == '2' || (@answer_p1 ) == '3'
+      fail 'incorrect input - select between 1-3' unless @answer_p2 == '1' ||
+         (@answer_p2) == '2' || (@answer_p2) == '3'
    end
 
 end

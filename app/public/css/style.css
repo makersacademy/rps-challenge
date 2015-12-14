@@ -23,10 +23,10 @@ body {
 	}
 
 .game_panel {
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  /*margin-top: 30%;*/
 }
 
 .input {

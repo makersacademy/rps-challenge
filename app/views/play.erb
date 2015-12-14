@@ -1,5 +1,5 @@
 
-<h3><%= @player1_name %> VS <%= @player2_name %><h3>
+<h1><%= @player1_name %> VS <%= @player2_name %></h1>
 <p>
   <p>1 = Rock</p>
   <p>2 = Paper </p>
@@ -7,7 +7,7 @@
 </p>
 <br>
 <form action="/p_results" method = "post">
-  <h2>Choose Your Weapons</h2>
+  <h3>Choose Your Weapons</h3>
   <p><%= @player1_name %> Select :</p><br>
   <input class="input" type="password" autocomplete="off" name="answer_1" maxlength="1">
   <br>

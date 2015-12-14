@@ -29,19 +29,20 @@ feature 'Enter Player names' do
     visit('/')
     click_button('1 Player')
     sign_in_and_play1
-    expect(page).to have_content 'ROCK | PAPER | SCISSORS Gimi VS Computer'\
-      ' 1 = Rock 2 = Paper 3 = Scissors Gimi Choose Your Weapon'
+    expect(page).to have_content 'Gimi VS Computer 1 = Rock 2 = Paper '\
+      '3 = Scissors Gimi Choose Your Weapon'
   end
 
   scenario 'submitting 2 Player names' do
     visit('/')
     click_button('2 Players')
     sign_in_and_play2
-    expect(page).to have_content 'ROCK | PAPER | SCISSORS Gimi VS Tara'\
-      ' 1 = Rock 2 = Paper 3 = Scissors Choose Your Weapons'\
-        ' Gimi Select : Tara Select:'
+    expect(page).to have_content 'Gimi VS Tara 1 = Rock 2 = Paper 3 ='\
+      ' Scissors Choose Your Weapons Gimi Select : Tara Select:'
   end
+
 end
+
   feature 'Enter Chosen attack weapon' do
 
     scenario '1 Player can select rock paper or scissors' do
@@ -70,8 +71,7 @@ end
       sign_in_and_play1
       fill_in :answer_1, with: '1'
       click_button('Submit')
-      expect(page).to have_content 'ROCK | PAPER | SCISSORS'\
-        " Gimi wins! Play Again"
+      expect(page).to have_content 'Gimi wins! Play Again'
     end
 
     scenario '2 Player can see outcome of battle' do
@@ -81,9 +81,8 @@ end
       fill_in :answer_1, with: '1'
       fill_in :answer_2, with: '3'
       click_button('Submit')
-      expect(page).to have_content 'ROCK | PAPER | SCISSORS'\
-        ' Gimi wins! Play Again'
-
+      expect(page).to have_content 'Gimi wins! Play Again'
     end
+
   end
 end
