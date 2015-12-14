@@ -4,21 +4,20 @@
   <link href='styles.css' rel='stylesheet'/>
 </head>
 <body>
-<header>
-  <h1>And the winner is... <%= @winner %></h1>
-</header>
-
-<div id='main'>
-  <div id='left_column'>
-<strong><%= @player_name %> chose: </strong><%= @player_choice %>
-</div>
-<div id='right_column'>
-<strong><%= @opponent_name %> chose: </strong><%= @opponent_choice %>
-</div>
-<div id='central_column'>
-<p><a href='/play'>Play another round</a>
-<p><a href='/'>Start a new game</a>
-</div>
-</div>
+  <header>
+    <h1>And the winner is... <%= @winner %></h1>
+  </header>
+  <div id='main'>
+    <div id='left_column'>
+      <strong><%= @player_name %> chose: </strong><%= @player_choice %>
+    </div>
+    <div id='right_column'>
+      <strong><%= @opponent_name %> chose: </strong><%= @opponent_choice %>
+    </div>
+    <div id='central_column'>
+      <p><a href='/play'>Play another round</a>
+      <p><a href='/'>Start a new game</a>
+    </div>
+  </div>
 </body>
 </html>

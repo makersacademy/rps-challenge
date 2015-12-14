@@ -4,59 +4,49 @@
   <link href='styles.css' rel='stylesheet'/>
 </head>
 <body>
-<header>
-<h1><%= @player_name %> vs. <%= @opponent_name%></h1>
-</header>
-<div id='main'>
-
-<div id='left_column'>
-<p><%= @player_name %>, Make your choice:</p>
-<form action='/choice' method='post'>
-  <input class='btn' id='btn_r1' type='submit' name='player_choice' value='Rock' />
-  <input class='btn' id='btn_p1' type='submit' name='player_choice' value='Paper' />
-  <input class='btn' id='btn_s1' type='submit' name='player_choice' value='Scissors' />
-</form>
-</div>
-
-<% if $game.human_opponent? %>
-<div id='right_column'>
-<p><%= @opponent_name %>, Make your choice:</p>
-<form action='/choice' method='post'>
-  <input class='btn' id='btn_r2' type='submit' name='opponent_choice' value='Rock' />
-  <input class='btn' id='btn_p2' type='submit' name='opponent_choice' value='Paper' />
-  <input class='btn' id='btn_s2' type='submit' name='opponent_choice' value='Scissors' />
-</form>
-</div>
-<% end %>
-
-<div id='central_column'><br></div>
-
-<div id='left_column'>
-<% if $game.player.choice %>
-<%= @player_name %> has chosen!
-<% end %>
-</div>
-
-<div id='right_column'>
-<% if @opponent_choice %>
-<%= @opponent_name%> has chosen!
-<% end %>
-</div>
-
-<div id='central_column'>
-<% if $game.player.choice && @opponent_choice %>
-<a href='/winner'>Check who won...</a>
-<% end %>
-
-<br>
-<p><b>Rules</b></p>
-<p><em>
-  <p>Rock beats Scissors, but loses to Paper
-  <p>Paper beats Rock, but loses to Scissors
-  <p>Scissors beat Paper, but loses to Rock</em>
-</p>
-</div>
-
-</div>
+  <header>
+    <h1><%= @player_name %> vs. <%= @opponent_name%></h1>
+  </header>
+  <div id='main'>
+    <div id='left_column'>
+      <p><%= @player_name %>, Make your choice:</p>
+      <form action='/choice' method='post'>
+        <input class='btn' id='btn_r1' type='submit' name='player_choice' value='Rock' />
+        <input class='btn' id='btn_p1' type='submit' name='player_choice' value='Paper' />
+        <input class='btn' id='btn_s1' type='submit' name='player_choice' value='Scissors' />
+      </form>
+    </div>
+    <% if $game.human_opponent? %>
+    <div id='right_column'>
+      <p><%= @opponent_name %>, Make your choice:</p>
+      <form action='/choice' method='post'>
+        <input class='btn' id='btn_r2' type='submit' name='opponent_choice' value='Rock' />
+        <input class='btn' id='btn_p2' type='submit' name='opponent_choice' value='Paper' />
+        <input class='btn' id='btn_s2' type='submit' name='opponent_choice' value='Scissors' />
+      </form>
+    </div>
+    <% end %>
+    <div id='central_column'><br></div>
+    <div id='left_column'>
+      <% if $game.player.choice %>
+        <%= @player_name %> has chosen!
+      <% end %>
+    </div>
+    <div id='right_column'>
+      <% if @opponent_choice %>
+        <%= @opponent_name%> has chosen!
+      <% end %>
+    </div>
+    <div id='central_column'>
+      <% if $game.player.choice && @opponent_choice %>
+        <a href='/winner'>Check who won...</a>
+      <% end %><br>
+      <p><b>Rules</b></p>
+      <p><em>
+      <p>Rock beats Scissors, but loses to Paper
+      <p>Paper beats Rock, but loses to Scissors
+      <p>Scissors beat Paper, but loses to Rock</em></p>
+    </div>
+  </div>
 </body>
 </html>
