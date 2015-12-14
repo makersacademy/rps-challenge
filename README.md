@@ -34,7 +34,7 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 ```
-![Screenshot](http://imgur.com/nlkoO1z)
+![Alt text](rps.jpg 'screenshot app')
 
 Contributors
 -------------
