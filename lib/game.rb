@@ -35,8 +35,6 @@ class Game
     RULES.assoc(player_1_weapon) == [player_1_weapon, player_2_weapon] ? :win : :lose
   end
 
-  private
-
   def player_1_weapon
     player_1.weapon_choice
   end
