@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe 'User Stories' do
   before do
     visit '/'

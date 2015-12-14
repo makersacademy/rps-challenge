@@ -11,7 +11,7 @@ bundle
 rackup
 ```
 
-Then click the following link, or copy and paste the URL: [http://localhost:4567/] (http://localhost:4567/).
+Then click the following link, or copy and paste the URL: [http://localhost:9292/] (http://localhost:9292/).
 
 ##Guide to program use
 
