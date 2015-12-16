@@ -6,12 +6,16 @@
 
 <% if @game.current == @game.player1 %>
   <h2 class="text"> <%= @game.name1 %>, make your choice </h2>
-  <form action='/rock1' method='post'><input class="button" type="submit" value="Rock"/></form>
-  <form action='/paper1' method='post'><input class="button" type="submit" value="Paper"/></form>
-  <form action='/scissors1' method='post'><input class="button" type="submit" value="Scissors"/></form>
+  <div id="weapons">
+    <form action='/rock1' method='post'><input class="button" type="submit" value="Rock"/></form>
+    <form action='/paper1' method='post'><input class="button" type="submit" value="Paper"/></form>
+    <form action='/scissors1' method='post'><input class="button" type="submit" value="Scissors"/></form>
+  </div>
 <% else %>
   <h2 class="text"> <%= @game.name2 %>, make your choice </h2>
-  <form action='/rock2' method='post'><input class="button" type="submit" value="Rock"/></form>
-  <form action='/paper2' method='post'><input class="button" type="submit" value="Paper"/></form>
-  <form action='/scissors2' method='post'><input class="button" type="submit" value="Scissors"/></form>
+  <div id="weapons">
+    <form action='/rock2' method='post'><input class="button" type="submit" value="Rock"/></form>
+    <form action='/paper2' method='post'><input class="button" type="submit" value="Paper"/></form>
+    <form action='/scissors2' method='post'><input class="button" type="submit" value="Scissors"/></form>
+  </div>
 <% end %>

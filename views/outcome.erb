@@ -4,13 +4,13 @@
 
 <% @game.outcome %>
 
-<p><%=@game.name1 %> chose <%= @game.choice1 %>!</p>
-<p><%=@game.name2 %> chose <%= @game.choice2 %>!</p>
+<p class="text"><%=@game.name1 %> chose <%= @game.choice1 %>!</p>
+<p class="text"><%=@game.name2 %> chose <%= @game.choice2 %>!</p>
 
 <% if @game.winner == :draw %>
-  <p>This round was a draw!</p>
+  <p class="announcement">This round was a draw!</p>
 <% else %>
-  <p><%= @game.winner.name %> won this round!</p>
+  <p class="announcement"><%= @game.winner.name %> won this round!</p>
 <%end%>
 
 <% if @game.game_over?%>
