@@ -1,0 +1,20 @@
+<% if @game.computer %>
+  <% @game.rps %>
+<% end %>
+
+<% @game.outcome %>
+
+<p class="text"><%=@game.name1 %> chose <%= @game.choice1 %>!</p>
+<p class="text"><%=@game.name2 %> chose <%= @game.choice2 %>!</p>
+
+<% if @game.winner == :draw %>
+  <p class="announcement">This round was a draw!</p>
+<% else %>
+  <p class="announcement"><%= @game.winner.name %> won this round!</p>
+<%end%>
+
+<% if @game.game_over?%>
+  <form action='/game_over' method='get'><input class="button" type="submit" value="Play again"/></form>
+<% else %>
+  <form action='/play' method='get'><input class="button" type="submit" value="Play again"/></form>
+<%end%>

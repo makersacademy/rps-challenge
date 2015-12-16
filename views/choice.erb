@@ -1,0 +1,14 @@
+
+<% if @game.computer && @game.current == @game.player1 %>
+  <h2 class="text"><%= @game.name1 %> chose the <%= @game.choice1 %>!</h2>
+  <form action='/outcome' method='get'><input class="button" type="submit" value="Outcome"/></form>
+
+<% elsif @game.current == @game.player1 %>
+  <h2 class="text"><%= @game.name1 %> chose the <%= @game.choice1 %>!</h2>
+  <form action='/play' method='get'><input class="button" type="submit" value="<%= @game.name2%>'s go"/></form>
+  <% @game.switch %>
+<% else %>
+  <h2 class="text"><%=@game.name2 %> chose the <%= @game.choice2 %>!</h2>
+  <form action='/outcome' method='get'><input class="button" type="submit" value="Outcome"/></form>
+  <% @game.switch %>
+<% end %>

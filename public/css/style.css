@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  background-color: rgba(95,255,255,0.3);
+}
+
+.announcement {
+  font-family: Helvetica, Arial;
+  font-size: 45px;
+  color: rgb(255, 115, 12);
+}
+
+.text {
+  font-family: Helvetica, Arial;
+  color: rgb(255, 115, 12);
+}
+
+.button {
+  padding: 10px;
+  border: 20px;
+  border-radius: 55px;
+  width: 100px;
+  color: red;
+  margin-top: 40px;
+  z-index: 1;
+}
+
+#weapons .button {
+display: inline-block;
+}
+
+#shower[value="twoplay"]:checked ~ #twoplay{
+    display: block;
+}
+
+#hider[value="twoplay"]:checked ~ #twoplay{
+    display: none;
+}
+
+#twoplay {
+    display: none;
+    padding: 10px;
+}
+
+form {
+  display: inline;
+}
