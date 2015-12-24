@@ -8,7 +8,7 @@ Github: https://github.com/emmabeynon
 Email: emma.beynon@gmail.com
 
 
-This is my submission for the Makers Academy Week 2 Weekend Challenge: https://github.com/makersacademy/rps-challenge
+This is my submission for the Makers Academy Week 3 Weekend Challenge: https://github.com/makersacademy/rps-challenge
 
 Overview
 ---------
@@ -49,6 +49,5 @@ This game was developed using Ruby, HTML and Sinatra.  Development was test-driv
 
 Further Work
 -------------
-Complete Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 Add a database
 Styling
