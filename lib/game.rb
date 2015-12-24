@@ -9,13 +9,15 @@ class Game
   end
 
   RULES = {
-    rock: { rock: :draw, paper: :lose, scissors: :win },
-    paper: { rock: :win, paper: :draw, scissors: :lose },
-    scissors: { rock: :lose, paper: :win, scissors: :draw }
+    rock: { rock: :draw, paper: :lose, scissors: :win, spock: :lose, lizard: :win },
+    paper: { rock: :win, paper: :draw, scissors: :lose, spock: :win, lizard: :lose },
+    scissors: { rock: :lose, paper: :win, scissors: :draw, spock: :lose, lizard: :win },
+    spock: { rock: :win, paper: :lose, scissors: :win, spock: :draw, lizard: :lose },
+    lizard: { rock: :lose, paper: :win, scissors: :lose, spock: :win, lizard: :draw }
   }
 
   def outcome
-   RULES[player_1.weapon][player_2.weapon]
+    RULES[player_1.weapon][player_2.weapon]
   end
 
 end

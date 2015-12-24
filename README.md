@@ -50,4 +50,5 @@ This game was developed using Ruby, HTML and Sinatra.  Development was test-driv
 Further Work
 -------------
 Complete Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Add a database
 Styling

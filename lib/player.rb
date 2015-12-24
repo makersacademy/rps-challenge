@@ -7,7 +7,7 @@ class Player
     @weapon = nil
   end
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
 
   def choose_weapon(weapon)
     @weapon = weapon.downcase.to_sym

@@ -38,7 +38,7 @@ describe 'User Stories - Play' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       choose_rock_vs_computer
       expect(page).to have_content('Computer chose rock.')
-      expect(page).to have_content("It's a tie!")
+      expect(page).to have_content("It's a draw!")
     end
 
     scenario 'player 1 chooses Paper, computer chooses Rock' do
@@ -70,7 +70,7 @@ describe 'User Stories - Play' do
       choose_rock_vs_human
       player_2_chooses_rock
       expect(page).to have_content('Tobit chose rock.')
-      expect(page).to have_content("It's a tie!")
+      expect(page).to have_content("It's a draw!")
     end
 
     scenario 'player 1 chooses Paper, player 2 chooses Rock' do

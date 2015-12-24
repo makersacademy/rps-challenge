@@ -1,12 +1,14 @@
 <html>
   <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
   <% if @game.player_2.computer == false %>
-    <h2>It's <%= @game.player_1.name %>'s turn.
+    <h2>It's <%= @game.player_1.name %>'s turn.</h2>
   <% end %>
   <h3>Choose your weapon:</h3>
   <form action="/weapon" method="post">
-    <p><input type="submit" name="weapon" value="Rock"></p>
-    <p><input type="submit" name="weapon" value="Paper"></p>
-    <p><input type="submit" name="weapon" value="Scissors"></p>
+    <p><input type="submit" name="weapon" value="Rock">
+    <p><input type="submit" name="weapon" value="Paper">
+    <p><input type="submit" name="weapon" value="Scissors">
+    <p><input type="submit" name="weapon" value="Spock">
+    <p><input type="submit" name="weapon" value="Lizard">
   </form>
 </html>
