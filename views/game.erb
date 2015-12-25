@@ -1,0 +1,13 @@
+<h1>Rock Paper Scissors</h1>
+<br>
+<h2><%= @user.name %> vs <%= @computer.name %></h2>
+<br>
+You chose <%= @game.user_weapon %>
+<br><br>
+Computer chose <%= @game.computer_weapon %>
+<br><br>
+<%= @game.result %>
+<br><br>
+<form action="weapon">
+  <input type="submit" value="Play again">
+</form>

@@ -1,0 +1,12 @@
+<h1>Rock Paper Scissors</h1>
+<br>
+<h2><%= @user.name %> vs Computer</h2>
+<br>
+<form action="/play" method="post">
+  <select name="weapon_type">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Play">
+</form>
