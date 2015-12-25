@@ -12,27 +12,27 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $user = User.new(params[:user_name])
+    session[:user] = User.new(params[:user_name])
     redirect '/weapon'
   end
 
   get '/weapon' do
-    @user = $user
+    @user = session[:user]
     erb(:weapon)
   end
 
   post '/play' do
-    user = $user
-    $weapon = Weapon.new(params[:weapon_type])
-    $computer = Computer.new
-    $game = Game.new($weapon.type, $computer.weapon_choice)
+    user = session[:user]
+    session[:weapon] = Weapon.new(params[:weapon_type])
+    session[:computer] = Computer.new
+    session[:game] = Game.new(session[:weapon].type, session[:computer].weapon_choice)
     redirect '/game'
   end
 
   get '/game' do
-    @game = $game
-    @user = $user
-    @computer = $computer
+    @game = session[:game]
+    @user = session[:user]
+    @computer = session[:computer]
     erb(:game)
   end
 
