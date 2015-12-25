@@ -25,7 +25,9 @@ class RPS < Sinatra::Base
     user = session[:user]
     session[:weapon] = Weapon.new(params[:weapon_type])
     session[:computer] = Computer.new
-    session[:game] = Game.new(session[:weapon].type, session[:computer].weapon_choice)
+    weapon = session[:weapon]
+    computer = session[:computer]
+    session[:game] = Game.new(weapon.type, computer.weapon_choice)
     redirect '/game'
   end
 
