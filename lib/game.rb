@@ -5,6 +5,7 @@ class Game
   def initialize(user_weapon, computer_weapon)
     @user_weapon = user_weapon
     @computer_weapon = computer_weapon
+    @rules = { rock: :scissors, paper: :rock, scissors: :paper }
   end
 
   def result
@@ -35,4 +36,27 @@ class Game
     end
   end
 
+
+  # def result
+  # 	return 'It\'s a draw!' if @user_weapon == @computer_weapon
+  # 	@rules[@user_weapon] == @computer_weapon ? 'You win!' : 'Computer wins!'
+  # end
+
+
+
+  # def result
+  #   'It\'s a draw!' if draw
+  #   'Computer wins!' if computer_wins
+  #   'You win!' if user_wins
+  # end
+  #
+  # def user_wins
+  # end
+  #
+  # def computer_wins
+  # end
+  #
+  # def draw
+  #   @user_weapon == @computer_weapon
+  # end
 end
