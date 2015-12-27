@@ -1,0 +1,92 @@
+* {
+  font-family: Arial;
+}
+
+body {
+  background-color: #d8d8d8;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.spock {
+  color: #2a69ff;
+}
+
+.rock {
+  color: black;
+}
+
+.paper {
+  color: white;
+}
+
+.scissors {
+  color: grey;
+}
+
+.lizard {
+  color: green;
+}
+
+#header {
+  font-size: 20px;
+}
+
+#name-form {
+  text-align: left;
+  border-radius: 5px;
+  border-color: black;
+  border-style: groove;
+  width: 300px;
+  margin-left: 480px;
+  padding-left: 20px;
+}
+
+.weapon-choice {
+  text-align: center;
+  border-radius: 5px;
+  border-color: black;
+  border-style: groove;
+  width: 200px;
+  margin-left: 530px;
+  padding: 5px;
+}
+
+.submit-button {
+  text-align: center;
+  font-size: 16px;
+}
+
+.play_button {
+  align: center;
+  font-size: 16px;
+}
+
+.player {
+  font-weight: bold;
+}
+
+.current-player {
+  color: #990000;
+}
+
+input {
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 5px;
+}

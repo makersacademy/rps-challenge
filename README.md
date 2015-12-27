@@ -44,7 +44,7 @@ Instructions
 
 Approach
 ---------
-* NOTE: Global variables have been used as we have not yet been introduced to databases.  We know that we shouldn't use global variables normally. *
+** NOTE: Global variables have been used as we have not yet been introduced to databases.  We know that we shouldn't use global variables normally. **
 This game was developed using Ruby, HTML and Sinatra.  Development was test-driven using Capybara to simulate user interaction with the app.  After setting up the necessary gems and file structure, I started by creating a simple form for the player to submit their name, followed by a view where they can select their weapon of choice.  It soon became clear that a Player class was necessary in order to store the player's name and chosen weapon.  After this was done, I developed a Game class to handle the interaction between the players.  I then added functionality for the computer to randomly select a weapon to play with.  Now that both players could choose a weapon, I created a method in the Game class to calculate the outcome of each combination of weapons using a simple control flow.  This outcome is then displayed to the player, and they can choose to play another game.  Later I extended the functionality to allow player 1 to choose between playing the computer or another player when entering their name.  A different post route is used to handle player 2's weapon selection versus the computer's random selection and the views were edited to show different prompts and messaging depending on whether the opponent is a computer or a human.
 
 Further Work

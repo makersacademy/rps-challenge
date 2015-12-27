@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors Spock Lizard</title>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <h1>
+      <font class="rock">Rock</font>
+      <font class="paper">Paper</font>
+      <font class="scissors">Scissors</font>
+      <font class="spock">Spock</font>
+      <font class="lizard">Lizard</font>
+    </h1>
+    <% if @game %>
+      <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -2,20 +2,20 @@
   <h3>You chose <%= @game.player_1.weapon.downcase %>.
     What will computer choose?</h3>
     <p>
-      <form action='/computer' method="post">
-        <input type="submit" value="Let's find out...">
+      <form action='/computer' method="post" class="submit-button">
+        <input type="submit" value="Let's find out..." class="submit-button">
       </form>
     </p>
 <% else %>
-  <h2>It's <%= @game.player_2.name %>'s turn.</h2>
-  <h3> Choose your weapon: </h3>
-  <p>
+  <h3>It's <font class="current-player"><%= @game.player_2.name %>'s</font> turn.</h3>
+  <div class="weapon-choice">
+  <h4> Choose your weapon: </h4>
     <form action="/human" method="post">
-      <p><input type="submit" name="weapon" value="Rock">
-      <p><input type="submit" name="weapon" value="Paper">
-      <p><input type="submit" name="weapon" value="Scissors">
-      <p><input type="submit" name="weapon" value="Spock">
-      <p><input type="submit" name="weapon" value="Lizard">
+      <p><input type="submit" name="weapon" value="Rock" class="rock"></p>
+      <p><input type="submit" name="weapon" value="Paper" class="paper"></p>
+      <p><input type="submit" name="weapon" value="Scissors" class="scissors"></p>
+      <p><input type="submit" name="weapon" value="Spock" class="spock"></p>
+      <p><input type="submit" name="weapon" value="Lizard" class="lizard"></p>
     </form>
-  </p>
+  </div>
 <% end %>

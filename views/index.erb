@@ -1,24 +1,31 @@
 <html>
-  <h1> Rock Paper Scissors Spock Lizard </h1>
-  <p>
-    <form action="/names" method="post">
-      Player 1:
-      <input type="text" name="player_1_name">
-  </p>
-  <p>
-    Player 2:
-  </p>
-    <p>
-      <input type="radio" id="real_person" name="computer" value="false" checked="checked">
-      Human Being
-      <input type="text" name="player_2_name">
-    </p>
-    <p>
-      <input type="radio" id="computer_player" name="computer" value="">
-      Computer
-  </p>
-  <p>
-    <input type="submit" value="Submit">
-  </p>
-  </form>
+  <head>
+  </head>
+  <body>
+    <div id="name-form">
+      <form action="/names" method="post">
+        <p>
+          <label="player 2" class="player">Player 1:</label>
+          <input type="text" name="player_1_name" required>
+        </p>
+        <p>
+          <label="player 2" class="player">Player 2:</label>
+        </p>
+        <p>
+          <input type="radio" id="real_person" name="computer" value="false" checked="checked">
+          Human Being
+          <input type="text" name="player_2_name">
+        </p>
+        <p>
+          <input type="radio" id="computer_player" name="computer" value="">
+          Computer
+        </p>
+        <div class="submit-button">
+        <p>
+          <input type="submit" value="Play" class="submit-button">
+        </p>
+      </div>
+      </form>
+    </div>
+  </body>
 </html>
