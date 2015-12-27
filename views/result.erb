@@ -3,7 +3,7 @@
 <p>
   <% if @game.outcome == :win %>
     <h4><%= @game.player_1.weapon.to_s.capitalize %> beats <%= @game.player_2.weapon.to_s %>.</h4>
-    <h4><%= @game.player_1.name %> <%= @game.outcome %>s.</h4>
+    <h4 class="current-player"><%= @game.player_1.name %> <%= @game.outcome %>s.</h4>
     <% elsif @game.outcome == :lose %>
     <h4><%= @game.player_2.weapon.to_s.capitalize %> beats <%= @game.player_1.weapon.to_s %>.</h4>
     <h4 class="current-player"><%= @game.player_1.name %> <%= @game.outcome %>s.</h4>
