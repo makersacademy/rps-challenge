@@ -50,4 +50,3 @@ This game was developed using Ruby, HTML and Sinatra.  Development was test-driv
 Further Work
 -------------
 Add a database
-Styling
