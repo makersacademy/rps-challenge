@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <% if @game.player_2.computer == false %>
+      <h3>It's <font class="current-player"><%= @game.player_1.name %>'s</font> turn.</h3>
+    <% end %>
+    <div class="weapon-choice">
+      <h4>Choose your weapon:</h4>
+      <form action="/weapon" method="post" class="submit-button">
+        <p><input type="submit" name="weapon" value="Rock" class="rock"></p>
+        <p><input type="submit" name="weapon" value="Paper" class="paper"></p>
+        <p><input type="submit" name="weapon" value="Scissors" class="scissors"></p>
+        <p><input type="submit" name="weapon" value="Spock" class="spock"></p>
+        <p><input type="submit" name="weapon" value="Lizard" class="lizard"></p>
+      </form>
+    </div>
+  </body>
+</html>

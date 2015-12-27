@@ -1,0 +1,19 @@
+<h4><%= @game.player_1.name %> chose <%= @game.player_1.weapon.downcase %>.</h4>
+<h4><%= @game.player_2.name %> chose <%= @game.player_2.weapon.downcase %>.</h4>
+<p>
+  <% if @game.outcome == :win %>
+    <h4><%= @game.player_1.weapon.to_s.capitalize %> beats <%= @game.player_2.weapon.to_s %>.</h4>
+    <h4 class="current-player"><%= @game.player_1.name %> <%= @game.outcome %>s.</h4>
+    <% elsif @game.outcome == :lose %>
+    <h4><%= @game.player_2.weapon.to_s.capitalize %> beats <%= @game.player_1.weapon.to_s %>.</h4>
+    <h4 class="current-player"><%= @game.player_1.name %> <%= @game.outcome %>s.</h4>
+    <% else %>
+    <h4 class="current-player">It's a draw!</p>
+    <% end %>
+<p>
+  <div class="submit-button">
+    <form action="/">
+      <input type="submit" value="Play again" class="submit-button">
+    </form>
+  </div>
+</p>
