@@ -1,94 +1,103 @@
-# RPS Challenge: Rōnin Badge Test
+![makersacademy](https://github.com/allimac/resources/blob/master/ma_logo.png)
 
-Instructions
--------
+**week 3 / weekend challenge**
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+# The challenge
 
-Task 
-----
+This weekend challenge is to create a Rock/Paper/Scissor Game using our newly learned skills in Ruby/Sinatra/HTML/CSS.
+NOTE: Please excuse the use of Ruby $global variables; we haven't yet touched on databases during the course!
 
-Knowing how to build web applications is getting us almost there as web developers!
+## User stories
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
+```
+As a user
 So that I can see my name in lights
-I would like to register my name before playing an online game
+I would like to register my name before playing the game
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+As a user
+So that I can play my turn
+I need to be able to choose one option between paper/scissors/rock
 
-Hints on functionality
+As a user
+So that I can play against the computer
+I need to be able to see the choice the computer has made
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+As a user
+So that I can see who won the turn
+I need to see a confirmation of who won the turn
 
+As a user
+So that I can see if the turn was tie
+I need to see a confirmation that the turn was tie
 
-As usual please start by
+As a user
+So that I can see who is more likely to win
+I need to see a summary of the score for each turn
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan_november2015 (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+As a user
+So that I can see who won the game
+I need to see a confirmation of who won the game when the score reaches 3
 
 ```
-$ coveralls report
+
+# Implementation
+
+My implementation was driven by acceptance unit test cycles. The final implementation has 3 classes with defined responsabilities.
+
+## Modules & gems
+
+* Sinatra
+* Rake
+
+Test environment:
+* Rubocop
+* Coveralls
+* Capybara
+* Rspec
+
+## How to use it
+Make sure you first have all the necessary gems running
 ```
+$ bundle install
+```
+Then run the app.rb file
+```
+$ ruby app.rb
+```
+Finally visit the game at /localhost:4567. Enjoy! :) (simple things in life are the best)
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+## Classes
+
+### Game
+
+Game is the 'facade' class for each game session. It is instantiated with two players (the second defaults to 'Computer') and a Turn class for easy stubbing when test.
+```
+game = Game.new(Player.new('John'), Turn)
+```
+It receives the following messages:
+* play_turn(weapon1, weapon2) => this message instantiate a new turn with the selected weapons as arguments, increasing the score of the winning player. It returns a final message if any of the player is winner.
+* find(dish)
+* turn_message (delegator from Turn)
+* win_message
+
+### Player
+
+Two players are instantiated with every Game. A player is instantiated with a name and a score starting from 0.
+It receives the following messages from Game:
+* score_up
+* winner?
+
+### Turn
+
+Turn is instantiated at every turn. Following the game rules, it returns the winner and a feedback message for each turn.
+It receives the following messages:
+* winner
+* message
+
+
+## Future improvements
+
+* stub randomised weapon for computerised player
+* refactoring of turn rules
+* introduce option to play DELUX version: Scissors/Paper/Rock/Lizard/Spock

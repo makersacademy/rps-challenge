@@ -1,0 +1,74 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Cabin', sans-serif;
+  font-size: 2em;
+  color: #021067;
+}
+
+section {
+  text-align: center;
+  height:100vh;
+  width: 100%;
+  float: left;
+}
+
+.player {
+  width: 40%;
+}
+
+.overlay {
+  background-color: #021067;
+  color: white;
+}
+
+section.player img {
+  width: 100%;
+}
+
+.message {
+  width: 20%;
+}
+
+.score {
+  font-size: 2em;
+  color: #E4255C;
+}
+
+input[type=submit] {
+    font-family: 'Cabin', sans-serif;
+    font-size: 2em;
+    color: #021067;
+    padding:15px 45px;
+    font-size: 20px;
+    background:#E4255C;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover {
+    background:#cb2152;
+}
+
+input[type="text"] {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  color: #021067;
+  padding: 10px;
+  width: 300px;
+  border: solid 5px #021067;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 5px #E4255C;
+}
