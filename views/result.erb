@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Result</title>
+</head>
+
+<body>
+
+  <% if @game.winner.nil? %>
+  <h1>Draw</h1>
+  <% else %>
+  <h1><%=@game.winner.name%> wins</h1>
+  <% end %>
+
+
+<form action='/' method='get'>
+  <input type='submit' value='End'>
+</form>
+
+</body>
+
+</html>

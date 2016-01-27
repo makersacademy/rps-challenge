@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Opponent's Response</title>
+</head>
+
+<body>
+  <p><%= @opponent.name %> responds with <%= @opponent.decision %></p>
+
+
+<form action='/result' method='get'>
+  <input type='submit' value='Get Result'>
+</form>
+
+</body>
+
+
+
+</html>
