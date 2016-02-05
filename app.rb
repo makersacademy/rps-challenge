@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = session[:player_name].upcase
     erb :play
   end
   # start the server if ruby file executed directly
