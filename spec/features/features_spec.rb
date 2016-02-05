@@ -5,4 +5,11 @@ feature 'Enter name' do
     fill_in :player_name, with: 'Matt'
     click_button 'ENTER'
   end
+
+  scenario 'choose hand' do
+    visit('/')
+    fill_in :player_name, with: 'Matt'
+    click_button 'ENTER'
+    expect(page).to have_content 'Welcome Matt'
+    end
 end
