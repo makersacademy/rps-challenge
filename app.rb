@@ -1,8 +1,9 @@
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
+
   get '/' do
-    'Hello RockPaperScissors!'
+    erb :home
   end
 
   # start the server if ruby file executed directly
