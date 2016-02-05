@@ -20,6 +20,10 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    erb :result
+  end
+
 
 
   # start the server if ruby file executed directly
