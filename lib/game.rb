@@ -13,12 +13,16 @@ class Game
 
 
   def evaluate_winner
-    return 'Noone' if computer.choice == player.choice
-    return @player.name if player.choice == :rock && computer.choice == :scissors
-    return @player.name if player.choice == :scissors && computer.choice == :paper
-    return @player.name if player.choice == :paper && computer.choice == :rock
-    return 'Computer' if computer.choice == :rock && player.choice == :scissors
-    return 'Computer' if computer.choice == :scissors && player.choice == :paper
-    return 'Computer' if computer.choice == :paper && player.choice == :rock
+
+    result_combinations = {rock: {paper: false, scissors: true},
+      paper: {scissors: false, rock: true},
+      scissors: {rock: false, paper: true}
+    }
+    return "Noone" if player.choice == computer.choice
+    player_results  = result_combinations[player.choice][computer.choice]
+    return player.name if player_results == true
+    return "Computer" if player_results == false
+
   end
+
 end
