@@ -1,1 +1,14 @@
-<h1><%= @game.player1.name %> </h1>
+<h1><%= $game.player1 %> vs. The Computer </h1>
+
+
+<form action="/player1_rock" method="get">
+  <input type="submit" value="rock">
+</form>
+
+<form action="/player1_paper" method="get">
+  <input type="submit" value="paper">
+</form>
+
+<form action="/player1_scissors" method="get">
+  <input type="submit" value="scissors">
+</form>
