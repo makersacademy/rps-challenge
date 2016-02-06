@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -26,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/first_round' do
     @weapon = $player_name.weapon
-    @computer_weapon = $player_name.computer_response
+    @computer_weapon = Computer.new.response
     erb :game
   end
 

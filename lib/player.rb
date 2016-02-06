@@ -11,7 +11,4 @@ class Player
     @weapon = chosen_one
   end
 
-  def computer_response
-    ['ROCK', 'PAPER', 'SCISSORS'].sample
-  end
 end
