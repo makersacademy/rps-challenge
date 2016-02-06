@@ -10,12 +10,16 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player1]))
+    $game = Game.new(Player.new(params[:player1_name]))
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
     erb :play
+  end
+
+  get '/selection' do
+    erb :selection
   end
 end
