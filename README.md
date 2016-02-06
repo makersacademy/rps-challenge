@@ -32,8 +32,8 @@ https://seanhawkridge-rps.herokuapp.com
 Playing the game
 -----------------
 
-![alt tag](https://www.dropbox.com/s/ziwdn8z1h60c7t1/Screen-Shot-2016-02-06-at-18.56.19.jpg?dl=0)
+![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.19.jpg?dl=0)
 
-![alt tag](https://www.dropbox.com/s/g11qqetl5cdsyr4/Screen-Shot-2016-02-06-at-18.56.26.jpg?dl=0)
+![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.26.jpg?dl=0)
 
-![alt tag](https://www.dropbox.com/s/ew8c509ornq8t3k/Screen-Shot-2016-02-06-at-18.56.30.jpg?dl=0)
+![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.30.jpg?dl=0)

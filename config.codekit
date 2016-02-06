@@ -302,6 +302,39 @@
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
 		},
+	"\/docs\/Screen-Shot-2016-02-06-at-18.56.19.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 134321,
+		"inputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.19.jpg",
+		"outputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.19.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/docs\/Screen-Shot-2016-02-06-at-18.56.26.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 109635,
+		"inputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.26.jpg",
+		"outputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.26.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/docs\/Screen-Shot-2016-02-06-at-18.56.30.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 141334,
+		"inputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.30.jpg",
+		"outputAbbreviatedPath": "\/docs\/Screen-Shot-2016-02-06-at-18.56.30.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/app.css": {
 		"fileType": 16,
 		"ignore": 1,
