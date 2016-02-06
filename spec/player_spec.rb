@@ -5,14 +5,16 @@ describe Player do
   let(:name) { "Bob" }
   let(:hand) { "Rock" }
 
-    it 'returns the player name' do
+  describe '#name' do
+    it 'Returns the player name' do
       expect(player.name).to eq name
     end
-  
-    it 'stores and returns the players hand' do
+  end
+
+  describe '#choice' do
+    it 'Stores and returns the players hand' do
       player.choice = hand
       expect(player.choice).to eq hand
     end
-
-
+  end
 end

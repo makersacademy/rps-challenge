@@ -18,13 +18,22 @@ class Game
   private
 
   def win?
-    return true if players.choice == "Rock" && cpu_hand == "Scissors"
-    return true if players.choice == "Scissors" && cpu_hand == "Paper"
-    return true if players.choice == "Paper" && cpu_hand == "Rock"
-    false
+    rock_vs_scissors? || scissors_vs_paper? || paper_vs_rock?
   end
 
   def draw?
     cpu_hand == players.choice
+  end
+
+  def rock_vs_scissors?
+    players.choice == "Rock" && cpu_hand == "Scissors"
+  end
+
+  def scissors_vs_paper?
+    players.choice == "Scissors" && cpu_hand == "Paper"
+  end
+
+  def paper_vs_rock?
+    players.choice == "Paper" && cpu_hand == "Rock"
   end
 end
