@@ -41,6 +41,61 @@ main {
   h3 {
     font-style: italic;
   }
+  nav#new-game {
+    text-align: center;
+    input {
+      font-family: 'Old Standard TT', serif;
+      display: inline-block;
+      border: 3px solid $color_1;
+      background: none;
+      color: #fff;
+      font-size: 1.6em;
+      margin-bottom: 0.5em;
+      cursor: pointer;
+    }
+  }
+
+}
+
+main#start {
+  .background-image {
+  background: url('img/start.jpg') no-repeat center bottom;
+  background-size: cover;
+  }
+  h1 {
+    text-transform: uppercase;
+  }
+  form {
+    text-align: center;
+    label {
+      font-family: 'Old Standard TT', serif;
+      font-size: 1.6em;
+      color: $color_1;
+    }
+    input {
+      font-family: 'Old Standard TT', serif;
+      display: inline-block;
+      border: 3px solid $color_1;
+      background: none;
+      color: #fff;
+      font-size: 1em;
+      margin: 0.5em 0;
+      text-align: center;
+      cursor: pointer;
+    }
+    input[type="text"] {
+      background: $color_2;
+      padding: 0.2em 0;
+      font-family: sans-serif;
+    }
+  }
+}
+
+main#play {
+  .background-image {
+  background: url('img/play.jpg') no-repeat center bottom;
+  background-size: cover;
+  }
   form#moves {
     width: 100%;
     margin: 3em 0;
@@ -100,61 +155,6 @@ main {
         background-color: $color_2;
       }
     }
-  }
-  nav#new-game {
-    text-align: center;
-    input {
-      font-family: 'Old Standard TT', serif;
-      display: inline-block;
-      border: 3px solid $color_1;
-      background: none;
-      color: #fff;
-      font-size: 1.6em;
-      margin-bottom: 0.5em;
-      cursor: pointer;
-    }
-  }
-
-}
-
-main#start {
-  .background-image {
-  background: url('img/start.jpg') no-repeat center bottom;
-  background-size: cover;
-  }
-  h1 {
-    text-transform: uppercase;
-  }
-  form {
-    text-align: center;
-    label {
-      font-family: 'Old Standard TT', serif;
-      font-size: 1.6em;
-      color: $color_1;
-    }
-    input {
-      font-family: 'Old Standard TT', serif;
-      display: inline-block;
-      border: 3px solid $color_1;
-      background: none;
-      color: #fff;
-      font-size: 1em;
-      margin: 0.5em 0;
-      text-align: center;
-      cursor: pointer;
-    }
-    input[type="text"] {
-      background: $color_2;
-      padding: 0.2em 0;
-      font-family: sans-serif;
-    }
-  }
-}
-
-main#play {
-  .background-image {
-  background: url('img/play.jpg') no-repeat center bottom;
-  background-size: cover;
   }
 }
 

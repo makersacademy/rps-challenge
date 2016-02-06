@@ -30,53 +30,6 @@ main {
     margin: 1.5em 0; }
   main h3 {
     font-style: italic; }
-  main form#moves {
-    width: 100%;
-    margin: 3em 0;
-    text-align: center; }
-    main form#moves .move {
-      width: 130px;
-      height: 130px;
-      display: inline;
-      background: #EDD75A;
-      border: 0;
-      padding-top: 80px;
-      margin: 0 1em;
-      font-size: 1.4em;
-      font-family: 'Old Standard TT', serif;
-      font-style: italic;
-      border-radius: 120px;
-      border: 2px solid black;
-      transform: all 0.3s ease;
-      outline: none;
-      cursor: pointer; }
-      main form#moves .move:focus {
-        outline: none; }
-    main form#moves input#rock {
-      background: #EDD75A url("img/rock.svg") no-repeat center 10px;
-      background-size: 100px; }
-      main form#moves input#rock:hover {
-        background-color: #405059; }
-    main form#moves input#paper {
-      background: #EDD75A url("img/paper.svg") no-repeat center 10px;
-      background-size: 100px; }
-      main form#moves input#paper:hover {
-        background-color: #405059; }
-    main form#moves input#scissors {
-      background: #EDD75A url("img/scissors.svg") no-repeat center 10px;
-      background-size: 100px; }
-      main form#moves input#scissors:hover {
-        background-color: #405059; }
-    main form#moves input#lizard {
-      background: #EDD75A url("img/lizard.svg") no-repeat center 10px;
-      background-size: 100px; }
-      main form#moves input#lizard:hover {
-        background-color: #405059; }
-    main form#moves input#spock {
-      background: #EDD75A url("img/spock.svg") no-repeat center 10px;
-      background-size: 100px; }
-      main form#moves input#spock:hover {
-        background-color: #405059; }
   main nav#new-game {
     text-align: center; }
     main nav#new-game input {
@@ -118,6 +71,53 @@ main#start form {
 main#play .background-image {
   background: url("img/play.jpg") no-repeat center bottom;
   background-size: cover; }
+main#play form#moves {
+  width: 100%;
+  margin: 3em 0;
+  text-align: center; }
+  main#play form#moves .move {
+    width: 130px;
+    height: 130px;
+    display: inline;
+    background: #EDD75A;
+    border: 0;
+    padding-top: 80px;
+    margin: 0 1em;
+    font-size: 1.4em;
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    border-radius: 120px;
+    border: 2px solid black;
+    transform: all 0.3s ease;
+    outline: none;
+    cursor: pointer; }
+    main#play form#moves .move:focus {
+      outline: none; }
+  main#play form#moves input#rock {
+    background: #EDD75A url("img/rock.svg") no-repeat center 10px;
+    background-size: 100px; }
+    main#play form#moves input#rock:hover {
+      background-color: #405059; }
+  main#play form#moves input#paper {
+    background: #EDD75A url("img/paper.svg") no-repeat center 10px;
+    background-size: 100px; }
+    main#play form#moves input#paper:hover {
+      background-color: #405059; }
+  main#play form#moves input#scissors {
+    background: #EDD75A url("img/scissors.svg") no-repeat center 10px;
+    background-size: 100px; }
+    main#play form#moves input#scissors:hover {
+      background-color: #405059; }
+  main#play form#moves input#lizard {
+    background: #EDD75A url("img/lizard.svg") no-repeat center 10px;
+    background-size: 100px; }
+    main#play form#moves input#lizard:hover {
+      background-color: #405059; }
+  main#play form#moves input#spock {
+    background: #EDD75A url("img/spock.svg") no-repeat center 10px;
+    background-size: 100px; }
+    main#play form#moves input#spock:hover {
+      background-color: #405059; }
 
 main#draw .background-image {
   background: url("img/draw.jpg") no-repeat center bottom;

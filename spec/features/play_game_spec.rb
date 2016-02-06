@@ -7,7 +7,7 @@ feature 'starting the game' do
     fill_in :player_one, with: "S.Z."
     click_button 'play'
     click_button 'paper'
-    expect(page).to have_content "S.Z. move: paper"
+    expect(page).to have_content "S.Z. chose: paper"
 
   end
 
@@ -17,8 +17,8 @@ feature 'starting the game' do
     fill_in :player_one, with: "S.Z."
     click_button 'play'
     click_button 'paper'
-    expect(page).to have_content "S.Z. move: paper"
-    expect(page).to have_content "CPU move: scissors"
+    expect(page).to have_content "S.Z. chose: paper"
+    expect(page).to have_content "CPU chose: scissors"
   end
 
 end
