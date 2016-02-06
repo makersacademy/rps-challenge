@@ -10,6 +10,9 @@ feature 'Enter name' do
     visit('/')
     fill_in :player_name, with: 'Matt'
     click_button 'ENTER'
-    expect(page).to have_content 'CHOOSE YOUR WEAPON MATT'
+    expect(page).to have_content 'GREETINGS MATT CHOOSE YOUR WEAPON'
+    find_link('ROCK').visible?
+    find_link('PAPER').visible?
+    find_link('SCISSORS').visible?
     end
 end
