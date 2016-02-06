@@ -1,5 +1,6 @@
 # RPS Challenge
 
+
 My Approach
 ------------
 
@@ -32,8 +33,14 @@ https://seanhawkridge-rps.herokuapp.com
 Playing the game
 -----------------
 
+Start by adding your name:
+
 ![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.19.jpg?dl=0)
 
+Choose your move:
+
 ![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.26.jpg?dl=0)
+
+See your result:
 
 ![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.30.jpg?dl=0)
