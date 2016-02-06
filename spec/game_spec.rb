@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player) {double(:player_choice)}
-  let(:computer) {double(:computer)}
+  let(:player) {"rock"}
+  let(:computer) {"rock"}
   subject(:game) {described_class.new(player, computer)}
 
   it 'can return the player\'s choice' do
@@ -14,8 +14,12 @@ describe Game do
   end
 
   it 'returns true when player_choice = computer_choice' do
-    player_2 = computer
-    game_draw = described_class.new(player_2, computer)
-    expect(game_draw.draw?).to eq true
+    expect(game.draw?).to eq true
+  end
+
+  it 'returns true when a player has won' do
+    player_wins = "scissors"
+    game_win = described_class.new(player, player_wins)
+    expect(game_win.player_wins?).to eq true
   end
 end

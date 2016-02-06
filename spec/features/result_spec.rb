@@ -14,4 +14,12 @@ feature 'Displays results' do
     expect(page).to have_content('Rock beats Scissors')
     expect(page).to have_content('You Win!')
   end
+
+  scenario 'Player picks rock, Computer picks paper' do
+    srand(1)
+    start_game
+    click_button('Rock')
+    expect(page).to have_content('Paper beats Rock')
+    expect(page).to have_content('You Lose!')
+  end
 end

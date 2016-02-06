@@ -3,9 +3,13 @@
     |   The Computer chooses <%= @game.computer_choice %></h4>
   <% if @game.draw? %>
   <h2>You Draw!</h2>
-  <% else %>
+  <% elsif @game.player_wins? %>
   <h3> <%= @game.player_choice.capitalize %> beats
     <%= @game.computer_choice.capitalize %></h3>
   <h2>You Win!</h2>
+  <% else %>
+  <h3> <%= @game.computer_choice.capitalize %> beats
+    <%= @game.player_choice.capitalize %></h3>
+  <h2>You Lose!</h2>
   <% end %>
 </center>
