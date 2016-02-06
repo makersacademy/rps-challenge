@@ -1,0 +1,227 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'bower' ]
+2 info using npm@3.3.12
+3 info using node@v5.5.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData bower
+8 silly fetchNamedPackageData bower
+9 silly mapToRegistry name bower
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/bower
+13 verbose request uri https://registry.npmjs.org/bower
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 12:47:09 PM
+16 verbose request id 4e93c30089e9d6a6
+17 http request GET https://registry.npmjs.org/bower
+18 http 200 https://registry.npmjs.org/bower
+19 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+19 verbose headers   etag: '"9IRK1DZN27I6Y4M3UB4Y5DF8O"',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'content-length': '168868',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Sat, 06 Feb 2016 12:47:09 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '174',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-ams4139-AMS',
+19 verbose headers   'x-cache': 'HIT',
+19 verbose headers   'x-cache-hits': '2',
+19 verbose headers   'x-timer': 'S1454762829.563218,VS0,VE0',
+19 verbose headers   vary: 'Accept' }
+20 silly get cb [ 200,
+20 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 silly get     etag: '"9IRK1DZN27I6Y4M3UB4Y5DF8O"',
+20 silly get     'content-type': 'application/json',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'content-length': '168868',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Sat, 06 Feb 2016 12:47:09 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '174',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-ams4139-AMS',
+20 silly get     'x-cache': 'HIT',
+20 silly get     'x-cache-hits': '2',
+20 silly get     'x-timer': 'S1454762829.563218,VS0,VE0',
+20 silly get     vary: 'Accept' } ]
+21 verbose get saving bower to /Users/seanhawkridge/.npm/registry.npmjs.org/bower/.cache.json
+22 verbose makeDirectory /Users/seanhawkridge/.npm creation not in flight; initializing
+23 silly makeDirectory /Users/seanhawkridge/.npm uid: 501 gid: 20
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule bower@1.7.7 checking installable status
+37 silly cache add args [ 'bower', null ]
+38 verbose cache add spec bower
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'bower',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'bower',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: '*',
+39 silly cache add   type: 'range' }
+40 silly addNamed bower@*
+41 verbose addNamed "*" is a valid semver range for bower
+42 silly addNameRange { name: 'bower', range: '*', hasData: false }
+43 silly mapToRegistry name bower
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/bower
+47 verbose addNameRange registry:https://registry.npmjs.org/bower not in flight; fetching
+48 verbose get https://registry.npmjs.org/bower not expired, no request
+49 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+50 silly addNameRange versions [ 'bower',
+50 silly addNameRange   [ '0.1.0',
+50 silly addNameRange     '0.1.2',
+50 silly addNameRange     '0.1.3',
+50 silly addNameRange     '0.2.0',
+50 silly addNameRange     '0.3.0',
+50 silly addNameRange     '0.3.1',
+50 silly addNameRange     '0.3.2',
+50 silly addNameRange     '0.4.0',
+50 silly addNameRange     '0.5.0',
+50 silly addNameRange     '0.5.1',
+50 silly addNameRange     '0.6.0',
+50 silly addNameRange     '0.6.1',
+50 silly addNameRange     '0.6.2',
+50 silly addNameRange     '0.6.3',
+50 silly addNameRange     '0.6.4',
+50 silly addNameRange     '0.6.5',
+50 silly addNameRange     '0.6.6',
+50 silly addNameRange     '0.6.7',
+50 silly addNameRange     '0.6.8',
+50 silly addNameRange     '0.7.0',
+50 silly addNameRange     '0.7.1',
+50 silly addNameRange     '0.8.0',
+50 silly addNameRange     '0.8.1',
+50 silly addNameRange     '0.8.2',
+50 silly addNameRange     '0.8.3',
+50 silly addNameRange     '0.8.4',
+50 silly addNameRange     '0.8.5',
+50 silly addNameRange     '0.8.6',
+50 silly addNameRange     '0.9.0',
+50 silly addNameRange     '0.9.1',
+50 silly addNameRange     '0.9.2',
+50 silly addNameRange     '0.10.0',
+50 silly addNameRange     '1.0.0',
+50 silly addNameRange     '1.0.1',
+50 silly addNameRange     '1.0.2',
+50 silly addNameRange     '1.0.3',
+50 silly addNameRange     '1.1.0',
+50 silly addNameRange     '1.1.1',
+50 silly addNameRange     '1.1.2',
+50 silly addNameRange     '1.2.0',
+50 silly addNameRange     '1.2.1',
+50 silly addNameRange     '1.2.2',
+50 silly addNameRange     '1.2.3',
+50 silly addNameRange     '1.2.4',
+50 silly addNameRange     '1.2.5',
+50 silly addNameRange     '1.2.6',
+50 silly addNameRange     '1.2.7',
+50 silly addNameRange     '1.2.8',
+50 silly addNameRange     '1.3.0',
+50 silly addNameRange     '1.3.1',
+50 silly addNameRange     '1.3.2',
+50 silly addNameRange     '1.3.3',
+50 silly addNameRange     '1.3.4',
+50 silly addNameRange     '1.3.5',
+50 silly addNameRange     '1.3.6',
+50 silly addNameRange     '1.3.7',
+50 silly addNameRange     '1.3.8',
+50 silly addNameRange     '1.3.9',
+50 silly addNameRange     '1.3.10',
+50 silly addNameRange     '1.3.11',
+50 silly addNameRange     '1.3.12',
+50 silly addNameRange     '1.4.0',
+50 silly addNameRange     '1.4.1',
+50 silly addNameRange     '1.5.0',
+50 silly addNameRange     '1.5.1',
+50 silly addNameRange     '1.5.2',
+50 silly addNameRange     '1.5.3',
+50 silly addNameRange     '1.6.2',
+50 silly addNameRange     '1.6.3',
+50 silly addNameRange     '1.6.4',
+50 silly addNameRange     '1.6.5',
+50 silly addNameRange     '1.5.4',
+50 silly addNameRange     '1.4.2',
+50 silly addNameRange     '1.6.6',
+50 silly addNameRange     '1.6.7',
+50 silly addNameRange     '1.6.8',
+50 silly addNameRange     '1.6.9',
+50 silly addNameRange     '1.7.0',
+50 silly addNameRange     '1.7.1',
+50 silly addNameRange     '1.7.2',
+50 silly addNameRange     '1.7.5',
+50 silly addNameRange     '1.7.6',
+50 silly addNameRange     '1.7.7' ] ]
+51 silly addNamed bower@1.7.7
+52 verbose addNamed "1.7.7" is a plain semver version for bower
+53 silly mapToRegistry name bower
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry uri https://registry.npmjs.org/bower
+57 verbose addRemoteTarball https://registry.npmjs.org/bower/-/bower-1.7.7.tgz not in flight; adding
+58 verbose addRemoteTarball [ 'https://registry.npmjs.org/bower/-/bower-1.7.7.tgz',
+58 verbose addRemoteTarball   '2fd7ff3ebdcba5a8ffcd84c397c8fdfe9f825f92' ]
+59 info retry fetch attempt 1 at 12:47:09 PM
+60 info attempt registry request try #1 at 12:47:09 PM
+61 http fetch GET https://registry.npmjs.org/bower/-/bower-1.7.7.tgz
+62 http fetch 200 https://registry.npmjs.org/bower/-/bower-1.7.7.tgz
+63 silly fetchAndShaCheck shasum 2fd7ff3ebdcba5a8ffcd84c397c8fdfe9f825f92
+64 verbose addTmpTarball /var/folders/ld/dp5h9czn4793fx8jzqhr12s40000gn/T/npm-42754-0dd06c95/registry.npmjs.org/bower/-/bower-1.7.7.tgz not in flight; adding
+65 verbose addTmpTarball already have metadata; skipping unpack for bower@1.7.7
+66 silly cache afterAdd bower@1.7.7
+67 verbose afterAdd /Users/seanhawkridge/.npm/bower/1.7.7/package/package.json not in flight; writing
+68 verbose afterAdd /Users/seanhawkridge/.npm/bower/1.7.7/package/package.json written
+69 silly loadAllDepsIntoIdealTree Finishing
+70 silly idealTree:prePrune lib
+70 silly idealTree:prePrune └── bower@1.7.7
+71 silly loadIdealTree Finishing
+72 silly currentTree lib
+73 silly idealTree lib
+73 silly idealTree └── bower@1.7.7
+74 silly generateActionsToTake Starting
+75 silly install generateActionsToTake
+76 warn checkPermissions Missing write access to /usr/local/lib/node_modules
+77 silly rollbackFailedOptional Starting
+78 silly rollbackFailedOptional Finishing
+79 silly runTopLevelLifecycles Starting
+80 silly runTopLevelLifecycles Finishing
+81 silly install printInstalled
+82 verbose stack Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+82 verbose stack     at Error (native)
+83 verbose cwd /Users/seanhawkridge/Dropbox/Dev/rps-challenge
+84 error Darwin 15.0.0
+85 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "bower"
+86 error node v5.5.0
+87 error npm  v3.3.12
+88 error path /usr/local/lib/node_modules
+89 error code EACCES
+90 error errno -13
+91 error syscall access
+92 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+92 error     at Error (native)
+92 error  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules']
+92 error   errno: -13,
+92 error   code: 'EACCES',
+92 error   syscall: 'access',
+92 error   path: '/usr/local/lib/node_modules' }
+93 error Please try running this command again as root/Administrator.
+94 verbose exit [ -13, true ]

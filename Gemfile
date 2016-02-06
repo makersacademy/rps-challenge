@@ -6,6 +6,9 @@ gem 'sinatra'
 gem 'rake'
 gem 'rack'
 gem 'rerun'
+gem 'sass'
+gem 'compass'
+
 
 group :test do
   gem 'rspec'

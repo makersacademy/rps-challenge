@@ -26,9 +26,6 @@ class RPSApp < Sinatra::Base
 
   get '/game' do
     @game = $game
-    p @game.player_one.move
-    p @game.player_two.move
-    p @game.result
     erb @game.result
   end
 

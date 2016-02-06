@@ -1,13 +1,35 @@
-<%= @game.player_one.name %> move: <%= @game.player_one.move %>
 
-<%= @game.player_two.name %> move: <%= @game.player_two.move %>
+<main id="draw">
 
-<h1>It's a draw!</h1>
+<div class="background-image"></div>
 
-<form action='/play' method="get">
-    <input type="submit" value="again">
-</form>
+<div class="row">
+  <div class="small-12 medium-10 medium-centered columns">
+    <h3><%= @game.player_one.name %> move: <%= @game.player_one.move %></h3>
+    <h3><%= @game.player_two.name %> move: <%= @game.player_two.move %></h3>
+  </div>
+</div>
 
-<form action='/' method="get">
-    <input type="submit" value="new player">
-</form>
+<div class="row">
+  <div class="small-12 medium-10 medium-centered columns">
+    <h1>It's a draw!</h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-12 medium-10 medium-centered columns">
+    <nav id="new-game">
+      <form action='/play' method="get">
+          <input type="submit" value="another round?">
+      </form>
+
+      <form action='/' method="get">
+          <input type="submit" value="new player">
+      </form>
+    </nav>
+  </div>
+</div>
+
+
+</main>

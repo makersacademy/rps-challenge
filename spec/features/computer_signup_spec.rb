@@ -6,7 +6,7 @@ feature 'sign up' do
     visit('/')
     fill_in :player_one, with: "Steve Zissou"
     click_button 'play'
-    expect(page).to have_content "Robot"
+    expect(page).to have_content "CPU"
 
   end
 
