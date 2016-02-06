@@ -6,9 +6,11 @@ class Game
   end
   
   def result
+    p player.choice
+    p player2.choice
     return "a Draw. You both picked #{player.choice}." if draw?
     return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if win?
-    "a win for #{players.last.name}! #{player2.choice} beats #{player.choice}."
+    "a win for #{player2.name}! #{player2.choice} beats #{player.choice}."
   end
 
   attr_reader :players, :player, :player2

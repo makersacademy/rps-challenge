@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/cpu'
 
 class RPS < Sinatra::Base
 
@@ -42,7 +43,7 @@ class RPS < Sinatra::Base
     @player_1 = $game.players.first
     @player_1.choice = params[:hand1]
     if $game_type == 'oneplayer'
-      $game.players.last.choice
+      $game.players.last.pick
       redirect '/end'
     else
       redirect '/player2_pick'

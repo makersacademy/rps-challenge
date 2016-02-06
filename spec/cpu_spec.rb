@@ -6,8 +6,8 @@ describe Cpu do
   
   describe '#choice & #cpu_hand' do
     it 'Returns one of three hands' do
-      cpu.choice
-      expect(["Rock", "Paper", "Scissors"]).to include(cpu.cpu_hand)
+      cpu.pick
+      expect(["Rock", "Paper", "Scissors"]).to include(cpu.choice)
     end
   end
 end

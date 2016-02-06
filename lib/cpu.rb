@@ -3,9 +3,9 @@ class Cpu
     @name = "CPU"
   end
 
-  def choice
-    @cpu_hand = ["Rock", "Paper", "Scissors"].sample
+  def pick
+    @choice = ["Rock", "Paper", "Scissors"].sample
   end
 
-  attr_reader :cpu_hand, :name
+  attr_reader :choice, :name
 end
