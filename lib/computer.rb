@@ -13,7 +13,7 @@ class Computer
     names.sample + " the Computer"
   end
 
-  def make_move
+  def make_move(*args)
     @move = Game::MOVES.sample
   end
 

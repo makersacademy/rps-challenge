@@ -12,6 +12,21 @@ describe Game do
       expect(player2).to receive(:make_move)
       game.make_moves('Rock')
     end
+
+    it 'works with two arguments' do
+      expect(player1).to receive(:make_move)
+      expect(player2).to receive(:make_move)
+      game.make_moves('Rock','Scissors')
+
+    end
+
+    describe '#multiplayer?' do
+      it 'two player initiates multiplayer mode' do
+        game.two_player
+        expect(game).to be_multiplayer
+      end
+    end
+
   end
 
   describe '#outcome' do

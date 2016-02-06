@@ -19,20 +19,27 @@ class Battle < Sinatra::Base
     erb :two_player
   end
 
+  post '/2-player' do
+    $game = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
+    $game.two_player
+    redirect '/play'
+  end
+
   post '/1-player' do
     $game = Game.new(Player.new(params['Player1 name']),Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @player1_name = $game.player1.name
-    @player2_name = $game.player2.name
+    @game = $game
+    @player1_name = @game.player1.name
+    @player2_name = @game.player2.name
     erb :play
   end
 
   post '/game' do
     @game = $game
-    @game.make_moves(params['choice'])
+    @game.multiplayer? ? @game.make_moves(params['choice'],params['choice2']) : @game.make_moves(params['choice'])
     redirect '/game'
   end
 
