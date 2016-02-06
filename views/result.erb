@@ -9,7 +9,8 @@
     <%= @game.computer_choice.capitalize %></h3>
   <h2>You Win!</h2>
   <% else %>
-  <h3> <%= @game.computer_choice.capitalize %> beats
+  <h3> <%= @game.computer_choice.capitalize %>
+    beat<% if @game.computer_choice!="scissors" %>s<% end %>
     <%= @game.player_choice.capitalize %></h3>
   <h2>You Lose!</h2>
   <% end %>
