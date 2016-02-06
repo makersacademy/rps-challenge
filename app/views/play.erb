@@ -1,4 +1,4 @@
-<h1>Welcome <font color="red"><%= @player.name %></font>!</h1>
+<h1>Welcome <font color="red"><%= $game.player.name %></font>!</h1>
 <h2>Ready to play? Pick your move!</h2>
 <form action= "/move" method= "post">
   <input type="submit" name="move" value="ROCK">
