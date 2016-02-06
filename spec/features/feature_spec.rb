@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'web_helpers'
-require_relative '../../lib/game'
-require_relative '../../app'
-require_relative '../../lib/player'
+# require_relative '../../lib/game'
+# require_relative '../../app'
+# require_relative '../../lib/player'
 
 feature 'US1 - Player can register their name' do
   scenario 'Returns the user name that the player inputs' do
