@@ -7,18 +7,18 @@ feature 'starting the game' do
     fill_in :player_one, with: "S.Z."
     click_button 'play'
     click_button 'paper'
-    expect(page).to have_content "S.Z. move:"
+    expect(page).to have_content "S.Z. move: paper"
 
   end
 
-  scenario 'the player decides to play' do
-
+  scenario 'the computer is also playing' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     visit('/')
     fill_in :player_one, with: "S.Z."
     click_button 'play'
     click_button 'paper'
-    expect(page).to have_content "CPU move:"
-
+    expect(page).to have_content "S.Z. move: paper"
+    expect(page).to have_content "CPU move: scissors"
   end
 
 end
