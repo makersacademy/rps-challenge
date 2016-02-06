@@ -3,7 +3,17 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
 
   get '/' do
-    "Hello World"
+    erb(:index)
+  end
+
+  post '/name' do
+    $name = params[:name]
+    redirect 'play'
+  end
+
+  get '/play' do
+    @name = $name
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
