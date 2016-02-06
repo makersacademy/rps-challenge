@@ -4,6 +4,14 @@ Reiss Johnson - Weekend Challenge - 03
 ------
 
 *updating README - Intial Commit
+---
+
+Player Instructions!
+---------------------
+
+1)run ruby app.rb from rps-challenge directory in terminal.
+
+2) Visit localhost:4567 and fill in your name.
 
 
 
