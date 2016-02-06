@@ -20,7 +20,7 @@ end
 
 feature 'Computer chooses shape' do
   scenario 'Displays computer choice' do
-    srand(2)
+    computer_picks_rock
     start_game
     click_button('Rock')
     expect(page).to have_content("The Computer chooses rock")

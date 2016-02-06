@@ -4,35 +4,42 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    @results = {"rock" => ["blunts", "scissors"],
-      "scissors" => ["cut", "paper"],
-      "paper" => ["covers", "rock"]}
+    @results = {"rock" => [["blunts", "scissors"],["crushes","lizard"]],
+      "scissors" => [["cut", "paper"],["decapitate", "lizard"]],
+      "paper" => [["covers", "rock"],["disproves", "Spock"]],
+      "lizard" => [["eats", "paper"], ["poisons", "Spock"]],
+      "Spock" => [["vaporizes", "rock"], ["smashes", "scissors"]]}
   end
 
   def player_loses?
-    check_choice(computer) ==  player
+    player == check_choice(computer, 0) || player == check_choice(computer, 1)
   end
 
   def player_wins?
-    check_choice(player) ==  computer
+    computer == check_choice(player, 0) || computer == check_choice(player, 1)
   end
 
   def verb
     if player_wins?
-      return check_verb(player)
+      return which_verb(player, computer)
     else
-      return check_verb(computer)
+      return which_verb(computer, player)
     end
   end
 
   private
 
-  def check_choice(player)
-    @results[player][1]
+  def check_choice(player, number)
+    @results[player][number][1]
   end
 
-  def check_verb(player)
-    @results[player][0]
+  def which_verb(winner, loser)
+    return check_verb(winner, 0) if loser == check_choice(winner, 0)
+    check_verb(winner, 1)
+  end
+
+  def check_verb(player, number)
+    @results[player][number][0]
   end
 
 end

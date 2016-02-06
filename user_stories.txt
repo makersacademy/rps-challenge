@@ -14,3 +14,8 @@
    2.6 Want to be able to choose 'scissors' and then win/draw/lose
 
 3. Want to see more interesting messages (instead of 'Scissors beat Paper, have Scissors cut paper')
+
+4. Change the game to Rock, Paper, Scissors, Lizard, Spock
+
+   4.1 Want to include 'Lizard' button
+   4.2 Want to win/lose/draw

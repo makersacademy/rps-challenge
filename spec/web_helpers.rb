@@ -18,5 +18,9 @@ def computer_picks_scissors
 end
 
 def computer_picks_paper
+  srand(10)
+end
+
+def computer_picks_lizard
   srand(1)
 end
