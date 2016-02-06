@@ -1,10 +1,12 @@
 require 'sinatra/base'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
 enable :sessions
 
  	get '/' do
-    erb(:index)
+  session[:game] = Game.new 
+  erb(:index)
   end
 
 	post '/names' do 
@@ -23,7 +25,9 @@ enable :sessions
 	end
 
 	get '/play' do 
+	@game = Game.new
 	@weapon = session[:weapon]
+	@opponent = @game.opponent
 	erb(:play)
 	end
 
