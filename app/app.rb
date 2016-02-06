@@ -1,33 +1,34 @@
 require 'sinatra/base'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
+enable :sessions
 
  	get '/' do
     erb(:index)
   end
 
 	post '/names' do 
-	$player1 = params[:player_1]
+	session[:player_1] = params[:player_1]
 	redirect('/start')
 	end
 
 	get '/start' do
-	@player1 = $player1	
+	@player1 = session[:player_1] 
 	erb(:start)
 	end
 
-	post '/tool' do 
-	$tool = params[:tool]
+	post '/weapon' do 
+	session[:weapon] = params[:weapon]
 	redirect('/play')
 	end
 
 	get '/play' do 
-	@tool = $tool	
+	@weapon = session[:weapon]
 	erb(:play)
 	end
 
 
- run! if app_file == $0
+ run! if app_file == $PROGRAM_NAME
 
 end
 
