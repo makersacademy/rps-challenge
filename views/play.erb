@@ -1,1 +1,16 @@
-<h1> <%= @player %> vs Computer </h1>
+<h1> <%= @game.player.name %> vs Computer </h1>
+
+<form action='/result'>
+  <input type='submit' value='Rock'>
+
+</form>
+
+<form action='/result'>
+  <input type='submit' value='Paper'>
+
+</form>
+
+<form action='/result'>
+  <input type='submit' value='Scissors'>
+
+</form>

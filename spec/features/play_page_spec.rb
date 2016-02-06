@@ -7,10 +7,10 @@ feature 'play game page' do
     expect(page).to have_content "Harry vs Computer"
   end
 
-  xscenario 'has the 3 relevant action buttons' do
+  scenario 'has the 3 relevant action buttons' do
     sign_in
-    expect(page).to have_buttom 'Rock'
-    expect(page).to have_buttom 'Paper'
-    expect(page).to have_buttom 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 end
