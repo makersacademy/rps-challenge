@@ -1,4 +1,11 @@
 <center>
-  <h4><%= @player_name %> chooses <%= @player_choice %>   |
-    |   The Computer chooses <%= @computer_choice %></h4>
+  <h4><%= @player_name %> chooses <%= @game.player_choice %>   |
+    |   The Computer chooses <%= @game.computer_choice %></h4>
+  <% if @game.draw? %>
+  <h2>You Draw!</h2>
+  <% else %>
+  <h3> <%= @game.player_choice.capitalize %> beats
+    <%= @game.computer_choice.capitalize %></h3>
+  <h2>You Win!</h2>
+  <% end %>
 </center>

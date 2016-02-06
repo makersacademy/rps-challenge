@@ -17,15 +17,15 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     computer = Computer.new
-    $player_choice = params[:choice]
-    $computer_choice = computer.random
+    player_choice = params[:choice]
+    computer_choice = computer.random
+    $game = Game.new(player_choice, computer_choice)
     redirect('/result')
   end
 
   get '/result' do
     @player_name = $player_name
-    @player_choice = $player_choice
-    @computer_choice = $computer_choice
+    @game = $game
     erb(:result)
   end
 
