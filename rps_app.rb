@@ -4,6 +4,11 @@ require './lib/pc_player'
 require './lib/game'
 require './lib/player'
 
+# missing features:
+# capitalize Spock
+# best of 3
+# multiplayer
+
 
 class RPSApp < Sinatra::Base
 
