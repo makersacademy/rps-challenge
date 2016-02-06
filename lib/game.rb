@@ -11,17 +11,6 @@ class Game
     @computer = computer
   end
 
-  # def player_name
-  #   @player.name
-  # end
-  #
-  # def player_choice
-  #   @player.choice
-  # end
-
-  # def computer_choice
-  #   @computer.choice
-  # end
 
   def evaluate_winner
     return 'Draw' if computer.choice == player.choice

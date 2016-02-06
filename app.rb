@@ -23,13 +23,26 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @choice = params[:Rock]
-
     $game.computer.pick
-    $game.player.rock
     @game = $game
     erb(:result)
   end
+
+  post '/rock' do
+    $game.player.rock
+    redirect '/result'
+  end
+
+  post '/paper' do
+    $game.player.paper
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    $game.player.scissors
+    redirect '/result'
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
