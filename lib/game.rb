@@ -1,5 +1,6 @@
 class Game
   attr_reader :player
+  
   def initialize(player)
     @player = player
     @options = ["Rock", "Paper", "Scissors"]
@@ -28,16 +29,25 @@ class Game
   end
   
   def calculate_winner(computer, player)
-    if computer == "Rock" && player == "Scissors"
-      @winner = "Computer"
-    elsif computer == "Paper" && player == "Rock"
-      @winner = "Computer"
-    elsif computer == "Scissors" && player == "Paper"
-      @winner = "Computer"
-    elsif computer == player
-      @winner = "Draw"
-    else
-      @winner = @player
-    end
+    return @winner = "Draw" if computer == player
+    computer_wins?(computer, player) ? @winner = "Computer" : @winner = @player
+  end
+  
+  def rock_beats_scissors?(computer, player)
+    computer == "Rock" && player == "Scissors"
+  end
+  
+  def paper_beats_rock?(computer, player)
+    computer == "Paper" && player == "Rock"
+  end
+  
+  def scissors_beat_paper?(computer, player)
+    computer == "Scissors" && player == "Paper"
+  end
+  
+  def computer_wins?(computer, player)
+    return true if rock_beats_scissors?(computer, player)
+    return true if paper_beats_rock?(computer, player)
+    return true if scissors_beat_paper?(computer, player)
   end
 end
