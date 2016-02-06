@@ -13,4 +13,5 @@ group :test do
   gem 'capybara'
   gem 'byebug'
   gem 'selenium-webdriver'
+  gem 'rspec-sinatra'
 end
