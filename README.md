@@ -1,6 +1,7 @@
 # RPS Challenge
 
 [![Build Status](https://travis-ci.org/seanhawkridge/rps-challenge.svg?branch=master)](https://travis-ci.org/seanhawkridge/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/seanhawkridge/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/seanhawkridge/rps-challenge?branch=master)
 
 
 My Approach
