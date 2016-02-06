@@ -5,3 +5,9 @@
 2. As a marketeer
    So that I can enjoy myself away from the daily grind
    I would like to be able to play rock/paper/scissors
+
+   2.1 Want to be able to choose 'rock' and display my choice
+   2.2 Want the computer to choose 'r/p/s' and display their choice
+   2.3 When computer chooses 'rock', want to see a draw
+   2.4 When computer chooses 'scissors', want to see that I've won
+   2.5 When computer chooses 'paper', want to see that I've lost
