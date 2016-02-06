@@ -13,7 +13,7 @@ class Game
 
 
   def evaluate_winner
-    return 'Draw' if computer.choice == player.choice
+    return 'Noone' if computer.choice == player.choice
     return @player.name if player.choice == :rock && computer.choice == :scissors
     return @player.name if player.choice == :scissors && computer.choice == :paper
     return @player.name if player.choice == :paper && computer.choice == :rock

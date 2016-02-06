@@ -23,7 +23,7 @@ feature 'result page' do
     expect(page).to have_content 'Computer chooses scissors'
   end
 
-  scenario 'as an option to play again' do
+  scenario 'has an option to play again' do
     sign_in
     click_button 'Rock'
     expect(page).to have_button 'Play again'
