@@ -1,0 +1,12 @@
+<p><%= @player_1.name %>, please choose an option below:</p>
+<br>
+<form action='/player1_has_picked' method='post'>
+  <label>Rock
+    <input type='radio' name='hand1' value='Rock'></label><br>
+    <label>Paper
+      <input type='radio' name='hand1' value='Paper'></label><br>
+      <label>Scissors
+        <input type='radio' name='hand1' value='Scissors'></label><br>
+        <br>
+        <input type='submit' value='Play'>
+      </form>

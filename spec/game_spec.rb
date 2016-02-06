@@ -1,12 +1,13 @@
 require 'game'
 
 describe Game do 
-  subject(:game) { described_class.new(player)}
+  subject(:game) { described_class.new([player])}
   let(:player) { double :player }
+  let(:player2){ double :player }
 
   describe '#players' do
-    it 'Returns the Player' do
-      expect(game.players).to eq player
+    it 'Returns an array of 2 players' do
+      expect(game.players).to eq [player]
     end
   end
 

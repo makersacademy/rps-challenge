@@ -3,22 +3,22 @@ require 'web_helpers'
 
 
 feature 'US1 - Player can register their name' do
-  scenario 'Returns the user name that the player inputs' do
-    sign_in_and_play
-    expect(page).to have_content 'Welcome Bob, are you ready to play RPS?'
+  scenario 'Accepts player name and asks if ready to play' do
+    #visual_test
+    sign_in_and_play_vs_CPU
+    expect(page).to have_content 'Welcome! Are you ready to play RPS?'
   end
 end
 
 feature 'US2 - Player can play a game of Rock, Paper' do
   feature 'Player picks Rock' do
     before do
-      sign_in_and_play
+      sign_in_and_play_vs_CPU
       click_link "Let's Play!"
       choose 'Rock'
     end
 
     scenario 'CPU picks Rock' do
-      #visual_test
       allow_any_instance_of(Game).to receive(:cpu_hand).and_return("Rock")
       click_button 'Play'
       expect(page).to have_content 'The result is a Draw. You both picked Rock.'
@@ -39,7 +39,7 @@ feature 'US2 - Player can play a game of Rock, Paper' do
 
   context 'Player picks Paper' do
     before do
-      sign_in_and_play
+      sign_in_and_play_vs_CPU
       click_link "Let's Play!"
       choose 'Paper'
     end
@@ -65,7 +65,7 @@ feature 'US2 - Player can play a game of Rock, Paper' do
 
   context 'Player picks Scissors' do
     before do
-      sign_in_and_play
+      sign_in_and_play_vs_CPU
       click_link "Let's Play!"
       choose 'Scissors'
     end
@@ -92,14 +92,34 @@ feature 'US2 - Player can play a game of Rock, Paper' do
   context 'Allows you to play again' do
     scenario 'resets the game' do
       allow_any_instance_of(Game).to receive(:cpu_hand).and_return("Paper")
-      sign_in_and_play
+      sign_in_and_play_vs_CPU
       click_link "Let's Play!"
       choose 'Scissors'
       click_button 'Play'
       click_link "Play Again?"
+      sign_in_and_play_vs_CPU
+      click_link "Let's Play!"      
       choose 'Rock'
       click_button 'Play'
       expect(page).to have_content 'The result is a Loss! Paper beats Rock.'
+    end
+  end
+
+  feature 'Allows for 2 players to play' do
+    visual_test
+    scenario 'Runs through a multiplayer session' do
+      visit '/'
+      choose 'Human vs. Human'
+      click_button 'Submit'
+      fill_in 'Player_1_Name', with: 'Bob'
+      fill_in 'Player_2_Name', with: 'John'
+      click_button 'Submit'
+      click_link "Let's Play!"
+      choose 'Rock'
+      click_button 'Play'
+      choose 'Scissors'
+      click_button 'Play'
+      expect(page).to have_content 'a win for Bob! Rock beats Scissors.'
     end
   end
 end    

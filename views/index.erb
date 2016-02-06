@@ -2,9 +2,13 @@
 
 <p>A simple web based game build on Sinatra and Ruby by Godfrey Chiu, Ronin student at Makers Academy (Jan 2016 cohort)</p>
 <br>
-<form action='/names' method='post'>
-  <label>Please enter your name:<br>
-<input type='text' name='Player_1_Name'>
-</label>
-<input type='submit' value='Submit'>
-</form>
+
+<form action='/game_type' method='post'>
+  <label>Human vs. CPU
+    <input type='radio' name='game' value='HvsC'></label><br>
+    <label>Human vs. Human
+      <input type='radio' name='game' value='HvsH'></label><br>
+        <br>
+        <input type='submit' value='Submit'>
+      </form>
+
