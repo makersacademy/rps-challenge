@@ -16,13 +16,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
+    computer = Computer.new
     $player_choice = params[:choice]
+    $computer_choice = computer.random
     redirect('/result')
   end
 
   get '/result' do
     @player_name = $player_name
     @player_choice = $player_choice
+    @computer_choice = $computer_choice
     erb(:result)
   end
 
