@@ -20,15 +20,21 @@ class Game
   private
 
   def select_winner
-    rock_to_scissors = @player1.c_rps == :rock && @player2.c_rps == :scissors
-    paper_to_rock = @player1.c_rps == :paper && @player2.c_rps == :rock
-    scissors_to_paper = @player1.c_rps == :scissors && @player2.c_rps == :paper
-    case
-      when @player1.c_rps == @player2.c_rps then 0
-      when rock_to_scissors || paper_to_rock || scissors_to_paper then @player1
-    else
-      @player2
-    end
+    return 0 if @player1.c_rps == @player2.c_rps
+    return @player1 if rock_to_scissors || paper_to_rock || scissors_to_paper
+    @player2
+  end
+
+  def rock_to_scissors
+    @player1.c_rps == :rock && @player2.c_rps == :scissors
+  end
+
+  def paper_to_rock
+    @player1.c_rps == :paper && @player2.c_rps == :rock
+  end
+
+  def scissors_to_paper
+    @player1.c_rps == :scissors && @player2.c_rps == :paper
   end
 
   def reset
