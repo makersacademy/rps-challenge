@@ -1,7 +1,4 @@
-require 'game'
-
 class Player
-
   attr_reader :choice, :name
 
   CHOICE_VALUE_PAIRS = {'Rock' => 1,
@@ -12,6 +9,8 @@ class Player
      selection == 0 ? @choice = auto_choose : @choice = selection_hash(selection)
      @name = name
   end
+
+
 
   private
 
@@ -24,7 +23,12 @@ class Player
   end
 
   def auto_choose
-    CHOICE_VALUE_PAIRS.select {|key, value| value == random_number}
+    number = random_number
+    CHOICE_VALUE_PAIRS.select {|key, value| value == number }
+  end
+
+  def choice_test
+    @choice.keys.pop
   end
 
 end

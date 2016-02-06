@@ -1,5 +1,4 @@
 class Game
-
   attr_reader :player_one, :player_two, :winner
 
   def initialize(player_one, player_two)
@@ -38,7 +37,6 @@ class Game
   def choice_value_diff
     player_choice_value(@player_one) - player_choice_value(@player_two)
   end
-
 
   def player_choice_value(player)
     player.choice.values.pop

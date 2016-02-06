@@ -1,0 +1,11 @@
+<h1> Hi <%= @name %>! </h1>
+
+<h2> Please choose whether you'd like to play a person or computer </h2>
+
+<form action="/choose_opponent" method='Post'>
+  <input type="submit" name="Play_mode" value="Computer">
+</form>
+
+<form action="/choose_opponent" method='Post'>
+  <input type="submit" name="Play_mode" value="Person">
+</form>
