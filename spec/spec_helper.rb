@@ -1,6 +1,7 @@
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
 require 'coveralls'
 require 'simplecov'
+require 'capybara/dsl'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
@@ -8,9 +9,13 @@ SimpleCov.formatters = [
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
 # SimpleCov.start
-Coveralls.wear! 
+Coveralls.wear!
 
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
 require 'capybara/rspec'
+
+ENV['RACK_ENV'] = 'test'
+require File.join(File.dirname(__FILE__), '..', '/app/app.rb')
+Capybara.app = RPS
