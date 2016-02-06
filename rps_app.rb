@@ -24,12 +24,12 @@ class RPSApp < Sinatra::Base
   post '/weapon' do
     @game = session[:game]
     @game.player_1.weapon = params[:weapon]
-    redirect to '/fight'
+    redirect to '/round'
   end
 
-  get '/fight' do
+  get '/round' do
     @game = session[:game]
-    erb(:fight)
+    erb @game.round_result
   end
 
   # start the server if ruby file executed directly
