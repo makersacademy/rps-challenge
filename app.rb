@@ -24,12 +24,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/choices' do
+    @game = $game
+    @game.player_1.make_choice(params['choice'])
+    @game.computer.rps_choice
+    @game.rps_logic(@game.player_1.choice, @game.computer.choice)
+    redirect to '/results'
+  end
 
   get '/results' do
     @game = $game
-    @player_choice = params['choice']
-    @game.computer.rps_choice
-    @game.rps_logic(@player_choice, @game.computer.choice)
     @game.result
     erb(:results)
   end
