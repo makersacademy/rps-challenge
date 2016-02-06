@@ -10,9 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    p params
     $player_name = Player.new(params[:player_name])
-    p params[:player_name]
     redirect '/choose_your_weapon'
   end
 
@@ -22,13 +20,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-    p params
-    session[:value] = params[:weapon]
+    $player_name.choose(params[:weapon])
     redirect '/first_round'
   end
 
   get '/first_round' do
-    @weapon = session[:value]
+    @weapon = $player_name.weapon
+    @computer_weapon = $player_name.computer_response
     erb :game
   end
 

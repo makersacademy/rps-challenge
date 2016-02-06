@@ -13,5 +13,6 @@ feature 'Enter name' do
       sign_in_and_play
       click_button('ROCK')
       expect(page).to have_content 'YOU CHOSE ROCK'
+      expect(page).to have_content 'COMPUTER CHOSE:'
     end
 end
