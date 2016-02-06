@@ -5,7 +5,7 @@ feature 'Choose weapon' do
     expect(page).to have_content 'Rock Paper Scissors'
   end
 
-  scenario 'weapons are available' do
+  scenario 'selecting a weapon' do
     sign_in_and_play
     choose('paper')
     click_button('Fight!')
