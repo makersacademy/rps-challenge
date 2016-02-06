@@ -3,7 +3,8 @@
 This is a web app that enables the user to play a game of rock paper scissors
 against an automated computer.
 
-To run the web app first run ```
+To run the web app first run
+```
 $ bundle
 $ ruby app.rb
 ```
