@@ -1,11 +1,12 @@
 require 'coveralls'
 require 'simplecov'
+require 'web_helpers'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 
 require 'byebug'
 
