@@ -1,11 +1,10 @@
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player
 
-
-  def initialize(player = Player.new, computer = Computer.new)
+  def initialize(player = Player.new, ai = Player.new)
     @player = player
-    @computer = computer
+    @ai = ai
   end
 
 end
