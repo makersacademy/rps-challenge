@@ -1,26 +1,38 @@
 class Game
-  attr_reader :player_choice, :computer_choice
+  attr_reader :player, :computer
 
   def initialize(player, computer)
-    @player_choice = player
-    @computer_choice = computer
+    @player = player
+    @computer = computer
     @results = {"rock" => ["blunts", "scissors"],
       "scissors" => ["cut", "paper"],
       "paper" => ["covers", "rock"]}
   end
 
-  def draw?
-    player_choice == computer_choice
+  def player_loses?
+    check_choice(computer) ==  player
   end
 
   def player_wins?
-    @results[player_choice][1] ==  computer_choice
+    check_choice(player) ==  computer
   end
 
   def verb
     if player_wins?
-      return @results[player_choice][0]
+      return check_verb(player)
+    else
+      return check_verb(computer)
     end
+  end
+
+  private
+
+  def check_choice(player)
+    @results[player][1]
+  end
+
+  def check_verb(player)
+    @results[player][0]
   end
 
 end

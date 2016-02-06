@@ -12,7 +12,7 @@ feature 'Displays results' do
       start_game
       click_button('Rock')
       expect(page).to_not have_content('You Draw!')
-      expect(page).to have_content('Rock beats Scissors')
+      expect(page).to have_content('Rock blunts Scissors')
       expect(page).to have_content('You Win!')
     end
 
@@ -39,7 +39,7 @@ feature 'Displays results' do
       start_game
       click_button('Scissors')
       expect(page).to_not have_content('You Draw!')
-      expect(page).to have_content('Scissors beat Paper')
+      expect(page).to have_content('Scissors cut Paper')
       expect(page).to have_content('You Win!')
     end
 
@@ -47,7 +47,7 @@ feature 'Displays results' do
       computer_picks_rock
       start_game
       click_button('Scissors')
-      expect(page).to have_content('Rock beats Scissors')
+      expect(page).to have_content('Rock blunts Scissors')
       expect(page).to have_content('You Lose!')
     end
   end
@@ -74,7 +74,7 @@ feature 'Displays results' do
       computer_picks_scissors
       start_game
       click_button('Paper')
-      expect(page).to have_content('Scissors beat Paper')
+      expect(page).to have_content('Scissors cut Paper')
       expect(page).to have_content('You Lose!')
     end
   end
