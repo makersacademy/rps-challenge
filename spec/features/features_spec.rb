@@ -6,9 +6,13 @@ feature 'Enter name' do
 
   scenario 'choose hand' do
     sign_in_and_play
+    click_link('weapon')
     expect(page).to have_content 'GREETINGS MATT CHOOSE YOUR WEAPON'
-    find_link('ROCK').visible?
-    find_link('PAPER').visible?
-    find_link('SCISSORS').visible?
+    end
+
+    scenario 'display chosen weapon' do
+      sign_in_and_play
+      click_link('ROCK')
+      expect(page).to have_content 'YOU CHOSE ROCK'
     end
 end
