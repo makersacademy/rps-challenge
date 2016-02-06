@@ -3,7 +3,7 @@ class Cpu
     @name = "CPU"
   end
 
- def choice
+  def choice
     @cpu_hand = ["Rock", "Paper", "Scissors"].sample
   end
 

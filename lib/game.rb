@@ -4,11 +4,11 @@ class Game
     @player = players.first
     @player2 = players.last
   end
- 
+  
   def result
-      return "a Draw. You both picked #{player.choice}." if draw?
-      return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if win?
-      "a win for #{players.last.name}! #{player2.choice} beats #{player.choice}."
+    return "a Draw. You both picked #{player.choice}." if draw?
+    return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if win?
+    "a win for #{players.last.name}! #{player2.choice} beats #{player.choice}."
   end
 
   attr_reader :players, :player, :player2

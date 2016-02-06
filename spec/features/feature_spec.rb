@@ -100,13 +100,7 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
 
   feature 'Allows for 2 players to play' do
     scenario 'Runs through a multiplayer session' do
-      visit '/'
-      choose 'Human vs. Human'
-      click_button 'Submit'
-      fill_in 'Player_1_Name', with: 'Bob'
-      fill_in 'Player_2_Name', with: 'John'
-      click_button 'Submit'
-      click_link "Let's Play!"
+      sign_in_and_play_2_players
       choose 'Rock'
       click_button 'Select'
       choose 'Scissors'

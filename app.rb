@@ -23,15 +23,9 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    if $game_type == 'oneplayer'
-      player1 = Player.new(params[:Player_1_Name])
-      cpu = Cpu.new
-      $game = Game.new([player1, cpu])
-    else
-      player1 = Player.new(params[:Player_1_Name])
-      player2 = Player.new(params[:Player_2_Name])
-      $game = Game.new([player1, player2])
-    end
+    ($game_type == 'oneplayer')? (player2 = Cpu.new) : (player2 = Player.new(params[:Player_2_Name])) 
+    player1 = Player.new(params[:Player_1_Name])
+    $game = Game.new([player1, player2])
     redirect '/play'
   end
 
