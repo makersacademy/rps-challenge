@@ -1,0 +1,11 @@
+<h1><%=@new_game.player.name%> vs Computer</h1>
+
+<h2> Choose your weapon... </h2>
+
+<form action="/choice" method="post">>
+  <lable for='player_choice'>
+  Type Rock, Paper or Scissors...
+  <input type="text" name="player_choice">
+  </lable>
+  <input type="submit" value="Go!">
+</form>
