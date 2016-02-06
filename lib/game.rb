@@ -1,8 +1,9 @@
 class Game
   attr_reader :player
   
-  def initialize(player)
+  def initialize(player, player2 = "Computer")
     @player = player
+    @player2 = player2
     @options = ["Rock", "Paper", "Scissors"]
   end
   
@@ -30,7 +31,7 @@ class Game
   
   def calculate_winner(computer, player)
     return @winner = "Draw" if computer == player
-    computer_wins?(computer, player) ? @winner = "Computer" : @winner = @player
+    computer_wins?(computer, player) ? @winner = @player2 : @winner = @player
   end
   
   def rock_beats_scissors?(computer, player)
