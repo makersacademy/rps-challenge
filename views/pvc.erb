@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <title>Ultimate RPS</title>
+  </head>
+  <body>
+
+    <% if $game.nil? %>
+
+      <h1>Enter your name<h2>
+      <form action="/pvc_name" method="post">
+        <input type="text" name="player_name" required>
+        <input type="submit" value="Enter">
+      <form>
+
+    <% else %>
+
+      <p> <%= "Hiya #{$game.player1.name}. Choose your weapon!" %> </p>
+
+      <form action="/pvc_choice" method="post">
+        <input type="submit" name="choice" value='Rock'>
+        <input type="submit" name="choice" value='Paper'>
+        <input type="submit" name="choice" value='Scissors'>
+        <input type="submit" name="choice" value='Lizard'>
+        <input type="submit" name="choice" value='Spock'>
+      </form>
+
+
+    <% end %>
+
+  </body>
+</html>
