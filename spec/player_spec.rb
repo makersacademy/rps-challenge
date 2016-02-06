@@ -15,7 +15,8 @@ describe Player do
   describe '#move' do
 
     it 'can chose a move' do
-      
+      player.move = :paper
+      expect(player.move).to eq :paper
     end
 
   end
