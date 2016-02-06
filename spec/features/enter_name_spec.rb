@@ -6,9 +6,7 @@ feature 'Enter a name and show it' do
   end
 
   scenario 'returns the name of the visitor' do
-    visit '/'
-    fill_in('name', with: 'John the rockiest paper scissor')
-    click_button('Submit')
+    sign_in
     expect(page).to have_content('John the rockiest')
   end
 
