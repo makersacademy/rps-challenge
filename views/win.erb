@@ -1,0 +1,14 @@
+
+<%= @game.player_one.name %> move: <%= @game.player_one.move %>
+
+<%= @game.player_two.name %> move: <%= @game.player_two.move %>
+
+<h1>You Win!</h1>
+
+<form action='/play' method="get">
+    <input type="submit" value="again">
+</form>
+
+<form action='/' method="get">
+    <input type="submit" value="new player">
+</form>

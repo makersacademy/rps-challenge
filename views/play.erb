@@ -1,0 +1,9 @@
+
+<h1><%= @game.player_one.name %> vs <%= @game.player_two.name %></h1>
+
+
+<form action='/move' method="post">
+    <input id="rock" type="submit" name="move" value="rock">
+    <input id="paper" type="submit" name="move" value="paper">
+    <input id="scissors" type="submit" name="move" value="scissors">
+</form>
