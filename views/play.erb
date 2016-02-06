@@ -6,7 +6,14 @@
 <body>
 
   <h1>This is a Heading</h1>
-  <p><%= @player_1_name %> vs. CPU</p>
+  <p><%= @game.player_1.name %> vs. CPU</p>
+
+  <form action="/weapon" method="post">
+    <input type="radio" name="weapon" id="rock" value="rock"> Rock<br>
+    <input type="radio" name="weapon" id="paper" value="paper"> Paper<br>
+    <input type="radio" name="weapon" id="scissors" value="scissors"> Scissors<br>
+    <input type="submit" value="Fight!">
+  </form>
 
 </body>
 </html>

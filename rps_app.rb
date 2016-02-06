@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/cpu_player'
 
 class RPSApp < Sinatra::Base
   enable :sessions
@@ -8,13 +11,25 @@ class RPSApp < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    name1 = params[:player_1_name]
+    session[:game] = Game.new(Player.new(name1), CpuPlayer.new)
     redirect to '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @game = session[:game]
     erb(:play)
+  end
+
+  post '/weapon' do
+    @game = session[:game]
+    @game.player_1.weapon = params[:weapon]
+    redirect to '/fight'
+  end
+
+  get '/fight' do
+    @game = session[:game]
+    erb(:fight)
   end
 
   # start the server if ruby file executed directly
