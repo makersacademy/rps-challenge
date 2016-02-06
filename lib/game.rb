@@ -9,10 +9,14 @@ class Game
     @player1 = player1
     @player2 = player2
   end
-  #TODO - added two arguments here using *
-  def make_moves(player_1_move, *args)
+
+  def make_moves(player_1_move, *human_player2_input)
     player1.make_move(player_1_move)
-    player2.make_move(args[0])
+    unless human_player2_input.empty?
+      player2.make_move(human_player2_input[0])
+    else
+      player2.make_move
+    end
   end
 
   def two_player

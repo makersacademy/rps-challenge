@@ -9,11 +9,16 @@ describe Computer do
     end
   end
 
-  describe '#move' do
+  describe '#make_move' do
     it 'picks one of the moves by randomn' do
       moves = ['Rock','Scissors','Paper']
       computer.make_move
       expect(moves).to include computer.move
+    end
+
+    it 'raises error if given an arg' do
+      moves = ['Rock','Scissors','Paper']
+      expect{computer.make_move(['Rock'])}.to raise_error ArgumentError
     end
   end
 end

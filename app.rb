@@ -22,9 +22,9 @@ class Battle < Sinatra::Base
   end
 
   post '/2-player' do
-    session[:game] = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
-    @game = session[:game]
+    @game = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
     @game.two_player
+    session[:game] = @game
     redirect '/play'
   end
 
@@ -43,6 +43,7 @@ class Battle < Sinatra::Base
   post '/game' do
     @game = session[:game]
     @game.multiplayer? ? @game.make_moves(params['choice'],params['choice2']) : @game.make_moves(params['choice'])
+    session[:game] = @game
     redirect '/game'
   end
 
