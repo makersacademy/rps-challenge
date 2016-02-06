@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:matt){ described_class.new('Matt',nil) }
+  subject(:matt){ described_class.new('Matt') }
 
 
   describe '#name' do
@@ -12,12 +12,7 @@ describe Player do
 
   describe '#choose' do
     it 'allow playe to choose a weapon' do
-      expect(matt).to respond_to(:choose).with(1).argument
-    end
-  end
-
-  describe '#weapon' do
-    it 'returns the players chosen weapon' do
+      matt.choose('ROCK')
       expect(matt.weapon).to eq('ROCK')
     end
   end
