@@ -124,6 +124,7 @@ main#play {
     input#rock {
       background: $color_1 url('img/rock.svg') no-repeat center 10px;
       background-size: 100px;
+      transition: background-color 0.2s ease;
       &:hover {
         background-color: $color_2;
       }
@@ -131,6 +132,7 @@ main#play {
     input#paper {
       background: $color_1 url('img/paper.svg') no-repeat center 10px;
       background-size: 100px;
+      transition: background-color 0.2s ease;
       &:hover {
         background-color: $color_2;
       }
@@ -138,6 +140,7 @@ main#play {
     input#scissors {
       background: $color_1 url('img/scissors.svg') no-repeat center 10px;
       background-size: 100px;
+      transition: background-color 0.2s ease;
       &:hover {
         background-color: $color_2;
       }
@@ -145,6 +148,7 @@ main#play {
     input#lizard {
       background: $color_1 url('img/lizard.svg') no-repeat center 10px;
       background-size: 100px;
+      transition: background-color 0.2s ease;
       &:hover {
         background-color: $color_2;
       }
@@ -152,6 +156,7 @@ main#play {
     input#spock {
       background: $color_1 url('img/spock.svg') no-repeat center 10px;
       background-size: 100px;
+      transition: background-color 0.2s ease;
       &:hover {
         background-color: $color_2;
       }

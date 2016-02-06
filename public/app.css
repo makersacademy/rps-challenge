@@ -96,27 +96,32 @@ main#play form#moves {
       outline: none; }
   main#play form#moves input#rock {
     background: #EDD75A url("img/rock.svg") no-repeat center 10px;
-    background-size: 100px; }
+    background-size: 100px;
+    transition: background-color 0.2s ease; }
     main#play form#moves input#rock:hover {
       background-color: #405059; }
   main#play form#moves input#paper {
     background: #EDD75A url("img/paper.svg") no-repeat center 10px;
-    background-size: 100px; }
+    background-size: 100px;
+    transition: background-color 0.2s ease; }
     main#play form#moves input#paper:hover {
       background-color: #405059; }
   main#play form#moves input#scissors {
     background: #EDD75A url("img/scissors.svg") no-repeat center 10px;
-    background-size: 100px; }
+    background-size: 100px;
+    transition: background-color 0.2s ease; }
     main#play form#moves input#scissors:hover {
       background-color: #405059; }
   main#play form#moves input#lizard {
     background: #EDD75A url("img/lizard.svg") no-repeat center 10px;
-    background-size: 100px; }
+    background-size: 100px;
+    transition: background-color 0.2s ease; }
     main#play form#moves input#lizard:hover {
       background-color: #405059; }
   main#play form#moves input#spock {
     background: #EDD75A url("img/spock.svg") no-repeat center 10px;
-    background-size: 100px; }
+    background-size: 100px;
+    transition: background-color 0.2s ease; }
     main#play form#moves input#spock:hover {
       background-color: #405059; }
 
