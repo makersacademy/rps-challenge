@@ -4,30 +4,29 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
-  enable :sessions
-
   get '/' do
     erb(:index)
   end
 
   post '/game_type' do
     $game_type = params[:game]
-    redirect '/hvsc' if $game_type == 'HvsC'
-    redirect '/hvsh'
+    redirect '/oneplayer' if $game_type == 'oneplayer'
+    redirect '/twoplayer'
   end
 
-  get '/hvsc' do
-    erb(:hvsc)
+  get '/oneplayer' do
+    erb(:oneplayer)
   end
 
-  get '/hvsh' do
-    erb(:hvsh)
+  get '/twoplayer' do
+    erb(:twoplayer)
   end
 
   post '/names' do
-    if $game_type == 'HvsC'
+    if $game_type == 'oneplayer'
       player1 = Player.new(params[:Player_1_Name])
-      $game = Game.new([player1])
+      cpu = Cpu.new
+      $game = Game.new([player1, cpu])
     else
       player1 = Player.new(params[:Player_1_Name])
       player2 = Player.new(params[:Player_2_Name])
@@ -48,8 +47,8 @@ class RPS < Sinatra::Base
   post '/player1_has_picked' do
     @player_1 = $game.players.first
     @player_1.choice = params[:hand1]
-    if $game_type == 'HvsC'
-      $game.pick_cpu_hand
+    if $game_type == 'oneplayer'
+      $game.players.last.choice
       redirect '/end'
     else
       redirect '/player2_pick'

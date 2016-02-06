@@ -2,26 +2,16 @@ class Game
   def initialize(players)
     @players = players
     @player = players.first
+    @player2 = players.last
   end
-
-  def pick_cpu_hand
-    @cpu_hand = ["Rock", "Paper", "Scissors"].sample
-  end
-
+ 
   def result
-    if @players.length == 1
-      return "a Draw. You both picked #{cpu_hand}." if draw?
-      return "a Win! #{player.choice} beats #{cpu_hand}." if win?
-      "a Loss! #{cpu_hand} beats #{player.choice}."
-    else
-      @cpu_hand = players.last.choice
-      return "a Draw. You both picked #{cpu_hand}." if draw?
-      return "a win for #{player.name}! #{player.choice} beats #{cpu_hand}." if win?
-      "a win for #{players.last.name}! #{cpu_hand} beats #{player.choice}."
-    end
+      return "a Draw. You both picked #{player.choice}." if draw?
+      return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if win?
+      "a win for #{players.last.name}! #{player2.choice} beats #{player.choice}."
   end
 
-  attr_reader :players, :cpu_hand, :player
+  attr_reader :players, :player, :player2
 
   private
 
@@ -30,18 +20,18 @@ class Game
   end
 
   def draw?
-    cpu_hand == player.choice
+    player2.choice == player.choice
   end
 
   def rock_vs_scissors?
-    player.choice == "Rock" && cpu_hand == "Scissors"
+    player.choice == "Rock" && player2.choice == "Scissors"
   end
 
   def scissors_vs_paper?
-    player.choice == "Scissors" && cpu_hand == "Paper"
+    player.choice == "Scissors" && player2.choice == "Paper"
   end
 
   def paper_vs_rock?
-    player.choice == "Paper" && cpu_hand == "Rock"
+    player.choice == "Paper" && player2.choice == "Rock"
   end
 end
