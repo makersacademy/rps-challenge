@@ -1,3 +1,4 @@
+
 class Player
 
   class << self
@@ -16,12 +17,18 @@ class Player
 
   end
 
-  attr_reader :name
+  attr_reader :name, :weapon, :turn_klass
 
 
-    def initialize(name)
+    def initialize(name, turn_klass=Turn)
       @name = name
+      @turn_klass = turn_klass
     end
 
+
+    def new_turn(weapon_choice)
+      @weapon = weapon_choice
+      turn_klass.new(weapon_choice)
+    end
 
 end

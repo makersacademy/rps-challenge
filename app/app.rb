@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'rack'
 require_relative '../lib/player'
+require_relative '../lib/turn'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -19,14 +20,8 @@ class RPS < Sinatra::Base
       session[:player_id] = player_id
     end
 
-    # def game_number
-    #   Game.find(session[:game])
-    # end
-    #
-    # def retrieve_game(game)
-    #   game_id = game.object_id
-    #   Game.add(session_player)
-    #   session[:game] = game_id
+    # def player_name
+    #   session_player.name
     # end
 
   end
@@ -37,17 +32,41 @@ class RPS < Sinatra::Base
 
 
   post '/name' do
-    # player = Player.new(params[:player_name])
     remember(Player.new(params[:player_name]))
     redirect '/play'
-    #DO I NEED A GAME SESSION TO? OR JUST THE PLAYER ONE - OR PERHAPS JUST THE GAME ONE AND ROLL IN THE PLAYER
-    # session[:game] = Game.new(session_player)
   end
 
   get '/play' do
     @player = session_player.name if session_player
     erb :play
   end
+
+
+  post '/rock' do
+    @weapon_choice = :rock
+    session_player.new_turn(@weapon_choice)
+    redirect '/the_result'
+  end
+
+  post '/scissors' do
+    @weapon_choice = :scissors
+    session_player.new_turn(@weapon_choice)
+    redirect '/the_result'
+  end
+
+  post '/paper' do
+    @weapon_choice = :paper
+    session_player.new_turn(@weapon_choice)
+    redirect '/the_result'
+  end
+
+  get '/the_result' do
+    @player = session_player.name
+    @weapon = session_player.weapon
+    erb :the_result
+  end
+
+
 
   run! if app_file == $0
 end

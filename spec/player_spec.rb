@@ -2,7 +2,6 @@ require 'player'
 
 describe Player do
   let(:player) {described_class}
-
   let(:player_name) {double :player_name}
   let(:player_id) {player_name.object_id}
 
@@ -40,10 +39,36 @@ describe Player do
 
     end
   end
+
   context 'Instance methods' do
-    subject(:player_instance) { described_class.new('Soulless Marketeer') }
+    let(:name) {double :name}
+    let(:turn_klass) {double :turn_klass}
+    subject(:player_instance) { described_class.new(name, turn_klass) }
+    let(:weapon_choice) {double :weapon_choice}
+
+    describe 'initialize' do
+
+
+      it 'stores the player\'s name' do
+        expect(player_instance.name).to eq name
+      end
+
+      it 'has an uninitialized turn' do
+        expect(player_instance.turn_klass).to eq turn_klass
+      end
+
+    end
+    describe '#new_turn' do
+
+      before do
+        allow(turn_klass).to receive(:new)
+      end
+
+      it 'intantiates a new turn instance' do
+        expect(turn_klass).to receive(:new)
+        player_instance.new_turn(weapon_choice)
+      end
+
+    end
   end
 end
-    # describe 'initialize' do
-    #
-    # end

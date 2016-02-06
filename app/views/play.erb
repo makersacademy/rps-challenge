@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>PLAY ROCK PAPER SCISSORS</title>
         <!-- <link rel="stylesheet" href='signup.css' type='text/css'> -->
@@ -6,24 +7,28 @@
 
     <body>
       <h1> Hi there <%= @player %> </h1>
-      <table class='buttons' border="1px">
-          <tr>
-              <td>Rock</td>
-              <td>insert image and button</td>
-          </tr>
 
-          <tr>
-              <td>Paper</td>
-              <td> insert image and button </td>
-          </tr>
-          <tr>
-              <td>Scissors</td>
-              <td>Insert image and button</td>
+          <form action= "/rock" method= "post">
+            <input type="submit" value="rock">
+            <input type="image" name="rock" src="http://heavyeditorial.files.wordpress.com/2013/04/tumblr_lvb1i6pwa31qgc0j0.gif">
+          </form>
+          <form action= "/scissors" method= "post">
+            <input type="submit" value="scissors">
+            <input type="image" name="scissors" src="https://media.giphy.com/media/h6vTQ4kBIEP1m/giphy.gif" >
+          </form>
+          <form action= "/paper" method= "post">
+            <input type="submit" value="paper">
+            <input type="image" name="paper" src="http://cdn.makeagif.com/media/2-06-2016/z9tH1P.gif">
+          </form>
 
-          </tr>
-      </table>
+
+                <!-- <input id="choose_paper" type="image" name="paper" value="paper" src="http://cdn.makeagif.com/media/2-06-2016/z9tH1P.gif"> -->
+
+
+
 
 
     </body>
 
 </html>
+<!DOCTYPE html>
