@@ -1,8 +1,8 @@
-Ultimate Rock, Paper, Scissors
-<b>Makers Academy week 03 weekend challenge</b><br>
+<b>Ultimate Rock, Paper, Scissors</b><br>
+Makers Academy week 03 weekend challenge</b>
 Rufus Raghunath<br>
 Feb 2016<br>
-Travis CI: 
+Travis CI: [![Build Status](https://travis-ci.org/rufusraghunath/rps-challenge.svg?branch=master)](https://travis-ci.org/rufusraghunath/rps-challenge)
 
 ---
 
