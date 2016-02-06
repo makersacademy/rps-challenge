@@ -7,6 +7,8 @@ require_relative 'lib/computer'
 
 class Battle < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -20,31 +22,32 @@ class Battle < Sinatra::Base
   end
 
   post '/2-player' do
-    $game = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
-    $game.two_player
+    session[:game] = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
+    @game = session[:game]
+    @game.two_player
     redirect '/play'
   end
 
   post '/1-player' do
-    $game = Game.new(Player.new(params['Player1 name']),Computer.new)
+    session[:game] = Game.new(Player.new(params['Player1 name']),Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = session[:game]
     @player1_name = @game.player1.name
     @player2_name = @game.player2.name
     erb :play
   end
 
   post '/game' do
-    @game = $game
+    @game = session[:game]
     @game.multiplayer? ? @game.make_moves(params['choice'],params['choice2']) : @game.make_moves(params['choice'])
     redirect '/game'
   end
 
   get '/game' do
-    @game = $game
+    @game = session[:game]
     @player1_name = @game.player1.name
     @player2_name = @game.player2.name
     @player1_move = @game.player1.move
