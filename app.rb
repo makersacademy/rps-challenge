@@ -5,9 +5,9 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
+  post '/player_name' do
     @player = params[:player].capitalize
-    erb :play
+    erb :player_name
   end
 
   # start the server if ruby file executed directly

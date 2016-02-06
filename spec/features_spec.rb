@@ -16,4 +16,9 @@ require 'tilt/erb'
     expect(page).to have_content "Player Name = Reiss"
     end
 
+    scenario 'page has buttons that allows the user to select a move' do
+    sign_in
+    click_button('Rock')
+    end
+
   end

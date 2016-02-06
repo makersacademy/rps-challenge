@@ -78,6 +78,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
+    shotgun (0.9.1)
+      rack (>= 1.0)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -116,6 +118,7 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   selenium-webdriver
+  shotgun
   sinatra
 
 BUNDLED WITH
