@@ -22,4 +22,11 @@ describe Game do
     game_win = described_class.new(player, player_wins)
     expect(game_win.player_wins?).to eq true
   end
+
+  it 'returns the right verb' do
+    player_paper = "paper"
+    computer_rock = "rock"
+    game_verb = described_class.new(player_paper,computer_rock)
+    expect(game_verb.verb).to eq "covers"
+  end
 end

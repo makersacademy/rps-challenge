@@ -20,7 +20,7 @@ feature 'Displays results' do
       computer_picks_paper
       start_game
       click_button('Rock')
-      expect(page).to have_content('Paper beats Rock')
+      expect(page).to have_content('Paper covers Rock')
       expect(page).to have_content('You Lose!')
     end
   end
@@ -66,7 +66,7 @@ feature 'Displays results' do
       start_game
       click_button('Paper')
       expect(page).to_not have_content('You Draw!')
-      expect(page).to have_content('Paper beats Rock')
+      expect(page).to have_content('Paper covers Rock')
       expect(page).to have_content('You Win!')
     end
 

@@ -12,3 +12,5 @@
    2.4 When computer chooses 'scissors', want to see that I've won
    2.5 When computer chooses 'paper', want to see that I've lost
    2.6 Want to be able to choose 'scissors' and then win/draw/lose
+
+3. Want to see more interesting messages (instead of 'Scissors beat Paper, have Scissors cut paper')
