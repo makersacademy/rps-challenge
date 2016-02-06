@@ -106,7 +106,6 @@ feature 'US2 - Player can play a game of Rock, Paper' do
   end
 
   feature 'Allows for 2 players to play' do
-    visual_test
     scenario 'Runs through a multiplayer session' do
       visit '/'
       choose 'Human vs. Human'
