@@ -1,3 +1,82 @@
+ROCK, PAPER, SCISSORS!
+
+File tree
+
+├── app.rb
+├── disabled.yml
+├── docs
+│   └── review.md
+├── enabled.yml
+├── lib
+│   ├── game.rb
+│   └── player.rb
+├── spec
+│   ├── feature_tests
+│   │   └── user_stories_spec.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── spec_helper.rb
+│   └── web_helpers.rb
+└── views
+    ├── end_game.erb
+    ├── index.erb
+    └── play.erb
+
+Installation Instructions
+
+1. Go to the link below and fork the repository 
+(note: you will need to be signed in to your GitHub account to view or fork)
+
+	https://github.com/rachelsmithcode/rps-challenge
+
+2. Clone the repository by typing: 
+
+	$ git clone <the SSH or HTTP link from your new forked repo on your GitHub 		  account>
+
+(note: Make sure you are in the directory that you wish the challenge folder and it’s contentce to be stored in. Cloning creates the new directory so there is no need to make a rps-challenge directory)
+
+3. To install the gem files run the command:
+
+	$ bundle 
+
+(note: If this returns an error you may need to install the bundler gem first, using the command: $ gem install bundler
+for further details check the website: http://bundler.io)
+
+
+User Stores to Cover
+
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+
+My approach
+
+We need a page wher the user can enter thier name. This should then send them to a page where they can enter thier choice of weapon the computer should then choose a weapon too and send them to the final results page. 
+
+The logic will need to check who the winner is between the user's choice, inputted by clicking a button on the webpage and the computer's choice, chosen at random from an array.
+
+If there is time I will add the option for a player two and nerd the place up with some extra lizzar/spock action. 
+
+Operating guide
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
