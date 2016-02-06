@@ -75,11 +75,11 @@ class RPS < Sinatra::Base
   get '/opponent_choice' do
     @choice = session['choice']
     $game = Game.new($player_one, Player.new)
+    $game.fight
     erb :opponent_choice
   end
 
   post '/opponent_choice' do
-    $game.fight
     redirect :result
   end
 

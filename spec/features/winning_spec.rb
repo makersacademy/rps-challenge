@@ -5,7 +5,7 @@ feature 'winning' do
     sign_in_and_choose_computer
     click_button('Rock')
     click_button('Continue')
-    expect(page).to have_content('Rock beats Paper!, Emma has won!')
+    expect(page).to have_content('Paper beats Rock!, Computer has won!')
   end
 
 

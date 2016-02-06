@@ -3,7 +3,9 @@ class Player
 
   CHOICE_VALUE_PAIRS = {'Rock' => 1,
                         'Paper' => 2,
-                        'Scissors' => 3}
+                        'Scissors' => 3,
+                        'Spock' => 4,
+                        'Lizard' => 5}
 
   def initialize(selection=0, name='Computer')
      selection == 0 ? @choice = auto_choose : @choice = selection_hash(selection)
@@ -19,7 +21,7 @@ class Player
   end
 
   def random_number
-    Kernel.rand(1..3)
+    Kernel.rand(1..5)
   end
 
   def auto_choose

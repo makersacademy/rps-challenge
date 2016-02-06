@@ -10,15 +10,15 @@ class Game
   end
 
   def fight
-    difference = choice_value_diff
+    difference = choice_value_diff % 5
     if difference == 0
       @draw = true
     elsif difference.odd?
-      declare_winner(player_one)
-      declare_loser(player_two)
-    else
       declare_winner(player_two)
       declare_loser(player_one)
+    else
+      declare_winner(player_one)
+      declare_loser(player_two)
     end
   end
 
@@ -27,7 +27,7 @@ class Game
   end
 
   def result
-    draw? ? "It's a draw!" : winning_string
+    draw? ? drawing_string : winning_string
   end
 
 
@@ -35,7 +35,7 @@ class Game
   private
 
   def choice_value_diff
-    player_choice_value(@player_one) - player_choice_value(@player_two)
+    player_choice_value(@player_two) - player_choice_value(@player_one)
   end
 
   def player_choice_value(player)
@@ -56,6 +56,10 @@ class Game
 
   def winning_string
     "#{player_choice(@winner)} beats #{player_choice(@loser)}!, #{@winner.name} has won!"
+  end
+
+  def drawing_string
+    "It's a draw, you both chose #{player_choice(@player_one)}"
   end
 
 
