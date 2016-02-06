@@ -1,12 +1,10 @@
-Rock Paper Scissors - Harry Gordon
+# Rock Paper Scissors - Harry Gordon
 
 This is a web app that enables the user to play a game of rock paper scissors
 against an automated computer.
 
 To run the web app first run ```
 $ bundle
-```
-Once this is complete ```
 $ ruby app.rb
 ```
 
