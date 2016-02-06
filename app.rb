@@ -18,6 +18,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/results' do
+    @player1_name = session[:player1_name]
+    erb :results
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
