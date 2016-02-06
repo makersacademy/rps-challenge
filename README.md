@@ -1,5 +1,12 @@
 # RPS Challenge: Rōnin Badge Test
 
+Reiss Johnson - Weekend Challenge - 03
+------
+
+*updating README - Intial Commit
+
+
+
 Instructions
 -------
 
