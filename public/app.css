@@ -47,7 +47,11 @@ main {
       font-style: italic;
       border-radius: 120px;
       border: 2px solid black;
-      transform: all 0.3s ease; }
+      transform: all 0.3s ease;
+      outline: none;
+      cursor: pointer; }
+      main form#moves .move:focus {
+        outline: none; }
     main form#moves input#rock {
       background: #EDD75A url("img/rock.svg") no-repeat center 10px;
       background-size: 100px; }
@@ -82,7 +86,8 @@ main {
       background: none;
       color: #fff;
       font-size: 1.6em;
-      margin-bottom: 0.5em; }
+      margin-bottom: 0.5em;
+      cursor: pointer; }
 
 main#start .background-image {
   background: url("img/start.jpg") no-repeat center bottom;
@@ -103,7 +108,8 @@ main#start form {
     color: #fff;
     font-size: 1em;
     margin: 0.5em 0;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
   main#start form input[type="text"] {
     background: #405059;
     padding: 0.2em 0;

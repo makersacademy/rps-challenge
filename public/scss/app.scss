@@ -59,6 +59,11 @@ main {
       border-radius: 120px;
       border: 2px solid $color_3;
       transform: all 0.3s ease;
+      outline: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
     }
     input#rock {
       background: $color_1 url('img/rock.svg') no-repeat center 10px;
@@ -106,6 +111,7 @@ main {
       color: #fff;
       font-size: 1.6em;
       margin-bottom: 0.5em;
+      cursor: pointer;
     }
   }
 
@@ -135,6 +141,7 @@ main#start {
       font-size: 1em;
       margin: 0.5em 0;
       text-align: center;
+      cursor: pointer;
     }
     input[type="text"] {
       background: $color_2;
