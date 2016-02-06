@@ -9,7 +9,7 @@ describe Game do
     expect(game.players).to eq player
   end
 
-  describe 'Returns the CPU hand' do
+
 
     context 'Player Picks Rock, CPU picks Rock' do
       it 'returns the CPU choice as Rock' do
@@ -18,19 +18,31 @@ describe Game do
       end
 
       it 'returns the result after a game is complete' do
-        allow(game).to receive(:pick_cpu_hand).and_return(rock)
+        allow(game).to receive(:pick_cpu_hand).and_return("Rock")
+        allow(game).to receive(:cpu_hand).and_return("Rock")
+        allow(player).to receive(:choice).and_return("Rock")
         game.pick_cpu_hand
-        expect(game.result).to eq 'Draw'
+        expect(game.result).to eq 'a Draw. You both picked Rock.'
       end
     end
 
-    xit 'CPU picks Paper' do
+    it 'CPU picks Paper' do
+      allow(game).to receive(:pick_cpu_hand).and_return("Paper")
+      allow(game).to receive(:cpu_hand).and_return("Paper")
+      allow(player).to receive(:choice).and_return("Rock")
+      game.pick_cpu_hand
+      game.pick_cpu_hand
+      expect(game.result).to eq 'a Loss! Paper beats Rock.'
     end
 
-    xit 'CPU picks Scissors' do
+    it 'CPU picks Scissors' do
+      allow(game).to receive(:pick_cpu_hand).and_return("Scissors")
+      allow(game).to receive(:cpu_hand).and_return("Scissors")
+      allow(player).to receive(:choice).and_return("Rock")
+        game.pick_cpu_hand
+      game.pick_cpu_hand
+      expect(game.result).to eq 'a Win! Rock beats Scissors.'
     end
   end
 
 
-
-end
