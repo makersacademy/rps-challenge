@@ -14,18 +14,48 @@
 
     <% else %>
 
-      <p> <%= "Hiya #{$game.player1.name}. Choose your weapon!" %> </p>
+      <% if $game.player1.choice.nil? %>
 
-      <form action="/pvc_choice" method="post">
-        <input type="submit" name="choice" value='Rock'>
-        <input type="submit" name="choice" value='Paper'>
-        <input type="submit" name="choice" value='Scissors'>
-        <input type="submit" name="choice" value='Lizard'>
-        <input type="submit" name="choice" value='Spock'>
-      </form>
+        <p> <%= "Hiya #{$game.player1.name.capitalize}.
+          Choose your weapon!" %>
+        </p>
 
+        <form action="/pvc_choice" method="post">
+          <input type="submit" name="choice" value='Rock'>
+          <input type="submit" name="choice" value='Paper'>
+          <input type="submit" name="choice" value='Scissors'>
+          <input type="submit" name="choice" value='Lizard'>
+          <input type="submit" name="choice" value='Spock'>
+        </form>
 
+      <% else %>
+        <p>
+          <%= "#{$game.player1.name.capitalize} choses
+          #{$game.player1.choice.downcase}." %>
+        </p>
+        <% if $game.player2.choice.nil? %>
+          <a id="generate_pc_choice" href="/pvc_pc_choice">
+            <button type="button">Generate computer choice</button>
+          </a>
+        <% else %>
+          <p>
+            <%= "Computer chooses #{$game.player2.choice.downcase}." %>
+          </p>
+          <% if $game.draw %>
+            <p>The game is a draw!</p>
+          <% else %>
+            <b><%= $game.outcome %></b>
+            <% if $game.winner == $game.player1 %>
+              <p><%= "#{$game.player1.name} wins!" %></p>
+            <% else %>
+              <p>Computer wins!</p>
+            <% end %>
+          <% end %>
+          <a id="play_again" href="/">
+            <button type="button">Play again</button>
+          </a>
+        <% end %>
+      <% end %>
     <% end %>
-
   </body>
 </html>
