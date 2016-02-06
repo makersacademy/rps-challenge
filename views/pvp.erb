@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <head>
+    <title>Ultimate RPS</title>
+  </head>
+  <body>
+
+    <% if $game.nil? %>
+
+      <h1>Enter player names:<h2>
+      <form action="/pvp_names" method="post">
+        <input type="text" name="player1" required>
+        <input type="text" name="player2" required>
+        <input type="submit" value="Enter">
+      <form>
+
+    <% else %>
+
+      <% if $game.player1.choice.nil? %>
+
+        <p> <%= "Choose your weapon, #{$game.player1.name.capitalize}!" %>
+        </p>
+
+        <form action="/pvp_choice" method="post">
+          <input type="submit" name="choice" value='Rock'>
+          <input type="submit" name="choice" value='Paper'>
+          <input type="submit" name="choice" value='Scissors'>
+          <input type="submit" name="choice" value='Lizard'>
+          <input type="submit" name="choice" value='Spock'>
+        </form>
+
+      <% elsif $game.player2.choice.nil? %>
+
+        <p> <%= "Choose your weapon, #{$game.player2.name.capitalize}!" %>
+        </p>
+
+        <form action="/pvp_choice" method="post">
+          <input type="submit" name="choice" value='Rock'>
+          <input type="submit" name="choice" value='Paper'>
+          <input type="submit" name="choice" value='Scissors'>
+          <input type="submit" name="choice" value='Lizard'>
+          <input type="submit" name="choice" value='Spock'>
+        </form>
+
+      <% else %>
+        <p>
+          <%= "#{$game.player1.name.capitalize} choses
+          #{$game.player1.choice}." %>
+        </p>
+
+        <p>
+          <%= "#{$game.player2.name.capitalize} choses
+          #{$game.player2.choice}." %>
+        </p>
+
+        <% if $game.draw %>
+          <p>The game is a draw!</p>
+        <% else %>
+          <b><%= "#{$game.outcome}" %></b>
+          <p><%= "#{$game.winner.name.capitalize} wins!" %></p>
+        <% end %>
+        <a id="play_again" href="/">
+          <button type="button">Play again</button>
+        </a>
+
+      <% end %>
+    <% end %>
+  </body>
+</html>

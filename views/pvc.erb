@@ -31,7 +31,7 @@
       <% else %>
         <p>
           <%= "#{$game.player1.name.capitalize} choses
-          #{$game.player1.choice.downcase}." %>
+          #{$game.player1.choice}." %>
         </p>
         <% if $game.player2.choice.nil? %>
           <a id="generate_pc_choice" href="/pvc_pc_choice">
@@ -39,7 +39,7 @@
           </a>
         <% else %>
           <p>
-            <%= "Computer chooses #{$game.player2.choice.downcase}." %>
+            <%= "Computer chooses #{$game.player2.choice}." %>
           </p>
           <% if $game.draw %>
             <p>The game is a draw!</p>

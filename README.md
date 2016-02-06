@@ -1,5 +1,5 @@
 <b>Ultimate Rock, Paper, Scissors</b><br>
-Makers Academy week 03 weekend challenge</b>
+Makers Academy week 03 weekend challenge<br>
 Rufus Raghunath<br>
 Feb 2016<br>
 Travis CI: [![Build Status](https://travis-ci.org/rufusraghunath/rps-challenge.svg?branch=master)](https://travis-ci.org/rufusraghunath/rps-challenge)
@@ -17,4 +17,4 @@ BONUS FEATURES IMPLEMENTED:<br>
 - pretty styling
 
 HOW TO USE:<br>
-Clone repo, then run ```bundle``` to install dependencies. From the ```eps-challenge``` root directory in the command line, start Sinatra using ```ruby rps_app.rb```, then visit ```localhost:4567``` in your browser and follow the instructions to play.
+Clone repo, then run ```bundle``` to install dependencies. From the ```rps-challenge``` root directory in the command line, start Sinatra using ```ruby rps_app.rb```, then visit ```localhost:4567``` in your browser and follow the instructions to play.
