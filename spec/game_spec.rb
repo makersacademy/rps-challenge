@@ -8,4 +8,11 @@ describe Game do
     allow(player).to receive(:name) { "Dave" }
     expect(game.player).to eq 'Dave'
   end
+  
+  describe '#computer' do
+    it 'chooses rock, paper, or scissors' do
+      allow(game).to receive(:choose) { "Paper" }
+      expect(game.choose).to eq "Paper"
+    end
+  end
 end

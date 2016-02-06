@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game.rb'
+require './lib/player.rb'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -13,6 +15,8 @@ class RPS < Sinatra::Base
   end
   
   get '/game' do
+    @game = $game
+    @computer_choice = @game.choose
     @choice = params[:choice]
     erb(:game)
   end
