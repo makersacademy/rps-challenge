@@ -4,7 +4,8 @@
   <% if @game.draw? %>
   <h2>You Draw!</h2>
   <% elsif @game.player_wins? %>
-  <h3> <%= @game.player_choice.capitalize %> beats
+  <h3> <%= @game.player_choice.capitalize %>
+    beat<% if @game.player_choice!="scissors" %>s<% end %>
     <%= @game.computer_choice.capitalize %></h3>
   <h2>You Win!</h2>
   <% else %>

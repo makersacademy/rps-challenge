@@ -4,6 +4,12 @@ feature 'Player chooses shape' do
     click_button('Rock')
     expect(page).to have_content("Rebecca chooses rock")
   end
+
+  scenario 'Chooses Scissors' do
+    start_game
+    click_button('Scissors')
+    expect(page).to have_content("Rebecca chooses scissors")
+  end
 end
 
 feature 'Computer chooses shape' do
