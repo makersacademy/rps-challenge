@@ -1,7 +1,15 @@
 # RPS Challenge: Rōnin Badge Test
+Author: Arnold Manzano (arnoldmanzano)
 
 Instructions
 -------
+
+
+For users (ruby is required)
+bundle
+rackup
+
+
 
 * Challenge time: rest of the day and weekend, until Monday 9am
 * Feel free to use google, your notes, books, etc. but work on your own
