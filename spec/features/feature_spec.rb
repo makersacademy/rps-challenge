@@ -13,38 +13,39 @@ feature 'US2 - Player can play a game of Rock, Paper, Scissors' do
   
   context 'Player picks Rock' do
     scenario 'CPU picks Rock' do
+      #visual_test
       sign_in_and_play
       click_link "Let's Play!"
       click_button 'Rock'
-      expect(page).to have_content 'Its a draw, you both picked Rock'
-    end
-  
-    scenario 'CPU picks Scissors' do
+      expect(page).to have_content 'The result is Draw'
     end
 
-    scenario 'CPU picks Paper' do
+    xit 'CPU picks Scissors' do
+    end
+
+    xit 'CPU picks Paper' do
     end
   end
 
   context 'Player picks Paper' do
-    scenario 'CPU picks Rock' do  
+    xit 'CPU picks Rock' do  
     end
   
-    scenario 'CPU picks Scissors' do
+    xit 'CPU picks Scissors' do
     end
 
-    scenario 'CPU picks Paper' do
+    xit 'CPU picks Paper' do
     end
   end
 
   context 'Player picks Scissors' do
-    scenario 'CPU picks Rock' do  
+    xit 'CPU picks Rock' do  
     end
   
-    scenario 'CPU picks Scissors' do
+    xit 'CPU picks Scissors' do
     end
 
-    scenario 'CPU picks Paper' do
+    xit 'CPU picks Paper' do
     end
   end
 end    

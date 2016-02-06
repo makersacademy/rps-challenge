@@ -3,6 +3,8 @@ class Player
     @name = name
   end
 
-  attr_accessor :name
-  
+
+  attr_reader :name
+  attr_accessor :choice
+
 end
