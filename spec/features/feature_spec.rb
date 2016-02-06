@@ -16,7 +16,8 @@ feature 'US2 - Player can play a game of Rock, Paper, Scissors' do
       #visual_test
       sign_in_and_play
       click_link "Let's Play!"
-      click_button 'Rock'
+      choose 'Rock'
+      click_button 'Play'
       expect(page).to have_content 'The result is Draw'
     end
 

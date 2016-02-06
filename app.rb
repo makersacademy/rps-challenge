@@ -23,9 +23,9 @@ class RPS < Sinatra::Base
     erb(:newgame)
   end
 
-  get '/rock' do
+  post '/player_has_picked' do
     @player_1 = $game.players
-    @player_1.choice = "Rock"
+    @player_1.choice = params[:hand]
     $game.pick_cpu_hand
     redirect(:end)
   end
