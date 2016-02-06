@@ -1,0 +1,132 @@
+html {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0; }
+
+body {
+  height: 100%; }
+
+main {
+  border: 5px solid #EDD75A;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #405059;
+  padding-top: 4em; }
+  main .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5; }
+  main h1, main h2, main h3 {
+    text-align: center;
+    color: #EDD75A; }
+  main h1 {
+    text-transform: uppercase;
+    margin: 1.5em 0; }
+  main h3 {
+    font-style: italic; }
+  main form#moves {
+    width: 100%;
+    margin: 3em 0;
+    text-align: center; }
+    main form#moves .move {
+      width: 130px;
+      height: 130px;
+      display: inline;
+      background: #EDD75A;
+      border: 0;
+      padding-top: 80px;
+      margin: 0 1em;
+      font-size: 1.4em;
+      font-family: 'Old Standard TT', serif;
+      font-style: italic;
+      border-radius: 120px;
+      border: 2px solid black;
+      transform: all 0.3s ease;
+      outline: none;
+      cursor: pointer; }
+      main form#moves .move:focus {
+        outline: none; }
+    main form#moves input#rock {
+      background: #EDD75A url("img/rock.svg") no-repeat center 10px;
+      background-size: 100px; }
+      main form#moves input#rock:hover {
+        background-color: #405059; }
+    main form#moves input#paper {
+      background: #EDD75A url("img/paper.svg") no-repeat center 10px;
+      background-size: 100px; }
+      main form#moves input#paper:hover {
+        background-color: #405059; }
+    main form#moves input#scissors {
+      background: #EDD75A url("img/scissors.svg") no-repeat center 10px;
+      background-size: 100px; }
+      main form#moves input#scissors:hover {
+        background-color: #405059; }
+    main form#moves input#lizard {
+      background: #EDD75A url("img/lizard.svg") no-repeat center 10px;
+      background-size: 100px; }
+      main form#moves input#lizard:hover {
+        background-color: #405059; }
+    main form#moves input#spock {
+      background: #EDD75A url("img/spock.svg") no-repeat center 10px;
+      background-size: 100px; }
+      main form#moves input#spock:hover {
+        background-color: #405059; }
+  main nav#new-game {
+    text-align: center; }
+    main nav#new-game input {
+      font-family: 'Old Standard TT', serif;
+      display: inline-block;
+      border: 3px solid #EDD75A;
+      background: none;
+      color: #fff;
+      font-size: 1.6em;
+      margin-bottom: 0.5em;
+      cursor: pointer; }
+
+main#start .background-image {
+  background: url("img/start.jpg") no-repeat center bottom;
+  background-size: cover; }
+main#start h1 {
+  text-transform: uppercase; }
+main#start form {
+  text-align: center; }
+  main#start form label {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.6em;
+    color: #EDD75A; }
+  main#start form input {
+    font-family: 'Old Standard TT', serif;
+    display: inline-block;
+    border: 3px solid #EDD75A;
+    background: none;
+    color: #fff;
+    font-size: 1em;
+    margin: 0.5em 0;
+    text-align: center;
+    cursor: pointer; }
+  main#start form input[type="text"] {
+    background: #405059;
+    padding: 0.2em 0;
+    font-family: sans-serif; }
+
+main#play .background-image {
+  background: url("img/play.jpg") no-repeat center bottom;
+  background-size: cover; }
+
+main#draw .background-image {
+  background: url("img/draw.jpg") no-repeat center bottom;
+  background-size: cover; }
+
+main#lose .background-image {
+  background: url("img/lose.jpg") no-repeat center center;
+  background-size: cover; }
+
+main#win .background-image {
+  background: url("img/win.jpg") no-repeat center center;
+  background-size: cover; }

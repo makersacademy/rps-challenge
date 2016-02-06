@@ -1,0 +1,181 @@
+
+$color_1: #EDD75A;
+$color_2: #405059;
+$color_3: black;
+
+html {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  border: 5px solid $color_1;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: $color_2;
+  padding-top: 4em;
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+  }
+  h1, h2, h3 {
+    text-align: center;
+    color: $color_1
+  }
+  h1 {
+    text-transform: uppercase;
+    margin: 1.5em 0;
+  }
+  h3 {
+    font-style: italic;
+  }
+  form#moves {
+    width: 100%;
+    margin: 3em 0;
+    text-align: center;
+    .move {
+      width: 130px;
+      height: 130px;
+      display: inline;
+      background: $color_1;
+      border: 0;
+      padding-top: 80px;
+      margin: 0 1em;
+      font-size: 1.4em;
+      font-family: 'Old Standard TT', serif;
+      font-style: italic;
+      border-radius: 120px;
+      border: 2px solid $color_3;
+      transform: all 0.3s ease;
+      outline: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    input#rock {
+      background: $color_1 url('img/rock.svg') no-repeat center 10px;
+      background-size: 100px;
+      &:hover {
+        background-color: $color_2;
+      }
+    }
+    input#paper {
+      background: $color_1 url('img/paper.svg') no-repeat center 10px;
+      background-size: 100px;
+      &:hover {
+        background-color: $color_2;
+      }
+    }
+    input#scissors {
+      background: $color_1 url('img/scissors.svg') no-repeat center 10px;
+      background-size: 100px;
+      &:hover {
+        background-color: $color_2;
+      }
+    }
+    input#lizard {
+      background: $color_1 url('img/lizard.svg') no-repeat center 10px;
+      background-size: 100px;
+      &:hover {
+        background-color: $color_2;
+      }
+    }
+    input#spock {
+      background: $color_1 url('img/spock.svg') no-repeat center 10px;
+      background-size: 100px;
+      &:hover {
+        background-color: $color_2;
+      }
+    }
+  }
+  nav#new-game {
+    text-align: center;
+    input {
+      font-family: 'Old Standard TT', serif;
+      display: inline-block;
+      border: 3px solid $color_1;
+      background: none;
+      color: #fff;
+      font-size: 1.6em;
+      margin-bottom: 0.5em;
+      cursor: pointer;
+    }
+  }
+
+}
+
+main#start {
+  .background-image {
+  background: url('img/start.jpg') no-repeat center bottom;
+  background-size: cover;
+  }
+  h1 {
+    text-transform: uppercase;
+  }
+  form {
+    text-align: center;
+    label {
+      font-family: 'Old Standard TT', serif;
+      font-size: 1.6em;
+      color: $color_1;
+    }
+    input {
+      font-family: 'Old Standard TT', serif;
+      display: inline-block;
+      border: 3px solid $color_1;
+      background: none;
+      color: #fff;
+      font-size: 1em;
+      margin: 0.5em 0;
+      text-align: center;
+      cursor: pointer;
+    }
+    input[type="text"] {
+      background: $color_2;
+      padding: 0.2em 0;
+      font-family: sans-serif;
+    }
+  }
+}
+
+main#play {
+  .background-image {
+  background: url('img/play.jpg') no-repeat center bottom;
+  background-size: cover;
+  }
+}
+
+main#draw {
+  .background-image {
+  background: url('img/draw.jpg') no-repeat center bottom;
+  background-size: cover;
+  }
+}
+
+main#lose {
+  .background-image {
+  background: url('img/lose.jpg') no-repeat center center;
+  background-size: cover;
+  }
+}
+
+
+main#win {
+  .background-image {
+  background: url('img/win.jpg') no-repeat center center;
+  background-size: cover;
+  }
+}
