@@ -6,11 +6,11 @@ feature 'as a player, I would like to play another player' do
 	  visit('/')
 	  click_button('Two Player')
 	  fill_in('player_1', with: 'Russell')
-	  fill_in('player_1', with: 'Hayley')
+	  fill_in('player_2', with: 'Hayley')
 	  click_button('Submit')
 	  click_button('Rock') 
 	  click_button('Paper') 
-	  expect(page).to have_content('Player 2 wins !')
+	  expect(page).to have_content('Hayley wins!')
 	end
 
 end
