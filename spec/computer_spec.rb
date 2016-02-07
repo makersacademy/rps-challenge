@@ -1,5 +1,4 @@
 require 'computer'
-require'game'
 
 describe Computer do
   subject(:computer){described_class.new}
