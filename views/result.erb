@@ -1,2 +1,4 @@
 
-<h1> <%= @game.player1.move %> vs <%= Computer.new.move %> </h1>
+<h1> <%= @game.player1.move.to_s %> vs <%= @game.computer.move.to_s %> </h1>
+
+winner <%= @winner %>

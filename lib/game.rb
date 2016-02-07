@@ -1,22 +1,23 @@
 require './lib/player'
 require './lib/computer'
 class Game
-WIN_MATRIX = {
-    rock:     { paper: 2, scissors: 1 },
-    paper:    { scissors: 2, rock: 1 },
-    scissors: { rock: 2, paper: 1 }
+  WIN_MATRIX = {
+    rock:         :scissors,
+    scissors:     :paper,
+    paper:        :rock
   }
-  attr_reader :player1
+  attr_reader :player1, :computer
 
-  def initialize(player1)
+  def initialize(player1, computer)
+    @computer = computer
     @player1 = player1
+    @winner = nil
   end
 
-  def result
-    if (player1.move) == (player2.move)
-      :draw
-    else
-      WIN_MATRIX[(player1.move).to_sym].include?(computer.move) ? :win : :lose
-    end
+  def winner(p1,p2)
+    p1 = p1.to_sym
+    p2 = p2.to_sym
+    return @winner = ": NO WINNER" if p1 == p2
+    WIN_MATRIX[p1] == (p2) ? @winner = player1.name : @winner = computer.name
   end
 end

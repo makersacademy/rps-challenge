@@ -13,7 +13,7 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player1_name]))
+    $game = Game.new(Player.new(params[:player1_name]), Computer.new)
     redirect '/play'
   end
 
@@ -23,12 +23,14 @@ class MyApp < Sinatra::Base
   end
 
   get '/move' do
-     $game.player1.move = params[:move]
-     redirect '/result'
+    $game.player1.move = params[:move]
+    redirect '/result'
    end
 
   get '/result' do
     @game = $game
+    @comp_move = @game.computer.random_move
+    @winner = @game.winner(@game.player1.move,@comp_move)
     erb :result
   end
 end
