@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -25,7 +26,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @weapon = $player.weapon
+    @player_weapon = $player.weapon
+    @computer_weapon = Computer.new.weapon
     erb :result
   end
 
