@@ -28,7 +28,7 @@ class Game_ext
     hash_val = {"Rock" => 1, "Paper" =>  2, "Scissors" =>  3, "Spock"=>  4, "Lizard"=>  5}
     p1 = player.choice
     p2 = player2.choice
-    result = (hash_val[p1] - hash_val[p2]) % 5
+    result = (hash_val[p1].to_i - hash_val[p2].to_i) % 5
     return "Draw" if result == 0
     return "player_1_wins" if result.odd?
   end
