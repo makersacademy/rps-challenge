@@ -10,6 +10,8 @@ My implementation allows for either single player vs the CPU or multiplayer - wi
 
 Since this is a web based application, the user input is severely restricted in choices, thus removing the necessity to test edge cases for incorrect input. Player names are entered in as text, and choices are given as radio form buttons.
 
+In addition, Bonus Story 2 has been implemented, featuring the additional hands of Spock and Lizard.
+
 
 In my feature test, the following user stories were implemented:
 
@@ -24,15 +26,18 @@ I would like to be able to play rock/paper/scissors
 
 Bonus level 1: Multiplayer
 Change the game so that two marketeers can play against each other ( yes there are two of them ).
+
+Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
 ```
 
 Instructions
 -----------
-1. User can choose a game vs the CPU or another human.
+1. User can choose a game vs the CPU or another human, and also normal vs extended rules.
 2. Player(s) input their names.
 3. Players have to manually click to start the game.
-4. Player chooses from Rock, Paper or Scissors.
-5. Player 2 chooses (if multiplayer game) from Rock, Paper or Scissors.
+4. Player chooses from Rock, Paper or Scissors (and Spock, Lizard for extended version).
+5. If Multiplayer game, Player 2 chooses a hand.
 6. Results are given, with a choice to play again.
 
 
