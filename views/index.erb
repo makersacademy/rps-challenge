@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Battle!
+  </title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+  <div class="container-fluid white-container">
+    <div class="row text-center">
+      <div class="col-md-12 col-xs-8">
+      <h1>Rock, Paper, Scissors!</h1>
+      <%if !@name%>
+      <form class="form-inline padding-20" action="/name" method="post">
+      <input type="text" class="form-control" name="name" placeholder="Name" required>
+      <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+      <%end%>
+      <%if @name%>
+        <h2 class="padding-20"> Hi <%=@name%>, pick your weapon of choice!</h2>
+        <form class="form-inline padding-20 bold" action="/game" method="post">
+          <input type="radio" name="options" value="rock" checked> Rock
+          <input type="radio" name="options" value="paper"> Paper
+          <input type="radio" name="options" value="scissors"> Scissors
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+        <%end%>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

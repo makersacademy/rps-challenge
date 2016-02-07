@@ -1,0 +1,21 @@
+body {
+    background-image: url('monkeys.png');
+    background-repeat: repeat;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+
+}
+
+.padding-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.bold{
+  font-weight: bold;
+  font-size: 20px;
+}
