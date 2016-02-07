@@ -15,3 +15,21 @@ Functionality:
 Technologies used:
 * Testing - RSpec, Capybara
 * Back-end - Ruby
+* Front-end - ERB, HTML, CSS
+
+To download and use...
+
+```
+$ git clone https://github.com/vickymg/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app.rb
+
+```
+Open browser at http://localhost:4567/
+
+![Image of sign-in screen](http://i.imgur.com/yF43Rhf.png)
+
+![Image of play screen](http://i.imgur.com/9pdLCf6.png)
+
+![Image of win screen](http://i.imgur.com/7a1ZOd6.png)

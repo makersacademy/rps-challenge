@@ -17,21 +17,21 @@ describe Game do
       new_game = Game.new(player)
       allow(new_game.computer).to receive(:weapon).and_return('Scissors')
       allow(new_game.player).to receive(:choice).and_return('Rock')
-      expect(new_game.check_winner).to eq 'You win!'
+      expect(new_game.game_winner).to eq 'You win!'
     end
 
     it 'confirms if computer won the game' do
       new_game = Game.new(player)
       allow(new_game.computer).to receive(:weapon).and_return('Paper')
       allow(new_game.player).to receive(:choice).and_return('Rock')
-      expect(new_game.check_winner).to eq 'Computer wins!'
+      expect(new_game.game_winner).to eq 'Computer wins!'
     end
 
     it 'confirms if there is a draw' do
       new_game = Game.new(player)
       allow(new_game.computer).to receive(:weapon).and_return('Paper')
       allow(new_game.player).to receive(:choice).and_return('Paper')
-      expect(new_game.check_winner).to eq "It's a draw!"
+      expect(new_game.game_winner).to eq "It's a draw!"
     end
   end
 end
