@@ -1,0 +1,8 @@
+
+<h1> <%= @game.player1.move.to_s %> vs <%= @game.computer.move.to_s %> </h1>
+
+winner <%= @winner %>
+
+<form action="/play" >
+  <input type="submit" value="play again?"/>
+</form>
