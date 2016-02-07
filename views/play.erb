@@ -6,7 +6,7 @@
 <body>
 
   <h1>This is a Heading</h1>
-  <p><%= @game.player_1.name %> vs. CPU</p>
+  <p><%= @game.player_1.name %> vs. <%= @game.player_2.name %></p>
 
   <form action="/weapon" method="post">
     <input type="radio" name="weapon" id="rock" value="rock" checked> Rock<br>

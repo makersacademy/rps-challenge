@@ -2,16 +2,36 @@
 <html>
 <head>
 <title>Welcome to RPSApp</title>
+<style>
+/*form {display: inline-block;}*/
+</style>
 </head>
 <body>
 
   <h1>This is a Heading</h1>
   <p>This is a paragraph.</p>
 
-  <form action="/names" method="post">
-      <input type="text" name="player_1_name">
-      <input type="submit" value="Start">
+  <form action="/players" method="post">
+    <input type="submit" name="player_count" value="1 player">
+    <input type="submit" name="player_count" value="2 players">
   </form>
+
+  <br>
+
+  <% if @player_count == "1 player" %>
+    <form action="/names" method="post">
+        <input type="text" name="player_1_name">
+        <input type="submit" value="Start">
+    </form>
+  <% end %>
+
+  <% if @player_count == "2 players" %>
+    <form action="/names2" method="post" >
+      <input type="text" name="player_1_name">
+      <input type="text" name="player_2_name">
+      <input type="submit" value="Start">
+    </form>
+  <% end %>
 
 </body>
 </html>
