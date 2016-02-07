@@ -3,7 +3,7 @@ require_relative 'sheldon'
 
 class Game
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :no_players, :turn
 
   # ACTIONS = [:rock, :paper, :scissors, :lizzard, :spock]
   RULES = {
@@ -18,6 +18,11 @@ class Game
     @player_1 = session["player_1"]
     @player_2 = session["player_2"]
     @no_players = session["no_players"]
+    @turn = player_1
+  end
+
+  def switch
+    @turn = player_2
   end
 
   def completed?

@@ -24,30 +24,33 @@ class RPS < Sinatra::Base
   post '/names1' do
     session[:player_1] = Player.new(params[:name_1])
     session[:player_2] = Sheldon.new
+    session[:game] = Game.new(session)
     redirect '/play'
   end
 
   post '/names2' do
     session[:player_1] = Player.new(params[:name_1])
     session[:player_2] = Player.new(params[:name_2])
+    session[:game] = Game.new(session)
     redirect '/play'
   end
 
   get '/play' do
-    session[:game] = @game = Game.new(session)
+    @game = session[:game]
     erb(:play)
   end
 
-  get '/play2' do
-    @game = session[:game]
-    erb(:play2)
-  end
+  # post '/play' do
+  #   @game = session[:game]
+  #   erb(:play2)
+  # end
 
-  post '/run' do
+  post '/play' do
     @game = session[:game]
-    @action1 = params[:action1].downcase.to_sym
-    @game.player_1.set_move(@action1)
-    @game.player_2.set_move
+    @action = params[:action].downcase.to_sym
+    @game.turn.set_move(@action)
+    @game.switch
+    @game.player_2.set_move if @game.no_players==1
     redirect '/play'
   end
 
