@@ -7,6 +7,8 @@ require './lib/computer.rb'
 
   feature 'user can play rock, paper, scissors..' do
 
+    let(:computer){double :computer}
+
     before do
       include Capybara::DSL
       Capybara.default_driver = :selenium
@@ -28,10 +30,24 @@ require './lib/computer.rb'
     expect(page).to have_content "The Computer Played"
     end
 
-    scenario 'player can win in a game' do
+    scenario 'player plays Rock & either wins or looses!' do
     sign_in
     click_button('Rock')
-    expect(page).to have_content "Congratulations! You have won this round!"
+    expect(page).to have_content "Game Result:"
     end
+
+    scenario 'player plays Paper & either wins or looses!' do
+    sign_in
+    click_button('Paper')
+    expect(page).to have_content "Game Result:"
+    end
+
+    scenario 'player plays Scissors & either wins or looses!' do
+    sign_in
+    click_button('Scissors')
+    expect(page).to have_content "Game Result:"
+    end
+
+
 
   end

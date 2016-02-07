@@ -14,18 +14,4 @@ end
 def play_a_round (move, move2)
   @rules[move][move2]
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end

@@ -7,6 +7,12 @@ class Computer
   end
 
   def move
-    @moves[rand(0..2)]
+  @moves[num_gen]
+  end
+
+  private
+
+  def num_gen
+    rand(0..2)
   end
 end

@@ -1,9 +1,9 @@
-
-<h1>The Computer Played <%=@computer_move%>!</h1>
+<h2>You played Rock!</h2>
+<h2>The Computer Played <%=@computer_move%>!</h2>
 <% if @result == :Rock %>
-<p>Congratulations! You have won this round!</p>
+<p>Game Result: Congratulations! You have won this round!</p>
 <% elsif @result == :Draw %>
-<p>This Round Is A Draw!</p>
+<p>Game Result: This Round Is A Draw!</p>
 <% else %>
-<p> The Computer has won this round! </p>
+<p>Game Result: The Computer has won this round! </p>
 <% end %>

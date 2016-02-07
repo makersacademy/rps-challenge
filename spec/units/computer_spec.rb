@@ -5,9 +5,16 @@ describe Computer do
 subject(:computer) {described_class.new}
 
 describe "#move " do
+
   it "returns a rock / paper /scissors move" do
   expect(computer.move).to be_a (Symbol)
   end
+
+  it "returns a move " do
+    allow(computer).to receive(:num_gen).and_return(0)
+    expect(computer.move).to eq(:Rock)
+  end
+
 end
 
 describe "#moves" do
