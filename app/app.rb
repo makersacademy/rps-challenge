@@ -4,12 +4,10 @@ require_relative '../lib/player'
 require_relative '../lib/turn'
 
 class RPS < Sinatra::Base
-  enable :sessions
   use Rack::Session::Pool, :expire_after => 2592000
   set :sesion_secret, "super secret"
 
   helpers do
-
     def session_player
       Player.look_up(session[:player_id])
     end
@@ -19,14 +17,11 @@ class RPS < Sinatra::Base
       Player.add(player_id, player)
       session[:player_id] = player_id
     end
-
-
   end
 
   get '/' do
     erb :index
   end
-
 
   post '/name' do
     remember(Player.new(params[:player_name]))
@@ -34,26 +29,15 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = session_player.name if session_player
+    @player = session_player.name
     erb :play
   end
 
-
-  post '/rock' do
-    session_player.new_turn(:rock)
+  post '/play' do
+    weapon_choice = params[:weapon_choice]
+    session_player.new_turn(weapon_choice)
     redirect '/the_choices'
   end
-
-  post '/scissors' do
-    session_player.new_turn(:scissors)
-    redirect '/the_choices'
-  end
-
-  post '/paper' do
-    session_player.new_turn(:paper)
-    redirect '/the_choices'
-  end
-
 
   get '/the_choices' do
     @player = session_player.name
@@ -62,12 +46,6 @@ class RPS < Sinatra::Base
     @result = session_player.result
     erb :the_choices
   end
-
-  get '/the_result' do
-    erb session_player.result
-  end
-
-
 
   run! if app_file == $0
 end

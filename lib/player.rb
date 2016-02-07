@@ -29,7 +29,7 @@ class Player
 
 
     def new_turn(weapon_choice)
-      @p1_weapon = weapon_choice
+      @p1_weapon = weapon_choice.to_sym
       @turn = turn_klass.new(p1_weapon)
     end
 

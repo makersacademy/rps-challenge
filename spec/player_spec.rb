@@ -63,6 +63,7 @@ describe Player do
 
       before do
         allow(turn_klass).to receive(:new).and_return(dummy_turn)
+        allow(weapon_choice).to receive(:to_sym)
       end
 
       it 'intantiates a new turn instance' do
@@ -80,26 +81,23 @@ describe Player do
 
       before do
         allow(turn_klass).to receive(:new).and_return(dummy_turn)
+        allow(weapon_choice).to receive(:to_sym)
         player_instance.new_turn(weapon_choice)
-        allow(dummy_turn).to receive(:result)
       end
 
       it 'retrieves the result from the turn' do
+        allow(dummy_turn).to receive(:result)
         expect(dummy_turn).to receive(:result)
         player_instance.result
       end
-    end
-    describe '#opponent_weapon' do
 
-      before do
-        allow(turn_klass).to receive(:new).and_return(dummy_turn)
-        player_instance.new_turn(weapon_choice)
-        allow(dummy_turn).to receive(:p2_weapon)
-      end
+      describe '#opponent_weapon' do
 
-      it 'retrieves player 2\'s weapon choice for the turn' do
-        expect(dummy_turn).to receive(:p2_weapon)
-        player_instance.opponent_weapon
+        it 'retrieves player 2\'s weapon choice for the turn' do
+          allow(dummy_turn).to receive(:p2_weapon)
+          expect(dummy_turn).to receive(:p2_weapon)
+          player_instance.opponent_weapon
+        end
       end
     end
   end
