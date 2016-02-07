@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
   end
 
   get '/confirm_weapon' do
-    @weapon = $weapon.type
+    @player_weapon = $weapon.type
     erb(:confirm_weapon)
   end
 
