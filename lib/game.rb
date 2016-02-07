@@ -41,4 +41,4 @@ class Game
     @outcomes[computer].include?(player) ? @winner = "Computer" : @winner = @player
   end
   
- end
+end

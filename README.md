@@ -42,6 +42,6 @@ See the outcome of the game and choose to play again
 
 Build Status
 ------------
-[![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
+![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
 
-[![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tcpickard94/rps-challenge?branch=master)
+![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tcpickard94/rps-challenge?branch=master)
