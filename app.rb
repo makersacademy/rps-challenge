@@ -17,12 +17,11 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = $player
-    @name = @player.name
     erb :play
   end
 
   post '/choice' do
-    $weapon = params[:choice]
+    $weapon = params[:choice] #code_smell
     redirect '/result'
   end
 
