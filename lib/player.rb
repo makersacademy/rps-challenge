@@ -1,3 +1,5 @@
+require_relative 'weapon'
+
 class Player
   ARGUMENT_ERROR_MSG = 'Invalid weapon'
   attr_reader :name, :weapon

@@ -1,3 +1,5 @@
+require_relative 'weapon'
+
 class Bot
   DEFAULT_NAMES = ['Mr Robot', 'Sir Mix-a-Bot', 'Mechagodzilla']
   attr_reader :name, :weapon
