@@ -25,7 +25,8 @@ Build Process
 -----
 
 I made this challenge the TDD way, by writing the Capybara/Rspec Unit/Feature
-tests before my actual code.
+tests before my actual code. I'm using global variables only for the simplicity
+they offer(obviously a bad practise), as we haven't been introduced to DBs yet.
 
 **Helpful resources:**
 * http://www.sinatrarb.com/intro.html

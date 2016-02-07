@@ -29,27 +29,27 @@ class Game
 
   def rock_to_other
     @player1.c_rps == :rock && @player2.c_rps == :scissors ||
-    @player1.c_rps == :rock && @player2.c_rps == :lizard
+      @player1.c_rps == :rock && @player2.c_rps == :lizard
   end
 
   def paper_to_other
     @player1.c_rps == :paper && @player2.c_rps == :rock ||
-    @player1.c_rps == :paper && @player2.c_rps == :spock
+      @player1.c_rps == :paper && @player2.c_rps == :spock
   end
 
   def scissors_to_other
     @player1.c_rps == :scissors && @player2.c_rps == :paper ||
-    @player1.c_rps == :scissors && @player2.c_rps == :lizard
+      @player1.c_rps == :scissors && @player2.c_rps == :lizard
   end
 
   def lizard_to_other
     @player1.c_rps == :lizard && @player2.c_rps == :paper ||
-    @player1.c_rps == :lizard && @player2.c_rps == :spock
+      @player1.c_rps == :lizard && @player2.c_rps == :spock
   end
 
   def spock_to_other
     @player1.c_rps == :spock && @player2.c_rps == :scissors ||
-    @player1.c_rps == :spock && @player2.c_rps == :rock
+      @player1.c_rps == :spock && @player2.c_rps == :rock
   end
 
   def reset

@@ -1,19 +1,45 @@
-feature 'Adding name' do
-  scenario 'A player can add his name' do
+require_relative '../web_helpers'
+
+feature 'Feature: Single play' do
+  scenario 'A user selects the single player mode' do
     visit("/")
-    fill_in("player", with: 'Alex')
+    find('#sp').set(true)
     click_button("submit")
+    expect(page).to have_content('Enter your name')
+  end
+
+  scenario 'A user is given the option to select r-p-s' do
+    starting_solo
     expect(page).to have_content('Welcome Alex')
+  end
+
+  scenario 'A player selects r-p-s and plays the game' do
+    starting_solo
+    choose('rps', :match => :first)
+    click_button("submit")
+    expect(page).to have_content('Alex (rock) vs Computer')
   end
 end
 
-feature 'Selecting R-P-S' do
-  scenario 'A player selects r-p-s' do
+feature 'Feature: Multi play' do
+  scenario 'A user selects the multi player mode' do
     visit("/")
-    fill_in("player", with: 'Alex')
+    find('#mp').set(true)
     click_button("submit")
-    choose('rps', :match => :first)
+    expect(page).to have_content('Enter your name')
+  end
+
+  scenario 'two players are given the option to select r-p-s' do
+    starting_multi
+    expect(page).to have_content('Welcome Alex')
+  end
+
+  scenario 'two players select r-p-s and play the game' do
+    starting_multi
+    find('#rock').set(true)
     click_button("submit")
-    expect(page).to have_content('Alex (rock)')
+    find('#scissors').set(true)
+    click_button("submit")
+    expect(page).to have_content('Alex (rock) vs Bob (scissors)')
   end
 end

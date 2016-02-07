@@ -1,0 +1,13 @@
+<div id="duel">
+  <h2><%= @player1.name %> (<%= @player1.c_rps%>)</h2>
+  vs
+  <h2><%= @player2.name %> (<%= @player2.c_rps%>)</h2>
+  <br/>
+  <% if @winner == 0 %>
+    *** The match is draw ***
+  <% else %>
+    *** The winner is: <%= @winner.name %> ***
+  <% end %>
+  <br/>
+  <a href="/playerone"><button>Play again</button></a>
+</div>
