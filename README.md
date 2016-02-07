@@ -2,6 +2,11 @@ ROCK, PAPER, SCISSORS!
 
 File tree
 
+├── CONTRIBUTING.md
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
 ├── app.rb
 ├── disabled.yml
 ├── docs
@@ -18,9 +23,12 @@ File tree
 │   ├── spec_helper.rb
 │   └── web_helpers.rb
 └── views
+    ├── computer.erb
     ├── end_game.erb
     ├── index.erb
+    ├── names.erb
     └── play.erb
+
 
 Installation Instructions
 
@@ -55,26 +63,37 @@ I would like to be able to play rock/paper/scissors
 
 My approach
 
-We need a page wher the user can enter thier name. This should then send them to a page where they can enter thier choice of weapon the computer should then choose a weapon too and send them to the final results page. 
+We need a page where the user can enter their name. This should then send them to a page where they can enter their choice of weapon the computer should then choose a weapon too and send them to the final results page. 
 
 The logic will need to check who the winner is between the user's choice, inputted by clicking a button on the webpage and the computer's choice, chosen at random from an array.
 
-If there is time I will add the option for a player two and nerd the place up with some extra lizzar/spock action. 
+If there is time I will add the option for a player two and nerd the place up with some extra lizzard/Spock action. 
 
 Operating guide
 
+1. From the root of the “” directory run the app.rb file by typing:
 
+ruby app.rb
 
+(this will start the local server running and allow you to load the page up in your browser)
 
+2. Navigate to the home page for rock, paper, scissors. 
 
+http://localhost:4567/
 
+3. In the box next to “Player 1” enter your game name and click “Submit”
 
+4. Take a moment to enjoy your welcome.
 
+5. When you are ready click “Let’s do this!”
 
+6. Select your weapon of choice, be it ROCK, PAPER or SCISSORS and click “DO YOUR WORST!”
 
+7. View the computer’s choice and tremble, awaiting your fate! Click “Results”
 
+8. Glory in your victory/ wallow in defeat / feel ambivalent about your draw.
 
-
+9. If you fancy another game but can’t be bothered to enter your name again, simply click “Play again?” 
 
 
 # RPS Challenge: Rōnin Badge Test

@@ -7,8 +7,8 @@ class Game
     @computer_weapon = nil
     @player_winner = false
     @draw = false
-    @weapon_array = ["rock", "paper", "scissors"]
-    @win_conditions = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
+    @weapon_array = [:rock, :paper, :scissors]
+    @win_conditions = { :scissors => :paper, :paper => :rock, :rock => :scissors }
   end
 
   def choose_weapon(weapon)
@@ -21,8 +21,8 @@ class Game
 
   def who_wins
 
-    @player_1.weapon == @computer_weapon ? @draw = true : @draw = false
-    @win_conditions[@player_1.weapon] == @computer_weapon ? @player_winner = false : @player_winner = true
+    @player_1.weapon.to_s == @computer_weapon.to_s ? @draw = true : @draw = false
+    @win_conditions[@player_1.weapon.to_s] == @computer_weapon ? @player_winner = false : @player_winner = true
 
   end
 
