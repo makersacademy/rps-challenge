@@ -1,4 +1,4 @@
-Rock Paper Scissors Challenge 
+Rock Paper Scissors Challenge [![Build Status](https://travis-ci.org/innlouvate/rps-challenge.svg?branch=master)](https://travis-ci.org/innlouvate/rps-challenge)
 =================
 
 Task
