@@ -40,6 +40,6 @@ feature 'Feature: Multi play' do
     click_button("submit")
     find('#scissors').set(true)
     click_button("submit")
-    expect(page).to have_content('Alex (rock) vs Bob (scissors)')
+    expect(page).to have_content('*** The winner is: Alex *** ')
   end
 end
