@@ -17,6 +17,10 @@ describe Game do
       expect(game.winner(:rock, :scissors)).to eq 'Scott'
     end
 
+    it 'can choose correct winner with spock, lizard added' do
+      expect(game.winner(:paper, :spock)).to eq 'Scott'
+    end
+
   it 'returns no winner if the game is a draw' do
     expect(game.winner(:paper, :paper)).to include 'NO WINNER'
   end

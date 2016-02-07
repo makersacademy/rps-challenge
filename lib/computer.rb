@@ -5,7 +5,7 @@ require './lib/computer'
 class Computer
   attr_reader :moves, :name, :move
   def initialize
-    @moves = [:rock, :paper, :scissors]
+    @moves = [:rock, :paper, :scissors, :spock, :lizard]
     @name = 'Computer'
   end
 
