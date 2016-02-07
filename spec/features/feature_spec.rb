@@ -2,10 +2,10 @@ require 'capybara'
 require 'web_helper'
 require_relative '../../app.rb'
 
-include Capybara::DSL
+#include Capybara::DSL
 
 describe 'user specs' do
-  Capybara.default_driver = :selenium
+  #Capybara.default_driver = :selenium
 
   feature 'entering name' do
     scenario 'allows user to enter name to start game' do
@@ -15,22 +15,22 @@ describe 'user specs' do
   end
 
   feature 'making choice' do
-    xscenario 'allows user to pick rock' do
+    scenario 'allows user to pick rock' do
       sign_in_and_play
-      click_button('Rock')
-      expect(page).to have_content('You chose Rock')
+      click_button('rock')
+      expect(page).to have_content('You chose rock')
     end
 
-    xscenario 'allows user to pick paper' do
+    scenario 'allows user to pick paper' do
       sign_in_and_play
-      click_button('Paper')
-      expect(page).to have_content('You chose Paper')
+      click_button('paper')
+      expect(page).to have_content('You chose paper')
     end
 
-    xscenario 'allows user to pick scissors' do
+    scenario 'allows user to pick scissors' do
       sign_in_and_play
-      click_button('Scissors')
-      expect(page).to have_content('You chose Scissors')
+      click_button('scissors')
+      expect(page).to have_content('You chose scissors')
     end
   end
 end

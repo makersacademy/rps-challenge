@@ -1,6 +1,6 @@
-You chose <%= @player_weapon %>
+You chose <%= @game.player.player_weapon(@player_weapon) %>
 <br><br>
-Computer chose <%= @computer.choose_weapon %>
+Computer chose <%= @game.computer.choose_weapon %>
 <br><br>
 <%= @result %>
 

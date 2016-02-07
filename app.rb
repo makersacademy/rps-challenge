@@ -22,13 +22,13 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
+
     @player_weapon = $player.player_weapon(params[:weapon])
-    @computer = $computer
-    @computer.computer_weapon
-    @result = @computer.result(@player_weapon, @computer.choose_weapon)
+    @game = Game.new($player, $computer)
+    @game.computer.computer_weapon
+    @result = @game.result(@player_weapon, @game.computer.choose_weapon)
 
     erb :game
   end
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
