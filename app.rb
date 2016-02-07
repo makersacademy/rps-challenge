@@ -18,6 +18,11 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  get '/play_again' do
+    @game = $game
+    erb(:play)
+  end
+
   post '/choice' do
 #    p params[:choice]
     $choice_you = params[:choice]
