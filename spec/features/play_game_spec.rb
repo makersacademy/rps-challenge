@@ -5,7 +5,7 @@ require 'spec_helper'
 
 feature 'play rock, paper, scissors' do
   scenario 'play game' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    allow(Game::WEAPONS).to receive(:sample).and_return('Rock')
     sign_in_and_play
     fill_in :player_choice, with: 'Scissors'
     click_button('Go!')

@@ -9,20 +9,26 @@ class Game
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
+    @wins = [['Scissors', 'Paper'],
+             ['Paper', 'Rock'],
+             ['Rock', 'Scissors']]
   end
 
-  def check_result
+  def check_winner
+    result
     if @computer.weapon == @player.choice
       "It's a draw!"
-    elsif @computer.weapon == 'Scissors' && @player.choice == 'Paper'
-      'Computer wins!'
-    elsif @computer.weapon == 'Rock' && @player.choice == 'Scissors'
-      'Computer wins!'
-    elsif @computer.weapon == 'Paper' && @player.choice == 'Rock'
-      'Computer wins!'
+    elsif @wins.include?([@computer.weapon, @player.choice])
+      "Computer wins!"
     else
-      'You win!'
+      "You win!"
     end
+  end
+
+  private
+
+  def result
+    @result = [@computer.weapon, @player.choice]
   end
 
 end
