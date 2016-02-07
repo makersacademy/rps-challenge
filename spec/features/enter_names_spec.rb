@@ -1,5 +1,5 @@
 
-feature "enter names" do
+xfeature "enter names" do
 
   scenario "User enters their name" do
     visit '/'

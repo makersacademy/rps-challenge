@@ -3,18 +3,51 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new }
+  PLAY_OPTIONS = ["rock", "paper", "scissors"]
 
   describe 'initialize'do
     it'returns 3 play options'do
-      expect(game.play_options).to eq described_class::PLAY_OPTIONS
+      expect(PLAY_OPTIONS).to include "rock", "paper", "scissors"
     end
   end
 
-  describe 'win?' do
-      it 'returns true' do
-        name1.choose("rock")
-        expect(game.win?).to eq(true)
+  describe 'computer options' do
+
+    it 'computer choice randomly returns rock, paper or scissors' do
+      game.cpu_choice
+      expect(["rock", "paper", "scissors"]).to include(game.cpu_choice)
+    end
+
+end
+
+  describe 'draw' do
+      it 'returns true if computer choice matches players' do
+        user_choice = "paper"
+        cpu_choice = "paper"
+        expect(game.draw?).to eq true
       end
+  end
+
+  describe 'win' do
+
+    it 'returns true if user chooses rock and cpu chooses scissors' do
+      user_choice = "rock"
+      cpu_choice = "scissors"
+      expect(game.win?).to eq true
+    end
+
+    it 'returns true if user chooses paper and cpu chooses rock' do
+      user_choice = "paper"
+      cpu_choice = "rock"
+      expect(game.win?).to eq true
+    end
+
+    it 'returns true if user chooses scissors and cpu chooses paper' do
+      user_choice = "scissors"
+      cpu_choice = "paper"
+      expect(game.win?).to eq true
+    end
+
   end
 
 end

@@ -1,17 +1,13 @@
 class Player
 
-attr_reader :name1, :computer
+attr_reader :name1, :user_choice
 
-  def initialize
+  def initialize(name1)
     @name1 = name1
-    @computer = computer
   end
 
-  def choose
-    @play_options = play_options
-
-  def CPU_choose
-    Game::PLAY_OPTIONS.sample
+  def user_choice=(user_choice)
+    @user_choice = user_choice
   end
 
 end

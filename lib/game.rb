@@ -1,21 +1,30 @@
+require './lib/player.rb'
 
 class Game
 
-PLAY_OPTIONS =["rock", "paper", "scissors"]
+PLAY_OPTIONS = ["rock", "paper", "scissors"]
 
-attr_reader :play_options,
+attr_reader :play_options, :computer
 
-  def initialize(play_options = PLAY_OPTIONS)
-    @play_options = play_options
+  def initialize
+    @computer = computer
+    @cpu_choice
+    @play_options = PLAY_OPTIONS
   end
 
-  def win
+  def cpu_choice
+    PLAY_OPTIONS.sample
   end
 
-  def draw
+  def win?
+    return true if @user_choice = "rock" && @cpu_choice = "scissors"
+    return true if @user_choice = "paper" && @cpu_choice = "rock"
+    return true if @user_choice = "scissors" && @cpu_choice = "paper"
+    return false
   end
 
-  def lose
+  def draw?
+    @user_choice == @cpu_choice
   end
 
 end
