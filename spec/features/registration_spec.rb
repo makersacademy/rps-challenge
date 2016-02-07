@@ -1,6 +1,5 @@
 
 require 'capybara/dsl'
-require 'web_helpers'
 
 feature 'Enter name' do
   scenario 'submitting names' do
