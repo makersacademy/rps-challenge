@@ -69,7 +69,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @game = session[:game]
     erb :play do
-      erb :result
+      erb @game.result
     end
   end
 

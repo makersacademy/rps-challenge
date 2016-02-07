@@ -1,0 +1,50 @@
+<container class="hud">
+  <section class="left-hud">
+    <div class="hud-content">
+      <% if @game.player(1).weapon.nil? %>
+        <section class="instructions">
+          Choose your weapon:
+        </section>
+        <form action="/player_1_choice" method="post" class="weapons-form" id="weapons-form">
+          <% Game::WEAPONS.each do |weapon| %>
+          <div class="weapon-box">
+            <input type="radio" name="weapon" value="<%= weapon %>" />
+            <label for="weapon"><%= weapon %></label>
+          </div>
+          <% end %>
+        </form>
+        <button type="submit" form="weapons-form" value="Go!">Go!</button>
+      <% elsif @game.multiplayer? %>
+        <section class="instructions">
+          Waiting for <%= @game.player(2).name %>...
+        </section>
+      <% end %>
+    </div>
+  </section>
+  <section class="right-hud">
+    <div class="hud-content">
+      <% if @game.player(1).weapon.nil? && @game.multiplayer? %>
+        <section class="instructions">
+          Waiting for <%= @game.player(1).name %>...
+        </section>
+      <% elsif @game.player(1).weapon.nil? && !@game.multiplayer? %>
+        <section class="instructions">
+          <%= @game.player(2).name %> is thinking...
+        </section>
+      <% else %>
+        <section class="instructions">
+          Choose your weapon:
+        </section>
+        <form action="/player_2_choice" method="post" class="weapons-form" id="weapons-form">
+          <% Game::WEAPONS.each do |weapon| %>
+          <div class="weapon-box">
+            <input type="radio" name="weapon" value="<%= weapon %>" />
+            <label for="weapon"><%= weapon %></label>
+          </div>
+          <% end %>
+        </form>
+        <button type="submit" form="weapons-form" value="Go!">Go!</button>
+      <% end %>
+    </div>
+  </section>
+</container>

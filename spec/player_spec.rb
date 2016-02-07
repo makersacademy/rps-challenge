@@ -1,7 +1,9 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new('Player 1') }
+  subject(:player)    { described_class.new('Player 1', weapon_klass) }
+  let(:weapon_klass)  { double :weapon_klass, new: scissors }
+  let(:scissors)      { double :weapon }
 
   describe '#name' do
     it 'returns the player\'s name' do
@@ -12,7 +14,7 @@ describe Player do
   describe '#choose_weapon' do
     it 'sets the player\'s weapon' do
       player.choose_weapon(:scissors)
-      expect(player.weapon).to eq :scissors
+      expect(player.weapon).to be scissors
     end
 
     context 'if choosing an invalid weapon' do
@@ -25,8 +27,8 @@ describe Player do
 
   describe '#weapon' do
     it 'returns the player\'s weapon of choice' do
-      player.choose_weapon(:rock)
-      expect(player.weapon).to eq :rock
+      player.choose_weapon(:scissors)
+      expect(player.weapon).to eq scissors
     end
   end
 end

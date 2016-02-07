@@ -1,8 +1,8 @@
 feature 'Players sign in' do
   context 'when playing single player' do
-    scenario 'displays player and computer opponent\'s names' do
+    scenario 'displays player\'s name' do
       single_sign_in
-      expect(page).to have_content('Player 1 vs. Mr Robot')
+      expect(page).to have_content('Player 1 vs.')
     end
   end
 

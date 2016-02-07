@@ -1,11 +1,17 @@
 class Bot
-  attr_reader :name
+  DEFAULT_NAMES = ['Mr Robot', 'Sir Mix-a-Bot', 'Mechagodzilla']
+  attr_reader :name, :weapon
 
-  def initialize
-    @name = 'Mr Robot'
+  def initialize(name = DEFAULT_NAMES.sample, weapon_klass = Weapon)
+    @name = name
+    @weapon_klass = weapon_klass
+    @weapon = nil
   end
 
   def choose_weapon
-    Game::WEAPONS.sample
+    @weapon = weapon_klass.new(Game::WEAPONS.sample)
   end
+
+  private
+  attr_reader :weapon_klass
 end
