@@ -12,23 +12,23 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    $new_game = Game.new(player)
+    session[:new_game] = Game.new(player)
     redirect to ('/play')
   end
 
   get '/play' do
-    @new_game = $new_game
+    @new_game = session[:new_game]
     erb(:play)
   end
 
   post '/choice' do
-    @new_game = $new_game
+    @new_game = session[:new_game]
     @new_game.player.weapon_choice(params[:player_choice])
     redirect to ('/result')
   end
 
   get '/result' do
-    @new_game = $new_game
+    @new_game = session[:new_game]
     erb(:result)
   end
 
