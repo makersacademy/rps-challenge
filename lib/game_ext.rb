@@ -6,7 +6,7 @@ class Game_ext
   end
   
   def result
-    return "a Draw. You both picked #{player.choice}." if draw?
+    return "a draw. You both picked #{player.choice}." if draw?
     return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if player_1_wins?
     "a win for #{player2.name}! #{player2.choice} beats #{player.choice}."
   end
@@ -15,9 +15,10 @@ class Game_ext
 
   private
 
+  attr_reader :hand_hash
 
   def draw?
-    calc_winner == "Draw"
+    calc_winner == "draw"
   end
 
   def player_1_wins?
@@ -25,11 +26,13 @@ class Game_ext
   end
 
   def calc_winner
-    hash_val = {"Rock" => 1, "Paper" =>  2, "Scissors" =>  3, "Spock"=>  4, "Lizard"=>  5}
-    p1 = player.choice
-    p2 = player2.choice
-    result = (hash_val[p1].to_i - hash_val[p2].to_i) % 5
-    return "Draw" if result == 0
+    result = (hand_hash[player.choice].to_i - hand_hash[player2.choice].to_i) % 5
+    return "draw" if result == 0
     return "player_1_wins" if result.odd?
   end
+
+  def hand_hash
+    {"Rock" => 1, "Paper" =>  2, "Scissors" =>  3, "Spock"=>  4, "Lizard"=>  5}
+  end
+
 end

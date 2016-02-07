@@ -21,7 +21,7 @@ describe Game do
 
       it 'Player picks Rock' do
         allow(player).to receive(:choice).and_return("Rock")
-        expect(game.result).to eq 'a Draw. You both picked Rock.'
+        expect(game.result).to eq 'a draw. You both picked Rock.'
       end
     end
 

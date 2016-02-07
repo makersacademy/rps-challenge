@@ -18,7 +18,7 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
     scenario 'CPU picks Rock' do
       allow_any_instance_of(Cpu).to receive(:choice).and_return("Rock")
       click_button 'Select'
-      expect(page).to have_content 'The result is a Draw. You both picked Rock.'
+      expect(page).to have_content 'The result is a draw. You both picked Rock.'
     end
 
     scenario 'CPU picks Scissors' do
@@ -55,7 +55,7 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
     scenario 'CPU picks Paper' do
       allow_any_instance_of(Cpu).to receive(:choice).and_return("Paper")
       click_button 'Select'
-      expect(page).to have_content 'The result is a Draw. You both picked Paper.'    
+      expect(page).to have_content 'The result is a draw. You both picked Paper.'    
     end
   end
 
@@ -74,7 +74,7 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
     scenario 'CPU picks Scissors' do
       allow_any_instance_of(Cpu).to receive(:choice).and_return("Scissors")
       click_button 'Select'
-      expect(page).to have_content 'The result is a Draw. You both picked Scissors.'   
+      expect(page).to have_content 'The result is a draw. You both picked Scissors.'   
     end
 
     scenario 'CPU picks Paper' do

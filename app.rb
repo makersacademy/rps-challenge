@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/game'
+#require './lib/game'
 require './lib/cpu'
 require './lib/game_ext'
 
@@ -29,7 +29,7 @@ class RPS < Sinatra::Base
     ($game_type == 'oneplayer')? (player2 = Cpu.new) : (player2 = Player.new(params[:Player_2_Name])) 
     player1 = Player.new(params[:Player_1_Name])
     if $game_rules == 'normal'
-      $game = Game.new([player1, player2])
+      $game = Game_ext.new([player1, player2])
       redirect '/play'
     else
       $game = Game_ext.new([player1, player2])

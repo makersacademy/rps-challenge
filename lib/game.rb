@@ -6,7 +6,7 @@ class Game
   end
   
   def result
-    return "a Draw. You both picked #{player.choice}." if draw?
+    return "a draw. You both picked #{player.choice}." if draw?
     return "a win for #{player.name}! #{player.choice} beats #{player2.choice}." if win?
     "a win for #{player2.name}! #{player2.choice} beats #{player.choice}."
   end
