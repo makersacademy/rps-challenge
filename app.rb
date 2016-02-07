@@ -5,6 +5,9 @@ require './lib/computer'
 
 class MyApp < Sinatra::Base
 
+
+  run! if app_file == $0
+
   get '/' do
     erb :index
   end
@@ -19,7 +22,13 @@ class MyApp < Sinatra::Base
     erb :play
   end
 
-  get '/selection' do
-    erb :selection
+  get '/move' do
+     $game.player1.move = params[:move]
+     redirect '/result'
+   end
+
+  get '/result' do
+    @game = $game
+    erb :result
   end
 end

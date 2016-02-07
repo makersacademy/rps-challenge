@@ -1,14 +1,12 @@
 <h1> <%= @game.player1.name %> vs The Computer </h1>
 
+<form id="moves" action='/move' method="get">
+    <input id="rock"
+    type="submit" name="move" value="rock">
 
-<form action="/player1_rock" method="get">
-  <input type="submit" value="rock">
-</form>
+    <input id="paper"
+    type="submit" name="move" value="paper">
 
-<form action="/player1_paper" method="get">
-  <input type="submit" value="paper">
-</form>
-
-<form action="/player1_scissors" method="get">
-  <input type="submit" value="scissors">
+    <input id="scissors"
+    type="submit" name="move" value="scissors">
 </form>

@@ -7,7 +7,7 @@ class Player
     @name = name
   end
 
-  def move(move)
+  def move=(move)
     @move = move
   end
 end
