@@ -1,8 +1,14 @@
 require 'spec_helper'
 require 'web_helpers'
-
+require 'capybara/dsl'
+require 'selenium-webdriver'
 
 feature 'US1 - Player can register their name' do
+  before do
+    include Capybara::DSL
+    Capybara.default_driver = :selenium
+  end
+
   scenario 'Allows player to input name' do
     expect(sign_in_and_play_vs_CPU)
   end
