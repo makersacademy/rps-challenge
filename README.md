@@ -81,17 +81,27 @@ ruby app.rb
 
 http://localhost:4567/
 
-3. In the box next to “Player 1” enter your game name and click “Submit”
+3. In the box next to “What is your name, warrior?” enter your game name and click “Submit”
+
+![Screenshot](http://imgur.com/PYWCr4y)
 
 4. Take a moment to enjoy your welcome.
 
 5. When you are ready click “Let’s do this!”
 
+![Screenshot](http://imgur.com/7533Qz8)
+
 6. Select your weapon of choice, be it ROCK, PAPER or SCISSORS and click “DO YOUR WORST!”
 
-7. View the computer’s choice and tremble, awaiting your fate! Click “Results”
+![Screenshot](http://imgur.com/eRF3YKB)
+
+7. View the computer’s choice and tremble, awaiting your fate! Click “Results!”
+
+![Screenshot](http://imgur.com/pTS96te)
 
 8. Glory in your victory/ wallow in defeat / feel ambivalent about your draw.
+
+![Screenshot](http://imgur.com/rqnEpbd)
 
 9. If you fancy another game but can’t be bothered to enter your name again, simply click “Play again?” 
 

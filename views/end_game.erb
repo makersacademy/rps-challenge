@@ -1,11 +1,15 @@
-<% if @new_game.draw%>
-  <h1>It's a draw!</h1>
-<% elsif @new_game.player_winner%>
-  <h1>You win!</h1>
-<% else %>
-  <h1>You loose!</h1>
-<% end%>
+<body style="background-color: AliceBlue;">
 
-<form action="/play" method="post">
-  <input type="submit" name="play_again" value="Play again?"/>
-</form>
+  <% if @new_game.draw%>
+    <h1>It's a draw!</h1>
+  <% elsif @new_game.player_winner%>
+    <h1>You win!</h1>
+  <% else %>
+    <h1>You loose!</h1>
+  <% end%>
+
+  <form action="/play" method="post">
+    <input type="submit" name="play_again" value="Play again?"/>
+  </form>
+
+</body>

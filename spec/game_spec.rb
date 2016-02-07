@@ -25,26 +25,82 @@ describe Game do
 
   describe "#who_wins" do
 
-    it 'player draw - correctly assesses the winner if player chooses rock and computer chooses rock' do
-      allow(game).to receive(:computer_weapon).and_return(:rock)
-      allow(player_1).to receive(:weapon).and_return("rock")
-      game.who_wins
-      expect(game.draw).to be_truthy
+    context "drawing" do
+
+      it 'player chooses rock and computer chooses rock' do
+        allow(player_1).to receive(:weapon).and_return("rock")
+        allow(game).to receive(:computer_weapon).and_return(:rock)
+        game.who_wins
+        expect(game.draw).to be_truthy
+      end
+
+      it 'player chooses paper and computer chooses paper' do
+        allow(player_1).to receive(:weapon).and_return("paper")
+        allow(game).to receive(:computer_weapon).and_return(:paper)
+        game.who_wins
+        expect(game.draw).to be_truthy
+      end
+
+      it 'player chooses scissors and computer chooses scissors' do
+        allow(player_1).to receive(:weapon).and_return("scissors")
+        allow(game).to receive(:computer_weapon).and_return(:scissors)
+        game.who_wins
+        expect(game.draw).to be_truthy
+      end
+
     end
 
-    it 'player loose - correctly assesses the winner if player chooses rock and computer chooses paper' do
-      allow(game).to receive(:computer_weapon).and_return(:paper)
-      allow(player_1).to receive(:weapon).and_return("rock")
-      game.who_wins
-      expect(game.player_winner).to be_falsey
+    context "loosing" do
+
+      it 'player chooses rock and computer chooses paper' do
+        allow(player_1).to receive(:weapon).and_return("rock")
+        allow(game).to receive(:computer_weapon).and_return(:paper)
+        game.who_wins
+        expect(game.player_winner).to be_falsey
+      end
+
+      it 'player chooses paper and computer chooses scissors' do
+        allow(player_1).to receive(:weapon).and_return("paper")
+        allow(game).to receive(:computer_weapon).and_return(:scissors)
+        game.who_wins
+        expect(game.player_winner).to be_falsey
+      end
+
+      it 'player chooses scissors and computer chooses rock' do
+        allow(player_1).to receive(:weapon).and_return("scissors")
+        allow(game).to receive(:computer_weapon).and_return(:rock)
+        game.who_wins
+        expect(game.player_winner).to be_falsey
+      end
+
     end
 
-    it 'player wins - correctly assesses the winner if player chooses paper and computer chooses rock' do
-      allow(game).to receive(:computer_weapon).and_return(:rock)
-      allow(player_1).to receive(:weapon).and_return("paper")
-      game.computer_choose_weapon
-      game.who_wins
-      expect(game.player_winner).to be_truthy
+    context "winning" do
+
+      it 'player chooses paper and computer chooses rock' do
+        allow(player_1).to receive(:weapon).and_return("paper")
+        allow(game).to receive(:computer_weapon).and_return(:rock)
+        game.computer_choose_weapon
+        game.who_wins
+        expect(game.player_winner).to be_truthy
+      end
+
+      it 'player chooses scissors and computer chooses paper' do
+        allow(player_1).to receive(:weapon).and_return("scissors")
+        allow(game).to receive(:computer_weapon).and_return(:paper)
+        game.computer_choose_weapon
+        game.who_wins
+        expect(game.player_winner).to be_truthy
+      end
+
+      it 'player chooses rock and computer chooses scissors' do
+        allow(player_1).to receive(:weapon).and_return("rock")
+        allow(game).to receive(:computer_weapon).and_return(:scissors)
+        game.computer_choose_weapon
+        game.who_wins
+        expect(game.player_winner).to be_truthy
+      end
+
     end
 
   end
