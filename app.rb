@@ -57,8 +57,8 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @game = $game
-    @game.rps_logic(@game.player_1.choice, @game.player_2.choice)
-    @game.result
+    # @game.rps_logic(@game.player_1.choice, @game.player_2.choice)
+    @game.result(@game.player_1.choice, @game.player_2.choice)
     erb(:results)
   end
 
