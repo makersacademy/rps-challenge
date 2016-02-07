@@ -32,16 +32,16 @@ How to play
 -----------
 
 Navigate to localhost:4567 and enter your name:
-![alt text](https://www.dropbox.com/s/euw4a62qqrg0tso/Screenshot%202016-02-07%2011.11.04.png?dl=0)
+![Dropbox](https://www.dropbox.com/s/euw4a62qqrg0tso/Screenshot%202016-02-07%2011.11.04.png?dl=0)
 
 Select an option to play:
-![alt text]( https://www.dropbox.com/s/xw82hnocmw614vc/Screenshot%202016-02-07%2011.11.12.png?dl=0)
+![Dropbox]( https://www.dropbox.com/s/xw82hnocmw614vc/Screenshot%202016-02-07%2011.11.12.png?dl=0)
 
 See the outcome of the game and choose to play again
-![alt text](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?dl=0)
+![Dropbox](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?dl=0)
 
 Build Status
 ------------
 ![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
 
-![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tcpickard94/rps-challenge?branch=master)
+![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)
