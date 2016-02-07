@@ -25,6 +25,8 @@ class RPS < Sinatra::Base
 
   get '/see_selected' do
     @selected = session[:player_selection]
+    array = ["Rock", "Paper", "Scissors"]
+    @random_option = array.sample
     erb(:selected)
   end
 

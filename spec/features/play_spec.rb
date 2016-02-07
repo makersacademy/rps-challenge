@@ -4,6 +4,9 @@
 # I would like to be able to play rock/paper/scissors
 
 feature 'playing a game' do
+
+  let(:random_option) { double :random_option }
+
   before do
     visit('/')
     fill_in(:player_name, with: 'Marketeer')
@@ -24,5 +27,13 @@ feature 'playing a game' do
     click_button 'Rock'
     expect(page).to have_content 'You play Rock'
   end
+
+# User Story 2.3
+# - the game will choose a random option
+  scenario 'selection of AI displayed' do
+    click_button 'Rock'
+    srand(543210)
+    expect(page).to have_content 'AI plays Paper'
+  end
+
 end
-  
