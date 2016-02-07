@@ -23,4 +23,11 @@ feature 'winner' do
     click_button "rock"
     expect(page).to have_content 'winner Scot'
   end
+
+  scenario 'can play again' do
+    sign_in
+    click_button "rock"
+    click_button 'play again?'
+    expect(page).to have_content 'Scott vs The Computer'
+  end
 end
