@@ -60,8 +60,11 @@ body {
 	font-family: "consolas", monospace;
 }
 
+a {
+	text-decoration: none;
+}
+
 .content {
-  /*position: relative;*/
 	margin-top: 100px;
   max-width: 900px;
   margin: 0 auto;
@@ -96,6 +99,7 @@ body {
 
 .header {
 	position: fixed;
+	display: -webkit-flex;
 	display: flex;
 	height: 100px;
 	width: 100%;
@@ -104,6 +108,7 @@ body {
 }
 
 .header section {
+	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
 	align-items: center;

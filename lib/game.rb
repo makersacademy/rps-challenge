@@ -4,8 +4,8 @@ require_relative 'player'
 class Game
   WEAPONS = [:rock, :paper, :scissors, :nikesh, :sunfish]
 
-  attr_reader  :multiplayer
-  alias_method :multiplayer?, :multiplayer
+  attr_reader :multiplayer
+  alias multiplayer? multiplayer
 
   def self.single_player(player_1_name)
     new(Player.new(player_1_name), Bot.new)
@@ -22,8 +22,8 @@ class Game
 
   def player(number)
     message = 'Please specify a valid player number'
-    raise message if !number.is_a?(Numeric)
-    raise message if (number > players.size || number <= 0 )
+    raise message unless number.is_a?(Numeric)
+    raise message if number > players.size || number <= 0
     players[number - 1]
   end
 
