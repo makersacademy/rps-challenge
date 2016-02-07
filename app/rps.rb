@@ -11,11 +11,11 @@ enable :sessions
 
   post '/game_type' do 
  	@game_type  = params[:game_type]
-	if @game_type == "one_player" 
-		redirect('/one_player') 
-	else
-		redirect('/two_player')
-	end
+		if @game_type == "one_player" 
+			redirect('/one_player') 
+		else
+			redirect('/two_player')
+		end
 	end
 
 	get '/one_player' do 
@@ -41,12 +41,12 @@ enable :sessions
 	
 	post '/weapon' do 
 	session[:weapon] = params[:weapon]
-	if !session[:player_2] 
-	redirect('/play')
-	else
-	redirect('/second_choice')
+		if !session[:player_2] 
+		redirect('/play')
+		else
+		redirect('/second_choice')
+		end
 	end
-end
 
 	get '/second_choice' do
 	@player2 = session[:player_2]

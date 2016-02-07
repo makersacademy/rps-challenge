@@ -31,13 +31,12 @@
 </div>
 
 
-
  <% if @game.result == :win 
- 	@result= "Player 1 wins"
+ 	@result = "Player 1 wins"
  	elsif @game.result == :draw 
- 	@result= "It's a draw"
+ 	@result = "It's a draw"
  	elsif @game.result == :lose 
- 	@result= "Player 2 wins"
+ 	@result = "Player 2 wins"
 	end %>
 
 <center><h1>  <%= @result %> ! </h2></center>

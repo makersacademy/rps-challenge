@@ -18,7 +18,7 @@ attr_reader :weapons, :player, :player2
 	end 
 
 	def opponent
-		if @player2 == nil
+		if @player2.nil?
  		@opponent = weapons.sample
  		else 
  		@opponent = @player2.selection
@@ -36,7 +36,7 @@ attr_reader :weapons, :player, :player2
 	end
 
 
-	private 
+		private 
 
 	def player_choice
 	player.selection
