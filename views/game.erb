@@ -3,9 +3,10 @@
   You chose <%= @game.player.player_weapon(@player_weapon) %>...
   <br><br>
   Computer chose <%= @game.computer.choose_weapon %>...
-  <br><br>
-  You <%= @result %>!
-
+  <br><br><br>
+  <div class="confirmation">
+    You <%= @result %>!
+  </div>
   <br><br>
   <form action="/play">
     <input class="btn btn-success" type="submit" name="play_again" value="Play Again">
