@@ -3,10 +3,13 @@
   <title>R-P-S-L-S</title>
   <link href="/css/stylesheet.css" rel="stylesheet" type="text/css" />
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <script src="//use.edgefonts.net/unifrakturcook;flavors;passero-one;la-belle-aurore;jim-nightshade.js"></script>
 </head>
 
 <body>
-  <h1>Rock - Paper - Scissors - Lizzard - Spock</h1>
+  <h1><span class="rock_text">Rock</span> - <span class="paper_text">Paper</span>
+     - <span class="scissors_text">Scissors</span> - <span class="lizzard_text">
+       Lizzard</span> - <span class="spock_text">Spock</span></h1>
   <form action="/oneplayer">
       <input type='submit' value='Play Sheldon'>
   </form>
@@ -17,6 +20,7 @@
 
   <% if @no_players==1 %>
     <form action="/names1" method="post" >
+      Enter your name:
       <input type="text" name="name_1">
       <input type="submit" value="Submit">
     </form>
@@ -24,6 +28,7 @@
 
   <% if @no_players==2 %>
     <form action="/names2" method="post" >
+      Enter your names:
       <input type="text" name="name_1" value="Player 1 name">
       <input type="text" name="name_2" value="Player 2 name">
       <input type="submit" value="Submit">

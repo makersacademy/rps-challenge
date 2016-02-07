@@ -1,8 +1,27 @@
 body {
   text-align: center;
   font-size: 20px;
-  font-family: 'Fjalla One';
-  background: lightblue;
+  background: #99ccff;
+}
+
+.spock_text {
+  font-family: unifrakturcook, blackletter;
+}
+
+.lizzard_text {
+  font-family: flavors, sans-serif;
+}
+
+.rock_text {
+  font-family: passero-one, fantasy;
+}
+
+.scissors_text {
+  font-family: jim-nightshade, cursive;
+}
+
+.paper_text {
+  font-family: la-belle-aurore, cursive;
 }
 
 .results {
@@ -11,12 +30,12 @@ body {
 }
 
 .smaller {
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .moves {
   font-size: 15px;
-  color: darkblue;
+  color: #000099;
 }
 
 .rock {
@@ -76,7 +95,7 @@ body {
   -o-animation: blink .75s linear infinite;
   animation: blink .75s linear infinite;
   font-size: 25px;
-  color: yellow;
+  color: #ffff00;
 }
 
 @-webkit-keyframes blink {
