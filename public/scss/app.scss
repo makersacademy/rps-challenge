@@ -12,6 +12,7 @@ $color_3: #444444;
   margin-bottom: 0.5em;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Old Standard TT', serif;
   &:hover {
     background: $color_1;
     color: $color_3;
@@ -42,6 +43,14 @@ body {
   font-family: 'Old Standard TT', serif;
 }
 
+input {
+  @include button;
+}
+
+.background-image {
+  @include background-image;
+}
+
 main {
   border: 5px solid $color_1;
   min-height: 100%;
@@ -49,13 +58,9 @@ main {
   position: relative;
   background-color: $color_2;
   padding-top: 4em;
-  .background-image {
-  @include background-image;
-  }
   h1, h2, h3 {
     text-align: center;
     color: $color_1;
-    font-family: 'Old Standard TT', serif;
   }
   h1 {
     text-transform: uppercase;
@@ -67,8 +72,6 @@ main {
   nav#new-game {
     text-align: center;
     input {
-      @include button;
-      font-family: 'Old Standard TT', serif;
       font-size: 1.4em;
     }
   }
@@ -77,7 +80,6 @@ main {
 
 main#start {
   .background-image {
-    @include background-image;
     background-image: url('img/start.jpg');
   }
   h1 {
@@ -86,20 +88,20 @@ main#start {
   form {
     text-align: center;
     label {
-      font-family: 'Old Standard TT', serif;
       font-size: 1.6em;
       color: $color_1;
     }
     input {
-      @include button;
-      font-family: 'Old Standard TT', serif;
+      margin-top: 0.3em;
     }
     input[type="text"] {
+      border: 3px solid $color_1;
       background: $color_2;
       padding: 0.2em 0;
-      font-family: sans-serif;
       cursor: default;
       text-align: center;
+      color: #fff;
+      font-size: 1em;
       &:hover {
         color: #fff;
       }
@@ -109,8 +111,10 @@ main#start {
 
 main#play {
   .background-image {
-    @include background-image;
     background-image: url('img/play.jpg');
+  }
+  h1 {
+    text-transform: none;
   }
   form#moves {
     width: 100%;
@@ -129,7 +133,7 @@ main#play {
       font-family: 'Old Standard TT', serif;
       font-style: italic;
       border-radius: 120px;
-      border: 2px solid $color_3;
+      border: 3px solid $color_3;
       color: $color_3;
       transform: all 0.3s ease;
       outline: none;
@@ -164,7 +168,6 @@ main#play {
 
 main#draw {
   .background-image {
-    @include background-image;
     background-image: url('img/draw.jpg');
     background-position: center bottom;
 
@@ -173,7 +176,6 @@ main#draw {
 
 main#lose {
   .background-image {
-    @include background-image;
     background-image: url('img/lose.jpg');
   }
 }
@@ -181,7 +183,6 @@ main#lose {
 
 main#win {
   .background-image {
-    @include background-image;
     background-image: url('img/win.jpg');
   }
 }
