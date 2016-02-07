@@ -18,12 +18,8 @@ class Game
   end
 
   def result(player_move, comp_move)
-    if RULES[player_move] == comp_move
-      :win
-    elsif player_move == comp_move
-      :draw
-    else
-      :lose
-    end
+    return :win if RULES[player_move] == comp_move
+    return :draw if player_move == comp_move
+    :lose
   end
 end
