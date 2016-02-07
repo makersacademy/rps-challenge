@@ -17,6 +17,9 @@ $color_3: #444444;
     background: $color_1;
     color: $color_3;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 @mixin background-image {

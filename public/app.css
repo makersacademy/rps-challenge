@@ -21,6 +21,8 @@ input {
   input:hover {
     background: #EDD75A;
     color: #444444; }
+  input:focus {
+    outline: none; }
 
 .background-image {
   position: absolute;
