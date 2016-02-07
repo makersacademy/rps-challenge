@@ -30,22 +30,35 @@ require './lib/computer.rb'
     expect(page).to have_content "The Computer Played"
     end
 
-    scenario 'player plays Rock & either wins or looses!' do
+    scenario 'see what move the computer played' do
+    sign_in
+    click_button("Paper")
+    expect(page).to have_content "You Played Paper"
+    end
+
+    scenario 'player plays Rock & either wins or looses' do
     sign_in
     click_button('Rock')
     expect(page).to have_content "Game Result:"
     end
 
-    scenario 'player plays Paper & either wins or looses!' do
+    scenario 'player plays Paper & either wins or looses' do
     sign_in
     click_button('Paper')
     expect(page).to have_content "Game Result:"
     end
 
-    scenario 'player plays Scissors & either wins or looses!' do
+    scenario 'player plays Scissors & either wins or looses' do
     sign_in
     click_button('Scissors')
     expect(page).to have_content "Game Result:"
+    end
+
+    scenario 'user can play another round if they want to' do
+    sign_in
+    click_button('Scissors')
+    click_button('Play Again')
+    expect(page).to have_content "Player Name = Reiss"
     end
 
 

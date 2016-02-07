@@ -1,4 +1,4 @@
-<h2>You played Rock!</h2>
+<h2>You Played Rock!</h2>
 <h2>The Computer Played <%=@computer_move%>!</h2>
 <% if @result == :Rock %>
 <p>Game Result: Congratulations! You have won this round!</p>
@@ -7,3 +7,4 @@
 <% else %>
 <p>Game Result: The Computer has won this round! </p>
 <% end %>
+<a href="/play"><button>Play Again!</button></a>
