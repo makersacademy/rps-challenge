@@ -19,14 +19,9 @@ class Game
     @computer_weapon = @weapon_array[rand(1..3)-1]
   end
 
-  # def who_wins
-  #   @draw = true if @player_1.weapon == @computer_weapon
-  #   @player_winner = true unless (@player_1.weapon == "rock" && @computer_weapon == "paper") || (@player_1.weapon == "paper" && @computer_weapon == "scissors") || (@player_1.weapon == "scissors" && @computer_weapon == "rock")
-  # end
-
   def who_wins
 
-    @draw = true if @player_1.weapon == @computer_weapon
+    @player_1.weapon == @computer_weapon ? @draw = true : @draw = false
     @win_conditions[@player_1.weapon] == @computer_weapon ? @player_winner = false : @player_winner = true
 
   end
