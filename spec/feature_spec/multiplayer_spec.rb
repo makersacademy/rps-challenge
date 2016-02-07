@@ -6,9 +6,8 @@ feature 'multiplayer' do
 
   scenario 'both players can click which attack they want' do
       sign_in_multiplayer
-      page.choose('Rock1')
-      page.choose('Scissors2')
-      click_button('Submit')
+      click_button('Rock')
+      click_button('Scissors')
       expect(page).to have_content('WON!')
   end
 end

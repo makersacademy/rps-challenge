@@ -12,10 +12,10 @@ class Game
 
   def make_moves(player_1_move, *human_player2_input)
     player1.make_move(player_1_move)
-    unless human_player2_input.empty?
-      player2.make_move(human_player2_input[0])
-    else
+    if human_player2_input.empty?
       player2.make_move
+    else
+      player2.make_move(human_player2_input[0])
     end
   end
 

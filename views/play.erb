@@ -3,21 +3,10 @@
 
 <p><div style='color: red'><%= @player1_name %></div></p><p>Chose your weapon of choice:</p>
 
-<form action='/game' method ='POST'>
+<form action='/play' method ='POST'>
   <fieldset id='choice'>
-    <input type='radio' name='choice' id='Rock1' value ='Rock'/> Rock
-    <input type='radio' name='choice' id= 'Scissors1' value ='Scissors'/> Scissors
-    <input type='radio' name='choice' id='Paper1' value ='Paper'/> Paper
+    <input type='submit' name='choice' id='Rock1' value ='Rock'/>
+    <input type='submit' name='choice' id= 'Scissors1' value ='Scissors'/>
+    <input type='submit' name='choice' id='Paper1' value ='Paper'/>
   </fieldset>
-
-<% if @game.multiplayer? %>
-
-<p><%= @player2_name %> </p><p>Chose your weapon of choice:</p>
-  <fieldset id='choice2'>
-    <input type='radio' name='choice2' id ='Rock2' value ='Rock'/> Rock
-    <input type='radio' name='choice2' id ='Scissors2' value ='Scissors'/> Scissors
-    <input type='radio' name='choice2' id ='Paper2' value ='Paper'/> Paper
-  </fieldset>
-<%end %>
-<p> <input type='submit' value ='Submit'/> </p>
 </form>

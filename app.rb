@@ -40,9 +40,28 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  post '/play' do
+    @game = session[:game]
+    session[:choice] = params['choice']
+    if @game.multiplayer?
+      redirect('/play2')
+    else
+      @game.make_moves(session[:choice])
+      session[:game] = @game
+      redirect('/game')
+    end
+  end
+
+  get '/play2' do
+    @game = session[:game]
+    @player1_name = @game.player1.name
+    @player2_name = @game.player2.name
+    erb :play2
+  end
+
   post '/game' do
     @game = session[:game]
-    @game.multiplayer? ? @game.make_moves(params['choice'],params['choice2']) : @game.make_moves(params['choice'])
+    @game.make_moves(session[:choice],params['choice2'])
     session[:game] = @game
     redirect '/game'
   end
