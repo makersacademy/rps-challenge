@@ -1,7 +1,9 @@
 *mic_css presents:*
+
 **Rock Paper Scissors**
-Nikesh Sunfish https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master
+Nikesh Sunfish
 ===================
+[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 
 Icons:
 * Rock icon from: http://games-helper.com/think-game-answers/chapter-21/
