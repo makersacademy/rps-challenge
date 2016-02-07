@@ -1,5 +1,6 @@
 body {
-  font-family: 'Copperplate / Copperplate Gothic Light', sans-serif;}
+  font-family: 'Copperplate / Copperplate Gothic Light', sans-serif;
+  background-color: 	#00BFFF}
 
 .title {
   text-align: center;
@@ -47,3 +48,50 @@ body {
 .move_choices{
   text-align: center;
 }
+
+div.namebutton input {
+    background:url(/img/submitname.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 196px;
+    height: 40px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+}
+
+div.twoplayer input {
+    background:url(/img/twoplayer.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 229px;
+    height: 40px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+}
+
+div.namesbutton input {
+    background:url(/img/submitnames.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    /*float: right;
+    clear: both;*/
+    text-align: center;
+}
+
+div.resultstext {
+  text-align: center;
+  font-size: 18px;
+}
+/*
+#submit_name{
+  background-image: url("img/submitname.png") no-repeat:
+  border:0;
+  /*display:block;*/
+  /*height:40px;
+  width: 196px;
+
+}*/*/

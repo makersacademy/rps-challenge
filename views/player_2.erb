@@ -1,8 +1,11 @@
 <div class = "title">
   <h1>Welcome to the game <%=$game.player_2.name%>!</h1>
 </div>
+<div class = "subtitle">
 
 <h2>Please select a choice from below</h2>
+</div>
+<div class="move_choices">
 
 <form action="/p2_choice" method="post">
   <input type="submit" name ="p2_choice" value="Rock"/>
@@ -11,3 +14,4 @@
   <input type="submit" name ="p2_choice" value="Lizard"/>
   <input type="submit" name ="p2_choice" value="Spock"/>
 </form>
+</div>

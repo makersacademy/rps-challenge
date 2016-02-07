@@ -10,7 +10,7 @@ feature 'Players can play again' do
 
   scenario 'single player can play again without re-entering name' do
     play_one_player_game
-    click_button "Play Again? (Same One Player)"
+    click_button "Play Again? (One Player)"
     expect(page).to have_text("Welcome to the game Zeshan!")
   end
 
