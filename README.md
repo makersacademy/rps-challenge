@@ -1,4 +1,4 @@
-Rock Paper Scissors Challenge
+Rock Paper Scissors Challenge 
 =================
 
 Task
