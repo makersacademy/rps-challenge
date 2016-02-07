@@ -1,3 +1,21 @@
+# Rock Paper Scissors Challenge - Week 3
+
+This is a program writen by Michael Collins. It allows you to enter your name, and then play a game of Rock, Paper, Scissors against the computer.
+
+To run this program follow the commands in the command line:
+
+```
+$ https://github.com/michaeljcollinsuk/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app/rps_web.rb
+```
+
+Then go to http://localhost:4567 in your browser.
+
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
@@ -9,7 +27,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -63,7 +81,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -81,7 +99,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -91,4 +109,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
