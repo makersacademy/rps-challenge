@@ -1,4 +1,4 @@
-Rock, paper, scissors - A web-app that allows you to play rock, paper, scissors: V1.0 
+Rock, paper, scissors - A web-app that allows you to play rock, paper, scissors: V1.0 [![Build Status](https://travis-ci.org/MatDrake/rps-challenge.svg?branch=master)](https://travis-ci.org/MatDrake/rps-challenge)
 
 Author: Mat Drake
 
