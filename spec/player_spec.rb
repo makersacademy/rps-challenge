@@ -17,9 +17,8 @@ describe Player do
 
     context 'if choosing an invalid weapon' do
       it 'raises an error' do
-        expect do
-          player.choose_weapon(:flugelhorn)
-        end.to raise_error Player::ERROR_MESSAGE
+        expect { player.choose_weapon(:flugelhorn) }
+        .to raise_error described_class::ARGUMENT_ERROR_MSG
       end
     end
   end

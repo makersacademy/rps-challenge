@@ -1,7 +1,7 @@
 def single_sign_in
   visit '/'
 
-  click_link 'single player'
+  click_link '1 player'
   fill_in 'player_1', with: 'Player 1'
   click_button 'Go!'
 end
@@ -9,8 +9,13 @@ end
 def multi_sign_in
   visit '/'
 
-  click_link 'multiplayer'
+  click_link '2 player'
   fill_in 'player_1', with: 'Player 1'
   fill_in 'player_2', with: 'Player 2'
+  click_button 'Go!'
+end
+
+def choose_weapon(weapon)
+  choose(weapon)
   click_button 'Go!'
 end

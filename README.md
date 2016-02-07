@@ -1,6 +1,5 @@
 *mic_css presents:*
-Rock Paper Scissors
--------------------
+**Rock Paper Scissors**
 Nikesh Sunfish
 ===================
 

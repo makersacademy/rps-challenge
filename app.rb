@@ -5,17 +5,23 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :index
+    erb :main_title do
+      erb :index
+    end
   end
 
   get '/single_sign_in' do
     @players = 1
-    erb :sign_in
+    erb :main_title do
+      erb :sign_in
+    end
   end
 
   get '/multi_sign_in' do
     @players = 2
-    erb :sign_in
+    erb :main_title do
+      erb :sign_in
+    end
   end
 
   post '/players' do
@@ -25,12 +31,46 @@ class RPS < Sinatra::Base
     else
       session[:game] = Game.multi_player(params[:player_1], params[:player_2])
     end
-    redirect '/play'
+    redirect '/player_1'
   end
 
-  get '/play' do
+  get '/player_1' do
     @game = session[:game]
-    erb :play
+    erb :play do
+      erb :hud
+    end
+  end
+
+  post '/player_1_choice' do
+    @game = session[:game]
+    @game.player(1).choose_weapon(params[:weapon])
+    if @game.multiplayer?
+      redirect '/player_2'
+    else
+      @game.player(2).choose_weapon
+      sleep 4
+      redirect '/result'
+    end
+  end
+
+  get '/player_2' do
+    @game = session[:game]
+    erb :play do
+      erb :hud
+    end
+  end
+
+  post '/player_2_choice' do
+    @game = session[:game]
+    @game.player(2).choose_weapon(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = session[:game]
+    erb :play do
+      erb :result
+    end
   end
 
   # start the server if ruby file executed directly

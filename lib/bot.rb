@@ -5,7 +5,7 @@ class Bot
     @name = 'Mr Robot'
   end
 
-  def weapon
-    Game::WEAPONS.sample    
+  def choose_weapon
+    Game::WEAPONS.sample
   end
 end

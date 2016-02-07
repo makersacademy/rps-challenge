@@ -1,54 +1,17 @@
-<section class="content">
-  <section class="title">
-    <section class="sub-title">
-      <h3>
-        <a href="https://twitter.com/mic_css" target="_blank">
-          <i class="fa fa-twitter"></i>
-        </a>
-        mic_css
-        <a href="https://github.com/mic-css" target="_blank">
-          <i class="fa fa-github"></i>
-        </a>
-      </h3>
-      <h4>presents:</h4>
-    </section>
-    <section class="main-title">
-      <h2>rock paper scissors</h2>
-      <h1>nikesh sunfish</h1>
-    </section>
-  </section>
-  <section class="rules">
-    <h3>rules:</h3>
-    <p>
-      Scissors cut paper<br />
-      Paper covers rock<br />
-      Rock crushes sunfish<br />
-      Sunfish bites Nikesh<br />
-      Nikesh smashes scissors<br />
-      Scissors cut sunfish<br />
-      Sunfish eats paper<br />
-      Paper confuses Nikesh<br />
-      Nikesh karate chops rock<br />
-      <br />
-      And as it always has...<br />
-      Rock crushes scissors
-    </p>
-  </section>
-  <section class="sign_in">
-    <% if @players == 1 %>
-      <form action="/players" method="post">
-        <label for="player_1">Player 1:</label>
-        <input type="text" name="player_1" />
-        <input type="submit" value="Go!" />
-      </form>
-    <% elsif @players == 2 %>
-      <form action="/players" method="post">
-        <label for="player_1">Player 1:</label>
-        <input type="text" name="player_1" />
-        <label for="player_2">Player 2:</label>
-        <input type="text" name="player_2" />
-        <input type="submit" value="Go!" />
-      </form>
-    <% end %>
-  </section>
+<section class="sign_in">
+  <% if @players == 1 %>
+    <form action="/players" method="post">
+      <label for="player_1">Player 1:</label>
+      <input type="text" name="player_1" />
+      <input type="submit" value="Go!" />
+    </form>
+  <% elsif @players == 2 %>
+    <form action="/players" method="post">
+      <label for="player_1">Player 1:</label>
+      <input type="text" name="player_1" />
+      <label for="player_2">Player 2:</label>
+      <input type="text" name="player_2" />
+      <input type="submit" value="Go!" />
+    </form>
+  <% end %>
 </section>

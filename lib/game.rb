@@ -2,7 +2,14 @@ require_relative 'bot'
 require_relative 'player'
 
 class Game
-  WEAPONS = [:rock, :paper, :scissors, :nikesh, :sunfish]
+  WEAPONS = [ :rock, :paper, :scissors, :nikesh, :sunfish]
+  RULES   = { rock:     [:scissors, :sunfish],
+              paper:    [:rock, :nikesh],
+              scissors: [:paper, :sunfish],
+              sunfish:  [:paper, :nikesh],
+              nikesh:   [:rock, :scissors] }
+  ARGUMENT_ERROR_MSG = 'Invalid player number'
+  RUNTIME_ERROR_MSG  = 'Both players must have a weapon'
 
   attr_reader :multiplayer
   alias multiplayer? multiplayer
@@ -21,10 +28,16 @@ class Game
   end
 
   def player(number)
-    message = 'Please specify a valid player number'
-    raise message unless number.is_a?(Numeric)
-    raise message if number > players.size || number <= 0
+    raise ARGUMENT_ERROR_MSG unless number.is_a?(Numeric)
+    raise ARGUMENT_ERROR_MSG if number > players.size || number <= 0
     players[number - 1]
+  end
+
+  def result
+    weapon_1, weapon_2 = player(1).weapon, player(2).weapon
+    raise RUNTIME_ERROR_MSG if weapon_1.nil? || weapon_2.nil?
+    return :draw if weapon_1.type == weapon_2.type
+    return weapon_1.beats?(weapon_2) ? :p1_win : :p2_win
   end
 
   private
