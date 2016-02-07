@@ -1,0 +1,21 @@
+<div style='text-align: center; border: solid'> </h1> Round Finished! </h1>
+<h2 style='font-family: Comic Sans MS, cursive, sans-serif'> <span style='color: red'>Computer: </span> <%= @game.cpu_choice %> - <span style='color: green'><%= @player_1 %>: </span ><%= @choice %> </h2>
+</div>
+
+<div style='text-align: center'>
+
+<% if @game.result == 2 %>
+
+  <h2 style='color: red'> Computer Wins! </h2>
+  
+ <% elsif @game.result == "Draw!" %>
+ 
+  <h2> This is a Draw! </h2>
+  
+  <% else %>
+ 
+  <h2 style='color: green'> <%= @player_1 %> Wins! </h2>
+  
+  <% end %>
+
+</div>

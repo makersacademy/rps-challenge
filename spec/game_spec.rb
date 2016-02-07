@@ -1,16 +1,15 @@
-feature "Sign in page is displayed" do
-  scenario "Player can see the sign in page" do
-    visit('/')
-    expect(page).to have_content "Welcome to Rock Paper Scissors!"
+require 'game'
+
+describe Game do
+  subject(:game)     { described_class.new "Rock" }
+  
+  it 'establishes a winner' do
+    allow(game).to receive(:cpu).and_return(:scissors)
+    expect(game.result).to eq 1
   end
   
-  scenario "Player has a field to input into" do
-    visit('/')
-    find_field('player_1').value
-  end
-  
-  scenario "Player can submit and start the game" do
-    visit('/')
-    find_button('Start').click
+  it 'can return a draw' do
+    allow(game).to receive(:cpu_choice).and_return("Rock")
+    expect(game.result).to eq "Draw!"
   end
 end
