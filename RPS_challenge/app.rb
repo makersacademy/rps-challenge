@@ -2,6 +2,8 @@ require 'sinatra/base'
 
 class RPS_challenge < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -11,9 +13,15 @@ class RPS_challenge < Sinatra::Base
   end
 
   post '/names' do
-    @firstname = params[:firstname]
-    @lastname  = params[:lastname]
-    erb :names
+    session[:firstname] = params[:firstname]
+    session[:lastname]  = params[:lastname]
+    redirect to('/play')
+  end
+
+  get '/play' do
+    @firstname = session[:firstname]
+    @lastname  = session[:lastname]
+    erb :play
   end
 
   # start the server if ruby file executed directly
