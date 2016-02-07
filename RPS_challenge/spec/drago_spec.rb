@@ -11,10 +11,15 @@ describe Drago do
 
   end
 
-  describe '#choice' do
+  describe 'can randomly select a #choice' do
 
     it 'returns an array containing Rock, Paper, Scissors' do
-      expect(drago.choice).to include 'Rock','Paper','Scissors'
+      expect(drago.options).to include 'Rock','Paper','Scissors'
     end
+
+    it 'selects an item from options at random, and pushes it to #choice' do
+      expect(drago.options.include? drago.choice).to be true
+    end
+
   end
 end

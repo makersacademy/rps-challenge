@@ -1,9 +1,13 @@
 class Drago
-  attr_reader :name, :choice
+  attr_reader :name, :options
 
   def initialize
     @name   = 'Drago'
-    @choice = ['Rock', 'Paper', 'Scissors']
+    @options = ['Rock', 'Paper', 'Scissors']
+  end
+
+  def choice
+    @options.sample
   end
 
 end

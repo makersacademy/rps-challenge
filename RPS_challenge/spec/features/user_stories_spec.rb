@@ -29,10 +29,11 @@ feature 'Playing the game' do
     find_button('Select')
   end
 
-  scenario 'so a player can battle Drago, the page after choosing their attack needs to show the player choice' do
+  scenario 'so a player can battle Drago, choosing their attack needs to show both player and Drago choices' do
     sign_in
     continue_to_rps_selector
     click_button('Select')
     expect(page).to have_content('You choose Rock!')
+    expect(page).to have_content('Drago chose ')
   end
 end

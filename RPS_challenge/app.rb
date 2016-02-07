@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/drago'
 
 class RPS_challenge < Sinatra::Base
 
@@ -37,7 +38,8 @@ class RPS_challenge < Sinatra::Base
   end
 
   get '/battle' do
-    @user_selection = session[:user_selection]
+    @user_selection  = session[:user_selection]
+    @drago_selection = Drago.new.choice
     erb :battle
   end
 
