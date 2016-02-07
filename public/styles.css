@@ -1,0 +1,129 @@
+body {
+  background: url('http://www.freewhd.com/wp-content/uploads/2014/01/rock-paper-scissors-14676.png') no-repeat left top;
+  background-size: 100%;
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: #f6f6f6;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  position: fixed;
+  padding: 13px;
+  top: 50%;
+  left: 50%;
+  margin-top: -148px;
+  margin-left: -97px;
+  width: 200px;
+  height:  200px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-left: 10px;
+}
+
+input[type="text"] {
+  height: 30px;
+  width: 100%;
+  background: transparent;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 2px solid #333;
+  font-weight: bold;
+  font-size: 1em;
+  color: #fff;
+}
+
+input[type="text"]:focus {
+  outline-style: none;
+}
+
+button {
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 5px, 5px;
+  cursor: pointer;
+  width: 60px;
+  height: 23px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.right {
+  float: right;
+}
+
+.options {
+  width: 400px;
+  margin-left: -200px;
+  margin-top: -200px;
+}
+
+.option {
+  width: 120px;
+  height: 50px;
+}
+
+.bottom-row {
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.outcome {
+  width: 400px;
+  margin-top: -250px;
+  margin-left: -160px;
+}
+
+.play-again {
+  postion: relative;
+  width: 120px;
+  margin-left: 190px;
+}
+
+.rock {
+  background: url(images/rock.svg) no-repeat;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.paper {
+  background: url(images/paper.svg) no-repeat;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.scissors {
+  background: url(images/scissors.svg) no-repeat;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.lizard {
+  background: url(images/lizard.svg) no-repeat;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.spock {
+  background: url(images/spock.svg) no-repeat;
+  float: left;
+  height: 40px;
+  width: 40px;
+}

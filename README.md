@@ -35,10 +35,10 @@ How to play
 -----------
 
 Navigate to localhost:4567 and enter your name:
-![Dropbox](https://www.dropbox.com/s/euw4a62qqrg0tso/Screenshot%202016-02-07%2011.11.04.png?raw=1)
+![Dropbox](https://www.dropbox.com/s/7xgnflxnxd3wc6y/Screenshot%202016-02-07%2018.47.00.png?raw=1)
 
 Select an option to play:
-![Dropbox](https://www.dropbox.com/s/xw82hnocmw614vc/Screenshot%202016-02-07%2011.11.12.png?raw=1)
+![Dropbox](https://www.dropbox.com/s/jlcfnx4mgblvghh/Screenshot%202016-02-07%2018.47.13.png?raw=1)
 
 See the outcome of the game and choose to play again
-![Dropbox](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?raw=1)
+![Dropbox](https://www.dropbox.com/s/f4l3zdeghv5vtgq/Screenshot%202016-02-07%2018.47.30.png?raw=1)

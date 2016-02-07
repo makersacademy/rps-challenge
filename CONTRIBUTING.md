@@ -22,3 +22,7 @@ Guidelines
 
 * Ensure you've understood the specification and built the code according to the challenge guidelines.
 * Read through [Code Reviews&nbsp;:pill:](https://github.com/makersacademy/course/blob/master/pills/code_reviews.md) to understand what we're looking for in your code.
+
+Credit
+------
+All images within public/images were created by Studio Fibonacci from the noun project and are licensed under creative commons

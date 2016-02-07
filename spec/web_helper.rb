@@ -1,5 +1,5 @@
 def sign_in
   visit('/')
   fill_in :name, with: "Dave"
-  click_button "Submit"
+  click_button "Play"
 end
