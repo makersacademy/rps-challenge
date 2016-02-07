@@ -1,3 +1,5 @@
+require_relative 'turn'
+require_relative 'computer'
 
 class Player
 
@@ -17,18 +19,25 @@ class Player
 
   end
 
-  attr_reader :name, :weapon, :turn
+  attr_reader :name, :p1_weapon, :turn_klass, :turn
 
 
     def initialize(name, turn_klass=Turn)
       @name = name
-      @turn = turn_klass
+      @turn_klass = turn_klass
     end
 
 
     def new_turn(weapon_choice)
-      @weapon = weapon_choice
-      turn.new(weapon_choice)
+      @p1_weapon = weapon_choice
+      @turn = turn_klass.new(p1_weapon)
     end
 
+    def opponent_weapon
+      turn.p2_weapon
+    end
+
+    def result
+      turn.result
+    end
 end

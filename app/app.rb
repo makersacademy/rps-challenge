@@ -20,9 +20,6 @@ class RPS < Sinatra::Base
       session[:player_id] = player_id
     end
 
-    # def player_name
-    #   session_player.name
-    # end
 
   end
 
@@ -43,26 +40,25 @@ class RPS < Sinatra::Base
 
 
   post '/rock' do
-    @weapon_choice = :rock
-    session_player.new_turn(@weapon_choice)
+    session_player.new_turn(:rock)
     redirect '/the_result'
   end
 
   post '/scissors' do
-    @weapon_choice = :scissors
-    session_player.new_turn(@weapon_choice)
+    session_player.new_turn(:scissors)
     redirect '/the_result'
   end
 
   post '/paper' do
-    @weapon_choice = :paper
-    session_player.new_turn(@weapon_choice)
+    session_player.new_turn(:paper)
     redirect '/the_result'
   end
 
+
   get '/the_result' do
     @player = session_player.name
-    @weapon = session_player.weapon
+    @p1_weapon = session_player.p1_weapon
+    @p2_weapon = session_player.opponent_weapon
     erb :the_result
   end
 

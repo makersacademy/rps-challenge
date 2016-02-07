@@ -1,5 +1,6 @@
 require_relative 'computer'
 
+
 class Turn
 
 RULES = {
@@ -7,11 +8,11 @@ RULES = {
   rock: 'scissors',
   paper: 'rock'
 }
-attr_reader :p1_weapon, :p2_weapon
+attr_reader :p1_weapon, :p2_weapon, :result
 
-  def initialize(p1_weapon, p2_weapon_klass=ComputerTurn)
+  def initialize(p1_weapon, p2_turn=ComputerTurn)
     @p1_weapon = p1_weapon
-    @p2_weapon = p2_weapon_klass.new
+    @p2_weapon = p2_turn.new.weapon
   end
 
   def result
@@ -28,7 +29,7 @@ attr_reader :p1_weapon, :p2_weapon
   private
 
   def p1_win?
-    RULES[@p1_weapon] == p2_weapon.to_s 
+    RULES[@p1_weapon] == p2_weapon.to_s
   end
 
   def draw?

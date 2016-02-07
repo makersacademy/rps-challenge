@@ -2,8 +2,10 @@ class ComputerTurn
 
 WEAPONS = [:rock, :scissors, :paper]
 
+attr_reader :weapon
+
   def initialize
-    @weapon_choice = WEAPONS.sample
+    @weapon = WEAPONS.sample
   end
 
 end

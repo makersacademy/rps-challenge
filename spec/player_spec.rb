@@ -45,6 +45,7 @@ describe Player do
     let(:turn_klass) {double :turn_klass}
     subject(:player_instance) { described_class.new(name, turn_klass) }
     let(:weapon_choice) {double :weapon_choice}
+    let(:dummy_turn) {double :dummy_turn}
 
     describe 'initialize' do
 
@@ -54,14 +55,14 @@ describe Player do
       end
 
       it 'has an uninitialized turn' do
-        expect(player_instance.turn).to eq turn_klass
+        expect(player_instance.turn_klass).to eq turn_klass
       end
 
     end
     describe '#new_turn' do
 
       before do
-        allow(turn_klass).to receive(:new)
+        allow(turn_klass).to receive(:new).and_return(dummy_turn)
       end
 
       it 'intantiates a new turn instance' do
@@ -69,6 +70,24 @@ describe Player do
         player_instance.new_turn(weapon_choice)
       end
 
+      it 'stores a new instance of turn' do
+        player_instance.new_turn(weapon_choice)
+        expect(player_instance.turn).to eq dummy_turn
+      end
+    end
+
+    describe '#result' do
+
+      before do
+        allow(turn_klass).to receive(:new).and_return(dummy_turn)
+        player_instance.new_turn(weapon_choice)
+        allow(dummy_turn).to receive(:result)
+      end
+
+      it 'retrieves the result from the turn' do
+        expect(dummy_turn).to receive(:result)
+        player_instance.result
+      end
     end
   end
 end
