@@ -2,18 +2,18 @@
   <section class="left-hud">
     <div class="hud-content">
       <section class="instructions">
-        <%= @game.player(1).name %> lost :(
+        <%= @game.multiplayer? ? @game.player(1).name : 'You' %> lost :(
         <br />
-        Weapon: <%= @game.player(1).weapon %>
+        Weapon: <%= @game.player(1).weapon.type %>
       </section>
     </div>
   </section>
   <section class="right-hud">
     <div class="hud-content">
       <section class="instructions">
-        <%= @game.player(1).name %> won!
+        <%= @game.player(2).name %> won!
         <br />
-        Weapon: <%= @game.player(2).weapon %>
+        Weapon: <%= @game.player(2).weapon.type %>
       </section>
     </div>
   </section>

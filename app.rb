@@ -48,7 +48,7 @@ class RPS < Sinatra::Base
       redirect '/player_2'
     else
       @game.player(2).choose_weapon
-      sleep 4
+      sleep 2
       redirect '/result'
     end
   end
