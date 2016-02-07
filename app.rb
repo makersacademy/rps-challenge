@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require 'player'
+#require 'player'
+#require 'weapon'
+require 'AI'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -24,6 +26,13 @@ class RPS < Sinatra::Base
   get '/confirm_weapon' do
     @player_weapon = $weapon.type
     erb(:confirm_weapon)
+  end
+
+  get '/result' do
+    @player_name = $player.name
+    @player_weapon = $weapon.type
+    @ai_weapon = AI.new.weapon_choice
+    erb(:result)
   end
 
   # start the server if ruby file executed directly
