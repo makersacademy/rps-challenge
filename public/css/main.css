@@ -1,0 +1,20 @@
+body {
+  background-color: #e1664f;
+}
+
+h1 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 100px
+}
+
+.page {
+  text-align: center;
+}
+
+.line {
+  position: relative;
+  height: 1px;
+  background: #717171;
+  border-bottom: 1px solid #313030;
+}

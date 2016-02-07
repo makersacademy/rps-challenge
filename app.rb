@@ -13,16 +13,17 @@ class RPS < Sinatra::Base
   post '/name' do
     $player = Player.new(params[:name])
     $computer = Computer.new
+    
     redirect '/play'
   end
 
   get '/play' do
     @player_name = $player.name
+
     erb :play
   end
 
   post '/game' do
-
     @player_weapon = $player.player_weapon(params[:weapon])
     @game = Game.new($player, $computer)
     @game.computer.computer_weapon
@@ -30,5 +31,6 @@ class RPS < Sinatra::Base
 
     erb :game
   end
+
   run! if app_file == $0
 end

@@ -1,10 +1,17 @@
-Welcome <%= @player_name %>.
-<br><br>
+<section class="page">
+  <br><br>
 
-Choose your weapon...
-<br><br>
-<form action="/game" method="post">
-  <input type="submit" name="weapon" value="rock">
-  <input type="submit" name="weapon" value="paper">
-  <input type="submit" name="weapon" value="scissors">
-</form>
+  Welcome <%= @player_name %>.
+  <br><br>
+
+  Choose your weapon...
+  <br><br>
+  <form action="/game" method="post">
+
+    <input type="image" src="img/rock.png" name="weapon" value="rock">
+    <br><br>
+    <input type="image" src="img/paper.png" name="weapon" value="scissors">
+    <br>
+    <input type="image" src="img/scissors.svg" name="weapon" value="paper">
+  </form>
+</section>
