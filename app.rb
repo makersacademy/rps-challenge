@@ -19,6 +19,19 @@ class Rps < Sinatra::Base
     erb(:rock)
   end
 
+  get '/paper' do
+    @game = $game
+    @computer_move = Computer.new.move
+    @result = @game.play_a_round(:Paper,@computer_move)
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    @game = $game
+    @computer_move = Computer.new.move
+    @result = @game.play_a_round(:Scissors,@computer_move)
+    erb(:scissors)
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
