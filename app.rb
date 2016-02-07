@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/cpu'
+require './lib/game_ext'
 
 class RPS < Sinatra::Base
 
@@ -11,6 +12,7 @@ class RPS < Sinatra::Base
 
   post '/game_type' do
     $game_type = params[:game]
+    $game_rules = params[:rules]
     redirect '/oneplayer' if $game_type == 'oneplayer'
     redirect '/twoplayer'
   end
@@ -26,17 +28,31 @@ class RPS < Sinatra::Base
   post '/names' do
     ($game_type == 'oneplayer')? (player2 = Cpu.new) : (player2 = Player.new(params[:Player_2_Name])) 
     player1 = Player.new(params[:Player_1_Name])
-    $game = Game.new([player1, player2])
-    redirect '/play'
+    if $game_rules == 'normal'
+      $game = Game.new([player1, player2])
+      redirect '/play'
+    else
+      $game = Game_ext.new([player1, player2])
+      redirect '/play_ext'
+    end
   end
 
   get '/play' do   
     erb(:play)
   end
 
+  get '/play_ext' do
+    erb(:play_ext)
+  end
+
   get '/player1_pick' do
     @player_1 = $game.players.first
     erb(:player1_pick)
+  end
+
+  get '/player1_pick_ext' do
+    @player_1 = $game.players.first
+    erb(:player1_pick_ext)
   end
 
   post '/player1_has_picked' do
@@ -46,13 +62,18 @@ class RPS < Sinatra::Base
       $game.players.last.pick
       redirect '/end'
     else
-      redirect '/player2_pick'
+      ($game_rules == 'normal')? (redirect '/player2_pick') : (redirect '/player2_pick_ext')
     end
   end
 
   get '/player2_pick' do
     @player_2 = $game.players.last   
     erb(:player2_pick)
+  end
+
+  get '/player2_pick_ext' do
+    @player_2 = $game.players.last   
+    erb(:player2_pick_ext)
   end
 
   post '/player2_has_picked' do

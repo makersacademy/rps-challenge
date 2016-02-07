@@ -97,15 +97,26 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
       expect(page).to have_content 'a win for CPU! Paper beats Rock.'
     end
   end
+end
 
-  feature 'Allows for 2 players to play' do
-    scenario 'Runs through a multiplayer session' do
-      sign_in_and_play_2_players
-      choose 'Rock'
-      click_button 'Select'
-      choose 'Scissors'
-      click_button 'Select'
-      expect(page).to have_content 'a win for Bob! Rock beats Scissors.'
-    end
+feature 'Bonus 1 - Allows for 2 players to play' do
+  scenario 'Runs through a multiplayer session' do
+    sign_in_and_play_2_players
+    choose 'Rock'
+    click_button 'Select'
+    choose 'Scissors'
+    click_button 'Select'
+    expect(page).to have_content 'a win for Bob! Rock beats Scissors.'
   end
-end    
+end
+
+
+feature 'Bonus 2 - Extended Rules' do
+  scenario 'Runs through an extended rule single player game' do
+    allow_any_instance_of(Cpu).to receive(:choice).and_return("Scissors")
+    sign_in_and_play_vs_CPU_extended
+    choose 'Spock'
+    click_button 'Select'
+    expect(page).to have_content 'a win for Bob! Spock beats Scissors.'    
+  end
+end

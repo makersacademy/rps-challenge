@@ -5,10 +5,15 @@
 
 <form action='/game_type' method='post'>
   <label>Human vs. CPU
-    <input type='radio' name='game' value='oneplayer'></label><br>
+    <input type='radio' name='game' value='oneplayer' checked></label><br>
     <label>Human vs. Human
       <input type='radio' name='game' value='twoplayer'></label><br>
+      <br><br>
+      <label>Normal Rules
+      <input type='radio' name='rules' value='normal' checked></label><br>    
       <br>
+      <label>Extended Rules
+      <input type='radio' name='rules' value='extended'></label><br>    
       <input type='submit' value='Submit'>
     </form>
 

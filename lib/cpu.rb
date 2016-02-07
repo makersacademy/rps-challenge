@@ -4,7 +4,11 @@ class Cpu
   end
 
   def pick
-    @choice = ["Rock", "Paper", "Scissors"].sample
+    if $game_rules == 'normal'
+      @choice = ["Rock", "Paper", "Scissors"].sample
+    else
+      @choice = ["Rock", "Paper", "Scissors", "Spock", "Lizard"].sample
+    end
   end
 
   attr_reader :choice, :name
