@@ -1,5 +1,33 @@
-You have choosen <%= @game.player.selection %>  <br>
+ <% if @game.player.selection == "Rock" 
+ 	@link="http://i.imgur.com/GClcIPG.jpg" 
+ 	elsif @game.player.selection == "Paper"
+	@link = "http://i.imgur.com/AIC0ATT.jpg"
+ 	else	@game.player.selection == "Scissors"
+	@link ="http://i.imgur.com/sN6y4lb.jpg"
+	end
+ 		%>  
 
-Your opponent is <%= @opponent %>  <br>
+<div>
+<center>You have choosen <%= @game.player.selection %><br>
+<img src= <%= @link %> /> </center>
+</div> 
 
-The result is <%= @game.result %> 
+
+ <% if @opponent == "Rock" 
+ 	@link2="http://i.imgur.com/GClcIPG.jpg" 
+ 	elsif @opponent == "Paper"
+	@link2 = "http://i.imgur.com/AIC0ATT.jpg"
+ 	else	@opponent == "Scissors"
+	@link2 ="http://i.imgur.com/sN6y4lb.jpg"
+	end
+ 		%>  
+
+<div> 
+
+<center>Your opponent chose <%= @opponent %>:	<br>
+<img src= <%= @link2 %> /> <br>
+</center>
+
+</div>
+
+<center><h1> You <%= @game.result %>! </h2></center>

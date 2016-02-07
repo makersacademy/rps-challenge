@@ -7,7 +7,7 @@ feature 'as a player, I would like to see my opponent' do
 	  fill_in('player_1', with: 'Russell')
 	  click_button('Submit')
 	  click_button('Rock') 
-	  expect(page).to have_content('Your opponent is Paper')
+	  expect(page).to have_content('Your opponent chose Paper')
 	end
 
 end
