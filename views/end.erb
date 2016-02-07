@@ -1,0 +1,11 @@
+<h1> You chose <%= @rps.choice %>!</h1>
+
+<h1> Your worthy opponent chose <%= @rps.computer_choice %>!</h1>
+
+<% if @rps.winning? %>
+You win!
+<% elsif @rps.draw? %>
+It's a draw!
+<% else %>
+You lose!
+<% end %>
