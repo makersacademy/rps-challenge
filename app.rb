@@ -6,8 +6,14 @@ class Game < Sinatra::Base
   enable :sessions
 
   get '/' do
+    p @name
+    @name = session[:name]
     erb(:index)
+  end
 
+  post '/name' do
+    session[:name] = params[:name]
+    redirect to('/')
   end
 
   post '/game' do

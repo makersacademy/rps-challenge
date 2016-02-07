@@ -4,7 +4,7 @@ class Player
 
   attr_reader :player_choice, :opponent
 
-  def initialize(choice: "rock", opponent: Computer)
+  def initialize(choice:, opponent: Computer)
     @player_choice = choice
     @opponent = opponent.new
   end
