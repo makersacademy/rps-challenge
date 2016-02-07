@@ -26,7 +26,7 @@ $color_3: #444444;
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
 }
 
@@ -124,12 +124,12 @@ main#play {
       background-size: 100px;
       border: 0;
       padding-top: 80px;
-      margin: 0 1em;
-      font-size: 1.4em;
+      margin: 0 1em 0.5em;
+      font-size: 1.2em;
       font-family: 'Old Standard TT', serif;
       font-style: italic;
       border-radius: 120px;
-      border: 3px solid $color_3;
+      border: 2px solid $color_3;
       color: $color_3;
       transform: all 0.3s ease;
       outline: none;
@@ -138,6 +138,7 @@ main#play {
       &:hover {
         color: $color_1;
         background-color: $color_2;
+        border-color: $color_1;
       }
       &:focus {
         outline: none;
@@ -165,6 +166,8 @@ main#draw {
   .background-image {
     @include background-image;
     background-image: url('img/draw.jpg');
+    background-position: center bottom;
+
   }
 }
 
@@ -172,7 +175,6 @@ main#lose {
   .background-image {
     @include background-image;
     background-image: url('img/lose.jpg');
-    background-position: center center;
   }
 }
 
@@ -181,6 +183,5 @@ main#win {
   .background-image {
     @include background-image;
     background-image: url('img/win.jpg');
-    background-position: center center;
   }
 }

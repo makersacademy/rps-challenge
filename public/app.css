@@ -23,7 +23,7 @@ main {
     height: 100%;
     width: 100%;
     opacity: 0.5;
-    background: no-repeat center bottom;
+    background: no-repeat center center;
     background-size: cover; }
   main h1, main h2, main h3 {
     text-align: center;
@@ -59,7 +59,7 @@ main#start .background-image {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
   background-image: url("img/start.jpg"); }
 main#start h1 {
@@ -100,7 +100,7 @@ main#play .background-image {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
   background-image: url("img/play.jpg"); }
 main#play form#moves {
@@ -115,12 +115,12 @@ main#play form#moves {
     background-size: 100px;
     border: 0;
     padding-top: 80px;
-    margin: 0 1em;
-    font-size: 1.4em;
+    margin: 0 1em 0.5em;
+    font-size: 1.2em;
     font-family: 'Old Standard TT', serif;
     font-style: italic;
     border-radius: 120px;
-    border: 3px solid #444444;
+    border: 2px solid #444444;
     color: #444444;
     transform: all 0.3s ease;
     outline: none;
@@ -128,7 +128,8 @@ main#play form#moves {
     transition: all 0.2s ease; }
     main#play form#moves input.move:hover {
       color: #EDD75A;
-      background-color: #405059; }
+      background-color: #405059;
+      border-color: #EDD75A; }
     main#play form#moves input.move:focus {
       outline: none; }
   main#play form#moves input#rock {
@@ -150,9 +151,10 @@ main#draw .background-image {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
-  background-image: url("img/draw.jpg"); }
+  background-image: url("img/draw.jpg");
+  background-position: center bottom; }
 
 main#lose .background-image {
   position: absolute;
@@ -162,10 +164,9 @@ main#lose .background-image {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
-  background-image: url("img/lose.jpg");
-  background-position: center center; }
+  background-image: url("img/lose.jpg"); }
 
 main#win .background-image {
   position: absolute;
@@ -175,7 +176,6 @@ main#win .background-image {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: no-repeat center bottom;
+  background: no-repeat center center;
   background-size: cover;
-  background-image: url("img/win.jpg");
-  background-position: center center; }
+  background-image: url("img/win.jpg"); }
