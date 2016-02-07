@@ -1,11 +1,13 @@
 class Game
 
+  WEAPONS = ['Rock', 'Paper', 'Scissors']
+
   attr_reader :name, :choice, :computer_choice
 
   def initialize(name)
     @name = name
     @choice = nil
-    @rps = ['Rock', 'Paper', 'Scissors']
+    @rps = WEAPONS
   end
 
   def choose_rock
