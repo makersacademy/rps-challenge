@@ -11,7 +11,7 @@ paper: :win, rock: :lose}
 
 attr_reader :weapons, :player
 
-	def initialize(player)
+	def initialize(player, player=Computer.new)
 		@player = player
 		@weapons = ["Rock", "Paper", "Scissors"]
 	end 
@@ -25,7 +25,7 @@ attr_reader :weapons, :player
 		ROCK_RULES[computer]
 		elsif player_choice == "Paper"
 		PAPER_RULES[computer]
-		else player_choice == "Scissors"
+		elsif player_choice == "Scissors"
 		SCISSORS_RULES[computer]
 		end
 	end
