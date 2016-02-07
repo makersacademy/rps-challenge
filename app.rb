@@ -1,3 +1,4 @@
+require './lib/match'
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
@@ -24,17 +25,19 @@ class RPS < Sinatra::Base
   end
 
   get '/see_selected' do
-    @selected = session[:player_selection]
-    array = ["Rock", "Paper", "Scissors"]
-    @random_option = array.sample
+    @selected_by_player = session[:player_selection]
+    $match.ai_selection
     erb(:selected)
   end
 
-  get '/see-result' do
-    @winner = AI
-    erb(:result)
+  post '/see_result' do
+    redirect 'see_result'
   end
 
+  get '/see_result' do
+    @winner = "AI"
+    erb(:result)
+  end
 
 
   # start the server if ruby file executed directly

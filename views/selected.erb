@@ -1,9 +1,9 @@
 
-You play <%= @selected %>
+You play <%= @selected_by_player %>
 <p></p>
-AI plays <%= @random_option %>
+AI plays <%= @selected_by_ai %>
 
-<form action='/set_name' method='get'>  
+<form action='/see_result' method='post'>  
   <input type='submit' value='Show winner'>
 </form>
 
