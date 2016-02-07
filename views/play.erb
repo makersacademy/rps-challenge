@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>R-P-S-L-S</title>
+  <link href="/css/stylesheet.css" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <script src="//use.edgefonts.net/unifrakturcook;flavors;passero-one;la-belle-aurore;jim-nightshade.js"></script>
+</head>
+
+<body>
+  <div class="container">
+  <h1><span class="rock_text">Rock</span> - <span class="paper_text">Paper</span>
+     - <span class="scissors_text">Scissors</span> - <span class="lizzard_text">
+       Lizzard</span> - <span class="spock_text">Spock</span></h1>
+
+  <h2> <%=@game.player_1.name%> <span class="smaller">vs.</span> <%=@game.player_2.name%> </h2>
+
+  <section class="pick">
+  <% unless @game.completed? %>
+    <h3><%= @game.turn.name %> time to make your move...</h3>
+
+    <% if @game.no_players==1 %>
+      <form action="/turn" method="POST">
+          <input type='submit' value='Rock' name='action' class='rock'>
+          <input type='submit' value='Paper' name='action' class="paper">
+          <input type='submit' value='Scissors' name='action' class="scissors">
+          <input type='submit' value='Lizzard' name='action' class="lizzard">
+          <input type='submit' value='Spock' name='action' class="spock">
+      </form>
+    <% end %>
+
+    <% if @game.no_players==2 && @game.turn==@game.player_1 %>
+      <form action="/turn" method="POST">
+        <input type='submit' value='Rock' name='action' class='rock'>
+        <input type='submit' value='Paper' name='action' class="paper">
+        <input type='submit' value='Scissors' name='action' class="scissors">
+        <input type='submit' value='Lizzard' name='action' class="lizzard">
+        <input type='submit' value='Spock' name='action' class="spock">
+      </form>
+    <% end %>
+
+    <% if @game.no_players == 2 && @game.turn==@game.player_2 %>
+      <form action="/turn" method="POST">
+        <input type='submit' value='Rock' name='action' class='rock'>
+        <input type='submit' value='Paper' name='action' class="paper">
+        <input type='submit' value='Scissors' name='action' class="scissors">
+        <input type='submit' value='Lizzard' name='action' class="lizzard">
+        <input type='submit' value='Spock' name='action' class="spock">
+      </form>
+    <% end %>
+  <% end %>
+  </section>
+
+
+  <section class='results'>
+    <% if @game.completed? %>
+      <span class='moves'><%= @game.player_1.name %> played <%= @game.player_1.move %> and
+      <%= @game.player_2.name %> played <%= @game.player_2.move %> </span>
+      <p>
+      <span class="blink">
+      <% if @game.draw? %>
+        It's a draw...
+      <% elsif @game.win? %>
+        <%= @game.player_1.name %> wins!
+      <% elsif @game.lose? %>
+        <%= @game.player_2.name %> wins!
+      <% end %>
+      <p>
+      <form action="/reset">
+        <input type='submit' value='Play again'>
+      </form>
+      <form action="/">
+        <input type='submit' value='New players'>
+      </form>
+      </span>
+    <% end %>
+
+  </section>
+</cdiv>
+
+</body>
+</html>
