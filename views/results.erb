@@ -5,14 +5,21 @@
 <h1> <%if  @game.winner != :Draw %> <%=@game.winner%> wins!
 <% else %> It's a draw! <% end %></h1>
 </div>
-<form action="/" >
-  <input type="submit" value="New player?"/>
-</form>
 
-<form action="/play" >
-  <input type="submit" value="Play Again? (One Player)"/>
-</form>
+<div class="newplayer">
+  <form action="/" >
+    <input type="submit" value="New player?"/>
+  </form>
+</div>
 
-<form action="/multiplayer" >
-  <input type="submit" value="Play Again? (Two Players)"/>
-</form>
+<div class="playagain">
+  <form action="/play" >
+    <input type="submit" value="Play Again? (One Player)"/>
+  </form>
+</div>
+
+<div class="playagain">
+  <form action="/multiplayer" >
+    <input type="submit" value="Play Again? (Two Players)"/>
+  </form>
+</div>

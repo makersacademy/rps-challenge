@@ -77,8 +77,85 @@ div.namesbutton input {
     border: none;
     line-height: 0;
   	text-indent: -9999px;
-    /*float: right;
-    clear: both;*/
+    text-align: center;
+}
+
+div.move_choices input#rock {
+    background:url(/img/rock.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#paper {
+    background:url(/img/paper.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#scissors {
+    background:url(/img/scissors.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#lizard {
+    background:url(/img/lizard.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#spock {
+    background:url(/img/spock.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+
+div.playagain input {
+    background:url(/img/playagain.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+
+div.newplayer input {
+    background:url(/img/newplayer.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
     text-align: center;
 }
 
@@ -86,12 +163,3 @@ div.resultstext {
   text-align: center;
   font-size: 18px;
 }
-/*
-#submit_name{
-  background-image: url("img/submitname.png") no-repeat:
-  border:0;
-  /*display:block;*/
-  /*height:40px;
-  width: 196px;
-
-}*/*/
