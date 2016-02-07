@@ -11,4 +11,14 @@ describe Player do
       expect(scott.name).to eq 'Scott'
     end
   end
+
+  describe '#move' do
+    it 'assigns move' do
+      expect(scott.move='rock').to eq 'rock'
+    end
+
+    it 'assigns move' do
+      expect(scott.move='paper').to eq 'paper'
+    end
+  end
 end
