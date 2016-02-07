@@ -42,3 +42,7 @@ Select an option to play:
 
 See the outcome of the game and choose to play again
 ![Dropbox](https://www.dropbox.com/s/f4l3zdeghv5vtgq/Screenshot%202016-02-07%2018.47.30.png?raw=1)
+
+Credit
+------
+All images within public/images were created by Studio Fibonacci from the noun project and are licensed under creative commons
