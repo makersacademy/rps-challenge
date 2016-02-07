@@ -1,16 +1,22 @@
 feature 'Play' do
-  scenario 'can choose rock,' do
-    sign_in_and_play
-    expect(click_button 'Rock')
+  scenario 'can tell you when you win' do
+      allow_any_instance_of(Game).to receive(:random_value).and_return 2
+      sign_in_and_play
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
   end
 
-  scenario 'paper,' do
-    sign_in_and_play
-    expect(click_button 'Paper')
+  scenario 'can tell you when you lose' do
+      allow_any_instance_of(Game).to receive(:random_value).and_return 1
+      sign_in_and_play
+      click_button 'Rock'
+      expect(page).to have_content 'You lose!'
   end
 
-  scenario 'or scissors' do
-    sign_in_and_play
-    expect(click_button 'Scissors')
+  scenario 'can tell you when you draw' do
+      allow_any_instance_of(Game).to receive(:random_value).and_return 0
+      sign_in_and_play
+      click_button 'Rock'
+      expect(page).to have_content "It's a draw!"
   end
 end
