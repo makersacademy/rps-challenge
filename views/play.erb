@@ -1,23 +1,18 @@
-<h1>Welcome to the game <%=@player_1_name%>!</h1>
+<div class = "title">
+  <h1>Welcome to the game <%=@player_1_name%>!</h1>
+</div>
 
-<h2>Please select a choice from below</h2>
+<div class = "subtitle">
+  <h2>Please select a choice from below</h2>
+</div>
 
-<form action="/choices" method="post">
-  <input type="submit" name ="choice" value="Rock"/>
-</form>
 
-<form action="/choices" method="post">
-  <input type="submit" name ="choice" value="Paper"/>
-</form>
-
-<form action="/choices" method="post">
-  <input type="submit" name ="choice" value="Scissors"/>
-</form>
-
-<form action="/choices" method="post">
-  <input type="submit" name ="choice" value="Lizard"/>
-</form>
-
-<form action="/choices" method="post">
-  <input type="submit" name ="choice" value="Spock"/>
-</form>
+<div class="move_choices">
+  <form action="/choices" method="post">
+    <input type="submit" name ="choice" value="Rock"/>
+    <input type="submit" name ="choice" value="Paper"/>
+    <input type="submit" name ="choice" value="Scissors"/>
+    <input type="submit" name ="choice" value="Lizard"/>
+    <input type="submit" name ="choice" value="Spock"/>
+  </form>
+</div>
