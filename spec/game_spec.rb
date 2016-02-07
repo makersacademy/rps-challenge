@@ -2,8 +2,6 @@ require 'game'
 
 describe Game do
 
-  # stub random choice, then check for outcomes
-
   let(:player1) {double :player, choice: :paper}
   let(:player2) {double :player, choice: :paper}
   let(:player3) {double :player, choice: :rock}

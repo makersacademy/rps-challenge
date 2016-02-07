@@ -10,12 +10,20 @@ require './lib/player'
 
 class RPSApp < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     $game = nil
     erb :index
   end
 
+  get '/show_rules' do
+    session[:rules] = true
+    redirect to '/'
+  end
+
   get '/pvc' do
+    session[:rules] = false
     erb :pvc
   end
 
@@ -40,6 +48,7 @@ class RPSApp < Sinatra::Base
   end
 
   get '/pvp' do
+    session[:rules] = false
     erb :pvp
   end
 

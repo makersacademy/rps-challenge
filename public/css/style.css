@@ -5,6 +5,27 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.header {
+  padding-bottom: 20px;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header img {
+  height: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#rules-btn {
+  margin-top: 30px;
+  height: 30px;
+  width: 80px;
+  font-size: 15pt;
+}
+
 #title {
   font-family: Papyrus;
   line-height: 0;
@@ -45,7 +66,7 @@ p span {
 }
 
 .outcome {
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 20px;
   border: 3px solid #B82E00;
   border-radius: 10px;

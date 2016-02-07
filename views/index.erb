@@ -5,6 +5,22 @@
   </head>
   <body>
     <div class="centered">
+
+      <div class="header">
+        <a href="https://github.com/rufusraghunath">
+          <img src="/images/github.png"/>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rufusraghunath?trk=hp-identity-name">
+          <img src="/images/linkedin.png"/>
+        </a>
+
+        <a href="https://codeyourselfdizzy.wordpress.com/">
+          <img src="/images/wordpress.png"/>
+        </a>
+        <p>Made by Rufus Raghunath</p>
+      </div><!-- end header -->
+
       <h1 id="title">Welcome to Ultimate RPS<h2>
       <p id="subtitle">Rock. Paper. Scissors. Lizard. Spock.</p>
 
@@ -14,7 +30,17 @@
       </div>
 
       <br>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/x5Q6-wMx-K8" frameborder="0" allowfullscreen></iframe>
+
+      <% if session[:rules] %>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/x5Q6-wMx-K8?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+      <% else %>
+
+        <a href="/show_rules">
+          <button id="rules-btn" type="button">Rules</button>
+        </a>
+      <% end %>
     </div>
   </body>
 </html>
