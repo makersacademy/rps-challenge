@@ -1,4 +1,4 @@
-require 'capybara/rspec'
+require 'spec_helper'
 
 # USER STORY ONE
 # As a marketeer
