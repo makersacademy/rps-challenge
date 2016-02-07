@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+# require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,13 +10,16 @@ class RPS < Sinatra::Base
   end
 
   post '/player-name' do
-    session[:player_name] = params[:player_name]
-    @player_name = session[:player_name]
+    $player_name = Player.new(params[:player_name])
+    @player_name = $player_name
+    # session[:player_name] = params[:player_name]
+    # @player_name = session[:player_name]
+    redirect '/play'
     erb :play_confirmation
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = $player_name.name
     erb :play_game
   end
 
