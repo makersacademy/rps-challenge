@@ -1,13 +1,16 @@
-<h1> <%= @player.name %> chose <%= @player.selection %>
-
-<div></div>
-<br></br>
-<h2> <%= @machine.name %> chose <%= @machine.selection %>
+<body bgcolor="#ffff00">
+<h1 style="color:blue;size:10;text-align:center;"> <%= @player.name %> chose <%= @player.selection %></h1>
+<h1 style="color:blue;size:10;text-align:center;"> <%= @machine.name %> chose <%= @machine.selection %></h1>
 
 <% if @winner == nil %>
-Game drawn
+<h2 style="color:blue;size:10;text-align:center;">Game drawn</h2>
 <% else %>
-The Winner is <%= @winner %>
+<h2 style="color:blue;size:10;text-align:center;">The Winner is <%= @winner %></h2>
 <% end %>
+<h3 style="color:blue;size:10;text-align:center;"> Great game</h3>
+  <p style="color:blue;size:10;text-align:center;"> Click the picture of Nicolas Cage to play another round </p>
 
-<a href="/play"><button>PLAY AGAIN!</button></a>
+<a href="/play">
+  <img src="http://cdn0.dailydot.com/uploaded/images/original/2013/1/7/cage26.gif"</a>
+</a>
+</div>
