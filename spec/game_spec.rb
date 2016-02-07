@@ -50,10 +50,7 @@ describe Game do
         expect(game.result).to eq 'a win for Bob! Rock beats Scissors.'
       end
     end
-  end
 
-  #FROM GAME_EXT_SPEC
-   describe '#result' do
     context 'CPU Picks Spock' do
       before do
         allow(cpu).to receive(:choice).and_return("Spock")
@@ -77,19 +74,6 @@ describe Game do
       it 'Player picks Rock' do
         allow(player).to receive(:choice).and_return("Rock")
         expect(game.result).to eq 'a win for Bob! Rock beats Lizard.'
-      end
-    end
-
-    context 'CPU Picks Paper' do
-      before do
-        allow(cpu).to receive(:choice).and_return("Paper")
-        allow(cpu).to receive(:cpu_hand).and_return("Paper")
-        cpu.choice
-      end
-
-      it 'Player picks Spock' do
-        allow(player).to receive(:choice).and_return("Spock")
-        expect(game.result).to eq 'a win for CPU! Paper beats Spock.'
       end
     end
   end
