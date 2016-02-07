@@ -11,7 +11,15 @@ Player Instructions!
 
 1)run ruby app.rb from rps-challenge directory in terminal.
 
-2) Visit localhost:4567 and fill in your name.
+2) Visit localhost:4567 and fill in your name & click submit.
+
+3) User's name should now be displayed. 
+
+4) User should now be able to play a move.
+
+5) When user plays a move the game will display what they played, what move the computer played and the result of the round.
+
+6) Best of 3? User can then play another round by hitting the play again button!
 
 
 
