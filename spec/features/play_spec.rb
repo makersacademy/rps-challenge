@@ -36,4 +36,13 @@ feature 'playing a game' do
     expect(page).to have_content 'AI plays Paper'
   end
 
+# User Story 3
+# - a winner will be declared
+  scenario 'AI with Paper wins over player with Rock' do
+    srand(RAND_HANDLER)
+    click_button 'Rock'
+    click_button 'Result'
+    expect(page).to have_content 'The winner is AI!'
+  end
+
 end
