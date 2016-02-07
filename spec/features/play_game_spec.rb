@@ -6,7 +6,7 @@ require 'spec_helper'
 feature 'play rock, paper, scissors' do
   scenario 'play game' do
     sign_in_and_play
-    allow(Game::WEAPONS).to receive(:sample).and_return('Rock')
+    allow($new_game.computer).to receive(:weapon).and_return('Rock')
     fill_in :player_choice, with: 'Scissors'
     click_button('Go!')
     expect(page).to have_content 'Computer wins!'
