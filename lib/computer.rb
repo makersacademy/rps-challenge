@@ -1,4 +1,5 @@
 require_relative 'game'
+
 class Computer
 
   attr_reader :choose_weapon

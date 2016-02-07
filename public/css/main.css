@@ -42,9 +42,11 @@ footer {
   margin-right: 550px;
   height: 80px;
   padding-top: 50px;
-  border: 5px solid #333333 ;
+  border: 5px solid #333333;
   background-color: #fbf5f4;
   border-radius: 25px;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 #name_enter {
@@ -53,4 +55,30 @@ footer {
 
 #result {
   padding-top: 120px;
+}
+
+#rock {
+  height: 300px;
+  width: 250px;
+  border: 5px solid #333333;
+  border-radius: 15px;
+  background-color: #89ccc3;
+}
+
+#paper {
+  height: 300px;
+  width: 250px;
+  border: 5px solid #333333;
+  margin-left: 20px;
+  border-radius: 15px;
+  background-color: #89ccc3;
+}
+
+#scissors {
+  height: 250px;
+  width: 300px;
+  border: 5px solid #333333;
+  transform: rotate(-90deg);
+  border-radius: 15px;
+  background-color: #89ccc3;
 }

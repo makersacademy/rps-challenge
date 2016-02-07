@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
   post '/name' do
     $player = Player.new(params[:name])
     $computer = Computer.new
-    
+
     redirect '/play'
   end
 
