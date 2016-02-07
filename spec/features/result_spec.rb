@@ -21,6 +21,6 @@ feature 'winner' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     sign_in
     click_button "rock"
-    expect(page).to have_content 'winner Sc'
+    expect(page).to have_content 'winner Scot'
   end
 end
