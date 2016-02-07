@@ -17,18 +17,18 @@ class Player
 
   end
 
-  attr_reader :name, :weapon, :turn_klass
+  attr_reader :name, :weapon, :turn
 
 
     def initialize(name, turn_klass=Turn)
       @name = name
-      @turn_klass = turn_klass
+      @turn = turn_klass
     end
 
 
     def new_turn(weapon_choice)
       @weapon = weapon_choice
-      turn_klass.new(weapon_choice)
+      turn.new(weapon_choice)
     end
 
 end

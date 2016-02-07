@@ -54,7 +54,7 @@ describe Player do
       end
 
       it 'has an uninitialized turn' do
-        expect(player_instance.turn_klass).to eq turn_klass
+        expect(player_instance.turn).to eq turn_klass
       end
 
     end

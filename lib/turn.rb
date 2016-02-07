@@ -2,15 +2,20 @@ require_relative 'computer'
 
 class Turn
 
-attr_reader :p1_weapon, :computer_turn
+RULES = {
+  scissors: 'paper',
+  rock: 'scissors',
+  paper: 'rock'
+}
+attr_reader :p1_weapon, :p2_weapon
 
-  def initialize(p1_weapon, computer_turn_klass=ComputerTurn)
+  def initialize(p1_weapon, p2_weapon_klass=ComputerTurn)
     @p1_weapon = p1_weapon
-    @computer_turn = computer_turn_klass.new
+    @p2_weapon = p2_weapon_klass.new
   end
 
   def result
-    if win?
+    if p1_win?
       :win
     elsif draw?
       :draw_play_again
@@ -22,9 +27,12 @@ attr_reader :p1_weapon, :computer_turn
 
   private
 
+  def p1_win?
+    RULES[@p1_weapon] == p2_weapon.to_s 
+  end
 
   def draw?
-    computer_turn == p1_weapon
+    p2_weapon == p1_weapon
   end
-  
+
 end
