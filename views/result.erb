@@ -1,0 +1,15 @@
+<% if :win %>
+"Congratulations, you have won!"
+
+<% elsif :draw %>
+"It's a draw!"
+
+<% else %>
+"Sorry, you have lost"
+
+<% end %>
+
+Play again!
+<form action="/play" method="get">
+  <input type="submit" value="Play again!">
+</form>

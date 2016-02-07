@@ -1,5 +1,7 @@
 require 'game'
 
+# I HAVE NO IDEA WHAT I'M DOING!
+
 describe Game do
   let(:bob) {double :bob}
   let(:computer_klass) {double :computer_klass}
@@ -40,4 +42,62 @@ describe Game do
     end
 
   end
+
+  describe '#result' do
+    describe 'player with rock' do
+      # allow(game).to receive(:player_weapon).and_return(rock)
+      it 'checks that player wins with rock' do
+        game.start_game(bob_weapon)
+        expect(game.player_win).to eq true
+      end
+      it 'checks that player loses with rock' do
+      end
+      it 'checks that player draws with rock' do
+      end
+    end
+    describe 'player with paper' do
+      it 'checks that player wins with paper' do
+        expect(game.player_win).to eq true
+      end
+      it 'checks that player loses with paper' do
+      end
+      it 'checks that player draws with paper' do
+      end
+    end
+    describe 'player with scissors' do
+      it 'checks that player wins with scissors' do
+        expect(game.player_win).to eq true
+      end
+      it 'checks that player loses with scissors' do
+      end
+      it 'checks that player draws with scissors' do
+      end
+    end
+
+    describe 'computer with rock' do
+      it 'checks that computer wins with rock' do
+      end
+      it 'checks that computer loses with rock' do
+      end
+      it 'checks that computer draws with rock' do
+      end
+    end
+    describe 'computer with paper' do
+      it 'checks that computer wins with paper' do
+      end
+      it 'checks that computer loses with paper' do
+      end
+      it 'checks that computer draws with paper' do
+      end
+    end
+    describe 'computer with scissors' do
+      it 'checks that computer wins with scissors' do
+      end
+      it 'checks that computer loses with scissors' do
+      end
+      it 'checks that computer draws with scissors' do
+      end
+    end
+end
+
 end
