@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
 require 'coveralls'
 require 'simplecov'
 
@@ -5,6 +9,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
+<<<<<<< HEAD
 Coveralls.wear! 
 
 ENV['RACK_ENV'] = 'test'
@@ -109,3 +114,11 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+=======
+# replace following line with SimpleCov.start to get coverage stats locally
+SimpleCov.start
+# run `open coverage/index.html` from the command line to view details
+
+require 'byebug'
+require 'capybara/rspec'
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
