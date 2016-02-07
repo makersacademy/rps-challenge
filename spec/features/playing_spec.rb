@@ -1,26 +1,5 @@
-
 require 'capybara/dsl'
-require 'selenium-webdriver'
-
-
-def browser_view
-  include Capybara::DSL
-  Capybara.default_driver = :selenium
-end
-
-def current_path_info
-  current_url.sub(%r{.*?://},'')[%r{[/\?\#].*}] || '/'
-end
-
-feature 'Enter name' do
-  scenario 'submitting names' do
-    #browser_view
-    visit('/')
-    fill_in :player_name, with: 'Valentina'
-    click_button 'Submit'
-    expect(page).to have_content 'Valentina, you are registered!'
-  end
-end
+require 'web_helpers'
 
 feature 'Starting game' do
   scenario 'player starts playing' do
