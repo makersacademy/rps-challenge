@@ -1,0 +1,16 @@
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+
+</head>
+
+<p> You choose <%= @paper %> and AI choose <%=@computer_choice%></p>
+<h1> You <%= @answer %> </h1>
+
+<h4> Want to play agin? </h4>
+
+<form action="/start_page" method="post">
+  <input type="submit" value="Play again!">
+</form>
