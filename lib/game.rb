@@ -34,10 +34,11 @@ class Game
   end
 
   def result
-    weapon_1, weapon_2 = player(1).weapon, player(2).weapon
+    weapon_1 = player(1).weapon
+    weapon_2 = player(2).weapon
     raise RUNTIME_ERROR_MSG if weapon_1.nil? || weapon_2.nil?
     return :draw if weapon_1.type == weapon_2.type
-    return weapon_1.beats?(weapon_2) ? :p1_win : :p2_win
+    weapon_1.beats?(weapon_2) ? :p1_win : :p2_win
   end
 
   private

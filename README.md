@@ -1,6 +1,6 @@
 *mic_css presents:*
 **Rock Paper Scissors**
-Nikesh Sunfish
+Nikesh Sunfish https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master
 ===================
 
 Icons:
