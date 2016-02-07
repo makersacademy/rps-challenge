@@ -3,11 +3,11 @@ class Computer
 
   def initialize(name = "AI")
     @name = name
-    @choice = nil
-  end
-
-  def rps_choice
     @choice = [:Rock, :Paper,:Scissors].sample
   end
+
+  # def rps_choice
+  #   @choice =
+  # end
 
 end

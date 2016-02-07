@@ -4,8 +4,8 @@ class Game
 
   def initialize(player_1, computer)
     @player_1 = player_1
-    @winner = nil
     @computer = computer
+    @winner = nil
   end
 
 

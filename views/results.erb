@@ -1,3 +1,11 @@
 <h1> <%=@game.player_1.name%> chose <%=@game.player_1.choice %> </h1>
 <h1> The computer chose <%=@game.computer.choice%> </h1>
 <h1><%=@game.result%> </h1>
+
+<form action="/" >
+  <input type="submit" value="New player?"/>
+</form>
+
+<form action="/play" >
+  <input type="submit" value="Play Again?"/>
+</form>

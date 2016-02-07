@@ -13,9 +13,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player_1 = Player.new(params[:Player_1])
-    @computer = Computer.new
-    $game = Game.new(@player_1, @computer)
+    $game = Game.new(Player.new(params[:Player_1]), Computer.new)
     redirect to '/play'
   end
 
@@ -27,7 +25,7 @@ class RPS < Sinatra::Base
   post '/choices' do
     @game = $game
     @game.player_1.make_choice(params['choice'])
-    @game.computer.rps_choice
+    # @game.computer.rps_choice
     @game.rps_logic(@game.player_1.choice, @game.computer.choice)
     redirect to '/results'
   end
