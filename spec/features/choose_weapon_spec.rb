@@ -1,4 +1,4 @@
-feature 'Gameplay' do
+feature 'Weapon selection' do
   scenario 'confirms the player\'s weapon choice' do
     visit('/')
     fill_in('player_name', with: 'Jax')
