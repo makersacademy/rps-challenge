@@ -11,4 +11,11 @@ describe Player do
   end
 
 
+  describe "a weapon, (rock, paper or scissors) can be chosen by the player" do
+    it 'allows a weapon to be chosen, saved to the weapon varaible and called' do
+      player.set_weapon("rock")
+      expect(player.weapon).to eq "rock"
+    end
+  end
+
 end

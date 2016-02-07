@@ -15,11 +15,17 @@ post '/play' do
   p params
   $new_game = Game.new(params[:player_1_name])
   erb(:play)
-  # redirect to('/play')
 end
 
 
-
+post '/results' do
+  p params
+  @new_game = $new_game
+  @new_game.choose_weapon(params[:weapon_select])
+  @new_game.computer_choose_weapon
+  @new_game.who_wins
+  erb(:end_game)
+end
 
 
 
