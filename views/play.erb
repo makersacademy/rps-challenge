@@ -1,6 +1,8 @@
 <header class="header">
   <section class="logo">
-    rps::NS
+    <a href="https://github.com/mic-css/rps-challenge" target="_blank">
+      <i class="fa fa-github-square"></i> rps::NS
+    </a>
   </section>
   <section class="scoreboard">
     <%= @game.player(1).name %>
@@ -9,9 +11,7 @@
   </section>
   <section class="exit-button">
     <a href="/">
-      <i class="fa fa-times fa-2x"></i>
-      <br />
-      exit
+      exit <i class="fa fa-times"></i>
     </a>
   </section>
 </header>
