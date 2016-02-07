@@ -2,11 +2,7 @@ feature 'as a player, I would like to see my opponents weapon' do
 
 
 	scenario 'select Rock' do 
-		allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
-	  visit('/')
-	  click_button('One Player')
-	  fill_in('player_1', with: 'Russell')
-	  click_button('Submit')
+		sign_in_and_play
 	  click_button('Rock') 
 	  expect(page).to have_content('The Computer selected Paper')
 	end

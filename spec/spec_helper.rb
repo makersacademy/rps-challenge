@@ -7,6 +7,7 @@ require 'simplecov'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'web_helpers.rb'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
