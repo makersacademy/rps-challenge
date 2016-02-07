@@ -40,11 +40,6 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  # post '/play' do
-  #   @game = session[:game]
-  #   erb(:play2)
-  # end
-
   post '/turn' do
     @game = session[:game]
     @action = params[:action].downcase.to_sym
@@ -59,8 +54,7 @@ class RPS < Sinatra::Base
     @game.reset
     redirect '/play'
   end
-
-
+  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
