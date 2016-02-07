@@ -1,8 +1,13 @@
 require 'sinatra/base'
 
 class RPS_challenge < Sinatra::Base
+
   get '/' do
-    'Hello RPS_challenge!'
+    erb :index
+  end
+
+  get '/enter_names' do
+    erb :enter_names
   end
 
   # start the server if ruby file executed directly
