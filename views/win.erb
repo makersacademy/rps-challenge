@@ -1,9 +1,4 @@
-
-<% if $game.result == :draw %>
-<h1> It's a draw, you both chose <%= $game.player_one.weapon %> </h1>
-<% else %>
 <h1> <%= $game.winner.weapon %> beats <%= $game.loser.weapon %>, <%= $game.winner.name %> has won!</h1>
-<% end %>
 
 <form action='/choose_opponent' method='Get'>
   <input type='submit' value='Play again?'></input>
