@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+RPS-CHALLENGE   6/2/2015
+
+Files:
+RPS-Challenge
+Views-
+Lib-
+Spec-
+app.rb
+
+
+RPS- Rules:
+See http://worldrps.com/game-basics/
+
+
+
+Versions & Gems needed:
+source 'https://rubygems.org'
+ruby '2.2.3'
+
+gem 'sinatra'
+gem 'shotgun'
+gem 'capybara'
+gem 'selenium-webdriver'
+gem 'rspec-sinatra'
+gem 'rspec'
+
+
+=======
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
@@ -91,4 +120,5 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
 

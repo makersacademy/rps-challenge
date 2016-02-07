@@ -1,16 +1,37 @@
 GEM
   remote: https://rubygems.org/
   specs:
+<<<<<<< HEAD
+    addressable (2.4.0)
+    capybara (2.6.2)
+      addressable
+=======
     ast (2.1.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
     byebug (6.0.2)
     capybara (2.5.0)
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+<<<<<<< HEAD
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
+    diff-lcs (1.2.5)
+    extlib (0.9.16)
+    ffi (1.9.10)
+    highline (1.7.8)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2015.1120)
+    mini_portile2 (2.0.0)
+    multi_json (1.11.2)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+=======
     coveralls (0.8.2)
       json (~> 1.8)
       rest-client (>= 1.6.8, < 2)
@@ -32,11 +53,47 @@ GEM
     parser (2.2.2.6)
       ast (>= 1.1, < 3.0)
     powerpack (0.1.1)
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+<<<<<<< HEAD
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.2)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-sinatra (0.1.2)
+      templater (>= 1.0.0)
+    rspec-support (3.4.1)
+    rubyzip (1.1.7)
+    selenium-webdriver (2.51.0)
+      childprocess (~> 0.5)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
+    shotgun (0.9.1)
+      rack (>= 1.0)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    templater (1.0.0)
+      diff-lcs (>= 1.1.2)
+      extlib (>= 0.9.5)
+      highline (>= 1.4.0)
+    tilt (2.0.2)
+    websocket (1.2.2)
+=======
     rainbow (2.0.0)
     rake (10.4.2)
     rest-client (1.8.0)
@@ -81,6 +138,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -88,6 +146,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
+  capybara
+  rspec
+  rspec-sinatra
+  selenium-webdriver
+  shotgun
+  sinatra
+
+BUNDLED WITH
+   1.11.2
+=======
   byebug
   capybara
   coveralls
@@ -99,3 +168,4 @@ DEPENDENCIES
 
 BUNDLED WITH
    1.10.6
+>>>>>>> bb1080ed585fc99b63404db24db754b45ade6271

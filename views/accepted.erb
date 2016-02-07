@@ -1,0 +1,16 @@
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+
+</head>
+
+<p>
+Thanks for signing in <%= @player_1_first_name %>. Will email you at <%= @player_1_email %>
+</p>
+
+<form action="/start_page" method="post">
+  <p> Click below to start the game :)</p>
+<input type="submit" value="Start!">
+</form>
