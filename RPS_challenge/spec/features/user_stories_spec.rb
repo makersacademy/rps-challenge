@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'web_helpers'
 
 # USER STORY ONE
 # As a marketeer
@@ -7,12 +8,31 @@ require 'spec_helper'
 feature 'Registering to play' do
 
   scenario 'so a game can include a player, the player can enter their name and see it onscreen.' do
-    visit('/')
-    click_button 'Play!'
-    fill_in :firstname, with: 'Joe'
-    fill_in :lastname,  with: 'Wroe'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content('My name is Drago. I defeat all man... Soon I defeat Joe Wroe, if he dies... he dies.')
   end
 
+end
+
+# USER STORY TWO
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+feature 'Playing the game' do
+
+  scenario 'so a player can select an attack, a page needs to allow choice between Rock, Paper and Scissors' do
+    sign_in
+    continue_to_rps_selector
+    expect(page).to have_content('Rock')
+    expect(page).to have_content('Paper')
+    expect(page).to have_content('Scissors')
+    find_button('Select')
+  end
+
+  scenario 'so a player can battle Drago, the page after choosing their attack needs to show the player choice' do
+    sign_in
+    continue_to_rps_selector
+    click_button('Select')
+    expect(page).to have_content('You choose Rock!')
+  end
 end

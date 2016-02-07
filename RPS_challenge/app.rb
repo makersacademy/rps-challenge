@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class RPS_challenge < Sinatra::Base
 
@@ -13,15 +14,31 @@ class RPS_challenge < Sinatra::Base
   end
 
   post '/names' do
-    session[:firstname] = params[:firstname]
-    session[:lastname]  = params[:lastname]
+    $playername = Player.new(params[:playername])
     redirect to('/play')
   end
 
   get '/play' do
-    @firstname = session[:firstname]
-    @lastname  = session[:lastname]
+    @playername = $playername.name
     erb :play
+  end
+
+  get '/ringwalk' do
+    erb :ringwalk
+  end
+
+  get '/rps_selector' do
+    erb :rps_selector
+  end
+
+  post '/user_selection' do
+    session[:user_selection] = params[:rps]
+    redirect to('/battle')
+  end
+
+  get '/battle' do
+    @user_selection = session[:user_selection]
+    erb :battle
   end
 
   # start the server if ruby file executed directly
