@@ -1,4 +1,4 @@
-class Result
+class Result < Computer
 
   WINNER = {
 
@@ -14,7 +14,19 @@ class Result
 
      }
 
+    def initialize
+      @winner = winner
+    end
+
+
      def combine_results
+       "#{$player_name.weapon} #{$computer_weapon}"
      end
+
+     def return_winner
+       winner = WINNER[combine_results]
+     end
+
+     attr_reader :winner
 
 end
