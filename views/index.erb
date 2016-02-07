@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>R-P-S-L-S</title>
+  <link href="<%= url("/css/stylesheet.css")%>" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <form action="/oneplayer">
+      <input type='submit' value='Play Sheldon'>
+  </form>
+<!--
+  <form action="/twoplayers">
+      <input type='submit' value='Play a friend'>
+  </form> -->
+
+  <% if @players==1 %>
+    <form action="/names1" method="post" >
+      <input type="text" name="player_1">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %>
+
+  <!-- <% if @players==2 %>
+    <form action="/names2" method="post" >
+      <input type="text" name="player_1" value="Player 1 name">
+      <input type="text" name="player_2" value="Player 2 name">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %> -->
+</body>
+
+</html>

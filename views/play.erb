@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link href="<%= url("/css/stylesheet.css")%>" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <h1> <%=@game.player_1.name%> </h1><h3>vs.</h3><h1> Sheldon </h1>
+  <h3>Time to make your move...</h3>
+
+  <form action="/rock">
+      <input type='submit' value='Rock'>
+  </form>
+
+  <form action="/paper">
+      <input type='submit' value='Paper'>
+  </form>
+
+  <form action="/sissors">
+      <input type='submit' value='Sissors'>
+  </form>
+
+
+</body>
+</html>
