@@ -1,9 +1,13 @@
-*mic_css presents:*
-
-**Rock Paper Scissors**
-Nikesh Sunfish
+**mic_css presents:**
+Rock Paper Scissors NIKESH SUNFISH
 ===================
 [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
+
+Next steps:
+* Improve feature tests
+* Fix Capybara weapon selection error
+* Improve sign in page design
+* Add weapon images
 
 Icons:
 * Rock icon from: http://games-helper.com/think-game-answers/chapter-21/
