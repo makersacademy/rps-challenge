@@ -2,9 +2,9 @@
 
 class Game
 
-  # attr_reader :type
+  attr_reader :player_1, :player_2
 
-  ACTIONS = [:rock, :paper, :scissors, :lizzard, :spock]
+  # ACTIONS = [:rock, :paper, :scissors, :lizzard, :spock]
   RULES = {
     rock: {rock: :draw, paper: :lose, scissors: :win, lizzard: :win, spock: :lose},
     paper: {rock: :win, paper: :draw, scissors: :lose, lizzard: :lose, spock: :win},
@@ -13,20 +13,13 @@ class Game
     spock: {rock: :win, paper: :lose, scissors: :win, lizzard: :lose, spock: :draw}
   }
 
-  def initialize(p1, p2)
-    @players = [p1, p2]
+  def initialize(session)
+    @player_1 = session["player_1"]
+    @player_2 = session["player_2"]
   end
 
-  def player_1
-    @players.first
-  end
-
-  def player_2
-    @players.last
-  end
-
-  def result(p1, p2)
-    RULES[p1][p2]
+  def result
+    RULES[player_1.move][player_2.move]
   end
 
 end

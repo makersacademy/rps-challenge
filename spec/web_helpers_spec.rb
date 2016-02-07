@@ -9,6 +9,6 @@
 def sign_in_and_play_sheldon
   visit('/')
   click_button "Play Sheldon"
-  fill_in :player_1, with: 'Player1'
+  fill_in :name_1, with: 'Player1'
   click_button 'Submit'
 end

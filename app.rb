@@ -21,9 +21,8 @@ class RPS < Sinatra::Base
   # end
 
   post '/names1' do
-    @player_1 = Player.new(params[:player_1])
-    # @player_2 = Player.new("CPU", true)
-    $game = Game.new(@player_1, Sheldon.new)
+    session[:player_1] = Player.new(params[:name_1])
+    session[:player_2] = Sheldon.new
     redirect '/play'
   end
 
@@ -35,23 +34,11 @@ class RPS < Sinatra::Base
   # end
 
   get '/play' do
-    # $game.switch_turn
-    @game = $game
+    @game = Game.new(session)
     erb(:play)
   end
 
-  get '/rock' do
-
-    redirect '/play'
-  end
-
-  get '/paper' do
-
-    redirect '/play'
-  end
-
-  get '/sissors' do
-
+  post '/play' do
     redirect '/play'
   end
 

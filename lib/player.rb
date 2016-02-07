@@ -7,7 +7,7 @@ attr_reader :name
   end
 
   def move(action)
-    raise 'Not an allowed action' unless Game::ACTIONS.include? action
+    raise 'Not an allowed action' unless Sheldon::ACTIONS.include? action
     action
   end
 
