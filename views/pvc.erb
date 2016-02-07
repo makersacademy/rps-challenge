@@ -8,7 +8,7 @@
 
     <% if $game.nil? %>
 
-      <h1>Enter your name<h2>
+      <h1>Enter your name:<h2>
       <form action="/pvc_name" method="post">
         <input type="text" name="player_name" required>
         <input type="submit" value="Enter">
@@ -18,9 +18,9 @@
 
       <% if $game.player1.choice.nil? %>
 
-        <p> <%= "Hiya #{$game.player1.name.capitalize}.
+        <p><span> <%= "Hiya #{$game.player1.name.capitalize}.
           Choose your weapon!" %>
-        </p>
+        </span></p>
 
         <div class="weapons">
         <form action="/pvc_choice" method="post">
@@ -30,9 +30,12 @@
           <input src="/images/lizard.jpg"  type="image" name="choice" value='Lizard'>
           <input src="/images/spock.jpg" type="image" name="choice" value='Spock'>
         </form>
-      </div>
+        </div>
 
       <% else %>
+
+        <div class="outcome">
+
         <p>
           <%= "#{$game.player1.name.capitalize} choses
           #{$game.player1.choice}." %>
@@ -60,7 +63,10 @@
           </a>
         <% end %>
       <% end %>
+
+    </div> <!-- end outcome -->
+
     <% end %>
-    </div>
+  </div> <!-- end centered -->
   </body>
 </html>

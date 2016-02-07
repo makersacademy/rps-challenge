@@ -6,8 +6,6 @@ require './lib/player'
 
 # missing features:
 # best of 3
-# multiplayer
-# styling
 
 
 class RPSApp < Sinatra::Base

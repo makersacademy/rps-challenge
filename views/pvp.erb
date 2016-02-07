@@ -19,31 +19,38 @@
 
       <% if $game.player1.choice.nil? %>
 
-        <p> <%= "Choose your weapon, #{$game.player1.name.capitalize}!" %>
-        </p>
+        <p><span> <%= "Choose your weapon, #{$game.player1.name.capitalize}!" %>
+        </span></p>
 
+        <div class="weapons">
         <form action="/pvp_choice" method="post">
-          <input type="submit" name="choice" value='Rock'>
-          <input type="submit" name="choice" value='Paper'>
-          <input type="submit" name="choice" value='Scissors'>
-          <input type="submit" name="choice" value='Lizard'>
-          <input type="submit" name="choice" value='Spock'>
+          <input src="/images/rock.jpg"  type="image" name="choice" value='Rock'>
+          <input src="/images/paper.jpg" type="image" name="choice" value='Paper'>
+          <input src="/images/scissors.jpg"  type="image" name="choice" value='Scissors'>
+          <input src="/images/lizard.jpg"  type="image" name="choice" value='Lizard'>
+          <input src="/images/spock.jpg" type="image" name="choice" value='Spock'>
         </form>
+        </div>
 
       <% elsif $game.player2.choice.nil? %>
 
-        <p> <%= "Choose your weapon, #{$game.player2.name.capitalize}!" %>
-        </p>
+        <p><span> <%= "Choose your weapon, #{$game.player2.name.capitalize}!" %>
+        </span></p>
 
+        <div class="weapons">
         <form action="/pvp_choice" method="post">
-          <input type="submit" name="choice" value='Rock'>
-          <input type="submit" name="choice" value='Paper'>
-          <input type="submit" name="choice" value='Scissors'>
-          <input type="submit" name="choice" value='Lizard'>
-          <input type="submit" name="choice" value='Spock'>
+          <input src="/images/rock.jpg"  type="image" name="choice" value='Rock'>
+          <input src="/images/paper.jpg" type="image" name="choice" value='Paper'>
+          <input src="/images/scissors.jpg"  type="image" name="choice" value='Scissors'>
+          <input src="/images/lizard.jpg"  type="image" name="choice" value='Lizard'>
+          <input src="/images/spock.jpg" type="image" name="choice" value='Spock'>
         </form>
+        </div>
 
       <% else %>
+
+        <div class="outcome">
+
         <p>
           <%= "#{$game.player1.name.capitalize} choses
           #{$game.player1.choice}." %>
@@ -64,7 +71,10 @@
           <button type="button">Play again</button>
         </a>
       <% end %>
+
+      </div> <!-- end outcome -->
+
     <% end %>
-    </div>
+  </div> <!-- end centered -->
   </body>
 </html>
