@@ -1,4 +1,7 @@
 <h1>Result page</h1>
-<h2>Player1: <%= @player1_name %>'s choice is <%= @player1_choice.capitalize%></h2>
-<h2>Player2: <%= @player2_name %>'s choice is <%= @player2_choice.capitalize%></h2>
-<h2><%= @player1_name %> WON</h2>
+<h2>Player1: <%= @game.player1.name %>'s choice is <%= @game.player1.player_choice.capitalize%></h2>
+<h2 class="second_player">Player2: <%= @game.player2.name %>'s choice is <%= @game.player2.player_choice.capitalize%></h2>
+<h2><%=@game.result%></h2>
+<form action="/play_again" method="post">
+  <input type="submit" value="Play Again">
+</form>
