@@ -19,4 +19,8 @@ class Player
     @selection = :scissors
   end
 
+  def reset
+    @selection == nil
+  end 
+
 end

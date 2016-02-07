@@ -35,7 +35,10 @@ class RPSGame < Sinatra::Base
   end
 
   get '/summary' do
+    $game.ai_chooses
     @player = $game.player
+    @machine = $game.ai
+    @winner = $game.winner
     erb :summary
   end
 

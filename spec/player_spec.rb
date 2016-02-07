@@ -23,5 +23,5 @@ describe Player do
     it '-> lets a player choose scissors' do
       expect{player.choose_scissors}.to change{player.selection}.from(nil).to(:scissors)
     end
-  end 
+  end
 end
