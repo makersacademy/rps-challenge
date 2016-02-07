@@ -1,13 +1,8 @@
 require 'spec_helper'
 require 'web_helpers'
-require 'capybara/dsl'
-require 'selenium-webdriver'
+
 
 feature 'US1 - Player can register their name' do
-  before do
-    include Capybara::DSL
-    Capybara.default_driver = :selenium
-  end
 
   scenario 'Allows player to input name' do
     expect(sign_in_and_play_vs_CPU)
@@ -15,7 +10,7 @@ feature 'US1 - Player can register their name' do
 end
 
 feature 'US2 - Player can play a Cpu of Rock, Paper' do
-  feature 'Player picks Rock' do
+  context 'Player picks Rock' do
     before do
       sign_in_and_play_vs_CPU
       choose 'Rock'
@@ -106,7 +101,7 @@ feature 'US2 - Player can play a Cpu of Rock, Paper' do
 end
 
 feature 'Bonus 1 - Allows for 2 players to play' do
-  scenario 'Runs through a multiplayer session' do
+  scenario 'with standard rules' do
     sign_in_and_play_2_players
     choose 'Rock'
     click_button 'Select'
@@ -116,13 +111,21 @@ feature 'Bonus 1 - Allows for 2 players to play' do
   end
 end
 
-
 feature 'Bonus 2 - Extended Rules' do
-  scenario 'Runs through an extended rule single player game' do
+  scenario 'extended rule single player game' do
     allow_any_instance_of(Cpu).to receive(:choice).and_return("Scissors")
     sign_in_and_play_vs_CPU_extended
     choose 'Spock'
     click_button 'Select'
     expect(page).to have_content 'a win for Bob! Spock beats Scissors.'    
+  end
+
+  scenario 'multiplayer game' do
+    sign_in_and_play_2_players_extended
+    choose 'Spock'
+    click_button 'Select'
+    choose 'Lizard'
+    click_button 'Select'
+    expect(page).to have_content 'a win for John! Lizard beats Spock.'
   end
 end

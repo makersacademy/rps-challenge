@@ -26,3 +26,14 @@ def sign_in_and_play_vs_CPU_extended
   click_button 'Submit'
   click_link "Let's Play!"
 end
+
+def sign_in_and_play_2_players_extended
+  visit '/'
+  choose 'Human vs. Human'
+  choose 'Extended Rules'
+  click_button 'Submit'
+  fill_in 'Player_1_Name', with: 'Bob'
+  fill_in 'Player_2_Name', with: 'John'
+  click_button 'Submit'
+  click_link "Let's Play!"
+end
