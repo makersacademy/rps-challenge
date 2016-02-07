@@ -1,23 +1,25 @@
 class Player
-  attr_reader :choice, :name
+  attr_reader :name
 
-  CHOICE_VALUE_PAIRS = {'Rock' => 1,
-                        'Paper' => 2,
-                        'Scissors' => 3,
-                        'Spock' => 4,
-                        'Lizard' => 5}
+  WEAPONS = {'Rock' => 1,
+            'Paper' => 2,
+            'Scissors' => 3,
+            'Spock' => 4,
+            'Lizard' => 5}
 
   def initialize(selection=0, name='Computer')
      selection == 0 ? @choice = auto_choose : @choice = selection_hash(selection)
      @name = name
   end
 
-
+  def choice
+    @choice.dup
+  end
 
   private
 
   def selection_hash(selection)
-    CHOICE_VALUE_PAIRS.select {|key, value| key == selection }
+    WEAPONS.select {|key, value| key == selection }
   end
 
   def random_number
@@ -26,11 +28,7 @@ class Player
 
   def auto_choose
     number = random_number
-    CHOICE_VALUE_PAIRS.select {|key, value| value == number }
-  end
-
-  def choice_test
-    @choice.keys.pop
+    WEAPONS.select {|key, value| value == number }
   end
 
 end

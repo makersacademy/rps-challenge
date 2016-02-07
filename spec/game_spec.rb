@@ -28,8 +28,6 @@ describe Game do
       expect(game_two.winner).to eq(player_four)
     end
 
-
-
     context 'both players pick the same choice' do
       let(:player_three){double(:player_three, choice: {"Rock" => 1}, name: 'Bob')}
       subject(:game){described_class.new(player_one, player_three)}
@@ -48,7 +46,7 @@ describe Game do
 
     it 'returns a string confirming the winner' do
       game.fight
-      expect(game.result). to eq "Paper beats Rock!, #{game.winner.name} has won!"
+      expect(game.result). to eq "Paper beats Rock, #{game.winner.name} has won!"
     end
 
     context 'both players pick the same choice' do

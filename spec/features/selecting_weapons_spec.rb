@@ -18,7 +18,7 @@ feature 'a player can select from options to play' do
     expect(page).to have_content('You selected Scissors')
   end
 
-  scenario 'the opponemt is invited to select a choice' do
+  scenario 'the opponent is invited to select a choice' do
     sign_in_and_choose_computer
     click_button('Scissors')
     expect(page).to have_content("Now your opponent will choose!")

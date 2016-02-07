@@ -10,16 +10,10 @@ class Game
   end
 
   def fight
-    difference = choice_value_diff % 5
-    if difference == 0
-      @draw = true
-    elsif difference.odd?
-      declare_winner(player_two)
-      declare_loser(player_one)
-    else
-      declare_winner(player_one)
-      declare_loser(player_two)
-    end
+    difference = choice_value_diff % weapons_hash_length
+    @draw = true if difference == 0
+    declare_result(player_two, player_one) if difference.odd?
+    declare_result(player_one, player_two) if difference.even? && difference != 0
   end
 
   def draw?
@@ -29,8 +23,6 @@ class Game
   def result
     draw? ? drawing_string : winning_string
   end
-
-
 
   private
 
@@ -46,20 +38,21 @@ class Game
     player.choice.keys.pop
   end
 
-  def declare_winner(player)
-    @winner = player
-  end
-
-  def declare_loser(player)
-    @loser = player
+  def declare_result(winner, loser)
+    @winner = winner
+    @loser = loser
   end
 
   def winning_string
-    "#{player_choice(@winner)} beats #{player_choice(@loser)}!, #{@winner.name} has won!"
+    "#{player_choice(@winner)} beats #{player_choice(@loser)}, #{@winner.name} has won!"
   end
 
   def drawing_string
     "It's a draw, you both chose #{player_choice(@player_one)}"
+  end
+
+  def weapons_hash_length
+    Player::WEAPONS.length
   end
 
 

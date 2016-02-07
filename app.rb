@@ -45,8 +45,8 @@ class RPS < Sinatra::Base
   end
 
   post '/pick_option' do
-    @play_mode = session['Play_mode']
     session['choice'] = params["choice"]
+    @play_mode = session['Play_mode']
     @name = session['Name']
     @choice = session['choice']
     $player_one = Player.new(@choice, @name)

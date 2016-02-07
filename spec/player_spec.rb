@@ -16,7 +16,7 @@ describe Player do
     end
 
     it 'assigns the choice a value' do
-      expect(player.choice).to have_value(Player::CHOICE_VALUE_PAIRS['Rock'])
+      expect(player.choice).to have_value(Player::WEAPONS['Rock'])
     end
 
     context 'the player is a computer' do
@@ -30,7 +30,7 @@ describe Player do
       it 'calls itself computer' do
         expect(player_2.name).to eq('Computer')
       end
-      
+
     end
 
   end
