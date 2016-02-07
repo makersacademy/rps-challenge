@@ -1,5 +1,5 @@
-<h3>You play: <%= @choice %></h3>
-<h3>Computer plays: <%= @computer_choice %></h3>
+<h3>You play: <%= @choice.capitalize %></h3>
+<h3>Computer plays: <%= @computer_choice.capitalize %></h3>
 <% if @winner == @game.player %>
   <h1><%= @game.players_name %> wins! </h1>
 <% elsif @winner == "Computer" %>

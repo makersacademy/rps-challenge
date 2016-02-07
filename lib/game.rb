@@ -1,10 +1,16 @@
+require_relative 'computer.rb'
+
 class Game
   attr_reader :player
   
-  def initialize(player, player2 = "Computer")
+  def initialize(player, computer = Computer.new)
     @player = player
-    @player2 = player2
-    @options = ["Rock", "Paper", "Scissors"]
+    @computer = computer
+    @outcomes = { rock: [:lizard, :scissors],
+              paper: [:rock, :spock],
+              scissors: [:paper, :lizard],
+              lizard: [:paper, :spock],
+              spock: [:rock, :scissors] }
   end
   
   def players_name
@@ -21,34 +27,18 @@ class Game
   
   def winner
     calculate_winner(@computers_choice, @player_choice)
+    @winner
   end
   
   private
   
   def choose
-    @options.sample
+    @computer.choose
   end
   
   def calculate_winner(computer, player)
     return @winner = "Draw" if computer == player
-    computer_wins?(computer, player) ? @winner = @player2 : @winner = @player
+    @outcomes[computer].include?(player) ? @winner = "Computer" : @winner = @player
   end
   
-  def rock_beats_scissors?(computer, player)
-    computer == "Rock" && player == "Scissors"
-  end
-  
-  def paper_beats_rock?(computer, player)
-    computer == "Paper" && player == "Rock"
-  end
-  
-  def scissors_beat_paper?(computer, player)
-    computer == "Scissors" && player == "Paper"
-  end
-  
-  def computer_wins?(computer, player)
-    return true if rock_beats_scissors?(computer, player)
-    return true if paper_beats_rock?(computer, player)
-    return true if scissors_beat_paper?(computer, player)
-  end
-end
+ end

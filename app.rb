@@ -9,24 +9,9 @@ class RPS < Sinatra::Base
     erb(:index)
   end
   
-  get '/single' do
-    erb(:single)
-  end
-  
-  get '/multiplayer' do
-    erb(:multiplayer)
-  end
-  
   post '/name' do
     player = Player.new(params[:name].capitalize)
     session['game'] = Game.new(player)
-    redirect '/play'
-  end
-  
-  post '/multiplayer_name' do
-    player = Player.new(params[:player1].capitalize)
-    player2 ||= Player.new(params[:player2].capitalize)
-    $game = Game.new(player,player2)
     redirect '/play'
   end
   
@@ -38,7 +23,7 @@ class RPS < Sinatra::Base
   get '/game' do
     @game = session['game']
     @computer_choice = @game.computers_choice
-    @choice = @game.players_choice(params[:choice])
+    @choice = @game.players_choice(params[:choice].to_sym)
     @winner = @game.winner
     erb(:game)
   end
