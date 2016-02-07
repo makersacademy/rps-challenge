@@ -6,6 +6,12 @@
 body {
   font-family: arial;
   font-size: 18px;
+  background: black url('../images/rps.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-shadow: white 1px 1px;
 }
 
 #index {
@@ -14,7 +20,6 @@ body {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 40px;
-  text-align: center;
 }
 
 /*Form*/
