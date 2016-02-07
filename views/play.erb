@@ -1,4 +1,4 @@
-<h2> Hi <%= @name1%>! Play ROCK, PAPER, SCISSORS! </h2>
+<h2> Hi <%=$game.player_name%>! Play ROCK, PAPER, SCISSORS! </h2>
 
 <div>
 
@@ -6,8 +6,9 @@
 
 <h3> To play, select rock, paper or scissors </h3>
 
-<form action='/play'
-<input>  <input type='submit' value='rock'></input>
+<form action="/play" method="post">
+
+<input type='submit' value='rock'></input>
 
 <input type='submit' value='paper'></input>
 

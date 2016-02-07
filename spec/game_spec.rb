@@ -2,7 +2,8 @@ require 'game'
 
 describe Game do
 
-  subject(:game) { described_class.new }
+  subject(:game) { described_class.new(player1) }
+  let(:player1) {double :player1}
   PLAY_OPTIONS = ["rock", "paper", "scissors"]
 
   describe 'initialize'do
@@ -22,8 +23,8 @@ end
 
   describe 'draw' do
       it 'returns true if computer choice matches players' do
-        user_choice = "paper"
-        cpu_choice = "paper"
+        allow(player1).to receive(:user_choice).and_return("paper")
+        allow(game).to receive(:cpu_choice).and_return"paper"
         expect(game.draw?).to eq true
       end
   end

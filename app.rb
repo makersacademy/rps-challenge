@@ -13,16 +13,22 @@ class RPS < Sinatra::Base
   post '/names' do
     @name1 = params[:name1]
     session[:name1] = params[:name1]
+    $game = Game.new(Player.new(params[:name1]))
     redirect '/play'
   end
 
   get '/play' do
-    @name1 = session[:name1]
+    $game
     erb(:play)
   end
 
-  get 'game_over' do
-    
+  post '/play' do
+    $game.player_choice(params[:user_choice])
+    # need help with bringing in model and view
+    redirect '/game_over'
+  end
+
+  get '/game_over' do
     erb(:game_over)
   end
 
