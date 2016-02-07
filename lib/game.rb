@@ -1,4 +1,5 @@
-require 'bot'
+require_relative 'bot'
+require_relative 'player'
 
 class Game
   WEAPONS = [:rock, :paper, :scissors, :nikesh, :sunfish]
@@ -6,12 +7,12 @@ class Game
   attr_reader  :multiplayer
   alias_method :multiplayer?, :multiplayer
 
-  def self.single_player(player_1)
-    new(player_1, Bot.new)
+  def self.single_player(player_1_name)
+    new(Player.new(player_1_name), Bot.new)
   end
 
-  def self.multi_player(player_1, player_2)
-    new(player_1, player_2, true)
+  def self.multi_player(player_1_name, player_2_name)
+    new(Player.new(player_1_name), Player.new(player_2_name), true)
   end
 
   def initialize(player_1, player_2, multiplayer = false)

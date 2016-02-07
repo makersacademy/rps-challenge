@@ -25,19 +25,18 @@
     </p>
   </section>
   <section class="sign_in">
-    <% if @players == 2 %>
+    <% if @players == 1 %>
+      <form action="/players" method="post">
+        <label for="player_1">Player 1:</label>
+        <input type="text" name="player_1" />
+        <input type="submit" value="Go!" />
+      </form>
+    <% elsif @players == 2 %>
       <form action="/players" method="post">
         <label for="player_1">Player 1:</label>
         <input type="text" name="player_1" />
         <label for="player_2">Player 2:</label>
         <input type="text" name="player_2" />
-        <input type="submit" value="Go!" />
-      </form>
-    <% end %>
-    <% if @players == 1 %>
-      <form action="/players" method="post">
-        <label for="player_1">Player 1:</label>
-        <input type="text" name="player_1" />
         <input type="submit" value="Go!" />
       </form>
     <% end %>

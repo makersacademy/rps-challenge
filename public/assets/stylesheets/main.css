@@ -93,3 +93,33 @@ body {
 .sub-title h4 {
 	font-size: 32px;
 }
+
+.header {
+	position: fixed;
+	display: flex;
+	height: 100px;
+	width: 100%;
+	padding: 1em;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);;
+}
+
+.header section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.logo {
+	width: 10%;
+	font-size: 28px;
+}
+
+.scoreboard {
+	width: 80%;
+	font-size: 40px;
+}
+
+.exit-button {
+	width: 10%;
+}

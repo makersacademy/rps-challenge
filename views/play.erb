@@ -3,6 +3,11 @@
     rps::NS
   </section>
   <section class="scoreboard">
-    <!-- <h1><%= @game.player(1).name %></h1> -->
+    <%= @game.player(1).name %>
+    vs.
+    <%= @game.player(2).name %>
+  </section>
+  <section class="exit-button">
+    <a href="/"><i class="fa fa-times fa-2x"></i></a>
   </section>
 </header>

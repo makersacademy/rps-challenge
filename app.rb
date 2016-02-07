@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -29,6 +30,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = session[:game]
+    erb :play
   end
 
   # start the server if ruby file executed directly
