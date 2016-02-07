@@ -21,7 +21,7 @@ end
 
 feature 'play rock, paper, scissors' do
   scenario 'a player can win a game of rps. - player = rock, computer stumped to choose scissors' do
-    allow($game).to receive(:computer_weapon).and_return("scissors")
+    allow_any_instance_of(Game).to receive(:computer_weapon).and_return('scissors')
     sign_in_and_play
     choose('rock')
     click_button 'FIGHT!'
@@ -29,7 +29,7 @@ feature 'play rock, paper, scissors' do
   end
 
   scenario 'a player can loose a game of rps. - player = scissors, computer stumped to choose rock' do
-    allow($game).to receive(:computer_weapon).and_return("scissors")
+    allow_any_instance_of(Game).to receive(:computer_weapon).and_return('rock')
     sign_in_and_play
     choose('scissors')
     click_button('FIGHT!')
@@ -37,10 +37,26 @@ feature 'play rock, paper, scissors' do
   end
 
   scenario 'a player can draw at a game of rps. - player = paper, computer stumped to choose paper' do
-    allow($game).to receive(:computer_weapon).and_return("scissors")
+    allow_any_instance_of(Game).to receive(:computer_weapon).and_return('paper')
     sign_in_and_play
     choose('paper')
     click_button('FIGHT!')
     expect(page).to have_content 'draw'
   end
+
+  feature 'show computer choice' do
+    scenario 'so a players can see what the computer has chosen there should be a page which shows this before the results' do
+      sign_in_and_play
+      #expect(page).to have_content 'BRODIR SIGHADDSSON'
+    end
+  end
+
+  feature 'play again' do
+    scenario 'once a player has reached the results page they should have the option to play agian without haveing to sign in' do
+      sign_in_and_play
+      finish_game
+      expect(page).to have_content 'BRODIR SIGHADDSSON'
+    end
+  end
+
 end

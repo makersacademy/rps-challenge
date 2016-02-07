@@ -11,9 +11,15 @@ get '/' do
   erb(:index)
 end
 
-post '/play' do
+post '/welcome' do
   p params
   $new_game = Game.new(params[:player_1_name])
+  erb(:names)
+end
+
+post '/play' do
+  p params
+  @new_game = $new_game
   erb(:play)
 end
 
