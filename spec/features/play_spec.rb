@@ -5,7 +5,7 @@
 
 feature 'playing a game' do
 
-  let(:random_option) { double :random_option }
+  RAND_HANDLER = 23498789
 
   before do
     visit('/')
@@ -31,8 +31,8 @@ feature 'playing a game' do
 # User Story 2.3
 # - the game will choose a random option
   scenario 'selection of AI displayed' do
+    srand(RAND_HANDLER)
     click_button 'Rock'
-    srand(543210)
     expect(page).to have_content 'AI plays Paper'
   end
 
