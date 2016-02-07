@@ -1,4 +1,4 @@
-Rock, paper, scissors - A web-app that allows you to play rock, paper, scissors: V1.0
+Rock, paper, scissors - A web-app that allows you to play rock, paper, scissors: V1.0 
 
 Author: Mat Drake
 
