@@ -38,7 +38,7 @@ Select an option to play:
 ![Dropbox](https://www.dropbox.com/s/xw82hnocmw614vc/Screenshot%202016-02-07%2011.11.12.png?dl=0)
 
 See the outcome of the game and choose to play again
-![Dropbox](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?dl=0)
+![Dropbox](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?raw=1)
 
 Build Status
 ------------
