@@ -2,12 +2,12 @@ require './lib/player.rb'
 
 class Game
 
-ROCK_RULES = {:scissors => :win, 
-:paper => :lose, :rock => :draw}
-PAPER_RULES = {:scissors => :lose,
-:paper => :draw, :rock => :win}
-SCISSORS_RULES = {:scissors => :draw, 
-:paper => :win, :rock => :lose}
+ROCK_RULES = {scissors: :win, 
+paper: :lose, rock: :draw}
+PAPER_RULES = {scissors: :lose,
+paper: :draw, rock: :win}
+SCISSORS_RULES = {scissors: :draw, 
+paper: :win, rock: :lose}
 
 attr_reader :weapons, :player
 
@@ -31,7 +31,7 @@ attr_reader :weapons, :player
 	end
 
 
-private 
+	private 
 
 	def player_choice
 	player.selection
