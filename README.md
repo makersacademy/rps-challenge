@@ -1,3 +1,6 @@
+![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
+
+![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)
 
 Rock, Paper, Scissors
 =====================
@@ -39,9 +42,3 @@ Select an option to play:
 
 See the outcome of the game and choose to play again
 ![Dropbox](https://www.dropbox.com/s/9xk131v77vv0t4h/Screenshot%202016-02-07%2011.11.18.png?raw=1)
-
-Build Status
-------------
-![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
-
-![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)
