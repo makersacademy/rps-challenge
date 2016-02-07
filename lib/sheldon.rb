@@ -8,8 +8,12 @@ class Sheldon
     @name = "Sheldon"
   end
 
+  def set_move
+    @move = ACTIONS.sample
+  end
+
   def move
-    ACTIONS.sample
+    @move
   end
 
 end

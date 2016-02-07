@@ -6,9 +6,13 @@ attr_reader :name
     @name = name
   end
 
-  def move(action)
+  def set_move(action)
     raise 'Not an allowed action' unless Sheldon::ACTIONS.include? action
-    action
+    @action = action
+  end
+
+  def move
+    @action
   end
 
 end

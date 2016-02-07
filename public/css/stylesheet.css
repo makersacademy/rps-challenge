@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Fjalla One';
+  background: lightblue;
+}
+
+.results {
+  text-align: center;;
+  font-size: 12px;
+  font-family: 'Fjalla One';
+  color: yellow;
+}

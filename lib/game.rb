@@ -1,4 +1,5 @@
-# require_relative 'player'
+require_relative 'player'
+require_relative 'sheldon'
 
 class Game
 
@@ -16,9 +17,29 @@ class Game
   def initialize(session)
     @player_1 = session["player_1"]
     @player_2 = session["player_2"]
+    @no_players = session["no_players"]
   end
 
+  def completed?
+    player_1.move && player_2.move
+  end
+
+  def draw?
+    result == :draw
+  end
+
+  def win?
+    result == :win
+  end
+
+  def lose?
+    result == :lose
+  end
+
+  private
+
   def result
+    return false if player_1.move.nil? || player_2.move.nil?
     RULES[player_1.move][player_2.move]
   end
 

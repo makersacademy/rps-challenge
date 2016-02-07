@@ -12,15 +12,15 @@ describe Player do
 
   describe '#move' do
     it 'raises error if argument is not an allowed action' do
-      expect{player.move(:alt)}.to raise_error("Not an allowed action")
+      expect{player.set_move(:alt)}.to raise_error("Not an allowed action")
     end
 
     it 'accepts all allowed actions and returns their move' do
-      expect(player.move(:rock)).to eq :rock
-      expect(player.move(:paper)).to eq :paper
-      expect(player.move(:scissors)).to eq :scissors
-      expect(player.move(:lizzard)).to eq :lizzard
-      expect(player.move(:spock)).to eq :spock
+      expect(player.set_move(:rock)).to eq :rock
+      expect(player.set_move(:paper)).to eq :paper
+      expect(player.set_move(:scissors)).to eq :scissors
+      expect(player.set_move(:lizzard)).to eq :lizzard
+      expect(player.set_move(:spock)).to eq :spock
     end
   end
 
