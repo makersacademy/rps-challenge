@@ -16,8 +16,8 @@ class Rps < Sinatra::Base
 
   get '/game' do
     unless params[:choice].nil?
-      game = Game.new
-      result = game.play(params[:choice])
+      #game = Game.new
+      #result = game.play(params[:choice])
       computer = Weapons.new(['rock', 'paper', 'scissors'].sample)
       choice = Weapons.new(params[:choice])
       result = 'tied'
