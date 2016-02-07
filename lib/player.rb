@@ -19,7 +19,7 @@ class Player
   private
 
   def selection_hash(selection)
-    WEAPONS.select {|key, value| key == selection }
+    WEAPONS.select {|key, _value| key == selection }
   end
 
   def random_number
@@ -28,7 +28,7 @@ class Player
 
   def auto_choose
     number = random_number
-    WEAPONS.select {|key, value| value == number }
+    WEAPONS.select {|_key, value| value == number }
   end
 
 end

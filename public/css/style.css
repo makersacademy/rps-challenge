@@ -7,7 +7,6 @@ body{
   line-height: 1.6;
   text-align: center;
   background-color: #FFF;
-  margin-top: 150px;
 }
 
 header{
@@ -33,10 +32,13 @@ h1 {
   font-weight: 700;
 }
 
+h1:hover{
+  color: #B4EBCA
+}
+
 h2 {
   font-size: 100%;
 }
-
 
 input{
 	padding: 15px;
@@ -47,8 +49,8 @@ input{
 }
 
 input[type="text"]{
-  margin: 0 40px 0 40px
-  width: 70%
+  margin: 10px 25% 10px 25%;
+  width: 50%;
 }
 
 input[type="submit"]{
@@ -71,9 +73,4 @@ input:hover{
 
 .namesub{
   padding: 10px
-}
-
-img {
-  width: 50%;
-  display: inline;
 }
