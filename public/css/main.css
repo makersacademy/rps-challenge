@@ -8,8 +8,17 @@ h1 {
   font-size: 100px
 }
 
+footer {
+  text-align: center;
+  position:fixed;;
+  bottom: 20;
+  width: 100%;
+  height: 60px;
+}
+
 .page {
   text-align: center;
+  font-size: 30px;
 }
 
 .line {
@@ -17,4 +26,12 @@ h1 {
   height: 1px;
   background: #717171;
   border-bottom: 1px solid #313030;
+}
+
+#name_enter {
+  padding-top: 150px;
+}
+
+#result {
+  padding-top: 150px;
 }

@@ -1,13 +1,13 @@
-<section class="page">
+<section class="page" id="result">
   <br><br>
-  You chose <%= @game.player.player_weapon(@player_weapon) %>
+  You chose <%= @game.player.player_weapon(@player_weapon) %>...
   <br><br>
-  Computer chose <%= @game.computer.choose_weapon %>
+  Computer chose <%= @game.computer.choose_weapon %>...
   <br><br>
-  <%= @result %>
+  You <%= @result %>!
 
   <br><br>
   <form action="/play">
-    <input type="submit" name="play_again" value="Play Again">
+    <input class="btn btn-success" type="submit" name="play_again" value="Play Again">
   </form>
 </section>
