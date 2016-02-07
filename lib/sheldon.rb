@@ -9,11 +9,15 @@ class Sheldon
   end
 
   def set_move
-    @move = ACTIONS.sample
+    @action = ACTIONS.sample
   end
 
   def move
-    @move
+    @action
+  end
+
+  def reset
+    @action = nil
   end
 
 end

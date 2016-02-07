@@ -45,12 +45,18 @@ class RPS < Sinatra::Base
   #   erb(:play2)
   # end
 
-  post '/play' do
+  post '/turn' do
     @game = session[:game]
     @action = params[:action].downcase.to_sym
     @game.turn.set_move(@action)
     @game.switch
     @game.player_2.set_move if @game.no_players==1
+    redirect '/play'
+  end
+
+  get '/reset' do
+    @game = session[:game]
+    @game.reset
     redirect '/play'
   end
 

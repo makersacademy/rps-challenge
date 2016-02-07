@@ -41,6 +41,12 @@ class Game
     result == :lose
   end
 
+  def reset
+    player_1.reset
+    player_2.reset
+    @turn = player_1
+  end
+
   private
 
   def result

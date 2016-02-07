@@ -6,40 +6,40 @@
 </head>
 
 <body>
-
-  <h1> <%=@game.player_1.name%> </h1><h3>vs.</h3><h1> <%=@game.player_2.name%> </h1>
+  <h1>Rock - Paper - Scissors - Lizzard - Spock</h1>
+  <h2> <%=@game.player_1.name%> <span class="smaller">vs.</span> <%=@game.player_2.name%> </h2>
 
   <section class="pick">
   <% unless @game.completed? %>
     <h3><%= @game.turn.name %> time to make your move...</h3>
 
     <% if @game.no_players==1 %>
-      <form action="/play" method="POST">
-          <input type='submit' value='Rock' name='action' id='rock'>
-          <input type='submit' value='Paper' name='action'>
-          <input type='submit' value='Scissors' name='action'>
-          <input type='submit' value='Lizzard' name='action'>
-          <input type='submit' value='Spock' name='action'>
+      <form action="/turn" method="POST">
+          <input type='submit' value='Rock' name='action' class='rock'>
+          <input type='submit' value='Paper' name='action' class="paper">
+          <input type='submit' value='Scissors' name='action' class="scissors">
+          <input type='submit' value='Lizzard' name='action' class="lizzard">
+          <input type='submit' value='Spock' name='action' class="spock">
       </form>
     <% end %>
 
     <% if @game.no_players==2 && @game.turn==@game.player_1 %>
-      <form action="/play" method="POST">
-          <input type='submit' value='Rock' name='action'>
-          <input type='submit' value='Paper' name='action'>
-          <input type='submit' value='Scissors' name='action'>
-          <input type='submit' value='Lizzard' name='action'>
-          <input type='submit' value='Spock' name='action'>
+      <form action="/turn" method="POST">
+        <input type='submit' value='Rock' name='action' class='rock'>
+        <input type='submit' value='Paper' name='action' class="paper">
+        <input type='submit' value='Scissors' name='action' class="scissors">
+        <input type='submit' value='Lizzard' name='action' class="lizzard">
+        <input type='submit' value='Spock' name='action' class="spock">
       </form>
     <% end %>
 
     <% if @game.no_players == 2 && @game.turn==@game.player_2 %>
-      <form action="/play" method="POST">
-          <input type='submit' value='Rock' name='action'>
-          <input type='submit' value='Paper' name='action'>
-          <input type='submit' value='Scissors' name='action'>
-          <input type='submit' value='Lizzard' name='action'>
-          <input type='submit' value='Spock' name='action'>
+      <form action="/turn" method="POST">
+        <input type='submit' value='Rock' name='action' class='rock'>
+        <input type='submit' value='Paper' name='action' class="paper">
+        <input type='submit' value='Scissors' name='action' class="scissors">
+        <input type='submit' value='Lizzard' name='action' class="lizzard">
+        <input type='submit' value='Spock' name='action' class="spock">
       </form>
     <% end %>
   <% end %>
@@ -48,9 +48,10 @@
 
   <section class='results'>
     <% if @game.completed? %>
-      <%= @game.player_1.name %> played <%= @game.player_1.move %> and
-      <%= @game.player_2.name %> played <%= @game.player_2.move %>
+      <span class='moves'><%= @game.player_1.name %> played <%= @game.player_1.move %> and
+      <%= @game.player_2.name %> played <%= @game.player_2.move %> </span>
       <p>
+      <span class="blink">
       <% if @game.draw? %>
         It's a draw...
       <% elsif @game.win? %>
@@ -59,10 +60,15 @@
         <%= @game.player_2.name %> wins!
       <% end %>
       <p>
-        <form action="/">
-          <input type='submit' value='Play again'>
-        </form>
-      <% end %>
+      <form action="/reset">
+        <input type='submit' value='Play again'>
+      </form>
+      <form action="/">
+        <input type='submit' value='New players'>
+      </form>
+      </span>
+    <% end %>
+
   </section>
 
 

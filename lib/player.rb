@@ -15,4 +15,8 @@ attr_reader :name
     @action
   end
 
+  def reset
+    @action = nil
+  end
+
 end

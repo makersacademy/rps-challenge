@@ -6,16 +6,110 @@ body {
 }
 
 .results {
-  text-align: center;;
-  font-size: 12px;
+  text-align: center;
   font-family: 'Fjalla One';
-  color: yellow;
+}
+
+.smaller {
+  font-size: 10px;
+}
+
+.moves {
+  font-size: 15px;
+  color: darkblue;
 }
 
 .rock {
-background:url(./app/assets/rock.png);
-background-repeat: no-repeat;
-width:40px;
-height:40px;
-border: 0;
+  background:url("../img/rock.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  text-align: bottom;
+}
+
+.paper {
+  background:url("../img/paper.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  text-align: bottom;
+}
+
+.scissors {
+  background:url("../img/scissors.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  text-align: bottom;
+}
+
+.lizzard {
+  background:url("../img/lizzard.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  text-align: bottom;
+}
+
+.spock {
+  background:url("../img/spock.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  text-align: bottom;
+}
+
+.blink {
+  -webkit-animation: blink .75s linear infinite;
+  -moz-animation: blink .75s linear infinite;
+  -ms-animation: blink .75s linear infinite;
+  -o-animation: blink .75s linear infinite;
+  animation: blink .75s linear infinite;
+  font-size: 25px;
+  color: yellow;
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
 }
