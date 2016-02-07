@@ -1,0 +1,26 @@
+body {
+  padding-top: 20px;
+  width: 1200px;
+  margin: auto;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: #B82E00;
+  margin-bottom: 0;
+}
+
+.centered {
+  margin: auto;
+  text-align: center;
+}
+
+#mode img {
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.weapons input:hover {
+  opacity: 50%;
+}
