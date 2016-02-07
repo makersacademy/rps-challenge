@@ -56,11 +56,40 @@ table {
 }
 
 body {
-	background-color: rgb(2, 170, 100);
+	background-color: rgb(20, 175, 110);
+	font-family: "consolas", monospace;
 }
 
 .content {
-  position: relative;
-  max-width: 800px;
+  /*position: relative;*/
+	margin-top: 100px;
+  max-width: 900px;
   margin: 0 auto;
+	text-align: center;
+}
+
+.title {
+	margin-bottom: 20px;
+}
+
+.sub-title {
+	margin: 20px auto;
+}
+
+.main-title h1 {
+	font-size: 94px;
+	padding: 10px;
+}
+
+.main-title h2 {
+	font-size: 62px;
+}
+
+.sub-title h3 {
+	font-size: 36px;
+	padding: 5px;
+}
+
+.sub-title h4 {
+	font-size: 32px;
 }
