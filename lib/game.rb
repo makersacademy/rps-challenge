@@ -11,7 +11,7 @@ paper: :win, rock: :lose}
 
 attr_reader :weapons, :player
 
-	def initialize(player, player=Computer.new)
+	def initialize(player)
 		@player = player
 		@weapons = ["Rock", "Paper", "Scissors"]
 	end 
