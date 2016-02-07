@@ -1,0 +1,26 @@
+You chose <%= @game.player_1.weapon %>.
+<br>
+
+The computer chose <%= @game.player_2.weapon %>.
+
+<p>
+
+<% if @game.result == :win %>
+Congratulations, you won!
+<% end %>
+
+<% if @game.result == :draw %>
+It's a draw.
+<% end %>
+
+<% if @game.result == :lose %>
+Sorry, you lost.
+<% end %>
+
+<p>
+
+Do you want to play again?
+<br>
+<form action='/replay' method='get'>
+  <input type="submit" value="Let's play!">
+</form>
