@@ -26,4 +26,25 @@ feature 'Play rock/paper/scissors' do
     click_button 'rock'
     expect(page).to have_content 'Computer chose paper'
   end
+
+  scenario 'player can win' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+    sign_in_and_play
+    click_button 'scissors'
+    expect(page).to have_content 'Dave won!'
+  end
+
+  scenario 'player can lose' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+    sign_in_and_play
+    click_button 'rock'
+    expect(page).to have_content 'Computer won!'
+  end
+
+  scenario 'game can draw' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+    sign_in_and_play
+    click_button 'paper'
+    expect(page).to have_content 'It\'s a draw'
+  end
 end

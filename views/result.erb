@@ -1,2 +1,7 @@
-You chose <%= @player_weapon %>
-Computer chose <%= @computer_weapon %>
+<p>You chose <%= @game.player_weapon %></p>
+<p>Computer chose <%= @game.computer_weapon %></p>
+<h1><% if @game.winner %>
+  <%= @game.winner %> won!
+<% else %>
+  It's a draw
+<% end %></h1>
