@@ -1,14 +1,16 @@
-feature 'as a player, I would like to see my opponents weapon' do 
+feature 'as a player, I would like to play another player' do 
 
 
 	scenario 'select Rock' do 
 		allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
 	  visit('/')
-	  click_button('One Player')
+	  click_button('Two Player')
 	  fill_in('player_1', with: 'Russell')
+	  fill_in('player_1', with: 'Hayley')
 	  click_button('Submit')
 	  click_button('Rock') 
-	  expect(page).to have_content('The Computer selected Paper')
+	  click_button('Paper') 
+	  expect(page).to have_content('Player 2 wins !')
 	end
 
 end

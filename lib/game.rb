@@ -9,15 +9,20 @@ paper: :draw, rock: :win}
 SCISSORS_RULES = {scissors: :draw, 
 paper: :win, rock: :lose}
 
-attr_reader :weapons, :player
+attr_reader :weapons, :player, :player2
 
-	def initialize(player)
+	def initialize(player, player2=nil)
 		@player = player
+		@player2 = player2
 		@weapons = ["Rock", "Paper", "Scissors"]
 	end 
 
 	def opponent
- 	@opponent = weapons.sample
+		if @player2 == nil
+ 		@opponent = weapons.sample
+ 		else 
+ 		@opponent = @player2.selection
+ 		end
 	end
 
 	def result

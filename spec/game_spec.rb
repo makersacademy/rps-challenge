@@ -3,14 +3,11 @@ require 'game'
 describe Game do 
 let(:weapons){double(:weapons)}
 let(:player){double(:player)}
-subject(:game){described_class.new(player)}
+let(:player2){double(:player2)}
+subject(:game){described_class.new(player, player2=nil)}
 
  
-	it 'returns an array of weapons ' do
-	expect(game.weapons).to eq ["Rock", "Paper", "Scissors"]
-	end
-
-
+	
 	it 'returns an opponent' do
 	allow(game.weapons).to receive(:sample) {"Paper"}
 	expect(game.opponent).to eq "Paper"

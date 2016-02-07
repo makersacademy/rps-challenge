@@ -8,7 +8,7 @@
  		%>  
 
 <div>
-<center>You have choosen <%= @game.player.selection %><br>
+<center> <%= @player1 %> selected <%= @game.player.selection %><br>
 <img src= <%= @link %> /> </center>
 </div> 
 
@@ -24,10 +24,20 @@
 
 <div> 
 
-<center>Your opponent chose <%= @opponent %>:	<br>
+<center> <%= @player2 %> selected <%= @opponent %>:	<br>
 <img src= <%= @link2 %> /> <br>
 </center>
 
 </div>
 
-<center><h1> You <%= @game.result %>! </h2></center>
+
+
+ <% if @game.result == :win 
+ 	@result= "Player 1 wins"
+ 	elsif @game.result == :draw 
+ 	@result= "It's a draw"
+ 	elsif @game.result == :lose 
+ 	@result= "Player 2 wins"
+	end %>
+
+<center><h1>  <%= @result %> ! </h2></center>
