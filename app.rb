@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
   post '/rps' do
     @rps = params[:rps]
     player = $game.player1
-    player.send("sel_" + @rps)
+    player.select_rps(@rps.to_sym)
     redirect '/duel'
   end
 

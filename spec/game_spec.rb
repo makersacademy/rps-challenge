@@ -8,12 +8,12 @@ describe Game do
 
   before do
     allow(game).to receive(:reset) {nil}
-    allow(game).to receive(:random_rps) {"rock"}
+    allow(game).to receive(:random_rps) {:rock}
   end
 
   describe '#auto_choose' do
     it "sends a random rps to player class" do
-      expect(player2).to receive(:sel_rock)
+      expect(player2).to receive(:select_rps).with(:rock)
       game.auto_choose
     end
   end

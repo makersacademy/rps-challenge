@@ -10,7 +10,8 @@ class Game
 
   def auto_choose
     reset
-    @player2.send("sel_"+random_rps)
+    value = random_rps
+    @player2.select_rps(value)
   end
 
   def winner
@@ -21,20 +22,34 @@ class Game
 
   def select_winner
     return 0 if @player1.c_rps == @player2.c_rps
-    return @player1 if rock_to_scissors || paper_to_rock || scissors_to_paper
+    return @player1 if rock_to_other || paper_to_other || scissors_to_other ||
+                       lizard_to_other || spock_to_other
     @player2
   end
 
-  def rock_to_scissors
-    @player1.c_rps == :rock && @player2.c_rps == :scissors
+  def rock_to_other
+    @player1.c_rps == :rock && @player2.c_rps == :scissors ||
+    @player1.c_rps == :rock && @player2.c_rps == :lizard
   end
 
-  def paper_to_rock
-    @player1.c_rps == :paper && @player2.c_rps == :rock
+  def paper_to_other
+    @player1.c_rps == :paper && @player2.c_rps == :rock ||
+    @player1.c_rps == :paper && @player2.c_rps == :spock
   end
 
-  def scissors_to_paper
-    @player1.c_rps == :scissors && @player2.c_rps == :paper
+  def scissors_to_other
+    @player1.c_rps == :scissors && @player2.c_rps == :paper ||
+    @player1.c_rps == :scissors && @player2.c_rps == :lizard
+  end
+
+  def lizard_to_other
+    @player1.c_rps == :lizard && @player2.c_rps == :paper ||
+    @player1.c_rps == :lizard && @player2.c_rps == :spock
+  end
+
+  def spock_to_other
+    @player1.c_rps == :spock && @player2.c_rps == :scissors ||
+    @player1.c_rps == :spock && @player2.c_rps == :rock
   end
 
   def reset
@@ -42,7 +57,7 @@ class Game
   end
 
   def random_rps
-    ["rock","paper","scissors"].sample
+    [:rock, :paper, :scissors, :lizard, :spock].sample
   end
 
 end

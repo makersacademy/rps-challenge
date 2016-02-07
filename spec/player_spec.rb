@@ -7,21 +7,9 @@ describe Player do
   let(:paper) {double :paper}
   let(:scissors) {double :scissors}
 
-  describe '#sel_rock' do
-    it "sets current rps to rock" do
-      expect {player.sel_rock}.to change(player, :c_rps).from(nil).to(:rock)
-    end
-  end
-
-  describe '#sel_paper' do
-    it "sets current rps to paper" do
-      expect {player.sel_paper}.to change(player, :c_rps).from(nil).to(:paper)
-    end
-  end
-
-  describe '#sel_scissors' do
-    it "sets current rps to scissors" do
-      expect {player.sel_scissors}.to change(player, :c_rps).from(nil).to(:scissors)
+  describe '#select_rps' do
+    it "sets an rps for the player" do
+      expect {player.select_rps(rock)}.to change(player, :c_rps).from(nil).to(rock)
     end
   end
 

@@ -6,18 +6,10 @@ class Player
     @c_rps = nil
   end
 
-  def sel_rock
-    @c_rps = :rock
+  def select_rps(value)
+    @c_rps = value
   end
-
-  def sel_paper
-    @c_rps = :paper
-  end
-
-  def sel_scissors
-    @c_rps = :scissors
-  end
-
+  
   def reset
     @c_rps = nil
   end
