@@ -1,4 +1,3 @@
-require './app.rb'
 require './spec/spec_helper'
 
 # As a marketeer

@@ -1,5 +1,8 @@
 <%= @name %> - select an option:
+<p></p>
 
-Rock
-Paper
-Scissors
+<form action='/set_selection' method='post'>  
+  <input type='submit' name='player_selection' value='Rock'>
+  <input type='submit' name='player_selection' value='Paper'>
+  <input type='submit' name='player_selection' value='Scissors'>
+</form>
