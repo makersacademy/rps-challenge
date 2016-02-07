@@ -6,12 +6,6 @@ class Game
 
   WEAPONS = ['Rock', 'Paper', 'Scissors']
 
-  def game_winner
-    check_winner(result)
-  end
-
-  private
-
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
@@ -19,6 +13,12 @@ class Game
     ['Paper', 'Rock'],
     ['Rock', 'Scissors']]
   end
+
+  def game_winner
+    check_winner(result)
+  end
+
+  private
 
   def result
     @result = [@computer.weapon, @player.choice]
