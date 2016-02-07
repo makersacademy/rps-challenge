@@ -21,6 +21,16 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+Added bonus stories
+
+```
+Bonus level 1: Multiplayer
+Change the game so that two marketeers can play against each other ( yes there are two of them ).
+
+Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
+```
+
 Build Process
 -----
 
