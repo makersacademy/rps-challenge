@@ -3,3 +3,11 @@
 <div></div>
 <br></br>
 <h2> <%= @machine.name %> chose <%= @machine.selection %>
+
+<% if @winner == nil %>
+Game drawn
+<% else %>
+The Winner is <%= @winner %>
+<% end %>
+
+<a href="/play"><button>PLAY AGAIN!</button></a>

@@ -23,6 +23,8 @@ class Game
   def choose_winner
     if paper_v_rock || rock_v_scissors || scissors_v_paper
       @winner = @player.name
+    elsif @player.selection == @ai.selection
+      @winner = nil
     else
       @winner = @ai.name
     end

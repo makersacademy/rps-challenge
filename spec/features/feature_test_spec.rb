@@ -21,4 +21,4 @@ feature 'AI\'s turn' do
     choose_weapon
     expect(page).to have_content 'Computer chose'
   end
-end
+end 

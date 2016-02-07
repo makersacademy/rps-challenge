@@ -2,7 +2,7 @@ class Player
 
   attr_reader :name, :selection
 
-  def initialize(name = 'computer')
+  def initialize(name = 'Computer')
     @name = name
     @selection = nil
   end
@@ -21,6 +21,6 @@ class Player
 
   def reset
     @selection == nil
-  end 
+  end
 
 end
