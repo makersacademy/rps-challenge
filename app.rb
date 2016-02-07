@@ -1,12 +1,9 @@
 require 'sinatra/base'
 require_relative 'lib/weapons'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
-
-  #def initialize
-  #  @game = Game.new
-  #end
 
   get '/' do
     erb :index
@@ -18,13 +15,14 @@ class Rps < Sinatra::Base
   end
 
   get '/game' do
-    if !params[:choice].nil?
-      #result = @game.play(params[:choice])
-      computer = Weapons.new(['rock', 'paper', 'scissors'].sample)
-      choice = Weapons.new(params[:choice])
-      result = 'tied'
-      result = 'won' if choice.beats?(computer)
-      result = 'lost' if computer.beats?(choice)
+    unless params[:choice].nil?
+      game = Game.new
+      result = game.play(params[:choice])
+      #computer = Weapons.new(['rock', 'paper', 'scissors'].sample)
+      #choice = Weapons.new(params[:choice])
+      #result = 'tied'
+      #result = 'won' if choice.beats?(computer)
+      #result = 'lost' if computer.beats?(choice)
       session[:result] = "The result is .... You #{result}"
     end
     erb :play

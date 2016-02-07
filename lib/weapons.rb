@@ -10,8 +10,6 @@ class Weapons
     other.type == RULES[@type]
   end
 
-  private
-
   RULES = { rock: :scissors,
           paper: :rock,
           scissors: :paper }
