@@ -14,13 +14,13 @@ feature 'Enter name' do
       sign_in_and_play
       click_button('ROCK')
       expect(page).to have_content 'YOU CHOSE ROCK'
-      #allow(comp).to receive(:response).and_return('PAPER')
       expect(page).to have_content 'COMPUTER CHOSE: '
     end
 
-    # scenario 'display winner' do
-    #   sign_in_and_play
-    #   click_button('ROCK')
-    #   expect(page).to have_content 'YOU WIN' || 'YOU LOSE'
-    #end
+    scenario 'PLAY AGAIN' do
+      sign_in_and_play
+      click_button('ROCK')
+      click_link("AGAIN")
+      expect(page).to have_content 'CHOOSE YOUR WEAPON'
+    end
 end
