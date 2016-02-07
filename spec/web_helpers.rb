@@ -6,6 +6,7 @@ def sign_in_and_play
 end
 
 def finish_game
-  click_button 'FIGHT!'
+  click_button 'DO YOUR WORST!'
+  click_button 'Results!'
   click_button "Play again?"
 end

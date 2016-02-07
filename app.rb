@@ -23,12 +23,18 @@ post '/play' do
   erb(:play)
 end
 
-
-post '/results' do
+post '/comp_turn' do
   p params
   @new_game = $new_game
   @new_game.choose_weapon(params[:weapon_select])
   @new_game.computer_choose_weapon
+  erb(:computer)
+end
+
+
+post '/results' do
+  p params
+  @new_game = $new_game
   @new_game.who_wins
   erb(:end_game)
 end
