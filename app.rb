@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -12,8 +13,8 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @name = $name
-    @game = Game.new
+    $game = Game.new($name)
+    @game = $game
     erb(:play)
   end
 
@@ -25,7 +26,8 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @choice_you = $choice_you
-#    game.test(@choice_you)
+    @game = $game
+    @game.choose_mine
     erb(:result)
   end
 
