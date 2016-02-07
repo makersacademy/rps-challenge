@@ -89,5 +89,18 @@ describe Player do
         player_instance.result
       end
     end
+    describe '#opponent_weapon' do
+
+      before do
+        allow(turn_klass).to receive(:new).and_return(dummy_turn)
+        player_instance.new_turn(weapon_choice)
+        allow(dummy_turn).to receive(:p2_weapon)
+      end
+
+      it 'retrieves player 2\'s weapon choice for the turn' do
+        expect(dummy_turn).to receive(:p2_weapon)
+        player_instance.opponent_weapon
+      end
+    end
   end
 end

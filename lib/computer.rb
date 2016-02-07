@@ -8,4 +8,8 @@ attr_reader :weapon
     @weapon = WEAPONS.sample
   end
 
+  # def choose_weapon
+  #   WEAPONS.sample
+  # end
+
 end
