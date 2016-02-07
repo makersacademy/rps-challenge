@@ -1,12 +1,10 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(player_1, computer)}
-  # let(:player_1) {double (:player, name: 'player 1')}
+  subject(:game) {described_class.new(player_1, player_2)}
   let(:player_1) { double(:player, name: 'player 1')}
+  let(:player_2) {double :player_2}
 
-  # let(:player).to_receive(:name).and_return("Zeshan")
-  let(:computer) {double :computer}
   it 'initializes with a player injected' do
     expect(game.player_1).to eq player_1
   end
@@ -15,18 +13,18 @@ describe Game do
     expect(game.winner).to eq nil
   end
 
-  it 'initializes with a computer injected' do
-    expect(game.computer).to eq computer
+  it 'initializes with a second player injected' do
+    expect(game.player_2).to eq player_2
   end
 
-  it 'decides winner using RPS logic method' do
-    game.rps_logic(:Rock, :Scissors)
-    expect(game.winner).to eq 'Player 1'
+  it 'decides winner using results method' do
+    game.result(:Rock, :Scissors)
+    expect(game.winner).to eq 'player 1'
   end
 
-  it 'displays the result' do
-    game.rps_logic(:Rock, :Scissors)
-    expect(game.result).to eq 'player 1 won!'
+  it 'returns winner as :Draw if the game is a draw' do
+    game.result(:Rock, :Rock)
+    expect(game.winner).to eq :Draw
   end
 
 

@@ -6,8 +6,4 @@ class Computer
     @choice = [:Rock, :Paper,:Scissors].sample
   end
 
-  # def rps_choice
-  #   @choice =
-  # end
-
 end
