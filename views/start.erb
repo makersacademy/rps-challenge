@@ -1,0 +1,13 @@
+<body bgcolor="#00ffff  ">
+<h1 style="color:yellow;size:10;text-align:center;">
+    Player name: <%= @player.name %>!!!
+</h1>
+
+<h2 style="color:yellow;size:8;text-align:center;">
+  Welcome <%= @player.name %>. Are you ready to play Rock/Paper/Scissors?
+</h2>
+<form action= "/play">
+  <input type="submit" value="Start game">
+</form>
+
+<img style='border: 3px double black' src='https://media.giphy.com/media/PS0VHHgFpZ9fO/giphy.gif'>

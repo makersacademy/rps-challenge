@@ -1,0 +1,14 @@
+<body bgcolor="#00ff80">
+<div>
+  <h2 style="color:red;size:10;text-align:center;">And so it begins, <%= @player.name %>!</h2>
+
+  <p style="color:red;size:10;text-align:center;"> Choose your weapon.</p>
+    <form action="/summary" method="post">
+      <input type="radio" name="choice" value="rock" required="true"> ROCK!<br>
+      <input type="radio" name="choice" value="paper"> PAPER!<br>
+      <input type="radio" name="choice" value="scissors"> SCISSORS!
+      <input type="submit" value="submit">
+    </form>
+</div>
+
+<img style='border: 3px double blue' src='https://media.giphy.com/media/6iMNwNs4cmSti/giphy.gif'>
