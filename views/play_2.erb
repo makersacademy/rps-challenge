@@ -1,0 +1,26 @@
+
+<main id="play">
+
+<div class="background-image"></div>
+
+<div class="small-10 small-centered columns">
+
+<h1><%= @game.player_one.name.upcase %> vs <%= @game.player_two.name.upcase %></h1>
+
+</div>
+
+<div class="small-10 small-centered columns">
+
+  <h3><%= @game.player_two.name %>: make your move...</h3>
+
+  <form id="moves" action='/player-one-move' method="post">
+      <input id="rock" class="move" type="submit" name="move" value="rock">
+      <input id="paper" class="move" type="submit" name="move" value="paper">
+      <input id="scissors" class="move" type="submit" name="move" value="scissors">
+      <input id="lizard" class="move" type="submit" name="move" value="lizard">
+      <input id="spock" class="move" type="submit" name="move" value="spock">
+  </form>
+
+</div>
+
+</main>

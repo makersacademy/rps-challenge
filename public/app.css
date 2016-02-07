@@ -5,7 +5,8 @@ html {
   padding: 0 0 0 0; }
 
 body {
-  height: 100%; }
+  height: 100%;
+  font-family: 'Old Standard TT', serif; }
 
 main {
   border: 5px solid #EDD75A;
@@ -21,10 +22,13 @@ main {
     display: block;
     height: 100%;
     width: 100%;
-    opacity: 0.5; }
+    opacity: 0.5;
+    background: no-repeat center bottom;
+    background-size: cover; }
   main h1, main h2, main h3 {
     text-align: center;
-    color: #EDD75A; }
+    color: #EDD75A;
+    font-family: 'Old Standard TT', serif; }
   main h1 {
     text-transform: uppercase;
     margin: 1.5em 0; }
@@ -33,18 +37,31 @@ main {
   main nav#new-game {
     text-align: center; }
     main nav#new-game input {
-      font-family: 'Old Standard TT', serif;
       display: inline-block;
       border: 3px solid #EDD75A;
       background: none;
       color: #fff;
-      font-size: 1.6em;
+      font-size: 1em;
       margin-bottom: 0.5em;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Old Standard TT', serif;
+      font-size: 1.4em; }
+      main nav#new-game input:hover {
+        background: #EDD75A;
+        color: #444444; }
 
 main#start .background-image {
-  background: url("img/start.jpg") no-repeat center bottom;
-  background-size: cover; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+  background-image: url("img/start.jpg"); }
 main#start h1 {
   text-transform: uppercase; }
 main#start form {
@@ -54,33 +71,48 @@ main#start form {
     font-size: 1.6em;
     color: #EDD75A; }
   main#start form input {
-    font-family: 'Old Standard TT', serif;
     display: inline-block;
     border: 3px solid #EDD75A;
     background: none;
     color: #fff;
     font-size: 1em;
-    margin: 0.5em 0;
-    text-align: center;
-    cursor: pointer; }
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Old Standard TT', serif; }
+    main#start form input:hover {
+      background: #EDD75A;
+      color: #444444; }
   main#start form input[type="text"] {
     background: #405059;
     padding: 0.2em 0;
     font-family: sans-serif;
-    cursor: default; }
+    cursor: default;
+    text-align: center; }
+    main#start form input[type="text"]:hover {
+      color: #fff; }
 
 main#play .background-image {
-  background: url("img/play.jpg") no-repeat center bottom;
-  background-size: cover; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+  background-image: url("img/play.jpg"); }
 main#play form#moves {
   width: 100%;
   margin: 3em 0;
   text-align: center; }
-  main#play form#moves .move {
+  main#play form#moves input.move {
     width: 130px;
     height: 130px;
     display: inline;
-    background: #EDD75A;
+    background: #EDD75A no-repeat center 10px;
+    background-size: 100px;
     border: 0;
     padding-top: 80px;
     margin: 0 1em;
@@ -88,51 +120,62 @@ main#play form#moves {
     font-family: 'Old Standard TT', serif;
     font-style: italic;
     border-radius: 120px;
-    border: 2px solid black;
+    border: 3px solid #444444;
+    color: #444444;
     transform: all 0.3s ease;
     outline: none;
-    cursor: pointer; }
-    main#play form#moves .move:focus {
+    cursor: pointer;
+    transition: all 0.2s ease; }
+    main#play form#moves input.move:hover {
+      color: #EDD75A;
+      background-color: #405059; }
+    main#play form#moves input.move:focus {
       outline: none; }
   main#play form#moves input#rock {
-    background: #EDD75A url("img/rock.svg") no-repeat center 10px;
-    background-size: 100px;
-    transition: background-color 0.2s ease; }
-    main#play form#moves input#rock:hover {
-      background-color: #405059; }
+    background-image: url("img/rock.svg"); }
   main#play form#moves input#paper {
-    background: #EDD75A url("img/paper.svg") no-repeat center 10px;
-    background-size: 100px;
-    transition: background-color 0.2s ease; }
-    main#play form#moves input#paper:hover {
-      background-color: #405059; }
+    background-image: url("img/paper.svg"); }
   main#play form#moves input#scissors {
-    background: #EDD75A url("img/scissors.svg") no-repeat center 10px;
-    background-size: 100px;
-    transition: background-color 0.2s ease; }
-    main#play form#moves input#scissors:hover {
-      background-color: #405059; }
+    background-image: url("img/scissors.svg"); }
   main#play form#moves input#lizard {
-    background: #EDD75A url("img/lizard.svg") no-repeat center 10px;
-    background-size: 100px;
-    transition: background-color 0.2s ease; }
-    main#play form#moves input#lizard:hover {
-      background-color: #405059; }
+    background-image: url("img/lizard.svg"); }
   main#play form#moves input#spock {
-    background: #EDD75A url("img/spock.svg") no-repeat center 10px;
-    background-size: 100px;
-    transition: background-color 0.2s ease; }
-    main#play form#moves input#spock:hover {
-      background-color: #405059; }
+    background-image: url("img/spock.svg"); }
 
 main#draw .background-image {
-  background: url("img/draw.jpg") no-repeat center bottom;
-  background-size: cover; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+  background-image: url("img/draw.jpg"); }
 
 main#lose .background-image {
-  background: url("img/lose.jpg") no-repeat center center;
-  background-size: cover; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+  background-image: url("img/lose.jpg");
+  background-position: center center; }
 
 main#win .background-image {
-  background: url("img/win.jpg") no-repeat center center;
-  background-size: cover; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+  background-image: url("img/win.jpg");
+  background-position: center center; }

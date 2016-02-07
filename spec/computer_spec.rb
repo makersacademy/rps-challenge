@@ -10,4 +10,11 @@ describe Computer do
     end
   end
 
+  describe 'move' do
+    it 'can select and store a random move' do
+
+    end
+  end
+
+
 end

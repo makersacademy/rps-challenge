@@ -7,9 +7,9 @@
 My Approach
 ------------
 
-I began by setting up a new Sinatra environment. I then test-built the app one route at a time, starting with a sign-in page and working my way to a set of result pages for wins, loses and draws.
+I began by setting up a new Sinatra environment. I then test-built the app one route at a time, starting with a sign-in page and working my way to a set of result pages for wins, losses and draws.
 
-The app uses classes for a Player and a Computer which are injected into a Game class which is used throughout the Controller.
+The app uses classes for a Player and a Computer which are injected into a Game class, which is then used throughout the Controller.
 
 I aimed to unit-test each method in my Model, and feature-test the app using Capybara.
 
@@ -47,3 +47,10 @@ Choose your move:
 See your result:
 
 ![Screenshot](docs/Screen-Shot-2016-02-06-at-18.56.30.jpg?dl=0)
+
+
+To Do
+-----
+
+* Replace the evil global variable
+* Add a two player option

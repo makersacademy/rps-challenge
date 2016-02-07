@@ -1,7 +1,34 @@
 
 $color_1: #EDD75A;
 $color_2: #405059;
-$color_3: black;
+$color_3: #444444;
+
+@mixin button {
+  display: inline-block;
+  border: 3px solid $color_1;
+  background: none;
+  color: #fff;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    background: $color_1;
+    color: $color_3;
+  }
+}
+
+@mixin background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: no-repeat center bottom;
+  background-size: cover;
+}
 
 html {
   height: 100%;
@@ -12,6 +39,7 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Old Standard TT', serif;
 }
 
 main {
@@ -22,17 +50,12 @@ main {
   background-color: $color_2;
   padding-top: 4em;
   .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 100%;
-    width: 100%;
-    opacity: 0.5;
+  @include background-image;
   }
   h1, h2, h3 {
     text-align: center;
-    color: $color_1
+    color: $color_1;
+    font-family: 'Old Standard TT', serif;
   }
   h1 {
     text-transform: uppercase;
@@ -44,14 +67,9 @@ main {
   nav#new-game {
     text-align: center;
     input {
+      @include button;
       font-family: 'Old Standard TT', serif;
-      display: inline-block;
-      border: 3px solid $color_1;
-      background: none;
-      color: #fff;
-      font-size: 1.6em;
-      margin-bottom: 0.5em;
-      cursor: pointer;
+      font-size: 1.4em;
     }
   }
 
@@ -59,8 +77,8 @@ main {
 
 main#start {
   .background-image {
-  background: url('img/start.jpg') no-repeat center bottom;
-  background-size: cover;
+    @include background-image;
+    background-image: url('img/start.jpg');
   }
   h1 {
     text-transform: uppercase;
@@ -73,39 +91,37 @@ main#start {
       color: $color_1;
     }
     input {
+      @include button;
       font-family: 'Old Standard TT', serif;
-      display: inline-block;
-      border: 3px solid $color_1;
-      background: none;
-      color: #fff;
-      font-size: 1em;
-      margin: 0.5em 0;
-      text-align: center;
-      cursor: pointer;
     }
     input[type="text"] {
       background: $color_2;
       padding: 0.2em 0;
       font-family: sans-serif;
       cursor: default;
+      text-align: center;
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }
 
 main#play {
   .background-image {
-  background: url('img/play.jpg') no-repeat center bottom;
-  background-size: cover;
+    @include background-image;
+    background-image: url('img/play.jpg');
   }
   form#moves {
     width: 100%;
     margin: 3em 0;
     text-align: center;
-    .move {
+    input.move {
       width: 130px;
       height: 130px;
       display: inline;
-      background: $color_1;
+      background: $color_1 no-repeat center 10px;
+      background-size: 100px;
       border: 0;
       padding-top: 80px;
       margin: 0 1em;
@@ -113,75 +129,58 @@ main#play {
       font-family: 'Old Standard TT', serif;
       font-style: italic;
       border-radius: 120px;
-      border: 2px solid $color_3;
+      border: 3px solid $color_3;
+      color: $color_3;
       transform: all 0.3s ease;
       outline: none;
       cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        color: $color_1;
+        background-color: $color_2;
+      }
       &:focus {
         outline: none;
       }
     }
     input#rock {
-      background: $color_1 url('img/rock.svg') no-repeat center 10px;
-      background-size: 100px;
-      transition: background-color 0.2s ease;
-      &:hover {
-        background-color: $color_2;
-      }
+      background-image: url('img/rock.svg');
     }
     input#paper {
-      background: $color_1 url('img/paper.svg') no-repeat center 10px;
-      background-size: 100px;
-      transition: background-color 0.2s ease;
-      &:hover {
-        background-color: $color_2;
-      }
+      background-image: url('img/paper.svg');
     }
     input#scissors {
-      background: $color_1 url('img/scissors.svg') no-repeat center 10px;
-      background-size: 100px;
-      transition: background-color 0.2s ease;
-      &:hover {
-        background-color: $color_2;
-      }
+      background-image: url('img/scissors.svg');
     }
     input#lizard {
-      background: $color_1 url('img/lizard.svg') no-repeat center 10px;
-      background-size: 100px;
-      transition: background-color 0.2s ease;
-      &:hover {
-        background-color: $color_2;
-      }
+      background-image: url('img/lizard.svg');
     }
     input#spock {
-      background: $color_1 url('img/spock.svg') no-repeat center 10px;
-      background-size: 100px;
-      transition: background-color 0.2s ease;
-      &:hover {
-        background-color: $color_2;
-      }
+      background-image: url('img/spock.svg');
     }
   }
 }
 
 main#draw {
   .background-image {
-  background: url('img/draw.jpg') no-repeat center bottom;
-  background-size: cover;
+    @include background-image;
+    background-image: url('img/draw.jpg');
   }
 }
 
 main#lose {
   .background-image {
-  background: url('img/lose.jpg') no-repeat center center;
-  background-size: cover;
+    @include background-image;
+    background-image: url('img/lose.jpg');
+    background-position: center center;
   }
 }
 
 
 main#win {
   .background-image {
-  background: url('img/win.jpg') no-repeat center center;
-  background-size: cover;
+    @include background-image;
+    background-image: url('img/win.jpg');
+    background-position: center center;
   }
 }

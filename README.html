@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="rpschallenge">RPS Challenge</h1>
+
+<p><a href="https://travis-ci.org/seanhawkridge/rps-challenge"><img src="https://travis-ci.org/seanhawkridge/rps-challenge.svg?branch=master" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/seanhawkridge/rps-challenge?branch=master"><img src="https://coveralls.io/repos/github/seanhawkridge/rps-challenge/badge.svg?branch=master" alt="Coverage Status" /></a></p>
+
+<h2 id="myapproach">My Approach</h2>
+
+<p>I began by setting up a new Sinatra environment. I then test-built the app one route at a time, starting with a sign-in page and working my way to a set of result pages for wins, losses and draws.</p>
+
+<p>The app uses classes for a Player and a Computer which are injected into a Game class, which is then used throughout the Controller.</p>
+
+<p>I aimed to unit-test each method in my Model, and feature-test the app using Capybara.</p>
+
+<p>I wrote some simple styles for the site, and used Foundation for some quick structure.</p>
+
+<p>Finally, I deployed the app to Heroku.</p>
+
+<h2 id="installingtheapp:">Installing the app:</h2>
+
+<ul>
+<li>Fork this repo</li>
+<li>Clone to your local environment</li>
+<li>run <code>bundle install</code></li>
+<li>run <code>rackup</code> or equivalent</li>
+</ul>
+
+<h2 id="onheroku">On Heroku</h2>
+
+<p>https://seanhawkridge-rps.herokuapp.com</p>
+
+<h2 id="playingthegame">Playing the game</h2>
+
+<p>Start by adding your name:</p>
+
+<figure>
+<img src="docs/Screen-Shot-2016-02-06-at-18.56.19.jpg?dl=0" alt="Screenshot" />
+<figcaption>Screenshot</figcaption>
+</figure>
+
+<p>Choose your move:</p>
+
+<figure>
+<img src="docs/Screen-Shot-2016-02-06-at-18.56.26.jpg?dl=0" alt="Screenshot" />
+<figcaption>Screenshot</figcaption>
+</figure>
+
+<p>See your result:</p>
+
+<figure>
+<img src="docs/Screen-Shot-2016-02-06-at-18.56.30.jpg?dl=0" alt="Screenshot" />
+<figcaption>Screenshot</figcaption>
+</figure>
+
+<h2 id="todo">To Do</h2>
+
+<ul>
+<li>Replace the evil global variable</li>
+<li>Add a two player option</li>
+</ul>
+
+</body>
+</html>
