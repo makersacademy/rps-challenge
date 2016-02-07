@@ -14,7 +14,7 @@ class Game
   end
 
   def provide_options
-    @options = rules.map{|x,y| x}
+    @options = rules.keys
   end
 
   def decide_result

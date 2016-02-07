@@ -3,12 +3,12 @@ feature "Player can make a choice" do
     make_choice_player1
     selector = find('h2.second_player').text
     case selector
-      when /Rock/
-        expect(page).to have_content('Result of the game is DRAW')
-      when /Paper/
-        expect(page).to have_content('Iryna LOST')
-      else
-        expect(page).to have_content('Iryna WON')
+    when /Rock/
+      expect(page).to have_content('Result of the game is DRAW')
+    when /Paper/
+      expect(page).to have_content('Iryna LOST')
+    else
+      expect(page).to have_content('Iryna WON')
     end
   end
 end

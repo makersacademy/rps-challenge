@@ -1,7 +1,30 @@
-<h1>GAME: Rock - Paper - Scissors</h1>
-<h2>Sing in to play!</h2>
-<form action="/names" method="post">
-  <label>Please enter your name: </label>
-  <input type="text" name="player1_name">
-  <input type="submit" value="Submit">
-</form>
+<style>
+  .container{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  input{
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  input[type=submit]{
+    background: none;
+    margin-right: 25px;
+  }
+</style>
+<div class="container">
+  <h1>GAME: Rock - Paper - Scissors</h1>
+  <h2>Sign in to play!</h2>
+  <form action="/names" method="post">
+    <label>Please enter your name: </label>
+    <input type="text" name="player1_name">
+    <input type="submit" value="Submit">
+  </form>
+</div>

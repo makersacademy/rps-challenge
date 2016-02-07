@@ -1,7 +1,23 @@
-<h1>Result page</h1>
-<h2>Player1: <%= @game.player1.name %>'s choice is <%= @game.player1.player_choice.capitalize%></h2>
-<h2 class="second_player">Player2: <%= @game.player2.name %>'s choice is <%= @game.player2.player_choice.capitalize%></h2>
-<h2><%=@game.result%></h2>
-<form action="/play_again" method="post">
-  <input type="submit" value="Play Again">
-</form>
+<style>
+  .container{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+  input[type=submit]{
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: none;
+    font-size: 14px;
+    margin-right: 25px;
+  }
+</style>
+<div class="container">
+  <h1>Result page</h1>
+  <h2>Player1: <%= @game.player1.name %>'s choice is <%= @game.player1.player_choice.capitalize%></h2>
+  <h2 class="second_player">Player2: <%= @game.player2.name %>'s choice is <%= @game.player2.player_choice.capitalize%></h2>
+  <h2><%=@game.result%></h2>
+  <form action="/play_again" method="post">
+    <input type="submit" value="Play Again">
+  </form>
+</div>
