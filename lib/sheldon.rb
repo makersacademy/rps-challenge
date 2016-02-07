@@ -8,7 +8,7 @@ class Sheldon
     @name = "Sheldon"
   end
 
-  def set_move
+  def make_move
     @action = ACTIONS.sample
   end
 

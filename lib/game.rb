@@ -2,10 +2,8 @@ require_relative 'player'
 require_relative 'sheldon'
 
 class Game
-
   attr_reader :player_1, :player_2, :no_players, :turn
 
-  # ACTIONS = [:rock, :paper, :scissors, :lizzard, :spock]
   RULES = {
     rock: {rock: :draw, paper: :lose, scissors: :win, lizzard: :win, spock: :lose},
     paper: {rock: :win, paper: :draw, scissors: :lose, lizzard: :lose, spock: :win},
@@ -55,18 +53,3 @@ class Game
   end
 
 end
-  #
-  # def initialize(player_1)
-  #   @players = player_1
-  #   # @turn = player_2
-  # end
-  #
-  # def player_1
-  #   @players
-  # end
-
-  # def player_2
-  #   @players.last
-  # end
-
-  # def sheldon_move

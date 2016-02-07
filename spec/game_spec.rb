@@ -4,9 +4,6 @@ describe Game do
   subject(:game) {described_class.new(session)}
   let(:session) {double :session }
   let(:session) { { "player_1" => player_1, "player_2" => player_2, "no_players" => no_players } }
-  # let(:session) {double :session}
-  # allow(session).to receive(:player_1).and_return(player_1)
-  # allow(session).to receive(:player_2).and_return(player_2)
   let(:player_1) {double :player_1}
   let(:player_2) {double :player_2}
   let(:no_players) {double :no_players}
