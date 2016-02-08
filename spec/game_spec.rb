@@ -1,21 +1,19 @@
 require 'game'
+require 'player'
+require 'computer'
 
 describe Game do 
 let(:weapons){double(:weapons)}
 let(:player){double(:player)}
 let(:player2){double(:player2)}
+let(:computer){double(:computer, :play => "Paper")}
 subject(:game){described_class.new(player, player2)}
 subject(:game2){described_class.new(player)}
 
  
-	it 'returns an array of weapons ' do
-	expect(game.weapons).to eq ["Rock", "Paper", "Scissors"]
-	end
-
-
-	it 'returns an opponent' do	
-	allow(game2.weapons).to receive(:sample) {"Paper"}
-	expect(game2.opponent).to eq "Paper"
+	it 'does not return an opponent for player 2 if computer selected' do	
+	expect(player2).to_not receive(:selection)
+	(game2.opponent)
 	end
 
 	it 'returns the winning result of the game rock vs scissors' do 

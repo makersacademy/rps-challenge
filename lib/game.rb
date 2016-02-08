@@ -1,4 +1,5 @@
 require './lib/player.rb'
+require './lib/computer.rb'
 
 class Game
 
@@ -8,18 +9,18 @@ PAPER_RULES = {scissors: :lose,
 paper: :draw, rock: :win}
 SCISSORS_RULES = {scissors: :draw, 
 paper: :win, rock: :lose}
+WEAPONS = ["Rock", "Paper", "Scissors"]
 
-attr_reader :weapons, :player, :player2
+attr_reader :player, :player2, :computer
 
-	def initialize(player, player2=nil)
+	def initialize(player, player2=Computer.new)
 		@player = player
 		@player2 = player2
-		@weapons = ["Rock", "Paper", "Scissors"]
 	end 
 
 	def opponent
-		if @player2.nil?
- 		@opponent = weapons.sample
+		if @player2.class == Computer
+ 		@opponent = @player2.play
  		else 
  		@opponent = @player2.selection
  		end
