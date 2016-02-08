@@ -1,0 +1,10 @@
+<h3>Your choice: <%= @choice_you %></h3>
+<h3>My choice  : <%= @game.choice_my %></h3>
+<h3>Result     : <%= @game.the_winner_is(@choice_you,@game.choice_my) %>
+</h3>
+<form action='/play_again'>
+<input type='submit' value='Play Again'>
+</form>
+<form action='/'>
+<input type='submit' value='Start New Game'>
+</form>

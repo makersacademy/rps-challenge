@@ -1,0 +1,19 @@
+<style>
+  h1, h3 {
+    text-align: center;
+  }
+</style>
+<h1>Dear</h1>
+(lights on)
+<h1><%= @game.name %></h1>
+(lights of)
+<h3>You are now in the exciting world of Rock, Paper, Scissors!</h3>
+<p>
+  Make your choice and submit!
+  <form action='/choice' method='post'>
+    <input type='radio' name='choice' value='Rock'>  Rock<br>
+    <input type='radio' name='choice' value='Paper'>  Paper<br>
+    <input type='radio' name='choice' value='Scissors'>  Scissors<br><br>
+    <input type='submit' value='Submit'>
+  </form>
+</p>
