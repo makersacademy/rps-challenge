@@ -35,7 +35,7 @@ How to play
 -----------
 
 Navigate to localhost:4567 and enter your name:
-![Dropbox](https://www.dropbox.com/s/7xgnflxnxd3wc6y/Screenshot%202016-02-07%2018.47.00.png?raw=1)
+![Dropbox](https://www.dropbox.com/s/kc0fuopg40tr7tk/Screenshot%202016-02-08%2019.12.23.png?raw=1)
 
 Select an option to play:
 ![Dropbox](https://www.dropbox.com/s/jlcfnx4mgblvghh/Screenshot%202016-02-07%2018.47.13.png?raw=1)

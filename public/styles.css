@@ -1,5 +1,5 @@
 body {
-  background: url('http://www.freewhd.com/wp-content/uploads/2014/01/rock-paper-scissors-14676.png') no-repeat left top;
+  background: url('http://www.freewhd.com/wp-content/uploads/2014/01/rock-paper-scissors-14676.png') no-repeat;
   background-size: 100%;
   font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
   color: #f6f6f6;
@@ -19,23 +19,16 @@ main {
   padding: 13px;
   top: 50%;
   left: 50%;
-  margin-top: -148px;
-  margin-left: -97px;
+  margin-top: -100px;
+  margin-left: -100px;
   width: 200px;
   height:  200px;
-}
-
-label {
-  font-weight: bold;
-  font-size: 1.4em;
-  margin-left: 10px;
 }
 
 input[type="text"] {
   height: 30px;
   width: 100%;
   background: transparent;
-  margin-top: 28px;
   margin-bottom: 10px;
   padding-left: 10px;
   border: none;
@@ -95,35 +88,26 @@ button {
 
 .rock {
   background: url(images/rock.svg) no-repeat;
-  float: left;
-  height: 40px;
-  width: 40px;
 }
 
 .paper {
   background: url(images/paper.svg) no-repeat;
-  float: left;
-  height: 40px;
-  width: 40px;
 }
 
 .scissors {
   background: url(images/scissors.svg) no-repeat;
-  float: left;
-  height: 40px;
-  width: 40px;
 }
 
 .lizard {
   background: url(images/lizard.svg) no-repeat;
-  float: left;
-  height: 40px;
-  width: 40px;
 }
 
 .spock {
   background: url(images/spock.svg) no-repeat;
-  float: left;
-  height: 40px;
-  width: 40px;
+}
+
+.button-icon {
+ float: left;
+ height: 40px;
+ width: 40px; 
 }

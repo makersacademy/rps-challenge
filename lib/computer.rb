@@ -1,5 +1,7 @@
+require_relative 'game.rb'
+
 class Computer
   def choose
-  [:rock, :paper, :scissors, :spock, :lizard].sample
+    Game::MOVES.sample
   end
 end

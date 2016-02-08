@@ -5,21 +5,32 @@
 
 <main class="options">
   <h2>Choose your option wisely</h2>
-  <a href='/game?choice=rock'>
-    <button class="option"><span class="rock"></span>Rock</button>
-  </a>
-  <a href='/game?choice=paper'>
-    <button class="option"><span class="paper"></span>Paper</button>
-  </a>
-  <a href='/game?choice=scissors'>
-  <button class="option"><span class="scissors"></span>Scissors</button>
-  </a>
-  <div class="bottom-row">
-    <a href='/game?choice=lizard'>
-      <button class="option"><span class="lizard"></span>Lizard</button>
-    </a>
-    <a href='/game?choice=spock'>
-      <button class="option"><span class="spock"></span>Spock</button>
-    </a>
-  </div>
-</section>
+  <form action='/game'>
+    <button class="option" type="submit" name="choice" value="rock">
+      <span class="rock button-icon"></span>
+      Rock
+    </button>
+    
+    <button class="option" type="submit" name="choice" value="paper">
+      <span class="paper button-icon"></span>
+      Paper
+    </button>
+    
+    <button class="option" type="submit" name="choice" value="scissors">
+      <span class="scissors button-icon"></span>
+      Scissors
+    </button>
+  
+    <div class="bottom-row">
+      <button class="option" type="submit" name="choice" value="lizard">
+        <span class="lizard button-icon"></span>
+        Lizard
+      </button>
+      
+      <button class="option" type="submit" name="choice" value="spock">
+        <span class="spock button-icon"></span>
+        Spock
+      </button>
+    </div>
+  </form>
+</main>

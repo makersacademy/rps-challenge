@@ -2,15 +2,16 @@ require_relative 'computer.rb'
 
 class Game
   attr_reader :player
-  
+  OUTCOMES = { rock: [:lizard, :scissors],
+            paper: [:rock, :spock],
+            scissors: [:paper, :lizard],
+            lizard: [:paper, :spock],
+            spock: [:rock, :scissors] }
+  MOVES = [:rock, :paper, :scissors, :spock, :lizard]
+            
   def initialize(player, computer = Computer.new)
     @player = player
     @computer = computer
-    @outcomes = { rock: [:lizard, :scissors],
-              paper: [:rock, :spock],
-              scissors: [:paper, :lizard],
-              lizard: [:paper, :spock],
-              spock: [:rock, :scissors] }
   end
   
   def players_name
@@ -38,7 +39,7 @@ class Game
   
   def calculate_winner(computer, player)
     return @winner = "Draw" if computer == player
-    @outcomes[computer].include?(player) ? @winner = "Computer" : @winner = @player
+    OUTCOMES[computer].include?(player) ? @winner = "Computer" : @winner = @player
   end
   
 end
