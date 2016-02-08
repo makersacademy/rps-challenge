@@ -8,12 +8,6 @@ For the third weekend challenge, I had to create a webb application that could b
 
 To use the web application, all you needed to do was enter your name in the given field and then choose one of five buttons (Rock, Paper, Scissors, Lizard, or Spock). This would then redirect you to a page giving you the result.
 
-![Screenshot 1](http://imgur.com/blEYh0D)
-
-![Screenshot 2](http://imgur.com/H7LI15q)
-
-![Screenshot 3](http://imgur.com/yR22gBG)
-
 If I had the time to make further modifications to the app, I would make it possible to play against another person, not just the computer. I would also like to add pictures.
 
 ------
