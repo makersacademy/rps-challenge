@@ -5,6 +5,9 @@ describe Game do
   let(:player_1) { double(:player_1, name: 'player 1', weapon: :rock) }
   let(:player_2) { double(:player_2, name: 'player 2', weapon: :paper) }
 
+  subject(:single_game) { described_class.new(player_1, player_nil) }
+  let(:player_nil) { double(:player_nil, name: nil) }
+
   describe '#player_1' do
     it 'returns player 1' do
       expect(game.player_1).to eq player_1
@@ -14,6 +17,10 @@ describe Game do
   describe '#player_2' do
     it 'returns player 2' do
       expect(game.player_2).to eq player_2
+    end
+
+    it 'creates a CpuPlayer if no player 2 on game creation' do
+      expect(single_game.player_2).to be_a(CpuPlayer)
     end
   end
 

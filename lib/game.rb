@@ -1,3 +1,5 @@
+require_relative 'cpu_player'
+
 # Game class
 class Game
   WEAPONS = [:rock, :paper, :scissors]
@@ -9,9 +11,10 @@ class Game
 
   attr_reader :p1_weapon, :p2_weapon, :turn
 
-  def initialize(player_1, player_2)
-    @players = [player_1, player_2]
-    @turn = player_1
+  def initialize(player1, player2)
+    player2 = CpuPlayer.new if player2.name.nil?
+    @players = [player1, player2]
+    @turn = player1
   end
 
   def player_1

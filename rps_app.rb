@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
-require './lib/cpu_player'
 
 # RPSApp class
 class RPSApp < Sinatra::Base
@@ -18,12 +17,6 @@ class RPSApp < Sinatra::Base
   end
 
   post '/names' do
-    name1 = params[:player_1_name]
-    session[:game] = Game.new(Player.new(name1), CpuPlayer.new)
-    redirect to '/play'
-  end
-
-  post '/names2' do
     name1 = params[:player_1_name]
     name2 = params[:player_2_name]
     session[:game] = Game.new(Player.new(name1), Player.new(name2))
