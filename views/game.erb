@@ -1,0 +1,15 @@
+<h1><%= @player_one_name %> vs. <%= @player_two_name %></h1>
+
+<p><%= @player_one_name %>, your options are <%= @rps_options.join(",") %></p>
+<p>
+<form action="/result" method="POST">
+  <label>Choose your weapon:</label>
+  <label for:"Rock">Rock</label>
+  <input id="Rock" type="radio" name="weapon" value="Rock"/><br>
+  <label for:"Paper">Paper</label>
+  <input id="Paper" type="radio" name="weapon" value="Paper"/><br>
+  <label for:"Scissors">Scissors</label>
+  <input id="Scissors" type="radio" name="weapon" value="Scissors"/><br>
+  <input type="submit" value="Ready">
+</form>
+</p>
