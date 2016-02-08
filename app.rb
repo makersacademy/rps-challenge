@@ -57,8 +57,7 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @game = $game
-    @game.result(@game.player_1.choice, @game.player_2.choice)
-    erb(:results)
+    erb(@game.result(@game.player_1.choice, @game.player_2.choice))
   end
 
   # start the server if ruby file executed directly

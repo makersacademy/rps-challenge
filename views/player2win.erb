@@ -1,0 +1,23 @@
+<div class="resultstext">
+  <h1> <%=@game.player_1.name%> chose <%=@game.player_1.choice %> </h1>
+  <h1> <%=@game.player_2.name%> chose <%=@game.player_2.choice%> </h1>
+  <h1> <%=@game.player_2.name%> wins! </h1>
+</div>
+
+<div class="resultsbuttons">
+  <div class="newplayer">
+
+    <form action="/" >
+      <input type="submit" value="New player?"/>
+    </form>
+
+  </div>
+
+  <div class="playagain">
+
+    <form action="/" >
+      <input type="submit" value="Play Again?"/>
+    </form>
+
+  </div>
+</div>

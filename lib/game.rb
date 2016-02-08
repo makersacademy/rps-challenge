@@ -22,6 +22,6 @@ class Game
     p1 = p1.to_sym
     p2 = p2.to_sym
     return @winner = :Draw if p1 == p2
-    WINNING_MOVES[p1].include?(p2) ? @winner = player_1.name : @winner = player_2.name
+    WINNING_MOVES[p1].include?(p2) ? @winner = :Player1win : @winner = :Player2win
   end
 end
