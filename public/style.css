@@ -1,7 +1,46 @@
-header { color: red;
+header {
+	     display: block;
+		 text-align: right;
+}
+
+h1 {
+	font-style: Times;
+	font-size: 28px;
+}
+
+h2 {
+	font-family: Comic, cursive, sans-serif;
 }
 
 body {
-	background-image: url("/images/rock-580.jpg");
+	background-image: url("/images/rpsls.jpg");
+	background-repeat: no-repeat;
 	background-color: lightblue;
+	background-size: 35%;
+}
+
+.choose {
+	text-align: right;
+	position: absolute;
+	right: 150px;
+	width: 300px;
+}
+
+.weapon {
+	position: absolute;
+	right: 150px;
+	top: 200px;
+}
+
+.message {
+	text-align: center;
+	position: absolute;
+	right: 350px;
+	top: 150px;
+}
+
+.button {
+	position: absolute;
+	top: 350px;
+	right:200px;
 }

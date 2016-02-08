@@ -1,8 +1,8 @@
-<div style='text-align: center; border: solid'> </h1> Round Finished! </h1>
-<h2 style='font-family: Comic Sans MS, cursive, sans-serif'> <span style='color: red'>Computer: </span> <%= @game.player_2 %> - <span style='color: green'><%= @player_1 %>: </span ><%= @choice %> </h2>
+<div class='message' </h1> Round Finished! </h1>
+<h2> <span style='color: red'>Computer: </span> <%= @game.player_2 %> - <span style='color: green'><%= @player_1 %>: </span ><%= @choice %> </h2>
 </div>
 
-<div style='text-align: center'>
+<div class='message'>
 
 <% if @game.result == 2 %>
 
@@ -20,7 +20,7 @@
 
 </div>
 
-<div style='text-align: center'>
+<div class='button'>
 
 <form action='/' method='get'>
 	<input type='submit' value='Play Again'>
