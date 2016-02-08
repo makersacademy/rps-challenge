@@ -24,19 +24,21 @@ $ ruby app/rps.rb
 
 navigate to http://localhost:4567/ on browser.
 
+```
+
 Screenshots:
 --------------
 
-![Start Screen]
+![Image of Start Screen]
 (http://i.imgur.com/JCIUOdv.png)
 
-![Login]
+![Image of Login]
 (http://i.imgur.com/ccIIHcW.png)
 
-![Weapon Selection]
+![Image of Weapon Selection]
 (http://i.imgur.com/HPqpWgP.png)
 
-![Game Result]
+![Image of Game Result]
 (http://i.imgur.com/xydnt5Y.png)
 
 
