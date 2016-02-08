@@ -1,0 +1,12 @@
+<%= session[:player_name] %>, you are registered!
+<br></br>
+<h2>Start playing!</h2>
+Pick your choice
+<br></br>
+<form action="/game" method="get">
+  <button name='choice' type='submit' value='rock'>Rock</button>
+  <button name='choice' type='submit' value='paper'>Paper</button>
+  <button name='choice' type='submit' value='scissors'>Scissors</button>
+</form>
+
+<%= session[:result] %>
