@@ -2,10 +2,11 @@ require './lib/player.rb'
 require './lib/computer.rb'
 
 class Game
+  WEAPONS = [:rock, :paper, :scissors]
 
   attr_reader :player, :computer
 
-  def initialize(player, computer)
+  def initialize(player = Player.new, computer = Computer.new)
     @player = player
     @computer = computer
   end

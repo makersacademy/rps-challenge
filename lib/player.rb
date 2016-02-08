@@ -9,14 +9,14 @@ class Player
   end
 
   def rock
-    @choice = :rock
+    @choice = Game::WEAPONS[0]
   end
 
   def paper
-    @choice = :paper
+    @choice = Game::WEAPONS[1]
   end
 
   def scissors
-    @choice = :scissors
+    @choice = Game::WEAPONS[2]
   end
 end

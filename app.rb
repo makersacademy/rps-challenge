@@ -10,9 +10,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player])
-    computer = Computer.new
-    $game = Game.new(player, computer)
+    $game = Game.new(Player.new(params[:player]))
     @game = $game
     redirect '/play'
   end
