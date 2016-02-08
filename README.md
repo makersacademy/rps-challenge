@@ -64,16 +64,16 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Screenshots
 
 ### Login page
-![Screenshot](/docs/playerlogin)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/playerlogin.png)
 
 ### Attack choice
-![Screenshot](/docs/attackchoice)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/attackchoice.png)
 
 ### Results
-![Screenshot](/docs/resultspage)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/resultspage.png)
 
 ### Multiplayer
-![Screenshot](/docs/multiplayerlogin)
-![Screenshot](/docs/player1choice)
-![Screenshot](/docs/player2choice)
-![Screenshot](/docs/multiplayerresults)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/multiplayerlogin.png)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/player1choice.png)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/player2choice.png)
+![Screenshot](https://raw.githubusercontent.com/ZeshanRasul/rps-challenge/master/docs/multiplayerresults.png)
