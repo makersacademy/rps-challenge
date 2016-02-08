@@ -3,11 +3,11 @@ require_relative 'computer'
 
 class Game
 
-  RULES = {
-  :rock     => {:rock => :draw, :paper => :paper, :scissors => :rock},
-  :paper    => {:rock => :paper, :paper => :draw, :scissors => :scissors},
-  :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
-}
+  RULES =   {
+  rock:     {rock: :draw, paper: :paper, scissors: :rock},
+  paper:    {rock: :paper, paper: :draw, scissors: :scissors},
+  scissors: {rock: :rock, paper: :scissors, scissors: :draw}
+            }
 
   attr_reader :player_1_choice, :player_2_choice, :final_result
 

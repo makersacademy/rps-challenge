@@ -27,27 +27,27 @@ class RPS < Sinatra::Base
   post '/two_player_names' do
     session[:player_one_name] = params['player_one_name']
     session[:player_two_name] = params['player_two_name']
-    @player_1 = Player.new(session[:player_one_name])
-    @player_2 = Player.new(session[:player_two_name])
+    @player_1 = session[:player_one_name]
+    @player_2 = session[:player_two_name]
     erb :set_up
   end
 
 
   get '/play_one_player' do
-    @player_1 = Player.new(session[:player_name])
+    @player_1 = session[:player_name]
     @player_2 = Computer.new
     erb :play_one
   end
 
   get '/play_two_players' do
-    @player_1 = Player.new(session[:player_one_name])
-    @player_2 = Player.new(session[:player_two_name])
+    @player_1 = session[:player_one_name]
+    @player_2 = session[:player_two_name]
     erb :player_one_choice
   end
 
   post '/player_two_choice' do
     session[:player_one_choice] = params['choice']
-    @player_2 = Player.new(session[:player_two_name])
+    @player_2 = session[:player_two_name]
     erb :player_two_choice
   end
 
@@ -56,8 +56,8 @@ class RPS < Sinatra::Base
     @player_1 = Player.new(session[:player_name])
     @player_2 = Computer.new
     @player_1.choose(params['choice'])
-    $game = Game.new(@player_1, @player_2)
-    $game.play
+    @game = Game.new(@player_1, @player_2)
+    @game.play
     erb :result
   end
 
@@ -66,8 +66,8 @@ class RPS < Sinatra::Base
     @player_2 = Player.new(session[:player_two_name])
     @player_1.choose(params['choice'])
     @player_2.choose(session[:player_one_choice])
-    $game = Game.new(@player_1, @player_2)
-    $game.play
+    @game = Game.new(@player_1, @player_2)
+    @game.play
     erb :result
   end
 

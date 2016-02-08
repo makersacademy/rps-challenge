@@ -20,7 +20,7 @@ feature "User storys => RPS" do
       expect(page).to have_content('Dave vs. The Computer')
     end
 
-      scenario "allow player to choose Rock" do
+    scenario "allow player to choose Rock" do
       sign_in_and_play
       click_button('rock')
       expect(page).to have_content('Dave chose rock')
@@ -55,10 +55,10 @@ feature "User storys => RPS" do
 
   describe 'Multiplayer' do
 
-      scenario "allow two players to enter names" do
+    scenario "allow two players to enter names" do
       sign_in_and_play_two
       expect(page).to have_content('Dave vs. Mike')
-  end
+    end
 
     scenario "declare a winner in two player mode" do
       full_set_up
