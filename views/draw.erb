@@ -5,12 +5,10 @@
 </head>
 <body>
 
-  <h1>This is a Heading</h1>
   <h2>It's a draw!</h2>
-  <p><%= @game.player_1.name %> chose <%= @game.p1_weapon %></p>
-  <p><%= @game.player_2.name %> chose <%= @game.p2_weapon %></p>
+  <%= @game.player_1.name %> chose <%= @game.p1_weapon.capitalize %> :: <%= @game.player_2.name %> chose <%= @game.p2_weapon.capitalize %>
 
-  <a href="/play">Next Round</a>
+  <p><a href="/play">Next Round</a></p>
 
 </body>
 </html>
