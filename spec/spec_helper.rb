@@ -12,3 +12,16 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+
+ENV['RACK_ENV'] = 'test'
+
+# require File.join(File.dirname(__FILE__), 'app.rb')
+require '/Users/hannahsmyth-osbourne/Documents/rps-challenge/app.rb'
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+
+Capybara.app = App
