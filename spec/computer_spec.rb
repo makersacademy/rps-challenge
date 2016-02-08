@@ -1,4 +1,4 @@
-require 'computer'
+require 'computer_turn'
 
 describe ComputerTurn do
   subject(:computer) {described_class.new}

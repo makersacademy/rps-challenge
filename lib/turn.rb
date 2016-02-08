@@ -1,4 +1,4 @@
-require_relative 'computer'
+require_relative 'computer_turn'
 
 
 class Turn

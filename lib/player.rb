@@ -1,5 +1,5 @@
 require_relative 'turn'
-require_relative 'computer'
+require_relative 'computer_turn'
 
 class Player
 

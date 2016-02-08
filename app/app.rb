@@ -34,8 +34,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    weapon_choice = params[:weapon_choice]
-    session_player.new_turn(weapon_choice)
+    session_player.new_turn(params[:weapon_choice])
     redirect '/the_choices'
   end
 

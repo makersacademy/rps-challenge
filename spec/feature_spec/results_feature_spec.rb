@@ -4,7 +4,7 @@ feature 'The player can see results' do
 
   before do
     sign_up
-    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    allow(ComputerTurn::WEAPONS).to receive(:sample).and_return(:scissors)
   end
 
   scenario 'The player loses' do
