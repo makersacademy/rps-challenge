@@ -1,7 +1,7 @@
 require 'sinatra/base'
 #require 'player'
 #require 'weapon'
-require 'AI'
+#require 'AI'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -32,6 +32,7 @@ class RPS < Sinatra::Base
     @player_name = $player.name
     @player_weapon = $weapon.type
     @ai_weapon = AI.new.weapon_choice
+    @result = Combat.new.resolve(@player_weapon, @ai_weapon)
     erb(:result)
   end
 
