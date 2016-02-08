@@ -32,6 +32,10 @@ $ ruby app/rps.rb
 navigate to http://localhost:4567/ on browser.
 ```
 
+#Screenshots
+
+(http://i.imgur.com/Tz4G6T2.png)
+
 ##Key concepts covered
 
 Working with Servers and Clients.  
