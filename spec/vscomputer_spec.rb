@@ -4,8 +4,9 @@
 
 # 	subject(:computerplayer){described_class.new(['ed' , 'rock'])}
 # 	it'return waiting for player when only one played' do
-#     allow(:computerplayer).to receive(:computer).and_return('Scissors')
-# 		expect(vsplayer.result).to eq 'ed wins!'
+#     expect(:computerplayer).to receive(:solution).and_return('Scissors')
+# 		expect(computerplayer.result).to eq 'ed wins!'
+    
 # 	end
 # end
 

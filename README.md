@@ -1,3 +1,13 @@
+Welcome to RPS! the Rock, Paper, Scissors online version!
+==========================================================
+
+`Introduce your name and select the vs player to play with a friend or vs computer to play with the computer :)`
+
+`If you are playing with your friend, you might need to wait for him to select his strategy!, only press the button `check` when you think your friend played and see who the winner is. The result of playing Vs Computer will be displayed straight away.`
+
+
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
