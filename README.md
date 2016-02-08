@@ -9,3 +9,14 @@ Index path gives players an opportunity to enter their name.
 Play path gives players an opportunity to choose an option.
 
 Result path displays results.
+
+Installation
+```
+$ git clone https://github.com/markcmhill/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+```
+To run on local host:
+```
+$ruby app.rb
+```
