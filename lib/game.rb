@@ -4,18 +4,23 @@ class Game
   def initialize(player,winner_klass)
     @player = player
     @winner_klass = winner_klass
+    @weapon = game_choice
   end
 
   def player_name
     @player.name
   end
 
-  def set_player_choice(choice)
-    @player.choice(choice)
+  def set_player_weapon(weapon)
+    @player.choice(weapon)
   end
 
-  def player_choice
-    @player.choice
+  def player_weapon
+    @player.weapon
+  end
+
+  def weapon
+    @weapon
   end
 
   def game_choice
@@ -28,8 +33,8 @@ class Game
     end
   end
 
-  def who_won(player_choice,game_choice)
-    @winner = @winner_klass.new(player_choice,game_choice)
+  def who_won(player_weapon=self.player_weapon,weapon=self.weapon)
+    @winner = @winner_klass.new(player_weapon,weapon)
     @winner.outcome
   end
 end

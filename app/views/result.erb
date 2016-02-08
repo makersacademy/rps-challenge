@@ -1,0 +1,23 @@
+<h1>
+  <%= @game.player_name %> chose <%= @game.player_weapon %>!
+</h1>
+
+<h1> The computer chose <%= @game.weapon %>! </h1>
+
+<% if @game.who_won == "A tie" %>
+
+  <h1> This game was a draw! </h1>
+
+<% elsif @game.who_won %>
+
+  <h1> <%= @game.player_name %> wins! </h1>
+
+<% else %>
+
+  <h1> The computer wins! </h1>
+
+<% end %>
+
+<form action = "/game">
+  <input type = "submit" value = "Play again?">
+</form>

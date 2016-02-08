@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'rack'
+require_relative "../lib/game.rb"
+require_relative "../lib/player.rb"
 
 class RockPaperScissorsGame < Sinatra::Base
   use Rack::Session::Pool, :expire_after => 2592000
@@ -27,11 +29,18 @@ class RockPaperScissorsGame < Sinatra::Base
 
   post '/result' do
     @game = session[:game]
-    @game.set_player_choice(params[:choice])
-    
+    @game.set_player_weapon(params[:Rock] ||
+      params[:Paper] ||
+      params[:Scissors] ||
+      params[:Spock] ||
+      params[:Lizard])
+    @game.who_won
+    session[:game] = @game
+    redirect '/result'
   end
 
   get '/result' do
+    @game = session[:game]
     erb :result
   end
   # Start the server if Ruby file executed directly

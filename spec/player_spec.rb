@@ -14,7 +14,8 @@ describe Player do
   context 'When the player chooses an option' do
     describe '#choice' do
       it 'stores the choice the player makes' do
-        expect(player.choice(game.player_choice)).to eq 'Lizard'
+        player.choice(game.player_choice)
+        expect(player.weapon).to eq 'Lizard'
       end
     end
   end
