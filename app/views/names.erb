@@ -1,0 +1,27 @@
+<html>
+<head>
+  <link href="/css/application.css" rel="stylesheet" type="text/css">
+  <title>Rock, Paper, Scissors, Spock, Lizard</title>
+</head>
+
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+<% if @number_of_players == "One" %>      #BOOLEAN, SWITCH
+  <h1> One player game </h1>
+<% elsif @number_of_players == "Two" %>
+  <h1> Two player game </h1>
+<% end %>
+
+
+<h1> Enter your name<% if @number_of_players == "Two" %>s<%end%> </h1>
+
+<form action='/names' method='post'>
+  <input type='text' name='player1_name' value='Player One'>
+    <% if @number_of_players == "Two" %>
+      <input type='text' name='player2_name' value ='Player Two'>
+    <%end%>
+  <input type='submit' value='Submit'>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+  background-color: #0069B2;
+  background-image: url(/images/background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right top;
+  text-align: center;
+  vertical-align: middle:
+  color: rgb(0, 51, 63);
+  font-family: Helvetica, Arial;
+}

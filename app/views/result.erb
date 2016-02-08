@@ -1,0 +1,29 @@
+<html>
+<head>
+  <link href="css/application.css" rel="stylesheet" type="text/css">
+  <title>Rock, Paper, Scissors, Spock, Lizard</title>
+</head>
+
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h1>
+    <%=@player1_name%> chose <%= @game.player1_choice.to_s.upcase %>!
+    <%= @player2_name || "Computer" %> chose <%= @game.player2_choice.to_s.upcase %>!
+  </h1>
+
+  <h2>
+    <% if @game.winner == :draw %>
+      This round is a draw...
+    <% elsif @game.winner == :win %>
+      <%=@player1_name%> wins!
+    <% elsif @game.winner == :lose %>
+      <%= @player2_name || "Computer" %> wins!
+    <% end %>
+  </h2>
+
+  <form action='/'>
+    <input type='submit' value='Play again?'>
+  </form>
+  
+</body>
+</html>

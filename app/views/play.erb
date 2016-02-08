@@ -1,0 +1,31 @@
+<html>
+<head>
+  <link href="css/application.css" rel="stylesheet" type="text/css">
+  <title>Rock, Paper, Scissors, Spock, Lizard</title>
+</head>
+
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h1>Welcome <%= @player1_name %><%= " & #{@player2_name}" if @number_of_players == "Two" %>. Get ready for an epic battle.</h1>
+
+  <h2>
+    <%if !!session[:p1_choice]%>
+      <%=@player2_name%>, make your choice!
+    <%else%>
+      <%=@player1_name%>, make your choice!
+    <%end%>
+  </h2>
+
+  <form action="result" method='post'>
+    <button type="submit" value="rock" name="player_choice">ROCK!</button>
+    <br>
+    <button type="submit" value="paper" name="player_choice">PAPER!</button>
+    <br>
+    <button type="submit" value="scissors" name="player_choice">SCISSORS!</button>
+    <br>
+    <button type="submit" value="spock" name="player_choice">SPOCK!</button>
+    <br>
+    <button type="submit" value="lizard" name="player_choice">LIZARD!</button>
+  </form>
+</body>
+</html>
