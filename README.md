@@ -1,17 +1,23 @@
 # Rock Paper Scissors Challenge - Week 3
 
-This is a program writen by Michael Collins. It allows you to enter your name, and then play a game of Rock, Paper, Scissors against the computer.
+This is a program writen by <a href="https://github.com/michaeljcollinsuk">Michael Collins</a>. It allows you to enter your name, and then play a game of Rock, Paper, Scissors against the computer.
 
-To run this program follow the commands in the command line:
+The user is asked to submit their name and are then asked to choose 'Rock', 'Paper' or 'Scissors'. The computer then selects a move at random and the winner is revealed.
+
+I followed a TDD approach when creating this program, using Rspec for unit tests and Capybara for feature tests.
+
+Technologies used: Sinatra.
+
+To run this program enter the following from the command line:
 
 ```
-$ https://github.com/michaeljcollinsuk/rps-challenge.git
+$ git clone https://github.com/michaeljcollinsuk/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ ruby app/rps_web.rb
 ```
 
-Then go to http://localhost:4567 in your browser.
+Visit http://localhost:4567 in your browser to play.
 
 
 
