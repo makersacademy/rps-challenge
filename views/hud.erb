@@ -1,0 +1,42 @@
+<container class="hud">
+  <section class="left-hud">
+    <div class="hud-content">
+      <% if @game.player(1).weapon.nil? %>
+        <section class="instructions">
+          Choose your weapon:
+        </section>
+        <form action="/player_1_choice" method="post">
+          <% Game::WEAPONS.each do |weapon| %>
+            <input type="submit" class="button" name="weapon" value="<%= weapon %>" />
+          <% end %>
+        </form>
+      <% elsif @game.multiplayer? %>
+        <section class="instructions">
+          Waiting for <%= @game.player(2).name %>...
+        </section>
+      <% end %>
+    </div>
+  </section>
+  <section class="right-hud">
+    <div class="hud-content">
+      <% if @game.player(1).weapon.nil? && @game.multiplayer? %>
+        <section class="instructions">
+          Waiting for <%= @game.player(1).name %>...
+        </section>
+      <% elsif @game.player(1).weapon.nil? && !@game.multiplayer? %>
+        <section class="instructions">
+          <%= @game.player(2).name %> is thinking...
+        </section>
+      <% else %>
+        <section class="instructions">
+          Choose your weapon:
+        </section>
+        <form action="/player_2_choice" method="post">
+          <% Game::WEAPONS.each do |weapon| %>
+            <input type="submit" class="button" name="weapon" value="<%= weapon %>" />
+          <% end %>
+        </form>
+      <% end %>
+    </div>
+  </section>
+</container>

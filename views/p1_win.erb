@@ -1,0 +1,20 @@
+<container class="hud">
+  <section class="left-hud">
+    <div class="hud-content">
+      <section class="instructions">
+        <%= @game.multiplayer? ? @game.player(1).name : 'You' %> won!
+        <br />
+        Weapon: <%= @game.player(1).weapon.type %>
+      </section>
+    </div>
+  </section>
+  <section class="right-hud">
+    <div class="hud-content">
+      <section class="instructions">
+        <%= @game.player(2).name %> lost :(
+        <br />
+        Weapon: <%= @game.player(2).weapon.type %>
+      </section>
+    </div>
+  </section>
+</container>
