@@ -1,7 +1,10 @@
-<h2><%= @player %></h2>
-<form action="/select" method="post">
-	<input type='radio' name='rps' value='rock'/>Rock </br>
-	<input type='radio' name='rps' value='paper'/>Paper </br>
-	<input type='radio' name='rps' value='scissors'/>Scissors </br>
-   	<input type="submit" value="Submit">
+<h2> Hi <%=@player %>! Select an option.</h2>
+
+<form action="/game" method="post">
+<label><h3> Vs computer!
+	<input type='radio' name='game' value='Vs Computer'></label><br>
+<label> Vs Player!
+	<input type='radio' name='game' value='Vs player'></label><h3><br>
+	</br>
+	<input type='submit' value='Submit'>
 </form> 

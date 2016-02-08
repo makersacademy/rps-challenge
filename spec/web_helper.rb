@@ -1,4 +1,4 @@
-def sin_in
+def sign_in
 	visit('/')
     fill_in :player, with: 'Edu'
     click_button 'Submit'
