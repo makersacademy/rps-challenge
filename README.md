@@ -2,6 +2,10 @@
 
  This is the Week 3 Rock Paper Scissors Lizard Spock challenge by Zeshan Rasul
 
+## Playing the game on Heroku
+
+The game is available to play at http://zeshanrasul-rps.herokuapp.com/.  
+
 ## Installation instructions
 
 To install the application on your local system, run the following commands in your command line.
