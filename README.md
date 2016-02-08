@@ -10,14 +10,14 @@ This code and README.md is prepared by Valentina Monetta at Makers Academy (Febr
 
 Requirements
 ------------
-This program is designed to be ran from the command line with Ruby and accessed through a web-browser
+This program is designed to be ran from the command line with Ruby and accessed through a web-browser. It is built on Sinatra and using Capybara/Rspec for testing.
 
 
 Instructions
 ------------
 You are able to play a game of 'Rock, paper, scissors' versus computer entering your name and pressing "Submit".
 To run the program, execute from the command line Ruby app.rb.
-Navigate then to 'localhost:4567' from a web-browser. Once loaded, you are able to enter your name and click on 'Submit'. Redirected in a new page, you will receive a message that confirm your registration and you will be able to start picking up your choice. The computer will then automatically select a choice confirming the winner.
+Navigate then to 'localhost:4567' from a web-browser. Once loaded, you are able to enter your name and click on 'Submit'. Redirected in a new page, you will receive a message that confirm your registration and you will to start picking up your choice. The computer will then automatically select a choice confirming the winner.
 
 
 
