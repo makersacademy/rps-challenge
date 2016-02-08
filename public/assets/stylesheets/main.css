@@ -76,15 +76,32 @@ button, .button {
 	cursor: pointer;
 }
 
+@keyframes fade-in {
+	from 	{color: rgb(11, 105, 65);}
+	to		{ color: white;}
+}
+
 .content {
-	margin-top: 100px;
   max-width: 900px;
   margin: 0 auto;
+	padding: 1em;
 	text-align: center;
 }
 
-.title {
-	margin-bottom: 20px;
+.content h3 {
+	padding: 1em;
+	font-weight: bold;
+}
+
+.intro {
+	max-width: 500px;
+	margin: 1em auto;
+}
+
+.intro p, .intro h3, .sub-title, .main-title h2,
+.main-title h3, .rules, .sign-in {
+	animation-name: fade-in;
+	animation-duration: 1s;
 }
 
 .sub-title {
@@ -101,12 +118,17 @@ button, .button {
 }
 
 .sub-title h3 {
+	font-weight: normal;
 	font-size: 36px;
 	padding: 5px;
 }
 
 .sub-title h4 {
-	font-size: 32px;
+	font-size: 28px;
+}
+
+.sign-in {
+	margin: 2em;
 }
 
 .header {
@@ -145,6 +167,7 @@ button, .button {
 	display: -webkit-flex;
 	display: flex;
 	height: 85vh;
+	text-align: center
 }
 
 .left-hud, .right-hud {
@@ -158,11 +181,6 @@ button, .button {
 
 .left-hud {
 	border-right: solid 2px rgba(0, 0, 0, 0.2);
-}
-
-.hud-content {
-	/*TODO: move up*/
-	text-align: center;
 }
 
 .instructions {
