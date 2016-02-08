@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class MyApp < Sinatra::Base
   get '/' do
@@ -7,7 +8,7 @@ class MyApp < Sinatra::Base
   end
 
   post '/names' do
-    $game = Player.new(params[:player_name])
+    $game = Game.new(params[:player_1_name])
     redirect '/play'
   end
 
@@ -16,6 +17,12 @@ class MyApp < Sinatra::Base
     erb :play
   end
 
+  post '/attack' do
+    #INSERT WEAPON HERE
+  end
+
+# CAN BE UNDER ONE + SPECIFY DIFFERENT PARAMS
+# TURN TO POST
   get '/rock' do
     redirect '/result'
   end
@@ -29,6 +36,8 @@ class MyApp < Sinatra::Base
   end
 
   get '/result' do
+    $game.result
+    # SAVE RESULT AS VARIABLE AND SEND IT TO RESULTS.ERB
     erb :result
   end
 

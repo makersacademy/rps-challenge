@@ -98,6 +98,6 @@ describe Game do
       it 'checks that computer draws with scissors' do
       end
     end
-end
+  end
 
 end

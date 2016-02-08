@@ -8,4 +8,8 @@ class Computer
     @weapons = WEAPONS.sample
   end
 
+  # def computer_choice
+  #   @weapons.sample
+  # end
+
 end
