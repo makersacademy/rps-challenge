@@ -13,17 +13,22 @@ describe Game do
     expect(game.computer).to eq computer
   end
 
-  it 'returns true when a player has won' do
-    player_wins = "scissors"
-    game_win = described_class.new(player, player_wins)
-    expect(game_win.player_wins?).to eq true
-  end
+context 'does logic' do
+    it 'returns draw when it\'s a draw' do
+      expect(game.result).to eq :draw
+    end
 
+    it 'returns win when it\'s a win' do
+      player_wins = "scissors"
+      game_win = described_class.new(player, player_wins)
+      expect(game_win.result).to eq :win
+    end
 
-  it 'returns true when a player has lost' do
-    computer_wins = "paper"
-    game_lose = described_class.new(player, computer_wins)
-    expect(game_lose.player_loses?).to eq true
+    it 'returns true when a player has lost' do
+      computer_wins = "paper"
+      game_lose = described_class.new(player, computer_wins)
+      expect(game_lose.result).to eq :lose
+    end
   end
 
   it 'returns the right verb' do
@@ -38,7 +43,7 @@ describe Game do
       computer_scissors = "scissors"
       player_lizard = "lizard"
       game_2 = described_class.new(player_lizard, computer_scissors)
-      expect(game_2.player_loses?).to eq true
+      expect(game_2.result).to eq :lose
     end
 
     it 'returns right verbs' do
@@ -50,7 +55,8 @@ describe Game do
     it 'Spock wins against rock' do
       player_spock = "Spock"
       game_4 = described_class.new(player_spock, computer)
-      expect(game_4.player_wins?).to eq true
+      expect(game_4.result).to eq :win
     end
   end
+
 end

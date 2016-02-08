@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/computer.rb'
+require_relative 'lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -26,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player_name = $player_name
     @game = $game
-    erb(:result)
+    erb(@game.result)
   end
 
   # start the server if ruby file executed directly

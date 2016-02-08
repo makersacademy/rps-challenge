@@ -1,18 +1,9 @@
 <center>
   <h4><%= @player_name %> chooses <%= @game.player %>   |
     |   The Computer chooses <%= @game.computer %></h4>
-  <% if @game.player_loses? %>
-  <h3> <%= @game.computer.capitalize %>
-    <%= @game.verb %>
-    <%= @game.player.capitalize %></h3>
-  <h2>You Lose!</h2>
-  <% elsif @game.player_wins? %>
   <h3> <%= @game.player.capitalize %>
     <%= @game.verb %>
     <%= @game.computer.capitalize %></h3>
   <h2>You Win!</h2>
-  <% else %>
-  <h2>You Draw!</h2>
-  <% end %>
   <a href="/game"><button>Play Again?</button></a>
 </center>

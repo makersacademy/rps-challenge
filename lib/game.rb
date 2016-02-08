@@ -11,12 +11,10 @@ class Game
       "Spock" => [["vaporizes", "rock"], ["smashes", "scissors"]]}
   end
 
-  def player_loses?
-    player == check_choice(computer, 0) || player == check_choice(computer, 1)
-  end
-
-  def player_wins?
-    computer == check_choice(player, 0) || computer == check_choice(player, 1)
+  def result
+    return :win if player_wins?
+    return :lose if player_loses?
+    :draw
   end
 
   def verb
@@ -28,6 +26,14 @@ class Game
   end
 
   private
+
+  def player_loses?
+    player == check_choice(computer, 0) || player == check_choice(computer, 1)
+  end
+
+  def player_wins?
+    computer == check_choice(player, 0) || computer == check_choice(player, 1)
+  end
 
   def check_choice(player, number)
     @results[player][number][1]
