@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'web_helper'
+require_relative 'web_helper'
 
 feature 'play again' do
   scenario 'after playing one game it is possible to play another' do

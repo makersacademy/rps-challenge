@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'web_helper'
+require_relative 'web_helper'
 
 feature 'result page' do
 
