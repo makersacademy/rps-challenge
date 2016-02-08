@@ -21,7 +21,7 @@ end
 
 feature 'play rock, paper, scissors' do
   scenario 'a player can win a game of rps. - player = rock, computer stumped to choose scissors' do
-    allow_any_instance_of(Game).to receive(:computer_weapon).and_return(:scissors)
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     sign_in_and_play
     choose('rock')
     click_button 'DO YOUR WORST!'
@@ -29,17 +29,17 @@ feature 'play rock, paper, scissors' do
     expect(page).to have_content 'win'
   end
 
-  scenario 'a player can loose a game of rps. - player = scissors, computer stumped to choose rock' do
-    allow_any_instance_of(Game).to receive(:computer_weapon).and_return(:rock)
+  scenario 'a player can lose a game of rps. - player = scissors, computer stumped to choose rock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     sign_in_and_play
     choose('scissors')
     click_button 'DO YOUR WORST!'
     click_button('Results!')
-    expect(page).to have_content 'loose'
+    expect(page).to have_content 'lose'
   end
 
   scenario 'a player can draw at a game of rps. - player = paper, computer stumped to choose paper' do
-    allow_any_instance_of(Game).to receive(:computer_weapon).and_return(:paper)
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     sign_in_and_play
     choose('paper')
     click_button 'DO YOUR WORST!'

@@ -7,16 +7,16 @@ class Game
     @computer_weapon = nil
     @player_winner = false
     @draw = false
-    @weapon_array = [:rock, :paper, :scissors]
-    @win_conditions = { :scissors => :paper, :paper => :rock, :rock => :scissors }
+    @win_conditions = { scissors: :paper, paper: :rock, rock: :scissors }
   end
+
 
   def choose_weapon(weapon)
     @player_1.set_weapon(weapon)
   end
 
   def computer_choose_weapon
-    @computer_weapon = @weapon_array[rand(1..3)-1]
+    @computer_weapon = [:rock, :paper, :scissors].sample
   end
 
   def who_wins

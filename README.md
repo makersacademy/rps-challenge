@@ -83,7 +83,7 @@ http://localhost:4567/
 
 3. In the box next to “What is your name, warrior?” enter your game name and click “Submit”
 
-![Screenshot](http://imgur.com/PYWCr4y)
+![Alt text](http://imgur.com/PYWCr4y)
 
 4. Take a moment to enjoy your welcome.
 
