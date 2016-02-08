@@ -14,17 +14,25 @@ class RockPaperScissorsGame < Sinatra::Base
   end
 
   post '/game' do
-    session[:name] = params[:player_name]
+    @player = Player.new(params[:player_name])
+    @game = Game.new(@player,Winner)
+    session[:game] = @game
     redirect '/game'
   end
 
   get '/game' do
-    @name = session[:name]
+    @game = session[:game]
     erb :game
   end
 
-  get '/result' do
+  post '/result' do
+    @game = session[:game]
+    @game.set_player_choice(params[:choice])
 
+  end
+
+  get '/result' do
+    erb :result
   end
   # Start the server if Ruby file executed directly
   run! if app_file == $0
