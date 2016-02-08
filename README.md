@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/MarcoCode/rps-challenge.svg?branch=master)](https://travis-ci.org/MarcoCode/rps-challenge)
 
+* BONUS features on branch bonus_2
+
 Instructions
 -------
 
