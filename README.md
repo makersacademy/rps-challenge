@@ -1,15 +1,22 @@
 # RPS Challenge: Rōnin Badge Test
 Author: Arnold Manzano (arnoldmanzano)
 
-Instructions
+Installation Instructions
 -------
 
+1) Clone the repo (ruby is required)
+2) run ```bundle```  in project root directory to install other dependencies
+4) run ```rackup``` and open localhost port in your browser
 
-For users (ruby is required)
-bundle
-rackup
+Features:
+* Play against the computer
+* Play against another player (turn-based)
+* To be implemented, keep track of scores
 
-
+Screenshots:
+![Imgur](http://i.imgur.com/jxxvwa7.png)
+![Imgur](http://i.imgur.com/DW3gbsT.png)
+![Imgur](http://i.imgur.com/zVA5Cth.png)
 
 * Challenge time: rest of the day and weekend, until Monday 9am
 * Feel free to use google, your notes, books, etc. but work on your own
@@ -99,4 +106,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
