@@ -18,7 +18,9 @@ I would like to be able to play rock/paper/scissors
 ##My approach
 
 **Game Class:** Responsible for running the game and declaring a winner. 
+
 **Player Class:** Responsible for holding name and choice information.
+
 **Computer Class:** Responsible for simulating the computer player's choices.
 
 
