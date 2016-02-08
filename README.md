@@ -39,7 +39,7 @@ Screenshots:
 (http://i.imgur.com/p93yqRh.png)
 
 ![Image of Game Result]
-(http://i.imgur.com/xydnt5Y.png)
+(http://i.imgur.com/1KLYv44.png)
 
 
 Key Learnings:
