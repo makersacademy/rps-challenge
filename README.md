@@ -11,6 +11,11 @@ This code and README.md is prepared by Valentina Monetta at Makers Academy (Febr
 Requirements
 ------------
 This program is designed to be ran from the command line with Ruby and accessed through a web-browser. It is built on Sinatra and using Capybara/Rspec for testing.
+To install the web-app:
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app/rps.rb
 
 
 Instructions
