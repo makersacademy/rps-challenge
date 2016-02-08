@@ -1,0 +1,21 @@
+<header>
+  <h1> Welcome to Rock Paper Scissors Lizard Spock! Multi Player </h1>
+</header>
+
+<div class='choose'>
+	
+<form name='single' action='/switch' method='post'>
+	Change to : <input style='width: 120px; height: 30px' type='submit' value='Single Player' name='game_type'>
+</form>
+
+<form action='/play' method='post'>
+  <select name='Choose Player'>
+  	<option value="1_player">Player 1</option>
+  	<option value="2_player">Player 2</option>
+  </select>
+  <h2> Please enter your name: </h2> 
+    Player Name: <input type'text' name='player_name'> 
+                 <input type='submit' value='Start'> 
+</form>
+ 
+</div>

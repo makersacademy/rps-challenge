@@ -1,0 +1,31 @@
+<% if ($database[1] && $database[2]) %>
+
+<div style='text-align: center'>
+	
+  <% if $database[0].result == 1 %>
+  
+    <h1 style='font-family: Comic Sans MS, cursive, sans-serif'> <%= $database[1] %> WINS! </h1>
+  
+  <% elsif $database[0].result == 2 %>
+  
+    <h1 style='font-family: Comic Sans MS, cursive, sans-serif'> <%= $database[2] %> WINS! </h1>
+  
+  <% else %>
+  
+    <h1 style='font-family: Comic Sans MS, cursive, sans-serif'> It's a draw!</h1>
+	
+
+  <% end %>
+  
+</div>
+  
+<% else %>
+
+<div style='text-align: center'>
+
+ <h1 style='font-family: Comic Sans MS, cursive, sans-serif'> Waiting for your opponent! </h1>
+ 
+<% end %>
+
+</div>
+
