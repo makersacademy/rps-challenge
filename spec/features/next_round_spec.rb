@@ -6,7 +6,7 @@ feature 'Next round' do
     expect(page).to have_content 'Rock Paper Scissors'
   end
 
-  scenario 'draw round multiplayer' do
+  scenario 'new round is ready to start multiplayer' do
     sign_in_and_play_multiplayer
     one_round_multiplayer
     expect(page).to have_content 'Rock Paper Scissors'

@@ -12,7 +12,7 @@ feature 'Choose weapon' do
     expect(page).to have_content 'Arnold chose Paper'
   end
 
-  scenario 'selecting a weapon for player 2 in multiplayer' do
+  scenario 'weapons are available for player 2 in multiplayer' do
     sign_in_and_play_multiplayer
     choose('paper')
     click_button('Fight!')
