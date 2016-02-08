@@ -1,10 +1,6 @@
 # Rock Paper Scissors Lizard Spock by Zeshan Rasul
 
  This is the Week 3 Rock Paper Scissors Lizard Spock challenge by Zeshan Rasul
- 
-## Playing the game on Heroku
-
-The game is available to play at http://zeshanrasul-rps.herokuapp.com/.  
 
 ## Playing the game on Heroku
 
