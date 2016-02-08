@@ -1,0 +1,9 @@
+<center>
+  <h4><%= @player_name %> chooses <%= @game.player %>   |
+    |   The Computer chooses <%= @game.computer %></h4>
+  <h3> <%= @game.player.capitalize %>
+    <%= @game.verb %>
+    <%= @game.computer.capitalize %></h3>
+  <h2>You Win!</h2>
+  <a href="/game"><button>Play Again?</button></a>
+</center>
