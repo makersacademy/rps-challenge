@@ -1,0 +1,10 @@
+<h2>You Played Rock!</h2>
+<h2>The Computer Played <%=@computer_move%>!</h2>
+<% if @result == :Rock %>
+<p>Game Result: Congratulations! You have won this round!</p>
+<% elsif @result == :Draw %>
+<p>Game Result: This Round Is A Draw!</p>
+<% else %>
+<p>Game Result: The Computer has won this round! </p>
+<% end %>
+<a href="/play">Play Again!</a>
