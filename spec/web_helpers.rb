@@ -1,6 +1,6 @@
-def register_and_play(player)
+def register_and_play
 visit '/'
-fill_in :player, with: player
+fill_in :player, with: 'player1'
 click_button 'Register'
 end
 
