@@ -22,14 +22,14 @@ class RPS < Sinatra::Base
   post '/contest'do
     session[:player_choice] = params[:choice].to_sym
     session[:computer_choice] = Computer_Player.new.play
-    session[:result] = Game.new(session[:player_choice], session[:computer_choice])
+    session[:result] = Game.new(session[:player_choice], session[:computer_choice]).result
     redirect '/result'
   end
 
   get '/result'do
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
-    @result = session[:result].result
+    @result = session[:result]
     erb :result
   end
 

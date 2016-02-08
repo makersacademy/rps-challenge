@@ -1,8 +1,7 @@
 
 class Computer_Player
-
+  CHOICE_ARRAY = [:rock, :paper, :scissors]
   def play
-    play_array = [:rock, :paper, :scissors]
-    choice = play_array[rand(3)]
+    choice = CHOICE_ARRAY[Kernel.rand(CHOICE_ARRAY.length)]
   end
 end
