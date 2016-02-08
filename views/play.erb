@@ -1,15 +1,21 @@
-<h1>Hi <%= @player_name %></h1> 
+Hello <%= @turn.player_name %>
 
-<h2>Choose Rock, Paper or Scissors</h2>
-
-<form action="/option" method="post">
-  <input type="submit" name="rock" value="Rock">
+<form action="/play" method="post">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
 </form>
 
-<form action="/option" method="post">
-  <input type="submit" name="paper" value="Paper">
-</form>
+You chose <%= @turn.player_shape.to_s.capitalize %>
 
-<form action="/option" method="post">
-  <input type="submit" name="scissors" value="Scissors">
-</form>
+<div id="opponent">
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>
+</div>
+
+<% if @turn.win?%>
+You win
+<% elsif @turn.lose?%>
+You lose
+<% elsif @turn.draw?%>
+You draw  
+<% end %>
