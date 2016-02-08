@@ -5,8 +5,6 @@ require './lib/game.rb'
 
 
 class RPSWeb < Sinatra::Base
-  # use Rack::Session::Pool, :expire_after => 2592000
-  # set :sesion_secret, "super secret"
 
   get '/' do
     erb :index
@@ -34,6 +32,5 @@ class RPSWeb < Sinatra::Base
 
 
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
