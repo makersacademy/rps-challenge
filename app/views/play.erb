@@ -1,0 +1,42 @@
+ <% if @game.player.selection == "Rock" 
+ 	@link="http://i.imgur.com/GClcIPG.jpg" 
+ 	elsif @game.player.selection == "Paper"
+	@link = "http://i.imgur.com/AIC0ATT.jpg"
+ 	else	@game.player.selection == "Scissors"
+	@link ="http://i.imgur.com/sN6y4lb.jpg"
+	end
+ 		%>  
+
+<div>
+<center> <%= @player1 %> selected <%= @game.player.selection %><br>
+<img src= <%= @link %> /> </center>
+</div> 
+
+
+ <% if @opponent == "Rock" 
+ 	@link2="http://i.imgur.com/GClcIPG.jpg" 
+ 	elsif @opponent == "Paper"
+	@link2 = "http://i.imgur.com/AIC0ATT.jpg"
+ 	else	@opponent == "Scissors"
+	@link2 ="http://i.imgur.com/sN6y4lb.jpg"
+	end
+ 		%>  
+
+<div> 
+
+<center> <%= @player2 %> selected <%= @opponent %>:	<br>
+<img src= <%= @link2 %> /> <br>
+</center>
+
+</div>
+
+
+ <% if @game.result == :win 
+ 	@result = @player1 + " wins!"
+ 	elsif @game.result == :draw 
+ 	@result = "It's a draw!"
+ 	elsif @game.result == :lose 
+ 	@result = @player2 + " wins!"
+	end %>
+
+<center><h2>  <%= @result %>  </h2></center>
