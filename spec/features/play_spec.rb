@@ -19,4 +19,16 @@ feature 'play functionality' do
     click_button "scissors"
     expect(page).to have_content 'scissors'
   end
+
+  scenario 'can choose lizard' do
+    sign_in
+    click_button "lizard"
+    expect(page).to have_content 'lizard'
+  end
+
+  scenario 'can choose spock' do
+    sign_in
+    click_button "spock"
+    expect(page).to have_content 'spock'
+  end
 end
