@@ -3,7 +3,7 @@ feature 'Choose weapon' do
     scenario 'it redirects to the results page' do
       single_sign_in
       click_button 'rock'
-      expect(page).to have_content 'Weapon:'
+      expect(page).to have_content 'Weapon: rock'
     end
   end
 

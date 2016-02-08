@@ -14,8 +14,3 @@ def multi_sign_in
   fill_in 'player_2', with: 'Player 2'
   click_button 'Go!'
 end
-
-def choose_weapon(weapon)
-  choose(weapon)
-  click_button 'Go!'
-end
