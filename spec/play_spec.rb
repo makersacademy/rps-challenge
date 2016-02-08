@@ -37,4 +37,14 @@ feature "Player's choice" do
     click_button('Start')
     expect(page).to have_button "Scissors"
   end
+  
+  scenario "Player can choose Scissors" do
+    click_button('Start')
+    expect(page).to have_button "Lizard"
+  end
+  
+  scenario "Player can choose Scissors" do
+    click_button('Start')
+    expect(page).to have_button "Spock"
+  end
 end
