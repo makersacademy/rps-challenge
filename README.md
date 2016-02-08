@@ -25,10 +25,10 @@ $ ruby app.rb
 ```
 Visit http://localhost:4567/ and follow the pages through!
 
-[Imgur](http://i.imgur.com/7CEeJDJ.png)
+![Homepage](http://i.imgur.com/7CEeJDJ.png)
 
-[Imgur](http://i.imgur.com/9zOu3K0.png)
+![Choose your weapon](http://i.imgur.com/9zOu3K0.png)
 
-[Imgur](http://i.imgur.com/MIMmkDo.png)
+![Result page](http://i.imgur.com/MIMmkDo.png)
 
 Created by Matt Gough [ mattpgough@gmail.com ]
