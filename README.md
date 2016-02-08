@@ -1,16 +1,21 @@
 # RPS Challenge
+
+* Author: Mark Hill
+* Created on: 7/2/2016
+
+##Description
 A simple web-app, developed through capybara testing, which allows users to play rock, paper, scissors.
 
-Game class works out results by receiving two arguments representing player choice and looking up the result in a hash.
+* Game class works out results by receiving two arguments representing player choice and looking up the result in a hash.
 Computer_Player class randomly selects a choice.
 
-Index path gives players an opportunity to enter their name.
+* Index path gives players an opportunity to enter their name.
 
-Play path gives players an opportunity to choose an option.
+* Play path gives players an opportunity to choose an option.
 
-Result path displays results.
+* Result path displays results.
 
-Installation
+##Installation
 ```
 $ git clone https://github.com/markcmhill/rps-challenge.git
 $ cd rps-challenge
