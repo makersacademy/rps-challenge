@@ -19,7 +19,7 @@ class Game
   def winner(p1,p2)
     p1 = p1.to_sym
     p2 = p2.to_sym
-    return @winner = ": NO WINNER" if p1 == p2
+    return @winner = :NO_WINNER if p1 == p2
     WIN_MATRIX[p1].include?(p2) ? @winner = player1.name : @winner = computer.name
   end
 end

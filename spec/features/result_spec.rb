@@ -24,6 +24,20 @@ feature 'winner' do
     expect(page).to have_content 'winner Scot'
   end
 
+  scenario 'rock will draw with rock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+    sign_in
+    click_button "rock"
+    expect(page).to have_content 'NO_WINNER'
+  end
+
+  scenario 'rock will lose to spock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:spock)
+    sign_in
+    click_button "rock"
+    expect(page).to have_content 'Computer'
+  end
+
   scenario 'can play again' do
     sign_in
     click_button "rock"
