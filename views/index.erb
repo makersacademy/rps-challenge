@@ -2,9 +2,23 @@
 <h2>Enter your name</h2>
 
 <form action="/name" method="post">
+  <h3>Single Player</h3>
+  <label for="player_name">
+    Player Name
+    <input type="text" name="player_name">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+
+<form action="/twonames" method="post">
+  <h3>Multi Player</h3>
   <label for="player_1_name">
-    Name
+    Player 1 name
     <input type="text" name="player_1_name">
+  </label>
+  <label for="player_2_name">
+    Player 2 name
+    <input type="text" name="player_2_name">
   </label>
   <input type="submit" value="Submit">
 </form>

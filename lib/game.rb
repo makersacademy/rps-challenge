@@ -1,41 +1,30 @@
+require_relative 'player'
+
 class Game
 
-  attr_reader :rock, :paper, :scissors
+  attr_reader :player1, :player2
 
-  def initialize
-    @rock = false
-    @paper = false
-    @scissors = false
+  def initialize(player1, player2)
+   @player1 = player1
+   @player2 = player2
   end
 
-  def set_option
-    if random == 1
-      @rock = true
-    elsif random == 2
-      @paper = true
-    elsif random == 3
-      @scissors = true
-    end
-  end
-
-  def result(option)
-    if option == "Rock" && @paper == true
-      "Computer Chose Paper: You Lose"
-    elsif option == "Rock" && @scissors == true
-      "Computer Chose Scissors: You Win"
-    elsif option == "Paper" && @rock == true
-      "Computer Chose Rock: You Win"
-    elsif option == "Paper" && @scissors == true
-      "Computer Chose Scissors: You Lose"
-    elsif option == "Scissors" && @rock == true
-      "Computer Chose Rock: You Lose"
-    elsif option == "Scissors" && @paper == true
-      "Computer Chose Paper: You Win"
-    end
-  end
-
-  def random
-    rand(1..3)
+  def result(option1, option2)
+      if option1 == "Rock" && option2 == "Paper"
+        "#{@player1.name} Chose Rock, #{@player2.name} Chose Paper : #{@player2.name} Wins"
+      elsif option1 == "Rock" && option2 == "Scissors"
+        "#{@player1.name} Chose Rock, #{@player2.name} Chose Scissors : #{@player1.name} Wins"
+      elsif option1 == "Paper" && option2 == "Rock"
+        "#{@player1.name} Chose Paper, #{@player2.name} Chose Rock : #{@player1.name} Wins"
+      elsif option1 == "Paper" && option2 == "Scissors"
+        "#{@player1.name} Chose Paper, #{@player2.name} Chose Scissors : #{@player2.name} Wins"
+      elsif option1 == "Scissors" && option2 == "Rock"
+        "#{@player1.name} Chose Scissors, #{@player2.name} Chose Rock : #{@player2.name} Wins"
+      elsif option1 == "Scissors" && option2 == "Paper"
+        "#{@player1.name} Chose Scissors, #{@player2.name} Chose Paper : #{@player1.name} Wins"
+      else
+        "It's a draw"
+      end
   end
 
 end

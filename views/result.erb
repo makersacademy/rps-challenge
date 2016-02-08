@@ -1,3 +1,7 @@
 <h2>You Chose <%= @rock || @paper || @scissors%></h2>
 
-<h2><%= $game.result(@option) %></h2>
+<h2><%= @result %></h2>
+
+<form action="/play">
+    <input type="submit" value="Play Again">
+</form>
