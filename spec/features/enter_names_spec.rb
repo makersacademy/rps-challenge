@@ -1,9 +1,6 @@
 feature 'Players can enter names' do
-  scenario 'Player 1 plays as Smoky, Player 2 as Penelope' do
-    visit('/')
-    fill_in :player_one_name, with: 'Smoky'
-    fill_in :player_two_name, with: 'Penelope'
-    click_button 'Play Game'
+  scenario 'Player 1 plays as Smoky, Computer as Penelope' do
+    sign_in_and_play
     expect(page).to have_content 'Smoky vs. Penelope'
   end
 end
