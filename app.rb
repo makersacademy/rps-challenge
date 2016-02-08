@@ -47,7 +47,7 @@ class Battle < Sinatra::Base
       redirect('/play2')
     else
       @game.make_moves(session[:choice])
-      session[:game] = @game
+
       redirect('/game')
     end
   end
@@ -62,7 +62,6 @@ class Battle < Sinatra::Base
   post '/game' do
     @game = session[:game]
     @game.make_moves(session[:choice],params['choice2'])
-    session[:game] = @game
     redirect '/game'
   end
 

@@ -14,7 +14,6 @@ class Computer
   end
 
   def make_move
-    #fail ArgumentError, 'Should not receieve any args' if args
     @move = Game::MOVES.sample
   end
 

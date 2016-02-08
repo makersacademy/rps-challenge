@@ -1,4 +1,4 @@
-feature 'outcome' do
+feature 'There is an outcome to the game' do
   scenario 'player 1 wins' do
     sign_in_with_name
     allow_any_instance_of(Array).to receive(:sample){'Scissors'}

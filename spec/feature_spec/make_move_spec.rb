@@ -1,4 +1,4 @@
-feature 'make_move' do
+feature 'Player can choose which weapon they want to use' do
   scenario 'player can choose rock' do
     sign_in_with_name
     click_button('Rock')

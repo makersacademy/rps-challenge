@@ -38,6 +38,11 @@ describe Game do
       allow(player2).to receive(:move){'Rock'}
       expect(game.outcome).to eq(:draw)
     end
+
+    it 'compares the moves to be a lose' do
+      allow(player2).to receive(:move){'Paper'}
+      expect(game.outcome).to eq(:lose)
+    end
   end
 
 
