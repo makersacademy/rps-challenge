@@ -18,7 +18,7 @@ I would like to be able to play rock/paper/scissors
 ##My approach
 
 **Game Class:** Responsible for running the game and declaring a winner.  
-**Player Class:** Responsible for holding name and choice information.
+**Player Class:** Responsible for holding name and choice information.  
 **Computer Class:** Responsible for simulating the computer player's choices.
 
 
@@ -34,10 +34,10 @@ navigate to http://localhost:4567/ on browser.
 
 ##Key concepts covered
 
-Working with Servers and Clients. 
-HTTP requests and responses. 
-Understanding params. 
-Understanding sessions. 
-Using Web frameworks like Sinatra. 
-Feature testing with Capybara. 
-Implementing User Stories that use all of the above.
+Working with Servers and Clients.  
+HTTP requests and responses.  
+Understanding params.  
+Understanding sessions.   
+Using Web frameworks like Sinatra.   
+Feature testing with Capybara.  
+Implementing User Stories that use all of the above.  
