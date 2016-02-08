@@ -23,7 +23,7 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @new_game = session[:new_game]
-    @new_game.player.weapon_choice(params[:player_choice])
+    @new_game.player.weapon_choice(params[:weapon])
     redirect to ('/result')
   end
 

@@ -28,8 +28,8 @@ $ ruby app.rb
 ```
 Open browser at http://localhost:4567/
 
-![Image of sign-in screen](http://i.imgur.com/yF43Rhf.png)
+![Image of sign-in screen](http://i.imgur.com/O2NdtM1.png)
 
-![Image of play screen](http://i.imgur.com/9pdLCf6.png)
+![Image of play screen](http://i.imgur.com/x6c9djU.png)
 
-![Image of win screen](http://i.imgur.com/7a1ZOd6.png)
+![Image of win screen](http://i.imgur.com/2W1ApPa.png)
