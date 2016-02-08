@@ -12,13 +12,17 @@ class Game
   end
 
   def evaluate_winner
-    return "Noone" if draw?
-    player_results ? player.name : "Computer"
+    return draw.to_s.capitalize if draw?
+    player_results ? player.name : computer.name.to_s.capitalize
   end
 
   private
   def draw?
     player.choice == computer.choice
+  end
+
+  def draw
+    :noone
   end
 
   def player_results

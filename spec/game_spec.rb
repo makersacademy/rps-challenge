@@ -9,6 +9,7 @@ describe Game do
   before(:example) do
     allow(player).to receive(:name).and_return("Harry")
     allow(computer).to receive(:choice).and_return(:scissors)
+    allow(computer).to receive(:name).and_return("Computer")
   end
 
   context '#evaluate_winner' do
