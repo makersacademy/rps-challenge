@@ -1,7 +1,7 @@
 require 'weapon'
 
 describe Weapon do
-  subject(:weapon)      { described_class.new(:rock) }
+  subject(:weapon) { described_class.new(:rock) }
 
   describe '#type' do
     it 'returns the weapon type' do

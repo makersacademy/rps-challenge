@@ -59,8 +59,8 @@ describe Game do
   describe '#result' do
     context 'when player 1\'s weapon beats player 2\'s' do
       before do
-        allow(weapon_1).to receive(:type)  { :scissors }
-        allow(weapon_2).to receive(:type)  { :paper }
+        allow(weapon_1).to receive(:type)   { :scissors }
+        allow(weapon_2).to receive(:type)   { :paper }
         allow(weapon_1).to receive(:beats?) { true }
       end
 
@@ -71,8 +71,8 @@ describe Game do
 
     context 'when player 2\'s weapon beats player 1\'s' do
       before do
-        allow(weapon_1).to receive(:type)  { :paper }
-        allow(weapon_2).to receive(:type)  { :scissors }
+        allow(weapon_1).to receive(:type)   { :paper }
+        allow(weapon_2).to receive(:type)   { :scissors }
         allow(weapon_1).to receive(:beats?) { false }
       end
 

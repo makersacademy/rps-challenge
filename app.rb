@@ -11,6 +11,7 @@ class RPS < Sinatra::Base
   end
 
   get '/single_sign_in' do
+    # TODO: refactor
     @players = 1
     erb :main_title do
       erb :sign_in
@@ -48,6 +49,7 @@ class RPS < Sinatra::Base
       redirect '/player_2'
     else
       @game.player(2).choose_weapon
+      # TODO: move to Bot method
       sleep 2
       redirect '/result'
     end

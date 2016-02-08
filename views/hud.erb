@@ -12,6 +12,10 @@
             <label for="weapon"><%= weapon %></label>
           </div>
           <% end %>
+          <div class="weapon-box">
+            <input type="radio" name="weapon" value="sample" />
+            <label for="weapon">sample</label>
+          </div>
         </form>
         <button type="submit" form="weapons-form" value="Go!">Go!</button>
       <% elsif @game.multiplayer? %>

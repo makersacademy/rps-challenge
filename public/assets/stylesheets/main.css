@@ -160,6 +160,7 @@ button {
 }
 
 .hud-content {
+	/*TODO: move up*/
 	text-align: center;
 }
 
@@ -169,6 +170,7 @@ button {
 	margin: 1em 2em;
 }
 
+/*FIXME:*/
 .weapons-form {
 	margin-bottom: 1em;
 }
