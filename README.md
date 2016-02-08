@@ -12,8 +12,11 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 ```
+You can then visit the localhost at the port given by rackup in the command line and play the game in your browser.
 
-Tests can be run by running `$ rspec` in the command line while in the `rps-challenge` directory.
+You may need to `$ gem install bundle` if the `$ bundle` does not work.
+
+Tests can be run by running `$ rspec` in the command line while in the `rps-challenge` directory.  There are unit tests testing every possible outcome and each method through the classes.  Capybara feature tests are used to test the various features of the application.
 
 Screenshots of the application can be found below.
 
@@ -32,7 +35,6 @@ I would like to be able to play rock/paper/scissors
 ```
 
 I then continued the development by implementing the following bonus features.
-
 
 ## Bonus level 1: Multiplayer
 
@@ -58,9 +60,16 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Screenshots
 
 ### Login page
+![Screenshot](http://imgur.com/OZNtviJ)
 
 ### Attack choice
+![Screenshot](http://imgur.com/EqdbKLW)
 
 ### Results
+![Screenshot](http://imgur.com/snl67IG)
 
-### Multiplayer 
+### Multiplayer
+![Screenshot](http://imgur.com/d1knLZ2)
+![Screenshot](http://imgur.com/VwFYmaQ)
+![Screenshot](http://imgur.com/d1nAox6)
+![Screenshot](http://imgur.com/7DJQ2iH)
