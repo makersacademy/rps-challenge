@@ -1,0 +1,18 @@
+<body style="background-color: AliceBlue;">
+
+<h2><%= @new_game.player_1.name.upcase %></h2>
+
+<form action="/comp_turn" method="post">
+  <p>CHOOSE YOUR WEAPON!
+    <br />
+    <input id="rock" class="radio" type="radio" name="weapon_select"
+      value="rock" checked="checked"/> ROCK
+    <input id="paper" class="radio" type="radio" name="weapon_select"
+      value="paper"/> PAPER
+    <input id="scissors" class="radio" type="radio" name="weapon_select"
+      value="scissors"/> SCISSORS
+  </p>
+  <input type="submit" name="fight" value="DO YOUR WORST!"/>
+</form>
+
+</body>

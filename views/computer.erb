@@ -1,0 +1,12 @@
+<body style="background-color: AliceBlue;">
+
+  <h2>COMPUTER CHOOSES....</h2>
+
+  <h1><%=@new_game.computer_weapon.upcase%></h1>
+
+
+  <form action="/results" method="post">
+    <input type="submit" name="fight" value="Results!"/>
+  </form>
+
+</body>
