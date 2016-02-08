@@ -1,94 +1,48 @@
-# RPS Challenge: Rōnin Badge Test
+![Build Status](https://travis-ci.org/tcpickard94/rps-challenge.svg?branch=master)
 
-Instructions
--------
+![Coverage Status](https://coveralls.io/repos/github/tcpickard94/rps-challenge/badge.svg?branch=master)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Rock, Paper, Scissors
+=====================
 
-Task 
-----
+Our task is to build an online application that enables a user to play a simple game of rock, paper, scissors against the computer. This challenge will use everything we have learnt this week about building an application on the web using Sinatra
 
-Knowing how to build web applications is getting us almost there as web developers!
+Rules
+--------
+- Rock beats Scissors and Lizard
+- Scissors beats Paper and Lizard
+- Paper beats Rock and Spock
+- Spock beats Rock and Scissors
+- Lizard beats Paper and Spock
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Project Overview
+----------------
+- A user types in their name which passes the that parameter to the player class and creates a new game with the player.
+- The user can then select rock, paper, or scissors which takes them to the game page with their choice passed in as a parameter.
+- On the game page the computers choice is also displayed (this is random and handled by the game class)
+- A winner is then calculated based on the rules(see below)
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+Installation
+------------
+```
+MacBook-Pro:desktop tompickard$ git clone https://github.com/tcpickard94/rps-challenge.git
+MacBook-Pro:desktop tompickard$ cd rps-challenge
+MacBook-Pro:rps-challenge tompickard$ bundle
+MacBook-Pro:rps-challenge tompickard$ ruby app.rb
 ```
 
-Hints on functionality
+How to play
+-----------
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Navigate to localhost:4567 and enter your name:
+![Dropbox](https://www.dropbox.com/s/kc0fuopg40tr7tk/Screenshot%202016-02-08%2019.12.23.png?raw=1)
 
+Select an option to play:
+![Dropbox](https://www.dropbox.com/s/jlcfnx4mgblvghh/Screenshot%202016-02-07%2018.47.13.png?raw=1)
 
-As usual please start by
+See the outcome of the game and choose to play again
+![Dropbox](https://www.dropbox.com/s/f4l3zdeghv5vtgq/Screenshot%202016-02-07%2018.47.30.png?raw=1)
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+Credit
+------
+All images within public/images were created by Studio Fibonacci from the noun project and are licensed under creative commons

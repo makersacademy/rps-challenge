@@ -1,0 +1,15 @@
+<main class="outcome">
+  <h2>You play: <%= @choice.capitalize %></h2>
+  <h2>Computer plays: <%= @computer_choice.capitalize %></h2>
+  <% if @winner == @game.player %>
+    <h1><%= @game.players_name %> wins! </h1>
+  <% elsif @winner == "Computer" %>
+    <h1>The computer wins!</h1>
+  <% else %>
+    <h1>It's a draw, nobody wins!</h1>
+  <% end %>
+  
+  <form action='/play'>
+    <button class="play-again" type="submit">Play Again</button>
+  </form>
+</main>

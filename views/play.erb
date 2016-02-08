@@ -1,0 +1,37 @@
+<header>
+  <h1><%= @game.players_name
+    %> vs. Computer</h1>
+</header>
+
+<main class="options">
+  <h2>Choose your option wisely</h2>
+  <form action='/game'>
+    <button class="option" type="submit" name="choice" value="rock">
+      <span class="rock button-icon"></span>
+      Rock
+      
+    </button>
+    
+    <button class="option" type="submit" name="choice" value="paper">
+      <span class="paper button-icon"></span>
+      Paper
+    </button>
+    
+    <button class="option" type="submit" name="choice" value="scissors">
+      <span class="scissors button-icon"></span>
+      Scissors
+    </button>
+  
+    <div class="bottom-row">
+      <button class="option" type="submit" name="choice" value="lizard">
+        <span class="lizard button-icon"></span>
+        Lizard
+      </button>
+      
+      <button class="option" type="submit" name="choice" value="spock">
+        <span class="spock button-icon"></span>
+        Spock
+      </button>
+    </div>
+  </form>
+</main>
