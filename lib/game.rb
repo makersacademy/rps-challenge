@@ -8,7 +8,7 @@ attr_reader :play_options, :computer
 
   def initialize(player1)
     @player = player1
-    @cpu_choice
+    @cpu_choice = nil
     @play_options = PLAY_OPTIONS
   end
 
@@ -20,19 +20,24 @@ attr_reader :play_options, :computer
     @player.user_choice=(choice)
   end
 
-  def cpu_choice
-    PLAY_OPTIONS.sample
+  def what_player_chose
+    @player.weapon
   end
 
-  def win?
-    return true if @player.user_choice = "rock" && @cpu_choice = "scissors"
-    return true if @player.user_choice = "paper" && @cpu_choice = "rock"
-    return true if @player.user_choice = "scissors" && @cpu_choice = "paper"
-    return false
+  def cpu_choice
+    @cpu_choice = PLAY_OPTIONS.sample
+  end
+
+  def win
+    return :draw if draw?
+    return :win if what_player_chose == "rock" && @cpu_choice == "scissors"
+    return :win if what_player_chose  == "paper" && @cpu_choice == "rock"
+    return :win if what_player_chose == "scissors" && @cpu_choice == "paper"
+    return :false
   end
 
   def draw?
-    @player.user_choice == @cpu_choice
+    what_player_chose == @cpu_choice
   end
 
 end

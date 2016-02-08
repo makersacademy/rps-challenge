@@ -10,4 +10,8 @@ attr_reader :name1, :user_choice
     @user_choice = user_choice
   end
 
+  def weapon
+    @user_choice
+  end
+
 end

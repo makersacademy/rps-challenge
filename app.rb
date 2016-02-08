@@ -6,12 +6,12 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    $game =nil
+    # $game =nil
     erb(:index)
   end
 
   post '/names' do
-    @name1 = params[:name1]
+    # @name1 = params[:name1]
     session[:name1] = params[:name1]
     $game = Game.new(Player.new(params[:name1]))
     redirect '/play'
@@ -29,6 +29,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game_over' do
+    $game
     erb(:game_over)
   end
 
