@@ -1,0 +1,9 @@
+<h1> <%= @game.evaluate_winner %> wins!!! </h1>
+
+<p> <%= @game.player.name %> chooses <%= @game.player.choice %> </p>
+
+<p> Computer chooses <%= @game.computer.choice %> </p>
+
+<form action='/play'>
+  <input type='submit' value='Play again'>
+</form>

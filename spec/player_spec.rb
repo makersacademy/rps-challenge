@@ -12,28 +12,20 @@ describe Player do
   end
 
   context '#choice' do
-    it 'can return the most recent player choice' do
+    it 'can return the most recent player choice (rock)' do
       player.rock
       expect(player.choice).to eq :rock
     end
-  end
 
-  context '#rock' do
-    it 'player can choose rock' do
-      expect(player.rock).to eq :rock
+    it 'can return scissors' do
+      player.scissors
+      expect(player.choice).to eq :scissors
+    end
+
+    it 'can return paper' do
+      player.paper
+      expect(player.choice).to eq :paper
     end
   end
 
-  context '#paper' do
-    it 'player can choose rock' do
-      expect(player.paper).to eq :paper
-    end
-  end
-
-  context '#scissors' do
-    it 'player can choose scissors' do
-      expect(player.scissors).to eq :scissors
-    end
-  end
-  
 end
