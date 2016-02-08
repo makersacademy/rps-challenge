@@ -25,47 +25,43 @@ class Battle < Sinatra::Base
     @game = Game.new(Player.new(params['Player1 name']),(Player.new(params['Player2 name'])))
     @game.two_player
     session[:game] = @game
-    redirect '/play'
+    redirect '/play_game'
   end
 
   post '/1-player' do
     session[:game] = Game.new(Player.new(params['Player1 name']),Computer.new)
-    redirect '/play'
+    redirect '/play_game'
   end
 
-  get '/play' do
+  get '/play_game' do
     @game = session[:game]
     @player1_name = @game.player1.name
     @player2_name = @game.player2.name
+    @player2_playing = session[:two_player]
     erb :play
   end
 
-  post '/play' do
+  post '/play_game' do
     @game = session[:game]
     session[:choice] = params['choice']
     if @game.multiplayer?
-      redirect('/play2')
+      session[:two_player] = true
+      redirect('/play_game')
     else
       @game.make_moves(session[:choice])
-
-      redirect('/game')
+      redirect('/outcome')
     end
   end
 
-  get '/play2' do
-    @game = session[:game]
-    @player1_name = @game.player1.name
-    @player2_name = @game.player2.name
-    erb :play2
-  end
 
-  post '/game' do
+  post '/outcome' do
+    session[:two_player] = false
     @game = session[:game]
     @game.make_moves(session[:choice],params['choice2'])
-    redirect '/game'
+    redirect '/outcome'
   end
 
-  get '/game' do
+  get '/outcome' do
     @game = session[:game]
     @player1_name = @game.player1.name
     @player2_name = @game.player2.name
