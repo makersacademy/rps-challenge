@@ -12,8 +12,8 @@ Instructions
  
  From your browser visit localhost:4567 to play the game locally
  
- 
 ```
+* NOTE: Ihave used a global variable only to simulate a database 
 
 ![screenshot](https://www.dropbox.com/s/sykg8lavy8wlqlw/Screen%20Shot%202016-02-08%20at%2000.32.22.png?dl=0)
 
