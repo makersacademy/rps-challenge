@@ -22,7 +22,7 @@ class MyApp < Sinatra::Base
     erb :play
   end
 
-  get '/move' do
+  post '/move' do
     $game.player1.move = params[:move]
     redirect '/result'
    end

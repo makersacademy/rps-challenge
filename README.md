@@ -1,9 +1,11 @@
 To play this game please follow these instructions:
 
+```ruby
 $ git clone git@github.com:ScottGledhill/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
+```
 
 
 Please sign in to play by entering your name, click submit,

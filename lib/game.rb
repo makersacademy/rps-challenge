@@ -1,13 +1,9 @@
 require './lib/player'
 require './lib/computer'
+require './lib/win_matrix'
 class Game
-  WIN_MATRIX = {
-    rock:         [:scissors, :lizard],
-    scissors:     [:paper, :lizard],
-    paper:        [:rock, :spock],
-    lizard:       [:spock, :paper],
-    spock:        [:rock, :scissors]
-    }
+  include Win_matrix
+
   attr_reader :player1, :computer
 
   def initialize(player1, computer)
