@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   subject(:game) {described_class.new(player_1, player_2)}
-  let(:player_1) { double(:player, name: 'player 1')}
+  let(:player_1) { double(:player, name: :Player1win)}
   let(:player_2) {double :player_2}
 
   context 'setting up the game' do
@@ -25,7 +25,7 @@ describe Game do
 
     it 'decides winner using results method' do
       game.result(:Rock, :Scissors)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'returns winner as :Draw if the game is a draw' do
@@ -39,52 +39,52 @@ describe Game do
 
     it 'results in Rock winning against Scissors' do
       game.result(:Rock, :Scissors)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Rock winning against Lizard' do
       game.result(:Rock, :Lizard)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Paper winning against Rock' do
       game.result(:Paper, :Rock)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Paper winning against Spock' do
       game.result(:Paper, :Spock)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Scissors winning against Paper' do
       game.result(:Scissors, :Paper)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Scissors winning against Lizard' do
       game.result(:Scissors, :Lizard)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Lizard winning against Paper' do
       game.result(:Lizard, :Paper)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Lizard winning against Spock' do
       game.result(:Lizard, :Spock)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Spock winning against Rock' do
       game.result(:Spock, :Rock)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
     end
 
     it 'results in Spock winning against Scissors' do
       game.result(:Spock, :Scissors)
-      expect(game.winner).to eq 'player 1'
+      expect(game.winner).to eq :Player1win
 
     end
 
