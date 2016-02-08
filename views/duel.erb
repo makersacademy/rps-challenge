@@ -1,7 +1,7 @@
 <div id="duel">
-  <h2><%= @player.name %> (<%= @player.c_rps%>)</h2>
+  <h2><%= @player1.name %> (<%= @player1.c_rps%>)</h2>
   vs
-  <h2>Computer (<%= @pc.c_rps%>)</h2>
+  <h2><%= @player2.name %> (<%= @player2.c_rps%>)</h2>
   <br/>
   <% if @winner == 0 %>
     *** The match is draw ***

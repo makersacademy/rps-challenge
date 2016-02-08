@@ -2,7 +2,7 @@ def starting_solo
   visit("/")
   find('#sp').set(true)
   click_button("submit")
-  fill_in("player", with: 'Alex')
+  fill_in("player1", with: 'Alex')
   click_button("submit")
 end
 

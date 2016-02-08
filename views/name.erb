@@ -1,0 +1,10 @@
+<div id="index">
+  <h1> Enter your name<% if @mode == "mp" %>s<% end %></h1>
+  <form id="form" action="/name" method="post">
+    <input type="text" name="player1" placeholder="Player 1" required="true">
+    <% if @mode == "mp" %>
+      <input type="text" name="player2" placeholder="Player 2" required="true">
+    <% end %>
+    <input type="submit" value="submit">
+  </form>
+</div>

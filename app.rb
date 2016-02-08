@@ -11,50 +11,38 @@ class Rps < Sinatra::Base
   end
 
   post '/options' do
-    mode = params[:mode]
-    if mode == "sp" then redirect '/singleplay' else redirect '/multiplay' end
+    session[:mode] = params[:mode]
+    redirect '/name'
   end
 
   post '/name' do
-    player1 = Player.new(params[:player])
-    $game = Game.new(player1)
-    redirect '/play'
-  end
-
-  post '/multiname' do
     player1 = Player.new(params[:player1])
-    player2 = Player.new(params[:player2])
+    if session[:mode] == "mp"
+      player2 = Player.new(params[:player2])
+    else
+      player2 = Player.new("Computer")
+    end
     $game = Game.new(player1, player2)
-    redirect '/playerone'
+    redirect '/play'
   end
 
   post '/rps' do
     @rps = params[:rps]
-    player = $game.player1
-    player.select_rps(@rps.to_sym)
-    redirect '/duel'
-  end
-
-  post '/rpsplayerone' do
-    @rps = params[:rps]
     player1 = $game.player1
     player1.select_rps(@rps.to_sym)
-    redirect '/playertwo'
+    if session[:mode] == "sp" then redirect '/duel' else redirect '/playertwo' end
   end
 
   post '/rpsplayertwo' do
     @rps = params[:rps]
     player2 = $game.player2
     player2.select_rps(@rps.to_sym)
-    redirect '/multiduel'
+    redirect '/duel'
   end
 
-  get '/singleplay' do
-    erb :singleplay
-  end
-
-  get '/multiplay' do
-    erb :multiplay
+  get '/name' do
+    @mode = session[:mode]
+    erb :name
   end
 
   get '/play' do
@@ -62,29 +50,17 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  get '/playerone' do
-    @player1 = $game.player1
-    erb :playerone
-  end
-
   get '/playertwo' do
-    @player2 = $game.player2
+    @player = $game.player2
     erb :playertwo
   end
 
   get '/duel' do
-    @player = $game.player1
-    $game.auto_choose
-    @pc = $game.player2
-    @winner = $game.winner
-    erb :duel
-  end
-
-  get '/multiduel' do
     @player1 = $game.player1
     @player2 = $game.player2
+    $game.auto_choose if session[:mode] == "sp"
     @winner = $game.winner
-    erb :multiduel
+    erb :duel
   end
 
   # start the server if ruby file executed directly
