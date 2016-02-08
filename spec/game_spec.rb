@@ -15,7 +15,6 @@ describe Game do
     context 'CPU Picks Rock' do
       before do
         allow(cpu).to receive(:choice).and_return("Rock")
-        allow(cpu).to receive(:cpu_hand).and_return("Rock")
         cpu.choice
       end
 
@@ -28,7 +27,6 @@ describe Game do
     context 'CPU Picks Paper' do
       before do
         allow(cpu).to receive(:choice).and_return("Paper")
-        allow(cpu).to receive(:cpu_hand).and_return("Paper")
         cpu.choice
       end
 
@@ -41,7 +39,7 @@ describe Game do
     context 'CPU Picks Scissors' do
       before do
         allow(cpu).to receive(:choice).and_return("Scissors")
-        allow(cpu).to receive(:cpu_hand).and_return("Scissors")
+
         cpu.choice
       end
 

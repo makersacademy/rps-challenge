@@ -4,7 +4,7 @@ class Cpu
   end
 
   def pick
-    ($game_rules == 'normal')? (@choice = hands[0..2].sample) : (@choice = hands.sample)
+    ($rules == 'normal')? (@choice = hands[0..2].sample) : (@choice = hands.sample)
   end
 
   attr_reader :choice, :name
