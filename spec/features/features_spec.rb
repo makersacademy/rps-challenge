@@ -12,9 +12,11 @@ feature 'Enter name' do
 
     scenario 'display chosen weapon and computer choice' do
       sign_in_and_play
+      allow_any_instance_of(Array).to receive(:sample).and_return('SCISSORS')
       click_button('ROCK')
       expect(page).to have_content 'YOU CHOSE ROCK'
-      expect(page).to have_content 'COMPUTER CHOSE: '
+      expect(page).to have_content 'COMPUTER CHOSE: SCISSORS'
+      click_link("PARTY!")
     end
 
     scenario 'PLAY AGAIN' do

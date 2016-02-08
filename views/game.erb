@@ -8,13 +8,14 @@
    <h1> COMPUTER CHOSE: <%= @computer_weapon %> </h1>
    <br>
    <% if @winner == 'YOU WIN' %>
-   <img src="http://cdn-blog-assets.bigfishgames.com/uploads/2015/01/Screen-Shot-2015-01-28-at-1.24.57-PM.png" height="400" width="500">
+   <a href="http://gifrific.com/wp-content/uploads/2012/04/dumbledore-party-hard.gif" id='PARTY!'>
+   <img src="http://cdn-blog-assets.bigfishgames.com/uploads/2015/01/Screen-Shot-2015-01-28-at-1.24.57-PM.png" height="400" width="500" id="you_win">
+ </a>
    <% elsif @winner == 'COMPUTER WINS' %>
    <img src="http://592f46.medialib.glogster.com/media/13ba9ba751fe0decd99567abd3cda6383d8c25f8b1689f7a00766e2c350f6c94/youlose.jpg" height="350" width="450">
    <% elsif @winner == 'DRAW' %>
    <img src="http://www.usifaz.com/Web%20Site%20Pics/Drawer%20Slides/zargen%20drawer.gif" height="350" width="450">
     <% end %>
-   <br>
    <br>
    <br>
    <br>
