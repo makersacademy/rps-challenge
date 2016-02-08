@@ -4,7 +4,6 @@ class Game
   def initialize(player,winner_klass)
     @player = player
     @winner_klass = winner_klass
-    @weapon = game_choice
   end
 
   def player_name
@@ -17,6 +16,10 @@ class Game
 
   def player_weapon
     @player.weapon
+  end
+
+  def set_weapon
+    @weapon = game_choice
   end
 
   def weapon

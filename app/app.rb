@@ -34,6 +34,7 @@ class RockPaperScissorsGame < Sinatra::Base
       params[:Scissors] ||
       params[:Spock] ||
       params[:Lizard])
+    @game.set_weapon
     @game.who_won
     session[:game] = @game
     redirect '/result'

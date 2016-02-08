@@ -24,6 +24,7 @@ describe Game do
     describe '#game_choice' do
       it 'chooses the computer\'s option' do
         allow(Kernel).to receive(:rand) {0.5}
+        game.set_weapon
         expect(game.weapon).to eq('Scissors')
       end
     end
