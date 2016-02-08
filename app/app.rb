@@ -29,11 +29,7 @@ class RockPaperScissorsGame < Sinatra::Base
 
   post '/result' do
     @game = session[:game]
-    @game.set_player_weapon(params[:Rock] ||
-      params[:Paper] ||
-      params[:Scissors] ||
-      params[:Spock] ||
-      params[:Lizard])
+    @game.set_player_weapon(params[:weapon])
     @game.set_weapon
     @game.who_won
     session[:game] = @game

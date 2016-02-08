@@ -5,9 +5,10 @@
 <h3> Player: <%= @game.player_name %> </h3>
 
 <form action = "/result" method = "post">
-  <input type = "submit" name = "Rock" value = "Rock">
-  <input type = "submit" name = "Paper" value = "Paper">
-  <input type = "submit" name = "Scissors" value = "Scissors">
-  <input type = "submit" name = "Spock" value = "Spock">
-  <input type = "submit" name = "Lizard" value = "Lizard">
+  <input type = "radio" id = "Rock" name = "weapon" value = "Rock">Rock
+  <input type = "radio" id = "Paper" name = "weapon" value = "Paper">Paper
+  <input type = "radio" id = "Scissors" name = "weapon" value = "Scissors">Scissors
+  <input type = "radio" id = "Spock" name = "weapon" value = "Spock">Spock
+  <input type = "radio" id = "Lizard" name = "weapon" value = "Lizard">Lizard
+  <input type = "submit" value = "Choose your weapon...">
 </form>

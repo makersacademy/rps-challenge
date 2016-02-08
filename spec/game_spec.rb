@@ -14,18 +14,23 @@ describe Game do
   end
 
   context 'When the player chooses an option' do
+
     describe '#set_player_weapon' do
       it 'passes the choice to the player object' do
-        expect(player).to receive(:choice)
-        game.set_player_weapon('Lizard')
+        expect(player).to receive(:choice).exactly(5).times
+        Winner::OUTCOMES.keys.length.times do |x|
+          game.set_player_weapon(Winner::OUTCOMES.keys[x])
+        end
       end
     end
 
     describe '#game_choice' do
       it 'chooses the computer\'s option' do
-        allow(Kernel).to receive(:rand) {0.5}
-        game.set_weapon
-        expect(game.weapon).to eq('Scissors')
+        Winner::OUTCOMES.keys.length.times do |x|
+          allow(game).to receive(:game_choice) {Winner::OUTCOMES.keys[x]}
+          game.set_weapon
+          expect(game.weapon).to eq(Winner::OUTCOMES.keys[x])
+        end
       end
     end
 

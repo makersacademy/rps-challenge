@@ -9,7 +9,8 @@ feature 'The player chooses which move to play' do
   end
   scenario 'They choose "Lizard"' do
     register_and_play
-    click_button 'Lizard'
+    choose "Lizard"
+    click_button 'Choose your weapon...'
     expect(page).to have_content('Jeremy chose Lizard!')
   end
 end
