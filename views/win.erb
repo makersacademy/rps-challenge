@@ -6,9 +6,10 @@
 <body>
 
   <h1>This is a Heading</h1>
-  <h2>You won!</h2>
-  <p>You chose <%= @game.p1_weapon %></p>
-  <p>Cpu chose <%= @game.p2_weapon %></p>
+  <h2><%= @game.player_1.name %> won!</h2>
+  <p><%= @game.player_1.name %> chose <%= @game.p1_weapon %></p>
+  <p><%= @game.player_2.name %> chose <%= @game.p2_weapon %></p>
+  <h2><%= @game.player_2.name %> lost!</h2>
 
   <a href="/play">Next Round</a>
 
