@@ -26,19 +26,25 @@ class RPS < Sinatra::Base
 
   get '/see_selected' do
     @selected_by_player = session[:player_selection]
-    $match.ai_selection
+    array = ["Rock", "Paper", "Scissors"].sample
+    @selected_by_ai = array
+    if @selected_by_player == @selected_by_ai
+      @winner = 'Nobody'
+    elsif @selected_by_player == 'Rock' && @selected_by_ai == 'Paper'
+      @winner = 'AI'
+    elsif @selected_by_player == 'Rock' && @selected_by_ai == 'Scissors'
+      @winner = 'You'
+    elsif @selected_by_player == 'Paper' && @selected_by_ai == 'Rock'
+      @winner = 'You'
+    elsif @selected_by_player == 'Paper' && @selected_by_ai == 'Scissors'
+      @winner = 'AI'
+    elsif @selected_by_player == 'Scissors' && @selected_by_ai == 'Rock'
+      @winner = 'AI'
+    elsif @selected_by_player == 'Scissors' && @selected_by_ai == 'Paper'
+      @winner = 'You'
+    end
     erb(:selected)
   end
-
-  post '/see_result' do
-    redirect 'see_result'
-  end
-
-  get '/see_result' do
-    @winner = "AI"
-    erb(:result)
-  end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

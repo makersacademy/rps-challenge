@@ -6,7 +6,7 @@ class Match
   end
 
   def ai_selection
-    array = ["Rock", "Paper", "Scissors"]
+    @selected_by_ai = ["Rock", "Paper", "Scissors"].sample
   end
 end
 

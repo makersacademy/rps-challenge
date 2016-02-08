@@ -39,74 +39,12 @@ feature 'User Story 2 - playing a game' do
 
   context 'User Story 2.4 - Declaration of a winner' do
 
-    context 'Marketeer selects Rock' do
-      
-      scenario 'Draw vs. Rock' do
-        click_button 'Rock'
-        srand(RAND_ROCK)
-        click_button 'Show winner'
-        expect(page).to have_content 'Nobody won'
-      end
-
-      scenario 'looses vs. Paper' do
-        click_button 'Rock'
-        srand(RAND_PAPER)
-        click_button 'Show winner'
-        expect(page).to have_content 'AI won'
-      end
-
-      scenario 'wins vs. Scissors' do
-        click_button 'Rock'
-        srand(RAND_SCISSORS)
-        click_button 'Show winner'
-        expect(page).to have_content 'You won'
-      end
-
-    end
-
-    context 'Marketeer selects Paper' do
-      scenario 'wins vs. Rock' do
-        click_button 'Paper'
-        srand(RAND_ROCK)
-        click_button 'Show winner'
-        expect(page).to have_content 'You won'
-      end
-
-      scenario 'Draw vs. Paper' do
-        click_button 'Paper'
-        srand(RAND_PAPER)
-        click_button 'Show winner'
-        expect(page).to have_content 'Nobody won'
-      end
-
-      scenario 'looses vs. Scissors' do
-        click_button 'Paper'
-        srand(RAND_SCISSORS)
-        click_button 'Show winner'
-        expect(page).to have_content 'AI won'
-      end
-    end
-
     context 'Marketeer selects Scissors' do
-      scenario 'looses vs. Rock' do
-        click_button 'Scissors'
-        srand(RAND_ROCK)
-        click_button 'Show winner'
-        expect(page).to have_content 'You won'
-      end
-
-      scenario 'wins vs. Paper' do
-        click_button 'Scissors'
-        srand(RAND_PAPER)
-        click_button 'Show winner'
-        expect(page).to have_content 'Nobody won'
-      end
 
       scenario 'Draw vs. Scissors' do
         click_button 'Scissors'
         srand(RAND_SCISSORS)
-        click_button 'Show winner'
-        expect(page).to have_content 'AI won'
+        expect(page).to have_content 'Nobody won'
       end
     end
 

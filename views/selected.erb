@@ -2,9 +2,14 @@
 You play <%= @selected_by_player %>
 <p></p>
 AI plays <%= @selected_by_ai %>
+<p></p>
 
-<form action='/see_result' method='post'>  
+Result:
+
+<%= @winner %> won
+
+<!-- <form action='/see_result' method='post'>  
   <input type='submit' value='Show winner'>
 </form>
-
+ -->
 
