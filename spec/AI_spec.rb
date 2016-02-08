@@ -19,7 +19,6 @@ describe AI do
   end
 
   it 'returns its weapon choice' do
-    #allow(computer).to receive(:weapon) { 'rock' }
     expect(computer).to respond_to(:weapon_choice)
   end
 end
