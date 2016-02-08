@@ -24,6 +24,8 @@ $ ruby app/rps.rb
 
 navigate to http://localhost:4567/ on browser.
 
+```
+
 Screenshots:
 --------------
 
