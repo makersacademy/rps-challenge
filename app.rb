@@ -10,7 +10,7 @@ class Rps < Sinatra::Base
     $player = params[:player].capitalize
     @player = $player
     $game = Game.new
-    erb (:play)
+    redirect('/play')
   end
 
   get '/play' do
