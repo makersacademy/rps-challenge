@@ -6,9 +6,11 @@ class Game
           Rock:         [:Scissors, :Lizard],
           Scissors:     [:Paper, :Lizard],
           Paper:        [:Rock, :Spock],
-          Lizard:       [:Spock, :Paper],
+          Lizard:       [:Paper, :Spock],
           Spock:        [:Rock, :Scissors]
-        }
+          }
+
+  WEAPONS = [:Rock, :Scissors, :Paper, :Lizard, :Spock]
 
   def initialize(player_1, player_2)
     @player_1 = player_1

@@ -3,7 +3,7 @@ class Computer
 
   def initialize(name = "AI")
     @name = name
-    @choice = [:Rock, :Paper,:Scissors].sample
+    @choice = Game::WEAPONS.sample
   end
 
 end

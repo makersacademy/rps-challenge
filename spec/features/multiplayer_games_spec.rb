@@ -21,5 +21,4 @@ feature "Players can play multiplayer games" do
     expect(page).to have_text("Zeshan wins!")
   end
 
-
 end

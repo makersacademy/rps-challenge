@@ -12,5 +12,4 @@ class Player
     @choice = choice
   end
 
-
 end

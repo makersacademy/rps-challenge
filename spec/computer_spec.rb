@@ -8,7 +8,8 @@ describe Computer do
   end
 
   it 'makes a choice a random choice in the game' do
-    allow(computer).to receive(:choice).and_return(:Rock)
-    expect(computer.choice).to eq (:Rock)
+    allow(computer).to receive(:choice).and_return(:Spock)
+    expect(computer.choice).to eq (:Spock)
   end
+  
 end

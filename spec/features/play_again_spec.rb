@@ -8,17 +8,11 @@ feature 'Players can play again' do
     expect(page).to have_text("Please enter your name")
   end
 
-  scenario 'single player can play again without re-entering name' do
-    play_one_player_game
-    click_button "Play Again? (One Player)"
-    expect(page).to have_text("Welcome to the game Zeshan!")
-  end
-
   scenario 'two players can play again' do
     play_two_player_game
-    click_button "Play Again? (Two Players)"
-    expect(page).to have_text("Please enter your name player 1")
-    expect(page).to have_text("Please enter your name player 2")
+    click_button "Play Again?"
+    expect(page).to have_text("Please enter your name")
+    expect(page).to have_text("Or click here for multiplayer")
   end
 
 end

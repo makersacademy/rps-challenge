@@ -5,23 +5,22 @@ body {
 .title {
   text-align: center;
   font-size: 18px;
-
 }
+
 .subtitle{
   text-align: center;
   font-size: 12px
 }
+
 #container{
   width:300px
   margin: auto
   position: relative;
 }
 
-
 #left_button {
   float: left;
 }
-
 
 #right_button {
   float: right;
@@ -132,7 +131,6 @@ div.playagain input {
   	text-indent: -9999px;
     text-align: center;
 }
-
 
 div.newplayer input {
     background:url(/img/newplayer.png) no-repeat 0 0;

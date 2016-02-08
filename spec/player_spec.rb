@@ -16,4 +16,5 @@ describe Player do
       expect(player.make_choice(choice)).to eq choice
     end
   end
+  
 end

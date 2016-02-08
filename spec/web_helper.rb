@@ -10,17 +10,14 @@ def two_player_log_in_page
 end
 
 def two_player_sign_in
-  visit '/'
-  click_button "Play two player"
+  two_player_log_in_page
   fill_in 'Player_1', with: "Zeshan"
   fill_in 'Player_2', with: "Batman"
   click_button "Submit names"
 end
 
 def play_one_player_game
-  visit '/'
-  fill_in 'Player_1', with: "Zeshan"
-  click_button "Submit name"
+  sign_in_and_play
   click_button "Rock"
 end
 
