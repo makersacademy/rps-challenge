@@ -3,7 +3,7 @@
 #Week 3 of Makers Academy
 --------------------------
 
-Author
+#Author
 --------
 
 Russell Vaughan
@@ -28,22 +28,22 @@ navigate to http://localhost:4567/ on browser.
 
 #Screenshots:
 --------------
-*Start Screen:
+#Start Screen:
 
 ![Image of Start Screen]
 (http://i.imgur.com/JCIUOdv.png)
 
-*Login Screen:
+#Login Screen:
 
 ![Image of Login]
 (http://i.imgur.com/95wIfqG.png)
 
-*Weapon Selection Screen:
+#Weapon Selection Screen:
 
 ![Image of Weapon Selection]
 (http://i.imgur.com/tfezJDO.png)
 
-*Game Result Screen:
+#Game Result Screen:
 
 ![Image of Game Result]
 (http://i.imgur.com/1KLYv44.png)
