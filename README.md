@@ -36,10 +36,10 @@ navigate to http://localhost:4567/ on browser.
 
 ##Key concepts covered
 
-+Working with Servers and Clients
-+HTTP requests and responses
-+Understanding params
-+Understanding sessions
-+Using Web frameworks like Sinatra
-+Feature testing with Capybara
-+Implementing User Stories that use all of the above.
+Working with Servers and Clients. 
+HTTP requests and responses. 
+Understanding params. 
+Understanding sessions. 
+Using Web frameworks like Sinatra. 
+Feature testing with Capybara. 
+Implementing User Stories that use all of the above.
