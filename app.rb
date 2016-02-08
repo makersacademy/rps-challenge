@@ -2,18 +2,19 @@ require 'sinatra/base'
 require './lib/game'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    $name = params[:name]
+    session[:name] = params[:name]
     redirect 'play'
   end
 
   get '/play' do
-    $game = Game.new($name)
+    $game = Game.new(session[:name])
     @game = $game
     erb(:play)
   end
@@ -24,13 +25,12 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-#    p params[:choice]
-    $choice_you = params[:choice]
+    session[:choice_you] = params[:choice]
     redirect 'result'
   end
 
   get '/result' do
-    @choice_you = $choice_you
+    @choice_you = session[:choice_you]
     @game = $game
     @game.choose_mine
     erb(:result)
