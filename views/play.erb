@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<body background="./images/bg.jpg">
+<div class="container">
+  <div class='form'>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+
+<form action="/move" method="post">
+	<button name="move" value="rock">Rock</button>
+	<button name="move" value="paper">Paper</button>
+	<button name="move" value="scissors">Scissors</button>
+</form>
+</div>
+</div>
+</body>

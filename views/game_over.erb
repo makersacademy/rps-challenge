@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<body background="./images/bg.jpg">
+  <div class="container">
+    <div class='form'>
+      <h1>You played <%= player_move %>.<br> The computer played <%= comp_move %></h1>
+      <h2><%= @result %></h2>
+      <br><br>
+      <a href='/play'><button type="button">Try again?</button></a>
+      <a href='/'><button type="button">Restart</button></a>
+    </div>
+  </div>
+</body>
