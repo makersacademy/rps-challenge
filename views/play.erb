@@ -1,0 +1,9 @@
+<h1>Player: <%= @player_name %><h1>
+<br>
+<h2> Choose one:<h2>
+<form action='/contest' method = 'post'>
+  <input type="radio" name="choice" value="rock" id='rock'> Rock<br>
+  <input type="radio" name="choice" value="paper" id='paper'> Paper<br>
+  <input type="radio" name="choice" value="scissors" id='scissors'> Scissors<br>
+  <input type="submit" value="Submit">
+</form>
