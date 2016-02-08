@@ -23,7 +23,7 @@ class Game
   end
 
   def set_turn
-    if player_1s_turn? && multiplayer
+    if player_1s_turn? && multiplayer?
       set_to_player_2s_turn
     else
       reset_to_player_1s_turn
@@ -31,7 +31,7 @@ class Game
   end
 
   def stage
-    return '/play' if player_1s_turn? && multiplayer
+    return '/play' if player_2s_turn? && multiplayer?
     '/endround'
   end
 
@@ -49,7 +49,11 @@ class Game
     @turn == player_1
   end
 
-  def multiplayer
+  def player_2s_turn?
+    @turn == player_2
+  end
+
+  def multiplayer?
     player_2.is_a?(Player)
   end
 

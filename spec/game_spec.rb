@@ -24,13 +24,13 @@ describe Game do
   end
 
   describe '#set_turn' do
-    it 'sets to player 2\'s turn if multiplayer and still player 1\'s turn' do
+    it 'sets player 2\'s turn if multiplayer and currently player 1\'s turn' do
       allow(player_2).to receive(:is_a?).and_return(true)
       game.set_turn
       expect(game.turn).to eq player_2
     end
 
-    it 'resets to player 1\'s turn if still player 2\'s turn' do
+    it 'resets to player 1\'s turn if currently player 2\'s turn' do
       allow(game).to receive(:player_1s_turn?).and_return(false)
       game.set_turn
       expect(game.turn).to eq player_1
@@ -44,8 +44,9 @@ describe Game do
   end
 
   describe '#stage' do
-    it 'returns /play if p1\'s turn and multiplayer' do
+    it 'returns /play if p2\'s turn and multiplayer' do
       allow(player_2).to receive(:is_a?).and_return(true)
+      allow(game).to receive(:player_2s_turn?).and_return(true)
       expect(game.stage).to eq '/play'
     end
 
