@@ -28,7 +28,7 @@ class RockPaperScissorsGame < Sinatra::Base
   post '/result' do
     @game = session[:game]
     @game.set_player_choice(params[:choice])
-
+    
   end
 
   get '/result' do

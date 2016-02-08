@@ -30,5 +30,6 @@ class Game
 
   def who_won(player_choice,game_choice)
     @winner = @winner_klass.new(player_choice,game_choice)
+    @winner.outcome
   end
 end
