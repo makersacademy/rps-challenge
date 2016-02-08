@@ -60,16 +60,16 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Screenshots
 
 ### Login page
-![Screenshot](http://imgur.com/OZNtviJ)
+![Screenshot](/docs/playerlogin)
 
 ### Attack choice
-![Screenshot](http://imgur.com/EqdbKLW)
+![Screenshot](/docs/attackchoice)
 
 ### Results
-![Screenshot](http://imgur.com/snl67IG)
+![Screenshot](/docs/resultspage)
 
 ### Multiplayer
-![Screenshot](http://imgur.com/d1knLZ2)
-![Screenshot](http://imgur.com/VwFYmaQ)
-![Screenshot](http://imgur.com/d1nAox6)
-![Screenshot](http://imgur.com/7DJQ2iH)
+![Screenshot](/docs/multiplayerlogin)
+![Screenshot](/docs/player1choice)
+![Screenshot](/docs/player2choice)
+![Screenshot](/docs/multiplayerresults)
