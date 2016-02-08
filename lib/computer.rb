@@ -3,7 +3,9 @@ class Computer
 
   attr_reader :game
 
+  MOVES= ['ROCK', 'PAPER', 'SCISSORS']
+
   def move
-    Game::MOVES.sample
+    MOVES.sample
   end
 end

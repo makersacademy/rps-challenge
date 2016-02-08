@@ -5,7 +5,7 @@ describe Computer do
 
   describe '#move' do
     it 'returns a move' do
-    allow(computer).to receive(:move) { 'ROCK' }
+    allow_any_instance_of(Array).to receive(:sample).and_return('ROCK')
     expect(computer.move).to eq 'ROCK'
     end
   end

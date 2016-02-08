@@ -6,8 +6,6 @@ class Game
 
   attr_reader :player, :computer
 
-  MOVES= ['ROCK', 'PAPER', 'SCISSORS']
-
   RULES= {'ROCK' => "SCISSORS",
           'PAPER'=> "ROCK",
           'SCISSORS' => 'PAPER'}
