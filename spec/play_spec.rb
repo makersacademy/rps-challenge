@@ -9,11 +9,18 @@ feature "Sign in page is displayed" do
   end
   
   scenario "Player has a field to input into" do
-    find_field('player_1').value
+    find_field('player_name').value
   end
   
   scenario "Player can submit and start the game" do
     find_button('Start').click
+  end
+end
+    
+feature "Player's choice" do
+  
+  before do
+    visit('/')
   end
   
   scenario "Player can choose Rock" do

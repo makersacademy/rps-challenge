@@ -1,25 +1,29 @@
 feature "Rock Paper Scissors" do
   
-  scenario 'Player can input his/her name' do
+  before do 
     visit('/')
-    fill_in('player_1', :with => 'Marco')
+    fill_in('player_name', :with => 'Marco')
     click_button('Start')
+  end
+  
+  scenario 'Player can input his/her name' do
     expect(page).to have_content "Marco - Choose Wisely..."
   end
   
   scenario 'Player can choose RSP and see the result' do
-    visit('/')
-    fill_in('player_1', :with => 'Marco')
-    click_button('Start')
     click_button('Rock')
     expect(page).to have_content "Rock"
   end
   
-  scenario 'A match can be completed' do 
-    visit('/')
-    fill_in('player_1', :with => 'Marco')
-    click_button('Start')
+  scenario 'A match can be completed- Player 1 wins' do 
+    allow_any_instance_of(Game).to receive(:result).and_return(1)
     click_button('Rock')
-    expect(page).to have_content "Round Finished!"
+    expect(page).to have_content "Marco Wins!"
+  end
+  
+  scenario 'A match can be completed- The Computer wins' do 
+    allow_any_instance_of(Game).to receive(:result).and_return(2)
+    click_button('Rock')
+    expect(page).to have_content "The Computer Wins!"
   end
 end

@@ -1,36 +1,35 @@
 class Game 
   
+  attr_reader :player_2
   
+  CPU = ["Rock", "Paper", "Scissors"]
   
-  def initialize(choice)
-    @choice = choice
-    @cpu    = [:rock, :paper, :scissors].sample
-    @results = { "Rock"     => :scissors, 
-                 "Scissors" => :paper, 
-                 "Paper"    => :rock
-               }
-  end
+  def initialize(choice_1, choice_2=CPU.sample)
+    @player_1 = choice_1
+    @player_2 = choice_2
+    @results  = { "Rock"     => "Scissors", 
+                 "Scissors" => "Paper", 
+                 "Paper"    => "Rock"
+                }
+  end 
   
   def result
     return "Draw!" if draw
     rps_check
   end
   
-  def cpu_choice
-    cpu.capitalize.to_s
-  end
   
   private 
   
-  attr_reader :cpu, :choice, :results
-  
+  attr_reader :results, :player_1
+
   def rps_check
-    results.each_pair { |k, v| return 1 if (k == choice && v == cpu) }
+    results.each_pair { |k, v| return 1 if (k == player_1 && v == player_2) }
     2
   end
   
   def draw
-    choice == cpu_choice
+    player_1 == player_2
   end
   
 end

@@ -1,20 +1,22 @@
 # RPS Challenge
 
+[![Build Status](https://travis-ci.org/MarcoCode/rps-challenge.svg?branch=master)](https://travis-ci.org/MarcoCode/rps-challenge)
+
 Instructions
 -------
 
-* This is my work on the RPS challenge. 
-* The user stories completed at the moment are: 
-
 ``` 
- As a marketeer
- So that I can see my name in lights
- I would like to register my name before playing an online game
-
- As a marketeer
- So that I can enjoy myself away from the daily grind
- I would like to be able to play rock/paper/scissors
+ $ git clone git@github.com:MarcoCode/rps-challenge.git  
+ $ cd rps-challenge
+ $ ruby rps_web.rb
+ 
+ From your browser visit localhost:4567 to play the game locally
+ 
+ ![screenshot] https://www.dropbox.com/s/sykg8lavy8wlqlw/Screen%20Shot%202016-02-08%20at%2000.32.22.png?dl=0
+ 
 ```
+
+
 
 
 
