@@ -37,11 +37,12 @@ class RPSApp < Sinatra::Base
 
   post '/weapon' do
     @game = session[:game]
-    @game.player_1.weapon = params[:weapon]
-    redirect to '/round'
+    @game.turn.weapon = params[:weapon]
+    @game.set_turn
+    redirect to @game.stage
   end
 
-  get '/round' do
+  get '/endround' do
     @game = session[:game]
     erb @game.round_result
   end

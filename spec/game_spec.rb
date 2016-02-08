@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player_1, player_2) }
-  let(:player_1) { double(:player, name: 'player 1', weapon: :rock) }
-  let(:player_2) { double(:player, name: 'player 2', weapon: :paper) }
+  let(:player_1) { double(:player_1, name: 'player 1', weapon: :rock) }
+  let(:player_2) { double(:player_2, name: 'player 2', weapon: :paper) }
 
   describe '#player_1' do
     it 'returns player 1' do
@@ -14,6 +14,44 @@ describe Game do
   describe '#player_2' do
     it 'returns player 2' do
       expect(game.player_2).to eq player_2
+    end
+  end
+
+  describe '#turn' do
+    it 'starts turn with player 1' do
+      expect(game.turn).to eq player_1
+    end
+  end
+
+  describe '#set_turn' do
+    it 'sets to player 2\'s turn if multiplayer and still player 1\'s turn' do
+      allow(player_2).to receive(:is_a?).and_return(true)
+      game.set_turn
+      expect(game.turn).to eq player_2
+    end
+
+    it 'resets to player 1\'s turn if still player 2\'s turn' do
+      allow(game).to receive(:player_1s_turn?).and_return(false)
+      game.set_turn
+      expect(game.turn).to eq player_1
+    end
+
+    it 'resets to player 1\'s turn if not multiplayer' do
+      allow(player_2).to receive(:is_a?).and_return(false)
+      game.set_turn
+      expect(game.turn).to eq player_1
+    end
+  end
+
+  describe '#stage' do
+    it 'returns /play if p1\'s turn and multiplayer' do
+      allow(player_2).to receive(:is_a?).and_return(true)
+      expect(game.stage).to eq '/play'
+    end
+
+    it 'returns /endround if round is done or playing against cpu' do
+      allow(player_2).to receive(:is_a?).and_return(false)
+      expect(game.stage).to eq '/endround'
     end
   end
 

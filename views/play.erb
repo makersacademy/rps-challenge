@@ -8,12 +8,14 @@
   <h1>This is a Heading</h1>
   <p><%= @game.player_1.name %> vs. <%= @game.player_2.name %></p>
 
-  <form action="/weapon" method="post">
-    <input type="radio" name="weapon" id="rock" value="rock" checked> Rock<br>
-    <input type="radio" name="weapon" id="paper" value="paper"> Paper<br>
-    <input type="radio" name="weapon" id="scissors" value="scissors"> Scissors<br>
-    <input type="submit" value="Fight!">
-  </form>
+  <h2><%= @game.turn.name %>'s turn</h2>
+
+    <form action="/weapon" method="post">
+      <input type="radio" name="weapon" id="rock" value="rock" checked> Rock<br>
+      <input type="radio" name="weapon" id="paper" value="paper"> Paper<br>
+      <input type="radio" name="weapon" id="scissors" value="scissors"> Scissors<br>
+      <input type="submit" value="Fight!">
+    </form>
 
 </body>
 </html>
