@@ -1,8 +1,6 @@
 require 'spec_helper'
-require 'rack/test'
 
 describe 'index page' do
-  include Rack::Test::Methods
 
   scenario 'home screen displays welcome message' do
     sign_in_pvp

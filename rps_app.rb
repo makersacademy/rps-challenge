@@ -59,17 +59,9 @@ class RPSApp < Sinatra::Base
 
   post '/pvp_choice' do
     if $game.player1.choice.nil?
-      if params[:choice] == "Spock"
-        $game.player1.choice= params[:choice].to_sym
-      else
-        $game.player1.choice= params[:choice].downcase.to_sym
-      end
+      $game.player1.choice= params[:choice].to_sym
     elsif $game.player2.choice.nil?
-      if params[:choice] == "Spock"
-        $game.player2.choice= params[:choice].to_sym
-      else
-        $game.player2.choice= params[:choice].downcase.to_sym
-      end
+      $game.player2.choice= params[:choice].to_sym
       $game.calculate_winner
     end
     redirect to '/pvp'
