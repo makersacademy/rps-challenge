@@ -26,4 +26,10 @@ feature "Rock Paper Scissors" do
     click_button('Rock')
     expect(page).to have_content "The Computer Wins!"
   end
+  
+  scenario "A match can be completed- It's a Draw!" do 
+    allow_any_instance_of(Game).to receive(:result).and_return("Draw!")
+    click_button('Rock')
+    expect(page).to have_content "This is a Draw!"
+  end
 end
