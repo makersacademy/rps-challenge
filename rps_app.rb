@@ -37,7 +37,7 @@ class RPSApp < Sinatra::Base
 
   get '/endround' do
     @game = session[:game]
-    erb @game.round_result, :layout => :weapons
+    erb @game.round_result, layout: :weapons
   end
 
   # start the server if ruby file executed directly
