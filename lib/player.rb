@@ -12,7 +12,6 @@ class Player
 
   def choose_weapon(weapon)
     weapon = weapon.to_sym
-    # TODO: redundant
     raise ARGUMENT_ERROR_MSG unless Game::WEAPONS.include? weapon
     @weapon = weapon_klass.new(weapon)
   end

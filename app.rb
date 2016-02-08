@@ -6,26 +6,18 @@ class RPS < Sinatra::Base
 
   get '/' do
     erb :main_title do
-      erb :index
-    end
-  end
-
-  get '/single_sign_in' do
-    # TODO: refactor to render separate nested layouts
-    @players = 1
-    erb :main_title do
       erb :sign_in
     end
   end
 
-  get '/multi_sign_in' do
-    @players = 2
+  get '/sign_in/:players' do
+    @players = params[:players].to_sym
     erb :main_title do
-      erb :sign_in
+      erb @players
     end
   end
 
-  post '/players' do
+  post '/names' do
     if params[:player_2].nil?
       session[:game] = Game.single_player(params[:player_1])
     else

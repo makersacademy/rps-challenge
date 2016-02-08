@@ -1,0 +1,17 @@
+<section class="sign_in">
+  <% if @players == 1 %>
+    <form action="/players" method="post">
+      <label for="player_1">Player 1:</label>
+      <input type="text" name="player_1" required />
+      <input type="submit" value="Go!" />
+    </form>
+  <% elsif @players == 2 %>
+    <form action="/players" method="post">
+      <label for="player_1">Player 1:</label>
+      <input type="text" name="player_1" required />
+      <label for="player_2">Player 2:</label>
+      <input type="text" name="player_2" required />
+      <input type="submit" value="Go!" />
+    </form>
+  <% end %>
+</section>
