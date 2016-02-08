@@ -11,7 +11,7 @@ class RPS < Sinatra::Base
   end
 
   get '/single_sign_in' do
-    # TODO: refactor
+    # TODO: refactor to render separate nested layouts
     @players = 1
     erb :main_title do
       erb :sign_in
@@ -26,7 +26,6 @@ class RPS < Sinatra::Base
   end
 
   post '/players' do
-    # IDEA: refactor to take both players with default for nil player 2
     if params[:player_2].nil?
       session[:game] = Game.single_player(params[:player_1])
     else
@@ -49,8 +48,6 @@ class RPS < Sinatra::Base
       redirect '/player_2'
     else
       @game.player(2).choose_weapon
-      # TODO: move to Bot method
-      sleep 2
       redirect '/result'
     end
   end

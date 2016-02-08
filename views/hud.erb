@@ -5,19 +5,11 @@
         <section class="instructions">
           Choose your weapon:
         </section>
-        <form action="/player_1_choice" method="post" class="weapons-form" id="weapons-form">
+        <form action="/player_1_choice" method="post">
           <% Game::WEAPONS.each do |weapon| %>
-          <div class="weapon-box">
-            <input type="radio" name="weapon" value="<%= weapon %>" />
-            <label for="weapon"><%= weapon %></label>
-          </div>
+            <input type="submit" class="button" name="weapon" value="<%= weapon %>" />
           <% end %>
-          <div class="weapon-box">
-            <input type="radio" name="weapon" value="sample" />
-            <label for="weapon">sample</label>
-          </div>
         </form>
-        <button type="submit" form="weapons-form" value="Go!">Go!</button>
       <% elsif @game.multiplayer? %>
         <section class="instructions">
           Waiting for <%= @game.player(2).name %>...
@@ -39,15 +31,11 @@
         <section class="instructions">
           Choose your weapon:
         </section>
-        <form action="/player_2_choice" method="post" class="weapons-form" id="weapons-form">
+        <form action="/player_2_choice" method="post">
           <% Game::WEAPONS.each do |weapon| %>
-          <div class="weapon-box">
-            <input type="radio" name="weapon" value="<%= weapon %>" />
-            <label for="weapon"><%= weapon %></label>
-          </div>
+            <input type="submit" class="button" name="weapon" value="<%= weapon %>" />
           <% end %>
         </form>
-        <button type="submit" form="weapons-form" value="Go!">Go!</button>
       <% end %>
     </div>
   </section>
