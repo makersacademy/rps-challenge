@@ -1,0 +1,10 @@
+<h1> <%= @name %>, welcome! Please select your weapon: </h1>
+<body>
+  <form action='/process-results' method = post>
+    <input type="radio" name="weapon" value="rock" >ROCK
+    <input type="radio" name="weapon" value="paper" >PAPER
+    <input type="radio" name="weapon" value="scissors" >SCISSORS
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
