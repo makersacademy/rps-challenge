@@ -33,7 +33,7 @@ navigate to http://localhost:4567/ on browser.
 ```
 
 #Screenshots
-Inline-style: 
+
 ![alt text](http://i.imgur.com/Tz4G6T2.png "Logo Title Text 1")
 
 
