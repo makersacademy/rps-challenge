@@ -57,8 +57,6 @@ main {
 
 main#start .background-image {
   background-image: url("img/start.jpg"); }
-main#start h1 {
-  text-transform: uppercase; }
 main#start form {
   text-align: center; }
   main#start form label {

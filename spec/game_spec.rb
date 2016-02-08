@@ -15,11 +15,11 @@ describe Game do
     describe '#initialize' do
 
       it 'initializes with player one' do
-        expect(player_one.name).to eq 'Refkah'
+        expect(game.player_one.name).to eq 'Refkah'
       end
 
       it 'initializes with player two' do
-        expect(player_two.name).to eq 'Robot'
+        expect(game.player_two.name).to eq 'Robot'
       end
 
     end
