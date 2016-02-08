@@ -1,11 +1,11 @@
 <h1 align="center"> <%= @player_name %> - please select your hand gesture of choice </h1>
 
-<form>
-  <input type="radio" name="selection"> Rock<br>
-  <input type="radio" name="selection"> Paper<br>
-  <input type="radio" name="selection"> Scissors
+<form action="/results" method="post" >
+  <input type="radio" name="selection" value="rock"> Rock<br>
+  <input type="radio" name="selection" value="paper"> Paper<br>
+  <input type="radio" name="selection" value="scissors"> Scissors
 </form>
 
-<form action="/fight">
+<form action="/results">
     <input type='submit' value='Play now'>
 </form>
