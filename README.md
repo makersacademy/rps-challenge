@@ -8,12 +8,12 @@ Author
 
 Russell Vaughan
 
-Features of program
+#Features of program
 --------------------
 
 This is a web application where a user can play Rock, Paper, Scissors. A user can select to play the computer or another human opponent. A user then enters their username(s), selects their weapon of choice and is able to see the result of their game; win, lose or draw.
 
-Installation and example use
+#Installation and example use
 ----------------------------
 
 ```
@@ -26,17 +26,24 @@ navigate to http://localhost:4567/ on browser.
 
 ```
 
-Screenshots:
+#Screenshots:
 --------------
+*Start Screen:
 
 ![Image of Start Screen]
 (http://i.imgur.com/JCIUOdv.png)
 
+*Login Screen:
+
 ![Image of Login]
 (http://i.imgur.com/95wIfqG.png)
 
+*Weapon Selection Screen:
+
 ![Image of Weapon Selection]
 (http://i.imgur.com/tfezJDO.png)
+
+*Game Result Screen:
 
 ![Image of Game Result]
 (http://i.imgur.com/1KLYv44.png)
