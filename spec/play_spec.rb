@@ -5,7 +5,7 @@ feature "Sign in page is displayed" do
   end
   
   scenario "Player can see the sign in page" do
-    expect(page).to have_content "Welcome to Rock Paper Scissors!"
+    expect(page).to have_content "Welcome to Rock Paper Scissors Lizard Spock!"
   end
   
   scenario "Player has a field to input into" do
@@ -36,5 +36,15 @@ feature "Player's choice" do
   scenario "Player can choose Scissors" do
     click_button('Start')
     expect(page).to have_button "Scissors"
+  end
+  
+  scenario "Player can choose Scissors" do
+    click_button('Start')
+    expect(page).to have_button "Lizard"
+  end
+  
+  scenario "Player can choose Scissors" do
+    click_button('Start')
+    expect(page).to have_button "Spock"
   end
 end

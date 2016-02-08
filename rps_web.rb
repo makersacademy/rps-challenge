@@ -4,7 +4,7 @@ require './lib/game.rb'
 class RPSWeb < Sinatra::Base
   
   enable :sessions
-  set :sessions, :expire_after => 5
+  set :sessions, :expire_after => 10
   
   get '/' do
     erb :sign_in_page
