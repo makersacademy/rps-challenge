@@ -19,7 +19,7 @@ class Game
     end
   end
 
-  def two_player
+  def set_two_player
     @two_players = true
   end
 

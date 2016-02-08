@@ -1,0 +1,3 @@
+Routes with nouns and verbal. Get request - use noun. POST - use verbs.
+
+Command - look at changes to state

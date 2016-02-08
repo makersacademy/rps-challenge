@@ -22,7 +22,7 @@ describe Game do
 
     describe '#multiplayer?' do
       it 'two player initiates multiplayer mode' do
-        game.two_player
+        game.set_two_player
         expect(game).to be_multiplayer
       end
     end
