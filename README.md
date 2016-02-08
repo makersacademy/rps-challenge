@@ -33,10 +33,10 @@ Screenshots:
 (http://i.imgur.com/JCIUOdv.png)
 
 ![Image of Login]
-(http://i.imgur.com/ccIIHcW.png)
+(http://i.imgur.com/95wIfqG.png)
 
 ![Image of Weapon Selection]
-(http://i.imgur.com/HPqpWgP.png)
+(http://i.imgur.com/p93yqRh.png)
 
 ![Image of Game Result]
 (http://i.imgur.com/xydnt5Y.png)
