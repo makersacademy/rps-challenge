@@ -1,0 +1,26 @@
+<h1> <div style='color: red'><%= @player1_name %></div> vs. <%= @player2_name %> </h1>
+<h2> --- ready to play? ---- </h2>
+
+<% unless @player2_playing %>
+
+<p><div style='color: red'><%= @player1_name %></div></p><p>Chose your weapon of choice:</p>
+
+<form action='/play_game' method ='POST'>
+  <fieldset id='choice'>
+    <input type='submit' name='choice' id='Rock1' value ='Rock'/>
+    <input type='submit' name='choice' id= 'Scissors1' value ='Scissors'/>
+    <input type='submit' name='choice' id='Paper1' value ='Paper'/>
+  </fieldset>
+</form>
+
+<% else %>
+<p><%= @player2_name %> </p><p>Chose your weapon of choice:</p>
+<form action='/outcome' method ='POST'>
+  <fieldset id='choice2'>
+    <input type='submit' name='choice2' id ='Rock2' value ='Rock'/>
+    <input type='submit' name='choice2' id ='Scissors2' value ='Scissors'/>
+    <input type='submit' name='choice2' id ='Paper2' value ='Paper'/>
+  </fieldset>
+</form>
+
+<%end%>

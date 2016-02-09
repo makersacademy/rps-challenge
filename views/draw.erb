@@ -1,0 +1,10 @@
+<h1> A thriller.. It's a draw! </h1>
+
+<p> <%=@player1_name %> chose: <%=@player1_move %> </p>
+<p> <%=@player2_name %> chose: <%=@player2_move %> </p>
+
+<p>-------------- TRY AGAIN! --------------</p>
+
+<form action='/play_game'>
+  <input type='submit' value ='Play again'/>
+</form>
