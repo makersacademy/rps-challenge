@@ -1,0 +1,153 @@
+body {
+  font-family: 'Copperplate / Copperplate Gothic Light', sans-serif;
+  background-color: 	#00BFFF}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+}
+
+.subtitle{
+  text-align: center;
+  font-size: 12px
+}
+
+#container{
+  width:300px
+  margin: auto
+  position: relative;
+}
+
+#left_button {
+  float: left;
+}
+
+#right_button {
+  float: right;
+}
+
+#clear {
+  clear: both;
+}
+
+.move_choices{
+  text-align: center;
+}
+
+div.namebutton input {
+    background:url(/img/submitname.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 196px;
+    height: 40px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+}
+
+div.twoplayer input {
+    background:url(/img/twoplayer.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 229px;
+    height: 40px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+}
+
+div.namesbutton input {
+    background:url(/img/submitnames.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#rock {
+    background:url(/img/rock.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#paper {
+    background:url(/img/paper.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#scissors {
+    background:url(/img/scissors.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#lizard {
+    background:url(/img/lizard.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.move_choices input#spock {
+    background:url(/img/spock.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 221px;
+    height: 218px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+
+div.playagain input {
+    background:url(/img/playagain.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.newplayer input {
+    background:url(/img/newplayer.png) no-repeat 0 0;
+    cursor:pointer;
+    width: 146px;
+    height: 32px;
+    border: none;
+    line-height: 0;
+  	text-indent: -9999px;
+    text-align: center;
+}
+
+div.resultstext {
+  text-align: center;
+  font-size: 18px;
+}
+
+div.resultsbuttons {
+  text-align: center;
+}
