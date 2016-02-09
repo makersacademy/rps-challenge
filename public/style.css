@@ -1,0 +1,90 @@
+
+*{
+  font-family: 'helvetica-light';
+}
+
+body{
+  color: #0F0F0F;
+  font-family: 'helvetica';
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  background-color: #FFF;
+}
+
+header{
+	background-color: #466362;
+  color: #FFF;
+	height:75px;
+	position: fixed;
+	top: 0;
+  left: 0;
+	width: 100%;
+  vertical-align: middle;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+.main {
+  align-items: center;
+  margin-top: 90px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'helvetica';
+  font-size: 150%;
+}
+
+h1:hover{
+  color: grey
+}
+
+h2 {
+  font-size: 100%;
+}
+
+input{
+	padding: 15px;
+	border-radius: 3px;
+	border: 5px
+	width: 50%;
+  display: inline-block;
+}
+
+input[type="text"]{
+  margin: 10px 25% 10px 25%;
+  width: 50%;
+}
+
+input[type="submit"]{
+  font-size: 100%;
+  background-color: green;
+  border: none;
+  box-shadow: 0 0 2px rgba(94,94,94,1);
+  margin: 5 px;
+}
+
+input[type="submit"]:hover{
+  background-color: #B4EBCA;
+  box-shadow: 0 0 2px rgba(240,248,234,1);
+}
+
+input:hover{
+	border-color: #B4EBCA;
+}
+
+.namesub{
+  padding: 10px
+}
+
+.box2 {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin: 1em;
+}
+
+.topbar{
+  height: 30%;
+  width: 100%;
+}
