@@ -1,0 +1,11 @@
+<head>
+  <title>Rock, paper, scissors, lizard, Spock.</title>
+</head>
+<body>
+  <h1><%= $player_name %>, you chose <%= $player_weapon %>.</h1>
+  <h1>The computer chose <%= $computer_weapon %>.</h1>
+  <h1>The winner is: <%= $winner %></h1>
+  <form action="/choose_weapon" method="post">
+    <input type="submit" value="Play again">
+  </form>
+</body>
