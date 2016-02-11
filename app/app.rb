@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
-require './lib/Calculator'
+require './lib/calculator'
 
 class RPS < Sinatra::Base
   get '/' do
