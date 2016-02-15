@@ -4,7 +4,7 @@ RPS Challenge
 Introduction
 ---------
 
-The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors. Additional rules were added to introduce two further player choices; Lizard and Spock, as per the rules invented by [Sam Kass and Karen Bryla](https://en.wikipedia.org/wiki/Rock-paper-scissors#Additional_weapons).
+The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors. Additional rules were added to introduce two further player choices; Lizard and Spock, as per the rules invented by [Sam Kass and Karen Bryla](https://en.wikipedia.org/wiki/Rock-paper-scissors#Additional_weapons). This is a solo project created for the Makers Academy week 3 weekend challenge.
 
 This project was built using Ruby, and was structured around the Sinatra framework. The Rspec testing framework was implemented to provide feature and unit testing capabilities, and Capybara was included to allow for testing of front-end elements.
 
