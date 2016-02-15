@@ -1,6 +1,7 @@
 RPS Challenge
 =================
 [![Build Status](https://travis-ci.org/barrygrubb/rps-challenge.svg?branch=master)](https://travis-ci.org/barrygrubb/rps-challenge)
+add coveralls badge
 
 Introduction
 ---------
