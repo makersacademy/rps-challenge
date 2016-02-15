@@ -1,94 +1,40 @@
-# RPS Challenge: Rōnin Badge Test
+RPS Challenge
+=================
+
+Introduction
+---------
+
+The intention of this project was to build a working implementation of the popular game Rock, Paper Scissors. Additional rules were added to introduce two further player choices; Lizard and Spock, as per the rules invented by [Sam Kass and Karen Bryla](https://en.wikipedia.org/wiki/Rock-paper-scissors#Additional_weapons).
+
+This project was built using Ruby, and was structured around the Sinatra framework. The Rspec testing framework was implemented to provide feature and unit testing capabilities, and Capybara was included to allow for testing of front-end elements.
+
+The learning intentions for this project revolved around Sinatra, Rspec and Capybara, and at this point in the Makers Academy curriculum databases have not yet been covered. Due to this global variables have been implemented throughout to assist with persistence, although we have been made well aware that the use of global variables is far from best practice, and that once databases have been addressed we should no longer use them in almost all circumstances.
 
 Instructions
--------
+---------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+In order to test this project locally please proceed as follows:
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+* Firstly in terminal git clone the repository using...
 
 ```
-$ coveralls report
+git clone https://github.com/barrygrubb/rps-challenge.git
 ```
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+* `cd` in to the cloned directory and run `bundle` in order to download and install any dependencies required.
 
+* Run `ruby app/app.rb` to start the local server, and browse to the location mentioned in the terminal logs (likely localhost:4567).
+
+* You will be greeted with the text "Player, enter your name:". Enter you name in the text box provided and click the 'Enter the arena' button.
+
+* You will be greeted by name at the top of the next screen. Situated below the greeting will be five buttons offering your various choices. Choose from Rock, Paper, Scissors, Lizard or Spock by clicking the appropriate button.
+
+* On the next screen you choice will be confirmed. Next the computer will make a random choice from the same five options. The computer's choice will be confirmed below the player choice, and finally the winner will be announced below. The winner will be chosen by comparing the player and computer choice using the following rules:
+
+Rock ==> beats ==> Scissors & Lizard
+Paper ==> beats ==> Rock & Spock
+Scissors ==> beats ==> Paper & Lizard
+Lizard ==> beats ==> Paper & Spock
+Spock ==> beats ==> Rock & Scissors
+
+* If you wish to play again simply click the "Play again" button below the winner announcement. The player name will be persisted across each new game in the current session. Otherwise simply close the game in the browser, and enter `CTRL + C` in the terminal to end the local server process.
