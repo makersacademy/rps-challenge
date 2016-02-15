@@ -31,10 +31,10 @@ git clone https://github.com/barrygrubb/rps-challenge.git
 
 * On the next screen you choice will be confirmed. Next the computer will make a random choice from the same five options. The computer's choice will be confirmed below the player choice, and finally the winner will be announced below. The winner will be chosen by comparing the player and computer choice using the following rules:
 
-Rock ==> beats ==> Scissors & Lizard
-Paper ==> beats ==> Rock & Spock
-Scissors ==> beats ==> Paper & Lizard
-Lizard ==> beats ==> Paper & Spock
-Spock ==> beats ==> Rock & Scissors
+  * Rock ==> beats ==> Scissors & Lizard
+  * Paper ==> beats ==> Rock & Spock
+  * Scissors ==> beats ==> Paper & Lizard
+  * Lizard ==> beats ==> Paper & Spock
+  * Spock ==> beats ==> Rock & Scissors
 
 * If you wish to play again simply click the "Play again" button below the winner announcement. The player name will be persisted across each new game in the current session. Otherwise simply close the game in the browser, and enter `CTRL + C` in the terminal to end the local server process.
