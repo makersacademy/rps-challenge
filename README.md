@@ -1,5 +1,19 @@
 # RPS Challenge - README (or don't. Up to you.)
 
+=================
+
+The Rock/Paper/Scissors Challenge is Makers Academy Week 1 weekend challenge.
+It was designed to test my progress in TDD Ruby, and my understanding of the MVC model.
+It uses Ruby and Rspec, and can be run in a browser.
+In order to implement the code, please run 'bundle' so the Gemfile will install
+the required dependencies (such as Rspec), and run Rspec in the command line to see
+the results of the tests. In order to display the app in a browser, use 'ruby app.rb'
+to start up Sinatra, and go to localhost:4567 to visit the page.
+Please note that this file is currently in the process of being updated and as such,
+the Travis build may not yet pass.
+
+=================
+
 Instructions
 -------
 
