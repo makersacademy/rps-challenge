@@ -2,7 +2,7 @@
 
 =================
 
-The Rock/Paper/Scissors Challenge is Makers Academy Week 1 weekend challenge.
+The Rock/Paper/Scissors Challenge is Makers Academy Week 3 weekend challenge.
 It was designed to test my progress in TDD Ruby, and my understanding of the MVC model.
 It uses Ruby and Rspec, and can be run in a browser.
 In order to implement the code, please run 'bundle' so the Gemfile will install
