@@ -2,15 +2,19 @@
 <link rel="stylesheet" type="text/css" href="layout.css">
 </head>
 
-<h1><%=@new_game.player.name%> vs Computer</h1>
+<body>
+  <div class='container-fluid bg-1 text-center'>
+    <h1><%=@new_game.player.name%> vs Computer</h1>
 
-<h2> Choose your weapon... </h2>
-
-<form action="/choice" method="post">
-  <label for="weapon">
-    Choose Rock, Paper or Scissors...
-    <input type="submit" name="weapon" value="Rock">
-    <input type="submit" name="weapon" value="Paper">
-    <input type="submit" name="weapon" value="Scissors">
-  </label>
-</form>
+    <h2> Choose your weapon... </h2>
+    <br></br>
+    <form action="/choice" method="post">
+        <input class='btn btn-default btn-lg' type="submit" name="weapon" value="Rock">
+            <span class="glyphicon glyphicon-dashboard"></span>
+        <input class='btn btn-default btn-lg' type="submit" name="weapon" value="Paper">
+            <span class="glyphicon glyphicon-list-alt"></span>
+        <input class='btn btn-default btn-lg' type="submit" name="weapon" value="Scissors">
+            <span class="glyphicon glyphicon-scissors"></span>
+    </form>
+  </div>
+</body>

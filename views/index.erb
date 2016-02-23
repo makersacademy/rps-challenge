@@ -2,12 +2,23 @@
 <link rel="stylesheet" type="text/css" href="layout.css">
 </head>
 
-<h1>Play ROCK-PAPER-SCISSORS!</h1>
-<h2>Sign in to play...</h2>
-<form action="/names" method="post">
-  <label for='player_name'>
-    Player name
-    <input type="text" name="player_name">
-  </label>
-  <input type="submit" value="Play!">
-</form>
+<body>
+  <div class='container-fluid bg-1 text-center'>
+    <h1> Rock-Paper-Scissors!</h1>
+    <h2>Sign in to play...</h2>
+    <br>
+    </br>
+    <form action="/names" method="post">
+      <label for='player_name'>
+      <h2>Player name:</h2>
+        <span id=form1><input class="form-control" type="text" name="player_name"></span>
+      </label>
+      <input class='btn btn-default btn-sm' type="submit" value="Play!">
+      <span class="glyphicon glyphicon-play-circle"></span>
+    </form>
+    <br><br><br>
+    <span id="large-glyph" class="glyphicon glyphicon-dashboard"></span>
+    <span id="large-glyph" class="glyphicon glyphicon-list-alt"></span>
+    <span id="large-glyph" class="glyphicon glyphicon-scissors"></span>
+  </div>
+</body>
