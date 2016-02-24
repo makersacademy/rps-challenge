@@ -14,8 +14,8 @@ Functionality:
 
 Technologies used:
 * Testing - RSpec, Capybara
-* Back-end - Ruby
-* Front-end - ERB, HTML, CSS
+* Back-end - Ruby, ERB
+* Front-end - HTML, CSS
 
 To download and use...
 
@@ -28,8 +28,8 @@ $ ruby app.rb
 ```
 Open browser at http://localhost:4567/
 
-![Image of sign-in screen](http://i.imgur.com/O2NdtM1.png)
+![Image of sign-in screen](http://i.imgur.com/T1Uisr8.png)
 
-![Image of play screen](http://i.imgur.com/x6c9djU.png)
+![Image of play screen](http://i.imgur.com/jKOByvt.png)
 
-![Image of win screen](http://i.imgur.com/2W1ApPa.png)
+![Image of win screen](http://i.imgur.com/A91P05P.png?1)
