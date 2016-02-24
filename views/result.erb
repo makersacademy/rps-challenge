@@ -1,0 +1,16 @@
+<head>
+<link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+
+<body>
+  <div class='container-fluid bg-1 text-center'>
+    <h2>You chose <%=@new_game.player.choice%></h2><br>
+    <h2>Computer chose <%=@new_game.computer.weapon%></h2>
+    <h1><%=@new_game.game_winner%></h1>
+    <br>
+    <form action="/">
+    <input class='btn btn-default btn-sm' type="submit" value="Play again!">
+    <span class="glyphicon glyphicon-repeat"></span>
+    </form>
+  </div>
+</body>
