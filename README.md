@@ -31,7 +31,7 @@ Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock
 ScreenShots:
 ----
 
-![rps](images/Selection_001.jpg)
+![rps](static/images/Selection_001.jpg)
 
 Build Process
 -----
