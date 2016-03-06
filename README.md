@@ -1,8 +1,6 @@
 # RPS Challenge
 --------
 
-**Deployed on Heroku: https://makers-rps.herokuapp.com**
-
 What is it?
 ---------
 
