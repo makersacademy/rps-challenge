@@ -28,6 +28,10 @@ Change the game so that two marketeers can play against each other ( yes there a
 Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 Use the special rules ( you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock )
 ```
+ScreenShots:
+----
+
+![rps](images/Selection_001.jpg)
 
 Build Process
 -----
