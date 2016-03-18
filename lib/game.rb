@@ -5,5 +5,4 @@ class Game
   def initialize(p1)
     @p1 = p1
   end
-
 end
