@@ -1,4 +1,4 @@
-Rock, Paper, Scissors Challenge
+Rock, Paper, Scissors Challenge [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 ===============================
 
 The task was to build a game of rock, paper, scissors that a user could play on the web.
