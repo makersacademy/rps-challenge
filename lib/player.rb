@@ -6,7 +6,11 @@ class Player
     @name = name
   end
 
-  def choose(weapon)
-    @choice = weapon
+  def choose(move)
+    @move = move
+  end
+
+  def move
+    @move
   end
 end
