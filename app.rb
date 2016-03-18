@@ -17,13 +17,13 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    p $p1_choice = params[:choice]
+    $p1_choice = params[:choice]
     redirect '/result'
   end
 
   get '/result' do
     @p1_name = $p1_name
-    p @p1_choice = $p1_choice
+    @p1_choice = $p1_choice
     erb(:result)
   end
 
