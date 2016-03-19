@@ -18,13 +18,15 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @game = Game.game
-    p @game.player_choice(params[:choice])
-    redirect '/testpage'
+    @game.player_choice(params[:choice])
+    redirect '/winner_page'
   end
 
-  get '/testpage' do
+  get '/winner_page' do
     @game = Game.game
-    erb(:testpage)
+    @game.computer_choice
+    @game.rps(@game.choice, @game.comp_choice)
+    erb(:winner_page)
   end
 
   # start the server if ruby file executed directly

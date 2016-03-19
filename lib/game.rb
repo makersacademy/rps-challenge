@@ -29,7 +29,7 @@ class Game
   end
 
   def computer_choice
-    @comp_choice = weapons[rand_num]
+    computer_weapon
   end
 
   def rps(choice, comp_choice)
@@ -46,6 +46,10 @@ class Game
   end
 
   private
+
+  def computer_weapon
+    @comp_choice = weapons[rand_num]
+  end
 
   def rand_num
     Kernel.rand(3)
