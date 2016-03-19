@@ -1,5 +1,63 @@
 body {
-  background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/a-worn-parchment-paper-background-texture.jpg");
-  background-color: gray;
+  background-image: url("http://cdn30.us1.fansshare.com/image/wallpaper1920x1080/pastel-polygon-pattern-abstract-hd-wallpaper-abstract-wallpaper-719598920.jpg");
+  background-size: cover;
+  position: relative;
   font-family: impact;
+}
+
+form {
+  text-align: center;
+}
+
+h1 {
+  width: 100%;
+  font-size: 35pt;
+  margin-top: 15%;
+  text-align: center;
+}
+
+label {
+  font-size: 15pt;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  font-size: 25pt;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: dashed 3px black;
+  outline: none;
+}
+
+button {
+  width: 160px;
+  font-size: 25pt;
+  font-family: impact;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+  font-size: 30pt;
+}
+
+p {
+  text-align: center;
+  font-size: 15pt;
+  padding: 0 0 15px 0;
+}
+
+.weapon {
+  margin: 5px;
+}
+
+a {
+  padding: 0 10px 0 20px;
+  color: 660033;
+}
+
+a:hover {
+  color: #FFCCCC;
 }

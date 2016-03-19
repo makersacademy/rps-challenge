@@ -1,12 +1,14 @@
 <% if @result == :lose %>
-  <h2>Awww, you lost! :(</h2>
+  <h1>Awww, you lost! :(</h1>
 <% elsif @result == :win %>
-  <h2>Woohoo! You won! :D</h2>
+  <h1>Woohoo! You won! :D</h1>
 <% else %>
-  <h2>It's a tie :)</h2>
+  <h1>It's a tie :)</h1>
 <% end %>
 
 <p>Your weapon: <%= @player_choice %></p>
 <p>Computer's weapon: <%= @computer_choice %></p>
-<a href="/play">Play Again!</a>
-<a href="/">Change Player</a>
+<p>
+  <a href="/play">Play Again!</a>
+  <a href="/">Change Player</a>
+</p>

@@ -17,6 +17,6 @@ require 'features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 
-require './app/app.rb'
+require './app.rb'
 
 Capybara.app = RPS
