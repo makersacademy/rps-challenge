@@ -1,7 +1,7 @@
 feature 'Play page' do
 
   before(:each) do
-    sign_in_and_play
+    sign_in_and_play_p1
   end
 
   scenario '0.0. Page displays name of player 1' do

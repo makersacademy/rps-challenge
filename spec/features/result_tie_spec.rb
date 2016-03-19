@@ -1,7 +1,7 @@
 feature 'Result page: tie game' do
 
   before(:each) do
-    sign_in_and_play
+    sign_in_and_play_p1
     allow(RPS.game.p2).to receive(:choose_random).and_return('ROCK')
     allow(RPS.game.p2).to receive(:move).and_return('ROCK')
     click_button('ROCK')
