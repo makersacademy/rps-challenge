@@ -2,10 +2,11 @@ class Game
   WEAPONS = [:rock, :paper, :scissors]
   RULES = {rock: :scissors, paper: :rock, scissors: :paper}
 
-  attr_reader :player, :computer_choice
+  attr_reader :player_1, :player_2
 
-  def initialize(player)
-    @player = player
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def self.start(game)
@@ -16,7 +17,7 @@ class Game
     @game
   end
 
-  def result(weapon_1, weapon_2=computer_weapon)
+  def result(weapon_1, weapon_2)
     return :tie if weapon_1 == weapon_2
     return :win if beats?(weapon_1, weapon_2)
     :lose
@@ -26,9 +27,5 @@ class Game
 
   def beats?(weapon_1, weapon_2)
     RULES[weapon_1] == weapon_2
-  end
-
-  def computer_weapon
-    @computer_choice = WEAPONS.sample
   end
 end

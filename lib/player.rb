@@ -6,7 +6,7 @@ class Player
     @weapon = nil
   end
 
-  def pick(weapon)
+  def weapon=(weapon)
     @weapon = weapon
   end
 end
