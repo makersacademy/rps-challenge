@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Play RPSApp</title>
+    <meta charset="utf-8">
+    <link href='css/stylesheet.css' rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <% if @game.p1_weapon == :rock %>
+      <img src="http://i.imgur.com/vfTkthB.png" height="128" width="128">
+    <% end %>
+    <% if @game.p1_weapon == :paper %>
+      <img src="http://i.imgur.com/uCsOisW.png" height="128" width="128">
+    <% end %>
+    <% if @game.p1_weapon == :scissors %>
+      <img src="http://i.imgur.com/gm1To0a.png" height="128" width="128">
+    <% end %>
+
+    <% if @game.p2_weapon == :rock %>
+      <img src="http://i.imgur.com/vfTkthB.png" height="128" width="128">
+    <% end %>
+    <% if @game.p2_weapon == :paper %>
+      <img src="http://i.imgur.com/uCsOisW.png" height="128" width="128">
+    <% end %>
+    <% if @game.p2_weapon == :scissors %>
+      <img src="http://i.imgur.com/gm1To0a.png" height="128" width="128">
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<h1>Welcome to RPSApp!</h1>
+<p>Play Rock Paper Scissors!</p>
+<p>Choose number of players:</p>
+
+
+<form action="/players" method="post">
+  <input type="submit" name="player_count" value="1 player">
+  <input type="submit" name="player_count" value="2 players">
+</form>
+<br>
+
+<% if @player_count == "1 player" %>
+  <form action="/names" method="post">
+    Player1 name: <input type="text" name="player_1_name">
+    <input type="submit" value="Start">
+  </form>
+<% end %>
+
+<% if @player_count == "2 players" %>
+  <form action="/names" method="post" >
+    Player1 name: <input type="text" name="player_1_name">
+    Player2 name: <input type="text" name="player_2_name">
+    <input type="submit" value="Start">
+  </form>
+<% end %>
+
+<br>
+<img class="front-picture" src="http://i.imgur.com/98OAvHd.png">

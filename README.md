@@ -1,7 +1,28 @@
 # RPS Challenge: Rōnin Badge Test
+Author: Arnold Manzano (arnoldmanzano)
+[![Build Status](https://travis-ci.org/arnoldmanzano/rps-challenge.svg?branch=master)](https://travis-ci.org/arnoldmanzano/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/arnoldmanzano/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/arnoldmanzano/rps-challenge?branch=master)
 
-Instructions
+
+Installation Instructions
 -------
+
+1. Clone the repo (ruby is required)
+2. run ```bundle```  in project root directory to install other dependencies
+3. run ```rackup``` and open localhost port in your browser
+
+Features:
+* Play against the computer
+* Play against another player (turn-based)
+* To be implemented, keep track of scores
+
+Screenshots:
+
+![Imgur](http://i.imgur.com/x2YipuJ.png)
+
+![Imgur](http://i.imgur.com/7dMF40G.png)
+
+![Imgur](http://i.imgur.com/ThWrFTA.png)
 
 * Challenge time: rest of the day and weekend, until Monday 9am
 * Feel free to use google, your notes, books, etc. but work on your own
@@ -9,7 +30,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -63,7 +84,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -81,7 +102,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -91,4 +112,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
