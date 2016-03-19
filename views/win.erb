@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Win RPSApp</title>
-</head>
-<body>
+<h2><%= @game.player_1.name %> won! <%= @game.player_2.name %> lost!</h2>
+<%= @game.player_1.name %> chose <%= @game.p1_weapon.capitalize %> :: <%= @game.player_2.name %> chose <%= @game.p2_weapon.capitalize %>
 
-  <h2><%= @game.player_1.name %> won! <%= @game.player_2.name %> lost!</h2>
-  <%= @game.player_1.name %> chose <%= @game.p1_weapon.capitalize %> :: <%= @game.player_2.name %> chose <%= @game.p2_weapon.capitalize %>
-
-  <p><a href="/play">Next Round</a></p>
-
-</body>
-</html>
+<p><a href="/play">Next Round</a></p>

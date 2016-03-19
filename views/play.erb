@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Play RPSApp</title>
-</head>
-<body>
+<h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
 
-  <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+<h1><%= @game.turn.name %>'s turn, Choose your weapon!</h1>
+<p>Be an honest gamer and look away if it's not your turn. :) </p>
 
-  <h1><%= @game.turn.name %>'s turn, Choose your weapon!</h1>
-  <p>Be an honest gamer and look away if it's not your turn. :) </p>
-
-    <form action="/weapon" method="post">
-      <input type="radio" name="weapon" id="rock" value="rock" checked> Rock<br>
-      <input type="radio" name="weapon" id="paper" value="paper"> Paper<br>
-      <input type="radio" name="weapon" id="scissors" value="scissors"> Scissors<br>
-      <input type="submit" value="Fight!">
-    </form>
-
-</body>
-</html>
+  <form action="/weapon" method="post">
+    <input type="radio" name="weapon" id="rock" value="rock" checked> Rock<br>
+    <input type="radio" name="weapon" id="paper" value="paper"> Paper<br>
+    <input type="radio" name="weapon" id="scissors" value="scissors"> Scissors<br>
+    <input type="submit" value="Fight!">
+  </form>
