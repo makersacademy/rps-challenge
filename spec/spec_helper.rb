@@ -13,6 +13,7 @@ SimpleCov.start
 require 'byebug'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 
