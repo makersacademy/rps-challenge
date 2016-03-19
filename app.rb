@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game_controller'
+require './lib/computer_player'
 
 class Rpsls < Sinatra::Base
   enable :sessions
@@ -27,8 +29,9 @@ class Rpsls < Sinatra::Base
   end
 
   get '/attack_resolution' do
-    @attack_type = session[:attack_type].to_sym
-    @defense_type = 'rock'
+    @attack = session[:attack_type].to_sym
+    @defence = ComputerPlayer.pick_attack
+    GameController.choose_winner @attack , @defence ? session[:wins] += 1 : session[:losses] +=1
     erb :attack_resolution
   end
 
