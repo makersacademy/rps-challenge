@@ -7,6 +7,12 @@ describe Game do
   let(:player2) { double :player2 }
   subject(:game) { described_class.new(player1, player2, player_class) }
 
+  describe '#initialize' do
+    it 'sets value of player1' do
+      expect(game.player1).to be player1
+    end
+  end
+
   describe '#result' do
     it 'returns win for p1: Rock, p2: Scissors' do
       allow(player1).to receive(:weapon).and_return(:Rock)

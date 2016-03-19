@@ -4,17 +4,21 @@ class RPSGame < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb :name_entry
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    Game.start(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = @game.player1.name
     erb :play
   end
 
