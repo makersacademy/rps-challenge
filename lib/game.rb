@@ -34,14 +34,14 @@ class Game
 
   def rps(choice, comp_choice)
     if choice == "Rock"
-      @winner = @player_name if comp_choice == "Scissors"
-      @winner = @computer if comp_choice == "Paper"
+      player_wins if comp_choice == "Scissors"
+      comp_wins if comp_choice == "Paper"
     elsif choice == "Paper"
-      @winner = @player_name if comp_choice == "Rock"
-      @winner = @computer if comp_choice == "Scissors"
+      player_wins if comp_choice == "Rock"
+      comp_wins if comp_choice == "Scissors"
     elsif choice == "Scissors"
-      @winner = @player_name if comp_choice == "Paper"
-      @winner = @computer if comp_choice == "Rock"
+      player_wins if comp_choice == "Paper"
+      comp_wins if comp_choice == "Rock"
     end
   end
 
@@ -49,6 +49,14 @@ class Game
 
   def rand_num
     Kernel.rand(3)
+  end
+
+  def player_wins
+    @winner = @player_name
+  end
+
+  def comp_wins
+    @winner = @computer
   end
 
 end
