@@ -25,16 +25,21 @@ class Game
     @winner = nil
     @player_choice = choice
     @computers_choice = computer_choice
-    return @winner = "Tie" if tie?
+    determine_result
+  end
+
+  private
+
+  def determine_result
     outcome = outcomes[@player_choice.to_sym][@computers_choice.to_sym]
     if outcome == 1
       @winner = "Computer"
     elsif outcome == 0
-     @winner =  @players.first.name
-    end
+      @winner =  @players.first.name
+    else
+     return @winner = "Tie" if tie?
+   end
   end
-
-  private
 
   def computer_choice
   array = ["Rock","Paper","Scissors"]
