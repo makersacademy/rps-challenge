@@ -1,6 +1,8 @@
 class Computer
 
+  WEAPONS = ['rock', 'paper', 'scissors']
+
   def choice
-    ['Rock', 'Paper', 'Scissors'].sample
+    WEAPONS.sample
   end
 end
