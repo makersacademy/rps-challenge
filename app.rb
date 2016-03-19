@@ -26,10 +26,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player_1 = session[:player_1]
-    p @choice = session[:choice]
+    @choice = session[:choice]
     computer = Computer.new
-    p @computer_choice = computer.choice
-    p @computer_result = computer.result(@choice)
+    @computer_choice = computer.choice
+    @computer_result = computer.result(@choice)
     erb(:result)
   end
 

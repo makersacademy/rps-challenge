@@ -28,10 +28,4 @@ class Computer
     @choice =  CHOICES[rand(0..2)]
   end
 
-
-
-
 end
-
-p Computer.new.result('paper')
-p Computer.new.result('scissors')
