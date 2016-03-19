@@ -1,56 +1,76 @@
+require './lib/player'
+
 class Game
 
-  attr_reader :player, :comp_choice
+  attr_reader :player1, :player2, :player1_turn
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
   
   def self.instance
     @game
   end
 
-  def initialize(player)
-    @player = player    
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2    
+    @player1_turn = true
   end
 
-  def player_name
-    @player.name
+  def player1_name
+    @player1.name
+  end
+
+  def player2_name
+    @player2.name
+  end
+
+  def current_player
+   # player1_turn ? @player_1 : @player_2
+    player_1
+  end
+  
+  def current_player_name
+    current_player.name
   end
 
   def make_player_choice(choice)
-    @player.make_choice(choice)
-    make_comp_choice
+    @current_player.make_choice(choice)
   end
 
-  def player_choice
-    @player.choice
+  def player1_choice
+    player1.choice
+  end
+
+  def player2_choice
+    player2.choice
   end
   
 
   def results_message
     if tie?
       'The game was a tie'
-    elsif player_wins?
-      "#{player.name} wins"
+    elsif player1_wins?
+      "#{player1.name} wins"
     else 
-      "The computer wins"
+      "#{player2.name} wins"
     end
   end
-
+  
+  def switch_turn
+    @player_1_turn = !@player_1_turn
+  end
   private
 
-  def make_comp_choice
-    @comp_choice = ['Rock', 'Paper', 'Scissors'].sample
-  end
 
   def tie?
-    player_choice == comp_choice
+    player1_choice == player2_choice
   end
 
-  def player_wins?
-      (player_choice == 'Rock' && comp_choice == 'Scissors') ||
-      (player_choice == 'Paper' && comp_choice == 'Rock') ||
-      (player_choice == 'Scissors' && comp_choice == 'Paper')
+  def player1_wins?
+      (player1_choice == 'Rock' && player2_choice == 'Scissors') ||
+      (player1_choice == 'Paper' && player2_choice == 'Rock') ||
+      (player1_choice == 'Scissors' && player2_choice == 'Paper')
   end
 end
