@@ -6,19 +6,7 @@ describe Game do
   let(:rock) { :rock }
 
   describe '#initialize' do
-    it '1. should initialize with a player name saved to an instance variable' do
-      allow(game).to receive(:player_name).and_return(player_name)
-      expect(game.player_name).to eq(player_name)
-    end
-
-    it '2. should initialize with a instance variable computer equal to computer' do
-      expect(game.computer).to eq "Computer"
-    end
-
-    it '3. should initialize with an array of weapons' do
-      weapons_arr = ["Rock", "Paper", "Scissors"]
-      expect(game.weapons).to eq(weapons_arr)
-    end
+    
   end
 
   describe '#name' do
