@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -7,7 +8,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    Game.start_game(params[:player_name])
+    Game.start_game(params[:player_one], params[:player_two] ||= "Computer")
     redirect '/play'
   end
 
@@ -18,6 +19,7 @@ class RPS < Sinatra::Base
   get '/play' do
     if @game.draw == true
       Game.start_game(params[:player_name] ||= @game.player_name)
+      Game.start_game(params[:player_one] ||= @game.player1_name, params[:player_two] ||= @game.player2_name)
       erb(:play)
     else
       erb(:play)
@@ -34,8 +36,8 @@ class RPS < Sinatra::Base
   end
 
   get '/winner_page' do
-    @game.computer_choice
-    @game.rps(@game.player_weapon, @game.computer_weapon)
+    @game.computer_choice *******
+    @game.rps(@game.player1_weapon, @game.player2_weapon)
     @game.draw == false ? erb(:winner_page) : redirect('/draw')
   end
 
