@@ -16,7 +16,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    erb(:play)
+    if @game.draw == true
+      Game.start_game(params[:player_name] ||= @game.player_name)
+      erb(:play)
+    else
+      erb(:play)
+    end
+  end
+
+  before do
+    @game = Game.game
   end
 
   post '/choice' do
@@ -26,8 +35,8 @@ class RPS < Sinatra::Base
 
   get '/winner_page' do
     @game.computer_choice
-    @game.rps(@game.choice, @game.comp_choice)
-    @game.draw == true ? redirect('/draw') : erb(:winner_page)
+    @game.rps(@game.player_weapon, @game.computer_weapon)
+    @game.draw == false ? erb(:winner_page) : redirect('/draw')
   end
 
   get '/draw' do
