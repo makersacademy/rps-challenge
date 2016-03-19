@@ -2,7 +2,7 @@ feature 'Welcome Screen and Login process' do
 
   feature 'Welcome Screen:' do
 
-    before(:each) do
+    before :each do
       access_login_page
     end
 
@@ -23,11 +23,11 @@ feature 'Welcome Screen and Login process' do
 
   feature 'Login Process:' do
 
-    before(:each) do
+    before :each do
       login_to_game
     end
 
-    scenario 'Player username is successfully stored' do
+    scenario 'Player username is successfully transmitted' do
       expect(page).to have_content TEST_PLAYER_NAME
     end
 

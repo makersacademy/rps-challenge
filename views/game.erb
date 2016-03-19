@@ -1,1 +1,12 @@
 <div>Hello <%= @player_name %>, get ready to fight!</div>
+
+<div><%= @player_name %> wins: <%= @player_wins %></div>
+<div>Computer wins: <%= @player_losses %></div>
+
+<form action='/chose_attack' method='post' value='Please choose your next attack'>
+  <button type='submit' name='attack_type' id='paper_button' value='paper'>Paper</button>
+  <button type='submit' name='attack_type' id='rock_button' value='rock'>Rock</button>
+  <button type='submit' name='attack_type' id='scissor_button' value='scissor'>Scissor</button>
+  <button type='submit' name='attack_type' id='lizard_button' value='lizard'>Lizard</button>
+  <button type='submit' name='attack_type' id='spock_button' value='spock'>Spock</button>
+</form>
