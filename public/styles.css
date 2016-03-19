@@ -1,0 +1,8 @@
+body {
+  background-image: url('http://i.imgur.com/1jocz1D.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: "Comic Sans MS";
+  color: white;
+}

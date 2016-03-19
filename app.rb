@@ -5,9 +5,13 @@ require './lib/game'
 class RPS < Sinatra::Base
   enable :sessions
 
-  before { @game = Game.get_game }
+  before {
+    @game = Game.get_game
+    @session = session
+   }
 
   get '/' do
+    session.clear
     erb :index
   end
 
@@ -22,12 +26,12 @@ class RPS < Sinatra::Base
   end
 
   post '/rps' do
-    $poo = params
+    session[:player_1_choice] = (params[:rps_choice].downcase.to_sym)
     redirect '/result'
   end
 
   get '/result' do
-    $poo.to_s
+    erb :result
   end
 
   # start the server if ruby file executed directly
