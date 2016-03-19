@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player'
 
 class Game
 
@@ -12,13 +12,12 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2, :winner, :weapons, :draw
+  attr_reader :player1, :player2, :winner, :draw
 
   def initialize(player_one, player_two)
     @player1 = Player.new(player_one)
     @player2 = Player.new(player_two)
     @winner = nil
-    @weapons = ["Rock", "Paper", "Scissors"]
     @draw = false
   end
 

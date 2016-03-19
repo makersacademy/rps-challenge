@@ -1,10 +1,11 @@
 
 class Player
 
-  attr_reader :player_name, :weapon
+  attr_reader :player_name, :choice, :weapons
 
-  def initialize(player_name)
+  def initialize(name)
     @player_name = name
+    @weapons = ["Rock", "Paper", "Scissors"]
   end
 
   def name
@@ -12,18 +13,18 @@ class Player
   end
 
   def weapon
-    @weapon
+    @choice
   end
 
   def player_choice(choice)
-    @weapon = choice
+    @choice = choice
+  end
+
+  def choose_random
+    @choice = weapons[rand_num]
   end
 
   private
-
-  def comp_weapon
-    @comp_choice = weapons[rand_num]
-  end
 
   def rand_num
     Kernel.rand(3)
