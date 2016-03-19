@@ -1,4 +1,4 @@
-feature 'Game Flow' do
+feature 'Attack Page visualization' do
 
   feature 'Game Screen:' do
 
@@ -37,15 +37,15 @@ feature 'Game Flow' do
   end
 
 
-  feature 'Attack Process:' do
+  feature 'Attack Button:' do
 
     before :each do
       login_to_game
+      click_button 'paper_button'
     end
 
     scenario 'Player attack is successfully transmitted' do
-      click_button 'paper_button'
-      expect(page).to have_content 'paper'
+      expect(page).to have_content 'You attack with paper'
     end
 
   end

@@ -1,2 +1,8 @@
 <div>You attack with <%= @attack%></div>
-<div>Computer defends with <%= @defense%></div>
+<div>Computer defends with <%= @defence%></div>
+
+<div><%= @winner%> wins the round!</div>
+
+<form action='/game'>
+  <button type='submit' id='continue_button'>Continue to next round</button>
+</form>

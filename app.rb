@@ -31,7 +31,9 @@ class Rpsls < Sinatra::Base
   get '/attack_resolution' do
     @attack = session[:attack_type].to_sym
     @defence = ComputerPlayer.pick_attack
-    GameController.choose_winner @attack , @defence ? session[:wins] += 1 : session[:losses] +=1
+    @win = GameController.choose_winner @attack , @defence
+    @win ? session[:wins] += 1 : session[:losses] += 1
+    @winner = (@win? session[:username] : 'Computer')
     erb :attack_resolution
   end
 
