@@ -1,0 +1,6 @@
+<h1>Welcome <%= @game.player1.name %></h1>
+<form action="/play" method="post">
+  <label for="points">How many points do you want to play to?</label>
+  <input type="text" name="points" />
+  <button type="submit">Set Points</button>
+</form>
