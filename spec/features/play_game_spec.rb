@@ -1,4 +1,12 @@
-feature 'view options' do
+feature 'play game' do
+  scenario 'see options' do
+    register_and_play
+    expect(page).to have_button "rock"
+    expect(page).to have_button "paper"
+    expect(page).to have_button "scissors"
+  end
+
+
   scenario 'click rock link and see result' do
     register_and_play
     click_button 'rock'

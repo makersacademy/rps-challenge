@@ -24,31 +24,47 @@ describe Computer do
         p computer.choice
         expect(computer.result('paper')).to eq :lose
       end
-      # it 'draws' do
-      #
-      # end
+      it 'draws' do
+        srand(2)
+        p computer.choice
+        expect(computer.result('rock')).to eq :draw
+      end
     end
-    # context 'play paper' do
-    #   it 'win' do
-    #
-    #   end
-    #
-    #   it 'loses' do
-    #   end
-    #   it 'draws' do
-    #
-    #   end
-    # end
-    # context 'play scissors' do
-    #   it 'win' do
-    #
-    #   end
-    #
-    #   it 'loses' do
-    #   end
-    #   it 'draws' do
-    #
-    #   end
-    # end
+    context 'play paper' do
+      it 'win' do
+        srand(1)
+        p computer.choice
+        expect(computer.result('rock')).to eq :win
+      end
+
+      it 'loses' do
+        srand(1)
+        p computer.choice
+        expect(computer.result('scissors')).to eq :lose
+      end
+      it 'draws' do
+        srand(1)
+        p computer.choice
+        expect(computer.result('paper')).to eq :draw
+      end
+    end
+    context 'play scissors' do
+    it 'win' do
+      srand(3)
+      p computer.choice
+      expect(computer.result('paper')).to eq :win
+    end
+
+    it 'loses' do
+      srand(3)
+      p computer.choice
+      expect(computer.result('rock')).to eq :lose
+    end
+      it 'draws' do
+        srand(3)
+        p computer.choice
+        expect(computer.result('scissors')).to eq :draw
+      end
+    end
   end
 end
