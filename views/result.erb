@@ -1,1 +1,16 @@
 You chose <%=@choice.capitalize%>
+Computer chose <%=@computer_choice.to_s.capitalize%>
+<%if @computer_result == :lose %>
+  <%=@player_1%> won
+<%elsif @computer_result == :win %>
+  <%=@player_1%> lost
+<%end%>
+<!-- Computer chose <%=@computer_choice.to_s.capitalize%>
+
+elsif @computer_choice == :lose
+  You winn
+  else
+  draw
+
+  rematch button
+  start again -->
