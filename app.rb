@@ -3,7 +3,7 @@ require './lib/player'
 require './lib/game'
 require './lib/hand'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
 
   get '/' do
     erb :signup
