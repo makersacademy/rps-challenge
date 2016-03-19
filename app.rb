@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'game'
 
 class Jajanken < Sinatra::Base
   get '/' do
@@ -6,12 +7,13 @@ class Jajanken < Sinatra::Base
   end
 
   post '/setup' do
-    $username = params[:username]
+    player_name = params[:username]
+    Game.create(player_name: player_name)
     redirect '/play'
   end
 
   get '/play' do
-    @username = $username
+    @game = Game.current_game
     erb(:play)
   end
   # start the server if ruby file executed directly
