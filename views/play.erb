@@ -1,9 +1,7 @@
 <h1>Good luck <%= @player_name %>!</h1>
-<h2>What weapon do you pick? Scissors, Rock or Paper?</h2>
+<h2>What weapon do you pick?</h2>
 <form action="/selection" method="post">
-  <label for="weapon">
-    I pick
-    <input type="text" name="weapon">
-  </label>
-  <input type="submit" value="Let's PLAY!">
+  <input type="submit" name="weapon" value = "Scissors">
+  <input type="submit" name="weapon" value = "Rock">
+  <input type="submit" name="weapon" value = "Paper">
 </form>
