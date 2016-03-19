@@ -9,5 +9,13 @@ describe Player do
       expect(player.name).to eq('Charlie')
     end
   end
+
+  describe '#choice' do
+    it 'will return the argument passed in at accept_choice' do
+      player.make_choice('R')
+      expect(player.choice).to eq('R')
+    end
+  end
+
 end
 
