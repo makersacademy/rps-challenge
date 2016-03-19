@@ -1,0 +1,10 @@
+<html style="text-align:center; font-family:tahoma"></html>
+<h1>Welcome <%= Game.instance.player_1.name %>!</h1>
+<h2>Lets play Rock, Paper, Scissors!</h2>
+<h3>Pick your weapon!</h3>
+
+<form action='/attack'>
+	<button type="submit" value='rock'>Rock</button>
+	<button type="submit" value='paper'>Paper</button>
+	<button type="submit" value='scissors'>Scissors</button>
+</form>
