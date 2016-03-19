@@ -24,22 +24,16 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @p1_name = RPS.game.p1.name
-    @p2_name = RPS.game.p2.name
     erb(:play)
   end
 
   post '/play' do
-    @p1_move = RPS.game.p1.choose(params[:move])
-    @p2_move = RPS.game.p2.choose_random
+    RPS.game.p1.choose(params[:move])
+    RPS.game.p2.choose_random
     redirect '/result'
   end
 
   get '/result' do
-    @p1_name = RPS.game.p1.name
-    @p1_move = RPS.game.p1.move
-    @p2_name = RPS.game.p2.name
-    @p2_move = RPS.game.p2.move
     if RPS.game.return_winner == 'tie'
       @winner = 'tie'
     else
