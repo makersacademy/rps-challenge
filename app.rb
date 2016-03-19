@@ -10,8 +10,12 @@ class RPS < Sinatra::Base
   end
 
   post "/names" do
-    p player_1 = Player.new(params[:player_1])
-    player_2 = Computer.new
+    player_1 = Player.new(params[:player_1])
+    if params[:player_2] == ""
+      player_2 = Computer.new
+    else
+      player_2 = Player.new(params[:player_2])
+    end
     Game.start(Game.new(player_1, player_2))
     redirect "/play"
   end
@@ -24,12 +28,13 @@ class RPS < Sinatra::Base
 
   post "/weapon" do
     Game::WEAPONS.each { |weapon| @weapon = weapon if params[weapon] }
-    game.player_1.weapon=(@weapon)
+    game.player_1.pick(@weapon)
+    game.player_2.pick_weapon
     redirect "/result"
   end
 
   get "/result" do
-    @result = game.result(player.weapon)
+    @result = game.result(game.player_1.weapon, game.player_2.weapon)
     @player_choice = game.player_1.weapon
     @computer_choice = game.player_2.weapon
     erb :result

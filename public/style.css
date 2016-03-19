@@ -29,6 +29,7 @@ input {
   border: none;
   border-bottom: dashed 3px black;
   outline: none;
+  margin: 20px;
 }
 
 button {
@@ -46,7 +47,7 @@ button:hover {
 p {
   text-align: center;
   font-size: 15pt;
-  padding: 0 0 15px 0;
+  padding: 0 0 10px 0;
 }
 
 .weapon {

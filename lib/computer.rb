@@ -7,7 +7,7 @@ class Computer
     @weapon = nil
   end
 
-  def weapon
+  def pick_weapon
     @weapon = Game::WEAPONS.sample
   end
 end
