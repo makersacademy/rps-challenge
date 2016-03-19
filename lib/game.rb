@@ -1,7 +1,7 @@
 class Game
 
-  WEAPONS = [:rock, :paper, :scissors]
-  WINNERS = { rock: :scissors, paper: :rock, scissors: :paper }
+  WEAPONS = [:Rock, :Paper, :Scissors]
+  WINNERS = { Rock: :Scissors, Paper: :Rock, Scissors: :Paper }
 
   def initialize(player1, player2)
     @player1 = player1

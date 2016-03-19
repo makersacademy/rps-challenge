@@ -7,48 +7,48 @@ describe Game do
   subject(:game) { described_class.new(player1, player2) }
 
   describe '#result' do
-    it 'returns win for p1: rock, p2: scissors' do
-      allow(player1).to receive(:weapon).and_return(:rock)
-      allow(player2).to receive(:weapon).and_return(:scissors)
+    it 'returns win for p1: Rock, p2: Scissors' do
+      allow(player1).to receive(:weapon).and_return(:Rock)
+      allow(player2).to receive(:weapon).and_return(:Scissors)
       expect(game.result).to eq(:win)
     end
-    it 'returns win for p1: paper, p2: rock' do
-      allow(player1).to receive(:weapon).and_return(:paper)
-      allow(player2).to receive(:weapon).and_return(:rock)
+    it 'returns win for p1: Paper, p2: Rock' do
+      allow(player1).to receive(:weapon).and_return(:Paper)
+      allow(player2).to receive(:weapon).and_return(:Rock)
       expect(game.result).to eq(:win)
     end
-    it 'returns win for p1: scissors, p2: paper' do
-      allow(player1).to receive(:weapon).and_return(:scissors)
-      allow(player2).to receive(:weapon).and_return(:paper)
+    it 'returns win for p1: Scissors, p2: Paper' do
+      allow(player1).to receive(:weapon).and_return(:Scissors)
+      allow(player2).to receive(:weapon).and_return(:Paper)
       expect(game.result).to eq(:win)
     end
-    it 'returns loss for p1: scissors, p2: rock' do
-      allow(player1).to receive(:weapon).and_return(:scissors)
-      allow(player2).to receive(:weapon).and_return(:rock)
+    it 'returns loss for p1: Scissors, p2: Rock' do
+      allow(player1).to receive(:weapon).and_return(:Scissors)
+      allow(player2).to receive(:weapon).and_return(:Rock)
       expect(game.result).to eq(:loss)
     end
-    it 'returns loss for p1: rock, p2: paper' do
-      allow(player1).to receive(:weapon).and_return(:rock)
-      allow(player2).to receive(:weapon).and_return(:paper)
+    it 'returns loss for p1: Rock, p2: Paper' do
+      allow(player1).to receive(:weapon).and_return(:Rock)
+      allow(player2).to receive(:weapon).and_return(:Paper)
       expect(game.result).to eq(:loss)    end
-    it 'returns loss for p1: paper, p2: scissors' do
-      allow(player1).to receive(:weapon).and_return(:paper)
-      allow(player2).to receive(:weapon).and_return(:scissors)
+    it 'returns loss for p1: Paper, p2: Scissors' do
+      allow(player1).to receive(:weapon).and_return(:Paper)
+      allow(player2).to receive(:weapon).and_return(:Scissors)
       expect(game.result).to eq(:loss)
     end
-    it 'returns draw for p1: scissors, p2: scissors' do
-      allow(player1).to receive(:weapon).and_return(:scissors)
-      allow(player2).to receive(:weapon).and_return(:scissors)
+    it 'returns draw for p1: Scissors, p2: Scissors' do
+      allow(player1).to receive(:weapon).and_return(:Scissors)
+      allow(player2).to receive(:weapon).and_return(:Scissors)
       expect(game.result).to eq(:draw)
     end
-    it 'returns draw for p1: rock, p2: rock' do
-      allow(player1).to receive(:weapon).and_return(:rock)
-      allow(player2).to receive(:weapon).and_return(:rock)
+    it 'returns draw for p1: Rock, p2: Rock' do
+      allow(player1).to receive(:weapon).and_return(:Rock)
+      allow(player2).to receive(:weapon).and_return(:Rock)
       expect(game.result).to eq(:draw)
     end
-    it 'returns draw for p1: paper, p2: paper' do
-      allow(player1).to receive(:weapon).and_return(:paper)
-      allow(player2).to receive(:weapon).and_return(:paper)
+    it 'returns draw for p1: Paper, p2: Paper' do
+      allow(player1).to receive(:weapon).and_return(:Paper)
+      allow(player2).to receive(:weapon).and_return(:Paper)
       expect(game.result).to eq(:draw)
     end
   end
