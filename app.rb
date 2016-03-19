@@ -18,6 +18,16 @@ class RPSGame < Sinatra::Base
     erb :play
   end
 
+  post '/selection' do
+    session[:weapon] = params[:weapon]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @weapon = session[:weapon]
+    erb :result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
