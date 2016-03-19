@@ -3,39 +3,40 @@ require_relative './lib/player'
 require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
-
+  
   post '/name' do
-    $player = Player.new(params[:name])
-    $game = Game.new($player)
+    player = Player.new(params[:name])
+    @game = Game.create(player)
     redirect('/play')
   end
 
   get '/play' do
-    @player_name = $player.name
     erb(:play)
   end
 
   post '/rock' do
-    $game.make_player_choice('Rock')
+    @game.make_player_choice('Rock')
     redirect('/results')
   end
 
   post '/paper' do
-    $game.make_player_choice('Paper')
+    @game.make_player_choice('Paper')
     redirect('/results')
   end
 
   post '/scissors' do
-    $game.make_player_choice('Scissors')
+    @game.make_player_choice('Scissors')
     redirect('/results')
   end
 
   get '/results' do
-    @player_name = $player.name
-    @player_choice = $player.choice  
     erb(:results)
   end
 

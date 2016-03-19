@@ -2,6 +2,14 @@ class Game
 
   attr_reader :player, :comp_choice
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+  
+  def self.instance
+    @game
+  end
+
   def initialize(player)
     @player = player    
   end
@@ -28,9 +36,9 @@ class Game
   end
 
   def player_wins?
-    (player_choice == 'Rock' && comp_choice == 'Scissors') or
-    (player_choice == 'Paper' && comp_choice == 'Rock') or
-    (player_choice == 'Scissors')
+      (player_choice == 'Rock' && comp_choice == 'Scissors') ||
+      (player_choice == 'Paper' && comp_choice == 'Rock') ||
+      (player_choice == 'Scissors' && comp_choice == 'Paper')
   end
 
   def results_message
