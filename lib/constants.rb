@@ -1,5 +1,7 @@
 module Constants
 
-  MOVES = ['Rock','Paper','Scissors']
+  MOVES = {:rock => [:scissors],
+           :paper => [:rock],
+           :scissors => [:paper]}
 
 end

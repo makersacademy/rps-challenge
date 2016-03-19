@@ -7,6 +7,7 @@ require 'ai'
 describe Ai do
 
   subject(:ai){ described_class.new }
+  let(:moves){Constants::MOVES.keys}
 
   describe '#initialize' do
     it { expect(ai.name).to eq Ai::NAME}
@@ -17,9 +18,9 @@ describe Ai do
   end
 
   describe '#move' do
-    it { expect(ai.move).to eq Constants::MOVES[1] }
-    it { rand(2); expect(ai.move).to eq Constants::MOVES[1] }
-    it { rand(2); rand(2); expect(ai.move).to eq Constants::MOVES[0] }
-    it { rand(2); rand(2); rand(2); expect(ai.move).to eq Constants::MOVES[1] }
+    it { expect(ai.move).to eq moves[1] }
+    it { rand(2); expect(ai.move).to eq moves[1] }
+    it { rand(2); rand(2); expect(ai.move).to eq moves[0] }
+    it { rand(2); rand(2); rand(2); expect(ai.move).to eq moves[1] }
   end
 end

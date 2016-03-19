@@ -1,4 +1,4 @@
-require 'constants'
+require_relative 'constants'
 
 class Ai
 
@@ -12,7 +12,8 @@ class Ai
     @name = NAME
   end
 
-  def move
-    Constants::MOVES[rand(2)]
+  def move(move=nil)
+    moves = Constants::MOVES.keys
+    moves[rand(moves.count - 1)]
   end
 end
