@@ -3,6 +3,14 @@
 </div>
 
 <div>
+  <h2>Player 2: <%= @p2_name %></h2>
+</div>
+
+<div>
+  <h3>↓Choose your move below↓</h3>
+</div>
+
+<div>
   <form action='/play' method='post'>
     <input type='submit' name='move' value='ROCK'>
   </form>
@@ -11,5 +19,11 @@
   </form>
   <form action='/play' method='post'>
     <input type='submit' name='move' value='SCISSORS'>
+  </form>
+  <form action='/play' method='post'>
+    <input type='submit' name='move' value='LIZARD'>
+  </form>
+  <form action='/play' method='post'>
+    <input type='submit' name='move' value='SPOCK'>
   </form>
 </div>
