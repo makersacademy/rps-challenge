@@ -33,4 +33,10 @@ RSpec.configure do |config|
 
 end
 
+class Capybara::Session
+  def have_title(title="")
+    find('head').native.text.have_content(title)
+  end
+end
+
 

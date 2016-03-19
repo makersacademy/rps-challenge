@@ -13,5 +13,9 @@ class RPS < Sinatra::Base
     erb(:weapons)
   end
 
+  get '/outcome' do
+    erb(:win)
+  end
+
   run! if app_file == $0
 end
