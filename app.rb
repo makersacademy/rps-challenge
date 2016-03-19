@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Rpsls < Sinatra::Base
 
   get '/' do
-    'Welcome to Rock Paper Scissor Lizard Spock!'
+    erb(:welcome)
   end
 
 
