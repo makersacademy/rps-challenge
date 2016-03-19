@@ -1,23 +1,40 @@
+
 Welcome to the game <%= @game.player1_name %> and <%= @game.player2_name %> 
 <div>
 It's <%= @game.current_player_name %>'s turn
 
 <form action='/rock' method='post'>
   <div>
-    <button type='submit'>Rock</button>
+    <button type='submit'><img src='images/rock.jpg'><div>Rock</div></button>
   </div>
 </form>
 
 
 <form action='/paper' method='post'>
-  <div>
-    <button type='submit'>Paper</button>
+  <button type='submit'><img src='images/paper.jpg'><div>Paper</div></button>
   </div>
 </form>
 
-<form action='/scissors' method='post'
+
+<form action='/scissors' method='post'>
   <div>
-    <button type='submit'>Scissors</button>
+    <button type='submit'><img src='images/scissors.jpg'><div>Scissors</div></button>
   </div>
 </form>
+
+
+<form action='/spock' method='post'>
+  <div>
+    <button type='submit'><img src='images/spock.jpg'><div>Spock</div></button>
+  </div>
+</form>
+
+<form action='/lizard' method='post'>
+  <div>
+    <button type='submit'><img src='images/lizard.jpg'><div>Lizard</div></button>
+  </div>
+</form>
+
+<img src="images/spock.jpg>
+
 

@@ -38,6 +38,16 @@ class RockPaperScissors < Sinatra::Base
     redirect('/results')
   end
 
+  post '/spock' do
+    @game.make_player_choice('Spock')
+    redirect('/results')
+  end
+
+  post '/lizard' do
+    @game.make_player_choice('Lizard')
+    redirect('/results')
+  end
+
   get '/results' do
     if @game.player1_turn == true
       @game.switch_turn
