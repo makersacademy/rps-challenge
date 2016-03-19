@@ -5,7 +5,7 @@ Makers Academy Week 03 Weekend Challenge <br>
 Author: Rhiannon Lolley Neville <br>
 
 [![Build Status](https://travis-ci.org/rhiannonruth/rps-challenge.svg?branch=master)](https://travis-ci.org/rhiannonruth/rps-challenge)
-[![Coverage Status](https://coveralls.io/repos/github/makersacademy/rps-challenge/badge.svg?branch=zdajani)](https://coveralls.io/github/makersacademy/rps-challenge?branch=zdajani)
+[![Coverage Status](https://coveralls.io/repos/github/rhiannonruth/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/rhiannonruth/rps-challenge?branch=master)
 
 
 Instructions
