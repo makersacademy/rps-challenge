@@ -9,7 +9,7 @@ describe Game do
     let(:game_class) { described_class }
     it 'creates player objects' do
       expect(player_class).to receive :new
-      game_class.create(player_name: 'Me', player_class: player_class)
+      game_class.create(player1: 'Me', player2: player_class)
     end
   end
 

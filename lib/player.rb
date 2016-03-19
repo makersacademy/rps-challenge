@@ -1,7 +1,8 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :type
 
-  def initialize(name:)
+  def initialize(name:, type: 'human')
     @name = name
+    @type = type.to_sym
   end
 end
