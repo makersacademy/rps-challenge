@@ -1,8 +1,55 @@
-body {
-  background-image: url('http://i.imgur.com/1jocz1D.jpg');
-  background-size: cover;
+#content {
+  background-image: url(http://www.gifmania.co.uk/Objects-Animated-Gifs/Animated-Toys/Rock-Paper-Scissors/Rock-Paper-Scissors-87021.gif);
   background-repeat: no-repeat;
-  position: relative;
-  font-family: "Comic Sans MS";
-  color: white;
+  background-position: center;
+  background-size: 70%;
+  background-position: 50% 13px;
+  text-align: center;
+  font-family: "Comic Sans MS"
+}
+
+
+#name_form {
+  position: relative;;
+  top: 120px;
+
+}
+
+
+/*play page*/
+
+#container {
+  text-align: center;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+.playerbox{
+  position: absolute;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+}
+#player1box {
+  border: 3px solid;
+  left: 30px;
+}
+#rockbutton {
+  margin: 0 auto;
+  top: 50%;
+  position:absolute;
+  border-radius: 12px;
+  font-size: 15px;
+}
+#paperbutton {
+}
+#scissorsbutton {
+}
+
+#player2box {
+  background-image: url("../images/rock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid;
+  right: 30px;
 }

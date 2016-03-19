@@ -1,2 +1,2 @@
-You chose <%= @session[:player_1_choice] %>
+<%= (@game.rps(@session[:player_1_choice])).to_s %>
 <meta http-equiv="refresh" content="5;url=/" />
