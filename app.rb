@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class rps-challenge < Sinatra::Base
+class RPS < Sinatra::Base
   get '/' do
     'Hello rps-challenge!'
   end
