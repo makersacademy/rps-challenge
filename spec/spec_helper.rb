@@ -1,7 +1,7 @@
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
 require 'coveralls'
 require 'simplecov'
-require 'web_helpers'
+require 'features/web_helpers'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
