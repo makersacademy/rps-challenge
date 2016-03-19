@@ -24,6 +24,17 @@ class RockPaperScissors < Sinatra::Base
   	erb(:rock_paper_scissors)
   end
 
+  post '/move' do
+  	$player_move = @game.player.move(params[:move])
+  	redirect('/winner')
+  end
+
+  get '/winner' do
+  	@player_move = $player_move
+  	p @player_move
+  	erb(:winner)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

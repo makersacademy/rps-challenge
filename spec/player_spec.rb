@@ -11,5 +11,10 @@ describe Player do
 		end
 	end
 	
+	describe '#move' do
+		it 'stores the players move' do
+			expect(player.move('Rock')).to eq 'Rock'
+		end
+	end
 
 end
