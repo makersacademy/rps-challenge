@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -10,6 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/sign-in' do
     session[:user] = Player.new(params[:user])
+    session[:computer] = Computer.new
     redirect '/play'
   end
 
@@ -37,7 +39,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    @weapon = session[:user].weapon
+    @user_weapon = session[:user].weapon
+    @computer_weapon = session[:computer].choice
     erb :outcome
   end
   # start the server if ruby file executed directly
