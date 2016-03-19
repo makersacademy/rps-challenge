@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post "/weapon" do
-    Game::WEAPONS.each { |weapon| @weapon = weapon if !!params[weapon] }
+    Game::WEAPONS.each { |weapon| @weapon = weapon if params[weapon] }
     player.pick(@weapon)
     redirect "/result"
   end
