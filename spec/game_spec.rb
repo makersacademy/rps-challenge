@@ -11,22 +11,26 @@ describe Game do
     end
   end
 
-  describe '#tie' do
+  describe '#results_message' do
     it 'will return true if comp_choice and player_choice are equal' do
       allow(game).to receive(:comp_choice) { 'Rock' }
       allow(player).to receive(:choice) { 'Rock' }
-      expect(game.tie?).to be true
+      expect(game.results_message).to eq 'The game was a tie'
     end
-  end
 
-  describe '#player_wins' do
     it 'will return true if player_choice beats comp_choice' do
-      allow(game).to receive(:comp_choice) { 'Rock' }
-      allow(player).to receive(:choice) { 'Scissors' }
-      expect(game.player_wins?).to be true
+      allow(game).to receive(:comp_choice) { 'Scissors' }
+      allow(player).to receive(:choice) { 'Rock' }
+      allow(player).to receive(:name) { 'Charlie' }
+      expect(game.results_message).to eq 'Charlie wins'
+    end
+
+    it 'will return computer wins if comp_choice beats player_choice' do
+      allow(game).to receive(:comp_choice) { 'Scissors' }
+      allow(player).to receive(:choice) { 'Paper' }
+      expect(game.results_message).to eq 'The computer wins'
     end
   end
-
 end
 
 

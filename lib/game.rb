@@ -27,6 +27,19 @@ class Game
     @player.choice
   end
   
+
+  def results_message
+    if tie?
+      'The game was a tie'
+    elsif player_wins?
+      "#{player.name} wins"
+    else 
+      "The computer wins"
+    end
+  end
+
+  private
+
   def make_comp_choice
     @comp_choice = ['Rock', 'Paper', 'Scissors'].sample
   end
@@ -40,15 +53,4 @@ class Game
       (player_choice == 'Paper' && comp_choice == 'Rock') ||
       (player_choice == 'Scissors' && comp_choice == 'Paper')
   end
-
-  def results_message
-    if tie?
-      'The game was a tie'
-    elsif player_wins?
-      "#{player.name} wins"
-    else 
-      "The computer wins"
-    end
-  end
-
 end
