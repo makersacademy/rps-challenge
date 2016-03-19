@@ -1,9 +1,18 @@
-require_relative 'player'
-require_relative 'computer'
-
 class Game
 
+  def self.store_game(game)
+    @this_game = game
+  end
+
+  def self.show_game
+    @this_game
+  end
+
+  attr_reader :player, :computer
+
   def initialize(player, computer)
+    @player = player
+    @computer = computer
     @weapon1 = player.weapon.to_sym
     @weapon2 = computer.choice.to_sym
   end
@@ -29,5 +38,4 @@ class Game
   def draw?
    @weapon1 == @weapon2 ? true : false
   end
-
- end
+end

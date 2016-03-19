@@ -1,15 +1,22 @@
 <html>
+<body style="text-align:center; font-family: monaco; color: white; background-color: #804000">
   Welcome <%=@user%>, ready to battle?
 
   <form action="/rock" method="post">
-    <input type="submit" value="Rock">
+    <input type="image" src="/images/rock.jpg"
+             width="110"  height="50"
+            border="0" alt="Rock">
   </form>
 
   <form action="/paper" method="post">
-    <input type="submit" value="Paper">
-  </form>
+    <input type="image" src="/images/paper.jpg"
+               width="110"  height="50"
+              border="0" alt="Paper">  </form>
 
   <form action="/scissors" method="post">
-    <input type="submit" value="Scissors">
+    <input type="image" src="/images/scissors.jpg"
+               width="110"  height="50"
+              border="0" alt="Scissors">
   </form>
+  <body>
 </html>

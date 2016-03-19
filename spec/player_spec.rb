@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
   subject(:bob) { described_class.new 'Bob' }
-  let(:weapon) { 'Rock' }
+  let(:weapon) { 'rock' }
 
   it 'allows player to choose weapon' do
     bob.choice(weapon)
