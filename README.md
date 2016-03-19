@@ -1,5 +1,4 @@
 Rock, Paper, Scissors Challenge [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
-[![Coverage Status](https://camo.githubusercontent.com/e3b3375ede0bd0d912b6987adb1e4413fb27ab9c/68747470733a2f2f636f766572616c6c732e696f2f6275696c64732f353437313633342f6261646765)](https://coveralls.io/builds/5471634/badge)
 ===============================
 
 The task was to build a game of rock, paper, scissors that a user could play on the web.

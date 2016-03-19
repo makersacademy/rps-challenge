@@ -1,1 +1,11 @@
-<h1 style="font-family: Arial; color: Navy"><%= @game.name %> vs. Computer!</h1>
+<html style="text-align: center">
+  <h1 style="font-family: Arial; color: Navy"><%= @game.name %> vs. Computer!</h1>
+
+  <h3 style="font-family: Arial; color: LightSlateGray"> Pick your weapon:</h3>
+
+  <form action='/PAGE' method='DONTKNOW'>
+    <input type='submit' value='Rock'/>
+    <input type='submit' value='Paper'/>
+    <input type='submit' value='Scissors'/>
+  </form>
+</html>
