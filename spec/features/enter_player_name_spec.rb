@@ -1,4 +1,4 @@
-feature 'Player enters their name' do
+feature 'Enter name page' do
   scenario 'Allow player to enter their name' do
     visit '/'
     fill_in :player_name, :with => 'Player'

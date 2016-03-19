@@ -15,5 +15,6 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'byebug'
 require 'capybara/rspec'
+require 'features/web_helper'
 
 Capybara.app = RockPaperScissors
