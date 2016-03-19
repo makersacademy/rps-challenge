@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html>
@@ -10,5 +8,17 @@
 
   <body>
     <h1 id='instructions'><%= @player_1 %> choose wisely</h1>
+
+    <form action="/check" id='rock_button' method="post">
+      <button type="submit" name="choice" value="rock">Rock</button>
+    </form>
+    <br>
+    <form action="/check" id='paper_button' method="post">
+      <button type="submit" name="choice" value="paper">Paper</button>
+    </form>
+    <br>
+    <form action="/check" id='scissors_button' method="post">
+      <button type="submit" name="choice" value="scissors">Scissors</button>
+    </form>
   </body>
 </html>
