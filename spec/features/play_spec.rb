@@ -1,7 +1,7 @@
 feature 'Play page' do
 
   before(:each) do
-    sign_in_and_play_p1
+    sign_in_and_play
   end
 
   scenario '0.0. Page displays name of player 1' do
@@ -9,6 +9,6 @@ feature 'Play page' do
   end
 
   scenario '0.1. Page displays name of player 1' do
-    expect(page).to have_content('Player 2: Computer')
+    expect(page).to have_content('Player 2: Clems')
   end
 end

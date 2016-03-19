@@ -9,6 +9,6 @@ feature 'Index page: user entry' do
   end
 
   scenario '0.1. Index page prompts player to enter their name' do
-    expect(page).to have_content('Enter your names below:')
+    expect(page).to have_content('Choose player:')
   end
 end

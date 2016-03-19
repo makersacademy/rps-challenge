@@ -1,17 +1,12 @@
 <div><h1>Rock-Paper-Scissors!!!</h1></div>
 
-<div><h3>Enter your names below:</h3></div>
+<div><h3>Choose player:</h3></div>
 
 <div>
-  <form action='/' method='post'>
-    <input type='text' name='p1_name' placeholder='Player 1'>
-    <input type='submit' value='Player 1: Entry'>
+  <form action='/p1_entry' method='get'>
+    <input type='submit' value='Player 1'>
   </form>
-</div>
-
-<div>
-  <form action='/' method='post'>
-    <input type='text' name='p2_name' placeholder='Player 2'>
-    <input type='submit' value='Player 2: Entry'>
+  <form action='/p2_entry' method='get'>
+    <input type='submit' value='Player 2'>
   </form>
 </div>
