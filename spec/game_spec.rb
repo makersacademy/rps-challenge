@@ -31,7 +31,8 @@ describe Game do
     it 'returns loss for p1: Rock, p2: Paper' do
       allow(player1).to receive(:weapon).and_return(:Rock)
       allow(player2).to receive(:weapon).and_return(:Paper)
-      expect(game.result).to eq(:loss)    end
+      expect(game.result).to eq(:loss)
+    end
     it 'returns loss for p1: Paper, p2: Scissors' do
       allow(player1).to receive(:weapon).and_return(:Paper)
       allow(player2).to receive(:weapon).and_return(:Scissors)
