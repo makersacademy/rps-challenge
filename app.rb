@@ -1,13 +1,13 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 # require 'sinatra/cookies'
 
 
 class RPS < Sinatra::Base
   # helpers Sinatra::Cookies
 
-
   enable :sessions
-
 
   get '/' do
     # @cookies = cookies
@@ -16,11 +16,14 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:me] = params[:player1_name]
+    player = session[:me]
+    @game = Game.create(player_klass: Player, player_name: player)
     redirect '/play'
   end
 
   get '/play' do
-    @player=session[:me]
+    @game = Game.current_game
+    @player = @game.players.first.name
     erb :play
   end
 

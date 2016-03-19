@@ -26,4 +26,11 @@ describe Game do
       expect(game.players).to include player1
     end
   end
+
+  describe '#reset' do
+    it 'sets current_game to nil to reset state for rspec' do
+      Game.reset
+      expect(Game.current_game).to be_nil
+    end
+  end
 end
