@@ -40,6 +40,11 @@ class RPS < Sinatra::Base
     @p1_move = RPS.game.p1.move
     @p2_name = RPS.game.p2.name
     @p2_move = RPS.game.p2.move
+    if RPS.game.return_winner == 'tie'
+      @winner = 'tie'
+    else
+      @winner = RPS.game.return_winner.name
+    end
     erb(:result)
   end
 

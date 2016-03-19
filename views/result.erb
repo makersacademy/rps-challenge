@@ -5,3 +5,11 @@
 <div>
   <h2><%= @p2_name %> has chosen... <%= @p2_move %>!</h2>
 </div>
+
+<div>
+  <% if @winner == 'tie' %>
+    <h2><%= @p1_name %> and <%= @p2_name %> tie!</h2>
+  <% else %>
+    <h2><%= @winner %> wins! </h2>
+  <% end %>
+</div>

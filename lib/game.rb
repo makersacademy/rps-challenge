@@ -30,7 +30,7 @@ class Game
   end
 
   def p1_win?
-    p diff = (@p1_val - @p2_val) % 5
+    diff = (@p1_val - @p2_val) % 5
     diff == 1 || diff == 2
   end
 end
