@@ -1,12 +1,16 @@
 require 'sinatra/base'
+# require 'sinatra/cookies'
 
 
 class RPS < Sinatra::Base
+  # helpers Sinatra::Cookies
+
 
   enable :sessions
 
 
   get '/' do
+    # @cookies = cookies
     erb :index
   end
 
