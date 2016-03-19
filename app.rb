@@ -14,7 +14,7 @@ class Rpsls < Sinatra::Base
     redirect '/game'
   end
 
-  post '/chose_attack' do
+  post '/choose_attack' do
     session[:attack_type] = params[:attack_type]
     redirect '/attack_resolution'
   end
@@ -27,7 +27,7 @@ class Rpsls < Sinatra::Base
   end
 
   get '/attack_resolution' do
-    @attack_type = session[:attack_type]
+    @attack_type = session[:attack_type].to_sym
     @defense_type = 'rock'
     erb :attack_resolution
   end

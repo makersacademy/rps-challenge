@@ -22,8 +22,8 @@ feature 'Game Flow' do
       expect(page).to have_button 'rock_button'
     end
 
-    scenario 'Page has a button to pick Scissor' do
-      expect(page).to have_button 'scissor_button'
+    scenario 'Page has a button to pick Scissors' do
+      expect(page).to have_button 'scissors_button'
     end
 
     scenario 'Page has a button to pick Lizard' do
