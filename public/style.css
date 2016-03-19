@@ -1,0 +1,22 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+div {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+#button {
+    font-family: 'Georgia', serif;
+    border-radius:6px;
+    font-size: 20px;
+    border:none;
+}
