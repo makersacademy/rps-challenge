@@ -1,0 +1,12 @@
+<% if @result == :lose %>
+  <h2>Awww, you lost! :(</h2>
+<% elsif @result == :win %>
+  <h2>Woohoo! You won! :D</h2>
+<% else %>
+  <h2>It's a tie :)</h2>
+<% end %>
+
+<p>You chose <%= @player_choice %></p>
+<p>Computer chose <%= @computer_choice %></p>
+<a href="/play">Play Again!</a>
+<a href="/">Change Player</a>
