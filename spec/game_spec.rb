@@ -15,7 +15,7 @@ describe Game do
       expect(game.computer).to eq "Computer"
     end
 
-    it 'should initialize with an array of weapons' do
+    it '3. should initialize with an array of weapons' do
       weapons_arr = ["Rock", "Paper", "Scissors"]
       expect(game.weapons).to eq(weapons_arr)
     end
