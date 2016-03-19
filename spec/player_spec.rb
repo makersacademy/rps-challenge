@@ -4,30 +4,38 @@ end
 
 require 'player'
 
-describe Player do
+class PlayerModule
+  include Player
 
-  let(:name){ "Player1" }
-  let(:opponent_name){ "Opponent" }
-  let(:opponent){described_class.new(name:opponent_name)}
+  def initialize(name:)
+    setup(name)
+  end
+end
+
+describe PlayerModule do
+
+    let(:name){ "Player" }
   subject(:player){ described_class.new(name: name) }
 
-  let(:selected_move){double :Move}
+  describe '#win!' do
+    it { expect{player.win!}.to change{player.wins}.by(1) }
+  end
 
-  describe '#initialize' do
-    it { expect(player.name).to eq name}
+  describe '#restart!' do
+    before do
+      player.restart!
+    end
     it { expect(player.wins).to eq 0}
   end
 
-  describe '#move' do
-    it "returns the move selected" do
-      player.play(selected_move)
-      expect(player.move).to eq selected_move
-    end
-  end
 
-  describe '#win!' do
-    it 'increments wins by 1' do
-      expect{player.win!}.to change{player.wins}.by(1)
-    end
-  end
+# before(:each) do
+#   @dummy_class = DummyClass.new
+#   @dummy_class.extend(Say)
+# end
+#
+# it "get hello string" do
+#   @dummy_class.hello.should == "hello"
+# end
+
 end

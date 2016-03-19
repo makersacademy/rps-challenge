@@ -23,4 +23,5 @@ describe Ai do
     it { rand(2); rand(2); expect(ai.move).to eq moves[0] }
     it { rand(2); rand(2); rand(2); expect(ai.move).to eq moves[1] }
   end
+
 end

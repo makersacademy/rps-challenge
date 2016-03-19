@@ -1,15 +1,15 @@
 require_relative 'constants'
+require_relative 'player'
 
 class Ai
 
   include Constants
+  include Player
 
   NAME = 'Computer'
 
-  attr_reader :name
-
   def initialize
-    @name = NAME
+    setup(NAME)
   end
 
   def move(move=nil)

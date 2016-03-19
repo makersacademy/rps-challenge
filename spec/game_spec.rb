@@ -46,12 +46,26 @@ describe Game do
     describe "#initialize" do
       it { expect(game_class.instance.player1).to eq player }
       it { expect(game_class.instance.player2).to eq player }
+      it { expect(game_class.instance).not_to be_in_progress}
+    end
+
+    describe "#in_progress" do
+      before do
+        game.in_progress!
+      end
+      it {expect(game).to be_in_progress}
+    end
+
+    describe '#find_opponent_of' do
+
+      it { expect(game.find_opponent_of(player1.name)).to eq player2 }
+      it { expect(game.find_opponent_of(player2.name)).to eq player1 }
     end
 
     describe '#winner' do
 
       after do
-        game_class.instance.winner(player1:player1, player2:player2)
+        game.winner(player1:player1, player2:player2)
       end
 
       context 'player 1 wins' do
@@ -83,7 +97,6 @@ describe Game do
         it { expect(player1).not_to receive(:win!) }
         it { expect(player2).not_to receive(:win!) }
       end
-
     end
   end
 end

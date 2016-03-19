@@ -1,17 +1,19 @@
-class Player
+module Player
 
   attr_reader :name, :move, :wins
 
-  def initialize(name:)
-    @name = name
+  def win!
+    @wins += 1
+  end
+
+  def restart!
     @wins = 0
   end
 
-  def play(move)
-    @move = move
-  end
+  private
 
-  def win!
-    @wins += 1
+  def setup(name)
+    @name = name
+    @wins = 0
   end
 end

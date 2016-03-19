@@ -9,16 +9,13 @@ class Game
   attr_reader :player1, :player2
 
   def self.create(player1_name:, player2_name:nil, player_class:Player, ai_class:Ai)
-
     player1 = player_class.new(name:player1_name)
-
     if player2_name.nil?
       player2 = ai_class.new
     else
       player2 = player_class.new(name:player2_name)
     end
     @instance = self.new(player1:player1, player2:player2)
-
   end
 
   def self.instance
@@ -29,10 +26,23 @@ class Game
     @instance = nil
   end if
 
-
   def initialize(player1:, player2:)
     @player1 = player1
     @player2 = player2
+    @players = [player1,player2]
+    @in_progress = false
+  end
+
+  def in_progress?
+    @in_progress
+  end
+
+  def in_progress!
+    @in_progress = true
+  end if
+
+  def find_opponent_of(player_name)
+    @players.select{|player| return player if player.name != player_name}
   end
 
   def winner(player1:@player1,player2:@player2)

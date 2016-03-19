@@ -1,10 +1,20 @@
 <h1>Let's play!</h1>
 <h2>Choose your move by clicking the button</h2>
-<p>Your points: <%=0%>
-<p><%='Opponent'%>'s points: <%=0%>
+<p>Your points: <%=@me.wins%>
+<p><%=@opponent.name%>'s points: <%=@opponent.wins%>
 
-  <form action ="/move" method="post">
-    <input type="submit" value="Rock"/>
-    <input type="submit" value="Paper"/>
-    <input type="submit" value="Scissors"/>
+<%if @game.started%>
+  <h3>You played <%= @me.move%></h3>
+  <h3><%=@opponent.name%> played <%= @opponent.move%></h3>
+
+<%end%>
+
+  <form action ="/play" method="post">
+    <input type="radio" name="rock" value=":rock">Rock<br>
+    <input type="radio" name="paper" value=":paper">Paper<br>
+    <input type="radio" name="scissors" value=":scissors">Scissors<br>
+    <input type="submit" value="Play"/>
+  </form>
+  <form action ="/new" method="post">
+    <input type="submit" value="New Game"/>
   </form>
