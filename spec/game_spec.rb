@@ -19,10 +19,10 @@ describe Game do
 		end
 	end
 
-	describe '.instance' do
+	describe '.load' do
 		it 'returns instance of Game' do
 			game_class.create player
-			expect(game_class.instance).to be_instance_of(Game)
+			expect(game_class.load).to be_instance_of(Game)
 		end
 	end
 end

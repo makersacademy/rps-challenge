@@ -10,7 +10,7 @@ class Game
 		@game = Game.new player
 	end
 
-	def self.instance
+	def self.load
 		@game
 	end
 end 
