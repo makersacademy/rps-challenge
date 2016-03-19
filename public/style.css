@@ -62,3 +62,10 @@ a {
 a:hover {
   color: #FFCCCC;
 }
+
+h3 {
+  font-size: 15pt;
+  margin-top: 22%;
+  text-align: center;
+  padding: 0 0 10px 0;
+}
