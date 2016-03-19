@@ -11,13 +11,14 @@ class Game
     @game
   end
 
-  attr_reader :player_name, :choice, :comp_choice, :computer, :winner, :weapons
+  attr_reader :player_name, :choice, :comp_choice, :computer, :winner, :weapons, :draw
 
   def initialize(player_name)
     @player_name = player_name
     @computer = "Computer"
     @winner = nil
     @weapons = ["Rock", "Paper", "Scissors"]
+    @draw = false
   end
 
   def name
@@ -33,17 +34,20 @@ class Game
   end
 
   def rps(choice, comp_choice)
-    if choice == "Rock"
-      player_wins if comp_choice == "Scissors"
-      comp_wins if comp_choice == "Paper"
+    if choice == comp_choice
+      draw_game if choice == comp_choice
     elsif choice == "Paper"
       player_wins if comp_choice == "Rock"
       comp_wins if comp_choice == "Scissors"
     elsif choice == "Scissors"
       player_wins if comp_choice == "Paper"
       comp_wins if comp_choice == "Rock"
+    elsif choice == "Rock"
+      player_wins if comp_choice == "Scissors"
+      comp_wins if comp_choice == "Paper"
     end
   end
+
 
   private
 
@@ -61,6 +65,10 @@ class Game
 
   def comp_wins
     @winner = @computer
+  end
+
+  def draw_game
+    @draw = true
   end
 
 end
