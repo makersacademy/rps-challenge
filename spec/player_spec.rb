@@ -13,8 +13,7 @@ class PlayerModule
 end
 
 describe PlayerModule do
-
-    let(:name){ "Player" }
+  let(:name){ "Player" }
   subject(:player){ described_class.new(name: name) }
 
   describe '#win!' do
@@ -27,15 +26,4 @@ describe PlayerModule do
     end
     it { expect(player.wins).to eq 0}
   end
-
-
-# before(:each) do
-#   @dummy_class = DummyClass.new
-#   @dummy_class.extend(Say)
-# end
-#
-# it "get hello string" do
-#   @dummy_class.hello.should == "hello"
-# end
-
 end

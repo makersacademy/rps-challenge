@@ -1,5 +1,5 @@
 require_relative 'constants'
-require_relative 'player'
+require_relative 'human'
 require_relative 'ai'
 
 class Game
@@ -8,10 +8,11 @@ class Game
 
   attr_reader :player1, :player2
 
-  def self.create(player1_name:, player2_name:nil, player_class:Player, ai_class:Ai)
+  def self.create(player1_name:, player2_name:nil, player_class:Human, ai_class:Ai)
     player1 = player_class.new(name:player1_name)
     if player2_name.nil?
       player2 = ai_class.new
+      p "creating player 2 as ai"
     else
       player2 = player_class.new(name:player2_name)
     end

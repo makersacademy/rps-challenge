@@ -3,18 +3,17 @@
 <p>Your points: <%=@me.wins%>
 <p><%=@opponent.name%>'s points: <%=@opponent.wins%>
 
-<%if @game.started%>
+<%if @game.in_progress?%>
   <h3>You played <%= @me.move%></h3>
   <h3><%=@opponent.name%> played <%= @opponent.move%></h3>
-
 <%end%>
 
-  <form action ="/play" method="post">
-    <input type="radio" name="rock" value=":rock">Rock<br>
-    <input type="radio" name="paper" value=":paper">Paper<br>
-    <input type="radio" name="scissors" value=":scissors">Scissors<br>
+  <form class="play" action ="/turn" method="post">
+    <input type="radio" name="play" value="rock">Rock<br>
+    <input type="radio" name="play" value="paper">Paper<br>
+    <input type="radio" name="play" value="scissors">Scissors<br>
     <input type="submit" value="Play"/>
   </form>
-  <form action ="/new" method="post">
+  <form class ="new" action ="/new" method="post">
     <input type="submit" value="New Game"/>
   </form>

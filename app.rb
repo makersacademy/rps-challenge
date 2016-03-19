@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra'
+require './lib/game'
 
 
 class Rps < Sinatra::Base
@@ -17,9 +18,19 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @me = Game.instance.player1
-    @opponent = Game.instance.player2
+    @game = Game.instance
+    @me = @game.player1
+    @opponent = @game.player2
     erb(:play)
+  end
+
+  post '/turn' do
+    @game = Game.instance
+    @game.player1.play(params[:play].to_sym)
+    @game.player2.play
+    @game.winner
+    @game.in_progress!
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly

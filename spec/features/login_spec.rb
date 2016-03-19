@@ -28,14 +28,18 @@ RSpec.feature "Login:", :type => :feature do
       expect(page).to have_content("Choose your move by clicking the button")
     end
 
-    expect(page).to have_content("Your points: 0")
-    expect(page).to have_content("Opponent's points: 0")
+    # expect(page).to have_content("Your points: 0")
+    # expect(page).to have_content("Opponent's points: 0")
 
-    within('form') do
+    within('form.play') do
       expect(page).to have_content('Rock')
       expect(page).to have_content('Paper')
       expect(page).to have_content('Scissors')
       expect(page).to have_button('Play')
+    end
+
+    within('form.new') do
+      expect(page).to have_content('New Game')    
     end
 
 

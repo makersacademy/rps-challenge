@@ -12,8 +12,8 @@ class Ai
     setup(NAME)
   end
 
-  def move(move=nil)
+  def play(move=nil)
     moves = Constants::MOVES.keys
-    moves[rand(moves.count - 1)]
+    @move = moves[rand(moves.count)]
   end
 end

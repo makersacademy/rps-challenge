@@ -15,13 +15,14 @@ describe Ai do
 
   before do
     srand 1234
+    ai.play
   end
 
-  describe '#move' do
-    it { expect(ai.move).to eq moves[1] }
-    it { rand(2); expect(ai.move).to eq moves[1] }
-    it { rand(2); rand(2); expect(ai.move).to eq moves[0] }
-    it { rand(2); rand(2); rand(2); expect(ai.move).to eq moves[1] }
+  describe '#play' do
+    it { expect(ai.move).to eq moves[2] }
+    it { ai.play; expect(ai.move).to eq moves[1] }
+    it { ai.play; ai.play; expect(ai.move).to eq moves[0] }
+    it { ai.play; ai.play; ai.play; expect(ai.move).to eq moves[0] }
   end
 
 end
