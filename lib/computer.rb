@@ -1,11 +1,6 @@
 class Computer
 
   def choice
-    WEAPONS.sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end
-
-  private
-
-    WEAPONS = ['Rock', 'Paper', 'Scissors'].freeze
-
 end

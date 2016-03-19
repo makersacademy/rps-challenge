@@ -19,11 +19,11 @@ feature 'Outcome' do
     click_button 'Scissors'
     expect(page).to have_content('You chose Scissors!')
   end
-  # 
-  # scenario 'shows Computer choice weapon' do
-  #   sign_in_to_play
-  #   click_button 'Rock'
-  #   allow(computer).to receive(:choice).and_return('Rock')
-  #   expect(page).to have_content('The computer chose Rock!')
-  # end
+
+  scenario 'shows Computer choice weapon' do
+    sign_in_to_play
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    click_button 'Rock'
+    expect(page).to have_content('The computer chose Rock!')
+  end
 end
