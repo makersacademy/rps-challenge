@@ -2,6 +2,8 @@ require 'sinatra/base'
 
 class RPSGame < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :name_entry
   end
