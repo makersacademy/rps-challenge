@@ -1,4 +1,4 @@
-RSpec.feature 'index_spec: Home page' do
+RSpec.feature 'index_spec: Home page:' do
 
   before do
     visit '/'
@@ -13,7 +13,7 @@ RSpec.feature 'index_spec: Home page' do
   end
 
   scenario '3. should have submit form to enter name' do
-    expect(page).to have_field('player')
+    expect(page).to have_field('player_name')
   end
 
   scenario '4. should have submit button' do

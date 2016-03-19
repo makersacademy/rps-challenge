@@ -7,8 +7,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    Game.start_game(params[:player])
+    Game.start_game(params[:player_name])
     redirect '/play'
+  end
+
+  get '/play' do
+    @game = Game.game
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
