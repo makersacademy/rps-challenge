@@ -6,7 +6,6 @@ RSpec.feature "Login:", :type => :feature do
 
   scenario "player has logged in and game starts" do
     # Game.reset
-    # require 'pry'; binding.pry
 
     visit '/'
     within('h1') do
@@ -18,11 +17,24 @@ RSpec.feature "Login:", :type => :feature do
       expect(page).to have_button('Submit')
     end
 
-    fill_in "player_name", :with => player1.name
-    click_button "Submit"
+    sign_in_one_player(player1.name)
 
+
+    # on page 'play'
     within('h1') do
       expect(page).to have_content("Let's play!")
+    end
+    within('h2') do
+      expect(page).to have_content("Choose your move by clicking the button")
+    end
+
+    expect(page).to have_content("Your points: 0")
+    expect(page).to have_content("Opponent's points: 0")
+
+    within('form') do
+      expect(page).to have_button('Rock')
+      expect(page).to have_button('Paper')
+      expect(page).to have_button('Scissors')
     end
 
 

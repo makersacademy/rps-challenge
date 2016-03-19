@@ -1,6 +1,6 @@
 def sign_in_one_player(player_name)
   visit "/"
-  fill_in "player_1", :with => player_name
+  fill_in "player_name", :with => player_name
   click_button "Submit"
 end
 
