@@ -20,24 +20,24 @@ class RockPaperScissors < Sinatra::Base
 
   post '/rock' do
     @user = session[:user]
-    @user.weapon('Rock')
+    @weapon = session[:user].choice('Rock')
     redirect '/outcome'
   end
 
   post '/paper' do
     @user = session[:user]
-    @user.weapon('Paper')
+    @weapon = session[:user].choice('Paper')
     redirect '/outcome'
   end
 
   post '/scissors' do
     @user = session[:user]
-    @user.weapon('Scissors')
+    @weapon = session[:user].choice('Scissors')
     redirect '/outcome'
   end
 
   get '/outcome' do
-    # @user = session[:user]
+    @weapon = session[:user].weapon
     erb :outcome
   end
   # start the server if ruby file executed directly

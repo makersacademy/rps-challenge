@@ -5,6 +5,8 @@ describe Player do
   let(:weapon) { 'Rock' }
 
   it 'allows player to choose weapon' do
-    expect(bob.weapon(weapon)).to eq weapon
+    # allow(bob).to receive(:choice).with(weapon).and_return(weapon)
+    bob.choice(weapon)
+    expect(bob.weapon).to eq weapon
   end
 end
