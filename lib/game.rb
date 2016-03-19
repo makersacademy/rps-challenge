@@ -11,7 +11,7 @@ class Game
     @game
   end
 
-  attr_reader :player_name
+  attr_reader :player_name, :choice
 
   def initialize(player_name)
     @player_name = player_name
@@ -19,6 +19,10 @@ class Game
 
   def name
     @player_name
+  end
+
+  def player_choice(choice)
+    @choice = choice
   end
 
 end
