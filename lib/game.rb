@@ -27,8 +27,8 @@ class Game
   end
 
   def current_player
-   # player1_turn ? @player_1 : @player_2
-    player_1
+     player1_turn ? @player1 : @player2
+    
   end
   
   def current_player_name
@@ -36,7 +36,7 @@ class Game
   end
 
   def make_player_choice(choice)
-    @current_player.make_choice(choice)
+    current_player.make_choice(choice)
   end
 
   def player1_choice
@@ -59,7 +59,7 @@ class Game
   end
   
   def switch_turn
-    @player_1_turn = !@player_1_turn
+    @player1_turn = !@player1_turn
   end
   private
 

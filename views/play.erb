@@ -1,7 +1,7 @@
 Welcome to the game <%= @game.player1_name %> and <%= @game.player2_name %> 
 <div>
-<!--It's # @game.current_player_name %>'s turn
--->
+It's <%= @game.current_player_name %>'s turn
+
 <form action='/rock' method='post'>
   <div>
     <button type='submit'>Rock</button>

@@ -23,7 +23,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/rock' do
-    @game.choice('Rock')
+    @game = Game.instance
+    @game.make_player_choice('Rock')
     redirect('/results')
   end
 
@@ -38,11 +39,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    if @game.player1_turn
+    if @game.player1_turn == true
       @game.switch_turn
       redirect('/play')
-    end
+    else
     erb(:results)
+    end
   end
 
 

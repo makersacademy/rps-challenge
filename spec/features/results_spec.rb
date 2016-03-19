@@ -1,24 +1,24 @@
 require 'spec_helper'
 
 feature '/results' do
-  before do 
-  allow_any_instance_of(Array).to receive(:sample) { 'Scissors' }
-  end
 
-  scenario 'player: Rock, comp: Scissors, player wins' do
+  scenario 'player: Rock, player2: Scissors, player wins' do
     sign_in
     click_button('Rock')
+    click_button('Scissors')
     expect(page).to have_content('Charlie wins') 
   end
 
-  scenario 'player: Paper, comp: Scissors, comp wins' do
+  scenario 'player: Paper, player2: Scissors, player2 wins' do
     sign_in
     click_button('Paper')
-    expect(page).to have_content('The computer wins')
+    click_button('Scissors')
+    expect(page).to have_content('Roxanne wins')
   end
 
-  scenario 'player: Scissors, comp:Scissors, its a tie' do
+  scenario 'player: Scissors, player2 Scissors, its a tie' do
     sign_in
+    click_button('Scissors')
     click_button('Scissors')
     expect(page).to have_content('The game was a tie')
   end
