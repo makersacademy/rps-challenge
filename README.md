@@ -6,4 +6,4 @@ Instructions + Basic Rules
 - Scissors beats Paper
 - Paper beats Rock
 
-Nick M
+Nick Mountjoy
