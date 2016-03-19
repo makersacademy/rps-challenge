@@ -2,9 +2,10 @@ require 'game'
 
 describe Game do
 
+  let(:player_class) { double :player_class, new: player1 }
   let(:player1) { double :player1 }
   let(:player2) { double :player2 }
-  subject(:game) { described_class.new(player1, player2) }
+  subject(:game) { described_class.new(player1, player2, player_class) }
 
   describe '#result' do
     it 'returns win for p1: Rock, p2: Scissors' do
