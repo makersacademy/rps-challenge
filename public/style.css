@@ -1,0 +1,30 @@
+html{
+  font-family: sans-serif;
+  text-align: center;
+  background-color: SeaShell;
+}
+
+h1 {
+  color: Navy;
+}
+
+h3 {
+  color: LightSlateGray;
+}
+
+#submit:hover {
+  color: red;
+}
+
+#div {
+  color: LightSlateGray;
+}
+
+#winner {
+  color: DodgerBlue;
+}
+
+#drawpic {
+  height: 300px;
+  width: auto;
+}
