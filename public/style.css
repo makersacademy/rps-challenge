@@ -1,23 +1,10 @@
-html {      margin:0;
-          padding:0;
-        -webkit-background: #E9E581;
-        background: #E9E581;
-      }
-
-body{
-  position: fixed; /* or absolute */
-  top: 40%;
-  left: 40%;
-}
-
-form{
-  position: fixed; /* or absolute */
-  top: 50%;
-  left: 52%;
-  padding: 10px;
+html {
+  margin:0;
+  padding:0;
+  -webkit-background: #E9E581;
+  background: #E9E581;
 }
 
 #instructions{
   font-size: 20 px;
-
 }
