@@ -1,38 +1,69 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player_name) }
-  let(:player_name) { :player_name }
+  subject(:game) { described_class.new(player1, player2) }
+  let(:player1) { double :player, name: "player1", choice: "Rock" }
+  let(:player2) { double :player, name: "player2" }
   let(:rock) { :rock }
 
   describe '#initialize' do
-    
-  end
+    it '1. should initialize player1 with an instance of player class' do
+      expect(game.player1).to eq(player1)
+    end
 
-  describe '#name' do
-    it 'should display the player name' do
-      allow(game).to receive(:name).and_return(player_name)
-      expect(game.name).to eq(player_name)
+    it '2. should initialize player2 with an instance of player class' do
+      expect(game.player2).to eq(player2)
+    end
+
+    it '3. should initialize with winner equal to nil' do
+      expect(game.winner).to eq(nil)
+    end
+
+    it '4. should initialize with draw equal to false' do
+      expect(game.draw).to eq(false)
     end
   end
 
-  describe '#player_choice' do
-    it 'should save the players choice to the instance variable choice' do
-      expect(game.player_choice(rock)).to eq(rock)
+  describe '#player1_name' do
+    it 'should display the player1 name' do
+      expect(game.player1_name).to eq("player1")
     end
   end
 
-  describe '#computer_choice' do
-    it 'should save a random choice to comp_choice variable' do
-      allow(game).to receive(:computer_choice).and_return("Rock")
-      expect(game.computer_choice).to eq("Rock")
+  describe '#player2_name' do
+    it 'should display the player2 name' do
+      expect(game.player2_name).to eq("player2")
+    end
+  end
+
+  describe '#player1_weapon' do
+    it 'should display player1 weapon' do
+      allow(game).to receive(:player1_weapon).and_return("Rock")
+      expect(game.player1_weapon).to eq("Rock")
+    end
+  end
+
+  describe '#player2_weapon' do
+    it 'should display player2 weapon' do
+      allow(game).to receive(:player2_weapon).and_return("Rock")
+      expect(game.player2_weapon).to eq("Rock")
     end
   end
 
   describe '#rps' do
-    it 'should generate a winner from player and computer choices' do
+    it '1. should say player1 as winner if player1 wins' do
       game.rps("Rock", "Scissors")
-      expect(game.winner).to eq(:player_name)
+      expect(game.winner).to eq("player1")
+    end
+
+    it '2. should say player2 as winner if player2 wins' do
+      game.rps("Scissors", "Rock")
+      expect(game.winner).to eq("player2")
+    end
+
+    it '3. should change draw to true if game is a draw' do
+      game.rps("Rock", "Rock")
+      expect(game.draw).to eq(true)
     end
   end
 

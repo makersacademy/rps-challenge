@@ -5,7 +5,7 @@ class Game
   @game = nil
 
   def self.start_game(player_one, player_two)
-    @game = Game.new(player_one, player_two)
+    @game = Game.new(Player.new(player_one), Player.new(player_two))
   end
 
   def self.game
@@ -15,8 +15,8 @@ class Game
   attr_reader :player1, :player2, :winner, :draw
 
   def initialize(player_one, player_two)
-    @player1 = Player.new(player_one)
-    @player2 = Player.new(player_two)
+    @player1 = player_one
+    @player2 = player_two
     @winner = nil
     @draw = false
   end
