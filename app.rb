@@ -1,8 +1,9 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/hand'
 
-class RPS < Sinatra::Base
+class Rps < Sinatra::Base
 
   get '/' do
     erb :signup
@@ -16,7 +17,18 @@ class RPS < Sinatra::Base
   end
 
   get '/RPS' do
-  	erb :RPS
+  	erb :rockpaperscissors
+  end
+
+  post '/fight' do
+	my_weapon = params[:choice]
+	Hand.hand(my_weapon, Game.instance.player_1)
+ 	Hand.instance.weapon
+	redirect '/fight'
+  end
+
+  get '/fight' do
+  	erb :fight
   end
 
   # start the server if ruby file executed directly

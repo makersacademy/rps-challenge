@@ -15,4 +15,19 @@ subject(:game) {described_class.new("Bob","Bill")}
 		end
 	end
 
+	describe '#switch_player' do
+
+		it 'changes the current player' do
+			game.switch_player
+			expect(game.current_player).to eq "Bill"
+		end
+	end
+
+	describe '#current_opponent' do
+
+		it 'returns the current opponent' do
+			expect(game.current_opponent).to eq "Bill"
+		end
+	end
+
 end
