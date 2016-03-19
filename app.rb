@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Jajanken < Sinatra::Base
   get '/' do
-    'Hello Jajanken!'
+    erb(:index)
   end
 
   # start the server if ruby file executed directly
