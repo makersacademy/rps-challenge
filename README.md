@@ -1,5 +1,10 @@
 # RPS Challenge: Rōnin Badge Test
 
+Project Description
+----------
+This project is my Week 3 weekend challenge to build a multiplayer
+Rock,Paper,Scissors,Spock,Lizard game.
+
 Instructions
 -------
 
