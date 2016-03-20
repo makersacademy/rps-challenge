@@ -24,6 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/weapon' do
     Game.show_game.player.choice(params[:choice])
+    # Game.show_game.weapon2
     redirect '/outcome'
   end
 

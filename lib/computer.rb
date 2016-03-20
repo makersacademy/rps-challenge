@@ -5,4 +5,5 @@ class Computer
   def choice
     WEAPONS.sample
   end
+  
 end

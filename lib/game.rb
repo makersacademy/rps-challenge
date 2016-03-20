@@ -22,11 +22,10 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    # @weapon2 = computer.choice.to_sym
   end
 
-  def weapon1
-    @weapon1 = @player.weapon.to_sym
+  def player_weapon
+      @weapon1 = @player.weapon.to_sym
   end
 
   def weapon2
