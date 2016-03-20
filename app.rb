@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require_relative 'lib/player.rb'
 require_relative 'lib/game.rb'
+require_relative 'lib/computer.rb'
+
 
 class RockPaperScissors < Sinatra::Base
 	enable :sessions
@@ -30,8 +32,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/winner' do
-  	@player_move = $player_move
-  	p @player_move
+  	player_move = $player_move
+  	computer_move = Computer.move
+  	@winner = @game.winner(player_move, computer_move)
   	erb(:winner)
   end
 

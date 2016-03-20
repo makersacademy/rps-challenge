@@ -1,7 +1,7 @@
 require 'computer' 
 
 describe Computer do 
-	subject(:computer) { described_class.new }
+	subject(:computer) { described_class }
 
 	before do
 		srand 1
@@ -10,7 +10,7 @@ describe Computer do
 	describe '#move' do
 		it 'returns a move' do
 			allow(Kernel).to receive(:rand).and_return(2)
-			expect(Computer.move).to eq 'Scissors'
+			expect(computer.move).to eq 'Scissors'
 		end
 	end
 end	
