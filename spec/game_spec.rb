@@ -5,9 +5,9 @@ end
 require 'game'
 
 describe Game do
-  let(:player){double :Player, name: "default", move: nil, win!:nil}
-  let(:player1){double :Player, name: "Me", move: nil, win!:nil}
-  let(:player2){double :Player, name: "Computer", move: nil, win!:nil}
+  let(:player){double :Player, name: "default", move: nil, win!:nil, not_win!:nil, restart!:nil}
+  let(:player1){double :Player, name: "Me", move: nil, win!:nil, not_win!:nil, restart!:nil}
+  let(:player2){double :Player, name: "Computer", move: nil, win!:nil, not_win!:nil, restart!:nil}
 
   let(:player_class) { double :player_class, new: player}
   let(:game_class) { described_class }
@@ -62,6 +62,22 @@ describe Game do
       it { expect(game.find_opponent_of(player2.name)).to eq player1 }
     end
 
+    describe '#restart!' do
+      before do
+        game.in_progress!
+      end
+
+      it { expect{game.restart!}.to change {game.in_progress?}.from(true).to(false)}
+      it 'sends restart! to player 1' do
+        expect(game.player1).to receive(:restart!)
+        game.restart!
+      end
+      it 'sends restart! to player 2' do
+        expect(game.player2).to receive(:restart!)
+        game.restart!
+      end
+    end
+
     describe '#winner' do
 
       after do
@@ -75,7 +91,9 @@ describe Game do
         end
 
         it { expect(player1).to receive(:win!) }
+        it { expect(player1).not_to receive(:not_win!) }
         it { expect(player2).not_to receive(:win!) }
+        it { expect(player2).to receive(:not_win!) }
       end
 
       context 'player 2 wins' do
@@ -85,7 +103,9 @@ describe Game do
         end
 
         it { expect(player1).not_to receive(:win!) }
+        it { expect(player1).to receive(:not_win!) }
         it { expect(player2).to receive(:win!) }
+        it { expect(player2).not_to receive(:not_win!) }
       end
 
       context 'draw' do
@@ -95,7 +115,9 @@ describe Game do
         end
 
         it { expect(player1).not_to receive(:win!) }
+        it { expect(player1).to receive(:not_win!) }
         it { expect(player2).not_to receive(:win!) }
+        it { expect(player2).to receive(:not_win!) }
       end
     end
   end

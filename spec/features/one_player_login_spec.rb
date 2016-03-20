@@ -4,7 +4,7 @@ RSpec.feature "Login:", :type => :feature do
   let(:player2) { double:Player, name: "player 2"}
 
 
-  scenario "player has logged in and game starts" do
+  scenario "player logs in" do
     # Game.reset
 
     visit '/'
@@ -14,11 +14,12 @@ RSpec.feature "Login:", :type => :feature do
 
     within('form') do
       expect(page).to have_field('player_name')
+      expect(page).to have_content('One Player Game')
+      expect(page).to have_content('Two Player Game')
       expect(page).to have_button('Submit')
     end
 
     sign_in_one_player(player1.name)
-
 
     # on page 'play'
     within('h1') do
@@ -27,6 +28,13 @@ RSpec.feature "Login:", :type => :feature do
     within('h2') do
       expect(page).to have_content("Choose your move by clicking the button")
     end
+
+    expect(page).to have_content('Your points: 0')
+    expect(page).to have_content("Computer's points: 0")
+    expect(page).not_to have_content('Draw')
+    expect(page).not_to have_content('You played')
+    expect(page).not_to have_content('Computer played')
+
 
     # expect(page).to have_content("Your points: 0")
     # expect(page).to have_content("Opponent's points: 0")
@@ -38,8 +46,8 @@ RSpec.feature "Login:", :type => :feature do
       expect(page).to have_button('Play')
     end
 
-    within('form.new') do
-      expect(page).to have_content('New Game')    
+    within('form.new_game') do
+      expect(page).to have_button('New Game')
     end
 
 

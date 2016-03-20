@@ -13,4 +13,5 @@ group :test do
   gem 'capybara'
   gem 'byebug'
   gem 'pry'
+  gem 'selenium-webdriver'
 end

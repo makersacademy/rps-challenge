@@ -8,12 +8,16 @@
   <h3><%=@opponent.name%> played <%= @opponent.move%></h3>
 <%end%>
 
+<%if @game.in_progress? && !@game.player1.win? && !@game.player2.win? %>
+  <h3>Draw</h3>
+  <%end%>
+
   <form class="play" action ="/turn" method="post">
-    <input type="radio" name="play" value="rock">Rock<br>
-    <input type="radio" name="play" value="paper">Paper<br>
-    <input type="radio" name="play" value="scissors">Scissors<br>
+    <input id="rock"type="radio" name="play" value="rock">Rock<br>
+    <input id="paper" type="radio" name="play" value="paper">Paper<br>
+    <input id="scissors" type="radio" name="play" value="scissors">Scissors<br>
     <input type="submit" value="Play"/>
   </form>
-  <form class ="new" action ="/new" method="post">
+  <form class ="new_game" action ="/new" method="post">
     <input type="submit" value="New Game"/>
   </form>

@@ -42,12 +42,20 @@ class Game
     @in_progress = true
   end if
 
+  def restart!
+    @in_progress = false
+    @player1.restart!
+    @player2.restart!
+  end
+
   def find_opponent_of(player_name)
     @players.select{|player| return player if player.name != player_name}
   end
 
   def winner(player1:@player1,player2:@player2)
     player1.win! if MOVES[player1.move].include?(player2.move)
+    player1.not_win! if !MOVES[player1.move].include?(player2.move)
     player2.win! if MOVES[player2.move].include?(player1.move)
+    player2.not_win! if !MOVES[player2.move].include?(player1.move)
   end
 end

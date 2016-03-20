@@ -14,7 +14,7 @@ describe Ai do
   end
 
   before do
-    srand 1234
+    srand SEED
     ai.play
   end
 
