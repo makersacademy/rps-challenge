@@ -9,7 +9,7 @@ It runs on a Sinatra local server:
 
 Or it is deployed on Heroku:
 
-`https://pauly-rps.herokuapp.com`
+https://pauly-rps.herokuapp.com
 
 A 1-player game can be started by selecting the **1P vs AI** button on the home page.
 Enter your name, and you are taken to the Play screen with your AI opponent, **Thinking Emoji**.
