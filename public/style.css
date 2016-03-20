@@ -2,21 +2,70 @@ body {
     background-color: lightblue;
     text-align: center;
     font-family: 'Georgia', serif;
+    font-size: 30px;
 }
 
-div {
-    height: 200px;
-    width: 400px;
+div.first_page {
+    height: 30px;
+    width: 700px;
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+    margin-top: -150px;
+    margin-left: -350px;
 }
 
-#button {
+div.select_weapon {
+    height: 300px;
+    width: 850px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -475px;
+}
+
+div.result {
+    height: 380px;
+    width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -190px;
+    margin-left: -160px;
+}
+
+.button {
     font-family: 'Georgia', serif;
     border-radius:6px;
-    font-size: 20px;
+    font-size: 35px;
     border:none;
+    background-color: white;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    font-size: 50px;
+}
+
+.resized_textbox {
+      font-family: 'Georgia', serif;
+      border-radius:6px;
+      border:none;
+      font-size: 30px;
+      margin: 5px;
+}
+
+.weapon_option {
+      font-family: 'Georgia', serif;
+      border-radius:10px;
+      font-size: 40px;
+      border:none;
+      background-color: white;
+      margin: 15px;
 }

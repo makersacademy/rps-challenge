@@ -1,10 +1,8 @@
-<div><%= @game.player1.name %> picked <%= @game.player1.weapon %>!
-<br><br>
-<%= @game.player2.name %> picked <%= @game.player2.weapon %>!
-<br><br>
-It's a draw!
-<br><br>
-<form action='/play'>
-  <input type='submit' value='Another Game!'/>
-</form>
+<div class = "result">
+  <h2><%= @game.player1.name %> chose <%= @game.player1.weapon %><br>
+  <%= @game.player2.name %> chose <%= @game.player2.weapon %><br></h2>
+  <h1>It's a draw!</h1><br>
+  <form action='/play'>
+    <input type='submit' value='Another Game!' class="button">
+  </form>
 </div>
