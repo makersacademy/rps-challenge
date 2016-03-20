@@ -3,7 +3,7 @@ require 'game'
 describe Game do 
 
 	subject(:game) { described_class.new player}
-	let(:player) { double :player }
+	let(:player) { double :player, name: "Player" }
 	let(:game_class) { described_class }
 
 
@@ -34,13 +34,13 @@ describe Game do
 		end
 		context 'Player has won' do
 			it 'Player has Rock, PC has Scissors' do
-				expect(game.winner "Rock", "Scissors").to eq game.player
+				expect(game.winner "Rock", "Scissors").to eq game.player.name
 			end
 			it 'Player has Paper, PC has Rock' do
-				expect(game.winner "Paper", "Rock").to eq game.player
+				expect(game.winner "Paper", "Rock").to eq game.player.name
 			end
 			it 'Player has Scissors, PC has Paper' do
-				expect(game.winner "Scissors", "Paper").to eq game.player
+				expect(game.winner "Scissors", "Paper").to eq game.player.name
 			end
 		end
 		context 'PC has won' do

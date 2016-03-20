@@ -18,14 +18,13 @@ class Game
 		if pl == comp
 			@winner = 'Draw!'
 		elsif pl == 'Rock' && comp == 'Scissors'
-			@winner = @player
+			@winner = @player.name
 		elsif pl == 'Paper' && comp == 'Rock'
-			@winner = @player
+			@winner = @player.name
 		elsif pl == 'Scissors' && comp == 'Paper'
-			@winner = @player
+			@winner = @player.name
 		else
 			@winner = "Computer"
 		end
-		#@winner
 	end
 end 
