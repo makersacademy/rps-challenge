@@ -1,6 +1,7 @@
 feature 'Result page: winner decleration' do
 
   scenario '0.0. Annouce winner' do
+    enter_game
     sign_in_and_play
     allow(RPS.game.p2).to receive(:choose_random).and_return('SCISSORS')
     allow(RPS.game.p2).to receive(:move).and_return('SCISSORS')

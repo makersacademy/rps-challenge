@@ -4,11 +4,7 @@ feature 'Index page: user entry' do
     visit '/'
   end
 
-  scenario '0.0. Index page displays game title' do
+  scenario '0.0. displays game title' do
     expect(page).to have_content('Rock-Paper-Scissors!!!')
-  end
-
-  scenario '0.1. Index page prompts player to enter their name' do
-    expect(page).to have_content('Choose player:')
   end
 end
