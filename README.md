@@ -33,7 +33,9 @@ You'll then be invited to choose a weapon from Rock, Paper, Scissors, Lizard and
 
 ![Screenshot](http://i.imgur.com/JRz8aWv.png)
 
-If you are lucky, Computer might let you win (but not always). Have fun! :sunglasses:
+If you are lucky, Computer might let you win (but not always).
+
+Or, click [here](https://sheltered-anchorage-61043.herokuapp.com/) to play it live. Have fun! :sunglasses:
 
 Testing
 --------
