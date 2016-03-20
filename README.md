@@ -32,22 +32,22 @@ public folder holds images used in the project
 Gameplay
 -----------
 You begin by entering each of the player's names. In this example we've got Margot and Ritchie. Click Submit.
-![Image of Screen1](http://i.imgur.com/5WFdeGq.png)
+![Image of Entering Names](http://i.imgur.com/5WFdeGq.png)
 
 First up is Margot. She needs to choose one of the options by clicking a button.
-[Imgur](http://i.imgur.com/CsGScMx.png)
+![Image of Player 1's turn] (http://i.imgur.com/CsGScMx.png)
 
 If a player needs to check the rules they can scroll down.
-[Imgur](http://i.imgur.com/s7uHb5G.png)
+![Image of Rules](http://i.imgur.com/s7uHb5G.png)
 
 Next its Ritchie's turn. He also makes his choice.
-[Imgur](http://i.imgur.com/R8jXAGx.png)
+![Image of Player 2's turn](http://i.imgur.com/R8jXAGx.png)
 
 Here we can see Ritchie won. Well done Ritchie.
-[Imgur](http://i.imgur.com/ZovExrq.png)
+![Image of Results screen](http://i.imgur.com/ZovExrq.png)
 
 If players happen to choose the same option then they have a tie.
-[Imgur](http://i.imgur.com/pLipns3.png)
+![Image of Tie](http://i.imgur.com/pLipns3.png)
 
 
 Installation Instructions
