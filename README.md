@@ -1,6 +1,17 @@
 # Rock Paper Scissors
 
 
+Links
+===
+
+Link to my Repo
+
+https://github.com/olmesm/rps-challenge
+
+Original challenge Repo
+
+https://github.com/makersacademy/rps-challenge
+
 # Original Challenge
 
 ---
