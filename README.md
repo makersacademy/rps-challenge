@@ -21,7 +21,7 @@ public folder holds images used in the project
 Installation Instructions
 -------
 start by cloning this repository
-    git clone
+<code>git clone</code>
 
 
 Task 
