@@ -44,9 +44,9 @@ Here is a step-by-step guide of how to play MB-RPSLS.
 1. Player 1 ( P1 ) and Player 2 ( P2 ) open the game in separate browsers
 2. P1 and P2 click **Entry**
 3. Choose player
-4. Players enter their names and hit enter or click **Complete entry** button ( if no name is given, it assigns 'Anon' by default )
+4. Players enter their names and click **Complete entry** ( if no name is given, it assigns 'Anon' by default )
 5. The page will wait until both players complete entry ( it will result in an internal server error if both players don't complete entry after a certain time )
-6. P1 and P2 click respective **Play game** button
+6. P1 and P2 click respective **Play game**
 7. Players are presented with **5 choices** - choose one
 8. The page displays the result of the round, once both players make their choices
 9. Players can choose to go onto the **Next round!** or **End game**
