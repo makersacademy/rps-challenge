@@ -47,4 +47,5 @@ class Game
 
   def self.count player
     @count += 1 unless player == ''
+  end
 end
