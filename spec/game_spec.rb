@@ -15,6 +15,9 @@ describe Game do
     it '0.1. initializes with one computer' do
       expect(p1_game.p2).to eq(p2_paper)
     end
+    it '0.2. initialises with true in_game flag' do
+      expect(p1_game.in_game).to eq(true)
+    end
   end
 
   describe '#return_winner' do
@@ -41,5 +44,11 @@ describe Game do
       expect(p2_paper.score).to eq(0)
     end
 
+    describe '#end_game' do
+      it 'changes in_game flag to false and end the game' do
+        p1_game.end_game
+        expect(p1_game.in_game).to eq(false)
+      end
+    end
   end
 end

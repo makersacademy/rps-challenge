@@ -7,11 +7,12 @@ class Game
                 SCISSORS: 4
                 }
 
-  attr_reader :p1, :p2
+  attr_reader :p1, :p2, :in_game
 
   def initialize(p1, p2)
     @p1 = p1
     @p2 = p2
+    @in_game = true
   end
 
   def return_winner
@@ -22,7 +23,13 @@ class Game
 
   def update_score
     move_to_val
-    p1_win? ? @p1.gain_score : @p2.gain_score
+    unless @p1_val == @p2_val
+      p1_win? ? @p1.gain_score : @p2.gain_score
+    end
+  end
+
+  def end_game
+    @in_game = false
   end
 
   private

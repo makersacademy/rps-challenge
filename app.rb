@@ -46,11 +46,13 @@ class RPS < Sinatra::Base
   end
 
   get '/p1_play' do
+    redirect('/p1_end') if !RPS.game.in_game
     RPS.game.p1.enter_round
     erb(:p1_play)
   end
 
   get '/p2_play' do
+    redirect('/p2_end') if !RPS.game.in_game
     RPS.game.p2.enter_round
     erb(:p2_play)
   end
@@ -104,6 +106,16 @@ class RPS < Sinatra::Base
     RPS.game.p2.reset_choice
     RPS.game.p2.enter_round
     redirect '/p2_play'
+  end
+
+  get '/p1_end' do
+    RPS.game.end_game
+    erb(:p1_end)
+  end
+
+  get '/p2_end' do
+    RPS.game.end_game
+    erb(:p2_end)
   end
 
   private

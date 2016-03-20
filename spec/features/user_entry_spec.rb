@@ -5,6 +5,6 @@ feature 'Index page: user entry' do
   end
 
   scenario '0.0. displays game title' do
-    expect(page).to have_content('Rock-Paper-Scissors!!!')
+    expect(page).to have_content('Rock-Paper-Scissors-Lizard-Spock!!!')
   end
 end

@@ -34,4 +34,7 @@
   <div>
     <h3>You: <%= RPS.game.p1.score %> / <%= RPS.game.p2.name %>: <%= RPS.game.p2.score %></h3>
   </div>
+  <% if !RPS.game.in_game %>
+    <meta http-equiv="refresh" content="N;url=/p1_end"/>
+  <% end %>
 </center>

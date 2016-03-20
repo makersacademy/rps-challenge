@@ -24,7 +24,7 @@
       </form>
     <% else %>
       <h3>Waiting for player 1...</h3>
-      <meta http-equiv="refresh" content="1;url=/p2_play" />
+      <meta http-equiv="refresh" content="1;url=/p2_play"/>
     <% end %>
   </div>
   <BR>
@@ -34,4 +34,7 @@
   <div>
     <h3><%= RPS.game.p1.name %>: <%= RPS.game.p1.score %> / You: <%= RPS.game.p2.score %> </h3>
   </div>
+  <% if !RPS.game.in_game %>
+    <meta http-equiv="refresh" content="N;url=/p2_end"/>
+  <% end %>
 </center>
