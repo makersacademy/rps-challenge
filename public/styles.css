@@ -1,9 +1,14 @@
-#content {
-  background-image: url(http://www.gifmania.co.uk/Objects-Animated-Gifs/Animated-Toys/Rock-Paper-Scissors/Rock-Paper-Scissors-87021.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
-  background-position: 50% 13px;
+#body{
+  margin: 0;
+  padding: 0;
+}
+#indexcontent {
+  position: fixed;
+  background-color: green;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
   text-align: center;
   font-family: "Comic Sans MS"
 }
@@ -11,55 +16,75 @@
   position: relative;;
   top: 120px;
 }
+#counter {
+  margin:auto;
+  position: absolute;
+  bottom:0px;left:0px;right:0px;
+  width:100px;
+  font-size: 12px;
+}
 
 /*play page*/
-
+#playcontent{
+  text-align: center;
+  position: fixed;
+  border: 2px solid;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
+}
 #container {
   text-align: center;
   margin: auto;
-  max-width: 100%;
+  width: 50%;
   height: auto;
   font-family: "Comic Sans MS"
 }
+#container h1 {
+  text-align: center;
+}
 #p1 {
+  margin:auto;
   position:absolute;
   text-align: center;
-  width: 150px;
-  top: 20%;
-  left: 57px;
-  border: 0px solid;
+  width: 150px; height:30px;
+  bottom:50%;left:10%;top:0px;
 }
 #p2 {
+  margin:auto;
   position:absolute;
   text-align: center;
-  width: 150px;
-  top: 20%;
-  right: 57px;
-  border: 0px solid;
+  width: 150px; height:30px;
+  bottom:50%;right:10%;top:0px;
 }
 .playerbox{
-  position: absolute;
+  margin: auto;
+  position: absolute;;
   text-align: center;
-  top: 30%;
+  bottom:0px;top:0px;
   width: 150px;
   height: 150px;
+  border: 4px solid;
 }
 #player1box {
-  border: 4px solid;
-  left: 8%;
+  left: 10%;
 }
 #player2box {
   background-repeat: no-repeat;
   background-position: center;
-  border: 4px solid;
-  right: 8%;
+  right: 10%;
 }
 #vs {
+  text-align: center;
+  margin:auto;
   position: absolute;
-  left: 41%;
-  top: 150px;
-  width: 100px;
-  height:100px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  height:50px;
   font-size: 40px;
 }
 .rpsbar {
@@ -96,6 +121,13 @@
 #scissorsbutton {
   background-image: url("images/scissors.png");
 }
-
-
 /*result page*/
+#resultcontent {
+  text-align: center;
+  position: fixed;
+  border: 2px solid;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
+}

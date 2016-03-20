@@ -2,45 +2,47 @@
   <link rel="stylesheet" type="text/css" href="../public/styles.css"/>
 </head>
 <body>
-
+  <div id='resultcontent'>
 
     <div id="container">
-    <h1>
-      <img src='<%= @game.result_image %>' height="30" width="30" />
-       You <%= @game.latest_result.to_s %>! 
-      <img src='<%= @game.result_image %>' height="30" width="30" />
+      <h1>
+        <img src='<%= @game.result_image %>' height="30" width="30" />
+         You <%= @game.latest_result.to_s %>!
+        <img src='<%= @game.result_image %>' height="30" width="30" />
+      </h1>
 
+      <div id='p1'>
+        <%=@game.player_1.name %>
+      </div>
+      <div id='p2'>
+        Thinking Emoji
+      </div>
 
-    </h1>
+      <div class="playerbox" id="player1box"
+        style="background-image: url('<%= @game.player_1_image %>');
+          background-repeat: no-repeat;
+          background-size: contain;">
+      </div>
 
-    <div id='p1'>
-      <%=@game.player_1.name %>
+      <div id='vs'>
+        VS
+      </div>
+
+      <div class='playerbox' id="player2box"
+        style="background-image: url('<%= @game.player_2_image %>');
+          background-repeat: no-repeat;
+          background-size: contain;">
+
+      </div>
     </div>
-    <div id='p2'>
-      Thinking Emoji
+    <!-- Start of SimpleHitCounter Code -->
+    <div id="counter">
+      <a href="http://www.simplehitcounter.com" target="_blank">
+        <img src="http://simplehitcounter.com/hit.php?uid=2046405&f=65535&b=0" border="0" height="18" width="83" alt="web counter">
+      </a>
+      <br>
+      <a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;">Visitor Count</a>
     </div>
-
-    <div class="playerbox" id="player1box"
-      style="background-image: url('<%= @game.player_1_image %>');
-        background-repeat: no-repeat;
-        background-size: contain;">
-
-    </div>
-
-    <div id='vs'>
-      VS
-    </div>
-
-    <div class='playerbox' id="player2box"
-      style="background-image: url('<%= @game.player_2_image %>');
-        background-repeat: no-repeat;
-        background-size: contain;">
-
-    </div>
-    </div>
-
-
-
-
+    <!-- End of SimpleHitCounter Code -->
+  </div>
 </body>
-<meta http-equiv="refresh" content="10;url=/" />
