@@ -1,11 +1,11 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new "Fake Name" }
+  subject(:player) { described_class.new "Fake name" }
 
   describe "#initialize" do
     it '> should return a name' do
-      expect(player.name).to eq("Fake Name")
+      expect(player.name).to eq("Fake name")
     end
   end
 

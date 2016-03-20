@@ -6,7 +6,7 @@ class Player
   end
 
   def name
-    @name.dup
+    @name.dup.capitalize
   end
 
   def store_attack(attack)
@@ -16,5 +16,5 @@ class Player
   def last_move?
     @last_move.dup
   end
-  
+
 end
