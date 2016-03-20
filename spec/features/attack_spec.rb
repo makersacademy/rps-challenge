@@ -31,6 +31,13 @@ feature '#attack' do
     expect(page).to have_content("Hi, Name. Rock, paper, scissors?")
   end
 
+  scenario '>should be allowed to return to home page' do
+    sign_in_and_play
+    click_button "Scissors"
+    click_button "Home"
+    expect(page).to have_content("Welcome to Rock, Paper, Scissors World")
+  end
+
   scenario '>should tell you if you win' do
     allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
     sign_in_and_play

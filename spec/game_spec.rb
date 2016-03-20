@@ -30,7 +30,7 @@ describe Game do
       end
     end
 
-    context '> player: scissors, computer: scissors' do
+    context '> player draws' do
       it '>should return draw' do
         allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
         game.attack
