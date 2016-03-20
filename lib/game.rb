@@ -2,11 +2,11 @@ class Game
 
   RANKING = ['rock', 'paper', 'scissors', 'rock']
 
-  attr_reader :count
+  attr_reader :counter
 
   def self.start player
-    self.count player
     @player = player
+    self.count
   end
 
   def self.player
@@ -45,7 +45,8 @@ class Game
     RANKING.index(@player.selected) + 1
   end
 
-  def self.count player
-    @count += 1 unless player == ''
+  def self.count
+    @counter = 0 if @counter.nil?
+    @counter += 1 unless @player == ''
   end
 end
