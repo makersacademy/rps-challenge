@@ -8,8 +8,12 @@
   <h3><%=@opponent.name%> played <%= @opponent.move%></h3>
 <%end%>
 
-<%if @game.in_progress? && !@game.player1.win? && !@game.player2.win? %>
+<%if @game.in_progress? && @result.empty? %>
   <h3>Draw</h3>
+<%end%>
+
+<%if @game.in_progress? && !@result.empty? %>
+  <h3><%=@result[0]%> wins: <%=@result.slice(1..3).join(' ')%>!</h3>
 <%end%>
 
   <form class="play" action ="/turn" method="post">
