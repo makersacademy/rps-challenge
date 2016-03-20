@@ -30,3 +30,10 @@ Once the second player has selected their gesture, they are taken to the results
 I spent a lot of time finding out about presentation using CSS and HTML so didn't have time to implement the extra rules - I intend to do this when I have time as I'm now more confident in being able to restructure the play screen to fit more gestures.
 
 Having made a start on multi-browser games during the Battle challenge, I'd like to give that a go as well.
+
+*****************
+
+**Credits**
+
+Kyle Buttner and Junyuan Xue's Battle repos for CSS information!
+Stackoverflow for a great idea of the RPS outcomes being stored in a hash constant that can return an outcome with simply `RULES[p1_gesture][p2_gesture]`
