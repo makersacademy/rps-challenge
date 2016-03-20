@@ -168,10 +168,10 @@ describe Game do
       it { expect(game.turn_finished?).to eq true }
     end
 
-    describe '#winner' do
+    describe '#find_winner' do
 
       after do
-        game.winner(player1:player1, player2:player2)
+        game.find_winner(player1:player1, player2:player2)
       end
 
       context 'player 1 wins' do

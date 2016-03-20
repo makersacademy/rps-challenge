@@ -52,9 +52,8 @@ class Rps < Sinatra::Base
 
     if Game.number_of_players == 1
       @game.find_opponent(session[:me]).play
-      @game.winner
+      @game.find_winner
       @game.turn_finished!
-      puts "Draw: #{@game.in_progress? && !@game.player1.win? && !@game.player2.win?}"
       redirect '/play'
     else
       redirect '/play_wait'
@@ -69,11 +68,11 @@ class Rps < Sinatra::Base
   post '/play_check' do
     @game = Game.instance
     if @game.both_played?
-      @game.winner
+      @game.find_winner
       @game.turn_finished!
       redirect '/play'
     elsif @game.turn_finished?
-      redirect '/play'    
+      redirect '/play'
     else
       redirect '/play_wait'
     end

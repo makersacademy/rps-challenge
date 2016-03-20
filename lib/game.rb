@@ -92,7 +92,7 @@ class Game
     @players.select{|player| return player if player.name == player_name}
   end
 
-  def winner(player1:@players[0],player2:@players[1])
+  def find_winner(player1:@players[0],player2:@players[1])
     player1.win! if MOVES[player1.move].include?(player2.move)
     player1.not_win! if !MOVES[player1.move].include?(player2.move)
     player2.win! if MOVES[player2.move].include?(player1.move)
