@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:player_rock) { double(:player, selected: "rock") }
-  let(:player_paper) { double(:player, selected: "paper") }
-  let(:player_scissors) { double(:player, selected: "scissors") }
+  let(:player_rock) { double(:player, name: "player", selected: "rock") }
+  let(:player_paper) { double(:player, name: "player", selected: "paper") }
+  let(:player_scissors) { double(:player, name: "player", selected: "scissors") }
 
   describe 'Game.player' do
     it 'returns the player instance' do

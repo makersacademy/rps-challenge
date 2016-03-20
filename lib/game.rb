@@ -19,6 +19,10 @@ class Game
     @computer_selected = choice.sample
   end
 
+  def self.selected
+    @computer_selected
+  end
+
   private
 
   def self.draw?
@@ -26,8 +30,8 @@ class Game
   end
 
   def self.decide_winner
-    return 'player loses' if self.computer_has_trump?
-    'player wins'
+    return "#{@player.name} loses" if self.computer_has_trump?
+    "#{@player.name} wins"
   end
 
   def self.computer_has_trump?

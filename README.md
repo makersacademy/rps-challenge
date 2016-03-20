@@ -1,6 +1,5 @@
 # Rock Paper Scissors
 
-
 Links
 ===
 
