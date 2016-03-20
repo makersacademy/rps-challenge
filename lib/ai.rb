@@ -17,4 +17,4 @@ class Ai
     @move = moves[Kernel.rand(moves.count)]
     played!
   end
-end
+end 
