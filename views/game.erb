@@ -2,25 +2,25 @@
 <link rel="stylesheet" type="text/css" href="main_style.css">
 </head>
 
-<div>Hello <%= @player_one_name %>, get ready to fight against <%= @player_two_name %>!</div>
+<h1><%= @player_one_name %> against <%= @player_two_name %></h1>
 
-<div><%= @player_one_name %> wins: <%= @player_one_wins %> </div>
-<div><%= @player_two_name %> wins: <%= @player_two_wins %> </div>
+<h3><%= @player_one_name %> wins: <%= @player_one_wins %> </h3>
+<h3><%= @player_two_name %> wins: <%= @player_two_wins %> </h3>
 
 <form action='/choose_attack' method='post' value='Please choose your next attack'>
-  <button type='submit' name='attack_type' id='paper_button' value='paper'>
-    <img src="http://vignette3.wikia.nocookie.net/godzilla/images/6/69/Rainbow_mothra_01.jpg/revision/latest?cb=20110506221943" alt='Paper' width='180' height='180' </img>
+  <button type='submit' class='button' name='attack_type' id='paper_button' value='paper'>
+    Paper
   </button>
-  <button type='submit' name='attack_type' id='rock_button' value='rock'>
-    <img src="http://i.imgur.com/hlMBohs.jpg" alt='Rock' width='180' height='180' </img>
+  <button type='submit' class='button' name='attack_type' id='rock_button' value='rock'>
+    Rock
   </button>
-  <button type='submit' name='attack_type' id='scissors_button' value='scissors'>
-    <img src="http://1.bp.blogspot.com/-wjBxbWsZdQQ/TxML-DlyTeI/AAAAAAAAAPE/gpZFBQXD7Ss/s1600/mechagodzilla.jpg" alt='Scissors' width='180' height='180' </img>
+  <button type='submit' class='button' name='attack_type' id='scissors_button' value='scissors'>
+    Scissors
   </button>
-  <button type='submit' name='attack_type' id='lizard_button' value='lizard'>
-    <img src="http://velociraptor.cc/wp-content/uploads/2015/02/godzilla-breath.jpg" alt='Lizard' width='180' height='180' </img>
+  <button type='submit' class='button' name='attack_type' id='lizard_button' value='lizard'>
+    Lizard
   </button>
-  <button type='submit' name='attack_type' id='spock_button' value='spock'>
-    <img src="https://pbs.twimg.com/profile_images/678694921067343873/JdBoOYSh.jpg" alt='Spock' width='180' height='180' </img>
+  <button type='submit' class='button' name='attack_type' id='spock_button' value='spock'>
+    Spock
   </button>
 </form>

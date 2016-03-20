@@ -45,7 +45,7 @@ feature 'Attack Page visualization' do
     end
 
     scenario 'Player attack is successfully transmitted' do
-      expect(page).to have_content "#{TEST_PLAYER_NAME} attacks with: paper"
+      expect(page).to have_content "#{TEST_PLAYER_NAME} attacked with: paper"
     end
 
   end

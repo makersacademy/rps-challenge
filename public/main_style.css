@@ -2,3 +2,57 @@ body {
     background-image: url("http://www.geekedoutnation.com/wp-content/uploads/2014/02/Real-25M74-back-finalComposite.jpg");
     background-position: top center;
 }
+
+h1 , h3 {
+  text-align: center;
+}
+
+.button {
+  height:90px;
+  width:90px;
+  font-size: 14pt;
+  font-weight: bolder;
+  color: white;
+  padding-top: 55px;
+  margin:auto;
+  display:block;
+}
+
+.nextbutton {
+  height:90px;
+  width:130px;
+  font-size: 14pt;
+  font-weight: bolder;
+  margin:auto;
+  display:block;
+}
+
+#paper_button {
+  background-image: url("http://vignette3.wikia.nocookie.net/godzilla/images/6/69/Rainbow_mothra_01.jpg/revision/latest?cb=20110506221943");
+  background-size: 90px 90px;
+  background-position: center;
+}
+
+#rock_button {
+  background-image: url("http://i.imgur.com/hlMBohs.jpg");
+  background-size: 90px 90px;
+  background-position: center;
+}
+
+#scissors_button {
+  background-image: url("http://1.bp.blogspot.com/-wjBxbWsZdQQ/TxML-DlyTeI/AAAAAAAAAPE/gpZFBQXD7Ss/s1600/mechagodzilla.jpg");
+  background-size: 90px 90px;
+  background-position: center;
+}
+
+#lizard_button {
+  background-image: url("http://velociraptor.cc/wp-content/uploads/2015/02/godzilla-breath.jpg");
+  background-size: 90px 90px;
+  background-position: center;
+}
+
+#spock_button {
+  background-image: url("https://pbs.twimg.com/profile_images/678694921067343873/JdBoOYSh.jpg");
+  background-size: 90px 90px;
+  background-position: center;
+}
