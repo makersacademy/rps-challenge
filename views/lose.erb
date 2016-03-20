@@ -5,15 +5,15 @@
 																VS.
 																<%= Game.current_game.p2.name %></h1>
 												<center>
-																<div><%= Game.current_game.p1.name %>
+																<p><%= Game.current_game.p1.name %>
 																				chose
-																				<%= Game.current_game.p1_weapon %>
-																				<%= Game.current_game.p2.name %>
+																				<%= Game.current_game.p1_weapon %></p>
+																<p><%= Game.current_game.p2.name %>
 																				chose
-																				<%= Game.current_game.p2_weapon %></div>
+																				<%= Game.current_game.p2_weapon %></p>
 												</center>
-												<h2><%= Game.current_game.p1.name %>
-																LOST!!!</h2>
+												<h1><%= Game.current_game.p1.name %>
+																LOST!!!</h1>
 												<form action="/" method="get">
 																<button id='play'>Play again</button>
 												</form>
