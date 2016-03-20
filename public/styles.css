@@ -118,6 +118,16 @@
   text-align: left;
   font-size: 0px;
 }
+#rockbutton {
+  background-image: url("images/rock.png");
+  left:0px;
+}
+#paperbutton {
+  background-image: url("images/paper.png");
+}
+#scissorsbutton {
+  background-image: url("images/scissors.png");
+}
 #p1rockbutton {
   background-image: url("images/rock.png");
   left:0px;
