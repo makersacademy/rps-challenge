@@ -21,11 +21,16 @@ class Game
 
   def initialize(player, computer)
     @player = player
-    @weapon2 = computer.choice.to_sym
+    @computer = computer
+    # @weapon2 = computer.choice.to_sym
   end
 
   def weapon1
     @weapon1 = @player.weapon.to_sym
+  end
+
+  def weapon2
+    @weapon2 = @computer.choice.to_sym
   end
 
   def outcome
@@ -36,6 +41,7 @@ class Game
 
   def draw
       weapon1
+      weapon2
       @weapon1 == @weapon2
   end
 
