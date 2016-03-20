@@ -21,11 +21,15 @@ Installation
 -------------
 
 $ git clone https://github.com/claudiagreen/rps-challenge.git
+
 $ cd rps-challenge
+
 $ bundle
 
 The game can be run through 
+
 $ ruby app.rb
+
 & then visiting your local host 
 
 
@@ -33,6 +37,7 @@ Tests
 -----
 
 Tests are run through rspec
+
 $ rspec
 
 Contributors
