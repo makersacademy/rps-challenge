@@ -9,30 +9,30 @@ describe Game do
   before do
       allow(player1).to receive(:name) { 'Charlie' }
       allow(player2).to receive(:name) { 'Roxanne' }
-   end
+  end
 
   describe '#initialize' do
 
-    it 'will accept a player instance and return that instance in player' do
+    it 'will accept a player instance and return that instance' do
       expect(game.player1).to eq player1
     end
   end
 
-  describe '#results_message' do
+  describe 'winner' do
 
-    it 'will return tie if player2_choice and player1_choice are equal' do
+    it 'will return nil if there is a tie' do
       allow(player2).to receive(:choice) { 'Rock' }
       allow(player1).to receive(:choice) { 'Rock' }
       expect(game.winner).to eq nil
     end
 
-    it 'will return player 1 wins  if player1_choice beats player2_choice' do
+    it 'will return player1 if player1 beats player2' do
       allow(player2).to receive(:choice) { 'Lizard' }
       allow(player1).to receive(:choice) { 'Rock' }
       expect(game.winner).to eq player1
     end
 
-    it 'will return player 2 wins if player2_choice beats player1_choice' do
+    it 'will return player2 if player2 beats player1' do
       allow(player2).to receive(:choice) { 'Scissors' }
       allow(player1).to receive(:choice) { 'Lizard' }
       expect(game.winner).to eq player2
@@ -41,8 +41,8 @@ describe Game do
   
   describe '#switch_turn' do
 
-    it 'will change current_player from player1 to player2' do
-      expect{ game.switch_turn }.to change{ game.current_player }.from(player1).to(player2)
+    it 'will change current_player' do
+      expect{ game.switch_turn }.to change{ game.current_player }
       game.switch_turn
     end
   end

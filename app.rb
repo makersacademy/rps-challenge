@@ -31,7 +31,7 @@ class RockPaperScissors < Sinatra::Base
     if @game.player1_turn == true
       @game.switch_turn
       redirect('/play')
-    elsif @game.winner == nil
+    elsif @game.winner.nil?
       erb(:tie)
     else
       erb(:win)

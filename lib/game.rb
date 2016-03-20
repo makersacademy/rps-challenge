@@ -2,14 +2,13 @@ require './lib/player'
 
 class Game
   
+  attr_reader :player1, :player2, :player1_turn
+  
   MOVES = {'Rock' => ['Scissors', 'Lizard'],
            'Paper' => ['Rock', 'Spock'],
            'Scissors' => ['Spock', 'Paper'],
            'Spock' => ['Rock', 'Scissors'],
            'Lizard' => ['Spock', 'Paper'] }
-
-
-  attr_reader :player1, :player2, :player1_turn
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
@@ -50,9 +49,7 @@ class Game
   def player_choice(player)
     player.choice
   end
-  
-
-  
+   
   def switch_turn
     @player1_turn = !@player1_turn
   end
@@ -67,5 +64,4 @@ class Game
   def tie?
     player_choice(player1) == player_choice(player2)
   end 
-
 end
