@@ -22,35 +22,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    @game = Game.show_game
-    @weapon = @game.player.choice('rock')
+  post '/weapon' do
+    Game.show_game.player.choice(params[:choice])
     redirect '/outcome'
   end
 
-  post '/paper' do
-    @game = Game.show_game
-    @weapon = @game.player.choice('paper')
-    redirect '/outcome'
-  end
-
-  post '/scissors' do
-    @game = Game.show_game
-    @weapon = @game.player.choice('scissors')
-    redirect '/outcome'
-  end
-
-  post '/lizard' do
-    @game = Game.show_game
-    @weapon = @game.player.choice('lizard')
-    redirect '/outcome'
-  end
-
-  post '/spock' do
-    @game = Game.show_game
-    @weapon = @game.player.choice('spock')
-    redirect '/outcome'
-  end
   get '/outcome' do
     @game = Game.show_game
     @user_weapon = @game.weapon1

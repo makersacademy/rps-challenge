@@ -2,23 +2,12 @@
 <body style="text-align:center; font-family: monaco; color: white; background-color: #804000">
   <p>Welcome <%=@user%>, ready to battle?</p>
 <p>
-  <form action="/rock" method="post">
-    <input type="image" src="/images/rock.jpg" width="110"  height="50" alt="Rock">
-  </form>
-
-  <form action="/paper" method="post">
-    <input type="image" src="/images/paper.jpg" width="110"  height="50" alt="Paper">  </form>
-
-  <form action="/scissors" method="post">
-    <input type="image" src="/images/scissors.jpg" width="110"  height="50" alt="Scissors">
-  </form>
-
-  <form action="/lizard" method="post">
-    <input type="submit" value="Lizard">
-  </form>
-
-  <form action="/spock" method="post">
-    <input type="submit" value="Spock">
+  <form action="/weapon" method="post">
+    <input type="image" name="choice" value='rock' src="/images/rock.jpg" width="110"  height="50" alt='Rock'>
+    <input type="image" name="choice" value="paper" src="/images/paper.jpg" width="110"  height="50" alt='Paper'>
+    <input type="image" name="choice" value="scissors"src="/images/scissors.jpg" width="110"  height="50" alt='Scissors'>
+    <button type="submit" name="choice" value="lizard">Lizard</button>
+    <button type="submit" name="choice" value="spock">Spock</button>
   </form>
 
   <p>

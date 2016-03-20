@@ -33,15 +33,15 @@ feature 'Outcome' do
   end
 
   scenario 'shows Computer choice weapon' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     sign_in_to_play
     click_button 'Rock'
-    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     expect(page).to have_content('The computer chose rock!')
   end
 
   scenario 'shows game outcome' do
-    sign_in_to_play
     allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    sign_in_to_play
     click_button 'Rock'
     expect(page).to have_content('You win!')
   end
