@@ -1,0 +1,14 @@
+
+<%= @game.player1.name.capitalize %> chose <%= @game.player1.choice %>! <br>
+Computer chose <%= @game.player2.choice %>! <br>
+
+<% if @game.winner == 'Tie' %>
+It's a tie!
+<% end %>
+<% if @game.winner != 'Tie' %>
+<%= @game.winner.name.capitalize %> won!
+<% end %>
+
+<br>
+
+<a href='/play'> Play again! </a>
