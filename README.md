@@ -31,9 +31,10 @@ Instructions
 
 Screenshots
 -----------
-![Image of RPS Challenge](http://imgur.com/38WcIkW)
-![Image of RPS Challenge](http://imgur.com/YCmRxwu)
-![Image of RPS Challenge](http://imgur.com/2WogZBQ)
+
+![Imgur](http://i.imgur.com/38WcIkW.png)
+![Imgur](http://i.imgur.com/YCmRxwu.png)
+![Imgur](http://i.imgur.com/2WogZBQ.png)
 
 Note
 ----
