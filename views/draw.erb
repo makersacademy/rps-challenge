@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<html>
+
+<div id='div'>
+  <h2><%= @game.player1_name %>'s choice: <%= @game.player1_weapon %></h2>
+  <h2><%= @game.player2_name %>'s choice: <%= @game.player2_weapon %></h2>
+</div>
+
+  <h1 id='winner'>It's a draw!</h1>
+
+  <form action='/play' method='get'>
+    <input type='submit' id='submit' value='Play again?'/>
+  </form>
+  <form action='/' method='get'>
+    <input type='submit' id='submit' value='Home'/>
+  </form>
+
+  <img src='http://www.teampedia.net/wiki/images/1/1d/Rocks,_Paper,_Scissors.....png'id='drawpic'>
+
+</html>

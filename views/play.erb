@@ -1,0 +1,19 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<html>
+
+  <h1><%= @game.player1_name %> vs. <%= @game.player2_name %></h1>
+
+  <h3> Pick your weapon <%= @game.player1_name %>:</h3>
+
+  <form action='/choice' method='post'>
+    <input type='submit' id='submit' name='choice' value='Rock'/>
+    <input type='submit' id='submit' name='choice' value='Paper'/>
+    <input type='submit' id='submit' name='choice' value='Scissors'/>
+  </form>
+
+  <img src='http://howtowinrps.weebly.com/uploads/3/7/6/8/37685723/4851155_orig.png'>
+
+</html>

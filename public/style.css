@@ -1,0 +1,43 @@
+html{
+  font-family: sans-serif;
+  text-align: center;
+  background-color: SeaShell;
+}
+
+p {
+  color: LightSlateGray;
+}
+
+h1 {
+  color: Navy;
+}
+
+h2 {
+  color: LightSlateGray;
+}
+
+h3 {
+  color: LightSlateGray;
+}
+
+#submit:hover {
+  color: red;
+}
+
+#div {
+  color: LightSlateGray;
+}
+
+#winner {
+  color: DodgerBlue;
+}
+
+#drawpic {
+  height: 300px;
+  width: auto;
+}
+
+#multiform {
+  color: LightSlateGray;
+  font-size: 13px;
+}
