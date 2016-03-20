@@ -1,4 +1,5 @@
 class Computer
+
   attr_reader :name
 
   WEAPONS = ['rock', 'paper', 'scissors']

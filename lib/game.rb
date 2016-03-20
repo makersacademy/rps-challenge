@@ -3,12 +3,14 @@ class Game
 require_relative 'player'
 require_relative 'computer'
 
-  attr_reader :player, :computer, :winner
+  attr_reader :player, :computer
+  WIN = "You won the game!"
+  LOSE = "You lose the game!"
+  DRAW = "It's a draw!"
 
     def initialize(player, computer)
       @player = player
       @computer = computer
-      @winner = nil
       @winning_combos = {
           'rock' => 'scissors',
           'scissors' => 'paper',
@@ -25,16 +27,9 @@ require_relative 'computer'
     end
 
     def play(player_choice)
-      # @player_weapon = player_choice
       computer_choice = computer.computer_play
-      if player_choice == computer_choice
-        @winner = "It's a draw!"
-      elsif @winning_combos[player_choice] == computer_choice
-        @winner = "You win!"
-      else
-        @winner = "You lose!"
-      end
-      return @winner
+      return DRAW if player_choice == computer_choice
+      @winning_combos[player_choice] == computer_choice ? WIN : LOSE
     end
 
 end

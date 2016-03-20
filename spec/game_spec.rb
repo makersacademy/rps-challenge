@@ -17,16 +17,13 @@ describe Game do
     end
 
     it 'Draw' do
-      game.play('paper')
-      expect(game.winner).to eq 'It\'s a draw!'
+      expect(game.play('paper')).to eq 'It\'s a draw!'
     end
     it 'Player loses' do
-      game.play('rock')
-      expect(game.winner).to eq 'You lose!'
+      expect(game.play('rock')).to eq 'You lose the game!'
     end
     it 'Player wins' do
-      game.play('scissors')
-      expect(game.winner).to eq 'You win!'
+      expect(game.play('scissors')).to eq 'You won the game!'
     end
   end
 end
