@@ -1,4 +1,4 @@
-feature 'Result page: draw game' do
+feature 'Result page P2: draw game' do
 
   before(:each) do
     enter_game

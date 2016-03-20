@@ -3,27 +3,35 @@
   <div>
     <h3>Player 1: <%= RPS.game.p1.name %></h3>
   </div>
-
   <div>
     <h3>VS.</h3>
   </div>
-
   <div>
     <h2>Player 2: <%= RPS.game.p2.name %></h2>
   </div>
-
   <BR>
   <div>
     <h3>↓Choose your move below↓</h3>
   </div>
-
   <div>
-    <form action='/p2_play' method='post'>
-      <input type='submit' name='move' value='ROCK'>
-      <input type='submit' name='move' value='PAPER'>
-      <input type='submit' name='move' value='SCISSORS'>
-      <input type='submit' name='move' value='LIZARD'>
-      <input type='submit' name='move' value='SPOCK'>
-    </form>
+    <% if RPS.game.p1.in_round %>
+      <form action='/p2_play' method='post'>
+        <input type='submit' name='move' value='ROCK'>
+        <input type='submit' name='move' value='PAPER'>
+        <input type='submit' name='move' value='SCISSORS'>
+        <input type='submit' name='move' value='LIZARD'>
+        <input type='submit' name='move' value='SPOCK'>
+      </form>
+    <% else %>
+      <h3>Waiting for player 1...</h3>
+      <meta http-equiv="refresh" content="1;url=/p2_play" />
+    <% end %>
+  </div>
+  <BR>
+  <div>
+    <h2>Score Board</h2>
+  </div>
+  <div>
+    <h3><%= RPS.game.p1.name %>: <%= RPS.game.p1.score %> / You: <%= RPS.game.p2.score %> </h3>
   </div>
 </center>

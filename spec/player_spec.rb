@@ -6,8 +6,14 @@ describe Player do
   let(:move) { ['ROCK','PAPER','SCISSORS','LIZARD','SPOCK'].sample }
 
   describe '#initialize' do
-    it '0.0. initializes with name' do
+    it '0.0. initialises with name' do
       expect(p1.name).to eq('Misa')
+    end
+    it '0.1. initialises with a score' do
+      expect(p1.score).to eq(0)
+    end
+    it '0.2. initialises with false in_round flag' do
+      expect(p1.in_round).to eq(false)
     end
   end
 
@@ -46,6 +52,28 @@ describe Player do
       p1.choose(move)
       p1.reset_choice
       expect(p1.move).to eq(nil)
+    end
+  end
+
+  describe '#gain_score' do
+    it 'adds a point to the player\'s score' do
+      p1.gain_score
+      expect(p1.score).to eq(1)
+    end
+  end
+
+  describe '#enter_round' do
+    it 'changes in_round flag to true' do
+      p1.enter_round
+      expect(p1.in_round).to eq(true)
+    end
+  end
+
+  describe '#exit_round' do
+    it 'changes in_round flag to false' do
+      p1.enter_round
+      p1.exit_round
+      expect(p1.in_round).to eq(false)
     end
   end
 end

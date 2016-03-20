@@ -1,4 +1,4 @@
-feature 'Result page: winner decleration' do
+feature 'Result page P1: winner decleration' do
 
   before(:each) do
     enter_game

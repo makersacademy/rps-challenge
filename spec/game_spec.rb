@@ -3,10 +3,10 @@ require 'game'
 describe Game do
 
   let(:p1_game) { described_class.new(p1_scissors, p2_paper) }
-  let(:p1_scissors){ double(:player, move: 'SCISSORS', move_to_sym: :SCISSORS) }
+  let(:p1_scissors){ double(:player, move: 'SCISSORS', move_to_sym: :SCISSORS, gain_score: nil, score: 1) }
   let(:p1_paper) { double(:player, move: 'PAPER', move_to_sym: :PAPER) }
   let(:p2_scissors){ double(:computer, move: 'SCISSORS', move_to_sym: :SCISSORS) }
-  let(:p2_paper) { double(:computer, move: 'PAPER', move_to_sym: :PAPER) }
+  let(:p2_paper) { double(:computer, move: 'PAPER', move_to_sym: :PAPER, gain_score: nil, score: 0) }
 
   describe '#initialize' do
     it '0.0. initializes with one player' do
@@ -29,5 +29,17 @@ describe Game do
       draw_game = described_class.new(p1_scissors, p2_scissors)
       expect(draw_game.return_winner).to eq('draw')
     end
+  end
+
+  describe '#update_score' do
+    it '2.0. adds a point to the winner\'s score' do
+      p1_game.update_score
+      expect(p1_scissors.score).to eq(1)
+    end
+    it '2.1. adds nothing to the loser\'s score' do
+      p1_game.update_score
+      expect(p2_paper.score).to eq(0)
+    end
+
   end
 end

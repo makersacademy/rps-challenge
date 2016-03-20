@@ -46,10 +46,12 @@ class RPS < Sinatra::Base
   end
 
   get '/p1_play' do
+    RPS.game.p1.enter_round
     erb(:p1_play)
   end
 
   get '/p2_play' do
+    RPS.game.p2.enter_round
     erb(:p2_play)
   end
 
@@ -77,6 +79,8 @@ class RPS < Sinatra::Base
     else
       @winner = RPS.game.return_winner.name
     end
+    RPS.game.update_score
+    RPS.game.p1.exit_round
     erb(:p1_result)
   end
 
@@ -86,19 +90,21 @@ class RPS < Sinatra::Base
     else
       @winner = RPS.game.return_winner.name
     end
+    RPS.game.p2.exit_round
     erb(:p2_result)
   end
 
   post '/p1_result' do
     RPS.game.p1.reset_choice
+    RPS.game.p1.enter_round
     redirect '/p1_play'
   end
 
   post '/p2_result' do
     RPS.game.p2.reset_choice
+    RPS.game.p2.enter_round
     redirect '/p2_play'
   end
-
 
   private
 

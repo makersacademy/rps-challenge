@@ -20,6 +20,11 @@ class Game
     p1_win? ? @p1 : @p2
   end
 
+  def update_score
+    move_to_val
+    p1_win? ? @p1.gain_score : @p2.gain_score
+  end
+
   private
 
   def move_to_val
