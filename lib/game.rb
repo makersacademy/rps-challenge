@@ -5,8 +5,8 @@ class Game
             paper: [:rock, :spock],
             scissors: [:paper, :lizard],
             lizard: [:paper, :spock],
-            spock: [:rock, :scissors] }
-
+            spock: [:rock, :scissors] }.freeze
+  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock].freeze
   def self.create(player1:, player2:)
     self.weapons
     @instance = self.new(player1: player1, player2: player2)
@@ -17,7 +17,7 @@ class Game
   end
 
   def self.weapons
-    RULES.collect { |weapon, beats| weapon }
+    WEAPONS
   end
 
   def initialize(player1:, player2:)

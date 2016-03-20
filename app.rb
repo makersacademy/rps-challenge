@@ -1,14 +1,25 @@
 require 'sinatra/base'
-require 'game'
-require 'player'
+require './lib/game'
+require './lib/player'
+require './lib/weapon'
+require './lib/computer'
 
 class Jajanken < Sinatra::Base
   get '/' do
     erb(:index)
   end
 
+  get '/register' do
+    erb(:register)
+  end
+
   post '/setup' do
-    player1_name = params[:username]
+    player1 = Player.new(name: params[:player1], weapon_class: Weapon)
+    player2 = Computer.new(weapon_class: Weapon)
+    setup = {
+      player1: player1,
+      player2: player2
+    }
     Game.create(setup)
     redirect '/play'
   end

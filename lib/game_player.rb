@@ -2,7 +2,7 @@ module GamePlayer
 
   attr_reader :name, :weapon
 
-  def initialize(name:, weapon_class: Weapon, game_class: )
+  def initialize(name: 'Darth Vadar', weapon_class: Weapon, game_class: Game)
     @name = name
     @game_class = game_class
     @weapon_class = weapon_class
