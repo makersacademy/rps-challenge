@@ -1,8 +1,14 @@
 require 'sinatra/base'
 
+
 class RPS < Sinatra::Base
   get '/' do
-    'Hello RPS!'
+    erb(:index)
+  end
+
+  get '/names' do
+    @player = params[:name]
+    erb(:names)
   end
 
   # start the server if ruby file executed directly

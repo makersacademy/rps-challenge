@@ -11,7 +11,7 @@ SimpleCov.formatters = [
 ]
 Coveralls.wear!
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '../app', 'rps_web.rb')
 
 require 'capybara'
 require 'capybara/rspec'
