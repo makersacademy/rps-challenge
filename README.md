@@ -40,6 +40,7 @@ Please refer to the wiki page below for the general rules of RPSLS.
 http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
 
 Here is a step-by-step guide of how to play MB-RPSLS.
+
 1. Player 1 ( P1 ) and Player 2 ( P2 ) open the game in separate browsers
 2. P1 and P2 click **Entry**
 3. Choose player
