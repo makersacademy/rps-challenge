@@ -1,10 +1,40 @@
 require 'sinatra/base'
+require './lib/game'
 
-class rps-challenge < Sinatra::Base
+class Rps < Sinatra::Base
+
   get '/' do
-    'Hello rps-challenge!'
+    erb(:index)
   end
 
-  # start the server if ruby file executed directly
+  post '/name' do
+    player = Player.new(params[:name])
+    $game = Game.new(player)
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
+  get '/scissors' do
+    $game.player.choose("scissors")
+    redirect '/results'
+  end
+
+  get '/paper' do
+    $game.player.choose("paper")
+    redirect '/results'
+  end
+
+  get '/rock' do
+    $game.player.choose("rock")
+    redirect '/results'
+  end
+
+  get '/results' do
+    erb(:results)
+  end
+
   run! if app_file == $0
 end
