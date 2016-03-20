@@ -22,12 +22,18 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/weapon' do
+  post '/play' do
     @game = Game.instance
-    redirect '/result'
+    @choice = params[:weapon]
+    redirect "/result?weapon=#{@choice}"
   end
 
+  get '/result' do
+    @game = Game.instance
+    @choice = params[:weapon]
+    @result = @game.play(@choice) if @choice
+    erb :result
+  end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

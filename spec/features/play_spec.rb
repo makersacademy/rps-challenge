@@ -3,20 +3,17 @@ feature 'in game functionality' do
 
   scenario 'can pick rock' do
     sign_in_and_play
-    click_button 'rock'
-    expect(page).to have_content 'rock'
+    expect(page).to have_button 'rock'
   end
 
   scenario 'can pick paper' do
     sign_in_and_play
-    click_button 'paper'
-    expect(page).to have_content 'paper'
+    expect(page).to have_button 'paper'
   end
 
   scenario 'can pick scissors' do
     sign_in_and_play
-    click_button 'scissors'
-    expect(page).to have_content 'scissors'    
+    expect(page).to have_button 'scissors'    
   end
 
 end

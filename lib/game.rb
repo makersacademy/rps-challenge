@@ -1,29 +1,19 @@
 class Game
-  # include Winning_combos
 
 require_relative 'player'
 require_relative 'computer'
 
-  attr_reader :player, :computer
-
-  def initialize(player:, computer:)
-    @player = player
-    @computer = computer
-  end
-
-  # def self.create(player:, computer:, player_class:Player, computer_class:Computer)
-  #   player = player_class.new(name:player)
-  #   computer = computer_class.new(name:computer)
-  #   @instance = self.new(player:player, computer:computer)
-  # end
-  #
-  # def self.instance
-  #     @instance
-  #   end
+  attr_reader :player, :computer, :winner
 
     def initialize(player, computer)
       @player = player
       @computer = computer
+      @winner = nil
+      @winning_combos = {
+          'rock' => 'scissors',
+          'scissors' => 'paper',
+          'paper' => 'rock'
+      }
     end
 
     def self.create(player, computer)
@@ -33,4 +23,18 @@ require_relative 'computer'
     def self.instance
       @game ||= Game.new
     end
+
+    def play(player_choice)
+      @player_weapon = player_choice
+      computer_choice = computer.computer_play
+      if player_choice == computer_choice
+        @winner = "It's a draw!"
+      elsif @winning_combos[player_choice] == computer_choice
+        @winner = "You win!"
+      else
+        @winner = "You lose!"
+      end
+      return @winner
+    end
+
 end

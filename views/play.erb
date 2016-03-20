@@ -4,7 +4,7 @@
   <h2> Choose your weapon: </h2>
 </div>
 
-<form id='weapons' action= '/weapon' method='post'>
+<form id='weapons' action='/play' method='post'>
   <input id="rock"
    type="submit" name="weapon" value="rock">
 
@@ -13,4 +13,7 @@
 
   <input id="scissors"
    type="submit" name="weapon" value="scissors">
+
 </form>
+
+<%= @winner %>

@@ -1,9 +1,14 @@
 class Computer
-  # include Winning_combos
-  attr_reader :name
+  attr_reader :name, :weapon
 
-  def initializecom
+  WEAPONS = ['rock', 'paper', 'scissors']
+
+  def initialize
     @name = 'Computer'
+  end
+
+  def computer_play
+    @weapon = WEAPONS.sample
   end
 
 end
