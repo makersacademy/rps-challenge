@@ -9,7 +9,7 @@ feature "Choose weapon" do
   scenario "allow second player to choose weapon" do
     double_sign_in
     click_button "Rock"
-    expect(page).to have_content "Fluffy's turn to choose weapon:"
+    expect(page).to have_content "Fluffy's turn to choose a weapon:"
     expect(page).to have_button("Rock")
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
