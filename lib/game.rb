@@ -40,13 +40,12 @@ class Game
     URI("images/#{latest_result.to_s}.png")
   end
 
-  def player_2_image
-    URI("images/#{player_2_choice}.png")
-  end
-
   def player_1_image
     URI("images/#{player_1_choice}.png")
   end
 
+  def player_2_image
+    URI("images/#{player_2_choice}.png")
+  end
 
 end

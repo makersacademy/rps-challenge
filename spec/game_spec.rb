@@ -33,5 +33,32 @@ describe Game do
     end
   end
 
+  describe "#ai_image" do
+    it 'returns a path for local image for AI' do
+      expect(game.ai_image.to_s).to include "images/"
+    end
+  end
+
+  describe "#result_image" do
+    it 'returns a path for a local image of the RPS result' do
+      allow(game).to receive(:latest_result){"rock"}
+      expect(game.result_image.to_s).to include "images/#{game.latest_result}"
+    end
+  end
+
+  describe "#player_1_image" do
+    it 'returns a path for a local image of player 1\'s choice' do
+      allow(game).to receive(:player_1_choice){"rock"}
+      expect(game.player_1_image.to_s).to include "images/#{game.player_1_choice}"
+    end
+  end
+
+  describe "#player_2_image" do
+    it 'returns a path for a local image of player 2\'s choice' do
+      allow(game).to receive(:player_2_choice){"rock"}
+      expect(game.player_2_image.to_s).to include "images/#{game.player_2_choice}"
+    end
+  end
+
 
 end
