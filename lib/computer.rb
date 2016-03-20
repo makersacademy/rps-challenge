@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :name, :weapon
+  attr_reader :name
 
   WEAPONS = ['rock', 'paper', 'scissors']
 
@@ -8,7 +8,7 @@ class Computer
   end
 
   def computer_play
-    @weapon = WEAPONS.sample
+    WEAPONS.sample
   end
 
 end

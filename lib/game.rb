@@ -25,7 +25,7 @@ require_relative 'computer'
     end
 
     def play(player_choice)
-      @player_weapon = player_choice
+      # @player_weapon = player_choice
       computer_choice = computer.computer_play
       if player_choice == computer_choice
         @winner = "It's a draw!"
