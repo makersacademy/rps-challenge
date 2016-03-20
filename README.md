@@ -32,7 +32,7 @@ public folder holds images used in the project
 Gameplay
 -----------
 You begin by entering each of the player's names. In this example we've got Margot and Ritchie. Click Submit.
-[Imgur](http://i.imgur.com/5WFdeGq.png)
+![Image of Screen1](http://i.imgur.com/5WFdeGq.png)
 
 First up is Margot. She needs to choose one of the options by clicking a button.
 [Imgur](http://i.imgur.com/CsGScMx.png)
