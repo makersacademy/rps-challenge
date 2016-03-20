@@ -1,6 +1,43 @@
-<%= (@game.rps(@session[:player_1_choice])).to_s %>
-<body background="<%= @game.result_image %>" >
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/styles.css"/>
+</head>
+<body>
 
+
+    <div id="container">
+    <h1>
+      <img src='<%= @game.result_image %>' height="30" width="30" />
+       You <%= @game.latest_result.to_s %>! 
+      <img src='<%= @game.result_image %>' height="30" width="30" />
+
+
+    </h1>
+
+    <div id='p1'>
+      <%=@game.player_1.name %>
+    </div>
+    <div id='p2'>
+      Thinking Emoji
+    </div>
+
+    <div class="playerbox" id="player1box"
+      style="background-image: url('<%= @game.player_1_image %>');
+        background-repeat: no-repeat;
+        background-size: contain;">
+
+    </div>
+
+    <div id='vs'>
+      VS
+    </div>
+
+    <div class='playerbox' id="player2box"
+      style="background-image: url('<%= @game.player_2_image %>');
+        background-repeat: no-repeat;
+        background-size: contain;">
+
+    </div>
+    </div>
 
 
 
