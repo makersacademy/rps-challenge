@@ -15,6 +15,11 @@ class Game
     @p_two_sign = sign.to_sym
   end
 
+  def compute_turn
+    return :draw if @p_one_sign == @p_two_sign
+
+  end
+
   def choose_winner
     return :draw if @p_one_sign == @p_two_sign
     p_one_won = case @p_one_sign
@@ -26,6 +31,15 @@ class Game
     else raise "wrong attack type"
     end
     p_one_won ? @player_one : @player_two
+  end
+
+  private
+
+  def compare_weapons
+    winners = {
+      
+    }
+
   end
 
 end

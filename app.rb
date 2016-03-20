@@ -8,6 +8,9 @@ class Rpsls < Sinatra::Base
 
   before do
     @game = Memory.load_game
+    next if @game.nil?
+    @player_one_name = @game.player_one.nickname
+    @player_two_name = @game.player_two.nickname
   end
 
   get '/' do
@@ -31,9 +34,6 @@ class Rpsls < Sinatra::Base
   end
 
   get '/game' do
-    @player_one_name = @game.player_one.nickname
-    @player_two_name = @game.player_two.nickname
-
     @player_one_wins = @game.player_one.win_count
     @player_two_wins = @game.player_two.win_count
 
@@ -41,9 +41,6 @@ class Rpsls < Sinatra::Base
   end
 
   get '/attack_resolution' do
-    @player_one_name = @game.player_one.nickname
-    @player_two_name = @game.player_two.nickname
-
     @player_one_atk = @game.p_one_sign
     @player_two_atk = @game.p_two_sign
 
