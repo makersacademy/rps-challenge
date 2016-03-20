@@ -1,6 +1,12 @@
 class Game
-  WEAPONS = [:rock, :paper, :scissors]
-  RULES = {rock: :scissors, paper: :rock, scissors: :paper}
+  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
+  # RULES = {rock: :scissors, paper: :rock, scissors: :paper}
+  RULES = { rock: [:scissors, :lizard],
+            scissors: [:paper, :lizard],
+            paper: [:rock, :spock],
+            spock: [:scissors, :rock],
+            lizard: [:spock, :paper]
+  }
 
   attr_reader :player_1, :player_2
 
@@ -26,6 +32,6 @@ class Game
   private
 
   def beats?(weapon_1, weapon_2)
-    RULES[weapon_1] == weapon_2
+    RULES[weapon_1].include? weapon_2
   end
 end
