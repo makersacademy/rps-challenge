@@ -2,6 +2,12 @@ require 'spec_helper'
 require 'capybara'
 
 feature '#Starts the game' do
+  scenario 'has single and multiplayer buttons' do
+    visit('/')
+    expect(page).to have_button 'single'
+    expect(page).to have_button 'multi'
+  end
+
   scenario 'single player lose' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
       play_single

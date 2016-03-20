@@ -2,12 +2,7 @@ class Player
   attr_reader :weapon, :name
   def initialize(name, weapon)
     @name = name
-    @weapon = weapon.to_sym
-  end
-
-  def weapon=(weapon)
-    raise 'not a possible weapon' unless Game::WEAPONS.include? weapon
-    @weapon = weapon
+    pick_weapon(weapon.to_sym)
   end
 
   def self.add_player(name, weapon)
@@ -16,5 +11,12 @@ class Player
 
   def self.current_player
     @player
+  end
+
+  private
+
+  def pick_weapon(weapon)
+    raise 'not a possible weapon' unless Game::WEAPONS.include? weapon
+    @weapon = weapon
   end
 end
