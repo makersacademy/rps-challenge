@@ -139,6 +139,22 @@ describe Game do
       end
     end
 
+    describe '#result' do
+      it 'returns an empty array when a draw' do
+        allow(player1).to receive(:move){:spock}
+        allow(player2).to receive(:move){:spock}
+        game.find_winner
+        expect(game.result).to be_empty
+      end
+
+      it 'returns array with name, winning play, action, losing play' do
+        allow(player1).to receive(:move){:spock}
+        allow(player2).to receive(:move){:rock}
+        game.find_winner
+        expect(game.result).to eq [player1.name, 'spock', 'vaporises','rock']
+      end
+    end
+
     describe '#both_played?' do
       it 'returns true when both players have played' do
         allow(player1).to receive(:played?).and_return(true)
@@ -176,7 +192,7 @@ describe Game do
 
       context 'player 1 wins' do
         before do
-          allow(player1).to receive(:move){:paper}
+          allow(player1).to receive(:move){:spock}
           allow(player2).to receive(:move){:rock}
         end
 

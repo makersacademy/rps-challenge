@@ -93,9 +93,36 @@ class Game
   end
 
   def find_winner(player1:@players[0],player2:@players[1])
-    player1.win! if MOVES[player1.move].include?(player2.move)
-    player1.not_win! if !MOVES[player1.move].include?(player2.move)
-    player2.win! if MOVES[player2.move].include?(player1.move)
-    player2.not_win! if !MOVES[player2.move].include?(player1.move)
+    moves={}
+    MOVES.each{|k,v| moves[k]= v.flatten.map!{|hash| hash.keys}.flatten}
+
+    if moves[player1.move].include?(player2.move)
+      player1.win!
+      winner = player1
+      loser = player2
+    else
+      player1.not_win!
+    end
+
+    if moves[player2.move].include?(player1.move)
+      player2.win!
+      winner = player2
+      loser = player1
+    else
+      player2.not_win!
+    end
+
+    @result = []
+
+    if !winner.nil?
+      @result << winner.name
+      @result << winner.move.to_s
+      @result << MOVES[winner.move].first[loser.move]
+      @result << loser.move.to_s
+    end
+  end
+
+  def result
+    @result
   end
 end

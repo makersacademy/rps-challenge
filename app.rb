@@ -41,6 +41,7 @@ class Rps < Sinatra::Base
     @game = Game.instance
     @me = @game.find_me(session[:me])
     @opponent = @game.find_opponent(session[:me])
+    @result = @game.result
     erb(:play)
   end
 

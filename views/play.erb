@@ -10,7 +10,7 @@
 
 <%if @game.in_progress? && !@game.player1.win? && !@game.player2.win? %>
   <h3>Draw</h3>
-  <%end%>
+<%end%>
 
   <form class="play" action ="/turn" method="post">
     <input id="rock"type="radio" name="play" value="rock">Rock<br>
