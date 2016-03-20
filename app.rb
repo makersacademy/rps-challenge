@@ -9,6 +9,10 @@ class Jajanken < Sinatra::Base
     erb(:index)
   end
 
+  post '/configure' do
+    Game.set_game(rule_set: params[:rules])
+    redirect '/register'
+  end
   get '/register' do
     erb(:register)
   end

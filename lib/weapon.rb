@@ -5,7 +5,7 @@ class Weapon
   end
 
   def beats?(other_weapon)
-    Game::RULES[type].include? other_weapon.type
+    Game.rules[type].include? other_weapon.type
   end
 
   def to_s
