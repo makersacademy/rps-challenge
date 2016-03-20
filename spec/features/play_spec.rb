@@ -4,7 +4,7 @@ feature 'Play Screen' do
 
   scenario 'Displays Play Screen welcome message' do
     sign_in_and_play(name)
-    expect(page).to have_content("Hi, #{name}! Let's Play!")
+    expect(page).to have_content("Let's Play!")
   end
 
   scenario 'Has 3 buttons for rock, paper, scissors' do

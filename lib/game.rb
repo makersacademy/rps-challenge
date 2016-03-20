@@ -7,7 +7,7 @@ class Game
   }
   RPS_ARRAY = [:rock,:paper,:scissors]
 
-  attr_reader :player_1
+  attr_reader :player_1, :latest_result
 
   def self.start(player_1)
     @game = Game.new(player_1)
@@ -23,11 +23,19 @@ class Game
   end
 
   def rps(player_1_choice, player_2_choice = randrps)
-    RULES[player_1_choice][player_2_choice]
+    @latest_result = RULES[player_1_choice][player_2_choice]
   end
 
   def randrps
     RPS_ARRAY.sample
+  end
+
+  def ai_image
+    URI("images/thinking.png")
+  end
+
+  def result_image
+    URI("images/#{latest_result.to_s}.png")
   end
 
 
