@@ -32,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/winner' do
+  	@player_name = @game.player.name
   	@player_move = session[:move]
   	@computer_move = Computer.move
   	@winner = @game.winner(@player_move, @computer_move)

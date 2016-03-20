@@ -1,9 +1,20 @@
-<p>Player has chosen <%= @player_move %> </p>
+<p><%= @player_name %> has chosen <%= @player_move %> </p>
 
 <p>Computer has chosen <%= @computer_move %> </p>
 
-<% if @winner == @game.player.name || @winner == "Computer" %>
+<% if @winner == @player_name || @winner == "Computer" %>
 	<p>And the winner is.. <%=@winner%></p>
 <% else %>
 	<p>Oh, it's a <%=@winner%></p>
 <% end %>
+
+<!-- <input type="submit" value="Play again">
+ -->
+
+<form action="/rock-paper-scissors">
+	<button>Play again</button>
+</form>
+
+<form action="/">
+	<button>Start a new game</button>
+</form>

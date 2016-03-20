@@ -7,7 +7,7 @@ feature 'Show moves & if Player has won' do
 	end
 
 	scenario "Shows Player's chosen move" do
-		text = "Player has chosen #{@player_move}" 
+		text = "#{@player_name} has chosen #{@player_move}" 
 		expect(page).to have_content(text)
 	end
 
@@ -45,5 +45,18 @@ feature 'Shows if tie' do
 	scenario "Shows tie" do
 		text = "Oh, it's a Draw!"
 		expect(page).to have_content(text)
+	end
+end
+
+feature 'Play again or new game' do
+	before(:each) do
+		sign_in_and_play
+		click_button 'Scissors'	
+	end
+	scenario "Shows button for play again" do
+		find_button("Play again").click
+	end
+	scenario "Shows button for starting a new game" do
+		find_button("Start a new game").click
 	end
 end
