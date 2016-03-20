@@ -13,37 +13,29 @@ class Rps < Sinatra::Base
     erb(:singleplayer)
   end
 
-  # post '/single-player' do
-  #   Game.create_game(params[:player1])
-  #   redirect to('/game')
-  # end
+  post '/set' do
+    Game.create_game(params[:player1], params[:player2] ||= "Computer", params[:points])
+    redirect to('/play')
+  end
 
-  # before do
-  #   @game = Game.instance_of_game
-  # end
-  #
-  # get '/game' do
-  #   erb(:game)
-  # end
-  #
-  # post '/play' do
-  #   @game.set_points(params[:points])
-  #   redirect to('/play')
-  # end
-  #
-  # get '/play' do
-  #   erb(:play)
-  # end
-  #
-  # post '/round' do
-  #   @game.weapons(params[:choice])
-  #   @game.result
-  #   redirect to('/result')
-  # end
-  #
-  # get '/result' do
-  #   erb(:result)
-  # end
+  get '/play' do
+    erb(:play)
+  end
+
+  before do
+    @game = Game.instance_of_game
+  end
+
+  post '/choice' do
+    @game.player1.choice(params[:choice])
+    @game.player2.choice(:random)
+    redirect to('/result')
+  end
+
+  get '/result' do
+    @game.rps(@game.player1_weapon,@game.player2_weapon)
+    erb(:result)
+  end
 
   run! if app_file == $0
 end

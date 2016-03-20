@@ -3,53 +3,67 @@ require 'byebug'
 
 class Game
 
-  # GAME_RULES = {
-  #           rock: {rock: :draw, paper: :lose, scissors: :win},
-  #           paper: {rock: :win, paper: :draw, scissors: :lose},
-  #           scissors: {rock: :lose, paper: :win, scissors: :draw}
-  #         }
-  # WEAPONS = [:rock, :paper, :scissors]
+  attr_reader :player1, :player2, :game_points, :tie, :winner
 
-  attr_reader :player1, :game_points, :player_weapon, :computer_weapon, :round_result
-
-  def self.create_game(player1, player_klass = Player)
+  def self.create_game(player1, player2, game_points, player_klass = Player)
     @player_klass = player_klass
-    @game = Game.new(@player_klass.new(player1))
+    @game = Game.new(@player_klass.new(player1), @player_klass.new(player2), game_points)
   end
 
   def self.instance_of_game
     @game
   end
 
-  def initialize(player1)
+  def initialize(player1, player2, game_points)
     @player1 = player1
-    @game_points = 0
+    @player2 = player2
+    @game_points = game_points
+    @winner = nil
+    @tie = false
   end
 
-  def set_points(points)
-    @game_points = points
+  def player1_name
+    @player1.name
   end
 
-  def player_weapon(choice)
+  def player2_name
+    @player2.name
+  end
+
+  def player1_weapon
     @player1.weapon
   end
 
-  def play_round(player1_weapon, player2_weapon = computer_choice)
-    @round_result = nil
-    if @player_weapon == @computer_weapon
-      @round_result = :tie
-    elsif @player_weapon == :paper && @computer_weapon == :rock
-      @round_result = :win
-    elsif @player_weapon == :paper && @computer_weapon == :scissors
-      @round_result = :lose
-    elsif @player_weapon == :rock && @computer_weapon == :paper
-      @round_result = :lose
-    elsif @player_weapon == :rock && @computer_weapon == :scissors
-      @round_result = :win
-    elsif @player_weapon == :scissors && @computer_weapon == :paper
-      @round_result = :win
-    end
-    @round_result
+  def player2_weapon
+    @player2.weapon
   end
 
+  def rps(player1, player2)
+    if player1 == player2
+      tie_round
+    elsif player1 == :Rock
+      p1_wins if player2 == :Scissors
+      p2_wins if player2 == :Paper
+    elsif player1 == :Paper
+      p1_wins if player2 == :Rock
+      p2_wins if player2 == :Scissors
+    elsif player1 == :Scissors
+      p1_wins if player2 == :Paper
+      p2_wins if player2 == :Rock
+    end
+  end
+
+  private
+
+    def tie_round
+      @tie = true
+    end
+
+    def p1_wins
+      @winner = @player1.name
+    end
+
+    def p2_wins
+      @winner = @player2.name
+    end
 end

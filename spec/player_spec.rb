@@ -10,10 +10,19 @@ describe Player do
       expect(player.name).to be name
     end
   end
-  describe '#score' do
-    it 'returns the player\'s score at start of game' do
-      allow(player).to receive(:score).and_return 0
-      expect(player.score).to eq 0
+
+  describe '#choice' do
+    it 'returns the player\'s choice of weapon' do
+      player.choice(:rock)
+      expect(player.weapon).to eq :rock
+    end
+  end
+  # not convinced this a good test
+  describe '#choice' do
+    it 'returns a random choice if single player' do
+      allow(Kernel).to receive(:rand).and_return(1)
+      player.choice(:random)
+      expect(player.weapon).to eq :Paper
     end
   end
 end

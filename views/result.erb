@@ -1,4 +1,9 @@
-<h1>Result</h1>
-<p>You chose <%= @game.player_weapon %>. The computer chose <%= @game.computer_weapon %>.</p>
-<h1>You <%= @game.result %>.</h2>
-<a href="/play2">Continue</a>
+<h1>Rock Paper Scissors</h1>
+<p><%= @game.player1_name %>'s weapon: <%= @game.player1_weapon %></p>
+<p><%= @game.player2_name %>'s weapon: <%= @game.player2_weapon %></p>
+<% if @game.tie %>
+  <h2>It's a tie. Nobody wins.</h2>
+<% end %>
+<% if !@game.tie %>
+  <h2><%= @game.winner %> wins! 1 point awarded to <%= @game.winner %></h2>
+<% end %>

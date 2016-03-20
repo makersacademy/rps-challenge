@@ -1,5 +1,7 @@
-def crush_it
+def single_player_sign_in
   visit '/'
+  click_button('One player')
   fill_in('player1', :with => 'Shane')
-  click_button('Continue')
+  fill_in('points', :with => 10)
+  click_button('Play')
 end
