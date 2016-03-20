@@ -24,8 +24,8 @@ class Game
     @weapon2 = computer.choice.to_sym
   end
 
-  def weapon1
-    @weapon1 = @player.weapon.to_sym
+  def player_weapon
+      @weapon1 = @player.weapon.to_sym
   end
 
   def outcome
@@ -35,8 +35,8 @@ class Game
   private
 
   def draw
-      weapon1
-      @weapon1 == @weapon2
+    player_weapon
+    @weapon1 = @weapon2
   end
 
   def win
