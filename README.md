@@ -1,11 +1,23 @@
 # Rock Paper Scissors
 
+## Setup
 
-!(/screenshots/welcome.png)
+Run terminal and enter the following:
 
-!(/screenshots/play.png)
+```
+$ git clone https://github.com/olmesm/rps-challenge.git
+$ bundle
+$ ruby app.rb
+```
+Then go to http://localhhost:4567
 
-!(/screenshots/results.png)
+## Screenshots
+
+![](/screenshots/welcome.png)
+
+![](/screenshots/play.png)
+
+![](/screenshots/results.png)
 
 Links
 ===
