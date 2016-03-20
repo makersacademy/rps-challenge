@@ -1,21 +1,27 @@
-<h1>Hello <%= @player_name %>!</h1>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css">
 
-<p>Let's play a game of ROCK, PAPER, SCISSORS!</p>
+<div class="wrapper">
+	<h1>Hello <%= @player_name %>!</h1>
 
-<h3>Here's a quick reminder of the rules:</h3>
+	<p>Let's play a game of ROCK, PAPER, SCISSORS!</p>
 
-<ul>
-	<li>Rock beats Scissors</li>
-	<li>Scissors beats Paper</li>
-	<li>Paper beats Rock</li>
-</ul>
+	<h3>Here's a quick reminder of the rules:</h3>
 
-<h3>You must now decide on a move!</h3>
+	<ul>
+		<li>Rock beats Scissors</li>
+		<li>Scissors beats Paper</li>
+		<li>Paper beats Rock</li>
+	</ul>
 
-<form action="/move" method="post">
-	<input type="submit" value="Rock" name="move">
-	<input type="submit" value="Paper" name="move">
-	<input type="submit" value="Scissors" name="move">
-</form>
+	<h3>You must now decide on a move!</h3>
+
+	<form action="/move" method="post">
+		<input type="submit" value="Rock" name="move">
+		<input type="submit" value="Paper" name="move">
+		<input type="submit" value="Scissors" name="move">
+	</form>
+</div>
+
 
 
