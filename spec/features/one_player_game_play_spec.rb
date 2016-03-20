@@ -50,16 +50,11 @@ RSpec.feature "One Play Game Play:", :type => :feature do
     expect(page).to have_button("Go Back")
     click_button('Go Back')
 
-
     click_button('New Game')
     expect(page).to have_content("Your points: 0")
     expect(page).to have_content("Computer's points: 0")
     expect(page).not_to have_content("Draw")
     expect(page).not_to have_content("You played")
     expect(page).not_to have_content("Computer played")
-
-
-
   end
-
 end

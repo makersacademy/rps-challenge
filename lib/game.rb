@@ -41,9 +41,7 @@ class Game
 
   def initialize(player1:, player2:nil)
     @players = [player1]
-    if !player2.nil?
-      @players << player2
-    end
+    @players << player2 if !player2.nil?
     @in_progress = false
   end
 
@@ -113,7 +111,6 @@ class Game
     end
 
     @result = []
-
     if !winner.nil?
       @result << winner.name
       @result << winner.move.to_s
