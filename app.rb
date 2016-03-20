@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,17 +7,20 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-  $name = params[:player_name]
-  redirect '/play'
+    Game.start params[:player_name]
+    redirect '/play'
   end
 
   get '/play' do
-  @name = $name
-  erb :play
+    @game = Game.current_game
+    @name = @game.player_name
+    erb :play
   end
 
   get '/attack' do
     @attack = params[:attack]
+    @game = Game.current_game
+    @return_attack = @game.attack
     erb :attack
   end
 

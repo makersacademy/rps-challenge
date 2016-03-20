@@ -16,4 +16,11 @@ feature '#attack' do
     click_button "Scissors"
     expect(page).to have_content("You played Scissors.")
   end
+
+  scenario '>computer should play back random attack when any choice is clicked' do
+    allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
+    sign_in_and_play
+    click_button "Scissors"
+    expect(page).to have_content("Your opponent played Rock.")
+  end
 end
