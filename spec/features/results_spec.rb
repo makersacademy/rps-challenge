@@ -9,13 +9,13 @@ feature '/results' do
   scenario 'player1: Rock, player2: Scissors, player1 wins' do
     click_button('Rock')
     click_button('Scissors')
-    expect(page).to have_content('Charlie wins') 
+    expect(page).to have_content('CHARLIE WINS') 
   end
 
   scenario 'player1: Paper, player2: Scissors, player2 wins' do
     click_button('Paper')
     click_button('Scissors')
-    expect(page).to have_content('Roxanne wins')
+    expect(page).to have_content('ROXANNE WINS')
   end
 
   scenario 'player1: Scissors, player2 Scissors, its a tie' do
@@ -27,7 +27,7 @@ feature '/results' do
   scenario 'player1: Spock, player2: Lizard, player2 wins' do
     click_button('Spock')
     click_button('Lizard')
-    expect(page).to have_content('Roxanne wins')
+    expect(page).to have_content('ROXANNE WINS')
   end
 
 end

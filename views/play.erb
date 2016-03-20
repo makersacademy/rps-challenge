@@ -1,10 +1,18 @@
+<body bgcolor ='#F4BAC8'>
+  <body topmargin='100' leftmargin ='200' rightmargin='200'> 
 <center>
+  <font face='futura'>
 Welcome to the game <%= @game.player_name(@game.player1) %> and <%= @game.player_name(@game.player2) %> 
 <div>
+
+    <font size='150'>
 It's <%= @game.player_name(@game.current_player) %>'s turn
-<p></p><p></p>
-Choose wisely. There could be real-world consequences if you lose. Not saying there definitely will be. But there could be. 
-<p></p><p></p>
+<br>
+-----------------
+</br>
+</font>
+Choose wisely. There could be real-world consequences if you lose. Not saying there definitely will be. But there could be. Make your choice!
+<br></br>
 <form action='/choice' method='post'>
   <button type='submit' name='choice' value='Rock'><img src='images/rock.jpg'><div>'Rock'</button>
   <button type='submit' name='choice' value='Paper'><img src='images/paper.jpg'><div>Paper</div></button>
@@ -12,11 +20,12 @@ Choose wisely. There could be real-world consequences if you lose. Not saying th
   <button type='submit' name='choice' value='Spock'><img src='images/spock.jpg'><div>Spock</div></button>
   <button type='submit' name='choice' value='Lizard'><img src='images/lizard.jpg'><div>Lizard</div></button>
 </form>
-<p></p><p></p>
-If you don't know what's going on I have the utmost respect for you. Its basically a version of Rock Paper Scissors that was invented by seemingly lovely people and co-opted by the worst thing ever The Big Bang Theory. Here are the rules.
-<p></p><p></p>
+<br></br><br></br>
+Don't know the rules?
+Here be the rules.<br></br><br></br>
 <div>
   <img src='images/rules.jpg'>
 </div>
-
+</font>
 </center>
+</body>
