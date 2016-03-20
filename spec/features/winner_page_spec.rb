@@ -1,13 +1,13 @@
 RSpec.feature 'winner_page: Shows winner or draw' do
 
   before do
-    sign_in_and_play
+    singlemode
     allow(Kernel).to receive(:rand).and_return(1)
     click_button("Rock")
   end
 
   scenario '1. should have players choice' do
-    expect(page).to have_content("Your choice: Rock")
+    expect(page).to have_content("player1's choice: Rock")
   end
 
   scenario '2. should have computers choice' do
@@ -24,15 +24,15 @@ RSpec.feature 'winner_page: Shows winner or draw' do
 
   scenario '5. play again button should go to play page' do
     click_button("Play again?")
-    expect(page).to have_content("Pick your weapon:")
+    expect(page).to have_content("Pick your weapon player1:")
   end
 
-  scenario '6. should have new player button' do
-    expect(page).to have_button("New player")
+  scenario '6. should have home button' do
+    expect(page).to have_button("Home")
   end
 
   scenario '7. New player button should go to index page' do
-    click_button("New player")
+    click_button("Home")
     expect(page).to have_content("Lets play Rock, Paper, Scissors!")
   end
 
