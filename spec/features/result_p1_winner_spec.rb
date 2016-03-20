@@ -20,4 +20,9 @@ feature 'Result page: winner decleration' do
   scenario '0.2. Annouce winner' do
     expect(page).to have_content('Misa wins!')
   end
+
+  scenario '0.3. Moves onto next round' do
+    click_button('Next round!')
+    expect(page).to have_content('↓Choose your move below↓')
+  end
 end
