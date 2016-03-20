@@ -11,9 +11,9 @@ describe Player do
 		end
 	end
 	
-	describe '#move' do
+	describe '#make_move' do
 		it 'stores the players move' do
-			expect(player.move('Rock')).to eq 'Rock'
+			expect(player.make_move('Rock')).to eq 'Rock'
 		end
 	end
 

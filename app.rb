@@ -27,14 +27,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-  	$player_move = @game.player.move(params[:move])
+  	session[:move] = @game.player.make_move(params[:move])
+  	#$player_move = @game.player.make_move(params[:move])
   	redirect('/winner')
   end
 
   get '/winner' do
-  	player_move = $player_move
-  	computer_move = Computer.move
-  	@winner = @game.winner(player_move, computer_move)
+  	@player_move = session[:move]
+  	@computer_move = Computer.move
+  	@winner = @game.winner(@player_move, @computer_move)
   	erb(:winner)
   end
 
