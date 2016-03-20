@@ -115,6 +115,7 @@ class RPS < Sinatra::Base
 
   post '/p1_end' do
     RPS.game.begin_game
+    redirect '/'
   end
 
   get '/p2_end' do
@@ -124,6 +125,7 @@ class RPS < Sinatra::Base
 
   post '/p2_end' do
     RPS.game.begin_game
+    redirect '/'
   end
 
   private
