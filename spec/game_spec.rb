@@ -52,7 +52,7 @@ describe Game do
   end
 
   describe "5 #update_score" do
-    it "5.1 updates the relevant score" do
+    it "5.0 updates the relevant score" do
       allow(round1).to receive(:winner).and_return("Simon")
       game.new_round
       expect{game.update_score}.to change{game.score[:Simon]}.by 1
@@ -60,13 +60,25 @@ describe Game do
   end
 
   describe "6 #game_over?" do
-    it "6.1 informs a player when the game is over" do
+    it "6.0 informs a player when the game is over" do
       allow(round1).to receive(:winner).and_return("Simon")
       3.times do
         game.new_round
         game.update_score
       end
-      expect(game.game_over).to be true
+      expect(game.game_over?).to be true
     end
   end
+
+  describe "7 #match_winner" do
+    it "7.0 shows the match winner" do
+      allow(round1).to receive(:winner).and_return("Simon")
+      3.times do
+        game.new_round
+        game.update_score
+      end
+      expect(game.match_winner).to eq "Simon"
+    end
+  end
+
 end

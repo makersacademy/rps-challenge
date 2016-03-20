@@ -31,3 +31,16 @@ p game.rounds[-1].choices
 p game.rounds[-1].draw?
 p game.update_score
 p game.score
+
+10.times do
+unless game.game_over?
+game.new_round
+game.player1_play(["Rock","Paper","Scissors"][rand(0..2)])
+game.player2_play
+game.update_score
+end
+end
+
+p game.score
+p game.game_over?
+p game.match_winner

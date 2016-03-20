@@ -31,8 +31,13 @@ BEST_OF = 5
     @rounds[-1].winner != "Draw" ? @score[@rounds[-1].winner.to_sym] += 1 : nil
   end
 
-  def game_over
-    @score[@player1.name.to_sym] > BEST_OF/2 || @score[@player2.name.to_sym] > BEST_OF/2 ? true : false 
+  def game_over?
+    @score[@player1.name.to_sym] > BEST_OF/2 || @score[@player2.name.to_sym] > BEST_OF/2 ? true : false
+  end
+
+  def match_winner
+    game_over? ? @score.max_by{|k,v| v}[0].to_s : nil
+
   end
 
 
