@@ -7,15 +7,26 @@ class Game
     @player_two = player_two
   end
 
-  # def self.choose_winner attack , defence
-  #   case attack
-  #   when :paper then defence == :rock || defence == :spock
-  #   when :rock then defence == :scissors || defence == :lizard
-  #   when :scissors then defence == :paper || defence == :lizard
-  #   when :lizard then defence == :spock || defence == :paper
-  #   when :spock then defence == :scissor || defence == :rock
-  #   else raise "wrong attack type"
-  #   end
-  # end
+  def p_one_attack sign
+    @p_one_sign = sign.to_sym
+  end
+
+  def p_two_attack sign
+    @p_two_sign = sign.to_sym
+  end
+
+
+  def choose_winner
+    return :draw if @p_one_sign == @p_two_sign
+    p_one_won = case @p_one_sign
+    when :paper then @p_two_sign == :rock || @p_two_sign == :spock
+    when :rock then @p_two_sign == :scissors || @p_two_sign == :lizard
+    when :scissors then @p_two_sign == :paper || @p_two_sign == :lizard
+    when :lizard then @p_two_sign == :spock || @p_two_sign == :paper
+    when :spock then @p_two_sign == :scissor || @p_two_sign == :rock
+    else raise "wrong attack type"
+    end
+    p_one_won ? @player_one : @player_two
+  end
 
 end

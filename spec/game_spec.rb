@@ -17,4 +17,26 @@ describe Game do
 
   end
 
+  describe '#choose_winner' do
+
+    it 'returns player_one when he is the winner' do
+      test_game.p_one_attack 'paper'
+      test_game.p_two_attack 'rock'
+      expect(test_game.choose_winner).to eq dummy_p1
+    end
+
+    it 'returns player_one when he is the winner' do
+      test_game.p_one_attack 'paper'
+      test_game.p_two_attack 'lizard'
+      expect(test_game.choose_winner).to eq dummy_p2
+    end
+
+    it 'returns :draw when there is no winner' do
+      test_game.p_one_attack 'paper'
+      test_game.p_two_attack 'paper'
+      expect(test_game.choose_winner).to eq :draw
+    end
+
+  end
+
 end
