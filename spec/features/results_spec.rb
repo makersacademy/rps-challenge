@@ -20,11 +20,4 @@ feature 'Results screen' do
     expect(page).to have_content("You draw!")
   end
 
-  scenario 'Name input' do
-    visit '/'
-    find_field("player_1_name").value
-    find_button("Submit").value
-  end
-
-
 end

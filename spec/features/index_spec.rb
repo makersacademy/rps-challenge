@@ -4,10 +4,10 @@ feature 'Index screen' do
     expect(page).to have_content("Rock, Paper, Scissors!")
   end
 
-  scenario 'Name input' do
+  scenario 'Displays 1P or 2P options' do
     visit '/'
-    find_field("player_1_name").value
-    find_button("Submit").value
+    find_button("1P vs AI").value
+    find_button("1P vs 2P").value
   end
 
 

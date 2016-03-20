@@ -7,7 +7,7 @@ class Game
   }
   RPS_ARRAY = [:rock,:paper,:scissors]
 
-  attr_reader :player_1, :latest_result, :player_1_choice, :player_2_choice
+  attr_reader :player_1, :player_2, :latest_result, :player_1_choice, :player_2_choice
 
   def self.start(player_1)
     @game = Game.new(player_1)
@@ -20,6 +20,10 @@ class Game
 
   def initialize(player_1)
     @player_1 = player_1
+  end
+
+  def add_player(player)
+    @player_2 = player
   end
 
   def rps(player_1_choice, player_2_choice = randrps)

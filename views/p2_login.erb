@@ -7,15 +7,14 @@
 
     <h1>Rock, Paper, Scissors!</h1>
     <br>
-    <div id="select_game">
-      <form id='p1_game' action= '/p1_login'>
-        <input type='submit' value='1P vs AI'/>
+    <div id="name_form">
+      <h3>Please enter your names:</h3>
+      <form action='/p2_submit' method='post'>
+        P1:<input type='text' name='player_1_name'/>
+        <br>
+        P2:<input type='text' name='player_2_name'/>
+        <input type='submit' value='Submit'/>
       </form>
-      <form id='p2_game' action= '/p2_login'>
-        <input type='submit' value='1P vs 2P'/>
-      </form>
-
-
     </div>
     <!-- Start of SimpleHitCounter Code -->
     <div id="counter">
