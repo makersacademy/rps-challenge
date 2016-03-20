@@ -4,7 +4,7 @@ class Game
           paper: :rock,
           scissors: :paper }
 
-  attr_reader :p1, :p2
+  attr_reader :p1, :p2, :p1_weapon, :p2_weapon
   def initialize(p1, p2)
     @p1 = p1
     @p2 = p2

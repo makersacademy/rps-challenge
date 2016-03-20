@@ -1,2 +1,14 @@
-<h1><%= Game.current_game.p1.name %> VS. <%= Game.current_game.p2.name %></h1>
-<h2><%= Game.current_game.p1.name %> WON!!!</h2>
+<h1><%= Game.current_game.p1.name %>
+				VS.
+				<%= Game.current_game.p2.name %></h1>
+<div><%= Game.current_game.p1.name %>
+				chose
+				<%= Game.current_game.p1_weapon %></div>
+<div><%= Game.current_game.p2.name %>
+				chose
+				<%= Game.current_game.p2_weapon %></div>
+<h2><%= Game.current_game.p1.name %>
+				WON!!!</h2>
+<form action="/" method="get">
+				<button id='play'>Play again</button>
+</form>
