@@ -4,6 +4,8 @@ feature "Choose weapon" do
     expect(page).to have_button("Rock")
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
+    expect(page).to have_button("Lizard")
+    expect(page).to have_button("Spock")
   end
 
   scenario "allow second player to choose weapon" do
@@ -13,5 +15,7 @@ feature "Choose weapon" do
     expect(page).to have_button("Rock")
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
+    expect(page).to have_button("Lizard")
+    expect(page).to have_button("Spock")
   end
 end
