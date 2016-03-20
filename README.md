@@ -22,6 +22,6 @@ At first I implemented single player mode and it all worked however with one Gam
 
 After getting the tests to work correctly I started adding in multiplayer mode. I went back to paper and pen again to draw a flow chart of the order of pages. Once I managed to get that to work along with tests, I added in CSS styling in a separate `style.css` sheet with different pictures and colours.
 
-Testing included RSpec unit tests for both the Player and Game classes. Feature testing was implemented with Capybara. As it currently stands the coverage of all feature and unit tests are at 97.83%.
+Testing included RSpec unit tests for both the Player and Game classes. Feature testing was implemented with Capybara. As it currently stands the coverage of all feature and unit tests are at 97.86%.
 
 **Yasmin Green**
