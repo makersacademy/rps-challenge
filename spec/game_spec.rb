@@ -12,17 +12,6 @@ describe Game do
       expect(game.player2).to eq computer
     end
   end
-  describe '#result' do
-    it 'should return true if player1 wins' do
-      expect(game.result).to eq false
-    end
-
-    it 'should return 1 if it is a tie' do
-      allow(computer).to receive(:choice).and_return(:rock)
-      expect(game.result).to eq 1
-    end
-  end
-
 
   describe '#winner' do
     it 'should return the player who won' do
@@ -32,13 +21,67 @@ describe Game do
       allow(computer).to receive(:choice).and_return(:rock)
       expect(game.winner).to eq 'Tie'
     end
+
+    it 'rock vs scissors' do
+      allow(computer).to receive(:choice).and_return(:scissors)
+      expect(game.winner).to eq player
+    end
+
+    it 'rock vs lizard' do
+      allow(computer).to receive(:choice).and_return(:lizard)
+      expect(game.winner).to eq player
+    end
+
+    it 'rock vs paper' do
+      expect(game.winner).to eq computer
+    end
+
+    it 'spock vs paper' do
+      allow(player).to receive(:choice).and_return(:spock)
+      expect(game.winner).to eq computer
+    end
+
+    it 'scissors vs paper' do
+      allow(player).to receive(:choice).and_return(:scissors)
+      expect(game.winner).to eq player
+    end
+
+    it 'scissors vs lizard' do
+      allow(computer).to receive(:choice).and_return(:lizard)
+      allow(player).to receive(:choice).and_return(:scissors)
+      expect(game.winner).to eq player
+    end
+
+    it 'spock vs scissors' do
+      allow(computer).to receive(:choice).and_return(:spock)
+      allow(player).to receive(:choice).and_return(:scissors)
+      expect(game.winner).to eq computer
+    end
+
+    it 'spock vs rock' do
+      allow(computer).to receive(:choice).and_return(:spock)
+      allow(player).to receive(:choice).and_return(:rock)
+      expect(game.winner).to eq computer
+    end
+
+    it 'lizard vs spock' do
+      allow(computer).to receive(:choice).and_return(:lizard)
+      allow(player).to receive(:choice).and_return(:spock)
+      expect(game.winner).to eq computer
+    end
+
+    it 'lizard vs paper' do
+      allow(computer).to receive(:choice).and_return(:lizard)
+      allow(player).to receive(:choice).and_return(:paper)
+      expect(game.winner).to eq computer
+    end
   end
+
   before do
     Game.save(game)
   end
   describe '#self.save' do
     it 'saves instance of game to class variable' do
-
       expect(Game.load).to eq game
     end
   end
@@ -48,7 +91,4 @@ describe Game do
       expect(Game.load).to eq game
     end
   end
-
-
-
 end

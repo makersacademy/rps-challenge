@@ -16,6 +16,5 @@ feature 'Computer attack:' do
     click_button 'submit'
     click_button 'rock'
     expect(page).to have_content('Computer chose paper!')
-
   end
 end

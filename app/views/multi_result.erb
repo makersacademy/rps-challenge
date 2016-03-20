@@ -1,6 +1,6 @@
 
 <%= @game.player1.name.capitalize %> chose <%= @game.player1.choice %>! <br>
-<%= @game.player2.name %> chose <%= @game.player2.choice %>! <br>
+<%= @game.player2.name.capitalize %> chose <%= @game.player2.choice %>! <br>
 
 <% if @game.winner == 'Tie' %>
 It's a tie!

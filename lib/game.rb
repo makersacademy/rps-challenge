@@ -28,7 +28,8 @@ class Game
     return 'Tie' if result == 1
     result ? @player1 : @player2
   end
-
+  private
+  
   def result
     number = WEAPONS[@player1.choice] - WEAPONS[@player2.choice]
     number = number % 5
