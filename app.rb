@@ -23,9 +23,23 @@ class Jajanken < Sinatra::Base
     Game.create(setup)
     redirect '/play'
   end
+  before do
+    @game = Game.current_game
+  end
+
+  post '/weapon' do
+    @game.player1.select_weapon(params[:weapon])
+    @game.player2.select_weapon
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game.winner ? erb(:win) : erb(:tie)
+
+  end
 
   get '/play' do
-    @game = Game.current_game
+    @weapons = Game.weapons
     erb(:play)
   end
   # start the server if ruby file executed directly

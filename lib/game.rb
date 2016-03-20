@@ -17,7 +17,7 @@ class Game
   end
 
   def self.weapons
-    WEAPONS
+    WEAPONS.dup
   end
 
   def initialize(player1:, player2:)

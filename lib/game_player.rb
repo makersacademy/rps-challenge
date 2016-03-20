@@ -12,4 +12,8 @@ module GamePlayer
     weapon.beats?(other_weapon)
   end
 
+  def to_s
+    weapon.to_s
+  end
+
 end

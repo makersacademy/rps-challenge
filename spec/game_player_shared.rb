@@ -21,6 +21,15 @@ shared_examples_for 'a game player' do
     end
   end
 
+  describe '#to_s' do
+    before do
+      allow(game_player).to receive(:weapon).and_return weapon_name
+    end
+    it 'returns the name as a string' do
+      expect(game_player.to_s).to eq 'rock'
+    end
+  end
+
   describe '#winner?' do
     before do
       allow(game_player).to receive(:weapon).and_return weapon
