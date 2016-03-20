@@ -118,14 +118,24 @@
   text-align: left;
   font-size: 0px;
 }
-#rockbutton {
+#p1rockbutton {
   background-image: url("images/rock.png");
   left:0px;
 }
-#paperbutton {
+#p1paperbutton {
   background-image: url("images/paper.png");
 }
-#scissorsbutton {
+#p1scissorsbutton {
+  background-image: url("images/scissors.png");
+}
+#p2rockbutton {
+  background-image: url("images/rock.png");
+  left:0px;
+}
+#p2paperbutton {
+  background-image: url("images/paper.png");
+}
+#p2scissorsbutton {
   background-image: url("images/scissors.png");
 }
 /*result page*/
