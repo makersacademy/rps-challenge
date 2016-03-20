@@ -32,27 +32,27 @@ Screenshots of the app below:
 
 Home page:
 
-![Screenshot](http://imgur.com/x1QeevT)
+![Imgur](http://i.imgur.com/x1QeevT.png)
 
 Single player mode:
 
-![Screenshot](http://imgur.com/PP0xpER)
+![Imgur](http://i.imgur.com/PP0xpER.png)
 
 Multiplayer mode:
 
-![Screenshot](http://imgur.com/oN0KUgW)
+![Imgur](http://i.imgur.com/oN0KUgW.png)
 
 Picking weapon:
 
-![Screenshot](http://imgur.com/13l1MNv)
+![Imgur](http://i.imgur.com/13l1MNv.png)
 
 Winner page:
 
-![Screenshot](http://imgur.com/FaNRRrd)
+![Imgur](http://i.imgur.com/FaNRRrd.png)
 
 Draw page:
 
-![Screenshot](http://imgur.com/fM5T3T4)
+![Imgur](http://i.imgur.com/fM5T3T4.png?1)
 
 
 **Author: Yasmin Green**
