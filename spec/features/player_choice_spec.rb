@@ -4,7 +4,7 @@ feature 'Player attack:' do
     fill_in :name, with: 'Adil'
     click_button 'submit'
     click_button 'rock'
-    expect(page).to have_content('You chose rock!')
+    expect(page).to have_content('Adil chose rock!')
   end
 end
 
