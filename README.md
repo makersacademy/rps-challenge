@@ -1,18 +1,65 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/kevinpmcc/rps-challenge.svg?branch=master)](https://travis-ci.org/kevinpmcc/rps-challenge)
 
 Project Description
 ----------
-This project is my Week 3 weekend challenge to build a multiplayer
-Rock,Paper,Scissors,Spock,Lizard game.
+This project is my Week 3 weekend challenge to build a multiplayer Rock,Paper,Scissors,Spock,Lizard(RPSSL) game.
 
-Instructions
+I first built a one-player version of Rock,Paper,Scissors(RPS) where you played against the computer. You can find this in branch one-player.
+Next I built a two-player version of RPS where two player play in same browser window. You can find this in branch two-player.
+Finally I built a two-player version of RPSSL which you can find in master branch.
+
+I took a TDD approach and created RSpec feature tests and unit tests to drive design and development.
+
+The project structure is broken down as follows.
+app.rb in root folder is the Controller
+lib holds the Model ruby files
+views folder holds the View feature erb files
+
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── app.rb
+├── config.ru
+├── disabled.yml
+├── docs
+│   └── review.md
+├── enabled.yml
+├── lib
+│   ├── game.rb
+│   └── player.rb
+├── public
+│   └── images
+│       ├── lizard.jpg
+│       ├── paper.jpg
+│       ├── rock.jpg
+│       ├── rules.jpg
+│       ├── scissors.jpg
+│       ├── spock.jpg
+│       └── spock.png
+├── spec
+│   ├── features
+│   │   ├── names_spec.rb
+│   │   ├── play_spec.rb
+│   │   └── results_spec.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── ruby_feature_test.rb
+│   ├── spec_helper.rb
+│   └── web_helpers.rb
+└── views
+    ├── index.erb
+    ├── play.erb
+    ├── tie.erb
+    └── win.erb
+
+
+
+Installation Instructions
 -------
+start by cloning this repository
+    git clone
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
 Task 
 ----
