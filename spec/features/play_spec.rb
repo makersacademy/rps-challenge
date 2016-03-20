@@ -1,4 +1,4 @@
-RSpec.feature 'play_spec: player1 turn:' do
+RSpec.feature 'play_spec: player1s turn:' do
 
   scenario '1. should have player1s name in singlemode ' do
     singlemode
