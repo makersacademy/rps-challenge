@@ -14,44 +14,7 @@ The project structure is broken down as follows.
 app.rb in root folder is the Controller
 lib holds the Model ruby files
 views folder holds the View feature erb files
-
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── Rakefile
-├── app.rb
-├── config.ru
-├── disabled.yml
-├── docs
-│   └── review.md
-├── enabled.yml
-├── lib
-│   ├── game.rb
-│   └── player.rb
-├── public
-│   └── images
-│       ├── lizard.jpg
-│       ├── paper.jpg
-│       ├── rock.jpg
-│       ├── rules.jpg
-│       ├── scissors.jpg
-│       ├── spock.jpg
-│       └── spock.png
-├── spec
-│   ├── features
-│   │   ├── names_spec.rb
-│   │   ├── play_spec.rb
-│   │   └── results_spec.rb
-│   ├── game_spec.rb
-│   ├── player_spec.rb
-│   ├── ruby_feature_test.rb
-│   ├── spec_helper.rb
-│   └── web_helpers.rb
-└── views
-    ├── index.erb
-    ├── play.erb
-    ├── tie.erb
-    └── win.erb
+public folder holds images used in the project
 
 
 
