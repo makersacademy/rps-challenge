@@ -45,9 +45,17 @@ describe Game do
     end
 
     describe '#end_game' do
-      it 'changes in_game flag to false and end the game' do
+      it '3.0. changes in_game flag to false and ends the game' do
         p1_game.end_game
         expect(p1_game.in_game).to eq(false)
+      end
+    end
+
+    describe '#begin_game' do
+      it '4.0. changes in_game flag to true and bigins the game' do
+        p1_game.end_game
+        p1_game.begin_game
+        expect(p1_game.in_game).to eq(true)
       end
     end
   end

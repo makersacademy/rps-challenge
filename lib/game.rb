@@ -28,6 +28,10 @@ class Game
     end
   end
 
+  def begin_game
+    @in_game = true
+  end
+
   def end_game
     @in_game = false
   end

@@ -113,9 +113,17 @@ class RPS < Sinatra::Base
     erb(:p1_end)
   end
 
+  post '/p1_end' do
+    RPS.game.begin_game
+  end
+
   get '/p2_end' do
     RPS.game.end_game
     erb(:p2_end)
+  end
+
+  post '/p2_end' do
+    RPS.game.begin_game
   end
 
   private
