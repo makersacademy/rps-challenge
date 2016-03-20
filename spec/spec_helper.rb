@@ -8,7 +8,7 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
-Coveralls.wear!
+SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
@@ -44,7 +44,7 @@ Capybara.app = Rps
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.include Capybara::DSL
-  # Capybara.default_driver = :selenium
+  Capybara.default_driver = :selenium
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
