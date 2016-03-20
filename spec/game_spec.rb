@@ -16,13 +16,13 @@ describe Game do
       allow(computer).to receive(:computer_play).and_return('paper')
     end
 
-    it 'Draw' do
+    it 'is a draw' do
       expect(game.play('paper')).to eq 'It\'s a draw!'
     end
-    it 'Player loses' do
+    it 'player loses' do
       expect(game.play('rock')).to eq 'You lose the game!'
     end
-    it 'Player wins' do
+    it 'player wins' do
       expect(game.play('scissors')).to eq 'You won the game!'
     end
   end
