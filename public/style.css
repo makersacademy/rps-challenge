@@ -4,8 +4,16 @@ html{
   background-color: SeaShell;
 }
 
+p {
+  color: LightSlateGray;
+}
+
 h1 {
   color: Navy;
+}
+
+h2 {
+  color: LightSlateGray;
 }
 
 h3 {

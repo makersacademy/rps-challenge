@@ -8,16 +8,13 @@ RSpec.feature 'index_spec: Home page:' do
     expect(page).to have_content('Lets play Rock, Paper, Scissors!')
   end
 
-  scenario '2. should have instructions' do
-    expect(page).to have_content('Enter your name here:')
+  scenario '2. should have single player button' do
+    expect(page).to have_button('One player')
   end
 
-  scenario '3. should have submit form to enter name' do
-    expect(page).to have_field('player_one')
+  scenario '3. should have multiplayer button' do
+    expect(page).to have_button('Two players')
   end
 
-  scenario '4. should have submit button' do
-    expect(page).to have_button('Play')
-  end
 
 end

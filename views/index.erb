@@ -4,13 +4,15 @@
 
 <html>
 
-  <h1>Lets play Rock, Paper, Scissors!</h1>
+<h1>Lets play Rock, Paper, Scissors!</h1>
 
-  <form action='/names' method='post'>
-    <h3>Enter your name here:</h3>
-    <input type='text' name='player_one' >
-    <input type='submit' value='Play' id='submit'>
+  <form action='/singlename' method='get'>
+    <input type='submit' value='One player' id='submit'>
   </form>
+  <form action='/multinames' method='get'>
+    <input type='submit' value='Two players' id='submit'>
+  </form>
+
 
   <img src="http://www.gifmania.co.uk/Objects-Animated-Gifs/Animated-Toys/Rock-Paper-Scissors/Rock-Paper-Scissors-87021.gif">
 
