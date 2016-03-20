@@ -35,7 +35,7 @@ You'll then be invited to choose a weapon from Rock, Paper, Scissors, Lizard and
 
 If you are lucky, Computer might let you win (but not always).
 
-Or, click [here](https://sheltered-anchorage-61043.herokuapp.com/) to play it live. Have fun! :sunglasses:
+Or, click [here](https://junyuan-rps.herokuapp.com/) to play it live. Have fun! :sunglasses:
 
 Testing
 --------
