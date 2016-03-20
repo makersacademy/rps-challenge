@@ -36,3 +36,8 @@ h3 {
   height: 300px;
   width: auto;
 }
+
+#multiform {
+  color: LightSlateGray;
+  font-size: 13px;
+}
