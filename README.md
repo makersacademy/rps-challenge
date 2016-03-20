@@ -1,15 +1,15 @@
 [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 
-RPS Challenge
+Rock, Paper, Scissors, Lizard, Spock
 ==================
 
-![Screenshot](http://i.imgur.com/IGZ8q3w.png)
+![Screenshot](http://i.imgur.com/PQqbCpt.png)
 
 Introduction
 -------------
-:punch: :wave: :v:
+:punch: :wave: :v: :crocodile: 🖖
 
-Welcome to Rock, Paper, Scissors! This is a little web app that allows you to play your [classic childhood game](https://en.wikipedia.org/wiki/Rock-paper-scissors) whenever you need to get away for a bit from your daily grind.
+Welcome to Rock, Paper, Scissors, Lizard, Spock! This is a little web app that allows you to play your [classic childhood game](https://en.wikipedia.org/wiki/Rock-paper-scissors) with additional weapons of [Lizard and Spock](https://en.wikipedia.org/wiki/Rock-paper-scissors#Additional_weapons), whenever you need to get away for a bit from your daily grind.
 
 Features
 -------------
@@ -29,9 +29,9 @@ Then, in your browser, type in `http://localhost:4567/`. You should see the `ind
 
 As instructed, enter players' names to start the game. Fill in the first field only if you wish to play against Computer.
 
-You'll then be invited to choose a weapon from Rock, Paper and Scissors.
+You'll then be invited to choose a weapon from Rock, Paper, Scissors, Lizard and Spock.
 
-![Screenshot](http://i.imgur.com/xs96HA1.png)
+![Screenshot](http://i.imgur.com/JRz8aWv.png)
 
 If you are lucky, Computer might let you win (but not always). Have fun! :sunglasses:
 
