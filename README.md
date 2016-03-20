@@ -1,5 +1,12 @@
 # Rock Paper Scissors
 
+
+!(/screenshots/welcome.png)
+
+!(/screenshots/play.png)
+
+!(/screenshots/results.png)
+
 Links
 ===
 
