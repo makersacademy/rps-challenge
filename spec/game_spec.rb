@@ -25,9 +25,9 @@ describe Game do
       p2_game = described_class.new(p1_paper, p2_scissors)
       expect(p2_game.return_winner).to eq(p2_scissors)
     end
-    it '1.2. annouces tie when p1 and p2 choose same move' do
-      tie_game = described_class.new(p1_scissors, p2_scissors)
-      expect(tie_game.return_winner).to eq('tie')
+    it '1.2. annouces draw when p1 and p2 choose same move' do
+      draw_game = described_class.new(p1_scissors, p2_scissors)
+      expect(draw_game.return_winner).to eq('draw')
     end
   end
 end

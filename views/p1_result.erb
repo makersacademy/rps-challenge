@@ -1,0 +1,21 @@
+<div>
+  <h2>You have chosen... <%= RPS.game.p1.move %>!</h2>
+</div>
+<div>
+  <h3><%= RPS.game.p2.name %> has chosen... <%= RPS.game.p2.move %>!</h3>
+</div>
+<div>
+  <% if @winner == 'draw' %>
+    <h2>You and <%= RPS.game.p2.name %> draw!</h2>
+  <% elsif @winner == RPS.game.p1.name %>
+    <h2>You win!</h2>
+  <% else %>
+    <h2><%= @winner %> wins!</h2>
+  <% end %>
+</div>
+
+<div>
+  <form action='/p1_result' method='post'>
+    <input type='submit' value='Next round!'>
+  </form>
+</div>

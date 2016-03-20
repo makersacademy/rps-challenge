@@ -13,8 +13,8 @@ feature 'Result page: winner decleration' do
     expect(page).to have_content('Misa has chosen... ROCK!')
   end
 
-  scenario '0.1. Displays computer\'s choice' do
-    expect(page).to have_content('Clems has chosen... SCISSORS!')
+  scenario '0.1. Displays player2\'s choice' do
+    expect(page).to have_content('You have chosen... SCISSORS!')
   end
 
   scenario '0.2. Annouce winner' do

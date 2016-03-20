@@ -55,30 +55,50 @@ class RPS < Sinatra::Base
 
   post '/p1_play' do
     RPS.game.p1.choose(params[:move])
-    RPS.game.p2.chosen? ? redirect('/result') : redirect('/p1_chosen')
+    RPS.game.p2.chosen? ? redirect('/p1_result') : redirect('/p1_chosen')
   end
 
   get '/p1_chosen' do
-    RPS.game.p2.chosen? ? redirect('/result') : erb(:p1_chosen)
+    RPS.game.p2.chosen? ? redirect('/p1_result') : erb(:p1_chosen)
   end
 
   post '/p2_play' do
     RPS.game.p2.choose(params[:move])
-    RPS.game.p1.chosen? ? redirect('/result') : redirect('/p2_chosen')
+    RPS.game.p1.chosen? ? redirect('/p2_result') : redirect('/p2_chosen')
   end
 
   get '/p2_chosen' do
-    RPS.game.p1.chosen? ? redirect('/result') : erb(:p2_chosen)
+    RPS.game.p1.chosen? ? redirect('/p2_result') : erb(:p2_chosen)
   end
 
-  get '/result' do
-    if RPS.game.return_winner == 'tie'
-      @winner = 'tie'
+  get '/p1_result' do
+    if RPS.game.return_winner == 'draw'
+      @winner = 'draw'
     else
       @winner = RPS.game.return_winner.name
     end
-    erb(:result)
+    erb(:p1_result)
   end
+
+  get '/p2_result' do
+    if RPS.game.return_winner == 'draw'
+      @winner = 'draw'
+    else
+      @winner = RPS.game.return_winner.name
+    end
+    erb(:p2_result)
+  end
+
+  post '/p1_result' do
+    RPS.game.p1.reset_choice
+    redirect '/p1_play'
+  end
+
+  post '/p2_result' do
+    RPS.game.p2.reset_choice
+    redirect '/p2_play'
+  end
+
 
   private
 

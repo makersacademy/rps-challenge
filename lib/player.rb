@@ -19,4 +19,8 @@ class Player
   def chosen?
     !!@move
   end
+
+  def reset_choice
+    @move = nil
+  end
 end

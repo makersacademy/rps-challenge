@@ -16,7 +16,7 @@ class Game
 
   def return_winner
     move_to_val
-    return 'tie' if @p1_val == @p2_val
+    return 'draw' if @p1_val == @p2_val
     p1_win? ? @p1 : @p2
   end
 
