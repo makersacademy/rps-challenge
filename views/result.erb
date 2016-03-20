@@ -3,7 +3,6 @@
 <p><%= @game.player2_name %>'s weapon: <%= @game.player2_weapon %></p>
 <% if @game.tie %>
   <h2>It's a tie. Nobody wins.</h2>
-<% end %>
-<% if !@game.tie %>
-  <h2><%= @game.winner %> wins! 1 point awarded to <%= @game.winner %></h2>
+<% else %>
+  <h2><%= @game.winner %> wins a point.</h2>
 <% end %>

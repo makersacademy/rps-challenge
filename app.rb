@@ -34,6 +34,8 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @game.rps(@game.player1_weapon,@game.player2_weapon)
+    puts @game.winner
+    puts @game.tie
     erb(:result)
   end
 

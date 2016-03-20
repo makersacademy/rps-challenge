@@ -13,7 +13,7 @@ class Player
     if choice == :random
       @weapon = WEAPONS[random_number].to_sym
     else
-      @weapon = choice
+      @weapon = choice.to_sym
     end
   end
 

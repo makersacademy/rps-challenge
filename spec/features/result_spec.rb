@@ -19,11 +19,15 @@ feature 'result_spec: Display results' do
 
   scenario '3. display the winner' do
     click_button("Rock")
-    expect(page).to have_content('Computer wins!')
+    expect(page).to have_content('Computer wins a point.')
   end
 
   scenario '4. display round as a tie' do
     click_button('Paper')
     expect(page).to have_content('It\'s a tie. Nobody wins.')
+  end
+
+  scenario '5. has a button to continue the match' do
+    expect(page).to have_button('Next round')
   end
 end
