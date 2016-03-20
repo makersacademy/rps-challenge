@@ -42,10 +42,10 @@ class RPS < Sinatra::Base
   get '/attack' do
     @game = Game.current_game
     @attack = params[:attack]
-    (@game.player_2 == nil) ? @game.player.store_attack(@attack) : @game.player_2.store_attack(@attack)
+    @game.single_player? ? @game.player.store_attack(@attack) : @game.player_2.store_attack(@attack)
     @player_1 = @game.player.name
-    (@game.player_2 == nil) ? (@player_2 = "Your opponent") : (@player_2 = @game.player_2.name)
-    (@game.player_2 == nil) ? (@return_attack = @game.attack) : (@return_attack = @game.player_2.last_move?)
+    @game.single_player? ? (@player_2 = "Your opponent") : (@player_2 = @game.player_2.name)
+    @game.single_player? ? (@return_attack = @game.attack) : (@return_attack = @game.player_2.last_move?)
     @outcome = @game.outcome
     erb :attack
   end
@@ -59,6 +59,5 @@ class RPS < Sinatra::Base
     erb :first_attack
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

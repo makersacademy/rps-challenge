@@ -44,6 +44,10 @@ class Game
     end
   end
 
+  def single_player?
+    @player_2 == nil
+  end
+
 private
 
   def player_wins?
@@ -56,10 +60,6 @@ private
 
   def player_draws?
     ((@player.last_move? == "Scissors") && (@attack == "Scissors")) || ((@player.last_move? == "Rock") && (@attack == "Rock")) || ((@player.last_move? == "Paper") && (@attack == "Paper"))
-  end
-
-  def single_player?
-    @player_2 == nil
   end
 
 end
