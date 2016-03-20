@@ -7,6 +7,5 @@ game = Game.create(p1, p2)
 game.make_player_choice("Paper")
 game.switch_turn
 game.make_player_choice("Scissors")
-binding.pry
 game.results_message
 

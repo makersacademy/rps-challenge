@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    if @game.player1_turn == true
+    if @game.player1_turn
       @game.switch_turn
       redirect('/play')
     elsif @game.winner.nil?
