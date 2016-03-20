@@ -1,6 +1,7 @@
 Rock, Paper, Scissors Challenge [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 ===============================
 
+
 The task was to build a game of rock, paper, scissors that a user could play on the web.
 
 **Features of the game included:**
@@ -24,4 +25,34 @@ After getting the tests to work correctly I started adding in multiplayer mode. 
 
 Testing included RSpec unit tests for both the Player and Game classes. Feature testing was implemented with Capybara. As it currently stands the coverage of all feature and unit tests are at 97.86%.
 
-**Yasmin Green**
+I deployed the app to Heroku and you can view it **[here](https://hidden-garden-50612.herokuapp.com/?).**
+
+Screenshots of the app below:
+-----------------------------
+
+Home page:
+
+![Screenshot](http://imgur.com/x1QeevT)
+
+Single player mode:
+
+![Screenshot](http://imgur.com/PP0xpER)
+
+Multiplayer mode:
+
+![Screenshot](http://imgur.com/oN0KUgW)
+
+Picking weapon:
+
+![Screenshot](http://imgur.com/13l1MNv)
+
+Winner page:
+
+![Screenshot](http://imgur.com/FaNRRrd)
+
+Draw page:
+
+![Screenshot](http://imgur.com/fM5T3T4)
+
+
+**Author: Yasmin Green**
