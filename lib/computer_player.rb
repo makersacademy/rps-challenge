@@ -1,15 +1,17 @@
+require 'player'
+
 class ComputerPlayer
 
-  @attack_list = [
-    :paper ,
-    :rock ,
-    :scissors ,
-    :lizard ,
-    :spock
-  ]
+  include Player
 
-  def self.pick_attack
-    @attack_list.sample
+  def pick_attack
+    [
+      :paper ,
+      :rock ,
+      :scissors ,
+      :lizard ,
+      :spock
+    ].sample
   end
 
 end
