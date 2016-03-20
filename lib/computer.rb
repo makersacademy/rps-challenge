@@ -1,5 +1,4 @@
 class Computer
-
   attr_reader :name, :weapon
 
   def initialize
