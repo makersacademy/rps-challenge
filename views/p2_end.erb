@@ -1,0 +1,25 @@
+<center>
+  <BR>
+  <div>
+    <h2>You have exited the game...</h2>
+  </div>
+  <div>
+    <h3>Final result</h3>
+  </div>
+  <div>
+    <h3><%= RPS.game.p1.name %>: <%= RPS.game.p1.score %> / You: <%= RPS.game.p2.score %> </h3>
+  </div>
+  <BR>
+  <div>
+  <% if RPS.game.p2.score > RPS.game.p1.score %>
+    <h2>Woohoo! You've won against <%= RPS.game.p1.name %> ;)</h2>
+  <% elsif RPS.game.p2.score < RPS.game.p1.score %>
+    <h2>Damn! You've lost against <%= RPS.game.p1.name %>... :(</h2>
+  <% else %>
+    <h2>Draw game :P</h2>
+  <% end %>
+  </div>
+  <div>
+    <h3>See you next time!</h3>
+  </div>
+</center>
