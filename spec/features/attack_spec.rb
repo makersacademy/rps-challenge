@@ -23,4 +23,18 @@ feature '#attack' do
     click_button "Scissors"
     expect(page).to have_content("Your opponent played Rock.")
   end
+
+  scenario '>should be allowed to play again after attack' do
+    sign_in_and_play
+    click_button "Scissors"
+    click_button "Play Again"
+    expect(page).to have_content("Hi, Name. Rock, paper, scissors?")
+  end
+
+  scenario '>should tell you if you win' do
+    allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
+    sign_in_and_play
+    click_button "Paper"
+    expect(page).to have_content("You win this round!")
+  end
 end

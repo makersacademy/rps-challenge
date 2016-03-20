@@ -1,3 +1,7 @@
 <center>
 <h2>You played <%=@attack%>.</h2>
 <h2>Your opponent played <%=@return_attack%>.</h2>
+<h2>You <%=@outcome.to_s%> this round!</h2>
+<form action='/play' method='get'>
+  <input type='submit' value='Play Again'>
+</form>

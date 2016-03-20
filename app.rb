@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -13,14 +14,16 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.current_game
-    @name = @game.player_name
+    @name = @game.player.name
     erb :play
   end
 
   get '/attack' do
-    @attack = params[:attack]
     @game = Game.current_game
+    @attack = params[:attack]
+    @game.player.store_attack(@attack)
     @return_attack = @game.attack
+    @outcome = @game.outcome
     erb :attack
   end
 
