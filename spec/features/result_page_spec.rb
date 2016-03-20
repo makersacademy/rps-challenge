@@ -6,4 +6,10 @@ feature 'result_page' do
     click_button 'Submit'
     expect(page).to have_text 'Rock'
   end
+
+  scenario 'returns computer choice' do
+    sign_in_and_play
+    click_button 'Submit'
+    expect(page).to have_text 'the computer picked'
+  end
 end

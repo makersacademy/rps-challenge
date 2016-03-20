@@ -15,7 +15,6 @@ class Rps < Sinatra::Base
   post '/result' do
     @your_choice = params[:attack]
     @computer_choice = Randomiser.new.computer
-    
     erb(:result_page)
   end
 
