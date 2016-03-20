@@ -43,9 +43,8 @@ class Rpsls < Sinatra::Base
   get '/attack_resolution' do
     @player_one_atk = @game.p_one_sign
     @player_two_atk = @game.p_two_sign
-
-    @winner = @game.pick_winner
-    # @winner.add_win unless @winner == :draw
+    @game.pick_winner
+    @winner_name = @game.show_winner
 
     erb :attack_resolution
   end

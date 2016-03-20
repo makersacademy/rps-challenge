@@ -5,8 +5,8 @@
 <div><%= @player_one_name %> attacks with: <%= @player_one_atk %> </div>
 <div><%= @player_two_name %> attacks with: <%= @player_two_atk %> </div>
 
-<% if @winner != :draw%>
-<div><%= @winner.nickname%> wins the round!</div>
+<% if @winner_name != :draw%>
+<div><%= @winner_name%> wins the round!</div>
 <% else %>
 <div>This round ends in a draw!</div>
 <% end %>

@@ -15,15 +15,14 @@ class Game
     @p_two_sign = sign.to_sym
   end
 
-  def compute_turn
-    return :draw if @p_one_sign == @p_two_sign
-
+  def pick_winner
+    @winner = compare_weapons
+    @winner.add_win unless @winner == :draw
   end
 
-  def pick_winner
-    winner = compare_weapons
-    winner.add_win unless winner == :draw
-    winner
+  def show_winner
+    return :draw if @winner == :draw
+    @winner.nickname.dup
   end
 
   private
