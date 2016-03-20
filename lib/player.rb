@@ -11,6 +11,18 @@ module Player
     @win = false
   end
 
+  def played!
+    @played = true
+  end
+
+  def played?
+    @played
+  end
+
+  def turn_finished!
+    @played = false
+  end
+
   def win?
     @win
   end
@@ -26,5 +38,6 @@ module Player
     @name = name
     @wins = 0
     @win = false
+    @played = false
   end
 end

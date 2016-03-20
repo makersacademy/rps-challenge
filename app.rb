@@ -13,26 +13,70 @@ class Rps < Sinatra::Base
 
   post '/login' do
     session[:me] = params[:player_name]
-    Game.create(player1_name:session[:me])
-    redirect '/play'
+    if params[:number_of_players] == 'one'
+      Game.create_ai(player1_name:session[:me])
+      redirect '/play'
+    else
+      if Game.instance.nil?
+        Game.create(player1_name:session[:me])
+      else
+        Game.instance.add_player(player_name: session[:me])
+      end
+      redirect '/login_wait'
+    end
+  end
+
+  get '/login_wait' do
+    @login = true
+    erb(:wait)
+  end
+
+  post '/login_check' do
+    @game = Game.instance
+    @opponent = @game.find_opponent(session[:me])
+    @opponent.nil? ? redirect('/login_wait') : redirect('/play')
   end
 
   get '/play' do
     @game = Game.instance
-    @me = @game.player1
-    @opponent = @game.player2
+    @me = @game.find_me(session[:me])
+    @opponent = @game.find_opponent(session[:me])
     erb(:play)
   end
 
   post '/turn' do
     redirect '/nothing_selected' if params[:play].nil?
     @game = Game.instance
-    @game.player1.play(params[:play].to_sym)
-    @game.player2.play
-    @game.winner
     @game.in_progress!
-    puts "Draw: #{@game.in_progress? && !@game.player1.win? && !@game.player2.win?}"
-    redirect '/play'
+    @game.find_me(session[:me]).play(params[:play].to_sym)
+
+    if Game.number_of_players == 1
+      @game.find_opponent(session[:me]).play
+      @game.winner
+      @game.turn_finished!
+      puts "Draw: #{@game.in_progress? && !@game.player1.win? && !@game.player2.win?}"
+      redirect '/play'
+    else
+      redirect '/play_wait'
+    end
+  end
+
+  get '/play_wait' do
+    @login = false
+    erb(:wait)
+  end
+
+  post '/play_check' do
+    @game = Game.instance
+    if @game.both_played?
+      @game.winner
+      @game.turn_finished!
+      redirect '/play'
+    elsif @game.turn_finished?
+      redirect '/play'    
+    else
+      redirect '/play_wait'
+    end
   end
 
   post '/new' do

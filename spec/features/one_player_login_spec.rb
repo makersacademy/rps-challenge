@@ -1,4 +1,4 @@
-RSpec.feature "Login:", :type => :feature do
+RSpec.feature "One player login:", :type => :feature do
 
   let(:player1) { double:Player, name: "player 1"}
   let(:player2) { double:Player, name: "player 2"}
@@ -19,7 +19,7 @@ RSpec.feature "Login:", :type => :feature do
       expect(page).to have_button('Submit')
     end
 
-    sign_in_one_player(player1.name)
+    sign_in_one_player_game(player1.name)
 
     # on page 'play'
     within('h1') do

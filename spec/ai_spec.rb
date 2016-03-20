@@ -23,6 +23,8 @@ describe Ai do
     it { ai.play; expect(ai.move).to eq moves[1] }
     it { ai.play; ai.play; expect(ai.move).to eq moves[0] }
     it { ai.play; ai.play; ai.play; expect(ai.move).to eq moves[0] }
+    it { expect(ai).to be_played }
+
   end
 
 end

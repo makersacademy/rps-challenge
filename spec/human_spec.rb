@@ -19,10 +19,11 @@ describe Human do
   end
 
   describe '#move' do
-    it "returns the move selected" do
+    before do
       player.play(selected_move)
-      expect(player.move).to eq selected_move
     end
+    it { expect(player.move).to eq selected_move }
+    it { expect(player).to be_played }
   end
 
 end

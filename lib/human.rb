@@ -10,5 +10,6 @@ class Human
 
   def play(move)
     @move = move
+    played!
   end
 end

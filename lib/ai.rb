@@ -15,5 +15,6 @@ class Ai
   def play(move=nil)
     moves = Constants::MOVES.keys
     @move = moves[rand(moves.count)]
+    played!
   end
 end
