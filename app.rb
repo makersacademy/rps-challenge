@@ -15,6 +15,11 @@ class RPS < Sinatra::Base
   erb :play
   end
 
+  get '/attack' do
+    @attack = params[:attack]
+    erb :attack
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
