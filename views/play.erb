@@ -1,1 +1,8 @@
 <h1> Welcome <%= @player %>!</h1>
+
+<form action="/result">
+<input type="radio" name="rock" value="rock">Rock</input>
+<input type="radio" name="paper" value="paper">Paper</input>
+<input type="radio" name="scissors" value="scissors">Scissors</input>
+<button type="submit" value='play'>Play!</button>
+</form>

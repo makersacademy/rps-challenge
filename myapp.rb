@@ -17,6 +17,12 @@ class MyApp < Sinatra::Base
     erb :play
   end
 
+  get '/result' do
+    @player = session[:player]
+    erb :result
+  end
+
+
 
 # # start the server if ruby file executed directly
   run! if app_file == $0
