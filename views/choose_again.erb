@@ -1,4 +1,4 @@
-<h3>Wisely chosen! Now <%= @player_2_name %>'s turn to choose a weapon:</h3>
+<h3>Wisely chosen! Now <%= game.player_2.name %>'s turn to choose a weapon:</h3>
 <form action="/second-weapon" method="post">
   <button class="weapon" type="submit" name="rock">Rock</button>
   <button class="weapon" type="submit" name="paper">Paper</button>

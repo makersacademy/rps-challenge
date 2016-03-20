@@ -1,5 +1,5 @@
-<h1><%= @player_1_name %> vs <%= @player_2_name %></h1>
-<p><%= @player_1_name %>, choose your weapon:</p>
+<h1><%= game.player_1.name %> vs <%= game.player_2.name %></h1>
+<p><%= game.player_1.name %>, choose your weapon:</p>
 <form action="/weapon" method="post">
   <button class="weapon" type="submit" name="rock">Rock</button>
   <button class="weapon" type="submit" name="paper">Paper</button>
