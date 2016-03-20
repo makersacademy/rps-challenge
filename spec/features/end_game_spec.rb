@@ -8,7 +8,8 @@ feature 'End game page' do
     visit '/p1_play'
     click_button('ROCK')
     click_button('End game')
-    expect(page).to have_content('You have exited the game')
+    click_button('New game')
+    expect(page).to have_content('Rock-Paper-Scissors-Lizard-Spock!!!')
   end
 
   scenario '0.1. Player 2 ends the game' do
@@ -19,7 +20,7 @@ feature 'End game page' do
     visit '/p2_play'
     click_button('SCISSORS')
     click_button('End game')
-    expect(page).to have_content('You have exited the game')
+    click_button('New game')
+    expect(page).to have_content('Rock-Paper-Scissors-Lizard-Spock!!!')
   end
-
 end
