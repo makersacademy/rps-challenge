@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
+  post '/names' do
     Game.start_game(params[:player_one], params[:player_two] ||= "Computer")
     redirect '/play'
   end
