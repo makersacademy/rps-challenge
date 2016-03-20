@@ -1,34 +1,22 @@
-
+<center>
 Welcome to the game <%= @game.player_name(@game.player1) %> and <%= @game.player_name(@game.player2) %> 
 <div>
 It's <%= @game.player_name(@game.current_player) %>'s turn
-
-<form action='/rock' method='post'>
-  <div>
-    <button type='submit'><img src='images/rock.jpg'><div>Rock</div></button>
-  </div>
+<p></p><p></p>
+Choose wisely. There could be real-world consequences if you lose. Not saying there definitely will be. But there could be. 
+<p></p><p></p>
+<form action='/choice' method='post'>
+  <button type='submit' name='choice' value='Rock'><img src='images/rock.jpg'><div>'Rock'</button>
+  <button type='submit' name='choice' value='Paper'><img src='images/paper.jpg'><div>Paper</div></button>
+  <button type='submit' name='choice' value='Scissors'><img src='images/scissors.jpg'><div>Scissors</div></button>
+  <button type='submit' name='choice' value='Spock'><img src='images/spock.jpg'><div>Spock</div></button>
+  <button type='submit' name='choice' value='Lizard'><img src='images/lizard.jpg'><div>Lizard</div></button>
 </form>
+<p></p><p></p>
+If you don't know what's going on I have the utmost respect for you. Its basically a version of Rock Paper Scissors that was invented by seemingly lovely people and co-opted by the worst thing ever The Big Bang Theory. Here are the rules.
+<p></p><p></p>
+<div>
+  <img src='images/rules.jpg'>
+</div>
 
-
-<form action='/paper' method='post'>
-  <button type='submit'><img src='images/paper.jpg'><div>Paper</div></button>
-  </div>
-</form>
-
-
-<form action='/scissors' method='post'>
-    <button type='submit'><img src='images/scissors.jpg'><div>Scissors</div></button>
-</form>
-
-
-<form action='/spock' method='post'>
-    <button type='submit'><img src='images/spock.jpg'><div>Spock</div></button>
-</form>
-
-<form action='/lizard' method='post'>
-    <button type='submit'><img src='images/lizard.jpg'><div>Lizard</div></button>
-</form>
-
-<img src="images/spock.jpg>
-
-
+</center>

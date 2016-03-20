@@ -14,27 +14,36 @@ describe Game do
   describe '#initialize' do
 
     it 'will accept a player instance and return that instance in player' do
-    expect(game.player1).to eq player1
+      expect(game.player1).to eq player1
     end
   end
 
   describe '#results_message' do
-    it 'will return tie if player_2_choice and player_choice are equal' do
+
+    it 'will return tie if player2_choice and player1_choice are equal' do
       allow(player2).to receive(:choice) { 'Rock' }
       allow(player1).to receive(:choice) { 'Rock' }
-      expect(game.results_message).to eq 'The game was a tie'
+      expect(game.winner).to eq nil
     end
 
-    it 'will return player 1 wins  if player_choice beats player_2_choice' do
+    it 'will return player 1 wins  if player1_choice beats player2_choice' do
       allow(player2).to receive(:choice) { 'Lizard' }
       allow(player1).to receive(:choice) { 'Rock' }
-      expect(game.results_message).to eq 'Charlie wins'
+      expect(game.winner).to eq player1
     end
 
-    it 'will return player 2 wins if player_2_choice beats player_choice' do
+    it 'will return player 2 wins if player2_choice beats player1_choice' do
       allow(player2).to receive(:choice) { 'Scissors' }
       allow(player1).to receive(:choice) { 'Lizard' }
-      expect(game.results_message).to eq 'Roxanne wins'
+      expect(game.winner).to eq player2
+    end
+  end
+  
+  describe '#switch_turn' do
+
+    it 'will change current_player from player1 to player2' do
+      expect{ game.switch_turn }.to change{ game.current_player }.from(player1).to(player2)
+      game.switch_turn
     end
   end
 end

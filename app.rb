@@ -22,29 +22,8 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
-    @game = Game.instance
-    @game.make_player_choice('Rock')
-    redirect('/results')
-  end
-
-  post '/paper' do
-    @game.make_player_choice('Paper')
-    redirect('/results')
-  end
-
-  post '/scissors' do
-    @game.make_player_choice('Scissors')
-    redirect('/results')
-  end
-
-  post '/spock' do
-    @game.make_player_choice('Spock')
-    redirect('/results')
-  end
-
-  post '/lizard' do
-    @game.make_player_choice('Lizard')
+  post '/choice' do
+    @game.make_player_choice(params[:choice])
     redirect('/results')
   end
 
@@ -52,11 +31,12 @@ class RockPaperScissors < Sinatra::Base
     if @game.player1_turn == true
       @game.switch_turn
       redirect('/play')
+    elsif @game.winner == nil
+      erb(:tie)
     else
-    erb(:results)
+      erb(:win)
     end
   end
-
 
 
   # start the server if ruby file executed directly

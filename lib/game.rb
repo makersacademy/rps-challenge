@@ -1,6 +1,13 @@
 require './lib/player'
 
 class Game
+  
+  MOVES = {'Rock' => ['Scissors', 'Lizard'],
+           'Paper' => ['Rock', 'Spock'],
+           'Scissors' => ['Spock', 'Paper'],
+           'Spock' => ['Rock', 'Scissors'],
+           'Lizard' => ['Spock', 'Paper'] }
+
 
   attr_reader :player1, :player2, :player1_turn
 
@@ -16,7 +23,6 @@ class Game
     @player1 = player1
     @player2 = player2    
     @player1_turn = true
-    moves
   end
 
   def current_player
@@ -27,6 +33,16 @@ class Game
     player.name
   end  
 
+  def winner
+    if tie?
+      nil
+    elsif player1_wins?
+      player1
+    else
+      player2
+    end
+  end
+
   def make_player_choice(choice)
     current_player.make_choice(choice)
   end
@@ -36,15 +52,6 @@ class Game
   end
   
 
-  def results_message
-    if tie?
-      'The game was a tie'
-    elsif player1_wins?
-      "#{player1.name} wins"
-    else 
-      "#{player2.name} wins"
-    end
-  end
   
   def switch_turn
     @player1_turn = !@player1_turn
@@ -52,28 +59,13 @@ class Game
  
   private
 
+  
+  def player1_wins?
+    MOVES[player_choice(player1)].include? player_choice(player2)
+  end
+
   def tie?
     player_choice(player1) == player_choice(player2)
-  end
+  end 
 
-  def moves
-    @moves = ['Scissors', 'Rock', 'Spock', 'Paper', 'Lizard']
-  end
-
-  def moves_index
-    @moves_index = ['Spock', 'Rock', 'Scissors', 'Lizard', 'Paper']
-  end
-
-  def num_of_shifts
-    @num_of_shifts = moves_index.index(player_choice(player1)) 
-  end
-
-  def set_moves_order
-    num_of_shifts.times { @moves.unshift(@moves.pop) }
-  end
-
-  def player1_wins?
-    set_moves_order
-    @moves.index(player_choice(player1)) > @moves.index(player_choice(player2)) 
-  end
 end
