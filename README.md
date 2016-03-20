@@ -12,6 +12,7 @@ I took a TDD approach and created RSpec feature tests and unit tests to drive de
 
 Technologies used
 * sinatra framework
+* Capybara
 * Ruby 2.2.3
 * HTML
 * RSpec 3.3.2
