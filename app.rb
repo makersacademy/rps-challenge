@@ -41,7 +41,7 @@ class RPS < Sinatra::Base
   end
 
   get '/enter_game' do
-    RPS.store_game(Game.new(RPS.entry.list[:p1], RPS.entry.list[:p2]))
+    RPS.initialize_game(Game.new(RPS.entry.list[:p1], RPS.entry.list[:p2]))
     erb(:enter_game)
   end
 
@@ -114,7 +114,7 @@ class RPS < Sinatra::Base
   end
 
   post '/p1_end' do
-    RPS.game.begin_game
+    RPS.end_session
     redirect '/'
   end
 
@@ -124,18 +124,22 @@ class RPS < Sinatra::Base
   end
 
   post '/p2_end' do
-    RPS.game.begin_game
+    RPS.end_session
     redirect '/'
   end
 
   private
 
-  def self.store_game(game)
+  def self.initialize_game(game)
     @game = game
   end
 
   def self.game
     @game
+  end
+
+  def self.end_session
+    @game = nil
   end
 
   def self.initialize_entry(entry)
