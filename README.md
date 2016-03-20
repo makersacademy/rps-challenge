@@ -9,7 +9,7 @@ Introduction
 -------------
 :punch: :wave: :v:
 
-Welcome to Rock, Paper, Scissors! This is a little web app that allows you to play the classic childhood game whenever you need to get away for a bit from your daily grind.
+Welcome to Rock, Paper, Scissors! This is a little web app that allows you to play your [classic childhood game](https://en.wikipedia.org/wiki/Rock-paper-scissors) whenever you need to get away for a bit from your daily grind.
 
 Features
 -------------
@@ -33,15 +33,14 @@ As instructed, enter players' names to start the game. Fill in the first field o
 
 You'll then be invited to choose a weapon from Rock, Paper and Scissors.
 
-And if you are lucky, Computer will let you win (not always :P).
-
-![Screenshot](http://i.imgur.com/FSVJTjy.png)
-
-Have fun! :sunglasses:
+And if you are lucky, Computer will let you win (not always). Have fun! :sunglasses:
 
 Testing
 --------
-The app is tested using Capybara with RSpec. To run the tests, simply type `rspec` in the app's root directory.
+The app is tested using Capybara with RSpec. To run the tests, make sure you are under the app's root directory and type in your terminal:
+```
+$ rspec
+```
 
 
 Tools used
