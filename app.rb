@@ -14,7 +14,15 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @shape = session[:shape]
+    @opponent_shape = session[:opponent_shape]
     erb :play
+  end
+
+  post '/play' do
+    session[:shape] = params[:shape]
+    session[:opponent_shape] = :rock
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
