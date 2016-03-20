@@ -1,94 +1,32 @@
 # RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/paulalexrees/rps-challenge.svg?branch=master)](https://travis-ci.org/paulalexrees/rps-challenge)
 
-Instructions
--------
+This is my submission for the Rock, Paper, Scissors week 3 challenge:
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+It runs on a Sinatra local server:
 
-Task 
-----
+`ruby app.rb`
 
-Knowing how to build web applications is getting us almost there as web developers!
+Or it is deployed on Heroku:
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+`https://pauly-rps.herokuapp.com`
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+A 1-player game can be started by selecting the **1P vs AI** button on the home page.
+Enter your name, and you are taken to the Play screen with your AI opponent, **Thinking Emoji**.
+Selecting rock, paper or scissors from the list takes you to the results screen where you find out the result against the Emoji's randomly selected gesture.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+**Bonus #1**
+------------
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+A 2-player game can be started by selecting the **1P vs 2P** buttons on the home page.
+Enter both players' names, and you are taken to the Play screen, where both players have a choice of rock, paper or scissors.
 
-Hints on functionality
+If either player selects their gesture (preferably with the other player not watching...), their selections are removed and a waiting gif replaces them.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Once the second player has selected their gesture, they are taken to the results screen to find out the outcome.
 
+**To Do: Bonus 2**
+------------------
+I spent a lot of time finding out about presentation using CSS and HTML so didn't have time to implement the extra rules - I intend to do this when I have time as I'm now more confident in being able to restructure the play screen to fit more gestures.
 
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+Having made a start on multi-browser games during the Battle challenge, I'd like to give that a go as well.
