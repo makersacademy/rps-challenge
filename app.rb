@@ -21,19 +21,22 @@ class RPS < Sinatra::Base
     @game = Game.current_game
     @player1 = @game.player1
     @player2 = @game.player2
-
+    redirect('/game_over') if @game.game_over?
     erb(:duel)
   end
 
   post '/attack' do
     @game = Game.current_game
-    redirect('/game_over') if @game.match_winner != nil
-
     @game.new_round
     @game.player1_play(params[:attack])
     @game.player2_play
     @game.update_score
     erb(:attack)
+  end
+
+  get '/game_over' do
+    @game = Game.current_game
+    erb(:game_over)
   end
 
   # start the server if ruby file executed directly
