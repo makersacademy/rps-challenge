@@ -20,26 +20,25 @@ class Game
 
   end
 
-  def choose_winner
-    return :draw if @p_one_sign == @p_two_sign
-    p_one_won = case @p_one_sign
-    when :paper then @p_two_sign == :rock || @p_two_sign == :spock
-    when :rock then @p_two_sign == :scissors || @p_two_sign == :lizard
-    when :scissors then @p_two_sign == :paper || @p_two_sign == :lizard
-    when :lizard then @p_two_sign == :spock || @p_two_sign == :paper
-    when :spock then @p_two_sign == :scissor || @p_two_sign == :rock
-    else raise "wrong attack type"
-    end
-    p_one_won ? @player_one : @player_two
+  def pick_winner
+    winner = compare_weapons
+    winner.add_win unless winner == :draw
+    winner
   end
 
   private
 
   def compare_weapons
     winners = {
-      
+      paper:    [:rock , :spock] ,
+      rock:     [:scissors , :lizard] ,
+      scissors: [:paper , :lizard] ,
+      lizard:   [:spock , :paper] ,
+      spock:    [:scissors , :rock]
     }
-
+    raise "wrong sign" if winners[@p_one_sign].nil? || winners[@p_two_sign].nil?
+    return :draw if @p_one_sign == @p_two_sign
+    ( winners[@p_one_sign].include? @p_two_sign ) ? @player_one : @player_two
   end
 
 end

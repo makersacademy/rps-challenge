@@ -44,8 +44,8 @@ class Rpsls < Sinatra::Base
     @player_one_atk = @game.p_one_sign
     @player_two_atk = @game.p_two_sign
 
-    @winner = @game.choose_winner
-    @winner.add_win unless @winner == :draw
+    @winner = @game.pick_winner
+    # @winner.add_win unless @winner == :draw
 
     erb :attack_resolution
   end
