@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,12 +8,23 @@ class RPS < Sinatra::Base
   end
 
   post '/username' do
-    p params[:username]
+    Game.start(Player.new(params[:username]))
     redirect '/play'
   end
 
-  post '/play' do
+  get '/play' do
+    @player =  Game.player
     erb :play
+  end
+
+  post '/selection' do
+    Game.player.chooses params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player =  Game.player
+    erb :result
   end
 
   # start the server if ruby file executed directly
