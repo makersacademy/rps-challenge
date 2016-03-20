@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  background: rgba(135, 244, 255, 0.69);
+}
+
+.rps_list {
+  float: right;
+  margin-right: -10px;
+}
+
+.rps_item {
+  display: block;
+  /*border: 1px black solid;*/
+  /*height: 200px;*/
+}
+
+.box {
+  width: 400px;
+  box-shadow: 1px 1px 3px #888888;
+  height: 300px;
+  padding: 10px 10px;
+  display: inline-block;
+  background: white;
+}
+
+.big {
+  height: 450px;
+}

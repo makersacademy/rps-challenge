@@ -1,3 +1,9 @@
-<p>You chose <%= @game.player.selected %></p>
-<p>Computer chose <%= @game.selected %></p>
-<p><%= @game.result %></p>
+<div class='box'>
+  <h1>Result</h1>
+  <h2><%= @game.result.capitalize %></h2>
+  <p>You chose <%= @game.player.selected %></p>
+  <p>Computer chose <%= @game.selected %></p>
+  <form action='/back_to_play' method='get'>
+    <button type='submit'>Play again</button>
+  </form>
+</div>

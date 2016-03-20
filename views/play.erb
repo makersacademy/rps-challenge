@@ -1,9 +1,19 @@
-<h1>Hello <%= @player.name %>!</h1>
+<div class='box big'>
+  <p>
+    Choose your weapon <%= @player.name %>
 
-<p>
-  <form action='/selection' method='post'>
-    <input type='image' name='choice' value='rock' src="https://s-media-cache-ak0.pinimg.com/30x30/40/b5/38/40b5389dfa57a717a8cef4867801c0bf.jpg">
-    <button type='submit' name='choice' value='paper'>Paper</button>
-    <button type='submit' name='choice' value='scissors'>Scissors</button>
-  </form>
-</p>
+    <form action='/selection' method='post'>
+      <div class='rps_list'>
+        <div class="rps_item rock">
+          <input type='image' name='choice' value='rock' src='/images/rock.jpg' height='100px'>
+        </div>
+        <div class="rps_item">
+          <input type='image' name='choice' value='paper' src='/images/paper.jpg' height='100px'>
+        </div>
+        <div class="rps_item">
+          <input type='image' name='choice' value='scissors' src='/images/scissors.jpg' height='100px'>
+        </div>
+      </div>
+    </form>
+  </p>
+</div>
