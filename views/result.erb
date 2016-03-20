@@ -6,3 +6,9 @@
 <% else %>
   <h2><%= @game.winner %> wins a point.</h2>
 <% end %>
+<form action="/next" method="get">
+  <input type="submit" value="Next round" />
+</form>
+<form action="/" method="get">
+  <input type="submit" value="Quit game" />
+</form>

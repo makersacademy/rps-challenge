@@ -34,9 +34,15 @@ class Rps < Sinatra::Base
 
   get '/result' do
     @game.rps(@game.player1_weapon,@game.player2_weapon)
-    puts @game.winner
-    puts @game.tie
     erb(:result)
+  end
+
+  get '/tie' do
+    erb(:tie)
+  end
+
+  get '/next' do
+    erb(:next)
   end
 
   run! if app_file == $0

@@ -2,7 +2,7 @@ class Player
 
   WEAPONS = ["Rock", "Paper", "Scissors"]
 
-  attr_reader :name, :score, :weapon
+  attr_reader :name, :score, :weapon, :score
 
   def initialize(name)
     @name = name
@@ -15,6 +15,10 @@ class Player
     else
       @weapon = choice.to_sym
     end
+  end
+
+  def win
+    @score += 1
   end
 
   private

@@ -25,4 +25,10 @@ describe Player do
       expect(player.weapon).to eq :Paper
     end
   end
+
+  describe '#win' do
+    it 'increases score by one after a win' do
+      expect{ player.win }.to change{ player.score }.by 1
+    end
+  end
 end

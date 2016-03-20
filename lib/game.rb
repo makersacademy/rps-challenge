@@ -38,6 +38,14 @@ class Game
     @player2.weapon
   end
 
+  def player1_score
+    @player1.score
+  end
+
+  def player2_score
+    @player2.score
+  end
+
   def rps(player1, player2)
     if player1 == player2
       tie_round
@@ -61,9 +69,11 @@ class Game
 
     def p1_wins
       @winner = @player1.name
+      @player1.win
     end
 
     def p2_wins
       @winner = @player2.name
+      @player2.win
     end
 end

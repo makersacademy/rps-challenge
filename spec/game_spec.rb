@@ -51,13 +51,33 @@ describe Game do
     end
   end
 
+  context 'points display' do
+    describe '#player1_points' do
+      it 'returns player one\'s points' do
+        allow(player1).to receive(:score).and_return(2)
+        expect(game.player1_score).to eq 2
+        game.player1_score
+      end
+    end
+    describe '#player2_points' do
+      it 'returns player 2\'s points' do
+        allow(player2).to receive(:score).and_return(2)
+        expect(game.player2_score).to eq 2
+        game.player2_score
+      end
+    end
+  end
+
+
   context 'playing a round' do
     describe '#rps' do
       it 'returns the player 1 as winner' do
+        allow(player1).to receive(:win)
         game.rps(:Scissors, :Paper)
         expect(game.winner).to eq "Shane"
       end
       it 'returns the player 2 as winner' do
+        allow(player2).to receive(:win)
         game.rps(:Rock, :Paper)
         expect(game.winner).to eq "Blanche"
       end
