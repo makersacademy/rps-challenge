@@ -32,9 +32,12 @@
         style="background-image: url('<%= @game.player_2_image %>');
           background-repeat: no-repeat;
           background-size: contain;">
-
       </div>
     </div>
+    <form id='playagain' action= '/play'>
+      <input type='submit' value='Play Again!'/>
+    </form>
+
     <!-- Start of SimpleHitCounter Code -->
     <div id="counter">
       <a href="http://www.simplehitcounter.com" target="_blank">
