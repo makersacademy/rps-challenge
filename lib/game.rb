@@ -14,7 +14,6 @@ class Game
   def initialize(player1, player2 = 'SKYNET')
     @player1=player1
     @player2=player2
-    @turn = player1
     @score_p1=0
     @score_p2=0
   end
@@ -33,13 +32,8 @@ class Game
 private
 
   def score
-    case @win
-    when @player1.name
-      @score_p1+=1
-    when @player2.name
-      @score_p2+=1
-    else
-    end
+  @score_p1 += 1 if win == @player1.name
+  @score_p2 += 1 if win == @player2.name
   end
 
 end
