@@ -2,7 +2,10 @@ class Game
 
   RANKING = ['rock', 'paper', 'scissors', 'rock']
 
+  attr_reader :count
+
   def self.start player
+    self.count player
     @player = player
   end
 
@@ -41,4 +44,7 @@ class Game
   def self.trump
     RANKING.index(@player.selected) + 1
   end
+
+  def self.count player
+    @count += 1 unless player == ''
 end

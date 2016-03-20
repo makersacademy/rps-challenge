@@ -4,6 +4,7 @@ require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
+    Game.start ""
     erb :index
   end
 
@@ -30,6 +31,10 @@ class RPS < Sinatra::Base
 
   get '/back_to_play' do
     redirect '/play'
+  end
+
+  get '/count' do
+    "#{Game.count}"
   end
 
   # start the server if ruby file executed directly
