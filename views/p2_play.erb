@@ -1,0 +1,29 @@
+<center>
+  <BR>
+  <div>
+    <h3>Player 1: <%= RPS.game.p1.name %></h3>
+  </div>
+
+  <div>
+    <h3>VS.</h3>
+  </div>
+
+  <div>
+    <h2>Player 2: <%= RPS.game.p2.name %></h2>
+  </div>
+
+  <BR>
+  <div>
+    <h3>↓Choose your move below↓</h3>
+  </div>
+
+  <div>
+    <form action='/p2_play' method='post'>
+      <input type='submit' name='move' value='ROCK'>
+      <input type='submit' name='move' value='PAPER'>
+      <input type='submit' name='move' value='SCISSORS'>
+      <input type='submit' name='move' value='LIZARD'>
+      <input type='submit' name='move' value='SPOCK'>
+    </form>
+  </div>
+</center>

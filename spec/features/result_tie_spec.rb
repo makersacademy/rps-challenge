@@ -2,11 +2,11 @@ feature 'Result page: tie game' do
 
   before(:each) do
     enter_game
-    sign_in_and_play
-    allow(RPS.game.p2).to receive(:choose_random).and_return('ROCK')
-    allow(RPS.game.p2).to receive(:move).and_return('ROCK')
+    both_sign_in_and_enter_game
+    visit '/p1_play'
     click_button('ROCK')
-    visit '/result'
+    visit '/p2_play'
+    click_button('ROCK')
   end
 
   scenario '0.0. Displays player\'s choice' do

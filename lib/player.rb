@@ -15,4 +15,8 @@ class Player
   def choose_random
     @move = MOVES.sample
   end
+
+  def chosen?
+    !!@move
+  end
 end

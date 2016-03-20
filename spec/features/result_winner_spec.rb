@@ -1,12 +1,23 @@
 feature 'Result page: winner decleration' do
 
-  scenario '0.0. Annouce winner' do
+  before(:each) do
     enter_game
-    sign_in_and_play
-    allow(RPS.game.p2).to receive(:choose_random).and_return('SCISSORS')
-    allow(RPS.game.p2).to receive(:move).and_return('SCISSORS')
+    both_sign_in_and_enter_game
+    visit '/p1_play'
     click_button('ROCK')
-    visit '/result'
+    visit '/p2_play'
+    click_button('SCISSORS')
+  end
+
+  scenario '0.0. Displays player\'s choice' do
+    expect(page).to have_content('Misa has chosen... ROCK!')
+  end
+
+  scenario '0.1. Displays computer\'s choice' do
+    expect(page).to have_content('Clems has chosen... SCISSORS!')
+  end
+
+  scenario '0.2. Annouce winner' do
     expect(page).to have_content('Misa wins!')
   end
 end

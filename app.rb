@@ -20,11 +20,11 @@ class RPS < Sinatra::Base
 
   post '/p1_entry' do
     RPS.entry.add_entry(:p1, Player.new(params[:p1_name]))
-    RPS.entry.p2_not_entered? ? redirect('/p1_standby') : redirect('/play')
+    p2_not_entered? ? redirect('/p1_standby') : redirect('/enter_game')
   end
 
   get '/p1_standby' do
-    RPS.entry.p2_not_entered? ? erb(:p1_standby) : redirect('/play')
+    p2_not_entered? ? erb(:p1_standby) : redirect('/enter_game')
   end
 
   get '/p2_entry' do
@@ -33,22 +33,42 @@ class RPS < Sinatra::Base
 
   post '/p2_entry' do
     RPS.entry.add_entry(:p2, Player.new(params[:p2_name]))
-    RPS.entry.p1_not_entered? ? redirect('/p2_standby') : redirect('/play')
+    p1_not_entered? ? redirect('/p2_standby') : redirect('/enter_game')
   end
 
   get '/p2_standby' do
-    RPS.entry.p1_not_entered? ? erb(:p2_standby) : redirect('/play')
+    p1_not_entered? ? erb(:p2_standby) : redirect('/enter_game')
   end
 
-  get '/play' do
+  get '/enter_game' do
     RPS.store_game(Game.new(RPS.entry.list[:p1], RPS.entry.list[:p2]))
-    erb(:play)
+    erb(:enter_game)
   end
 
-  post '/play' do
+  get '/p1_play' do
+    erb(:p1_play)
+  end
+
+  get '/p2_play' do
+    erb(:p2_play)
+  end
+
+  post '/p1_play' do
     RPS.game.p1.choose(params[:move])
-    RPS.game.p2.choose_random
-    redirect '/result'
+    RPS.game.p2.chosen? ? redirect('/result') : redirect('/p1_chosen')
+  end
+
+  get '/p1_chosen' do
+    RPS.game.p2.chosen? ? redirect('/result') : erb(:p1_chosen)
+  end
+
+  post '/p2_play' do
+    RPS.game.p2.choose(params[:move])
+    RPS.game.p1.chosen? ? redirect('/result') : redirect('/p2_chosen')
+  end
+
+  get '/p2_chosen' do
+    RPS.game.p1.chosen? ? redirect('/result') : erb(:p2_chosen)
   end
 
   get '/result' do
@@ -76,6 +96,14 @@ class RPS < Sinatra::Base
 
   def self.entry
     @entry
+  end
+
+  def p2_not_entered?
+    RPS.entry.p2_not_entered?
+  end
+
+  def p1_not_entered?
+    RPS.entry.p1_not_entered?
   end
 
   # start the server if ruby file executed directly
