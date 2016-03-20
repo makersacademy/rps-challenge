@@ -16,13 +16,36 @@ lib holds the Model ruby files
 views folder holds the View feature erb files
 public folder holds images used in the project
 
-
+Gameplay
+-----------
 
 Installation Instructions
 -------
-start by cloning this repository
-<code>git clone</code>
+start by cloning this repository. In terminal or other Command line tool put in the below
 
+<code>git clone https://github.com/kevinpmcc/rps-challenge.git</code>
+
+next move into the project folder by entering
+
+<code>cd rps-challenge</code>
+
+If you know you have bundler installed skip this step. If you're not sure put in following
+
+<code>gem install bundler</code>
+
+from here install all necessary gems from the gemfile by entering
+
+<code>bundle install</code>
+
+and we're now ready to go. to run the game
+
+<code>ruby app.rb</code>
+
+and in your browser enter
+
+localhost:4567
+
+enjoy!
 
 Task 
 ----
