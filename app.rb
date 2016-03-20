@@ -33,8 +33,8 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  get '/count' do
-    "#{Game.count}"
+  get '/counter' do
+    "#{Game.counter}"
   end
 
   # start the server if ruby file executed directly

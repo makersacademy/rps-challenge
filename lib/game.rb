@@ -2,8 +2,6 @@ class Game
 
   RANKING = ['rock', 'paper', 'scissors', 'rock']
 
-  attr_reader :counter
-
   def self.start player
     @player = player
     self.count
@@ -24,6 +22,10 @@ class Game
 
   def self.selected
     @computer_selected
+  end
+
+  def self.counter
+    @counter
   end
 
   private
