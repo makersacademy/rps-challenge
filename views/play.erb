@@ -1,4 +1,4 @@
-<h1>Welcome, player_1!</h1>
+<h1>Welcome, <%= @game.player.name %>!</h1>
 <form action='/result' method='post'>
   <button name='choice' type='submit' value='rock'>Rock!</button>
   <button name='choice' type='submit' value='paper'>Paper!</button>

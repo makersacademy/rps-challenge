@@ -13,6 +13,11 @@ describe Player do
       subject.make_a_choice("rock")
       expect(subject.choice).to eq "rock"
     end
+
+    it 'allows the computer to make a choice' do
+      allow_any_instance_of(Array).to receive(:sample).and_return("paper")
+      expect(subject.computer_choice).to eq "paper"
+    end
   end
 
 end
