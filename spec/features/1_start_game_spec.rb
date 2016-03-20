@@ -3,9 +3,9 @@ require 'capybara'
 
 feature 'Start Game' do 
   scenario '1. exit intro screen' do
-  visit('/')
-  click_button('enter_game')
-  expect(page).to have_content('Please enter')
+    visit('/')
+    click_button('enter_game')
+    expect(page).to have_content('Please enter')
   end
 
   scenario '2. enter name' do

@@ -32,11 +32,17 @@ button {
     
 }
 
-.buttonholder {
+form {
 
+display:inline;
 
-  text-align: center;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+}
+
+.centered{
+    position:absolute;
+    width:350px;
+    height:100px;
+    left:30%;
+    top:40%;
+
 }
