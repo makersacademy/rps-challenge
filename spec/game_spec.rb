@@ -60,5 +60,12 @@ describe Game do
     end
   end
 
+  describe "#outcome" do
+    it 'returns a string for use as a result' do
+      expect(game.outcome).to be_a String
+    end
+
+  end
+
 
 end

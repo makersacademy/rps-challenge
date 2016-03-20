@@ -1,4 +1,4 @@
-feature 'Results screen' do
+feature '1P Results screen' do
   scenario 'Displays win message' do
     allow_any_instance_of(Array).to receive(:sample){:scissors}
     sign_in_and_play("Paul")
