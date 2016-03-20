@@ -1,7 +1,11 @@
-<div>You attack with <%= @attack%></div>
-<div>Computer defends with <%= @defence%></div>
+<div><%= @player_one_name %> attacks with: <%= @player_one_atk %> </div>
+<div><%= @player_two_name %> attacks with: <%= @player_two_atk %> </div>
 
-<div><%= @winner%> wins the round!</div>
+<% if @winner != :draw%>
+<div><%= @winner.nickname%> wins the round!</div>
+<% else %>
+<div>This round ends in a draw!</div>
+<% end %>
 
 <form action='/game'>
   <button type='submit' id='continue_button'>Continue to next round</button>

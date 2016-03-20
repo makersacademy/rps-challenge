@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_one , :player_two
+  attr_reader :player_one , :player_two , :p_one_sign , :p_two_sign
 
   def initialize player_one , player_two
     @player_one = player_one
@@ -14,7 +14,6 @@ class Game
   def p_two_attack sign
     @p_two_sign = sign.to_sym
   end
-
 
   def choose_winner
     return :draw if @p_one_sign == @p_two_sign

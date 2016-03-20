@@ -1,7 +1,7 @@
-<div>Hello <%= @player_name %>, get ready to fight!</div>
+<div>Hello <%= @player_one_name %>, get ready to fight against <%= @player_two_name %>!</div>
 
-<div><%= @player_name %> wins: <%= @player_wins %></div>
-<div>Computer wins: <%= @player_losses %></div>
+<div><%= @player_one_name %> wins: <%= @player_one_wins %> </div>
+<div><%= @player_two_name %> wins: <%= @player_two_wins %> </div>
 
 <form action='/choose_attack' method='post' value='Please choose your next attack'>
   <button type='submit' name='attack_type' id='paper_button' value='paper'>Paper</button>
