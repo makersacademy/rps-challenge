@@ -10,8 +10,8 @@ describe Computer do
     end
 
     it 'computer randomly choose weapon' do
-      allow(computer).to receive(:choice).and_return(:scissors)
-      expect(computer.choice).to eq :scissors
+      allow(computer).to receive(:weapon).and_return(:scissors)
+      expect(computer.weapon).to eq :scissors
     end
   end
 end
