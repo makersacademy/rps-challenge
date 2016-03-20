@@ -1,2 +1,30 @@
-your pick is <%= @your_choice %>
-the computer picked <%= @computer_choice %>
+<h2>your pick is</h2>
+<h1><%= @your_choice %></h1>
+
+
+<h2>the computer picked</h2>
+<h1><%= @computer_choice %></h1>
+
+<%= if @your_choice == "Rock" && @computer_choice == "rock"
+      "tie!"
+    elsif @your_choice == "Rock" && @computer_choice == "scissors"
+      "You win!"
+    elsif @your_choice == "Rock" && @computer_choice == "paper"
+      "Computer wins!"
+    end %>
+
+<%= if @your_choice == "Paper" && @computer_choice == "paper"
+      "tie!"
+    elsif @your_choice == "Paper" && @computer_choice == "rock"
+      "You win!"
+    elsif @your_choice == "Paper" && @computer_choice == "scissors"
+      "Computer wins!"
+    end %>
+
+<%= if @your_choice == "Scissors" && @computer_choice == "scissors"
+      "tie!"
+    elsif @your_choice == "Scissors" && @computer_choice == "paper"
+      "You win!"
+    elsif @your_choice == "Scissors" && @computer_choice == "rock"
+      "Computer wins!"
+    end %>

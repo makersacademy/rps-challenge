@@ -2,13 +2,14 @@ require 'randomiser'
 
 describe Randomiser do
 
-  it{is_expected.to respond_to(:random_number)}
+  let(:randomiser) { described_class.new }
 
-  allow(subject).to receive(:random_number).and_return(1)
+  it{is_expected.to respond_to(:random_number)}
 
   describe '#random_number' do
     it 'creates a random number' do
-      expect(subject.random_number).to eq 1
+      #allow(randomiser).to receive{:random_number}.and_return 1
+      expect(randomiser.random_number).to be_an Integer
     end
   end
 end
