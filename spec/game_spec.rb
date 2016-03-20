@@ -22,6 +22,10 @@ describe Game do
     it '4. should initialize with draw equal to false' do
       expect(game.draw).to eq(false)
     end
+
+    it '5. should initialize singleplayer as false if p2 != Computer' do
+      expect(game.singleplayer).to eq(false)
+    end
   end
 
   describe '#player1_name' do
@@ -47,6 +51,12 @@ describe Game do
     it 'should display player2 weapon' do
       allow(game).to receive(:player2_weapon).and_return("Rock")
       expect(game.player2_weapon).to eq("Rock")
+    end
+  end
+
+  describe '#multiplayer?' do
+    it 'should eq to true if singleplayer = false' do
+      expect(game.multiplayer?).to eq(true)
     end
   end
 

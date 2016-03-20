@@ -12,13 +12,14 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player2, :winner, :draw
+  attr_reader :player1, :player2, :winner, :draw, :singleplayer
 
   def initialize(player_one, player_two)
     @player1 = player_one
     @player2 = player_two
     @winner = nil
     @draw = false
+    player2_name == "Computer" ? @singleplayer = true : @singleplayer = false
   end
 
   def player1_name
@@ -35,6 +36,10 @@ class Game
 
   def player2_weapon
     @player2.weapon
+  end
+
+  def multiplayer?
+    @singleplayer != true
   end
 
   def rps(p1, p2)
