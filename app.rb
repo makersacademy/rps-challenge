@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post '/p1_submit' do
+    session['1P game'] = true
     player_1 = Player.new(params[:player_1_name])
     Game.start(player_1)
     redirect '/p1_play'
@@ -42,17 +43,22 @@ class RPS < Sinatra::Base
   end
 
   get '/p2_play' do
+    clear_choices
     erb :p2_play
   end
 
   post '/p1_chosen' do
     session['player_1_choice'] = params[:rps_choice].downcase.to_sym
-    session['player_2_choice'] ? (redirect '/') : (redirect 'p1_waiting')
+    if session['1P game']
+      redirect '/rps'
+    else
+      session['player_2_choice'] ? (redirect '/rps') : (redirect 'p1_waiting')
+    end
   end
 
   post '/p2_chosen' do
     session['player_2_choice'] = params[:rps_choice].downcase.to_sym
-    session['player_1_choice'] ? (redirect '/') : (redirect 'p2_waiting')
+    session['player_1_choice'] ? (redirect '/rps') : (redirect 'p2_waiting')
   end
 
   get '/p1_waiting' do
@@ -63,13 +69,29 @@ class RPS < Sinatra::Base
     erb :p2_waiting
   end
 
-  post '/rps' do
-    @game.rps(params[:rps_choice].downcase.to_sym)
-    redirect '/p1_result'
+  get '/rps' do
+    if session['player_2_choice']
+      @game.rps(session['player_1_choice'], session['player_2_choice'])
+      redirect '/p2_result'
+    else
+      @game.rps(session['player_1_choice'])
+      redirect '/p1_result'
+    end
   end
 
   get '/p1_result' do
     erb :p1_result
+  end
+
+  get '/p2_result' do
+    erb :p2_result
+  end
+
+private
+
+  def clear_choices
+    session.delete('player_1_choice')
+    session.delete('player_2_choice')
   end
 
   # start the server if ruby file executed directly

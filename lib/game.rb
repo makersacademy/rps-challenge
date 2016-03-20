@@ -52,4 +52,14 @@ class Game
     URI("images/#{player_2_choice}.png")
   end
 
+  def outcome
+    if @latest_result == :win
+      "#{player_1.name} wins!"
+    elsif @latest_result == :lose
+      "#{player_2.name} wins!"
+    else
+      "It's a draw!"
+    end
+  end
+
 end

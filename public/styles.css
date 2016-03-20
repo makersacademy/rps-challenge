@@ -13,8 +13,13 @@
   font-family: "Comic Sans MS"
 }
 #name_form {
-  position: relative;;
-  top: 120px;
+  position: relative;
+  top: 50px;
+}
+.gameselect {
+  margin: auto;
+  position: relative;
+  top: 50px;left:0px;right:0px;
 }
 #counter {
   margin:auto;
@@ -26,6 +31,7 @@
 
 /*play page*/
 #playcontent{
+  background-color: green;
   text-align: center;
   position: fixed;
   border: 2px solid;
@@ -124,6 +130,7 @@
 }
 /*result page*/
 #resultcontent {
+  background-color: green;
   text-align: center;
   position: fixed;
   border: 2px solid;
@@ -132,8 +139,19 @@
   width: 60%;
   height: 60%;
 }
+#resultcontent h1{
+  margin:auto;
+  position: absolute;
+  top:5%;left:0;right:0;
+  width:300px;
+}
 #playagain {
   margin:auto;
   position: absolute;
-  top:80%;left:0;right:0;
+  bottom:17%;left:0;right:0;
+}
+#backhome {
+  margin:auto;
+  position: absolute;
+  bottom:12%;left:0;right:0;
 }
