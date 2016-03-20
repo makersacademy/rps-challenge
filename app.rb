@@ -28,7 +28,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
   	session[:move] = @game.player.make_move(params[:move])
-  	#$player_move = @game.player.make_move(params[:move])
   	redirect('/winner')
   end
 

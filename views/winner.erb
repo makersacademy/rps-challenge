@@ -1,3 +1,9 @@
 <p>Player has chosen <%= @player_move %> </p>
 
 <p>Computer has chosen <%= @computer_move %> </p>
+
+<% if @winner == @game.player.name || @winner == "Computer" %>
+	<p>And the winner is.. <%=@winner%></p>
+<% else %>
+	<p>Oh, it's a <%=@winner%></p>
+<% end %>
