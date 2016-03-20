@@ -1,7 +1,7 @@
 
-Welcome to the game <%= @game.player1_name %> and <%= @game.player2_name %> 
+Welcome to the game <%= @game.player_name(@game.player1) %> and <%= @game.player_name(@game.player2) %> 
 <div>
-It's <%= @game.current_player_name %>'s turn
+It's <%= @game.player_name(@game.current_player) %>'s turn
 
 <form action='/rock' method='post'>
   <div>
