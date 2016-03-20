@@ -25,6 +25,6 @@ describe Game do
 
     it 'declares computer as winner' do
       player.choice(rock)
-      expect(game.outcome).to eq "The computer wins!"
+      expect(game.outcome).to eq "Computer wins!"
     end
 end

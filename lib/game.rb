@@ -43,7 +43,7 @@ class Game
     if RULES[@weapon1].include?(@weapon2)
       "You win!"
     elsif RULES[@weapon2].include?(@weapon1)
-      "The computer wins!"
+      "Computer wins!"
     end
   end
 
