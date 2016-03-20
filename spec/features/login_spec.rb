@@ -20,7 +20,6 @@ feature 'Welcome Screen and Login process' do
 
   end
 
-
   feature 'Login Process:' do
 
     before :each do

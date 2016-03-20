@@ -11,7 +11,7 @@ feature 'Attack Page visualization' do
     end
 
     scenario 'Page has a counter with the opponent wins' do
-      expect(page).to have_content "Computer wins: 0"
+      expect(page).to have_content "Bob wins: 0"
     end
 
     scenario 'Page has a button to pick Paper' do
@@ -45,7 +45,7 @@ feature 'Attack Page visualization' do
     end
 
     scenario 'Player attack is successfully transmitted' do
-      expect(page).to have_content 'You attack with paper'
+      expect(page).to have_content "#{TEST_PLAYER_NAME} attacks with: paper"
     end
 
   end
