@@ -24,7 +24,7 @@ class Game
     @computer = computer
   end
 
-  def weapon1 
+  def weapon1
       @weapon1 = @player.weapon.to_sym
   end
 
