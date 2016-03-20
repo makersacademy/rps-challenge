@@ -5,8 +5,8 @@
 <html>
 
   <div id='div'>
-    <h2>Your choice: <%= @game.player1_weapon %></h2>
-    <h2>Computer's choice: <%= @game.player2_weapon %></h2>
+    <h2><%= @game.player1_name %>'s choice: <%= @game.player1_weapon %></h2>
+    <h2><%= @game.player2_name %>'s choice: <%= @game.player2_weapon %></h2>
   </div>
 
   <h1 id='winner'><%= @game.winner %> wins!</h1>
@@ -15,7 +15,7 @@
     <input type='submit' id='submit' value='Play again?'/>
   </form>
   <form action='/' method='get'>
-    <input type='submit' id='submit' value='New player'/>
+    <input type='submit' id='submit' value='Home'/>
   </form>
 
   <img src='http://i422.photobucket.com/albums/pp303/BloodDragon22/Rock-Paper-Scissors.gif'>

@@ -39,7 +39,20 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @game.player1.player_choice(params[:choice])
-    @game.player2.choose_random
+    if @game.multiplayer? == true
+      redirect('/play2')
+    else
+      @game.player2.choose_random
+      redirect '/winner_page'
+    end
+  end
+
+  get '/play2' do
+    erb(:play2)
+  end
+
+  post '/choice2' do
+    @game.player2.player_choice(params[:choice])
     redirect '/winner_page'
   end
 
