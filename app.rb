@@ -40,10 +40,22 @@ class RockPaperScissors < Sinatra::Base
     redirect '/outcome'
   end
 
+  post '/lizard' do
+    @game = Game.show_game
+    @weapon = @game.player.choice('lizard')
+    redirect '/outcome'
+  end
+
+  post '/spock' do
+    @game = Game.show_game
+    @weapon = @game.player.choice('spock')
+    redirect '/outcome'
+  end
   get '/outcome' do
     @game = Game.show_game
-    @user_weapon = @game.player.weapon
-    @computer_weapon = @game.computer.choice
+    @user_weapon = @game.weapon1
+    @computer_weapon = @game.weapon2
+    @result = @game.outcome
     erb :outcome
   end
   # start the server if ruby file executed directly

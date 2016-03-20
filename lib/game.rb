@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
   def self.store_game(game)
@@ -8,34 +11,40 @@ class Game
     @this_game
   end
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :weapon1, :weapon2
+
+  RULES = { rock:     [:scissors, :lizard],
+            scissors: [:paper,    :lizard],
+            lizard:   [:paper,    :spock],
+            paper:    [:rock,     :spock],
+            spock:    [:rock,     :scissors] }
 
   def initialize(player, computer)
     @player = player
-    @computer = computer
-    @weapon1 = player.weapon.to_sym
     @weapon2 = computer.choice.to_sym
   end
 
+  def weapon1
+    @weapon1 = @player.weapon.to_sym
+  end
+
   def outcome
-    draw? ? "It's a draw!" : win
+     draw ? "It's a draw!" : win
   end
 
   private
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  def draw
+      weapon1
+      @weapon1 == @weapon2
+  end
 
   def win
-    if @weapon2 == RULES[@weapon1]
+    if RULES[@weapon1].include?(@weapon2)
       "You win!"
-    elsif @weapon1 == RULES[@weapon2]
+    elsif RULES[@weapon2].include?(@weapon1)
       "The computer wins!"
     end
   end
 
-  def draw?
-   @weapon1 == @weapon2 ? true : false
-  end
 end

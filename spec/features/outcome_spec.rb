@@ -20,10 +20,29 @@ feature 'Outcome' do
     expect(page).to have_content('You chose scissors!')
   end
 
+  scenario 'shows Lizard as choice weapon' do
+    sign_in_to_play
+    click_button 'Lizard'
+    expect(page).to have_content('You chose lizard!')
+  end
+
+  scenario 'shows Spock as choice weapon' do
+    sign_in_to_play
+    click_button 'Spock'
+    expect(page).to have_content('You chose spock!')
+  end
+
   scenario 'shows Computer choice weapon' do
     sign_in_to_play
-    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     click_button 'Rock'
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     expect(page).to have_content('The computer chose rock!')
+  end
+
+  scenario 'shows game outcome' do
+    sign_in_to_play
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    click_button 'Rock'
+    expect(page).to have_content('You win!')
   end
 end
