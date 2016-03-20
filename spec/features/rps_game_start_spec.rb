@@ -1,23 +1,16 @@
 # in spec/features/rps_game_start_spec.rb
 require 'spec_helper'
 
-feature 'RPS game starts' do
-  scenario 'allows user to enter their name' do
-    crush_it
-    expect(page).to have_content('Welcome Shane')
+feature 'rps_game_start: RPS game start' do
+
+  before do
+    visit '/'
   end
-  scenario 'allows user to specify points to win' do
-    crush_it
-    fill_in('points', :with => 20)
-    click_button('Set Points')
-    expect(page).to have_content('You win when you earn 20 points.')
+
+  scenario '1. has greeting' do
+    expect(page).to have_content('Rock Paper Scissors')
   end
-  scenario 'allows player to initiate a round and see result' do
-    crush_it
-    fill_in('points', :with => 20)
-    click_button('Set Points')
-    click_button('Rock')
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
-    expect(page).to have_content('You win!')
+  scenario '2. has single player button' do
+    expect(page).to have_button('One player')
   end
 end

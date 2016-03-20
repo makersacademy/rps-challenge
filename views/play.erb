@@ -1,8 +1,6 @@
 <h1>Time to play <%= @game.player1.name %></h1>
 <p>You win when you earn <%= @game.game_points %> points.</p>
 <p>Choose your weapon.</p>
-<form action="/result" method="post">
-  <input type="button" name="rock" value="Rock"/>
-  <input type="button" name="paper" />
-  <input type="button" name="scissors" />
+<form action="/round" method="post">
+  <input type="submit" name="choice" value="rock" />
 </form>
