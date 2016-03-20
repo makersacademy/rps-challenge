@@ -18,13 +18,29 @@ h1 , h3 {
   display:block;
 }
 
-.nextbutton {
-  height:90px;
-  width:130px;
+#continue_button {
+  height:180px;
+  width:260px;
   font-size: 14pt;
   font-weight: bolder;
   margin:auto;
   display:block;
+  padding-top: 120px;
+  color: white;
+  background-image: url("http://www.vh1.com/news/wp-content/uploads/blog.vh1.com/2014/05/sanfrangodzilla.jpg");
+  background-size: 260px 180px;
+  background-position: center;
+}
+
+#play_button {
+  height:90px;
+  width:180px;
+  font-size: 14pt;
+  font-weight: bolder;
+  color: white;
+  background-image: url("http://www.yompmarketing.com/wp-content/uploads/2013/04/city.jpg");
+  background-size: 180px 90px;
+  background-position: center;
 }
 
 #paper_button {
