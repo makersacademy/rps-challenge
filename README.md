@@ -29,11 +29,11 @@ Then, in your browser, type in `http://localhost:4567/`. You should see the `ind
 
 As instructed, enter players' names to start the game. Fill in the first field only if you wish to play against Computer.
 
-![Screenshot](http://i.imgur.com/xs96HA1.png)
-
 You'll then be invited to choose a weapon from Rock, Paper and Scissors.
 
-And if you are lucky, Computer will let you win (not always). Have fun! :sunglasses:
+![Screenshot](http://i.imgur.com/xs96HA1.png)
+
+If you are lucky, Computer might let you win (but not always). Have fun! :sunglasses:
 
 Testing
 --------
