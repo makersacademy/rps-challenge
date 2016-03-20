@@ -81,4 +81,11 @@ describe Game do
     end
   end
 
+  describe "8 #self.start" do
+    it "8.0 stores the game in current_game" do
+      expect(Game).to receive(:new)
+      Game.start(player1)
+    end
+  end
+
 end
