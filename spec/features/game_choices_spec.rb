@@ -7,4 +7,9 @@ feature 'making a choice between rock, paper and scissors' do
     click_button 'Rock!'
     expect(page).to have_content 'You chose rock!'
   end
+
+  # scenario 'allows the computer to choose' do
+  #
+  # end
+
 end
