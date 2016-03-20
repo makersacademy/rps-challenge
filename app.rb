@@ -9,14 +9,6 @@ class Jajanken < Sinatra::Base
 
   post '/setup' do
     player1_name = params[:username]
-    player2_name = params[:username]
-    setup = {
-      player1: params[:player1],
-      player2: params[:player2],
-      players: params[:number_of_players],
-      rules:        params[:rules],
-      player_class: Player
-    }
     Game.create(setup)
     redirect '/play'
   end
