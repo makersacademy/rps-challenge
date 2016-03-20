@@ -36,13 +36,24 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 Functionality
 -------------
 
+1 player game against the computer of rock, paper and scissors.
+
 Installation
 ------------
 
+To access the game visit: https://frozen-thicket-70877.herokuapp.com/
+
+To run code from local host: clone this repo and run ```ruby app.rb```
+
+To view tests: run ```rspec```
 
 Documentation
 -------------
+Test Driven using  Rspec for backend and Capybera for front end.
 
+Use of framework Sinatra and Ruby
+
+Deployed to Heroku
 
 Author
 ------
