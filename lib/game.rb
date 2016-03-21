@@ -41,7 +41,7 @@ class Game
 
   def initialize(player1:, player2:nil)
     @players = [player1]
-    @players << player2 if !player2.nil?
+    @players << player2 unless player2.nil?
     @in_progress = false
   end
 
@@ -66,7 +66,7 @@ class Game
   end if
 
   def turn_finished!
-    @players.each {|player| player.turn_finished!}
+    @players.each(&:turn_finished!)
   end
 
   def turn_finished?
@@ -79,7 +79,7 @@ class Game
 
   def restart!
     @in_progress = false
-    @players.each {|player| player.restart!}
+    @players.each(&:restart!)
   end
 
   def find_opponent(player_name)
@@ -92,7 +92,7 @@ class Game
 
   def find_winner(player1:@players[0],player2:@players[1])
     moves={}
-    MOVES.each{|k,v| moves[k]= v.flatten.map!{|hash| hash.keys}.flatten}
+    MOVES.each{|k,v| moves[k]= v.flatten.map!(&:keys).flatten}
 
     if moves[player1.move].include?(player2.move)
       player1.win!
@@ -111,7 +111,7 @@ class Game
     end
 
     @result = []
-    if !winner.nil?
+    unless winner.nil?
       @result << winner.name
       @result << winner.move.to_s
       @result << MOVES[winner.move].first[loser.move]

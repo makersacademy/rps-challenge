@@ -3,7 +3,6 @@ RSpec.feature "Two player Login:", :type => :feature do
   let(:player1) { double:Player, name: "player 1"}
   let(:player2) { double:Player, name: "player 2"}
 
-
   scenario "player logs in" do
     Game.reset
 
@@ -21,8 +20,6 @@ RSpec.feature "Two player Login:", :type => :feature do
 
     two_player_sign_in(player1.name, player2.name)
 
-
-    # on page 'play'
     in_browser(:one) do
       within('h1') do
         expect(page).to have_content("Let's play!")
@@ -48,22 +45,5 @@ RSpec.feature "Two player Login:", :type => :feature do
         expect(page).to have_button('New Game')
       end
     end
-
-
-    # in_browser(:one) do
-    #   sign_in_one_player(player1.name)
-    # end
-    # in_browser(:two) do
-    #   sign_in_one_player(player2.name)
-    # end
-    # in_browser(:one) do
-    #   click_button("Check")
-    #   expect(page).to have_content("Players: #{player1.name} #{player2.name}")
-    # end
-    # in_browser(:two) do
-    #   click_button("Check")
-    #   expect(page).to have_content("Players: #{player1.name} #{player2.name}")
-    # end
   end
-
 end

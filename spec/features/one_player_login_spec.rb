@@ -5,7 +5,7 @@ RSpec.feature "One player login:", :type => :feature do
 
 
   scenario "player logs in" do
-    # Game.reset
+    Game.reset
 
     visit '/'
     within('h1') do
@@ -35,10 +35,6 @@ RSpec.feature "One player login:", :type => :feature do
     expect(page).not_to have_content('You played')
     expect(page).not_to have_content('Computer played')
 
-
-    # expect(page).to have_content("Your points: 0")
-    # expect(page).to have_content("Opponent's points: 0")
-
     within('form.play') do
       expect(page).to have_content('Rock')
       expect(page).to have_content('Paper')
@@ -50,21 +46,5 @@ RSpec.feature "One player login:", :type => :feature do
       expect(page).to have_button('New Game')
     end
 
-
-    # in_browser(:one) do
-    #   sign_in_one_player(player1.name)
-    # end
-    # in_browser(:two) do
-    #   sign_in_one_player(player2.name)
-    # end
-    # in_browser(:one) do
-    #   click_button("Check")
-    #   expect(page).to have_content("Players: #{player1.name} #{player2.name}")
-    # end
-    # in_browser(:two) do
-    #   click_button("Check")
-    #   expect(page).to have_content("Players: #{player1.name} #{player2.name}")
-    # end
   end
-
 end

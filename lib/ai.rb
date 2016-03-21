@@ -12,9 +12,9 @@ class Ai
     setup(NAME)
   end
 
-  def play(move=nil)
+  def play(*)
     moves = Constants::MOVES.keys
     @move = moves[Kernel.rand(moves.count)]
     played!
   end
-end 
+end

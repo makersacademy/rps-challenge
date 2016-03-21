@@ -13,6 +13,7 @@ class Rps < Sinatra::Base
 
   post '/login' do
     session[:me] = params[:player_name]
+
     if params[:number_of_players] == 'one'
       Game.create_ai(player1_name:session[:me])
       redirect '/play'
@@ -80,9 +81,8 @@ class Rps < Sinatra::Base
   end
 
   post '/new' do
-    @game = Game.instance
-    @game.restart!
-    redirect '/play'
+    Game.reset
+    redirect '/'
   end
 
   get '/nothing_selected' do
