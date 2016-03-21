@@ -21,29 +21,29 @@ class Outcome
     :tie
   end
 
-private
+  private
 
-  def battle
-    return :tie if @attacker ==  @defender
-    return :win if matcher(@attacker) == @defender
-    :loose
-  end
+    def battle
+      return :tie if @attacker ==  @defender
+      return :win if matcher(@attacker) == @defender
+      :loose
+    end
 
-  def cp_attack
-    weapon = {1 => 'rock', 2 => 'paper', 3=> 'scissors'}
-    weapon[rand]
-  end
+    def cp_attack
+      weapon = {1 => 'rock', 2 => 'paper', 3=> 'scissors'}
+      weapon[rand]
+    end
 
-  def rand
-    Kernel.rand(1..3)
-  end
+    def rand
+      Kernel.rand(1..3)
+    end
 
-  def matcher(weapon)
-    match={
-      'rock' => 'scissors', 
-      'scissors' => 'paper',
-      'paper' => 'rock'}
+    def matcher(weapon)
+      match={
+        'rock' => 'scissors', 
+        'scissors' => 'paper',
+        'paper' => 'rock'}
       match[weapon]
-  end
+    end
 
 end

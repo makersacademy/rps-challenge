@@ -19,21 +19,21 @@ class Game
   end
 
   def winner(player)
-  @win = @player1.name if player == :player1
-  @win = @player2.name if player == :player2
-  @win = :tie if player== :tie
-  score
+    @win = @player1.name if player == :player1
+    @win = @player2.name if player == :player2
+    @win = :tie if player== :tie
+    score
   end
 
   def display_score
     "#{@player1.name} #{@score_p1} : #{@score_p2} #{@player2.name}"
   end
 
-private
+  private
 
-  def score
-  @score_p1 += 1 if win == @player1.name
-  @score_p2 += 1 if win == @player2.name
-  end
+    def score
+    @score_p1 += 1 if win == @player1.name
+    @score_p2 += 1 if win == @player2.name
+    end
 
 end
