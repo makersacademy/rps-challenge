@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/kevinpmcc/rps-challenge.svg?branch=master)](https://travis-ci.org/kevinpmcc/rps-challenge)
 
+[![Coverage Status](https://coveralls.io/repos/github/kevinpmcc/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/kevinpmcc/rps-challenge?branch=master)
+
 Project Description
 ----------
 This project is my Week 3 weekend challenge to build a multiplayer Rock,Paper,Scissors,Spock,Lizard(RPSlS) game.
