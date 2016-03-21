@@ -43,7 +43,7 @@ class Game
   end
 
   def make_player_choice(choice)
-    current_player.make_choice(choice)
+    current_player.make_choice(choice.to_sym)
   end
 
   def player_choice(player)
@@ -58,7 +58,7 @@ class Game
 
   
   def player1_wins?
-    MOVES[player_choice(player1).to_sym].include? player_choice(player2).to_sym
+    MOVES[player_choice(player1)].include? player_choice(player2)
   end
 
   def tie?

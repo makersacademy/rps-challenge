@@ -21,20 +21,20 @@ describe Game do
   describe 'winner' do
 
     it 'will return nil if there is a tie' do
-      allow(player2).to receive(:choice) { 'Rock' }
-      allow(player1).to receive(:choice) { 'Rock' }
+      allow(player2).to receive(:choice) { :rock }
+      allow(player1).to receive(:choice) { :rock }
       expect(game.winner).to eq nil
     end
 
     it 'will return player1 if player1 beats player2' do
-      allow(player2).to receive(:choice) { 'Lizard' }
-      allow(player1).to receive(:choice) { 'Rock' }
+      allow(player1).to receive(:choice) { :rock }
+      allow(player2).to receive(:choice) { :lizard }
       expect(game.winner).to eq player1
     end
 
     it 'will return player2 if player2 beats player1' do
-      allow(player2).to receive(:choice) { 'Scissors' }
-      allow(player1).to receive(:choice) { 'Lizard' }
+      allow(player1).to receive(:choice) { :lizard }
+      allow(player2).to receive(:choice) { :scissors }
       expect(game.winner).to eq player2
     end
   end
