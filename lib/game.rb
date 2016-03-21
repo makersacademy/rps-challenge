@@ -2,6 +2,15 @@ require_relative 'player'
 
 class Game
 
+  def self.start(player)
+    @game = Game.new(player)
+  end
+
+  def self.this_game
+    @game
+  end
+
+
   attr_reader :comp, :player
 
   def initialize(player)
@@ -31,5 +40,5 @@ class Game
       @comp == "rock" ? @result = "#{@p1} wins" : @result = "Computer wins"
     end
   end
-  
+
 end

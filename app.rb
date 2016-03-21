@@ -9,8 +9,12 @@ class Rps < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:name])
-    $game = Game.new(player)
+    Game.start(player)
     redirect '/play'
+  end
+
+  before do
+    @game = Game.this_game
   end
 
   get '/play' do
@@ -18,17 +22,17 @@ class Rps < Sinatra::Base
   end
 
   get '/scissors' do
-    $game.player.choose("scissors")
+    @game.player.choose("scissors")
     redirect '/results'
   end
 
   get '/paper' do
-    $game.player.choose("paper")
+    @game.player.choose("paper")
     redirect '/results'
   end
 
   get '/rock' do
-    $game.player.choose("rock")
+    @game.player.choose("rock")
     redirect '/results'
   end
 
