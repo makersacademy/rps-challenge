@@ -43,6 +43,7 @@ class RPS < Sinatra::Base
     @game = Game.current_game
     @attack = params[:attack]
     @game.single_player? ? @game.player.store_attack(@attack) : @game.player_2.store_attack(@attack)
+    @attack = @game.player.last_move? unless @game.single_player?
     @player_1 = @game.player.name
     @game.single_player? ? (@player_2 = "Your opponent") : (@player_2 = @game.player_2.name)
     @game.single_player? ? (@return_attack = @game.attack) : (@return_attack = @game.player_2.last_move?)
