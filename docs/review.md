@@ -220,7 +220,7 @@ class Weapon
   end
 
   def beats?(other)
-    RULES[type][other.type]
+    RULES[type] == other.type
   end
 end
 
