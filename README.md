@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/tobenna/rps-challenge/badge.svg?branch=dev)](https://coveralls.io/github/tobenna/rps-challenge?branch=dev) [![Build Status](https://travis-ci.org/tobenna/rps-challenge.svg?branch=master)](https://travis-ci.org/tobenna/rps-challenge)
 RPS: Jajanken
 ==================
 
