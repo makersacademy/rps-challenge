@@ -3,25 +3,24 @@ require './lib/player'
 require './lib/game'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb(:index)
   end
 
-  before do
-    @game = Game
-  end
-
   post '/play' do
-    player = Player.new(params[:player])
-    Game.start(player)
+    session[:player] ||= Player.new(params[:player])
+    session[:game] ||= Game.new(session[:player])
+    @game = session[:game]
     erb(:play)
   end
 
   post '/result' do
+    @game = session[:game]
     choice = params[:choice]
-    @game.player.make_a_choice(choice)
-    @game.player.computer_choice
+    session[:game].player.make_a_choice(choice)
+    session[:game].computer_choice
     erb(:result)
   end
 

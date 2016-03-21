@@ -1,45 +1,24 @@
 class Game
 
-  def self.start(player)
+  attr_reader :player , :opponent_choice
+
+  WEAPONS = [:rock, :paper, :scissors]
+  WINS = {rock: :scissors,
+          paper: :rock,
+          scissors: :paper}
+
+  def initialize(player)
     @player = player
   end
 
-  def self.player
-    @player
+  def computer_choice
+    @opponent_choice = WEAPONS.sample
   end
 
-  def self.game_won?
-    if @player.choice == "rock" && @player.opponent_choice == "scissors"
-      true
-    elsif @player.choice == "scissors" && @player.opponent_choice == "paper"
-      true
-    elsif @player.choice == "paper" && @player.opponent_choice == "rock"
-      true
-    end
-  end
-
-  def self.game_lost?
-    if @player.choice == "rock" && @player.opponent_choice == "paper"
-      true
-    elsif @player.choice == "paper" && @player.opponent_choice == "scissors"
-      true
-    elsif @player.choice == "scissors" && @player.opponent_choice == "rock"
-      true
-    end
-  end
-
-  def self.game_tied?
-    @player.choice == @player.opponent_choice
-  end
-
-  def self.game_result
-    if Game.game_won?
-      "You won!"
-    elsif Game.game_lost?
-      "You lost!"
-    elsif Game.game_tied?
-      "You tied!"
-    end
+  def game_result
+    return :tie if @player.choice == opponent_choice
+    return :win if WINS[@player.choice] == opponent_choice
+    :lose
   end
 
 end
