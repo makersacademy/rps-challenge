@@ -1,7 +1,16 @@
-Welcome <%=@game.player1.name%> VS <%=@game.player2.name%>
-<div>Choose your weapon</div>
-<form action="/weapon" method="post">
-  <% @weapons.each do |weapon| %>
-    <input type="image" name="weapon" value="<%=weapon %>" src="http://baconmockup.com/100/100" alt="<%= weapon.capitalize %>">
-  <% end %>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Play</title>
+  </head>
+  <body>
+    <h1>Welcome <%=@game.player1.name%> VS <%=@game.player2.name%></h1>
+    <div>Choose your weapon</div>
+    <form action="/weapon" method="post">
+      <% @weapons.each do |weapon| %>
+        <input type="image" name="weapon" value="<%=weapon %>" src="/assets/img/<%=weapon%>.svg" width="100" alt="<%= weapon.capitalize %>">
+      <% end %>
+    </form>
+  </body>
+</html>

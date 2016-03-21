@@ -1,4 +1,13 @@
-<div><%=@game.player1.name %> played <%=@game.player1.weapon %> </div>
-<div><%=@game.player2.name %> played <%=@game.player2.weapon %> </div>
-<div><%=@game.winner.name %> wins!</div>
-<a href="/play">Play Again?</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=@game.winner.name %> wins!</title>
+  </head>
+  <body>
+    <div><%=@game.player1.name %> played <%=@game.player1.weapon %> </div>
+    <div><%=@game.player2.name %> played <%=@game.player2.weapon %> </div>
+    <div><%=@game.winner.name %> wins!</div>
+    <a href="/play">Play Again?</a>
+  </body>
+</html>
