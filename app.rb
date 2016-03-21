@@ -28,7 +28,6 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do
-    #binding.pry
     @game.winner(Outcome.check(params[:weapon]))
     redirect('/winner')
   end

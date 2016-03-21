@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/ccfz/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/ccfz/rps-challenge?branch=master)
+
 H1 ROCK PAPER SCISSORS!
 
 H3 Approach
@@ -11,5 +13,15 @@ i. I create a player and game class
 ii. /player_form will initiate a game and save a player instance in that instance. 
 iii. The game class is in responsible for keeping track of players and score. I therefore create a outcome class to determine the winner of the round.
 
-4. Once the MVP was ready, a single player can enter their name, choose a weapon, and returns win, loose or tied, I added some extra functions such as displaying the choices of both player and adding a game score, if one wants to play multiple games.
+4. Once the MVP was ready, a single player can enter their name, choose a weapon, and return win, loose or tied, I added a game score, if one wants to play multiple games.
+
+H3 Installation
+
+$ git clone git@github.com:ccfz/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+
+H3 Screenshots
 
