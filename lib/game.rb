@@ -85,6 +85,22 @@ class Game
     @in_progress = true
   end if
 
+  def play(player_name:, move:)
+    wait = true
+    find_me(player_name).play(move)
+    if self.class.number_of_players == 1
+      find_opponent(player_name).play
+      complete_turn
+      wait = false
+    end
+    wait
+  end
+
+  def complete_turn
+    find_winner
+    turn_finished!
+  end
+
   def turn_finished!
     @players.each(&:turn_finished!)
   end
