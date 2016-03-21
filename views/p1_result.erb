@@ -1,15 +1,15 @@
 <center>
   <BR>
   <div>
-    <h2>You have chosen... <%= RPS.game.p1.move %>!</h2>
+    <h2>You have chosen... <%= RPSLS.game.p1.move %>!</h2>
   </div>
   <div>
-    <h3><%= RPS.game.p2.name %> has chosen... <%= RPS.game.p2.move %>!</h3>
+    <h3><%= RPSLS.game.p2.name %> has chosen... <%= RPSLS.game.p2.move %>!</h3>
   </div>
   <div>
     <% if @winner == 'draw' %>
-      <h2>You and <%= RPS.game.p2.name %> draw!</h2>
-    <% elsif @winner == RPS.game.p1.name %>
+      <h2>You and <%= RPSLS.game.p2.name %> draw!</h2>
+    <% elsif @winner == RPSLS.game.p1.name %>
       <h2>You win!</h2>
     <% else %>
       <h2><%= @winner %> wins!</h2>

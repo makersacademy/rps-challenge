@@ -7,14 +7,14 @@
     <h3>Final result</h3>
   </div>
   <div>
-    <h3>You: <%= RPS.game.p1.score %> / <%= RPS.game.p2.name %>: <%= RPS.game.p2.score %> </h3>
+    <h3>You: <%= RPSLS.game.p1.score %> / <%= RPSLS.game.p2.name %>: <%= RPSLS.game.p2.score %> </h3>
   </div>
   <BR>
   <div>
-  <% if RPS.game.p1.score > RPS.game.p2.score %>
-    <h2>Woohoo! You've won against <%= RPS.game.p2.name %> ;)</h2>
-  <% elsif RPS.game.p1.score < RPS.game.p2.score %>
-    <h2>Damn! You've lost against <%= RPS.game.p2.name %>... :(</h2>
+  <% if RPSLS.game.p1.score > RPSLS.game.p2.score %>
+    <h2>Woohoo! You've won against <%= RPSLS.game.p2.name %> ;)</h2>
+  <% elsif RPSLS.game.p1.score < RPSLS.game.p2.score %>
+    <h2>Damn! You've lost against <%= RPSLS.game.p2.name %>... :(</h2>
   <% else %>
     <h2>Draw game :P</h2>
   <% end %>

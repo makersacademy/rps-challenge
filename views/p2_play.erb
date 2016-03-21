@@ -1,20 +1,20 @@
 <center>
   <BR>
   <div>
-    <h3>Player 1: <%= RPS.game.p1.name %></h3>
+    <h3>Player 1: <%= RPSLS.game.p1.name %></h3>
   </div>
   <div>
     <h3>VS.</h3>
   </div>
   <div>
-    <h2>Player 2: <%= RPS.game.p2.name %></h2>
+    <h2>Player 2: <%= RPSLS.game.p2.name %></h2>
   </div>
   <BR>
   <div>
     <h3>↓Choose your move below↓</h3>
   </div>
   <div>
-    <% if RPS.game.p1.in_round %>
+    <% if RPSLS.game.p1.in_round %>
       <form action='/p2_play' method='post'>
         <input type='submit' name='move' value='ROCK'>
         <input type='submit' name='move' value='PAPER'>
@@ -32,9 +32,9 @@
     <h2>Score Board</h2>
   </div>
   <div>
-    <h3><%= RPS.game.p1.name %>: <%= RPS.game.p1.score %> / You: <%= RPS.game.p2.score %> </h3>
+    <h3><%= RPSLS.game.p1.name %>: <%= RPSLS.game.p1.score %> / You: <%= RPSLS.game.p2.score %> </h3>
   </div>
-  <% if !RPS.game.in_game %>
+  <% if !RPSLS.game.in_game %>
     <meta http-equiv="refresh" content="N;url=/p2_end"/>
   <% end %>
 </center>

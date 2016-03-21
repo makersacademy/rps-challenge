@@ -3,10 +3,10 @@ require './lib/player'
 require './lib/game'
 require './lib/entry'
 
-class RPS < Sinatra::Base
+class RPSLS < Sinatra::Base
 
   get '/' do
-    p RPS.initialize_entry(Entry.new)
+    p RPSLS.initialize_entry(Entry.new)
     erb(:index)
   end
 
@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/p1_entry' do
-    RPS.entry.add_entry(:p1, Player.new(params[:p1_name]))
+    RPSLS.entry.add_entry(:p1, Player.new(params[:p1_name]))
     p2_not_entered? ? redirect('/p1_standby') : redirect('/enter_game')
   end
 
@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
   end
 
   post '/p2_entry' do
-    RPS.entry.add_entry(:p2, Player.new(params[:p2_name]))
+    RPSLS.entry.add_entry(:p2, Player.new(params[:p2_name]))
     p1_not_entered? ? redirect('/p2_standby') : redirect('/enter_game')
   end
 
@@ -41,90 +41,90 @@ class RPS < Sinatra::Base
   end
 
   get '/enter_game' do
-    RPS.initialize_game(Game.new(RPS.entry.list[:p1], RPS.entry.list[:p2]))
+    RPSLS.initialize_game(Game.new(RPSLS.entry.list[:p1], RPSLS.entry.list[:p2]))
     erb(:enter_game)
   end
 
   get '/p1_play' do
-    redirect('/p1_end') if !RPS.game.in_game
-    RPS.game.p1.enter_round
+    redirect('/p1_end') if !RPSLS.game.in_game
+    RPSLS.game.p1.enter_round
     erb(:p1_play)
   end
 
   get '/p2_play' do
-    redirect('/p2_end') if !RPS.game.in_game
-    RPS.game.p2.enter_round
+    redirect('/p2_end') if !RPSLS.game.in_game
+    RPSLS.game.p2.enter_round
     erb(:p2_play)
   end
 
   post '/p1_play' do
-    RPS.game.p1.choose(params[:move])
-    RPS.game.p2.chosen? ? redirect('/p1_result') : redirect('/p1_chosen')
+    RPSLS.game.p1.choose(params[:move])
+    RPSLS.game.p2.chosen? ? redirect('/p1_result') : redirect('/p1_chosen')
   end
 
   get '/p1_chosen' do
-    RPS.game.p2.chosen? ? redirect('/p1_result') : erb(:p1_chosen)
+    RPSLS.game.p2.chosen? ? redirect('/p1_result') : erb(:p1_chosen)
   end
 
   post '/p2_play' do
-    RPS.game.p2.choose(params[:move])
-    RPS.game.p1.chosen? ? redirect('/p2_result') : redirect('/p2_chosen')
+    RPSLS.game.p2.choose(params[:move])
+    RPSLS.game.p1.chosen? ? redirect('/p2_result') : redirect('/p2_chosen')
   end
 
   get '/p2_chosen' do
-    RPS.game.p1.chosen? ? redirect('/p2_result') : erb(:p2_chosen)
+    RPSLS.game.p1.chosen? ? redirect('/p2_result') : erb(:p2_chosen)
   end
 
   get '/p1_result' do
-    if RPS.game.return_winner == 'draw'
+    if RPSLS.game.return_winner == 'draw'
       @winner = 'draw'
     else
-      @winner = RPS.game.return_winner.name
+      @winner = RPSLS.game.return_winner.name
     end
-    RPS.game.update_score
-    RPS.game.p1.exit_round
+    RPSLS.game.update_score
+    RPSLS.game.p1.exit_round
     erb(:p1_result)
   end
 
   get '/p2_result' do
-    if RPS.game.return_winner == 'draw'
+    if RPSLS.game.return_winner == 'draw'
       @winner = 'draw'
     else
-      @winner = RPS.game.return_winner.name
+      @winner = RPSLS.game.return_winner.name
     end
-    RPS.game.p2.exit_round
+    RPSLS.game.p2.exit_round
     erb(:p2_result)
   end
 
   post '/p1_result' do
-    RPS.game.p1.reset_choice
-    RPS.game.p1.enter_round
+    RPSLS.game.p1.reset_choice
+    RPSLS.game.p1.enter_round
     redirect '/p1_play'
   end
 
   post '/p2_result' do
-    RPS.game.p2.reset_choice
-    RPS.game.p2.enter_round
+    RPSLS.game.p2.reset_choice
+    RPSLS.game.p2.enter_round
     redirect '/p2_play'
   end
 
   get '/p1_end' do
-    RPS.game.end_game
+    RPSLS.game.end_game
     erb(:p1_end)
   end
 
   post '/p1_end' do
-    RPS.end_session
+    RPSLS.end_session
     redirect '/'
   end
 
   get '/p2_end' do
-    RPS.game.end_game
+    RPSLS.game.end_game
     erb(:p2_end)
   end
 
   post '/p2_end' do
-    RPS.end_session
+    RPSLS.end_session
     redirect '/'
   end
 
@@ -151,11 +151,11 @@ class RPS < Sinatra::Base
   end
 
   def p2_not_entered?
-    RPS.entry.p2_not_entered?
+    RPSLS.entry.p2_not_entered?
   end
 
   def p1_not_entered?
-    RPS.entry.p1_not_entered?
+    RPSLS.entry.p1_not_entered?
   end
 
   # start the server if ruby file executed directly
