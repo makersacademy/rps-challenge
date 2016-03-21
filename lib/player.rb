@@ -1,5 +1,3 @@
-require_relative 'game'
-
 class Player
 
   attr_reader :name, :weapon
@@ -9,7 +7,7 @@ class Player
   end
 
   def choice(weapon)
-     @weapon = weapon.downcase.to_sym
+     @weapon = weapon.to_sym
   end
 
 end

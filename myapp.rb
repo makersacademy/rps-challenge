@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
+
 
 class MyApp < Sinatra::Base
   enable :sessions
@@ -8,19 +11,25 @@ class MyApp < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player])
+    # player = Player.new(params[:player])
+    $game = Game.new(params[:player])
      redirect '/play'
   end
 
   get '/play' do
-    @player = $player.name
-    @player.choice(params[:weapon])
+    @game = $game
     erb :play
   end
 
-  post '/result' do
-    @player = $player.name
-    erb :result
+  post '/play'do
+    @game = $game
+    @game.player.choice(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
+    erb @game.result
   end
 
 # # start the server if ruby file executed directly
