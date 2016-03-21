@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
 
-subject(:player) {described_class.new(:name)}
+  subject(:player) {described_class.new(:name)}
 
   describe '#name' do
     it 'should return the name of a player' do

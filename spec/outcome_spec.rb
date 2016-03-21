@@ -2,10 +2,10 @@ require 'outcome'
 
 describe Outcome do
 
-let(:player1) {double(:player)}
-let(:player2) {double(:player)}
-subject(:outcome) {described_class.new(:weapon)}
-  
+  let(:player1) {double(:player)}
+  let(:player2) {double(:player)}
+  subject(:outcome) {described_class.new(:weapon)}
+    
   describe '#winner?' do
     it 'should return the winner of the match' do
       allow(outcome).to receive(:battle).and_return(:loose)
