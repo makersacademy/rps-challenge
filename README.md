@@ -53,6 +53,38 @@ Here is a step-by-step guide of how to play MB-RPSLS.
 10. If one of players decides to leave, the game will end with the final score and result of the game ( win/lose/draw )
 11. Click **New game** for starting a fresh game
 
+#### Screenshots from a sample local play (P2 omitted):
+
+↓Title page↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/1. Title.png" width="400" height="360" />
+
+↓Player choice↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/2. Player choise.png" width="400" height="360" />
+
+↓Player entry↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/3. Player entry.png" width="400" height="360" />
+
+↓Enter game↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/4. Play game.png" width="400" height="360" />
+
+↓Move choice↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/5. Choose move.png" width="400" height="440" />
+
+↓Round result↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/6. Round result.png" width="400" height="440" />
+
+↓Final result↓
+
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/7. Final result.png" width="400" height="440" />
+
+
+
 ### Development
 MB-RPSLS is written in Ruby 2.2.3 and has been developed using Sinatra 1.4.7 ( https://github.com/sinatra/sinatra ). It uses RSpec 3.2.2 as a platform for behaviour-driven development (BDD) in conjunction with Capybara 2.6.2 ( https://github.com/jnicklas/capybara#using-capybara-with-rspec ) as an acceptance test framework. The continuous integration is assessed through Travis-CI with the latest test coverage of 100%. Online version is supported by a cloud application platform Heroku ( https://www.heroku.com/ ).
 
