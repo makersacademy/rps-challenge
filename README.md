@@ -1,5 +1,3 @@
-<!-- [![Build Status](https://travis-ci.org/tobenna/takeaway-challenge.svg?branch=master)](https://travis-ci.org/tobenna/takeaway-challenge) [![Coverage Status](https://coveralls.io/repos/github/tobenna/takeaway-challenge/badge.svg?branch=master)](https://coveralls.io/github/tobenna/takeaway-challenge?branch=master) -->
-
 RPS: Jajanken
 ==================
 
