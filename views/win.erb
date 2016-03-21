@@ -1,8 +1,8 @@
-<div class = "result">
-  <h2><%= @game.player1.name %> chose <%= @game.player1.weapon %><br>
-  <%= @game.player2.name %> chose <%= @game.player2.weapon %><br></h2>
-  <h1><%= @game.player1.name %> wins!</h1><br>
+<section>
+  <h3><%= @game.player1.name %> chose <%= @game.player1.weapon %></h3>
+  <h3><%= @game.player2.name %> chose <%= @game.player2.weapon %></h3>
+  <h1><%= @game.player1.name %> wins!</h1>
   <form action='/play'>
     <input type='submit' value='Another Game!' class="button">
   </form>
-</div>
+</section>
