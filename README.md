@@ -57,31 +57,31 @@ Here is a step-by-step guide of how to play MB-RPSLS.
 
 ↓Title page↓
 
-<img src="./mb-rpsls_ss/1_title.png" width="400" height="360">
+<img src="./mb-rpsls_ss/1_title.png" width="300" height="400">
 
 ↓Player choice↓
 
-<img src="./mb-rpsls_ss/2_choose_player.png" width="400" height="360" >
+<img src="./mb-rpsls_ss/2_choose_player.png" width="300" height="400">
 
 ↓Player entry↓
 
-<img src="./mb-rpsls_ss/3_player_entry.png" width="400" height="360" >
+<img src="./mb-rpsls_ss/3_player_entry.png" width="300" height="400">
 
 ↓Enter game↓
 
-<img src="./mb-rpsls_ss/4_enter_game.png" width="400" height="360" >
+<img src="./mb-rpsls_ss/4_enter_game.png" width="300" height="400">
 
 ↓Move choice↓
 
-<img src="./mb-rpsls_ss/5_choose_move.png" width="400" height="440" >
+<img src="./mb-rpsls_ss/5_choose_move.png" width="300" height="400">
 
 ↓Round result↓
 
-<img src="./mb-rpsls_ss/6_round_result.png" width="400" height="440" >
+<img src="./mb-rpsls_ss/6_round_result.png" width="300" height="400">
 
 ↓Final result↓
 
-<img src="./mb-rpsls_ss/7_final_result.png" width="400" height="440" >
+<img src="./mb-rpsls_ss/7_final_result.png" width="300" height="400">
 
 
 
