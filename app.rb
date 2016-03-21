@@ -13,18 +13,22 @@ class Rps < Sinatra::Base
 
   post '/login' do
     session[:me] = params[:player_name]
+    players = params[:number_of_players].to_i
+    redirect '/error' if Game.create(player_name: params[:player_name], players: players)
+    puts "Wait #{Game.wait?}"
+    Game.wait? ? redirect('/login_wait') : redirect('/play')
 
-    if params[:number_of_players] == 'one'
-      Game.create_ai(player1_name:session[:me])
-      redirect '/play'
-    else
-      if Game.instance.nil?
-        Game.create(player1_name:session[:me])
-      else
-        Game.instance.add_player(player_name: session[:me])
-      end
-      redirect '/login_wait'
-    end
+    # if params[:number_of_players] == 'one'
+    #   Game.create_ai(player1_name:session[:me])
+    #   redirect '/play'
+    # else
+    #   if Game.instance.nil?
+    #     Game.create_human(player1_name:session[:me])
+    #   else
+    #     Game.instance.add_player(player_name: session[:me])
+    #   end
+    #   redirect '/login_wait'
+    # end
   end
 
   get '/login_wait' do

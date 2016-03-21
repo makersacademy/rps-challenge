@@ -36,7 +36,7 @@ describe Game do
     describe '#self.create' do
       it 'creates a new instance of game with one player' do
         expect(player_class).to receive :new
-        game_class.create(player1_name: player1.name,
+        game_class.create_human(player1_name: player1.name,
                           player_class: player_class)
       end
     end
@@ -64,7 +64,7 @@ describe Game do
       end
 
       it 'returns 2 for two-player game' do
-        game_class.create(player1_name: player1.name,
+        game_class.create_human(player1_name: player1.name,
                           player_class: player_class)
         expect(game_class.number_of_players).to eq(2)
       end
@@ -97,7 +97,7 @@ describe Game do
   context 'initialize with one player' do
     before :each do
       game_class.reset
-      game_class.create(player1_name: player1.name, player_class: player_class)
+      game_class.create_human(player1_name: player1.name, player_class: player_class)
     end
 
     describe "#initialize" do

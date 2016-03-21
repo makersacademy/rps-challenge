@@ -32,7 +32,4 @@ def two_player_sign_in(player1_name, player2_name)
   in_browser(:one) do
     click_button("Check")
   end
-  in_browser(:two) do
-    click_button("Check")
-  end
 end
