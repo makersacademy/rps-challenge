@@ -11,6 +11,8 @@ require 'coveralls'
 require 'simplecov'
 require 'features/web_helpers'
 
+Coveralls.wear!
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
