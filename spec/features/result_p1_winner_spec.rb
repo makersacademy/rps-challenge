@@ -9,19 +9,19 @@ feature 'Result page P1: winner decleration' do
     click_button('SCISSORS')
   end
 
-  scenario '0.0. Displays player\'s choice' do
+  scenario 'Displays player\'s choice' do
     expect(page).to have_content('Misa has chosen... ROCK!')
   end
 
-  scenario '0.1. Displays player2\'s choice' do
+  scenario 'Displays player2\'s choice' do
     expect(page).to have_content('You have chosen... SCISSORS!')
   end
 
-  scenario '0.2. Annouce winner' do
+  scenario 'Annouce winner' do
     expect(page).to have_content('Misa wins!')
   end
 
-  scenario '0.3. Moves onto next round' do
+  scenario 'Moves onto next round' do
     click_button('Next round!')
     expect(page).to have_content('↓Choose your move below↓')
   end

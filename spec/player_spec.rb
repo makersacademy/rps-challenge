@@ -6,32 +6,32 @@ describe Player do
   let(:move) { ['ROCK','PAPER','SCISSORS','LIZARD','SPOCK'].sample }
 
   describe '#initialize' do
-    it '0.0. initialises with name' do
+    it 'initialises with name' do
       expect(p1.name).to eq('Misa')
     end
-    it '0.1. initialises with a score' do
+    it 'initialises with a score' do
       expect(p1.score).to eq(0)
     end
-    it '0.2. initialises with false in_round flag' do
+    it 'initialises with false in_round flag' do
       expect(p1.in_round).to eq(false)
     end
   end
 
   describe '#choose' do
-    it '1.0. remembers players move' do
+    it 'remembers players move' do
       expect(p1.choose(move)).to eq(move)
     end
   end
 
   describe '#move' do
-    it '2.0. returns a move chosen by player' do
+    it 'returns a move chosen by player' do
       p1.choose(move)
       expect(p1.move).to eq(move)
     end
   end
 
   describe '#choose_random' do
-    it '3.0. returns a randomly chosen move' do
+    it 'returns a randomly chosen move' do
       random_move = p1.choose_random
       expect(p1.move).to eq(random_move)
     end

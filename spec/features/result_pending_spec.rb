@@ -5,13 +5,13 @@ feature 'Pending page: while waiting for the other to make a move' do
     both_sign_in_and_enter_game
   end
 
-  scenario '0.0. Player 1 chooses a move first' do
+  scenario 'Player 1 chooses a move first' do
     visit '/p1_play'
     click_button('ROCK')
     expect(page).to have_content('Player 2 is chooseing the move...')
   end
 
-  scenario '0.1. Player 2 chooses a move first' do
+  scenario 'Player 2 chooses a move first' do
     visit '/p2_play'
     click_button('ROCK')
     expect(page).to have_content('Player 1 is chooseing the move...')

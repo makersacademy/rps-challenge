@@ -9,15 +9,15 @@ feature 'Result page P2: draw game' do
     click_button('ROCK')
   end
 
-  scenario '0.0. Displays player1\'s choice' do
+  scenario 'Displays player1\'s choice' do
     expect(page).to have_content('You have chosen... ROCK!')
   end
 
-  scenario '0.1. Displays player2\'s choice' do
+  scenario 'Displays player2\'s choice' do
     expect(page).to have_content('Clems has chosen... ROCK!')
   end
 
-  scenario '0.2. Annouce draw when p1 and p2 choose same move' do
+  scenario 'Annouce draw when p1 and p2 choose same move' do
     expect(page).to have_content('You and Clems draw!')
   end
 end
