@@ -3,7 +3,6 @@ class Player
 
   def initialize(name)
     @name = name.capitalize
-    @weapon = nil
   end
 
   def pick(weapon)

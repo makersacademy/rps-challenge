@@ -9,12 +9,6 @@ describe Player do
     end
   end
 
-  describe "#pick_weapon" do
-    it "should store player's selected weapon" do
-      expect(player.pick(:rock)).to eq :rock
-    end
-  end
-
   describe "#weapon" do
     it "should display player's weapon" do
       player.pick(:rock)

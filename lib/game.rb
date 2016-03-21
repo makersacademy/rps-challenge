@@ -1,6 +1,5 @@
 class Game
-  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
-  RULES = { rock: [:scissors, :lizard],
+  WEAPONS = { rock: [:scissors, :lizard],
             scissors: [:paper, :lizard],
             paper: [:rock, :spock],
             spock: [:scissors, :rock],
@@ -31,6 +30,6 @@ class Game
   private
 
   def beats?(weapon_1, weapon_2)
-    RULES[weapon_1].include? weapon_2
+    WEAPONS[weapon_1].include? weapon_2
   end
 end

@@ -52,7 +52,7 @@ class RPS < Sinatra::Base
     end
 
     def store_weapon
-      Game::WEAPONS.each { |weapon| @weapon = weapon if params[weapon] }
+      Game::WEAPONS.keys.each { |weapon| @weapon = weapon if params[weapon] }
     end
 
     def computer?

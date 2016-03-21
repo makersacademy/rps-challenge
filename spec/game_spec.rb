@@ -5,12 +5,6 @@ describe Game do
   let(:player_1) { double :player }
   let(:player_2) { double :player }
 
-  describe "start" do
-    it "should store current instance of Game" do
-      expect(described_class.start(game)).to eq game
-    end
-  end
-
   describe "game" do
     it "should display current instance of Game" do
       described_class.start(game)
