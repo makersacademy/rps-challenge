@@ -8,6 +8,7 @@ class Game
     @player = player
     @comp = comp_choice
     @result = nil
+    @p1 = player.name
   end
 
 
@@ -21,18 +22,14 @@ class Game
   end
 
   def play
-    p1 = @player.name
-    if @player.choice == @comp
-      @result = "Draw"
+    if @player.choice == @comp then @result = "Draw"
     elsif @player.choice == "rock"
-      @comp == "scissors" ? @result = "#{p1} wins" : @result = "Computer wins"
+      @comp == "scissors" ? @result = "#{@p1} wins" : @result = "Computer wins"
     elsif @player.choice == "scissors"
-      @comp == "paper" ? @result = "#{p1} wins" : @result = "Computer wins"
+      @comp == "paper" ? @result = "#{@p1} wins" : @result = "Computer wins"
     else
-      @comp == "rock" ? @result = "#{p1} wins" : @result = "Computer wins"
+      @comp == "rock" ? @result = "#{@p1} wins" : @result = "Computer wins"
     end
-    @result
   end
-
-
+  
 end

@@ -27,11 +27,8 @@ describe Game do
 
   describe '#play' do
 
-    # let(:dummy_game) { double :game }
-
     it 'player can win' do
       game.comp_set("scissors")
-      # allow(dummy_game).to receive(:comp).and_return("scissors")
       expect(game.play).to eq("Frank wins")
     end
 
