@@ -4,11 +4,11 @@ class Game
   
   attr_reader :player1, :player2, :player1_turn
   
-  MOVES = {'Rock' => ['Scissors', 'Lizard'],
-           'Paper' => ['Rock', 'Spock'],
-           'Scissors' => ['Spock', 'Paper'],
-           'Spock' => ['Rock', 'Scissors'],
-           'Lizard' => ['Spock', 'Paper'] }
+  MOVES = {:rock => [:scissors, :lizard],
+           :paper => [:rock, :spock],
+           :scissors => [:lizard, :paper],
+           :spock => [:rock, :scissors],
+           :lizard => [:spock, :paper] }
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
@@ -58,10 +58,10 @@ class Game
 
   
   def player1_wins?
-    MOVES[player_choice(player1)].include? player_choice(player2)
+    MOVES[player_choice(player1).to_sym].include? player_choice(player2).to_sym
   end
 
   def tie?
-    player_choice(player1) == player_choice(player2)
+    player_choice(player1).to_sym == player_choice(player2).to_sym
   end 
 end
