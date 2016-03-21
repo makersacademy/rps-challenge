@@ -1,15 +1,15 @@
-require_relative 'game'
+# require_relative 'game'
 
-class Computer
+# class Computer
 
-  attr_reader :weapon, :name
+#   attr_reader :weapon, :name
 
-  def initialize(name)
-    @name = name
-  end
+#   def initialize(name)
+#     @name = name
+#   end
 
-  def weapon
-    @weapon = Game::WEAPONS.sample
-  end
+#   def weapon
+#     @weapon = Game::WEAPONS.sample
+#   end
 
-end
+# end

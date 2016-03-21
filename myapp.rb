@@ -14,10 +14,11 @@ class MyApp < Sinatra::Base
 
   get '/play' do
     @player = $player.name
+    # @player.choice(params[:weapon])
     erb :play
   end
 
-  get '/result' do
+  post '/result' do
     @player = $player.name
     erb :result
   end
