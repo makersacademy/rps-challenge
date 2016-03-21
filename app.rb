@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    Game.player.chooses params[:choice]
+    Game.player.chooses params[:choice].to_sym
     Game.generate
     redirect '/result'
   end

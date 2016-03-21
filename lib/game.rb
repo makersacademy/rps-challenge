@@ -1,6 +1,6 @@
 class Game
 
-  RANKING = ['rock', 'paper', 'scissors', 'rock']
+  RANKING = [:rock, :paper, :scissors, :rock]
 
   def self.start player
     @player = player
@@ -16,7 +16,7 @@ class Game
     self.decide_winner
   end
 
-  def self.generate choice=["rock", "paper", "scissors"]
+  def self.generate choice=[:rock, :paper, :scissors]
     @computer_selected = choice.sample
   end
 
