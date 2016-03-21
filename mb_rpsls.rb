@@ -6,7 +6,7 @@ require './lib/entry'
 class RPSLS < Sinatra::Base
 
   get '/' do
-    p RPSLS.initialize_entry(Entry.new)
+    RPSLS.initialize_entry(Entry.new)
     erb(:index)
   end
 
