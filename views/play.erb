@@ -1,8 +1,10 @@
 <h1> Welcome <%= @player %>!</h1>
 
 <form action="/result" method = "post">
-<input type="radio" name="weapon" value="rock">Rock</input>
+<!-- <input type="radio" name="rock" value="rock">Rock</input>
 <input type="radio" name="weapon" value="paper">Paper</input>
-<input type="radio" name="weapon" value="scissors">Scissors</input>
-<button type="submit" value='play'>Play!</button>
+<input type="radio" name="weapon" value="scissors">Scissors</input> -->
+<button type="submit" name="weapon" value='rock'>Rock!</button>
+<button type="submit" name="weapon" value='paper'>Paper!</button>
+<button type="submit" name="weapon" value='scissors'>Scissors!</button>
 </form>

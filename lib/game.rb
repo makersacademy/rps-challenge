@@ -9,8 +9,9 @@ attr_reader :player, :computer_weapon, :result
     RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
 
-  def initialize(player = Player)
-    @player = player
+  def initialize(player)
+    @player = Player.new(player)
+    # @computer = Computer.new(computer)
   end
 
   def computer_weapon
@@ -18,10 +19,10 @@ attr_reader :player, :computer_weapon, :result
   end
 
   def result
-    return :win if @player.weapon == :rock && computer.weapon == :scissors
-    return :win if @player.weapon == :scissors && computer.weapon == :paper
-    return :win if @player.weapon == :paper && computer.weapon == :rock
-    return :draw if @player.weapon == computer.weapon
+    return :win if @player.weapon == :rock && computer_weapon == :scissors
+    return :win if @player.weapon == :scissors && computer_weapon == :paper
+    return :win if @player.weapon == :paper && computer_weapon == :rock
+    return :draw if @player.weapon == computer_weapon
     return :lose
   end
 

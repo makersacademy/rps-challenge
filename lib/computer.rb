@@ -4,7 +4,7 @@
 
 #   attr_reader :weapon, :name
 
-#   def initialize(name)
+#   def initialize(name = Terminator)
 #     @name = name
 #   end
 

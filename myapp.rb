@@ -14,7 +14,7 @@ class MyApp < Sinatra::Base
 
   get '/play' do
     @player = $player.name
-    # @player.choice(params[:weapon])
+    @player.choice(params[:weapon])
     erb :play
   end
 
