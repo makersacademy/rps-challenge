@@ -12,9 +12,19 @@ describe Game do
         expect(game.player1).to eq player1
       end
     end
+    describe '#player2' do
+      it 'returns player' do
+        expect(game.player2).to eq player2
+      end
+    end
     describe '#set_points' do
       it 'sets the game points' do
         expect(game.game_points).to eq 10
+      end
+    end
+    describe '#winner' do
+      it 'is nil at start of game' do
+        expect(game.winner).to be nil
       end
     end
   end

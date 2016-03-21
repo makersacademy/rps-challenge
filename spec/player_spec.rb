@@ -3,18 +3,21 @@ require 'player'
 describe Player do
 
   subject(:player) { described_class.new name }
-  let(:name) { double 'Shane' }
+  let(:name) { double :name }
 
   describe '#initialize' do
-    it 'returns player one\'s name' do
+    it 'returns player\'s  name' do
       expect(player.name).to be name
+    end
+    it 'returns player\'s score as 0' do
+      expect(player.score).to eq 0
     end
   end
 
   describe '#choice' do
     it 'returns the player\'s choice of weapon' do
-      player.choice(:rock)
-      expect(player.weapon).to eq :rock
+      player.choice(:Rock)
+      expect(player.weapon).to eq :Rock
     end
   end
   # not convinced this a good test
