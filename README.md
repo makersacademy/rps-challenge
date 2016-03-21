@@ -57,31 +57,31 @@ Here is a step-by-step guide of how to play MB-RPSLS.
 
 ↓Title page↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/1. Title.png" width="400" height="360" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/1. Title.png" width="400" height="360" >
 
 ↓Player choice↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/2. Player choise.png" width="400" height="360" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/2. Player choise.png" width="400" height="360" >
 
 ↓Player entry↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/3. Player entry.png" width="400" height="360" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/3. Player entry.png" width="400" height="360" >
 
 ↓Enter game↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/4. Play game.png" width="400" height="360" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/4. Play game.png" width="400" height="360" >
 
 ↓Move choice↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/5. Choose move.png" width="400" height="440" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/5. Choose move.png" width="400" height="440" >
 
 ↓Round result↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/6. Round result.png" width="400" height="440" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/6. Round result.png" width="400" height="440" >
 
 ↓Final result↓
 
-<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/7. Final result.png" width="400" height="440" />
+<img src="/Users/misaogura/Dropbox/Projects/makersacademy/w3/rps-challenge/mb-rpsls_ss/7. Final result.png" width="400" height="440" >
 
 
 
