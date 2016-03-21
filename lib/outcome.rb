@@ -1,18 +1,20 @@
 require 'pry'
 class Outcome
 
-  def self.check(weapon)
+
+  def self.check(weapon, weapon2)
     @attacker_weapon = weapon
-    (Outcome.new(weapon)).winner?
+    @defender_weaon = weapon2
+    (Outcome.new(weapon, weapon2)).winner?
   end
 
   def self.attacker
     @attacker_weapon
   end
 
-  def initialize(weapon)
+  def initialize(weapon, weapon2)
     @attacker = weapon
-    @defender = cp_attack
+    @defender = weapon2
   end
 
   def winner?
@@ -27,15 +29,6 @@ class Outcome
       return :tie if @attacker ==  @defender
       return :win if matcher(@attacker) == @defender
       :loose
-    end
-
-    def cp_attack
-      weapon = {1 => 'rock', 2 => 'paper', 3=> 'scissors'}
-      weapon[rand]
-    end
-
-    def rand
-      Kernel.rand(1..3)
     end
 
     def matcher(weapon)

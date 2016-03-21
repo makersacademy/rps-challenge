@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   post '/outcome' do
-    @game.winner(Outcome.check(params[:weapon]))
+    @game.winner(Outcome.check(params[:weapon], Computer.new.weapon))
     redirect('/winner')
   end
 

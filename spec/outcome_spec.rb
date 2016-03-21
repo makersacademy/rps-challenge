@@ -4,7 +4,7 @@ describe Outcome do
 
   let(:player1) {double(:player)}
   let(:player2) {double(:player)}
-  subject(:outcome) {described_class.new(:weapon)}
+  subject(:outcome) {described_class.new(:weapon1, :weapon2)}
     
   describe '#winner?' do
     it 'should return the winner of the match' do
