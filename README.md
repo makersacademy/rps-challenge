@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ccfz/rps-challenge.svg?branch=master)](https://travis-ci.org/ccfz/rps-challenge)
 [![Coverage Status](https://coveralls.io/repos/github/ccfz/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/ccfz/rps-challenge?branch=master)
 
 H1 ROCK PAPER SCISSORS!
