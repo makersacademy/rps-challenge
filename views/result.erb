@@ -1,0 +1,14 @@
+<h1>Rock Paper Scissors</h1>
+<p><%= @game.player1_name %>'s weapon: <%= @game.player1_weapon %></p>
+<p><%= @game.player2_name %>'s weapon: <%= @game.player2_weapon %></p>
+<% if @game.tie %>
+  <h2>It's a tie. Nobody wins.</h2>
+<% else %>
+  <h2><%= @game.winner %> wins a point.</h2>
+<% end %>
+<form action="/next" method="get">
+  <input type="submit" value="Next round" />
+</form>
+<form action="/" method="get">
+  <input type="submit" value="Quit game" />
+</form>

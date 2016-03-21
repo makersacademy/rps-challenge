@@ -1,94 +1,29 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
+## Instructions
 -------
+* Easy Peasy.... choose the number of players (only supports one right now!)
+* Choose your weapon and take on the computer.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+## Enhancements coming soon
 ----
+* Two-player mode: pit your pattern recognition skills against a friend.
+* Game choice: traditional RPS or more challenging RPS Lizard Spock version.
+* Game winner: set game points and play to that level for the crown "Champion"
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
+## Installation instructions
 ```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+$ git clone git@github.com:shaneoston72/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app.#!/usr/bin/env ruby -wKU
 ```
+In your browser, visit localhost:4567. Enjoy!
 
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+## Approach
+The game is extraordinarily simple in its implementation.  The game uses a randomize to select the computer's weapon and compares it according to standard RPS rules to derive a winner. The app is using a Sinatra front-end of basic HTML and elementary CSS and a Ruby backend.  The Ruby backend is built using two classes, Game and Player.  
 
-```
-$ coveralls report
-```
+Future enhancements will require additional front-end views and Ruby classes to accomodate game types and multiple players.
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+## Impressions
+This challenge was difficult in that I was excited to get started and neglected the TDD mantra of "Write a test, fail a test, pass a test, refactor, move on." This required me to step back and apply the methodology to get back on track. From that point, the app naturally evolved (e.g. TDD works!).  I ran into a bug that was not exposed by the tests as feature and unit tests passed.  Thanks to the great contribution of my cohort mate, Lorenzo, I was able to resolve it.
