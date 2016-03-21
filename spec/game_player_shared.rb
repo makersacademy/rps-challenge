@@ -26,7 +26,7 @@ shared_examples_for 'a game player' do
       allow(game_player).to receive(:weapon).and_return weapon_name
     end
     it 'returns the name as a string' do
-      expect(game_player.to_s).to eq 'rock'
+      expect(game_player.to_s).to eq name
     end
   end
 

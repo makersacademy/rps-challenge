@@ -13,7 +13,7 @@ module GamePlayer
   end
 
   def to_s
-    weapon.to_s
+    name.to_s
   end
 
 end
