@@ -1,10 +1,10 @@
 You chose <%= @game.player_choice %>. Computer chose <%= @game.computer_choice %>.
 
-<% if @game.winning_player != :tie %>
+<% if @game.winning_choice != :tie %>
 <%= @game.winning_choice.capitalize %> beats <%= @game.losing_choice %>.
 <% end %>
 
-<% if !@game.winning_player == :computer %>
+<% if @game.winning_player == :computer %>
   The computer wins!
 <% elsif @game.winning_choice == :tie %>
   It's a tie!

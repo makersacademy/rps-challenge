@@ -55,8 +55,8 @@ private
       @winning_choice = :scissors
       @losing_choice = :paper
     elsif @player_choice == :scissors && @computer_choice == :rock
-      @winning_choice = :scissors
-      @losing_choice = :rock
+      @winning_choice = :rock
+      @losing_choice = :scissors
     elsif @player_choice == :scissors && @computer_choice == :paper
       @winning_choice = :scissors
       @losing_choice = :paper
