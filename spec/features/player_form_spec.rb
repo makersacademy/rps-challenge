@@ -5,7 +5,7 @@ require 'capybara'
 feature 'Sign in' do
   scenario 'Welcomes players' do
     visit ('/')
-    expect(page).to have_content("Welcome Please Enter Your Name")
+    expect(page).to have_content("Enter Your Name")
   end
 
   scenario 'Players can sign in' do
