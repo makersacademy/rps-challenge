@@ -12,24 +12,21 @@ class MyApp < Sinatra::Base
 
   post '/name' do
     # player = Player.new(params[:player])
-    $game = Game.new(params[:player])
+    Game.create(params[:player])
      redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/play'do
-    @game = $game
-    @game.player.choice(params[:weapon])
+    Game.instance.player.choice(params[:weapon])
     redirect '/result'
   end
 
   get '/result' do
-    @game = $game
-    erb @game.result
+    erb Game.instance.result
   end
 
 # # start the server if ruby file executed directly

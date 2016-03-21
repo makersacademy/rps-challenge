@@ -14,6 +14,14 @@ attr_reader :player, :computer_weapon, :result
     # @computer = Computer.new(computer)
   end
 
+    def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def computer_weapon
     @computer_weapon = Game::WEAPONS.sample
   end
