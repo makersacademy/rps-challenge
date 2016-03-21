@@ -7,7 +7,7 @@ class Player
   include GamePlayer
 
   def select_weapon(weapon_name)
-    raise INVALID_WEAPON unless includes_weapon?(weapon_name)
+    fail INVALID_WEAPON unless includes_weapon?(weapon_name)
     @weapon = @weapon_class.new(weapon_name)
   end
 

@@ -17,7 +17,7 @@ class Game
     @instance = self.new(player1: player1, player2: player2)
   end
 
-  def self.set_game(rule_set: )
+  def self.setup_game(rule_set: )
     self.rules_setup(rule_set)
     self.weapons_setup(rule_set)
   end
@@ -43,8 +43,6 @@ class Game
     return @player1 if @player1.winner?(@player2.weapon)
     return @player2 if @player2.winner?(@player1.weapon)
   end
-
-  private
 
   def self.weapons_setup(rule_set)
     @weapons = WEAPONS if rule_set == 'regular'

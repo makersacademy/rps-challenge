@@ -4,7 +4,7 @@ require 'player'
 describe 'Declares the right winner' do
   p1 = Player.new(name: 'Darth Vadar')
   p2 = Player.new(name: 'Obi-Wan')
-  Game.set_game(rule_set: 'spock')
+  Game.setup_game(rule_set: 'spock')
   game = Game.create(player1: p1, player2: p2)
   describe 'Weapon 1 is Rock' do
     before do

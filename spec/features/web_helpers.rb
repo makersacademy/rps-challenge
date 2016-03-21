@@ -1,4 +1,4 @@
-def sign_in_and_play(player_1)
+def sign_in_and_play(player1)
   visit '/'
   select 'Star-Trek', from: 'rules'
   click_button 'Next'
@@ -6,7 +6,7 @@ def sign_in_and_play(player_1)
   click_button 'Submit'
 end
 
-def sign_in_and_play_regular(player_1)
+def sign_in_and_play_regular(player1)
   visit '/'
   select 'Regular', from: 'rules'
   click_link 'Next'
