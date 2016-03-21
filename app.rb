@@ -37,10 +37,6 @@ class Rps < Sinatra::Base
     erb(:result)
   end
 
-  get '/tie' do
-    erb(:tie)
-  end
-
   get '/next' do
     erb(:next)
   end

@@ -46,7 +46,9 @@ class Game
     @player2.score
   end
 
+  # can be replaced with a rules has and do a comparions move with key beats the values
   def rps(player1, player2)
+    @tie = false
     if player1 == player2
       tie_round
     elsif player1 == :Rock
