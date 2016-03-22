@@ -1,5 +1,9 @@
 # RPS Challenge: Rōnin Badge Test
 
+Author: Simon Glancy
+
+Date: 19/03/2016
+
 Instructions
 -------
 

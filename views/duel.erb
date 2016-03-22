@@ -1,0 +1,16 @@
+<center>
+  <body bgcolor='yellow'>
+<html style='font-family: futura;'>
+<font size=40 color="white">R     |     P    |     S</font>
+<h1><%= @game.player1.name %> V <%=@game.player2.name%></h1>
+<p size=100></p>
+<h2> D U E L </h2>
+<h2 style="color:#ff33cc"> <%=@game.score[@game.player1.name.to_sym]%>  :  <%=@game.score[@game.player2.name.to_sym]%> </h2>
+
+
+<form action='/attack' method='post' style="color:yellow">
+<input type='image' src='Rock_icon.png' width="55" height="55" name='attack' value='ROCK'> ----
+<input type='image' src='paper_icon.png' width="55" height="55" name='attack' value='PAPER'> ----
+<input type='image' src='Scissors_icon.png' width="55" height="55" name='attack' value='SCISSORS'>
+</form>
+</html>

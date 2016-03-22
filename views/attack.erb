@@ -1,0 +1,22 @@
+<center>
+  <body bgcolor='yellow'>
+<html style='font-family: futura;'>
+<font size=40 color="white">R     |     P    |     S</font>
+<style>
+a:link    {color:#800060; background-color:transparent; text-decoration:none}
+a:visited {color:#ff33cc; background-color:transparent; text-decoration:none}
+a:hover   {color:#ff0066; background-color:transparent; text-decoration:none}
+a:active  {color:#b30047; background-color:transparent; text-decoration:none}
+</style>
+
+<h1 style="color:#ff33cc" > <%= @game.rounds[-1].choices[0].to_s.upcase %> plays <%= @game.rounds[-1].choices[1].to_s.upcase %></h1>
+<h1 size=100>
+<%  if @game.rounds[-1].draw? %>
+DRAW
+<% else %>
+<%= @game.rounds[-1].winner %> WINS
+<% end %>
+</h1>
+
+<a href='/duel'>next round</a>
+</html>
