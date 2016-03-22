@@ -1,94 +1,58 @@
-# RPS Challenge: Rōnin Badge Test
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Rock, Paper, Scissors Challenge [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
+===============================
 
 
-As usual please start by
+The task was to build a game of rock, paper, scissors that a user could play on the web.
 
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
+**Features of the game included:**
+* User can register their name before playing;
+* The user can play a game of RPS against a computer;
+* The user is presented with choices (rock, paper or scissors);
+* The user can choose one of those options;
+* The game will generate a random option;
+* A winner will be declared.
 
-**Rōnin BANZAI!!!!**
+**Bonus features:**
+* Add in multiplayer mode.
 
-## Bonus level 1: Multiplayer
+How I went about this challenge:
+--------------------------------
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+I started this challenge off the computer and on paper and pen organising what pages there would be and how many classes and tests I would have.
+At first I implemented single player mode and it all worked however with one Game class, then I refactored and extracted a player class.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+After getting the tests to work correctly I started adding in multiplayer mode. I went back to paper and pen again to draw a flow chart of the order of pages. Once I managed to get that to work along with tests, I added in CSS styling in a separate `style.css` sheet with different pictures and colours.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Testing included RSpec unit tests for both the Player and Game classes. Feature testing was implemented with Capybara. As it currently stands the coverage of all feature and unit tests are at 97.86%.
 
-## Basic Rules
+I deployed the app to Heroku and you can view it **[here](https://hidden-garden-50612.herokuapp.com/?).**
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+Screenshots of the app below:
+-----------------------------
 
-In code review we'll be hoping to see:
+Home page:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+![Imgur](http://i.imgur.com/x1QeevT.png)
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+Single player mode:
 
-Notes on test coverage
-----------------------
+![Imgur](http://i.imgur.com/PP0xpER.png)
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Multiplayer mode:
 
-```ruby
-require 'coveralls'
-require 'simplecov'
+![Imgur](http://i.imgur.com/oN0KUgW.png)
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
+Picking weapon:
 
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+![Imgur](http://i.imgur.com/13l1MNv.png)
 
-```
-$ coveralls report
-```
+Winner page:
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+![Imgur](http://i.imgur.com/FaNRRrd.png)
 
+Draw page:
+
+![Imgur](http://i.imgur.com/fM5T3T4.png?1)
+
+
+**Author: Yasmin Green**
