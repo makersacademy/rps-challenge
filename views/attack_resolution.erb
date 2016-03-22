@@ -1,0 +1,16 @@
+<head>
+<link rel="stylesheet" type="text/css" href="main_style.css">
+</head>
+
+<% if @winner_name != :draw%>
+<h1><%= @winner_name%> wins the round!</h1>
+<% else %>
+<h1>This round ends in a draw!</h1>
+<% end %>
+
+<h3><%= @player_one_name %> attacked with: <%= @player_one_atk %> </h3>
+<h3><%= @player_two_name %> attacked with: <%= @player_two_atk %> </h3>
+
+<form action='/game'>
+  <button type='submit' class='nextbutton' id='continue_button'>Continue to next round</button>
+</form>

@@ -1,0 +1,17 @@
+expect to have a welcome page
+  - form to enter name
+  - button to start game
+
+(mid redirect with names)
+
+expect to have a play page
+  - current standings
+  - 3/5 buttons with the choiches
+
+(mid redirect with button)
+
+expect to have a resolve page
+  - winner of the current round
+
+expect to have a win/lose page
+  - proclaim winner and beer
