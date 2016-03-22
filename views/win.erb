@@ -1,0 +1,11 @@
+<section>
+  <h3><%= @game.player1.name %> chose <%= @game.player1.weapon %></h3>
+  <h3><%= @game.player2.name %> chose <%= @game.player2.weapon %></h3>
+  <h1><%= @game.player1.name %> wins!</h1>
+  <form action='/play'>
+    <input type='submit' value='Another Game!' class="button">
+  </form>
+  <form action='/'>
+    <input type='submit' value='Play Again!' class="button">
+  </form>
+</section>
