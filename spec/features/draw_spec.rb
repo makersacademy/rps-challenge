@@ -6,15 +6,15 @@ RSpec.feature 'draw_spec: Game is a draw:' do
     click_button("Paper")
   end
 
-  scenario '1. should have players choice' do
+  scenario 'should have players choice' do
     expect(page).to have_content("player1's choice: Paper")
   end
 
-  scenario '2. should have computers choice' do
+  scenario 'should have computers choice' do
     expect(page).to have_content("Computer's choice: Paper")
   end
 
-  scenario '3. should have its a draw statement' do
+  scenario 'should have its a draw statement' do
     expect(page).to have_content("It's a draw!")
   end
 

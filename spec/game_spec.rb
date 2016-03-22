@@ -7,23 +7,23 @@ describe Game do
   let(:rock) { :rock }
 
   describe '#initialize' do
-    it '1. should initialize player1 with an instance of player class' do
+    it 'should initialize player1 with an instance of player class' do
       expect(game.player1).to eq(player1)
     end
 
-    it '2. should initialize player2 with an instance of player class' do
+    it 'should initialize player2 with an instance of player class' do
       expect(game.player2).to eq(player2)
     end
 
-    it '3. should initialize with winner equal to nil' do
+    it 'should initialize with winner equal to nil' do
       expect(game.winner).to eq(nil)
     end
 
-    it '4. should initialize with draw equal to false' do
+    it 'should initialize with draw equal to false' do
       expect(game.draw).to eq(false)
     end
 
-    it '5. should initialize singleplayer as false if p2 != Computer' do
+    it 'should initialize singleplayer as false if p2 != Computer' do
       expect(game.singleplayer).to eq(false)
     end
   end
@@ -61,17 +61,17 @@ describe Game do
   end
 
   describe '#rps' do
-    it '1. should say player1 as winner if player1 wins' do
+    it 'should say player1 as winner if player1 wins' do
       game.rps("Rock", "Scissors")
       expect(game.winner).to eq("player1")
     end
 
-    it '2. should say player2 as winner if player2 wins' do
+    it 'should say player2 as winner if player2 wins' do
       game.rps("Scissors", "Rock")
       expect(game.winner).to eq("player2")
     end
 
-    it '3. should change draw to true if game is a draw' do
+    it 'should change draw to true if game is a draw' do
       game.rps("Rock", "Rock")
       expect(game.draw).to eq(true)
     end

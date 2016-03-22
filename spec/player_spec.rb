@@ -4,11 +4,11 @@ describe Player do
   subject(:player) { described_class.new("player") }
 
   describe '#initialize' do
-    it '1. should initialize with a name saved to an instance variable' do
+    it 'should initialize with a name saved to an instance variable' do
       expect(player.player_name).to eq("player")
     end
 
-    it '2. should initialize with an array of weapons' do
+    it 'should initialize with an array of weapons' do
       weapons_arr = ["Rock", "Paper", "Scissors"]
       expect(player.weapons).to eq(weapons_arr)
     end
