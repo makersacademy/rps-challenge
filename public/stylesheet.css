@@ -1,0 +1,48 @@
+body {
+  background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, #00004d); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #00004d); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #00004d); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #00004d); /* Standard syntax */
+
+    text-align: center;
+}
+
+input[type=text] {
+
+width: 50px;
+
+}
+
+button {
+  
+    background-color: grey;
+    opacity: 10%;
+    border: none;
+    border-radius: 5%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 1px black;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 1px 3px #303036;
+    margin:auto;
+    
+}
+
+form {
+
+display:inline;
+
+}
+
+.centered{
+    position:absolute;
+    width:350px;
+    height:100px;
+    left:30%;
+    top:30%;
+
+}
