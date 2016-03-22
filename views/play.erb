@@ -1,0 +1,29 @@
+<h1>Let's play!</h1>
+<h2>Choose your move by clicking the button</h2>
+<p>Your points: <%=@me.wins%>
+<p><%=@opponent.name%>'s points: <%=@opponent.wins%>
+
+<%if @game.in_progress?%>
+  <h3>You played <%= @me.move%></h3>
+  <h3><%=@opponent.name%> played <%= @opponent.move%></h3>
+<%end%>
+
+<%if @game.in_progress? && @result.empty? %>
+  <h3>Draw</h3>
+<%end%>
+
+<%if @game.in_progress? && !@result.empty? %>
+  <h3><%=@result[0]%> wins: <%=@result.slice(1..3).join(' ')%>!</h3>
+<%end%>
+
+  <form class="play" action ="/turn" method="post">
+    <input id="rock"type="radio" name="play" value="rock">Rock<br>
+    <input id="paper" type="radio" name="play" value="paper">Paper<br>
+    <input id="scissors" type="radio" name="play" value="scissors">Scissors<br>
+    <input id="lizard" type="radio" name="play" value="lizard">Lizard<br>
+    <input id="spock" type="radio" name="play" value="spock">Spock<br>
+    <input type="submit" value="Play"/>
+  </form>
+  <form class ="new_game" action ="/new" method="post">
+    <input type="submit" value="New Game"/>
+  </form>
