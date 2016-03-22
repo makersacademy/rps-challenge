@@ -1,0 +1,20 @@
+<body bgcolor ='#F4BAC8'>
+  <body topmargin='100' leftmargin ='200' rightmargin='200'> 
+  <font face='futura'>
+<center>
+  <h1>
+    <div>
+      <%= @game.player_name(@game.player1) %> has chosen <%= @game.player_choice(@game.player1) %>
+    </div>
+    <div>
+      <%= @game.player_name(@game.player2) %> has chosen <%= @game.player_choice(@game.player2) %> 
+    </div>
+    <div>
+      <font size='200'>
+      <%= @game.player_name(@game.winner).upcase %> WINS
+     </font>
+    </div>
+  </h1>
+</center>
+</font>
+</body>

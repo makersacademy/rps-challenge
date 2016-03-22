@@ -1,94 +1,97 @@
-# RPS Challenge: Rōnin Badge Test
+[![Build Status](https://travis-ci.org/kevinpmcc/rps-challenge.svg?branch=master)](https://travis-ci.org/kevinpmcc/rps-challenge)
 
-Instructions
+[![Coverage Status](https://coveralls.io/repos/github/kevinpmcc/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/kevinpmcc/rps-challenge?branch=master)
+
+Project Description
+----------
+This project is my Week 3 weekend challenge to build a multiplayer Rock,Paper,Scissors,Spock,Lizard(RPSlS) game.
+
+I first built a one-player version of Rock,Paper,Scissors(RPS) where you played against the computer. You can find this in branch one-player.
+Next I built a two-player version of RPS where two player play in same browser window. You can find this in branch two-player.
+Finally I built a two-player version of RPSlS which you can find in master branch. Here are the rules of RPSLS http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
+
+I took a TDD approach and created RSpec feature tests and unit tests to drive design and development.
+
+Technologies used
+* sinatra framework
+* Capybara
+* Ruby 2.2.3
+* HTML
+* RSpec 3.3.2
+* Coveralls Report
+
+
+
+The project structure is broken down as follows.
+app.rb in root folder is the Controller
+lib holds the Model ruby files
+  * lib/game.rb was in charge of determining the winner and housing the rules
+  * lib/player.rb was in charge of holding the player's name and player's choice
+
+views folder holds the View feature erb files
+public folder holds images used in the project
+
+
+Gameplay
+-----------
+You begin by entering each of the player's names. In this example we've got Margot and Ritchie. Click Submit.
+![Image of Entering Names](http://i.imgur.com/5WFdeGq.png)
+
+First up is Margot. She needs to choose one of the options by clicking a button.
+![Image of Player 1's turn] (http://i.imgur.com/CsGScMx.png)
+
+If a player needs to check the rules they can scroll down.
+![Image of Rules](http://i.imgur.com/s7uHb5G.png)
+
+Next its Ritchie's turn. He also makes his choice.
+![Image of Player 2's turn](http://i.imgur.com/R8jXAGx.png)
+
+Here we can see Ritchie won. Well done Ritchie.
+![Image of Results screen](http://i.imgur.com/ZovExrq.png)
+
+If players happen to choose the same option then they have a tie.
+![Image of Tie](http://i.imgur.com/pLipns3.png)
+
+
+Installation Instructions
 -------
+start by cloning this repository. In terminal or other Command line tool put in the below
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+<code>git clone https://github.com/kevinpmcc/rps-challenge.git</code>
 
-Task 
+next move into the project folder by entering
+
+<code>cd rps-challenge</code>
+
+If you know you have bundler installed skip this step. If you're not sure put in following
+
+<code>gem install bundler</code>
+
+from here install all necessary gems from the gemfile by entering
+
+<code>bundle install</code>
+
+and we're now ready to go. to run the game
+
+<code>ruby app.rb</code>
+
+and in your browser URL bar enter
+
+localhost:4567
+
+enjoy!
+
+
+Images
 ----
+credit for the images used:
+scificat @ deviantart http://scificat.deviantart.com/art/Rock-Paper-Scissors-Lizard-Spock-292403867
+linkinparkbrony @ deviantart http://linkinparkbrony.deviantart.com/art/Rock-Paper-Scissors-Lizard-Spock-348466665
 
-Knowing how to build web applications is getting us almost there as web developers!
+Contact
+-----------
+If you'd like to get in touch
+kevinpatrickmccarthy@gmail.com
+https://github.com/kevinpmcc/
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
