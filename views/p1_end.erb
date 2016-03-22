@@ -1,0 +1,31 @@
+<center>
+  <BR>
+  <div>
+    <h2>You have exited the game...</h2>
+  </div>
+  <div>
+    <h3>Final result</h3>
+  </div>
+  <div>
+    <h3>You: <%= RPSLS.game.p1.score %> / <%= RPSLS.game.p2.name %>: <%= RPSLS.game.p2.score %> </h3>
+  </div>
+  <BR>
+  <div>
+  <% if RPSLS.game.p1.score > RPSLS.game.p2.score %>
+    <h2>Woohoo! You've won against <%= RPSLS.game.p2.name %> ;)</h2>
+  <% elsif RPSLS.game.p1.score < RPSLS.game.p2.score %>
+    <h2>Damn! You've lost against <%= RPSLS.game.p2.name %>... :(</h2>
+  <% else %>
+    <h2>Draw game :P</h2>
+  <% end %>
+  </div>
+  <div>
+    <h3>See you next time!</h3>
+  </div>
+  <BR>
+  <div>
+    <form action='/p1_end' method='post'>
+      <input type='submit' value='New game'>
+    </form>
+  </div>
+</center>
