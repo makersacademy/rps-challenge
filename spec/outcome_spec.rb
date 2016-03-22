@@ -8,7 +8,7 @@ describe Outcome do
     
   describe '#winner?' do
     it 'should return the winner of the match' do
-      allow(outcome).to receive(:battle).and_return(:loose)
+      allow(outcome).to receive(:battle).and_return(:player2)
       expect(outcome.winner?).to eq :player2
     end
 

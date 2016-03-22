@@ -3,6 +3,7 @@ require './lib/game.rb'
 require './lib/outcome.rb'
 require './lib/player.rb'
 require 'pry'
+require './lib/computer.rb'
 class RPS < Sinatra::Base
   get '/' do
     erb(:intro_page)

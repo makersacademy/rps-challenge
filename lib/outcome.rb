@@ -18,17 +18,14 @@ class Outcome
   end
 
   def winner?
-    return :player1 if battle == :win 
-    return :player2 if battle == :loose
-    :tie
+    battle
   end
 
   private
 
     def battle
       return :tie if @attacker ==  @defender
-      return :win if matcher(@attacker) == @defender
-      :loose
+      matcher(@attacker) == @defender ? :player1 : :player2
     end
 
     def matcher(weapon)
