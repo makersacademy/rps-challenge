@@ -1,13 +1,13 @@
-feature 'Show moves & if Player has won' do 
+feature 'Show moves & if Player has won' do
 
 	before(:each) do
-		sign_in_and_play	
-		allow(Kernel).to receive(:rand).and_return(2)
+		sign_in_and_play
+		allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
 		click_button 'Rock'
 	end
 
 	scenario "Shows Player's chosen move" do
-		text = "#{@player_name} has chosen #{@player_move}" 
+		text = "#{@player_name} has chosen #{@player_move}"
 		expect(page).to have_content(text)
 	end
 
@@ -24,8 +24,8 @@ end
 
 feature 'Show PC has won' do
 	before(:each) do
-		sign_in_and_play	
-		allow(Kernel).to receive(:rand).and_return(2)
+		sign_in_and_play
+		allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
 		click_button 'Paper'
 	end
 
@@ -37,8 +37,8 @@ end
 
 feature 'Shows if tie' do
 	before(:each) do
-		sign_in_and_play	
-		allow(Kernel).to receive(:rand).and_return(2)
+		sign_in_and_play
+		allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
 		click_button 'Scissors'
 	end
 
@@ -51,7 +51,7 @@ end
 feature 'Play again or new game' do
 	before(:each) do
 		sign_in_and_play
-		click_button 'Scissors'	
+		click_button 'Scissors'
 	end
 	scenario "Shows button for play again" do
 		find_button("Play again").click
