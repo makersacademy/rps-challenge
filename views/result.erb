@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+    <body>
+      You chose <%=@choice.capitalize%>
+      Computer chose <%=@computer_choice.to_s.capitalize%>
+      <%if @computer_result == :lose %>
+        <%=@player_1%> won
+      <%elsif @computer_result == :win %>
+        <%=@player_1%> lost
+      <%else %>
+        <%=@player_1%> drew
+      <%end%>
+
+      <form action='/' method='get'>
+        <button type='submit' value='Submmit'>New Game</button>
+      </form>
+
+      <form action='/play' method='get'>
+        <button type='submit' value='Submmit'>Rematch</button>
+      </form>
+    </body>
+  </html>
