@@ -1,0 +1,26 @@
+<html>
+  <style>
+    body { text-align:center;
+            font-family: gill sans;
+            color: rgb(48,47,78);
+            background-color: #009999;
+            margin: 200px;
+          }
+  </style>
+    <body>
+      <h2>Welcome <%=@user%>, ready to battle?</h2>
+      <h4>Choose your weapon!</h4>
+        <p><form action="/weapon" method="post">
+            <input type="image" name="choice" value='rock'
+              src="/images/rock.jpg" width="100"  height="100" alt='Rock'>
+            <input type="image" name="choice" value="paper"
+              src="/images/paper.jpg" width="100"  height="100" alt='Paper'>
+            <input type="image" name="choice" value="scissors"
+              src="/images/scissors.jpg" width="100"  height="100" alt='Scissors'>
+            <input type="image" name="choice" value="lizard"
+              src="/images/lizard.jpg" width="100"  height="100" alt='Lizard'>
+            <input type="image" name="choice" value="spock"
+              src="/images/spock.jpg" width="100"  height="100" alt='Spock'>
+            </form><p>
+    <body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <style>
+    body { text-align:center;
+            font-family: gill sans;
+            color: rgb(48,47,78);
+            background-color: #009999;
+            margin: 200px;
+          }
+  </style>
+    <body>
+      <h4>You chose <%=@user_weapon.capitalize%>!</h4>
+      <h4>Computer chose <%=@computer_weapon.capitalize%>!</h4>
+      <p> --------------------- </p>
+      <h3><%=@result%></h3>
+        <form action="/play">
+          <input type='submit' value='Play again!'>
+        </form>
+    </body>
+</html>
