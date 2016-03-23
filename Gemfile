@@ -14,15 +14,3 @@ group :test do
   gem 'capybara'
   gem 'byebug'
 end
-
-# gem 'rake'
-# gem 'rspec-sinatra'
-
-# group :test do
-#   gem 'rspec'
-#   gem 'rubocop-rspec'
-#   gem 'rubocop'
-#   gem 'coveralls', require: false
-#   gem 'capybara'
-#   gem 'byebug'
-# end
