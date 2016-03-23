@@ -1,0 +1,11 @@
+<% if computer? %>
+  <p>Your weapon: <%= game.player_1.weapon %></p>
+<% else %>
+  <p><%= game.player_1.name %>'s weapon: <%= game.player_1.weapon %></p>
+<% end %>
+<p><%= game.player_2.name %>'s weapon: <%= game.player_2.weapon %></p>
+
+<p>
+  <a href="/play">Play Again!</a>
+  <a href="/">Change Player</a>
+</p>

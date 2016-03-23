@@ -1,0 +1,6 @@
+<% if computer? %>
+  <h1>Woohoo! You won! :D</h1>
+<% else %>
+  <h1><%= game.player_1.name %> won!</h1>
+<% end %>
+<%= erb :result %>
