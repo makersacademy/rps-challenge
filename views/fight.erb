@@ -1,0 +1,10 @@
+<html style="text-align:center; font-family:tahoma"></html>
+<h1> <%= Hand.instance.my_weapon %> vs <%= Hand.instance.opponent_weapon %> </h1>
+<% if Hand.instance.winner == 'Draw'%>
+<h2> It's a Draw! </h2>
+<% else %>
+<h2> <%= Hand.instance.winner %> is the winner! </h2>
+<% end %>
+<form action ='/RPS'>
+<button type='submit' value='play'>Play again</button>
+</form>
