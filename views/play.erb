@@ -1,0 +1,19 @@
+<div>
+  <h1> <%= @game.player.name %> vs. Computer </h1>
+  <h2> In a battle of Rock, Paper, Scissors! </h2>
+  <h2> Choose your weapon: </h2>
+</div>
+
+<form id='weapons' action='/play' method='post'>
+  <input id="rock"
+   type="submit" name="weapon" value="rock">
+
+  <input id="paper"
+   type="submit" name="weapon" value="paper">
+
+  <input id="scissors"
+   type="submit" name="weapon" value="scissors">
+
+</form>
+
+<%= @winner %>
