@@ -1,0 +1,178 @@
+#body{
+  margin: 0;
+  padding: 0;
+}
+#indexcontent {
+  position: fixed;
+  background-color: green;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  font-family: "Comic Sans MS"
+}
+#name_form {
+  position: relative;
+  top: 50px;
+}
+.gameselect {
+  margin: auto;
+  position: relative;
+  top: 50px;left:0px;right:0px;
+}
+#counter {
+  margin:auto;
+  position: absolute;
+  bottom:0px;left:0px;right:0px;
+  width:100px;
+  font-size: 12px;
+}
+
+/*play page*/
+
+#playcontent{
+  background-color: green;
+  text-align: center;
+  position: fixed;
+  border: 2px solid;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
+}
+#container {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  height: auto;
+  font-family: "Comic Sans MS"
+}
+#container h1 {
+  text-align: center;
+}
+
+#p1 {
+  margin:auto;
+  position:absolute;
+  text-align: center;
+  width: 150px; height:30px;
+  bottom:50%;left:10%;top:0px;
+}
+#p2 {
+  margin:auto;
+  position:absolute;
+  text-align: center;
+  width: 150px; height:30px;
+  bottom:50%;right:10%;top:0px;
+}
+.playerbox{
+  margin: auto;
+  position: absolute;;
+  text-align: center;
+  bottom:0px;top:0px;
+  width: 150px;
+  height: 150px;
+  border: 4px solid;
+}
+#player1box {
+  background-position: center;
+  left: 10%;
+}
+#player2box {
+  background-position: center;
+  right: 10%;
+}
+#vs {
+  text-align: center;
+  margin:auto;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  height:50px;
+  font-size: 40px;
+}
+.rpsbar {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position:relative;
+  margin:auto;
+  border:1px solid;
+  top: 0px;
+  width: 100%;
+  height: 48px;
+}
+
+.rpsbutton {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 150px;
+  height: 48px;
+  margin: 0 auto;
+  left:-1px;
+  position:relative;
+  text-align: left;
+  font-size: 0px;
+}
+#rockbutton {
+  background-image: url("images/rock.png");
+  left:0px;
+}
+#paperbutton {
+  background-image: url("images/paper.png");
+}
+#scissorsbutton {
+  background-image: url("images/scissors.png");
+}
+#p1rockbutton {
+  background-image: url("images/rock.png");
+  left:0px;
+}
+#p1paperbutton {
+  background-image: url("images/paper.png");
+}
+#p1scissorsbutton {
+  background-image: url("images/scissors.png");
+}
+#p2rockbutton {
+  background-image: url("images/rock.png");
+  left:0px;
+}
+#p2paperbutton {
+  background-image: url("images/paper.png");
+}
+#p2scissorsbutton {
+  background-image: url("images/scissors.png");
+}
+/*result page*/
+#resultcontent {
+  background-color: green;
+  text-align: center;
+  position: fixed;
+  border: 2px solid;
+  min-width: 500px;
+  min-height: 380px;
+  width: 60%;
+  height: 60%;
+}
+#resultcontent h1{
+  margin:auto;
+  position: absolute;
+  top:5%;left:0;right:0;
+  width:300px;
+}
+#playagain {
+  margin:auto;
+  position: absolute;
+  bottom:17%;left:0;right:0;
+}
+#backhome {
+  margin:auto;
+  position: absolute;
+  bottom:12%;left:0;right:0;
+}

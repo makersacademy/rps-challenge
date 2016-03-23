@@ -1,0 +1,69 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/styles.css"/>
+</head>
+<body>
+  <div id='playcontent'>
+    <div id="container">
+      <h1>Let's Play!</h1>
+
+      <div id='p1'>
+        <%= @game.player_1.name %>
+      </div>
+      <div id='p2'>
+        <%= @game.player_2.name %>
+      </div>
+    </div>
+
+    <div class="playerbox" id="player1box">
+
+      <div id='rockbar' class='rpsbar'>
+        <form action="/p1_chosen" method='post' class='rpsbutton'>
+          <input id='p1rockbutton' class='rpsbutton' type='submit' name='rps_choice' value='Rock'/>
+        </form>
+      </div>
+      <div id='paperbar' class='rpsbar'>
+        <form action="/p1_chosen" method='post'>
+          <input id='p1paperbutton' class='rpsbutton' type='submit' name='rps_choice' value='Paper'/>
+        </form>
+      </div>
+      <div id='scissorsbar' class='rpsbar'>
+        <form action="/p1_chosen" method='post'>
+          <input id='p1scissorsbutton' class='rpsbutton' type='submit' name='rps_choice' value='Scissors'/>
+        </form>
+      </div>
+
+    </div>
+
+    <div id='vs'>
+      VS
+    </div>
+
+    <div class='playerbox' id="player2box">
+      <div id='rockbar' class='rpsbar'>
+        <form action="/p2_chosen" method='post' class='rpsbutton'>
+          <input id='p2rockbutton' class='rpsbutton' type='submit' name='rps_choice' value='Rock'/>
+        </form>
+      </div>
+      <div id='paperbar' class='rpsbar'>
+        <form action="/p2_chosen" method='post'>
+          <input id='p2paperbutton' class='rpsbutton' type='submit' name='rps_choice' value='Paper'/>
+        </form>
+      </div>
+      <div id='scissorsbar' class='rpsbar'>
+        <form action="/p2_chosen" method='post'>
+          <input id='p2scissorsbutton' class='rpsbutton' type='submit' name='rps_choice' value='Scissors'/>
+        </form>
+      </div>
+    </div>
+    <!-- Start of SimpleHitCounter Code -->
+    <div id="counter">
+      <a href="http://www.simplehitcounter.com" target="_blank">
+        <img src="http://simplehitcounter.com/hit.php?uid=2046405&f=65535&b=0" border="0" height="18" width="83" alt="web counter">
+      </a>
+      <br>
+      <a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;">Visitor Count</a>
+    </div>
+    <!-- End of SimpleHitCounter Code -->
+  </div>
+
+</body>
