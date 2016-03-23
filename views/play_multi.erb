@@ -1,0 +1,9 @@
+<center>
+<h2><%=@name_1%> vs <%=@name_2%>. Rock, paper, scissors?</h2>
+<h2><%=@name_1%> plays first. Pick your attack!</h2>
+<form action='/first_attack' method='get'>
+  <input type='submit' name='attack' value='Rock'><input type='submit' name='attack' value='Paper'><input type='submit' name='attack' value='Scissors'>
+</form>
+<form action='/' method='get'>
+  <input type='submit' value='Home'>
+</form>
