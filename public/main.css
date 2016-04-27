@@ -1,0 +1,44 @@
+body {
+  margin-top: 15%;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  background-color: rgba(127, 19, 19, 0.1);
+}
+
+h1 {
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(127, 19, 19);
+  text-shadow: 2px 2px rgba(91, 82, 82, 0.32);
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button, button {
+  border: 1px dotted rgb(127, 19, 19);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #888888;
+  background-color: rgba(127, 19, 19, 0.2);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  padding: 10;
+}
+
+input {
+  border: 1px dotted rgb(127, 19, 19);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #888888;
+  background-color: rgba(127, 19, 19, 0.1);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  padding: 10px;
+  margin: 10px
+}

@@ -1,0 +1,22 @@
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css">
+
+<div class="wrapper">
+	<p><em><%= @player_name %></em> has chosen <%= @player_move %> </p>
+
+	<p><em>Computer</em> has chosen <%= @computer_move %> </p>
+
+	<% if @winner == @player_name || @winner == "Computer" %>
+		<p>And the winner is.. <%=@winner%></p>
+	<% else %>
+		<p>Oh, it's a <%=@winner%></p>
+	<% end %>
+
+	<form action="/rock-paper-scissors">
+		<button>Play again</button>
+	</form>
+
+	<form action="/">
+		<button>Start a new game</button>
+	</form>
+</div>
