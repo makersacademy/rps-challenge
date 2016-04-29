@@ -2,7 +2,11 @@ require 'sinatra/base'
 
 class Rps < Sinatra::Base
   get '/' do
-    'Hello Rps!'
+    erb :start
+  end
+
+  get '/name' do
+    erb :name
   end
 
   # start the server if ruby file executed directly
