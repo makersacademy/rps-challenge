@@ -1,4 +1,6 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge: Ronin Badge Test
+
+**Author:** Omar Alvarez
 
 Instructions
 -------
