@@ -1,0 +1,9 @@
+<div style="text-align:center">
+    <h1><%= @game.player_1.name %> got <%= @result_1 %>. Computer got <%= @result_2 %>
+      <%= @winner %> wins!
+    </div>
+  <form action="/play" method="post">
+    <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
+      <input type="submit" value="OK">
+    </div>
+  </form>

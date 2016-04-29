@@ -15,12 +15,12 @@ class Game
     @rules[p1][p2]
   end
 
-  def self.create(player_1)
-    @game = Game.new(player_1)
-  end
-
   def computer_draw
     @options.shuffle.sample
+  end
+
+  def self.create(player_1)
+    @game = Game.new(player_1)
   end
 
   def self.game_in_play

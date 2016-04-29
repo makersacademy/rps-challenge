@@ -1,7 +1,7 @@
 <body style="background-color:#FFDCB7; border: 3px solid black">
   <div style="text-align:center">
     <h1><%= @game.player_1.name %> vs. Computer </h1>
-    <form action="/new" method="post">
+    <form action="/result" method="post">
       <input type="radio" name="type" value="rock" checked> Rock<br>
       <input type="radio" name="type" value="paper"> Paper<br>
       <input type="radio" name="type" value="scissors"> Scissors<br>
