@@ -1,0 +1,12 @@
+<h1>Rock, Paper, Scissors!<h1>
+<form action="/names" method="post">
+	Player 1:
+	<input type="text" name="player_1_name">
+		Player 2:
+	<%if @mode == "two" %>
+		<input type="text" name="player_2_name">
+	<%else%>
+		<input readonly type="text" name="player_2_name" value="Computer">
+	<%end%>
+	<input type="submit" value="Start">
+</form>
