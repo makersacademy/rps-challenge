@@ -1,0 +1,12 @@
+<html>
+  <body background= nada>
+    <h1>MAMA de-stressing tool</h1>
+    <form action="/names" method="post">
+      Player 1:
+      <input type="text" name="player_1_name">
+        Player 2:
+      <input <%= @oneplayer.first %> type="text" name="player_2_name" value=<%= @oneplayer.last %>>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
