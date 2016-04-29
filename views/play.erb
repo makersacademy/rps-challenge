@@ -1,2 +1,7 @@
 <h1> New Game Rock Paper Scissors </h1>
 <%= @player_1_name %> vs. <%= @player_2_name %>
+<form action="/select">
+  <button name="mode" value="Rock"><img src="/images/rock.png" alt="rock" style="width:276px;height:163px;"></button>
+  <button name="choice" value="Paper"><img src="/images/paper.png" alt="paper" style="width:276px;height:163px;"></button>
+  <button name="choice" value="Scissors"><img src="/images/scissors.png" alt="scissors" style="width:276px;height:163px;"></button>
+</form>
