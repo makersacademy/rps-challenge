@@ -1,7 +1,7 @@
-<%= @player_1.name %> vs. <%= @player_2_name %>
-<h1> Make your choice, <%= @player_1_name%></h1>
-<form action="/select">
-  <button name="mode" value="Rock"><img src="/images/rock.png" alt="rock" style="width:276px;height:163px;"></button>
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<h1> Make your choice, <%= @game.player_1.name%></h1>
+<form action="/play_player2">
+  <button name="choice" value="Rock"><img src="/images/rock.png" alt="rock" style="width:276px;height:163px;"></button>
   <button name="choice" value="Paper"><img src="/images/paper.png" alt="paper" style="width:276px;height:163px;"></button>
   <button name="choice" value="Scissors"><img src="/images/scissors.png" alt="scissors" style="width:276px;height:163px;"></button>
 </form>

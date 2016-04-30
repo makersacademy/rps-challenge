@@ -25,15 +25,16 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     @game = Game.create(player_1, player_2, session[:player_mode], session[:game_mode])
-    # session[:player_1_name] = params[:player_1_name]
-    # session[:player_2_name] = params[:player_2_name]
-    redirect to '/play'
+    redirect to '/play_player1'
   end
 
-  get '/play' do
-    # @player_1_name = session[:player_1_name]
-    # @player_2_name = session[:player_2_name]
+  get '/play_player1' do
     erb :play
+  end
+
+  get '/play_player2' do
+    @game.player_1.choice = params[:choice]
+    redirect to '/result' if @game.computer?
   end
 
   # start the server if ruby file executed directly
