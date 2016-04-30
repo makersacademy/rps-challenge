@@ -14,3 +14,15 @@ def two_players_mode
 	fill_in :player_2_name, with: 'Player2'
   click_button 'Start'
 end
+
+def first_turn_one_player
+  allow(Kernel).to receive(:rand).and_return(0)
+  choose('rock1')
+  click_button('Reveal winner')
+end
+
+def first_turn_two_players
+  choose('spock1')
+  choose('lizard2')
+  click_button('Reveal winner')
+end

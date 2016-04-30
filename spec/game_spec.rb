@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { Game.new(player1: player1, player2:player2) }
-  let(:player1) { double(:player1, name: 'Player1') }
-  let(:player2) { double(:player2, name: 'Player2') }
+  let(:player1) { double(:player1, name: 'Player1', won_turn: nil) }
+  let(:player2) { double(:player2, name: 'Player2', won_turn: nil) }
 
   describe 'result' do
     context 'two player mode' do
@@ -37,6 +37,13 @@ describe Game do
         allow(Kernel).to receive(:rand).and_return 4
         expect(game.result('lizard', nil)).to eq "Player1 won! lizard beats spock"
       end
+    end
+  end
+
+  describe 'update score' do
+    it 'adds 1 to winning player score' do
+      expect(player2).to receive :won_turn
+      game.result('rock', 'paper')
     end
   end
 end

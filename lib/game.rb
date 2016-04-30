@@ -27,17 +27,9 @@ class Game
   end
 
   def p2_choice
-    if random == 0
-      'scissors'
-    elsif random == 1
-      'paper'
-    elsif random == 2
-      'rock'
-    elsif random == 3
-      'lizard'
-    else
-      'spock'
-    end
+    p2_choice = {0 => 'scissors', 1 => 'paper', 2 => 'rock',
+                  3 => 'lizard', 4 => 'spock'}
+    p2_choice[random]
   end
 
   def rps(p1, p2)
@@ -51,8 +43,10 @@ class Game
     if p1 == p2
       "Draw!"
     elsif rps_hash[p1].include? p2
+      player1.won_turn
       "#{player1.name} won! #{p1} beats #{p2}"
     else
+      player2.won_turn
       "#{player2.name} won! #{p2} beats #{p1}"
     end
   end

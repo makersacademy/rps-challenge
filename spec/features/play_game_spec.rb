@@ -1,17 +1,13 @@
 feature 'Play game' do
   scenario 'Play game against computer and view winner' do
     one_player_mode
-    allow(Kernel).to receive(:rand).and_return(0)
-    choose('rock1')
-    click_button('Reveal winner')
+    first_turn_one_player
     expect(page).to have_content 'Player1 won! rock beats scissors'
   end
 
   scenario 'Play game against another player and view winner' do
     two_players_mode
-    choose('scissors1')
-    choose('paper2')
-    click_button('Reveal winner')
-    expect(page).to have_content 'Player1 won! scissors beats paper'
+    first_turn_two_players
+    expect(page).to have_content 'Player2 won! lizard beats spock'
   end
 end

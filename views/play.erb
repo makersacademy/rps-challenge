@@ -1,4 +1,5 @@
 <%= @game.player1.name %> vs. <%= @game.player2.name %>
+Score <%= @game.player1.points %>-<%= @game.player2.points %>
 
 <form action="/result">
   <%= @game.player1.name %> choice:<br>
