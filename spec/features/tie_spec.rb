@@ -1,4 +1,4 @@
-feature "It's a tie", {type: :feature} do
+feature "It's a tie", type: :feature do
   scenario "directs to tie page" do
     play_game("Paper")
     expect(page).to have_text("It's a tie. Play again")
