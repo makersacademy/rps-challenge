@@ -1,36 +1,36 @@
 require './spec/features/web_helpers'
 
 feature 'Play' do
-  xscenario 'Rock is checked by default' do
-    allow(Kernel).to receive(:rand).and_return(0)
+  scenario 'Rock is checked by default' do
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(0)
     sign_in
     choose_scissors
     expect(page).to have_content "The computer chose Rock"
   end
 
-  xscenario 'You are told when you win' do
-    allow(Kernel).to receive(:rand).and_return(1)
+  scenario 'You are told when you win' do
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(1)
     sign_in
     choose_scissors
     expect(page).to have_content "You Win"
   end
 
-  xscenario 'You are told when you tie' do
-    allow(Kernel).to receive(:rand).and_return(2)
+  scenario 'You are told when you tie' do
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(2)
     sign_in
     choose_scissors
     expect(page).to have_content "You Tie"
   end
 
-  xscenario 'You are told when you lose' do
-    allow(Kernel).to receive(:rand).and_return(0)
+  scenario 'You are told when you lose' do
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(0)
     sign_in
     choose_scissors
     expect(page).to have_content "You Lose"
   end
 
-  xscenario 'Your score is kept track of' do
-    allow(Kernel).to receive(:rand).and_return(0)
+  scenario 'Your score is kept track of' do
+    allow_any_instance_of(Kernel).to receive(:rand).and_return(0)
     sign_in
     choose_scissors
     expect(page).to have_content "Losses: 1"

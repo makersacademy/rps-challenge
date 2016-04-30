@@ -10,11 +10,27 @@ body {
   margin: 100px 0px 20px 0px;
 }
 
+#Logo{
+  background-color: #E91E63;
+  border-radius: 25px;
+  width: 400;
+  height: 115px;
+  margin: 0 auto;
+}
+
 #Subtitle{
   color:#FFF;
   font-family:Indie Flower, monospace;;
   font:15px;
   text-align:center;
+  margin: 30px 0px 100px 0px;
+}
+
+#goty{
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
   margin: 30px 0px 100px 0px;
 }
 
