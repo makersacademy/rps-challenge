@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
   let(:player_name) { random_string }
-  let(:moves) { [:rock, :paper, :scissors] }
-  subject(:game) { described_class.new player_name }
+  let(:rps_rules_class) { double :rules_class, new: rps }
+  let(:rps) { double :rules, moves: [:rock, :paper, :scissors]}
+  subject(:game) { described_class.new player_name, rps_rules_class }
 
   describe 'Game#create' do
     subject(:game_class) { described_class }
@@ -21,6 +22,13 @@ describe Game do
     end
   end
 
+  describe '#initialize' do
+    subject(:game_class) { described_class }
+    it 'has an optional argument' do
+      expect(game_class.new player_name).to be_a Game
+    end
+  end
+
   describe '#player_name' do
     it 'returns the name given at initialize' do
       expect(game.player_name).to eq player_name
@@ -28,7 +36,7 @@ describe Game do
   end
 
   describe '#player_move= and #player_move' do
-    let(:random_move) { moves.sample }
+    let(:random_move) { [:rock, :paper, :scissors].sample }
     it 'sets the move and returns the players move' do
       game.player_move = random_move
       expect(game.player_move).to eq random_move
@@ -38,75 +46,14 @@ describe Game do
   describe '#set_opponent_move and #opponent_move' do
     it 'sets and returns a random move' do
       game.set_opponent_move
-      expect(moves).to include(game.opponent_move)
+      expect(rps.moves).to include(game.opponent_move)
     end
   end
 
   describe '#result' do
-    context 'opponent chooses rock' do
-      before { allow_any_instance_of(Array).to receive(:sample).and_return(:rock) ; game.set_opponent_move }
-      context 'player chooses rock' do
-        it 'returns draw' do
-          game.player_move = :rock
-          expect(game.result).to eq :draw
-        end
-      end
-      context 'player chooses paper' do
-        it 'returns win' do
-          game.player_move = :paper
-          expect(game.result).to eq :win
-        end
-      end
-      context 'player chooses scissors' do
-        it 'returns lose' do
-          game.player_move = :scissors
-          expect(game.result).to eq :lose
-        end
-      end
-    end
-
-    context 'opponent chooses paper' do
-      before { allow_any_instance_of(Array).to receive(:sample).and_return(:paper) ; game.set_opponent_move }
-      context 'player chooses rock' do
-        it 'returns lose' do
-          game.player_move = :rock
-          expect(game.result).to eq :lose
-        end
-      end
-      context 'player chooses paper' do
-        it 'returns draw' do
-          game.player_move = :paper
-          expect(game.result).to eq :draw
-        end
-      end
-      context 'player chooses scissors' do
-        it 'returns win' do
-          game.player_move = :scissors
-          expect(game.result).to eq :win
-        end
-      end
-    end
-
-    context 'opponent chooses scissors' do
-      before { allow_any_instance_of(Array).to receive(:sample).and_return(:scissors) ; game.set_opponent_move }
-      context 'player chooses rock' do
-        it 'returns win' do
-          game.player_move = :rock
-          expect(game.result).to eq :win
-        end
-      end
-      context 'player chooses paper' do
-        it 'returns lose' do
-          game.player_move = :paper
-          expect(game.result).to eq :lose
-        end
-      end
-      context 'player chooses scissors' do
-        it 'returns draw' do
-          game.player_move = :scissors
-          expect(game.result).to eq :draw
-        end
-      end
+    it 'checks the rules for the result' do
+      expect(rps).to receive(:result)
+      game.result
     end
   end
 end

@@ -8,9 +8,9 @@ class Game
     @game
   end
 
-  def initialize player_name
+  def initialize player_name, rules_class = RockPaperScissorsRules
     @player_name = player_name
-    @moves = [:rock, :paper, :scissors]
+    @rules = rules_class.new
   end
 
   attr_reader :player_move, :opponent_move
@@ -24,22 +24,11 @@ class Game
   end
 
   def set_opponent_move
-    @opponent_move = @moves.sample
+    @opponent_move = @rules.moves.sample
   end
 
   def result
-    return :draw if draw?
-    return :win if player_wins?
-    :lose
-  end
-
-  private
-  def draw?
-    player_move == opponent_move
-  end
-
-  def player_wins?
-    (@moves.index(player_move) - 1) % 3 == @moves.index(opponent_move)
+    @rules.result player_move, opponent_move
   end
 
 end
