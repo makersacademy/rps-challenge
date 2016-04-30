@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
-    <script src="/javascripts/application.js"></script>
-    <link href="/css/application.css" rel="stylesheet" type="text/css">
-    <title>Rock-Paper-Scissors Game by omajul</title>
-</head>
-<body>
-    <header>
-        <h1 style="font-size: 50px;">The Ultimate Game</h1>
-    </header>
-    <br>
-    
-    <section id="game-area">
-
-    </section>
-    
-    <footer class="container-fluid text-center">
-        <div id="footer">
-            <a href="https://www.makersacademy.com/" target="_blank"><img src="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png"></a>
-            <div>
-              I built this with help from
-              <a href="https://www.makersacademy.com" target="_blank">Makers Academy</a>, a selective web development bootcamp in London.
-            </div>
-            <div>
-              This page uses Ruby, Sinatra, Javascript, jQuery, HTML and CSS.
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+<form action="/start" method="post">
+  Enter your name: <br>
+  <input type="text" name="name"><br>
+  <input type="radio" name="mode" value="standard">Standard (R-P-S)<br>
+  <input type="radio" name="mode" value="extended">Extended (R-P-S-L-S)<br>
+  <input type="submit" value="Submit">
+</form>
