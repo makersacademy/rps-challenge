@@ -1,18 +1,18 @@
 class Game
 
   STANDARD = {rock: 1, paper: 2, scissors: 3}.freeze
-  EXTENDED = {rock: 1, paper: 2, scissors: 3, lizard: 4, spock: 5}.freeze
+  EXTENDED = {rock: 0, spock: 1, paper: 2, lizard: 3, scissors: 4}.freeze
 
   attr_reader :player_1, :player_2
 
-  def initialize(player_1, player_2, standard = true)
+  def initialize(player_1, player_2, standard_mode)
   	@player_1 = player_1
   	@player_2 = player_2
-    @standard = standard
+    @standard_mode = standard_mode
   end
 
-  def self.create(player_1, player_2)
-  	@game = Game.new(player_1, player_2)
+  def self.create(player_1, player_2, standard_mode)
+  	@game = Game.new(player_1, player_2, standard_mode)
   end
 
   def self.instance
@@ -20,21 +20,22 @@ class Game
   end
 
   def start
-    result = find_winner
+    result = @standard_mode ? find_winner_standard : find_winner_extended
     puts result == 'Tie' ? result : "The winner is #{result.name}"
   end
 
   private
 
-    def find_winner
-      if @standard
-        if STANDARD[player_1.choice] % 3 + 1 == STANDARD[player_2.choice]
-          player_2
-        elsif STANDARD[player_2.choice] % 3 + 1 == STANDARD[player_1.choice]
-          player_1
-        else
-          'Tie'
-        end
-      end     
-    end
+  def find_winner_standard
+    return player_2 if STANDARD[player_1.choice] % 3 + 1 == STANDARD[player_2.choice]
+    return player_1 if STANDARD[player_2.choice] % 3 + 1 == STANDARD[player_1.choice]
+    'Tie'
+  end
+
+  def find_winner_extended
+    difference = (EXTENDED[player_1.choice] - EXTENDED[player_2.choice]) % 5
+    return 'Tie' if difference == 0
+    return player_1 if (difference == 1 || difference == 2)
+    player_2
+  end
 end
