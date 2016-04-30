@@ -1,7 +1,16 @@
-<form action="/start" method="post">
-  Enter your name: <br>
-  <input type="text" name="name"><br>
-  <input type="radio" name="mode" value="standard">Standard (R-P-S)<br>
-  <input type="radio" name="mode" value="extended">Extended (R-P-S-L-S)<br>
-  <input type="submit" value="Submit">
-</form>
+<div id="options">
+  <form action="/names">
+    <label for="one">One player</label>
+    <input type="radio" name="player_mode" value="one">
+    <label for="two">Two players</label>
+    <input type="radio" name="player_mode" value="two">
+    <br>
+    <label for="standard">Standard</label>
+    <input type="radio" name="game_mode" value="standard">
+    <label for="standard">Extended</label>
+    <input type="radio" name="game_mode" value="extended">
+    <br>
+    <br>
+    <input id="submit_button" type="submit" value="Submit">
+  </form>
+</div>

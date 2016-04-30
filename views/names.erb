@@ -1,0 +1,13 @@
+<div id="options">
+	<form action="/start" method="post">
+		Player 1:<input style="color:black; "type="text" name="player_1_name"><br>
+		Player 2:
+		<%if @player_mode == "two" %>
+			<input style="color:black;" type="text" name="player_2_name"><br>
+		<%else%>
+			<input style="color:black;" readonly type="text" name="player_2_name" value="Computer">
+		<%end%>
+		<input type="hidden" name="game_mode" value=<%= @game_mode%>><br>
+		<input id="submit_button" type="submit" value="Submit">
+	</form>
+</div>
