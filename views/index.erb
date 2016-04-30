@@ -5,7 +5,7 @@
       Player 1:
       <input type="text" name="player_1_name">
         Player 2:
-      <input <%= @oneplayer.first %> type="text" name="player_2_name" value=<%= @oneplayer.last %>>
+      <input <%= @player_mode[:readonly] %> type="text" name="player_2_name" value=<%= @player_mode[:player2] %>>
       <input type="submit" value="Submit">
     </form>
   </body>

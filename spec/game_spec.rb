@@ -1,11 +1,14 @@
-describe 'Game' do
-  let(:game) {described_class.new(player1,player2,player_mode,game_mode)}
-  context 'on initialize' do
-    it 'receives parameters names and modes' do
-      # expect(game("Pepe"))
-    end
-  end
+require 'game'
 
-  context 'game player mode' do
-  end
+describe Game do
+  # subject(:game) { Game.new(player_1, player_2, attack) }
+  # let(:player_1) {  spy(:player, name: 'Dave') }
+  # let(:player_2) {  spy(:player, name: 'Mittins') }
+  # let(:attack) { spy(:double, new: player_1, default: nil) }
+
+  # describe "Initialization:" do
+  #   it "Retrieves the first player" do
+  #     expect(game.player_1).to eq player_1
+  #   end
+  # end
 end

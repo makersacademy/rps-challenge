@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/help_start'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -8,9 +10,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/select' do
-    @mode = params[:mode]
-    @oneplayer = ["",""]
-    @oneplayer = ["readonly", "Computer"] if @mode == "one"
+    number_players = params[:player_mode]
+    @player_mode = HelpStart.player_mode(number_players)
+    #@oneplayer = ["",""]
+    #@oneplayer = ["readonly", "Computer"] if @player_mode == "one"
     erb :index
   end
 

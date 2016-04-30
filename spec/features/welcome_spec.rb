@@ -1,15 +1,15 @@
 feature 'Welcome menu', :type => :feature do
-  scenario 'one player' do
-    visit('/')
-    click_button("one")
-    expect(page).to have_content 'Player 1'
-    expect(page).to_not have_content 'Computer'
+  scenario 'one player, classic' do
+    visit("/")
+    expect(page).to have_content "Welcome"
+    expect(page).to have_content "First"
   end
 
-  scenario 'multiplayer' do
-    visit('/')
-    click_button('two')
-    expect(page).to_not have_content 'Computer'
-    expect(page).to have_content 'Player 2'
+  scenario 'multiplayer, classic' do
+    visit("/")
+    choose("two")
+    choose("classic")
+    expect(page).to have_content "Welcome"
+    expect(page).to have_content "Second"
   end
 end
