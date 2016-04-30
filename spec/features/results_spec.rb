@@ -1,4 +1,4 @@
-feature "The result page", :type => :feature do
+feature "The result page", {type: :feature} do
 
   scenario "displays choices for both user and computer" do
     play_game("Rock")
