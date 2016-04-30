@@ -8,4 +8,11 @@ describe Player do
         expect(alex.name).to eq 'Alex'
       end
     end
+
+    describe '#choice' do
+      it 'returns what move was played' do
+        alex.choose_move 'Scissors'
+        expect(alex.choice).to eq 'Scissors'
+      end
+    end
 end

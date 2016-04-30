@@ -1,9 +1,12 @@
+require_relative 'computer'
+
 class Game
 
-  attr_reader :player_one, :choice
+  attr_reader :player_1, :player_2
 
-  def initialize player
-    @player_one = player
+  def initialize player_1,player_2=Computer.new
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def self.create player
@@ -12,9 +15,5 @@ class Game
 
   def self.object
     @game
-  end
-
-  def choose_move choice
-    @choice = choice
   end
 end

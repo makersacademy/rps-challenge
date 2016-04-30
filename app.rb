@@ -12,8 +12,8 @@ class Rps < Sinatra::Base
   end
 
   post '/set_name' do
-    @player = Player.new params[:player_name]
-    @game = Game.create(@player)
+    @player_1 = Player.new params[:player_name]
+    @game = Game.create(@player_1)
     redirect '/play'
   end
 
@@ -24,7 +24,7 @@ class Rps < Sinatra::Base
 
   post '/player_move' do
     @game = Game.object
-    @game.choose_move params[:attack]
+    @game.player_1.choose_move params[:attack]
     redirect '/result'
   end
 
