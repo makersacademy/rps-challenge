@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPSLS < Sinatra::Base
   enable :sessions
@@ -8,8 +9,8 @@ class RPSLS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+    session[:player_1] = Player.new(params[:player_1]).name
+    session[:player_2] = Player.new(params[:player_2]).name
     redirect '/game'
   end
 
