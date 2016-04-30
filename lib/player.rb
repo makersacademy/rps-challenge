@@ -7,4 +7,5 @@ class Player
     @score = DEFAULT_SCORE
   end
 
+
 end

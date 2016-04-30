@@ -13,11 +13,5 @@ class Game
     @game
   end
 
-  # def action(rps)
-    # if rps == ROCK
-    # elsif rps == PAPER
-    # elsif rps == SCISSORS
-    # end
-  # end
 
 end

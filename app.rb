@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -11,11 +12,13 @@ class RPS < Sinatra::Base
   post '/name' do
     @player = Player.new(params[:player_name])
     @game = Game.create(@player)
+    @computer = Computer.create
     redirect '/play'
   end
 
   before do
     @game = Game.instance
+    @computer = Computer.instance
   end
 
   get '/play' do
