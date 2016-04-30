@@ -1,6 +1,14 @@
 class Computer
 
-  def chosen_hand
+  def self.create
+    @computer = Computer.new
+  end
+
+  def self.object
+    @computer
+  end
+
+  def choose_weapon
     num = choose_rand
     if num == 1
       @chosen = "rock"
@@ -9,6 +17,10 @@ class Computer
     else
       @chosen = "scissors"
     end
+  end
+
+  def chosen
+    @chosen
   end
 
   private

@@ -12,22 +12,26 @@ class RPS < Sinatra::Base
   post '/name' do
     session[:player] = params[:name]
     @game = Select.create
+    @computer = Computer.create
     redirect '/play'
   end
 
   before do
     @game = Select.object
+    @computer = Computer.object
   end
 
   get '/play' do
     @player = session[:player]
     @game
+    @computer
     erb :play
   end
 
   get '/game' do
     @player = session[:player]
     @game
+    @computer.choose_weapon
     erb :game
   end
 
