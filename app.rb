@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/machine'
 
 class RPS < Sinatra::Base
 
@@ -29,6 +30,7 @@ class RPS < Sinatra::Base
   end
 
   get '/AI' do
+    @machine_weapon = Machine.new.choose_weapon
     erb :AI
   end
 
