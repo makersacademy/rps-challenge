@@ -1,8 +1,19 @@
-<%= @game.player_1.name %>'s turn
+<!-- Import fonts and bootstrap -->
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
 
+
+<div id='name'>
+<%= @game.player_1.name %>'s turn
+<br>
+<br>
 <form action="/player_move" method='post'>
   <input type="radio" name="attack" value='Rock' id="rock" checked="checked"> Rock<br>
   <input type="radio" name="attack" value='Paper' id="paper"> Paper<br>
   <input type="radio" name="attack" value='Scissors' id="scissors"> Scissors<br>
+  <br>
   <button>Proceed</button>
 </form>
+</div>

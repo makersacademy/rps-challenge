@@ -1,6 +1,14 @@
+<!-- Import fonts and bootstrap -->
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<div id='name'>
 You chose <%= @game.player_1.choice %>
 <br>
 The computer chose <%= @game.player_2.choice %>
+<br>
 <br>
 You <%= @game.result %>
 <br>
@@ -10,6 +18,8 @@ Ties: <%= @game.tie_count %>
 <br>
 Losses: <%= @game.loss_count %>
 <br>
+<br>
 <form action="/play" method="get">
   <button>Play Again?</button>
 </form>
+</div>
