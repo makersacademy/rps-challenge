@@ -1,14 +1,23 @@
 feature 'choose attack' do
-  scenario 'can choose rock' do
+  scenario 'chooses rock' do
     sign_in_with_name
-    expect(page).to have_button 'Rock'
+    click_button 'Rock'
+    expect(page).to have_content 'You chosed Rock'
   end
-  scenario 'can choose rock' do
+  scenario 'chooses paper' do
     sign_in_with_name
-    expect(page).to have_button 'Paper'
+    click_button 'Paper'
+    expect(page).to have_content 'You chosed Paper'
   end
-  scenario 'can choose rock' do
+  scenario 'chooses scissors' do
     sign_in_with_name
-    expect(page).to have_button 'Scissors'
+    click_button 'Scissors'
+    expect(page).to have_content 'You chosed Scissors'
+  end
+  scenario 'computer also chooses a random attack' do
+    sign_in_with_name
+    click_button 'Scissors'
+    expect(page).to have_content "Computer chosed"
+    expect(page).to have_content(/Rock|Paper|Scissors/)
   end
 end

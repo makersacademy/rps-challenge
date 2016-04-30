@@ -1,7 +1,7 @@
-<%= @player.name %>
+<%= @round.player1.name %>
 
-<form>
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action='/set_choice' method=post>
+  <input type="submit" value="Rock" name="choice">
+  <input type="submit" value="Paper" name="choice">
+  <input type="submit" value="Scissors" name="choice">
 </form>
