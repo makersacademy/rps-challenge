@@ -2,7 +2,6 @@ feature 'Machine' do
   scenario 'shows chosen weapon' do
     visit '/AI'
     message = find(:css, '#machine').text
-    # expect(page).to have_content('ROCK')
     expect(choose_weapon).to include message
   end
 
