@@ -41,7 +41,7 @@ class Game
   end
 
   def rps(p1, p2)
-    rps_hash = Hash.new
+    rps_hash = {}
     rps_hash['scissors'] = ['paper', 'lizard']
     rps_hash['paper'] = ['rock', 'spock']
     rps_hash['rock'] = ['scissors', 'lizard']
