@@ -28,6 +28,12 @@ class RpsChallenge < Sinatra::Base
     erb :play
   end
 
+  get '/result' do
+    @p1 = params[:mode1]
+    @p2 = params[:mode2]
+    erb :result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

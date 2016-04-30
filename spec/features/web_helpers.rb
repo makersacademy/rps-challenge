@@ -12,5 +12,5 @@ def two_players_mode
 	click_button 'Next'
 	fill_in :player_1_name, with: 'Player1'
 	fill_in :player_2_name, with: 'Player2'
-  	click_button 'Start'
+  click_button 'Start'
 end
