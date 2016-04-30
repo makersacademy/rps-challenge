@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -7,13 +8,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player_name = params[:player_name]
-    redirect '/select-weapon'
+      Game.create params[:player_name]
+      redirect '/select-weapon'
+  end
+
+  before do
+    @game = Game.last
   end
 
   get '/select-weapon' do
-    @player_name = $player_name
     erb :select_weapon
+  end
+
+  post '/play' do
+    @game.player_move = params["move"]
+    @game.set_opponent_move
+    redirect '/results'
+  end
+
+  get '/results' do
+    erb :results
   end
 
   # start the server if ruby files executed directly
