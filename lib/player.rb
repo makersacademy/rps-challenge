@@ -17,12 +17,21 @@ class Player
     @name = name
   end
 
-  def to_i(choice)
+  def to_i
     CHOICES[choice.to_sym]
   end
 
   def computer_choice(game_mode)
-    game_mode == "classic" ? Kernel.rand(CLASSIC) : Kernel.rand(SPOCK)
+    if game_mode == "spock"
+      value = Kernel.rand(SPOCK)
+    else
+      value = Kernel.rand(CLASSIC)
+    end
+    CHOICES.key(value)
+  end
+
+  def computer?
+    name == "Computer"
   end
 
 end

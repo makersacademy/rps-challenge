@@ -2,8 +2,11 @@ require 'game'
 
 describe Game do
   subject(:game) { Game.new(player_1, player_2, "one", "classic") }
-  let(:player_1) {  double :player_1, name: 'Sergio' }
-  let(:player_2) {  double :player_2, name: 'Computer' }
+  let(:player_1) {  double :player_1, name: "Sergio", choice: "paper", to_i: 1 }
+  let(:player_2) {  double :player_2, name: "Computer", choice: "paper", to_i: 1 }
+  let(:rock) {double :rock, name: "Rock", choice: "rock", to_i: 2}
+  let(:scissors) {double :scissors, name: "Scissors", choice: "scissors", to_i: 0}
+  let(:paper) {double :paper, name: "Paper", choice: "paper", to_i: 1}
   context "On initalization" do
     it "Retrieves the first player" do
       expect(game.player_1).to eq player_1
@@ -26,9 +29,19 @@ describe Game do
     end
   end
 
-  context "#result" do
+  context "#results" do
+    let(:game_rs) { Game.new(rock, scissors, "one", "classic") }
+    let(:game_rp) { Game.new(rock, paper, "one", "classic") }
     it "provides result draw for Rock and Rock" do
       expect(game.result).to eq :draw
+    end
+
+    it "provides winner player1 for Rock and Scissors" do
+      expect(game_rs.result).to eq :player1
+    end
+
+    it "provides winner player2 for Rock and Paper" do
+      expect(game_rp.result).to eq :player2
     end
   end
 
