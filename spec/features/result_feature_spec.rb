@@ -1,34 +1,46 @@
 require './spec/features/web_helpers'
 
 feature 'Play' do
-  scenario 'Rock is checked by default' do
+  xscenario 'Rock is checked by default' do
     allow(Kernel).to receive(:rand).and_return(0)
     sign_in
-    choose("scissors")
-    click_button 'Proceed'
-    expect(page).to have_content "The computer chose"
+    choose_scissors
+    expect(page).to have_content "The computer chose Rock"
   end
 
-  scenario 'Can only select one answer' do
+  xscenario 'You are told when you win' do
+    allow(Kernel).to receive(:rand).and_return(1)
     sign_in
-    choose("rock")
-    choose("scissors")
-    expect(find_field("rock")).not_to be_checked
-    expect(find_field("scissors")).to be_checked
+    choose_scissors
+    expect(page).to have_content "You Win"
   end
 
-  scenario 'Can select Paper' do
+  xscenario 'You are told when you tie' do
+    allow(Kernel).to receive(:rand).and_return(2)
     sign_in
-    choose("paper")
-    expect(find_field("paper")).to be_checked
+    choose_scissors
+    expect(page).to have_content "You Tie"
   end
 
-  scenario 'Clicking proceed displays your choice' do
+  xscenario 'You are told when you lose' do
+    allow(Kernel).to receive(:rand).and_return(0)
     sign_in
-    choose("scissors")
-    click_button 'Proceed'
-    expect(page).to have_content "You chose Scissors"
+    choose_scissors
+    expect(page).to have_content "You Lose"
   end
 
+  xscenario 'Your score is kept track of' do
+    allow(Kernel).to receive(:rand).and_return(0)
+    sign_in
+    choose_scissors
+    expect(page).to have_content "Losses: 1"
+  end
+
+  scenario 'You can play again' do
+    sign_in
+    choose_scissors
+    click_button 'Play Again?'
+    expect(page).to have_content 'Alex\'s turn'
+  end
 
 end

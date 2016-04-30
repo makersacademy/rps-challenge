@@ -6,7 +6,7 @@ describe Computer do
   describe '#choice' do
     it 'returns the computers move' do
       allow(comp).to receive(:rand) {0}
-      comp.choice
+      comp.choose_move
       expect(comp.choice).to eq 'Rock'
     end
   end

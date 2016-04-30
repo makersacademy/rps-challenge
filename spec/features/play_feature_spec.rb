@@ -22,8 +22,7 @@ feature 'Play' do
 
   scenario 'Clicking proceed displays your choice' do
     sign_in
-    choose("scissors")
-    click_button 'Proceed'
+    choose_scissors
     expect(page).to have_content "You chose Scissors"
   end
 

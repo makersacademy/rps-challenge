@@ -1,3 +1,9 @@
 You chose <%= @game.player_1.choice %>
 <br>
 The computer chose <%= @game.player_2.choice %>
+<br>
+You <%= @game.result %>
+<br>
+Wins: <%= @game.win_count %>
+Ties: <%= @game.tie_count %>
+Losses: <%= @game.loss_count %>
