@@ -1,1 +1,11 @@
 <p>Welcome <%= @name %></p>
+<p>Please choose from the following options:</p>
+<form action="/result" method="post">
+  <label>Choose Rock</label>
+  <input type="radio" name="player_choice" value="rock">
+  <label>Choose Paper</label>
+  <input type="radio" name="player_choice" value="paper">
+  <label>Choose Scissors</label>
+  <input type="radio" name="player_choice" value="scissors">
+  <input type="submit" value="submit">
+</form>
