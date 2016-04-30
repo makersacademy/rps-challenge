@@ -21,7 +21,7 @@ class Game
 
   def start
     result = standard_mode ? find_winner_standard : find_winner_extended
-    puts result == 'Tie' ? result : "The winner is #{result.name}"
+    return result == 'Tie' ? result : "The winner is #{result.name}"
   end
 
   private
