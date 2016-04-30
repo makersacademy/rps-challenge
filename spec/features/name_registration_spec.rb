@@ -6,9 +6,7 @@ feature 'Enter names' do
   end
 
   scenario 'submitting names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Lord Megatron'
-    click_button 'Janken!'
+    sign_in_and_play
     expect(page).to have_content 'Lord Megatron is ready for battle!'
   end
 end
