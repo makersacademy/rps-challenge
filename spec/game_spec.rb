@@ -7,7 +7,7 @@ describe Game do
   subject(:game){described_class.new player}
 
   it 'initializes with user' do
-    expect(game.player).to eq player
+    expect(game.player1).to eq player
   end
 
   it "displays user's choice" do
@@ -27,6 +27,13 @@ describe Game do
         game.computers_pick
         game.choose("Scissors")
         expect(game.winner).to eq player
+      end
+
+      it "returns computer as winner" do
+        allow(Kernel).to receive(:rand).and_return(1)
+        game.computers_pick
+        game.choose("Rock")
+        expect(game.winner).to eq "Computer"
       end
     end
   end

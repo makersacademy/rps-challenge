@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
   before do
     @game = Game.instance
   end
-  
+
   get '/' do
     erb(:index)
   end
@@ -24,7 +24,11 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @game.choose(params[:choice])
-    erb(:results)
+    if @game.winner == "Tie"
+      erb(:tie)
+    else
+      erb(:results)
+    end
   end
 
   # start the server if ruby file executed directly

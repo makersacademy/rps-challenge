@@ -1,7 +1,9 @@
 class Game
-  attr_reader :player, :user_choice, :computer_choice
-  def initialize(player)
-    @player = player
+  attr_reader :player1, :player2, :user_choice, :computer_choice
+  def initialize(player1, player2 = "Computer")
+    @player1 = player1
+    @player2 = player2
+    @combos = {"Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors"}
   end
 
   def self.create(player)
@@ -22,8 +24,13 @@ class Game
   end
 
   def winner
-    if @user_choice == "Scissors" && @computer_choice == "Paper"
-      @player
+    computers_pick
+    if @user_choice == @computer_choice
+      "Tie"
+    elsif @combos[@user_choice] == @computer_choice
+      @player1
+    else
+      @player2
     end
   end
 end
