@@ -3,7 +3,7 @@ class Game
   STANDARD = {rock: 1, paper: 2, scissors: 3}.freeze
   EXTENDED = {rock: 0, spock: 1, paper: 2, lizard: 3, scissors: 4}.freeze
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :standard_mode
 
   def initialize(player_1, player_2, standard_mode)
   	@player_1 = player_1
@@ -20,7 +20,7 @@ class Game
   end
 
   def start
-    result = @standard_mode ? find_winner_standard : find_winner_extended
+    result = standard_mode ? find_winner_standard : find_winner_extended
     puts result == 'Tie' ? result : "The winner is #{result.name}"
   end
 
