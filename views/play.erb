@@ -1,11 +1,17 @@
+ <% if @name.empty? %> Please enter a name
+ <form action='/' method='get'>
+   <input type='submit' value='Go Back' />
+ <%end%>
+<% if !@name.empty? %>
  Hello, <%= @name %>
-
+ Please choose  a weapon :
  Rock
  Paper
  Scissors
 
- <form>
-   <input type='submit' name='rock' value='ROCK'/>
-   <input type='submit' name='paper' value='PAPER'/>
-   <input type='submit' name='scissors' value='SCISSORS'/>
+ <form action='/weapon' method='post'>
+   <input type='submit' name='weapon' value='ROCK'/>
+   <input type='submit' name='weapon' value='PAPER'/>
+   <input type='submit' name='weapon' value='SCISSORS'/>
  </form>
+ <%end%>
