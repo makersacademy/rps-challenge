@@ -16,4 +16,11 @@ describe Game do
         expect(Game.object).to be_a Game
       end
     end
+
+    describe '#choice' do
+      it 'returns what move was played' do
+        game.choose_move 'Scissors'
+        expect(game.choice).to eq 'Scissors'
+      end
+    end
 end

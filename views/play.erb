@@ -1,1 +1,8 @@
 <%= @game.player_one.name %>'s turn
+
+<form action="/player_move" method='post'>
+  <input type="radio" name="attack" value='Rock' id="rock" checked="checked"> Rock<br>
+  <input type="radio" name="attack" value='Paper' id="paper"> Paper<br>
+  <input type="radio" name="attack" value='Scissors' id="scissors"> Scissors<br>
+  <button>Proceed</button>
+</form>

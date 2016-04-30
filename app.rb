@@ -22,6 +22,17 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/player_move' do
+    @game = Game.object
+    @game.choose_move params[:attack]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = Game.object
+    erb :result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
