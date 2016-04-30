@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game.rb'
+require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -6,11 +8,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @name = params[:player_name]
+    @game = Game.start(params[:player_name])
     erb(:play)
   end
 
   post '/result' do
+    @game = Game.instance
     @choice = params[:player_choice]
     erb(:result)
   end
