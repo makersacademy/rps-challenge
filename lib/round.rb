@@ -1,5 +1,6 @@
 require_relative 'player'
 
+#TODO: Refactor into Game class that uses rounds
 class Round
   attr_reader :player1, :player2, :players
 
@@ -13,20 +14,20 @@ class Round
 
   def winner
     return "no one, it's a tie" if @player1.choice == @player2.choice
-    evaluate_win
+    evaluate_winner
   end
 
 
   private
   attr_accessor :first, :second
 
-  def evaluate_win
-    get_attacks
-    return @player1 if (first == second + 1 || first == 0 && second == 2)
+  def evaluate_winner
+    update_attacks
+    return @player1 if first == second + 1 || first == 0 && second == 2
     @player2
   end
 
-  def get_attacks
+  def update_attacks
     @first = Player::ATTACKS.index(@player1.choice)
     @second = Player::ATTACKS.index(@player2.choice)
   end
