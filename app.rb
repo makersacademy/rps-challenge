@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
