@@ -1,7 +1,7 @@
 # RPS Challenge: Rōnin Badge Test
 
 [![Build Status](https://travis-ci.org/harrim91/rps-challenge.svg?branch=master)](https://travis-ci.org/harrim91/rps-challenge)
-
+[![Coverage Status](https://coveralls.io/repos/github/harrim91/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/harrim91/rps-challenge?branch=master)
 
 Instructions
 -------
