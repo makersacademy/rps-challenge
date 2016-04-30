@@ -1,0 +1,41 @@
+<div style="text-align:center;">
+	
+	<h3><%= session[:player_1] %> vs <%= session[:player_2] %></h3>
+
+	<h4>Pick a value</h4>
+
+	<div>
+
+		<form style="display: inline;" action="/game" method="POST">
+		  <input type="hidden" name="choice" value="Lizard">
+		  <input class="lizard" type="image" src="images/lizard.png" alt="Lizard" width="100px" height="100px">
+		</form>
+
+		<form style="display: inline;" action="/game" method="POST">
+		  <input type="hidden" name="choice" value="Paper">
+		  <input class="paper" type="image" src="images/paper.png" alt="Paper" width="100px" height="100px">
+		</form>
+
+		<form style="display: inline;" action="/game" method="POST">
+		  <input type="hidden" name="choice" value="Rock">
+		  <input class="rock" type="image" src="images/rock.png" alt="Rock" width="100px" height="100px">
+		</form>
+
+		<form style="display: inline;" action="/game" method="POST">
+		  <input type="hidden" name="choice" value="Scissors">
+		  <input class="scissors" type="image" src="images/scissors.png" alt="Scissors" width="100px" height="100px">
+		</form>
+
+		<form style="display: inline;" action="/game" method="POST">
+		  <input type="hidden" name="choice" value="Spock">
+		  <input class="spock" type="image" src="images/spock.png" alt="Spock" width="100px" height="100px">
+		</form>
+
+	</div>
+</div>
+
+<div>
+	<% if session[:choice] %>
+		<h3>You chose <%= session[:choice] %></h3>
+	<% end %>
+</div>
