@@ -4,7 +4,6 @@ require './lib/round'
 
 
 class GamePlay < Sinatra::Base
-  #enable :sessions
 
   before do
     @round = Round.instance

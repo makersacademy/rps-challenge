@@ -2,3 +2,14 @@
 
 <p>You chosed <%= @round.player1.choice %> </p>
 <p>Computer chosed <%= @round.player2.choice %> </p>
+
+<% if @round.winner.is_a? String %>
+<p>The winner is: <%= @round.winner %> </p>
+<% else %>
+<p>The winner is: <%= @round.winner.name %> </p>
+<% end %>
+
+
+<form action='/game_play' method=get>
+  <input type="submit" value="New round!">
+</form>
