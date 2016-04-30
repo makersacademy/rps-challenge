@@ -1,4 +1,4 @@
-require_relative 'player'
+require './lib/player'
 
 class Round
 
