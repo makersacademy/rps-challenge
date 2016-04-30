@@ -8,6 +8,7 @@ gem 'rake'
 group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
+  gem 'rspec-sinatra'
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
