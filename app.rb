@@ -10,10 +10,15 @@ class RPSLS < Sinatra::Base
   post '/names' do
     session[:player_1] = params[:player_1]
     session[:player_2] = params[:player_2]
-    erb :game
+    redirect '/game'
   end
 
   get '/game' do
+    erb :game
+  end
+
+  post '/game' do
+    session[:choice] = params[:choice]
     erb :game
   end
 
