@@ -1,13 +1,7 @@
-# class player
-#
-# attr_reader :name, :move
-#
-#   def initiaize(name)
-#     @name = name
-#     @move = nil
-#   end
-#
-#   def move(move)
-#     @move = move
-#   end
-# end
+class Player
+
+attr_reader :name
+  def initiaize(name)
+    @name = name
+  end
+end
