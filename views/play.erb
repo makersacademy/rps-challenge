@@ -1,1 +1,13 @@
 <h2> <%= @name %> vs. Computer </h2>
+<br>
+Choose your weapon!
+<br>
+<form action="/choice" method="post">
+<label for="choice">
+<input type="radio" type="radio" name="choice" id="rock" value="rock">Rock
+<input type="radio" name="choice" id="paper" value="paper">Paper
+<input type="radio" name="choice" id="scissors" value="scissors">Scissors
+<br>
+<input type="submit" value="Submit">
+</label>
+</form>
