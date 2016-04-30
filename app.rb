@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/select'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,8 +10,46 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = params[:name]
+    session[:player] = params[:name]
+    @game = Select.create
+    redirect '/play'
+  end
+
+  before do
+    @game = Select.object
+  end
+
+  get '/play' do
+    @player = session[:player]
+    @game
     erb :play
+  end
+
+  get '/game' do
+    @player = session[:player]
+    @game
+    erb :game
+  end
+
+  post '/rock' do
+    @player = session[:player]
+    @game
+    @game.rock
+    redirect '/game'
+  end
+
+  post '/paper' do
+    @player = session[:player]
+    @game
+    @game.paper
+    redirect '/game'
+  end
+
+  post '/scissors' do
+    @player = session[:player]
+    @game
+    @game.scissors
+    redirect '/game'
   end
 
   # start the server if ruby file executed directly
