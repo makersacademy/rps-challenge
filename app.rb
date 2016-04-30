@@ -8,12 +8,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     $player_name = params[:player_name]
-    redirect '/play'
+    redirect '/select-weapon'
   end
 
-  get '/play' do
+  get '/select-weapon' do
     @player_name = $player_name
-    erb :play
+    erb :select_weapon
   end
 
   # start the server if ruby files executed directly
