@@ -6,3 +6,4 @@ feature 'View score' do
     expect(page).to have_content 'Score : 0'
   end
 end
+q
