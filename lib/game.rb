@@ -16,33 +16,44 @@ class Game
   end
 
   def result(p1, p2)
-     p2 = get_random if p2 == nil
+     p2 = p2_choice if p2.nil?
      rps(p1, p2)
   end
 
   private
 
-   def random
-     Kernel.rand(0..2)
-   end
+  def random
+    Kernel.rand(0..4)
+  end
 
-   def get_random
-     random == 0 ? 'scissors' : random == 1 ? 'paper' : 'rock'
-   end
-
-
-  def rps(p1, p2)
-    rps_hash = {'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors'}
-
-    p2 = get_random if p2 == nil
-
-    if p1 == p2
-      "Draw!"
-    elsif rps_hash[p1] == p2
-      "Player 1 won! #{p1} beats #{p2}"
+  def p2_choice
+    if random == 0
+      'scissors'
+    elsif random == 1
+      'paper'
+    elsif random == 2
+      'rock'
+    elsif random == 3
+      'lizard'
     else
-      "Player 2 won! #{p2} beats #{p1}"
+      'spock'
     end
   end
 
+  def rps(p1, p2)
+    rps_hash = Hash.new
+    rps_hash['scissors'] = ['paper', 'lizard']
+    rps_hash['paper'] = ['rock', 'spock']
+    rps_hash['rock'] = ['scissors', 'lizard']
+    rps_hash['spock'] = ['scissors', 'rock']
+    rps_hash['lizard'] = ['paper', 'spock']
+
+    if p1 == p2
+      "Draw!"
+    elsif rps_hash[p1].include? p2
+      "#{player1.name} won! #{p1} beats #{p2}"
+    else
+      "#{player2.name} won! #{p2} beats #{p1}"
+    end
+  end
 end

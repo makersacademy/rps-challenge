@@ -6,24 +6,37 @@ describe Game do
   let(:player2) { double(:player2, name: 'Player2') }
 
   describe 'result' do
-
-    it 'returns winner message' do
-      expect(game.result('rock', 'rock')).to eq "Draw!"
+    context 'two player mode' do
+      it 'returns \'draw\' message when same choice' do
+        expect(game.result('rock', 'rock')).to eq "Draw!"
+      end
     end
 
-    it 'returns winner message for player1' do
-      allow(Kernel).to receive(:rand).and_return 0
-      expect(game.result('scissors', nil)).to eq "Draw!"
-    end
+    context 'one player mode' do
+      it 'returns \'draw\' message when same choice' do
+        allow(Kernel).to receive(:rand).and_return 0
+        expect(game.result('scissors', nil)).to eq "Draw!"
+      end
 
-    it 'returns winner message' do
-      allow(Kernel).to receive(:rand).and_return 1
-      expect(game.result('rock', nil)).to eq "Player 2 won! paper beats rock"
-    end
+      it 'returns computer won message when computer chooses paper' do
+        allow(Kernel).to receive(:rand).and_return 1
+        expect(game.result('rock', nil)).to eq "Player2 won! paper beats rock"
+      end
 
-    it 'returns winner message' do
-      allow(Kernel).to receive(:rand).and_return 2
-      expect(game.result('paper', nil)).to eq "Player 1 won! paper beats rock"
+      it 'returns player won message when computer chooses rock' do
+        allow(Kernel).to receive(:rand).and_return 2
+        expect(game.result('paper', nil)).to eq "Player1 won! paper beats rock"
+      end
+
+      it 'returns computer won message when computer chooses lizard' do
+        allow(Kernel).to receive(:rand).and_return 3
+        expect(game.result('spock', nil)).to eq "Player2 won! lizard beats spock"
+      end
+
+      it 'returns player won message when computer chooses spock' do
+        allow(Kernel).to receive(:rand).and_return 4
+        expect(game.result('lizard', nil)).to eq "Player1 won! lizard beats spock"
+      end
     end
   end
 end
