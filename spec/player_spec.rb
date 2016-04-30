@@ -24,15 +24,14 @@ describe 'Player' do
   end
 
   context 'computer choice' do
-    it('provides a random choice for computer') do
+    it('provides a random choice for computer classic mode') do
       allow(Kernel).to receive(:rand).and_return(0)
       expect(player.computer_choice("classic")).to eq :scissors
     end
-  end
 
-  context '#computer?' do
-    it('returns true if player2 is computer') do
-      expect(machine.computer?).to be true
+    it('provides a ramdom choice for computer spock mode') do
+      allow(Kernel).to receive(:rand).and_return(4)
+      expect(player.computer_choice("spock")).to eq :spock
     end
   end
 end

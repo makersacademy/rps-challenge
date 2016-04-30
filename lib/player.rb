@@ -29,9 +29,4 @@ class Player
     end
     CHOICES.key(value)
   end
-
-  def computer?
-    name == "Computer"
-  end
-
 end

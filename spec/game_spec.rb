@@ -29,20 +29,36 @@ describe Game do
     end
   end
 
+  context "#computer?" do
+    it "checks if player2 is the computer" do
+      expect(game.computer?).to be true
+    end
+  end
+
   context "#results" do
     let(:game_rs) { Game.new(rock, scissors, "one", "classic") }
     let(:game_rp) { Game.new(rock, paper, "one", "classic") }
     it "provides result draw for Rock and Rock" do
-      expect(game.result).to eq :draw
+      expect(game.winner).to eq :draw
     end
 
-    it "provides winner player1 for Rock and Scissors" do
-      expect(game_rs.result).to eq :player1
+    it "provides winner Rock for Rock and Scissors" do
+      expect(game_rs.winner).to eq rock
     end
 
-    it "provides winner player2 for Rock and Paper" do
-      expect(game_rp.result).to eq :player2
+    it "provides winner Paper for Rock and Paper" do
+      expect(game_rp.winner).to eq paper
+    end
+
+    it "provides loser Rock for Rock and Paper" do
+      expect(game_rp.loser).to eq rock
+    end
+
+    it "#draw?" do
+      expect(game.draw?).to be true
     end
   end
+
+
 
 end

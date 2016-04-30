@@ -17,17 +17,23 @@ class Game
     @game
   end
 
-  def result
+  def computer?
+    player_mode == "one"
+  end
+
+  def winner
     size = calculate_size
-    r = player_1.to_i
-    p "en 2 lineas: #{r.to_i}"
     score = (player_1.to_i - player_2.to_i)%size
-    # p "p1.choice: #{player_1.choice} and to_i:#{player_1.choice.to_i}"
-    # p "p2.choice: #{player_2.choice} and to_i:#{player_2.choice.to_i}"
-    # p "result: #{result}"
-
     determine_winner(score)
+  end
 
+  def loser
+    return :draw if winner == :draw
+    [player_1, player_2].reject{ |player| player == winner }.first
+  end
+
+  def draw?
+    winner == :draw
   end
 
   private
@@ -38,8 +44,8 @@ class Game
 
     def determine_winner(result)
       return :draw if result == 0
-      return :player1 if result.even?
-      :player2
+      return player_1 if result.even?
+      player_2
     end
 
 end
