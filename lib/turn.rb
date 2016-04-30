@@ -26,11 +26,11 @@ class Turn
     rps_hash['lizard'] = ['paper', 'spock']
 
     if p1 == p2
-      "Draw!"
+      [p1, p1]
     elsif rps_hash[p1].include? p2
-      "Player1 won! #{p1} beats #{p2}"
+      [p1, p2]
     else
-      "Player2 won! #{p2} beats #{p1}"
+      [p2, p1]
     end
   end
 end

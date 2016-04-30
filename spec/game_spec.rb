@@ -8,9 +8,15 @@ describe Game do
 
   describe 'update score' do
     it 'adds 1 to winning player score' do
-      allow(turn).to receive(:result).and_return "Player2 won! paper beats rock"
+      allow(turn).to receive(:result).and_return ['paper', 'rock']
       expect(player2).to receive :won_turn
       game.result('rock', 'paper')
+    end
+
+    it 'adds 0 to winning player score if draw' do
+      allow(turn).to receive(:result).and_return ['rock', 'rock']
+      expect(player1).not_to receive :won_turn
+      game.result('rock', 'rock')
     end
   end
 end

@@ -17,12 +17,16 @@ class Game
   end
 
   def result(p1, p2)
-    outcome_message = turn.result(p1,p2)
-    if outcome_message.start_with?("Player1")
+    outcome = turn.result(p1,p2)
+    if outcome[0] == outcome[1]
+      "Draw!"
+    elsif outcome[0] == p1
       player1.won_turn
-    elsif outcome_message.start_with?("Player2")
+      "#{player1.name} won! #{outcome[0]} beats #{outcome[1]}"
+    else
       player2.won_turn
+      "#{player2.name} won! #{outcome[0]} beats #{outcome[1]}"
     end
-    outcome_message
   end
+
 end
