@@ -35,7 +35,7 @@ class Game
   def find_winner_extended
     difference = (EXTENDED[player_1.choice] - EXTENDED[player_2.choice]) % 5
     return 'Tie' if difference == 0
-    return player_1 if (difference == 1 || difference == 2)
+    return player_1 if difference == 1 || difference == 2
     player_2
   end
 end
