@@ -17,11 +17,12 @@ class Game
   end
 
   def result(p1, p2)
-    if turn.result(p1,p2).start_with?("Player1")
+    outcome_message = turn.result(p1,p2)
+    if outcome_message.start_with?("Player1")
       player1.won_turn
-    elsif turn.result(p1,p2).start_with?("Player2")
+    elsif outcome_message.start_with?("Player2")
       player2.won_turn
     end
-    turn.result(p1, p2)
+    outcome_message
   end
 end
