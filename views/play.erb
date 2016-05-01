@@ -1,1 +1,10 @@
 Welcome <%= @player_name %>!
+
+Choose your attack:
+
+<form action='/attack' method='post'>
+  <input type='radio' name='attack' id='rock' value='rock'> rock
+  <input type='radio' name='attack' id='paper' value='paper'> paper
+  <input type='radio' name='attack' id='scissors' value='scissors'> scissors
+  <input type='submit' value='Submit'>
+</form>
