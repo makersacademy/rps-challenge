@@ -1,24 +1,16 @@
+feature 'Player may choose rock, paper or scissors' do
+  scenario 'page renders paper option' do
+    sign_in_and_play
+    expect(page).to have_content 'Paper'
+  end
 
-#   scenario 'page renders paper option' do
-#     visit ('/')
-#     fill_in :player_1_name, with: 'Tom'
-#     click_button 'Play!'
-#     expect(page).to have_content 'Paper'
-#   end
+  scenario 'page renders paper option' do
+    sign_in_and_play
+    expect(page).to have_content 'Scissors'
+  end
 
-#   scenario 'page renders paper option' do
-#     visit ('/')
-#     fill_in :player_1_name, with: 'Tom'
-#     click_button 'Play!'
-#     expect(page).to have_content 'Rock'
-#   end
-
-#   scenario 'page renders paper option' do
-#     visit ('/')
-#     fill_in :player_1_name, with: 'Tom'
-#     click_button 'Play!'
-#     expect(page).to have_content 'Scissors'
-#   end
-
-
-# end
+  scenario 'page renders paper option' do
+    sign_in_and_play
+    expect(page).to have_content 'Rock'
+  end
+end
