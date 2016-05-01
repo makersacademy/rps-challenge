@@ -1,6 +1,6 @@
 require 'round'
 
-  describe Round do
+describe Round do
     subject(:round) { Round.new(player_1)}
     let(:player_1) {double(:player, name: 'Kanye', weapon_choice: :rock)}
     let(:player_2) {double(:player_2)}
@@ -24,4 +24,5 @@ require 'round'
       expect(['Kanye', 'No-one', 'Computer']).to include(round.result)
     end
   end
+
 end

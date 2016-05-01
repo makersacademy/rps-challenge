@@ -26,7 +26,7 @@ class Round
   end
 
   def win
-    WINNERS.include?({player_1_weapon => player_2_weapon})
+    WINNERS.include?(player_1_weapon => player_2_weapon)
   end
 
   def draw
@@ -36,7 +36,7 @@ class Round
   def result
     return player_1.name if win
     return "No-one" if draw
-    return "Computer"
+    "Computer"
   end
 
 end
