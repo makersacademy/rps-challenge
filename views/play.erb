@@ -1,3 +1,27 @@
-<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<div id="bold">
+	<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+</div>
 
-<h1><%= @game.standard_mode %></h1>
+<% if @game.standard_mode %>
+	<form action="/result" method="post">
+    <button name="choice" value="rock">
+    	<img src="/images/rock.png" alt="Rock" class="circular">
+    </button>
+    <button name="choice" value="paper">
+    	<img src="/images/paper.png" alt="Paper" class="circular">
+    </button>
+    <button name="choice" value="scissors">
+    	<img src="/images/scissors.png" alt="Scissors" class="circular">
+    </button>
+    <!-- <label for="rock">Rock</label>
+    <input type="radio" name="choice" value="rock">
+    <label for="paper">Paper</label>
+    <input type="radio" name="choice" value="paper">
+    <label for="scissors">Scissors</label>
+    <input type="radio" name="choice" value="scissors">
+    <br>
+    <br>
+    <input id="submit_button" type="submit" value="Submit"> -->
+  </form>
+<% else %>
+<% end %>

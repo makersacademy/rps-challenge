@@ -11,7 +11,6 @@ class Player
   end
 
   def computer?
-    name == "Computer"
+    false
   end
-
 end

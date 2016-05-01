@@ -80,24 +80,23 @@ footer div {
     font-size: 40px;
 }
 
-#options {
+#bold {
     font-family: 'Lobster', cursive;
     margin: 20px;
     font-size: 40px;
 }
 
-#scoresheet {
-    font-family: 'Lobster', cursive;
-    text-align: center;
-    width: auto;
+.circular {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
-tr, td {
-    text-align: center;
-    height: 30px;
-}
-
-th {
-    background-color: rgba(171, 23, 73, 0.85);
-    border-bottom-width: 1px;
+button img {
+    border-radius: 50%;
 }
