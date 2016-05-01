@@ -3,6 +3,7 @@ require 'Player'
 describe Player do
   subject(:player){described_class.new "Nick"}
   subject(:computer){described_class.new "Computer"}
+
   it "sets a players choice" do
     player.choose("Rock")
     expect(player.choice).to eq "Rock"
