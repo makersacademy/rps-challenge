@@ -8,4 +8,4 @@ game = Game.new(player_1)
 # p computer_result = game.computer_draw
 #
 # p game.play(result,computer_result)
-p game.player_1.name
+p game.play(:rock)
