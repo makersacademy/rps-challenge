@@ -1,5 +1,5 @@
 class RpsGame
-  attr_reader :name
+  attr_reader :player_name
 
   def self.set_instance(name)
     @game = RpsGame.new(name)
@@ -16,12 +16,12 @@ class RpsGame
     @scissors = attack_class.new('scissors', 'rock')
   end
 
-  def attack attack
-    if @rock.name == attack
+  def attack attack_name
+    if @rock.name == attack_name
       @player_attack = @rock
-    elsif @paper.name == attack
+    elsif @paper.name == attack_name
       @player_attack = @paper
-    elsif @scissors.name == attack
+    elsif @scissors.name == attack_name
       @player_attack = @scissors
     end
   end
