@@ -1,5 +1,6 @@
 <div align="center">
-  <h3>Welcome <%=@player_1_name%>! Choose paper, rock or scissors...</h3>
+  <h2>Welcome <%=@game.player_1.name%>!</h2>
+  <h3>Choose paper, rock or scissors...</h3>
   <form action="/play" method="POST">
     <button class="choose-option" name="choose" value="Paper">
       <img src="img/paper.png" 
