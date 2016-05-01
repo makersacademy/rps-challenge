@@ -1,0 +1,16 @@
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<h1> Make your choice, <%= @game.player_1.name%></h1>
+<!-- <form action="/play_player2"> -->
+<form action="/change_player">
+  <button name="choice" value="spock"><img src="/images/spock.png" alt="scissors" style="width:276px;height:163px;"></button>
+  <button name="choice_lizard" value="lizard"><img src="/images/lizard.png" alt="scissors" style="width:276px;height:163px;"></button>
+<!--   <button name="choice" value="rock"><img src="/images/rock.png" alt="rock" style="width:276px;height:163px;"></button>
+  <button name="choice" value="paper"><img src="/images/paper.png" alt="paper" style="width:276px;height:163px;"></button>
+  <button name="choice" value="scissors"><img src="/images/scissors.png" alt="scissors" style="width:276px;height:163px;"></button> -->
+
+
+</form>
+
+player mode: <%= @game.player_mode %>
+game mode: <%= @game.game_mode %>
+computer? <%= @game.computer? %>

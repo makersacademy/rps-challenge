@@ -29,7 +29,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play_player1' do
-    erb :play_1
+    redirect to 'play_player1_spock' if @game.game_mode == "spock"
+    erb :play_1_classic
+  end
+
+  get '/play_player1_spock' do
+    erb :play_1_spock
   end
 
 #adding screen to allow change of players and hide player_1's choice
@@ -41,9 +46,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play_player2' do
-    #@game.player_1.choice = params[:choice]
     redirect to '/result' if @game.computer?
-    erb :play_2  #juega el segundo jugador
+    redirect to '/play_player2_spock'  if @game.game_mode == "spock"
+    erb :play_2_classic
+  end
+
+  get '/play_player2_spock' do
+    erb :play_2_spock
   end
 
   get '/result' do
