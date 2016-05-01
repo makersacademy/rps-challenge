@@ -1,0 +1,3 @@
+nick = Player.new "Nick"
+game = Game.new nick
+game.play("Rock")
