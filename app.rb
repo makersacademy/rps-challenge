@@ -30,6 +30,7 @@ class RPS < Sinatra::Base
   end
 
   get '/AI' do
+    @weapon = session[:weapon]
     @machine_weapon = Machine.new.choose_weapon
     erb :AI
   end

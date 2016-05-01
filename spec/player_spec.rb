@@ -7,4 +7,9 @@ describe Player do
     expect(player.name).to eq 'Player'
   end
 
+  it 'returns player selected weapon' do
+    player.selected_weapon :ROCK
+    expect(player.weapon).to eq :ROCK
+  end
+
 end

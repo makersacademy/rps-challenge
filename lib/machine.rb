@@ -1,6 +1,6 @@
 class Machine
-
+  WEAPONS = [:ROCK, :PAPER, :SCISSORS]
   def choose_weapon
-    [:ROCK, :PAPER, :SCISSORS].sample
+    WEAPONS.sample
   end
 end

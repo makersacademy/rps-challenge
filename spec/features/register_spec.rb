@@ -30,7 +30,7 @@ feature 'User' do
       fill_in('name', with: 'Pepito')
       click_button('Submit')
       click_button('ROCK')
-      expect(page).to have_content('You chose ROCK !')
+      expect(page).to have_content('You have chosen ROCK !')
     end
   end
 
