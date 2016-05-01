@@ -22,6 +22,7 @@ class Player
   end
 
   def computer_choice(game_mode)
+    #run_it(game_mode)
     if game_mode == "spock"
       value = Kernel.rand(SPOCK)
     else
@@ -30,3 +31,8 @@ class Player
     @choice = CHOICES.key(value)
   end
 end
+
+# private
+#   def run_it(game_mode)
+#     ìf game_mode=='spock' then value = kernel.rand(spock) else value = kernel.rand(classic) end
+#   end

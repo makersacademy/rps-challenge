@@ -7,7 +7,7 @@ feature 'Spock mode player2', type: :feature do
     expect(page).to have_button('rock')
     expect(page).to have_button('paper')
     expect(page).to have_button('scissors')
-    expect(page).to have button('spock')
-    expect(page).to have button('lizard')
+    expect(page).to have_button('spock')
+    expect(page).to have_button('lizard')
   end
 end
