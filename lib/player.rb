@@ -5,4 +5,13 @@ class Player
   def initialize(name)
     @name = name
   end
+
+   def self.create(player)
+    @player= Player.new(player)
+  end
+  def self.get_player
+    @player
+  end
+
+
 end

@@ -1,0 +1,13 @@
+<link type='text/css' rel='stylesheet' href='sylesheet.css'>
+<center>
+<p> <%= @game.player.name %> vs. Computer </p>
+<p> <%= @game.player.name %> chooses <%= @game.player_choice %> <p>
+<p>computer chooses <%= @game.computer.computer_choice%> </p>
+
+<p> <%= @game.winner %> </p>
+
+<form action="/play-again" method="post">
+<button> play again? </button>
+</form>
+
+</center>

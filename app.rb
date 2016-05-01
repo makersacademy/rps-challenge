@@ -9,28 +9,28 @@ class Rps < Sinatra::Base
     erb :index
   end
   post '/names' do
-    @player = Player.new(params[:player_name])
+    Player.create(params[:player_name])
+    @player=Player.get_player
     Game.create(@player)
     @game=Game.game_in_play
     erb :play
   end
   before do
     @game=Game.game_in_play
-    @computer=Computer.new
+    @player=Player.get_player
+end
+
+  post '/choice' do
+    @game.choice(params[:choice])
+    redirect '/results'
   end
-  get '/rock' do
-    @game.rock(@computer.computer_choice)
-    erb :rock
+
+  get '/results' do
+    erb :results
   end
-   get '/paper' do
-    @game.paper(@computer.computer_choice)
-    erb :paper
-  end
-  get '/scissors' do
-    @game.scissors(@computer.computer_choice)
-    erb :scissors
-  end
+
   post '/play-again' do
+    Game.create(@player)
     erb :play
   end
 
