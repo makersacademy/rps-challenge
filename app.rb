@@ -10,7 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/start' do
-    Game.create params[:player_name]
+    Game.create params[:player_name], Object.const_get(params[:rules])
     redirect '/select-weapon'
   end
 
