@@ -8,8 +8,8 @@ class Rps < Sinatra::Base
     erb :index
   end
   post '/names' do
-    player = Player.new(params[:player_name])
-    Game.create(player)
+    @player = Player.new(params[:player_name])
+    Game.create(@player)
     @game=Game.game_in_play
     erb :play
   end
@@ -17,12 +17,17 @@ class Rps < Sinatra::Base
     @game=Game.game_in_play
   end
   get '/rock' do
-
-    #@computer = @game.computer_choice
     @game.rock(@game.computer.computer_choice)
-    @game.outcome
     erb :rock
   end
+  get '/scissors' do
+    @game.scissors(@game.computer.computer_choice)
+    erb :scissors
+  end
+  post '/play-again' do
+    erb :play
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
