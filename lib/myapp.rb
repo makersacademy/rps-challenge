@@ -10,7 +10,7 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
-  get '/names' do
+  post '/names' do
   session[:player_name] = params[:player_name]
     redirect '/play'
 
@@ -20,6 +20,12 @@ class MyApp < Sinatra::Base
   @player_name = session[:player_name]
   erb :play
 
+  end
+  post '/result' do
+    @player_name = session[:player_name]
+    session[:rps] = params[:rps]
+    @hand_selection = session[:rps]
+    erb :game
   end
 
 

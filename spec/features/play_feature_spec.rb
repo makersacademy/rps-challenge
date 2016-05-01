@@ -8,7 +8,7 @@ feature "A player chooses rock, paper or scissors" do
     click_button "Let's Play!"
     choose "rock"
     click_button  "Come at me!"
-    expect(page).to have_content("You played rock")
+    expect(page).to have_content("Lucy played rock")
   end
 
   scenario "Player chooses paper" do
@@ -16,8 +16,8 @@ feature "A player chooses rock, paper or scissors" do
     fill_in 'player_name', :with => "Lucy"
     click_button "Let's Play!"
      choose "paper"
-    click_button  "Come at me!"
-    expect(page).to have_content("You played paper")
+    click_button "Come at me!"
+    expect(page).to have_content("Lucy played paper")
   end
 
   scenario "Player chooses scissors" do
@@ -25,9 +25,9 @@ feature "A player chooses rock, paper or scissors" do
     fill_in 'player_name', :with => "Lucy"
     click_button "Let's Play!"
     choose "scissors"
-    click_button  "Come at me!"
+    click_button "Come at me!"
 
-    expect(page).to have_content ("You played scissors")
+    expect(page).to have_content ("Lucy played scissors")
   end
 
 
