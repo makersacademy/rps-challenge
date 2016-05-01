@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/rock_paper_scissors_rules'
+require './lib/rock_paper_scissors_spock_lizard_rules'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -8,9 +9,9 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-      Game.create params[:player_name]
-      redirect '/select-weapon'
+  post '/start' do
+    Game.create params[:player_name]
+    redirect '/select-weapon'
   end
 
   before do
@@ -22,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @game.player_move = params["move"]
+    @game.player_move = params[:move]
     @game.set_opponent_move
     redirect '/results'
   end

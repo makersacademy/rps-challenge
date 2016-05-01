@@ -1,7 +1,7 @@
-class RockPaperScissorsRules
+class RockPaperScissorsSpockLizardRules
 
   def moves
-    [:rock, :paper, :scissors]
+    [:rock, :paper, :scissors, :spock, :lizard]
   end
 
   def result player_move, opponent_move
@@ -16,7 +16,7 @@ class RockPaperScissorsRules
   end
 
   def win? player_move, opponent_move
-    (moves.index(player_move) - moves.index(opponent_move)) % 3 == 1
+    ((moves.index(player_move) - moves.index(opponent_move)) % 5).odd?
   end
 
 end

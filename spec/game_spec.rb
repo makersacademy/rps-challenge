@@ -56,4 +56,10 @@ describe Game do
       game.result
     end
   end
+
+  describe '#mode' do
+    it 'returns the game_mode given at initialize' do
+      expect(game.mode).to eq rps_rules_class
+    end
+  end
 end

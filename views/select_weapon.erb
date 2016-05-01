@@ -12,11 +12,11 @@
       <label for="paper">Paper</label>
       <input type="radio" id="scissors" name="move" value="scissors" />
       <label for="scissors">Scissors</label>
-      <% if @game_mode == "rpsls" %>
-      <input type="radio" id="lizard" name="move" value="lizard" />
-      <label for="scissors">Lizard</label>
+      <% if @game.mode == RockPaperScissorsSpockLizardRules %>
       <input type="radio" id="spock" name="move" value="spock" />
       <label for="scissors">Spock</label>
+      <input type="radio" id="lizard" name="move" value="lizard" />
+      <label for="scissors">Lizard</label>
       <% end %>
       <input type='submit' value="Submit" />
     </form>

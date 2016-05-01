@@ -1,7 +1,7 @@
 class Game
 
-  def self.create player_name
-    @game = Game.new player_name
+  def self.create player_name, rules_class = RockPaperScissorsRules
+    @game = Game.new player_name, rules_class
   end
 
   def self.last
@@ -10,10 +10,11 @@ class Game
 
   def initialize player_name, rules_class = RockPaperScissorsRules
     @player_name = player_name
+    @mode = rules_class
     @rules = rules_class.new
   end
 
-  attr_reader :player_move, :opponent_move
+  attr_reader :player_move, :opponent_move, :mode
 
   def player_name
     @player_name.clone
