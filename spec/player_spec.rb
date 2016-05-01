@@ -33,5 +33,11 @@ describe 'Player' do
       allow(Kernel).to receive(:rand).and_return(4)
       expect(player.computer_choice("spock")).to eq :spock
     end
+
+    it('sets the attribute choice') do
+      allow(Kernel).to receive(:rand).and_return(2)
+      player.computer_choice("classic")
+      expect(player.choice).to eq :rock
+    end
   end
 end

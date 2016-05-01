@@ -27,6 +27,6 @@ class Player
     else
       value = Kernel.rand(CLASSIC)
     end
-    CHOICES.key(value)   #hay que setear choice! i.e. choice = CHOICES.key(value)
+    @choice = CHOICES.key(value)
   end
 end
