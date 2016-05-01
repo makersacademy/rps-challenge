@@ -1,0 +1,9 @@
+win
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+
+Winner: <%= @game.winner.name %>      Loser: <%= @game.loser.name %>
+
+Choice winner: <%= @game.winner.choice %>
+Choice loser: <%= @game.loser.choice %>
+
+The <%= @game.winner.choice %> chosen by <%= @game.winner.name %>beats the <%= @game.loser.choice %> chosen by <%= @game.loser.name %>

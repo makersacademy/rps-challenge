@@ -1,4 +1,4 @@
-feature 'Welcome menu', :type => :feature do
+feature 'Welcome menu', type: :feature do
   scenario 'one player, classic' do
     visit("/")
     expect(page).to have_content "Welcome"

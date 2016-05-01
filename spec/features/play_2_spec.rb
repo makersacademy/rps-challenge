@@ -1,4 +1,4 @@
-feature 'Choices available', :type => :feature do
+feature 'Choices available', type: :feature do
   scenario 'multiplayer' do
     mode_two_players_classic
     click_button("rock")

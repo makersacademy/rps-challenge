@@ -1,4 +1,4 @@
-feature 'Enter names', :type => :feature do
+feature 'Enter names', type: :feature do
   scenario 'one player' do
     mode_one_player_classic
     expect(page).to have_content "Sergio"

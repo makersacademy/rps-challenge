@@ -1,4 +1,4 @@
-feature 'Choices available', :type => :feature do
+feature 'Choices available', type: :feature do
   scenario 'one player' do
     mode_one_player_classic
     expect(page).to have_button('rock')
