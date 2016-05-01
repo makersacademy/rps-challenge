@@ -25,7 +25,7 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  post '/turn' do
+  post '/result' do
     @player_choice = params[:player_choice]
 
     @game.play(@player_choice)

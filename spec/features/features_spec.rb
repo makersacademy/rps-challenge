@@ -16,4 +16,12 @@ feature 'Play' do
   end
 end
 
+feature 'Result' do
+  scenario 'result of the game' do
+    sign_in_and_play
+    expect(page).to have_content "You chose: Rock 
+    Computer chose: Paper
+    Result: Computer wins"
+  end
+end
 

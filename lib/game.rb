@@ -4,6 +4,11 @@ class Game
 
   attr_reader :player, :player_choice, :computer_choice, :result
 
+  WEAPONS = [:rock, :paper, :scissors]
+  RULES = { rock: :scissors,
+      paper: :rock,
+      scissors: :paper }
+
   def initialize(player)
     @player = player
     @player_choice
@@ -16,10 +21,10 @@ class Game
   end
 
   def play(choice)
-    @computer_choice = ["Rock", "Paper", "Scissors"].sample
-    @player_choice = choice
+    @computer_choice = WEAPONS.sample
+    @player_choice = choice.downcase.to_sym
     if player_drew(@computer_choice, @player_choice)
-      @result = "Draw"
+      @result = :draw
     else 
       @result = who_won(@computer_choice, @player_choice)
     end
@@ -30,25 +35,7 @@ class Game
   end
 
   def who_won(comp, player_choice)
-    if player_choice == "Rock"
-      if comp == "Paper"
-        "Computer wins"
-      else
-        "Player wins"
-      end
-    elsif player_choice == "Scissors"
-      if comp == "Paper"
-        "Player wins"
-      else
-        "Computer wins"
-      end
-    elsif player_choice == "Paper"
-      if comp == "Scissors"
-        "Computer wins"
-      else 
-        "Player wins"
-      end
-    end
+    RULES[player_choice].to_s == comp.to_s ? :win : :lose
   end
 
   def self.instance
