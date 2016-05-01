@@ -9,6 +9,16 @@ class Rps < Sinatra::Base
     erb :name
   end
 
+  post '/set_name' do
+    $player_name = params[:player_name]
+    redirect '/choose_weapon'
+  end
+
+  get '/choose_weapon' do
+    @player_name = $player_name
+    erb :choose
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

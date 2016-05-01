@@ -1,12 +1,12 @@
 feature "Start screen" do
   scenario "display opening msg" do
-    visit('/')
+    visit '/'
     expect(page).to have_content "Rock Paper Scissors"
   end
 
   scenario "have start button" do
-    visit('/')
-    find_button("Start").click
+    visit '/'
+    find_button("Start")
   end
 
   scenario "start button takes to name input screen" do
