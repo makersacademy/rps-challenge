@@ -12,19 +12,23 @@ describe Game do
 
   describe '#play' do
     it 'paper vs scissors - scissors wins' do
-      expect(game.play(:paper,:scissors)).to eq :scissors
+      allow(subject).to receive(:computer_draw).and_return :scissors
+      expect(game.play(:paper)).to eq "Computer wins"
     end
 
     it 'scissors vs rock - rock wins' do
-      expect(game.play(:scissors,:rock)).to eq :rock
+      allow(subject).to receive(:computer_draw).and_return :rock
+      expect(game.play(:scissors)).to eq "Computer wins"
     end
 
     it 'paper vs rock - paper wins' do
-      expect(game.play(:paper,:rock)).to eq :paper
+      allow(subject).to receive(:computer_draw).and_return :rock
+      expect(game.play(:paper)).to eq "Player 1 wins"
     end
 
     it 'paper vs paper - draw' do
-      expect(game.play(:paper,:paper)).to eq :draw
+      allow(subject).to receive(:computer_draw).and_return :paper
+      expect(game.play(:paper)).to eq "Draw!"
     end
   end
 end
