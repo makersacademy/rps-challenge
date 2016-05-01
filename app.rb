@@ -16,12 +16,12 @@ class Rps < Sinatra::Base
     player_1 = Player.new params[:player_name]
     player_2 = ComputerPlayer.new
     $game = Game.new(player_1,player_2)
-    redirect '/choose_weapon'
+    redirect '/selection'
   end
 
-  get '/choose_weapon' do
+  get '/selection' do
     @game = $game
-    erb :choose
+    erb :selection
   end
 
   post '/set_weapon' do
@@ -33,7 +33,14 @@ class Rps < Sinatra::Base
 
   get '/fight' do
     @game = $game
+    @game.allocate_points
     erb :fight
+  end
+
+  post '/best_of_plus_2' do
+    @game = $game
+    @game.best_of_plus_2
+    redirect '/selection'
   end
 
 

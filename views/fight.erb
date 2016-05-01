@@ -1,4 +1,5 @@
 <h1><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h1>
+<h1>Best of: <%=@game.best_of_n%></h1>
 
 <p><%=@game.player_1.name%> uses <%=@game.player_1.weapon%></p>
 
@@ -8,8 +9,19 @@
   <p>tie</p>
 <%else%>
   <p><%=@game.winner.name%> wins</p>
-  <%@game.winner.add_point%>
 <%end%>
+
+<%if @game.overall_winner.nil?%>
+<form action="/selection">
+  <button type="submit">Next Round</button>
+</form>
+<%else%>
+  <h1><%=@game.overall_winner.name%> is the champion</h1>
+  <form action="/best_of_plus_2" method="post">
+    <button type="submit">Best of <%=@game.best_of_n + 2%>?</button>
+  </form>
+<%end%>
+
 
 
 <div class = "scores">

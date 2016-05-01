@@ -12,3 +12,8 @@ def sign_in_and_choose_rock
   click_button "Submit"
   click_button "rock"
 end
+
+def next_round_and_choose_rock
+  click_button "Next Round"
+  click_button "rock"
+end
