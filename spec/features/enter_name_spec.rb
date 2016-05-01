@@ -12,4 +12,5 @@ feature "Enter Player Name" do
     click_button "Submit"
     expect(page).to have_content "Johnson choose your weapon"
   end
+
 end

@@ -1,8 +1,12 @@
 <h3><%=@game.player_1.name%> choose your weapon</h3>
 
-<form action= "/set_weapon" method="post">
+<form action= "/set_gesture" method="post">
 
-  <button type="submit" value = "rock" name="weapon"><img src="http://llerrah.com/images/large_rock_in_grass_lg_clr_me.gif"></button>
-  <button type="submit" value = "paper" name="weapon"><img> Paper</button>
-  <button type="submit" value = "scissors" name="weapon"><img> Scissors</button>
+  <button type="submit" value = "rock" name="gesture"><img src="http://llerrah.com/images/large_rock_in_grass_lg_clr_me.gif"></button>
+  <button type="submit" value = "paper" name="gesture"><img> Paper</button>
+  <button type="submit" value = "scissors" name="gesture"><img> Scissors</button>
+  <%if @game.spock_and_lizard%>
+    <button type="submit" value = "spock" name="gesture"><img> Spock</button>
+    <button type="submit" value = "lizard" name="gesture"><img> Lizard</button>
+  <%end%>
 </form>

@@ -1,20 +1,30 @@
 class Game
 
-  attr_reader :best_of_n
+  attr_reader :best_of_n, :spock_and_lizard
 
-  PLAYER_1_WINS = [[:rock, :scissors],[:scissors, :paper],[:paper, :rock]]
+  PLAYER_1_WINS = [[:rock, :scissors],
+                  [:rock, :lizard],
+                  [:scissors, :paper],
+                  [:scissors, :lizard],
+                  [:paper, :rock],
+                  [:paper, :spock],
+                  [:spock, :rock],
+                  [:spock, :scissors],
+                  [:lizard, :paper],
+                  [:lizard, :spock]]
 
-  def self.create player_1, player_2
-    @game = Game.new player_1, player_2
+  def self.create player_1, player_2, spock_and_lizard = false
+    @game = Game.new player_1, player_2, spock_and_lizard
   end
 
   def self.instance
     @game
   end
-  
-  def initialize player_1, player_2
+
+  def initialize player_1, player_2, spock_and_lizard = false
     @players = [player_1,player_2]
     @best_of_n = 3
+    @spock_and_lizard = spock_and_lizard
   end
 
   def player_1
@@ -49,5 +59,4 @@ class Game
   def tie
     player_1.gesture == player_2.gesture
   end
-
 end
