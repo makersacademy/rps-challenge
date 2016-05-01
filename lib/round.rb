@@ -34,7 +34,6 @@ class Round
 
   def initialize(player, computer = Player.new)
     @players = [@player1 = player, @player2 = computer]
-    @won = player
   end
 
 end
