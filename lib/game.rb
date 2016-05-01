@@ -1,6 +1,7 @@
+require_relative 'player'
 class Game
-  attr_reader :player1, :player2, :user_choice, :computer_choice
-  def initialize(player1, player2 = "Computer")
+  attr_reader :player1, :player2, :result
+  def initialize(player1, player2 = Player.new("Computer"))
     @player1 = player1
     @player2 = player2
     @combos = {"Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors"}
@@ -14,23 +15,16 @@ class Game
     @game
   end
 
-  def choose(choice)
-    @user_choice = choice
-  end
-
-  def computers_pick
-    choices = ["Rock", "Paper", "Scissors"]
-    @computer_choice = choices[Kernel.rand(3)]
-  end
-
-  def winner
-    computers_pick
-    if @user_choice == @computer_choice
-      "Tie"
-    elsif @combos[@user_choice] == @computer_choice
-      @player1
+  def play(choice1, *choice2)
+    @player1.choose(choice1)
+    @player2.choose(choice2)
+    if @player1.choice == @player2.choice
+      @result = "Tie"
+    elsif @combos[@player1.choice] == @player2.choice
+      @result = @player1
     else
-      @player2
+      @result = @player2
     end
   end
+
 end

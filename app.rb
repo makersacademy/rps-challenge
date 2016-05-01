@@ -14,7 +14,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(params[:name])
+    player1 = Player.new params[:name]
+    @game = Game.create(player1)
     redirect '/play'
   end
 
@@ -23,8 +24,8 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    @game.choose(params[:choice])
-    if @game.winner == "Tie"
+    @game.play(params[:choice])
+    if @game.result == "Tie"
       erb(:tie)
     else
       erb(:results)

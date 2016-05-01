@@ -1,10 +1,10 @@
 <center>
 <h1> Rock, Paper, Scissors </h1>
 </center>
-<h2> Your choice: <%= @game.user_choice %> </h2>
-<h2> Computer's choice: <%= @game.computer_choice %> </h2>
+<h2> <%= @game.player1.name%>'s choice: <%= @game.player1.choice %> </h2>
+<h2> <%= @game.player2.name %>'s choice: <%= @game.player2.choice %> </h2>
 <br>
-<%= @game.winner %> is the winner.
+<%= @game.result.name %> is the winner.
 <br>
 <form action='/play'>
   <input type='submit' value="Play again">

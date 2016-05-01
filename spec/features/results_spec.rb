@@ -2,7 +2,7 @@ feature "The result page", type: :feature do
 
   scenario "displays choices for both user and computer" do
     play_game("Rock")
-    expect(page).to have_text("Your choice: Rock")
+    expect(page).to have_text("Nick's choice: Rock")
     expect(page).to have_text("Computer's choice:")
   end
 
