@@ -29,13 +29,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play_player1' do
-    erb :play
+    erb :play_1
   end
 
   get '/play_player2' do
     @game.player_1.choice = params[:choice]
     @game.player_2.computer_choice(@game.game_mode) if @game.computer?
-    redirect to '/result' if @game.computer?
+    #redirect to '/result' if @game.computer?
     erb :play_2  #juega el segundo jugador
   end
 
