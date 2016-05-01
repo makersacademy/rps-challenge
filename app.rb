@@ -18,10 +18,12 @@ class Rps < Sinatra::Base
     erb :choose
   end
 
-  post '/play' do
-
-    erb :play
+  get '/result' do
+    @round.random_opponent
+    @round.result
+    erb :result
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

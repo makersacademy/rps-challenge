@@ -1,6 +1,6 @@
 require 'player'
 describe Player do
-subject(:kanye) {Player.new(:Kanye, :Rock)}
+subject(:kanye) {Player.new(:Kanye, :rock)}
 
   describe '#name' do
     it 'returns the name' do
@@ -8,7 +8,7 @@ subject(:kanye) {Player.new(:Kanye, :Rock)}
     end
     describe 'weapon' do
       it 'players has a chosen weapon' do
-        expect(kanye.weapon_choice).to eq :Rock
+        expect(kanye.weapon_choice).to eq :rock
       end
     end
   end
