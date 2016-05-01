@@ -13,4 +13,11 @@ feature "Attack confirmation" do
     click_button "Changed my mind, I want to choose again"
     expect(page).to have_content "Welcome to RPS"
   end
+
+    scenario 'confirmation of SPOCK attack' do
+    sign_in_and_play
+    choose "SPOCK"
+    click_button "My choice is made"
+    expect(page).to have_content "You chose to use SPOCK"
+  end
 end

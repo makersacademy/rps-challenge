@@ -15,12 +15,21 @@ describe Game do
       game.computer_attack
       expect(game.chosen_attacks[:p2]).to eq "ROCK"
     end
+
+    it 'has an attack for rock, paper, scissors, spock and lizard' do
+      expect(game.attacks).to include (Game::R&&Game::S&&Game::P&&Game::L&&Game::SP)
+    end
   end
 
   context '#attack_with' do
     it 'returns attack value passed in upper case' do
       game.attack_with "paper"
       expect(game.chosen_attacks[:p1]).to eq "PAPER"
+    end
+
+    it 'sets player\'s attack to value passed in' do
+      game.attack_with "LIZARD"
+      expect(game.chosen_attacks[:p1]).to eq "LIZARD"
     end
   end
 
@@ -34,6 +43,18 @@ describe Game do
       game.attack_with("SCISSORS")
       game.computer_attack
       expect(game.result).to eq game.player
+    end
+
+    it 'player 1 wins if they choose LIZARD' do
+      game.attack_with("LIZARD")
+      game.computer_attack
+      expect(game.result).to eq game.player
+    end
+
+    it 'computer wins if Player 1 chooses SPOCK' do
+      game.attack_with("SPOCK")
+      game.computer_attack
+      expect(game.result).to eq "COMPUTER"
     end
 
     it 'returns "DRAW" in the event of a draw' do
