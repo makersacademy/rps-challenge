@@ -3,7 +3,7 @@ def random_string
 end
 
 def sign_in_and_play player_name
-  visit('/')
+  visit '/'
   fill_in :player_name, with: player_name
   click_button 'Submit'
 end

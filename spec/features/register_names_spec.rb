@@ -1,4 +1,4 @@
-feature 'Registering Names' do
+feature 'Starting New Game' do
   let (:player_name) { random_string }
   scenario 'Player 1 enters name' do
     sign_in_and_play player_name
