@@ -1,0 +1,51 @@
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='main.css' />
+  <title>Play | Rock, Paper, Scissors</title>
+</head>
+
+
+<body>
+<header class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <h1 class='text-center'>Welcome <%= @game.player.name %></h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <p class='text-center' >Please choose from the following options:</p>
+  <form action='/result' method='post'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-sm-4 col-md-4 text-center rps'>
+        <img src='assets/rock.png'>
+        <label class='text-center'>Rock</label>
+        <input type='radio' name='player_choice' value='rock' id='rock' checked><br>
+      </div>
+
+      <div class='col-xs-12 col-sm-4 col-md-4 text-center rps'>
+        <img src='assets/paper.ico'>
+        <label>Paper</label>
+        <input type='radio' name='player_choice' value='paper'id='paper'><br>
+      </div>
+
+      <div class='col-xs-12 col-sm-4 col-md-4 text-center rps'>
+        <img src='assets/scissors.png'>
+        <label>Scissors</label>
+        <input type='radio' name='player_choice' value='scissors' id='scissors'><br>
+      </div>
+    </div>
+
+    <div class='text-center submit-btn'>
+      <input class='btn' type='submit' value='Submit'>
+    </div>
+  </form>
+  </div>
+</section>
+
+</body>
