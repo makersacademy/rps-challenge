@@ -1,0 +1,62 @@
+body {
+    background-color: #263238;
+}
+
+#Title{
+  color:#FFF;
+  font-family:Indie Flower, monospace;;
+  font:40px;
+  text-align: center;
+}
+
+#name{
+  color:#FFF;
+  font-family:Indie Flower, monospace;;
+  font-size:40px;
+  text-align: center;
+  margin: 50px 0px 20px 0px;
+}
+
+#Logo{
+  background-color: #E91E63;
+  border-radius: 25px;
+  width: 400;
+  height: 115px;
+  margin: 0 auto;
+}
+
+#Subtitle{
+  color:#FFF;
+  font-family:Indie Flower, monospace;;
+  font:15px;
+  text-align:center;
+  margin: 30px 0px 100px 0px;
+}
+
+#goty{
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 30px 0px 100px 0px;
+}
+
+button{
+  font-family:Indie Flower;
+  font-size: 20px;
+  width:150px;
+  padding:10px;
+  background:#E91E63;
+  color:#fff;
+  border:0;
+  border-radius:4px;
+  box-shadow: 0 5px 0 #880E4F;
+  transition: all .1s linear;
+}
+
+button:active{
+  box-shadow:0 2px 0 #880E4F;
+  transform: translateY(3px);
+}
+
+button:focus{outline:none !important;}
