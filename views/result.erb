@@ -2,7 +2,7 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='main.css' />
-  <title>Play | Rock, Paper, Scissors</title>
+  <title>Result | Rock, Paper, Scissors</title>
 </head>
 
 
@@ -30,23 +30,21 @@
 <section>
   <div class='container'>
     <div class='row'>
-      <div class='col-xs-12 col-md-12 text-center'>
-        <div class='attacks'>
-          <p>You chose <%= @game.player.attack %></p>
-          <p>The computer chose <%= @game.computer.attack %></p>
-        </div>
-
-        <div class='scores'>
-          <h2>Scores</h2>
-          <p>Player: <%= @game.player_score %></p>
-          <p>Computer: <%= @game.computer_score %></p>
-          <p>Tied: <%= @game.tie_score %></p>
-        </div>
-
-        <form action='/play' method='get'>
-          <input type='submit' value='Play again?'>
-        </form>
+      <div class='col-xs-12 col-md-12 text-center attack'>
+        <p>You chose <%= @game.player.attack %></p>
+        <p>The computer chose <%= @game.computer.attack %></p>
       </div>
+
+      <div class='scores text-center'>
+        <h2>Scores</h2>
+        <p class='score-label'>Player: <span><%= @game.player_score %></span></p>
+        <p class='score-label'>Computer: <span><%= @game.computer_score %></span></p>
+        <p class='score-label'>Tied: <span><%= @game.tie_score %></span></p>
+      </div>
+
+      <form class='text-center' action='/play' method='get'>
+        <input class='btn' type='submit' value='Play again?'>
+      </form>
     </div>
   </div>
 </section>
