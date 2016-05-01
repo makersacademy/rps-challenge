@@ -1,0 +1,12 @@
+body {
+  background-image: url(http://wallpapercraze.com/images/wallpapers/rock_paper_scissors_w1.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+label[id=banner] {
+  font-family: Helvetica;
+  color: #ffffff;
+  font-size: 50px;
+}

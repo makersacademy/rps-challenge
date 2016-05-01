@@ -9,12 +9,6 @@ class Computer
     @computer = Computer.new
   end
 
-  def self.instance
-    @computer
-  end
-
-  def choose
-    [:ROCK, :PAPER, :SCISSORS].sample
-  end
+  
 
 end

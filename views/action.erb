@@ -1,7 +1,18 @@
-<body>
+<head>
+  <link rel="stylesheet" type="text/css" href="action.css" />
+</head>
 
-  <%= @game.player.name %> choose ROCK or PAPER or SCISSORS
+<body>
+  <label id=banner>
+    <%= @game.player.name %> choose <%=@game.player_move%>
+  </label>
   <br>
-  Computer choose <%= @computer.choose %>
+  <label id=banner>
+    Computer choose <%= @game.computer_move %>
+  </label>
+  <br>
+  <label id=banner>
+    You <%=@game.result%>
+  </label>
 
 </body>
