@@ -1,6 +1,6 @@
 feature "Computer Attack confirmation" do
   scenario 'page has a button to confirm choice and engage computer' do
-    decisions_confirmed
+    winning_decisions_confirmed
     click_button "I'm not afraid! Lets do this!"
     expect(page).to have_content(/Computer chose ROCK|Computer chose PAPER|Computer chose SCISSORS/)
   end

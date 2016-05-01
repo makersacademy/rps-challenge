@@ -1,3 +1,9 @@
-<h3>Computer chose <%=@computer_attack%></h3>
-<br><br><br><br>
-<h1><%=@winner%> is the ultimate champion of everything ever!!!</h1>
+<center>
+  <h3>Computer chose <%=@computer_attack%></h3>
+  <br><br><br><br>
+  <h1><%=@winner%> is the ultimate champion of everything ever!!!</h1>
+  <br><br>
+  <form action="/play" method="get" >
+  <input type="submit" value="Play again!">
+  </form>
+</center>

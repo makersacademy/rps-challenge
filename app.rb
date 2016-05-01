@@ -41,7 +41,12 @@ class RPS < Sinatra::Base
   get "/result" do
     @computer_attack = @game.chosen_attacks[:p2]
     @winner = @game.result
+    redirect "/draw" if @winner == "DRAW"
     erb :result
+  end
+
+  get "/draw" do
+    erb :draw
   end
 
   # start the server if ruby file executed directly
