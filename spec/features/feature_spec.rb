@@ -10,10 +10,9 @@ end
     scenario 'player selects Rock computer selects Rock' do
       visit ('/')
       fill_in :player_name, with: 'Harry'
-      allow(game).to recieve(:rock).with('rock')
       click_button 'Submit'
       click_button 'Rock'
-      expect(page).to have_content 'The game is a tie'
+      expect(page).to have_content 'Harry chooses rock'
     end
   end
   feature 'testing the game allows you to play again' do
@@ -31,10 +30,18 @@ end
   feature 'testing the player can select scissors' do
    scenario 'player selects scissors' do
     visit ('/')
-      visit ('/')
       fill_in :player_name, with: 'Harry'
       click_button 'Submit'
       click_button 'Scissors'
       expect(page).to have_content 'Harry chooses scissors'
+    end
+    end
+  feature 'testing the player can select paper' do
+   scenario 'player selects paper' do
+    visit ('/')
+      fill_in :player_name, with: 'Harry'
+      click_button 'Submit'
+      click_button 'Paper'
+      expect(page).to have_content 'Harry chooses paper'
     end
   end

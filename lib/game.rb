@@ -17,9 +17,9 @@ attr_reader :computer
     @game
   end
 
-  def initialize(player, computer_class = Computer)
+  def initialize(player)#, computer_class = Computer)
     @player = player
-    @computer = computer_class.new
+    #@computer = computer_class.new
     @winner = nil
   end
 
