@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps_game'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -6,7 +7,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @player_name = params[:player_name]
+    RpsGame.set_instance params[:player_name]
+    @game = RpsGame.instance
     erb :play
   end
 
