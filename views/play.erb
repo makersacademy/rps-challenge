@@ -3,25 +3,27 @@
 </head>
 
 <body>
-<label id="banner">
-  <%= @game.player.name %> : Score : <%=@game.player.score%> ---- Computer : Score : <%=@game.computer.score%>
-</label>
+  <center>
+    <label id="banner">
+      <%= @game.player.name %> : Score : <%=@game.player.score%> ---- Computer : Score : <%=@game.computer.score%>
+    </label>
 
-<h2>Choose an option</h2>
+    <h2>Choose an option</h2>
+    <br>
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="ROCK">
+      <input type="submit" value="ROCK">
+    </form>
 
-<form action="/action" method="post">
-  <input type="hidden" name="move" value="ROCK">
-  <input type="submit" value="ROCK">
-</form>
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="PAPER">
+      <input type="submit" value="PAPER">
+    </form>
 
-<form action="/action" method="post">
-  <input type="hidden" name="move" value="PAPER">
-  <input type="submit" value="PAPER">
-</form>
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="SCISSORS">
+      <input type="submit" value="SCISSORS">
+    </form>
 
-<form action="/action" method="post">
-  <input type="hidden" name="move" value="SCISSORS">
-  <input type="submit" value="SCISSORS">
-</form>
-
+  </center>
 </body>

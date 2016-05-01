@@ -3,6 +3,8 @@ class Game
   attr_reader :player_move
   attr_reader :computer
   attr_reader :computer_move
+  attr_reader :winning_moves
+  WINNING_SCORE = 5
 
   def initialize(player)
     @player = player
@@ -51,5 +53,11 @@ class Game
     @computer.score += 1
   end
 
+  def over?
+      @player.score >= WINNING_SCORE || @computer.score >= WINNING_SCORE
+  end
 
+  def outcome
+    'someone wins'
+  end
 end

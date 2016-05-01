@@ -13,8 +13,6 @@ input[type=submit] {
   background: #ffffff;
   padding: 10px 20px 10px 20px;
   border: solid #8fbaa9 2px;
-  margin: 0 auto;
-  /*text-align: center;*/
 }
 
 h1 {
@@ -35,6 +33,4 @@ label[id=player_name] {
   font-family: Helvetica;
   color: #ffffff;
   font-size: 20px;
-  margin: 0 auto;
-  /*text-align: center;*/
 }

@@ -8,8 +8,4 @@ class Player
     @score = DEFAULT_SCORE
   end
 
-  # def score
-  #   @score
-  # end
-
 end

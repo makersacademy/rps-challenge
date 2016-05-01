@@ -18,7 +18,6 @@ class RPS < Sinatra::Base
 
   before do
     @game = Game.instance
-    # @computer = Computer.instance
   end
 
   get '/play' do
@@ -28,7 +27,6 @@ class RPS < Sinatra::Base
   post '/action' do
     @game.player_choice(params[:move])
     @game.computer_choice
-    @game.result
     erb(:action)
   end
 
