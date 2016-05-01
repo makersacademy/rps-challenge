@@ -25,7 +25,14 @@ class MyApp < Sinatra::Base
     @player_name = session[:player_name]
     session[:rps] = params[:rps]
     @hand_selection = session[:rps]
+    redirect '/rps-results'
+  end
+
+  get '/rps-results' do
+    @player_name = session[:player_name]
+    @hand_selection = session[:rps]
     erb :game
+
   end
 
 
