@@ -33,12 +33,22 @@ class Game
   def result
     moves = {@player_move => @computer_move}
     if @player_move == @computer_move
-      p 'draw'
+      'draw'
     elsif @winning_moves[@player_move] == @computer_move
-      p 'win'
+      win
+      'win'
     else
-      p 'lose'
+      lose
+      'lose'
     end
+  end
+
+  def win
+    @player.score += 1
+  end
+
+  def lose
+    @computer.score += 1
   end
 
 
