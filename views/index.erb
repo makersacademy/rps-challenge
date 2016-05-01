@@ -1,6 +1,34 @@
-<h1>Welcome to Rock, Paper, Scissors: the game</h1>
-<p>Please enter your name to get started:</p>
-<form action="/play" method="post">
-  <input type="text" name=player_name>
-  <input type="submit" value="Submit">
-</form>
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='main.css' />
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+<header class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <h1 class='text-center'>Welcome to Rock, Paper, Scissors: the game</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class='container'>
+    <div class='row'>
+      <form class='form' action='/play' method='post'>
+        <div class='col-xs-12 col-md-12 text-center'>
+          <input class='wide-form' type='text' name=player_name placeholder='Enter your name to get started'>
+        </div>
+        <div class='col-xs-12 col-md-12 text-center'>
+          <input class='btn' type='submit' value='Submit'>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</body>

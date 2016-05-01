@@ -1,11 +1,42 @@
-<p>Welcome <%= @game.player.name %></p>
-<p>Please choose from the following options:</p>
-<form action="/result" method="post">
-  <label>Choose Rock</label>
-  <input type="radio" name="player_choice" value="rock" id="rock">
-  <label>Choose Paper</label>
-  <input type="radio" name="player_choice" value="paper"id="paper">
-  <label>Choose Scissors</label>
-  <input type="radio" name="player_choice" value="scissors" id="scissors">
-  <input type="submit" value="submit">
-</form>
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='main.css' />
+  <title>Play | Rock, Paper, Scissors</title>
+</head>
+
+
+<body>
+<header class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <h1 class='text-center'>Welcome <%= @game.player.name %></h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12 text-center'>
+        <p>Please choose from the following options:</p>
+          <form action='/result' method='post'>
+            <label class='text-center'>Rock</label>
+            <input type='radio' name='player_choice' value='rock' id='rock'><br>
+
+            <label>Paper</label>
+            <input type='radio' name='player_choice' value='paper'id='paper'><br>
+
+            <label>Scissors</label>
+            <input type='radio' name='player_choice' value='scissors' id='scissors'><br>
+
+            <input type='submit' value='submit'>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>

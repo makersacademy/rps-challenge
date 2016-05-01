@@ -1,23 +1,54 @@
-<% if @game.winner == 'player' %>
-<p>You won!</p>
-<% end %>
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='main.css' />
+  <title>Play | Rock, Paper, Scissors</title>
+</head>
 
-<% if @game.winner == 'computer' %>
-<p>The computer won!</p>
-<% end %>
 
-<% if @game.winner == 'tie' %>
-<p>It's a tie!</p>
-<% end %>
+<body>
+<header class='header'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12'>
+        <% if @game.winner == 'player' %>
+        <h1 class='text-center'>You won!</h1>
+        <% end %>
 
-<p>You chose <%= @game.player.attack %></p>
-<p>The computer chose <%= @game.computer.attack %></p>
+        <% if @game.winner == 'computer' %>
+        <h1 class='text-center'>The computer won!</h1>
+        <% end %>
 
-<h3>Scores</h3>
-<p>Player: <%= @game.player_score %></p>
-<p>Computer: <%= @game.computer_score %></p>
-<p>Tied: <%= @game.tie_score %></p>
+        <% if @game.winner == 'tie' %>
+        <h1 class='text-center'>It's a tie!</h1>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
 
-<form action="/play" method="get">
-  <input type="submit" value="Play again?">
-</form>
+<section>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12 col-md-12 text-center'>
+        <div class='attacks'>
+          <p>You chose <%= @game.player.attack %></p>
+          <p>The computer chose <%= @game.computer.attack %></p>
+        </div>
+
+        <div class='scores'>
+          <h2>Scores</h2>
+          <p>Player: <%= @game.player_score %></p>
+          <p>Computer: <%= @game.computer_score %></p>
+          <p>Tied: <%= @game.tie_score %></p>
+        </div>
+
+        <form action='/play' method='get'>
+          <input type='submit' value='Play again?'>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>

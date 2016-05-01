@@ -1,11 +1,9 @@
 class Computer
 
+  attr_reader :attack
+
   def take_turn
     @attack = options
-  end
-
-  def attack
-    @attack
   end
 
   private
