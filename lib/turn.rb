@@ -12,18 +12,18 @@ class Turn
   end
 
   def p2_choice
-    p2_choice = {0 => 'scissors', 1 => 'paper', 2 => 'rock',
-                  3 => 'lizard', 4 => 'spock'}
+    p2_choice = {0 => 'Scissors', 1 => 'Paper', 2 => 'Rock',
+                  3 => 'Lizard', 4 => 'Spock'}
     p2_choice[random]
   end
 
   def winner(p1, p2)
     rps_hash = {}
-    rps_hash['scissors'] = ['paper', 'lizard']
-    rps_hash['paper'] = ['rock', 'spock']
-    rps_hash['rock'] = ['scissors', 'lizard']
-    rps_hash['spock'] = ['scissors', 'rock']
-    rps_hash['lizard'] = ['paper', 'spock']
+    rps_hash['Scissors'] = ['Paper', 'Lizard']
+    rps_hash['Paper'] = ['Rock', 'Spock']
+    rps_hash['Rock'] = ['Scissors', 'Lizard']
+    rps_hash['Spock'] = ['Scissors', 'Rock']
+    rps_hash['Lizard'] = ['Paper', 'Spock']
 
     if p1 == p2
       [p1, p1]

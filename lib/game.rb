@@ -21,12 +21,18 @@ class Game
     if outcome[0] == outcome[1]
       "Draw!"
     elsif outcome[0] == p1
-      player1.won_turn
-      "#{player1.name} won! #{outcome[0]} beats #{outcome[1]}"
+      increase_score(player1)
+      "#{player1.name} won!!  #{outcome[0]} beats #{outcome[1]}"
     else
-      player2.won_turn
-      "#{player2.name} won! #{outcome[0]} beats #{outcome[1]}"
+      increase_score(player2)
+      "#{player2.name} won!!  #{outcome[0]} beats #{outcome[1]}"
     end
+  end
+
+  private
+
+  def increase_score(player)
+    player.won_turn
   end
 
 end
