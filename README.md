@@ -1,4 +1,4 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
 
 [![Build Status](https://travis-ci.org/harrim91/rps-challenge.svg?branch=master)](https://travis-ci.org/harrim91/rps-challenge)
 [![Coverage Status](https://coveralls.io/repos/github/harrim91/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/harrim91/rps-challenge?branch=master)
@@ -6,9 +6,19 @@
 Overview
 -------
 
-A basic [Sinatra](http://www.sinatrarb.com/) web application for playing rock, paper, scissors.
+Makers Academy Week 3 Weekend Challenge
+
+A basic web application for playing rock, paper, scissors.
+
+Makes use of:
+- [Sinatra](http://www.sinatrarb.com/)
+- [RSpec](https://github.com/rspec/rspec)
+- [Capybara](https://github.com/jnicklas/capybara)
+
 
 As a bonus, you can also play [rock, paper, scissors, lizard, spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
+
+
 
 Installation
 -------
