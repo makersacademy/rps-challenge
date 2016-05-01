@@ -30,25 +30,25 @@ describe Game  do
   end
 
   describe 'end of game ' do
-    context 'when it is a draw' do
-      it ' returns draw' do
+    before do
       allow(game).to receive(:player_option.to_s).and_return :ROCK
+    end
+    context 'it is a draw' do
+      it ' returns draw' do
       allow(game).to receive(:machine_option.to_s).and_return :ROCK
       expect(game.win).to eq "DRAW!"
       end
     end
 
-    context 'when player wins' do
+    context 'player wins' do
       it 'returns 2' do
-      allow(game).to receive(:player_option.to_s).and_return :ROCK
       allow(game).to receive(:machine_option.to_s).and_return :SCISSORS
       expect(game.win).to eq "#{player.name} wins!"
       end
     end
 
-      context 'when machine wins' do
+      context 'machine wins' do
         it 'returns 1' do
-        allow(game).to receive(:player_option.to_s).and_return :ROCK
         allow(game).to receive(:machine_option.to_s).and_return :PAPER
         expect(game.win).to eq "Machine wins!"
         end

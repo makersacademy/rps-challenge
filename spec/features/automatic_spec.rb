@@ -6,6 +6,6 @@ feature 'Machine' do
   end
 
   def choose_weapon
-    [:ROCK, :PAPER, :SCISSORS].map {|weapon| 'The machine has chosen '+ @weapon.to_s + '!'}
+    [:ROCK, :PAPER, :SCISSORS].map {|weapon| 'The machine has chosen '+ weapon.to_s + '!'}
   end
 end
