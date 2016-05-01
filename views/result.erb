@@ -1,0 +1,9 @@
+<h2><%= @game.player.name %></h2>
+
+You chose: <%= @game.player_choice %> <br />
+Computer chose: <%= @game.computer_choice %><br />
+Result: <%= @game.result %>
+
+<form action="/play" method="get">
+  <input type="submit" value="Submit">
+</form>
