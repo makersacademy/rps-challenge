@@ -26,8 +26,8 @@ class Rps < Sinatra::Base
 
   post '/set_weapon' do
     @game = $game
-    @game.player_1.choose_weapon params[:weapon]
-    @game.player_2.choose_weapon
+    @game.player_1.choose params[:weapon]
+    @game.player_2.choose
     redirect '/fight'
   end
 

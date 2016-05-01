@@ -1,5 +1,5 @@
 feature 'Best of' do
-  let(:comp_selections) {ComputerPlayer::RPS_WEAPONS}
+  let(:comp_selections) {ComputerPlayer::RPS_GESTURES}
 
   scenario 'starts at best of 3' do
     sign_in_and_choose_rock

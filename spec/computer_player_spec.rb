@@ -2,7 +2,7 @@ require 'computer_player'
 
 describe ComputerPlayer do
   subject(:comp) {described_class.new}
-  let(:weapon_arr) {described_class::RPS_WEAPONS}
+  let(:gesture_arr) {described_class::RPS_GESTURES}
   it "is called 'RoboRPS'" do
     expect(comp.name).to eq 'RoboRPS'
   end
@@ -12,27 +12,27 @@ describe ComputerPlayer do
   end
 
   it 'can be armed with rock' do
-    allow(weapon_arr).to receive(:shuffle).and_return([:rock,:paper])
-    comp.choose_weapon
-    expect(comp.weapon).to eq :rock
+    allow(gesture_arr).to receive(:shuffle).and_return([:rock,:paper])
+    comp.choose
+    expect(comp.gesture).to eq :rock
   end
 
   it 'can be armed with paper' do
-    allow(weapon_arr).to receive(:shuffle).and_return([:paper,:rock])
-    comp.choose_weapon
-    expect(comp.weapon).to eq :paper
+    allow(gesture_arr).to receive(:shuffle).and_return([:paper,:rock])
+    comp.choose
+    expect(comp.gesture).to eq :paper
   end
 
   it 'can be armed with scissors' do
-    allow(weapon_arr).to receive(:shuffle).and_return([:scissors,:rock])
-    comp.choose_weapon
-    expect(comp.weapon).to eq :scissors
+    allow(gesture_arr).to receive(:shuffle).and_return([:scissors,:rock])
+    comp.choose
+    expect(comp.gesture).to eq :scissors
   end
 
-  describe '#choose_weapon' do
+  describe '#choose' do
     it 'fixes the computers choice' do
-      comp.choose_weapon
-      expect(comp.weapon).to eq comp.weapon
+      comp.choose
+      expect(comp.gesture).to eq comp.gesture
     end
   end
 

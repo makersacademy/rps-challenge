@@ -1,9 +1,9 @@
 <h1><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h1>
 <h1>Best of: <%=@game.best_of_n%></h1>
 
-<p><%=@game.player_1.name%> uses <%=@game.player_1.weapon%></p>
+<p><%=@game.player_1.name%> uses <%=@game.player_1.gesture%></p>
 
-<p><%=@game.player_2.name%> uses <%=@game.player_2.weapon%></p>
+<p><%=@game.player_2.name%> uses <%=@game.player_2.gesture%></p>
 
 <%if @game.winner.nil?%>
   <p>tie</p>

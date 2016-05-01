@@ -11,18 +11,18 @@ describe Player do
     expect(player.name).to eq 'Nameless one'
   end
 
-  it 'initially no weapon' do
-    expect(player.weapon).to be_nil
+  it 'initially no gesture' do
+    expect(player.gesture).to be_nil
   end
 
   it 'starts with 0 score' do
     expect(player.score).to eq 0
   end
 
-  describe "#choose_weapon" do
-    it 'stores weapon as a symbol' do
-      player.choose_weapon 'rock'
-      expect(player.weapon).to eq :rock
+  describe "#choose" do
+    it 'stores gesture as a symbol' do
+      player.choose 'rock'
+      expect(player.gesture).to eq :rock
     end
   end
 

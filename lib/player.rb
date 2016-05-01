@@ -1,15 +1,15 @@
 class Player
 
-  attr_reader :name, :weapon, :score
+  attr_reader :name, :gesture, :score
 
   def initialize name = "Nameless one"
     @name = name
-    @weapon = nil
+    @gesture = nil
     @score = 0
   end
 
-  def choose_weapon weapon
-    @weapon = weapon.to_sym
+  def choose gesture
+    @gesture = gesture.to_sym
   end
 
   def add_point

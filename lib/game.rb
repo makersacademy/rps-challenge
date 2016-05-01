@@ -19,7 +19,7 @@ class Game
 
   def winner
     return nil if tie
-    moves = [player_1.weapon, player_2.weapon]
+    moves = [player_1.gesture, player_2.gesture]
     PLAYER_1_WINS.include?(moves) ? player_1 : player_2
   end
 
@@ -39,7 +39,7 @@ class Game
   private
   attr_reader :players
   def tie
-    player_1.weapon == player_2.weapon
+    player_1.gesture == player_2.gesture
   end
 
 end

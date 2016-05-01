@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) {described_class.new player_1, player_2}
-  let(:player_1) {double :player_1, weapon: :rock}
-  let(:player_2) {double :player_2, weapon: :scissors}
+  let(:player_1) {double :player_1, gesture: :rock}
+  let(:player_2) {double :player_2, gesture: :scissors}
 
   it 'has a player 1' do
     expect(game.player_1).to eq player_1
@@ -25,15 +25,15 @@ describe Game do
     end
 
     context "player 1 chooses rock, player 2 chooses paper" do
-      let(:player_2) {double :player_2, weapon: :paper}
+      let(:player_2) {double :player_2, gesture: :paper}
       it 'paper beats rock' do
         expect(game.winner).to eq player_2
       end
     end
 
     context "player 1 chooses scissors, player 2 chooses paper" do
-      let(:player_1) {double :player_1, weapon: :scissors}
-      let(:player_2) {double :player_2, weapon: :paper}
+      let(:player_1) {double :player_1, gesture: :scissors}
+      let(:player_2) {double :player_2, gesture: :paper}
       it 'scissors beat paper' do
         expect(game.winner).to eq player_1
       end
@@ -67,8 +67,8 @@ describe Game do
   end
 
   context "event of a tie" do
-    let(:player_1) {double :player_1, weapon: :paper}
-    let(:player_2) {double :player_2, weapon: :paper}
+    let(:player_1) {double :player_1, gesture: :paper}
+    let(:player_2) {double :player_2, gesture: :paper}
     it 'winner retruns nil' do
       expect(game.winner).to be_nil
     end

@@ -1,8 +1,8 @@
 class ComputerPlayer
 
-  attr_reader :weapon, :score
+  attr_reader :gesture, :score
 
-  RPS_WEAPONS = [:rock,:paper,:scissors]
+  RPS_GESTURES = [:rock,:paper,:scissors]
 
   def initialize
     @score = 0
@@ -12,8 +12,8 @@ class ComputerPlayer
     'RoboRPS'
   end
 
-  def choose_weapon
-    @weapon = RPS_WEAPONS.shuffle.first
+  def choose
+    @gesture = RPS_GESTURES.shuffle.first
   end
 
   def add_point
