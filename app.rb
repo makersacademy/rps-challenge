@@ -41,13 +41,27 @@ class RPS < Sinatra::Base
   get '/play' do
   	if @game.players == 1
   		@game.player_2.play(@game.game_mode)
+  		@action = '/result'
+  		erb :play
+  	else
+  		@action = '/choice_p2'
+  		erb :play
   	end
-  	erb :play
   end
 
   post '/result' do
-  	@game.player_1.play(params[:choice].to_sym)
+  	if @game.players == 1
+  		@game.player_1.play(params[:choice].to_sym)
+  	else
+  		@game.player_2.play(params[:choice].to_sym)
+  	end
   	erb :result
+  end
+
+  post '/choice_p2' do
+  	@game.player_1.play(params[:choice].to_sym)
+  	@action = '/result'
+		erb :play
   end
 
   # start the server if ruby file executed directly

@@ -2,7 +2,7 @@
 	<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 </div>
 
-<form action="/result" method="post">
+<form action=<%= @action %> method="post">
   <button name="choice" value="rock">
   	<img src="/images/rock.png" alt="Rock" class="game_image">
   </button>
