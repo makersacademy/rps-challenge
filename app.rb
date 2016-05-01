@@ -23,6 +23,16 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/choose' do 
+    choice_1 = params[:choose]
+    choice_2 = params[:choose]
+    redirect '/result'
+  end
+
+  get '/result' do 
+    erb :result
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
