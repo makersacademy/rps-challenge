@@ -2,6 +2,14 @@ class Game
 
   attr_reader :best_of_n, :spock_and_lizard
 
+  def self.create player_1, player_2, spock_and_lizard = false
+    @game = Game.new player_1, player_2, spock_and_lizard
+  end
+
+  def self.instance
+    @game
+  end
+
   PLAYER_1_WINS = [[:rock, :scissors],
                   [:rock, :lizard],
                   [:scissors, :paper],
@@ -13,13 +21,6 @@ class Game
                   [:lizard, :paper],
                   [:lizard, :spock]]
 
-  def self.create player_1, player_2, spock_and_lizard = false
-    @game = Game.new player_1, player_2, spock_and_lizard
-  end
-
-  def self.instance
-    @game
-  end
 
   def initialize player_1, player_2, spock_and_lizard = false
     @players = [player_1,player_2]

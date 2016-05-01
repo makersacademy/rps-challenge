@@ -11,15 +11,12 @@ describe Game do
   it 'has a player 1' do
     expect(game.player_1).to eq player_rock
   end
-
   it 'has a player 2' do
     expect(game.player_2).to eq player_scissors
   end
-
   it 'starts at best of 3' do
     expect(game.best_of_n).to eq 3
   end
-
   it 'not spock and lizard as default' do
     expect(game.spock_and_lizard).to be false
   end
@@ -78,7 +75,6 @@ describe Game do
       allow(player_rock).to receive(:score).and_return(2)
       expect(game.overall_winner).to eq player_rock
     end
-
     it "otherwise return nil" do
       allow(player_rock).to receive(:score).and_return(1)
       allow(player_scissors).to receive(:score).and_return(1)
@@ -94,14 +90,12 @@ describe Game do
 
   context "event of a tie" do
     it 'winner retruns nil' do
-      game = Game.new player_paper, player_paper
-      expect(game.winner).to be_nil
+      tie = Game.new player_paper, player_paper
+      expect(tie.winner).to be_nil
     end
-
     it 'add points returns nil' do
-      game = Game.new player_paper, player_paper
-      expect(game.allocate_points).to be_nil
+      tie = Game.new player_paper, player_paper
+      expect(tie.allocate_points).to be_nil
     end
   end
-
 end

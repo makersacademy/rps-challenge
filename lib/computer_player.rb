@@ -5,9 +5,9 @@ class ComputerPlayer
   RPS_GESTURES = [:rock,:paper,:scissors]
   RPS_EXTENDED = [:rock,:paper,:scissors, :spock, :lizard]
 
-  def initialize extended = false
+  def initialize spock_and_lizard = false
     @score = 0
-    @extended = !!extended
+    @spock_and_lizard = !!spock_and_lizard
   end
 
   def name
@@ -15,7 +15,7 @@ class ComputerPlayer
   end
 
   def choose
-    gestures = extended ? RPS_EXTENDED : RPS_GESTURES
+    gestures = spock_and_lizard ? RPS_EXTENDED : RPS_GESTURES
     @gesture = gestures.shuffle.first
   end
 
@@ -24,6 +24,6 @@ class ComputerPlayer
   end
 
   private
-  attr_reader :extended
+  attr_reader :spock_and_lizard
 
 end

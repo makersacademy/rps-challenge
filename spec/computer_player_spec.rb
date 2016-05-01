@@ -3,6 +3,8 @@ require 'computer_player'
 describe ComputerPlayer do
   subject(:comp) {described_class.new}
   let(:gesture_arr) {described_class::RPS_GESTURES}
+  let(:gesture_extended_arr) {described_class::RPS_EXTENDED}
+
   it "is called 'RoboRPS'" do
     expect(comp.name).to eq 'RoboRPS'
   end
@@ -11,22 +13,17 @@ describe ComputerPlayer do
     expect(comp.score).to eq 0
   end
 
-  it 'can be armed with rock' do
-    allow(gesture_arr).to receive(:shuffle).and_return([:rock,:paper])
+  it 'choice of rock, paper or scissor by default' do
+    spock_and_lizard = [:spock,:lizard]
     comp.choose
-    expect(comp.gesture).to eq :rock
+    expect(gesture_arr).to include comp.gesture
+    expect(spock_and_lizard).not_to include comp.gesture
   end
 
-  it 'can be armed with paper' do
-    allow(gesture_arr).to receive(:shuffle).and_return([:paper,:rock])
-    comp.choose
-    expect(comp.gesture).to eq :paper
-  end
-
-  it 'can be armed with scissors' do
-    allow(gesture_arr).to receive(:shuffle).and_return([:scissors,:rock])
-    comp.choose
-    expect(comp.gesture).to eq :scissors
+  it 'can be extended to include spock and lizard' do
+    comp_extended = ComputerPlayer.new :spock_and_lizard
+    comp_extended.choose
+    expect(gesture_extended_arr).to include comp_extended.gesture
   end
 
   describe '#choose' do
