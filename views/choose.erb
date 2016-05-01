@@ -1,1 +1,8 @@
-<%=@player_name%> choose your weapon
+<h3><%=@player_name%> choose your weapon</h3>
+
+<form action= "/set_weapon" method="post">
+
+  <button type="submit" value = "rock" name="weapon"><img src="http://llerrah.com/images/large_rock_in_grass_lg_clr_me.gif"></button>
+  <button type="submit" value = "paper" name="weapon"><img> Paper</button>
+  <button type="submit" value = "scissors" name="weapon"><img> Scissors</button>
+</form>
