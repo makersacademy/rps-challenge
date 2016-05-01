@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer_player'
 
 class Rps < Sinatra::Base
   get '/' do
@@ -10,23 +12,24 @@ class Rps < Sinatra::Base
   end
 
   post '/set_name' do
-    $player_name = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect '/choose_weapon'
   end
 
   get '/choose_weapon' do
-    @player_name = $player_name
+    @player = $player
     erb :choose
   end
 
   post '/set_weapon' do
-    $weapon = params[:weapon]
+    @player = $player
+    @player.add_weapon params[:weapon]
     redirect '/fight'
   end
 
   get '/fight' do
-    @player_name = $player_name
-    @weapon = $weapon
+    @player = $player
+    @computer_player = ComputerPlayer.new
     erb :fight
   end
 
