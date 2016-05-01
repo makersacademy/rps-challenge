@@ -22,11 +22,11 @@ feature 'Best of' do
   end
 
   context "one player has more than half of best of value" do
-    before {
+    before do
       allow(comp_selections).to receive(:shuffle).and_return([:scissors])
       sign_in_and_choose_rock
       next_round_and_choose_rock
-    }
+    end
 
     scenario 'no next round button' do
       expect(page).not_to have_button "Next Round"
