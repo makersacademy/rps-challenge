@@ -1,12 +1,29 @@
 require 'sinatra/base'
+require './lib/name_log'
 
 class Rps < Sinatra::Base
+
+  before do
+      @player_name = NameLog.name
+    end
+
   get '/' do
+    if File.file?("./lib/name_log.txt")
+      redirect '/splash'
+    else
      erb :index
+   end
+ end
+
+  post '/form' do
+    @player = NameLog.create(params[:player_name])
+    NameLog.log_name
+    redirect '/splash'
   end
 
-  post '/splash' do
-    @player_name = params[:player_name]
+
+  get '/splash' do
+    @player_name = File.open("./lib/name_log.txt").first.chomp
     erb :splash
   end
 
