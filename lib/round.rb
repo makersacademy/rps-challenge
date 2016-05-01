@@ -1,23 +1,22 @@
 class Round
 
-  Weapons = ['Rock', 'Paper', 'Scissors']
+  Weapons = [:Rock, :Paper, :Scissors]
 
-  attr_reader :player_1, :weapon_choice
+  attr_reader :player_1
 
-  def initialize(player_1, weapon)
+  def initialize(player_1)
     @player_1 = player_1
-    @weapon_choice = weapon
   end
 
-    def self.create(player_1, weapon)
-      @round = Round.new(player_1, weapon)
+    def self.create(player_1)
+      @round = Round.new(player_1)
     end
 
     def self.instance
       @round
     end
 
-    
+
 
 
 

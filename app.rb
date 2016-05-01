@@ -13,9 +13,8 @@ class Rps < Sinatra::Base
   end
 
   post '/choose' do
-    player_1 = Player.new(params[:player_name])
-    weapon = params[:weapon]
-    @round = Round.create(player_1, weapon)
+    player_1 = Player.new(params[:player_name], params[:weapon])
+    @round = Round.create(player_1)
     erb :choose
   end
 
