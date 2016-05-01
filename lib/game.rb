@@ -6,12 +6,10 @@ class Game
 
   class << self
 
+    attr_reader :current_game
+
     def new_game(player = Player.new(name), rules = Rules.new, moves = Moves.new)
       @current_game = Game.new(player, rules, moves)
-    end
-
-    def current_game
-      @current_game
     end
 
   end

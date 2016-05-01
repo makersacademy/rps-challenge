@@ -14,7 +14,6 @@ feature 'play the game of rock paper scissors' do
   scenario 'scissors draw with scissors' do
     allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     play_scissors
-     #stub randomness let computer play scissors
     expect(page).to have_content 'Draw!'
   end
 
