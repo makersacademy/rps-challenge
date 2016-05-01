@@ -2,11 +2,13 @@ require_relative './player'
 require_relative './computer'
 
 class Selected
-   attr_reader :player, :computer
+   attr_reader :player, :computer, :player_score, :comp_score
 
   def initialize(player, computer)
     @player = player
     @computer = computer
+    @player_score = 0
+    @comp_score = 0
   end
 
   def self.create(player, computer=Computer.new)
@@ -24,6 +26,28 @@ class Selected
        player_chose_paper
     elsif players_choice == "scissors"
        player_chose_scissors
+    end
+  end
+
+  def score
+    if result == "win"
+      @player_score += 1
+    elsif result == "lose"
+      @comp_score += 1
+    end
+
+    def game_over?
+      @player_score >= 2 || @comp_score >= 2
+    end
+
+    def winner
+      if @player_score + @comp_score == 3
+        if @player_score >= 2
+          "WON"
+        elsif @comp_score >= 2
+          "LOST"
+        end
+      end
     end
   end
 

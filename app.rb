@@ -26,7 +26,15 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @selected.computer.choose_weapon
+    @selected.score
+    if @selected.game_over?
+      redirect '/game-over'
+    end
     erb :game
+  end
+
+  get '/rock' do
+    "hello world"
   end
 
   post '/rock' do
@@ -42,6 +50,11 @@ class RPS < Sinatra::Base
   post '/scissors' do
     @selected.player.scissors
     redirect '/game'
+  end
+
+  get '/game-over' do
+    @selected
+    erb :game_over
   end
 
   # start the server if ruby file executed directly

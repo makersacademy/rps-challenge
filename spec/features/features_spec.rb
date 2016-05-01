@@ -30,8 +30,8 @@ feature 'choose a weapon' do
     expect(page).to have_content 'You chose paper!'
   end
 
-  xscenario 'computer selects random weapon' do
-    Array.any_instance.stub(:sample).and_return(:paper)
+  scenario 'computer selects random weapon' do
+    allow_any_instance_of(Array).to receive(:shuffle).and_return(['paper'])
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Computer chose paper!'

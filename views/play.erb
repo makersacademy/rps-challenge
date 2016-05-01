@@ -1,14 +1,17 @@
 <link href="/styles.css" type="text/css" rel="stylesheet">
-<body>
-<%= @selected.player.name %>
 
-<form method="post" action="/rock">
+<body>
+<h1><%= @selected.player.name %>, pick your hand.</h1>
+
+<!-- <a href="/rock">Rock</a> -->
+
+<form class="button" method="post" action="/rock">
     <input type='submit' value='Rock'>
 </form>
-<form method="post" action="/scissors">
+<form class="button" method="post" action="/scissors">
     <input type='submit' value='Scissors'>
 </form>
-<form method="post" action="/paper">
+<form class="button" method="post" action="/paper">
     <input type='submit' value='Paper'>
 </form>
 </body

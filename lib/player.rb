@@ -16,8 +16,4 @@ class Player
   def scissors
     @selected = "scissors"
   end
-
-  def selected
-    @selected
-  end
 end
