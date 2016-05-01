@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do 
-  subject(:ben) {Player.new('Ben')}
+  subject(:ben) {described_class.new('Ben')}
 
   describe '#name' do 
     it 'returns the player name' do 

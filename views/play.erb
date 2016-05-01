@@ -1,23 +1,20 @@
 <div align="center">
-  
-  <p>Paper</p>
-</div>
-
-
-<div align="center">
-  <h3>'Welcome <%=@player_1_name%>! Choose paper, rock or scissors...'</h3>
+  <h3>Welcome <%=@player_1_name%>! Choose paper, rock or scissors...</h3>
   <form action="/play" method="POST">
     <button class="choose-option" name="choose" value="Paper">
       <img src="img/paper.png" 
         style="height: 150px; width: auto; margin: 10px 20px;">
+      <h4 class="caption" style="font-size: 16px">Paper</h4>
     </button>
     <button class="choose-option" name="choose" value="Rock">
       <img src="img/rock.png" 
         style="height: 150px; width: auto; margin: 10px 20px;">
+      <h4 class="caption" style="font-size: 16px">Rock</h4>
     </button>
     <button class="choose-option" name="choose" value="Scissors">
       <img src="img/scissors.png" 
         style="height: 150px; width: auto; margin: 10px 20px;">
+      <h4 class="caption" style="font-size: 16px">Scissors</h4>
     </button>
   </form>
   <input type="hidden" name="name" value=<%=@player_1_name%>>
