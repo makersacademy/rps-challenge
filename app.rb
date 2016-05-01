@@ -42,11 +42,11 @@ class RPS < Sinatra::Base
   	if @game.players == 1
   		@game.player_2.play(@game.game_mode)
   		@action = '/result'
-  		erb :play
   	else
   		@action = '/choice_p2'
-  		erb :play
   	end
+  	@current_player = @game.player_1.name
+  	erb :play	
   end
 
   post '/result' do
@@ -61,6 +61,7 @@ class RPS < Sinatra::Base
   post '/choice_p2' do
   	@game.player_1.play(params[:choice].to_sym)
   	@action = '/result'
+		@current_player = @game.player_2.name
 		erb :play
   end
 
