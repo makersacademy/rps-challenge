@@ -1,6 +1,6 @@
 class Computer
 
-  def initialize(name)
+  def initialize(*)
     @name = 'Computer'
     @weapon = nil
   end

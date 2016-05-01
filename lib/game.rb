@@ -25,8 +25,8 @@ class Game
   end
 
   def result
-    return :win if (RULES[@player_1.weapon] == @player_2.weapon)
-    return :lose if (RULES[@player_2.weapon] == @player_1.weapon)
+    return :win if RULES[@player_1.weapon] == @player_2.weapon
+    return :lose if RULES[@player_2.weapon] == @player_1.weapon
     :draw
   end
 
