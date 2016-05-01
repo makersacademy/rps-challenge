@@ -17,4 +17,11 @@ describe Player do
     end
   end
 
+  context '#clear' do
+    it 'clears the player\'s choice' do
+      player.clear
+      expect(player.choice).to eq nil
+    end
+  end
+
 end

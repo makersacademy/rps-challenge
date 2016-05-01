@@ -12,4 +12,8 @@ class Player
   	@choice = choice.upcase
   end
 
+  def clear
+  	@choice = nil
+  end
+
 end

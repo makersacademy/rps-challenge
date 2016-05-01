@@ -1,4 +1,5 @@
-<h1>Ok <%= @name %>, pick your weapon</h1>
+<h1><%= @name1 %> takes on <%= @name2 %></h1>
+<h1>Ok <%= @choice_manager.current_player.name %>, pick your weapon</h1>
 
 <form action='/play' method='post'>
   <button type='submit' name='choice' value='rock'>

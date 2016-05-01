@@ -1,6 +1,6 @@
-<h1>You chose <%= @player_choice %>.'</h1>
-<h1>The computer chose <%= @computer_choice %>.'</h1>
+<h1><%= @names[0] %> chose <%= @choices[0] %>.'</h1>
+<h1><%= @names[1] %> chose <%= @choices[1] %>.'</h1>
 <h1><%= @result_message %></h1>
-<form action='/play'>
+<form action='/reset' method='post'>
   <input type='submit' value='AGAIN AGAIN'>
 </form>
