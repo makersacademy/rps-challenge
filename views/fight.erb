@@ -1,3 +1,18 @@
-<%=@player.name%> uses <%=@player.weapon%>
+<h1><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h1>
 
-<%=@computer_player.name%> uses <%=@computer_player.weapon%>
+<p><%=@game.player_1.name%> uses <%=@game.player_1.weapon%></p>
+
+<p><%=@game.player_2.name%> uses <%=@game.player_2.weapon%></p>
+
+<%if @game.winner.nil?%>
+  <p>tie</p>
+<%else%>
+  <p><%=@game.winner.name%> wins</p>
+  <%@game.winner.add_point%>
+<%end%>
+
+
+<div class = "scores">
+  <p><%=@game.player_1.name%> score: <%=@game.player_1.score%></p>
+  <p><%=@game.player_2.name%> score: <%=@game.player_2.score%></p>
+</div>
