@@ -7,4 +7,9 @@ describe Player do
   it 'returns player name' do
     expect(player.name).to eq "Lexi"
   end
+
+  it 'returns player choice' do
+    player.choose('Lizard')
+    expect(player.choice).to eq 'Lizard'
+  end
 end
