@@ -22,7 +22,7 @@ class Game
   end
 
   def player_option
-    player.selected_weapon
+    player.weapon
   end
 
   def machine_option

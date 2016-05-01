@@ -3,10 +3,10 @@ require 'game'
 describe Game  do
   subject(:game) {described_class.new(player, machine)}
 
-  let(:player) { double :player, name: name, selected_weapon: selected_weapon}
+  let(:player) { double :player, name: name, weapon: weapon}
   let(:machine) {double :machine, choose_weapon: choose_weapon}
   let(:name) {double :name}
-  let(:selected_weapon) {double :ROCK}
+  let(:weapon) {double :ROCK}
   let(:choose_weapon) {double :ROCK}
 
   context 'when initialized' do
@@ -20,7 +20,7 @@ describe Game  do
   end
 
   it 'shows player option' do
-    expect(game.player_option).to eq player.selected_weapon
+    expect(game.player_option).to eq player.weapon
   end
 
   it 'shows machine_option' do

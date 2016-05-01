@@ -23,6 +23,7 @@ class RPS < Sinatra::Base
 
   post '/weapon' do
     @game = Game.instance
+    @game.player.selected_weapon(params[:weapon])
     redirect '/weapon'
   end
 
