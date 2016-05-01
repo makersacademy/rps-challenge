@@ -14,7 +14,7 @@ feature "Attack confirmation" do
     expect(page).to have_content "Welcome to RPS"
   end
 
-    scenario 'confirmation of SPOCK attack' do
+  scenario 'confirmation of SPOCK attack' do
     sign_in_and_play
     choose "SPOCK"
     click_button "My choice is made"

@@ -1,7 +1,8 @@
 feature 'Enter names' do
   scenario 'Registration page welcomes user' do
     visit '/'
-    expect(page).to have_content "Welcome friend, to the most intense game of Rock, Paper, Scissors you have ever seen!"
+    m="Welcome friend, to the most intense game of"
+    expect(page).to have_content m
     expect(page).to have_content "What is your name?"
   end
 
