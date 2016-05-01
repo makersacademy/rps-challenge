@@ -34,13 +34,18 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play_player2' do
     @game.player_1.choice = params[:choice]
+    @game.player_2.computer_choice(@game.game_mode) if @game.computer?
     redirect to '/result' if @game.computer?
-    # erb :play_2  #juega el segundo jugador
+    erb :play_2  #juega el segundo jugador
   end
 
   get '/result' do
     redirect to '/draw' if @game.draw?
     erb :winlose
+  end
+
+  get '/draw' do
+    erb :draw
   end
 
   # start the server if ruby file executed directly
