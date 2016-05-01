@@ -1,19 +1,21 @@
-class Player
+require_relative 'attack'
 
-  # attr_reader :lives
-  # DEFAULT_LIVES = 1
+class Player
 
   def initialize(name)
     @name = name
-    # @lives = DEFAULT_LIVES
   end
 
   def name
     @name
   end
 
-  def choice(choice)
-    @choice = choice
+  def take_turn(attack)
+    @attack = attack.to_sym
+  end
+
+  def attack
+    @attack
   end
 
 end

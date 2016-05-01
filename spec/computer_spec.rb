@@ -6,17 +6,20 @@ describe Computer do
   describe '#take_turn' do
     it 'Can choose rock' do
       allow(computer).to receive(:rand) { 0 }
-      expect(computer.choice).to eq 'rock'
+      computer.take_turn
+      expect(computer.attack).to eq :rock
     end
 
     it 'Can choose paper' do
       allow(computer).to receive(:rand) { 1 }
-      expect(computer.choice).to eq 'paper'
+      computer.take_turn
+      expect(computer.attack).to eq :paper
     end
 
     it 'Can choose scissors' do
       allow(computer).to receive(:rand) { 2 }
-      expect(computer.choice).to eq 'scissors'
+      computer.take_turn
+      expect(computer.attack).to eq :scissors
     end
   end
 

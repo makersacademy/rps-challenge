@@ -14,7 +14,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @choice = params[:player_choice]
+    @game.player.take_turn(params[:player_choice])
+    # @game.winner
     erb(:result)
   end
 
