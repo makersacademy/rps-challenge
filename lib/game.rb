@@ -16,9 +16,9 @@ class Game
     @game
   end
 
-  def initialize(player, machine)
+  def initialize(player, machine=Machine)
     @player = player
-    @machine = Machine.new
+    @machine = machine
   end
 
   def player_option

@@ -7,6 +7,7 @@ describe Game  do
   let(:machine) {double :machine, choose_weapon: choose_weapon}
   let(:name) {double :name}
   let(:weapon) {double :ROCK}
+  let(:machine) {double :machine }
   let(:choose_weapon) {double :ROCK}
 
   context 'when initialized' do
@@ -14,8 +15,9 @@ describe Game  do
       expect(game.player).to eq player
     end
 
-    xit 'has a second player' do
-      expect(game.machine).to eq Machine.new
+    it 'has a second player' do
+      allow(machine).to receive(:new).and_return machine
+      expect(game.machine).to eq machine
     end
   end
 

@@ -4,6 +4,7 @@ require './lib/player'
 require './lib/game'
 
 class RPS < Sinatra::Base
+ enable :sessions
 
   get '/' do
     erb :index
@@ -23,7 +24,7 @@ class RPS < Sinatra::Base
 
   post '/weapon' do
     @game = Game.instance
-    @game.player.selected_weapon(params[:weapon])
+    session[:weapon] = @game.player.selected_weapon(params[:weapon])
     redirect '/weapon'
   end
 
@@ -34,11 +35,13 @@ class RPS < Sinatra::Base
 
   get '/AI' do
     @game = Game.instance
-    @machine_weapon = Machine.new.choose_weapon
+    @machine = Machine.new
     erb :AI
   end
 
   get '/result' do
+    @game = Game.instance
+    session[:weapon]
     erb :result
   end
 

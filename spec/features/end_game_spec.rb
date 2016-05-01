@@ -7,6 +7,6 @@ feature 'end of game' do
     click_button('continue')
     click_button('continue')
     click_button('Restart!')
-    expect(page).to have_content('Please enter your name')
+    expect(page).to have_content('Please choose  a weapon')
   end
 end
