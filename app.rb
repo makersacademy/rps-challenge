@@ -37,14 +37,22 @@ class GamePlay < Sinatra::Base
     redirect '/result'
   end
 
-  post '/multi_player_set_choices' do
-    Round.instance.player1.choose(params[:choice1])
-    Round.instance.player2.choose(params[:choice2])
+  post '/set_choice_first_player' do
+    Round.instance.player1.choose(params[:choice])
+    redirect '/game_play_second_player'
+  end
+
+  post '/set_choice_second_player' do
+    Round.instance.player2.choose(params[:choice])
     redirect '/result'
   end
 
   get '/game_play' do
     erb :game_play
+  end
+
+  get '/game_play_second_player' do
+    erb :game_play_second_player
   end
 
   get '/result' do

@@ -1,6 +1,6 @@
 
 <h1>The epic RPS Battle between <%= @round.player1.name %> &amp; <%= @round.player2.name %>!</h1>
-<!-- <p> Welcome <%= @round.player1.name %> &amp; <%= @round.player2.name %>! </p> -->
+
 <br>
 
 <% if @round.player2.name == 'AI' %>
@@ -14,19 +14,10 @@
 <% else %>
 
 <p><%= @round.player1.name %>, choose wisely... </p>
-<form action='/multi_player_set_choices' method=post>
-<p> <input type="radio" value="Rock" name="choice1"> Rock </p>
-<p> <input type="radio" value="Paper" name="choice1"> Paper </p>
-<p> <input type="radio" value="Scissors" name="choice1"> Scissors </p>
-
-
-<p><%= @round.player2.name %>, choose even more wisely... </p>
-
-<p> <input type="radio" value="Rock" name="choice2"> Rock </p>
-<p> <input type="radio" value="Paper" name="choice2"> Paper </p>
-<p> <input type="radio" value="Scissors" name="choice2"> Scissors </p>
-
-  <input type="submit" value="PLAY!">
+<form action='/set_choice_first_player' method=post>
+<input type="submit" value="Rock" name="choice">
+<input type="submit" value="Paper" name="choice">
+<input type="submit" value="Scissors" name="choice">
 </form>
 
 <% end %>

@@ -2,7 +2,7 @@ require_relative 'player'
 
 #TODO: Refactor into Game class that uses rounds
 class Round
-  attr_reader :player1, :player2, :players
+  attr_reader :player1, :player2, :players, :won
 
   def self.create(player, computer = Player.new )
     @round = Round.new(player, computer)
@@ -34,6 +34,7 @@ class Round
 
   def initialize(player, computer = Player.new)
     @players = [@player1 = player, @player2 = computer]
+    @won = player
   end
 
 end

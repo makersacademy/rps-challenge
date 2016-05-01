@@ -5,7 +5,6 @@ def sign_in_with_name
   click_button 'Game on!'
 end
 
-
 def multi_player_with_names
   visit('/')
   click_button 'I have friends!'
