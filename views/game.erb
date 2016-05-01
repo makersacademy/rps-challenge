@@ -1,2 +1,31 @@
+<link href="/styles.css" type="text/css" rel="stylesheet">
+<body>
 You chose <%= @game.selected %>!
 Computer chose <%= @computer.chosen %>!
+
+You <%= @selected.result %>
+
+<!-- <% if @game.selected == "rock" && @computer.chosen == "paper" %>
+  You lose!
+<% elsif @game.selected == "rock" && @computer.chosen == "scissors" %>
+  You win!
+<% elsif @game.selected == "rock" && @computer.chosen == "rock" %>
+  You drew!
+<% elsif @game.selected == "paper" && @computer.chosen == "paper" %>
+  You drew!
+<% elsif @game.selected == "paper" && @computer.chosen == "scissors" %>
+  You lose!
+<% elsif @game.selected == "paper" && @computer.chosen == "rock" %>
+  You win!
+<% elsif @game.selected == "scissors" && @computer.chosen == "paper" %>
+  You win!
+<% elsif @game.selected == "scissors" && @computer.chosen == "scissors" %>
+  You drew!
+<% elsif @game.selected == "scissors" && @computer.chosen == "rock" %>
+  You lose!
+<% end %> -->
+
+<form method="get" action="/play">
+    <input type='submit' value='Again!'>
+</form>
+</body>

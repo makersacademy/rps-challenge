@@ -1,4 +1,9 @@
 class Computer
+  attr_reader :chosen
+  
+  def initialize
+    @options = ["rock", "paper", "scissors"]
+  end
 
   def self.create
     @computer = Computer.new
@@ -9,23 +14,10 @@ class Computer
   end
 
   def choose_weapon
-    num = choose_rand
-    if num == 1
-      @chosen = "rock"
-    elsif num == 2
-      @chosen = "paper"
-    else
-      @chosen = "scissors"
-    end
+    @chosen = @options.shuffle.first
   end
 
   def chosen
     @chosen
-  end
-
-  private
-
-  def choose_rand
-    rand(1..3)
   end
 end

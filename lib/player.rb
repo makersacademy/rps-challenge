@@ -1,8 +1,8 @@
-class Select
+class Player
   attr_reader :selected
 
   def self.create
-    @game = Select.new
+    @game = Player.new
   end
 
   def self.object

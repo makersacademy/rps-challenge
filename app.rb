@@ -1,6 +1,7 @@
 require 'sinatra/base'
-require './lib/select'
+require './lib/player'
 require './lib/computer'
+require './lib/selected'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,14 +12,16 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player] = params[:name]
-    @game = Select.create
+    @game = Player.create
     @computer = Computer.create
+    @selected = Selected.create
     redirect '/play'
   end
 
   before do
-    @game = Select.object
+    @game = Player.object
     @computer = Computer.object
+    @selected = Selected.object
   end
 
   get '/play' do
@@ -32,6 +35,7 @@ class RPS < Sinatra::Base
     @player = session[:player]
     @game
     @computer.choose_weapon
+    @selected
     erb :game
   end
 
