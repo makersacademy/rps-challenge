@@ -23,6 +23,4 @@ feature 'play the game of rock paper scissors' do
     expect(page).to have_content 'You lose!'
   end
 
-
-
 end
