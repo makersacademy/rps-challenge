@@ -16,22 +16,19 @@ class RPS < Sinatra::Base
   end
 
   post '/start' do
-  	if params[:player_mode] == 'one'
+  	players = params[:player_mode].to_i
+  	standard_mode = params[:game_mode] == 'standard' ? true : false
+
+  	if players == 1
   		player_1 = Player.new(params[:player_1_name])
   		player_2 = Computer.new
-  		params[:game_mode] == 'standard' ? player_2.play(true) : player_2.play(false)
   	else
   		player_1 = Player.new(params[:player_1_name])
   		player_2 = Player.new(params[:player_2_name])
   	end
+ 	
+   	@game = Game.create(player_1, player_2, players, standard_mode)
 
-  	puts player_1, player_2
-
-  	if params[:game_mode] == 'standard'
-    	@game = Game.create(player_1, player_2, true)
-    else
-    	@game = Game.create(player_1, player_2, false)
-    end
     redirect '/play'
   end
 
@@ -42,13 +39,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+  	if @game.players == 1
+  		@game.player_2.play(@game.game_mode)
+  	end
   	erb :play
   end
 
   post '/result' do
   	@game.player_1.play(params[:choice].to_sym)
-  	puts "The player choice is #{@game.player_1.choice}"
-  	puts "The cpu choice is #{@game.player_2.choice}"
   	erb :result
   end
 

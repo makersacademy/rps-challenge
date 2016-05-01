@@ -1,102 +1,93 @@
 body {
-    background-color: rgb(119, 164, 221);
-    margin: 0;
-    padding: 0;
+  background-color: rgb(119, 164, 221);
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    padding: 15px;
-    box-shadow: 1px 0 3px rgba(0,0,0, 0.3);
-    background-image: url(/images/darth_stripe.png);
-    color: white;
-    font-family: 'Lobster', cursive;
+  padding: 15px;
+  box-shadow: 1px 0 3px rgba(0,0,0, 0.3);
+  background-image: url(/images/darth_stripe.png);
+  color: white;
+  font-family: 'Lobster', cursive;
 }
 
 footer {
-    background-image: url(/images/bg.png);
-    padding: 15px;
-    text-align: left;
-    font-size: 12px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+  background-image: url(/images/bg.png);
+  padding: 15px;
+  text-align: left;
+  font-size: 12px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 #footer {
-    margin: 0 auto;
-    width: 800px;
+  margin: 0 auto;
+  width: 800px;
 }
 
 footer img {
-    float: left;
-    margin-right: 40px;
-    width: 240px;
+  float: left;
+  margin-right: 40px;
+  width: 240px;
 }
 
 /*10 px margin at top and bottom and 0 for left and right*/
 footer div {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 #score-in-frame {
-    text-align: center;
+  text-align: center;
 }
 
 #submit_button {
-    position: relative;
-    font-size: 30px;
-    width: 50%;
-    height: 50px;
-    border-radius: 30px;
+  position: relative;
+  font-size: 30px;
+  width: 50%;
+  height: 50px;
+  border-radius: 30px;
 }
 
 #submit_button:hover {
-    background-color: rgb(253, 242, 127);
-    color: black;
+  background-color: rgb(253, 242, 127);
+  color: black;
 }
 
 #game-area {
-    width: 900px;
-    min-height: 300px;
-    margin: 0 auto;
-    position: relative;
-    /*background-color: rgba(0,0,0,.5);*/
-    color: white;
+  width: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+  position: relative;
+  /*background-color: rgba(0,0,0,.5);*/
+  color: white;
 }
 
 .center {
-    margin: 0 auto;
-    width: 80%;
-    padding: 10px;
-    text-align: center;
-    }
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+}
 
 .game_mode {
-    width: 300px;
-    height: 300px;
-    border-radius: 30px;
-    font-family: 'Lobster', cursive;
-    margin: 20px;
-    font-size: 40px;
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  font-family: 'Lobster', cursive;
+  margin: 20px;
+  font-size: 40px;
 }
 
 #bold {
-    font-family: 'Lobster', cursive;
-    margin: 20px;
-    font-size: 40px;
+  font-family: 'Lobster', cursive;
+  margin: 20px;
+  font-size: 40px;
 }
 
-.circular {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    -webkit-border-radius: 75px;
-    -moz-border-radius: 75px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-}
-
-button img {
-    border-radius: 50%;
+.game_image {
+ width: 150px;
+ height: 150px;
+ margin: 10px;
 }

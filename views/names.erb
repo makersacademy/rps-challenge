@@ -1,8 +1,9 @@
 <div id="bold">
 	<form action="/start" method="post">
-		Player 1:<input style="color:black; "type="text" name="player_1_name"><br>
+		Player 1<br>
+		<input style="color:black; "type="text" name="player_1_name"><br>
 		<%if @player_mode == "two" %>
-			Player 2:
+			Player 2<br>
 			<input style="color:black;" type="text" name="player_2_name"><br>
 		<%else%>
 			<input type="hidden" style="color:black;" readonly type="text" name="player_2_name" value="Computer">

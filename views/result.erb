@@ -1,5 +1,18 @@
 <div id="bold">
-  <%= @game.player_1.choice %>
-  <%= @game.player_2.choice %>
-  <!-- <%= @game.start %> -->
+  <h1>
+    <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+  </h1>
+  <h3>
+    <%= @game.player_1.choice.capitalize %> vs. <%= @game.player_2.choice.capitalize %>
+  </h3>
+  <h1 style="font-size: 80px; color: rgb(170, 25, 37);">
+    <%= @game.start %>
+  </h1>
+  <br>
+  <form action="/play">
+    <input id="submit_button" type="submit" value="Try again">
+  </form>
+  <form action="/">
+    <input id="submit_button" type="submit" value="Home">
+  </form>
 </div>

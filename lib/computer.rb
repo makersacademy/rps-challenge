@@ -1,16 +1,14 @@
 require_relative './player'
+require_relative './game'
 
 class Computer < Player
 
-	STANDARD = {rock: 1, paper: 2, scissors: 3}.freeze
-  EXTENDED = {rock: 0, spock: 1, paper: 2, lizard: 3, scissors: 4}.freeze
-	
 	def initialize
 		super('Computer')	
 	end
 
 	def play(standard_mode)
-		@choice = standard_mode ? STANDARD.keys.sample : EXTENDED.keys.sample
+		@choice = standard_mode ? Game::STANDARD.keys.sample : Game::EXTENDED.keys.sample
 	end
 
 	def computer?
