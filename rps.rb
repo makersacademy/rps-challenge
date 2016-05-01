@@ -13,13 +13,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/attack' do
-    @attack = params[:attack]
+    @game = RpsGame.instance
+    @game.attack params[:attack]
     redirect '/game_over'
   end
 
   get '/game_over' do
-    erb :game_over
-    #call game_over? method to determine whether or not to render a 'win' or 'lose' view
+    @game = RpsGame.instance
+    @outcome = @game.determine_outcome
+    if @outcome == 'win'
+      erb :game_over_win
+    end
+
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

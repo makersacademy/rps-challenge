@@ -1,5 +1,7 @@
+require_relative './attack'
+
 class RpsGame
-  attr_reader :player_name
+  attr_reader :player_name,
 
   def self.set_instance(name)
     @game = RpsGame.new(name)
@@ -24,6 +26,14 @@ class RpsGame
     elsif @scissors.name == attack_name
       @player_attack = @scissors
     end
+  end
+
+  def attack_name
+    @player_attack.name
+  end
+
+  def attack_weakness
+    @player_attack.weakness
   end
 
   def determine_outcome
