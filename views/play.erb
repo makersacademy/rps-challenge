@@ -4,8 +4,11 @@
     <p><h3><%=@name%> is ready for battle!</h3></p>
     <p></p>
     <h4>Choose your method of attack...</h4>
+    <form action="/attacktype" method="post">
     <p><input type="radio" name="attacktype" value="rock" id="ROCK">ROCK</p>
     <p><input type="radio" name="attacktype" value="paper" id="PAPER">PAPER</p>
     <p><input type="radio" name="attacktype" value="scissors" id="SCISSORS">SCISSORS</p>
+    <p><input type="submit" value="My choice is made"></p>
+    </form>
   </center>
 </div>
