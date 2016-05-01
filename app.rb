@@ -11,20 +11,9 @@ class Rps < Sinatra::Base
     erb :name
   end
 
-  get '/name_2' do
-    erb :name_2
-  end
-
   post '/set_name' do
     @player_1 = Player.new params[:player_1_name]
     @game = Game.create(@player_1)
-    redirect '/play'
-  end
-
-  post '/set_name_2' do
-    @player_1 = Player.new params[:player_1_name]
-    @player_2 = Player.new params[:player_2_name]
-    @game = Game.create(@player_1, @player_2)
     redirect '/play'
   end
 
