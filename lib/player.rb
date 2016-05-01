@@ -1,5 +1,3 @@
-require_relative 'attack'
-
 class Player
 
   def initialize(name)

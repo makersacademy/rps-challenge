@@ -3,7 +3,7 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player_score, :computer_score, :tie_score
+  attr_reader :player_score, :computer_score, :tie_score, :winner
 
   def initialize(player, computer)
     @players = [player, computer]
@@ -30,6 +30,7 @@ class Game
     player.take_turn(player_attack)
     computer.take_turn
     score
+    assign_winner
   end
 
   private
@@ -50,6 +51,12 @@ class Game
 
   def winning_combinations
     [[:rock, :scissors],[:paper, :rock],[:scissors, :paper]]
+  end
+
+  def assign_winner
+    @winner = 'tie' if draw
+    @winner = 'player' if player_wins?
+    @winner = 'computer' if !player_wins? && !draw
   end
 
 end

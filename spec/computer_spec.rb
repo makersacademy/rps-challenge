@@ -5,19 +5,19 @@ describe Computer do
 
   describe '#take_turn' do
     it 'Can choose rock' do
-      allow(computer).to receive(:rand) { 0 }
+      allow_any_instance_of(Array).to receive(:sample) { :rock }
       computer.take_turn
       expect(computer.attack).to eq :rock
     end
 
     it 'Can choose paper' do
-      allow(computer).to receive(:rand) { 1 }
+      allow_any_instance_of(Array).to receive(:sample) { :paper }
       computer.take_turn
       expect(computer.attack).to eq :paper
     end
 
     it 'Can choose scissors' do
-      allow(computer).to receive(:rand) { 2 }
+      allow_any_instance_of(Array).to receive(:sample) { :scissors }
       computer.take_turn
       expect(computer.attack).to eq :scissors
     end

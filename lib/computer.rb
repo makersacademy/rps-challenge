@@ -1,9 +1,7 @@
-require_relative 'attack'
-
 class Computer
 
   def take_turn
-    @attack = choice
+    @attack = options
   end
 
   def attack
@@ -13,11 +11,7 @@ class Computer
   private
 
   def options
-    [:rock, :paper, :scissors]
-  end
-
-  def choice
-    options[rand(3)]
+    [:rock, :paper, :scissors].sample
   end
 
 end

@@ -1,2 +1,14 @@
-<p>You chose <%= @game.players.choice %></p>
-<p>The computer chose <%= @game.computer.choice %></p>
+<% if @game.winner == 'player' %>
+<p>You won!</p>
+<% end %>
+
+<% if @game.winner == 'computer' %>
+<p>The computer won!</p>
+<% end %>
+
+<% if @game.winner == 'tie' %>
+<p>It's a tie!</p>
+<% end %>
+
+<p>You chose <%= @game.player.attack %></p>
+<p>The computer chose <%= @game.computer.attack %></p>

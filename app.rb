@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/game.rb'
-require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -14,8 +13,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @game.player.take_turn(params[:player_choice])
-    # @game.winner
+    @game.play(params[:player_choice])
     erb(:result)
   end
 

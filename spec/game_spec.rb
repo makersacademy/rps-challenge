@@ -50,6 +50,9 @@ describe Game do
       it 'Computer score is 0 if attacks are the same' do
         expect(game.computer_score).to eq 0
       end
+      it 'Shows the winner as tied' do
+        expect(game.winner).to eq 'tie'
+      end
     end
 
     describe 'Player wins' do
@@ -67,6 +70,9 @@ describe Game do
       it 'Tie score is 0 if player wins' do
         expect(game.tie_score).to eq 0
       end
+      it 'Shows the winner as player' do
+        expect(game.winner).to eq 'player'
+      end
     end
 
     describe 'Computer wins' do
@@ -83,6 +89,9 @@ describe Game do
       end
       it 'Tie score is 0 if player wins' do
         expect(game.tie_score).to eq 0
+      end
+      it 'Shows the winner as computer' do
+        expect(game.winner).to eq 'computer'
       end
     end
   end
