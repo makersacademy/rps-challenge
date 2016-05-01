@@ -4,7 +4,8 @@ class Game
   attr_reader :computer
   attr_reader :computer_move
   attr_reader :winning_moves
-  WINNING_SCORE = 5
+  attr_reader :winner
+  WINNING_SCORE = 1
 
   def initialize(player)
     @player = player
@@ -33,7 +34,6 @@ class Game
   end
 
   def result
-    moves = {@player_move => @computer_move}
     if @player_move == @computer_move
       'draw'
     elsif @winning_moves[@player_move] == @computer_move
@@ -47,10 +47,12 @@ class Game
 
   def win
     @player.score += 1
+    @winner = @player
   end
 
   def lose
     @computer.score += 1
+    @winner = @computer
   end
 
   def over?
@@ -58,6 +60,6 @@ class Game
   end
 
   def outcome
-    'someone wins'
+    @winner.name
   end
 end

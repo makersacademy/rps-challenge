@@ -2,13 +2,8 @@ require 'game'
 
 describe Game do
   let(:player) {double :player, score: 0}
-  # let(:computer) {double :computer, score: 0}
   subject(:game) {described_class.new(player)}
-
-  # let(:player_move) {double :player_move}
-  # let(:player_move) {double :player_move}
-  # let(:computer_move_rock) {double :computer_move_rock}
-  # let(:computer_move_paper) {double :computer_move_paper}
+  WINNING_SCORE = 5
 
   describe '#initialize' do
     it 'should initialize with a player' do
@@ -99,6 +94,18 @@ describe Game do
         game.instance_variable_set("@computer_move", :SCISSORS)
         expect{game.result}.to change{game.computer.score}.by 1
       end
+    end
+  end
+
+  describe '#outcome' do
+    it 'should return a winner' do
+      allow(player).to receive(:score=).and_return WINNING_SCORE
+      game.win
+      expect(game.outcome).to eq player
+    end
+    it 'should return a loser' do
+      game.lose
+      expect(game.outcome).to be_a(Computer)
     end
   end
 end

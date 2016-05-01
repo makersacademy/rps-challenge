@@ -24,8 +24,12 @@
     <% end %>
 
     <% if @game.over? %>
+    <label id=banner>
       <h1>GAME OVER<h1>
+    </label>
+    <label id=banner>
       <h2>The winner is <%= @game.outcome %>!!!<h2>
+    </label>
     <% end %>
 
   </center>
