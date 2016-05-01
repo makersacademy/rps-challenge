@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
+
   get '/' do
     erb(:index)
   end
@@ -11,8 +12,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
+  post '/result' do
     @game.play(params[:player_choice])
     erb(:result)
   end

@@ -12,3 +12,12 @@
 
 <p>You chose <%= @game.player.attack %></p>
 <p>The computer chose <%= @game.computer.attack %></p>
+
+<h3>Scores</h3>
+<p>Player: <%= @game.player_score %></p>
+<p>Computer: <%= @game.computer_score %></p>
+<p>Tied: <%= @game.tie_score %></p>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play again?">
+</form>
