@@ -1,12 +1,11 @@
 class Round
-  WEAPONS = [:Rock, :Paper, :Scissors]
+  WEAPONS = [:rock, :paper, :scissors]
 
   WINNERS = [{:scissors => :paper},
             {:paper => :rock},
-            {:rock => :scissors}
-          ]
+            {:rock => :scissors}]
 
-  attr_reader :player_1, :player_2, :player_1_weapon, :player_2_weapon
+  attr_reader :player_1, :player_1_weapon, :player_2_weapon
 
   def self.create(player_1)
     @round = Round.new(player_1)
@@ -22,7 +21,7 @@ class Round
   end
 
   def random_opponent
-    @player_2_weapon = [:rock, :paper, :scissors].sample
+    @player_2_weapon = WEAPONS.sample
   end
 
   def win

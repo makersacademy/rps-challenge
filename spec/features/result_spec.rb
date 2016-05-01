@@ -1,5 +1,3 @@
-
-
 feature 'show result' do
   scenario 'display who won the round' do
     sign_in_and_play
