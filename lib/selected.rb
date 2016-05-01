@@ -2,13 +2,15 @@ require_relative './player'
 require_relative './computer'
 
 class Selected
-  def initialize(player: Player, computer: Computer)
-    @player = player.new
-    @computer = computer.new
+   attr_reader :player, :computer
+
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
   end
 
-  def self.create
-    @selected = Selected.new
+  def self.create(player, computer=Computer.new)
+    @selected = Selected.new player, computer
   end
 
   def self.object
@@ -25,7 +27,7 @@ class Selected
     end
   end
 
-
+  private
 
   def computers_choice
     @computer.chosen
@@ -41,7 +43,7 @@ class Selected
     elsif computers_choice == "scissors"
       return "win"
     elsif computers_choice == "rock"
-      "draw"
+      "drew"
     end
   end
 
@@ -51,7 +53,7 @@ class Selected
     elsif computers_choice == "rock"
       return "win"
     elsif computers_choice == "paper"
-      "draw"
+      "drew"
     end
   end
 
@@ -61,7 +63,7 @@ class Selected
     elsif computers_choice == "paper"
       return "win"
     elsif computers_choice == "scissors"
-      "draw"
+      "drew"
     end
   end
 end

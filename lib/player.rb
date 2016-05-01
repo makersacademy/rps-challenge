@@ -1,12 +1,8 @@
 class Player
-  attr_reader :selected
+  attr_reader :selected, :name
 
-  def self.create
-    @game = Player.new
-  end
-
-  def self.object
-    @game
+  def initialize name
+    @name = name
   end
 
   def rock
