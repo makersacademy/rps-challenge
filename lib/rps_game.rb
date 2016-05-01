@@ -18,7 +18,7 @@ class RpsGame
     @scissors = attack_class.new('scissors', 'rock')
   end
 
-  def attack attack_name
+  def set_player_attack attack_name
     if @rock.name == attack_name
       @player_attack = @rock
     elsif @paper.name == attack_name
@@ -28,19 +28,19 @@ class RpsGame
     end
   end
 
-  def attack_name
+  def player_attack_name
     @player_attack.name
   end
 
-  def attack_weakness
-    @player_attack.weakness
+  def ai_attack_name
+    @ai_attack.name
   end
 
   def determine_outcome
-    ai_attack = set_ai_attack
-    if @player_attack.name == ai_attack
+    set_ai_attack
+    if @player_attack.name == @ai_attack.name
       @outcome = 'draw'
-    elsif @player_attack.weakness == ai_attack
+    elsif @player_attack.weakness == @ai_attack.name
       @outome = 'lose'
     else
       @outcome = 'win'
@@ -50,7 +50,7 @@ class RpsGame
   private
 
   def set_ai_attack
-    ['rock', 'paper', 'scissors'].sample
+    @ai_attack = [@rock, @paper, @scissors].sample
   end
 
 end

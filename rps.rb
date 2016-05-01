@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/attack' do
     @game = RpsGame.instance
-    @game.attack params[:attack]
+    @game.set_player_attack params[:attack]
     redirect '/game_over'
   end
 
@@ -23,6 +23,10 @@ class RockPaperScissors < Sinatra::Base
     @outcome = @game.determine_outcome
     if @outcome == 'win'
       erb :game_over_win
+    elsif @outcome == 'draw'
+      erb :game_over_draw
+    elsif @outcome == 'lose'
+      erb :game_over_lose
     end
 
   end
