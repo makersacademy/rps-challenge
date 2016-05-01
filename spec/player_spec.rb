@@ -9,4 +9,11 @@ describe Player do
     end
   end
 
+  describe "#points" do
+    it "shows how many points the player has won" do
+      expect(lucy.points).to eq 0
+    end
+
+  end
+
 end
