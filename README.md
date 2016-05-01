@@ -1,93 +1,19 @@
-# RPS Challenge: Rōnin Badge Test
+This is Rock, Paper, Scissors. If you are unsure of the rules of this game, climb out of your rock and simply google it.
 
-Instructions
--------
+Hope you enjoy.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+If you would like to play my RPS, clone my repo down, go in the command line and type 'ruby app.rb'. Then in your browser type 'localhost:4567/'. That should work. 
 
-Task 
-----
+My logic:
 
-Knowing how to build web applications is getting us almost there as web developers!
+A user goes to the Rock, Paper, Scissor (RPS) homepage and is allowed to input their name. This redirects them to the play page where they can make their selection. Once they make a selection, they're redirected to the results page if there's a winner or the tie page if it's a tie. With either page, they can replay the game which will keep the same user but take them back to the play page to play another game. After a win, with either a computer or user win, they can also restart the game which brings them to the login screen. I have two classes, a Game class and a Player class. I started going down the path of making it so it would be a two player game but decided it was just a little too much right now. I don't think it would take too much more with the way that my Game and Player classes are set up. It's more of how to get the same site on different browsers and how my app.rb would be set up.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+This is where screenshots would go if I made any:
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Homepage
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+Play page
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+Results page
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+Tie page

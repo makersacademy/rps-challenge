@@ -1,0 +1,18 @@
+<center>
+<h1> Rock, Paper, Scissors </h1>
+</center>
+<h2 style="float: right; width: 25%;"> <%= @game.player2.name %>'s choice: <%= @game.player2.choice %> </h2>
+<h2 style="float: left; width: 25%;text-align: right;"> <%= @game.player1.name%>'s choice: <%= @game.player1.choice %> </h2>
+<center>
+<h2>
+<br>
+<%= @game.result.name %> is the winner.
+</center>
+<br>
+<form action='/' style="float:right; width:50%;">
+  <input type='submit' value="Restart">
+</form>
+
+<form action='/play' style="float:left; width: 50%; text-align: right;">
+  <input type='submit' value="Play again">
+</form>
