@@ -4,15 +4,15 @@ class Game
 
   attr_reader :player_1, :player_2, :win_count, :tie_count, :loss_count
 
-  def initialize player_1,player_2=Computer.new
+  def initialize player_1,player_2
     @player_1 = player_1
     @player_2 = player_2
     @moves = ['Rock', 'Paper', 'Scissors']
     @win_count = @tie_count = @loss_count = 0
   end
 
-  def self.create player
-    @game = Game.new player
+  def self.create player_1,player_2=Computer.new
+    @game = Game.new player_1,player_2
   end
 
   def self.object

@@ -5,15 +5,27 @@
 
 <div id='name'>
 <center>
-  <form action='/set_name' method='post'>
-    <label for="player_1_name"> Enter your name
+    <div class='col-xs-3'></div>
+    <div class='col-xs-3'>
+  <form action='/set_name_2' method='post'>
+    <label for="player_1_name">Player 1:<br>Enter your name
       <br>
       <br>
       <input type="text" name="player_1_name" style='color:#000' />
     </label>
+  </div>
+    <div class='col-xs-3'>
+    <label for="player_2_name">Player 2:<br>Enter your name
+      <br>
+      <br>
+      <input type="text" name="player_2_name" style='color:#000' />
+    </label>
+  </div>
+  <div class='col-xs-12'>
     <br>
     <br>
     <button>Begin</button>
+    </div>
   </form>
 </center>
 </div>
