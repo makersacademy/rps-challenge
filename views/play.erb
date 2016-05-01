@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="animate.css">
+</head>
+
+
+<body id="play">
+
+  <div id="title">
+    <%=@game.player.name%> Vs. Computer
+  </div>
+
+  <div id="select_text">
+    Select a character to perform their action
+    <br>
+    against the computers.
+  </div>
+
+  <form method="post" action="/decision">
+    <button id="rock_button" class="slideRight" name="choice" value="rock">
+      <img src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock">
+    </button>
+
+    <button id="paper_button" class="slideUp" name="choice" value="paper">
+      <img src="http://i.imgur.com/r1GckhD.jpg" alt="Paper">
+    </button>
+    
+    <button id="scissors_button" class="slideLeft" name="choice" value="scissors">
+      <img src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors">
+    </button>
+  </form>
+
+  <div id="player_score">
+    <%=@game.player.name%>'s score: <%=@game.player_score%>
+  </div>
+
+
+  <div id="computer_score">
+    Computer's score: <%=@game.computer_score%>
+  </div>
+
+</body>

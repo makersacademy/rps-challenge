@@ -1,0 +1,77 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="animate.css">
+</head>
+
+<body id="result">
+
+  <div id="title">
+    <%=@game.player.name%> Vs. Computer
+  </div>
+
+  <div id="you_played">
+    You Played:
+    <br>
+    <%=@game.player_choice%>
+  </div>
+
+  <div id="player_choice" class= "Tossing">
+    <%if @game.player_choice == "rock"%>
+        <input type="image" src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock";>
+    <%elsif @game.player_choice == "scissors"%>
+        <input type="image" src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors";>
+    <%else @game.player_choice == "paper"%>
+        <input type="image" src="http://i.imgur.com/r1GckhD.jpg" alt="Paper";>
+    <%end%>
+  </div>
+
+  <div id="vs">
+    Vs.
+  </div>
+
+  <div id="pc_played">
+    The Computer Played:
+    <br>
+    <%=@game.pc_choice%>
+  </div>
+
+  <div id="pc_choice" class= "Tossing2">
+    <%if @game.pc_choice == "rock"%>
+        <input type="image" src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock";>
+    <%elsif @game.pc_choice == "scissors"%>
+        <input type="image" src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors";>
+    <%else @game.pc_choice == "paper"%>
+        <input type="image" src="http://i.imgur.com/r1GckhD.jpg" alt="Paper";>
+    <%end%>
+  </div>
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <a class="close" href="#popup1">&times;</a>
+        <div class="content">
+            You <%=@game.result%>!
+    </div>
+</div>
+
+
+
+  <form action="/play" >
+    <input type="submit" value="Play Again?" id="again_button";>
+  </form>
+
+  <form action="/" >
+    <input type="submit" value="Start New Game?" id="restart_button";>
+  </div>
+
+
+  <div id="player_score">
+    <%=@game.player.name%>'s score: <%=@game.player_score%>
+  </div>
+
+
+  <div id="computer_score">
+    Computer's score: <%=@game.computer_score%>
+  </div>
+
+</body>
