@@ -1,5 +1,5 @@
  <center>
-   <% if @name.empty? %> <h1 style="font-size:80pt;color:brown">Please enter a name!</h1>
+   <% if @game.player.name.empty? %> <h1 style="font-size:80pt;color:brown">Please enter a name!</h1>
     <body background="http://static.brusheezy.com/system/resources/previews/000/019/429/original/wrapping-paper-high-resolution-textures-1.jpg">
     </body>
 
@@ -8,9 +8,9 @@
     </form>
   <%end%>
 
-  <% if !@name.empty? %>
+  <% if !@game.player.name.empty? %>
     <body>
-      <h1 style="font-family:Helvetica;font-size:80pt;color:blue"> Hello, <%= @name %> </h1>
+      <h1 style="font-family:Helvetica;font-size:80pt;color:blue"> Hello, <%= @game.player.name %> </h1>
       <p>Let's play Rock, Paper, Scissors<p>
 </body >
  <form action='/weapon' method='post'>

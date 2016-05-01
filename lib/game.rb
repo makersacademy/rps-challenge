@@ -8,6 +8,14 @@ class Game
   }
   attr :player, :machine
 
+  def self.set_game(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def initialize(player, machine)
     @player = player
     @machine = Machine.new

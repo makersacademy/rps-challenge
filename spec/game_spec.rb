@@ -3,9 +3,11 @@ require 'game'
 describe Game  do
   subject(:game) {described_class.new(player, machine)}
 
-  let(:player) { double :player, name: name}
-  let(:machine) {double :machine}
+  let(:player) { double :player, name: name, selected_weapon: selected_weapon}
+  let(:machine) {double :machine, choose_weapon: choose_weapon}
   let(:name) {double :name}
+  let(:selected_weapon) {double :ROCK}
+  let(:choose_weapon) {double :ROCK}
 
   context 'when initialized' do
     it 'has a first player' do
@@ -15,6 +17,16 @@ describe Game  do
     xit 'has a second player' do
       expect(game.machine).to eq Machine.new
     end
+  end
+
+  it 'shows player option' do
+    expect(game.player_option).to eq player.selected_weapon
+  end
+
+  it 'shows machine_option' do
+    allow(game).to receive(:machine_option.to_s).and_return :ROCK
+    expect(game.machine_option).to eq :ROCK
+
   end
 
   describe 'end of game ' do
