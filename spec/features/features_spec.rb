@@ -8,20 +8,37 @@ feature 'Your name' do
   end
 end
 
-feature 'Play' do
+feature 'Start a new game' do
   scenario 'starting a new game' do
     sign_in_and_play
     expect(page).to have_content "Mara's turn"
-    expect(page).to have_content "Start Game"
+    # expect(page).to find_button("Start Game")
+  end
+end
+
+feature 'Playing the game' do
+  scenario "submit 'rock' to allow a win" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    sign_in_and_play
+    choose('rock')
+    click_button('Start Game')
+    expect(page).to have_content "You chose: rock"
+    expect(page).to have_content "Computer chose: scissors"
+    expect(page).to have_content "Result: win"
   end
 end
 
 feature 'Result' do
   scenario 'result of the game' do
     sign_in_and_play
-    expect(page).to have_content "You chose: Rock 
-    Computer chose: Paper
-    Result: Computer wins"
+    click_button "Start Game"
+    expect(page).to have_content "You chose: rock"
   end
 end
+
+
+
+
+
+
 
