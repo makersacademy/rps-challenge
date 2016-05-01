@@ -1,4 +1,4 @@
-feature "The Game", type: :feature do
+feature "RPS", type: :feature do
   scenario "allows user to input name" do
     sign_in
     expect(page).to have_text("Rock, Paper, Scissors")
