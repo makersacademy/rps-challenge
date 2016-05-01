@@ -32,8 +32,16 @@ class RockPaperScissors < Sinatra::Base
     erb :play_1
   end
 
-  get '/play_player2' do
+#adding screen to allow change of players and hide player_1's choice
+#
+  get '/change_player' do
     @game.player_1.choice = params[:choice]
+    redirect to '/play_player2' if @game.computer?
+    erb :change_player
+  end
+
+  get '/play_player2' do
+    #@game.player_1.choice = params[:choice]
     redirect to '/result' if @game.computer?
     erb :play_2  #juega el segundo jugador
   end
@@ -50,5 +58,5 @@ class RockPaperScissors < Sinatra::Base
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
