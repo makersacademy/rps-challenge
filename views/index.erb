@@ -4,13 +4,37 @@
   h1   {color: crimson;}
   </style>
   <h1>Rock Paper Scissors</h1>
+
   <h2>Type in your name to play, revered members of MAMA</h2>
-  <form action="/names" method="post">
+
+  <h3>Single Player</h3>
+
+  <form action="/single" method="post">
     <label for="player_name">
       Player Name:<br><br>
       <input type="text" name="player_name">
     </label>
     <br><br>
     <input type="submit" value="Submit">
+
+  </form>
+
+  <h3>Two Players</h3>
+
+  <form action="/multiplayer" method="post">
+    <label for="player_1_name">
+      Player 1 Name:<br><br>
+      <input type="text" name="player_1_name">
+    </label>
+    <br><br>
+
+    <label for="player_2_name">
+      Player 2 Name:<br><br>
+      <input type="text" name="player_2_name">
+    </label>
+    <br><br>
+
+    <input type="submit" value="Fight to the death!">
+
   </form>
 </div>

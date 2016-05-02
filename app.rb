@@ -8,30 +8,35 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/single' do
     Game.new_game(Player.new(params[:player_name]))
     redirect 'play'
   end
 
+  post '/multiplayer' do
+    Game.new_game(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
+    redirect 'multiplayer'
+  end
+
+  get '/multiplayer' do
+    @player_1_name = Game.current_game.player_1.name
+    @player_2_name = Game.current_game.player_2.name
+    erb :multiplayer
+  end
+
   get '/play' do
-    @player_name = Game.current_game.player_name
+    @player_name = Game.current_game.player_1.name
     erb :play
   end
 
-  post '/result' do
-    redirect Game.current_game.play_computer(params[:move])
+  post '/single_result' do
+    session[:single_result] = Game.current_game.play_computer(params[:move])
+    redirect '/single_result'
   end
 
-  get '/win' do
-    erb :win
-  end
-
-  get '/draw' do
-    erb :draw
-  end
-
-  get '/lose' do
-    erb :lose
+  get '/single_result' do
+    @result = session[:single_result]
+    erb :single_result
   end
 
   # start the server if ruby file executed directly

@@ -8,21 +8,21 @@ class Game
 
     attr_reader :current_game
 
-    def new_game(player = Player.new(name), rules = Rules.new, moves = Moves.new)
-      @current_game = Game.new(player, rules, moves)
+    def new_game(player_1 = Player.new(name), player_2 = nil, rules = Rules.new, moves = Moves.new)
+      @current_game = Game.new(player_1, player_2,rules, moves)
     end
 
   end
 
-  def initialize(player = Player.new(name), rules = Rules.new, moves = Moves.new)
-    @player = player
+  attr_reader :player_1, :player_2
+
+  def initialize(player_1 = Player.new(name), player_2 = nil, rules = Rules.new, moves = Moves.new)
+    @player_1 = player_1
+    @player_2 = player_2
     @rules = rules
     @moves = moves
   end
 
-  def player_name
-    player.name
-  end
 
   def play_computer(player_move)
     rules.calculate_result(player_move, moves.random_move)
@@ -30,7 +30,6 @@ class Game
 
   private
 
-  attr_reader :rules, :moves, :player
-
+  attr_reader :rules, :moves
 
 end
