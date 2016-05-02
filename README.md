@@ -1,7 +1,7 @@
 # RPS Challenge
 
 ## Instructions
--------
+---
 **Installation instructions**
 ```sh
 $ git clone git@github.com:gerauf/rps-challenge.git
@@ -23,7 +23,7 @@ $ bundle
 
 
 ## Basic Rules
-------
+---
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
@@ -32,5 +32,5 @@ $ bundle
 
 
 ## Notes
-------
+---
 Currently no styling has been added just core business logic
