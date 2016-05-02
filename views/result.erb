@@ -1,15 +1,26 @@
-<p>Hello</p>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-<p><%= @game.player1.name %> chosed <%= @game.player1.choice %> </p>
-<p><%= @game.player2.name %> chosed <%= @game.player2.choice %> </p>
+  <div class="bg-img">
+    <div class="box">
+      <center>
+        <p><%= @game.player1.name %> chosed <b><%= @game.player1.choice %></b> </p>
+        <p><%= @game.player2.name %> chosed <b><%= @game.player2.choice %></b> </p>
 
-<% if @game.winner.is_a? String %>
-<p>The winner is: <%= @game.winner %> </p>
-<% else %>
-<p>The winner is: <%= @game.winner.name %> </p>
-<% end %>
+        <% if @game.winner.is_a? String %>
+        <h1>The winner is: <%= @game.winner %> </h1>
+        <% else %>
+        <h1>The winner is: <%= @game.winner.name %> </h1>
+        <% end %>
 
+        <form action='/game_play' method=get>
+          <input type="submit" value="New round!">
+        </form>
+      </center>
+    </div>
+  </div>
 
-<form action='/game_play' method=get>
-  <input type="submit" value="New round!">
-</form>
+</body>

@@ -5,6 +5,6 @@ feature 'single or multi player' do
   end
   scenario 'can choose multi player' do
     visit '/'
-    expect(page).to have_button 'I have friends!'
+    expect(page).to have_button 'Friends'
   end
 end

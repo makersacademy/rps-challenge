@@ -1,8 +1,33 @@
-<form action='/single_player' method="get">
-  <input type="submit" value="Solo">
-</form>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-
-<form action='/multi_player' method="get">
-  <input type="submit" value="I have friends!">
-</form>
+  <div class="bg-img">
+    <div class="box">
+      <center>
+        <br>
+        <br>
+        <img src="/images/white_rock.png" />
+        <img src="/images/white_paper.png" />
+        <img src="/images/white_scissors.png" />
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <form action='/single_player' method="get">
+              <input type="submit" value="Solo">
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <form action='/multi_player' method="get">
+              <input type="submit" value="Friends">
+            </form>
+          </div>
+        </div>
+      </center>
+    </div>
+  </div>
+</body>
+</html>

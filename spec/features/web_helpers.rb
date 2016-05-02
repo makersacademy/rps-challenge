@@ -7,7 +7,7 @@ end
 
 def multi_player_with_names
   visit('/')
-  click_button 'I have friends!'
+  click_button 'Friends'
   fill_in :player1_name, with: 'Emma'
   fill_in :player2_name, with: 'Ingrid'
   click_button 'Game on!'

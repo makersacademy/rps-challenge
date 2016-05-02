@@ -1,10 +1,27 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-<p><%= @game.player1.name %> made her choice...</p>
+  <div class="bg-img">
+    <div class="box">
+      <center>
+        <p><%= @game.player1.name %> made her choice...</p>
+        <p><b><%= @game.player2.name %></b>, choose even more wisely... </p>
+        <br>
+        <br>
+        <img src="/images/white_rock.png" />
+        <img src="/images/white_paper.png" />
+        <img src="/images/white_scissors.png" />
 
-<p><%= @game.player2.name %>, choose even more wisely... </p>
+        <form action='/set_choice_second_player' method=post>
+          <input type="submit" value="Rock" name="choice">
+          <input type="submit" value="Paper" name="choice">
+          <input type="submit" value="Scissors" name="choice">
+        </form>
+      </center>
+    </div>
+  </div>
 
-<form action='/set_choice_second_player' method=post>
-<input type="submit" value="Rock" name="choice">
-<input type="submit" value="Paper" name="choice">
-<input type="submit" value="Scissors" name="choice">
-</form>
+</body>
