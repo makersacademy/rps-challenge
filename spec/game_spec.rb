@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
 
-  subject(:game) {described_class.new(player_1)}
-  let(:player_1) {double :player_1}
+  subject(:game) {described_class.new(player_1, p1_win_score)}
+  let(:player_1) { double :player_1 }
+  let(:p1_win_score) { double :score, total: 3, comp_total: 2, add: nil, comp_add:nil }
 
   it { is_expected.to respond_to(:attack_with).with(1).argument }
 
@@ -61,6 +62,24 @@ describe Game do
       game.attack_with("PAPER")
       game.computer_attack
       expect(game.result).to eq "DRAW"
+    end
+
+  end
+
+  it 'game can check the player score' do
+    expect(game.score).to be_truthy
+  end
+
+  context 'calculates the winner based on best of 5' do
+
+    it { is_expected.to respond_to(:winner)}
+
+    it 'player wins overall if 3 games won in total' do
+      3.times do
+        game.attack_with("SCISSORS")
+        game.computer_attack
+      end
+      expect(game.winner).to eq game.player
     end
 
   end

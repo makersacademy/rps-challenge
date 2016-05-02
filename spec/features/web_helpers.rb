@@ -18,3 +18,16 @@ def decisions_confirmed
   click_button "My choice is made"
   click_button "Im ready! Have at ye evil robot!"
 end
+
+def victory
+  winning_decisions_confirmed
+  click_button "I'm not afraid! Lets do this!"
+  click_button "Play again!"
+  2.times do
+    choose "ROCK"
+    click_button "My choice is made"
+    click_button "Im ready! Have at ye evil robot!"
+    click_button "I'm not afraid! Lets do this!"
+    click_button "Play again!"
+  end
+end

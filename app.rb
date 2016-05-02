@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/score'
 
 class RPS < Sinatra::Base
 
@@ -19,6 +20,7 @@ class RPS < Sinatra::Base
   end
 
   get "/play" do
+    redirect("/final") if @game.win_reached
     @name = @game.player
     erb :play
   end
@@ -42,6 +44,10 @@ class RPS < Sinatra::Base
     @computer_attack = @game.chosen_attacks[:p2]
     @winner = @game.result
     erb :result
+  end
+
+  get "/final" do
+    erb :final
   end
 
   # start the server if ruby file executed directly

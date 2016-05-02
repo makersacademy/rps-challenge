@@ -1,9 +1,8 @@
-feature 'Final Result' do
+feature 'Game Result' do
   scenario 'result page displays the winner with a message' do
     winning_decisions_confirmed
     click_button "I'm not afraid! Lets do this!"
-    m="Lord Megatron is the ultimate champion of everything ever!!!"
-    expect(page).to have_content m
+    expect(page).to have_content "Lord Megatron won this round!"
   end
 
   scenario 'different message for a draw' do
@@ -21,3 +20,4 @@ feature 'Final Result' do
     expect(page).to have_content "Welcome to RPS"
   end
 end
+
