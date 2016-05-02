@@ -1,0 +1,15 @@
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Amatic+SC'>
+<body background="http://static.tumblr.com/ec9fa9f7d4eced64f5614e2b2a908a8a/5ziy55w/w7xn1n7kq/tumblr_static_0eyerockpaperscissors.jpg">
+<div>
+  <font face="Amatic SC" size="6" color ="black">
+  <%= @game.player_1.name %> please pick your weapon of choice:
+<form action="/choose_weapons" method="post">
+  <input type="submit" value="rock" name="weapon" style="font-family:'Amatic SC'; color:white; font-size: 30px; height: 50px; width: 100px; background-color:black">
+</form>
+<form action="/choose_weapons" method="post">
+  <input type="submit" value="paper" name="weapon" style="font-family:'Amatic SC'; color:white; font-size: 30px; height: 50px; width: 100px; background-color:black">
+</form>
+<form action="/choose_weapons" method="post">
+  <input type="submit" value="scissors" name="weapon" style="font-family:'Amatic SC'; color:white; font-size: 30px; height: 50px; width: 100px; background-color:black">
+</form>
+</div>

@@ -1,6 +1,14 @@
-<h1>Rock Paper Scissors!</h1>
-<h2>Enter your name to play please</h2>
-<form action="/names" method="post">
-  <input type="text" name="name">
-  <input type="submit" value="Push me">
-</form>
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Amatic+SC'>
+<body background="http://static.tumblr.com/ec9fa9f7d4eced64f5614e2b2a908a8a/5ziy55w/w7xn1n7kq/tumblr_static_0eyerockpaperscissors.jpg">
+<div>
+  <font face="Amatic SC" size="8" color ="black">
+  <b>rock paper scissors</b>
+</div>
+<div>
+  <font face="Amatic SC" size="6" color ="black">
+  what's your name please?
+  <form action="/set_name" method="post">
+    <input type="text" name="player_1_name" style="font-family: 'Amatic SC'; font-size: 20px; width: 100px">
+    <input type="submit" value="push me" style="font-family:'Amatic SC'; color:white; font-size: 20px; height: 35px; width: 75px; background-color:black">
+  </form>
+</div>
