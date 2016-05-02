@@ -9,7 +9,8 @@ describe Game do
 
   it '#play_computer' do
     allow(rules).to receive(:random_move).and_return(:move_2)
-    game.play_computer(:move_1)
+    allow(player_1).to receive(:move).and_return(:move_1)
+    game.play_computer
     expect(rules).to have_received(:calculate_result).with(:move_1,:move_2)
   end
 

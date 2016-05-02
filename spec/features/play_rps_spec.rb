@@ -8,7 +8,7 @@ feature 'play the game of rock paper scissors' do
   scenario 'scissors cut paper' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     play_scissors
-    expect(page).to have_content 'You win!'
+    expect(page).to have_content 'Hulk wins!'
   end
 
   scenario 'scissors draw with scissors' do
@@ -20,7 +20,7 @@ feature 'play the game of rock paper scissors' do
   scenario 'scissors lose to rock' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     play_scissors
-    expect(page).to have_content 'You lose!'
+    expect(page).to have_content 'Hulk loses!'
   end
 
 end

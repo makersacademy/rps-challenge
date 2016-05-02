@@ -8,8 +8,8 @@
     <%= @player_1_name %> vs. <%= @player_2_name %>
   </h1>
 
-  <p> <%= @player_1_name %>, choose wisely! </p>
-  <form action="/multiplayer_turn_1" method="post">
+  <p> <%= @player_2_name %>, you did not peek, did you? </p>
+  <form action="/multiplayer_turn_2" method="post">
     <label for="rock">Rock</label>
     <input type="radio" name="move" id="rock" value="rock"><br>
     <label for="paper">Paper</label>

@@ -23,7 +23,7 @@ feature 'multiplayer' do
     multiplayer_start
     play_scissors
     play_rock
-    expect(page).to have_content 'Ironman wins!'
+    expect(page).to have_content 'Hulk loses!'
   end
 
 end

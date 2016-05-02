@@ -22,12 +22,12 @@ class Game
   end
 
 
-  def play_computer(player_move)
-    rules.calculate_result(player_move, rules.random_move)
+  def play_computer
+    rules.calculate_result(player_1.move, rules.random_move)
   end
 
-  def play_human(player_1_move, player_2_move)
-    rules.calculate_result(player_1_move,player_2_move)
+  def multiplayer_result
+    rules.calculate_result(player_1.move,player_2.move)
   end
 
   private
