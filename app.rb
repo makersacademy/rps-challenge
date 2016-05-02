@@ -23,11 +23,12 @@ class Rps < Sinatra::Base
   end
 
   post '/result' do
-    @player_1_choice = params[:type].to_sym
-    @outcome = @game.play(@player_1_choice)
+    player_1_choice = params[:type].to_sym
+    @game.play(player_1_choice)
+    redirect '/result-final'
   end
 
-  get '/result' do
+  get '/result-final' do
     erb :result
   end
 

@@ -1,9 +1,8 @@
 class Game
-  attr_reader :player_1, :computer, :result
+  attr_reader :player_1, :result
 
   def initialize(player_1)
     @player_1 = player_1
-    @computer = computer
     @result = result
     @rules = {
     :paper    => {:rock => :paper, :paper => :draw, :scissors => :scissors},
@@ -14,19 +13,32 @@ class Game
   end
 
   def play(p1)
-    @computer = @options.shuffle.sample
+    @player_1_choice = p1.to_s
     @result = @rules[p1][computer_draw]
     if @result == p1
-      "Player 1 wins"
+      @outcome = "Player 1 wins"
     elsif @result == :draw
-      "Draw!"
+      @outcome = "It's a draw!"
     else
-      "Computer wins"
+      @outcome = "The computer wins"
     end
   end
 
+  def outcome
+    @outcome
+  end
+
   def computer_draw
-    @options.shuffle.sample
+    @computer_draw = @options.sample
+    @computer_draw
+  end
+
+  def computer_choice
+    @computer_draw
+  end
+
+  def player_1_choice
+    @player_1_choice
   end
 
   def self.create(player_1)

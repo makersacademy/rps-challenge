@@ -1,10 +1,11 @@
 <body style="background-color:#FFDCB7; border: 3px solid black">
   <div style="text-align:center">
     <h1><%= @game.player_1.name %> vs. Computer </h1>
+    <img src='https://media.giphy.com/media/Z7syBJH78V0oo/giphy.gif' width="300" height "225"/>
     <form action="/result" method="post">
-      <input type="radio" name="type" value="rock" checked> Rock<br>
-      <input type="radio" name="type" value="paper"> Paper<br>
-      <input type="radio" name="type" value="scissors"> Scissors<br>
+      <input type="radio" name="type" id="Rock"  value="rock" checked> Rock<br>
+      <input type="radio" name="type" id="Paper" value="paper"> Paper<br>
+      <input type="radio" name="type" id="Scissors"  value="scissors"> Scissors<br>
       <input type="submit" value="Submit">
     </form>
     </div>

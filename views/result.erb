@@ -1,10 +1,13 @@
 <body style="background-color:#FFDCB7; border: 3px solid black">
-  <h1> <%= @game.player_1.name %> chose <%= @result_1 %> </h1>
-  <h2> The computer chose <%= @game.computer %> </h2>
-  <h3> <%= @outcome %> </h3>
-  <form action="/play" method="post">
+  <div style="text-align:center">
+  <h1> <%= @game.player_1.name %> chose <%= @game.player_1_choice %> </h1>
+  <h1> The computer chose <%= @game.computer_choice %> </h1>
+  <h1> <%= @game.outcome %> </h1>
+  <img src='https://media.giphy.com/media/Xmbnu0oH3bMEo/giphy.gif' width="300" height "225"/>
+  <form action="/" method="get">
     <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
       <input type="submit" value="OK">
     </div>
   </form>
+</div>
 </body>
