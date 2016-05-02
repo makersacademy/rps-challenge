@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/name_log'
+require './lib/result'
 
 class Rps < Sinatra::Base
 
