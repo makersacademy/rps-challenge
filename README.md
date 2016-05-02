@@ -1,3 +1,5 @@
+![alt tag](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)
+
 Rock, Paper, Scissors, Lizard, Spock, Spiderman, Batman, Wizard, Glock (or RPSLSSBWG)
 
 RPSLSSBWG is an expansion on the traditional Rock Paper Scissors game that uses modular arithmetic to determine
