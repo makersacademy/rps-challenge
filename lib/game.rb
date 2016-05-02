@@ -4,17 +4,14 @@ require_relative 'computer'
 class Game
 
 
-attr_reader :player, :computer
+attr_reader :player_name, :computer
 
-def initialize(name, computer = Computer.new)
-  @player = Player.new(name)
+def initialize(player_name)
+  @player_name = player_name
   @computer = computer
   end
 
 
-  def name
-    @player.name
-  end
 
 
 end

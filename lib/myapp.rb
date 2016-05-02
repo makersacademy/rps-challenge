@@ -11,6 +11,7 @@ class MyApp < Sinatra::Base
   end
 #temp bad bad bad global variable
   post '/names' do
+
   $player_name = Player.new(params[:player_name])
     redirect '/play'
 
