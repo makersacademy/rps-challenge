@@ -1,0 +1,19 @@
+<link href= "/styles.css" type="text/css" rel= "stylesheet"/>
+
+
+<div align="center">
+  <header>
+    <h1><%=@game.player_1.name%> choose your weapon</h1>
+  </header>
+
+<form action= "/set_gesture" method="post">
+
+  <button class= "selection" type="submit" value = "rock" name="gesture"><img src="rock_sym.png"></button>
+  <button class= "selection" type="submit" value = "paper" name="gesture"><img src="paper_sym.png"> </button>
+  <button class= "selection" type="submit" value = "scissors" name="gesture"><img src="scissors_sym.png"> </button>
+  <%if @game.spock_and_lizard%>
+    <button class= "selection" type="submit" value = "spock" name="gesture"><img src="spock_sym.png"> </button>
+    <button class= "selection" type="submit" value = "lizard" name="gesture"><img src="lizard_sym.png"> </button>
+  <%end%>
+</form>
+</div
