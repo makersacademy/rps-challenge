@@ -9,6 +9,7 @@ class Rps < Sinatra::Base
 
   get '/' do
     if File.file?("./lib/name_log.txt")
+      NameLog.load_name
       redirect '/splash'
     else
      erb :index

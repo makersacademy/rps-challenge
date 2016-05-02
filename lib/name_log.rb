@@ -17,6 +17,10 @@ def self.log_name
   name_log.close
 end
 
+def self.load_name
+  @player_name = File.open("./lib/name_log.txt").first.chomp
+end
+
 def initialize(name)
   @player_name =  name
 end
