@@ -25,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @game.player_move = params[:move]
-    @game.opponent_move
+    @game.set_opponent_move
     redirect '/results'
   end
 

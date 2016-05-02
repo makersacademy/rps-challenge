@@ -45,11 +45,11 @@ describe Game do
     end
   end
 
-  describe '#opponent_move' do
+  describe '#set_opponent_move' do
     it 'asks the opponent class to move' do
       allow(opponent).to receive(:move)
       expect(opponent).to receive(:move)
-      game.opponent_move
+      game.set_opponent_move
     end
   end
 

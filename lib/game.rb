@@ -15,7 +15,7 @@ class Game
     @opponent = opponent_class.new @rules
   end
 
-  attr_reader :player_move, :mode
+  attr_reader :mode, :player_move, :opponent_move
 
   def player_name
     @player_name.clone
@@ -25,8 +25,8 @@ class Game
     @player_move = move.to_sym
   end
 
-  def opponent_move
-    @opponent.move
+  def set_opponent_move
+    @opponent_move = @opponent.move
   end
 
   def result
