@@ -26,9 +26,14 @@ class RPS < Sinatra::Base
   post '/action' do
     @game.player_choice(params[:move])
     @game.computer_choice
+    @game.calculate_result
     erb(:action)
   end
 
+  get '/rematch' do
+    @game.rematch
+    redirect '/play'
+  end
 
 run! if app_file == $PROGRAM_NAME
 end

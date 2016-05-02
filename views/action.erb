@@ -4,12 +4,16 @@
 
 <body>
   <center>
-    <label id=banner>
-      <%= @game.player.name %> choose <%=@game.player_move%>
+    <label id="banner">
+      <%= @game.player.name %> : Score : <%=@game.player.score%> ---- Computer : Score : <%=@game.computer.score%>
     </label>
     <br>
     <label id=banner>
-      Computer choose <%= @game.computer_move %>
+      <%= @game.player.name %> chose <%=@game.player_move%>
+    </label>
+    <br>
+    <label id=banner>
+      Computer chose <%= @game.computer_move %>
     </label>
     <br>
 
@@ -30,6 +34,9 @@
     <label id=banner>
       <h2>The winner is <%= @game.outcome %>!!!<h2>
     </label>
+    <form action="/rematch" method="get" >
+      <input type="submit" value="Play again">
+    </form>
     <% end %>
 
   </center>

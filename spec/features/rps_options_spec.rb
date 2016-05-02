@@ -6,5 +6,7 @@ feature 'Buttons Available' do
   expect(page).to have_button('ROCK')
   expect(page).to have_button('PAPER')
   expect(page).to have_button('SCISSORS')
+  expect(page).to have_button('LIZARD')
+  expect(page).to have_button('SPOCK')
   end
 end

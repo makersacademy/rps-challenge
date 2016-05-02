@@ -15,7 +15,7 @@ describe Game do
     end
 
     it 'should initialize with a list of winning moves' do
-      expect(game.winning_moves).to be_a(Hash)
+      expect(game.winning_moves).to be_an(Array)
     end
   end
 
@@ -58,9 +58,18 @@ describe Game do
   describe '#result' do
     context 'drawing' do
       it 'should draw the game' do
-        game.player_choice('ROCK')
-        game.instance_variable_set("@computer_move", :ROCK)
-        expect(game.result).to eq 'draw'
+        draws = [
+          { player_move: 'ROCK', computer_move: :ROCK},
+          { player_move: 'PAPER', computer_move: :PAPER},
+          { player_move: 'SCISSORS', computer_move: :SCISSORS},
+          { player_move: 'LIZARD', computer_move: :LIZARD},
+          { player_move: 'SPOCK', computer_move: :SPOCK}
+        ]
+        draws.each do |moves|
+          game.player_choice(moves[:player_move])
+          game.instance_variable_set("@computer_move", moves[:computer_move])
+          expect(game.calculate_result).to eq 'draw'
+        end
       end
       it 'shouldn\'t change the score' do
         game.player_choice('ROCK')
@@ -71,28 +80,53 @@ describe Game do
     end
     context 'winning' do
       it 'should win the game' do
-        game.player_choice('PAPER')
-        game.instance_variable_set("@computer_move", :ROCK)
-        allow(player).to receive(:score=).and_return 1
-        expect(game.result).to eq 'win'
+        wins = [
+          { player_move: 'ROCK', computer_move: :LIZARD},
+          { player_move: 'LIZARD', computer_move: :SPOCK},
+          { player_move: 'SPOCK', computer_move: :SCISSORS},
+          { player_move: 'SCISSORS', computer_move: :PAPER},
+          { player_move: 'PAPER', computer_move: :ROCK},
+          { player_move: 'ROCK', computer_move: :SCISSORS},
+          { player_move: 'SCISSORS', computer_move: :LIZARD},
+          { player_move: 'LIZARD', computer_move: :PAPER},
+          { player_move: 'PAPER', computer_move: :ROCK},
+        ]
+        wins.each do |moves|
+          game.player_choice(moves[:player_move])
+          game.instance_variable_set("@computer_move", moves[:computer_move])
+          allow(player).to receive(:score=).and_return 1
+          expect(game.calculate_result).to eq 'win'
+        end
       end
       it 'should change the player\'s score by 1' do
         game.player_choice('PAPER')
         game.instance_variable_set("@computer_move", :ROCK)
-        expect(player).to receive(:score=).with 1
         game.result
       end
     end
     context 'losing' do
       it 'should lose the game' do
-        game.player_choice('PAPER')
-        game.instance_variable_set("@computer_move", :SCISSORS)
-        expect(game.result).to eq 'lose'
+        loses = [
+          { player_move: 'ROCK', computer_move: :PAPER },
+          { player_move: 'PAPER', computer_move: :LIZARD },
+          { player_move: 'LIZARD', computer_move: :SCISSORS },
+          { player_move: 'SCISSORS', computer_move: :ROCK },
+          { player_move: 'ROCK', computer_move: :PAPER },
+          { player_move: 'PAPER', computer_move: :SCISSORS },
+          { player_move: 'SCISSORS', computer_move: :SPOCK },
+          { player_move: 'SPOCK', computer_move: :LIZARD },
+          { player_move: 'LIZARD', computer_move: :ROCK }
+        ]
+        loses.each do |moves|
+          game.player_choice(moves[:player_move])
+          game.instance_variable_set("@computer_move", moves[:computer_move])
+          expect(game.calculate_result).to eq 'lose'
+        end
       end
       it 'should change the computer\'s score by 1' do
         game.player_choice('PAPER')
         game.instance_variable_set("@computer_move", :SCISSORS)
-        expect{game.result}.to change{game.computer.score}.by 1
+        expect{game.calculate_result}.to change{game.computer.score}.by 1
       end
     end
   end
