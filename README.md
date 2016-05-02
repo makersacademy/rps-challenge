@@ -31,15 +31,11 @@ Basic Rules
 
 Installation Instructions
 ------
-$ git clone git@github.com:GeekG1rl/rps-challenge.git
-
-$ cd rps-challenge
-
-$ gem install
-
-$ bundle
-
-$ rackup
+$ git clone git@github.com:GeekG1rl/rps-challenge.git 
+$ cd rps-challenge 
+$ gem install 
+$ bundle 
+$ rackup 
 
 Technologies Used
 -------
