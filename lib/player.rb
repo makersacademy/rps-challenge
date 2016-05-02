@@ -2,7 +2,7 @@ class Player
 
   attr_reader :name, :gesture, :score
 
-  def initialize name = "Nameless one"
+  def initialize name
     @name = name
     @gesture = nil
     @score = 0

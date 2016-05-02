@@ -6,19 +6,12 @@ feature 'Best of' do
     expect(page).to have_content "Best of: 3"
   end
 
-  context "neither player has more than half of best of value" do
-    scenario 'has a "next round" button' do
-      sign_in_and_choose_rock
-      expect(page).to have_button "Next Round"
-    end
-
-    scenario '"next round" button takes to selection screen' do
-      sign_in_and_choose_rock
-      click_button "Next Round"
-      expect(page).to have_button "rock"
-      expect(page).to have_button "paper"
-      expect(page).to have_button "scissors"
-    end
+  scenario '"next round" button points to selection screen' do
+    sign_in_and_choose_rock
+    click_button "Next Round"
+    expect(page).to have_button "rock"
+    expect(page).to have_button "paper"
+    expect(page).to have_button "scissors"
   end
 
   context "one player has more than half of best of value" do
@@ -36,11 +29,7 @@ feature 'Best of' do
       expect(page).to have_content "Johnson is the champion"
     end
 
-    scenario 'best of +2 button' do
-      expect(page).to have_button "Best of 5?"
-    end
-
-    scenario 'best of +2 button reroutes to selection page' do
+    scenario 'best of +2 button points to selection page' do
       click_button "Best of 5?"
       expect(page).to have_button "rock"
     end
@@ -49,7 +38,6 @@ feature 'Best of' do
       click_button "Best of 5?"
       click_button "rock"
       expect(page).to have_content "Best of: 5"
-
     end
   end
 

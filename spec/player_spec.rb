@@ -6,10 +6,6 @@ describe Player do
   it 'has a name' do
     expect(player.name).to eq 'Johnson'
   end
-  it 'default name is "Nameless one"' do
-    player = described_class.new
-    expect(player.name).to eq 'Nameless one'
-  end
 
   it 'initially no gesture' do
     expect(player.gesture).to be_nil
