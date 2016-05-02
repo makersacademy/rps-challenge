@@ -33,9 +33,9 @@ class RPS < Sinatra::Base
     erb :game
   end
 
-  get '/rock' do
-    "hello world"
-  end
+  # get '/rock' do
+  #   "hello world"
+  # end
 
   post '/rock' do
     @selected.player.rock
