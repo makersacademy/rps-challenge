@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/computer'
 require './lib/rock_paper_scissors_rules'
 require './lib/rock_paper_scissors_spock_lizard_rules'
 
