@@ -9,11 +9,11 @@ require 'game'
       it 'starts with a player' do
         expect(game.player).to eq player
       end
-  describe '#choice' do
-    it 'sets the players choice to @player_choice ' do
-      game.choice(scissors)
-      expect(game.player_choice).to eq scissors
-    end
+    describe '#choice' do
+      it 'sets the players choice to @player_choice ' do
+        game.choice(scissors)
+        expect(game.player_choice).to eq scissors
+      end
       context 'player_choice is rock' do
         it 'sets @winner to computer wins when computer shows paper' do
           allow(game.computer).to receive(:computer_choice).and_return(paper)
