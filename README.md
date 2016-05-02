@@ -35,7 +35,7 @@ click Submit, and only at that stage ask your opponent to look at your screen an
 
 If you play against the computer,after choosing your element you will get a result screen:
 
-![img result spock](https://onedrive.live.com/redir?resid=FB615305C40D0298!1983&authkey=!AGiHEJc_d6FgXIw&v=3&ithint=photo%2cpng)
+![img result spock](https://fd5m4a.bn1301.livefilestore.com/y3phmNBL-g8rMJzjF5syOE9LwbDF018VwcJwSuQrxDg0mkSNIwFheErCBfbGGzVlr8tJO-ao-jO1Smk8QoOscJ3ER5cz2V6P4kil2oxPGIyEalv2aJKdvGXYDqh0XVZwcR-aTFi85cvKrMQ9odJROq9QS0bnXfMEOv6LPPkwU1-9Vc/2016-05-02%20%2819%29.png?psid=1)
 
 Note how the program chooses the right verb for the relevant pair, (in this case, Spocks vaporises the rock).
 
