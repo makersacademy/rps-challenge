@@ -1,6 +1,13 @@
-<center>
-<%=@game.player_option %>
-<form action='/play' method='get'>
-  <input type='submit' value='Restart!'/>
-</form>
-</center>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <title> Rock, paper, scissors </title>
+  </head>
+  <body>
+    <h1>  <%=@game.win.nil? %>
+    <form action='/play' method='get'>
+      <input type='submit' value='Restart!'/>
+    </form>
+  </body>
+</html>

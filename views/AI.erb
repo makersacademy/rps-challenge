@@ -1,9 +1,28 @@
-<center><div id='machine'>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <title> Rock, paper, scissors </title>
+  </head>
+  <body>
 
-The machine has chosen <%= @machine.choose_weapon %>!
+    <% if @machine.choose_weapon == 'PAPER'%>
+      <img src="https://www.geriatricmedical.com/UserFiles/Images/Products/Toliet_tissue_bathroom.jpg"/>
+      <% end %>
 
-</div>
+    <% if @machine.choose_weapon == 'ROCK'%>
+      <img src="http://az616578.vo.msecnd.net/files/2016/04/12/6359601932026675251094891209_key%20holder.jpg"/>
+    <% end %>
+
+    <% if @machine.choose_weapon == 'SCISSORS'%>
+      <img src="http://www.whsmith.co.uk/pws/client/images/catalogue/products/8562/18//xlarge/856218_1.jpg"/>
+    <% end %>
+
+    <div id='machine'>
+
+      <h1>The machine has chosen <%= @machine.choose_weapon %>!</h1>
+
+    </div>
  <form action='/result' method='get'>
    <input type='submit' value='continue'/>
  </form>
-</center>

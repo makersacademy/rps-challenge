@@ -1,0 +1,73 @@
+body {
+	margin: auto;
+	text-align: center;
+	background-image: url('http://www.ponderweasel.com/wp-content/uploads/2014/11/who-invented-rock-paper-scissors.png');
+}
+span {
+	font-family: cursive;
+	color: #e31f24;
+}
+img {
+	display: block;
+	height: 600px;
+	width: 900px;
+	margin: auto;
+}
+
+p {
+	text-align: center;
+	font-family: Garamond, serif;
+	font-size: 18px;
+}
+
+/*Start adding your CSS below!*/
+
+div {
+
+	  height: 200px;
+    width: 500px;
+		background-color: #ffffff;
+    border-color: #6495ed;
+    border-style: groove;
+    border-width: 5px;
+    border-radius: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+input {
+		font-size: 18px;
+	  height: 40px;
+    width: 150px;
+		background-color: #	#d3d532;
+    border-color: 	#004444;
+    border-style: dotted;
+    border-width: 5px;
+    border-radius: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+    color: #745a5a;
+    font-family: Helvetica;
+}
+
+table {
+	background-color: transparent;
+	border-color: #6495ed;
+	border-style: groove;
+	border-width: 5px;
+	margin: auto;
+	text-align: center;
+}
+
+th {
+	background-color: #ffffff;
+	border-color: #6495ed;
+	border-style: groove;
+	border-width: 5px;
+	border-radius: 200px;
+}
