@@ -4,9 +4,8 @@ body {
   padding: 0;
 }
 
-header {
+#header {
   padding: 15px;
-  box-shadow: 1px 0 3px rgba(0,0,0, 0.3);
   background-image: url(/images/darth_stripe.png);
   color: white;
   font-family: 'Lobster', cursive;
@@ -22,13 +21,8 @@ footer {
   bottom: 0;
 }
 
-#footer {
-  margin: 0 auto;
-  width: 800px;
-}
-
 footer img {
-  float: left;
+  float: center;
   margin-right: 40px;
   width: 240px;
 }
@@ -38,16 +32,11 @@ footer div {
   margin: 10px 0;
 }
 
-#score-in-frame {
-  text-align: center;
-}
-
 #submit_button {
-  position: relative;
-  font-size: 30px;
-  width: 50%;
+  width: 25%;
   height: 50px;
   border-radius: 30px;
+  font-size: 30px;
 }
 
 #submit_button:hover {
@@ -55,29 +44,11 @@ footer div {
   color: black;
 }
 
-#game-area {
-  width: 100%;
-  min-height: 400px;
-  margin: 0 auto;
-  position: relative;
-  /*background-color: rgba(0,0,0,.5);*/
-  color: white;
-}
-
 .center {
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   padding: 10px;
   text-align: center;
-}
-
-.game_mode {
-  width: 300px;
-  height: 300px;
-  border-radius: 30px;
-  font-family: 'Lobster', cursive;
-  margin: 20px;
-  font-size: 40px;
 }
 
 #bold {
@@ -90,4 +61,9 @@ footer div {
  width: 150px;
  height: 150px;
  margin: 10px;
+}
+
+#content {
+  height:auto;
+  position:relative;
 }
