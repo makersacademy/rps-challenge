@@ -12,7 +12,7 @@ class Game
   end
 
   def winner
-    return "no one, it's a tie" if player1.choice == player2.choice
+    return :tie if player1.choice == player2.choice
     evaluate_winner
   end
 

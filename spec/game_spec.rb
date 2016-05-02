@@ -4,11 +4,6 @@ describe Game do
   let(:player) { double :player, choice: 'Rock' }
   let(:computer) { double :player, choice: 'Paper' }
 
-  # it 'initializes with two players' do
-  #   Game.create(player, computer)
-  #   expect(Game.instance.players).to eq [player, computer]
-  # end
-
   it 'creates unique instance of self, second player defaulting to computer' do
     Game.create(player)
     expect(Game.instance).to be_instance_of(Game)
@@ -22,7 +17,7 @@ describe Game do
   it 'declares a tie' do
     Game.create(player, computer)
     allow(player).to receive(:choice).and_return('Paper')
-    expect(Game.instance.winner).to eq "no one, it's a tie"
+    expect(Game.instance.winner).to eq :tie
   end
 
 end

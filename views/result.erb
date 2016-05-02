@@ -10,8 +10,8 @@
         <p><%= @game.player1.name %> chose <b><%= @game.player1.choice %></b> </p>
         <p><%= @game.player2.name %> chose <b><%= @game.player2.choice %></b> </p>
 
-        <% if @game.winner.is_a? String %>
-        <h1>The winner is: <%= @game.winner %> </h1>
+        <% if @game.winner == :tie %>
+        <h1>The winner is: no one, it's a tie </h1>
         <% else %>
         <h1>The winner is: <%= @game.winner.name %> </h1>
         <% end %>
