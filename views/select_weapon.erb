@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
     <title>Rock, Paper, Scissors - Select Weapon</title>
   </head>
   <body>
-    <h1><%= @game.player_name %> vs. Computer</h1>
-    <form action='/play' method='post'>
-      <input type="radio" id="rock" name="move" value="rock" checked />
-      <label for="rock">Rock</label>
-      <input type="radio" id="paper" name="move" value="paper" />
-      <label for="paper">Paper</label>
-      <input type="radio" id="scissors" name="move" value="scissors" />
-      <label for="scissors">Scissors</label>
-      <% if @game.mode == RockPaperScissorsSpockLizardRules %>
-      <input type="radio" id="spock" name="move" value="spock" />
-      <label for="scissors">Spock</label>
-      <input type="radio" id="lizard" name="move" value="lizard" />
-      <label for="scissors">Lizard</label>
-      <% end %>
-      <input type='submit' value="Submit" />
-    </form>
+    <div id="main">
+      <div class="header">
+        <h1><%= @game.player_name %> vs. Computer</h1>
+      </div>
+      <div class="content">
+        <img src="images/rps-2.gif" />
+        <form action='/play' method='post'>
+          <div class="radio">
+            <label for="rock">Rock</label>
+            <input type="radio" id="rock" name="move" value="rock" checked />
+          </div>
+          <div class="radio">
+            <label for="paper">Paper</label>
+            <input type="radio" id="paper" name="move" value="paper" />
+          </div>
+          <div class="radio">
+            <label for="scissors">Scissors</label>
+            <input type="radio" id="scissors" name="move" value="scissors" />
+          </div>
+          <% if @game.mode == RockPaperScissorsSpockLizardRules %>
+          <div class="radio">
+            <label for="scissors">Spock</label>
+            <input type="radio" id="spock" name="move" value="spock" />
+          </div>
+          <div class="radio">
+            <label for="scissors">Lizard</label>
+            <input type="radio" id="lizard" name="move" value="lizard" />
+          </div>
+          <% end %>
+          <div class="submit">
+            <input type='submit' value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

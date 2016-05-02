@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
     <title>Rock, Paper, Scissors - Play</title>
   </head>
   <body>
-    <h1><%= @game.player_name %> vs. Computer</h1>
-    <p>You chose <%= @game.player_move %></p>
-    <p>Computer chose <%= @game.opponent_move %></p>
-    <p>You <%= @game.result %>!</p>
+    <div id="main">
+      <div class="header">
+        <h1><%= @game.player_name %> vs. Computer</h1>
+      </div>
+      <div class="content">
+        <img src="images/rps-3.gif" />
+        <div class="text">
+          <p>You chose <%= @game.player_move %><br>
+          Computer chose <%= @game.opponent_move %><br>
+          You <%= @game.result %>!</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

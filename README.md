@@ -9,6 +9,7 @@ Overview
 Makers Academy Week 3 Weekend Challenge
 
 A basic web application for playing rock, paper, scissors.
+Styling inspired by Geocities...
 
 Makes use of:
 - [Sinatra](http://www.sinatrarb.com/)
@@ -17,7 +18,6 @@ Makes use of:
 
 
 As a bonus, you can also play [rock, paper, scissors, lizard, spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
-
 
 
 Installation
