@@ -1,4 +1,5 @@
 
+[![Build Status](https://travis-ci.org/festinalent3/rps-challenge.svg?branch=master)](https://travis-ci.org/festinalent3/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/festinalent3/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/festinalent3/rps-challenge?branch=master)
 
 About
 -----
@@ -55,11 +56,11 @@ This is a simple web application for playing a game of rock, paper, scissors wit
 Screenshots
 -----------
 
-![Screenshot](http://imgur.com/plpFJee)
+![Screenshot](http://i.imgur.com/plpFJee.png)
 
-![Screenshot](http://imgur.com/Neuh18e)
+![Screenshot](http://i.imgur.com/Neuh18e.png)
 
-![Screenshot](http://imgur.com/mnMosae)
+![Screenshot](http://i.imgur.com/mnMosae.png)
 
 
 
