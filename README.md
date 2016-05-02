@@ -12,7 +12,7 @@ Task
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-My task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+My task was to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -48,13 +48,16 @@ Functionality
 
 This is a simple web application for playing a game of rock, paper, scissors with a minimalistic user experience. There are two game modes:
 
-* Single player
-* Multi player
+* Single player - User vs Computer
+* Multi player - User vs Another user
 
-
+The user/users can keep playing each game for as many rounds as they feel necessary in order to escape the daily grind.
 
 Screenshots
 -----------
+
+Multi player example, views of index, entering names and the first players turn.
+
 
 ![Screenshot](http://i.imgur.com/plpFJee.png)
 
