@@ -19,7 +19,6 @@ class Game
 
   def result(p1, p2)
     ans = ((OPTIONS[p1.to_sym]) - (OPTIONS[p2.to_sym])) % 5
-
     if (ans == 1) || (ans == 3)
       increase_score(player1)
       "#{player1.name} wins! #{p1.capitalize} beats #{p2.capitalize}"
@@ -37,7 +36,6 @@ class Game
 
   def random
     ["rock", "paper", "scissors", "spock", "lizard"].sample
-    # Kernel.rand(1..5)
   end
 
 end
