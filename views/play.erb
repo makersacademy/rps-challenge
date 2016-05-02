@@ -1,7 +1,9 @@
 <%= @game.player.name %> vs. Computer
 <br>
 Please choose your weapon!
-
+<br>
+<%= @game.player.name %>: <%= @game.player.points %> points
+Computer: <%= @game.computer.points %> points
 <form action="/round" method="post">
   <input type="hidden" name="move" value="rock">
   <input type="submit" value="Rock">
