@@ -1,5 +1,5 @@
-require_relative 'player'
 require_relative 'computer'
+require_relative 'player'
 
 class Game
   RULES = { rock: :scissors,
@@ -7,32 +7,31 @@ class Game
           scissors: :paper }
 
 attr_reader :player, :computer
-  def initialize(computer, player)
-    @computer = computer
+  def initialize(computer=Computer, player)
     @player = player
+    @computer = computer
     @winning_moves =  {
-        :Rock => :Paper,
-        :Paper => :Scissors,
-        :Scissors => :Rock
+        :rock => :paper,
+        :paper => :scissors,
+        :scissors => :rock
       }
   end
-  def self.create(computer, player)
-    @game = Game.new(computer, player)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
-  def self.object
+  def self.instance
     @game
   end
 
     def select_winner(player_move)
         other_move= @computer.computer_move
-         puts other_move
         if player_move == other_move
-          'draw'
+          :draw
         elsif @winning_moves[player_move] == other_move
-          'losser'
+          :looser
         else
-          'winner'
+          :winner
         end
     end
 end

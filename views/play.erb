@@ -1,12 +1,5 @@
+<%= @game.player.name %> vs. Computer
 
-
-<h1 <%= @game.player.name %> vs. Computer </h1>
-<%= @game.player.name %>'s turn
-
-
-<form action="/move" method='post'>
-  <input type="radio" name="attack" value='Rock' id="rock" checked="checked"> Rock<br>
-  <input type="radio" name="attack" value='Paper' id="paper"> Paper<br>
-  <input type="radio" name="attack" value='Scissors' id="scissors"> Scissors<br>
-  <button>Proceed</button>
+<form action="/move">
+  <input type="submit" value="game begins now">
 </form>
