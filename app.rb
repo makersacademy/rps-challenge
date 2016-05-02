@@ -15,10 +15,15 @@ class Battle < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:player_1_name])
-    @game = Game.start(@player)
+    begin
+      @player = Player.new(params[:player_1_name])
+      @game = Game.start(@player)
 
-    redirect '/play'
+      redirect '/play'
+    rescue => error
+      @message = error.message
+      erb :index
+    end
   end
 
   get '/play' do
@@ -26,14 +31,12 @@ class Battle < Sinatra::Base
   end
 
   post '/result' do
-    @player_choice = params[:player_choice]
-
-    @game.play(@player_choice)
+    @game.play(params[:player_choice])
 
     erb :result
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 
 end
 

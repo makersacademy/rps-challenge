@@ -12,7 +12,6 @@ feature 'Start a new game' do
   scenario 'starting a new game' do
     sign_in_and_play
     expect(page).to have_content "Mara's turn"
-    # expect(page).to find_button("Start Game")
   end
 end
 
