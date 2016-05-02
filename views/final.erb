@@ -5,5 +5,11 @@
   </form>
 </centre>
 
+<% if @game.winner == "COMPUTER" %>
+  <embed src="http://66.90.91.26/ost/pokemon-gameboy-sound-collection/lwkznjvvdz/136-team-rocket-hideout.mp3" loop="true" autostart="true" hidden="true" />
+<% else %>
+  <embed src="http://66.90.91.26/ost/pokemon-gameboy-sound-collection/dxlbvlpzkr/129-victory-vs-gym-leader-.mp3" loop="true" autostart="true" hidden="true" />
+<% end %>
+
 <%@game.score.reset%>
 

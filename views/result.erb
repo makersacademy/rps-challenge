@@ -2,6 +2,7 @@
   <h3>Computer chose <%=@computer_attack%></h3>
   <br><br><br><br>
   <% if @winner == "DRAW" %>
+    <embed src="http://www.pacdv.com/sounds/fart-sounds/fart-wav-2.wav" loop="false" autostart="true" hidden="true" />
     <h2>A draw.... well that was anti-climactic.... just try again....</h2>
   <% else %>
     <h1><%=@winner%> won this round!</h1>
