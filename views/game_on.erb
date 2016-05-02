@@ -1,0 +1,14 @@
+<center>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<h1><%= @game.player_1.score %> - <%= @game.player_2.score %></h1>
+
+<p><%= @game.player_1.name %> played <%= @game.player_1_last_choice %> and <%= @game.player_2.name %> played <%= @game.player_2_last_choice %></p>
+<p><%= @game.message %> </p>
+<form action="/calculate" method="post">
+      <p><input type="radio" name="choice" value="scissor" id="scissor">scissor</p>
+      <p><input type="radio" name="choice" value="rock" id="rock">rock</p>
+      <p><input type="radio" name="choice" value="paper" id="paper">paper</p>
+      <input type="submit" value="Huzzah!">
+</form>
+
+</center>
