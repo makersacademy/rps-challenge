@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/help_start'
+require './lib/help_view'
 require './lib/player'
 require './lib/game'
 
@@ -17,7 +17,7 @@ class RockPaperScissors < Sinatra::Base
   get '/select' do
     session[:player_mode] = params[:player_mode]
     session[:game_mode] = params[:game_mode]
-    @player_mode = HelpStart.player_mode(params[:player_mode])
+    @player_mode = HelpView.player_mode(params[:player_mode])
     erb :index
   end
 
@@ -29,16 +29,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play_player1' do
-    redirect to 'play_player1_spock' if @game.game_mode == "spock"
-    erb :play_1_classic
+    @current_game_mode = HelpView.game_mode(@game.game_mode)
+    erb :play_1
   end
 
-  get '/play_player1_spock' do
-    erb :play_1_spock
-  end
-
-#adding screen to allow change of players and hide player_1's choice
-#
   get '/change_player' do
     @game.player_1.choice = params[:choice]
     redirect to '/play_player2' if @game.computer?
@@ -47,12 +41,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play_player2' do
     redirect to '/result' if @game.computer?
-    redirect to '/play_player2_spock'  if @game.game_mode == "spock"
-    erb :play_2_classic
-  end
-
-  get '/play_player2_spock' do
-    erb :play_2_spock
+    @current_game_mode = HelpView.game_mode(@game.game_mode)
+    erb :play_2
   end
 
   get '/result' do
