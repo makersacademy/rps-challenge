@@ -1,0 +1,30 @@
+<style>
+  body {
+    background-image: url("http://media2.giphy.com/media/ZrlFjwhclknWE/giphy.gif");
+    background-repeat: repeat;
+  }
+</style>
+
+
+<font type="helvetica" color="white" size="5">
+<h2 align="center"> <%= @game.player.name %> vs. <%= @game.computer.name %><br>
+<img src="http://www.weareteachers.com/images/default-source/blog-images/19-alternatives-to-the-fist-bump.jpg?sfvrsn=0">
+
+<br>
+Choose your weapon!</h2>
+<br><span class="highlight" color="black">
+<form action="/choice" method="post" align="center">
+<label for="choice">
+<input type="radio" name="choice" id="rock" value="rock">Rock
+<input type="radio" name="choice" id="paper" value="paper">Paper
+<input type="radio" name="choice" id="scissors" value="scissors">Scissors<br>
+<input type="radio" name="choice" id="lizard" value="lizard">Lizard
+<input type="radio" name="choice" id="spock" value="spock">Spock
+<input type="radio" name="choice" id="wizard" value="wizard">Wizard<br>
+<input type="radio" name="choice" id="batman" value="batman">Batman
+<input type="radio" name="choice" id="spiderman" value="spiderman">Spiderman
+<input type="radio" name="choice" id="glock" value="glock">Glock
+<br></font></span>
+<input type="submit" name="submit" value="GODSPEED">
+</label>
+</form>
