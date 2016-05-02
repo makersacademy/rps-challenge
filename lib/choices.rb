@@ -7,6 +7,13 @@ class Choices
              lizard: 3,
              spock: 4
             }
+  VERBS = {
+           spockscissors: "smashes", scissorspaper: "cuts",
+           paperrock: "covers", rocklizard: "crushes",
+           lizardspock: "poisons", spockrock: "vaporizes",
+           scissorslizard: "decapitates", paperspock: "disproves",
+           rockscissors: "crushes", lizardpaper: "eats"
+          }
   CLASSIC = 3
   SPOCK = 5
 
@@ -15,6 +22,11 @@ class Choices
   def self.to_i(choice)
     CHOICES[choice.to_sym]
   end
+
+  def self.verb(winner,loser)
+    VERBS[(winner+loser).to_sym]
+  end
+
 
 
 

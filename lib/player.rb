@@ -17,6 +17,6 @@ class Player
   def self_choice(game_mode)
     game_mode == "spock" ? size = Choices::SPOCK: size =Choices::CLASSIC
     value = Kernel.rand(size)
-    @choice = Choices::CHOICES.key(value)
+    @choice = Choices::CHOICES.key(value).to_s
   end
 end

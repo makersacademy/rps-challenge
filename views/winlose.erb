@@ -15,7 +15,7 @@
     <td><h2><div style="text-align: center;"><%= @game.player_1.name %>'s choice </div></h2></td>
         <td><h2><div style="text-align: center;"><%= @game.player_2.name %>'s choice </div></h2></td>
 </table>
-<div style ="text-align: center;"><em> The <%= @game.winner.choice %> chosen by <%= @game.winner.name %> beats the <%= @game.loser.choice %> chosen by <%= @game.loser.name %></em></div>
+<div style ="text-align: center;"><em> The <%= @game.winner.choice %> chosen by <%= @game.winner.name %> <%= Choices.verb(@game.winner.choice, @game.loser.choice)%> the <%= @game.loser.choice %> chosen by <%= @game.loser.name %></em></div>
 <br>
 <br>
 <br>

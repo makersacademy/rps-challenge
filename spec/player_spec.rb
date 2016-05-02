@@ -30,18 +30,18 @@ describe 'Player' do
   context 'computer choice' do
     it('provides a random choice for computer classic mode') do
       allow(Kernel).to receive(:rand).and_return(0)
-      expect(player.self_choice("classic")).to eq :scissors
+      expect(player.self_choice("classic")).to eq :scissors.to_s
     end
 
     it('provides a ramdom choice for computer spock mode') do
       allow(Kernel).to receive(:rand).and_return(4)
-      expect(player.self_choice("spock")).to eq :spock
+      expect(player.self_choice("spock")).to eq :spock.to_s
     end
 
     it('sets the attribute choice') do
       allow(Kernel).to receive(:rand).and_return(2)
       player.self_choice("classic")
-      expect(player.choice).to eq :rock
+      expect(player.choice).to eq :rock.to_s
     end
   end
 end
