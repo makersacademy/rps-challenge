@@ -12,8 +12,10 @@ class Choices
 
   attr_accessor :choice
 
-  def to_i
+  def self.to_i(choice)
     CHOICES[choice.to_sym]
   end
+
+
 
 end

@@ -46,7 +46,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @game.player_2.computer_choice(@game.game_mode) if @game.computer?
+    @game.player_2.self_choice(@game.game_mode) if @game.computer?
     @game.player_2.choice = params[:choice] unless @game.computer?
     redirect to '/draw' if @game.draw?
     erb :winlose

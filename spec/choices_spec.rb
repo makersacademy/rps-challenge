@@ -18,10 +18,8 @@ describe Choices do
   end
 
   context 'converts to choice to number' do
-    it('papers is converted to 1') do
-      choices.choice = "paper"
-      expect(choices.to_i).to eq Choices::CHOICES[:paper]
+    it('paper is converted to 1') do
+      expect(Choices.to_i("paper")).to eq Choices::CHOICES[:paper]
     end
   end
-
 end

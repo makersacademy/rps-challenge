@@ -23,7 +23,7 @@ class Game
 
   def winner
     size = calculate_size
-    score = (player_1.to_i - player_2.to_i)%size
+    score = (Choices.to_i(player_1.choice) - Choices.to_i(player_2.choice))% size
     determine_winner(score)
   end
 
@@ -39,7 +39,7 @@ class Game
   private
 
     def calculate_size
-      game_mode == "classic" ? size = Player::CLASSIC : size = Player::SPOCK
+      game_mode == "classic" ? size = Choices::CLASSIC : size = Choices::SPOCK
     end
 
     def determine_winner(result)
