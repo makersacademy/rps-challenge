@@ -34,19 +34,21 @@ $ ruby app.rb
 ```
 Then, you can open your browser and visit `localhost:4567`.
 
+
 The images below shows the user's interaction:
 
-	1. The user selects the desired options and clicks on the submit button.
+The user selects the desired options and clicks on the submit button.
 ![Home](https://www.dropbox.com/s/4yz4i1usiho0lxz/Home.png?dl=0 "Home page")
 
-	2. The user(s) enter(s) the name and click(s) on the submit button.
+The user(s) enter(s) the name and click(s) on the submit button.
 ![Names](https://www.dropbox.com/s/34hgl0lqiria571/names.png?dl=0 "Names page")
 
-	3. The user plays by choosing an option.
+The user plays by choosing an option.
 ![Play](https://www.dropbox.com/s/ln0xxn1xxhixc1j/play.png?dl=0 "Play page")
 
-	4. The result is displayed and the user selects whether to play again or go back to the Home page.
+The result is displayed and the user selects whether to play again or go back to the Home page.
 ![Result](https://www.dropbox.com/s/kruh7jgyqm7y46d/result.png?dl=0 "Result page")
+
 
 Project structure
 -----------------
