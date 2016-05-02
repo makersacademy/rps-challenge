@@ -7,7 +7,7 @@ class ComputerPlayer
 
   def initialize spock_and_lizard = false
     @score = 0
-    @spock_and_lizard = !!spock_and_lizard
+    @spock_and_lizard = spock_and_lizard
   end
 
   def name
