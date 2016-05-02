@@ -8,7 +8,7 @@ describe Player do
     it 'should initialize with a player name' do
       expect(player.name).to eq('maggie')
     end
-     it 'should initialize with a default score score' do
+    it 'should initialize with a default score score' do
       expect(player.score).to eq DEFAULT_SCORE
     end
   end

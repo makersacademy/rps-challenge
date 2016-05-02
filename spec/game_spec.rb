@@ -100,12 +100,13 @@ describe Game do
   describe '#outcome' do
     it 'should return a winner' do
       allow(player).to receive(:score=).and_return WINNING_SCORE
+      allow(player).to receive(:name).and_return 'player'
       game.win
-      expect(game.outcome).to eq player
+      expect(game.outcome).to eq 'player'
     end
     it 'should return a loser' do
       game.lose
-      expect(game.outcome).to be_a(Computer)
+      expect(game.outcome).to eq 'Computer'
     end
   end
 end
