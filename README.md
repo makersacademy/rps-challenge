@@ -11,13 +11,12 @@ How to play
 -------
 It is self-explanatory, but if not, take a read below.
 
-First decide if the number of players: 1 (play against Computer), or 2
-Second, decide the mode, (classic Rock Paper Scissors, or "spock lizard" mode) and click Submit
-In the next screen, add the relevant name(s) and click Submit.
-Then start making your choice clicking the relevant image...
-If you play against another person, you will have a confirmation screen:
-click Submit, and only at that stage ask your opponent to look at your screen and take its choice.
-If you play against the computer,after choosing your element you will get a result screen, for example:
+- First decide if the number of players: 1 (play against Computer), or 2
+- Second, decide the mode, (classic Rock Paper Scissors, or "spock lizard" mode) and click Submit
+- In the next screen, add the relevant name(s) and click Submit.
+- Then start making your choice clicking the relevant image...
+- If you play against another person, you will have a confirmation screen.  Click Submit, and only at that stage ask your opponent to look at your screen and take its choice.
+- If you play against the computer,after choosing your element you will get a result screen, for example:
 the spock chosen by <Player1> vaporises the rock chosen by <Player2>
 
 At that point you have the choice of continue playing with your opponent with the button play again, (and then scores will be updated accordingly), or click button Reset to start again from the beginning.
