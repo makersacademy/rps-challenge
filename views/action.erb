@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="action.css" />
+</head>
+
+<body>
+  <center>
+    <label id="banner">
+      <%= @game.player.name %> : Score : <%=@game.player.score%> ---- Computer : Score : <%=@game.computer.score%>
+    </label>
+    <br>
+    <label id=banner>
+      <%= @game.player.name %> chose <%=@game.player_move%>
+    </label>
+    <br>
+    <label id=banner>
+      Computer chose <%= @game.computer_move %>
+    </label>
+    <br>
+
+    <label id=banner>
+      You <%=@game.result%> this round
+    </label>
+
+    <% unless @game.over? %>
+      <form action="/play" method="get" >
+        <input type="submit" value="Next round">
+      </form>
+    <% end %>
+
+    <% if @game.over? %>
+    <label id=banner>
+      <h1>GAME OVER<h1>
+    </label>
+    <label id=banner>
+      <h2>The winner is <%= @game.outcome %>!!!<h2>
+    </label>
+    <form action="/rematch" method="get" >
+      <input type="submit" value="Play again">
+    </form>
+    <% end %>
+
+  </center>
+</body>

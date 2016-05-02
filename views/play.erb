@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="play.css" />
+</head>
+
+<body>
+  <center>
+    <label id="banner">
+      <%= @game.player.name %> : Score : <%=@game.player.score%> ---- Computer : Score : <%=@game.computer.score%>
+    </label>
+
+    <h2>Choose an option</h2>
+    <br>
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="ROCK">
+      <input type="submit" value="ROCK">
+    </form>
+
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="PAPER">
+      <input type="submit" value="PAPER">
+    </form>
+
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="SCISSORS">
+      <input type="submit" value="SCISSORS">
+    </form>
+
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="LIZARD">
+      <input type="submit" value="LIZARD">
+    </form>
+
+    <form action="/action" method="post">
+      <input type="hidden" name="move" value="SPOCK">
+      <input type="submit" value="SPOCK">
+    </form>
+
+  </center>
+</body>
