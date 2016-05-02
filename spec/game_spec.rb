@@ -2,9 +2,11 @@ require 'game'
 
 describe Game do
   let(:player_name) { random_string }
+  let(:opponent_class) { double :opponent_class, new: opponent }
+  let(:opponent) { double :opponent }
   let(:rps_rules_class) { double :rules_class, new: rps }
   let(:rps) { double :rules, moves: [:rock, :paper, :scissors]}
-  subject(:game) { described_class.new player_name, rps_rules_class }
+  subject(:game) { described_class.new player_name, rps_rules_class, opponent_class }
 
   describe 'Game#create' do
     subject(:game_class) { described_class }
@@ -43,15 +45,17 @@ describe Game do
     end
   end
 
-  describe '#set_opponent_move and #opponent_move' do
-    it 'sets and returns a random move' do
-      game.set_opponent_move
-      expect(rps.moves).to include(game.opponent_move)
+  describe '#opponent_move' do
+    it 'asks the opponent class to move' do
+      allow(opponent).to receive(:move)
+      expect(opponent).to receive(:move)
+      game.opponent_move
     end
   end
 
   describe '#result' do
     it 'checks the rules for the result' do
+      allow(opponent).to receive(:move)
       expect(rps).to receive(:result)
       game.result
     end

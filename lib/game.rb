@@ -8,13 +8,14 @@ class Game
     @game
   end
 
-  def initialize player_name, rules_class = RockPaperScissorsRules
+  def initialize player_name, rules_class = RockPaperScissorsRules, opponent_class = Computer
     @player_name = player_name
     @mode = rules_class
     @rules = rules_class.new
+    @opponent = opponent_class.new @rules
   end
 
-  attr_reader :player_move, :opponent_move, :mode
+  attr_reader :player_move, :mode
 
   def player_name
     @player_name.clone
@@ -24,8 +25,8 @@ class Game
     @player_move = move.to_sym
   end
 
-  def set_opponent_move
-    @opponent_move = @rules.moves.sample
+  def opponent_move
+    @opponent.move
   end
 
   def result
