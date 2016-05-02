@@ -1,12 +1,12 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/round'
+require './lib/game'
 
 
 class GamePlay < Sinatra::Base
 
   before do
-    @round = Round.instance
+    @game = Game.instance
   end
 
   get '/' do
@@ -22,28 +22,28 @@ class GamePlay < Sinatra::Base
   end
 
   post '/set_multi_player_names' do
-    Round.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
+    Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
     redirect '/game_play'
   end
 
   post '/set_player_name' do
-    Round.create(Player.new(params[:player_name]))
+    Game.create(Player.new(params[:player_name]))
     redirect '/game_play'
   end
 
   post '/set_choice' do
-    Round.instance.player1.choose(params[:choice])
-    Round.instance.player2.choose
+    Game.instance.player1.choose(params[:choice])
+    Game.instance.player2.choose
     redirect '/result'
   end
 
   post '/set_choice_first_player' do
-    Round.instance.player1.choose(params[:choice])
+    Game.instance.player1.choose(params[:choice])
     redirect '/game_play_second_player'
   end
 
   post '/set_choice_second_player' do
-    Round.instance.player2.choose(params[:choice])
+    Game.instance.player2.choose(params[:choice])
     redirect '/result'
   end
 

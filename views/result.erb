@@ -1,12 +1,12 @@
 <p>Hello</p>
 
-<p><%= @round.player1.name %> chosed <%= @round.player1.choice %> </p>
-<p><%= @round.player2.name %> chosed <%= @round.player2.choice %> </p>
+<p><%= @game.player1.name %> chosed <%= @game.player1.choice %> </p>
+<p><%= @game.player2.name %> chosed <%= @game.player2.choice %> </p>
 
-<% if @round.winner.is_a? String %>
-<p>The winner is: <%= @round.winner %> </p>
+<% if @game.winner.is_a? String %>
+<p>The winner is: <%= @game.winner %> </p>
 <% else %>
-<p>The winner is: <%= @round.winner.name %> </p>
+<p>The winner is: <%= @game.winner.name %> </p>
 <% end %>
 
 
