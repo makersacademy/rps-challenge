@@ -5,5 +5,6 @@ def sign_in
   fill_in :player_1, with: 'Lexi'
   fill_in :player_2, with: 'Hazuki'
   click_button 'Submit'
-  expect(page).to have_content 'Lexi vs Hazuki'
+  expect(page).to have_content 'Lexi'
+  expect(page).to have_content 'Hazuki'
 end

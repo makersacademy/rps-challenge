@@ -1,66 +1,53 @@
-<div style="transform-origin: left top 0;">
-	<h1 style="transform: rotate(90deg)"><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
-</div>
-
 <div style="text-align:center;">
 
 	<div>
 
 		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  <input type="hidden" name="choice" value="Lizard">
-		  <input class="lizard" type="image" src="images/lizard.png" alt="Lizard" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  <input type="hidden" name="choice" value="Paper">
-		  <input class="paper" type="image" src="images/paper.png" alt="Paper" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  <input type="hidden" name="choice" value="Rock">
-		  <input class="rock" type="image" src="images/rock.png" alt="Rock" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  <input type="hidden" name="choice" value="Scissors">
-		  <input class="scissors" type="image" src="images/scissors.png" alt="Scissors" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  <input type="hidden" name="choice" value="Spock">
-		  <input class="spock" type="image" src="images/spock.png" alt="Spock" width="100px" height="100px">
+		  	<button type="submit" class="top" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
+			<button type="submit" class="top" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
+			<button type="submit" class="top" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
+			<button type="submit" class="top" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
+			<button type="submit" class="top" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
 		</form>
 
 	</div>
 
-	<h3>It's <%= @game.current_player.name %>'s turn.</h3>
-	<h4>Pick a value</h4>
+	<% if @game.player_1.choice %>
+		<h2><%= @game.player_1.name %> chose <%= @game.player_1.choice %></h2>
+	<% else %>
+		<h2><%= @game.player_1.name %></h2>
+	<% end %>
 
-	<div style="position: absolute; bottom: 0; text-align:center;">
+	<div style="border: 1px solid black;">
+		<% if @game.player_1.choice && @game.player_2.choice %>
+			<% if @game.check_winner %>
+				<h3><%= @game.check_winner.name %> WINS!!</h3>
+				<% @game.reset %>
+				<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
+			<% else %>
+				<h3>IT'S A TIE.</h3>
+				<% @game.reset %>
+				<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
+			<% end %>
+		<% else %>
+			<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
+		<% end %>
+	</div>
+
+	<% if @game.player_2.choice %>
+		<h2><%= @game.player_2.name %> chose <%= @game.player_2.choice %></h2>
+	<% else %>
+		<h2><%= @game.player_2.name %></h2>
+	<% end %>
+
+	<div>
 
 		<form style="display: inline;" action="/player_2_choice" method="POST">
-		  <input type="hidden" name="choice" value="Lizard">
-		  <input class="lizard" type="image" src="images/lizard.png" alt="Lizard" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_2_choice" method="POST">
-		  <input type="hidden" name="choice" value="Paper">
-		  <input class="paper" type="image" src="images/paper.png" alt="Paper" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_2_choice" method="POST">
-		  <input type="hidden" name="choice" value="Rock">
-		  <input class="rock" type="image" src="images/rock.png" alt="Rock" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_2_choice" method="POST">
-		  <input type="hidden" name="choice" value="Scissors">
-		  <input class="scissors" type="image" src="images/scissors.png" alt="Scissors" width="100px" height="100px">
-		</form>
-
-		<form style="display: inline;" action="/player_2_choice" method="POST">
-		  <input type="hidden" name="choice" value="Spock">
-		  <input class="spock" type="image" src="images/spock.png" alt="Spock" width="100px" height="100px">
+			<button type="submit" class="bottom" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
+			<button type="submit" class="bottom" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
+			<button type="submit" class="bottom" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
+			<button type="submit" class="bottom" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
+			<button type="submit" class="bottom" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
 		</form>
 
 	</div>

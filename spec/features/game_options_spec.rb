@@ -4,17 +4,21 @@ feature 'Play the game' do
     sign_in
   end
 
+  scenario "print turn message" do
+    expect(page).to have_content "Lexi It's Lexi's turn. Pick a value, Lexi! Hazuki"
+  end
+
   scenario 'pick between 5 options' do
-    expect(page).to have_content "Pick a value"
-    find('input.lizard').click  
-    expect(page).to have_content "Lizard"
-    find('input.paper').click  
-    expect(page).to have_content "Paper"
-    find('input.rock').click  
-    expect(page).to have_content "Rock"
-    find('input.scissors').click  
-    expect(page).to have_content "Scissors"
-    find('input.spock').click  
-    expect(page).to have_content "Spock"
+    expect(page).to have_selector("button[type=submit][value='Lizard']")
+    expect(page).to have_selector("button[type=submit][value='Paper']")
+    expect(page).to have_selector("button[type=submit][value='Rock']")
+    expect(page).to have_selector("button[type=submit][value='Spock']")
+    expect(page).to have_selector("button[type=submit][value='Scissors']")
+  end
+
+  scenario "determine winner" do
+    find("button[type=submit][value='Lizard']").click
+    find("button[type=submit][value='Scissors']").click
+    expect(page).to have_content "Hazuki WINS"
   end
 end
