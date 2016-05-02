@@ -1,4 +1,4 @@
-Hello, <%=@name%>!
+Hello, <%=@game.name%>!
 
 <h3> Choose an option </h3>
 
@@ -8,7 +8,16 @@ Hello, <%=@name%>!
     <input type="submit" name="shape" value="Scissors">
 </form>
 
-You chose <%= @shape%>!
+You chose <%= @game.shape.to_s.capitalize%>!
 <div id="computer">
-Computer chose <%= @computer_shape.to_s.capitalize %>
+Computer chose <%= @game.computer_shape.to_s.capitalize %>
 </div>
+
+<% if @game.win? %>
+ YOU WIN
+ <% elsif @game.lose?%>
+ YOU LOSE
+ <% elsif @game.draw? %>
+ TIED GAME
+<% end %>
+
