@@ -13,16 +13,16 @@ class Game
     @player = player
     @computer = Computer.create
     @winning_moves = [
-      { :ROCK => :SCISSORS },
-      { :SCISSORS => :PAPER },
-      { :PAPER => :ROCK },
-      { :ROCK => :LIZARD },
-      { :LIZARD => :SPOCK },
-      { :SPOCK => :SCISSORS },
-      { :PAPER => :SPOCK },
-      { :SPOCK => :ROCK },
-      { :SCISSORS => :LIZARD },
-      { :LIZARD => :PAPER }
+      { ROCK: :SCISSORS },
+      { SCISSORS: :PAPER },
+      { PAPER: :ROCK },
+      { ROCK: :LIZARD },
+      { LIZARD: :SPOCK },
+      { SPOCK: :SCISSORS },
+      { PAPER: :SPOCK },
+      { SPOCK: :ROCK },
+      { SCISSORS: :LIZARD },
+      { LIZARD: :PAPER }
     ]
   end
 
@@ -44,25 +44,25 @@ class Game
 
   def calculate_result
     moves = {@player_move => @computer_move}
-    if @player_move == @computer_move
-      @result = 'draw'
-    elsif @winning_moves.include?(moves)
-      win
-      @result = 'win'
-    else
-      lose
-      @result = 'lose'
-    end
+    return draw if @player_move == @computer_move
+    return win if @winning_moves.include?(moves)
+    return lose
+  end
+
+  def draw
+    @result = 'draw'
   end
 
   def win
     @player.score += 1
     @winner = @player
+    @result = 'win'
   end
 
   def lose
     @computer.score += 1
     @winner = @computer
+    @result = 'lose'
   end
 
   def over?
