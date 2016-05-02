@@ -7,8 +7,8 @@
   <div class="bg-img">
     <div class="box">
       <center>
-        <p><%= @game.player1.name %> chosed <b><%= @game.player1.choice %></b> </p>
-        <p><%= @game.player2.name %> chosed <b><%= @game.player2.choice %></b> </p>
+        <p><%= @game.player1.name %> chose <b><%= @game.player1.choice %></b> </p>
+        <p><%= @game.player2.name %> chose <b><%= @game.player2.choice %></b> </p>
 
         <% if @game.winner.is_a? String %>
         <h1>The winner is: <%= @game.winner %> </h1>
