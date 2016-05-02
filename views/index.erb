@@ -1,14 +1,25 @@
-<form action='/name' method='post'>
-  <label for='name1'>
-    Player 1, what is your name?
-    <input type='text' name='name1'>
-  </label>
-  <label for='name2'>
-    Player 2, what is your name?
-    <input type='text' name='name2'>
-  </label>
-  <input type='checkbox' name='name2' value='machine'>
-  	Try my luck against the MACHINE
-  </br>
-  <input type='submit' value='Start the fun'>
-</form>
+<div class='container'>
+  <section class='row'>
+    <form action='/name' method='post'>
+      <div class='form-row'> 
+        <label for='name1'>
+          Player 1, what is your name?
+          <input type='text' name='name1'>
+        </label>
+      </div>
+      <div class='form-row'>
+        <label for='name2'>
+          Player 2, what is your name?
+          <input type='text' name='name2'>
+        </label>
+      </div>
+      <div class='form-row'>
+        <input type='checkbox' name='name2' value='machine'>
+  	      Try my luck against the MACHINE
+      </div>
+      <div class='form-row'>
+        <input class='btn' type='submit' value='Start the fun'>
+      </div>
+    </form>
+  </section>
+</div>
