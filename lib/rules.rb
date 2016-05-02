@@ -17,14 +17,14 @@ class Rules
 
   def results
     @results || {
-                rock: {scissors: 'win', paper: 'lose', rock: 'draw'},
-                paper: {rock: 'win', scissors: 'lose', paper: 'draw'},
-                scissors: {paper: 'win', rock: 'lose', scissors: 'draw'}
+                rock: {scissors: :win, paper: :lose, rock: :draw},
+                paper: {rock: :win, scissors: :lose, paper: :draw},
+                scissors: {paper: :win, rock: :lose, scissors: :draw}
                 }
   end
 
   def moves
-    @moves || ['rock', 'paper', 'scissors']
+    @moves || [:rock, :paper, :scissors]
   end
 
 end

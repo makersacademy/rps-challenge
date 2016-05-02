@@ -18,14 +18,9 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/single_result' do
-    session[:single_result] = Game.current_game.play_computer(params[:move])
-    redirect '/single_result'
-  end
-
   get '/single_result' do
-    @result = session[:single_result]
-    erb :single_result
+    @result = Game.current_game.play_computer(params[:move])
+    erb @result
   end
 
   post '/multiplayer' do

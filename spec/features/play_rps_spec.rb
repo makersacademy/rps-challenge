@@ -6,19 +6,19 @@ feature 'play the game of rock paper scissors' do
   end
 
   scenario 'scissors cut paper' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
     play_scissors
     expect(page).to have_content 'You win!'
   end
 
   scenario 'scissors draw with scissors' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     play_scissors
     expect(page).to have_content 'Draw!'
   end
 
   scenario 'scissors lose to rock' do
-    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     play_scissors
     expect(page).to have_content 'You lose!'
   end

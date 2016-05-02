@@ -1,6 +1,5 @@
 require_relative 'player'
 require_relative 'rules'
-require_relative 'moves'
 
 class Game
 
