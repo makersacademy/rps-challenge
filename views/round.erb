@@ -1,13 +1,20 @@
+<link href="/style.css" type="text/css" rel="stylesheet">
+<font size = "5"; color = "navy">
+<br>
+<h2 align ="center"><%= @game.player.name %> vs. Computer</h2>
+<br>
+<h3 align ="center">
 <%= @game.player.name %> chose <%= @game.player_move %>
 <br>
-Computer chose <%= @game.computer_move %>
+Computer chose <%= @game.computer_move %></h3>
 <br>
-You <%= @game.result %> this round
-<br>
-
-
-
+<div align = "center">
+<img src="http://www.ponderweasel.com/wp-content/uploads/2014/11/who-invented-rock-paper-scissors.png">
+</div>
+<div align ="center">
+<h3>You <%= @game.result %> this round!</h3>
 <form action="/result" method="post">
   <input type="submit" value="OK">
 </form>
+</div>
 
