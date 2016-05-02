@@ -1,22 +1,18 @@
-# RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
+[![Build Status](https://travis-ci.org/festinalent3/rps-challenge.svg?branch=master)](https://travis-ci.org/festinalent3/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/festinalent3/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/festinalent3/rps-challenge?branch=master)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+About
+-----
+Author: Emma Sjöström
 
-Task 
+This is the third individual challenge at Ronin, Makers Academy.
+
+Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+My task was to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -28,66 +24,82 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Instructions
+------------
+
+To download and enable:
+
+````
+$ git clone git@github.com:festinalent3/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+````
+
+To run locally:
+````
+$ ruby app.rb
+````
 
 
-As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
+Functionality
+-------------
 
-**Rōnin BANZAI!!!!**
+This is a simple web application for playing a game of rock, paper, scissors with a minimalistic user experience. There are two game modes:
 
-## Bonus level 1: Multiplayer
+* Single player - User vs Computer
+* Multi player - User vs Another user
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+The user/users can keep playing each game for as many rounds as they feel necessary in order to escape the daily grind.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Approach
+--------
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+The application is built using simple MVC logic and sinatra. Unit tests are built using Rspec and feature tests using the capybara gem.
 
-## Basic Rules
+The Game class is initialized following the singleton pattern, creating a unique instance of self whenever a user starts a new game.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+```
+#In app.rb - single player
+Game.create(Player.new(params[:player_name]))
 
-In code review we'll be hoping to see:
+#multi player
+Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
+```
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+The .create method of the Game class actually two arguments; instances of the Player class. The second argument defaults to a new player instance with the name attribute set to 'AI' if it is a single player game.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+Using the instance of Game in the controller allows us to receive information from the client used to change the internal state of either the game or one of the player instances.  
+
+```
+@game = Game.instance
+```
+
+Something I'd like to focus on is refactoring my controllers and views a bit, to push some logic further down the stack. Perhaps adding a few more, less complex views, that can be presented based on business logic presented to the controller by the models. But for now, enjoy my first web application!
+
+
+Screenshots
+-----------
+
+Multi player example, views of index, entering names and the first players turn.
+
+
+![Screenshot](http://i.imgur.com/plpFJee.png)
+
+![Screenshot](http://i.imgur.com/Neuh18e.png)
+
+![Screenshot](http://i.imgur.com/mnMosae.png)
+
+
 
 Notes on test coverage
 ----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics.
 
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+You can see your test coverage locally by running:
 
 ```
 $ coveralls report
 ```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-

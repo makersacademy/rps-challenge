@@ -1,0 +1,57 @@
+body {
+  margin: 10;
+  background: #000;
+}
+
+.bg-img {
+  background: url('/images/poly.jpg') no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140%;
+}
+
+.box {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  width: 500px;
+  margin: 12% auto 100px auto;
+}
+
+input[type=submit]  {
+  color: rgba(255,255,255,0.9);
+  background-color: rgba(0,0,0,0);
+  font-weight: 800;
+  border: 4px solid rgba(0,0,0,0.4);
+  padding: 25px;
+}
+
+
+input[type=submit]:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+
+input, textarea {
+  background-color: #C49F8A;
+  border: 5px solid #C49F8A;
+  margin: 10px;
+}
+
+h1 {
+  color: rgba(255,255,255,0.6);
+  font-weight: 800;
+  font-size: 39px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: rgba(255,255,255,0.9);
+  font-weight: 200;
+  font-size: 25px;
+}

@@ -1,0 +1,47 @@
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <div class="bg-img">
+    <div class="box">
+      <center>
+        <h1>The epic RPS Battle between <%= @game.player1.name %> &amp; <%= @game.player2.name %>!</h1>
+        <br>
+        <% if @game.player2.name == 'AI' %>
+        <p><b><%= @game.player1.name %></b>, choose wisely... </p>
+        <br>
+        <br>
+        <img src="/images/white_rock.png" />
+        <img src="/images/white_paper.png" />
+        <img src="/images/white_scissors.png" />
+
+        <form action='/set_choice' method=post>
+          <input type="submit" value="Rock" name="choice">
+          <input type="submit" value="Paper" name="choice">
+          <input type="submit" value="Scissors" name="choice">
+        </form>
+
+        <% else %>
+
+        <p><b><%= @game.player1.name %></b>, choose wisely... </p>
+        <br>
+        <br>
+        <img src="/images/white_rock.png" />
+        <img src="/images/white_paper.png" />
+        <img src="/images/white_scissors.png" />
+
+        <form action='/set_choice_first_player' method=post>
+          <input type="submit" value="Rock" name="choice">
+          <input type="submit" value="Paper" name="choice">
+          <input type="submit" value="Scissors" name="choice">
+        </form>
+
+        <% end %>
+      </center>
+    </div>
+  </div>
+
+</body>
