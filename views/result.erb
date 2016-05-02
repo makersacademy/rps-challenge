@@ -3,4 +3,4 @@
 <% comp_move = ['rock', 'paper', 'scissors'].sample %>
 <p>The computer plays '<%= comp_move %>'</p>
 <p>
-<p>The winner is <%= Result.new(params[:move], comp_move).judge %>
+<p>You <%= Result.new(params[:move], comp_move).judge.to_s %>!</p>
