@@ -19,8 +19,13 @@ class Game
   end
 
   def winner
-    self.winner_calc == 0 ? "tie" :
-    self.winner_calc == 1 || self.winner_calc == 2 ? @computer : @player
+    if self.winner_calc == 0
+      "tie"
+    elsif self.winner_calc == 1 || self.winner_calc == 2
+      @computer
+    else
+      @player
+    end
   end
 
   def self.start(computer, player)
