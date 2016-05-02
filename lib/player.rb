@@ -1,17 +1,15 @@
 class Player
-
   attr_reader :name
 
   def initialize(name)
     @name = name
   end
 
-   def self.create(player)
+  def self.create(player)
     @player= Player.new(player)
   end
-  def self.get_player
+
+  def self.player
     @player
   end
-
-
 end

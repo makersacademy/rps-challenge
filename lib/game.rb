@@ -28,7 +28,7 @@ attr_reader :player_choice
     paper(computer.computer_choice) if @player_choice == 'paper'
   end
 
-private
+  private
 
   def rock(choice)
     player_wins if choice == "scissors"
