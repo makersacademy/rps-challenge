@@ -3,11 +3,11 @@
 	<div>
 
 		<form style="display: inline;" action="/player_1_choice" method="POST">
-		  	<button type="submit" class="top" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
-			<button type="submit" class="top" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
-			<button type="submit" class="top" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
-			<button type="submit" class="top" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
-			<button type="submit" class="top" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
+		  	<button class="top" type="submit" class="top" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
+			<button class="top" type="submit" class="top" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
+			<button class="top" type="submit" class="top" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
+			<button class="top" type="submit" class="top" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
+			<button class="top" type="submit" class="top" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
 		</form>
 
 	</div>
@@ -21,7 +21,7 @@
 	<div style="border: 1px solid black;">
 		<% if @game.player_1.choice && @game.player_2.choice %>
 			<% if @game.check_winner %>
-				<h3><%= @game.check_winner.name %> WINS!!</h3>
+				<h3><%= @game.check_winner.name.upcase %> WINS!!</h3>
 				<% @game.reset %>
 				<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
 			<% else %>
@@ -43,12 +43,16 @@
 	<div>
 
 		<form style="display: inline;" action="/player_2_choice" method="POST">
-			<button type="submit" class="bottom" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
-			<button type="submit" class="bottom" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
-			<button type="submit" class="bottom" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
-			<button type="submit" class="bottom" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
-			<button type="submit" class="bottom" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
+			<button class="bottom" type="submit" class="bottom" name="choice" value="Lizard"><img src="images/lizard.png" alt="Lizard" width="100px" height="100px"></button>
+			<button class="bottom" type="submit" class="bottom" name="choice" value="Paper"><img src="images/paper.png" alt="Paper" width="100px" height="100px"></button>
+			<button class="bottom" type="submit" class="bottom" name="choice" value="Rock"><img src="images/rock.png" alt="Rock" width="100px" height="100px"></button>
+			<button class="bottom" type="submit" class="bottom" name="choice" value="Scissors"><img src="images/scissors.png" alt="Scissors" width="100px" height="100px"></button>
+			<button class="bottom" type="submit" class="bottom" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
 		</form>
-
 	</div>
+
+
+	<form style="padding-top: 100px;" method="get" action="/gameover">
+	   <button type="submit">STOP PLAYING</button>
+	</form>
 </div>
