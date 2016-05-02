@@ -12,10 +12,9 @@ describe Computer do
 
   describe '#choose_weapon' do
     it 'chooses an random weapon' do
-      allow_any_instance_of(Array).to receive(:sample).and_return("rock")
-      expect(computer.choose_weapon).to eq "rock"
-     end
-   end
-
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      expect(computer.choose_weapon).to eq :rock
+    end
+  end
 
 end

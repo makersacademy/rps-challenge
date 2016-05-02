@@ -2,10 +2,10 @@ require 'game'
 
 describe Game do
 
-  let(:rock_player) { double(:player, weapon: "rock" ) }
-  let(:paper_player) { double(:player, weapon: "paper") }
-  let(:scissors_player) { double(:player, weapon: "scissors") }
-  let(:rock_computer) { double(:computer, weapon: "rock") }
+  let(:rock_player) { double(:player, weapon: :rock ) }
+  let(:paper_player) { double(:player, weapon: :paper) }
+  let(:scissors_player) { double(:player, weapon: :scissors) }
+  let(:rock_computer) { double(:computer, weapon: :rock) }
   subject(:win_game) { described_class.new(paper_player, rock_computer)}
   subject(:lose_game) { described_class.new(scissors_player, rock_computer) }
   subject(:draw_game) { described_class.new(rock_player, rock_computer) }
@@ -25,7 +25,7 @@ describe Game do
         Game.create(paper_player)
         expect(Game.instance).to be_a Game
       end
-    end
+  end
 
   describe '#result' do
     it 'returns win if the player wins' do
@@ -38,6 +38,5 @@ describe Game do
       expect(lose_game.result).to eq :lose
     end
   end
-
 
 end

@@ -4,8 +4,8 @@ require_relative 'player'
 class Game
 
   attr_reader :player_1, :player_2
-  LAW = {"rock" => "scissors", "paper" => "rock", "scissors" => "paper"}
-  WEAPONS = ["rock", "paper", "scissors"]
+  RULES = {rock: :scissors, paper: :rock, scissors: :paper}
+  WEAPONS = [:rock, :paper, :scissors]
 
   def initialize(player_1, player_2 = Computer.new)
     @player_1 = player_1
@@ -21,8 +21,8 @@ class Game
   end
 
   def result
-    return :drew if (@player_1.weapon == @player_2.weapon)
-    return :win if (LAW[@player_1.weapon] == @player_2.weapon)
+    return :drew if @player_1.weapon == @player_2.weapon
+    return :win if RULES[@player_1.weapon] == @player_2.weapon
     :lose
   end
 

@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choose_weapons' do
     @game = Game.instance
-    @game.player_1.choose_weapon(params[:weapon])
+    @game.player_1.choose_weapon(params[:weapon].to_sym)
     @game.player_2.choose_weapon
     redirect '/result'
   end
