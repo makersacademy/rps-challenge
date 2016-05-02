@@ -2,36 +2,34 @@ require 'game'
 
 describe Game do
 
-  context 'winning' do
+  let(:player){ Player.new("Macey Forever") }
+  let(:computer){ Computer.new }
+  subject(:game){ Game.new(computer, player) }
+
+  describe 'choices hash' do
+    it 'adds a weapon to hash when selected' do
+      game.add_selection("rock", "scissors")
+      expect(game.choices).to include("rock")
+      expect(game.choices).to include("scissors")
+    end
+  end
+
+  context 'winning and losing' do
     describe 'when player wins' do
-      it 'displays player name as winner' do
+      it 'assigns player as winner' do
 
       end
     end
 
     describe 'when computer wins' do
-      it 'displays computer as winner' do
-
-      end
-    end
-  end
-
-  context 'losing' do
-    describe 'when player loses' do
-      it 'displays computer as winner' do
-
-      end
-    end
-
-    describe 'when computer loses' do
-      it 'displays player name as winner' do
+      it 'assigns computer as winner' do
 
       end
     end
   end
 
   context 'draw' do
-    it 'displays player name and computer when tied' do
+    it 'assigns neither player nor computer as winner' do
 
     end
   end

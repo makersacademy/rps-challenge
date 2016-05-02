@@ -1,12 +1,14 @@
-<h2> <%= @name %> vs. Computer </h2>
+<h2> <%= @game.player.name %> vs. <%= @game.computer.name %> </h2>
 <br>
 Choose your weapon!
 <br>
 <form action="/choice" method="post">
 <label for="choice">
-<input type="radio" type="radio" name="choice" id="rock" value="rock">Rock
+<input type="radio" name="choice" id="rock" value="rock">Rock
 <input type="radio" name="choice" id="paper" value="paper">Paper
 <input type="radio" name="choice" id="scissors" value="scissors">Scissors
+<input type="radio" name="choice" id="lizard" value="lizard">Lizard
+<input type="radio" name="choice" id="spock" value="spock">Spock
 <br>
 <input type="submit" value="Submit">
 </label>

@@ -1,4 +1,4 @@
-You have chosen <%= @choice %>!
-Computer has chosen ...
-
-... wins!
+<%= @game.player.name %> has chosen <%= @player_choice %>!<br>
+<%= @game.computer.name %> has chosen <%= @computer_choice %>!
+<br>
+<%= defined?(@game.winner.name) ? @game.winner.name : "It's a tie! Nobody" %> wins!

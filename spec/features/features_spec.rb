@@ -38,3 +38,19 @@ feature 'Accepts a player choice' do
   end
 
 end
+#
+# feature 'Player wins' do
+#   scenario 'player is displayed as winner' do
+#
+#   end
+# end
+#
+# feature 'Computer wins' do
+#   scenario 'computer is displayed as winner' do
+#   end
+# end
+#
+# feature 'Player and computer draw' do
+#   scenario 'player and computer are displayed as tied' do
+#   end
+# end
