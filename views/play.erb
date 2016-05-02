@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <title> Rock, paper, scissors </title>
+  </head>
+   <% if @game.player.name.empty? %>
+    <body>
+      <h1>Please enter a name!</h1>
+    </body>
+        <form action='/' method='get'>
+            <input type='submit' value='Go Back'/>
+        </form>
+  <%end%>
+
+  <% if !@game.player.name.empty? %>
+    <body>
+      <div>
+      <h1> Hello, <%= @game.player.name %> </h1>
+      <h2>Let's play Rock, Paper, Scissors!<h2>
+      </div>
+    </body >
+   <form action='/weapon' method='post'>
+     <table>
+       <thead>
+         <th colspan=3> Please choose  a weapon</th>
+       </thead>
+       <tbody>
+         <tr>-----------------------</tr>
+         <tr>
+           <td> <input type='submit' name='weapon' value='ROCK'/></td>
+           <td> <input type='submit' name='weapon' value='PAPER'/></td>
+           <td> <input type='submit' name='weapon' value='SCISSORS'/></td>
+         </tr>
+         <tr>-----------------------</tr>
+       </tbody>
+     </table>
+    </form>
+ </body >
+  <%end%>
+  </body>
+</html>

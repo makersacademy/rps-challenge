@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <title> Rock, paper, scissors </title>
+  </head>
+  <body>
+    <% if @game.player_option == 'PAPER'%>
+      <img src="https://www.geriatricmedical.com/UserFiles/Images/Products/Toliet_tissue_bathroom.jpg"/>
+      <% end %>
+
+    <% if @game.player_option == 'ROCK'%>
+      <img src="http://az616578.vo.msecnd.net/files/2016/04/12/6359601932026675251094891209_key%20holder.jpg"/>
+    <% end %>
+
+    <% if @game.player_option == 'SCISSORS'%>
+      <img src="http://www.whsmith.co.uk/pws/client/images/catalogue/products/8562/18//xlarge/856218_1.jpg"/>
+    <% end %>
+
+    <h1>You have chosen <%=@game.player_option%>  !</h1>
+
+    <form action='/AI' method='get'>
+      <input type='submit' value= 'continue'/>
+    </form>
+
+  </body>
+</html>
