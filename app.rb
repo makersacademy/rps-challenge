@@ -4,7 +4,6 @@ require './lib/player'
 require './lib/computer'
 
 class Rps < Sinatra::Base
-  enable :sessions
 
   get '/' do
     erb :index

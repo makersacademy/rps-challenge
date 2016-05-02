@@ -1,7 +1,3 @@
-require_relative 'player'
-require_relative 'computer'
-
-
 class Game
 
   attr_reader :player, :computer, :winner, :player_move, :computer_move
@@ -62,6 +58,5 @@ class Game
   def winner
     @winner.name
   end
-
 end
 

@@ -21,12 +21,12 @@ describe Game do
     end
   end
 
-  describe 'computer_choice' do
-    it 'returns the computers weapon' do
-      game.instance_variable_set("@computer_move", :scissors)
-      expect(game.computer_choice).to eq(:scissors)
-    end
-  end
+  # describe 'computer_choice' do
+  #   it 'returns the computers weapon' do
+  #     game.instance_variable_set("@computer_move", :scissors)
+  #     expect(game.computer_choice).to eq(:scissors)
+  #   end
+  # end
 
   before { game.player_choice('rock') }
 

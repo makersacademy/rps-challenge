@@ -1,12 +1,11 @@
 class Computer
 
   attr_reader :name
-  attr_accessor :weapon, :points
+  attr_reader :points
   DEFAULT_POINTS = 0
 
   def initialize(*)
     @name = 'Computer'
-    @weapon = nil
     @points = DEFAULT_POINTS
   end
 
