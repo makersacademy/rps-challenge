@@ -9,6 +9,7 @@ class Game
                     'Spock' => ['Scissors', 'Rock'] }
 
   attr_reader :player_1, :player_2, :current_player
+  
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
