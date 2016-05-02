@@ -10,9 +10,9 @@ feature 'Playing: ' do
 			click_button 'rock'
 			expect(page).to have_content ('Omar: Rock vs. Laura: Rock')
 			expect(page).to have_content ('Tie')
-	  end
+		end
 
-	  scenario 'Player one wins' do
+		scenario 'Player one wins' do
 			two_players_standard
 			expect(page).to have_content ('Omar\'s turn')
 			click_button 'rock'
@@ -20,9 +20,9 @@ feature 'Playing: ' do
 			click_button 'scissors'
 			expect(page).to have_content ('Omar: Rock vs. Laura: Scissors')
 			expect(page).to have_content ('The winner is Omar')
-	  end
+		end
 
-	  scenario 'Player two wins' do
+		scenario 'Player two wins' do
 			two_players_standard
 			expect(page).to have_content ('Omar\'s turn')
 			click_button 'paper'
@@ -30,7 +30,7 @@ feature 'Playing: ' do
 			click_button 'scissors'
 			expect(page).to have_content ('Omar: Paper vs. Laura: Scissors')
 			expect(page).to have_content ('The winner is Laura')
-	  end
+		end
 	end
 
 	context 'Two players extended mode' do
@@ -42,9 +42,9 @@ feature 'Playing: ' do
 			click_button 'spock'
 			expect(page).to have_content ('Omar: Spock vs. Laura: Spock')
 			expect(page).to have_content ('Tie')
-	  end
+		end
 
-	  scenario 'Player one wins' do
+		scenario 'Player one wins' do
 			two_players_extended
 			expect(page).to have_content ('Omar\'s turn')
 			click_button 'lizard'
@@ -52,9 +52,9 @@ feature 'Playing: ' do
 			click_button 'paper'
 			expect(page).to have_content ('Omar: Lizard vs. Laura: Paper')
 			expect(page).to have_content ('The winner is Omar')
-	  end
+		end
 
-	  scenario 'Player two wins' do
+		scenario 'Player two wins' do
 			two_players_extended
 			expect(page).to have_content ('Omar\'s turn')
 			click_button 'spock'
@@ -62,6 +62,6 @@ feature 'Playing: ' do
 			click_button 'paper'
 			expect(page).to have_content ('Omar: Spock vs. Laura: Paper')
 			expect(page).to have_content ('The winner is Laura')
-	  end
+		end
 	end
 end
