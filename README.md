@@ -1,6 +1,5 @@
-# RPS Challenge: Rōnin Badge Test
 
-Instructions
+Challenge Instructions
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
@@ -9,85 +8,37 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+Installation instructions
+------------------------
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+$ git clone git@github.com:harrywynnwill/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app.rb
 ```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
+then visit:
 ```
-$ coveralls report
-```
+http://localhost:4567/
+````
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+Explanation to my solution
+--------
+The game is constructed with 4 classes.
+  RPS class which is within the app.rb and handles the get and post requests.
+  The Computer class - which initializes with a randomly generated choice.
+  Player class - which instantiates a player.
+  Finally the Game class which injects the computer class. This has all the functionality of the RPS game
+  The interface only includes one method however this calls on 3 private methods for R P S.
 
+Improvements
+------------
+  The game could have another player - human vs human.
+  I'm not sure if setting the player name to a class variable is the best solution.
+  However it was the work around to avoid globals to play the game again. Everytime the game is played, a new game object is instatiated and the player object has to passed in as a parameter.
+  Perhaps the computer class does not need to be injected to the game class. This way the game could be replayed without the need for a new game object each go.
+  Finally, the game could do with some CSS rendering.
+  These issues will be addressed in the next release.
+
+Author
+------
+Harry Wynn-Williams - harrywynnwilliams@googlemail.com
