@@ -20,7 +20,8 @@ class Game
   attr_accessor :first, :second
 
   def initialize(player, computer = Player.new)
-    @player1, @player2 = player, computer
+    @player1 = player
+    @player2 = computer
   end
 
   def update_attacks

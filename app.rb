@@ -32,18 +32,18 @@ class GamePlay < Sinatra::Base
   end
 
   post '/set_choice' do
-    Game.instance.player1.choose(params[:choice])
-    Game.instance.player2.choose
+    @game.player1.choose(params[:choice])
+    @game.player2.choose
     redirect '/result'
   end
 
   post '/set_choice_first_player' do
-    Game.instance.player1.choose(params[:choice])
+    @game.player1.choose(params[:choice])
     redirect '/game_play_second_player'
   end
 
   post '/set_choice_second_player' do
-    Game.instance.player2.choose(params[:choice])
+    @game.player2.choose(params[:choice])
     redirect '/result'
   end
 
