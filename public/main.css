@@ -118,3 +118,7 @@ input:focus {
 	background: #fff;
 	color: #00b389;
 }
+
+.btn:focus {
+	outline: none;
+}
