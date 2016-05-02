@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/lexiht/rps-challenge.svg?branch=master)](https://travis-ci.org/lexiht/rps-challenge)
 
+[![Coverage Status](https://coveralls.io/repos/github/lexiht/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/lexiht/rps-challenge?branch=master)
+
 # RPS Challenge
 
 Task 
@@ -37,7 +39,22 @@ Approach
 Instruction
 -----------
 
-* If you're unaware of the rule of a "Rock, Paper, Scissors, Spock, Lizard" game please refer to this link (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+* If you're unaware of the rule of a "Rock, Paper, Scissors, Spock, Lizard" game, please refer to this link (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
 
-* 
+* Clone the repo with
+
+`git clone https://github.com/lexiht/rps-challenge.git`
+
+* If you have bundler installed, then run `bundle` else `gem install bundler`
+
+* Start local server by running `ruby app.rb`
+
+* Enter in your browser: `localhost:4567`
+
+Contact
+-------
+
+[Lexi Tran](https://github.com/lexiht), hazukitran@gmail.com
+
+
 
