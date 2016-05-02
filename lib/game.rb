@@ -3,7 +3,7 @@ require_relative 'computer'
 
 class Game
 
-  MOVES = ['rock','spock','paper','lizard','scissors']
+  MOVES = ['scissors', 'paper', 'rock', 'lizard', 'spock', 'wizard', 'batman', 'spiderman', 'glock']
 
   attr_reader :choices, :winner, :computer, :player
 
@@ -14,18 +14,9 @@ class Game
   end
 
   def add_selection(computer, player)
+    @choices.clear
     @choices[0] = computer
     @choices[1] = player
-  end
-
-  def winner
-    if self.winner_calc == 0
-      "tie"
-    elsif self.winner_calc == 1 || self.winner_calc == 2
-      @computer
-    else
-      @player
-    end
   end
 
   def self.start(computer, player)
@@ -38,14 +29,23 @@ class Game
 
   # private
   #
-  # attr_reader :winner_value
-
-
+  # attr_reader :winner
 
   def winner_calc
     array = []
-    @choices.each {|val| array << MOVES.find_index(val).to_i + 1}
-    (array.first - array.last) % 5
+    @choices.each {|val| array << MOVES.find_index(val).to_i}
+    @winner_value = ((array.first - array.last) % 9).to_i
+  end
+
+  def winner
+    self.winner_calc
+    if @winner_value == 0
+      @winner = "tie"
+    elsif @winner_value.even? && @winner_value != 0
+      @winner = @computer
+    else
+      @winner = @player
+    end
   end
 
 end

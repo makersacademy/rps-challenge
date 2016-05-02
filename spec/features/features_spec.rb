@@ -19,38 +19,22 @@ feature 'Accepts a player choice' do
   scenario 'Enters rock' do
     enter_player_name
     page.choose('rock')
-    click_button("Submit")
+    click_button("GODSPEED")
     expect(page).to have_content('rock')
   end
 
   scenario 'Enters paper' do
     enter_player_name
     page.choose('paper')
-    click_button("Submit")
+    click_button("GODSPEED")
     expect(page).to have_content('paper')
   end
 
   scenario 'Enters scissors' do
     enter_player_name
-    page.choose('scissors')
-    click_button("Submit")
+    click_button('scissors')
+    click_button("GODSPEED")
     expect(page).to have_content('scissors')
   end
 
 end
-#
-# feature 'Player wins' do
-#   scenario 'player is displayed as winner' do
-#
-#   end
-# end
-#
-# feature 'Computer wins' do
-#   scenario 'computer is displayed as winner' do
-#   end
-# end
-#
-# feature 'Player and computer draw' do
-#   scenario 'player and computer are displayed as tied' do
-#   end
-# end
