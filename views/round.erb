@@ -1,0 +1,14 @@
+<%= @game.player.name %> chose <%= @game.player_move %>
+<br>
+Computer chose <%= @game.computer_move %>
+<br>
+You <%= @game.result %> this round
+<br>
+<%= @game.player.name %>: <%= @game.player.points %> points
+Computer: <%= @game.computer.points %> points
+
+
+<form action="/result" method="post">
+  <input type="submit" value="OK">
+</form>
+

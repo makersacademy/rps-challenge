@@ -11,9 +11,8 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(params[:player_1_name])
-    player_2 = Computer.new(params[:player_2])
-    @game = Game.create(player_1, player_2)
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
     redirect '/play'
   end
 
@@ -23,8 +22,15 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/round' do
+    @game.player_choice(params[:move])
+    @game.computer_choice
+    erb :round
+  end
+
   post '/result' do
-    redirect '/result'
+   redirect '/result' if Game.instance.game_over?
+   redirect '/play'
   end
 
   get '/result' do

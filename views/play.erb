@@ -1,21 +1,18 @@
-<%= @game.player_1.name %> vs. Computer
+<%= @game.player.name %> vs. Computer
 <br>
 Please choose your weapon!
 
-<form action="/result" method="post">
-<input type="submit" value="Rock">
-<input type="submit" value="Paper">
-<input type="submit" value="Scissors">
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="rock">
+  <input type="submit" value="Rock">
 </form>
 
-<!-- <form action="/result" method="post">
-  <button type="submit" value='rock' name='weapon'>Rock </button>
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="paper">
+  <input type="submit" value="Paper">
 </form>
 
-<form action="/result" method="post">
-  <button type="submit" value='paper' name='weapon'>Paper </button>
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="scissors">
+  <input type="submit" value="Scissors">
 </form>
-
-<form action="/result" method="post">
-  <button type="submit" value='scissors' name='weapon'>Scissors </button>
-</form> -->
