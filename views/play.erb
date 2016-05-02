@@ -1,1 +1,42 @@
-<h1>Welcome to Rock Paper Scissors <%= @player_name %></h1>
+<center>
+  <h1><%= @game.player1.name %> vs. <%= @game.player2.name %> </h1>
+  <h1><%= @game.player1.name %> has: <%= @game.player1.points %> points</h1>
+  <h1><%= @game.player2.name %> has: <%= @game.player2.points %> points</h1>
+
+  <h1> Rock, Paper, Scissors, Lizard and Spock </h1>
+<form action="/result">
+
+  <h2> <%= @game.player1.name %> please choose: </h2>
+    <fieldset>
+      <input id="rock1" type="radio" name="player1" value="rock" class="radio"/>
+      <label for="rock1">Rock</label>
+      <input id="paper1" type="radio" name="player1" value="paper" class="radio"/>
+      <label for="paper1">Paper</label>
+      <input id="scissors1" type="radio" name="player1" value="scissors" class="radio"/>
+      <label for="scissors1">Scissors</label>
+      <input id="lizard1" type="radio" name="player1" value="lizard" class="radio"/>
+      <label for="lizard1">Lizard</label>
+      <input id="spock1" type="radio" name="player1" value="spock" class="radio"/>
+      <label for="spock1">Spock</label>
+    </fieldset>
+
+  <% if @game.player2.name != 'Computer' %>
+  <h2> <%= @game.player2.name %> please choose: </h2>
+    <fieldset>
+      <input id="rock2" type="radio" name="player2" value="rock" class="radio"/>
+      <label for="rock2">Rock</label>
+      <input id="paper2" type="radio" name="player2" value="paper" class="radio"/>
+      <label for="paper2">Paper</label>
+      <input id="scissors2" type="radio" name="player2" value="scissors" class="radio"/>
+      <label for="scissors2">Scissors</label>
+      <input id="lizard2" type="radio" name="player2" value="lizard" class="radio"/>
+      <label for="lizard2">Lizard</label>
+      <input id="spock2" type="radio" name="player2" value="spock" class="radio"/>
+      <label for="spock2">Spock</label>
+    </fieldset>
+  <%end%>
+
+
+  <input type="submit" value="Who wins?">
+</form>
+</centre>

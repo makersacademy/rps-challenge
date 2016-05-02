@@ -1,9 +1,10 @@
-<h1>Welcome to Rock, Paper, Scissors!</h1>
-<h2>Sign in to play</h2>
-<form action="/name" method="post">
-  <label for="player_name">
-    Enter your name
-    <input type="text" name="player_name">
-  </label>
-  <input type="submit" value="Submit">
-</form>
+<center>
+  <h1>Welcome to Rock, Paper, Scissors!</h1>
+  <h2>Choose your option...</h2>
+
+  <form action="/form">
+    <input id="one" type="radio" name="players" value="one"><p>One Player</p><br>
+    <input id="two" type="radio" name="players" value="two"><p>Two Players</p><br>
+    <input class="button" type="submit" value="Next">
+  </form>
+</center>
