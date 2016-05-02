@@ -1,7 +1,7 @@
 Rock, Paper, Scissors
 ===
 
-![Screenshot](http://imgur.com/UqF9hLW)
+![Screenshot](http://imgur.com/UqF9hLW.png)
 
 ## Introduction
 
@@ -23,11 +23,10 @@ $ ruby app.rb
 Then, in your browser, type in http://localhost:4567/. You should see the index page, as shown on top of this document.
 
 Enter your name to start the game.
-![Screenshot](http://imgur.com/GzfoGSZ)
+![Screenshot](http://imgur.com/GzfoGSZ.png)
 
 You'll then be invited to choose a weapon from Rock, Paper, Scissors.
-
-![Screenshot](http://imgur.com/c58xS71)
+![Screenshot](http://imgur.com/c58xS71.png)
 
 See what happens...
 
