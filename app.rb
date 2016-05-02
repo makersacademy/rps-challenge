@@ -14,7 +14,15 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
+    @option = session[:option]
+    @computer_option = session[:computer_option]
     erb :play
+  end
+
+  post '/play' do
+    session[:option] = params[:option]
+    session[:computer_option] = :Rock
+    redirect '/play'
   end
 
   run! if app_file == $0
