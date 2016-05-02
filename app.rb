@@ -21,7 +21,6 @@ class RPS < Sinatra::Base
     session[:shape] = params[:shape].downcase.to_sym
     session[:computer_shape] = Computer.new.shape
     redirect '/play'
-
   end
 
 # start the server if ruby file executed directly
