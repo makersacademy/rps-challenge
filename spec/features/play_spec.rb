@@ -44,10 +44,5 @@ feature 'see options rock, paper or scissors' do
       click_button 'Scissors'
       expect(page).to have_content 'TIED GAME'
     end
-
-    def possibe_messages
-      [:rock, :paper, :scissors].map { |shape| "Computer chose #{shape.to_s.capitalize}"}
-    end
-
   end
 end
