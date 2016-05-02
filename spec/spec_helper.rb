@@ -2,6 +2,11 @@
 require 'coveralls'
 require 'simplecov'
 
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
@@ -12,3 +17,5 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+Capybara.app = RPSWeb
