@@ -26,8 +26,8 @@ class RPS < Sinatra::Base
   		player_1 = Player.new(params[:player_1_name])
   		player_2 = Player.new(params[:player_2_name])
   	end
- 	
-   	@game = Game.create(player_1, player_2, players, standard_mode)
+    
+    @game = Game.create(player_1, player_2, players, standard_mode)
 
     redirect '/play'
   end
@@ -55,16 +55,17 @@ class RPS < Sinatra::Base
   	else
   		@game.player_2.play(params[:choice].to_sym)
   	end
-  	erb :result
+    @winner = @game.start
+    erb :result
   end
 
   post '/choice_p2' do
   	@game.player_1.play(params[:choice].to_sym)
   	@action = '/result'
-		@current_player = @game.player_2.name
-		erb :play
+    @current_player = @game.player_2.name
+    erb :play
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

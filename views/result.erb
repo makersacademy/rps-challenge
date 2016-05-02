@@ -4,7 +4,11 @@
     <%= @game.player_2.name.capitalize %>: <%= @game.player_2.choice.capitalize %>
   </p>
   <h1 style="font-size: 80px; color: rgb(170, 25, 37);">
-    <%= @game.start %>
+    <% unless @winner == 'Tie' %>
+      The winner is <%= @winner.name.capitalize %>
+    <% else %>
+      <%= @winner %>
+    <% end %>
   </h1>
   <br>
   <form action="/play">

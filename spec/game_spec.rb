@@ -20,13 +20,13 @@ describe Game do
 		context 'Standard mode: ' do
 			it 'Player 1 wins' do
 				game.start
-				expect(game.start).to eq 'The winner is Omar'
+				expect(game.start).to eq player_1
 			end
 
 			it 'Player 2 wins' do
 				allow(player_1).to receive(:choice){:paper}
 				allow(player_2).to receive(:choice){:scissors}
-				expect(game.start).to eq 'The winner is Laura'
+				expect(game.start).to eq player_2
 			end
 
 			it 'Tie' do
@@ -39,13 +39,13 @@ describe Game do
 		context 'Extended mode: ' do
 			it 'Player 1 wins' do
 				allow(player_2).to receive(:choice){:lizard}
-				expect(game_extended.start).to eq 'The winner is Omar'
+				expect(game_extended.start).to eq player_1
 			end
 
 			it 'Player 2 wins' do
 				allow(player_1).to receive(:choice){:lizard}
 				allow(player_2).to receive(:choice){:scissors}
-				expect(game_extended.start).to eq 'The winner is Laura'
+				expect(game_extended.start).to eq player_2
 			end
 
 			it 'Tie' do

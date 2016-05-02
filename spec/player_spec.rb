@@ -15,10 +15,4 @@ describe Player do
     end
   end
 
-  describe '#computer?' do
-    it 'Returns false if player\'s name is not \'Computer\'' do
-      expect(omar.computer?).to be false
-    end
-  end
-  
 end

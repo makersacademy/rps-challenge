@@ -10,7 +10,4 @@ class Player
     @choice = choice
   end
 
-  def computer?
-    false
-  end
 end

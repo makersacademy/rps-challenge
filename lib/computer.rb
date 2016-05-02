@@ -10,8 +10,5 @@ class Computer < Player
 	def play(standard_mode)
 		@choice = standard_mode ? Game::STANDARD.keys.sample : Game::EXTENDED.keys.sample
 	end
-
-	def computer?
-		true
-	end
+	
 end

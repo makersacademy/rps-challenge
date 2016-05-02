@@ -21,8 +21,7 @@ class Game
   end
 
   def start
-    result = game_mode ? find_winner_standard : find_winner_extended
-    return result == 'Tie' ? result : "The winner is #{result.name.capitalize}"
+    game_mode ? find_winner_standard : find_winner_extended
   end
 
   private
