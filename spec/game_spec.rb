@@ -21,6 +21,13 @@ describe Game do
     end
   end
 
+  describe 'computer_choice' do
+    it 'returns the computers weapon' do
+      game.instance_variable_set("@computer_move", :scissors)
+      expect(game.computer_choice).to eq(:scissors)
+    end
+  end
+
   before { game.player_choice('rock') }
 
   describe '#result' do
@@ -44,6 +51,13 @@ describe Game do
         game.instance_variable_set("@computer_move", :paper)
         expect(game.result).to eq('lose')
       end
+    end
+  end
+
+  describe '#game_over?' do
+    it 'returns true if one player reaches 3 points' do
+      allow(player).to receive(:points) {3}
+      expect(game.game_over?).to eq true
     end
   end
 end
