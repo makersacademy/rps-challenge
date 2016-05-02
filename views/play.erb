@@ -1,0 +1,24 @@
+<div id="bold">
+	<p style="font-size: 50px;"><%= @game.player_1.name %> vs. <%= @game.player_2.name %></p>
+	<p style="font-size: 40px; color: rgb(170, 25, 37);"><%= @current_player.capitalize %>'s turn</p>
+</div>
+
+<form action=<%= @action %> method="post">
+  <button name="choice" value="rock">
+  	<img src="/images/rock.png" alt="Rock" class="game_image">
+  </button>
+  <button name="choice" value="paper">
+  	<img src="/images/paper.png" alt="Paper" class="game_image">
+  </button>
+  <button name="choice" value="scissors">
+  	<img src="/images/scissors.png" alt="Scissors" class="game_image">
+  </button>
+<% unless @game.game_mode %>
+	<button name="choice" value="lizard">
+  	<img src="/images/lizard.png" alt="Lizard" class="game_image">
+  </button>
+  <button name="choice" value="spock">
+  	<img src="/images/spock.png" alt="Spock" class="game_image">
+  </button>
+<% end %>
+</form>

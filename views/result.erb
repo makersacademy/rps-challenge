@@ -1,0 +1,20 @@
+<div id="bold">
+  <p style="font-size: 50px;">
+    <%= @game.player_1.name.capitalize %>: <%= @game.player_1.choice.capitalize %> vs. 
+    <%= @game.player_2.name.capitalize %>: <%= @game.player_2.choice.capitalize %>
+  </p>
+  <h1 style="font-size: 80px; color: rgb(170, 25, 37);">
+    <% unless @winner == 'Tie' %>
+      The winner is <%= @winner.name.capitalize %>
+    <% else %>
+      <%= @winner %>
+    <% end %>
+  </h1>
+  <br>
+  <form action="/play">
+    <input id="submit_button" type="submit" value="Try again">
+  </form>
+  <form action="/">
+    <input id="submit_button" type="submit" value="Home">
+  </form>
+</div>
