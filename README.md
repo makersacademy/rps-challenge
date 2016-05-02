@@ -41,7 +41,7 @@ To run locally:
 $ ruby app.rb
 ````
 
-The application is built using simple MVC logic with the sinatra and rake gems.
+
 
 Functionality
 -------------
@@ -52,6 +52,32 @@ This is a simple web application for playing a game of rock, paper, scissors wit
 * Multi player - User vs Another user
 
 The user/users can keep playing each game for as many rounds as they feel necessary in order to escape the daily grind.
+
+Approach
+--------
+
+The application is built using simple MVC logic and sinatra. Unit tests are built using Rspec and feature tests using the capybara gem.
+
+The Game class is initialized following the singleton pattern, creating a unique instance of self whenever a user starts a new game.
+
+```
+#In app.rb - single player
+Game.create(Player.new(params[:player_name]))
+
+#multi player
+Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
+```
+
+The .create method of the Game class actually two arguments; instances of the Player class. The second argument defaults to a new player instance with the name attribute set to 'AI' if it is a single player game.
+
+Using the instance of Game in the controller allows us to receive information from the client used to change the internal state of either the game or one of the player instances.  
+
+```
+@game = Game.instance
+```
+
+Something I'd like to focus on is refactoring my controllers and views a bit, to push some logic further down the stack. Perhaps adding a few more, less complex views, that can be presented based on business logic presented to the controller by the models. But for now, enjoy my first web application!
+
 
 Screenshots
 -----------
