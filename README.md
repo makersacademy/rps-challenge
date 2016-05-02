@@ -1,4 +1,4 @@
-# RPS Challenge: [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
+# RPS Challenge: [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)[![Coverage Status](https://coveralls.io/repos/github/tigretoncio/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tigretoncio/rps-challenge?branch=master)
 
 How to Install
 -------
@@ -9,6 +9,40 @@ How to Install
 
 How to play
 -------
+It is self-explanatory, but if not, take a read below.
+
+First decide if the number of players: 1 (play against Computer), or 2
+Second, decide the mode, (classic Rock Paper Scissors, or "spock lizard" mode) and click Submit
+
+![img select](https://onedrive.live.com/redir?resid=FB615305C40D0298!1986&authkey=!AJOEi1wANvZYTmI&v=3&ithint=photo%2cpng)
+
+
+
+In the next screen, add the relevant name(s) and click Submit.
+
+![img enter names](https://onedrive.live.com/redir?resid=FB615305C40D0298!1987&authkey=!AIb1RCT0175xgJo&v=3&ithint=photo%2cpng)
+Please note that if you play against the Computer, its name is automatically added and can't be modified
+
+Then start making your choice clicking the relevant image...
+
+![img make choice spock](https://onedrive.live.com/redir?resid=FB615305C40D0298!1980&authkey=!AHYfw_Cbv5LLW3M&v=3&ithint=photo%2cpng)
+
+If you play against another person, you will have a confirmation screen:
+
+![img ack play1](https://onedrive.live.com/redir?resid=FB615305C40D0298!1979&authkey=!AOrHlny_rFKm9hM&v=3&ithint=photo%2cpng)
+
+click Submit, and only at that stage ask your opponent to look at your screen and take its choice.
+
+If you play against the computer,after choosing your element you will get a result screen:
+
+![img result spock](https://onedrive.live.com/redir?resid=FB615305C40D0298!1983&authkey=!AGiHEJc_d6FgXIw&v=3&ithint=photo%2cpng)
+
+Note how the program chooses the right verb for the relevant pair, (in this case, Spocks vaporises the rock).
+
+At that point you have the choice of continue playing with your opponent with the button play again, (and then scores will be updated accordingly), or click button Reset to start again from the beginning.
+
+Enjoy!
+
 
 
 
