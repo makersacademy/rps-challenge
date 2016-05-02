@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/turn.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -13,15 +15,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:player]
-    @option = session[:option]
-    @computer_option = session[:computer_option]
+    @turn = Turn.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:option] = params[:option]
-    session[:computer_option] = :Rock
+    session[:player_option] = params[:value]
+    session[:player_option]
+    session[:computer_option] = Computer.new.option
     redirect '/play'
   end
 
