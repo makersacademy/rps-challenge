@@ -1,5 +1,7 @@
 # RPS Challenge
 
+[![Coverage Status](https://coveralls.io/repos/github/gerauf/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/gerauf/rps-challenge?branch=master)
+
 ## Instructions
 ---
 **Installation instructions**
