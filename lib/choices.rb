@@ -10,4 +10,10 @@ class Choices
   CLASSIC = 3
   SPOCK = 5
 
+  attr_accessor :choice
+
+  def to_i
+    CHOICES[choice.to_sym]
+  end
+
 end
