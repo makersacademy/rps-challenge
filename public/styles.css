@@ -1,0 +1,62 @@
+.selection {
+  background-color: rgb(119, 164, 221);
+  cursor:pointer;
+  height: 235;
+  width: 235;
+  border: none;
+}
+
+div {
+  color: rgb(29, 110, 176);
+  font-family: 'Brush Script MT', cursive;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 22px;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h3 {
+  font-family: Impact, 'Impact';
+  font-size: 44px;
+}
+
+h2 {
+font-family: Tahoma, Geneva, sans-serif;
+  font-size: 50px;
+}
+
+p {
+  font-size: 28px;
+}
+
+body {
+  background-color: rgb(119, 164, 221)
+}
+
+header {
+  top: 0px;
+  background-color: white;
+  width: 100%;
+  padding-right: -5;
+  padding-left: -5;
+  height: 50px;
+  margin: 5px;
+}
+
+button {
+  border: solid rgb(29, 110, 176);
+  color: rgb(29, 110, 176);
+  background-color: white;
+  font-family: Impact, 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+  font-size: 44px;
+  height: 15%;
+  border-radius: 25%;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 20.4px;
+}

@@ -1,30 +1,42 @@
-<h1><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h1>
-<h1>Best of: <%=@game.best_of_n%></h1>
+<link href= "/styles.css" type="text/css" rel= "stylesheet"/>
 
-<p><%=@game.player_1.name%> uses <%=@game.player_1.gesture%></p>
 
-<p><%=@game.player_2.name%> uses <%=@game.player_2.gesture%></p>
+<div align="center">
+  <header>
+    <h1><%=@game.player_1.name%> vs <%=@game.player_2.name%> </h1>
+  </header>
 
-<%if @game.winner.nil?%>
-  <p>tie</p>
-<%else%>
-  <p><%=@game.winner.name%> wins</p>
-<%end%>
+  <h3>Best of: <%=@game.best_of_n%></h3>
 
-<%if @game.overall_winner.nil?%>
-<form action="/selection">
-  <button type="submit">Next Round</button>
-</form>
-<%else%>
-  <h1><%=@game.overall_winner.name%> is the champion</h1>
-  <form action="/best_of_plus_2" method="post">
-    <button type="submit">Best of <%=@game.best_of_n + 2%>?</button>
+  <div style ="float:left">
+    <p><%=@game.player_1.name%> uses <%=@game.player_1.gesture%></p>
+    <img src=<%="#{@game.player_1.gesture}_sym.png"%>/>
+    <p><%=@game.player_1.name%> score: <%=@game.player_1.score%></p>
+  </div>
+
+  <div style ="float:right">
+    <p><%=@game.player_2.name%> uses <%=@game.player_2.gesture%></p>
+    <img src=<%="#{@game.player_2.gesture}_sym.png"%>/>
+    <p><%=@game.player_2.name%> score: <%=@game.player_2.score%></p>
+  </div>
+
+  <%if @game.winner.nil?%>
+    <h3>tie</h3>
+  <%else%>
+    <h3><%=@game.winner.name%> wins</h3>
+  <%end%>
+
+  <%if @game.overall_winner.nil?%>
+  <form action="/selection">
+    <button type="submit">Next Round</button>
   </form>
-<%end%>
+  <%else%>
+    <h1><%=@game.overall_winner.name%> is the champion</h1>
+    <form action="/best_of_plus_2" method="post">
+      <button type="submit">Best of <%=@game.best_of_n + 2%>?</button>
+    </form>
+  <%end%>
 
 
 
-<div class = "scores">
-  <p><%=@game.player_1.name%> score: <%=@game.player_1.score%></p>
-  <p><%=@game.player_2.name%> score: <%=@game.player_2.score%></p>
 </div>
