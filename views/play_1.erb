@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+  <%= @game.player_1.name %> (<%=@game.player_1.points%>)  vs. <%= @game.player_2.name %> (<%=@game.player_2.points%>)
   <h1> Make your choice, <%= @game.player_1.name%></h1>
   <form action="/change_player">
     <button name="choice" value="rock"><img src="/images/rock.png" alt="rock" style="width:276px;height:163px;"></button>

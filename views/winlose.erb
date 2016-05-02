@@ -19,8 +19,9 @@
 <br>
 <br>
 <br>
+<% @game.winner.increase_points %>
 <form action="/play_player1">
   <div style="text-align: center;">
-    <input type= "submit" value= "Play again <%= @player2 %>">
+    <input type= "submit" value= "Play again">
   </div>
 </form>

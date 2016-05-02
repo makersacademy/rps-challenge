@@ -10,9 +10,14 @@ describe 'Player' do
     end
   end
 
-  context '#points' do
+  context 'points' do
     it('on initialization, points are 0') do
       expect(player.points).to eq 0
+    end
+
+    it('after a win, points are increased by one') do
+      player.increase_points
+      expect(player.points).to eq 1
     end
   end
 
