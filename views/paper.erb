@@ -1,0 +1,9 @@
+<center><p><%= @game.player.name %> chooses paper </p>
+<p>computer chooses <%= @computer.computer_choice%> </p>
+
+  <p><%= @game.winner%> </p>
+
+<form action="/play-again" method="post">
+<button> play again? </button>
+</form>
+</center>

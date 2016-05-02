@@ -1,0 +1,10 @@
+<link type='text/css' rel='stylesheet' href='public/stylesheet/sylesheet.css'>
+<center>
+<p><%= @game.player.name %> vs. Computer</p>
+<form action = "/choice" method="post">
+<input name="choice" value="rock" type="radio" id="rock" checked="checked"> rock <br/>
+<input name="choice" value="paper" type="radio" id="paper" > paper <br/>
+<input name="choice" value="scissors" type="radio" id="scissors" > scissors <br/>
+<br/>
+ <button>continue</button>
+  </form>
