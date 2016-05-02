@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+    <title>Rock, Paper, Scissors - Sign In</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="header">
+        <h1>WELCOME TO MY ROCK PAPER SCISSORS WEBSITE</h1>
+      </div>
+      <div class="content">
+        <img src="images/rps-1.gif" />
+        <form action="/start" method="post">
+          <div id="name" class="text">
+            <label for="player_name">Player Name</label>
+            <input type="text" name="player_name" />
+          </div>
+          <div class="radio">
+            <label for="rps">Rock, Paper, Scissors</label>
+            <input type="radio" id="rps" name="rules" value="RockPaperScissorsRules" checked/>
+          </div>
+          <div class="radio">
+            <label for="rpsls">Rock, Paper, Scissors, Spock, Lizard</label>
+            <input type="radio" id="rpssl" name="rules" value="RockPaperScissorsSpockLizardRules" />
+          </div>
+          <div class="submit">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

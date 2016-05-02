@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+    <title>Rock, Paper, Scissors - Play</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="header">
+        <h1><%= @game.player_name %> vs. Computer</h1>
+      </div>
+      <div class="content">
+        <img src="images/rps-3.gif" />
+        <div class="text">
+          <p>You chose <%= @game.player_move %><br>
+          Computer chose <%= @game.opponent_move %><br>
+          You <%= @game.result %>!</p>
+        </div>
+        <form action="/select-weapon" method="get">
+        <div class="submit">
+          <input type='submit' value="Replay" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
