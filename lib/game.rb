@@ -27,10 +27,6 @@ class Game
     @game
   end
 
-  # private
-  #
-  # attr_reader :winner
-
   def winner_calc
     array = []
     @choices.each {|val| array << MOVES.find_index(val).to_i}
