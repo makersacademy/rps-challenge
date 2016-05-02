@@ -20,21 +20,21 @@ feature 'Accepts a player choice' do
     enter_player_name
     page.choose('rock')
     click_button("GODSPEED")
-    expect(page).to have_content('rock')
+    expect(page).to have_content('Rock')
   end
 
   scenario 'Enters paper' do
     enter_player_name
     page.choose('paper')
     click_button("GODSPEED")
-    expect(page).to have_content('paper')
+    expect(page).to have_content('Paper')
   end
 
   scenario 'Enters scissors' do
     enter_player_name
-    click_button('scissors')
+    page.choose('scissors')
     click_button("GODSPEED")
-    expect(page).to have_content('scissors')
+    expect(page).to have_content('Scissors')
   end
 
 end

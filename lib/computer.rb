@@ -18,7 +18,7 @@ class Computer
   attr_reader :names
 
   def names
-    names = ["Sabrina","Tanya","Javi","Teila","Des","Caitlyn","Smitty","Chris"]
+    names = ["Sabrina","Tanya","Javi","Teila","Des","Caitlyn","Alex","Chris"]
   end
 
 end
