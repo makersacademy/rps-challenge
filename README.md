@@ -20,15 +20,17 @@ $ bundle install
 $ ruby app.rb
 ```
 
-Then, in your browser, type in http://localhost:4567/. You should see the index page, as shown on top of this document.
+Then, in your browser, type in `http://localhost:4567/`
 
 Enter your name to start the game.
+
 ![Screenshot](http://imgur.com/GzfoGSZ.png)
 
 You'll then be invited to choose a weapon from Rock, Paper, Scissors.
+
 ![Screenshot](http://imgur.com/c58xS71.png)
 
-See what happens...
+Let's see who wins...
 
 ## Testing
 
@@ -38,10 +40,10 @@ The app is tested using Capybara with RSpec. To run the tests, make sure you are
 
 ## Tools
 
-Sinatra
-Capybara
-Ruby
-RSpec
+* Sinatra
+* Capybara
+* Ruby
+* RSpec
 
 ## Author
 
