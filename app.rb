@@ -27,6 +27,14 @@ class Rps < Sinatra::Base
     erb :splash
   end
 
+  get '/play' do
+    erb :play
+  end
+
+  get '/result' do
+    erb :result
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
