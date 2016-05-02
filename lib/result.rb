@@ -6,9 +6,9 @@ def initialize(player_move, computer_move)
 end
 
 RULES = {
-  :rock     => {:rock => :draw, :paper => :paper, :scissors => :rock},
-  :paper    => {:rock => :paper, :paper => :draw, :scissors => :scissors},
-  :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
+  rock: {rock: :draw, paper: :paper, scissors: :rock},
+  paper: {rock: :paper, paper: :draw, scissors: :scissors},
+  scissors: {rock: :rock, paper: :scissors, scissors: :draw}
 }
 
 def judge
