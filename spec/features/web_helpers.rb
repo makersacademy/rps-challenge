@@ -9,6 +9,16 @@ def play_scissors
   click_button 'Submit'
 end
 
+def play_rock
+  choose('rock')
+  click_button 'Submit'
+end
+
+def play_paper
+  choose('paper')
+  click_button('Submit')
+end
+
 def multiplayer_start
   visit('/')
   fill_in :player_1_name, with: 'Hulk'

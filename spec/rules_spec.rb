@@ -5,6 +5,14 @@ describe Rules do
   subject(:rules) { described_class.new }
 
 
+  describe '#random_move' do
+
+    it 'returns a random move' do
+      expect(['rock', 'paper', 'scissors']).to include(rules.random_move)
+    end
+
+  end
+
   describe '#calculate_result' do
 
     context 'when passed in two moves in strings' do
