@@ -1,14 +1,13 @@
 class Game
 
-  POSSIBLE_CHOICES = ['paper', 'rock' 'scissors']
+  POSSIBLE_CHOICES = ['Paper', 'Rock', 'Scissors']
   WINNING_HAND = {
-    paper_rock: 'paper',
-    rock_scissors: 'rock',
-    paper_scissors: 'scissors',
+    paper_rock: 'Paper',
+    rock_scissors: 'Rock',
+    paper_scissors: 'Scissors',    
   }
 
   attr_reader :player_1
-  attr_writer :choice_1, :choice_2
 
   class << self
     def new_game(player_1)
@@ -41,7 +40,11 @@ class Game
   end 
 
   def tied_game?(choice_1, choice_2)
-    choice_1 == choice_2
+    choose(choice) == computer_choice ? @tied_game : nil
+  end
+
+  def print_result
+    @tied_game ? "Tied game!" : "Winner"
   end
 
 end

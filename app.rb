@@ -25,10 +25,12 @@ class Rps < Sinatra::Base
 
   post '/choose' do 
     @game.choose(params[:choice])
+    @game.computer_choice
     redirect '/result'
   end
 
   get '/result' do 
+    @game.print_result
     erb :result
   end
 

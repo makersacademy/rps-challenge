@@ -1,6 +1,11 @@
-"The winner is..."
-
 <div align="center">
-  You chose <%=@game.player_1.choice%>.
-  Computer chose .
+  <div>
+  You chose <%=@game.player_1.choice%>. 
+  <br><br>
+  Computer chose <%=@game.computer_choice%>.
+  </div>
+  <br>
+  <div class="narrative">
+    <%=@game.print_result %>
+  </div>
 </div>
