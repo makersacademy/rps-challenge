@@ -1,13 +1,26 @@
 require "sinatra/base"
+require "./lib/game"
+require "./lib/player"
 
 class Rps < Sinatra::Base
+
+	enable :sessions
+
+	before do	
+		@game = Game.instance
+	end
 
 	get "/" do
 		erb :index
 	end
 
-	post "/name" do
-		@player1 = params[:player_name]
+	post "/choice" do
+		player1 = Player.new(params[:player_name], params[:sign])
+		@game = Game.create(player1)
+		erb :choice
+	end
+
+	post "/play" do
 		erb :play
 	end
 
