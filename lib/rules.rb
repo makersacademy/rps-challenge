@@ -1,9 +1,10 @@
 class Rules
-
-  def initialize(results = nil, moves = nil)
-    @results = results
-    @moves = moves
-  end
+  MOVES = [:rock, :paper, :scissors]
+  RESULTS = {
+              rock: {scissors: :win, paper: :lose, rock: :draw},
+              paper: {rock: :win, scissors: :lose, paper: :draw},
+              scissors: {paper: :win, rock: :lose, scissors: :draw}
+            }
 
   def random_move
     moves.sample
@@ -13,18 +14,12 @@ class Rules
     results[move_1.to_sym][move_2.to_sym]
   end
 
-  private
-
   def results
-    @results || {
-                rock: {scissors: :win, paper: :lose, rock: :draw},
-                paper: {rock: :win, scissors: :lose, paper: :draw},
-                scissors: {paper: :win, rock: :lose, scissors: :draw}
-                }
+    RESULTS
   end
 
   def moves
-    @moves || [:rock, :paper, :scissors]
+    MOVES
   end
 
 end
