@@ -12,33 +12,43 @@
 
 	</div>
 
-	<% if @game.player_1.choice %>
-		<h2><%= @game.player_1.name %> chose <%= @game.player_1.choice %></h2>
-	<% else %>
-		<h2><%= @game.player_1.name %></h2>
-	<% end %>
+	<h2><%= @game.player_1.name %></h2>
 
 	<div style="border: 1px solid black;">
 		<% if @game.player_1.choice && @game.player_2.choice %>
 			<% if @game.check_winner %>
-				<h3><%= @game.check_winner.name.upcase %> WINS!!</h3>
-				<% @game.reset %>
-				<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
+				<h3><%= @game.player_1.name %> chose <%= @game.player_1.choice %></h3>
+				<h3><%= @game.player_2.name %> chose <%= @game.player_2.choice %></h3>
+				<h2><%= @game.check_winner.name.upcase %> WINS!!</h2>
+				<h4>Play again?</h4>
+				<div>
+					<form style="display: inline;" method="post" action="/reset">
+					   <button type="submit">YES</button>
+					</form>
+					<form style="display: inline;" method="get" action="/gameover">
+					   <button type="submit">NO</button>
+					</form>
+				</div>
 			<% else %>
-				<h3>IT'S A TIE.</h3>
-				<% @game.reset %>
-				<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
+				<h3><%= @game.player_1.name %> chose <%= @game.player_1.choice %></h3>
+				<h3><%= @game.player_2.name %> chose <%= @game.player_2.choice %></h3>
+				<h2>IT'S A TIE.</h2>
+				<h4>Play again?</h4>
+				<div>
+					<form style="display: inline;" method="post" action="/reset">
+					   <button type="submit">YES</button>
+					</form>
+					<form style="display: inline;" method="get" action="/gameover">
+					   <button type="submit">NO</button>
+					</form>
+				</div>
 			<% end %>
 		<% else %>
 			<h3>It's <%= @game.current_player.name %>'s turn. Pick a value, <%= @game.current_player.name %>!</h3>
 		<% end %>
 	</div>
 
-	<% if @game.player_2.choice %>
-		<h2><%= @game.player_2.name %> chose <%= @game.player_2.choice %></h2>
-	<% else %>
-		<h2><%= @game.player_2.name %></h2>
-	<% end %>
+	<h2><%= @game.player_2.name %></h2>
 
 	<div>
 
@@ -50,9 +60,4 @@
 			<button class="bottom" type="submit" class="bottom" name="choice" value="Spock"><img src="images/spock.png" alt="Spock" width="100px" height="100px"></button>
 		</form>
 	</div>
-
-
-	<form style="padding-top: 100px;" method="get" action="/gameover">
-	   <button type="submit">STOP PLAYING</button>
-	</form>
 </div>

@@ -35,9 +35,5 @@ feature 'Play the game' do
     find("button[class=bottom][type=submit][value='Scissors']").click
     expect(page).to have_content "IT'S A TIE."
   end
-
-  scenario "stop playing the game" do
-    click_button "STOP PLAYING"
-    expect(page).to have_content "THANKS FOR PLAYING ROCK PAPER SCISSORS LIZARD SPOCK"
-  end
+  
 end
