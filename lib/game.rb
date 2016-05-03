@@ -14,7 +14,9 @@ def initialize(player, computer = Computer.new)
   end
 
   def play(move)
-    @player_hand_selection = @player
+    @player_hand_selection = @player(move)
+    @computer_hand_selection = @computer.hand_selection
+    @round = [@player_hand_selection, @computer_hand_selection]
   end
 
   def named_player
