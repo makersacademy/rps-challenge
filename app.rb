@@ -24,8 +24,7 @@ class Rps < Sinatra::Base
   end
 
   post '/choose' do 
-    session[:choice] = params[:choice]
-    # @current_game.choice_2 = @game.computer_choice
+    @game.choose(params[:choice])
     redirect '/result'
   end
 

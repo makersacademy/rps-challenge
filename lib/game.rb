@@ -25,6 +25,10 @@ class Game
     @current_game
   end
 
+  def choose(choice)
+    player_1.pick(choice)
+  end
+
   def computer_choice
     POSSIBLE_CHOICES.sample
   end
