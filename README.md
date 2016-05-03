@@ -1,93 +1,71 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
+Welcome to RPS, an exciting, futuristic reimagining of the barbers' favourite, Rock, Paper, Scissors.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+To get a taste of the future, clone this repo to your machine. Then from the terminal, type:
 
-Task 
-----
+$ bundle
 
-Knowing how to build web applications is getting us almost there as web developers!
+To download all dependencies. Then type:
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+$ ruby app.rb
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+To run the app.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+You can then enjoy a challenging game of wit, skullduggery and skill against the computer or a friend* by pointing your browser at:
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+http://localhost:4567/
 
-Hints on functionality
+Enter your name (you can skip this step if you have played before - as the system will REMEMBER WHO YOU ARE. This may seem spooky, but it is actually simple computer wizardry. Another upside is that, should you not go too hard on your automated opponent, our computer overlords might spare you during the post- singularity cleansing).
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+Screenshot (represented in text. Note: screenshot may not bear resem)
+---
+Welcome to R-P-S!
+
+Round 1
+
+Choose:
+
+Rock
+
+Paper
+
+Scissors
 
 
-As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
+---
 
-**Rōnin BANZAI!!!!**
+Other user stories yet to be implemented:
 
-## Bonus level 1: Multiplayer
+As the player
+in order to make the game feel more authentic
+I want to see a countdown before playing my move
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+As the player
+in order to get into the game
+I want the game to consist of multiple rounds
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+As the player
+I would like the start page to have a list of high scores
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+As the player
+If I have played previously, I would like to be able to choose my name from a drop-down menu at the start of the session
 
-## Basic Rules
+As the player,
+So no one can ruin my hard-earned record
+I would like to be able to password-protect my account
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+As the player
+So I can switch sessions with my buddies
+I would like to be able to log out of a session
 
-In code review we'll be hoping to see:
+---
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+For more info on this and future exciting releases, please visit:
+http://codingwithhedgehogs.tumblr.com/
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
-Notes on test coverage
-----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
 
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+* multiplayer feature slated for release summer 2019
