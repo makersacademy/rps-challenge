@@ -3,14 +3,12 @@ require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
-  enable :sessions
-
+  
   before do
     @game = Game.instance
   end
 
   get '/' do
-    'Rock, Paper, Scissors'
     erb :index
   end
 

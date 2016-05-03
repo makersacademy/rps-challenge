@@ -1,16 +1,21 @@
-<h1 style="color: black; background-color: darkturquoise;"
-  >Rock, Paper, Scissors</h1>
+<head>
+  <title>Rock, Paper, Scissors</title>
+</head>
 
-<h2>The Game</h2>
+<body style="color: black; background-color: darkturquoise">
+  <h1>Rock, Paper, Scissors</h1>
 
-<strong><%= @message %></strong> <br />
+  <h2>The Game</h2>
 
-<form action="/name" method="post">
+  <strong><%= @message %></strong> <br />
 
-  <label for="player_1_name">
-    Your name
-    <input type="text" name="player_1_name">
-  <label/>
+  <form action="/name" method="post">
 
-  <input type="submit" value="Start Game">
-</form>
+    <label for="player_1_name">
+      Your name
+      <input type="text" name="player_1_name">
+    <label/>
+
+    <input type="submit" value="Start Game">
+  </form>
+</body>
