@@ -1,6 +1,6 @@
 require_relative 'player'
 require_relative 'rules'
-
+require_relative 'rulesplus'
 class Game
 
   class << self

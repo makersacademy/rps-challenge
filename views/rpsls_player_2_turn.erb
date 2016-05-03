@@ -1,0 +1,27 @@
+<div align="center">
+  <style>
+  body {background-color: lightgrey;}
+  h1   {color: crimson;}
+  p {color: crimson;}
+  </style>
+  <h1>
+    <%= @player_1_name %> vs. <%= @player_2_name %>
+  </h1>
+
+  <p> <%= @player_2_name %>, you did not peek, did you? </p>
+  <form action="/rpsls_multiplayer_turn_2" method="post">
+    <label for="rock">Rock</label>
+    <input type="radio" name="move" id="rock" value="rock"><br>
+    <label for="paper">Paper</label>
+    <input type="radio" name="move" id="paper" value="paper"><br>
+    <label for="scissors">Scissors</label>
+    <input type="radio" name="move" id="scissors" value="scissors"><br>
+    <label for="lizard">Lizard</label>
+    <input type="radio" name="move" id="lizard" value="lizard"><br>
+    <label for="spock">Spock</label>
+    <input type="radio" name="move" id="spock" value="spock"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+</div>
