@@ -1,14 +1,14 @@
 require "player"
 
 describe Player do
-	subject(:aday) {Player.new(:Aday, :Rock)}
+	subject(:aday) {Player.new(:Aday, :rock)}
 		it "Shows name" do
 			expect(aday.name).to eq :Aday
 		end
 
-describe "sign" do
-	it "player do a sign" do
-		expect(aday.sign_chosen).to eq :Rock
+describe "Sign" do
+		it "Slayer do a sign" do
+			expect(aday.sign_chosen).to eq :rock
 		end
 	end
 end

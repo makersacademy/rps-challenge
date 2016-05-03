@@ -3,11 +3,6 @@ class Player
 
 	def initialize(name, sign)
 		@name = name
-		@sign_chosen = sign
-	end
-
-	def sign(sign_chosen)
-		fail "Choose just Rock, Paper or Scissor" unless Game::SIGNS.include? sign_chosen.capitalize
-		@sign = sign_chosen
+		@sign_chosen = sign.to_sym
 	end	
 end

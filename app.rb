@@ -20,8 +20,10 @@ class Rps < Sinatra::Base
 		erb :choice
 	end
 
-	post "/play" do
-		erb :play
+	post "/outcome" do
+		@game.aleatory_rival
+		@game.outcome
+		erb :outcome
 	end
 
 	run! if app_file == $0
