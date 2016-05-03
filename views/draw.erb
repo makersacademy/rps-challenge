@@ -1,0 +1,33 @@
+<h1><p align="center"> It is a draw! </p></h1>
+<table style="width: 100%">
+  <tr>
+    <td>
+      <div style="text-align: center;">
+        <img src="/images/<%=@game.player_1.choice%>.png" alt="Player 1 choice">
+      </div></td>
+    <td>
+      <div style="text-align: center;">
+        <img src="/images/<%=@game.player_2.choice%>.png" alt="Player 2 choice">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><h2><div style="text-align: center;"><%= @game.player_1.name %>'s choice </div></h2></td>
+        <td><h2><div style="text-align: center;"><%= @game.player_2.name %>'s choice </div></h2></td>
+</table>
+
+<br>
+<br>
+<br>
+
+<form action="/play_player1">
+  <div style="text-align: center;">
+    <input type= "submit" value= "Play again <%= @player2 %>">
+  </div>
+</form>
+
+<form action="/">
+  <div style="text-align: center;">
+    <input type= "submit" value= "Reset">
+  </div>
+</form>
