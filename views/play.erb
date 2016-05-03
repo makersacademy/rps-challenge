@@ -2,17 +2,17 @@
   <h2>Welcome <%=@game.player_1.name%>!</h2>
   <h3>Choose paper, rock or scissors...</h3>
   <form action="/choose" method="POST">
-    <button class="choose-option" name="choose" value="Paper" style="cursor: pointer; background-color: #fff; border-style: none;">
+    <button class="choose-option" name="choice" value="Paper" style="cursor: pointer; background-color: #fff; border-style: none;">
       <img src="img/paper.png" 
         style="height: 150px; width: auto; margin: 10px 20px;">
       <h4 class="caption" style="font-size: 16px">Paper</h4>
     </button>
-    <button class="choose-option" name="choose" value="Rock" style="cursor: pointer; background-color: #fff; border-style: none;">
+    <button class="choose-option" name="choice" value="Rock" style="cursor: pointer; background-color: #fff; border-style: none;">
       <img src="img/rock.png" 
         style="height: 150px; width: auto; margin: 10px 20px; cursor: pointer">
       <h4 class="caption" style="font-size: 16px">Rock</h4>
     </button>
-    <button class="choose-option" name="choose" value="Scissors" style="cursor: pointer; background-color: #fff; border-style: none;">
+    <button class="choose-option" name="choice" value="Scissors" style="cursor: pointer; background-color: #fff; border-style: none;">
       <img src="img/scissors.png" 
         style="height: 150px; width: auto; margin: 10px 20px; cursor: pointer">
       <h4 class="caption" style="font-size: 16px">Scissors</h4>
