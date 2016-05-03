@@ -1,0 +1,29 @@
+<link href="/style.css" type="text/css" rel="stylesheet">
+<font size = "5"; color = "navy">
+<br>
+<div align = "center">
+<h2><%= @game.player.name %> vs. Computer</h2>
+<h3><%= @game.player.name %>: <%= @game.player.points %> points
+  <br>
+Computer: <%= @game.computer.points %> points</h3>
+<div align = "center">
+<img src="http://www.ponderweasel.com/wp-content/uploads/2014/11/who-invented-rock-paper-scissors.png">
+</div>
+<div align = "center">
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="rock">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="paper">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/round" method="post">
+  <input type="hidden" name="move" value="scissors">
+  <input type="submit" value="Scissors">
+</form>
+</div>
+<br>
+<h3 align = "center">Please choose your weapon!</h3>
