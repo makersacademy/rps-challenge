@@ -1,93 +1,81 @@
+
+[![Build Status](https://travis-ci.org/letianw91/rps-challenge.svg?branch=master)](https://travis-ci.org/letianw91/rps-challenge)
+
+[![Coverage Status](https://coveralls.io/repos/github/letianw91/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/letianw91/rps-challenge?branch=master)
+
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
+## Installation
+    1. Clone the repository
+    2. Open terminal in the game directory
+    3. `bundle install`
+    4. `ruby app.rb`
+    5. Game is now playable at http://localhost:4567
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
-----
+## Play instructions
 
-Knowing how to build web applications is getting us almost there as web developers!
+    + Single Player
+        1. Put in your name in single player
+        2. Click "Submit" to start playing
+        3. Select one of the options
+        4. Be humbled by your loss
+        5. Choose to return to title page, or player another game with the same player
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+    + Multi Player
+        1. Put in names for two players in the multiplayer
+        2. Click "Fight to the death!". But don't do that, it's just a figure of speech.
+        3. Player 1 select options.
+        4. Player 2 select options, based on whether he was able to peek.
+        5. See the result. Again, this is just a game. 
+        6. Choose to return to title page, or play another multiplayer game.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+    + Rock Paper Scissors Lizard Spock
+        1. Choose Rock Paper Scissors Lizard Spock on title page
+        2. The rest is the same
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+## File Structure
+```
+├── app.rb
+├── config.ru
+├── CONTRIBUTING.md
+├── enabled.yml
+├── Gemfile
+├── Gemfile.lock
+├── lib
+│   ├── game.rb
+│   ├── player.rb
+│   ├── rulesplus.rb
+│   └── rules.rb
+├── LICENSE
+├── Rakefile
+├── README.md
+├── spec
+│   ├── features
+│   │   ├── multiplayer_spec.rb
+│   │   ├── play_rpsls_spec.rb
+│   │   ├── play_rps_spec.rb
+│   │   ├── register_name_spec.rb
+│   │   ├── restart_game_spec.rb
+│   │   └── web_helpers.rb
+│   ├── game_spec.rb
+│   ├── player_spec.rb
+│   ├── rulesplus_spec.rb
+│   ├── rules_spec.rb
+│   └── spec_helper.rb
+└── views
+    ├── choose_game.erb
+    ├── draw.erb
+    ├── index.erb
+    ├── lose.erb
+    ├── multiplayer.erb
+    ├── player_2_turn.erb
+    ├── play.erb
+    ├── rpsls_index.erb
+    ├── rpsls_multiplayer.erb
+    ├── rpsls_player_2_turn.erb
+    ├── rpsls_play.erb
+    └── win.erb
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
