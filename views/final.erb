@@ -1,15 +1,17 @@
-<centre>
-  <%=@game.winner%> is the ultimate champion of everything ever!!!
-  <form action="/play" method="get" >
-    <input type="submit" value="Time to start over">
-  </form>
-</centre>
-
+<body bgcolor="#464343">
+<center>
+  <font face="impact" color="#090C7B" size="10">
+    <%=@game.winner%> is the ultimate champion of everything ever!!!
+    <form action="/play" method="get" >
+      <input type="submit" value="Time to start over">
+    </form>
+  </font>
 <% if @game.winner == "COMPUTER" %>
+  <img src=https://media.giphy.com/media/XekWlJnMSA4Le/giphy.gif>
   <embed src="http://66.90.91.26/ost/pokemon-gameboy-sound-collection/lwkznjvvdz/136-team-rocket-hideout.mp3" loop="true" autostart="true" hidden="true" />
 <% else %>
+  <img src=https://media.giphy.com/media/cQNRp4QA8z7B6/giphy.gif height="500" width="500">
   <embed src="http://66.90.91.26/ost/pokemon-gameboy-sound-collection/dxlbvlpzkr/129-victory-vs-gym-leader-.mp3" loop="true" autostart="true" hidden="true" />
 <% end %>
-
+</center>
 <%@game.score.reset%>
-

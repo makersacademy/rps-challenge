@@ -1,7 +1,8 @@
 <embed src="http://www.ffmages.com/ffvii/ost/disc-1/10-let-the-battles-begin.mp3" loop="true" autostart="true" hidden="true" />
-
+<body bgcolor="#464343">
 <div>
   <center>
+    <font face="impact" color="#090C7B">
     <p><h1>Welcome to RPS</h1></p>
     <p><h3><%=@name%> is ready for battle!</h3></p>
     <p></p>
@@ -15,7 +16,7 @@
     <p><input type="submit" value="My choice is made"></p>
     </form>
     <br>
-    <font size="5" face="impact" color="#090C7B"><%=@name%>: <%=@game.score.total%> vs Computer: <%=@game.score.comp_total%></font>
+    <%=@name%>: <%=@game.score.total%> vs Computer: <%=@game.score.comp_total%></font>
     <br>
     <font size="3" face="impact" color="#090C7B">Best of <%= Game::BEST_OF.to_i %>  games</font>
     <br>

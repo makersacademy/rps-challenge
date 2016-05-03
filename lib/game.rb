@@ -58,12 +58,12 @@ class Game
 
   def p1_win
       score.add
-      return player
+      player
   end
 
   def comp_win
       score.comp_add
-      return "COMPUTER"
+      "COMPUTER"
   end
 
 end
