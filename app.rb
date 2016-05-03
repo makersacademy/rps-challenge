@@ -15,7 +15,7 @@ class Rps < Sinatra::Base
 	end
 
 	post "/choice" do
-		player1 = Player.new(params[:player_name], params[:sign])
+		player1 = Player.new(params[:player_name].capitalize, params[:sign].capitalize)
 		@game = Game.create(player1)
 		erb :choice
 	end

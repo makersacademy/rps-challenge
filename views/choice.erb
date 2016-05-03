@@ -1,5 +1,8 @@
-<h1><%= @game.player1.name %> have chosen <%= @game.player1.sign_chosen %></h1>
-
-<form action="/outcome">
-	<input type="submit" value="Outcome">
-</form>
+<div>
+  <center>
+  	<h1><%= @game.player1.name %> have chosen <%= @game.player1.sign_chosen %></h1>
+			<form action="/outcome">
+				<input type="submit" value="Outcome">
+			</form>
+	</center>
+</div>
