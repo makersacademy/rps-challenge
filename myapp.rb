@@ -1,4 +1,8 @@
 require 'sinatra/base'
+require './lib/game'
+
+require './lib/computer'
+require './lib/player'
 
 class MyApp < Sinatra::Base
 

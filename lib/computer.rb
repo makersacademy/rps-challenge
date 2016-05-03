@@ -4,7 +4,7 @@ class Computer
 
 
   def hand_selection
-      Game::HAND_SECTION.sample
+      (Game::HAND_SELECTION).sample
   end
 
 end

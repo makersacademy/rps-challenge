@@ -14,6 +14,26 @@ describe Player do
       expect(lucy.points).to eq 0
     end
 
+    describe "#choice" do
+      it "can choose rocks" do
+        subject.choice("rocks")
+        expect(subject.hand_selection).to eq "rocks"
+      end
+
+      it "can choose paper" do
+        subject.choice("paper")
+        expect(subject.hand_selection).to eq "paper"
+      end
+
+      it "can choose scissors" do
+        subject.choice("scissors")
+        expect(subject.hand_selection).to eq "scissors"
+      end
+
+    end
+
+
+
   end
 
 end

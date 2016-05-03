@@ -11,7 +11,7 @@ Coveralls.wear!
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'lib/myapp.rb')
+require File.join(File.dirname(__FILE__), '..', 'myapp.rb')
 
 require 'capybara'
 require 'capybara/rspec'
