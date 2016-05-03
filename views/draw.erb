@@ -1,0 +1,16 @@
+<head>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+<link rel='stylesheet' href='style.css' />
+</head>
+
+<body class="text-center">
+
+<h1> It's a Draw!!! </h1><br>
+
+<h2>You both chose: <%= @game.player_1.choice.upcase %> </h2><br>
+  <br>
+<form action="/play" method="get">
+  <button class="btn2"> REPLAY </button>
+</form>
+
+</body>

@@ -1,0 +1,31 @@
+<head>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+<link rel='stylesheet' href='style.css' />
+</head>
+
+<body class="text-center">
+<h1>Please pick a move <%= @game.player_1.name %>. </h1><br>
+<br>
+<br>
+<br>
+
+<form action="/rock"  method="post">
+  <button class="btn" type="submit" value="ROCK"> ROCK </button>
+</form>
+<form action="/paper"  method="post">
+  <button class="btn" type="submit" value="PAPER"> PAPER </button>
+</form>
+<form action="/scissors"  method="post">
+  <button class="btn" type="submit" value="SCISSORS"> SCISSORS </button>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<form action="/" method="get">
+  <button type="submit" class="btn2"> RESTART </button>
+</form>
+
+</body>

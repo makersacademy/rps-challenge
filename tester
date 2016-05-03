@@ -1,3 +1,12 @@
+require './player.rb'
+noah = Player.new "Noah"
+require './game.rb'
+game = Game.new noah
+game.player_choice "rock"
+game
+game.result
+
+
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
 require 'coveralls'
 require 'simplecov'
@@ -13,4 +22,4 @@ SimpleCov.start
 require 'byebug'
 require 'capybara/rspec'
 
-Capybara.app = MyRackApp
+# Capybara.app = MyRackApp
