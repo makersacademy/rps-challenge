@@ -16,25 +16,25 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     erb(:play)
   end
 
   get '/choose_weapons' do
-    @game = Game.instance
     erb(:weapons)
   end
 
   post '/choose_weapons' do
-    @game = Game.instance
     @game.player_1.choose_weapon(params[:weapon].to_sym)
     @game.player_2.choose_weapon
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.instance
     erb(:result)
   end
 
