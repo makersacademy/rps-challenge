@@ -28,7 +28,7 @@ require './lib/computer'
 
   post '/move' do
     @player_choice = params[:move].to_sym
-    @result= @game.player.move(@player_choice)
+    @result= @game.select_winner(@player_choice)
     redirect '/winner'
   end
 

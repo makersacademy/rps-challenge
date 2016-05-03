@@ -9,7 +9,7 @@ class Game
 attr_reader :player, :computer
   def initialize(computer=Computer, player)
     @player = player
-    @computer = computer
+    @computer = computer.new
     @winning_moves =  {
         :rock => :paper,
         :paper => :scissors,
