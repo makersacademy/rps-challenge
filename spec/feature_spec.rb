@@ -36,3 +36,28 @@ feature 'Play' do
   end
 
 end
+
+feature 'Result' do
+
+  before do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+  end
+
+  scenario 'displays a draw' do
+    sign_in
+    click_button 'PAPER'
+    expect(page).to have_content 'Draw!!!'
+  end
+
+  scenario 'displays a lost' do
+    sign_in
+    click_button 'ROCK'
+    expect(page).to have_content 'Lost!!!'
+  end
+
+  scenario 'displays a win' do
+    sign_in
+    click_button 'SCISSORS'
+    expect(page).to have_content 'Won!!!'
+  end
+end
