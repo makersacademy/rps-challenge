@@ -1,0 +1,23 @@
+<div class='container'>
+  <section class='row'>
+    <div class='form-row'>
+      <h1><%= @name1 %> takes on <%= @name2 %></h1>
+    </div>
+    <div class='form-row'>
+      <h1>Ok <%= @choice_manager.current_player.name %>, pick your weapon</h1>
+    </div>
+    <div class='form-row'>
+      <form action='/play' method='post'>
+        <button class='btn' type='submit' name='choice' value='rock'>
+          ROCK
+        </button>
+        <button class='btn' type='submit' name='choice' value='paper'>
+          PAPER
+        </button>
+        <button class='btn' type='submit' name='choice' value='scissors'>
+          SCISSORS
+        </button>
+      </form>
+    </div>
+  </section>
+</div>

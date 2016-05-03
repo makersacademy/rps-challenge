@@ -1,0 +1,124 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* custom styling */
+
+body {
+	background: #99ffe6;
+	font-family: 'Poiret One', Helvetica, Arial, sans-serif;
+}
+
+/* layout */
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.row {
+	margin: 40px 0 40px 0;
+	padding: 15px 0 15px 0;
+}
+
+.form-row {
+	padding: 5px 0;
+	text-align: center;
+}
+
+/* background */
+
+.row {
+	background: #ccfff3;
+    border: 1px solid #00b389;
+    border-radius: 5px;
+}
+
+/* input fields */
+
+input {
+	background: none;
+	border: 0;
+	border-bottom: 1px solid #00b389;
+	padding: 0;
+}
+
+input:focus {
+	outline: none;
+}
+
+/* submit buttons */
+
+.btn {
+	border-radius: 5px;
+	background: #00b389;
+	color: #fff;
+	font-family: 'Poiret One', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 3px;
+    border: none;
+    letter-spacing: .5px;
+}
+
+.btn:hover {
+	background: #fff;
+	color: #00b389;
+}
+
+.btn:focus {
+	outline: none;
+}

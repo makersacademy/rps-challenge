@@ -1,0 +1,18 @@
+<div class='container'>
+  <section class='row'>
+    <div class='form-row'>
+      <h1><%= @names[0] %> chose <%= @choices[0] %>.</h1>
+    </div>
+    <div class='form-row'>
+      <h1><%= @names[1] %> chose <%= @choices[1] %>.</h1>
+    </div>
+    <div class='form-row'>
+      <h1><%= @result_message %></h1>
+    </div>
+    <div class='form-row'>
+      <form action='/reset' method='post'>
+        <input class='btn' type='submit' value='AGAIN AGAIN'>
+      </form>
+    </div>
+  </section>
+</div>
