@@ -1,0 +1,19 @@
+<head>
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<body style="color: black; background-color: darkturquoise">
+  <%= @game.player.name %>'s turn
+  <br> 
+
+  <form action="/result" method="post">
+
+    <input type="radio" name="player_choice" value="Rock" id="rock" checked="checked"> Rock
+
+    <input type="radio" name="player_choice" value="Paper" id="paper"> Paper
+
+    <input type="radio" name="player_choice" value="Scissors" id="scissors"> Scissors
+
+     <input type="submit" value="Start Game">
+  </form>
+</body>

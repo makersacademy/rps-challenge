@@ -1,0 +1,15 @@
+<head>
+  <title>Rock, Paper, Scissors</title>
+</head>
+
+<body style="color: black; background-color: darkturquoise">
+  <h2>Rock, Paper, Scissors</h2>
+
+  You chose: <%= @game.player.weapon %> <br />
+  Computer chose: <%= @game.computer.weapon %><br />
+  Result: <%= @game.result %>
+
+  <form action="/play" method="get">
+    <input type="submit" value="Another game?">
+  </form>
+</body>
