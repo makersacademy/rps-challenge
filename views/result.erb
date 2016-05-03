@@ -1,0 +1,16 @@
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Amatic+SC'>
+<body background="http://static.tumblr.com/ec9fa9f7d4eced64f5614e2b2a908a8a/5ziy55w/w7xn1n7kq/tumblr_static_0eyerockpaperscissors.jpg">
+<div>
+  <font face="Amatic SC" size="6" color ="black">
+  super sity chose <%= @game.player_2.weapon %>
+  <br>
+  you chose <%= @game.player_1.weapon %>
+</div>
+<div>
+  <font face="Amatic SC" size="7" color ="black">
+  <b>you <%= @game.result %></b>
+</div>
+
+<form action="/play">
+  <input type="submit" value="play again?" style="font-family:'Amatic SC'; color:white; font-size: 25px; height: 50px; width: 100px; background-color:black">
+</form>
