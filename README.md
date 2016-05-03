@@ -1,4 +1,4 @@
-# RPS Challenge: [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)[![Coverage Status](https://coveralls.io/repos/github/festinalent3/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/festinalent3/rps-challenge?branch=master)
+# RPS Challenge: [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)[![Coverage Status](https://coveralls.io/repos/github/tigretoncio/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tigretoncio/rps-challenge?branch=master)
 
 Task
 -----
