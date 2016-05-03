@@ -1,0 +1,10 @@
+<%= @game.player.name %> choose your move
+<form  action="/move" method="post">
+  <input type="submit" value="rock" name="move" checked> Rock<br>
+</form>
+<form  action="/move" method="post">
+  <input type="submit"  value="paper" name="move"> Paper<br>
+</form>
+<form  action="/move" method="post">
+  <input type="submit" value="scissors" name="move"> Scissors<br>
+</form>
