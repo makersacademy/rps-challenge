@@ -35,33 +35,37 @@ It is self-explanatory, but if not, take a read below.
 ![choose image](http://i.imgur.com/aI7f1qt.png)
 - If you play against another person, you will have a confirmation screen.  Click Submit, and only at that stage ask your opponent to look at your screen and take its choice.
 - If you play against the computer,after choosing your element you will get a result screen, for example:
-the spock chosen by <Player1> vaporises the rock chosen by <Player2>
-![result](http://i.imgur.com/46R67vl.png)
+the spock chosen by *Player1* vaporises the rock chosen by *Player2*
+
 
 At that point you have the choice of continue playing with your opponent with the button play again, (and then scores will be updated accordingly), or click button Reset to start again from the beginning.
 
-if you play against Chuck Norris, good luck!
+if you play against **Chuck Norris**, good luck!
 
 ![chuck](http://i.imgur.com/xwAxnFe.png)
 
 Considerations
 --------------
 
-The basic design guidelines have been followed, i.e.
+The basic best practices design guidelines have been followed, i.e.
 
 - Tell, don't ask
 - Skinny controllers, none exceeding 5 lines
 - All the logic in the model
 - Each class having its own clear responsibility
 
-A HelpView class has been added to help with showing some conditional views depending on the number of players and game mode (Classic or Spock).
+A *HelpView* class has been added to help with showing some conditional views depending on the number of players and game mode (Classic or Spock).
 
-A Choices class has been used to keep information about the choices, mainly using constant hashes
+A *Choices* class has been used to keep information about the choices, mainly using constant hashes
+
+*Game* class manages the business logic.
 
 The algorithm to determine winner / loser is based on converting the choices to numerals and substracting those module the total set of choices.  If the result is even the choice 1 wins, if odd choice 2 wins.  If result is 0 then it's a draw.  This is very scalable as any arbitrary number of choices can be defined.
 Finally all the relevant verbes for the game have been stored in a constant hash, and relevant method to access those.  The view just renders this information as required.
 
+*RockPaperScissors* is the class for the controler, where Sinatra is used to link the model with the relevant views.
 
+A number of views using erb have been created to display the game interface.
 
 Instructions
 -------
