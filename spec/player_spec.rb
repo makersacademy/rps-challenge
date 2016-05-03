@@ -9,5 +9,11 @@ describe Player do
     end
   end
 
+  describe '#pick' do 
+    it 'returns a valid choice to play' do 
+      expect(ben.pick('Rock')).to eq 'Rock'
+    end
+  end
+
 end
 
