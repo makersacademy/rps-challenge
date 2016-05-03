@@ -1,75 +1,59 @@
+require_relative "player"
+require_relative "computer"
+
 class Game
 
-  attr_reader :player_score, :computer_score, :player, :player_choice
+  attr_reader :player1, :player2, :choices_array, :winner
 
-  def initialize player
-    @player = player
-    @player_score = 0
-    @computer_score = 0
-    win_array
-    lose_array
+  def initialize player1, player2
+    @player1 = player1
+    @player2 = player2
+    player1_win_array
+    player2_win_array
   end
 
-  def self.create player_1
-    @game = Game.new player_1
+  def self.create player1, player2
+    @game = Game.new player1, player2
   end
 
   def self.instance
     @game
   end
 
-  def choices player_choice
-    computer
-    @player_choice = player_choice
-    @choices_array =  [@player_choice, @computer_choice]
-  end
-
-  def pc_choice
-    @computer_choice.dup
+  def choices player1_choice, player2_choice
+    @choices_array =  [player1_choice, player2_choice]
   end
 
   def result
-    decide
-    @result.dup
+    referee
+    @winner
   end
 
   private
 
-  def decide
-    win
-    lose
-    draw
+  def referee
+    player1_win
+    player2_win
+    points
   end
 
   def points
-    if @result == "won"
-      @player_score += 1
-    elsif @result == "lost"
-      @computer_score += 1
-    end
+    @winner.win if @winner
   end
 
-  def computer
-    @computer_choice = ["rock", "paper", "scissors"].sample
+  def player1_win
+     @winner = @player1 if @player1_win_array.include? @choices_array
   end
 
-  def win
-     @result = "won" if @win_array.include? @choices_array
+  def player2_win
+    @winner = @player2 if @player2_win_array.include? @choices_array
   end
 
-  def draw
-    @result = "drew" if @choices_array[0] == @choices_array[1]
+  def player1_win_array
+    @player1_win_array = [["rock", "scissors"], ["scissors", "paper"], ["paper", "rock"]]
   end
 
-  def lose
-    @result = "lost" if @lose_array.include? @choices_array
-  end
-
-  def win_array
-    @win_array = [["rock", "scissors"], ["scissors", "paper"], ["paper", "rock"]]
-  end
-
-  def lose_array
-    @lose_array = [["scissors", "rock"], ["paper", "scissors"], ["rock", "paper"]]
+  def player2_win_array
+    @player2_win_array = [["scissors", "rock"], ["paper", "scissors"], ["rock", "paper"]]
   end
 end

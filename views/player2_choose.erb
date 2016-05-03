@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="animate.css">
+</head>
+
+<body id="play">
+
+  <div id="title">
+    <%=@game.player1.name%> Vs. <%=@game.player2.name%>
+  </div>
+
+  <div id="select_text">
+    <%=@game.player2.name%> select a character to perform their action.
+    <br>
+    <%=@game.player1.name%>, no looking!
+  </div>
+
+    <form method="post" action="/man_vs_man">
+      <button id="rock_button" class="slideRight" name="choice2" value="rock">
+        <img src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock">
+      </button>
+
+      <button id="paper_button" class="slideUp" name="choice2" value="paper">
+        <img src="http://i.imgur.com/r1GckhD.jpg" alt="Paper">
+      </button>
+
+      <button id="scissors_button" class="slideLeft" name="choice2" value="scissors">
+        <img src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors">
+      </button>
+    </form>
+
+  <div id="player_score">
+    <%=@game.player1.name%>'s score: <%=@game.player1.score%>
+  </div>
+
+
+  <div id="computer_score">
+    <%=@game.player2.name%>'s score: <%=@game.player2.score%>
+  </div>
+
+</body>

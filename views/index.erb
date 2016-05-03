@@ -2,11 +2,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 </head>
-
-<dialog>
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/JWXhFVqNgQs?&autoplay=1"></iframe>
-</dialog>
-
 <body id="home">
 
   <div id="lets_play">
@@ -14,9 +9,19 @@
   </div>
 
     <form id="name_form" action="/name" method="post">
-      <label for="name" id="name_label">Enter Player Name:</label >
-      <input type="text" id="player_name" name="name" >
+      <label for="name" id="name_label">Enter Player Name:</label>
+      <input type="text" id="player_name" name="name1" >
+      <label for "name" id="name_label"> Second Player Name:</label>
+      <input type="text" id="player_name" name="name2" >
       <input type="submit" value="Play!" id="play_button";>
     </form>
+
+    <div id="leave_blank">
+      Leave blank to play the computer.
+    </div>
+
+    <div id="arrow">
+      <img src="http://i.imgur.com/I1W5NUc.png?1" alt="" style="width:60px;height:60px;">
+    </div>
 
 </body>

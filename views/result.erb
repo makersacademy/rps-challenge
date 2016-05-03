@@ -7,21 +7,21 @@
 <body id="result">
 
   <div id="title">
-    <%=@game.player.name%> Vs. Computer
+    <%=@game.player1.name%> Vs. <%=@game.player2.name%>
   </div>
 
   <div id="you_played">
-    You Played:
+    <%=@game.player1.name%> Played:
     <br>
-    <%=@game.player_choice%>
+    <%=@game.player1.choice%>
   </div>
 
   <div id="player_choice" class= "Tossing">
-    <%if @game.player_choice == "rock"%>
+    <%if @game.player1.choice == "rock"%>
         <input type="image" src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock";>
-    <%elsif @game.player_choice == "scissors"%>
+    <%elsif @game.player1.choice == "scissors"%>
         <input type="image" src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors";>
-    <%else @game.player_choice == "paper"%>
+    <%else @game.player1.choice == "paper"%>
         <input type="image" src="http://i.imgur.com/r1GckhD.jpg" alt="Paper";>
     <%end%>
   </div>
@@ -31,32 +31,34 @@
   </div>
 
   <div id="pc_played">
-    The Computer Played:
+    <%=@game.player2.name%> Played:
     <br>
-    <%=@game.pc_choice%>
+    <%=@game.player2.choice%>
   </div>
 
   <div id="pc_choice" class= "Tossing2">
-    <%if @game.pc_choice == "rock"%>
+    <%if @game.player2.choice == "rock"%>
         <input type="image" src="http://i.imgur.com/XT41ZXk.jpg" alt="Rock";>
-    <%elsif @game.pc_choice == "scissors"%>
+    <%elsif @game.player2.choice == "scissors"%>
         <input type="image" src="http://i.imgur.com/ttUlD5y.jpg" alt="Scissors";>
-    <%else @game.pc_choice == "paper"%>
+    <%else @game.player2.choice == "paper"%>
         <input type="image" src="http://i.imgur.com/r1GckhD.jpg" alt="Paper";>
     <%end%>
   </div>
 
-<div id="popup1" class="overlay">
-    <div class="popup">
-        <a class="close" href="#popup1">&times;</a>
-        <div class="content">
-            You <%=@game.result%>!
-    </div>
-</div>
+  <div id="popup1" class="overlay">
+      <div class="popup">
+          <a class="close" href="#popup1">&times;</a>
+          <div class="content">
+            <%if @game.winner%>
+              <%=@game..name%> won!
+            <%else%>
+              It's a draw!
+            <%end%>
+      </div>
+  </div>
 
-
-
-  <form action="/play" >
+  <form action="/player1_choose" >
     <input type="submit" value="Play Again?" id="again_button";>
   </form>
 
@@ -64,14 +66,12 @@
     <input type="submit" value="Start New Game?" id="restart_button";>
   </div>
 
-
   <div id="player_score">
-    <%=@game.player.name%>'s score: <%=@game.player_score%>
+    <%=@game.player1.name%>'s score: <%=@game.player1.score%>
   </div>
 
-
   <div id="computer_score">
-    Computer's score: <%=@game.computer_score%>
+    <%=@game.player2.name%>'s score: <%=@game.player2.score%>
   </div>
 
 </body>

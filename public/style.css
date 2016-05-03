@@ -42,7 +42,7 @@ body#result {
   text-shadow: 3px 2px black;
   color: #b30000;
   font-family: 'Indie Flower', cursive;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #lets_play {
@@ -60,27 +60,55 @@ body#result {
 
 #name_form {
   position:absolute;
-  bottom:-10px;
-  left: 26%;
+  bottom: 20px;
+  left: 5%;
   text-align: center;
 
   text-shadow: 3px 2px black;
   color: #b30000;
   font-family: 'Indie Flower', cursive;
-  font-size: 45px;
+  font-size: 30px;
 
 }
 
+#play_button {
+  position:relative;
+  bottom: 4px;
+  left: 2%;
+  text-align: center;
+
+  border-radius: 8px;
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 1px 1px black;
+  color: #b30000;
+  font-size: 22px;
+  background: #a3a76e;
+  padding: 5px 10px 5px 10px;
+}
+
 #player_name {
-  height: 40px;
+  height: 32px;
   width: 200px;
 
   font-family: 'Indie Flower', cursive;
-  font-size: 25px;
+  font-size: 18px;
 
   position:relative;
-  bottom: 8px;
+  bottom: 5px;
   left: 0%;
+  text-align: center;
+}
+
+#leave_blank {
+  height: 25px;
+  width: 200px;
+
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+
+  position:absolute;
+  bottom: 150px;
+  left: 81%;
   text-align: center;
 }
 
@@ -92,6 +120,15 @@ body#result {
   text-align: bottom;
 
 }
+
+#arrow {
+
+  position: absolute;;
+  bottom: 100px;
+  right: 18.3%;
+  text-align: center;
+}
+
 
 #pc_choice {
 
@@ -245,21 +282,6 @@ body#result {
   padding: 5px 10px 5px 10px;
 }
 
-#play_button {
-  position:relative;
-  bottom: 8px;
-  left: 0%;
-  text-align: center;
-
-  border-radius: 8px;
-  font-family: 'Indie Flower', cursive;
-  text-shadow: 1px 1px black;
-  color: #b30000;
-  font-size: 22px;
-  background: #a3a76e;
-  padding: 5px 10px 5px 10px;
-}
-
 .popup .close {
   position: absolute;
   bottom: -10px;
@@ -296,7 +318,7 @@ body#result {
   text-shadow: 3px 2px black;
   border-radius: 5px;
   font-family: 'Indie Flower', cursive;
-  font-size: 100px;
+  font-size: 30px;
   color: #b30000;
   width: 420px;
   position: fixed;

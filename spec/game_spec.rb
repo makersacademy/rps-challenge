@@ -2,67 +2,37 @@ require './lib/game'
 
 describe Game do
 
-  let(:name) {double :name, player: "wayne"}
-  subject(:game) {Game.new name }
+  let(:player1) {double :player1, player1: "Bob"}
+  let(:player2) {double :player2, player2: "Ross"}
+  let(:computer) {double :player2, computer: "computer"}
+
+
+  subject(:game) { Game.new player1, player2 }
 
 
   describe "#initialize" do
-    it "Initializes with a player name"do
-      expect(game.player).to be name
+
+    it "Initializes with a player1 name"do
+      expect(game.player1).to be player1
     end
 
-    it "Initializes with player score at 0" do
-      expect(game.player_score).to be 0
-    end
-
-    it "Initializes with computer score at 0" do
-      expect(game.computer_score).to be 0
+    it "Initializes with a player2 name"do
+      expect(game.player2).to be player2
     end
 
   end
 
   describe "#result" do
 
-    xit "changes computer score by 1" do
-      Array.any_instance.stub(:sample).and_return("rocks")
-      game.choices "scissors"
-      expect{game.result}.to change{game.computer_score}.by(1)
-    end
-
-    before(:each) do
-      Array.any_instance.stub(:sample).and_return("scissors")
-      game.choices "scissors"
-    end
-
-    xit "changes player score by 1" do
-      game.choices "rock"
-      expect{game.result}.to change{game.player_score}.by(1)
-    end
-
-    it "score doesnt change when a draw" do
-      expect{game.result}.to_not change{game.computer_score}
-    end
-
-    xit "returns the result as a string" do
-      expect(game.result).to be results
-    end
-
   end
 
   describe "#choices" do
 
-    xit "returns the choices array" do
-      Array.any_instance.stub(:sample).and_return("rock")
-      expect(game.choices "scissors").to be choices_array
+    it "returns an array of two player_choices" do
+      result = ["a", "b"]
+      expect(game.choices("a", "b")).to eq result
     end
 
   end
-
-  # describe "#pc_choice" do
-  #
-  #   xit "returns the computers random choice"
-  #     Array.any_instance.stub(:sample).and_return("scissors")
-  #     expect(game.pc_choice).to be "scissors"
-  #   end
 
 end
