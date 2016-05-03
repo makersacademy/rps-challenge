@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do 
   subject(:game) {described_class.new(player_1)}
-  let(:player_1) {double :player}
+  let(:player_1) {spy :player}
   let(:paper)    {double :choice_1}
   let(:rock)     {double :choice_2}
 
@@ -14,19 +14,19 @@ describe Game do
 
   describe 'correctly choosing the winning hand' do 
     it 'declares paper the winner over rock' do 
-      expect(subject.play('paper', 'rock')).to eq 'paper'
+      expect(subject.play('paper', 'rock')).to eq 'Paper'
     end
 
     it 'declares scissors the winner over paper' do 
-      expect(subject.play('scissors', 'paper')).to eq 'scissors'
+      expect(subject.play('scissors', 'paper')).to eq 'Scissors'
     end
 
     it 'declares rock the winner over scissors' do 
-      expect(subject.play('scissors', 'rock')).to eq 'rock'
+      expect(subject.play('scissors', 'rock')).to eq 'Rock'
     end
 
     it 'declares a tie if hands are identical' do 
-      expect(subject.tied_game?('paper', 'paper')).to eq true
+      expect(subject.tied_game?('paper', 'paper')).to eq nil
     end
   end
 

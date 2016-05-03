@@ -40,11 +40,18 @@ class Game
   end 
 
   def tied_game?(choice_1, choice_2)
-    choose(choice) == computer_choice ? @tied_game : nil
+    if player_1.choice == computer_choice 
+      @tied_game == true
+    end
+  end
+
+  def result 
+    hands = [player_1.choice, computer_choice].sort.join('_').to_sym
+    WINNING_HAND[hands]
   end
 
   def print_result
-    @tied_game ? "Tied game!" : "Winner"
+    @tied_game ? "Tied game!" : result
   end
 
 end
