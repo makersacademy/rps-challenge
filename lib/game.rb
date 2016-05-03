@@ -45,13 +45,31 @@ class Game
     end
   end
 
-  def result 
-    hands = [player_1.choice, computer_choice].sort.join('_').to_sym
-    WINNING_HAND[hands]
+  def winning_hand 
+    WINNING_HAND
   end
 
-  def print_result
-    @tied_game ? "Tied game!" : result
+  def result 
+    hands = [player_1.choice, computer_choice].sort.join('_').to_sym
+    return WINNING_HAND[hands]
+  end
+
+  def winner 
+    if player_1.choice == 'Paper' && computer_choice == 'Rock' 
+      "Congratulations, you win!"
+    elsif player_1.choice == 'Rock' && computer_choice == 'Scissors'
+      "Congratulations, you win!"
+    elsif player_1.choice == 'Scissors' && computer_choice == 'Paper'
+      "Congratulations, you win!"
+    elsif player_1.choice == 'Paper' && computer_choice == 'Scissors'
+      "Sorry, you lose :("
+    elsif player_1.choice == 'Rock' && computer_choice == 'Paper'
+      "Sorry, you lose :("
+    elsif player_1.choice == 'Scissors' && computer_choice == 'Paper'
+      "Sorry, you lose :("
+    elsif player_1.choice == computer_choice
+      "It's a tie!"
+    end
   end
 
 end
