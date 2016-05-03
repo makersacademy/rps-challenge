@@ -30,7 +30,6 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do 
-    @game.result
     @game.winning_hand
     @game.winner
     erb :result

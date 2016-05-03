@@ -4,7 +4,7 @@ class Game
   WINNING_HAND = {
     paper_rock: 'Paper',
     rock_scissors: 'Rock',
-    paper_scissors: 'Scissors',    
+    paper_scissors: 'Scissors'
   }
 
   attr_reader :player_1
