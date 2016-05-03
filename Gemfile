@@ -12,4 +12,6 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'rspec-sinatra'
+  gem 'unicode-display_width', '1.0.3'
 end

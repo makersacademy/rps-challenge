@@ -1,0 +1,17 @@
+<center>
+  <h1>Rock,  Paper,  Scissors,  Lizard,  Spock!<h1>
+
+    <form action="/create" method="post">
+      <p>Player 1:</p>
+      <input type="text" name="player_1_name">
+      <p>Player 2:</p>
+      <%if @players == "two" %>
+      <input type="text" name="player_2_name">
+      <%else%>
+      <input readonly type="hidden" name="player_2_name" value="Computer" >
+      <p>Player 2 is the computer.</p>
+      <%end%>
+    </br>
+      <input class="button" type="submit" value="Start">
+    </form>
+  </center>
