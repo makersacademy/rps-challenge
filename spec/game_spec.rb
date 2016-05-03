@@ -1,11 +1,10 @@
 require 'game'
-require 'player'
-require 'computer'
+
 
 describe Game do
-  let (:computer) {Computer.new}
+  let (:player2) {double(:player2)}
   let (:user) {double(:user)}
-  subject(:game) {Game.new(user)}
+  subject(:game) {Game.new(user, player2)}
 
 
   describe "#initialize" do
@@ -13,7 +12,7 @@ describe Game do
       expect(game.player).to eq user
     end
     it "starts the game wiht a computer opponent" do
-      expect(game.computer). to eq computer
+      expect(game.computer). to eq player2
 
     end
 

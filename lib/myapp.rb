@@ -11,26 +11,25 @@ class MyApp < Sinatra::Base
   end
 #temp bad bad bad global variable
   post '/names' do
-
-  $player_name = Player.new(params[:player_name])
+$game = Game.new(Player.new(params[:player_name]))
     redirect '/play'
 
   end
 
   get '/play' do
-  @player_name = $player_name.name
+  @player_name = $game.named_player
   erb :play
 
   end
   post '/result' do
-    @player_name = $player_name.name
+    @player_name = $game.named_player
     session[:rps] = params[:rps]
     @hand_selection = session[:rps]
     redirect '/rps-results'
   end
 
   get '/rps-results' do
-    @player_name = $player_name.name
+    @player_name = $game.named_player
     @hand_selection = session[:rps]
     erb :game
 
