@@ -28,15 +28,21 @@ It is self-explanatory, but if not, take a read below.
 
 - First decide if the number of players: 1 (play against Computer), or 2
 - Second, decide the mode, (classic Rock Paper Scissors, or "spock lizard" mode) and click Submit
-![set choices](http://i.imgur.com/uBkx8Pd.png)
+![set choices](http://i.imgur.com/JjwRK6o.png)
 - In the next screen, add the relevant name(s) and click Submit.
+![set name](http://i.imgur.com/ihv0ABe.png)
 - Then start making your choice clicking the relevant image...
+![choose image](http://i.imgur.com/aI7f1qt.png)
 - If you play against another person, you will have a confirmation screen.  Click Submit, and only at that stage ask your opponent to look at your screen and take its choice.
 - If you play against the computer,after choosing your element you will get a result screen, for example:
 the spock chosen by <Player1> vaporises the rock chosen by <Player2>
 ![result](http://i.imgur.com/46R67vl.png)
 
 At that point you have the choice of continue playing with your opponent with the button play again, (and then scores will be updated accordingly), or click button Reset to start again from the beginning.
+
+if you play against Chuck Norris, good luck!
+
+![chuck](http://i.imgur.com/xwAxnFe.png)
 
 Considerations
 --------------

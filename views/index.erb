@@ -1,15 +1,16 @@
 
 <html>
-  <div style="text-align: center;">
-    <body background= nada>
-      <h1>Some details before playing...</h1>
-      <form action="/names" method="post">
-        Player 1:
-        <input type="text" name="player_1_name">
-        Player 2:
-        <input <%= @player_mode[:readonly] %> type="text" name="player_2_name" value=<%= @player_mode[:player2] %>>
-        <input type="submit" value="Submit">
-      </form>
-    </body>
-  </div>
+  <body style="background-color: #9999ff";>
+    <div style="text-align: center;">
+        <h1>Some details before playing...</h1>
+        <form action="/names" method="post">
+          Player 1:
+          <input type="text" name="player_1_name">
+          Player 2:
+          <input <%= @player_mode[:readonly] %> type="text" name="player_2_name" value=<%= @player_mode[:player2] %>>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+  </body>
+
 </html>

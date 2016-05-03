@@ -1,33 +1,35 @@
-<h1><p align="center"> <%= @game.winner.name %> wins! </p></h1>
-<table style="width: 100%">
-  <tr>
-    <td>
-      <div style="text-align: center;">
-        <img src="/images/<%=@game.player_1.choice%>.png" alt="Player 1 choice">
-      </div></td>
-    <td>
-      <div style="text-align: center;">
-        <img src="/images/<%=@game.player_2.choice%>.png" alt="Player 2 choice">
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td><h2><div style="text-align: center;"><%= @game.player_1.name %>'s choice </div></h2></td>
-        <td><h2><div style="text-align: center;"><%= @game.player_2.name %>'s choice </div></h2></td>
-</table>
-<div style ="text-align: center;"><em> The <%= @game.winner.choice %> chosen by <%= @game.winner.name %> <%= Choices.verb(@game.winner.choice, @game.loser.choice)%> the <%= @game.loser.choice %> chosen by <%= @game.loser.name %></em></div>
-<br>
-<br>
-<br>
-<% @game.winner.increase_points %>
-<form action="/play_player1">
-  <div style="text-align: center;">
-    <input type= "submit" value= "Play again">
-  </div>
-</form>
+<body style="background-color: #9999ff";>
+  <h1><p align="center"> <%= @game.winner.name %> wins! </p></h1>
+  <table style="width: 100%">
+    <tr>
+      <td>
+        <div style="text-align: center;">
+          <img src="/images/<%=@game.player_1.choice%>.png" alt="Player 1 choice">
+        </div></td>
+      <td>
+        <div style="text-align: center;">
+          <img src="/images/<%=@game.player_2.choice%>.png" alt="Player 2 choice">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><h2><div style="text-align: center;"><%= @game.player_1.name %>'s choice </div></h2></td>
+          <td><h2><div style="text-align: center;"><%= @game.player_2.name %>'s choice </div></h2></td>
+  </table>
+  <div style ="text-align: center;"><em> The <%= @game.winner.choice %> chosen by <%= @game.winner.name %> <%= Choices.verb(@game.winner.choice, @game.loser.choice)%> the <%= @game.loser.choice %> chosen by <%= @game.loser.name %></em></div>
+  <br>
+  <br>
+  <br>
+  <% @game.winner.increase_points %>
+  <form action="/play_player1">
+    <div style="text-align: center;">
+      <input type= "submit" value= "Play again">
+    </div>
+  </form>
 
-<form action="/">
-  <div style="text-align: center;">
-    <input type= "submit" value= "Reset">
-  </div>
-</form>
+  <form action="/">
+    <div style="text-align: center;">
+      <input type= "submit" value= "Reset">
+    </div>
+  </form>
+</body>
