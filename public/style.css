@@ -1,0 +1,76 @@
+html, body {
+  font-family: : 'Montserrat', ;sans-serif;
+    background-color: #bfbfbf
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #000;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+    color: #000;
+    text-overflow: ellipsis;
+}
+
+form input {
+    background: white;
+
+    border: 5px solid black;
+
+    font-size: 28px;
+    padding: 15px;
+    width: 14%;
+
+    transition: background 2s;
+}
+
+form input: focus {
+    background: blue;
+    box-shadow: none;
+    outline: none;
+}
+
+button.btn {
+    background: transparent;
+    border: 10px solid black;
+
+    color: grey;
+    cursor: pointer;
+
+    font-size: 22px;
+    font-weight: bolder;
+
+    padding: 1% 5% 1% 5%;
+
+    transition: background .8s, color .8s;
+}
+
+button.btn2 {
+    background: transparent;
+    border: 10px solid black;
+
+    color: black;
+    cursor: pointer;
+
+    font-size: 8 px;
+    font-weight: bold;
+
+    padding: 10px 14px;
+
+    transition: background .8s, color .8s;
+}
+
+button.btn:hover {
+    background: black;
+    color: white;
+}
+button.btn2:hover {
+    background: black;
+    color: white;
+}
