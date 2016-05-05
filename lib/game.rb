@@ -18,14 +18,16 @@ class Game
 
   def result(p1, p2)
     outcome = turn.result(p1,p2)
-    if outcome[0] == outcome[1]
+    winning_choice = outcome[0].to_s.capitalize
+    losing_choice = outcome[1].to_s.capitalize
+    if winning_choice == losing_choice
       "Draw!"
-    elsif outcome[0] == p1.to_sym
+    elsif winning_choice == p1.to_s.capitalize
       increase_score(player1)
-      "#{player1.name} won!!  #{outcome[0].to_s} beats #{outcome[1].to_s}"
+      "#{player1.name} won!!  #{winning_choice} beats #{losing_choice}"
     else
       increase_score(player2)
-      "#{player2.name} won!!  #{outcome[0].to_s} beats #{outcome[1].to_s}"
+      "#{player2.name} won!!  #{winning_choice} beats #{losing_choice}"
     end
   end
 

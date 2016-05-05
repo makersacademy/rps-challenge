@@ -1,13 +1,13 @@
 class Turn
 
-RPS = { Scissors: [:Paper, :Lizard],
-          Paper: [:Rock, :Spock],
-          Rock: [:Scissors, :Lizard],
-          Lizard: [:Paper, :Spock],
-          Spock: [:Rock, :Scissors] }
+RPS = { scissors: [:paper, :lizard],
+          paper: [:rock, :spock],
+          rock: [:scissors, :lizard],
+          lizard: [:paper, :spock],
+          spock: [:rock, :scissors] }
 
-P2_CHOICE = {0 => :Scissors, 1 => :Paper, 2 => :Rock,
-                        3 => :Lizard, 4 => :Spock}
+P2_CHOICE = {0 => :scissors, 1 => :paper, 2 => :rock,
+                        3 => :lizard, 4 => :spock}
 
   def result(p1, p2)
      p2 = p2_choice if p2.nil?
