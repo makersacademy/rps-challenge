@@ -1,8 +1,17 @@
 class Turn
 
+RPS = { Scissors: [:Paper, :Lizard],
+          Paper: [:Rock, :Spock],
+          Rock: [:Scissors, :Lizard],
+          Lizard: [:Paper, :Spock],
+          Spock: [:Rock, :Scissors] }
+
+P2_CHOICE = {0 => :Scissors, 1 => :Paper, 2 => :Rock,
+                        3 => :Lizard, 4 => :Spock}
+
   def result(p1, p2)
      p2 = p2_choice if p2.nil?
-     winner(p1, p2)
+     winner(p1.to_sym, p2.to_sym)
   end
 
   private
@@ -12,22 +21,13 @@ class Turn
   end
 
   def p2_choice
-    p2_choice = {0 => 'Scissors', 1 => 'Paper', 2 => 'Rock',
-                  3 => 'Lizard', 4 => 'Spock'}
-    p2_choice[random]
+    P2_CHOICE[random]
   end
 
   def winner(p1, p2)
-    rps_hash = {}
-    rps_hash['Scissors'] = ['Paper', 'Lizard']
-    rps_hash['Paper'] = ['Rock', 'Spock']
-    rps_hash['Rock'] = ['Scissors', 'Lizard']
-    rps_hash['Spock'] = ['Scissors', 'Rock']
-    rps_hash['Lizard'] = ['Paper', 'Spock']
-
     if p1 == p2
       [p1, p1]
-    elsif rps_hash[p1].include? p2
+    elsif RPS[p1].include? p2
       [p1, p2]
     else
       [p2, p1]

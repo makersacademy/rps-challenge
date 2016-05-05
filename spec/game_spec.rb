@@ -8,13 +8,13 @@ describe Game do
 
   describe 'update score' do
     it 'adds 1 to winning player score' do
-      allow(turn).to receive(:result).and_return ['Paper', 'Rock']
+      allow(turn).to receive(:result).and_return [:Paper, :Rock]
       expect(player2).to receive :won_turn
       game.result('Rock', 'Paper')
     end
 
     it 'adds 0 to winning player score if draw' do
-      allow(turn).to receive(:result).and_return ['Rock', 'Rock']
+      allow(turn).to receive(:result).and_return [:Rock, :Rock]
       expect(player1).not_to receive :won_turn
       game.result('Rock', 'Rock')
     end
