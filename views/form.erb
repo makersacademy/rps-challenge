@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="/style.css">
+<h1>Rock,  Paper,  Scissors,  Lizard,  Spock!<h1>
+<div class="space"></div>
+<form action="/names" method="post">
+	<p>Player 1:</p>
+	<div class="tiny_space"></div>
+	<input type="text" name="player_1_name" placeholder ="Enter name">
+	<div class="mini_space"></div>
+		<p>Player 2:</p>
+		<div class="tiny_space"></div>
+	<%if @mode == "two" %>
+		<input type="text" name="player_2_name" placeholder ="Enter name">
+	<%else%>
+		<input readonly type="hidden" name="player_2_name" value="Computer" >
+		<p style="font-size:15px">Player 2 is the computer.</p>
+	<%end%>
+	<div class="mini_space"></div>
+	<input class="button" type="submit" value="Start">
+</form>

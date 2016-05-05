@@ -1,93 +1,60 @@
 # RPS Challenge: Rōnin Badge Test
 
-Instructions
--------
+This is the 3rd weekend challenge for Ronin. The challenge involves making a web application for the game Rock, Paper, Scissors.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The instructions for this challenge can be found on the Makers site [here] (https://github.com/missamynicholson/rps-challenge).
 
-Task 
-----
+I will be following the same process as I did for Battle Web in order to complete this challenge. The Battle Web Challenge instructions can be found [here] (https://github.com/makersacademy/course/blob/master/intro_to_the_web/00_challenge_map.md).
+This challenge used Capybara and Selenium and the aim was to Test Drive development of a MVC compliant web application.
+My repo for the Battle Web Challenge can be found [here] (https://github.com/missamynicholson/Battle).
 
-Knowing how to build web applications is getting us almost there as web developers!
+# Installation instructions
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+1. Install Ruby
+2. Update Gems
+3. Install Git
+4. Create clone of repository
+5. Run bundle
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+# How to play?
 
 ```
-$ coveralls report
-```
+2.2.3 :004 > t = Turn.new
+ => #<Turn:0x007fcac89cda20>
+2.2.3 :006 > p1 = Player.new(name:'Amy')
+ => #<Player:0x007fcac8962590 @name="Amy", @points=0> 
+2.2.3 :007 > p2 = Player.new(name:'Computer')
+ => #<Player:0x007fcac8932390 @name="Computer", @points=0>
+2.2.3 :008 > g = Game.new(player1: p1, player2: p2, turn: t)
+ => #<Game:0x007fcac884fae0 @player1=#<Player:0x007fcac8962590 @name="Amy", @points=0>, @player2=#<Player:0x007fcac8932390 @name="Computer", @points=0>, @turn=#<Turn:0x007fcac89cda20>>
+2.2.3 :009 > g.result('spock', 'paper')
+ => "Player2 won! paper beats spock"
+2.2.3 :012 > "Score #{p1.points}-#{p2.points}"
+ => "Score 0-1"
+2.2.3 :013 > g.result('paper', 'spock')
+ => "Player1 won! paper beats spock"
+2.2.3 :014 > "Score #{p1.points}-#{p2.points}"
+ => "Score 1-1"
+2.2.3 :015 > g.result('paper', nil)
+ => "Player1 won! paper beats spock"
+2.2.3 :016 > "Score #{p1.points}-#{p2.points}"
+ => "Score 2-1"
+2.2.3 :017 > g.result('spock', nil)
+ => "Draw!"
+2.2.3 :018 > "Score #{p1.points}-#{p2.points}"
+ => "Score 2-1"
+2.2.3 :019 > g.result('lizard', nil)
+ => "Player1 won! lizard beats spock"
+2.2.3 :020 > "Score #{p1.points}-#{p2.points}"
+ => "Score 3-1"
+2.2.3 :021 > g.result('lizard', nil)
+ => "Player2 won! scissors beats lizard"
+2.2.3 :022 > "Score #{p1.points}-#{p2.points}"
+ => "Score 3-2"
+ ```
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+#Badges
 
+[![Coverage Status](https://coveralls.io/repos/github/missamynicholson/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/missamynicholson/rps-challenge?branch=master)
+
+ [![Build Status](https://travis-ci.org/missamynicholson/rps-challenge.svg?branch=master)](https://travis-ci.org/missamynicholson/rps-challenge)
