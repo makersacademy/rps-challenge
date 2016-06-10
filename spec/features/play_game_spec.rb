@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 feature 'play game' do
 
   scenario 'buttons bring back values' do
