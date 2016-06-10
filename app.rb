@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'RockPaperScissors'
+    "Steve's RockPaperScissors Game"
   end
 
   # start the server if ruby file executed directly
