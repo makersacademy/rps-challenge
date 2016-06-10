@@ -1,8 +1,6 @@
-feature "entering a name" do
+feature "Entering a name" do
   scenario "user enters a name (single player)" do
-    visit('/')
-    fill_in("username", with: "Van")
-    click_button("Start Game")
+    sign_in_and_start
     expect(page).to have_content("Welcome Van!")
   end
 end

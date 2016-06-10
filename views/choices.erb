@@ -1,1 +1,12 @@
-Welcome <%= @name %>!
+<form method="post" action="/choices" class="form__choice">
+  <label>
+    <input type="radio" name="choice" value="rock">Rock
+  </label>
+  <label>
+    <input type="radio" name="choice" value="paper">Paper
+  </label>
+  <label>
+    <input type="radio" name="choice" value="scissors">Scissors
+  </label>
+  <input type="submit" value="Submit">
+</form>

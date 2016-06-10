@@ -1,22 +1,30 @@
-.form-name {
-  span {
-    position: relative;
-  }
+.form {
+  &__name {
+    span {
+      position: relative;
+    }
 
-  label {
-    transition: top 0.2s ease;
-    position: absolute;
-    top: 0;
-    left: 5px;
-  }
+    label {
+      transition: top 0.2s ease;
+      position: absolute;
+      top: 0;
+      left: 5px;
+    }
 
-  input[type="text"] {
-    &:active,
-    &:focus,
-    &:valid {
-      & + label {
-        top: 110%;
+    input[type="text"] {
+      &:active,
+      &:focus,
+      &:valid {
+        & + label {
+          top: 110%;
+        }
       }
+    }
+  }
+
+  &__choice {
+    label {
+      display: block;
     }
   }
 }
