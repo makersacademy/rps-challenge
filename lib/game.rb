@@ -2,19 +2,21 @@ require_relative 'player'
 require_relative 'attack'
 class Game
 
-  attr_reader :player1, :attack, :winner, :computer_action
+  attr_reader :player1, :attack, :winner, :computer_action, :player2
 
-  def self.start(name)
-    player1 = Player.new(name)
-    @instance = new(player1)
+  def self.start(p1_name,p2_name)
+    player1 = Player.new(p1_name)
+    player2 = Player.new(p2_name)
+    @instance = new(player1,player2)
   end
 
   def self.instance
     @instance
   end
 
-  def initialize (player1,attack = Attack.new)
+  def initialize (player1,player2,attack = Attack.new)
     @player1 = player1
+    @player2 = player2
     @attack = attack
     @computer_action = nil
     @winner = nil
@@ -32,6 +34,8 @@ class Game
         "Congratulations #{player1.name} has won!"
       when winner == 2 && singleplayer == true
         "Ooooo - The AI has beaten you ;)"
+      when winner == 2 && singleplayer == false
+        "Unlucky - #{player2.name} has won!"
       when winner == 0
         "It's a draw"
     end

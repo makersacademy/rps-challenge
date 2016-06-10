@@ -8,13 +8,46 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    Game.start(params[:player1])
+    Game.start(params[:player],:computer)
     redirect '/play'
   end
 
   get '/play' do
     @game = Game.instance
     erb(:play)
+  end
+
+  post '/multiplayer' do
+    Game.start(params[:player1],params[:player2])
+    redirect '/multiplayer'
+  end
+
+  get '/multiplayer' do
+    "Toby vs Barry"
+    erb(:multiplayer)
+  end
+
+  post '/rock-multi' do
+    @game = Game.instance
+    @game.player1.set_last_action("Rock")
+    redirect '/multiplayer2'
+  end
+
+  post '/paper-multi' do
+    @game = Game.instance
+    @game.player1.set_last_action("Paper")
+    redirect '/multiplayer2'
+  end
+
+  post '/scissors-multi' do
+    @game = Game.instance
+    @game.player1.set_last_action("Scissors")
+    redirect '/multiplayer2'
+  end
+
+  get '/multiplayer2' do
+    @game = Game.instance
+    erb(:multiplayer2)
   end
 
   post '/rock' do
