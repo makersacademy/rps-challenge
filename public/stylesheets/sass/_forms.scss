@@ -7,17 +7,6 @@ form {
 }
 
 .form-name {
-  span {
-    position: relative;
-  }
-
-  label {
-    left: 5px;
-    position: absolute;
-    top: 0;
-    transition: all 0.2s ease;
-  }
-
   .input-text {
     border: solid 1px $text-color;
     padding: 0.5rem;
@@ -55,7 +44,7 @@ form {
     text-align: left;
   }
 
-  label + input {
+  label > input {
     margin-right: 0.5rem;
   }
 
