@@ -28,5 +28,5 @@ I would like to be able to play rock/paper/scissors
 
 ## Notes
 
-- Server needs to be started via `rackup` or `shotgun`, rather than directly through `ruby` so that Sass can be compiled correctly.
-- 
+- Server needs to be started via `rackup`, rather than directly through `ruby` so that Sass can be compiled correctly.
+- The game can be found at [rock-paper-sizzle.herokuapp.com](http://rock-paper-sizzle.herokuapp.com/). It works best in Chrome!
