@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
     @player1 = Game.instance.players.first
     @player2 = Game.instance.players.last
 
-    erb :start_layout, :layout => :layout do
+    erb :start_layout, layout: :layout do
       erb :choices
     end
   end
@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   post '/choices' do
     @player1 = Game.instance.players.first
     @choice = params[:choice].capitalize
-    erb :continue_layout, :layout => :layout do
+    erb :continue_layout, layout: :layout do
       erb :choices
     end
   end
