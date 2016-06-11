@@ -12,6 +12,6 @@ feature 'Player is prompted to enter their name' do
     visit ('/')
     fill_in('player_name', with: @player_name)
     click_button('Play')
-    expect(page).to have_content("#{@player_name}, choose your weapon")
+    expect(page).to have_content("#{@player_name}, choose your weapon:")
   end
 end

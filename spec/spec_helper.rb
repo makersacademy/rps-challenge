@@ -5,6 +5,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
+Coveralls.wear!
 
 SimpleCov.start
 
@@ -19,7 +20,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
-Capybara.app = Rps
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.include Capybara::DSL
