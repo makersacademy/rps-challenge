@@ -20,4 +20,18 @@ feature 'Play Rock Paper Scissors' do
     expect(page).to have_content('draw')
   end 
 
+  scenario 'Player 1 selects paper, ai selects rock, player 1 wins' do
+    srand(1)
+    enter_rnd_name_go_to_game
+    click_button('Paper')
+    expect(page).to have_content("#{@random_name} wins")
+  end 
+
+  scenario 'Player 1 selects paper, ai selects scissor, ai wins' do
+    srand(4)
+    enter_rnd_name_go_to_game
+    click_button('Paper')
+    expect(page).to have_content("#{AI.new.name} wins")
+  end 
+
 end 
