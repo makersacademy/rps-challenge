@@ -1,0 +1,13 @@
+<center>
+<h1>
+Hello <%= @name %>. Welcome to the game!
+</h1>
+<p>
+=========================
+<p>
+<strong>
+<%= @answer if @answer %>
+</strong>
+<form method='get' action = '/game_play'>
+<input type= 'submit' value='Play'>
+</form>
