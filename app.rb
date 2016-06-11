@@ -20,7 +20,11 @@ class RPS < Sinatra::Base
 
   post '/choices' do
     @player1 = Game.instance.players.first
-    @choice = params[:choice].capitalize
+    @player1.make_choice(params[:choice])
+
+    @player2 = Game.instance.players.last
+    @player2.make_choice
+
     erb :continue_layout, layout: :layout do
       erb :choices
     end

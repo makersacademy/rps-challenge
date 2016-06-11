@@ -7,4 +7,11 @@ describe Player do
       expect(subject.name).to eq("Van")
     end
   end
+
+  describe "#choice" do
+    it "should only be rock, paper or scissors" do
+      subject.make_choice
+      expect([:rock, :paper, :scissors]).to include(subject.choice)
+    end
+  end
 end
