@@ -3,12 +3,8 @@ feature 'Home Page' do
 		visit('/')
 		expect(page).to have_content('Welcome to Rock, Paper, Scissors!')
 	end
-	scenario 'has Single Player button' do
+	scenario 'a play button' do
 		visit ('/')
-		find_button('Single Player')
-	end
-	scenario 'has Multi Player button' do
-		visit ('/')
-		find_button('Multi Player')
+		find_button('PLAY!')
 	end
 end
