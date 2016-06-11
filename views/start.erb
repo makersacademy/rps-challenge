@@ -1,1 +1,17 @@
-Welcome <%= @player_name %>!
+<center>
+
+
+
+<h2>Welcome <%= @player_name %>!</h2>
+
+<p>Let's play!</p>
+<p>Make your choice:</p>
+
+<form action='/show_choices' method='post'>
+  <input type='submit' value='ROCK' name='choice'>
+  <input type='submit' value='PAPER' name='choice'>
+  <input type='submit' value='SCISSORS' name='choice'>
+</form>
+
+
+</center>
