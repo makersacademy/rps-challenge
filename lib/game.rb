@@ -23,7 +23,14 @@ class Game
   end
 
   def check_winner(players_choice, computers_choice)
-    winning_choice = WINNER[[players_choice, computers_choice].sort]
+    win_choice = WINNER[[players_choice, computers_choice].sort]
+    if win_choice == players_choice
+      return "#{@player_name} wins!"
+    elsif win_choice == computers_choice
+      return "Computer wins!"
+    else
+      return "Draw"
+    end 
   end
 
 end
