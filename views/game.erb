@@ -1,0 +1,25 @@
+<center>
+<h1>
+Hello <%= @name %>. Welcome to the game!
+</h1>
+<p>
+=========================
+<p>
+<strong>
+<%= @answer if @answer %>
+</strong>
+<form method='get' action = '/game_play'>
+  <select name="Select_Box">
+    <option value="Scissors">Scissors</option>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+  </select>
+<input type= 'submit' value='Play'>
+</form>
+<% if @choice %>
+<p>
+========================
+<p>
+<h2><%= @choice == @answer ? 'Winner' : 'Loser' %></h2>
+<% end %>
+
