@@ -1,10 +1,12 @@
-<h2><% if @winner %><%= @winner.name %> wins this round!<% else %>It's a tie!<% end %></h2>
 <div class="player-1">
-  <%= @player1.name %> chose <%= @player1.choice %>
+  <p><%= @player1.name %> chose <%= @player1.choice %></p>
 </div>
 <div class="player-2">
-  <%= @player2.name %> chose <%= @player2.choice %>
+  <p><%= @player2.name %> chose <%= @player2.choice %></p>
 </div>
 
-<p>Let's play again:</p>
-<%= yield %>
+<h2><% if @winner %><%= @winner.name %> wins this round!<% else %>It's a tie!<% end %></h2>
+
+<form method="post" action="/play" class="form-continue">
+  <input type="submit" class="input-btn" value="Play Again">
+</form>

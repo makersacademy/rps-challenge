@@ -27,4 +27,15 @@ feature "Picking a move" do
     click_button("Submit")
     expect(find(".player-2")).to have_content("scissors")
   end
+
+  scenario "player 1 plays a second round" do
+    sign_in_and_start
+    choose("Scissors")
+    click_button("Submit")
+    click_button("Play Again")
+    expect(page).to have_content("Welcome Van!")
+    # choose("Paper")
+    # click_button("Submit")
+    # expect(find(".player-1")).to have_content("Van chose paper")
+  end
 end
