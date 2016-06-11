@@ -1,5 +1,11 @@
 This is the results page!
 
-Your choice: <%= @result[1] %>
-Computer choice: <%= @result[2] %>
-Result: <%= @result[0] %>
+Your choice: <%= @result[1].capitalize %>
+Computer choice: <%= @result[2].capitalize %>
+Result: You <%= @result[0].capitalize %>!!!
+
+<form action="/play" method="get">
+	<div>
+    <input type="submit" value="Play again?"/>
+  </div>
+</form>
