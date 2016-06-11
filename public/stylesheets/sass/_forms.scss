@@ -5,17 +5,17 @@
     }
 
     label {
-      transition: top 0.2s ease;
+      left: 5px;
       position: absolute;
       top: 0;
-      left: 5px;
+      transition: top 0.2s ease;
     }
 
     input[type="text"] {
       &:active,
       &:focus,
       &:valid {
-        & + label {
+        + label {
           top: 110%;
         }
       }

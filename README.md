@@ -25,3 +25,7 @@ I would like to be able to play rock/paper/scissors
 1. Go to [http://localhost:4567](http://localhost:4567)
 1. ???
 1. Profit
+
+## Notes
+
+Server needs to be started via `rackup` or `shotgun`, rather than directly through `ruby` so that Sass can be compiled correctly.

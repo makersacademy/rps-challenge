@@ -25,6 +25,4 @@ class RPS < Sinatra::Base
       erb :choices
     end
   end
-
-  run! if app_file == $0
 end
