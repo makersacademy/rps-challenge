@@ -38,8 +38,17 @@
 }
 
 .form-choice {
+  display: inline-block;
+  margin-top: 1rem;
+
   label {
     display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-btn {
+    margin-top: 1rem;
   }
 }
 

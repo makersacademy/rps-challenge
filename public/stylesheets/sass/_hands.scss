@@ -1,0 +1,69 @@
+img {
+  max-width: 100%;
+  border: solid 1px black;
+}
+
+.player-1-hand {
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url("/images/rock-0.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  width: 50%;
+  height: 100%;
+
+  &.rock {
+    background-image: url("/images/rock-0.png");
+  }
+
+  &.paper {
+    background-image: url("/images/paper-open-0.gif");
+
+    &.close {
+      background-image: url("/images/paper-close-0.gif");
+    }
+  }
+
+  &.scissors {
+    background-image: url("/images/scissors-open-0.gif");
+
+    &.close {
+      background-image: url("/images/scissors-close-0.gif");
+    }
+  }
+}
+
+.player-2-hand {
+  top: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  background-image: url("/images/rock-1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right 80%;
+  width: 50%;
+  height: 100%;
+
+  &.rock {
+    background-image: url("/images/rock-1.jpg");
+  }
+
+  &.paper {
+    background-image: url("/images/paper-open-1.gif");
+
+    &.close {
+      background-image: url("/images/paper-close-1.gif");
+    }
+  }
+
+  &.scissors {
+    background-image: url("/images/scissors-open-1.gif");
+
+    &.close {
+      background-image: url("/images/scissors-close-1.gif");
+    }
+  }
+}

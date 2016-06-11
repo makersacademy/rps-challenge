@@ -12,8 +12,12 @@ a {
   &:focus {
     color: $highlight-color;
   }
+}
 
-  h1 & {
+.page-title {
+  margin: 2rem auto;
+
+  a {
     text-decoration: none;
   }
 }
