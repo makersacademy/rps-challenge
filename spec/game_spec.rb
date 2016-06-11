@@ -9,12 +9,40 @@ describe Game do
 		end
 	end
 
+	describe "#computer_choice" do
+		it "returns a random choice - rock, paper or scissors" do
+			srand(67809)
+			expect(game.computer_choice).to eq "scissors"
+		end
+	end
+
 	describe '#result' do
-		it "shows the result of a single game" do
+		it "shows the result of a single game - computer wins" do
 			game.player_choice("rock")
 			allow(game).to receive(:computer_choice).and_return("paper")
 			game.computer_choice
 			expect(game.result).to eq "Computer wins!"
+		end
+
+		it "shows the result of a single game - player wins" do
+			game.player_choice("rock")
+			allow(game).to receive(:computer_choice).and_return("scissors")
+			game.computer_choice
+			expect(game.result).to eq "You win!"
+		end
+
+		it "checks whether there is a tie" do
+			game.player_choice("rock")
+			allow(game).to receive(:computer_choice).and_return("rock")
+			game.computer_choice
+			expect(game.result).to eq "It is a tie!"
+		end
+	end
+
+	describe '#self.create' do
+		it "creates a new instance of the class" do
+			game = Game.create
+			expect(Game.instance).to eq game
 		end
 	end
 end
