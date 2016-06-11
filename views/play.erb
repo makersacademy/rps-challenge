@@ -1,11 +1,7 @@
 
 <h1><%= @player_name %>, choose your weapon:<h1>
-
-<form>
-  <input type="radio" name="weapon" value="scissors"> Rock<br>
-  <input type="radio" name="weapon" value="paper"> Paper<br>
-  <input type="radio" name="weapon" value="scissors"> Scissors<br>
-  <br>
-  <br>
-  <input type="submit" value="FIGHT">
+<form action="/chosen_weapon" method="post">
+  <input type="submit" name="weapon" value="Rock"><br>
+  <input type="submit" name="weapon" value="Paper"><br>
+  <input type="submit" name="weapon" value="Scissors"><br>
 </form>
