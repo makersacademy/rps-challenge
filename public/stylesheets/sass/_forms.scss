@@ -35,7 +35,7 @@ form {
       + label {
         transform: translateY(200%);
         -webkit-transform: translateY(200%);
-        color: #333;
+        color: $dark-grey;
       }
     }
   }
@@ -51,12 +51,12 @@ form {
 
   label {
     display: block;
-    text-align: left;
     margin-bottom: 0.5rem;
+    text-align: left;
+  }
 
-    input {
-      margin-right: 0.5rem;
-    }
+  label + input {
+    margin-right: 0.5rem;
   }
 
   .input-btn {
@@ -71,8 +71,8 @@ form {
   &:active,
   &:focus,
   &:hover {
-    outline: none;
-    cursor: pointer;
     border: solid 2px $highlight-color;
+    cursor: pointer;
+    outline: none;
   }
 }
