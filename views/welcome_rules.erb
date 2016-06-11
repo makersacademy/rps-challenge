@@ -1,7 +1,9 @@
 <h1> Welcome to the game <%= @player_name %> </h1>
 
+<h2> Rules for the Game are: <h2>
+
 <img src="https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/003/357/original/rock-paper-scissors.png" height="500" width="500"/>
 
-<form>
+<form action='/game' method='post'>
   <input type='submit' value='Start Game'>
 </form>
