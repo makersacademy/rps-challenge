@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
+require './lib/npc'
 
 class RPS < Sinatra::Base
 
@@ -7,7 +10,8 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player = params[:player_name]
+    player = Player.new(params[:player_name])
+    $game = Game.new(player)
     redirect '/play'
   end
 
@@ -15,6 +19,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    @choice = params[:player_choice]
+    @result = $game.play(@choice)
+    erb :result
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
