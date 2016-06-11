@@ -6,7 +6,7 @@ class RPS < Sinatra::Base
   end
 
   post '/welcome_rules' do
-    $player_name = params[:player_name]
+    $player_name = Player.new(params[:player_name])
     @player_name = $player_name
     erb(:welcome_rules)
   end
