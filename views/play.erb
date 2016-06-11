@@ -1,0 +1,10 @@
+<h2> Hello, <%= @player.name %>. Please select rock, paper or scissors:  </h2>
+
+<form method='post' action="/result">
+	<input type="hidden" name="scissors" value="<%= params[:choice]="scissors"%>"/>
+ 	<button type='submit'>Scissors</button>
+	<input type="hidden" name="paper" value="<%= params[:choice]="paper"%>" />
+	<button type='submit'>Paper</button>
+	<input type="hidden" name="rock" value="<%= params[:choice]="rock"%>" />
+	<button type='submit'>Rock</button>
+</form>
