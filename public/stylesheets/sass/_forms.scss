@@ -49,6 +49,7 @@
   &:active,
   &:focus,
   &:hover {
+    outline: none;
     cursor: pointer;
     border: solid 2px $highlight-color;
   }
