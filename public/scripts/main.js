@@ -16,13 +16,13 @@ if (playAgainBtn) {
     setTimeout(function(){
       form.submit();
     }, 2000);
-  }
+  };
 }
 
 if (submitBtn) {
   submitBtn.onclick = function(e){
     e.preventDefault();
-    
+
     handImages[0].classList.add("countdown");
 
     var form = document.getElementById("form-choice");
@@ -31,5 +31,5 @@ if (submitBtn) {
     setTimeout(function(){
       form.submit();
     }, 4000);
-  }
+  };
 }

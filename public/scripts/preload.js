@@ -1,9 +1,9 @@
-var images = new Array();
+var images = [];
 
 function preload() {
-	for (i = 0; i < preload.arguments.length; i++) {
-		images[i] = new Image()
-		images[i].src = preload.arguments[i]
+	for (var i = 0; i < preload.arguments.length; i++) {
+		images[i] = new Image();
+		images[i].src = preload.arguments[i];
 	}
 }
 preload (
@@ -18,4 +18,4 @@ preload (
   "images/scissor-close-2.png",
   "images/rock-1.png",
   "images/rock-2.png"
-)
+);
