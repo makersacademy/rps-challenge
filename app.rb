@@ -17,7 +17,8 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.instance
     @players_choice = params[:choice]
     @computers_choice = @game.random_choice
-    @winner = @game.check_winner(@players_choice, @computers_choice)
+    @best_choice = @game.check_winner(@players_choice, @computers_choice)
+    @winner = @best_choice == @players_choice ? @game.player_name : 'Computer'
     erb(:show_choices)
   end
 
