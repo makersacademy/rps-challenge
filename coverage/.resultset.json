@@ -1,7 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Marlon/Desktop/Makers/RPS/spec/feature/register_spec.rb": [
+      "/Users/Marlon/Desktop/Makers/RPS/spec/features/play_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Marlon/Desktop/Makers/RPS/spec/features/register_spec.rb": [
         1,
         null,
         1,
@@ -14,6 +30,6 @@
         null
       ]
     },
-    "timestamp": 1465650073
+    "timestamp": 1465650695
   }
 }
