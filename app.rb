@@ -10,8 +10,8 @@ class RPS < Sinatra::Base
   post '/start' do
     name = params[:username].capitalize
     Game.start(Player.new(name), Player.new)
-    @player1 = Game.instance.players.first
-    @player2 = Game.instance.players.last
+    @player1 = Game.instance.player1
+    @player2 = Game.instance.player2
 
     erb :start_layout, layout: :layout do
       erb :choices
@@ -19,11 +19,13 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
-    @player1 = Game.instance.players.first
+    @player1 = Game.instance.player1
     @player1.make_choice(params[:choice])
 
-    @player2 = Game.instance.players.last
+    @player2 = Game.instance.player2
     @player2.make_choice
+
+    @winner = Game.instance.play_round
 
     erb :continue_layout, layout: :layout do
       erb :choices

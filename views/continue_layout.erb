@@ -1,4 +1,10 @@
-<h2><%= @player1.name %> chose <%= @player1.choice %></h2>
-Let's continue!
+<h2><% if @winner %><%= @winner.name %> wins this round!<% else %>It's a tie!<% end %></h2>
+<div class="player-1">
+  <%= @player1.name %> chose <%= @player1.choice %>
+</div>
+<div class="player-2">
+  <%= @player2.name %> chose <%= @player2.choice %>
+</div>
 
+<p>Let's play again:</p>
 <%= yield %>

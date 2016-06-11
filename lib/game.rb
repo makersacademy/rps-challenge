@@ -20,8 +20,16 @@ class Game
     @game ||= new
   end
 
+  def player1
+    @players.first
+  end
+
+  def player2
+    @players.last
+  end
+
   def play_round
-    current_combo = [@players.first.choice, @players.last.choice]
+    current_combo = [player1.choice, player2.choice]
     decide_winner(current_combo)
   end
 
@@ -29,7 +37,7 @@ class Game
 
   def decide_winner(combination)
     return nil if combination.first == combination.last
-    return @players.first if P1_WINNING_COMBOS.include?(combination)
-    @players.last
+    return player1 if P1_WINNING_COMBOS.include?(combination)
+    player2
   end
 end
