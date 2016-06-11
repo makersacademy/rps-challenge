@@ -1,0 +1,19 @@
+body,
+input {
+  font-family: monospace;
+  color: $text-color;
+}
+
+a {
+  color: $text-color;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $highlight-color;
+  }
+
+  h1 & {
+    text-decoration: none;
+  }
+}

@@ -7,22 +7,49 @@
     left: 5px;
     position: absolute;
     top: 0;
-    transition: top 0.2s ease;
+    transition: all 0.2s ease;
   }
 
-  input {
+  .input-text {
+    border: solid 1px $text-color;
+    padding: 0.5rem;
+
+    &:active,
+    &:focus {
+      border: solid 1px $highlight-color;
+    }
+
     &:active,
     &:focus,
     &:valid {
+      outline: none;
+
       + label {
-        top: 110%;
+        transform: translateY(200%);
+        color: #333;
       }
     }
+  }
+
+  .input-btn {
+    display: none;
   }
 }
 
 .form-choice {
   label {
     display: block;
+  }
+}
+
+.input-btn {
+  background-color: transparent;
+  border: solid 2px $text-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    border: solid 2px $highlight-color;
   }
 }
