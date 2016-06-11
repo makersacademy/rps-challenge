@@ -1,0 +1,198 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFF;
+  background-color: #58B9C5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#title {
+  min-width: 910px;
+  height: 85px;
+  background-color: #FFF;
+  font-size: 56px;
+  font-weight: bold;
+  padding-top: 35px;
+}
+
+.pink {
+  color: #DD8C9F;
+  text-shadow: -1px 1px 0 #C25469,
+               -2px 2px 0 #C25469,
+               -3px 3px 0 #C25469,
+               -4px 4px 0 #C25469,
+               -5px 5px 0 #C25469;
+}
+
+.orange {
+  color: #FFAB00;
+  text-shadow: -1px 1px 0 #FD7500,
+               -2px 2px 0 #FD7500,
+               -3px 3px 0 #FD7500,
+               -4px 4px 0 #FD7500,
+               -5px 5px 0 #FD7500;
+}
+
+.green  {
+  color: #C0DE81;
+  text-shadow: -1px 1px 0 #94C442,
+               -2px 2px 0 #94C442,
+               -3px 3px 0 #94C442,
+               -4px 4px 0 #94C442,
+               -5px 5px 0 #94C442;
+}
+
+.blue {
+  color: #46C5DD;
+  text-shadow: -1px 1px 0 #0A9BC0,
+               -2px 2px 0 #0A9BC0,
+               -3px 3px 0 #0A9BC0,
+               -4px 4px 0 #0A9BC0,
+               -5px 5px 0 #0A9BC0;
+}
+
+.violet {
+  color: #AAABFF;
+  text-shadow: -1px 1px 0 #7474FF,
+               -2px 2px 0 #7474FF,
+               -3px 3px 0 #7474FF,
+               -4px 4px 0 #7474FF,
+               -5px 5px 0 #7474FF;
+}
+
+#game_area {
+  min-width: 910px;
+  height: 400px;
+  background-color: #A0D4D8;
+}
+
+#button_bar {
+  min-width: 910px;
+  height: 100px;
+  background-color: #27A0AB;
+  font-size: 24px;
+}
+
+.container  {
+  width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#play_again {
+  width: 160px;
+  height: 90px;
+  padding-top: 34px;
+  float:left;
+}
+
+#buttons {
+  width: 740px;
+  float:left;
+}
+
+.player_container {
+  width: 370px;
+  height: 400px;
+  float: left;
+}
+
+.player_name  {
+  width: 370px;
+  height: 70px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.gif_container  {
+  width: 370px;
+  height: 200px;
+
+  font-size: 70px;
+  font-weight: lighter;
+  padding-top: 120px;
+}
+
+.middle_wrapper  {
+  width: 170px;
+  height: 400px;
+  font-size: 44px;
+  float: left;
+}
+
+.score  {
+  height: 80px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.result  {
+  padding-top: 120px;
+  height: 200px;
+  font-size: 44px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #F9A700;
+  border: none;
+  color: #FFFFFF;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 18px 4px 18px 4px;
+  vertical-align: middle;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover {
+  background-color: #EC5A31;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.box  {
+  display: inline-block;
+  border-radius: 8px;
+  color: #FFF;
+  background-color: #40ABB4;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  padding: 5px;
+  border: 0;
+  height: 60px;
+  margin: 18px 4px 18px 4px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #A0D4D8;
+}

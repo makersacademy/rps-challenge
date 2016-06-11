@@ -1,0 +1,75 @@
+<head>
+  <title>RPSLS</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="title">
+  <span class="pink">ROCK</span>
+  <span class="orange">PAPER</span>
+  <span class="green">SCISSORS</span>
+  <span class="blue">SPOCK</span>
+  <span class="violet">LIZARD</span>
+</div>
+
+<div id="game_area">
+  <div class="container">
+    <div class="player_container">
+      <div class="gif_container">
+        <% if @game.turns > 0 %>
+          <%= @game.last_result[0] %>
+        <% end %>
+      </div>
+      <div class="player_name">
+        <%= @game.player1 %>
+      </div>
+    </div>
+      <div class="middle_wrapper">
+        <div class="result">
+          <% if @game.turns > 0 %>
+            <% if @game.last_result[2] == "player1" %>
+              <%= @game.player1 %> wins!
+            <% elsif @game.last_result[2] == "player2" %>
+              <%= @game.player2 %> wins!
+            <% else @game.last_result[2] == "player2" %>
+              It's a draw!
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="score">
+          <%= @game.score %>
+        </div>
+      </div>
+
+      <div class="player_container">
+        <div class="gif_container">
+          <% if @game.turns > 0 %>
+            <%= @game.last_result[1] %>
+          <% end %>
+        </div>
+        <div class="player_name">
+          <%= @game.player2 %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="button_bar">
+  <div class="container">
+    <div id="play_again">Play <% if @game.turns > 0 %>again:<% end %>
+     </div>
+    <div id="buttons">
+      <form action="/fight" method="POST">
+        <button type="submit" name="move" value="rock" class="button"><span>rock</span></button>
+        <button type="submit" name="move" value="paper" class="button"><span>paper</span></button>
+        <button type="submit" name="move" value="scissors" class="button"><span>scissors</span></button>
+        <button type="submit" name="move" value="spock" class="button"><span>spock</span></button>
+        <button type="submit" name="move" value="lizard" class="button"><span>lizard</span></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
