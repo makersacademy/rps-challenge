@@ -1,1 +1,14 @@
-require 'sinatra'
+require 'sinatra/base'
+
+class Rps < Sinatra::Base
+
+  get('/') do
+    erb(:index)
+  end
+
+  get('/name') do
+    erb(:name)
+  end
+
+  run! if app_file == $0
+end
