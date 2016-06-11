@@ -1,10 +1,12 @@
 #understands how to return a random weapon
 
 class AI
- 
-  def weapon
-    %w-R P S-.sample
-  end 
+
+  attr_reader :weapon
+
+  def initialize
+    @weapon = %w-R P S-.sample
+  end
 
   def name
     'Machine'

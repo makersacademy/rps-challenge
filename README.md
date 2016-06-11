@@ -13,4 +13,8 @@ I would like to be able to play rock/paper/scissors
 As a marketeer
 So that I can know if I won or not
 I would like to see the outcome of the game printed out
+
+As a marketeer
+So I know I was not cheated on
+I would like to see what weapon my opponent used
 ```
