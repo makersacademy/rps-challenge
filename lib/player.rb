@@ -1,3 +1,4 @@
+# understands holding of a weapon
 class Player
   attr_reader :name, :weapon
 
