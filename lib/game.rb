@@ -24,6 +24,14 @@ class Game
     end
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   private
 
   def game_array(player_choice)

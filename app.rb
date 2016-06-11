@@ -5,13 +5,17 @@ require './lib/npc'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/names' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    @game = Game.create(player)
     redirect '/play'
   end
 
@@ -21,7 +25,7 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @choice = params[:player_choice]
-    @result = $game.play(@choice)
+    @result = @game.play(@choice)
     erb :result
   end
 
