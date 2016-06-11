@@ -1,12 +1,14 @@
-<h1> It's your turn, <%= @player1_name %>!</h1>
+<h1> <%= @game.player1.name %></h1> VS. <%= @game.player2.name %>
+
+<h1> It's your turn, <%= @game.player1.name %>!</h1>
 
 <BR>
 
 <h1> Please choose your weapon! </h1>
 
 <form action='/choice' method='post'>
-	<button value='rock'>pic</button>
-	<button value='paper'>pic</button>
-	<button value='scissors'>pic</button>
+	<button name='weapon' value='rock' >rock</button>
+	<button name='weapon' value='paper'>pic</button>
+	<button name='weapon' value='scissors'>pic</button>
 </form>
 

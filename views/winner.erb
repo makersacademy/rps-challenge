@@ -1,0 +1,37 @@
+<%= @game.player1.name %>: <%= @game.player1_weapon.upcase %>
+
+<BR>
+
+<%= @game.player2.name %>: <%= @game.player2_weapon.upcase %>
+
+<BR>
+
+<% if @game.winner %>
+
+The winner is <%= @game.winner.name %>
+
+<% else %>
+
+No winner this time - it was a draw!
+
+<% end %>
+
+<BR>
+
+<%= @game.player1.name %> has <%= @game.player1.points %> points
+
+<BR>
+
+<%= @game.player2.name %> has <%= @game.player2.points %>	points
+
+<BR>
+
+<form action='/play' method='get'>
+	<button>Play Again!</button>
+</form>
+
+<BR>
+
+<form action='/' method='get'>
+	<button>End Game</button>
+</form>

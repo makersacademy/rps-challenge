@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './lib/player'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -12,13 +12,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player1 = Player.new(params[:player1_name])
+    player1 = Player.new(params[:player1_name])
+    $game = Game.new(player1)
     redirect('/play')
   end
 
   get '/play' do
-    @player1_name = $player1.name
+    @game = $game
     erb(:play)
+  end
+
+  post '/choice' do
+    @game = $game
+    @game.player1_select(params[:weapon])
+    @game.player2_select
+    redirect('/winner')
+  end
+
+  get '/winner' do
+    @game = $game
+    @game.update_score
+    erb(:winner)
   end
 
   run! if app_file == $0

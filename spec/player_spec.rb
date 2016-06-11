@@ -9,4 +9,10 @@ describe Player do
 		end
 	end
 
+	describe '#add_points' do
+		it 'changes players points by Game::POINT_INCREMENT' do
+			expect{player.add_points}.to change{player.points}.by(Game::POINT_INCREMENT)
+		end
+	end
+
 end
