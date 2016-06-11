@@ -11,7 +11,7 @@ require 'coveralls'
 require 'simplecov'
 require 'byebug'
 
-Capybara.app = rps-challenge
+Capybara.app = RPS
 RSpec.configure do |config|
   config.include Capybara::DSL
   config.expect_with :rspec do |expectations|
