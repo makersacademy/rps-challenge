@@ -1,8 +1,6 @@
 feature 'Keeping Score' do
   scenario 'Player 1s Score' do
-    visit('/')
-    fill_in :player_1_name, with: 'Steve'
-    click_button 'Submit'
-    expect(page).to have_content 'Welcome Steve to Rock Paper Scissors!'
+    sign_in_and_play
+    expect(page).to have_content "Steve's Score: 0"
   end
 end

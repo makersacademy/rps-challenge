@@ -2,6 +2,7 @@
 
 require 'coveralls'
 require 'simplecov'
+require 'features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 
