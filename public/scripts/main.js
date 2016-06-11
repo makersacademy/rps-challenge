@@ -15,7 +15,7 @@ if (playAgainBtn) {
 
     setTimeout(function(){
       form.submit();
-    }, 2000);
+    }, 1500);
   };
 }
 
@@ -30,6 +30,6 @@ if (submitBtn) {
 
     setTimeout(function(){
       form.submit();
-    }, 4000);
+    }, 3500);
   };
 }
