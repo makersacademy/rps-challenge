@@ -8,12 +8,12 @@ form {
 
 .form-name {
   .input-text {
-    border: solid 1px $text-color;
+    border: solid 2px $text-color;
     padding: 0.5rem;
 
     &:active,
     &:focus {
-      border: solid 1px $highlight-color;
+      border: solid 2px $highlight-color;
     }
 
     &:active,
@@ -55,12 +55,12 @@ form {
 
 .input-btn {
   background-color: transparent;
-  border: solid 2px $text-color;
+  border: solid 3px $text-color;
 
   &:active,
   &:focus,
   &:hover {
-    border: solid 2px $highlight-color;
+    border: solid 3px $highlight-color;
     cursor: pointer;
     outline: none;
   }
