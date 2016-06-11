@@ -1,5 +1,5 @@
 class Game
-attr_reader :score, :choice
+attr_reader :score, :choice, :comp_choice
 
 
 	def player_choice(choice)
@@ -11,7 +11,7 @@ attr_reader :score, :choice
 	end
 
 	def result
-		choice == computer_choice ? "It is a tie!" : winner
+		@choice == @comp_choice ? "It is a tie!" : winner
 	end
 
 	def self.create
@@ -24,14 +24,13 @@ attr_reader :score, :choice
 
 	private
 
-
 	def winner
-		if computer_choice == "paper"
-			choice == "rock" ? "Computer wins!" : "You win!"
-		elsif computer_choice == "rock"
-			choice == "scissors" ? "Computer wins" : "You win!"
+		if @comp_choice == "paper"
+			@choice == "rock" ? "Computer wins!" : "You win!"
+		elsif @comp_choice == "rock"
+			@choice == "scissors" ? "Computer wins!" : "You win!"
 		else
-			choice == "paper" ? "Computer wins" : "You win!"
+			@choice == "paper" ? "Computer wins!" : "You win!"
 		end
 	end
 

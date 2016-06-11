@@ -6,9 +6,9 @@ feature 'Play RPS' do
 		expect(page).to have_content("Please select rock, paper or scissors:")
 	end
 
-	# scenario 'it displays the result after player choses an option' do
-	# 	sign_in_and_play
-	# 	click_button('Scissors')
-	# 	expect(page).to have_content("You chose: scissors.")
-	# end
+	scenario 'it displays the result after player choses an option' do
+		sign_in_and_play
+		click_button('scissors')
+		expect(page).to have_content("You chose: scissors.")
+	end
 end

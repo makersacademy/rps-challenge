@@ -18,22 +18,22 @@ describe Game do
 
 	describe '#result' do
 		it "shows the result of a single game - computer wins" do
-			game.player_choice("rock")
-			allow(game).to receive(:computer_choice).and_return("paper")
+			game.player_choice("paper")
+			srand(67809)
 			game.computer_choice
 			expect(game.result).to eq "Computer wins!"
 		end
 
 		it "shows the result of a single game - player wins" do
 			game.player_choice("rock")
-			allow(game).to receive(:computer_choice).and_return("scissors")
+			srand(67809)
 			game.computer_choice
 			expect(game.result).to eq "You win!"
 		end
 
 		it "checks whether there is a tie" do
-			game.player_choice("rock")
-			allow(game).to receive(:computer_choice).and_return("rock")
+			game.player_choice("scissors")
+			srand(67809)
 			game.computer_choice
 			expect(game.result).to eq "It is a tie!"
 		end
