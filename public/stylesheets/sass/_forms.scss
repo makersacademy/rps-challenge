@@ -1,3 +1,11 @@
+form {
+  transition: opacity 0.3s ease;
+
+  &.submitted {
+    opacity: 0.1;
+  }
+}
+
 .form-name {
   span {
     position: relative;
@@ -45,6 +53,10 @@
     display: block;
     text-align: left;
     margin-bottom: 0.5rem;
+
+    input {
+      margin-right: 0.5rem;
+    }
   }
 
   .input-btn {
