@@ -1,7 +1,19 @@
 <div>
   <%= @player_name %> vs. Machine
 </div>
-  <br>
+
+ <br>
+
 <div>
   <%= @player_name %> choose your weapon...
 </div>
+
+<br>
+
+<form>
+  <label for="weapon_selection">
+  	Rock, paper or scissors?
+  <input type="text" name="weapon">
+  </label>
+  <input type="submit" value="Fight!">
+</form>
