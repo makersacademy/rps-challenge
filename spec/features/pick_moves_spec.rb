@@ -23,7 +23,7 @@ feature "Picking a move" do
   scenario "computer picks a move at random" do
     sign_in_and_start
     choose("Scissors")
-    srand(12345)
+    srand(12_345)
     click_button("Submit")
     expect(find(".player-2")).to have_content("scissors")
   end
