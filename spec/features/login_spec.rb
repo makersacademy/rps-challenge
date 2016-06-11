@@ -1,8 +1,5 @@
-require 'capybara/dsl'
-require 'spec_helper'
-
 feature "Login player" do
-  scenario 'submitting names' do
+  scenario 'submitting players name' do
     visit( '/' )
     fill_in :players_name, with: "Meerkat"
     click_button "Submit"

@@ -1,1 +1,12 @@
-<%= @players_name %>
+<h1> Welcome to the game, 
+<%= @players_name %>!!</h1>
+<h2>choose your card, please</h2>
+<form action='/card' method='post'>
+  <img id='rock' src="img/rock.jpg" >
+  <input id='rock' type='radio' name='choose' value='rock'>
+  <img id='paper' src="img/paper.jpg" >
+  <input id='paper'  type='radio' name='choose' value='paper'>
+  <img id='scissor' src="img/scissor.jpg" >
+  <input type='radio' name='choose' value='scissor'>
+  <input type="submit" value="Submit">
+</form> 
