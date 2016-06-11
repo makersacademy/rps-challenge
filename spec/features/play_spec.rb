@@ -6,6 +6,6 @@ feature "play a game of RPS" do
     click_button 'Submit'
     choose('rock')
     click_button 'Make Descision!'
-    expect(page).to have_content 'win'
+    expect(page).to have_content 'Win'
   end
 end
