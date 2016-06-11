@@ -1,13 +1,13 @@
 require 'weapon'
 
 describe Weapon do
-  subject(:weapon) {
+  subject(:weapon) do
     described_class.new(
       name: "Rock",
       inflictions: ["crushes"],
       weaknesses: ["covers", "vaporizes"]
     )
-  }
+  end
 
   let(:scissors) { double(:scissors) }
 
