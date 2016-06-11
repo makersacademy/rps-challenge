@@ -1,0 +1,19 @@
+h1 {
+  color: lightblue;
+}
+
+.item_selection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  height: 300px;
+}
+
+.item_selection img {
+  width: 150px;
+}
+
+.item_selection p {
+  padding: 1%;
+}
