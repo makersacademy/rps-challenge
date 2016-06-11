@@ -11,9 +11,14 @@ class RPS < Sinatra::Base
     erb(:welcome_rules)
   end
 
-  post '/play' do
+  get '/play' do
     @player_name = $player_name
     erb(:play)
+  end
+
+  post '/attack' do
+    @player_name = $player_name
+    redirect '/play'
   end
 
   run! if app_file == $0
