@@ -2,6 +2,7 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'lib/rps_app.rb')
 
+require 'features/web_helpers'
 require 'coveralls'
 require 'simplecov'
 require 'capybara'
