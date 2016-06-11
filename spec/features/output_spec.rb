@@ -1,43 +1,45 @@
+describe "Features" do
 
+let(:name) { "Aasfgdh frwesfdg" }
+let(:choice) { "Scissors" }
 
-feature '/' do
-  scenario 'visits page' do
-    visit('/')
-    expect(page).to have_text('Enter names')
+  feature '/' do
+    scenario 'visits page' do
+      visit('/')
+      expect(page).to have_text('Enter names')
+    end
   end
-end
 
-feature 'Enter names' do
-  scenario 'submitting names' do
-    visit('/')
-    fill_in('name', with: 'Ross')
-    click_button('Submit')
-    expect(page).to have_content('Ross')
+  feature 'Enter names' do
+    scenario 'submitting names' do
+      visit('/')
+      fill_in('name', with: name)
+      click_button('Submit')
+      expect(page).to have_content(name)
+    end
   end
-end
 
 
 
-feature 'Returns rock paper or scissors' do
+  feature 'Push Play button' do
 
-  scenario 'push play button' do
-    allow(Kernel).to receive(:rand).and_return(0)
-    visit('/')
-    fill_in('name', with: 'Ross')
-    click_button('Submit')
-    click_button('Play')
-    expect(page).to have_content(['Scissors', 'Rock', 'Paper'][0])
+    scenario 'Returns Rock, Paper or Scissors' do
+      visit('/')
+      fill_in('name', with: name)
+      click_button('Submit')
+      click_button('Play')
+      expect(page).to have_content(['Scissors', 'Rock', 'Paper'][0])
+    end
   end
-end
 
-feature 'Allows user to enter selection and play' do
-  scenario 'user picks Rock, computer forces scissors, expect win!' do
-    allow(Kernel).to receive(:rand).and_return(0)
-    visit('/')
-    fill_in('name', with: 'Ross')
-    click_button('Submit')
-    select('Rock', from: 'Select_Box')
-    click_button('Play')
-    expect(page).to have_content('Winner')
+  feature 'Allows user to enter selection and play' do
+    scenario 'user picks Rock, computer forces scissors, expect win!' do
+      visit('/')
+      fill_in('name', with: name)
+      click_button('Submit')
+      select('Rock', from: 'Select_Box')
+      click_button('Play')  
+      expect(page.text).to match('Winner|Loser|Draw')
+    end
   end
 end

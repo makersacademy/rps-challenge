@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/rps.rb'
 
 class MyApp < Sinatra::Base
 enable :sessions
@@ -7,15 +8,13 @@ enable :sessions
   end
 
 get '/game_start' do
-  @name= params[:name]
-  session[:name]= @name
+  session[:game] = RPS.new(params[:name])
   erb(:game)
 end
 
 get '/game_play' do
-  @name= session[:name]
   @choice = params[:Select_Box]
-  @answer= ['Scissors', 'Rock', 'Paper'][rand(0..2)]
+  @answer = session[:game].choose
   erb(:game)
 end
 
