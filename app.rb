@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -8,14 +9,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @game = Game.new(session)
     erb :play
   end
+
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
