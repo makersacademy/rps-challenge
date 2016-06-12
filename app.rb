@@ -12,7 +12,7 @@ class Rps < Sinatra::Base
 
   post('/name') do
     @player_1 = params[:player_1]
-    erb(:play)
+    erb(:select_weapon)
   end
 
   run! if app_file == $0

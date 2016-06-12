@@ -5,8 +5,7 @@ feature "FEATURE: start page" do
   end
 
   scenario "start button takes user to name input view" do
-    visit('/')
-    click_button "Start"
+    start
     expect(page).to have_content "Please enter your name"
   end
 end
