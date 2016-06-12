@@ -4,6 +4,7 @@ require 'simplecov'
 require 'byebug'
 require 'capybara/rspec'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require './spec/features/web_helper'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,

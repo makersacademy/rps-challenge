@@ -28,8 +28,6 @@ class Game
     players.last
   end
 
-  private
-
   def player_1_wins
     winner << player_1
   end

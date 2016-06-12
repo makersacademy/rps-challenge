@@ -1,3 +1,11 @@
-<h2>You lose!</h2>
-Hey there <%= @game.player_1.name %>! Your weapon of choice is <%= @game.player_1.weapon.name %><br>
+<% if @game.winner == [@game.player_1] %>
+<h2>You win :D</h2>
+<% elsif @game.winner == [@game.player_2] %>
+<h2>You lose :(</h2>
+<% else %>
+<h2>It's a draw (:</h2>
+<% end %>
+Hey there <%= @game.player_1.name %>! You chose <%= @game.player_1.weapon.name %>. Computer chose <%= @game.player_2.weapon.name %>
+<p>
 <a href="/">Play again</href>
+</p>

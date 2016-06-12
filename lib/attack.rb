@@ -11,8 +11,6 @@ class Attack
     game.both_players_win
   end
 
-  private
-
   def player_1_loses?
     game.player_2.weapon.wins_against.include?(game.player_1.weapon)
   end

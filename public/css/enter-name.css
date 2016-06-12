@@ -10,6 +10,11 @@ h2 {
   text-shadow: 1px 1px #444A54;
 }
 
+a, a:visited, a:hover, a:active {
+  color: #FFF;
+  text-shadow: 1px 1px #444A54;
+}
+
 .container {
   max-width: 800px;
   padding: 15px;
