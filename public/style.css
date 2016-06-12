@@ -16,44 +16,44 @@ body {
   padding-top: 35px;
 }
 
-.dark_grey {
-  color: #A9A9A9;
-  text-shadow: -1px 1px 0 #717171,
-               -2px 2px 0 #717171,
-               -3px 3px 0 #717171,
-               -4px 4px 0 #717171,
-               -5px 5px 0 #717171;
+.pink {
+  color: #E18A9F;
+  text-shadow: -1px 1px 0 #C94962,
+               -2px 2px 0 #C94962,
+               -3px 3px 0 #C94962,
+               -4px 4px 0 #C94962,
+               -5px 5px 0 #C94962;
 }
 
 .orange {
-  color: #FFE694;
-  text-shadow: -1px 1px 0 #FFBA1F,
-               -2px 2px 0 #FFBA1F,
-               -3px 3px 0 #FFBA1F,
-               -4px 4px 0 #FFBA1F,
-               -5px 5px 0 #FFBA1F;
+  color: #FFC750;
+  text-shadow: -1px 1px 0 #FF8C00,
+               -2px 2px 0 #FF8C00,
+               -3px 3px 0 #FF8C00,
+               -4px 4px 0 #FF8C00,
+               -5px 5px 0 #FF8C00;
 }
 
-.light_grey  {
-  color: #DDDDDD;
-  text-shadow: -1px 1px 0 #A6A6A6,
-               -2px 2px 0 #A6A6A6,
-               -3px 3px 0 #A6A6A6,
-               -4px 4px 0 #A6A6A6,
-               -5px 5px 0 #A6A6A6;
+.violet  {
+  color: #AAA5FF;
+  text-shadow: -1px 1px 0 #615AE0,
+               -2px 2px 0 #615AE0,
+               -3px 3px 0 #615AE0,
+               -4px 4px 0 #615AE0,
+               -5px 5px 0 #615AE0;
 }
 
 .blue {
-  color: #7DAAFF;
-  text-shadow: -1px 1px 0 #386FFF,
-               -2px 2px 0 #386FFF,
-               -3px 3px 0 #386FFF,
-               -4px 4px 0 #386FFF,
-               -5px 5px 0 #386FFF;
+  color: #34C5E1;
+  text-shadow: -1px 1px 0 #0097C9,
+               -2px 2px 0 #0097C9,
+               -3px 3px 0 #0097C9,
+               -4px 4px 0 #0097C9,
+               -5px 5px 0 #0097C9;
 }
 
-.violet {
-  color: #BDE075;
+.green {
+  color: #BDE170;
   text-shadow: -1px 1px 0 #68AD00,
                -2px 2px 0 #68AD00,
                -3px 3px 0 #68AD00,
