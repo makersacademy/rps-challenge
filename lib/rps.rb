@@ -55,11 +55,11 @@ class RPS
   end
 
   def match_moves_to_hash
-    MOVE_RESULT.detect{ |moves,result| moves.sort ==  players_moves.sort }
+    MOVE_RESULT.detect{ |moves, _result| moves.sort ==  players_moves.sort }
   end
 
   def players_moves
-    @players.map{ |player| player.choice }
+    @players.map(&:choice)
   end
 
   def select_winner
