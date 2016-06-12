@@ -9,8 +9,7 @@ class RPS < Sinatra::Application
 	end
 
 	post '/play' do
-		@player = @player || Player.new(params[:player_1_name])
-		@name = @player.name
+		@player = Player.instance || @player = Player.create(params[:player_1_name])
 		@game = Game.create
 		erb :play
 	end

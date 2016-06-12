@@ -1,7 +1,6 @@
 class Game
 attr_reader :score, :choice, :comp_choice
 
-
 	def player_choice(choice)
 		@choice = choice
 	end

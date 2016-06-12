@@ -11,4 +11,11 @@ feature 'Play RPS' do
 		click_button('scissors')
 		expect(page).to have_content("You chose: scissors.")
 	end
+
+	scenario 'it remembers the name of the player if they would like to play again.' do
+		sign_in_and_play
+		click_button('rock')
+		click_button('Play again?')
+		expect(page).to have_content("Hello, player_1.")
+	end
 end
