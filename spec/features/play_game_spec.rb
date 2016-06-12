@@ -9,7 +9,7 @@ feature "the user can play the game" do
 
   scenario "the user can see if they won or lost" do
     sign_in_to_play
-    choose("Rock")
+    find("input[value='Rock']").click
     click_button("Confirm")
     expect(page).to have_content "Jimbo wins!"
   end

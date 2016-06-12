@@ -20,7 +20,8 @@ class RPS < Sinatra::Base
 
   post '/compete' do
     @game = $game
-    @game.player_choice = params[:selection]
+    @game.player_choice = params[:value]
+    @game.computer_chooses
     @game.evaluate
     redirect '/victory'
   end

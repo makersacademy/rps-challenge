@@ -15,15 +15,8 @@ describe Game do
   it "should permit computer to win if it has the best hand" do
     allow(game).to receive(:computer_choice).and_return("Rock")
     game.player_choice = "Scissors"
-
     game.evaluate
-
-    p "=========="
-    p "evaluate"
-    p game.evaluate
-    p "=========="
     expect(game.winner).to eq "Computer"
-
   end
 
 
