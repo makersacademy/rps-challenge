@@ -1,6 +1,7 @@
 #controller file for Rock Paper Scissors
 
 require 'sinatra'
+require_relative './lib/computer'
 
 get '/' do 
 	@name = params[:player_name]
@@ -14,13 +15,16 @@ post '/named-player' do
 end
 
 get '/rock' do
+	@computer = Computer.new
 	erb :rock
 end
 
 get '/paper' do
+	@computer = Computer.new
 	erb :paper
 end
 
 get '/scissors' do
+	@computer = Computer.new
 	erb :scissors
 end
