@@ -1,0 +1,17 @@
+<h3 style="text-align: center">
+  <div>
+    Welcome <%= @name %>!
+  </div>
+  <div>
+    Try your luck pick Rock Paper or Scissor
+  </div>
+</h3>
+
+
+<form style="text-align: center" action="/fight" method="post">
+
+  <input type="submit" value="Rock" name="option"/>
+  <input type="submit" value="Paper" name="option"/>
+  <input type="submit" value="Scissor" name="option"/>
+
+</form>
