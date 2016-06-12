@@ -1,7 +1,9 @@
 feature 'Play Game' do
 
   before do
-    sign_in_and_play
+    visit '/'
+    fill_in 'name', with: 'Steve'
+    click_button 'Submit'
   end
 
   scenario 'see player items' do
@@ -10,9 +12,9 @@ feature 'Play Game' do
     expect(page).to have_button('Scissors')
   end
 
-  xscenario 'player chooses an item' do
+  scenario 'player chooses an item' do
     click_button 'Rock'
-    expect(page).to have_content "You selected 'Rock'"
+    expect(page).to have_content "You selected Rock"
   end
 
 
