@@ -24,25 +24,19 @@ I would like to be able to play rock/paper/scissors
 
 <h3>Basic</h3>
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- the player should be able to enter their name before the game
+- the player will be presented the choices (rock, paper and scissors)
+- the player can choose one option
+- the game's computer AI (Ava the robot) will choose a random option
+- a winner (or draw) will be declared and the scores of each party updated
 
 <h3>Advanced</h3>
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the special rules (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
+- Change the game so that two human players can play each other.
+- Include option (and functionality) to play extended rock-paper-scissors-lizard-Spock rules (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
 
 <h2>Instructions</h2>
 
----
 **Installation instructions**
 ```sh
 $ git clone git@github.com:awye765/rps-challenge.git
