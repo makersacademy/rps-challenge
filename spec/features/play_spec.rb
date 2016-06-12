@@ -12,14 +12,29 @@ feature 'play rock, paper, scissors' do
   	expect(page).to have_content 'Luke vs. Machine'
   end
 
-  scenario 'select a weapon to do battle' do
+  scenario 'see the weapons to do battle' do
   	expect(page).to have_button 'Rock'
   	expect(page).to have_button 'Paper'
   	expect(page).to have_button 'Scissors'
   end
 
-  # scenario 'weapon choice made by player' do
-  # 	click_button 'Paper'
-  # 	expect(page).to have_content 'You selected rock'
-  # end
+  scenario 'choose a weapon' do
+  	click_button 'Paper'
+  	expect(page).to have_content 'You chose Paper'
+  end
+
+  scenario 'the computer chooses a random weapon' do
+  	srand(1010)
+  	click_button 'Rock'
+  	expect(page).to have_content 'the computer chose rock'
+  end
+
+  
+
+
+
+
+
+
+
 end
