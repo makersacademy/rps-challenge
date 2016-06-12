@@ -1,35 +1,55 @@
-var playAgainBtn = document.getElementById("form-continue-submit");
-var submitBtn = document.getElementById("form-choice-submit");
-var handImages = document.getElementsByClassName("player-hand");
+var nameForm = "#form-name",
+    playAgainForm = "#form-continue",
+    choiceForm = "#form-choice",
+    handImages = ".player-hand",
+    contentContainer = "#main-content";
 
-if (playAgainBtn) {
-  playAgainBtn.onclick = function(e){
-    e.preventDefault();
 
-    for (var i = 0; i < handImages.length; i++) {
-    	handImages[i].classList.add("close");
+$("body").on("submit", nameForm, function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: $(nameForm).attr("method"),
+    url: $(nameForm).attr("action"),
+    data: $(nameForm).serialize(),
+    success: function(data) {
+      var content = $(data).filter(contentContainer).html();
+      $(contentContainer).html(content);
     }
+  });
+});
 
-    var form = document.getElementById("form-continue");
-    form.classList.add("submitted");
+$("body").on("submit", playAgainForm, function(e) {
+  e.preventDefault();
+  $(handImages).addClass("close");
+  $(playAgainForm).addClass("submitted");
 
-    setTimeout(function(){
-      form.submit();
-    }, 1500);
-  };
-}
+  setTimeout(function(){
+    $.ajax({
+      type: $(playAgainForm).attr("method"),
+      url: $(playAgainForm).attr("action"),
+      data: $(playAgainForm).serialize(),
+      success: function(data) {
+        var content = $(data).filter(contentContainer).html();
+        $(contentContainer).html(content);
+      }
+    });
+  }, 1500);
+});
 
-if (submitBtn) {
-  submitBtn.onclick = function(e){
-    e.preventDefault();
+$("body").on("submit", choiceForm, function(e) {
+  e.preventDefault();
+  $(handImages).addClass("countdown");
+  $(choiceForm).addClass("submitted");
 
-    handImages[0].classList.add("countdown");
-
-    var form = document.getElementById("form-choice");
-    form.classList.add("submitted");
-
-    setTimeout(function(){
-      form.submit();
-    }, 3500);
-  };
-}
+  setTimeout(function(){
+    $.ajax({
+      type: $(choiceForm).attr("method"),
+      url: $(choiceForm).attr("action"),
+      data: $(choiceForm).serialize(),
+      success: function(data) {
+        var content = $(data).filter(contentContainer).html();
+        $(contentContainer).html(content);
+      }
+    });
+  }, 3500);
+});
