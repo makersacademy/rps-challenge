@@ -1,0 +1,103 @@
+<head>
+
+	<link type='text/css' rel='stylesheet' href='/stylesheet.css'/>
+
+	<style>
+		
+		td {
+			color: white;
+			font-family: impact;
+			font-size: 20px;
+			}
+
+		th {
+			color: white;
+			font-family: impact;
+			font-size: 20px;
+			}
+
+		span {
+			color: purple;
+			}
+
+		button {
+			background-color: #00ffbf;
+			color: black;
+			font-size: 30px;
+			font-family: Impact;
+			height: 60px;
+			width: 180px;
+			text-align: center;
+			vertical-align: middle;
+			border-radius: 8px;
+    }
+
+    div {
+    	margin:auto;
+    }
+
+	</style>
+
+	<title>RPS - winner</title>
+
+</head>
+
+<body>
+
+	<h2><%= @game.player1.name.capitalize %> chose <%= @game.player1_weapon %></h2>
+
+	<h2><%= @game.player2.name %> chose <%= @game.player2_weapon %></h2>
+
+<BR>
+
+<% if @game.winner %>
+
+<h2>The winner is... <span><%= @game.winner.name.capitalize %></span>!!!</h2>
+
+<% else %>
+
+<h2>No winner this time - it was a draw!</h2>
+
+<% end %>
+
+<BR>
+
+<table align='center';>
+
+	<thead>
+		<th colspan='2'>SCORE</th>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td><%= @game.player1.name.capitalize %></td>
+			<td><%= @game.player1.points %></td>
+		</tr>
+		<tr>
+			<td><%= @game.player2.name %></td>
+			<td><%= @game.player2.points %></td>
+		</tr>
+
+	</tbody>
+
+</table>
+
+<BR>
+
+<form action='/play' method='get'>
+	<div>
+		<button>Play Again!</button>
+	</div>
+</form>
+
+<BR>
+
+<form action='/' method='get'>
+	<div>
+		<button>End Game</button>
+	</div>
+</form>
+
+</body>
+
+

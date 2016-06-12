@@ -1,0 +1,26 @@
+<head>
+
+	<link type='text/css' rel='stylesheet' href='/stylesheet.css'/>
+
+	<title>RPS - Play</title>
+
+</head>
+
+<body>
+
+<h1> <%= @game.player1.name.capitalize %> vs. <%= @game.player2.name %> </h1>
+
+<h2> It's your turn, <%= @game.player1.name.capitalize %>!</h2>
+
+<h2> Please choose your weapon! </h2>
+
+<form action='/choice' method='post'>
+	<button name='weapon' value='rock' ><img src='/rock.jpg'/></button>
+	<button name='weapon' value='paper'><img src='/paper.jpg'/></button>
+	<button name='weapon' value='scissors'><img src='/scissors.jpg'/></button>
+</form>
+
+
+
+</body>
+
