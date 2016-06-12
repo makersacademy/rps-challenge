@@ -1,4 +1,4 @@
-#Understands the storing of player's information
+#Understands the storing of player
 
 class Player
 
@@ -7,7 +7,4 @@ class Player
   def initialize(name)
     @name = name
   end
-
-
-
 end

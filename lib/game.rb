@@ -2,13 +2,12 @@
 
 class Game
 
-  BOARD = [:lizard, :paper, :spock, :rock, :scissors]
+  BOARD = [:lizard, :paper, :spock, :rock, :scissors].freeze
 
   attr_reader :player
 
   def initialize(player)
     @player = player
-
   end
 
   def self.create(player)

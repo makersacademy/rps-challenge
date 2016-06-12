@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
     erb :welcome
   end
 
-  get '/round' do
+  post '/round' do
     @game = Game.instance
     move = params[:move].to_sym
     @won_or_drawn_or_lost = @game.play_a_round(move)
