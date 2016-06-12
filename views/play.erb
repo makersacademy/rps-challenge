@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock, Paper, Scissors game</title>
+	</head>
+	<body>
+		<h1><p> <%= @game.player1.name.capitalize %> vs. Computer </p><h1>
+		<h2>
+			<%=@game.player1.name.capitalize%> [<%=@game.player1.score%>] - [<%=@game.log.ties%>] - [<%=@game.player2.score%>] Computer
+		</h2>
+		<h3> <form action="/choice" method="POST">
+  <button type="submit" name="move" value="rock">Rock</button>
+	<button type="submit" name="move" value="paper">Paper</button>
+	<button type="submit" name="move" value="scissors">Scissors</button>
+		</form>
+	</body>
+</html>
