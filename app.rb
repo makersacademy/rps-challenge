@@ -6,7 +6,7 @@ require './lib/startup'
 class RPSApp < Sinatra::Base
   get '/' do
     Game.create(Startup::WEAPONS)
-    erb(:index)
+    erb(:index, :layout => :layout)
   end
 
   post '/enter-name' do
