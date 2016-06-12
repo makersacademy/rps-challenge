@@ -1,14 +1,20 @@
-<h1>Rock paper scissors </h1>
-<h2>Welcome, <%= @player_name %></h2>
-<form action="/choice " method="post">
+<h1>Welcome, puny mortal <%= @player_name %></h1>
+<h2>Let's play rock paper scissors!</h2>
+<h3>CHOOSE YOUR WEAPON</h3>
+<form action="/choice " method="post" class="weapons">
 	<input type="text" name="choice" value="rock" hidden>
-	<input type="submit" value="ROCK">
+	<button type="submit"><i class="fa fa-hand-rock-o" aria-hidden="true"></i> ROCK</button>
 </form>
-<form action="/choice" method="post">
+<form action="/choice" method="post" class="weapons">
 	<input type="text" name="choice" value="paper" hidden>
-	<input type="submit" value="PAPER">
+	<button type="submit"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> PAPER</button>
 </form>
-<form action="/choice" method="post">
+<form action="/choice" method="post" class="weapons">
 	<input type="text" name="choice" value="scissors" hidden>
-	<input type="submit" value="SCISSORS">
+	<button type="submit"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i> SCISSORS</button>
 </form>
+<div class="hands">
+	<i class="fa fa-hand-rock-o" id="left" aria-hidden="true"></i>
+	<i class="fa fa-hand-rock-o" id="right" aria-hidden="true"></i>
+	<strong>And defend your honor</strong>
+</div>

@@ -7,7 +7,7 @@ describe "Features" do
   end
 
   it 'allows players to enter their names' do
-    expect(page).to have_content 'Welcome, Walter White'
+    expect(page).to have_content 'Welcome, puny mortal Walter White'
   end
 
   it "computer picks rock, player picks scissors" do
