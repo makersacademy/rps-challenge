@@ -20,41 +20,41 @@
                     <br>
                     <div class="row">
                         <div class="col-md-1 centered">
-                            <form action='/rock' method='post'>
-                                <input type='submit' value='Rock' class="btn btn-default">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Rock' name='player_choice' class="btn btn-default">
                             </form>
                         </div>
                         <div class="col-md-1 centered">
-                            <form action='/paper' method='post'>
-                                <input type='submit' value='Paper' class="btn btn-default">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Paper' name='player_choice' class="btn btn-default">
                             </form>
                         </div>
                         <div class="col-md-1 centered">
-                            <form action='/scissor' method='post'>
-                                <input type='submit' value='Scissors' class="btn btn-default">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Scissors' name='player_choice' class="btn btn-default">
                             </form>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-5 centered">
-                            <h3><%= @player_name.name %> chose 
-                                <%= @player_input %></h3>
+                            <h3><%= @player_name.name %> chose
+                                <%= @game.player_input %></h3>
                         </div>
                         <div class="col-md-2 centered"></div>
                         <div class="col-md-5 centered">
                             <h3>Computer chose
-                                <%= @computer_result %></h3>
+                                <%= @game.computer_input %></h3>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-5 centered">
-                            <% if @player_input == :rock %>
+                            <% if @game.player_input == "Rock" %>
                             <img src="/img/human_rock.gif" alt="Human Rock Gif" height="400" width="400"/>
-                            <% elsif @player_input == :paper %>
+                            <% elsif @game.player_input == "Paper" %>
                             <img src="/img/human_paper.gif" alt="Human Paper Gif" height="400" width="400"/>
-                            <% elsif @player_input == :scissor %>
+                            <% elsif @game.player_input == "Scissors" %>
                             <img src="/img/human_scissor.gif" alt="Human Scissor gif" height="400" width="400"/>
                             <%else%>
                             <img src="/img/human_hand.png" alt="Human hand png" height="400" width="400"/>
@@ -63,7 +63,7 @@
 
                         <div class="col-md-2 centered">
                           <div class="row">
-                            <% if @result == :start %>
+                            <% if @result == "" %>
                             <h4>Choose between Rock,paper,scissor</h4>
                         <% else %>
                             <h4>
@@ -82,11 +82,11 @@
                         </div>
 
                         <div class="col-md-5 centered">
-                            <% if @computer_result == :rock %>
+                            <% if @game.computer_input == "Rock" %>
                             <img src="/img/robot_rock.gif" alt="Robot Rock Gif" height="400" width="400"/>
-                            <% elsif @computer_result == :paper %>
+                            <% elsif @game.computer_input == "Paper" %>
                             <img src="/img/robot_paper.gif" alt="Robot Paper Gif" height="400" width="400"/>
-                            <% elsif @computer_result == :scissor %>
+                            <% elsif @game.computer_input == "Scissors" %>
                             <img src="/img/robot_scissor.gif" alt="Robot Scissor gif" height="400" width="400"/>
                             <%else%>
                             <img src="/img/robot_hand.png" alt="Robot hand png" height="400" width="400"/>
