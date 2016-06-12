@@ -49,8 +49,9 @@ class RPS
   end
 
   def match_players_moves
-    @final_combination = match_moves_to_hash[0]
-    @result  = match_moves_to_hash[1]
+    @hash_match = match_moves_to_hash
+    @winning_player_selection = @hash_match[0][0]
+    result_message = @hash_match[1]
   end
 
   def match_moves_to_hash
@@ -62,7 +63,7 @@ class RPS
   end
 
   def select_winner
-    @players.detect{ |player| player.choice == @final_combination[0] }
+    @players.detect{ |player| player.choice == @winning_player_selection }
   end
 end
 
