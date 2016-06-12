@@ -1,3 +1,13 @@
+<h1>Rock Paper Scissors Makers Academy Challenge</h1>
+<h2>Stephen Dawes (based on code from sjmog/rps)</h2>
+
+Full task instructions can be found below, however in essence, we were instructed to write a program to enable players to play the game Rock Paper Scissors against the computer. I had a good stab at this myself, however my code wasn't working and I was unsure with how to proceed in linking up the various feature tests, unit tests, ruby code, with the app.rb and views files. I used our instructor's code (Sam Morgan) as a base to work from, in order to fully understand the process. In turn, I played around with the code and practiced styling it with css and refactoring it in a way I would understand it (amending the syntax for hashes etc). 
+
+<h2>Instructions on how to operate the game</h2>
+
+In order to run the game, simply clone the repo to your local machine, run bundler (ensuring the correct version of ruby is selected using RVM) and enter the command `ruby app.rb' into the command line. Then navigate to 'localhost:4567' in the navigation bar, in order to play. 
+
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions
