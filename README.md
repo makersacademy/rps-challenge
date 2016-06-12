@@ -21,4 +21,7 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+
+Rules of the game 
+
 ![](https://upload.wikimedia.org/wikipedia/commons/6/67/Rock-paper-scissors.svg)
