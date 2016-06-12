@@ -9,23 +9,8 @@ feature 'playing rock, paper, scissors' do
     expect(page).to have_button('Scissors')
   end
 
-  scenario 'it displays the choice' do
+  scenario 'it prompts for a choice' do
     sign_in_and_play
-    click_button('Rock')
-    expect(page).to have_content('You choose Rock')
-  end
-
-  scenario 'it displays the opponent\'s random choice' do
-    sign_in_and_play
-    srand(200)
-    click_button('Rock')
-    expect(page).to have_content('Computer chooses Scissors')
-  end
-
-  scenario 'it displays the winner' do
-    sign_in_and_play
-    srand(200)
-    click_button('Rock')
-    expect(page).to have_content('You won!')
+    expect(page).to have_content('You choose')
   end
 end

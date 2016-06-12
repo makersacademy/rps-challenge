@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-subject(:game_win) { described_class.new('Marlon', :rock, :scissors) }
-subject(:game_lose) { described_class.new('Marlon', :rock, :paper) }
-subject(:game_draw) { described_class.new('Marlon', :rock, :rock) }
+subject(:game_win) { described_class.new( :rock, :scissors) }
+subject(:game_lose) { described_class.new(:rock, :paper) }
+subject(:game_draw) { described_class.new(:rock, :rock) }
 
 describe '#outcome' do
   it 'checks if you have won' do
