@@ -9,9 +9,11 @@ class RPS < Sinatra::Base
   end
 
   post '/welcome_rules' do
-    puts(params[:player_name])
     $player_name = Player.new(params[:player_name])
     @player_name = $player_name
+    $result = :start
+    $player_input = ""
+    $computer_result = ""
     erb(:welcome_rules)
   end
 
@@ -28,27 +30,26 @@ class RPS < Sinatra::Base
     @player_name = $player_name
     redirect '/play'
   end
-
+  before do
+    $game = Game.new
+  end
   post '/rock' do
-    $game = Game.new(:rock)
     $player_input = :rock
-    $result = $game.game_result
+    $result = $game.game_result($player_input)
     $computer_result = $game.computer_input
     redirect '/play'
   end
 
   post '/paper' do
-    @game = Game.new(:paper)
     $player_input = :paper
-    $result = $game.game_result
+    $result = $game.game_result($player_input)
     $computer_result = $game.computer_input
     redirect '/play'
   end
 
   post '/scissor' do
-    @game = Game.new(:scissor)
     $player_input = :scissor
-    $result = $game.game_result
+    $result = $game.game_result($player_input)
     $computer_result = $game.computer_input
     redirect '/play'
   end
