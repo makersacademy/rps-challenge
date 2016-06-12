@@ -19,11 +19,6 @@ class Contest < Sinatra::Base
     erb(:play)
   end
 
-  get '/test' do
-    @game = Game.game
-    erb(:test)
-  end
-
   post '/fight' do
 
     Game.game.fight(params[:move])

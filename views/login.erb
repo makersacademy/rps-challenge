@@ -6,18 +6,22 @@
 <body>
 
   <div id="title">
-    <span class="pink">ROCK</span>
+    <span class="dark_grey">ROCK</span>
     <span class="orange">PAPER</span>
-    <span class="green">SCISSORS</span>
+    <span class="light_grey">SCISSORS</span>
     <span class="blue">SPOCK</span>
     <span class="violet">LIZARD</span>
   </div>
 
   <div id="game_area">
-    <div class="container"><br><br>
+    <div class="login_container"><br><br>
       <form action="/name" method="POST">
-        <input type="Text" name="player_name" placeholder="Player name" class="box">
-        <input type="submit" id="Submit" value="Start!" class="button">
+        <div class="login_centre">
+          <input type="Text" name="player_name" placeholder="Player name" class="box">
+        </div>
+        <div class="start_centre">
+          <input type="submit" id="Submit" value="Start!" class="button">
+        </div>
       </form>
     </div>
   </div>

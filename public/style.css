@@ -65,6 +65,7 @@ body {
   min-width: 910px;
   height: 400px;
   background-color: #A6D4D2;
+  text-align: center;
 }
 
 #button_bar {
@@ -76,6 +77,12 @@ body {
 
 .container  {
   width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_container  {
+  width: 450px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -190,7 +197,19 @@ body {
   padding: 5px;
   border: 0;
   height: 60px;
-  margin: 18px 4px 18px 4px;
+}
+
+.login_centre {
+  width: 280px;
+  height: 80px;
+  float: left;
+  padding-top: 18px;
+}
+
+.start_centre {
+  width: 160px;
+  height: 80px;
+  float: left;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
