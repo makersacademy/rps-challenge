@@ -1,0 +1,11 @@
+<h1>Welcome <%= @player_name %></h1>
+<br></br>
+<h2>Please select your weapon:</h2>
+
+
+
+<form action="/weapon_choice" method="post">
+  <input type="submit" name="player_weapon" value="rock" />
+  <input type="submit" name="player_weapon" value="paper" />
+  <input type="submit" name="player_weapon" value="scissors" />
+</form>
