@@ -10,3 +10,8 @@ def sign_in_and_play_comp
   fill_in :player_1, with: "Player1"
   click_button "Let's Play!"
 end
+
+def select_lizard
+  choose("lizard")
+  click_button 'NEXT!'
+end

@@ -5,4 +5,8 @@ class Player
     @name = name
     @hand = 'no hand'
   end
+
+  def hand_chosen(chosen)
+    @hand = chosen
+  end
 end

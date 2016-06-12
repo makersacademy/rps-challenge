@@ -10,8 +10,15 @@ describe Player do
   end
 
   describe '#hand' do
-    it 'has no hand' do
+    it 'knows its hands' do
       expect(player.hand).to eq 'no hand'
+    end
+  end
+
+  describe '#hand_chosen' do
+    it 'changes its hands' do
+      player.hand_chosen('rock')
+      expect(player.hand).to eq 'rock'
     end
   end
 end

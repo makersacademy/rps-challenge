@@ -10,4 +10,10 @@ feature 'FEATURE:' do
     expect(page).to have_content 'Choose your hand!'
   end
 
+  scenario 'chooses a hand' do
+    sign_in_and_play_comp
+    select_lizard
+    expect(page).to have_content 'Lizard'
+  end
+
 end

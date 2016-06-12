@@ -10,7 +10,7 @@ describe ComputerPlayer do
   end
 
   describe '#hand' do
-    it 'returns computers hand' do
+    it 'knows its hand' do
       allow(comp).to receive(:hand) {'Rock'}
       expect(comp.hand).to eq 'Rock'
     end
