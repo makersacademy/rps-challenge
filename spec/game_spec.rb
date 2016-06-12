@@ -2,8 +2,9 @@ require 'spec_helper'
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player1, log, referee) }
+  subject(:game) { described_class.new(player1, player2, log, referee) }
   let(:player1) { double(:player1) }
+  let(:player2) { double(:player2) }
   let(:log) { spy(:log) }
   let(:referee) { spy(:referee) }
 

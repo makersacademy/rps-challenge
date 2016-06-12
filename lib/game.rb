@@ -3,27 +3,47 @@ require_relative 'log'
 
 class Game
 
-  attr_reader :player1, :player2, :turns, :game_log
+  attr_reader :player1, :turns, :game_log
+  attr_accessor :player2, :p1_move, :p2_move
 
-  def initialize(name, game_log = Log.new, referee = Referee.new)
-    @player1 = name
-    @player2 = "computer"
+  class << self
+    attr_reader :game
+  end
+
+  def initialize(player1, player2="computer",
+                 game_log = Log.new, referee = Referee.new)
+    @player1 = player1
+    @player2 = player2
     @game_log = game_log
     @referee = referee
     @turns = 0
-  end
-
-  def self.game
-    @game
+    @p1_move = nil
+    @p2_move = nil
   end
 
   def self.create(name)
-    @game = new(name)
+    @game = [] if @game == nil
+    @game << new(name)
   end
 
-  def fight(move)
-    log(result(move.to_sym))
+  def self.create_multi(name)
+    @game = [] if @game == nil
+    @game << new(name, :opponent)
+  end
+
+  def self.player_waiting?
+    game.each { |game| return true if game.player2 == :opponent } if !!game
+    false
+  end
+
+  def self.join_game
+    game.reverse_each { |x| return game.index(x) if x.player2 == :opponent}
+  end
+
+  def fight(p1_move, p2_move = :ai_move)
+    log(result(p1_move.to_sym, p2_move.to_sym))
     @turns += 1
+    multi_reset
   end
 
   def last_result
@@ -36,12 +56,17 @@ class Game
 
   private
 
-  def result(move)
-    @referee.result(move)
+  def result(p1_move, p2_move)
+    @referee.result(p1_move, p2_move)
   end
 
   def log(outcome)
     game_log.store(outcome)
+  end
+
+  def multi_reset
+    @p1_move = nil
+    @p2_move = nil
   end
 
 end

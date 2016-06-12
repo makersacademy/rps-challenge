@@ -82,7 +82,8 @@ body {
 }
 
 .login_container  {
-  width: 450px;
+  width: 440px;
+  height: 70px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -182,9 +183,23 @@ body {
   background-color: #EC5A31;
 }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+.login_button {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #F9A700;
+  border: none;
+  color: #FFFFFF;
+  padding: 16px;
+  width: 130px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  transition: all 0.5s;
+}
+
+.login_button:hover {
+  background-color: #EC5A31;
 }
 
 .box  {
@@ -199,15 +214,29 @@ body {
   height: 60px;
 }
 
+.multi_box  {
+  border-radius: 8px;
+  color: #FFF;
+  background-color: #58B9C5;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  padding: 5px;
+  border: 0;
+  height: 140px;
+  width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
 .login_centre {
-  width: 280px;
+  width: 300px;
   height: 80px;
   float: left;
-  padding-top: 18px;
 }
 
 .start_centre {
-  width: 160px;
+  width: 130px;
   height: 80px;
   float: left;
 }

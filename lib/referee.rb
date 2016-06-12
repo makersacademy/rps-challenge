@@ -2,7 +2,8 @@ class Referee
 
 MOVES = [:rock, :paper, :scissors, :spock, :lizard]
 
-  def result(p1_move, p2_move = ai_move)
+  def result(p1_move, p2_move)
+    p2_move = ai_move if p2_move == :ai_move
     winner = judge(p1_move, p2_move)
     [p1_move, p2_move, winner]
   end
