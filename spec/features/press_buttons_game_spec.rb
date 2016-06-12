@@ -7,7 +7,7 @@ feature 'pressing buttons on the game page' do
     click_button 'Submit'
     expect(page).to have_content 'Welcome Dave'
     click_button 'rock'
-    expect(page).to have_content 'Congratulations player, you have won'
+    expect(page).to have_content 'Congratulations, you have won'
   end
 
 end

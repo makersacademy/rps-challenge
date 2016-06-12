@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/rps'
+require './lib/game'
 
 
 class App < Sinatra::Base
@@ -16,18 +16,16 @@ class App < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
-    @game = RPS.create
+    @game = Game.create
     erb(:play)
   end
 
   post '/result' do
-    @game = RPS.instance
+    @game = Game.instance
     @player_input = @game.player_input(params[:input])
     @comp_input = @game.move_chooser
     erb(:result)
   end
 
-
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

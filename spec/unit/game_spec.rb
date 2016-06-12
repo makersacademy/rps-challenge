@@ -1,4 +1,4 @@
-require 'rps'
+require 'game'
 
 describe RPS do
 
@@ -6,8 +6,8 @@ describe RPS do
   let(:rock_input) { "rock" }
   let(:scissors_input) { "scissors" }
   let(:paper_input) { "paper" }
-  let(:winning_message) { "Congratulations player, you have won" }
-  let(:losing_message) { "Sorry player, you have lost" }
+  let(:winning_message) { "Congratulations, you have won" }
+  let(:losing_message) { "Sorry, you have lost" }
   let(:draw_message) { "This is awkward, it's a tie" }
 
   describe "#play" do
