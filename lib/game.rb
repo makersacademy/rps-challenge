@@ -6,7 +6,7 @@ class Game
     @player_2 = player_2
   end
 
-  def self.generate (player_1 =nil , player_2)# = Computer_player.new)
+  def self.generate (player_1 = nil, player_2 = nil)
     @game = Game.new(player_1, player_2)
   end
 
