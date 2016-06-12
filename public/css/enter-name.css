@@ -25,6 +25,20 @@ a, a:visited, a:hover, a:active {
   display: flex;
 }
 
+.custom_dropdown {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #636C7A;
+  color: #2B2D42;
+  background-color: #EDF2F4;
+}
+
 label {
   padding: 10px;
   font-size: 16px;
@@ -40,12 +54,23 @@ input, select {
   font-size: 16px;
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid #636C7A;
   color: #2B2D42;
   background-color: #EDF2F4;
 }
 
-input:focus {
+input {
+    border: 1px solid #636C7A;
+}
+
+input[type=text] {
+  padding-left: 20px;
+}
+
+select {
+    border: 0px solid #636C7A;
+}
+
+input:focus, select:focus {
   outline: none;
 }
 
