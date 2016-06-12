@@ -1,7 +1,8 @@
 Rock Paper, Scissors, Spock, Lizard
 ---------
+This is an expansion of traditional rock-paper-scissors with Spock and Lizard added to the game.
 
-Game screenshot:
+######Game screenshot:
 ---------
 ![game screenshot](http://www.kennethbarrett.com//makers/rpssl/screenshot.png)
 ---------
