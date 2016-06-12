@@ -4,7 +4,6 @@ require './lib/virtual_player'
 require './lib/game'
 
 class RPS < Sinatra::Base
-  enable :sessions
 
   get '/' do
     erb :index

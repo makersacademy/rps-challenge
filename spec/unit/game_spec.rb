@@ -11,21 +11,35 @@ describe Game do
       allow(player1).to receive(:option).and_return("Rock")
       allow(player2).to receive(:option).and_return("Scissor")
 
-      expect(game.evaluation).to eq "wins"
+      expect(game.evaluation).to eq "You win"
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return("Paper")
       allow(player2).to receive(:option).and_return("Paper")
 
-      expect(game.evaluation).to eq "ties"
+      expect(game.evaluation).to eq "it's a tie"
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return("Scissor")
       allow(player2).to receive(:option).and_return("Rock")
 
-      expect(game.evaluation).to eq "loses"
+      expect(game.evaluation).to eq "You lose"
+    end
+
+    it 'tells who won the game' do
+      allow(player1).to receive(:option).and_return("Spock")
+      allow(player2).to receive(:option).and_return("Lizard")
+
+      expect(game.evaluation).to eq "You lose"
+    end
+
+    it 'tells who won the game' do
+      allow(player1).to receive(:option).and_return("Lizard")
+      allow(player2).to receive(:option).and_return("Scissor")
+
+      expect(game.evaluation).to eq "You lose"
     end
 
 

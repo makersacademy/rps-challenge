@@ -1,10 +1,10 @@
 class VirtualPlayer
 
-OPTIONS = ["Rock","Paper","Scissor"]
+OPTIONS = ["Rock","Paper","Scissor","Spock","Lizard"]
 
 attr_reader :name, :option
 
-  def initialize(name="Computer")
+  def initialize(name="The Computer")
     @name = name
     @option = nil
   end

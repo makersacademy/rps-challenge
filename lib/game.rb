@@ -20,28 +20,46 @@ attr_reader :player1, :player2
     return paper_evaluation(option2) if option1 == "Paper"
 
     return scissor_evaluation(option2) if option1 == "Scissor"
+
+    return spock_evaluation(option2) if option1 == "Spock"
+
+    return lizard_evaluation(option2) if option1 == "Lizard"
   end
 
   private
 
   def rock_evaluation(option)
-   result = "wins" if option == "Scissor"
-   result = "loses" if option == "Paper"
-   result = "ties" if option == "Rock"
+   result = "You win" if option == "Scissor" || option == "Lizard"
+   result = "You lose" if option == "Paper" || option == "Spock"
+   result = "it's a tie" if option == "Rock"
    result
   end
 
   def paper_evaluation(option)
-    result = "wins" if option == "Rock"
-    result = "loses" if option == "Scissor"
-    result = "ties" if option == "Paper"
+    result = "You win" if option == "Rock" || option == "Spock"
+    result = "You lose" if option == "Scissor" || option == "Lizard"
+    result = "it's a tie" if option == "Paper"
     result
   end
 
   def scissor_evaluation(option)
-    result = "wins" if option == "Paper"
-    result = "loses" if option == "Rock"
-    result = "ties" if option == "Scissor"
+    result = "You win" if option == "Paper" || option == "Lizard"
+    result = "You lose" if option == "Rock" || option == "Spock"
+    result = "it's a tie" if option == "Scissor"
+    result
+  end
+
+  def spock_evaluation(option)
+    result = "You win" if option == "Scissor" || option == "Rock"
+    result = "You lose" if option == "Paper" || option == "Lizard"
+    result = "it's a tie" if option == "Spock"
+    result
+  end
+
+  def lizard_evaluation(option)
+    result = "You win" if option == "Paper" || option == "Spock"
+    result = "You lose" if option == "Rock" || option == "Scissor"
+    result = "it's a tie" if option == "Lizard"
     result
   end
 
