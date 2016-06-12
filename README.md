@@ -1,4 +1,4 @@
-<a href='https://coveralls.io/github/awye765/rps-challenge?branch=master'><img src='https://coveralls.io/repos/github/awye765/rps-challenge/badge.svg?branch=master' alt='Coverage Status' /></a> [![Build Status](https://travis-ci.org/awye765/rps-challenge.svg?branch=master)](https://travis-ci.org/awye765/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/awye765/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/awye765/rps-challenge?branch=master) [![Build Status](https://travis-ci.org/awye765/rps-challenge.svg?branch=master)](https://travis-ci.org/awye765/rps-challenge)
 
 <h1>Rock Paper Scissors: Makers Academy Week 3 Solo Project</h1>
 
