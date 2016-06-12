@@ -1,4 +1,4 @@
-require 'Computer_player'
+require 'computer_player'
 
 describe ComputerPlayer do
   subject(:comp) {described_class.new}
