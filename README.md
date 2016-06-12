@@ -25,3 +25,7 @@ Hints on functionality
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+Bonus Feature
+----
+Implemented multi player format
