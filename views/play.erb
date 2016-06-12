@@ -1,14 +1,28 @@
-<h1> <%= @game.player1.name %></h1> VS. <%= @game.player2.name %>
+<head>
 
-<h1> It's your turn, <%= @game.player1.name %>!</h1>
+	<link type='text/css' rel='stylesheet' href='/stylesheet.css'/>
+
+	<title>RPS - Play</title>
+
+</head>
+
+<body>
+
+<h1> <%= @game.player1.name %> VS. <%= @game.player2.name %> </h1>
+
+<h2> It's your turn, <%= @game.player1.name %>!</h2>
 
 <BR>
 
-<h1> Please choose your weapon! </h1>
+<h2> Please choose your weapon! </h2>
 
 <form action='/choice' method='post'>
-	<button name='weapon' value='rock' >rock</button>
-	<button name='weapon' value='paper'>pic</button>
-	<button name='weapon' value='scissors'>pic</button>
+	<button name='weapon' value='rock' ><img src='/rock.jpg'/></button>
+	<button name='weapon' value='paper'><img src='/paper.jpg'/></button>
+	<button name='weapon' value='scissors'><img src='/scissors.jpg'/></button>
 </form>
+
+
+
+</body>
 

@@ -1,28 +1,38 @@
-<%= @game.player1.name %>: <%= @game.player1_weapon.upcase %>
+<head>
+
+	<link type='text/css' rel='stylesheet' href='/stylesheet.css'/>
+
+	<title>RPS - winner</title>
+
+</head>
+
+<body>
+
+	<h2><%= @game.player1.name %>: <%= @game.player1_weapon.upcase %></h2>
 
 <BR>
 
-<%= @game.player2.name %>: <%= @game.player2_weapon.upcase %>
+<h2><%= @game.player2.name %>: <%= @game.player2_weapon.upcase %></h2>
 
 <BR>
 
 <% if @game.winner %>
 
-The winner is <%= @game.winner.name %>
+<h2>The winner is <%= @game.winner.name %></h2>
 
 <% else %>
 
-No winner this time - it was a draw!
+<h2>No winner this time - it was a draw!</h2>
 
 <% end %>
 
 <BR>
 
-<%= @game.player1.name %> has <%= @game.player1.points %> points
+<h2><%= @game.player1.name %> has <%= @game.player1.points %> points</h2>
 
 <BR>
 
-<%= @game.player2.name %> has <%= @game.player2.points %>	points
+<h2><%= @game.player2.name %> has <%= @game.player2.points %>	points</h2>
 
 <BR>
 
@@ -35,3 +45,7 @@ No winner this time - it was a draw!
 <form action='/' method='get'>
 	<button>End Game</button>
 </form>
+
+</body>
+
+
