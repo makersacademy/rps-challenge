@@ -1,8 +1,14 @@
-
-<%= @player1.name %>
-<%= @player2.name %>
-<%= @playerno %>
-<%= @lizardspok %>
-
-
-
+<h1>Rock paper scissors </h1>
+<h2>Welcome, <%= @player_name %></h2>
+<form action="/choice " method="post">
+	<input type="text" name="choice" value="rock" hidden>
+	<input type="submit" value="ROCK">
+</form>
+<form action="/choice" method="post">
+	<input type="text" name="choice" value="paper" hidden>
+	<input type="submit" value="PAPER">
+</form>
+<form action="/choice" method="post">
+	<input type="text" name="choice" value="scissors" hidden>
+	<input type="submit" value="SCISSORS">
+</form>
