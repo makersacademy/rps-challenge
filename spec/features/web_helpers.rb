@@ -15,3 +15,8 @@ def select_lizard
   choose("lizard")
   click_button 'NEXT!'
 end
+
+def select_spock
+  choose("spock")
+  click_button 'NEXT!'
+end

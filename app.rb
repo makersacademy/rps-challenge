@@ -17,24 +17,38 @@ class Rpsls < Sinatra::Base
       player_2 = Player.new(params[:player_2])
     end
     Game.generate(player_1, player_2)
-    redirect '/play'
+    redirect '/p1_play'
   end
 
-  get '/play' do
+  get '/p1_play' do
     @game = Game.instance
-    erb(:play)
+    erb(:play_p1_hand)
   end
 
-  post '/previous_hand' do
+  post '/p1_hand' do
     @game = Game.instance
     @game.player_1.hand_chosen(params[:hand])
-    @game.player_2.hand
+    if @game.player_2.is_a? ComputerPlayer
+      redirect '/result'
+    else
+      redirect '/p2_play'
+    end
+  end
+
+  get '/p2_play' do
+    @game = Game.instance
+    erb(:play_p2_hand)
+  end
+
+  post '/p2_hand' do
+    @game = Game.instance
+    @game.player_2.hand_chosen(params[:hand])
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.instance
-    "you: #{@game.player_1.hand}, Comp: #{@game.player_2.hand}"
+    "p1: #{@game.player_1.hand}, p2: #{@game.player_2.hand}"
   end
 
   # start the server if ruby file executed directly

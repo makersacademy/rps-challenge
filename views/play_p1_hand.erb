@@ -1,0 +1,16 @@
+'Choose your hand!'
+
+<div>
+<%= @game.player_1.name %>'s turn
+<br>
+<br>
+<form action="/p1_hand" method='post'>
+  <input type="radio" name="hand" value='Rock' id="rock"> Rock <br>
+  <input type="radio" name="hand" value='Paper' id="paper"> Paper <br>
+  <input type="radio" name="hand" value='Scissors' id="scissors"> Scissors <br>
+  <input type="radio" name="hand" value='Lizard' id="lizard"> Lizard <br>
+  <input type="radio" name="hand" value='Spock' id="spock"> Spock <br>
+  <br>
+  <button>NEXT!</button>
+</form>
+</div>
