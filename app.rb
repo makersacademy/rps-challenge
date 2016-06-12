@@ -21,8 +21,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rps' do
-    @choice = Game.instance.choice
-    @ai_choice = Game.instance.computer.choice
+    @game= Game.instance
     erb(:rock_paper_scissors)
   end
 

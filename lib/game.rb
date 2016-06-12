@@ -26,4 +26,28 @@ class Game
   def set_computer
     computer.set_choice
   end
+
+  def outcome
+    return :draw if same_choice?
+    return :win if player_wins?
+    return :loss if player_loses?
+  end
+
+  private
+
+  def same_choice?
+    @choice.to_sym == @computer.choice
+  end
+
+  def player_wins?
+    RULES[@choice.to_sym] == @computer.choice
+  end
+
+  def player_loses?
+    RULES[@choice.to_sym] != @computer.choice
+  end
+
+  RULES = { rock: :scissors,
+          paper: :rock,
+          scissors: :paper }
 end

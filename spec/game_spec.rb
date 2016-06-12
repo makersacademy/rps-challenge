@@ -51,4 +51,48 @@ describe Game do
       expect(computer_spy).to have_received "set_choice"
     end
   end
+
+  describe '#outcome' do
+    context 'rock' do
+      before(:each) do
+        game.set_choice("rock")
+      end
+      
+      it 'rock draws with rock' do
+        allow(computer_spy).to receive(:choice).and_return(:rock)
+        expect(game.outcome).to eq :draw
+      end
+      
+      it 'rock loses to paper' do
+        allow(computer_spy).to receive(:choice).and_return(:paper)
+        expect(game.outcome).to eq :loss
+      end
+
+      it 'rock beats scissors' do
+        allow(computer_spy).to receive(:choice).and_return(:scissors)
+        expect(game.outcome).to eq :win
+      end
+    end
+
+    context 'paper' do
+      before(:each) do
+        game.set_choice("paper")
+      end
+      
+      it 'paper draws with paper' do
+        allow(computer_spy).to receive(:choice).and_return(:paper)
+        expect(game.outcome).to eq :draw
+      end
+      
+      it 'paper loses to scissors' do
+        allow(computer_spy).to receive(:choice).and_return(:scissors)
+        expect(game.outcome).to eq :loss
+      end
+
+      it 'paper beats rock' do
+        allow(computer_spy).to receive(:choice).and_return(:rock)
+        expect(game.outcome).to eq :win
+      end
+    end
+  end
 end
