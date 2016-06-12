@@ -11,7 +11,6 @@ get '/' do
 end
 
 post '/named-player' do
-	p params
 	@name = params[:player_name]
 	erb :named_player
 end

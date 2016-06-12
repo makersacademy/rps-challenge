@@ -1,4 +1,3 @@
-require 'features/name_spec'
 
 def sign_in_and_play
 	visit('/')

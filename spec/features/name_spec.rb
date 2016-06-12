@@ -10,10 +10,8 @@ end
 
 feature 'Player name is recognised' do
 	scenario 'Players name is included on /named-player' do
-	visit('/')
-		fill_in :player_name, with: 'Cam'
-		click_button 'Submit'
-		expect(page).to have_content 'Cam'
+	sign_in_and_play
+		expect(page).to have_content 'Cam, would you like to pick rock, paper or scissors?'
 	end
 end
 
