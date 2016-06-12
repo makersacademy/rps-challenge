@@ -1,16 +1,23 @@
-# understands winning
+# understands outline
 class Game
-  attr_reader :players, :winner
+  attr_reader :weapons, :players, :winner
 
-  def initialize(player_1, player_2)
-    @players = [player_1, player_2]
+  def initialize(weapons)
+    @weapons = weapons
+    @players = []
     @winner = []
   end
 
-  def attack
-    return player_1_wins if player_2_loses?
-    return player_2_wins if player_1_loses?
-    both_players_win
+  def add_player(player)
+    players << player
+  end
+
+  def self.create(weapons)
+    @game = new(weapons)
+  end
+
+  def self.instance
+    @game
   end
 
   private
@@ -35,11 +42,4 @@ class Game
     @winner = players
   end
 
-  def player_1_loses?
-    player_2.weapon.wins_against.include?(player_1.weapon)
-  end
-
-  def player_2_loses?
-    player_1.weapon.wins_against.include?(player_2.weapon)
-  end
 end
