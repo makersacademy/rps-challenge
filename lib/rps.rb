@@ -57,11 +57,11 @@ class RPS
   end
 
   def select_winner
-    @players.find{ |player| player.choice == winning_move_select }
+    @players.detect{ |player| player.choice == winning_move_select }
   end
 
   def winning_move_select
-    @sorted_moves.reverse.find{|move| move.to_s[0] == result.downcase[0] }
+    @sorted_moves.reverse.detect{|move| move.to_s[0] == result.downcase[0] }
   end
 end
 
