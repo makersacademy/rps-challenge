@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "./lib/game"
 require "./lib/player"
+require "./lib/computer"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,7 +12,7 @@ class RPS < Sinatra::Base
 
   post "/start" do
     name = params[:username].capitalize
-    session["game"] = Game.new(Player.new(name), Player.new)
+    session["game"] = Game.new(Player.new(name), Computer.new)
     @player1 = session["game"].player1
     @player2 = session["game"].player2
     erb :start_layout, layout: :layout do
