@@ -20,8 +20,6 @@ class Game
     @game
   end
 
-  private
-
   def player_1
     players.first
   end
@@ -29,6 +27,8 @@ class Game
   def player_2
     players.last
   end
+
+  private
 
   def player_1_wins
     winner << player_1

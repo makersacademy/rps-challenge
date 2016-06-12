@@ -1,4 +1,5 @@
 require_relative 'weapon'
+require_relative 'player'
 
 module Startup
   WEAPONS = [

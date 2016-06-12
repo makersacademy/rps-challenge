@@ -6,24 +6,32 @@ body {
 }
 
 h2 {
-  text-align: center;
   color: #FFF;
   text-shadow: 1px 1px #444A54;
 }
 
-.form-enter-name {
-  max-width: 300px;
+.container {
+  max-width: 800px;
   padding: 15px;
   margin: 0 auto;
+}
+
+.form-enter-name {
+  display: flex;
+}
+
+label {
+  padding: 10px;
+  font-size: 16px;
+  margin: 0 10px 0 0;
 }
 
 input, select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-right: 10px;
   font-size: 16px;
   border-radius: 10px;
   padding: 10px;
@@ -36,36 +44,19 @@ input:focus {
   outline: none;
 }
 
-input[type=text] {
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #636C7A;
-  color: #2B2D42;
-  background-color: #EDF2F4;
-}
-
 input[type=submit] {
-  border-radius: 10px;
-  padding: 10px;
   border: 1px solid #D90429;
   color: #FFF;
   background-color: #EF233C;
 }
 
 input[type=submit]:hover {
-  border-radius: 10px;
-  padding: 10px;
   border: 1px solid #A5031E;
-  color: #FFF;
   background-color: #BC1C2F;
   cursor: pointer;
 }
 
 input[type=submit]:active {
-  border-radius: 10px;
-  padding: 10px;
   border: 1px solid #720114;
-  color: #FFF;
   background-color: #891422;
-  cursor: pointer;
 }
