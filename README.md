@@ -42,4 +42,18 @@ Use the special rules (http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-S
 
 <h2>Instructions</h2>
 
-[To be updated prior to final submission]
+---
+**Installation instructions**
+```sh
+$ git clone git@github.com:awye765/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+```
+
+* Start app by typing **ruby app.rb** into terminal
+* Go to http://localhost:4567/
+* Press the start button
+* Type your name into the text box and press submit
+* Screen tells you the current score of each player, including the computer (Ava the robot)
+* Choose your gesture by clicking on the relevant icon/button
+* Screen tells you your move and score, the computers move and score, and who won
