@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/computer_player'
 require './lib/game'
+require './lib/result_calculator'
 
 class Rpsls < Sinatra::Base
 
@@ -48,7 +49,8 @@ class Rpsls < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    "p1: #{@game.player_1.hand}, p2: #{@game.player_2.hand}"
+    @result_calculator_calc = ResultCalculator.new(@game)
+    erb(:result)
   end
 
   # start the server if ruby file executed directly

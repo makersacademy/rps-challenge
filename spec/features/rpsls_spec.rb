@@ -33,4 +33,27 @@ feature 'FEATURE:' do
     end
   end
 
+  # context 'calculates winner' do
+  #   scenario 'player 1 wins' do
+  #     sign_in_and_play_p2
+  #     select_lizard
+  #     select_spock
+  #     expect(page).to have_content 'Player1 wins'
+  #   end
+  #
+  #   scenario 'player 2 wins' do
+  #     sign_in_and_play_p2
+  #     select_spock
+  #     select_lizard
+  #     expect(page).to have_content 'Player2 wins'
+  #   end
+  #
+  #   scenario 'draw' do
+  #     sign_in_and_play_p2
+  #     select_spock
+  #     select_spock
+  #     expect(page).to have_content 'Draw'
+  #   end
+  # end
+
 end
