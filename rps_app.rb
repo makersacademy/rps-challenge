@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './lib/rock_paper_scissors.rb'
+require_relative './lib/rock_paper_scissors'
 require_relative './lib/human_player'
 require_relative './lib/ai'
 require_relative './lib/outcome_formatter'
@@ -32,7 +32,7 @@ class RpsApp < Sinatra::Base
  
     if session[:player_1] && session[:player_2]
       outcome = RockPaperScissors.new(session[:player_1], session[:player_2]).outcome 
-      @result = OutcomeFormatter.new.format_outcome(outcome,session[:player_1],session[:player_2])
+      @result = OutcomeFormatter.new.format_outcome(outcome,@player_1,@player_2)
     end
 
     erb :game_vs_human
@@ -68,5 +68,5 @@ class RpsApp < Sinatra::Base
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

@@ -6,7 +6,7 @@ describe RockPaperScissors do
 
   describe '#outcome' do
 
-   context 'when weapons are the same' do
+    context 'when weapons are the same' do
   
       it 'returns 0 (P)' do
         allow(player_1).to receive(:weapon).and_return('P')
