@@ -1,9 +1,14 @@
 Hello <%= @name %>
+<br>
+<br>
 
+You choose <%= @player_choice %>
 <form action="/play" method="post">
   <input type="submit" name="player_choice" value="Rock">
   <input type="submit" name="player_choice" value="Paper">
   <input type="submit" name="player_choice" value="Scissors">
 </form>
+<br>
+Computer chooses <%= @opponent_choice %>
 
-You chose <%= @player_choice %>
+<!-- <%= @game %> -->
