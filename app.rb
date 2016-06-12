@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer_player'
+require './lib/game'
 
 class Rpsls < Sinatra::Base
 
@@ -7,17 +10,18 @@ class Rpsls < Sinatra::Base
   end
 
   post '/names' do
-    player_1 = Player.new(params[:player_1_name])
-    if params[:player_2_name] == nil
+    player_1 = Player.new(params[:player_1])
+    if params[:player_2] == 'Computer'
       player_2 = ComputerPlayer.new
     else
-      player_2 = Player.new(params[:player_2_name])
+      player_2 = Player.new(params[:player_2])
     end
-    @game = Game.generate(player_1, player_2)
+    Game.generate(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
+    @game = Game.instance
     erb(:play)
   end
 
