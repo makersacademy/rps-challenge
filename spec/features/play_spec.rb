@@ -15,6 +15,6 @@ feature "can play a bout" do
   it "shows the move chosen by the player" do
     sign_in
     click_button 'rock'
-    expect(page.find_by_id(:game_area)).to have_content "rock"
+    expect(page).to have_xpath("//img[contains(@src, 'l_rock')]")
   end
 end

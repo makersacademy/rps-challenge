@@ -13,8 +13,8 @@ class Referee
 
   def judge(move, opp_move)
     difference = (@@moves.index(move) - @@moves.index(opp_move))
-    return "player1" if [-2,-4,1,3].include?(difference%5)
-    return "player2" if [2,4,-1,-3].include?(difference%5)
+    return "player1" if [-2,-4,1,3].include?(difference)
+    return "player2" if [2,4,-1,-3].include?(difference)
     "draw"
   end
 

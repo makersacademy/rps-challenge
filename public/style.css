@@ -16,55 +16,55 @@ body {
   padding-top: 35px;
 }
 
-.pink {
-  color: #DD8C9F;
-  text-shadow: -1px 1px 0 #C25469,
-               -2px 2px 0 #C25469,
-               -3px 3px 0 #C25469,
-               -4px 4px 0 #C25469,
-               -5px 5px 0 #C25469;
+.dark_grey {
+  color: #A9A9A9;
+  text-shadow: -1px 1px 0 #717171,
+               -2px 2px 0 #717171,
+               -3px 3px 0 #717171,
+               -4px 4px 0 #717171,
+               -5px 5px 0 #717171;
 }
 
 .orange {
-  color: #FFAB00;
-  text-shadow: -1px 1px 0 #FD7500,
-               -2px 2px 0 #FD7500,
-               -3px 3px 0 #FD7500,
-               -4px 4px 0 #FD7500,
-               -5px 5px 0 #FD7500;
+  color: #FFE694;
+  text-shadow: -1px 1px 0 #FFBA1F,
+               -2px 2px 0 #FFBA1F,
+               -3px 3px 0 #FFBA1F,
+               -4px 4px 0 #FFBA1F,
+               -5px 5px 0 #FFBA1F;
 }
 
-.green  {
-  color: #C0DE81;
-  text-shadow: -1px 1px 0 #94C442,
-               -2px 2px 0 #94C442,
-               -3px 3px 0 #94C442,
-               -4px 4px 0 #94C442,
-               -5px 5px 0 #94C442;
+.light_grey  {
+  color: #DDDDDD;
+  text-shadow: -1px 1px 0 #A6A6A6,
+               -2px 2px 0 #A6A6A6,
+               -3px 3px 0 #A6A6A6,
+               -4px 4px 0 #A6A6A6,
+               -5px 5px 0 #A6A6A6;
 }
 
 .blue {
-  color: #46C5DD;
-  text-shadow: -1px 1px 0 #0A9BC0,
-               -2px 2px 0 #0A9BC0,
-               -3px 3px 0 #0A9BC0,
-               -4px 4px 0 #0A9BC0,
-               -5px 5px 0 #0A9BC0;
+  color: #7DAAFF;
+  text-shadow: -1px 1px 0 #386FFF,
+               -2px 2px 0 #386FFF,
+               -3px 3px 0 #386FFF,
+               -4px 4px 0 #386FFF,
+               -5px 5px 0 #386FFF;
 }
 
 .violet {
-  color: #AAABFF;
-  text-shadow: -1px 1px 0 #7474FF,
-               -2px 2px 0 #7474FF,
-               -3px 3px 0 #7474FF,
-               -4px 4px 0 #7474FF,
-               -5px 5px 0 #7474FF;
+  color: #BDE075;
+  text-shadow: -1px 1px 0 #68AD00,
+               -2px 2px 0 #68AD00,
+               -3px 3px 0 #68AD00,
+               -4px 4px 0 #68AD00,
+               -5px 5px 0 #68AD00;
 }
 
 #game_area {
   min-width: 910px;
   height: 400px;
-  background-color: #A0D4D8;
+  background-color: #A6D4D2;
 }
 
 #button_bar {
@@ -109,11 +109,11 @@ body {
 
 .gif_container  {
   width: 370px;
-  height: 200px;
+  height: 290px;
 
   font-size: 70px;
   font-weight: lighter;
-  padding-top: 120px;
+  padding-top: 30px;
 }
 
 .middle_wrapper  {
@@ -143,12 +143,12 @@ body {
   color: #FFFFFF;
   padding: 16px;
   width: 130px;
-  transition: all 0.5s;
   cursor: pointer;
   margin: 18px 4px 18px 4px;
   vertical-align: middle;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 24px;
+  transition: all 0.5s;
 }
 
 .button span {

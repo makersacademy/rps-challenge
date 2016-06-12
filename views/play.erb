@@ -6,9 +6,9 @@
 <body>
 
 <div id="title">
-  <span class="pink">ROCK</span>
+  <span class="dark_grey">ROCK</span>
   <span class="orange">PAPER</span>
-  <span class="green">SCISSORS</span>
+  <span class="light_grey">SCISSORS</span>
   <span class="blue">SPOCK</span>
   <span class="violet">LIZARD</span>
 </div>
@@ -18,7 +18,10 @@
     <div class="player_container">
       <div class="gif_container">
         <% if @game.turns > 0 %>
-          <%= @game.last_result[0] %>
+          <img src="./images/l_<%= @game.last_result[0]
+          %>_<%= "win" if @game.last_result[2] == "player1"
+          %><%= "lose" if @game.last_result[2] == "player2"
+          %><%= "draw" if @game.last_result[2] == "draw" %>.gif" />
         <% end %>
       </div>
       <div class="player_name">
@@ -46,7 +49,10 @@
       <div class="player_container">
         <div class="gif_container">
           <% if @game.turns > 0 %>
-            <%= @game.last_result[1] %>
+          <img src="./images/r_<%= @game.last_result[1]
+          %>_<%= "win" if @game.last_result[2] == "player2"
+          %><%= "lose" if @game.last_result[2] == "player1"
+          %><%= "draw" if @game.last_result[2] == "draw" %>.gif" />
           <% end %>
         </div>
         <div class="player_name">
