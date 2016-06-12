@@ -24,7 +24,7 @@ describe Player do
   end
 
   describe '#choice' do
-    it 'allows a player move' do
+    it "can display player's move" do
       player_no_name.player_move('s')
       expect(player_no_name.choice).to eq :s
     end
