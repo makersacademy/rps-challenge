@@ -1,19 +1,15 @@
 h1 {
-  color: lightblue;
+  color: darkred;
 }
 
-.item_selection {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  height: 300px;
+.item_buttons {
+  border: 1px solid red;
 }
 
-.item_selection img {
-  width: 150px;
-}
-
-.item_selection p {
-  padding: 1%;
+.item_buttons input#paper {
+  background:url(paper.jpg);
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border: 0;
 }

@@ -5,6 +5,7 @@ ruby '2.3.1'
 gem 'sinatra'
 gem 'rake'
 gem 'rspec-sinatra'
+gem 'seeing_is_believing'
 
 group :test do
   gem 'rspec'
