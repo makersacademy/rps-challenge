@@ -10,8 +10,10 @@
     <input type="submit" value="Scissor" formaction="/stand_off?player_1_weapon=S">
   </form>
 
-  <p><%= @result %></p>
-  <p><%= @player_2.name  %> used <%= @player_2.weapon %></p>
+  <% if @result %>
+    <p><%= @result %></p>
+    <p><%= @player_2.name  %> used <%= @player_2.weapon %></p>
+  <% end %>
 
 </body>
 </html>

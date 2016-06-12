@@ -15,15 +15,12 @@ class RpsApp < Sinatra::Base
 
   get '/game' do
 
-    player_1_name = session[:player_1_name]
-    player_1_weapon = session[:player_1_weapon]
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
  
-    @player_1 = HumanPlayer.new(player_1_name, player_1_weapon)
-    @player_2 = AI.new
-
-    if player_1_weapon
-      outcome = RockPaperScissors.new(@player_1, @player_2).outcome 
-      @result = OutcomeFormatter.new.format_outcome(outcome,@player_1,@player_2)
+    if session[:player_1] && session[:player_2]
+      outcome = RockPaperScissors.new(session[:player_1], session[:player_2]).outcome 
+      @result = OutcomeFormatter.new.format_outcome(outcome,session[:player_1],session[:player_2])
     end
 
     erb :game
@@ -31,13 +28,17 @@ class RpsApp < Sinatra::Base
 
 
   post'/player_name' do
-    session[:player_1_name] = params[:player_1_name] 
+    session[:player_1] = HumanPlayer.new(params[:player_1_name], 'R') 
     redirect '/game'
   end
 
 
   post '/stand_off' do
-    session[:player_1_weapon] = params[:player_1_weapon] 
+    player_1_name = session[:player_1].name
+    player_1_weapon = params[:player_1_weapon] 
+    session[:player_1] = HumanPlayer.new(player_1_name, player_1_weapon) 
+    session[:player_2] = AI.new
+
     redirect '/game'
   end
 
