@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h1><%= @player_1.name.capitalize %> vs <%= @player_2.name.capitalize %></h1>
+
+  <form action="/stand_off_vs_human" method="post">
+    <%= @player_1.name.capitalize %>'s weapon<br>
+    <input type="radio" name="player_1_weapon" value="R"> Rock<br>
+    <input type="radio" name="player_1_weapon" value="P"> Paper<br>
+    <input type="radio" name="player_1_weapon" value="S"> Scissor<br> 
+    <%= @player_2.name.capitalize %>'s weapon<br>
+    <input type="radio" name="player_2_weapon" value="R"> Rock<br>
+    <input type="radio" name="player_2_weapon" value="P"> Paper<br>
+    <input type="radio" name="player_2_weapon" value="S"> Scissor<br>  
+    <input type="submit" value="Fight!">
+  </form> 
+
+  <% if @result %>
+    <p><%= @result %></p>
+  <% end %>
+
+</body>
+</html>

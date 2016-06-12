@@ -13,11 +13,11 @@ feature 'Play Rock Paper Scissors' do
   #As a marketeer
   #So that I can know if I won or not
   #I would like to see the outcome of the game printed out
-  scenario 'Player 1 selects paper, ai selects paper, draw' do
+  scenario 'Player 1 selects paper, ai selects paper, Draw' do
     srand(3)
     enter_rnd_name_go_to_single_player_game
     click_button('Paper')
-    expect(page).to have_content('draw')
+    expect(page).to have_content('Draw')
   end 
 
   scenario 'Player 1 selects paper, ai selects rock, player 1 wins' do
@@ -51,4 +51,10 @@ feature 'Play Rock Paper Scissors' do
     enter_rnd_names_go_to_multi_player_game
     expect(page).to have_content("#{@random_name_1} vs #{@random_name_2}")
   end 
+
+  #As a marketeer with a friend
+  #So we can find out who won
+  #We would like to choose our weapons then see who the winner is
+  scenario 'Users enter names, choose a weapon, winner is declared (RvS)' do
+  end
 end 
