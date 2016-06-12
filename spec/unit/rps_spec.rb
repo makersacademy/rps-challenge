@@ -13,9 +13,9 @@ describe RPS do
   describe "#play" do
 
     it "runs the game via one command " do
-      allow(subject).to receive(:move_chooser).and_return(scissors_input)
+      allow(subject).to receive(:computer_choice).and_return(paper_input)
       subject.player_input(rock_input)
-      expect(subject.play).to eq winning_message
+      expect(subject.play).to eq losing_message
     end
 
   end
@@ -23,8 +23,8 @@ describe RPS do
   describe "#computer_choose_move" do
 
     it 'chooses a move' do
-      allow(subject).to receive(:move_chooser).and_return(rock_input)
-      expect(subject.computer_choose_move).to eq rock_input
+      allow(subject).to receive(:computer_choice).and_return(rock_input)
+      expect(subject.computer_choice).to eq rock_input
     end
   end
 

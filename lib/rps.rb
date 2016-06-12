@@ -29,13 +29,13 @@ class RPS
   end
 
   def possibilities
-    if input == @computer_choice
+    if @input == @computer_choice
       draw_message
-    elsif input == "rock"
+    elsif @input == "rock"
       @computer_choice == "scissors" ? winning_message : losing_message
-    elsif input == "scissors"
+    elsif @input == "scissors"
       @computer_choice == "paper" ? winning_message : losing_message
-    else input == "paper"
+    else @input == "paper"
       @computer_choice == "rock" ? winning_message : losing_message
     end
 
