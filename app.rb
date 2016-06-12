@@ -8,7 +8,8 @@ class Rpsls < Sinatra::Base
 
   post '/names' do
     @player_1 = Player.new params[:player_1_name]
-    # @game = Game.create(@player_1)
+    @player_2 = Player.new params[:player_2_name]
+    @game = Game.generate(@player_1)
     redirect '/play'
   end
 
