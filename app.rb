@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer_player'
 
 class Rps < Sinatra::Base
 
@@ -32,7 +33,6 @@ class Rps < Sinatra::Base
     @weapon = $weapon
     erb(:fight)
   end
-
 
   run! if app_file == $0
 end

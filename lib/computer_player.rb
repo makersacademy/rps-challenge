@@ -1,8 +1,5 @@
 class ComputerPlayer
 
-  RPS_GESTURES = [:rock, :paper, :scissors]
+  RPS_WEAPONS = [:rock, :paper, :scissors]
 
-  def empty
-  end
-  
 end
