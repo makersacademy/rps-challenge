@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Alex-Swann/rps-challenge.svg?branch=master)](https://travis-ci.org/Alex-Swann/rps-challenge)  [![Coverage Status](https://coveralls.io/repos/github/Alex-Swann/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Alex-Swann/rps-challenge?branch=master)
+
 # RPSSPL Challenge
 
 This is a repo for the Rock-Paper-Scissors-Spock-Lizard Challenge
@@ -5,7 +7,7 @@ This is a repo for the Rock-Paper-Scissors-Spock-Lizard Challenge
 ## Installation
 
   1. Fork repo.
-  2. run `bundle` (N.B. make sure to run `gem install bundler` if you don't have Bundler.)
+  2. Run `bundle` (N.B. make sure to run `gem install bundler` if you don't have Bundler.)
   3. Run `ruby app.rb` from the command line.
   4. Go to `http://localhost:4567/` to see app running on local host.
 
