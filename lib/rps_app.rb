@@ -10,8 +10,6 @@ class RPSApp < Sinatra::Base
 	post '/play' do
 		@@player1 = Player.new(params[:player1])
 		@player_name = @@player1.name
-		# @player2 = Player.new(params[:player2])
-		# @playerno = params[:playerno]
 		erb :play
 	end
 	get '/play' do 
