@@ -18,15 +18,31 @@ feature 'play rock, paper, scissors' do
   	expect(page).to have_button 'Scissors'
   end
 
-  scenario 'choose a weapon' do
-  	click_button 'Paper'
-  	expect(page).to have_content 'You chose Paper'
+  # scenario 'choose a weapon' do
+  # 	click_button 'Paper'
+  # 	expect(page).to have_content 'You chose Paper'
+  # end
+
+  scenario 'computer chooses rock' do
+  	click_button 'Rock'
+  	message = find(:css, "#machine").text.strip
+  	expect(possible_messages).to include message
   end
 
   scenario 'the computer chooses a random weapon' do
-  	srand(1010)
+  	srand(221563)
   	click_button 'Rock'
-  	expect(page).to have_content 'the computer chose rock'
+  	expect(page).to have_content 'Computer chose scissors'
+  end
+
+  scenario 'I win' do
+  	srand(221563)
+  	click_button 'Rock'
+  	expect(page).to have_content 'You win!'
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map { |weapon| "Computer chose #{weapon.to_s}"}
   end
 
   

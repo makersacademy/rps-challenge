@@ -11,5 +11,19 @@
 </form>
 
 <div>
-  You chose <%= @game.player_weapon %> and the computer chose <%= @game.computer_weapon.to_s %>
+  You chose <%= @game.player_weapon %> 
+</div>
+
+<br>
+
+<div id="machine">
+  Computer chose <%= @game.computer_weapon.to_s %>
+</div>
+
+<br>
+
+<div>
+  <% if @game.win? %>
+    You win!
+  <% end %>
 </div>
