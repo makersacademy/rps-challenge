@@ -18,8 +18,10 @@ class Game
       "Tie"
     elsif (@result == -1)
       "You Lose!"
+
     else
       "You Win!"
+
     end
   end
 

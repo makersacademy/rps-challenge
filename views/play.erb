@@ -38,12 +38,12 @@
                     <br>
                     <div class="row">
                         <div class="col-md-5 centered">
-                            <h3>User Input:
+                            <h3><%= @player_name.name %> chose 
                                 <%= @player_input %></h3>
                         </div>
                         <div class="col-md-2 centered"></div>
                         <div class="col-md-5 centered">
-                            <h3>Computer Input:
+                            <h3>Computer chose
                                 <%= @computer_result %></h3>
                         </div>
                     </div>
@@ -62,6 +62,7 @@
                         </div>
 
                         <div class="col-md-2 centered">
+                          <div class="row">
                             <% if @result == :start %>
                             <h4>Choose between Rock,paper,scissor</h4>
                         <% else %>
@@ -69,6 +70,15 @@
                                 <%= @result %>
                             </h4>
                             <% end %>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <h5> <%= @player_name.name %> : <%= @user_score %> </h5>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <h5> Computer : <%= @computer_score %> </h5>
+                      </div>
                         </div>
 
                         <div class="col-md-5 centered">
