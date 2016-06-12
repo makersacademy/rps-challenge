@@ -11,7 +11,6 @@ This is a repo for the Rock-Paper-Scissors-Spock-Lizard Challenge
   3. Run `ruby app.rb` from the command line.
   4. Go to `http://localhost:4567/` to see app running on local host.
 
-
 ## User Stories
 ```sh
 As a marketeer
