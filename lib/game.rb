@@ -1,6 +1,14 @@
-# understands outline
+# understands having players that can fight
 class Game
   attr_reader :weapons, :players, :winner
+
+  def self.create(weapons)
+    @game = new(weapons)
+  end
+
+  def self.instance
+    @game
+  end
 
   def initialize(weapons)
     @weapons = weapons
@@ -10,14 +18,6 @@ class Game
 
   def add_player(player)
     players << player
-  end
-
-  def self.create(weapons)
-    @game = new(weapons)
-  end
-
-  def self.instance
-    @game
   end
 
   def player_1

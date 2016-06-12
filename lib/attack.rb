@@ -1,3 +1,4 @@
+# understands winning and losing
 class Attack
   attr_reader :game
 

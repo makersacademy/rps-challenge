@@ -8,5 +8,5 @@
 Hey there <%= @game.player_1.name %>! You chose <%= @game.player_1.weapon.name %>. Computer chose <%= @game.player_2.weapon.name %>.
 <% unless @game.draw? %><%= @game.winner[0].weapon.name %> <%= (@game.winner[0].weapon.inflictions & @game.loser.weapon.weaknesses)[0] %> <%= @game.loser.weapon.name %>.<% end %>
 <p>
-<a href="/">Play again</href>
+  <a href="/">Play again</href>
 </p>

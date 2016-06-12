@@ -1,4 +1,4 @@
-# understands competition
+# understands strength and weakness
 class Weapon
   attr_reader :name, :inflictions, :weaknesses, :wins_against
 

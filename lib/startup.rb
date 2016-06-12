@@ -48,4 +48,12 @@ module Startup
 
   lizard.defeats(spock)
   lizard.defeats(paper)
+
+  def self.get_weapon_by_name(name)
+    WEAPONS.select { |e| e.name == name }[0]
+  end
+
+  def self.random_weapon
+    WEAPONS[Kernel.rand(WEAPONS.count-1)]
+  end
 end

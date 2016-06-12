@@ -22,7 +22,7 @@ describe Game do
   describe '#add_player' do
     it 'has a player' do
       game.add_player(player_1)
-      expect(game.players).to include player_1
+      expect(game.player_1).to eq player_1
     end
   end
 end
