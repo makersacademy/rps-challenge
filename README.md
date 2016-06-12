@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors!
 
+Heroku app : https://damp-gorge-24087.herokuapp.com/
+
 Weekend Challenge 3: Built a web application where you can play rock, paper, scissors against a computer.
 
 Installation Instructions
@@ -22,6 +24,6 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Rules of the game 
+Rules of the game
 
 ![](https://upload.wikimedia.org/wikipedia/commons/6/67/Rock-paper-scissors.svg)
