@@ -17,4 +17,8 @@ I would like to see the outcome of the game printed out
 As a marketeer
 So I know I was not cheated on
 I would like to see what weapon my opponent used
+
+As a marketeer
+So I can enjoy myself with friends
+I would like to choose between playing against a friend or the computer
 ```

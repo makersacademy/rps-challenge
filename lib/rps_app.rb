@@ -13,7 +13,7 @@ class RpsApp < Sinatra::Base
   end
   
 
-  get '/game' do
+  get '/game_vs_machine' do
 
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
@@ -27,9 +27,25 @@ class RpsApp < Sinatra::Base
   end
 
 
-  post'/player_name' do
+  get '/game_vs_human' do
+
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+ 
+    if session[:player_1] && session[:player_2]
+      outcome = RockPaperScissors.new(session[:player_1], session[:player_2]).outcome 
+      @result = OutcomeFormatter.new.format_outcome(outcome,session[:player_1],session[:player_2])
+    end
+
+    erb :game
+  end
+
+
+  post'/player_names' do
     session[:player_1] = HumanPlayer.new(params[:player_1_name], 'R') 
-    redirect '/game'
+    session[:player_2] = HumanPlayer.new(params[:player_2_name], 'R') 
+    redirect '/game_vs_machine' if params[:player_2_name] == ''
+    redirect '/game_vs_human'
   end
 
 
@@ -39,7 +55,7 @@ class RpsApp < Sinatra::Base
     session[:player_1] = HumanPlayer.new(player_1_name, player_1_weapon) 
     session[:player_2] = AI.new
 
-    redirect '/game'
+    redirect '/game_vs_machine'
   end
 
   # start the server if ruby file executed directly
