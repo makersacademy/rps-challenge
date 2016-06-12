@@ -17,8 +17,6 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    @player_choice = session[:player_choice]
-    @opponent_choice = Opponent.new.choice
     erb(:play)
   end
 
