@@ -5,6 +5,6 @@ feature 'Home Page' do
 	end
 	scenario 'a play button' do
 		visit ('/')
-		find_button('PLAY!')
+		find_link('PLAY!')
 	end
 end
