@@ -2,38 +2,51 @@ require 'game'
 
 describe Game do
 
-	subject(:game) { described_class.new(player1, player2) }
+	subject(:game) { described_class.new(player1) }
 
-	let(:player1) {double(:player1, name: 'Hodor')}
-	let(:player2) {double(:player2, name: 'Computer')}
+	let(:player1) { Player.new('player1')}
+	let(:player2) {double(:player2)}
 
 
-	describe '#player1' do
-    it 'returns the first player' do
-      expect(game.player1).to eq player1
-    end
-  end
+	describe '#is_over' do
 
-  describe '#player2' do
-    it 'returns the first player' do
-      expect(game.player2).to eq player2
-    end
-  end
+		it 'returns false when current rounds are below Max rounds' do
+			expect(game.is_over).to eq false
+		end
+	end
 
-	context '#log' do
-		it 'starts with a player' do
-			expect(game.log.log). to eq ({player1.name => 0, 'Ties' => 0, 'Computer' => 0})
+	describe '#is_over' do
+
+		it 'returns false when current rounds are below Max rounds' do
+			expect(game.is_over).to eq false
 		end
 	end
 
 
-	
+	describe '#round' do
 
-	# context '#game' do
-	# 	it 'itself' do
-	# 		expect(game.game). to eq game
-	# 	end
-	# end
+		before do
+			game.round('rock')
+		end
+
+		it 'adds a round' do
+			expect(game.rounds).to eq 1
+		end
+	end
+
+
+	describe '#result' do
+
+		before do
+			allow(player2).to receive(:play) {'scissors'}
+			game.round('rock')
+		end
+
+		it 'Player 1 wins' do
+			expect(game.result).to eq 'player1 wins'
+		end
+	end
+
 
 
 end

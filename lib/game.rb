@@ -1,43 +1,68 @@
 require_relative 'log'
 require_relative 'player'
+require_relative 'engine'
 
 class Game
 
- 	MOVES = ['rock', 'paper', 'scissors']
+  MAX_ROUNDS = 15
 
-	attr_reader :players
+	attr_reader :player1, :player2, :log, :rounds
 
-	def initialize(player1, player2 = Player.new('Computer'))
-		@players = [player1, player2]
+	def initialize(player1, player2 = nil, log = nil, engine = nil)
+		@player1 = player1
+    @player2 ||= Player.new('Computer')
+    @log ||= Log.new()
+    @rounds = 0
+    @engine ||= Engine.new()
 	end
 
-	def choose(move)
-		player1_wins
-	end
+  def is_over
+    @rounds >= MAX_ROUNDS
+  end
 
-	def player1
-		@players.first
-	end
+  def round(move)
+    if @rounds < MAX_ROUNDS
 
-	def player2
-		@players.last
-	end
+      choice_p1 = player1.play(move)
+      choice_p2 = player2.play
 
-	def log
-		@log || Log.new(player1)
-	end
+      log.update_history(player1, choice_p1)
+      log.update_history(player2, choice_p2)
 
-	private
+      winner = resolve_round(choice_p1, choice_p2)
 
-	def ties
-		log.ties
-	end
+      if winner == nil
+        @log.add_tie
+      else
+        winner.win
+        @log.add_win(winner)
+      end
 
-	def player1_wins
-		player1.win
-	end
+      @rounds += 1
+    end
+  end
 
-	def player2_wins
-		player2.win
-	end
+  def result
+    if player1.score > player2.score
+      "#{player1.name} wins"
+    elsif player1.score < player2.score
+      "#{player2.name} wins"
+    else
+      "TIES!"
+    end
+  end
+
+  private
+
+  def resolve_round(choice_p1, choice_p2)
+    result = @engine.run(choice_p1, choice_p2)
+    if result == 1
+      return player1
+    elsif result == 2
+      return player2
+    else
+      return nil
+    end
+  end
+
 end

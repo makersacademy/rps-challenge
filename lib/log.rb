@@ -1,18 +1,26 @@
 class Log
-	attr_reader :log, :history_log, :ties
+	attr_reader :scores, :history, :ties
 
-	def initialize(player)
-		@log = {player.name => 0, 'Ties' => 0, 'Computer' => 0}
-		@history_log = []
+	def initialize
+		@scores = {}
+		@history = []
 		@ties = 0
 	end
 
-	def add(player, move)
-		history_log << Hash[player.name, move]
+	def update_history(player, move)
+		history << Hash[player.name, move]
 	end
 
-	def tie
+	def add_tie
 		@ties += 1
+	end
+
+	def add_win(player)
+		if @scores.include? player.name
+			@scores[player.name] += 1
+		else
+			@scores[player.name] = 1
+		end
 	end
 
 end

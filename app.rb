@@ -26,7 +26,7 @@ class Rps < Sinatra::Base
 
   post '/choice' do
     @game = $game
-    @game.choose(params[:move])
+    @game.round(params[:move])
     erb :play
   end
 

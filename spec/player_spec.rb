@@ -25,6 +25,18 @@ describe Player do
 		end
 	end
 
+	context '#play' do
+		it 'returns a move' do
+			expect(player.play(:rock)).to eq(:rock)
+		end
+
+		it 'returns random move if computer plays' do
+			allow(player).to receive(:play) {'rock'}
+			expect(player.play).to eq('rock')
+		end
+
+	end
+
 
 
 

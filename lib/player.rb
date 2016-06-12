@@ -1,6 +1,6 @@
-require_relative 'game'
-
 class Player
+
+	MOVES = ['rock', 'paper', 'scissors']
 
 	attr_reader :name, :score
 
@@ -9,7 +9,16 @@ class Player
 		@score = 0
 	end
 
+	def play(move = nil)
+		if move == nil
+			return MOVES.sample
+		else
+			return move
+		end
+	end
+
 	def win
 		@score += 1
 	end
+
 end
