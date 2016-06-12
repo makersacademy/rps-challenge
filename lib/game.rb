@@ -10,7 +10,7 @@ class Game
     @cpu_choice = cpu_choice
   end
 
-  def self.run(name, choice, cpu_choice = Cpu.new)
+  def self.run(name, choice, cpu_choice = Cpu.run)
     new(name, choice, cpu_choice).winner
   end
 
