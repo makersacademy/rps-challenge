@@ -7,7 +7,8 @@ describe Computer do
 
   describe '#chosen_weapon' do
     it 'returns the computers weapon' do
-      expect(computer.chosen_weapon).to eq 'Rock'
+      allow(computer).to receive(:chosen_weapon).and_return(:rock)
+      expect(computer.chosen_weapon).to eq :rock
     end
   end
 end

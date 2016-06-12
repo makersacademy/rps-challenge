@@ -1,6 +1,6 @@
 class Computer
 
-  AVAILABLE_WEAPONS = %w(Rock Paper Scissors)
+  AVAILABLE_WEAPONS = ['Rock', 'Paper', 'Scissors']
 
   def chosen_weapon
     AVAILABLE_WEAPONS.sample
