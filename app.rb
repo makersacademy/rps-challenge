@@ -19,27 +19,28 @@ class RPS < Sinatra::Base
 
   post '/multiplayer' do
     Game.start(params[:player1],params[:player2])
+    Game.instance.set_singleplayer(false)
     redirect '/multiplayer'
   end
 
   get '/multiplayer' do
-    "Toby vs Barry"
+    @game = Game.instance
     erb(:multiplayer)
   end
 
-  post '/rock-multi' do
+  post '/rock-p1' do
     @game = Game.instance
     @game.player1.set_last_action("Rock")
     redirect '/multiplayer2'
   end
 
-  post '/paper-multi' do
+  post '/paper-p1' do
     @game = Game.instance
     @game.player1.set_last_action("Paper")
     redirect '/multiplayer2'
   end
 
-  post '/scissors-multi' do
+  post '/scissors-p1' do
     @game = Game.instance
     @game.player1.set_last_action("Scissors")
     redirect '/multiplayer2'
@@ -48,6 +49,24 @@ class RPS < Sinatra::Base
   get '/multiplayer2' do
     @game = Game.instance
     erb(:multiplayer2)
+  end
+
+  post '/rock-p2' do
+    @game = Game.instance
+    @game.player2.set_last_action("Rock")
+    redirect '/multiplayer_result'
+  end
+
+  post '/paper-p2' do
+    @game = Game.instance
+    @game.player2.set_last_action("Paper")
+    redirect '/multiplayer_result'
+  end
+
+  post '/scissors-p2' do
+    @game = Game.instance
+    @game.player2.set_last_action("Scissors")
+    redirect '/multiplayer_result'
   end
 
   post '/rock' do
@@ -72,6 +91,12 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.process_turn
     erb(:result)
+  end
+
+  get '/multiplayer_result' do
+    @game = Game.instance
+    @game.process_turn
+    erb(:multiplayer_result)
   end
 
   # start the server if ruby file executed directly

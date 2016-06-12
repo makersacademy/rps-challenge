@@ -25,7 +25,14 @@ class Game
 
   def process_turn
     @computer_action = attack.generate_random_attack if singleplayer == true
-    @winner = attack.calculate_attack(player1.last_action,computer_action)
+    @winner = attack.calculate_attack(player1.last_action,computer_action) if singleplayer == true
+    @winner = attack.calculate_attack(player1.last_action,player2.last_action) if singleplayer == false
+    case
+      when @winner == 1
+         player1.add_score
+      when @winner == 2
+         player2.add_score
+      end
   end
 
   def pretty_print_winner
@@ -39,6 +46,10 @@ class Game
       when winner == 0
         "It's a draw"
     end
+  end
+
+  def set_singleplayer(boolean)
+    @singleplayer = boolean
   end
 
 private
