@@ -2,7 +2,7 @@ class Computer
 
   WEAPONS = [:rock, :paper, :scissors]
 
-  def choice
+  def weapon
   	WEAPONS.sample
   end
 

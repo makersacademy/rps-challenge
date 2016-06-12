@@ -4,16 +4,18 @@
 
  <br>
 
-<div>
+ <div>
   <%= @player_name %> choose your weapon...
 </div>
 
 <br>
 
-<form action="/weapon" method="post">
-  <label for="player_weapon">
-  	Rock, paper or scissors?
-  <input type="text" name="player_weapon">
-  </label>
-  <input type="submit" value="Fight!">
+<form action="/play" method="post">
+  <input type="submit" name="player_weapon" value="Rock"/>
+  <input type="submit" name="player_weapon" value="Paper"/>
+  <input type="submit" name="player_weapon" value="Scissors"/>
 </form>
+
+<div>
+  You chose <%= @player_weapon %>
+</div>
