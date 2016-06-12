@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -17,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     Game.instance.set_choice(params[:choice])
+    Game.instance.set_computer
     redirect '/rps'
   end
 

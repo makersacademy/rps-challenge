@@ -20,7 +20,7 @@ class Game
   end
   
   def set_choice(choice)
-    @choice = choice
+    @choice = choice.downcase
   end
 
   def set_computer
