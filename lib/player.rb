@@ -1,4 +1,4 @@
-require_relative 'Game'
+require_relative 'game'
 
 class Player 
 
