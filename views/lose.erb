@@ -1,0 +1,7 @@
+Computer chose: <%= @game.computer.choice %> <br>
+You have chosen <%= @game.player.choice %>
+<h2> Oh no! You lost! </h2>
+
+<form action="/play">
+  <input type="submit" value="Play again!">
+</form>
