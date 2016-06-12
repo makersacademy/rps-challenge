@@ -13,9 +13,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-  	@player_name = session[:player_name]
-  	@player_weapon = session[:player_weapon]
-  	@computer_weapon = session[:computer_weapon]
+  	@game = Game.new(session)
   	erb :play
   end
 

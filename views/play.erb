@@ -1,14 +1,8 @@
 <div>
-  <%= @player_name %> vs. Machine
+  <%= @game.player_name %> vs. Machine
 </div>
 
  <br>
-
- <div>
-  <%= @player_name %> choose your weapon...
-</div>
-
-<br>
 
 <form action="/play" method="post">
   <input type="submit" name="player_weapon" value="Rock"/>
@@ -17,5 +11,5 @@
 </form>
 
 <div>
-  You chose <%= @player_weapon %> and the computer chose <%= @computer_weapon.to_s %>
+  You chose <%= @game.player_weapon %> and the computer chose <%= @game.computer_weapon.to_s %>
 </div>
