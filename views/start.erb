@@ -4,6 +4,26 @@
 	
 	<title>RPS - Enter your name</title>
 
+	<style>
+
+		button {
+			background-color: #00ffbf;
+			color: black;
+			font-size: 30px;
+			font-family: Impact;
+			height: 60px;
+			width: 180px;
+			text-align: center;
+			vertical-align: middle;
+			border-radius: 8px;
+    }
+
+    div {
+    	margin:auto;
+    }
+
+	</style>
+
 </head>
 
 <body>
@@ -13,10 +33,11 @@
 <BR>
 
 <form action='/names' method='post'>
-	<input type='text' name='player1_name'>
 	<div>
-	<button>Submit</button>
-</div>
+		<input type='text' name='player1_name'>
+		<BR>
+		<button>Submit</button>
+	</div>
 </form>
 
 

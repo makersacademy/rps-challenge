@@ -8,11 +8,9 @@
 
 <body>
 
-<h1> <%= @game.player1.name %> VS. <%= @game.player2.name %> </h1>
+<h1> <%= @game.player1.name.capitalize %> vs. <%= @game.player2.name %> </h1>
 
-<h2> It's your turn, <%= @game.player1.name %>!</h2>
-
-<BR>
+<h2> It's your turn, <%= @game.player1.name.capitalize %>!</h2>
 
 <h2> Please choose your weapon! </h2>
 

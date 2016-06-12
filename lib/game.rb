@@ -53,7 +53,7 @@ class Game
 	end
 
 	def tie?
-		!!(@player1_weapon == @player2_weapon)
+		@player1_weapon == @player2_weapon
 	end
 
 end

@@ -43,9 +43,11 @@ h2 {
 
 input {
 	height: 50px;
-	width: 200px;
+	width: 180px;
 	border-radius: 8px;
 	text-align: center;
 	font-size: 30px;
 	margin: auto;
 }
+
+
