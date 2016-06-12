@@ -18,24 +18,24 @@ class Rps < Sinatra::Base
   post('/set_name') do
     player_1 = Player.new(params[:player])
     player_2 = ComputerPlayer.new
-    $game = Game.new(player_1, player_2)
+    @game = Game.create(player_1, player_2)
     redirect('/select-weapon')
   end
 
   get('/select-weapon') do
-    @game = $game
+    @game = Game.instance
     erb(:select_weapon)
   end
 
   post('/set_weapon') do
-    @game = $game
+    @game = Game.instance
     @game.player_1.select_weapon(params[:weapon])
     @game.player_2.select_weapon
     redirect('/fight')
   end
 
   get('/fight') do
-    @game = $game
+    @game = Game.instance
     erb(:fight)
   end
 
