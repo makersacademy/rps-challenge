@@ -15,23 +15,28 @@ class Rps < Sinatra::Base
   end
 
   post('/set_name') do
-    $player_name = params[:player_1]
+    # $player_name = params[:player_1]
+    $player = Player.new(params[:player])
     redirect('/select-weapon')
   end
 
   get('/select-weapon') do
-    @player_1 = $player_name
+    # @player_1 = $player_name
+    @player = $player
     erb(:select_weapon)
   end
 
   post('/set_weapon') do
-    $weapon = params[:weapon]
+    # $weapon = params[:weapon]
+    @player = $player
+    @player.select_weapon(params[:weapon])
     redirect('/fight')
   end
 
   get('/fight') do
-    @player_1 = $player_name
-    @weapon = $weapon
+    # @player_1 = $player_name
+    # @weapon = $weapon
+    @player = $player
     erb(:fight)
   end
 

@@ -12,7 +12,7 @@ feature "FEATURE: select weapon" do
 
   scenario "select SCISSORS option" do
     sign_in_and_play
-    find_button "scissors"    
+    find_button "scissors"
   end
 
 end

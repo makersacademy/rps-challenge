@@ -7,7 +7,7 @@ feature "FEATURE: fight details" do
     expect(page).to have_content "Alistair uses rock"
   end
 
-  scenario "computer pikcs random weapon" do
+  scenario "computer picks random weapon" do
     allow(weapon_array).to receive(:shuffle).and_return([:paper])
     sign_in_play_and_choose_rock
     expect(page).to have_content "Ava uses paper"
