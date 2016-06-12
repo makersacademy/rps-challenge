@@ -40,4 +40,12 @@ class Game
     @winner = players
   end
 
+  def draw?
+    @winner.count == 2
+  end
+
+  def loser
+    players.select { |p| p != winner[0] }[0]
+  end
+
 end
