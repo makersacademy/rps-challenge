@@ -27,4 +27,10 @@ describe Player do
     end
   end
 
+  describe "#add_point" do
+    it "adds +1 point to player_1's score" do
+      expect{player.add_point}.to change{player.score}.by 1
+    end
+  end
+
 end

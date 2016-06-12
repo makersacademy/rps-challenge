@@ -28,4 +28,10 @@ describe ComputerPlayer do
 
   end
 
+  describe "#add_point" do
+    it "adds +1 point to player_2's score" do
+      expect{computer.add_point}.to change{computer.score}.by 1
+    end
+  end
+
 end
