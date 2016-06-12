@@ -3,7 +3,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :computer_choice, :input
+  attr_reader :computer_choice, :player_input
 
   def self.create
     @game = Game.new
@@ -31,12 +31,12 @@ class Game
 
     if @player_input == @computer_choice
       draw_message
-    elsif @player_input == :rock
-      @computer_choice == :scissors ? winning_message : losing_message
-    elsif @player_input == :scissors
-      @computer_choice == :paper ? winning_message : losing_message
-    else @player_input == :paper
-      @computer_choice == :rock ? winning_message : losing_message
+    elsif @player_input == "rock"
+      @computer_choice == "scissors" ? winning_message : losing_message
+    elsif @player_input == "scissors"
+      @computer_choice == "paper" ? winning_message : losing_message
+    else @player_input == "paper"
+      @computer_choice == "rock" ? winning_message : losing_message
     end
 
   end

@@ -10,6 +10,13 @@ describe Game do
   let(:losing_message) { "Sorry, you have lost" }
   let(:draw_message) { "This is awkward, it's a tie" }
 
+  describe "#self.create" do
+    it "creates a new instance of itself" do
+      game = Game.create
+			expect(Game.instance).to eq game
+    end
+  end
+
   describe "#play" do
 
     it "runs the game via one command " do
