@@ -27,9 +27,9 @@ class Rpsls < Sinatra::Base
   end
 
   post '/p1_hand' do
-    @game = Game.instance
-    @game.player_1.hand_chosen(params[:hand])
-    if @game.player_2.is_a? ComputerPlayer
+    game = Game.instance
+    game.player_1.hand_chosen(params[:hand])
+    if game.player_2.is_a? ComputerPlayer
       redirect '/result'
     else
       redirect '/p2_play'
@@ -42,14 +42,23 @@ class Rpsls < Sinatra::Base
   end
 
   post '/p2_hand' do
-    @game = Game.instance
-    @game.player_2.hand_chosen(params[:hand])
+    game = Game.instance
+    game.player_2.hand_chosen(params[:hand])
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.instance
-    @result_calculator_calc = ResultCalculator.new(@game)
+    game = Game.instance
+    p1_hand = game.player_1.hand
+    p2_hand = game.player_2.hand
+    result_calc = ResultCalculator.new(p1_hand, p2_hand).player1_wins?
+      if result_calc == "Draw"
+        @result = result_calc
+      elsif result_calc == true
+        @result = "#{game.player_1.name} wins"
+      else
+        @result = "#{game.player_2.name} wins"
+      end
     erb(:result)
   end
 
