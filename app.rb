@@ -20,13 +20,14 @@ class RPS < Sinatra::Base
   end
 
   post '/card' do
-    p $players_card= Card.new(params[:choose])
+    $players_card= Card.new(params[:choose])
     redirect '/result'
   end
 
   get '/result' do
     @players_card= $players_card
-    #@random_card= Card.new
+    @random_card= Card.new
+    #@players_card.game.against(@random_card)
     erb :result
   end
 

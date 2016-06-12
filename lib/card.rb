@@ -1,15 +1,14 @@
 class Card
-  attr_reader :card_id
-  attr_writer :card_number
-  RANDOM_ID= Random.new(3)
+  attr_reader :card_number, :card_id
+  RANDOM_ID= rand(1..3)
 
-  def initialize(card_id= RANDOM_ID)
-    @card_id= card_id
+  def initialize(card_number= RANDOM_ID)
     @card_number= card_number
+    @card_id= card_id
   end
 
-  def card_number
-    number= ["rock", "paper", "scissor"].index(@card_id)
-    @card_number= number+1
+  def card_id
+    idx= @card_number.to_i 
+    @card_id= ["rock", "paper", "scissor"].at(idx-1)
   end
 end

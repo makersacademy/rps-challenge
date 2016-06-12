@@ -8,8 +8,5 @@ describe Game do
     new_game= Game.new(Player.new("Meerkat"))
     expect(some_game.player.name).to eq new_game.player.name
   end
-  describe '#choose_card' do
-   it 'player made a choice' do
-   end
-  end
+ 
 end
