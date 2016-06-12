@@ -1,0 +1,31 @@
+require 'computer_player'
+
+describe ComputerPlayer do
+  subject(:computer) { described_class.new }
+  let(:weapons_array) { described_class::RPS_WEAPONS}
+
+  describe "#initialize" do
+    it "has name 'Ava'" do
+      expect(computer.name).to eq "Ava"
+    end
+  end
+
+  describe "#weaponise" do
+    it "can be armed with ROCK" do
+      allow(weapons_array).to receive(:shuffle).and_return([:rock])
+      expect(computer.weapon).to eq :rock
+    end
+
+    it "can be armed with PAPER" do
+      allow(weapons_array).to receive(:shuffle).and_return([:paper])
+      expect(computer.weapon).to eq :paper
+    end
+
+    it "can be armed with SCISSORS" do
+      allow(weapons_array).to receive(:shuffle).and_return([:scissors])
+      expect(computer.weapon).to eq :scissors
+    end
+
+  end
+
+end
