@@ -16,7 +16,7 @@ describe Game do
     end
   end
 
-  describe '#generate' do
+  describe '#instance' do
     it 'generates and stores itself' do
       Game.generate(p1, p2)
       expect(Game.instance).to be_a Game
