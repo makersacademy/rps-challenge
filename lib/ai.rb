@@ -5,7 +5,7 @@ class AI
   attr_reader :weapon
 
   def initialize
-    @weapon = %w-R P S-.sample
+    @weapon = %w-R P S SP L-.sample
   end
 
   def name

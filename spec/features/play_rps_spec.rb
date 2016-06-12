@@ -28,7 +28,7 @@ feature 'Play Rock Paper Scissors' do
   end 
 
   scenario 'Player 1 selects paper, ai selects scissor, ai wins' do
-    srand(9)
+    srand(14)
     enter_rnd_name_go_to_single_player_game
     click_button('Paper')
     expect(page).to have_content("#{AI.new.name} wins")
@@ -56,5 +56,15 @@ feature 'Play Rock Paper Scissors' do
   #So we can find out who won
   #We would like to choose our weapons then see who the winner is
   scenario 'Users enter names, choose a weapon, winner is declared (RvS)' do
+  end
+
+  #As a marketeer with or without a friend
+  #So I can have even more fun
+  #I/We would like to be able to play rock/paper/lizard/spock
+  scenario 'In human v machine, human has lizard, machine lizard, draw' do
+    srand(1)
+    enter_rnd_name_go_to_single_player_game
+    click_button('Lizard')
+    expect(page).to have_content("Draw")
   end
 end 

@@ -25,4 +25,8 @@ I would like to choose between playing against a friend or the computer
 As a marketeer with a friend
 So we can find out who won
 We would like to choose our weapons then see who the winner is
+
+As a marketeer with or without a friend
+So I can have even more fun
+I/We would like to be able to play rock/paper/lizard/spock
 ```

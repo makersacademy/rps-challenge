@@ -3,7 +3,7 @@ describe AI do
   subject(:ai) { described_class.new } 
   
   it '#weapon returns a random weapon' do
-    expect(%w-R P S-).to include(ai.weapon)
+    expect(%w-R P S SP L-).to include(ai.weapon)
   end
 
   it '#name returns a ais name' do
