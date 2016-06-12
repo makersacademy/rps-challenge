@@ -2,7 +2,7 @@ feature 'Play' do
   scenario 'starting a game' do
     sign_in
     click_button 'Start Playing'
-    expect(page).to have_content "Crescenzo, please select you option"
+    expect(page).to have_content "Crescenzo, please select your move"
   end
 
   scenario 'chose a move' do
