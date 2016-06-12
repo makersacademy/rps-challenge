@@ -212,6 +212,53 @@ body {
   float: left;
 }
 
+#footer {
+  width: 400px;
+  height: 80px;
+  padding-top: 30px;
+  padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.git {
+  display: block;
+  float: left;
+  background: url(./images/footer_git.png) no-repeat;
+  height: 40px;
+  width: 55px;
+}
+
+a.git:hover {
+  background-position: 0 -40px;
+}
+
+.name {
+  background-image: url(./images/footer_kb.png);
+  height: 40px;
+  width: 98px;
+  float:left;
+}
+
+.student {
+  background-image: url(./images/footer_student.png);
+  height: 18px;
+  width: 206px;
+  float:left;
+}
+
+a.makers {
+  display: block;
+  float:left;
+  background: url(./images/footer_makers.png) no-repeat;
+  height: 22px;
+  width: 206px;
+}
+
+a.makers:hover {
+  background-position: 0 -22px;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #A0D4D8;
 }
