@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -14,6 +16,8 @@ class RPS < Sinatra::Base
 
   get '/round' do
     @game = Game.instance
+    move = params[:move].to_sym
+    @won_or_drawn_or_lost = @game.play_a_round(move)
     erb :result
   end
 
