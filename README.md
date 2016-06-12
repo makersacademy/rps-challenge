@@ -44,8 +44,13 @@ $ cd rps-challenge
 $ bundle
 ```
 
+**Running the app**
+
 * Start app by typing **ruby app.rb** into terminal
 * Go to http://localhost:4567/
+
+**Playing the app**
+
 * Press the start button
 * Type your name into the text box and press submit
 * Screen tells you the current score of each player, including the computer (Ava the robot)
