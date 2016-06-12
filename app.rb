@@ -7,9 +7,13 @@ class Rpsls < Sinatra::Base
   end
 
   post '/names' do
-    @player_1 = Player.new params[:player_1_name]
-    @player_2 = Player.new params[:player_2_name]
-    @game = Game.generate(@player_1)
+    player_1 = Player.new(params[:player_1_name])
+    if params[:player_2_name] == nil
+      player_2 = ComputerPlayer.new
+    else
+      player_2 = Player.new(params[:player_2_name])
+    end
+    @game = Game.generate(player_1, player_2)
     redirect '/play'
   end
 
