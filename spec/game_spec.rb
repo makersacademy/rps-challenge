@@ -26,6 +26,7 @@ describe Game do
 	describe '#round' do
 
 		before do
+			allow(player2).to receive(:play).with ('scissors')
 			game.round('rock')
 		end
 
@@ -38,7 +39,6 @@ describe Game do
 	describe '#result' do
 
 		before do
-			allow(player2).to receive(:play) {'scissors'}
 			game.round('rock')
 		end
 

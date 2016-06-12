@@ -11,9 +11,9 @@ class Game
 	def initialize(player1, player2 = nil, log = nil, engine = nil)
 		@player1 = player1
     @player2 ||= Player.new('Computer')
-    @log ||= Log.new()
+    @log ||= Log.new
     @rounds = 0
-    @engine ||= Engine.new()
+    @engine ||= Engine.new
 	end
 
   def is_over
