@@ -1,5 +1,22 @@
-You chose <%= @game.display_player_choice %>
+<html>
+<head>
+  <link rel="stylesheet" typ="text/css" href="style.css">
+</head>
+<h2>
+  <div class="text">
+    <%="You chose #{@game.display_singleplayer_choice}" %>
+  </div>
+</h2>
 <br>
-Computer chose <%= @game.display_opponent_choice %>
+<h2>
+  <div class="text">
+    <%="Computer chose #{@game.display_opponent_choice}" %>
+  </div>
+</h2>
 <br>
-<%= @game.outcome %>
+<h1>
+  <div class="text">
+    <%= @game.single_player_outcome %>
+  </div>
+</h1>
+</html>

@@ -13,4 +13,5 @@ group :test do
   gem 'capybara'
   gem 'byebug'
   gem 'rspec-sinatra'
+  gem 'rerun'
 end

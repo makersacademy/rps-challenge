@@ -6,4 +6,9 @@ feature 'registering names' do
     sign_in_and_play
     expect(page).to have_content('Marlon')
   end
+
+  scenario 'has option of 2 player' do
+    multi_play_sign_in
+    expect(page).to have_content('Marlon vs. Fred')
+    end
 end

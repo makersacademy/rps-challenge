@@ -5,12 +5,14 @@ class Game
             :scissors => { :paper => "win", :rock => "lose", :scissors => "draw"},
           }
 
+  attr_reader :player_choice, :opponent_choice
+
   def initialize(player_choice, opponent_choice)
     @player_choice = player_choice
     @opponent_choice = opponent_choice
   end
 
-  def display_player_choice
+  def display_singleplayer_choice
     @player_choice.to_s.capitalize
   end
 
@@ -18,16 +20,17 @@ class Game
     @opponent_choice.to_s.capitalize
   end
 
+  def single_player_outcome
+   winner? ? "You #{RULES[player_choice][opponent_choice]}!" : "You #{RULES[player_choice][opponent_choice]}!"
+  end
+
   def outcome
-    p winner? ? "You #{RULES[player_choice][opponent_choice]}!" : "You draw!"
+    RULES[player_choice][opponent_choice]
   end
 
   private
 
-  attr_reader :player_choice, :opponent_choice
-
   def winner?
     RULES[player_choice][opponent_choice] == "win" || "lose"
   end
-
 end
