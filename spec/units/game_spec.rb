@@ -5,12 +5,6 @@ describe Game do
   let(:player2) { double(:player2, name: "I.P. Freely") }
   subject { described_class.new(player1, player2) }
 
-  describe "#self.instance" do
-    it "returns an instance of a game" do
-      expect(described_class.instance).to be_an_instance_of(described_class)
-    end
-  end
-
   describe "#players" do
     it "has 2 players" do
       expect(subject.players.count).to eq(2)
