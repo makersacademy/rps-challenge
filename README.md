@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/andreamazza89/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/andreamazza89/rps-challenge?branch=master)
 
 #Rock-Paper-Scissors Challenge
-This is my third weekend challenge while training at [Makers Academy] (http://www.makersacademy.com/)
+This is my third weekend challenge while training at [Makers Academy] (http://www.makersacademy.com/).
 
 ##The brief
 This can be found [here] (https://github.com/makersacademy/rps-challenge).
