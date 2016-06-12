@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/player'
+require_relative './lib/game'
+require_relative './lib/card'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,22 +9,24 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $players_name= params[:players_name]
+    player= Player.new(params[:name])
+    $game= Game.new(player)
     redirect '/play'
   end
 
   get '/play' do
-    @players_name= $players_name
+    @player= $game.player.name
     erb :play
   end
 
   post '/card' do
-    $players_card= params[:choose]
+    p $players_card= Card.new(params[:choose])
     redirect '/result'
   end
 
   get '/result' do
     @players_card= $players_card
+    #@random_card= Card.new
     erb :result
   end
 
