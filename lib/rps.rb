@@ -38,6 +38,10 @@ class RPS
     moves_the_same? ? "It's a tie!" : MOVE_RESULT[@sorted_moves]
   end
 
+  def winner
+    result == "It's a tie!" ? "No Winner!!!" : "#{select_winner.name} wins!!!"
+  end
+
   private
 
   def moves_the_same?
@@ -50,6 +54,14 @@ class RPS
 
   def players_moves
     @players.map{ |player| player.choice }
+  end
+
+  def select_winner
+    @players.find{ |player| player.choice == winning_move_select }
+  end
+
+  def winning_move_select
+    @sorted_moves.reverse.find{|move| move.to_s[0] == result.downcase[0] }
   end
 end
 

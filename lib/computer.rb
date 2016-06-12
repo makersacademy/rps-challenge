@@ -1,7 +1,7 @@
 
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   DEFAULT_NAME = 'SkyNet'
 
@@ -11,8 +11,8 @@ class Computer
     @name = DEFAULT_NAME
   end
 
-  def choice
-    MOVES.sample
+  def player_move
+    @choice = MOVES.sample
   end
 
 end
