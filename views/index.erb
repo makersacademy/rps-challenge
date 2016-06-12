@@ -3,11 +3,12 @@
 <p>Welcome to<br>
 <h1>Rock, Paper, Scissors</h1></p>
 
-<p>Please enter your name</p>
+<p>Please choose the type of game you would like to play:</p>
 
-<form action = '/start' method = 'post'>
-  <input type = 'text' name = 'player_name'>
-  <input type = 'submit' value = 'Submit'>
-<form>
+<form action = '/new_game' method = 'post'>
+  <input type="radio" name="no_of_players" id="one_player" value='1'> 1-Player 
+  <input type="radio" name="no_of_players" id="two_player" value='2'> 2-Player
+  <p><input type = 'submit' value = 'OK'></p>
+</form>
 
 </center>

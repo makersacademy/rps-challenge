@@ -1,0 +1,16 @@
+<center>
+
+<h2><%= @game.player1.name %> vs. <%= @game.player2.name %></h2>
+
+<p><%= @game.current_player.name %>, it's your turn.
+
+<p>Please make your choice:</p>
+
+<form action='/confirmation' method='post'>
+  <input type='submit' value='ROCK' name='choice'>
+  <input type='submit' value='PAPER' name='choice'>
+  <input type='submit' value='SCISSORS' name='choice'>
+</form>
+
+
+</center>

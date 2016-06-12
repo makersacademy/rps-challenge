@@ -1,0 +1,15 @@
+<center>
+
+<h2><%= @game.player1.name %> vs. <%= @game.player2.name %></h2>
+
+<p><%= @game.current_player.name %>, it's your turn.</p>
+
+<p></p>
+<p>The Computer has selected:</p>
+<p><%= @game.player2.choice %></p>
+
+<form action='/end_turn' method='post'>
+  <input type='submit' value='OK'>
+</form>
+
+</center>
