@@ -1,11 +1,32 @@
 <h1> <%= @player_name.name %> Vs. Computer <h1>
-  <form action='/attack' method='post'>
-    <input type='submit' value='Rock'>
-    <input type='submit' value='Paper'>
-    <input type='submit' value='Scissor'>
-  </form>
-<img src="/img/human_hand.png" alt="Start image of human hand" height="300" width="300"/>
+<form action='/rock' method='post'>
+  <input type='submit' value='Rock'>
+</form>
+<form action='/paper' method='post'>
+  <input type='submit' value='Paper'>
+</form>
+<form action='/scissor' method='post'>
+  <input type='submit' value='Scissor'>
+</form>
 
-You Win!
+<% if @player_input == :rock %>
+  <img src="/img/human_rock.gif" alt="Human Rock Gif" height="300" width="300"/>
+<% elsif @player_input == :paper %>
+  <img src="/img/human_paper.gif" alt="Human Paper Gif" height="300" width="300"/>
+<% elsif @player_input == :scissor %>
+  <img src="/img/human_scissor.gif" alt="Human Scissor gif" height="300" width="300"/>
+<%else%>
+  <img src="/img/human_hand.png" alt="Human hand png" height="300" width="300"/>
+<% end %>
 
-<img src="/img/robot_hand.png" alt="Start image of robot hand" height="300" width="300"/>
+<% if @computer_result == :rock %>
+  <img src="/img/robot_rock.gif" alt="Robot Rock Gif" height="300" width="300"/>
+<% elsif @computer_result == :paper %>
+  <img src="/img/robot_paper.gif" alt="Robot Paper Gif" height="300" width="300"/>
+<% elsif @computer_result == :scissor %>
+  <img src="/img/robot_scissor.gif" alt="Robot Scissor gif" height="300" width="300"/>
+<%else%>
+  <img src="/img/robot_hand.png" alt="Robot hand png" height="300" width="300"/>
+<% end %>
+
+<p> <%= @result %> </p>

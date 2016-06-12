@@ -10,21 +10,21 @@ class Game
   end
 
   def rps_logic
-    if player_input == :rock && computer_input == :scissors
+    if player_input == :rock && computer_input == :scissor
       @result = '0'
-    elsif player_input == :scissors && computer_input == :paper
+    elsif player_input == :scissor && computer_input == :paper
       @result = '0'
     elsif player_input == :paper && computer_input == :rock
       @result = '0'
-    elsif computer_input == :rock && player_input == :scissors
+    elsif computer_input == :rock && player_input == :scissor
       @result = '1'
-    elsif computer_input == :scissors && player_input == :paper
+    elsif computer_input == :scissor && player_input == :paper
       @result = '1'
     elsif computer_input == :paper && player_input == :rock
       @result = '1'
     elsif player_input == :rock && computer_input == :rock ||
       player_input == :paper && computer_input == :paper ||
-      player_input == :scissors && computer_input == :scissors
+      player_input == :scissor && computer_input == :scissor
       @result = '2'
     end
   end
