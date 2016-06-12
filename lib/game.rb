@@ -17,8 +17,8 @@ class Game
     move_comparison
   end
 
-  def player_input(input)
-    @input = Player.move(input)
+  def player_move(input)
+    @player_input = Player.move(input)
   end
 
   def move_chooser
@@ -29,13 +29,13 @@ class Game
 
   def move_comparison
 
-    if @input == @computer_choice
+    if @player_input == @computer_choice
       draw_message
-    elsif @input == :rock
+    elsif @player_input == :rock
       @computer_choice == :scissors ? winning_message : losing_message
-    elsif @input == :scissors
+    elsif @player_input == :scissors
       @computer_choice == :paper ? winning_message : losing_message
-    else @input == :paper
+    else @player_input == :paper
       @computer_choice == :rock ? winning_message : losing_message
     end
 
