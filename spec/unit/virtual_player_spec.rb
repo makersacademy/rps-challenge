@@ -5,7 +5,7 @@ describe VirtualPlayer do
 
   describe '#pick_play' do
     it 'picks an option' do
-    expect(VirtualPlayer::Options).to include(cpu.pick_play)
+    expect(VirtualPlayer::OPTIONS).to include(cpu.pick_play)
     end
   end
 

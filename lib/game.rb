@@ -22,7 +22,7 @@ attr_reader :player1, :player2
     return scissor_evaluation(option2) if option1 == "Scissor"
   end
 
-private
+  private
 
   def rock_evaluation(option)
    result = "wins" if option == "Scissor"

@@ -1,6 +1,6 @@
 class VirtualPlayer
 
-Options = ["Rock","Paper","Scissor"]
+OPTIONS = ["Rock","Paper","Scissor"]
 
 attr_reader :name, :option
 
@@ -10,7 +10,7 @@ attr_reader :name, :option
   end
 
   def pick_play
-    @option = Options.shuffle.sample
+    @option = OPTIONS.shuffle.sample
   end
 
 

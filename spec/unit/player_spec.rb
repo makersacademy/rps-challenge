@@ -11,7 +11,7 @@ subject(:player){described_class.new('Jonathan','Rock')}
 
   describe '#pick_play' do
     it 'lets player picks rps option' do
-      expect(Player::Options).to include(player.pick_play)
+      expect(Player::OPTIONS).to include(player.pick_play)
     end
   end
 

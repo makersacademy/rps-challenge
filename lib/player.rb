@@ -1,6 +1,6 @@
 class Player
 
-Options = ["Rock","Paper","Scissor"]
+OPTIONS = ["Rock","Paper","Scissor"]
 
 attr_reader :name, :option
 
