@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -15,14 +16,17 @@ class Rps < Sinatra::Base
  	end
 
  	get '/rock' do
+ 		@computer = Computer.new
  		erb :rock
  	end
 
  	get '/paper' do
+ 		@computer = Computer.new
  		erb :paper
  	end
 
  	get '/scissors' do
+ 		@computer = Computer.new
  		erb :scissors
  	end
 
