@@ -2,7 +2,7 @@
 <html>
 <body>
 
-  <h1><%= @player_1.name %> vs <%= @player_2.name %></h1>
+  <h1><%= @player_1.name.capitalize %> vs <%= @player_2.name.capitalize %></h1>
 
   <form method='post'>
     <input type="submit" value="Rock" formaction="/stand_off?player_1_weapon=R">
@@ -12,7 +12,7 @@
 
   <% if @result %>
     <p><%= @result %></p>
-    <p><%= @player_2.name  %> used <%= @player_2.weapon %></p>
+    <p><%= @player_2.name.capitalize  %> used <%= @player_2.weapon %></p>
   <% end %>
 
 </body>
