@@ -14,9 +14,9 @@ feature 'playing a game' do
  # So I can play a game
  # I want to see the weapons I can play with
  scenario 'see the weapon options' do
-   expect(page).to have_button 'Rock'
-   expect(page).to have_button 'Paper'
-   expect(page).to have_button 'Scissors'
+   expect(page).to have_button 'rock'
+   expect(page).to have_button 'paper'
+   expect(page).to have_button 'scissors'
  end
 
  # As a marketeer
