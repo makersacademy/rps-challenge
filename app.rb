@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
     @player1 = Game.instance.player1
     @player2 = Game.instance.player2
     erb :start_layout, layout: :layout do
-      erb :choices
+      erb :choice_form
     end
   end
 
@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
     @player1 = Game.instance.player1
     @player2 = Game.instance.player2
     erb :start_layout, layout: :layout do
-      erb :choices
+      erb :choice_form
     end
   end
 
@@ -31,8 +31,6 @@ class RPS < Sinatra::Base
     @player2 = Game.instance.player2
     @player2.make_choice
     @winner = Game.instance.play_round
-    erb :continue_layout, layout: :layout do
-      erb :choices
-    end
+    erb :continue_layout
   end
 end
