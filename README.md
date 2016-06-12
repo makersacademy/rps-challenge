@@ -1,6 +1,7 @@
-Rock Paper, Scissors, Spock, Lizard
+Rock Paper, Scissors, Spock, Lizard ![build status](https://travis-ci.org/kennbarr/rps-challenge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/kennbarr/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/kennbarr/rps-challenge?branch=master)
 ---------
 This is an expansion of traditional rock-paper-scissors with Spock and Lizard added to the game.
+Play this game online at: http://kb-rpssl.herokuapp.com/
 
 ###Game screenshot:
 ![game screenshot](http://www.kennethbarrett.com//makers/rpssl/screenshot.png)
