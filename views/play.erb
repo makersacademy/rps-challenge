@@ -19,9 +19,9 @@
       <div class="gif_container">
         <% if @game.turns > 0 %>
           <img src="./images/l_<%= @game.last_result[0]
-          %>_<%= "win" if @game.last_result[2] == "player1"
-          %><%= "lose" if @game.last_result[2] == "player2"
-          %><%= "draw" if @game.last_result[2] == "draw" %>.gif" />
+          %>_<%= "win" if @game.last_result[2] == :player1
+          %><%= "lose" if @game.last_result[2] == :player2
+          %><%= "draw" if @game.last_result[2] == :draw %>.gif" />
         <% end %>
       </div>
       <div class="player_name">
@@ -31,11 +31,11 @@
       <div class="middle_wrapper">
         <div class="result">
           <% if @game.turns > 0 %>
-            <% if @game.last_result[2] == "player1" %>
+            <% if @game.last_result[2] == :player1 %>
               <%= @game.player1 %> wins!
-            <% elsif @game.last_result[2] == "player2" %>
+            <% elsif @game.last_result[2] == :player2 %>
               <%= @game.player2 %> wins!
-            <% else @game.last_result[2] == "player2" %>
+            <% else %>
               It's a draw!
             <% end %>
           <% end %>
@@ -50,9 +50,9 @@
         <div class="gif_container">
           <% if @game.turns > 0 %>
           <img src="./images/r_<%= @game.last_result[1]
-          %>_<%= "win" if @game.last_result[2] == "player2"
-          %><%= "lose" if @game.last_result[2] == "player1"
-          %><%= "draw" if @game.last_result[2] == "draw" %>.gif" />
+          %>_<%= "win" if @game.last_result[2] == :player2
+          %><%= "lose" if @game.last_result[2] == :player1
+          %><%= "draw" if @game.last_result[2] == :draw %>.gif" />
           <% end %>
         </div>
         <div class="player_name">

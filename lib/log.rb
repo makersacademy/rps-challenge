@@ -15,8 +15,8 @@ class Log
   end
 
   def score
-    p1 = history.select { |entry| entry[2] == "player1" }.length
-    p2 = history.select { |entry| entry[2] == "player2" }.length
+    p1 = history.select { |entry| entry[2] == :player1 }.length
+    p2 = history.select { |entry| entry[2] == :player2 }.length
     "#{ p1 }-#{ p2 }"
   end
 end

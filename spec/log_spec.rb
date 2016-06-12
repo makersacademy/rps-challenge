@@ -20,7 +20,7 @@ describe Log do
 
   describe "#score" do
     it "returns the current score" do
-      log.store([:_, :_, "player1"])
+      log.store([:_, :_, :player1])
       expect(log.score).to eq "1-0"
     end
   end

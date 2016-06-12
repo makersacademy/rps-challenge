@@ -22,16 +22,8 @@ class Game
   end
 
   def fight(move)
-    log(result(move))
+    log(result(move.to_sym))
     @turns += 1
-  end
-
-  def result(move)
-    @referee.result(move)
-  end
-
-  def log(outcome)
-    game_log.store(outcome)
   end
 
   def last_result
@@ -41,4 +33,15 @@ class Game
   def score
     game_log.score
   end
+
+  private
+
+  def result(move)
+    @referee.result(move)
+  end
+
+  def log(outcome)
+    game_log.store(outcome)
+  end
+
 end
