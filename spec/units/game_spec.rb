@@ -13,6 +13,7 @@ describe Game do
     it "has a player_2" do
       expect(game.player_2).to eq player_2
     end
+  end
 
   describe "#winner" do
     context "player_1 wins" do
@@ -96,13 +97,5 @@ describe Game do
         end
       end
     end
-
   end
-
-
-  # 'rock/rock' => "Draw!",
-  # 'scissors/scissors' => "Draw!",
-  # 'paper/paper' => "Draw!"
-  end
-
 end
