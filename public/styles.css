@@ -1,15 +1,86 @@
+.container {
+  max-width: 1000px;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+}
+
 h1 {
   color: darkred;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: darkblue;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  color: darkgreen;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration {
+  /*border: 1px solid green;*/
+  display: flex;
+  justify-content: center;
+}
+
+.registration label, input {
+  /*border: 1px solid red;*/
+  /*flex-grow: 1;*/
+  padding: 0 5px;
 }
 
 .item_buttons {
-  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_buttons input#rock {
+  background:url(rock.jpg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  border: 0;
 }
 
 .item_buttons input#paper {
   background:url(paper.jpg);
   background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  border: 0;
+}
+
+.item_buttons input#scissors {
+  background:url(scissors.jpg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  border: 0;
+}
+
+.item_buttons input#lizard {
+  background:url(lizard.jpg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  border: 0;
+}
+
+.item_buttons input#spock {
+  background:url(spock.jpg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
   border: 0;
 }

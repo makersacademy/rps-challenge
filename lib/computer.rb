@@ -1,5 +1,5 @@
 class Computer
-  ITEMS = [:rock, :paper, :scissors]
+  ITEMS = [:rock, :paper, :scissors, :lizard, :spock]
 
   def item
     ITEMS.sample

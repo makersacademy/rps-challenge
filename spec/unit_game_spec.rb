@@ -52,8 +52,21 @@ describe Game do
       it 'returns true when player_item is :rock and computer_item is :paper' do
         expect(lose_game.lose?).to eq true
       end
-        
     end
+
+      describe '#win?' do
+        it 'returns true when player_item is :rock and computer_item is :lizard' do
+          expect(win_game.win?).to eq true
+        end
+      end
+
+        describe '#lose?' do
+          it 'returns true when player_item is :rock and computer_item is :spock' do
+            expect(lose_game.lose?).to eq true
+          end
+        end
+
+    
 
 
 

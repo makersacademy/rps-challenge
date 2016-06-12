@@ -1,9 +1,11 @@
 class Game
 
   COMBINATIONS = {
-    rock: { rock: :draw, paper: :lose, scissors: :win },
-    paper: {rock: :win, paper: :draw, scissors: :lose},
-    scissors: {rock: :lose, paper: :win, scissors: :draw},
+    rock: { rock: :draw, paper: :lose, scissors: :win, lizard: :win, spock: :lose },
+    paper: {rock: :win, paper: :draw, scissors: :lose, lizard: :lose, spock: :win},
+    scissors: {rock: :lose, paper: :win, scissors: :draw, lizard: :win, spock: :win},
+    lizard: {rock: :lose, paper: :win, scissors: :lose, lizard: :draw, spock: :win},
+    spock: {rock: :win, paper: :lose, scissors: :win, lizard: :lose, spock: :draw}
   }
 
   attr_reader :player_name, :player_item, :computer_item
