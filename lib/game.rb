@@ -22,17 +22,17 @@ class Game
   end
 
   def self.create(name)
-    @game = [] if @game == nil
+    @game = [] if @game.nil?
     @game << new(name)
   end
 
   def self.create_multi(name)
-    @game = [] if @game == nil
+    @game = [] if @game.nil?
     @game << new(name, :opponent)
   end
 
   def self.player_waiting?
-    game.each { |game| return true if game.player2 == :opponent } if !!game
+    game.each { |game| return true if game.player2 == :opponent } if !game.nil?
     false
   end
 

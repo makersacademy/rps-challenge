@@ -21,7 +21,7 @@ class Contest < Sinatra::Base
     session[:id] = Game.game.length-1
     session[:player_id] = :player1
     @game = Game.game[session[:id]]
-    sleep(2) while @game.player2 == :opponent
+    sleep(1) while @game.player2 == :opponent
     redirect '/multiplay'
   end
 
@@ -53,12 +53,10 @@ class Contest < Sinatra::Base
     @current_turn = @game.turns
     @game.p2_move = params[:move].dup if session[:player_id] == :player2
     @game.p1_move = params[:move].dup if session[:player_id] == :player1
-    if !!@game.p1_move && !!@game.p2_move
+    if !@game.p1_move.nil? && !@game.p2_move.nil?
       Game.game[session[:id]].fight(@game.p1_move, @game.p2_move)
     else
-      while @game.turns == @current_turn do
-        sleep(1)
-      end
+      sleep(1) while @game.turns == @current_turn
     end
     redirect '/multiplay'
   end
