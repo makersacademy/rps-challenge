@@ -31,13 +31,13 @@ describe "Features" do
     expect(page).to have_content 'Victory is yours'
   end
 
-  # it "computer picks rock, player picks rock" do
-  #   allow_any_instance_of(Class::Game).to receive(:get_computer_choice) do
-  #     "rock"
-  #   end 
-  #   click_button 'ROCK'
-  #   expect(page.has_css?('.fa-hand-rock-o')).to eq true
-  #   expect(page).to have_content 'It\'s a tie'
-  # end
+  it "computer picks rock, player picks rock" do
+    allow_any_instance_of(Class::Game).to receive(:get_computer_choice) do
+      "rock"
+    end 
+    click_button 'ROCK'
+    expect(page.has_css?('.fa-hand-rock-o')).to eq true
+    expect(page).to have_content 'It\'s a tie'
+  end
 
 end
