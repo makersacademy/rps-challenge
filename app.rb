@@ -1,9 +1,13 @@
 require 'sinatra/base'
 
 class Rpsls < Sinatra::Base
-  
+
   get '/' do
-    'Hello Rpsls!'
+    erb(:index)
+  end
+
+  post '/names' do
+    erb(:names)
   end
 
   # start the server if ruby file executed directly
