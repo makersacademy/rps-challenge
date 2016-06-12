@@ -1,11 +1,11 @@
 <div align="center">
 
   <header>
-    <h1><%= @player.name %> vs. Ava the Robot</h1>
+    <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
   </header>
 
   <header>
-    <h2><%= @player.name %> choose your weapon!</h2>
+    <h2><%= @game.player_1.name %> choose your weapon!</h2>
   </header>
 
   <form action ="/set_weapon" method="post">

@@ -1,6 +1,6 @@
 class ComputerPlayer
 
-  attr_reader :name
+  attr_reader :name, :weapon
 
   RPS_WEAPONS = [:rock, :paper, :scissors]
 
@@ -8,8 +8,8 @@ class ComputerPlayer
     @name = "Ava"
   end
 
-  def weapon
-    RPS_WEAPONS.shuffle.first
+  def select_weapon
+    @weapon = RPS_WEAPONS.shuffle.first
   end
 
 end

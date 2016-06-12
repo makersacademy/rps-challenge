@@ -13,17 +13,17 @@ describe ComputerPlayer do
   describe "#weaponise" do
     it "can be armed with ROCK" do
       allow(weapons_array).to receive(:shuffle).and_return([:rock])
-      expect(computer.weapon).to eq :rock
+      expect(computer.select_weapon).to eq :rock
     end
 
     it "can be armed with PAPER" do
       allow(weapons_array).to receive(:shuffle).and_return([:paper])
-      expect(computer.weapon).to eq :paper
+      expect(computer.select_weapon).to eq :paper
     end
 
     it "can be armed with SCISSORS" do
       allow(weapons_array).to receive(:shuffle).and_return([:scissors])
-      expect(computer.weapon).to eq :scissors
+      expect(computer.select_weapon).to eq :scissors
     end
 
   end

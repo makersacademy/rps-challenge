@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/computer_player'
 require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -15,24 +16,26 @@ class Rps < Sinatra::Base
   end
 
   post('/set_name') do
-    $player = Player.new(params[:player])
+    player_1 = Player.new(params[:player])
+    player_2 = ComputerPlayer.new
+    $game = Game.new(player_1, player_2)
     redirect('/select-weapon')
   end
 
   get('/select-weapon') do
-    @player = $player
+    @game = $game
     erb(:select_weapon)
   end
 
   post('/set_weapon') do
-    @player = $player
-    @player.select_weapon(params[:weapon])
+    @game = $game
+    @game.player_1.select_weapon(params[:weapon])
+    @game.player_2.select_weapon
     redirect('/fight')
   end
 
   get('/fight') do
-    @player = $player
-    @computer = ComputerPlayer.new
+    @game = $game
     erb(:fight)
   end
 
