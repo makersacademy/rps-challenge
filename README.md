@@ -13,10 +13,12 @@ The game has only three possible outcomes other than a tie:
 
 # Download and Run
 
+```
 $ git clone git@github.com:[USERNAME]/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
+```
 
 ----
 ###### Images copyright: Osman Ince http://osmanince.dribbble.com
