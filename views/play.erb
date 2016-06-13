@@ -25,5 +25,9 @@
 <div>
   <% if @game.win? %>
     You win!
+  <% elsif @game.lose? %>
+  	You lose!
+  <% elsif @game.draw? %>
+  	It's a draw!
   <% end %>
 </div>

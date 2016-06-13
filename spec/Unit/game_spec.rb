@@ -24,9 +24,28 @@ describe Game do
   end
 
   context 'results' do
+  	subject(:win_game) { game }
+  	subject(:lose_game) { described_class.new(lose_option) }
+  	subject(:draw_game) { described_class.new(draw_option) }
+
+  	let(:lose_option) { {"player_name" => "Luke", "player_weapon" => :rock, "computer_weapon" => :paper} }
+  	let(:draw_option) { {"player_name" => "Luke", "player_weapon" => :rock, "computer_weapon" => :rock} }
+
   	describe '#win?' do
   	  it 'returns true if the player chooses rock and the computer chooses scissors' do
-  	  	expect(game.win?).to eq true
+  	  	expect(win_game.win?).to eq true
+  	  end
+  	end
+
+  	describe '#lose?' do
+  	  it 'returns true if the player chooses rock and the computer chooses paper' do
+  	  	expect(lose_game.lose?).to eq true
+  	  end
+  	end
+
+  	describe '#draw?' do
+  	  it 'returns true if the player chooses rock and the computer chooses rock' do
+  	  	expect(draw_game.draw?).to eq true
   	  end
   	end
   end

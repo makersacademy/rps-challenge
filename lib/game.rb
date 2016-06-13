@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
   RULES = {
@@ -18,6 +21,14 @@ class Game
     result == :win
   end
 
+  def lose?
+    result == :lose
+  end
+
+  def draw?
+    result == :draw
+  end
+  
   private
 
   def result
