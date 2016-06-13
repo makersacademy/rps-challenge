@@ -1,0 +1,40 @@
+<div align="center">
+
+  <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %> (the robot) </h1>
+
+  <h2>Moves</h2>
+
+  <p><%= @game.player_1.name %> uses <%= @game.player_1.weapon %></p>
+
+  <p><%= @game.player_2.name %> uses <%= @game.player_2.weapon %></p>
+
+  <h2>Result</h2>
+
+  <% if @game.winner.nil? %>
+
+    <p>Tie - no player wins any points</p>
+
+  <% else %>
+
+    <p><%= @game.winner.name %> wins! <%= @game.winner.name %> receives +1 point!</p>
+
+    <% @game.winner.add_point %>
+
+  <%end%>
+
+
+  <div class = "scores">
+
+    <h2>Scores</h2>
+
+    <p><%= @game.player_1.name %> score: <%= @game.player_1.score %></p>
+    <p><%= @game.player_2.name %> score: <%= @game.player_2.score %></p>
+
+  </div>
+
+
+  <form action="/select-weapon">
+    <button type="submit">Next Round</button>
+  </form>
+
+</div>

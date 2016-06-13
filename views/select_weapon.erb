@@ -1,0 +1,26 @@
+<div align="center">
+
+  <header>
+    <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %> (the robot)</h1>
+  </header>
+
+  <div class = "scores">
+
+    <h2>Scores</h2>
+
+    <p><%= @game.player_1.name %> score: <%= @game.player_1.score %></p>
+    <p><%= @game.player_2.name %> score: <%= @game.player_2.score %></p>
+    
+  </div>
+
+  <header>
+    <h2><%= @game.player_1.name %> choose your weapon!</h2>
+  </header>
+
+  <form action ="/set_weapon" method="post">
+    <button class= "selection" type="submit" value = "rock" name="weapon"><img src="rock_sym.png"></button>
+    <button class= "selection" type="submit" value = "paper" name="weapon"><img src="paper_sym.png"> </button>
+    <button class= "selection" type="submit" value = "scissors" name="weapon"><img src="scissors_sym.png"> </button>
+  </form>
+
+</div>
