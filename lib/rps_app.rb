@@ -10,14 +10,17 @@ class RPSApp < Sinatra::Base
 	post '/play' do
 		@@player1 = Player.new(params[:player1])
 		@player_name = @@player1.name
+		@@lizardspock = params[:lizardspock]
+		@lizardspock = @@lizardspock
 		erb :play
 	end
 	get '/play' do 
 		@player_name = @@player1.name
+		@lizardspock = @@lizardspock
 		erb :play
 	end
 	post '/choice' do
-		play_game = Game.new(params[:choice])
+		play_game = Game.new(params[:choice], @@lizardspock)
 		@result = play_game.result
 		@player = params[:choice]
 		@computer = play_game.computer_choice
