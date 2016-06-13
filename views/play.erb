@@ -4,7 +4,7 @@ Hi, <%= @game.player_name %>
  <form action="/play" method ="post">
 	<input type="submit" name= "choice" value="Rock">
 	<input type="submit" name= "choice" value="Paper">
-	<input type="submit" name= "choice" value="Scissors ">
+	<input type="submit" name= "choice" value="Scissors">
 </form>
 
 You chose <%= @game.player_choice.to_s.capitalize %>
@@ -15,6 +15,10 @@ You chose <%= @game.player_choice.to_s.capitalize %>
 
 <% if @game.win? %>
  You win!
+<% elsif @game.lose? %>
+ You lose!
+<% elsif @game.draw? %>
+ You draw!
 <% end %>
 <!-- 
 

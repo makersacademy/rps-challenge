@@ -29,21 +29,41 @@ feature 'play a game of RPS' do
 
 	#the game will choose a random option
 
-	scenario 'game/opponent choose an option' do
-	srand(SEED)
-	click_button 'Rock'
-	expect(page).to have_content 'Opponent chose Scissors'
-	end
+	# scenario 'game/opponent choose an option' do
+	# srand(SEED)
+	# click_button 'Rock'
+	# expect(page).to have_content 'Opponent chose Scissors'
+	# end
 
-	#I want to see if I win
+	context 'end game' do
+		before do
+		  srand(SEED)
+		end
+	
+
+	#I want to see a winner
 
 	scenario 'I win' do
-	 srand(SEED)
 	 click_button 'Rock'
 	 expect(page).to have_content 'You win!'
 	end
 
-	def messages
-		[:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}" }
+	scenario 'I lose' do
+	 click_button 'Paper'
+	 expect(page).to have_content 'You lose!'
 	end
+
+	scenario 'I draw' do
+	 click_button 'Scissors'
+	 expect(page).to have_content 'You draw!'
+	end
+
+end
+	
+
+
+
+	# def messages
+	# 	[:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}" }
+	# end
 end 
