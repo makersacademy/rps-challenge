@@ -12,20 +12,22 @@ class Rps < Sinatra::Base
     erb :index
   end
 
+before do
+  @game = Game.instance
+end
+
   post '/start' do
     player1 = Player.new(params[:player])
-    $game = Game.new(player1)
+    Game.create(player1)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
 
   post '/choice' do
-    @game = $game
     @game.round(params[:move])
     erb :play
   end

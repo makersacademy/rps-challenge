@@ -16,6 +16,16 @@ class Game
     @engine ||= Engine.new
 	end
 
+
+	def self.create(player1)
+		@game = Game.new(player1)
+	end
+
+	def self.instance
+		@game
+	end
+
+
   def is_over
     @rounds >= MAX_ROUNDS
   end
@@ -44,9 +54,9 @@ class Game
 
   def result
     if player1.score > player2.score
-      "#{player1.name} wins"
+      "#{player1.name.capitalize} wins"
     elsif player1.score < player2.score
-      "#{player2.name} wins"
+      "#{player2.name.capitalize} wins"
     else
       "TIES!"
     end

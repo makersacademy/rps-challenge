@@ -43,7 +43,7 @@ describe Game do
 		end
 
 		it 'Player 1 wins' do
-			expect(game.result).to eq 'player1 wins'
+			expect(game.result).to eq 'Player1 wins'
 		end
 	end
 

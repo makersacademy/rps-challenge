@@ -3,8 +3,8 @@
 	<head>
 		<title>Rock, Paper, Scissors game</title>
 	</head>
-	<body>
-		<h1><p> <%= @game.player1.name.capitalize %> vs. <%= @game.player2.name.capitalize %> </p><h1>
+	<body style="background-color: #EFF5FB;">
+		<h1><p style="color:green;font-size:35.px"> <%= @game.player1.name.capitalize %> vs. <%= @game.player2.name.capitalize %> </p><h1>
 		<h2>
 			<%=@game.player1.name.capitalize%> [<%=@game.player1.score%>] - [<%=@game.log.ties%>] - [<%=@game.player2.score%>] Computer
 		</h2>
@@ -13,13 +13,13 @@
 				<button type="submit" name="move" value="paper">Paper</button>
 				<button type="submit" name="move" value="scissors">Scissors</button>
 		</form>
-		<div>
+		<div style="background-color: green;">
 			<% if @game.is_over %>
-				<p><%= @game.result %></p>
+				<p style="font-size: 50px"> <%= @game.result %></p>
 				<a href="/">Play another game</a>
 			<% end %>
 		</div>
-		<div>
+		<div style="background-color: #DAF7B6;">
 			<% @game.log.history.each do |item| %>
 				<p><%= item.map {|k,v| k.capitalize + " chose " + v}[0] %></p>
 			<% end %>
