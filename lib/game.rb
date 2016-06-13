@@ -4,6 +4,10 @@ class Game
 
   attr_reader :player
 
+  RULES = { rock: :scissors,
+          paper: :rock,
+          scissors: :paper }
+
   def initialize(name, choice, cpu_choice)
     @player = name
     @choice = choice
@@ -15,15 +19,8 @@ class Game
   end
 
   def winner
-    if choice == cpu_choice
-      "Draw"
-    elsif choice == :rock
-      cpu_choice == :paper ? "CPU Wins" : "#{@player} Wins"
-    elsif choice == :paper
-      cpu_choice == :scissors ? "CPU Wins" : "#{@player} Wins"
-    elsif choice == :scissors
-      cpu_choice == :rock ? "CPU Wins" : "#{@player} Wins"
-    end
+    return "Draw" if choice == cpu_choice
+    RULES[choice] == cpu_choice ? "#{player} Wins" : "CPU Wins"
   end
 
   private
