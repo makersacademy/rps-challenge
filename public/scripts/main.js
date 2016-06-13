@@ -21,7 +21,7 @@ $("body").on("submit", nameForm, function(e) {
 $("body").on("submit", playAgainForm, function(e) {
   e.preventDefault();
   $(handImages).addClass("close");
-  $(playAgainForm).addClass("submitted");
+  $(playAgainForm).fadeOut();
 
   setTimeout(function(){
     $.ajax({
@@ -39,7 +39,7 @@ $("body").on("submit", playAgainForm, function(e) {
 $("body").on("submit", choiceForm, function(e) {
   e.preventDefault();
   $(handImages).addClass("countdown");
-  $(choiceForm).addClass("submitted");
+  $(choiceForm).fadeOut();
 
   setTimeout(function(){
     $.ajax({

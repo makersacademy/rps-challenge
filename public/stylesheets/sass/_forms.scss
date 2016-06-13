@@ -1,11 +1,3 @@
-form {
-  transition: opacity 0.3s ease;
-
-  &.submitted {
-    opacity: 0.1;
-  }
-}
-
 .form-name {
   .input-text {
     border: solid 2px $text-color;
