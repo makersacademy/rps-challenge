@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :outcome
+  attr_reader :player
 
   PLAYER_WINS =
   [[:rock, :scissors],
@@ -10,18 +10,13 @@ class Game
   def initialize(player,npc = Npc.new)
     @player = player
     @npc = npc
-    @outcome = nil
   end
 
   def play(player_choice)
     game_scenario = game_array(player_choice)
-    if game_scenario[0] == game_scenario[1]
-    @outcome = [:tie, game_scenario[0], game_scenario[1]]
-    elsif PLAYER_WINS.include?(game_scenario)
-    @outcome = [:win, game_scenario[0], game_scenario[1]]
-    else
-    @outcome = [:lose, game_scenario[0], game_scenario[1]]
-    end
+    return [:tie, game_scenario[0], game_scenario[1]] if game_scenario[0] == game_scenario[1]
+    return [:win, game_scenario[0], game_scenario[1]] if PLAYER_WINS.include?(game_scenario)
+    [:lose, game_scenario[0], game_scenario[1]]
   end
 
   def self.create(player)
