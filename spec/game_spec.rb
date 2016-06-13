@@ -35,17 +35,17 @@ describe Game do
 		end
 	end
 
-
-	describe '#result' do
-
-		before do
-			game.round('rock')
-		end
-
-		it 'Player 1 wins' do
-			expect(game.result).to eq 'Player1 wins'
-		end
-	end
+	#
+	# describe '#result' do
+	# 
+	# 	before do
+	# 		game.round('rock')
+	# 	end
+	#
+	# 	it 'Player 1 wins' do
+	# 		expect(game.result).to eq 'Player1 wins'
+	# 	end
+	# end
 
 
 
