@@ -60,8 +60,8 @@ end
 
 #I want to see a winner
 
-def possible_messages
-	[:rock, :paper, :scissors].map { |object| "Player 2 played #{object.to_s.capitalize}!"}
-end 
+# def possible_messages
+# 	[:rock, :paper, :scissors].map { |object| "Player 2 played #{object.to_s.capitalize}!"}
+# end 
 
 end 
