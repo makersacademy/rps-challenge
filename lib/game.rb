@@ -3,8 +3,6 @@ class Game
   attr_reader :players
 
   PLAYER_1_WINS = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
-  # PLAYER_2_WINS = [[:scissors, :rock], [:paper, :scissors], [:rock, :paper]]
-  # DRAWS = [[:rock, :rock], [:paper, :paper], [:scissors, :scissors]]
 
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)

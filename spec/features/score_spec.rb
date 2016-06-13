@@ -11,7 +11,7 @@ feature "FEATURE: keeps scores" do
     expect(page).to have_content "Ava score: 0"
   end
 
-  scenario "if player_1 wins, player_1's socre gets plus 1" do
+  scenario "if player_1 wins, player_1's score gets plus 1" do
     allow(computer_weapon_array).to receive(:shuffle).and_return([:scissors])
     sign_in_play_and_choose_rock
     expect(page).to have_content "Alistair score: 1"
