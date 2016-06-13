@@ -15,19 +15,16 @@ class RPS < Sinatra::Base
   end
 
   post '/fight' do
-    # Game.create(Player.new(@name,params[:option]),VirtualPlayer.new)
-    # @virtual_name = Game.game.player2.name
-    # @virtual_option = Game.game.player2.option
-    # @eval = Game.game.evaluation.to_s
-    @option = params[:option]
-    player = Player.new(@name,@option)
-    @name = player.name
     virtual_player = VirtualPlayer.new
     virtual_player.pick_play
-    @virtual_name = virtual_player.name
-    @virtual_option = virtual_player.option
-    @game = Game.new(player, virtual_player)
-    @eval = @game.evaluation
+    Game.create(Player.new(@name,params[:option]),virtual_player)
+    Game.game.eval
+
+    @option1 = Game.game.player1.option
+    @option2 = Game.game.player2.option
+    @name2 = Game.game.player2.name
+    @result = Game.game.result
+
     erb :fight
   end
 

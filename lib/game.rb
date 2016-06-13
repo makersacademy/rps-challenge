@@ -2,11 +2,12 @@ require_relative 'virtual_player'
 require_relative 'player'
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :result
 
   def initialize(player1= Player.new ,player2= VirtualPlayer.new)
     @player1 = player1
     @player2 = player2
+    @result = nil
   end
 
   def self.create(player1,player2)
@@ -18,19 +19,19 @@ class Game
   end
 
 
-  def evaluation
+  def eval
     option1 = player1.option
     option2 = player2.option
 
-    return rock_evaluation(option2) if option1 == :Rock
+    @result = rock_evaluation(option2) if option1 == :Rock
 
-    return paper_evaluation(option2) if option1 == :Paper
+    @result = paper_evaluation(option2) if option1 == :Paper
 
-    return scissor_evaluation(option2) if option1 == :Scissor
+    @result = scissor_evaluation(option2) if option1 == :Scissor
 
-    return spock_evaluation(option2) if option1 == :Spock
+    @result = spock_evaluation(option2) if option1 == :Spock
 
-    return lizard_evaluation(option2) if option1 == :Lizard
+    @result = lizard_evaluation(option2) if option1 == :Lizard
   end
 
   private

@@ -6,40 +6,40 @@ describe Game do
   subject(:game){described_class.new(player1,player2)}
 
 
-  describe '#game_evaluation' do
+  describe '#eval' do
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return(:Rock)
       allow(player2).to receive(:option).and_return(:Scissor)
-
-      expect(game.evaluation).to eq :win
+      game.eval
+      expect(game.result).to eq :win
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return(:Paper)
       allow(player2).to receive(:option).and_return(:Paper)
-
-      expect(game.evaluation).to eq :tie
+      game.eval
+      expect(game.result).to eq :tie
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return(:Scissor)
       allow(player2).to receive(:option).and_return(:Rock)
-
-      expect(game.evaluation).to eq :lose
+      game.eval
+      expect(game.result).to eq :lose
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return(:Spock)
       allow(player2).to receive(:option).and_return(:Lizard)
-
-      expect(game.evaluation).to eq :lose
+      game.eval
+      expect(game.result).to eq :lose
     end
 
     it 'tells who won the game' do
       allow(player1).to receive(:option).and_return(:Lizard)
       allow(player2).to receive(:option).and_return(:Scissor)
-
-      expect(game.evaluation).to eq :lose
+      game.eval
+      expect(game.result).to eq :lose
     end
 
 
