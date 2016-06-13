@@ -1,0 +1,18 @@
+Hello, <%= @name %>!
+
+
+<form method="POST" action="/play">
+<input type="submit" name="object" value ="Rock" />
+<input type="submit" name="object" value ="Paper" />
+<input type="submit" name="object" value ="Scissors" />
+</form>
+
+
+You played <%= @object %>!
+
+
+<div id ="player2">
+
+Player 2 played <%= @player2_object.to_s.capitalize %>!
+
+</div>
