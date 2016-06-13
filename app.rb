@@ -21,18 +21,8 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    session[:winner] = Game.run(:rock)
-    redirect '/play'
-  end
-
-  post '/paper' do
-    session[:winner] = Game.run(:paper)
-    redirect '/play'
-  end
-
-  post '/scissors' do
-    session[:winner] = Game.run(:scissors)
+  post '/move' do
+    session[:winner] = Game.run(params[:move].downcase.to_sym)
     redirect '/play'
   end
 

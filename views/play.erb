@@ -1,15 +1,15 @@
 Welcome <%= @name %>
 
-<form action="/rock" method="post">
-  <input type="submit" name="Rock" value="Rock">
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Rock">
 </form>
 
-<form action="/paper" method="post">
-  <input type="submit" name="Paper" value="Paper">
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Paper">
 </form>
 
-<form action="/scissors" method="post">
-  <input type="submit" name="Scissors" value="Scissors">
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Scissors">
 </form>
 
 <% if @winner == :win %>
