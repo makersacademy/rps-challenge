@@ -48,34 +48,22 @@ $ bundle
 
 * Start app by typing **ruby app.rb** into terminal
 
-<img src="rubyapp.png">
+<img src="public/rubyapp.png" width="200">
 
 * Go to http://localhost:4567/
 
-<img src="localhost.png">
+<img src="public/localhost.png" width="200">
 
 **Playing the app**
 
 * Press the start button
 
-<img src="public/start.png">
-
 * Type your name into the text box and press submit
-
-<img src="public/start.png">
 
 * Screen tells you the starting scores of each player, including the computer (Ava the robot)
 
-<img src="public/choose.png">
-
 * Choose your gesture by clicking on the relevant icon/button
-
-<img src="public/choose.png">
 
 * Next screen tells you your move and score, the computers move and score, and who won
 
-<img src="public/results.png">
-
 * A new turn can be initiated by clicking "Next Turn", which returns to the gesture selection screen with updated scores
-
-<img src="public/nextturn.png">
