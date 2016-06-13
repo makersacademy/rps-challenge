@@ -1,0 +1,17 @@
+
+<div style='color: #dd3b2a; font-size: 40px; font-weight: 500'>
+<%= @player_name %> vs. RPS-Bot
+</div>
+<BR>
+<BR>
+It is <%= @player_name %>'s turn!
+<BR>
+<BR>
+  <form action='/choice' method='post'>
+    <select name='choice'>
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+    <input type='submit' value="Submit Choice">
+  </form>
