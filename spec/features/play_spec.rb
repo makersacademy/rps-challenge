@@ -7,16 +7,16 @@ feature 'picks a move' do
   end
 
   scenario 'picks paper' do
-    allow_any_instance_of(Cpu).to receive(:choice).and_return(:rock)
+    allow_any_instance_of(Cpu).to receive(:choice).and_return(:scissors)
     sign_in
     click_button 'Paper'
-    expect(page).to have_content 'Bob Wins'
+    expect(page).to have_content 'CPU Wins'
   end
 
   scenario 'picks scissors' do
-    allow_any_instance_of(Cpu).to receive(:choice).and_return(:paper)
+    allow_any_instance_of(Cpu).to receive(:choice).and_return(:scissors)
     sign_in
     click_button 'Scissors'
-    expect(page).to have_content 'Bob Wins'
+    expect(page).to have_content 'Draw'
   end
 end
