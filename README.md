@@ -1,5 +1,12 @@
 # Rock Paper Scissors Spock Lizard
 
+Features
+-------
+
+* Can play RPSSL against Computer
+* Extra weapons can be added through startup.rb
+* Weapons have inflictions e.g. vaporizes
+
 Installation
 -------
 ```
