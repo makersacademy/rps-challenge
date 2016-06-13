@@ -48,11 +48,15 @@ $ bundle
 
 * Start app by typing **ruby app.rb** into terminal
 
-<img src="public/rubyapp.png" width="400" align="middle">
+<p align="center">
+  <img src="public/rubyapp.png" width="400">
+</p>
 
 * Go to http://localhost:4567/
 
-<img src="public/localhost.png" width="400" align="middle">
+<p align="center">
+  <img src="public/localhost.png" width="400">
+</p>
 
 **Playing the app**
 
