@@ -3,4 +3,4 @@ To increase the odds of the old fashioned game (Rock, Paper, Scissors) Sheldon a
 
 ![](http://i.imgur.com/wMA0a7D.jpg)
 
-Usage: 'coming soon...'
+Usage: [https://rpsls-ma.herokuapp.com](https://rpsls-ma.herokuapp.com)
