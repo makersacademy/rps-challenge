@@ -10,6 +10,7 @@ form {
   .input-text {
     border: solid 2px $text-color;
     padding: 0.5rem;
+    text-align: center;
 
     &:active,
     &:focus {
