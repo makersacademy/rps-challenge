@@ -1,4 +1,4 @@
-# Understands keeping score
+# Understands making a move
 class Computer
   attr_reader :name, :choice
   DEFAULT_NAMES = ["Hugh Jass", "I.P. Freely", "Amanda Hugginkiss"].freeze
