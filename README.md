@@ -15,10 +15,10 @@ I would like to be able to play rock/paper/scissors
 #User Interface
 
 Input username
-![alt tag](http://imgur.com/JfJ6UQn)
+![alt tag](http://i.imgur.com/JfJ6UQn.png)
 
 Choose move
-![alt tag](http://imgur.com/GwKRKB7)
+![alt tag](http://i.imgur.com/GwKRKB7.png)
 
 Result displayed
-![alt tag](http://imgur.com/LrB1Uk1)
+![alt tag](http://i.imgur.com/LrB1Uk1.png)
