@@ -16,10 +16,10 @@ class RPSApp < Sinatra::Base
   end
 
   post '/enter-name' do
-    weapon = Startup::get_weapon_by_name(params[:weapon])
+    weapon = Startup.get_weapon_by_name(params[:weapon])
     @player_1 = Player.new(params[:name], weapon)
     @game.add_player(@player_1)
-    @player_2 = Player.new("Computer", Startup::random_weapon)
+    @player_2 = Player.new("Computer", Startup.random_weapon)
     @game.add_player(@player_2)
     redirect to '/play'
   end
@@ -27,7 +27,7 @@ class RPSApp < Sinatra::Base
   get '/play' do
     @attack = Attack.new(@game)
     @attack.attack
-    erb(:play, :layout => :layout)
+    erb(:play, layout: :layout)
   end
 
   run! if app_file == $PROGRAM_NAME
