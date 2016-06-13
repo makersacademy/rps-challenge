@@ -23,3 +23,14 @@ The main challenges while creating this application were applying the new skills
 
 The app I have built aims to follow the user stories while remaining as simple as possible. It fulfills its function as a game of rock paper scissors, and would be easy to build upon in the future.
 
+Instructions:
+
+```
+$ git clone git@github.com/Harker16/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+
+
