@@ -31,7 +31,12 @@ class Attack
     end
 
   def generate_random_attack
-    ["Rock","Paper","Scissors"].sample
+    random_number = Kernel.rand(3)
+    moves = ["Rock","Paper","Scissors"]
+    moves[random_number]
   end
 
 end
+
+
+p Kernel.rand(3)
