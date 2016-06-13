@@ -2,7 +2,7 @@
 require 'player'
 
 describe Player do
-  subject(:player_no_name) { described_class.new }
+  subject(:player_no_name) { described_class.new('PieInTheSky') }
   subject(:player) { described_class.new("Dave")}
 
   describe '#name' do
