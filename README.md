@@ -1,4 +1,6 @@
-# RPS Challenge: Rōnin Badge Test
+I ended up using the video as I guide with this challenge. I started off fairly confidently but lost my way and over complicated things, ultimately using the video as a walkthrough helped me get a better understanding of the weeks concepts and approaches to the challenge.
+
+---------------
 
 Instructions
 -------
@@ -27,10 +29,6 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
-Other notes
-
------------
 
 I ended up using the video as I guide with this challenge. I started off fairly confidently but lost my way and over compicated things, ultimately using the video as a walkthrough helped me get a better understanding of the weeks concepts and approaches to challenges.
 

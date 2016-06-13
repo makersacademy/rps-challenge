@@ -4,6 +4,10 @@
 
  <br>
 
+ <div>
+  <%= @game.player_name %> please choose a weapon...
+</div>
+
 <form action="/play" method="post">
   <input type="submit" name="player_weapon" value="Rock"/>
   <input type="submit" name="player_weapon" value="Paper"/>
