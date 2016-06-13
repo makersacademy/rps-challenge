@@ -11,7 +11,7 @@ feature "the user can play the game" do
     sign_in_to_play
     find("input[value='Rock']").click
     click_button("Confirm")
-    expect(page).to have_content "Jimbo wins!"
+    expect(page).to have_content "Nobody wins!"
   end
 
 end

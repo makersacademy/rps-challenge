@@ -4,6 +4,10 @@ describe Game do
 
   subject(:game) {described_class.new("player_1") }
 
+  before :each do
+    srand(0)
+  end
+
   it "should show the name of the player" do
     expect(game.name).to eq "player_1"
   end
@@ -13,7 +17,7 @@ describe Game do
   end
 
   it "should permit computer to win if it has the best hand" do
-    allow(game).to receive(:computer_choice).and_return("Rock")
+    game.computer_chooses
     game.player_choice = "Scissors"
     game.evaluate
     expect(game.winner).to eq "Computer"
