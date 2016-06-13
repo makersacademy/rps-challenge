@@ -1,3 +1,4 @@
+require 'rps_extended_combinations'
 require 'computer'
 
 describe Computer do

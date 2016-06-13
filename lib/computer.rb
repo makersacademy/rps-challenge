@@ -1,11 +1,11 @@
+require 'rps_extended_combinations'
 
 class Computer
+  include RpsExtendedCombinations
 
   attr_reader :name, :choice
 
   DEFAULT_NAME = 'SkyNet'
-
-  MOVES = [:r, :p, :s, :l, :sp]
 
   def initialize
     @name = DEFAULT_NAME
