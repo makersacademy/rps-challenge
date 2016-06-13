@@ -56,8 +56,10 @@ class Game
 
   private
 
+  attr_reader :referee
+
   def result(p1_move, p2_move)
-    @referee.result(p1_move, p2_move)
+    referee.result(p1_move, p2_move)
   end
 
   def log(outcome)

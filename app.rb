@@ -16,6 +16,17 @@ class Contest < Sinatra::Base
     redirect '/play'
   end
 
+  get '/play' do
+    @game = Game.game[session[:id]]
+    erb(:play)
+  end
+
+  post '/fight' do
+    Game.game[session[:id]].fight(params[:move])
+    redirect '/play'
+  end
+
+
   post '/multiname' do
     Game.create_multi(params[:player1_name])
     session[:id] = Game.game.length-1
@@ -36,16 +47,6 @@ class Contest < Sinatra::Base
     @player_id = session[:player_id]
     @game = Game.game[session[:id]]
     erb(:multiplay)
-  end
-
-  get '/play' do
-    @game = Game.game[session[:id]]
-    erb(:play)
-  end
-
-  post '/fight' do
-    Game.game[session[:id]].fight(params[:move])
-    redirect '/play'
   end
 
   post '/multifight' do

@@ -15,9 +15,9 @@ MOVES = [:rock, :paper, :scissors, :spock, :lizard]
   end
 
   def judge(move, opp_move)
-    difference = (MOVES.index(move) - MOVES.index(opp_move))
-    return :player1 if [-2,-4,1,3].include?(difference)
-    return :player2 if [2,4,-1,-3].include?(difference)
+    difference = (MOVES.index(move) - MOVES.index(opp_move))%5
+    return :player1 if [1,3].include?(difference)
+    return :player2 if [2,4].include?(difference)
     :draw
   end
 
