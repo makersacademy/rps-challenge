@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/turn'
+require './lib/player2'
+
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,22 +11,21 @@ class RPS < Sinatra::Base
 	end
 
 	post '/name' do
-		session[:name] = params[:name]
+		session[:player_name] = params[:name]
 		redirect '/play'
 	end 
 
 	get '/play' do
 		@turn = Turn.new(session)
-
-		@name = session[:name]
-		@object = session[:object]
-		@player2_object = session[:player2_object]
+		# @name = session[:name]
+		# @object = session[:object]
+		# @player2_object = session[:player2_object]
 		erb(:play)
 	end 
 
-	post '/play' do
-		session[:object] = params[:object]
-		session[:player2_object] = :rock
+	post '/play' do 
+		session[:player_object] = params[:object].downcase.to_sym
+		session[:player2_object] = Player2.new.object
 		redirect '/play'
 	end 
   # start the server if ruby file executed directly

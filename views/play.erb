@@ -1,4 +1,4 @@
-Hello, <%= @name %>!
+Hello, <%= @turn.player_name %>!
 
 
 <form method="POST" action="/play">
@@ -8,11 +8,19 @@ Hello, <%= @name %>!
 </form>
 
 
-You played <%= @object %>!
+You played <%= @turn.player_object.to_s.capitalize %>!
 
 
 <div id ="player2">
 
-Player 2 played <%= @player2_object.to_s.capitalize %>!
+Player 2 played <%= @turn.player2_object.to_s.capitalize %>!
 
 </div>
+
+<% if @turn.win? %>
+	You win!
+	<% elsif @turn.lose? %>
+	You lose!
+	<% elsif @turn.draw? %>
+	You draw!
+	<% end %>
