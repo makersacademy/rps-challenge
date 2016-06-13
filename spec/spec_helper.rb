@@ -1,4 +1,3 @@
-ruby
 require 'coveralls'
 require 'simplecov'
 
