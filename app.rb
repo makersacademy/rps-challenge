@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/computer'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -11,26 +12,25 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player_name = Player.new(params[:player_name])
+    session[:name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player_name.name
+    @player_name = session[:name]
     erb :play
   end
 
   post '/chosen_weapon' do
-    @player_name = $player_name.name
-    session[:weapon] = params[:weapon]
-    $computer_weapon = (Computer.new).chosen_weapon
+    session[:weapon] = params[:weapon].downcase.to_sym
+    @player = Player.new(session[:name], session[:weapon])
+    @game = Game.new(@player, Computer.new )
     redirect '/fight'
   end
 
   get '/fight' do
-    @player_name = $player_name.name
-    @weapon = session[:weapon]
-    @computer_weapon = $computer_weapon
+    @player = Player.new(session[:name], session[:weapon])
+    @game = Game.new(@player, Computer.new )
     erb :fight
   end
 

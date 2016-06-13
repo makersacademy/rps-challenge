@@ -1,3 +1,5 @@
-<%= @player_name %> has chosen <%= @weapon %>
+<%= @game.player.name %> has chosen <%= @game.player.weapon.capitalize %>
 <br>
-Computer has chosen <%= @computer_weapon %>
+Computer has chosen <%= @game.computer.chosen_weapon %>
+<br>
+<%= @game.result %>
