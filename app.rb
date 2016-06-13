@@ -15,19 +15,10 @@ class Rps < Sinatra::Base
  		erb :names
  	end
 
- 	get '/rock' do
+ 	get '/weapon' do
  		@computer = Computer.new
- 		erb :rock
- 	end
-
- 	get '/paper' do
- 		@computer = Computer.new
- 		erb :paper
- 	end
-
- 	get '/scissors' do
- 		@computer = Computer.new
- 		erb :scissors
+ 		@weapon = params[:move]
+ 		erb :weapons
  	end
 
 run! if app_file == $0
