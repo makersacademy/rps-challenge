@@ -17,9 +17,6 @@ class RPS < Sinatra::Base
 
 	get '/play' do
 		@turn = Turn.new(session)
-		# @name = session[:name]
-		# @object = session[:object]
-		# @player2_object = session[:player2_object]
 		erb(:play)
 	end 
 
