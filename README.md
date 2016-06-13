@@ -58,24 +58,24 @@ $ bundle
 
 * Press the start button
 
-<img src="start.png">
+<img src="public/start.png">
 
 * Type your name into the text box and press submit
 
-<img src="start.png">
+<img src="public/start.png">
 
 * Screen tells you the starting scores of each player, including the computer (Ava the robot)
 
-<img src="choose.png">
+<img src="public/choose.png">
 
 * Choose your gesture by clicking on the relevant icon/button
 
-<img src="choose.png">
+<img src="public/choose.png">
 
 * Next screen tells you your move and score, the computers move and score, and who won
 
-<img src="results.png">
+<img src="public/results.png">
 
 * A new turn can be initiated by clicking "Next Turn", which returns to the gesture selection screen with updated scores
 
-<img src="nextturn.png">
+<img src="public/nextturn.png">
