@@ -8,19 +8,22 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-  	session[:name] = params[:name]
+  	session[:player_name] = params[:name]
   	redirect '/play'
   end
 
   get '/play' do
-  	@name = session[:name]
-  	@shape = session[:shape]
+  	@game = Game.new(session)
+  	# @name = session[:name]
+  	# @choice = session[:choice]
+  	# @opponent_choice = session[:opponent_choice]
   	erb :play
   end
   
 
   post '/play' do
-  	session[:shape] = params[:shape]
+  	session[:player_choice] = params[:choice]
+  	session[:opponent_choice] = :rock
   	redirect '/play'
   end
   # start the server if ruby file executed directly

@@ -1,10 +1,18 @@
-Hi, <%= @name %>
+Hi, <%= @game.player_name %>
 
 
  <form action="/play" method ="post">
-	<input type="submit" name= "shape" value="Rock">
-	<input type="submit" name= "shape" value="Paper">
-	<input type="submit" name= "shape" value="Scissors ">
+	<input type="submit" name= "choice" value="Rock">
+	<input type="submit" name= "choice" value="Paper">
+	<input type="submit" name= "choice" value="Scissors ">
 </form>
 
-You chose <%= @shape %>
+You chose <%= @game.player_choice %>
+
+<div id="opponent">
+  Opponent chose <%= @game.opponent_choice.to_s.capitalize %>
+</div>
+<!-- 
+
+
+Opponent chose <%= @opponent_shape.to_s.capitalize %> -->
