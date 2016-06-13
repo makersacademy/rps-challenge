@@ -15,10 +15,10 @@ I would like to be able to play rock/paper/scissors
 
 Installation
 -------
-1. Clone the code to your local machine.
-2. Run bundle. Make sure you have bundler: gem install bundle if not.
-3. Start a server ruby app.rb
-4. Go to localhost:4567
+1. Clone the code to your local machine: `git clone https://github.com/chdezmar/rps-challenge`
+2. Run `bundle`. Make sure you have bundler: `gem install bundle` if not.
+3. Start a server `ruby app.rb`
+4. Go to `localhost:4567`
 5. Enter name and play
 
 ----
