@@ -1,0 +1,112 @@
+.player-1-hand {
+  background-image: url("/images/rock-1.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 100%;
+  max-width: 650px;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  z-index: -1;
+
+  &::after {
+    background-color: $bg-color;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 10px;
+    z-index: 1;
+  }
+
+  &.countdown {
+    -webkit-animation: sprite-open 3s steps(16, end);
+    animation: sprite-open 3s steps(16, end);
+    background-image: url("/images/countdown.png");
+    background-position: 100% bottom;
+    background-size: 1700% auto;
+  }
+
+  &.rock {
+    background-image: url("/images/rock-1.png");
+  }
+
+  &.paper {
+    -webkit-animation: sprite-open 1s steps(6, end);
+    animation: sprite-open 1s steps(6, end);
+    background-image: url("/images/paper-open-1.png");
+    background-position: 100% bottom;
+    background-size: 700% auto;
+
+    &.close {
+      -webkit-animation: sprite-close 1s steps(7, end);
+      animation: sprite-close 1s steps(7, end);
+      background-image: url("/images/paper-close-1.png");
+      background-size: 800% auto;
+    }
+  }
+
+  &.scissors {
+    -webkit-animation: sprite-open 1s steps(6, end);
+    animation: sprite-open 1s steps(6, end);
+    background-image: url("/images/scissor-open-1.png");
+    background-position: 100% bottom;
+    background-size: 700% auto;
+
+    &.close {
+      -webkit-animation: sprite-close 1s steps(8, end);
+      animation: sprite-close 1s steps(8, end);
+      background-image: url("/images/scissor-close-1.png");
+      background-size: 900% auto;
+    }
+  }
+}
+
+.player-2-hand {
+  background-image: url("/images/rock-2.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 100%;
+  max-width: 650px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  z-index: -2;
+
+  &.rock {
+    background-image: url("/images/rock-2.png");
+  }
+
+  &.paper {
+    -webkit-animation: sprite-open 1s steps(8, end);
+    animation: sprite-open 1s steps(8, end);
+    background-image: url("/images/paper-open-2.png");
+    background-position: 100% bottom;
+    background-size: 900% auto;
+
+    &.close {
+      animation: sprite-close 1s steps(7, end);
+      background-image: url("/images/paper-close-2.png");
+      background-size: 800% auto;
+    }
+  }
+
+  &.scissors {
+    -webkit-animation: sprite-open 1s steps(8, end);
+    animation: sprite-open 1s steps(8, end);
+    background-image: url("/images/scissor-open-2.png");
+    background-position: 100% bottom;
+    background-size: 900% auto;
+
+    &.close {
+      -webkit-animation: sprite-close 1s steps(6, end);
+      animation: sprite-close 1s steps(6, end);
+      background-image: url("/images/scissor-close-2.png");
+      background-size: 700% auto;
+    }
+  }
+}

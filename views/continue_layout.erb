@@ -1,0 +1,15 @@
+<div class="player-1-hand player-hand <%= @player1.choice %>"></div>
+<div class="player-2-hand player-hand <%= @player2.choice %>"></div>
+
+<div class="player-1">
+  <p><%= @player1.name %> chose <%= @player1.choice %></p>
+</div>
+<div class="player-2">
+  <p><%= @player2.name %> chose <%= @player2.choice %></p>
+</div>
+
+<h2><% if @winner %><%= @winner.name %> wins this round!<% else %>It's a tie!<% end %></h2>
+
+<form method="post" action="/play" class="form-continue" id="form-continue">
+  <input type="submit" class="input-btn" id="form-continue-submit" value="Play Again">
+</form>

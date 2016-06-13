@@ -1,0 +1,19 @@
+@-webkit-keyframes sprite-open {
+  from { background-position: 0% bottom; }
+  to { background-position: 100% bottom; }
+}
+
+@keyframes sprite-open {
+  from { background-position: 0% bottom; }
+  to { background-position: 100% bottom; }
+}
+
+@-webkit-keyframes sprite-close {
+  from { background-position: 0% bottom; }
+  to { background-position: 100% bottom; }
+}
+
+@keyframes sprite-close {
+  from { background-position: 0% bottom; }
+  to { background-position: 100% bottom; }
+}

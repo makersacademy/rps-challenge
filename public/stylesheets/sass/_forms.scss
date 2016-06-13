@@ -1,0 +1,60 @@
+.form-name {
+  .input-text {
+    border: solid 2px $text-color;
+    padding: 0.5rem;
+    text-align: center;
+
+    &:active,
+    &:focus {
+      border: solid 2px $highlight-color;
+    }
+
+    &:active,
+    &:focus,
+    &:valid {
+      outline: none;
+
+      + label {
+        transform: translateY(200%);
+        -webkit-transform: translateY(200%);
+        color: $dark-grey;
+      }
+    }
+  }
+
+  .input-btn {
+    display: none;
+  }
+}
+
+.form-choice {
+  display: inline-block;
+  margin-top: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  label > input {
+    margin-right: 0.5rem;
+  }
+
+  .input-btn {
+    margin-top: 1rem;
+  }
+}
+
+.input-btn {
+  background-color: transparent;
+  border: solid 3px $text-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border: solid 3px $highlight-color;
+    cursor: pointer;
+    outline: none;
+  }
+}
