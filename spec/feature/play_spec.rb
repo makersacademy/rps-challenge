@@ -4,7 +4,9 @@ require 'spec_helper'
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 
-#the marketeer will be presented the choices (rock, paper and scissors)
+
+
+
 
 
 feature 'play a game of RPS' do
@@ -12,10 +14,18 @@ feature 'play a game of RPS' do
 	  sign_in_and_play
 	 end 
 
+#the marketeer will be presented the choices (rock, paper and scissors)
 
 	scenario 'presented with the choices of Rock, paper and scissors' do
-	  expect(page).to have_content 'Rock'
-	  expect(page).to have_content 'Paper'
-	  expect(page).to have_content 'Scissors'
+	  expect(page).to have_button 'Rock'
+	  expect(page).to have_button 'Paper'
+	  expect(page).to have_button 'Scissors'
 	 end
+
+	#the marketeer can choose one option
+
+	scenario 'can choose an option between Rock, Paper and Scissors' do
+		click_button 'Rock'
+		expect(page).to have_content 'You chose Rock'
+	end
 end 
