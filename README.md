@@ -1,3 +1,5 @@
+https://travis-ci.org/alterenzo/rps-challenge.svg?branch=master
+
 ##Rock Paper Scissors Lizard Spock
 
 #User stories implemented:
