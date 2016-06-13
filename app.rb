@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
 	enable :sessions
@@ -17,7 +19,6 @@ class RPS < Sinatra::Base
   	erb :play
   end
   
-
   post '/play' do
   	session[:player_choice] = params[:choice].downcase.to_sym
   	session[:opponent_choice] = Opponent.new.choice
