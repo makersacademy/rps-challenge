@@ -14,16 +14,13 @@ class RPS < Sinatra::Base
 
   get '/play' do
   	@game = Game.new(session)
-  	# @name = session[:name]
-  	# @choice = session[:choice]
-  	# @opponent_choice = session[:opponent_choice]
   	erb :play
   end
   
 
   post '/play' do
   	session[:player_choice] = params[:choice]
-  	session[:opponent_choice] = :rock
+  	session[:opponent_choice] = Opponent.new.choice
   	redirect '/play'
   end
   # start the server if ruby file executed directly

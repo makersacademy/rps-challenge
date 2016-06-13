@@ -3,13 +3,11 @@ require 'spec_helper'
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
-
-
-
-
-
+ 
 
 feature 'play a game of RPS' do
+  SEED = 111
+
   before do
     sign_in_and_play
   end 
@@ -32,9 +30,9 @@ feature 'play a game of RPS' do
 	#the game will choose a random option
 
 	scenario 'game/opponent choose an option' do
+	srand(SEED)
 	click_button 'Rock'
-	message = find(:css, "#opponent").text.strip
-	expect(messages).to include message
+	expect(page).to have_content 'Opponent chose Rock'
 	end
 
 
