@@ -13,7 +13,7 @@ describe Game do
       srand(3)
       expect(game.play("paper")).to include :lose
     end
-    it 'returns the win if player chooses schi and computer sci' do
+    it 'returns the tie if player chooses sci and computer sci' do
       srand(3)
       expect(game.play("scissors")).to include :tie
     end
