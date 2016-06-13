@@ -6,7 +6,7 @@ require 'spec_helper'
  
 
 feature 'play a game of RPS' do
-  SEED = 111
+  SEED = 123
 
   before do
     sign_in_and_play
@@ -32,9 +32,16 @@ feature 'play a game of RPS' do
 	scenario 'game/opponent choose an option' do
 	srand(SEED)
 	click_button 'Rock'
-	expect(page).to have_content 'Opponent chose Rock'
+	expect(page).to have_content 'Opponent chose Scissors'
 	end
 
+	#I want to see if I win
+
+	scenario 'I win' do
+	 srand(SEED)
+	 click_button 'Rock'
+	 expect(page).to have_content 'You win!'
+	end
 
 	def messages
 		[:rock, :paper, :scissors].map { |choice| "Opponent chose #{choice.to_s.capitalize}" }
