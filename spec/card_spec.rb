@@ -3,10 +3,10 @@ require 'card'
 describe Card do
   subject(:some_card) { described_class.new('2') }
   
-  describe '#card_id' do
-    it 'returns cards id according to its number' do
-      number= Card.new('2').card_id
-      expect(some_card.card_id).to eq number
+  describe '#id' do
+    it 'returns card\'s id according to its index' do
+      new_id= Card.new('2').id
+      expect(some_card.id).to eq new_id
     end
   end
 end
