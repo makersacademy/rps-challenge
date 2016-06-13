@@ -5,12 +5,6 @@ describe Game do
   let(:player2) { double(:player2, name: "I.P. Freely") }
   subject { described_class.new(player1, player2) }
 
-  describe "#players" do
-    it "has 2 players" do
-      expect(subject.players.count).to eq(2)
-    end
-  end
-
   describe "#play_round" do
     context "player 1 chooses rock" do
       it "should tie when player 2 chooses rock" do

@@ -1,7 +1,5 @@
 # Understands winning or losing a round
 class Game
-  attr_reader :players
-
   P1_WINNING_COMBOS = [
     [:rock, :scissors],
     [:paper, :rock],
