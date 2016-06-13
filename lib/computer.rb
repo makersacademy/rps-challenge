@@ -1,6 +1,6 @@
 require_relative "weapons"
 
-# Understands making a move
+# Understanding a move
 class Computer
   attr_reader :name, :choice
   DEFAULT_NAMES = ["Hugh Jass", "I.P. Freely", "Amanda Hugginkiss"].freeze
