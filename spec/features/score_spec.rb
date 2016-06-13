@@ -35,4 +35,12 @@ feature "FEATURE: keeps scores" do
     expect(page).to have_content "Ava score: 0"
   end
 
+  scenario "after a game, next turn button allows player_1 another turn" do
+    sign_in_play_and_choose_rock
+    click_button "Next Round"
+    find_button "rock"
+    find_button "paper"
+    find_button "scissors"
+  end
+
 end
