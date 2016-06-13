@@ -3,9 +3,9 @@ require 'game'
 describe Game do
 
   subject { described_class.new }
-  let(:rock_input) { "rock" }
-  let(:scissors_input) { "scissors" }
-  let(:paper_input) { "paper" }
+  let(:rock_input) { :rock }
+  let(:scissors_input) { :scissors }
+  let(:paper_input) { :paper }
   let(:winning_message) { "Congratulations, you have won" }
   let(:losing_message) { "Sorry, you have lost" }
   let(:draw_message) { "This is awkward, it's a tie" }
@@ -47,7 +47,7 @@ describe Game do
   describe "#player_input" do
 
     it 'accepts user input' do
-      expect(subject.player_move(rock_input)).to eq "rock"
+      expect(subject.player_move(rock_input)).to eq :rock
     end
   end
 

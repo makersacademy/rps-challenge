@@ -1,7 +1,9 @@
 class Computer
 
+  WEAPONS = [:rock, :paper, :scissors]
+
   def self.move_chooser
-    ["rock", "paper", "scissors"].sample
+    WEAPONS.sample
   end
 
 

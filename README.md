@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/danielschambers/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/danielschambers/rps-challenge?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/danielschambers/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/danielschambers/rps-challenge?branch=master)
 
 [![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
 

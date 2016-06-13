@@ -19,20 +19,20 @@ class Game
   end
 
   def player_move(input)
-    @player_input = input
+    @player_input = input.to_sym
   end
 
   private
 
   def move_comparison
     if @player_input == @computer_choice
-       return draw_message
-    elsif @player_input == "rock"
-      @computer_choice == "scissors" ? winning_message : losing_message
-    elsif @player_input == "scissors"
-      @computer_choice == "paper" ? winning_message : losing_message
-    else @player_input == "paper"
-      @computer_choice == "rock" ? winning_message : losing_message
+       draw_message
+    elsif @player_input == :rock
+      @computer_choice == :scissors ? winning_message : losing_message
+    elsif @player_input == :scissors
+      @computer_choice == :paper ? winning_message : losing_message
+    else @player_input == :paper
+      @computer_choice == :rock ? winning_message : losing_message
     end
 
   end
