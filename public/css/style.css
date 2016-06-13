@@ -1,0 +1,70 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #8D99AE;
+  font-family: "Helvetica Neue";
+}
+
+h2, a, a:visited, a:hover, a:active {
+  color: #FFF;
+  text-shadow: 1px 1px #444A54;
+}
+
+.container {
+  max-width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-enter-name {
+  display: flex;
+}
+
+.custom_dropdown, input, select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #636C7A;
+  color: #2B2D42;
+  background-color: #EDF2F4;
+}
+
+label {
+  padding: 10px;
+  font-size: 16px;
+  margin: 0 10px 0 0;
+}
+
+select {
+    border: 0;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+input[type=text] {
+  padding-left: 20px;
+}
+
+input[type=submit] {
+  border: 1px solid #D90429;
+  color: #FFF;
+  background-color: #EF233C;
+}
+
+input[type=submit]:hover {
+  border: 1px solid #A5031E;
+  background-color: #BC1C2F;
+  cursor: pointer;
+}
+
+input[type=submit]:active {
+  border: 1px solid #720114;
+  background-color: #891422;
+}
