@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-subject(:player){described_class.new('Jonathan','Rock')}
+subject(:player){described_class.new('Jonathan',:Rock)}
 
   describe '#name' do
     it 'returns player name' do
@@ -11,7 +11,7 @@ subject(:player){described_class.new('Jonathan','Rock')}
 
   describe '#pick_play' do
     it 'lets player picks rps option' do
-      expect(Player::OPTIONS).to include(player.pick_play)
+      expect(VirtualPlayer::OPTIONS).to include(player.pick_play)
     end
   end
 

@@ -1,6 +1,5 @@
+require_relative 'virtual_player'
 class Player
-
-OPTIONS = ["Rock","Paper","Scissor","Spock","Lizard"]
 
 attr_reader :name, :option
 

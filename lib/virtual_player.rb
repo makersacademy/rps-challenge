@@ -1,6 +1,6 @@
 class VirtualPlayer
 
-OPTIONS = ["Rock","Paper","Scissor","Spock","Lizard"]
+OPTIONS = [:Rock,:Paper,:Scissor,:Spock,:Lizard]
 
 attr_reader :name, :option
 
