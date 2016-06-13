@@ -10,7 +10,8 @@ class RPSApp < Sinatra::Base
   end
 
   get '/' do
-    Game.create(Startup::WEAPONS)
+    @weapons = Startup::WEAPONS
+    Game.create(@weapons)
     erb(:index, :layout => :layout)
   end
 
