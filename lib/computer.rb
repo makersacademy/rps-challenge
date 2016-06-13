@@ -1,3 +1,5 @@
+require_relative "weapons"
+
 # Understands making a move
 class Computer
   attr_reader :name, :choice
@@ -8,6 +10,6 @@ class Computer
   end
 
   def make_choice
-    @choice = [:rock, :paper, :scissors].sample
+    @choice = WEAPONS.sample
   end
 end

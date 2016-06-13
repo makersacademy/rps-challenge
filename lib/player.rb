@@ -1,7 +1,8 @@
+require_relative "weapons"
+
 # Understands making a move
 class Player
   attr_reader :name, :choice
-  WEAPONS = [:rock, :paper, :scissors].freeze
 
   def initialize(name)
     @name = name
