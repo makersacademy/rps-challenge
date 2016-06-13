@@ -1,0 +1,87 @@
+<head>
+  <title>Rock Paper Scissors Spock Lizard</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="title">
+  <span class="pink">ROCK</span>
+  <span class="orange">PAPER</span>
+  <span class="violet">SCISSORS</span>
+  <span class="blue">SPOCK</span>
+  <span class="green">LIZARD</span>
+</div>
+
+<div id="game_area">
+  <div class="container">
+    <div class="player_container">
+      <div class="gif_container">
+        <% if @game.turns > 0 %>
+          <img src="./images/l_<%= @game.last_result[0]
+          %>_<%= "win" if @game.last_result[2] == :player1
+          %><%= "lose" if @game.last_result[2] == :player2
+          %><%= "draw" if @game.last_result[2] == :draw %>.gif" />
+        <% end %>
+      </div>
+      <div class="player_name">
+        <%= @game.player1 %>
+      </div>
+    </div>
+      <div class="middle_wrapper">
+        <div class="result">
+          <% if @game.turns > 0 %>
+            <% if @game.last_result[2] == :player1 %>
+              <%= @game.player1 %> wins!
+            <% elsif @game.last_result[2] == :player2 %>
+              <%= @game.player2 %> wins!
+            <% else %>
+              It's a draw!
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="score">
+          <%= @game.score %>
+        </div>
+      </div>
+
+      <div class="player_container">
+        <div class="gif_container">
+          <% if @game.turns > 0 %>
+          <img src="./images/r_<%= @game.last_result[1]
+          %>_<%= "win" if @game.last_result[2] == :player2
+          %><%= "lose" if @game.last_result[2] == :player1
+          %><%= "draw" if @game.last_result[2] == :draw %>.gif" />
+          <% end %>
+        </div>
+        <div class="player_name">
+          <%= @game.player2 %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="button_bar">
+  <div class="container">
+    <div id="play_again">Play <% if @game.turns > 0 %>again:<% end %>
+     </div>
+    <div id="buttons">
+      <form action="/multifight" method="POST">
+        <button type="submit" name="move" value="rock" class="button"><span>rock</span></button>
+        <button type="submit" name="move" value="paper" class="button"><span>paper</span></button>
+        <button type="submit" name="move" value="scissors" class="button"><span>scissors</span></button>
+        <button type="submit" name="move" value="spock" class="button"><span>spock</span></button>
+        <button type="submit" name="move" value="lizard" class="button"><span>lizard</span></button>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="name"></div>
+  <a class="git" href="https://github.com/kennbarr/rps-challenge"></a>
+  <div class="student"></div>
+  <a class="makers" href="http://www.makersacademy.com/"></a>
+</div>
+
+</body>

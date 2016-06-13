@@ -1,0 +1,70 @@
+<head>
+  <title>Rock Paper Scissors Spock Lizard</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="title">
+    <span class="pink">ROCK</span>
+    <span class="orange">PAPER</span>
+    <span class="violet">SCISSORS</span>
+    <span class="blue">SPOCK</span>
+    <span class="green">LIZARD</span>
+  </div>
+
+  <div id="game_area"><br>
+    <div class="login_container">
+      <form action="/name" method="POST">
+        <div class="login_centre">
+          <input type="Text" name="player_name" placeholder="Player name" class="box">
+        </div>
+        <div class="start_centre">
+          <input type="submit" id="Submit" value="Start single player!" class="login_button" style="font-size: 14px; height: 60px">
+        </div>
+      </form>
+    </div>
+
+    <div class="login_container">
+      <form action="/multiname" method="POST">
+        <div class="login_centre">
+          <input type="Text" name="player1_name" placeholder="Player name" class="box">
+        </div>
+        <div class="start_centre">
+          <input type="submit" id="Submit1" value="Start multiplayer!" class="login_button" style="font-size: 14px; height: 60px">
+        </div>
+      </form>
+    </div>
+
+    <% if Game.player_waiting? %>
+      <div class="multi_box">
+        <div class="login_container">
+          <div style="font-size: 24px; padding-top: 10px">
+          <%= Game.game[Game.join_game].player1 %> is waiting for an opponent!
+        </div>
+        <br>
+          <form action="/multijoin" method="POST">
+            <div class="login_centre" class>
+              <input type="Text" name="player2_name" placeholder="Enter your name here!" class="box">
+            </div>
+            <input type="hidden" name="p2_join" value="join">
+            <div class="start_centre">
+              <input type="submit" id="Submit2" value="Join the game!" class="login_button" style="font-size: 14px; height: 60px">
+            </div>
+          </form>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+<div id="button_bar">
+</div>
+<div id="footer">
+  <div class="name"></div>
+  <a class="git" href="https://github.com/kennbarr/rps-challenge"></a>
+  <div class="student"></div>
+  <a class="makers" href="http://www.makersacademy.com/"></a>
+</div>
+
+</body>
