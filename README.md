@@ -90,7 +90,7 @@ $ bundle
   <img src="public/results.png" width="400">
 </p>
 
-* A new turn can be initiated by clicking "Next Turn", which returns to the gesture selection screen with updated scores
+* A new turn can be initiated by clicking "Next Round", which returns to the gesture selection screen with updated scores
 
 <p align="center">
   <img src="public/nextturn.png" width="400">
