@@ -13,24 +13,20 @@ class Game
     @game
   end
 
-  def play
+  def play(computer_choice = Computer.move_chooser)
+    @computer_choice = computer_choice
     move_comparison
   end
 
   def player_move(input)
-    @player_input = Player.move(input)
-  end
-
-  def move_chooser
-    @computer_choice = Computer.move_chooser
+    @player_input = input
   end
 
   private
 
   def move_comparison
-
     if @player_input == @computer_choice
-      draw_message
+       return draw_message
     elsif @player_input == "rock"
       @computer_choice == "scissors" ? winning_message : losing_message
     elsif @player_input == "scissors"

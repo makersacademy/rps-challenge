@@ -13,16 +13,25 @@ describe Game do
   describe "#self.create" do
     it "creates a new instance of itself" do
       game = Game.create
-			expect(Game.instance).to eq game
+      expect(Game.instance).to eq game
     end
   end
 
   describe "#play" do
 
-    it "runs the game via one command " do
-      allow(subject).to receive(:computer_choice).and_return(paper_input)
+    it "loses the game" do
+      subject.player_move(paper_input)
+      expect(subject.play(scissors_input)).to eq losing_message
+    end
+
+    it "wins the game" do
       subject.player_move(rock_input)
-      expect(subject.play).to eq losing_message
+      expect(subject.play(scissors_input)).to eq winning_message
+    end
+
+    it "draws the game" do
+      subject.player_move(scissors_input)
+      expect(subject.play(scissors_input)).to eq draw_message
     end
 
   end

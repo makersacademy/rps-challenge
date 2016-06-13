@@ -23,7 +23,8 @@ class App < Sinatra::Base
   post '/result' do
     @game = Game.instance
     @player_input = @game.player_move(params[:input])
-    @comp_input = @game.move_chooser
+    @result = @game.play
+    @comp_input = @game.computer_choice
     erb(:result)
   end
 
