@@ -1,0 +1,21 @@
+Welcome <%= @name %>
+
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Rock">
+</form>
+
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Paper">
+</form>
+
+<form action="/move" method="post">
+  <input type="submit" name="move" value="Scissors">
+</form>
+
+<% if @winner == :win %>
+  <%=@name%> Wins
+<% elsif @winner == :lose %>
+  CPU Wins
+<% elsif @winner == :draw %>
+  Draw
+<% end %>
