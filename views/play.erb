@@ -12,4 +12,10 @@ Welcome <%= @name %>
   <input type="submit" name="Scissors" value="Scissors">
 </form>
 
-<%= @winner %>
+<% if @winner == :win %>
+  <%=@name%> Wins
+<% elsif @winner == :lose %>
+  CPU Wins
+<% else %>
+  Draw
+<% end %>

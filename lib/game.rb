@@ -2,25 +2,22 @@ require_relative 'cpu'
 
 class Game
 
-  attr_reader :player
-
   RULES = { rock: :scissors,
           paper: :rock,
           scissors: :paper }
 
-  def initialize(name, choice, cpu_choice)
-    @player = name
+  def initialize(choice, cpu_choice)
     @choice = choice
     @cpu_choice = cpu_choice
   end
 
-  def self.run(name, choice, cpu_choice = Cpu.run)
-    new(name, choice, cpu_choice).winner
+  def self.run(choice, cpu_choice = Cpu.run)
+    new(choice, cpu_choice).winner
   end
 
   def winner
-    return "Draw" if choice == cpu_choice
-    RULES[choice] == cpu_choice ? "#{player} Wins" : "CPU Wins"
+    return :draw if choice == cpu_choice
+    RULES[choice] == cpu_choice ? :win : :lose
   end
 
   private

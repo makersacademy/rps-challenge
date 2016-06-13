@@ -22,17 +22,17 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    session[:winner] = Game.run(session[:name],:rock)
+    session[:winner] = Game.run(:rock)
     redirect '/play'
   end
 
   post '/paper' do
-    session[:winner] = Game.run(session[:name],:paper)
+    session[:winner] = Game.run(:paper)
     redirect '/play'
   end
 
   post '/scissors' do
-    session[:winner] = Game.run(session[:name],:scissors)
+    session[:winner] = Game.run(:scissors)
     redirect '/play'
   end
 
