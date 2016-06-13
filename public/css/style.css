@@ -5,12 +5,7 @@ body {
   font-family: "Helvetica Neue";
 }
 
-h2 {
-  color: #FFF;
-  text-shadow: 1px 1px #444A54;
-}
-
-a, a:visited, a:hover, a:active {
+h2, a, a:visited, a:hover, a:active {
   color: #FFF;
   text-shadow: 1px 1px #444A54;
 }
