@@ -1,0 +1,39 @@
+<div>
+  <%= @game.player_name %> vs. Machine
+</div>
+
+ <br>
+
+ <div>
+  <%= @game.player_name %> please choose a weapon...
+</div>
+
+<br>
+
+<form action="/play" method="post">
+  <input type="submit" name="player_weapon" value="Rock"/>
+  <input type="submit" name="player_weapon" value="Paper"/>
+  <input type="submit" name="player_weapon" value="Scissors"/>
+</form>
+
+<div>
+  You chose <%= @game.player_weapon %> 
+</div>
+
+<br>
+
+<div id="machine">
+  Computer chose <%= @game.computer_weapon.to_s %>
+</div>
+
+<br>
+
+<div>
+  <% if @game.win? %>
+    You win!
+  <% elsif @game.lose? %>
+  	You lose!
+  <% elsif @game.draw? %>
+  	It's a draw!
+  <% end %>
+</div>
