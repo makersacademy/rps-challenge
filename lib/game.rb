@@ -2,7 +2,7 @@ require_relative 'player.rb'
 
 class Game
 
-  attr_reader :no_of_players, :player1, :player2, :current_player, :player1_choice, :player2_choice
+  attr_reader :no_of_players, :player1, :player2, :current_player
 
   WINNER = {["PAPER", "SCISSORS"]=>"SCISSORS", 
             ["ROCK", "SCISSORS"]=>"ROCK", 
@@ -21,7 +21,7 @@ class Game
   end
 
   def self.create(no_of_players)
-    @game = Game.new(no_of_players)
+    @game = new(no_of_players)
   end
 
   def self.instance
@@ -55,10 +55,3 @@ class Game
   end
 
 end
-
-# game = Game.new(2)
-# game.set_players('Paul', 'John')
-# game.set_choice('ROCK')
-# p game.player1.name
-# p game.player1.choice
-

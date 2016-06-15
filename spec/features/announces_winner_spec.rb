@@ -1,6 +1,7 @@
 feature 'Announces winner' do
 
   scenario 'anounces whether the player or computer has won' do
+    srand(123)
     visit('/')
     choose('one_player')
     click_button('OK')

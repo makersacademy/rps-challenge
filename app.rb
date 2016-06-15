@@ -22,13 +22,9 @@ class RockPaperScissors < Sinatra::Base
 
   get '/offer_choices' do
     @game = Game.instance
-    if @game.player1.choice != nil && @game.player2.choice != nil
-      redirect('/check_winner')
-    elsif @game.is_current_player_computer?
-      redirect('/computers_choice')
-    else
-      erb(:offer_choices)
-    end
+    redirect('/check_winner') if @game.player1.choice != nil && @game.player2.choice != nil
+    redirect('/computers_choice') if @game.is_current_player_computer?
+    erb(:offer_choices)
   end
 
   get '/computers_choice' do
