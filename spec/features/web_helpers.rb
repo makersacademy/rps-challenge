@@ -1,6 +1,5 @@
 def choose_rps
   visit('/play')
-  ["rock", "paper", "scissors"].each { |item| 
-    find(:css, "img\##{item}").click
-  }
+  arr= ["rock", "paper", "scissors"]
+  arr.each {|item| find(:css, "img\##{item}").click}
 end

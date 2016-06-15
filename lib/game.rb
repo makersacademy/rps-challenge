@@ -9,11 +9,15 @@ class Game
 
   def fight_against(enemy_card)
     enemy_card = enemy_card.index.to_i
-    @result= :draw if enemy_card == @random_card.index.to_i
+    return @result= :draw if enemy_card == @random_card.index.to_i
     enemy_card-1 != 0 && enemy_card != @random_card.index.to_i ? @result= :win : @result= :lose
   end
 
   private
   attr_reader :win, :lose, :draw
+
+def subtract
+  enemy_card -=1
+end
 
 end
