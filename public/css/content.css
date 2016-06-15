@@ -209,3 +209,8 @@ body {
   transform: translate3d(0, -1.5em, 0) scale3d(0.75, 0.75, 1) translateZ(1px);
 }
 
+.radio_btns input {
+  margin-left: 130px;
+}
+
+

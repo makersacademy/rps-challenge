@@ -9,14 +9,8 @@ class Game
 
   def fight_against(enemy_card)
     enemy_card = enemy_card.index.to_i
-    return @result= :draw if enemy_card == @random_card.index.to_i
-    enemy_card =enemy_card -1
-    if enemy_card != 0 && enemy_card != @random_card.index.to_i
-      @result= :lose
-    else
-      @result= :win
-    end
-    
+    @result= :draw if enemy_card == @random_card.index.to_i
+    enemy_card-1 != 0 && enemy_card != @random_card.index.to_i ? @result= :win : @result= :lose
   end
 
   private

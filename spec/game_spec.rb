@@ -22,9 +22,9 @@ describe Game do
       expect(game.fight_against(players_card_win)).to eq :win
     end
     
-    # it 'calculates game outcome for :lose' do
-    #   expect(game.fight_against(players_card_lose)).to eq :lose
-    # end
+    it 'calculates game outcome for :lose' do
+      expect(game.fight_against(players_card_lose)).to eq :lose
+    end
 
     it 'calculates game outcome for :draw' do
       expect(game.fight_against(players_card_draw)).to eq :draw
