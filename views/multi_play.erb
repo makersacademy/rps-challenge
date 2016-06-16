@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel="stylesheet" typ="text/css" href="style.css">
+</head>
+<h1>
+  <div class="text">
+    <%="#{@name_1.capitalize} vs. #{@name_2.capitalize} "%>
+  </div>
+</h1>
+<h2>
+  <div class="text">
+  <%="#{@name_1.capitalize} choose an option"%>
+  </div>
+</h2>
+<form action="/player_1_choice" class="form" method="post">
+  <input type="submit" name="player_1_choice" value="Rock">
+  <input type="submit" name="player_1_choice" value="Paper">
+  <input type="submit" name="player_1_choice" value="Scissors">
+</form>
+<br>
+
+</html>

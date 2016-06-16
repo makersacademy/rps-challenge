@@ -1,0 +1,28 @@
+<html>
+<head>
+  <link rel="stylesheet" typ="text/css" href="style.css">
+</head>
+<h2>
+  <div class="text">
+    <%="#{@player_1.name} chose #{@player_1.display_choice}" %>
+  </div>
+</h2>
+<br>
+<h2>
+  <div class="text">
+    <%="#{@player_2.name} chose #{@player_2.display_choice}"%>
+  </div>
+</h2>
+<br>
+<h1>
+  <div class="text">
+    <% if @game.outcome == "win" %>
+      <%= @player_1.name %> won!
+    <% elsif @game.outcome == "lose" %>
+      <%= @player_2.name %> won!
+    <% else %>
+    It's a draw
+    <% end %>
+  </div>
+</h1>
+</html>

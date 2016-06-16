@@ -1,0 +1,16 @@
+body {
+  background-color:	#fafad2;
+  padding-top: 100px;
+}
+
+.text {
+  font-family: Helvetica;
+  color: #2f4f4f;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

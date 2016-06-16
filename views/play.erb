@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel="stylesheet" typ="text/css" href="style.css">
+</head>
+<h1>
+  <div class="text">
+    <%="Welcome #{@name}"%>
+  </div>
+</h1>
+<h2>
+  <div class="text">
+  Choose an option
+  </div>
+</h2>
+<form action="/play" class="form" method="post">
+  <input type="submit" name="player_choice" value="Rock">
+  <input type="submit" name="player_choice" value="Paper">
+  <input type="submit" name="player_choice" value="Scissors">
+</form>
+<br>
+
+</html>
