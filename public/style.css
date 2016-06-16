@@ -1,18 +1,16 @@
 body {
   background-color:	#fafad2;
+  padding-top: 100px;
 }
 
 .text {
-  font-family: Arial;
+  font-family: Helvetica;
   color: #2f4f4f;
   text-align: center;
-  position: relative;
-  top: 50px;
 }
 
 .form {
   display: flex;
-  position: relative;
   justify-content: center;
-  top: 100px;
+  align-items: center;
 }

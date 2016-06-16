@@ -20,10 +20,6 @@ class Game
     @opponent_choice.to_s.capitalize
   end
 
-  def single_player_outcome
-   winner? ? "You #{RULES[player_choice][opponent_choice]}!" : "You #{RULES[player_choice][opponent_choice]}!"
-  end
-
   def outcome
     RULES[player_choice][opponent_choice]
   end

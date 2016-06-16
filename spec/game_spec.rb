@@ -8,15 +8,15 @@ subject(:game_draw) { described_class.new(:rock, :rock) }
 
 describe '#outcome' do
   it 'checks if you have won' do
-    expect(game_win.single_player_outcome).to eq('You win!')
+    expect(game_win.outcome).to eq('win')
   end
 
   it 'checks if you have lost' do
-    expect(game_lose.single_player_outcome).to eq('You lose!')
+    expect(game_lose.outcome).to eq('lose')
   end
 
   it 'checks if you have drawn' do
-    expect(game_draw.single_player_outcome).to eq("You draw!")
+    expect(game_draw.outcome).to eq('draw')
   end
 end
 
