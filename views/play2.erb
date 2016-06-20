@@ -1,0 +1,20 @@
+
+
+<%= @game.players_names[0] %> vs. <%= @game.players_names[1] %>
+
+<br>
+
+<h5><%= @game.players_names[1]%> - Please pick an option below:</h5>
+
+<form action="/player2_select" method="post">
+
+  <select name="pick_option2">
+    <option value='l'>Lizard</option>
+    <option value='p'>Paper</option>
+    <option value='r'>Rock</option>
+    <option value='s'>Scissors</option>
+    <option value='sp'>Spock</option>
+  </select>
+  <button type="submit" name="submit">Select</button>
+
+</form>
