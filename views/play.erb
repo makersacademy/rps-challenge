@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+
+    <body style="background-color:#FCFAFC;">
+        <div class="container">
+            <div class="span12" align="center">
+                <h1>
+                    <%= @player_name.name %>
+                    Vs. Computer
+                    <h1></div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1 centered">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Rock' name='player_choice' class="btn btn-default">
+                            </form>
+                        </div>
+                        <div class="col-md-1 centered">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Paper' name='player_choice' class="btn btn-default">
+                            </form>
+                        </div>
+                        <div class="col-md-1 centered">
+                            <form action='/choice' method='post'>
+                                <input type='submit' value='Scissors' name='player_choice' class="btn btn-default">
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 centered">
+                            <h3><%= @player_name.name %> chose
+                                <%= @game.player_input %></h3>
+                        </div>
+                        <div class="col-md-2 centered"></div>
+                        <div class="col-md-5 centered">
+                            <h3>Computer chose
+                                <%= @game.computer_input %></h3>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 centered">
+                            <% if @game.player_input == "Rock" %>
+                            <img src="/img/human_rock.gif" alt="Human Rock Gif" height="400" width="400"/>
+                            <% elsif @game.player_input == "Paper" %>
+                            <img src="/img/human_paper.gif" alt="Human Paper Gif" height="400" width="400"/>
+                            <% elsif @game.player_input == "Scissors" %>
+                            <img src="/img/human_scissor.gif" alt="Human Scissor gif" height="400" width="400"/>
+                            <%else%>
+                            <img src="/img/human_hand.png" alt="Human hand png" height="400" width="400"/>
+                            <% end %>
+                        </div>
+
+                        <div class="col-md-2 centered">
+                          <div class="row">
+                            <% if @result == "" %>
+                            <h4>Choose between Rock,paper,scissor</h4>
+                        <% else %>
+                            <h4>
+                                <%= @result %>
+                            </h4>
+                            <% end %>
+                          </div>
+                          <br>
+                          <div class="row">
+                            <h5> <%= @player_name.name %> : <%= @user_score %> </h5>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <h5> Computer : <%= @computer_score %> </h5>
+                      </div>
+                        </div>
+
+                        <div class="col-md-5 centered">
+                            <% if @game.computer_input == "Rock" %>
+                            <img src="/img/robot_rock.gif" alt="Robot Rock Gif" height="400" width="400"/>
+                            <% elsif @game.computer_input == "Paper" %>
+                            <img src="/img/robot_paper.gif" alt="Robot Paper Gif" height="400" width="400"/>
+                            <% elsif @game.computer_input == "Scissors" %>
+                            <img src="/img/robot_scissor.gif" alt="Robot Scissor gif" height="400" width="400"/>
+                            <%else%>
+                            <img src="/img/robot_hand.png" alt="Robot hand png" height="400" width="400"/>
+                            <% end %>
+                        </div>
+                    </div>
+
+                </div>
+            </body>

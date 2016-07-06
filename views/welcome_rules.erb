@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-color:lightgrey;">
+        <div class="container">
+            <div class="col-md-12 centered">
+                <div class="span12" align="center">
+                    <h1>
+                      Welcome to the game
+                        <%= @player_name.name %>
+                    </h1>
+                </div>
+
+                <div class="span12" align="center">
+                    <h2>
+                        Rules for the Game are:
+                        <h2>
+
+                            <div class="span12" align="center">
+                                <img src="https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/003/357/original/rock-paper-scissors.png" alt="Rock kills Scissors, Scissors kill Paper, Paper kills Rock" height="500" width="500"/>
+                            </div>
+                            <div class="span12" align="center">
+                                <form action='/attack' method='post'>
+                                    <input type='submit' value='Start Game'>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </body>
