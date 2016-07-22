@@ -1,5 +1,5 @@
 <body class="play_page">
-  <%= @game.player.name %> vs. bot
+  <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
   <br><br>
   Choose a weapon...
   <br><br>
@@ -13,8 +13,8 @@
 
 
   <section class="battle_results">
-    <% if @game.player.weapon %>
-      <%= @game.player.name %> chose <%= @game.player.weapon %>
+    <% if @game.player_1.weapon %>
+      <%= @game.player_1.name %> chose <%= @game.player_1.weapon %>
     <% end %>
   </section>
 </body>

@@ -12,7 +12,8 @@ class Rps < Sinatra::Base
 
   post '/names' do
     player_1 = Player.new(params[:player_1_name])
-    @game = Game.create(player_1)
+    player_2 = Ai.new
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -21,7 +22,7 @@ class Rps < Sinatra::Base
   end
 
   post '/battle' do
-    @game.player.weapon = params[:weapon]
+    @game.player_1.weapon = params[:weapon]
     redirect '/play'
   end
 
