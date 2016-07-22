@@ -5,6 +5,7 @@ require './app.rb'
       visit ('/')
       fill_in "players_name", with: "Pip"
       click_button "Submit!"
+      expect(page).to have_text "Welcome Pip"
     end
 
 end

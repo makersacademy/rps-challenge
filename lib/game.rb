@@ -2,14 +2,14 @@ require_relative 'player'
 
 class Game
 
-attr_reader :players_name
+attr_reader :player
 
-  def initialize(players_name)
-    @players_name = players_name
+  def initialize(player)
+    @player = player
   end
 
-  def self.create(players_name)
-    @game = Game.new(players_name)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
