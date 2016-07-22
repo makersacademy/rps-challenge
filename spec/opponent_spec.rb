@@ -11,7 +11,7 @@ describe "#random_option" do
   srand(0)
   expect(opponent.option).to eq "Rock"
   end
-
+#
 end
 
 end
