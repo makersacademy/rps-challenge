@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "./lib/player.rb"
+require "./lib/game.rb"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -17,6 +18,15 @@ class RPS < Sinatra::Base
   get "/play" do
     @game = $game
     erb(:play)
+  end
+
+  post "/option" do
+    @option = params[:option]
+    redirect "/result"
+  end
+
+  get "/result" do
+    "You chose Rock!"
   end
 
 
