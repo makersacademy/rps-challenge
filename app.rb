@@ -10,7 +10,8 @@ enable :sessions
   end
 
   post '/name' do
-    @game = Game.create(params[:player])
+    player = Player.new(params[:player])
+    @game = Game.create(player)
     redirect '/play'
   end
 
@@ -20,6 +21,21 @@ enable :sessions
 
   get '/play' do
     erb :play
+  end
+
+  post '/rock' do
+    @game.rock
+    redirect '/selection'
+  end
+
+  post '/paper' do
+    @game.paper
+    redirect '/selection'
+  end
+
+  post '/scissors' do
+    @game.scissors
+    redirect '/selection'
   end
 
   get '/selection' do

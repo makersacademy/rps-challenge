@@ -1,13 +1,12 @@
 require 'game'
 
 describe Game do
-
-  let(:player_name){double :player_name}
-  subject(:game){described_class.new(player_name)}
+  let(:player){double :player}
+  subject(:game){described_class.new(player)}
 
   context '#initialize' do
     it 'creates a new player' do
-      expect(subject.player).to be_an_instance_of(Player)
+      expect(game.player).to eq player
     end
   end
 end
