@@ -1,1 +1,10 @@
-<%= @player.name %>
+<h1><%= @game.player.name %>, choose your weapon...</h1>
+<form action="/battle" method="post">
+  <input type="submit" name="weapon" value="Rock">
+  <input type="submit" name="weapon" value="Paper">
+  <input type="submit" name="weapon" value="Scissors">
+</form>
+
+<% if @game.player.weapon %>
+  <h2>You chose <%= @game.player.weapon %></h2>
+<% end %>
