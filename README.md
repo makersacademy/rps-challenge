@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/grmillsy1/rps-challenge.svg?branch=master)](https://travis-ci.org/grmillsy1/rps-challenge)
+
 # RPS Challenge: Rōnin Badge Test
 
 Instructions

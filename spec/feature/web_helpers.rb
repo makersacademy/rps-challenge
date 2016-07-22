@@ -1,4 +1,3 @@
-
 def sign_in
   visit ('/')
   fill_in "players_name", with: "Pip"
