@@ -14,7 +14,7 @@
 
   <section class="battle_results">
     <% if @game.player.weapon %>
-      You chose <%= @game.player.weapon %>
+      <%= @game.player.name %> chose <%= @game.player.weapon %>
     <% end %>
   </section>
 </body>
