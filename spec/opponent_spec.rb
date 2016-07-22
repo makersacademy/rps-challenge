@@ -6,12 +6,12 @@ describe Opponent do
 
 describe "#random_option" do
 
-  it  "checks that choice is a random" do
+  it  "checks that choice is a random choice" do
   sign_in
   srand(0)
   expect(opponent.option).to eq "Rock"
   end
-#
+
 end
 
 end

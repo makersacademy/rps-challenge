@@ -8,4 +8,3 @@ class Opponent
   end
 
 end
-#

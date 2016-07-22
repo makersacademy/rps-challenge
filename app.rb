@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
     session[:player_name] = (params[:player_name]).capitalize
     redirect '/play'
   end
-#
+
   get '/play' do
     @player_name = session[:player_name]
     erb :play
