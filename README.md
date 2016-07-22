@@ -1,4 +1,4 @@
-# RPS Challenge: Rōnin Badge Test
+# RPS Challenge
 
 Instructions
 -------
@@ -42,7 +42,6 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
-**Rōnin BANZAI!!!!**
 
 ## Bonus level 1: Multiplayer
 
