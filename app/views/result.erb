@@ -1,4 +1,10 @@
-<!-- if rock paper or scissors: -->
-You chose <%= @weapon %>
-<!-- else:  -->
-<!-- Sorry <%= @weapon %> is not a valid weapon. Please go back and enter rock, paper or scissors -->
+
+<% if @weapon.valid? %>
+
+  You chose <%= @weapon.player_choice %>
+
+<% else %>
+
+Sorry, <%= @weapon.player_choice %> is not a valid weapon. Please go back and enter rock, paper or scissors.
+
+<%end%>

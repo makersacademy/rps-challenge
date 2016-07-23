@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/weapon.rb'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -7,12 +8,11 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @name = params[:name]
-    @weapon = params[:weapon]
     erb(:play)
   end
 
   post '/result' do
-    @weapon = params[:weapon]
+    @weapon = Weapon.new(params[:weapon])
     erb(:result)
   end
 
