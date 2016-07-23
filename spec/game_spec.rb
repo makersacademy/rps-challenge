@@ -16,13 +16,17 @@ describe Game do
       before do
         allow(game).to receive(:random_weapon).and_return "paper"
       end
-#      it "player wins with scissors" do
-#        player.take_weapon('scissors')
-#        expect(game.winner).to eq player.name
-#      end
+      it "player wins with scissors" do
+        player.take_weapon "scissors"
+        expect(game.start).to eq "#{player.name} wins!"
+      end
       it "can be a draw" do
-        player.take_weapon('paper')
-        expect(game.winner).to eq "Draw!"
+        player.take_weapon "paper"
+        expect(game.start).to eq "It's a draw!"
+      end
+      it "player loses with rock" do
+        player.take_weapon "rock"
+        expect(game.start).to eq "#{player.name} lost!"
       end
 
     end

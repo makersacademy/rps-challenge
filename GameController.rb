@@ -9,7 +9,8 @@ class GameController < Sinatra::Base
   end
 
   post '/name' do
-    $player1 = Player.new(params[:player_name])
+    @player1 = Player.new(params[:player_name])
+    $game = Game.new(@player1)
     erb(:game)
   end
 
@@ -18,7 +19,7 @@ class GameController < Sinatra::Base
   end
 
   post '/fight' do
-    $player1.take_weapon(params[:weapon])
+    $game.player.take_weapon(params[:weapon])
     erb(:fight)
   end
 

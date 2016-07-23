@@ -1,4 +1,6 @@
-<%= $player1.name %> takes <%= $player1.weapon %>
+<%= $game.player.name %> takes <%= $game.player.weapon %><br><br>
+<%= $game.start %><br><br>
+Opponent takes <%= $game.cpu_weapon %><br><br>
 <form action="/game" method="get">
   <input type="submit" value="Try again!">
 </form>

@@ -9,22 +9,30 @@ class Game
       @weapons = ["rock", "paper", "scissors"]
     end
 
-    def winner
+    def start
+      @cpu_weapon = random_weapon
       fight
     end
-
-    private
 
     def random_weapon
       @weapons.sample
     end
 
+    private
+
     def fight
-      @cpu_weapon = random_weapon
+
+      game_pair = [@player.weapon, @cpu_weapon]
+      win_pair = [["scissors", "paper"],
+                  ["paper", "rock"],
+                  ["rock", "scissors"]]
+
       if @player.weapon == @cpu_weapon
-        "Draw!"
+        "It's a draw!"
+      elsif win_pair.include?(game_pair)
+        "#{@player.name} wins!"
       else
-        return @cpu_weapon
+        "#{@player.name} lost!"
       end
     end
 
