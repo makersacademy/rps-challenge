@@ -15,17 +15,40 @@
 
           <h1>Rock Paper Scissors</h1>
           <h2>Hello <%= @game.player_1.name %>!</h2>
+          <p>
+            Welcome to the game of Rock, Paper, Scissors. You will be playing against the computer. Please make your selection and click 'Submit'.
+          </p>
+          <p>
+            Good luck!
+          </p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12">
-
-          <form action="/names" method="post">
-            <div class="form-group">
-
-            <br>
+          <form method="post">
+            <div class="form-group" id="div_radio">
+              <label class="control-label " for="radio">
+               Choose your weapon
+              </label>
+              <div class="">
+               <label class="radio-inline">
+                <input name="radio" type="radio" value="Rock"/>
+                Rock
+               </label>
+               <label class="radio-inline">
+                <input name="radio" type="radio" value="Paper"/>
+                Paper
+               </label>
+               <label class="radio-inline">
+                <input name="radio" type="radio" value="Scissors"/>
+                Scissors
+               </label>
+              </div>
+            </div>
+             <div class="form-group">
               <input type="submit" value="Submit" class="btn btn-default"><i class="fa-arrow-right"></i>
+            </div>
           </form>
 
         </div>
