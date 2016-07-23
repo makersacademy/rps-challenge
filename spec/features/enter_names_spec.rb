@@ -8,4 +8,5 @@ feature 'Enter names' do
 		expect(page).to have_content "Welcome Player 1: Sam!"
 		expect(page).to have_content "Welcome Player 2: Darth Vader!"
 	end	
+
 end
