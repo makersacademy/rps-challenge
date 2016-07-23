@@ -1,14 +1,19 @@
 require 'sinatra/base'
 
-class App < Sinatra::Base
+class GameController < Sinatra::Base
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    @name = params[:player_name]
+    $player_name = params[:player_name]
     erb(:game)
+  end
+
+  post '/fight' do
+    @player_weapon = params[:weapon]
+    erb(:fight)
   end
 
   # start the server if ruby file executed directly

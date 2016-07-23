@@ -1,1 +1,6 @@
-Player: <%= @name %>
+Player: <%= $player_name %> <br>
+<form action="/fight" method="post">
+  <button name="weapon" type="submit" value="rock">ROCK</button> <br>
+  <button name="weapon" type="submit" value="paper">PAPER</button> <br>
+  <button name="weapon" type="submit" value="scissors">SCISSORS</button>
+</form>
