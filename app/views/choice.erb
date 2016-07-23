@@ -1,0 +1,16 @@
+
+<% if @weapon.valid? %>
+
+<h1>  You chose <%= @weapon.player_choice %> </h1>
+  <br />
+  <br />
+
+  <form action = '/result' method = 'post'>
+    <input type="submit" value="Click here to see who won!">
+  </form>
+
+<% else  %>
+
+Sorry, <%= @weapon.player_choice%> is not a valid weapon. Please go back and enter rock, paper or scissors.
+
+<%end%>

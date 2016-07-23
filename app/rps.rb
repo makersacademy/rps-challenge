@@ -11,8 +11,12 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
+  post '/choice' do
     @weapon = Weapon.new(params[:weapon])
+    erb(:choice)
+  end
+
+  post '/result' do
     erb(:result)
   end
 
