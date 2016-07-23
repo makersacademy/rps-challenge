@@ -1,13 +1,13 @@
 class Ai
   attr_reader :name
-  attr_reader :weapon
+  attr_accessor :weapon
 
   def initialize
     @name = [:Jarvis, :TARS, :HAL, :R2D2, :T1000].sample
-    @weapons = [:Rock, :Paper, :Scissors]
+    @weapons = ["Rock", "Paper", "Scissors"]
   end
 
-  def set_weapon
+  def get_weapon
     @weapon = @weapons.sample
   end
 end

@@ -23,6 +23,7 @@ class Rps < Sinatra::Base
 
   post '/battle' do
     @game.player_1.weapon = params[:weapon]
+    @game.player_2.weapon = @game.player_2.get_weapon
     redirect '/play'
   end
 
