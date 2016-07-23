@@ -7,7 +7,7 @@ class Ai
     @weapons = ["Rock", "Paper", "Scissors"]
   end
 
-  def get_weapon
+  def choose_weapon
     @weapon = @weapons.sample
   end
 end
