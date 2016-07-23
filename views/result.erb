@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900,900italic,400italic' rel='stylesheet' type='text/css'>
+<head>
+  <style>
+  body {text-align: center; font: 20px bold; line-height: 2em;
+        font-family: 'Lato', Arial, Helvetica;
+        background: #fafafa;
+        letter-spacing: 0.2em}
+  * {border: 0px; padding: 0px; margin: 0px; color: #4a4a4a}
+  header {font-size: 24px; margin-top: 60px; margin-bottom: 140px;}
+  .title {font-size: 34px; border-bottom: 2px solid #4b4b4b; color: #2b2b2b; line-height: 80px;
+        font-weight: bold;
+        font-style: italic;}
+  .drumroll {font-style: italic;}
+  .options {font: 16px bold 'Lato', arial, Helvetica;
+            line-height: 4em;}
+  .button {font: 18px bold 'Lato', arial, Helvetica;
+           width: 160px; height: 60px;
+           background: #9d979a;
+           border-radius: 3px;
+           cursor: pointer;
+           margin-top: 12px;
+           color: #fafafa;
+           letter-spacing: 0.2em;
+           text-decoration: none;
+           padding: 18px;
+           }
+  .button:hover {background: #fafafa; color: #9d979a; border: 2px solid #9d979a;}
+  #text_input {background: #4ad5f8; color: #fafafa;
+               padding: 0px !important;
+               padding-top: 4px; padding-bottom: 4px;
+               height: 40px; text-align: center; border-radius: 3px; letter-spacing: 0.1em;
+               width: 160px;}
+  #text_input:focus {background: #fafafa; color: #4ad5f8; outline: none;}
+  .again {margin-top: 40px;}
+  #the_winner {font-weight: bold;}
+  section {margin-top: -80px;}
+  </style>
+</head>
+<body>
+  <header>
+    <span class="title">THE RPS GAME</span>
+    <br>
+    Makers Accademy Weekend Challenge
+  </header>
+  <section>
+    YOUR CHOICE : <%= @game.player_choice.upcase %>
+    <br>
+    <p id="opponent_choice">THE INTERNET'S CHOICE : <%= @game.internet_choice.upcase %></p>
+      <br>
+      <span class="drumroll">THE WINNER IS...</span>
+      <br>
+    <p id="the_winner"><%= @game.the_winner %></p>
+  </section>
+  <p class="again">
+    <a href="/play" class="button">PLAY AGAIN?</a>
+  </p>
+</body>
+</html>
