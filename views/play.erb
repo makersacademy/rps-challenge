@@ -1,9 +1,18 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Sarpanch|" rel="stylesheet">
+</head>
+
+<body>
+
 <h1><%= $game.player %> vs Computer!!</h1>
 
+<h2>Pick your poison...</h2>
+
 <form action="/options" method="post">
-  <input type="submit" value="Rock" name="choice" style = "margin-top: 15px;">
-  <input type="submit" value="Paper" name="choice" style = "margin-top: 15px;">
-  <input type="submit" value="Scissors" name="choice" style = "margin-top: 15px;">
+  <input type="image" src="rock.png" value="Rock" name="choice">
+  <input type="image" src="paper.png" value="Paper" name="choice">
+  <input type="image" src="scissors.png" value="Scissors" name="choice">
 </form>
 
-<h1><%= $game.choice %></h1>
+</body>
