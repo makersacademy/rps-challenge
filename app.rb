@@ -23,8 +23,14 @@ enable :sessions
   end
 
   get '/play_object' do
-    @player_1_object = session[:RPSRadio]
-    erb :play_object
+    @player_1_weapon = session[:RPSRadio]
+    erb :play_weapon
+  end
+
+  post '/AI_turn' do
+    @player_1_weapon = session[:RPSRadio]
+    @player_1_name = session[:player_1_name]
+    erb :AI_turn
   end
 
   # start the server if ruby file executed directly

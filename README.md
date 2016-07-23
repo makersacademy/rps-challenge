@@ -14,25 +14,21 @@ I would like to be able to play rock/paper/scissors
 
 ## Expanded user stories
 
-As a marketeer
+<!-- As a marketeer
 So that I can see my name in lights
-I would like to register my name before playing an online game
+I would like to register my name before playing an online game -->
 
-As a marketeer
+<!-- As a marketeer
 So that I can see my options
-I would like to be given a choice of either Rock, Paper or Scissors when playing the game
+I would like to be given a choice of either Rock, Paper or Scissors when playing the game -->
 
-As a marketeer
+<!-- As a marketeer
 So that I can choose which object to play
-I would like to be able to select one of either Rock, Paper or scissors
-
-As a marketeer
-So that I can play the object I have chosen
-I would like to be able to confirm my selection of Rock, Paper or Scissors
+I would like to be able to select and confirm one of either Rock, Paper or scissors -->
 
 As a marketeer
 So that I can play the game
-I would like to have a computer opponent to play against that will chose either Rock, Paper or scissors
+I would like to have a computer opponent to play against that will choose either Rock, Paper or Scissors
 
 As a marketeer
 Once I have played my chosen object
