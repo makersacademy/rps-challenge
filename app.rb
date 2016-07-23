@@ -3,9 +3,7 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
-  before do
-    @game = Game.instance
-  end
+  before {@game = Game.instance}
 
   get '/' do
     erb :index
@@ -24,11 +22,11 @@ class RPS < Sinatra::Base
   post '/battle' do
     @game.player.weapon = params[:weapon]
     @game.npc_chooses_weapon
-    @game.calculate_score
     redirect '/result'
   end
 
   get '/result' do
+    @game.calculate_score
     erb :result
   end
 
