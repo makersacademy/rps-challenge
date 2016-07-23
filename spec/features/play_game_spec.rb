@@ -1,3 +1,5 @@
+STUBBED_SELECTION = 3
+
 feature 'Play the Game' do
   scenario 'shows players how to play the game' do
     sign_in_and_play
@@ -22,15 +24,11 @@ feature 'Player chooses an option' do
   end
 end
 
-feature 'Computer choosing an option' do
-  scenario 'Computer chooses an option to play against player' do
+feature 'Computer chooses a random option' do
+  scenario 'random option chosen by computer' do
+    srand(STUBBED_SELECTION)
     sign_in_and_play
-    click_button 'Rock'
-    expect(page).to have_content 'Computer has chosen Rock'
+    click_button 'Scissors'
+    expect(page).to have_content 'Computer has chosen Scissors'
   end
 end
-
-
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
