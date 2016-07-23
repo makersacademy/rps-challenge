@@ -3,11 +3,5 @@
   <input type="radio" name="weapon" value="rock"  id='rock'>Rock<br>
   <input type="radio" name="weapon" value="paper" id='paper'>Paper<br>
   <input type="radio" name="weapon" value="scissors" id='scissors'>Scissors<br>
-  <input type="submit" value="Let's go!">
+  <input type="submit" class="btn"  value="Let's go!">
 </form>
-
-<% if @game.player.weapon %>
-  <h2>You chose <%= @game.player.weapon %><h2>
-  <h2>The computer chose <%= @game.npc_choice %><h2>
-  <h1><%= @game.result %></h1>
-<% end %>

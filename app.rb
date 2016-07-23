@@ -24,7 +24,11 @@ class RPS < Sinatra::Base
   post '/battle' do
     @game.player.weapon = params[:weapon]
     @game.npc_chooses_weapon
-    redirect '/play'
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly
