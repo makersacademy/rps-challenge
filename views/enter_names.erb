@@ -1,0 +1,11 @@
+There are <%= @players %> players
+
+<h3>PLEASE ENTER YOUR NAME(S):</h3>
+<form action="/names" method="post">
+	<input type="text" name="player_1" value="Player 1"/>
+<% if @players.to_i > 1 %>
+	<br><input type="text" name="player_2" value="Player 2"/>
+<%	end %>
+	<input type="submit" value="Submit">
+</form>
+

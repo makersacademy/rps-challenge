@@ -1,7 +1,21 @@
-Welcome <%= @game.player_1.get_name %>!
+<h3>Welcome Player 1: <%= @game.player_1.get_name %>!</h3>
+<%= @game.player_2.get_name %>
+<% if @game.player_2.get_name != "Computer" %>
+<h3>Welcome Player 2: <%= @game.player_2.get_name %>!</h3>
+<% end %>
+
+Player 1: Choose your weapon!
 
 <form action="/choose_weapon" method="post">
-<button type="submit" name="chosen_weapon" value="Rock">Rock</button>
-<button type="submit" name="chosen_weapon" value="Paper">Paper</button>
-<button type="submit" name="chosen_weapon" value="Scissors">Scissors</button>
+
+<button type="submit" name="chosen_weapon_1" value="Rock">Rock</button>
+<button type="submit" name="chosen_weapon_1" value="Paper">Paper</button>
+<button type="submit" name="chosen_weapon_1" value="Scissors">Scissors</button>
+<% if @game.player_2.get_name != "Computer" %>
+Player 2: Choose your weapon!
+
+<button type="submit" name="chosen_weapon_1" value="Rock">Rock</button>
+<button type="submit" name="chosen_weapon_1" value="Paper">Paper</button>
+<button type="submit" name="chosen_weapon_1" value="Scissors">Scissors</button>
+<% end %>
 </form>

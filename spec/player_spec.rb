@@ -14,14 +14,14 @@ describe Player do
 
 	context '#choose_weapon' do
 
-		it "can choose a weapon" do
+		it "can choose a specified weapon" do
 			player.choose_weapon(weapon: weapon)
-			expect(player.get_weapon).to eq weapon
+			expect(player.get_weapon.get_type).to eq weapon
 		end
 		it "chooses a random weapon if none supplied" do
 			player.choose_weapon
 			allow(Kernel).to receive(:rand).and_return(0)
-			expect(player.get_weapon).to eq "Rock"
+			expect(["Rock", "Paper", "Scissors"]).to include player.get_weapon.get_type
 		end
 	end
 end

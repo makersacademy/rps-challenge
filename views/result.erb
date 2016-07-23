@@ -1,2 +1,12 @@
+<h3><%= @game.player_1.get_name %> chose <%= @game.player_1.get_weapon.get_type %>!
+<br>
+<%= @game.player_2.get_name %> chose <%= @game.player_2.get_weapon.get_type %>!</h3>
+<% if @game.winner.nil? %>
+<h2>The game is a tie!</h2>
+<%else%>
+<h2><%= @game.winner.get_weapon.get_type %> beats <%= @game.loser.get_weapon.get_type %>! <%= @game.winner.get_name %> wins!</h2>
+<%end%>
 
-<h2><%= @game.player_1.get_name %> chose <%= @game.player_1.get_weapon %>!</h2>
+<form action="/play" method="get">
+<button type="submit">Play again?</button>
+</form>

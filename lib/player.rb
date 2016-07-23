@@ -1,12 +1,13 @@
-class Player
+require_relative 'weapon'
 
-	WEAPONS = ["Rock", "Paper", "Scissors"]
+class Player
 
 private
 	attr_reader :name, :weapon
 public
 
-	def initialize name: "Computer"
+	def initialize name: nil
+		name ||= "Computer"
 		@name = name
 	end
 
@@ -14,8 +15,8 @@ public
 		@name
 	end
 
-	def choose_weapon weapon: WEAPONS[Kernel.rand(0..2)]
-		@weapon = weapon
+	def choose_weapon weapon: nil
+		@weapon = Weapon.new(type: weapon)
 	end
 
 	def get_weapon

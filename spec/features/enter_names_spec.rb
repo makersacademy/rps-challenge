@@ -1,8 +1,11 @@
 feature 'Enter names' do
-	scenario 'allows user to enter and view their name' do
-		visit '/'
-		fill_in "player_1", with: "Sam"
-		click_button "Submit"
-		expect(page).to have_content "Welcome Sam!"
+	scenario 'allows 1 user to enter and view their name' do
+		sign_in_and_play_1_player
+		expect(page).to have_content "Welcome Player 1: Sam!"
+	end	
+	scenario 'allows 2 users to enter and view their names' do
+		sign_in_and_play_2_player
+		expect(page).to have_content "Welcome Player 1: Sam!"
+		expect(page).to have_content "Welcome Player 2: Darth Vader!"
 	end	
 end

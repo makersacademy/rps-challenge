@@ -12,9 +12,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
+  get '/enter_names' do
+    @players = params[:players]
+    erb(:enter_names)
+  end 
+
   post '/names' do
-  	player_1 = Player.new(name: params[:player_1])
-    @game = Game.create(player_1: player_1)
+    player_1 = Player.new(name: params[:player_1])
+  	player_2 = Player.new(name: params[:player_2])
+    @game = Game.create(player_1: player_1, player_2: player_2)
     redirect '/play'
   end
 
@@ -24,8 +30,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choose_weapon' do
-    @game.player_1.choose_weapon(weapon: params[:chosen_weapon])
-    @game.player_2.choose_weapon
+    @game.player_1.choose_weapon(weapon: params[:chosen_weapon_1])
+    @game.player_2.choose_weapon(weapon: params[:chosen_weapon_2])
     redirect '/result'
   end
 
