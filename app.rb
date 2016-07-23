@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
   post '/battle' do
     @game.player.weapon = params[:weapon]
     @game.npc_chooses_weapon
+    @game.calculate_score
     redirect '/result'
   end
 

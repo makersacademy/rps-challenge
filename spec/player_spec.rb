@@ -17,4 +17,10 @@ describe Player do
     end
   end
 
+  describe '#score' do
+    it 'keeps track of the players score' do
+      
+    end
+  end
+
 end

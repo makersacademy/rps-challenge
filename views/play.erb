@@ -5,3 +5,15 @@
   <input type="radio" name="weapon" value="scissors" id='scissors'>Scissors<br>
   <input type="submit" class="btn"  value="Let's go!">
 </form>
+
+<% if @game.npc_score %>
+  <div class="score_section">
+    <div class="score_title">
+      Scores
+    </div>
+    <div class="scores"></div>
+      You: <%= @game.player.score %><br>
+      Computer: <%= @game.npc_score %>
+    </div>
+  </div>
+<% end %>

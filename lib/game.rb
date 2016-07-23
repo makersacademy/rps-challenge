@@ -2,7 +2,9 @@ require './lib/player'
 
 class Game
 
-  attr_reader :player, :npc_choice, :combos
+  A_POINT = 1
+
+  attr_reader :player, :npc_choice, :combos, :npc_score
   attr_accessor :weapon
 
   def self.create(name)
@@ -29,6 +31,22 @@ class Game
     combo << @player.weapon[0] + @npc_choice[0]
     result = @combos[combo.to_sym].to_s.upcase
     result == 'WIN' || result == 'LOSE' ? "YOU #{result}!" : "IT'S A DRAW!"
+  end
+
+  def calculate_score
+    @npc_score ||= 0
+    @player.score += A_POINT if win?
+    @npc_score += A_POINT if lose?
+  end
+
+  private
+
+  def win?
+    result == "YOU WIN!"
+  end
+
+  def lose?
+    result == "YOU LOSE!"
   end
 
 end
