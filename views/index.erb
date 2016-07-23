@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <header>
-    <title>Rock Paper Scissors: Enter Name</title>
-  </header>
-  <body>
-    <h1>Welcome to Rock Paper Scissors</h1>
-    <h2>Enter your name to start playing...</h2>
-    <form action="/name" method="post">
-      <label>
-        Name:
-        <input type="text" name="Name"  />
-      </label>
-      <input type="submit" value="Play"  />
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container container-table">
+  <div class="vertical-center-row">
+    <h2>Welcome to Rock Paper Scissors</h2>
+    <p>Enter your name to start playing...</p>
+    <form class="form-inline" action="/name" method="post">
+      <div class="form-group">
+        <label class="sr-only" for="Name">Name:</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox"> Play multiplayer</label><br />
+        <label><input type="checkbox"> Play computer</label>
+      </div>
+      <button type="submit" class="btn btn-default">Play</button>
     </form>
-  </body>
+  </div>
+</div>
+
+</body>
 </html>

@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
-<header>
-  <title>Welcome to Rock Paper Scissors</title>
-</header>
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
 <body>
-  <h1>Welcome <%= @game.player_1.name %></h1>
+
+<div class="container container-table">
+  <div class="vertical-center-row">
+    <h2>Welcome <%= @game.player_1.name.capitalize %>, to Rock Paper Scissors</h2>
+    <p>Select your hand...Good luck :)</p>
+  </div>
+</div>
+
 </body>
 </html>

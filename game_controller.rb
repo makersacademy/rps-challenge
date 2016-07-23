@@ -12,7 +12,7 @@ class GameController < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:Name])
+    @player = Player.new(params[:name])
     @game = Game.create(@player)
     redirect '/play'
   end
