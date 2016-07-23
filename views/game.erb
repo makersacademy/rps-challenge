@@ -1,2 +1,12 @@
 <%=@player_1_name %> has chosen <%=@weapon%>
 <p>Machine has chosen <%=@machine%></p>
+<p>
+  <% if @game.winner == 'Draw'%>
+    It's a draw, play again!
+  <% else %>
+    <%=@game.winner%> has won
+  <% end %>
+</p>
+<form action="/play" method="get">
+    <input type="submit" value="Play Again">
+</form>

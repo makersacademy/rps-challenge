@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/machine'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -9,20 +10,23 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    @game = Game.game(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    #session[:weapon] = params[:weapon]
+    @game = Game.instance
+    @player_1_name = @game.player.name
     erb :play
   end
 
   post '/game' do
-    @player_1_name = session[:player_1_name]
+    @game = Game.instance
+    @player_1_name = @game.player.name
     @weapon = params[:weapon]
-    @machine = Machine.new.choose_weapon
+    @machine = @game.machine.weapon
+    @game.weapon_assign(@weapon)
+    @game.claim_victory(params[:weapon])
     erb :game
   end
 
