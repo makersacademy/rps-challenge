@@ -23,7 +23,6 @@ class RPS < Sinatra::Base
 
   post '/battle' do
     @game.player.weapon = params[:weapon]
-    p "ERROR: #{@game.player.weapon} #{params[:weapon]}"
     redirect '/play'
   end
 
