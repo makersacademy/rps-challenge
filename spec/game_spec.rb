@@ -7,4 +7,14 @@ describe Game do
   let(:player_2) { double :computer, select_weapon: :paper }
 
 
+  xit 'knows if a player has won' do
+    game.play
+    expect(game.winner).to eq player_2
+  end
+
+  xit 'knows it a player has lost' do
+    game.play
+    expect(game.loser).to eq player_2
+  end
+
 end
