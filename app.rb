@@ -23,10 +23,9 @@ class RPS < Sinatra::Base
 
   post '/battle' do
     @game.player.weapon = params[:weapon]
+    @game.npc_chooses_weapon
     redirect '/play'
   end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
