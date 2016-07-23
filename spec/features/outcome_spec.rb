@@ -2,7 +2,7 @@ describe 'Outcome page' do
   scenario 'displays the outcome of the battle' do
     sign_in_and_play
     click_button "I was born ready"
-    click_button "Yes, I'm sure"
+    click_button "Feeling pretty confident right now"
     click_button "..."
     expect(page).to have_content "You"
   end
@@ -10,7 +10,7 @@ describe 'Outcome page' do
   scenario 'after seeing outcome, return to first page on click' do
     sign_in_and_play
     click_button "I was born ready"
-    click_button "Yes, I'm sure"
+    click_button "Feeling pretty confident right now"
     click_button "..."
     click_button "I want some more!"
     expect(page).to have_content "Enter names"
