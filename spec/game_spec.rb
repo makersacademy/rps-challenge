@@ -24,9 +24,11 @@ describe Game do
     end
   end
 
-  describe '#result' do
-    it 'confirms player as the winner' do
+  context '#result' do
+    describe 'player wins' do
+      it 'confirms player as the winner' do
       expect(game.winner?).to be true
+      end
     end
   end
 end

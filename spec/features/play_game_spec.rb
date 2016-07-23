@@ -34,11 +34,25 @@ feature 'Computer chooses a random option' do
 end
 
 feature 'Confirms a winner' do
-  scenario 'I choose Rock, computer chooses Scissors, I win' do
+  scenario 'Player wins' do
     srand(STUBBED_SELECTION)
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Joe wins!!'
+  end
+
+  scenario 'Computer wins' do
+    srand(STUBBED_SELECTION)
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Computer wins!!'
+  end
+
+  scenario 'Draw' do
+    srand(STUBBED_SELECTION)
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content 'Draw!!'
   end
 end
 

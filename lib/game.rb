@@ -18,6 +18,14 @@ class Game
     result == 'Win'
   end
 
+  def loser?
+    result == 'Lose'
+  end
+
+  def draw?
+    result == 'Draw'
+  end
+
   def result
     return if @computer_selection.nil?
     RULES[@player_selection][@computer_selection]
