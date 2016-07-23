@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/machine'
 
 class Rock_paper_scissors < Sinatra::Base
 
@@ -23,8 +24,17 @@ class Rock_paper_scissors < Sinatra::Base
   post '/game_on' do
     $selected_object = params[:rps]
     @selected_object = $selected_object
+    $machine = Machine.new
+    @machine = $machine
     erb :game_on
   end
+
+  # get '/randomness' do
+  #   $machine = Machine.new
+  #   @machine = $machine
+  #   redirect '/game_on'
+  # end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
