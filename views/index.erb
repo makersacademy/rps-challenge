@@ -1,0 +1,38 @@
+<html >
+  <head>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Jquery UI  -->
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/redmond/jquery-ui.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well text-center">
+            <img class=" img img-responsive center-block" alt="Logo" src="img/rps_logo.png">
+          </div>
+          <!-- <h1 ><strong>Rock, Paper, Scessiors!</strong></h1> -->
+          <h3>Enter Your Name :</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/names" method="post">
+            <div class="form-group">
+              <label for="player_1_name">Player #1 name : </label><input type="text" name="player_1_name" placeholder="Enter Player 1's name">
+            </div>
+            <p class="help-block">Click Submit after entering your names</p>
+
+            <br>
+            <input type="submit" value="Submit" class="btn btn-default"><i class="fa-arrow-right"></i>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
