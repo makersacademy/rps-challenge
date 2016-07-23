@@ -8,12 +8,12 @@ enable :sessions
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    $player_1 = Player.new(params[:player_1_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @player_1_name = $player_1.name
     erb :play
   end
 
@@ -29,7 +29,7 @@ enable :sessions
 
   post '/AI_turn' do
     @player_1_weapon = session[:RPSRadio]
-    @player_1_name = session[:player_1_name]
+    @player_1_name = $player_1.name
     erb :AI_turn
   end
 
