@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/machine'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -14,11 +15,14 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    #session[:weapon] = params[:weapon]
     erb :play
   end
 
   post '/game' do
     @player_1_name = session[:player_1_name]
+    @weapon = params[:weapon]
+    @machine = Machine.new.choose_weapon
     erb :game
   end
 
