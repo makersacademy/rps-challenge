@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= @player_1_name %> challenges the AI overlord to a game of Rock, Paper, Scissors!<br>
+    <form action="/choose_object" method="post">
+      <label for="Rock">
+        Rock
+        <input type="radio" name="RPSRadio" value="Rock" ID="Rock" >
+      </label>
+      <label for="Paper">
+        Paper
+      <input type="radio" name="RPSRadio"value="Paper" ID="Paper">
+      </label>
+      <label for="Scissors">
+        Scissors
+      <input type="radio" name="RPSRadio"value="Scissors" ID="Scissors">
+      </label>
+      <input type="submit" value="Select object">
+    </form>
+  </body>
+</html>
