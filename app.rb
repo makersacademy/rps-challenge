@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,14 +9,14 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
-    session[:player_2_name] = params[:player_2_name]
+    $player_1 = Player.new(params[:player_1_name])
+    $player_2 = Player.new(params[:player_2_name])
     redirect '/vs'
   end
 
   get '/vs' do
-    @player_1_name = session[:player_1_name]
-    @player_2_name = session[:player_2_name]
+    @player_1_name = $player_1.name
+    @player_2_name = $player_2.name
     erb(:vs)
   end
 
@@ -24,6 +25,8 @@ class RPS < Sinatra::Base
   end
 
   get '/action' do
+    @player_1_name = $player_1.name
+    @player_2_name = $player_2.name
     erb(:action)
   end
 
