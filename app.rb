@@ -3,6 +3,8 @@ require './lib/player'
 
 class Rock_paper_scissors < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -18,6 +20,11 @@ class Rock_paper_scissors < Sinatra::Base
     erb :play
   end
 
+  post '/game_on' do
+    $selected_object = params[:rps]
+    @selected_object = $selected_object
+    erb :game_on
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -13,8 +13,9 @@ might want to call sheer luck. </h3>
 
 
 
-<form>
-  <input type="radio" name="rsp" value="Rock" > Rock<br>
-  <input type="radio" name="rsp" value="Paper"> Paper<br>
-  <input type="radio" name="rsp" value="Scissors"> Scissors
+<form action="/game_on" method="post">
+  <label> <input type="radio" name="rps" value="Rock"/> Rock </label>
+  <label> <input type="radio" name="rps" value="Paper"/> Paper </label>
+  <label> <input type="radio" name="rps" value="Scissors"/> Scissors </label><br>
+  <br><input type="submit" value="Submit"/><br>
 </form>
