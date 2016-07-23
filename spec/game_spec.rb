@@ -13,4 +13,8 @@ describe Game do
   it 'player 1 can be passed to the game object' do
     expect(game.player_1.name).to eq 'Mannie'
   end
+
+  it 'lets player select a hand' do
+    expect{ game.player_1_selection('rock') }.to change{ game.selection }
+  end
 end

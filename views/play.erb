@@ -10,10 +10,37 @@
 </head>
 <body>
 
-<div class="container container-table">
-  <div class="vertical-center-row">
-    <h2>Welcome <%= @game.player_1.name.capitalize %>, to Rock Paper Scissors</h2>
-    <p>Select your hand...Good luck :)</p>
+<div class="container">
+  <h2>Welcome <%= @game.player_1.name.capitalize %>, to Rock Paper Scissors</h2>
+  <p>Select your hand...Good luck :)</p>
+  <% if !@game.selection.nil? %>
+  <p>You have selected: <%= @game.selection.capitalize %></p>
+  <% end %>
+  <div class="row">
+    <div class="col-md-3">
+      <form method="post" action="/selection" >
+          <input type="hidden" name="selection" value="rock"  />
+          <button type="submit" id="Rock" class="thumbnail">
+            <img src="images/rock.png" class="img-responsive" />
+          </button>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <form method="post" action="/selection" >
+          <input type="hidden" name="selection" value="paper"  />
+          <button type="submit" id="Paper" class="thumbnail">
+            <img src="images/paper.png" class="img-responsive" />
+          </button>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <form method="post" action="/selection" >
+          <input type="hidden" name="selection" value="scissors"  />
+          <button type="submit" id="Scissors" class="thumbnail">
+            <img src="images/scissors.png" class="img-responsive" />
+          </button>
+      </form>
+    </div>
   </div>
 </div>
 
