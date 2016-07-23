@@ -1,1 +1,7 @@
-<body> Welcome <%= @player_name %>! </body>
+<body>
+  <h1>Welcome <%= @player_name %>!</h1>
+  <h2>Please choose your weapon:</h2>
+  <form action="/choice" method="post">
+    <input type="submit" value="Rock">
+  </form>
+</body>
