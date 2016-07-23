@@ -4,10 +4,11 @@ class Player
 
   def initialize(name="Unnamed")
     @name = name
-    @weapon = []
+    @weapon = ""
   end
 
   def take_weapon(weapon_name)
-    @weapon << weapon_name
+    @weapon = weapon_name
   end
+
 end

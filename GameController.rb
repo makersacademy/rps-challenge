@@ -18,7 +18,7 @@ class GameController < Sinatra::Base
   end
 
   post '/fight' do
-    @player_weapon = params[:weapon]
+    $player1.take_weapon(params[:weapon])
     erb(:fight)
   end
 
