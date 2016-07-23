@@ -1,13 +1,9 @@
 <h1><%= $game.player %> vs Computer!!</h1>
 
-<form action="/rock" method="post">
-  <input type="submit" value="Rock" style = "margin-top: 15px;">
+<form action="/options" method="post">
+  <input type="submit" value="Rock" name="choice" style = "margin-top: 15px;">
+  <input type="submit" value="Paper" name="choice" style = "margin-top: 15px;">
+  <input type="submit" value="Scissors" name="choice" style = "margin-top: 15px;">
 </form>
 
-<form action="/paper" method="post">
-  <input type="submit" value="Paper" style = "margin-top: 15px;">
-</form>
-
-<form action="/scissors" method="post">
-  <input type="submit" value="Scissors" style = "margin-top: 15px;">
-</form>
+<h1><%= $game.choice %></h1>

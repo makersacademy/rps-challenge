@@ -17,8 +17,12 @@ get '/play' do
 end
 
 post '/options' do
-  $game.choice = params[:player_1_name]
-  redirect '/play'
+  $game.choice = params[:choice]
+  redirect '/result'
+end
+
+get '/result' do
+  erb :result
 end
 
 run! if app_file == $0
