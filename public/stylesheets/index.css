@@ -1,0 +1,72 @@
+body {
+  background-color: #f4e9d7;
+}
+
+.jumbotron {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  padding-top: 1rem;
+  background-color: #f4e9d7;
+  padding-left: 5rem;
+}
+
+.logo {
+  font-size: 6rem;
+  font-family: 'Hammersmith One', sans-serif;
+  padding: 3rem 0;
+}
+
+
+
+span {
+  color: #47e5c2;
+}
+
+.form-inline {
+  font-size: 1rem;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 13;
+  padding-right: 220px;
+  margin-right: 0.2rem;
+}
+
+button {
+  padding: 13px 25px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  color: #47e5c2;
+}
+
+.form-inline {
+  font-size: 1.2rem;
+}
+
+::-webkit-input-placeholder {
+   color: #c1c0b9;
+}
+
+img {
+  border-style: none;
+  width: 300px;
+  margin: 0 auto;
+  padding-left: 8rem;
+  padding-top: 1.6rem;
+}
+
+h1 {
+  padding: none;
+  margin: none;
+}
+
+button:hover {
+  transition: all 0.3s ease 0s;
+  background: #47e5c2;
+  color: white;
+}

@@ -1,8 +1,20 @@
-<div class="name_box">
-  <form class="name" action="/name" method="post">
-    <label for="name_box"> Please enter your name:
-      <input type="text" name="name">
-    </label>
-    <input type="submit" value="Submit">
+<head>
+  <link rel="stylesheet" href="stylesheets/normalize.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="stylesheets/index.css" media="screen" title="no title" charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+</head>
+
+<div class="jumbotron">
+  <div class="logo">
+    Rock, <span>Paper</span>, <br>Scissors.
+  </div>
+  <form class="form-inline" action="/name" method="post">
+    <div class="name_box">
+      <input type="text" name="name" placeholder="Enter your name" autofocus>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
   </form>
+  <div class="pic">
+    <img src="images/rps.png" alt="rps"/>
+  </div>
 </div>
