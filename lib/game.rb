@@ -18,6 +18,7 @@ class Game
     @combos = {rr: :draw, rp: :lose, rs: :win,
                pr: :win,  pp: :draw, ps: :lose,
                sr: :lose, sp: :win,  ss: :draw}
+    @npc_score = 0
   end
 
   def npc_chooses_weapon
@@ -32,7 +33,6 @@ class Game
   end
 
   def calculate_score
-    @npc_score ||= 0
     @player.score += A_POINT if result == "YOU WIN!"
     @npc_score += A_POINT if result == "YOU LOSE!"
   end

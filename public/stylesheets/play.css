@@ -1,0 +1,23 @@
+body {
+  background-color: #f4e9d7;
+}
+
+.scores {
+  display: -webkit-inline-box;
+  text-align: center;
+  color: white;
+  font-family: 'Hammersmith One', sans-serif;
+  margin-left: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0.67em 0;
+  padding: 0 2.8rem;
+  margin-left: 11rem;
+}
+
+span {
+  color: #47e5c2;
+  font-size: 5rem;
+}
