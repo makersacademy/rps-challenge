@@ -22,19 +22,14 @@ class Rock_paper_scissors < Sinatra::Base
   end
 
   post '/game_on' do
+    @player_1_name = $player_1.name
     $selected_object = params[:rps]
-    @selected_object = $selected_object
+    @human_object = $selected_object
     $machine = Machine.new
     @machine = $machine
+    @machine_object = @machine.choose_object
     erb :game_on
   end
-
-  # get '/randomness' do
-  #   $machine = Machine.new
-  #   @machine = $machine
-  #   redirect '/game_on'
-  # end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
