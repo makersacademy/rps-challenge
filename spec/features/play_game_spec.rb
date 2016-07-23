@@ -32,3 +32,17 @@ feature 'Computer chooses a random option' do
     expect(page).to have_content 'Computer has chosen Scissors'
   end
 end
+
+feature 'Confirms a winner' do
+  scenario 'I choose Rock, computer chooses Scissors, I win' do
+    srand(STUBBED_SELECTION)
+    sign_in_and_play
+    click_button 'Rock'
+    expect(page).to have_content 'Joe wins!!'
+  end
+end
+
+
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
