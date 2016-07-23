@@ -14,7 +14,15 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @selection = session[:selection]
+    @computer_selection = session[:computer_selection]
     erb :play
+  end
+
+  post '/play_game' do
+    session[:selection] = params[:selection]
+    session[:computer_selection] = :Rock
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly

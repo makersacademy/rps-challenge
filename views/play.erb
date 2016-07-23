@@ -16,14 +16,24 @@ h3 {
   </head>
   <body>
     <div align="center"><font size="20">Rock-Paper-Scissors</font><br>
-    <font size="3">creator Joe Sweeny</font><br><br>
+    <font size="2.5">created by Joe Sweeny</font><br>
+      <h4>Welcome <%= @player_name %></h4>
+    <div class="">
+      <form action="/play_game" method="post" >
+        <input type="submit" name="selection" value="Rock">
+        <input type="submit" name="selection" value="Paper">
+        <input type="submit" name="selection" value="Scissors">
+      </form>
+    </div>
 
-    <h4>Welcome <%= @player_name %></h4>
     <h3>Rules of the Game<br></h3>
     - Rock beats Scissors<br>
     - Scissors beats Paper<br>
-    - Paper beats Rock<br>
+    - Paper beats Rock<br><br>
     </div>
+
+    <div align="center">You have chosen <%= @selection %><br><br>
+    Computer has chosen <%= @computer_selection %></div>
 
   </body>
 </html>
