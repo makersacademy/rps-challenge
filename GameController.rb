@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 class GameController < Sinatra::Base
 
@@ -7,7 +9,11 @@ class GameController < Sinatra::Base
   end
 
   post '/name' do
-    $player_name = params[:player_name]
+    $player1 = Player.new(params[:player_name])
+    erb(:game)
+  end
+
+  get '/game' do
     erb(:game)
   end
 
