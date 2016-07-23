@@ -3,9 +3,7 @@ require './lib/player'
 class Game
 
   A_POINT = 1
-
   attr_reader :player, :npc_choice, :npc_score
-  attr_accessor :weapon
 
   def self.create(name)
     @game = Game.new(name)
