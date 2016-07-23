@@ -14,7 +14,7 @@ describe Player do
   describe 'computer' do
     it 'makes a random choice' do
       expect(Player::CHOICE_ARRAY).to receive(:sample).and_return('Rock')
-      expect(player2.choice).to eq('Rock')
+      expect(player2.rand_choice).to eq('Rock')
     end
   end
 end

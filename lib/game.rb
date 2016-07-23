@@ -1,9 +1,9 @@
 class Game
-  attr_reader :player1, :player2
+  attr_reader :choice1, :choice2
 
-  def initialize(player1 = nil, player2 = nil)
-    @player1 = player1
-    @player2 = player2
+  def initialize(choice1 = nil, choice2 = nil)
+    @choice1 = choice1
+    @choice2 = choice2
     @rules = {
       'Scissors' => 'Rock',
       'Paper' => 'Scissors',
@@ -11,10 +11,10 @@ class Game
     }
   end
 
-  def results(player1, player2)
-    if player1 == player2
+  def results(choice1, choice2)
+    if choice1 == choice2
       'tie'
-    elsif @rules[player2].include?(player1)
+    elsif @rules[choice2].include?(choice1)
       'win'
     else
       'lose'

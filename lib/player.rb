@@ -10,7 +10,7 @@ class Player
     @name = name
   end
 
-  def choice
-    @choice = CHOICE_ARRAY.sample
+  def rand_choice
+    @rand_choice = CHOICE_ARRAY.sample
   end
 end

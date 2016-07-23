@@ -1,18 +1,18 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player1, player2) }
+  subject(:game) { described_class.new(choice1, choice2) }
 
-  let(:player1) { double :player1 }
-  let(:player2) { double :player2 }
+  let(:choice1) { double :choice1 }
+  let(:choice2) { double :choice2 }
 
   describe 'Player' do
     it 'shows player 1' do
-      expect(game.player1).to eq player1
+      expect(game.choice1).to eq choice1
     end
 
     it 'shows player 2' do
-      expect(game.player2).to eq player2
+      expect(game.choice2).to eq choice2
     end
   end
 
