@@ -4,7 +4,7 @@ class Game
 
   A_POINT = 1
 
-  attr_reader :player, :npc_choice, :combos, :npc_score
+  attr_reader :player, :npc_choice, :npc_score
   attr_accessor :weapon
 
   def self.create(name)
@@ -35,18 +35,8 @@ class Game
 
   def calculate_score
     @npc_score ||= 0
-    @player.score += A_POINT if win?
-    @npc_score += A_POINT if lose?
-  end
-
-  private
-
-  def win?
-    result == "YOU WIN!"
-  end
-
-  def lose?
-    result == "YOU LOSE!"
+    @player.score += A_POINT if result == "YOU WIN!"
+    @npc_score += A_POINT if result == "YOU LOSE!"
   end
 
 end
