@@ -14,7 +14,7 @@
         <div class="col-md-12">
 
           <h1>Rock Paper Scissors</h1>
-          <h2>Please enter your name</h2>
+          <h2>Hello <%= @player_1_name %>!</h2>
         </div>
       </div>
 
@@ -23,13 +23,7 @@
 
           <form action="/names" method="post">
             <div class="form-group">
-              <label for="player_1_name">Player Name</label>
-              <input type="text" id="name" name="player_1_name">
-            </div>
-            <!-- <div class="form-group">
-              <label for="player_2_name">Player 2</label>
-              <input type="text" id="name" name="player_2_name">
-            </div> -->
+
             <br>
               <input type="submit" value="Submit" class="btn btn-default"><i class="fa-arrow-right"></i>
           </form>
