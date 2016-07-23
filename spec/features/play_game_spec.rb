@@ -1,16 +1,20 @@
 feature 'When playing Rock, Paper, Scissors,' do
-	scenario 'All 3 options are visible for player 1' do
+	scenario 'All 5 options are visible for player 1' do
 		sign_in_and_play_1_player
 		expect(page).to have_content "Rock"
 		expect(page).to have_content "Paper"
 		expect(page).to have_content "Scissors"
+		expect(page).to have_content "Lizard"
+		expect(page).to have_content "Spock"
 	end
 
-	scenario 'All 3 options are visible for player 2' do
+	scenario 'All 5 options are visible for player 2' do
 		sign_in_and_play_2_player
 		expect(page).to have_content "Rock"
 		expect(page).to have_content "Paper"
 		expect(page).to have_content "Scissors"
+		expect(page).to have_content "Lizard"
+		expect(page).to have_content "Spock"
 	end
 
 	scenario 'Player 1 is able to select an option' do

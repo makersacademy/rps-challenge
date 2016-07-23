@@ -20,8 +20,8 @@ describe Player do
 		end
 		it "chooses a random weapon if none supplied" do
 			player.choose_weapon
-			allow(Kernel).to receive(:rand).and_return(0)
-			expect(["Rock", "Paper", "Scissors"]).to include player.get_weapon.get_type
+			# allow(Kernel).to receive(:rand).and_return(0)
+			expect(["Rock", "Paper", "Scissors", "Lizard", "Spock"]).to include player.get_weapon.get_type
 		end
 	end
 end

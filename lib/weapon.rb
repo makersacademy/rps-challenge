@@ -1,12 +1,12 @@
 class Weapon
-TYPES = ["Rock", "Paper", "Scissors"]
+TYPES = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 	
 private
 	attr_reader :type
 public
 
 	def initialize type: nil
-		type ||= TYPES[Kernel.rand(0..2)]#TYPES.length-1)]
+		type ||= TYPES[Kernel.rand(0..TYPES.length-1)]
 		@type = type
 	end
 
