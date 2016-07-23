@@ -1,9 +1,9 @@
-<h1> Pick your weapon Jess </h1>
+<h1> Pick your weapon <%=@name%> </h1>
 <br />
 
-<form action = '/result' method = 'gets'>
+<form action = '/result' method = 'post'>
 
-  <input type="submit" value="Rock"><br /><br />
-  <input type="submit" value="Paper"><br /><br />
-  <input type="submit" value="Scissors"><br /><br />
+  Weapon:  <input type="text" name="weapon"<br />
+  <input type="submit" value="Submit">
+
   </form>

@@ -6,10 +6,13 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
+    @name = params[:name]
+    @weapon = params[:weapon]
     erb(:play)
   end
 
-  get '/result' do
+  post '/result' do
+    @weapon = params[:weapon]
     erb(:result)
   end
 
