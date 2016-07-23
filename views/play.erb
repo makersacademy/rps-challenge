@@ -1,0 +1,7 @@
+Welcome <%= @game.player_1.get_name %>!
+
+<form action="/choose_weapon" method="post">
+<button type="submit" name="chosen_weapon" value="Rock">Rock</button>
+<button type="submit" name="chosen_weapon" value="Paper">Paper</button>
+<button type="submit" name="chosen_weapon" value="Scissors">Scissors</button>
+</form>
