@@ -6,7 +6,16 @@
 <body>
 
 <h1>You picked <%= $game.choice %>!</h1>
+<h1>Computer chose <%= $game.ask_computer %>!</h2>
 
-<h1><%= $game.winner %>!</h1>
+<% if $game.result == :draw %>
+<h1>It's a draw!</h1>
+<% else %>
+<h1>You <%= $game.result %>!</h1>
+<% end %>
+
+<form action="/">
+  <input type="submit" value="Play Again" id="submit" style = "margin-top: 15px;">
+</form>
 
 </body>
