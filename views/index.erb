@@ -1,0 +1,43 @@
+<html lang=en>
+  <head>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Jquery UI  -->
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/redmond/jquery-ui.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-12">
+
+          <h1>Rock Paper Scissors</h1>
+          <h2>Please enter your name</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <form action="/names" method="post">
+            <div class="form-group">
+              <label for="player_1_name">Player Name</label>
+              <input type="text" id="name" name="player_1_name">
+            </div>
+            <!-- <div class="form-group">
+              <label for="player_2_name">Player 2</label>
+              <input type="text" id="name" name="player_2_name">
+            </div> -->
+            <br>
+              <input type="submit" value="Submit" class="btn btn-default"><i class="fa-arrow-right"></i>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
