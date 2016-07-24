@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
+  def choose_weapon(weapon)
     @choice = weapon.to_sym
   end
 

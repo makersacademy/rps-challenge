@@ -1,4 +1,5 @@
 require_relative 'computer'
+require_relative 'player'
 
 class Game
   OPTIONS = [:rock, :paper, :scissors]

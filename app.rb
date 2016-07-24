@@ -1,8 +1,5 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/player'
-require './lib/computer'
-
 
 class RPS < Sinatra::Base
 
@@ -26,7 +23,7 @@ get '/play' do
 end
 
 post '/options' do
-  @game.player.weapon(params[:choice])
+  @game.player.choose_weapon(params[:choice])
   @game.computer.choose_weapon
   redirect '/result'
 end
