@@ -1,12 +1,12 @@
 <form action="/">
   <% if @game.the_winner_is == @game.players[0] %>
-    It seems you got lucky this time!
+    It seems you got lucky this time! You WIN!
     <input type="submit" value="I want some more!" />
   <% elsif @game.the_winner_is == :draw %>
     Great minds think alike. It's a draw!
     <input type="submit" value="One more try" />
   <% else %>
-    Oh oh, that was a bit embarrassing!
+    Oh oh, that was a bit embarrassing! You LOSE!
     <input type="submit" value="I wasn't ready that time, let's go again" />
   <% end %>
 </form>

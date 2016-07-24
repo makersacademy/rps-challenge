@@ -1,4 +1,4 @@
-describe 'Action page' do
+describe 'Action Page' do
   scenario "after selecting weapon we are taken to 'action' page" do
     sign_in_and_play
     click_button "I was born ready"

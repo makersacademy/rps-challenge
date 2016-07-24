@@ -1,4 +1,4 @@
-describe 'Can choose a weapon' do
+describe 'Choose Weapon Page' do
   scenario 'after seeing vs screen we go to choose weapon screen' do
     sign_in_and_play
     click_button "I was born ready"

@@ -16,9 +16,4 @@ describe Player do
     expect(player_1.weapon). to eq :paper
   end
 
-  it "has a method which returns their weapon" do
-    player_1.choose(:stone)
-    expect(player_1.get_weapon).to eq :stone
-  end
-
 end

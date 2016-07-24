@@ -11,9 +11,4 @@ class Player
     @weapon = weapon
   end
 
-  # Don't need this:
-  def get_weapon
-    @weapon
-  end
-
 end
