@@ -9,4 +9,10 @@ describe Computer do
       allow(computer).to receive(:random_attack) { "Scissors" }
     end
   end
+
+  describe "#result" do
+    it "Displays result of game" do
+      allow(computer).to receive(:result) { "Win" }
+    end
+  end
 end
