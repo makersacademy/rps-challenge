@@ -33,15 +33,16 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    @game.players[0].weapon = params[:player_1_weapon].to_s
-    @game.players[1].weapon = :stone
+    # Sort this out
+    @game.players[0].choose(:paper)
+    @game.players[1].choose(random_weapon)
     @game.the_winner_is
     redirect '/action'
   end
 
   get '/action' do
-    @player_1_name = $player_1.name
-    @player_2_name = $player_2.name
+    @player_1_name = @game.players[0].name
+    @player_2_name = @game.players[0].name
     erb(:action)
   end
 

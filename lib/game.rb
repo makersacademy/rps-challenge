@@ -36,7 +36,7 @@ class Game
     @players.find { |player| player.weapon == winner }
   end
 
-  def computer_weapon
+  def random_weapon
     [:paper, :scissors, :stone].sample
   end
 

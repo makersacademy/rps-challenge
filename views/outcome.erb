@@ -1,5 +1,9 @@
-You a dead man!
-
 <form action="/">
-  <input type="submit" value="I want some more!" />
+  <% if @game.the_winner_is == @game.players[0] %>
+    It seems you got lucky this time!
+    <input type="submit" value="I want some more!" />
+  <% else %>
+    Oh oh, that was a bit embarrassing!
+    <input type="submit" value="I wasn't ready that time, let's go again" />
+  <% end %>
 </form>

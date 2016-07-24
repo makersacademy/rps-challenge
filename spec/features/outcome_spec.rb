@@ -1,13 +1,12 @@
+=begin
+
 describe 'Outcome page' do
 
-# Ambiguous tests due to the "choose("player_1_weapon") thing.
-
-=begin
   context "You win" do
     scenario 'displays the outcome of the battle' do
       sign_in_and_play
       click_button "I was born ready"
-      choose("player_1_weapon")
+      choose("paper")
       click_button "Feeling pretty good about myself right now"
       click_button "..."
       expect(page).to have_content "It seems you got lucky this time!"
@@ -18,10 +17,10 @@ describe 'Outcome page' do
     scenario 'displays the outcome of the battle' do
       sign_in_and_play
       click_button "I was born ready"
-      choose("player_1_weapon")
+      choose("paper")
       click_button "Feeling pretty good about myself right now"
       click_button "..."
-      expect(page).to have_content "Oh oh, someone sucks at RPS!"
+      expect(page).to have_content "Oh oh, that was a bit embarrassing!"
     end
   end
 
@@ -29,11 +28,14 @@ describe 'Outcome page' do
   scenario 'after seeing outcome, return to first page on click' do
     sign_in_and_play
     click_button "I was born ready"
-    choose("player_1_weapon")
+    choose("paper")
     click_button "Feeling pretty good about myself right now"
     click_button "..."
+    allow(game).to receive(:the_winner_is).and_return(:stone)
     click_button "I want some more!"
     expect(page).to have_content "Enter names"
   end
-=end
+
 end
+
+=end
