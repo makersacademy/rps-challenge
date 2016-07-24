@@ -20,9 +20,13 @@ enable :sessions
   end
 
   post '/choices' do
-    session[:human_player_choice] = params[:value]
-    @human_player_choice = $human_player.choice
-    erb(:choices)
+    session[:choice] = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @choice = session[:choice]
+    erb(:result)
   end
 
 
