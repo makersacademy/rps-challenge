@@ -1,6 +1,10 @@
 require_relative 'computer_player'
 class Game
 
+  RULES = { "Rock" => "Scissors",
+            "Paper" => "Rock",
+            "Scissors" => "Paper" }
+
   attr_reader :player_1, :player_2, :players, :choice, :computer_move
 
   def initialize(player_1_name)
@@ -18,18 +22,11 @@ class Game
 	end
 
 	def result
-		@choice == @computer_move ? tie_break : win_scenarios
+		@choice == @computer_move ? tie_break : win_scenarios(@choice, @computer_move)
 	end
 
-  def win_scenarios
-    case @computer_move
-    when "Rock"
-      @choice == "Paper" ? player_1_wins : player_2_wins
-    when "Paper"
-      @choice == "Scissors" ? player_1_wins : player_2_wins
-    when "Scissors"
-      @choice == "Rock" ? player_1_wins : player_2_wins
-    end
+  def win_scenarios(choice_1, choice_2)
+    RULES[choice_1][choice_2] ? player_1_wins : player_2_wins
   end
 
   def player_1_wins
