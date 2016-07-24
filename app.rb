@@ -17,8 +17,7 @@ class Rps < Sinatra::Base
     @game = Game.get
     @userHand = @game.user_hand(params['rpc-radio'])
     @oppHand = @game.machine_hand
-    @result = @game.result(@oppHand)
-    erb(:result)
+    erb(@game.result(@oppHand))
   end
 
   post '/replay' do

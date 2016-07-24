@@ -29,13 +29,13 @@ describe Game do
       game.user_hand(user_hand)
     end
     it "decides who is a winner" do
-      expect(game.result("Scissors")).to eq "You win!"
+      expect(game.result("Scissors")).to eq :win
     end
     it "decides who is a loser" do
-      expect(game.result("Paper")).to eq "Machine wins!"
+      expect(game.result("Paper")).to eq :lose
     end
     it "decides if it is a draw" do
-      expect(game.result("Rock")).to eq "Draw!"
+      expect(game.result("Rock")).to eq :draw
     end
   end
 end

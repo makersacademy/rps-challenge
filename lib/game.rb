@@ -28,11 +28,11 @@ class Game
   def result(machine_hand)
     @machine_hand = machine_hand
     if @user_hand == @machine_hand
-      "Draw!"
+      :draw
     elsif (@user_hand == "Rock" && @machine_hand == "Paper") || (@user_hand == "Paper" && @machine_hand == "Scissors") || (@user_hand == "Scissors" && @machine_hand == "Rock")
-      "Machine wins!"
+      :lose
     else
-      "You win!"
+      :win
     end
   end
 
