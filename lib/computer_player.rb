@@ -2,7 +2,7 @@ class Computer_Player
 attr_reader :computer_move, :name
 
   def initialize
-    @name = ["Beccatron", "Motorized Harvesting Entity", "Intelligent Processor Robot", "Advanced Data Analyzing Golem"].sample
+    @name = "Beccatron"
   end
 
   def computer_move

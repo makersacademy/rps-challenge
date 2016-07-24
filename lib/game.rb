@@ -18,10 +18,10 @@ class Game
 	end
 
 	def result
-		@choice == @computer_move ? "It is a tie!" : winner
+		@choice == @computer_move ? "It's a tie!" : win_scenarios
 	end
 
-  def winner
+  def win_scenarios
     case @computer_move
     when "Rock"
       @choice == "Paper" ? "#{@player_1.name} wins!" : "#{@player_2.name} wins!"
@@ -39,5 +39,4 @@ class Game
   def self.create(player_1_name)
     @game = Game.new(player_1_name)
   end
-
 end

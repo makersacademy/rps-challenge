@@ -3,10 +3,10 @@ class Player
 
   def initialize(name)
     @name = name
-    @loser = false
+  #  @loser = false
   end
 
-  def lost?
-    @lost
-  end
+  # def lost?
+  #   @lost
+  # end
 end
