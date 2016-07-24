@@ -1,9 +1,10 @@
 require 'sinatra/base'
+require 'tilt/erb'
 
 class RPS < Sinatra::Base
 
   get '/' do
-    "O.K you want to play Rock, Paper, Scissors?"
-    
+    erb(:index)
+
   end
 end
