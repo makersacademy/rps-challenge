@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,900italic,400italic' rel='stylesheet' type='text/css'>
+    <style>
+      body {text-align: center; font: 20px bold; line-height: 2em;
+            font-family: 'Lato', Arial, Helvetica;
+            background: #fafafa;
+            letter-spacing: 0.2em}
+      * {border: 0px; padding: 0px; margin: 0px; color: #4a4a4a}
+      header {font-size: 24px; margin-top: 60px; margin-bottom: 140px;}
+      .title {font-size: 34px; border-bottom: 2px solid #4b4b4b; color: #2b2b2b; line-height: 80px;
+              font-weight: bold;
+              font-style: italic}
+      .call_to_arms {font-style: italic;}
+      .options {font: 16px bold 'Lato', arial, Helvetica;
+                line-height: 4em;}
+      .button {font: 20px 'Lato', arial, Helvetica;
+               width: 160px; height: 60px;
+               background: #9d979a;
+               border-radius: 3px;
+               cursor: pointer;
+               margin-top: 12px;
+               color: #fafafa;
+               letter-spacing: 0.2em;
+               font-weight: normal;}
+      .button:hover {background: #fafafa; color: #9d979a; border: 2px solid #9d979a;}
+      .radio_input {clip: rect(6px, 6px, 6px, 6px);
+                    position: absolute !important;}
+      .radio_label {background: #4ad5f8;
+                    margin-top: 4px;
+                    width: 120px;
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    color: #fafafa;
+                    // margin-right: 18px;
+                    border-radius: 3px;
+                    transition: all .2s;}
+      .radio_input:checked + .radio_label {background: #fafafa;
+                                           box-shadow: inset 0 0 0 2px #f7bf75;;
+                                           /*padding: 12px;*/
+                                           width: 120px;
+                                           color: #f7bf75;}
+      section {margin-top: -100px;}
+      fieldset {margin-top: 40px; margin-bottom: 60px;}
+      p {font-weight: bold;}
+    </style>
+  </head>
+<body>
+  <header>
+    <span class="title">THE RPS GAME</span>
+    <br>
+    Makers Accademy Weekend Challenge
+  </header>
+  <section>
+  <p><%= @greeter.salutation %> <%= @name.upcase %>!</p>
+  <span class="call_to_arms">PLEASE CHOOSE YOUR WEAPON...</span>
+  <fieldset>
+    <form action="/game" method="post" class="options">
+    <input id="radio_1" class="radio_input" type="radio" name="player_choice" value="rock" checked="checked">
+    <label for="radio_1" class="radio_label">ROCK</label><br>
+    <input id="radio_2" class="radio_input" type="radio" name="player_choice" value="paper">
+    <label for="radio_2" class="radio_label">PAPER</label><br>
+    <input  id="radio_3" class="radio_input" type="radio" name="player_choice" value="scissors">
+    <label for="radio_3" class="radio_label">SCISSORS</label><br>
+    <input type="submit" value="HAPPY?" class="button">
+  </form>
+  </fieldset>
+</section>
+</body>
+</html>
