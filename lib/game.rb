@@ -1,5 +1,5 @@
 class Game
-attr_reader :player, :weapon_selected, :select_weapon, :computer_weapon
+attr_reader :player, :weapon_selected, :select_weapons, :computer_weapon
 
 def self.instance
   @game
@@ -18,8 +18,7 @@ def select_weapon(weapon)
 end
 
 def select_computer_weapon
-  #@computer_weapon = %w(Rock Paper Scissors).sample
-  @computer_weapon = ['Rock', 'Paper', 'Scissors'].sample
+  @computer_weapon = %w(Rock Paper Scissors).sample
 end
 
 def select_weapons(weapon)
@@ -30,6 +29,28 @@ end
 def draw?
   @weapon_selected == @computer_weapon
 end
+
+def player_wins?
+  case @weapon_selected
+    when 'Rock'
+      return true if @computer_weapon == 'Scissors'
+    when 'Paper'
+      return true if @computer_weapon == 'Rock'
+    when 'Scissors'
+      return true if @computer_weapon == 'Paper'
+    else
+      false
+  end
+end
+
+def result
+  return :draw if draw?
+  return :win if player_wins?
+  :lose
+end
+
+
+
 
 
 

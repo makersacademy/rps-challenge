@@ -27,20 +27,111 @@ describe 'Game' do
     end
   end
 
-  context 'Deciding the Winner' do
+  context 'When the game is a draw' do
+    before(:each) do
+      allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+      game.select_computer_weapon
+    end
+
     describe '#draw?' do
       it 'knows when the result is a draw' do
         game.select_weapon("Paper")
-        allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
-        game.select_computer_weapon
         expect(game.draw?).to be true
       end
 
       it 'knows when the result is not a draw' do
         game.select_weapon("Rock")
+        expect(game.draw?).to be false
+      end
+    end
+  end
+
+  context 'Determining the result' do
+
+    describe '#result' do
+      it 'returns a result' do
+        expect([:draw, :win, :lose]).to include(game.result)
+      end
+    end
+
+    context 'when player selects Rock' do
+      before(:each) do
+        game.select_weapon("Rock")
+      end
+
+      it 'knows player draws against computer Rock' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :draw
+      end
+
+      it 'knows player loses against computer Paper' do
         allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
         game.select_computer_weapon
-        expect(game.draw?).to be false
+
+        expect(game.result).to eq :lose
+      end
+
+      it 'knows player wins against computer Scissors' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :win
+      end
+    end
+
+    context 'when player selects Paper' do
+      before(:each) do
+        game.select_weapon("Paper")
+      end
+
+      it 'knows player wins against computer Rock' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :win
+      end
+
+      it 'knows player draws against computer Paper' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :draw
+      end
+
+      it 'knows player loses against computer Scissors' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :lose
+      end
+    end
+
+    context 'when player selects Scissors' do
+      before(:each) do
+        game.select_weapon("Scissors")
+      end
+
+      it 'knows player loses against computer Rock' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :lose
+      end
+
+      it 'knows player wins against computer Paper' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :win
+      end
+
+      it 'knows player draws against computer Scissors' do
+        allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+        game.select_computer_weapon
+
+        expect(game.result).to eq :draw
       end
     end
   end
