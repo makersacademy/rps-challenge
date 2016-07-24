@@ -9,14 +9,31 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  before do
+    @game = Game.instance
+  end
+
   post '/names' do
-    $game = Game.new(params[:player_one])
+    Game.create(params[:player_one])
+    redirect '/choose'
+  end
+
+  get '/choose' do
+    erb(:choose)
+  end
+
+  get '/weapon' do
+    @game.p1.choose(params[:weapon])
+    @game.p2.choose
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb(:play)
+  end
+
+  get '/result' do
+    erb(:result)
   end
 
   # start the server if ruby file executed directly

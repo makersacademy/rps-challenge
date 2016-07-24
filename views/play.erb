@@ -1,1 +1,19 @@
-<%= @game.p1.name %>
+<meta http-equiv="refresh" content="3;url=/result" />
+<div class='choices'>
+  <div class='move'><div class='player_name'>
+    <%= @game.p1.name %>
+  </div>
+  used
+  <div class='weapon'>
+    <%= Weapons::CHOICES.key(@game.p1.weapon) %>
+  </div>
+</div>
+  <div class='move'><div class='player_name'>
+    <%= @game.p2.name %>
+  </div>
+  used
+  <div class='weapon_choice'>
+    <%= Weapons::CHOICES.key(@game.p2.weapon) %>
+  </div>
+</div>
+</div>

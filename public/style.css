@@ -1,0 +1,137 @@
+  body {
+        background-color: white;
+        color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        font-family: comfortaa;
+        }
+.title {
+        position: absolute;
+        left: 50%;
+        }
+
+h1     {
+        font-family: comfortaa;
+        font-size: 400%;
+        font-weight: normal;
+        position: absolute;
+        }
+.table {
+        width: 50%;
+        height: 100%;
+        display: table;
+        right: 0;
+        position: absolute;
+        }
+.yield {
+      display: table-cell;
+      vertical-align: middle;
+      }
+.player_name {
+      text-align: center;
+}
+
+p     {
+    text-align: center;
+}
+
+form {
+  text-align: center;
+}
+.move {
+  display: inline-table;
+}
+#rock{
+      position: absolute;
+      bottom: 0;
+      right: 15%;
+      background-image: url('http://megaicons.net/static/img/icons_sizes/8/178/512/rock-paper-scissors-rock-icon.png');
+      background-size: contain;
+}
+#paper{
+  position: absolute;
+  bottom: 60%;
+  right: 0;
+  background-image: url('https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/paper.png');
+  background-size: contain;
+
+}
+#scissors{
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      background-image: url('https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/barber_scissors.png');
+      background-size: contain;
+
+}
+#lizard{
+      position: absolute;
+      right: 100%;
+      bottom: 60%;
+      background-image: url('http://image.flaticon.com/icons/svg/74/74261.svg')
+}
+#spock{
+      position: absolute;
+      bottom: 0;
+      right: 80%;
+      background-image: url('http://t03.deviantart.net/OQuExpDxcy2gfTVBTOnOV5DaxqM=/300x200/filters:fixed_height(100,100):origin()/pre11/41fc/th/pre/f/2015/066/4/e/spock_icon_260_by_suntog-d8kqu8b.jpg');
+      background-size: contain;
+      background-position: center;
+
+}
+#button_block{
+    position: relative;
+    display: block;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    color: transparent;
+
+}
+.button{
+    border: solid;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 0px;
+    background-repeat: no-repeat;
+    filter: black;
+}
+.button:hover{
+  transform:scale(2);
+}
+.button:focus{
+  outline: none;
+}
+
+.move {
+    display: inline-table;
+    margin: 10px;
+    font-family: comfortaa;
+    border: solid;
+    padding: 10px;
+    font-size: -webkit-xxx-large;
+    border-radius: 20px;
+  }
+  .result {
+    font-size: 2em;
+    margin: 10px;
+  }
+a {
+  border: solid;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+#submit.submit{
+    border: solid;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+  }
