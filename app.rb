@@ -25,7 +25,8 @@ class RPS < Sinatra::Base
 
   post "/attack" do
     p params
-    @game.action((params[:acton]).to_sym)
+    @game.action((params[:action]).to_sym)
+    @game.computer_turn
     redirect '/result'
   end
 

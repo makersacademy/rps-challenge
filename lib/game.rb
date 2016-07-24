@@ -18,16 +18,23 @@ class Game
   end
 
   def name_of(player)
-    player1.name
-  end
-
-  def attack(action)
-    rps = { rock: :scissors, paper: :rock, scissors: :paper }
-    player2.move == rps[action]
+    player.name
   end
 
   def action(action)
-    player1.action
+    player1.move(action)
   end
+
+  def computer_turn
+    player2.move
+  end
+
+  def winner
+    rps = { rock: :scissors, paper: :rock, scissors: :paper }
+    return name_of(player1) if player2.action == rps[player1.action]
+    return name_of(player2) if player1.action == rps[player2.action]
+    "Draw"
+  end
+
 
 end
