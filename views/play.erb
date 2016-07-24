@@ -1,3 +1,13 @@
 <div>
-  <h1> <%=@human_player.name%> vs Bot of Doom<h1>
+  <h1> <%=@human_player_name%> vs Bot of Doom<h1>
 </div>
+<div>
+  <h1>Rock, Paper, Scissors!</h1>
+</div>
+  <h2> Human choose your hand gesture by clicking one of the choices below </h2>
+  <form action='/choices' method='post'>
+  <input type='radio' ID=1 name='choice' value='ROCK' /> ROCK
+  <input type='radio' ID=2 name='choice' value='PAPER' /> PAPER
+  <input type='radio' ID=3 name='choice' value='SCISSORS' /> SCISSORS
+  <input type='submit'>
+</form>

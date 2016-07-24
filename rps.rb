@@ -10,13 +10,20 @@ enable :sessions
   end
 
   post '/player_name' do
-    @human_player = Player.new(params[:human_player])
+    $human_player = Player.new(params[:human_player])
+    redirect '/play'
+  end
+
+  get '/play' do
+    @human_player_name = $human_player.name
     erb(:play)
   end
 
-  # get '/play' do
-  #   erb(:play)
-  # end
+  post '/choices' do
+    session[:human_player_choice] = params[:value]
+    @human_player_choice = $human_player.choice
+    erb(:choices)
+  end
 
 
   # start the server if ruby file executed directly
