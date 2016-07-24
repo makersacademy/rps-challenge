@@ -32,7 +32,7 @@ class Game
   end
 
   def random_weapon
-    [:paper, :scissors, :stone].sample
+    [:paper, :scissors, :stone][Kernel.rand(3)]
   end
 
   private
