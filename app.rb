@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,17 +11,20 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
-    $player_2 = Player.new(params[:player_2_name])
-    #@game = Game.create(player_1, player_2)
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    @game = Game.create(player_1, player_2)
     redirect '/vs'
   end
 
-  #@game = Game.instance
+  before do
+    @game = Game.instance
+  end
 
   get '/vs' do
-    @player_1_name = $player_1.name
-    @player_2_name = $player_2.name
+    # could consider using .player_1 and .player_2 with app method in Game
+    @player_1_name = @game.players[0].name
+    @player_2_name = @game.players[1].name
     erb(:vs)
   end
 
@@ -29,7 +33,8 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    $weapon = params[:player_1_weapon].to_s
+    @game.players[0].weapon = params[:player_1_weapon].to_s
+    @game.players[1].weapon = :stone
     @game.the_winner_is
     redirect '/action'
   end

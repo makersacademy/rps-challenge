@@ -1,4 +1,5 @@
 require_relative 'player'
+require_relative 'computer'
 
 class Game
 
@@ -11,13 +12,13 @@ class Game
     @players = [player_1, player_2]
   end
 
-  # def self.instance
-  #   @game
-  # end
-  #
-  # def self.create(player_1, player_2)
-  #   @game = Game.new(player_1, player_2)
-  # end
+  def self.instance
+    @game
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
 
   def winning_weapon(weapon_1, weapon_2)
 
@@ -33,6 +34,10 @@ class Game
     winner = winning_weapon(@players[0].weapon, @players[1].weapon)
     return :draw if winner == :draw
     @players.find { |player| player.weapon == winner }
+  end
+
+  def computer_weapon
+    [:paper, :scissors, :stone].sample
   end
 
 end
