@@ -20,14 +20,14 @@ enable :sessions
   end
 
   post '/attack' do
-    session[:user_attack_choice] = params[:user_attack_choice]
-    session[:computer_attack_choice] = Computer.new.random_attack
+    session[:user_attack] = params[:user_attack]
+    session[:computer_attack] = Computer.new.random_attack
     redirect '/result'
   end
 
   get '/result' do
-    @user_attack_choice = session[:user_attack_choice]
-    @computer_attack_choice = session[:computer_attack_choice]
+    @user_attack = session[:user_attack]
+    @computer_attack = session[:computer_attack]
     erb(:result)
   end
 
