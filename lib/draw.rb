@@ -1,6 +1,6 @@
 class Draw
 
-  def self.result(p1, p2)
+  def self.result(_p1, _p2)
     "It's a draw!"
   end
 

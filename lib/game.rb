@@ -38,6 +38,6 @@ attr_reader :p1, :p2
       [P2Wins, P1Wins, P2Wins, Draw, P1Wins],  # lzd
       [P1Wins, P2Wins, P1Wins, P2Wins, Draw] ] # spk
    #p2 rck      ppr    scs     lzd     spk       p1
-    end
+  end
 
 end
