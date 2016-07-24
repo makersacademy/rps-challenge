@@ -14,7 +14,7 @@ ENV['RACK_ENV'] = 'test'
 
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
 
-require File.join(File.dirname(__FILE__), '..', 'rsp_web.rb')
+require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 
 require 'byebug'
 require 'capybara'
