@@ -22,13 +22,16 @@ end
 def weapon_assign(weapon)
   @player.weapon_assign(weapon)
   @player_weapon = @player.weapon
+  winner?
 end
 
-def claim_victory(player_weapon)
-  if player_weapon == @machine.weapon
+private
+
+def winner?
+  if @player_weapon.class == @machine.weapon.class
     @winner = 'Draw'
-  elsif @player_weapon.beat?(@machine.weapon)
-    @winner = 'Player'
+  elsif @player_weapon.beat?(@machine.weapon.class.to_s)
+    @winner = @player.name
   else
     @winner = 'Machine'
   end

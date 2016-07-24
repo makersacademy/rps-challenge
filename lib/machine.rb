@@ -7,7 +7,7 @@ class Machine
   attr_reader :weapon, :weapons
 
   def initialize
-    @weapons = ["Rock", "Paper", "Scissors"]
+    @weapons = [Rock.new, Paper.new, Scissors.new]
   end
 
   def choose_weapon

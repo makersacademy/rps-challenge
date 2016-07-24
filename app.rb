@@ -23,15 +23,11 @@ class Rps < Sinatra::Base
   post '/game' do
     @game = Game.instance
     @player_1_name = @game.player.name
-    @weapon = params[:weapon]
-    @machine = @game.machine.weapon
-    @game.weapon_assign(@weapon)
-    @game.claim_victory(params[:weapon])
+    @player_weapon = params[:weapon]
+    @machine_weapon = @game.machine.weapon.class.to_s
+    @game.weapon_assign(@player_weapon)
     erb :game
   end
-
-
-
 
   run! if app_file == $0
 end

@@ -6,6 +6,7 @@ describe Game do
 
 
 let(:player) {double :player, name: "Thady"}
+let(:machine) {double :player}
 subject {described_class.new(player)}
 
 it {is_expected.to respond_to(:player)}
@@ -21,22 +22,12 @@ describe '#initialize' do
   end
 end
 
-describe '#winner' do
-  it 'determines a winner' do
-    subject.weapon_assign('Rock')
-    subject.claim_victory
-    expect(subject.winner).to eq 'Player'
-  end
-end
+describe '#weapon_assign' do
 
-describe '#player_weapon' do
-  it 'passes players weapon' do
+  it 'passes players chosen weapon' do
     subject.weapon_assign('Rock')
     expect(subject.player_weapon).to be_instance_of Rock
   end
+
 end
-
-
-
-
 end
