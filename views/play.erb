@@ -1,1 +1,19 @@
-<%= @player_name %> vs. Computer
+<h1><%= @player_name.capitalize %> vs. Computer</h1>
+<h2>Choose your attack from the following:</h2>
+<h3>1) Rock
+  <br>
+  <br>
+  2) Paper
+  <br>
+  <br>
+  3) Scissors
+</h3>
+
+
+<form action="/attack" method="post">
+  <label for="attack_method">
+    Attack method
+    <input type="text" name="attack_method">
+  </label>
+  <input type="submit" value="Attack">
+</form>
