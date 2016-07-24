@@ -1,6 +1,6 @@
 class P2Wins
 
-  def self.result(p1, p2)
+  def self.result(_p1, p2)
     "#{p2.name} wins!"
   end
 
