@@ -14,4 +14,11 @@ feature 'displays the result' do
     click_button("Rock")
     expect(page).to(have_content("Sophie wins!"))
   end
+
+  scenario 'it is possible to play again' do
+    enter_player_name
+    click_button("Rock")
+    click_button("Play again")
+    expect(page).to(have_content("Welcome"))
+  end
 end

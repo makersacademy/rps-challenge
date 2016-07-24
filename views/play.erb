@@ -18,6 +18,9 @@
       <p> <%=@player1.name%> has chosen <%= @player1.weapon %></p>
       <p> <%=@player2.name%> has chosen <%= @player2.weapon %></p>
       <p> <%=@game.result%></p>
+      <form action="/" method="get">
+        <input type="submit" value="Play again">
+      </form>
     <% end %>
   </div>
 </body>

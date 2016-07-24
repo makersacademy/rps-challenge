@@ -4,7 +4,7 @@ feature 'a player can play against a robot' do
 
   scenario 'a player is in default mode' do
     enter_player_name
-    expect(page).to(have_content("You are playing against the Rock, Paper, Scissors robot"))
+    expect(page).to(have_content("Rock, Paper, Scissors robot"))
   end
 
   scenario 'the robot randomly selects a weapon' do
