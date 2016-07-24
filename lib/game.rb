@@ -25,7 +25,7 @@ class Game
   end
 
   def result
-    RULES[@player.choice.to_sym][@computer.choice]
+    RULES[@player.choice][@computer.choice]
   end
 
 end

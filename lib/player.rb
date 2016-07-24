@@ -1,9 +1,12 @@
 class Player
-  attr_accessor :choice, :name
+  attr_reader :choice, :name
 
   def initialize(name)
     @name = name
-    @choice = nil
+  end
+
+  def weapon(weapon)
+    @choice = weapon.to_sym
   end
 
 end

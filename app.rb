@@ -23,7 +23,7 @@ get '/play' do
 end
 
 post '/options' do
-  @game.player.choice = params[:choice]
+  @game.player.weapon(params[:choice])
   @game.computer.choose_weapon
   redirect '/result'
 end
