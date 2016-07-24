@@ -104,3 +104,5 @@ Redid game.rb to include sessions
 
 Sessions 1 and 2 done following the Battle game as a template.
 Needed help on part 3 from class mates.
+
+Got stuck on randomised opponent functionality so used the walkthrough as guide.

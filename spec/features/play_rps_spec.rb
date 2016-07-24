@@ -6,6 +6,10 @@
 # So I can play rock/paper/scissors
 # I would like to choose one option
 
+# As a marketeer
+# So I can play rock/paper/scissors
+# I would like my choice to acted upon by the game
+
 require_relative '../spec_helper'
 
 feature 'Play RPS game' do
@@ -16,14 +20,26 @@ feature 'Play RPS game' do
   end
 
   scenario 'display RPS game choices' do
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'rock'
+    expect(page).to have_button 'paper'
+    expect(page).to have_button 'scissors'
   end
 
   scenario 'choice of RPS' do
-    click_button 'Rock'
-    expect(page).to have_content 'Rock selected!'
+    click_button 'rock'
+    expect(page).to have_content 'rock selected!'
+  end
+
+  scenario 'opponent selects Rock' do
+    click_button 'rock'
+
+    display = find(:css, "#opposition").text
+
+    expect(displayed_message).to include display
+  end
+
+  def displayed_message
+    [:rock, :paper, :scissors].map {|choice|"They selected #{choice}!"}
   end
 
 end
