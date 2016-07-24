@@ -10,11 +10,17 @@
   <h1>Computer <br> <span><%= @game.npc_score %></span></h1>
 </div>
 
+<div class="choose">
 <h2>Select your item:</h2>
 
 <form action="/battle" method="post">
-  <input type="radio" name="weapon" value="rock"  id='rock' checked>Rock<br>
-  <input type="radio" name="weapon" value="paper" id='paper'>Paper<br>
-  <input type="radio" name="weapon" value="scissors" id='scissors'>Scissors<br>
+  <input type="radio" name="weapon" value="rock"  id='rock' checked>Rock<br><br>
+  <input type="radio" name="weapon" value="paper" id='paper'>Paper<br><br>
+  <input type="radio" name="weapon" value="scissors" id='scissors'>Scissors<br><br>
   <button type="submit">Let's go!</button>
 </form>
+</div>
+
+<div class="pic">
+  <img src="images/rps.png" alt="rps"/>
+</div>

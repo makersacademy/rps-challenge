@@ -2,20 +2,14 @@ body {
   background-color: #f4e9d7;
 }
 
-button {
-  padding: 13px 25px;
-  border-radius: 5px;
-  border: none;
-  background: white;
-  color: #47e5c2;
-}
+
 
 .scores {
   display: -webkit-inline-box;
   text-align: center;
   color: white;
   font-family: 'Hammersmith One', sans-serif;
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 h1 {
@@ -33,4 +27,33 @@ span {
 form {
   width: 50%;
   height: auto;
+}
+
+.choose {
+  width: 50%;
+  color: white;
+  padding-left: 17rem;
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 13px 25px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  color: #47e5c2;
+}
+
+button:hover {
+  transition: all 0.3s ease 0s;
+  background: #47e5c2;
+  color: white;
+}
+
+img {
+  border-style: none;
+  width: 300px;
+  margin: 0 auto;
+  padding-left: 50rem;
+  padding-top: 1.6rem;
 }
