@@ -18,4 +18,9 @@ describe Player do
       expect(player.choose_option("rock")).to eq "rock"
     end
   end
+  describe "can choose an option randomly" do
+    it "chooses option randomly" do
+      expect(["rock","scissor","paper"]).to include(player.choose_random_option)
+    end
+  end
 end

@@ -23,7 +23,7 @@ class Game
   end
 
   def self.start_game(player_1,player_2)
-    @game = Game.new(player_1,player_2)
+    @game = Game.new(player_1,player_2) 
   end
 
   def self.game

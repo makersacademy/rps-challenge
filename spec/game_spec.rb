@@ -3,9 +3,7 @@ require 'game'
 describe Game do
   let(:player_1) {double :player}
   let(:computer) {double :player}
-  before (:each) do
-    allow(player_1).to receive(:option).and_return(:rock)
-    allow(computer).to receive(:option).and_return(:scissor)
+  before(:each) do
     allow(player_1).to receive(:name).and_return("Samed")
     allow(computer).to receive(:name).and_return("Computer")
   end
@@ -20,10 +18,22 @@ describe Game do
     end
   end
 
-  describe "winner declaration" do
-    it "returns the winner" do
 
+  describe "winner declaration" do
+    it "returns  player_1 won: rock vs. scissor" do
+      allow(player_1).to receive(:option).and_return(:rock)
+      allow(computer).to receive(:option).and_return(:scissor)
       expect(game.declare_winner(player_1.option, computer.option)).to eq "Samed won!"
     end
-  end
+    it "returns player_2 won: scissor vs rock" do
+      allow(player_1).to receive(:option).and_return(:scissor)
+      allow(computer).to receive(:option).and_return(:rock)
+      expect(game.declare_winner(player_1.option, computer.option)).to eq "Computer won!"
+    end
+    it "returns draw when both have the same" do
+      allow(player_1).to receive(:option).and_return(:paper)
+      allow(computer).to receive(:option).and_return(:paper)
+      expect(game.declare_winner(player_1.option, computer.option)).to eq "Draw"
+    end
+  end 
 end
