@@ -1,0 +1,26 @@
+---
+- - negates
+  - covers
+  - crushes
+  - crushes
+  - vaporises
+- - covers
+  - negates
+  - cut
+  - eats
+  - disproves
+- - crushes
+  - cut
+  - negate
+  - decapitate
+  - smashes
+- - crushes
+  - eats
+  - decapitate
+  - negates
+  - poisons
+- - vaporises
+  - disproves
+  - smashes
+  - poisons
+  - negates

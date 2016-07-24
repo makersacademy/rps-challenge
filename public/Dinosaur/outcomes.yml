@@ -1,0 +1,26 @@
+---
+- - draw
+  - lose
+  - win
+  - win
+  - lose
+- - win
+  - draw
+  - lose
+  - lose
+  - win
+- - lose
+  - win
+  - draw
+  - win
+  - lose
+- - lose
+  - win
+  - lose
+  - draw
+  - win
+- - win
+  - lose
+  - win
+  - lose
+  - draw
