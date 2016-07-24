@@ -14,11 +14,17 @@ def initialize(player)
 end
 
 def select_weapon(weapon)
-  @weapon_selected = weapon
+  @weapon_selected = weapon.capitalize
 end
 
 def select_computer_weapon
-  @computer_weapon = %w(Rock Paper Scissors).sample
+  #@computer_weapon = %w(Rock Paper Scissors).sample
+  @computer_weapon = ['Rock', 'Paper', 'Scissors'].sample
+end
+
+def select_weapons(weapon)
+  select_weapon(weapon)
+  select_computer_weapon
 end
 
 end
