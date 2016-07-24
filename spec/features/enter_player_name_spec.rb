@@ -1,4 +1,4 @@
-require './app.rb'
+require 'spec_helper'
 
 feature 'Player name' do
   scenario "Player can enter their name" do

@@ -1,9 +1,12 @@
 class Game
 
-  attr_reader :player
+  CHOICES = ["Rock", "Paper", "Scissors"]
+
+attr_reader :player, :computer_choice
 
   def initialize(player)
     @player = player
+    @computer_choice = CHOICES.select
   end
 
   def self.create(player)
