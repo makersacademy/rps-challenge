@@ -2,7 +2,7 @@
 
 https://rps-game-demo.herokuapp.com/
 
-[![Coverage Status](https://coveralls.io/repos/github/makersacademy/rps-challenge/badge.svg)](https://coveralls.io/github/makersacademy/rps-challenge) [![Build Status](https://travis-ci.org/benjamin-white/rps-challenge.svg?branch=master)](https://travis-ci.org/benjamin-white/rps-challenge)
+[![Coverage Status](https://camo.githubusercontent.com/f848893457644179be3b17fac3544298bd0b7f29/68747470733a2f2f636f766572616c6c732e696f2f6275696c64732f373133363532352f6261646765)](https://coveralls.io/builds/7136525) [![Build Status](https://travis-ci.org/benjamin-white/rps-challenge.svg?branch=master)](https://travis-ci.org/benjamin-white/rps-challenge)
 
 
 RPS Game is a small **Ruby** app that allows a user to play a game of _Rock, Paper, Scissors_ against the computer. It's development made use of the **Sinatra** framework for routing HTTP requests and the **Capybara** testing suite for running feature tests (unit tests were conducted with **Rspec**). Sinatra provided a lightweight and flexible interface layer to the **Rack** middleware used. This allowed a quick and easy way to add the small amounts of dynamic content needed using embedded Ruby, session cookies and the POST request params hash.<br><br>
