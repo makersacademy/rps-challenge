@@ -1,8 +1,6 @@
 require_relative 'player'
 require_relative 'bot'
 
-
-
 class Game
 
   def self.create(player_1_name)
@@ -13,14 +11,15 @@ class Game
     @game
   end
 
-attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name
+attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name, :score
   def initialize(player_1_name)
     @player_1_name = player_1_name
     @player_1_index = nil
-    @bot_selection = Bot.new.gesture
+    @bot_selection = Bot.new.gesture(@winner)
     @bot_index = nil
     @gesture = nil
     @winner = nil
+    @score = [0, 0]
     @arr =  [
            [:tie,        :rock,     :paper,    :scissors,    :spock,    :lizard],
            [:rock,       :tie,      :win,      :lose,        :win,      :lose],
@@ -34,6 +33,7 @@ attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name
   def play(gesture)
     @gesture = gesture
     outcome
+    score_calc
   end
 
   def bot_index
@@ -58,6 +58,14 @@ attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name
     end
   end
 
+  def score_calc
+    if outcome == :win
+      @score = [(@score[0] += 1), (@score[1] += 0)]
+    elsif outcome == :lose
+      @score = [(@score[0] += 0), (@score[1] += 1)]
+    end
+    @score
+  end
 end
 
 

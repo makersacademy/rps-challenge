@@ -6,6 +6,22 @@
 
 <body class="select-page">
   <h1><%= @game.player_1_name.player_1_name %> vs. Zhijian Wang (AI)</h1>
+  <h4>Best of three rounds.</h4>
+  <% if @game.score[0] == 3 %>
+  <h3><%= @game.player_1_name.player_1_name %>: <%= @game.score[0] %></h3>
+  <h3>Zhijian Wang (AI): <%= @game.score[1] %></h3>
+  <span><%= @game.player_1_name.player_1_name %> wins!</span>
+  <form action="/" method="get">
+  <input type="submit" value="New Game">
+  </form>
+  <% elsif @game.score[1] == 3 %>
+  <h3><%= @game.player_1_name.player_1_name %>: <%= @game.score[0] %></h3>
+  <h3>Zhijian Wang (AI): <%= @game.score[1] %></h3>
+  <span>Zhijian Wang (AI) wins!</span>
+  <form action="/" method="get">
+  <input type="submit" value="New Game">
+  </form>
+  <% elsif @game.score.reduce(0, :+).between?(0,6) %>
   <form action="/play" method="get">
     <label form="select">Please select you gesture:</label></br>
     Rock<input type="radio" name="gesture" value="rock"></br>
@@ -14,14 +30,10 @@
     Spock<input type="radio" name="gesture" value="spock"></br>
     Lizard<input type="radio" name="gesture" value="lizard"></br>
     <input type="submit" value="Play">
-
-    <!-- <select name="Gestures">
-      <option value=":rock">Rock</option>
-      <option value=":paper">Paper</option>
-      <option value=":scissors">Scissors</option>
-      <option value=":spock">Spock</option>
-      <option value=":lizard">Lizard</option>
-    </select> -->
   </form>
+  <h3><%= @game.player_1_name.player_1_name %>: <%= @game.score[0] %></h3>
+  <h3>Zhijian Wang (AI): <%= @game.score[1] %></h3>
+  <% end %>
+
 
 </body>
