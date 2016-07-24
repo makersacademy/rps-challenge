@@ -52,7 +52,7 @@ attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name, :score
 
   def winner
     if outcome == :tie
-      'tie game'
+      @winner = 'tie game'
     else
       outcome == :win ? @winner = 'you' : @winner = 'computer'
     end

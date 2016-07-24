@@ -8,7 +8,7 @@
 <h2>Zhijian played <%= @game.bot_selection %></h2>
 <h2>You played <%= @game.gesture %></h2>
 
-<span class="blink">You <%= @game.outcome %>!</span>
+<span class="blink">You <%= @game.outcome %> round <%= @game.score.reduce(0, :+) %></span>
 
 
 

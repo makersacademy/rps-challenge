@@ -2,16 +2,18 @@ class Bot
 # Zhijian Wang (AI)
   def initialize
     @gesture = nil
-    @gesture_history = [:rock]
+    @gesture_history = [:rock, :paper]
     @gestures = [:rock, :paper, :scissors, :spock, :lizard]
 
   end
 
   def gesture(previous_winner = nil)
-    if previous_winner == 'computer'
+    if @gesture_history[-1] == @gesture_history[-2]
+      @gesture = @gestures[rand(4)]
+    elsif previous_winner == 'computer'
       rand(1..2) == 1 ? @gesture = @gesture_history.pop : @gesture =  @gestures[rand(4)]
     elsif previous_winner == 'you'
-      rand(1..2) == 1 ? @gesture = @gestures[@gestures.index(@gesture_history.pop) + 1] : @gesture =  @gestures[rand(4)]
+      rand(1..2) == 1 ? @gesture = @gestures[@gestures.index(@gesture_history.pop) + 1] : @gesture = @gestures[rand(4)]
       @gesture = :rock if @gesture == nil
     else
       @gesture = @gestures[rand(4)]
