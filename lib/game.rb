@@ -51,23 +51,14 @@ end
 
 def result_text
   grammar
-  case result
-    when :win
-      return "#{@weapon_selected} #{@beat} #{@computer_weapon}... You Win!"
-    when :draw
-      return "We both chose #{@weapon_selected}... It's a Draw!"
-    when :lose
-      return "#{@computer_weapon} #{beat} #{@weapon_selected}... I win!"
-    else
-      raise error
-  end
+  return "#{@weapon_selected} #{@beat} #{@computer_weapon}... You Win!" if result == :win
+  return "We both chose #{@weapon_selected}... It's a Draw!" if result == :draw
+  return "#{@computer_weapon} #{beat} #{@weapon_selected}... I win!" if result == :lose
+  raise error
 end
 
 def grammar
-  unless @weapon_selected == 'Scissors'
-    @beat = ' beats '
-  else
-    @beat = ' beat '
-  end
+  @weapon_selected == 'Scissors' ? @beat = ' beat ' : @beat = ' beats '
 end
+
 end
