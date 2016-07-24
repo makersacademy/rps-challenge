@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    player_choice = (params[:radio]).downcase
+    player_choice = (params[:radio])
     @game.player_throw(player_choice)
     redirect '/result'
   end

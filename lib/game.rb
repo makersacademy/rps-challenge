@@ -13,9 +13,9 @@ class Game
   def initialize(player_1)
     @players = [player_1]
     @beats = {
-              rock: {scissors: "crushes"},
-              paper: {rock: "covers"},
-              scissors: {paper: "cuts"}
+              Rock: {Scissors: "crushes"},
+              Paper: {Rock: "covers"},
+              Scissors: {Paper: "cuts"}
             }
   end
 
@@ -28,7 +28,7 @@ class Game
   end
 
   def computer_throw
-    ['rock', 'paper', 'scissors'].sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 
   def computer_choice
@@ -41,7 +41,7 @@ class Game
   end
 
   def result
-    outcome.join(' ').capitalize!
+    outcome.join(' ')
   end
 
   private
@@ -50,19 +50,19 @@ class Game
 
   def outcome
     if player_wins?
-      [player_choice, beats[player_choice.downcase.to_sym][computer_choice.to_sym], computer_choice]
+      [player_choice, beats[player_choice.to_sym][computer_choice.to_sym], computer_choice]
     else
-      [computer_choice, beats[computer_choice.to_sym][player_choice.downcase.to_sym], player_choice]
+      [computer_choice, beats[computer_choice.to_sym][player_choice.to_sym], player_choice]
     end
   end
 
   def player_wins?
-    beats[player_choice.downcase.to_sym][computer_choice.to_sym]
+    beats[player_choice.to_sym][computer_choice.to_sym]
   end
 
 
   def draw?
-    computer_choice == player_choice.downcase
+    computer_choice == player_choice
   end
 
 end

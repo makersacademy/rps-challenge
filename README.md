@@ -3,11 +3,17 @@
 [![Coverage Status](https://coveralls.io/repos/github/lukecartledge/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/lukecartledge/rps-challenge?branch=master)
 [![Build Status](https://travis-ci.org/lukecartledge/rps-challenge.svg?branch=master)](https://travis-ci.org/lukecartledge/rps-challenge)
 
-Instructions
+# Installation instructions
 -------
 
+1. Fork & clone this repo
+2. Run bundle
+3. Run `ruby app.rb`
+4. Using a browser navigate to: localhost:4567 to start the game
 
 
+# User stories completed
+-------
 ```sh
 As a marketeer
 So that I can see my name in lights
@@ -18,8 +24,8 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
+# Functionality implemented
+-------
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
@@ -40,3 +46,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
+
+# How I Found This Challenge
+----
