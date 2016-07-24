@@ -11,4 +11,12 @@ feature "Choice" do
     register_and_play
     expect(page).to have_button("SCISSORS")
   end
+  scenario "has 'Spock' option button" do
+    register_and_play
+    expect(page).to have_button("SPOCK")
+  end
+  scenario "has 'Lizard' option button" do
+    register_and_play
+    expect(page).to have_button("LIZARD")
+  end
 end

@@ -28,7 +28,23 @@ describe Game do
         player.take_weapon "rock"
         expect(game.start).to eq "#{player.name} lost!"
       end
-
+    end
+    context "when CPU's weapon is 'lizard'" do
+      before do
+        allow(game).to receive(:random_weapon).and_return "lizard"
+      end
+      it "player wins with rock" do
+        player.take_weapon "rock"
+        expect(game.start).to eq "#{player.name} wins!"
+      end
+      it "can be a draw" do
+        player.take_weapon "lizard"
+        expect(game.start).to eq "It's a draw!"
+      end
+      it "player loses with spock" do
+        player.take_weapon "spock"
+        expect(game.start).to eq "#{player.name} lost!"
+      end
     end
   end
 

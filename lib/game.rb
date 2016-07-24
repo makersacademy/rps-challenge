@@ -6,7 +6,7 @@ class Game
 
     def initialize(player = Player.new)
       @player = player
-      @weapons = ["rock", "paper", "scissors"]
+      @weapons = ["rock", "paper", "scissors", "spock", "lizard"]
     end
 
     def self.create(player)
@@ -29,12 +29,17 @@ class Game
     private
 
     def fight
-
       game_pair = [@player.weapon, @cpu_weapon]
       win_pairs = [["scissors", "paper"],
+                  ["scissors", "lizard"],
                   ["paper", "rock"],
-                  ["rock", "scissors"]]
-
+                  ["paper", "spock"],
+                  ["rock", "scissors"],
+                  ["rock", "lizard"],
+                  ["spock", "scissors"],
+                  ["spock", "rock"],
+                  ["lizard", "spock"],
+                  ["lizard", "paper"]]
       if @player.weapon == @cpu_weapon
         "It's a draw!"
       elsif win_pairs.include?(game_pair)
