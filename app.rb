@@ -10,7 +10,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:name])
+    player = Player.new(params[:name].capitalize)
+    puts "ERROR  #{params[:name].class}"
     @game = Game.create(player)
     redirect '/play'
   end
