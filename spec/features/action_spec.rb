@@ -21,8 +21,11 @@ describe 'Action Page' do
   end
 
   scenario "displays player_2's chosen weapon" do
-    # Sort this out
     expect(page).to have_content "Santa Claus's chosen weapon:"
+  end
+
+  scenario "displays the outcome of the contest" do
+    expect(page).to have_content "beat" || "loses"
   end
 
 end
