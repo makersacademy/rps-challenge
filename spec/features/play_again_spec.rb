@@ -10,7 +10,7 @@ feature 'Play again or exit' do
     sign_in
     click_button('Rock')
     click_button('No')
-    expect(page).to have_content 'Thank you for palying. Bye!'
+    expect(page).to have_content 'Thank you for playing. Bye!'
   end
 
 end

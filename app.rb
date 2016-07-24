@@ -13,14 +13,14 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player_name = (params[:player_name]).capitalize
+    player_name = params[:player_name].capitalize
     player = Player.new(player_name)
     @game = Game.create(player)
     erb :playerchoice
   end
 
   post '/playerchoice' do
-    @game.player.set_choice(params.values[0])
+    @game.player.make_choice(params.values.first)
     redirect '/winner'
   end
 

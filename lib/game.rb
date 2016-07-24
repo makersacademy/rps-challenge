@@ -6,7 +6,10 @@ class Game
 
   attr_reader :player, :player_choice, :opponent
 
-  PAIRS = [{"Rock" => "Scissors"}, {"Scissors" => "Paper"}, {"Paper" => "Rock"}]
+  PAIRS = [ {"Rock" => "Scissors"},
+            {"Scissors" => "Paper"},
+            {"Paper" => "Rock"}
+          ].freeze
 
 
   def initialize(player)

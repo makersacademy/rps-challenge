@@ -2,7 +2,7 @@ require './lib/opponent'
 
 describe Opponent do
 
-  subject(:opponent) { described_class.new }
+  subject (:opponent) { described_class.new }
 
 describe "#random_option" do
 
