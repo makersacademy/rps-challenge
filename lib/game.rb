@@ -30,8 +30,9 @@ class Game
   end
 
   def the_winner_is
-    return :draw if winning_weapon(@players[0].weapon, @players[1].weapon) == :draw
-    @players.select { |player| player.weapon == winning_weapon(weapon_1, weapon_2) }
+    winner = winning_weapon(@players[0].weapon, @players[1].weapon)
+    return :draw if winner == :draw
+    @players.find { |player| player.weapon == winner }
   end
 
 end
