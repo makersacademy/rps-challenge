@@ -5,4 +5,5 @@ feature 'Enter names' do
     enter_player_name
     expect(page).to(have_content("Welcome Sophie!"))
   end
+
 end

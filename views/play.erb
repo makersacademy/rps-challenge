@@ -1,18 +1,22 @@
 <body>
   <h1> Rock - Paper - Scissors </h1>
+  <h2>You are playing against the Rock, Paper, Scissors robot</h2>
   <div>
-    <% if @player.weapon == nil %>
-      <h1>Welcome <%= @player.name %>!</h1>
+    <% if @player1.weapon == nil %>
+      <h1>Welcome <%= @player1.name %>!</h1>
       <h2>Please choose your weapon:</h2>
       <form action="/rock" method="post">
         <input type="submit" value="Rock">
+      </form>
       <form action="/paper" method="post">
         <input type="submit" value="Paper">
+      </form>
       <form action="/scissors" method="post">
         <input type="submit" value="Scissors">
       </form>
     <% else %>
-      <p> <%=@player.name%> has chosen <%= @player.weapon %></p>
+      <p> <%=@player1.name%> has chosen <%= @player1.weapon %></p>
+      <p> <%=@player2.name%> has chosen <%= @player2.weapon %></p>
     <% end %>
   </div>
 </body>
