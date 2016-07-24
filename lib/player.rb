@@ -2,16 +2,16 @@ require_relative 'weapon'
 
 class Player
 
-private
+	private
 	attr_reader :name, :weapon
-public
+	public
 
 	def initialize name: nil
 		name ||= "Computer"
 		@name = name
 	end
 
-	def get_name
+	def name
 		@name
 	end
 
@@ -19,7 +19,7 @@ public
 		@weapon = Weapon.new(type: weapon)
 	end
 
-	def get_weapon
+	def weapon
 		@weapon
 	end
 
