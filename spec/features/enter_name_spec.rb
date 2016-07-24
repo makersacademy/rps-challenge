@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "can register a name"do
+feature "can register a name" do
   scenario "can enter and see name" do
     visit '/'
     fill_in 'name', with: 'Prashant'
