@@ -9,5 +9,11 @@ describe Player do
     end
   end
 
+  describe '#weapon' do
+    it 'has a weapon' do
+      expect(player.weapon_choice("rock")).to eq :rock
+    end
+  end
+
 
 end
