@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/game'
 
 class Rock_paper_scissors < Sinatra::Base
-enable :sessions
 
   get '/' do
     erb :index

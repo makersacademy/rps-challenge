@@ -1,7 +1,7 @@
 require_relative 'computer_player'
 class Game
 
-  attr_reader :player_1, :player_2, :players, :score, :choice, :comp_choice
+  attr_reader :player_1, :player_2, :players, :choice, :computer_move
 
   def initialize(player_1_name)
     @player_1 = Player.new(player_1_name)

@@ -29,3 +29,15 @@ feature "Remembers the players choice" do
       expect(page).to have_content 'Becca chose Scissors'
     end
 end
+
+feature "Computer selects a random move" do
+  scenario "computer will generate a move" do
+    visit('/')
+    fill_in :player_1_name, with: 'Becca'
+    # fill_in :player_2_name, with: 'Josef'
+    click_button 'Submit'
+    allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
+    click_button 'Scissors'
+    expect(page).to have_content("Beccatron chose Rock")
+  end
+end
