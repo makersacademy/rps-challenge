@@ -3,6 +3,7 @@ require 'sinatra/base'
 # require_relative './lib/game'
 
 class RPS < Sinatra::Base
+  enable :sessions
   attr_reader :player_1, :weapon
 
   get '/' do
@@ -15,11 +16,13 @@ class RPS < Sinatra::Base
   end
 
   post '/select' do
-    @weapon = params[:weapon]
+    session[:weapon] = params[:weapon]
+    @weapon = session[:weapon]
     erb(:attack)
   end
 
   get '/opponent' do
+    @weapon = session[:weapon]
     erb(:view_weapons)
   end
 
