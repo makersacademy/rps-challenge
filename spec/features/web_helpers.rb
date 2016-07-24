@@ -9,7 +9,7 @@ def sign_in_and_choose_paper
   sign_in_and_play
   click_button "I was born ready"
   choose("paper")
-  click_button "Feeling pretty good about myself right now"
+  click_button "Feeling pretty confident about this one"
 end
 
 # Have another helper once we implement the 3 options for RPS.

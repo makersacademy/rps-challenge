@@ -7,7 +7,7 @@ describe 'Outcome page' do
       sign_in_and_play
       click_button "I was born ready"
       choose("paper")
-      click_button "Feeling pretty good about myself right now"
+      click_button "Feeling pretty confident about this one"
       click_button "..."
       expect(page).to have_content "It seems you got lucky this time! You WIN!"
     end
@@ -18,7 +18,7 @@ describe 'Outcome page' do
       sign_in_and_play
       click_button "I was born ready"
       choose("paper")
-      click_button "Feeling pretty good about myself right now"
+      click_button "Feeling pretty confident about this one"
       click_button "..."
       expect(page).to have_content "Great minds think alike. It's a draw!"
     end
@@ -29,7 +29,7 @@ describe 'Outcome page' do
       sign_in_and_play
       click_button "I was born ready"
       choose("paper")
-      click_button "Feeling pretty good about myself right now"
+      click_button "Feeling pretty confident about this one"
       click_button "..."
       expect(page).to have_content "Oh oh, that was a bit embarrassing! You LOSE!"
     end

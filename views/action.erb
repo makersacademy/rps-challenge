@@ -1,20 +1,53 @@
-Action!
-<p>
-</p>
-<%=@game.player_1.name %> vs. <%=@game.player_2.name %>
-<p>
+<style>
+  body {font-family:Verdana;}
+</style>
 
-<%=@game.player_1.name %>'s chosen weapon:
-<%=@game.player_1.weapon %> vs.
-<%=@game.player_2.name %>'s chosen weapon:
-<%=@game.player_2.weapon %>
-</p>
+<h2> Action! </h2>
+<br/ >
+<%=@game.player_1.name %> vs. <%=@game.player_2.name %>
+<br/ >
+<br/ >
+<table>
+  <tr>
+    <td>
+      <%=@game.player_1.name %>'s chosen weapon:
+      <br />
+      <%=@game.player_1.weapon %>
+    </td>
+    <td>
+      <%=@game.player_2.name %>'s chosen weapon:
+      <br />
+      <%=@game.player_2.weapon %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% if @game.player_1.weapon == :paper %>
+        <a href="http://tinypic.com?ref=10sbzmh" target="_blank"><img src="http://i65.tinypic.com/10sbzmh.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% elsif @game.player_1.weapon == :scissors %>
+        <a href="http://tinypic.com?ref=289zvjn" target="_blank"><img src="http://i65.tinypic.com/289zvjn.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% else %>
+        <a href="http://tinypic.com?ref=2ag11e1" target="_blank"><img src="http://i65.tinypic.com/2ag11e1.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% end %>
+    </td>
+    <td>
+      <% if @game.player_2.weapon == :paper %>
+        <a href="http://tinypic.com?ref=10sbzmh" target="_blank"><img src="http://i65.tinypic.com/10sbzmh.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% elsif @game.player_2.weapon == :scissors %>
+        <a href="http://tinypic.com?ref=289zvjn" target="_blank"><img src="http://i65.tinypic.com/289zvjn.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% else %>
+        <a href="http://tinypic.com?ref=2ag11e1" target="_blank"><img src="http://i65.tinypic.com/2ag11e1.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+      <% end %>
+    </td>
+  </tr>
+</table>
+
 <% if @game.the_winner_is == @game.player_1 %>
-  <%=@game.player_1.weapon %> beats <%=@game.player_2.weapon %>
+  <h3><%=@game.player_1.weapon %> beats <%=@game.player_2.weapon %></h3>
 <% elsif @game.the_winner_is == :draw %>
-  <%=@game.player_1.weapon %> vs. <%=@game.player_2.weapon %>
+  <h3><%=@game.player_1.weapon %> don't beat <%=@game.player_2.weapon %></h3>
 <% else %>
-  <%=@game.player_1.weapon %> loses to <%=@game.player_2.weapon %>
+  <h3><%=@game.player_1.weapon %> loses to <%=@game.player_2.weapon %></h3>
 <% end %>
 <form action="/outcome">
   <input type="submit" value="..." />
