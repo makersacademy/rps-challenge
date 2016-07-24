@@ -1,2 +1,18 @@
-<h1>Rock - Paper - Scissor</h1>
-<h2>"<%= @player_name %>" vs. "Makers NotSoDeepMind"</h2>
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h1>Rock - Paper - Scissor</h1>
+    <h2>"<%= @player_name %>" vs. "Makers NotSoDeepMind"</h2>
+    <p>Choose your move <%= @player_name %>:</p>
+
+    <form action="/game" method="post">
+      <input type=radio name="user_move" value="rock" checked> Rock<br>
+      <input type=radio name="user_move" value="paper"> Paper<br>
+      <input type=radio name="user_move" value="scissor"> Scissor<br><br>
+      <input type=submit value="Start">
+    </form>
+
+  </body>
+</html>
+
