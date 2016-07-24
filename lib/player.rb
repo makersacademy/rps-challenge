@@ -1,3 +1,5 @@
+require_relative 'weapon'
+
 class Player
 
   attr_reader :name, :weapon

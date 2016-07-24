@@ -1,10 +1,7 @@
 require_relative 'player'
-require_relative 'computer'
+require_relative 'weapon'
 
 class Game
-
-  # Or should we have two separate player_1, player_2 methods
-  # as in the weekly challenge?
 
   attr_reader :players
 

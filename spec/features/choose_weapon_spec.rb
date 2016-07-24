@@ -8,6 +8,6 @@ describe 'Choose Weapon Page' do
   scenario "can choose from the three RPS options" do
     sign_in_and_play
     click_button "I was born ready"
-    expect(page).to have_content "Stone"
+    expect(page).to have_content "Stone" && "Paper" && "Scissors"
   end
 end

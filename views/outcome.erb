@@ -1,7 +1,8 @@
 <form action="/">
-  <% if @game.the_winner_is == @game.players[0] %>
+  <% if @game.the_winner_is == @game.player_1 %>
     It seems you got lucky this time! You WIN!
     <input type="submit" value="I want some more!" />
+
   <% elsif @game.the_winner_is == :draw %>
     Great minds think alike. It's a draw!
     <input type="submit" value="One more try" />

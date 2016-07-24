@@ -3,9 +3,19 @@ Action!
 </p>
 <%=@game.player_1.name %> vs. <%=@game.player_2.name %>
 <p>
-<%=@game.player_1.weapon %> vs.  <%=@game.player_2.weapon %>
-</p>
 
+<%=@game.player_1.name %>'s chosen weapon:
+<%=@game.player_1.weapon %> vs.
+<%=@game.player_2.name %>'s chosen weapon:
+<%=@game.player_2.weapon %>
+</p>
+<% if @game.the_winner_is == @game.player_1 %>
+  <%=@game.player_1.weapon %> beats <%=@game.player_2.weapon %>
+<% elsif @game.the_winner_is == :draw %>
+  <%=@game.player_1.weapon %> vs. <%=@game.player_2.weapon %>
+<% else %>
+  <%=@game.player_1.weapon %> loses to <%=@game.player_2.weapon %>
+<% end %>
 <form action="/outcome">
   <input type="submit" value="..." />
 </form>
