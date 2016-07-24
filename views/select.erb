@@ -1,17 +1,18 @@
 <head>
-
-
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"
+  type='text/css'>
+  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
 </head>
 
-<body>
-  <h1>Tommy's Game of Rock, Paper, Scissors</h1>
-  <form action="/play" method="post">
+<body class="select-page">
+  <h1><%= @game.player_1_name.player_1_name %> vs. Zhijian Wang (AI)</h1>
+  <form action="/play" method="get">
     <label form="select">Please select you gesture:</label></br>
-    Rock<input type="radio" name="gesture" value=":rock"></br>
-    Paper<input type="radio" name="gesture" value=":paper"></br>
-    Scissors<input type="radio" name="gesture" value=":scissors"></br>
-    Spock<input type="radio" name="gesture" value=":spock"></br>
-    Lizard<input type="radio" name="gesture" value=":lizard"></br>
+    Rock<input type="radio" name="gesture" value="rock"></br>
+    Paper<input type="radio" name="gesture" value="paper"></br>
+    Scissors<input type="radio" name="gesture" value="scissors"></br>
+    Spock<input type="radio" name="gesture" value="spock"></br>
+    Lizard<input type="radio" name="gesture" value="lizard"></br>
     <input type="submit" value="Play">
 
     <!-- <select name="Gestures">

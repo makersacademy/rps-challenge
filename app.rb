@@ -14,12 +14,13 @@ class RPS < Sinatra::Base
 
   get '/select' do
     @game = Game.instance
+    p @game
     erb :select
   end
 
   get '/play' do
     @game = Game.instance
-    @game.play(:spock) #needs to be params
+    @game.play(params[:gesture].to_sym) #needs to be params
     erb :play
   end
 

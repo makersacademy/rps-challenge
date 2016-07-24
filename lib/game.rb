@@ -13,20 +13,21 @@ class Game
     @game
   end
 
-attr_reader :bot_selection, :gesture, :arr
+attr_reader :bot_selection, :gesture, :arr, :winner, :player_1_name
   def initialize(player_1_name)
     @player_1_name = player_1_name
     @player_1_index = nil
     @bot_selection = Bot.new.gesture
     @bot_index = nil
     @gesture = nil
+    @winner = nil
     @arr =  [
            [:tie,        :rock,     :paper,    :scissors,    :spock,    :lizard],
-           [:rock,       :tie,      :paper,    :rock,        :spock,    :rock],
-           [:paper,      :paper,    :tie,      :scissors,    :paper,    :lizard],
-           [:scissors,   :scissors, :scissors, :tie,         :spock,    :scissors],
-           [:spock,      :spock,    :paper,    :spock,       :tie,      :lizard],
-           [:lizard,     :rock,     :lizard,   :scissors,    :lizard,   :tie]
+           [:rock,       :tie,      :win,      :lose,        :win,      :lose],
+           [:paper,      :lose,     :tie,      :win,         :lose,     :win],
+           [:scissors,   :lose,     :lose,     :tie,         :win,      :lose],
+           [:spock,      :lose,     :win,      :lose,        :tie,      :win],
+           [:lizard,     :win,      :lose,     :win,         :lose,     :tie]
             ]
   end
 
@@ -36,11 +37,11 @@ attr_reader :bot_selection, :gesture, :arr
   end
 
   def bot_index
-    @bot_index = @arr.transpose[0].index(@bot_selection).to_i
+    @bot_index = @arr.transpose[0].index(@bot_selection)
   end
 
   def player_1_index
-    @player_1_index = @arr[1].index(@gesture).to_i
+    @player_1_index = @arr[0].index(@gesture)
   end
 
   def outcome
@@ -50,11 +51,25 @@ attr_reader :bot_selection, :gesture, :arr
   end
 
   def winner
-    if outcome == @gesture && @bot_selection
+    if outcome == :tie
       'tie game'
     else
-    outcome == @gesture ? @winner = 'you' : @winner = 'computer'
+      outcome == :win ? @winner = 'you' : @winner = 'computer'
     end
   end
 
 end
+
+
+=begin
+@arr =  [
+       [:tie,        :rock,     :paper,    :scissors,    :spock,    :lizard],
+       [:rock,       :tie,      :paper,    :rock,        :spock,    :rock],
+       [:paper,      :paper,    :tie,      :scissors,    :paper,    :lizard],
+       [:scissors,   :scissors, :scissors, :tie,         :spock,    :scissors],
+       [:spock,      :spock,    :paper,    :spock,       :tie,      :lizard],
+       [:lizard,     :rock,     :lizard,   :scissors,    :lizard,   :tie]
+        ]
+
+
+=end
