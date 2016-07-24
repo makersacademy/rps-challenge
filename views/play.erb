@@ -1,19 +1,18 @@
 <h1><%= @player_name.capitalize %> vs. Computer</h1>
-<h2>Choose your attack from the following:</h2>
-<h3>1) Rock
-  <br>
-  <br>
-  2) Paper
-  <br>
-  <br>
-  3) Scissors
-</h3>
-
+  <h2>Rules:</h2>
+    <h3>* Rock beats Scissors</h3>
+    <h3>* Paper beats Rock</h3>
+    <h3>* Scissors beats Paper</h3>
+<br>
+  <h2><%= @player_name.capitalize %>! Choose your attack carefully... the
+    Computer is a master!</h2>
 
 <form action="/attack" method="post">
-  <label for="attack_method">
-    Attack method
-    <input type="text" name="attack_method">
-  </label>
-  <input type="submit" value="Attack">
+  <input type="submit" name="user_attack_choice" value="Rock">
+</form>
+<form action="/attack" method="post">
+  <input type="submit" name="user_attack_choice" value="Paper">
+</form>
+<form action="/attack" method="post">
+  <input type="submit" name="user_attack_choice" value="Scissors">
 </form>

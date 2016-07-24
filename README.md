@@ -7,7 +7,7 @@ How to play
 -------
 
 * Enter and submit a name to start game
-* Choose either Rock, Paper or Scissors
+* Click one of the buttons: Rock, Paper or Scissors to select your attack
 
 
 Task

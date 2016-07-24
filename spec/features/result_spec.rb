@@ -1,8 +1,12 @@
-feature "Enter attack method" do
-  scenario "submits attack choice" do
+feature "Result" do
+  scenario "Displays User's attack choice" do
     sign_in_and_play
-    fill_in :attack_method, with: "Rock"
-    click_button "Attack"
-    expect(page).to have_content("Result:")
+    click_button "Rock"
+    expect(page).to have_content("You chose: Rock")
   end
+  scenario "Displays Computer's attack choice" do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content("Computer chose:")
+    end
 end
