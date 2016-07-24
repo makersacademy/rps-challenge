@@ -9,7 +9,7 @@ describe Player do
     end
   end
 
-  describe 'weapon' do
+  describe '#weapon' do
     it 'returns the weapon chosen' do
       player.weapon_choice("Rock")
       expect(player.weapon).to(eq("Rock"))
