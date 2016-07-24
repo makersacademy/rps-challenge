@@ -1,0 +1,15 @@
+
+
+body {
+  background: url("bg-6-full.jpg") no-repeat center center;
+  background-size: cover;
+  }
+
+div {
+  text-align: center;
+  font-family: 'Candal', serif;
+}
+
+.main_header {
+  padding-top: 100px;
+}
