@@ -1,5 +1,5 @@
 feature 'AI oponent' do
-  xscenario 'AI chooses rock' do
+  scenario 'AI chooses rock' do
     sign_in
     player_1_rock
     find_button('Opponents turn').click
