@@ -5,6 +5,7 @@ def sign_in_and_play
 end
 
 def rock_choice
+  sign_in_and_play
   choose('Rock')
   click_button('Choose')
 end
