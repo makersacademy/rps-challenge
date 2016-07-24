@@ -22,9 +22,6 @@ class RPS < Sinatra::Base
   end
 
   get '/vs' do
-    # could consider using .player_1 and .player_2 with app method in Game
-    @player_1_name = @game.player_1.name
-    @player_2_name = @game.player_2.name
     erb(:vs)
   end
 
@@ -34,7 +31,6 @@ class RPS < Sinatra::Base
 
   post '/weapon' do
     @game.player_1.choose(params[:player_1_weapon].to_sym)
-    #@game.player_1.choose(params[:player_1_weapon])
     @game.player_2.choose(@game.random_weapon)
     @game.the_winner_is
     redirect '/action'
@@ -48,6 +44,5 @@ class RPS < Sinatra::Base
     erb(:outcome)
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
