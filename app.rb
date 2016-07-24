@@ -8,6 +8,7 @@ class RPS < Sinatra::Base
   post '/names' do
     $player_1 = Player.new(params[:player_1_name])
     erb :names
+    redirect :game
   end
 
   get '/game' do
