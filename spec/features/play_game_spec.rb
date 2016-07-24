@@ -1,5 +1,5 @@
 require 'spec_helper'
-#require './app.rb'
+
 
 SEED = 124134
 
@@ -18,7 +18,7 @@ feature 'playing the game' do
     sign_in
     click_button 'Rock'
 
-    expect(page).to have_content("You have chosen Rock")
+    expect(page).to have_content("You have chosen: Rock")
   end
 
   scenario "can see computer's weapon of choice" do

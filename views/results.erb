@@ -1,6 +1,6 @@
-You have chosen <%= @player_weapon %>
+<h1>You have chosen: <%= @player_weapon %></h1>
 
-The computer has chosen: <%= @comp_weapon %>
+<h1>The computer has chosen: <%= @comp_weapon %> </h1>
 
 
 
@@ -19,3 +19,8 @@ The computer has chosen: <%= @comp_weapon %>
 <% else %>
   <h1>Draw!</h1>
 <%end%>
+
+
+<form action="/play" >
+  <input type="submit" value="Try again"/>
+</form>
