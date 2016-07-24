@@ -2,28 +2,30 @@ require_relative 'computer'
 
 class Game
   OPTIONS = [:rock, :paper, :scissors]
+
   RULES = {
   :rock     => {:rock => :draw, :paper => :lose, :scissors => :win},
   :paper    => {:rock => :win, :paper => :draw, :scissors => :lose},
   :scissors => {:rock => :lose, :paper => :win, :scissors => :draw}
   }
 
-  attr_reader :player, :winner, :computer_choice
-  attr_accessor :choice
+  attr_reader :player, :computer
 
   def initialize(player)
     @player = player
-    @choice = nil
     @computer = Computer.new
-    @computer_choice = nil
   end
 
-  def ask_computer
-    @computer_choice = @computer.choice
+  def self.create(player1)
+    @game = Game.new(player1)
+  end
+
+  def self.instance
+    @game
   end
 
   def result
-    RULES[@choice.to_sym][computer_choice]
+    RULES[@player.choice.to_sym][@computer.choice]
   end
 
 end

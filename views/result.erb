@@ -5,13 +5,13 @@
 
 <body>
 
-<h1>You picked <%= $game.choice %>!</h1>
-<h1>Computer chose <%= $game.ask_computer %>!</h2>
+<h1>You picked <%= @game.player.choice %>!</h1>
+<h1>Computer chose <%= @game.computer.choice %>!</h2>
 
-<% if $game.result == :draw %>
+<% if @game.result == :draw %>
 <h1>It's a draw!</h1>
 <% else %>
-<h1>You <%= $game.result %>!</h1>
+<h1>You <%= @game.result %>!</h1>
 <% end %>
 
 <form action="/">

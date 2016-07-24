@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -8,8 +9,13 @@ get '/' do
 end
 
 post '/name' do
-  $game = Game.new(params[:player_1_name])
+  player = Player.new(params[:name])
+  @game = Game.create(player)
   redirect '/play'
+end
+
+before do
+  @game = Game.instance
 end
 
 get '/play' do
@@ -17,7 +23,8 @@ get '/play' do
 end
 
 post '/options' do
-  $game.choice = params[:choice]
+  @game.player.choice = params[:choice]
+  @game.computer.choose_weapon
   redirect '/result'
 end
 
