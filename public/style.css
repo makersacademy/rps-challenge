@@ -160,9 +160,10 @@ form {
     vertical-align: middle;
     margin-top: 30px;
     font-size: -webkit-xxx-large;
-    width: 50%;
     height: 100%;
     top: 0;
     text-align: center;
     z-index: -100;
+    width: 100%;
+    left: 0;
   }
