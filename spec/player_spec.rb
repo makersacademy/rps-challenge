@@ -11,7 +11,7 @@ describe Player do
   end
   describe'#choose' do
     it 'returns a number based on weapon choice' do
-      stub_const("Weapons::CHOICES", {rock: 0})
+      stub_const("Weapons::CHOICES", rock: 0)
       expect(subject.choose('rock')).to eq 0
     end
   end
