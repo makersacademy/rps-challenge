@@ -20,8 +20,15 @@ class Game
     @game = Game.new(player_1, player_2)
   end
 
-  def winning_weapon(weapon_1, weapon_2)
+  def player_1
+    @players.first
+  end
 
+  def player_2
+    @players.last
+  end
+
+  def winning_weapon(weapon_1, weapon_2)
     rules = {
       :paper => { :paper => :draw, :scissors => :scissors, :stone => :paper },
       :scissors => { :paper => :scissors, :scissors => :draw, :stone => :stone },

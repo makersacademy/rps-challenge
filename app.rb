@@ -23,8 +23,8 @@ class RPS < Sinatra::Base
 
   get '/vs' do
     # could consider using .player_1 and .player_2 with app method in Game
-    @player_1_name = @game.players[0].name
-    @player_2_name = @game.players[1].name
+    @player_1_name = @game.player_1.name
+    @player_2_name = @game.player_2.name
     erb(:vs)
   end
 
@@ -34,15 +34,13 @@ class RPS < Sinatra::Base
 
   post '/weapon' do
     # Sort this out
-    @game.players[0].choose(:paper)
-    @game.players[1].choose(random_weapon)
+    @game.player_1.choose(:paper)
+    @game.player_2.choose(@game.random_weapon)
     @game.the_winner_is
     redirect '/action'
   end
 
   get '/action' do
-    @player_1_name = @game.players[0].name
-    @player_2_name = @game.players[0].name
     erb(:action)
   end
 

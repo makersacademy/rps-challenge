@@ -1,6 +1,10 @@
 Action!
-
-<%=@player_1_name %> vs. <%=@player_2_name %>
+<p>
+</p>
+<%=@game.player_1.name %> vs. <%=@game.player_2.name %>
+<p>
+<%=@game.player_1.weapon %> vs.  <%=@game.player_2.weapon %>
+</p>
 
 <form action="/outcome">
   <input type="submit" value="..." />
