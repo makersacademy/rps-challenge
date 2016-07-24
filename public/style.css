@@ -116,16 +116,32 @@ form {
     font-size: -webkit-xxx-large;
     border-radius: 20px;
   }
+  .move:hover{
+    background-color: black;
+    color: white
+  }
   .result {
     font-size: 2em;
     margin: 10px;
   }
-a {
+#again {
   border: solid;
-  background-color: transparent;
+  background-color: black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
+  color: white;
+  font-style: normal;
+  font-size: 1em
+}
+#again:focus{
+  outline: none;
+}
+#again:hover{
+  transform: scale(2);
+}
+#again:active{
+  top: 2px;
 }
 
 #submit.submit{
@@ -134,4 +150,15 @@ a {
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
+  }
+  #choose_title{
+    position: fixed;
+    vertical-align: middle;
+    margin-top: 30px;
+    font-size: -webkit-xxx-large;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    text-align: center;
+    z-index: -100;
   }

@@ -1,2 +1,6 @@
 <div class='result'><%= @game.result %></div>
-<a href='/choose'>again?</a>
+<div id='choose_title'><%= @game.p1.name %> vs <%= @game.p2.name %></div>
+
+<form action='/choose' type='get'>
+  <input id='again' type='submit' value='again?'>
+</form>
