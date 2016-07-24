@@ -14,34 +14,33 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     player1 = Player.new(params[:player_1_name])
     player2 = RobotPlayer.new
-    $game = Game.new(player1, player2)
+    @game = Game.create(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     @player1 = @game.player1
     @player2 = @game.player2
-    @result = @game.result
     erb :play
   end
 
   post '/rock' do
-    @game = $game
+    @game = Game.instance
     @player1 = @game.player1
     @player1.weapon_choice('Rock')
     redirect '/play'
   end
 
   post '/paper' do
-    @game = $game
+    @game = Game.instance
     @player1 = @game.player1
     @player1.weapon_choice('Paper')
     redirect '/play'
   end
 
   post '/scissors' do
-    @game = $game
+    @game = Game.instance
     @player1 = @game.player1
     @player1.weapon_choice('Scissors')
     redirect '/play'
