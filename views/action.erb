@@ -45,7 +45,7 @@
 <% if @game.the_winner_is == @game.player_1 %>
   <h3><%=@game.player_1.weapon %> beats <%=@game.player_2.weapon %></h3>
 <% elsif @game.the_winner_is == :draw %>
-  <h3><%=@game.player_1.weapon %> don't beat <%=@game.player_2.weapon %></h3>
+  <h3><%=@game.player_1.weapon %> ties with <%=@game.player_2.weapon %></h3>
 <% else %>
   <h3><%=@game.player_1.weapon %> loses to <%=@game.player_2.weapon %></h3>
 <% end %>

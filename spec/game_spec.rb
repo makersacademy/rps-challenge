@@ -6,15 +6,9 @@ describe Game do
   subject(:game){described_class.new(player_1, player_2)}
   let(:player_1) { double :player, weapon: :scissors }
   let(:player_2) { double :player, weapon: :paper }
-  
+
   it 'is initialized with two players' do
     expect(game.players.size).to eq 2
-  end
-
-  describe '#winning_weapon' do
-    it 'determines the winning weapon' do
-      expect(game.winning_weapon(:paper, :scissors)). to eq :scissors
-    end
   end
 
   describe '#the_winner_is' do

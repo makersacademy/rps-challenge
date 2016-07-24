@@ -24,8 +24,4 @@ describe 'Action Page' do
     expect(page).to have_content "Santa Claus's chosen weapon:"
   end
 
-  scenario "displays the outcome of the contest" do
-    expect(page).to have_content "beat" || "loses"
-  end
-
 end
