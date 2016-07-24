@@ -69,4 +69,5 @@ button:hover {
   transition: all 0.3s ease 0s;
   background: #47e5c2;
   color: white;
+  cursor: hand;
 }

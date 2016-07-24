@@ -41,14 +41,15 @@ button {
   padding: 13px 25px;
   border-radius: 5px;
   border: none;
-  background: white;
-  color: #47e5c2;
+  background: #47e5c2;
+  color: white;
 }
 
 button:hover {
   transition: all 0.3s ease 0s;
-  background: #47e5c2;
-  color: white;
+  background: white;
+  color: #47e5c2;
+  cursor: hand;
 }
 
 img {
