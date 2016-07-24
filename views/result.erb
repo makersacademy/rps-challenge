@@ -1,0 +1,18 @@
+<center>
+
+<p><%= @game.player1.name %> selected <%= @game.player1.choice %></p>
+
+<p><%= @game.player2.name %> selected <%= @game.player2.choice %></p>
+
+<% if @winner == nil %>
+  <h2>It's a draw!!!<h2>
+<% else %>
+  <p>And the winner is:</p>
+<h2><%= @winner.name %>!!!</h2>
+<% end %>
+
+<form action='/end_game'>
+  <input type='submit' value='Play again'>
+</form>
+
+</center>
