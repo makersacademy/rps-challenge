@@ -1,13 +1,24 @@
-<%= $game.player.name %> chooses <%= $game.player.choice %>
+<style>
+body {background-color:#232B2B ;}
+h1 { color: #DC3D24; font-family: 'Helvetica Neue', sans-serif; font-size: 180px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: left; }
+h2 {color: #E3AE57; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+form {color: #E3AE57; font-family: 'Helvetica Neue', sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; display: inline-block; }
+</style>
 
-<p>
-  Computer chooses <%= $game.computer.choice %>
-</p>
-<p>
-  <%= $game.player.name %> <%= $game.outcome($game.player.choice, $game.computer.choice) %>
-</p>
-<p>
-  <form action="/play">
-    <input type="submit" value="Play Again"/>
-  </form>
-</p>
+<h1>
+<%= $game.player.name %>
+</br>
+<%= $game.outcome($game.player.choice, $game.computer.choice) %>
+</h1>
+
+<h2>
+<%= $game.player.name %> chooses <%= $game.player.choice %>
+</h2>
+
+<h2>
+Computer chooses <%= $game.computer.choice %>
+</h2>
+
+<form action="/play" align="middle">
+  <input type="submit" value="Play Again" align="middle"/>
+</form>
