@@ -21,5 +21,5 @@ class Game
   def player_attack
     @player.attack
   end
-  
+
 end
