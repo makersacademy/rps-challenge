@@ -1,6 +1,8 @@
 <%= @game.player.choice %> vs. <%= @game.opponent.option %>
-                  <%= @game.winner %>
-Play again? <form action="/continue" method="post">
+<%= @game.winner %>
+Play again?
+
+<form action="/continue" method="post">
   <input type="submit" value = "Yes" name="Yes">
   <input type="submit" value="No" name = "No">
 </form>

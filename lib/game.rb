@@ -11,7 +11,6 @@ class Game
 
   def initialize(player)
     @player = player
-    #@player_choice = @player.choice
     @opponent = Opponent.new
   end
 
@@ -26,11 +25,13 @@ class Game
   def winner
     return "DRAW" if draw?
     if PAIRS.include? pair_to_compare
-      "You WIN!!!"
+      "YOU WIN!!!"
     else
-      "You lose..."
+      "YOU LOSE..."
     end
   end
+
+  private
 
   def pair_to_compare
     {@player.choice => @opponent.option}
