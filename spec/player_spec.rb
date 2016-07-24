@@ -3,9 +3,18 @@ require "player"
 describe Player do
   subject(:player) { described_class.new(name) }
   let(:name) { "Sal" }
-  context "a player has a name" do
+  context "Player" do
     it "returns a name for a player" do
       expect(player.name).to eq "Sal"
+    end
+
+    it "starts with no attacks" do
+      expect(player.attack).to eq nil
+    end
+
+    it "has an attack" do
+      player.choose("Paper")
+      expect(player.attack).to eq "Paper"
     end
   end
 end
