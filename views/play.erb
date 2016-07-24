@@ -1,0 +1,10 @@
+<h2>Nice to meet you, <%= @game.player %>.</h2>
+<h3>Pick your weapon of choice:</h3>
+
+<div id="buttonsanswer_form">
+  <form action="/choice" method="post">
+    <input type="submit" name="choice" value="Rock" />
+    <input type="submit" name="choice" value="Paper" />
+    <input type="submit" name="choice" value="Scissors" />
+  </form>
+</div>
