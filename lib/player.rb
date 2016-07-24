@@ -2,11 +2,12 @@ require_relative './weapon.rb'
 
 class Player
 attr_reader :name, :weapon
-  def initialize(name)
+  def initialize(name, weapons: Weapons)
     @name = name
+    @arsenal = weapons
   end
 
   def choose(weapon)
-    @weapon = Weapons::CHOICES[weapon.to_sym]
+    @weapon = @arsenal::CHOICES[weapon.to_sym]
   end
 end

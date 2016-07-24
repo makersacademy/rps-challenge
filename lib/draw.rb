@@ -1,7 +1,7 @@
-class P2Wins
+class Draw
 
   def self.result(p1, p2)
-    "#{p2.name} wins!"
+    "It's a draw!"
   end
 
 end

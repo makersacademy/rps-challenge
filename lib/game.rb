@@ -2,6 +2,8 @@ require_relative './player.rb'
 require_relative './com.rb'
 require_relative './p1wins.rb'
 require_relative './p2wins.rb'
+require_relative './draw.rb'
+
 
 class Game
 attr_reader :p1, :p2
@@ -20,34 +22,22 @@ attr_reader :p1, :p2
   end
 
   def result
-    outcome == :draw ?  draw_msg : win_msg(winner)
-  end
-
-  private
-
-  def winner
     outcome.result(@p1, @p2)
   end
 
-  def win_msg(player)
-    "#{player.name} wins!"
-  end
-
-  def draw_msg
-    'It\'s a draw!'
-  end
+  private
 
   def outcome
     logic[@p1.weapon][@p2.weapon]
   end
 
-  def logic                                             #TODO extract logic/rules
-    [ [:draw, P2Wins, P1Wins, P1Wins, P2Wins],  # rck
-      [P1Wins, :draw, P2Wins, P2Wins, P1Wins],  # ppr
-      [P2Wins, P1Wins, :draw, P1Wins, P2Wins],  # scs
-      [P2Wins, P1Wins, P2Wins, :draw, P1Wins],  # lzd
-      [P1Wins, P2Wins, P1Wins, P2Wins, :draw] ] # spk
-   #p2 rck   ppr    scs     lzd     spk          p1
+  def logic                                         #TODO extract logic/rules
+    [ [Draw, P2Wins, P1Wins, P1Wins, P2Wins],  # rck
+      [P1Wins, Draw, P2Wins, P2Wins, P1Wins],  # ppr
+      [P2Wins, P1Wins, Draw, P1Wins, P2Wins],  # scs
+      [P2Wins, P1Wins, P2Wins, Draw, P1Wins],  # lzd
+      [P1Wins, P2Wins, P1Wins, P2Wins, Draw] ] # spk
+   #p2 rck      ppr    scs     lzd     spk       p1
     end
 
 end

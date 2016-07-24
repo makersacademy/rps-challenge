@@ -5,6 +5,6 @@ class Com
   end
 
   def choose
-  @weapon = Kernel.rand(1..3)
+  @weapon = rand(0..4)
   end
 end
