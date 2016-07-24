@@ -47,22 +47,23 @@ form {
       position: absolute;
       bottom: 0;
       right: 15%;
-      background-image: url('http://megaicons.net/static/img/icons_sizes/8/178/512/rock-paper-scissors-rock-icon.png');
+      background-image: url('https://maxcdn.icons8.com/windows8/PNG/512/Gaming/rock-512.png');
       background-size: contain;
 }
 #paper{
   position: absolute;
   bottom: 60%;
   right: 0;
-  background-image: url('https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/paper.png');
+  background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/15849-200.png');
   background-size: contain;
-
+  background-size: 140% 140%;
+  background-position: center;
 }
 #scissors{
       position: absolute;
       bottom: 100%;
       right: 50%;
-      background-image: url('https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/barber_scissors.png');
+      background-image: url('http://www.iconsplace.com/icons/preview/black/barber-scissors-256.png');
       background-size: contain;
 
 }
@@ -92,16 +93,19 @@ form {
 }
 .button{
     border: solid;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
     background-color: white;
     font-size: 0px;
     background-repeat: no-repeat;
     filter: black;
+    box-shadow: 5px 5px;
 }
 .button:hover{
-  transform:scale(2);
+  box-shadow: 0px 0px;
+  transform: translateY(5px);
+  transform: translateX(5px);
 }
 .button:focus{
   outline: none;
