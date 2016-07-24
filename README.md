@@ -1,8 +1,6 @@
-# RPS Challenge!!!!!!!!!!!!!!
+# RPS Challenge
 
-:)))))))))))))))))))))))
-
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -25,4 +23,4 @@ Hints on functionality
 
 - Rock beats Scissors
 - Scissors beats Paper
-- Paper beats Rock
+- Paper beats Rock-paper-scissors-lizard-Spock_
