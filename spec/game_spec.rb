@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player) }
-  let(:player) { double :player, name: "Sal", attack: "Paper" }
+  let(:player) { double :player, name: "Sal"}
   context "the game starts" do
     it "with one player" do
       expect(game.player).to eq player
@@ -19,6 +19,7 @@ describe Game do
     end
 
     it "can store players attack" do
+      game.set_attack("Paper")
       expect(game.player_attack).to eq "Paper"
     end
   end

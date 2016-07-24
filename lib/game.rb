@@ -18,8 +18,12 @@ class Game
     @player.name
   end
 
+  def set_attack(attack)
+    @attack = attack
+  end
+
   def player_attack
-    @player.attack
+    @attack
   end
 
 end
