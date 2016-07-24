@@ -1,4 +1,5 @@
 <head>
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Sarpanch|" rel="stylesheet">
 </head>
@@ -7,12 +8,23 @@
 
 <h1><%= @game.player.name%> vs Computer!!</h1>
 
-<h2>Pick your poison...</h2>
+<h2 style="color: #cc0000">Pick your poison...</h2>
 
-<form action="/options" method="post">
-  <input type="image" src="rock.png" value="rock" name="choice">
-  <input type="image" src="paper.png" value="paper" name="choice">
-  <input type="image" src="scissors.png" value="scissors" name="choice">
-</form>
+<div class="container">
+  <div class="row">
+    <form action="/options" method="post">
+      <div class="col-sm-4">
+      <input type="image" src="rock2.png" class="bigger" value="rock" name="choice">
+      </div>
+      <div class="col-sm-4">
+      <input type="image" src="paper.png" class="bigger" value="paper" name="choice">
+      </div>
+      <div class="col-sm-4">
+      <input type="image" src="scissors.png" class="bigger" value="scissors" name="choice">
+      </div>
+    </form>
+</div>
+
+
 
 </body>

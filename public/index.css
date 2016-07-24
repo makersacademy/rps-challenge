@@ -1,4 +1,12 @@
-
+.bigger:hover {
+    position:relative;
+    width:275px;
+    height:auto;
+    display:block;
+    z-index:999;
+    border: 0 none;
+    box-shadow: none;
+}
 
 body {
   background-color: #f0f0f5;
@@ -6,7 +14,25 @@ body {
   font-family: 'sarpanch';
 }
 
-#submitr {
-  background-image: url("Scissors_1.jpg");
-  background-repeat: no-repeat;
+#submit {
+    background-color: #66ccff;
+    border-radius:10px;
+    border: 0;
+    padding: 8px;
+    margin: 20px 20px;
+    font-family: 'sarpanch';
+    font-size: 18px;
+}
+
+#submit:hover {
+    background-color: #8585ad;
+}
+
+h1 {
+  padding-top: 4%;
+  padding-bottom: 4%
+}
+
+h2 {
+  padding-bottom: 6%;
 }

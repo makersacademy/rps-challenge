@@ -1,13 +1,14 @@
 <head>
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Sarpanch|" rel="stylesheet">
 </head>
 
-<h1>Hello!</h1>
+    <h1>Hello!</h1>
 
-<h2>Please enter your name...</h2>
+    <h2>Please enter your name...</h2>
 
-<form action="/name" method="post">
-    <input type="text" name="name">
-    <input type="submit" value="Let's Start!" id="submit" style = "margin-top: 15px;">
-</form>
+    <form action="/name" method="post">
+        <input type="text" name="name" required>
+        <input type="submit" value="Let's Start!" id="submit" style = "margin-top: 15px;">
+    </form>
