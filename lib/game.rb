@@ -27,4 +27,10 @@ def select_weapons(weapon)
   select_computer_weapon
 end
 
+def draw?
+  @weapon_selected == @computer_weapon
+end
+
+
+
 end

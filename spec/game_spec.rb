@@ -26,6 +26,24 @@ describe 'Game' do
       end
     end
   end
+
+  context 'Deciding the Winner' do
+    describe '#draw?' do
+      it 'knows when the result is a draw' do
+        game.select_weapon("Paper")
+        allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+        game.select_computer_weapon
+        expect(game.draw?).to be true
+      end
+
+      it 'knows when the result is not a draw' do
+        game.select_weapon("Rock")
+        allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
+        game.select_computer_weapon
+        expect(game.draw?).to be false
+      end
+    end
+  end
 end
 
 #Kernel.stub(:rand).with(anything)
