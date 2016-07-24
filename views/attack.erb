@@ -2,13 +2,9 @@
   <head>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-social.css" rel="stylesheet">
 
     <!-- Jquery UI  -->
     <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/redmond/jquery-ui.css" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-    <!--    <link href="css/button.css" rel="stylesheet">-->
 
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,11 +27,11 @@
             <br>
             <h2>Choose an attack:</h2>
             <br>
-            <form action="/result">
+            <form action="/rps" method="post">
               <div class="btn-group">
-                <button type="submit" value="Rock" class="btn btn-primary attack">Rock <i class="fa fa-hand-rock-o fa-2x"></i></button>
-                <button type="submit" value="Paper" class="btn btn-success attack">Paper <i class="fa fa-hand-paper-o fa-2x"></i></button>
-                <button type="submit" value="Scissors" class="btn btn-warning attack">Scissors <i class="fa fa-hand-scissors-o fa-2x"></i></button>
+                <button type="submit" value="Rock" name="attack" class="btn btn-primary attack">Rock <i class="fa fa-hand-rock-o fa-2x"></i></button>
+                <button type="submit" value="Paper" name="attack" class="btn btn-success attack">Paper <i class="fa fa-hand-paper-o fa-2x"></i></button>
+                <button type="submit" value="Scissors" name="attack" class="btn btn-warning attack">Scissors <i class="fa fa-hand-scissors-o fa-2x"></i></button>
               </div>
             </form>
           </div>
