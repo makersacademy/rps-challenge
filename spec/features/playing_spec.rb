@@ -27,9 +27,9 @@ feature "Playing the game" do
     sign_in_and_play
     click_button "Rock"
     expect(page).to satisfy do |page|
-      page.has_content?("You have lost...") or
-      page.has_content?("You have won!") or
-      page.has_content?("The game is even.")
+      page.has_content?("You have lost...") ||
+        page.has_content?("You have won!") or
+        page.has_content?("The game is even.")
     end
   end
 
