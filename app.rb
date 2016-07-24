@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/rps_game'
 
 class App < Sinatra::Base
 enable :sessions
@@ -8,7 +10,8 @@ enable :sessions
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+    $player_1 = Player.new(params[:player_1_name], params[:RPSRadio])
+    $player_2 = Player.new("AI Overlord", "Rock")
     redirect '/play'
   end
 
@@ -18,18 +21,20 @@ enable :sessions
   end
 
   post '/choose_object' do
-    session[:RPSRadio] = params[:RPSRadio]
+    $player_1.weapon = params[:RPSRadio]
     redirect '/play_object'
   end
 
   get '/play_object' do
-    @player_1_weapon = session[:RPSRadio]
+    @player_1_weapon = $player_1.weapon
     erb :play_weapon
   end
 
   post '/AI_turn' do
-    @player_1_weapon = session[:RPSRadio]
+    @player_1_weapon = $player_1.weapon
     @player_1_name = $player_1.name
+    @player_2_weapon = $player_2.ai_choose_weapon
+    @player_2_name = $player_2.name
     erb :AI_turn
   end
 

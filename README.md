@@ -26,13 +26,13 @@ I would like to be given a choice of either Rock, Paper or Scissors when playing
 So that I can choose which object to play
 I would like to be able to select and confirm one of either Rock, Paper or scissors -->
 
-As a marketeer
+<!-- As a marketeer
 So that I can play the game
-I would like to have a computer opponent to play against that will choose either Rock, Paper or Scissors
+I would like to have a computer opponent to play against that will choose either Rock, Paper or Scissors -->
 
-As a marketeer
+<!-- As a marketeer
 Once I have played my chosen object
-I would like to be able to see the object the AI overlord has chosen
+I would like to be able to see the object the AI overlord has chosen -->
 
 As a marketeer
 In order to see the outcome of the game
