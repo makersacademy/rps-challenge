@@ -1,13 +1,13 @@
 class Player
 
-attr_reader :name
+attr_accessor :name
 
-def name(name)
-  @name = name
-end
+  def initialize(name)
+    @name = name
+  end
 
-def select_weapon(player_choice)
-  player_choice.to_sym
-end
+  # def select_weapon(player_choice)
+  #   player_choice.to_sym
+  # end
 
 end

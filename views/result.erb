@@ -1,1 +1,9 @@
-<h1>The computer chose paper. You win!</h1>
+<h1>The computer chose <%=@game.computer_choice %>
+
+<%if @game.draw? %>
+    It was a draw
+<%elsif @game.winner == @computer %>
+    The computer won
+<%else%>
+    You won </h1>
+<%end%>

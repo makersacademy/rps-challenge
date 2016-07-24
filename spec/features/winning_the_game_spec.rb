@@ -4,7 +4,7 @@ feature 'winning the game' do
     fill_in :weapon, with: 'rock'
     click_button 'Submit'
     click_button 'Click here to see who won!'
-    expect(page).to have_content 'The computer chose paper. You win!'
+    expect(page).to have_content 'The computer chose'
   end
 
 end

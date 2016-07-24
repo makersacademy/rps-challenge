@@ -2,23 +2,28 @@ require 'sinatra/base'
 require './lib/weapon.rb'
 require './lib/player.rb'
 require './lib/game.rb'
-
 class RPS < Sinatra::Base
+
   get '/' do
     erb(:index)
   end
 
   post '/play' do
-    @player = Player.new.name(params[:name])
+    computer = Computer.new
+    player = Player.new(params[:name])
+    @game = Game.create(player,computer)
     erb(:play)
   end
 
   post '/choice' do
-    @weapon = Weapon.new(params[:weapon])
+    @game = Game.instance
+    @weapon= Weapon.new(params[:weapon])
+    @game.play(params[:weapon])
     erb(:choice)
   end
 
-  post '/result' do
+  get '/result' do
+    @game = Game.instance
     erb(:result)
   end
 

@@ -7,7 +7,15 @@ class Game
 
   attr_reader :rules, :player, :computer, :computer_choice, :player_choice
 
-  def initialize(player = Player.new, computer = Computer.new)
+  def self.create(player,computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def initialize(player, computer)
     @player = player
     @computer = computer
   end
@@ -16,9 +24,9 @@ class Game
     @rules = {rock: :paper, paper: :scissors, scissors: :paper}
   end
 
-  def play
+  def play(player_choice)
     @computer_choice = computer.select_weapon
-    @player_choice = player.select_weapon(player_choice)
+    @player_choice = player_choice.to_sym
   end
 
   def draw?
@@ -30,5 +38,8 @@ class Game
 
   end
 
+  # def select_weapon(chosen_weapon)
+  #   chosen_weapon.to_sym
+  # end
 
 end

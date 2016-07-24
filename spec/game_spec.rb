@@ -17,12 +17,12 @@ describe Game do
   end
 
   it 'knows which player has won' do
-    win_game.play
+    win_game.play('paper')
     expect(win_game.winner).to eq player_1
   end
 
   it 'knows it a player has lost' do
-    lose_game.play
+    lose_game.play('scissors')
     expect(lose_game.winner).to eq computer
   end
 

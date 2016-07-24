@@ -4,7 +4,7 @@ feature 'Playing the game' do
     sign_in_and_play
     fill_in :weapon, with: 'rock'
     click_button 'Submit'
-    expect(page).to have_content 'You chose rock'
+    expect(page).to have_content 'You chose Rock'
   end
 
   scenario 'The player cannot select weapons other than rock paper or scissor' do
