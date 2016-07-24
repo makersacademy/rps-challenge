@@ -11,15 +11,21 @@ describe 'Game' do
     end
   end
 
-  context 'Selecting weapons' do
+  context 'Selecting Weapons' do
     describe '#select_weapon' do
       it "can accept the player's choice of weapon" do
          game.select_weapon("Rock")
          expect(game.weapon_selected).to eq "Rock"
       end
     end
-  end
 
+    describe '#select_computer_weapon' do
+      it 'can choose a weapon for the computer' do
+        game.select_computer_weapon
+        expect(%w(Rock Paper Scissors)).to include(game.computer_weapon)
+      end
+    end
+  end
 end
 
 #Kernel.stub(:rand).with(anything)

@@ -1,5 +1,5 @@
 class Game
-attr_reader :player, :weapon_selected, :select_weapon
+attr_reader :player, :weapon_selected, :select_weapon, :computer_weapon
 
 def self.instance
   @game
@@ -15,6 +15,10 @@ end
 
 def select_weapon(weapon)
   @weapon_selected = weapon
+end
+
+def select_computer_weapon
+  @computer_weapon = %w(Rock Paper Scissors).sample
 end
 
 end
