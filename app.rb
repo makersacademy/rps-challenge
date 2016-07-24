@@ -17,11 +17,9 @@ class RPS < Sinatra::Base
     player = Player.new(player_name)
     @game = Game.create(player)
     erb :playerchoice
-    #redirect '/playerchoice'
   end
 
   post '/playerchoice' do
-    p params
     @game.player.set_choice(params.values[0])
     redirect '/winner'
   end
@@ -30,7 +28,13 @@ class RPS < Sinatra::Base
     erb :winner
   end
 
+  post '/continue' do
+   if params.values[0] == "Yes"
+     redirect '/'
+   else
+     erb :bye
+   end
+  end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
