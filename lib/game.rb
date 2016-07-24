@@ -18,18 +18,30 @@ class Game
 	end
 
 	def result
-		@choice == @computer_move ? "It's a tie!" : win_scenarios
+		@choice == @computer_move ? tie_break : win_scenarios
 	end
 
   def win_scenarios
     case @computer_move
     when "Rock"
-      @choice == "Paper" ? "#{@player_1.name} wins!" : "#{@player_2.name} wins!"
+      @choice == "Paper" ? player_1_wins : player_2_wins
     when "Paper"
-      @choice == "Scissors" ? "#{@player_1.name} wins!" : "#{@player_2.name} wins!"
+      @choice == "Scissors" ? player_1_wins : player_2_wins
     when "Scissors"
-      @choice == "Rock" ? "#{@player_1.name} wins!" : "#{@player_2.name} wins!"
+      @choice == "Rock" ? player_1_wins : player_2_wins
     end
+  end
+
+  def player_1_wins
+    "#{@player_1.name} wins!"
+  end
+
+  def player_2_wins
+    "#{@player_2.name} wins!"
+  end
+
+  def tie_break
+    "It's a tie! Next time try to be more original"
   end
 
   def self.instance
