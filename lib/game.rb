@@ -1,5 +1,5 @@
 class Game
-attr_reader :player, :weapon_selected, :select_weapons, :computer_weapon, :result_text, :beat
+attr_reader :player, :weapon_selected, :computer_weapon
 
 def self.instance
   @game
@@ -30,12 +30,23 @@ def draw?
   @weapon_selected == @computer_weapon
 end
 
-def player_wins?
-  return true if player_wins_with_rock?
-  return true if player_wins_with_paper?
-  return true if player_wins_with_scissors?
-  false
+def result_text
+  grammar
+  return "#{@weapon_selected} #{@beat} #{@computer_weapon}...  you win!" if result == :win
+  return "We both chose #{@weapon_selected}...  it's a draw!" if result == :draw
+  return "#{@computer_weapon} #{beat} #{@weapon_selected}...  you lose!" if result == :lose
+  raise error
 end
+
+def result
+  return :draw if draw?
+  return :win if player_wins?
+  :lose
+end
+
+private
+
+attr_reader :beat
 
 def player_wins_with_rock?
   return true if @weapon_selected == 'Rock' && @computer_weapon == 'Scissors'
@@ -49,18 +60,11 @@ def player_wins_with_scissors?
   return true if @weapon_selected == 'Scissors' && @computer_weapon == 'Paper'
 end
 
-def result
-  return :draw if draw?
-  return :win if player_wins?
-  :lose
-end
-
-def result_text
-  grammar
-  return "#{@weapon_selected} #{@beat} #{@computer_weapon}... You Win!" if result == :win
-  return "We both chose #{@weapon_selected}... It's a Draw!" if result == :draw
-  return "#{@computer_weapon} #{beat} #{@weapon_selected}... I win!" if result == :lose
-  raise error
+def player_wins?
+  return true if player_wins_with_rock?
+  return true if player_wins_with_paper?
+  return true if player_wins_with_scissors?
+  false
 end
 
 def grammar

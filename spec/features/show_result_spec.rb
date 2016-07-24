@@ -11,22 +11,22 @@ RSpec.feature "Result is Displayed", :type => :feature do
     expect(page).to have_content "I have selected Paper..."
   end
 
-  scenario "User selects Rock" do
+  scenario "When computer wins" do
     click_button "Rock"
 
-    expect(page).to have_content "Paper beats Rock... I win!"
+    expect(page).to have_content "Paper beats Rock...  you lose!"
   end
 
-  scenario "User selects Paper" do
+  scenario "When it's a draw" do
     click_button "Paper"
 
-    expect(page).to have_content "We both chose Paper... It's a Draw!"
+    expect(page).to have_content "We both chose Paper...  it's a draw!"
   end
 
-  scenario "User selects Scissors" do
+  scenario "When player wins" do
     click_button "Scissors"
 
-    expect(page).to have_content "Scissors beat Paper... You Win!"
+    expect(page).to have_content "Scissors beat Paper...  you win!"
   end
 
 end
