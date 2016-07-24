@@ -10,12 +10,18 @@ describe Game do
     expect(game.players.size).to eq 2
   end
 
+  describe '#winning_weapon' do
+    it 'determines the winning weapon' do
+      expect(game.winning_weapon(:paper, :scissors)). to eq :scissors
+    end
+  end
+
   describe '#the_winner_is' do
 
     context 'there is a winner' do
       let(:player_1) { double :player, weapon: :stone }
       let(:player_2) { double :player, weapon: :paper }
-      it 'knows when player 2 has won' do
+      it 'knows which player has won' do
         Game.new(player_1, player_2)
         expect(game.the_winner_is).to eq player_2
       end
@@ -30,10 +36,6 @@ describe Game do
       end
     end
 
-  end
-
-  it 'winning_weapon method determines the winning weapon' do
-    expect(game.winning_weapon(:paper, :scissors)). to eq :scissors
   end
 
   describe '#random_weapon' do

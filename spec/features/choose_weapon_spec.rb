@@ -1,5 +1,5 @@
 describe 'Choose Weapon Page' do
-  scenario 'after seeing vs screen we go to choose weapon screen' do
+  scenario 'after vs screen we go to choose weapon screen' do
     sign_in_and_play
     click_button "I was born ready"
     expect(page).to have_content "Choose your weapon"

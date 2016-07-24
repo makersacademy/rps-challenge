@@ -11,5 +11,3 @@ def sign_in_and_choose_paper
   choose("paper")
   click_button "Feeling pretty confident about this one"
 end
-
-# Have another helper once we implement the 3 options for RPS.
