@@ -1,4 +1,5 @@
 require 'spec_helper'
+require './lib/computer_player.rb'
 
 feature "Declares a winner" do
   scenario "Player wins playing paper" do
@@ -6,6 +7,7 @@ feature "Declares a winner" do
     fill_in :player_1_name, with: 'Becca'
     # fill_in :player_2_name, with: 'Josef'
     click_button 'Submit'
+    allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
     click_button 'Paper'
     expect(page).to have_content 'Becca wins'
   end
@@ -15,6 +17,7 @@ feature "Declares a winner" do
     fill_in :player_1_name, with: 'Becca'
     # fill_in :player_2_name, with: 'Josef'
     click_button 'Submit'
+    allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     click_button 'Paper'
     expect(page).to have_content 'Beccatron wins'
   end
@@ -23,7 +26,8 @@ feature "Declares a winner" do
       fill_in :player_1_name, with: 'Becca'
       # fill_in :player_2_name, with: 'Josef'
       click_button 'Submit'
-      click_button 'Paper'
+      allow_any_instance_of(Array).to receive(:sample).and_return("Rock")
+      click_button 'Rock'
       expect(page).to have_content "It's a tie"
     end
 end
