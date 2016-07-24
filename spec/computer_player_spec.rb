@@ -1,6 +1,6 @@
 require 'computer_player.rb'
 
-describe Computer_Player do
+describe ComputerPlayer do
 
 describe '#initialize' do
   it 'Computer player has a name' do

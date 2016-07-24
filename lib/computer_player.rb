@@ -1,4 +1,4 @@
-class Computer_Player
+class ComputerPlayer
 attr_reader :computer_move, :name
 
   def initialize

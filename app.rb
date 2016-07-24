@@ -20,11 +20,11 @@ enable :sessions
   end
 
   post '/result' do
-		@game = Game.instance
-		@player_choice = @game.player_move(params[:player_1_choice])
-		@computer_choice = @game.computer_choice
-		erb :result
-	end
+    @game = Game.instance
+    @player_choice = @game.player_move(params[:player_1_choice])
+    @computer_choice = @game.computer_choice
+    erb :result
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
