@@ -14,4 +14,5 @@ group :test do
   gem 'byebug'
   gem 'selenium-webdriver'
   gem 'rspec-sinatra'
+  gem 'simplecov'
 end

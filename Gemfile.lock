@@ -114,6 +114,7 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   selenium-webdriver
+  simplecov
   sinatra
 
 RUBY VERSION
