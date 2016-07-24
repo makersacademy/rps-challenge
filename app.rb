@@ -1,20 +1,37 @@
 require 'sinatra/base'
+require_relative 'lib/player'
+#require_relative 'lib/weapon'
+require_relative 'lib/game'
 
 class Rps < Sinatra::Base
+
+  before do
+     @game = Game.instance
+  end
+
   get '/' do
     erb:index
   end
 
   post '/name' do
-  p params
-    @player_1_name = params[:player_1_name]
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
-  # get '/play' do
-  #   @player_1_name = params[:player_1_name]
-  #   erb :play
-  # end
+  post '/weapon' do
+    weapon = params[:weapon]
+    @game.select_weapon(weapon)
+    redirect '/compete'
+  end
+
+  get '/compete' do
+    erb :compete
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

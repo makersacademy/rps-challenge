@@ -1,7 +1,16 @@
 <div>
-<h1>Welcome to the game <%= @player_1_name %>!</h1>
+<h1>Welcome to the game <%= @game.player.name %>!</h1>
+</div>
+<div>
+<h2>Now choose your weapon...</h2>
 </div>
 <br>
 <div>
-<h2>Now choose your weapon...</h2>
+  <form>
+    <form action="/weapon" method="post">
+    <input type="radio" name="weapon" id="rock" value=" Rock"> Rock<br>
+    <input type="radio" name="weapon" id="paper" value=" Paper"> Paper<br>
+    <input type="radio" name="weapon" id="scissors" value=" Scissors"> Scissors
+    <p><input type="submit" value="Submit"></p>
+  </form>
 </div>
