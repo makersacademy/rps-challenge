@@ -4,7 +4,7 @@ describe 'Action Page' do
     sign_in_and_choose_paper
   end
 
-  scenario "after selecting weapon we are taken to 'action' page" do
+  scenario "After selecting weapon we are taken to 'action' page" do
     expect(page).to have_content "Action!"
   end
 
