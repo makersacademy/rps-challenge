@@ -12,6 +12,12 @@ describe Game do
     end
   end
 
+  describe '#messages' do
+    it 'contains a message' do
+      expect(game.message).to be_instance_of(Messages)
+    end
+  end
+
   describe '#battle_result' do
     context 'result is a draw' do
       it 'returns draw message' do
