@@ -15,13 +15,14 @@ class RPS < Sinatra::Base
   end
 
   post '/select' do
-    @player_1 = Player.new(params[:player_1_name], params[:weapon])
-    @game = Game.create
+    player_1 = Player.create(params[:player_1_name], params[:weapon])
+    @game = Game.create(player_1)
     erb(:attack)
   end
 
   get '/opponent' do
     @game = Game.instance
+    @result = @game.play
     erb(:result)
   end
 

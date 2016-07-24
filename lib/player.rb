@@ -7,4 +7,8 @@ attr_reader :name, :weapon
     @weapon = weapon
   end
 
+  def self.create(name, weapon)
+     Player.new(name, weapon)
+  end
+
 end
