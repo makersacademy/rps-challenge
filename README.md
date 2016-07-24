@@ -99,3 +99,5 @@ first spec file is called register_marketeer_name_spec.rb
 index.erb is the home page at the root.
 
 play.erb is the page with the players name displayed.
+
+Redid game.rb to include sessions
