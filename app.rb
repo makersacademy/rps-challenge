@@ -19,5 +19,9 @@ class RPS < Sinatra::Base
     erb(:attack)
   end
 
+  get '/opponent' do
+    erb(:view_weapons)
+  end
+
   run! if app_file == $0
 end
