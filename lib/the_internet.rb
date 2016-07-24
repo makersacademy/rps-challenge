@@ -1,10 +1,13 @@
+require_relative 'weapons'
+
 class TheInternet
+
+  include Weapons
 
   attr_reader :internet_choice
 
   def initialize
-    @options = ["rock", "paper", "scissors"]
-    @internet_choice = @options.sample
+    @internet_choice = WEAPONS.sample
   end
 
 end

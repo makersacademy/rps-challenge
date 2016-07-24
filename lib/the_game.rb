@@ -1,4 +1,8 @@
+require_relative "weapons"
+
 class TheGame
+
+  include Weapons
 
   attr_reader :internet_choice, :player_choice, :player_name
 
@@ -8,18 +12,17 @@ class TheGame
     @player_choice = player_choice.to_sym
   end
 
-  def the_winner
-    options = [:scissors, :paper, :rock]
-    result = ["A DRAW!", "THE INTERNET, BOOO...", "YOU ARE #{self.player_name.upcase}!"]
-    result[options.index(player_choice) - options.index(internet_choice) % 3]
+  def self.create name, player, internet
+    @game = TheGame.new name, player, internet
   end
 
   def self.instance
     @game
   end
 
-  def self.create name, player, internet
-    @game = TheGame.new name, player, internet
+  def the_winner
+    result = ["A DRAW!", "THE INTERNET, BOOO...", "YOU ARE #{self.player_name.upcase}!"]
+    result[WEAPONS.index(player_choice) - WEAPONS.index(internet_choice) % 3]
   end
 
 end
