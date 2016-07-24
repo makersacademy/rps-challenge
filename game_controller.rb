@@ -12,8 +12,9 @@ class GameController < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:name])
-    @game = Game.create(@player)
+    player = Player.new(params[:name])
+    multiplayer = params[:computer]
+    @game = Game.create(player)
     redirect '/play'
   end
 
@@ -23,7 +24,7 @@ class GameController < Sinatra::Base
 
   post '/selection' do
     selection = params[:selection]
-    @game.player_1_selection(selection)
+    @game.player_1_select(selection)
     redirect '/play'
   end
 

@@ -1,9 +1,14 @@
-class Player
+require_relative 'utilities_module'
 
-  attr_reader :name
+class Player
+  include Utilities
 
   def initialize(name)
     @name = name
+  end
+
+  def name
+    titleize(@name)
   end
 
 end
