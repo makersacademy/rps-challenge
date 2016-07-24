@@ -2,9 +2,11 @@ class Game
 
   attr_reader :weapon
 
+  WEAPONS = ["Rock", "Paper", "Scissors"]
+
   def initialize(player_weapon)
     @player_weapon = player_weapon
-    @weapon = ["Rock", "Paper", "Scissors"].sample
+    @weapon = WEAPONS.sample
   end
 
   def fight
@@ -20,6 +22,6 @@ class Game
   private
 
   def win
-    true if (@player_weapon == "Rock" and @weapon == "Scissors") or (@player_weapon == "Paper" and @weapon == "Rock") or (@player_weapon == "Scissors" and @weapon == "Paper")
+    (@player_weapon == "Rock" and @weapon == "Scissors") or (@player_weapon == "Paper" and @weapon == "Rock") or (@player_weapon == "Scissors" and @weapon == "Paper")
   end
 end
