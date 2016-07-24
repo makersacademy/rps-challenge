@@ -7,7 +7,7 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
-SimpleCov.start
+Coveralls.wear!
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
