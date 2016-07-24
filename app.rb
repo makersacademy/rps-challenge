@@ -29,9 +29,12 @@ class RPS < Sinatra::Base
   get '/attack' do
     erb :attack
   end
-
+  post '/rps' do
+    @game.set_attack(params[:attack])
+    redirect :result
+  end
   get '/result' do
-
+    @attack = @game.player_attack
     erb :result
   end
 
