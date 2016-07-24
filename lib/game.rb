@@ -22,7 +22,7 @@ class Game
   end
 
   def player_1_weapon
-    @player1.weapon
+    @player1.weapon.to_sym
   end
 
   def play(comp_choice = Computer.random_select)
@@ -44,14 +44,14 @@ class Game
     end
   end
 
-    private
+    #private
 
     def wins?
-      RULES[@player1.weapon.to_sym] == @comp_choice
+      RULES[player_1_weapon] == comp_choice
     end
 
     def draw?
-      @player1.weapon.to_sym == @comp_choice
+      player_1_weapon == comp_choice
     end
 
 end

@@ -1,4 +1,5 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), 'rps.rb')
+require File.join(File.dirname(__FILE__), 'app.rb')
 
-run Battle
+#require 'app.rb'
+run RPS.new
