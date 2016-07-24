@@ -3,7 +3,7 @@ feature 'winning the game' do
     sign_in_and_play
     fill_in :weapon, with: 'rock'
     click_button 'Submit'
-    click_button 'Click here to see who won!'
+    click_button 'Let\'s see'
     expect(page).to have_content 'The computer chose'
   end
 

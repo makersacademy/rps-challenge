@@ -1,9 +1,24 @@
-<h1> Pick your weapon <%=@game.player.name%> </h1>
-<br />
+<!DOCTYPE html>
+<html>
 
-<form action = '/choice' method = 'post'>
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-  Weapon:  <input type="text" name="weapon"<br />
-  <input type="submit" value="Submit">
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <h1> Pick your weapon <%=@game.player.name%> </h1>
+        </div>
+        <br />
 
-  </form>
+        <form action = '/choice' method = 'post'>
+
+        <h2>Weapon:</h2>  <input type="text" name="weapon"<br />
+
+        <input type="submit" value="Submit">
+
+        </form>
+  </body>
+</html>

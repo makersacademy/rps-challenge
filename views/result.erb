@@ -1,9 +1,25 @@
-<h1>The computer chose <%=@game.computer_choice %>
+<!DOCTYPE html>
+<html>
 
-<%if @game.draw? %>
-    It was a draw
-<%elsif @game.winner == @computer %>
-    The computer won
-<%else%>
-    You won </h1>
-<%end%>
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <h1>The computer chose <%=@game.computer_choice %>
+      </div>
+
+
+      <%if @game.draw? %>
+        <h2>It was a draw</h2>
+      <%elsif @game.winner == @computer %>
+        <h2>The computer won</h2>
+      <%else%>
+        <h2>You won :) </h2>
+      <%end%>
+    </div>
+  </body>
+</html>

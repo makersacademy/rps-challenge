@@ -1,8 +1,26 @@
-<h1> Rock Paper Scissors </h1>
-<h2> Enter your name to play <h2>
+<!DOCTYPE html>
+<html>
 
-<form action = '/play' method = 'post'>
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-Name: <input type="text" name="name"><br /><br />
-<input type="submit" value="Play">
-</form>
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <h1> Rock Paper Scissors </h1>
+      </div>
+
+      <div class='middle'>
+        <h2>Enter your name to play</h2>
+      </div>
+
+    <form action = '/play' method = 'post'>
+
+    <input type="text" name="name">
+    <input type="submit" value="Play">
+    </form>
+  </div>
+  </body>
+</html>

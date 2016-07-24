@@ -35,7 +35,6 @@ class Game
 
   def winner
     rules[computer_choice] == player_choice ? player : computer
-
   end
 
   # def select_weapon(chosen_weapon)
