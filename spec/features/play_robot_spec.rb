@@ -8,8 +8,8 @@ feature 'a player can play against a robot' do
   end
 
   scenario 'the robot randomly selects a weapon' do
-    enter_player_name
     allow(Kernel).to(receive(:rand).and_return(1))
+    enter_player_name
     click_button("Rock")
     expect(page).to(have_content("Robot has chosen Paper"))
   end

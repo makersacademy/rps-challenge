@@ -1,11 +1,10 @@
 class RobotPlayer
 
-  def name
-    "Robot"
-  end
+  attr_reader :name, :weapon
 
-  def weapon
-    weapons[Kernel.rand(0..2)]
+  def initialize
+    @name = "Robot"
+    @weapon = weapons[Kernel.rand(0..2)]
   end
 
   private
