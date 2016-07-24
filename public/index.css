@@ -1,0 +1,7 @@
+body {
+    background: url("background.png") no-repeat center center;
+    background-size: cover;
+    background-color: white;
+    color: #b30000;
+    text-align: center;
+}

@@ -5,13 +5,18 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/names' do
     player1 = Player.new(params[:player1_name])
-    player2 = Computer.new
+    sologame = true if params[:player2_name] == ""
+    player2 = (sologame ? Computer.new : Player.new(params[:player2_name]))
     @game = Game.create(player1, player2)
     redirect '/play'
   end
@@ -20,11 +25,19 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/attack' do
-    @game = Game.instance
+  post '/player1' do
     @game.player1.weapon_choice(params[:weapon])
     @game.player2.weapon_choice
-    @winner = @game.fight(@game.player1, @game.player2)
+    erb :play
+  end
+
+  post '/player2' do
+    @game.player2.weapon_choice(params[:weapon])
+    erb :play
+  end
+
+  post '/fight' do
+    @winner = @game.fight
     erb :result
   end
 

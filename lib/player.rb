@@ -6,8 +6,8 @@ class Player
     @name = name
   end
 
-  def weapon_choice(weapon)
-    @weapon = weapon.to_sym
+  def weapon_choice(weapon = nil)
+    @weapon = weapon.to_sym unless weapon == nil
   end
 
 end

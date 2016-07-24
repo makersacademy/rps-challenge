@@ -4,9 +4,10 @@ require 'spec_helper'
 describe 'features' do
 
   feature 'name form' do
-    scenario 'Player can register their name' do
+    scenario 'Two players can register their names' do
       visit '/'
       fill_in :player1_name, with: 'Luke'
+      fill_in :player2_name, with: 'Sinatra'
       expect(page).to have_content 'Please enter your name'
     end
   end
@@ -21,7 +22,7 @@ describe 'features' do
       end
     end
 
-    
+
 
 
     # feature 'weapon' do

@@ -2,6 +2,7 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
+
   attr_reader :beats, :player1, :player2
 
   def initialize(player1, player2)
@@ -12,8 +13,7 @@ class Game
                 scissors: :paper  }
   end
 
-
-  def fight(player1, player2)
+  def fight
       return :draw if player1.weapon == player2.weapon
       @beats[player1.weapon] == player2.weapon ? :player1_win : :player2_win
   end
