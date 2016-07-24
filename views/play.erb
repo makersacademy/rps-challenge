@@ -1,0 +1,9 @@
+<% if @players == "1" %>
+	<p>Welcome, <%= @player_1 %></p>
+<% else %>
+	<p>Welcome to you both, <%= @player_1 %> &amp; <%= @player_2 %>!</p>
+<% end %>
+
+
+<h2>Rules of the game</h2>
+<p>Choose Rock, Paper or Scissors <% if @players == "1" %>- don't let the other player see!<% end %></p>

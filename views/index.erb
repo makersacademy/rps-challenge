@@ -1,0 +1,37 @@
+<h1>Rock, Paper, Scissors</h1>
+
+<% if @players == nil %> 
+	<p>Please choose a single player or multiplayer game:</p>
+
+	<form action="/" method="post">
+		<input type="hidden" name="players" value="1" />
+		<button type="submit">One Player</button>
+	</form>
+	<form action="/" method="post">
+		<input type="hidden" name="players" value="2" />
+		<button type="submit">Two Players</button>
+	</form>
+<% end %>
+
+<% if @players == "1" %>
+	<h2>Human vs. Computer!</h2>
+
+	<form action="/play" method="post">
+		<label>Your name:</label>
+		<input type="text" name="player1">
+		<button type="submit">Go Do Battle!</button>
+	</form>
+<% end %>
+
+<% if @players == "2" %>
+	<h2>Human vs. Human!</h2>
+	
+	<form action="/play" method="post">
+		<label>Player one name:</label>
+		<input type="text" name="player1">
+		<label>Player two name:</label>
+		<input type="text" name="player2">
+		<button type="submit">Go Do Battle!</button>
+	</form>
+<% end %>
+
