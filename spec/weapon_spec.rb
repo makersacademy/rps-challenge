@@ -2,8 +2,9 @@ require 'weapon'
 
 describe Weapon do
 
-  subject(:rock) { described_class.new('rock') }
-  subject(:pineapple) { described_class.new('pineapple') }
+  subject(:pineapple) { described_class.new ("pineapple")}
+  subject(:rock) { described_class.new ("rock")}
+
   valid_weapons = [:rock, :paper, :scissors]
 
   it 'has a choice of weapons' do
@@ -11,10 +12,10 @@ describe Weapon do
   end
 
   it 'knows if a weapon choice is invalid' do
-    expect(pineapple.valid?).to be false
+    expect(pineapple.valid_weapon?).to be false
   end
 
   it 'knows if a weapon choice is valid' do
-    expect(rock.valid?).to be true
+    expect(rock.valid_weapon?).to be true
   end
 end

@@ -1,7 +1,7 @@
 
-<% if @weapon.valid? %>
+<% if @weapon.valid_weapon? %>
 
-<h1>  You chose <%= @weapon.player_choice %> </h1>
+<h1>  You chose <%= @weapon.chosen_weapon %> </h1>
   <br />
   <br />
 
@@ -11,6 +11,6 @@
 
 <% else  %>
 
-Sorry, <%= @weapon.player_choice%> is not a valid weapon. Please go back and enter rock, paper or scissors.
+Sorry, <%= @weapon.chosen_weapon%> is not a valid weapon. Please go back and enter rock, paper or scissors.
 
 <%end%>

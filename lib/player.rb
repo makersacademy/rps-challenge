@@ -1,9 +1,13 @@
 class Player
 
-attr_reader :weapon
+attr_reader :name
 
-def select_weapon(weapon)
-  @weapon = weapon.to_sym
+def name(name)
+  @name = name
+end
+
+def select_weapon(player_choice)
+  player_choice.to_sym
 end
 
 end
