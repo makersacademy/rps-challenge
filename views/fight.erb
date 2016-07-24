@@ -1,0 +1,6 @@
+<center><%= @game.player.name %> takes <%= @game.player.weapon %><br><br>
+<h1><%= @game.start %></h1><br><br>
+Opponent takes <%= @game.cpu_weapon %><br><br>
+<form action="/game" method="get">
+  <input type="submit" value="Try again!">
+</form></center>
