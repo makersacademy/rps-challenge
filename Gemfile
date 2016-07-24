@@ -4,12 +4,17 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec'
+gem 'capybara'
+gem 'coveralls'
+gem 'rspec-sinatra'
+gem 'byebug'
 
-group :test do
-  gem 'rspec'
-  gem 'rubocop-rspec'
-  gem 'rubocop'
-  gem 'coveralls', require: false
-  gem 'capybara'
-  gem 'byebug'
-end
+# group :test do
+#   gem 'rspec'
+#   gem 'rubocop-rspec'
+#   gem 'rubocop'
+#   gem 'coveralls', require: false
+#   gem 'capybara'
+#   gem 'byebug'
+# end
