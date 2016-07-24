@@ -3,7 +3,6 @@ require './lib/game.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
-  set :session_secret, 'super_secret'
 
   get '/' do
     erb :index
@@ -14,7 +13,8 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    Game.create(params[:player_one])
+    session[:player_one] = params[:player_one]
+    Game.create(session[:player_one])
     redirect '/choose'
   end
 

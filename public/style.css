@@ -36,6 +36,7 @@ h1     {
 p     {
     text-align: center;
     font-size: 2em;
+    margin: 0.3em;
 }
 
 form {
@@ -129,24 +130,14 @@ form {
     font-size: 2em;
     margin: 10px;
   }
-#again {
-  border: solid;
-  background-color: black;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 20px;
-  color: white;
-  font-style: normal;
-  font-size: 1em
+#submits {
+    border-radius: 20px;
+    background-color: white;
+    font-size: 2em;
+    width: 120px;
+    height: 50px;
 }
-#again:focus{
-  outline: none;
-}
-#again:hover{
-  transform: scale(2);
-}
-#again:active{
-  top: 2px;
+
 }
 
 #submit.submit{
@@ -169,10 +160,12 @@ form {
     left: 0;
   }
 input[type='text']{
+  font-family: comfortaa;
   font-size: 2em;
   border: solid;
   border-radius: 50px;
   text-align: center;
+  margin: 10px;
 }
 input[type='text']:focus{
   outline: none;
