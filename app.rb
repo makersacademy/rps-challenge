@@ -20,13 +20,13 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post "/option" do
-    @option = params[:option]
+  post "/choice" do
+    $game.player.choice = params[:choice]
     redirect "/result"
   end
 
   get "/result" do
-    "You chose Rock!"
+    erb(:result)
   end
 
 

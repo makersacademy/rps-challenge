@@ -5,6 +5,6 @@ feature "Play rock, paper, scissors" do
     click_button "Start"
     choose "Rock"
     click_button "Choose"
-    expect(page).to have_content "You chose Rock"
+    expect(page).to have_content "Richard chooses Rock!"
   end
 end

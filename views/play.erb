@@ -4,24 +4,15 @@
 
 <h3>  </h3>
 
-<form action="/option" method="post">
-  <p> Pick your tool of destruction:
-    <br />
-    <label>
-      <input type="radio" name="Rock" value="Rock" />
-        Rock
-      <img src="http://images.freeimages.com/images/previews/5ae/rocks-1408556.jpg">
-    </label>
-    <label>
-      <input type="radio" name="Paper" value="Paper" />
-        Paper
-      <img src="http://images.freeimages.com/images/previews/dcc/newspaper-1198887.jpg">
-    </label>
-    <label>
-      <input type="radio" name="Scissors" value="Scissors" />
-        Scissors
-      <img src="http://images.freeimages.com/images/previews/844/scissors-1316595.jpg">
-    </label>
-      <input type="submit" name="option" value="Choose"/>
-  </p>
+<form action="/choice" method="post">
+Pick your tool of destruction:
+
+<input type="radio" name="choice" id="Rock" value="Rock" /> Rock
+  <!-- <img src="http://images.freeimages.com/images/previews/5ae/rocks-1408556.jpg"> -->
+<input type="radio" name="choice" id="Paper" value="Paper" /> Paper
+  <!-- <img src="http://images.freeimages.com/images/previews/dcc/newspaper-1198887.jpg"> -->
+<input type="radio" name="choice" id="Scissors" value="Scissors" /> Scissors
+  <!-- <img src="http://images.freeimages.com/images/previews/844/scissors-1316595.jpg"> -->
+<input type="submit" value="Choose"/>
+
 </form>

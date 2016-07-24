@@ -6,5 +6,8 @@ describe Player do
     it "displays player name" do
       expect(player.name).to eq "Richard"
     end
+    it "has not made a choice yet" do
+      expect(player.choice).to eq nil
+    end
   end
 end
