@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    Alex plays <%= @player_1_weapon %> against AI Overlord<br>
+    Alex plays <%= @game.player_1.weapon %> against AI Overlord<br>
 
     <form action="/AI_turn" method="post">
       <input type="submit" value="Opponents turn">

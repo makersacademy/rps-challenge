@@ -5,13 +5,15 @@
     <title></title>
   </head>
   <body>
-    <%= @player_2_name %> plays <%= @player_2_weapon %> against <%= @player_1_name %>'s <%= @player_1_weapon %>
+    <%= @game.player_2.name %> plays <%= @game.player_2.weapon %> against <%= @game.player_1.name %>'s <%= @game.player_1.weapon %><br>
 
-    if player one has variable that equals win - Alex wins, AI Overlord loses
+    <% if @game.player_1.outcome == "win" %>
+      <%= @game.player_1.weapon %> beats <%= @game.player_2.weapon %> - <%= @game.player_1.name %> wins, <%= @game.player_2.name %> loses
+    <% elsif @game.player_1.outcome == "lose" %>
+      <%= @game.player_2.weapon %> beats <%= @game.player_1.weapon %> - <%= @game.player_2.name %> wins, <%= @game.player_1.name %> loses
+    <% else %>
+      <%= @game.player_1.name %> and <%= @game.player_2.name %> both chose <%= @game.player_1.weapon %>! Its a draw.
+    <% end %>
 
-    if player one has variable that equals lose - Alex loses, AI Overlord wins
-
-    if player one has variable the equals draw - its a draw
-    
   </body>
 </html>
