@@ -1,0 +1,11 @@
+Hi <%= @game.name %>!
+
+Please pick from Rock, Paper and Scissors.
+
+<form action="/compete" method="post">
+  <input type="radio" name="selection" id='1' value="Rock"> Rock<br>
+  <input type="radio" name="selection" id='2' value="Paper"> Paper<br>
+  <input type="radio" name="selection" id='3' value="Scissors"> Scissors<br>
+  <input type="submit" value="Confirm">
+</form>
+
