@@ -17,4 +17,11 @@ feature "Result" do
   #   click_button "Choose"
   #   expect(page).to have_content ("Richard Draws!" || "Richard Wins!" || "Richard Loses!")
   # end
+  scenario "user can play again with redirect" do
+    sign_in_and_play
+    choose "Rock"
+    click_button "Choose"
+    click_button "Play Again"
+    expect(current_path).to eq "/play"
+  end
 end

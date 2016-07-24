@@ -6,3 +6,8 @@
 <p>
   <%= $game.player.name %> <%= $game.outcome($game.player.choice, $game.computer.choice) %>
 </p>
+<p>
+  <form action="/play">
+    <input type="submit" value="Play Again"/>
+  </form>
+</p>
