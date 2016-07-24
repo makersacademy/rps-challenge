@@ -4,9 +4,7 @@ Web app which allows one player to play papers-scissors-stone (RPS, if you prefe
 computer opponent.
 
 TO DO
-* Extract weapon related funcionality from Game to Weapon class.
-* Better stubbing of weapons for improved feature tests.
-* More thorough / better organised tests.
+* Extract weapon related funcionality from Game to Weapon class (and also potentially ComputerOpponent Class)
 
 
 Instructions
