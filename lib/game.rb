@@ -3,11 +3,11 @@ class Game
 
   attr_reader :player, :selection, :computer_selection, :outcome
 
-CHOICE = ['rock', 'paper', 'scissors']
+CHOICE = [:rock, :paper, :scissors]
 
-BEATS = { 'rock'     => 'paper',
-          'paper'    => 'scissors',
-          'scissors' => 'rock'}
+BEATS = { rock: :paper,
+          paper: :scissors,
+          scissors: :rock}
 
   def initialize(player)
     @player = player
@@ -26,7 +26,7 @@ BEATS = { 'rock'     => 'paper',
   end
 
   def computer
-    @computer_selection = CHOICE[rand(3)]
+    @computer_selection = CHOICE.sample
   end
 
   def result

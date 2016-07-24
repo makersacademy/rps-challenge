@@ -13,27 +13,26 @@ describe Game do
   context '#choice selection' do
     it 'selects rock' do
       game.rock
-      expect(game.selection).to eq 'rock'
+      expect(game.selection).to eq :rock
     end
 
     it 'selects paper' do
       game.paper
-      expect(game.selection).to eq 'paper'
+      expect(game.selection).to eq :paper
     end
 
     it 'selects rock' do
       game.scissors
-      expect(game.selection).to eq 'scissors'
+      expect(game.selection).to eq :scissors
     end
   end
 
   context '#computer' do
-    srand(3)
     it 'computer makes a selection' do
+      allow(Game::CHOICE).to receive(:sample).and_return(:rock)
       game.computer
-      expect(game.computer_selection).to eq 'rock'
+      expect(game.computer_selection).to eq :rock
     end
   end
-
 
 end
