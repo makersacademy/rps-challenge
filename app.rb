@@ -33,8 +33,8 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    # Sort this out
-    @game.player_1.choose(:paper)
+    @game.player_1.choose(params[:player_1_weapon].to_sym)
+    #@game.player_1.choose(params[:player_1_weapon])
     @game.player_2.choose(@game.random_weapon)
     @game.the_winner_is
     redirect '/action'

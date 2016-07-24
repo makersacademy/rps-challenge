@@ -28,7 +28,7 @@ describe 'Action page' do
     click_button "I was born ready"
     choose("paper")
     click_button "Feeling pretty good about myself right now"
-    expect(page).to have_content :Paper
+    expect(page).to have_content :paper
   end
 
   scenario "displays player_2's chosen weapon" do
@@ -37,7 +37,7 @@ describe 'Action page' do
     choose("paper")
     click_button "Feeling pretty good about myself right now"
     # Sort this out
-    expect(page).to have_content :Stone
+    expect(page).to have_content :stone
   end
 
 end
