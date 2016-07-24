@@ -5,17 +5,6 @@ describe Game do
   let (:player1) { double(:player, name: "Player 1") }
   let (:player2) { double(:computerplayer, name: "Computer") }
 
-  # context 'knows the players' do
-  #
-  #   it 'who is player 1' do
-  #     expect(game.player1).to eq player1
-  #   end
-  #
-  #   it 'who is player 2' do
-  #     expect(game.player2).to eq player2
-  #   end
-  # end
-
   context '#name_of' do
     it "returns the name of a player" do
       expect(game.name_of(player1)).to eq player1.name
@@ -26,14 +15,7 @@ describe Game do
     it 'should return the action selected' do
       option = :rock
       allow(player1).to receive(:move).and_return(:rock)
-      expect(game.action(option)).to eq option
-    end
-  end
-
-  context '#computer_turn' do
-    it 'should return the computer\'s move' do
-      allow(player2).to receive(:move).and_return(:rock)
-      expect(game.computer_turn).to eq :rock
+      expect(game.action(player1, option)).to eq option
     end
   end
 

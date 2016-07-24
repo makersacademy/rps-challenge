@@ -2,6 +2,11 @@
 <h2>Sign in to play</h2>
 <form action="/names" method="post">
     Player 1 Name:
-    <input type ="text" name="player1" />
+    <input type="text" name="player1" />
+    Player 2 Name:
+    <input type="text" name="player2" value="Computer"/><br />
+    Is player 2 a
+    <input id="computer" type="radio" name="player_type" value="computer" checked />Computer
+    <input id="human" type="radio" name="player_type" value="human" />Human ?<br />
   <input type="submit" value="Play!" />
 </form>

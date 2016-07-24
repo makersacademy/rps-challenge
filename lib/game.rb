@@ -2,31 +2,28 @@ require_relative 'computer_player'
 
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :type
 
-  def self.start(player1)
-    @current_game = Game.new(player1)
+  def self.start(player1, player2, type)
+    @current_game = Game.new(player1, player2, type)
   end
 
   def self.current
     @current_game
   end
 
-  def initialize(player1, player2 = ComputerPlayer.new)
+  def initialize(player1, player2 = ComputerPlayer.new, type = "computer")
     @player1 = player1
     @player2 = player2
+    @type = type
   end
 
   def name_of(player)
     player.name
   end
 
-  def action(action)
-    player1.move(action)
-  end
-
-  def computer_turn
-    player2.move
+  def action(player, *action)
+    player.move(action.first)
   end
 
   def winner

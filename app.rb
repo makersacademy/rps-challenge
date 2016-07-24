@@ -13,9 +13,14 @@ class RPS < Sinatra::Base
   end
 
   post "/names" do
-    p params
+    type = params[:player_type]
     player1 = Player.new(params[:player1])
-    Game.start(player1)
+    if type == "computer"
+      player2 = ComputerPlayer.new(params[:player2])
+    else
+      player2 = Player.new(params[:player2])
+    end
+    Game.start(player1, player2, type)
     redirect '/play'
   end
 
@@ -24,9 +29,21 @@ class RPS < Sinatra::Base
   end
 
   post "/attack" do
-    p params
-    @game.action((params[:action]).to_sym)
-    @game.computer_turn
+    @game.action(@game.player1, params[:action].to_sym)
+    if @game.type == "computer"
+      @game.action(@game.player2)
+      redirect '/result'
+    else
+      redirect '/player2'
+    end
+  end
+
+  get "/player2" do
+    erb(:player2)
+  end
+
+  post "/calculate" do
+    @game.action(@game.player2, params[:action].to_sym)
     redirect '/result'
   end
 

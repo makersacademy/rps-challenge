@@ -1,16 +1,16 @@
-<h1>Rock Paper Scissors: The Game</h1>
+<h1>Rock Paper Scissors</h1>
 <h2>Player 1: <%= @game.name_of(@game.player1) %> </h2>
 <h2>Player 2: <%= @game.name_of(@game.player2) %> </h2>
-<h3><%= @game.name_of(@game.player1) %> choose your attack</h3>
-  <form action="/attack" method="post" >
+<h3> <%= @game.name_of(@game.player2) %> choose your attack</h3>
+  <form action="/calculate" method="post" >
     <input type="hidden" name="action" value="rock" />
     <input type="submit" value="Rock" />
   </form>
-  <form action="/attack" method="post" >
+  <form action="/calculate" method="post" >
     <input type="hidden" name="action" value="paper" />
     <input type="submit" value="Paper" />
   </form>
-  <form action="/attack" method="post" >
+  <form action="/calculate" method="post" >
     <input type="hidden" name="action" value="scissors" />
     <input type="submit" value="Scissors" />
   </form>
