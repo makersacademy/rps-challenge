@@ -34,6 +34,7 @@ form {
   color: white;
   padding-left: 17rem;
   font-size: 1.5rem;
+  font-weight: lighter;
 }
 
 button {
@@ -56,4 +57,9 @@ img {
   margin: 0 auto;
   padding-left: 50rem;
   padding-top: 1.6rem;
+}
+
+h2 {
+  text-decoration: underline;
+  font-weight: lighter;
 }

@@ -1,6 +1,5 @@
 body {
   background-color: #f4e9d7;
-  text-align: center;
 }
 
 .jumbotron {
@@ -70,13 +69,4 @@ button:hover {
   transition: all 0.3s ease 0s;
   background: #47e5c2;
   color: white;
-}
-
-form {
-  text-align: left;
-  margin: 0 41rem;
-}
-
-input {
-  height: 20px;
 }
