@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
 
   post "/choice" do
     $game.player.choice = params[:choice]
+    $game.computer.choose_weapon
     redirect "/result"
   end
 
