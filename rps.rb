@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
 
   before do
      @game = Game.instance
@@ -24,11 +24,11 @@ class Rps < Sinatra::Base
 
   post '/weapon' do
     @game.select_weapons(params[:weapon])
-    redirect '/compete'
+    redirect '/result'
   end
 
-  get '/compete' do
-    erb :compete
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly
