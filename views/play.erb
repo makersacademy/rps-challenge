@@ -1,14 +1,12 @@
-Rock Paper Scissors
-Player name: <%= @game.player.name %>
-
+<div>
+<p><%= @game.player.name %> </p><p class="white"> VS. </p><p> Computer </p>
+</div>
 <form action="/rock" method="post">
-  <input type="submit" value="Rock">
+  <input class="rock" type="submit" value="Rock">
 </form>
-
 <form action="/paper" method="post">
-  <input type="submit" value="Paper">
+  <input class="paper" type="submit" value="Paper">
 </form>
-
 <form action="/scissors" method="post">
-  <input type="submit" value="Scissors">
+  <input class="scissors" type="submit" value="Scissors">
 </form>

@@ -17,6 +17,7 @@ enable :sessions
 
   before do
     @game = Game.instance
+
   end
 
   get '/play' do
@@ -25,20 +26,24 @@ enable :sessions
 
   post '/rock' do
     @game.rock
+    @game.computer
     redirect '/selection'
   end
 
   post '/paper' do
     @game.paper
+    @game.computer
     redirect '/selection'
   end
 
   post '/scissors' do
     @game.scissors
+    @game.computer
     redirect '/selection'
   end
 
   get '/selection' do
+    @game.result
     erb :selection
   end
 
