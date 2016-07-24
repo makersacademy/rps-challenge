@@ -26,6 +26,7 @@ class Rps < Sinatra::Base
   post '/weapon' do
     weapon = params[:weapon]
     @game.select_weapon(weapon)
+    @game.select_computer_weapon
     redirect '/compete'
   end
 
