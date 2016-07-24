@@ -4,11 +4,12 @@ require_relative 'computer'
 class Game
   include Utilities
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :player_1_won
 
-  def initialize(player_1, player_2 = Computer.new)
+  def initialize(player_1, player_2 = Computer.new, hands = Hands.new)
     @player_1 = player_1
     @player_2 = player_2
+    @hands = hands
   end
 
   def self.create(player_1, player_2 = Computer.new)
@@ -41,10 +42,24 @@ class Game
     player_2.is_a? Computer
   end
 
+  def the_winner
+    return :draw if draw?
+    compare_hands ? :won : :lost
+  end
+
   private
+  attr_reader :hands
 
   def computer_select
     @player_2_selection = player_2.hand
+  end
+
+  def compare_hands
+    hands.player_1_win?(player_1_selection, player_2_selection)
+  end
+
+  def draw?
+    player_1_selection == player_2_selection
   end
 
 end

@@ -13,7 +13,7 @@ class GameController < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:name])
-    multiplayer = params[:computer]
+    multiplayer = params[:multiplayer]
     @game = Game.create(player)
     redirect '/play'
   end

@@ -17,6 +17,7 @@
         <p>You have selected: <%= @game.player_1_selection %></p>
         <% if @game.playing_computer? %>
         <p><%= @game.player_2.name %> selected: <%= @game.player_2_selection %></p>
+        <p>The Result: <b><%= @game.the_winner.to_s.capitalize %></b></p>
         <% end %>
         <br />
       <% end %>
