@@ -31,7 +31,7 @@ describe Player do
       end
     end
 
-    context "#ai_choose_weapon" do
+    xcontext "#ai_choose_weapon" do
       it "chooses a weapon at random" do
         #allow(ai_overlord).to receive(:ai_choose_weapon).and_return("Paper")
         ai_overlord.ai_choose_weapon

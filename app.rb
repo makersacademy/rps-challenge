@@ -12,6 +12,7 @@ enable :sessions
   post '/names' do
     $player_1 = Player.new(params[:player_1_name], params[:RPSRadio])
     $player_2 = Player.new("AI Overlord", "Rock")
+    $rps_game = Rps_game.new
     redirect '/play'
   end
 
@@ -40,6 +41,7 @@ enable :sessions
     @player_1_name = $player_1.name
     @player_2_weapon = $player_2.weapon
     @player_2_name = $player_2.name
+    $rps_game.outcome(@player_1_weapon, @player_2_weapon)
     erb :outcome
   end
 
