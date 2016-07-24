@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container text-center">
+    <div class="names">
+      <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+    </div>
+    <div>
+        <form method='post' action="/result">
+        	<input type="submit" name="player_1_choice" value="Rock"/>
+        	<input type="submit" name="player_1_choice" value="Paper"/>
+        	<input type="submit" name="player_1_choice" value="Scissors"/>
+        </form></center>
+</form>
+  </div>
+</body>
+</html>
