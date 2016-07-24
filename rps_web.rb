@@ -1,10 +1,14 @@
 require 'sinatra/base'
-require 'tilt/erb'
 
 class RPS < Sinatra::Base
-
   get '/' do
-    erb(:index)
-
+    erb :index
   end
+
+  post '/names' do
+    @player = params[:player_name]
+    erb :welcome
+  end
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
