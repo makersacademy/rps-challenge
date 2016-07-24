@@ -1,1 +1,11 @@
 <h1><%= $player_name %> vs Machine</h1>
+
+<h2>Player, choose your weapon!</h2>
+
+<form action="/choose_weapon" method="post">
+  <input id="rock" type="radio" name="weapon" value="rock">Rock<br />
+  <input id="paper" type="radio" name="weapon" value="paper">Paper<br />
+  <input id="scissors" type="radio" name="weapon" value="scissors">Scissors<br />
+  <br />
+  <input type="submit" value="Now strike!" />
+</form>

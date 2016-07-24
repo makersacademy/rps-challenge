@@ -15,6 +15,16 @@ class RSPWeb < Sinatra::Base
     erb :play
   end
 
+  post '/choose_weapon' do
+    $weapon = params[:weapon]
+    redirect '/results'
+  end
+
+  get '/results' do
+    $player_name
+    $weapon
+    erb :results
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
