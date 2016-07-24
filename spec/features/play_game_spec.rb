@@ -1,15 +1,34 @@
 require 'spec_helper'
+#require './app.rb'
 
-feature 'can play the game' do
-  scenario 'should see options of weapons' do
+SEED = 124134
 
-    visit '/'
-    fill_in 'name', with: 'Prashant'
-    click_button 'Submit'
+feature 'playing the game' do
+  scenario 'see options for weapons' do
 
-    expect(page).to have_content("Rock")
-    expect(page).to have_content("Paper")
-    expect(page).to have_content("Scissors")
+    sign_in
+
+    expect(page).to have_button("Rock")
+    expect(page).to have_button("Paper")
+    expect(page).to have_button("Scissors")
   end
+
+  scenario 'be able to choose a weapon' do
+
+    sign_in
+    click_button 'Rock'
+
+    expect(page).to have_content("You have chosen Rock")
+  end
+
+  scenario "can see computer's weapon of choice" do
+
+    srand(SEED)
+    sign_in
+    click_button 'Rock'
+
+    expect(page).to have_content("The computer has chosen: Rock")
+  end
+
 
 end

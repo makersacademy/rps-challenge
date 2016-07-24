@@ -2,6 +2,8 @@ Hello <%= @name %>!
 
 Choose your weapon!
 
-1. Rock
-2. Paper
-3. Scissors
+<form action="/results"  >
+  1. Rock     <input type="submit" name="weapon" value="Rock"/>
+  2. Paper    <input type="submit" name="weapon" value="Paper"/>
+  3. Scissors <input type="submit" name="weapon" value="Scissors"/>
+</form>

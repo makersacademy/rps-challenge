@@ -1,0 +1,21 @@
+You have chosen <%= @player_weapon %>
+
+The computer has chosen: <%= @comp_weapon %>
+
+
+
+<% if @player_weapon == "Rock" && @comp_weapon == "Scissors" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Paper" && @comp_weapon == "Rock" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Scissors" && @comp_weapon == "Paper" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Scissors" && @comp_weapon == "Rock" %>
+  <h1>You lose!</h1>
+<% elsif @player_weapon == "Rock" && @comp_weapon == "Paper" %>
+  <h1>You lose!</h1>
+<% elsif @player_weapon == "Paper" && @comp_weapon == "Scissors" %>
+  <h1>You lose!</h1>
+<% else %>
+  <h1>Draw!</h1>
+<%end%>
