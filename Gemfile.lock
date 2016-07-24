@@ -99,6 +99,7 @@ DEPENDENCIES
   byebug
   capybara
   coveralls
+  rack
   rake
   rspec
   rspec-sinatra
