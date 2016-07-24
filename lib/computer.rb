@@ -6,7 +6,7 @@ class Computer
   end
 
   def choose_weapon
-    @choice = (Game::OPTIONS).sample
+    @choice = Game::OPTIONS.sample
   end
 
 end
