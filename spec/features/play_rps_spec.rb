@@ -8,7 +8,6 @@
 
 require_relative '../spec_helper'
 
-
 feature 'Play RPS game' do
   before do
     visit('/')
@@ -16,15 +15,15 @@ feature 'Play RPS game' do
     click_button 'Submit'
   end
 
-  scenario 'Display RPS game choices' do
-    expect(page).to have_content "Rock"
-    expect(page).to have_content "Paper"
-    expect(page).to have_content "Scissors"
+  scenario 'display RPS game choices' do
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 
-  # scenario 'RPS choice' do
-  #   click_button "Rock"
-  #   expect(page)to have_content "Rock selected!"
-  # end
+  scenario 'choice of RPS' do
+    click_button 'Rock'
+    expect(page).to have_content 'Rock selected!'
+  end
 
 end
