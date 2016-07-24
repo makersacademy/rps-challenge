@@ -1,0 +1,13 @@
+You've chosen <%= @game.player_weapon.capitalize %>.
+Computer has played <%= @game.computer_weapon.capitalize %>.
+
+<% if @game.game_even? %>
+  <h3>The game is even.</h3>
+<% elsif @game.player_wins? %>
+  <h3>You have won!</h3>
+<% else %>
+  <h3>You have lost...</h3>
+<% end %>
+<form action="/play">
+  <input type="submit" value="Go back">
+</form>

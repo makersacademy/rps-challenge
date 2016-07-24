@@ -16,4 +16,27 @@ feature "Playing the game" do
     click_button "Scissors"
     expect(page).to have_content "You've chosen Scissors"
   end
+
+  scenario "after choosing weapon, a computer's random choise is shown too" do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content "Computer has played"
+  end
+
+  scenario "displays a winning/losing message" do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to satisfy do |page|
+      page.has_content?("You have lost...") or
+      page.has_content?("You have won!") or
+      page.has_content?("The game is even.")
+    end
+  end
+
+  scenario "player is able to go back to main page after choosing a weapon" do
+    sign_in_and_play
+    click_button "Rock"
+    click_button "Go back"
+    expect(page).to have_content "Player 1:"
+  end
 end
