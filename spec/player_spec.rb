@@ -11,5 +11,12 @@ describe Player do
 
   end
 
+  context "when playing" do
+    it "stores the move" do
+      expect(player.move(:rock)).to eq :rock
+    end
+
+  end
+
 
 end

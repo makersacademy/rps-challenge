@@ -6,4 +6,8 @@ class Player
     @name = name
   end
 
+  def move(action)
+    @action = action
+  end
+
 end

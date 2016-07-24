@@ -26,4 +26,8 @@ class Game
     player2.move == rps[action]
   end
 
+  def action(action)
+    player1.action
+  end
+
 end
