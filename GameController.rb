@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require 'tilt/erb'
 
 class GameController < Sinatra::Base
 
@@ -9,17 +10,19 @@ class GameController < Sinatra::Base
   end
 
   post '/name' do
-    @player1 = Player.new(params[:player_name])
-    $game = Game.new(@player1)
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
     erb(:game)
   end
 
   get '/game' do
+    @game = Game.instance
     erb(:game)
   end
 
   post '/fight' do
-    $game.player.take_weapon(params[:weapon])
+    @game = Game.instance
+    @game.player.take_weapon(params[:weapon])
     erb(:fight)
   end
 

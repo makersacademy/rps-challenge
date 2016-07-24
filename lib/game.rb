@@ -9,6 +9,14 @@ class Game
       @weapons = ["rock", "paper", "scissors"]
     end
 
+    def self.create(player)
+      @game = Game.new(player)
+    end
+
+    def self.instance
+      @game
+    end
+
     def start
       @cpu_weapon = random_weapon
       fight
@@ -23,13 +31,13 @@ class Game
     def fight
 
       game_pair = [@player.weapon, @cpu_weapon]
-      win_pair = [["scissors", "paper"],
+      win_pairs = [["scissors", "paper"],
                   ["paper", "rock"],
                   ["rock", "scissors"]]
 
       if @player.weapon == @cpu_weapon
         "It's a draw!"
-      elsif win_pair.include?(game_pair)
+      elsif win_pairs.include?(game_pair)
         "#{@player.name} wins!"
       else
         "#{@player.name} lost!"
