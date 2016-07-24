@@ -1,5 +1,5 @@
 class Player
-  attr_reader :name, :lost
+  attr_reader :name, #:lost
 
   def initialize(name)
     @name = name

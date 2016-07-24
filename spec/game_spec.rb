@@ -1,6 +1,6 @@
-# require 'game'
-#
-# describe Game do
-#   subject { described_class.new("player") }
-#
-# end
+require 'game'
+
+describe Game do
+  subject { described_class.new("player") }
+
+end
