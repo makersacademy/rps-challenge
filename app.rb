@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "./lib/player.rb"
 require "./lib/game.rb"
+require "./lib/computer.rb"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,7 +12,8 @@ class RPS < Sinatra::Base
 
   post "/name" do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect "/play"
   end
 
