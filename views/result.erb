@@ -14,13 +14,15 @@
         <div class="col-md-12">
 
           <h1>Rock Paper Scissors</h1>
-          <h2>You chose Rock, the computer chose Scissors!</h2>
+          <h2>You chose <%= @game.player_choice.capitalize %>, the computer chose <%= @game.computer_throw.capitalize %>!</h2>
+          <h2><%= @game.conclusion %></h2>
+          <h2><%= @game.result %></h2>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <form action="/result" method="get">
+          <form action="/play" method="get">
              <div class="form-group">
               <input type="submit" value="Play again" class="btn btn-default"><i class="fa-arrow-right"></i>
             </div>
