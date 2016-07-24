@@ -1,9 +1,28 @@
-<h1>Battle!</h1>
-<h2>Sign in to play</h2>
+<style>
+h1.serif {font-family: "Courier New", Courier, monospace;}
+h2.serif {font-family: "Courier New", Courier, monospace;}
+p.serif {font-family: "Courier New", Courier, monospace;}
+.center {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+    /*border: 3px solid #D3D3D3;*/
+    padding: 70px 0;
+}
+</style>
+<div class="center">
+<h1 class="serif">R. P. S. - Battle!</h1>
+<p><h2 class="serif">Sign in to play</h2></p>
 <form action="/names" method="post">
-  <label for="player_1_name">
-    Player name
-    <input type="text" name="player_1_name" required>
+  <label for="player_name">
+    <p class="serif">Player name
+    <input type="text" name="player_name" required>
   </label>
   <input type="submit" value="Submit">
+  </p>
 </form>
+</div>
+
+<center>
+<img style="-webkit-transform: rotate(270deg)" src="http://pre08.deviantart.net/fcc4/th/pre/i/2011/052/5/7/rock__paper__scissors_by_xxdemondoodlerxx-d3a2yxi.jpg" width="296" height="502" align="bottom">
+</center>

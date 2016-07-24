@@ -16,12 +16,12 @@ end
 def initialize(player)
   @player = Player.new(player)
   @machine = Machine.new
-  @machine.choose_weapon
 end
 
 def weapon_assign(weapon)
   @player.weapon_assign(weapon)
   @player_weapon = @player.weapon
+  @machine.choose_weapon
   winner?
 end
 

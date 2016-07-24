@@ -10,22 +10,22 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.game(params[:player_1_name])
+    @game = Game.game(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
     @game = Game.instance
-    @player_1_name = @game.player.name
+    @player_name = @game.player.name
     erb :play
   end
 
   post '/game' do
     @game = Game.instance
-    @player_1_name = @game.player.name
+    @player_name = @game.player.name
     @player_weapon = params[:weapon]
-    @machine_weapon = @game.machine.weapon.class.to_s
     @game.weapon_assign(@player_weapon)
+    @machine_weapon = @game.machine.weapon.class.to_s
     erb :game
   end
 
