@@ -1,0 +1,11 @@
+<body class = "play_page">
+<h1>Hello, <%= @player_name%>! </h> <h2>Let's start the game!</h2>
+
+
+<form action='/playerchoice' method='post'>
+<label for='choice'>Please make a choice:</label>
+<input type='submit' value='Rock' name = 'Rock'>
+<input type='submit' value='Paper' name = 'Paper'>
+<input type='submit' value='Scissors' name = 'Scissors'>
+</form>
+</body>
