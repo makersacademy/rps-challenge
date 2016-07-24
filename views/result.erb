@@ -1,10 +1,10 @@
 <h3><%= @game.name_of(@game.player1) %> chose <%= @game.player1.action %></h3>
 <h3><%= @game.name_of(@game.player2) %> chose <%= @game.player2.action %></h3>
 
-<% if @game.winner == "Draw" %>
+<% if @game.winner(@game.player1, @game.player2) == "Draw" %>
 <h1>This game is a draw!</h1>
 <% else %>
-<h1><%= @game.winner %> is the winner!</h1>
+<h1><%= @game.winner(@game.player1, @game.player2) %> is the winner!</h1>
 <% end %>
 <form action='/play'>
   <input type='submit' value='Play Again' />

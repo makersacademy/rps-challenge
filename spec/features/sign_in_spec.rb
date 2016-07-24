@@ -9,10 +9,12 @@ feature "Sign in" do
     expect(page).to have_content "Player 2: Thor"
   end
 
-  # scenario "select optional rules" do
-  #   sign_in_and_play
-  #   choose "hard-mode"
-  #   expect(page).to have_content "Rock, Paper, Scisors, Spock, Lizard"
-  # end
+  scenario "select optional rules" do
+    visit "/"
+    fill_in :player1, with: "Robert"
+    check("rules")
+    click_button("Play")
+    expect(page).to have_content "Rock Paper Scissors Spock Lizard"
+  end
 
 end

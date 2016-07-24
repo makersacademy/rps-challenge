@@ -13,14 +13,12 @@ class RPS < Sinatra::Base
   end
 
   post "/names" do
+    p params
+    player1 = params[:player1]
+    player2 = params[:player2]
     type = params[:player_type]
-    player1 = Player.new(params[:player1])
-    if type == "computer"
-      player2 = ComputerPlayer.new(params[:player2])
-    else
-      player2 = Player.new(params[:player2])
-    end
-    Game.start(player1, player2, type)
+    rules = params[:rules]
+    Game.start(player1, player2, type, rules)
     redirect '/play'
   end
 

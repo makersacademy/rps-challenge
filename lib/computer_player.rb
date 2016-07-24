@@ -2,9 +2,9 @@ class ComputerPlayer
 
   attr_reader :name, :action
 
-  def initialize(name = "Computer")
+  def initialize(name = "Computer", options = [:rock, :paper, :scissors])
     @name = name
-    @options = [:rock, :paper, :scissors]
+    @options = options
   end
 
   def move(*duck)
