@@ -1,5 +1,5 @@
 class Game
-attr_reader :player, :weapon_selected, :select_weapons, :computer_weapon
+attr_reader :player, :weapon_selected, :select_weapons, :computer_weapon, :result_text, :beat
 
 def self.instance
   @game
@@ -49,9 +49,25 @@ def result
   :lose
 end
 
+def result_text
+  grammar
+  case result
+    when :win
+      return "#{@weapon_selected} #{@beat} #{@computer_weapon}... You Win!"
+    when :draw
+      return "We both chose #{@weapon_selected}... It's a Draw!"
+    when :lose
+      return "#{@computer_weapon} #{beat} #{@weapon_selected}... I win!"
+    else
+      raise error
+  end
+end
 
-
-
-
-
+def grammar
+  unless @weapon_selected == 'Scissors'
+    @beat = ' beats '
+  else
+    @beat = ' beat '
+  end
+end
 end
