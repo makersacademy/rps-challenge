@@ -31,16 +31,22 @@ def draw?
 end
 
 def player_wins?
-  case @weapon_selected
-    when 'Rock'
-      return true if @computer_weapon == 'Scissors'
-    when 'Paper'
-      return true if @computer_weapon == 'Rock'
-    when 'Scissors'
-      return true if @computer_weapon == 'Paper'
-    else
-      false
-  end
+  return true if player_wins_with_rock?
+  return true if player_wins_with_paper?
+  return true if player_wins_with_scissors?
+  false
+end
+
+def player_wins_with_rock?
+  return true if @weapon_selected == 'Rock' && @computer_weapon == 'Scissors'
+end
+
+def player_wins_with_paper?
+  return true if @weapon_selected == 'Paper' && @computer_weapon == 'Rock'
+end
+
+def player_wins_with_scissors?
+  return true if @weapon_selected == 'Scissors' && @computer_weapon == 'Paper'
 end
 
 def result

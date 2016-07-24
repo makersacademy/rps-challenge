@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require_relative 'lib/player'
-#require_relative 'lib/weapon'
 require_relative 'lib/game'
 
 class Rps < Sinatra::Base
