@@ -17,7 +17,8 @@ $ ruby app.rb
 Screenshots
 -----
 
-![Screenshot](http://i.imgur.com/uBWqH0p.png)
+![Screenshot](http://i.imgur.com/lXujXNsm.png)
+![Screenshot](http://i.imgur.com/uBWqH0pm.png)
 
 My Approach
 -----
