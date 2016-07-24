@@ -30,7 +30,7 @@ RSpec.feature "Result is Displayed", :type => :feature do
     choose 'scissors'
     click_button "Submit"
 
-    expect(page).to have_content "Rock beats Scissors... You Win!"
+    expect(page).to have_content "Scissors beat Paper... You Win!"
   end
 
 end
