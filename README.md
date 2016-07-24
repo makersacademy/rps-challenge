@@ -1,93 +1,42 @@
-# RPS Challenge: Rōnin Badge Test
+# **RPS Game &mdash;**<br>_Makers Academy Weekend Challenge_
 
-Instructions
--------
+https://rps-game-demo.herokuapp.com/
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+RPS Game is a small **Ruby** app that allows a user to play a game of _Rock, Paper, Scissors _ against the computer. It's development made use of the **Sinatra** framework for routing HTTP requests and the **Capybara** testing suite for running feature tests (unit tests were conducted with **Rspec**). Sinatra provided a lightweight and flexible interface layer to the **Rack** middleware used. This allowed a quick and easy way to add the small amounts of dynamic content needed using embedded Ruby, session cookies and the POST request params hash.<br><br>
+The weekend project was a good way to reflect on the learnings from the week, such as using a self instantiating class method to store state (which was gratifying to see working!) and using Sinatra filters for avoiding repetition in route declarations. The app was then deployed to **Heroku** and can be viewed here &mdash; https://rps-game-demo.herokuapp.com/
 
-Task 
-----
+## **_The User Stories &mdash;_**
+<br>
 
-Knowing how to build web applications is getting us almost there as web developers!
+    As a marketeer
+    So that I can see my name in lights
+    I would like to register my name before playing an online game
+&nbsp;
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+    As a marketeer
+    So that I can enjoy myself away from the daily grind
+    I would like to be able to play rock/paper/scissors
+<br>
+## **_How To Use Locally &mdash;_**
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Assuming you already have Ruby and Bundler installed, the following steps should be enough to try the app locally.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+    $ git clone git@github.com:benjamin-white/rps-challenge.git
+    $ cd rps-challenge
+    $ bundle
+    $ ruby app.rb
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+Then point your browser of choice to `localhost:4567` (or the port number reported by WeBrick if different), and play the game!
 
-Hints on functionality
+<br>
+## **_Future Features &mdash;_**
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* Bonus level 1: _Multiplayer_ <br>Change the game so that two marketeers can play against each other.
 
+* Bonus level 2: _Rock, Paper, Scissors, Spock, Lizard_ <br>Using the special rules, http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
-As usual please start by
+* Code Review <br>Reflect on ways to improve the **seperation of concerns**, whether SRP has been fully utilised and if extra features would require Dependency Injection. Ensure the CSS presentation layer is separated from the HTML content layer and where possible improve the semantic structure of the content.
 
-* Forking this repo
-* TEST driving development of your app
+<br>
 
-**Rōnin BANZAI!!!!**
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+[![Build Status](https://travis-ci.org/benjamin-white/rps-challenge.svg?branch=master)](https://travis-ci.org/benjamin-white/rps-challenge)

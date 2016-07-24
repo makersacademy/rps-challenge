@@ -18,8 +18,6 @@ class TheGame
     @game
   end
 
-  private
-
   def self.create name, player, internet
     @game = TheGame.new name, player, internet
   end
