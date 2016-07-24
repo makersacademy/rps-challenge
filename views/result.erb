@@ -3,3 +3,6 @@
 <p>
   Computer chooses <%= $game.computer.choice %>
 </p>
+<p>
+  <%= $game.player.name %> <%= $game.outcome($game.player.choice, $game.computer.choice) %>
+</p>
