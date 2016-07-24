@@ -13,7 +13,6 @@ describe 'Action page' do
     expect(page).to have_content "Jonny"
   end
 
-=begin
   scenario "displays player_1's chosen weapon" do
     sign_in_and_play
     click_button "I was born ready"
@@ -22,6 +21,5 @@ describe 'Action page' do
     allow(subject).to receive(:stormy?).and_return(false)
     expect(page).to have_content "Paper"
   end
-=end
 
 end
