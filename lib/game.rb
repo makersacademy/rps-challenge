@@ -9,4 +9,15 @@ class Game
     @player = player
     @computer = computer
   end
+
+  def outcome(p1, p2)
+    winning_moves = {
+      "Rock" => "Scissors",
+      "Scissors" => "Paper",
+      "Paper" => "Rock"
+    }
+    return "Draws!" if p1 == p2
+    winning_moves[p1] == p2 ? "Wins!": "Loses!"
+  end
+
 end
