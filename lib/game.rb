@@ -38,4 +38,9 @@ class Game
       @player_2.weapon == "Paper" ? @player_1 : @player_2
     end
   end
+
+  def new_round
+    @player_1.weapon = nil
+    @player_2.weapon = nil
+  end
 end

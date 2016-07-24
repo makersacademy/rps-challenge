@@ -1,0 +1,23 @@
+<body class = "names_page">
+  <section class="title">
+    <h1>Enter your name!</h1>
+  </section>
+
+  <section class="name_form">
+    <form action="/names" method="post"
+      <label for="player_1_name"> Player 1 name
+        <input type="text" name="player_1_name">
+      </label>
+      <br><br>
+
+      <% if @mode == "Multiplayer" %>
+        <label for="player_2_name"> Player 2 name
+          <input type="text" name="player_2_name">
+        </label>
+      <% end %>
+
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+</body>
