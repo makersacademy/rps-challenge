@@ -1,8 +1,6 @@
 feature "Play rock, paper, scissors" do
   scenario "user can pick and view an option" do
-    visit '/'
-    fill_in "player_name", with: "Richard"
-    click_button "Start"
+    sign_in_and_play
     choose "Rock"
     click_button "Choose"
     expect(page).to have_content "Richard chooses Rock!"
