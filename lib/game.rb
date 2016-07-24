@@ -44,7 +44,7 @@ class Game
     end
   end
 
-    #private
+  private
 
     def wins?
       RULES[player_1_weapon] == comp_choice

@@ -2,18 +2,26 @@ require 'computer'
 
 describe Computer do
 
-let(:weapons) { [:rock, :paper, :scissors] }
+let(:rock) { :rock }
+let(:paper) { :paper }
+let(:scissors) { :scissors }
 
   describe 'self.random_select' do
-    it "returns one of three weapon choices" do
-    [:Rock, :Paper, :Scissors].should include (Computer.random_select)
+
+    it "returns rock" do
+    allow(Computer).to receive(:random_select).and_return(rock)
+    expect(Computer.random_select).to eq rock
+  end
+
+    it "returns paper" do
+    allow(Computer).to receive(:random_select).and_return(paper)
+    expect(Computer.random_select).to eq paper
+  end
+
+    it "returns scissors" do
+    allow(Computer).to receive(:random_select).and_return(scissors)
+    expect(Computer.random_select).to eq scissors
     end
-
-  #   it "returns scissors" do
-  #   allow_any_instance_of(weapons).to receive(:sample).and_return(scissors)
-  #   expect(Computer.random_select).to eq 'scissors'
-  # end
-
   end
 
 end

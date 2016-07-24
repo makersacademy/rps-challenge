@@ -15,30 +15,6 @@ describe Game do
      end
    end
 
-  describe '#wins?' do
-
-    it 'returns true as player_1 is the winner' do
-    allow(subject).to receive(:player_1_weapon).and_return(weapon3)
-    allow(subject).to receive(:comp_choice).and_return(weapon1)
-    expect(subject.wins?).to eq true
-    end
-
-    it 'returns false as player_1 is the loser' do
-    allow(subject).to receive(:player_1_weapon).and_return(weapon2)
-    allow(subject).to receive(:comp_choice).and_return(weapon1)
-    expect(subject.wins?).to eq false
-    end
-  end
-
-  describe '#draws?' do
-    it 'returns a draw' do
-    allow(subject).to receive(:player_1_weapon).and_return(weapon1)
-    allow(subject).to receive(:comp_choice).and_return(weapon1)
-    expect(subject.draw?).to eq true
-    end
-
-  end
-
   describe '#game_outcome' do
     context 'It\'s a draw' do
     it 'returns a message that it\'s a tie' do
