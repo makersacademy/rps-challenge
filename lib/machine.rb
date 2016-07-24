@@ -10,7 +10,7 @@ class Machine
     @weapons = [Rock.new, Paper.new, Scissors.new]
   end
 
-  def choose_weapon
+  def weapon_assign
     @weapon = @weapons[rand(0..2)]
   end
 end
