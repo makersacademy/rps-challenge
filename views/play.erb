@@ -1,16 +1,10 @@
 <%= @player_1 %>!
 Please choose one of the following weapons:<br>
-Rock:
-<form action="/attack">
-  <input type="submit" value="Choose">
-</form><br>
+<form method="post" action="/select">
+     <input id="Rock" type="radio" name="weapon" value="Rock">Rock<br>
+     <input id="Paper" type="radio" name="weapon" value="Paper">Paper<br>
+     <input id="Scissors" type="radio" name="weapon" value="Scissors">Scissors
+     <input type="submit" value="Choose"/>
+   </form>
 
-Paper:
-<form action="/attack">
-  <input type="submit" value="Choose">
-</form><br>
-
-Scissors:
-<form action="/attack">
-  <input type="submit" value="Choose">
-</form>
+input id="AmountOption" name="AmountOption" type="radio" value="1">
