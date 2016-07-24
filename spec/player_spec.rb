@@ -12,8 +12,13 @@ describe Player do
   end
 
   it "can choose and store a weapon" do
-    player_1.choose("Paper")
-    expect(player_1.weapon). to eq "Paper"
+    player_1.choose(:paper)
+    expect(player_1.weapon). to eq :paper
+  end
+
+  it "has a method which returns their weapon" do
+    player_1.choose(:stone)
+    expect(player_1.get_weapon).to eq :stone
   end
 
 end
