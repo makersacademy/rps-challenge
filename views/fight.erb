@@ -1,0 +1,8 @@
+Player = <%= @player_name %>
+<br>
+<form action="/outcome" method="post">
+  <input type="radio" name="player_weapon" value="Rock" checked> Rock<br>
+  <input type="radio" name="player_weapon" value="Paper"> Paper<br>
+  <input type="radio" name="player_weapon" value="Scissors"> Scissors
+  <input type="submit" value="Fight!">
+</form>
