@@ -5,7 +5,7 @@ class Game
 
   RULES = { Rock: :Scissors,
             Paper: :Rock,
-            Scissors: :Paper }
+            Scissors: :Paper }.freeze
 
   attr_reader :player_1, :comp_choice
 
