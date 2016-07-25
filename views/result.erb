@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <h1>The computer chose <%=@game.computer_choice %>
+      </div>
+
+
+      <%if @game.draw? %>
+        <h2>It was a draw</h2>
+      <%elsif @game.winner == @game.computer %>
+        <h2>The computer won</h2>
+      <%elsif @game.winner == @game.player%>
+        <h2>You won :) </h2>
+      <%end%>
+    </div>
+  </body>
+</html>

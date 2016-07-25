@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <h1> Pick your weapon <%=@game.player.name%> </h1>
+        </div>
+        <br />
+
+        <form action = '/choice' method = 'post'>
+
+        <h2>Weapon:</h2>  <input type="text" name="weapon"<br />
+
+        <input type="submit" value="Submit">
+
+        </form>
+  </body>
+</html>

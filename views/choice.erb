@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='banner'>
+        <% if @weapon.valid_weapon? %>
+        <h1>  You chose <%= @weapon.chosen_weapon.capitalize %> </h1>
+      </div>
+      <br />
+      <form action = '/result' method = 'get'>
+      <h2> Who won? </h2>
+      <input type="submit" value="Let's see">
+      </form>
+
+        <% else  %>
+
+        <h1>Sorry, <%= @weapon.chosen_weapon%> is not a valid weapon. </h1>
+      </div>
+      <div class='middle'>
+        <h2>Please go back and enter rock, paper or scissors.</h2>
+      </div>
+        <%end%>
+    </div>
+  </body>
+</html>

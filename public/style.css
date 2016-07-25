@@ -1,0 +1,88 @@
+@import       url(https://fonts.googleapis.com/css?family=Roboto+Slab|Slabo+27px|Montserrat+Subrayada|Quicksand|EB+Garamond);
+
+.container{
+  margin: 20px
+}
+
+.banner{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: yellow;
+  background-size: cover;
+}
+
+h1{
+  text-align:center;
+  font-size: 60px;
+  /*Because Quicksand is not a default web font, we need to wrapped in quotes*/
+  font-family:'Quicksand';
+  /*font-family:Quicksand;*/
+  letter-spacing: 2px;
+  color: white;
+}
+
+h3{
+  font-family: 'Quicksand';
+  word-spacing: 6px;
+  letter-spacing:2px;
+  font-size: 15px;
+  text-align:center;
+  line-height: 20px;
+  color:black;
+  background:rgba(255,255,255,1);
+}
+
+h2{
+  font-family: 'Quicksand';
+  letter-spacing: 2px;
+}
+
+hr{
+  background:black;
+  height: 2px;
+  width: 100%;
+}
+
+.intro{
+  font-family:'EB Garamond';
+  font-size: 18px;
+  text align: left;
+  line-height: 25px;
+}
+
+.highlight{
+  text-decoration:bold;
+}
+
+.work{
+  margin-top: 20px;
+  font-family: 'EB Garamond';
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.skills{
+  font-family: EB Garamond;
+  font-size: 18px;
+  line-height: 25px;
+}
+.right{
+  /*nice!*/
+  float:right;
+}
+
+.quicksand{
+  font-family: 'Quicksand';
+}
+.references{
+  font-family: 'Quicksand';
+  letter-spacing: 2px;
+  float:right;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
