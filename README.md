@@ -1,7 +1,7 @@
 RPS Challenge
 =======
 
-The task was to create a simple 'Rock, Papers, Scissors' web app. Users should be able to enter their name before the game and be presented with their choices. Their opponent is a computer which chooses a random options before a winner is declared.
+The task was to create a simple 'Rock, Papers, Scissors' web app. Users should be able to enter their name before the game and be presented with their choices. Their opponent is a computer which chooses a random option before a winner is declared.
 
 How to Use
 -----
@@ -17,7 +17,8 @@ $ ruby app.rb
 Screenshots
 -----
 
-![Screenshot](http://imgur.com/uBWqH0p)
+![Screenshot](http://i.imgur.com/lXujXNsm.png)
+![Screenshot](http://i.imgur.com/uBWqH0pm.png)
 
 My Approach
 -----
