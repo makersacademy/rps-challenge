@@ -1,0 +1,10 @@
+<h1>Yo, <%=@name%> </h1>
+<h2>Choose rock, paper or scissors</h2>
+<form action="/play" method="post">
+    <input type="submit" name="weapon" value="Rock"/>
+    <input type="submit" name="weapon" value="Paper"/>
+    <input type="submit" name="weapon" value="Scissors"/>
+</form>
+
+You picked <%=@weapon%>
+Opponent picked <%=@opponent_weapon.to_s.capitalize%>
