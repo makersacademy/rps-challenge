@@ -1,0 +1,21 @@
+<h3> You have selected </h3><h1><%= @human_object %> </h1>
+
+<h3> The machine has chosen </h3>
+
+<h1><%= @machine_object %></h1>
+
+<%if @human_object == @machine_object%>
+<h4>It's a tie! </h4>
+<%elsif @human_object == 'Rock' && @machine_object == 'Scissors'%>
+<h4>You've won, <%= @player_1_name %>.</h4>
+<%elsif @human_object == 'Scissors' && @machine_object == 'Paper'%>
+<h4>You've won, <%= @player_1_name %>.</h4>
+<%elsif @human_object == 'Paper' && @machine_object == 'Rock'%>
+<h4>You've won, <%= @player_1_name %>.</h4>
+<%elsif @human_object == 'Rock' && @machine_object == 'Paper'%>
+<h4>The machine wins.</h4>
+<%elsif @human_object == 'Paper' && @machine_object == 'Scissors'%>
+<h4>The machine wins.</h4>
+<%elsif @human_object == 'Scissors' && @machine_object == 'Rock'%>
+<h4>The machine wins.</h4>
+<%end%>
