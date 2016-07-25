@@ -41,7 +41,7 @@ class Game
   end
 
   def draw?
-   @player.choice == @opponent.option
+    @player.choice == @opponent.option
   end
 
 end
