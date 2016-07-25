@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container text-center">
+    <center>
+    <div class="names">
+      <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
+    </div>
+    <div>
+      <h4>Choose your move</h4>
+        <form method='post' action="/result" style = "margin-top: 7px; margin-bottom: 7px;">
+        	<input type="submit" name="player_1_choice" value="Rock"/>
+        	<input type="submit" name="player_1_choice" value="Paper"/>
+        	<input type="submit" name="player_1_choice" value="Scissors"/>
+        </form></center>
+</form>
+<center>
+<img src="play_image.gif"
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<center><h2><%= @game.players.first.name %> chose <%= @player_choice %></h2>
+	<h2><%= @game.players.last.name %> chose <%= @computer_choice %> </h2>
+  		<h1> <%= @game.result %>  </h1>
+
+      <form action="/play">
+  <input type="submit" value="Play Again, and this time it's personal" id="submit" style = "margin-top: 7px; margin-bottom: 7px;">
+</form>
+<img src="result_image.jpg">
+</body>
+</html>
