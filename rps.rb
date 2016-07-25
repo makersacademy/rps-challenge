@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require_relative 'lib/player'
-require_relative 'lib/game'
-require_relative 'lib/bot'
+# require_relative 'lib/player'
+# require_relative 'lib/game'
+# require_relative 'lib/bot'
 
 class Rps < Sinatra::Base
 
@@ -26,9 +26,6 @@ enable :sessions
     session[:bot_choice] = Bot.new.choice
     redirect '/play'
   end
-
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

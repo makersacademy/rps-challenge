@@ -21,4 +21,18 @@ describe Game do
       expect(game.bot_choice).to eq :ROCK
     end
   end
+
+  describe '#human_wins?' do
+    it 'returns true if human_player_choice is :ROCK and bot_choice is :SCISSORS' do
+      expect(game.human_wins?).to eq false
+    end
+  end
+
+  # describe '#human_wins? is true' do
+  #   it 'returns true if human_player_choice is :SCISSORS and bot_choice is :PAPER' do
+  #     expect(game.human_wins?).to eq true
+  #   end
+  # end
+
+
 end

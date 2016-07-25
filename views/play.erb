@@ -17,3 +17,11 @@
 <div id="bot">
 <h1>Bot of doom chooses <%=@game.bot_choice%>!</h1>
 </div>
+
+<% if @game.human_wins? %>
+  <h1>Human wins!</h1>
+<% elsif @game.human_loses? %>
+  Human loses!
+<% elsif @game.draw? %>
+ Its a draw!
+<% end %>
