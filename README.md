@@ -1,5 +1,5 @@
 # RPS Challenge
-[![Coverage Status](https://coveralls.io/repos/github/cyberplanner/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/cyberplanner/rps-challenge?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/makersacademy/rps-challenge/badge.svg?branch=zdajani)](https://coveralls.io/github/makersacademy/rps-challenge?branch=zdajani)
 
 #The Rock, Paper, Scissors Challenge!
 ## A simple web-based game of rps.
