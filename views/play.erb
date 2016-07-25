@@ -1,0 +1,11 @@
+<h1 align='center'>Hey, <%= @player_name %>!</h1>
+
+<form action="/play" method="post">
+  <input type="submit" name="player_choice" value="Rock" />
+  <input type="submit" name="player_choice" value="Paper" />
+  <input type="submit" name="player_choice" value="Scissors" />
+</form>
+
+Sarah: <%= @player_choice %><br>
+Game:  <%= @game_choice %><br>
+winner: <%= @winner %><br>
