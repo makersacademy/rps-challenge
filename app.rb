@@ -17,8 +17,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @game = Game.instance
-    p "+++++++++++++++++++++++"
-    p @game.player
     erb(:play)
   end
 
