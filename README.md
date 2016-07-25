@@ -69,3 +69,12 @@ The rules (or logic) matrix contains 3 classes corresponding to outcomes of diff
 The logic array contains 3 classes: `P1Wins`, `P2Wins` and `Draw`. These all have simple duck typed methods to allow `.result` to be called on whatever outcome is returned, each returning an appropriate string declaring the outcome of the game. These classes were added to avoid a particularly long `if` statement.
 
 If there had been more time the logic of the game would have been extracted to another class.
+
+To run this do the following steps:
+
+```
+$ git clone git@github.com:JackOddy/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
