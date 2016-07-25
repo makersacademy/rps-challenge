@@ -47,4 +47,10 @@ describe Weapons do
       end
     end
   end
+
+  describe '#choose' do
+    it 'returns a value for a weapon key' do
+      expect(subject.choose('rock')).to eq 0
+    end
+  end
 end

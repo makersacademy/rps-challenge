@@ -1,8 +1,9 @@
 require 'player'
 
 describe Player do
-  let(:weps) {double(:weapons,)}
-  let(:subject) {described_class.new('Jack')}
+  let(:weapons) {double(:weapons, new: weapons_chooser)}
+  let(:weapons_chooser) {double(:weapons_chooser)}
+  let(:subject) {described_class.new('Jack', weapons: weapons)}
   let(:weps_choices) {double(:choices_const)}
   describe '#name' do
     it 'knows it\'s name' do
@@ -10,9 +11,10 @@ describe Player do
     end
   end
   describe'#choose' do
-    it 'returns a number based on weapon choice' do
-      stub_const("Weapons::CHOICES", rock: 0)
-      expect(subject.choose('rock')).to eq 0
+    it 'sends message to weapons' do
+      expect(weapons_chooser).to receive(:choose).with('rock')
+      p subject
+      subject.choose('rock')
     end
   end
 end
