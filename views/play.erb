@@ -1,0 +1,18 @@
+<h1>Welcome to Rock, Paper, Scissors!</h1>
+
+<h3>Player 1: <%= @game.player_name %></h3>
+<h3>Player 2: Computer</h3>
+
+<h2>Choose your weapon:</h2>
+<form action="/choose" method="post">
+  <input type="hidden" name="weapon" value="rock">
+  <input type="submit" value="Rock">
+</form>
+<form action="/choose" method="post">
+  <input type="hidden" name="weapon" value="paper">
+  <input type="submit" value="Paper">
+</form>
+<form action="/choose" method="post">
+  <input type="hidden" name="weapon" value="scissors">
+  <input type="submit" value="Scissors">
+</form>
