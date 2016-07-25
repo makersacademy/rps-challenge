@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= @game.player_2.name %> plays <%= @game.player_2.weapon %> against <%= @game.player_1.name %>'s <%= @game.player_1.weapon %><br>
+
+    <% if @game.player_1.outcome == "win" %>
+      <%= @game.player_1.weapon %> beats <%= @game.player_2.weapon %> - <%= @game.player_1.name %> wins, <%= @game.player_2.name %> loses
+    <% elsif @game.player_1.outcome == "lose" %>
+      <%= @game.player_2.weapon %> beats <%= @game.player_1.weapon %> - <%= @game.player_2.name %> wins, <%= @game.player_1.name %> loses
+    <% else %>
+      <%= @game.player_1.name %> and <%= @game.player_2.name %> both chose <%= @game.player_1.weapon %>! Its a draw.
+    <% end %>
+
+  </body>
+</html>

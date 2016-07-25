@@ -1,24 +1,9 @@
 # RPS Challenge
 
-Instructions
--------
+As the challenge provided only two user stories I have broken down the second 'epic' request into smaller achievable user stories based on the functionailty that I believe the Rock, Paper, Scissors (RPS) game should have.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Original two user stories
 
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -26,67 +11,33 @@ I would like to register my name before playing an online game
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
-```
 
-Hints on functionality
+## Expanded user stories
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
 
+As a marketeer
+So that I can see my options
+I would like to be given a choice of either Rock, Paper or Scissors when playing the game
 
-As usual please start by
+As a marketeer
+So that I can choose which object to play
+I would like to be able to select and confirm one of either Rock, Paper or scissors
 
-* Forking this repo
-* TEST driving development of your app
+As a marketeer
+So that I can play the game
+I would like to have a computer opponent to play against that will choose either Rock, Paper or Scissors
 
+As a marketeer
+Once I have played my chosen object
+I would like to be able to see the object the AI overlord has chosen
 
-## Bonus level 1: Multiplayer
+As a marketeer
+In order to see the outcome of the game
+I would like to see who has won once both I and AI overlord have chosen our objects
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+## Note on failing tests
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+The computer opponent chooses a random element from a weapons array stored in a constant WEAPONS. Due to the random behaivour I have struggled to test for this as rspec mocking is still not very. Due to this there are a number of failing Rspec and Feature tests that a reliant on the random choosing of weapons.
