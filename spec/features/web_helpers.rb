@@ -1,5 +1,5 @@
 def start_game
   visit "/"
-  fill_in :player, with: "Broseph"
+  fill_in :name, with: "Broseph"
   click_button "BATTLE"
 end

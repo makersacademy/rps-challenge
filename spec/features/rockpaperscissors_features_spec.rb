@@ -7,11 +7,10 @@ feature 'creates a player' do
 end
 
 feature 'starts a game' do
-
   scenario 'displays players choice' do
     start_game
     click_link "START"
     click_link "ROCK"
-    expect(page).to have_content "You chose rock"
+    expect(page).to have_content "You called rock"
   end
 end

@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -9,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.create(params[:player])
+    @player = Player.create(params[:name])
     redirect '/start'
   end
 
@@ -24,10 +26,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player = Player.name
+    @choice = params[:choice]
     @game = Game.instance
-    @option = @game.option(params[:choice])
-    erb :results
+    @option = @game.option(@choice)
+    @result = @game.win_lose_draw(@choice.to_sym)
+    erb @game.result
   end
 
 

@@ -13,13 +13,17 @@ describe Game do
 
   describe '#win_lose_draw' do
     context 'player wins' do
-      it 'returns "WON"' do
-        allow(subject).to receive(:random_ai).and_return("scissors")
-        expect(subject.win_lose_draw("rock")). to eq "WON"
+      it 'returns won.erb' do
+        expect(subject.win_lose_draw(:rock)). to eq :won
       end
     end
     context 'player loses' do
       it 'returns "LOST"'
+       expect(subject.win_lose_draw(:paper)). to eq :lost
+    end
+    context 'player draws' do
+      it 'returns "DREW"'
+       expect(subject.win_lose_draw(:paper)). to eq :drew
     end
   end
 
