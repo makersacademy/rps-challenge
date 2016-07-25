@@ -15,4 +15,14 @@ feature 'Game play' do
     click_button 'go'
     expect(page).to have_content 'Human chose ROCK!'
   end
+
+  # # pending do
+  # # scenario 'Bot chooses a random option' do
+  # #   register_and_play
+  # #   choose(1)
+  # #   click_button 'go'
+  # #   expect(page).to have_content 'Bot of doom chooses PAPER!'
+  # # end
+  #
+  # end
 end
