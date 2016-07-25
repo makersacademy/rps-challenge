@@ -6,44 +6,44 @@
         width: 100%;
         text-align: center;
         font-family: comfortaa;
-        }
+}
 .title {
         position: absolute;
         left: 50%;
-        }
+}
 
 h1     {
         font-family: comfortaa;
         font-size: 400%;
         font-weight: normal;
         position: absolute;
-        }
+}
 .table {
         width: 50%;
         height: 100%;
         display: table;
         right: 0;
         position: absolute;
-        }
+}
 .yield {
-      display: table-cell;
-      vertical-align: middle;
-      }
+        display: table-cell;
+        vertical-align: middle;
+}
 .player_name {
-      text-align: center;
+        text-align: center;
 }
 
-p     {
-    text-align: center;
-    font-size: 2em;
-    margin: 0.3em;
+      p{
+        text-align: center;
+        font-size: 2em;
+        margin: 0.3em;
 }
 
-form {
-  text-align: center;
-}
+ form {
+       text-align: center;
+      }
 .move {
-  display: inline-table;
+       display: inline-table;
 }
 #rock{
       position: absolute;
@@ -53,13 +53,13 @@ form {
       background-size: contain;
 }
 #paper{
-  position: absolute;
-  bottom: 60%;
-  right: 0;
-  background-image: url('/paper.png');
-  background-size: contain;
-  background-size: 140% 140%;
-  background-position: center;
+      position: absolute;
+      bottom: 60%;
+      right: 0;
+      background-image: url('/paper.png');
+      background-size: contain;
+      background-size: 140% 140%;
+      background-position: center;
 }
 #scissors{
       position: absolute;
@@ -86,91 +86,88 @@ form {
 
 }
 #button_block{
-    position: relative;
-    display: block;
-    height: 300px;
-    width: 300px;
-    margin: auto;
-    color: transparent;
+      position: relative;
+      display: block;
+      height: 300px;
+      width: 300px;
+      margin: auto;
+      color: transparent;
 
 }
 .button{
-    border: solid;
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-    background-color: white;
-    font-size: 0px;
-    background-repeat: no-repeat;
-    filter: black;
-    box-shadow: 5px 5px;
+      border: solid;
+      height: 100px;
+      width: 100px;
+      border-radius: 100px;
+      background-color: white;
+      font-size: 0px;
+      background-repeat: no-repeat;
+      filter: black;
+      box-shadow: 5px 5px;
 }
 .button:hover{
-  box-shadow: 0px 0px;
-  transform: translateY(5px);
-  transform: translateX(5px);
+      box-shadow: 0px 0px;
+      transform: translateY(5px);
+      transform: translateX(5px);
 }
 .button:focus{
-  outline: none;
+      outline: none;
 }
 
 .move {
-    display: inline-table;
-    margin: 10px;
-    font-family: comfortaa;
-    border: solid;
-    padding: 10px;
-    font-size: -webkit-xxx-large;
-    border-radius: 20px;
+      display: inline-table;
+      margin: 10px;
+      font-family: comfortaa;
+      border: solid;
+      padding: 10px;
+      font-size: -webkit-xxx-large;
+      border-radius: 20px;
   }
-  .move:hover{
-    background-color: black;
-    color: white
-  }
+.move:hover{
+      background-color: black;
+      color: white;
+}
   .result {
-    font-size: 2em;
-    margin: 10px;
+      font-size: 2em;
+      margin: 10px;
   }
 #submits {
-    border-radius: 20px;
-    background-color: white;
-    font-size: 2em;
-    width: 120px;
-    height: 50px;
+      border-radius: 20px;
+      background-color: white;
+      font-size: 2em;
+      width: 120px;
+      height: 50px;
 }
 
 }
 
 #submit.submit{
-    border: solid;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
+      border: solid;
+      background-color: transparent;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px;
   }
   #choose_title{
-    position: fixed;
-    vertical-align: middle;
-    margin-top: 30px;
-    font-size: -webkit-xxx-large;
-    height: 100%;
-    top: 0;
-    text-align: center;
-    z-index: -100;
-    width: 100%;
-    left: 0;
+      position: fixed;
+      vertical-align: middle;
+      margin-top: 30px;
+      font-size: -webkit-xxx-large;
+      height: 100%;
+      top: 0;
+      text-align: center;
+      z-index: -100;
+      width: 100%;
+      left: 0;
   }
 input[type='text']{
-  font-family: comfortaa;
-  font-size: 2em;
-  border: solid;
-  border-radius: 50px;
-  text-align: center;
-  margin: 10px;
+      font-family: comfortaa;
+      font-size: 2em;
+      border: solid;
+      border-radius: 50px;
+      text-align: center;
+      margin: 10px;
 }
 input[type='text']:focus{
-  outline: none;
-}
-#go{
-
+      outline: none;
 }
