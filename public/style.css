@@ -1,0 +1,90 @@
+body {
+  color: black;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  background-color: #28B4E5;
+}
+h1 {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  margin: 50px 0;
+  font-size: 100px;
+}
+label {
+  color: black;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+}
+
+div {
+  padding: 10px;
+}
+
+p {
+  color: black;
+  font-weight: bold;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  display: inline;
+}
+
+form {
+  display: inline;
+}
+
+.white {
+  color: white;
+  font-size: 40px;
+}
+
+.large {
+  font-size: 150px;
+  color: white
+}
+.outline {
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.rock{
+  background-size: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.paper{
+  background-size: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.scissors {
+  background-size: 100%;
+  width: 150px;
+  height: 225px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.button {
+  background-color: white;
+  border-color: #28B4E5;
+  border-radius: 20px
+  padding: 10px;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: #28B4E5;
+  border-color: #28B4E5;
+}
