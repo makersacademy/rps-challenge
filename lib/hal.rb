@@ -1,8 +1,8 @@
 class Hal
   attr_reader :attack, :attacks
-
+  ATTACKS = ["Rock", "Paper", "Scissors"]
   def initialize
-    @attacks = ["Rock", "Paper", "Scissors"]
+    @attacks = ATTACKS
     @attack = @attacks.sample
   end
 end
