@@ -1,5 +1,4 @@
 require 'game'
-require 'computer_player'
 
 describe Game do
 
