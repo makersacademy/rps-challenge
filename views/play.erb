@@ -1,0 +1,13 @@
+<h1> <%= @game.player.name %> vs. Computer! </h1>
+
+<div id="weapon_choice">
+  <form action="/rock" method="post">
+    <input type ="submit" value="rock" />
+  </form>
+  <form action="/paper" method="post">
+    <input type ="submit" value="paper" />
+  </form>
+  <form action="/scissors" method="post">
+    <input type ="submit" value="scissors" />
+  </form>
+</div>
