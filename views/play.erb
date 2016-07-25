@@ -1,0 +1,30 @@
+<% if @game.rpssl? %>
+<h1>Rock Paper Scissors Spock Lizard</h1>
+<% else %>
+<h1>Rock Paper Scissors</h1>
+<% end %>
+<h2>Player 1: <%= @game.name_of(@game.player1) %> </h2>
+<h2>Player 2: <%= @game.name_of(@game.player2) %> </h2>
+<h3><%= @game.name_of(@game.player1) %> choose your attack</h3>
+<form action="/attack" method="post" >
+  <input type="hidden" name="action" value="rock" />
+  <input type="submit" value="Rock" />
+</form>
+<form action="/attack" method="post" >
+  <input type="hidden" name="action" value="paper" />
+  <input type="submit" value="Paper" />
+</form>
+<form action="/attack" method="post" >
+  <input type="hidden" name="action" value="scissors" />
+  <input type="submit" value="Scissors" />
+</form>
+<% if @game.rpssl? %>
+<form action="/attack" method="post" >
+  <input type="hidden" name="action" value="spock" />
+  <input type="submit" value="Spock" />
+</form>
+<form action="/attack" method="post" >
+  <input type="hidden" name="action" value="lizard" />
+  <input type="submit" value="Lizard" />
+</form>
+<% end %>
