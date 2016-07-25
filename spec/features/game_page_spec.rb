@@ -28,4 +28,12 @@ feature "Game page view" do
     click_button('Scissors')
   end
 
+  scenario 'knows choice player has chosen' do
+    sign_in_and_play
+    visit '/game'
+    click_button('Rock')
+    visit '/results'
+    expect(page).to have_content('You chose Rock')
+  end
+
 end
