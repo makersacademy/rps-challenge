@@ -8,7 +8,7 @@
 [index]:http://i64.tinypic.com/2v9swfr.jpg "index view"
 -------
 ## Instruction:
-* git clone git@github.com:[USERNAME]/rps-challenge.git
+* git clone git@github.com:cyberplanner/rps-challenge.git
 * cd rps-challenge
 * bundle
 * rackup

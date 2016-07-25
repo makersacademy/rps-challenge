@@ -12,9 +12,5 @@ describe Player do
       expect(player.attack).to eq nil
     end
 
-    # it "has an attack" do
-    #   player.choose("Paper")
-    #   expect(player.attack).to eq "Paper"
-    # end
   end
 end
