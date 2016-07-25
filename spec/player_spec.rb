@@ -10,4 +10,10 @@ describe Player do
     end
   end
 
+  describe '#selects_weapon' do
+    it "selects the player's weapon" do
+      expect(titus.weapon_chosen) 
+    end
+  end
+
 end

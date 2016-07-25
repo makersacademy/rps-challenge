@@ -1,5 +1,7 @@
 class Game
 
+  GAME_RULES = { :Rock => "Scissors", :Paper => "Rock", :Scissors => "Paper" }
+
   attr_reader :player
 
   def initialize(player)
@@ -13,4 +15,6 @@ class Game
   def self.instance
     @game
   end
+
+
 end
