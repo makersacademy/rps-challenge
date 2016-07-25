@@ -7,7 +7,14 @@
 
 <body>
 
-<h1> <%= @player_1_name %> vs <%=@player_2_name %> </h1>
+<h1><%=@game.player_1.name%> vs Computer</h1>
+
+<form action="/find_winner" method="post">
+  Choose an option: <br>
+  <input id = "rock" type="submit" name="selection" value="rock">
+  <input id = "paper" type="submit" name="selection" value="paper">
+  <input id = "scissors" type="submit" name="selection" value="scissors">
+</form>
 
 </body>
 
