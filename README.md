@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/JAstbury/rps-challenge.svg?branch=master)](https://travis-ci.org/JAstbury/rps-challenge)
+
+
 RPS Challenge
 =======
 
