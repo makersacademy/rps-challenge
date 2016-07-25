@@ -3,7 +3,7 @@ class Game
         rock: {rock: :draw, paper: :lose, scissors: :win},
         paper: {rock: :win, paper: :draw, scissors: :lose},
         scissors: {rock: :lose, paper: :win, scissors: :draw}
-  }
+  }.freeze
 
   attr_reader :player, :computer
 
@@ -16,7 +16,6 @@ class Game
     CHOICES[@player.choice][@computer.choice]
   end
 
-  private
 
   def self.start_game(player,computer)
     @game = Game.new(player,computer)
