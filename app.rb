@@ -28,6 +28,7 @@ class RPS < Sinatra::Base
   end
 
   get '/attack' do
+    @player_name = @game.player_name
     erb :attack
   end
   post '/rps' do

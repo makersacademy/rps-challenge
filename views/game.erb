@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="well text-center">
-            <h1>Welcome to the game, <%= @player_name %>!</h1>
+            <h1>Welcome to the game, <%= @game.player_name %>!</h1>
             <form action="/attack" method="get">
               <button type="submit" class="btn btn-danger" value="New Game" >New Game <i class="fa fa-gamepad"></i></button>
             </form>
