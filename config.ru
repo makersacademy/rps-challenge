@@ -1,2 +1,4 @@
-require './app'
-run Sinatra::Base
+require 'rubygems'
+require 'app'
+
+run Sinatra::Application
