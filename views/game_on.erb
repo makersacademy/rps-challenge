@@ -1,0 +1,27 @@
+<h3> You have selected </h3><h1><%= @human_object %> </h1>
+
+<h4> A very wise choice! </h4>
+
+<h3> Skynet is ready... Skynet has chosen... </h3>
+
+<h1><%= @machine_object %></h1>
+
+<h2>In the epic battle between <%= @human_object %> belonging to you <%= @player_1_name %>,<br>
+(a rather poor display of representation of a human race) and <%= @machine_object %> being<br>
+handled by Skynet (remember Terminator, punk?), the winner is :</h2>
+
+<%if @human_object == @machine_object%>
+<h4>It's a tie! There is no winner. So boring.</h4>
+<%elsif @human_object == 'Rock' && @machine_object == 'Scissors'%>
+<h4>You've won, <%= @player_1_name %>. Get yourself a burger.</h4>
+<%elsif @human_object == 'Scissors' && @machine_object == 'Paper'%>
+<h4>You've won, <%= @player_1_name %>. High five with your screen.</h4>
+<%elsif @human_object == 'Paper' && @machine_object == 'Rock'%>
+<h4>You've won, <%= @player_1_name %>. Why do you even play in this stupid game? </h4>
+<%elsif @human_object == 'Rock' && @machine_object == 'Paper'%>
+<h4>You've won, Skynet. Human race extermination begins in 5...</h4>
+<%elsif @human_object == 'Paper' && @machine_object == 'Scissors'%>
+<h4>You've won, Skynet. Human race extermination begins in 5...</h4>
+<%elsif @human_object == 'Scissors' && @machine_object == 'Rock'%>
+<h4>You've won, Skynet. Human race extermination begins in 5...</h4>
+<%end%>
