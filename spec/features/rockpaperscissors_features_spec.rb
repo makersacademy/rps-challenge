@@ -11,7 +11,7 @@ feature 'starts a game' do
   scenario 'displays players choice' do
     start_game
     click_link "START"
-    click_button "ROCK"
-    expect(page).to have_content "You chose to rock on"
+    click_link "ROCK"
+    expect(page).to have_content "You chose rock"
   end
 end

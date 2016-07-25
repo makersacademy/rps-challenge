@@ -19,12 +19,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rps' do
-    @game = Game.create(params[:choice])
+    @game = Game.create
     erb :options
   end
 
-  post '/play' do
-    @option = Game.option
+  get '/play' do
+    @player = Player.name
+    @option = Game.option(params[:choice])
+    @game = Game.instance
+    erb :results
   end
 
 
