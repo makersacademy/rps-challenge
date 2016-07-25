@@ -5,7 +5,7 @@ feature 'input name' do
       visit ('/')
       fill_in "players_name", with: "Pip"
       click_button "Submit!"
-      expect(page).to have_text "Welcome Pip"
+      expect(page).to have_content "Welcome Pip"
     end
 
 end
