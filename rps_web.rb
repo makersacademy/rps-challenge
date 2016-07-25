@@ -25,8 +25,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = Player.name
-    @option = Game.option(params[:choice])
     @game = Game.instance
+    @option = @game.option(params[:choice])
     erb :results
   end
 

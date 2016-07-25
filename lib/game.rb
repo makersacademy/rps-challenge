@@ -15,7 +15,7 @@ class Game
     @game
   end
 
-  def self.option(choice)
+  def option(choice)
     @choice = choice.to_sym
   end
 
