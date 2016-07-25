@@ -13,7 +13,6 @@ describe Player do
   describe'#choose' do
     it 'sends message to weapons' do
       expect(weapons_chooser).to receive(:choose).with('rock')
-      p subject
       subject.choose('rock')
     end
   end
