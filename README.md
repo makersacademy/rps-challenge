@@ -8,10 +8,11 @@
 [index]:http://i64.tinypic.com/2v9swfr.jpg "index view"
 -------
 ## Instruction:
-* git clone git@github.com:cyberplanner/rps-challenge.git
+* git clone this repo.
 * cd rps-challenge
-* bundle
-* rackup
+* run `bundle`
+* run `rackup`
+
 ____
 
 >To play navigate to `localhost:4567`, using your favorite browser.
@@ -19,10 +20,6 @@ ____
 ------
 
 ###Screen shots:
-
-<!-- ![alt text][new-game]
-[new-game]:http://i67.tinypic.com/2q0vldx.jpg "Start a new Game!" -->
-
 ![alt text][rock]
 [rock]:http://i68.tinypic.com/70c1tx.jpg "lets Rock!!"
 
@@ -30,5 +27,5 @@ ____
 [play]:http://i65.tinypic.com/140f769.jpg "Play again?"
 
 -----
-> Made by :heart: and Ruby/Sinatra by Sal
------
+
+> Made by :heart: and Ruby/Sinatra by Sal.
