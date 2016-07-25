@@ -1,0 +1,10 @@
+<link rel='stylesheet' type='text/css' href='style.css'/>
+<body>
+<h1>You chose <%= @game.player_1_weapon %>!<h1><br>
+<h2>Your opponent chose <%= @game.comp_choice %>!</h2></br>
+<h1><%= @result %><h1><br>
+
+<form action="/names" method="post">
+  <input type ="submit" value="Play again">
+</form>
+</body>

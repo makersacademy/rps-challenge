@@ -1,0 +1,9 @@
+<link rel='stylesheet' type='text/css' href='style.css'/>
+<body>
+<h1>You chose <%= @game.player_1_weapon %>!</h1><br>
+
+<h2>Click 'View' to find out your opponent's weapon!</h2>
+<form action="/opponent" method="get">
+  <input type ="submit" value="View">
+</form>
+</body>

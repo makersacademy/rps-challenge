@@ -1,0 +1,11 @@
+<link rel='stylesheet' type='text/css' href='style.css'/>
+<body>
+<h1><%= @player_1_name %>!<h1>
+<h2>Choose one of the following weapons:</h2><br>
+<form method="post" action="/select">
+     <input id="Rock" type="radio" name="weapon" value="Rock"><h3>Rock</h3><br>
+     <input id="Paper" type="radio" name="weapon" value="Paper"><h3>Paper</h3><br>
+     <input id="Scissors" type="radio" name="weapon" value="Scissors"><h3>Scissors</h3><br>
+     <input type="submit" value="Choose"/>
+   </form>
+</body>
