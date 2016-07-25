@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 
@@ -7,20 +7,21 @@
 
 <h2> Let's play! </h2>
 
-<p>Player 1:</p>
-<form action="/player1" method="post">
-  <input type="submit" name="weapon" value="rock">
-  <input type="submit" name="weapon" value="paper">
-  <input type="submit" name="weapon" value="scissors">
-</form>
+  <p>Player 1:</p>
+  <form action="/player1" method="post">
+    <input type="submit" name="weapon" value="rock">
+    <input type="submit" name="weapon" value="paper">
+    <input type="submit" name="weapon" value="scissors">
+  </form>
 
-<p>Player 2:</p>
-<form action="/player2" method="post">
-  <input type="submit" name="weapon" value="rock">
-  <input type="submit" name="weapon" value="paper">
-  <input type="submit" name="weapon" value="scissors">
-</form>
 
-<form action="/fight" method="post">
-  <input type="submit" value="fight">
-</form>
+  <p>Player 2:</p>
+  <form action="/player2" method="post">
+    <input type="submit" name="weapon" value="rock" id="p2 rock">
+    <input type="submit" name="weapon" value="paper" id="p2 paper">
+    <input type="submit" name="weapon" value="scissors" id="p2 scissors">
+  </form>
+
+  <form action="/fight" method="post">
+    <input type="submit" value="fight">
+  </form>
