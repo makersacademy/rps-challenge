@@ -26,5 +26,8 @@ feature "Choose attack" do
     log_in_and_new_game
     click_button "Paper"
     expect(page).to have_content "You chose Paper"
+    expect(page).to have_content "Hal chose "
   end
+
+
 end

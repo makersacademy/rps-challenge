@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative "./lib/player"
 require_relative "./lib/game"
+require_relative "./lib/hal"
 
 class RPS < Sinatra::Base
 
@@ -35,6 +36,8 @@ class RPS < Sinatra::Base
   end
   get '/result' do
     @attack = @game.player_attack
+    @hal_attack = Hal.new.attack
+    @result = @game.calculate(@attack, @hal_attack)
     erb :result
   end
 
