@@ -3,6 +3,7 @@ describe Game do
   subject(:game)      { described_class.new(player_choice) }
   let(:player_choice) {'rock'}
 
+
   it 'knows the players choice' do
     expect(game.player_choice).to eq player_choice.capitalize
   end

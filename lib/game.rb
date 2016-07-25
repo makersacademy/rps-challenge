@@ -1,9 +1,19 @@
 class Game
   CHOICES = ['Rock', 'Paper', 'Scissors']
 
-  attr_reader :game_choice, :player_choice
+  attr_reader :game_choice, :player_choice,
 
-  def initialize(player_choice)
+
+  def self.create(player_choice)
+    @game = Game.new(player_choice)
+  end
+
+  def self.instance
+    @game
+  end
+
+
+  def initialize(player_choice = 'non')
     raise "Invalid choice" if choice_invalid?(player_choice)
     @player_choice = player_choice.capitalize
   end
