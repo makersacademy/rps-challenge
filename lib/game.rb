@@ -71,7 +71,7 @@ attr_reader :computer_bet, :player
     player_number = name_to_number(player_bet)
     computer_number = computer_bet
 
-    computer_number == player_number ? ( return "Player and computer tie!" ) : (((computer_number - player_number) % 5) < 3? (return "Computer wins") : (return "Player wins" ))
+    computer_number == player_number ? ( return "#{player} and computer tie!" ) : (((computer_number - player_number) % 5) < 3? (return "Computer wins") : (return "#{player} wins" ))
 
   end
 
