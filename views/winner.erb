@@ -1,0 +1,14 @@
+<head>
+  <link rel='stylesheet' href='index.css' media='screen' title='no title' charset='utf-8'>
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+</head>
+
+  <h1><%= @game.player.choice %> vs. <%= @game.opponent.option %></h1>
+  <h1><%= @game.winner %></h1>
+  <h3>Play again?</h3>
+
+<form action="/continue" method="post">
+  <input type="submit" value = "Yes" name="Yes">
+  <input type="submit" value="No" name = "No">
+</form>
