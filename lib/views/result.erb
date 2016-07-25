@@ -1,0 +1,23 @@
+<DOCTYPE! html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<h1> <%= @game.player_1.name %> selected <%= @game.player_1.selection %> <br>
+Computer selected <%= @game.computer_selection %> <br>
+
+
+<h1>
+  <% if @game.winner == 'Draw' %> Draw!
+  <% else %>
+  The winner is <%= @game.winner %>
+  <% end %>
+</h2
+
+</body>
+
+</html>
