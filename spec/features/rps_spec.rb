@@ -28,6 +28,13 @@ feature "Choose attack" do
     expect(page).to have_content "You chose Paper"
     expect(page).to have_content "Hal chose "
   end
+end
 
-
+feature "Calculate result" do
+  scenario "Calculate result and declare winner" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Rock')
+    log_in_and_new_game
+    click_button "Paper"
+    expect(page).to have_content "Sal wins: Paper beats Rock"
+  end
 end

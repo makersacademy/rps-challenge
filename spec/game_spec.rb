@@ -35,9 +35,4 @@ describe Game do
     end
   end
 
-  context "calculates results and decalres winner" do
-    xit "calculate result" do
-      expect(game.calculate(player_attack, hal_attack)).to eq "Sal wins: Paper beats Rock"
-    end
-  end
 end
