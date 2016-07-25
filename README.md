@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/6eff/rps-challenge.svg?branch=master)](https://travis-ci.org/6eff/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/6eff/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/6eff/rps-challenge?branch=master)
+
 # Game of - Rock, Paper, Scissors, Spock, Lizard
 
 Instructions
