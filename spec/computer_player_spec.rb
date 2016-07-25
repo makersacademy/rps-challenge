@@ -11,7 +11,7 @@ describe ComputerPlayer do
   context 'when playing' do
 
     it 'selects it\'s move' do
-      expect(subject.move).to satisfy ("Rock Paper Scissors") do |move|
+      expect(subject.move).to satisfy("Rock Paper Scissors") do |move|
         move == :rock || move == :paper || move == :scissors
       end
     end

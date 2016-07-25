@@ -17,4 +17,11 @@ feature "Sign in" do
     expect(page).to have_content "Rock Paper Scissors Spock Lizard"
   end
 
+  scenario "can return to sign-in" do
+    sign_in_and_play
+    click_button("Rock")
+    click_button("Return to Sign-in")
+    expect(page).to have_content "Sign in to play"
+  end
+
 end

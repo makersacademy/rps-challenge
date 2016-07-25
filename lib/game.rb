@@ -14,10 +14,9 @@ class Game
   end
 
   def initialize(player1, player2 = "Computer", type = "computer", rules = "rps")
-    @player1 = Player.new(player1)
-    @player2 = Player.new(player2)
     @type = type
     @rules = Rules.new(rules)
+    assign_players(player1, player2)
     create_computer(player2) if type == "computer"
   end
 
@@ -41,6 +40,11 @@ class Game
 
   def create_computer(player2)
     @player2 = ComputerPlayer.new(player2, @rules.options)
+  end
+
+  def assign_players(player1, player2)
+    @player1 = Player.new(player1)
+    @player2 = Player.new(player2)
   end
 
 end
