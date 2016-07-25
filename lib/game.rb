@@ -28,13 +28,7 @@ end
 private
 
 def winner?
-  if @player_weapon.class == @machine.weapon.class
-    @winner = 'Draw'
-  elsif @player_weapon.beat?(@machine.weapon.class.to_s)
-    @winner = @player.name
-  else
-    @winner = 'Machine'
-  end
+  @winner = @player_weapon.beat?(@machine.weapon)
 end
 
 end

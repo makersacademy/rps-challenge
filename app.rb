@@ -25,7 +25,7 @@ class Rps < Sinatra::Base
     @player_name = @game.player.name
     @player_weapon = params[:weapon]
     @game.weapon_assign(@player_weapon)
-    @machine_weapon = @game.machine.weapon.class.to_s
+    @machine_weapon = @game.machine.weapon
     erb :game
   end
 
