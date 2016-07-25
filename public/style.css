@@ -51,7 +51,6 @@ form {
 }
 
 .rock{
-  background:url(rock.png) no-repeat;
   background-size: 100%;
   width: 150px;
   height: 150px;
@@ -60,7 +59,6 @@ form {
   border: 0;
 }
 .paper{
-  background:url(paper.png) no-repeat;
   background-size: 100%;
   width: 150px;
   height: 150px;
@@ -69,7 +67,6 @@ form {
   border: 0;
 }
 .scissors {
-  background:url(scissors.png) no-repeat;
   background-size: 100%;
   width: 150px;
   height: 225px;

@@ -5,9 +5,10 @@ class Game
 
 CHOICE = [:rock, :paper, :scissors]
 
-BEATS = { rock: :paper,
-          paper: :scissors,
-          scissors: :rock}
+BEATS = { rock: {rock: :draw, paper: :lose, scissors: :win},
+          paper: {paper: :draw, scissors: :lose, rock: :win},
+          scissors: {scissors: :draw, rock: :lose, paper: :win}
+        }
 
   def initialize(player)
     @player = player
@@ -30,9 +31,7 @@ BEATS = { rock: :paper,
   end
 
   def result
-    @outcome = 'lost'
-    @outcome = 'tied' if @selection == @computer_selection
-    @outcome = 'won' if @selection == BEATS[@computer_selection]
+    @outcome = BEATS[@selection][@computer_selection]
   end
 
   def self.create(player)
