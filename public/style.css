@@ -49,14 +49,14 @@ form {
       position: absolute;
       bottom: 0;
       right: 15%;
-      background-image: url('https://maxcdn.icons8.com/windows8/PNG/512/Gaming/rock-512.png');
+      background-image: url('/rock.png');
       background-size: contain;
 }
 #paper{
   position: absolute;
   bottom: 60%;
   right: 0;
-  background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/15849-200.png');
+  background-image: url('/paper.png');
   background-size: contain;
   background-size: 140% 140%;
   background-position: center;
@@ -65,7 +65,7 @@ form {
       position: absolute;
       bottom: 100%;
       right: 50%;
-      background-image: url('http://www.iconsplace.com/icons/preview/black/barber-scissors-256.png');
+      background-image: url('/scissors.png');
       background-size: contain;
 
 }
@@ -73,13 +73,14 @@ form {
       position: absolute;
       right: 100%;
       bottom: 60%;
-      background-image: url('http://image.flaticon.com/icons/svg/74/74261.svg')
+      background-image: url('/lizard.png');
+      background-size:contain;
 }
 #spock{
       position: absolute;
       bottom: 0;
       right: 80%;
-      background-image: url('http://t03.deviantart.net/OQuExpDxcy2gfTVBTOnOV5DaxqM=/300x200/filters:fixed_height(100,100):origin()/pre11/41fc/th/pre/f/2015/066/4/e/spock_icon_260_by_suntog-d8kqu8b.jpg');
+      background-image: url('/spock.jpg');
       background-size: contain;
       background-position: center;
 
