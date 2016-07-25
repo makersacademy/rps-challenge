@@ -12,5 +12,6 @@ Instructions
 * open browser at http://localhost:4567 and enter your name
 * chose an option and start the game ( _you can find instructions here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 * if your play with computer, it will randomly select an option
-
+<center>
 <p><img src="https://raw.githubusercontent.com/makersacademy/course/master/images/rpsls.jpg?token=AS3HUZEazk_fWEuh2G-j30Px_ca7VoFdks5XnbXQwA%3D%3D" alt="Rock Paper Scissors Lizard Spock resolution diagram"></a><br></p>
+</center>
