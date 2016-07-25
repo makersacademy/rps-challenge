@@ -20,18 +20,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  # post '/choice' do
-  #   @game = Game.instance
-  #   @game.computer_move
-  #   case @game.win?
-  #   when true
-  #     redirect '/win'
-  #   when false
-  #     redirect '/lose'
-  #   else
-  #     redirect '/draw'
-  #   end
-  # end
+  post '/choice' do
+    @game = Game.instance
+    @game.player.choice = params[:choice]
+    @game.computer_move
+    redirect '/draw' if @game.draw?
+    @game.win? ? redirect '/win' : redirect '/lose'
+  end
 
   # start the server if  ruby file executed directly
   run! if app_file == $0
