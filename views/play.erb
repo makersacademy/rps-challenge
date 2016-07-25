@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors - by Joe Sweeny</title>
+    <style>
+body {
+    background-color: white;
+}
+
+h3 {
+    color: maroon;
+}
+</style>
+
+  </head>
+  <body>
+    <div align="center"><font size="20">Rock-Paper-Scissors</font><br>
+    <font size="2.5">created by Joe Sweeny</font><br>
+      <h4>Welcome <%= @game.player_name %></h4>
+      <h3><% if @game.winner? %>
+       <%= @game.player_name %> wins!!
+      <% elsif @game.loser? %>
+        Computer wins!!
+      <% elsif @game.draw? %>
+        Draw!!
+      <% end %></h3>
+      <img src="http://i.imgur.com/qbHME84.png" width="400" align="center"><br>
+    <div class="">
+      <form action="/play" method="post" >
+        <input type="submit" name="player_selection" value="Rock">
+        <input type="submit" name="player_selection" value="Paper">
+        <input type="submit" name="player_selection" value="Scissors">
+      </form>
+    </div>
+
+    <h3>Rules of the Game<br></h3>
+    - Rock beats Scissors<br>
+    - Scissors beats Paper<br>
+    - Paper beats Rock<br><br>
+    </div>
+
+    <div align="center">You have chosen <%= @game.player_selection %><br><br>
+    Computer has chosen <%= @game.computer_selection %></div>
+
+  </body>
+</html>
