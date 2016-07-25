@@ -1,0 +1,20 @@
+<style>
+  body {font-family:Verdana;}
+</style>
+
+<form action="/">
+  <% if @game.the_winner_is == @game.player_1 %>
+    It seems you got lucky this time!
+    <h1>You WIN!</h1>
+    <input type="submit" value="I want some more!" />
+
+  <% elsif @game.the_winner_is == :draw %>
+    Great minds think alike.
+    <h1>It's a draw!</h1>
+    <input type="submit" value="One more try" />
+  <% else %>
+    Oh oh, that was a bit embarrassing!
+    <h1>You LOSE!</h1>
+    <input type="submit" value="I wasn't ready that time, let's go again" />
+  <% end %>
+</form>
