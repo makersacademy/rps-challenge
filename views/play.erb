@@ -1,0 +1,28 @@
+<h3>Welcome Player 1: <%= @game.player_1.name %>!</h3>
+
+<h2>Player 1: Choose your weapon!</h2>
+
+<form action="/choose_weapon" method="post">
+<section class="first">
+<input type="radio" name="chosen_weapon_1" value="Rock", id="Rock">Rock</input>
+<input type="radio" name="chosen_weapon_1" value="Paper" id="Paper">Paper</input>
+<input type="radio" name="chosen_weapon_1" value="Scissors" id="Scissors">Scissors</input>
+<input type="radio" name="chosen_weapon_1" value="Lizard" id="Lizard">Lizard</input>
+<input type="radio" name="chosen_weapon_1" value="Spock" id="Spock">Spock</input>
+</section>
+<% if @game.player_2.name != "Computer" %>
+<br>
+<h3>Welcome Player 2: <%= @game.player_2.name %>!</h3>
+
+Player 2: Choose your weapon!
+<br>
+<section class="second">
+<input type="radio" name="chosen_weapon_2" value="Rock", id="Rock">Rock</input>
+<input type="radio" name="chosen_weapon_2" value="Paper" id="Paper">Paper</input>
+<input type="radio" name="chosen_weapon_2" value="Scissors" id="Scissors">Scissors</input>
+<input type="radio" name="chosen_weapon_2" value="Lizard" id="Lizard">Lizard</input>
+<input type="radio" name="chosen_weapon_2" value="Spock" id="Spock">Spock</input>
+</section>
+<% end %>
+<input type="submit" value="Submit">
+</form>
