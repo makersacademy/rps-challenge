@@ -2,11 +2,12 @@
 [![Coverage Status](https://coveralls.io/repos/github/cyberplanner/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/cyberplanner/rps-challenge?branch=master)
 
 #The Rock, Paper, Scissors Challenge!
-## This is a simple web-based game of rps.
+## A simple web-based game of rps.
 -----
 ![alt text][index]
 [index]:http://i64.tinypic.com/2v9swfr.jpg "index view"
 -------
+## Instruction:
 * git clone git@github.com:[USERNAME]/rps-challenge.git
 * cd rps-challenge
 * bundle
@@ -17,10 +18,10 @@ ____
 
 ------
 
-###Screen shots
+###Screen shots:
 
-![alt text][new-game]
-[new-game]:http://i67.tinypic.com/2q0vldx.jpg "Start a new Game!"
+<!-- ![alt text][new-game]
+[new-game]:http://i67.tinypic.com/2q0vldx.jpg "Start a new Game!" -->
 
 ![alt text][rock]
 [rock]:http://i68.tinypic.com/70c1tx.jpg "lets Rock!!"
