@@ -106,3 +106,9 @@ Sessions 1 and 2 done following the Battle game as a template.
 Needed help on part 3 from class mates.
 
 Got stuck on randomised opponent functionality so used the walkthrough as guide.
+
+Submitting incomplete Challenge
+1. Display name - done
+2. Choose Rock Paper Scissors - done
+3. Opponent chooses Rock Paper Scissors - part completed
+4. Winner declared - not done. 
