@@ -7,13 +7,14 @@
 ![alt text][index]
 [index]:http://i64.tinypic.com/2v9swfr.jpg "index view"
 -------
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
-$ cd rps-challenge
-$ bundle
-$ rackup
-
+* git clone git@github.com:[USERNAME]/rps-challenge.git
+* cd rps-challenge
+* bundle
+* rackup
 ____
+
 >To play navigate to `localhost:4567`, using your favorite browser.
+
 ------
 
 ###Screen shots
