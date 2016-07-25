@@ -11,22 +11,21 @@ class Rock_paper_scissors < Sinatra::Base
   end
 
   post '/name' do
-    $player_1 = Player.new(params[:player_1_name])
-    @player_1_name = $player_1.name
+    session[:player_1_name] = params[:player_1_name]
+    @player_1_name = session[:player_1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
+    @player_1_name = session[:player_1_name]
     erb :play
   end
 
   post '/game_on' do
-    @player_1_name = $player_1.name
-    $selected_object = params[:rps]
-    @human_object = $selected_object
-    $machine = Machine.new
-    @machine = $machine
+    @player_1_name = session[:player_1_name]
+    session[:rps] = params[:rps]
+    @human_object = session[:rps]
+    @machine = Machine.new
     @machine_object = @machine.choose_object
     erb :game_on
   end
