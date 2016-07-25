@@ -27,7 +27,7 @@ feature 'winning the game' do
     click_button "Let's see"
     expect(page).to have_content "The computer won "
   end
-  # 
+  
   # scenario 'when I select scissors, I am told it is a draw' do
   #   allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
   #   sign_in_and_play
