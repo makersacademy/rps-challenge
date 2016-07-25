@@ -30,7 +30,7 @@ class Game
 
   def calculate(player_attack, hal_attack)
     if player_attack == hal_attack
-      "It's a tie!!"
+      @result = "It's a tie!!"
     elsif player_attack == "Scissors" && hal_attack == "Paper"
       @result = player_wins
     elsif player_attack == "Rock" && hal_attack == "Scissors"
