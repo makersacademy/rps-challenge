@@ -4,6 +4,12 @@ My first web application that lets the Makers Academy Marketing Array ( **MAMA**
 
 ##### https://salty-anchorage-23003.herokuapp.com/ #####
 
+![screenshot from 2016-07-25 00 37 48](https://cloud.githubusercontent.com/assets/18379191/17087435/d2c2361c-5201-11e6-9fbd-05b5ab3a9a1e.png)
+
+![screenshot from 2016-07-25 00 55 51](https://cloud.githubusercontent.com/assets/18379191/17087457/b43c16ee-5202-11e6-8a2b-1999f75b43ee.png)
+
+![screenshot from 2016-07-25 00 56 22](https://cloud.githubusercontent.com/assets/18379191/17087461/d8d148bc-5202-11e6-8f40-9ae460f0362b.png)
+
 ## User Stories ##
 ```sh
 As a marketeer
