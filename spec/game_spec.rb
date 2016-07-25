@@ -20,6 +20,14 @@ describe Game do
     end
   end
 
+  # context '#rpssl' do
+  #   it 'should return true if rpssl is selected' do
+  #     allow(rules).to receive(:spock?).and_return(true)
+  #     expect(game.rpssl?).to eq true
+  #
+  #   end
+  # end
+
   # context '#winner shows the player won' do
   #
   #   it 'shows the player name' do
