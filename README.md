@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/6eff/rps-challenge.svg?branch=master)](https://travis-ci.org/6eff/rps-challenge)
-[![Coverage Status](https://coveralls.io/repos/github/6eff/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/6eff/rps-challenge?branch=master)
+<a href='https://coveralls.io/github/6eff/rps-challenge'><img src='https://coveralls.io/repos/github/6eff/rps-challenge/badge.svg' alt='Coverage Status' /></a>
 
 # Game of - Rock, Paper, Scissors, Spock, Lizard
 
