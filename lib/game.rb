@@ -5,6 +5,8 @@ require_relative 'computer'
 
 class Game
 
+  RULES = {rock: :paper, paper: :scissors, scissors: :paper}
+
   attr_reader :rules, :player, :computer, :computer_choice, :player_choice
 
   def self.create(player,computer)
@@ -19,11 +21,7 @@ class Game
     @player = player
     @computer = computer
   end
-
-  def rules
-    @rules = {rock: :paper, paper: :scissors, scissors: :paper}
-  end
-
+  
   def play(player_choice)
     @computer_choice = computer.select_weapon
     @player_choice = player_choice.to_sym
@@ -34,11 +32,7 @@ class Game
   end
 
   def winner
-    rules[computer_choice] == player_choice ? player : computer
+    RULES[computer_choice] == player_choice ? player : computer
   end
-
-  # def select_weapon(chosen_weapon)
-  #   chosen_weapon.to_sym
-  # end
 
 end
