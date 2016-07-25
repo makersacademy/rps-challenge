@@ -1,0 +1,32 @@
+<style>
+h1.serif {font-family: "Courier New", Courier, monospace;}
+h2.serif {font-family: "Courier New", Courier, monospace;}
+p.serif {font-family: "Courier New", Courier, monospace;}
+.center {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+    padding: 70px 0;
+}
+</style>
+<div class="center">
+<h2 class="serif">You chose <%=@player_weapon%></h2>
+<p><h2 class="serif">The Machine chose <%=@machine_weapon%></h2></p>
+</div>
+<div class="center">
+<p>
+  <% if @game.winner == 'Draw'%>
+    <h1 class="serif">It's a draw, play again!</h1>
+  <% elsif @game.winner == 'Machine'%>
+    <h1 class="serif">You Lose!</h1>
+    <img style="-webkit-transform: rotate(180deg)" src="http://clipartix.com/wp-content/uploads/2016/04/Thumbs-up-transparent-clipart.png" width="110" height="175">
+  <% else%>
+    <h1 class="serif">You Win!</h1>
+    <img src="http://clipartix.com/wp-content/uploads/2016/04/Thumbs-up-transparent-clipart.png" width="110" height="175">
+  <% end %>
+</p>
+
+<form action="/play" method="get">
+    <input type="submit" style="font-family:'Courier New';" value="Play Again">
+</form>
+</div>
