@@ -51,14 +51,14 @@ describe Rpsls do
       context "players select same options" do
         it "returns tie" do
           allow(game).to receive(:computer_bet).and_return(3)
-          expect(game.winner(player_bet)).to eq "Player and computer tie!"
+          expect(game.winner(player_bet)).to eq "#{player} and computer tie!"
         end
       end
 
       context "player selects lizard and computer Spock" do
         it "player wins" do
           allow(game).to receive(:computer_bet).and_return(1)
-          expect(game.winner(player_bet)).to eq "Player wins"
+          expect(game.winner(player_bet)).to eq "#{player} wins"
         end
       end
 
