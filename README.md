@@ -30,5 +30,5 @@ ____
 [play]:http://i65.tinypic.com/140f769.jpg "Play again?"
 
 -----
-##Made by :heart: and Ruby/Sinatra by Sal
+> Made by :heart: and Ruby/Sinatra by Sal
 -----
