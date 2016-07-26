@@ -1,0 +1,49 @@
+<head>
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Sarpanch|" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+          <h1>You picked <%= @game.player.choice %>!</h1>
+        </div>
+        <div class="col-sm-6">
+      <h1>Computer chose <%= @game.computer.choice %>!</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+          <% if @game.player.choice == :rock %>
+            <img src="rock2.png">
+          <% elsif @game.player.choice == :paper %>
+            <img src="paper.png">
+          <% else %>
+            <img src="scissors.png">
+          <% end %>
+        </div>
+        <div class="col-sm-6">
+          <% if @game.computer.choice == :rock %>
+            <img src="rock2.png">
+          <% elsif @game.computer.choice == :paper %>
+            <img src="paper.png">
+          <% else %>
+            <img src="scissors.png">
+          <% end %>
+        </div>
+</div>
+
+<% if @game.result == :draw %>
+  <h1 style="color: #cc0000">It's a draw!</h1>
+<% else %>
+  <h1 style="color: #cc0000">You <%= @game.result %>!</h1>
+<% end %>
+
+<form action="/">
+  <input type="submit" value="Play Again" id="submit" style = "margin-top: 15px;">
+</form>
+
+</body>
