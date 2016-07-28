@@ -20,6 +20,12 @@ Functionality
 - the game will choose a random option
 - a winner will be declared
 
+![Screenshot1](http://i613.photobucket.com/albums/tt216/jkgee1/Screen%20Shot%202016-07-25%20at%2008.51.24_zpst7p68a6y.png)
+
+![Screenshot2](http://i613.photobucket.com/albums/tt216/jkgee1/Screen%20Shot%202016-07-25%20at%2008.51.43_zpsfdvivaks.png)
+
+![Screenshot2](http://i613.photobucket.com/albums/tt216/jkgee1/Screen%20Shot%202016-07-25%20at%2008.52.03_zpsm83bkxut.png)
+
 
 The Challenge with User Stories
 -------------------------------
@@ -46,7 +52,6 @@ To download the app:
 $ git clone git@github.com:JulieLev/rps-challenge.git
 $ cd rps-challenge
 $ bundle
-$ rackup
 ```
 To run the app:
 ```sh

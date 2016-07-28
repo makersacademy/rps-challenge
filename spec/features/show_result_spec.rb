@@ -6,7 +6,7 @@ RSpec.feature "Result is Displayed", :type => :feature do
   end
 
   scenario "Computer's choice of weapon is displayed" do
-    click_button "Rock"
+    click_button "Paper"
 
     expect(page).to have_content "I have selected Paper..."
   end

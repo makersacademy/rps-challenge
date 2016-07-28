@@ -6,18 +6,18 @@ RSpec.feature "User selects their weapon", :type => :feature do
   scenario "User selects Rock" do
     click_button "Rock"
 
-    expect(page).to have_content "Julie, you selected Rock."
+    expect(page).to have_content "you selected Rock."
   end
 
   scenario "User selects Paper" do
     click_button "Paper"
 
-    expect(page).to have_content "Julie, you selected Paper."
+    expect(page).to have_content "you selected Paper."
   end
 
   scenario "User selects Scissors" do
     click_button "Scissors"
 
-    expect(page).to have_content "Julie, you selected Scissors."
+    expect(page).to have_content "you selected Scissors."
   end
 end
