@@ -1,0 +1,28 @@
+<center>
+<h1>
+Hello <%= session[:game].name %>. Welcome to the game!
+</h1>
+<p>
+=========================
+<p>
+<strong>
+<%= "Computer chose: #{ @answer }" if @answer %>
+</strong>
+<p>
+<form method='get' action = '/game_play'>
+  <select name="Select_Box">
+    <option value="Scissors">Scissors</option>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+  </select>
+<input type= 'submit' value='Play'>
+</form>
+<p>
+========================
+<% if @choice %>
+<p>
+You chose: <%= @choice %>
+<p>
+<h2><%= session[:game].who_wins(@choice) %></h2>
+<% end %>
+

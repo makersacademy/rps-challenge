@@ -13,3 +13,6 @@ group :test do
   gem 'capybara'
   gem 'byebug'
 end
+
+
+gem 'rspec-sinatra'
