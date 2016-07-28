@@ -1,0 +1,29 @@
+<div>
+<br>
+  <h1 align="center">
+    Welcome to the game <font color="red"><%= @game.player.name %></font>!
+  </h1>
+</div>
+<div>
+  <h2 align="center">
+    Please choose your weapon...
+  </h2>
+</div>
+<br>
+<div align="center">
+  <form action="/weapon" method="post">
+    <input type="submit" name="weapon" value='Rock'>
+  </form>
+</div>
+<br>
+<div align="center">
+  <form action="/weapon" method="post">
+    <input type="submit" name="weapon" value='Paper'>
+  </form>
+</div>
+<br>
+<div align="center">
+  <form action="/weapon" method="post">
+    <input type="submit" name="weapon" value='Scissors'>
+  </form>
+</div>
