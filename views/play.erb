@@ -1,0 +1,45 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div>
+    <h1> Rock - Paper - Scissors </h1>
+  </div>
+  <div>
+    <h2>You are playing against the Rock, Paper, Scissors robot</h2>
+  </div>
+  <div>
+    <% if @player1.weapon == nil %>
+      <div>
+        <h1>Welcome <%= @player1.name %>!</h1>
+        <h2>Please choose your weapon:</h2>
+      </div>
+      <div>
+        <form action="/rock" method="post">
+          <input type="submit" value="Rock">
+        </form>
+        <form action="/paper" method="post">
+          <input type="submit" value="Paper">
+        </form>
+        <form action="/scissors" method="post">
+          <input type="submit" value="Scissors">
+        </form>
+      </div>
+    <% else %>
+      <div>
+        <p> <%=@player1.name%> has chosen <%= @player1.weapon %></p>
+      </div>
+      <div>
+        <p> <%=@player2.name%> has chosen <%= @player2.weapon %></p>
+      </div>
+      <div>
+        <p> <%=@game.result%></p>
+        <form action="/" method="get">
+          <input type="submit" value="Play again">
+        </form>
+      </div>
+    <% end %>
+  </div>
+</body>
