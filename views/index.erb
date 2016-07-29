@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container container-table">
+  <div class="vertical-center-row">
+    <h2>Welcome to Rock Paper Scissors</h2>
+    <p>Enter your name to start playing...</p>
+    <form class="form-inline" action="/name" method="post">
+      <div class="form-group">
+        <label class="sr-only" for="Name">Name:</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="multiplayer"> Play multiplayer</label>
+      </div>
+      <button type="submit" class="btn btn-default">Play</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Welcome <%= @game.player_1.name %>, to Rock Paper Scissors</h2>
+      <h3>Today's game: <%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
+      <p>Select your hand...Good luck :)</p>
+      <% if !@game.player_1_selection.nil? %>
+        <p>You have selected: <%= @game.player_1_selection %></p>
+        <% if @game.playing_computer? %>
+        <p><%= @game.player_2.name %> selected: <%= @game.player_2_selection %></p>
+        <p>The Result: <b><%= @game.the_winner.to_s.capitalize %></b></p>
+        <% end %>
+        <br />
+      <% end %>
+      <div class="row">
+        <div class="col-md-3">
+          <form method="post" action="/selection" >
+              <input type="hidden" name="selection" value="rock"  />
+              <button type="submit" id="rock" class="thumbnail">
+                <img src="images/rock.png" class="img-responsive" />
+              </button>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <form method="post" action="/selection" >
+              <input type="hidden" name="selection" value="paper"  />
+              <button type="submit" id="paper" class="thumbnail">
+                <img src="images/paper.png" class="img-responsive" />
+              </button>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <form method="post" action="/selection" >
+              <input type="hidden" name="selection" value="scissors"  />
+              <button type="submit" id="scissors" class="thumbnail">
+                <img src="images/scissors.png" class="img-responsive" />
+              </button>
+          </form>
+        </div>
+        <% if @game.playing_computer? && !@game.player_1_selection.nil? %>
+        <div id="Computer_Selection" class="col-md-3">
+          <img src="images/<%=@game.player_2_selection%>.png" class="img-responsive" />
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>
