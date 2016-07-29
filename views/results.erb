@@ -1,0 +1,26 @@
+<h1>You have chosen: <%= @player_weapon %></h1>
+
+<h1>The computer has chosen: <%= @comp_weapon %> </h1>
+
+
+
+<% if @player_weapon == "Rock" && @comp_weapon == "Scissors" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Paper" && @comp_weapon == "Rock" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Scissors" && @comp_weapon == "Paper" %>
+  <h1>You win!</h1>
+<% elsif @player_weapon == "Scissors" && @comp_weapon == "Rock" %>
+  <h1>You lose!</h1>
+<% elsif @player_weapon == "Rock" && @comp_weapon == "Paper" %>
+  <h1>You lose!</h1>
+<% elsif @player_weapon == "Paper" && @comp_weapon == "Scissors" %>
+  <h1>You lose!</h1>
+<% else %>
+  <h1>Draw!</h1>
+<%end%>
+
+
+<form action="/play" >
+  <input type="submit" value="Try again"/>
+</form>
