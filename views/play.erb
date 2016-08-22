@@ -1,0 +1,24 @@
+Hi, <%= @game.player_name %>
+
+
+ <form action="/play" method ="POST">
+	<input type="submit" name= "choice" value="Rock"/>
+	<input type="submit" name= "choice" value="Paper"/>
+	<input type="submit" name= "choice" value="Scissors"/>
+</form>
+
+You chose <%= @game.player_choice.to_s.capitalize %>
+
+<div id="opponent">
+  Opponent chose <%= @game.opponent_choice.to_s.capitalize %>
+</div>
+
+<% if @game.win? %>
+ You win!
+<% elsif @game.lose? %>
+ You lose!
+<% elsif @game.draw? %>
+ You draw!
+<% end %>
+
+
