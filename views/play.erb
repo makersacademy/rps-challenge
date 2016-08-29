@@ -1,0 +1,15 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+
+<h1> Hi <%=@game.player1.name%>, lets play rock, paper, scissors...</h1>
+  <form class="button_form" action="/rock" method="post">
+    <input type="submit" id="Rock" value="Rock">
+  </form>
+  <form class="button_form" action="/paper" method="post">
+    <input type="submit" id="Paper" value="Paper">
+  </form>
+  <form class="button_form" action="/scissors" method="post">
+    <input type="submit" id="Scissors" value="Scissors">
+  </form>

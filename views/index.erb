@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+ </head>
+
+<h1> Welcome to rock, paper, scissors </h1>
+  <h3> Singleplayer - please enter your name </h3>
+    <form method="POST" action= "/names">
+      <input type= "text" name= "player" value= "Enter your name">
+      <input type= "submit" id= "singleplayer" value= "Go">
+    </form>
+
+    <h3> Multiplayer - please enter your names </h3>
+      <form method="POST" action= "/multiplayer">
+        <input type= "text" name= "player1" value= "Enter your name">
+        <input type= "text" name= "player2" value= "Enter your name">
+        <input type= "submit" id= "multiplayer" value= "Go">
+      </form>
+</html>

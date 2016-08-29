@@ -1,0 +1,20 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+
+<h1> <%= "#{@game.player1.name} vs #{@game.player2.name}" %> </h1>
+
+  <h3><%= "#{@game.player2.name}" %> whats your move? </h3>
+
+    <form class="button_form" action="/rock-p2" method="post">
+      <input type="submit" id="Rock" value="Rock">
+    </form>
+
+    <form class="button_form" action="/paper-p2" method="post">
+      <input type="submit" id="Paper" value="Paper">
+    </form>
+
+    <form class="button_form" action="/scissors-p2" method="post">
+      <input type="submit" id="Scissors" value="Scissors">
+    </form>

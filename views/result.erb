@@ -1,0 +1,19 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+
+<h1> You picked <%="#{@game.player1.last_action} & the computer chose #{@game.computer_action}" %> </h1>
+<h1> <%="#{@game.pretty_print_winner}"%> </h1>
+  <h2> <%= "It's #{@game.player1.score} - #{@game.player2.score}"  %>  <h2>
+    <h2> Play again? <h2>
+
+<form class="button_form" action="/rock" method="post">
+  <input type="submit" id="Rock" value="Rock">
+</form>
+<form class="button_form" action="/paper" method="post">
+  <input type="submit" id="Paper" value="Paper">
+</form>
+<form class="button_form" action="/scissors" method="post">
+  <input type="submit" id="Scissors" value="Scissors">
+</form>
