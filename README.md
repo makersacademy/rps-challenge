@@ -1,7 +1,6 @@
 # Rock Paper Scissors!
 
 ## Task
-----
 
 This is my _Rock, Paper, Scissors_ game completed as part of Maker's Academy. I delivered the following user stories:
 
@@ -16,7 +15,6 @@ I would like to be able to play rock/paper/scissors
 ```
 
 ## Instructions
----
 
 To play the game visit:
 
