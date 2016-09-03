@@ -3,9 +3,7 @@ require 'spec_helper'
 feature 'computer responds to player' do
 
   scenario 'computer turn generated on results page' do
-    visit('/')
-    fill_in :player_name, with: 'Laura'
-    click_button 'Play'
+    sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content "Computer chose"
   end

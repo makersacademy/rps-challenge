@@ -8,9 +8,7 @@ feature 'player name entry' do
   end
 
   scenario 'player submits name' do
-    visit('/')
-    fill_in :player_name, with: 'Laura'
-    click_button 'Play'
+    sign_in_and_play
     expect(page).to have_content 'Welcome, Laura'
   end
 end
