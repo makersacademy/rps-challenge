@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :max_lives, :lives
+  attr_reader :max_lives
 
   DEFAULT_LIVES = 1
 

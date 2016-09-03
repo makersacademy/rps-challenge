@@ -13,7 +13,7 @@ describe Player do
   context '#reduce_lives' do
     it 'reduces the lives of the player' do
       player.reduce_lives
-      expect(player.lives).to eq 4
+      expect(player.instance_variable_get(:@lives)).to eq 4
     end
     it 'returns itself' do
       expect(player.reduce_lives).to eq player
@@ -29,7 +29,7 @@ describe Player do
   context '#lives' do
     it 'returns the remaining lives of the player' do
       player.reduce_lives
-      expect(player.lives).to eq 4
+      expect(player.instance_variable_get(:@lives)).to eq 4
     end
   end
 

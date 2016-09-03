@@ -21,7 +21,8 @@ class Game
     end
 
     def play_game(player1_choice, player2_choice)
-      if player1_choice == "rock" and player2_choice == "scissors"
+      if player1_choice == player2_choice then "draw"
+      elsif player1_choice == "rock" and player2_choice == "scissors"
         define_winner(turn_lost(player_2))
       elsif player1_choice == "scissors" and player2_choice == "paper"
         define_winner(turn_lost(player_2))

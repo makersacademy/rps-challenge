@@ -54,6 +54,9 @@ describe Game do
     it "returns player with paper if the other player is with rock" do
       expect(game.play_game("paper", "rock")).to eq player1
     end
+    it "returns 'draw' if players' choices are the same" do
+      expect(game.play_game("rock", "rock")).to eq "draw"
+    end
   end
 
 end

@@ -1,0 +1,14 @@
+Your choice was: <%= @player_choice %><br>
+Computer's choice was: <%= @computer_choice %><br>
+
+<% if @winner == "draw" %>
+Outcome is a tie.
+<% else %>
+The winner is: <%= @winner.name %>
+<% end %><br>
+<form action="/play">
+  <input type="submit" value="Play again">
+</form><br>
+<form action="/">
+  <input type="submit" value="New game">
+</form>
