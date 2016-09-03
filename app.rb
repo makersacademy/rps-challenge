@@ -1,8 +1,21 @@
 require 'sinatra/base'
 
 class Rock_Paper_Scissors < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
-    'Hello Rock_Paper_Scissors!'
+    erb(:index)
+  end
+
+  post '/name' do
+    session[:player] = params[:player]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:player]
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
