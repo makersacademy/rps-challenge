@@ -18,20 +18,12 @@ enable :sessions
     erb :choose
   end
 
-  post '/rock' do
+  post '/weapon' do
     @name = session[:name]
+    @weapon = params[:weapon]
     erb :game
   end
 
-  post '/paper' do
-    @name = session[:name]
-    erb :game
-  end
-
-  post '/rock' do
-    @name = session[:name]
-    erb :game
-  end
 
   run! if app_file == $0
 
