@@ -1,8 +1,6 @@
 feature "playing Rps" do
 
   scenario 'see rock, paper, scissor choices on page' do
-    # presented the choices:
-    # (rock, paper and scissors)
     enter_name_and_play
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
@@ -17,8 +15,22 @@ feature "playing Rps" do
   end
 
   scenario 'game chooses Paper' do
+    srand(2541)
+    enter_name_and_play
+    click_button 'Rock'
+    expect(page).to have_content('Game chose Paper')
+  end
+
+  scenario 'game chooses randomly' do
+    srand(2541)
     enter_name_and_play
     click_button 'Rock'
     expect(page).to have_content('Game chose Paper')
   end
 end
+
+# def possible_choices
+#   "Game chose Rock"
+#   "Game chose Paper"
+#   "Game chose Scissors"
+# end

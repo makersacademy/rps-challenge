@@ -23,7 +23,7 @@ class Rps < Sinatra::Base
 
   post '/play' do
     session[:player1_choice] = params[:player1_choice]
-    session[:game_choice] = "Paper"
+    session[:game_choice] = Game.new.random_choice
     redirect '/play'
   end
 
