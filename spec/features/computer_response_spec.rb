@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-# As a marketeer
-# So that I can enjoy myself away from the daily grind
-# I would like to be able to play rock/paper/scissors
-# The game will choose a random option
 feature 'computer responds to player' do
 
   scenario 'computer turn generated on results page' do
