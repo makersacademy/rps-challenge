@@ -8,7 +8,7 @@ feature 'New User arrives at root page' do
   end
 
   scenario 'Redirects to game page with welcome message' do
-    sign_in
+    sign_in_helper
     expect(page).to have_content("Welcome to the Game, Reginald!")
   end
 end

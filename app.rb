@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/opponent'
+
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,7 +11,16 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    @player_name = params[:player_name]
+    session[:player_name] = params[:player_name]
+    @player_name = session[:player_name]
+    erb :game
+  end
+
+  get '/results' do
+    @player_name = session[:player_name]
+    @user_choice = params[:choice]
+    @computer_choice = Opponent.new([:rock,:paper,:scissors]).make_choice
+    @winner = Game.new.play_game(@user_choice, @computer_choice)
     erb :game
   end
 

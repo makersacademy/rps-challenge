@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>You Chose <%=@user_choice.capitalize%></h1>
+    <h2>The computer chose <%=@computer_choice.capitalize%></h2>
+    <br>
+    <h1><%=if @winner == draw%> is the winner!</h1>
+  </body>
+</html>

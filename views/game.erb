@@ -1,7 +1,15 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <h1>Welcome to the Game, <%=@player_name%>!</h1>
+    <h3>Please choose your attack:</h3>
+    <div class = 'icon_container'>
+      <a href = '/results?choice=paper' id='Paper'><img src = 'paper.png' class = 'icon'></a>
+      <a href = '/results?choice=rock' id='Rock'><img src = 'rock.png' class = 'icon' ></a>
+      <a href = '/results?choice=scissors' id='Scissors'><img src = 'scissors.png' class = 'icon'></a>
+    </div>
+    <%= erb :_results_partial unless @winner.nil? %>
   </body>
 </html>
