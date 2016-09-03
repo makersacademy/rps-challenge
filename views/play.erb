@@ -1,3 +1,7 @@
 <h1>
-  <%= "Welcome to rock, paper, scissors, #{@player}!" %>
+  <%= "Welcome to rock, paper, scissors, #{$player}!" %>
 </h1>
+
+<form action="/result" method="post">
+  <input type="submit" value="Choose">
+</form>

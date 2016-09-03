@@ -8,8 +8,13 @@ class RPSGame < Sinatra::Base
   end
 
   post '/play' do
-    @player = params[:user_name]
+    $player = params[:user_name]
     erb(:play)
+  end
+
+  post '/result' do
+    $player
+    erb(:result)
   end
 
   run! if app_file == $0
