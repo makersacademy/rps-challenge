@@ -15,6 +15,9 @@ describe Player do
       player.reduce_lives
       expect(player.lives).to eq 4
     end
+    it 'returns itself' do
+      expect(player.reduce_lives).to eq player
+    end
   end
 
   context '#max_lives' do

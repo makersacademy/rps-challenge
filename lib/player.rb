@@ -2,7 +2,7 @@ class Player
 
   attr_reader :max_lives, :lives
 
-  DEFAULT_LIVES = 3
+  DEFAULT_LIVES = 1
 
   def initialize(name, lives = DEFAULT_LIVES)
     @name = name
@@ -16,5 +16,6 @@ class Player
 
   def reduce_lives
     @lives -= 1
+    self
   end
 end
