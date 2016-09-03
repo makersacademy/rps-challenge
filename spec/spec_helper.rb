@@ -12,7 +12,9 @@ SimpleCov.start
 
 
 require 'byebug'
+require 'capybara'
 require 'capybara/rspec'
+require_relative './features/web_helpers'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 

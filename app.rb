@@ -6,24 +6,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/one-player/enter-name' do
+  post '/names' do
     @player = params[:player_name]
-    redirect '/one-player/game'
+    redirect '/game'
   end
 
-  post 'two-player/enter-names' do
-    @player_one = params[:player_one]
-    @player_two = params[:player_two]
-    redirect '/two-player/game'
-  end
-
-  get 'one-player/game' do
+  get '/game' do
     erb(:one_player_game)
   end
 
-  get 'two-player/game' do
-    erb(:two_player_game)
-  end
 
 
   # start the server if ruby file executed directly
