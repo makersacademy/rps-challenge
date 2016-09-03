@@ -9,9 +9,13 @@ class Game
   end
 
   def play_game(option_1, option_2)
-    @player1 = @hand_class.new(option_1)
-    @player2 = @hand_class.new(option_2)
-    @player1.plays(@player2)
+    @player1 = hand_class.new(option_1)
+    @player2 = hand_class.new(option_2)
+    winner_move = player1.plays(player2)
   end
-  
+
+  private
+
+  attr_reader :player1, :player2, :hand_class
+
 end

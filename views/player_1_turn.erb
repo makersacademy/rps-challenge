@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class = 'header'>
+      <h3>Please choose your attack Player 1:</h3>
+    </div>
+    <div class = 'icon_container'>
+      <a href = '/player1?choice=paper' id='Paper'><img src = 'paper.png' class = 'icon'></a>
+      <a href = '/player1?choice=rock' id='Rock'><img src = 'rock.png' class = 'icon' ></a>
+      <a href = '/player1?choice=scissors' id='Scissors'><img src = 'scissors.png' class = 'icon'></a>
+      <a href = '/player1?choice=lizard' id='Lizard'><img src = 'lizard.png' class = 'icon'></a>
+      <a href = '/player1?choice=spock' id='Spock'><img src = 'spock.png' class = 'icon'></a>
+    </div>
+    <div class = 'results_container'>
+      <div class = 'choice_container'><%= erb :_user_choice%></div>
+      <div class = 'game_log'><%= erb "_#{@result}".to_sym unless @result.nil? %></div>
+      <div class = 'choice_container'><%= erb :_opponent_choice%></div>
+    </div>
+  </body>
+</html>

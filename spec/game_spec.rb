@@ -7,7 +7,7 @@ describe Game do
   let(:rock) {double(:hand, plays: nil)}
 
 
-  describe '#add_options' do
+  describe '#play_game' do
     before do
       game.play_game(rock, rock)
     end

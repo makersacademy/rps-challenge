@@ -3,16 +3,17 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <h1> Welcome to Rock, Paper, Scissors </h1>
-
-    <h3> Please enter your name: </h3>
-
-    <form action="/game" method="post">
-      <label for="player_name">
-        <input type="text" name="player_name"></input>
-      <br>
-      </label>
-      <input type="submit" value="Play"></input>
-    </form>
+    <div class = 'padding'></div>
+    <div class = 'form_container'>
+      <h2> Name </h2>
+      <form action="/game" method="post">
+        <label for="player_name">
+          <input type="text" name="player_name" class='form_field'></input>
+        <br>
+        </label>
+        <input type="image" name="gametype" value = 'single' src="single.jpg" class="home_icon"/>
+        <input type="image" name="gametype" value = 'multi' src="multi.png" class="home_icon"/>
+      </form>
+    </div>
   </body>
 </html>
