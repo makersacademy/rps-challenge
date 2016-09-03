@@ -16,11 +16,13 @@ class RPS < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @weapon = session[:weapon]
+    @cpu_weapon = session[:cpu_weapon]
     erb :play
   end
 
   post '/play' do
     session[:weapon] = params[:weapon]
+    session[:cpu_weapon] = (Computer.new.choice).capitalize
     redirect '/play'
   end
 
