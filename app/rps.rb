@@ -10,12 +10,27 @@ enable :sessions
 
   post '/name' do
     session[:name] = params[:name]
-    redirect '/choice'
+    redirect '/choose'
   end
 
-  get '/choice' do
+  get '/choose' do
     @name = session[:name]
-    erb :choice
+    erb :choose
+  end
+
+  post '/rock' do
+    @name = session[:name]
+    erb :game
+  end
+
+  post '/paper' do
+    @name = session[:name]
+    erb :game
+  end
+
+  post '/rock' do
+    @name = session[:name]
+    erb :game
   end
 
   run! if app_file == $0
