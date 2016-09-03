@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/game.rb'
 
 class Rps < Sinatra::Base
 
@@ -16,11 +17,13 @@ class Rps < Sinatra::Base
   get '/play' do
     @player1 = session[:player1]
     @player1_choice = session[:player1_choice]
+    @game_choice = session[:game_choice]
     erb(:play)
   end
 
   post '/play' do
     session[:player1_choice] = params[:player1_choice]
+    session[:game_choice] = "Paper"
     redirect '/play'
   end
 

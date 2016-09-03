@@ -15,4 +15,10 @@ feature "playing Rps" do
     click_button 'Rock'
     expect(page).to have_content('You chose Rock')
   end
+
+  scenario 'game chooses Paper' do
+    enter_name_and_play
+    click_button 'Rock'
+    expect(page).to have_content('Game chose Paper')
+  end
 end
