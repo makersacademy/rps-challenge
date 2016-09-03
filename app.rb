@@ -12,12 +12,14 @@ class Battle < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
+    computer = Player.new(computer)
     $game = Game.new(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    $game = @game
+    @game = $game
+    erb :play
   end
 
   run! if app_file == $0
