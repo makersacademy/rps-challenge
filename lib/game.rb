@@ -56,4 +56,9 @@ class Game
     @move_count = 0 if round_complete
   end
 
+  def reset_draw
+    @draw = false
+  end
+  
+
 end
