@@ -14,4 +14,5 @@ describe Player do
       expect(lawrence.choice).to eq 'rocks'
     end
   end
+  
 end
