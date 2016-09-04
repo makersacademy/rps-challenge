@@ -92,8 +92,21 @@ class RPS < Sinatra::Base
         end
       end
 
+      if @game.length <= @game.player_score
+        redirect '/you_won'
+      elsif @game.length <= @game.opponent_score
+        redirect '/you_lost'
+      else
+        erb(:play)
+      end
+  end
 
-    erb(:play)
+  get '/you_won' do
+    erb(:you_won)
+  end
+
+  get '/you_lost' do
+    erb(:you_lost)
   end
 
   # start the server if ruby file executed directly
