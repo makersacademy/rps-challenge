@@ -20,6 +20,10 @@ class Game
       @players.last
     end
 
+    def add_player1_choice(choice)
+      @player_1_choice = choice
+    end
+
     def play_game(player1_choice, player2_choice)
       if player1_choice == player2_choice then "draw"
       elsif player1_choice == :rock and player2_choice == :scissors
@@ -41,9 +45,6 @@ class Game
       player.add_win
     end
 
-    # private
-    #
-    # def define_winner(player)
-    #   player == player_1 ? player_2 : player_1
-    # end
+    attr_reader :player_1_choice
+
 end

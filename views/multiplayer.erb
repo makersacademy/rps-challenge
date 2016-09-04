@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>RPS Challenge - result</title>
+    <title>RPS Challenge</title>
     <!-- Bootstrap complete CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Font Awesome CSS -->
@@ -15,38 +15,26 @@
       height: 500px;
       text-shadow: 0.25px 0.25px 0.25px #000000;
     }
-    header .row,
-    footer .row {
-      display: flex;
-      align-items: center;
-    }
     </style>
   </head>
   <body>
     <header class="container">
       <div class="row">
         <h1 class="col-sm-8">Rock Paper Scissors</h1>
-        <nav class="col-sm-4 text-right">
-          <p><%= @game.player_1.name %>: <%= @game.player_1.wins %> wins</p>
-          <p><%= @game.player_2.name %>: <%= @game.player_2.wins %> wins</p>
-        </nav>
+        <nav class="col-sm-4"></nav>
       </div>
     </header>
     <section class="jumbotron">
       <div class="container">
         <div class="row text-center">
-          <h3><%= @game.player_1.name%>'s choice was: <%= @player1_choice %></h3>
-          <h3><%= @game.player_2.name%>'s choice was: <%= @player2_choice %></h3>
-          <% if @winner == "draw" %>
-          <h2>Outcome is a tie</h2>
-          <% else %>
-          <h2>The winner is: <%= @winner.name %></h2>
-          <% end %><br>
-          <form action="/after_result">
-            <div class="btn-group">
-              <button type="submit" value="play_again" name="choice" class="btn btn-success btn-lg">Play again</button>
-              <button type="submit" value="new_player" name="choice" class="btn btn-primary btn-lg">New player</button>
-            </div>
+          <h1>Multiplayer mode</h1>
+          <h2>Please add your names</h2>
+          <form class="form-inline" action="/names_mplayer" method="post">
+            <label class="sr-only" for="player1_name_field">Player 1 name</label>
+            <input type="text" class="form-control" id="player1_name_field" placeholder="Player 1 name" name="player1">
+            <label class="sr-only" for="player2_name_field">Player 2 name</label>
+            <input type="text" class="form-control" id="player2_name_field" placeholder="Player 2 name" name="player2">
+            <p><button class="btn btn-primary" type="submit" value="Add">Add</button></p>
           </form>
         </div>
       </div>

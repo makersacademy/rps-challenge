@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>RPS Challenge - result</title>
+    <title>RPS Challenge - play</title>
     <!-- Bootstrap complete CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Font Awesome CSS -->
@@ -35,17 +35,13 @@
     <section class="jumbotron">
       <div class="container">
         <div class="row text-center">
-          <h3><%= @game.player_1.name%>'s choice was: <%= @player1_choice %></h3>
-          <h3><%= @game.player_2.name%>'s choice was: <%= @player2_choice %></h3>
-          <% if @winner == "draw" %>
-          <h2>Outcome is a tie</h2>
-          <% else %>
-          <h2>The winner is: <%= @winner.name %></h2>
-          <% end %><br>
-          <form action="/after_result">
+          <h2>Welcome, <%= @game.player_2.name %>!</h2>
+          <h3>Please choose:</h3>
+          <form action="/result" method="post">
             <div class="btn-group">
-              <button type="submit" value="play_again" name="choice" class="btn btn-success btn-lg">Play again</button>
-              <button type="submit" value="new_player" name="choice" class="btn btn-primary btn-lg">New player</button>
+              <button type="submit" value="rock" name="choice" class="btn btn-success btn-lg">Rock</button>
+              <button type="submit" value="paper" name="choice" class="btn btn-success btn-lg">Paper</button>
+              <button type="submit" value="scissors" name="choice" class="btn btn-success btn-lg">Scissors</button>
             </div>
           </form>
         </div>

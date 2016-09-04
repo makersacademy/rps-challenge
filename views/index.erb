@@ -28,11 +28,12 @@
       <div class="container">
         <div class="row text-center">
           <h1>Fancy a game?</h1>
-          <h2>Please add your name</h2>
-          <form class="form-inline" action="/names" method="post">
-            <label class="sr-only" for="name_field">Your name</label>
-            <input type="text" class="form-control" id="name_field" placeholder="Your name" name="player">
-            <p><button class="btn btn-primary" type="submit" value="Add">Add</button></p>
+          <h2>Please choose a game type</h2>
+          <form class="form-inline" action="/game_type">
+            <div class="btn-group">
+              <button type="submit" value="singleplayer" name="game_type" class="btn btn-primary btn-lg">Single player</button>
+              <button type="submit" value="multiplayer" name="game_type" class="btn btn-primary btn-lg">Multiplayer</button>
+            </div>
           </form>
         </div>
       </div>

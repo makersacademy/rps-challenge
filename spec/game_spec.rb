@@ -59,4 +59,11 @@ describe Game do
     end
   end
 
+  context '#add_player1_choice' do
+    it 'store the choice of player 1' do
+      game.add_player1_choice(:rock)
+      expect(game.player_1_choice).to eq :rock
+    end
+  end
+
 end
