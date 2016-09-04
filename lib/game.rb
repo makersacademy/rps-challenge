@@ -2,13 +2,13 @@ class Game
 
   attr_reader :name
 
-  RESULTS = { 0 => :draw,
-              1 => :win,
-              2 => :loose }
+  RESULTS = { 0 => "Draw",
+              1 => "win",
+              2 => "loose" }
 
-  HANDS = { rock: 1,
-            paper: 2,
-            scissors: 3 }
+  HANDS = { "rock" => 1,
+            "paper" => 2,
+            "scissors" => 3 }
 
   def initialize(name)
     @name = name
