@@ -1,1 +1,6 @@
-<%= @player_name %> vs. Computer
+<h1><%= @player_name %> vs. Computer</h1>
+<form action="choices" method="post">
+  <input type="submit" name="rock_button" value="Rock">
+  <input type="submit" name="paper_button" value="Paper">
+  <input type="submit" name="scissor_button" value="Scissor">
+</form>
