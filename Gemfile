@@ -4,6 +4,8 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec-sinatra'
+gem 'bundle'
 
 group :test do
   gem 'rspec'
@@ -13,3 +15,5 @@ group :test do
   gem 'capybara'
   gem 'byebug'
 end
+
+gem 'ruby', '0.1.0'
