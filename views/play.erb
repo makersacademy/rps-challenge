@@ -1,8 +1,19 @@
 <html>
 <head></head>
 <body>
-  <h1>
-    <%= @game.player_one_show_name %> vs <%= @game.player_two_show_name %>
-  </h1>
+  <h1> Rock on Papers and Scissors! </h1>
+  <div>
+    <div>
+      <h2> <%= @game.player_one.show_name %> </h2>
+      <p> <%= @game.player_one.show_points %> </p>
+    </div>
+    <div>
+      <h2> vs </h2>
+    </div>
+    <div>
+      <h2> <%= @game.player_two.show_name %></h2>
+      <p> <%= @game.player_two.show_points %></p>
+    </div>
+  </div>
 </body>
 </html>
