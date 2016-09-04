@@ -3,12 +3,23 @@
 </h1>
 
 <h2>
-  Please enter you weapon!
+  Please choose you weapon!
 </h2>
 
-
-<form action="/result" method="post">
-  <input type="checkbox" name="weapon" value="Rock"> <br>
-  <input type="checkbox" name="weapon" value="Paper"> <br>
-  <input type="checkbox" name="weapon" value="Scissors"> <br>
+<form action="/game" method="post">
+  <div>
+    <label for="weapon">Rock</label>
+      <input type="checkbox" name="weapon" value="Rock">
+  </div>
+  <div>
+      <label for="weapon">Paper</label>
+        <input type="checkbox" name="weapon" value="Paper">
+  </div>
+  <div>
+    <label for="weapon">Scissors</label>
+  <input type="checkbox" name="weapon" value="Scissors">
+  </div>
+  <div class="button">
+      <button type="submit">Choose</button>
+  </div>
 </form>

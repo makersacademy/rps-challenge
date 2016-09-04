@@ -18,15 +18,19 @@ class RPSGame < Sinatra::Base
   end
 
   get '/play' do
-    @game = $game
-    $game.choose_weapon(params[:weapon])
-    @game.computer_choice
     erb(:play)
   end
 
-  post '/result' do
-    $player
-    erb(:result)
+  post '/inplay' do
+    @game = $game
+    @game.choose_weapon(params[:weapon])
+    @game.computer_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
+    @game.outcome
   end
 
   run! if app_file == $0
