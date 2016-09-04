@@ -42,20 +42,20 @@ feature 'Define result' do
 
   context 'in single player mode' do
     before(:each) do
-      allow_any_instance_of(Array).to receive(:sample) {:scissors}
+      allow_any_instance_of(Array).to receive(:sample) {:spock}
       splayer_add_name_and_submit
     end
 
     scenario 'declares the player as the winner' do
-      click_button('Rock')
+      click_button('Lizzard')
       expect(page).to have_content('The winner is: Bob')
     end
     scenario 'declares the computer as the winner' do
-      click_button('Paper')
+      click_button('Scissors')
       expect(page).to have_content('The winner is: Computer')
     end
     scenario 'declares the draw if choices are the same' do
-      click_button('Scissors')
+      click_button('Spock')
       expect(page).to have_content('Outcome is a tie')
     end
   end
@@ -66,18 +66,18 @@ feature 'Define result' do
     end
 
     scenario 'declares the player1 as the winner' do
+      click_button('Spock')
       click_button('Rock')
-      click_button('Scissors')
       expect(page).to have_content('The winner is: Bob')
     end
     scenario 'declares the player2 as the winner' do
-      click_button('Scissors')
-      click_button('Rock')
+      click_button('Spock')
+      click_button('Lizzard')
       expect(page).to have_content('The winner is: John')
     end
     scenario 'declares the draw if choices are the same' do
-      click_button('Paper')
-      click_button('Paper')
+      click_button('Spock')
+      click_button('Spock')
       expect(page).to have_content('Outcome is a tie')
     end
   end

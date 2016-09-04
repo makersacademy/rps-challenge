@@ -35,13 +35,15 @@
     <section class="jumbotron">
       <div class="container">
         <div class="row text-center">
-          <h2>Welcome, <%= @game.player_2.name %>!</h2>
-          <h3>Please choose:</h3>
+          <h1>Welcome, <%= @game.player_2.name %>!</h1>
+          <h2>Please choose:</h2>
           <form action="/result" method="post">
             <div class="btn-group">
               <button type="submit" value="rock" name="choice" class="btn btn-success btn-lg">Rock</button>
               <button type="submit" value="paper" name="choice" class="btn btn-success btn-lg">Paper</button>
               <button type="submit" value="scissors" name="choice" class="btn btn-success btn-lg">Scissors</button>
+              <button type="submit" value="spock" name="choice" class="btn btn-success btn-lg">Spock</button>
+              <button type="submit" value="lizzard" name="choice" class="btn btn-success btn-lg">Lizzard</button>
             </div>
           </form>
         </div>

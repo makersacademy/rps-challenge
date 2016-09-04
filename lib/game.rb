@@ -26,18 +26,8 @@ class Game
 
     def play_game(player1_choice, player2_choice)
       if player1_choice == player2_choice then "draw"
-      elsif player1_choice == :rock and player2_choice == :scissors
-        turn_won(player_1)
-        # define_winner(turn_lost(player_2))
-      elsif player1_choice == :scissors and player2_choice == :paper
-        turn_won(player_1)
-        # define_winner(turn_lost(player_2))
-      elsif player1_choice == :paper and player2_choice == :rock
-        turn_won(player_1)
-        # define_winner(turn_lost(player_2))
       else
-        turn_won(player_2)
-        # define_winner(turn_lost(player_1))
+        play_game_with_no_draw(player1_choice, player2_choice)
       end
     end
 
@@ -47,4 +37,49 @@ class Game
 
     attr_reader :player_1_choice
 
+    private
+
+    def play_game_with_no_draw(player1_choice, player2_choice)
+      if player1_choice == :rock then rock_chosen(player2_choice)
+      elsif player1_choice == :scissors then scissors_chosen(player2_choice)
+      elsif player1_choice == :paper then paper_chosen(player2_choice)
+      elsif player1_choice == :spock then spock_chosen(player2_choice)
+      elsif player1_choice == :lizzard then lizzard_chosen(player2_choice)
+      end
+    end
+
+    def rock_chosen(player2_choice)
+      if player2_choice == :scissors or player2_choice == :lizzard
+        turn_won(player_1)
+      else turn_won(player_2)
+      end
+    end
+
+    def scissors_chosen(player2_choice)
+      if player2_choice == :paper or player2_choice == :lizzard
+        turn_won(player_1)
+      else turn_won(player_2)
+      end
+    end
+
+    def paper_chosen(player2_choice)
+      if player2_choice == :rock or player2_choice == :spock
+        turn_won(player_1)
+      else turn_won(player_2)
+      end
+    end
+
+    def spock_chosen(player2_choice)
+      if player2_choice == :scissors or player2_choice == :rock
+        turn_won(player_1)
+      else turn_won(player_2)
+      end
+    end
+
+    def lizzard_chosen(player2_choice)
+      if player2_choice == :paper or player2_choice == :spock
+        turn_won(player_1)
+      else turn_won(player_2)
+      end
+    end
 end
