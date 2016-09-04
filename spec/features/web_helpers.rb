@@ -1,5 +1,6 @@
-def sign_in_and_play
+def sign_in_and_play_one_player
   visit '/'
+  click_button("I wanna play you mate")
   fill_in(:player, with: "Summer")
   click_button "Bring it on!"
 end

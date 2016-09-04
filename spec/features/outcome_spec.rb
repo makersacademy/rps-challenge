@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Displaying the computers random choice" do
   scenario "computer randomly selects paper" do
     srand(234567)
-    sign_in_and_play
+    sign_in_and_play_one_player
     player_chooses_rock
     expect(page).to have_content "The computer chose Paper"
   end
@@ -13,7 +13,7 @@ feature "Displaying the outcome of a game" do
 
   scenario "player chooses rock" do
     srand(5678)
-    sign_in_and_play
+    sign_in_and_play_one_player
     player_chooses_rock
     expect(page).to have_content "The computer chose Rock"
     expect(page).to have_content "You are tied, boooooring!"
@@ -21,7 +21,7 @@ feature "Displaying the outcome of a game" do
 
   scenario "player chooses paper" do
     srand(7890)
-    sign_in_and_play
+    sign_in_and_play_one_player
     player_chooses_paper
     expect(page).to have_content "The computer chose Rock"
     expect(page).to have_content "You are victorious!"
@@ -29,7 +29,7 @@ feature "Displaying the outcome of a game" do
 
   scenario "player chooses scissors" do
     srand(8234)
-    sign_in_and_play
+    sign_in_and_play_one_player
     player_chooses_scissors
     expect(page).to have_content "The computer chose Rock"
     expect(page).to have_content "The computer thwarted you!"

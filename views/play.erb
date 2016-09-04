@@ -1,4 +1,4 @@
-<h1> <%= @player %> vs The Mighty Computer </h1>
+<h1> <%= @game.player_1.name %> vs The Mighty Computer </h1>
 <h2> What do you choose? Rock, Paper or Scissors? </h2>
 
 <form action="/select" method="post">
@@ -19,3 +19,28 @@
 
   <input type="submit" value="Submit"/>
 </form>
+
+
+<style>
+body {
+    background-color: linen;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: maroon;
+    font-family: sans-serif;
+}
+
+h2 {
+    color: maroon;
+    font-family: sans-serif;
+}
+
+input[type="submit"] {
+  color: maroon;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+</style>

@@ -1,8 +1,10 @@
 class Game
 
-attr_reader :comp_choice_value, :player_choice, :computer_choice, :choices
+attr_reader :player_1, :player_2, :computer_choice
 
-  def initialize
+  def initialize (player_1, player_2 = nil)
+    @player_1 = player_1
+    @player_2 = player_2
     @computer_choice = nil
     @choices = [:rock, :paper, :scissors]
     generate_computer_choice(rand_choice)
@@ -20,7 +22,7 @@ attr_reader :comp_choice_value, :player_choice, :computer_choice, :choices
 
   def generate_computer_choice(num)
     #used purely for printing out value as string in outcome
-    @computer_choice = choices[num-1].to_s.capitalize
+    @computer_choice = @choices[num-1].to_s.capitalize
   end
 
   def outcome_value
