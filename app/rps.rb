@@ -12,10 +12,12 @@ class RPS < Sinatra::Base
 
   post '/single-name' do
     player = Player.new(params[:name])
+    @game = Game.create(player, Computer.new)
     redirect '/single-play'
   end
 
   get '/single-play' do
+    @game = Game.instance
     erb :single_play
   end
 

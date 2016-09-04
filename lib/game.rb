@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
   def initialize(player, computer)
@@ -11,6 +14,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def player_name
+    @player.name
   end
 
 end
