@@ -5,9 +5,9 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    @outcomes = {rock: {rock: :draw, paper: :loss, scissors: :win},
-                paper: {rock: :win, paper: :draw, scissors: :loss},
-                scissors: {rock: :loss, paper: :win, scissors: :draw}}
+    @outcomes = {rock: {rock: :draw, paper: :lose, scissors: :win},
+                paper: {rock: :win, paper: :draw, scissors: :lose},
+                scissors: {rock: :lose, paper: :win, scissors: :draw}}
   end
 
   def get_result
