@@ -9,7 +9,7 @@ feature 'Enter name' do
   scenario 'submitting names in multiplayer mode' do
     mplayer_add_names_and_submit
     expect(page).to have_content "Welcome, Bob!"
-    click_button "Lizzard"
+    click_button "Lizard"
     expect(page).to have_content "Welcome, John!"
   end
 end

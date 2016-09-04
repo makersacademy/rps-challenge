@@ -11,7 +11,7 @@ describe Player do
   end
 
   context '#add_win' do
-    it 'add 1 to the number of winned games' do
+    it 'add 1 to the number of won games' do
       player.add_win
       expect(player.instance_variable_get(:@wins)).to eq 1
     end

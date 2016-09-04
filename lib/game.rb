@@ -44,19 +44,19 @@ class Game
       elsif player1_choice == :scissors then scissors_chosen(player2_choice)
       elsif player1_choice == :paper then paper_chosen(player2_choice)
       elsif player1_choice == :spock then spock_chosen(player2_choice)
-      elsif player1_choice == :lizzard then lizzard_chosen(player2_choice)
+      elsif player1_choice == :lizard then lizard_chosen(player2_choice)
       end
     end
 
     def rock_chosen(player2_choice)
-      if player2_choice == :scissors or player2_choice == :lizzard
+      if player2_choice == :scissors or player2_choice == :lizard
         turn_won(player_1)
       else turn_won(player_2)
       end
     end
 
     def scissors_chosen(player2_choice)
-      if player2_choice == :paper or player2_choice == :lizzard
+      if player2_choice == :paper or player2_choice == :lizard
         turn_won(player_1)
       else turn_won(player_2)
       end
@@ -76,7 +76,7 @@ class Game
       end
     end
 
-    def lizzard_chosen(player2_choice)
+    def lizard_chosen(player2_choice)
       if player2_choice == :paper or player2_choice == :spock
         turn_won(player_1)
       else turn_won(player_2)

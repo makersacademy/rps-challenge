@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Choose the type of the game' do
+feature 'Choose the game mode' do
   scenario 'choose single player mode' do
     visit '/'
     click_button "Single player"

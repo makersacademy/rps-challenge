@@ -11,7 +11,7 @@ describe Computer do
   end
 
   context '#add_win' do
-    it 'add 1 to the winned games' do
+    it 'add 1 to the number of won games' do
       computer.add_win
       expect(computer.wins).to eq 1
     end
