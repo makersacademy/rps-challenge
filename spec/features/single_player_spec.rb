@@ -6,11 +6,18 @@ feature 'Feature Test - start single player game' do
     expect(page).to have_content "Get ready to play Rosie!"
   end
 end
-feature 'Feature Test - choosing Weapon' do
+feature 'Feature Test - choosing weapon' do
   scenario 'choosing weapon as rock' do
     submit_name
-    fill_in :weapon, with: "rock"
-    click_button "Submit"
+    player_choose_rock
     expect(page).to have_content "Rosie chose rock!"
+  end
+end
+feature 'Feature Test - win game against computer' do
+  scenario 'player choose rock' do
+    allow_any_instance_of(Computer).to receive(:choose_weapon).and_return('scissors')
+    submit_name
+    player_choose_rock
+    expect(page).to have_content "Rosie won! Computer: scissors vs. Rosie: rock"
   end
 end

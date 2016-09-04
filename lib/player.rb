@@ -12,5 +12,4 @@ WEAPONS = [:rock, :paper, :scissors]
     fail 'not a valid weapon' unless WEAPONS.include? weapon.to_sym
     @weapon = weapon.to_sym
   end
-
 end

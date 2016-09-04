@@ -4,3 +4,8 @@ def submit_name
   fill_in :name, with: "Rosie"
   click_button "Play!"
 end
+
+def player_choose_rock
+  fill_in :weapon, with: "rock"
+  click_button "Submit"
+end
