@@ -8,8 +8,9 @@ feature 'game_play' do
     visit "/"
     fill_in('Player Name:', with: 'Isaac')
     click_button 'Play'
-    game.play("rock")
-    expect(page).to have_content("someone one")
+    check 'Rock'
+    click_button 'Play move'
+    expect(page).to have_content("Game Over!")
   end
 
   scenario 'player enters too many choices'

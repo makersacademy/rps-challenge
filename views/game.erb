@@ -8,11 +8,15 @@
 <%= " Please choose your move" %> <br>
 
 <form action="/play" method="post">
-<input type="checkbox" id="cbox" value="spock"> <label for="cbox1">Spock</label>
-<input type="checkbox" id="cbox" value="rock"> <label for="cbox2">Rock</label>
-<input type="checkbox" id="cbox" value="scissors"> <label for="cbox3">Scissors</label>
-<input type="checkbox" id="cbox" value="lizard"> <label for="cbox4">Lizard</label>
-<input type="checkbox" id="cbox" value="paper"> <label for="cbox5">Paper</label>
+  <label>
+  <input type="checkbox" value="myvalue" name="myname" id="myid">
+  MyLabel
+</label>
+<label><label> <input type="checkbox" name="cbox" value="spock"> Spock</label>
+<label><input type="checkbox" name="cbox" value="rock"> Rock</label>
+<label><input type="checkbox" name="cbox" value="scissors"> Scissors</label>
+<label><input type="checkbox" name="cbox" value="lizard"> Lizard</label>
+<label><input type="checkbox" name="cbox" value="paper"> Paper</label>
 <div class="button">
     <button type="submit">Play move</button>
 </div>
