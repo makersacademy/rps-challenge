@@ -18,4 +18,4 @@ Sheldon:
 ```
 $ coveralls report
 ```
-[![Coverage Status](https://coveralls.io/repos/tam-borine/rps-challenge/badge.svg?branch=master)](https://coveralls.io/r/tam-borine/rps-challenge?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/tam-borine/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tam-borine/rps-challenge?branch=master) [![Build Status](https://travis-ci.org/tam-borine/rps-challenge.svg?branch=master)](https://travis-ci.org/tam-borine/rps-challenge)
