@@ -3,3 +3,7 @@
 <h2> Computer chooses <%= @game.computer.weapon %>... </h2>
 
 <h1> You <%= @game.result %>! </h1>
+
+<form action="/choose" method="get">
+  <input type="submit" value="Play again">
+</form>
