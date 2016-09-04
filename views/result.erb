@@ -1,5 +1,12 @@
-You chose <%= @game.player.choice.to_s %>!
+<head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
 
-Computer chose <%= @game.computer.choice.to_sym %>!
+<body>
 
-<%= @game.result %>
+  <h3> You chose <%= @game.player.choice %>! Computer chose <%= @game.computer.choice %>!</h3>
+
+  <h1> <%= @game.result %> </h1>
+
+</body>

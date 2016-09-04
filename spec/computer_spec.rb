@@ -6,7 +6,9 @@ describe Computer do
 
   describe '#choose_hand' do
     it 'returns an element that belongs to the list of hands' do
-      expect(Computer::HANDS).to include(computer.choose_hand)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      computer.choose_hand
+      expect(computer.choice).to eq :rock
     end
   end
 end

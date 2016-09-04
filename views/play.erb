@@ -1,7 +1,17 @@
-Welcome, <%= @game.player.name %>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
 
-<form action="/game" method="post">
-  <input type="submit" value="rock" name="choice">
-  <input type="submit" value="paper" name="choice">
-  <input type="submit" value="scissors" name="choice">
-</form>
+<body>
+
+  <h1> Welcome, <%= @game.player.name %> </h1>
+  <h2> Choose wisely... </h2>
+
+  <form action="/game" method="post">
+    <input type="image" src="rock.png" value = "rock" name="choice">
+    <input type="image" src="paper.png" value = "paper" name="choice">
+    <input type="image" src="scissors.png" value = "scissors" name="choice">
+  </form>
+
+</body>
