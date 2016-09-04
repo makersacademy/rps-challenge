@@ -23,9 +23,13 @@ class Game # understands who wins and who loses
   end
 
   def result
-    return "It's a DRAW!" if player.choice == computer.choice
-    return "You WON!" if computer.choice == RULES[player.choice]
-    "YOU LOST!"
+    if player.choice == computer.choice
+      "It's a DRAW!"
+    elsif computer.choice == RULES[player.choice]
+      "You WON!"
+    else
+      "You LOST!"
+    end
   end
 
 end

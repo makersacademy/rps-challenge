@@ -7,7 +7,7 @@ class Player
   end
 
   def choose(hand)
-    @choice = hand
+    @choice = hand.to_sym
   end
 
 end

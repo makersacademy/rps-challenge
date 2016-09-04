@@ -39,7 +39,7 @@ describe Game do
       end
       it 'returns lose if computer selects paper' do
         allow(computer).to receive(:choice).and_return(:paper)
-        expect(game.result).to eq "YOU LOST!"
+        expect(game.result).to eq "You LOST!"
       end
       it 'returns win if computer selects scissors' do
         allow(computer).to receive(:choice).and_return(:scissors)

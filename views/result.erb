@@ -1,3 +1,5 @@
-You chose <%= @player_choice %>!
+You chose <%= @game.player.choice.to_s %>!
 
-Computer chose <%= @comp_choice %>!
+Computer chose <%= @game.computer.choice.to_sym %>!
+
+<%= @game.result %>

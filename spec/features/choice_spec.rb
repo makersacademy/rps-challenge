@@ -7,18 +7,18 @@ feature 'player has three choices' do
   end
 
   scenario 'player can select rock' do
-    click_button 'Rock'
-    expect(page).to have_content "You chose Rock!"
+    click_button 'rock'
+    expect(page).to have_content "You chose rock!"
   end
 
   scenario 'player can select paper' do
-    click_button 'Paper'
-    expect(page).to have_content "You chose Paper!"
+    click_button 'paper'
+    expect(page).to have_content "You chose paper!"
   end
 
   scenario 'player can select scissors' do
-    click_button 'Scissors'
-    expect(page).to have_content "You chose Scissors!"
+    click_button 'scissors'
+    expect(page).to have_content "You chose scissors!"
   end
 
 end
