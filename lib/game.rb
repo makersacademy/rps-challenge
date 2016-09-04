@@ -2,16 +2,15 @@ require_relative 'player'
 require_relative 'computer'
 
 class Game
+  attr_reader :player, :computer
 
-attr_reader :player, :computer
+  WEAPONS = [:rock, :paper, :scissors]
 
-WEAPONS = [:rock, :paper, :scissors]
-
-RULES = {
-  rock: {rock: :draw, paper: :lose, scissors: :win},
-  paper: {rock: :win, paper: :draw, scissors: :lose},
-  scissors: {rock: :lose, paper: :win, scissors: :draw}
-}.freeze
+  RULES = {
+    rock: {rock: :draw, paper: :lose, scissors: :win},
+    paper: {rock: :win, paper: :draw, scissors: :lose},
+    scissors: {rock: :lose, paper: :win, scissors: :draw}
+  }.freeze
 
   def initialize(player, computer)
     @player = player
@@ -29,5 +28,4 @@ RULES = {
   def result
     RULES[@player.weapon][@computer.weapon]
   end
-
 end

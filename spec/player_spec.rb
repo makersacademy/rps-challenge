@@ -1,7 +1,6 @@
 require 'player'
 
 describe Player do
-
   subject(:player) { described_class.new('Abigail') }
   let(:weapon) { double :weapon }
 
@@ -17,5 +16,4 @@ describe Player do
       expect(player.weapon).to eq :rock
     end
   end
-
 end

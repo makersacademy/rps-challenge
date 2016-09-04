@@ -2,7 +2,6 @@ require 'sinatra/base'
 require './lib/game'
 
 class RPS < Sinatra::Base
-
   get '/' do
     erb :index
   end
@@ -25,13 +24,12 @@ class RPS < Sinatra::Base
   post '/weapon' do
     @game.player.weapon_choice(params[:weapon])
     @game.computer.weapon_choice
+    redirect '/result'
+  end
+
+  get '/result' do
     erb :result
   end
 
-  # get '/result' do
-  #   erb :result
-  # end
-
   run! if app_file == $0
-
 end

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature 'Enter name' do
-
   scenario 'visiting the home page' do
     visit '/'
     expect(page).to have_content 'Rock Paper Scissors'
@@ -12,5 +11,4 @@ feature 'Enter name' do
     enter_name
     expect(page).to have_content 'Choose wisely, young Abigail...'
   end
-
 end

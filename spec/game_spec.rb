@@ -1,7 +1,6 @@
 require 'game'
 
 describe Game do
-
   subject { described_class.new(player, computer) }
   let(:player) { double :player }
   let(:computer) { double :computer }
@@ -74,7 +73,5 @@ describe Game do
       allow(computer).to receive(:weapon) { :rock }
       expect(subject.result).to eq :lose
     end
-
   end
-
 end
