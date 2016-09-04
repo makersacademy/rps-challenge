@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Game
 
   def initialize(player, computer)
@@ -5,8 +7,8 @@ class Game
     @computer = computer
   end
 
-  def choose_weapon
-    @player.pick_weapon
+  def choose_weapon(weapon)
+    @player.pick_weapon(weapon)
   end
 
 end
