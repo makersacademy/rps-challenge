@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -6,7 +7,12 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    # => this should now create a game and assign a name to it. 
+    Game.create_a_game(params[:player_name])
+    redirect to('/game')
+  end
+
+  get '/game' do
+    @name = Game.current_game.name
     erb :game
   end
 

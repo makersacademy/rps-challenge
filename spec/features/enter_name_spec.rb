@@ -1,5 +1,4 @@
 
-
 feature 'entering name' do
   scenario 'enter and submit name' do
     visit('/')
@@ -7,5 +6,4 @@ feature 'entering name' do
     click_button('Play')
     expect(page).to have_content('Welcome John!')
   end
-
 end
