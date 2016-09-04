@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors Challenge
 
+[![Build Status](https://travis-ci.org/lsewilson/rps-challenge.svg?branch=master)](https://travis-ci.org/lsewilson/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/lsewilson/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/lsewilson/rps-challenge?branch=master)
 
 ## Description
 
@@ -19,6 +21,12 @@ $ rackup
 
 2. Name entry and game initiation:
 
+![Screenshot](http://imgur.com/acvOF6I)
+
 3. Option selection:
 
+![Screenshot](http://imgur.com/3TsdECZ)
+
 4. Result:
+
+![Screenshot](http://imgur.com/RNKw7PZ)
