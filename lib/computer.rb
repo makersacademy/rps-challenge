@@ -14,5 +14,4 @@ class Computer
     CHOICES.sample(1 + rand(CHOICES.count)).sample
   end
 
-
 end
