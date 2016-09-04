@@ -1,0 +1,32 @@
+<table style="width:100%">
+  <tr>
+    <th><h2><%= @player.name %> vs. <%= @opponent.name %></h2></th>
+  </tr>
+</table>
+
+<br>
+<table style="width:100%" border="1">
+  <tr>
+    <th style="width:50%"> Your Score </th>
+    <th style="width:50%"> Opponent Score </th>
+  </tr>
+  <tr>
+    <td align="center"> <%= @game.player_score %> </td>
+    <td align="center"> <%= @game.opponent_score %> </td>
+  </tr>
+</table>
+<br>
+<% if @user_move > 0 %>
+<%= @result_string1 %>
+<%= @result_string2 %>
+<% end  %>
+<p>
+Pick your move:
+</p>
+<table style="width:100%" >
+  <tr>
+    <th> <button onclick="location.href='/play?user_move=1'" style="Width:90%;height:40" type="button"> Rock </button> </th>
+    <th> <button onclick="location.href='/play?user_move=2'" style="Width:90%;height:40" type="button"> Paper </button> </th>
+    <th> <button onclick="location.href='/play?user_move=3'" style="Width:90%;height:40" type="button"> Scissors</button> </th>
+  </tr>
+</table>

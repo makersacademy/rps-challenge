@@ -1,0 +1,10 @@
+<h2>Pick the Match Length:</h2>
+<p> You are going to be playing <%= @opponent.name %>.
+  How many rounds would you like the match to be? </p>
+
+
+  <form action="/play" method="post" >
+    Match Length:<br>
+    <input type="number" name="match_length"><br>
+    <input type="submit" value="Submit">
+  </form>
