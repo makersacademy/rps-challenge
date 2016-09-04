@@ -1,0 +1,21 @@
+<h1> <%= @player %> vs The mighty computer </h1>
+<h2> What do you choose? Rock, Paper or Scissors? </h2>
+
+<form action="/select" method="post">
+  <label for="rps">
+    ROCK
+    <input type="radio" id="rps1" name="rps" value="1" />
+  </label>
+
+  <label for="rps">
+    PAPER
+    <input type="radio" id="rps2" name="rps" value="2" />
+  </label>
+
+  <label for="rps">
+    SCISSORS
+    <input type="radio" id="rps3" name="rps" value="3" />
+  </label>
+
+  <input type="submit" value="Submit"/>
+</form>

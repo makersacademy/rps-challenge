@@ -1,0 +1,9 @@
+<h2> The computer chose <%= @game.computer_choice %> </h2>
+
+<% if @game.player_wins == :false  %>
+<h3> The computer thwarted you! </h3>
+<% elsif @game.player_wins == :true %>
+<h3> You are victorious! </h3>
+<% else %>
+<h3> You are tied! </h3>
+<% end %>
