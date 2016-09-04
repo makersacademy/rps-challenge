@@ -20,8 +20,11 @@ $ rackup
 1. Navigate to localhost:9292 in your web browser.
 
 2. Name entry and game initiation:
+
   ![Screenshot](http://i.imgur.com/1pWRKpo.png)
 3. Option selection:
+
   ![Screenshot](http://i.imgur.com/0CCtZZQ.png)
 4. Result:
+
   ![Screenshot](http://i.imgur.com/D0qk5lf.png)
