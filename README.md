@@ -25,14 +25,14 @@ I would like to be able to play rock/paper/scissors
 Type the following into the command line, replacing `[USERNAME]`
 with your unique Github username:
 
-'''
+```
 $ git clone git@github.com:[USERNAME]/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup -p 4567
-'''
+```
 
-Then open a browser and visit the following URL: http://localhost:4567
+Then open a browser and visit the following URL: [http://localhost:4567](http://localhost:4567)
 
 Once the page has loaded, please follow the instructions in the browser - enter a player name, click `Play`, select either `rock`, `paper`, or `scissors` as your weapon of choice and click `Fight!`
 
