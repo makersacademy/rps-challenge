@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark bg-primary" style="border-radius: 0">
+      <a class="navbar-brand" href="#">RPS 4 Makers</a>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container" style="text-align: center">
+        <h1 class="display-3">Rock, Paper, Scissors </h1>
+        <h2> Are you ready for the challenge?</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <form action="/names" method="post" style="text-align: center">
+        <div class="row">
+          <div class="col-md-6">
+              <h2>Player One</h2>
+                <p>Who is is going to play first?</p>
+                <input type="text" name="player_one" />
+              </div>
+              <div class="col-md-6">
+                <h2>Player Two</h2>
+                <p>Who is going to play second?</p>
+                <input type="text" name="player_two" />
+             </div>
+          </div>
+          <div class="row" >
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="padding-top: 30px; padding-bottom: 30px">
+              <input type="submit" value="Start Game" class="btn btn-warning" />
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </form>
+      <hr>
+        <footer>
+          <p style="text-align: center"> Made lovingly by an aspiring Maker </p>
+        </footer>
+    </div>
+  </body>
+</html>
