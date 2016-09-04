@@ -1,3 +1,5 @@
+#Understands how to pick a weapon
+
 class Player
 
   WEAPONS = [:rock, :paper, :scissors]
