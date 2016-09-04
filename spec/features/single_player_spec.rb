@@ -15,7 +15,7 @@ feature 'Feature Test - choosing weapon' do
 end
 feature 'Feature Test - win game against computer' do
   scenario 'player choose rock' do
-    allow_any_instance_of(Computer).to receive(:choose_weapon).and_return('scissors')
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     submit_name
     player_choose_rock
     expect(page).to have_content "Rosie won! Computer: scissors vs. Rosie: rock"

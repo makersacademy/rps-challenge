@@ -26,5 +26,12 @@ describe Game do
     end
   end
 
+  # describe '#result' do
+  #   it 'player beats computer = a win' do
+  #     allow(player).to receive(:weapon).and_return(:rock)
+  #     allow(computer).to receive(:weapon).and_return(:scissors)
+  #     expect(game.result).to eq :win
+  #   end
+  # end
 
 end

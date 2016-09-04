@@ -24,12 +24,12 @@ class RPS < Sinatra::Base
   post '/single-game' do
     @game = Game.current_game
     @game.player.choose_weapon(params[:weapon])
-    @game.computer.choose_weapon
     redirect '/single-result'
   end
 
   get '/single-result' do
     @game = Game.current_game
+    @game.computer.choose_weapon
     erb :single_result
   end
 
