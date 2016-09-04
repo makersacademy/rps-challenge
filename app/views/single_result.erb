@@ -1,5 +1,17 @@
 <h1>The Rock, Paper, Scissors Arena!</h1>
 
-<h2><%= @game.player.name %> chose <%= @game.player.weapon %>!</h2>
+<h2>Computer: <%= @game.computer.weapon %> vs. <%= @game.player.name %>: <%= @game.player.weapon %></h2>
 
-<h3><%= @game.player.name %> won! Computer: <%= @game.computer.weapon %> vs. <%= @game.player.name %>: <%= @game.player.weapon %></h3>
+<% if @game.result == :win %>
+<h3><%= @game.player.name %>, you won!</h3>
+<% elsif %>
+<h3>The result was a <%= @game.result %>. Play again? </h3>
+
+<form action='/single-game' method='post'>
+  <label for="weapon">
+    Choose rock, paper or scissors:
+    <input type="text" name="weapon">
+  <input type='submit' value="Submit">
+</form>
+
+<% end %>
