@@ -6,9 +6,6 @@ To play:
 * run `bundle install` locally to get dependencies
 * run `ruby app.rb` from terminal to play
 * open your browser and check `localhost:<port>`
-* When you enter your name, you should see a screen like below where you can play the game!
-
-![Choose your move page](/rps-challenge/Screen Shot 2016-09-04 at 23.14.05.png)
 
 
 The Game
