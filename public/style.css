@@ -70,8 +70,8 @@ html, body {
 
 .game_log {
   text-align: center;
-  width:800px; /* or whatever width you want. */
-  max-width:800px; /* or whatever width you want. */
+  width:800px;
+  max-width:800px;
   display: inline-block;
   border: 3px solid black;
   background-color: #d9d9d9;

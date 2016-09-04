@@ -1,21 +1,18 @@
+# Understands how to rank Rock Paper Scissor Hands
 class Hands
   include Comparable
-  WINS=[%w{ ROCK SCISSORS }, %w{ SCISSORS PAPER }, %w{ PAPER ROCK }, %w{ SPOCK ROCK },
-        %w{ SPOCK SCISSORS }, %w{ SPOCK ROCK }, %w{ PAPER SPOCK }, %w{ LIZARD SPOCK },
-        %w{ LIZARD PAPER }, %w{ ROCK LIZARD }, %w{ SCISSORS LIZARD },]
+  WINS=[[:ROCK, :SCISSORS], [:SCISSORS, :PAPER], [:PAPER, :ROCK], [:SPOCK, :ROCK],
+        [:SPOCK, :SCISSORS], [:SPOCK, :ROCK], [:PAPER, :SPOCK], [:LIZARD, :SPOCK],
+        [:LIZARD, :PAPER], [:ROCK, :LIZARD], [:SCISSORS, :LIZARD]]
 
   def initialize(move)
-    @move=move.upcase.to_s
+    @move = move.upcase.to_sym
   end
 
   def plays(other)
-    if other < self
-      return :win
-    elsif other > self
-      return :loss
-    else
-      return :draw
-    end
+    return :win if other < self
+    return :loss if other > self
+    return :draw
   end
 
   protected
@@ -26,16 +23,11 @@ class Hands
 
   def <=>(other)
     begin
-      if move == other.move
-        0
-      elsif WINS.include?([move, other.move])
-        1
-      elsif WINS.include?([other.move, move])
-        -1
-      else
-        raise ArgumentError, "Something's wrong"
-      end
+      return 0 if move == other.move
+      return 1 if WINS.include?([move, other.move])
+      return -1 if WINS.include?([other.move, move])
     rescue
+      raise ArgumentError, "Something's wrong"
     end
   end
 
