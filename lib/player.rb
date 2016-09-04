@@ -6,8 +6,8 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
-    fail 'not a possible weapon' unless [:rock, :paper, :scissors].include?(weapon)
+  def choose_weapon(weapon)
+    # fail 'not a possible weapon' unless [:rock, :paper, :scissors].include?(weapon)
     @weapon = weapon
   end
 
