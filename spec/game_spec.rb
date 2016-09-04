@@ -5,8 +5,8 @@ describe Game do
   subject(:test_game) {described_class.new(player_class.new, player_class2.new)}
   let(:player_class) { double :player_class, new: matthew}
   let(:player_class2) {double :player_class2, new: rafaela}
-  let(:matthew) { double :matthew, show_name: "Matthew", show_points: 0, store_move: nil, show_last_move: :rock}
-  let(:rafaela) { double :rafaela, show_name: "Rafaela", show_points: 0, store_move: nil, show_last_move: :scissors}
+  let(:matthew) { double :matthew, show_name: "Matthew", show_points: 1, store_move: nil, show_last_move: :rock, add_win: nil}
+  let(:rafaela) { double :rafaela, show_name: "Rafaela", show_points: 0, store_move: nil, show_last_move: :scissors, add_win: nil}
 
   describe "#initialize" do
 
@@ -62,26 +62,29 @@ describe Game do
 
   end
 
-  describe "#result" do
+  context 'when someone wins a round' do
 
-    it 'should return rock as winner in Rock v Scissors' do
+    before(:each) do
       test_game.play(:rock)
       test_game.switch_players
       test_game.play(:scissors)
+    end
+
+    it 'should return rock as winner in Rock v Scissors' do
       expect(test_game.result).to eq :rock
     end
 
-  end
-
-  describe "#set_winner" do
-
     it 'should set the winner after finding the result' do
-      test_game.play(:rock)
-      test_game.switch_players
-      test_game.play(:scissors)
       test_game.set_winner
       expect(test_game.winner).to eq matthew
     end
-  end
+
+    it "should send an add_win command to the player instance" do
+      test_game.set_winner
+      expect(matthew).to have_received(:add_win)
+    end
+
+end
+
 
 end

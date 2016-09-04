@@ -26,4 +26,10 @@ describe Player do
     end
   end
 
+  describe '#add_win' do
+    it "should update the player's points by 1" do
+      expect{player_one.add_win}.to change{player_one.show_points}.by 1
+    end
+  end
+
 end

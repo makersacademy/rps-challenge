@@ -10,7 +10,7 @@ class Game
     @current_player = player_one
     @results = results.new
     @move_count = 0
-    @winnner = nil
+    @winner = nil
   end
 
   def switch_players
@@ -28,6 +28,7 @@ class Game
 
   def set_winner
     result == player_one.show_last_move ? @winner = player_one : @winner = player_two
+    @winner.add_win
   end
 
   def round_complete

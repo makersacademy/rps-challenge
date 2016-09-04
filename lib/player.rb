@@ -16,6 +16,10 @@ class Player
     points
   end
 
+  def add_win
+    @points += 1
+  end
+  
   def show_last_move
     last_move
   end
