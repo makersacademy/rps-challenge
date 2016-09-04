@@ -1,18 +1,19 @@
 require_relative 'computer'
 require_relative 'player'
+
 class Game
 
-  attr_reader :player, :computer
+  attr_accessor :player, :computer
 
 CHOICES = ["spock","scissors","paper","rock","lizard"]
 
-  def initialize(player=nil, computer=nil)
+  def initialize(player=nil, computer=Computer)
     @player = player
-    @computer = computer
+    @computer = computer.new
   end
 
-  def self.create(player,computer)
-    @game = Game.new(player,computer)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
@@ -20,7 +21,8 @@ CHOICES = ["spock","scissors","paper","rock","lizard"]
   end
 
   def play(player_choice)
-    computer_choice = @computer.play
+    @player.choice = player_choice
+    computer_choice = @computer.choice
     player_points = player_outcome(player_choice, computer_choice)
     computer_points = computer_outcome(player_choice, computer_choice)
     update_score(computer_points, player_points)
@@ -43,9 +45,6 @@ CHOICES = ["spock","scissors","paper","rock","lizard"]
 
   def winner
     @computer.score > @player.score ? @computer : @player
-  end
-
-  def loser
   end
 
 end

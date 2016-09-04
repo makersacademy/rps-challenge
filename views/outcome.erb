@@ -1,4 +1,4 @@
 
-<%=  "Game Over!  #{@winner} won!"  %>
+<%=  "Game Over! #{@game.player.name} chose #{@game.player.choice} and Watson chose #{@game.computer.choice} so #{@winner} won!"  %>
 
-<a href="/">Play Again?</a>
+<a href="/game">Play Again?</a>

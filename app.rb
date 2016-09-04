@@ -9,8 +9,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    computer = Computer.new
-    $game = Game.create(player, computer)
+    @game = Game.create(player)
     redirect '/game'
   end
 
@@ -31,8 +30,6 @@ class RockPaperScissors < Sinatra::Base
     @winner = @game.winner.name
     erb(:outcome)
   end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
