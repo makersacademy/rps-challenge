@@ -1,1 +1,8 @@
-The winner is <%= @game.winner %>
+<%= @game.player.name %> selected <%= @game.selection %> and the computer selected <%= @game.comp %>
+<br>
+And the result is:
+<br>
+<%= @game.compare %>!
+<br>
+<br>
+<a href="/play">Play again</a>

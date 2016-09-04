@@ -7,42 +7,43 @@ class Battle < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/names' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    @game = Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/rock' do
-    @game = $game
-    @game.compare_rock
+    @game.rock
+    @game.comp_select
     redirect '/result'
   end
 
   post '/paper' do
-    @game = $game
-    @game.compare_paper
+    @game.paper
+    @game.comp_select
     redirect '/result'
   end
 
   post '/scissors' do
-    @game = $game
-    @game.compare_scissors
+    @game.scissors
+    @game.comp_select
     redirect '/result'
   end
 
   get '/result' do
-    @game = $game
-    @game.winner
     erb :result
   end
 
