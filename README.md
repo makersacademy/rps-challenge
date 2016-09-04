@@ -27,8 +27,16 @@ The program provides the following functions:
 
 ### Screenshots of main functions
 #### Start screen
-![Start screen](https://www.dropbox.com/s/y1jwp5ogiv19qhm/rps_start_screen.png)
 ![Start screen](img/rps_start_screen.png)
+
+#### Add names in multiplayer mode
+![Add names](img/rps_mplayer_add_names.png)
+
+#### Choose an option in multiplayer mode
+![Choose an option](img/rps_mplayer_choose_1.png)
+
+#### Result page in single player mode
+![Result page](img/rps_splayer_result.png)
 
 
 ### Instructions for how to run the app
