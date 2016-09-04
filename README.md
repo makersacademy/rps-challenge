@@ -17,13 +17,13 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-In addition to the above stories, the program provides the following functions:
+The program provides the following functions:
 - the user can play in Single player or multiplayer mode. In Single player mode, the marketeer plays with the computer
-- after registering name(s), user(s) can see the possible choices (rock, paper, scissors, Spock and lizard) and choose from them
+- after registering name(s), the user(s) can see the possible choices (rock, paper, scissors, Spock and lizard) and choose from them
 - if user play with the computer, it randomly chooses one from the above options
 - a winner always declared, except the case when the same options are chosen
 - user(s) can see the number of won games
-- at the end of the game, player(s) choose to continue playing in the same mode or start a new game
+- at the end of the game, player(s) can choose to either continue playing in the same mode or start a new game
 
 ### Screenshots of main functions
 #### Start screen
