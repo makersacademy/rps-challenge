@@ -15,7 +15,7 @@ describe Player do
 
   it 'should allow you pick a weapon' do
     subject.pick_weapon("rock")
-    expect(subject.weapon).to eq [:rock]
+    expect(subject.weapon).to eq :rock
   end
 
 end

@@ -29,7 +29,15 @@ class RPSGame < Sinatra::Base
 
   get '/result' do
     $game.outcome
-    erb(:result)
+    if $game.winner == $player
+      erb(:result)
+    else
+      redirect '/loss'
+    end
+  end
+
+  get '/loss' do
+    erb(:loss)
   end
 
   run! if app_file == $0

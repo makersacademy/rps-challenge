@@ -14,7 +14,8 @@ class Player
   def pick_weapon(weapon)
     input = weapon.to_sym
     fail "This weapon is not available" unless WEAPONS.include? input
-    @weapon = WEAPONS.select { |choice| choice == input }
+    place = WEAPONS.select { |choice| choice == input }
+    @weapon = place.pop
   end
 
 end
