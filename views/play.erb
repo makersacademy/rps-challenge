@@ -2,18 +2,29 @@
 <head></head>
 <body>
   <h1> Rock on Papers and Scissors! </h1>
-  <div>
-    <div>
+  <div style="display: inline-block">
+    <span>
       <h2> <%= @game.player_one.show_name %> </h2>
       <p> <%= @game.player_one.show_points %> </p>
-    </div>
-    <div>
+    </span>
+    <span>
       <h2> vs </h2>
-    </div>
-    <div>
+    </span>
+    <span>
       <h2> <%= @game.player_two.show_name %></h2>
       <p> <%= @game.player_two.show_points %></p>
-    </div>
+    </span>
   </div>
+  <div>
+    <span>
+      <h2> It's <%= @game.current_player.show_name %>'s turn </h2>
+    </span>
+    <span>
+      <form action="/rock" method="post">
+        <input type="submit" value="Rock"/>
+      </form>
+    </span>
+  </div>
+
 </body>
 </html>

@@ -21,5 +21,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/rock' do
+    @game = $game
+    @game.switch_players
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end

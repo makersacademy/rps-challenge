@@ -15,20 +15,19 @@ describe Game do
       expect(test_game.player_two.show_name).to eq "Rafaela"
     end
 
+    it 'should set the current_player to player_one' do
+      expect(test_game.current_player.show_name).to eq "Matthew"
+    end
+
   end
 
-  describe "#show_name" do
+  describe "#switch_players" do
 
-    it 'should show the player name' do
-      expect(test_game.player_one.show_name).to eq "Matthew"
+    it "should switch current_player form player one to player two" do
+      test_game.switch_players
+      expect(test_game.current_player.show_name).to eq "Rafaela"
     end
-  end
 
-  describe "#show_points" do
-
-    it 'should show the player points' do
-      expect(test_game.player_two.show_points).to eq 0
-    end
   end
 
 end
