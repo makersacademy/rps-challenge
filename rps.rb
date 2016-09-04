@@ -15,9 +15,8 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player])
-    @player = player
-    @game = Game.create(player)
+    @player = Player.new(params[:player])
+    @game = Game.create(@player)
     redirect '/play'
   end
 
@@ -27,13 +26,14 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
-    @game.player_choice = params[:id]
+    @game.player_choice = params[:player_choice]
     @game.computer_choice
     redirect '/result'
   end
 
   get '/result' do
-    @game.player_choice = params[:id]
+    @game.player_choice
+    @game.computer_choice
     erb(:result)
   end
 

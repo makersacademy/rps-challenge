@@ -1,9 +1,9 @@
-
+require_relative "player"
 
 class Game
 
   attr_accessor :player_choice
-  attr_reader :computer
+  attr_reader :computer_choice, :rock, :paper, :scissors, :player
 
   def initialize(player)
     @player = player
@@ -20,6 +20,20 @@ class Game
 
   def computer_choice
     [:rock, :paper, :scissors].sample
+  end
+
+  def compare
+    if @player_choice == "rock" && @computer_choice == :scissors
+      "#{@player.name} wins!"
+    elsif @player_choice == "paper" && @computer_choice == :rock
+      "#{@player.name} wins!"
+    elsif @player_choice == "scissors" && @computer_choice == :paper
+      "#{@player.name} wins!"
+    elsif @player_choice.to_sym == @computer_choice
+      "Its a draw!"
+    else
+      "computer wins!"
+    end
   end
 
 end
