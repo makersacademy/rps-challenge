@@ -1,0 +1,14 @@
+<h1>The Rock, Paper, Scissors Arena!</h1>
+
+<h2><%= @game.player_1.name %> and <%= @game.player_2.name %> - let the battle commence!</h2>
+<h2> Choose rock, paper or scissors </h2>
+
+<form action='/multi-game' method='post'>
+  <label for="weapon_1">
+    <%= @game.player_1.name.capitalize %>:
+    <input type="text" name="weapon_1">
+  <label for="weapon_2">
+    <%= @game.player_2.name.capitalize %>:
+    <input type="text" name="weapon_2">
+  <input type='submit' value="Submit">
+</form>

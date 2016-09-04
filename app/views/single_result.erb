@@ -1,9 +1,9 @@
 <h1>The Rock, Paper, Scissors Arena!</h1>
 
-<h2>Computer: <%= @game.computer.weapon %> vs. <%= @game.player.name %>: <%= @game.player.weapon %></h2>
+<h2>Computer: <%= @game.player_2.weapon %> vs. <%= @game.player_1.name %>: <%= @game.player_1.weapon %></h2>
 
 <% if @game.result == :win %>
-<h3><%= @game.player.name %>, you won!</h3>
+<h3><%= @game.player_1.name %>, you won!</h3>
 <% elsif %>
 <h3>The result was a <%= @game.result %>. Play again? </h3>
 

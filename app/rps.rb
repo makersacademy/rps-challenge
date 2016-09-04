@@ -11,8 +11,8 @@ class RPS < Sinatra::Base
   end
 
   post '/single-name' do
-    player = Player.new(params[:name])
-    @game = Game.create(player, Computer.new)
+    player_1 = Player.new(params[:name])
+    @game = Game.create(player_1, Computer.new)
     redirect '/single-play'
   end
 
@@ -23,8 +23,8 @@ class RPS < Sinatra::Base
 
   post '/single-game' do
     @game = Game.current_game
-    @game.player.choose_weapon(params[:weapon])
-    @game.computer.choose_weapon
+    @game.player_1.choose_weapon(params[:weapon])
+    @game.player_2.choose_weapon
     redirect '/single-result'
   end
 
@@ -33,6 +33,33 @@ class RPS < Sinatra::Base
     erb :single_result
   end
 
+  get '/multi' do
+    erb :multi
+  end
+
+  post '/multi-names' do
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    @game = Game.create(player_1, player_2)
+    redirect '/multi-play'
+  end
+
+  get '/multi-play' do
+    @game = Game.current_game
+    erb :multi_play
+  end
+
+  post '/multi-game' do
+    @game = Game.current_game
+    @game.player_1.choose_weapon(params[:weapon_1])
+    @game.player_2.choose_weapon(params[:weapon_2])
+    redirect '/multi-result'
+  end
+
+  get '/multi-result' do
+    @game = Game.current_game
+    erb :multi_result
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
