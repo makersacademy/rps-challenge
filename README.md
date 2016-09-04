@@ -18,7 +18,7 @@ I would like to be able to play rock/paper/scissors
 
 To play the game visit:
 
-[Rock Paper Scissors on Heroku]https://arcane-retreat-69702.herokuapp.com/
+[Rock Paper Scissors on Heroku](https://arcane-retreat-69702.herokuapp.com/)
 
 To run the game locally, simply:
 
