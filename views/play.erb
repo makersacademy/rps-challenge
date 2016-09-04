@@ -1,0 +1,12 @@
+<h1>Welcome <%=@player_name.name%> to Rock Paper Scissors!</h1>
+
+<h2>You will be playing the computer; choose your weapon wisely!</h2>
+
+<h3>Please select a weapon from the following options:</h3>
+
+<form action="/fight" method="post">
+<input type="checkbox" name="weapon" value="rock">rock<br>
+<input type="checkbox" name="weapon" value="paper">paper<br>
+<input type="checkbox" name="weapon" value="scissors">scissors<br>
+<input type="submit" name="submit" value="Fight!"><br>
+</form>
