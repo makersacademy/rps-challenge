@@ -14,9 +14,29 @@ class Game
     if @robot == :rock
       "draw"
     elsif @robot == :paper
-      @player.name
+      "#{@player.name} wins"
     else
-      "robot"
+      "robot wins"
+    end
+  end
+
+  def compare_paper
+    if @robot == :rock
+      "robot wins"
+    elsif @robot == :paper
+      "draw"
+    else
+      "#{@player.name} wins"
+    end
+  end
+
+  def compare_scissors
+    if @robot == :rock
+      "robot wins"
+    elsif @robot == :paper
+      "#{@player.name} wins"
+    else
+      "draw"
     end
   end
 

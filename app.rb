@@ -21,6 +21,17 @@ class Rps < Sinatra::Base
       erb :result
     end
 
+    post '/paper' do
+      @game = $game
+      @game.compare_paper
+      erb :result
+    end
+
+    post '/scissors' do
+      @game = $game
+      @game.compare_scissors
+      erb :result
+    end
 
 
 
