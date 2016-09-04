@@ -1,26 +1,14 @@
-<h1>Rock, Paper, Scissors!</h1>
-<h2>Enter your name and your choice of 'rock', 'paper' or 'scissors' below</h2>
+<h1>Welcome to Rock, Paper, Scissors!</h1>
+<h2>Are you playing Single Player or Multiplayer?</h2>
 
-<form action="/names" method="post">
-  <label for="player_1_name">
-    Player one's name
-<input type="text" name="player_1_name">
-  </label>
-  <label for=player_1_choice>
-    Player one's choice
-<input type="text" name="player_1_choice">
-  </label>
+<form action="/singleplayer" method="get">
+  <label for="single_player">
+    Single Player
+    <input type="submit" value="Singleplayer">
+</form>
 
-
-  <label for="player_2_name">
-    Player two's name
-<input type="text" name="player_2_name">
-  </label>
-  <label for=player_2_choice>
-    Player two's choice
-<input type="text" name="player_2_choice">
-  </label>
-
-
-<input type="submit" value="Submit">
+<form action="/multiplayer" method="get">
+  <label for="multiplayer">
+    Multiplayer
+    <input type="submit" value="Multiplayer">
 </form>

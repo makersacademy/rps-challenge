@@ -26,7 +26,9 @@ class Game
       if player_2.choice == 'rock' && player_1.choice == 'scissors'
       @winner = @player_2.name
     else
+      if player_1.choice == player_2.choice
       @winner = 'draw'
+                end
               end
             end
           end
