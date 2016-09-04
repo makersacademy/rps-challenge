@@ -18,10 +18,13 @@ I would like to be able to play rock/paper/scissors
 
 To play the game visit:
 
-[heroku url]
+[Rock Paper Scissors on Heroku]https://arcane-retreat-69702.herokuapp.com/
 
-To run the game locally: - the marketeer should be able to enter their name before the game
-- a
-- b
-- c
-- d
+To run the game locally, simply:
+
+- Fork & clone this repo
+- Run `bundle` (and `gem install bundle` if you don't have bundler)
+- Run `ruby app.rb`
+- Launch the web browser of your choice and navigate to `localhost:4567` (be sure to check you have the right port!)
+
+Enjoy!
