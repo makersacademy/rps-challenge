@@ -1,11 +1,7 @@
 require 'sinatra/base'
-require './lib/player'
-require './lib/computer'
 require './lib/game'
 
 class RPS < Sinatra::Base
-
-enable :sessions
 
   get '/' do
     erb :index
@@ -31,6 +27,10 @@ enable :sessions
     @game.computer.weapon_choice
     erb :result
   end
+
+  # get '/result' do
+  #   erb :result
+  # end
 
   run! if app_file == $0
 

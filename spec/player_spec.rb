@@ -13,7 +13,8 @@ describe Player do
 
   describe '#weapon' do
     it 'returns the name of the chosen weapon' do
-      expect(player.weapon_choice(weapon)).to eq weapon
+      player.weapon_choice(:rock)
+      expect(player.weapon).to eq :rock
     end
   end
 

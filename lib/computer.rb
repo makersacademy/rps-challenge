@@ -1,11 +1,9 @@
 class Computer
 
-attr_reader :weapon
+  attr_reader :weapon
 
-WEAPONS = [:rock, :paper, :scissors]
-
-def weapon_choice
-  @weapon = WEAPONS.sample
-end
+  def weapon_choice
+    @weapon = Game::WEAPONS.sample
+  end
 
 end
