@@ -6,20 +6,20 @@
   Please choose you weapon!
 </h2>
 
-<form action="/game" method="post">
+<form action="/inplay" method="post">
   <div>
-    <label for="weapon">Rock</label>
-      <input type="checkbox" name="weapon" value="Rock">
-  </div>
-  <div>
-      <label for="weapon">Paper</label>
-        <input type="checkbox" name="weapon" value="Paper">
+      <label for="rock">Rock</label>
+      <button name="choice" type="checkbox" value="rock">
+      </button>
   </div>
   <div>
-    <label for="weapon">Scissors</label>
-  <input type="checkbox" name="weapon" value="Scissors">
-  </div>
-  <div class="button">
-      <button type="submit">Choose</button>
-  </div>
+  <label for="paper">Paper</label>
+    <button name="choice" type="checkbox" value="paper">
+  </button>
+</div>
+<div>
+  <label for="scissors">Scissors</label>
+  <button name="choice" type="checkbox" value="scissors">
+  </button>
+</div>
 </form>
