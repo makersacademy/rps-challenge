@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    erb(:result)
+    erb(@game.result)
   end
 
   # start the server if ruby file executed directly

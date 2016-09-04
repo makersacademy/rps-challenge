@@ -1,7 +1,7 @@
 require_relative 'computer'
 require_relative 'player'
 
-class Game # understands who wins and who loses
+class Game
 
   RULES = { rock: :scissors,
             paper: :rock,
@@ -23,13 +23,9 @@ class Game # understands who wins and who loses
   end
 
   def result
-    if player.choice == computer.choice
-      "It's a DRAW!"
-    elsif computer.choice == RULES[player.choice]
-      "You WON!"
-    else
-      "You LOST!"
-    end
+    return :draw if player.choice == computer.choice
+    return :win if computer.choice == RULES[player.choice]
+    :lose
   end
 
 end

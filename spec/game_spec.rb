@@ -35,15 +35,55 @@ describe Game do
 
       it 'returns draw if computer selects rock' do
         allow(computer).to receive(:choice).and_return(:rock)
-        expect(game.result).to eq "It's a DRAW!"
+        expect(game.result).to eq :draw
       end
       it 'returns lose if computer selects paper' do
         allow(computer).to receive(:choice).and_return(:paper)
-        expect(game.result).to eq "You LOST!"
+        expect(game.result).to eq :lose
       end
       it 'returns win if computer selects scissors' do
         allow(computer).to receive(:choice).and_return(:scissors)
-        expect(game.result).to eq "You WON!"
+        expect(game.result).to eq :win
+      end
+    end
+
+    context 'player chooses paper' do
+
+      before do
+        allow(player).to receive(:choice).and_return(:paper)
+      end
+
+      it 'returns draw if computer selects rock' do
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.result).to eq :win
+      end
+      it 'returns lose if computer selects paper' do
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.result).to eq :draw
+      end
+      it 'returns win if computer selects scissors' do
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.result).to eq :lose
+      end
+    end
+
+    context 'player chooses scissors' do
+
+      before do
+        allow(player).to receive(:choice).and_return(:scissors)
+      end
+
+      it 'returns draw if computer selects rock' do
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.result).to eq :lose
+      end
+      it 'returns lose if computer selects paper' do
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.result).to eq :win
+      end
+      it 'returns win if computer selects scissors' do
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.result).to eq :draw
       end
     end
   end
