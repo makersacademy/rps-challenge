@@ -1,2 +1,9 @@
 class Computer
-end 
+
+WEAPONS = [:rock, :paper, :scissors]
+
+  def weapon
+    @weapon = WEAPONS.sample
+  end
+  
+end

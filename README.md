@@ -21,5 +21,24 @@ Instructions on how to use the web page
 Approach to problem
 ----
 
+Diagrammed out...
+- Classes
+- Flow chart" of user web experience
+- Controller paths
+
 ##Classes/Objects
-##File Tree
+
+| Classes  | Contents  |
+| ---------|---------- |
+| Game     | player_name |
+|          | result    |
+|          | Class Methods |
+| Player   | weapon    |
+| Computer | weapon    |
+| Weapon   | WEAPONS   |
+|          | beats?    |
+
+##Challenges/Struggles
+
+Credit to Laura for this test syntax:
+"expect(Computer::WEAPONS).to include(computer.weapon)"
