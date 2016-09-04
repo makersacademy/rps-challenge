@@ -6,7 +6,7 @@ class Computer
 
   def initialize
     @name = "Computer"
-    @rps_values = ["rock", "paper", "scissors"]
+    @rps_values = [:rock, :paper, :scissors]
     @wins = 0
   end
 

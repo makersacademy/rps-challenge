@@ -46,16 +46,16 @@ describe Game do
 
   context '#play_game' do
     it 'returns player with rock, if the other player is with scissors' do
-      expect(game.play_game("rock", "scissors")).to eq player1
+      expect(game.play_game(:rock, :scissors)).to eq player1
     end
     it "returns player with scissors, if the other player is with paper" do
-      expect(game.play_game("paper", "scissors")).to eq player2
+      expect(game.play_game(:paper, :scissors)).to eq player2
     end
     it "returns player with paper if the other player is with rock" do
-      expect(game.play_game("paper", "rock")).to eq player1
+      expect(game.play_game(:paper, :rock)).to eq player1
     end
     it "returns 'draw' if players' choices are the same" do
-      expect(game.play_game("rock", "rock")).to eq "draw"
+      expect(game.play_game(:rock, :rock)).to eq "draw"
     end
   end
 

@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @player_choice = params[:choice]
     @computer_choice = @game.player_2.choice
-    @winner = @game.play_game(@player_choice, @computer_choice)
+    @winner = @game.play_game(@player_choice.to_sym, @computer_choice)
     erb :result
   end
 
