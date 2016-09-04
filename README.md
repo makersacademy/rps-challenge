@@ -31,4 +31,4 @@ $ rackup
 
 ## More Information
 
-Image credit: [Image credit](http://thegenome.deviantart.com/)
+[Image credit](http://thegenome.deviantart.com/)
