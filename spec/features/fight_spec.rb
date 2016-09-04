@@ -5,6 +5,8 @@ feature 'fight' do
   sign_in_and_play
   check('rock')
   click_button('Fight!')
-  expect(page).to have_content('Ben\'s weapon beat the computer\'s!')
+  expect(page).to have_content('Ben chose rock')
   end
+
+
 end

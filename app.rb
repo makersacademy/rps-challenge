@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
 
   post '/fight' do
     @player_name = $player_name
-    session[:player_weapon] = params[:player_weapon]
+    @player_name.weapon = params[:weapon]
     redirect '/result'
   end
 
