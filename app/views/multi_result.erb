@@ -1,0 +1,23 @@
+<h1>The Rock, Paper, Scissors Arena!</h1>
+
+<h2><%= @game.player_1.name %>: <%= @game.player_1.weapon %> vs. <%= @game.player_2.name %>: <%= @game.player_2.weapon %></h2>
+
+<% if @game.result == :win %>
+<h3><%= @game.player_1.name %> won!</h3>
+<% elsif @game.result == :loss %>
+<h3><%= @game.player_2.name %> won!</h3>
+<% else %>
+<h3>The result was a draw </h3>
+<% end %>
+
+<h3> Play again? </h3>
+
+<form action='/multi-game' method='post'>
+  <label for="weapon_1">
+    <%= @game.player_1.name %> - choose rock, paper or scissors:
+    <input type="text" name="weapon_1">
+  <label for="weapon_2">
+    <%= @game.player_2.name %> - choose rock, paper or scissors:
+    <input type="text" name="weapon_2">
+  <input type='submit' value="Submit">
+</form>
