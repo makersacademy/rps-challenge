@@ -1,1 +1,9 @@
 <h1>Welcome <%= @game.player.name %>!</h1>
+
+<h2>Pick your poison:</h2>
+
+<form action="/make_choice" method="post">
+  <input type="submit" value="ROCK" name="choice">
+  <input type="submit" value="PAPER" name="choice">
+  <input type="submit" value="SCISSORS" name="choice">
+</form>
