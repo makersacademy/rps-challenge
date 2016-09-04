@@ -2,7 +2,7 @@
 
 class Game
 
-  attr_reader :player_one, :player_two, :current_player, :move_count, :results
+  attr_reader :player_one, :player_two, :current_player, :move_count, :results, :winner
 
   def initialize(player_one, player_two, results = Results)
     @player_one = player_one
@@ -10,6 +10,7 @@ class Game
     @current_player = player_one
     @results = results.new
     @move_count = 0
+    @winnner = nil
   end
 
   def switch_players
@@ -23,6 +24,10 @@ class Game
 
   def result
     results.get_result(player_one.show_last_move, player_two.show_last_move)
+  end
+
+  def set_winner
+    result == player_one.show_last_move ? @winner = player_one : @winner = player_two
   end
 
   def round_complete

@@ -73,4 +73,15 @@ describe Game do
 
   end
 
+  describe "#set_winner" do
+
+    it 'should set the winner after finding the result' do
+      test_game.play(:rock)
+      test_game.switch_players
+      test_game.play(:scissors)
+      test_game.set_winner
+      expect(test_game.winner).to eq matthew
+    end
+  end
+
 end
