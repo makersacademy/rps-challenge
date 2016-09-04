@@ -36,6 +36,10 @@ class Rock_Paper_Scissors < Sinatra::Base
     erb(:result)
   end
 
+  post '/play-again' do
+    redirect 'play'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

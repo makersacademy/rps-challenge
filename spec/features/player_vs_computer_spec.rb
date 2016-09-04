@@ -34,4 +34,12 @@ feature 'A game of RPS with Player vs Computer' do
     click_button('fight')
     expect(page).to have_content('It\'s a draw!')
   end
+
+  scenario 'it allows the player to play again' do
+    sign_in_and_play_single
+    click_button('scissors')
+    click_button('fight')
+    click_button('Play Again')
+    expect(page).to have_content('James has begun a game')
+  end
 end
