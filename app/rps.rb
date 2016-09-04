@@ -17,7 +17,7 @@ enable :sessions
 
   get '/choose' do
     @player = $player
-    erb :choose
+    erb :choice
   end
 
   post '/weapon' do
@@ -26,7 +26,7 @@ enable :sessions
     @player = $player
     @weapon = @player.weapon_choice(params[:weapon])
     @comp_weapon = @computer.weapon_choice.capitalize
-    erb :game
+    erb :result
   end
 
 
