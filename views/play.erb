@@ -2,6 +2,13 @@
   <%= "Welcome to rock, paper, scissors, #{$player.name}!" %>
 </h1>
 
+<h2>
+  Please enter you weapon!
+</h2>
+
+
 <form action="/result" method="post">
-  <input type="submit" value="Choose">
+  <input type="checkbox" name="weapon" value="Rock"> <br>
+  <input type="checkbox" name="weapon" value="Paper"> <br>
+  <input type="checkbox" name="weapon" value="Scissors"> <br>
 </form>

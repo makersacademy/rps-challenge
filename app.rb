@@ -4,6 +4,8 @@ require './lib/game'
 
 class RPSGame < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
@@ -17,6 +19,8 @@ class RPSGame < Sinatra::Base
 
   get '/play' do
     @game = $game
+    $game.choose_weapon(params[:weapon])
+    @game.computer_choice
     erb(:play)
   end
 

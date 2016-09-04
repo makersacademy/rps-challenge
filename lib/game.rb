@@ -5,11 +5,9 @@ require_relative 'computer'
 
 class Game
 
-  RULES = { :rock => :scissors,
-            :paper => :rock,
-            :scissors => :paper }
+  RULES = { :rock => :scissors, :paper => :rock, :scissors => :paper }
 
-  attr_reader :winner
+  attr_reader :winner, :playerweapon, :computerweapon
 
   def initialize(player, computer)
     @player = player
