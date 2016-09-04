@@ -66,25 +66,27 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    user_move = params[:user_move].to_i
+    @user_move = params[:user_move].to_i
 
     puts "Match Length: " + @game.length.to_s
     puts @opponent.name
-    # puts @opponent.rock_value
-    # puts @opponent.paper_value
-    # puts @opponent.scissors_value
-      puts user_move
 
-      if user_move != nil
-        opponent_move = @opponent.pick_move
-        result = @game.play(user_move, opponent_move)
+      key = {1 => "rocks", 2 => "paper", 3 => "scissors"}
+
+      if @user_move > 0
+        opponent_move = @opponent.pick_move.to_i
+        result = @game.play(@user_move, opponent_move)
+        @result_string1 = "You chose #{key[@user_move]} and #{@opponent.name} chose #{key[opponent_move]}."
+
+        puts opponent_move
+        puts @user_move
 
         if result == 1 #player wins
-
+          @result_string2 = "\nThat means you won!"
         elsif result == 2 #opponent wins
-
+          @result_string2 = "\nThat means you lost."
         elsif result == 0 #it's a tie
-
+          @result_string2 = "\nThat means it was a tie."
         else
           raise "ERROR"
         end
