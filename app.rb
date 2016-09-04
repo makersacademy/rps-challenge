@@ -15,6 +15,13 @@ class Rps < Sinatra::Base
       erb :game
     end
 
+    post '/rock' do
+      @game = $game
+      @game.compare_rock
+      erb :result
+    end
+
+
 
 
 
