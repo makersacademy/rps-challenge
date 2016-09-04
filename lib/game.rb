@@ -2,7 +2,7 @@ class Game
 
   attr_reader :name, :hands
 
-  RESULTS = { 0 => "It's a draw!",
+  RESULTS = { 0 => "draw",
               1 => "won",
               2 => "lost" }
 
@@ -29,7 +29,7 @@ class Game
     RESULTS[game_result(@hand1,@hand2)]
   end
 
-# private
+private
 
   def auto_hand
     rand(1..3)
