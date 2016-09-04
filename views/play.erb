@@ -9,6 +9,9 @@
 
 </head>
 <body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Rock Papers Scissors</a>
+  </nav>
   <h1> Rock on Papers and Scissors! </h1>
   <div style="display: inline-block">
     <span>
@@ -28,6 +31,7 @@
     <div>
       <% if @game.draw == true %>
         <h2> It's a draw! </h2>
+        <% @game.reset_draw %>
       <%else %>
         <h2> <%= "#{@game.winner.show_name} wins!" %>
       <%end %>
