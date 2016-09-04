@@ -28,3 +28,7 @@ $ rackup
 4. Result:
 
   ![Screenshot](http://i.imgur.com/D0qk5lf.png)
+
+## More Information
+
+Image credit: [Image credit](http://thegenome.deviantart.com/)
