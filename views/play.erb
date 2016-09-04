@@ -15,6 +15,16 @@
       <p> <%= @game.player_two.show_points %></p>
     </span>
   </div>
+  <% if @game.round_complete == true
+    @game.reset_count %>
+    <div>
+      <% if @game.draw == true %>
+        <h2> It's a draw! </h2>
+      <%else %>
+        <h2> <%= "#{@game.winner.show_name} wins!" %>
+      <%end %>
+    </div>
+  <% end %>
   <div>
     <span>
       <h2> It's <%= @game.current_player.show_name %>'s turn </h2>

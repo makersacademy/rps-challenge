@@ -27,6 +27,14 @@ describe Game do
       expect(test_game.results).to_not be nil
     end
 
+    it 'should set winner to nil' do
+      expect(test_game.winner).to be nil
+    end
+
+    it 'should set draw to false' do
+      expect(test_game.draw).to be false
+    end
+
   end
 
   describe "#switch_players" do
@@ -51,6 +59,16 @@ describe Game do
       expect(test_game.round_complete).to eq true
     end
 
+  end
+
+  describe '#reset_count' do
+
+    it 'should reset the move_count if the round_complete' do
+      test_game.switch_players
+      test_game.switch_players
+      test_game.reset_count
+      expect(test_game.move_count).to eq 0
+    end
   end
 
   describe '#play' do
