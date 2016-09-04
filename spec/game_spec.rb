@@ -20,14 +20,14 @@ describe Game do
     end
   end
 
-  # context "#comparison" do
-  #   it "compares player and computer choice" do
-  #     player = spy("player")
-  #     game = Game.create(player)
-  #     allow_any_instance_of(Game).to receive(:computer_choice).and_return(:rock)
-  #     allow_any_instance_of(Game).to receive(:player_choice).and_return(:paper)
-  #     expect(game.compare).to eq()
-  #   end
-  # end
-
+  context "#comparison" do
+    it "compares player and computer choice" do
+      player = spy("player")
+      game = Game.create(player)
+      allow_any_instance_of(Game).to receive(:computer_choice).and_return(:rock)
+      allow_any_instance_of(Game).to receive(:player_choice).and_return(:paper)
+      allow_any_instance_of(Game).to receive(:compare).and_return("player wins!")
+      expect(game.compare).to eq("player wins!")
+    end
+  end
 end

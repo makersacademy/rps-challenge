@@ -29,7 +29,7 @@ class Game
       "#{@player.name} wins!"
     elsif @player_choice == "scissors" && @computer_choice == :paper
       "#{@player.name} wins!"
-    elsif @player_choice.to_sym == @computer_choice
+    elsif @player_choice == @computer_choice
       "Its a draw!"
     else
       "computer wins!"
