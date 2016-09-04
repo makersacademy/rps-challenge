@@ -19,6 +19,10 @@ describe Game do
       expect(test_game.current_player.show_name).to eq "Matthew"
     end
 
+    it 'should set move_count to 0' do
+      expect(test_game.move_count).to eq 0
+    end
+
   end
 
   describe "#switch_players" do
@@ -26,6 +30,21 @@ describe Game do
     it "should switch current_player form player one to player two" do
       test_game.switch_players
       expect(test_game.current_player.show_name).to eq "Rafaela"
+    end
+
+  end
+
+  describe "#round_complete" do
+
+    it 'should return false if only one player has played' do
+      test_game.switch_players
+      expect(test_game.round_complete).to eq false
+    end
+
+    it 'should return true if both players have played' do
+      test_game.switch_players
+      test_game.switch_players
+      expect(test_game.round_complete).to eq true
     end
 
   end

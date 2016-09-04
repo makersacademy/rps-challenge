@@ -1,3 +1,5 @@
+#understand player's points
+
 class Player
 
   def initialize(name)

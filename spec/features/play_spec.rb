@@ -36,7 +36,6 @@ describe RockPaperScissors do
       expect(page).to have_text("Rafaela's turn")
     end
 
-
   end
 
 end
