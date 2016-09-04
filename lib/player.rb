@@ -7,7 +7,7 @@ class Player
   end
 
   def make_choice(choice)
-    @choice = choice
+    @choice = choice.to_sym
   end
 
 end

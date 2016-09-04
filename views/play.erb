@@ -1,9 +1,10 @@
 <h1>Welcome <%= @game.player.name %>!</h1>
 
-<h2>Pick your poison:</h2>
+<h2>You'll be playing against HAL, who is, by any practical definition of the words, foolproof and incapable of error</h2>
+<h2>Choose wisely:</h2>
 
 <form action="/make_choice" method="post">
-  <input type="submit" value="ROCK" name="choice">
-  <input type="submit" value="PAPER" name="choice">
-  <input type="submit" value="SCISSORS" name="choice">
+  <input type="submit" value="rock" name="choice">
+  <input type="submit" value="paper" name="choice">
+  <input type="submit" value="scissors" name="choice">
 </form>
