@@ -3,6 +3,7 @@
 README:
 -------
 
+
 ## User stories:
 ```
 As a marketeer
@@ -33,7 +34,7 @@ Result generation is based on modulus check concept found online.
 Controller _rps.rb_ requests data from the _Game_ class and also directs users to proper sites. Only conditional statement used here changes content depending on a won/draw.
 
 ### View
- View is a simple template with 3 sites: enter_name, play and results displaying content as suggested by their name. 
+ View is a simple template with 3 sites: enter_name, play and results displaying content as suggested by their name.
 
 ## Resources used:
 I've used a website template from http://www.free-css.com/free-css-templates/page199/onassis
