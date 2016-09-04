@@ -5,7 +5,7 @@ feature 'playing the game' do
     visit('/')
     fill_in(:player_name, with: 'John')
     click_button('Play')
-    expect(page).to have_content('Rock, paper, scissors')
+    expect(page).to have_content('Rock paper scissors')
   end
 
 end
