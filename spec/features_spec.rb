@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-feature 'name registration' do
-  scenario 'display name' do
+feature 'registering name' do
+  scenario 'register and see my name' do
     visit '/'
-    fill_in 'name', with: 'Tim'
+    fill_in 'name', with: 'Dave'
     click_button 'Submit'
-    expect(page).to have_content 'Tim'
+    expect(page).to have_content 'Dave'
   end
 end
