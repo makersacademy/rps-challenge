@@ -1,13 +1,46 @@
-<table style="width:100%">
-  <tr>
-    <th><img src="http://worldrps.com/wp-content/uploads/2014/11/RPSCrest2007.gif" height="150"></th>
-    <th><h1>Rock Paper Scissors<h1><h3>-- The Game --</h3></th>
-  </tr>
-  <tr>
-  </tr>
-</table>
-<p><b>Please add your name</b></p>
-<form action="/names" method="post">
-  <input type="text" name="player">
-  <input type="submit" value="Submit">
-</form>
+<html>
+  <head>
+    <title>RPS Challenge</title>
+    <!-- Bootstrap complete CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Font Awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+    .jumbotron {
+      display: flex;
+      align-items: center;
+      background-image: url('http://media1.s-nbcnews.com/j/newscms/2016_11/1016196/rock-paper-scissors-today-tease-160317_de7dcaf2904059d3334a924d83d3d836.today-inline-large2x.jpg');
+      background-size: cover;
+      color: #ffffff;
+      height: 500px;
+      text-shadow: 0.25px 0.25px 0.25px #000000;
+    }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="col-sm-8">Rock Paper Scissors</h1>
+        <nav class="col-sm-4"></nav>
+      </div>
+    </header>
+    <section class="jumbotron">
+      <div class="container">
+        <div class="row text-center">
+          <h1>Fancy a game?</h1>
+          <h2>Please add your name</h2>
+          <form class="form-inline" action="/names" method="post">
+            <label class="sr-only" for="name_field">Your name</label>
+            <input type="text" class="form-control" id="name_field" placeholder="Your name" name="player">
+            <p><button class="btn btn-primary" type="submit" value="Add">Add</button></p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="container">
+      <div class="row">
+        <p class="col-sm-4">created by Peter Miklos</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,21 +1,21 @@
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :wins
 
   DEFAULT_LIVES = 1
 
   def initialize
     @name = "Computer"
     @rps_values = ["rock", "paper", "scissors"]
-    @lives = DEFAULT_LIVES
+    @wins = 0
   end
 
   def choice
     @rps_values.sample
   end
 
-  def reduce_lives
-    @lives -= 1
+  def add_win
+    @wins += 1
     self
   end
 

@@ -7,8 +7,8 @@ describe Game do
   let(:player2) { double :player2 }
 
   before(:each) do
-    allow(player1).to receive(:reduce_lives) {player1}
-    allow(player2).to receive(:reduce_lives) {player2}
+    allow(player1).to receive(:add_win) {player1}
+    allow(player2).to receive(:add_win) {player2}
   end
 
   context '#self.create' do
@@ -37,10 +37,10 @@ describe Game do
     end
   end
 
-  context '#turn_lost' do
+  context '#turn_won' do
     it "reduces the lives of the player by calling a player method" do
-      expect(player1).to receive(:reduce_lives)
-      game.turn_lost(player1)
+      expect(player1).to receive(:add_win)
+      game.turn_won(player1)
     end
   end
 

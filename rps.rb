@@ -21,11 +21,16 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/form_shape?*' do
+  post '/result' do
+    @game = Game.instance
     @player_choice = params[:choice]
-    @computer_choice = Game.instance.player_2.choice
-    @winner = Game.instance.play_game(@player_choice, @computer_choice)
-    erb :form_shape
+    @computer_choice = @game.player_2.choice
+    @winner = @game.play_game(@player_choice, @computer_choice)
+    erb :result
+  end
+
+  get '/after_result' do
+    params[:choice] == "play_again" ? redirect('/play') : redirect('/')
   end
 
   # start the server if ruby file executed directly

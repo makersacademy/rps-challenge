@@ -10,13 +10,13 @@ describe Computer do
     end
   end
 
-  context '#reduce_lives' do
-    it 'reduces the lives of the computer' do
-      computer.reduce_lives
-      expect(computer.instance_variable_get(:@lives)).to eq 0
+  context '#add_win' do
+    it 'add 1 to the winned games' do
+      computer.add_win
+      expect(computer.wins).to eq 1
     end
     it 'returns itself' do
-      expect(computer.reduce_lives).to eq computer
+      expect(computer.add_win).to eq computer
     end
   end
 
