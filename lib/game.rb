@@ -1,26 +1,34 @@
 require_relative 'player'
 class Game
 
-attr_reader :player_1, :player_2, :player_move
+attr_reader :player, :computer, :player_move
 
 
-def initialize(player1 = Player.new, player2 = Player.new)
-  @player_1 = player1
-  @player_2 = player2
+def initialize(player = Player.new, computer = Player.new)
+  @player = player
+  @computer = computer
 end
 
-def player_1_move(move)
-  @player_1_move = move
+def self.new_game(player)
+  @game = Game.new(player)
 end
 
-def player_2_move(move)
-  @player_2_move = move
+def self.instance
+  @game
+end
+
+def player_move(player)
+  @player_move = player
+end
+
+def computer_move(computer)
+  @computer_move = computer.random
 end
 
 def winner
-  if @player_1_move == @player_2_move
+  if @player_move == @computer_move
     "It's a tie!"
-  elsif (@player_1_move - @player_2_move)%3 ==1
+  elsif (@player_move - @computer_move)%3 ==1
     "You Win!"
   else
     "You Lose!"

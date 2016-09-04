@@ -2,8 +2,11 @@ require './lib/player'
 
 describe Player do
 
-subject(:player) {described_class.new}
+subject(:player) {described_class.new("name")}
 
+  it 'can return the name of the player as a string' do
+    expect(player.name).to eq "name"
+  end
 
   it 'can use the move scissor' do
     expect(player.scissor).to eq 2
@@ -17,11 +20,11 @@ subject(:player) {described_class.new}
   it 'can use the move paper' do
     expect(player.paper).to eq 1
   end
-
-  it 'can use of the moves at random' do
-    a = 0||1||2
-    expect(player.random).to eq(a)
-  end
+  #
+  # it 'can use of the moves at random' do
+  #   a = 0||1||2
+  #   expect(player.random).to eq(a)
+  # end
 
 
 
