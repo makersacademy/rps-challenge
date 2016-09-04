@@ -7,7 +7,7 @@ describe Game do
 
   describe '#set_player_choice' do
     scenario 'players choice from interface is set' do
-     expect(game.set_player_choice(1)).to eq :rock
+     expect(game.set_player_choice(1)).to eq 1
     end
   end
 

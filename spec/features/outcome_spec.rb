@@ -2,16 +2,38 @@ require 'spec_helper'
 require_relative '../../lib/game'
 
 
-feature "winning or losing a game" do
-before do
-  allow_any_instance_of(Game).to receive(:comp_choice_value).and_return(1)
-end
-  scenario "player chooses rock" do
+feature "Displaying the computers random choice" do
+  scenario "computer randomly selects paper" do
+    srand(234567)
     sign_in_and_play
-    choose("rps1")
+    player_chooses_rock
+    expect(page).to have_content "The computer chose Paper"
+  end
+end
 
-    click_button("Submit")
+feature "Displaying the outcome of a game" do
+
+  scenario "player chooses rock" do
+    srand(5678)
+    sign_in_and_play
+    player_chooses_rock
     expect(page).to have_content "The computer chose Rock"
     expect(page).to have_content "You are tied!"
+  end
+
+  scenario "player chooses paper" do
+    srand(7890)
+    sign_in_and_play
+    player_chooses_paper
+    expect(page).to have_content "The computer chose Rock"
+    expect(page).to have_content "You are victorious!"
+  end
+
+  scenario "player chooses scissors" do
+    srand(8234)
+    sign_in_and_play
+    player_chooses_scissors
+    expect(page).to have_content "The computer chose Rock"
+    expect(page).to have_content "The computer thwarted you!"
   end
 end
