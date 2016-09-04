@@ -9,53 +9,84 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Rock Papers Scissors</a>
+
+  <nav class="navbar navbar-dark bg-primary" style="border-radius: 0">
+    <a class="navbar-brand" href="#">RPS 4 Makers</a>
   </nav>
-  <h1> Rock on Papers and Scissors! </h1>
-  <div style="display: inline-block">
-    <span>
-      <h2> <%= @game.player_one.show_name %> </h2>
-      <p> <%= @game.player_one.show_points %> </p>
-    </span>
-    <span>
-      <h2> vs </h2>
-    </span>
-    <span>
-      <h2> <%= @game.player_two.show_name %></h2>
-      <p> <%= @game.player_two.show_points %></p>
-    </span>
-  </div>
-  <% if @game.round_complete == true
-    @game.reset_count %>
-    <div>
-      <% if @game.draw == true %>
-        <h2> It's a draw! </h2>
-        <% @game.reset_draw %>
-      <%else %>
-        <h2> <%= "#{@game.winner.show_name} wins!" %>
-      <%end %>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3" style="text-align: center"> Rock on Papers and Scissors! </h1>
     </div>
-  <% end %>
-  <div>
-    <span>
-      <h2> It's <%= @game.current_player.show_name %>'s turn </h2>
-    </span>
-    <span>
-      <form action="/rock" method="post">
-        <input type="submit" value="Rock"/>
-      </form>
-    </span>
-    <span>
-      <form action="/paper" method="post">
-        <input type="submit" value="Paper"/>
-      </form>
-    </span>
-    <span>
-      <form action="/scissors" method="post">
-        <input type="submit" value="Scissors"/>
-      </form>
-    </span>
+  </div>
+
+  <div class="container" style="text-align: center">
+    <div class="row">
+        <div class="col-md-6">
+          <h2><%= @game.player_one.show_name %>:    <%= @game.player_one.show_points %> </h2>
+        </div>
+        <div class="col-md-6">
+          <h2><%= @game.player_two.show_name %>:    <%= @game.player_two.show_points %> </h2>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2> ... </h2>
+      </div>
+      <div class="col-md-4">
+        <% if @game.round_complete == true
+          @game.reset_count %>
+        <% if @game.draw == true %>
+          <h2> It's a draw! </h2>
+          <% @game.reset_draw %>
+        <%else %>
+          <h2> <%= "#{@game.winner.show_name} wins!" %>
+        <%end %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <h2> ... </h2>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead" > It's your turn  <%= @game.current_player.show_name %>. Choose your poison!</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <img src="/rock.jpg" class="img-rounded m-x-auto d-block"/>
+        <form action="/rock" method="post" >
+          <input type="submit" value="Rock" class="btn btn-success" />
+        </form>
+      </div>
+      <div class="col-md-4">
+        <img src="/paper.jpg" class="img-rounded m-x-auto d-block"/>
+        <form action="/paper" method="post" >
+          <input type="submit" value="Paper" class="btn btn-success"/>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <img src="/scissors.jpg" class="img-rounded m-x-auto d-block"/>
+        <form action="/scissors" method="post" >
+          <input type="submit" value="Scissors" class="btn btn-success"/>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p > Made lovingly by an aspiring Maker </p>
+    </footer>
+
   </div>
 
 </body>
