@@ -14,6 +14,12 @@ describe Game do
 
     it 'players have names and choices' do
       expect(game.player_1.name).to eq 'Lawrence'
+      expect(game.player_2.name).to eq 'Computer'
+
+    end
+
+    it 'players have choices' do
+      expect(game.player_1.choice).to eq 'rock'
       expect(game.player_2.choice).to eq 'scissors'
     end
   end

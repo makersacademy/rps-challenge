@@ -34,4 +34,8 @@ class Game
       end
     end
   end
+  private
+
+
+
 end
