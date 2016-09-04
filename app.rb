@@ -44,6 +44,7 @@ class Battle < Sinatra::Base
   end
 
   get '/result' do
+    @game.compare
     erb :result
   end
 
