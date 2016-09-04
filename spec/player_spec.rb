@@ -23,4 +23,6 @@ subject(:player) {described_class.new}
     expect(player.random).to eq(a)
   end
 
+
+
 end
