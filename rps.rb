@@ -7,23 +7,6 @@ class RPS < Sinatra::Base
   enable :sessions
   RPSLS = [:rock, :paper, :scissors, :spock, :lizard]
 
-  private
-
-  def redirect_to_gametype
-    if session[:gametype] == 'multi'
-        erb :player_1_turn
-      else
-        erb :single_player_game
-      end
-  end
-
-  def set_unknown_moves
-    @player1 = :unknown
-    @player2 = :unknown
-  end
-
-  public
-
   get '/' do
     erb :home
   end
@@ -62,5 +45,18 @@ class RPS < Sinatra::Base
     redirect_to_gametype
   end
 
-  run! if app_file == $0
+  private
+
+  def redirect_to_gametype
+    if session[:gametype] == 'multi'
+      erb :player_1_turn
+    else
+      erb :single_player_game
+    end
+  end
+
+  def set_unknown_moves
+    @player1 = :unknown
+    @player2 = :unknown
+  end
 end
