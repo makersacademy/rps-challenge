@@ -27,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    @winner = @game.winner.name
+    @winner = @game.winner
     erb(:outcome)
   end
 
