@@ -8,9 +8,11 @@ feature 'game_play' do
     visit "/"
     fill_in('Player Name:', with: 'Isaac')
     click_button 'Play'
-    game.play("rock", "lizard")
-    expect(page).to have_content("someone won")
+    game.play("rock")
+    expect(page).to have_content("someone one")
   end
+
+  scenario 'player enters too many choices'
 
   scenario 'determines the winner'
 

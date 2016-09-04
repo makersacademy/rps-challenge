@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -7,12 +8,28 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player = params[:player_name]
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    $game = Game.create(player, computer)
     redirect '/game'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/game' do
-    erb(:one_player_game)
+    erb(:game)
+  end
+
+  post '/play' do
+    @game.play(params[:cbox])
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @winner = @game.winner.name
+    erb(:outcome)
   end
 
 

@@ -1,0 +1,19 @@
+<%= " #{@game.player.name} vs. Computer" %> <br>
+
+<%= "See the video for rules" %> <br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x5Q6-wMx-K8" frameborder="0" allowfullscreen></iframe>
+
+<br>
+<%= " Please choose your move" %> <br>
+
+<form action="/play" method="post">
+<input type="checkbox" id="cbox" value="spock"> <label for="cbox1">Spock</label>
+<input type="checkbox" id="cbox" value="rock"> <label for="cbox2">Rock</label>
+<input type="checkbox" id="cbox" value="scissors"> <label for="cbox3">Scissors</label>
+<input type="checkbox" id="cbox" value="lizard"> <label for="cbox4">Lizard</label>
+<input type="checkbox" id="cbox" value="paper"> <label for="cbox5">Paper</label>
+<div class="button">
+    <button type="submit">Play move</button>
+</div>
+</form>
