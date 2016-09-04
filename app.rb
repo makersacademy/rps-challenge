@@ -27,5 +27,17 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/paper' do
+    @game = $game
+    @game.switch_players
+    redirect '/play'
+  end
+
+  post '/scissors' do
+    @game = $game
+    @game.switch_players
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end
