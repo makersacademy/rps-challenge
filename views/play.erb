@@ -1,8 +1,12 @@
 Welcome <%= @game.player.name %>! Are you ready for a game?
 Please select one of the options below:
 
-<form action="/result">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Scissors">
-  <input type="submit" value="Paper">
+<form action="/rock" method="post">
+  <input type="submit" class="rock" value="Rock">
+</form>
+<form action="/paper" method="post">
+  <input type="submit" class="paper" value="Paper">
+</form>
+<form action="/scissors" method="post">
+  <input type="submit" class="scissors" value="Scissors">
 </form>

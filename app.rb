@@ -1,4 +1,5 @@
 require 'sinatra/base'
+# require 'shotgun'
 require_relative './lib/game.rb'
 require_relative './lib/player.rb'
 
@@ -12,8 +13,7 @@ class Battle < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    computer = Player.new(computer)
-    $game = Game.new(player, computer)
+    $game = Game.new(player)
     redirect '/play'
   end
 
@@ -21,6 +21,31 @@ class Battle < Sinatra::Base
     @game = $game
     erb :play
   end
+
+  post '/rock' do
+    @game = $game
+    @game.compare_rock
+    redirect '/result'
+  end
+
+  post '/paper' do
+    @game = $game
+    @game.compare_paper
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    @game = $game
+    @game.compare_scissors
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game = $game
+    @game.winner
+    erb :result
+  end
+
 
   run! if app_file == $0
 end
