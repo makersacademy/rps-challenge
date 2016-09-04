@@ -1,6 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/game'
-
 
 feature "Displaying the computers random choice" do
   scenario "computer randomly selects paper" do
@@ -18,7 +16,7 @@ feature "Displaying the outcome of a game" do
     sign_in_and_play
     player_chooses_rock
     expect(page).to have_content "The computer chose Rock"
-    expect(page).to have_content "You are tied!"
+    expect(page).to have_content "You are tied, boooooring!"
   end
 
   scenario "player chooses paper" do
