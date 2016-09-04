@@ -4,7 +4,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice = nil
   end
 
   def select_choice(choice)
