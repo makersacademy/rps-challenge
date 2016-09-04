@@ -1,8 +1,12 @@
-<h1><mark><%= @game.player_1.name %></mark> has begun a game of Rock, Paper, Scissors! with <%= @game.player_2.name%></h1>
+<h1><mark><%= @game.player_1.name %></mark> has begun a game of Rock, Paper, Scissors with <%= @game.player_2.name%>!</h1>
 
 
-<form action="/attack" method="post">
-  <input type="submit" name="choice" value="Rock">
-  <input type="submit" name="choice" value="Paper">
-  <input type="submit" name="choice" value="Scissors">
+<form action="/choice" method="post">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+</form>
+
+<form action='/fight' method='post'>
+  <input type='submit' value='fight'>
 </form>

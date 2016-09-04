@@ -11,12 +11,12 @@ describe Player do
 
   describe '#choice' do
     it 'allows the player to choose between rock, paper or scissors' do
-      expect(player.select_choice('rock')).to eq 'rock'
+      expect(player.select_choice('rock')).to eq :rock
     end
 
     it 'returns the players choice' do
       player.select_choice('paper')
-      expect(player.choice).to eq 'paper'
+      expect(player.choice).to eq :paper
     end
   end
 

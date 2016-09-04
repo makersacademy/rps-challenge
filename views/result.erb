@@ -1,5 +1,14 @@
 <h1> THE RESULT: </h1>
 
-<h3><mark><%= @game.player_1.name %></mark> chose <%= @game.player_1.choice.join %></h3>
+<h3><mark><%= @game.player_1.name %></mark> chose <%= @game.player_1.choice %></h3>
 
 <h3>The <%= @game.player_2.name %> chose <%= @game.player_2.choice %></h3>
+
+
+<% if @winner == :player_1_won %>
+  <%= @game.player_1.name %> is the winner!
+<% elsif @winner == :player_2_won %>
+  <%= @game.player_2.name %> is the winner!
+<% else %>
+  It's a draw!
+<% end %>

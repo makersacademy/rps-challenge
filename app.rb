@@ -17,7 +17,7 @@ class Rock_Paper_Scissors < Sinatra::Base
   post '/name' do
     player_1 = Player.new(params[:player_1])
     player_2 = Computer.new
-    @game = Game.create(player_1,player_2)
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -25,9 +25,14 @@ class Rock_Paper_Scissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/attack' do
-    @game.player_1.select_choice([params[:choice]])
+  post '/choice' do
+    @game.player_1.select_choice(params[:choice])
     @game.player_2.select_choice
+    erb(:play)
+  end
+
+  post '/fight' do
+    @winner = @game.fight
     erb(:result)
   end
 
