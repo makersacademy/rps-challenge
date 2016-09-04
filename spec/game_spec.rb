@@ -23,4 +23,29 @@ describe Game do
     end
   end
 
+  describe '#result' do
+
+    subject(:game) { described_class.new(player,computer) }
+
+    context 'player chooses rock' do
+
+      before do
+        allow(player).to receive(:choice).and_return(:rock)
+      end
+
+      it 'returns draw if computer selects rock' do
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.result).to eq "It's a DRAW!"
+      end
+      it 'returns lose if computer selects paper' do
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.result).to eq "YOU LOST!"
+      end
+      it 'returns win if computer selects scissors' do
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.result).to eq "You WON!"
+      end
+    end
+  end
+
 end

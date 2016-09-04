@@ -1,6 +1,11 @@
-# understands who wins and who loses
+require_relative 'computer'
+require_relative 'player'
 
-class Game
+class Game # understands who wins and who loses
+
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
 
   attr_reader :player, :computer
 
@@ -15,6 +20,12 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def result
+    return "It's a DRAW!" if player.choice == computer.choice
+    return "You WON!" if computer.choice == RULES[player.choice]
+    "YOU LOST!"
   end
 
 end
