@@ -6,6 +6,10 @@ require './lib/results'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:start)
   end
@@ -13,17 +17,15 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     @player_one = Player.new(params[:player_one])
     @player_two = Player.new(params[:player_two])
-    $game = Game.new(@player_one, @player_two)
+    @game = Game.create(@player_one, @player_two)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb(:play)
   end
 
   post '/rock' do
-    @game = $game
     @game.play(:rock)
     @game.switch_players
     if @game.round_complete == true
@@ -35,7 +37,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/paper' do
-    @game = $game
     @game.play(:paper)
     @game.switch_players
     if @game.round_complete == true
@@ -47,7 +48,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/scissors' do
-    @game = $game
     @game.play(:scissors)
     @game.switch_players
     if @game.round_complete == true
