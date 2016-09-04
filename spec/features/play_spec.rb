@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe RockPaperScissors do
 
-  feature 'display_points' do
+  feature 'display points' do
 
     scenario 'at startup it should display initial points as 0' do
       sign_in_and_play
@@ -11,7 +11,7 @@ describe RockPaperScissors do
 
   end
 
-  feature 'display turn' do
+  feature 'display correct turn' do
 
     scenario "at startup it should be player_one's turn" do
       sign_in_and_play
