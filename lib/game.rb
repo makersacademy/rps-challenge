@@ -10,6 +10,14 @@ attr_reader :player_1, :player_2, :computer_choice
     generate_computer_choice(rand_choice)
   end
 
+  def self.create(player_1, player_2 = nil)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def set_player_choice(choice)
     #setting player choice to a value
     @player_choice = choice.to_i #choices[(choice.to_i)-1]
