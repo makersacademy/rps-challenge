@@ -21,12 +21,12 @@ $ rackup
 
 2. Name entry and game initiation:
 
-![Screenshot](http://i.imgur.com/acvOF6Is.png)
+![Screenshot](http://i.imgur.com/1pWRKpo.png)
 
 3. Option selection:
 
-![Screenshot](http://i.imgur.com/3TsdECZs.png)
+![Screenshot](http://i.imgur.com/0CCtZZQ.png)
 
 4. Result:
 
-![Screenshot](http://i.imgur.com/RNKw7PZs.png)
+![Screenshot](http://i.imgur.com/D0qk5lf.png)
