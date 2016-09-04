@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -9,18 +10,19 @@ enable :sessions
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    player = Player.new(params[:name])
+    $player = player
     redirect '/choose'
   end
 
   get '/choose' do
-    @name = session[:name]
+    @player = $player
     erb :choose
   end
 
   post '/weapon' do
-    @name = session[:name]
-    @weapon = params[:weapon]
+    @player = $player
+    @weapon = @player.weapon_choice(params[:weapon])
     erb :game
   end
 
