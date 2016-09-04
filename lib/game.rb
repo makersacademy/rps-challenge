@@ -1,17 +1,15 @@
 require_relative 'player'
+
 class Game
+
+  attr_reader :player
 
   def initialize(player)
     @player = player
+    @rules = {rock: :scissors,
+             paper: :rock,
+             scissors: :paper}
 
   end
-
-  def player_name
-    @player.return_name
-  end
-
-private
-
-attr_reader :player
 
 end

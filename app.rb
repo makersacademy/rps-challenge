@@ -16,8 +16,14 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = $player.return_name
+    @player_1 = $player.name
     erb(:play)
+  end
+
+  post '/attack' do
+    @player_1 = $player.name
+    @choice = $player.select_choice(params[:choice])
+    erb(:result)
   end
 
   # start the server if ruby file executed directly

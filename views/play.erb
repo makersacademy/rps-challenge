@@ -1,1 +1,8 @@
 <h1><mark><%= @player_1 %></mark> has begun a game of Rock, Paper, Scissors!</h1>
+
+
+<form action="/attack" method="post">
+  <input type="submit" name="choice" value="Rock">
+  <input type="submit" name="choice" value="Paper">
+  <input type="submit" name="choice" value="Scissors">
+</form>

@@ -6,8 +6,8 @@ describe Game do
   subject(:game) {described_class.new(player)}
 
   it 'returns a players name' do
-    allow(player).to receive(:return_name)
-    expect(game.player_name).to eq player.return_name
+    allow(player).to receive(:name)
+    expect(game.player.name).to eq player.name
   end
 
 end
