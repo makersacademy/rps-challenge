@@ -12,7 +12,7 @@ class Game
     @game = Game.new(player, computer)
   end
 
-  def self.instance
+  def self.current_game
     @game
   end
 

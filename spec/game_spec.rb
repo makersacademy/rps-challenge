@@ -13,7 +13,7 @@ describe Game do
       expect(game_class.create(player, computer)).to be_a(Game)
     end
     it '#self.instance shows the game instance' do
-      expect(game_class.instance).to be_a(Game)
+      expect(game_class.current_game).to be_a(Game)
     end
   end
 

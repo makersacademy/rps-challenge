@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
   end
 
   get '/single-play' do
-    @game = Game.instance
+    @game = Game.current_game
     erb :single_play
   end
 
