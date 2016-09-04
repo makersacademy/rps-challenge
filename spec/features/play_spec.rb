@@ -6,6 +6,6 @@ feature 'player can choose option' do
     visit('/')
     fill_in('player', with: 'jon')
     click_button('play!')
-    expect(page).to have_content("Rock, Paper, Scissors, in 3, 2, 1!")
+    expect(page).to have_content("Rock - Paper - Scissors, in 3... 2... 1!")
   end
 end

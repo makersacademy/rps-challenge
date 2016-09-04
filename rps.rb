@@ -6,6 +6,10 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
@@ -18,8 +22,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
+    @player_choice = nil
     erb(:play)
+  end
+
+  post '/choices' do
+    @game.player_choice = params[:id]
+    @game.computer_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game.player_choice = params[:id]
+    erb(:result)
   end
 
   # start the server if ruby file executed directly
