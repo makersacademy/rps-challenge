@@ -7,10 +7,6 @@ class RPS < Sinatra::Base
 
 enable :sessions
 
-  before do
-    @game = Game.instance
-  end
-
   get '/' do
     erb :index
   end
@@ -22,18 +18,19 @@ enable :sessions
     redirect '/choose'
   end
 
-  get '/choose' do
+  before do
     @game = Game.instance
+  end
+
+  get '/choose' do
     erb :choice
   end
 
   post '/weapon' do
-    # @game = Game.instance
-    @weapon = @game.player.weapon_choice(params[:weapon])
-    @comp_weapon = @game.computer.weapon_choice.capitalize
+    @game.player.weapon_choice(params[:weapon])
+    @game.computer.weapon_choice
     erb :result
   end
-
 
   run! if app_file == $0
 

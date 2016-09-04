@@ -5,6 +5,12 @@ class Game
 
 attr_reader :player, :computer
 
+RULES = {
+  rock: {rock: :draw, paper: :lose, scissors: :win},
+  paper: {rock: :win, paper: :draw, scissors: :lose},
+  scissors: {rock: :lose, paper: :win, scissors: :draw}
+}
+
   def initialize(player, computer)
     @player = player
     @computer = computer
@@ -16,6 +22,10 @@ attr_reader :player, :computer
 
   def self.instance
     @game
+  end
+
+  def result
+    RULES[player.weapon][computer.weapon]
   end
 
 end

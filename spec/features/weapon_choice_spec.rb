@@ -8,21 +8,21 @@ feature 'Weapon choice' do
   end
 
   scenario 'player chooses rock' do
-    click_button 'Rock'
-    expect(page).to have_content 'Abigail chooses Rock!'
-    expect(page).to have_content 'Computer chooses Rock!'
+    click_button 'rock'
+    expect(page).to have_content 'Abigail chooses rock!'
+    expect(page).to have_content 'Computer chooses rock!'
   end
 
   scenario 'player chooses paper' do
-    click_button 'Paper'
-    expect(page).to have_content 'Abigail chooses Paper!'
-    expect(page).to have_content 'Computer chooses Rock!'
+    click_button 'paper'
+    expect(page).to have_content 'Abigail chooses paper!'
+    expect(page).to have_content 'Computer chooses rock!'
   end
 
   scenario 'player chooses scissors' do
-    click_button 'Scissors'
-    expect(page).to have_content 'Abigail chooses Scissors!'
-    expect(page).to have_content 'Computer chooses Rock!'
+    click_button 'scissors'
+    expect(page).to have_content 'Abigail chooses scissors!'
+    expect(page).to have_content 'Computer chooses rock!'
   end
 
 end
