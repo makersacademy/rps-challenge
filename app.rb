@@ -4,7 +4,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    "hello - I'm rock paper scissors"
+    erb(:start)
   end
 
   run! if app_file == $0
