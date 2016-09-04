@@ -1,11 +1,16 @@
 require 'spec_helper'
 
-feature 'Feature Test - Single Player Game' do
+feature 'Feature Test - start single player game' do
   scenario 'submitting names' do
-    visit('/')
-    click_button "Single-player"
-    fill_in :name, with: "Rosie"
-    click_button "Play!"
+    submit_name
     expect(page).to have_content "Get ready to play Rosie!"
+  end
+end
+feature 'Feature Test - choosing Weapon' do
+  scenario 'choosing weapon as rock' do
+    submit_name
+    fill_in :weapon, with: "rock"
+    click_button "Submit"
+    expect(page).to have_content "Rosie chose rock!"
   end
 end

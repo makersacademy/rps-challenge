@@ -16,8 +16,12 @@ class Game
     @game
   end
 
-  def player_name
-    @player.name
+  def player
+    @player
+  end
+
+  def computer
+    @computer
   end
 
 end

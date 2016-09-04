@@ -11,12 +11,16 @@ let (:weapon) {double :weapon}
     expect(player.name).to eq name
   end
 
-  describe '#weapon' do
+  describe '#choose_weapon' do
     it 'returns the weapon' do
-      expect(player.weapon(:rock)).to eq :rock
+      expect(player.choose_weapon(:rock)).to eq :rock
     end
     it 'allows player to pass only a valid weapon' do
-      expect{player.weapon(:test)}.to raise_error('not a valid weapon')
+      expect{player.choose_weapon(:test)}.to raise_error('not a valid weapon')
+    end
+    it 'should choose a weapon' do
+      player.choose_weapon("scissors")
+      expect(player.weapon).to eq :scissors
     end
   end
 

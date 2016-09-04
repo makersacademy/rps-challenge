@@ -19,8 +19,10 @@ describe Game do
 
   describe 'Game has a player and computer' do
     it 'shows current player in current game' do
-      expect(player).to receive(:name)
-      game.player_name
+      expect(game.player).to eq player
+    end
+    it 'shows computer in current game' do
+      expect(game.computer).to eq computer
     end
   end
 
