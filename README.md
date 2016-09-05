@@ -1,6 +1,6 @@
 WELCOME TO ROCK, PAPER, SCISSORS!
 
-This is a very basic app that lets you playe the game rock, paper, scissors either multi or single player.
+This is a very basic app that lets you play the game rock, paper, scissors either multi or single player.
 
 To play the app do the following
 
@@ -11,7 +11,7 @@ To play the app do the following
 
  The rules are simple,
 
- Rock smashes scissors, scissors cut paper, and paper covers rock. 
+ Rock smashes scissors, scissors cut paper, and paper covers rock
 
  I hope you enjoy the game,
 
