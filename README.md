@@ -4,12 +4,12 @@ I have begun to implement 2-player functionality but have not completed this mis
 
 INSTRUCTIONS ON HOW TO DOWNLOAD MY APP
 
-*$ git clone https://github.com/supasuma/rps-challenge.git
-*$ cd rps-challenge
-*$ bundle
-*$ rackup
+* $ git clone https://github.com/supasuma/rps-challenge.git
+* $ cd rps-challenge
+* $ bundle
+* $ rackup
 
-![alt](http://localhost:4567/play)
+![alt](/Users/summerbrines/Desktop/Intro.png)
 
 # RPS Challenge
 
