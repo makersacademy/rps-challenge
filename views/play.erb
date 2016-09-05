@@ -1,0 +1,25 @@
+<center>
+  <h1>Welcome <%= @game.player.name.capitalize %>!</h1>
+
+  <h3>Rock - Paper - Scissors, in 3... 2... 1!</h3>
+
+  </br>
+
+  <form action="/choices" method="post">
+
+    <button name="player_choice" type="checkbox" value="rock">
+      <img src="http://megaicons.net/static/img/icons_sizes/8/178/128/rock-paper-scissors-rock-icon.png" alt="Rock" width="100" height="100">
+    </button>
+
+    <button name="player_choice" type="checkbox" value="paper">
+      <img src="http://megaicons.net/static/img/icons_sizes/8/178/128/rock-paper-scissors-paper-icon.png" alt="Paper" width="100" height="100">
+    </button>
+
+    <button name="player_choice" type="checkbox" value="scissors">
+      <img src="http://megaicons.net/static/img/icons_sizes/8/178/128/rock-paper-scissors-scissors-icon.png" alt="Scissors" width="100" height="100">
+    </button>
+
+  </form>
+
+  <p>Choose an icon.</p>
+</center>
