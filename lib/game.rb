@@ -8,6 +8,7 @@ class Game
   def initialize(player)
     @player = player
     @player_choice = nil
+    @computer_choice = nil
   end
 
   def self.create(player)
@@ -19,7 +20,7 @@ class Game
   end
 
   def computer_choice
-    [:rock, :paper, :scissors].sample
+    @computer_choice = [:rock, :paper, :scissors].sample
   end
 
   def compare
@@ -29,7 +30,7 @@ class Game
       "#{@player.name} wins!"
     elsif @player_choice == "scissors" && @computer_choice == :paper
       "#{@player.name} wins!"
-    elsif @player_choice == @computer_choice
+    elsif @player_choice == @computer_choice.to_s
       "Its a draw!"
     else
       "computer wins!"
