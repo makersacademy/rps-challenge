@@ -8,8 +8,8 @@ describe Game do
     expect(game.player_points("lizard","rock")).to eq -1
   end
 
-  it 'returns 1 points for player when they beat computer' do
-    expect(game.player_points("rock", "lizard")).to eq 1
+  it 'returns -1 points for computer when beaten by player' do
+    expect(game.computer_points("rock", "lizard")).to eq -1
   end
 
   it 'leader method shows who ever has the highest score' do
