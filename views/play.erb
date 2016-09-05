@@ -1,0 +1,11 @@
+<h2><%= @player1 %> vs. computer</h2>
+
+<form action="/play" method="post">
+  <input type="submit" name="player1_choice" value="Rock"/>
+  <input type="submit" name="player1_choice" value="Paper"/>
+  <input type="submit" name="player1_choice" value="Scissors"/>
+</form>
+
+You chose <%= @player1_choice %>
+<br>
+Game chose <%= @computer_choice %>
