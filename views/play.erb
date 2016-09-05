@@ -1,0 +1,46 @@
+<h1> <%= @game.player_1.name %> vs The Mighty Computer </h1>
+<h2> What do you choose? Rock, Paper or Scissors? </h2>
+
+<form action="/select" method="post">
+  <label for="rps">
+    ROCK
+    <input type="radio" id="rps1" name="rps" value="1" />
+  </label>
+
+  <label for="rps">
+    PAPER
+    <input type="radio" id="rps2" name="rps" value="2" />
+  </label>
+
+  <label for="rps">
+    SCISSORS
+    <input type="radio" id="rps3" name="rps" value="3" />
+  </label>
+
+  <input type="submit" value="Submit"/>
+</form>
+
+
+<style>
+body {
+    background-color: linen;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: maroon;
+    font-family: sans-serif;
+}
+
+h2 {
+    color: maroon;
+    font-family: sans-serif;
+}
+
+input[type="submit"] {
+  color: maroon;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+</style>
