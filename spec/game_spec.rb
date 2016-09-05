@@ -15,7 +15,7 @@ let(:player) {double :player}
     allow(player).to receive(:rock).and_return(0)
     allow(computer).to receive(:random).and_return(1)
     game.player_move(player.rock)
-    game.computer_move(computer)
+    game.computer_move
     expect(game.winner).to eq("You Lose!")
   end
 

@@ -18,10 +18,15 @@ def self.instance
 end
 
 def player_move(player)
-  @player_move = player
+  if player == "rock"
+    @player_move = 0
+  elsif player == "paper"
+    @player_move = 1
+  else
+    @player_move = 2
 end
 
-def computer_move(computer)
+def computer_move
   @computer_move = computer.random
 end
 

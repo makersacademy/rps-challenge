@@ -15,5 +15,11 @@ class Rock_Paper_Scissor < Sinatra::Base
     erb(:play)
   end
 
+  get '/result' do
+    @game = Game.instance
+    @game.player_move(params[:value])
+    @game.computer_move
+    erb(:result)
+  end
   run! if app_file == $0
 end
