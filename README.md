@@ -9,7 +9,7 @@ INSTRUCTIONS ON HOW TO DOWNLOAD MY APP
 * $ bundle
 * $ rackup
 
-![]()
+[Imgur](http://i.imgur.com/0Q1adP5.png)
 
 # RPS Challenge
 
