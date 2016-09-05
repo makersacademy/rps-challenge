@@ -1,0 +1,25 @@
+<h1>
+  <%= "Welcome to rock, paper, scissors, #{$player.name}!" %>
+</h1>
+
+<h2>
+  Please choose you weapon!
+</h2>
+
+<form action="/inplay" method="post">
+  <div>
+      <label for="rock">Rock</label>
+      <button name="choice" type="checkbox" value="rock">
+      </button>
+  </div>
+  <div>
+  <label for="paper">Paper</label>
+    <button name="choice" type="checkbox" value="paper">
+  </button>
+</div>
+<div>
+  <label for="scissors">Scissors</label>
+  <button name="choice" type="checkbox" value="scissors">
+  </button>
+</div>
+</form>
