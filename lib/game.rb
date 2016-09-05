@@ -44,7 +44,7 @@ CHOICES = ["spock","scissors","paper","rock","lizard"]
   end
 
   def winner
-    "both" if @computer.score == @player.score
+    return "both" if @computer.score == @player.score
     @player.score > @computer.score ? @player.name : @computer.name
   end
 
