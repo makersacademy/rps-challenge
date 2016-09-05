@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -8,22 +9,29 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  before do
+    @game = Game.instance
+  end
+
   post '/name' do
-    session[:name] = params[:name]
+    player = Player.new(params[:name])
+    computer = Computer.new
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
-    @weapon = session[:weapon]
-    @cpu_weapon = session[:cpu_weapon]
     erb :play
   end
 
-  post '/play' do
-    session[:weapon] = params[:weapon]
-    session[:cpu_weapon] = (Computer.new.choice).capitalize
-    redirect '/play'
+  post '/choices' do
+    @game.player.choose_weapon(params[:weapon])
+    @game.computer.choose_weapon
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly

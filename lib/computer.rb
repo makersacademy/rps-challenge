@@ -1,9 +1,11 @@
 class Computer
 
+  attr_reader :weapon
+
 WEAPONS = [:rock, :paper, :scissors]
 
-  def choice
-    WEAPONS.sample
+  def choose_weapon
+    @weapon = WEAPONS.sample
   end
 
 end
