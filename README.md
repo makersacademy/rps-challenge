@@ -1,3 +1,17 @@
+#README
+
+I have begun to implement 2-player functionality but have not completed this mission, below are instructions on how to download my app and some screenshoots!
+
+INSTRUCTIONS ON HOW TO DOWNLOAD MY APP
+
+$ git clone https://github.com/supasuma/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+![intro.png]
+(/Users/summerbrines/Desktop/Intro.png)
+
 # RPS Challenge
 
 Instructions
@@ -89,4 +103,5 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+
 
