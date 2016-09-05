@@ -1,15 +1,6 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -43,13 +34,20 @@ As usual please start by
 * TEST driving development of your app
 
 
-## Bonus level 1: Multiplayer
+# Notes on my approach
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Play Game online
+----
+How to download and run the app:
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+```sh
+$ git clone https://github.com/littlethao/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ ruby app/app.rb
+```
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Next, visit http://localhost:4567/ in your browser to start game.
 
 ## Basic Rules
 
@@ -57,36 +55,7 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
+Notes on test coverage and future steps
 ----------------------
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+The web application still requires further tests to be put in place and the controller is still to be refactored to become a 'skinny controller'. I would also like to implement html and css styles to work further on the visual of the web app.
