@@ -17,7 +17,7 @@ class Rock_Paper_Scissor < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    @game.player_move(params[:value])
+    # @game.player_move(params[:rock||:paper||:scissor])
     @game.computer_move
     erb(:result)
   end
