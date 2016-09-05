@@ -1,6 +1,5 @@
 # A Rock-Paper-Scissors app
-by Ewan Sheldon
-===============
+## by Ewan Sheldon
 
 ## Instructions for use - run the following on the command line:
 
