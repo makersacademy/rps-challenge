@@ -9,7 +9,7 @@ $ cd rps-challenge
 $ bundle
 $ rackup
 
-![alt text][/Users/summerbrines/Desktop/Intro.png]
+![alt text](/Users/summerbrines/Desktop/Intro.png)
 
 # RPS Challenge
 
