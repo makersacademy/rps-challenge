@@ -1,6 +1,6 @@
 #README
 
-I have begun to implement 2-player functionality but have not completed this mission, below are instructions on how to download my app and some screenshoots!
+I have begun to implement 2-player functionality but have not completed this mission, below are instructions on how to download my app!
 
 INSTRUCTIONS ON HOW TO DOWNLOAD MY APP
 
@@ -9,7 +9,7 @@ INSTRUCTIONS ON HOW TO DOWNLOAD MY APP
 * $ bundle
 * $ rackup
 
-![alt](/Users/summerbrines/Desktop/Intro.png)
+![]()
 
 # RPS Challenge
 
