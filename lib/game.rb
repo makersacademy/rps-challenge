@@ -28,4 +28,7 @@ class Game
     RULES[@player.weapon][@computer.weapon]
   end
 
+
+
+
 end

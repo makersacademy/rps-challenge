@@ -9,15 +9,15 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  before do
-    @game = Game.instance
-  end
-
   post '/name' do
     player = Player.new(params[:name])
     computer = Computer.new
     @game = Game.create(player, computer)
     redirect '/play'
+  end
+
+  before do
+    @game = Game.instance
   end
 
   get '/play' do
@@ -31,6 +31,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @game.player.weapon
+    @game.computer.weapon
     erb :result
   end
 
