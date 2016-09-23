@@ -13,5 +13,4 @@ Instructions
 * chose an option and start the game ( _you can find instructions here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 * if your play with computer, it will randomly select an option
 <center>
-<p><img src="https://raw.githubusercontent.com/makersacademy/course/master/images/rpsls.jpg?token=AS3HUZEazk_fWEuh2G-j30Px_ca7VoFdks5XnbXQwA%3D%3D" alt="Rock Paper Scissors Lizard Spock resolution diagram"></a><br></p>
-</center>
+<p><a href="https://commons.wikimedia.org/wiki/File:Rock_Paper_Scissors_Lizard_Spock_en.svg#/media/File:Rock_Paper_Scissors_Lizard_Spock_en.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Rock_Paper_Scissors_Lizard_Spock_en.svg/1200px-Rock_Paper_Scissors_Lizard_Spock_en.svg.png" alt="Rock Paper Scissors Lizard Spock resolution diagram"></a><br>By <a href="//commons.wikimedia.org/wiki/User_talk:VidTheKid~commonswiki" title="User talk:VidTheKid~commonswiki">VidTheKid</a> - <span class="int-own-work" lang="en">Own work</span>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=6560997">https://commons.wikimedia.org/w/index.php?curid=6560997</a></p></center>
