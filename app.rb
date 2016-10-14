@@ -31,7 +31,7 @@ class Rps < Sinatra::Base
     erb(:choice)
   end
 
-  post '.result' do
+  get './result' do
     erb(:result)
   end
 
