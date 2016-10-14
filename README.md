@@ -1,6 +1,6 @@
 
 CODE TO RUN VIRTUAL SERVER:
-rackup --env production config.ru -p $PORT -o $IP
+rackup --env production config.ru -p $PORT -o $IP       #Allows me to run the virtual server to view the website.
 
 
 REQUIREMENTS:

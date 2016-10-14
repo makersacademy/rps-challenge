@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
-gem 'sinatra'
-gem 'rake'
+# gem 'sinatra'
+# gem 'rake'
 
 group :test do
   gem 'rspec'
@@ -12,4 +12,15 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  
+  
+  
+  gem 'sinatra'
+  gem 'rake'
+  
+  gem 'rspec-sinatra'
+  gem 'rerun'
+  
+  gem 'poltergeist'
+  gem 'phantomjs'
 end

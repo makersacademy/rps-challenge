@@ -1,3 +1,5 @@
+require 'sinatra'
+
 class RPS < Sinatra::Base
 
   get '/' do
@@ -7,6 +9,10 @@ class RPS < Sinatra::Base
   post '/register' do
     
     redirect '/play'
+  end
+  
+  get '/play' do
+    erb(:play)
   end
 
   run! if app_file == $0
