@@ -1,11 +1,11 @@
-require 'sinatra/base'
-require 'player'
+require 'sinatra' #require 'sinatra/base'
+#require 'player'
 # require 'game'
 # require 'attack'
 
-class Battle < Sinatra::Base
+#class Battle < Sinatra::Base
 
-enable :sessions
+#enable :sessions
 
   #
   # before do
@@ -16,6 +16,8 @@ enable :sessions
      erb :index
   end
 #
+
+
 #   post '/names' do
 #    player_1 = Player.new(params[:player_1_name])
 #    player_2 = Player.new(params[:player_2_name])
