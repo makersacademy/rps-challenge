@@ -9,7 +9,8 @@ feature 'user should see available choices' do
 
   scenario 'user can select the "Rock" option' do
     sign_in_and_play
-    click_button('Rock')
+    click_link('Rock')
+    # expect(page.current_path).to eq('/choice')
     expect(page).to have_content"You selected rock"
   end
 end
