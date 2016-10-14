@@ -1,5 +1,7 @@
 # RPS Challenge
 
 User Stories
-So that I can see if I am a survivor
+
+As a User
+So that I can see if I am a survivor of Jigsaw
 I would like to be able to play "rock, paper, scissors"
