@@ -19,9 +19,10 @@ feature "opponent's choice" do
   scenario 'user can select their choice then see their opponents' do
     sign_in_and_play
     click_link("Rock")
-    click_link("Find out who wins")
-    # expect(page.current_path).to eq('/result')
-    expect(page).to have_content ("PLAYER is the winner!")
+    # expect(page.current_path).to eq('/rock')
+    # click_link("Find out who wins")
+    expect(page.current_path).to eq('/choice')
+    # expect(page).to have_content ("PLAYER is the winner!")
   end
 
 end

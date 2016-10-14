@@ -22,6 +22,18 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  get './rock' do
+    redirect './choice'
+  end
+
+  get './paper' do
+    redirect './choice'
+  end
+
+  get './scissors' do
+    redirect './choice'
+  end
+
   get '/choice' do
     @player_1_name = $player_1.name
     @computer_name = $computer.name
