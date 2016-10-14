@@ -1,0 +1,19 @@
+<h2>Player: <%= @game.player.name %></h2>
+<h2>Computer</h2>
+
+<form method="post" action="/result">
+  <label>
+    <input type="radio" name="weapon" id="rock" value="rock" checked>
+    Rock
+  </label>
+  <label>
+    <input type="radio" name="weapon" id="paper" value="paper">
+    Paper
+  </label>
+  <label>
+    <input type="radio" name="weapon" id="scissors" value="scissors">
+    Scissors
+  </label>
+  <button type="submit" value="Submit">Submit</button>
+
+</form>
