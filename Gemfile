@@ -8,3 +8,7 @@ gem 'capybara'
 gem 'rspec'
 gem 'rerun'
 gem 'coveralls', require: false
+gem 'byebug'
+gem 'rake'
+gem 'rubocop'
+gem 'rubocop-rspec'
