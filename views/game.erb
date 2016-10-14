@@ -1,0 +1,11 @@
+<h1>Welcome to rock paper scissors <%= @game.player.name %>!</h1>
+
+<form action="/choice" method="post">
+	<label for="rock">Rock</label>
+	<input id="rock" type="radio" name="choice" value="rock">
+	<label for="paper">Paper</label>
+	<input id="paper" type="radio" name="choice" value="paper">
+	<label for="scissors">Scissors</label>
+	<input id="scissors" type="radio" name="choice" value="scissors">
+	<input type="submit" value="Make your choice!">
+</form>
