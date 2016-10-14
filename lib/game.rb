@@ -18,11 +18,11 @@ class Game
 	def decide_winner
 		weaknesses = {:rock => "paper", :paper => "scissors", :scissors => "rock"}
 		if @player.choice == @opponent.choice
-			@outcome = "draw"
+			@outcome = "its a draw."
 		elsif @opponent.choice == weaknesses[@player.choice.to_sym]
 			@outcome = "you lose!"
 		else
-			@outcome = "you win"
+			@outcome = "you win!"
 		end
 	end
 end
