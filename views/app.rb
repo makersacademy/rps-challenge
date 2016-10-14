@@ -7,8 +7,7 @@ class RPS < Sinatra::Base
   end
   
   post '/register' do
-    @reg_name = params['player_name']
-    erb(:register)
+    
     #redirect '/play'
   end
   
