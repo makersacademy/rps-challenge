@@ -1,3 +1,16 @@
+
+CODE TO RUN VIRTUAL SERVER:
+rackup --env production config.ru -p $PORT -o $IP
+
+
+REQUIREMENTS:
+1) I would like to register my name before playing an online game
+
+2) I would like to be able to play rock/paper/scissors
+
+
+
+
 # RPS Challenge
 
 Instructions

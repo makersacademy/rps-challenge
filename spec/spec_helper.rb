@@ -8,7 +8,10 @@ SimpleCov.formatters = [
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
 SimpleCov.start
+
+Coveralls.wear!   #Is this required?
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
 require 'capybara/rspec'
+
