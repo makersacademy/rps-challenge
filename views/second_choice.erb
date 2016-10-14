@@ -1,0 +1,7 @@
+<h4> <%= @game.player_1.name %> please look away so that <%= @game.player_2.name %> can choose
+<h4> <%= @game.player_2.name %> please choose one: </h4>
+<form action ='/confirmation-multi'>
+  <button name="option" type= "submit" value="rock"> Rock  </button>
+  <button name="option" type= "submit" value="scissor"> Scissor </button>
+  <button name="option" type= "submit" value="paper"> Paper  </button>
+</form>

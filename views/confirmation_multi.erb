@@ -1,0 +1,3 @@
+<h3> <%= @game.player_1.name %> chose: <%= @game.player_1.option %> </h3>
+<h3> <%= @game.player_2.name %> chose: <%= @game.player_2.option %> </h3>
+<h3> <%= @game.declare_winner(@game.player_1.option,@game.player_2.option) %> </h3>
