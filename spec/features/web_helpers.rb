@@ -7,7 +7,7 @@ end
 
 def start_game_vs_player
 	visit('/')
-	choose('#human')
+	choose('human_radio')
 	fill_in :name, with: "Antony"
 	fill_in :player2_name, with: "Player 2"
 	click_button('Submit')

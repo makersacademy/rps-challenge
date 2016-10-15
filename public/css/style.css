@@ -24,7 +24,7 @@ h2:first-of-type {
 input[type="text"] {
 	color: #33261d;
 	display: block;
-	margin: 100px auto 0;
+	margin: 100px auto 15px;
 	font-size: 30px;
 	padding: 10px 5px;
 }
@@ -52,6 +52,8 @@ input[type="submit"]:hover {
 form[action="/choice"] {
 	margin: 30px 0;
 }
+
+
 
 #player2_name {
 	display: none;

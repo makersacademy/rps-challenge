@@ -1,4 +1,4 @@
-$('#human').on("click", function() {
+$('#human_radio').on("click", function() {
 	$('#player2_name').show();
 })	
 

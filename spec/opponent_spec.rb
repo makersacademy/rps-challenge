@@ -9,6 +9,12 @@ describe Opponent do
 		end
 	end
 
+	describe '#name' do
+		it 'returns opponent' do
+			expect(subject.name).to eq 'Opponent'
+		end
+	end
+
 	describe '#choose' do
 		it 'updates the opponents choice variable' do
 			subject.choose
