@@ -1,9 +1,8 @@
 <h1>Rock, Paper, Scissors</h1>
 
 <form action = '/result' method = "post">
-  <p>Hello <%=@rps_game.player_1.name%>! You are playing against the computer.</p>
-  <p>Please make your selection and then click 'OK'.</p>
-  
+  <p>Hello <b><%=@rps_game.player_1.name%></b>! You are playing against <b><%=@rps_game.player_2.name%></b>.</p>
+  <p>Please make your selection and then click 'Submit'.</p>
   
   <p><label for = "rock"><b>Rock</b>
     <input type = "radio" name = "rps_choice" value = "rock" checked/>
@@ -15,7 +14,7 @@
     <input type = "radio" name = "rps_choice" value = "scissors"/>
   </label></p>  
   
-  <input type = "submit" value = "Submit" name = "play_computer"/> 
+  <input type = "submit" name = "play_computer" value = "Submit"/> 
   
 </form>
 

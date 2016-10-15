@@ -26,10 +26,17 @@ class RPS < Sinatra::Base
   end
   
   get '/play' do
+    @rps_game.reset_choices
     erb(:play)
   end
   
   post '/result' do
+    p params
+    @rps_game.selection(params['rps_choice'])
+    @rps_game.record_player_choices
+    @rps_game.switch_turns
+    @rps_game.selection(@rps_game.auto_choice)
+    @rps_game.record_player_choices
     erb(:result)
   end
   
