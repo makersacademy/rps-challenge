@@ -8,4 +8,8 @@ class Game
     @players = [player]
   end
 
+  def first_player_name
+    @players[0].name
+  end
+
 end
