@@ -14,6 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    @game = Game.instance
     erb :play
   end
 
@@ -25,7 +26,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @game = Game.instance
     erb :result
+  end
+
+  post '/reset' do
+    @game = Game.instance
+    @game.set_choice
+    redirect to('/play')
   end
 
   # start the server if ruby file executed directly

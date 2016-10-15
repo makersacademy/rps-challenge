@@ -1,6 +1,8 @@
 class Game
 
-  attr_reader :game, :choice, :player_1, :result, :winner
+  attr_reader :game, :choice, :player_1, :result, :winner, :computer_score
+
+  POINTS = 1
 
   def self.create(player)
     @game = Game.new(player)
@@ -13,6 +15,7 @@ class Game
   def initialize(player, choice = set_choice)
     @player_1 = player
     @choice = choice
+    @computer_score = 0
   end
 
   def set_choice
@@ -24,11 +27,27 @@ class Game
   end
 
   def check_result
-    @player_1.choice == @choice ? @result = tie : @result = set_winner
+    @player_1.choice == @choice ? (@result = tie) && (@winner = '') : @result = set_winner
   end
 
   def set_winner(winner = set_result)
     winner == "computer" ? @winner = "the computer" : (@player_1.receive_points) && (@winner = "#{@player_1.name}")
+  end
+
+  def player_1_name
+    @player_1.name
+  end
+
+  def player_1_choice
+    @player_1.choice
+  end
+
+  def player_1_score
+    @player_1.score
+  end
+
+  def computer_receive_points
+    @computer_score += POINTS
   end
 
   private
