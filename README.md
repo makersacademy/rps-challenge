@@ -7,7 +7,8 @@ Approach
 2. Wrote feature test for registering name
 3. Wrote feature test for choosing weapon
 4. Thought about domain model before writing unit tests (see below)
-5. Wrote unit test for Player class
+5. Wrote unit test for Player class to initialize with a name
+6. Wrote unit test for Game to view choices
 
 
 
