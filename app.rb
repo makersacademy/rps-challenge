@@ -1,8 +1,13 @@
+require './lib/game'
 require './lib/player'
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 	
+  #  if ENV['RACK_ENV'] == 'test'
+  #   disable :show_exceptions
+  # end
+
 	before do
 		@game = Game.instance
 	end
@@ -21,6 +26,10 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  get '/play' do
+    erb :play
+  end
+
   post '/choice' do
     @game.move(params[:choice])
     redirect '/outcome'
@@ -28,10 +37,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     erb :outcome
-  end
-
-  get '/play' do
-    erb :play
   end
 
   run! if app_file == $0
