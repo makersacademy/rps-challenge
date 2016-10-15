@@ -1,5 +1,8 @@
 require_relative 'features/web_helpers'
-require File.join(File.dirname(__FILE__), 'rps.rb')
+
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'rps.rb')
 
 require 'coveralls'
 require 'simplecov'
@@ -12,6 +15,8 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
+
+Coveralls.wear!
 
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
