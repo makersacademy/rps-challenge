@@ -23,7 +23,8 @@ h2:first-of-type {
 
 input[type="text"] {
 	color: #33261d;
-	margin: 100px 0 0;
+	display: block;
+	margin: 100px auto 0;
 	font-size: 30px;
 	padding: 10px 5px;
 }

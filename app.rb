@@ -11,7 +11,8 @@ class App < Sinatra::Base
 
   post '/new_game' do
   	name = params[:name] 
-    params[:human] ? player2 = Player.new("name") : player2 = Opponent.new
+    player2_name = params[:player2_name] if !params[:player2_name].nil? 
+    params[:human] ? player2 = Player.new(player2_name) : player2 = Opponent.new
   	Game.create(Player.new(name),player2)
   	redirect '/game'
   end
