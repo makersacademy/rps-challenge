@@ -21,7 +21,9 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @game.player_choice(params[:choice])
+    @game.set_player_choice(params[:choice].to_sym)
+    @game.set_auto_choice
+    @game.decide_winner
     redirect to '/result'
   end
 
