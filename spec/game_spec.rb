@@ -22,7 +22,7 @@ describe Game do
     #   game = described_class.new(bob, sally)
     #   expect(game.player_two).to eq sally
     # end
-    it 'initilizes and empty array' do
+    it 'initilizes an empty array' do
       expect(subject.submitted_weapons).to be_empty
     end
   end

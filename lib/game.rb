@@ -19,7 +19,6 @@ class Game
     @submitted_weapons << weapon_two.choice
   end
 
-
   def evaluate
     if !tie?
       if !rock?

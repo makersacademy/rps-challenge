@@ -5,7 +5,6 @@ describe Weapon do
 
   subject { described_class.new }
 
-
   let(:rock) {double(:rock)}
   let(:paper) {double(:paper)}
   let(:scissors) {double(:scissors)}
@@ -23,7 +22,6 @@ describe Weapon do
     end
   end
 
-
   describe '#choose_rock' do
     it 'allows you to choose choose rock' do
       subject.choose_rock
@@ -37,7 +35,6 @@ describe Weapon do
       expect(subject.choice).to eq :paper
     end
   end
-
 
   describe '#choose_scissors' do
     it 'allows you to choose choose scissors' do
