@@ -12,15 +12,18 @@ class RPS < Sinatra::Base
 
   post '/names' do
     $game = Game.new(params[:Player1])
-    redirect '/start-game'
+    redirect '/choose-weapon'
   end
 
-  get '/start-game' do
+  get '/choose-weapon' do
     @game = $game
-    erb :start_game
+    erb :choose_weapon
   end
 
-
+  get '/winner' do
+    @game = $game
+    erb :winner
+  end
 
   run! if app_file == $0
 end
