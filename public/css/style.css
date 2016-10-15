@@ -16,13 +16,6 @@ body h2 {
 	margin-bottom: 45px;
 }
 
-form label {
-	display: inline-block;
-	height: 200px;
-	width: 150px;
-	background-size: cover;
-}
-
 label[for="submit"] {
 	display: block;
 	height: initial;
@@ -46,11 +39,6 @@ div {
 	display: inline-block;
 }
 
-div img {
-	height: 268px;
-	width: 224px;
-}
-
 #play label {
 	width: initial;
 	height: initial;
@@ -58,6 +46,15 @@ div img {
 
 #play input[type="submit"] {
 	margin: 10px 0;
+}
+
+#game input[type="submit"] {
+	margin: 10px 0;
+}
+
+#game label {
+	width: initial;
+	height: initial;
 }
 
 h3 {
