@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Register name' do
-  scenario 'name entered' do
+  scenario 'remembers your name' do
     visit('/')
     fill_in :name, with: 'Frances'
     click_button "Let's play"

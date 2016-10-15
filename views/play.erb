@@ -1,1 +1,11 @@
 <h1>Hello <%= @name %></h1>
+<h2>Okay, please choose your weapon!</h2>
+<form action="/result" method="post">
+  <label for="rock">Rock</label>
+  <input type="radio" name="choice" id="rock" value="rock">
+  <label for="rock">Paper</label>
+  <input type="radio" name="choice" id="paper" value="paper">
+  <label for="rock">Scissors</label>
+  <input type="radio" name="choice" id="scissors" value="scissors">
+  <input type="submit" id="Let's do this!">
+</form>
