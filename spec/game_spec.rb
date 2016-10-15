@@ -28,4 +28,18 @@ describe Game do
     expect(game.winner).to eq "Player1"
   end
 
+  it 'should set correct message' do
+    game.set_player_choice(:rock)
+    game.set_auto_choice
+    game.decide_winner
+    expect(game.message).to eq "Player1, you are the winner!"
+  end
+
+  it 'should set correct philosophy' do
+    game.set_player_choice(:rock)
+    game.set_auto_choice(0)
+    game.decide_winner
+    expect(game.philosophy).to eq "Enjoy the sense of balance that true equality can bring."
+  end
+
 end

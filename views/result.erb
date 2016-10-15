@@ -6,6 +6,12 @@
 <body>
 
 <h1>The computer chose <%=@game.player2_choice%>
-<h1><%=@game.winner%> is the winner</h1>
+<h1><%=@game.message%> </h1>
+<h2><%=@game.philosophy%></h1>
+
+  <form action='/play'>
+      <input type="submit" value="Play Again"/>
+    </form>
+
 </body>
 </html>

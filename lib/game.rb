@@ -8,13 +8,15 @@ class Game
     @game
   end
 
-  attr_reader :player1, :player1_choice, :player2_choice, :winner
+  attr_reader :player1, :player1_choice, :player2_choice, :winner, :message, :philosophy
 
   def initialize(name)
     @player1 = name
     @player1_choice = nil
     @player2_choice = nil
     @winner = nil
+    @message = nil
+    @philosophy = nil
   end
 
   def set_player_choice(choice)
@@ -36,6 +38,20 @@ class Game
       when :scissors
         @winner = (@player2_choice == :rock) ? "game" : @player1
       end
+    end
+    messaging
+  end
+
+  def messaging
+    if @winner.nil?
+      @message = "It's a draw!"
+      @philosophy = "Enjoy the sense of balance that true equality can bring."
+    elsif @winner == @player1
+      @message = "#{@player1}, you are the winner!"
+      @philosophy = "Let the feeling of pride seep into your inner core."
+    elsif @winner == "game"
+      @message = "#{@player1}, you lost this time."
+      @philosophy = "Those who face adversity with a resilient heart can never truly lose."
     end
   end
 

@@ -11,9 +11,9 @@ feature 'allow choice to lead to a result' do
     when :rock
       expect(page).to have_content "It's a draw!"
     when :paper
-      expect(page).to have_content "Computer is the winner!"
+      expect(page).to have_content "Malinna, you lost this time."
     when :scissors
-      expect(page).to have_content "Malinna is the winner!"
+      expect(page).to have_content "Malinna, you are the winner!"
     end
   end
 end
