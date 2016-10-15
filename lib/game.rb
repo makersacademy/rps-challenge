@@ -30,40 +30,55 @@ class Game
     @choices.sample
   end
 
-  def result(opponent_choice = computer_selection)
-    "#{@player.name} choice is #{@player_selection} and #{@opponent.name} choice is #{opponent_choice}"
+  def result
+
+    @opponent_choice = computer_selection
+
     case
-      when @player_selection == "Rock" && opponent_choice == "Rock"
-        "You both chose the same. It's a draw!"
+      when @player_selection == "Rock" && @opponent_choice == :Rock
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. You both chose the same. It's a draw!"
         # draw
-      when @player_selection == "Paper" && opponent_choice == "Paper"
-        "You both chose the same. It's a draw!"
+      when @player_selection == "Paper" && @opponent_choice == :Paper
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. You both chose the same. It's a draw!"
         # draw
-      when @player_selection == "Scissors" && opponent_choice == "Scissors"
-        "You both chose the same. It's a draw!"
+      when @player_selection == "Scissors" && @opponent_choice == :Scissors
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. You both chose the same. It's a draw!"
         # draw
-      when @player_selection == "Paper" && opponent_choice == "Rock"
-        "Paper beats Rock. The winner is #{@player.name}"
+      when @player_selection == "Paper" && @opponent_choice == :Rock
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Paper beats Rock. #{@player.name} wins!"
         # paper_beats_rock(@player)
-      when @player_selection == "Rock" && opponent_choice == "Paper"
-        "Paper beats Rock. The winner is #{@opponent.name}"
+      when @player_selection == "Rock" && @opponent_choice == :Paper
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Paper beats Rock. #{@opponent.name} wins!"
         # paper_beats_rock(@opponent)
-      when @player_selection == "Rock" && opponent_choice == "Scissors"
-        "Rock beats Scissors. The winner is #{@player.name}"
+      when @player_selection == "Rock" && @opponent_choice == :Scissors
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Rock beats Scissors. #{@player.name} wins!"
         # rock_beats_scissors(@player)
-      when @player_selection == "Scissors" && opponent_choice == "Rock"
-        "Rock beats Scissors. The winner is #{@opponent.name}"
+      when @player_selection == "Scissors" && @opponent_choice == :Rock
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Rock beats Scissors. #{@opponent.name} wins!"
         # rock_beats_scissors(@opponent)
-      when @player_selection == "Scissors" && opponent_choice == "Paper"
-        "Scissors beat Paper. The winner is #{@player.name}"
+      when @player_selection == "Scissors" && @opponent_choice == :Paper
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Scissors beat Paper. #{@player.name} wins!"
         # scissors_beat_paper(@player)
-      when @player_selection == "Paper" && opponent_choice == "Scissors"
-        "Scissors beat Paper. The winner is #{@opponent.name}"
+      when @player_selection == "Paper" && @opponent_choice == :Scissors
+        # output_selections
+        "... and #{@opponent.name} chose #{@opponent_choice}. Scissors beat Paper. #{@opponent.name} wins!"
         # scissors_beat_paper(@opponent)
     end
   end
 
   private
+
+  def output_selections
+    puts "You chose the #{@player_selection} and #{@opponent.name}'s choice is #{@opponent_choice}. "
+  end
 
   def draw
     "You both chose the same. It's a draw!"

@@ -5,7 +5,7 @@ feature 'Choose weapon' do
     register_and_play
     choose('Rock')
     click_button "Let's do this!"
-    expect(page).to have_content 'You chose the Rock!'
+    expect(page).to have_content 'Frances chose the Rock!'
   end
 
 end

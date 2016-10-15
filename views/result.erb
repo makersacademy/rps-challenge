@@ -1,2 +1,2 @@
-<h1>You chose the <%= @game.player_selection(@choice).capitalize %>!</h1>
-<p><%= @game.result %></p>
+<h1><%= @game.player.name %> chose the <%= @game.player_selection(@choice).capitalize %>!</h1>
+<h2><%= @game.result %></h2>

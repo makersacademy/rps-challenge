@@ -1,5 +1,4 @@
-<h1>Hello <%= @game.player.name %></h1>
-<h2>Okay, please choose your weapon!</h2>
+<h1>Okay <%= @game.player.name %>, please choose your move!</h1>
  <form action="/result" method="post">
    <input type="radio" name="choice" id="<%= @game.view_choices[0] %>" value="<%= @game.view_choices[0] %>">
    <label for="r<%= @game.view_choices[0] %>"><%= @game.view_choices[0].capitalize %></label>
