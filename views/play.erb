@@ -1,0 +1,33 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <h1><%= Game.current_game.player.name %> challenges Edward to a game of ROCK, PAPER, SISSORS!</h1>
+
+  <div class="weapons">
+
+    <div class="rock">
+      <form action="/choice" method="post">
+        <button type="submit" name="player_choice" value="ROCK">ROCK</button>
+      </form>
+    </div>
+
+    <div class="paper">
+      <form action="/choice" method="post">
+        <button type="submit" name="player_choice" value="PAPER">PAPER</button>
+      </form>
+    </div>
+
+    <div class="sissors">
+      <form action="/choice" method="post">
+        <button type="submit" name="player_choice" value="SISSORS">SISSORS</button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
