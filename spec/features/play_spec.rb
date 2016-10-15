@@ -20,5 +20,4 @@ feature 'Preparing to play' do
     find_button("Scissors").visible?
   end
 
-
 end
