@@ -101,3 +101,7 @@ October 15, 2016
 - installing and initializing the makersinit gem
 - included rspec sinatra in the gem file
 - initialised rspec-sinatra for this app
+
+# FIRST USER STORY
+- The user, would like to register for a game of rock, paper, scissors and see his name in colors
+- Create a home page, then click to enter the game and register your name
