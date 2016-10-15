@@ -92,7 +92,7 @@ In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or simi
 
 ## Not removing comments before committing
 
-Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
+Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are committing regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
 
 # Step 2: Tests and \*\_spec.rb files  
