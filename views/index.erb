@@ -1,8 +1,55 @@
-<h1>Rock Paper Scissors</h1>
+<head>
+<style>
+body {
+  background-image:
+  url("http://www.anikahoward.com/site/wp-content/uploads/2011/01/j0430969.jpg");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+form {
+  font-family: "Helvetica";
+  color: #2B2B30;
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 41%;
+  margin-right:41%;
+  width: 18%;
+}
+input[type=submit] {
+ border-radius: 20px;
+ font-family: "Helvetica";
+ background-color: #595861;
+ border: none;
+ color: #FFFFFF ;
+ font-size: 18px;
+ height: 40px;
+ width: 250px;
+}
+input[type=submit]:hover {
+   color: #FFFFFF;
+   background-color: #3C3B41;
+   border: none;
+}
+input[type=text] {
+ border-radius: 10px;
+ border-width: 1px;
+ background-color: #FFFFFF;
+ border-color: #3C3B41;
+ font-family: "Helvetica";
+ height: 40px;
+ font-size: 18px;
+ width: 250px;
+ }
+</style>
+</head>
+<body>
 
+<div>
 <form action="/names" method="post" >
-  Enter your name:
+  <p>Enter your name</p>
   <input type="text" name="name_1">
-  <br><br>
   <input type="submit" value="Start game">
 </form>
+</div>
+
+</body>

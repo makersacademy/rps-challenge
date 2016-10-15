@@ -31,7 +31,7 @@ class Game
   end
 
   def set_winner(winner = set_result)
-    winner == "computer" ? @winner = "the computer" : (@player_1.receive_points) && (@winner = "#{@player_1.name}")
+    winner == "computer" ? (@winner = "the computer") && computer_receive_points : (@player_1.receive_points) && (@winner = "#{@player_1.name}")
   end
 
   def player_1_name
