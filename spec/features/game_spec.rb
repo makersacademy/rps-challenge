@@ -16,3 +16,11 @@ feature 'Player can choose between weapons' do
     expect(page).to have_text("Scissors")
   end
 end
+
+feature 'Displays player\'s weapon of choice' do
+  scenario 'on result page' do
+    enter_names_and_play
+    click_button("rock")
+    expect(page).to have_text("Rock")
+  end
+end
