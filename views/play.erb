@@ -1,4 +1,21 @@
-<body>
-  <h2>Hi, <%=@name%>.</h2>
-  <h3>Let's play</h3>
+<body class="play">
+  <h2>Hi, <%=@player1.name%>.</h2>
+  <h4>select your weapon:</h4>
+  <form action="/play" method="post">
+    <input type="submit" name="attack" value="Rock" />
+    <input type="submit" name="attack" value="Paper" />
+    <input type="submit" name="attack" value="Scissors" />
+  </form>
+  <br/>
+  <p>
+    <%=@player1.attack ? "#{@player1.name} selected <b>#{@player1.attack.capitalize}</b>" : ''%>
+  </p>
+  <p>
+    <%=@player2.attack ? "#{@player2.name} selected <b>#{@player2.attack.capitalize}</b>" : ''%>
+  </p>
+
+  <h3>
+    <%=@winner.nil? ? '' : @winner ? "#{@winner.name} wins!" : 'no winner, try again'%>
+  </h3>
+
 </body>

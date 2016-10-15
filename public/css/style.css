@@ -14,6 +14,19 @@
   margin-top: -5px;
   margin-bottom: 40px;
   font-size: 1.35em;
+  word-spacing: 20px;
+}
+
+.play h4 {
+  margin-top: -20px;
+  margin-bottom: 15px;
+}
+.play h3 {
+  margin-top: 40px;
+}
+.play p {
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
@@ -36,12 +49,20 @@ input[type=submit] {
   padding: 5px;
   color: black;
   background-color: white;
-  border: 0px;
   cursor:pointer;
+  border-width: 0px;
 }
 
 input[type=submit]:hover {
   color: white;
   background-color: black;
-  border: 0px;
+  border-width: 0px;
 }
+/*.play input[type=submit] {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.play input[type=submit]:hover {
+  border-width: 1px;
+}*/

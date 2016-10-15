@@ -1,17 +1,27 @@
 require "game"
 
 describe Game do
-
   let(:game) { double :game }
   let(:player1) { double :player, attack: :rock }
   let(:player2_cpu) { double :computer, attack: :rock }
   let(:usual_attacks) { [:rock, :paper, :scissors] }
+  subject { Game.new(player1, player2_cpu) }
 
   describe '.create' do
     it 'should create a new instance of game class' do
       expect(Game).to receive(:new).and_return(game)
-      Game.create
+      Game.create(player1, player2_cpu)
       expect(Game.instance).to eq game
+    end
+  end
+
+  describe '#initialize' do
+    it 'should save player1' do
+      expect(subject.player1).to eq player1
+    end
+
+    it 'should save player2' do
+      expect(subject.player2).to eq player2_cpu
     end
   end
 
@@ -67,6 +77,24 @@ describe Game do
         allow(player2_cpu).to receive(:attack).and_return(:rock)
         expect(subject.decide_winner(player1, player2_cpu)).to eq player2_cpu
       end
+    end
+  end
+
+  describe '#auto_battle' do
+    it 'should select given attack for player1' do
+      allow(player2_cpu).to receive(:select_random).with(Game.attacks)
+      expect(player1).to receive(:select_attack).with(instance_of(Symbol))
+      subject.auto_battle(usual_attacks.sample)
+    end
+  end
+
+  describe '#winner' do
+    it 'should return the winner' do
+      allow(player1).to receive(:select_attack)
+      allow(player2_cpu).to receive(:attack).and_return(:scissors)
+      allow(player2_cpu).to receive(:select_random).and_return(:scissors)
+      subject.auto_battle(:rock)
+      expect(subject.winner).to eq player1
     end
   end
 end
