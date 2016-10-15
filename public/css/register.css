@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'ottomedium';
+    src: url('otto-webfont.woff2') format('woff2'),
+         url('otto-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cafe_francoiseregular';
+    src: url('caf_franaoise-webfont.woff2') format('woff2'),
+         url('caf_franaoise-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+  background: url("https://s-media-cache-ak0.pinimg.com/originals/e6/da/32/e6da32e3a37565956a73813990b274ae.jpg");
+  background-size: cover;
+  filter: brightness(150%);
+}
+
+.header {
+    width: 70%;
+    float:left;
+    margin-right: 30%;
+    margin-top: 10%;
+    font-weight: bolder;
+}
+
+.rock, .paper, .scissors {
+  width: 33%;
+  font-family: 'cafe_francoiseregular';
+  text-shadow: 2px 2px 4px white;
+  float:left;
+  font-size: 40px;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  height: 20%;
+  float:left;
+  text-align: left;
+}
+
+.player-input {
+  width: 60%;
+}
+
+input[type=text] {
+  height: 70px;
+  width: 300px;
+  border: 5px solid black;
+  border-radius: 5px;
+  font-size: 50px;
+  font-family: 'cafe_francoiseregular';
+  margin-left: 6%;
+  margin-right: 5%;
+  float:left;
+}
+
+input[placeholder]{
+  height: 70px;
+  width: 300px;
+  font-size: 50px;
+  font-family: 'ottomedium';
+  color: black;
+  text-align: left;
+  float:left;
+}
+
+label {
+  font-size: 60px;
+  font-family: 'ottomedium';
+  color: white;
+  text-shadow: 4px 4px 4px black;
+  margin-right: 50%;
+  margin-left: 6%;
+}
+
+input[type="submit"]{
+  float:left;
+  height: 70px;
+  width: 150px;
+  border: 5px solid black;
+  border-radius: 5px;
+  font-size: 40px;
+  background-color: black;
+  color: white;
+  font-family: 'cafe_francoiseregular';
+}

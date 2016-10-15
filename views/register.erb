@@ -1,6 +1,7 @@
 <html>
 <head>
-
+  <link rel="stylesheet" href="public/reset.css" />
+  <link rel="stylesheet" href="css/register.css" />
 </head>
 
 <body>
@@ -15,14 +16,16 @@
       <h1>SCISSORS</h1>
     </div>
   </div>
-  <form action="/names" method="post">
-    <div class="player-input">
-      <h2>Name:</h2>
-      <input type="text" name="player1" placeholder="Enter your name">
-    </div>
-    <div class="play">
-      <input type="submit" value="play">
-    </div>
-  </form>
+  <div class="input">
+    <form action="/names" method="post">
+      <div class="player-input">
+        <label for="player1">Enter your name here...</label>
+        <input type="text" name="player1" placeholder="Enter your name here">
+      <!-- </div> -->
+      <!-- <div class="play"> -->
+        <input type="submit" value="play">
+      </div>
+    </form>
+  </div>
 </body>
 </html>
