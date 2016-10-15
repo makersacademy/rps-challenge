@@ -7,7 +7,7 @@ class CSB < Sinatra::Base
   end
 
   post '/setup' do
-    # @player = Player.new(params[:player_name])
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 

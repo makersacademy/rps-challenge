@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 feature CSB do
 
   context '#index' do
@@ -16,7 +17,6 @@ feature CSB do
       click_button "OK"
       expect(page).to have_text("Let's play!")
     end
-
 
   end
 
