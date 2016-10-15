@@ -1,19 +1,15 @@
 class Game
 
-  def self.create(attacks = [:rock, :paper, :scissors])
-    @game = self.new(attacks)
+  def self.create
+    @game = self.new
   end
 
   def self.instance
     @game
   end
 
-  def initialize(attacks)
-    @attacks = attacks
-  end
-
-  def attacks
-    @attacks.dup
+  def self.attacks
+    [:rock, :paper, :scissors]
   end
 
   def decide_winner(player1, player2)

@@ -6,8 +6,6 @@ describe Game do
   let(:player1) { double :player, attack: :rock }
   let(:player2_cpu) { double :computer, attack: :rock }
   let(:usual_attacks) { [:rock, :paper, :scissors] }
-  let(:other_attacks) { [:paper, :lizard, :spock] }
-  subject { Game.new(usual_attacks) }
 
   describe '.create' do
     it 'should create a new instance of game class' do
@@ -15,16 +13,11 @@ describe Game do
       Game.create
       expect(Game.instance).to eq game
     end
-
-    it 'can be created with different attacks' do
-      Game.create(other_attacks)
-      expect(Game.instance.attacks).to eq other_attacks
-    end
   end
 
   describe '.attacks' do
-    it 'should return a default list of available attacks' do
-      expect(subject.attacks).to eq usual_attacks
+    it 'should return a list of available attacks' do
+      expect(Game.attacks).to eq usual_attacks
     end
   end
 
