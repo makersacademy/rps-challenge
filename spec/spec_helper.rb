@@ -22,8 +22,8 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'byebug'
 require 'capybara/rspec'
 require 'features/web_helpers'
-# require 'player'              # Add these for  the classes later
-# require 'game'              # Add these for  the classes later
+require 'player'              # Add these for  the classes later
+require 'game'              # Add these for  the classes later
 
 Capybara.app = RPS
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
