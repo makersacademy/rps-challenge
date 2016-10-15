@@ -1,1 +1,20 @@
-<h2><%= @game.player_one.name %> vs the Computer</h2>
+
+<div class="player_one_weapon_options">
+  <form action="/weapon_selection" method="post">
+    <input type="submit" name="weapon" value="Paper">
+    <input type="submit" name="weapon" value="Rock">
+    <input type="submit" name="weapon" value="Scissors">
+  </form>
+</div>
+a
+<div class="players_name">
+  <h2><%= @game.player_one.name %> vs Computer</h2>
+</div>
+
+<div class="player_one_score">
+  <h2>Score: 0</h2>
+</div>
+
+<div class="player_two_score">
+  <h2>Score: 0</h2>
+</div>

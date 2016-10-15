@@ -5,7 +5,7 @@ require './lib/player'
 class Rps < Sinatra::Base
 
   before '/' do
-    Game.create(Player.new)
+    Game.create(Player.new, Player.new)
   end
 
   before do
@@ -22,6 +22,11 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
+    erb :play
+  end
+
+  post '/weapon_selection' do
+    @game.player_one.select_weapon(params[:weapon])
     erb :play
   end
 

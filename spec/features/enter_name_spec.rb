@@ -3,9 +3,7 @@ require './app'
 RSpec.feature "player name record", :type => :feature do
 
   scenario "User enters name" do
-    visit "/"
-    fill_in "player_one_name", with: "David Miller"
-    click_button "Play"
-    expect(page).to have_content("David Miller")
+    sign_in_and_play
+    expect(page).to have_content("David Miller vs Computer")
   end
 end
