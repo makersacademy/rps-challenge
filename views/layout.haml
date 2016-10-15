@@ -1,11 +1,13 @@
 !!!
 %html
   %head
-    %title Rock, Paper, Scissors, Lizard, Spock
+    %title Rock Paper Scissors Lizard Spock
     %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel: "stylesheet", integrity: "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin: "anonymous"}
     %link{href: "/css/master.css", rel: "stylesheet", type: "text/css"}
   %body
-    .container
-      .col-lg-12
-      %h1.text-center Rock, Paper, Scissors, Lizard, Spock
-      = yield
+    .container-fluid
+      .col-lg-4
+      .col-lg-4
+      .col-lg-4
+        %h1.text-center Rock - Paper - Scissors - Lizard - Spock
+        = yield

@@ -1,4 +1,11 @@
 body {
+  background: black url("http://i.imgur.com/upzr7If.jpg") no-repeat fixed center;
+  /*http://orig02.deviantart.net/8975/f/2013/002/d/5/rock__paper__scissors__lizard__spock_by_sergeyripper-d5q589n.png*/
+  background-size: 100%;
+  color: white;
+}
 
-  background-color: gray;
+.form-group{
+  /*width: 50%;*/
+  vertical-align: middle;
 }
