@@ -21,23 +21,14 @@ class Game
 
   def evaluate
     if !tie?
-      if !rock?
+      if missing_element == :rock
         :scissors
-      elsif !scissors?
+      elsif missing_element == :scissors
         :paper
       else
         :rock
       end
     end
-
-  end
-
-  def rock?
-    submitted_weapons.include? :rock
-  end
-
-  def scissors?
-    submitted_weapons.include? :scissors
   end
 
   def tie?
@@ -45,7 +36,7 @@ class Game
   end
 
   def missing_element
-    missing_element = @r_p_s - submitted_weapons
+    missing_element = r_p_s - submitted_weapons
     missing_element.first
   end
 

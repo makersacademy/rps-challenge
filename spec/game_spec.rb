@@ -12,16 +12,6 @@ describe Game do
   let(:scissors) {double(:weapon, choice: :scissors)}
 
   describe '#initialize' do
-    # it 'receives a player' do
-    #   expect(subject.player_one).to eq bob
-    # end
-    # it 'defaults to the computer being player 2' do
-    #   expect(subject.player_two).to eq :the_computer
-    # end
-    # it 'sets player two as the other player if one is entered' do
-    #   game = described_class.new(bob, sally)
-    #   expect(game.player_two).to eq sally
-    # end
     it 'initilizes an empty array' do
       expect(subject.submitted_weapons).to be_empty
     end
@@ -56,22 +46,6 @@ describe Game do
       game = Game.new(rock, rock)
       game.add_submitted_weapons
       expect(game.tie?).to eq true
-    end
-  end
-
-  describe '#rock' do
-    it 'determines whether a rock was one of the choices' do
-      game = Game.new(rock, scissors)
-      game.add_submitted_weapons
-      expect(game.rock?).to eq true
-    end
-  end
-
-  describe '#scissors' do
-    it 'determines whether scissors was one of the choices' do
-      game = Game.new(rock, scissors)
-      game.add_submitted_weapons
-      expect(game.scissors?).to eq true
     end
   end
 
