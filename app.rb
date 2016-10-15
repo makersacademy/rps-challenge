@@ -11,13 +11,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(params[:player_1_name])
-    $game = Game.new(player_1)
+    player = Player.new(params[:player_1_name])
+    @game = Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 

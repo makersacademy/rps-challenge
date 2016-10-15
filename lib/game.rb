@@ -19,6 +19,14 @@ class Game
     @name = name
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def winner?
     result == 'Win'
   end
