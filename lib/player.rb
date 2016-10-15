@@ -7,7 +7,7 @@ class Player
   end
 
   def move(move)
-    @player_move = move.to_symbol
+    @player_move = move.to_sym
   end
 
 end
