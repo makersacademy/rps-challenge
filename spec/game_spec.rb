@@ -26,17 +26,70 @@ describe Game do
   end
 
   describe "rules" do
-    it "is a draw if both players make the same move" do
-      allow(player_1).to receive(:make_move).and_return :rock
-      allow(player_2).to receive(:make_move).and_return :rock
-      game.play
-      expect(game.winner).to be nil
+    context "both players make same move" do
+      it "is a draw if both players select rock" do
+        allow(player_1).to receive(:make_move).and_return :rock
+        allow(player_2).to receive(:make_move).and_return :rock
+        game.play
+        expect(game.winner).to be nil
+      end
+      it "is a draw if both players select scissors" do
+        allow(player_1).to receive(:make_move).and_return :scissors
+        allow(player_2).to receive(:make_move).and_return :scissors
+        game.play
+        expect(game.winner).to be nil
+      end
+      it "is a draw if both players select paper" do
+        allow(player_1).to receive(:make_move).and_return :paper
+        allow(player_2).to receive(:make_move).and_return :paper
+        game.play
+        expect(game.winner).to be nil
+      end
     end
-    it "rules that rock beats scissors" do
-      allow(player_1).to receive(:make_move).and_return :rock
-      allow(player_2).to receive(:make_move).and_return :scissors
-      game.play
-      expect(game.winner).to be player_1
+
+    context "rock beats scissors" do
+      it "Player 1 wins when Player 1 chooses rock, Player 2 chooses scissors" do
+        allow(player_1).to receive(:make_move).and_return :rock
+        allow(player_2).to receive(:make_move).and_return :scissors
+        game.play
+        expect(game.winner).to be player_1
+      end
+      it "Player 2 wins when Player 1 chooses scissors, Player 2 chooses rock" do
+        allow(player_1).to receive(:make_move).and_return :scissors
+        allow(player_2).to receive(:make_move).and_return :rock
+        game.play
+        expect(game.winner).to be player_2
+      end
+    end
+
+    context "paper beats rock" do
+      it "Player 1 wins when Player 1 chooses paper, Player 2 chooses rock" do
+        allow(player_1).to receive(:make_move).and_return :paper
+        allow(player_2).to receive(:make_move).and_return :rock
+        game.play
+        expect(game.winner).to be player_1
+      end
+      it "Player 2 wins when Player 1 chooses rock, Player 2 chooses paper" do
+        allow(player_1).to receive(:make_move).and_return :rock
+        allow(player_2).to receive(:make_move).and_return :paper
+        game.play
+        expect(game.winner).to be player_2
+      end
+    end
+
+    context "scissors beats paper" do
+      it "Player 1 wins when Player 1 chooses scissors, Player 2 chooses paper" do
+        allow(player_1).to receive(:make_move).and_return :scissors
+        allow(player_2).to receive(:make_move).and_return :paper
+        game.play
+        expect(game.winner).to be player_1
+      end
+      it "Player 2 wins when Player 1 chooses paper, Player 2 chooses scissors" do
+        allow(player_1).to receive(:make_move).and_return :paper
+        allow(player_2).to receive(:make_move).and_return :scissors
+        game.play
+        expect(game.winner).to be player_2
+      end
     end
   end
 end
