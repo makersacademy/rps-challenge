@@ -1,5 +1,5 @@
 class Computer
-  OPTIONS = [:Rock, :Paper, :Scissors]
+  OPTIONS = [:rock, :paper, :scissors]
 
   def selection
     OPTIONS.sample

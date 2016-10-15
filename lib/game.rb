@@ -3,18 +3,20 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player_name, :player_selection, :computer_selection
+  attr_reader :player, :player_selection, :computer_selection, :name
 
   RULES = {
-    Rock:     { Rock: 'Draw', Paper: 'Lose', Scissors: 'Win' },
-    Paper:    { Rock: 'Win', Paper: 'Draw', Scissors: 'Lose' },
-    Scissors: { Rock: 'Lose', Paper: 'Win', Scissors: 'Draw'}
+    rock:     { rock: 'Draw', paper: 'Lose', scissors: 'Win' },
+    paper:    { rock: 'Win', paper: 'Draw', scissors: 'Lose' },
+    scissors: { rock: 'Lose', paper: 'Win', scissors: 'Draw'}
   }
 
-  def initialize(player_name, player_selection, computer_selection)
-    @player_name = player_name
-    @player_selection = player_selection
-    @computer_selection = computer_selection
+  def initialize(name)
+    @computer_selection = nil
+    @player_selection = nil
+    @computer = Computer.new
+    @player = Player.new(name)
+    @name = name
   end
 
   def winner?
@@ -27,6 +29,14 @@ class Game
 
   def draw?
     result == 'Draw'
+  end
+
+  def computer_selection
+    @computer_selection = @computer.selection
+  end
+
+  def player_selection(weapon)
+    @player_selection = @player.choose_weapon(weapon)
   end
 
   def result
