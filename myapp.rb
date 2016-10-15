@@ -15,6 +15,7 @@ class RPSWeb < Sinatra::Base
 
   get '/play' do
     @name = session[:p1_name]
+    @choice = session[:p1_choice]
     erb(:play)
   end
 
