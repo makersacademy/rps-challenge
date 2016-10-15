@@ -1,59 +1,25 @@
-require 'sinatra' #require 'sinatra/base'
-#require 'player'
-# require 'game'
-# require 'attack'
+require 'sinatra/base'
 
-#class Battle < Sinatra::Base
+class Rps < Sinatra::Base
 
-#enable :sessions
-
-  #
-  # before do
-  #   @game = Game.instance
-  # end
 
   get '/' do
-     erb :index
+    erb :index
   end
-#
 
 
-#   post '/names' do
-#    player_1 = Player.new(params[:player_1_name])
-#    player_2 = Player.new(params[:player_2_name])
-#    @game = Game.create(player_1, player_2)
-#    redirect '/play'
-#   end
-#
-#   get '/play' do
-#     @game = Game.instance
-#     erb :play
-#   end
-#
-#   post '/attack' do
-#     Attack.use(@game.current_opponent)
-#
-#     if @game.game_over?
-#       redirect '/game-over'
-#     else
-#       redirect '/attack'
-#     end
-#   end
-#
-#   get '/attack' do
-#     erb :attack
-#   end
-#
-#   post '/switch-turns' do
-#     @game.switch_turns
-#     redirect('/play')
-#   end
-#
-#   get '/game-over' do
-#     erb :game_over
-#   end
-#
-#   # start the server if ruby file executed directly
-#   run! if app_file == $0
-# end
-#
+
+  post '/names' do
+    erb :names
+    #player_1 = Player.new(params[:player_1_name])
+    # player_2 = Player.new(params[:player2_name])
+    # automate = params[:player2_name].empty?
+    # @game = Game.create(player1, player2, automate)
+    #redirect '/play'
+  end
+
+
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
+end

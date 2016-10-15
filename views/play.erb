@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<body>
+
+  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+
+  <h3><%= @game.player_1.name %>: <%= @game.player_1.hit_points %>hp</h3>
+  <h3><%= @game.player_2.name %>: <%= @game.player_2.hit_points %>hp</h3>
+
+  It's <%=@game.current_turn.name%>'s turn!
+
+  <br />
+  <br />
+  <form action="/attack" method="post">
+    <input type='submit' value='Attack'>
+  </form>
+
+</body>
