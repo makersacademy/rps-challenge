@@ -47,7 +47,8 @@ class RPSApp < Sinatra::Base
     @player_1 = $player_1
     @player_2 = $player_2
     @game.add_submitted_weapons
-    @outcome = @game.evaluate
+    @game.evaluate
+    @outcome = @game.winner
     erb :outcome
   end
 

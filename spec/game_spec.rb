@@ -15,6 +15,9 @@ describe Game do
     it 'initilizes an empty array' do
       expect(subject.submitted_weapons).to be_empty
     end
+    it 'has a issntace variable to store the outcome of the game' do
+      expect(subject.winner).to be_nil
+    end
   end
 
   describe '#add_submitted_weapons' do

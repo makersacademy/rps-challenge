@@ -2,7 +2,7 @@ require_relative 'weapon'
 
 class Game
 
-  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons
+  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
 
   def self.instnce
     @game
@@ -13,6 +13,7 @@ class Game
     @weapon_two = weapon_two
     @submitted_weapons =[] # attr_reader - remove?
     @r_p_s = [:rock, :paper, :scissors]
+    @winner = nil
   end
 
   def add_submitted_weapons
@@ -22,13 +23,13 @@ class Game
 
   def evaluate
     if tie?
-      :tie
+      @winner = :tie
     elsif missing_element == :rock
-      :scissors
+      @winner = :scissors
     elsif missing_element == :scissors
-      :paper
+      @winner = :paper
     else
-      :rock
+      @winner = :rock
     end
   end
 
