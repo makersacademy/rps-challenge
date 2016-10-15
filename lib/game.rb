@@ -1,5 +1,12 @@
 class Game
 
+  MOVES = [:rock, :paper, :scissors]
+  RULES = {
+            rock: :scissors,
+            scissors: :paper,
+            paper: :rock
+          }
+
   def Game.new_game(player)
     @game = Game.new(player)
   end
@@ -12,6 +19,11 @@ class Game
 
   def initialize(player)
     @player = player
+  end
+
+
+  def computer_move
+    MOVES.sample
   end
 
 
