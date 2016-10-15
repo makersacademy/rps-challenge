@@ -13,7 +13,6 @@ class Rps < Sinatra::Base
 
   get '/play' do
 
-  
   end
 
   # start the server if ruby file executed directly
