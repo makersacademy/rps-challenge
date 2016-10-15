@@ -9,6 +9,6 @@ end
 
 scenario "Player is redirected to the game page " do
   sign_in
-  expect(page).to have_content("Get ready to play!")
+  expect(page).to have_content("Get ready to play, Michelle!")
   end
 end
