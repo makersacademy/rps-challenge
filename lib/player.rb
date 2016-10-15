@@ -1,11 +1,9 @@
 class Player
 
   attr_reader :name
-  attr_accessor :choice
 
-  def initialize(name, choice=nil)
+  def initialize(name)
     @name = name
-    @choice = choice
   end
 
 end
