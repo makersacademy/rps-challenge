@@ -1,0 +1,11 @@
+<h1>Welcome to the Game <%= @game.name %></h1>
+
+<h2>Please enter your choice of weapon</h2>
+
+<form action="/result" method="post">
+  <label for="players_weapon">
+    Players Weapon
+    <input type="text" name="players_weapon">
+  </label>
+  <input type="submit" value="Submit">
+</form>
