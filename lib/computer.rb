@@ -7,7 +7,7 @@ class Computer
   end
 
   def choice
-    selection = ["Rock", "Paper", "Scissors"]
+    selection = Game.choices
     selection[rand(0..2)]
   end
 

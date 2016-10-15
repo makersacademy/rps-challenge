@@ -6,4 +6,9 @@ class Player
     @name = name
   end
 
+  def choice(choice)
+    selection = Game.choices
+    selection[choice]
+  end
+
 end
