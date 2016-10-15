@@ -38,14 +38,5 @@ describe Game do
       expect(game.p1choice(weapon)).to eq ["scissors"]
     end
   end
-  # 
-  # describe '#outcome' do
-  #
-  #   it "should expect player to win" do
-  #     allow(game).to receive(:ai_choice) {"rock"}
-  #     game.p1choice("paper")
-  #     expect(game.outcome).to eq "You win"
-  #   end
-  # end
 
 end
