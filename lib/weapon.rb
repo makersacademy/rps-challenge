@@ -1,9 +1,10 @@
 class Weapon
 
-  attr_reader :choice
+  attr_reader :choice, :won
 
   def initialize
     @choice = nil
+    @won = nil
   end
 
   def choose_rock

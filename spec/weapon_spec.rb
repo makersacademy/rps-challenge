@@ -20,6 +20,9 @@ describe Weapon do
     it 'initilizes with a blank choice of weapon' do
       expect(subject.choice).to be_nil
     end
+    it 'has a field to store whether the weapon won or lost, set to nil' do
+      expect(subject.won).to be_nil
+    end
   end
 
   describe '#choose_rock' do
