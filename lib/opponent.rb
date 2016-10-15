@@ -1,7 +1,8 @@
 class Opponent
-	attr_accessor :choice
+	attr_accessor :choice, :name
 	def initialize
 		@choice = nil
+		@name = "Opponent"
 	end
 
 	def choose

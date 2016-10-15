@@ -1,6 +1,6 @@
 class Game
 	attr_reader :player, :opponent
-	attr_accessor :outcome
+	attr_accessor :outcome, :winner
 	def initialize(player,opponent)
 		@player = player
 		@opponent = opponent
@@ -8,12 +8,17 @@ class Game
 	end
 
 	def self.create(player,opponent)
-		@instance ||= Game.new(player,opponent)
+		@instance = Game.new(player,opponent)
 	end
 
 	def self.instance
 		@instance 
 	end
+
+	def redirect?
+		@opponent.is_a?(Player) && @opponent.choice == nil
+	end
+
 
 	def decide_winner
 		weaknesses = {
@@ -26,9 +31,9 @@ class Game
 		if @player.choice == @opponent.choice
 			@outcome = "its a draw."
 		elsif weaknesses[@player.choice.to_sym].include?(@opponent.choice)
-			@outcome = "you lose!"
+			@outcome = "#{@opponent.name} wins!"
 		else
-			@outcome = "you win!"
+			@outcome = "#{@player.name} wins!"
 		end
 	end
 end

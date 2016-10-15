@@ -12,7 +12,11 @@ class App < Sinatra::Base
   post '/new_game' do
   	name = params[:name] 
     player2_name = params[:player2_name] if !params[:player2_name].nil? 
-    params[:human] ? player2 = Player.new(player2_name) : player2 = Opponent.new
+    if params[:human] == "true"  
+      player2 = Player.new(player2_name) 
+    else 
+      player2 = Opponent.new
+    end
   	Game.create(Player.new(name),player2)
   	redirect '/game'
   end
@@ -26,7 +30,11 @@ class App < Sinatra::Base
     @game = Game.instance
     @game.player.choice = params[:choice] if params[:choice]
     @game.opponent.choice = params[:player2_choice] if params[:player2_choice]
-    if @game.opponent.is_a?(Player) && @game.opponent.choice == nil then redirect '/player2_choice' elsif @game.opponent.is_a?(Opponent) then @game.opponent.choose end
+    if @game.redirect? == true 
+      redirect '/player2_choice' 
+    elsif @game.opponent.is_a?(Opponent)
+      @game.opponent.choose 
+    end
 		@game.decide_winner
 		erb :choice
 	end

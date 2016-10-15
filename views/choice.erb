@@ -9,8 +9,8 @@
   </head>
 	<body>
 		<h1><%= @game.outcome %></h1>
-		<h2>You chose <%= @game.player.choice %>!</h2>
-		<h2>The opponent chose <%= @game.opponent.choice %>!</h2>
+		<h2><%= @game.player.name %> chose <%= @game.player.choice %>!</h2>
+		<h2><%= @game.opponent.name %> chose <%= @game.opponent.choice %>!</h2>
 		<a href="/reset_choices">Play again?</a>
   </body>
 </html>
