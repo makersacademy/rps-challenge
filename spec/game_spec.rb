@@ -1,10 +1,13 @@
+require './lib/game'
+
 describe Game do
-  subject(:game) {described_class.new}
-  let(:choice) (double :choice)
+
+  let(:choice) {double :choice}
+  subject(:game) {described_class.new(choice)}
 
   context 'game is initialised' do
     it 'records the players choice' do
-      expect (game.array[0]).to eq(choice)
+      expect(game.turn[0]).to eq(choice)
     end
   end
 end
