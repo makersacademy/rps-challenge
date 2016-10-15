@@ -4,12 +4,13 @@ class Game
 
   attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons
 
+  def self.instnce
+    @game
+  end
+
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
     @weapon_two = weapon_two
-
-    # @player_one = player_one
-    # @player_two = player_two
     @submitted_weapons =[] # attr_reader - remove?
     @r_p_s = [:rock, :paper, :scissors]
   end
@@ -20,14 +21,14 @@ class Game
   end
 
   def evaluate
-    if !tie?
-      if missing_element == :rock
-        :scissors
-      elsif missing_element == :scissors
-        :paper
-      else
-        :rock
-      end
+    if tie?
+      :tie
+    elsif missing_element == :rock
+      :scissors
+    elsif missing_element == :scissors
+      :paper
+    else
+      :rock
     end
   end
 

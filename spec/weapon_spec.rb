@@ -43,4 +43,11 @@ describe Weapon do
     end
   end
 
+  describe '#computer_choice' do
+    it 'selects on behalf of the computer' do
+      allow(subject).to receive(:random_choice).and_return 1
+      expect(subject.choice).to eq :rock
+    end
+  end
+
 end
