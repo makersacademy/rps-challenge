@@ -8,12 +8,13 @@ class RPSWeb < Sinatra::Base
 
   post '/name' do
     @name = params[:name]
-    erb(:play)
+    redirect '/play'
   end
 
-  # get '/play' do
-  #   erb(:play)
-  # end
+  get '/play' do
+    @name = params[:name]
+    erb(:play)
+  end
 
   run! if app_file == $0
 
