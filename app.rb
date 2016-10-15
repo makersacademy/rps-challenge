@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
+
+
 class Rps < Sinatra::Base
 
   enable :sessions
@@ -50,6 +53,50 @@ class Rps < Sinatra::Base
     elsif @choice == "Rock" then erb :lost
     end
   end
+#-----------------------2 PLAYERS GAME----------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------
+  post '/2name' do
+    player1 = Player.new(params[:player1_name])
+    player2 = Player.new(params[:player2_name])
+    Game.current= Game.new(player1, player2)
+    redirect '/2play'
+  end
+
+  get '/2play' do
+    @game = Game.current
+    erb :twoplay
+  end
+
+  get '/2rock' do
+    @game = Game.current
+    erb :twoplayrock
+  end
+
+  get '/2paper' do
+    @game = Game.current
+    erb :twoplaypaper
+  end
+
+  get '/2scissors' do
+    @game = Game.current
+    erb :twoplayscissors
+  end
+
+  get '/2tie' do
+  @game = Game.current
+    erb :twotie
+  end
+
+  get '/2win' do
+      @game = Game.current
+    erb :twowin
+  end
+
+  get '/2lose' do
+      @game = Game.current
+    erb :twowin
+  end
+
 
     run! if app_file == $0
 
