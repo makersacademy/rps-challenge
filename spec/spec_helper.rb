@@ -12,3 +12,5 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
