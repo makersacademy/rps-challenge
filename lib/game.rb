@@ -4,9 +4,9 @@ class Game
 
   attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
 
-  def self.instnce
-    @game
-  end
+  # def self.instnce
+  #   @game
+  # end
 
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
@@ -33,6 +33,16 @@ class Game
     end
   end
 
+  def set_statuses
+    if @winner == :tie
+      @submitted_weapons.each { |x| x.set_tie}
+    else
+      @submitted_weapons.each { |x| x.choice == @winner ? x.set_win : x.set_lose }
+    end
+  end
+
+  private
+
   def tie?
     submitted_weapons.first.choice == submitted_weapons.last.choice
   end
@@ -43,12 +53,5 @@ class Game
     choices.first
   end
 
-  def set_statuses
-    if @winner == :tie
-      @submitted_weapons.each { |x| x.set_tie}
-    else
-      @submitted_weapons.each { |x| x.choice == @winner ? x.set_win : x.set_lose }
-    end
-  end
 
 end

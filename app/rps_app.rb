@@ -11,8 +11,9 @@ class RPSApp < Sinatra::Base
   end
 
   post '/names' do
+    player_2_name = params[:player_2_name].empty? ? :the_computer : params[:player_2_name]
     $player_1 = Player.new(params[:player_1_name])
-    $player_2 = Player.new(params[:player_2_name])
+    $player_2 = Player.new(player_2_name)
     redirect '/choices'
   end
 

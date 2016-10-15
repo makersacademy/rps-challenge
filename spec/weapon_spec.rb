@@ -52,6 +52,16 @@ describe Weapon do
       subject.computer_choice
       expect(subject.choice).to eq :rock
     end
+    it 'selects on behalf of the computer' do
+      allow(subject).to receive(:random_choice).and_return 2
+      subject.computer_choice
+      expect(subject.choice).to eq :paper
+    end
+    it 'selects on behalf of the computer' do
+      allow(subject).to receive(:random_choice).and_return 3
+      subject.computer_choice
+      expect(subject.choice).to eq :scissors
+    end
   end
 
   describe '#set_win' do
@@ -69,9 +79,9 @@ describe Weapon do
   end
 
   describe '#set_tie' do
-    it 'sets the won status to nil' do
+    it 'sets the won status to a tie' do
       subject.set_tie
-      expect(subject.won).to eq nil
+      expect(subject.won).to eq :tie
     end
   end
 

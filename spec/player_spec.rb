@@ -21,12 +21,22 @@ describe Player do
     it 'initializes an empty array of play history' do
       expect(subject.play_history).to be_empty
     end
+    it 'initializes an empty array of outcome history' do
+      expect(subject.outcome_history).to be_empty
+    end
   end
 
-  describe 'game history' do
+  describe '#play_history' do
     it 'stores the turns' do
       subject.store_choice(rock)
       expect(subject.play_history.last).to eq rock
+    end
+  end
+
+  describe '#play_history' do
+    it 'stores the turns' do
+      subject.store_outcome(true)
+      expect(subject.outcome_history.last).to eq true
     end
   end
 

@@ -44,21 +44,21 @@ describe Game do
     end
   end
 
-  describe '#tie?' do
-    it 'determines when a game is a tie' do
-      game = Game.new(rock, rock)
-      game.add_submitted_weapons
-      expect(game.tie?).to eq true
-    end
-  end
-
-  describe '#missing_element' do
-    it 'returns the element that was not used' do
-      game = Game.new(rock, scissors)
-      game.add_submitted_weapons
-      expect(game.missing_element).to eq :paper
-    end
-  end
+  # describe '#tie?' do
+  #   it 'determines when a game is a tie' do
+  #     game = Game.new(rock, rock)
+  #     game.add_submitted_weapons
+  #     expect(game.tie?).to eq true
+  #   end
+  # end
+  # 
+  # describe '#missing_element' do
+  #   it 'returns the element that was not used' do
+  #     game = Game.new(rock, scissors)
+  #     game.add_submitted_weapons
+  #     expect(game.missing_element).to eq :paper
+  #   end
+  # end
 
 
 end
