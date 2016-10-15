@@ -11,22 +11,40 @@ class App < Sinatra::Base
 
   post '/new_game' do
   	name = params[:name] 
-  	Game.create(Player.new(name),Opponent.new)
+    params[:human] ? player2 = Player.new("name") : player2 = Opponent.new
+  	Game.create(Player.new(name),player2)
   	redirect '/game'
   end
 
   get '/game' do
-  	@game = Game.instance
-  	erb :game
-	end
+    @game = Game.instance
+    erb :game
+  end
 
-	post '/choice' do
-		@game = Game.instance
-		@game.player.choice = params[:choice]
-		@game.opponent.choose
+  post '/choice' do
+    @game = Game.instance
+    @game.player.choice = params[:choice] if params[:choice]
+    @game.opponent.choice = params[:player2_choice] if params[:player2_choice]
+    if @game.opponent.is_a?(Player) && @game.opponent.choice == nil then redirect '/player2_choice' elsif @game.opponent.is_a?(Opponent) then @game.opponent.choose end
 		@game.decide_winner
 		erb :choice
 	end
+
+  get '/player2_choice' do
+    @game = Game.instance
+    erb :player2_choice
+  end
+
+  get '/reset_choices' do
+    reset_choices
+    redirect '/game'
+  end 
+
+  def reset_choices
+    @game = Game.instance
+    @game.player.choice = nil
+    @game.opponent.choice = nil
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

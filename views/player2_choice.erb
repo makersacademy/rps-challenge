@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display" rel="stylesheet">
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+	<body>
+		<h1>Welcome to rock, paper, scissors, lizard, spock  <%= @game.opponent.name %>!</h1>
+		<h2>Choose rock, paper, scissors, lizard, spock:</h2>
+		<form action="/choice" method="post">
+			<label for="rock">Rock</label>
+			<input id="rock" type="radio" name="player2_choice" value="rock">
+			<label for="paper">Paper</label>
+			<input id="paper" type="radio" name="player2_choice" value="paper">
+			<label for="scissors">Scissors</label>
+			<input id="scissors" type="radio" name="player2_choice" value="scissors">
+			<label for="lizard">Lizard</label>
+			<input id="lizard" type="radio" name="player2_choice" value="lizard">
+			<label for="spock">Spock</label>
+			<input id="spock" type="radio" name="player2_choice" value="spock">
+			<input type="submit" value="Make your choice!">
+		</form>
+	</body>
+</html>
