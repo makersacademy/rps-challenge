@@ -8,7 +8,7 @@ describe Computer do
   end
 
   it 'will return a random choice' do
-      allow(computer).to receive(:choice).and_return("Rock")
-      expect(computer.choice).to eq "Rock"
+      allow(computer).to receive(:auto_selection).and_return("Rock")
+      expect(computer.auto_selection).to eq "Rock"
   end
 end

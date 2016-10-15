@@ -12,7 +12,7 @@ describe Player do
 
   describe '#choice' do
     it 'allows player to make a choice' do
-      expect(subject.choice(0)).to eq "Rock"
+      expect(subject.selection(0)).to eq "Rock"
     end
   end
 
