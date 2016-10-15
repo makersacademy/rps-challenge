@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:player_one) { double :player_one, name: "David", select_weapon: "Rock", weapon: "Rock"}
+  let(:player_one) { double :player_one, name: "David Miller", select_weapon: "Rock", weapon: "Rock"}
   let(:player_two) { double :player_two, name: "Computer", select_weapon: "Paper", weapon: "Paper"}
   subject(:game) { described_class.new(player_one, player_two) }
 
@@ -21,8 +21,15 @@ describe Game do
     expect(game.round_winner).to eq player_two
   end
 
-  it "adds a point to winner's score", :focus do
+  it "adds a point to winner's score" do
     expect(game.round_winner).to eq player_two
+  end
+
+  it "assigns winner to whoever reaches 10 points first" do
+    allow(player_one).to receive(:score).and_return 10
+    allow(player_two).to receive(:score).and_return 5
+    game.check_winner
+    expect(game.winner).to be player_one
   end
 
 end

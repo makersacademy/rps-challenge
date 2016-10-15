@@ -6,15 +6,33 @@
     <input type="submit" name="weapon" value="Scissors">
   </form>
 </div>
-a
+
+
 <div class="players_name">
-  <h2><%= @game.player_one.name %> vs Computer</h2>
+  <h2><%= @game.player_one.name %> vs <%= @game.player_two.name %></h2>
 </div>
 
 <div class="player_one_score">
-  <h2>Score: 0</h2>
+  <h2>Score: <%= @game.player_one.score %></h2>
 </div>
 
 <div class="player_two_score">
-  <h2>Score: 0</h2>
+  <h2>Score: <%= @game.player_two.score %></h2>
 </div>
+
+<% if @game.winner == nil %>
+  <% if @game.player_one.weapon != nil %>
+    <div class=player_one_weapon>
+      <h3><%= @game.player_one.name %> chose <%= @game.player_one.weapon %> </h3>
+    </div>
+    <div class=player_two_weapon>
+      <h3><%= @game.player_two.name %> chose <%= @game.player_two.weapon %> </h3>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @game.winner != nil %>
+  <div class="winner">
+    <h2><%= @game.winner.name %> won!</h2>
+  </div>
+<% end %>

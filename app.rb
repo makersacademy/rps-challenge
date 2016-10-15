@@ -18,6 +18,7 @@ class Rps < Sinatra::Base
 
   post '/name' do
     @game.player_one.set_name(params[:player_one_name])
+    @game.player_two.set_name("Computer")
     redirect '/play'
   end
 
@@ -27,6 +28,8 @@ class Rps < Sinatra::Base
 
   post '/weapon_selection' do
     @game.player_one.select_weapon(params[:weapon])
+    @game.player_two.random_weapon_selection
+    @game.update_score
     erb :play
   end
 

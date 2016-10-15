@@ -10,15 +10,14 @@ end
     expect(page).to have_content("0")
   end
 
-  # scenario "checks that chosen weapon is assigned to model" do
-  #   click_button("Paper")
-  #   expect(page).to have_content("Weapon: Paper")
-  # end
+  scenario "checks that chosen weapon is assigned" do
+    click_button("Paper")
+    expect(page).to have_content("David Miller chose Paper")
+  end
 
-  # scenario "updates score after a round of game" do
-  #   click_button("Paper")
-  #   #allow computer to choose rock
-  #   expect(page).to have_content("1")
-  # end
+  scenario "declares player who reaches 10 points first wins the game" do
+    100.times { click_button("Paper") }
+    expect(page).to have_content("won!")
+  end
 
 end
