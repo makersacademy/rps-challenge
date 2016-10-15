@@ -4,9 +4,7 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
-  use Rack::Session::Cookie,:key => 'rack.session',
-                            :path => '/',
-                            :secret => 'your_secret'
+  enable :sessions
 
   get '/' do
     erb :index
