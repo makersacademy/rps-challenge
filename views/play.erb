@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<body>
+  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+
+  <br />
+  <br />
+  <form action="/attack" method="post">
+    <input type='submit' value='Attack'>
+  </form>
+</body>
