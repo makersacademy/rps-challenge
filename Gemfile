@@ -5,7 +5,7 @@ ruby '2.2.3'
 # gem 'sinatra'
 # gem 'rake'
 
-group :test do
+#group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
   gem 'rubocop'
@@ -23,4 +23,4 @@ group :test do
   
   gem 'poltergeist'
   gem 'phantomjs'
-end
+#end

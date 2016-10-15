@@ -1,3 +1,6 @@
+require_relative 'player'
+
+
 class Game
 
 attr_reader :player_1, :player_2, :current_turn, :choice, :player_1_choice, :player_2_choice, :auto_choice, :winner
@@ -9,6 +12,14 @@ attr_reader :player_1, :player_2, :current_turn, :choice, :player_1_choice, :pla
 		@players = [player1,player2]
 		@current_turn = player1
 		@hand = ["rock", "paper", "scissors"]
+	end
+	
+	def self.create_game(player_1, player_2)
+	  @rps_game = Game.new(player_1, player_2)
+	end
+	
+	def self.game_instance
+	  @rps_game
 	end
 	
 	def switch_turns
