@@ -7,12 +7,12 @@ class Rps < Sinatra::Base
   end
 
   post '/sign_in' do
-    @name = Player.new(params[player_1])
+    $name = Player.new(params[:player_1])
     redirect '/play'
   end
 
   get '/play' do
-
+    erb :play
   end
 
   # start the server if ruby file executed directly

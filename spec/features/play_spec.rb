@@ -5,7 +5,6 @@ RSpec.feature Rps, :type => :feature do
 
     sign_in_and_play
 
-    expect(page).to have_text("Alright, let's play!")
     expect(page).to have_text("It's Dionysis vs RPS-bot")
   end
 
