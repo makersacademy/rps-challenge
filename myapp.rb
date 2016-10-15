@@ -2,17 +2,19 @@ require 'sinatra/base'
 
 class RPSWeb < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    @name = params[:name]
+    session[:p1_name] = params[:p1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = params[:name]
+    @name = session[:p1_name]
     erb(:play)
   end
 

@@ -1,18 +1,18 @@
 feature 'Preparing to play' do
 
-  scenario 'Ask player to choose rock' do
+  scenario "Player is able to select 'rock' button" do
     visit('/play')
-    click_button "Rock"
+    find_button("Rock").visible?
   end
 
-  scenario 'Ask player to choose paper' do
+  scenario "Player is able to select 'paper' button" do
     visit('/play')
-    click_button "Paper"
+    find_button("Paper").visible?
   end
 
-  scenario 'Ask player to choose scissors' do
+  scenario "Player is able to select 'scissors' button" do
     visit('/play')
-    click_button "Scissors"
+    find_button("Scissors").visible?
   end
 
 end
