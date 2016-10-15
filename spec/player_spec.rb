@@ -1,9 +1,4 @@
-class Player
-  attr_reader :name
-  def initialize(name)
-    @name = name
-  end
-end
+require 'player'
 
 describe Player do
   it "has a name" do
