@@ -1,2 +1,8 @@
 <h1> Welcome <%= @game.player.name %>, This is RoboPlayer, you ready to dance? </h1>
 <h2> Please Select an Attack </h2>
+
+<form action="/moves" method="post">
+  <button type="submit" name="move" value="rock">Rock</button>
+  <button type="submit" name="move" value="paper">Paper</button>
+  <button type="submit" name="move" value="scissors">Scissors</button>
+</form>

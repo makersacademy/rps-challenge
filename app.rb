@@ -6,6 +6,10 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :start
   end
@@ -16,11 +20,18 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
-    @game = Game.instance
-    erb :play
+  post '/move' do
+    @game.player.move(params[:move])
+    redirect '/result'
   end
 
+  get '/result' do
+    erb @game.result
+  end
+
+  get '/play' do
+    erb :play
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
