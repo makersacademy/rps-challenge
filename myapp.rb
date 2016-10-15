@@ -23,6 +23,11 @@ class RPSWeb < Sinatra::Base
     erb(:play)
   end
 
+  post '/select' do
+    @p1choice = params[:p1choice]
+    erb(:select)
+  end
+
   run! if app_file == $0
 
 end

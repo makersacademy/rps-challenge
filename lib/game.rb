@@ -1,10 +1,13 @@
 class Game
 
   attr_reader :player1
+  attr_accessor :p1choice
 
   def initialize(player1)
     @player1 = player1
     @weapons = ["rock", "paper", "scissors"]
+    @p1choice = []
+    @aichoice = []
   end
 
   def self.create(player1)
@@ -15,11 +18,8 @@ class Game
     @game
   end
 
-  def p1_choice
-  end
-
   def ai_choice
-    @weapons.sample
+    @aichoice << @weapons.sample
   end
 
 end
