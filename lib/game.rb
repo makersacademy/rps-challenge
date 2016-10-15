@@ -12,4 +12,8 @@ class Game
     @player_selection = selection
   end
 
+  def computer_selection
+    @choices.sample
+  end
+
 end
