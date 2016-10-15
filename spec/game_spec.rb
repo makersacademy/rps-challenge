@@ -7,27 +7,36 @@ describe Game do
   subject(:game)  { described_class.new(player)   }
 
   describe '#initialize' do
-    it 'instantiates a game with a Player object' do
+    it 'instantiates a game with the player being a Player object' do
       expect(subject.player).to be_an_instance_of Player
+    end
+    it 'instantiates a game with the opponent being a Player object' do
+      expect(subject.opponent).to be_an_instance_of Player
+    end
+    it 'returns the name of the player"' do
+      expect(subject.player.name).to eq "Frances"
+    end
+    it 'defaults the opponent as "The Computer"' do
+      expect(subject.opponent.name).to eq "The Computer"
     end
   end
 
   describe '#view_choices' do
-    it 'lists the choices available' do
+    it 'lists the choices available (rock, paper, scissors)' do
       expect(game.view_choices).to eq [:Rock, :Paper, :Scissors]
     end
   end
 
   describe '#player_selection' do
-    it "brings back the player's selection" do
+    it "returns the player's selection" do
       expect(game.player_selection(:Rock)).to eq :Rock
     end
   end
 
   describe '#computer_selection' do
-    it "chooses a move randomly" do
-      allow(game).to receive(:computer_selection).and_return(:Scissors)
-      expect(game.computer_selection).to eq :Scissors
+    it "returns the computer's random selection" do
+      allow(game).to receive(:computer_selection).and_return(:Rock)
+      expect(game.computer_selection).to eq :Rock
     end
   end
 
