@@ -29,17 +29,22 @@ class Game
   end
 
   def decide_winner
-    unless @player1_choice == @player2_choice
-      case @player1_choice
-      when :rock
-         @winner = (@player2_choice == :paper) ? "game" : @player1
-      when :paper
-        @winner = (@player2_choice == :scissors) ? "game" : @player1
-      when :scissors
-        @winner = (@player2_choice == :rock) ? "game" : @player1
-      end
+    if @player1_choice == @player2_choice
+      @winner = nil
+    else
+      set_winner
     end
     messaging
+  end
+
+  def set_winner
+    if @player1_choice == :rock
+      @winner = (@player2_choice == :paper) ? "game" : @player1
+    elsif @player1_choice == :paper
+      @winner = (@player2_choice == :scissors) ? "game" : @player1
+    elsif @player1_choice == :scissors
+      @winner = (@player2_choice == :rock) ? "game" : @player1
+    end
   end
 
   def messaging

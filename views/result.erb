@@ -5,14 +5,15 @@
 </head>
 
 <body>
-
-<h1>The computer chose <%=@game.player2_choice%>
-<h1><%=@game.message%> </h1>
-<h2><%=@game.philosophy%></h1>
-
-  <form action='/play'>
+  <div class="header">
+    <h1>The computer chose <%=@game.player2_choice%></h1>
+    <h1><%=@game.message%> </h1>
+    <h2><%=@game.philosophy%></h1>
+  </div>
+  <div class="choice">
+    <form action='/play'>
       <input type="submit" value="Play Again"/>
     </form>
-
+  </div>
 </body>
 </html>

@@ -35,6 +35,17 @@ describe Game do
     expect(game.message).to eq "Player1, you are the winner!"
   end
 
+  it 'should set correct message when draw' do
+    game.set_player_choice(:rock)
+    game.set_auto_choice
+    game.decide_winner
+    game.set_player_choice(:rock)
+    game.set_auto_choice(0)
+    game.decide_winner
+    game.messaging
+    expect(game.message).to eq "It's a draw!"
+  end
+
   it 'should set correct philosophy' do
     game.set_player_choice(:rock)
     game.set_auto_choice(0)

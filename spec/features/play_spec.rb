@@ -17,3 +17,14 @@ feature 'allow choice to lead to a result' do
     end
   end
 end
+
+feature 'allow player to play again' do
+  scenario 'choosing rock button' do
+    visit('/')
+    fill_in :player1, with: "Malinna"
+    click_button "play"
+    click_button "rock"
+    click_button "Play Again"
+    expect(page).to have_content "it's time to choose.."
+  end
+end
