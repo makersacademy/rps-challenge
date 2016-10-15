@@ -5,8 +5,8 @@ class Game
     attr_accessor :current
   end
 
-  def initialize(player1, player2)
-    @players = [player1, player2]
+  def initialize(player1, *player2)
+    @players = [player1, *player2]
     @choice = ["Rock", "Paper", "Scissors"]
   end
 

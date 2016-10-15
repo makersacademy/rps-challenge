@@ -1,3 +1,8 @@
-<h1><%= @player %> has played <%= @player_choice %></h1>
+<h1><%= @game.players[0].name %> has played <%= @player_choice %></h1>
 <h1>The computer has played <%= @choice %></h1>
 <h1>It's a tie. Play again!<h1>
+
+
+  <form method="link" action="/play">
+    <input type="submit" value="Play again">
+  </form>

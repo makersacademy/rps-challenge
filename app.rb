@@ -12,21 +12,18 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
-    @player = session[:player_name]
-    Game.current = Game.new
+    player = Player.new(params[:player_name])
+    Game.current = Game.new(player)
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player_name]
     @game = Game.current
     erb :play
   end
 
   get '/rock' do
     @game = Game.current
-    @player = session[:player_name]
     @player_choice = "Rock"
     @choice = @game.choice.sample
     if @choice == "Scissors" then erb :win elsif @choice == "Paper" then erb :lost
@@ -36,7 +33,6 @@ class Rps < Sinatra::Base
 
   get '/paper' do
     @game = Game.current
-    @player = session[:player_name]
     @player_choice = "Paper"
     @choice = @game.choice.sample
     if @choice == "Scissors" then erb :lost elsif @choice == "Paper" then erb :tie
@@ -46,15 +42,14 @@ class Rps < Sinatra::Base
 
   get '/scissors' do
     @game = Game.current
-    @player = session[:player_name]
     @player_choice = "Scissors"
     @choice = @game.choice.sample
     if @choice == "Scissors" then erb :tie elsif @choice == "Paper" then erb :win
     elsif @choice == "Rock" then erb :lost
     end
   end
-#-----------------------2 PLAYERS GAME----------------------------------------------------------------------
-#------------------------------------------------------------------------------------------------------------------------------------------
+  #-----------------------2 PLAYERS GAME----------------------------------------------------------------------
+  #------------------------------------------------------------------------------------------------------------------------------------------
   post '/2name' do
     player1 = Player.new(params[:player1_name])
     player2 = Player.new(params[:player2_name])
@@ -83,21 +78,21 @@ class Rps < Sinatra::Base
   end
 
   get '/2tie' do
-  @game = Game.current
+    @game = Game.current
     erb :twotie
   end
 
   get '/2win' do
-      @game = Game.current
+    @game = Game.current
     erb :twowin
   end
 
   get '/2lose' do
-      @game = Game.current
+    @game = Game.current
     erb :twowin
   end
 
 
-    run! if app_file == $0
+  run! if app_file == $0
 
 end
