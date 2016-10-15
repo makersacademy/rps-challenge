@@ -91,6 +91,7 @@ DEPENDENCIES
   byebug
   capybara
   coveralls
+  rack-test
   rake
   rspec
   rubocop
