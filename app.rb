@@ -18,7 +18,13 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    @choice = session[:choice]
     haml :play
+  end
+
+  post '/play' do
+    session[:choice] = params[:choice]
+    redirect '/play'
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

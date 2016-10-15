@@ -1,8 +1,12 @@
 %h2.text-center
   = "It's time #{@player_1_name}"
 
-Rock
-Paper
-Scissors
-Lizard
-Spock
+%form{ method: "POST", action: "/play"}
+  %input.btn.btn-success{ type:"submit", name: "choice", value: "Rock" }
+  %input.btn.btn-success{ type:"submit", name: "choice", value: "Paper" }
+  %input.btn.btn-success{ type:"submit", name: "choice", value: "Scissors" }
+  %input.btn.btn-success{ type:"submit", name: "choice", value: "Lizard" }
+  %input.btn.btn-success{ type:"submit", name: "choice", value: "Spock" }
+
+%h2.text-center
+  = "You selected #{@choice}!"
