@@ -2,17 +2,22 @@
 
 Approach
 ---------
+1.  Setup the environment, including Sinatra and RSpec / Capybara
+2.  Wrote and passed feature test for registering name
+3.  Wrote and passed feature test for choosing weapon
+4.  Thought about domain model before writing unit tests (see below)
+5.  Wrote and passed unit test for Player class to initialize with a name
+6.  Wrote and passed unit test for Game class to initialize with Player objects
+7.  Wrote and passed unit test for Game to view choices
+8.  Wrote and passed unit test for Game to select a choice
+9.  Wrote and passed unit test for Computer to select a choice randomly
+10. Wrote and passed unit tests for revealing winner
 
-1. Setup the environment, including Sinatra
-2. Wrote feature test for registering name
-3. Wrote feature test for choosing weapon
-4. Thought about domain model before writing unit tests (see below)
-5. Wrote unit test for Player class to initialize with a name
-6. Wrote unit test for Game to view choices
-7. Wrote unit test for Game to select a choice
-8. Wrote unit test for Computer to select a choice randomly
+Then attempted to integrate model into the view / controller
 
-
+1.  Instantiate the Player object on posting the form with the name in
+2.  Populate the form choices from the Game instance (could not iterate over the array!)
+3.  Show the game's result
 
 Thoughts on domain model
 -------------------------
@@ -21,8 +26,6 @@ Player --> Views choices <-- Game
 Player --> Selects choice <-- Game
 Player --> Views result <-- Game
 Player --> Plays again <-- New Game
-
-
 
 Instructions
 -------

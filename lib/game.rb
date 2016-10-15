@@ -4,6 +4,14 @@ class Game
 
   attr_reader :player, :opponent
 
+  def self.instance
+    @game
+  end
+
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
   def initialize(player = Player.new("Mystery Player"), opponent = Player.new("The Computer"))
     @player = player
     @opponent = opponent
@@ -23,26 +31,27 @@ class Game
   end
 
   def result(opponent_choice = computer_selection)
-    case
-      when @player_selection == :Rock && opponent_choice == :Rock
-        draw
-      when @player_selection == :Rock && opponent_choice == :Paper
-        paper_beats_rock(@opponent)
-      when @player_selection == :Rock && opponent_choice == :Scissors
-        rock_beats_scissors(@player)
-      when @player_selection == :Paper && opponent_choice == :Rock
-        paper_beats_rock(@player)
-      when @player_selection == :Paper && opponent_choice == :Paper
-        draw
-      when @player_selection == :Paper && opponent_choice == :Scissors
-        scissors_beat_paper(@opponent)
-      when @player_selection == :Scissors && opponent_choice == :Rock
-        rock_beats_scissors(@opponent)
-      when @player_selection == :Scissors && opponent_choice == :Paper
-        scissors_beat_paper(@player)
-      when @player_selection == :Scissors && opponent_choice == :Scissors
-        draw
-    end
+    "#{@player} choice is #{@player_selection} and #{@opponent} choice is #{opponent_choice}"
+    # case
+    #   when @player_selection == :Rock && opponent_choice == :Rock
+    #     draw
+    #   when @player_selection == :Paper && opponent_choice == :Paper
+    #     draw
+    #   when @player_selection == :Scissors && opponent_choice == :Scissors
+    #     draw
+    #   when @player_selection == :Paper && opponent_choice == :Rock
+    #     paper_beats_rock(@player)
+    #   when @player_selection == :Rock && opponent_choice == :Paper
+    #     paper_beats_rock(@opponent)
+    #   when @player_selection == :Rock && opponent_choice == :Scissors
+    #     rock_beats_scissors(@player)
+    #   when @player_selection == :Scissors && opponent_choice == :Rock
+    #     rock_beats_scissors(@opponent)
+    #   when @player_selection == :Scissors && opponent_choice == :Paper
+    #     scissors_beat_paper(@player)
+    #   when @player_selection == :Paper && opponent_choice == :Scissors
+    #     scissors_beat_paper(@opponent)
+    # end
   end
 
   private
