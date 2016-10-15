@@ -14,4 +14,8 @@ class Game
     @players[0].name
   end
 
+  def bot_choice
+    @choices.sample
+  end
+
 end

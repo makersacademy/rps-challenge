@@ -19,9 +19,16 @@ describe Game do
   end
 
   context "holds player's attributes" do
-    it "reads player_1's name " do
+    it "#first_player_name reads player_1's name " do
       expect(game.first_player_name).to eq "Dionysis"
     end
+  end
+
+  describe "#bot_choice" do
+    it "returns a choice at random" do
+      expect(["rock","paper","scissors"]).to include game.bot_choice
+    end
+
   end
 
 end
