@@ -9,6 +9,11 @@ class RPS < Sinatra::Base
     erb(:register)
   end
 
+  post '/name' do
+    player = params[:player_name]
+
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
