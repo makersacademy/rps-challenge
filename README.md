@@ -9,6 +9,8 @@ Approach
 4. Thought about domain model before writing unit tests (see below)
 5. Wrote unit test for Player class to initialize with a name
 6. Wrote unit test for Game to view choices
+7. Wrote unit test for Game to select a choice
+
 
 
 
