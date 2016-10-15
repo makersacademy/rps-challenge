@@ -29,7 +29,7 @@ class Game
 			:spock => ["lizard","paper"]
 		}
 		if @player.choice == @opponent.choice
-			@outcome = "its a draw."
+			@outcome = "it's a draw."
 		elsif weaknesses[@player.choice.to_sym].include?(@opponent.choice)
 			@outcome = "#{@opponent.name} wins!"
 		else

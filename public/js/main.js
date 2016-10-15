@@ -1,6 +1,6 @@
 $('#human').on("click", function() {
 	$('#player2_name').show();
-})
+})	
 
 $('#computer').on("click", function() {
 	if( $('#player2_name').is(':visible') ) {
@@ -8,3 +8,4 @@ $('#computer').on("click", function() {
 		$('#player2_name').hide();
 	}
 })
+
