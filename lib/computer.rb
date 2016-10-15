@@ -1,18 +1,15 @@
 class Computer
 
-  attr_reader :choice
+  attr_reader :name, :available_choices
 
-  def initialize
-    @choice = choice
+  def initialize(name = "Computer")
+    @name = name
+    @available_choices = available_choices
   end
 
-  def name
-    "Computer"
-  end
-
-  def auto_selection
-    available_choices = Game.choices
-    @choice = available_choices[rand(0..2)]
+  def choices_available
+    @available_choices = Game.choices
+    # @choice = available_choices[rand(0..2)]
   end
 
 end

@@ -19,25 +19,26 @@ class Game
 
   def result
     p1 = @player.choice
-    comp = @computer.auto_selection
+    ## to stop computer bringing in the random behaviour each time
+    comp = @@choices[rand(0..2)]
     game_logic(p1,comp)
   end
 
   def game_logic(p1, comp)
     if p1 == comp
-      "Draw"
+      return "Draw"
     elsif (p1 == "Rock" && comp == "Scissors")
-      "#{p1} beats #{comp}"
+      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
     elsif (p1 == "Rock" && comp == "Paper")
-      "#{p1} beats #{comp}"
+      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
     elsif (p1 == "Paper" && comp == "Scissors")
-      "#{comp} beats #{p1}"
+      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
     elsif (p1 == "Paper" && comp == "Rock")
-      "#{comp} beats #{p1}"
+      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
     elsif (p1 == "Scissors" && comp == "Paper")
-      "#{p1} beats #{comp}"
+      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
     elsif (p1 == "Scissors" && comp == "Rock")
-      "#{comp} beats #{p1}"
+      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
     end
   end
 
