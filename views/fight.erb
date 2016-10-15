@@ -1,0 +1,37 @@
+<%= Game.game.player_name %> vs Computer
+
+<form action="/pick-choice" method="post">
+  <input name="choice" value="rock"/>
+  <button type="submit" id="rock">Rock</button>
+</form>
+
+<form action="/pick-choice" method="post">
+  <input name="choice" value="paper">
+  <button type="submit" id="paper">Scissors</button>
+</form>
+
+<form action="/pick-choice" method="post">
+  <input name="choice" value="scissors">
+  <button type="submit" id="scissors">Scissors</button>
+</form>
+
+Your choice: <%= Game.game.player_choice %>
+
+<!-- <h1> Rock Paper Scissors</h1>
+<form action="/names" method="post">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="player_name"/>
+
+  <button id="button" type="submit">
+    <span>
+      Go!
+    </span>
+  </button>
+</form> -->
+
+
+<!-- <form action="/attack" method="post">
+  <input type="hidden" name="player" value="p1"/>
+  <input type="hidden" name="attack_type" value="paralyse"/>
+  <button type="submit" class="btn btn-warning" id="P1 Paralyse">Paralyse!</button>
+</form> -->
