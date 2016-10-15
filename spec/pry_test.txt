@@ -1,4 +1,4 @@
-require './lib/game'
+require './lib/player'
 p1 = Player.new('Ali')
 p2 = Player.new('Computer')
 game = Game.new(p1, p2)
@@ -11,4 +11,3 @@ game.player_1_move(:paper)
 game.player_1_move(:scissors)
 game.player_1_move(:scissors)
 game.player_1_move(:scissors)
- 

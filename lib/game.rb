@@ -1,10 +1,8 @@
-require_relative 'player'
-
 class Game
 
   attr_reader :played_games, :player_1_score, :player_2_score
 
-  def initialize(player_1, player_2)
+  def initialize(player_1, player_2 = :The_Computer)
     @players = [player_1, player_2]
     @player_1_score = 0
     @player_2_score = 0
