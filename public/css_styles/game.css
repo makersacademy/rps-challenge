@@ -1,0 +1,72 @@
+/*
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+body {
+font-size: 40px;
+text-transform: uppercase;
+background: url('https://twistedsifter.files.wordpress.com/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif?w=800&h=336');
+background-size: cover;
+color: #fff;
+font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+text-shadow: 2px 2px #000;
+}
+
+.left, .middle, .right {
+float: left;
+text-align: center;
+padding-top: 80px
+}
+
+.left, .right {
+width: 40%;
+}
+
+.left img, .right img {
+width: 70%;
+padding-top: 60px;
+}
+
+.right img {
+padding-top: 100px;
+width: 70%;
+}
+
+.middle {
+width: 20%;
+}
+
+.middle button {
+background-color: #ff3333;
+border: none;
+border-radius: 8px;
+color: white;
+text-align: center;
+font-size: 60%;
+letter-spacing: 3px;
+opacity: 0.8;
+width: 15%;
+height: 5%;
+position: absolute;
+top: 400;
+right: 530;
+text-transform: uppercase;
+cursor:url(http://cur.cursors-4u.net/food/images2/foo124.gif),auto;
+}
+
+.hitpoints {
+font-size: 18px;
+color: red;
+}
+
+.attack-text {
+font-size: 16px;
+color: red;
+text-shadow: 2px 2px #000;
+text-align: center;
+position: relative;
+}*/

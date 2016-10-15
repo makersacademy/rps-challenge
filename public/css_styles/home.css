@@ -1,0 +1,57 @@
+@import 'https://fonts.googleapis.com/css?family=Coming+Soon';
+
+body {
+  font-size: 30px;
+  text-transform: uppercase;
+  background-image: url('https://www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  color: #FFEBCD;
+  font-family: 'Coming Soon', cursive;
+
+}
+/*.players {
+  width: 50%;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+form button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 0;
+  margin-top: 140px;
+  background: #C91212;
+  width: 40%;
+  height: 10%;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Coming Soon', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px #521414;
+  border-radius: 12px;
+}
+
+form button:hover {
+  background: #f10606;
+}
+
+form input {
+  margin-top: 20px;
+  width: 85%;
+  height: 35px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px;
+}*/
