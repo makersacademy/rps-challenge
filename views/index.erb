@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Forum</title>
-    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <title>Rock, Paper, Scissors</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display" rel="stylesheet">
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
   </head>
 	<body>
 		<h1>Welcome to rock paper scissors!</h1>
+		<h2>Please enter your name</h2>
 		<form action="/new_game" method="post">
 			<label for="name"></label>
-			<input type="text" name="name">
+			<input type="text" name="name" placeholder="Player Name">
 			<input type="submit" value="Submit">
 		</form>
   </body>
