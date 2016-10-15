@@ -14,9 +14,8 @@ class RPS < Sinatra::Base
   
   post '/registered' do
     @reg_name = params[:player_name]
-    player1 = Player.new(@reg_name)     # NameError - uninitialized constant RPS::Player:
-    player2 = Player.new("Computer")    # NameError - uninitialized constant RPS::Player:
-    
+    player1 = Player.new(@reg_name)     
+    player2 = Player.new("Computadora")    
     @rps_game = Game.create_game(player1, player2)
     erb(:registered)
     #redirect '/play'
@@ -24,14 +23,20 @@ class RPS < Sinatra::Base
  
   before do
     @rps_game = Game.game_instance   
-    # NameError - uninitialized constant RPS::Player:
   end
- 
   
   get '/play' do
-   
     erb(:play)
   end
+  
+  post '/result' do
+    erb(:result)
+  end
+  
+  get '/end_game' do
+    erb(:end_game)
+  end
+  
   
   run! if app_file == $0
 end

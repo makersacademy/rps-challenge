@@ -1,12 +1,12 @@
 <h1>Rock, Paper, Scissors</h1>
 
 <form action = '/result' method = "post">
-  <p>You are playing against the computer.</p>
+  <p>Hello <%=@rps_game.player_1.name%>! You are playing against the computer.</p>
   <p>Please make your selection and then click 'OK'.</p>
   
   
   <p><label for = "rock"><b>Rock</b>
-    <input type = "radio" name = "rps_choice" value = "rock"/>
+    <input type = "radio" name = "rps_choice" value = "rock" checked/>
   </label></p>
   <p><label for = "paper"><b>Paper</b>
     <input type = "radio" name = "rps_choice" value = "paper"/>
@@ -20,4 +20,8 @@
 </form>
 
 
-This is a test <%=@rps_game.player_1.name%> is player 1's name!
+<!--<form action = '/end_game' method = "get">-->
+<!--  <input type = "submit"/> -->
+<!--</form>-->
+
+<a href = '/end_game'>Quit</a>
