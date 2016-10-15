@@ -105,3 +105,4 @@ October 15, 2016
 # FIRST USER STORY
 - The user, would like to register for a game of rock, paper, scissors and see his name in colors
 - Create a home page, then click to enter the game and register your name
+- Player class that holds player's name as attribute
