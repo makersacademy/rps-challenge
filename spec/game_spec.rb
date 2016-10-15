@@ -12,7 +12,7 @@ describe Game do
   let(:scissors) {double(:weapon, choice: :scissors)}
 
   describe '#initialize' do
-    it 'initilizes an empty array' do
+    it 'initializes an empty array' do
       expect(subject.submitted_weapons).to be_empty
     end
     it 'has a issntace variable to store the outcome of the game' do
@@ -22,7 +22,7 @@ describe Game do
 
   describe '#add_submitted_weapons' do
     it 'creates an array of the submitted weapons' do
-      expect(subject.add_submitted_weapons).to eq [:rock, :paper]
+      expect(subject.add_submitted_weapons).to eq [rock, paper]
     end
   end
 
@@ -59,5 +59,6 @@ describe Game do
       expect(game.missing_element).to eq :paper
     end
   end
+
 
 end

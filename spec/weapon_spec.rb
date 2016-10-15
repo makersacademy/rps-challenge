@@ -49,7 +49,29 @@ describe Weapon do
   describe '#computer_choice' do
     it 'selects on behalf of the computer' do
       allow(subject).to receive(:random_choice).and_return 1
+      subject.computer_choice
       expect(subject.choice).to eq :rock
+    end
+  end
+
+  describe '#set_win' do
+    it 'sets the won status to true' do
+      subject.set_win
+      expect(subject.won).to eq true
+    end
+  end
+
+  describe '#set_lose' do
+    it 'sets the won status to false' do
+      subject.set_lose
+      expect(subject.won).to eq false
+    end
+  end
+
+  describe '#set_tie' do
+    it 'sets the won status to nil' do
+      subject.set_tie
+      expect(subject.won).to eq nil
     end
   end
 

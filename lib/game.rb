@@ -17,8 +17,8 @@ class Game
   end
 
   def add_submitted_weapons
-    @submitted_weapons << weapon_one.choice
-    @submitted_weapons << weapon_two.choice
+    @submitted_weapons << weapon_one
+    @submitted_weapons << weapon_two
   end
 
   def evaluate
@@ -34,13 +34,21 @@ class Game
   end
 
   def tie?
-    submitted_weapons.first == submitted_weapons.last
+    submitted_weapons.first.choice == submitted_weapons.last.choice
   end
 
   def missing_element
-    missing_element = r_p_s - submitted_weapons
-    missing_element.first
+    choices = @submitted_weapons.map { |x| x.choice }
+    choices = @r_p_s - choices
+    choices.first
   end
 
+  def set_statuses
+    if @winner == :tie
+      @submitted_weapons.each { |x| x.set_tie}
+    else
+      @submitted_weapons.each { |x| x.choice == @winner ? x.set_win : x.set_lose }
+    end
+  end
 
 end

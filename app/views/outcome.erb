@@ -1,11 +1,13 @@
 <h1> You chose <%= @player_1.play_history.last %> </h1>
 <h1> <%= @player_2.name %> chose <%= @player_2.play_history.last %>  </h1>
 
-<% if @outcome == :tie %>
-   <h2> It was a tie! </h2>
- <% else %>
-   <h2><%= @outcome %> won! </h2>
- <% end %>
+<% if  @player_1.outcome_history.last == true %>
+<h2> You won! </h2>
+<% elsif  @player_1.outcome_history.last == false%>
+<h2> <%= @player_2.name %> won :( </h2>
+<% else  %>
+<h2> It's a tie! </h2>
+   <% end %>
 
   <form action="/choices" method="get">
     <input type="submit" value="Play again">

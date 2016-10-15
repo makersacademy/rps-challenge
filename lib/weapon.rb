@@ -31,6 +31,18 @@ class Weapon
     end
   end
 
+  def set_win
+    @won = true
+  end
+
+  def set_lose
+    @won = false
+  end
+
+  def set_tie
+    @won = :tie
+  end
+
   private
 
   def random_choice

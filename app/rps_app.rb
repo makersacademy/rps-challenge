@@ -26,19 +26,19 @@ class RPSApp < Sinatra::Base
     @player_1 = $player_1
     @player_2 = $player_2
     @choice = params[:choice]
-    weapon_1 = Weapon.new
+    $weapon_1 = Weapon.new
     if @choice == "ROCK"
-      weapon_1.choose_rock
+      $weapon_1.choose_rock
     elsif @choice == "PAPER"
-      weapon_1.choose_paper
+      $weapon_1.choose_paper
     else
-      weapon_1.choose_scissors
+      $weapon_1.choose_scissors
     end
-    weapon_2 = Weapon.new
-    @computer_choice = weapon_2.computer_choice
-    @player_1.store_choice(weapon_1.choice)
-    @player_2.store_choice(weapon_2.choice)
-    $game = Game.new(weapon_1, weapon_2)
+    $weapon_2 = Weapon.new
+    @computer_choice = $weapon_2.computer_choice
+    $game = Game.new($weapon_1, $weapon_2)
+    @player_1.store_choice($weapon_1.choice)
+    @player_2.store_choice($weapon_2.choice)
     redirect '/outcome'
   end
 
@@ -46,9 +46,14 @@ class RPSApp < Sinatra::Base
     @game = $game
     @player_1 = $player_1
     @player_2 = $player_2
+    @weapon_1 = $weapon_1
+    @weapon_2 = $weapon_2
     @game.add_submitted_weapons
     @game.evaluate
     @outcome = @game.winner
+    @game.set_statuses
+    @player_1.store_outcome(@weapon_1.won)
+    @player_2.store_outcome(@weapon_2.won)
     erb :outcome
   end
 
