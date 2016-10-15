@@ -4,7 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice
+    @choice = choice
   end
 
   def selection(rps) # 0, 1, 2

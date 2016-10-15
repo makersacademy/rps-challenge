@@ -1,6 +1,10 @@
 class Computer
 
-  attr_reader :choice, :auto_selection
+  attr_reader :choice
+
+  def initialize
+    @choice = choice
+  end
 
   def name
     "Computer"
@@ -8,7 +12,7 @@ class Computer
 
   def auto_selection
     available_choices = Game.choices
-    available_choices[rand(0..2)]
+    @choice = available_choices[rand(0..2)]
   end
 
 end

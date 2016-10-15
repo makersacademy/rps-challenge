@@ -1,29 +1,17 @@
-require_relative 'player'
 require_relative 'computer'
-require_relative 'game_logic'
+require_relative 'player'
+require_relative 'game'
 
-class Game
+class GameLogic
 
-  attr_reader :player, :computer
-
-  @@choices = ["Rock", "Paper", "Scissors"]
-
-  def initialize(player, computer)
-    @player = player
-    @computer = computer
+  def initialize(player_selection, computer_selection)
+    @player_selection = @player.choice
+    @computer_selection = @computer.choice
   end
 
-  def self.choices
-    @@choices
-  end
-
-  def result
-    p1 = @player.choice
-    comp = @computer.auto_selection
-    game_logic(p1,comp)
-  end
-
-  def game_logic(p1, comp)
+  def game_logic
+    p1 = @player_selection
+    comp = @computer_selection
     if p1 == comp
       "Draw"
     elsif (p1 == "Rock" && comp == "Scissors")
@@ -40,5 +28,4 @@ class Game
       "#{comp} beats #{p1}"
     end
   end
-
 end
