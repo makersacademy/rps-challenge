@@ -8,11 +8,17 @@ class Game
   end
 
   def self.create(player_1, player_2)
-  @game = Game.new(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
   @game
   end
 
+  def result
+    return "draw" if @player_1.weapon == @player_2.weapon
+    winning_moves = { rock: :scissors, paper: :rock, scissors: :paper }
+    @player_1.weapon == winning_moves[@player_2.weapon] ? "you win" : "you lose - prepare to die"
+
+  end
 end

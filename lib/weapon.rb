@@ -1,6 +1,6 @@
 class Weapon
 
-weapon = ["Rock", "Paper", "Scissors"]
+  WEAPON = ["Rock", "Paper", "Scissors"]
 
 
 end
