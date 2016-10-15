@@ -8,6 +8,7 @@ class Game
 
   def play
     player_1.make_move
+    player_2.make_move
   end
 end
 
@@ -29,6 +30,10 @@ describe Game do
     it "asks Player 1 to make a selection" do
       game.play
       expect(player_1).to have_received(:make_move)
+    end
+    it "asks Player 2 to make a selection" do
+      game.play
+      expect(player_2).to have_received(:make_move)
     end
   end
 end
