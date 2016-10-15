@@ -12,6 +12,10 @@ describe Game do
     it 'holds game choices in an array' do
       expect(game.choices).to eq ["rock","paper","scissors"]
     end
+
+    it 'creates a bot to compete against the user' do
+      expect(game.bot.name).to eq "bot"
+    end
   end
 
   context "holds player's attributes" do
