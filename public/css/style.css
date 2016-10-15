@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Marvel');
+
+.rps {
+  /* unselectable */
+  cursor: default;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+.rps img {
+  height: 100px;
+}
+.rps h1 {
+  margin-top: -5px;
+  margin-bottom: 40px;
+  font-size: 1.35em;
+}
+
+body {
+  text-align: center;
+  font-family: 'Marvel', sans-serif;
+  font-size: 1.3em;
+}
+
+input {
+  font-family: inherit;
+  font-size: 1em;
+  text-align: center;
+}
+
+.separator {
+  height: 10px;
+}
+
+input[type=submit] {
+  padding: 5px;
+  color: black;
+  background-color: white;
+  border: 0px;
+  cursor:pointer;
+}
+
+input[type=submit]:hover {
+  color: white;
+  background-color: black;
+  border: 0px;
+}
