@@ -39,10 +39,13 @@ input[type="submit"] {
 	padding: 16px 30px;
 	font-size: 24px;
 	font-family: 'Montserrat', sans-serif;
+	transition: background-color .5s;
 }
 
 input[type="submit"]:hover {
 	cursor: pointer;
+	background-color: #aaffaa;
+	transition: background-color .5s;
 }
 
 form[action="/choice"] {

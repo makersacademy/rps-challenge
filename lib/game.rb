@@ -16,10 +16,16 @@ class Game
 	end
 
 	def decide_winner
-		weaknesses = {:rock => "paper", :paper => "scissors", :scissors => "rock"}
+		weaknesses = {
+			:rock => ["paper","spock"], 
+			:paper => ["scissors","lizard"], 
+			:scissors => ["rock","spock"], 
+			:lizard => ["rock","scissors"], 
+			:spock => ["lizard","paper"]
+		}
 		if @player.choice == @opponent.choice
 			@outcome = "its a draw."
-		elsif @opponent.choice == weaknesses[@player.choice.to_sym]
+		elsif weaknesses[@player.choice.to_sym].include?(@opponent.choice)
 			@outcome = "you lose!"
 		else
 			@outcome = "you win!"

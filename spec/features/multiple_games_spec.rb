@@ -8,6 +8,6 @@ feature 'playing multiple games' do
 			click_button('Make your choice!')
 			click_on('Play again?')
 		end
-		expect(page).to have_content "Welcome to rock paper scissors Antony!"
+		expect(page).to have_content "Welcome to rock, paper, scissors, lizard, spock Antony!"
 	end
 end

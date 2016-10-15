@@ -5,6 +5,6 @@ class Opponent
 	end
 
 	def choose
-		@choice = ["rock","paper","scissors"].sample
+		@choice = ["rock","paper","scissors","lizard","spock"].sample
 	end
 end
