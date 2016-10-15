@@ -2,10 +2,11 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :players
+  attr_reader :players, :choices
 
   def initialize(player)
     @players = [player]
+    @choices = ["rock","paper","scissors"]
   end
 
   def first_player_name
