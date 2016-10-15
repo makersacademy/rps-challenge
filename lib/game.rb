@@ -1,19 +1,30 @@
+require_relative 'weapon'
+
 class Game
 
-  attr_reader :player_one, :player_two, :r_p_s
+  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons
 
-  def initialize(player_one, player_two=:the_computer)
-    @player_one = player_one
-    @player_two = player_two
+  def initialize(weapon_one, weapon_two)
+    @weapon_one = weapon_one
+    @weapon_two = weapon_two
+
+    # @player_one = player_one
+    # @player_two = player_two
+    @submitted_weapons =[] # attr_reader - remove?
     @r_p_s = [:rock, :paper, :scissors]
-
   end
 
-  def evaluate(submitted_weapons)
-    if !tie?(submitted_weapons)
-      if !rock?(submitted_weapons)
+  def add_submitted_weapons
+    @submitted_weapons << weapon_one.choice
+    @submitted_weapons << weapon_two.choice
+  end
+
+
+  def evaluate
+    if !tie?
+      if !rock?
         :scissors
-      elsif !scissors?(submitted_weapons)
+      elsif !scissors?
         :paper
       else
         :rock
@@ -22,19 +33,19 @@ class Game
 
   end
 
-  def rock?(submitted_weapons)
+  def rock?
     submitted_weapons.include? :rock
   end
 
-  def scissors?(submitted_weapons)
+  def scissors?
     submitted_weapons.include? :scissors
   end
 
-  def tie?(submitted_weapons)
+  def tie?
     submitted_weapons.first == submitted_weapons.last
   end
 
-  def missing_element(submitted_weapons)
+  def missing_element
     missing_element = @r_p_s - submitted_weapons
     missing_element.first
   end

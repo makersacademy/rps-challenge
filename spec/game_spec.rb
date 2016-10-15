@@ -3,67 +3,84 @@ require 'game'
 
 describe Game do
 
-  subject {described_class.new(bob)}
+  subject {described_class.new(rock, paper)}
   let(:bob) {double(:bob)}
   let(:sally) {double(:sally)}
 
-  # let(:rock) {double(:rock)}
-  # let(:paper) {double(:paper)}
-  # let(:scissors) {double(:scissors)}
+  let(:rock) {double(:weapon, choice: :rock)}
+  let(:paper) {double(:weapon, choice: :paper)}
+  let(:scissors) {double(:weapon, choice: :scissors)}
 
   describe '#initialize' do
-    it 'receives a player' do
-      expect(subject.player_one).to eq bob
+    # it 'receives a player' do
+    #   expect(subject.player_one).to eq bob
+    # end
+    # it 'defaults to the computer being player 2' do
+    #   expect(subject.player_two).to eq :the_computer
+    # end
+    # it 'sets player two as the other player if one is entered' do
+    #   game = described_class.new(bob, sally)
+    #   expect(game.player_two).to eq sally
+    # end
+    it 'initilizes and empty array' do
+      expect(subject.submitted_weapons).to be_empty
     end
-    it 'defaults to the computer being player 2' do
-      expect(subject.player_two).to eq :the_computer
-    end
-    it 'sets player two as the other player if one is entered' do
-      game = described_class.new(bob, sally)
-      expect(game.player_two).to eq sally
+  end
+
+  describe '#add_submitted_weapons' do
+    it 'creates an array of the submitted weapons' do
+      expect(subject.add_submitted_weapons).to eq [:rock, :paper]
     end
   end
 
   describe '#evaluate' do
     it 'declares rock the winner when up against scissors' do
-      rock_wins = [:rock, :scissors]
-      expect(subject.evaluate(rock_wins)).to eq :rock
+      game = Game.new(rock, scissors)
+      game.add_submitted_weapons
+      expect(game.evaluate).to eq :rock
     end
     it 'declares scissors the winner when up against paper' do
-      scissors_win = [:scissors, :paper]
-      expect(subject.evaluate(scissors_win)).to eq :scissors
+      game = Game.new(scissors, paper)
+      game.add_submitted_weapons
+      expect(game.evaluate).to eq :scissors
     end
     it 'declares paper the winner when up against rock' do
-      paper_wins = [:paper, :rock]
-      expect(subject.evaluate(paper_wins)).to eq :paper
+      game = Game.new(paper, rock)
+      game.add_submitted_weapons
+      expect(game.evaluate).to eq :paper
     end
   end
 
   describe '#tie?' do
     it 'determines when a game is a tie' do
-      tied_game = [:rock, :rock]
-      expect(subject.tie?(tied_game)).to eq true
+      game = Game.new(rock, rock)
+      game.add_submitted_weapons
+      expect(game.tie?).to eq true
     end
   end
 
   describe '#rock' do
     it 'determines whether a rock was one of the choices' do
-      rock_array = [:rock, :scissors]
-      expect(subject.rock?(rock_array)).to eq true
+      game = Game.new(rock, scissors)
+      game.add_submitted_weapons
+      expect(game.rock?).to eq true
     end
   end
 
-  describe '#rock' do
+  describe '#scissors' do
     it 'determines whether scissors was one of the choices' do
-      rock_array = [:rock, :scissors]
-      expect(subject.scissors?(rock_array)).to eq true
+      game = Game.new(rock, scissors)
+      game.add_submitted_weapons
+      expect(game.scissors?).to eq true
     end
   end
 
   describe '#missing_element' do
     it 'returns the element that was not used' do
-      scissors_wins = [:scissors, :paper]
-      expect(subject.missing_element(scissors_wins)).to eq :rock
+      game = Game.new(rock, scissors)
+      game.add_submitted_weapons
+      expect(game.missing_element).to eq :paper
     end
   end
+
 end
