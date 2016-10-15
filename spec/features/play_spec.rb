@@ -4,7 +4,6 @@ feature 'Preparing to play' do
     sign_in_and_play
   end
 
-
   scenario "Player is able to select 'rock' button" do
     visit('/play')
     find_button("rock").visible?

@@ -48,17 +48,4 @@ class Game
     end
   end
 
-
-  def win?
-
-  end
-
-  def lose?
-
-  end
-
-  def draw?
-
-  end
-
 end
