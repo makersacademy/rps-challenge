@@ -1,8 +1,8 @@
-<h1><%= @p1_name%></h1>
+<h1><%= @game.player1.name%></h1>
 <h2>Welcome: please choose your weapon!</h2>
 
 <form action="/select" method="post">
-  <input type="submit" name="p1_choice" value="Rock">
-  <input type="submit" name="p1_choice" value="Paper">
-  <input type="submit" name="p1_choice" value="Scissors">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
 </form>

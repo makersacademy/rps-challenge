@@ -6,17 +6,20 @@ class RPSWeb < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    @@player1 = Player.new(params[:p1_name])
+    @game = Game.create(Player.new(params[:player1]))
     redirect '/play'
   end
 
   get '/play' do
-    @p1_name = @@player1.name
     erb(:play)
   end
 
