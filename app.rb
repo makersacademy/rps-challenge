@@ -3,14 +3,21 @@ require 'haml'
 require 'rspec'
 
 class RPS < Sinatra::Base
-  enable :sessions
+  use Rack::Session::Cookie,:key => 'rack.session',
+                            :path => '/',
+                            :secret => 'your_secret'
 
   get '/' do
     haml :index
   end
 
   post '/name' do
-    @player_1_name = params[:player_1_name]
+    session[:player_1_name] = params[:player_1_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_1_name = session[:player_1_name]
     haml :play
   end
   # start the server if ruby file executed directly
