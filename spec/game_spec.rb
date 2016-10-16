@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player_1) { double :player_1, :move => nil }
-  let(:player_2) { double :player_2, :move => nil }
+  let(:player_1) { double :player_1, :name => "Player 1", :move => nil }
+  let(:player_2) { double :player_2, :name => "Player 2", :move => nil }
   subject(:game) { described_class.new(player_1, player_2)}
 
   describe "players" do
@@ -25,25 +25,25 @@ describe Game do
     end
   end
 
-  describe "rules" do
+  describe "rules and results" do
     context "both players make same move" do
       it "is a draw if both players select rock" do
         allow(player_1).to receive(:move).and_return :rock
         allow(player_2).to receive(:move).and_return :rock
         game.play_round
-        expect(game.winner).to be nil
+        expect(game.result).to be nil
       end
       it "is a draw if both players select scissors" do
         allow(player_1).to receive(:move).and_return :scissors
         allow(player_2).to receive(:move).and_return :scissors
         game.play_round
-        expect(game.winner).to be nil
+        expect(game.result).to be nil
       end
       it "is a draw if both players select paper" do
         allow(player_1).to receive(:move).and_return :paper
         allow(player_2).to receive(:move).and_return :paper
         game.play_round
-        expect(game.winner).to be nil
+        expect(game.result).to be nil
       end
     end
 
@@ -52,13 +52,17 @@ describe Game do
         allow(player_1).to receive(:move).and_return :rock
         allow(player_2).to receive(:move).and_return :scissors
         game.play_round
-        expect(game.winner).to be player_1
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:rock, :scissors]
+        expect(game.result[:winner]).to eq :player_1
       end
       it "Player 2 wins when Player 1 chooses scissors, Player 2 chooses rock" do
         allow(player_1).to receive(:move).and_return :scissors
         allow(player_2).to receive(:move).and_return :rock
         game.play_round
-        expect(game.winner).to be player_2
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:scissors, :rock]
+        expect(game.result[:winner]).to eq :player_2
       end
     end
 
@@ -67,13 +71,17 @@ describe Game do
         allow(player_1).to receive(:move).and_return :paper
         allow(player_2).to receive(:move).and_return :rock
         game.play_round
-        expect(game.winner).to be player_1
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:paper, :rock]
+        expect(game.result[:winner]).to eq :player_1
       end
       it "Player 2 wins when Player 1 chooses rock, Player 2 chooses paper" do
         allow(player_1).to receive(:move).and_return :rock
         allow(player_2).to receive(:move).and_return :paper
         game.play_round
-        expect(game.winner).to be player_2
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:rock, :paper]
+        expect(game.result[:winner]).to eq :player_2
       end
     end
 
@@ -82,13 +90,17 @@ describe Game do
         allow(player_1).to receive(:move).and_return :scissors
         allow(player_2).to receive(:move).and_return :paper
         game.play_round
-        expect(game.winner).to be player_1
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:scissors, :paper]
+        expect(game.result[:winner]).to eq :player_1
       end
       it "Player 2 wins when Player 1 chooses paper, Player 2 chooses scissors" do
         allow(player_1).to receive(:move).and_return :paper
         allow(player_2).to receive(:move).and_return :scissors
         game.play_round
-        expect(game.winner).to be player_2
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:paper, :scissors]
+        expect(game.result[:winner]).to eq :player_2
       end
     end
   end
