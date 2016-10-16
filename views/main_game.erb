@@ -1,7 +1,13 @@
-<h1>Thousand fingers vs AI</h1>
+<h1> <%=@game.player_1_name%> vs AI</h1>
 <h2>Choose you weapon for battle</h2>
-<form action='/game-over' method='post'>
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+
+<form action='/referee' method='post'>
+  <select required name="weapon">
+    <option value="">Select your Weapon</option>
+    <option value="" disabled>----</option>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
 </form>
