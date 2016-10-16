@@ -6,6 +6,14 @@ feature 'user should see available choices' do
     sign_in_and_play
     expect(page).to have_button('Rock')
   end
+  scenario 'user should see scissors choice' do
+    sign_in_and_play
+    expect(page).to have_button('Scissors')
+  end
+  scenario 'user should see paper choice' do
+    sign_in_and_play
+    expect(page).to have_button('Paper')
+  end
 end
 
 feature "result" do

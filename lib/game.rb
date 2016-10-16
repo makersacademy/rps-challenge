@@ -37,8 +37,6 @@ class Game
   private
 
   def game_logic(player_choice, computer_choice)
-    puts computer_choice.inspect
-    puts player_choice.inspect
     # See if player one wins. If not, player 2 wins
     if player_choice == computer_choice
       return "Draw"

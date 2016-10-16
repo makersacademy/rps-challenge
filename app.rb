@@ -1,7 +1,5 @@
 require 'sinatra/base'
 require './lib/game'
-# require './lib/player'
-# require './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -10,7 +8,7 @@ class Rps < Sinatra::Base
   end
 
   get '/' do
-    erb(:index)
+    erb(:index, :layout => :layout)
   end
 
   post '/game' do
