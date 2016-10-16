@@ -1,9 +1,9 @@
-<h1>  Welcome, <%= @player_1.name %> </h1>
-<h2> You are playing against <%= @player_2.name %>  </h2>
+<h1>  Welcome, <%= @player_one.name %> </h1>
+<h2> You are playing against <%= @player_two.name %>  </h2>
 
 <h2> Select your weapon of choice:</h2>
 
-<% if  @player_2.name != :the_computer %>
+<% if  @player_two.name != :the_computer %>
 <form action="/choices_2" method="post">
   <input type="submit" name="choice_1" value="ROCK">
 </form>

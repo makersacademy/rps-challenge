@@ -2,17 +2,14 @@ require_relative 'weapon'
 
 class Game
 
-  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
+  R_P_S = [:rock, :paper, :scissors]
 
-  # def self.instnce
-  #   @game
-  # end
+  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
 
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
     @weapon_two = weapon_two
     @submitted_weapons =[] # attr_reader - remove?
-    @r_p_s = [:rock, :paper, :scissors]
     @winner = nil
   end
 
@@ -49,7 +46,7 @@ class Game
 
   def missing_element
     choices = @submitted_weapons.map { |x| x.choice }
-    choices = @r_p_s - choices
+    choices = R_P_S - choices
     choices.first
   end
 

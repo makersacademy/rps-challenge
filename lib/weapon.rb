@@ -20,15 +20,7 @@ class Weapon
   end
 
   def computer_choice
-    number = random_choice
-    case number
-    when 1
-      choose_rock
-    when 2
-      choose_paper
-    when 3
-      choose_scissors
-    end
+    @choice = [:rock, :paper, :scissors].sample
   end
 
   def set_win
@@ -41,12 +33,6 @@ class Weapon
 
   def set_tie
     @won = :tie
-  end
-
-  private
-
-  def random_choice
-    rand(1..3)
   end
 
 end

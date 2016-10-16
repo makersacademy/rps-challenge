@@ -1,19 +1,19 @@
-<% if  @player_2.name == :the_computer %>
-<h1> You chose <%= @player_1.play_history.last %> </h1>
+<% if  @player_two.name == :the_computer %>
+<h1> You chose <%= @player_one.play_history.last %> </h1>
 <% else  %>
-<h1> <%= @player_1.name %> chose <%= @player_1.play_history.last %> </h1>
+<h1> <%= @player_one.name %> chose <%= @player_one.play_history.last %> </h1>
 <% end %>
-<h1> <%= @player_2.name %> chose <%= @player_2.play_history.last %>  </h1>
+<h1> <%= @player_two.name %> chose <%= @player_two.play_history.last %>  </h1>
 
-<% if  @player_1.outcome_history.last == true %>
+<% if  @player_one.outcome_history.last == true %>
 <h2> You won! </h2>
-<% elsif  @player_1.outcome_history.last == false%>
-<h2> <%= @player_2.name %> won :( </h2>
+<% elsif  @player_one.outcome_history.last == false%>
+<h2> <%= @player_two.name %> won :( </h2>
 <% else  %>
 <h2> It's a tie! </h2>
    <% end %>
 
-<% if  @player_2.name == :the_computer %>
+<% if  @player_two.name == :the_computer %>
   <form action="/choices" method="get">
     <input type="submit" value="Play again">
   </form>
