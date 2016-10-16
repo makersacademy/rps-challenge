@@ -35,3 +35,7 @@ The build was TDD and used a combination of rspec and capybara; with unit and fe
 
 At the time of writing this README I have incorporated travis-ci to my local repo and coveralls reports show
 94% test coverage.  I struggled with writing an effective unit test for the 'outcome' method and will aim to include this, and increase test coverage.
+
+A screenshot from PRY:
+
+![alt text](/Users/Kath/Week_3/rps-challenge/Screen Shot 2016-10-16 at 13.58.45.png)
