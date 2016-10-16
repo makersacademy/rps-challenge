@@ -4,8 +4,13 @@ class Game
 
   OPTIONS = [:rock, :paper, :scissors]
 
+  def comp_choice
+    (OPTIONS.sample)
+  end
+
+  @comp = self.comp_choice
+
   def rock
-    @comp = comp_choice
     if @comp == :rock
       "drew"
     elsif @comp == :paper
@@ -14,11 +19,8 @@ class Game
       "won!"
     end
   end
-
-  def comp_choice
-    comp_choice = OPTIONS.sample
-  end
-
-
-
 end
+
+game = Game.new
+@comp = game.comp_choice
+p game.rock
