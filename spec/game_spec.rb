@@ -21,6 +21,7 @@ describe Game do
     end
 
     it " returns the AI weapon" do
+      game.set_ai_weapon
       expect(game.get_ai_weapon).to be_an_instance_of(String)
     end
 

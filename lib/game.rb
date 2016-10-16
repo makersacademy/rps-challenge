@@ -26,6 +26,10 @@ class Game
     }
   end
 
+  def get_user_name
+    @user_hash[:username]
+  end
+
   def get_user_weapon
     @user_hash[:user_weapon]
   end
