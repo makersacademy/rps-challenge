@@ -15,7 +15,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @computer_hand = ["Rock", "Paper", 'Scissors']
+    @computer_hand = ["Rock", "Paper", "Scissors"]
     @player_hand = []
   end
 

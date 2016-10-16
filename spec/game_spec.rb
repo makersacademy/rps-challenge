@@ -18,4 +18,5 @@ describe Game do
     expect(game.player_hand[1]).to eq("Paper")
   end
 
+
 end
