@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @game.player_1.make_move(params[:move])
+    @game.player_1.make_move(params[:move].to_sym)
     @game.play_round
     redirect to '/game_over'
   end

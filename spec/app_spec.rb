@@ -47,27 +47,27 @@ describe RockPaperScissors do
 
     describe "post requests" do
       it "accepts player's move when rock" do
-        expect(@player_1).to receive(:make_move).with("rock")
+        expect(@player_1).to receive(:make_move).with(:rock)
         post "/play", :move => "rock"
       end
 
       it "accepts player's move when scissors" do
-        expect(@player_1).to receive(:make_move).with("scissors")
+        expect(@player_1).to receive(:make_move).with(:scissors)
         post "/play", :move => "scissors"
       end
 
       it "accepts player's move when paper" do
-        expect(@player_1).to receive(:make_move).with("paper")
+        expect(@player_1).to receive(:make_move).with(:paper)
         post "/play", :move => "paper"
       end
 
       it "plays a round of a game" do
         expect(Game.instance).to receive(:play_round)
-        post "/play"
+        post "/play", :move => "rock"
       end
 
       it "post request redirects to /game_over" do
-        post "/play"
+        post "/play", :move => "rock"
         expect(last_response.redirect?).to be true
         follow_redirect!
         expect(last_request.path).to eq "/game_over"
