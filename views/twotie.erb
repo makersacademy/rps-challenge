@@ -1,6 +1,9 @@
 <body>
 <h1>It's a tie. Play again!<h1>
 
+  <h1><%= @game.players[0].name %> has got <%= @game.players[0].points %> points</h1>
+  <h1><%= @game.players[1].name %> has got <%= @game.players[1].points %> points</h1>
+
 
 <div style="height:auto; margin: 0 auto; align:center;">
   <form method="link" action="/2play">
@@ -12,7 +15,7 @@
   <style>
 
 body {
-  background-image: url("http://i.imgur.com/FblABms.png");
+  background-image: url("http://cdn.pcwallart.com/images/walle-wallpaper-3.jpg");
 }
 
 h1 {
@@ -22,7 +25,7 @@ text-align:center
 }
 
 form {
-width:50%; margin:30 auto
+width:10%; margin:30 auto
 }
 
 input[type=submit] {

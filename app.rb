@@ -18,9 +18,24 @@ attr_reader :player_choice
     redirect '/play'
   end
 
+  get '/check'do
+  @game = Game.current
+  redirect (@game.check)
+  end
+
   get '/play' do
     @game = Game.current
     erb :play
+  end
+
+  get '/won_game' do
+    @game = Game.current
+    erb :won_game
+  end
+
+  get '/lost_game' do
+    @game = Game.current
+    erb :lost_game
   end
 
   get '/rock' do
@@ -69,6 +84,11 @@ attr_reader :player_choice
     erb :twoplayscissors
   end
 
+  get '/2check' do
+  @game = Game.current
+  redirect (@game.two_check)
+  end
+
   get '/2tie' do
     @game = Game.current
     erb :twotie
@@ -84,6 +104,10 @@ attr_reader :player_choice
     erb :twolose
   end
 
+  get '/2won_game' do
+    @game = Game.current
+    erb :two_won_game
+  end
 
   run! if app_file == $0
 
