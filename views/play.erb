@@ -8,20 +8,20 @@ body {
   background-position: fixed;
 }
 </style>
-</head>
 <body>
 
+<h2> <center> Alright, let's play! </center> </h2>
+<h3>
+  <center>
+  It's <%= $game.first_player_name %> vs <%= $game.bot_name %>
+</center>
+</h3>
 
-
-
-
-<h2> Alright, let's play! </h2>
-<h3> It's <h3> <h3 style="color:blue;"><%= $game.first_player_name %><h3><h3> vs <%= $game.bot_name %> </h3>
-<br>
-
-<h4> <%= $game.first_player_name %> select your action! </h4>
+<h4> <center> <%= $game.first_player_name %>, select your action! </center> </h4>
 <form action="/result" method="get">
+  <center>
   <input type="submit" name ="p1" value="Rock">
   <input type="submit" name ="p1" value="Paper">
   <input type="submit" name ="p1" value="Scissors">
+</center>
 </form>
