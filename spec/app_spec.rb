@@ -14,7 +14,7 @@ describe RockPaperScissors do
       expect(last_response.body).to include "Rock Paper Scissors"
     end
 
-    it "post request accepts player name and creates game" do
+    it "post request accepts player name and creates game with computer opponent" do
       allow(Game).to receive(:create)
       post "/", :player_1 => "Player 1"
       expect(Game).to have_received(:create) do |player_1, player_2|
@@ -34,7 +34,8 @@ describe RockPaperScissors do
   describe "/play" do
     before do
       @player_1 = Player.new("Player 1")
-      Game.create(@player_1, nil)
+      @player_2 = Computer.new
+      Game.create(@player_1, @player_2)
     end
 
     it "get request displays play game page" do
