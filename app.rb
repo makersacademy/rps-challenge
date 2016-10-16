@@ -17,57 +17,50 @@ end
 
 get '/playrock' do
   game = Game.new
-  @computer_play = game.play
+  $computer_play = game.play
   erb(:playrock)
-  if @computer_play == "rock"
+  if $computer_play == "rock"
     redirect '/draw'
-  elsif @computer_play == "paper"
+  elsif $computer_play == "paper"
     redirect '/lose'
-  elsif @computer_play == "scissors"
+  elsif $computer_play == "scissors"
     redirect '/win'
   end
 end
 
 get '/playpaper' do
   game = Game.new
-  @computer_play = game.play
+  $computer_play = game.play
   erb(:playpaper)
-  if @computer_play == "paper"
+  if $computer_play == "paper"
     redirect '/draw'
-  elsif @computer_play == "scissors"
+  elsif $computer_play == "scissors"
     redirect '/lose'
-  elsif @computer_play == "rock"
+  elsif $computer_play == "rock"
     redirect '/win'
   end
 end
 
 get '/playscissors' do
-  game = Game.new
-  @computer_play = game.play
+  @computer_play = $computer_play
   erb(:playscissors)
-  if @computer_play == "scissors"
+  if $computer_play == "scissors"
     redirect '/draw'
-  elsif @computer_play == "paper"
+  elsif $computer_play == "paper"
     redirect '/win'
-  elsif @computer_play == "rock"
+  elsif $computer_play == "rock"
     redirect '/lose'
   end
 end
 
 get '/win' do
-  game = Game.new
-  @computer_play = game.play
   erb(:win)
 end
 
 get '/lose' do
-  game = Game.new
-  @computer_play = game.play
   erb(:lose)
 end
 
 get '/draw' do
-  game = Game.new
-  @computer_play = game.play
   erb(:draw)
 end
