@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RockPaperScisors < Sinatra::Base
 
@@ -19,6 +20,8 @@ class RockPaperScisors < Sinatra::Base
   end
 
   get '/results' do
+    game = Game.new
+    @result = game.rock
     @player1 = session[:player1]
     erb :results
   end

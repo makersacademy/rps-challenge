@@ -4,18 +4,14 @@ class Game
 
   OPTIONS = [:rock, :paper, :scissors]
 
-  def initialize(player)
-    @player = player
-  end
-
   def rock
     @comp = comp_choice
     if @comp == :rock
-      "It's a draw!"
+      "drew"
     elsif @comp == :paper
-      "Sorry you lose!"
+      "lost"
     else
-      "You win!"
+      "won!"
     end
   end
 
