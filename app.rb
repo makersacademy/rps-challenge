@@ -14,16 +14,15 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
+    $game.bot_choice
     erb :play
   end
 
-  get '/result' do
-    @bot = $game.bot_choice
-    @rock = params[:rock]
-    @paper = params[:paper]
-    @scissors = params[:scissors]
-    erb :result_page
-  end
+  # get '/result' do
+  #   $game.players[0].player_choice = params[:p1]
+  #   @bot = $game.bot_choice
+  #   erb :result_page
+  # end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

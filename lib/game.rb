@@ -15,7 +15,7 @@ class Game
   end
 
   def bot_choice
-    @choices.sample
+    @bot.player_choice = @choices.sample
   end
 
 end
