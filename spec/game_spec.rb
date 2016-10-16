@@ -31,19 +31,25 @@ describe Game do
         allow(player_1).to receive(:move).and_return :rock
         allow(player_2).to receive(:move).and_return :rock
         game.play_round
-        expect(game.result).to be nil
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:rock, :rock]
+        expect(game.result[:winner]).to eq :draw
       end
       it "is a draw if both players select scissors" do
         allow(player_1).to receive(:move).and_return :scissors
         allow(player_2).to receive(:move).and_return :scissors
         game.play_round
-        expect(game.result).to be nil
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:scissors, :scissors]
+        expect(game.result[:winner]).to eq :draw
       end
       it "is a draw if both players select paper" do
         allow(player_1).to receive(:move).and_return :paper
         allow(player_2).to receive(:move).and_return :paper
         game.play_round
-        expect(game.result).to be nil
+        expect(game.result).to be_a Hash
+        expect(game.result[:moves]).to eq [:paper, :paper]
+        expect(game.result[:winner]).to eq :draw
       end
     end
 

@@ -6,7 +6,10 @@ class Game
     { moves: [:rock, :paper], winner: :player_2 },
     { moves: [:paper, :rock], winner: :player_1 },
     { moves: [:paper, :scissors], winner: :player_2 },
-    { moves: [:scissors, :paper], winner: :player_1 }
+    { moves: [:scissors, :paper], winner: :player_1 },
+    { moves: [:rock, :rock], winner: :draw },
+    { moves: [:paper, :paper], winner: :draw },
+    { moves: [:scissors, :scissors], winner: :draw }
   ]
 
   def self.create(player_1, player_2)
