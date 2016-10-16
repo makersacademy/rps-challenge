@@ -1,12 +1,10 @@
 require "spec_helper"
+require_relative "test_helper"
 
 RSpec.feature "announces the outcome", :type => :feature do
 
   before(:each) do
-    visit "/"
-
-    fill_in "Name", :with => "Dagmara"
-    click_button "Game on!"
+    sign_in_and_play
     allow(Game.game).to receive_messages(bots_choice: "scissors")
   end
 

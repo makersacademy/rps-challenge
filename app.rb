@@ -1,6 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
 
-class Battle < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   if ENV['RACK_ENV'] == 'test'
     disable :show_exceptions
@@ -19,7 +20,7 @@ class Battle < Sinatra::Base
   end
 
   post '/name' do
-    @game.set_name = params[:name]
+    @game.set_name(params[:name])
     redirect '/play'
   end
 

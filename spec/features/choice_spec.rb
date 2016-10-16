@@ -1,12 +1,10 @@
 require "spec_helper"
+require_relative "test_helper"
 
 RSpec.feature "choose rocks, paper or scissors", :type => :feature do
 
   before(:each) do
-    visit "/"
-
-    fill_in "Name", :with => "Dagmara"
-    click_button "Game on!"
+    sign_in_and_play
   end
 
   scenario "User can choose rock" do

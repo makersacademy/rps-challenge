@@ -1,26 +1,26 @@
-<h1><%=@game.name%><h1>
+<h1><%=@game.name%> vs Daily Grind<h1>
 
-<form action="/choose" method="post"> #ask Mary if any better options...
+<form action="/choose" method="post"> <!-- ask Mary if any better options... -->
   <input type="hidden" value="rock" name="choice"/>
   <button type="submit" id="Smash">Smash</button>
 </form>
 
-<form action="/choose" method="post"> #ask Mary if any better options...
+<form action="/choose" method="post">
   <input type="hidden" value="paper" name="choice"/>
   <button type="submit" id="Wrap">Wrap</button>
 </form>
 
-<form action="/choose" method="post"> #ask Mary if any better options...
+<form action="/choose" method="post">
   <input type="hidden" value="scissors" name="choice"/>
   <button type="submit" id="Chop">Chop</button>
 </form>
 
-<% if game.played? %>
+<% if @game.played? %>
 <p>You chose <%=@game.users_choice%></p>
-#add the equivalent of thread.sleep for suspense
+<!--add the equivalent of thread.sleep for suspense-->
 
-<p>Bot chose <%=@game.bot_choice%></p>
-#add the equivalent of thread.sleep for suspense
+<p>Bot chose <%=@game.bots_choice%></p>
+<!--add the equivalent of thread.sleep for suspense-->
 
 <h1><%= @game.outcome %></h1>
 <% end %>
