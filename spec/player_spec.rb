@@ -1,11 +1,11 @@
 require 'player'
 
 describe Player do
-  let(:player) {Player.new('Trump')}
+  let(:player) { described_class.new('Hilary') }
 
   describe '#initialize' do
     it 'is given a name' do
-      expect(player.name).to eq 'Trump'
+      expect(player.name).to eq 'Hilary'
     end
   end
 end
