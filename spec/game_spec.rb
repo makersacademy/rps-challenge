@@ -42,6 +42,11 @@ describe Game do
       game.add_submitted_weapons
       expect(game.evaluate).to eq :paper
     end
+    it 'declares a tie when the same weapons are used' do
+      game = Game.new(paper, paper)
+      game.add_submitted_weapons
+      expect(game.evaluate).to eq :tie
+    end
   end
 
   describe '#set_status' do
@@ -54,7 +59,7 @@ describe Game do
       game.set_statuses
       expect(loser_rock.won).to eq false
     end
-    it 'tells a losing weapon it has lost' do
+    it 'tells a  winning losing weapon it has won' do
       loser_rock = Weapon.new(:rock)
       winner_paper = Weapon.new(:paper)
       game = Game.new(loser_rock, winner_paper)
@@ -63,23 +68,15 @@ describe Game do
       game.set_statuses
       expect(winner_paper.won).to eq true
     end
+    it 'tells both weapons it is a tie' do
+      tie_rock = Weapon.new(:rock)
+      other_rock = Weapon.new(:rock)
+      game = Game.new(tie_rock, other_rock)
+      game.add_submitted_weapons
+      game.evaluate
+      game.set_statuses
+      expect(tie_rock.won).to eq :tie
+    end
   end
-
-  # describe '#tie?' do
-  #   it 'determines when a game is a tie' do
-  #     game = Game.new(rock, rock)
-  #     game.add_submitted_weapons
-  #     expect(game.tie?).to eq true
-  #   end
-  # end
-  #
-  # describe '#missing_element' do
-  #   it 'returns the element that was not used' do
-  #     game = Game.new(rock, scissors)
-  #     game.add_submitted_weapons
-  #     expect(game.missing_element).to eq :paper
-  #   end
-  # end
-
-
+  
 end
