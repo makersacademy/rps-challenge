@@ -114,7 +114,7 @@ describe Game do
       end
     end
 
-    describe '#pgame_played' do
+    describe '#game_played' do
       it "should increment games played whenever one is played" do
         game.stub(:player_2_move) {:scissors}
         game.player_1_move(:paper)

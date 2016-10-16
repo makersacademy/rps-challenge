@@ -1,3 +1,5 @@
+require_relative "player"
+
 class Game
 
   attr_reader :played_games, :player_1_score, :player_2_score
@@ -39,6 +41,14 @@ class Game
   def player_2_move
     [:rock, :paper, :scissors].sample
   end
+
+  def reset_score
+    @player_1_score = 0
+    @player_2_score = 0
+    @played_games = 0
+  end
+
+  private
 
   def player_1_rock(player_2_move)
     if player_2_move == :rock
@@ -86,12 +96,6 @@ class Game
 
   def player_2_won
     @player_2_score += 1
-  end
-
-  def reset_score
-    @player_1_score = 0
-    @player_2_score = 0
-    @played_games = 0
   end
 
 end
