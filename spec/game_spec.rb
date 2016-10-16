@@ -16,15 +16,15 @@ describe Game do
     end
 
     it 'player picks rock' do
-      expect(game.player_1_choice("rock")).to eq(:rock)
+      expect(game.player_1_choice("rock")).to eq("rock")
     end
 
     it 'player picks paper' do
-      expect(game.player_1_choice("paper")).to eq(:paper)
+      expect(game.player_1_choice("paper")).to eq("paper")
     end
 
     it 'player picks scissors' do
-    expect(game.player_1_choice("scissors")).to eq(:scissors)
+    expect(game.player_1_choice("scissors")).to eq("scissors")
     end
   end
 end

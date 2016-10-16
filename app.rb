@@ -19,7 +19,12 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  #get '/go' do
+  post '/go' do
+    @game = Game.instance
+    @game.player_1_choice_final
+    @game.computer_choice
+    erb :go
+  end
 
   run! if app_file == $0
 end
