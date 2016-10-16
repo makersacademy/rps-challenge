@@ -8,9 +8,7 @@ feature "index page" do
   end
 
   scenario "entering name" do
-    visit"/"
-    fill_in :player_name, with: "Elizabeth"
-    click_button("Submit")
+    sign_in_and_play
     expect(page).to have_text("Welcome Elizabeth")
   end
 end
