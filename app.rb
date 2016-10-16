@@ -5,17 +5,12 @@ require "./lib/computer.rb"
 class RPS < Sinatra::Base
   enable :sessions
 
-  helpers do
-    def computer
-      Computer.create_instance
-    end
-
-    def computer_choice
-      computer.choice
-    end
+  before do
+    @computer = Computer.instance
   end
 
   get "/" do
+    Computer.create_instance
     erb (:index)
   end
 
@@ -30,7 +25,6 @@ class RPS < Sinatra::Base
   end
 
   get "/win" do
-    @computer_choice = computer_choice
     @user_choice = session[:user_choice]
     erb (:win)
   end
