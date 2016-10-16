@@ -1,7 +1,18 @@
-feature "choose rock, paper or scissors" do
-  scenario "player can choose an item" do
+
+feature "playing a game" do
+  scenario "player can see e rock, paper, scissors" do
+    sign_in_and_play
+    expect(page).to have_button "ROCK"
+    expect(page).to have_button "PAPER"
+    expect(page).to have_button "SCISSORS"
+  end
+end
+
+feature "pick item" do
+  scenario "player can choose rock, paper, scissors" do
     sign_in_and_play
     click_button "ROCK"
-    expect(page).to have_xpath("//img[@src='http://cdn1.sciencefiction.com/wp-content/uploads/2013/06/The-Rock-wwe-champion-hd-wallpapers.jpg.jpeg']")
+    expect(page).to have_content "You chose ROCK"
+    expect(page).to have_content "CONTINUE"
   end
 end

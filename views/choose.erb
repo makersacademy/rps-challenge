@@ -14,24 +14,23 @@
    </tr>
 
    <tr>
-  	  <td align = "center">
-  	    <form action = "/play" method = "get">
-  	     <button type = "submit" value = "Submit" name = "rock">ROCK</button>
-  	    </form>
+     <form action = "/choose" method = "post">
+      <td align = "center">
+  	     <button type = "submit" name = "choice" value = "ROCK">ROCK</button>
   	  </td>
       <td align = "center">
-  	    <form action = "/play" method = "get">
-  	     <button type = "submit" value = "Submit" name = "paper">PAPER</button>
-  	    </form>
+  	     <button type = "submit" name = "choice" value = "PAPER">PAPER</button>
   	  </td>
       <td align = "center">
-  	    <form action = "/play" method = "get">
-  	     <button type = "submit" value = "Submit" name = "scissors">SCISSORS</button>
-  	    </form>
+  	     <button type = "submit" name = "choice" value = "SCISSORS">SCISSORS</button>
   	  </td>
+    </form>
    </tr>
 
-</table>
+
+  </table>
+
+
 
 <style>
 
@@ -70,5 +69,10 @@ button {
     cursor: pointer;
     margin: 5px;
   }
+
+#choice {
+   color: white;
+   font-size: 60px;
+}
 
 </style>

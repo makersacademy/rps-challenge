@@ -1,0 +1,58 @@
+<br></br>
+
+
+<h1 align = "center"> You chose <%= @choice %> </h1>
+
+<% if @choice == "ROCK" %>
+  <div align = "center">
+    <img src = "http://image.egokick.com/image/upload/w_880,c_fill,g_face:center,fl_lossy,q_80/v1429545321/mtfyjzdg4mhmefadjpuc.jpg" height = "300">
+  </div>
+<% elsif @choice == "PAPER" %>
+  <div align = "center">
+    <img src = "http://assets.marthastewart.com/styles/wmax-1500/d19/ft_halloween00mummy/ft_halloween00mummy_sq.jpg?itok=6IzHSQ7x" height = "300">
+  </div>
+<% else %>
+  <div align = "center">
+    <img src = "http://www.eonline.com/eol_images/Entire_Site/2015113/rs_634x971-151203145545-634.Johnny-Depp-Edward-Scissorhands.jl.120315.jpg" height = "300">
+  </div>
+<% end %>
+
+<br></br>
+
+<div align = "center">
+  <form action = "/play" method = "post">
+     <button align = "center" type = "submit" value = "CONTINUE">CONTINUE</button>
+   </form>
+</div>
+
+<style>
+
+html {
+  background: url(http://www.thealarmco.co.uk/wp-content/uploads/2014/10/FIRE-2-GENERIC.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
+button:hover{
+  background: #3B5C76;
+}
+
+button {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 150px;
+    cursor: pointer;
+    margin: 5px;
+  }
+</style>
