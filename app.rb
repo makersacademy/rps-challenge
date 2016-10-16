@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Rsp < Sinatra::Base
   enable :sessions
@@ -21,12 +22,13 @@ class Rsp < Sinatra::Base
 
   post ("/result") do
     $game.hand(params[:hand])
-    redirect("/result")
+    redirect ("/result")
   end
 
   get ("/result") do
     erb (:result)
   end
-  # start the server if ruby file executed directly
+
+  #start the server if ruby file executed directly
   run! if app_file == $0
 end

@@ -16,7 +16,13 @@ class Game
 
   def hand(choice)
     player_hand << choice
+    comp_choice
   end
+
+  def comp_choice
+   n = rand(0..2)
+   player_hand << computer_hand[n]
+ end
 
 
 
