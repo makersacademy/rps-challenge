@@ -14,17 +14,39 @@ class Game
     @selections << selection
   end
 
-  def computer_select
-    @selections << ['r','p','s'].sample
+  def add_computer_selection
+    @selections << computer_select
   end
 
   def choices
     @selections.dup
   end
 
+  def win?
+    [['p','r'],['s','p'],['r','s']].include? @selections
+  end
+
+  def tie?
+    [['r','r'],['p','p'],['s','s']].include? @selections
+  end
+
+  def result
+    if win?
+      p "#{@player_1.name} wins!"
+    elsif tie?
+      p 'It\'s a tie!'
+    else
+      p 'You lose!'
+    end
+  end
+
   private
 
   def generate_name
     ['Yoshimitsu','Frieza','Cersei','Robotnik','Farage'].sample
+  end
+
+  def computer_select
+    ['r','p','s'].sample
   end
 end
