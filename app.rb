@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps'
 
 class RpsChallenge < Sinatra::Base
 enable :sessions
@@ -18,17 +19,29 @@ enable :sessions
   end
 
   get "/sign_in" do
-    session[:username] = params[:username]
-    session[:password] = params[:password]
+
     erb :sign_in
   end
 
-  post "/main" do
-    @username = params[:username]
+  post "/names" do
+    session[:username] = params[:username]
+    session[:password] = params[:password]
+
+    @@game = Rps.new
+    redirect to("/main")
+  end
+
+  get "/main" do
+    @username = session[:username]
+    @password = session[:password]
     erb :main
   end
 
   get "/result" do
+
+    @username = session[:username]
+    @random_attack = @@game.random
+    @rock, @paper, @scissors = @@game.rock, @@game.paper, @@game.scissors
     erb :result
   end
 

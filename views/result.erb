@@ -1,1 +1,10 @@
-<p><%=@username%> picks <%= %></p>
+
+<p><%=@username%> picks '<%=@rock%>'!    CPU picks <%=@random_attack%>!</p>
+
+<p><%=@username%> picks '<%=@paper%>'!    CPU picks <%=@random_attack%>!</p>
+
+<p><%=@username%> picks '<%=@scissors%>'!    CPU picks <%=@random_attack%>!</p>
+
+<form action="/main" method="get">
+  <input type="submit" value="Return to game">
+</form>
