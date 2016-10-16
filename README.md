@@ -19,4 +19,4 @@ $ ruby app.rb
 
 Navigate to localhost:4567 in your browser to see this homescreen, and the rest should be self explanatory.
 
-![Screenshot](https://photos-6.dropbox.com/t/2/AABnMl6OZMVfJRirbUcjM5nDs8wjK_F2cuGu34pt3mG_XQ/12/95118321/png/32x32/1/_/1/2/Screen%20Shot%202016-10-16%20at%2010.06.29.png/EMqo6UkYLyACKAI/G_T4oiL0aIXjusWdL4cmdl8ZjJQAOeTXpqsC_dfStsg?size=2048x1536&size_mode=3)
+![Screenshot](https://www.dropbox.com/s/p5mhdmvwueucw8q/Screen%20Shot%202016-10-16%20at%2010.06.29.png?raw=1)
