@@ -41,7 +41,7 @@ describe RockPaperScissors do
     it "get request displays play game page" do
       get "/play"
       expect(last_response).to be_ok
-      expect(last_response.body).to include "Ready Player 1"
+      expect(last_response.body).to include "Ready Player 1?"
       expect(last_response.body).to include "Choose rock, paper or scissors"
     end
 
