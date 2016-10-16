@@ -6,7 +6,7 @@ class Player
 		@name = name
 	end
 
-  def choice=(choice)
+  def set_choice(choice)
   	raise 'Not a valid choice!' unless Game::CHOICES.include? choice
   	@choice = choice
   end

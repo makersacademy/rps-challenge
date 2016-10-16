@@ -9,12 +9,12 @@ describe Player do
 
   context '#move' do
     it 'sets the choice' do
-    	player.choice = "Rock"
-    	expect(player.choice).to eq "Rock"
+    	player.set_choice(:rock)
+    	expect(player.choice).to eq :rock
     end
 
     it 'raises an error if it is not a valid choice' do
-      expect{player.choice=("foobar")}.to raise_error "Not a valid choice!"
+      expect{player.set_choice("foobar")}.to raise_error "Not a valid choice!"
     end
   end
 

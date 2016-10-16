@@ -3,9 +3,13 @@ require_relative './computer.rb'
 
 class Game
 
-	attr_reader :player1, :player2, :computer
+	attr_reader :player1, :player2, :outcome
 
-	CHOICES = ["Rock", "Paper", "Scissors"]
+  RULES = { rock: :scissors,
+          paper: :rock,
+          scissors: :paper }
+
+	CHOICES = [:rock, :scissors, :paper]
 
   def self.instance
 		@game
@@ -18,27 +22,24 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-  end  
+  end 
+
+  def player1_choice(choice)
+    @player1.set_choice(choice)
+  end 
+
+  def player2_choice(choice)
+    @player2.set_choice(choice)
+  end
 
   def outcome
-    @outcome = nil
-    winning_situations
-    losing_situations
+    if RULES[player1.choice] == player2.choice
+      :win
+    elsif RULES[player2.choice] == player1.choice
+      :lose
+    elsif player1.choice == player2.choice 
+      :draw
+    end
   end   
 
-  def win?
-    @outcome
-  end
-
-  def losing_situations
-    @outcome = false if (player1.choice == "Rock" && player2.choice == "Paper") || 
-    (player1.choice == "Scissors" && player2.choice == "Rock") ||
-    (player1.choice == "Paper" && player2.choice == "Scissors")
-  end
-
-  def winning_situations
-    @outcome = true if (player1.choice == "Rock" && player2.choice == "Scissors") ||
-    (player1.choice == "Scissors" && player2.choice == "Paper") ||  
-    (player1.choice == "Paper" && player2.choice == "Rock")
-  end
 end

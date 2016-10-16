@@ -1,12 +1,6 @@
 You chose <%= "#{@game.player1.choice}" %>!<br>
 Computer chose <%= "#{@game.player2.choice}" %>!<br>
-<% if @game.outcome == :win %>
-	You won!
-<% elsif @game.outcome == :draw %>
-  You drew!
-<% else %>
-  You lost!
-<% end %>
+You lost
 
 <form action="/play" value='/get'>
 	<input type="submit" value="Play Again">

@@ -4,10 +4,6 @@ require './lib/computer'
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
-	
-  #  if ENV['RACK_ENV'] == 'test'
-  #   disable :show_exceptions
-  # end
 
 	before do
 		@game = Game.instance
@@ -31,14 +27,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/choice' do
-    @game.player1.choice = params[:choice]
-    @game.outcome
-    redirect '/outcome'
-  end
-
   get '/outcome' do
-    erb :outcome
+    @game.player1_choice((params[:choice]).to_sym)
+    @game.player2.set_choice
+    erb @game.outcome
   end
 
   run! if app_file == $0

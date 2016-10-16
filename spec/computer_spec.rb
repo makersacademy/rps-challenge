@@ -4,9 +4,9 @@ describe Computer do
 
 	subject(:computer) {described_class.new}
 
-	context '#computer_move' do
+	context '#set_choice' do
 		it 'sets the computers choice' do
-			computer.choice
+			computer.set_choice
 			expect(Game::CHOICES).to include computer.choice
 		end
 	end
