@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display" rel="stylesheet">
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+	<body>
+		<h1><%= @game.outcome %></h1>
+		<h2><%= @game.player.name %> chose <%= @game.player.choice %>!</h2>
+		<h2><%= @game.opponent.name %> chose <%= @game.opponent.choice %>!</h2>
+		<a href="/reset_choices">Play again?</a>
+  </body>
+</html>

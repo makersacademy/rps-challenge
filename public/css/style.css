@@ -1,0 +1,61 @@
+body {
+	text-align: center;
+	background-image: url('../imgs/cork-wallet.png');
+	background-repeat: repeat;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	margin: 25px 0;
+	color: #33261d;
+}
+
+h2 {
+	font-size: 33px;
+	color: #33261d;
+	font-family: 'Playfair Display', serif;
+}
+
+h2:first-of-type {
+	margin-top: 10px;
+}
+
+.text_input {
+	color: #33261d;
+	display: block;
+	margin: 100px auto 15px;
+	font-size: 30px;
+	padding: 10px 5px;
+}
+
+.submit_input {
+	background-color: #2589bd;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px;
+	border: 0;
+	color: #33261d;
+	display: block;
+	margin: 20px auto;
+	padding: 16px 30px;
+	font-size: 24px;
+	font-family: 'Montserrat', sans-serif;
+	transition: background-color .5s;
+}
+
+.submit_input:hover {
+	cursor: pointer;
+	background-color: #aaffaa;
+	transition: background-color .5s;
+}
+
+.choice_form {
+	margin: 30px 0;
+}
+
+
+
+#player2_name {
+	display: none;
+	margin-top: 10px;
+}
