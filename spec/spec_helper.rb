@@ -8,6 +8,7 @@ ENV['RACK_ENV'] = 'test'
 
 require 'coveralls'
 require 'simplecov'
+require 'features/web_helpers'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
@@ -17,9 +18,6 @@ SimpleCov.formatters = [
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
-require 'byebug'
-require 'capybara/rspec'
-#
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
