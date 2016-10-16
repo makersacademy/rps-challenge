@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -25,13 +26,12 @@ class RPS < Sinatra::Base
   end
 
 post '/choice' do
-  session[:choice] = params[:choice]
+  @game.player_1.player_choice(params[:choice])
+  @game.auto_turn
   redirect '/result'
 end
 
 get '/result' do
-  @choice = session[:choice]
-  @player_2_choice = @game.auto_turn
   erb(:result)
 end
 

@@ -14,7 +14,7 @@ feature 'playing the game' do
   scenario 'player can choose rock, paper or scissors' do
     sign_in
     choose 'Rock'
-    click_button 'Submit' 
+    click_button 'Submit'
     expect(page).to have_content 'Batman chose Rock'
   end
 end
