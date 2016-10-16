@@ -15,7 +15,7 @@ class Game
     @computer_selection = nil
     @player_selection = nil
     @computer = Computer.new
-    @player = Player.new(name)
+    @player = name
     @name = name
   end
 

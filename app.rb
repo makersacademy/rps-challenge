@@ -4,8 +4,6 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
-
   get '/' do
     erb :index
   end
@@ -22,7 +20,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    @game = $game
+    @game = Game.instance
+    @game.player_selection(params[:weapon])
+    @game.computer_selection
+    @game.result
     erb :result
   end
 
