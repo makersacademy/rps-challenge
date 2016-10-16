@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "it displays the palyer's weapon choice" do
+feature "it displays the player's weapon choice" do
 
 scenario 'the player chooses Rock' do
   sign_in_and_play
