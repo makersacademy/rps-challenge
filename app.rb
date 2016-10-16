@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post "/compare" do
-    Computer.create_instance
+    Computer.create_instance.choose
     Compare.create_instance
     @result = Compare.instance.result(params[:user_choice], Computer.instance.choice)
     session[:user_choice] = params[:user_choice]

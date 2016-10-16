@@ -7,11 +7,14 @@ class Computer
     @instance
   end
 
+  attr_reader :choice
+
   def initialize
     @options = ["Rock", "Paper", "Scissors"]
+    @choice = nil
   end
 
-  def choice
-    @options.sample
+  def choose
+    @choice = @options.sample
   end
 end
