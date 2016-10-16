@@ -2,6 +2,14 @@ require_relative 'player'
 
 class Game
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   attr_reader :player_1, :player_2
 
   def initialize(player_1)
@@ -22,13 +30,13 @@ class Game
     @selections.dup
   end
 
-  def win?
-    [['p','r'],['s','p'],['r','s']].include? @selections
-  end
-
-  def tie?
-    [['r','r'],['p','p'],['s','s']].include? @selections
-  end
+  # def win?
+  #   [['p','r'],['s','p'],['r','s']].include? @selections
+  # end
+  #
+  # def tie?
+  #   [['r','r'],['p','p'],['s','s']].include? @selections
+  # end
 
   def result
     if win?
@@ -48,5 +56,13 @@ class Game
 
   def computer_select
     ['r','p','s'].sample
+  end
+
+  def win?
+    [['p','r'],['s','p'],['r','s']].include? @selections
+  end
+
+  def tie?
+    [['r','r'],['p','p'],['s','s']].include? @selections
   end
 end
