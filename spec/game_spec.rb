@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:players[0]) {double :players[0]}
+  # let(:players[0]) {double :players[0]}
   let(:player) {double :player}
   subject(:game) {described_class.new(player)}
 
@@ -13,7 +13,7 @@ describe Game do
 
   describe "#choice" do
     it "checks if the result of the game" do
-  game.instance_variable_set(:@result, 'Rock')
+      game.instance_variable_set(:@result, 'Rock')
       expect(["Rock", "Paper", "Scissors"]).to include(game.result)
     end
   end
@@ -26,12 +26,13 @@ describe Game do
 
   # describe "#check" do
   #   it "checks if the player or computer has won" do
-  #     game = class_double("Game")
-  #     as_stubbed_const(:check => '/won_game')
+  #     @points = double @points
+  #     allow(:player).to receive(:points)
+  #     player.points == 5
   #     expect(game.check).to eq '/won_game'
   #   end
   # end
-  #
+
   # describe "#two_check" do
   #   it "checks if one of the player has won" do
   #       game = instance_double("Game")

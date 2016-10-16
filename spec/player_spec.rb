@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-subject(:player) {described_class.new('Bob')}
+  subject(:player) {described_class.new('Bob')}
 
   describe "#initialize" do
     it 'takes a name parameter' do

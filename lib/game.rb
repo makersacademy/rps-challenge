@@ -34,10 +34,10 @@ class Game
     end
   end
 
-    def two_check
-      if @players[0].points == 5 then '/won_game' elsif @players[1].points == 5 then '/2won_game'
-      else
-        '/2play'
-      end
+  def two_check
+    if @players[0].points == 5 then '/won_game' elsif @players[1].points == 5 then '/2won_game'
+    else
+      '/2play'
     end
+  end
 end

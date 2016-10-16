@@ -1,4 +1,4 @@
-##             WALL.E's Rock Paper Scissors         ##
+#             **WALL.E's Rock Paper Scissors**         #
 
 
 Play Rock Paper Scissors against WALL.E or with a friend!
@@ -16,4 +16,7 @@ Play Rock Paper Scissors against WALL.E or with a friend!
 - [x] Paper beats Rock
 
 
-## The player that reaches 5 points wins the game
+### The player that reaches 5 points wins the game
+
+
+# [Play online now!](https://wall-e-rock-paper-scissors.herokuapp.com/)
