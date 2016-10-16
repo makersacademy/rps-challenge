@@ -24,14 +24,6 @@ class Game
     @player2 = player2
   end 
 
-  def player1_choice(choice)
-    @player1.set_choice(choice)
-  end 
-
-  def player2_choice(choice)
-    @player2.set_choice(choice)
-  end
-
   def outcome
     if RULES[player1.choice] == player2.choice
       :win

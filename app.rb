@@ -26,10 +26,14 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     erb :play
   end
+  
+  post '/computer_turn' do
+    @game.player1.set_choice((params[:choice]).to_sym)
+    @game.player2.set_choice
+    redirect '/outcome'
+  end
 
   get '/outcome' do
-    @game.player1_choice((params[:choice]).to_sym)
-    @game.player2.set_choice
     erb @game.outcome
   end
 
