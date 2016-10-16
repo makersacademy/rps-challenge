@@ -24,20 +24,21 @@ describe Game do
     end
   end
 
-  # describe "#check" do
-  #   it "checks if the player or computer has won" do
-  #     @points = double @points
-  #     allow(:player).to receive(:points)
-  #     player.points == 5
-  #     expect(game.check).to eq '/won_game'
-  #   end
-  # end
+  describe "#check" do
+    it "checks if the player or computer has won" do
+      player1 = Player.new('Bob')
+      game1 = Game.new(player1)
+      player1.points = 5
+      expect(game1.check).to eq '/won_game'
+    end
+  end
 
-  # describe "#two_check" do
-  #   it "checks if one of the player has won" do
-  #       game = instance_double("Game")
-  #       allow(game).to receive(:two_check)
-  #     expect(game.check).to eq nil
-  #   end
-  # end
+  describe "#two_check" do
+    it "checks if one of the player has won" do
+      player1 = Player.new('Bob')
+      game1 = Game.new(player1)
+      player1.points = 5
+      expect(game1.check).to eq '/won_game'
+    end
+  end
 end
