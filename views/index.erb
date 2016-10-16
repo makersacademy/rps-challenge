@@ -1,7 +1,30 @@
-<h1> Welcome to Rock, Paper, Scissors! </h1>
+<html>
+<head>
+
+<style>
+body {
+  font-family: 'Lucida bright', cursive;
+  color: #D3D3D3;
+  font-size: 20px;
+  background-image: url("http://www.androidguys.com/wp-content/uploads/2015/12/Poly-Lakeside.jpg");
+  background-size: 1300px 700px;
+  background-position: fixed;
+}
+</style>
+</head>
+<body>
+
+<h1> <center> Welcome to Rock, Paper, Scissors! </center> </h1>
+<h2> <center> Player 1, enter your name: </center></h2>
 
 <form action="/sign_in" method="post">
-  Player 1, enter your name:<br>
-  <input type="text" name="player_1" > <br>
-  <input type="submit" value="Enter">
+  <center>
+  <label for="player_name">
+  <input type="text" name="player_1"></input>
+  <br>
+</label>
+  <input type="submit" value="Enter"></input>
+</center>
 </form>
+</body>
+</html>
