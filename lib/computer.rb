@@ -4,7 +4,7 @@ class Computer
 
   attr_reader :move_choice, :name
 
-  def initialize(name = 'Sheldon')
+  def initialize(name = 'RPSLS-oid')
    @move_choice = nil
    @name = name
   end

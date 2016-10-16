@@ -14,7 +14,7 @@ feature 'Playing' do
   scenario 'Computer wins' do
     sign_in_and_play
     click_button 'Paper'
-    expect(page).to have_content 'Sheldon wins this time!'
+    expect(page).to have_content 'RPSLS-oid wins this time!'
   end
 
   scenario 'Draw' do

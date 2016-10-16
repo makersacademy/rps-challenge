@@ -17,7 +17,7 @@ class Game
    @game
   end
 
-  attr_reader :player, :winner
+  attr_reader :player, :winner, :computer
 
   def initialize(player, computer = Computer.new)
    @player = player
@@ -27,7 +27,6 @@ class Game
 
   def result?
    @computer.computer_select
-   puts @computer.move_choice
    if @player.player_choice == @computer.move_choice
       @winner = :none
     elsif WINNING_MOVE[@player.player_choice].include?(@computer.move_choice)
@@ -36,6 +35,4 @@ class Game
       @winner = @computer
     end
   end
-
-
 end
