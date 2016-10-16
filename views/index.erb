@@ -1,14 +1,47 @@
 <html>
 <head>
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-  <div>
+  <div class="index">
     <form action="/name" method="post">
       <p>What's your name?</p>
-      <input type="text" name="name" />
-      <input type="submit" value="Start!" />
+      <input type="text" name="name" class="field"/>
+      <input type="submit" value="Start!" class="button"/>
     </form>
   </div>
 </body>
 </html>
+
+<style>
+
+  body {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    color: #009973;
+  }
+
+  h2 {
+    font-size: 2.3em;
+    color: #009973;
+  }
+
+  p {
+    font-size: 3.5em;
+    color: #009973;
+  }
+
+  .index {
+    margin-top: 100px;
+  }
+  .button {
+    font-size: 4.5em;
+    margin-top: 50px;
+  }
+
+</style>
