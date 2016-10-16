@@ -7,17 +7,17 @@
 
 <% if (@rps_game.player_1_choice == "rock" && @rps_game.player_2_choice == "scissors") ||
 (@rps_game.player_1_choice == "scissors" && @rps_game.player_2_choice == "rock") 
-  text = "because rock blunts scissor"
+  text = "rock blunts scissors"
 elsif (@rps_game.player_1_choice == "paper" && @rps_game.player_2_choice == "rock") ||
 (@rps_game.player_1_choice == "rock" && @rps_game.player_2_choice == "paper")
-  text = "because paper covers rock"
+  text = "paper covers rock"
 elsif (@rps_game.player_1_choice == "scissors" && @rps_game.player_2_choice == "paper") ||
 (@rps_game.player_1_choice == "paper" && @rps_game.player_2_choice == "scissors")
-  text = "because scissors cuts paper"
+  text = "scissors cuts paper"
 end %>
 
 <% if @rps_game.give_result == "Draw" %>
-  <p>The game was a <b>draw</b> because you both made the same choice.</p>
+  <p>The game was a <b>draw</b> because <b>you both made the same choice</b>.</p>
 <% else %>
   <p><b><%= @rps_game.give_result %></b> is the winner because <b><%= text %></b>.</p>
 <% end %>
