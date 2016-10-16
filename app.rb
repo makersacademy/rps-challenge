@@ -1,6 +1,6 @@
 require  "sinatra/base"
 require "./lib/computer.rb"
-
+require "./lib/compare.rb"
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,7 +10,6 @@ class RPS < Sinatra::Base
   end
 
   get "/" do
-    Computer.create_instance
     erb (:index)
   end
 
@@ -20,13 +19,28 @@ class RPS < Sinatra::Base
   end
 
   post "/compare" do
+    Computer.create_instance
+    Compare.create_instance
+    @result = Compare.instance.result(params[:user_choice], Computer.instance.choice)
     session[:user_choice] = params[:user_choice]
-    redirect "/win"
+    redirect "/win" if @result == "win"
+    redirect "/lose" if @result == "lose"
+    redirect "/draw" if @result == "draw"
   end
 
   get "/win" do
     @user_choice = session[:user_choice]
     erb (:win)
+  end
+
+  get "/draw" do
+    @user_choice = session[:user_choice]
+    erb (:draw)
+  end
+
+  get "/lose" do
+    @user_choice = session[:user_choice]
+    erb (:lose)
   end
 
   # start the server if ruby file executed directly
