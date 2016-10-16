@@ -48,6 +48,15 @@ describe Game do
     end
   end
 
+  describe '#result with Paper v Scissors' do
+    let(:player)  { double(:player,name: "Player", choice: "Paper") }
+    let(:computer)  { double(:computer,name:"Computer", selection: "Scissors") }
+
+    it 'displays the result when Paper v Scissors' do
+      expect(game.result).to eq "Computer chose Scissors. Computer beats Player"
+    end
+  end
+
   describe '#result with Scissors v Scissors' do
     let(:player)  { double(:player,name: "Player", choice: "Scissors") }
     let(:computer)  { double(:computer,name:"Computer", selection: "Scissors") }
