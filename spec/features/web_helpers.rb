@@ -1,7 +1,7 @@
 def register
   visit "/"
   click_button "Register"
-  fill_in "First name", :with => "Royston"
-  fill_in "Last name", :with => "Henson"
+  fill_in "Username", :with => "Royston"
+  fill_in "password", :with => "password"
   click_button "Submit"
 end

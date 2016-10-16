@@ -9,30 +9,18 @@ RSpec.feature "Registration", :type => :feature do
   end
 
   scenario "User fills in registration form" do
-    visit "/"
-    click_button "Register"
-    fill_in "Username", :with => "Royston"
-    fill_in "Password", :with => "password"
-    click_button "Submit"
-
+    register
+    
     expect(page).to have_text("Thank you for registering!")
   end
   scenario "Return to home page after registering" do
-    visit "/"
-    click_button "Register"
-    fill_in "Username", :with => "Royston"
-    fill_in "Password", :with => "password"
-    click_button "Submit"
+    register
     click_button "Return to homepage"
   end
 end
 RSpec.feature "Play 'Rock, paper scissors'", :type => :feature do
   scenario "Start new game" do
-    visit "/"
-    click_button "Register"
-    fill_in "Username", :with => "Royston"
-    fill_in "Password", :with => "password"
-    click_button "Submit"
+    register
     click_button "Return to homepage"
     click_button "Sign in"
 
