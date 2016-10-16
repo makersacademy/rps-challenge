@@ -66,6 +66,13 @@ describe RockPaperScissors do
         expect(Game.instance).to receive(:play)
         post "/play"
       end
+
+      it "post request redirects to /game_over" do
+        post "/play"
+        expect(last_response.redirect?).to be true
+        follow_redirect!
+        expect(last_request.path).to eq "/game_over"
+      end
     end
   end
 
