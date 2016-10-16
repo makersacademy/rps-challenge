@@ -7,4 +7,8 @@
 
 <h2> Winner </h2>
 
-<h2> <%=@game.winner.name%> wins </h2>
+<%if @game.winner.nil? %>
+  <h2>It's a draw!</h2>
+<%  else %>
+  <h2><%=@game.winner.name%> wins! </h2>
+<%  end %>

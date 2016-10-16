@@ -27,6 +27,7 @@ class RPS < Sinatra::Base
     @game.player_1.set_weapon=(params[:weapon])
     @player_1_weapon = @game.player_1.weapon
     @player_2_weapon = @game.player_2.weapon
+    @game.decide_winner
     erb(:result)
   end
   # start the server if ruby file executed directly

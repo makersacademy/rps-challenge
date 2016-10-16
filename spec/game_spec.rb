@@ -15,6 +15,7 @@ describe Game do
       @win_player = double(:player, :name => "Bukowski", :weapon => player_1_choice)
       @game = described_class.new(@win_player)
       allow(@game.player_2).to receive(:weapon).and_return(player_2_choice)
+      @game.decide_winner
     end
 
     it "states winner is p1 if p1 chose rock, p2 chose scissors" do
@@ -49,7 +50,7 @@ describe Game do
 
     it "states draw if both players chose same" do
       set_up_winner_test("rock", "rock")
-      expect(@game.winner).to eq "Draw!"
+      expect(@game.winner).to eq nil
     end
   end
 end

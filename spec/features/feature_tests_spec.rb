@@ -57,9 +57,33 @@ feature "Player 1 winning" do
     expect(page).to have_content 'Bukowski wins!'
   end
 
-  scenario "player chooses scissors and computer chooses paper" do
+  scenario "player chooses paper and computer chooses rock" do
     sign_in_and_play
     winning_tests("paper", "rock")
     expect(page).to have_content 'Bukowski wins!'
+  end
+
+  scenario "computer chooses rock and player chooses scissors" do
+    sign_in_and_play
+    winning_tests("scissors", "rock")
+    expect(page).to have_content 'Computer wins!'
+  end
+
+  scenario "computer chooses scissors and player chooses paper" do
+    sign_in_and_play
+    winning_tests("paper", "scissors")
+    expect(page).to have_content 'Computer wins!'
+  end
+
+  scenario "computer chooses paper and player chooses rock" do
+    sign_in_and_play
+    winning_tests("rock", "paper")
+    expect(page).to have_content 'Computer wins!'
+  end
+
+  scenario "expect draw if both choose rock" do
+    sign_in_and_play
+    winning_tests("rock", "rock")
+    expect(page).to have_content 'draw'
   end
 end
