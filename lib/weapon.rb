@@ -20,7 +20,7 @@ class Weapon
     @weapon_one = Weapon.new(choice)
   end
 
-  def initialize(choice = :default)
+  def initialize(choice)
     @choice = choice
     @won = nil
   end
@@ -30,7 +30,7 @@ class Weapon
   end
 
   def computer_choice
-    @choice = :rock
+    @choice = Game::R_P_S.sample
   end
 
   def set_win

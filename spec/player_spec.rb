@@ -14,10 +14,6 @@ describe Player do
     it "sets the player's name to the string passed in" do
       expect(subject.name).to eq "Steve"
     end
-    it "defaults the to 'the Computer' if no string passed" do
-      computer_player = Player.new
-      expect(computer_player.name).to eq "the Computer"
-    end
     it 'initializes an empty array of play history' do
       expect(subject.play_history).to be_empty
     end

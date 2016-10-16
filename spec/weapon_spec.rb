@@ -3,7 +3,7 @@ require 'weapon'
 
 describe Weapon do
 
-  subject { described_class.new }
+  subject { described_class.new(paper) }
 
   let(:rock) {double(:rock)}
   let(:paper) {double(:paper)}
@@ -11,49 +11,18 @@ describe Weapon do
 
   describe '#initialize' do
     it 'initilizes with a blank choice of weapon' do
-      expect(subject.choice).to be_nil
+      expect(subject.choice).to eq paper
     end
     it 'has a field to store whether the weapon won or lost, set to nil' do
       expect(subject.won).to be_nil
     end
   end
 
-  describe '#choose_rock' do
-    it 'allows you to choose choose rock' do
-      subject.choose_rock
-      expect(subject.choice).to eq :rock # pretty sure this is a pointless test
-    end
-  end
-
-  describe '#choose_paper' do
-    it 'allows you to choose choose rock' do
-      subject.choose_paper
-      expect(subject.choice).to eq :paper
-    end
-  end
-
-  describe '#choose_scissors' do
-    it 'allows you to choose choose scissors' do
-      subject.choose_scissors
-      expect(subject.choice).to eq :scissors
-    end
-  end
-
   describe '#computer_choice' do
     it 'selects on behalf of the computer' do
-      allow(subject).to receive(:random_choice).and_return 1
+      allow(Game::R_P_S).to receive(:sample).and_return :rock
       subject.computer_choice
       expect(subject.choice).to eq :rock
-    end
-    it 'selects on behalf of the computer' do
-      allow(subject).to receive(:random_choice).and_return 2
-      subject.computer_choice
-      expect(subject.choice).to eq :paper
-    end
-    it 'selects on behalf of the computer' do
-      allow(subject).to receive(:random_choice).and_return 3
-      subject.computer_choice
-      expect(subject.choice).to eq :scissors
     end
   end
 
