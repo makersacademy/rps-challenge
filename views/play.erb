@@ -1,0 +1,20 @@
+<h1> Rock, Paper, Scissors </h1>
+<h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
+
+<p> Make your selection </p>
+
+<form action="/selection" method="post">
+  <label for = "rock">
+    Rock
+    <input type="radio" name="choice" id="rock" value='Rock' >
+  </label>
+  <label for = "rock">
+    Paper
+    <input type="radio" name="choice" id="paper" value='Paper'>
+  </label>
+  <label for = "rock">
+    Scissors
+    <input type="radio" name="choice" id="scissors" value='Scissors'>
+  </label>
+  <input type="submit" value="Go!">
+</form>
