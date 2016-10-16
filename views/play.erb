@@ -1,9 +1,14 @@
 <html>
   <head>
+    <style>
+      h1 {
+        color: red
+      }
+    </style>
   </head>
 
   <body>
-    <h1> <%=@game.player.name%> plays a game of Rock Paper Scissors</h1>
+    <h1 class='blink'> <%=@game.player.name%> plays a game of Rock Paper Scissors</h1>
     <h2> Chose your move </h2>
     <form action='/result' method='post'>
       <div>
