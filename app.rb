@@ -8,8 +8,20 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/name'
+  post '/name' do
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
+    redirect '/play'
+  end
+
+  get '/play' do
+    @game = Game.instance
+    erb :play
+  end
+
+  post '/selection' do
     
+    redirect '/result'
   end
 
   run! if app_file == $0
