@@ -29,3 +29,8 @@ I would like to be able to play rock/paper/scissors
 - [ ] Full Test Coverage
 - [ ] Add additional player option and split out computer class
 - [ ] Extend game to: Rock-Paper-Scissors-Lizard-Spock
+
+
+## Image
+
+[Imgur](http://i.imgur.com/qhQoss5.png)
