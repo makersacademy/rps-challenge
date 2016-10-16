@@ -90,5 +90,16 @@ describe Game do
       expect(game.win?).to_not be_nil
     end
   end
+
+  context 'edge cases', focus: :true do
+    it 'moves twice, wins first time and then draws' do
+      allow(computer).to receive(:choice) { "Scissors" }
+      allow(player).to receive(:choice) { "Rock"}
+      game.outcome
+      allow(player).to receive(:choice) {"Scissors"}
+      game.outcome
+      expect(game.win?).to be_nil
+    end
+  end
   
 end

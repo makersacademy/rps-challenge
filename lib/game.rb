@@ -21,6 +21,7 @@ class Game
   end  
 
   def outcome
+    @outcome = nil
     winning_situations
     losing_situations
   end   
