@@ -1,15 +1,18 @@
-/*
-@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+@import 'https://fonts.googleapis.com/css?family=Coming+Soon';
+
 body {
-font-size: 40px;
-text-transform: uppercase;
-background: url('https://twistedsifter.files.wordpress.com/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif?w=800&h=336');
-background-size: cover;
-color: #fff;
-font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+  background-image: url('https://www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  color: #FFEBCD;
+  font-family: 'Coming Soon', cursive;
 }
 
-.container {
+/*.container {
 width: 80%;
 margin-left: auto;
 margin-right: auto;
@@ -38,7 +41,7 @@ width: 70%;
 
 .middle {
 width: 20%;
-}
+}*/
 
 .middle button {
 background-color: #ff3333;

@@ -4,9 +4,9 @@
 </head>
 <body>
   <h1>Results:</h1>
-  <h1> You selected <%= @user_choice.capitalize %></h1>
-  <h2> The computer selected <%=@computer_choice.capitalize %></h2>
+  <h2> You selected <%= @user_choice %></h2>
+  <h2> The computer selected <%=@computer_choice %></h2>
   <br>
-  <h1><%=if @winner == draw%> is the winnerr!! </h1>
+  <h1><%= if @winner == draw%> is the winnerr!! </h1>
 </body>
 </html>
