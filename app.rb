@@ -18,6 +18,10 @@ enable :sessions
     erb :confirmation
   end
 
+  get "/sign_in" do
+    erb :sign_in
+  end
+
 
   run! if app_file == $0
 end

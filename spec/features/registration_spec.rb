@@ -37,6 +37,6 @@ RSpec.feature "Play 'Rock, paper scissors'", :type => :feature do
     click_button "Sign in"
 
 
-    expect(page).to have_text("Please enter your username")
+    expect(page).to have_text("Please enter your username and password")
   end
 end
