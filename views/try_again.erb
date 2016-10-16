@@ -1,0 +1,43 @@
+<head>
+  <style>
+  body {
+    background-color: RoyalBlue;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+  }
+
+  #glitter {
+    background-image:url('https://media.giphy.com/media/JjM1Qqy4GK92M/giphy.gif');
+    background-size:cover;
+    text-align: center;
+    width: 250;
+    margin: auto;
+  }
+
+  h1 {
+    text-shadow: #EEEE00 0 0 10px;
+  }
+  form {
+    display: inline-block;
+  }
+
+  button {
+    width: 80;
+    height: 30;
+  }
+
+  </style>
+</head>
+
+<body>
+  <p>The computer chose <%= @game.computer_choice.to_s %>, so it's a </p>
+
+  <div id = 'glitter'>
+    <h1>Tie</h1>
+  </div>
+
+  <form action="/choose_your_weapon" method="get">
+    <button type="submit">Try again!</button>
+  </form>
+</body>

@@ -1,0 +1,34 @@
+<head>
+<style>
+body {
+  background-color: DarkCyan;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 40px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>The incredible</h1>
+<h1> Rock Paper Scissor </h1>
+<h2> Sign in and play </h2>
+
+<p>
+  Enter your name to play!
+</p>
+
+<form action="/name" method="post">
+  <label for = "player_name">
+    Your name:
+    <input type="text" name="player_name">
+  </label>
+  <input type="submit" value="Let's do it!">
+</form>
+</body>
