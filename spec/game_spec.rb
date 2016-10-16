@@ -10,13 +10,12 @@ describe Game do
     end
   end
 
-  # describe "#choice" do
-  #   it "checks if the result of the game" do
-  #     allow(game).to receive(:choice).with("Rock")
-  #
-  #     expect(game.choice("Rock")).to eq(:tie)
-  #   end
-  # end
+  describe "#choice" do
+    it "checks if the result of the game" do
+  game.instance_variable_set(:@result, 'Rock')
+      expect(["Rock", "Paper", "Scissors"]).to include(game.result)
+    end
+  end
 
 
 end
