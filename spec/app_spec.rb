@@ -80,6 +80,31 @@ describe RockPaperScissors do
       get "/result"
       expect(last_response).to be_ok
     end
+    it "displays a draw message when game result is nil" do
+      allow(Game.instance).to receive(:result).and_return nil
+      get "/result"
+      expect(last_response.body).to include "It's a draw!"
+    end
+    it "displays a player 1 win message when winner is player 1" do
+      result = { moves: [:rock, :scissors], winner: :player_1 }
+      allow(Game.instance).to receive(:result).and_return result
+      get "/result"
+      expect(last_response.body).to include "Player 1 wins!"
+    end
+    it "displays a player 2 win message when winner is player 2" do
+      result = { moves: [:rock, :scissors], winner: :player_2 }
+      allow(Game.instance).to receive(:result).and_return result
+      get "/result"
+      expect(last_response.body).to include "Computer wins!"
+    end
+    it "displays each player's move" do
+      result = { moves: [:rock, :scissors], winner: :player_2 }
+      allow(Game.instance).to receive(:result).and_return result
+      get "/result"
+      expect(last_response.body).to include "rock"
+      expect(last_response.body).to include "scissors"
+    end
+
   end
 
 end

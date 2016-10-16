@@ -32,6 +32,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    result = @game.result
+    @message = if result.nil?
+      "It's a draw!"
+    elsif result[:winner] == :player_1
+      "#{@game.player_1.name} wins!"
+    else
+      "#{@game.player_2.name} wins!"
+    end
+    @player_1_move = result[:moves].first if !result.nil?
+    @player_2_move = result[:moves].last if !result.nil?
     erb :result
   end
 
