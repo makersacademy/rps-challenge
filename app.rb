@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:choice] = params[:choice]
-    session[:opponent_choice] = :spock
+    session[:opponent_choice] = Opponent.new.choice
     redirect '/play'
   end
   # start the server if ruby file executed directly

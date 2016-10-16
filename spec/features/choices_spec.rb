@@ -26,6 +26,12 @@ feature 'playing a game' do
     expect(possible_choices).to include choices
   end
   
+  scenario 'computer picks a random choice' do
+    srand(5)
+    click_button 'Spock'
+    expect(page).to have_content "Opponent selected Lizard!"
+  end
+  
   def possible_choices 
     [:rock, :paper, :scissors, :lizard, :spock].map { |choice| "Opponent selected #{choice.to_s.capitalize}!" }
   end
