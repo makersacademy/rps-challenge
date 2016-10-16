@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/computer'
 
 class RockGame < Sinatra::Base
 
@@ -9,7 +10,7 @@ class RockGame < Sinatra::Base
   end
 
   post '/name' do
-    Game.start_game(Player.new(params[:player_name]))
+    Game.start_game(Player.new(params[:player_name]), Computer.new)
     redirect to('/play')
   end
 
@@ -17,9 +18,8 @@ class RockGame < Sinatra::Base
     erb :play
   end
 
-  post '/choice' do
-    @choice = params[:player_choice]
-    erb :choice
+  get '/result' do
+    erb Game.current_game.result(Game.current_game.player.weapon_choice(params[:player_choice]), Game.current_game.computer.weapon_choice)
   end
 
   # start the server if ruby file executed directly
