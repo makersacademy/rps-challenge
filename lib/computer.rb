@@ -2,8 +2,8 @@ class Computer
 
   CHOICES = [:rock, :paper, :scissors]
 
-  def comp_choice
-    CHOICES.sample
+  def computer_selection
+    @comp_choice = CHOICES.sample
   end
 
 end

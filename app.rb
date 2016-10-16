@@ -1,10 +1,10 @@
 require 'sinatra/base'
-require_relative 'lib/player.rb'
-require_relative 'lib/computer.rb'
 require_relative 'lib/game.rb'
 
 class Rps < Sinatra::Base
 
+  enable :sessions
+  
   before do
     @game = Game.instance
   end
@@ -26,7 +26,7 @@ class Rps < Sinatra::Base
 
   post '/match' do
     @game.player.choose(params[:choice])
-    @game.computer.comp_choice
+    @game.computer.computer_selection
     redirect '/result'
   end
 
