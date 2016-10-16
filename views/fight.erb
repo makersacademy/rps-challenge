@@ -1,17 +1,17 @@
 <%= Game.game.player_name %> vs Computer
 
 <form action="/pick-choice" method="post">
-  <input name="choice" value="rock"/>
+  <input type="hidden" name="choice" value="rock"/>
   <button type="submit" id="rock">Rock</button>
 </form>
 
 <form action="/pick-choice" method="post">
-  <input name="choice" value="paper">
-  <button type="submit" id="paper">Scissors</button>
+  <input type="hidden" name="choice" value="paper">
+  <button type="submit" id="paper">Paper</button>
 </form>
 
 <form action="/pick-choice" method="post">
-  <input name="choice" value="scissors">
+  <input type="hidden" name="choice" value="scissors">
   <button type="submit" id="scissors">Scissors</button>
 </form>
 

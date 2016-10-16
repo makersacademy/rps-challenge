@@ -20,8 +20,7 @@ class RockOff < Sinatra::Base
   end
 
   post "/pick-choice" do
-    Game.game.make_player_choice(params[:pick])
-    p params
+    Game.game.make_player_choice(params[:choice])
     erb(:fight)
   end
 
