@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Choose weapon' do
+feature 'Choose move' do
   scenario 'tells you what you chose' do
     register_and_play
     choose('Rock')
