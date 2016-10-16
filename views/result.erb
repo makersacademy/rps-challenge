@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<h1>Rock, Paper, Scissors</h1>
+<h2>Game Result</h2>
+
+<div style = "Width: 425px">
+  <p><b><%= @rps_game.player_1.name %></b>, you played <b><%= @rps_game.player_1_choice %></b>.</p>
+  <p><b><%= @rps_game.player_2.name %></b>, you played <b><%= @rps_game.player_2_choice %></b>.</p>
+  
+  <% if (@rps_game.player_1_choice == "rock" && @rps_game.player_2_choice == "scissors") ||
+  (@rps_game.player_1_choice == "scissors" && @rps_game.player_2_choice == "rock") 
+    text = "rock blunts scissors"
+  elsif (@rps_game.player_1_choice == "paper" && @rps_game.player_2_choice == "rock") ||
+  (@rps_game.player_1_choice == "rock" && @rps_game.player_2_choice == "paper")
+    text = "paper covers rock"
+  elsif (@rps_game.player_1_choice == "scissors" && @rps_game.player_2_choice == "paper") ||
+  (@rps_game.player_1_choice == "paper" && @rps_game.player_2_choice == "scissors")
+    text = "scissors cuts paper"
+  end %>
+  
+  <% if @rps_game.give_result == "Draw" %>
+    <p>The game was a <b>draw</b> because <b>you both made the same choice</b>.</p>
+  <% else %>
+    <p><b><%= @rps_game.give_result %></b> is the winner because <b><%= text %></b>.</p>
+  <% end %>
+</div>
+<form action = '/play' method = "get">
+  <input type = "submit" value = "OK"/> 
+</form>
+<!--<a href = '/play'>OK</a>-->
+
+
+
+
+

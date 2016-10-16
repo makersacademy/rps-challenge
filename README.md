@@ -1,3 +1,27 @@
+
+**CODE TO RUN VIRTUAL SERVER on Cloud9:**
+
+rackup --env config.ru -p $PORT -o $IP       #Allows me to run the virtual server to view the website.
+
+
+**REQUIREMENTS:**
+
+1) I would like to register my name before playing an online game
+
+2) I would like to be able to play rock/paper/scissors
+
+**GEMS**
+
+gem 'sinatra'
+gem 'rspec-sinatra'
+gem 'capybara'
+gem 'rspec'
+gem 'rerun'
+
+![Rock, Paper, Scissors](http://bit.ly/2dl3pEn)
+![RPS Challenge](https://www.dropbox.com/s/xfn1sw077oid4f2/RPS.png?raw=1)
+
+
 # RPS Challenge
 
 Instructions
