@@ -10,7 +10,7 @@
 	<body>
 		<h1>Welcome to rock, paper, scissors, lizard, spock  <%= @game.opponent.name %>!</h1>
 		<h2>Choose rock, paper, scissors, lizard, spock:</h2>
-		<form action="/choice" method="post">
+		<form class="choice_form" action="/choice" method="post">
 			<label for="rock">Rock</label>
 			<input id="rock" type="radio" name="player2_choice" value="rock">
 			<label for="paper">Paper</label>
@@ -21,7 +21,7 @@
 			<input id="lizard" type="radio" name="player2_choice" value="lizard">
 			<label for="spock">Spock</label>
 			<input id="spock" type="radio" name="player2_choice" value="spock">
-			<input type="submit" value="Make your choice!">
+			<input class="submit_input" type="submit" value="Make your choice!">
 		</form>
 	</body>
 </html>
