@@ -2,18 +2,6 @@ class Player
 
   attr_reader :name, :play_history, :outcome_history
 
-  # def self.find(id)
-  #   players[id]
-  # end
-  #
-  # def self.add(id, player)
-  #   players[id] = player
-  # end
-  #
-  # def self.players
-  #   @players ||= {}
-  # end
-
   def self.create_player_one(name)
     @player_one = Player.new(name)
   end
