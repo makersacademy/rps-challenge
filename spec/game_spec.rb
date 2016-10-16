@@ -23,7 +23,7 @@ context 'after weapon has been selected' do
     it 'works out the winner' do
       subject.calculate_outcome
       subject.calculate_current_winner
-      expect(game.current_winner).to eq hilary
+      expect(game.current_winner).to eq "Crooked Hilary"
     end
   end
   describe '#update_score' do
@@ -36,7 +36,7 @@ context 'after weapon has been selected' do
     it 'adds the result to the list' do
       subject.calculate_current_winner
       subject.update_list_of_wins
-      expect(subject.list_of_wins).to include(hilary)
+      expect(subject.list_of_wins).to include("Crooked Hilary")
     end
   end
 end
@@ -47,7 +47,7 @@ end
     end
     it 'is found when a player reaches 3 points' do
         subject.calculate_overall_winner
-      expect(subject.overall_winner).to eq hilary
+      expect(subject.overall_winner).to eq 'Crooked Hilary'
     end
   end
 

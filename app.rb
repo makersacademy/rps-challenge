@@ -22,14 +22,33 @@ class RPS < Sinatra::Base
   end
 
   get '/choose' do
-    @game = Game.instance
     erb :choose
   end
 
   post '/outcome' do
+    @game.player.choose_weapon('rock') if params[:rock]
+    @game.player.choose_weapon('paper') if params[:paper]
+    @game.player.choose_weapon('scissors') if params[:scissors]
+    @game.complete_turn
+    if @game.over?
+      redirect '/game_over'
+    else
+      redirect '/outcome'
+    end
+  end
+
+  get '/outcome' do
     erb :outcome
   end
 
+  get '/game_over' do
+    erb :game_over
+  end
+
+  post '/reset' do
+    @game.reset
+    redirect '/choose'
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

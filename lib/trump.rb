@@ -13,6 +13,8 @@ attr_reader :weapon_choice
     @weapon_choice = random_selection
   end
 
+
+
   CHOICES = [:rock, :paper, :scissors]
 
   def random_selection
@@ -31,14 +33,9 @@ attr_reader :weapon_choice
     COMPLAINTS.sample
   end
 
-# private
-
-  def random_selection
-    CHOICES.sample
-  end
 
   def announce_choice
-    "I pick #{@weapon_choice}. They're Trump #{@weapon_choice}. I have the best #{@weapon_choice}."
+    "I pick #{@weapon_choice}. Trump #{@weapon_choice}. And by the way, I make the world's greatest #{@weapon_choice}."
   end
 
 BRAGS = ["I won! I won! I'm the best! You're a waste of space!",

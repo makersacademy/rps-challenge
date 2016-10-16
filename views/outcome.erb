@@ -1,3 +1,15 @@
-You picked <%=@game.player_choice%>!
-Trump picked <%=@game.trump_choice%>!
-<%=@game.trump_response%>
+
+<h1>You picked <%=@game.player_choice%>!
+<h1><%=@game.trump.announce_choice%></h1>
+<h2><%=@game.announce_winner%></h2>
+
+
+<h3>Trump's score: <%=@game.trump_score%></h3>
+<h3>Your score: <%=@game.player_score%></h3>
+
+
+<h1><%=@game.trump_response%></h1>
+
+<form action = "/choose" method = "get">
+  <input type = "submit" value = "Next Round">
+</form>
