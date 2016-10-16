@@ -11,7 +11,7 @@ describe Game do
     end
 
     it 'holds game choices in an array' do
-      expect(game.choices).to eq ["rock","paper","scissors"]
+      expect(game.choices).to eq ["Rock","Paper","Scissors"]
     end
 
     it 'creates a bot to compete against the user' do
@@ -25,11 +25,22 @@ describe Game do
     end
   end
 
+  describe '#bot_name' do
+    it 'read the bot\'s name' do
+      expect(game.bot_name).to eq "bot"
+    end
+  end
+
   describe "#bot_choice" do
     it "returns a choice at random" do
-      expect(["rock","paper","scissors"]).to include game.bot_choice
+      expect(["Rock","Paper","Scissors"]).to include game.bot_choice
     end
-
   end
+
+  # describe '#p_choice' do
+  #   it "sets player 1's choice" do
+  #     expect(["Rock","Paper","Scissors"]).to include game.p_choice
+  #   end
+  # end
 
 end
