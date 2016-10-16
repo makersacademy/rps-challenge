@@ -30,39 +30,21 @@ class RPSApp < Sinatra::Base
 
   post '/choices_2' do
     choice_1 = params[:choice_1]
-    @weapon_one = Weapon.create_weapon_one
-    if choice_1 == "ROCK"
-      @weapon_one.choose_rock
-    elsif choice_1 == "PAPER"
-      @weapon_one.choose_paper
-    else
-      @weapon_one.choose_scissors
-    end
+    @weapon_one = Weapon.create_weapon_one(choice_1)
+    @weapon_one.format_choice
     erb :choices_2
   end
 
   get '/evaluate' do
-
-    choice_2 = params[:choice_2]
     choice_1 = params[:choice_1]
-    @weapon_two = Weapon.create_weapon_two
+    choice_2 = params[:choice_2]
+    @weapon_two = Weapon.create_weapon_two(choice_2)
     if @player_two.name == :the_computer
-      @weapon_one = Weapon.create_weapon_one
-      if choice_1 == "ROCK"
-        @weapon_one.choose_rock
-      elsif choice_1 == "PAPER"
-        @weapon_one.choose_paper
-      else
-        @weapon_one.choose_scissors
-      end
+      @weapon_one = Weapon.create_weapon_one(choice_1)
+      @weapon_one.format_choice
       @weapon_two.computer_choice
-    elsif choice_2 == "ROCK"
-      @weapon_two.choose_rock
-    elsif choice_2 == "PAPER"
-      @weapon_two.choose_paper
-    else
-      @weapon_two.choose_scissors
     end
+    @weapon_two.format_choice
     @current_game = Game.create(@weapon_one, @weapon_two)
     @player_one.store_choice(@weapon_one.choice)
     @player_two.store_choice(@weapon_two.choice)

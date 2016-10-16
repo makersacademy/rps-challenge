@@ -17,7 +17,7 @@ class Game
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
     @weapon_two = weapon_two
-    @submitted_weapons =[] # attr_reader - remove?
+    @submitted_weapons =[]
     @winner = nil
   end
 

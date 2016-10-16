@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Weapon
 
   attr_reader :choice, :won
@@ -6,38 +8,29 @@ class Weapon
     @weapon_one
   end
 
-  def self.create_weapon_one
-    @weapon_one = Weapon.new
+  def self.create_weapon_one(choice)
+    @weapon_one = Weapon.new(choice)
   end
 
   def self.return_weapon_two
     @weapon_one
   end
 
-  def self.create_weapon_two
-    @weapon_one = Weapon.new
+  def self.create_weapon_two(choice)
+    @weapon_one = Weapon.new(choice)
   end
 
-  def initialize
+  def initialize(choice = :default)
     @choice = choice
     @won = nil
   end
 
-  def choose_rock
-    @choice = :rock
+  def format_choice
+    @choice = @choice.downcase.to_sym
   end
-
-  def choose_paper
-    @choice = :paper
-  end
-
-  def choose_scissors
-    @choice = :scissors
-  end
-
 
   def computer_choice
-    @choice = [:rock, :paper, :scissors].sample
+    @choice = :rock
   end
 
   def set_win

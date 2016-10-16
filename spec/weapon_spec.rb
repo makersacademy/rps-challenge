@@ -9,13 +9,6 @@ describe Weapon do
   let(:paper) {double(:paper)}
   let(:scissors) {double(:scissors)}
 
-  # describe '#initialize' do
-  #   it 'initilizes with the choice of weapon' do
-  #     weapon = Weapon.new(rock)
-  #     expect(weapon.choice).to eq rock
-  #   end
-  # end
-
   describe '#initialize' do
     it 'initilizes with a blank choice of weapon' do
       expect(subject.choice).to be_nil
