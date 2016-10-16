@@ -41,10 +41,13 @@ This helped me a lot when thinking about whether to use GET or POST.
 Screenshots of the GUI:
 
 Sign-in screen:
-![/index](https://s21.postimg.org/oh5eiivbn/ss1.png)
+![/index]
+(https://s21.postimg.org/oh5eiivbn/ss1.png)
 
 Choose one of the options:
-![/play](https://s21.postimg.org/fan3v8q37/ss2.png)
+![/play]
+(https://s21.postimg.org/fan3v8q37/ss2.png)
 
 Results screen:
-![/result](https://s21.postimg.org/wcfxxc4yb/ss3.png[/)
+![/result]
+(https://s21.postimg.org/wcfxxc4yb/ss3.png[/)
