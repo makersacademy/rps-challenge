@@ -2,59 +2,67 @@ require 'game'
 
 describe Game do
 
-	subject(:game) { described_class.new(player, computer)}
-	let(:player) { double(:player) }
-  let(:computer) {double(:computer)}
+	subject(:game) { described_class.new(player1, player2)}
+	let(:player1) { double(:player) }
+  let(:player2) {double(:player)}
   
-  it 'starts with a player and a computer' do
-    expect(game.player1).to eq player
+  def set_player1(argument)
+    allow(player1).to receive(:choice) { argument }
   end
 
-  it 'starts with a player and a computer' do
-    expect(game.player2).to eq computer
+  def set_player2(argument)
+    allow(player2).to receive(:choice) { argument}
+  end
+
+  it 'starts with a player1 and a computer' do
+    expect(game.player1).to eq player1
+  end
+
+  it 'starts with a player1 and a computer' do
+    expect(game.player2).to eq player2
   end
 
   context 'winning situations', focus: :true do
-    it 'sets player as winner if player chooses rock and computer chooses scissors' do
-      allow(computer).to receive(:choice) {  :scissors }
-      allow(player).to receive(:choice).and_return(:rock)
+    it 'sets player1 as winner if player 1 chooses rock and player 2 chooses scissors' do
+      set_player2(:scissors)
+      set_player1(:rock)
       game.outcome
       expect(game.outcome).to eq :win
     end
 
-    it 'sets player as winner if player chooses scissors and computer chooses paper' do
-      allow(computer).to receive(:choice) { :paper }
-      allow(player).to receive(:choice).and_return( :scissors)
+    it 'sets player1 as winner if player1 chooses scissors and player 2 chooses paper' do
+      set_player2(:paper)
+      set_player1(:scissors)
       game.outcome
       expect(game.outcome).to eq :win
     end
 
-    it 'sets player as winner if player chooses paper and computer chooses rock' do
-      allow(computer).to receive(:choice) { :rock }
-      allow(player).to receive(:choice).and_return(:paper)
+    it 'sets player1 as winner if player1 chooses paper and player 2 chooses rock' do
+      set_player2(:rock)      
+      set_player1(:paper)
       game.outcome
       expect(game.outcome).to eq :win
     end
   end
   
   context 'losing situations' do
-    it 'sets as loser if player chooses rock and computer chooses paper' do
-      allow(computer).to receive(:choice) { :paper }
-      allow(player).to receive(:choice).and_return(:rock)
+    it 'sets as loser if player1 chooses rock and player 2 chooses paper' do
+      set_player2(:paper)
+      set_player1(:rock)
       game.outcome
       expect(game.outcome).to eq :lose
     end
 
-    it 'sets as loser if player chooses scissors and computer chooses rock' do
-      allow(computer).to receive(:choice) { :rock }
-      allow(player).to receive(:choice).and_return( :scissors)
+    it 'sets as loser if player 1 chooses scissors and player 2 chooses rock' do
+      set_player2(:rock)     
+      set_player1(:scissors)
       game.outcome
       expect(game.outcome).to eq :lose
     end
 
-    it 'sets as loser if player chooses paper and computer chooses scissors' do
-      allow(computer).to receive(:choice) {  :scissors }
-      allow(player).to receive(:choice).and_return(:paper)
+    it 'sets as loser if player 1 chooses paper and player 2 chooses scissors' do
+      set_player2(:scissors)
+      set_player1(:paper)
       game.outcome
       expect(game.outcome).to eq :lose
     end
@@ -62,41 +70,41 @@ describe Game do
   end
 
   context 'draw situations' do
-    it 'sets the game to a draw if player and computer both choose rock' do
-      allow(computer).to receive(:choice) { :rock }
-      allow(player).to receive(:choice).and_return(:rock)
+    it 'sets the game to a draw if both choose rock' do
+      set_player1(:rock)  
+      set_player2(:rock)
       game.outcome
       expect(game.outcome).to eq :draw
     end
 
-    it 'sets the game to a draw if player and computer both choose scissors' do
-      allow(computer).to receive(:choice) {  :scissors }
-      allow(player).to receive(:choice).and_return( :scissors)
+    it 'sets the game to a draw if both choose scissors' do
+      set_player1(:scissors)
+      set_player2(:scissors)
       game.outcome
       expect(game.outcome).to eq :draw
     end
 
-    it 'sets the game to a draw if player and computer both choose paper' do
-      allow(computer).to receive(:choice) { :paper }
-      allow(player).to receive(:choice).and_return(:paper)
+    it 'sets the game to a draw if both choose paper' do
+      set_player1(:paper)
+      set_player2(:paper)
       game.outcome
       expect(game.outcome).to eq :draw
     end
 
-    it 'does not set the game to a draw if computer beats player' do
-      allow(computer).to receive(:choice) {  :scissors }
-      allow(player).to receive(:choice).and_return(:paper)
+    it 'does not set the game to a draw if player 1 beats player 2' do
+      set_player1(:scissors)
+      set_player2(:paper)
       game.outcome
       expect(game.outcome).to_not eq :draw
     end
   end
 
-  context 'edge cases', focus: :true do
+  context 'edge cases' do
     it 'moves twice, wins first time and then draws' do
-      allow(computer).to receive(:choice) {  :scissors }
-      allow(player).to receive(:choice) { :rock}
+      set_player1(:scissors)
+      set_player2(:rock)  
       game.outcome
-      allow(player).to receive(:choice) { :scissors}
+      set_player2(:scissors)
       game.outcome
       expect(game.outcome).to eq :draw
     end

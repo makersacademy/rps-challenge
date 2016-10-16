@@ -1,7 +1,7 @@
-You chose <%= "#{@game.player1.choice}" %>!<br>
-Computer chose <%= "#{@game.player2.choice}" %>!<br>
-You lost
+<%= @game.player1.name %> chose <%= "#{@game.player1.choice}" %>!<br>
+<%= @game.player2.name %> chose <%= "#{@game.player2.choice}" %>!<br>
+<%= @game.player2.name %> wins!<br>
 
-<form action="/play" value='/get'>
+<form action="/" value='/get'>
 	<input type="submit" value="Play Again">
 </form>

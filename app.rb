@@ -33,6 +33,35 @@ class RockPaperScissors < Sinatra::Base
     redirect '/outcome'
   end
 
+  get '/multiplayer_details' do
+    erb :multiplayer_details
+  end
+
+  post '/names' do
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    @game = Game.create(player1, player2)
+    redirect '/player1_turn'
+  end
+
+  get '/player1_turn' do
+    erb :player1_turn
+  end
+
+  post '/multiplayer_play1' do
+    @game.player1.set_choice((params[:choice]).to_sym)
+    redirect '/player2_turn'
+  end
+
+   get '/player2_turn' do
+    erb :player2_turn
+  end
+
+  post '/multiplayer_play2' do
+    @game.player2.set_choice((params[:choice2]).to_sym)
+    redirect '/outcome'
+  end
+
   get '/outcome' do
     erb @game.outcome
   end
