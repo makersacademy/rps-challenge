@@ -16,13 +16,6 @@ describe Game do
     end
   end
 
-  context '#computer_move' do
-  	it 'sets the computers choice' do
-  		game.computer_move
-  		expect(Game::CHOICES).to include game.computer_choice
-  	end
-  end
-
   context 'winning situations' do
     it 'sets player as winner if player chooses rock and computer chooses scissors' do
       allow(game).to receive(:computer_choice) { "Scissors" }
