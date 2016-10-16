@@ -1,2 +1,13 @@
-You chose <%= "#{@game.choice}" %>!
-Computer chose <%= "#{@game.computer_choice}" %>!
+You chose <%= "#{@game.choice}" %>!<br>
+Computer chose <%= "#{@game.computer_choice}" %>!<br>
+<% if @game.win? %>
+	You won!
+<% elsif @game.win? == nil %>
+  You drew!
+<% else %>
+  You lost!
+<% end %>
+
+<form action="/play" value='/get'>
+	<input type="submit" value="Play Again">
+</form>

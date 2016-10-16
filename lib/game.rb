@@ -18,9 +18,12 @@ class Game
 
   def move(choice)
     @choice = choice
+    computer_move
+    outcome
   end
 
   def computer_move
+    @win = nil
     @computer_choice = CHOICES.sample
   end
 
