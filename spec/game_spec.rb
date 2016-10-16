@@ -6,8 +6,14 @@ describe Game do
   let(:player)  { double(:player, name: "Player", choice: "Rock") }
   let(:computer)  { double(:computer, name: "Computer", choice: "Scissors") }
 
-  it 'should accept two players' do
-    expect(game.player).to eq player
+  describe '#initialization' do
+    it 'should accept a player' do
+      expect(game.player).to eq player
+    end
+
+     it 'should accept the computer player' do
+       expect(game.computer).to eq computer
+     end
   end
 
   it 'should accept player 2 as a computer' do
