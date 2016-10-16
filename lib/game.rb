@@ -6,6 +6,14 @@ class Game
 
   attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
 
+  def self.return_current_game
+    @game
+  end
+
+  def self.create(weapon_one, weapon_two)
+    @game = Game.new(weapon_one, weapon_two)
+  end
+
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
     @weapon_two = weapon_two

@@ -8,6 +8,7 @@ class RPSApp < Sinatra::Base
 
   before { @player_one = Player.return_player_one }
   before { @player_two = Player.return_player_two }
+  before { @current_game = Game.return_current_game }
 
   # helpers do
   #   def current_player
@@ -59,20 +60,19 @@ class RPSApp < Sinatra::Base
     else
       $weapon_2.choose_scissors
     end
-    $game = Game.new($weapon_1, $weapon_2)
+    @current_game = Game.create($weapon_1, $weapon_2)
     @player_one.store_choice($weapon_1.choice)
     @player_two.store_choice($weapon_2.choice)
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @game = $game
     @weapon_1 = $weapon_1
     @weapon_2 = $weapon_2
-    @game.add_submitted_weapons
-    @game.evaluate
-    @outcome = @game.winner
-    @game.set_statuses
+    @current_game.add_submitted_weapons
+    @current_game.evaluate
+    @outcome = @current_game.winner
+    @current_game.set_statuses
     @player_one.store_outcome(@weapon_1.won)
     @player_two.store_outcome(@weapon_2.won)
     erb :outcome
