@@ -27,6 +27,12 @@ Player --> Selects choice <-- Game
 Player --> Views result <-- Game
 Player --> Plays again <-- New Game
 
+I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods really horrific. My refactoring looked to
+
+1. Remove presentation strings from business logic
+2. Use a hash solution instead of a case statement to determine the winner
+
+
 Instructions
 -------
 
