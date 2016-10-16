@@ -60,4 +60,10 @@ describe Game do
     end
   end
   
+  describe "#auto_choice" do
+    it 'returns a random choice of hand ["rock", "paper", "scissors"]' do
+      expect(["rock", "paper", "scissors"]).to include(game.auto_choice)
+    end
+  end
+  
 end
