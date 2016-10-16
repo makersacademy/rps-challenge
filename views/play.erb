@@ -1,26 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <h1>Rock, Paper, Scissors</h1>
 
 <form action = '/result' method = "post">
   <p>Hello <b><%=@rps_game.player_1.name%></b>! You are playing against <b><%=@rps_game.player_2.name%></b>.</p>
   <p>Please make your selection and then click 'Submit'.</p>
   
-  <p><label for = "rock"><b>Rock</b>
+  <div>
+  <p><label for = "rock">
     <input type = "radio" name = "rps_choice" value = "rock" checked/>
+    <b>Rock</b>
   </label></p>
-  <p><label for = "paper"><b>Paper</b>
+  <p><label for = "paper">
     <input type = "radio" name = "rps_choice" value = "paper"/>
+    <b>Paper</b>
   </label></p>
-  <p><label for = "scissors"><b>Scissors</b>
+  <p><label for = "scissors">
     <input type = "radio" name = "rps_choice" value = "scissors"/>
+    <b>Scissors</b>
   </label></p>  
   
   <input type = "submit" name = "play_computer" value = "Submit"/> 
-  
+  <p><a href = '/end_game'>Quit</a></p>
+  </div>
 </form>
-
-
-<!--<form action = '/end_game' method = "get">-->
-<!--  <input type = "submit"/> -->
-<!--</form>-->
-
-<a href = '/end_game'>Quit</a>
