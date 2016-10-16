@@ -1,16 +1,44 @@
 
-
-<div>One player game</h1>
+<body>
+<div class="division">
+  <h1>One player game</h1>
   <form action="/name" method="post">
     Player  <input type="text" name="player_name">
     <input type="submit" value="Submit">
   </form>
 </div>
 
-<div><h1>Two players game</h1>
+<div class="division">
+  <h1>Two players game</h1>
   <form action="/2name" method="post">
     Player1 <input type="text" name="player1_name">
     Player2 <input type="text" name="player2_name">
     <input type="submit" value="Submit ">
   </form>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+<style>
+
+body {
+background-image: url("http://www.rockpaperscissorshair.co.uk/img/logo-x2.png");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-family: Comic Sans MS;
+font-size: 20px;
+
+}
+.division{
+  width:50%;
+  height:100px;
+  float:left;
+}
+
+img {
+display: block;
+margin-left: 300px;
+margin-right: auto
+}
+
+</style>

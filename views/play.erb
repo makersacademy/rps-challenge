@@ -1,15 +1,37 @@
 <h1><%= @game.players[0].name %> is playing</h1>
 
-<h1>Choose an attack:</h1>
+<h2>Choose an attack:</h2>
 
 <form method="link" action="/rock">
   <input type="submit" value="Rock">
 </form>
 
-<Form method="link" action="/paper">
+<form method="link" action="/paper">
   <input type="submit" value="Paper">
 </form>
 
-<Form method="link" action="/scissors">
+<form method="link" action="/scissors">
   <input type="submit" value="Scissors">
 </form>
+
+
+<div class="center">
+  <img src="https://media.giphy.com/media/WN00WINYziSQM/giphy.gif">
+  </div>
+
+  <style>
+h1 {
+  font-family: Comic Sans MS;
+  font-size: 30px;
+}
+
+h2 {
+  font-family: Comic Sans MS;
+  font-size: 25px;
+}
+
+form {
+  font-family: Comic Sans MS;
+  font-size: 20px;
+}
+  </style>

@@ -89,7 +89,7 @@ class Rps < Sinatra::Base
 
   get '/2lose' do
     @game = Game.current
-    erb :twowin
+    erb :twolose
   end
 
 
