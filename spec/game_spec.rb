@@ -1,11 +1,11 @@
 require 'game.rb'
 
-# describe Game do
-#   game = Game.new
-#   let(:player) {double :player}
-#   describe '#print_name' do
-#     it 'prints the name of the player' do
-#     expect(game.print_name(player)).to eq player
-#   end
-# end
-# end
+ describe Game do
+   game = Game.new
+
+   describe '#play' do
+     it 'chooses a random element of rock paper or scissors' do
+     expect(game.play).not_to eq nil
+   end
+ end
+ end
