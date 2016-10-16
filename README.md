@@ -10,12 +10,12 @@ Instructions
 ----
 
 Download and run the app:
-'''
+```
 $ git clone git@github.com:malinnaleach/rps-challenge.git
 $ cd rps-challenge
 $ bundle install
 $ ruby app.rb
-'''
+```
 
 Navigate to localhost:4567 in your browser to see this homescreen, and the rest should be self explanatory.
 
