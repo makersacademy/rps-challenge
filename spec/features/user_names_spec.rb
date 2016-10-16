@@ -1,5 +1,4 @@
 require "spec_helper"
-require_relative "web_helper"
 
 RSpec.feature "RPS", :type => :feature do
   scenario "User enters their name" do
