@@ -8,14 +8,13 @@ class RockOff < Sinatra::Base
 #   if ENV['RACK_ENV'] == 'test'
 #   disable :show_exceptions
 # end
-  puts "Working"
+
   get "/" do
     erb(:index)
   end
 
   post "/names" do
     Game.start(params[:player_name])
-    p params
     erb(:fight)
   end
 
@@ -24,6 +23,10 @@ class RockOff < Sinatra::Base
     erb(:fight)
   end
 
+  get "/show-winner" do
+    @winner = Game.game.set_winner
+    erb(:fight)
+  end
 
   run! if app_file == $0
 end

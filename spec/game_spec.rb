@@ -3,7 +3,7 @@ require 'game'
 
 describe Game do
   subject(:game) {described_class.new(player)}
-  let(:player) {double("Powders", name: 'Ed', choice: 'Scissors')}
+  let(:player) {double("Powders", name: 'Ed', choice: 'scissors')}
   it "Has a player variable" do
     expect(game).to respond_to(:player)
   end
@@ -18,6 +18,17 @@ describe Game do
   end
 
   it "Can return the choice of the player" do
-    expect(game.player_choice).to eq 'Scissors'
+    expect(game.player_choice).to eq 'scissors'
+  end
+
+  it "Can generate a result for the computer" do
+    allow(game).to receive_messages(computer_choice: 'rock')
+    expect(game.computer_choice).to eq 'rock'
+  end
+
+  it "Can determine an outcome for the game" do
+    allow(game).to receive_messages(computer_choice: 'rock')
+    game.set_winner
+    expect(game.winner).to eq 'Computer'
   end
 end
