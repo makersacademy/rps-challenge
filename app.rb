@@ -17,11 +17,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-
+    erb :play
   end
 
   get '/game_over' do
-
+    erb :game_over
   end
 
 

@@ -16,9 +16,9 @@ describe RockPaperScissors do
 
     it "post request accepts player name and creates game" do
       allow(Game).to receive(:new)
-      post "/", :player_1 => "Laura"
+      post "/", :player_1 => "Player 1"
       expect(Game).to have_received(:new) do |player_1, player_2|
-        expect(player_1.name).to eq "Laura"
+        expect(player_1.name).to eq "Player 1"
         expect(player_2).to be_a Computer
       end
     end
@@ -35,6 +35,7 @@ describe RockPaperScissors do
     it "displays play game page" do
       get "/play"
       expect(last_response).to be_ok
+      expect(last_response.body).to include "Choose rock, paper or scissors"
     end
   end
 
@@ -42,6 +43,7 @@ describe RockPaperScissors do
     it "displays game over page" do
       get "/game_over"
       expect(last_response).to be_ok
+      expect(last_response.body).to include "Game Over"
     end
   end
 
