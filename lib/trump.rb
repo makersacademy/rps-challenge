@@ -9,10 +9,14 @@ attr_reader :weapon_choice
     @weapon_choice
   end
 
-CHOICES = [:rock, :paper, :scissors]
-
   def choose_weapon
     @weapon_choice = random_selection
+  end
+
+  CHOICES = [:rock, :paper, :scissors]
+
+  def random_selection
+    CHOICES.sample
   end
 
   def brag

@@ -5,26 +5,31 @@ class Game
 
 attr_reader :list_of_wins, :current_winner, :overall_winner, :player_score, :trump_score, :games_played, :player, :trump
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, trump)
+    @game = Game.new(player, trump)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player)
-    @player = Player.new(player)
-    @trump = Trump.new
+  def initialize(player, trump)
+    @player = player
+    @trump = trump
     @list_of_wins = []
     @player_score = 0
     @trump_score = 0
     @games_played = 0
-    @current_winner
+    @current_winner = nil
+    @overall_winner = nil
   end
 
   def player_name
     @player.name
+  end
+
+  def game_over
+    !!overall_winner
   end
 
 # private

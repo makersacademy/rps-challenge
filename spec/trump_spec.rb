@@ -2,10 +2,11 @@ require 'trump'
 
 describe Trump do
 
-  describe 'chooses a weapon' do
-    it 'randomly chooses a weapon' do
-      allow(subject).to receive(choose_weapon).and_return(:rock)
-      expect(subject.current_weapon).to eq(:rock)
+  describe '#weapon_choice' do
+    it 'selects weapon randomly' do
+      allow(subject).to receive(:random_selection).and_return(:rock)
+      subject.choose_weapon
+      expect(subject.weapon_choice).to eq(:rock)
       end
   end
 

@@ -3,7 +3,9 @@ require 'player'
 
 describe Game do
 
-subject(:game) {described_class.new('Crooked Hilary')}
+subject(:game) { described_class.new(hilary, trump) }
+let (:hilary) { double(:player, name: 'Crooked Hilary', weapon_choice: :paper) }
+let (:trump) { double(:trump, weapon_choice: :rock) }
 
   describe '#initialize' do
     it 'creates a game' do
@@ -17,16 +19,11 @@ subject(:game) {described_class.new('Crooked Hilary')}
 
 context 'after weapon has been selected' do
 
-    before do
-      allow(subject.player).to receive(:weapon_choice).and_return(:paper)
-      allow(subject.trump).to receive(:weapon_choice).and_return(:rock)
-    end
-
   describe '#calculate_outcome' do
     it 'works out the winner' do
       subject.calculate_outcome
       subject.calculate_current_winner
-      expect(game.current_winner).to eq subject.player
+      expect(game.current_winner).to eq hilary
     end
   end
   describe '#update_score' do
@@ -39,17 +36,18 @@ context 'after weapon has been selected' do
     it 'adds the result to the list' do
       subject.calculate_current_winner
       subject.update_list_of_wins
-      expect(subject.list_of_wins).to include(subject.player)
+      expect(subject.list_of_wins).to include(hilary)
     end
   end
-
 end
 
   describe '#overall_winner' do
-    it 'finds the overall winner when a player reaches 3 points' do
-      allow(subject).to receive(:player_score).and_return(3)
-      subject.calculate_overall_winner
-      expect(subject.overall_winner).to eq subject.player
+    before do
+      subject.instance_variable_set(:@player_score, 3)
+    end
+    it 'is found when a player reaches 3 points' do
+        subject.calculate_overall_winner
+      expect(subject.overall_winner).to eq hilary
     end
   end
 
