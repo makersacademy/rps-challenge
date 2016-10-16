@@ -22,20 +22,22 @@ class Game
     game_logic(player_choice,computer_choice)
   end
 
+  private
+
   def game_logic(player_choice, computer_choice)
     # See if player one wins. If not, player 2 wins
     if player_choice == computer_choice
       return "Draw"
     end
 
-    if(player_choice == "Rock" && computer_choice != "Paper")
-      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+    if (player_choice == "Rock" && computer_choice != "Paper")
+      "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
     elsif (player_choice == "Scissors" && computer_choice != "Rock")
-      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+      "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
     elsif (player_choice == "Paper" && computer_choice != "Scissors")
-      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+      "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
     else
-      return "Computer chose #{computer_choice}. #{@computer.name} beats #{@player.name}"
+      "Computer chose #{computer_choice}. #{@computer.name} beats #{@player.name}"
     end
   end
 end

@@ -1,8 +1,8 @@
-require 'game'
-
-describe Game do
-  subject(:game)  { described_class.new(player, computer) }
-
-
-
-end
+# require 'game'
+#
+# describe Game do
+#   subject(:game)  { described_class.new(player, computer) }
+#
+#
+#
+# end
