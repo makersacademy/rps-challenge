@@ -1,0 +1,37 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  line-height: 2.5em;
+  background-image: url("cat.jpg");
+  background-color: #0D1754;
+  font-size: 1em;
+  margin:0 auto;
+  width: 600px;
+
+}
+
+
+/* Links */
+a{
+  text-decoration: none;
+  color: #F2F2F2;
+}
+
+a:hover{
+  color: #67D9F0;
+}
+
+
+.blue-text{
+  color: #67D9F0;
+}
+
+
+#box{
+  background-color: rgba(77, 80, 89, 0.4);
+  border: #FFF dashed 5px;
+  padding: 20px 5px 50px 5px;
+  text-align: center;
+  margin-top: 10%;
+  font-weight: 300;
+}

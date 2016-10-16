@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Link Rel here-->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Google fonts: 'Open Sans'-->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div id="box">
+    <h1> Welcome <%= @game.player.name %>... </br> This is Kitty, you ready to dance? </h1>
+    <h2> Please Select an Attack </h2>
+    <form action="/move" method="post">
+      <button type="submit" name="move" value="rock">Rock</button>
+      <button type="submit" name="move" value="paper">Paper</button>
+      <button type="submit" name="move" value="scissors">Scissors</button>
+    </form>
+  </div> <!-- Close box -->
+</body>
+</html>
