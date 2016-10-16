@@ -22,6 +22,11 @@ feature 'playing a game' do
 
   scenario 'computer picks Spock' do
     click_button 'Spock'
-    expect(page).to have_content 'Opponent selected Spock!'
+    choices = find(:css, "#opponent").text
+    expect(possible_choices).to include choices
+  end
+  
+  def possible_choices 
+    [:rock, :paper, :scissors, :lizard, :spock].map { |choice| "Opponent selected #{choice.to_s.capitalize}!" }
   end
 end

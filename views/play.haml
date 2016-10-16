@@ -8,6 +8,7 @@
   %input.btn.btn-success{ type:"submit", name: "choice", value: "Lizard" }
   %input.btn.btn-success{ type:"submit", name: "choice", value: "Spock" }
 
-  %h2.text-center
-    = "You selected #{@choice}!"
-    %br= "Opponent selected #{@opponent_choice.to_s.capitalize}!"
+  #player
+    %h2.text-center You selected #{@choice}!
+  #opponent
+    %h2.text-center Opponent selected #{@opponent_choice.to_s.capitalize}!
