@@ -5,6 +5,7 @@ describe Computer do
 
   it "chooses an option" do
     options = ["Rock", "Paper", "Scissors"]
+    computer.choose
     expect(options).to include computer.choice
   end
 end

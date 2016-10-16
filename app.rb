@@ -14,33 +14,23 @@ class RPS < Sinatra::Base
   end
 
   post "/play" do
+    Computer.create_instance
+    Compare.create_instance
     @name = params[:name]
     erb (:play)
   end
 
   post "/compare" do
-    Computer.create_instance.choose
-    Compare.create_instance
-    @result = Compare.instance.result(params[:user_choice], Computer.instance.choice)
+    @computer.choose
+    @result = Compare.instance.result(params[:user_choice], @computer.choice)
     session[:user_choice] = params[:user_choice]
-    redirect "/win" if @result == "win"
-    redirect "/lose" if @result == "lose"
-    redirect "/draw" if @result == "draw"
+    session[:result] = @result.to_sym
+    redirect "/result"
   end
 
-  get "/win" do
+  get "/result" do
     @user_choice = session[:user_choice]
-    erb (:win)
-  end
-
-  get "/draw" do
-    @user_choice = session[:user_choice]
-    erb (:draw)
-  end
-
-  get "/lose" do
-    @user_choice = session[:user_choice]
-    erb (:lose)
+    erb (session[:result])
   end
 
   # start the server if ruby file executed directly
