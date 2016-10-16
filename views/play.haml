@@ -12,3 +12,10 @@
     %h2.text-center You selected #{@turn.player_choice.to_s.capitalize}!
   #opponent
     %h2.text-center Opponent selected #{@turn.opponent_choice.to_s.capitalize}!
+    
+  - if @turn.win? == true
+    %h2.text-center.text-success You Won!
+  - elsif @turn.lose? == true
+    %h2.text-center.text-danger You Lose!
+  - elsif @turn.draw? == true
+    %h2.text-center.text-primary You Draw!
