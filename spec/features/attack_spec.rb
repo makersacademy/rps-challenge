@@ -6,4 +6,8 @@ feature 'Start the Game' do
     click_button("Confirmation")
     expect(page).to have_content 'Brian beats Tom'
   end
+  scenario 'Rock Paper or Scissors' do
+    sign_in_and_play
+    expect(page).to have_content 'Rock'
+  end
 end
