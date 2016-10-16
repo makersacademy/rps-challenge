@@ -9,7 +9,7 @@ attr_reader :player_1, :player_2, :current_turn, :player_1_choice, :player_2_cho
 		@player_1 = player1
 		@player_2 = player2
 		@players = [player1,player2]
-		@current_turn = player1
+		@current_turn = @player_1
 		@hand = ["rock", "paper", "scissors"]
 	end
 	
@@ -21,13 +21,13 @@ attr_reader :player_1, :player_2, :current_turn, :player_1_choice, :player_2_cho
 	  @rps_game
 	end
 	
-	def switch_turns
+	def switch_turns       # Called in the controller. Ben, do I call this from in my class or in the controller?	
 		@current_turn = opponent_of(current_turn)	
 	end
 	
 	def selection(choice)
 		@choice = choice
-		record_player_choices				
+		record_player_choices   # Called in the class. Ben, do I call this from in my class or in the controller?				
 	end
 	
 	def record_player_choices
@@ -39,15 +39,8 @@ attr_reader :player_1, :player_2, :current_turn, :player_1_choice, :player_2_cho
 		result == "Draw" ? @winner = "Draw" : @winner = result.name
 	end
 	
-	def reset_choices
-		@choice = nil									
-		@player_1_choice = nil					
-		@player_2_choice = nil						
-	end
-	
 	def auto_choice
 		@hand.sample
-		#puts "Autoselection is #{@hand.sample}"
 	end
 	
 	def result
