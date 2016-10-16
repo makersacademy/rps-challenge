@@ -5,7 +5,7 @@ feature 'Register name' do
     visit('/')
     fill_in :name, with: 'Frances'
     click_button "Let's play"
-    expect(page).to have_content 'Okay Frances, please choose your move!'
+    expect(page).to have_content 'Okay Frances'
   end
 
 end

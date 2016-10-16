@@ -1,10 +1,13 @@
-<h1>Okay <%= @game.player.name %>, please choose your move!</h1>
- <form action="/result" method="post">
-   <input type="radio" name="choice" id="<%= @game.view_choices[0] %>" value="<%= @game.view_choices[0] %>">
-   <label for="r<%= @game.view_choices[0] %>"><%= @game.view_choices[0].capitalize %></label>
-   <input type="radio" name="choice" id="<%= @game.view_choices[1] %>" value="<%= @game.view_choices[1] %>">
-   <label for="r<%= @game.view_choices[1] %>"><%= @game.view_choices[1].capitalize %></label>
-   <input type="radio" name="choice" id="<%= @game.view_choices[2] %>" value="<%= @game.view_choices[2] %>">
-   <label for="r<%= @game.view_choices[2] %>"><%= @game.view_choices[2].capitalize %></label>
-   <input type="submit" id="Let's do this!">
- </form>
+<form class="form-signin" action="/result" method="post">
+  <h2 class="form-signin-heading">Okay <%= @game.player.name %>, please choose your move!</h2>
+  <div class="radio">
+    <label><input type="radio" name="choice" value="<%= @game.view_choices[0] %>"><%= @game.view_choices[0] %></label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="choice" value="<%= @game.view_choices[1] %>"><%= @game.view_choices[1] %></label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="choice" value="<%= @game.view_choices[2] %>"><%= @game.view_choices[2] %></label>
+  </div>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" id="Let's do this!">
+</form>

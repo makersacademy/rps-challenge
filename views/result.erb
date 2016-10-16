@@ -1,2 +1,8 @@
-<h1><%= @game.player.name %> chose the <%= @game.player_selection(@choice).capitalize %>!</h1>
-<h2><%= @game.result %></h2>
+<h2><%= @game.player.name %> chose <%= @game.player_selection(@choice).capitalize %>!</h2>
+<h3><%= @game.result %></h3>
+<form action="/play" method="get">
+  <input type="submit" value="Play again">
+</form>
+<form action="/" method="get">
+  <input type="submit" value="Start over">
+</form>
