@@ -37,6 +37,28 @@ describe Game do
     end
   end
 
+  describe '#game_result' do
+    context 'bot selects Rock' do
+      it " and player selects Rock" do
+        player_1.player_choice = "Rock"
+        game.bot.player_choice = "Rock"
+        expect(game.game_result).to eq "It's a draw!!"
+      end
+      it " and player selects Paper" do
+        player_1.player_choice = "Paper"
+        game.bot.player_choice = "Rock"
+        expect(game.game_result).to eq "You won!!"
+      end
+      it " and player selects Scissors" do
+        player_1.player_choice = "Scissors"
+        game.bot.player_choice = "Rock"
+        expect(game.game_result).to eq "You lost!!"
+      end
+    end
+
+  end
+
+
   # describe '#p_choice' do
   #   it "sets player 1's choice" do
   #     expect(["Rock","Paper","Scissors"]).to include game.p_choice
