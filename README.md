@@ -1,10 +1,20 @@
 # RPS Challenge
 
-Follow these instructions to play Rock, Paper, Scissors!
+Follow these instructions to play Rock, Paper, Scissors:
+<br>
 1) git clone https://github.com/meeshyep/rps-challenge
+<br>
 2) cd rps-challenge
+<br>
 3) bundle
+<br>
 4) rackup
+<br>
+-Enter your username and hit 'Go!'
+<br>
+-Select your hand: Rock, Paper or Scissors
+-The computer will select its hand
+-One of you will win! 
 
 ![Screenshot] (http://dreamatico.com/data_images/hand/hand-7.jpg)
 ![Screenshot] (http://dri6hp6j35hoh.cloudfront.net/news/u/2013/04/clinched-fist-ss.jpg)
