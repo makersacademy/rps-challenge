@@ -1,0 +1,21 @@
+body {
+  background-image: url("http://marcopontillo.com/wp-content/uploads/2016/04/RPS.jpg");
+  background-color: black;
+  background-size: contain;
+}
+
+#formdiv{
+  border: 1px black solid;
+  width: 100%;
+  margin: 0 auto;
+}
+
+form{
+  width: 100%;
+  margin: 0 auto;
+}
+button{
+  padding: 70px;
+  width: 33%;
+  color: red;
+}

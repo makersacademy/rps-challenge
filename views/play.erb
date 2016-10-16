@@ -1,0 +1,36 @@
+
+<html>
+
+  <head>
+    <title>Rock Papaer Scissors</title>
+    <link rel="stylesheet" type="text/css" href="play.css"/>
+  </head>
+
+  <body>
+    <div id=scores>
+      <div id=player>
+        <h1> <%= @game.player_1.name %> </h1>
+        <h2> <%= @game.player_1.score %></h2>
+      </div>
+      <div id=computer>
+        <h1> <%= @game.computer_player.name %> </h1>
+        <h2> <%= @game.computer_player.score %></h2>
+      </div>
+      <div id=tieround>
+        <h1> Tie Rounds </h1>
+        <h2> <%= @game.tie_score %></h2>
+      </div>
+    </div>
+
+
+    <div id=formdiv>
+      <form action="/choices" method="post">
+        <button type="submit" name="player_1_choice" value="1"> Rock </button>
+        <button type="submit" name="player_1_choice" value="2"> Paper </button>
+        <button type="submit" name="player_1_choice" value="3"> Scissors </button>
+      </form>
+    </div>
+
+  </body>
+
+</html>
