@@ -1,0 +1,7 @@
+<h1> Your choice is <%=@game.return_choice_of_weapon(@game.players_choice)%></h1>
+<h1> The computer choose <%=@game.return_choice_of_weapon(@game.computers_answer)%> </h1>
+<h1> The winner is <%=@game.round_winner%></h1>
+
+<form action="/play">
+<button> Play Again </button>
+</form>

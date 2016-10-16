@@ -9,8 +9,16 @@ describe Player do
   end
 
   it 'has a choice' do
-    choice = 'scissor'
+    choice = 1
     player.players_choice(choice)
     expect(player.choice).to eq choice
+  end
+
+  it 'has a score' do
+    expect(player).to respond_to(:score)
+  end
+
+  it 'score is 0 by default' do
+    expect(player.score).to eq 0
   end
 end

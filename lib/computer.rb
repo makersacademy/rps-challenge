@@ -1,8 +1,10 @@
 class Computer
   attr_reader :computers_answer, :name
+  attr_accessor :score
 
   def initialize(name = "Computer")
     @name = name
+    @score = 0
   end
 
   def computer_answer(rps)
@@ -10,7 +12,7 @@ class Computer
   end
 
   def computer_choice
-    choice = ['rock', 'paper', 'scissor'].sample
+    choice = [1, 2, 3].sample
     computer_answer(choice)
   end
 
