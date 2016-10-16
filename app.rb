@@ -1,12 +1,21 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
+
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @name = params[:name]
+    player_1 = Player.new(params[:name])
+    @game = Game.create(player_1)
+    redirect to('/play')
+  end
+
+  get '/play' do
+    @game = Game.instance
     erb :play
   end
 

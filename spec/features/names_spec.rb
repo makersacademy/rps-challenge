@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'player'
 
 feature 'enter_name' do
   scenario 'fill in registration form' do
