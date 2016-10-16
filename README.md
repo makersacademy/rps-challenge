@@ -8,8 +8,7 @@ REQUIREMENTS:
 
 2) I would like to be able to play rock/paper/scissors
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 
 
