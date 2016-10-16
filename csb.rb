@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/ash'
+require_relative 'lib/game'
 
 class CSB < Sinatra::Base
 
@@ -7,7 +9,7 @@ class CSB < Sinatra::Base
 
   before do
     @player = Player.read
-    @ash = Player.read
+    @ash = Ash.read
   end
 
   get '/' do
@@ -16,18 +18,15 @@ class CSB < Sinatra::Base
 
   post '/setup' do
     @player = Player.create(params[:player_name])
-    @ash = Player.new("Ash")
-    p @player.name
+    @ash = Ash.create
     redirect '/play'
   end
 
   get '/play' do
-    p @player.name
     erb :play
   end
 
   post '/input' do
-    p @player.name
     if    params[:charmander]
        @player.pokemon = params[:charmander]
     elsif params[:squirtle]
@@ -35,6 +34,7 @@ class CSB < Sinatra::Base
     elsif params[:bulbasaur]
        @player.pokemon = params[:bulbasaur]
     end
+    @ash.pokemon_selector
     redirect '/result'
   end
 

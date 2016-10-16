@@ -14,7 +14,7 @@ feature CSB do
       visit "/"
       fill_in "player_name", with: "Rory"
       click_button "OK"
-      expect(page).to have_text("Rory vs Computer")
+      expect(page).to have_text("Rory vs Ash")
     end
   end
 
