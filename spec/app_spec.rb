@@ -80,8 +80,9 @@ describe RockPaperScissors do
       get "/result"
       expect(last_response).to be_ok
     end
-    it "displays a draw message when game result is nil" do
-      allow(Game.instance).to receive(:result).and_return nil
+    it "displays a draw message when game result is a draw" do
+      result = { moves: [:rock, :rock], winner: :draw }
+      allow(Game.instance).to receive(:result).and_return result
       get "/result"
       expect(last_response.body).to include "It's a draw!"
     end
@@ -104,7 +105,6 @@ describe RockPaperScissors do
       expect(last_response.body).to include "rock"
       expect(last_response.body).to include "scissors"
     end
-
   end
 
 end
