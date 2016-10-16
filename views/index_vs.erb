@@ -1,0 +1,63 @@
+<form action="/names_vs" method="post">
+
+  <div class="left">
+  <h1>Enter name for Player 1:</h1> <input type="text" name="player1" ><br><br><br>
+  <input type="submit" value="Submit">
+</div>
+
+<div class="right">
+  <h1>Enter name for Player 2:</h1> <input type="text" name="player2" >
+</div>
+
+
+</form>
+
+<style>
+.left{
+  float:left;
+  width: 50%
+}
+
+.right{
+  float:left;
+  width:50%
+}
+
+input[type=text]{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: beige;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit] {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit]:hover {background-color: #3e8e41}
+
+input[type=submit]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>

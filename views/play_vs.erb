@@ -1,0 +1,36 @@
+<h1> <%=@game.player1.name %> vs. <%=@game.player2.name %> </h1>
+<form action="/result_vs" method="get">
+
+  <div class="left" >
+  <h2><%=@game.player1.name %>:</h2>
+  <input id="1" type="checkbox" name="choice1" value="rock">Rock<br>
+  <input id="1" type="checkbox" name="choice1" value="paper">Paper<br>
+  <input id="1" type="checkbox" name="choice1" value="scissors">Scissors<br><br>
+  </div>
+
+  <div class="right" >
+  <h2><%=@game.player2.name %>:</h2>
+
+  <input id="2" type="checkbox" name="choice2" value="rock">Rock<br>
+  <input id="2" type="checkbox" name="choice2" value="paper">Paper<br>
+  <input id="2" type="checkbox" name="choice2" value="scissors">Scissors<br><br>
+  </div><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<h2> Please check only one box per player </h2>
+
+<style>
+  .left{
+    float: left;
+    width: 50%;
+  }
+
+  .right{
+    float: left;
+    width: 50%;
+  }
+
+
+</style>

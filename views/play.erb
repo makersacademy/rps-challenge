@@ -1,0 +1,6 @@
+<h1> <%=@game.player.name %> </h1> vs. <h1> <%=@game.computer.com_name %> the Computer</h1>
+
+<form action="/result" method="get" id="pick"> </form>
+<button type="submit" name="choice" form="pick" value="rock">Rock</button>
+<button type="submit" name="choice" form="pick" value="paper">Paper</button>
+<button type="submit" name="choice" form="pick" value="scissors">Scissors</button>
