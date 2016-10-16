@@ -34,7 +34,7 @@ class CSB < Sinatra::Base
   end
 
   get '/result' do
-
+    @comp_pokemon = ["CHARMANDER", "SQUIRTLE", "BULBASAUR"].sample
     erb :result
   end
 

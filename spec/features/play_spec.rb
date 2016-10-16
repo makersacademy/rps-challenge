@@ -7,7 +7,6 @@ feature CSB do
       sign_in_and_play
       expect(page).to have_text("Rory vs Computer")
     end
-  end
 
     scenario "player can choose a pokemon to unleash" do
       sign_in_and_play
@@ -21,4 +20,14 @@ feature CSB do
       click_button("CHARMANDER")
       expect(page).to have_text("You chose CHARMANDER")
     end
+
+    scenario "expect play page to display that both players chose charmander" do
+      sign_in_and_play
+      click_button("CHARMANDER")
+      # how do I combine these two expect statements?
+      expect(page).to have_text("You chose CHARMANDER")
+      expect(page).to have_text("Computer chose CHARMANDER")
+    end
+  end
+
 end
