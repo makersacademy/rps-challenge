@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+  <div>
+    <h1>Welcome, <%= @game.player1.name %>!</h1>
+
+    <h2>Let's play...<br />Rock, paper, scissors!</h2>
+
+    <p>What weapon do you choose, <%= @game.player1.name %>?</p>
+
+    <form action="/weapon" method="post">
+      <label>
+        <input type="radio" name="weapon" value="rock" id="rock" class="radio-button" />
+        <i class="fa fa-hand-rock-o icon" aria-hidden="true"></i>
+        Rock
+      </label>
+      <label>
+        <input type="radio" name="weapon" value="paper" id="paper" class="radio-button" />
+        <i class="fa fa-hand-paper-o icon" aria-hidden="true"></i>
+        Paper
+      </label>
+      <label>
+        <input type="radio" name="weapon" value="scissors" id="scissors" class="radio-button" />
+        <i class="fa fa-hand-scissors-o icon" aria-hidden="true"></i>
+        Scissors
+      </label>
+      <div class="submit_button">
+        <input type="submit" value="Fight!"/>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+<style>
+
+  body {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    color: #009973;
+  }
+
+  h2 {
+    font-size: 2.3em;
+    color: #009973;
+  }
+
+  p {
+    font-size: 2em;
+    color: #009973;
+  }
+
+  .radio-button {
+    font-size: 4.5em;
+  }
+
+  .icon,
+  label {
+    font-size: 1.5em;
+  }
+
+  .submit_button {
+    font-size: 4.5em;
+    margin-top: 50px;
+  }
+
+</style>
