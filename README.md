@@ -4,12 +4,14 @@ Instructions
 ------
 
 To install this game please do the following:
+```
 1. Clone the repo
 2. Ensure you have 'bundler' installed (if not, run ```gem install bundler``` on terminal)
 3. Run ```bundle``` in your terminal
 4. Run the app with ```ruby app.rb``` and this will start your local server
 5. Navigate your browser to ```localhost:4567/```
 6. Enter your name and play the game
+```
 
 Task
 ----
@@ -34,4 +36,4 @@ Future Intentions
 ----
 Unfortunately, I did not apply enough OOD to the process and therefore the Game class has too many responsibilities. The Player class could easily store more logic, including moves and individual scores. An attempt was made to migrate these methods to the Player class, however, it seemed very hard to implement after having completed the entire framework (front and back end).
 
-For future challenges I will intend to have an initial planning session (before starting code) to decide upon each class responsibility. This should ensure this does not happen again. 
+For future challenges I will intend to have an initial planning session (before starting code) to decide upon each class responsibility. This should ensure this does not happen again.
