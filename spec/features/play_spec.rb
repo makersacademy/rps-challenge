@@ -2,9 +2,7 @@ require 'spec_helper'
 
 feature 'allow choice to lead to a result' do
   scenario 'choosing rock button' do
-    visit('/')
-    fill_in :player1, with: "Malinna"
-    click_button "play"
+    sign_in_and_play
     click_button "rock"
     @game = Game.instance
     case @game.player2_choice

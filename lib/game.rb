@@ -55,7 +55,7 @@ class Game
       @message = "#{@player1}, you are the winner!"
       @philosophy = "Let the feeling of pride seep into your inner core."
     elsif @winner == "game"
-      @message = "#{@player1}, you lost this time."
+      @message = "#{@player1}, you lost this time.."
       @philosophy = "Those who face adversity with a resilient heart can never truly lose."
     end
   end
