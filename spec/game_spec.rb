@@ -36,9 +36,9 @@ describe Game do
   describe "#two_check" do
     it "checks if one of the player has won" do
       player1 = Player.new('Bob')
-      game1 = Game.new(player1)
-      player1.points = 5
-      expect(game1.check).to eq '/won_game'
+      player2 = Player.new('Steve')
+      game2 = Game.new(player1, player2)
+      expect(game2.two_check).to eq '/2play'
     end
   end
 end
