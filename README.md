@@ -14,3 +14,6 @@ Play Rock Paper Scissors against WALL.E or with a friend!
 - [x] Rock beats Scissors
 - [x] Scissors beats Paper
 - [x] Paper beats Rock
+
+
+## The player that reaches 5 points wins the game
