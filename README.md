@@ -8,7 +8,7 @@ REQUIREMENTS:
 
 2) I would like to be able to play rock/paper/scissors
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Rock, Paper, Scissors](http://bit.ly/2dl3pEn)
 
 
 
