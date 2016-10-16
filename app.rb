@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    @game.player.set_choice(params[:choice])
+    @game.player.set_choice(params[:choice].to_sym)
     erb(@game.result)
   end
 

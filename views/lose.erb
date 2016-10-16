@@ -1,6 +1,6 @@
-<h2>Sorry! You lost!</h2>
-<h3><%= @game.player.name %> chose <%= @game.player.choice.capitalize %>!</h3>
-<h4><%= @game.result %></h4>
+<h2>Sorry - you lost :(</h2>
+<h3>You chose <%= @game.player.choice.capitalize %>. <%= @game.opponent.name %> chose <%= @game.opponent.choice.capitalize %>.</h3>
+<h3><%= @game.opponent.choice.capitalize %> beats <%= @game.player.choice.capitalize %>!</h3>
 <form action="/play" method="get">
   <input type="submit" value="Play again">
 </form>
