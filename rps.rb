@@ -22,43 +22,21 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    @computer_choice = @game.rbs
-    @game.who_wins(:rock, @computer_choice)
-    if @game.winner.nil?
-      redirect "/try_again"
-    end
-    if @game.winner
-      redirect "/you_won"
-    else
-      redirect "/you_lost"
-    end
+    computer_chooses
+    @game.who_wins(:rock, @game.computer_choice)
+    declare_winner
   end
 
   post '/paper' do
-    @computer_choice = @game.rbs
-    @game.who_wins(:paper, @computer_choice)
-    if @game.winner.nil?
-      redirect "/try_again"
-    end
-    if @game.winner
-      redirect "/you_won"
-    else
-      redirect "/you_lost"
-    end
+    computer_chooses
+    @game.who_wins(:paper, @game.computer_choice)
+    declare_winner
   end
 
   post '/scissors' do
-    @game.rbs
+    computer_chooses
     @game.who_wins(:scissors, @game.computer_choice)
-    p @game.winner
-    if @game.winner.nil?
-      redirect "/try_again"
-    end
-    if @game.winner
-      redirect "/you_won"
-    else
-      redirect "/you_lost"
-    end
+    declare_winner
   end
 
   get '/you_won' do
@@ -71,6 +49,21 @@ class Rps < Sinatra::Base
 
   get '/try_again' do
     erb(:try_again)
+  end
+
+  def declare_winner
+    if @game.winner.nil?
+      redirect "/try_again"
+    end
+    if @game.winner
+      redirect "/you_won"
+    else
+      redirect "/you_lost"
+    end
+  end
+
+  def computer_chooses
+    @game.rps
   end
 
   # start the server if ruby file executed directly

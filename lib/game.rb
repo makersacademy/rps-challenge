@@ -12,7 +12,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @rbs = [:rock, :paper, :scissors]
+    @rps = [:rock, :paper, :scissors]
     @computer_choice
     @winner
   end
@@ -27,10 +27,8 @@ class Game
     end
   end
 
-  def rbs
-    @computer_choice = @rbs.sample
+  def rps
+    @computer_choice = @rps.sample
   end
-
-  private
 
 end
