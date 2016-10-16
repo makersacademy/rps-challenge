@@ -14,7 +14,7 @@ class Game
 
   def initialize(player_1)
     @player_1 = player_1
-    @choices = ["rock", "paper", "scissors"]
+    @choices = [:rock, :paper, :scissors]
     @option = nil
   end
 
@@ -24,7 +24,7 @@ class Game
 
   def player_1_choice(option)
     raise "Oops, that doesn't exist! Please choose rock, paper or scissors." unless option == "rock" || option == "paper" || option == "scissors"
-    @option = option
+    @option = option.to_sym
   end
 
   def player_1_choice_final
