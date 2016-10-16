@@ -4,16 +4,26 @@ require_relative './rules'
 
 class Game
 
+  def self.create(user)
+    @game = Game.new(user)
+  end
+
+  def self.instance
+    @game
+  end
+
+
+
   def initialize(user)
     @user_hash = {username: user.name,
-                  user_weapon: nil,
-                  user_score:  0
-                }
+      user_weapon: nil,
+      user_score:  0
+    }
 
     @ai_hash =  {ai_weapon: nil,
-                 ai_score: 0,
-                 draw_score: 0ß
-                }
+      ai_score: 0,
+      draw_score: 0
+    }
   end
 
   def get_user_weapon
@@ -54,7 +64,6 @@ class Game
     else
       "No one was victorious, it's a Draw!"
     end
-
   end
 
 end
