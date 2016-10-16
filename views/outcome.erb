@@ -1,5 +1,5 @@
-You chose <%= "#{@game.choice}" %>!<br>
-Computer chose <%= "#{@game.computer_choice}" %>!<br>
+You chose <%= "#{@game.player1.choice}" %>!<br>
+Computer chose <%= "#{@game.player2.choice}" %>!<br>
 <% if @game.win? %>
 	You won!
 <% elsif @game.win? == nil %>

@@ -1,5 +1,6 @@
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
@@ -22,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:name])
-    @game = Game.create(player)
+    @game = Game.create(player, Computer.new)
     redirect '/play'
   end
 
@@ -31,7 +32,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    @game.move(params[:choice])
+    @game.player1.choice = params[:choice]
+    @game.outcome
     redirect '/outcome'
   end
 

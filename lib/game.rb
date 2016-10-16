@@ -1,6 +1,9 @@
+require_relative './player.rb'
+require_relative './computer.rb'
+
 class Game
 
-	attr_reader :player, :choice, :computer_choice
+	attr_reader :player1, :player2, :computer
 
 	CHOICES = ["Rock", "Paper", "Scissors"]
 
@@ -8,24 +11,14 @@ class Game
 		@game
 	end
 
-	def self.create(name)
-		@game = Game.new(name)
+	def self.create(player1, player2)
+		@game = Game.new(player1, player2)
 	end
 
-  def initialize(player)
-    @player = player
-  end
-
-  def move(choice)
-    @choice = choice
-    computer_move
-    outcome
-  end
-
-  def computer_move
-    @win = nil
-    @computer_choice = CHOICES.sample
-  end
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
+  end  
 
   def outcome
     winning_situations
@@ -33,18 +26,18 @@ class Game
   end   
 
   def win?
-    @win
+    @outcome
   end
 
   def losing_situations
-    @win = false if (choice == "Rock" && computer_choice == "Paper") || 
-    (choice == "Scissors" && computer_choice == "Rock") ||
-    (choice == "Paper" && computer_choice == "Scissors")
+    @outcome = false if (player1.choice == "Rock" && player2.choice == "Paper") || 
+    (player1.choice == "Scissors" && player2.choice == "Rock") ||
+    (player1.choice == "Paper" && player2.choice == "Scissors")
   end
 
   def winning_situations
-    @win = true if (choice == "Rock" && computer_choice == "Scissors") ||
-    (choice == "Scissors" && computer_choice == "Paper") ||  
-    (choice == "Paper" && computer_choice == "Rock")
+    @outcome = true if (player1.choice == "Rock" && player2.choice == "Scissors") ||
+    (player1.choice == "Scissors" && player2.choice == "Paper") ||  
+    (player1.choice == "Paper" && player2.choice == "Rock")
   end
 end

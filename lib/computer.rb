@@ -1,7 +1,7 @@
 class Computer
 
 	def choice
-	  choice = ["Rock", "Paper", "Scissors"].sample 
+	  choice = Game::CHOICES.sample 
 	end
 
 end
