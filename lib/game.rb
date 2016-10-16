@@ -30,22 +30,18 @@ class Game
     @selections.dup
   end
 
-  # def win?
-  #   [['p','r'],['s','p'],['r','s']].include? @selections
-  # end
-  #
-  # def tie?
-  #   [['r','r'],['p','p'],['s','s']].include? @selections
-  # end
-
   def result
     if win?
       p "#{@player_1.name} wins!"
     elsif tie?
-      p 'It\'s a tie!'
+      p "It's a tie!"
     else
-      p 'You lose!'
+      p "You lose!"
     end
+  end
+
+  def replay
+    @selections.clear
   end
 
   private
@@ -55,14 +51,14 @@ class Game
   end
 
   def computer_select
-    ['r','p','s'].sample
+    ['Rock','Paper','Scissors'].sample
   end
 
   def win?
-    [['p','r'],['s','p'],['r','s']].include? @selections
+    [['Paper','Rock'],['Scissors','Paper'],['Rock','Scissors']].include? choices
   end
 
   def tie?
-    [['r','r'],['p','p'],['s','s']].include? @selections
+    [['Rock','Rock'],['Paper','Paper'],['Scissors','Scissors']].include? choices
   end
 end

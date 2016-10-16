@@ -1,0 +1,14 @@
+<h1> Rock, Paper, Scissors </h1>
+<h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
+
+<p> <%= @game.player_1.name %> chose <%= @game.choices.first %>,
+  <%= @game.player_2.name %> chose <%= @game.choices.last %>
+</p>
+<p> <%= @result %> </p>
+
+<form action="/" method="get">
+  <input type="submit" value="New Game">
+</form>
+<form action="/replay" method="post">
+  <input type="submit" value="Replay">
+</form>

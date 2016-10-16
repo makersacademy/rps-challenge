@@ -20,8 +20,21 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    
+    @game = Game.instance
+    @game.player_select(params[:choice])
+    @game.add_computer_selection
     redirect '/result'
+  end
+
+  get '/result' do
+    @game = Game.instance
+    @result = @game.result
+    erb :result
+  end
+
+  post '/replay' do
+    Game.instance.replay
+    redirect '/play'
   end
 
   run! if app_file == $0
