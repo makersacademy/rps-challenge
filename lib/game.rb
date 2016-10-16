@@ -30,30 +30,16 @@ class Game
 
 #For sure find a better way of doing this!
   def result
-    case player_1.choice == 'Rock'
-      when opp_choice == 'Paper'
-        return "#{player_1.name} loses"
-      when opp_choice == 'Scissors'
-        return "#{player_2.name} loses"
-      else player_1.choice == opp_choice
-        return 'DRAW!'
-      end
-    case player_1.choice == 'Paper'
-    when opp_choice == 'Rock'
-        return "#{player_2.name} loses"
-      when opp_choice == 'Scissors'
-        return "#{player_1.name} loses"
-      else player_1.choice == opp_choice
-        return 'DRAW!'
-      end
-    case player_1.choice == 'Scissors'
-      when opp_choice == 'Paper'
-        return "#{player_2.name} loses"
-      when opp_choice == 'Rock'
-        return "#{player_1.name} loses"
-    else player_1.choice == opp_choice
+    if player_1.choice == 'Rock' && opp_choice == 'Scissors'
+      return "#{player_1.name} wins!"
+    elsif player_1.choice == 'Paper' && opp_choice == 'Rock'
+      return "#{player_1.name} wins!"
+    elsif player_1.choice == 'Scissors' && opp_choice == 'Paper'
+      return "#{player_1.name} wins!"
+    elsif player_1.choice == opp_choice
       return 'DRAW!'
+    else
+      return "#{player_2.name} wins!"
     end
   end
-
 end
