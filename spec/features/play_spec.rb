@@ -5,7 +5,7 @@ RSpec.feature Rps, :type => :feature do
 
     sign_in_and_play
 
-    expect(page).to have_text("It's Dionysis vs bot")
+    expect(page).to have_text("It's Dionysis vs Bot")
   end
 
   scenario "list of choices for player to select - rock" do

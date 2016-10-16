@@ -15,7 +15,7 @@ describe Game do
     end
 
     it 'creates a bot to compete against the user' do
-      expect(game.bot.name).to eq "bot"
+      expect(game.bot.name).to eq "Bot"
     end
   end
 
@@ -27,7 +27,7 @@ describe Game do
 
   describe '#bot_name' do
     it 'read the bot\'s name' do
-      expect(game.bot_name).to eq "bot"
+      expect(game.bot_name).to eq "Bot"
     end
   end
 

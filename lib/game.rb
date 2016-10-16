@@ -8,7 +8,7 @@ class Game
   def initialize(player)
     @players = [player]
     @choices = ["Rock","Paper","Scissors"]
-    @bot = Player.new("bot")
+    @bot = Player.new("Bot")
   end
 
   def first_player_name
