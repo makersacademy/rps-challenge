@@ -1,5 +1,21 @@
-<h1><em> Results: </em></h1>
-<h1> You selected <%= @user_choice.capitalize %></h1>
-<h2> The computer selected <%=@computer_choice.capitalize %></h2>
-<br>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css">
+
+<style>
+body {
+  font-family: 'Coming Soon', cursive;
+  color: #FFEBCD;
+  font-size: 22px;
+  background-image: url("https://www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg");
+  background-size: auto;
+  background-position: fixed;
+}
+</style>
+</head>
+
+<h2><em> Results: </em></h2>
+<h3> You selected <%= @user_choice.capitalize %> & the computer selected <%=@computer_choice.capitalize %></h3>
 <h1><%=@winner%> wins!! </h1>
+
+</html>

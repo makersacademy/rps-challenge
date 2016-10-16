@@ -17,8 +17,6 @@ def <=>(other)
     1
   elsif WINS.include?([other.move, move])
     -1
-  else
-    raise ArgumentError, "That's not right"
   end
 end
 
@@ -35,4 +33,4 @@ end
 protected
 
 attr_accessor :move
-end 
+end

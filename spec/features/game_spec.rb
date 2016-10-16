@@ -4,7 +4,7 @@ require_relative './web_helpers'
 feature "Player enters username and is ready to play" do
   scenario "Rock, Paper and Scissor options are shown" do
     sign_in
-    expect(page).to have_content("Select your choice:")
+    expect(page).to have_content("Get ready to play, Michelle!")
   end
 
   scenario "The user clicks on their choice" do

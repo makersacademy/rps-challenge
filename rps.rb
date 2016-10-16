@@ -17,12 +17,12 @@ post '/game' do
 end
 
 get '/results' do
-  @player_name = session[:player_name]
   @user_choice = params[:choice]
   @computer_choice = Opponent.new([:rock, :paper, :scissors]).make_choice
   @winner = Game.new.play_game(@user_choice, @computer_choice)
   erb :game
 end
+
 #start the server if ruby file executed directly
 run! if app_file == $0
 end

@@ -1,12 +1,24 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css"
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css">
+
+  <style>
+  body {
+    font-family: 'Coming Soon', cursive;
+    color: #FFEBCD;
+    font-size: 22px;
+    background-image: url("https://www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg");
+    background-size: auto;
+    background-position: fixed;
+  }
+  </style>
+  </head>
+
 <body>
   <h1>Results:</h1>
   <h2> You selected <%= @user_choice %></h2>
   <h2> The computer selected <%=@computer_choice %></h2>
   <br>
-  <h1><%= if @winner == draw%> is the winnerr!! </h1>
+  <h1><%= if @winner == tie%> is the winner!! </h1>
 </body>
 </html>
