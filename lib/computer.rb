@@ -6,8 +6,7 @@ class Computer
     @name = name
   end
 
-  def selection(rps)
-    # @available_choices = Game.choices
+  def selection
     @choice = Game.choices[rand(0..2)]
   end
 

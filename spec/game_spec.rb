@@ -32,7 +32,7 @@ describe Game do
     end
   end
 
-  describe '#result' do
+  describe '#result with Paper v Rock' do
     let(:player)  { double(:player,name: "Player", choice: "Paper") }
     let(:computer)  { double(:computer,name:"Computer", choice: "Rock") }
     it 'displays the result when Paper v Rock' do
@@ -40,7 +40,7 @@ describe Game do
     end
   end
 
-  describe '#result' do
+  describe '#result with Scissors v Paper' do
     let(:player)  { double(:player,name: "Player", choice: "Scissors") }
     let(:computer)  { double(:computer,name:"Computer", choice: "Paper") }
     it 'displays the result when Scissors v Paper' do
@@ -48,7 +48,7 @@ describe Game do
     end
   end
 
-  describe '#result' do
+  describe '#result with Scissors v Scissors' do
     let(:player)  { double(:player,name: "Player", choice: "Scissors") }
     let(:computer)  { double(:computer,name:"Computer", choice: "Scissors") }
     it 'displays the result when Scissors v Scissors' do

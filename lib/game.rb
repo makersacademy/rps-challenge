@@ -23,7 +23,7 @@ class Game
   end
 
   def game_logic(player_choice, computer_choice)
-    # Lets see if player one wins. If not, player 2 wins
+    # See if player one wins. If not, player 2 wins
     if player_choice == computer_choice
       return "Draw"
     end
