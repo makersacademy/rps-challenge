@@ -106,3 +106,13 @@ October 15, 2016
 - The user, would like to register for a game of rock, paper, scissors and see his name in colors
 - Create a home page, then click to enter the game and register your name
 - Player class that holds player's name as attribute
+
+# SECOND USER STORY
+- As to play agains the computer, the game must be initiated
+- Bot is saved as a player as a Game class will hold the user, player in an Array
+- The bot will be set to have a choice at random, using the sample methods
+- Hand options are saved in an Array
+
+------
+
+The app can be found on https://dry-coast-11148.herokuapp.com/
