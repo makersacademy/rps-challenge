@@ -16,7 +16,7 @@ describe RockPaperScissors do
 
     it "post request accepts player name and creates game with computer opponent" do
       allow(Game).to receive(:create)
-      post "/", :player_1 => "Player 1"
+      post "/", :player_name => "Player 1"
       expect(Game).to have_received(:create) do |player_1, player_2|
         expect(player_1.name).to eq "Player 1"
         expect(player_2).to be_a Computer
@@ -46,7 +46,6 @@ describe RockPaperScissors do
     end
 
     describe "post requests" do
-
       it "accepts player's move when rock" do
         expect(@player_1).to receive(:make_move).with("rock")
         post "/play", :move => "rock"
@@ -82,6 +81,7 @@ describe RockPaperScissors do
       expect(last_response).to be_ok
       expect(last_response.body).to include "Game Over"
     end
+
   end
 
 end
