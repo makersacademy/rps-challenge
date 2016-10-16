@@ -13,7 +13,9 @@ enable :sessions
   end
 
   post "/confirmation" do
-
+    session[:first_name] = params[:first_name]
+    session[:last_name] = params[:last_name]
+    erb :confirmation
   end
 
 
