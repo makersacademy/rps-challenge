@@ -4,7 +4,7 @@ describe Game do
 
   subject(:game)  { described_class.new(player, computer) }
   let(:player)  { double(:player, name: "Player", choice: "Rock") }
-  let(:computer)  { double(:computer, name: "Computer", choice: "Scissors") }
+  let(:computer)  { double(:computer, name: "Computer", selection: "Scissors") }
 
   describe '#initialization' do
     it 'should accept a player' do
@@ -32,7 +32,7 @@ describe Game do
 
   describe '#result with Paper v Rock' do
     let(:player)  { double(:player,name: "Player", choice: "Paper") }
-    let(:computer)  { double(:computer,name:"Computer", choice: "Rock") }
+    let(:computer)  { double(:computer,name:"Computer", selection: "Rock") }
 
     it 'displays the result when Paper v Rock' do
       expect(game.result).to eq "Computer chose Rock. Player beats Computer"
@@ -41,7 +41,7 @@ describe Game do
 
   describe '#result with Scissors v Paper' do
     let(:player)  { double(:player,name: "Player", choice: "Scissors") }
-    let(:computer)  { double(:computer,name:"Computer", choice: "Paper") }
+    let(:computer)  { double(:computer,name:"Computer", selection: "Paper") }
 
     it 'displays the result when Scissors v Paper' do
       expect(game.result).to eq "Computer chose Paper. Player beats Computer"
@@ -50,7 +50,7 @@ describe Game do
 
   describe '#result with Scissors v Scissors' do
     let(:player)  { double(:player,name: "Player", choice: "Scissors") }
-    let(:computer)  { double(:computer,name:"Computer", choice: "Scissors") }
+    let(:computer)  { double(:computer,name:"Computer", selection: "Scissors") }
 
     it 'displays the result when Scissors v Scissors' do
       expect(game.result).to eq "Draw"

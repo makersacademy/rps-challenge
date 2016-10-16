@@ -1,7 +1,16 @@
-<h1><%= @player_1_name %> vs <%= @computer_name %></h1>
+<h1><%= @game.player.name %> vs <%= @game.computer.name %></h1>
 
 <h2>Options:</h2>
 
-<a href="/rock">Rock</a>
-<a href="/paper">Paper</a>
-<a href="/scissors">Scissors</a>
+<form action="/choice" method="post">
+  <input type="hidden" name="choice" value="0">
+  <input type="submit" value="Rock">
+</form>
+<form action="/choice" method="post">
+  <input type="hidden" name="choice" value="1">
+  <input type="submit" value="Paper">
+</form>
+<form action="/choice" method="post">
+  <input type="hidden" name="choice" value="2">
+  <input type="submit" value="Scissors">
+</form>

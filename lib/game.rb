@@ -16,15 +16,21 @@ class Game
     @@choices
   end
 
+  def set_player_choice(choice)
+    @player.selection(choice)
+  end
+
   def result
     player_choice = @player.choice
-    computer_choice = @computer.choice
+    computer_choice = @computer.selection
     game_logic(player_choice,computer_choice)
   end
 
   private
 
   def game_logic(player_choice, computer_choice)
+    puts computer_choice.inspect
+    puts player_choice.inspect
     # See if player one wins. If not, player 2 wins
     if player_choice == computer_choice
       return "Draw"
