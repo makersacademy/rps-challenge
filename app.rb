@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
   end
   
   post '/result' do
-    p params
+    p params                                    # Remove this later!!!!!!!!!!!!!!!!!
     @rps_game.selection(params['rps_choice'])
     #@rps_game.record_player_choices
     @rps_game.switch_turns
