@@ -18,9 +18,12 @@ body {
 <h1> Rock, Paper, Scissors </h1>
 <h2> Please enter your username: </h2>
 
-<form action="/names" method="post">
-  <input type="text" name="player_name">
-  <input type="submit" value="Go!">
+<form action="/game" method="post">
+  <label for="player_name">
+  <input type="text" name="player_name"></input>
+  <br>
+</label>
+  <input type="submit" value="Go!"></input>
 </form>
 </body>
 </html>

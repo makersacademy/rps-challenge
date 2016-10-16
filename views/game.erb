@@ -1,7 +1,15 @@
 <html>
  <head>
+   <link rel='stylesheet' type='text/css' href='style.css'
  </head>
   <body>
-   <h1> Get ready to play, <%= @player%>! </h1>
+   <h1> Get ready to play, <%= @player_name%>! </h1>
+   <h3> Please select your hand: </h3>
+   <div class = 'icon_container'>
+     <a href = '/results?choice=paper' id='Paper'><img src = 'http://dreamatico.com/data_images/hand/hand-7.jpg' class = 'icon'></a>
+     <a href = './results?choice=rock' id='Rock'><img src = 'http://dri6hp6j35hoh.cloudfront.net/news/u/2013/04/clinched-fist-ss.jpg' class = 'icon'></a>
+     <a href = './results?choice=scissors' id='Scissors'><img src = 'https://syracuserocks.files.wordpress.com/2011/02/peace.jpg' class = 'icon'></a>
+   </div>
+   <%= erb :results unless @winner.nil? %>
   </body>
 </html>
