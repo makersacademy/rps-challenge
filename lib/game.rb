@@ -2,6 +2,15 @@ require_relative "player"
 
 class Game
 
+
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   attr_reader :player, :player_name, :computer_hand, :player_hand
 
   def initialize(player)

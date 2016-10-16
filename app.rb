@@ -12,20 +12,23 @@ class Rsp < Sinatra::Base
 
   post ("/play") do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    @game = Game.create(player)
     redirect ("/play")
   end
 
   get ("/play") do
+    @game = Game.instance
     erb(:play)
   end
 
   post ("/result") do
-    $game.hand(params[:hand])
+    @game = Game.instance
+    @game.hand(params[:hand])
     redirect ("/result")
   end
 
   get ("/result") do
+    @game = Game.instance
     erb (:result)
   end
 
