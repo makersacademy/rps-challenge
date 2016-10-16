@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
 
   get '/choose-weapon' do
     @game = $game
-    erb :choose_weapon
+    erb @game.result
   end
 
   get '/winner' do
