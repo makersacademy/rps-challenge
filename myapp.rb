@@ -22,7 +22,6 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/select' do
-    params
     @game.p1choice(params[:weapon])
     @game.ai_choice
     if @game.outcome == "You win" then redirect '/win'

@@ -39,4 +39,12 @@ describe Game do
     end
   end
 
+  describe '#reset' do
+
+    it "should ensure the ai choice is empty so a new game can start" do
+      game.reset
+      expect(game.aichoice).to eq []
+    end
+  end
+
 end

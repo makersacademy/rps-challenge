@@ -1,7 +1,7 @@
 class Game
 
   attr_reader :player1
-  attr_accessor :p1choice
+  attr_accessor :p1choice, :aichoice
 
   def initialize(player1)
     @player1 = player1
@@ -46,6 +46,11 @@ class Game
     elsif @aichoice == ["scissors"] && @p1choice == ["rock"]
       then "You win"
     end
+  end
+
+  def reset
+    @aichoice = []
+    @p1choice = []
   end
 
 end
