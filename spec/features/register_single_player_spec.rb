@@ -9,6 +9,6 @@ feature 'enter names' do
 
     scenario 'player can submit name to play against AI' do
       single_player_login
-      expect(page).to have_content 'Thousand fingers vs AI'
+      expect(page).to have_content 'Thousand fingers vs Deep Green AI'
     end
 end

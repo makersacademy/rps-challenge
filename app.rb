@@ -34,7 +34,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    # player_1_weapon = @player_1.weapon
     erb(:result)
   end
 
