@@ -10,6 +10,10 @@ describe Game do
     expect(Game.create(player_one, player_two)).to be_an_instance_of(Game)
   end
 
+  it "can calls itself as an instance" do
+    expect(Game.instance).to be_an_instance_of(Game)
+  end
+
   it "initializes a game with two player" do
     expect(game.player_one).to eq player_one
     expect(game.player_two).to eq player_two
@@ -20,10 +24,10 @@ describe Game do
     player_two.select_weapon("Paper")
     expect(game.round_winner).to eq player_two
   end
-
-  it "adds a point to winner's score" do
-    expect(game.round_winner).to eq player_two
-  end
+  
+  # it "adds a point to winner's score" do
+  #   expect(game.round_winner).to eq player_two
+  # end
 
   it "assigns winner to whoever reaches 10 points first" do
     allow(player_one).to receive(:score).and_return 10

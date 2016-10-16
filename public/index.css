@@ -1,0 +1,38 @@
+body {
+  margin: 0 auto;
+  background-image: url("/images/index.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 6.5%;
+}
+
+input {
+  color: #ffffff;
+  font: italic 1em sans-serif;
+  display: inline-block;;
+  text-align: center;
+  width: 30%;
+  padding: 8px;
+  margin: 1% 1% 0 33%;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 10%;
+  height: 5%;
+  background-color: transparent;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  font: oblique 3em sans-serif;
+  position: absolute;
+  left: 65%
+}

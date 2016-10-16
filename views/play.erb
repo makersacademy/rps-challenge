@@ -1,38 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="play.css">
+</head>
 
-<div class="player_one_weapon_options">
-  <form action="/weapon_selection" method="post">
-    <input type="submit" name="weapon" value="Paper">
-    <input type="submit" name="weapon" value="Rock">
-    <input type="submit" name="weapon" value="Scissors">
-  </form>
-</div>
+<body>
+  <div class="names_container">
+    <h2 class="names"><%= @game.player_one.name %>  vs  <%= @game.player_two.name %></h2>
+  </div>
 
-
-<div class="players_name">
-  <h2><%= @game.player_one.name %> vs <%= @game.player_two.name %></h2>
-</div>
-
-<div class="player_one_score">
-  <h2>Score: <%= @game.player_one.score %></h2>
-</div>
-
-<div class="player_two_score">
-  <h2>Score: <%= @game.player_two.score %></h2>
-</div>
-
-<% if @game.winner == nil %>
-  <% if @game.player_one.weapon != nil %>
-    <div class=player_one_weapon>
-      <h3><%= @game.player_one.name %> chose <%= @game.player_one.weapon %> </h3>
+  <section class="score">
+    <div class="player_score">
+      <h2>Score: <%= @game.player_one.score %></h2>
     </div>
-    <div class=player_two_weapon>
-      <h3><%= @game.player_two.name %> chose <%= @game.player_two.weapon %> </h3>
+    <div class="player_score">
+      <h2>Score: <%= @game.player_two.score %></h2>
     </div>
-  <% end %>
-<% end %>
+  </section>
 
-<% if @game.winner != nil %>
+
+  <% if @game.winner != nil %>
   <div class="winner">
     <h2><%= @game.winner.name %> won!</h2>
   </div>
-<% end %>
+  <% end %>
+
+  <section class=players_weapon_container>
+    <% if @game.winner == nil %>
+    <% if @game.player_one.weapon != nil %>
+    <div class=player_weapon>
+      <% if @game.player_one.weapon == "Rock" %>
+        <img src="/images/rock_left.png" alt="weapon" style="width:350px;height:250px;">
+      <% elsif @game.player_one.weapon == "Paper" %>
+        <img src="/images/paper_left.png" alt="weapon" style="width:350px;height:250px;">
+      <% else @game.player_one.weapon == "Scissors" %>
+        <img src="/images/scissors_left.png" alt="weapon" style="width:350px;height:250px;">
+      <% end %>
+      <h3><%= @game.player_one.name %>  chose  <%= @game.player_one.weapon %> </h3>
+    </div>
+
+    <div class=player_weapon>
+      <% if @game.player_two.weapon == "Rock" %>
+        <img src="/images/rock_right.png" alt="weapon" style="width:350px;height:250px;">
+      <% elsif @game.player_two.weapon == "Paper" %>
+        <img src="/images/paper_right.png" alt="weapon" style="width:350px;height:250px;">
+      <% else @game.player_two.weapon == "Scissors" %>
+        <img src="/images/scissors_right.png" alt="weapon" style="width:350px;height:250px;">
+      <% end %>
+      <h3><%= @game.player_two.name %>  chose  <%= @game.player_two.weapon %> </h3>
+    </div>
+    <% end %>
+    <% end %>
+  </section>
+
+
+  <form class="weapon_options_container" action="/weapon_selection" method="post">
+    <input class="weapon_option" type="submit" name="weapon" value="Paper">
+    <input class="weapon_option" type="submit" name="weapon" value="Rock">
+    <input class="weapon_option" type="submit" name="weapon" value="Scissors">
+  </form>
+
+
+
+
+
+</body>
+</html>
