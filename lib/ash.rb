@@ -1,6 +1,6 @@
 class Ash
 
-  attr_accessor :pokemon
+  attr_reader :pokemon
 
   def initialize
     @pokemon = ""
@@ -12,6 +12,10 @@ class Ash
 
   def self.read
     @ash
+  end
+
+  def self.pokemon
+    @pokemon
   end
 
   def pokemon_selector

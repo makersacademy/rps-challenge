@@ -15,6 +15,10 @@ class Player
     @player
   end
 
+  def self.pokemon
+    @pokemon
+  end
+
   def pokemon_selector
     ["CHARMANDER", "SQUIRTLE", "BULBASAUR"].sample
   end

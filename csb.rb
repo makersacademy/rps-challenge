@@ -10,6 +10,7 @@ class CSB < Sinatra::Base
   before do
     @player = Player.read
     @ash = Ash.read
+    @game = Game.read
   end
 
   get '/' do
@@ -19,6 +20,7 @@ class CSB < Sinatra::Base
   post '/setup' do
     @player = Player.create(params[:player_name])
     @ash = Ash.create
+    @game = Game.create
     redirect '/play'
   end
 
