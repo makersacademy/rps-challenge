@@ -8,4 +8,9 @@ describe Player do
     expect(subject.name).to eq "Michael"
   end
 
+  it "can set a weapon" do
+    subject.set_weapon = "Rock"
+    expect(subject.weapon).to eq "Rock"
+  end
+
 end

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -14,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   before do
-    @game = Game.instance  
+    @game = Game.instance
   end
 
   get '/play' do
@@ -22,7 +23,10 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    @weapon = params[:weapon]
+    @game = Game.instance
+    @game.player_1.set_weapon=(params[:weapon])
+    @player_1_weapon = @game.player_1.weapon
+    @player_2_weapon = @game.player_2.weapon
     erb(:result)
   end
   # start the server if ruby file executed directly

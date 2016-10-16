@@ -1,4 +1,10 @@
-<h2>Player: <%= @game.player.name %></h2>
-<h2>Computer</h2>
+<h2>Player one: <%= @game.player_1.name %></h2>
+<h2>Player two: <%= @game.player_2.name %></h2>
 
-<%= @game.player.name  %> chose <%= @weapon.capitalize %>
+<h2><%= @game.player_1.name  %> chose <%= @player_1_weapon.capitalize %></h2>
+
+<h2><%= @game.player_2.name  %> chose <%= @player_2_weapon.capitalize %></h2>
+
+<h2> Winner </h2>
+
+<h2> <%=@game.winner.name%> wins </h2>

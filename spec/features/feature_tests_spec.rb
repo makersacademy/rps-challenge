@@ -9,7 +9,7 @@ feature 'Entering name' do
 
   scenario 'submiting name' do
     sign_in_and_play
-    expect(page).to have_content 'Player: Bukowski'
+    expect(page).to have_content 'Player one: Bukowski'
   end
 end
 
@@ -38,8 +38,28 @@ feature 'Choosing "weapon"' do
   scenario "computer should pick a weapon" do
     sign_in_and_play
     choose('scissors')
+    allow(Game.instance.player_2).to receive(:weapon).and_return("rock")
     click_button('Submit')
-    expect(page).to have_content 'Computer chose '
+    expect(page).to have_content 'Computer chose Rock'
+  end
+end
+
+feature "Player 1 winning" do
+  scenario "player chooses rock and computer chooses scissors" do
+    sign_in_and_play
+    winning_tests("rock", "scissors")
+    expect(page).to have_content 'Bukowski wins!'
   end
 
+  scenario "player chooses scissors and computer chooses paper" do
+    sign_in_and_play
+    winning_tests("scissors", "paper")
+    expect(page).to have_content 'Bukowski wins!'
+  end
+
+  scenario "player chooses scissors and computer chooses paper" do
+    sign_in_and_play
+    winning_tests("paper", "rock")
+    expect(page).to have_content 'Bukowski wins!'
+  end
 end
