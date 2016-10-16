@@ -25,9 +25,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+#too much logic for controller??
 post '/choice' do
   @game.player_1.player_choice(params[:choice])
-  @game.auto_turn
+  @game.player_2.player_choice(@game.auto_turn)
   redirect '/result'
 end
 

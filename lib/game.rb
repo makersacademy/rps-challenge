@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player, :opp_choice, :player_1, :player_2
+  attr_reader :player, :player_1, :player_2
 
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
@@ -25,18 +25,18 @@ class Game
   end
 
   def auto_turn
-    @opp_choice = ['Rock', 'Paper', 'Scissors'].sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 
 #For sure find a better way of doing this!
   def result
-    if player_1.choice == 'Rock' && opp_choice == 'Scissors'
+    if player_1.choice == 'Rock' && player_2.choice == 'Scissors'
       return "#{player_1.name} wins!"
-    elsif player_1.choice == 'Paper' && opp_choice == 'Rock'
+    elsif player_1.choice == 'Paper' && player_2.choice == 'Rock'
       return "#{player_1.name} wins!"
-    elsif player_1.choice == 'Scissors' && opp_choice == 'Paper'
+    elsif player_1.choice == 'Scissors' && player_2.choice == 'Paper'
       return "#{player_1.name} wins!"
-    elsif player_1.choice == opp_choice
+    elsif player_1.choice == player_2.choice
       return 'DRAW!'
     else
       return "#{player_2.name} wins!"
