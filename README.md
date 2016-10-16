@@ -9,7 +9,7 @@ REQUIREMENTS:
 2) I would like to be able to play rock/paper/scissors
 
 ![Rock, Paper, Scissors](http://bit.ly/2dl3pEn)
-![RPS Challenge](http://bit.ly/2dYW17R)
+![RPS Challenge](https://www.dropbox.com/s/xfn1sw077oid4f2/RPS.png?dl=0)
 
 
 # RPS Challenge
