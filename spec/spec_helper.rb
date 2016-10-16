@@ -8,9 +8,11 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers'
 
 # Necessary files
-
+require "game"
+require "player"
 
 Capybara.app = RPS
 
