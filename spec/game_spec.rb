@@ -2,89 +2,71 @@ require 'game'
 
 describe Game do
 
-  # how do I create a successful double for this?
-  player = Player.new("Frances")
-  subject(:game)  { described_class.new(player)   }
+  it 'lists the choices available (rock, paper, scissors)' do
+    expect(Game::CHOICES).to eq [:rock, :paper, :scissors]
+  end
 
   describe '#initialize' do
     it 'instantiates a game with the player being a Player object' do
       expect(subject.player).to be_an_instance_of Player
     end
-    it 'instantiates a game with the opponent being a Player object' do
-      expect(subject.opponent).to be_an_instance_of Player
+    it 'instantiates a game with the opponent being a Computer object' do
+      expect(subject.opponent).to be_an_instance_of Computer
     end
-    it 'returns the name of the player"' do
-      expect(subject.player.name).to eq "Frances"
+    it 'defaults the name of the player to "Mystery Person"' do
+      expect(subject.player.name).to eq "Mystery Person"
     end
-    it 'defaults the opponent as "The Computer"' do
+    it 'defaults the name of the opponent to "The Computer"' do
       expect(subject.opponent.name).to eq "The Computer"
     end
   end
 
-  describe '#view_choices' do
-    it 'lists the choices available (rock, paper, scissors)' do
-      expect(game.view_choices).to eq [:Rock, :Paper, :Scissors]
-    end
-  end
-
-  describe '#player_selection' do
-    it "returns the player's selection" do
-      expect(game.player_selection(:Rock)).to eq :Rock
-    end
-  end
-
-  describe '#computer_selection' do
-    it "returns the computer's random selection" do
-      allow(game).to receive(:computer_selection).and_return(:Rock)
-      expect(game.computer_selection).to eq :Rock
-    end
-  end
-
   describe '#result' do
+
     it "shows a draw (both chose rock)" do
-      game.player_selection("Rock")
-      allow(game).to receive(:computer_selection).and_return(:Rock)
-      expect(game.result).to eq "... and The Computer chose Rock. You both chose the same. It's a draw!"
+      allow(subject.player).to receive(:choice).and_return(:rock)
+      allow(subject.opponent).to receive(:choice).and_return(:rock)
+      expect(subject.result).to eq :draw
     end
     it "selects the computer as winner (paper beats rock)" do
-      game.player_selection("Rock")
-      allow(game).to receive(:computer_selection).and_return(:Paper)
-      expect(game.result).to eq "... and The Computer chose Paper. Paper beats Rock. The Computer wins!"
+      allow(subject.player).to receive(:choice).and_return(:rock)
+      allow(subject.opponent).to receive(:choice).and_return(:paper)
+      expect(subject.result).to eq :lose
     end
     it "selects the player as winner (rock beats scissors)" do
-      game.player_selection("Rock")
-      allow(game).to receive(:computer_selection).and_return(:Scissors)
-      expect(game.result).to eq "... and The Computer chose Scissors. Rock beats Scissors. Frances wins!"
+      allow(subject.player).to receive(:choice).and_return(:rock)
+      allow(subject.opponent).to receive(:choice).and_return(:scissors)
+      expect(subject.result).to eq :win
     end
     it "selects the player as winner (paper beats rock)" do
-      game.player_selection("Paper")
-      allow(game).to receive(:computer_selection).and_return(:Rock)
-      expect(game.result).to eq "... and The Computer chose Rock. Paper beats Rock. Frances wins!"
+      allow(subject.player).to receive(:choice).and_return(:paper)
+      allow(subject.opponent).to receive(:choice).and_return(:rock)
+      expect(subject.result).to eq :win
     end
     it "shows a draw (both chose paper)" do
-      game.player_selection("Paper")
-      allow(game).to receive(:computer_selection).and_return(:Paper)
-      expect(game.result).to eq "... and The Computer chose Paper. You both chose the same. It's a draw!"
+      allow(subject.player).to receive(:choice).and_return(:paper)
+      allow(subject.opponent).to receive(:choice).and_return(:paper)
+      expect(subject.result).to eq :draw
     end
     it "selects the computer as winner (paper, scissors)" do
-      game.player_selection("Paper")
-      allow(game).to receive(:computer_selection).and_return(:Scissors)
-      expect(game.result).to eq "... and The Computer chose Scissors. Scissors beat Paper. The Computer wins!"
+      allow(subject.player).to receive(:choice).and_return(:paper)
+      allow(subject.opponent).to receive(:choice).and_return(:scissors)
+      expect(subject.result).to eq :lose
     end
     it "selects the computer as winner (rock beats scissors)" do
-      game.player_selection("Scissors")
-      allow(game).to receive(:computer_selection).and_return(:Rock)
-      expect(game.result).to eq "... and The Computer chose Rock. Rock beats Scissors. The Computer wins!"
+      allow(subject.player).to receive(:choice).and_return(:scissors)
+      allow(subject.opponent).to receive(:choice).and_return(:rock)
+      expect(subject.result).to eq :lose
     end
     it "selects the player as winner (scissors, paper)" do
-      game.player_selection("Scissors")
-      allow(game).to receive(:computer_selection).and_return(:Paper)
-      expect(game.result).to eq "... and The Computer chose Paper. Scissors beat Paper. Frances wins!"
+      allow(subject.player).to receive(:choice).and_return(:scissors)
+      allow(subject.opponent).to receive(:choice).and_return(:paper)
+      expect(subject.result).to eq :win
     end
     it "shows a draw (both chose scissors)" do
-      game.player_selection("Scissors")
-      allow(game).to receive(:computer_selection).and_return(:Scissors)
-      expect(game.result).to eq "... and The Computer chose Scissors. You both chose the same. It's a draw!"
+      allow(subject.player).to receive(:choice).and_return(:scissors)
+      allow(subject.opponent).to receive(:choice).and_return(:scissors)
+      expect(subject.result).to eq :draw
     end
   end
 

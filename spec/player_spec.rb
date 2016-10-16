@@ -9,4 +9,11 @@ describe Player do
       expect(frances.name).to eq "Frances"
     end
   end
+
+  describe '#set_choice' do
+    it "returns the player's selection" do
+      subject.set_choice(:rock)
+      expect(subject.choice).to eq :rock
+    end
+  end
 end

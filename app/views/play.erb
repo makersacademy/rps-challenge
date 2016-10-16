@@ -1,13 +1,13 @@
 <form class="form-signin" action="/result" method="post">
   <h2 class="form-signin-heading">Okay <%= @game.player.name %>, please choose your move!</h2>
   <div class="radio">
-    <label><input type="radio" name="choice" value="<%= @game.view_choices[0] %>"><%= @game.view_choices[0] %></label>
+    <label><input type="radio" name="choice" value="<%= Game::CHOICES[0] %>"><%= Game::CHOICES[0].capitalize %></label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="choice" value="<%= @game.view_choices[1] %>"><%= @game.view_choices[1] %></label>
+    <label><input type="radio" name="choice" value="<%= Game::CHOICES[1] %>"><%= Game::CHOICES[1].capitalize %></label>
   </div>
   <div class="radio">
-    <label><input type="radio" name="choice" value="<%= @game.view_choices[2] %>"><%= @game.view_choices[2] %></label>
+    <label><input type="radio" name="choice" value="<%= Game::CHOICES[2] %>"><%= Game::CHOICES[2].capitalize %></label>
   </div>
   <input type="submit" class="btn btn-lg btn-primary btn-block" id="Let's do this!">
 </form>

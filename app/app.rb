@@ -22,8 +22,8 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    @choice = params[:choice]
-    erb(:result)
+    @game.player.set_choice(params[:choice])
+    erb(@game.result)
   end
 
   # start the server if ruby file executed directly
