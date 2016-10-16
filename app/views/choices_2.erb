@@ -1,0 +1,14 @@
+<h1>  Welcome, <%= @player_2.name %> </h1>
+<h2> You are playing against <%= @player_1.name %>  </h2>
+
+<h2> Select your weapon of choice:</h2>
+
+<form action="/evaluate" method="get">
+  <input type="submit" name="choice_2" value="ROCK">
+</form>
+<form action="/evaluate" method="get">
+  <input type="submit" name="choice_2" value="PAPER">
+</form>
+<form action="/evaluate" method="get">
+  <input type="submit" name="choice_2" value="SCISSORS">
+</form>
