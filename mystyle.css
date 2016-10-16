@@ -1,0 +1,23 @@
+h1 {
+  font-family: Comic Sans MS;
+  font-size: 30px;
+  color: red
+}
+
+h2 {
+  font-family: Comic Sans MS;
+  font-size: 25px;
+}
+
+form {
+  font-family: Comic Sans MS;
+  font-size: 20px;
+}
+
+.left {
+  float:left; width:50%
+}
+
+.right{
+  float:right; width:50%
+}

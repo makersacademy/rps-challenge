@@ -4,6 +4,7 @@ require './lib/player'
 
 
 class Rps < Sinatra::Base
+attr_reader :player_choice
 
   enable :sessions
 
@@ -25,28 +26,19 @@ class Rps < Sinatra::Base
   get '/rock' do
     @game = Game.current
     @player_choice = "Rock"
-    @choice = @game.choice.sample
-    if @choice == "Scissors" then erb :win elsif @choice == "Paper" then erb :lost
-    elsif @choice == "Rock" then erb :tie
-    end
+    erb (@game.choice("Rock"))
   end
 
   get '/paper' do
     @game = Game.current
     @player_choice = "Paper"
-    @choice = @game.choice.sample
-    if @choice == "Scissors" then erb :lost elsif @choice == "Paper" then erb :tie
-    elsif @choice == "Rock" then erb :win
-    end
+    erb (@game.choice("Paper"))
   end
 
   get '/scissors' do
     @game = Game.current
     @player_choice = "Scissors"
-    @choice = @game.choice.sample
-    if @choice == "Scissors" then erb :tie elsif @choice == "Paper" then erb :win
-    elsif @choice == "Rock" then erb :lost
-    end
+    erb (@game.choice("Scissors"))
   end
   #-----------------------2 PLAYERS GAME----------------------------------------------------------------------
   #------------------------------------------------------------------------------------------------------------------------------------------

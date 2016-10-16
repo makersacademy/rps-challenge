@@ -1,19 +1,20 @@
 
 <body>
-<div class="division">
-  <h1>One player game</h1>
+    <h1 id="title">WALL.E's Rock Paper Scissors</h1>
+<div class="left">
+  <h1>One player game against WALL.E</h1>
   <form action="/name" method="post">
     Player  <input type="text" name="player_name">
-    <input type="submit" value="Submit">
+    <input type="submit" value="Play!">
   </form>
 </div>
 
-<div class="division">
+<div class="right">
   <h1>Two players game</h1>
   <form action="/2name" method="post">
     Player1 <input type="text" name="player1_name">
     Player2 <input type="text" name="player2_name">
-    <input type="submit" value="Submit ">
+    <input type="submit" value="Play! ">
   </form>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -22,19 +23,33 @@
 <style>
 
 body {
-background-image: url("http://www.rockpaperscissorshair.co.uk/img/logo-x2.png");
+background-image: url("http://cdn.pcwallart.com/images/walle-wallpaper-3.jpg");
 background-repeat: no-repeat;
-background-size: 100% 100%;
+background-size: 100% 100%
+}
+
+h1 {
 font-family: Comic Sans MS;
-font-size: 20px;
-
+font-size: 25px; color:red;
 }
-.division{
-  width:50%;
-  height:100px;
-  float:left;
+ #title {
+   font-family: Comic Sans MS;
+   font-size: 40px; color:red;
+   text-align:center
+ }
+.left {
+  float:left; width:60%; height:100px;
 }
 
+.right{
+  float:right; width:40%; height:100px;
+  text-align:center
+}
+
+form {
+  font-family: Comic Sans MS;
+  font-size: 15px; color:blue
+}
 img {
 display: block;
 margin-left: 300px;

@@ -5,6 +5,6 @@ RSpec.feature 'lost', :type => :feature do
     sign_in_and_play2
     click_button 'Rock'
     click_button 'Paper'
-    expect(page).to have_text "Steve has won!"
+    expect(page).to have_text "Emma has won!"
   end
 end
