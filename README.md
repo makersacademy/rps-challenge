@@ -38,4 +38,5 @@ At the time of writing this README I have incorporated travis-ci to my local rep
 
 A screenshot from PRY:
 
-![alt text](/Users/Kath/Week_3/rps-challenge/Screen Shot 2016-10-16 at 13.58.45.png)
+![alt tag](https://github.com/kathwath/rps-challenge/blob/master/Screen%20Shot%202016-10-16%20at%2013.58.45.png)
+
