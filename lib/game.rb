@@ -17,22 +17,23 @@ class Game
    @game
   end
 
-  attr_reader :player
+  attr_reader :player, :winner
 
-  def initialize(player, computer = Computer.new )
+  def initialize(player, computer = Computer.new)
    @player = player
    @computer = computer
+   @winner = nil
   end
 
   def result?
    @computer.computer_select
    puts @computer.move_choice
    if @player.player_choice == @computer.move_choice
-      "Draw"
+      @winner = :none
     elsif WINNING_MOVE[@player.player_choice].include?(@computer.move_choice)
-      "You win!"
+      @winner = @player
     else
-      "Computer wins!"
+      @winner = @computer
     end
   end
 

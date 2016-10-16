@@ -1,0 +1,13 @@
+<% if @game.winner == :none %>
+<h1>This game is a Draw!
+<% else %>
+<h1><%= @game.winner.name %> wins this time!</h1>
+<% end %>
+
+<form action="/play" method="get">
+  <input type='submit' value='Try again?'>
+</form>
+
+<form action="/" method="get">
+  <input type='submit' value='Sign out'>
+</form>

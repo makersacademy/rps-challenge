@@ -2,10 +2,11 @@ class Computer
 
   MOVES = [:rock, :paper, :scissors, :lizard, :spock]
 
-  attr_reader :move_choice
+  attr_reader :move_choice, :name
 
-  def initialize
+  def initialize(name = 'Sheldon')
    @move_choice = nil
+   @name = name
   end
 
   def computer_select

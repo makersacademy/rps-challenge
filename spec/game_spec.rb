@@ -16,22 +16,29 @@ describe Game do
     it 'takes a player as an argument' do
       expect(game.player).to eq :fred
     end
+
+    it 'sets the winner to nil' do
+      expect(game.winner).to eq nil
+    end
   end
 
   describe '#result' do
     it 'returns draw if player/computer choose the same' do
      allow(comp2).to receive(:computer_select).and_return(:rock)
-     expect(draw.result?).to eq "Draw"
+     draw.result?
+     expect(draw.winner).to eq :none
     end
 
     it 'returns you win if player wins' do
      allow(comp).to receive(:computer_select).and_return(:scissors)
-     expect(pwin.result?).to eq "You win!"
+     pwin.result?
+     expect(pwin.winner).to eq player1
     end
 
     it 'returns draw if player/computer choose the same' do
      allow(comp2).to receive(:computer_select).and_return(:scissors)
-     expect(cwin.result?).to eq "Computer wins!"
+     cwin.result?
+     expect(cwin.winner).to eq comp2
     end
   end
 

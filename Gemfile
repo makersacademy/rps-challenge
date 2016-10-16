@@ -13,5 +13,6 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'rerun'
   #gem 'rspec-sinatra'
 end
