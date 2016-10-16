@@ -2,9 +2,11 @@
 
 class Player
   attr_reader :name
+  attr_accessor :pokemon
 
   def initialize(name)
     @name = name
+    @pokemon = ""
   end
 
   def self.create(player_name)

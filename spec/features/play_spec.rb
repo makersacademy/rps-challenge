@@ -15,4 +15,10 @@ feature CSB do
       expect(page).to have_button("SQUIRTLE")
       expect(page).to have_button("BULBASAUR")
     end
+
+    scenario "expect pokemon variable to be set to charmander when charmander is selected" do
+      sign_in_and_play
+      click_button("CHARMANDER")
+      expect(page).to have_text("You chose CHARMANDER")
+    end
 end
