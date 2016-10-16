@@ -1,8 +1,14 @@
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
 <body>
   <div>
-    <form name='input' action='/names' method='post'>
-      <input type='submit' name = 'names' value='Submit players' class='submit-button' tabindex='3'>
-      <p class='field'>Player: </p><input type='text' name='Player1' class='field' tabindex="1">
+    <form action="/name" method="post">
+      <p>What's your name?</p>
+      <input type="text" name="name" />
+      <input type="submit" value="Start!" />
     </form>
   </div>
 </body>
+</html>
