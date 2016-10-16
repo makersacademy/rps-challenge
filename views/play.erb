@@ -1,0 +1,27 @@
+<style>
+body {
+  font-family: 'Lucida bright', cursive;
+  color: #D3D3D3;
+  font-size: 20px;
+  background-image: url("http://www.androidguys.com/wp-content/uploads/2015/12/Poly-Lakeside.jpg");
+  background-size: 1300px 700px;
+  background-position: fixed;
+}
+</style>
+<body>
+
+<h2> <center> Alright, let's play! </center> </h2>
+<h3>
+  <center>
+ It's <font color="orange"><%= $game.first_player_name %></font> vs <%= $game.bot_name %>
+</center>
+</h3>
+
+<h4> <center> <%= $game.first_player_name %>, select your action! </center> </h4>
+<form action="/result" method="get">
+  <center>
+  <input type="submit" name ="p1" value="Rock">
+  <input type="submit" name ="p1" value="Paper">
+  <input type="submit" name ="p1" value="Scissors">
+</center>
+</form>
