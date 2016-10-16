@@ -42,19 +42,19 @@ describe Game do
     it 'states true for rock/scissors' do
       game.player_select('r')
       game.player_select('s')
-      expect(game.win?).to be true
+      expect(game.send(:win?)).to be true
     end
 
     it 'states true for paper/rock' do
       game.player_select('p')
       game.player_select('r')
-      expect(game.win?).to be true
+      expect(game.send(:win?)).to be true
     end
 
     it 'states true for scissors/paper' do
       game.player_select('s')
       game.player_select('p')
-      expect(game.win?).to be true
+      expect(game.send(:win?)).to be true
     end
   end
 
@@ -62,19 +62,19 @@ describe Game do
     it 'states true for rock/rock' do
       game.player_select('r')
       game.player_select('r')
-      expect(game.tie?).to be true
+      expect(game.send(:tie?)).to be true
     end
 
     it 'states true for paper/paper' do
       game.player_select('p')
       game.player_select('p')
-      expect(game.tie?).to be true
+      expect(game.send(:tie?)).to be true
     end
 
     it 'states true for scissors/scissors' do
       game.player_select('s')
       game.player_select('s')
-      expect(game.tie?).to be true
+      expect(game.send(:tie?)).to be true
     end
   end
 
