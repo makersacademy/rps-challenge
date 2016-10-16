@@ -1,6 +1,10 @@
 require 'sinatra/base'
 require 'haml'
 require 'rspec'
+require './lib/opponent'
+require './lib/turn'
+
+
 
 class RPS < Sinatra::Base
   use Rack::Session::Cookie,:key => 'rack.session',
@@ -12,19 +16,17 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_1_name] = params[:player_1_name]
+    session[:player_name] = params[:player_1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
-    @choice = session[:choice]
-    @opponent_choice = session[:opponent_choice]
+    @turn = Turn.new(session)
     haml :play
   end
 
   post '/play' do
-    session[:choice] = params[:choice]
+    session[:player_choice] = params[:choice]
     session[:opponent_choice] = Opponent.new.choice
     redirect '/play'
   end

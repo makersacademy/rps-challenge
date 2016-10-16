@@ -1,5 +1,5 @@
 %h2.text-center
-  = "It's time #{@player_1_name}"
+  = "It's time #{@turn.player_name}"
 
 %form.text-center{ method: "POST", action: "/play" }
   %input.btn.btn-success{ type:"submit", name: "choice", value: "Rock" }
@@ -9,6 +9,6 @@
   %input.btn.btn-success{ type:"submit", name: "choice", value: "Spock" }
 
   #player
-    %h2.text-center You selected #{@choice}!
+    %h2.text-center You selected #{@turn.player_choice.to_s.capitalize}!
   #opponent
-    %h2.text-center Opponent selected #{@opponent_choice.to_s.capitalize}!
+    %h2.text-center Opponent selected #{@turn.opponent_choice.to_s.capitalize}!
