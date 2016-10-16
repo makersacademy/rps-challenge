@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
+
+<body id="game">
+  <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%><h1>
+  <h2><%=@game.player_1.name%> score: <%=@game.player_1_score%><h2>
+  <h2><%=@game.player_2.name%> score: <%=@game.player_2_score%><h2>
+  <h2>Games played: <%=@game.played_games%>
+  <h3><%=@happened%></h3>
+
+  <form action="/play">
+    <label for="OK">
+      <input type="submit" value="OK">
+    </label>
+  </form>
+
+  <form action="/reset" method="post">
+    <label for="Reset Scores">
+      <input type="submit" value="Reset Scores">
+    </label>
+  </form>
+
+  <form action="/new_game" method="post">
+    <label for="New Game">
+      <input type="submit" value="New Game">
+    </label>
+  </form>
+</body>
