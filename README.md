@@ -1,14 +1,17 @@
 
 **CODE TO RUN VIRTUAL SERVER on Cloud9:**
+
 rackup --env config.ru -p $PORT -o $IP       #Allows me to run the virtual server to view the website.
 
 
 **REQUIREMENTS:**
+
 1) I would like to register my name before playing an online game
 
 2) I would like to be able to play rock/paper/scissors
 
 **GEMS**
+
 gem 'sinatra'
 gem 'rspec-sinatra'
 gem 'capybara'
