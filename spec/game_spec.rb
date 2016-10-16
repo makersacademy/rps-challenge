@@ -3,10 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game)  { described_class.new(player, computer) }
-  subject(:draw_game) { described_class.new(player, test_computer) }
-  let(:player)  { double(:player, choice: "Rock") }
-  let(:computer)  { double(:computer, available_choices: "Scissors") }
-  let(:test_computer) { double(:test_computer, available_choices: "Rock") }
+  let(:player)  { double(:player, name: "Player", choice: "Rock") }
+  let(:computer)  { double(:computer, name: "Computer", choice: "Scissors") }
 
   it 'should accept two players' do
     expect(game.player).to eq player
@@ -22,11 +20,39 @@ describe Game do
 
   describe '#result' do
     it 'displays the result' do
-      expect(game.result).to eq "Computer chose Scissors. player beats computer"
+      expect(game.result).to eq "Computer chose Scissors. Player beats Computer"
     end
+  end
 
-    it 'displays a draw' do
-      expect(draw_game.result).to eq "Draw"
+  describe '#result' do
+    let(:player)  { double(:player,name: "Player", choice: "Rock") }
+    let(:computer)  { double(:computer,name:"Computer", choice: "Scissors") }
+    it 'displays the result when Rock v Scissors' do
+      expect(game.result).to eq "Computer chose Scissors. Player beats Computer"
+    end
+  end
+
+  describe '#result' do
+    let(:player)  { double(:player,name: "Player", choice: "Paper") }
+    let(:computer)  { double(:computer,name:"Computer", choice: "Rock") }
+    it 'displays the result when Paper v Rock' do
+      expect(game.result).to eq "Computer chose Rock. Player beats Computer"
+    end
+  end
+
+  describe '#result' do
+    let(:player)  { double(:player,name: "Player", choice: "Scissors") }
+    let(:computer)  { double(:computer,name:"Computer", choice: "Paper") }
+    it 'displays the result when Scissors v Paper' do
+      expect(game.result).to eq "Computer chose Paper. Player beats Computer"
+    end
+  end
+
+  describe '#result' do
+    let(:player)  { double(:player,name: "Player", choice: "Scissors") }
+    let(:computer)  { double(:computer,name:"Computer", choice: "Scissors") }
+    it 'displays the result when Scissors v Scissors' do
+      expect(game.result).to eq "Draw"
     end
   end
 

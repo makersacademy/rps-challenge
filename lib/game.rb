@@ -1,6 +1,5 @@
 require_relative 'player'
 require_relative 'computer'
-require_relative 'game_logic'
 
 class Game
 
@@ -18,28 +17,25 @@ class Game
   end
 
   def result
-    p1 = @player.choice
-    ## to stop computer bringing in the random behaviour each time
-    comp = @@choices[rand(0..2)]
-    game_logic(p1,comp)
+    player_choice = @player.choice
+    computer_choice = @computer.choice
+    game_logic(player_choice,computer_choice)
   end
 
-  def game_logic(p1, comp)
-    if p1 == comp
+  def game_logic(player_choice, computer_choice)
+    # Lets see if player one wins. If not, player 2 wins
+    if player_choice == computer_choice
       return "Draw"
-    elsif (p1 == "Rock" && comp == "Scissors")
-      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
-    elsif (p1 == "Rock" && comp == "Paper")
-      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
-    elsif (p1 == "Paper" && comp == "Scissors")
-      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
-    elsif (p1 == "Paper" && comp == "Rock")
-      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
-    elsif (p1 == "Scissors" && comp == "Paper")
-      return "Computer chose #{comp}. #{@player.name} beats #{@computer.name}"
-    elsif (p1 == "Scissors" && comp == "Rock")
-      return "Computer chose #{comp}. #{@computer.name} beats #{@player.name}"
+    end
+
+    if(player_choice == "Rock" && computer_choice != "Paper")
+      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+    elsif (player_choice == "Scissors" && computer_choice != "Rock")
+      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+    elsif (player_choice == "Paper" && computer_choice != "Scissors")
+      return "Computer chose #{computer_choice}. #{@player.name} beats #{@computer.name}"
+    else
+      return "Computer chose #{computer_choice}. #{@computer.name} beats #{@player.name}"
     end
   end
-
 end

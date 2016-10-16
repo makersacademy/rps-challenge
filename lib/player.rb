@@ -4,12 +4,10 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice = choice
   end
 
   def selection(rps) # 0, 1, 2
-    available_choices = Game.choices
-    @choice = available_choices[rps]
+    @choice = Game.choices[rps]
   end
 
 end
