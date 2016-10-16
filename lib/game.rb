@@ -18,7 +18,6 @@ class Game
   def result
     return "draw" if @player_1.weapon == @player_2.weapon
     winning_moves = { rock: :scissors, paper: :rock, scissors: :paper }
-    @player_1.weapon == winning_moves[@player_2.weapon] ? "you win" : "you lose - prepare to die"
-
+    @player_2.weapon == winning_moves[@player_1.weapon] ? "you win" : "you lose - prepare to die"
   end
 end
