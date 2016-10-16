@@ -21,4 +21,9 @@ class Game
   def player_1_weapon
     @player_1.weapon
   end
+
+  # def deep_green_weapon
+  #   @deep_green = DeepGreen.new
+  #   @deep_green.select_weapon
+  # end
 end

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/deep_green'
 # require './lib/'
 
 class RPS < Sinatra::Base
@@ -34,6 +35,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @deep_green = DeepGreen.new
+    @deep_green_weapon = @deep_green.weapon
     erb(:result)
   end
 

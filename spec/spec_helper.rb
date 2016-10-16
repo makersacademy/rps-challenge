@@ -22,7 +22,7 @@ require 'features/web_helpers'
 # Necessary files
 require "game"
 require "player"
-require "rps_ai"
+require "deep_green"
 
 Capybara.app = RPS
 
