@@ -5,6 +5,16 @@ require "./lib/computer.rb"
 class RPS < Sinatra::Base
   enable :sessions
 
+  helpers do
+    def computer
+      Computer.create_instance
+    end
+
+    def computer_choice
+      computer.choice
+    end
+  end
+
   get "/" do
     erb (:index)
   end
@@ -15,12 +25,13 @@ class RPS < Sinatra::Base
   end
 
   post "/compare" do
-    session[:choice] = params[:choice]
+    session[:user_choice] = params[:user_choice]
     redirect "/win"
   end
 
   get "/win" do
-    @user_choice = session[:choice]
+    @computer_choice = computer_choice
+    @user_choice = session[:user_choice]
     erb (:win)
   end
 
