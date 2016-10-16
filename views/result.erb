@@ -1,11 +1,11 @@
-<h2>Player one: <%= @game.player_1.name %></h2>
-<h2>Player two: <%= @game.player_2.name %></h2>
+<h2>Player one: <%= @player_1.name %></h2>
+<h2>Player two: <%= @player_2.name %></h2>
 
-<h2><%= @game.player_1.name  %> chose <%= @player_1_weapon.capitalize %></h2>
+<h2><%= @player_1.name  %> chose <%= @player_1.weapon.capitalize %></h2>
 
-<h2><%= @game.player_2.name  %> chose <%= @player_2_weapon.capitalize %></h2>
+<h2><%= @player_2.name  %> chose <%= @player_2.weapon.capitalize %></h2>
 
-<h2> Winner </h2>
+<h2> Result </h2>
 
 <%if @game.winner.nil? %>
   <h2>It's a draw!</h2>

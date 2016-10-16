@@ -24,9 +24,9 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @game.player_1.set_weapon=(params[:weapon])
-    @player_1_weapon = @game.player_1.weapon
-    @player_2_weapon = @game.player_2.weapon
+    @player_1 = @game.player_1
+    @player_2 = @game.player_2
+    @player_1.set_weapon=(params[:weapon])
     @game.decide_winner
     erb(:result)
   end

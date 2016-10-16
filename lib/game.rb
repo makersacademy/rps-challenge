@@ -1,3 +1,5 @@
+require_relative 'computer'
+
 class Game
 
   attr_reader :player_1, :player_2, :player_2_choice, :winner
@@ -18,7 +20,7 @@ class Game
   def decide_winner
     if game_draw
       @winner = nil
-    elsif winning_moves[@player_1.weapon] == @player_2.weapon
+    elsif player_1_beats_player_2?
       player_1_wins
     else
       player_2_wins
@@ -39,8 +41,8 @@ class Game
     @player_1.weapon == @player_2.weapon
   end
 
-  def game_winning_logic
-    winning_moves[@player_1.weapon] == @player_2.weapon ? player_1_wins : player_2_wins
+  def player_1_beats_player_2?
+    winning_moves[@player_1.weapon] == @player_2.weapon
   end
 
   def winning_moves
