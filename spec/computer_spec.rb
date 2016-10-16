@@ -5,7 +5,7 @@ describe Computer do
 
   describe '#weapon' do
     it 'chooses a random weapon from an array' do
-      expect(Game::WEAPONS).to include :paper
+      expect(computer.weapon).to satisfy { |weapon| [:rock, :paper, :scissors].include? weapon }
     end
   end
 end
