@@ -17,6 +17,7 @@ feature "index page" do
     sign_in_and_play
     click_button("Rock")
     expect(page).to have_text("Your choice: Rock")
+
   end
 
 end
