@@ -6,8 +6,14 @@ describe Player do
 
   describe '#initialize' do
     it 'allows player to save name' do
-      # named = described_class.new("test")
       expect(named.name).to eq("test")
+    end
+  end
+
+  describe '#weapon' do
+    it 'allows player to save weapon' do
+      subject.weapon_choice('rock')
+      expect(subject.weapon).to eq('rock')
     end
   end
 end

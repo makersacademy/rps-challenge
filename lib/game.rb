@@ -17,4 +17,8 @@ class Game
   def player_1_name
     @player_1.name
   end
+
+  def player_1_weapon
+    @player_1.weapon
+  end
 end

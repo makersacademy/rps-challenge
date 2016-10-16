@@ -2,17 +2,17 @@ require "spec_helper"
 
 feature 'Displays Main game page' do
   scenario 'Player has choice of Rock' do
-    single_player_login
-    select "Rock", :from => "weapon"
+    play_rock
+    expect(page).to have_content 'Thousand fingers has chosen Rock'
   end
 
   scenario 'Player has choice of Paper' do
-    single_player_login
-    select "Paper", :from => "weapon"
+    play_paper
+    expect(page).to have_content 'Thousand fingers has chosen Paper'
   end
 
   scenario 'Player has choice of Scissors' do
-    single_player_login
-    select "Scissors", :from => "weapon"
+    play_scissors
+    expect(page).to have_content 'Thousand fingers has chosen Scissors'
   end
 end

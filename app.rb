@@ -7,6 +7,7 @@ class RPS < Sinatra::Base
 
   before do
     @game = Game.instance
+    @player_1 = Player.instance
   end
 
   get '/' do
@@ -18,8 +19,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    @game = Game.create_single(player)
+    @player_1 = Player.create(params[:player_1_name])
+    @game = Game.create_single(@player_1)
     redirect '/main-game'
   end
 
@@ -28,9 +29,15 @@ class RPS < Sinatra::Base
   end
 
   post '/referee' do
-    player_attack = params[:weapon]
-    erb(:referee)
+    @player_1.weapon_choice(params[:weapon])
+    redirect '/result'
   end
+
+  get '/result' do
+    # player_1_weapon = @player_1.weapon
+    erb(:result)
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

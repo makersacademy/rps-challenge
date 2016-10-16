@@ -9,7 +9,7 @@ feature 'Allows user to choose game type' do
   scenario 'Player is redirected to register' do
     visit('/')
     click_button 'Single Player'
-    expect(page).to have_content 'Player vs AI'
+    expect(page).to have_content 'You have chosen to player our Advanced RPS AI'
     expect(page).to have_content 'Please register below to play'
   end
 end
