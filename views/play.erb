@@ -1,0 +1,9 @@
+<h2>Hello <%= @game.player_1.name %>!</h2>
+<p>Lets do this!</p>
+<p>Choose your weapon: Rock, Paper or Scissors!</p>
+<form action = '/choice' method='post'>
+  <input id='Rock' type='radio' name='choice' value='Rock'> Rock</input>
+  <input id='Paper' type='radio' name='choice' value='Paper'> Paper</input>
+  <input id='Scissors' type='radio' name='choice' value='Scissors'> Scissors</input><br>
+  <button type="submit">Submit</button>
+</form>
