@@ -15,9 +15,9 @@ describe RockPaperScissors do
     end
 
     it "post request accepts player name and creates game" do
-      allow(Game).to receive(:new)
+      allow(Game).to receive(:create)
       post "/", :player_1 => "Player 1"
-      expect(Game).to have_received(:new) do |player_1, player_2|
+      expect(Game).to have_received(:create) do |player_1, player_2|
         expect(player_1.name).to eq "Player 1"
         expect(player_2).to be_a Computer
       end
@@ -32,10 +32,39 @@ describe RockPaperScissors do
   end
 
   describe "/play" do
-    it "displays play game page" do
+    before do
+      @player_1 = Player.new("Player 1")
+      Game.create(@player_1, nil)
+    end
+
+    it "get request displays play game page" do
       get "/play"
       expect(last_response).to be_ok
+      expect(last_response.body).to include "Ready Player 1"
       expect(last_response.body).to include "Choose rock, paper or scissors"
+    end
+
+    describe "post requests" do
+
+      it "accepts player's move when rock" do
+        expect(@player_1).to receive(:make_move).with("rock")
+        post "/play", :move => "rock"
+      end
+
+      it "accepts player's move when scissors" do
+        expect(@player_1).to receive(:make_move).with("scissors")
+        post "/play", :move => "scissors"
+      end
+
+      it "accepts player's move when paper" do
+        expect(@player_1).to receive(:make_move).with("paper")
+        post "/play", :move => "paper"
+      end
+
+      it "plays the game" do
+        expect(Game.instance).to receive(:play)
+        post "/play"
+      end
     end
   end
 

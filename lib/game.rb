@@ -1,4 +1,5 @@
 class Game
+
   RULES = [
     { moves: [:rock, :scissors], winner: :player_1},
     { moves: [:scissors, :rock], winner: :player_2},
@@ -7,6 +8,14 @@ class Game
     { moves: [:paper, :scissors], winner: :player_2},
     { moves: [:scissors, :paper], winner: :player_1}
   ]
+
+  def self.create(player_1, player_2)
+    @current_game = self.new(player_1, player_2)
+  end
+
+  def self.instance
+    @current_game
+  end
 
   attr_reader :player_1, :player_2
 
@@ -17,7 +26,7 @@ class Game
   end
 
   def play
-    @moves = [player_1.make_move, player_2.make_move]
+    @moves = [player_1.move, player_2.move]
     get_result
     winner
   end
