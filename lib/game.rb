@@ -1,7 +1,7 @@
 require_relative 'player'
 class Game
 
-attr_reader :player, :winner
+attr_reader :player, :winner, :computer_choice
 
   class << self; attr_accessor :game end
 
@@ -47,11 +47,15 @@ attr_reader :player, :winner
     @winner = determine_winner
   end
 
-  def computer_choice
+  def determine_computer_choice
     choice = rand
     return choice = 'rock' if choice <= 0.33
     return choice = 'paper' if choice >0.33 && choice <= 0.66
     return choice = 'scissors' if choice >0.66
+  end
+
+  def set_computer_choice
+    @computer_choice = determine_computer_choice
   end
 
   def player_choice

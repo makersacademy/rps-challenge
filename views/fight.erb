@@ -1,5 +1,9 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 <%= Game.game.player_name %> vs Computer
 
+<% if Game.game.player_choice == nil %>
 <form action="/pick-choice" method="post">
   <input type="hidden" name="choice" value="rock"/>
   <button type="submit" id="rock">Rock</button>
@@ -14,9 +18,19 @@
   <input type="hidden" name="choice" value="scissors">
   <button type="submit" id="scissors">Scissors</button>
 </form>
+<% end %>
 
+<% if Game.game.player_choice != nil%>
 Your choice: <%= Game.game.player_choice %>
+<% end %>
 
-<form action="/show-winner" method="get">
-  <button type="submit" name="Show winner"/>
-</form>
+<% if @winner == nil %>
+  <form action="/show-winner" method="post">
+    <button type="submit" name="Show winner">Show winner!</button>
+  </form>
+<% end %>
+
+<% if @winner != nil %>
+  Computer's choice: <%= Game.game.computer_choice %>
+  <%= @winner %> wins!
+<% end %>
