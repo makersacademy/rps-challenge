@@ -1,4 +1,5 @@
 require 'spec_helper.rb'
+require_relative './web_helpers.rb'
 
 feature "Player arrives to the root page" do
 scenario "Sign-in form is displayed" do
