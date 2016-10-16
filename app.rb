@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
   end
   
   get '/play' do
-    @rps_game.reset_choices
+    #@rps_game.reset_choices        #Not working properly!!!!!!!!!!!!
     erb(:play)
   end
   
