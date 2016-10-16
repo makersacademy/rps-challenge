@@ -32,10 +32,10 @@ describe RockPaperScissors do
   end
 
   describe "/play" do
+    let(:player_1) { Player.new("Player 1") }
+    let(:player_2) { Computer.new }
     before do
-      @player_1 = Player.new("Player 1")
-      @player_2 = Computer.new
-      Game.create(@player_1, @player_2)
+      Game.create(player_1, player_2)
     end
 
     it "get request displays play game page" do
@@ -47,17 +47,17 @@ describe RockPaperScissors do
 
     describe "post requests" do
       it "accepts player's move when rock" do
-        expect(@player_1).to receive(:make_move).with(:rock)
+        expect(player_1).to receive(:make_move).with(:rock)
         post "/play", :move => "rock"
       end
 
       it "accepts player's move when scissors" do
-        expect(@player_1).to receive(:make_move).with(:scissors)
+        expect(player_1).to receive(:make_move).with(:scissors)
         post "/play", :move => "scissors"
       end
 
       it "accepts player's move when paper" do
-        expect(@player_1).to receive(:make_move).with(:paper)
+        expect(player_1).to receive(:make_move).with(:paper)
         post "/play", :move => "paper"
       end
 
@@ -66,22 +66,20 @@ describe RockPaperScissors do
         post "/play", :move => "rock"
       end
 
-      it "post request redirects to /game_over" do
+      it "post request redirects to /result" do
         post "/play", :move => "rock"
         expect(last_response.redirect?).to be true
         follow_redirect!
-        expect(last_request.path).to eq "/game_over"
+        expect(last_request.path).to eq "/result"
       end
     end
   end
 
-  describe "/game_over" do
-    it "displays game over page" do
-      get "/game_over"
+  describe "/result" do
+    it "displays game result page" do
+      get "/result"
       expect(last_response).to be_ok
-      expect(last_response.body).to include "Game Over"
     end
-
   end
 
 end

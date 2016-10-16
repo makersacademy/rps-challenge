@@ -28,11 +28,11 @@ class RockPaperScissors < Sinatra::Base
   post '/play' do
     @game.player_1.make_move(params[:move].to_sym)
     @game.play_round
-    redirect to '/game_over'
+    redirect to '/result'
   end
 
-  get '/game_over' do
-    erb :game_over
+  get '/result' do
+    erb :result
   end
 
   run! if app_file == $0
