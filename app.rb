@@ -27,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @game.player_1.make_move(params[:move])
-    @game.play
+    @game.play_round
     redirect to '/game_over'
   end
 

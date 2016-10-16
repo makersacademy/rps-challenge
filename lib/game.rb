@@ -25,7 +25,7 @@ class Game
     @rules = rules
   end
 
-  def play
+  def play_round
     @moves = [player_1.move, player_2.move]
     get_result
     winner

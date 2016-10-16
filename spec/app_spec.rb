@@ -61,8 +61,8 @@ describe RockPaperScissors do
         post "/play", :move => "paper"
       end
 
-      it "plays the game" do
-        expect(Game.instance).to receive(:play)
+      it "plays a round of a game" do
+        expect(Game.instance).to receive(:play_round)
         post "/play"
       end
 
