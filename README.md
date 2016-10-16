@@ -33,4 +33,4 @@ I would like to be able to play rock/paper/scissors
 
 ## Image
 
-![Screenshot](http://i.imgur.com/qhQoss5.png)
+![Screenshot](http://i.imgur.com/qhQoss5.png?1)
