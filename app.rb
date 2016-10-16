@@ -1,4 +1,5 @@
 require  "sinatra/base"
+require "./lib/computer.rb"
 
 
 class RPS < Sinatra::Base
