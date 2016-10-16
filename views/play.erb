@@ -4,9 +4,14 @@
   <head>
     <title>Rock Paper Scissors | Play</title>
   </head>
-  
+
   <body>
     <h1>Ready <%= @player_1 %></h1>
     <p>Choose rock, paper or scissors</p>
+    <form action="/play" method="POST">
+      <input type="submit" name="move" value="rock"/>
+      <input type="submit" name="move" value="paper"/>
+      <input type="submit" name="move" value="scissors"/>
+    </form>
   </body>
 </html>
