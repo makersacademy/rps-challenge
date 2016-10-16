@@ -1,6 +1,142 @@
-<h1> <%=@game.player.name %> </h1> vs. <h1> <%=@game.computer.com_name %> the Computer</h1>
+<h1> <%=@game.player.name %> vs. <%=@game.computer.com_name %> the Computer</h1>
 
 <form action="/result" method="get" id="pick"> </form>
-<button type="submit" name="choice" form="pick" value="rock">Rock</button>
-<button type="submit" name="choice" form="pick" value="paper">Paper</button>
-<button type="submit" name="choice" form="pick" value="scissors">Scissors</button>
+<div class="left" >
+  <h2>Pick your weapon of choice!</h2>
+  <button class="button2" type="submit" name="choice" form="pick" value="rock"><span>Rock </span></button>
+  <button class="button3" type="submit" name="choice" form="pick" value="paper"><span>Paper </span></button>
+  <button class="button" type="submit" name="choice" form="pick" value="scissors"><span>Scissors </span></button>
+</div>
+
+<style>
+  .left{
+    float: left;
+    width: 50%;
+  }
+
+  .right{
+    float: left;
+    width: 50%;
+  }
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: "✌";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button2 span:after {
+    content: "👊";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button2:hover span {
+    padding-right: 25px;
+  }
+
+  .button2:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button3 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button3 span:after {
+    content: "✋";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button3:hover span {
+    padding-right: 25px;
+  }
+
+  .button3:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+</style>

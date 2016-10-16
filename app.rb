@@ -42,9 +42,15 @@ class RPS < Sinatra::Base
     erb(:play_vs)
   end
 
-  get '/result_vs' do
+  get '/play2_vs'do
     @game = GameVs.store
     @game.player1.pick((params[:choice1].to_sym))
+    @game.choice
+    erb(:play2_vs)
+  end
+
+  get '/result_vs' do
+    @game = GameVs.store
     @game.player2.pick((params[:choice2].to_sym))
     @game.choice
     erb @game.result
