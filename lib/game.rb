@@ -32,9 +32,9 @@ class Game
       "You lost!!"
 
     elsif @players[0].player_choice == "Rock" && @bot.player_choice == "Paper"
-      "You lost"
+      "You lost!!"
     elsif @players[0].player_choice == "Paper" && @bot.player_choice == "Paper"
-      "It's a draw!"
+      "It's a draw!!"
     elsif @players[0].player_choice == "Scissors" && @bot.player_choice == "Paper"
       "You won!!"
 
