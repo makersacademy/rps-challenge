@@ -2,9 +2,8 @@ require 'spec_helper'
 require './rps'
 
 RSpec.feature 'Route /', type: :feature do
-  before(:each) { visit '/' }
-
   scenario 'asks for user name' do
+    visit '/'
     expect(page).to have_content('What\'s your name?')
   end
 
