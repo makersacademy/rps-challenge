@@ -1,0 +1,14 @@
+<%= @game.player2.name.capitalize %>
+
+
+<h1>Choose:</h1><br>
+<form action="/multiplayer_play2" method="POST">
+	<select name="choice2">
+	  <option value="paper">Paper</option>
+	  <option value="rock">Rock</option>
+	  <option value="scissors">Scissors</option>
+  </select>
+
+	<input type="submit">
+
+</form>

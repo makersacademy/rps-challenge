@@ -1,0 +1,9 @@
+<%= @game.player1.name.capitalize %>
+
+<h1>Choose:</h1>
+
+<form action="/computer_turn" method="POST">
+	<input type="submit" name="choice" value="scissors">
+	<input type="submit" name="choice" value="paper">
+	<input type="submit" name="choice" value="rock">
+</form>
