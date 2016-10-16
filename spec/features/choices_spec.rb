@@ -6,17 +6,17 @@ feature 'player and computer can choose rock, paper or scissors' do
 
   scenario 'player chooses rock and page displays choice' do
   	click_button "rock"
-  	expect(page).to have_content "You chose rock!"
+  	expect(page).to have_content "player1 chose rock!"
   end
 
   scenario 'player chooses paper and page displays choice' do
   	click_button "paper"
-  	expect(page).to have_content "You chose paper!"
+  	expect(page).to have_content "player1 chose paper!"
   end
 
   scenario 'player chooses scissors and page displays choice' do
   	click_button "scissors"
-  	expect(page).to have_content "You chose scissors!"
+  	expect(page).to have_content "player1 chose scissors!"
   end
 
   scenario 'computer chooses scissors, rock or paper' do
