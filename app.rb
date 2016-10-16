@@ -19,6 +19,7 @@ class RPS < Sinatra::Base
 
   post '/choose' do
     session[:choice] = params[:choice]
+    session[:opponent_choice] = :ROCK
     redirect '/start'
   end
 
@@ -27,6 +28,11 @@ class RPS < Sinatra::Base
     erb(:start)
   end
 
+  post '/play' do
+    @choice = session[:choice]
+    @opponent_choice = session[:opponent_choice]
+    erb(:play)
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
