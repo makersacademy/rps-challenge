@@ -5,12 +5,16 @@ class CSB < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @player = Player.read
+  end
+
   get '/' do
     erb :index
   end
 
   post '/setup' do
-    $player = Player.new(params[:player_name])
+    @player = Player.create(params[:player_name])
     redirect '/play'
   end
 
