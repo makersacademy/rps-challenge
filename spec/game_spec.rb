@@ -72,6 +72,23 @@ describe Game do
         expect(game.game_result).to eq "You won!!"
       end
     end
+    context 'bot selects Scissors' do
+      it " and player selects Rock" do
+        player_1.player_choice = "Rock"
+        game.bot.player_choice = "Scissors"
+        expect(game.game_result).to eq "You won!!"
+      end
+      it " and player selects Paper" do
+        player_1.player_choice = "Paper"
+        game.bot.player_choice = "Scissors"
+        expect(game.game_result).to eq "You lost!!"
+      end
+      it " and player selects Scissors" do
+        player_1.player_choice = "Scissors"
+        game.bot.player_choice = "Scissors"
+        expect(game.game_result).to eq "It's a draw!!"
+      end
+    end
 
   end
 
