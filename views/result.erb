@@ -1,0 +1,11 @@
+<p> You select: </p>
+<h1><%=@player.player_item%></h1>
+  <br> </br>
+<p> Computer select: </p>
+<h1><%=@computer.computer_item%><h1>
+  <br> </br>
+<h1><%=@game.result%><h1>
+  <br> </br>
+<form action="/play" method="get">
+  <input type="submit" value="Play Again">
+</form>
