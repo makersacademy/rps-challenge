@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './spec/features/web_helpers'
+require './lib/player.rb'
 
 class RPS < Sinatra::Base
 
@@ -9,8 +9,13 @@ get '/' do
   erb :home
 end
 
-post '/game' do
-  @player = params[:player_name]
+post '/names' do
+  $player = Player.new(params[:player_name])
+  redirect '/game'
+end
+
+get '/game' do
+  @player = $player.name
   erb :game
 end
 

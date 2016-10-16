@@ -12,17 +12,6 @@ body {
   font-family: 'Coming Soon', cursive;
 
 }
-/*.players {
-  width: 50%;
-  margin-top: 20%;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-}
-
-.wrapper {
-  text-align: center;
-}
 
 form button {
   margin-left: auto;
@@ -54,4 +43,4 @@ form input {
   text-transform: uppercase;
   font-size: 20px;
   padding: 10px;
-}*/
+}
