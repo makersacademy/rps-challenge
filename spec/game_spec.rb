@@ -13,9 +13,9 @@ describe Game do
 
   it "should add choice to player array and computer choice" do
     allow(Kernel).to receive(:rand).and_return 1
-    game.hand("rock")
-    expect(game.player_hand[0]).to eq("rock")
-    expect(game.player_hand[1]).to eq("paper")
+    game.hand("Rock")
+    expect(game.player_hand[0]).to eq("Rock")
+    expect(game.player_hand[1]).to eq("Paper")
   end
 
 end
