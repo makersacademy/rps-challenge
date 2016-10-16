@@ -11,6 +11,13 @@ describe Game do
   let(:paper) {double(:weapon, choice: :paper)}
   let(:scissors) {double(:weapon, choice: :scissors)}
 
+  describe '#create' do
+    it 'creates an instance of game' do
+      game = Game.create(bob, sally)
+      expect(game).to be_an_instance_of(Game)
+    end
+  end
+
   describe '#initialize' do
     it 'initializes an empty array' do
       expect(subject.submitted_weapons).to be_empty
@@ -78,5 +85,5 @@ describe Game do
       expect(tie_rock.won).to eq :tie
     end
   end
-  
+
 end
