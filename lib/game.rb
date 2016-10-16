@@ -3,13 +3,21 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :computer_choice
 
   @@choices = ["Rock", "Paper", "Scissors"]
 
   def initialize(player, computer)
     @player = player
     @computer = computer
+  end
+
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
   end
 
   def self.choices

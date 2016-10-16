@@ -1,13 +1,16 @@
+require_relative 'computerrandombehaviour'
+
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :selection
 
   def initialize(name = "Computer")
     @name = name
   end
 
   def selection
-    Game.choices[rand(0..2)]
+    rps = ComputerRandomBehaviour.new.random_number
+    @selection = Game.choices[rps]
   end
 
 end
