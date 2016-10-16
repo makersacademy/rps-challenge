@@ -10,4 +10,21 @@ describe Game do
     end
   end
 
+  describe 'player one picks rock, paper or scissors' do
+    it 'doesn\'t pick rock, paper or scissors' do
+      expect{game.player_1_choice("lizard")}.to raise_error("Oops, that doesn't exist! Please choose rock, paper or scissors.")
+    end
+
+    it 'player picks rock' do
+      expect(game.player_1_choice("rock")).to eq(:rock)
+    end
+
+    it 'player picks paper' do
+      expect(game.player_1_choice("paper")).to eq(:paper)
+    end
+
+    it 'player picks scissors' do
+    expect(game.player_1_choice("scissors")).to eq(:scissors)
+    end
+  end
 end

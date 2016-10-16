@@ -1,1 +1,7 @@
 <h1><%=@game.player_1_name%>'s up!</h1>
+
+<h1>Pick an option: rock, paper, scissors</h1>
+<form action="/go" method="post" >
+  <input type="text" name="option">
+  <input type="submit" value="Go!">
+</form>

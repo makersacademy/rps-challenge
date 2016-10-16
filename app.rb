@@ -19,5 +19,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  #get '/go' do
+
   run! if app_file == $0
 end
