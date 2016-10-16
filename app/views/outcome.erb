@@ -6,7 +6,7 @@
 <h1> <%= @player_two.name %> chose <%= @player_two.play_history.last %>  </h1>
 
 <% if  @player_one.outcome_history.last == true %>
-<h2> You won! </h2>
+<h2>  <%= @player_one.name %> won </h2>
 <% elsif  @player_one.outcome_history.last == false%>
 <h2> <%= @player_two.name %> won :( </h2>
 <% else  %>
