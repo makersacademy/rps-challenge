@@ -6,9 +6,9 @@
 
 <body>
   <div class="header">
-    <h1>The computer chose <%=@game.player2_choice%></h1>
-    <h1><%=@game.message%> </h1>
-    <h2><%=@game.philosophy%></h1>
+    <h1>The computer chose <%=@game.computer.choice%></h1>
+    <h1><%=@game.player1.name%>, you lost this time..</h1>
+    <h2>Those who face adversity with a resilient heart can never truly lose.</h1>
   </div>
   <div class="choice">
     <form action='/play'>

@@ -5,7 +5,7 @@ feature 'allow choice to lead to a result' do
     sign_in_and_play
     click_button "rock"
     @game = Game.instance
-    case @game.player2_choice
+    case @game.computer.choice
     when :rock
       expect(page).to have_content "It's a draw!"
     when :paper

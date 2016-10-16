@@ -1,0 +1,19 @@
+<html>
+<head>
+  <link rel="stylesheet" href="public/reset.css" />
+  <link rel="stylesheet" href="css/result.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>The computer chose <%=@game.computer.choice%></h1>
+    <h1><%=@game.player1.name%>, you are the winner!</h1>
+    <h2>Let the feeling of pride seep into your inner core.</h1>
+  </div>
+  <div class="choice">
+    <form action='/play'>
+      <input type="submit" value="Play Again"/>
+    </form>
+  </div>
+</body>
+</html>

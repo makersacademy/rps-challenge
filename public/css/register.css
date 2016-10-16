@@ -28,6 +28,7 @@ html {
     margin-right: 30%;
     margin-top: 10%;
     font-weight: bolder;
+    margin-bottom: 0px;
 }
 
 .rock, .paper, .scissors {
@@ -50,6 +51,27 @@ html {
   width: 60%;
 }
 
+.pitch h2 {
+  font-family: 'cafe_francoiseregular';
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  float:left;
+  font-size: 20px;
+  margin-left: 6%;
+  margin-top: 0px;
+}
+
+.smallprint p {
+  font-size: 40px;
+  font-family: 'ottomedium';
+  color: black;
+  text-align: left;
+  float:left;
+  text-shadow: 4px 4px 4px white;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
 input[type=text] {
   height: 70px;
   width: 300px;
@@ -57,7 +79,7 @@ input[type=text] {
   border-radius: 5px;
   font-size: 50px;
   font-family: 'cafe_francoiseregular';
-  margin-left: 6%;
+  margin-left: 10%;
   margin-right: 5%;
   float:left;
 }
@@ -78,7 +100,7 @@ label {
   color: white;
   text-shadow: 4px 4px 4px black;
   margin-right: 50%;
-  margin-left: 6%;
+  margin-left: 10%;
 }
 
 input[type="submit"]{

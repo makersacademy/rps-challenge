@@ -1,69 +1,49 @@
+require_relative './player'
+require_relative './computer'
+
 class Game
 
-  def self.create(name)
-    @game = Game.new(name)
+  def self.create
+    @game = Game.new
   end
 
   def self.instance
     @game
   end
 
-  attr_reader :player1, :player1_choice, :player2_choice, :winner, :message, :philosophy
+  CHOICES = [:rock, :paper, :scissors]
 
-  def initialize(name)
-    @player1 = name
-    @player1_choice = nil
-    @player2_choice = nil
-    @winner = nil
-    @message = nil
-    @philosophy = nil
+  attr_reader :player1, :computer, :result, :p_choice, :c_choice
+
+  def initialize
+    @player1 = nil
+    @computer = nil
+    @result = nil
+    @rules = {rock: :scissors, paper: :rock, scissors: :paper}
+    @p_choice = nil
+    @c_choice = nil
   end
 
-  def set_player_choice(choice)
-    @player1_choice = choice
+  def set_players(name)
+    @player1 = Player.new(name)
+    @computer = Computer.new
   end
 
-  def set_auto_choice(stub=nil)
-    choices = [:rock, :paper, :scissors]
-    @player2_choice = stub.nil? ? choices[rand_choice] : choices[stub]
+  def set_choices
+    @p_choice = @player1.choice
+    @c_choice = @computer.choice
   end
 
-  def decide_winner
-    if @player1_choice == @player2_choice
-      @winner = nil
+
+  def decide_winner(c_choice=@c_choice,p_choice=@p_choice)
+    case c_choice
+    when p_choice
+      @result = :draw
+    when @rules[p_choice]
+      @result = :win
     else
-      set_winner
+      @result = :lose
     end
-    messaging
-  end
-
-  def set_winner
-    if @player1_choice == :rock
-      @winner = (@player2_choice == :paper) ? "game" : @player1
-    elsif @player1_choice == :paper
-      @winner = (@player2_choice == :scissors) ? "game" : @player1
-    elsif @player1_choice == :scissors
-      @winner = (@player2_choice == :rock) ? "game" : @player1
-    end
-  end
-
-  def messaging
-    if @winner.nil?
-      @message = "It's a draw!"
-      @philosophy = "Enjoy the sense of balance that true equality can bring."
-    elsif @winner == @player1
-      @message = "#{@player1}, you are the winner!"
-      @philosophy = "Let the feeling of pride seep into your inner core."
-    elsif @winner == "game"
-      @message = "#{@player1}, you lost this time.."
-      @philosophy = "Those who face adversity with a resilient heart can never truly lose."
-    end
-  end
-
-  private
-
-  def rand_choice
-    rand(3)
   end
 
 end

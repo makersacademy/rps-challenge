@@ -8,7 +8,8 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(params[:player1])
+    @game = Game.create
+    @game.set_players(params[:player1])
     redirect to '/play'
   end
 
@@ -21,14 +22,15 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @game.set_player_choice(params[:choice].to_sym)
-    @game.set_auto_choice
+    @game.player1.set_choice(params[:choice].to_sym)
+    @game.computer.random_choice
+    @game.set_choices
     @game.decide_winner
     redirect to '/result'
   end
 
   get '/result' do
-    erb :result
+    erb @game.result
   end
 
   run! if app_file == $0

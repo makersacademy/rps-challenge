@@ -2,7 +2,7 @@
 
 Introduction
 -------
-Is your marketing team stressed out?  Of course they are!  The developer geeks look to them to be the cool ones in the office.  Every day they have to create an ironically un-ironic outfit and attend techno tea-dance performance workshops in Clapton.  Add in the costs of artisanal beard maintenance, and sometimes even having to do some work..  You can understand why they are feeling frazzled!
+Is your marketing team stressed out?  Of course they are!  The developer geeks look to them to be the cool ones in the office.  Every day they have to create an ironically un-ironic outfit and attend techno tea-dance performance workshops in Clapton.  Add in the costs of artisanal beard maintenance, and you can understand why they are feeling frazzled!
 
 The RPS Marketeer stress relief programme is the solution you are looking for.  
 
