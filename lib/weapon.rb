@@ -26,8 +26,8 @@ class Weapon
 
     def initialize
       @choice = { rock: "Rock",
-        paper: "Paper",
-        scissors: "Scissors"
+                  paper: "Paper",
+                  scissors: "Scissors"
       }
     end
 
