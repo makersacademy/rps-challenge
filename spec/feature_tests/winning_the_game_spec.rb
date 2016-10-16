@@ -23,7 +23,7 @@ feature 'Winning the game' do
     sign_in_and_play
     click_button 'ROCK'
     click_button 'Play Again'
-    expect(page).to have_content "Felix challenges Edward to a game of ROCK, PAPER, SISSORS!"
+    expect(page).to have_content "Felix challenges the Champion to a game of ROCK, PAPER, SISSORS!"
   end
 
 
