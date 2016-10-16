@@ -18,10 +18,24 @@ end
 
 feature "result" do
 
-  scenario 'Player selects Scissors, Computer selects Paper. Player 1 wins.' do
+  scenario 'Player selects Scissors, Computer selects Scissors. Draw.' do
+    allow_any_instance_of(Game).to receive(:set_computer_selection).and_return('Scissors')
     sign_in_and_play
     click_button("Scissors")
-    allow(Game.instance).to receive(:computer_choice).and_return "Paper"
+    expect(page).to have_content ("Draw")
+  end
+
+  scenario 'Player selects Paper, Computer selects Scissors. Draw.' do
+    allow_any_instance_of(Game).to receive(:set_computer_selection).and_return('Scissors')
+    sign_in_and_play
+    click_button("Paper")
+    expect(page).to have_content ("Computer chose Scissors. Computer beats Player 1")
+  end
+
+  scenario 'Player selects Rock, Computer selects Paper. Draw.' do
+    allow_any_instance_of(Game).to receive(:set_computer_selection).and_return('Paper')
+    sign_in_and_play
+    click_button("Scissors")
     expect(page).to have_content ("Computer chose Paper. Player 1 beats Computer")
   end
 

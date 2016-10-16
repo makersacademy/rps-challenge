@@ -3,13 +3,14 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player, :computer, :computer_choice
+  attr_reader :player, :computer
 
   @@choices = ["Rock", "Paper", "Scissors"]
 
   def initialize(player, computer)
     @player = player
     @computer = computer
+    @set_computer_selection
   end
 
   def self.create(player, computer)
@@ -28,16 +29,19 @@ class Game
     @player.selection(choice)
   end
 
+  def set_computer_selection
+    @computer.selection
+  end
+
   def result
     player_choice = @player.choice
-    computer_choice = @computer.selection
+    computer_choice = set_computer_selection
     game_logic(player_choice,computer_choice)
   end
 
   private
 
   def game_logic(player_choice, computer_choice)
-    # See if player one wins. If not, player 2 wins
     if player_choice == computer_choice
       return "Draw"
     end
