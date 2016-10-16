@@ -12,9 +12,9 @@ describe Player do
 
   describe '#move' do
     it 'contains the players choice' do
+      allow(move).to receive(:to_sym).and_return(:rock)
       dave.move(move)
-      expect(dave.player_move).to eq move
+      expect(dave.player_move).to eq :rock
     end
   end
-
 end

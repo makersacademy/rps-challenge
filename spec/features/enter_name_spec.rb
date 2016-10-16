@@ -5,7 +5,7 @@ feature 'enter name' do
     visit('/')
     fill_in :player_name, with: 'Master Romshambollah'
     click_button 'Submit'
-    expect(page).to have_content 'Welcome Master Romshambollah, This is RoboPlayer, you ready to dance?'
+    expect(page).to have_content 'Welcome Master Romshambollah... This is Kitty, you ready to dance?'
   end
 
 

@@ -7,11 +7,11 @@ class Game
             paper: :rock
           }
 
-  def Game.new_game(player)
+  def self.new_game(player)
     @game = Game.new(player)
   end
 
-  def Game.instance
+  def self.instance
     @game
   end
 
