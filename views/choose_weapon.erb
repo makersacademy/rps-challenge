@@ -1,5 +1,7 @@
 <body class='start-game'>
   <div>
+    <h1 class='weapon'>Welcome, <%= @game.player1.name %>?</h1>
+
     <h1 class='headers top'>Let's play...</h1>
     <h1 class='headers top'>Rock, paper, scissors!</h1>
 
@@ -8,5 +10,7 @@
     <a href='/choose-weapon' class='choose-weapon-button'>Rock</a>
     <a href='/choose-weapon' class='choose-weapon-button'>Paper</a>
     <a href='/choose-weapon' class='choose-weapon-button'>Scissors</a>
+
+    <h1 class='weapon'>You chose <%= @game.player1.player_choice %>.</h1>
   </div>
 </body>
