@@ -44,6 +44,27 @@ describe Game do
     end
   end
 
+  describe '#set_status' do
+    it 'tells a losing weapon it has lost' do
+      loser_rock = Weapon.new(:rock)
+      winner_paper = Weapon.new(:paper)
+      game = Game.new(loser_rock, winner_paper)
+      game.add_submitted_weapons
+      game.evaluate
+      game.set_statuses
+      expect(loser_rock.won).to eq false
+    end
+    it 'tells a losing weapon it has lost' do
+      loser_rock = Weapon.new(:rock)
+      winner_paper = Weapon.new(:paper)
+      game = Game.new(loser_rock, winner_paper)
+      game.add_submitted_weapons
+      game.evaluate
+      game.set_statuses
+      expect(winner_paper.won).to eq true
+    end
+  end
+
   # describe '#tie?' do
   #   it 'determines when a game is a tie' do
   #     game = Game.new(rock, rock)
@@ -51,7 +72,7 @@ describe Game do
   #     expect(game.tie?).to eq true
   #   end
   # end
-  # 
+  #
   # describe '#missing_element' do
   #   it 'returns the element that was not used' do
   #     game = Game.new(rock, scissors)
