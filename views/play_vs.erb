@@ -1,25 +1,40 @@
-<h1> <%=@game.player1.name %> vs. <%=@game.player2.name %> </h1>
+<body>
 <form action="/play2_vs" method="get" id="pick"> </form>
 
-  <div class="left" >
+  <div  >
+  <h1> <%=@game.player1.name %> vs. <%=@game.player2.name %> </h1>
   <h2><%=@game.player1.name %>'s turn:</h2>
-  <h2><%=@game.player2.name %>, please close your eyes :)</h2>
+  <h3><%=@game.player2.name %>, please close your eyes :)</h3>
   <button class="button2" type="submit" name="choice1" form="pick" value="rock"><span>Rock </span></button>
   <button class="button3" type="submit" name="choice1" form="pick" value="paper"><span>Paper </span></button>
   <button class="button" type="submit" name="choice1" form="pick" value="scissors"><span>Scissors </span></button>
   </div>
 
-
+</body>
 <style>
-  .left{
-    float: left;
-    width: 50%;
-  }
 
-  .right{
-    float: left;
-    width: 50%;
-  }
+body{
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 300%
+}
+
+h2{
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 200%
+}
+
+h3{
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 100%
+}
+
 
   .button {
     display: inline-block;
