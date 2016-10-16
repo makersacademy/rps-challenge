@@ -7,6 +7,7 @@ class CSB < Sinatra::Base
 
   before do
     @player = Player.read
+    @ash = Player.read
   end
 
   get '/' do
@@ -15,14 +16,18 @@ class CSB < Sinatra::Base
 
   post '/setup' do
     @player = Player.create(params[:player_name])
+    @ash = Player.new("Ash")
+    p @player.name
     redirect '/play'
   end
 
   get '/play' do
+    p @player.name
     erb :play
   end
 
   post '/input' do
+    p @player.name
     if    params[:charmander]
        @player.pokemon = params[:charmander]
     elsif params[:squirtle]
@@ -34,7 +39,6 @@ class CSB < Sinatra::Base
   end
 
   get '/result' do
-    @comp_pokemon = ["CHARMANDER", "SQUIRTLE", "BULBASAUR"].sample
     erb :result
   end
 

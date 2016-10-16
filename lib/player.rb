@@ -17,4 +17,8 @@ class Player
     @player
   end
 
+  def pokemon_selector
+    ["CHARMANDER", "SQUIRTLE", "BULBASAUR"].sample
+  end
+
 end
