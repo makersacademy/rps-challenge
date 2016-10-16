@@ -9,7 +9,8 @@ class RPSApp < Sinatra::Base
   before { @player_one = Player.return_player_one }
   before { @player_two = Player.return_player_two }
   before { @current_game = Game.return_current_game }
-  before { @weapon_one = Weapon.return_weapon }
+  before { @weapon_one = Weapon.return_weapon_one }
+  before { @weapon_two = Weapon.return_weapon_two }
 
   get '/' do
     erb :intro
@@ -23,22 +24,48 @@ class RPSApp < Sinatra::Base
   end
 
   get '/choices' do
+    $choice_1 = params[:choice_1]
     erb :choices
   end
 
   post '/choices_2' do
-    choice_1 = (params[:choice_1]).to_sym
-    @weapon_one = Weapon.create(choice_1)
+    choice_1 = params[:choice_1]
+    @weapon_one = Weapon.create_weapon_one
+    if choice_1 == "ROCK"
+      @weapon_one.choose_rock
+    elsif choice_1 == "PAPER"
+      @weapon_one.choose_paper
+    else
+      @weapon_one.choose_scissors
+    end
     erb :choices_2
   end
 
   get '/evaluate' do
-    choice_2 = params[:choice_2].nil? ? params[:choice_2] : (params[:choice_2]).to_sym
-    weapon_two = Weapon.new(choice_2)
-    weapon_two.computer_choice
-    @current_game = Game.create(@weapon_one, weapon_two)
+
+    choice_2 = params[:choice_2]
+    choice_1 = params[:choice_1]
+    @weapon_two = Weapon.create_weapon_two
+    if @player_two.name == :the_computer
+      @weapon_one = Weapon.create_weapon_one
+      if choice_1 == "ROCK"
+        @weapon_one.choose_rock
+      elsif choice_1 == "PAPER"
+        @weapon_one.choose_paper
+      else
+        @weapon_one.choose_scissors
+      end
+      @weapon_two.computer_choice
+    elsif choice_2 == "ROCK"
+      @weapon_two.choose_rock
+    elsif choice_2 == "PAPER"
+      @weapon_two.choose_paper
+    else
+      @weapon_two.choose_scissors
+    end
+    @current_game = Game.create(@weapon_one, @weapon_two)
     @player_one.store_choice(@weapon_one.choice)
-    @player_two.store_choice(weapon_two.choice)
+    @player_two.store_choice(@weapon_two.choice)
     redirect '/outcome'
   end
 

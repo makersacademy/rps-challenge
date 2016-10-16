@@ -1,4 +1,4 @@
-<h1>  Test <%= @choice_1 %> </h1>
+<% if  @player_two.name != :the_computer %>
 <h1>  Welcome, <%= @player_two.name %> </h1>
 <h2> You are playing against <%= @player_one.name %>  </h2>
 
@@ -13,3 +13,4 @@
 <form action="/evaluate" method="get">
   <input type="submit" name="choice_2" value="SCISSORS">
 </form>
+<% end %>

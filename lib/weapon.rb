@@ -2,34 +2,42 @@ class Weapon
 
   attr_reader :choice, :won
 
-  def self.return_weapon
+  def self.return_weapon_one
     @weapon_one
   end
 
-  def self.create(choice)
-    @weapon_one = Weapon.new(choice)
+  def self.create_weapon_one
+    @weapon_one = Weapon.new
   end
 
-  def initialize(choice)
+  def self.return_weapon_two
+    @weapon_one
+  end
+
+  def self.create_weapon_two
+    @weapon_one = Weapon.new
+  end
+
+  def initialize
     @choice = choice
     @won = nil
   end
 
-  # def choose_rock
-  #   @choice = :rock
-  # end
-  #
-  # def choose_paper
-  #   @choice = :paper
-  # end
-  #
-  # def choose_scissors
-  #   @choice = :scissors
-  # end
+  def choose_rock
+    @choice = :rock
+  end
+
+  def choose_paper
+    @choice = :paper
+  end
+
+  def choose_scissors
+    @choice = :scissors
+  end
 
 
   def computer_choice
-    @choice = [:rock, :paper, :scissors].sample if @choice == nil
+    @choice = [:rock, :paper, :scissors].sample
   end
 
   def set_win
