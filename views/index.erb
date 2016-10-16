@@ -1,9 +1,71 @@
-<h1>
-  <p>Welcome to the battlefield!</p>
-  <p>Please enter your name below</p>
-  </h1>
+<body>
+  <div class="upper">
+    <h1>
+      <p>Welcome to the dawn of computer generated fun!</p>
+      <p>The rules are simple:</p>
+      <p>Rock wears down scissors,
+      scissors slice paper; and
+      paper encompasses rock.</p>
+    </h1>
+  </div>
 
-<form action="/name" method="post">
-<input type="text" name="player1">
-<input type="submit" value="Press on">
-</form>
+  <div class="middle">
+    <h2>
+    <p>Enter your name to start the game:</p>
+  </h2>
+  </div>
+
+  <div class="lower">
+    <form action="/name" method="post">
+      <input type="text" name="player1">
+      <input type="submit" value="Press on">
+    </form>
+    </div>
+
+  </body>
+
+  <style>
+
+  body {
+    background-image: url('http://cdn.paper4pc.com/images/rock-paper-scissors-wallpaper-3.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+
+  .upper {
+    color: #0B3240;
+    text-align: center;
+    font-family: 'Monaco', monospace;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 36.3px;
+
+  }
+
+  .middle {
+    color: #0B3240;
+    text-align: center;
+    font-family: 'Monaco', monospace;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 36.3px
+  }
+
+  .lower {
+      text-align: center;
+  }
+
+  input[type="text"] {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #16647F;
+    justify-content: center
+  }
+
+  input[type="submit"] {
+
+  }

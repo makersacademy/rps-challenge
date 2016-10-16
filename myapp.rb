@@ -4,8 +4,6 @@ require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
-  # enable :sessions
-
   before do
     @game = Game.instance
   end
