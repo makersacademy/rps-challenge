@@ -18,7 +18,7 @@ require 'byebug'
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
-require_relative 'features/web_helpers'
+require_relative 'features/web_helpers.rb'
 
 
 Capybara.app = Rps

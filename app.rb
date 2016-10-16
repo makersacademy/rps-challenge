@@ -1,22 +1,39 @@
 require 'sinatra/base'
+require_relative 'lib/player.rb'
+require_relative 'lib/computer.rb'
+require_relative 'lib/game.rb'
 
 class Rps < Sinatra::Base
 
-  enable :sessions
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
-    'Hello rps!'
     erb(:index)
   end
 
   post '/name' do
-     session[:player] = params[:player]
-     redirect '/play'
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    @game = Game.create(player, computer)
+    redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
     erb(:play)
+  end
+
+  post '/match' do
+    @game.player.choose(params[:choice])
+    @game.computer.comp_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_choice = session[:player_choice]
+    @comp_choice = session[:comp_choice]
+    erb(:result)
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
