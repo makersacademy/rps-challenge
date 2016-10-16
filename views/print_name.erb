@@ -2,7 +2,21 @@
 <body>
     <h1>Rock Paper Scissors</h1>
 
- Hello <%= @player %>! Are you ready to play?
+ <h2>Hello <%= @player %>! Are you ready to play?</h2>
+
+ Please select Rock, Paper, or Scissors.
+
+ <form action="/play">
+    <input type="submit" value="Rock" />
+    </form>
+
+<form action="/play">
+  <input type="submit" value="Paper" />
+  </form>
+
+<form action="/play">
+  <input type="submit" value="Scissors" />
+  </form>
 
 </body>
 </html>
