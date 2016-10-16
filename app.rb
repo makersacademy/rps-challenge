@@ -32,6 +32,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     @game.move(params[:choice])
+    @game.computer_move
     redirect '/outcome'
   end
 

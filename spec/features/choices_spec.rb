@@ -1,7 +1,7 @@
 require './app'
 require_relative 'web_helpers'
 
-feature 'can choose rock, paper or scissors' do
+feature 'player and computer can choose rock, paper or scissors' do
   before { sign_in_and_play }
 
   scenario 'player chooses rock and page displays choice' do
@@ -19,4 +19,8 @@ feature 'can choose rock, paper or scissors' do
   	expect(page).to have_content "You chose Scissors!"
   end
 
+  scenario 'computer chooses scissors, rock or paper' do
+    click_button "Scissors"
+    expect(page).to have_content(/Computer\schose\sScissors|Rock|Paper!/)
+  end
 end
