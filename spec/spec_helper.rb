@@ -2,7 +2,10 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'lib/my_app.rb')
+require File.join(File.dirname(__FILE__), '..', 'rock.rb')
+# require File.join(File.dirname(__FILE__), '..', 'lib/views/game.rb')
+# require File.join(File.dirname(__FILE__), '..', 'lib/views/robot.rb')
+# require File.join(File.dirname(__FILE__), '..', 'lib/views/player.rb')
 
 require 'capybara'
 require 'capybara/rspec'

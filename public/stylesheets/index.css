@@ -1,0 +1,35 @@
+
+body {
+  background-image:
+    linear-gradient(
+      #A0FFC7, #7AC9E8, #C8C1FF, #E6A4E8, #FFBFB4
+    )
+  }
+h1{
+  text-align: center;
+  font: 80px Helvetica, Sans-Serif;
+  color: orange
+  }
+
+  button {
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+  .home{
+   text-align: center;
+  }
+
+
+  .money {
+    height: 447px;
+    width: 251px;
+  }
+
+@keyframes flash {
+    from {color: yellow;}
+    to {color: orange;}
+}
