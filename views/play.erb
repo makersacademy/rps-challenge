@@ -10,12 +10,25 @@
   <p>
     <%=@player1.attack ? "#{@player1.name} selected <b>#{@player1.attack.capitalize}</b>" : ''%>
   </p>
-  <p>
-    <%=@player2.attack ? "#{@player2.name} selected <b>#{@player2.attack.capitalize}</b>" : ''%>
-  </p>
 
-  <h3>
-    <%=@winner.nil? ? '' : @winner ? "#{@winner.name} wins!" : 'no winner, try again'%>
-  </h3>
+  <% if !@winner.nil? %>
+  <div class="winner">
+    <div class="line_separator">-------------------------</div>
+    <p>
+      <img src="images/<%=@player1.attack%>.png" />
+    </p>
+    <p>
+      <img id='bottom_attack' src="images/<%=@player2.attack%>.png" />
+    </p>
+    <div class="line_separator">-------------------------</div>
+    <p>
+      <%=@player2.attack ? "#{@player2.name} selected <b>#{@player2.attack.capitalize}</b>" : ''%>
+    </p>
+
+    <h3>
+      <%=@winner ? "#{@winner.name} wins!" : 'no winner, try again'%>
+    </h3>
+  </div>
+  <% end %>
 
 </body>
