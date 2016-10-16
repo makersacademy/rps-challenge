@@ -1,5 +1,5 @@
-require 'robot'
-require 'player'
+require './views/robot'
+require './views/player'
 class Game
 
   NEUTRAL_SCORE = 0
@@ -19,8 +19,13 @@ class Game
     @score -=1 if @robot_wins.include?(@turn)
   end
 
+  def input_random_choice(random_pick)
+    turn[1] = random_pick
+  end
+
   def play
-    @robot.generate_robot_choice
+    @robot.randomise_robot
+    input_random_choice(@robot.robot_pick)
     score_calculator
   end
 

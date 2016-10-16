@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = Player.new('name',params[:weapon])
+    @player = Player.new(params[:weapon],'name')
     @game = Game.new(@player.choice)
     @game.play
     erb (:play)
