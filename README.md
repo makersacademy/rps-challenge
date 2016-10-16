@@ -1,5 +1,15 @@
 # RPS Challenge
 
+Follow these instructions to play Rock, Paper, Scissors!
+1) git clone https://github.com/meeshyep/rps-challenge
+2) cd rps-challenge
+3) bundle
+4) rackup
+
+![Screenshot] (http://dreamatico.com/data_images/hand/hand-7.jpg)
+![Screenshot] (http://dri6hp6j35hoh.cloudfront.net/news/u/2013/04/clinched-fist-ss.jpg)
+![Screenshot] (https://syracuserocks.files.wordpress.com/2011/02/peace.jpg)
+
 Task
 ----
 
