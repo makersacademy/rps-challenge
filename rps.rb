@@ -10,14 +10,22 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    $game = Game.new(params[:Player1])
+  post '/name' do
+    player1 = Player.new(params[:name])
+    player2 = Computer.new
+    $game = Game.new(player1, player2)
     redirect '/choose-weapon'
   end
 
   get '/choose-weapon' do
     @game = $game
-    erb @game.result
+    erb :choose_weapon
+  end
+
+  post '/weapon' do
+    $game.player1.weapon = params[:weapon].to_sym
+    $game.player2.choose
+    redirect :winner
   end
 
   get '/winner' do
