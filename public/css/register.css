@@ -64,10 +64,10 @@ html {
 .smallprint p {
   font-size: 40px;
   font-family: 'ottomedium';
-  color: black;
+  color: white;
   text-align: left;
   float:left;
-  text-shadow: 4px 4px 4px white;
+  text-shadow: 4px 4px 4px black;
   margin-top: 5%;
   margin-left: 5%;
 }
