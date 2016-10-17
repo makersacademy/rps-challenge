@@ -55,7 +55,7 @@ input[value="Play Again"] {
 }
 
 input[value="New Challenger"] {
-  cursor: url(https://www.recalbox.com/assets/images/pacman-mini.png), auto;
+  cursor: url(http://pixeljoint.com/files/icons/mr_spock.gif), auto;
 }
 
 input:hover {
