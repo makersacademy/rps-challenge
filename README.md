@@ -1,92 +1,28 @@
 # RPS Challenge
 
-Instructions
--------
+## Setup
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+To set up the app locally:
 
-Task 
-----
+1. Clone the following repo to your desktop: https://github.com/wirsindpapst/rps-challenge.git
+2. Navigate to the folder created
+3. In your chosen terminal run 'bundle'
+4. Initiate a server session by running 'ruby RPSApp.rb'
+5. In your browser of choice, enter 'http://localhost:4567/outcome'
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Play
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+It's pretty straightforward ...
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+* Enter your name(s) in the field provided, if you are playing against the computer, leave the 'Player 2' field blank
+* Click the option you wish to choose (player 1 and 2, if playing against the computer this will be chosen randomly)
+* The outcome of the match up will be displayed on the screen, you will then have the option to:
+ - Play again with the current player
+ - Return to the main screen to enter a new set of players
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## Notes on the design
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+- Visually, I have went for a crisp, clean and timeless aesthetic through the use of black Times New Roman against white (read anything I did in the limited time available to prettify would have made it look naff...)
+- The build includes creation of a specific Weapon object, to store the choice of weapon and to be passed into the Game object. It then acts as intermediary between the Game and the Player class
+- Simple logic in the controller and views was favoured over proliferating multiple unnecessary routes
+- Creation of a specific Computer object was not implemented as I cannot see the advantage in doing so, and builds unnecessary complexity.
