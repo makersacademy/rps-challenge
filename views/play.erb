@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<body>
+  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+  <br />
+  <br />
+  <h2>Let the games begin!</h2>
+  <br />
+  <form action="/weapon_choice" method="post">
+    <section class="first">
+    <input type="radio" name="weapon_choice" value="Rock", id="Rock">Rock</input>
+    <input type="radio" name="weapon_choice" value="Paper" id="Paper">Paper</input>
+    <input type="radio" name="weapon_choice" value="Scissors" id="Scissors">Scissors</input>
+    </section>
+  <br />
+    <input type='submit' value='Make your Choice'>
+  </form>
+</body>
+
+<div>
+    <img
+src='https://cdn.meme.am/instances/400x/56795489.jpg'>
+</div>
