@@ -53,17 +53,33 @@ attr_reader :list_of_wins, :current_winner, :overall_winner, :player_score, :tru
     player_score == 3 || trump_score == 3
   end
 
-  def reset
-
-  end
-
   def announce_winner
     "Trump wins!" if trump_wins?
     "You win!" if player_wins?
     "It's a draw!" if draw?
   end
 
-# private
+  def calculate_overall_winner
+    calculate_overall_winner_private
+  end
+
+  def calculate_current_winner
+    calculate_current_winner_private
+  end
+
+  def calculate_outcome
+    calculate_outcome_private
+  end
+
+  def update_score
+    update_score_private
+  end
+
+  def update_list_of_wins
+    update_list_of_wins_private
+  end
+
+private
 
   def player_wins?
     @current_winner == "#{@player.name}"
@@ -78,27 +94,27 @@ attr_reader :list_of_wins, :current_winner, :overall_winner, :player_score, :tru
   end
 
 
-  def calculate_overall_winner
+  def calculate_overall_winner_private
     @overall_winner = "#{@player.name}" if @player_score == 3
     @overall_winner = "Trump" if @trump_Score == 3
   end
 
-  def calculate_current_winner
+  def calculate_current_winner_private
     @current_winner = "#{@player.name}" if calculate_outcome == 'Wins'
     @current_winner = 'Trump' if calculate_outcome == 'Loses'
     @current_winner = :draw if calculate_outcome == 'Draws'
   end
 
-  def update_score
+  def update_score_private
     @player_score += 1 if player_wins?
     @trump_score += 1 if trump_wins?
   end
 
-  def update_list_of_wins
+  def update_list_of_wins_private
     @list_of_wins << @current_winner
   end
 
-  def calculate_outcome
+  def calculate_outcome_private
     RULES[@player.weapon_choice][@trump.weapon_choice]
   end
 
