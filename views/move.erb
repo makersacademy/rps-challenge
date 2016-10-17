@@ -1,32 +1,42 @@
+
 <div class="intro">
-  <h1><p><%= @game.player.name %>     vs     Computer </p></h1>
+  <h1>You chose <%= @game.player_move.to_s.capitalize %>!</h1><br>
+  <h1>Computer chose <%= @game.pc_move.to_s.capitalize %>!</h1>
+</div><br>
+
+<div class="outcome">
+  <% if @game.draw? %>
+    <h1><%= @game.player.name %>, You draw!</h1>
+  <% elsif @game.win? %>
+    <h1><%= @game.player.name %>, You win!<h1>
+  <% elsif @game.lose? %>
+    <h1><%= @game.player.name %>, You lose!</h1>
+  <% end %>
+</div><br>
+
+<div>
+  <form action="/play">
+      <input class="button" type="submit" value="Play Again">
+  </form>
 </div>
 
-<div class="move">
-  <form action="/rock" method="post">
-    <img src="/img/rock.png" /><br><br>
-    <input type="submit" name="shape" value="Rock"><br><br>
-  </form>
-
-  <form action="/paper" method="post">
-    <img src="/img/paper.png" /><br><br>
-    <input type="submit" name="shape" value="Paper"><br><br>
-  </form>
-
-  <form action="/scissors" method="post">
-    <img src="/img/scissors.png" /><br><br>
-    <input type="submit" name="shape" value="Scissors"><br><br>
-  </form>
+<div>
+  <footer>Made by Manuela Sabatino</footer>
 </div>
-
 
 <style>
 
-  .intro {
+  body {
+    background-image: url("https://cdn0.vox-cdn.com/thumbor/F8gBVmTvA3CNUZxexj4V05T0qHk=/17x0:758x417/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/48958083/rockpaperscissors.0.0.png");
+    background-size: cover;
+    text-transform: capitalize;
+    color: #fff;
     text-align: center;
-    padding: 20px 0 50px 0;
     text-shadow: 5px 5px 5px #666666;
-    color: #000;
+  }
+
+  .intro, .outcome, form  {
+    padding: 20px 0 50px 0;
   }
 
   form input {
@@ -60,8 +70,15 @@
       text-decoration: none;
   }
 
-  .move {
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
     text-align: center;
+    color: #000;
   }
 
 </style>
