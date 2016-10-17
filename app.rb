@@ -26,7 +26,6 @@ enable :sessions
   post "/names" do
     session[:username] = params[:username]
     session[:password] = params[:password]
-
     @@game = Rps.new
     redirect to("/main")
   end
