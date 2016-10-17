@@ -1,0 +1,18 @@
+<h1><%= @game.player_1_choice.capitalize %> Vs. <%= @game.choice.capitalize %></h1>
+<br>
+<% if @game.winner != '' %>
+The winner is...<%= @game.winner %>!
+<%end%>
+<% if @game.winner == '' %>
+It's a tie!
+<%end%>
+<br>
+<h3> Scores </h3>
+<br>
+You: <%= @game.player_1_score %>
+<br>
+The computer: <%= @game.computer_score %>
+<br>
+<form action="/reset" method="post">
+<input type="submit" value="Play again">
+</form>
