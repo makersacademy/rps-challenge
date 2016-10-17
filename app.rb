@@ -40,6 +40,8 @@ class RockPaperScissors < Sinatra::Base
     else
       "#{@game.player_2.name} wins!"
     end
+    @player_1_name = @game.player_1.name
+    @player_2_name = @game.player_2.name
     @player_1_move = result[:moves].first
     @player_2_move = result[:moves].last
     erb :result
