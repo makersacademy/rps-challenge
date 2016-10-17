@@ -10,7 +10,7 @@ I would like to be able to play rock/paper/scissors
 
 ![screenshot]
 
-(screenshot)
+(Screen Shot 2016-10-17 at 10.28.36 AM.png)
 
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
