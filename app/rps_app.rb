@@ -24,7 +24,7 @@ class RPSApp < Sinatra::Base
   end
 
   get '/choices' do
-    $choice_1 = params[:choice_1]
+    choice_1 = params[:choice_1]
     erb :choices
   end
 
