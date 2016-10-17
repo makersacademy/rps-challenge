@@ -4,7 +4,7 @@ class Game
 
   R_P_S = [:rock, :paper, :scissors]
 
-  attr_reader :weapon_one, :weapon_two, :submitted_weapons, :winner
+  attr_reader :weapon_one, :weapon_two, :winner
 
   def self.return_current_game
     @game
@@ -17,7 +17,7 @@ class Game
   def initialize(weapon_one, weapon_two)
     @weapon_one = weapon_one
     @weapon_two = weapon_two
-    @submitted_weapons =[]
+    @submitted_weapons = []
     @winner = nil
   end
 
@@ -44,6 +44,10 @@ class Game
     else
       @submitted_weapons.each { |x| x.choice == @winner ? x.set_win : x.set_lose }
     end
+  end
+
+  def submitted_weapons
+    @submitted_weapons.dup
   end
 
   private
