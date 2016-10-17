@@ -7,14 +7,17 @@ To install this app, go to the directory of your choice and follow these instruc
 $ git clone git@github.com:francesmx/rps-challenge.git
 $ cd rps-challenge
 $ bundle
-$ rerun app.rb
 ```
 If you want to, you can view test coverage:
 ```
 $ rspec
 $ coveralls report
 ```
-To play with the app using the web interface, visit  [http://localhost:4567/](http://localhost:4567/) in your browser.
+To play with the app using the web interface, start the server:
+```
+$ rerun app.rb
+```
+then visit  [http://localhost:4567/](http://localhost:4567/) in your browser.
 
 Screenshots
 ------------
@@ -33,7 +36,7 @@ My approach to this challenge
 ```
 Player --> Registers name
 Player --> Views choices <-- Game
-Player --> Selects choice <-- Game
+Player --> Selects choice <-- Game (or Player?)
 Player --> Views result <-- Game
 Player --> Plays again <-- Game (same player)
 Player --> Starts over <-- New Game (new player)
@@ -54,7 +57,7 @@ Then attempted to integrate model into the view / controller
 
 Refactoring
 -------------------------
-I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods really horrific.
+I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods horrific.
 
 After making the program fully functional with all tests passing, I then looked at the review documentation to see where I could make further improvements.
 
@@ -65,10 +68,13 @@ These came in the form of:
 3. Creating a Computer class
 4. Creating separate views for different results, e.g. win, lose, draw
 
-I also installed Bootstrap to make it slightly more attractive looking (although it's still not fabulous) and bunged in a few images and giphys to make it more fun.
+I also installed Bootstrap to make it slightly more attractive and bunged in a few images and giphys to make it more fun.
 
 Things I didn't manage
 ----------------------
 1. To iterate over the Game::CHOICES array to avoid duplicate HTML in the form where the user chooses their move.
 2. To improve the styling (better spacing, margins, use of space on a larger screen)
 3. Any of the bonus functionality
+
+Enjoy! :)
+----------------------
