@@ -4,9 +4,10 @@ class Player
 
   def initialize(name)
     @name = name
+    @picks = nil
   end
 
-	def pick
-		@picks
+	def player_pick(picks)
+		@picks = picks
 	end
 end

@@ -18,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/pick' do
-    @picks = params[:picks]
+    $player.player_pick(params[:picks])
     redirect '/game'
   end
 
