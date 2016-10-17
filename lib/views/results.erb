@@ -35,7 +35,7 @@ p {
 
 <body>
 
-<p>The Winner is: <%=@game.winner%> </p>
+<p>The Winner is: <%=Game.game.winner%>. Computer chose <%=Game.game.player2_selection%> <%=Game.game.player1.selection%> </p>
 
 <form action="/play">
   <input type="submit" value="Continue!">

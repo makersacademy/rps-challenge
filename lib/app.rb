@@ -12,18 +12,24 @@ class Battle < Sinatra::Base
   end
 
   post '/who' do
-    Game.store = Game.new(params[:player1])
+    Game.store(params[:player1])
+    redirect 'play'
+    p params[:player1]
   end
 
-  get'/play' do
-    "hello world"
-    # @game = Game.store
-    # erb(:player_1_select)
+  post '/play' do
+    Game.store(params[:player1])
+
+    Game.player1_selection(params[:choice])
+    p params[:player1]
+    p @winner
+    erb(:player_1_select)
   end
 
   get '/result' do
-  @game = Game.store
-  @game.attack(@game.not_turn)
+  Game.game.declare_winner
+  p params[:player1]
+  p @winner
   erb(:results)
   end
 

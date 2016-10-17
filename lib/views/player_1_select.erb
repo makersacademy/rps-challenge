@@ -14,7 +14,7 @@ body {
 
 <body>
 
-<p>Welcome, <%=@game.player1.name%>! Please make your selection!</p>
+<p>Welcome, <%=Game.game.player1.name%>! Please make your selection!</p>
 
   <form action="/result">
       <input type="submit" value="Rock" style="float: centre;">
@@ -27,6 +27,6 @@ body {
     <form action="/result">
       <input type="submit" value="Scissors" style="float: centre;">
     </form>
-<p><%=@game.player1.name%> - Score:<%=@game.player1.tally%>! <%=@game.winner%> is currently winning!</p>
+<p><%=Game.game.player1.name%> - Score:<%=Game.game.player1.tally%>! <%=Game.game.winner%> is currently winning!</p>
 
 </html>

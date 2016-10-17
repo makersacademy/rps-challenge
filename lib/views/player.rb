@@ -5,7 +5,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @tally = 0
     @selection = nil
   end
 
