@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+body {
+  background-color: #DCE2EE;
+}
+</style>
+
+<body>
+  <div class="container">
+    <div class="span12 col-centred text-center">
+    <h1><%= Game.game.player_name %> vs Computer</h1>
+    </div>
+
+    <div class="span12 col-centred text-center">
+      <% if Game.game.player_choice == nil %>
+      <div class="btn-group">
+        <form action="/pick-choice" method="post">
+          <input type="submit" class="btn btn-default" name="choice" value="rock">
+          <input type="submit" class="btn btn-default" name="choice" value="paper">
+          <input type="submit" class="btn btn-default" name="choice" value="scissors">
+        </form>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="span12 col-centred text-center">
+      <% if Game.game.player_choice != nil%>
+        <h3>Your choice: <%= Game.game.player_choice %></h3>
+
+        <% if @winner == nil %>
+          <form action="/show-winner" method="post">
+            <input type="submit" class="btn btn-default" value="Show winner">
+          </form>
+        <% end %>
+
+        <% if @winner != nil %>
+          <h3>Computer's choice: <%= Game.game.computer_choice %></h3><br>
+          <h2><%= @winner %> wins!</h2><br>
+          <img src="http://woordup.com/wp-content/uploads/2012/12/rock-paper-scissors.jpg">
+          <form action="/" method="get">
+            <input type="submit" class="btn btn-default" value="Yes">
+          </form>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</body>
