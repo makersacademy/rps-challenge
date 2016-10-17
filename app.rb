@@ -25,7 +25,6 @@ class RockOff < Sinatra::Base
 
   post "/show-winner" do
     Game.game.set_computer_choice
-    p Game.game.computer_choice
     @winner = Game.game.set_winner
     erb(:fight)
   end
