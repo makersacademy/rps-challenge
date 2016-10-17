@@ -4,7 +4,7 @@ class Game
 
   R_P_S = [:rock, :paper, :scissors]
 
-  attr_reader :weapon_one, :weapon_two, :r_p_s, :submitted_weapons, :winner
+  attr_reader :weapon_one, :weapon_two, :submitted_weapons, :winner
 
   def self.return_current_game
     @game

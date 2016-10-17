@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :name, :play_history, :outcome_history
+  attr_reader :name
 
   def self.create_player_one(name)
     @player_one = Player.new(name)
@@ -30,6 +30,14 @@ class Player
 
   def store_outcome(outcome)
     @outcome_history << outcome
+  end
+
+  def play_history
+    @play_history.dup
+  end
+
+  def outcome_history
+    @outcome_history.dup
   end
 
 end
