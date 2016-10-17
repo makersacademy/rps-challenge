@@ -10,7 +10,7 @@ I would like to be able to play rock/paper/scissors
 
 ![screenshot]
 
-(https://rps-challenge/screen_shot.png)
+(https:///Users/jiniMcoroneo/projects/Course/week_3/challenge/rps-challenge/README.md)
 
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
