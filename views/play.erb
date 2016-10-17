@@ -1,0 +1,62 @@
+<style type="text/css">
+
+body {
+  background-image:
+    linear-gradient(
+      #A0FFC7, #7AC9E8, #C8C1FF, #E6A4E8, #FFBFB4
+    )
+  }
+h1{
+  text-align: center;
+  font: 80px Helvetica, Sans-Serif;
+  color: orange
+  }
+
+  button {
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+  .home{
+   text-align: center;
+  }
+
+
+  .money {
+    height: 447px;
+    width: 251px;
+  }
+
+@keyframes flash {
+    from {color: yellow;}
+    to {color: orange;}
+}
+</style>
+
+<h1><%=@game.turn[0]%> vs <%=@game.turn[1]%></h1>
+
+
+<%if @game.score == 1%>
+<h1>You win!<h1>
+  <img class="money" src="http://rs234.pbsrc.com/albums/ee102/onesolejeanius/194904barack-make-it-rain.gif~c200" alt="make it rain" align="left">
+  <img class="money" src="http://rs234.pbsrc.com/albums/ee102/onesolejeanius/194904barack-make-it-rain.gif~c200" alt="make it rain" align="right">
+<%end%>
+
+<%if @game.score == -1%>
+<h1>You lose!<h1>
+  <img class='lose' src="https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif" align="center">
+<%end%>
+
+<%if @game.score == 0%>
+<h1>You draw!<h1>
+<%end%>
+
+
+<div class="home">
+<form action="/choose" method="get" id="form3">
+  <button type="submit" form="form3" value="home">PLAY AGAIN!</button>
+</form>
+</div>

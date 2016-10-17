@@ -1,0 +1,68 @@
+
+<head>
+  <link rel="stylesheet" href="public/stylesheets/index.css"/>
+</head>
+
+<style type="text/css">
+body {
+  background-image:
+    linear-gradient(
+      #A0FFC7, #7AC9E8, #C8C1FF, #E6A4E8, #FFBFB4
+    )
+  }
+
+
+h1{
+  text-align: center;
+  font: 80px Helvetica, Sans-Serif;
+  animation-name: flash;
+   animation-duration: 0.2s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-play-state: running;
+  }
+
+.rock {
+  height: 447px;
+  width: 251px;
+}
+.paper {
+  height: 400;
+  width: 500;
+}
+.scissors {
+  height: 504px;
+  width: 258px;
+}
+.ImageHolder {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 20px
+}
+
+
+@keyframes flash {
+    from {color: red;}
+    to {color: yellow;}
+}
+
+
+</style>
+
+<body>
+  <h1><%=@name%> pick your player!!</h1>
+
+<div class = ImageHolder>
+  <form action="/play" method="get" id="form2">
+    <img src="https://s11.postimg.org/qqhe7os6r/rock.gif" width="119"  height="67" border="0" alt="http://www.rasaint.net/ - Glitter Graphics" align="left">
+    <img src="https://s13.postimg.org/cmfvjxgqv/Untitled_4.gif" width="280"  height="104" border="0" alt="http://www.rasaint.net/ - Glitter Graphics" align="middle">
+    <img src="https://s22.postimg.org/6ew61s09t/oh_Jmoeaff_E.gif" width="245"  height="67" border="0" alt="http://www.rasaint.net/ - Glitter Graphics" align="right">
+    <br>
+    <input type="image" class="rock" src="http://wim-multimedia.persiangig.com/PNG/The%20Rock/The%20Rock%20004.png" name="weapon" value="rock" align="left">
+    <input type="image" class="paper" src="https://s15.postimg.org/bms6s47h7/paper_cat.png"name="weapon" value="paper" align="middle">
+    <input type="image" class="scissors" src="http://media.popcultcha.com.au/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/u/rub56212-edward-scissorhands-edward-scissorhands-grand-heritage-adult-costume.png" name="weapon" value="scissors" align="right">
+  </form>
+</div>
+<!-- http://i.imgur.com/WhlBc1J.png -->
