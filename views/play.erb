@@ -1,0 +1,28 @@
+<div class="jumbotron">
+
+
+  <h2>Welcome <%=@game.player.name%>!</h2>
+  <h3><%= @game.player.name %> vs <%= @game.computer.name %></h3>
+  <h3>Options:</h3>
+
+  <div class="row">
+          <div class="col-lg-4">
+            <form action="/choice" id="rock" method="post">
+              <input type="hidden" name="choice" value="0">
+              <input class="btn btn-lg btn-success" type="submit" value="Rock">
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <form action="/choice" id="paper" method="post">
+              <input type="hidden" name="choice" value="1">
+              <input class="btn btn-lg btn-success" type="submit" value="Paper">
+            </form>
+         </div>
+          <div class="col-lg-4">
+            <form action="/choice" id="scissors" method="post">
+              <input type="hidden" name="choice" value="2">
+              <input class="btn btn-lg btn-success" type="submit" value="Scissors">
+            </form>
+          </div>
+  </div>
+</div>

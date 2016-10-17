@@ -9,8 +9,8 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
-----
+Task
+---
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -28,65 +28,32 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+What I did
+---
+I started this task by building the back-end of the game first. I unit-tested it and made sure it worked in Pry before thinking about the controller or front-end.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This helped me a lot when thinking about whether to use GET or POST.
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+![Image of Web Sequencing Diagram]
+(https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgUm9jayBQYXBlciBTY2lzc29ycwoKVXNlci0-RnJvbnQtZW5kOiBWaXNpdHMgaW5kZXgKAA8JLT5Vc2VyOiBSZXR1cm5zIGZvcm0AKhJTdWJtaXRzIG5hbWUAMAxBcHA6UG9zABMHIHRvIC9nYW1lCkFwcC0-UGxheWVyOiBDcmVhdGVzIHAACwUKABEGADYGAG4JABUHADMFR2FtZQAsCmdhbWUgdXNpbmcAOQhHYW1lACQbAIFCDmNob2ljZSBib3hlcwCBPhoAIAYAgUoQIACBVQYnAD4GJwCBWgUAIwcAgVwFAIE7B2FkADgJAIE1C1NlbgAPCSB0bwCBQwUAgS8MU2V0AIEVCG9uAIFNDgCDKgtUYWxrcyB0byBmAINBCCB0byBzZWUgcmVzdWx0cwCBIxFBc2sAg0EFABkIIChnZXQpAIJNDWFsbAA4ByBvbgCBCBEAhAIIAFsGAINFBgCEPQpHbwCDYQUAaxMAhEIGVXNlciBnZXQAOAhzCgoKCg&s=napkin)
 
 
-## Bonus level 1: Multiplayer
+Screenshots of the GUI:
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Sign-in screen:
+![/index]
+(https://s21.postimg.org/oh5eiivbn/ss1.png)
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Choose one of the options:
+![/play]
+(https://s21.postimg.org/fan3v8q37/ss2.png)
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Results screen:
+![/result]
+(https://s21.postimg.org/wcfxxc4yb/ss3.png[/)
 
-## Basic Rules
+To do
+---
+Sadly never got as far as implementing multi-player or Rock-Paper-Scissors-Lizard-Spock, although I think the latter could be included easily enough. I need to remove the hard-coding of the result string from Game class. It is messy and limits what I can do with [/result](/result).
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+Got to play around a little with Bootstrap. I know I could do a lot more, just need time!
