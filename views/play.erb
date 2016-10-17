@@ -1,0 +1,16 @@
+<form class="form-signin" action="/result" method="post">
+  <h2 class="form-signin-heading">Okay <%= @game.player.name %>, please choose your move!</h2>
+  <label>
+    <input type="radio" name="choice" value="<%= Game::CHOICES[0] %>">
+    <img src="/img/rock.png"><br><%= Game::CHOICES[0].capitalize %>
+  </label>
+  <label>
+    <input type="radio" name="choice" value="<%= Game::CHOICES[1] %>">
+    <img src="/img/paper.png"><br><%= Game::CHOICES[1].capitalize %>
+  </label>
+  <label>
+    <input type="radio" name="choice" value="<%= Game::CHOICES[2] %>">
+    <img src="/img/scissors.png"><br><%= Game::CHOICES[2].capitalize %>
+  </label>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="Let's do this!">
+</form>

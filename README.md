@@ -1,92 +1,80 @@
 # RPS Challenge
 
 Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+------------
+To install this app, go to the directory of your choice and follow these instructions:
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+$ git clone git@github.com:francesmx/rps-challenge.git
+$ cd rps-challenge
+$ bundle
 ```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
+If you want to, you can view test coverage:
 ```
+$ rspec
 $ coveralls report
 ```
+To play with the app using the web interface, start the server:
+```
+$ rerun app.rb
+```
+then visit  [http://localhost:4567/](http://localhost:4567/) in your browser.
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+Screenshots
+------------
+![Initial screen](http://i.imgur.com/pxTnz5G.png)
 
+![Choice of moves](http://i.imgur.com/UU4laY5.png)
+
+![Result](http://i.imgur.com/MbiIpvy.png)
+
+My approach to this challenge
+-----------------------------
+1.  Setup the environment, including Sinatra and RSpec / Capybara
+2.  Wrote and passed feature test for registering name
+3.  Wrote and passed feature test for choosing move
+4.  Thought about domain model before writing unit tests (see below)
+```
+Player --> Registers name
+Player --> Views choices <-- Game
+Player --> Selects choice <-- Game (or Player?)
+Player --> Views result <-- Game
+Player --> Plays again <-- Game (same player)
+Player --> Starts over <-- New Game (new player)
+```
+5.  Wrote and passed unit test for Player class to initialize with a name
+6.  Wrote and passed unit test for Game class to initialize with Player objects
+7.  Wrote and passed unit test for Game to view choices
+8.  Wrote and passed unit test for Game to select a choice
+9.  Wrote and passed unit test for Computer to select a choice randomly
+10. Wrote and passed unit tests for revealing winner
+
+Then attempted to integrate model into the view / controller
+
+11.  Instantiate the Player object on posting the form with the name in
+12.  Populate the form choices from the Game instance (could not iterate over the array!)
+13.  Show the game's result
+14.  Enable player to play again or start over
+
+Refactoring
+-------------------------
+I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods horrific.
+
+After making the program fully functional with all tests passing, I then looked at the review documentation to see where I could make further improvements.
+
+These came in the form of:
+
+1. Using a hash solution instead of a case statement to determine the winner
+2. Removing presentation strings from business logic, esp. in game.rb
+3. Creating a Computer class
+4. Creating separate views for different results, e.g. win, lose, draw
+
+I also installed Bootstrap to make it slightly more attractive and bunged in a few images and giphys to make it more fun.
+
+Things I didn't manage
+----------------------
+1. To iterate over the Game::CHOICES array to avoid duplicate HTML in the form where the user chooses their move.
+2. To improve the styling (better spacing, margins, use of space on a larger screen)
+3. Any of the bonus functionality
+
+Enjoy! :)
+----------------------

@@ -1,0 +1,10 @@
+<h2>Ah man - you drew!</h2>
+<iframe src="//giphy.com/embed/xTiTnM6WqhU5bcOxXy" width="480" height="611" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/coffee-machine-draw-xTiTnM6WqhU5bcOxXy">via GIPHY</a></p>
+<h3>You chose <%= @game.player.choice.capitalize %>. <%= @game.opponent.name %> chose <%= @game.opponent.choice.capitalize %></h3>
+<form class="form-signin" action="/play" method="post">
+  <h2 class="form-signin-heading">What would you like to do now?</h2>
+  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Play again">
+</form>
+<form action="/" method="get">
+  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Start over">
+</form>
