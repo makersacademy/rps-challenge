@@ -23,10 +23,19 @@ describe Game do
   end
 
   describe '#result()' do
+    it 'player: rock, computer: rock = Draw' do
+      expect(rock.result(dg_rock)).to eq "Draw"
+    end
+    it 'player: paper, computer: paper = Draw' do
+      expect(paper.result(dg_paper)).to eq "Draw"
+    end
+    it 'player: scissors, computer: scissors = Draw' do
+      expect(scissors.result(dg_scissors)).to eq "Draw"
+    end
     it 'player: rock, computer: scissors = player' do
       expect(rock.result(dg_scissors)).to eq "Rock beats Scissors. <b>Player wins!</b>"
     end
-    it 'player: rock, computer: paper =' do
+    it 'player: rock, computer: paper = computer' do
       expect(rock.result(dg_paper)).to eq "Rock looses to Paper. <b>Deep Green wins!</b>"
     end
     it 'player: paper, computer: rock = player' do
