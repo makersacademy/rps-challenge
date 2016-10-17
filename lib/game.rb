@@ -3,6 +3,7 @@ require_relative 'weapon'
 class Game
 
   R_P_S = [:rock, :paper, :scissors]
+  MISSING = {rock: :scissors, scissors: :paper, paper: :rock}
 
   attr_reader :weapon_one, :weapon_two, :winner
 
@@ -27,15 +28,7 @@ class Game
   end
 
   def evaluate
-    if tie?
-      @winner = :tie
-    elsif missing_element == :rock
-      @winner = :scissors
-    elsif missing_element == :scissors
-      @winner = :paper
-    else
-      @winner = :rock
-    end
+    tie? ? @winner = :tie : @winner = MISSING[missing_element]
   end
 
   def set_statuses
