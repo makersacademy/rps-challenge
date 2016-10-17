@@ -3,24 +3,26 @@
 Instructions
 ------------
 To install this app, follow these command line instructions:
+```
 $ mkdir frances-rps-challenge
 $ cd frances-rps-challenge
 $ git clone git@github.com:francesmx/rps-challenge.git
 $ bundle
 $ rerun app.rb
+```
 
 Then in your browser, open http://localhost:4567/
 
 You can then follow the examples in these screenshots:
 
 1. Enter your name
-![Initial screen](http://imgur.com/pxTnz5G)
+![Initial screen](http://i.imgur.com/pxTnz5G.png)
 
 2. Choose your move
-![Choice of moves](http://imgur.com/UU4laY5)
+![Choice of moves](http://i.imgur.com/UU4laY5.png)
 
 3. View the result. From here you can choose to play again (and choose another move) or start over (as a new player).
-![Result](https://path_to_your_image)
+![Result](http://i.imgur.com/MbiIpvy.png)
 
 My approach to this challenge
 -----------------------------
@@ -43,11 +45,13 @@ Then attempted to integrate model into the view / controller
 
 Thoughts on domain model
 -------------------------
+```
 Player --> Registers name
 Player --> Views choices <-- Game
 Player --> Selects choice <-- Game
 Player --> Views result <-- Game
 Player --> Plays again <-- New Game
+```
 
 I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods really horrific. My refactoring looked to
 
@@ -57,3 +61,10 @@ I had trouble getting my Ruby code to play nicely with the views so ended up mak
 4. Create separate views for different results, e.g. win, lose, draw
 
 I also installed Bootstrap to make it slightly less ugly (although it's still not fabulous) and bunged a few images in to make the selection look nicer.
+
+Things I didn't manage
+----------------------
+
+1. To iterate over the Game::CHOICES array to avoid duplicate HTML in the form where the user chooses their move.
+2. To improve the styling (better spacing, margins, use of space on a larger screen)
+3. Any of the bonus items
