@@ -26,7 +26,7 @@ def plays(other)
   elsif other > self
     return other.move.capitalize
   else
-    return "Draw"
+    return "Tie"
   end
 end
 
