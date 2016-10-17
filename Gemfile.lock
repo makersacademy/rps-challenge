@@ -91,11 +91,15 @@ DEPENDENCIES
   byebug
   capybara
   coveralls
+  rack-test
   rake
   rspec
   rubocop
   rubocop-rspec
   sinatra
 
+RUBY VERSION
+   ruby 2.2.3p173
+
 BUNDLED WITH
-   1.10.6
+   1.13.2

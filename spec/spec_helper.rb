@@ -10,5 +10,8 @@ SimpleCov.formatters = [
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'byebug'
 require 'capybara/rspec'
+
+Capybara.app = RockPaperScissors
