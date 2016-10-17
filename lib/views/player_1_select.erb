@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  background:#82ffec;
+  background:-moz-linear-gradient(top,\#82ffec 0,#9b42f4 100%);
+  background:-webkit-linear-gradient(top,#82ffec 0,#9b42f4 100%);
+  background:linear-gradient(to bottom,#82ffec 0,#9b42f4 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#82ffec', endColorstr='#9b42f4,', GradientType=0 );background-repeat:no-repeat;background-attachment:fixed}}
+</style>
+</head>
+
+<body>
+
+<p>Welcome, <%=Game.game.player1.name%>! Please make your selection!</p>
+
+  <form action="/result">
+      <input type="submit" value="Rock" style="float: centre;">
+    </form>
+
+    <form action="/result">
+      <input type="submit" value="Paper" style="float: centre;">
+    </form>
+
+    <form action="/result">
+      <input type="submit" value="Scissors" style="float: centre;">
+    </form>
+<p><%=Game.game.player1.name%> - Score:<%=Game.game.player1.tally%>! <%=Game.game.winner%> is currently winning!</p>
+
+</html>
