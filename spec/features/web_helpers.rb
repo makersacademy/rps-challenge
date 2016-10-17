@@ -7,3 +7,7 @@ end
 def possible_choices_computer
   [:ROCK, :PAPER, :SCISSORS].map {|choice| "#{choice.to_s}"}
 end
+
+def possible_outcomes
+  ["YOU WIN!", "YOU LOSE!", "TIE GAME!"]
+end

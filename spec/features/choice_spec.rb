@@ -1,6 +1,6 @@
 
 feature "playing a game" do
-  scenario "player can see e rock, paper, scissors" do
+  scenario "player can see rock, paper, scissors" do
     sign_in_and_play
     expect(page).to have_button "ROCK"
     expect(page).to have_button "PAPER"
