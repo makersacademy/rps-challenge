@@ -17,6 +17,11 @@
   word-spacing: 20px;
 }
 
+#name_error {
+  color: #b33;
+  margin-top: 20px;
+}
+
 .play h4 {
   margin-top: -25px;
   margin-bottom: 10px;
