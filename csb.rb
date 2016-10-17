@@ -20,7 +20,7 @@ class CSB < Sinatra::Base
   post '/setup' do
     @player = Player.create(params[:player_name])
     @ash = Ash.create
-    @game = Game.create
+    @game = Game.create(player, ash)
     redirect '/play'
   end
 
@@ -29,13 +29,7 @@ class CSB < Sinatra::Base
   end
 
   post '/input' do
-    if    params[:charmander]
-       @player.pokemon = params[:charmander]
-    elsif params[:squirtle]
-       @player.pokemon = params[:squirtle]
-    elsif params[:bulbasaur]
-       @player.pokemon = params[:bulbasaur]
-    end
+    @player.pokemon = params[:pokemon]
     @ash.pokemon_selector
     redirect '/result'
   end

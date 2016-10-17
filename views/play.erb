@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
 <h1> <%= @player.name %> vs Ash </h1>
-
+</head>
+<body>
 <form action="/input" method="post">
-  <input type="submit" name="charmander"   value="CHARMANDER">
-  <input type="submit" name="squirtle"     value="SQUIRTLE">
-  <input type="submit" name="bulbasaur"    value="BULBASAUR">
+  <input type="submit" name="pokemon"   value="CHARMANDER">
+  <input type="submit" name="pokemon"    value="SQUIRTLE">
+  <input type="submit" name="pokemon"    value="BULBASAUR">
 </form>
+</body>
+</html>
 
 Player score: <%= @game.player_score %>
 Ash score: <%= @game.ash_score %>

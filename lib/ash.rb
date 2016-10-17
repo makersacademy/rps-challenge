@@ -23,3 +23,7 @@ class Ash
   end
 
 end
+
+thisIsCamelCase
+ThisIsPascalCase
+this_is_snake_case

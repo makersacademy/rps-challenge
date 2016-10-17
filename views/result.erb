@@ -1,3 +1,7 @@
 <h1> You chose <%= @player.pokemon %> </h1>
 <h1> Ash chose <%= @ash.pokemon %> </h1>
 <h2> <%= @game.run %> </h2>
+
+<form action="/play" method="get">
+  <input type="submit" value="OK">
+</form>
