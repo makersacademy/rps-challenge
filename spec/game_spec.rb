@@ -1,4 +1,4 @@
-require './lib/views/game'
+require './lib/game'
 
 describe Game do
 
@@ -29,19 +29,19 @@ describe Game do
 
     it 'adds a point to the score if user wins' do
       game1 = Game.new('paper')
-      game1.robot_choice('rock')
+      game1.input_random_choice('rock')
       game1.score_calculator
-      expect(game.score).to eq(1)
+      expect(game1.score).to eq(1)
     end
     it 'adds a point to the score if user wins' do
       game2 = Game.new('rock')
-      game2.robot_choice('paper')
+      game2.input_random_choice('paper')
       game2.score_calculator
-      expect(game.score).to eq(-1)
+      expect(game2.score).to eq(-1)
     end
     it 'keeps the score at zero if user wins' do
       game2 = Game.new('rock')
-      game2.robot_choice('paper')
+      game2.input_random_choice('paper')
       game2.score_calculator
       expect(game.score).to eq(0)
     end

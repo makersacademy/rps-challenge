@@ -9,7 +9,7 @@ end
 feature 'choose character', :type => feature do
   scenario "user is able to choose a character" do
     sign_in_with_name
-    click_image "rock"
+    click_button "rock"
 
     expect(page).to have_content 'rock'
   end
@@ -17,8 +17,8 @@ end
 
 feature 'restart game', :type => feature do
   scenario 'user can play again' do
-    sign_in_and_play
-    click_image "rock"
+    sign_in_with_name
+    click_button "rock"
     click_button "home"
     expect(page).to have_content("pick your player")
   end

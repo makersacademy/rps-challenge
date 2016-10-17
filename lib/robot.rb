@@ -1,9 +1,9 @@
-require './views/game'
+require './lib/game'
 class Robot
 
   NEUTRAL_SCORE = 0
 
-  attr_reader :robot_pick
+  attr_reader :robot_pick, :weapons
 
   def initialize
     @weapons = ['rock', 'paper', 'scissors']

@@ -1,9 +1,9 @@
-require './lib/views/robot'
+require './lib/robot'
 
 describe Robot do
 
   let(:choice) {double :choice}
-  subject(:robot) {described_class.new(choice)}
+  subject(:robot) {described_class.new}
 
   context 'game is initialised' do
     it 'initialses with an array of weapons' do
@@ -11,6 +11,8 @@ describe Robot do
     end
 
   it 'give the robot a random choice' do
-    expect(game.robot_pick).to eq('rock')|('paper')|('scissors')
+    robot.randomise_robot
+    expect(robot.robot_pick).to eq('rock') | eq('paper') | eq('scissors')
     end
   end
+end

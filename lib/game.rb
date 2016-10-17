@@ -1,5 +1,5 @@
-require './views/robot'
-require './views/player'
+require './lib/robot'
+require './lib/player'
 class Game
 
   NEUTRAL_SCORE = 0
