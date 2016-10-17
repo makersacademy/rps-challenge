@@ -1,0 +1,15 @@
+<h1>Rock-Paper-Scissors HQ</h1>
+<h2> <%=@game.player_1_name%> vs Deep Green AI</h2>
+
+<b><%=@game.player_1_name%></b> has chosen <b><%=@game.player_1_weapon%></b> <br>
+<b>Deep Green</b> has chosen <b><%=@deep_green.weapon%></b> <br>
+<br>
+<%=@result%>
+<br>
+<br>
+<form action='/main-game' method='get'>
+  Play again? <input type="submit" value="Yes">
+</form>
+<form action='/' method='get'>
+  Return to Home <input type="submit" value="Home">
+</form>

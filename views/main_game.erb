@@ -1,0 +1,14 @@
+<h1>Rock-Paper-Scissors HQ</h1>
+<h2> <%=@game.player_1_name%> vs Deep Green AI</h2>
+<h3>Choose you weapon for battle</h3>
+
+<form action='/referee' method='post'>
+  <select required name="weapon">
+    <option value="">Select your Weapon</option>
+    <option value="" disabled>----</option>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
