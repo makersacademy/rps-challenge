@@ -4,6 +4,8 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec-sinatra'
+gem 'rerun'
 
 group :test do
   gem 'rspec'
