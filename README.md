@@ -8,6 +8,8 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
+App Homepage:
+
 ![screenshot] (https://github.com/jinimcoroneo/rps-challenge/blob/master/screen_shot.png)
 
 
