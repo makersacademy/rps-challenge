@@ -9,8 +9,13 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player_name])
-    Game.create(player)
+    player_1 = Player.new(params[:player_1_name])
+    if params[:player_2_name].empty?
+      Game.create(player_1)
+    else
+      player_2 = Player.new(params[:player_2_name])
+      Game.create(player_1, player_2)
+    end
     redirect '/play'
   end
 
@@ -26,7 +31,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @player_1 = @game.player_1
     @player_2 = @game.player_2
-    @player_1.set_weapon=(params[:weapon])
+    @player_1.set_weapon=(params[:weapon].to_sym)
     @game.decide_winner
     erb(:result)
   end

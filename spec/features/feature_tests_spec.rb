@@ -1,6 +1,7 @@
 require 'spec_helper'
 require_relative 'web_helpers'
 
+#COMPUTER PLAYER TESTS
 feature 'Entering name' do
   scenario 'index page form' do
     visit '/'
@@ -38,52 +39,42 @@ feature 'Choosing "weapon"' do
   scenario "computer should pick a weapon" do
     sign_in_and_play
     choose('scissors')
-    allow(Game.instance.player_2).to receive(:weapon).and_return("rock")
+    allow(Game.instance.player_2).to receive(:weapon).and_return(:rock)
     click_button('Submit')
     expect(page).to have_content 'Computer chose Rock'
   end
 end
 
+#GENERIC LOGIC TESTS
 feature "Player 1 winning" do
   scenario "player chooses rock and computer chooses scissors" do
     sign_in_and_play
     winning_tests("rock", "scissors")
     expect(page).to have_content 'Bukowski wins!'
   end
+end
 
-  scenario "player chooses scissors and computer chooses paper" do
-    sign_in_and_play
-    winning_tests("scissors", "paper")
-    expect(page).to have_content 'Bukowski wins!'
-  end
-
-  scenario "player chooses paper and computer chooses rock" do
-    sign_in_and_play
-    winning_tests("paper", "rock")
-    expect(page).to have_content 'Bukowski wins!'
-  end
-
+feature "Player 2 winning" do
   scenario "computer chooses rock and player chooses scissors" do
     sign_in_and_play
     winning_tests("scissors", "rock")
     expect(page).to have_content 'Computer wins!'
   end
+end
 
-  scenario "computer chooses scissors and player chooses paper" do
-    sign_in_and_play
-    winning_tests("paper", "scissors")
-    expect(page).to have_content 'Computer wins!'
-  end
-
-  scenario "computer chooses paper and player chooses rock" do
-    sign_in_and_play
-    winning_tests("rock", "paper")
-    expect(page).to have_content 'Computer wins!'
-  end
-
+feature "Draw" do
   scenario "expect draw if both choose rock" do
     sign_in_and_play
     winning_tests("rock", "rock")
     expect(page).to have_content 'draw'
+  end
+end
+
+#TWO PLAYER TESTS
+feature 'Entering name' do
+  scenario 'submiting name' do
+    sign_in_and_play_2p
+    expect(page).to have_content 'Player one: Bukowski'
+    expect(page).to have_content 'Player two: Charles'
   end
 end

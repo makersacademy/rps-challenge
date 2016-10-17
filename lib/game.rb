@@ -4,13 +4,13 @@ class Game
 
   attr_reader :player_1, :player_2, :player_2_choice, :winner
 
-  def initialize(player_1, player_2=Computer.new)
+  def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player_1, player_2=Computer.new)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance
@@ -47,9 +47,9 @@ class Game
 
   def winning_moves
     {
-    'rock' => 'scissors',
-    'scissors' => 'paper',
-    'paper' => 'rock'
+    :rock => :scissors,
+    :scissors => :paper,
+    :paper => :rock
     }
   end
 

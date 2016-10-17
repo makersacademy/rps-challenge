@@ -1,6 +1,11 @@
 <h2>Enter your name to play</h2>
 
 <form method='post' action='/names'>
-  <input type="text" name="player_name" placeholder="your name here"/>
+  <label for="player_name">Player 1 name:
+    <input type="text" name="player_1_name"/>
+  </label>
+  <label for="player_name">Player 2 name:
+    <input type="text" name="player_2_name" placeholder="leave blank to play with computer"/>
+  </label>
   <button type="submit">Submit</button>
 </form>

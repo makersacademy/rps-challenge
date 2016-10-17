@@ -8,7 +8,10 @@ class Player
 
   def set_weapon=(weapon)
     @weapon = weapon
+  end
 
+  def computer?
+    false
   end
 
 end

@@ -9,8 +9,8 @@ describe Player do
   end
 
   it "can set a weapon" do
-    subject.set_weapon = "Rock"
-    expect(subject.weapon).to eq "Rock"
+    subject.set_weapon = :rock
+    expect(subject.weapon).to eq :rock
   end
 
 end
