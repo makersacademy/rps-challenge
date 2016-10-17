@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "it let's the player know the game outcome" do
+feature "It let's the player know the game outcome" do
 
   scenario "the player wins" do
     srand(2)

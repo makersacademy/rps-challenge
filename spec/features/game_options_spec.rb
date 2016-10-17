@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'starting to play the game' do
+feature 'Starting to play the game' do
 
   scenario 'it shows options for the game' do
   sign_in_and_play
