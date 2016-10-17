@@ -18,7 +18,7 @@ feature 'shows the results of the game', :type => feature do
   scenario "selects Rock" do
     sign_in_and_play
     find_button('Rock').click
-    expect(page).to have_text('You')
+    expect(page).to have_content('You')
   end
 end
 
