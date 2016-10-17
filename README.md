@@ -2,7 +2,7 @@
 
 Instructions
 ------------
-To install this app, follow these command line instructions:
+To install this app, follow these instructions:
 ```
 $ mkdir frances-rps-challenge
 $ cd frances-rps-challenge
@@ -11,17 +11,20 @@ $ bundle
 $ rerun app.rb
 ```
 
-Then in your browser, open http://localhost:4567/
+In your browser, open [http://localhost:4567/](http://localhost:4567/)
 
 You can then follow the examples in these screenshots:
 
 1. Enter your name
+
 ![Initial screen](http://i.imgur.com/pxTnz5G.png)
 
 2. Choose your move
+
 ![Choice of moves](http://i.imgur.com/UU4laY5.png)
 
-3. View the result. From here you can choose to play again (and choose another move) or start over (as a new player).
+3. View the result. From here you can choose to play again or start over.
+
 ![Result](http://i.imgur.com/MbiIpvy.png)
 
 My approach to this challenge
