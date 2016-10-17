@@ -1,0 +1,15 @@
+<head>
+  <link rel="stylesheet" href="reset.css" type="text/css" />
+  <link rel="stylesheet" href="css_styles/styles.css" />
+</head>
+
+<body>
+<h1> You chose <%=@game.player_choice%>! </h1><br>
+<h1> Bob the computer chose <%=@game.computer_choice%>! </h1><br>
+<h1> It's a draw! </h1><br>
+<form action="/play" method="get">
+<input type="submit" value="Play Again!">
+</form>
+
+<img src="https://media.giphy.com/media/WN00WINYziSQM/giphy.gif">
+</body>

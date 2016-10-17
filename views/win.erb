@@ -1,0 +1,20 @@
+<head>
+  <link rel="stylesheet" href="reset.css" type="text/css" />
+  <link rel="stylesheet" href="css_styles/styles.css" />
+</head>
+
+<body>
+<h1> You chose <%=@game.player_choice%>! </h1><br>
+<h1> Bob the computer chose <%=@game.computer_choice%>! </h1><br>
+<h1> <%=@game.player_choice.capitalize%> beats <%=@game.computer_choice.capitalize%>! </h1><br>
+<h1> You Won! </h1><br>
+<form action="/play" method="get">
+<input type="submit" value="Play Again!">
+</form>
+</body>
+
+<style>
+body{
+  background-image: url("http://66.media.tumblr.com/tumblr_len5kjmntk1qaa4h7o1_1280.gif");
+}
+</style>

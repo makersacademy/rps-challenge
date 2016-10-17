@@ -1,0 +1,16 @@
+<head>
+  <link rel="stylesheet" href="reset.css" type="text/css" />
+  <link rel="stylesheet" href="css_styles/play.css" />
+</head>
+
+<body>
+<form action="/result_vs" method="get" id="pick2"> </form>
+  <div >
+    <h1> <%=@game.player1.name %> vs. <%=@game.player2.name %> </h1><br>
+    <h2><%=@game.player2.name %>'s turn:</h2><br>
+    <h3><%=@game.player1.name %>, please close your eyes :)</h3><br>
+    <button class="button2" type="submit" name="choice2" form="pick2" value="rock"><span>Rock </span></button>
+    <button class="button3" type="submit" name="choice2" form="pick2" value="paper"><span>Paper </span></button>
+    <button class="button" type="submit" name="choice2" form="pick2" value="scissors"><span>Scissors </span></button>
+  </div>
+</body>

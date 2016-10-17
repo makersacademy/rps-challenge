@@ -1,0 +1,16 @@
+<head>
+  <link rel="stylesheet" href="reset.css" type="text/css" />
+  <link rel="stylesheet" href="css_styles/play.css" />
+</head>
+
+<body>
+<h1> <%=@game.player.name %> vs. <%=@game.computer.com_name %> the Computer</h1><br><br>
+
+<form action="/result" method="get" id="pick"> </form>
+<div >
+  <h2>Pick your weapon of choice!</h2><br><br>
+  <button class="button2" type="submit" name="choice" form="pick" value="rock"><span>Rock </span></button>
+  <button class="button3" type="submit" name="choice" form="pick" value="paper"><span>Paper </span></button>
+  <button class="button" type="submit" name="choice" form="pick" value="scissors"><span>Scissors </span></button>
+</div>
+</body>
