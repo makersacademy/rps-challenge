@@ -12,8 +12,12 @@ class Game
     @compu_points = 0
   end
 
+  def sample(player_choice)
+      @result = ["Rock", "Paper", "Scissors"].sample
+      choice(player_choice)
+  end
+
   def choice(player_choice)
-    @result = ["Rock", "Paper", "Scissors"].sample
     if @result == player_choice
       :tie
     elsif (@result == "Paper" && player_choice == "Rock") || (@result == "Rock" && player_choice == "Scissors") || (@result == "Scissors" && player_choice == "Paper")

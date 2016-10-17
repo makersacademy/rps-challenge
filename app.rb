@@ -41,19 +41,19 @@ end
 get '/rock' do
   @game = Game.current
   @player_choice = "Rock"
-  erb (@game.choice("Rock"))
+  erb (@game.sample("Rock"))
 end
 
 get '/paper' do
   @game = Game.current
   @player_choice = "Paper"
-  erb (@game.choice("Paper"))
+  erb (@game.sample("Paper"))
 end
 
 get '/scissors' do
   @game = Game.current
   @player_choice = "Scissors"
-  erb (@game.choice("Scissors"))
+  erb (@game.sample("Scissors"))
 end
 #-----------------------2 PLAYERS GAME----------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------------------

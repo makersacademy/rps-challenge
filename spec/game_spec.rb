@@ -1,7 +1,6 @@
 require 'game'
 
 describe Game do
-  # let(:players[0]) {double :players[0]}
   let(:player) {double :player}
   subject(:game) {described_class.new(player)}
 
@@ -11,10 +10,25 @@ describe Game do
     end
   end
 
-  describe "#choice" do
-    it "checks if the result of the game" do
-      game.instance_variable_set(:@result, 'Rock')
+  describe "#sample" do
+    it "randomly selects a move for the computer" do
+      game.sample("Rock")
       expect(["Rock", "Paper", "Scissors"]).to include(game.result)
+    end
+  end
+
+  describe "#choice" do
+    it "checks the result  if the result against the computer is a Tie" do
+      game.instance_variable_set(:@result, 'Rock')
+      expect(game.choice("Rock")).to eq(:tie)
+    end
+    it "checks if the player wins against the computer" do
+      game.instance_variable_set(:@result, 'Paper')
+      expect(game.choice("Scissors")).to eq(:win)
+    end
+    it "checks if the players looses against the computer" do
+      game.instance_variable_set(:@result, 'Scissors')
+      expect(game.choice("Paper")).to eq(:lost)
     end
   end
 
@@ -25,20 +39,34 @@ describe Game do
   end
 
   describe "#check" do
-    it "checks if the player or computer has won" do
+    it "checks if the player has won" do
       player1 = Player.new('Bob')
       game1 = Game.new(player1)
       player1.points = 5
       expect(game1.check).to eq '/won_game'
     end
+    it "checks if the computer has won" do
+      player1 = Player.new('Bob')
+      game1 = Game.new(player1)
+      game1.compu_points = 5
+      expect(game1.check).to eq '/lost_game'
+    end
   end
 
   describe "#two_check" do
-    it "checks if one of the player has won" do
+    it "checks if player1 has won" do
       player1 = Player.new('Bob')
       player2 = Player.new('Steve')
       game2 = Game.new(player1, player2)
-      expect(game2.two_check).to eq '/2play'
+      player1.points = 5
+      expect(game2.two_check).to eq '/won_game'
+    end
+    it "checks if player2 has won" do
+      player1 = Player.new('Bob')
+      player2 = Player.new('Steve')
+      game2 = Game.new(player1, player2)
+      player2.points = 5
+      expect(game2.two_check).to eq '/2won_game'
     end
   end
 end
