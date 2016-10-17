@@ -1,10 +1,11 @@
 class Game
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :whose_turn
   attr_writer :chosen_move
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    @whose_turn = player_1
     @chosen_move = nil
     @moves = [:rock, :paper, :scissors]
     @winning_actions = [
@@ -14,16 +15,25 @@ class Game
     ]
   end
 
-  def get_move(player)
-    if player.is_computer
-      @moves.sample
-    else
-      @moves[@chosen_move]
-    end 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
-  def set_move(player)
-    player.move = get_move(player)
+  def self.instance
+    @game
+  end
+
+  def get_move
+    if @whose_turn.is_computer
+     @whose_turn.move = @moves.sample
+    else
+      @whose_turn.move =@chosen_move
+    end
+  end
+
+
+  def switch_turns
+    @whose_turn = @whose_turn == @player_1 ? @player_2 : @player_1    
   end
 
   def winner(player_1_move, player_2_move)

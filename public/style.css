@@ -1,0 +1,43 @@
+*{
+    text-decoration:none;
+    color:inherit;
+    font-family:sans-serif;
+}
+body{
+    height:100%;
+    background:linear-gradient(#F1F1F4, #fff) fixed;
+}
+p{
+    font-size: 16px;
+}
+h4{
+    font-size: 18px;
+}
+h3{
+    font-size: 24px;
+}
+h2{
+    font-size: 28px;
+}
+h1{
+    font-size: 32px;
+}
+main{
+  display: block;
+  width: 400px;
+  margin: auto
+}
+input{
+    width: 370px;
+    margin:auto;
+    border: 15px solid #484848;
+    border-radius: 15px;
+    background-color: #484848;
+    color: #FFFFFF;  
+}
+input[type="submit"]{
+  width: 400px
+}
+label{
+  vertical-align: center
+}

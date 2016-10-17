@@ -1,0 +1,25 @@
+<%= @game.whose_turn.name %> choose your move!
+
+<form action="/turn_over" method="POST">
+  Rock<input type="radio" name="move" value="rock"><br>
+  Paper<input type="radio" name="move" value="paper"><br>
+  Scissors<input type="radio" name="move" value="scissors"><br>
+  <input type="submit">
+</form>
+
+<div style="display: inline-block; width: 150px">
+  <%= @game.player_1.name %> has won
+  <h3> <%= @game.player_1.games_won %> </h3>
+  games
+</div>
+
+<div style="display: inline-block; width: 150px">
+  Draws:
+  <h3> <%= @game.player_1.games_drawn %> </h3>
+</div>
+
+<div style="display: inline-block; width: 150px">
+  <%= @game.player_2.name %> has won
+  <h3> <%= @game.player_2.games_won %> </h3>
+  games
+</div>
