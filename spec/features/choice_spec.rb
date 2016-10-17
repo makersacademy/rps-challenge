@@ -17,7 +17,7 @@ feature "pick item" do
   end
 end
 
-feature "pick item" do
+feature "game picks item" do
   scenario "game chooses rock" do
     sign_in_and_play
     click_button "ROCK"
@@ -25,5 +25,16 @@ feature "pick item" do
     click_button "CONTINUE"
     choice = find(:css, "#opponent").text
     expect(possible_choices_computer).to include choice
- end
+  end
+end
+
+ feature "game picks item" do
+   scenario "game chooses a random option" do
+     sign_in_and_play
+     click_button "ROCK"
+     expect(page).to have_content "You chose ROCK"
+     click_button "CONTINUE"
+     choice = find(:css, "#opponent").text
+     expect(possible_choices_computer).to include choice
+  end
 end

@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/opponent.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -19,7 +20,7 @@ class RPS < Sinatra::Base
 
   post '/choose' do
     session[:choice] = params[:choice]
-    session[:opponent_choice] = :ROCK
+    session[:opponent_choice] = Opponent.new.choice
     redirect '/start'
   end
 
