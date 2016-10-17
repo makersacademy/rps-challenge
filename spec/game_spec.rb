@@ -51,6 +51,11 @@ describe Game do
       game1.compu_points = 5
       expect(game1.check).to eq '/lost_game'
     end
+    it "checks if none has won yet" do
+      player1 = Player.new('Bob')
+      game1 = Game.new(player1)
+      expect(game1.check).to eq '/play'
+    end
   end
 
   describe "#two_check" do
@@ -67,6 +72,12 @@ describe Game do
       game2 = Game.new(player1, player2)
       player2.points = 5
       expect(game2.two_check).to eq '/2won_game'
+    end
+    it "checks if none of the players has won yet" do
+      player1 = Player.new('Bob')
+      player2 = Player.new('Steve')
+      game2 = Game.new(player1, player2)
+      expect(game2.two_check).to eq '/2play'
     end
   end
 end

@@ -3,15 +3,15 @@
   <% if @player_choice == "Rock" %>
   <h1><%= @game.players[0].name %> has played Rock</h1>
   <h1>WALL.E has played <%= @game.result %></h1>
-  <h2><%= @game.players[0].name %> has won!<h1>
+  <h2><%= @game.players[0].name %> has won the move!<h1>
     <% elsif @player_choice == "Paper"%>
     <h1><%= @game.players[0].name %> has played Paper</h1>
     <h1>WALL.E has played <%= @game.result %></h1>
-    <h2><%= @game.players[0].name %> has won!<h1>
+    <h2><%= @game.players[0].name %> has won the move!<h1>
       <% elsif @player_choice == "Scissors"%>
       <h1><%= @game.players[0].name %> has played Scissors</h1>
       <h1>WALL.E has played <%= @game.result %></h1>
-      <h2><%= @game.players[0].name %> has won!<h1>
+      <h2><%= @game.players[0].name %> has won the move!<h1>
         <% end %>
 
         <% @game.players[0].add_points %>
