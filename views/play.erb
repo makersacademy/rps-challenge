@@ -1,0 +1,9 @@
+Welcome <%=@game.player.name%>. Let's play.
+
+Please select your move.
+
+<form action="/outcome" method="post">
+<input type="submit" name="player_choice" value="Rock">
+<input type="submit" name="player_choice" value="Paper">
+<input type="submit" name="player_choice" value="Scissors">
+</form>
