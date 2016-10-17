@@ -1,10 +1,9 @@
-class RPS
+class Scissors
   def game
     x = ["rock", "paper", "scissors"].sample
-    if 'rock'.length == x.length
-      # puts @message_options[0]
+    if 'scissors'.length == x.length
       draw
-    elsif 'rock'.length < x.length
+    elsif x.length == 5
       win
     else
       lose

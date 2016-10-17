@@ -10,4 +10,3 @@ def game(input)
     puts "you lose"
   end
 end
-game("rock")
