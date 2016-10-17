@@ -1,10 +1,32 @@
 # RPS Challenge
 
-Approach
----------
+Instructions
+------------
+To install this app, follow these command line instructions:
+$ mkdir frances-rps-challenge
+$ cd frances-rps-challenge
+$ git clone git@github.com:francesmx/rps-challenge.git
+$ bundle
+$ rerun app.rb
+
+Then in your browser, open http://localhost:4567/
+
+You can then follow the examples in these screenshots:
+
+1. Enter your name
+![Initial screen](http://imgur.com/pxTnz5G)
+
+2. Choose your move
+![Choice of moves](http://imgur.com/UU4laY5)
+
+3. View the result. From here you can choose to play again (and choose another move) or start over (as a new player).
+![Result](https://path_to_your_image)
+
+My approach to this challenge
+-----------------------------
 1.  Setup the environment, including Sinatra and RSpec / Capybara
 2.  Wrote and passed feature test for registering name
-3.  Wrote and passed feature test for choosing weapon
+3.  Wrote and passed feature test for choosing move
 4.  Thought about domain model before writing unit tests (see below)
 5.  Wrote and passed unit test for Player class to initialize with a name
 6.  Wrote and passed unit test for Game class to initialize with Player objects
@@ -29,97 +51,9 @@ Player --> Plays again <-- New Game
 
 I had trouble getting my Ruby code to play nicely with the views so ended up making some of my Game methods really horrific. My refactoring looked to
 
-1. Remove presentation strings from business logic
-2. Create separate views for different results, e.g. win, lose, draw
-2. Use a hash solution instead of a case statement to determine the winner
+1. Use a hash solution instead of a case statement to determine the winner
+2. Remove presentation strings from business logic
+3. Create a Computer class
+4. Create separate views for different results, e.g. win, lose, draw
 
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear!
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+I also installed Bootstrap to make it slightly less ugly (although it's still not fabulous) and bunged a few images in to make the selection look nicer.
