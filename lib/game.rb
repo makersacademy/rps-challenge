@@ -22,8 +22,21 @@ class Game
     @player_1.weapon
   end
 
-  # def deep_green_weapon
-  #   @deep_green = DeepGreen.new
-  #   @deep_green.select_weapon
-  # end
+  def result(p2)
+    if player_1_weapon == p2.weapon
+      'Draw'
+    elsif player_1_weapon == 'Rock' && p2.weapon == 'Scissors'
+      "Rock beats Scissors. <b>#{player_1_name} wins!</b>"
+    elsif player_1_weapon == 'Rock' && p2.weapon == 'Paper'
+      "Rock looses to Paper. <b>Deep Green wins!</b>"
+    elsif player_1_weapon == 'Paper' && p2.weapon == 'Rock'
+      "Paper beats Rock. <b>#{player_1_name} wins!</b>"
+    elsif player_1_weapon == 'Paper' && p2.weapon == 'Scissors'
+      "Paper looses to Scissors. <b>Deep Green wins!</b>"
+    elsif player_1_weapon == 'Scissors' && p2.weapon == 'Paper'
+      "Scissors beats Paper. <b>#{player_1_name} wins!</b>"
+    elsif player_1_weapon == 'Scissors' && p2.weapon == 'Rock'
+      "Scissors looses to Rock. <b>Deep Green wins!</b>"
+    end
+  end
 end

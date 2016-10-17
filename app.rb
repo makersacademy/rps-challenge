@@ -36,7 +36,8 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @deep_green = DeepGreen.new
-    @deep_green_weapon = @deep_green.weapon
+    # @deep_green_weapon = @deep_green.weapon
+    @result = @game.result(@deep_green)
     erb(:result)
   end
 
