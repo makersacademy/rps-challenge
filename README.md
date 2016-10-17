@@ -1,5 +1,7 @@
 # RPS Challenge
 
+[![Coverage Status](https://coveralls.io/repos/github/eunkenlow/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/eunkenlow/rps-challenge?branch=master)
+
 Instructions
 -------
 1. Clone the repo and run bundle to install gems.
