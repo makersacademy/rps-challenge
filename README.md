@@ -51,3 +51,9 @@ Choose one of the options:
 Results screen:
 ![/result]
 (https://s21.postimg.org/wcfxxc4yb/ss3.png[/)
+
+To do
+---
+Sadly never got as far as implementing multi-player or Rock-Paper-Scissors-Lizard-Spock, although I think the latter could be included easily enough. I need to remove the hard-coding of the result string from Game class. It is messy and limits what I can do with [/result](/result).
+
+Got to play around a little with Bootstrap. I know I could do a lot more, just need time!
