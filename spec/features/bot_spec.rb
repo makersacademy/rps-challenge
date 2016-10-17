@@ -9,6 +9,6 @@ RSpec.feature "bot chooses rocks, paper or scissors", :type => :feature do
   end
 
   scenario "Bot can choose" do
-    expect(page).to have_content("Bot chose #{Game.game.bots_choice}")
+    expect(page).to have_content("Daily Grind chose #{Game.game.bots_choice}")
   end
 end

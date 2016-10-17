@@ -1,26 +1,39 @@
-<h1><%=@game.name%> vs Daily Grind<h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link async href="http://fonts.googleapis.com/css?family=Monoton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="play.css">
 
-<form action="/choose" method="post"> <!-- ask Mary if any better options... -->
-  <input type="hidden" value="rock" name="choice"/>
-  <button type="submit" id="Smash">Smash</button>
-</form>
-
-<form action="/choose" method="post">
-  <input type="hidden" value="paper" name="choice"/>
-  <button type="submit" id="Wrap">Wrap</button>
-</form>
-
-<form action="/choose" method="post">
-  <input type="hidden" value="scissors" name="choice"/>
-  <button type="submit" id="Chop">Chop</button>
-</form>
+<h1 id="name"><%=@game.name%> vs Daily Grind</h1>
 
 <% if @game.played? %>
-<p>You chose <%=@game.users_choice%></p>
-<!--add the equivalent of thread.sleep for suspense-->
-
-<p>Bot chose <%=@game.bots_choice%></p>
-<!--add the equivalent of thread.sleep for suspense-->
-
-<h1><%= @game.outcome %></h1>
+<div id="outcome">
+  <p>You chose <%=@game.users_choice%>.</p>
+  <p>Daily Grind chose <%=@game.bots_choice%></p>
+  <h1><%= @game.outcome %></h1>
+</div>
 <% end %>
+
+<div id="choices">
+  <div class="col-sm-4">
+    <img src="http://i.giphy.com/3oz8xPrkAwXXUD4gtG.gif"/>
+    <form action="/choose" method="post"> <!-- ask Mary if any better options... -->
+      <input type="hidden" value="rock" name="choice"/>
+      <h2><button type="submit" id="Smash" class="btn btn-default">Smash</button></h2>
+    </form>
+  </div>
+
+  <div class="col-sm-4">
+    <img src="http://i.giphy.com/8p8E1sylIARDW.gif"/>
+    <form action="/choose" method="post">
+      <input type="hidden" value="paper" name="choice"/>
+      <h2><button type="submit" id="Wrap" class="btn btn-default">Wrap</button></h2>
+    </form>
+  </div>
+
+  <div class="col-sm-4">
+    <img src="http://i.giphy.com/3Avo5mVo3WH2U.gif"/>
+    <form action="/choose" method="post">
+      <input type="hidden" value="scissors" name="choice"/>
+      <h2><button type="submit" id="Chop" class="btn btn-default">Chop</button></h2>
+    </form>
+  </div>
+</div>

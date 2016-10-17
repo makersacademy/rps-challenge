@@ -1,92 +1,21 @@
-# RPS Challenge
+This is a simple, gif-based rock paper scissors web game built for the Makers Academy Marketing Array ( **MAMA** ). Their daily grind is pretty tough and they needed time to steam a little. Marketers like their names in shiny lights we were told.
 
-Instructions
--------
+![sign_in_page] (sign_in_screenshot.png)
+![game] (game_screenshot.png)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+To run the app locally:
+1. Bundle install
+2. Use ruby app.rb command
+3. Navigate to localhost:4567
 
-Task 
-----
+Note: you need connection to the internet for gifs to show.
 
-Knowing how to build web applications is getting us almost there as web developers!
+The structure of the app follows the model-view-controller pattern. There is only one Game class, implemented as a singleton. It was felt the game is simple enough to be handled by one class only without violating the single responsibility principle. The play.erb and index.erb files serve as the 2 views used in the web app. The app.rb file is the contorller. Prettiness is defined in the corresponding play.css and index.css files, stored in the public folder.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+You can use rspec to test the application. There are unit tests for the model and feature tests for the application, implemented using Capybara.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Sinatra is used as the server.
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+Credits:
+The gifs all come from Giphy.com
+The awesome shiny lights name effect can be found on http://enjoycss.com/
