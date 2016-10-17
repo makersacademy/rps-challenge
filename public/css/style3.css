@@ -27,14 +27,14 @@ h1 {
 }
 
 .play_again {
-  float: left;
+  float: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 .new_game {
-  float: right;
+  float: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -48,6 +48,14 @@ input {
   font-size: 20px;
   border: 4px solid black;
   border-radius: 5px;
+}
+
+input[value="Play Again"] {
+  cursor: url(http://a.deviantart.net/avatars/3/d/3d-modeler.gif?1), auto;
+}
+
+input[value="New Challenger"] {
+  cursor: url(https://www.recalbox.com/assets/images/pacman-mini.png), auto;
 }
 
 input:hover {

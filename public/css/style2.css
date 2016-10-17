@@ -80,3 +80,15 @@ input {
 input:hover {
   background-color: white;
 }
+
+input[value="ROCK"] {
+  cursor: url(http://www.minecraftuniversity.com/assets/items/images/coal-small.png), auto;
+}
+
+input[value="PAPER"] {
+  cursor: url(http://icons.iconarchive.com/icons/lyle-zapato/archaeologicons/32/Scroll-icon.png), auto;
+}
+
+input[value="SCISSORS"] {
+  cursor: url(http://www.jensenwalkin.com/wp-content/images/scissors.gif), auto;)
+}
