@@ -10,7 +10,6 @@ class Player
   end
 
   def choose_weapon(weapon)
-    fail 'not a possible weapon' unless [:rock, :paper, :scissors].include? weapon
     @weapon = weapon.downcase.to_sym
   end
 

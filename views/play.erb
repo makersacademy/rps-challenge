@@ -1,11 +1,9 @@
-<h1>Hi <%= @game.player.name %>, welcome to Rock Paper Scissors!</h1>
+<center><h1>Hi <%= @game.player.name %>, welcome to Rock Paper Scissors!</h1>
 
-<h2>Please enter your choice of weapon</h2>
+  <h2>Please enter your choice of weapon</h2>
 
-<form action="/result" method="post">
-  <label for="players_weapon">
-    Players Weapon
-    <input type="text" name="players_weapon">
-  </label>
-  <input type="submit" value="Submit">
-</form>
+  <form action="/result" method="post">
+    <button name="weapon" type="submit" value="rock">ROCK</button> <br><br>
+    <button name="weapon" type="submit" value="paper">PAPER</button> <br><br>
+    <button name="weapon" type="submit" value="scissors">SCISSORS</button><br><br>
+  </form></center></centre>

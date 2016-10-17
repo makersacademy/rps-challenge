@@ -21,7 +21,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @game.player_selection(params[:weapon])
+    @game.choose_weapon(params[:weapon])
     @game.computer_selection
     @game.result
     erb :result
