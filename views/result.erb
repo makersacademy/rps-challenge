@@ -1,0 +1,20 @@
+<center>
+<% if @game.winner == :none %>
+<h1>This game is a Draw!</h1>
+<h2>Better try again to determine the winner!</h2>
+<% else %>
+<h1><%= @game.winner.name %> wins this time!</h1>
+<h2><%=@game.player.name %> played <%=@game.player.player_choice.to_s %>,
+<%= @game.computer.name %> played <%=@game.computer.move_choice.to_s %> </h2>
+
+<% end %>
+<br>
+
+<form action="/play" method="get">
+  <input type='submit' value='Try again?'>
+</form>
+
+<form action="/" method="get">
+  <input type='submit' value='Sign out'>
+</form>
+</center>

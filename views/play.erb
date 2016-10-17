@@ -1,0 +1,28 @@
+<center>
+  <h1>Welcome <%= @game.player.name %>!</h1>
+<br>
+ <strong>
+   Time to pick your move.
+ </strong>
+ <br>
+ <br>
+  <form action="/rock" method="post">
+    <input type='submit' value='Rock'>
+  </form>
+
+  <form action="/paper" method="post">
+    <input type='submit' value='Paper'>
+  </form>
+
+  <form action="/scissors" method="post">
+    <input type='submit' value='Scissors'>
+  </form>
+
+  <form action="/lizard" method="post">
+    <input type='submit' value='Lizard'>
+  </form>
+
+  <form action="/spock" method="post">
+    <input type='submit' value='Spock'>
+  </form>
+</center>
