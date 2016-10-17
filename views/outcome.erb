@@ -1,6 +1,5 @@
-<%= @game.player.name %> chose <%= @game.player_choice.to_s%>
-Computer chose <%= @game.computer_choice.to_s%>
-
+<h2><%= @game.player.name %> chose <%= @game.player_choice.to_s%>. Computer chose <%= @game.computer_choice.to_s%></h2>
+<h1>
 <%= if @game.draw?
       "It's a draw!"
     elsif @game.player_wins?
@@ -8,7 +7,10 @@ Computer chose <%= @game.computer_choice.to_s%>
     else
       "Computer won!"
     end%>
+</h1>
 
+<div>
 <form action="/play" method='get'>
   <input type='submit' value='Play Again'>
 </form>
+</div>

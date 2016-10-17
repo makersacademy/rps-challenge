@@ -40,10 +40,6 @@ class Game
     @outcome = [@player_choice, @computer_choice]
   end
 
-  # def losing_combos
-  #   @losing_combos =  @winning_combos.map { |x,y| [y,x] }
-  # end
-
   def draw?
     outcome[0] == outcome[1]
   end
