@@ -27,4 +27,10 @@ describe Game do
     expect(game.player_1_choice("scissors")).to eq(:scissors)
     end
   end
+
+  # describe 'player wins'
+  #   computer_choice - needs stubbing
+  #   it 'picks rocks' do
+
+    # end
 end

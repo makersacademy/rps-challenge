@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :game, :player_1, :choices, :option
+  attr_reader :game, :player_1, :choices, :option, :result
 
   def self.create(player_1)
     @game = Game.new(player_1)
@@ -16,6 +16,7 @@ class Game
     @player_1 = player_1
     @choices = [:rock, :paper, :scissors]
     @option = nil
+    #@result = result
   end
 
   def player_1_name
@@ -27,20 +28,27 @@ class Game
     @option = option.to_sym
   end
 
-  def player_1_choice_final
-    @option
-  end
-
   def computer_choice
     @choices.sample
   end
 
-  # def winning
-  #   case
-  #   when player_1_choice_final == "rock" && computer_choice == :scissors
-  #     "Player 1 wins!"
-  # #continues for other circumstances
-  #   end
-  # end
+  def winning?
+    player_1_choice == :rock && computer_choice == :scissors || player_1_choice == :scissors && computer_choice == :paper || player_1_choice == :paper && computer_choice == :rock
+    #don't think player_1_choice is right here
+  end
 
+  def tied?
+    player_1_choice == computer_choice
+    #or here
+  end
+
+  def result
+    if winning?
+      "You won!"
+    elsif tied?
+      "It's a draw!"
+    else
+      "You lost!"
+    end
+  end
 end
