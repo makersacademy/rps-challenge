@@ -15,7 +15,12 @@ class Game
   def evaluate(player, comp)
     result = player - comp
     result = result.abs
-    return "You won!" if result <= 2
-    "The computer won"
+    if result == 1 || result == 2
+      "You won!"
+    elsif result == 3 || result == 4
+     "The computer won"
+   else
+     "You draw"
+   end
   end
 end

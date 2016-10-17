@@ -30,6 +30,10 @@ get '/rock' do
 end
 
 get '/spock' do
+  @p1 = @@game.player[0]
+  @c2 = @@game.player[1]
+  compvalue = @c2.comp_choice
+  @result = @@game.evaluate(1, compvalue)
   erb :spock
 end
 
@@ -37,11 +41,15 @@ get '/paper' do
   @p1 = @@game.player[0]
   @c2 = @@game.player[1]
   compvalue = @c2.comp_choice
-  @result = @@game.evaluate(0, compvalue)
+  @result = @@game.evaluate(2, compvalue)
   erb :paper
 end
 
 get '/lizard' do
+  @p1 = @@game.player[0]
+  @c2 = @@game.player[1]
+  compvalue = @c2.comp_choice
+  @result = @@game.evaluate(3, compvalue)
   erb :lizard
 end
 
@@ -49,7 +57,7 @@ get '/scissors' do
   @p1 = @@game.player[0]
   @c2 = @@game.player[1]
   compvalue = @c2.comp_choice
-  @result = @@game.evaluate(0, compvalue)
+  @result = @@game.evaluate(4, compvalue)
   erb :scissors
 end
 
