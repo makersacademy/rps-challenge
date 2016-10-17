@@ -1,0 +1,63 @@
+h1{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 250%
+}
+
+h2{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 200%
+}
+
+h3{
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 100%
+}
+
+.left{
+  float:left;
+  width: 50%
+}
+
+.right{
+  float:left;
+  width:50%
+}
+
+input[type=text]{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: beige;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit] {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit]:hover {background-color: #3e8e41}
+
+input[type=submit]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
