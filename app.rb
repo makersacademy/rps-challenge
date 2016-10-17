@@ -46,8 +46,7 @@ class RPS < Sinatra::Base
   end
 
   post '/reset' do
-    @game.reset
-    redirect '/choose'
+    redirect '/'
   end
 
   # start the server if ruby file executed directly

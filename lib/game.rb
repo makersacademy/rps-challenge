@@ -58,9 +58,9 @@ attr_reader :list_of_wins, :current_winner, :overall_winner, :player_score, :tru
   end
 
   def announce_winner
-    p "Trump wins!" if trump_wins?
-    p "You win!" if player_wins?
-    p "It's a draw!" if draw?
+    "Trump wins!" if trump_wins?
+    "You win!" if player_wins?
+    "It's a draw!" if draw?
   end
 
 # private
