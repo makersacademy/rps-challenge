@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'gamegirl_classicregular';
+    src: url('gamegirl-webfont.woff2') format('woff2'),
+         url('gamegirl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  background-color: rgb(255, 240, 0);
+}
+
+h1 {
+  font-family: gamegirl_classicregular;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 200px;
+}
+
+.buttons {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  width: 40%;
+  height: 10%;
+}
+
+.play_again {
+  float: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new_game {
+  float: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: gamegirl_classicregular;
+  background-color: transparent;;
+  font-size: 20px;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+input[value="Play Again"] {
+  cursor: url(http://a.deviantart.net/avatars/3/d/3d-modeler.gif?1), auto;
+}
+
+input[value="New Challenger"] {
+  cursor: url(http://icons.iconarchive.com/icons/iconfactory/star-trek-ships/32/enterprise-C-icon.png), auto;
+}
+
+input:hover {
+  background-color: white;
+}
+
+img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+}

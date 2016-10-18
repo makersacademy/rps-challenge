@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'gamegirl_classicregular';
+    src: url('gamegirl-webfont.woff2') format('woff2'),
+         url('gamegirl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  background-color: rgb(255, 240, 0);
+}
+
+h1, h2 {
+  font-family: gamegirl_classicregular;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 80px;
+}
+
+img {
+  width: 100px;
+  hight: 100px;
+}
+
+.weapons {
+  width: 80%;
+  height: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+.rock, .paper, .scissors {
+  width: 33%;
+}
+
+.rock {
+  float: left;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.paper {
+  float: left;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.scissors {
+  float: left;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bottom {
+  width: 50%;
+  height: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+.lizard, .spock {
+  width: 45%;
+}
+
+.lizard {
+  float: left;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.spock {
+  float: right;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  font-family: gamegirl_classicregular;
+  background-color: transparent;;
+  font-size: 20px;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+input:hover {
+  background-color: white;
+}
+
+input[value="ROCK"] {
+  cursor: url(http://www.minecraftuniversity.com/assets/items/images/coal-small.png), auto;
+}
+
+input[value="PAPER"] {
+  cursor: url(http://icons.iconarchive.com/icons/lyle-zapato/archaeologicons/32/Scroll-icon.png), auto;
+}
+
+input[value="SCISSORS"] {
+  cursor: url(http://www.jensenwalkin.com/wp-content/images/scissors.gif), auto;)
+}
+
+input[value="SPOCK"] {
+  cursor: url(http://pixeljoint.com/files/icons/mr_spock.gif), auto;
+}
+
+input[value="LIZARD"] {
+  cursor: url(http://orig07.deviantart.net/fbda/f/2013/229/a/a/pixel_gecko_by_spotty_servine-d6iilby.gif), auto;
+}
