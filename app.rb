@@ -18,43 +18,18 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
-  get '/check'do
-  @game = Game.current
-  redirect (@game.check)
-end
-
 get '/play' do
   @game = Game.current
   erb :play
 end
 
-get '/won_game' do
+get '/move' do
   @game = Game.current
-  erb :won_game
+  @player_move = params[:move]
+  @compu_move = @game.sample
+  erb :result
 end
 
-get '/lost_game' do
-  @game = Game.current
-  erb :lost_game
-end
-
-get '/rock' do
-  @game = Game.current
-  @player_choice = "Rock"
-  erb (@game.sample ("Rock"))
-end
-
-get '/paper' do
-  @game = Game.current
-  @player_choice = "Paper"
-  erb (@game.sample("Paper"))
-end
-
-get '/scissors' do
-  @game = Game.current
-  @player_choice = "Scissors"
-  erb (@game.sample("Scissors"))
-end
 #-----------------------2 PLAYERS GAME----------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------------------
 post '/2name' do
@@ -69,44 +44,16 @@ get '/2play' do
   erb :twoplay
 end
 
-get '/2rock' do
+get '/2move' do
   @game = Game.current
-  erb :twoplayrock
+  @game.players[0].move = params[:move]
+  erb :twoplay2
 end
 
-get '/2paper' do
+get '/2move2' do
   @game = Game.current
-  erb :twoplaypaper
-end
-
-get '/2scissors' do
-  @game = Game.current
-  erb :twoplayscissors
-end
-
-get '/2check' do
-  @game = Game.current
-  redirect (@game.two_check)
-end
-
-get '/2tie' do
-  @game = Game.current
-  erb :twotie
-end
-
-get '/2win' do
-  @game = Game.current
-  erb :twowin
-end
-
-get '/2lose' do
-  @game = Game.current
-  erb :twolose
-end
-
-get '/2won_game' do
-  @game = Game.current
-  erb :two_won_game
+  @game.players[1].move = params[:move2]
+  erb :tworesult
 end
 
 run! if app_file == $0

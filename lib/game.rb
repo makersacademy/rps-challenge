@@ -12,18 +12,17 @@ class Game
     @compu_points = 0
   end
 
-  def sample(player_choice)
-      @result = ["Rock", "Paper", "Scissors"].sample
-      choice(player_choice)
+  def sample
+    @result = ["Rock", "Paper", "Scissors"].sample
   end
 
-  def choice(player_choice)
-    if @result == player_choice
-      :tie
-    elsif (@result == "Paper" && player_choice == "Rock") || (@result == "Rock" && player_choice == "Scissors") || (@result == "Scissors" && player_choice == "Paper")
-      :lost
-    elsif (@result == "Paper" && player_choice == "Scissors") || (@result == "Rock" && player_choice == "Paper") || (@result =="Scissors" && player_choice == "Rock")
-      :win
+  def choice(compu_choice, player_choice)
+    if compu_choice == player_choice
+      "tie"
+    elsif (compu_choice == "Paper" && player_choice == "Rock") || (compu_choice == "Rock" && player_choice == "Scissors") || (compu_choice == "Scissors" && player_choice == "Paper")
+      "lost"
+    elsif (compu_choice == "Paper" && player_choice == "Scissors") || (compu_choice == "Rock" && player_choice == "Paper") || (compu_choice =="Scissors" && player_choice == "Rock")
+      "win"
     end
   end
 
@@ -31,17 +30,14 @@ class Game
     @compu_points += 1
   end
 
-  def check
-    if @players[0].points == 5 then '/won_game' elsif @compu_points == 5 then '/lost_game'
-    else
-      '/play'
-    end
-  end
-
-  def two_check
-    if @players[0].points == 5 then '/won_game' elsif @players[1].points == 5 then '/2won_game'
-    else
-      '/2play'
+  def two_choice(p1, p2)
+    if
+    (p1 == 'Rock' && p2 == 'Scissors') || (p1 == 'Paper' && p2 == 'Rock') || (p1 == 'Scissors' && p2 == 'Paper')
+    "win"
+    elsif
+    (p1 == 'Rock' && p2 == 'Paper') || (p1 == 'Paper' && p2 == 'Scissors') || (p1 == 'Scissors' && p2 == 'Rock')
+    "lost"
+    else "tie"
     end
   end
 end

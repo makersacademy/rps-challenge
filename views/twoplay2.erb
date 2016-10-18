@@ -1,23 +1,21 @@
 <body>
-
+  
   <h1><%= @game.players[1].name %> is playing</h1>
 
   <h1>Choose an attack:</h1>
 
-  <div style="height:auto; margin: 0 auto; margin-left:26%; align:center;">
-    <form method="link" action="/2win">
-      <input type="submit" value="Rock">
+  <div style="height:auto; margin:0 auto; margin-left:26%; align:center;">
+    <form method="link" action="/2move2">
+      <input type="submit" name="move2" value="Rock">
+    </form>
+    <form method="link" action="/2move2">
+      <input type="submit" name="move2" value="Paper">
     </form>
 
-    <form method="link" action="/2tie">
-      <input type="submit" value="Paper">
-    </form>
-
-    <form method="link" action="/2lose">
-      <input type="submit" value="Scissors">
+    <form method="link" action="/2move2">
+      <input type="submit" name="move2" value="Scissors">
     </form>
   </div>
-
 </body>
 
 <style>

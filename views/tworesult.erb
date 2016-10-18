@@ -1,0 +1,91 @@
+<body>
+
+  <h1><%= @game.players[0].name %> has played <%= @game.players[0].move %></h1>
+  <h1><%= @game.players[1].name %> has played <%= @game.players[1].move %></h1>
+
+  <% @move_result = @game.two_choice(@game.players[0].move, @game.players[1].move) %>
+  <%if @move_result == "tie" %>
+  <h2>It's a tie. Play again!<h2>
+    <h1><%= @game.players[0].name %> has got <%= @game.players[0].points %> points</h1>
+    <h1><%= @game.players[1].name %> has got <%= @game.players[1].points %> points</h1>
+
+
+    <%elsif @move_result == "lost" %>
+    <h2><%= @game.players[1].name %> has won the move!<h2>
+      <% @game.players[1].add_points %>
+      <h1><%= @game.players[0].name %> has got <%= @game.players[0].points %> points</h1>
+      <h1><%= @game.players[1].name %> has got <%= @game.players[1].points %> points</h1>
+
+
+      <%elsif @move_result == "win" %>
+      <h2><%= @game.players[0].name %> has won the move!<h2>
+        <% @game.players[0].add_points %>
+        <h1><%= @game.players[0].name %> has got <%= @game.players[0].points %> points</h1>
+        <h1><%= @game.players[1].name %> has got <%= @game.players[1].points %> points</h1>
+        <% end %>
+
+        <% if @game.players[0].points == 5 %>
+        <h1><%= @game.players[0].name %> has won the game!</h1>
+
+        <form method="link" action="/">
+          <input type="submit" value="Play again">
+        </form>
+
+        <% elsif @game.players[1].points == 5 %>
+        <h1><%= @game.players[1].name %> has won the game!</h1>
+
+        <form method="link" action="/">
+          <input type="submit" value="Play again">
+        </form>
+
+        <% else %>
+
+        <form method="link" action="/2play">
+          <input type="submit" value="Play again">
+        </form>
+
+        <% end %>  
+
+      </body>
+
+      <style>
+
+      body {
+        background-image: url("http://cdn.pcwallart.com/images/walle-wallpaper-3.jpg");
+      }
+
+      h1 {
+        font-family: Comic Sans MS;
+        font-size: 35px; color:red;
+        text-align:center
+      }
+
+      h2 {
+        font-family: Comic Sans MS;
+        font-size: 50px; color:red;
+        text-align:center
+      }
+      form {
+        width:13%; margin:7% auto
+      }
+
+      input[type=submit] {
+        display: inline-block;
+        border-radius: 20px;
+        background-color: orange;
+        border: none;
+        color: #FFFFFF ;
+        text-align: center;
+        font-size: 18px;
+        padding: 20px;
+        width: 130px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      input[type=submit]:hover {
+        border: 1px solid #999;
+        color: red;
+      }
+      </style>
