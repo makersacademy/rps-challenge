@@ -19,7 +19,9 @@ class RockGame < Sinatra::Base
   end
 
   get '/result' do
-    erb Game.current_game.result(Game.current_game.player.weapon_choice(params[:player_choice]), Game.current_game.computer.weapon_choice)
+    @player_choice = Game.current_game.player.weapon_choice(params[:player_choice])
+    @computer_choice = Game.current_game.computer.weapon_choice
+    erb Game.current_game.result(@player_choice, @computer_choice)
   end
 
   # start the server if ruby file executed directly

@@ -1,6 +1,6 @@
 class Computer
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
 
   attr_reader :weapon
 

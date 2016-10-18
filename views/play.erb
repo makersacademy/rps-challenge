@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <h1><%= Game.current_game.player.name %> challenges the Champion to a game of <br>ROCK, PAPER, SISSORS!</h1>
+  <h1><%= Game.current_game.player.name %> challenges the Champion to a game of <br>ROCK, PAPER, SISSORS...<br>LIZARD, SPOCK!</h1>
 
   <h2>Pick your weapon wisely...</h2>
 
@@ -30,6 +30,24 @@
       <form action="/result">
         <img src="http://megaicons.net/static/img/icons_sizes/8/178/256/rock-paper-scissors-scissors-icon.png" />
         <input type="submit" name="player_choice" value="SCISSORS" />
+      </form>
+    </div>
+
+  </div>
+
+  <div class="bottom">
+
+    <div class="lizard">
+      <form action="/result">
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11784-200.png" />
+        <input type="submit" name="player_choice" value="LIZARD" />
+      </form>
+    </div>
+
+    <div class="spock">
+      <form action="/result">
+        <img src="http://www.stickmotive.ch/kostenlose_bekannnte_leute_IMG/Mr-Spock.gif" />
+        <input type="submit" name="player_choice" value="SPOCK" />
       </form>
     </div>
 

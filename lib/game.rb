@@ -3,8 +3,6 @@ require_relative 'computer'
 
 class Game
 
-  @@game = nil
-
   def self.start_game(player, computer)
     @@game = Game.new(player, computer)
   end
@@ -15,9 +13,11 @@ class Game
 
 
   RULES = {
-    rock:     {rock: :draw, paper: :lose, scissors: :win},
-    paper:    {rock: :win, paper: :draw, scissors: :lose},
-    scissors: {rock: :lose, paper: :win, scissors: :draw}
+    rock:     {rock: :draw, paper: :lose, scissors: :win, lizard: :win, spock: :lose},
+    paper:    {rock: :win, paper: :draw, scissors: :lose, lizard: :lose, spock: :win},
+    scissors: {rock: :lose, paper: :win, scissors: :draw, lizard: :lose, spock: :lose},
+    lizard:   {rock: :lose, paper: :win, scissors: :lose, lizard: :draw, spock: :win},
+    spock:    {rock: :win, paper: :lose, scissors: :win, lizard: :lose, spock: :draw}
   }
 
   attr_reader :player, :computer, :rules

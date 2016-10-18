@@ -24,7 +24,7 @@ h1 {
 h2 {
   text-align: center;
   font-size: 20px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 img {
@@ -65,6 +65,32 @@ img {
   margin-left: auto;
 }
 
+.bottom {
+  width: 50%;
+  height: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+.lizard, .spock {
+  width: 45%;
+}
+
+.lizard {
+  float: left;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.spock {
+  float: right;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 input {
   display: block;
   margin-right: auto;
@@ -91,4 +117,12 @@ input[value="PAPER"] {
 
 input[value="SCISSORS"] {
   cursor: url(http://www.jensenwalkin.com/wp-content/images/scissors.gif), auto;)
+}
+
+input[value="SPOCK"] {
+  cursor: url(http://pixeljoint.com/files/icons/mr_spock.gif), auto;
+}
+
+input[value="LIZARD"] {
+  cursor: url(http://orig07.deviantart.net/fbda/f/2013/229/a/a/pixel_gecko_by_spotty_servine-d6iilby.gif), auto;
 }
