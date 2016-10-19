@@ -1,0 +1,151 @@
+<table align = "center">
+<tr>
+  <td></td>
+  <td align = "center" id = "outcome">
+    <% if @choice == "ROCK" %>
+      <% if @opponent_choice.to_s == "ROCK" %>
+        TIE GAME!
+      <% elsif @opponent_choice.to_s == "SCISSORS" %>
+        YOU WIN!
+      <% else %>
+        YOU WIN!
+      <% end %>
+
+    <% elsif @choice == "SCISSORS" %>
+      <% if @opponent_choice.to_s == "ROCK" %>
+        YOU LOSE!
+      <% elsif @opponent_choice.to_s == "SCISSORS" %>
+        TIE GAME!
+      <% else %>
+        YOU WIN!
+      <% end %>
+
+    <% else %>
+      <% if @opponent_choice.to_s == "ROCK" %>
+        YOU WIN!
+      <% elsif @opponent_choice.to_s == "SCISSORS" %>
+        YOU LOSE!
+      <% else %>
+        TIE GAME!
+      <% end %>
+   <% end %>
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <div id = "pictures">
+    <td align = "center">
+        <div align = "center">
+          <% if @choice == "ROCK" %>
+            <div align = "center">
+              <img src = "http://image.egokick.com/image/upload/w_880,c_fill,g_face:center,fl_lossy,q_80/v1429545321/mtfyjzdg4mhmefadjpuc.jpg" height = "300">
+            </div>
+          <% elsif @choice == "PAPER" %>
+            <div align = "center">
+              <img src = "https://www.mooncostumes.com/image/20307" height = "300">
+            </div>
+          <% else %>
+            <div align = "center">
+              <img src = "http://www.eonline.com/eol_images/Entire_Site/2015113/rs_634x971-151203145545-634.Johnny-Depp-Edward-Scissorhands.jl.120315.jpg" height = "300">
+            </div>
+          <% end %>
+        </div>
+    </td>
+  </div>
+
+    <td> </td>
+
+    <td align = "center">
+      <div align = "center">
+        <% if @opponent_choice.to_s == "ROCK" %>
+          <div align = "center">
+            <img src = "http://image.egokick.com/image/upload/w_880,c_fill,g_face:center,fl_lossy,q_80/v1429545321/mtfyjzdg4mhmefadjpuc.jpg" height = "300">
+          </div>
+        <% elsif @opponent_choice.to_s == "PAPER" %>
+          <div align = "center">
+            <img src = "https://www.mooncostumes.com/image/20307" height = "300">
+          </div>
+        <% else %>
+          <div align = "center">
+            <img src = "http://www.eonline.com/eol_images/Entire_Site/2015113/rs_634x971-151203145545-634.Johnny-Depp-Edward-Scissorhands.jl.120315.jpg" height = "300">
+          </div>
+        <% end %>
+      </div>
+    </td>
+ </tr>
+
+ <tr>
+   <td align = "center" id = "choice"> <%= @choice %> </td>
+   <td align = "center" id = "vs">  VS. </td>
+   <td align = "center" id = "opponent"> <%= @opponent_choice.to_s %> </td>
+</tr>
+</table>
+
+<br></br><br></br>
+
+<div align = "left">
+  <form action = "/choose" method = "get">
+      <button type = "submit" value = "Submit">PLAY AGAIN!</button>
+  </form
+</div>
+
+
+
+
+
+<style>
+
+html {
+  background: url(http://pre10.deviantart.net/4596/th/pre/i/2005/183/6/a/environment__post_apocalypse_by_i_netgrafx.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+#pictures{
+  padding-top: 2cm;
+}
+#choice {
+  color: white;
+  font-size: 60px;
+}
+
+#opponent {
+  color: white;
+  font-size: 60px;
+}
+
+#vs {
+  color: white;
+  font-size: 80px;
+}
+
+#outcome {
+  color: white;
+  font-size: 60px;
+  color: red;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+button:hover{
+  background: #3B5C76;
+}
+
+button {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 100px;
+    cursor: pointer;
+    margin: 5px;
+  }
+</style>
