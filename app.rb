@@ -35,4 +35,12 @@ class RockPaperScisors < Sinatra::Base
     erb :paper
   end
 
+  get '/scissors' do
+    game = Game.new
+    @player1 = session[:player1]
+    @comp_choice = game.comp
+    @result = game.scissors
+    erb :scissors
+  end
+
 end

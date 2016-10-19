@@ -15,7 +15,7 @@ feature "Show results" do
 end
 
 feature "Show results" do
-  scenario "player clicks rock" do
+  scenario "player clicks scissors" do
     sign_in_and_play
     find_button('Scissors').click
     expect(page).to have_text("You chose scissors")
