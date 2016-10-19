@@ -22,7 +22,7 @@ class RockPaperScisors < Sinatra::Base
   get '/rock' do
     game = Game.new
     @player1 = session[:player1]
-    @comp_choice = game.comp
+    @comp_choice = game.comp_choice
     @result = game.rock
     erb :rock
   end
@@ -30,7 +30,7 @@ class RockPaperScisors < Sinatra::Base
   get '/paper' do
     game = Game.new
     @player1 = session[:player1]
-    @comp_choice = game.comp
+    @comp_choice = game.comp_choice
     @result = game.paper
     erb :paper
   end
@@ -38,9 +38,8 @@ class RockPaperScisors < Sinatra::Base
   get '/scissors' do
     game = Game.new
     @player1 = session[:player1]
-    @comp_choice = game.comp
+    @comp_choice = game.comp_choice
     @result = game.scissors
     erb :scissors
   end
-
 end

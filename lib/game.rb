@@ -1,8 +1,12 @@
 class Game
 
-  attr_reader :comp, :player1, :user_choice
+  attr_reader :comp
   OPTIONS = [:rock, :paper, :scissors]
 
+  def comp_choice
+    @comp = OPTIONS.sample
+  end
+  
   def rock
     if comp == :rock
       "drew"
@@ -33,9 +37,4 @@ class Game
     end
   end
 
-  private
-
-  def comp_choice
-    @comp = OPTIONS.sample
-  end
 end
