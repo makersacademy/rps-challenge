@@ -19,11 +19,20 @@ class RockPaperScisors < Sinatra::Base
     erb :start_game
   end
 
-  get '/results' do
+  get '/rock' do
     game = Game.new
-    @result = game.rock
     @player1 = session[:player1]
-    erb :results
+    @comp_choice = game.comp
+    @result = game.rock
+    erb :rock
+  end
+
+  get '/paper' do
+    game = Game.new
+    @player1 = session[:player1]
+    @comp_choice = game.comp
+    @result = game.paper
+    erb :paper
   end
 
 end

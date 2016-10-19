@@ -1,8 +1,12 @@
 <html>
 <h3>Welcome <%=@player1%>! Please click on rock, paper or scissors below to play!</h3>
-<form action="/results" method="get">
-  <button>Rock</button>
-  <button>Paper</button>
-  <button>Scissors</button>
+<form action="/rock" method="get">
+  <button type="submit" name="choice" value="Rock">Rock</button>
+</form>
+<form action="/paper" method="get">
+  <button type="submit" name="choice" value="Paper">Paper</button>
+</form>
+<form action="/scissors" method="get">
+  <button type="submit" name="choice" value="Scissors">Scissors</button>
 </form>
 </html>
