@@ -1,0 +1,132 @@
+/* RESETS */
+
+html { box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 600px;
+  max-width: 800px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0.5rem;
+}
+
+/* DESIGN STYLES */
+
+/* Fonts */
+
+html { font-family: 'Open Sans', sans-serif; }
+
+h1, h2, h3, h4 {
+  font-family: 'Bangers', sans-serif;
+}
+
+/* Colors */
+
+html {
+  background-color: #888;   /* medium gray */
+  color: #ddd;              /* dark gray */
+}
+
+body,
+header nav input[type="submit"] {
+  background-color: #222;    /* dark gray */
+}
+
+main {
+  background-color: #ddd;   /* light gray */
+  color: #222;              /* dark gray */
+}
+
+/* Colors, con't. */
+
+a:link,
+a:visited,
+header nav input[type="submit"] {
+  color: #c00;              /* darker contrasting color; inactive links */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+header nav input[type="submit"]:hover,
+header nav input[type="submit"]:active {
+  color: #f22;              /* brighter contrasting color; active links */
+}
+
+header nav li {
+  border-left: 3px solid #888;    /* match html background-color */
+}
+
+main table,
+main th,
+main td {
+  border: 1px solid #222;   /* border should match body background-color */
+  background-color: #eee;   /* even lighter than main background-color */
+}
+
+/* MAIN STYLES - Yield Block */
+
+main {
+  padding: 1rem;
+  clear: both;
+}
+
+/* Lists */
+
+main ul { margin: 0 auto 1.5rem; }
+
+main ul li {
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+/* Main Styles, con't. */
+
+/* Forms */
+
+main input {
+  display: block;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+main input[type="text"],
+main input[type="password"],
+main input[type="email"] {
+  padding: 0 0.5rem;
+}
+
+main textarea {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+main input[type="radio"],
+main input[type="checkbox"] {
+  display: inline;
+  width: 1.5rem;
+}
+
+main input[type="submit"] { width: 12rem; }
+
+main label { display: block; }
+
+/* FOOTER STYLES */
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
