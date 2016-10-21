@@ -38,3 +38,8 @@ As usual please start by
 
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+
+### User Interface Sketch (Hi-Fi)
+
+This is the basic view of the webapp.
+![alt tag](https://github.com/ManuCiao/rps-challenge/tree/master/public/img/Homepage.png)
