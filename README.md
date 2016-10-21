@@ -42,4 +42,5 @@ This repo works with [Coveralls](https://coveralls.io/) to calculate test covera
 ### User Interface Sketch (Hi-Fi)
 
 This is the basic view of the webapp.
-![alt tag](https://github.com/ManuCiao/rps-challenge/tree/master/public/img/Homepage.png)
+
+![alt tag](https://github.com/ManuCiao/rps-challenge/blob/master/public/img/Homepage.png)
