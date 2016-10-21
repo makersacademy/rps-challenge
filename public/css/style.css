@@ -21,13 +21,13 @@ body {
 
 .container h1 {
     font-size: 36px;
-    padding: 10px 0 10px 0;
+    padding: 5px 0 10px 0;
     text-align: center;
     text-shadow: 5px 5px 5px #666666;
     color: #000;
     border-radius: 1em;
     width: 500px;
-    margin: 5em auto;
+    margin: 4em auto;
     padding: 30px;
     background-color: #fff;
     line-height: 50px;
@@ -42,11 +42,11 @@ form .player {
   text-shadow: 5px 5px 2px #666666;
 }
 
-.player label{
-  font-size: 27px;
+.player label, .intro h1, .outcome h1{
+  font-size: 40px;
   font-family: courier, "courier new", monospace;
   letter-spacing: 2px;
-  padding: 10px 0 10px 0;
+
   text-transform: capitalize;
 }
 

@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    @game.rock
+    @game.rock 
     @game.computer_move
     redirect '/move'
   end
