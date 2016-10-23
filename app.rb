@@ -21,8 +21,9 @@ class RPS < Sinatra::Base
 
   post '/go' do
     @game = Game.instance
-    @game.player_1_choice(params[:option])
+    @game.set_player_1_choice(params[:choice])
     @game.computer_choice
+    @game.result
     erb :go
   end
 
