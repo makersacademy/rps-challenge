@@ -41,6 +41,10 @@ This repo works with [Coveralls](https://coveralls.io/) to calculate test covera
 
 ### User Interface Sketch (Hi-Fi)
 
-This is the basic view of the webapp.
+This is the basic view of the webapp. <br />
+Deploy to Heroku:
+
+
+[https://rps-play-game.herokuapp.com/](https://rps-play-game.herokuapp.com/)
 
 ![alt tag](https://github.com/ManuCiao/rps-challenge/blob/master/public/img/Homepage.png)
