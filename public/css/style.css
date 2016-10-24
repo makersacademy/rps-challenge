@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: url("../img/RPS_background.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  text-shadow: 5px 5px 5px #666666;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 100%;
+  position: relative;
+}
+
+.container h1 {
+    font-size: 36px;
+    padding: 5px 0 10px 0;
+    text-align: center;
+    text-shadow: 5px 5px 5px #666666;
+    color: #000;
+    border-radius: 1em;
+    width: 500px;
+    margin: 4em auto;
+    padding: 30px;
+    background-color: #fff;
+    line-height: 50px;
+
+}
+
+form .player {
+  font-size: 28px;
+  padding: 20px 0 35px 0;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 5px 5px 2px #666666;
+}
+
+.player label, .intro h1, .outcome h1{
+  font-size: 40px;
+  font-family: courier, "courier new", monospace;
+  letter-spacing: 2px;
+
+  text-transform: capitalize;
+}
+
+button {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #ffffff);
+  background-image: -moz-linear-gradient(top, #000000, #ffffff);
+  background-image: -ms-linear-gradient(top, #000000, #ffffff);
+  background-image: -o-linear-gradient(top, #000000, #ffffff);
+  background-image: linear-gradient(to bottom, #000000, #ffffff);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  text-shadow: 2px 1px 3px #000000;
+  -webkit-box-shadow: 8px 8px 9px #d9d9d9;
+  -moz-box-shadow: 8px 8px 9px #d9d9d9;
+  box-shadow: 8px 8px 9px #d9d9d9;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 27px;
+  margin: 20px;
+  padding: 15px 45px 15px 45px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #0a0a0a);
+  background-image: -moz-linear-gradient(top, #ffffff, #0a0a0a);
+  background-image: -ms-linear-gradient(top, #ffffff, #0a0a0a);
+  background-image: -o-linear-gradient(top, #ffffff, #0a0a0a);
+  background-image: linear-gradient(to bottom, #ffffff, #0a0a0a);
+  text-decoration: none;
+}
+
+.intro, .outcome, .move  {
+  font-family: courier, "courier new", monospace;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0px 0 50px 0;
+  text-shadow: 5px 5px 5px #666666;
+  color: #fff;
+}
+
+
+.move {
+  display: flex;
+  flex-flow: row nowrap; /* Align on the same line */
+  justify-content: space-around; /* Equal margin between the child elements */
+  padding: 5px 55px 5px 55px;
+  color: #000;
+}
+.move::before{  content: ' ';}
+
+.move::after{  content: ' ';}
+
+.move .left, .right, .middle{
+  flex-grow: 2;
+}*/
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .move {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+.footer {
+
+  font-size: 15px;
+  position: absolute;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  color: #000;
+  height: 50px;
+  left: 0 ;
+  right: 0;
+  bottom: 0;
+}

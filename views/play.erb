@@ -1,0 +1,19 @@
+<link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
+
+<div class="intro">
+  <h1><%= @game.player.name %>     vs     Computer </h1>
+</div><br><br>
+
+<div class="move">
+  <form  class="left" action="/rock" method="post">
+    <button type="submit" name="shape" value="Rock">Rock</button>
+  </form>
+
+  <form class="middle" action="/paper" method="post">
+    <button type="submit" name="shape" value="Paper">Paper</button>
+  </form>
+
+  <form class="right" action="/scissors" method="post">
+    <button type="submit" name="shape" value="Scissors">Scissors</button>
+  </form>
+</div>

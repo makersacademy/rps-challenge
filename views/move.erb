@@ -1,0 +1,25 @@
+<link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
+
+<div class="intro">
+  <h1>You chose <%= @game.player_move %>!</h1><br>
+  <h1>Computer chose <%= @game.pc_move %>!</h1>
+</div>
+
+<div class="outcome">
+  <% if @game.draw? %>
+    <h1><%= @game.player.name %>, You draw!</h1>
+  <% elsif @game.win? %>
+    <h1><%= @game.player.name %>, You win!<h1>
+  <% elsif @game.lose? %>
+    <h1><%= @game.player.name %>, You lose!</h1>
+  <% end %>
+</div><br>
+
+<div class="move">
+  <form action="/play">
+      <button type="submit" value="Play Again">Play Again</button>
+  </form>
+  <form action="/">
+      <button type="submit" value="Home">Home</button>
+  </form>
+</div>
