@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'ottomedium';
+    src: url('otto-webfont.woff2') format('woff2'),
+         url('otto-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cafe_francoiseregular';
+    src: url('caf_franaoise-webfont.woff2') format('woff2'),
+         url('caf_franaoise-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+  background: url("https://s-media-cache-ak0.pinimg.com/originals/e6/da/32/e6da32e3a37565956a73813990b274ae.jpg");
+  background-size: cover;
+  filter: brightness(80%);
+}
+
+.header {
+  width: 70%;
+  height: 20%;
+  float:left;
+  margin-right: 20%;
+  margin-top: 10%;
+  font-weight: bolder;
+  text-align: left;
+  margin-left: 6%;
+}
+
+.choices {
+  margin-top: 10%;
+  float:left;
+  width: 80%;
+  text-align:center;
+  margin-left: 6%;
+}
+
+input {
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin-left: 100px;
+  float:left;
+}
+
+h1 {
+  font-family: 'cafe_francoiseregular';
+  text-shadow: 2px 2px 4px black;
+  font-size: 60px;
+  text-align: left;
+  color: white;
+  margin: 0px;
+}
+
+h2 {
+  font-family: 'ottomedium';
+  font-size: 60px;
+  color: white;
+  text-shadow: 4px 4px 4px black;
+  margin: 0px;
+}

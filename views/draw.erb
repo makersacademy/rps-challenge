@@ -1,0 +1,19 @@
+<html>
+<head>
+  <link rel="stylesheet" href="public/reset.css" />
+  <link rel="stylesheet" href="css/result.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>The computer chose <%=@game.computer.choice%></h1>
+    <h1>It's a draw!</h1>
+    <h2>Enjoy the sense of balance that true equality can bring.</h1>
+  </div>
+  <div class="choice">
+    <form action='/play'>
+      <input type="submit" value="Play Again"/>
+    </form>
+  </div>
+</body>
+</html>

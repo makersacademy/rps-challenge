@@ -1,0 +1,25 @@
+<html>
+<head>
+  <link rel="stylesheet" href="public/reset.css" />
+  <link rel="stylesheet" href="css/play.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1><%=@game.player1.name%></h1>
+    <h2>it's time to choose..</h2>
+  </div>
+  <div class="choices">
+    <form action="/choice" method="post">
+      <div class="rock">
+        <input type="image" name="choice" value=rock src="http://www.amazingwallpaperz.com/wp-content/uploads/Nature-Rock-Wallpaper-Widescreen-HD.jpg">
+      </div>
+    </form>
+    <form action="/choice" method="post">
+      <input type="image" name="choice" value=paper src="https://s-media-cache-ak0.pinimg.com/564x/52/76/51/5276513d23a4a0f5b786198586a0cb17.jpg">
+    </form>
+    <form action="/choice" method="post">
+      <input type="image" name="choice" value=scissors src="https://s-media-cache-ak0.pinimg.com/236x/9d/a2/ff/9da2ff1b207872087ce288bdf7571c84.jpg">
+    </form>
+</body>
+</html>
