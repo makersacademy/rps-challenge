@@ -1,0 +1,28 @@
+<head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<h1> Rock Paper Scissors </h1>
+
+<div class="content">
+
+  <p> <%= @game.player1.name %> chose <%= @game.player1.weapon %>.</p>
+  <p> <%= @game.player2.name %> chose <%= @game.player2.weapon %>.</p>
+
+  <p>
+    <% if @winner == :player1_win %>
+      <%= @game.player1.name %> wins!
+    <% elsif @winner == :player2_win %>
+      <%= @game.player2.name %> wins!
+    <% else %>
+      It's a draw!
+    <% end %>
+  </p>
+
+  <form action="/play_again" method="post">
+    <input type="submit" value="play again">
+  </form>
+</div>
+
+<img src="rps.png" alt="" />
