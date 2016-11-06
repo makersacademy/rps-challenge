@@ -6,6 +6,11 @@ Is your marketing team stressed out?  Of course they are!  The developer geeks l
 
 The RPS Marketeer stress relief programme is the solution you are looking for.  
 
+Currently deployed via this link
+----
+https://rpstherapy.herokuapp.com
+
+
 Instructions
 ----
 
