@@ -14,3 +14,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.play-again-link {
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica;
+}
+
+a {
+  text-decoration: none;
+  color: #2f4f4f;
+}
