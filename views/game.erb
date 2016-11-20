@@ -1,0 +1,28 @@
+<html>
+ <head>
+  <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet" type="text/css">
+
+   <style>
+    body {
+     font-family: 'Coming Soon', cursive;
+     color: #FFEBCD;
+     font-size: 22px;
+     background-image: url("https://www.laserfiche.com/content/uploads/2016/01/shutterstock_284660570.jpg");
+     background-size: cover;
+     background-position: fixed;
+   }
+   </style>
+ </head>
+
+  <div container>
+  <body>
+   <h1> Get ready to play, <%= @player_name%>! </h1>
+   <h2> Please select your hand: </h2>
+   <div class = 'icon_container'>
+     <a href = '/results?choice=paper' id='Paper'><img height="300" src = 'http://dreamatico.com/data_images/hand/hand-7.jpg' class = 'icon'></a>
+     <a href = './results?choice=rock' id='Rock'><img height="300" src = 'http://dri6hp6j35hoh.cloudfront.net/news/u/2013/04/clinched-fist-ss.jpg' class = 'icon'></a>
+     <a href = './results?choice=scissors' id='Scissors'><img height="300" src = 'https://syracuserocks.files.wordpress.com/2011/02/peace.jpg' class = 'icon'></a>
+   </div>
+   <%= erb :results unless @winner.nil? %>
+  </body>
+</html>
