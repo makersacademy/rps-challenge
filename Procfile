@@ -1,1 +1,1 @@
- web: bundle exec rps -p $PORT -c ./config/rps.rb
+ web: bundle exec puma -p $PORT -c ./config/rps.rb
