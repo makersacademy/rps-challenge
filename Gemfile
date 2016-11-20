@@ -16,4 +16,5 @@ group :development,:test do
   gem 'rspec-sinatra', require: true
   gem 'pry'
   gem 'rb-readline'
+  gem 'puma'
 end
