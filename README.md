@@ -38,5 +38,3 @@ Controller _rps.rb_ requests data from the _Game_ class and also directs users t
 
 ## Resources used:
 I've used a website template from http://www.free-css.com/free-css-templates/page199/onassis
-Also, random pics from Google
-Idea for the game rules http://demonstrations.wolfram.com/RockPaperScissorsWithAIPlayer/
