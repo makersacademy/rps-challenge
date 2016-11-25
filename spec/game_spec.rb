@@ -5,7 +5,14 @@ describe Game do
   subject(:game_rock) { described_class.new("Rock") }
   subject(:game_paper) { described_class.new("Paper") }
   subject(:game_scissors) { described_class.new("Scissors") }
-  # let(:choice) { double(:choice) }
+
+  it "can create a new Game class using class method" do
+    expect(Game.create("Rock")).to be_an_instance_of(Game)
+  end
+
+  it "can reference current instance of Game class using class method" do
+    expect(Game.instance).to be_an_instance_of(Game)
+  end
 
   it "assigns user choice on instantiation" do
     expect(game_rock.user_choice).to eq "Rock"
