@@ -22,15 +22,15 @@ class Game
     @computer_choice = random_rps
 
     if @user_choice == @computer_choice
-      return "Tie"
+      return :tie
     elsif @user_choice == "Rock" && @computer_choice == "Scissors"
-      return "Win"
+      return :win
     elsif @user_choice == "Scissors" && @computer_choice == "Paper"
-      return "Win"
+      return :win
     elsif @user_choice == "Paper" && @computer_choice == "Rock"
-      return "Win"
+      return :win
     else
-      return "Lose"
+      return :lose
     end
   end
 

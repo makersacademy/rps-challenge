@@ -16,9 +16,9 @@ class RPS < Sinatra::Base
 
   post '/selection' do
     @game = Game.create(params[:choice])
-    if @game.compare == "Win"
+    if @game.compare == :win
       erb(:win)
-    elsif @game.compare == "Tie"
+    elsif @game.compare == :tie
       erb(:tie)
     else
       erb(:lose)

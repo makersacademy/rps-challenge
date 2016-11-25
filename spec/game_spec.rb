@@ -29,47 +29,47 @@ describe Game do
 
   it "returns win if user chooses Rock and computer chooses Scissors" do
     allow(game_rock).to receive(:random_rps).and_return "Scissors"
-    expect(game_rock.compare).to eq "Win"
+    expect(game_rock.compare).to eq :win
   end
 
   it "returns win if user chooses Scissors and computer chooses Paper" do
     allow(game_scissors).to receive(:random_rps).and_return "Paper"
-    expect(game_scissors.compare).to eq "Win"
+    expect(game_scissors.compare).to eq :win
   end
 
   it "returns win if user chooses Paper and computer chooses Rock" do
     allow(game_paper).to receive(:random_rps).and_return "Rock"
-    expect(game_paper.compare).to eq "Win"
+    expect(game_paper.compare).to eq :win
   end
 
   it "returns lose if user chooses Rock and computer chooses Paper" do
     allow(game_rock).to receive(:random_rps).and_return "Paper"
-    expect(game_rock.compare).to eq "Lose"
+    expect(game_rock.compare).to eq :lose
   end
 
   it "returns lose if user chooses Scissors and computer chooses Rock" do
     allow(game_scissors).to receive(:random_rps).and_return "Rock"
-    expect(game_scissors.compare).to eq "Lose"
+    expect(game_scissors.compare).to eq :lose
   end
 
   it "returns lose if user chooses Paper and computer chooses Scissors" do
     allow(game_paper).to receive(:random_rps).and_return "Scissors"
-    expect(game_paper.compare).to eq "Lose"
+    expect(game_paper.compare).to eq :lose
   end
 
   it "returns draw if user and computer choose Rock" do
     allow(game_rock).to receive(:random_rps).and_return "Rock"
-    expect(game_rock.compare).to eq "Tie"
+    expect(game_rock.compare).to eq :tie
   end
 
   it "returns draw if user and computer choose Paper" do
     allow(game_paper).to receive(:random_rps).and_return "Paper"
-    expect(game_paper.compare).to eq "Tie"
+    expect(game_paper.compare).to eq :tie
   end
 
   it "returns draw if user and computer choose the Scissors" do
     allow(game_scissors).to receive(:random_rps).and_return "Scissors"
-    expect(game_scissors.compare).to eq "Tie"
+    expect(game_scissors.compare).to eq :tie
   end
 
 end
