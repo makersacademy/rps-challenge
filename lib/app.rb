@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -13,11 +14,18 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  # post '/selection' do
-  #   @game = Game.new(params[:choice])
-  #   if @game.compare?
-  #     erb(:win)
-  #
+  post '/selection' do
+    @game = Game.create(params[:choice])
+    if @game.compare == "Win"
+      erb(:win)
+    elsif @game.compare == "Tie"
+      erb(:tie)
+    else
+      erb(:lose)
+    end
+  end
+
+
 
 
   # start the server if ruby file executed directly

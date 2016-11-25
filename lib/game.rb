@@ -6,6 +6,10 @@ class Game
     @game
   end
 
+  def self.create(user_choice)
+    @game = Game.new(user_choice)
+  end
+
   def initialize(user_choice)
     @user_choice = user_choice
   end

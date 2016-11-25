@@ -5,6 +5,6 @@ def sign_in
 end
 
 def select_choice
-  choose("Rock")
+  choose(:Rock)
   click_button "Submit"
 end
