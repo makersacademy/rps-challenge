@@ -15,6 +15,11 @@ describe Game do
     expect(["Rock", "Paper", "Scissors"]).to include(game_rock.random_rps)
   end
 
+  it "assigns a random choice of rock, paper or scissors to computer choice" do
+    game_rock.compare
+    expect(["Rock", "Paper", "Scissors"]).to include(game_rock.computer_choice)
+  end
+
   it "returns win if user chooses Rock and computer chooses Scissors" do
     allow(game_rock).to receive(:random_rps).and_return "Scissors"
     expect(game_rock.compare).to eq "Win"
