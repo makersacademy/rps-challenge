@@ -5,6 +5,15 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  post '/names' do
+    @name = params[:name]
+    redirect('/play')
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
 
 
 
