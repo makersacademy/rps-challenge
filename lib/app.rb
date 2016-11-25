@@ -6,13 +6,18 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:name]
     redirect('/play')
   end
 
   get '/play' do
     erb(:play)
   end
+
+  # post '/selection' do
+  #   @game = Game.new(params[:choice])
+  #   if @game.compare?
+  #     erb(:win)
+  #
 
 
   # start the server if ruby file executed directly

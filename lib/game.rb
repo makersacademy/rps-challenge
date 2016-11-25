@@ -1,9 +1,13 @@
 class Game
 
-  attr_accessor :choice
+  attr_accessor :user_choice, :computer_choice
 
-  def initialize(choice)
-    @choice = choice
+  def self.instance
+    @game
+  end
+
+  def initialize(user_choice)
+    @user_choice = user_choice
   end
 
   def random_rps
@@ -11,8 +15,19 @@ class Game
   end
 
   def compare
-    return true if self.choice == random_rps
-    return false
+    @computer_choice = random_rps
+
+    if @user_choice == @computer_choice
+      return "Tie"
+    elsif @user_choice == "Rock" && @computer_choice == "Scissors"
+      return "Win"
+    elsif @user_choice == "Scissors" && @computer_choice == "Paper"
+      return "Win"
+    elsif @user_choice == "Paper" && @computer_choice == "Rock"
+      return "Win"
+    else
+      return "Lose"
+    end
   end
 
 end
