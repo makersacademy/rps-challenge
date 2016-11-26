@@ -4,7 +4,7 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player, :choices
+  attr_reader :player, :choices, :computer
 
   def self.create(player)
     @game = Game.new(player)

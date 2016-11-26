@@ -10,8 +10,8 @@ describe Player do
   end
 
   it 'test that the players choice is returned' do
-    allow(rsp).to receive(:choice)
-    expect(player.choice(:rock)).to eq :rock
+    player.choice(:rock)
+    expect(player.users_choice).to eq :rock
   end
 
 
