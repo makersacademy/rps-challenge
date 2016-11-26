@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player.rb'
+
 
 class Rsp < Sinatra::Base
 
@@ -7,7 +9,7 @@ class Rsp < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = params[:player]
+    @player = Player.new( params[:player] )
     erb :play
   end
 
