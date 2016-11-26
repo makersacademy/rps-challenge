@@ -1,13 +1,22 @@
 require 'sinatra/base'
+require './lib/player'
 
-class Game < Sinatra::Base
+class RPS < Sinatra::Base
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
 
   post '/name' do
     p params
-    @player = params[:player_name]
+    session[:player_name] = params[:player_name]
+    redirect to('/play')
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
