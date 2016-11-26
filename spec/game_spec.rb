@@ -1,8 +1,9 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player) }
+  subject(:game) { described_class.new(player, computer) }
   let(:player) { double :player }
+  let(:computer) { double :computer }
 
   context "starting a new game" do
     it "should have an empty player choice" do
@@ -11,11 +12,14 @@ describe Game do
     it "should take a player" do
       expect(game.player).to eq player
     end
+    it "should take a computer" do
+      expect(game.computer).to eq computer
+    end
   end
 
   context "singletons" do
     it "should have create method to create an instance of itself" do
-      expect(Game.create(player)).to be_a(Game)
+      expect(Game.create(player, computer)).to be_a(Game)
     end
     it "should have an instance method to show the instance" do
       expect(Game.instance).to be_a(Game)
@@ -39,6 +43,16 @@ describe Game do
     it "should store scissors" do
       game.scissors
       expect(game.player_choice).to eq "Scissors"
+    end
+  end
+  context "computer's turn" do
+    before do
+      allow(computer).to receive(:pick_one) { "Rock" }
+      allow(computer).to receive(:final_choice) { "Rock" }
+    end
+    it "should store the computer's choice" do
+      game.computer_turn
+      expect(game.computer_choice).to eq "Rock"
     end
   end
 end

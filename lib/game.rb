@@ -2,15 +2,18 @@ require_relative 'player'
 
 class Game
   @game_master = nil
-  attr_reader :player_choice, :player
+  attr_reader :player, :computer, :player_choice, :computer_choice
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
+    @computer = computer
     @player_choice = nil
+    @computer_choice = nil
+
   end
 
-  def self.create(player)
-    @game_master = Game.new(player)
+  def self.create(player, computer)
+    @game_master = Game.new(player, computer)
   end
 
   def self.instance
@@ -27,5 +30,10 @@ class Game
 
   def scissors
     @player_choice = player.scissors
+  end
+
+  def computer_turn
+    computer.pick_one
+    @computer_choice = computer.final_choice
   end
 end
