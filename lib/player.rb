@@ -6,13 +6,13 @@ class Player
     @name = name
   end
 
-  def make_move move = Moves.sample
-    fail InvalidMoveError, "That is an invalid move" unless Moves.include? move
+  def make_move move = MOVES.sample
+    fail InvalidMoveError, "That is an invalid move" unless MOVES.include? move
     move
   end
 
   private
-  Moves = [:rock, :paper, :scissors]
+  MOVES = [:rock, :paper, :scissors, :lizard, :Spock]
 
 end
 

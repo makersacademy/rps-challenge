@@ -6,8 +6,8 @@ end
 
 def go_to_draw
   sign_in_with_dave
-  srand(1) #P2 chooses paper
-  click_button 'paper'
+  srand(2) #P2 chooses rock
+  click_button 'rock'
 end
 
 def go_to_win

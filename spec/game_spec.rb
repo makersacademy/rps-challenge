@@ -4,7 +4,7 @@ describe Game do
   subject(:game) { described_class.new(player1, player2) }
   let(:player1) {double :P1, name: "P1", make_move: :rock}
   let(:player2) {double :P2, name: "P2", make_move: :scissors}
-  moves = [:rock, :paper, :scissors]
+  moves = [:rock, :paper, :scissors, :lizard, :Spock]
 
   it "should return player 1's name" do
     expect(game.player1_name).to eq "P1"
@@ -20,8 +20,8 @@ describe Game do
 
   context "moves" do
     it "should make moves" do
-      expect(player1).to receive(:make_move)
-      game.get_move_p1
+      expect(player1).to receive(:make_move).with(:lizard)
+      game.get_move_p1 :lizard
     end
 
     it "should make moves with an argument" do
@@ -36,7 +36,7 @@ describe Game do
 
   context "Draw states" do
     it "should decide draw a non state" do
-      game.get_move_p1
+      game.get_move_p1 :rock
       game.get_move_p2
       expect(game).not_to be_a_draw
     end
@@ -47,7 +47,7 @@ describe Game do
           allow(player1).to receive(:make_move).and_return move
           allow(player2).to receive(:make_move).and_return move
           game.get_move_p2
-          game.get_move_p1
+          game.get_move_p1 move
           expect(game).to be_a_draw
         end
       end
@@ -57,12 +57,13 @@ describe Game do
   context "Win states" do
 
     context "Player 1 victories" do
-      Game::Win_hash.each do |move_1, move_2|
+      Game::WIN_HASH.each do |move_1, moves|
 
+        move_2 = moves.sample
         before (:each) {
           allow(player1).to receive(:make_move).and_return move_1
           allow(player2).to receive(:make_move).and_return move_2
-          game.get_move_p1
+          game.get_move_p1 move_1
           game.get_move_p2
         }
         context "Player 1 plays #{move_1}, Player 2 plays #{move_2}" do
@@ -78,12 +79,13 @@ describe Game do
     end
 
     context "Player 2 victories" do
-      Game::Win_hash.each do |move_1, move_2|
+      Game::WIN_HASH.each do |move_1, moves|
 
+        move_2 = moves.sample
         before (:each) {
           allow(player1).to receive(:make_move).and_return move_2
           allow(player2).to receive(:make_move).and_return move_1
-          game.get_move_p1
+          game.get_move_p1 move_1
           game.get_move_p2
         }
         context "Player 1 plays #{move_2}, Player 2 plays #{move_1}" do
@@ -91,7 +93,7 @@ describe Game do
             expect(game.loser).to eq player1.name
           end
 
-          it "Player 1 should win" do
+          it "Player 2 should win" do
             expect(game.winner).to eq player2.name
           end
         end

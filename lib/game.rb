@@ -23,9 +23,9 @@ class Game
   def player2_name
     player2.name
   end
-  def get_move_p1(arg = false)
-    player1.make_move unless arg
-    @move_p1 = player1.make_move arg
+
+  def get_move_p1 move
+    @move_p1 = player1.make_move move
   end
 
   def get_move_p2
@@ -49,16 +49,18 @@ class Game
   end
 
   def player1_win?
-    Win_hash[move_p1]==move_p2
+    WIN_HASH[move_p1].include? move_p2
   end
 
   private
 
   attr_reader :player1, :player2
 
-  Win_hash = {rock: :scissors,
-              paper: :rock,
-              scissors: :paper}
+  WIN_HASH = {rock: [:scissors, :lizard],
+              paper: [:rock, :Spock],
+              scissors: [:paper, :lizard],
+              lizard: [:Spock, :paper],
+              Spock: [:rock, :scissors]}
 end
 
 class NoWinError < StandardError; end

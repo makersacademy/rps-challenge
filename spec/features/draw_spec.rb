@@ -10,7 +10,7 @@ feature "Draw" do
 
   scenario "Should tell you what moves happened in case of draw" do
     go_to_draw
-    expect(page).to have_content "Both players played paper!"
+    expect(page).to have_content "Both players played rock!"
   end
 
   scenario "Should ask you to play again" do

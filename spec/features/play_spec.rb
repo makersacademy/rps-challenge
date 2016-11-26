@@ -10,17 +10,26 @@ feature "Playing the game" do
 
   scenario "Should have a rock button" do
     sign_in_with_dave
-    expect(page).to have_xpath ("//button[@id='rock']")
+    expect(page).to have_xpath ("//button[@value='rock']")
   end
 
   scenario "Should have a paper button" do
     sign_in_with_dave
-    expect(page).to have_xpath ("//button[@id='paper']")
+    expect(page).to have_xpath ("//button[@value='paper']")
   end
 
   scenario "Should have a scissors button" do
     sign_in_with_dave
-    expect(page).to have_xpath ("//button[@id='scissors']")
+    expect(page).to have_xpath ("//button[@value='scissors']")
   end
-  
+
+  scenario "Should have a lizard button" do
+    sign_in_with_dave
+    expect(page).to have_xpath ("//button[@value='lizard']")
+  end
+
+  scenario "should have a Spock button" do
+    sign_in_with_dave
+    expect(page).to have_xpath ("//button[@value='Spock']")
+  end
 end
