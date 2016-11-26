@@ -3,7 +3,11 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'sinatra'
-gem 'rake'
+gem 'capybara'
+gem 'rspec-sinatra'
+gem 'shotgun'
+gem 'selenium-webdriver'
+
 
 group :test do
   gem 'rspec'
@@ -12,4 +16,5 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'selenium-webdriver'
 end
