@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/enter_names' do
-    session[:human_player1] = params[:human_player1]
+    player = Player.new(params[:human_player1])
     redirect to('/game')
   end
 
