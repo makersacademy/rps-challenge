@@ -53,7 +53,7 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-![Rock Paper Scissors Spock Lizard](./images/rpssls.png)
+![Rock Paper Scissors Spock Lizard](./images/rpssl2.png)
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
