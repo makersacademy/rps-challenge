@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="header">
     <ul>
       <li><a href="/" class='li_home'>Home</a></li>
       <li><a href="https://github.com/Unicornelia" class='li_rest' target=_blank>Creator's Github</a></li>
@@ -28,10 +28,10 @@
   </div>
 
   <div>
-    <form action="/play" method='POST'>
+    <form action="/names" method='POST'>
       <fieldset>
         Player's name:<br>
-        <input type="text" name="player1" placeholder="name"><br><br>
+        <input required type="text" name="player_name" placeholder="name"><br><br>
         <input type="submit" value="Submit">
       </fieldset>
     </form>

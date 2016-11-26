@@ -1,1 +1,35 @@
-Let's play
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>This is Rock Paper Scissors!</title>
+</head>
+
+<body>
+  <div class="header">
+    <ul>
+      <li><a href="/" class='li_home'>Home</a></li>
+      <li><a href="https://github.com/Unicornelia" class='li_rest' target=_blank>Creator's Github</a></li>
+      <li><a href="/about" target=_blank class='li_rest'>About</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Let's play <%= @game.player.name.capitalize %> !</h1>
+    <h1> Pick your weapon! </h1>
+  </div>
+
+  <div>
+    <img src="/css/rock.png" height=15% width=15% ></img>
+    <img src="/css/paper.jpg" height=15% width=15%></img>
+    <img src="/css/scissor.png" height=15% width=15%></img>
+    <img src="/css/spock.jpg" height=15% width=15%></img>
+    <img src="/css/lizard.jpg" height=15% width=15%></img>
+  </div>
+  <div>
+  <footer>
+    <p>Have fun!</p>
+  </footer>
+</div>
+</body>
+</hmtl>

@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative 'web_helpers'
 
 feature RPS do
   scenario 'Returns the home page for RPS' do
@@ -12,9 +13,7 @@ feature RPS do
   end
 
   scenario 'Can click submit button' do
-    visit '/'
-    fill_in('name', with: 'Kornelia')
-    click_button('Submit')
+    sign_in_and_play
     visit '/play'
   end
 
