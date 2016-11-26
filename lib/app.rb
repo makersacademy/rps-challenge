@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
