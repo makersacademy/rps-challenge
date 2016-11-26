@@ -71,6 +71,6 @@ class Game
   end
 
   def clear_victor
-    self.victor = nil
+    !!self.victor
   end
 end
