@@ -88,4 +88,10 @@ describe Game do
       expect(game.victor).to eq "Nobody"
     end
   end
+  describe "#restart" do
+    it "should set victor to nil" do
+      game.restart
+      expect(game.victor).to be nil
+    end
+  end
 end

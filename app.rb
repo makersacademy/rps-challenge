@@ -17,6 +17,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.instance
+    @game.restart
     @player_name = @game.player.name
     erb(:play)
   end

@@ -45,6 +45,10 @@ class Game
     nobody_wins
   end
 
+  def restart
+    clear_victor
+  end
+
   private
   attr_writer :victor
   def rock_beats_scissors?
@@ -64,5 +68,9 @@ class Game
 
   def nobody_wins
     self.victor = "Nobody" if self.victor == nil
+  end
+
+  def clear_victor
+    self.victor = nil
   end
 end
