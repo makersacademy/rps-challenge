@@ -1,8 +1,10 @@
 <%= @game.player.name%>:
 <br>
-<h1><%= @game.player.choice %></h1>
+<h2><%= @game.player.choice %></h2>
 <br>
 <br>
 computer:
 <br>
-<h1><%= @game.computer_choice %></h1>
+<h2><%= @game.computer_choice %></h2>
+
+<h1><%= @game.check_result( @game.player.choice ) %></h1>

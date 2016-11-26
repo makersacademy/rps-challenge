@@ -15,27 +15,32 @@ class Game
   def initialize( player )
     @player = player
     @player_choice
+    @computer_choice
   end
 
   def computer_choice
+    @computer_choice = rock_paper_scissors?
+  end
+
+  def check_result( player_choice )
+    return "EVEN!!" if player_choice == @computer_choice
+
+    case player_choice
+      when "rock"
+        return "YOU WIN!!" if @computer_choice == "scissors"
+      when "paper"
+        return "YOU WIN!!" if @computer_choice == "rock"
+      when "scissors"
+        return "YOU WIN!!" if @computer_choice == "paper"
+    end
+    "YOU LOSE..."
+  end
+
+  def rock_paper_scissors?
     choice = random_number
     return "rock"     if choice == 1
     return "paper"    if choice == 2
     return "scissors" if choice == 3
-  end
-
-  def check_result( player_choice, computer_choice )
-    return "EVEN!!" if player_choice == computer_choice
-
-    case player_choice
-      when "rock"
-        return "WIN!!" if computer_choice == "scissors"
-      when "paper"
-        return "WIN!!" if computer_choice == "rock"
-      when "scissors"
-        return "WIN!!" if computer_choice == "paper"
-    end
-    "LOSE..."
   end
 
   def random_number
