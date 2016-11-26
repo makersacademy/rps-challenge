@@ -2,28 +2,23 @@ class Game
 
   attr_reader :player
 
+  @game
+
+  def self.init( player )
+    @game = Game.new( player )
+  end
+
+  def self.now
+    @game
+  end
+
   def initialize( player )
     @player = player
     @player_choice
   end
 
-  def choose( choice )
-    return rock if choice == "rock"
-    return paper if choice == "paper"
-    return scissors if choice == "scissors"
+  def show( choice )
+    choice
   end
-
-  def rock
-    "rock"
-  end
-
-  def paper
-    "paper"
-  end
-
-  def scissors
-    "scissors"
-  end
-
 
 end
