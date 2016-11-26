@@ -8,6 +8,6 @@ feature RPS do
 
   scenario 'Home page provides log in field' do
     visit '/'
-    expect(page).to find_field('Name').value
+    fill_in('name', with: 'Kornelia')
   end
 end
