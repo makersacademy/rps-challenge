@@ -5,9 +5,14 @@ describe Game do
 
   let(:player) { double :player }
   let(:game_klass) { spy :game_klass }
-  let(:weapons_nodule) { double :weapons_nodule, list: [weapon] }
+  let(:weapons_nodule) { double :weapons_nodule, list: {rock: :paper, paper: :scissors} }
   let(:weapon) { double :weapon }
   let(:opponent_klass) { spy :opponent_klass }
+
+  let(:scissors_player) { double :scissors_player, weapon: "scissors" }
+  let(:rock_player) { double :rock_player, weapon: "rock" }
+  let(:paper_opponent) {double :paper_opponent, weapon: "paper"}
+  let(:rock_opponent) {double :rock_opponent, weapon: "rock"}
 
   subject(:game) { described_class.new(player, weapons_nodule) }
 
@@ -36,7 +41,7 @@ describe Game do
     end
 
     it 'initializes with a weapons module in' do
-      expect(game.weapons).to be_kind_of Array
+      expect(game.weapons).to be_kind_of Hash
     end
 
   end
@@ -53,9 +58,41 @@ describe Game do
   describe '#opponent' do
 
     it 'retrieves a previously generated computer opponent' do
-    game.generate_opponent(opponent_klass)
-    expect(game.opponent).to eq opponent_klass
+      game.generate_opponent(opponent_klass)
+      expect(game.opponent).to eq opponent_klass
+    end
+
   end
+
+  describe '#opponent=' do
+
+    it 'sets the opponent' do
+      game.opponent=(paper_opponent)
+      expect(game.opponent).to be paper_opponent
+    end
+
+  end
+
+  describe '#player_beaten_by_opponent?' do
+
+    it 'returns true if the opponent beat the player' do
+      losing_game = Game.new(rock_player, weapons_nodule)
+      losing_game.opponent=(paper_opponent)
+      expect(losing_game.player_beaten_by_opponent?).to eq true
+    end
+
+    it 'returns false if the player beat the opponent' do
+      winning_game = Game.new(scissors_player, weapons_nodule)
+      winning_game.opponent=(paper_opponent)
+      expect(winning_game.player_beaten_by_opponent?).to eq false
+    end
+
+    it 'returns false if the player and the opponent have the same weapon' do
+      drawing_game = Game.new(rock_player, weapons_nodule)
+      drawing_game.opponent=(rock_opponent)
+      expect(drawing_game.player_beaten_by_opponent?).to eq false
+    end
+
   end
 
 end
