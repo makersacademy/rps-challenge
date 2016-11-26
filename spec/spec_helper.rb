@@ -12,3 +12,7 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+#Capybara.default_driver = :selenium
+
+Capybara.app = RPS
