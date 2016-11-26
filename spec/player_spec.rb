@@ -4,8 +4,8 @@ describe Player do
 
   subject(:player) {described_class.new("Johnny")}
 
-  let(:weapon) {double :weapon}
-  let(:weapons_nodule) {double :weapons_nodule, list: [weapon]}
+  let(:weapon) {double :weapon, to_sym: :weapon}
+  let(:weapons_nodule) {double :weapons_nodule, list: [:weapon]}
 
   describe '#new' do
 
