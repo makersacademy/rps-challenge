@@ -14,4 +14,12 @@ describe Game do
     end
   end
 
+  context "#check_winner" do
+    it "should set the winner variable to the player name" do
+      allow(player).to receive(:name).and_return("Dan")
+      game.check_winner(true)
+      expect(game.winner).to eq "Dan"
+    end
+  end
+
 end

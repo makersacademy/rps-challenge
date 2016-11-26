@@ -7,7 +7,6 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
-    @winner = nil
   end
 
   def self.create(player, computer)
@@ -19,9 +18,6 @@ class Game
   end
 
   def check_winner(player_wins)
-    @winner = (
-    @player.name if player_wins == true
-      "AIbot" if player_wins == false
-      )
+    @winner = ( player_wins ? player.name : "AIbot")
   end
 end
