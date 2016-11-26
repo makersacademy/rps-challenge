@@ -59,6 +59,10 @@ describe Game do
     end
   end
   context "winning the game" do
+    before do
+    allow(player).to receive(:name) { player }
+    allow(computer).to receive(:name) { computer }
+    end
     it "rock beats scissors" do
       allow(game).to receive(:player_choice) { "Rock" }
       allow(game).to receive(:computer_choice) { "Scissors" }
@@ -76,6 +80,12 @@ describe Game do
       allow(game).to receive(:computer_choice) { "Rock" }
       game.determine_winner
       expect(game.victor).to eq player
+    end
+    it "is a draw" do
+      allow(game).to receive(:player_choice) { "Paper" }
+      allow(game).to receive(:computer_choice) { "Paper" }
+      game.determine_winner
+      expect(game.victor).to eq "Nobody"
     end
   end
 end

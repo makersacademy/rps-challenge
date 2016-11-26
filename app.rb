@@ -55,7 +55,7 @@ class RPS < Sinatra::Base
 
   get '/winner' do
     @game = Game.instance
-    @computer_choice = @game.victor
+    @game.determine_winner
     erb(:winner)
   end
 

@@ -42,22 +42,27 @@ class Game
     rock_beats_scissors?
     scissors_beat_paper?
     paper_beats_rock?
+    nobody_wins
   end
 
   private
   attr_writer :victor
   def rock_beats_scissors?
-    self.victor = self.player if self.player_choice == "Rock" && self.computer_choice == "Scissors"
-    self.victor = self.computer if self.player_choice == "Scissors" && self.computer_choice == "Rock"
+    self.victor = self.player.name if self.player_choice == "Rock" && self.computer_choice == "Scissors"
+    self.victor = self.computer.name if self.player_choice == "Scissors" && self.computer_choice == "Rock"
   end
 
   def scissors_beat_paper?
-    self.victor = self.player if self.player_choice == "Scissors" && self.computer_choice == "Paper"
-    self.victor = self.computer if self.player_choice == "Paper" && self.computer_choice == "Scissors"
+    self.victor = self.player.name if self.player_choice == "Scissors" && self.computer_choice == "Paper"
+    self.victor = self.computer.name if self.player_choice == "Paper" && self.computer_choice == "Scissors"
   end
 
   def paper_beats_rock?
-    self.victor = self.player if self.player_choice == "Paper" && self.computer_choice == "Rock"
-    self.victor = self.computer if self.player_choice == "Rock" && self.computer_choice == "Paper"
+    self.victor = self.player.name if self.player_choice == "Paper" && self.computer_choice == "Rock"
+    self.victor = self.computer.name if self.player_choice == "Rock" && self.computer_choice == "Paper"
+  end
+
+  def nobody_wins
+    self.victor = "Nobody" if self.victor == nil
   end
 end

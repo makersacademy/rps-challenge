@@ -10,7 +10,4 @@ RSpec.feature "Declaring a winner", :type => :feature do
   scenario "Winning the game" do
     expect(page).to have_text("...and the winner is: ")
   end
-  # scenario "Displaying the winner" do
-  #   expect(page).to have_text("George")
-  # end
 end
