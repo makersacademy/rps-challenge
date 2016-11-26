@@ -1,6 +1,17 @@
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
 require 'coveralls'
 require 'simplecov'
+
+Capybara.app = Rps
+
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
