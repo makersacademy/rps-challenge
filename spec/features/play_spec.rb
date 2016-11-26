@@ -14,8 +14,13 @@ feature 'game' do
     expect(page).to have_button 'Scissors'
   end
 
-  scenario 'choose an option' do
+  scenario 'player will choose an option' do
     click_button 'Rock'
     expect(page).to have_content 'You picked Rock'
+  end
+
+  scenario 'game will choose an option' do
+    click_button 'Rock'
+    expect(page).to have_content "Computer picked Rock"
   end
 end
