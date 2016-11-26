@@ -1,13 +1,15 @@
-<%= @player_one_name %>: Choose your weapon!
+<h1>Welcome <%= @player_one_name %>! </h1>
+<br>
+<h2>Choose your weapon!</h2>
 
 <br>
 
-<form action="/result">
+<form action="/result" method="get">
   <input type="submit" value="ROCK!">
 </form>
-<form action="/result">
+<form action="/result" method="get">
   <input type="submit" value="PAPER!">
 </form>
-<form action="/result">
+<form action="/result" method="get">
   <input type="submit" value="SCISSOR!">
 </form>
