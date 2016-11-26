@@ -1,5 +1,7 @@
-<h1>Welcome <%=@player_name%>!</h1>
+<h1><%=@player.name%> vs. Computer</h1>
 
-<a href="/result">Rock</a>
-<a href="/result">Paper</a>
-<a href="/result">Scissors</a>
+<form method="get" action="/result">
+  <button id="rock" type="submit" value="rock" name="rock">Rock</button>
+  <button id ="paper" type="submit" value="paper" name="paper">Paper</button>
+  <button id="scissors"type="submit" value="scissors" name="scissors">Scissors</button>
+</form>
