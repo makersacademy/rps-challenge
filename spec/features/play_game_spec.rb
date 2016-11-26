@@ -15,6 +15,12 @@ feature "selections" do
     expect(page).to have_content("Dan chose Rock!")
   end
 
+  scenario "player selects paper" do
+    sign_in
+    click_button("Paper")
+    expect(page).to have_content("Dan chose Paper!")
+  end
+
   scenario "player selects scissors" do
     sign_in
     click_button("Scissors")

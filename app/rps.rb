@@ -29,8 +29,16 @@ class RPS < Sinatra::Base
     redirect to('/scissors-selected')
   end
 
+  post"/paper" do
+    redirect to("paper-selected")
+  end
+
   get '/rock-selected' do
     erb(:rock_selected)
+  end
+
+  get "/paper-selected" do
+    erb(:paper_selected)
   end
 
   get "/scissors-selected" do
