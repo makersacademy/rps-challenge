@@ -4,4 +4,7 @@ class Game
     paper: :rock,
     scissors: :paper
   }
+
+  WEAPONS = [:rock, :paper, :scissors]
+  
 end

@@ -4,6 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
+    @weapon = nil
   end
 
   def choose_weapon(weapon)
