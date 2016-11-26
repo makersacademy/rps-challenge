@@ -22,6 +22,31 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/rock' do
+    @game = Game.instance
+    @game.rock
+    redirect to('/confirmation')
+  end
+
+  post '/paper' do
+    @game = Game.instance
+    @game.paper
+    redirect to('/confirmation')
+  end
+
+  post '/scissors' do
+    @game = Game.instance
+    @game.scissors
+    redirect to('confirmation')
+  end
+
+  get '/confirmation' do
+    @game = Game.instance
+    @player_choice = @game.player_choice
+    @player_name = @game.player.name
+    erb(:confirmation)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
