@@ -12,4 +12,5 @@ class Player
     def is_not_a_string?(name)
       name.class != String
     end
+    
 end

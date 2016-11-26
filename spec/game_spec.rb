@@ -1,16 +1,16 @@
- require 'game'
+require 'game'
 
- describe Game do
+describe Game do
 
-   let(:player) { double :player }
+  let(:player) { double :player }
 
-   subject(:game) { described_class.new(player) }
+  subject(:game) { described_class.new(player) }
 
-   describe '#new' do
+  describe '#new' do
 
-     it 'initializes with a player in' do
-     expect(game.player).to eq player
-   end
-   end
+    it 'initializes with a player in' do
+      expect(game.player).to eq player
+    end
+  end
 
- end
+end
