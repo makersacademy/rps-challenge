@@ -44,6 +44,10 @@ describe Game do
       expect(game.weapons).to be_kind_of Hash
     end
 
+    it 'initializes with no winner' do
+      expect(game.winner).to eq :none
+    end
+
   end
 
   describe '#generate_opponent()' do
@@ -91,6 +95,22 @@ describe Game do
       drawing_game = Game.new(rock_player, weapons_nodule)
       drawing_game.opponent=(rock_opponent)
       expect(drawing_game.player_beaten_by_opponent?).to eq false
+    end
+
+  end
+
+  describe '#winner' do
+
+    it 'returns the opponent if the opponent won' do
+      losing_game = Game.new(rock_player, weapons_nodule)
+      losing_game.opponent=(paper_opponent)
+      expect(losing_game.determine_winner).to eq paper_opponent
+    end
+
+    it 'returns the player if the player won' do
+      winning_game = Game.new(scissors_player, weapons_nodule)
+      winning_game.opponent=(paper_opponent)
+      expect(winning_game.determine_winner).to eq scissors_player
     end
 
   end
