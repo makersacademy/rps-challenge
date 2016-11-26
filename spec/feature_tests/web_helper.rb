@@ -1,4 +1,4 @@
-require 'spec_helper.rb'
+
 
 def sign_in
    visit('/')

@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib/app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require_relative './feature_tests/web_helper.rb'
+require './spec/feature_tests/web_helper.rb'
 require 'coveralls'
 require 'simplecov'
 

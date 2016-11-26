@@ -15,7 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    "Hello World"
+    erb(:options)
   end
 
 
