@@ -1,10 +1,16 @@
 
-<%= @human.name.capitalize %> vs. HAL 9000
+<h1><%= @human.name.capitalize %> vs. HAL 9000</h1>
 
-<form action="/attack">
+<h2>Choose your attack:</h2>
+
+<form action="/rock">
   <input type="submit" value="Rock">
 </form>
 
-<form action="/attack">
+<form action="/paper">
   <input type="submit" value="Paper">
+</form>
+
+<form action="/scissors">
+  <input type="submit" value="Scissors">
 </form>

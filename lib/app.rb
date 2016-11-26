@@ -23,10 +23,17 @@ class App < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
-    erb :attack
+  get '/rock' do
+    erb :rock
   end
 
+  get '/paper' do
+    erb :paper
+  end
+
+  get '/scissors' do
+    erb :scissors
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
