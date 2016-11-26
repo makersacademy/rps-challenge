@@ -12,4 +12,5 @@ RSpec.feature "Choose weapon", :type => :feature do
     click_button("Random")
 
   end
+  
 end
