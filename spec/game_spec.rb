@@ -22,17 +22,6 @@ describe Game do
     end
   end
 
-  context "Computer randomisation" do
-    it "generates a random choice of rock, paper or scissors" do
-      expect([:Rock, :Paper, :Scissors]).to include(game_rock.random_rps)
-    end
-
-    it "assigns a random choice of rock, paper or scissors to computer choice" do
-      game_rock.compare
-      expect([:Rock, :Paper, :Scissors]).to include(game_rock.computer_choice)
-    end
-  end
-
   context "Results of the game" do
     it "returns win if user chooses Rock and computer chooses Scissors" do
       allow(game_rock).to receive(:random_rps).and_return :Scissors
