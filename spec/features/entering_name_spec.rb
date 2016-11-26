@@ -7,13 +7,27 @@ end
 
 feature "entering player name" do
   scenario "player enters their name and is taken to the game screen" do
-    visit('/')
-    fill_in('name', with: 'John')
-    click_button('play')
+    sign_in_and_play
     expect(page).to have_content("Choose your weapon, John")
   end
 end
 
-# feature "playing the game" do
-#   scenario "player selects "
-# end
+feature "Selecting a weapon" do
+  scenario "player selects rock and gets a confirmation" do
+    sign_in_and_play
+    click_button('rock')
+    expect(page).to have_content("You have selected Rock!")
+  end
+
+  scenario "player selects paper and gets a confirmation" do
+    sign_in_and_play
+    click_button('paper')
+    expect(page).to have_content("You have selected Paper!")
+  end
+
+  scenario "player selects scissors and gets a confirmation" do
+    sign_in_and_play
+    click_button('scissors')
+    expect(page).to have_content("You have selected Scissors!")
+  end
+end
