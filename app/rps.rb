@@ -21,29 +21,15 @@ class RPS < Sinatra::Base
     @game = Game.instance
   end
 
-  post "/rock" do
-    redirect to('/rock-selected')
+  post "/selection" do
+    @game.player.choice(params[:take_your_pick])
+    redirect '/outcome'
   end
 
-  post"/scissors" do
-    redirect to('/scissors-selected')
+  get '/outcome' do
+    erb(:outcome)
   end
 
-  post"/paper" do
-    redirect to("paper-selected")
-  end
-
-  get '/rock-selected' do
-    erb(:rock_selected)
-  end
-
-  get "/paper-selected" do
-    erb(:paper_selected)
-  end
-
-  get "/scissors-selected" do
-    erb(:scissors_selected)
-  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -1,13 +1,12 @@
 <h1> <%=@game.player.name%> VS AIbot!! </h1>
 <h2> What do you choose?!</h2>
-<form action="/rock" method="post">
-  <button type="submit" name="rock">Rock</button>
-</form>
-<form action="/paper" method="post">
-  <button type="submit" name"paper">Paper</button>
-</form>
-<form action="/scissors" method="post">
-  <button type="submit" name"scissors">Scissors</button>
+<form action="/selection" method="post">
+  <select name="take_your_pick">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+    </select>
+    <button type="submit">Submit</button>
 </form>
 
 <h3> Quick reminder: </h3>
