@@ -58,4 +58,24 @@ describe Game do
       expect(game.computer_choice).to eq "Rock"
     end
   end
+  context "winning the game" do
+    it "rock beats scissors" do
+      allow(game).to receive(:player_choice) { "Rock" }
+      allow(game).to receive(:computer_choice) { "Scissors" }
+      game.determine_winner
+      expect(game.victor).to eq player
+    end
+    it "scissors beat paper" do
+      allow(game).to receive(:player_choice) { "Paper" }
+      allow(game).to receive(:computer_choice) { "Scissors" }
+      game.determine_winner
+      expect(game.victor).to eq computer
+    end
+    it "paper beats rock" do
+      allow(game).to receive(:player_choice) { "Paper" }
+      allow(game).to receive(:computer_choice) { "Rock" }
+      game.determine_winner
+      expect(game.victor).to eq player
+    end
+  end
 end
