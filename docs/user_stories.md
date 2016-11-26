@@ -20,7 +20,7 @@ I would like the computer to choose a weapon
 ## IN PROGRESS
 
 As a marketeer
-So that I taste the sweetness of victory or the bitterness of defeat
+So that I can taste the sweetness of victory or the bitterness of defeat
 I would like to know who is the winner of the match
 
 ## TODO
