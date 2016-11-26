@@ -2,14 +2,18 @@
 
 module Weapons
 
-  LIST = [:rock, :paper, :scissors]
+  HASH = {
+    rock: :paper,
+    paper: :scissors,
+    scissors: :rock,
+  }
 
   def Weapons.list
-    LIST
+    HASH
   end
 
   def Weapons.random
-    Weapons.list.sample
+    Weapons.list.keys.sample
   end
 
 end
