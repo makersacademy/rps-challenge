@@ -1,0 +1,15 @@
+<h1>
+  It was a draw!
+</h1>
+<h2>
+  Both players played <%= Game.instance.move_p1 %>!
+</h2>
+<h3> Play again? </h3>
+<div>
+  <form action="/play" method="get">
+    <input id='rematch' type='submit' value="Sure"/>
+  </form>
+  <form action="/sign-in" method="get">
+    <input id='sign-in' type='submit' value="No thanks"/>
+  </form>
+</div>

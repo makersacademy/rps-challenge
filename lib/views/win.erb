@@ -1,0 +1,18 @@
+<h1>
+  <%= @game.winner %> has won!
+</h1>
+<h2>
+  <%= @game.loser %> lost :(
+</h2>
+<h3>
+  <%= @game.player1_name %> played <%= @game.move_p1 %>
+  thus <%= if @game.player1_win? then "beating" else "losing to" end %>
+  <%= @game.player2_name %>'s <%= @game.move_p2 %>
+</h3>
+<h3>Play again? </h3>
+<form action="/play" method="get">
+  <input id='rematch' type='submit' value="Play again?"/>
+</form>
+<form action="/sign-in" method="get">
+  <input id='sign-in' type='submit' value="Change player?"/>
+</form>

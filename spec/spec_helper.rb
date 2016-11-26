@@ -12,3 +12,13 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+require File.join(File.dirname(__FILE__), '..', 'lib/app.rb')
+
+require 'capybara'
+require 'rspec'
+require 'features/web_helpers.rb'
+
+# Capybara.default_driver = :selenium
+
+Capybara.app = RPS
