@@ -1,4 +1,5 @@
-require 'weapon'
+require './lib/weapon'
+require './lib/computer'
 
 class Game
 
@@ -22,19 +23,19 @@ class Game
     @user_choice = user_choice.to_sym
   end
 
-  def random_rps
-    [:Rock, :Paper, :Scissors].sample
+  def get_computer_choice
+    Computer.new.random_rps
   end
 
   def compare
-    @computer_choice = random_rps
+    @computer_choice = get_computer_choice
     return :win if beat?
     return :tie if @user_choice == @computer_choice
     return :lose
   end
 
   private
-  
+
   def beat?
     RULES[@user_choice] == @computer_choice
   end
