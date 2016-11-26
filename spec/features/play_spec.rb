@@ -14,5 +14,6 @@ RSpec.feature "player can play rock paper scissors", :type => :feature do
   scenario "player can play by choosing scissors" do
     sign_in_and_play
     click_button("Scissors")
+    expect(page).to have_content "the winner is..."
   end
 end

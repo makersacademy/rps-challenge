@@ -8,6 +8,10 @@ describe Computer do
     expect(computer.weapon).to be_nil
   end
 
+  it "has can return it's name" do
+    expect(computer.name).to eq "Computer"
+  end
+
   it { is_expected.to respond_to(:choose_weapon) }
 
   it "can select a weapon at random" do

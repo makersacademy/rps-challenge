@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -16,6 +18,10 @@ class Rps < Sinatra::Base
   get '/play' do
     @player_name = @player.name
     erb :play
+  end
+
+  post '/game' do
+    redirect '/result'
   end
 
   get '/result' do
