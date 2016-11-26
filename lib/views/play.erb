@@ -1,0 +1,19 @@
+<h1>
+  <%= @game.player1_name %> vs. <%= @game.player2_name %>
+</h1>
+<h2>
+  Choose your move:
+</h2>
+<div>
+  <form method="post" action="/moves">
+    <div>
+      <button id='rock' type='submit' name='move' value='rock'>Rock</button>
+      <button id='paper' type='submit' name='move' value='paper'>Paper</button>
+      <button id='scissors' type='submit' name='move' value='scissors'>Scissors</button>
+    </div>
+    <div>
+      <button id='lizard' type='submit' name='move' value='lizard'>Lizard</button>
+      <button id='spock' type='submit' name='move' value='Spock'>Spock</button>
+    </div>
+  </form>
+</div>

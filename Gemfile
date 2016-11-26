@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'sinatra'
+gem 'selenium-webdriver'
+gem 'rspec-sinatra'
 gem 'rake'
 
 group :test do
