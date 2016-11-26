@@ -5,7 +5,6 @@ require "./lib/game.rb"
 
 class RPS < Sinatra::Base
 
-    enable :sessions
 
   get '/' do
     erb(:index)
@@ -13,11 +12,16 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:player_name])
+    @game = Game.create(@player)
     erb(:play_rps)
   end
 
+  before do
+    @game = Game.instance
+  end
+
   post "/select" do
-  
+
 
   end
 
