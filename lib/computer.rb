@@ -4,5 +4,7 @@ class Computer
     @choices = ["Rock", "Paper", "Scissors"]
   end
 
-
+  def pick_one
+    self.choices.sample
+  end
 end

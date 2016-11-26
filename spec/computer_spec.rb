@@ -4,9 +4,6 @@ describe Computer do
   subject(:computer) { described_class.new }
 
   describe "#choices" do
-    it "should be an array" do
-      expect(computer.choices).to be_a Array
-    end
     it "should contain Rock" do
       expect(computer.choices).to include "Rock"
     end
@@ -15,6 +12,11 @@ describe Computer do
     end
     it "should contain Scissors" do
       expect(computer.choices).to include "Scissors"
+    end
+  end
+  describe "#pick_one" do
+    it "should pick a random choice from choices" do
+      expect(computer.choices).to include(computer.pick_one)
     end
   end
 end
