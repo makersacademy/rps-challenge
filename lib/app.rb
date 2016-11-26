@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class App < Sinatra::Base
+  set :sessions, true
   enable :sesssions
 
   get '/' do
@@ -8,7 +9,12 @@ class App < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:name]
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
     erb :play
   end
 
