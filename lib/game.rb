@@ -21,4 +21,15 @@ class Game
     choice
   end
 
+  def computer_choice
+    choice = random_number
+    return "rock"     if choice == 1
+    return "paper"    if choice == 2
+    return "scissors" if choice == 3
+  end
+
+  def random_number
+    rand(1...3)
+  end
+
 end
