@@ -5,7 +5,7 @@ describe Weapons do
   describe '#list' do
 
     it 'contains Rock, Paper and Scissors' do
-      expect(Weapons::LIST).to include(:rock, :paper, :scissors)
+      expect(Weapons.list).to include(:rock, :paper, :scissors)
     end
 
   end

@@ -4,8 +4,12 @@ module Weapons
 
   LIST = [:rock, :paper, :scissors]
 
+  def Weapons.list
+    LIST
+  end
+
   def Weapons.random
-    LIST.sample
+    Weapons.list.sample
   end
 
 end
