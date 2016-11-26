@@ -2,8 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
-gem 'sinatra'
-gem 'rake'
+  gem 'sinatra'
+  gem 'rake'
+  gem 'rspec-sinatra'
+  gem 'shotgun'
+  gem 'selenium-webdriver'
 
 group :test do
   gem 'rspec'
