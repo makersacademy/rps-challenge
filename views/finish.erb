@@ -1,1 +1,21 @@
-<%=@game.win_or_lose%>
+<center>
+<% if @game.draw %>
+  You have chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%><br>
+  <h1>It's a draw</h1>
+<% elsif @game.win %>
+  You have chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%><br>
+  <h1><%=@game.player1.name%> has won!</h1>
+<% else @game.lose %>
+  You have chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%><br>
+  <h1><%=@game.player1.name%> has lost!</h1>
+<% end %>
+
+
+<form action='/' method='get'>
+  <input type="submit" value="Play again?">
+</form>
+
+</center>

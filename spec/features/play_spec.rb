@@ -31,13 +31,4 @@ RSpec.feature "Play", :type => :feature do
     expect(page).to have_content "Computer has chosen:"
   end
 
-  # scenario "Can click on Rock option" do
-  #   sign_in_and_play
-  #   click_button("ROCK")
-  #   expect(page).to have_content(/Computer has chosen Paper, you lose!|Computer has chosen Rock, you draw!|Computer has chosen Scissors, you win!/)
-  # end
-
-  # Computer has chosen: <%@game.random_select%>
-  # <%=@game.win_or_lose%>
-
 end

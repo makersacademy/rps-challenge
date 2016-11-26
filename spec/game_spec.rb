@@ -11,6 +11,10 @@ describe Game do
       it "should accept a new Player instance" do
         expect(game.player1).to eq player_klass
       end
+
+      it "should accept a second Player" do
+        expect(game.player2).to eq computer_klass
+      end
     end
   end
 
@@ -28,16 +32,24 @@ describe Game do
     end
   end
 
-  # describe "Displaying choices" do
-  #   it "should display the select choices message" do
-  #     expect(game.display_choice).to eq "Select ROCK, PAPER or SCISSORS"
-  #   end
+  describe "Win or Lose" do
+    context "Let player know if they have won, lost or drawn" do
+      it "should let player know if they have won" do
+        allow(player_klass).to receive(:choice) {"Paper"}
+        expect(game.win).to eq true
+      end
 
-  #   it "should display computer's random choice" do
-  #     allow(player_klass).to receive(:choice) {"Rock"}
-  #     expect(game.display_computer_choice).to eq "Computer has chosen: Rock"
-  #   end
-  # end
+      it "should let player know if they have lost" do
+        allow(player_klass).to receive(:choice) {"Scissors"}
+        expect(game.lose).to eq true
+      end
+
+      it "should let player know if they have drawn" do
+        allow(player_klass).to receive(:choice) {"Rock"}
+        expect(game.draw).to eq true
+      end
+    end
+  end
 
 
 
