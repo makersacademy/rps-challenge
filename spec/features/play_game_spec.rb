@@ -2,8 +2,16 @@ require 'spec_helper'
 require_relative 'web_helper'
 
 feature "start game" do
-    scenario "the game will show the player the rules" do
-      sign_in
-      expect(page).to have_text("Unless you've been living under a rock you already know the rules to Rock, Paper, Scissors.")
-    end
+  scenario "the game will remind the player of the rules on the attack screen" do
+    sign_in
+    expect(page).to have_text("Rock crushes scissors, but gets smothered by paper")
+  end
+end
+
+feature "selections" do
+  scenario "player selects rock" do
+    sign_in
+    click_button("Rock")
+    #expect(page).to have_content("Dan chose Rock!")
+  end
 end
