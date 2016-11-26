@@ -1,0 +1,11 @@
+require 'game'
+
+describe Game do
+  subject(:game) { described_class.new }
+  let(:player) { double :player }
+
+  it "should have an empty player choice" do
+    expect(game.player_choice).to be nil
+  end
+
+end
