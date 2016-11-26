@@ -9,7 +9,7 @@ describe Logic do
   subject(:logic_sr) {described_class.new(:scissors, :rock)}
   subject(:logic_rp) {described_class.new(:rock, :paper)}
   subject(:logic_ps) {described_class.new(:paper, :scissors)}
-
+  let(:game) {double :game}
 
   context "player wins" do
     it "expects rock to beat scissors" do
@@ -37,5 +37,13 @@ describe Logic do
     it "expects scissors to beat paper" do
       expect(logic_ps.player_wins?).to be false
     end
+  end
+
+  it "should know if the computer won" do
+    expect(logic_ps.winner).to eq "AIbot"
+  end
+
+  it "should know if the player won" do
+    expect(logic_rs.winner).to eq "Player"
   end
 end

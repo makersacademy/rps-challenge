@@ -1,3 +1,5 @@
+require_relative "game"
+
 class Logic
 
   def initialize(player, computer)
@@ -11,8 +13,11 @@ class Logic
       [:paper, :rock],
       [:scissors, :paper]
     ]
-
     win.include?(@game_array)
-    
+  end
+
+  def winner
+    return "Player" if player_wins?
+    return "AIbot"
   end
 end
