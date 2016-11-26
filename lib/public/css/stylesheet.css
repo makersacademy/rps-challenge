@@ -23,6 +23,11 @@ h1 {
   padding: 20px;
 }
 
+h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
 img {
   height: 30%;
   width: 30%;
@@ -75,7 +80,7 @@ img {
   text-align: center;
 }
 
-#button2 {
+.button2 {
   font-size: 30px;
   width: 10%;
   margin: auto;
