@@ -1,9 +1,8 @@
 require 'spec_helper'
-require_relative './web_helpers.rb'
 
 feature "attack options" do
   scenario "there is a rock option" do
-    sign
+    sign_in_and_submit_name
     click_button('Rock')
     expect(page).to have_content("Rock")
   end
