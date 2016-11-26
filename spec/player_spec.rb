@@ -17,10 +17,6 @@ describe Player do
 
   describe '#choose_weapon' do
 
-    it 'responds to #choose_weapon' do
-      expect(player).to respond_to :choose_weapon
-    end
-
     it 'stores a weapon' do
       player.choose_weapon(weapons_nodule, weapon)
       expect(player.weapon).to eq weapon
