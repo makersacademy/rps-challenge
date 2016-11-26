@@ -16,6 +16,15 @@ describe Game do
 
   end
 
+  describe '#self.instance' do
+
+    it 'returns a Game object' do
+      Game.create(game_klass, player)
+      expect(Game.instance).to be game_klass
+    end
+
+  end
+
   describe '#new' do
 
     it 'initializes with a player in' do
