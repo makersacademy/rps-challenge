@@ -2,7 +2,12 @@ require 'sinatra/base'
 
 class Game < Sinatra::Base
   get '/' do
-    'Hello rps-challenge!'
+    erb(:index)
+  end
+
+  post '/name' do
+    p params
+    @player = params[:player_name]
   end
 
   # start the server if ruby file executed directly
