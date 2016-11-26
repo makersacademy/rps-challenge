@@ -1,3 +1,5 @@
+# randomly generated name and weapon for user to play against
+
 require_relative './weapons.rb'
 
 class ComputerOpponent
