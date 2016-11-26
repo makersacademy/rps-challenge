@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/game'
 require_relative 'lib/player'
 require_relative 'lib/weapons'
+require_relative 'lib/computer_opponent'
 
 class RPS < Sinatra::Base
 
@@ -16,12 +17,12 @@ class RPS < Sinatra::Base
   post '/name' do
     player = Player.new(params[:name])
     Game.create(Game, player, Weapons)
-    redirect '/play'
+    redirect '/start'
   end
 
-  get '/play' do
+  get '/start' do
     @player_name = @game.player.name
-    erb :play
+    erb :start
   end
 
   get '/weapons' do
@@ -44,6 +45,11 @@ class RPS < Sinatra::Base
   get '/contest' do
     @player = @game.player
     erb :contest
+  end
+
+  get '/generate-opponent' do
+    @computer_opponent_name = @game.generate_opponent(ComputerOpponent).name
+    erb :opponent_generated
   end
 
   # start the server if ruby file executed directly

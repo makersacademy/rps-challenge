@@ -1,6 +1,8 @@
-require 'weapons'
+require_relative './weapons.rb'
 
 class ComputerOpponent
+
+  include Weapons
 
   attr_reader :name, :weapon
 

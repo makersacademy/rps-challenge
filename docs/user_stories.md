@@ -13,14 +13,14 @@ As a marketeer
 So that I can still play if I can't make up my mind
 I would like to be able to choose a random weapon
 
-## IN PROGRESS
-
 As a marketeer
 So that I can play an opponent
 I would like the computer to choose a weapon
 
-## TODO
+## IN PROGRESS
 
 As a marketeer
 So that I taste the sweetness of victory or the bitterness of defeat
 I would like to know who is the winner of the match
+
+## TODO
