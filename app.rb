@@ -35,8 +35,13 @@ class RPS < Sinatra::Base
     redirect '/contest'
   end
 
+  get '/random-weapon' do
+    @player = @game.player
+    @player.choose_weapon(Weapons, @game.weapons.sample)
+    redirect '/contest'
+  end
+
   get '/contest' do
-    p params
     @player = @game.player
     erb :contest
   end

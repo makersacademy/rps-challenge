@@ -1,4 +1,4 @@
-<h1>Choose a weapon from the dropdown:</h1>
+<h1>Choose a weapon from the dropdown, or click 'Random':</h1>
 <form action="/choice" method="post">
   <select name="weapon">
     <% @weapons.each do |weapon| %>
@@ -6,4 +6,7 @@
     <% end %>
   </select>
   <input type="submit" value="Submit" />
+</form>
+<form action="/random-weapon" method="get">
+  <input type="submit" value="Random" />
 </form>
