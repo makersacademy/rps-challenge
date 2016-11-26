@@ -13,3 +13,7 @@ feature "entering player name" do
     expect(page).to have_content("Choose your weapon, John")
   end
 end
+
+# feature "playing the game" do
+#   scenario "player selects "
+# end
