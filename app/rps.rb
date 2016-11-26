@@ -2,6 +2,7 @@ require 'sinatra/base'
 require "./lib/player.rb"
 require "./lib/computer.rb"
 require "./lib/game.rb"
+require "./lib/logic.rb"
 
 class RPS < Sinatra::Base
 
@@ -21,8 +22,11 @@ class RPS < Sinatra::Base
   end
 
   post "/select" do
+    redirect to('/outcome')
+  end
 
-
+  get '/outcome' do
+    erb(:outcome)
   end
 
   # start the server if ruby file executed directly
