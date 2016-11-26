@@ -17,10 +17,6 @@ class Game
     @player_choice
   end
 
-  def show( choice )
-    choice
-  end
-
   def computer_choice
     choice = random_number
     return "rock"     if choice == 1
