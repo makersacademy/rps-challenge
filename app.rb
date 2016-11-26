@@ -55,6 +55,9 @@ class RPS < Sinatra::Base
   get '/result' do
     @game.determine_winner
     if @game.winner != :draw
+      @winner = @game.winner
+      @player = @game.player
+      @opponent = @game.opponent
       erb :winner
     else
       erb :draw
