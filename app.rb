@@ -25,8 +25,13 @@ class RPS < Sinatra::Base
     erb :start
   end
 
+  get '/generate-opponent' do
+    @computer_opponent_name = @game.generate_opponent(ComputerOpponent).name
+    erb :opponent_generated
+  end
+
   get '/weapons' do
-    @weapons = @game.weapons
+    @weapons = @game.weapons.keys
     erb :weapons
   end
 
@@ -38,7 +43,7 @@ class RPS < Sinatra::Base
 
   get '/random-weapon' do
     @player = @game.player
-    @player.choose_weapon(Weapons, @game.weapons.sample)
+    @player.choose_weapon(Weapons, @game.weapons.keys.sample)
     redirect '/contest'
   end
 
@@ -47,9 +52,13 @@ class RPS < Sinatra::Base
     erb :contest
   end
 
-  get '/generate-opponent' do
-    @computer_opponent_name = @game.generate_opponent(ComputerOpponent).name
-    erb :opponent_generated
+  get '/result' do
+    @game.determine_winner
+    if @game.winner != :draw
+      erb :winner
+    else
+      erb :draw
+    end
   end
 
   # start the server if ruby file executed directly
