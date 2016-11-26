@@ -1,0 +1,11 @@
+<%= @player1_name %> vs <%= @player2_name %>
+
+<div class="hit_button">
+  <form action='/play' method='post'>
+    <input name="option" type="submit" value="Rock">
+    <input name="option" type="submit" value="Paper">
+    <input name="option" type="submit" value="Scissors">
+  </form>
+</div>
+
+You picked <%= @option %>
