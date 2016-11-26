@@ -19,7 +19,7 @@ describe Player do
     end
 
     it 'stores a weapon' do
-      player.choose_weapon(:rock)
+      player.choose_weapon(Weapons, :rock)
       expect(player.weapon).to eq :rock
     end
 
@@ -40,7 +40,7 @@ describe Player do
 
       it 'requires the player to choose from the available weapons' do
         message = "Sorry, that weapon isn't available"
-        expect{ player.choose_weapon("Banana") }.to raise_error(RuntimeError, message)
+        expect{ player.choose_weapon(Weapons, "Banana") }.to raise_error(RuntimeError, message)
       end
 
     end

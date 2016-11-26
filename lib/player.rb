@@ -9,8 +9,8 @@ class Player
     @name = name
   end
 
-  def choose_weapon(weapon)
-    raise "Sorry, that weapon isn't available" if weapon_isnot_available?(weapon)
+  def choose_weapon(weapons_nodule, weapon)
+    raise "Sorry, that weapon isn't available" if weapon_isnot_available?(weapons_nodule, weapon)
     @weapon = weapon
   end
 
@@ -20,8 +20,8 @@ class Player
       name.class != String
     end
 
-    def weapon_isnot_available?(weapon)
-      !Weapons::LIST.include?(weapon)
+    def weapon_isnot_available?(weapons_nodule, weapon)
+      !weapons_nodule::LIST.include?(weapon)
     end
 
 end
