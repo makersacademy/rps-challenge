@@ -4,6 +4,9 @@ describe Player do
 
   subject(:player) {described_class.new("Johnny")}
 
+  let(:weapon) {double :weapon}
+  let(:weapons_nodule) {double :weapons_nodule, list: [weapon]}
+
   describe '#new' do
 
     it 'initializes with a name' do
@@ -19,8 +22,8 @@ describe Player do
     end
 
     it 'stores a weapon' do
-      player.choose_weapon(Weapons, :rock)
-      expect(player.weapon).to eq :rock
+      player.choose_weapon(weapons_nodule, weapon)
+      expect(player.weapon).to eq weapon
     end
 
   end
@@ -40,7 +43,7 @@ describe Player do
 
       it 'requires the player to choose from the available weapons' do
         message = "Sorry, that weapon isn't available"
-        expect{ player.choose_weapon(Weapons, "Banana") }.to raise_error(RuntimeError, message)
+        expect{ player.choose_weapon(weapons_nodule, "Banana") }.to raise_error(RuntimeError, message)
       end
 
     end
