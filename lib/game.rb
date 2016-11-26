@@ -24,6 +24,20 @@ class Game
     return "scissors" if choice == 3
   end
 
+  def check_result( player_choice, computer_choice )
+    return "EVEN!!" if player_choice == computer_choice
+
+    case player_choice
+      when "rock"
+        return "WIN!!" if computer_choice == "scissors"
+      when "paper"
+        return "WIN!!" if computer_choice == "rock"
+      when "scissors"
+        return "WIN!!" if computer_choice == "paper"
+    end
+    "LOSE..."
+  end
+
   def random_number
     rand(1...3)
   end

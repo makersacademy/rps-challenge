@@ -30,4 +30,25 @@ describe Game do
     end
   end
 
+  context "#check_result" do
+    it { is_expected.to respond_to :check_result }
+
+    it "should return 'WIN' when player won" do
+      player_choice = "rock"
+      computer_choice = "scissors"
+      expect( game.check_result( player_choice, computer_choice )).to eq "WIN!!"
+    end
+
+    it "should return 'LOSE' when player lose" do
+      player_choice = "rock"
+      computer_choice = "paper"
+      expect( game.check_result( player_choice, computer_choice )).to eq "LOSE..."
+    end
+
+    it "should return 'EVEN' when player and computer chose the same choice" do
+      player_choice = "rock"
+      computer_choice = "rock"
+      expect( game.check_result( player_choice, computer_choice )).to eq "EVEN!!"
+    end
+  end
 end
