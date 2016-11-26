@@ -1,3 +1,30 @@
-<h2>game page</h2>
-<br>
-Welcome <%= @name %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock Paper Scissors</title>
+</head>
+
+<body>
+Welcome <%= @game.player.name %>
+
+<h3>Make your choice</h3>
+
+<form action='/choice' method='post'>
+  <input type='radio' id='Rock' name='choice' value='Rock'> Rock
+  <input type='radio' id='Paper' name='choice' value='Paper'> Paper
+  <input type='radio' id='Scissors' name='choice' value='Scissors'> Scissors<br>
+  <input type='submit' value='play'>
+</form>
+
+<% unless @game.player.choice == nil %>
+You chose <%= @game.player.choice %>
+<% end %>
+
+<% unless @game.chose_hand == nil %>
+Your opponent chose <%= @game.chose_hand %>
+<% end %>
+
+
+
+</body>
+</html>
