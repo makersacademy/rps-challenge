@@ -11,7 +11,6 @@ describe ComputerOpponent do
     end
 
     it 'initializes with a weapon' do
-      p opponent
       expect(opponent.weapon).not_to be_empty
     end
 
