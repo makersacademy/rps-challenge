@@ -9,9 +9,9 @@ class Logic
 
   def player_wins?
     win = [
-      [:rock, :scissors],
-      [:paper, :rock],
-      [:scissors, :paper]
+      ["Rock", "Scissors"],
+      ["Paper", "Rock"],
+      ["Scissors", "Paper"]
     ]
     win.include?(@game_array)
   end

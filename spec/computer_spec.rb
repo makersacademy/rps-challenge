@@ -7,9 +7,9 @@ describe Computer do
   context "selection" do
     it "have a method to select rock, paper or scissors" do
       srand(1234)
-      expect(computer.selection).to eq :scissors
-      expect(computer.selection).to eq :paper
-      expect(computer.selection).to eq :rock
+      expect(computer.selection).to eq "Scissors"
+      expect(computer.selection).to eq "Paper"
+      expect(computer.selection).to eq "Rock"
     end
   end
 end

@@ -3,12 +3,12 @@ require "./lib/player"
 
 describe Logic do
 
-  subject(:logic_rs) {described_class.new(:rock, :scissors)}
-  subject(:logic_pr) {described_class.new(:paper, :rock)}
-  subject(:logic_sp) {described_class.new(:scissors, :paper)}
-  subject(:logic_sr) {described_class.new(:scissors, :rock)}
-  subject(:logic_rp) {described_class.new(:rock, :paper)}
-  subject(:logic_ps) {described_class.new(:paper, :scissors)}
+  subject(:logic_rs) {described_class.new("Rock", "Scissors")}
+  subject(:logic_pr) {described_class.new("Paper", "Rock")}
+  subject(:logic_sp) {described_class.new("Scissors", "Paper")}
+  subject(:logic_sr) {described_class.new("Scissors", "Rock")}
+  subject(:logic_rp) {described_class.new("Rock", "Paper")}
+  subject(:logic_ps) {described_class.new("Paper", "Scissors")}
   let(:game) {double :game}
 
   context "player wins" do
