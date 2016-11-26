@@ -4,18 +4,19 @@ class Game
 
   @game
 
-  def self.init( player )
-    @game = Game.new( player )
+  def self.init( player, random_number_klass )
+    @game = Game.new( player, random_number_klass )
   end
 
   def self.now
     @game
   end
 
-  def initialize( player )
+  def initialize( player, random_number_klass )
     @player = player
     @player_choice
     @computer_choice
+    @random_number = random_number_klass.new
   end
 
   def computer_choice
@@ -37,14 +38,10 @@ class Game
   end
 
   def rock_paper_scissors?
-    choice = random_number
+    choice = @random_number.generator
     return "rock"     if choice == 1
     return "paper"    if choice == 2
     return "scissors" if choice == 3
-  end
-
-  def random_number
-    rand(1...3)
   end
 
 end

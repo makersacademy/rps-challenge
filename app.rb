@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/random_number.rb'
 
 class Rsp < Sinatra::Base
 
@@ -16,7 +17,7 @@ class Rsp < Sinatra::Base
 
   post '/name' do
     player = Player.new( params[:player] )
-    @game = Game.init( player )
+    @game = Game.init( player, RandomNumber )
     redirect '/play'
   end
 

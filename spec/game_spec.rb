@@ -2,8 +2,13 @@ require 'game'
 
 describe Game do
 
-  subject( :game ){ described_class.new( player ) }
+  subject( :game ){ described_class.new( player, random_number_klass ) }
   let( :player ){ double :player }
+  let( :random_number_klass ){ double :random_number_klass }
+
+  before( :each ) do
+    allow( random_number_klass ).to receive( :new )
+  end
 
   context "#computer_choice" do
     it { is_expected.to respond_to :computer_choice }
@@ -12,8 +17,6 @@ describe Game do
       allow( game ).to receive( :rock_paper_scissors? ).and_return( "rock" )
       expect( game.computer_choice ).to eq "rock"
     end
-
-
   end
 
   context "#check_result" do
@@ -45,26 +48,19 @@ describe Game do
     it { is_expected.to respond_to :rock_paper_scissors? }
 
     it "should return rock when random number is 1" do
-      allow( game ).to receive( :random_number ).and_return( 1 )
+      allow( @random_number ).to receive( :generator ).and_return( 1 )
       expect( game.rock_paper_scissors? ).to eq "rock"
     end
 
-    it "should return rock when random number is 2" do
-      allow( game ).to receive( :random_number ).and_return( 2 )
+    it "should return paper when random number is 2" do
+      allow( @random_number ).to receive( :generator ).and_return( 2 )
       expect( game.rock_paper_scissors? ).to eq "paper"
     end
 
-    it "should return rock when random number is 3" do
-      allow( game ).to receive( :random_number ).and_return( 3 )
+    it "should return scissors when random number is 3" do
+      allow( @random_number ).to receive( :generator ).and_return( 3 )
       expect( game.rock_paper_scissors? ).to eq "scissors"
     end
   end
 
-  context "#random_number" do
-    it { is_expected.to respond_to :random_number }
-
-    it "should create random number" do
-      expect( game.random_number ).to be_kind_of( Integer )
-    end
-  end
 end
