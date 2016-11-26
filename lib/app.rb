@@ -23,6 +23,7 @@ class Rps < Sinatra::Base
     @game = Game.instance
     @game.choose_hand
     @game.player.choice = params[:choice]
+    @game.hand_winner
     redirect '/game'
   end
 

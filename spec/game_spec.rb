@@ -1,9 +1,9 @@
 require 'game.rb'
+require 'pry'
 
 describe Game do
 
-subject(:player) {double :player, :choice => "Rock"}
-subject(:opponent) {double :player, :choice => "Scissors"}
+subject(:player) {double :player, :choice => "rock"}
 subject(:game) {described_class.new(player)}
 
   context '@Player' do
@@ -17,7 +17,7 @@ subject(:game) {described_class.new(player)}
   context '@choice' do
 
     it 'should be able to return the players choice' do
-      expect(game.player.choice).to eq "Rock"
+      expect(game.player.choice).to eq "rock"
     end
 
   end
@@ -25,11 +25,19 @@ subject(:game) {described_class.new(player)}
   context '@choices' do
 
     it 'should be a random choice of plays' do
-      expect(["Rock","Paper","Scissors"]).to include(game.choose_hand)
+      expect(["rock","paper","scissors"]).to include(game.choose_hand)
     end
 
   end
 
-  
+  context 'hands' do
+
+    it 'checks which the hand is higher than which' do
+      game.choose_hand
+      game.hand_winner
+      expect(game.winner).to eq "Player Wins"
+    end
+
+  end
 
 end
