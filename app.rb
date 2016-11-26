@@ -46,6 +46,12 @@ class RPS < Sinatra::Base
     erb(:confirmation)
   end
 
+  get '/computer_turn' do
+    @game = Game.instance
+    @computer_choice = @game.computer_choice
+    erb(:computer_turn)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
