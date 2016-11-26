@@ -29,6 +29,18 @@ class RPS < Sinatra::Base
     erb :weapons
   end
 
+  post '/choice' do
+    @player = @game.player
+    @player.choose_weapon(Weapons, params[:weapon])
+    redirect '/contest'
+  end
+
+  get '/contest' do
+    p params
+    @player = @game.player
+    erb :contest
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

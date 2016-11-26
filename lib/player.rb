@@ -23,7 +23,7 @@ class Player
     end
 
     def weapon_isnot_available?(weapons_nodule, weapon)
-      !weapons_nodule.list.include?(weapon)
+      !weapons_nodule.list.include?(weapon.to_sym)
     end
 
 end

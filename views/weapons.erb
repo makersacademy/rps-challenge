@@ -1,8 +1,9 @@
 <h1>Choose a weapon from the dropdown:</h1>
 <form action="/choice" method="post">
-  <select name="weapons">
+  <select name="weapon">
     <% @weapons.each do |weapon| %>
-      <option name="<%= weapon.to_s %>"><%= weapon.to_s.capitalize %></option> %>
+      <option value="<%= weapon %>"><%= weapon.to_s.capitalize %></option> %>
     <% end %>
   </select>
+  <input type="submit" value="Submit" />
 </form>
