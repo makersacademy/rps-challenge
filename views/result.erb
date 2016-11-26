@@ -1,12 +1,25 @@
-<%= @game.player.name%>:
-<br>
-<h2><%= @game.player.choice %></h2>
-<br>
-<br>
-computer:
-<br>
-<h2><%= @game.computer_choice %></h2>
+<link rel="stylesheet" href="main.css"/>
 
-<h1><%= @game.check_result( @game.player.choice ) %></h1>
-<a href="/play">Try Again!</a>
-<a href="/">Home</a>
+<div class="page">
+
+  <table width="500px">
+    <tr>
+      <th colspan="2" width="250px">
+        <h3><%= @game.player.name.capitalize%>'s choice</h3>
+      </th>
+      <th colspan=2 width="100px"></th>
+      <th colspan="2" width="250px"><h3>RSP Master's choice</h3></th>
+    </tr>
+    <tr height="80px">
+      <th colspan="2" bgcolor="#a9a9a9"><font color="#ffffff"><h1><%= @game.player.choice %></h1></font></th>
+      <th colspan="2">vs</th>
+      <th colspan="2" bgcolor="#a9a9a9"><font color="#ffffff"><h1><%= @game.computer_choice %></h1></font></th>
+    </tr>
+    <tr>
+      <th colspan="6" height="150px"><h1><%= @game.check_result( @game.player.choice ) %></h1></th>
+    </tr>
+      <th colspan="3"><a href="/play">Try Again!</a></th>
+      <th colspan="3"><a href="/">Home</a></th>
+    </tr>
+  </table>
+</div>

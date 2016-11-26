@@ -1,14 +1,35 @@
-<h3><%= @game.player.name %></h3>
-<br>
-Now choose one of them!
-<br>
-<br>
-<form action="/rock" method="post">
-  <input type="submit" value="rock">
-</form>
-<form action="/paper" method="post">
-  <input type="submit" value="paper">
-</form>
-<form action="/scissors" method="post">
-  <input type="submit" value="scissors">
-</form>
+<link rel="stylesheet" href="main.css"/>
+
+<div class="page">
+  <table width="500px">
+  <tr>
+    <th colspan="3"><h1>Hello, <%= @game.player.name.capitalize %>!</h1></th>
+  <tr>
+    <th colspan="3">
+      <span style="line-height:150%">
+        Take a deep deep breath<br>
+        Don't think too much<br>
+        Just follow your instinct<br>
+      </span>
+      <h2>Now choose one of them!</h2><br>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <form action="/rock" method="post">
+        <input id="submit_button" type="submit" value="rock">
+      </form>
+    </th>
+    <th>
+      <form action="/paper" method="post">
+        <input id="submit_button" type="submit" value="paper">
+      </form>
+    </th>
+    <th>
+      <form action="/scissors" method="post">
+        <input id="submit_button" type="submit" value="scissors">
+      </form>
+    </th>
+  </tr>
+</table>
+</div>

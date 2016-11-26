@@ -2,7 +2,7 @@ RSpec.feature "Rsp" do
 
   scenario "User fills register their name before playing" do
     sign_in_and_click_submit
-    expect( page ).to have_content("player")
+    expect( page ).to have_content("Hello, Player_name! Take a deep deep breath Don't think too much Just follow your instinct Now choose one of them!")
   end
 
   scenario "User see 'rock' when they choose rock" do
