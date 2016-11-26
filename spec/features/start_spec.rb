@@ -1,8 +1,8 @@
-RSpec.feature "Attack Players", :type => :feature do
+RSpec.feature "Starting a game", :type => :feature do
 
-  scenario "start" do
+  scenario "Homepage has a title" do
     visit('/')
-    expect(page).to have_text("RPS")
+    expect(page).to have_text("Rock Paper Scissors")
   end
 
 
