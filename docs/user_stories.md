@@ -5,16 +5,17 @@ As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
-## IN PROGRESS
 As a marketeer
 So that I can try and win
 I would like to choose my weapon: rock, paper, or scissors
 
-## TODO
+## IN PROGRESS
 
 As a marketeer
 So that I can still play if I can't make up my mind
 I would like to be able to choose a random weapon
+
+## TODO
 
 As a marketeer
 So that I can play an opponent
