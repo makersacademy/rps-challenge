@@ -6,4 +6,5 @@ feature "Enter name" do
     click_button 'Rock (Paper, Scissors) on!'
     expect(page).to have_content 'Mike: Choose your weapon!'
   end
+  
 end
