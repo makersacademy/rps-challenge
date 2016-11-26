@@ -10,4 +10,33 @@ feature RPS do
     visit '/'
     fill_in('name', with: 'Kornelia')
   end
+
+  scenario 'Can click submit button' do
+    visit '/'
+    fill_in('name', with: 'Kornelia')
+    click_button('Submit')
+    visit '/play'
+  end
+
+  scenario 'Clicking on About will redirect to about page' do
+    visit '/'
+    click_link('About')
+    expect(page.current_path).to eq '/about'
+  end
+
+  scenario 'After submitting name, page redirects' do
+    visit '/'
+    fill_in('name', with: 'Kornelia')
+    click_button('Submit')
+    expect(page.current_path).to eq '/play'
+  end
+
+  scenario 'After submitting name, game starts at play page' do
+    visit '/'
+    fill_in('name', with: 'Kornelia')
+    click_button('Submit')
+    visit '/play'
+    expect(page).to have_content("Let's play")
+  end
+
 end
