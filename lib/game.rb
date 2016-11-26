@@ -1,6 +1,6 @@
 require_relative 'random_choice'
 
-CHOICES = ["rock", "paper", "scissors"]
+CHOICES = [:rock, :paper, :scissors]
 
 class Game
 
@@ -26,7 +26,11 @@ class Game
   end
 
   def computer_choice
-    CHOICES[random_choice]
+    CHOICES[random_choice].to_s
+  end
+
+  def player_choice
+    choice.to_s
   end
 
 

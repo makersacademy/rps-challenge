@@ -20,17 +20,17 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    @game = Game.create("rock")
+    @game = Game.create(:rock)
     redirect 'result'
   end
 
   post '/paper' do
-    @game = Game.create("paper")
+    @game = Game.create(:paper)
     redirect 'result'
   end
 
   post '/scissors' do
-    @game = Game.create("scissors")
+    @game = Game.create(:scissors)
     redirect 'result'
   end
 

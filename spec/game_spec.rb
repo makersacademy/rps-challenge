@@ -12,7 +12,7 @@ describe Game do
 
   context 'player choice is rock' do
 
-    game = Game.new("rock")
+    game = Game.new(:rock)
 
     it 'should win if rock vs scissors' do
 
@@ -35,7 +35,7 @@ describe Game do
 
   context 'player choice is paper' do
 
-    game = Game.new("paper")
+    game = Game.new(:paper)
 
     it 'should win if paper vs rock' do
       allow(game).to receive(:random_choice).and_return 0
@@ -56,7 +56,7 @@ describe Game do
 
   context 'player choice is scissors' do
 
-    game = Game.new("scissors")
+    game = Game.new(:scissors)
 
     it 'should win if scissors vs paper' do
       allow(game).to receive(:random_choice).and_return 1
