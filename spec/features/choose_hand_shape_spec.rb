@@ -15,4 +15,10 @@ feature 'Choosing hand shape' do
     expect(page).to have_button 'SCISSOR!'
   end
 
+  scenario 'the player can choose an option and be taken to a results page' do
+    sign_in_and_play
+    click_button 'ROCK!'
+    expect(current_path).to eq '/result'
+  end
+
 end
