@@ -33,9 +33,11 @@ class Game
   def determine_winner
     if player_beaten_by_opponent?
       self.winner=(@opponent)
+    elsif @player.weapon == opponent.weapon
+      self.winner=(:draw)
     else
       self.winner=(@player)
-      end
+    end
   end
 
   def winner=(winner)

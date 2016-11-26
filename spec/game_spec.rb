@@ -115,6 +115,13 @@ describe Game do
       expect(winning_game.winner).to eq scissors_player
     end
 
+    it 'returns a draw if neither player won' do
+      drawing_game = Game.new(rock_player, weapons_nodule)
+      drawing_game.opponent=(rock_opponent)
+      drawing_game.determine_winner
+      expect(drawing_game.winner).to eq :draw
+    end
+
   end
 
   describe '#winner=' do
