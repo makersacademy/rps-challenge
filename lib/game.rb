@@ -1,39 +1,29 @@
 require_relative 'random_choice'
+require_relative 'computer'
 
 CHOICES = [:rock, :paper, :scissors]
 
 class Game
 
-  def self.create(choice)
-    @game = Game.new(choice)
+  def self.create(player_1,player_2)
+    @game = Game.new(player_1,player_2)
   end
 
   def self.instance
     @game
   end
 
-  attr_reader :choice, :random_choice
+  attr_reader :player_1, :player_2
 
-  def initialize(choice)
-    @choice = choice
-    @random_choice = RandomChoice.new.index
+  def initialize(player_1,player_2 = Computer.new)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def result
-    return "draw" if choice == CHOICES[random_choice]
-    return "lose" if choice == CHOICES[(random_choice-1)]
+    return "draw" if CHOICES[player_1.choice_index] == CHOICES[player_2.choice_index]
+    return "lose" if CHOICES[player_1.choice_index] == CHOICES[(player_2.choice_index) -1]
     "win"
   end
-
-  def computer_choice
-    CHOICES[random_choice].to_s
-  end
-
-  def player_choice
-    choice.to_s
-  end
-
-
-
 
 end

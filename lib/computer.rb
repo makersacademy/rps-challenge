@@ -1,15 +1,15 @@
-require 'game'
+require_relative 'game'
 
 class Computer
 
-  attr_reader :index
+  attr_reader :choice_index
 
   def initialize
-    @index = Kernel.rand(0..2)
+    @choice_index = Kernel.rand(0..2)
   end
 
   def choice
-    Game::CHOICES[index]
+    Game::CHOICES[choice_index]
   end
 
 end
