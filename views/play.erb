@@ -1,1 +1,14 @@
-<%= @game.player.name %>
+<h3><%= @game.player.name %></h3>
+<br>
+Now choose one of them!
+<br>
+<br>
+<form action="/rock" method="post">
+  <input type="submit" value="rock">
+</form>
+<form action="/paper" method="post">
+  <input type="submit" value="paper">
+</form>
+<form action="/scissors" method="post">
+  <input type="submit" value="scissors">
+</form>
