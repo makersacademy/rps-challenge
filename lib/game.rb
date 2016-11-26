@@ -31,8 +31,11 @@ class Game
   end
 
   def determine_winner
-    return @opponent if player_beaten_by_opponent?
-    return @player if !player_beaten_by_opponent?
+    if player_beaten_by_opponent?
+      self.winner=(@opponent)
+    else
+      self.winner=(@player)
+      end
   end
 
   def winner=(winner)

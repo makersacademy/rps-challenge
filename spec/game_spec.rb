@@ -104,13 +104,24 @@ describe Game do
     it 'returns the opponent if the opponent won' do
       losing_game = Game.new(rock_player, weapons_nodule)
       losing_game.opponent=(paper_opponent)
-      expect(losing_game.determine_winner).to eq paper_opponent
+      losing_game.determine_winner
+      expect(losing_game.winner).to eq paper_opponent
     end
 
     it 'returns the player if the player won' do
       winning_game = Game.new(scissors_player, weapons_nodule)
       winning_game.opponent=(paper_opponent)
-      expect(winning_game.determine_winner).to eq scissors_player
+      winning_game.determine_winner
+      expect(winning_game.winner).to eq scissors_player
+    end
+
+  end
+
+  describe '#winner=' do
+
+    it 'sets the winner attribute' do
+      game.winner=(:foo)
+      expect(game.winner).to be :foo
     end
 
   end
