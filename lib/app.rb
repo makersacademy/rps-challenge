@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   post '/enter_names' do
     player = Player.new(params[:human_player1])
     computer = Computer.new(params[:computer])
+    game = Game.new(player,computer)
     redirect to('/game')
   end
 
