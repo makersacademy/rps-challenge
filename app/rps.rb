@@ -21,12 +21,20 @@ class RPS < Sinatra::Base
     @game = Game.instance
   end
 
-  post "/select" do
-    redirect to('/outcome')
+  post "/rock" do
+    redirect to('/rock-selected')
   end
 
-  get '/outcome' do
-    erb(:outcome)
+  post"/scissors" do
+    redirect to('/scissors-selected')
+  end
+
+  get '/rock-selected' do
+    erb(:rock_selected)
+  end
+
+  get "/scissors-selected" do
+    erb(:scissors_selected)
   end
 
   # start the server if ruby file executed directly

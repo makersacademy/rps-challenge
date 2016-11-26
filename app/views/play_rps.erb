@@ -1,8 +1,10 @@
-<h1> <%=@player.name%> VS AIbot!! </h1>
+<h1> <%=@game.player.name%> VS AIbot!! </h1>
 <h2> What do you choose?!</h2>
-<form action="/select" method="post">
+<form action="/rock" method="post">
   <button type="submit" name="rock">Rock</button>
-
+</form>
+<form action="/scissors" method="post">
+  <button type="submit" name"scissors">Scissors</button>
 </form>
 
 <h3> Quick reminder: </h3>
