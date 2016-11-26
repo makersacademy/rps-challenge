@@ -7,6 +7,5 @@ feature "the computer wins" do
     sign_in_and_select_rock
     expect(page).to have_text("Dan loses. AIbot Wins!")
     expect(page).to have_text("All hail AIbot your new overlord!")
-
   end
 end

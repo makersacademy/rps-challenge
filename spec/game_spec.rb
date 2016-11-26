@@ -15,13 +15,8 @@ describe Game do
   end
 
   context "winning" do
-    it "should have a variable to hold a winner" do
-      expect(game.winner).to eq nil
-    end
-
-    xit "should return the winner" do
-      allow(logic).to receive(:player_wins?) {true}
-      expect(game.winner).to eq player
+    it "should return the winner" do
+      expect(game.winner("AIbot")).to eq "AIbot"
     end
   end
 end

@@ -18,9 +18,9 @@ attr_reader :player, :computer, :winner
     @game
   end
 
-  # def winner
-  #   return @player if logic.player_wins?
-  #   return @computer
-  # end
+  def winner(winner)
+    return player.name if winner == "Player"
+    return "AIbot"
+  end
 
 end
