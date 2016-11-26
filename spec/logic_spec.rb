@@ -2,16 +2,40 @@ require 'spec_helper'
 require "./lib/player"
 
 describe Logic do
-  subject(:logic) {described_class.new}
-  let(:player_rock) {instance_double "Player", selection: :rock }
-  let(:player_paper) {instance_double "Player", selection: :paper }
-  let(:player_scissors) {instance_double "Player", selection: :scissors }
-  let(:computer_rock) {instance_double "Computer", selection: :rock }
-  let(:computer_paper) {instance_double "Computer", selection: :paper }
-  let(:computer_scissors) {instance_double "Computer", selection: :scissors }
+
+  subject(:logic_rs) {described_class.new(:rock, :scissors)}
+  subject(:logic_pr) {described_class.new(:paper, :rock)}
+  subject(:logic_sp) {described_class.new(:scissors, :paper)}
+  subject(:logic_sr) {described_class.new(:scissors, :rock)}
+  subject(:logic_rp) {described_class.new(:rock, :paper)}
+  subject(:logic_ps) {described_class.new(:paper, :scissors)}
 
 
-  context "rock wins" do
+  context "player wins" do
+    it "expects rock to beat scissors" do
+      expect(logic_rs.player_wins?).to be true
+    end
 
+    it "expects paper to beat rock" do
+      expect(logic_pr.player_wins?).to be true
+    end
+
+    it "expects scissors to beat paper" do
+      expect(logic_sp.player_wins?).to be true
+    end
+  end
+
+  context "computer wins" do
+    it "expects rock to beat scissors" do
+      expect(logic_sr.player_wins?).to be false
+    end
+
+    it "expects paper to beat rock" do
+      expect(logic_rp.player_wins?).to be false
+    end
+
+    it "expects scissors to beat paper" do
+      expect(logic_ps.player_wins?).to be false
+    end
   end
 end

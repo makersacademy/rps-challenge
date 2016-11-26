@@ -23,8 +23,9 @@ class RPS < Sinatra::Base
   end
 
   post "/selection" do
-    @game.player.choice(params[:take_your_pick])
-    @game.computer.selection
+    player_choice = (@game.player.choice(params[:take_your_pick]))
+    computer_choice = (@game.computer.selection)
+    logic = Logic.new(player_choice, computer_choice)
     redirect '/outcome'
   end
 
