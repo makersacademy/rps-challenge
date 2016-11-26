@@ -12,9 +12,27 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
-    "#{@game.player1.name} VS Computer"
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
+  post '/rock' do
+    erb(:rock)
+    redirect '/play'
+  end
+
+  post '/paper' do
+    erb(:paper)
+    redirect '/play'
+  end
+
+  post '/scissors' do
+    erb(:scissors)
+    redirect '/play'
   end
 
   run! if app_file == $0

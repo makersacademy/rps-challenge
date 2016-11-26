@@ -1,6 +1,7 @@
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
 require 'coveralls'
 require 'simplecov'
+require './spec/features/web_helper.rb'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
@@ -23,7 +24,7 @@ Capybara.app = RPS
 
 RSpec.configure do |config|
   config.include Capybara::DSL
-  
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

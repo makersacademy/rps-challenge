@@ -2,13 +2,13 @@ require './lib/game.rb'
 
 describe Game do
 
-  subject(:game) {described_class.new("Louisa")}
-  let(:player_name) {double :Player}
+  subject(:game) {described_class.new(player_klass)}
+  let(:player_klass) {double :player_klass, name: "Louisa", choice: nil}
 
   describe "#initializing" do
     context "Initializing with a player" do
       it "should accept a new Player instance" do
-        expect(game.player1).to eq "Louisa"
+        expect(game.player1).to eq player_klass
       end
     end
   end
@@ -24,6 +24,12 @@ describe Game do
         game = Game.create("Louisa")
         expect(Game.instance).to eq game
       end
+    end
+  end
+
+  describe "Displaying choices" do
+    it "should display the select choices message" do
+      expect(game.display_choice).to eq "Select ROCK, PAPER or SCISSORS"
     end
   end
 
