@@ -15,6 +15,9 @@ describe Game do
     it "should take a computer" do
       expect(game.computer).to eq computer
     end
+    it "should not have a victor" do
+      expect(game.victor).to be nil
+    end
   end
 
   context "singletons" do

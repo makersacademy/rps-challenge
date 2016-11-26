@@ -48,8 +48,15 @@ class RPS < Sinatra::Base
 
   get '/computer_turn' do
     @game = Game.instance
+    @game.computer_turn
     @computer_choice = @game.computer_choice
     erb(:computer_turn)
+  end
+
+  get '/winner' do
+    @game = Game.instance
+    @computer_choice = @game.victor
+    erb(:winner)
   end
 
   # start the server if ruby file executed directly
