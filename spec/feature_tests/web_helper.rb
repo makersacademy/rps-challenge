@@ -6,3 +6,7 @@ def sign_in
    fill_in('computer', with:'HAL')
    click_button('submit')
 end
+
+def load_home_page
+  visit('/')
+end
