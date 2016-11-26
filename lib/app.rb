@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'game'
 
 class RPS < Sinatra::Base
 
@@ -19,12 +20,12 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    session[:choice] = 'ROCK'
+    @game = Game.create("ROCK")
     redirect 'result'
   end
 
   get '/result' do
-    @choice = session[:choice]
+    @game = Game.instance
     erb(:result)
   end
 
