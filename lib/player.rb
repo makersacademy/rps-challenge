@@ -1,6 +1,6 @@
 # Tries to win by choosing the best weapon
 
-require 'weapons'
+require_relative 'weapons'
 
 class Player
 

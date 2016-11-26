@@ -34,7 +34,7 @@ describe Game do
     end
 
     it 'initializes with a weapons module in' do
-      expect(game.weapons.list).to be_kind_of Array
+      expect(game.weapons).to be_kind_of Array
     end
 
   end

@@ -14,7 +14,7 @@ class Game
 
   def initialize(player, weapons_module)
     @player = player
-    @weapons = weapons_module
+    @weapons = weapons_module.list
   end
 
 end
