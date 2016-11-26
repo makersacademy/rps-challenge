@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.feature "player can player rock paper scissors", :type => :feature do
+RSpec.feature "player can play rock paper scissors", :type => :feature do
   scenario "player can play by choosing rock" do
     sign_in_and_play
     click_button("Rock")
