@@ -2,6 +2,11 @@
 #
 #   feature Game do
 #
-#     # scenarion 'It should test that rock button can be clicked' do
-#     #
-#       end
+#     scenario 'It should test that rock button can be clicked' do
+#       click_button("Rock")
+#     end
+#
+#
+# 
+#
+#   end
