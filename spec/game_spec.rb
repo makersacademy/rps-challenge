@@ -10,65 +10,69 @@ describe Game do
     expect(game.choice).to eq choice
   end
 
-  it 'should win if rock vs scissors' do
+  context 'player choice is rock' do
+
     game = Game.new("rock")
-    allow(game).to receive(:comp_choice).and_return 2
-    expect(game.result).to eq "win"
+
+    it 'should win if rock vs scissors' do
+
+      allow(game).to receive(:random_choice).and_return 2
+      expect(game.result).to eq "win"
+    end
+
+    it 'should lose if rock vs paper' do
+      allow(game).to receive(:random_choice).and_return 1
+      expect(game.result).to eq "lose"
+    end
+
+    it 'should draw if rock vs rock' do
+
+      allow(game).to receive(:random_choice).and_return 0
+      expect(game.result).to eq "draw"
+    end
+
   end
 
-  it 'should lose if rock vs paper' do
-    game = Game.new("rock")
-    allow(game).to receive(:comp_choice).and_return 1
-    expect(game.result).to eq "lose"
-  end
+  context 'player choice is paper' do
 
-  it 'should draw if rock vs rock' do
-    game = Game.new("rock")
-    allow(game).to receive(:comp_choice).and_return 0
-    expect(game.result).to eq "draw"
-  end
-
-  it 'should win if paper vs rock' do
     game = Game.new("paper")
-    allow(game).to receive(:comp_choice).and_return 0
-    expect(game.result).to eq "win"
+
+    it 'should win if paper vs rock' do
+      allow(game).to receive(:random_choice).and_return 0
+      expect(game.result).to eq "win"
+    end
+
+    it 'should lose if paper vs scissors' do
+      allow(game).to receive(:random_choice).and_return 2
+      expect(game.result).to eq "lose"
+    end
+
+    it 'should draw if paper vs paper' do
+      allow(game).to receive(:random_choice).and_return 1
+      expect(game.result).to eq "draw"
+    end
+
   end
 
-  it 'should lose if paper vs scissors' do
-    game = Game.new("paper")
-    allow(game).to receive(:comp_choice).and_return 2
-    expect(game.result).to eq "lose"
-  end
+  context 'player choice is scissors' do
 
-  it 'should draw if paper vs paper' do
-    game = Game.new("paper")
-    allow(game).to receive(:comp_choice).and_return 1
-    expect(game.result).to eq "draw"
-  end
-
-  it 'should win if scissors vs paper' do
     game = Game.new("scissors")
-    allow(game).to receive(:comp_choice).and_return 1
-    expect(game.result).to eq "win"
+
+    it 'should win if scissors vs paper' do
+      allow(game).to receive(:random_choice).and_return 1
+      expect(game.result).to eq "win"
+    end
+
+    it 'should lose if scissors vs rock' do
+      allow(game).to receive(:random_choice).and_return 0
+      expect(game.result).to eq "lose"
+    end
+
+    it 'should draw if scissors vs scissors' do
+      allow(game).to receive(:random_choice).and_return 2
+      expect(game.result).to eq "draw"
+    end
+
   end
-
-  it 'should lose if scissors vs rock' do
-    game = Game.new("scissors")
-    allow(game).to receive(:comp_choice).and_return 0
-    expect(game.result).to eq "lose"
-  end
-
-  it 'should draw if scissors vs scissors' do
-    game = Game.new("scissors")
-    allow(game).to receive(:comp_choice).and_return 2
-    expect(game.result).to eq "draw"
-  end
-
-
-
-
-
-
-
 
 end

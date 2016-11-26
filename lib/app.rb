@@ -20,7 +20,17 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    @game = Game.create("ROCK")
+    @game = Game.create("rock")
+    redirect 'result'
+  end
+
+  post '/paper' do
+    @game = Game.create("paper")
+    redirect 'result'
+  end
+
+  post '/scissors' do
+    @game = Game.create("scissors")
     redirect 'result'
   end
 
@@ -28,7 +38,6 @@ class RPS < Sinatra::Base
     @game = Game.instance
     erb(:result)
   end
-
 
   run! if app_file == $0
 

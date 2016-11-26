@@ -12,19 +12,22 @@ class Game
     @game
   end
 
-  attr_reader :choice, :comp_choice
+  attr_reader :choice, :random_choice
 
   def initialize(choice)
     @choice = choice
-    @comp_choice = RandomChoice.new.index
+    @random_choice = RandomChoice.new.index
   end
 
   def result
-    return "draw" if choice == CHOICES[comp_choice]
-    return "lose" if choice == CHOICES[(comp_choice-1)]
+    return "draw" if choice == CHOICES[random_choice]
+    return "lose" if choice == CHOICES[(random_choice-1)]
     "win"
   end
 
+  def computer_choice
+    CHOICES[random_choice]
+  end
 
 
 
