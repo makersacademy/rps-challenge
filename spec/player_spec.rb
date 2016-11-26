@@ -15,7 +15,7 @@ describe Player do
     end
 
     it "picks a random hand shape for the computer" do
-      allow(mike).to receive(:result).and_return("scissors")
+      allow(mike).to receive(:result).and_return(:scissors.to_s)
       expect(mike.result).to eq "scissors"
     end
   end
