@@ -14,9 +14,4 @@ describe Game do
     end
   end
 
-  context "winning" do
-    it "should return the winner" do
-      expect(game.winner("AIbot")).to eq "AIbot"
-    end
-  end
 end

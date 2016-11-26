@@ -39,11 +39,4 @@ describe Logic do
     end
   end
 
-  it "should know if the computer won" do
-    expect(logic_ps.winner).to eq "AIbot"
-  end
-
-  it "should know if the player won" do
-    expect(logic_rs.winner).to eq "Player"
-  end
 end

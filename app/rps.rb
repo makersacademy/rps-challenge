@@ -23,17 +23,16 @@ class RPS < Sinatra::Base
   end
 
   post "/selection" do
-    player_choice = (@game.player.choice(params[:take_your_pick]))
-    computer_choice = (@game.computer.selection)
-    logic = Logic.new(player_choice, computer_choice)
-    @game.winner(logic.winner)
+    @player_choice = (@game.player.choice(params[:take_your_pick]))
+    @computer_choice = (@game.computer.selection)
     redirect '/outcome'
   end
 
   get '/outcome' do
+    logic = Logic.new(@player_choice, @computer_choice)
+    @game.check_winner(logic.player_wins?)
     erb(:outcome)
   end
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
