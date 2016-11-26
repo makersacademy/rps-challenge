@@ -1,7 +1,40 @@
-<h2> Choose your weapon! </h2>
-<form action='/selection' method="post">
-  Rock: <input type="radio" name="choice" id="Rock" value="Rock"><br>
-  Paper: <input type="radio" name="choice" id="Paper" value="Paper"><br>
-  Scissors: <input type="radio" name="choice" id="Scissors" value="Scissors"><br><br>
-  <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <title> Let's Play! </title>
+  </head>
+
+  <body>
+
+    <h1> Choose your weapon! </h1>
+
+    <form action='/selection' method="post">
+
+      <div class='row clearfix'>
+        <div class='col-4' id='first'>
+          <img src="rock.png"><br>
+          <input type="radio" name="choice" id="Rock" value="Rock"> Rock</input>
+        </div>
+
+        <div class='col-4' id='second'>
+          <img src="paper.png"><br>
+          <input type="radio" name="choice" id="Paper" value="Paper"> Paper</input>
+        </div>
+
+        <div class='col-4' id='third'>
+          <img src="scissors.png"><br>
+          <input type="radio" name="choice" id="Scissors" value="Scissors"> Scissors</input>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='button'>
+          <input id='button2' type="submit" value="Submit">
+        </div>
+      </div>
+
+    </form>
+
+  </body>
+</html>
