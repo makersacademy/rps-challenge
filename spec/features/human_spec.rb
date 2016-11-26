@@ -11,4 +11,16 @@ subject(:human) { described_class.new('A') }
     end
   end
 
+  describe '#outcome' do
+    it 'returns won if player wins' do
+      expect(human.outcome).to eq 'won'
+    end
+  end
+
+  describe '#number_generator' do
+    it "returns number 1" do
+      expect(human.number_generator).to eq 1
+    end
+  end
+
 end

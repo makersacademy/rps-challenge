@@ -24,14 +24,17 @@ class App < Sinatra::Base
   end
 
   get '/rock' do
+    @human.rock
     erb :rock
   end
 
   get '/paper' do
+    @human.paper
     erb :paper
   end
 
   get '/scissors' do
+    @human.scissors
     erb :scissors
   end
 
