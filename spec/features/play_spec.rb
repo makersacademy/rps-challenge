@@ -19,10 +19,16 @@ RSpec.feature "Play", :type => :feature do
     expect(page).to have_content "You have chosen: Paper"
   end
 
-  scenario "Can ciick on Scissors option" do
+  scenario "Can click on Scissors option" do
     sign_in_and_play
     click_button("SCISSORS")
     expect(page).to have_content "You have chosen: Scissors"
+  end
+
+  scenario "Can see Computers choice after clicking a button" do
+    sign_in_and_play
+    click_button("SCISSORS")
+    expect(page).to have_content "Computer has chosen:"
   end
 
   # scenario "Can click on Rock option" do
