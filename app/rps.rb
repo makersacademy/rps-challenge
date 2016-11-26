@@ -1,8 +1,19 @@
 require 'sinatra/base'
+require "./lib/player.rb"
+require "./lib/computer.rb"
+require "./lib/game.rb"
 
 class RPS < Sinatra::Base
+
+    enable :sessions
+
   get '/' do
-    'Hello RPS!'
+    erb(:index)
+  end
+
+  post '/name' do
+    @player = Player.new(params[:player_name])
+    erb(:play_rps)
   end
 
   # start the server if ruby file executed directly
