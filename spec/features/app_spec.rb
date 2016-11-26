@@ -1,10 +1,26 @@
 RSpec.feature "Rsp" do
 
   scenario "User fills register their name before playing" do
-    visit('/')
-    fill_in :player, with: "player"
-    click_button 'Submit'
+    sign_in_and_click_submit
     expect( page ).to have_content("player")
+  end
+
+  scenario "User see 'rock' when they choose rock" do
+    sign_in_and_click_submit
+    click_button 'rock'
+    expect( page ).to have_content("rock")
+  end
+
+  scenario "User see 'paper' when they choose paper" do
+    sign_in_and_click_submit
+    click_button 'paper'
+    expect( page ).to have_content("paper")
+  end
+
+  scenario "User see 'scissors' when they choose scissors" do
+    sign_in_and_click_submit
+    click_button 'scissors'
+    expect( page ).to have_content("scissors")
   end
 
 end
