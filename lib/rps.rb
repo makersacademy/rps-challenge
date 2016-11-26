@@ -1,9 +1,9 @@
 class RSP
 
-  def choice(users_choice, computers_choice)
-    if users_choice == computers_choice
+  def responses(choices)
+    if choices.first == choices.last
       "Draw"
-    elsif users_choice == :rock && computers_choice == :scissors || users_choice == :paper && computers_choice == :rock || users_choice == :scissors && computers_choice == :paper
+    elsif choices.first == :rock && choices.last == :scissors || choices.first == :paper && choices.last == :rock || choices.first == :scissors && choices.last == :paper
       "You won"
     else
       "You lose"

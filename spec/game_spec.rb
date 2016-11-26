@@ -9,6 +9,9 @@ describe Game do
       expect(game.player).to eq player
     end
 
+    it 'test that computer is initalized with game' do
+      expect(game.computer).to eq computer
+    end 
 
     it 'tests that an array of users and computers choice is returned' do
       allow(player).to receive(:users_choice){ :rock }
