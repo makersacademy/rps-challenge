@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'human'
 
 class App < Sinatra::Base
   set :sessions, true
@@ -9,13 +10,21 @@ class App < Sinatra::Base
   end
 
   post '/names' do
-    session[:name] = params[:name]
+    human_name = params[:name]
+    @human = Human.new_human_player(human_name)
     redirect '/play'
   end
 
+  before do
+    @human = Human.now
+  end
+
   get '/play' do
-    @name = session[:name]
     erb :play
+  end
+
+  get '/attack' do
+    erb :attack
   end
 
 
