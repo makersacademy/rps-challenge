@@ -1,3 +1,5 @@
+# Manages interactions between players
+
 class Game
 
   attr_reader :player

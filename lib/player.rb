@@ -1,3 +1,5 @@
+# Tries to win by choosing the best weapon
+
 require 'weapons'
 
 class Player
