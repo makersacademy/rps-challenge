@@ -1,9 +1,9 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+
   get '/' do
-    'Hello this Sparta!'
-    'Just kidding, this is Rock Paper Scissors'
+    erb :index
   end
 
   # start the server if ruby file executed directly
