@@ -8,4 +8,15 @@ class Game
     @player_choice = nil
   end
 
+  def rock
+    @player_choice = player.rock
+  end
+
+  def paper
+    @player_choice = player.paper
+  end
+
+  def scissors
+    @player_choice = player.scissors
+  end
 end
