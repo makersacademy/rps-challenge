@@ -14,9 +14,14 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/round' do
-    "Hello"
+  post '/round' do
+    @player_choice = params[:RPS]
+    erb(:outcome)
   end
+
+
+
+
 
 
   # start the server if ruby file executed directly

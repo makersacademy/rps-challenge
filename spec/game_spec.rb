@@ -23,7 +23,7 @@ describe Game do
     it "returns a fixed winner" do
       expect(game.winner).to eq player
     end
-    
+
   end
 
 end
