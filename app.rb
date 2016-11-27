@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require './lib/game'
 
 class App < Sinatra::Base
 
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
@@ -18,7 +23,16 @@ class App < Sinatra::Base
     erb :play
   end
 
-
+  post '/game' do
+    @game = Game.create(params[:choice])
+    if @game.outcome == :win
+      erb(:win)
+    elsif @game.outcome == :tie
+      erb(:tie)
+    else
+      erb(:lose)
+    end
+  end
 
   run! if app_file == $0
 end

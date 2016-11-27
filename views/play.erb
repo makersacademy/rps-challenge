@@ -1,3 +1,33 @@
-<div>
-  <h1>Welcome to Rock, Paper, Scissors, <%= @player %>!</h1>
-</div>
+<!DOCTYPE html>
+<html>
+
+    <h1> Welcome to Rock, Paper, Scissors, <%=@player%>! </h1>
+
+    <form action='/game' method="post">
+
+      <div class='row clearfix'>
+        <div class='col-4' id='first'>
+          <img src="http://weknowyourdreams.com/images/rock/rock-07.jpg"><br>
+          <input type="radio" name="choice" id="Rock" value="Rock"> rock</input>
+        </div>
+
+        <div class='col-4' id='second'>
+          <img src="http://www.thelondonprintingcompany.com/wp-content/uploads/2016/09/Redefining-Paper-1-Helix-James-Donegan.jpg"><br>
+          <input type="radio" name="choice" id="Paper" value="Paper"> paper</input>
+        </div>
+
+        <div class='col-4' id='third'>
+          <img src="http://www.orthotape.com/thumbnail.asp?file=assets/images/cast%20kits/razor-edge-softgrip-scissors_product_main.jpg&maxx=450&maxy=0"><br>
+          <input type="radio" name="choice" id="Scissors" value="Scissors"> scissors</input>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='button'>
+          <input class='button2' type="submit" value="Submit">
+        </div>
+      </div>
+
+    </form>
+
+</html>
