@@ -1,4 +1,4 @@
-<h1> <%= @game.player.name %> chose <%=@game.player.selection%>!</h1>
-<h1> AIbot chose <%=@game.computer.computer_selection%>!</h1>
+<h1><%= @game.check_winner %> is the winner! </h1>
 
-<h2><%= @game.check_winner %> is the winner! </h2>
+<h2> <%= @game.player.name %> chose <%=@game.player.selection%>!</h2>
+<h2> AIbot chose <%=@game.computer.computer_selection%>!</h2>
