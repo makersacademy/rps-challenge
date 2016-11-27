@@ -2,8 +2,8 @@ class Game
   RULES = {rock: :scissors, paper: :rock, scissors: :paper}
   attr_reader :players
 
-  def initialize(player, machine)
-    @players = [player, machine]
+  def initialize(player1,player2)
+    @players = [player1, player2]
   end
 
   def win?
