@@ -1,11 +1,12 @@
-require 'play'
-
-describe User do
-  subject(:user) {described_class.new("Veronica")}
-  describe "#name" do
-
-    it "should return the user name" do
-      expect(user.name).to eq "Veronica"
-    end
-  end
-end
+# require 'play'
+#
+# describe Play do
+#   let(:god) {double :god}
+#   describe '#game' do
+#     it "should return a winner" do
+#       allow(:god).to receive(:rock)
+#       allow(:user).to receive(:paper)
+#       expec(subject.game).to eq "Veronica wins!"
+#     end
+#   end
+# end

@@ -1,5 +1,15 @@
-<h1>Choose 1 option</h1>
-<form action="rps" method="post">
+<h2>Choose 1 option, <%= @username %></h2>
+<form action="rock" method="post">
 <input type="submit" value="Rock"/>
+</form>
+<form action="paper" method="post">
 <input type="submit" value="Paper"/>
+</form>
+<form action="scissors" method="post">
 <input type="submit" value="Scissors"/>
+</form>
+<h3><%= @username %>'s choice is <%= @play %></h3>
+<form action="god" method="post">
+<input type="submit" value="God"/>
+</form>
+<h3>God's choice is: <%= @choice %></h3>
