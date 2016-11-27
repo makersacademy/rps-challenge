@@ -4,13 +4,13 @@ class Game
 
 	include Weapons
 
-	attr_reader :player, :computer_weapon, :winner
+	attr_reader :player, :computer_weapon, :result
 
 	@game = nil
 
 	def initialize(player)
 		@player = player
-		@winner = nil
+		@result = nil
 	end
 
 	def self.create(player)
@@ -41,8 +41,8 @@ class Game
 		end
 
 		def check_result
-			return if draw?
-			player_win? ? @winner = @player : @winner = "Computer"
+			return @result = :draw if draw?
+			player_win? ? @result = :win : @result = :lose
 		end
 
 end

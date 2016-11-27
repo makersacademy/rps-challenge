@@ -15,21 +15,21 @@ describe Game do
 			allow(player).to receive(:weapon).and_return(:paper)
 			srand(2) # computer will choose Rock
 			game.determine_winner
-			expect(game.winner).to eq player
+			expect(game.result).to eq :win
 		end
 
 		it "can determine when the computer has won" do
 			allow(player).to receive(:weapon).and_return(:scissors)
 			srand(2)
 			game.determine_winner
-			expect(game.winner).to eq "Computer"
+			expect(game.result).to eq :lose
 		end
 
 		it "can determine when there is a draw" do
 			allow(player).to receive(:weapon).and_return(:rock)
 			srand(2)
 			game.determine_winner
-			expect(game.winner).to eq nil
+			expect(game.result).to eq :draw
 		end
 	end
 end

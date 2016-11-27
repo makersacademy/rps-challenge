@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+	<body>
+		<%= @game.player.name %> chose <%= @game.player.weapon.to_s.capitalize %>
+		<br>
+		The Computer chose <%= @game.computer_weapon.to_s.capitalize %>
+		
+		<h2>You chose poorly. Computer wins!</h2>
+		I, for one, welcome our Robot overlords.
+		<br>
+		<form action="/play" method="get">
+			<input type="submit" value="Rematch!">
+		</form>
+	</body>
+</html>

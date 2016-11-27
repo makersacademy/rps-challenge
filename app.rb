@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
 	get '/result' do
 		@game = Game.instance
 		@game.determine_winner
-		erb :result
+		erb @game.result
 	end
 
 	run! if app_file == $0
