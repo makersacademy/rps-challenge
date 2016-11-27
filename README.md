@@ -1,21 +1,28 @@
-# Rock, Paper, Scissors, Spock, Lizard Challenge
+# Rock, Paper, Scissors, Spock, Lizard
+## Completed by Dan Pelensky
+## 27 November 2016
 
 Instructions
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* Run this app in Sinatra ```ruby app/rps.rb```
+* Visit ```localhost:4567``` from a web browser
+* Enter your name
+* Make a selection
+* See if you win or lose!
+
+The Task as described:
+-----
+
+We have a request from a client to write a basic app that allows them to play Rock, Paper, Scissors, Spock, Lizard.
 
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
 As a marketeer
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I would like to be able to play rock/paper/scissors/spock/lizard
 ```
