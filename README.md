@@ -15,11 +15,11 @@ Instructions
 
 Homepage
 ----
-![Alt text](./RPS_homepage.jpg?raw=true)
+![Alt text](./RPS_homepage.png?raw=true)
 
 Play
 ----
-![Alt text](./RPS_play.jpg?raw=true)
+![Alt text](./RPS_play.png?raw=true)
 
 
 Future Changes
