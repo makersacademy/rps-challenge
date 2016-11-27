@@ -10,9 +10,9 @@ describe User do
     end
   end
 
-  describe '#choise' do
-    it "should choose rock" do
-      expect(subject.choise). to eq "Rock"
-    end
-  end
+  # describe '#choise' do
+  #   it "should choose rock" do
+  #     expect(subject.choise). to eq "Rock"
+  #   end
+  # end
 end
