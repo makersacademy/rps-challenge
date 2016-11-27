@@ -22,6 +22,11 @@ class Rps < Sinatra::Base
     @game = Game.instance
     erb(:play)
   end
+
+  get '/hit_confirm' do
+    erb(:hit_confirm)
+
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
