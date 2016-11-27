@@ -38,6 +38,22 @@ feature Game do
       expect(game.player_win?).to eq true
     end
 
+    scenario 'rock beats scissors' do
+      visit '/result'
+      game.choices('Scissors', 'Rock')
+      expect(game.player_win?).to eq false
+    end
+    scenario 'scissors beat paper' do
+      visit '/result'
+      game.choices('Paper', 'Scissors')
+      expect(game.player_win?).to eq false
+    end
+    scenario 'paper beats rock' do
+      visit '/result'
+      game.choices('Rock', 'Paper')
+      expect(game.player_win?).to eq false
+    end
+
     scenario 'it\'s a draw' do
       visit '/result'
       game.choices('Rock', 'Rock')
@@ -63,5 +79,4 @@ feature Game do
     allow(game).to receive(:player_win?).and_return true
     expect(game.print_winner).to eq "Kornelia"
   end
-
 end
