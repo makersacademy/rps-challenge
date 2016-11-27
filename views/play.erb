@@ -1,7 +1,7 @@
-<h1><%=@player.name%> vs. Computer</h1>
+<h1><%=$game.player1.name%> vs. <%=$game.player2.name%></h1>
 
 <form method="post" action="/game">
-  <button id="rock" type="submit" value="rock" name="rock">Rock</button>
-  <button id ="paper" type="submit" value="paper" name="paper">Paper</button>
-  <button id="scissors"type="submit" value="scissors" name="scissors">Scissors</button>
+  <button id="rock" type="submit" value="rock" name="player_weapon">Rock</button>
+  <button id ="paper" type="submit" value="paper" name="player_weapon">Paper</button>
+  <button id="scissors"type="submit" value="scissors" name="player_weapon">Scissors</button>
 </form>
