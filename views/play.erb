@@ -1,7 +1,27 @@
-<h1><%=$game.player1.name%> vs. <%=$game.player2.name%></h1>
+<html>
+<head>
 
-<form method="post" action="/game">
-  <button id="rock" type="submit" value="rock" name="player_weapon">Rock</button>
-  <button id ="paper" type="submit" value="paper" name="player_weapon">Paper</button>
-  <button id="scissors"type="submit" value="scissors" name="player_weapon">Scissors</button>
-</form>
+<style>
+  body {
+    color: white;
+    font-family: "Helvetica";
+  }
+</style>
+
+</head>
+
+<body>
+
+  <iframe src="//giphy.com/embed/IbwHdRBQfJ2hi" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
+
+  <h1 ><%=$game.player1.name%> vs. <%=$game.player2.name%></h1>
+
+  <form method="post" action="/game">
+    <button type="submit" value="rock" name="player_weapon">Rock</button>
+    <button type="submit" value="paper" name="player_weapon">Paper</button>
+    <button type="submit" value="scissors" name="player_weapon">Scissors</button>
+  </form>
+
+</body>
+
+</html>

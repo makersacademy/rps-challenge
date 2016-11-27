@@ -8,6 +8,7 @@ RSpec.feature "player can win a game", :type => :feature do
 
   scenario "after winning a game you can play again" do
     choose_rock_and_win
-    expect(page).to have_button("...try your luck again?")
+    click_button("...try your luck again?")
+    expect(page).to have_content("Rock Paper Scissors")
   end
 end

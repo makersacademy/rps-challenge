@@ -1,6 +1,30 @@
-<h3>You chose <%= $game.player1_weapon %>...<%=$game.player2.name%> chose <%=$game.player2_weapon%></h3>
-<h3><%=$game.player2_weapon%> beats <%=$game.player1_weapon%></h3>
-<h1>You lose!</h1>
-<form action="/" method="get">
-    <input type="submit" value="...refuse to accept defeat?">
-</form>
+<html>
+
+<head>
+
+<style>
+  body {
+    color: white;
+    font-family: "Helvetica";
+  }
+</style>
+
+</head>
+
+<body>
+
+  <iframe src="//giphy.com/embed/ytwDCq9aT3cgEyyYVO" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
+
+  <h3>You chose <%= $game.player1_weapon %>...<%=$game.player2.name%> chose <%=$game.player2_weapon%></h3>
+
+  <h3><%=$game.player2_weapon%> beats <%=$game.player1_weapon%></h3>
+
+  <h1><%=$game.player2.name%> wins!</h1>
+
+  <form action="/" method="get">
+      <input type="submit" value="...refuse to accept defeat?">
+  </form>
+
+</body>
+
+</html>
