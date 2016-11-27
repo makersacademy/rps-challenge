@@ -25,16 +25,19 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     @game.player_1.make_choice(:rock)
+    @game.player_2.make_choice
     redirect 'result'
   end
 
   post '/paper' do
     @game.player_1.make_choice(:paper)
+    @game.player_2.make_choice
     redirect 'result'
   end
 
   post '/scissors' do
     @game.player_1.make_choice(:scissors)
+    @game.player_2.make_choice
     redirect 'result'
   end
 

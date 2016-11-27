@@ -4,20 +4,23 @@ describe Computer do
 
   subject(:computer) {described_class.new}
 
-  describe '#choice' do
+  describe '#make_choice' do
     it 'can choose rock' do
       allow(Kernel).to receive(:rand).and_return(0)
-      expect(computer.choice).to eq :rock
+      computer.make_choice
+      expect(computer.choice_index).to eq 0
     end
 
     it 'can choose paper' do
       allow(Kernel).to receive(:rand).and_return(1)
-      expect(computer.choice).to eq :paper
+      computer.make_choice
+      expect(computer.choice_index).to eq 1
     end
 
     it 'can choose scissors' do
       allow(Kernel).to receive(:rand).and_return(2)
-      expect(computer.choice).to eq :scissors
+      computer.make_choice
+      expect(computer.choice_index).to eq 2
     end
   end
 

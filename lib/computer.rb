@@ -4,12 +4,8 @@ class Computer
 
   attr_reader :choice_index
 
-  def initialize
+  def make_choice
     @choice_index = Kernel.rand(0..2)
-  end
-
-  def choice
-    Game::CHOICES[choice_index]
   end
 
 end
