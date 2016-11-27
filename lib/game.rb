@@ -25,22 +25,32 @@ class Game
     player2_choose_weapon
   end
 
+  def result
+    if draw?
+      :draw
+    elsif player_wins?
+      :winner
+    else
+      :loser
+    end
+  end
+
+  private
+
+  def player1_choose_weapon(weapon)
+    @player1_weapon = weapon.to_sym
+  end
+
+  def player2_choose_weapon
+    @player2_weapon = Game::WEAPONS.sample
+  end
+
   def draw?
     self.player1_weapon == self.player2_weapon
   end
 
   def player_wins?
     Game::RULES[self.player1_weapon] == self.player2_weapon
-  end
-
-  private
-
-  def player1_choose_weapon(weapon)
-    @player1_weapon = self.player1.choose_weapon(weapon)
-  end
-
-  def player2_choose_weapon
-    @player2_weapon = self.player2.choose_weapon
   end
 
 end

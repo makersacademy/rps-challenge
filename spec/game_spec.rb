@@ -41,32 +41,28 @@ describe Game do
     end
 
     it "allows player 2 to choose their weapon" do
+      allow(Game::WEAPONS).to receive(:sample).and_return(:rock)
       game.play_game(weapon)
-      expect(game.player2_weapon).not_to be_nil
+      expect(game.player2_weapon).to eq :rock
     end
 
-    context "when deciding the winner of the game" do
-      it "can be a draw" do
-        allow(game).to receive(:play_game).and_return(:rock, :rock)
-        expect(game.draw?).to eq true
-      end
+      context "the result of the game can be decided" do
+        it { is_expected.to respond_to(:result) }
 
-      context "player can win" do
-        it "by choosing rock" do
-          allow(game).to receive(:play_game).with("rock").and_return(:scissors)
-          expect(game.player_wins?).to eq true
+        it "returns :draw when there is a draw" do
+          allow(game).to receive(:play_game).with("rock").and_return(:rock)
+          expect(game.result).to eq :draw
         end
 
-        it "by choosing scissors" do
-          allow(game).to receive(:play_game).with("scissors").and_return(:paper)
-          expect(game.player_wins?).to eq true
-        end
-
-        it "by choosing paper" do
-          allow(game).to receive(:play_game).with("paper").and_return(:rock)
-          expect(game.player_wins?).to eq true
-        end
+        # it "returns :winner if the player wins" do
+        #   allow(game).to receive(:play_game).with("rock").and_return(:scissors)
+        #   expect(game.result).to eq :winner
+        # end
+        #
+        # it "returns :loser if the computer wins" do
+        #   allow(game).to receive(:play_game).with("rock").and_return(:paper)
+        #   expect(game.result).to eq :loser
+        # end
       end
     end
-  end
 end
