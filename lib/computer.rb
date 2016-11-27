@@ -2,12 +2,10 @@ class Computer
 
 attr_reader :options, :choice_made
 
-  def initialize
-    @options = ["Rock", "Paper", "Scissors"]
-  end
+  OPTIONS = ["Rock", "Paper", "Scissors"]
 
   def choice
-    @choice_made = @options.sample
+    @choice_made = OPTIONS.sample
   end
 
 end

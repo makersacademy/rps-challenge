@@ -4,32 +4,39 @@ require_relative 'computer'
 
 class Game
 
-  attr_reader :player, :choices, :computer
+  attr_reader :player, :choices, :computer, :result
 
-  def self.create(player, computer)
-    @game = Game.new(player, computer)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player, computer)
+  def initialize(player)
     @player = player
     @choices = []
-    @computer = computer
-    @rps = Result.new
+    @computer = Computer.new
+    @result = Result.new
   end
 
   def choice
-    users_choice = @player.users_choice
-    computer_choice = @computer.choice_made
-    @choices.push([users_choice, computer_choice])
+    users_choice = player.users_choice
+    computer_choice = computer_selection
+    choices.push([users_choice, computer_choice])
   end
 
   def user_computer_choices
-    @rps.responses(choices.last)
+    result.responses(choices.last)
   end
 
+  private
+
+  attr_writer :choices
+
+  def computer_selection
+    computer.choice
+  end
 
 end

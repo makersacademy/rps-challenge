@@ -1,22 +1,31 @@
 require 'game'
 
 describe Game do
-    subject(:game) { described_class.new(player, computer)}
+    subject(:game) { described_class.new(player)}
     let(:player) { double(:player) }
-    let(:computer) { double(:computer) }
+    # let(:computer) { double(:computer) }
 
-    it 'test that when player is called player is returned' do
-      expect(game.player).to eq player
+    context ".player" do
+
+      it 'test that when player is called player is returned' do
+        expect(game.player).to eq player
+      end
     end
 
-    it 'test that computer is initalized with game' do
-      expect(game.computer).to eq computer
+    context ".computer" do
+
+      it 'test that computer is initalized with game' do
+        expect(game.computer).to be_kind_of Computer
+      end
     end
 
-    it 'tests that an array of users and computers choice is returned' do
-      allow(player).to receive(:users_choice){ "Rock" }
-      allow(computer).to receive(:choice_made) { "Scissors" }
-      game.choice
-      expect(game.choices).to include(["Rock", "Scissors"])
+    context ".choice" do
+
+      it 'tests that an array consisting of the users and computer\'s selection is returned' do
+        allow(player).to receive(:users_choice){ "Rock" }
+        allow(game).to receive(:computer_selection) {"Scissors"}
+        game.choice
+        expect(game.choices).to include(["Rock", "Scissors"])
+      end
     end
 end
