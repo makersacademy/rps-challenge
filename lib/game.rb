@@ -1,19 +1,18 @@
 class Game
 
-  attr_reader :computers_choice, :player, :players_choice
+  WIN_OR_LOSE = {
+    rock: {:rock => :draw, :paper => :lose, :scissors => :win},
+    paper: {:paper => :draw, :scissors => :lose, :rock => :win},
+    scissors: {:scissors => :draw, :rock => :lose, :paper => :win}
+  }
 
-  def initialize(player)
-    @player = player
-    @players_choice = nil
-    @computers_choice = nil
+  def initialize(hand_choice)
+    @player_choice = hand_choice["player_choice"]
+    @computer_choice = hand_choice["computer_choice"]
   end
 
-  def choices
-    [:rock, :paper, :scissors]
-  end
-
-  def computers_choice
-    @computers_choice = choices.sample
+  def result
+    WIN_OR_LOSE[@player_choice][@computer_choice]
   end
 
 end

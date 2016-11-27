@@ -1,8 +1,8 @@
-feature "Start game" do
+feature "Enter name" do
 
-  scenario "submitting name and choosing weapong" do
+  scenario "submitting name" do
     sign_in_and_play
-    expect(page).to have_content "Welcome Mike! \n You have chosen ROCK!"
+    expect(page).to have_content "Welcome Mike!"
   end
 
 end
