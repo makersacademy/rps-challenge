@@ -17,10 +17,17 @@ As a marketeer
 So that I can play an opponent
 I would like the computer to choose a weapon
 
-## IN PROGRESS
-
 As a marketeer
 So that I can taste the sweetness of victory or the bitterness of defeat
 I would like to know who is the winner of the match
 
+## IN PROGRESS
+
 ## TODO
+As a marketeer
+So that I don't get bored with the game
+I would like to play Rock, Paper, Scissors, Spock, Lizard
+
+As a marketeer
+So that I can be sociable
+I'd like to play against another human

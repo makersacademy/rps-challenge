@@ -1,94 +1,42 @@
 # Rock, Paper, Scissors
 
-This is a web version of the
+This is a web version of [rock, paper scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors).
 
+## Approach
+This app consists of 3 classes of object:
 
-Instructions
--------
+* Game: manages the interaction between players
+* Player: takes a user-submitted name and can select a weapon.
+* Computer Opponent: takes a random name and random weapon.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Additionally, there is a Weapons module. This module contains a hash in which the keys are the name of the weapon, and the value shows which weapons beat that weapon e.g.
 
-Task
-----
+`rock: :paper`
 
-Knowing how to build web applications is getting us almost there as web developers!
+Shows that there is a rock in the Weapons hash, and that rock is beaten by paper. 
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Dependency injection is used in the game itself to load the Weapons module. Because of this, it would be very easy to change what weapons are available to players: only a new module containing key-value pairs would be needed. Because of this, it would be extremely easy to extend the game to encompass [variations](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#Variations).
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Additionally, at present the behaviour of the computer player is random. An interesting extension of the app would be to make the behaviour of the computer player reflect research about how to win [rock, paper, scissors](http://www.bbc.co.uk/news/science-environment-27228416).
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## How to Install
+Clone or download this repo to your computer and run `bundle install`. This requires be able to use [bundler](http://bundler.io/).
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Getting Started
+Run `ruby app.rb` in the directory you cloned or downloaded this repo to. This will start a [Sinatra server](http://www.sinatrarb.com/) locally. Navigate your preferred browswer to `http://localhost:4567` (assuming you haven't reconfigured Sinatra).
 
-Hints on functionality
+## How to Play
+Enter your name to start playing. The app will greet you and prompt you to generate your computer opponent.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+When you've done that, You will have a choice of weapons. Select a weapon from the dropdown and click 'Submit'.
 
+On the next page, the app will prompt you to find out who won. Click through to find out.
 
-As usual please start by
+## Authors
+* [Oscar Barlow](https://github.com/oscar-barlow)
 
-* Forking this repo
-* TEST driving development of your app
+## Contributing
+Please feel free to fork this repo and submit a pull request with changes. Thanks in advance!
 
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear!
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+## License
+This software is distributed under the GNU-GPL 3.0 license. More details in the docs.
