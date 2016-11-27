@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+  <h1>Hi <%= @player.name %></h1>
+  <h2>Rock...Paper...Scissors!</h2>
+    <form action='/rock' method='get'>
+      <div>
+        <input type='submit' value='Rock'/>
+      </div>
+    </form>
+  <form action='/paper' method='get'>
+    <div>
+      <input type='submit' value='Paper'/>
+    </div>
+  </form>
+    <form action='/scissors' method='get'>
+      <div>
+        <input type='submit' value='Scissors'/>
+      </div>
+    </form>
+</body>
+</html>

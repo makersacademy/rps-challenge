@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+  <h1><%= @game.player.name %> has chosen <%= @player_choice %>!</h1>
+  <h1>Player 2 has chosen <%= @game.play %>!</h1>
+  <% if @winner == "It's a draw!" %>
+  <h1><%= @winner %></h1>
+  <% else %>
+  <h1><%= @winner %> is the winner!</h1>
+  <% end %>
+</body>
+</html>
