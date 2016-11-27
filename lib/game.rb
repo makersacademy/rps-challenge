@@ -1,4 +1,3 @@
-require_relative 'random_choice'
 require_relative 'computer'
 require_relative 'player'
 
@@ -22,9 +21,19 @@ class Game
   end
 
   def result
-    return "draw" if CHOICES[player_1.choice_index] == CHOICES[player_2.choice_index]
-    return "lose" if CHOICES[player_1.choice_index] == CHOICES[(player_2.choice_index) -1]
+    return "draw" if draw?
+    return "lose" if lose?
     "win"
+  end
+
+  private
+
+  def draw?
+    CHOICES[player_1.choice_index] == CHOICES[player_2.choice_index]
+  end
+
+  def lose?
+    CHOICES[player_1.choice_index] == CHOICES[(player_2.choice_index) -1]
   end
 
 end
