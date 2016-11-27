@@ -10,6 +10,7 @@ class RPS < Sinatra::Base
   post '/names' do
     @player_1_name = params[:player_1_name]
     # session[:player] = params[:player]
+    # session[:name] = params[:player]
     erb(:play)
   end
 
