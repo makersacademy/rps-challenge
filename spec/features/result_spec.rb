@@ -15,6 +15,7 @@ describe 'It declares a winner' do
     end
   end
 
+
   # scenario 'player chooses "rock" and computer chooses "paper"' do
   #   sign_in_and_play
   #   click_button 'ROCK!'

@@ -1,14 +1,19 @@
 class Game
 
-  attr_reader :hand_shape_choices, :player
+  attr_reader :computers_choice, :player, :players_choice
 
   def initialize(player)
     @player = player
-    @hand_shape_choices = [:rock, :paper, :scissors]
+    @players_choice = nil
+    @computers_choice = nil
+  end
+
+  def choices
+    [:rock, :paper, :scissors]
   end
 
   def computers_choice
-    @hand_shape_choices.sample.to_s
+    @computers_choice = choices.sample
   end
 
 end

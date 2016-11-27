@@ -9,8 +9,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player_one = Player.new(params[:player_one_name])
-    $game = Game.new(player_one)
+    player = Player.new(params[:player_name])
+    $game = Game.new(player)
     redirect '/play'
   end
 
@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/result' do
+  post '/result' do
     @game = $game
     erb :result
   end

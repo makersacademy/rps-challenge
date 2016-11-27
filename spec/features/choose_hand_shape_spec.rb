@@ -12,7 +12,7 @@ feature 'Choosing hand shape' do
 
   scenario 'display the "scissor" hand shape as an option' do
     sign_in_and_play
-    expect(page).to have_button 'SCISSOR!'
+    expect(page).to have_button 'SCISSORS!'
   end
 
   scenario 'the player can choose an option and be taken to a results page' do

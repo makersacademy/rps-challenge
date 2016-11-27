@@ -12,7 +12,7 @@ describe Game do
 
   describe '#computers_choice' do
     it "has options for the computer to randomly choose from" do
-      expect(game.hand_shape_choices).to include(:rock, :paper, :scissors)
+      expect(game.choices).to include(:rock, :paper, :scissors)
     end
 
     it "picks a random hand shape for the computer" do
@@ -20,4 +20,15 @@ describe Game do
       expect(game.computers_choice).to eq "scissors"
     end
   end
+
+  # describe '#result' do
+  #   it "calculates the winner by comparing the player's choice and the computer's choice" do
+  #     sign_in_and_play
+  #     click_button 'ROCK!'
+  #     allow(game).to receive(:players_choice).and_return(:rock)
+  #     allow(game).to receive(:computers_choice).and_return(:scissors)
+  #     expect(game.rock).to eq "Mike WINS!!"
+  #   end
+  # end
+
 end
