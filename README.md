@@ -103,10 +103,13 @@ $ rackup
 ### How to play
 -------
 Enter your name and click play
+
 ![Imgur](http://i.imgur.com/gakhHw4.png)
 
 Select your weapon of choice
+
 ![Imgur](http://i.imgur.com/YCcrKpT.png)
 
 See how you did and maybe play again!
+
 ![Imgur](http://i.imgur.com/F7VPngz.png)
