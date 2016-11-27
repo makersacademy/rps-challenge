@@ -7,14 +7,25 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
-  post '/names' do
+  post '/name' do
     player = Player.new(params[:name])
     opponent = Opponent.new
     @game = Game.create(player,opponent)
+    redirect to('/play')
+  end
+
+  post '/names' do
+    player1 = Player.new(params[:p1name])
+    player2 = Player.new(params[:p2name])
+    @game = Game.create(player1,player2)
     redirect to('/play')
   end
 
@@ -27,39 +38,30 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb(:play)
   end
 
   post '/rock' do
-    @game = Game.instance
     @game.player1.choose_rock
     @game.player2.choose_weapon
     redirect to('/result')
   end
 
   post '/paper' do
-    @game = Game.instance
     @game.player1.choose_paper
     @game.player2.choose_weapon
     redirect to('/result')
   end
 
   post '/scissors' do
-    @game = Game.instance
     @game.player1.choose_scissors
     @game.player2.choose_weapon
-
     redirect to('/result')
   end
 
   get '/result' do
-    @game = Game.instance
     erb(:result)
   end
-
-
-
 
   run! if app_file == $0
 

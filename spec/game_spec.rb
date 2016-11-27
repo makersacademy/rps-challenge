@@ -79,8 +79,6 @@ describe Game do
       allow(opponent).to receive(:weapon).and_return(:paper)
       expect(game.message).to eq "Your opponent chose paper"
     end
-
-
   end
 
 

@@ -73,10 +73,3 @@ feature "Playing again" do
     expect(page).to have_content("Lets play Rock Paper Scissors! Choose either single or multi-player")
   end
 end
-
-feature "Multi-player" do
-  scenario "two players can enter their names" do
-    multi_player_sign_in_and_play
-    expect(page).to have_content("John Vs Smith")
-  end
-end
