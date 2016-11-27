@@ -5,7 +5,7 @@ describe Game do
   let(:player) {double :player}
   let(:machine) {double :machine}
 
-  describe "#Win?" do
+  describe "#win?" do
     before do
       allow(player).to receive(:weapon).and_return(:rock)
     end
@@ -21,5 +21,5 @@ describe Game do
     end
 
   end
-
+  
 end
