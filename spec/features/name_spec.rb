@@ -4,7 +4,7 @@ require_relative 'web_helper'
 feature "introduction" do
   scenario "at login, the rules will be displayed" do
       visit "/"
-    expect(page).to have_text ("Unless you've been living under a rock you already know the rules to Rock, Paper, Scissors.")
+    expect(page).to have_text ("Do you think you can beat AIbot?!")
   end
 end
 
