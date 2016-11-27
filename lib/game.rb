@@ -29,6 +29,10 @@ class Game
     self.player1_weapon == self.player2_weapon
   end
 
+  def player_wins?
+    Game::RULES.has_key?(self.player1_weapon)
+  end
+
   private
 
   def player1_choose_weapon(weapon)

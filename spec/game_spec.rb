@@ -50,6 +50,11 @@ describe Game do
         allow(game).to receive(:play_game).and_return(:rock, :rock)
         expect(game.draw?).to eq true
       end
+
+      it "player can win" do
+        allow(Game::RULES).to receive(:has_key?).and_return true
+        expect(game.player_wins?).to eq true
+      end
     end
   end
 end
