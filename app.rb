@@ -9,8 +9,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @name = params[:player_name]
-    puts @name
+    @player = Player.new(params[:player_name])
+    puts @player
     erb(:play)
   end
 
