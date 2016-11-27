@@ -1,12 +1,18 @@
-<%= @game.player.name %> chose <%= @game.player.weapon.to_s.capitalize %>
-<br>
-The Computer chose <%= @game.computer_weapon.to_s.capitalize %>
+<!DOCTYPE html>
 
-<% if @game.winner == nil %>
-<h2>Looks like it's a draw. How boring.</h2>
-<% elsif @game.winner == "Computer" %>
-<h2>You chose poorly. Computer wins!</h2>
-I, for one, welcome our Robot overlords.
-<% else %>
-<h2>You chose wisely. <%= @game.winner.name %> wins!</h2>
-<% end %>
+<html>
+	<body>
+		<%= @game.player.name %> chose <%= @game.player.weapon.to_s.capitalize %>
+		<br>
+		The Computer chose <%= @game.computer_weapon.to_s.capitalize %>
+
+		<% if @game.winner == nil %>
+			<h2>Looks like it's a draw. How boring.</h2>
+		<% elsif @game.winner == "Computer" %>
+			<h2>You chose poorly. Computer wins!</h2>
+			I, for one, welcome our Robot overlords.
+		<% else %>
+			<h2>You chose wisely. <%= @game.winner.name %> wins!</h2>
+		<% end %>
+	</body>
+</html>
