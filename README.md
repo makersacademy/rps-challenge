@@ -14,9 +14,9 @@ Fork this repo and clone the files. Then install the gem files by adding the fol
 
 ```
 
-bundle install
+$ bundle install
 
-ruby app.rb
+$ ruby app.rb
 
 ```
 
@@ -32,8 +32,6 @@ This will initiate a local Sinatra session and you will see the following in you
 ```
 
 At this point go to your browser and enter the following url:  **https://localhost:4567** . Enter your name, click play and choose your weapon!
-
-* Forking this repo
 
 ## Further Features to be implemented
 
