@@ -20,6 +20,10 @@ class RPS < Sinatra::Base
     @game.computer.select_weapon
     erb @game.result
   end
+
+  get '/play_again' do
+    redirect '/play'
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
