@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require_relative 'player.rb'
-require_relative 'computer.rb'
-require_relative 'game.rb'
+require './lib/player.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
