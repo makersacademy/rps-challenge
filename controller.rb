@@ -21,4 +21,11 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/move_confirmation' do
+    @player1_name = session[:player1_name]
+    erb(:move_confirmation)
+  end
+
+  run! if app_file == $0
+
 end
