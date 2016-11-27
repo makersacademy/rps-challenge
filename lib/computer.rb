@@ -6,7 +6,7 @@ class Computer
     @name = "Computer"
   end
 
-  def result
+  def choice
     :scissors
   end
 

@@ -28,5 +28,24 @@ describe Game do
 
   end
 
+  describe "choices" do
+    it "returns player's choice" do
+      allow(player).to receive(:choice).and_return(:rock)
+      expect(game.player_choice).to eq :rock
+    end
+    it "returns computer's choice" do
+      allow(computer).to receive(:choice).and_return(:paper)
+      expect(game.computer_choice).to eq :paper
+    end
+  end
+
+
+  describe "Player winning" do
+    it "Player: Rock, Computer: Scissors." do
+      allow(player).to receive(:choice).and_return(:rock)
+      expect(game.winner).to eq player
+    end
+  end
+
 
 end
