@@ -1,6 +1,7 @@
+require_relative "game.rb"
+
 class Computer
-  Weapons = [:Rock, :Paper, :Scissors]
   def choice
-    Weapons.sample
+    Game::Weapons.sample
   end
 end

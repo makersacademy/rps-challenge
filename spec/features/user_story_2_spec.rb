@@ -23,14 +23,10 @@ RSpec.feature "Playing rock/paper/scissors" do
     expect(page).to have_content("Computer has selected Scissors")
   end
 
-  scenario "it should see who won" do
-
+  scenario "it should show who won the game" do
     register_and_play
     click_button('Rock')
     expect(page).to have_content 'Tom has won the game'
   end
-
-
-
 
 end
