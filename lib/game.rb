@@ -1,19 +1,21 @@
 #decides the result of the game
 
 class Game
-attr_reader :player_name, :computer_defense
-WEAPONS = [:rock, :paper, :scissors]
+attr_reader  :computer_defense
+
+
 RULES = {rock: :scissors,
           paper: :rock,
           scissors: :paper}
 
-    def initialize(player_name, computer_defense)
-      @player_name = player_name
+    def initialize( computer_defense)
+
       @computer_defense = computer_defense
+
     end
 
-    def self.create(player_name, computer_defense)
-      @game = Game.new(player_name, computer_defense)
+    def self.create( computer_defense)
+      @game = Game.new( computer_defense)
     end
 
     def self.instance
@@ -21,14 +23,13 @@ RULES = {rock: :scissors,
     end
 
     def tie?(player_input)
-      player_input == computer_defense.counter_attack
+      player_input == @computer_defense
     end
 
     def result(player_input)
       return :draw if tie?(player_input)
-      RULES[player_input][computer.counter_attack] ? :win : :lose
+      RULES[player_input]==@computer_defense ? :win : :loose
     end
-
 
 
 end

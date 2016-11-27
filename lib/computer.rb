@@ -2,12 +2,9 @@
 
 class Computer
 
-  def initialize
-    @attacks = ["Rock", "Paper", "Scissors"]
-  end
-
+WEAPONS = [:rock, :paper, :scissors]
   def counter_attack
-    @attacks.sample
+    WEAPONS.sample
   end
 
 

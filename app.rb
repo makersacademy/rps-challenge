@@ -4,33 +4,34 @@ require './lib/computer'
 
 class Rps < Sinatra::Base
 
+enable :sessions
+
   before do
     @game = Game.instance
-
   end
-
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    player_name = params[:player_name]
+    session[:player_name]=params[:player_name]
     computer_defense = Computer.new.counter_attack
-    @game = Game.create(player_name, computer_defense)
-    redirect '/play'
+    @game = Game.create(computer_defense)
+    redirect to("/play")
   end
 
   get '/play' do
-    @game = Game.instance
-
+    @player = session[:player_name]
     erb(:play)
   end
 
-  get '/rock_confirm' do
-
-    erb(:rock_confirm)
+  post '/result' do
+    player_choice = params[:attack].to_sym
+    erb(@game.result(player_choice))
   end
-  # start the server if ruby file executed directly
+
+
+
   run! if app_file == $0
 end

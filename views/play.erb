@@ -1,5 +1,6 @@
-<h1>Hi, <%=@game.player_name%>!</h1>
+<h1>Hi, <%=@player%>!</h1>
 
-  <form action="/rock_confirm" method="get">
-    <input type="submit" value="Rock">
+  <form action="/result" method="post">
+    <input type="text"  name="attack">
+    <input type="submit" value="choose">
   </form>

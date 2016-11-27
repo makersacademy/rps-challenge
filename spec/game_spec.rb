@@ -1,31 +1,45 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(player_name, computer_defense)}
-  subject(:game_tie) {described_class.new(player_name, computer_rock)}
-  let(:player_name) {double(:player_name)}
-  let(:computer_defense) {double(:computer_defense)}
-  let(:computer_rock) {double(:computer_defense)}
-  before(:each) {allow(computer_rock).to receive(:counter_attack).and_return(:rock)}
+  subject(:game) {described_class.new( :paper)}
+  subject(:game_rock) {described_class.new( :rock)}
 
-  describe '#player' do
-    it 'retrieves the first player' do
-      expect(game.player_name).to eq player_name
+
+
+
+describe " #instance" do
+  it "refers to an instance" do
+    expect(Game.instance).to be_an_instance_of(Game)
+  end
+end
+
+describe " #create" do
+    it "creates an instance of Game" do
+      expect(Game.create(:paper)).to be_an_instance_of(Game)
     end
+
   end
 
-  describe "#tie" do
-    it "returns true if the player and the computer chose the same attack" do
-      expect(game_tie.tie?(:rock)).to eq true
+
+
+  describe " #result" do
+
+    it " #tie returns true if the player and the computer chose the same attack" do
+      expect(game_rock.tie?(:rock)).to eq true
 
     end
-  end
 
-
-  describe "#result" do
 
     it "direct to draw if both player and computer chose rock" do
-      expect(game_tie.result(:rock)).to eq :draw
+      expect(game_rock.result(:rock)).to eq :draw
+    end
+
+    it "direct to win if player chose paper, chomputer chose rock" do
+      expect(game_rock.result(:paper)).to eq :win
+    end
+
+    it "direct to loose if player chose scissors, chomputer chose rock" do
+      expect(game_rock.result(:scissors)).to eq :loose
     end
   end
 end
