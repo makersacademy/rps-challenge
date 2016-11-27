@@ -92,7 +92,10 @@ This repo works with [Coveralls](https://coveralls.io/) to calculate test covera
 
 How to download and play
 -------
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ git clone git@github.com:ajbater/rps-challenge.git
+
 $ cd rps-challenge
+
 $ bundle
+
 $ rackup
