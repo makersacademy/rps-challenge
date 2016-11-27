@@ -25,6 +25,10 @@ class Game
     player2_choose_weapon
   end
 
+  def draw?
+    self.player1_weapon == self.player2_weapon
+  end
+
   private
 
   def player1_choose_weapon(weapon)

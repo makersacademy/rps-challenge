@@ -9,6 +9,7 @@ describe Game do
   before do
     allow(player1).to receive(:new).and_return player1
     allow(player2).to receive(:new).and_return player2
+    allow(weapon).to receive(:to_sym) { :rock }
   end
 
   context "when a new game is created" do
@@ -34,11 +35,6 @@ describe Game do
   end
 
   context "when playing the game" do
-
-    before do
-      allow(weapon).to receive(:to_sym) { :rock }
-    end
-
     it "allows player 1 to choose their weapon" do
       game.play_game(weapon)
       expect(game.player1_weapon).to eq :rock
@@ -47,6 +43,13 @@ describe Game do
     it "allows player 2 to choose their weapon" do
       game.play_game(weapon)
       expect(game.player2_weapon).not_to be_nil
+    end
+
+    context "when deciding the winner of the game" do
+      it "can be a draw" do
+        allow(game).to receive(:play_game).and_return(:rock, :rock)
+        expect(game.draw?).to eq true
+      end
     end
   end
 end
