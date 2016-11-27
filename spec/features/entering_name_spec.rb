@@ -33,14 +33,27 @@ feature "Selecting a weapon" do
 end
 
 feature "Displaying the result of the game" do
-  let(:opponent) {double :oponent}
+  let(:opponent) {double :opponent}
   let(:game) {double :game}
+
   scenario "Player chooses rock, and the computer chooses paper." do
     sign_in_and_play
     click_button('rock')
-    allow(opponent).to receive(:weapon).and_return(:paper)
+    allow(game).to receive(:player2)
+    allow(game.player2).to receive(:weapon).and_return(:paper)
     allow(game).to receive(:outcome).and_return("You lose!")
-    allow(game).to receive(:message).and_return("Your opponent chose #{opponent.weapon}. #{game.outcome}")
+    allow(game).to receive(:message).and_return("Your opponent chose #{game.player2.weapon}. #{game.outcome}")
+    expect(page).to have_content(game.message)
+  end
+
+  scenario "Player chooses rock, and the computer chooses scissors." do
+    sign_in_and_play
+    click_button('rock')
+
+    allow(game).to receive(:player2)
+    allow(game.player2).to receive(:weapon).and_return(:scissors)
+    allow(game).to receive(:outcome).and_return("You win!")
+    allow(game).to receive(:message).and_return("Your opponent chose #{game.player2.weapon}. #{game.outcome}")
     expect(page).to have_content(game.message)
   end
 end

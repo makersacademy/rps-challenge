@@ -1,6 +1,7 @@
 require "sinatra/base"
 require_relative 'lib/game.rb'
 require_relative 'lib/player.rb'
+require_relative 'lib/computer_opponent.rb'
 
 class RPS < Sinatra::Base
 
@@ -12,7 +13,8 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:name])
-    @game = Game.create(player)
+    opponent = Opponent.new
+    @game = Game.create(player,opponent)
     redirect to('/play')
   end
 
@@ -23,19 +25,23 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     @game = Game.instance
-    @game.player.choose_rock
+    @game.player1.choose_rock
+    @game.player2.choose_weapon
     redirect to('/result')
   end
 
   post '/paper' do
     @game = Game.instance
-    @game.player.choose_paper
+    @game.player1.choose_paper
+    @game.player2.choose_weapon
     redirect to('/result')
   end
 
   post '/scissors' do
     @game = Game.instance
-    @game.player.choose_scissors
+    @game.player1.choose_scissors
+    @game.player2.choose_weapon
+
     redirect to('/result')
   end
 

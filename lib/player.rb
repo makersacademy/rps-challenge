@@ -7,6 +7,7 @@ class Player
     @name = name
     @score = 0
     @weapons = [:rock, :paper, :scissors]
+    @weapon
   end
 
   def choose_rock
