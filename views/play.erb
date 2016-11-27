@@ -1,1 +1,7 @@
-<p>Hello, <%= @player.name %>!</p>
+<p><%= @player.name %> vs. Computer!</p>
+
+<form name="input" action="/round" method="post">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>

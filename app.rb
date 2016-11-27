@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -10,8 +11,11 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:player_name])
-    puts @player
     erb(:play)
+  end
+
+  get '/round' do
+    "Hello"
   end
 
 

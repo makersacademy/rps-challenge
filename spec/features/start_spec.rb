@@ -1,3 +1,5 @@
+require_relative './web_helpers'
+
 RSpec.feature "Starting a game", :type => :feature do
 
   scenario "Homepage" do
@@ -9,7 +11,7 @@ RSpec.feature "Starting a game", :type => :feature do
     visit '/'
     fill_in "player_name", :with => "Russell"
     click_button "Start"
-    expect(page).to have_text("Hello, Russell!")
+    expect(page).to have_text("Russell vs. Computer!")
   end
 
 
