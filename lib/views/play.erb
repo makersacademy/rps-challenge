@@ -1,15 +1,48 @@
-<h1><%=@game.player_1.name.capitalize%> vs Computer</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: url("https://inspirationhut.net/wp-content/uploads/2015/09/190.jpg") no-repeat;
+    background-size: 100%;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+form {
+display: inline-block;
+text-align: center;
+}
+.buttonHolder { text-align: center; }
+</style>
 
-<h3>Choose rock, paper or scissors</h3>
+</head>
+<body>
 
-<form action="/rock" method="post">
-  <button type="submit">ROCK</button>
-</form>
+  <h1><%=@game.player_1.name.capitalize%> vs Computer</h1>
 
-<form action="/paper" method="post">
-  <button type="submit">PAPER</button>
-</form>
+  <h3>Choose rock, paper or scissors</h3>
 
-<form action="/scissors" method="post">
-  <button type="submit">SCISSORS</button>
-</form>
+  <div class="buttonHolder">
+    <form action="/rock" method="post">
+      <button type="submit">ROCK</button>
+    </form>
+
+    <form action="/paper" method="post">
+      <button type="submit">PAPER</button>
+    </form>
+
+    <form action="/scissors" method="post">
+      <button type="submit">SCISSORS</button>
+    </form>
+  </div>
+
+</body>
+</html>

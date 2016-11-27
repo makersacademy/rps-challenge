@@ -1,7 +1,41 @@
-<h1>Rock Paper Scissors</h1>
-<h3>Enter your name to begin</h3>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: url("https://inspirationhut.net/wp-content/uploads/2015/09/190.jpg") no-repeat;
+    background-size: 100%;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+form {
+display: inline-block;
+text-align: center;
+}
+.buttonHolder { text-align: center; }
+</style>
 
-<form action="/name" method="post">
-  <input type="text" name="player_name">
-  <input type="submit" value="Begin">
-</form>
+</head>
+<body>
+
+  <h1>Rock Paper Scissors</h1>
+
+  <h3>Enter your name to begin</h3>
+
+  <div class="buttonHolder">
+    <form action="/name" method="post">
+      <input type="text" name="player_name">
+      <input type="submit" value="Begin">
+    </form>
+  </div>
+
+</body>
+</html>
