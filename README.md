@@ -49,6 +49,10 @@ Encapsulation
 -------------
 A Computer class does currently exist and has the capacity to choose a weapon. I would like to complete my work on the Computer class. This will involve removing the responsibility of choosing a wespon for the computer from my Game class. Ultimately the Game class will not care who the two players are - player vs player, or player vs computer - as it will function the same either way.
 
+Style
+-----
+I would also like to add some CSS files to make the whole thing prettier!
+
 Examples
 ========
 Homepage:
