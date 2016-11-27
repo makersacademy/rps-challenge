@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb(:index)
@@ -8,6 +9,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     @player_1_name = params[:player_1_name]
+    # session[:player] = params[:player]
     erb(:play)
   end
 
