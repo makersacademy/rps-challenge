@@ -13,4 +13,5 @@ class Game
   def draw?
     return @players[0].weapon == @players[1].weapon
   end
+
 end
