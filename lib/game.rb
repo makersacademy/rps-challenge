@@ -1,4 +1,8 @@
+require_relative 'weapons'
+
 class Game
+
+	include Weapons
 
 	attr_reader :player, :computer_weapon, :winner
 
@@ -24,25 +28,21 @@ class Game
 
 	private
 
-		WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
-		WIN_SCENARIOS = { rock: [:scissors, :lizard],
-							paper: [:rock, :spock],
-							scissors: [:paper, :lizard],
-							lizard: [:paper, :spock],
-							spock: [:rock, :scissors] }
-
 		def computer_choose_weapon
 			@computer_weapon = WEAPONS.sample
 		end
 
+		def draw?
+			@player.weapon == @computer_weapon
+		end
+
+		def player_win?
+			beats?(@player.weapon, @computer_weapon)
+		end
+
 		def check_result
-			if @player.weapon == @computer_weapon
-				@winner = nil
-			elsif WIN_SCENARIOS[@player.weapon].include? @computer_weapon
-				@winner = @player
-			else
-				@winner = "Computer"
-			end
+			return if draw?
+			player_win? ? @winner = @player : @winner = "Computer"
 		end
 
 end
