@@ -8,9 +8,9 @@ Rock Paper Scissors or Ching-Chong-Cha, as South African's call it, is a two pla
 Rules:
 -------
 
-Rock beats scissors
-Paper beats rock
-Scissors beats paper
+- Rock beats scissors
+- Paper beats rock
+- Scissors beats paper
 
 
 My Version:
@@ -21,10 +21,10 @@ The user will be playing against the computer and selecting a button which depen
 Access:
 -------
 
-$ git clone git@github.com:CourtneyLO/rps-challenge.git
-$ cd rps-challenge
-$ install bundle
-$ ruby app.rb
+- $ git clone git@github.com:CourtneyLO/rps-challenge.git
+- $ cd rps-challenge
+- $ install bundle
+- $ ruby app.rb
 
 - Then go to localhost:4567
 - And enjoy
