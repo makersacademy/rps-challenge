@@ -3,7 +3,7 @@ require "./lib/game"
 
 describe Game do
 
-  subject(:game) {described_class.new(player, computer) }
+  subject(:game) {described_class.new(player, computer, logic) }
   let(:player) { double :player }
   let(:computer) {double :computer}
   let(:logic) {instance_double "Logic" }

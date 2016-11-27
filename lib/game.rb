@@ -2,15 +2,16 @@ require_relative "logic"
 
 class Game
 
-  attr_reader :player, :computer, :winner
+  attr_reader :player, :computer, :winner, :logic
 
-  def initialize(player, computer)
+  def initialize(player, computer, logic)
     @player = player
     @computer = computer
+    @logic = logic
   end
 
-  def self.create(player, computer)
-    @game = Game.new(player, computer)
+  def self.create(player, computer, logic)
+    @game = Game.new(player, computer, logic)
   end
 
   def self.instance
