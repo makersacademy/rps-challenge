@@ -14,5 +14,9 @@
 		<% else %>
 			<h2>You chose wisely. <%= @game.winner.name %> wins!</h2>
 		<% end %>
+
+		<form action="/play" method="get">
+			<input type="submit" value="Rematch!">
+		</form>
 	</body>
 </html>
