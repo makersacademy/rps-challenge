@@ -11,8 +11,9 @@ describe "Sign in" do
   it "should redirect to /play" do
     expect(page.current_path).to eq "/play"
   end
+
   it "should display player's name" do
     expect(page).to have_text "Harley Quinn"
   end
-  
+
 end
