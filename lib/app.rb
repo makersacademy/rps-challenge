@@ -18,8 +18,38 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @game = Game.current_game
+    @game.computer.choose
     erb(:options)
   end
+
+  post '/rock' do
+    @game = Game.current_game
+    @game.player.rock
+    @game.computer.choose
+    redirect to('/results')
+  end
+
+  post '/scissors' do
+    @game = Game.current_game
+    @game.player.scissors
+    @game.computer.choose
+    redirect to('/results')
+  end
+
+  post '/paper' do
+    @game = Game.current_game
+    @game.player.paper
+    @game.computer.choose
+    redirect to('/results')
+  end
+
+
+
+  get '/results' do
+    @game = Game.current_game
+    erb(:results)
+  end
+
 
 
   # start the server if ruby file executed directly
