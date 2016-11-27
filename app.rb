@@ -47,6 +47,7 @@ enable :sesions
     @play = session[:play]
     god = God.new
     @choice = god.choice
+    
     erb(:rps)
   end
   run! if app_file == $0

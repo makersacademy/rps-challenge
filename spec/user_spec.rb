@@ -9,4 +9,10 @@ describe User do
       expect(user.name).to eq "Veronica"
     end
   end
+
+  describe '#choise' do
+    it "should choose rock" do
+      expect(subject.choise). to eq "Rock"
+    end
+  end
 end
