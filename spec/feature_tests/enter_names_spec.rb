@@ -14,7 +14,7 @@ describe "Entering Names" do
          expect(page).to have_field("human_player1")
       end
 
-      it "expect page to have a form called human_player1" do
+      it "expect page to have a form called computer" do
          expect(page).to have_field("computer")
       end
   end

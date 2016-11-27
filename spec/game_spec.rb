@@ -16,6 +16,24 @@ describe Game do
     end
   end
 
+  context "When using class method create, it" do
+
+    before do
+      @test_game = Game.create(player,computer)
+    end
+
+    it "should create an instance of the class" do
+      expect(@test_game.class).to eq Game
+    end
+
+    it "should be able to be accessed using current_game method" do
+      expect(Game.current_game).to be_instance_of(Game)
+    end
+  end
+
+
+
+
 
 
 

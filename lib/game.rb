@@ -8,5 +8,16 @@ class Game
 
   end
 
+  def self.create(player,computer)
+    @current_game = Game.new(player,computer)
+  end
+
+  def self.current_game
+    @current_game
+  end
+
+
+
+
 
 end
