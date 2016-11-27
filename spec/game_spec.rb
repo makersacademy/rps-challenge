@@ -17,8 +17,7 @@ describe Game do
 
     it "should return false" do
       allow(machine).to receive(:weapon).and_return(:rock)
-      g = Game.new(player,machine)
-      expect(g.win?).to be false
+      expect(game.win?).to be false
     end
 
   end
