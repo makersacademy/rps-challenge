@@ -28,10 +28,10 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    p @player_choice = @game.player.choice(params[:choice])
-    p @computer_choice =  @game.computer.computer_choice
-    p @game.choices(@player_choice, @computer_choice)
-    p @game.print_winner
+    @player_choice = @game.player.choice(params[:choice])
+    @computer_choice =  @game.computer.computer_choice
+    @game.choices(@player_choice, @computer_choice)
+    @game.print_winner
     redirect '/result'
   end
 

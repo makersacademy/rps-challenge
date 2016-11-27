@@ -4,7 +4,7 @@ require_relative 'web_helpers'
 feature RPS do
   scenario 'Returns the home page for RPS' do
     visit '/'
-    expect(page).to have_content("Hello this is Sparta!")
+    expect(page).to have_content("This. Is. Sparta!")
   end
 
   scenario 'Home page provides log in field' do
