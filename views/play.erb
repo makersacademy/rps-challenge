@@ -1,12 +1,19 @@
-<%= @player1_name %> vs <%= @player2_name %>
+<h1>Rock, Paper, Scissors</h1>
+<h1><%= @player1_name.name %> vs Computer</h1>
 
 <div class="hit_button">
-  <form action='/play' method='post'>
+  <form action='/rock' method='post'>
     <input name="option" type="submit" value="Rock">
-    <input name="option" type="submit" value="Paper">
-    <input name="option" type="submit" value="Scissors">
   </form>
 </div>
 
-You picked <%= @option %>
-Computer picked <% @computers_option %>
+<div class="hit_button">
+  <form action='/paper' method='post'>
+    <input name="option" type="submit" value="Paper">
+  </form>
+</div>
+
+<div class="hit_button">
+  <form action='/scissors' method='post'>
+    <input name="option" type="submit" value="Scissors">
+</div>
