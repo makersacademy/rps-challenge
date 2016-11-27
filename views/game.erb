@@ -2,10 +2,15 @@
 <html>
   <head>
     <title>RPS-Game</title>
+    <style type="text/css">
+      .name {
+          color: rgb(170,1,20)
+          }
+    </style>
   </head>
   <body>
     <div>
-      <h2> Welcome <%= @game.player.player_name.capitalize %> to Rock Paper Scissors. </h3>
+      <h2> Welcome <span class='name'> <%= @game.player.player_name.capitalize %> </span> to Ching-Chong-Cha. </h3>
     </div>
     <div>
       <h4>Please choose rock, paper or scissors</h4>
