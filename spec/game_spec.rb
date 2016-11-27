@@ -11,12 +11,12 @@ describe Game do
 
     it 'test that computer is initalized with game' do
       expect(game.computer).to eq computer
-    end 
+    end
 
     it 'tests that an array of users and computers choice is returned' do
-      allow(player).to receive(:users_choice){ :rock }
-      allow(computer).to receive(:choice_made) { :scissors }
+      allow(player).to receive(:users_choice){ "Rock" }
+      allow(computer).to receive(:choice_made) { "Scissors" }
       game.choice
-      expect(game.choices).to eq [:rock, :scissors]
+      expect(game.choices).to include(["Rock", "Scissors"])
     end
 end

@@ -5,10 +5,14 @@
   </head>
   <body>
     <div>
-      <form action='/result' method="post">
-        <input type="submit" value="Rock">
-        <input type="submit" value="Paper">
-        <input type="submit" value="Scissors">
+      <h2> Welcome <%= @game.player.player_name.capitalize %> to Rock Paper Scissors. </h3>
+    </div>
+    <div>
+      <h4>Please choose rock, paper or scissors</h4>
+      <form action='/rsp' method="post">
+        <input type="submit" name="choice" value="Rock">
+        <input type="submit" name="choice" value="Paper">
+        <input type="submit" name="choice" value="Scissors">
     </div>
   </body>
 </html>

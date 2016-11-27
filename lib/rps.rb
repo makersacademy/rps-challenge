@@ -2,14 +2,11 @@ class RSP
 
   def responses(choices)
     if choices.first == choices.last
-      "Draw"
-    elsif choices.first == :rock && choices.last == :scissors || choices.first == :paper && choices.last == :rock || choices.first == :scissors && choices.last == :paper
-      "You won"
+      "It is a Draw"
+    elsif choices.first == "Rock" && choices.last == "Scissors" || choices.first == "Paper" && choices.last == "Rock" || choices.first == "Scissors" && choices.last == "Paper"
+      "Well Done, You Win!"
     else
-      "You lose"
+      "Sorry but You Lose"
     end
-
   end
-
-
 end

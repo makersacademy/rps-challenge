@@ -13,12 +13,25 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player])
-    @game = Game.create(player)
+    computer = Computer.new
+    @game = Game.create(player, computer)
     redirect '/game'
   end
 
   get '/game' do
     erb :game
+  end
+
+  post '/rsp' do
+    @game.player.choice(params[:choice])
+    @game.computer.choice
+    @game.choice
+    @game.user_computer_choices
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly

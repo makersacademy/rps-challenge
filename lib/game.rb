@@ -6,8 +6,8 @@ class Game
 
   attr_reader :player, :choices, :computer
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance

@@ -10,8 +10,8 @@ describe Player do
   end
 
   it 'test that the players choice is returned' do
-    player.choice(:rock)
-    expect(player.users_choice).to eq :rock
+    player.choice("Rock")
+    expect(player.users_choice).to eq "Rock"
   end
 
 
