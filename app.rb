@@ -21,14 +21,10 @@ class RPS < Sinatra::Base
 
   post '/round' do
     @player_choice = params[:RPS]
-    @player = Player.new(@name)
+    @player = Player.new(session[:name], @player_choice)
+    @game = Game.new(@player, @computer)
     erb(:outcome)
   end
-
-
-
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0

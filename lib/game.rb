@@ -1,11 +1,11 @@
 class Game
-  attr_reader :player, :computer, :player_choice
+  attr_reader :player, :computer
 
-  def initialize(player, computer, player_choice)
+  def initialize(player, computer)
     @player = player
-    @player_choice = player_choice
     @computer = computer
   end
+  
 
   def winner
     @player
