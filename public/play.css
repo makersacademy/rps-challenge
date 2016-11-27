@@ -10,8 +10,15 @@ body {
 ===============================================*/
 .names {
   text-align: center;
-  color: #ADA09C;
+  color: #ffffff;
   font-size: 2em;
+}
+
+.rules {
+  font: italic 1em Papyrus;
+  font-weight: 100;
+  text-align: center;
+  color:#ADA09C;
 }
 
 /*===============================================

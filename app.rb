@@ -30,7 +30,7 @@ class Rps < Sinatra::Base
     @game.player_one.select_weapon(params[:weapon])
     @game.player_two.random_weapon_selection
     @game.update_score
-    erb :play
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly

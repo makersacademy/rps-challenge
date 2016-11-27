@@ -7,6 +7,7 @@
 <body>
   <div class="names_container">
     <h2 class="names"><%= @game.player_one.name %>  vs  <%= @game.player_two.name %></h2>
+    <p class="rules"> Player reaches 10 points first wins! </p>
   </div>
 
   <section class="score">
@@ -17,7 +18,6 @@
       <h2>Score: <%= @game.player_two.score %></h2>
     </div>
   </section>
-
 
   <% if @game.winner != nil %>
   <div class="winner">
@@ -53,16 +53,10 @@
     <% end %>
   </section>
 
-
   <form class="weapon_options_container" action="/weapon_selection" method="post">
     <input class="weapon_option" type="submit" name="weapon" value="Paper">
     <input class="weapon_option" type="submit" name="weapon" value="Rock">
     <input class="weapon_option" type="submit" name="weapon" value="Scissors">
   </form>
-
-
-
-
-
 </body>
 </html>

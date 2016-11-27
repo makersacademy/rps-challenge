@@ -30,21 +30,35 @@ class Game
   end
 
   def round_winner
-    if @player_one.weapon == @player_two.weapon
-      @round_winner = nil
-    elsif @player_one.weapon == "Rock" && @player_two.weapon == "Paper"
-      @round_winner = @player_two
-    elsif @player_one.weapon == "Rock" && @player_two.weapon == "Scissors"
+    if RULES[@player_one.weapon] == @player_two.weapon
       @round_winner = @player_one
-    elsif @player_one.weapon == "Paper" && @player_two.weapon == "Rock"
-      @round_winner = @player_one
-    elsif @player_one.weapon == "Paper" && @player_two.weapon == "Scissors"
-      @round_winner = @player_two
-    elsif @player_one.weapon == "Scissors" && @player_two.weapon == "Rock"
+    elsif RULES[@player_two.weapon] == @player_one.weapon
       @round_winner = @player_two
     else
-      @round_winner = @player_one
+      @round_winner = nil
     end
   end
 
+private
+
+RULES = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
+
+#
+# def round_winner
+#   if @player_one.weapon == @player_two.weapon
+#     @round_winner = nil
+#   elsif @player_one.weapon == "Rock" && @player_two.weapon == "Paper"
+#     @round_winner = @player_two
+#   elsif @player_one.weapon == "Rock" && @player_two.weapon == "Scissors"
+#     @round_winner = @player_one
+#   elsif @player_one.weapon == "Paper" && @player_two.weapon == "Rock"
+#     @round_winner = @player_one
+#   elsif @player_one.weapon == "Paper" && @player_two.weapon == "Scissors"
+#     @round_winner = @player_two
+#   elsif @player_one.weapon == "Scissors" && @player_two.weapon == "Rock"
+#     @round_winner = @player_two
+#   else
+#     @round_winner = @player_one
+#   end
+# end
 end

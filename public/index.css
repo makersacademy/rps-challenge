@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  background-image: url("/images/index.jpg");
+  background-image: url("/images/room.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #000000;
@@ -9,6 +9,12 @@ body {
 .container {
   margin: 0 auto;
   margin-top: 6.5%;
+}
+
+.intro {
+  color: #ffffff;
+  font: italic 4em Papyrus;
+  text-align: center;
 }
 
 input {

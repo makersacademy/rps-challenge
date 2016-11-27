@@ -16,7 +16,11 @@ class Player
   end
 
   def random_weapon_selection
-    @weapon = ["Rock", "Paper", "Scissors"].sample
+    @weapon = WEAPONS.sample
   end
+
+  private
+
+  WEAPONS = ["Rock", "Paper", "Scissors"]
 
 end
