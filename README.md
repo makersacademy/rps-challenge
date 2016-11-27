@@ -8,8 +8,12 @@ Instructions
 - rspec (it should show: 0 examples, 0 failures)
 - ruby rps_web.rb
 
-
-panding
+How to play
+--------
+- http://localhost:4567
+- Enter your name
+- Choose your weapon
+- Result is shown
 
 Set up the project
 -------
