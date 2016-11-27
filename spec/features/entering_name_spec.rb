@@ -16,18 +16,18 @@ feature "Selecting a weapon" do
   scenario "player selects rock and gets a confirmation" do
     sign_in_and_play
     click_button('rock')
-    expect(page).to have_content("You have selected Rock!")
+    expect(page).to have_content("You have selected rock!")
   end
 
   scenario "player selects paper and gets a confirmation" do
     sign_in_and_play
     click_button('paper')
-    expect(page).to have_content("You have selected Paper!")
+    expect(page).to have_content("You have selected paper!")
   end
 
   scenario "player selects scissors and gets a confirmation" do
     sign_in_and_play
     click_button('scissors')
-    expect(page).to have_content("You have selected Scissors!")
+    expect(page).to have_content("You have selected scissors!")
   end
 end

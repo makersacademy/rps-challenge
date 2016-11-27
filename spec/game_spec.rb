@@ -8,4 +8,5 @@ describe Game do
   it "should have a player" do
     expect(game.player).to eq player
   end
+
 end
