@@ -4,20 +4,23 @@ class Game
 
   WIN = [
     ["Rock", "Scissors"],
+    ["Rock", "Lizard"],
     ["Paper", "Rock"],
-    ["Scissors", "Paper"]
+    ["Paper", "Spock"],
+    ["Scissors", "Paper"],
+    ["Scissors", "Lizard"],
+    ["Spock", "Scissors"],
+    ["Spock", "Rock"],
+    ["Lizard", "Paper"],
+    ["Lizard", "Spock"]
   ]
 
   DRAW = [
     ["Rock", "Rock"],
     ["Paper", "Paper"],
-    ["Scissors", "Scissors"]
-  ]
-
-  LOSE = [
-    ["Rock", "Paper"],
-    ["Paper", "Scissors"],
-    ["Scissors", "Rock"]
+    ["Scissors", "Scissors"],
+    ["Spock", "Spock"],
+    ["Lizard", "Lizard"]
   ]
 
   def initialize(player, computer)
@@ -47,14 +50,10 @@ class Game
     DRAW.include?(@game_array)
   end
 
-  def lose?
-    LOSE.include?(@game_array)
-  end
-
   def check_winner
     return "Nobody" if draw?
-    return @computer.name if lose?
-    return @player.name
+    return @player.name if player_wins?
+    return @computer.name
   end
 
 end

@@ -4,7 +4,7 @@ require_relative 'web_helper'
 feature "start game" do
   scenario "the game will remind the player of the rules on the attack screen" do
     sign_in
-    expect(page).to have_text("Rock crushes scissors, but gets smothered by paper")
+    expect(page).to have_text("Rock crushes scissors and lizard, but gets smothered by paper and vaporised by Spock")
   end
 end
 
