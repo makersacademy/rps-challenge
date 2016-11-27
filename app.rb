@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
     erb :game
   end
 
-  post '/rsp' do
+  post '/rps' do
     @game.player.choice(params[:choice])
     @game.computer.choice
     @game.choice
@@ -31,9 +31,14 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    erb :result
+    if :response == "Play Again"
+      redirect '/game'
+    elsif :response == "New player"
+      redirect '/'
+    else
+      erb :result
+    end
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

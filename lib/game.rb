@@ -1,5 +1,5 @@
 require_relative 'player'
-require_relative 'rps'
+require_relative 'result'
 require_relative 'computer'
 
 class Game
@@ -18,7 +18,7 @@ class Game
     @player = player
     @choices = []
     @computer = computer
-    @rsp = RSP.new
+    @rps = Result.new
   end
 
   def choice
@@ -28,7 +28,7 @@ class Game
   end
 
   def user_computer_choices
-    @rsp.responses(choices.last)
+    @rps.responses(choices.last)
   end
 
 

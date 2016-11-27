@@ -1,1 +1,12 @@
-<%= @game.user_computer_choices %> </br>
+<div> <%= @game.player.player_name %> chose <%= @game.player.users_choice %> </div>
+<div> Computer chose <%= @game.computer.choice_made %> </div>
+<div> <%= @game.user_computer_choices %> </div>
+
+<div>
+  <form action="/game" method="get">
+    <input type="submit" name="response" value="Play Again">
+  </form>
+  <form action="/" method="get">
+    <input type="submit" name="response" value="New Player">
+  </form>
+</div>

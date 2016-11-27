@@ -1,5 +1,5 @@
 def sign_in
   visit ("/")
-  fill_in("Player", :with => "Courtney")
+  fill_in("player", :with => "Courtney")
   click_button("Submit")
-end 
+end

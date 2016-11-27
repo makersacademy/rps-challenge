@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
   subject(:player) { described_class.new("Courtney") }
-  let(:rsp) { double :rsp}
+  let(:rps) { double :rps}
 
 
   it 'test that player name is returned when called ' do
