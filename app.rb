@@ -23,6 +23,7 @@ class RPS < Sinatra::Base
     @player_choice = params[:RPS]
     @player = Player.new(session[:name], @player_choice)
     @game = Game.new(@player, @computer)
+    @winner = @game.winner
     erb(:outcome)
   end
 
