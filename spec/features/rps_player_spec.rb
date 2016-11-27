@@ -24,6 +24,6 @@ feature Player do
 
   scenario 'Returns a random selection from computer' do
     allow(computer).to receive(:computer_choice).and_return('Rock')
-    expect(computer.random_options).to eq 'Rock'
+    expect(computer.computer_choice).to eq 'Rock'
   end
 end

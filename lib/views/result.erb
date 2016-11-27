@@ -19,17 +19,20 @@
   </div>
   <div>
     <h1> <%= @game.computer.name %>'s choice: <%= @game.computer.random_options %>  </h1>
+    <div class='winner'>
+      <h1><%= @game.print_winner %> wins!</h1>
+    </div>
 
-    <h1><%= %> wins!</h1>
+    <div>
+      <h2>Reminder:</h2>
+      <ul>
+        <li>Rock beats Scissors</li>
+        <li>Scissors beats Paper</li>
+        <li>Paper beats Rock</li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <h2>Reminder:</h2>
-    <ul>
-      <li>Rock beats Scissors</li>
-      <li>Scissors beats Paper</li>
-      <li>Paper beats Rock</li>
-    </ul>
-  </div>
+
   <div>
     <h1> Another game? <a href='/'>Yes</a> / <a href='/bye'>No</a> </h1>
   </div>

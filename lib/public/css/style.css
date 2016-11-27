@@ -5,8 +5,8 @@ body {
   font-size: 16px;
   color: #777;
   text-align: center;
-  cursor: url(vulcan.png), auto;
 }
+
 body * {
   margin: 5px;
   padding: 5px;
@@ -56,15 +56,23 @@ a{
 }
 
 .li_home {
+  font-weight: bold;
   float: left;
 }
 
 .li_rest {
+  font-weight: bold;
   float: right;
 }
 
 .intro {
   padding-top: 40px;
+}
+
+.winner {
+margin: auto;
+  width: 400px;
+  border: 1px solid red;
 }
 
 input,
@@ -74,7 +82,7 @@ select {
   padding: 0.5em;
   font-size: 15px;
   line-height: 1.2em;
-  width: 30%;
+  width: 20%;
   background: #444;
   color: #fff;
   font-family: helvetica, sans-serif;
@@ -84,6 +92,8 @@ select {
   -webkit-box-shadow: 1px 1px 1px #333;
   -moz-box-shadow: 1px 1px 1px #333;
   box-shadow: 1px 1px 1px #333;
+  /*cursor: url(vulcan.png), auto;*/
+  cursor: pointer;
 }
 input:focus,
 textarea:focus,
@@ -195,5 +205,5 @@ footer {
   margin-top : 200px;
   font-size: 10px;
   border-top: dashed #777 2px;
- vertical-align: middle;
+  vertical-align: middle;
 }
