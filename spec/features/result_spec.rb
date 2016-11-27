@@ -1,14 +1,15 @@
 require 'player'
+require 'game'
 
 describe 'It declares a winner' do
   context 'player chooses "rock" and computer chooses "scissors"' do
-    let(:mike) { double(Player.new('Mike'))}
+    let(:game) { double(Game.new)}
       before do
-        allow(mike).to receive(:result).and_return('SCISSORS')
+        allow(game).to receive(:computers_choice).and_return('SCISSORS')
         scenario 'computer makes a choice after player' do
           sign_in_and_play
           click_button 'ROCK!'
-          expect(page).to have_content "Mike chose ROCK! The computer chose SCISSORS! \n MIKE WINS!!" 
+          expect(page).to have_content "Mike chose ROCK! The computer chose SCISSORS! \n MIKE WINS!!"
         end
       end
     end
