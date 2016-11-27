@@ -1,12 +1,15 @@
-class Game
-attr_reader :player
+#decides the result of the game
 
-    def initialize(player)
-      @player = player
+class Game
+attr_reader :player_name, :computer_defense
+
+    def initialize(player_name, computer_defense)
+      @player_name = player_name
+      @computer_defense = computer_defense
     end
 
-    def self.create(player_name)
-      @game = Game.new(player_name)
+    def self.create(player_name, computer_defense)
+      @game = Game.new(player_name, computer_defense)
     end
 
     def self.instance

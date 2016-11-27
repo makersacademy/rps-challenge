@@ -1,12 +1,14 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new(player)}
-  let(:player) {double(:player)}
+  subject(:game) {described_class.new(player_name, computer_defense)}
+  let(:player_name) {double(:player_name)}
+  let(:computer_defense) {double(:computer_defense)}
+
 
   describe '#player' do
     it 'retrieves the first player' do
-      expect(game.player).to eq player
+      expect(game.player_name).to eq player_name
     end
   end
 
