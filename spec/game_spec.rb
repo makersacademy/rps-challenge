@@ -31,8 +31,5 @@ describe Game do
 			game.determine_winner
 			expect(game.winner).to eq nil
 		end
-
-
 	end
-
 end

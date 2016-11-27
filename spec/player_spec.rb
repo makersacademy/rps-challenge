@@ -14,7 +14,5 @@ describe Player do
 			player.choose_weapon("scissors")
 			expect(player.weapon).to eq :scissors
 		end
-
 	end
-
 end
