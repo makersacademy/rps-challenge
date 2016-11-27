@@ -20,7 +20,7 @@ class Game
   def result
     return :win if win
     return :lose if lose
-    return :draw if draw
+    return :draw if draw  
   end
 
   private
