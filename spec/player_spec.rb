@@ -8,19 +8,13 @@ describe Player do
     it "has a name" do
       expect(player.name).to eq 'Russell'
     end
-
-    it "is active to begin with" do
-      expect(player.is_active?).to be true
-    end
   end
 
-  describe "switching player" do
-
-    it "can switch the active status of a player" do
-      player.switch_active
-      expect(player.is_active?).to be false
+  describe "choice" do
+    it "stores a choice" do
+      player.set_choice(:rock)
+      expect(player.choice).to eq :rock
     end
-    
   end
 
 

@@ -1,20 +1,14 @@
 class Player
 
-  attr_reader :name, :active
+  attr_reader :name, :choice
 
-  def initialize(name = "Player 1", active = true)
+  def initialize(name = "Player 1")
     @name = name
-    @active = active
+    @choice = nil
   end
 
-  def is_active?
-    self.active
+  def set_choice(choice)
+    @choice = choice
   end
-
-  def switch_active
-    @active = !@active
-  end
-
-
 
 end

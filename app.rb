@@ -10,15 +10,18 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.new(params[:player_name])
-    @computer = Computer.new
-    @game = Game.new(@player, @computer)
-    # require 'pry'; binding.pry
+    session[:name], @name = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
     erb(:play)
   end
 
   post '/round' do
     @player_choice = params[:RPS]
+    @player = Player.new(@name)
     erb(:outcome)
   end
 

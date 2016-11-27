@@ -4,7 +4,7 @@ describe Game do
 
   let(:player) { double :player }
   let(:computer) { double :computer }
-  subject(:game) {described_class.new(player, computer)}
+  subject(:game) {described_class.new(player, computer, :rock)}
 
 
   describe "initialization" do
@@ -17,6 +17,10 @@ describe Game do
       expect(game.computer).to eq computer
     end
 
+    it "has a player choice" do
+      expect(game.player_choice).to eq :rock
+    end
+
   end
 
   describe "playing a game" do
@@ -27,19 +31,5 @@ describe Game do
 
   end
 
-  describe "getters and setters" do
-
-    it "creates a new game" do
-      set_game = described_class.set(player, computer)
-      expect(set_game.player).to eq player
-    end
-
-    it "accesses games that are created" do
-      set_game = described_class.set(player, computer)
-      get_game = described_class.get
-      expect(get_game.player).to eq player
-    end
-
-  end
 
 end
