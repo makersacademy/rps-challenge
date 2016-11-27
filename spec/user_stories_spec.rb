@@ -46,4 +46,19 @@ describe "User Stories" do
     end
   end
 
+  describe "#draw?" do
+    before do
+      player.choose(:paper)
+    end
+    it "is true when player and machine have the same weapon" do
+      allow(machine).to receive(:weapon).and_return(:paper)
+      expect(game.draw?).to be true
+
+    end
+    it "is false when player and machine have different weapons" do
+      allow(machine).to receive(:weapon).and_return(:scissors)
+      expect(game.draw?).to be false
+    end
+  end
+
 end
