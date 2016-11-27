@@ -16,5 +16,10 @@ attr_reader :player_name, :computer_defense
       @game
     end
 
+    def tie?(player_input)
+      player_input == computer_defense.counter_attack
+    end
+
+
 
 end
