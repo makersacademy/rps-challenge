@@ -45,7 +45,7 @@ describe Game do
 
   end
 
-  context 'player choice is paper' do
+  context 'player1 choice is paper' do
 
     before do
       allow(player_1).to receive(:choice_index).and_return 1
@@ -68,7 +68,7 @@ describe Game do
 
   end
 
-  context 'player choice is scissors' do
+  context 'player1 choice is scissors' do
 
     before do
       allow(player_1).to receive(:choice_index).and_return 2

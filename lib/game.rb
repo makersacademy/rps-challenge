@@ -1,5 +1,6 @@
 require_relative 'random_choice'
 require_relative 'computer'
+require_relative 'player'
 
 CHOICES = [:rock, :paper, :scissors]
 
