@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/enter_names' do
     player = Player.new(params[:human_player1])
-    computer = Computer.new(params[:computer])
+    computer = Computer.new
     Game.create(player,computer)
     redirect to('/game')
   end

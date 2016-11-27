@@ -5,6 +5,7 @@ describe Computer do
   context "When initialized it" do
 
     it "Has a username" do
+      allow(computer).to receive(:name).and_return('Hal')
       expect(computer.name).to eq('Hal')
     end
 
