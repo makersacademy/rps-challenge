@@ -18,4 +18,12 @@ describe Game do
 
   end
 
+  describe "playing a game" do
+
+    it "returns a fixed winner" do
+      expect(game.winner).to eq player
+    end
+    
+  end
+
 end

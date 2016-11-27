@@ -7,4 +7,8 @@ class Game
     @computer = computer
   end
 
+  def winner
+    @player
+  end
+
 end
