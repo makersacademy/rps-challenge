@@ -10,15 +10,15 @@ describe Machine do
       allow(machine).to receive(:name).and_return("Harley Quinn")
       expect(machine.name).to eq ("Harley Quinn")
     end
-    
+
   end
 
   context "when playing" do
     it {is_expected.to respond_to :choose}
 
     it "should have one weapon randomly" do
-      allow(machine).to receive(:choose).and_return("paper")
-      expect(machine.choose).to eq ("paper")
+      allow(machine).to receive(:weapon).and_return("paper")
+      expect(machine.weapon).to eq ("paper")
     end
 
   end

@@ -7,7 +7,8 @@ describe Player do
 
     describe '.choose' do
       it "should choose one weapon" do
-        expect(player.choose(:rock)).to eq :rock
+        player.choose(:rock)
+        expect(player.weapon).to eq :rock
       end
     end
 
