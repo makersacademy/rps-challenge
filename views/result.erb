@@ -1,3 +1,16 @@
 You have selected <%= @game.player1.weapon %>!
 
 <%=@game.message%>. <%=  @game.outcome %>
+
+<form method='get' action='/play'>
+  <div class='button'>
+    <input type='submit' value='play again' id='play-again'>
+  </div>
+</form>
+
+
+<form method='get' action='/'>
+  <div class='button'>
+    <input type='submit' value='start again' id='start-again'>
+  </div>
+</form>

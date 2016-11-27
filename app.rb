@@ -18,6 +18,14 @@ class RPS < Sinatra::Base
     redirect to('/play')
   end
 
+  get '/single_player' do
+    erb(:one_player)
+  end
+
+  get '/multi_player' do
+    erb(:two_player)
+  end
+
   get '/play' do
     @game = Game.instance
     erb(:play)
