@@ -53,23 +53,23 @@ Examples
 ========
 Homepage:
 
-![alt text](http://i.imgur.com/xqHFZiB.png)
+<kbd>![alt text](http://i.imgur.com/xqHFZiB.png)</kbd>
 
 Choose Your Weapon:
 
-![alt text](http://i.imgur.com/eTl5BPB.png)
+<kbd>![alt text](http://i.imgur.com/eTl5BPB.png)</kbd>
 
 Game win:
 
-![alt text](http://i.imgur.com/B4VnQeN.png)
+<kbd>![alt text](http://i.imgur.com/B4VnQeN.png)</kbd>
 
 Game Loss:
 
-![alt text](http://i.imgur.com/XYrcuYs.png)
+<kbd>![alt text](http://i.imgur.com/XYrcuYs.png)</kbd>
 
 Game Draw:
 
-![alt text](http://i.imgur.com/piRoDd7.png)
+<kbd>![alt text](http://i.imgur.com/piRoDd7.png)</kbd>
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
