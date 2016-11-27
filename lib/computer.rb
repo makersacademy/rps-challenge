@@ -8,7 +8,7 @@ attr_reader :name, :choice
   end
 
   def choose
-    @choice = ['rock','paper','scissors'].sample
+    @choice = [0,1,2].sample
   end
 
 

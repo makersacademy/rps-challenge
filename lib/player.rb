@@ -9,16 +9,18 @@ end
 
 
 def rock
-  @choice = 'rock'
-end
-
-def scissors
-  @choice = 'scissors'
+  @choice = 0
 end
 
 def paper
-  @choice = 'paper'
+  @choice = 1
 end
+
+def scissors
+  @choice = 2
+end
+
+
 
 
 
