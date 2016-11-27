@@ -5,9 +5,9 @@ class Game
 
   attr_reader :player1, :player2, :player1_weapon, :player2_weapon
 
-  def initialize(name)
-    @player1 = Player.new(name)
-    @player2 = Computer.new
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
     @player1_weapon = nil
     @player2_weapon = nil
   end
@@ -19,6 +19,14 @@ class Game
   }
 
   WEAPONS = [:rock, :paper, :scissors]
+
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
 
   def play_game(weapon)
     player1_choose_weapon(weapon)
