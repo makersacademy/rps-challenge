@@ -50,19 +50,22 @@ describe Game do
         it { is_expected.to respond_to(:result) }
 
         it "returns :draw when there is a draw" do
-          allow(game).to receive(:play_game).with("rock").and_return(:rock)
+          allow(Game::WEAPONS).to receive(:sample).and_return(:rock)
+          game.play_game("rock")
           expect(game.result).to eq :draw
         end
 
-        # it "returns :winner if the player wins" do
-        #   allow(game).to receive(:play_game).with("rock").and_return(:scissors)
-        #   expect(game.result).to eq :winner
-        # end
-        #
-        # it "returns :loser if the computer wins" do
-        #   allow(game).to receive(:play_game).with("rock").and_return(:paper)
-        #   expect(game.result).to eq :loser
-        # end
+        it "returns :winner if the player wins" do
+          allow(Game::WEAPONS).to receive(:sample).and_return(:scissors)
+          game.play_game("rock")
+          expect(game.result).to eq :winner
+        end
+
+        it "returns :loser if the computer wins" do
+          allow(Game::WEAPONS).to receive(:sample).and_return(:paper)
+          game.play_game("rock")
+          expect(game.result).to eq :loser
+        end
       end
     end
 end
