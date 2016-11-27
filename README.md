@@ -1,5 +1,5 @@
 # RPS Challenge
-
+```
        __ \/_
       (' \`\
    _\, \ \\/ 
@@ -13,6 +13,7 @@
                  \\
                   \\    ,
                    `---'  
+```
 
 Description
 ===========
@@ -51,18 +52,23 @@ A Computer class does currently exist and has the capacity to choose a weapon. I
 Examples
 ========
 Homepage:
+
 ![alt text](http://i.imgur.com/xqHFZiB.png)
 
 Choose Your Weapon:
+
 ![alt text](http://i.imgur.com/eTl5BPB.png)
 
 Game win:
+
 ![alt text](http://i.imgur.com/B4VnQeN.png)
 
 Game Loss:
+
 ![alt text](http://i.imgur.com/XYrcuYs.png)
 
 Game Draw:
+
 ![alt text](http://i.imgur.com/piRoDd7.png)
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
