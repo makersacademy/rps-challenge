@@ -9,6 +9,20 @@ Technologies used
 *Sinatra
 
 How to run it
+---------------
+
+Features
+---------------
+1) Option to enter name
+2) Then player gets to choose their attack
+3) Computer chooses own attack randomly and result is shown
+
+Further work to do
+---------------
+Need to extract Game class
+Need to rewrite tests for eventualities
+
+
 
 
 
