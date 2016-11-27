@@ -1,0 +1,6 @@
+<h1>Interesting choice!</h1>
+<p><%= @player.name %> chose <%= @player.weapon %>.</p>
+<p>Let's play to determine the the winner!</p>
+<form action="/result" method="get">
+  <input type="submit" value="Find out who wins..." />
+</form>
