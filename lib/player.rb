@@ -11,6 +11,10 @@ class Player
     self.active
   end
 
+  def switch_active
+    @active = !@active
+  end
+
 
 
 end

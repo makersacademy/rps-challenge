@@ -12,6 +12,11 @@ describe Player do
     expect(player.is_active?).to be true
   end
 
+  it "can switch the active status of a player" do
+    player.switch_active
+    expect(player.is_active?).to be false
+  end
+
 
 
 end
