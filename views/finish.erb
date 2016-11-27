@@ -1,21 +1,120 @@
+<html>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+body {
+  background: hsla(0, 0%, 0%, .9);
+}
+
+h2 {
+  color: hsla(0, 0%, 0%, .9);
+  font: normal 50px Varela Round, sans-serif;
+  height: 50px;
+  left: 0;
+  letter-spacing: 5px;
+  margin: -80px 0 0 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 35%;
+  width: 100%;
+  animation: move linear 2000ms infinite;
+}
+
+@keyframes move {
+  0% {
+    text-shadow:
+      4px -4px 0 hsla(0, 100%, 50%, 1),
+      3px -3px 0 hsla(0, 100%, 50%, 1),
+      2px -2px 0 hsla(0, 100%, 50%, 1),
+      1px -1px 0 hsla(0, 100%, 50%, 1),
+      -4px 4px 0 hsla(180, 100%, 50%, 1),
+      -3px 3px 0 hsla(180, 100%, 50%, 1),
+      -2px 2px 0 hsla(180, 100%, 50%, 1),
+      -1px 1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }
+  25% {
+    text-shadow:
+      -4px -4px 0 hsla(180, 100%, 50%, 1),
+      -3px -3px 0 hsla(180, 100%, 50%, 1),
+      -2px -2px 0 hsla(180, 100%, 50%, 1),
+      -1px -1px 0 hsla(180, 100%, 50%, 1),
+      4px 4px 0 hsla(0, 100%, 50%, 1),
+      3px 3px 0 hsla(0, 100%, 50%, 1),
+      2px 2px 0 hsla(0, 100%, 50%, 1),
+      1px 1px 0 hsla(0, 100%, 50%, 1)
+    ;
+  }
+  50% {
+    text-shadow:
+      -4px 4px 0 hsla(0, 100%, 50%, 1),
+      -3px 3px 0 hsla(0, 100%, 50%, 1),
+      -2px 2px 0 hsla(0, 100%, 50%, 1),
+      -1px 1px 0 hsla(0, 100%, 50%, 1),
+      4px -4px 0 hsla(180, 100%, 50%, 1),
+      3px -3px 0 hsla(180, 100%, 50%, 1),
+      2px -2px 0 hsla(180, 100%, 50%, 1),
+      1px -1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }
+  75% {
+    text-shadow:
+      4px 4px 0 hsla(180, 100%, 50%, 1),
+      3px 3px 0 hsla(180, 100%, 50%, 1),
+      2px 2px 0 hsla(180, 100%, 50%, 1),
+      1px 1px 0 hsla(180, 100%, 50%, 1),
+      -4px -4px 0 hsla(0, 100%, 50%, 1),
+      -3px -3px 0 hsla(0, 100%, 50%, 1),
+      -2px -2px 0 hsla(0, 100%, 50%, 1),
+      -1px -1px 0 hsla(0, 100%, 50%, 1)
+    ;
+  }
+  100% {
+    text-shadow:
+      4px -4px 0 hsla(0, 100%, 50%, 1),
+      3px -3px 0 hsla(0, 100%, 50%, 1),
+      2px -2px 0 hsla(0, 100%, 50%, 1),
+      1px -1px 0 hsla(0, 100%, 50%, 1),
+      -4px 4px 0 hsla(180, 100%, 50%, 1),
+      -3px 3px 0 hsla(180, 100%, 50%, 1),
+      -2px 2px 0 hsla(180, 100%, 50%, 1),
+      -1px 1px 0 hsla(180, 100%, 50%, 1)
+    ;
+  }
+}
+
+p {
+    display: inline-table;
+}
+</style>
+<body>
 <center>
 <% if @game.draw %>
-  You have chosen: <%=@game.player1.choice%><br>
-  Computer has chosen: <%=@game.player2.choice%><br>
-  <h1>It's a draw</h1>
+   <br>
+   <br>
+  <font color=white><%=@game.player1.name%> has chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%></font><br>
+  <h2>It's a draw</h2>
 <% elsif @game.win %>
-  You have chosen: <%=@game.player1.choice%><br>
-  Computer has chosen: <%=@game.player2.choice%><br>
-  <h1><%=@game.player1.name%> has won!</h1>
+  <br>
+  <br>
+  <font color=white><%=@game.player1.name%> has chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%></font><br>
+  <h2><%=@game.player1.name%> has won!</h2>
 <% else @game.lose %>
-  You have chosen: <%=@game.player1.choice%><br>
-  Computer has chosen: <%=@game.player2.choice%><br>
-  <h1><%=@game.player1.name%> has lost!</h1>
+  <br>
+  <br>
+  <font color=white><%=@game.player1.name%> has chosen: <%=@game.player1.choice%><br>
+  Computer has chosen: <%=@game.player2.choice%></font><br>
+  <h2><%=@game.player1.name%> has lost!</h2>
 <% end %>
 
 
-<form action='/' method='get'>
+<form action='/play' method='get'>
   <input type="submit" value="Play again?">
 </form>
 
 </center>
+</body>
+<html>
