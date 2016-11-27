@@ -21,6 +21,6 @@ How to play
 
 ![RSP_play](https://github.com/fenglish/images/blob/master/RSP_play.png)
 
-- If you are strong enough, you will win the master
+- If you are strong enough, you will beat the master
 
 ![RSP_result](https://github.com/fenglish/images/blob/master/RSP_result.png)
