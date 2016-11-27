@@ -45,7 +45,7 @@ class Game
   end
 
   def is_a_draw?
-    @player.weapon == @opponent.weapon
+    @player.weapon.to_sym == @opponent.weapon
   end
 
 end
