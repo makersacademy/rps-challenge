@@ -39,4 +39,4 @@ On the next page, the app will prompt you to find out who won. Click through to 
 Please feel free to fork this repo and submit a pull request with changes. Thanks in advance!
 
 ## License
-This software is distributed under the GNU-GPL 3.0 license. More details in the docs.
+This software is distributed under the GNU-GPL 3.0 license. More details in the [docs](https://github.com/oscar-barlow/rps-challenge/tree/master/docs).
