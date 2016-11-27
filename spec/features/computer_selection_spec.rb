@@ -7,8 +7,7 @@ feature "computer makes a selection" do
     visit "/"
     fill_in :player_name, with:  "Dan"
     click_button("Let's Do This!")
-    select('Rock', :from => 'take_your_pick')
-    click_button("Submit")
+    click_button("Rock")
     expect(page).to have_text("AIbot chose Scissors")
   end
 end

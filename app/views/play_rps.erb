@@ -1,12 +1,9 @@
 <h1> <%=@game.player.name%> VS AIbot!! </h1>
 <h2> What do you choose?!</h2>
 <form action="/selection" method="post">
-  <select name="take_your_pick">
-    <option value="Rock">Rock</option>
-    <option value="Paper">Paper</option>
-    <option value="Scissors">Scissors</option>
-    </select>
-    <button type="submit">Submit</button>
+  <input type="image"  name ="take_your_pick" value="Rock" src="../images/rock.png" alt="Rock" />
+  <input type="image"  name ="take_your_pick" value="Paper" src="../images/paper.png" alt="Paper" />
+  <input type="image"  name ="take_your_pick" value="Scissors" src="../images/scissors.png" alt="Scissors" />
 </form>
 
 <h3> Quick reminder: </h3>

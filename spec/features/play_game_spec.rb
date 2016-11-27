@@ -11,22 +11,19 @@ end
 feature "selections" do
   scenario "player selects rock" do
     sign_in
-    select('Rock', :from => 'take_your_pick')
-    click_button("Submit")
+    click_button("Rock")
     expect(page).to have_content("Dan chose Rock!")
   end
 
   scenario "player selects paper" do
     sign_in
-    select('Paper', :from => 'take_your_pick')
-    click_button("Submit")
+    click_button("Paper")
     expect(page).to have_content("Dan chose Paper!")
   end
 
   scenario "player selects scissors" do
     sign_in
-    select('Scissors', :from => 'take_your_pick')
-    click_button("Submit")
+    click_button("Scissors")
     expect(page).to have_content("Dan chose Scissors!")
   end
 end
