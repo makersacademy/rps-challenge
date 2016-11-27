@@ -1,7 +1,15 @@
 require_relative "game.rb"
 
 class Computer
-  def choice
-    Game::Weapons.sample
+
+  attr_reader :choice
+
+  def inititalize
+    @choice
   end
+
+  def select_weapon
+    @choice = Game::Weapons.sample
+  end
+
 end

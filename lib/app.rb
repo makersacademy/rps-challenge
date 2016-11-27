@@ -11,13 +11,13 @@ class RPS < Sinatra::Base
     marketer = Marketer.new(params[:name])
     computer = Computer.new
     @game = Game.create(marketer,computer)
-
     erb(:play)
   end
 
   post '/result' do
     @game = Game.instance
     @game.player.choice = params[:choice]
+    @game.computer.select_weapon
     erb @game.result
   end
   # start the server if ruby file executed directly

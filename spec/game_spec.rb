@@ -8,4 +8,9 @@ describe Game do
   it "should be initialized with a player" do
     expect(game.player).to eq player
   end
+
+  it "should be initialized with a computer" do
+    expect(game.computer).to eq computer
+  end
+
 end

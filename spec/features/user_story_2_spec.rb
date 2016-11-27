@@ -23,7 +23,7 @@ RSpec.feature "Playing rock/paper/scissors" do
     expect(page).to have_content("The computer has selected Scissors")
   end
 
-  scenario "it should show who won the game" do
+  scenario "it should see who won the game" do
     allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     register_and_play
     click_button('Rock')

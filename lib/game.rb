@@ -18,21 +18,25 @@ class Game
   end
 
   def result
-    return :win if win
-    return :lose if lose
-    :draw
+    if win
+      return :win
+    elsif lose
+      return :lose
+    else
+      :draw
+    end
   end
 
   private
     def win
       (player.choice == "Rock" && computer.choice == "Scissors") || (player.choice == "Paper" && computer.choice == "Rock") || (player.choice == "Scissors" && computer.choice == "Paper")
     end
-
+    
     def draw
       player.choice == computer.choice
     end
 
     def lose
-      (computer.choice == "Rock" && player.choice == "Scissors") || (computer.choice == "Paper" && player.choice == "Rock") || (computer.choice == "Scissors" && player.choice == "Paper")
+      (player.choice == "Rock" && computer.choice == "Paper") || (player.choice == "Paper" && computer.choice == "Scissors") || (player.choice == "Scissors" && computer.choice == "Rock")
     end
 end
