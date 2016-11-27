@@ -1,7 +1,14 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new }
+  subject(:game) { described_class.new(player) }
+  let(:player) { double :player }
+
+  describe '#player'do
+    it 'retrieves the player' do
+      expect(game.player).to eq player
+    end
+  end
 
   describe '#computers_choice' do
     it "has options for the computer to randomly choose from" do
@@ -13,11 +20,4 @@ describe Game do
       expect(game.computers_choice).to eq "scissors"
     end
   end
-
-  describe '#result' do
-    it "knows the result by comparing the player's choice and the computer's choice" do
-
-    end
-  end
-
 end

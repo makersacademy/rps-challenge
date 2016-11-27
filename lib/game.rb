@@ -1,8 +1,9 @@
 class Game
 
-  attr_reader :hand_shape_choices
+  attr_reader :hand_shape_choices, :player
 
-  def initialize
+  def initialize(player)
+    @player = player
     @hand_shape_choices = [:rock, :paper, :scissors]
   end
 
