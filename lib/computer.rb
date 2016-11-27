@@ -1,5 +1,11 @@
 class Computer
 
+  attr_reader :name
+
+  def initialize
+    @name = "AIbot"
+  end
+
   def selection
     random = rand(1..3)
     return "Rock" if random == 1

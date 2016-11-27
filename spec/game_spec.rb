@@ -53,8 +53,7 @@ end
     it "should set the winner variable to the player name" do
       allow(player).to receive(:name).and_return("Dan")
       allow(game).to receive(:player_wins?).and_return true
-      game.check_winner
-      expect(game.winner).to eq "Dan"
+      expect(game.check_winner).to eq "Dan"
     end
   end
 

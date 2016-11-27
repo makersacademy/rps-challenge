@@ -2,7 +2,6 @@ require 'sinatra/base'
 require "./lib/player.rb"
 require "./lib/computer.rb"
 require "./lib/game.rb"
-require "./lib/logic.rb"
 
 class RPS < Sinatra::Base
 
@@ -25,12 +24,12 @@ class RPS < Sinatra::Base
   post "/selection" do
     @player_choice = (@game.player.choice(params[:take_your_pick]))
     @computer_choice = (@game.computer.selection)
+    @game.selections(@player_choice, @computer_choice)
+    @game.check_winner
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @game.selections(@player_choice, @computer_choice)
-    @game.check_winner
     erb(:outcome)
   end
 
