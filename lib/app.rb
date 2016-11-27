@@ -10,27 +10,31 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:player_name]
+    player = Player.new(params[:player_name])
+    @game = Game.create(player,Computer.new)
     redirect '/play'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    @player_name = session[:player_name]
     erb(:play)
   end
 
   post '/rock' do
-    @game = Game.create(:rock)
+    @game.player_1.make_choice(:rock)
     redirect 'result'
   end
 
   post '/paper' do
-    @game = Game.create(:paper)
+    @game.player_1.make_choice(:paper)
     redirect 'result'
   end
 
   post '/scissors' do
-    @game = Game.create(:scissors)
+    @game.player_1.make_choice(:scissors)
     redirect 'result'
   end
 
