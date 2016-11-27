@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html class='title_page'>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>Hi <%= @player.name %></h1>
-  <h2>Rock...Paper...Scissors!</h2>
+  <h1 class='blink_me'>Hi <%= @player.name %></h1>
+  <h2 class='buttons'>Rock...Paper...Scissors!</h2>
     <form action='/rock' method='get'>
       <div>
         <input type='submit' value='Rock'/>

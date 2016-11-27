@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 
-<html>
-<body>
+<html class='rock'>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class='rock_text'>
   <h1><%= @game.player.name %> has chosen <%= @player_choice %>!</h1>
   <h1>Player 2 has chosen <%= @game_choice %>!</h1>
   <% if @winner == "It's a draw!" %>

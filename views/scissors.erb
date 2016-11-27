@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 
-<html>
-<body>
+<html class='scissors'>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body text='scissors_text'>
   <h1><%= @game.player.name %> has chosen <%= @player_choice %>!</h1>
   <h1>Player 2 has chosen <%= @game.play %>!</h1>
   <% if @winner == "It's a draw!" %>
