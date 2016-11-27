@@ -51,9 +51,21 @@ describe Game do
         expect(game.draw?).to eq true
       end
 
-      it "player can win" do
-        allow(Game::RULES).to receive(:has_key?).and_return true
-        expect(game.player_wins?).to eq true
+      context "player can win" do
+        it "by choosing rock" do
+          allow(game).to receive(:play_game).with("rock").and_return(:scissors)
+          expect(game.player_wins?).to eq true
+        end
+
+        it "by choosing scissors" do
+          allow(game).to receive(:play_game).with("scissors").and_return(:paper)
+          expect(game.player_wins?).to eq true
+        end
+
+        it "by choosing paper" do
+          allow(game).to receive(:play_game).with("paper").and_return(:rock)
+          expect(game.player_wins?).to eq true
+        end
       end
     end
   end

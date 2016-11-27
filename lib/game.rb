@@ -30,7 +30,7 @@ class Game
   end
 
   def player_wins?
-    Game::RULES.has_key?(self.player1_weapon)
+    Game::RULES[self.player1_weapon] == self.player2_weapon
   end
 
   private
