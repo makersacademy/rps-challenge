@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'rps_player'
+require_relative 'rps_player.rb'
 require_relative 'rps_game'
 
 class RPS < Sinatra::Base
@@ -14,7 +14,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    computer = Player.new(params[:computer])
+    computer = Player.new('Computer')
     @game = Game.new_game(player, computer)
     redirect '/play'
   end
@@ -25,6 +25,20 @@ class RPS < Sinatra::Base
 
   get '/play' do
     erb :play
+  end
+
+  post '/selection' do
+    @player_choice = @game.player.choice(params[:choice])
+    @computer_choice = @game.computer.computer_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
+
+  get '/bye' do
+    erb :bye
   end
 
   # start the server if ruby file executed directly

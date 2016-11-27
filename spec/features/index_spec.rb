@@ -13,7 +13,7 @@ feature RPS do
   end
 
   scenario 'Can click submit button' do
-    sign_in_and_play
+    sign_in
     visit '/play'
   end
 

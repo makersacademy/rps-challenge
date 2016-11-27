@@ -17,14 +17,18 @@
   <div>
     <h1>Let's play <%= @game.player.name.capitalize %> !</h1>
     <h1> Pick your weapon! </h1>
+    <h2> The <%= @game.computer.name.upcase %> will pick a random</h2>
   </div>
 
+
   <div>
-    <img src="/css/rock.png" height=15% width=15% ></img>
-    <img src="/css/paper.jpg" height=15% width=15%></img>
-    <img src="/css/scissor.png" height=15% width=15%></img>
-    <img src="/css/spock.jpg" height=15% width=15%></img>
-    <img src="/css/lizard.jpg" height=15% width=15%></img>
+    <form action='/selection' method='POST'>
+    <input type='image' src="/css/rock.png" height=15% width=15% name ="choice" value="Rock" alt="Rock" />
+    <input type='image' src="/css/paper.jpg" height=15% width=15% name ="choice" value="Paper" alt="Paper"/>
+    <input type='image' src="/css/scissor.png" height=15% width=15% name ="choice" value="Scissors" alt="Scissors"/>
+    <!-- <img src="/css/spock.jpg" height=15% width=15%></img>
+    <img src="/css/lizard.jpg" height=15% width=15%></img> -->
+  </form>
   </div>
   <div>
   <footer>

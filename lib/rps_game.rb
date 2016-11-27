@@ -1,3 +1,5 @@
+require 'rps_player'
+
 class Game
 
   @game
@@ -17,4 +19,8 @@ class Game
   def self.start
     @game
   end
+
+  # def win?
+  # end
+
 end
