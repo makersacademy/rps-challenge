@@ -6,6 +6,7 @@ describe Game do
   let(:computer) { double :computer }
   subject(:game) {described_class.new(player, computer)}
 
+
   describe "initialization" do
 
     it "has a player" do
@@ -22,6 +23,15 @@ describe Game do
 
     it "returns a fixed winner" do
       expect(game.winner).to eq player
+    end
+
+  end
+
+  describe "getters and setters" do
+
+    it "creates a new game" do
+      set_game = described_class.set(player, computer)
+      expect(set_game.player).to eq player
     end
 
   end

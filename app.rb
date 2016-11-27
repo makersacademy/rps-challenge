@@ -11,6 +11,9 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @player = Player.new(params[:player_name])
+    @computer = Computer.new
+    @game = Game.new(@player, @computer)
+    # require 'pry'; binding.pry
     erb(:play)
   end
 

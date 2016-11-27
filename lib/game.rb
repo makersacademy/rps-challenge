@@ -1,5 +1,5 @@
 class Game
-
+  @new_game = nil
   attr_reader :player, :computer
 
   def initialize(player, computer)
@@ -9,6 +9,10 @@ class Game
 
   def winner
     @player
+  end
+
+  def self.set(player, computer)
+    @new_game = Game.new(player, computer)
   end
 
 
