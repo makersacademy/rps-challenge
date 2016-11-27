@@ -5,6 +5,7 @@
 body {
     background: url("https://inspirationhut.net/wp-content/uploads/2015/09/190.jpg") no-repeat;
     background-size: 100%;
+    text-transform: capitalize;
 }
 h1 {
     text-align: center;
@@ -26,7 +27,7 @@ text-align: center;
 </head>
 <body>
 
-  <h1><%=@game.player_1.name.capitalize%> vs Computer</h1>
+  <h1><%=@game.player_1.name%> vs Computer</h1>
 
   <h3>Choose rock, paper or scissors</h3>
 
