@@ -16,6 +16,8 @@ require 'capybara/rspec'
 require 'rack/test'
 require 'rspec'
 
+require 'web_helpers'
+
 ENV['RACK_ENV'] = 'test'
 
 require File.expand_path '../../rps_web.rb', __FILE__
