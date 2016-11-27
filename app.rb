@@ -16,8 +16,13 @@ class RPS < Sinatra::Base
 
 	get '/play' do
 		@game = Game.instance
-		@game.choose_weapon(params[:choice])
 		erb :play
+	end
+
+	post '/weapon' do
+		@game = Game.instance
+		@game.player.choose_weapon(params[:choice])
+		redirect '/result'
 	end
 
 	get '/result' do
