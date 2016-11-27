@@ -1,6 +1,7 @@
 body {
     text-align: center;
 }
+
 blink {
     animation-duration: 1000ms;
     animation-name: blink;

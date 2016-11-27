@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Rock Paper Scissors</title>
+  <title>Rock Paper Scissors Lizard Spock</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 
   <h3>Make your choice</h3>
 
-  <form action='/choice' method='post'>
+<form action='/choice' method='post'>
 
   <div class='circle-container'>
       <a class='deg0'>
@@ -45,7 +45,7 @@
           <img src='./images/spock.jpg'>
         </label>
       </a>
-      <a class='center'><input type='image' src='images/play.jpg' alt='play'/></a>
+      <a class='center'><input type='image' src='images/play.jpg' alt='play'></a>
   </div>
 
 </form>
@@ -68,8 +68,9 @@ Your opponent chose <%= @game.chose_hand %>
 <% end %>
 <br>
 <br>
+
 <form action='/game' type='get'>
-  <input type='image' src='images/play_again.jpg' alt='play again'/>
+  <input type='image' src='images/play_again.jpg' alt='play again'>
   <% @game.clear %>
 </form>
 </h2>
