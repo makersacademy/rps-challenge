@@ -1,11 +1,11 @@
 <center>
   <h2>Welcome to classical game of Rock Paper Scissors, </h2>
-  <h1><%= @player1_name %>!!! </h1>
+  <h1><%= @game.player.name %>!!! </h1>
 
-    <form action='/move_confirmation' method='get'>
-      <input type='submit' value='Rock'>
-      <input type='submit' value='Paper'>
-      <input type='submit' value='Scissors'>
+    <form action='/action' method='post'>
+      <input name='choice' type='submit' value='Rock'>
+      <input name='choice' type='submit' value='Paper'>
+      <input name='choice' type='submit' value='Scissors'>
     </form>
 
 

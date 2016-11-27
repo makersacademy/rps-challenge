@@ -1,5 +1,17 @@
-<h2>Your opponent chose <%=@game_move%>!</h2>
+<center>
+<h2>Your opponent chose <%=@game.move %>!</h2>
+
+<p>
+<%if @game.who_won == :player %>
+<%=@game.player.move.to_s.capitalize%> beats <%=@game.move%>, congratulations on your victory, <%=@game.player.name%>!
+<%elsif @game.who_won == :computer %>
+<%=@game.move.to_s.capitalize%> beats <%=@game.player.move%>, you lose, <%=@game.player.name%>!
+<%elsif @game.who_won == :draw %>
+You both chose <%=@game.player.move%>, this means draw!
+<%end%>
+</p>
 
 <form action='/play' method='get'>
   <input type='submit' value='Back to the game'>
 </form>
+</center>

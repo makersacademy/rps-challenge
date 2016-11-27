@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -16,20 +17,22 @@ class RPS < Sinatra::Base
 
   post '/name' do
     p params
-    @game = Game.create
-    @player1_name = params[:player1_name]
-    session[:player1_name] = @player1_name
+    @game = Game.create(Player.new(params[:player1_name]))
     redirect to('/play')
   end
 
   get '/play' do
-    @player1_name = session[:player1_name]
     erb(:play)
   end
 
+  post '/action' do
+    p params
+    @game.player.make_move(params[:choice])
+    @game.play
+    redirect to('/move_confirmation')
+  end
+
   get '/move_confirmation' do
-    @player1_name = session[:player1_name]
-    @game_move = @game.play
     erb(:move_confirmation)
   end
 
