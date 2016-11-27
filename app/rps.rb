@@ -14,8 +14,7 @@ class RPS < Sinatra::Base
   post '/name' do
     player = Player.new(params[:player_name])
     computer = Computer.new
-    logic = Logic.new
-    @game = Game.create(player, computer, logic)
+    @game = Game.create(player, computer)
     erb(:play_rps)
   end
 
@@ -30,8 +29,8 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do
-    @game.logic.input_data(@player_choice, @computer_choice)
-    @game.check_winner(@game.logic.player_wins?)
+    @game.selections(@player_choice, @computer_choice)
+    @game.check_winner
     erb(:outcome)
   end
 
