@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     @player1_name = params[:player1_name]
@@ -11,6 +16,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     p params
+    @game = Game.create
     @player1_name = params[:player1_name]
     session[:player1_name] = @player1_name
     redirect to('/play')
@@ -23,6 +29,7 @@ class RPS < Sinatra::Base
 
   get '/move_confirmation' do
     @player1_name = session[:player1_name]
+    @game_move = @game.play
     erb(:move_confirmation)
   end
 
