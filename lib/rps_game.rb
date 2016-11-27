@@ -43,11 +43,12 @@ class Game
   end
 
   def print_winner
-    return "It\'s a draw" if draw?
-  elsif
-    return @player.name if player_win?
-  elsif
-    return @computer.name
+    if draw?
+      return "It\'s a draw"
+    elsif player_win?
+      return @player.name
+    else
+      return @computer.name
+    end
   end
-
 end
