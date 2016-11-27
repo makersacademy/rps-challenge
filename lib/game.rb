@@ -23,6 +23,7 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
+    @game_array = []
   end
 
   def self.create(player, computer)
@@ -34,7 +35,8 @@ class Game
   end
 
   def selections(player_choice, computer_choice)
-    @game_array = [player_choice, computer_choice]
+    @game_array << player_choice
+    @game_array << computer_choice
   end
 
   def player_wins?
@@ -50,9 +52,9 @@ class Game
   end
 
   def check_winner
-    return @player.name if player_wins?
     return "Nobody" if draw?
     return @computer.name if lose?
+    return @player.name
   end
 
 end

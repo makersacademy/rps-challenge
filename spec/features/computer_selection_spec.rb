@@ -9,6 +9,6 @@ feature "computer makes a selection" do
     click_button("Let's Do This!")
     select('Rock', :from => 'take_your_pick')
     click_button("Submit")
-    expect(page).to have_text("AIbot chose Paper")
+    expect(page).to have_text("AIbot chose Scissors")
   end
 end

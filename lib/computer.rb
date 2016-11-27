@@ -1,6 +1,6 @@
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :computer_selection
 
   def initialize
     @name = "AIbot"
@@ -13,4 +13,7 @@ class Computer
     return "Scissors" if random == 3
   end
 
+  def make_selection
+    @computer_selection = selection
+end
 end
