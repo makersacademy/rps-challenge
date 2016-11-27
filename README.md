@@ -2,7 +2,7 @@
 
 This project is our third weekend challenge at Makers Academy coding bootcamp. Unfortunately my time and energy were scarce but i still managed to get an MVP running.
 
-RPS is a **web app** and allows the user to play a game of rock-paper-scissors against a computer. It uses Sinatra for running a local host and Capybara for automated testing.
+RPS is a **web app** and allows the user to play a game of rock-paper-scissors against a computer. It uses Sinatra for running a local server and Capybara for automated testing.
 
 ### Installation and Use
 
