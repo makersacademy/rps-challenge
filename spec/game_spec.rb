@@ -37,15 +37,33 @@ describe Game do
       allow(computer).to receive(:choice).and_return(:scissors)
       expect(game.winner).to eq player
     end
+    it "Player: Paper, Computer: Rock." do
+      allow(player).to receive(:choice).and_return(:paper)
+      allow(computer).to receive(:choice).and_return(:rock)
+      expect(game.winner).to eq player
+    end
     it "Player: Scissors, Computer: Paper." do
       allow(player).to receive(:choice).and_return(:scissors)
       allow(computer).to receive(:choice).and_return(:paper)
       expect(game.winner).to eq player
     end
-    it "Player: Paper, Computer: Rock." do
+  end
+
+  describe "Computer winning" do
+    it "Player: Rock, Computer: Paper." do
+      allow(player).to receive(:choice).and_return(:rock)
+      allow(computer).to receive(:choice).and_return(:paper)
+      expect(game.winner).to eq computer
+    end
+    it "Player: Paper, Computer: Scissors." do
       allow(player).to receive(:choice).and_return(:paper)
+      allow(computer).to receive(:choice).and_return(:scissors)
+      expect(game.winner).to eq computer
+    end
+    it "Player: Scissors, Computer: Rock." do
+      allow(player).to receive(:choice).and_return(:scissors)
       allow(computer).to receive(:choice).and_return(:rock)
-      expect(game.winner).to eq player
+      expect(game.winner).to eq computer
     end
   end
 
