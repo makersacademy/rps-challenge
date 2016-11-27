@@ -1,5 +1,15 @@
-<h1> You have chosen: <%=@game.player_choice%>! <h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title> Rock, Paper, Scissors </title>
+</head>
 
-<form action="/computer_turn">
-  <input type="submit" value="Computer's choice"/>
-</form>
+<body>
+
+  <h1> You have chosen: <%=@game.player_choice%>! <h1>
+
+    <form action="/computer_turn">
+      <input type="submit" value="Computer's choice"/>
+    </form>
+  </body>
