@@ -11,7 +11,7 @@ describe Computer do
 
   describe '#computer_choice' do
     it 'chooses a random option from rock, paper, scissors array' do
-      expect(computer.choice).to eq('Rock').or(eq('Paper')).or(eq('Scissors'))
+      expect(computer.computer_choice).to eq('Rock').or(eq('Paper')).or(eq('Scissors'))
     end
   end
 
