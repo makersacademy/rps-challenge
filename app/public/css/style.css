@@ -1,0 +1,30 @@
+body {
+
+  background: #e96443;
+  background: -webkit-linear-gradient(to left, #e96443 , #904e95);
+  background: linear-gradient(to left, #e96443 , #904e95); /
+}
+
+#picture img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    box-shadow: 0 0 5px 2px #282a2d;
+    line-height: 1.4;
+}
+
+
+#whatever {
+  font-size : 40px;
+  color: black;
+}
+
+#first {
+
+  vertical-align:middle;
+  text-align:center;
+
+}
