@@ -12,7 +12,8 @@ How to play
 --------
 - http://localhost:4567
 - Enter your name
-- Choose your weapon
+- Player 1 chooses their weapon
+- Player 2 chooses their weapon
 - Result is shown
 
 Set up the project
