@@ -1,5 +1,4 @@
 require 'game.rb'
-require 'pry'
 
 describe Game do
 
