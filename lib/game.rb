@@ -1,6 +1,6 @@
 class Game
 
-	attr_reader :player
+	attr_reader :player, :weapon
 
 	@game = nil
 
@@ -14,6 +14,10 @@ class Game
 
 	def self.instance
 		@game
+	end
+
+	def choose_weapon(choice)
+		@weapon = choice
 	end
 
 end

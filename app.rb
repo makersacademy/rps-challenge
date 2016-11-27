@@ -16,7 +16,13 @@ class RPS < Sinatra::Base
 
 	get '/play' do
 		@game = Game.instance
+		@game.choose_weapon(params[:choice])
 		erb :play
+	end
+
+	get '/result' do
+		@game = Game.instance
+		erb :result
 	end
 
   # start the server if ruby file executed directly

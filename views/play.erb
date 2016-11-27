@@ -5,12 +5,12 @@
 		<h1><%= @game.player.name %> vs The Computer</h1>
 		<br>
 		<h3>Choose your weapon!</h3>
-			<form>
-			<input type="submit" value="Rock">
-			<input type="submit" value="Paper">
-			<input type="submit" value="Scissors">
-			<input type="submit" value="Lizard">
-			<input type="submit" value="Spock">
+			<form action="/result" method="get">
+			<input type="submit" name="choice" value="Rock">
+			<input type="submit" name-"choice" value="Paper">
+			<input type="submit" name="choice" value="Scissors">
+			<input type="submit" name="choice" value="Lizard">
+			<input type="submit" name="choice" value="Spock">
 		</form>
 	</body>
 </html>
