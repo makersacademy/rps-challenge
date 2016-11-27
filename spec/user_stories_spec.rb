@@ -36,11 +36,11 @@ describe "User Stories" do
       player.choose(:paper)
     end
 
-    it "is true when the player wins" do
+    it "is true when the player's weapon wins the machine's weapon" do
       allow(machine).to receive(:weapon).and_return(:rock)
       expect(game.win?).to be true
     end
-    it "is false when the player doesn't win" do
+    it "is false when the player's weapon doesn't win the machine's weapon" do
       allow(machine).to receive(:weapon).and_return(:scissors)
       expect(game.win?).to be false
     end
