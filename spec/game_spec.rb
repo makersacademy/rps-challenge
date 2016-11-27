@@ -34,6 +34,12 @@ describe Game do
       expect(set_game.player).to eq player
     end
 
+    it "accesses games that are created" do
+      set_game = described_class.set(player, computer)
+      get_game = described_class.get
+      expect(get_game.player).to eq player
+    end
+
   end
 
 end

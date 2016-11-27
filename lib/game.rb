@@ -15,5 +15,9 @@ class Game
     @new_game = Game.new(player, computer)
   end
 
+  def self.get
+    @new_game
+  end
+
 
 end
