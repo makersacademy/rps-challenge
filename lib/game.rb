@@ -2,6 +2,10 @@
 
 class Game
 attr_reader :player_name, :computer_defense
+WEAPONS = [:rock, :paper, :scissors]
+RULES = {rock: :scissors,
+          paper: :rock,
+          scissors: :paper}
 
     def initialize(player_name, computer_defense)
       @player_name = player_name
@@ -18,6 +22,11 @@ attr_reader :player_name, :computer_defense
 
     def tie?(player_input)
       player_input == computer_defense.counter_attack
+    end
+
+    def result(player_input)
+      return :draw if tie?(player_input)
+      RULES[player_input][computer.counter_attack] ? :win : :lose
     end
 
 
