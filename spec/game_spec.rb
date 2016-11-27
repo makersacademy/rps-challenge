@@ -25,17 +25,17 @@ subject(:game) {described_class.new(player)}
   context '@choices' do
 
     it 'should be a random choice of plays' do
-      expect(["rock","paper","scissors"]).to include(game.choose_hand)
+      expect([:rock,:paper,:scissors,:lizard,:spock]).to include(game.choose_hand)
     end
 
   end
 
-  context 'hands' do
+  context '@winner' do
 
     it 'checks which the hand is higher than which' do
       game.choose_hand
       game.hand_winner
-      expect(game.winner).to eq "Player Wins"
+      expect(game.winner).to_not eq nil
     end
 
   end

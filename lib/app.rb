@@ -15,16 +15,19 @@ class Rps < Sinatra::Base
 
   get '/game' do
     @game = Game.instance
-    # @game.player.choice = session[:choice]
     erb :game
   end
 
   post '/choice' do
-    @game = Game.instance
-    @game.choose_hand
-    @game.player.choice = params[:choice]
-    @game.hand_winner
-    redirect '/game'
+    if params[:choice] == nil
+      redirect '/game'
+    else
+      @game = Game.instance
+      @game.choose_hand
+      @game.player.choice = params[:choice]
+      @game.hand_winner
+      redirect '/game'
+    end
   end
 
 
