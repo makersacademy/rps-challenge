@@ -19,14 +19,15 @@ RSpec.feature "Playing rock/paper/scissors" do
     allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     register_and_play
     click_button('Rock')
-    expect(page).to have_content("Tom has selected Rock")
-    expect(page).to have_content("Computer has selected Scissors")
+    expect(page).to have_content("You have selected Rock")
+    expect(page).to have_content("The computer has selected Scissors")
   end
 
   scenario "it should show who won the game" do
+    allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     register_and_play
     click_button('Rock')
-    expect(page).to have_content 'Tom has won the game'
+    expect(page).to have_content 'You won!'
   end
 
 end

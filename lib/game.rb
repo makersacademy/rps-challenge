@@ -17,23 +17,22 @@ class Game
     @computer = computer
   end
 
-  def win
-    (player.choice == "Rock" && computer.choice == "Scissors") || (player.choice == "Paper" && computer.choice == "Rock") || (player.choice == "Scissors" && computer.choice == "Paper")
-  end
-
-  def draw
-    player.choice == computer.choice
-  end
-
-  def lose
-    (computer.choice == "Rock" && player.choice == "Scissors") || (computer.choice == "Paper" && player.choice == "Rock") || (computer.choice == "Scissors" && player.choice == "Paper")
-  end
-
   def result
     return :win if win
     return :lose if lose
     :draw
-
   end
 
+  private
+    def win
+      (player.choice == "Rock" && computer.choice == "Scissors") || (player.choice == "Paper" && computer.choice == "Rock") || (player.choice == "Scissors" && computer.choice == "Paper")
+    end
+
+    def draw
+      player.choice == computer.choice
+    end
+
+    def lose
+      (computer.choice == "Rock" && player.choice == "Scissors") || (computer.choice == "Paper" && player.choice == "Rock") || (computer.choice == "Scissors" && player.choice == "Paper")
+    end
 end
