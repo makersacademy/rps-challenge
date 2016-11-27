@@ -90,6 +90,8 @@ $ coveralls report
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+-------
+
 ### How to download
 
 $ git clone git@github.com:ajbater/rps-challenge.git
@@ -101,7 +103,7 @@ $ bundle
 $ rackup
 
 ### How to play
--------
+
 Enter your name and click play
 
 ![Imgur](http://i.imgur.com/gakhHw4.png)
