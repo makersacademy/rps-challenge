@@ -11,7 +11,7 @@ describe Player do
 	describe "#choose_weapon" do
 
 		it "should set a weapon choice" do
-			player.choose_weapon("Scissors")
+			player.choose_weapon("scissors")
 			expect(player.weapon).to eq :scissors
 		end
 
