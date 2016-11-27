@@ -25,21 +25,18 @@ class RockPaperScissors < Sinatra::Base
   post '/rock' do
     @game = Game.current_game
     @game.player.rock
-    @game.computer.choose
     redirect to('/results')
   end
 
   post '/scissors' do
     @game = Game.current_game
     @game.player.scissors
-    @game.computer.choose
     redirect to('/results')
   end
 
   post '/paper' do
     @game = Game.current_game
     @game.player.paper
-    @game.computer.choose
     redirect to('/results')
   end
 

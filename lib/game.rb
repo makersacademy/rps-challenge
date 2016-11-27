@@ -17,9 +17,9 @@ class Game
   end
 
   def calculate
-    if    (self.player.choice == self.computer.choice)         ;return "Draw!";
+    if    (self.player.choice == self.computer.choice)           ;return "Draw!";
     elsif ((self.player.choice - self.computer.choice) % 3) == 1 ;return "#{@player.name} Wins!";
-    else                                                 ;return "#{@computer.name} Wins!"
+    else                                                         ;return "#{@computer.name} Wins!"
     end
   end
 
