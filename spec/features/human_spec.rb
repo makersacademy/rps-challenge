@@ -11,15 +11,27 @@ subject(:human) { described_class.new('A') }
     end
   end
 
-  describe '#outcome' do
-    it 'returns won if player wins' do
-      expect(human.outcome).to eq 'won'
+  describe '#outcome for choosing rock' do
+
+    before do
+      allow(random_number).to receive(:number_generator).and_return(1)
     end
+
+    it 'returns drew if player chooses rock' do
+      expect(humanm.rock)
+      expect(human.outcome).to eq 'drew'
+    end
+
   end
 
   describe '#number_generator' do
-    it "returns number 1" do
-      expect(human.number_generator).to eq 1
+    it 'should generate a random number' do
+      uses = []
+        100.times do
+          uses << human.number_generator
+        end
+      expect(uses).to include(1, 2, 3,)
+      expect(uses).not_to include(0, 4)
     end
   end
 

@@ -11,7 +11,7 @@ class Human
     @human
   end
 
-  attr_reader :name, :outcome, :computer_plays
+  attr_reader :name, :outcome, :computer_plays, :random_number
 
   def initialize(human_name)
     @name = human_name
