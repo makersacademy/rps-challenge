@@ -11,6 +11,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/game' do
+    erb(:game)
+  end
+
 
 run! if app_file == $0
 

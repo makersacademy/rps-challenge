@@ -1,5 +1,5 @@
 require 'spec_helper'
-RSpec.feature "Register name to play RPS game" do
+RSpec.feature "Register name to play rock, paper, scissors game" do
   scenario "Lands on game homepage and enters username" do
     visit('/')
     fill_in :player_1_name, with: 'Liz'
