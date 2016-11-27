@@ -44,6 +44,21 @@ class Rps < Sinatra::Base
     erb :scissors
   end
 
+  get '/lizard' do
+    @player_choice = "Lizard"
+    @game = Game.instance
+    @game_choice = @game.play
+    @winner = @game.decide_winner(@player_choice, @game_choice)
+    erb :lizard
+  end
+
+  get '/spock' do
+    @player_choice = "Spock"
+    @game = Game.instance
+    @game_choice = @game.play
+    @winner = @game.decide_winner(@player_choice, @game_choice)
+    erb :spock
+  end
 
 
   # start the server if ruby file executed directly

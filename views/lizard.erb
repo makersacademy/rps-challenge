@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html class='lizard'>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class='lizard_text'>
+  <h1><%= @game.player.name %> has chosen <%= @player_choice %>!</h1>
+  <h1>Player 2 has chosen <%= @game_choice %>!</h1>
+  <% if @winner == "It's a draw!" %>
+  <h1><%= @winner %></h1>
+  <% else %>
+  <h1><%= @winner %> is the winner!</h1>
+  <% end %>
+</body>
+</html>

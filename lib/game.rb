@@ -4,9 +4,11 @@ class Game
 
   attr_reader :player, :game_choice, :game
   WINNING_VALUES = {
-    "Rock" => "Scissors",
-    "Scissors" => "Paper",
-    "Paper" => "Rock"
+    ["Scissors", 'Lizard'] => "Rock",
+    ["Paper", 'lizard'] => "Scissors",
+    ["Rock", 'Spock'] => "Paper",
+    ["Paper", 'Spock'] => "Lizard",
+    ['Scissors', 'Rock'] => "Spock"
   }
 
   def initialize(player)
@@ -27,8 +29,8 @@ class Game
 
   def decide_winner(player_choice, game_choice)
     return "It's a draw!" if player_choice == game_choice
-    return self.player.name if find_hash_pair == player_choice
-    "Player 2"
+    return "Player 2" if find_hash_pair.include?(player_choice)
+    self.player.name
   end
 
   private

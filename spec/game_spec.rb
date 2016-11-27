@@ -22,5 +22,12 @@ describe Game do
     expect(game.decide_winner(player.choice, game.game_choice)).to eq("Player 2")
   end
 
+  it 'should take lizard and spock as choices and return winner' do
+    allow(player).to receive(:choice).and_return('Lizard')
+    allow(player).to receive(:name).and_return('Player')
+    allow(game).to receive(:game_choice).and_return("Spock")
+    expect(game.decide_winner(player.choice, game.game_choice)).to eq 'Player'
+  end
+
 
 end

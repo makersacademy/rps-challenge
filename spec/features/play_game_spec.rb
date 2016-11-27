@@ -29,5 +29,18 @@ RSpec.feature 'test game' do
     expect(page).to have_content('Player 2 has chosen ')
   end
 
+  scenario 'if player chooses Lizard they should be taken to page /lizard and given response' do
+    sign_in
+    click_button('Lizard')
+    expect(page).to have_content('Tom has chosen Lizard!')
+    expect(page).to have_content('Player 2 has chosen ')
+  end
+
+  scenario 'if player chooses Spock they should be taken to page /spock and given response' do
+    sign_in
+    click_button('Spock')
+    expect(page).to have_content('Tom has chosen Spock!')
+    expect(page).to have_content('Player 2 has chosen ')
+  end
 
 end

@@ -42,3 +42,19 @@
 .scissors_text {
   color: purple;
 }
+
+.lizard {
+  background-color: green;
+}
+
+.lizard_text {
+  color: yellow;
+}
+
+.spock {
+  background-color: purple;
+}
+
+.spock_text {
+  color: orange;
+}
