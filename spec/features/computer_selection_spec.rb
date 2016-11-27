@@ -8,6 +8,6 @@ feature "computer makes a selection" do
     fill_in :player_name, with:  "Dan"
     click_button("Let's Do This!")
     click_button("Rock")
-    expect(page).to have_text("AIbot chose Scissors")
+    expect(page).to have_text("AIbot chose Spock")
   end
 end

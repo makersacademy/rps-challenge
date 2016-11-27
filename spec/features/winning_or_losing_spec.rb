@@ -3,7 +3,7 @@ require_relative 'web_helper'
 
 feature "the player wins" do
   scenario "the player selects rock and computer selects scissors" do
-    srand(1234)
+    srand(3)
     sign_in_and_select_rock
     expect(page).to have_text("Dan is the winner!")
   end
