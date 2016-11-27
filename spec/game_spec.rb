@@ -21,5 +21,20 @@ describe Game do
     end
 
   end
-  
+  describe "#draw?" do
+    before do
+      allow(player).to receive(:weapon).and_return(:scissors)
+    end
+
+    it "returns true if player and machine have the same weapon" do
+      allow(machine).to receive(:weapon).and_return(:scissors)
+      expect(game.draw?).to be true
+    end
+
+    it "returns false if player and machine have different weapon" do
+      allow(machine).to receive(:weapon).and_return(:paper)
+      expect(game.draw?).to be false
+    end
+  end
+
 end
