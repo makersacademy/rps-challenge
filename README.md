@@ -21,10 +21,10 @@ The user will be playing against the computer and selecting a button which depen
 Access:
 -------
 
-- $ git clone git@github.com:CourtneyLO/rps-challenge.git
-- $ cd rps-challenge
-- $ install bundle
-- $ ruby app.rb
+       $ git clone git@github.com:CourtneyLO/rps-challenge.git
+       $ cd rps-challenge
+       $ install bundle
+       $ ruby app.rb
 
-- Then go to localhost:4567
-- And enjoy
+       Then go to localhost:4567
+       And enjoy

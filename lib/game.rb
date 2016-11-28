@@ -27,9 +27,10 @@ class Game
     choices.push([users_choice, computer_choice])
   end
 
-  def user_computer_choices
-    result.responses(choices.last)
+  def final_result
+    @result.responses(choices.last)
   end
+
 
   private
 

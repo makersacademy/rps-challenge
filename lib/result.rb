@@ -1,5 +1,8 @@
 class Result
 
+
+attr_reader :game_result
+
   def responses(choices)
 
     win = {:Scissors => :Paper,
@@ -8,11 +11,15 @@ class Result
 
 
     if choices.first == choices.last
-      "It is a Draw"
+      final_result(:draw)
     elsif win[choices.first] == choices.last
-      "Well Done, You Win!"
+      final_result(:win)
     else
-      "Sorry but You Lose"
+      final_result(:lost)
     end
+  end
+
+  def final_result(result)
+    @game_result = result
   end
 end
