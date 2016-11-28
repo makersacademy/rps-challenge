@@ -2,12 +2,17 @@ require 'sinatra/base'
 require_relative 'game'
 
 class RPS < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    @game = Game.create(params[:choice])
+    @game = Game.create(params[:name])
     redirect('/play')
   end
 
@@ -16,8 +21,7 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    @game.instance
-    @game.user_choice(params[:choice])
+    @game.set_user_choice(params[:choice])
     erb @game.compare
   end
 
