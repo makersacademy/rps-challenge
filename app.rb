@@ -4,7 +4,7 @@ require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
-    erb(:index)
+    erb :index
   end
 
   post '/name' do
@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @game.restart
     @player_name = @game.player.name
-    erb(:play)
+    erb :play
   end
 
   post '/rock' do
@@ -44,14 +44,14 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @player_choice = @game.player_choice
     @player_name = @game.player.name
-    erb(:confirmation)
+    erb :confirmation
   end
 
   get '/computer_turn' do
     @game = Game.instance
     @game.computer_turn
     @computer_choice = @game.computer_choice
-    erb(:computer_turn)
+    erb :computer_turn
   end
 
   get '/winner' do

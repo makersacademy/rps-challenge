@@ -7,7 +7,7 @@ class Computer
   end
 
   def pick_one
-    self.final_choice = self.choices.sample
+    self.final_choice = choices.sample
   end
 
   private
