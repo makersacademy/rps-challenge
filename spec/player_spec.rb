@@ -11,13 +11,16 @@ describe Player do
 
   describe '#player_choice' do
     it 'returns rock if player chooses rock' do
-      expect(player.choose_rock).to eq 'Rock'
+      player.choose(:rock)
+      expect(player.weapon).to eq :rock
     end
     it 'returns paper if player chooses paper' do
-      expect(player.choose_paper).to eq 'Paper'
+      player.choose(:paper)
+      expect(player.weapon).to eq :paper
     end
     it 'returns scissors if player chooses scissors' do
-      expect(player.choose_scissors).to eq 'Scissors'
+      player.choose(:scissors)
+      expect(player.weapon).to eq :scissors
     end
   end
 

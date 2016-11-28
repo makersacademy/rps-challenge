@@ -1,11 +1,11 @@
-<h1> <%= @player_1_name %> has been successfully created </h1>
+<h1> <%= session[:player_1_name] %> has been successfully created </h1>
 <h2> You are now ready to play rock, paper, scissors! </h2>
 
 
 <form action="/game" method="post">
   <label for="implement">
     Choose rock, paper, scissors
-    <select>
+    <select name="choice">
       <option value="rock">Rock</option>
       <option value="paper">Paper</option>
       <option value="scissors">Scissors</option>

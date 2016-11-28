@@ -1,16 +1,16 @@
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :weapon
 
-  def initialize(name)
+  def initialize()
     @name = "Computer"
   end
 
   def computer_choice
-    CHOICES.sample
+    @weapon = CHOICES.sample
   end
 
   private
-  CHOICES = ['Rock', 'Paper', 'Scissors']
+  CHOICES = [:rock, :paper, :scissors]
 
 end
