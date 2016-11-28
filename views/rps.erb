@@ -1,10 +1,8 @@
-<h2>Choose 1 option, <%= @username %></h2>
-<form action="/rps" method="GET">
-<input type="submit" name="choice" value="Rock"/>
-<input type="submit" name="choice" value="Paper"/>
-<input type="submit" name="choice" value="Scissors"/>
+<html>
+<h2>Choose 1 option, <%= @game.user.name %></h2>
+<form action="/weapon" method="POST">
+  <input type="submit" name="choice" value="Rock"/>
+  <input type="submit" name="choice" value="Paper"/>
+  <input type="submit" name="choice" value="Scissors"/>
 </form>
-<h3><%= @username %>'s choice is <%= @choice %></h3>
-<form action="god" method="POST">
-<input type="submit" value="God"/>
-</form>
+</html>

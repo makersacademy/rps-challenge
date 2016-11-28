@@ -13,8 +13,4 @@ feature "play rock/paper/scissors" do
     expect(page).to have_button("Rock")
   end
 
-  scenario "The Rock button was selected" do
-    click_button "Rock"
-    expect(page).to have_content "Veronica's choice is Rock"
-  end
 end

@@ -1,26 +1,38 @@
 require 'sinatra/base'
-require_relative 'lib/user'
-require_relative 'lib/god'
+require './lib/user'
+require './lib/game'
 
 class RPS < Sinatra::Base
 attr_reader :name
 
-enable :sessions
+before do
+  @game = Game.instance
+end
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    session[:username] = params[:username]
+    @game = Game.create(User.new(params[:username]))
     redirect to('/rps')
   end
 
   get '/rps' do
-    @username = session[:username]
-    session[:choice] = params[:choice]
-    @choice = session[:choice]
-    erb(:rps)
+
+    erb :rps
   end
+
+  post '/weapon' do
+    @game.user.choose_weapon(params[:choice])
+    redirect to('/result')
+  end
+
+  get '/result' do
+    @game.determine_winner
+    erb :result
+  end
+
+
   run! if app_file == $0
 end
