@@ -1,7 +1,20 @@
-<p><%= @player.name %> vs. Computer!</p>
+<!DOCTYPE html>
+<html>
 
-<form name="input" action="/result" method="post">
-  <input type="submit" value="Rock" name="RPS">
-  <input type="submit" value="Paper" name="RPS">
-  <input type="submit" value="Scissors" name="RPS">
-</form>
+  <head>
+    <title>Page Title</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <h3><%= @player.name %> vs. Computer!</h3>
+    <form name="input" action="/result" method="post">
+      <input type="submit" value="Rock" name="RPS">
+      <input type="submit" value="Paper" name="RPS">
+      <input type="submit" value="Scissors" name="RPS">
+    </form>
+    
+  </body>
+
+</html>
