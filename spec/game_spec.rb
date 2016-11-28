@@ -15,9 +15,8 @@ end
 
 context "making the first selection" do
 
-  it "should show the selection is rock" do
-    game.player_1.select("Rock")
-    expect(game.player_1.selection).to eq("Rock")
+  it "should show the selection is an empty hash" do
+    expect(game.selections).to eq({})
   end
 
   it "should show that there is a computer as player 2" do
@@ -26,6 +25,11 @@ context "making the first selection" do
 
   it "should show that player 2 is the Computer" do
     expect(game.player_2.name).to eq("Computer")
+  end
+
+  it "should show that player 1 has added a rock" do
+    game.player_1_select(:rock)
+    expect(game.selections).to eq({:rock => nil})
   end
 
 end

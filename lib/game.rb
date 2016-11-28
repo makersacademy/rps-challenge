@@ -10,21 +10,19 @@ class Game
     @game
   end
 
-attr_reader :player_1, :player_2
+attr_reader :player_1, :player_2, :selections
 
 def initialize(player_1, player_klass = Player, player_2 = "Computer")
 
 @player_1 = player_klass.new(player_1)
 @player_2 = player_klass.new(player_2)
-
+@selections = {}
 
 end
 
-def select(selection)
-self.player_1.select(selection)
+def player_1_select(selection)
+@selections = {selection => nil}
 end
-
-
 
 
 end
