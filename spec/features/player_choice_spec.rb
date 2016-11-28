@@ -1,4 +1,4 @@
-require './app'
+require 'spec_helper'
 
 RSpec.feature "Player's choice", :type => :feature do
   scenario "player picks rock" do

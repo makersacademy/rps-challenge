@@ -1,4 +1,4 @@
-require './app'
+require 'spec_helper'
 
 RSpec.feature "Playing again", :type => :feature do
 

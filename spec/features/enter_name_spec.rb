@@ -1,4 +1,4 @@
-require './app'
+require 'spec_helper'
 
 RSpec.feature "Entering a name", :type => :feature do
   scenario "User enters name" do

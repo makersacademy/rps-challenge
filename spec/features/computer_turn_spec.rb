@@ -1,4 +1,4 @@
-require './app'
+require 'spec_helper'
 
 RSpec.feature "Computer's turn", :type => :feature do
   before do

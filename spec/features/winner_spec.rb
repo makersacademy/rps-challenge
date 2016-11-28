@@ -1,4 +1,4 @@
-require './app'
+require 'spec_helper'
 
 RSpec.feature "Declaring a winner", :type => :feature do
   before do
