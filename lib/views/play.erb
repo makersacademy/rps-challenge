@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: url("https://inspirationhut.net/wp-content/uploads/2015/09/190.jpg") no-repeat;
+    background-size: 100%;
+    text-transform: capitalize;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+form {
+display: inline-block;
+text-align: center;
+}
+.buttonHolder { text-align: center; }
+</style>
+
+</head>
+<body>
+
+  <h1><%=@game.player_1.name%> vs Computer</h1>
+
+  <h3>Choose rock, paper or scissors</h3>
+
+  <div class="buttonHolder">
+    <form method="post" action="/choice">
+      <input type="submit" name="choice" value="ROCK" />
+      <input type="submit" name="choice" value="PAPER" />
+      <input type="submit" name="choice" value="SCISSORS" />
+    </form>
+  </div>
+
+</body>
+</html>
