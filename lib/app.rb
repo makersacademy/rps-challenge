@@ -7,6 +7,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
+    @game = Game.create(params[:choice])
     redirect('/play')
   end
 
@@ -15,7 +16,8 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    @game = Game.create(params[:choice])
+    @game.instance
+    @game.user_choice(params[:choice])
     erb @game.compare
   end
 
