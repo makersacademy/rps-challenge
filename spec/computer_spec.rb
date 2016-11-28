@@ -11,7 +11,4 @@ describe Computer do
   end
 
 
-
-
-
 end

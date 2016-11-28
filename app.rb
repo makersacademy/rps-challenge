@@ -29,15 +29,11 @@ class RPS < Sinatra::Base
     erb :choose
   end
 
-  post '/round' do
+  post '/result' do
     @player.choose(params[:RPS])
-    @winner = @game.winner
-    erb :outcome
+    erb @game.result
   end
 
-  get '/result' do
-
-  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

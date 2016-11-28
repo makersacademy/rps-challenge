@@ -23,7 +23,7 @@ class Game
     @computer.choose_weapon
   end
 
-  def winner
+  def result
     algorithm
   end
 
@@ -34,8 +34,8 @@ class Game
     b = computer_choice
     x = (3 + n(a) - n(b)) % 3
     return :tie if x == 0
-    return @player if x.odd?
-    return @computer if x.even?
+    return :win if x.odd?
+    return :lose if x.even?
   end
 
   def n(input)

@@ -7,19 +7,19 @@ RSpec.feature "Playing RPS", :type => :feature do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       sign_in_and_play
       click_button('Rock')
-      expect(page).to have_content "Russell wins!"
+      expect(page).to have_content "You win!"
     end
     scenario "I play paper. Computer plays rock. I win." do
       allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       sign_in_and_play
       click_button('Paper')
-      expect(page).to have_content "Russell wins!"
+      expect(page).to have_content "You win!"
     end
     scenario "I play scissors. Computer plays paper. I win." do
       allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
       sign_in_and_play
       click_button('Scissors')
-      expect(page).to have_content "Russell wins!"
+      expect(page).to have_content "You win!"
     end
   end
 
@@ -28,19 +28,19 @@ RSpec.feature "Playing RPS", :type => :feature do
       allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
       sign_in_and_play
       click_button('Rock')
-      expect(page).to have_content "Computer wins!"
+      expect(page).to have_content "You lose!"
     end
     scenario "I play paper. Computer plays scissors. Computer wins." do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       sign_in_and_play
       click_button('Paper')
-      expect(page).to have_content "Computer wins!"
+      expect(page).to have_content "You lose!"
     end
     scenario "I play scissors. Computer plays rock. Computer wins." do
       allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       sign_in_and_play
       click_button('Scissors')
-      expect(page).to have_content "Computer wins!"
+      expect(page).to have_content "You lose!"
     end
   end
 

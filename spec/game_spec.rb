@@ -39,51 +39,51 @@ describe Game do
       it "Player: Rock, Computer: Scissors." do
         allow(player).to receive(:choice).and_return(:rock)
         allow(computer).to receive(:choose_weapon).and_return(:scissors)
-        expect(game.winner).to eq player
+        expect(game.result).to eq :win
       end
       it "Player: Paper, Computer: Rock." do
         allow(player).to receive(:choice).and_return(:paper)
         allow(computer).to receive(:choose_weapon).and_return(:rock)
-        expect(game.winner).to eq player
+        expect(game.result).to eq :win
       end
       it "Player: Scissors, Computer: Paper." do
         allow(player).to receive(:choice).and_return(:scissors)
         allow(computer).to receive(:choose_weapon).and_return(:paper)
-        expect(game.winner).to eq player
+        expect(game.result).to eq :win
       end
     end
     describe "Computer winning" do
       it "Player: Rock, Computer: Paper." do
         allow(player).to receive(:choice).and_return(:rock)
         allow(computer).to receive(:choose_weapon).and_return(:paper)
-        expect(game.winner).to eq computer
+        expect(game.result).to eq :lose
       end
       it "Player: Paper, Computer: Scissors." do
         allow(player).to receive(:choice).and_return(:paper)
         allow(computer).to receive(:choose_weapon).and_return(:scissors)
-        expect(game.winner).to eq computer
+        expect(game.result).to eq :lose
       end
       it "Player: Scissors, Computer: Rock." do
         allow(player).to receive(:choice).and_return(:scissors)
         allow(computer).to receive(:choose_weapon).and_return(:rock)
-        expect(game.winner).to eq computer
+        expect(game.result).to eq :lose
       end
     end
     describe "Ties" do
       it "Player: Rock, Computer: Rock." do
         allow(player).to receive(:choice).and_return(:rock)
         allow(computer).to receive(:choose_weapon).and_return(:rock)
-        expect(game.winner).to eq :tie
+        expect(game.result).to eq :tie
       end
       it "Player: Paper, Computer: Paper." do
         allow(player).to receive(:choice).and_return(:paper)
         allow(computer).to receive(:choose_weapon).and_return(:paper)
-        expect(game.winner).to eq :tie
+        expect(game.result).to eq :tie
       end
       it "Player: Scissors, Computer: Scissors." do
         allow(player).to receive(:choice).and_return(:scissors)
         allow(computer).to receive(:choose_weapon).and_return(:scissors)
-        expect(game.winner).to eq :tie
+        expect(game.result).to eq :tie
       end
 
     end
