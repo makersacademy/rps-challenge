@@ -61,12 +61,8 @@ You chose <%= @game.player.choice %>
 <br><br>
 <% unless @game.chose_hand == nil %>
 Your opponent chose <%= @game.chose_hand %>
-<% end %>
 <br>
 <br>
-
-
-<% unless @game.winner == nil %>
 <%= @game.winner %>
 <% end %>
 <br>

@@ -3,6 +3,11 @@ require_relative 'player'
 
 class Rps < Sinatra::Base
 
+
+  before do
+      @game= Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -14,7 +19,6 @@ class Rps < Sinatra::Base
   end
 
   get '/game' do
-    @game = Game.instance
     erb :game
   end
 
@@ -22,7 +26,6 @@ class Rps < Sinatra::Base
     if params[:choice] == nil
       redirect '/game'
     else
-      @game = Game.instance
       @game.choose_hand
       @game.player.choice = params[:choice]
       @game.hand_winner
