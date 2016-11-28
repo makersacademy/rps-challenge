@@ -9,15 +9,15 @@ end
 
 
 def rock
-  @choice = 0
+  @choice = :rock
 end
 
 def paper
-  @choice = 1
+  @choice = :paper
 end
 
 def scissors
-  @choice = 2
+  @choice = :scissors
 end
 
 

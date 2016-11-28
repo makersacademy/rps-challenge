@@ -16,7 +16,7 @@ describe Computer do
 
   context "When the choose method is called" do
     it "should randomly choose rock, paper or scissors" do
-      expect(computer.choose).to eq(1).or(eq(2)).or(eq(0))
+      expect(computer.choose).to eq(:rock).or(eq(:paper)).or(eq(:scissors))
     end
   end
 

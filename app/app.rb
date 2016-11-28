@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/computer.rb'
 require './lib/game.rb'
+require './lib/calculations.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -21,21 +22,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:options)
   end
 
-  post '/rock' do
+  post '/choices' do
     @game = Game.current_game
-    @game.player.rock; @game.computer.choose
-    redirect to('/results')
-  end
-
-  post '/scissors' do
-    @game = Game.current_game
-    @game.player.scissors; @game.computer.choose
-    redirect to('/results')
-  end
-
-  post '/paper' do
-    @game = Game.current_game
-    @game.player.paper;   @game.computer.choose
+    calculations = Calculations.new(params[:choices].to_sym, @game.computer.choose)
+    @game.calculations = calculations
     redirect to('/results')
   end
 
@@ -43,7 +33,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/results' do
     @game = Game.current_game
-    erb(:results)
+    erb(@game.calculations.calculate)
   end
 
 
