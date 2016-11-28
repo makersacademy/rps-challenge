@@ -32,16 +32,10 @@ text-align: center;
   <h3>Choose rock, paper or scissors</h3>
 
   <div class="buttonHolder">
-    <form action="/rock" method="post">
-      <button type="submit">ROCK</button>
-    </form>
-
-    <form action="/paper" method="post">
-      <button type="submit">PAPER</button>
-    </form>
-
-    <form action="/scissors" method="post">
-      <button type="submit">SCISSORS</button>
+    <form method="post" action="/choice">
+      <input type="submit" name="choice" value="ROCK" />
+      <input type="submit" name="choice" value="PAPER" />
+      <input type="submit" name="choice" value="SCISSORS" />
     </form>
   </div>
 

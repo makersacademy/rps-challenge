@@ -23,27 +23,15 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
-    @game.player_1.make_choice(:rock)
-    @game.player_2.make_choice
-    redirect 'result'
-  end
-
-  post '/paper' do
-    @game.player_1.make_choice(:paper)
-    @game.player_2.make_choice
-    redirect 'result'
-  end
-
-  post '/scissors' do
-    @game.player_1.make_choice(:scissors)
+  post '/choice' do
+    @game.player_1.make_choice(params[:choice])
     @game.player_2.make_choice
     redirect 'result'
   end
 
   get '/result' do
     @game = Game.instance
-    erb(:result)
+    erb @game.result
   end
 
   run! if app_file == $0

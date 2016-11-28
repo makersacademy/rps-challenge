@@ -21,9 +21,9 @@ class Game
   end
 
   def result
-    return "draw" if draw?
-    return "lose" if lose?
-    "win"
+    return :draw if draw?
+    return :lose if lose?
+    :win
   end
 
   private

@@ -29,18 +29,18 @@ describe Game do
     it 'should win if rock vs scissors' do
 
       allow(player_2).to receive(:choice_index).and_return 2
-      expect(game.result).to eq "win"
+      expect(game.result).to eq :win
     end
 
     it 'should lose if rock vs paper' do
       allow(player_2).to receive(:choice_index).and_return 1
-      expect(game.result).to eq "lose"
+      expect(game.result).to eq :lose
     end
 
     it 'should draw if rock vs rock' do
 
       allow(player_2).to receive(:choice_index).and_return 0
-      expect(game.result).to eq "draw"
+      expect(game.result).to eq :draw
     end
 
   end
@@ -53,17 +53,17 @@ describe Game do
 
     it 'should win if paper vs rock' do
       allow(player_2).to receive(:choice_index).and_return 0
-      expect(game.result).to eq "win"
+      expect(game.result).to eq :win
     end
 
     it 'should lose if paper vs scissors' do
       allow(player_2).to receive(:choice_index).and_return 2
-      expect(game.result).to eq "lose"
+      expect(game.result).to eq :lose
     end
 
     it 'should draw if paper vs paper' do
       allow(player_2).to receive(:choice_index).and_return 1
-      expect(game.result).to eq "draw"
+      expect(game.result).to eq :draw
     end
 
   end
@@ -76,17 +76,17 @@ describe Game do
 
     it 'should win if scissors vs paper' do
       allow(player_2).to receive(:choice_index).and_return 1
-      expect(game.result).to eq "win"
+      expect(game.result).to eq :win
     end
 
     it 'should lose if scissors vs rock' do
       allow(player_2).to receive(:choice_index).and_return 0
-      expect(game.result).to eq "lose"
+      expect(game.result).to eq :lose
     end
 
     it 'should draw if scissors vs scissors' do
       allow(player_2).to receive(:choice_index).and_return 2
-      expect(game.result).to eq "draw"
+      expect(game.result).to eq :draw
     end
 
   end

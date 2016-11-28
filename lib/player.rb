@@ -7,7 +7,7 @@ class Player
   end
 
   def make_choice(choice)
-    @choice_index = Game::CHOICES.index(choice)
+    @choice_index = Game::CHOICES.index(choice.downcase.to_sym)
   end
 
 end

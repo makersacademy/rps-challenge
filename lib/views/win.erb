@@ -1,7 +1,38 @@
-You chose <%=@game.choice%>
-Computer chose <%=@game.computer_choice%>
-You win!
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: url("https://inspirationhut.net/wp-content/uploads/2015/09/190.jpg") no-repeat;
+    background-size: 100%;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+form {
+display: inline-block;
+text-align: center;
+}
+.buttonHolder { text-align: center; }
+</style>
 
-<form action="/play" method= "get"  >
-  <button type="submit">PLAY AGAIN</button>
-</form>
+</head>
+<body>
+
+  <h1>You win!</h1>
+
+  <div class="buttonHolder">
+    <form action="/play" method= "get"  >
+      <button type="submit">PLAY AGAIN</button>
+    </form>
+  </div>
+
+</body>
+</html>
