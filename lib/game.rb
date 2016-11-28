@@ -20,7 +20,7 @@ def initialize(player_1, player_klass = Player)
 end
 
 def select(selection)
-@selection = selection
+self.player_1.select(selection)
 end
 
 

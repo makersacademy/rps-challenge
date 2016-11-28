@@ -15,13 +15,9 @@ end
 
 context "making the first selection" do
 
-  it "should be able to show the player's selection" do
-    expect(game).to respond_to(:selection)
-  end
-
   it "should show the selection is rock" do
-    game.select("Rock")
-    expect(game.selection).to eq("Rock")
+    game.player_1.select("Rock")
+    expect(game.player_1.selection).to eq("Rock")
   end
 
   #it "should allow the computer to make a selection" do
