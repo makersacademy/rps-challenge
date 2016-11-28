@@ -1,0 +1,17 @@
+body {
+  background-color: slategray;
+  left: 0;
+  line-height: 100px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: white;
+  text-align: center;
+}
+form {
+  display: inline;
+}
