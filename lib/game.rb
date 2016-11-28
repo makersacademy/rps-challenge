@@ -20,19 +20,19 @@ class Game
   end
 
   def computer_choice
-    @computer.choice
+    @computer.choose_weapon
   end
 
   def winner
-    algorithm(player_choice, computer_choice)
+    algorithm
   end
 
   private
 
-  def algorithm(player_choice, computer_choice)
-    @p = player_choice
-    @c = computer_choice
-    x = (3 + n(@p) - n(@c)) % 3
+  def algorithm
+    a = player_choice
+    b = computer_choice
+    x = (3 + n(a) - n(b)) % 3
     return :tie if x == 0
     return @player if x.odd?
     return @computer if x.even?

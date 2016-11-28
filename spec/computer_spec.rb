@@ -7,7 +7,7 @@ describe Computer do
   end
 
   it "outputs a choice" do
-    expect(subject.choice).to eq(:scissors).or(eq(:rock)).or(eq(:paper))
+    expect(subject.choose_weapon).to eq(:scissors).or(eq(:rock)).or(eq(:paper))
   end
 
 

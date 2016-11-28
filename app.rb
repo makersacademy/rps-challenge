@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
   before do
     @game = Game.instance
     @player = Player.instance
-    @computer = Computer.new
+    @computer = Computer.instance
   end
 
   get '/' do
@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
   post '/name' do
     @player = Player.create
     @player.add_name(params[:player_name])
+    @computer = Computer.create
     @game = Game.create(@player, @computer)
     redirect '/choose'
   end
