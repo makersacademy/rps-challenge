@@ -4,9 +4,9 @@
     <title>RPS</title>
   </head>
   <body>
-      <div> <%= @game.player.player_name %> chose <%= @game.player.users_choice %> </div>
-      <div> Computer chose <%= @game.computer.choice_made %> </div>
-      <div> <%= @game.user_computer_choices %> </div>
+      <div> <%= @game.player_1.player_name %> chose: <%= @game.player_1.users_choice.to_s.capitalize %> </div>
+      <div>  <%= @game.player_2.player_name %> chose: <%= @game.player_2.users_choice.to_s.capitalize %> </div>
+      <div> <%= @game.players_choices %> </div>
       <div>
         <form action="/game" method="get">
           <input type="submit" name="response" value="Play Again">
