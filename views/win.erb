@@ -1,6 +1,17 @@
-<h2>You played <%=@player.choice%>. Computer played <%=@computer.choice%>.</h2>
-<h3>You win!</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-<form name="input" action="/choose" method="get">
-  Play again? <input type="submit" value="Yes please!">
-</form>
+  <body>
+
+    <h2>You played <%=@player.choice%>. Computer played <%=@computer.choice%>.</h2>
+    <h3>You win!</h3>
+    <form name="input" action="/choose" method="get">
+      Play again? <input type="submit" value="Yes please!">
+    </form>
+
+  </body>
+</html>
