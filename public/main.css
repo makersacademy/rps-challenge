@@ -3,8 +3,19 @@
   top: 50%;
   left: 50%;
   width: 500px;
-  height: 200px;
-  margin: -100px 0 0 -250px;
+  height: 300px;
+  margin: -150px 0 0 -250px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.result_page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  margin: -150px 0 0 -250px;
   font-family: Helvetica;
   text-align: center;
 }

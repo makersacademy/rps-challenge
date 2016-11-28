@@ -1,11 +1,11 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
-require './lib/random_number.rb'
+require './lib/computer.rb'
 
 class Rsp < Sinatra::Base
 
-  # enable :sessions
+  enable :sessions
 
   before do
     @game = Game.now
@@ -17,7 +17,7 @@ class Rsp < Sinatra::Base
 
   post '/name' do
     player = Player.new( params[:player] )
-    @game = Game.init( player, RandomNumber )
+    @game = Game.init( player, Computer.new )
     redirect '/play'
   end
 
@@ -26,7 +26,7 @@ class Rsp < Sinatra::Base
   end
 
   post '/rock' do
-    @game.player.choose("rock" )
+    @game.player.choose("rock")
     redirect '/result'
   end
 
@@ -41,7 +41,8 @@ class Rsp < Sinatra::Base
   end
 
   get '/result' do
-    erb :result
+    result = @game.check_result( @game.player.choice )
+    erb result
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -1,47 +1,27 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer_choice
 
   @game
+  RULES = { "rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
 
-  def self.init( player, random_number_klass )
-    @game = Game.new( player, random_number_klass )
+  def self.init( player, computer )
+    @game = Game.new( player, computer )
   end
 
   def self.now
     @game
   end
 
-  def initialize( player, random_number_klass )
+  def initialize( player, computer )
     @player = player
-    @player_choice
+    @computer = computer
     @computer_choice
-    @random_number = random_number_klass.new
-  end
-
-  def computer_choice
-    @computer_choice = rock_paper_scissors?
   end
 
   def check_result( player_choice )
-    return "EVEN!!" if player_choice == @computer_choice
-
-    case player_choice
-      when "rock"
-        return "YOU WIN!!" if @computer_choice == "scissors"
-      when "paper"
-        return "YOU WIN!!" if @computer_choice == "rock"
-      when "scissors"
-        return "YOU WIN!!" if @computer_choice == "paper"
-    end
-    "YOU LOSE..."
+    @computer_choice = @computer.pick
+    return :result_even if player_choice == @computer_choice
+    RULES[ player_choice ] == @computer_choice ? :result_win : :result_lose
   end
-
-  def rock_paper_scissors?
-    choice = @random_number.generator
-    return "rock"     if choice == 1
-    return "paper"    if choice == 2
-    return "scissors" if choice == 3
-  end
-
 end
