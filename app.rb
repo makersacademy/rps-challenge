@@ -5,8 +5,6 @@ require_relative 'lib/computer_opponent.rb'
 
 class RPS < Sinatra::Base
 
-  enable :sessions
-
   before do
     @game = Game.instance
   end

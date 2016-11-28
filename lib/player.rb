@@ -1,3 +1,5 @@
+require_relative 'game.rb'
+
 class Player
 
   attr_reader :name, :score

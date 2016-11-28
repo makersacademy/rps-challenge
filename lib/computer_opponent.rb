@@ -1,3 +1,5 @@
+require_relative 'game.rb'
+
 class Opponent
 
   attr_reader :weapons
