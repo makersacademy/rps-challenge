@@ -47,9 +47,9 @@ attr_reader :player,:choose_hand,:chose_hand,:winner
   private
 
   def compare_hands(player_hand,oppopent_hand)
-    return @winner = "You Loose!" if HAND_STRENGTHS[player_hand][oppopent_hand] > 0
+    return @winner = "You Loose!" if HAND_STRENGTHS[player_hand][oppopent_hand] < 0
     return @winner = "Draw!" if HAND_STRENGTHS[player_hand][oppopent_hand] == 0
-    return @winner = "You Win!" if HAND_STRENGTHS[player_hand][oppopent_hand] < 0
+    return @winner = "You Win!" if HAND_STRENGTHS[player_hand][oppopent_hand] > 0
   end
 
 
