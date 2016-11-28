@@ -1,4 +1,4 @@
-<h3>You played <%=@player_choice%>. Computer played <%=@computer_choice%>.</h3>
+<h3>You played <%=@player.choice%>. Computer played <%=@computer.choice%>.</h3>
 
 <% if @winner == :tie %>
   <h3> Game is a tie </h3>
@@ -6,6 +6,6 @@
   <h3> <%=@winner.name%> wins! </h3>
 <% end %>
 
-<form name="input" action="/play" method="get">
+<form name="input" action="/choose" method="get">
   Play again? <input type="submit" value="Yes please!">
 </form>

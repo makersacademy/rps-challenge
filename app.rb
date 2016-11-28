@@ -10,27 +10,28 @@ class RPS < Sinatra::Base
   before do
     @game = Game.instance
     @player = Player.instance
+    @computer = Computer.new
   end
 
   get '/' do
-    erb(:index)
+    erb :index
   end
 
   post '/name' do
     @player = Player.create
     @player.add_name(params[:player_name])
-    Game.create(@player, Computer.new)
+    @game = Game.create(@player, @computer)
     redirect '/choose'
   end
 
   get '/choose' do
-    erb(:choose)
+    erb :choose
   end
 
   post '/round' do
     @player.choose(params[:RPS])
     @winner = @game.winner
-    erb(:outcome)
+    erb :outcome
   end
 
   get '/result' do

@@ -2,11 +2,6 @@ class Player
   @new_player
   attr_reader :name, :choice
 
-  def initialize
-    @name = nil
-    @choice = nil
-  end
-
   def self.create
     @new_player = Player.new
   end
@@ -22,6 +17,5 @@ class Player
   def choose(weapon)
     @choice = weapon.downcase.to_sym
   end
-
 
 end
