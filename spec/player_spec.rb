@@ -12,8 +12,8 @@ describe Player do
 
   context "selection" do
     it "knows which selection a player has made" do
-      player.choice(:rock)
-      expect(player.selection).to eq :rock
+      player.choice("Rock")
+      expect(player.selection).to eq "Rock"
     end
   end
 end
