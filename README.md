@@ -39,6 +39,12 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
+## Instruction to use the app
+- git clone https://github.com/Unicornelia/rps-challenge
+- bundle install
+- ruby lib/app.rb
+
+
 ## Interface
 
 ![Rock Paper Scissors Spock Lizard](./images/intro.png)

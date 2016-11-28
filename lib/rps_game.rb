@@ -6,15 +6,15 @@ class Game
   end
 
   WIN = [
-    ['Rock', 'Scissors'],
-    ['Paper', 'Rock'],
-    ['Scissors', 'Paper']
+    [:rock, :scissors],
+    [:paper, :rock],
+    [:scissors, :paper]
   ]
 
   DRAW = [
-    ['Rock', 'Rock'],
-    ['Paper', 'Paper'],
-    ['Scissors', 'Scissors']
+    [:rock, :rock],
+    [:paper, :paper],
+    [:scissors, :scissors]
   ]
 
   attr_reader :player, :computer, :choices

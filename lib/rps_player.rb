@@ -15,6 +15,6 @@ class Player
   end
 
   def random_options
-    @random_options = ['Rock', 'Paper', 'Scissors'].sample
+    @random_options = [:rock, :paper, :scissors].sample
   end
 end

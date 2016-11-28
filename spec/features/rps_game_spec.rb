@@ -24,51 +24,51 @@ feature Game do
   describe 'Compares player\'s and computer\'s answers' do
     scenario 'paper beats rock' do
       visit '/result'
-      game.choices('Paper', 'Rock')
+      game.choices(:paper, :rock)
       expect(game.player_win?).to eq true
     end
     scenario 'rock beats scissors' do
       visit '/result'
-      game.choices('Rock', 'Scissors')
+      game.choices(:rock, :scissors)
       expect(game.player_win?).to eq true
     end
     scenario 'scissors beats paper' do
       visit '/result'
-      game.choices('Scissors', 'Paper')
+      game.choices(:scissors, :paper)
       expect(game.player_win?).to eq true
     end
 
     scenario 'rock beats scissors' do
       visit '/result'
-      game.choices('Scissors', 'Rock')
+      game.choices(:scissors, :rock)
       expect(game.player_win?).to eq false
     end
     scenario 'scissors beat paper' do
       visit '/result'
-      game.choices('Paper', 'Scissors')
+      game.choices(:paper, :scissors)
       expect(game.player_win?).to eq false
     end
     scenario 'paper beats rock' do
       visit '/result'
-      game.choices('Rock', 'Paper')
+      game.choices(:rock, :paper)
       expect(game.player_win?).to eq false
     end
 
     scenario 'it\'s a draw' do
       visit '/result'
-      game.choices('Rock', 'Rock')
+      game.choices(:rock, :rock)
       expect(game.draw?).to eq true
     end
 
     scenario 'it\'s a draw' do
       visit '/result'
-      game.choices('Paper', 'Paper')
+      game.choices(:paper, :paper)
       expect(game.draw?).to eq true
     end
 
     scenario 'it\'s a draw' do
       visit '/result'
-      game.choices('Scissors', 'Scissors')
+      game.choices(:scissors, :scissors)
       expect(game.draw?).to eq true
     end
   end
