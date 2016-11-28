@@ -2,17 +2,17 @@ class Game
   @new_game = nil
   attr_reader :player, :computer
 
-  def self.get
-    @new_game
-  end
-
-  def self.set(player, computer)
-    @new_game = Game.new(player, computer)
-  end
-
   def initialize(player, computer)
     @player = player
     @computer = computer
+  end
+
+  def self.instance
+    @new_game
+  end
+
+  def self.create(player, computer)
+    @new_game = Game.new(player, computer)
   end
 
   def player_choice

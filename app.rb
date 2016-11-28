@@ -7,33 +7,34 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+    @player = Player.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    session[:name], @name = params[:player_name]
-    redirect '/play'
+    @player = Player.create
+    @player.add_name(params[:player_name])
+    Game.create(@player, Computer.new)
+    redirect '/choose'
   end
 
-  get '/play' do
-    @name = session[:name]
-    erb(:play)
+  get '/choose' do
+    erb(:choose)
   end
 
   post '/round' do
-    @player_choice = params[:RPS]
-    @player = Player.new(session[:name], @player_choice)
-
-
-    @computer = Computer.new
-    @computer_choice = @computer.choice
-
-    @game = Game.new(@player, @computer)
-    
-
+    @player.choose(params[:RPS])
     @winner = @game.winner
     erb(:outcome)
+  end
+
+  get '/result' do
+
   end
 
   # start the server if ruby file executed directly
