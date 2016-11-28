@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="main.css"/>
+
+<div class="result_page">
+
+  <table width="500px">
+    <tr>
+      <th colspan="2" width="250px">
+        <h3><%= @game.player.name.capitalize%>'s choice</h3>
+      </th>
+      <th colspan="2" width="100px"></th>
+      <th colspan="2" width="250px"><h3>RPS Master's choice</h3></th>
+    </tr>
+    <tr height="80px">
+      <th colspan="2"><img src="<%= @game.player.choice %>.jpg" width="200px"></th>
+      <th colspan="2">vs</th>
+      <th colspan="2"><img src="<%= @game.computer_choice %>.jpg" width="200px"></th>
+    </tr>
+    <tr>
+      <th colspan="6" height="50px"><h1>You beat the master!</h1></th>
+    </tr>
+      <th colspan="3"><a href="/play">Try Again!</a></th>
+      <th colspan="3"><a href="/">Home</a></th>
+    </tr>
+  </table>
+
+</div>

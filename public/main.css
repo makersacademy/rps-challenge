@@ -1,0 +1,30 @@
+.page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  margin: -150px 0 0 -250px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.result_page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  margin: -150px 0 0 -250px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+input#submit_button{
+  width: 120px;
+  height: 30px;
+  border-style: none;
+  font-size: 15px;
+  background-color: #000;
+  color: #fff
+}
