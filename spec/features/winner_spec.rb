@@ -1,13 +1,19 @@
 require 'spec_helper'
 
 RSpec.feature "Declaring a winner", :type => :feature do
-  before do
-    sign_in_and_play
-    click_button("Rock")
-    click_button("Computer's choice")
-    click_button("Who wins?")
+  scenario "Player wins the game" do
+    allow_any_instance_of(Computer).to receive(:final_choice).and_return("Scissors")
+    play_whole_game
+    expect(page).to have_text(": George")
   end
-  scenario "Winning the game" do
-    expect(page).to have_text("...and the winner is: ")
+  scenario "Computer wins the game" do
+    allow_any_instance_of(Computer).to receive(:final_choice).and_return("Paper")
+    play_whole_game
+    expect(page).to have_text(": The Computer")
+  end
+  scenario "It's a draw" do
+    allow_any_instance_of(Computer).to receive(:final_choice).and_return("Rock")
+    play_whole_game
+    expect(page).to have_text(": Nobody")
   end
 end

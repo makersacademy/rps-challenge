@@ -1,7 +1,7 @@
 class Computer
   attr_reader :choices, :final_choice, :name
   def initialize
-    @name = "Mr Computer"
+    @name = "The Computer"
     @choices = ["Rock", "Paper", "Scissors"]
     @final_choice = nil
   end
