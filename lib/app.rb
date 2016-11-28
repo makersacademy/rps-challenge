@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -15,13 +16,7 @@ class RPS < Sinatra::Base
 
   post '/selection' do
     @game = Game.create(params[:choice])
-    if @game.compare == :win
-      erb(:win)
-    elsif @game.compare == :tie
-      erb(:tie)
-    else
-      erb(:lose)
-    end
+    erb @game.compare
   end
 
 

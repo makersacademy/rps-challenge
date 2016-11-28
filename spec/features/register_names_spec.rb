@@ -8,9 +8,3 @@ feature "Register Names" do
   end
 
 end
-
-
-
-
-# fill_in('Enter Name', with: 'Jenna')
-# click_button "Register"
