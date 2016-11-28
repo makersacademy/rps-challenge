@@ -12,9 +12,9 @@ class Game
 
 attr_reader :player_1, :selection
 
-def initialize(player_1)
+def initialize(player_1, player_klass = Player)
 
-@player_1 = player_1
+@player_1 = player_klass.new(player_1)
 @selection
 
 end
