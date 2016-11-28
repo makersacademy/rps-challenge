@@ -22,23 +22,23 @@ describe "Feature View Test" do
     it "should have player 1's name and player 2's name" do
       expect(page).to have_text("Harley Quinn Vs. KillBill")
     end
-    xit "player 1's turn" do
-      click_button "choice"
+    it "should redirect to /play2 after player 1 has chosen the weapon" do
+      click_button "Scissors"
       expect(page.current_path).to eq "/play2"
-    end
-    xit "should redirect to /play2" do
-      click_button "Rock"
-      expect(page.current_path).to eq "/result"
     end
 
   end
 
   describe "result" do
-    xit "should show the weapons player1 and player2 have" do
+    it "should show the weapons player1 and player2 have" do
+      click_button "Rock"
+      click_button "Paper"
       expect(page).to have_content("Rock Vs Paper")
     end
-    xit "should show the winner's name" do
-      expect(page).to have_content("Winner is KillBill")
+    it "should show the winner's name" do
+      click_button "Paper"
+      click_button "Rock"
+      expect(page).to have_content("Harley Quinn is the winner!")
     end
   end
 
