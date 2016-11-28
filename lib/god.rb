@@ -1,8 +1,9 @@
+require_relative 'weapons'
+
 class God
 
-  attr_reader :choices
-
-  def choice
-    @choices = ["Rock", "Paper", "Scissors"].sample
+  include Weapons
+  def weapon
+    WEAPONS.sample
   end
 end

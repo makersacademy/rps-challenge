@@ -5,49 +5,21 @@ require_relative 'lib/god'
 class RPS < Sinatra::Base
 attr_reader :name
 
-enable :sesions
+enable :sessions
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    $username = params[:username]
+    session[:username] = params[:username]
     redirect to('/rps')
   end
 
-  get'/rps' do
-    @username = $username
-    erb(:rps)
-  end
-
-  post'/rock' do
-    @username = $username
-    session[:play] = "Rock"
-    @play = session[:play]
-    erb(:rps)
-  end
-
-  post'/paper' do
-    @username = $username
-    session[:play] = "Paper"
-    @play = session[:play]
-    erb(:rps)
-  end
-
-  post'/scissors' do
-    @username = $username
-    session[:play] = "Scissors"
-    @play = session[:play]
-    erb(:rps)
-  end
-
-  post '/god' do
-    @username = $username
-    @play = session[:play]
-    god = God.new
-    @choice = god.choice
-    
+  get '/rps' do
+    @username = session[:username]
+    session[:choice] = params[:choice]
+    @choice = session[:choice]
     erb(:rps)
   end
   run! if app_file == $0

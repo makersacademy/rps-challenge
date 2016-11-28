@@ -2,12 +2,13 @@ require 'god'
 
 describe God do
 
-  describe "choice" do
-    it {is_expected.to respond_to :choice}
+  subject(:god) { described_class.new }
+
+  describe '#god_choice' do
+    it "should be able to choose a weapon" do
+      srand(2)
+      expect(god.weapon).to eq :rock
+    end
   end
-  it "should make different choices" do
-    choice1 = subject.choice
-    choice2 = subject.choice
-    expect(choice1).not_to eq choice2
-  end
+
 end

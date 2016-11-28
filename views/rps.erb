@@ -1,15 +1,10 @@
 <h2>Choose 1 option, <%= @username %></h2>
-<form action="rock" method="post">
-<input type="submit" value="Rock"/>
+<form action="/rps" method="GET">
+<input type="submit" name="choice" value="Rock"/>
+<input type="submit" name="choice" value="Paper"/>
+<input type="submit" name="choice" value="Scissors"/>
 </form>
-<form action="paper" method="post">
-<input type="submit" value="Paper"/>
-</form>
-<form action="scissors" method="post">
-<input type="submit" value="Scissors"/>
-</form>
-<h3><%= @username %>'s choice is <%= @play %></h3>
-<form action="god" method="post">
+<h3><%= @username %>'s choice is <%= @choice %></h3>
+<form action="god" method="POST">
 <input type="submit" value="God"/>
 </form>
-<h3>God's choice is: <%= @choice %></h3>
