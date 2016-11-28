@@ -19,29 +19,32 @@ class RPS < Sinatra::Base
     @player1_name = Player.new(session[:player1_name])
     @option = session[:option]
     @computers_option = session[:computers_option]
-    $game = Game.new(:player1_name, :computers_option)
+    @game = Game.create(:player1_name, :computers_option)
     erb :play
   end
 
   post '/play' do
-    @game = $game
+    @game = Game.instance
     session[:option] = params[:option]
     @computers_option = session[:computers_option]
     redirect '/play'
   end
 
   post '/paper' do
-    @game = $game
+    @game = Game.instance
+    @game.player1choice = :Paper
     erb :paper
   end
 
   post '/scissors' do
-    @game = $game
+    @game = Game.instance
+    @game.player1choice = :Scissors
     erb :scissors
   end
 
   post '/rock' do
-    @game = $game
+    @game = Game.instance
+    @game.player1choice = :Rock
     erb :rock
   end
 

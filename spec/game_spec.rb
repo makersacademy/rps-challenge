@@ -2,32 +2,33 @@ require  'spec_helper'
 require './lib/game.rb'
 
 describe Game do
-  before do
-    player1 = double("player1")
-   end
+
+    subject(:game) {described_class.new(player1, computers_option)}
+    let(:player1) { double :player1 }
+    let(:player1choice) { double :player1choice }
+    let(:computers_option) { double :computers_option }
 
 
   it "should let the computer pick an option" do
-    game = Game.new("Bryony", @computers_option)
     allow(game).to receive(:computer_picks) {:Rock}
     expect(game.computer_picks).to eq :Rock
   end
 
   it "should return the right message if you win" do
-    game = Game.new("Bryony", @computers_option)
     allow(game).to receive(:computers_option) {:Rock}
-    expect(game.paper).to eq "You won!"
+    allow(game).to receive(:player1choice) {:Paper}
+    expect(game.result).to eq "You win"
   end
 
   it "should return the right message if it's a draw" do
-    game = Game.new("Bryony", @computers_option)
     allow(game).to receive(:computers_option) {:Rock}
-    expect(game.rock).to eq "It's a draw"
+    allow(game).to receive(:player1choice) {:Rock}
+    expect(game.result).to eq "It's a draw"
   end
 
   it "should return the right message if the computer wins" do
-    game = Game.new("Bryony", @computers_option)
     allow(game).to receive(:computers_option) {:Rock}
-    expect(game.scissors).to eq "Oh no! The computer wins this time!"
+    allow(game).to receive(:player1choice) {:Scissors}
+    expect(game.result).to eq "Oh no! The computer wins this time!"
   end
 end

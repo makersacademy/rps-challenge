@@ -1,33 +1,58 @@
 require_relative './player.rb'
 class Game
 
-  attr_accessor :player1, :computers_option
+  attr_accessor :player1, :computers_option, :player1choice
 
   def initialize(player1, computers_option)
     @player1 = player1
     @computers_option = computers_option
   end
 
+  def self.create(player1, computers_option)
+    @game = Game.new(player1, computers_option)
+  end
+
+  def self.instance
+    @game
+  end
+
   def computer_picks
   @computers_option = [:Rock, :Paper, :Scissors].sample
   end
 
-  def paper
-    if self.computers_option == :Rock then return "You won!" end
-    if self.computers_option == :Paper then return "It's a draw" end
-    if self.computers_option == :Scissors then return "Oh no! The computer wins this time!" end
-    end
+  RULES = {:Rock => :Scissors,
+          :Scissors => :Paper,
+          :Paper => :Rock}
 
-  def scissors
-    if self.computers_option == :Paper then return "You won!" end
-    if self.computers_option == :Scissors then return "It's a draw" end
-    if self.computers_option == :Rock then return "Oh no! The computer wins this time!" end
-  end
 
-  def rock
-    if self.computers_option == :Scissors then return "You won!" end
-    if self.computers_option == :Rock then return "It's a draw" end
-    if self.computers_option == :Paper then return "Oh no! The computer wins this time!" end
+def winner?
+  RULES[self.player1choice] == self.computers_option
+end
+
+def draw?
+  self.player1choice == self.computers_option
+end
+
+def result
+  if winner?
+    win
+  elsif draw?
+    draw
+  else
+    loser
   end
+end
+
+def win
+  return "You win"
+end
+
+def draw
+  return "It's a draw"
+end
+
+def loser
+  return "Oh no! The computer wins this time!"
+end
 
 end
