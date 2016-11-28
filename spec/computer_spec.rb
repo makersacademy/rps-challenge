@@ -6,9 +6,8 @@ describe Computer do
     expect(subject.name).to eq "Computer"
   end
 
-  it "outputs a fixed choice" do
-    allow(subject).to receive(:choose).and_return(:scissors)
-    expect(subject.choice).to eq :scissors
+  it "outputs a choice" do
+    expect(subject.choice).to eq(:scissors).or(eq(:rock)).or(eq(:paper))
   end
 
 
