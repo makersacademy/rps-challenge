@@ -18,9 +18,9 @@
     <h1> <%= @game.player.name.capitalize %>'s choice: <%= @game.player.selection %></h1>
   </div>
   <div>
-    <h1> <%= @game.computer.name %>'s choice: <%= @game.computer.random_options %>  </h1>
+    <h1> <%= @game.computer.name %>'s choice: <%= @game.computer.computer_choice %>  </h1>
     <div class='winner'>
-      <h1><%= @game.print_winner %> wins!</h1>
+      <h1><%= @game.print_winner.capitalize %> wins!</h1>
       <img src='css/loser.gif' width=50% height=50%></img>
     </div>
 

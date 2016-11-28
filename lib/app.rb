@@ -29,7 +29,7 @@ class RPS < Sinatra::Base
 
   post '/selection' do
     @player_choice = @game.player.choice(params[:choice])
-    @computer_choice =  @game.computer.computer_choice
+    @computer_choice =  @game.computer.random_options
     @game.choices(@player_choice, @computer_choice)
     @game.print_winner
     redirect '/result'

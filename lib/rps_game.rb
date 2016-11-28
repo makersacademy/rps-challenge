@@ -45,6 +45,6 @@ class Game
   def print_winner
       return "It\'s a draw" if draw?
       return @player.name if player_win?
-      return @computer.name
+      @computer.name
   end
 end
