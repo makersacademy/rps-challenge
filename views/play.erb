@@ -1,9 +1,18 @@
-<h1> Welcome <%= @player_name.capitalize %>! </h1>
-<br>
-<h2> <%= @player_name.capitalize %>, you have chosen <%= @player_choice.upcase %>! </h2>
+<h1> Welcome <%= @game.player_name %>! </h1><br>
 
-<br>
-
-<form action="/result" method="get">
-  <input type="submit" value="LET'S PLAY!" name ="computer_choice">
+<form action="/play" method="post">
+  <input name="player_choice" type="submit" value ="ROCK">
+  <input name="player_choice" type="submit" value ="PAPER">
+  <input name="player_choice" type="submit" value ="SCISSORS">
 </form>
+
+You chose <%= @game.player_choice.to_s.upcase %>!<br>
+The computer chose <%= @game.computer_choice.to_s.upcase %>!<br>
+
+<% if @game.win? %>
+  You WIN!
+<% elsif @game.lose? %>
+  You LOSE!
+<% elsif @game.draw? %>
+  It was a DRAW!
+<% end %>

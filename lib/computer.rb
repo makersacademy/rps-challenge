@@ -1,16 +1,8 @@
 class Computer
-  attr_reader :computer_choices
-
-  def initialize
-    @computer_choices = [:rock, :paper, :scissors]
-  end
+  CHOICES = [:rock, :paper, :scissors]
 
   def computer_choice
-    @computer_choices.sample
-  end
-
-  def output
-    @computer_choice.to_s.upcase
+    CHOICES.sample
   end
 
 end

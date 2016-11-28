@@ -1,15 +1,11 @@
 require 'computer'
 
 describe Computer do
-  subject(:game) { described_class.new }
+  subject(:computer) { described_class.new }
 
-  describe '#computer_choices' do
-    it "can choose between rock, paper or scissors" do
-      expect(game.computer_choices).to include(:rock, :paper, :scissors)
-    end
-
+  describe '#computer_choice' do
     it "can choose a random selection" do
-      expect([:rock, :paper, :scissors]).to include(game.computer_choice)
+      expect(Computer::CHOICES).to include(computer.computer_choice)
     end
   end
 
