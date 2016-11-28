@@ -28,7 +28,7 @@ context "making the first selection" do
   end
 
   it "should show that player 1 has added a rock" do
-    game.player_1_select(:rock)
+    game.player_1_select("Rock")
     expect(game.selections).to eq({:rock => nil})
   end
 

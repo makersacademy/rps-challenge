@@ -21,7 +21,7 @@ def initialize(player_1, player_klass = Player, player_2 = "Computer")
 end
 
 def player_1_select(selection)
-@selections = {selection => nil}
+@selections = {selection.downcase.to_sym => nil}
 end
 
 
