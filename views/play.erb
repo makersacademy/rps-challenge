@@ -1,18 +1,11 @@
 <html>
 <head>
 
-<style>
-  body {
-    color: white;
-    font-family: "Helvetica";
-  }
-</style>
+  <link rel="stylesheet" type="text/css" href="style.css"
 
 </head>
 
 <body>
-
-  <iframe src="//giphy.com/embed/IbwHdRBQfJ2hi" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
 
   <h1 ><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
 
@@ -21,6 +14,8 @@
     <button type="submit" value="paper" name="player_weapon">Paper</button>
     <button type="submit" value="scissors" name="player_weapon">Scissors</button>
   </form>
+
+  <iframe class="giphy" src="//giphy.com/embed/IbwHdRBQfJ2hi"</iframe>
 
 </body>
 
