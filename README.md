@@ -44,6 +44,15 @@ I would like to be able to play rock/paper/scissors
 - bundle install
 - ruby lib/app.rb
 
+## Technologies used
+* Git
+* Ruby
+* Sinatra
+* HTML
+* CSS
+* Rspec-sinatra
+* Capybara
+
 
 ## Interface
 
