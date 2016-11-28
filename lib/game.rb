@@ -2,7 +2,9 @@ class Game
 
   @game = nil
 
-  attr_reader :player1, :player2, :player1_weapon, :player2_weapon
+  attr_reader :player1, :player2
+
+  attr_accessor :player1_weapon, :player2_weapon
 
   def initialize(player1, player2)
     @player1 = player1
@@ -45,11 +47,11 @@ class Game
   private
 
   def player1_choose_weapon(weapon)
-    @player1_weapon = weapon.to_sym
+    self.player1_weapon = weapon.to_sym
   end
 
   def player2_choose_weapon
-    @player2_weapon = Game::WEAPONS.sample
+    self.player2_weapon = Game::WEAPONS.sample
   end
 
   def draw?
