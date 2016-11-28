@@ -20,8 +20,18 @@ context "making the first selection" do
     expect(game.player_1.selection).to eq("Rock")
   end
 
-  #it "should allow the computer to make a selection" do
+  it "should show that there is a computer as player 2" do
+    expect(game).to respond_to(:player_2)
+  end
+
+  it "should show that player 2 is the Computer" do
+    expect(game.player_2.name).to eq("Computer")
+  end
 
 end
+  # it "should allow the computer to make a selection" do
+  #   game.player_1.select("Rock")
+  #   expect(game.computer.selection).to eq("Rock")
+  # end
 
 end

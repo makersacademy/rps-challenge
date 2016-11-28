@@ -10,12 +10,13 @@ class Game
     @game
   end
 
-attr_reader :player_1, :selection
+attr_reader :player_1, :player_2
 
-def initialize(player_1, player_klass = Player)
+def initialize(player_1, player_klass = Player, player_2 = "Computer")
 
 @player_1 = player_klass.new(player_1)
-@selection
+@player_2 = player_klass.new(player_2)
+
 
 end
 
