@@ -7,7 +7,7 @@ attr_reader :player_name, :users_choice
   end
 
   def choice(users_choice)
-    @users_choice = users_choice
+    @users_choice = users_choice.to_sym
   end
 
 end

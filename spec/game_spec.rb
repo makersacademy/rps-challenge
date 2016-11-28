@@ -3,7 +3,6 @@ require 'game'
 describe Game do
     subject(:game) { described_class.new(player)}
     let(:player) { double(:player) }
-    # let(:computer) { double(:computer) }
 
     context ".player" do
 
@@ -22,10 +21,10 @@ describe Game do
     context ".choice" do
 
       it 'tests that an array consisting of the users and computer\'s selection is returned' do
-        allow(player).to receive(:users_choice){ "Rock" }
-        allow(game).to receive(:computer_selection) {"Scissors"}
+        allow(player).to receive(:users_choice){ :Rock }
+        allow(game).to receive(:computer_selection) {:Scissors}
         game.choice
-        expect(game.choices).to include(["Rock", "Scissors"])
+        expect(game.choices).to include([:Rock, :Scissors])
       end
     end
 end

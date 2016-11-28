@@ -2,9 +2,9 @@ class Result
 
   def responses(choices)
 
-    win = {"Scissors" => "Paper",
-           "Paper" => "Rock",
-           "Rock" => "Scissors"}
+    win = {:Scissors => :Paper,
+           :Paper => :Rock,
+           :Rock => :Scissors}
 
 
     if choices.first == choices.last
