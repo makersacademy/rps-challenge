@@ -17,7 +17,15 @@ describe Game do
       expect(game.computer).to eq computer
     end
 
+    it "has a getter class method" do
+      getter = described_class.get
+      expect(getter).to eq nil
+    end
 
+    it "has a setter class method" do
+      described_class.set(player, computer)
+      expect(described_class.get.player).to eq player
+    end
   end
 
   describe "choices" do
