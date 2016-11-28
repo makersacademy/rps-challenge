@@ -1,4 +1,4 @@
-require_relative 'game.rb'
+require_relative 'game'
 
 class Player
 
@@ -8,7 +8,7 @@ class Player
   def initialize(name)
     @name = name
     @score = 0
-    @weapons = [:rock, :paper, :scissors]
+    @weapons = Game::WEAPONS
     @weapon
   end
 

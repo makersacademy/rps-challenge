@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer_opponent'
+
 class Game
 
   WEAPONS = [:rock, :paper, :scissors]

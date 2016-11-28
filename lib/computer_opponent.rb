@@ -1,4 +1,4 @@
-require_relative 'game.rb'
+require_relative 'game'
 
 class Opponent
 
@@ -6,7 +6,7 @@ class Opponent
   attr_accessor :weapon
 
   def initialize
-    @weapons = [:rock, :paper, :scissors]
+    @weapons = Game::WEAPONS
   end
 
   def choose_weapon
