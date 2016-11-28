@@ -27,8 +27,11 @@ I would like to be able to play rock/paper/scissors
 ### How to download
 
 $ git clone git@github.com:ajbater/rps-challenge.git
+
 $ cd rps-challenge
+
 $ bundle
+
 $ rackup
 
 ### How to play
