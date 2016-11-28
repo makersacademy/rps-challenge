@@ -4,7 +4,7 @@ class Player
 
   def initialize(name, choice)
     @name = name
-    @choice = choice
+    @choice = choice.downcase.to_sym
   end
 
 

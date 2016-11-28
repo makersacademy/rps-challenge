@@ -7,7 +7,12 @@ describe Computer do
   end
 
   it "outputs a fixed choice" do
+    allow(subject).to receive(:choose).and_return(:scissors)
     expect(subject.choice).to eq :scissors
   end
+
+
+
+
 
 end

@@ -31,59 +31,59 @@ describe Game do
     end
   end
 
-  describe "Player winning" do
-    it "Player: Rock, Computer: Scissors." do
-      allow(player).to receive(:choice).and_return(:rock)
-      allow(computer).to receive(:choice).and_return(:scissors)
-      expect(game.winner).to eq player
+  context "playing a game" do
+    describe "Player winning" do
+      it "Player: Rock, Computer: Scissors." do
+        allow(player).to receive(:choice).and_return(:rock)
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.winner).to eq player
+      end
+      it "Player: Paper, Computer: Rock." do
+        allow(player).to receive(:choice).and_return(:paper)
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.winner).to eq player
+      end
+      it "Player: Scissors, Computer: Paper." do
+        allow(player).to receive(:choice).and_return(:scissors)
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.winner).to eq player
+      end
     end
-    it "Player: Paper, Computer: Rock." do
-      allow(player).to receive(:choice).and_return(:paper)
-      allow(computer).to receive(:choice).and_return(:rock)
-      expect(game.winner).to eq player
+    describe "Computer winning" do
+      it "Player: Rock, Computer: Paper." do
+        allow(player).to receive(:choice).and_return(:rock)
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.winner).to eq computer
+      end
+      it "Player: Paper, Computer: Scissors." do
+        allow(player).to receive(:choice).and_return(:paper)
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.winner).to eq computer
+      end
+      it "Player: Scissors, Computer: Rock." do
+        allow(player).to receive(:choice).and_return(:scissors)
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.winner).to eq computer
+      end
     end
-    it "Player: Scissors, Computer: Paper." do
-      allow(player).to receive(:choice).and_return(:scissors)
-      allow(computer).to receive(:choice).and_return(:paper)
-      expect(game.winner).to eq player
-    end
-  end
+    describe "Ties" do
+      it "Player: Rock, Computer: Rock." do
+        allow(player).to receive(:choice).and_return(:rock)
+        allow(computer).to receive(:choice).and_return(:rock)
+        expect(game.winner).to eq :tie
+      end
+      it "Player: Paper, Computer: Paper." do
+        allow(player).to receive(:choice).and_return(:paper)
+        allow(computer).to receive(:choice).and_return(:paper)
+        expect(game.winner).to eq :tie
+      end
+      it "Player: Scissors, Computer: Scissors." do
+        allow(player).to receive(:choice).and_return(:scissors)
+        allow(computer).to receive(:choice).and_return(:scissors)
+        expect(game.winner).to eq :tie
+      end
 
-  describe "Computer winning" do
-    it "Player: Rock, Computer: Paper." do
-      allow(player).to receive(:choice).and_return(:rock)
-      allow(computer).to receive(:choice).and_return(:paper)
-      expect(game.winner).to eq computer
     end
-    it "Player: Paper, Computer: Scissors." do
-      allow(player).to receive(:choice).and_return(:paper)
-      allow(computer).to receive(:choice).and_return(:scissors)
-      expect(game.winner).to eq computer
-    end
-    it "Player: Scissors, Computer: Rock." do
-      allow(player).to receive(:choice).and_return(:scissors)
-      allow(computer).to receive(:choice).and_return(:rock)
-      expect(game.winner).to eq computer
-    end
-  end
-
-  describe "Ties" do
-    it "Player: Rock, Computer: Rock." do
-      allow(player).to receive(:choice).and_return(:rock)
-      allow(computer).to receive(:choice).and_return(:rock)
-      expect(game.winner).to eq :tie
-    end
-    it "Player: Paper, Computer: Paper." do
-      allow(player).to receive(:choice).and_return(:paper)
-      allow(computer).to receive(:choice).and_return(:paper)
-      expect(game.winner).to eq :tie
-    end
-    it "Player: Scissors, Computer: Scissors." do
-      allow(player).to receive(:choice).and_return(:scissors)
-      allow(computer).to receive(:choice).and_return(:scissors)
-      expect(game.winner).to eq :tie
-    end
-
   end
 
 

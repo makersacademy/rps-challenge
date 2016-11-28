@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -22,7 +24,14 @@ class RPS < Sinatra::Base
   post '/round' do
     @player_choice = params[:RPS]
     @player = Player.new(session[:name], @player_choice)
+
+
+    @computer = Computer.new
+    @computer_choice = @computer.choice
+
     @game = Game.new(@player, @computer)
+    
+
     @winner = @game.winner
     erb(:outcome)
   end

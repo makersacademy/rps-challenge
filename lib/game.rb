@@ -21,7 +21,11 @@ class Game
   private
 
   def algorithm(player_choice, computer_choice)
-    x = (3 + n(player_choice) - n(computer_choice)) % 3
+    @p = player_choice
+    @c = computer_choice
+    require 'pry'; binding.pry
+
+    x = (3 + n(@p) - n(@c)) % 3
     return :tie if x == 0
     return @player if x.odd?
     return @computer if x.even?
