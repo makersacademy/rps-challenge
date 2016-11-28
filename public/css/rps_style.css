@@ -1,0 +1,38 @@
+body {
+    background-color: #cc99ff;
+    text-align: center;
+    font-family: "Verdana", Geneva, sans-serif
+}
+
+h1 {
+    color: purple;
+}
+
+input[type=text] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid purple;
+    border-radius: 4px;
+}
+
+input[type=button], input[type=submit] {
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button[type=submit] {
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
