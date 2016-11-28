@@ -28,12 +28,29 @@ class Rps < Sinatra::Base
   post '/results' do
     p params
     $game.player_1_select(params[:selection])
-    redirect '/results'
+    $game.computer_select
+    @result == $game.result
+    if @result == :player_1_win
+      redirect '/player_1_win'
+    elsif @result == :player_2_win
+      redirect '/player_2_win'
+    else
+      redirect 'draw'
+    end
   end
 
-  get '/results' do
-    erb(:results)
+  get '/player_1_win' do
+    erb(:player_1_win)
   end
+
+  get '/player_2_win' do
+    erb(:player_2_win)
+  end
+
+  get '/draw' do
+    erb(:draw)
+  end
+
 
 
   # start the server if ruby file executed directly

@@ -1,4 +1,6 @@
-require_relative 'Player.rb'
+require_relative 'player.rb'
+require_relative 'weapons.rb'
+
 
 class Game
 
@@ -10,19 +12,32 @@ class Game
     @game
   end
 
-attr_reader :player_1, :player_2, :selections
+  attr_reader :player_1, :player_2, :selections, :weapons
 
-def initialize(player_1, player_klass = Player, player_2 = "Computer")
+  def initialize(player_1, player_2 = "Computer", player_klass = Player, weapons_klass = Weapons)
 
-@player_1 = player_klass.new(player_1)
-@player_2 = player_klass.new(player_2)
-@selections = {}
+    @player_1 = player_klass.new(player_1)
+    @player_2 = player_klass.new(player_2)
+    @selections = {}
+    @weapons = weapons_klass.new
 
-end
 
-def player_1_select(selection)
-@selections = {selection.downcase.to_sym => nil}
-end
+  end
+
+  def player_1_select(selection)
+    @selections = {selection.downcase.to_sym => nil}
+  end
+
+  def computer_select
+    computer_selection = weapons.weapons.sample
+    @selections[@selections.keys.first] = :paper #computer_selection
+  end
+
+  def result
+    self.weapons.rules(@selections)
+  end
+
+
 
 
 end

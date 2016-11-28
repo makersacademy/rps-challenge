@@ -13,7 +13,7 @@ end
 
 end
 
-context "making the first selection" do
+context "Playing a round" do
 
   it "should show the selection is an empty hash" do
     expect(game.selections).to eq({})
@@ -32,10 +32,11 @@ context "making the first selection" do
     expect(game.selections).to eq({:rock => nil})
   end
 
+  it "should allow the computer to make a selection" do
+    game.player_1.select("Rock")
+    expect(game.computer_select).to eq(:paper)
+  end
 end
-  # it "should allow the computer to make a selection" do
-  #   game.player_1.select("Rock")
-  #   expect(game.computer.selection).to eq("Rock")
-  # end
+
 
 end
