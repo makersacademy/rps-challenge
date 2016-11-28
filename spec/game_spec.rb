@@ -26,4 +26,11 @@ describe Game do
     end
   end
 
+  it "keeps score" do
+    allow(computer).to receive(:move).and_return(:paper)
+    allow(player).to receive(:move).and_return(:scissors)
+    game.keep_score
+    expect(game.score).to eq ({:player=>1, :computer=>0})
+  end
+
 end

@@ -1,0 +1,22 @@
+
+ {
+   padding: 0; margin: 0;
+ }
+ #player,#vs,#computer {
+    display: inline-block;
+ }
+ #player {
+   text-align:right;
+   color: pink;
+   width: 30%;
+ }
+ #vs {
+   float: center;
+   color: purple;
+   width: 10%;
+ }
+ #computer {
+   text-align:left;
+   color: lightblue;
+   width: 30%;
+ }

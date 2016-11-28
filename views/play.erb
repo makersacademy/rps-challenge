@@ -1,12 +1,30 @@
-<center>
-  <h2>Welcome to classical game of Rock Paper Scissors, </h2>
-  <h1><%= @game.player.name %>!!! </h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-    <form action='/action' method='post'>
-      <input name='choice' type='submit' value='Rock'>
-      <input name='choice' type='submit' value='Paper'>
-      <input name='choice' type='submit' value='Scissors'>
-    </form>
+<body>
+  <center>
+    <h2>Welcome to classical game of Rock Paper Scissors, </h2>
+    <h1><%= @game.player.name %>!!! </h1>
+
+      <form action='/action' method='post'>
+        <input name='choice' type='submit' value='Rock'>
+        <input name='choice' type='submit' value='Paper'>
+        <input name='choice' type='submit' value='Scissors'>
+      </form>
+
+      <p>
+        <h2>
+          Score:</p>
+          <p>
+            <div id="wrapper">
+              <div id="player"><%=@game.player.name%> <%=@game.score[:player]%></div>
+              <div id="vs"> VS. </div>
+              <div id="computer"><%=@game.score[:computer]%> <%=@game.computer.name%></div>
+            </div>
+        </h2>
+      </p>
 
 
-</center>
+  </center>
+</body>

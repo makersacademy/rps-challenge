@@ -34,6 +34,7 @@ class RPS < Sinatra::Base
   end
 
   get '/move_confirmation' do
+    @game.keep_score
     erb(:move_confirmation)
   end
 
