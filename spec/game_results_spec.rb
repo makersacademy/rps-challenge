@@ -9,19 +9,19 @@ subject(:game) { described_class.new(:player_1) }
   it "should show the result" do
     game.player_1_select("Rock")
     game.computer_select
-    expect(game.result).to eq(:player_2_win)
+    expect(game.result[0]).to eq(:player_2_win)
   end
 
   it "should show the result" do
     game.player_1_select("Paper")
     game.computer_select
-    expect(game.result).to eq(:draw)
+    expect(game.result[0]).to eq(:draw)
   end
 
   it "should show the result" do
     game.player_1_select("Scissors")
     game.computer_select
-    expect(game.result).to eq(:player_1_win)
+    expect(game.result[0]).to eq(:player_1_win)
   end
 
 end

@@ -1,5 +1,24 @@
-<h1> Hello <%= $game.player_1.name %>! Let's play Rock, Paper, Scissors </h1>
+<html>
+<head>
+<style>
+body {
+    color: blue;
+}
+
+h1 {
+    color: green;
+}
+</style>
+</head>
+<body>
+
+<h1> Hello <%= $game.player_1.name %>! </h1>
+<p> Let's play Rock, Paper, Scissors</p>
 
 <form action="/play" method="get">
     <input type="submit" value="Play">
 </form>
+
+
+</body>
+</html>

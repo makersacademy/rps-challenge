@@ -10,14 +10,11 @@ class Rps < Sinatra::Base
   end
 
   post '/intro' do
-    #erb(:play)
-    p params
     $game = Game.new(params[:player_1_name])
     redirect '/intro'
   end
 
   get '/intro' do
-    #$player_1_name
     erb(:intro)
   end
 
@@ -29,7 +26,7 @@ class Rps < Sinatra::Base
     p params
     $game.player_1_select(params[:selection])
     $game.computer_select
-    @result == $game.result
+    @result = $game.result[0]
     if @result == :player_1_win
       redirect '/player_1_win'
     elsif @result == :player_2_win

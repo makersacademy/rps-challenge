@@ -20,6 +20,7 @@ class Game
     @player_2 = player_klass.new(player_2)
     @selections = {}
     @weapons = weapons_klass.new
+    @score = []
 
 
   end
@@ -30,14 +31,11 @@ class Game
 
   def computer_select
     computer_selection = weapons.weapons.sample
-    @selections[@selections.keys.first] = :paper #computer_selection
+    @selections[@selections.keys.first] = computer_selection #:paper (Use paper to pass tests - need to stub)
   end
 
   def result
-    self.weapons.rules(@selections)
+    @score << self.weapons.rules(@selections)
   end
-
-
-
 
 end
