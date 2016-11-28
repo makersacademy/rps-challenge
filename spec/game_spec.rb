@@ -2,39 +2,28 @@ require 'game'
 
 describe Game do
   let(:player) { double :player }
-  subject(:game) { described_class.new(player)}
+  let(:computer) { double :computer }
+  subject(:game) { described_class.new(player, computer)}
 
-  before do
-    allow(Game::OPTIONS).to receive(:sample).and_return(:paper)
-  end
+  describe "#who_won" do
+    before do
+      allow(computer).to receive(:move).and_return(:paper)
+    end
 
-  it { is_expected.to respond_to(:play) }
+    it "shows that player won" do
+      allow(player).to receive(:move).and_return(:scissors)
+      expect(game.who_won).to eq :player
+    end
 
-  it "should choose a random option" do
-    expect(game.play).to eq (:paper)
-  end
+    it "shows that computer won" do
+      allow(player).to receive(:move).and_return(:rock)
+      expect(game.who_won).to eq :computer
+    end
 
-  it "should save last move result" do
-    game.play
-    expect(game.move).to eq (:paper)
-  end
-
-  it "shows that player won" do
-    game.play
-    allow(player).to receive(:move).and_return(:scissors)
-    expect(game.who_won).to eq :player
-  end
-
-  it "shows that computer won" do
-    game.play
-    allow(player).to receive(:move).and_return(:rock)
-    expect(game.who_won).to eq :computer
-  end
-
-  it "shows a draw" do
-    game.play
-    allow(player).to receive(:move).and_return(:paper )
-    expect(game.who_won).to eq :draw
+    it "shows a draw" do
+      allow(player).to receive(:move).and_return(:paper)
+      expect(game.who_won).to eq :draw
+    end
   end
 
 end

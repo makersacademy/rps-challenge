@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -17,7 +18,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     p params
-    @game = Game.create(Player.new(params[:player1_name]))
+    @game = Game.create(Player.new(params[:player1_name]), Computer.new)
     redirect to('/play')
   end
 
@@ -28,7 +29,7 @@ class RPS < Sinatra::Base
   post '/action' do
     p params
     @game.player.make_move(params[:choice])
-    @game.play
+    @game.computer.play
     redirect to('/move_confirmation')
   end
 
