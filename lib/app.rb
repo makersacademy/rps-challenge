@@ -28,8 +28,10 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    @player_choice = @game.player.choice(params[:choice])
+    sanitized_input = params[:choice].downcase.to_sym
+    @player_choice = @game.player.choice(sanitized_input  )
     @computer_choice =  @game.computer.random_options
+    # require 'pry'; binding.pry
     @game.choices(@player_choice, @computer_choice)
     @game.print_winner
     redirect '/result'

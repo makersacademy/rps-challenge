@@ -11,7 +11,10 @@ feature Game do
   let(:computer_choice) { double(:computer_choice) }
 
   scenario 'The game displays a winner' do
+    ////////////////
     sign_in
+    ////////////////
+
     visit '/result'
     expect(page).to have_content('wins')
   end
