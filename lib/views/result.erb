@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>This is Rock Paper Scissors!</title>
+</head>
+
+<body>
+  <div class="header">
+    <ul>
+      <li><a href="/" class='li_home'>Home</a></li>
+      <li><a href="https://github.com/Unicornelia" class='li_rest' target=_blank>Creator's Github</a></li>
+      <li><a href="/about" target=_blank class='li_rest'>About</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h1> <%= @game.player.name.capitalize %>'s choice: <%= @game.player.selection %></h1>
+  </div>
+  <div>
+    <h1> <%= @game.computer.name %>'s choice: <%= @game.computer.computer_choice %> </h1>
+    <div class='winner'>
+      <h1><%= @game.print_winner.capitalize %><%= if @game.draw? then "!" else " wins!" end %></h1>
+      <img src='css/loser.gif' width=50% height=50%></img>
+    </div>
+
+    <div>
+      <h2>Reminder:</h2>
+      <ul>
+        <li>Rock beats Scissors</li>
+        <li>Scissors beats Paper</li>
+        <li>Paper beats Rock</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h1> Another game? <a href='/'>Yes</a> / <a href='/bye'>No</a> </h1>
+  </div>
+
+</body>
+</hmtl>
