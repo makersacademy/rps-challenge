@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-![alt tag](/public/images/preview.png)
+![alt tag](/public/images/preview.jpg)
 
 A popular TDD game built with Ruby, Sinatra and RSpec.
 
