@@ -1,0 +1,36 @@
+<div class="page_two">
+  <table width="500px">
+    <link rel="stylesheet" href="main.css"/>
+
+    <h1> Welcome to Rock, Paper, Scissors, <%=@player%>! </h1>
+
+    <iframe src="//giphy.com/embed/YAypf1ka7tRTi" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:1200; height:800; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
+
+    <form action='/game' method="post">
+
+      <div class='row clearfix'>
+        <div class='col-4' id='first'>
+          <input type="radio" name="choice" id="Rock" value="rock"> Rock</input>
+          <label for="Rock"><img src="http://geology.com/articles/difficult-rocks/difficult-rock-identification.jpg" width = "200px" alt="Rock" /></label>
+        </div>
+
+        <div class='col-5' id='first'>
+          <input type="radio" name="choice" id="Paper" value="paper"> Paper</input>
+          <label for="Paper"><img src="http://www.dick-blick.com/items/102/40/10240-1009-1-2ww-m.jpg" width = "200px" alt="Paper" /></label>
+        </div>
+
+        <div class='col-6' id='first'>
+          <input type="radio" name="choice" id="Scissors" value="scissors"> Scissors</input>
+          <label for="Scissors"><img src="http://www.orthotape.com/thumbnail.asp?file=assets/images/cast%20kits/razor-edge-softgrip-scissors_product_main.jpg&maxx=450&maxy=0" width = "200px" alt="Scissors" /></label>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='button'>
+          <input class='button2' type="submit" value="Submit" id="submit">
+        </div>
+      </div>
+
+    </form>
+  </table>
+</div>

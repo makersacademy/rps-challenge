@@ -1,0 +1,15 @@
+<div class="page">
+  <table width="500px">
+
+    <link rel="stylesheet" href="main.css"/>
+
+    <iframe src="//giphy.com/embed/OwH7la3mzBi6Y" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:1200; height:800; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
+
+    <h2> You lose! </h2>
+    <h4> You picked <%=@game.choice%> against <%=@game.computer_choice%>
+
+    <form action = '/play'>
+      <input type = 'submit' value = 'Play again?' id = 'submit'>
+    </form>
+  </table>
+</div>
