@@ -1,4 +1,4 @@
-require_relative "game.rb"
+require_relative "./game.rb"
 
 class Computer
 
@@ -9,7 +9,7 @@ class Computer
   end
 
   def select_weapon
-    @choice = Game::Weapons.sample
+    @choice = Game::WEAPONS.sample
   end
 
 end

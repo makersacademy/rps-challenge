@@ -1,6 +1,6 @@
 class Game
 
-  Weapons = ["Rock", "Paper", "Scissors"]
+  WEAPONS = ["Rock", "Paper", "Scissors"]
 
   def self.create(player, computer)
     @game = Game.new(player,computer)
@@ -20,7 +20,7 @@ class Game
   def result
     return :win if win
     return :lose if lose
-    return :draw if draw  
+    return :draw if draw
   end
 
   private
