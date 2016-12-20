@@ -6,9 +6,9 @@ RPS is a **web app** that allows the user to play a game of **Rock, Paper, Sciss
 
 ### Screenshots
 
-![First Page](https://postimg.org/image/e3e8cos21/)
-[The options page](https://postimg.org/image/88bszs4vn/)
-[Displaying the result](https://postimg.org/image/lqwmac0fd/)
+![First Page](https://s28.postimg.org/awjot27m5/First_page.png)
+[The options page](https://s29.postimg.org/7it0nf4c7/Second_page.png)
+[Displaying the result](https://s28.postimg.org/jdle58eal/winning_page.png)
 
 # Code snippets
 
