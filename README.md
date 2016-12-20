@@ -76,18 +76,23 @@ A Computer class does currently exist and has the capacity to choose a weapon. I
 Examples
 ========
 Homepage:
+
 <kbd>![alt text](http://i.imgur.com/TRq6SDi.png)</kbd>
 
 Choose Your Weapon:
+
 <kbd>![alt text](http://i.imgur.com/zbWjoGP.png)</kbd>
 
 Game win:
+
 <kbd>![alt text](http://i.imgur.com/YdZjJ6q.png)</kbd>
 
 Game Loss:
+
 <kbd>![alt text](http://i.imgur.com/yG7Yyb7.png)</kbd>
 
 Game Draw:
+
 <kbd>![alt text](http://i.imgur.com/7LYgmKU.png)</kbd>
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
