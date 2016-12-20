@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Rock,Paper,Scissors</title>
-  </head>
-  <body>
-    <h1><%=@game.player.name%></h1>
-    <form action='/result' method='post'>
-      <button type='submit' value='Rock' name='choice'>Rock</button>
-      <button type='submit' value='Paper' name='choice'>Paper</button>
-      <button type='submit' value='Scissors' name='choice'>Scissors</button>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Rock,Paper,Scissors</title>
+</head>
+<body>
+  <div id='play'>
+    <h1 class='name'><%=@game.player.name%>: <h3 style='color:white'>make a decision<h3></h1>
+    <form id='form' action='/result' method='post'>
+      <button id='rock' type='submit' value='Rock' name='choice'></button>
+      <button id='paper' type='submit' value='Paper' name='choice'></button>
+      <button id='scissors' type='submit' value='Scissors' name='choice'></button>
     </form>
-    <h1>Computer: waiting for your choice<h2>
+    <h1 class='name'>Computer: <h3 style='color:white'>waiting for your choice<h3></h1>
+    </div>
   </body>
-</html>
+  </html>

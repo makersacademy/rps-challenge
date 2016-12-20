@@ -39,4 +39,5 @@ class Game
     def lose
       GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] < 0
     end
+    
 end

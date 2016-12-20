@@ -1,4 +1,24 @@
-<h1>You have selected <%=@game.player.choice%></h1>
-<h1>The computer has selected <%=@game.computer.choice%></h1>
-<h1>You lost</h1>
-<a href='/play'>Play again?</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock,Paper,Scissors</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  <link async href="http://fonts.googleapis.com/css?family=Passero%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id='replay'>
+    <a id='play-again' href='/play'>Play again?</a>
+  </div>
+  <div id='result'>
+    <h2 >You have selected <div class="enjoy-css"><%=@game.player.choice%></div></h2>
+    <h2>The computer has selected <div class="enjoy-css"><%=@game.player.choice%></div></h2>
+    <h1><div class="enjoy-css">You Lost!</div></h1>
+  </div><br>
+
+  <div class='result-pictures'>
+    <img src="http://www.canlaw.com/law-society/images/loselosedice.png"><br>
+  </div>
+
+</body>
+</html>
