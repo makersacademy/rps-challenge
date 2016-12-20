@@ -15,7 +15,7 @@ RSpec.feature "Playing rock/paper/scissors" do
     expect(page).to have_content("Computer")
   end
 
-  scenario "it should see what weaponss have been selected" do
+  scenario "it should see what weapons have been selected" do
     allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     register_and_play
     click_button('Rock')

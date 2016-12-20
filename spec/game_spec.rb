@@ -30,9 +30,8 @@ describe Game do
     it "should return :draw if player and computer have the same choice" do
       allow(player).to receive(:choice).and_return("Rock")
       allow(computer).to receive(:choice).and_return("Rock")
-      expect(game.result).to eq :draw 
+      expect(game.result).to eq :draw
     end
-
   end
 
 

@@ -1,4 +1,4 @@
-class Marketer
+class Marketeer
 
   attr_reader :name
   attr_accessor :choice
