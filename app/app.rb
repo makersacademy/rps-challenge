@@ -3,8 +3,13 @@ require './lib/marketeer.rb'
 require './lib/computer.rb'
 
 class RPS < Sinatra::Base
+
   get '/' do
     erb(:index)
+  end
+
+  before do
+    @game = Game.instance
   end
 
   post '/play' do
@@ -14,8 +19,11 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/play' do
+    erb(:play)
+  end
+
   post '/result' do
-    @game = Game.instance
     @game.player.choice = params[:choice]
     @game.computer.select_weapon
     erb @game.result
