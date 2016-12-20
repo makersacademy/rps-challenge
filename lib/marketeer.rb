@@ -5,6 +5,7 @@ class Marketeer
 
   def initialize(name)
     @name = name
+    @choice
   end
 
 end

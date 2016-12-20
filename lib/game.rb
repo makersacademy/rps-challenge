@@ -29,14 +29,14 @@ class Game
 
   private
     def win
-      (player.choice == "Rock" && computer.choice == "Scissors") || (player.choice == "Paper" && computer.choice == "Rock") || (player.choice == "Scissors" && computer.choice == "Paper")
+      GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] > 0
     end
 
     def draw
-      player.choice == computer.choice
+      GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] == 0
     end
 
     def lose
-      (player.choice == "Rock" && computer.choice == "Paper") || (player.choice == "Paper" && computer.choice == "Scissors") || (player.choice == "Scissors" && computer.choice == "Rock")
+      GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] < 0
     end
 end

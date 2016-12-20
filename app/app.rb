@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/marketer.rb'
+require './lib/marketeer.rb'
 require './lib/computer.rb'
 
 class RPS < Sinatra::Base
@@ -8,9 +8,9 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    marketer = Marketer.new(params[:name])
+    marketeer = Marketeer.new(params[:name])
     computer = Computer.new
-    @game = Game.create(marketer,computer)
+    @game = Game.create(marketeer,computer)
     erb(:play)
   end
 
