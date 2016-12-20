@@ -18,16 +18,15 @@ class RPS < Sinatra::Base
     @game = Game.create(marketeer,computer)
     erb(:play)
   end
-  # 
-  # get '/play' do
-  #   erb(:play)
-  # end
+  
+  get '/play' do
+    erb(:play)
+  end
 
   post '/result' do
     @game.player.choice = params[:choice]
     @game.computer.select_weapon
     erb @game.result
-    require 'pry';binding.pry
   end
 
   # start the server if ruby file executed directly
