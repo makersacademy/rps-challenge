@@ -8,22 +8,20 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  before do
-    @game = Game.instance
-  end
-
   post '/play' do
     marketeer = Marketeer.new(params[:name])
     computer = Computer.new
     @game = Game.create(marketeer,computer)
     erb(:play)
   end
-  
+
   get '/play' do
+    @game = Game.instance
     erb(:play)
   end
 
   post '/result' do
+    @game = Game.instance
     @game.player.choice = params[:choice]
     @game.computer.select_weapon
     erb @game.result

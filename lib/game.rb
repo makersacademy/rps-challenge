@@ -29,11 +29,11 @@ class Game
 
   private
     def win
-      GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] >= 1
+      GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] > 0
     end
 
     def draw
-      player.choice == computer.choice
+        GAME_RULES[player.choice.downcase.to_sym][computer.choice.downcase.to_sym] == 0
     end
 
     def lose

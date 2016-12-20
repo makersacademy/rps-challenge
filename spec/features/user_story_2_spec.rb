@@ -19,7 +19,6 @@ feature "Playing rock/paper/scissors" do
   scenario "it should see what weapons have been selected" do
     allow_any_instance_of(Array).to receive(:sample).and_return("Scissors")
     register_and_play
-    puts page.html
     expect(page.current_path).to eq('/play')
     click_button('rock')
     expect(page).to have_content("You have selected Rock")
