@@ -1,4 +1,4 @@
-# RPS Challenge - A Makers Academy Weekend Challenge
+# RPS Challenge - Makers Academy Weekend 3
 
 For this weekend challenge, I created a simple Rock, Paper, Scissors web application. Using TDD, the application was written in Ruby using Sinatra and tested using RSpec.
 
