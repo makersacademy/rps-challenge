@@ -1,5 +1,8 @@
 # RPS Challenge
 
+[![Build Status](https://travis-ci.org/aabolade/rps-challenge.svg?branch=master)](https://travis-ci.org/aabolade/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/aabolade/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/aabolade/rps-challenge?branch=master)
+
 This is a web based application using Sinatra where a single player can take part in a game of Rock, Paper, Scissors. The basic rules are outlined below:
 
 User Stories
