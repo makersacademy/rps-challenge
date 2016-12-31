@@ -2,25 +2,43 @@
 
 This is a web based application using Sinatra where a single player can take part in a game of Rock, Paper, Scissors. The basic rules are outlined below:
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-## How to play
-
-Fork this repo and clone the files. Then install the gem files by adding the following in the command line:
+User Stories
+============
 
 ```
+As a player
+So I can seen my name
+I would like to register my name before playing an online game
 
-$ bundle install
-
-$ ruby app.rb
-
+As a player
+So I can enjoy myself away from the daily grind
+I would like to be able to play rock paper scissors
 ```
 
-This will initiate a local Sinatra session and you will see the following in your terminal:
+Approach and Technologies used
+==============================
+
+* Code written in Ruby.
+
+* Unit testing using RSpec.
+
+* Feature testing using Capybara.
+
+* Sinatra to host local server for the game.
+
+This project uses three main classes:
+
+- **Game**: responsible for starting the game with two players and deciding the outcome of each battle.
+- **Player**: responsible for storing the name of the player and the player's choice of weapon e.g. (rock, paper or scissors).
+- **Opponent**: responsible for selecting a randomized weapon against the player.
+
+Instructions and Installation
+=============================
+
+1. Fork this repo, and clone to your local machine
+2. Run the command `gem install bundle` (if you don't have bundle already)
+3. When the installation completes, run `bundle`
+4. Run the application by typing ```rackup``` . This will initiate a local Sinatra session and you will see the following in your terminal:
 
 ```
 
@@ -31,8 +49,15 @@ This will initiate a local Sinatra session and you will see the following in you
 
 ```
 
-At this point go to your browser and enter the following url:  **https://localhost:4567** . Enter your name, click play and choose your weapon!
+5. Now go to your browser and enter the following url:  **https://localhost:4567** . Enter your name, click play and choose your weapon!
 
-## Further Features to be implemented
+The rules are as followed:
 
-Implement multiplayer so two people can play against each other.
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+Further Features
+================
+
+* Implement multiplayer so two people can play against each other.
