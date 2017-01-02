@@ -24,14 +24,10 @@ describe Game do
     player_two.select_weapon("Paper")
     expect(game.round_winner).to eq player_two
   end
-  
-  # it "adds a point to winner's score" do
-  #   expect(game.round_winner).to eq player_two
-  # end
 
-  it "assigns winner to whoever reaches 10 points first" do
-    allow(player_one).to receive(:score).and_return 10
-    allow(player_two).to receive(:score).and_return 5
+  it "assigns winner to whoever reaches 3 points first" do
+    allow(player_one).to receive(:score).and_return 3
+    allow(player_two).to receive(:score).and_return 1
     game.check_winner
     expect(game.winner).to be player_one
   end

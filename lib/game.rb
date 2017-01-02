@@ -25,8 +25,8 @@ class Game
   end
 
   def check_winner
-    @winner = @player_one if @player_one.score > 9
-    @winner = @player_two if @player_two.score > 9
+    @winner = @player_one if @player_one.score > 2
+    @winner = @player_two if @player_two.score > 2
   end
 
   def round_winner
@@ -42,23 +42,4 @@ class Game
 private
 
 RULES = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
-
-#
-# def round_winner
-#   if @player_one.weapon == @player_two.weapon
-#     @round_winner = nil
-#   elsif @player_one.weapon == "Rock" && @player_two.weapon == "Paper"
-#     @round_winner = @player_two
-#   elsif @player_one.weapon == "Rock" && @player_two.weapon == "Scissors"
-#     @round_winner = @player_one
-#   elsif @player_one.weapon == "Paper" && @player_two.weapon == "Rock"
-#     @round_winner = @player_one
-#   elsif @player_one.weapon == "Paper" && @player_two.weapon == "Scissors"
-#     @round_winner = @player_two
-#   elsif @player_one.weapon == "Scissors" && @player_two.weapon == "Rock"
-#     @round_winner = @player_two
-#   else
-#     @round_winner = @player_one
-#   end
-# end
 end

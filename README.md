@@ -8,8 +8,10 @@ Installation
 -------
 1. Clone this repo - **git@github.com:lcbeh/rps-challenge.git**
 2. Access the folder - **cd rps-challenge**
-3. Run **bundle install**
-4. Run **ruby app.rb**
-5. On your browser, go to **localhost:4567** to enjoy the game. Player who reaches 10 points first wins!
+3. Run **gem install bundler** if you do not have bundler
+4. Run **bundle install**
+5. Run **ruby app.rb**
+6. On your browser, go to **localhost:4567** to enjoy the game. Player who reaches 3 points first wins!
+7. **Ctrl-C** to stop to server.
 
 ----
