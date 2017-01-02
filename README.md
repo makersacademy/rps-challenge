@@ -28,3 +28,18 @@ Access:
 
        Then go to localhost:4567
        And enjoy
+
+Run Tests
+---------
+
+- $ rspec
+
+
+Ching-Chon-Cha:
+--------------
+
+![alt tag](/Users/courtneyosborn/Documents/projects/course_week_3/weekend_challenge/rps-challenge/img/Screen Shot 2017-01-02 at 12.37.26.png)
+
+![alt tag](/Users/courtneyosborn/Documents/projects/course_week_3/weekend_challenge/rps-challenge/img/Screen Shot 2017-01-02 at 12.39.26.png)
+
+![alt tag](/Users/courtneyosborn/Documents/projects/course_week_3/weekend_challenge/rps-challenge/img/Screen Shot 2017-01-02 at 12.39.44.png)
