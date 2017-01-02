@@ -29,6 +29,15 @@ Access:
        Then go to localhost:4567
        And enjoy
 
+Gems that should be Installed:
+-----------------------------
+
+- gem 'sinatra'
+- gem 'rake'
+- gem 'rspec-sinatra'
+- gem 'rspec'
+- gem 'capybara'
+
 Run Tests
 ---------
 
