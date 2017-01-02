@@ -14,4 +14,7 @@ Installation
 6. On your browser, go to **localhost:4567** to enjoy the game. Player who reaches 3 points first wins!
 7. **Ctrl-C** to stop to server.
 
+---
+[![Coverage Status](https://coveralls.io/repos/github/makersacademy/rps-challenge/badge.svg?branch=zdajani)](https://coveralls.io/github/makersacademy/rps-challenge?branch=zdajani)
+
 ----
