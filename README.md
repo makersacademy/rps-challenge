@@ -39,6 +39,9 @@ Ching-Chon-Cha:
 --------------
 ![alt tag](/img/Screen Shot 2017-01-02 at 12.37.26.png)
 
-![alt tag](/img/Screen Shot 2017-01-02 at 13.01.41.png)
+------------
 
-![alt tag](/img/Screen Shot 2017-01-02 at 13.03.15.png)
+![alt tag](/img/Screen Shot 2017-01-02 at 13.07.25.png)
+
+------------
+![alt tag](/img/Screen Shot 2017-01-02 at 12.39.44.png)
