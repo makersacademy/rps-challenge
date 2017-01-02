@@ -8,11 +8,11 @@ class Result
 
 
     if choices.first == choices.last
-      "It is a Draw"
+      "It is a draw"
     elsif win[choices.first] == choices.last
-      "Well Done, You Win!"
+      choices.first
     else
-      "Sorry but You Lose"
+      choices.last
     end
   end
 end

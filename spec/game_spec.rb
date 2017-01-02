@@ -16,13 +16,6 @@ describe Game do
       end
     end
 
-    # context ".computer" do
-    #
-    #   it 'test that computer is initalized with game' do
-    #     expect(game.computer).to be_kind_of Computer
-    #   end
-    # end
-
     context ".choice" do
 
       it 'tests that an array consisting of the users and computer\'s selection is returned' do

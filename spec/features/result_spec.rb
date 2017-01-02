@@ -38,22 +38,21 @@ feature 'Result' do
   context "Result status" do
 
     scenario 'test that draw is returned' do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:Rock)
       click_button(:Rock)
       click_button(:Rock)
-      expect(page).to have_content "Draw"
+      expect(page).to have_content "It is a draw"
     end
 
     scenario 'test that user wins' do
       click_button(:Rock)
       click_button(:Scissors)
-      expect(page).to have_content "Win!"
+      expect(page).to have_content "Courtney"
     end
 
     scenario 'test that user loses' do
       click_button(:Paper)
       click_button(:Scissors)
-      expect(page).to have_content "Lose"
+      expect(page).to have_content "Russell"
     end
   end
 

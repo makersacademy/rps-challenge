@@ -6,7 +6,7 @@
   <body>
       <div> <%= @game.player_1.player_name %> chose: <%= @game.player_1.users_choice.to_s.capitalize %> </div>
       <div>  <%= @game.player_2.player_name %> chose: <%= @game.player_2.users_choice.to_s.capitalize %> </div>
-      <div> <%= @game.players_choices %> </div>
+      <div> The Winner is: <%= @game.winner %> </div>
       <div>
         <form action="/game" method="get">
           <input type="submit" name="response" value="Play Again">

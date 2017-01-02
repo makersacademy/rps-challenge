@@ -3,6 +3,8 @@ require './lib/game'
 
 class RPS < Sinatra::Base
 
+  attr_reader :game, :choice1, :choice2
+
   before do
     @game = Game.instance
   end
@@ -12,8 +14,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(params[:player_1])
-    player_2 = Player.new(params[:player_2])
+    player_1 = Player.new(@player_1)
+    player_2 = Player.new(@player_2)
     @game = Game.create(player_1, player_2)
     redirect '/game'
   end
@@ -23,7 +25,8 @@ class RPS < Sinatra::Base
   end
 
   post '/rps' do
-    @game.player_1.choice(params[:choice])
+    @choice1 = params[:choice]
+    game.player_1.choice(choice1)
     redirect '/game2'
   end
 
@@ -32,14 +35,15 @@ class RPS < Sinatra::Base
   end
 
   post '/rps2' do
-    @game.player_2.choice(params[:choice])
-    @game.choice
-    @game.players_choices
+    @choice2 = params[:choice]
+    game.player_2.choice(choice2)
+    game.choice
+    game.winner
     redirect '/result'
   end
 
   get '/result' do
-      erb :result
+    erb :result
   end
 
   run! if app_file == $0
