@@ -1,5 +1,7 @@
 # RPS Challenge
 
+Author: Courtney Osborn
+
 Instructions
 -------
 
