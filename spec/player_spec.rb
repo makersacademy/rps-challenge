@@ -26,12 +26,16 @@ describe Player do
     expect(player2.weapon).to eq random_weapon
   end
 
- it "wins a point if player is a round_winner", :focus do
+ it "wins a point if player is a round_winner" do
    allow(player1).to receive(:weapon).and_return "Rock"
    allow(player2).to receive(:weapon).and_return "Paper"
    game.update_score
    expect(player2.score).to eq 1
+ end
 
+ it "can reset to start a new game" do
+   game.reset
+   expect(player1.score).to eq 0
  end
 
 end

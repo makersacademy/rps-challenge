@@ -1,6 +1,6 @@
 class Player
-  attr_reader :name, :weapon
-  attr_accessor :score
+  attr_reader :name
+  attr_accessor :score, :weapon
 
   def initialize
     @score = 0

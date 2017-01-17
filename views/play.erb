@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="play.css">
+  <link rel="stylesheet" href="playgame.css">
 </head>
 
 <body>
@@ -21,6 +21,9 @@
   <% if @game.winner != nil %>
   <div class="winner">
     <h2><%= @game.winner.name %> won!</h2>
+    <form action="/reset" method="post">
+      <input class="reset" type="submit" name="reset_button" value="Reset Game">
+    </form>
   </div>
   <% end %>
 

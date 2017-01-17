@@ -18,10 +18,8 @@ class Game
   end
 
   def update_score
+    @round_winner.score += 1 if round_winner != nil
     check_winner
-    if winner.nil?
-      @round_winner.score += 1 if round_winner != nil
-    end
   end
 
   def check_winner
@@ -37,6 +35,15 @@ class Game
     else
       @round_winner = nil
     end
+  end
+
+  def reset
+    @player_one.score = 0
+    @player_two.score = 0
+    @player_one.weapon = nil
+    @player_two.weapon = nil
+    @round_winner = nil
+    @winner = nil
   end
 
 private
