@@ -1,0 +1,21 @@
+body {
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: "Arial", sans-serif;
+  color: #e8ecf2;
+  background: #4B79A1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4B79A1 , #283E51); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4B79A1 , #283E51); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

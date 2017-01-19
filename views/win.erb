@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+
+    <h1>You played <%=@player.choice%>. Computer played <%=@computer.choice%>.</h1>
+    <h2>You win!</h2>
+    <form name="input" action="/choose" method="get">
+      Play again? <input type="submit" value="Yes please!">
+    </form>
+
+  </body>
+</html>
