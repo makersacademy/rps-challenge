@@ -1,92 +1,58 @@
 # RPS Challenge
 
+Author: Courtney Osborn
+
 Instructions
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Rock Paper Scissors or Ching-Chong-Cha, as South African's call it, is a two player game. It requires you to call either rock, paper or scissors at the same time as your opponent. The winner is determined by the calls made by both participants.
 
-Task 
-----
+Rules:
+-------
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- Rock beats scissors
+- Paper beats rock
+- Scissors beats paper
 
 
-As usual please start by
+My Version:
+-------
 
-* Forking this repo
-* TEST driving development of your app
+The user will be playing against the computer and selecting a button which depends on the call they want to make (rock, paper or scissors).
+
+Access:
+-------
+
+       $ git clone git@github.com:CourtneyLO/rps-challenge.git
+       $ cd rps-challenge
+       $ install bundle
+       $ ruby app.rb
+
+       Then go to localhost:4567
+       And enjoy
+
+Gems that should be Installed:
+-----------------------------
+
+- gem 'sinatra'
+- gem 'rake'
+- gem 'rspec-sinatra'
+- gem 'rspec'
+- gem 'capybara'
+
+Run Tests
+---------
+
+- $ rspec
 
 
-## Bonus level 1: Multiplayer
+Ching-Chon-Cha:
+--------------
+![alt tag](/img/Screen Shot 2017-01-02 at 12.37.26.png)
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+------------
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+![alt tag](/img/Screen Shot 2017-01-02 at 13.07.25.png)
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+------------
+![alt tag](/img/Screen Shot 2017-01-02 at 12.39.44.png)
