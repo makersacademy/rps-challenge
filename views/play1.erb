@@ -1,0 +1,7 @@
+<h3><%=session[:game].players[0].name%>&nbsp;Vs.&nbsp;<%=session[:game].players[1].name%></h3>
+<p> <%=session[:game].players[0].name%>'s turn to choose </p>
+<form action="/play2" method="POST">
+  <input type="submit" name="choice" value="Rock">
+  <input type="submit" name="choice" value="Paper">
+  <input type="submit" name="choice" value="Scissors">
+</form>
