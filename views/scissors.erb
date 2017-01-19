@@ -1,0 +1,19 @@
+<head>
+  <link rel='stylesheet' type='text/css' href='styles.css') />
+</head>
+
+<%= @p1 %> chose Scissors. <br>
+
+Computer chose <%= @computer_attack_type %>.
+
+<% if @computer_attack_type == 'Rock' %>
+  <p>Computer won!</p>
+<% elsif @computer_attack_type == 'Paper' %>
+  <p><%= @p1 %> won!</p>
+<% else %>
+  <p>It's a draw</p>
+<% end %>
+
+<form action='/play' method='get' >
+  <input type='submit' value='Play Again'>
+</form>
