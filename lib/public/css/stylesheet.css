@@ -1,0 +1,87 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+body {
+  font-family: Helvetica;
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
+img {
+  height: 30%;
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+.title_page {
+  background-color: #d9d9d9;
+}
+
+.main {
+  margin: 200px;
+}
+
+.form {
+  background-color: #f2f2f2;
+  text-align: center;
+  font-size: 18px;
+  border-style: double;
+  padding: 20px 10px;
+  width: 450px;
+  margin: auto;
+}
+
+.row {
+  padding: 30px;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+#first {
+  float: left;
+  text-align: center;
+}
+
+#second {
+  float: left;
+  text-align: center;
+}
+
+#third {
+  float: left;
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+}
+
+.button2 {
+  font-size: 30px;
+  width: 10%;
+  margin: auto;
+}

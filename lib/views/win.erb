@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <title> Results </title>
+  </head>
+
+  <body class="title_page">
+    <div class='main'>
+      <h1> Congratulations, you win! </h1>
+
+      <h3> You chose <%=@game.user_choice%></h3>
+      <h3> Computer chose <%=@game.computer_choice%></h3>
+
+      <form action='/play'>
+        <div class='button'>
+          <input class='button2' type="submit" value="Play Again">
+        </div>
+      </form>
+    </div>
+  </body>
+
+</html>
