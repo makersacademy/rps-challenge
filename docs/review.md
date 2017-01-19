@@ -90,7 +90,7 @@ Ruby class files should be named with the snake_case version of the class name. 
 
 In `spec/spec_helper.rb`, don't forget to add `Capybara.app = MyRackApp` or similar. You can use generators such as `rspec-sinatra init myApp lib/myapp.rb` but beware that the spec_helper will be overwritten; make sure you copy all the pre-written CI code, otherwise you will break your coveralls CI, causing silent failure of your pull request.
 
-## Not removing comments before committing
+## Not removing commented-out code before committing
 
 Old code should be deleted before you commit - it is distracting and makes your code hard to read. There is no reason to keep commented-out code - if you are commiting regularly, all your code will be in git so you can easily look back at how it looked before you made changes.
 
