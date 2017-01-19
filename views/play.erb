@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+body {
+    color: blue;
+}
+
+h1 {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<h1> <%= $game.player_1.name %> - Make your move </h1>
+
+<form action="/results" method="post">
+    <input type="hidden" name="selection" value="rock" />
+    <input type="submit" value="Rock">
+</form>
+
+<form action="/results" method="post">
+    <input type="hidden" name="selection" value="paper" />
+    <input type="submit" value="Paper">
+</form>
+
+<form action="/results" method="post">
+    <input type="hidden" name="selection" value="scissors" />
+    <input type="submit" value="Scissors">
+</form>
+
+</body>
+</html>
