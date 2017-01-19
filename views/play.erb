@@ -1,0 +1,21 @@
+<h1 style="color: red;">Rock, Paper, Scissors</h1>
+<h1 style="color: red;"><%= @player1_name.name %> vs Computer</h1>
+<iframe src="//giphy.com/embed/100sCgJKUKPwdi" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-999999;"></iframe>
+
+
+<div class="hit_button">
+  <form action='/rock' method='post'>
+    <input name="option" type="submit" value="Rock">
+  </form>
+</div>
+
+<div class="hit_button">
+  <form action='/paper' method='post'>
+    <input name="option" type="submit" value="Paper">
+  </form>
+</div>
+
+<div class="hit_button">
+  <form action='/scissors' method='post'>
+    <input name="option" type="submit" value="Scissors">
+</div>
