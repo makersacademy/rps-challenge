@@ -1,92 +1,63 @@
-# RPS Challenge
+# RPS Challenge [![Build Status](https://travis-ci.org/TudorTacal/rps-challenge.svg?branch=master)](https://travis-ci.org/TudorTacal/rps-challenge)
 
-Instructions
--------
+This project is our third weekend challenge at Makers Academy coding bootcamp.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+RPS is a **web app** that allows the user to play a game of **Rock, Paper, Scissors** against a computer.
 
-Task 
-----
+### Screenshots
 
-Knowing how to build web applications is getting us almost there as web developers!
+![First Page](https://s28.postimg.org/awjot27m5/First_page.png)
+* [The options page](https://s29.postimg.org/7it0nf4c7/Second_page.png)
+* [Displaying the result](https://s28.postimg.org/jdle58eal/winning_page.png)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+# Code snippets
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
+The options were saved in a constant and a hash was used to store the game rules:
 
 ```
-$ coveralls report
+WEAPONS = ["Rock", "Paper", "Scissors"]
+
+GAME_RULES = {rock: {rock: 0, paper: -1, scissors: 1},
+              paper: {rock: 1, paper: 0, scissors: -1},
+              scissors: {rock:-1, paper: 1, scissors: 0}}
+
+```
+I used Sintra's modular style:
+```
+class RPS < Sinatra::Base
+  get '/' do
+    erb(:index)
+  end
+```
+The state was saved into a class variable:
+```
+class Game
+  def self.create(player, computer)
+    @game = Game.new(player,computer)
+  end
+
+  def self.instance
+    @game
+  end
 ```
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+
+### Installation and Use
+
+1. To run the program first run **bundle install**.
+2. Run **ruby app.rb**.
+3. In your browser, open the link **localhost:4567**.
+
+### Technologies used
+
+1. **Sinatra** as DSL.
+2. **RSPEC** and **Capybara** for testing.
+3. **HTML5** and **CSS3** for styling.
+
+
+
+This repository was forked from https://github.com/makersacademy/rps-challenge
+
+### Contacts
+tudor.tacal@gmail.com

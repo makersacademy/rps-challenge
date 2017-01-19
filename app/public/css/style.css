@@ -1,0 +1,167 @@
+body {
+  background: #e96443;
+  background: -webkit-linear-gradient(to left, #e96443 , #904e95);
+  background: linear-gradient(to left, #e96443 , #904e95); /
+}
+
+#picture img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    box-shadow: 0 0 5px 2px #282a2d;
+    line-height: 1.4;
+}
+
+.result-pictures {
+  vertical-align:middle;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30%;
+  height: 300px;
+  margin: auto;
+}
+
+.result-pictures img {
+  max-width: 60%;
+}
+
+#marketeer {
+  font-size : 40px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#first {
+  vertical-align:middle;
+  text-align:center;
+}
+
+#title h1{
+  font-size : 50px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#title {
+  text-align: center;
+}
+
+.name {
+  font-size : 70px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#play {
+  vertical-align:middle;
+  text-align:center;
+  margin: auto;
+}
+
+#form {
+  display: inline-block;
+
+}
+
+#rock{
+  background-image: url('http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=55203919');
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position:center;
+  border: 2px solid;
+  border-radius: 50px;
+}
+
+#paper {
+  background-image: url('http://cliparts101.com/files/313/EC0266DC497CEC746CB9BB86E505A7AC/Paper_corner.png');
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position:center;
+  border: 2px solid;
+  border-radius: 50px;
+
+}
+
+#scissors {
+  background-image: url('http://www.directhairdressingscissors.co.uk/scissors/glamtech-evo-iridesent-55-hairdressing-scissors-l.png');
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position:center;
+  border: 2px solid;
+  border-radius: 50px;
+
+}
+
+#result {
+  text-align: center;
+
+}
+
+#result h1 {
+  text-align: center;
+  font-size : 50px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#result h2 {
+  text-align: center;
+  font-size : 40px;
+  color: #f5f5dc;
+  font-family: Arial;
+  text-shadow: 2px 2px black;
+}
+
+
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  border: none;
+  font: normal 72px/normal "Passero One", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 0 1px 0 rgb(204,204,204) , 0 2px 0 rgb(201,201,201) , 0 3px 0 rgb(187,187,187) , 0 4px 0 rgb(185,185,185) , 0 5px 0 rgb(170,170,170) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.enjoy-css:hover {
+  color: rgba(169,214,169,1);
+  text-shadow: 0 1px 0 rgba(255,255,255,1) , 0 2px 0 rgba(255,255,255,1) , 0 3px 0 rgba(255,255,255,1) , 0 4px 0 rgba(255,255,255,1) , 0 5px 0 rgba(255,255,255,1) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 -5px 10px rgba(0,0,0,0.247059) , 0 -7px 10px rgba(0,0,0,0.2) , 0 -15px 20px rgba(0,0,0,0.14902) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
+
+#play-again {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #ff7f50;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: auto;
+}
+
+#replay {
+  text-align: center;
+  /*float: center;*/
+}

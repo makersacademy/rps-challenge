@@ -4,6 +4,8 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec-sinatra'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'rspec'
@@ -12,4 +14,5 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'pry'
 end
