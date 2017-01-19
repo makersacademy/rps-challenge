@@ -1,92 +1,100 @@
 # RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+```
+       __ \/_
+      (' \`\
+   _\, \ \\/ 
+    /`\/\ \\
+         \ \\    
+          \ \\/\/_
+          /\ \\'\
+        __\ `\\\
+         /|`  `\\
+                \\
+                 \\
+                  \\    ,
+                   `---'  
 ```
 
-Hints on functionality
+Description
+===========
+This is the Week 3 weekend challenge from Makers Academy. The challenge was to design a rock, paper, scissors game to the following specification:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* A player can register their name before playing an online game
+* A player can play a game of Rock Paper Scissors
+* A player is presented with the choices Rock Paper Scissors
+* A player can choose any option
+* The computer opponent will choose a random option
+* A winner will be declared
 
+Project consists of a Game, Player and Computer class, and a Weapons module.
 
-As usual please start by
+Extra Features
+--------------
+* Players can now also choose Lizard or Spock
+* Players can choose to do a rematch after a game has ended
+* CSS added to make the whole thing a little less hideous!
 
-* Forking this repo
-* TEST driving development of your app
+Technologies
+============
+* Code is written in Ruby
+* Testing done using RSpec
+* Sinatra Framework (DSL) used to create web application using Ruby
+* Coveralls used to assess test coverage
+* Travis CI used to check build status (badge displayed below)
 
+How to Install
+==============
+1. Fork this repo, and clone to your local machine
+2. Run the command `gem install bundle` (if you don't have bundle already)
+3. When the installation completes, run `bundle` to install all of the gems needed to run the game
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
+How to Use
+==========
+1. Start up the game on a local server by entering command `ruby app.rb`
 ```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
+[16:06:30] KimWilson:rps-challenge git:(master) $ ruby app.rb
+[2016-12-20 16:06:34] INFO  WEBrick 1.3.1
+[2016-12-20 16:06:34] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin14]
+== Sinatra (v1.4.7) has taken the stage on 4567 for development with backup from WEBrick
+[2016-12-20 16:06:34] INFO  WEBrick::HTTPServer#start: pid=99059 port=4567
 ```
-$ coveralls report
-```
+2. Go to your preferred web browser (I like Chrome) and navigate to localhost:4567
+3. Try to beat the computer!
+
+Optional: If you wish to run the tests for this project, enter `rspec` into your command line. If you wish to view the test coverage, enter `coveralls report` into your command line.
+
+Notes
+=====
+Multiplayer
+-----------
+I would like to add a Multiplayer option in the future. This would allow two players to play against each other in the same browser. In order to do this a Game class would be initialized with two players, the first would always be an instance of the Player class, the second could be another Player class or would default to a Computer class if a second player name is not given by the user.
+
+Encapsulation
+-------------
+A Computer class does currently exist and has the capacity to choose a weapon. I would like to complete my work on the Computer class. This will involve removing the responsibility of choosing a wespon for the computer from my Game class. Ultimately the Game class will not care who the two players are - player vs player, or player vs computer - as it will function the same either way.
+
+Examples
+========
+Homepage:
+
+<kbd>![alt text](http://i.imgur.com/TRq6SDi.png)</kbd>
+
+Choose Your Weapon:
+
+<kbd>![alt text](http://i.imgur.com/zbWjoGP.png)</kbd>
+
+Game win:
+
+<kbd>![alt text](http://i.imgur.com/YdZjJ6q.png)</kbd>
+
+Game Loss:
+
+<kbd>![alt text](http://i.imgur.com/yG7Yyb7.png)</kbd>
+
+Game Draw:
+
+<kbd>![alt text](http://i.imgur.com/7LYgmKU.png)</kbd>
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+Travis CI status badge [![Build Status](https://travis-ci.org/kwilson541/rps-challenge.svg?branch=master)](https://travis-ci.org/kwilson541/rps-challenge)

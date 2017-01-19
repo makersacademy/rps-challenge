@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/rps_style.css">
+	</head>
+	
+	<body>
+		<%= @game.player.name %> chose <%= @game.player.weapon.to_s.capitalize %>
+		<br>
+		The Computer chose <%= @game.computer_weapon.to_s.capitalize %>
+
+		<h2>Looks like it's a draw. How boring.</h2>
+		<br>
+		<form action="/play" method="get">
+			<input type="submit" value="Rematch!">
+		</form>
+	</body>
+</html>
