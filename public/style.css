@@ -1,0 +1,60 @@
+.title_page {
+  background-color: black;
+}
+
+.title {
+  color: red;
+}
+
+.blink_me {
+  color: red;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.buttons {
+  color: yellow;
+}
+
+.paper {
+  background-color: blue;
+}
+
+.paper_text {
+  color: red;
+}
+
+.rock {
+  background-color: red;
+}
+
+.rock_text {
+  color: green;
+}
+
+.scissors {
+  background-color: orange;
+}
+
+.scissors_text {
+  color: purple;
+}
+
+.lizard {
+  background-color: green;
+}
+
+.lizard_text {
+  color: yellow;
+}
+
+.spock {
+  background-color: purple;
+}
+
+.spock_text {
+  color: orange;
+}

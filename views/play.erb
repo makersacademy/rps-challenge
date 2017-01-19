@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html class='title_page'>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class='blink_me'>Hi <%= @player.name %></h1>
+  <h2 class='buttons'>Rock...Paper...Scissors!</h2>
+    <form action='/rock' method='get'>
+      <div>
+        <input type='submit' value='Rock'/>
+      </div>
+    </form>
+  <form action='/paper' method='get'>
+    <div>
+      <input type='submit' value='Paper'/>
+    </div>
+  </form>
+    <form action='/scissors' method='get'>
+      <div>
+        <input type='submit' value='Scissors'/>
+      </div>
+    </form>
+  </form>
+    <form action='/lizard' method='get'>
+      <div>
+        <input type='submit' value='Lizard'/>
+      </div>
+    </form>
+  </form>
+    <form action='/spock' method='get'>
+      <div>
+        <input type='submit' value='Spock'/>
+      </div>
+    </form>
+    <iframe src="//giphy.com/embed/GLVPjaOumiqFq" width="480" height="335" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/GLVPjaOumiqFq">via GIPHY</a></p>
+</body>
+</html>
