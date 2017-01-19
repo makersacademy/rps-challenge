@@ -1,0 +1,17 @@
+Choose your weapon, <%= @game.player1.name %>
+
+<form method='post' action='/rock'>
+  <div class='button'>
+    <input type='submit' value='rock' id='rock'>
+  </div>
+</form>
+<form method='post' action='/scissors'>
+  <div class='button'>
+    <input type='submit' value='scissors' id='scissors'>
+  </div>
+</form>
+<form method='post' action='/paper'>
+  <div class='button'>
+    <input type='submit' value='paper' id='paper'>
+  </div>
+</form>

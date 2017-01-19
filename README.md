@@ -1,92 +1,66 @@
 # RPS Challenge
 
-Instructions
--------
+[![Build Status](https://travis-ci.org/aabolade/rps-challenge.svg?branch=master)](https://travis-ci.org/aabolade/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/aabolade/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/aabolade/rps-challenge?branch=master)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is a web based application using Sinatra where a single player can take part in a game of Rock, Paper, Scissors. The basic rules are outlined below:
 
-Task 
-----
+User Stories
+============
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
+```
+As a player
+So I can seen my name
 I would like to register my name before playing an online game
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+As a player
+So I can enjoy myself away from the daily grind
+I would like to be able to play rock paper scissors
 ```
 
-Hints on functionality
+Approach and Technologies used
+==============================
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* Code written in Ruby.
 
+* Unit testing using RSpec.
 
-As usual please start by
+* Feature testing using Capybara.
 
-* Forking this repo
-* TEST driving development of your app
+* Sinatra to host local server for the game.
 
+This project uses three main classes:
 
-## Bonus level 1: Multiplayer
+- **Game**: responsible for starting the game with two players and deciding the outcome of each battle.
+- **Player**: responsible for storing the name of the player and the player's choice of weapon e.g. (rock, paper or scissors).
+- **Opponent**: responsible for selecting a randomized weapon against the player.
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Instructions and Installation
+=============================
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+1. Fork this repo, and clone to your local machine
+2. Run the command `gem install bundle` (if you don't have bundle already)
+3. When the installation completes, run `bundle`
+4. Run the application by typing ```rackup``` . This will initiate a local Sinatra session and you will see the following in your terminal:
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+```
 
-## Basic Rules
+[2016-11-27 23:10:09] INFO  WEBrick 1.3.1
+[2016-11-27 23:10:09] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin14]
+== Sinatra (v1.4.7) has taken the stage on 4567 for development with backup from WEBrick
+[2016-11-27 23:10:09] INFO  WEBrick::HTTPServer#start: pid=8205 port=4567
+
+```
+
+5. Now go to your browser and enter the following url:  **https://localhost:4567** . Enter your name, click play and choose your weapon!
+
+The rules are as followed:
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+Further Features
+================
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+* Implement multiplayer so two people can play against each other.
