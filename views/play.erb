@@ -1,0 +1,36 @@
+<body class="play_page">
+  <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+  <br><br>
+  <form action="/battle" method="post">
+    <section class="player_1_weapon_form">
+      <br>
+      <%= @game.player_1.name %> choose a weapon...
+      <br>
+      <input type="radio" value="Rock" name="player_1_weapon"> Rock <br>
+      <input type="radio" value="Paper" name="player_1_weapon"> Paper <br>
+      <input type="radio" value="Scissors" name="player_1_weapon"> Scissors <br>
+    </section>
+
+    <% if @mode == "Multiplayer" %>
+      <section class="player_2_weapon_form">
+        <br>
+        <%= @game.player_2.name %> choose a weapon...
+        <br>
+        <input type="radio" value="Rock" name="player_2_weapon"> Rock <br>
+        <input type="radio" value="Paper" name="player_2_weapon"> Paper <br>
+        <input type="radio" value="Scissors" name="player_2_weapon"> Scissors <br>
+      </section>
+    <% end %>
+    <br>
+    <input type="submit" value="Battle!">
+  </form>
+
+
+  <section class="battle_results">
+    <%= @game.player_1.name %> chose <%= @game.player_1.weapon %>
+    <br><br>
+    <%= @game.player_2.name %> chose <%= @game.player_2.weapon %>
+    <br><br>
+    <%= @game.battle_result %>
+  </section>
+</body>
