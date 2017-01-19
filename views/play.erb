@@ -1,0 +1,35 @@
+<style>
+body {background-color:#232B2B ;}
+h1 { color: #DC3D24; font-family: 'Helvetica Neue', sans-serif; font-size: 150px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: left; }
+h2 {color: #E3AE57; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+form {color: #E3AE57; font-family: 'Helvetica Neue', sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; display: inline-block; }
+</style>
+
+<h1>
+Welcome
+</br>
+<%= @game.player.name %>
+</h1>
+
+<h2> Are you ready to challenge the computer? </h2>
+
+<form action="/choice" method="post">
+
+<div style="width:400px; height:500px; float:left; padding:0px 10px;" align="center">
+  <img src="http://images.freeimages.com/images/previews/5ae/rocks-1408556.jpg" height="300" width="400">
+  <input type="radio" name="choice" id="Rock" value="Rock" align="middle" /> Rock
+</div>
+
+<div style="width:400px; height:500px; float:left; padding:0px 10px;" align="center">
+  <img src="http://images.freeimages.com/images/previews/dcc/newspaper-1198887.jpg" height="300" width="400">
+  <input type="radio" name="choice" id="Paper" value="Paper" align="middle" /> Paper
+</div>
+
+<div style="width:400px; height:500px; float:left; padding:0px 10px;" align="center">
+  <img src="http://images.freeimages.com/images/previews/844/scissors-1316595.jpg" height="300" width="400">
+  <input type="radio" name="choice" id="Scissors" value="Scissors" align="middle" /> Scissors
+</div>
+
+<input type="submit" value="Choose" align="middle"/>
+
+</form>
