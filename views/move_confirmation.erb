@@ -1,0 +1,37 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+  <center>
+    <h2>Your opponent chose <%=@game.computer.move %>!</h2>
+
+    <p>
+      <%case @game.who_won
+    when :player %>
+    <%=@game.player.move.to_s.capitalize%> beats <%=@game.computer.move %>, congratulations on your victory, <%=@game.player.name%>!
+    <%when :computer %>
+    <%=@game.computer.move.to_s.capitalize%> beats <%=@game.player.move%>, you lose, <%=@game.player.name%>!
+    <%when :draw %>
+    You both chose <%=@game.player.move%>, this means draw!
+    <%end%>
+  </p>
+  <p>
+    <h2>
+      Score:</p>
+      <p>
+        <div id="wrapper">
+          <div id="player"><%=@game.player.name%> <%=@game.score[:player]%></div>
+          <div id="vs"> VS. </div>
+          <div id="computer"><%=@game.score[:computer]%> <%=@game.computer.name%></div>
+        </div>
+      </h2>
+    </p>
+    <p>
+      <form action='/play' method='get'>
+        <input type='submit' value='Back to the game'>
+      </form>
+    </p>
+  </center>
+</body>
