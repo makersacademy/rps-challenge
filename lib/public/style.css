@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+}
+
+blink {
+    animation-duration: 1000ms;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation:blink 1000ms infinite; /* Safari and Chrome */
+}
+@keyframes blink {
+    from {
+        color:orange;
+    }
+    to {
+        color:purple;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:orange;
+    }
+    to {
+        color:purple;
+    }
+}
+
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    /*border: solid 2px;
+    border-radius: 50%;*/
+    margin: 1.75em auto 0;
+}
+.circle-container a {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 6em; height: 6em;
+    margin: -2em;
+}
+.circle-container img { display: block; width: 100%; }
+.deg { transform: translate(12em); } /* 12em = half the width of the wrapper */
+.deg0 { transform: rotate(270deg) translate(12em) rotate(-270deg); }
+.deg1 { transform: rotate(342deg) translate(12em) rotate(-342deg); }
+.deg2 { transform: rotate(54deg) translate(12em) rotate(-54deg); }
+.deg3 { transform: rotate(126deg) translate(12em) rotate(-126deg);}
+.deg4 { transform: rotate(198deg) translate(12em) rotate(-198deg); }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Rock Paper Scissors Lizard Spock</title>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors Lizard Spock</h1>
+<% if @game.player.choice == nil %>
+
+
+
+<h2>  Welcome <blink><%= @game.player.name %> </blink></h2>
+
+  <h3>Make your choice</h3>
+
+<form action='/choice' method='post'>
+
+  <div class='circle-container'>
+      <a class='deg0'>
+        <label>
+          <input type='radio' id='rock' name='choice' value='rock'>
+          <img src="./images/rock.jpg">
+        </label>
+      </a>
+      <a class='deg1'>
+        <label>
+          <input type='radio' id='paper' name='choice' value='paper'>
+          <img src="./images/paper.jpg">
+        </label>
+      </a>
+      <a class='deg2'>
+        <label>
+          <input type='radio' id='scissors' name='choice' value='scissors'>
+          <img src="./images/scissors.jpg">
+        </label>
+      </a>
+      <a class='deg3'>
+        <label>
+          <input type='radio' id='scissors' name='choice' value='lizard'>
+          <img src='./images/lizard.jpg'>
+        </label>
+      </a>
+      <a class='deg4'>
+        <label>
+          <input type='radio' id='scissors' name='choice' value='spock'>
+          <img src='./images/spock.jpg'>
+        </label>
+      </a>
+      <a class='center'><input type='image' src='images/play.jpg' alt='play'></a>
+  </div>
+
+</form>
+
+
+<% else %><h2>
+<% unless @game.player.choice == nil %>
+You chose <%= @game.player.choice %>
+<% end %>
+<br><br>
+<% unless @game.chose_hand == nil %>
+Your opponent chose <%= @game.chose_hand %>
+<br>
+<br>
+<%= @game.winner %>
+<% end %>
+<br>
+<br>
+
+<form action='/game' type='get'>
+  <input type='image' src='images/play_again.jpg' alt='play again'>
+  <% @game.clear %>
+</form>
+</h2>
+
+<%end%>
+</body>
+</html>
