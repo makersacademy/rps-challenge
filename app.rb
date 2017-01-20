@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'tilt/erb'
 
 class RPS < Sinatra::Base
   enable :sessions
