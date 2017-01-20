@@ -11,6 +11,7 @@ class RPS < Sinatra::Base
   post '/play' do
     session[:player] = params[:player]
     @player_name = session[:player]
+    @computer = Computer.new
     erb(:play)
   end
 

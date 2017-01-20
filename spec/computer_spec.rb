@@ -5,7 +5,7 @@ describe Computer do
 
   describe 'points' do
     it "initializes with a default amount of points" do
-      expect(computer.points).to eq(Computer::HANDICAP)
+      expect(computer.wins).to eq(Computer::HANDICAP)
     end
   end
 end

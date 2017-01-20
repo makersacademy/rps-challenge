@@ -1,9 +1,19 @@
 class Computer
+  attr_reader :wins
+
   HANDICAP = 0
+  # @name = nil
 
-  attr_reader :points
+  # def self.instance
+  #   @name
+  # end
+  #
+  # def self.instance=(value)
+  #   @name = value
+  # end
 
-  def initialize(points = HANDICAP)
-    @points = points
+  def initialize(wins = HANDICAP)
+    @wins = wins
+    # self.class.instance = self
   end
 end
