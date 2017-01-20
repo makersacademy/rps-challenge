@@ -17,7 +17,7 @@ feature '2.Play' do
     visit('/register')
     fill_in :p1_name, with: 'Me'
     click_button 'Submit'
-    click_button 'Rock'
+    choose 'Rock' #radio button option
     msg = "You chose 'Rock' and The Computer chose 'Scissors', YOU WIN!"
     expect(page).to have_content msg
   end
