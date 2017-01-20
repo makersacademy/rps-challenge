@@ -6,10 +6,9 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'coveralls'
 require 'simplecov'
-require 'capybara'
 require 'capybara/rspec'
-require 'rspec'
 require 'capybara/poltergeist'
+require 'features/web_helpers.rb'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
