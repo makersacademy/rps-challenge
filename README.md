@@ -2,6 +2,8 @@
 
 My approach
 ------------
+[![Coverage Status](https://coveralls.io/repos/github/shezdev/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/shezdev/rps-challenge?branch=master)
+
 1. Environment Setup - Modified gem file to require 'rspec-sinatra', ran bundle to install gems, backed up contents of spec_helper.rb, ran rspec-sinatra init --app RPS app.rb (which overwrote spec_helper.rb) then ensured spec_helper.rb included all of the original content. Started the webserver with rackup -p 4567
 
 
