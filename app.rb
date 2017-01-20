@@ -10,8 +10,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @p1_name = params[:p1_name]
+    @p1_name = params[:p1_name_input]
     erb :play # same as an internal GET
+  end
+
+  post '/result' do
+    @p1_choice = params[:p1_choice_input]
+    erb :winner # same as an internal GET
   end
 
 
