@@ -11,7 +11,12 @@ My approach
 * b) Then created a get /register route in app.rb and an associated views/index.erb view.
 * c) Created a post /name route in app.rb and an associated views/play.erb view.
 
-3. Created a spec/features/play_spec.rb
+3. Created a second feature test - spec/features/play_spec.rb
+* a) scenario a just tests for the presence of text - passes
+* b) scenario b tests when a radio button called Rock is selected and submitted that the content "You chose 'Rock' and The Computer chose 'Scissors', YOU WIN!" will be displayed.
+c) Adding a form in play.erb that posts to /result
+d) /result will do x and redirect to /winner.
+
 
 Instructions
 -------

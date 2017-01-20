@@ -15,7 +15,8 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    @p1_choice = params[:p1_choice_input]
+    # @p1_choice = params[:p1_choice_input]
+    @p1_choice = params[:Rock]
     erb :winner # same as an internal GET
   end
 
