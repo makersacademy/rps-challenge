@@ -1,8 +1,8 @@
 require 'sinatra/base'
-require './lib/player'
-require './lib/game'
+# require './lib/player'
+# require './lib/game'
 
-class Rps < Sinatra::Base
+class RPSWeb < Sinatra::Base
 
   enable :sessions
   set :session_secret, 'super secret'
@@ -16,7 +16,7 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
-  
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 
