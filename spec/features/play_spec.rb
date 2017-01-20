@@ -6,7 +6,7 @@
 # I would like to be able to play rock/paper/scissors
 
 feature '2. Play' do
-  scenario 'player one chooses Rock, Paper or Scissors' do
+  scenario 'player one sees they have to choose Rock, Paper or Scissors' do
     visit('/register')
     fill_in :p1_name, with: 'Me'
     click_button 'Submit'
