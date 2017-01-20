@@ -1,0 +1,57 @@
+<body>
+  <div class="upper">
+    <h1><%= @game.player1.name%></h1>
+<h2>Please choose your weapon!</h2>
+  </div>
+  <div class="middle">
+<form action="/select" method="post">
+  <input type="submit" name="weapon" value="rock">
+  <input type="submit" name="weapon" value="paper">
+  <input type="submit" name="weapon" value="scissors">
+</form>
+</div>
+</body>
+
+<style>
+
+body {
+  background-image: url('http://i.imgur.com/377XzNX.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.upper {
+  color: #000000;
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Monaco', monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 36.3px;
+
+}
+
+.middle {
+  color: #0B3240;
+  text-align: center;
+  font-family: 'Monaco', monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 36.3px
+}
+
+.lower {
+    text-align: center;
+}
+
+input[type="submit"] {
+  width: 75px;
+  height: 300px;
+  font-size: 100px;
+}
+
+</style>
