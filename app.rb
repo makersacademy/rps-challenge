@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'tilt/erb'
+require './lib/computer'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -11,6 +13,7 @@ class RPS < Sinatra::Base
   post '/play' do
     session[:player] = params[:player]
     @player_name = session[:player]
+    @player = Player.new
     @computer = Computer.new
     erb(:play)
   end

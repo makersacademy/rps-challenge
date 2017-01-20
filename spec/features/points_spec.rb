@@ -6,4 +6,8 @@ feature "Initial Points" do
     expect(page).to have_content("The computer has 0 wins")
   end
 
+  scenario "player initializes with default wins" do
+    sign_in_and_play
+    expect(page).to have_content("Player has 0 wins")
+  end
 end
