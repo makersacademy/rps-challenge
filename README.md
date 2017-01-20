@@ -6,6 +6,10 @@ My approach
 
 1. Environment Setup - Modified gem file to require 'rspec-sinatra', ran bundle to install gems, backed up contents of spec_helper.rb, ran rspec-sinatra init --app RPS app.rb (which overwrote spec_helper.rb) then ensured spec_helper.rb included all of the original content. Started the webserver with rackup -p 4567
 
+**2. Created spec/features directory to house my feature tests.
+* a) Created feature test 1 - register_spec.rb.
+* b) Then created a get /register route in app.rb and an associated views/index.erb view.
+* c) Created a post /name route in app.rb and an associated views/play.erb view.
 
 Instructions
 -------
