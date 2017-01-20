@@ -1,6 +1,6 @@
 <body>
-<h3>Player Name: <%= @player_name %></h3>
-<h4><%= @player_name %> has <%= @player.wins %> wins</h4><br>
+<h3>Player Name: <%= @game.player.name %></h3>
+<h4><%= @game.player.name %> has <%= @game.player.wins %> wins</h4><br>
 <h3>Computer</h3>
-<h4>The computer has <%= @computer.wins %> wins</h4><br>
+<h4>The computer has <%= @game.computer.wins %> wins</h4><br>
 </body>
