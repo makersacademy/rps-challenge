@@ -5,11 +5,22 @@
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 
-feature '2. Play' do
-  scenario 'player one sees they have to choose Rock, Paper or Scissors' do
+feature '2.Play' do
+  scenario 'a) player one sees they have to choose Rock, Paper or Scissors' do
     visit('/register')
     fill_in :p1_name, with: 'Me'
     click_button 'Submit'
     expect(page).to have_content 'Choose Rock, Paper or Scissors'
   end
+
+  scenario 'b) player one chooses rock and the computer plays scissors' do
+    visit('/register')
+    fill_in :p1_name, with: 'Me'
+    click_button 'Submit'
+    click_button 'Rock'
+    msg = "You chose 'Rock' and The Computer chose 'Scissors', YOU WIN!"
+    expect(page).to have_content msg
+  end
+
+
 end
