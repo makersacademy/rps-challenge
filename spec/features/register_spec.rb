@@ -1,6 +1,11 @@
 # in spec/features/register_spec.rb
 
-feature 'register' do
+# User story 1:
+# As a marketeer
+# So that I can see my name in lights
+# I would like to register my name before playing an online game
+
+feature '1. Register' do
   scenario 'submit one player name' do
     visit('/register')
     fill_in :p1_name, with: 'Me'

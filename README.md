@@ -11,6 +11,8 @@ My approach
 * b) Then created a get /register route in app.rb and an associated views/index.erb view.
 * c) Created a post /name route in app.rb and an associated views/play.erb view.
 
+**3. Created a spec/features/play_spec.rb
+
 Instructions
 -------
 
