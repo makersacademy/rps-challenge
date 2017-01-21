@@ -5,7 +5,7 @@ require 'spec_helper'
 # I would like to register my name before playing an online game
 
 feature 'Registering players name' do
-  scenario 'register and see my name' do
+  scenario 'Register and see my name' do
     visit '/' # I'm visualising a form on the index page,
     fill_in 'name', with: 'Ferdinand' # where I can enter my name,
     click_button 'Submit' # click submit,
