@@ -1,18 +1,12 @@
 <h2> Welcome <%= @marketeer %> </h2>
-  <form action="/game">
+  <form action='/game' method="post">
     Feeling lucky?
     <br>
     <br>
     <label for="choice">
     Please enter your selection:
-    <input type="checkbox" name="choice"
-    value='Rock'/> Rock
-    <input type="checkbox" name="choice"
-    value='Paper'/> Paper
-    <input type="checkbox" name="choice"
-    value='Scissors'/> Scissors
-  </label>
-    <br>
-    <br>
-    <input type="submit" value="Play">
+    <input type="submit" name="choice" value='Rock'/>
+    <input type="submit" name="choice" value='Paper'/>
+    <input type="submit" name="choice" value='Scissors'/>
+    </label>
   </form>

@@ -12,12 +12,18 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/selection' do
-    @marketeer = params[:marketeer_name]
+    session[:marketeer_name] = params[:marketeer_name]
+    @marketeer = session[:marketeer_name]
     erb :selection
   end
 
+  post '/game' do
+    session[:choice] = params[:choice]
+    redirect '/game'
+  end
+
   get '/game' do
-    @choice = params[:choice]
+    @choice = session[:choice]
     erb :game
   end
 
