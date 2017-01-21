@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <head>
+    <link href="/stylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <div class="landing-page">
+      <h1>Hi, <%= @game.player.name %>!</h1>
+      <h2>Are you ready to play?</h2>
+    </div>
+
+    <div class="instructions">
+      <h3>Select your move below and press play:</h3>
+    </div>
+
+    <form class="play-form" action="/choice" method="post">
+      <label>
+        <img src="/images/rock.png" style="height: 60px">
+        <input type="radio" name="choice" value="Rock">Rock
+      </label>
+      <label>
+        <img src="/images/paper.png" style="height: 60px">
+        <input type="radio" name="choice" value="Paper">Paper
+      </label>
+      <label>
+        <img src="/images/scissors.png" style="height: 60px">
+        <input type="radio" name="choice" value="Scissors">Scissors
+      </label>
+      <br><br>
+      <input type="submit" value="Play">
+    </form>
+
+    <a href="/">Start as new player</a>
+
+  </body>
+</html>
