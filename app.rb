@@ -13,13 +13,14 @@ class Rps < Sinatra::Base
   end
 
   post '/play' do
-    player_name = Player.new(params[:player_name])
-    @game = Game.create(player_name)
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
     erb :play
   end
 
   post '/result' do
-    @choice = params[:choice]
+    @game.player.set_choice(params[:choice])
+    @game.opponent.set_choice("Paper")
     erb :result
   end
 

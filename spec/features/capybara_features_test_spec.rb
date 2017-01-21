@@ -29,18 +29,24 @@ RSpec.feature "Capybara feature test" do
   scenario "The player chooses 'rock'" do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content("You chose Rock")
+    expect(page).to have_content("Ben chose Rock")
   end
 
   scenario "The player chooses 'paper'" do
     sign_in_and_play
-    click_button "Rock"
-    expect(page).to have_content("You chose Rock")
+    click_button "Paper"
+    expect(page).to have_content("Ben chose Paper")
   end
 
   scenario "The player chooses 'scissors'" do
     sign_in_and_play
-    click_button "Rock"
-    expect(page).to have_content("You chose Rock")
+    click_button "Scissors"
+    expect(page).to have_content("Ben chose Scissors")
+  end
+
+  scenario "The computer chooses 'paper'" do
+    sign_in_and_play
+    click_button "Scissors"
+    expect(page).to have_content("Your opponent chose Paper")
   end
 end
