@@ -1,3 +1,16 @@
-h1 {
-  color: red;
+body {
+  text-align: center;
+}
+
+.main-img {
+  height: 150px;
+}
+
+input[type=submit] {
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    margin: 10px 0px 10px 0px;
 }
