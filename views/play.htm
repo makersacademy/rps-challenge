@@ -23,7 +23,7 @@ body {
 	text-align: center
 }
 .Main {
-	
+
 }
 input#rock    {
 background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/rock.png);
@@ -61,19 +61,22 @@ border: 0;
 <div class="Main">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="197" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
+      <td height="105" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="47" align="center"><span class="PlayerInfo"><%= @message %></span></td>
     </tr>
     <tr>
       <td><form id="playform" name="playform" method="post" action="/fight">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td>&nbsp;</td>
-            <td width="280" align="center"><input type="submit" id="rock" name="rock" value="Rock" /></td>
-            <td width="280" align="center"><input type="submit" id="paper" name="paper" value="Paper" /></td>
-            <td width="280" align="center"><input type="submit" id="scissors" name="scissors" value="Scissors" /></td>
+            <td width="280" align="center"><input type="submit" id="rock" name="weapon" value="Rock" /></td>
+            <td width="280" align="center"><input type="submit" id="paper" name="weapon" value="Paper" /></td>
+            <td width="280" align="center"><input type="submit" id="scissors" name="weapon" value="Scissors" /></td>
             <td>&nbsp;</td>
           </tr>
         </table>

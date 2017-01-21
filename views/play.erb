@@ -61,10 +61,13 @@ border: 0;
 <div class="Main">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="197" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
+      <td height="105" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="47" align="center"><span class="PlayerInfo"><%= @message %></span></td>
     </tr>
     <tr>
       <td><form id="playform" name="playform" method="post" action="/fight">
