@@ -5,10 +5,10 @@ body {
   font-size: 16px;
   color: #8728b3;
   text-align: center;
-  background: #E8CBC0; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #E8CBC0 , #636FA4); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #E8CBC0 , #636FA4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00d2ff , #928DAB); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 body * {
@@ -16,6 +16,7 @@ body * {
   padding: 5px;
   font-family: helvetica, sans-serif;
 }
+
 h1 {
   color: #8728b3;
   text-shadow: 2px 2px 5px #000;

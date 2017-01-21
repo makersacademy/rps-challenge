@@ -1,6 +1,11 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+
+  # before do
+  #   @game = Game.instance
+  # end
+
   get '/' do
     erb :index
   end
@@ -8,6 +13,10 @@ class RPS < Sinatra::Base
   post '/names' do
     @player = params[:player_name]
     erb :play
+  end
+
+  post '/result' do
+
   end
 
   # start the server if ruby file executed directly
