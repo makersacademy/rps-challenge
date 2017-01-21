@@ -6,10 +6,22 @@
   <body>
 
     <div class="choice">
-      <h1>You selected <em><%= @player.choice %></em> and the computer selected <em><%= @computer.choice %></em>.</h1>
+      <h1>You selected <em><%= @game.player.choice %></em> and the computer selected <em><%= @game.computer.choice %></em>.</h1>
     </div>
 
     <div class="result">
+      <% if @game.draw? %>
+        <h2>Sorry, it was a draw!</h2>
+      <% elsif @game.won? %>
+        <h2>You won!!</h2>
+      <% else %>
+        <h2>You lose!!</h2>
+      <% end %>
+    </div>
+
+    <div class="return-to-home">
+      <h1>Want to play again?</h1>
+      <a href='/play'>Yes</a>
     </div>
 
   </body>

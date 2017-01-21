@@ -8,7 +8,7 @@ describe Game do
   subject(:game) { described_class.new(kat, computer) }
 
   it 'should have two players' do
-    expect(game).to have_attributes(player_one: kat, player_two: computer)
+    expect(game).to have_attributes(player: kat, computer: computer)
   end
 
 end

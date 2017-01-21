@@ -6,7 +6,7 @@
   <body>
 
     <div class="landing-page">
-      <h1>Hi, Kat!</h1>
+      <h1>Hi, <%= @game.player.name %>!</h1>
       <h2>Are you ready to play?</h2>
       <h3>Select your move below and press play:</h3>
     </div>
@@ -27,6 +27,8 @@
       <br><br>
       <input type="submit" value="Play">
     </form>
+
+    <a href="/">Start as new player</a>
 
   </body>
 </html>
