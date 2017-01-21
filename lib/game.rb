@@ -74,9 +74,9 @@ class Game
 
   def select_weapon
     case Kernel.rand(3)
-      when 0 ; "Rock"
-      when 1 ; "Paper"
-      when 2 ; "Scissors"
+    when 0 then "Rock"
+    when 1 then "Paper"
+    when 2 then "Scissors"
     end
   end
 
@@ -89,10 +89,9 @@ class Game
   end
 
   def update_score(winner)
-    if winner != 2
-      @players[winner].add_score(DEFAULT_POINTS)
-      @winner = @players[winner].name if @players[winner].add_score >= DEFAULT_WINNING_POINTS
-    end
+    return if winner == 2
+    @players[winner].add_score(DEFAULT_POINTS)
+    @winner = @players[winner].name if @players[winner].add_score > DEFAULT_WINNING_POINTS
   end
 
   def output(weapon1, weapon2, winner)

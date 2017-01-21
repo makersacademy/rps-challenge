@@ -34,7 +34,8 @@ describe Game do
     describe "Player selects Rock and Player 2 selects Scissors" do
       it "Returns Player 1 win message" do
         allow(Kernel).to receive(:rand).and_return(2)
-        expect(game.fight_with("Rock")).to eq "Rock vs Scissors - Player 1 wins the match"
+        message = "Rock vs Scissors - Player 1 wins the match"
+        expect(game.fight_with("Rock")).to eq message
       end
     end
 
@@ -55,7 +56,8 @@ describe Game do
     describe "Player selects Rock and Player 2 selects Paper" do
       it "Returns Player 1 win message" do
         allow(Kernel).to receive(:rand).and_return(1)
-        expect(game.fight_with("Rock")).to eq "Rock vs Paper - Computer wins the match"
+        message = "Rock vs Paper - Computer wins the match"
+        expect(game.fight_with("Rock")).to eq message
       end
     end
 
@@ -76,7 +78,8 @@ describe Game do
     describe "Player selects Rock and Player 2 selects Rock" do
       it "Returns Player 1 win message" do
         allow(Kernel).to receive(:rand).and_return(0)
-        expect(game.fight_with("Rock")).to eq "Rock vs Rock - Game is a draw!"
+        message = "Rock vs Rock - Game is a draw!"
+        expect(game.fight_with("Rock")).to eq message
       end
     end
   end
@@ -95,21 +98,24 @@ describe Game do
     describe "Player 1 wins in a two player game" do
       it "Returns Player 1 win message" do
         game.fight_with("Rock")
-        expect(game.fight_with("Scissors")).to eq "Rock vs Scissors - Player 1 wins the match"
+        message = "Rock vs Scissors - Player 1 wins the match"
+        expect(game.fight_with("Scissors")).to eq message
       end
     end
 
     describe "Player 2 wins in a two player game" do
       it "Returns Player 2 win message" do
         game.fight_with("Scissors")
-        expect(game.fight_with("Rock")).to eq "Scissors vs Rock - Player 2 wins the match"
+        message = "Scissors vs Rock - Player 2 wins the match"
+        expect(game.fight_with("Rock")).to eq message
       end
     end
 
     describe "Game draw in a two player game" do
       it "Returns Draw message" do
         game.fight_with("Rock")
-        expect(game.fight_with("Rock")).to eq "Rock vs Rock - Game is a draw!"
+        message = "Rock vs Rock - Game is a draw!"
+        expect(game.fight_with("Rock")).to eq message
       end
     end
   end

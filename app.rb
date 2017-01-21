@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     player1 = Player.new(params[:player1_name])
-    player2_name = params[:player2_name] == nil ? "Computer" : params[:player2_name]
+    player2_name = params[:player2_name].nil? ? "Computer" : params[:player2_name]
     player2 = Player.new(player2_name)
     @game = Game.create(player1, player2)
     redirect '/play'
@@ -40,7 +40,7 @@ class RPS < Sinatra::Base
     @game = Game.instance
     erb(:win)
   end
-  
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
