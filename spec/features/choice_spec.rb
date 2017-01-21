@@ -1,5 +1,5 @@
 feature 'Choose Choice' do
-  scenario 'Player chooses from Rock' do
+  scenario 'Player chooses Rock' do
     visit ('/')
     fill_in :player_name, with: 'Samir'
     click_button 'Submit'
