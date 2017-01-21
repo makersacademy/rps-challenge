@@ -1,4 +1,12 @@
-You have chosen <%= @choice %>
+<center>
+  You have chosen <%= @choice %>
 <br>
 <br>
-Your opponent has chosen <%= @opponent %>
+
+
+
+<form action='/winner' method="get">
+  Hit play when ready
+  <input type="submit" value='Play'/>
+</form>
+</center>
