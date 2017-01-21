@@ -14,20 +14,22 @@ describe Game do
     it {is_expected.to respond_to(:play).with(1).argument}
     context "when I choose rock and computer chooses paper" do
       it "doesn't tell the player they've won" do
-        expect(mike).to_not receive(:win)
+        expect(mike).to_not receive(:wins)
+        allow(game).to receive(:computer_choice).and_return(:paper)
         game.play(:rock)
       end
     end
     context "when I choose rock and computer chooses scissors" do
       it "lets the player know they've won" do
-        expect(mike).to receive(:win)
+        expect(mike).to receive(:wins)
+        allow(game).to receive(:computer_choice).and_return(:scissors)
         game.play(:rock)
       end
     end
     context "when I choose rock and computer chooses rock" do
       it "lets the player know they've drawn" do
-        expect(player).to receive(:draw)
-        # allow(game).to receive(:computer_choice).and return(:rock)
+        expect(mike).to receive(:draws)
+        allow(game).to receive(:computer_choice).and_return(:rock)
         game.play(:rock)
       end
     end

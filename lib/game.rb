@@ -1,26 +1,27 @@
 class Game
-  attr_reader :player
+  attr_reader :player, :computer_choice
 
   def initialize(player)
     @player = player
   end
 
   def play(player_choice)
+    computer_picks
     if player_choice == :rock && computer_choice == :scissors
-      player.win
+      player.wins
     elsif player_choice == :paper && computer_choice == :rock
-      player.win
+      player.wins
     elsif player_choice == :scissors && computer_choice == :paper
-      player.win
-    else
-      player.draw
+      player.wins
+    elsif player_choice == computer_choice
+      player.draws
     end
   end
 
   private
 
-  def computer_choice
-    [:rock, :paper, :scissors].sample
+  def computer_picks
+    @computer_choice = [:rock, :paper, :scissors].sample
   end
 
 end
