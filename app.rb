@@ -32,6 +32,12 @@ class RockPaperScissors < Sinatra::Base
     end
   end
 
+  post '/p2_move' do
+    p params
+    Round.round_instance.finish_round(player_2_move: params[:p2_choice].to_sym)
+    redirect '/results'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
