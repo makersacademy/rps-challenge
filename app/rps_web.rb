@@ -11,10 +11,11 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    player_1 = params[:marketeer_name]
-    redirect '/play'
+  post '/welcome' do
+    @marketeer = params[:marketeer_name]
+    erb :welcome
   end
+
 
 
   # start the server if ruby file executed directly
