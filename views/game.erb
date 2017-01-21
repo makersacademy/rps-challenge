@@ -1,22 +1,31 @@
-<h1>Welcome, <%= @name%>!</h1>
+<head>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700" rel="stylesheet">
+</head>
 
-<h3>Make your choice:</h3>
-<form action = "/game" method = "post">
-  <input type = "radio" name = "choice" value = "rock" id = "rock">Rock<br>
-  <input type = "radio" name = "choice" value = "paper" id = "paper">Paper<br>
-  <input type = "radio" name = "choice" value = "scissors" id = "scissors">Scissors<br>
-  <input type = "submit" value = "Play!">
-</form>
+<body>
 
-<% if @choice %>
-  <p>You have chosen <%=@choice%>.</p>
-  <p>Computer has thrown <%=@thrown%>.</p>
-  <!-- <p><%=@won%>.</p> -->
-  <% if @won == :won %>
-    <h3>Congratulations, you won!</h3>
-  <% elsif @won == :lose %>
-    <h3>Unfortunately you lost. Try again, and maybe you will be lucky next time!</h3>
-  <% else %>
-    <h3>The game is tied. We need to replay to break the tie.</h3>
+  <h1>Welcome, <%= @name%>!</h1>
+
+  <h3>Make your choice:</h3>
+  <form action = "/game" method = "post">
+    <input type = "radio" name = "choice" value = "rock" id = "rock">Rock<br>
+    <input type = "radio" name = "choice" value = "paper" id = "paper">Paper<br>
+    <input type = "radio" name = "choice" value = "scissors" id = "scissors">Scissors<br>
+    <input type = "submit" value = "Play!">
+  </form>
+
+  <% if @choice %>
+    <p>You have chosen <%=@choice%>.</p>
+    <p>Computer has thrown <%=@thrown%>.</p>
+    <!-- <p><%=@won%>.</p> -->
+    <% if @won == :won %>
+      <h3>Congratulations, you won!</h3>
+    <% elsif @won == :lose %>
+      <h3>Unfortunately you lost. Try again, and maybe you will be lucky next time!</h3>
+    <% else %>
+      <h3>The game is tied. We need to replay to break the tie.</h3>
+    <% end %>
   <% end %>
-<% end %>
+
+</body>
