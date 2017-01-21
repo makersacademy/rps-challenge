@@ -5,7 +5,6 @@ ruby '2.2.3'
 gem 'sinatra'
 gem 'rake'
 gem 'rspec-sinatra'
-gem 'shotgun'
 gem 'poltergeist'
 
 group :test do

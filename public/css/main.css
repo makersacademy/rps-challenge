@@ -36,3 +36,19 @@ img {
 	margin: 100px;
 }
 
+p {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-name: glow;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-name: glow;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    
+    }
+    
+    @-webkit-keyframes glow {
+        from { text-shadow: 0 0 0px yellow; }
+        to { text-shadow: 0 0 20px red; }
+    }
