@@ -1,4 +1,4 @@
-Hello, <%= @name %>!<br>
+Hello, <%= @turn.player_name %>!<br>
 
 <form method="POST" action="/play">
 
@@ -7,8 +7,8 @@ Hello, <%= @name %>!<br>
   <input type="submit" name="tool" value="Scissors" /><br>
 </form>
 
-<%=@tool%>! You chose wisely. <text=FFFFFF# this text should only be visible after the player selects the game tool>
+<%=@turn.player_tool.to_s.capitalize%>! You chose wisely. <text=FFFFFF# this text should only be visible after the player selects the game tool>
 
 <div id="bot_tool" <text=FFFFFF# Using id here because we not expecting more than one bot>
-  O-oh! The bot chose the <%=@bot_tool.to_s.capitalize%> tool.<text=FFFFFF# We ve put this text into an identifyable element using div>
+  O-oh! The bot chose the <%=@turn.bot_tool.to_s.capitalize%> tool.<text=FFFFFF# We ve put this text into an identifyable element using div>
 </div>

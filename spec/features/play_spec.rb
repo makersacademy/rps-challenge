@@ -31,7 +31,7 @@ feature 'Playing a game' do
   # As a marketeer
   # So I can play a game
   # I want the game to choose an option randomly
-  scenario 'Game randomly chooses "Rock"' do # how do you imagine this scenario?
+  scenario 'Game chooses "Rock"' do # how do you imagine this scenario?
     click_button 'Rock'
 
     message = find(:css, "#bot_tool").text

@@ -31,16 +31,12 @@ I would like to be able to play rock/paper/scissors
 
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
+
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US2tool_confirmation.png)
 - the game will choose a random option
+![](https://github.com/Putterhead/rps-challenge/blob/master/US3Game_choses_randomly.png)
+
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
 
 ## Bonus level 1: Multiplayer
 
