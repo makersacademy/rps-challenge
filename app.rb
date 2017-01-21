@@ -28,6 +28,12 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
+  get '/fight' do
+    @game = Game.instance
+    session[:message] = @game.fight_with(params[:weapon])
+    redirect '/play'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
