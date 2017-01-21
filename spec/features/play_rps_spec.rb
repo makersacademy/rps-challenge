@@ -2,26 +2,25 @@
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 
-feature "Play RPC with Rock" do
+feature "Play RPC" do
+
   scenario "I would like to play RPS using Rock" do
     sign_in_one_player
     click_on 'Rock'
     expect(page).to have_content "Rock"
   end
-end
 
-feature "Player RPC with Paper" do
   scenario "I would like to play RPS using Paper" do
     sign_in_one_player
+    sign_in_one_player
     click_on 'Paper'
-    expect(page).to have_content "Paper"
+    expect(page).to have_content "Paper vs"
   end
-end
 
-feature "Player RPC with Scissors" do
   scenario "I would like to play RPS using Scissors" do
     sign_in_one_player
+    sign_in_one_player
     click_on 'Scissors'
-    expect(page).to have_content "Scissors"
+    expect(page).to have_content "Scissors vs"
   end
 end

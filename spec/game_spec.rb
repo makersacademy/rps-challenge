@@ -16,7 +16,17 @@ describe Game do
     end
   end
 
-  context "Player one wins" do
+  describe "#player_name" do
+    it "Returns 'Player 1' as the current player" do
+      expect(game.player_name).to eq "Player 1"
+    end
+
+    it "Returns 'Computer' as the current player" do
+      expect(game.opponent_name).to eq "Computer"
+    end
+  end
+
+  context "Player one wins - One Player Game" do
     before do
       allow(game).to receive(:update_score).and_return 1
     end
@@ -37,7 +47,7 @@ describe Game do
     end
   end
 
-  context "Player two wins" do
+  context "Player two wins - One Player" do
     before do
       allow(game).to receive(:update_score).and_return 0
     end
@@ -66,6 +76,39 @@ describe Game do
     describe "Player selects Rock and Player 2 selects Rock" do
       it "Returns Player 1 win message" do
         allow(Kernel).to receive(:rand).and_return(0)
+        expect(game.fight_with("Rock")).to eq "Rock vs Rock - Game is a draw!"
+      end
+    end
+  end
+end
+
+describe Game do
+  subject(:game) {described_class.new(player1, player2)}
+  let(:player1)  {instance_double("Player", name: "Player 1", score: 0)}
+  let(:player2)  {instance_double("Player", name: "Player 2", score: 0)}
+
+  context "Two Player Game" do
+    before do
+      allow(game).to receive(:update_score).and_return 1
+    end
+
+    describe "Player 1 wins in a two player game" do
+      it "Returns Player 1 win message" do
+        game.fight_with("Rock")
+        expect(game.fight_with("Scissors")).to eq "Rock vs Scissors - Player 1 wins the match"
+      end
+    end
+
+    describe "Player 2 wins in a two player game" do
+      it "Returns Player 2 win message" do
+        game.fight_with("Scissors")
+        expect(game.fight_with("Rock")).to eq "Scissors vs Rock - Player 2 wins the match"
+      end
+    end
+
+    describe "Game draw in a two player game" do
+      it "Returns Draw message" do
+        game.fight_with("Rock")
         expect(game.fight_with("Rock")).to eq "Rock vs Rock - Game is a draw!"
       end
     end

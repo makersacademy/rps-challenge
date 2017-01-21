@@ -60,8 +60,17 @@ border: 0;
 }
 </style>
 <div class="Title">
-  <p>&nbsp;</p>
-  <p>Rock, Paper, Scissors </p>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="75">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="Title">Rock, Paper, Scissors </td>
+    </tr>
+    <tr>
+      <td height="50">&nbsp;</td>
+    </tr>
+  </table>
 </div>
 <div class="PlayerInfo">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -82,7 +91,13 @@ border: 0;
 <div class="Main">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="105" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
+      <td height="105" align="center" valign="bottom" class="PlayerInfo">
+      <% if @game.playing==1 %>
+      	Select your weapon!
+      <% else %>
+      	<%= @game.player_name %>'s turn, <%= @game.opponent_name %> look away!
+      <% end %>
+      </td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -92,9 +107,9 @@ border: 0;
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td>&nbsp;</td>
-            <td width="280" align="center"><input type="submit" id="rock" name="weapon" value="Rock" /></td>
-            <td width="280" align="center"><input type="submit" id="paper" name="weapon" value="Paper" /></td>
-            <td width="280" align="center"><input type="submit" id="scissors" name="weapon" value="Scissors" /></td>
+            <td width="280" align="center"><input type="submit" id="Rock" name="weapon" value="Rock" /></td>
+            <td width="280" align="center"><input type="submit" id="Paper" name="weapon" value="Paper" /></td>
+            <td width="280" align="center"><input type="submit" id="Scissors" name="weapon" value="Scissors" /></td>
             <td>&nbsp;</td>
           </tr>
         </table>

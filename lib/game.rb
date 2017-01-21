@@ -1,7 +1,10 @@
 class Game
 
+  attr_reader :playing, :turn, :players, :winner
+
   WINNING_COMBO = {"Rock"=>"Scissors", "Paper"=>"Rock", "Scissors"=>"Paper"}
   DEFAULT_POINTS = 1
+  DEFAULT_WINNING_POINTS = 2
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
@@ -13,6 +16,10 @@ class Game
 
   def initialize(player1, player2)
     @players = [player1, player2]
+    @playing = player2.name == "Computer" ? 1 : 2
+    @weapon = ""
+    @turn = 0
+    @winner = ""
   end
 
   def player1
@@ -23,14 +30,47 @@ class Game
     @players.last
   end
 
+  def player_name
+    @players[turn].name
+  end
+
+  def opponent_name
+    @players[turn-1].name
+  end
+
   def fight_with(weapon1)
+    one_player? ? fight_one_player(weapon1) : fight_two_player(weapon1)
+  end
+
+  private
+
+  attr_accessor :turn
+
+  def one_player?
+    @playing == 1
+  end
+
+  def fight_one_player(weapon1)
     weapon2 = select_weapon
+    check_winner(weapon1, weapon2)
+  end
+
+  def check_winner(weapon1, weapon2)
     winner = select_winner(weapon1, weapon2)
     update_score(winner)
     output(weapon1, weapon2, winner)
   end
 
-  private
+  def fight_two_player(weapon1)
+    if @turn == 0
+      @turn = 1
+      @weapon = weapon1
+      ""
+    else
+      @turn = 0
+      check_winner(@weapon, weapon1)
+    end
+  end
 
   def select_weapon
     case Kernel.rand(3)
@@ -49,7 +89,10 @@ class Game
   end
 
   def update_score(winner)
-    @players[winner].add_score(DEFAULT_POINTS) if winner != 2
+    if winner != 2
+      @players[winner].add_score(DEFAULT_POINTS)
+      @winner = @players[winner].name if @players[winner].add_score >= DEFAULT_WINNING_POINTS
+    end
   end
 
   def output(weapon1, weapon2, winner)
