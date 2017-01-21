@@ -1,8 +1,24 @@
 require 'sinatra/base'
+require 'sinatra'
 
 class RPS < Sinatra::Base
+
+  enable :sessions
+  set :session_secret, 'super secret'
+
   get '/' do
-    'Hello RPS!'
+    erb(:index)
+  end
+
+  post '/name' do
+    $player = params[:player_name]
+
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = $player
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
