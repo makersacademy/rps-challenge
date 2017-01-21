@@ -15,11 +15,13 @@ class RPS < Sinatra::Base
   get '/play' do # defining action play
     @name = session[:name] # retreives the name from the session
     @tool = session[:tool] # retrieves the chosen tool from the session
+    @bot_tool = session[:bot_tool]
     erb :play
   end
 
   post '/play' do
     session[:tool] = params[:tool]
+    session[:bot_tool] = :rock
     redirect '/play'
   end
 

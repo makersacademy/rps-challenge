@@ -20,7 +20,8 @@ So that I can see my name in lights
 I would like to register my name before playing an online game
 ```
 - the marketeer should be able to enter their name before the game
-![Alt text](/relative/path/to/img.jpg?raw=true "Form to enter players name")
+
+![](https://github.com/Putterhead/rps-challenge/blob/master/US1submit_form.png)
 
 ```
 As a marketeer
@@ -29,9 +30,8 @@ I would like to be able to play rock/paper/scissors
 ```
 
 - the marketeer will be presented the choices (rock, paper and scissors)
-
-
 - the marketeer can choose one option
+![](https://github.com/Putterhead/rps-challenge/blob/master/US2tool_confirmation.png)
 - the game will choose a random option
 - a winner will be declared
 
