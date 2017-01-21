@@ -2,6 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) {described_class.new("Ben")}
+  let(:ben) {double :player}
+  let(:dave) {double :player}
 
   describe "#defaults" do
 

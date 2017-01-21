@@ -20,7 +20,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @game.player.set_choice(params[:choice])
-    @game.opponent.set_choice("Paper")
+    @game.opponent.set_choice(@game.random_choice)
     erb :result
   end
 
