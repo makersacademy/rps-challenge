@@ -15,22 +15,25 @@
             <h1>Rock, Paper, Scissors!</h1>
         </header>
         <main class="main">
-            <div>
-                <h2>Enter your name</h2>
-                <div id="selection">
-                    <form action="/choose" method="post">
-                        <label for="name">Name:</label>
+            <div class="form">
+                <div class="index-left">
+                    <h2 class="index-h2">Enter your name:</h2>
+                    <form id="details" action="/choose" method="post">
+                        <!-- <label for="name">Name:</label> -->
                         <input type="text" name="player_name" id="player_name"/>
-                        <h3>Choose your weapon!</h3>
+                    </div>
+                    <div class="index-right">
+                        <h2 class="index-h2">Choose your weapon!</h2>
                         <label for="rock">Rock</label>
                         <input type="radio" name="selection" id="rock" value="Rock"/>
                         <label for="paper">Paper</label>
                         <input type="radio" name="selection" id="paper" value="Paper"/>
                         <label for="scissors">Scissors</label>
                         <input type="radio" name="selection" id="scissors" value="Scissors"/>
-                        <input type="submit" value="Play!"/>
-                    </form>
-                </div>
-            </main>
-        </body>
-    </html>
+                    </div>
+                    <button form="details" class="confirm" type="submit" value="Play!">Play!</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

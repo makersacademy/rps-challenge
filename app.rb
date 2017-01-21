@@ -1,22 +1,21 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
-require './lib/ai'
 
 class RPS < Sinatra::Base
 
   set :views, File.dirname(__FILE__) + '/lib/views'
   set :public_folder, File.dirname(__FILE__) + '/lib/public'
 
-  enable :sessions
-  set :session_secret, 'super secret'
+  # enable :sessions
+  # set :session_secret, 'super secret'
 
   get '/' do
     erb :index
   end
 
   post '/choose' do
-    @game = Game.create(Player.new(params[:player_name], params[:selection]), AI)
+    @game = Game.create(Player.new(params[:player_name], params[:selection]), Player)
     # erb :choose
     redirect '/play'
   end

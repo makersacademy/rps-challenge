@@ -12,15 +12,15 @@
   <body>
     <header><h1>Rock, Paper, Scissors!</h1></header>
     <main class="main">
-      <!-- <h2><%= @game.player[:name] %> vs. <%= @game.opponent[:name] %></h2>
-      <div class="left">
+      <h2 class="play-h2"><%= @game.battle %></h2>
+      <!-- <div class="left">
         <%= @game.player[:name] %> chooses <%= @game.player[:choice] %></h3>
       </div>
       <div class="right">
         <%= @game.opponent[:name] %> chooses <%= @game.opponent[:choice] %></h3> -->
       </div>
         <form action="/">
-          <input type="submit" value="Play again!" />
+          <button class="play-confirm" type="submit" value="Play again!">Play again!</button>
         </form>
     </main>
   </body>

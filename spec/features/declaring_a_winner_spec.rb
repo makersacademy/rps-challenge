@@ -4,7 +4,7 @@ describe 'Rock, Paper, Scissors' do
     scenario 'a winner is declared' do
       sign_in_and_play
       click_button "Game on!"
-      expect(page).to have_content 'wins!'
+      expect(page).to satisfy {|page| page.has_content?('wins') or page.has_content?('draw')}
     end
   end
 end

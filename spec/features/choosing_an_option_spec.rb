@@ -3,7 +3,7 @@ describe 'Rock, Paper, Scissors' do
     # before(:each) { sign_in_and_play }
     scenario 'Player chooses Rock' do
       sign_in_and_play
-      expect(page).to have_content 'Dwayne Johnson chooses Rock'
+      expect(page).to have_content 'Rob chooses Rock'
     end
     # scenario 'Player chooses Paper' do
     #   choose 'paper'
