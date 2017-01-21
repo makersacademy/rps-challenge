@@ -4,7 +4,7 @@ class Game
 
   WINNING_COMBO = {"Rock"=>"Scissors", "Paper"=>"Rock", "Scissors"=>"Paper"}
   DEFAULT_POINTS = 1
-  DEFAULT_WINNING_POINTS = 2
+  DEFAULT_WINNING_POINTS = 10
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
