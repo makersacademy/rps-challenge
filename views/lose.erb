@@ -6,11 +6,11 @@
   <body>
     <header>
       <h1>ROCK. PAPER. SCISSORS.</h1>
-      <h2>You chose <%=current_player.choice%>.</h2>
+      <h2>Better luck next time <%=current_player.name%>, you lost!</h2>
     </header>
     <div>
-      <form method="POST" action="/result">
-        <input type="submit" value="Continue!"/>
+      <form method="GET" action="/play">
+        <input type="submit" value="Play again!"/>
       </form>
     </div>
   </body>

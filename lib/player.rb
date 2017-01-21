@@ -5,7 +5,7 @@ class Player
     end
     
     def choose(choice)
-        @choice = choice
+        @choice = choice.downcase.to_sym
     end
         
     attr_reader :name, :choice

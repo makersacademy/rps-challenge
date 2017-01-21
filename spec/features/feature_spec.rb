@@ -24,16 +24,30 @@ feature "r,p s selection" do
     
     scenario "user chooses rock" do
         click_button("Rock")
-        expect(page).to have_content("You chose: Rock")
+        expect(page).to have_content("You chose rock.")
     end
     
     scenario "user chooses paper" do
         click_button("Paper")
-        expect(page).to have_content("You chose: Paper")
+        expect(page).to have_content("You chose paper.")
     end
     
     scenario "user chooses scissors" do
         click_button("Scissors")
-        expect(page).to have_content("You chose: Scissors")
+        expect(page).to have_content("You chose scissors.")
+    end
+end
+
+feature "computer makes a random choice and a winner is declared" do
+    
+    before do
+        allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+        register_and_play
+    end
+    
+    scenario "User chose rock and wins" do
+        click_button("Rock")
+        click_button("Continue!")
+        expect(page).to have_content("Congratulations Ben, you won!")
     end
 end

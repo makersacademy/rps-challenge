@@ -37,6 +37,19 @@ class Rps < Sinatra::Base
         erb(:choice)
     end
     
+    post '/result' do
+        game = Game.new
+        game.player_wins?(current_player) ? (redirect '/win') : (redirect '/lose')
+    end
+    
+    get '/win' do
+        erb(:win)
+    end
+    
+    get '/lose' do
+        erb(:lose)
+    end
+    
     # start the server if ruby file executed directly
     run! if app_file == $0
 end
