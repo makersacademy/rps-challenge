@@ -1,10 +1,14 @@
 class Opponent
 
+  attr_reader :name
   CHOICES = [:Rock, :Paper, :Scissors]
+
+  def initialize(name = 'Computer')
+  	@name = name
+  end
   
-  def choose
-  	choice = Kernel.rand(3)
-  	CHOICES[choice]
+  def choose  	
+  	CHOICES.sample
   end 
 
 end

@@ -22,8 +22,9 @@ feature 'Play the game' do
   #the game will choose a random option
   scenario 'the computer picks an option at random' do
 	sign_in_and_play
-	click_button 'Rock'
-
+	allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
+	click_button 'Rock'	
+	expect(page).to have_content 'Computer picked Scissors'
   end
 
 end

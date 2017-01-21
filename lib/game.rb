@@ -7,12 +7,12 @@ class Game
   	@player_2 = player_2
   end
 
-  def self.start (player_1)
-  	@game = Game.new(player_1)
-  end
+  # def self.start (player_1)
+  # 	@game = Game.new(player_1)
+  # end
 
-  def self.instance
-  	@game
-  end
+  # def self.instance
+  # 	@game
+  # end
 
 end
