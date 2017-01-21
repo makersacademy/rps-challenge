@@ -4,9 +4,7 @@
 
 feature "Register Name" do
   scenario "I would like to register player 1's name" do
-    visit('/')
-    fill_in :player1_name, with: "Adrian"
-    click_button 'Submit'
-    expect(page).to have_content "Player: Adrian"
+    sign_in_one_player
+    expect(page).to have_content "Player 1: Adrian"
   end
 end

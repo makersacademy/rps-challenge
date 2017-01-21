@@ -22,6 +22,12 @@ body {
 	color: #FFF;
 	text-align: center
 }
+.GameResult {
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center
+}
 .Main {
 
 }
@@ -57,7 +63,22 @@ border: 0;
   <p>&nbsp;</p>
   <p>Rock, Paper, Scissors </p>
 </div>
-<div class="PlayerInfo">Player: <%= @game.player1.name %></div>
+<div class="PlayerInfo">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td width="350" align="left" class="PlayerInfo">Player 1: <%= @game.player1.name %></td>
+      <td width="350" align="right" class="PlayerInfo">Score: <%= @game.player1.score %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td width="350" align="left" class="PlayerInfo">Player 2: <%= @game.player2.name %></td>
+      <td width="350" align="right" class="PlayerInfo">Score: <%= @game.player2.score %></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</div>
 <div class="Main">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -65,9 +86,6 @@ border: 0;
     </tr>
     <tr>
       <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td height="47" align="center"><span class="PlayerInfo"><%= @message %></span></td>
     </tr>
     <tr>
       <td><form id="playform" name="playform" method="post" action="/fight">
@@ -84,3 +102,4 @@ border: 0;
     </tr>
   </table>
 </div>
+<div class="GameResult"><br><%= @message %></div>

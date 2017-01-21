@@ -7,6 +7,6 @@ feature "Play RPC" do
     visit('/')
     fill_in :player1_name, with: "Adrian"
     click_button 'Submit'
-    expect(page).to have_content "Player: Adrian"
+    expect(page).to have_content "Player 1: Adrian"
   end
 end

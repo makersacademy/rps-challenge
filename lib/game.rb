@@ -1,6 +1,7 @@
 class Game
 
   WINNING_COMBO = {"Rock"=>"Scissors", "Paper"=>"Rock", "Scissors"=>"Paper"}
+  DEFAULT_POINTS = 1
 
   def self.create(player1, player2)
     @game = Game.new(player1, player2)
@@ -18,9 +19,14 @@ class Game
     @players.first
   end
 
+  def player2
+    @players.last
+  end
+
   def fight_with(weapon1)
     weapon2 = select_weapon
     winner = select_winner(weapon1, weapon2)
+    update_score(winner)
     output(weapon1, weapon2, winner)
   end
 
@@ -40,6 +46,10 @@ class Game
       return 1 if player2_weapon == weapon1 && player1_weapon == weapon2
     end
     2
+  end
+
+  def update_score(winner)
+    @players[winner].add_score(DEFAULT_POINTS) if winner != 2
   end
 
   def output(weapon1, weapon2, winner)
