@@ -3,7 +3,7 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -15,8 +15,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
-    p @name
+    @choice = session[:choice]
     erb :game
+  end
+
+  post '/game' do
+    session[:choice] = params[:choice]
+    redirect '/game'
   end
 
   # start the server if ruby file executed directly

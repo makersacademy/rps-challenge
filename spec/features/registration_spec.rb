@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 # User Story 1:
 
 # As a marketeer
@@ -6,9 +8,7 @@
 
 feature 'Registration' do
   scenario 'submitting name' do
-    visit('/')
-    fill_in :name, with: 'Katerina'
-    click_button 'Start game'
+    sign_in_and_play
     expect(page).to have_content 'Welcome, Katerina!'
   end
 end

@@ -1,1 +1,15 @@
 <h1>Welcome, <%= @name%>!</h1>
+
+<h3>Make your choice:</h3>
+<form action = "/game" method = "post">
+  <input type = "radio" name = "choice" value = "rock" id = "rock">Rock<br>
+  <input type = "radio" name = "choice" value = "paper" id = "paper">Paper<br>
+  <input type = "radio" name = "choice" value = "scissors" id = "scissors">Scissors<br>
+  <input type = "submit" value = "Play!">
+</form>
+
+<% if @choice %>
+<p>You have chosen <%=@choice%>.</p>
+<% end %>
+
+<!-- <h3>Congratulations, you win!</h3> -->
