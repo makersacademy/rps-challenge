@@ -3,9 +3,6 @@ require 'sinatra/base'
 require_relative 'lib/computer'
 require_relative 'lib/game'
 
-## NEED TO DO THIS WITHOUT GLOBAL VARIABLE!!!
-## use that thing from before?
-
 class RPS < Sinatra::Base
 
   get '/' do
