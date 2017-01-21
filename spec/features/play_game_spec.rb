@@ -8,20 +8,25 @@ require 'spec_helper'
 
 feature 'Play rock/paper/scissors' do
   scenario 'allows to choose option' do
-    sign_in_and_play
-    choose('rock')
-    click_button 'Play!'
+    register_and_play('rock')
     expect(page).to have_content 'You have chosen rock'
   end
-  scenario 'congratulates in case of victory' do
-    # sign_in_and_play
-    # choose('rock')
-    # click_button 'Play!'
-    # expect(page).to have_content 'Congratulations, you win!'
+  context 'return correct results of a game' do
+    scenario 'can win' do
+      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+      register_and_play('paper')
+      expect(page).to have_content 'Congratulations, you won!'
+    end
+    scenario 'can lose' do
+      allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+      register_and_play('rock')
+      expect(page).to have_content 'Unfortunately you lost. Try again, and maybe you will be lucky next time!'
+    end
+    scenario 'replay in case of a tie situation' do
+      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+      register_and_play('rock')
+      expect(page).to have_content 'The game is tied. We need to replay to break the tie.'
+    end
   end
-  scenario 'encourages to play again in case of defeat' do
-    # sign_in_and_play
-    # choose('rock')
-    # expect(page).to have_content 'Congratulations, you win!'
-  end
+
 end

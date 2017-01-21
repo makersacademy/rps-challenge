@@ -8,7 +8,7 @@ require 'spec_helper'
 
 feature 'Registration' do
   scenario 'submitting name' do
-    sign_in_and_play
+    register
     expect(page).to have_content 'Welcome, Katerina!'
   end
 end

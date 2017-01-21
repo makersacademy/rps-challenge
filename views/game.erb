@@ -9,7 +9,14 @@
 </form>
 
 <% if @choice %>
-<p>You have chosen <%=@choice%>.</p>
+  <p>You have chosen <%=@choice%>.</p>
+  <p>Computer has thrown <%=@thrown%>.</p>
+  <!-- <p><%=@won%>.</p> -->
+  <% if @won == "won" %>
+    <h3>Congratulations, you won!</h3>
+  <% elsif @won == "lose" %>
+    <h3>Unfortunately you lost. Try again, and maybe you will be lucky next time!</h3>
+  <% else %>
+    <h3>The game is tied. We need to replay to break the tie.</h3>
+  <% end %>
 <% end %>
-
-<!-- <h3>Congratulations, you win!</h3> -->
