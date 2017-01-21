@@ -28,4 +28,29 @@ describe "Rock, Paper, Scissors" do
 
   end
 
+  feature "player should be able to choose one of the options presented", :type => :feature do
+
+    scenario "user can choose a move" do
+      visit("/")
+      fill_in "player_name", with: "Kat"
+      click_button "Enter"
+      choose "Rock"
+    end
+
+  end
+
+  feature "computer will randomly choose one of the options after the player", :type => :feature do
+
+    scenario "computer assigns a second move" do
+      visit("/")
+      fill_in "player_name", with: "Kat"
+      click_button "Enter"
+      choose "Rock"
+      click_button "Play"
+
+      expect(page).to have_content("computer selected")
+    end
+
+  end
+
 end

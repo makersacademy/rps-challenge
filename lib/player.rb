@@ -8,7 +8,7 @@ class Player
   end
 
   def select_choice(choice)
-    @choice = choice
+    @choice = choice.downcase.to_sym
   end
 
 end

@@ -1,5 +1,7 @@
 class Computer
 
+  attr_reader :choice
+
   def initialize(choice = nil)
     @choice = choice
   end
@@ -11,11 +13,11 @@ class Computer
   def select_choice
     case chance
     when 1
-      return :rock
+      @choice = :rock
     when 2
-      return :paper
+      @choice = :paper
     when 3
-      return :scissors
+      @choice = :scissors
     end
   end
 

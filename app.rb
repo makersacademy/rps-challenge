@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'sinatra'
 
-require 'player'
+require './lib/player.rb'
+require './lib/computer.rb'
 
 class RPS < Sinatra::Base
 
@@ -14,6 +15,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:player_name])
+    $computer = Computer.new
     redirect '/play'
   end
 
@@ -23,10 +25,14 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    redirect '/game_over'
+    $player.select_choice(params[:choice])
+    $computer.select_choice
+    redirect '/result'
   end
 
   get '/result' do
+    @player = $player
+    @computer = $computer
     erb(:result)
   end
 
