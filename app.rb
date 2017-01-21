@@ -10,6 +10,11 @@ class App < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    @choice = params[:choice]
+    erb :choice
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
