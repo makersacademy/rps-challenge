@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
 
