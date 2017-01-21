@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require './lib/opponent'
+require './lib/opponent.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -10,12 +12,15 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-  	session[:name] = params[:player_name]
+  	player_1 = Player.new(params[:player_name])
+  	$game = Game.new(player_1)
   	redirect '/play'
   end
 
+
   get '/play' do
-  	@player_name = session[:name]
+  	$game
+  	#@player_name = session[:name]
   	erb :play
   end
 
