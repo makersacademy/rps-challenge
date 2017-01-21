@@ -62,22 +62,23 @@ class Game
   end
 
   def fight_two_player(weapon1)
-    if @turn == 0
-      @turn = 1
-      @weapon = weapon1
-      ""
-    else
-      @turn = 0
-      check_winner(@weapon, weapon1)
-    end
+    return player1_turn(weapon1) if @turn == 0
+    player2_turn(weapon1)
+  end
+
+  def player1_turn(weapon1)
+    @turn = 1
+    @weapon = weapon1
+    ""
+  end
+
+  def player2_turn(weapon1)
+    @turn = 0
+    check_winner(@weapon, weapon1)
   end
 
   def select_weapon
-    case Kernel.rand(3)
-    when 0 then "Rock"
-    when 1 then "Paper"
-    when 2 then "Scissors"
-    end
+    ["Rock", "Paper", "Scissors"].sample
   end
 
   def select_winner(player1_weapon, player2_weapon)
@@ -91,16 +92,16 @@ class Game
   def update_score(winner)
     return if winner == 2
     @players[winner].add_score(DEFAULT_POINTS)
-    @winner = @players[winner].name if @players[winner].score >= DEFAULT_WINNING_POINTS
+    @winner = @players[winner].name if has_won?(winner)
   end
 
   def output(weapon1, weapon2, winner)
     output = "#{weapon1} vs #{weapon2} - "
-    if winner < 2
-      output += "#{@players[winner].name} wins the match"
-    else
-      output += "Game is a draw!"
-    end
+    return output += "Game is a draw!" if winner == 2
+    output += "#{@players[winner].name} wins the match"
   end
 
+  def has_won?(winner)
+    @players[winner].score >= DEFAULT_WINNING_POINTS
+  end
 end

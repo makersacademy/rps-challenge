@@ -33,7 +33,8 @@ describe Game do
 
     describe "Player selects Rock and Player 2 selects Scissors" do
       it "Returns Player 1 win message" do
-        allow(Kernel).to receive(:rand).and_return(2)
+        #allow(Kernel).to receive(:rand).and_return(2)
+        allow(game).to receive(:select_weapon).and_return "Scissors"
         message = "Rock vs Scissors - Player 1 wins the match"
         expect(game.fight_with("Rock")).to eq message
       end
@@ -41,7 +42,8 @@ describe Game do
 
     describe "Player selects Rock and Player 2 selects Scissors" do
       it "Adds 1 point to player 1" do
-        allow(Kernel).to receive(:rand).and_return(2)
+        #allow(Kernel).to receive(:rand).and_return(2)
+        allow(game).to receive(:select_weapon).and_return "Scissors"
         allow(player1).to receive(:score).and_return(1)
         expect(game.player1.score).to eq 1
       end
@@ -55,7 +57,8 @@ describe Game do
 
     describe "Player selects Rock and Player 2 selects Paper" do
       it "Returns Player 1 win message" do
-        allow(Kernel).to receive(:rand).and_return(1)
+        #allow(Kernel).to receive(:rand).and_return(1)
+        allow(game).to receive(:select_weapon).and_return "Paper"
         message = "Rock vs Paper - Computer wins the match"
         expect(game.fight_with("Rock")).to eq message
       end
@@ -63,7 +66,8 @@ describe Game do
 
     describe "Player selects Rock and Player 2 selects Paper" do
       it "Adds 1 point to player 2" do
-        allow(Kernel).to receive(:rand).and_return(1)
+        #allow(Kernel).to receive(:rand).and_return(1)
+        allow(game).to receive(:select_weapon).and_return "Paper"
         allow(player2).to receive(:score).and_return(1)
         expect(game.player2.score).to eq 1
       end
@@ -77,7 +81,8 @@ describe Game do
 
     describe "Player selects Rock and Player 2 selects Rock" do
       it "Returns Player 1 win message" do
-        allow(Kernel).to receive(:rand).and_return(0)
+        #allow(Kernel).to receive(:rand).and_return(0)
+        allow(game).to receive(:select_weapon).and_return "Rock"
         message = "Rock vs Rock - Game is a draw!"
         expect(game.fight_with("Rock")).to eq message
       end
