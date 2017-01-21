@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
 require './lib/round.rb'
+require './lib/rules_handler.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
