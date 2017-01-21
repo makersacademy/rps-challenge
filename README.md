@@ -69,4 +69,4 @@ type `http://localhost:4567` into your web browser
 [![ScreenShot1](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot3.png)](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot3.png "Screen Shot 3")
 
 ### Winning Screen
-[![ScreenShot1](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot3.png)](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot3.png "Screen Shot 3")
+[![ScreenShot1](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot4.png)](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot4.png "Screen Shot 4")
