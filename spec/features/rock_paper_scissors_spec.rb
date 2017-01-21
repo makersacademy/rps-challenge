@@ -30,27 +30,24 @@ RSpec.feature "Three button options", :type => :feature do
   end
 
 
-
-end
-
  #  scenario "The player chooses 'Rock' " do
  #     sign_in_and_play
  #     click_button "Rock"
- #     expect(page).to have_content("Edyta chose Rock")
+ #     expect(page).to have_content("You are a loser, sorry buddy!")
  #   end
  #
  #   scenario "The player chooses 'Paper' " do
  #     sign_in_and_play
  #     click_button "Paper"
- #     expect(page).to have_content("Edyta chose Paper")
+ #     expect(page).to have_content("Tie! You must try your luck again!")
  #   end
  #
  #   scenario "The player chooses 'Scissors' " do
  #     sign_in_and_play
  #     click_button "Scissors"
- #     expect(page).to have_content("Edyta chose Scissors")
+ #     expect(page).to have_content("Wohoo, such a winner!")
  #   end
- # end
+end
 
 
 
