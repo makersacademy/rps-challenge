@@ -12,9 +12,15 @@ class RPS < Sinatra::Base
     redirect '/play' # redirecting to play, because we don't want to render a view from post action
   end
 
-  get '/play' do # defining action play 
+  get '/play' do # defining action play
     @name = session[:name] # retreives the name from the session
+    @tool = session[:tool] # retrieves the chosen tool from the session
     erb :play
+  end
+
+  post '/play' do
+    session[:tool] = params[:tool]
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly

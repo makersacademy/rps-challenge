@@ -1,5 +1,9 @@
-Hello, <%= @name %>!
+Hello, <%= @name %>!<br>
 
-Rock
-Paper
-Scissors  
+<form method="POST" action="/play">
+  <input type="submit" name="tool" value="Rock" /><br><text=FFFFFF# we need the name here for the input to retreive for params later>
+  <input type="submit" name="tool" value="Paper" /><br>
+  <input type="submit" name="tool" value="Scissors" /><br>
+</form>
+
+<%=@tool%>! You chose wisely. <text=FFFFFF# this text should only be visible after the player selects the game tool>
