@@ -3,6 +3,11 @@ require './lib/game'
 require './lib/player'
 
 class Rps < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
