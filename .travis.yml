@@ -1,5 +1,5 @@
 rvm:
-  - 2.2.3
+  - 2.3.3
 before_install:
 - sed -i '2d' Gemfile
 script:
