@@ -1,0 +1,8 @@
+<h1>You <%= @game.result %>!</h1>
+<h2>You chose <%= @game.player.choice %></h2>
+<h2><%= @game.computer.name %> chose <%= @game.computer.choice %></h2>
+
+<%if @game.result == :lose%><h2>Unlucky!</h2><%end%>
+<% if @game.result == :draw %><h2>Unfinished business!</h2><%end%>
+<% if @game.result == :win %><h2>Prove it wasn't just luck!</h2><%end%>
+<h2><a href="/play">Play again?</a></h2>
