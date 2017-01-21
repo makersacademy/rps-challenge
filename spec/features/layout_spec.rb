@@ -1,4 +1,4 @@
-feature "Feature: Layout" do
+feature "FEATURE: Layout" do
   scenario "Shows the site title in the header" do
     visit "/"
     heading_text = page.find(".navbar-brand").assert_text("Rock, Paper, Scissors, Spock, Lizard!")

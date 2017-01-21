@@ -1,7 +1,7 @@
-body {
-  font-family: 'Cuprum', sans-serif;
+body, input {
+  font-family: 'Cuprum', sans-serif !important;
 }
 
-.navbar-brand {
+.navbar-brand, .btn {
   font-family: 'Pacifico', cursive;
 }
