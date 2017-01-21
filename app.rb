@@ -2,7 +2,12 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
   get '/' do
-    'Hello App!'
+    erb :index
+  end
+
+  post '/names' do
+    @player_name = params[:player_name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
