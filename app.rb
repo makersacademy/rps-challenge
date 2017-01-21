@@ -12,13 +12,20 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $player = params[:player_name]
-
     redirect '/play'
   end
 
   get '/play' do
     @player = $player
     erb(:play)
+  end
+
+  post '/choice' do
+    redirect '/game_over'
+  end
+
+  get '/result' do
+    erb(:result)
   end
 
   # start the server if ruby file executed directly
