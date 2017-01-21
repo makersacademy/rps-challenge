@@ -1,4 +1,4 @@
-# RPS Challenge ![Travis-CI](https://travis-ci.org/sliute/rps-challenge.svg?branch=master) ![Coveralls-IO](...)
+# RPS Challenge ![Travis-CI](https://travis-ci.org/sliute/rps-challenge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/sliute/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/sliute/rps-challenge?branch=master)
 
 Task
 ----
@@ -53,12 +53,25 @@ Screenshots:
 Progress
 ----
 
-1.
-
-
-
-
+1. Story 01:
+  * if the user hasn't registered, '/' sends them (via GET) to a registration form
+  * the registration form asks for the user's name and sends it to a '/player' route that:
+    - initialises a new player (Player class instance, singleton pattern)
+    - stores the new player's object id in the session
+    - redirects back to '/', where the user is recognised and sees their name
+  * the '/' route now looks like this:
+  ```
+  get '/' do
+    if player_stored
+      "Hey, #{player_stored.name}!"
+    else
+      redirect '/register'
+    end
+  end
+  ```
+  * the Player class is unit-tested for all its class methods, and the player object is tested for its sole initialisation argument
 Issues
 ----
 
-1.
+1. Story 01:
+  * I haven't implemented colours yet. I plan to do so in Story 02, where '/' redirects to a route with a view when the player has registered.
