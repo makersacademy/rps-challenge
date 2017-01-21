@@ -13,17 +13,17 @@ feature 'Play rock/paper/scissors' do
   end
   context 'return correct results of a game' do
     scenario 'can win' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       register_and_play('paper')
       expect(page).to have_content 'Congratulations, you won!'
     end
     scenario 'can lose' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+      allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
       register_and_play('rock')
       expect(page).to have_content 'Unfortunately you lost. Try again, and maybe you will be lucky next time!'
     end
     scenario 'replay in case of a tie situation' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       register_and_play('rock')
       expect(page).to have_content 'The game is tied. We need to replay to break the tie.'
     end
