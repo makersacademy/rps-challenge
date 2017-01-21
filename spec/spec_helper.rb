@@ -20,7 +20,7 @@ require 'rspec'
 require 'byebug'
 # require 'capybara/dsl'
 require 'capybara/poltergeist'
-require 'features/web_helper'
+require 'features/web_helpers'
 
 Capybara.app = 'lib/app.rb'
 Capybara.default_driver = :poltergeist
