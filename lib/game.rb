@@ -18,15 +18,11 @@ class Game
       'No one'
     elsif @player_choice == 'Rock' && @computer_choice == 'Scissors'
       'You'
-    elsif @player_choice == 'Rock' && @computer_choice == 'Paper'
-      'The computer'
     elsif @player_choice == 'Paper' && @computer_choice == 'Rock'
       'You'
-    elsif @player_choice == 'Paper' && @computer_choice == 'Scissors'
-      'The computer'
     elsif @player_choice == 'Scissors' && @computer_choice == 'Paper'
       'You'
-    elsif @player_choice == 'Scissors' && @computer_choice == 'Rock'
+    else 
       'The computer'
     end
   end
