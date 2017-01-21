@@ -9,10 +9,10 @@
       <h2><%=current_player.name%></h2>
     </header>
     <div>
-      <form>
-        <input type="submit" value="Rock"/>
-        <input type="submit" value="Paper"/>
-        <input type="submit" value="Scissors"/>
+      <form method="POST" action="/choice">
+        <input name="choice" type="submit" value="Rock"/>
+        <input name="choice" type="submit" value="Paper"/>
+        <input name="choice" type="submit" value="Scissors"/>
       </form>
     </div>
   </body>
