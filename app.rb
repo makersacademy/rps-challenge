@@ -10,6 +10,7 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @player_one_name = session[:player_one_name]
+    
     erb :game
   end
 
