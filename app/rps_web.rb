@@ -11,12 +11,15 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/welcome' do
+  post '/selection' do
     @marketeer = params[:marketeer_name]
-    erb :welcome
+    erb :selection
   end
 
-
+  get '/game' do
+    @choice = params[:choice]
+    erb :game
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -10,7 +10,7 @@ require 'rspec'
 require 'coveralls'
 require 'simplecov'
 require 'byebug'
-
+require 'web_helpers'
 
 
 SimpleCov.formatters = [
