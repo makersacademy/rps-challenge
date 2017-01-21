@@ -14,6 +14,18 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    erb(:play)
+  end
+
+  post '/who_wins' do
+    session[:player_weapon] = params[:player_weapon]
+    redirect '/battle'
+  end
+
+  get '/battle' do
+    @player_name = session[:player_name]
+    @player_weapon = session[:player_weapon]
+    erb(:battle)
   end
 
   # start the server if ruby file executed directly

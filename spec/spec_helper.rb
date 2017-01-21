@@ -10,6 +10,7 @@ require 'rspec'
 require 'byebug'
 require 'coveralls'
 require 'simplecov'
+require 'features/web_helpers.rb'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
