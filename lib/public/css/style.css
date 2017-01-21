@@ -5,10 +5,10 @@ body {
   font-size: 16px;
   color: #8728b3;
   text-align: center;
-  background: #808080; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #808080 , #3fada8); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #808080 , #3fada8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #E8CBC0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #E8CBC0 , #636FA4); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #E8CBC0 , #636FA4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 body * {
@@ -21,17 +21,17 @@ h1 {
   text-shadow: 2px 2px 5px #000;
 }
 
-h2, h3, h4, P {
+h2, h3, h4 {
   -webkit-text-stroke: 0.5px black;
   -color: #69323a;
 }
 
-/*p {
+p {
   color: #69323a;
   margin: 0 0 1em;
   font-size: 14px;
-  text-shadow: 4px 4px 10px #000;
-}*/
+
+}
 
 a {
   color: #990000;
@@ -162,4 +162,11 @@ input[type=radio]:checked {
   background-size: 28px 28px;
 }
 
-f
+footer {
+  bottom : 0;
+  height:60px;
+  margin-top : 200px;
+  font-size: 10px;
+  border-top: dashed #777 2px;
+  vertical-align: middle;
+}
