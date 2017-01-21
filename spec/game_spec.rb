@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new("Ben")}
-  let(:ben) {double :player}
-  let(:dave) {double :player}
+  let(:player1) {double :player1}
+  let(:player2) {double :player2}
+  subject(:game) {described_class.new(player1)}
 
   describe "#defaults" do
 
@@ -24,4 +24,20 @@ describe Game do
     end
   end
 
+  describe "#random_choice" do
+    it "returns a choice from @choices" do
+      expect(["Paper", "Rock", "Scissors"]).to include game.random_choice
+    end
+  end
+  #
+  # describe "result" do
+  #   context "when the game is a tie" do
+  #     it "confirms that the game is a tie" do
+  #       allow(player1).to receive(:set_choice)
+  #       game.player.set_choice("Rock")
+  #       game.opponent.set_choice("Rock")
+  #       expect(game.result).to eq "It's a tie!"
+  #     end
+  #   end
+  # end
 end

@@ -49,4 +49,10 @@ RSpec.feature "Capybara feature test" do
     click_button "Scissors"
     expect(page).to have_content("Your opponent chose")
   end
+
+  scenario "The program asks if the player wants to play again" do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content("Play Again")
+  end
 end

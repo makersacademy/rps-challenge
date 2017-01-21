@@ -1,3 +1,7 @@
 <h1><%=@game.player.name%> chose <%=@game.player.choice%></h1>
 <h2>Your opponent chose <%=@game.opponent.choice%></h2>
 <h3><%=@game.result%>
+
+  <form action="/play" method="post">
+    <input type = "submit" value = "Play Again"/>
+  </form>

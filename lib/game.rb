@@ -8,11 +8,10 @@ class Game
     @game
   end
 
-  attr_reader :players, :opponent, :player, :choices, :random_choice
+  attr_reader :opponent, :player, :choices, :random_choice
 
   def initialize(player)
     @player = player
-    @players = [@player, @opponent]
     @choices = ["Rock", "Paper", "Scissors"]
     @opponent = Player.new
   end
@@ -22,29 +21,13 @@ class Game
   end
 
   def result
-    if @player.choice == @opponent.choice
+    case [@player.choice, @opponent.choice]
+    when ["Rock", "Scissors"], ["Scissors, Paper"], ["Paper, Rock"]
+      "You win!"
+    when ["Paper", "Paper"], ["Rock", "Rock"], ["Scissors", "Scissors"]
       "It's a tie!"
     else
-      if @player.choice == "Rock"
-        if @opponent.choice == "Paper"
-          "You lose!"
-        else
-          "You win!"
-        end
-      elsif @player.choice == "Paper"
-        if @opponent.choice == "Scissors"
-          "You lose!"
-        else
-          "You win!"
-        end
-      elsif @player.choice == "Scissors"
-        if @opponent.choice == "Rock"
-          "You lose!"
-        else
-          "You win!"
-        end
-      end
+      "You lose!"
     end
   end
-
 end
