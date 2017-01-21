@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/opponent.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -14,6 +15,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @opponent = Opponent.create
     erb(:play)
   end
 
@@ -23,6 +25,7 @@ class RPS < Sinatra::Base
   end
 
   get '/battle' do
+    @opponent = Opponent.instance
     @player_name = session[:player_name]
     @player_weapon = session[:player_weapon]
     erb(:battle)
