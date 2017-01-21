@@ -12,10 +12,15 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/play' do
     player_name = Player.new(params[:player_name])
-    @game = Game.new(player_name)
+    @game = Game.create(player_name)
     erb :play
+  end
+
+  post '/result' do
+    @choice = params[:choice]
+    erb :result
   end
 
   # start the server if ruby file executed directly
