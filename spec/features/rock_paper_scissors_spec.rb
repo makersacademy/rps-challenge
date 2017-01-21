@@ -11,6 +11,28 @@ RSpec.feature "Capybara feature test", :type => :feature do
     end
 end
 
+
+RSpec.feature "Three button options", :type => :feature do
+
+  scenario "there is a button 'rock' " do
+    sign_in_and_play
+    expect(page).to have_button "Rock"
+  end
+
+  scenario "there is a button 'paper' " do
+    sign_in_and_play
+    expect(page).to have_button "Paper"
+  end
+
+  scenario "there is a button 'scissors' " do
+    sign_in_and_play
+    expect(page).to have_button "Scissors"
+  end
+
+
+
+end
+
  #  scenario "The player chooses 'Rock' " do
  #     sign_in_and_play
  #     click_button "Rock"
