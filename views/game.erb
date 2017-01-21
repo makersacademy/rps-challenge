@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-6" id="player_1_wrapper">
       <h2><%= @game.players[:player_1].name %></h2>
-      <div id="p1_move_form">
-        <form class="moves-form text-center" action="/move" method="post">
+      <div id="p1_move_form" class="<%= 'hidden-xs-up' if !@round.nil? %>">
+        <form class="moves-form text-center" action="/p1_move" method="post">
           <div class="form-group row text-center">
             <label class="move-label">
               <input name="p1_choice" type="radio" class="hidden-input" value="rock">
@@ -33,7 +33,7 @@
           </div>
         </form>
       </div>
-      <div id="p1_move_hider">
+      <div id="p1_move_hider" class="<%= 'hidden-xs-up' unless !@round.nil? %>">
         <div class="row">
           <div class="col-12">
             <img src="/img/padlock.svg" alt="padlock icon" class="move-hider-icon">
