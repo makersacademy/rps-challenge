@@ -1,5 +1,5 @@
 # Rock, Paper, Scissors Challenge
-### [Makers Academy] (http://www.makersacademy.com) - Week 3 Solo Weekend Project
+### [Makers Academy] (http://www.makersacademy.com) - Week 3 Solo Weekend Project [![Coveralls](https://camo.githubusercontent.com/c85bd9ed833f4beabdb09a95a6cc1de03fe2324a/68747470733a2f2f636f766572616c6c732e696f2f6275696c64732f393536363138302f6261646765)](https://github.com/adrianeyre/rps-challenge)
 
 ## Index
 * [Gems Used] (#GEMS)
