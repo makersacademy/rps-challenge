@@ -8,12 +8,12 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     player_1 = Player.new(name: params[:p1_name])
     player_2 = Player.new(name: params[:p2_name], human: (params[:player_2_type] == 'human'))
-    p player_1
-    p player_2
+    Game.new(player_1: player_1, player_2: player_2)
     redirect '/play'
   end
 
   get '/play' do
+    @game = Game.game_instance
     erb :game
   end
 
