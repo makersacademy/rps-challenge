@@ -91,7 +91,7 @@ class Game
   def update_score(winner)
     return if winner == 2
     @players[winner].add_score(DEFAULT_POINTS)
-    @winner = @players[winner].name if @players[winner].add_score > DEFAULT_WINNING_POINTS
+    @winner = @players[winner].name if @players[winner].score >= DEFAULT_WINNING_POINTS
   end
 
   def output(weapon1, weapon2, winner)
