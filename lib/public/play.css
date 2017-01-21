@@ -1,0 +1,43 @@
+html {
+    background-color: #fff;
+}
+
+body {
+    height: 100vh;
+    background-color: #28b4e5;
+    background-image: url(/img/rps-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+    margin: 0;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    font-family: monospace;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    width: 75%;
+}
+
+.left {
+    width: 50%;
+    padding: 2em;
+    text-align: center;
+    float: left;
+}
+
+.right {
+    width: 50%;
+    padding: 2em;
+    text-align: center;
+    float: right;
+}

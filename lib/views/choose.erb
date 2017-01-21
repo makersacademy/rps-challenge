@@ -12,16 +12,19 @@
   <body>
     <header><h1>Rock, Paper, Scissors!</h1></header>
     <main class="main">
-      <h2><%= @game.player[:name] %> vs. <%= @game.opponent[:name] %></h2>
-      <div class="left">
-        <%= @game.player[:name] %> chooses <%= @game.player[:choice] %></h3>
-      </div>
-      <div class="right">
-        <%= @game.opponent[:name] %> chooses <%= @game.opponent[:choice] %></h3>
-      </div>
-        <form action="/result">
+      <h2>Player name: <%= session[:player_name] %></h2>
+      <h3>Choose your weapon!</h3>
+      <div id="selection">
+        <form action="/play" type="post">
+          <label for="rock">Rock</label>
+          <input type="radio" name="selection" id="rock" value="Rock" />
+          <label for="paper">Paper</label>
+          <input type="radio" name="selection" id="paper" value="Paper" />
+          <label for="scissors">Scissors</label>
+          <input type="radio" name="selection" id="scissors" value="Scissors" />
           <input type="submit" value="Game on!" />
         </form>
+      </div>
     </main>
   </body>
 </html>
