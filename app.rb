@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
     if Game.game_instance.players[:player_2].human == true
       redirect '/play'
     else
-      #RESULTS
+      #GENERATE PLAYER 2 MOVE, FINISH ROUND AND GO TO RESULTS
     end
   end
 
@@ -36,6 +36,11 @@ class RockPaperScissors < Sinatra::Base
     p params
     Round.round_instance.finish_round(player_2_move: params[:p2_choice].to_sym)
     redirect '/results'
+  end
+
+  get '/results' do
+    @round = Round.round_instance
+    erb :results
   end
 
   # start the server if ruby file executed directly
