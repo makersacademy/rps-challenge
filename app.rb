@@ -19,6 +19,10 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/move' do
+    p params
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
