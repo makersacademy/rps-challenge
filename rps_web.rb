@@ -1,6 +1,5 @@
 require 'sinatra/base'
-# require './lib/player'
-# require './lib/game'
+require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
@@ -12,8 +11,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/selection' do
-    session[:marketeer_name] = params[:marketeer_name]
-    @marketeer = session[:marketeer_name]
+    @marketeer = params[:marketeer_name]
     erb :selection
   end
 
@@ -24,6 +22,8 @@ class RPSWeb < Sinatra::Base
 
   get '/game' do
     @choice = session[:choice]
+    @opponent = Game.new.random_selection
+
     erb :game
   end
 

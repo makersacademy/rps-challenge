@@ -12,6 +12,7 @@ end
 feature 'Marketeer chooses an item' do
   scenario 'Marketeer chooses Rock' do
     sign_in_and_play
+    srand(2214)
     click_button 'Rock'
     expect(page).to have_content 'You have chosen Rock'
   end
