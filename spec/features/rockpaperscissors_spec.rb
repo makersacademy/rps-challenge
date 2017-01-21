@@ -1,27 +1,31 @@
 require 'spec_helper'
 
-feature "player should be able to enter their name before the game", :type => :feature do
+describe "Rock, Paper, Scissors" do
 
-  scenario "user enters name and sees it appear on screen" do
-    visit("/")
-    fill_in "player_name", with: "Kat"
-    click_button "Enter"
+  feature "player should be able to enter their name before the game", :type => :feature do
 
-    expect(page).to have_content("Welcome, Kat!")
+    scenario "user enters name and sees it appear on screen" do
+      visit("/")
+      fill_in "player_name", with: "Kat"
+      click_button "Enter"
+
+      expect(page).to have_content("Welcome, Kat!")
+    end
+
   end
 
-end
+  feature "player should be presented with three choices after entering their name", :type => :feature do
 
-feature "player should be presented with three choices after entering their name", :type => :feature do
+    scenario "user sees three choices (rock, paper, scissors)" do
+      visit("/")
+      fill_in "player_name", with: "Kat"
+      click_button "Enter"
 
-  scenario "user sees three choices (rock, paper, scissors)" do
-    visit("/")
-    fill_in "player_name", with: "Kat"
-    click_button "Enter"
+      expect(page).to have_content("Rock")
+      expect(page).to have_content("Paper")
+      expect(page).to have_content("Scissors")
+    end
 
-    expect(page).to have_content("Rock")
-    expect(page).to have_content("Paper")
-    expect(page).to have_content("Scissors")
   end
 
 end

@@ -7,4 +7,8 @@ class Player
     @choice = choice
   end
 
+  def select_choice(choice)
+    @choice = choice
+  end
+
 end
