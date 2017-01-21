@@ -23,7 +23,7 @@ body {
 	text-align: center
 }
 .Main {
-	
+
 }
 input#rock    {
 background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/rock.png);
@@ -57,7 +57,7 @@ border: 0;
   <p>&nbsp;</p>
   <p>Rock, Paper, Scissors </p>
 </div>
-<div class="PlayerInfo">Player: <%= @player1_name %></div>
+<div class="PlayerInfo">Player: <%= @game.player1.name %></div>
 <div class="Main">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -71,9 +71,9 @@ border: 0;
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td>&nbsp;</td>
-            <td width="280" align="center"><input type="submit" id="rock" name="rock" value="Rock" /></td>
-            <td width="280" align="center"><input type="submit" id="paper" name="paper" value="Paper" /></td>
-            <td width="280" align="center"><input type="submit" id="scissors" name="scissors" value="Scissors" /></td>
+            <td width="280" align="center"><input type="submit" id="rock" name="weapon" value="Rock" /></td>
+            <td width="280" align="center"><input type="submit" id="paper" name="weapon" value="Paper" /></td>
+            <td width="280" align="center"><input type="submit" id="scissors" name="weapon" value="Scissors" /></td>
             <td>&nbsp;</td>
           </tr>
         </table>
