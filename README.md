@@ -59,9 +59,6 @@ type `http://localhost:4567` into your web browser
 
 ## <a name="Shots">Screen Shots</a>
 
-### Player Select Screen
-[![ScreenShot1](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot1.png)](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot1.png "Screen Shot 1")
-
 ### Enter Name Screen
 [![ScreenShot1](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot2.png)](https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/screenshot2.png "Screen Shot 2")
 
