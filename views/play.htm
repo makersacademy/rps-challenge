@@ -5,17 +5,79 @@ body,td,th {
 }
 body {
 	margin-top: 5px;
+	background-image: url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/background.jpg);
+	background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
 }
 .Title {
 	font-size: 5em;
 	font-weight: bold;
+	color: #FFF;
 	text-align: center
 }
 .PlayerInfo {
 	font-size: 2em;
 	font-weight: bold;
+	color: #FFF;
 	text-align: center
 }
+.Main {
+	
+}
+input#rock    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/rock.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:265px;
+height:190px;
+color: #FFF;
+border: 0;
+}
+input#paper    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/paper.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:265px;
+height:190px;
+color: #FFF;
+border: 0;
+}
+input#scissors    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/scissors.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:285px;
+height:190px;
+color: #FFF;
+border: 0;
+}
 </style>
-<div class="Title">Rock, Paper, Scissors </div>
+<div class="Title">
+  <p>&nbsp;</p>
+  <p>Rock, Paper, Scissors </p>
+</div>
 <div class="PlayerInfo">Player: <%= @player1_name %></div>
+<div class="Main">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="197" align="center" valign="bottom" class="PlayerInfo">Select your weapon!</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><form id="playform" name="playform" method="post" action="/fight">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td width="280" align="center"><input type="submit" id="rock" name="rock" value="Rock" /></td>
+            <td width="280" align="center"><input type="submit" id="paper" name="paper" value="Paper" /></td>
+            <td width="280" align="center"><input type="submit" id="scissors" name="scissors" value="Scissors" /></td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </form></td>
+    </tr>
+  </table>
+</div>
