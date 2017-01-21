@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'game'
 
 class RPSApp < Sinatra::Base
   enable :sessions
@@ -15,6 +16,10 @@ class RPSApp < Sinatra::Base
   get '/play' do
     @name = session[:name]
     erb :play
+  end
+
+  get '/rock' do
+
   end
 
   run! if app_file == $0
