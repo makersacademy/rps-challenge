@@ -1,5 +1,7 @@
 # RPS Challenge
 
+[![Build Status](https://travis-ci.org/KatHicks/rps-challenge.svg?branch=master)](https://travis-ci.org/KatHicks/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/rps-challenge?branch=master)
+
 Instructions
 -------
 
