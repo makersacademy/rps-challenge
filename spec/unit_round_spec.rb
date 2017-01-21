@@ -5,6 +5,8 @@ describe Round do
   let(:round_class) { described_class }
   let(:player_1_move) { :lizard }
   let(:player_2_move) { :spock }
+  let(:rules_handler) { class_double("RulesHandler") }
+  let(:winning_move) { [:player_1, [:lizard, :spock, "poisons"]] }
 
   describe "#round_instance" do
     it "contains latest round instance" do
@@ -21,15 +23,23 @@ describe Round do
     end
   end
 
-  describe "#winner" do
+  describe "#winning_move" do
     it 'defaults to nil' do
-      expect(round.winner).to be nil
+      expect(round.winning_move).to be nil
     end
   end
 
+
   describe "#finish_round" do
+    before(:each) do
+      allow(rules_handler).to receive(:decide_winner) { winning_move }
+    end
     it "sets player 2 move" do
       expect{round.finish_round(player_2_move: player_2_move)}.to change{round.player_2_move}
+    end
+    it "sets winning_move" do
+      round.finish_round(player_2_move: player_2_move)
+      expect(round.winning_move).to eq winning_move
     end
   end
 

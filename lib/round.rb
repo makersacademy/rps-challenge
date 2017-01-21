@@ -1,14 +1,15 @@
 class Round
 
-  attr_reader :player_1_move, :player_2_move, :winner
+  attr_reader :player_1_move, :player_2_move, :winning_move
 
   @round_instance
 
-  def initialize(player_1_move:)
+  def initialize(player_1_move:, rules_handler: RulesHandler)
     @player_1_move = player_1_move
     @player_2_move = nil
     self.class.round_instance = self
-    @winner = nil
+    @winning_move = nil
+    @rules_handler = rules_handler
   end
 
   def self.round_instance
@@ -21,6 +22,10 @@ class Round
 
   def finish_round(player_2_move:)
     @player_2_move = player_2_move
-    @winner = :player_1
+    @winning_move = rules_handler.decide_winner(player_1_move, player_2_move)
   end
+
+  private
+
+  attr_reader :rules_handler
 end
