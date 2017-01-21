@@ -12,7 +12,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @choices = ["Rock", "Paper", "Scissors"]
+    @choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
     @opponent = Player.new
   end
 
@@ -22,9 +22,14 @@ class Game
 
   def result
     case [@player.choice, @opponent.choice]
-    when ["Rock", "Scissors"], ["Scissors, Paper"], ["Paper, Rock"]
+    when ["Rock", "Scissors"], ["Rock", "Lizard"],
+          ["Scissors, Paper"], ["Scissors", "Lizard"],
+          ["Paper, Rock"], ["Paper", "Spock"],
+          ["Spock", "Scissors"], ["Spock", "Rock"],
+          ["Lizard", "Spock"], ["Lizard", "Paper"]
       "You win!"
-    when ["Paper", "Paper"], ["Rock", "Rock"], ["Scissors", "Scissors"]
+    when ["Paper", "Paper"], ["Rock", "Rock"], ["Scissors", "Scissors"],
+          ["Spock", "Spock"], ["Lizard", "Lizard"]
       "It's a tie!"
     else
       "You lose!"

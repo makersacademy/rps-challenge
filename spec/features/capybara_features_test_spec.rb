@@ -53,6 +53,6 @@ RSpec.feature "Capybara feature test" do
   scenario "The program asks if the player wants to play again" do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content("Play Again")
+    expect(page).to have_xpath("//input[@value='Play Again']")
   end
 end

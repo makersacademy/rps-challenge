@@ -9,8 +9,8 @@ describe Game do
 
       it {is_expected.to respond_to(:player)}
 
-      it "initializes with an array containing three available choices" do
-        expect(game.choices.length).to eq 3
+      it "initializes with an array containing five available choices" do
+        expect(game.choices.length).to eq 5
       end
 
       it "contains the options, rock, paper, scissors" do
@@ -26,7 +26,7 @@ describe Game do
 
   describe "#random_choice" do
     it "returns a choice from @choices" do
-      expect(["Paper", "Rock", "Scissors"]).to include game.random_choice
+      expect(["Paper", "Rock", "Scissors", "Lizard", "Spock"]).to include game.random_choice
     end
   end
   #
