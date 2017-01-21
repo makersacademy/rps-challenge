@@ -1,5 +1,13 @@
 # RPS Challenge
 
+Approach to Challenge
+-------
+
+* Set up the TDD environment for the development of a web application with Sinatra.
+
+* **User Story n.1** Created a form on the index for the user to enter the name. That name is passed as argument to an instance of the Player class saved as a 'player' variable in a POST request that redirects the user to /game.
+
+
 Instructions
 -------
 
@@ -9,7 +17,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +69,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +87,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -89,4 +97,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
