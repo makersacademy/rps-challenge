@@ -1,10 +1,79 @@
+$color1: rgb(249, 237, 104);
+$color2: rgba(240, 138, 93, 1);
+$color3: rgba(184, 59, 94, 1);
+$color4: rgba(0, 153, 181, 1);
+$color5: rgba(106, 44, 112, 1);
+$color6: #ffffff;
+$color7: rgba(131, 188, 199, 1);
+
+// LAYOUT STYLES
+
 body, input {
   font-family: 'Cuprum', sans-serif !important;
+}
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+body {
+  background-color: $color3;
+}
+
+#main-wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+}
+
+.main-content {
+  padding-bottom: 35px;
 }
 
 .navbar-brand, .btn {
   font-family: 'Pacifico', cursive;
 }
+
+.navbar {
+  background-color: $color1;
+  border-bottom: 8px solid $color4;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+  color: $color3;
+  text-shadow: 1px 1px $color5;
+}
+
+#main-wrapper {
+  background-color: $color3;
+  color: $color6;
+}
+
+.btn {
+  background-color: $color1;
+  color: $color3;
+  font-size: 1.3rem;
+  border-color: $color5;
+  box-shadow: 3px 3px $color5;
+  &:hover {
+    background-color: $color4;
+  }
+}
+
+.btn-lg {
+  font-size: 1.8rem;
+}
+
+//GAME STYLES
 
 .hidden-input { /* HIDE RADIO */
   visibility: hidden; /* Makes input not-clickable */
@@ -15,13 +84,25 @@ body, input {
   border:5px solid transparent;
 }
 .move-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:5px solid #ece314;
+  border:5px solid $color1;
+  transition: ease 1s;
 }
 
 .move-icon {
-  height: 100px;
-  width: 100px;
+  height: 140px;
+  width: 140px;
   border-radius: 50%;
+  box-shadow: 2px 2px $color5;
+  &:hover {
+    border: 5px solid $color1;
+    transition: ease 1s;
+  }
+}
+
+.results-move-icon, .move-hider-icon {
+  border-radius: 50%;
+  border: 5px solid transparent;
+  box-shadow: 4px 4px $color5;
 }
 
 .move-hider-icon {
@@ -29,11 +110,58 @@ body, input {
   width: 150px;
 }
 
+#message_log_wrapper {
+  ul {
+    padding-left: 0px;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.full-height {
+  min-height: 100%;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-shadow: 3px 3px $color5;
+  padding: 1.5rem 0px;
+}
+
+//RESULTS STYLES
+
 .flip-horizontal {
   transform: scaleX(-1);
 }
 
 .draw-indicator-arrow {
   width: 50%
+}
 
+#win-indicator-arrow {
+  width: 60%;
+}
+
+#result_message {
+  font-size: 3rem;
+  text-shadow: 0px 2px $color2;
+  border-bottom: 3px dashed $color2;
+}
+
+//MESSAGES STYLES
+
+#message_log_wrapper {
+  background-color: $color3;
+}
+
+//FOOTER STYLES
+
+#footer {
+  background-color: $color5;
+  font-size: 0.8rem;
+  color: $color1;
+  a {
+    color: $color2;
+  }
 }

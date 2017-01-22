@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid main-content">
   <div class="row text-center" >
     <div class="col-12" id="results-wrapper">
       <div class="row">
@@ -9,23 +9,27 @@
           <h2><%= @game.player_1_score %></h2>
         </div>
         <div id="p2_score" class="col-2">
-          <h2><%= @game.player_2_score %></h2>
+          <h2 class="player-name"><%= @game.player_2_score %></h2>
         </div>
         <div class="col-4">
-          <h2><%= @game.players[:player_2].name %></h2>
+          <h2 class="player-name"><%= @game.players[:player_2].name %></h2>
         </div>
-        <div class="col-12">
+        <div class="col-6 offset-3">
           <h3 id="result_message"><%="#{@round.result_message}"%></h3>
         </div>
         <div class="col-4">
-          <img class="results-move-icon img-fluid px-5" src="/img/<%= @round.player_1_move.to_s %>.<%= @round.player_1_move == :spock ? 'jpg' : 'svg' %>" alt="player 1 move">
+          <div class="px-5">
+            <img class="results-move-icon img-fluid" src="/img/<%= @round.player_1_move.to_s %>.<%= @round.player_1_move == :spock ? 'jpg' : 'svg' %>" alt="player 1 move">
+          </div>
         </div>
         <div class="col-4 align-self-center">
           <%= "<img id=\"win-indicator-arrow\" src=\"/img/right-arrow.svg\" class=\"img-fluid px-5 #{'flip-horizontal' if @round.winning_move[0] == :player_2}\" alt=\"arrow\">" unless @round.draw? %>
           <%= "<img src=\"/img/right-arrow.svg\" class=\"draw-indicator-arrow px-3\"><img src=\"/img/right-arrow.svg\" class=\"px-3 draw-indicator-arrow flip-horizontal\">" if @round.draw? %>
         </div>
         <div class="col-4">
-          <img class="results-move-icon img-fluid px-5" src="/img/<%= @round.player_2_move.to_s %>.<%= @round.player_2_move == :spock ? 'jpg' : 'svg' %>" alt="player 2 move">
+          <div class="px-5">
+            <img class="results-move-icon img-fluid " src="/img/<%= @round.player_2_move.to_s %>.<%= @round.player_2_move == :spock ? 'jpg' : 'svg' %>" alt="player 2 move">
+          </div>
         </div>
         <div class="col-12">
           <form action="/reset" method="post">
@@ -45,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 text-center" id="message_log_wrapper">
+    <div class="col-12 text-center pb-4" id="message_log_wrapper">
       <ul>
         <%= @message_log.messages.reverse.map { |message| "<li>#{message}</li>" }.join %>
       </ul>
