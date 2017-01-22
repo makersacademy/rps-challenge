@@ -13,12 +13,24 @@ class Game
     self.class.instance = self
   end
 
+  # ------------- CLASS INSTANCE VARIABLES -------------
+
   def self.instance
     @instance
   end
 
   def self.instance=(something)
     @instance = something
+  end
+
+  # ------------------ PUBLIC METHODS ------------------
+
+  def place_move(choice)
+    @player.select_choice(choice)
+  end
+
+  def assign_response
+    @computer.select_choice
   end
 
   def won?(moves = [player.choice, computer.choice])

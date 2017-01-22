@@ -11,4 +11,8 @@ describe Game do
     expect(game).to have_attributes(player: kat, computer: computer)
   end
 
+  it 'should respond to the method place_move' do
+    expect(game).to respond_to(:place_move).with(1).argument
+  end
+
 end

@@ -6,10 +6,6 @@ class Computer
     @choice = choice
   end
 
-  def chance
-    rand(1..3)
-  end
-
   def select_choice
     case chance
     when 1
@@ -19,6 +15,12 @@ class Computer
     when 3
       @choice = :scissors
     end
+  end
+
+  private
+
+  def chance
+    rand(1..3)
   end
 
 end
