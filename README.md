@@ -2,23 +2,25 @@
 
 Instructions
 -------
+Run the app from the command line to start Sinatra,
+```
+➜  rps-challenge git:(master) ✗ ruby app.rb
+[2017-01-22 16:51:40] INFO  WEBrick 1.3.1
+[2017-01-22 16:51:40] INFO  ruby 2.2.3 (2015-08-18) [x86_64-darwin16]
+== Sinatra (v1.4.6) has taken the stage on 4567 for development with backup from WEBrick
+[2017-01-22 16:51:40] INFO  WEBrick::HTTPServer#start: pid=75322 port=4567
+```
+N.B. I did refer to the walk-through https://www.youtube.com/watch?v=GoHKmartBYo&t=798s
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-
-I did refer to the walk-through https://www.youtube.com/watch?v=GoHKmartBYo&t=798s
-
-Task
-----
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Here are the user stories, followed by the game steps
 
 ```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 ```
+In the browser under `http://localhost:4567/`
+
 - the marketeer should be able to enter their name before the game
 
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US1submit_form.png)
@@ -36,8 +38,9 @@ I would like to be able to play rock/paper/scissors
 - the game will choose a random option
 
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US3Game_choses_randomly.png)
-
 - a winner will be declared
+
+![](https://github.com/Putterhead/rps-challenge/blob/master/US4winner_is_declared.png)
 
 ## Bonus level 1: Multiplayer
 
