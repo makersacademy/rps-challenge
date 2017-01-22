@@ -1,6 +1,7 @@
 # Rock, Paper, Scissors, Spock, Lizard
-## Completed by Dan Pelensky
-## 27 November 2016
+## Weekend Challenge
+### Week Three
+Completed 27 November 2016
 
 Instructions
 -------
@@ -21,7 +22,9 @@ We have a request from a client to write a basic app that allows them to play Ro
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
+```
 
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/spock/lizard
