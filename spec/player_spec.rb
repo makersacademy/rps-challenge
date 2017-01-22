@@ -6,30 +6,36 @@ describe Player do
 
   describe 'defaults' do
     it {is_expected.to respond_to(:name)}
-    it {is_expected.to respond_to(:wins)}
   end
 
-  describe "#wins" do
-    it {is_expected.to respond_to(:win)}
-    it "changes win to true" do
-      player.wins
-      expect(player.win).to eq true
+  describe "#status_change" do
+    it {is_expected.to respond_to(:status_change)}
+    it {is_expected.to respond_to(:status)}
+    context "if the player wins" do
+      it "changes player status to win" do
+        player.status_change(:win)
+        expect(player.status).to eq :win
+      end
+    end
+    context "if the player draws" do
+      it "changes players status to draw" do
+        player.status_change(:draw)
+        expect(player.status).to eq :draw
+      end
+    end
+    context "if the player loses" do
+      it "changes players status to lose" do
+        player.status_change(:lose)
+        expect(player.status).to eq :lose
+      end
     end
   end
 
-  describe "#draws" do
-    it {is_expected.to respond_to(:draws)}
-    it "changes draws to true" do
-      player.draws
-      expect(player.draw).to eq true
-    end
-  end
 
   describe "reset" do
     it "changes the win and draw status" do
       player.reset
-      expect(player.win).to eq nil
-      expect(player.draw).to eq nil
+      expect(player.status).to eq nil
     end
   end
 end

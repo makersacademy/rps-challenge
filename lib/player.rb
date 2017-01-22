@@ -1,21 +1,16 @@
 class Player
-  attr_reader :name, :win, :draw
+  attr_reader :name, :status
 
   def initialize(name)
     @name = name
   end
 
-  def wins
-    @win = true
-  end
-
-  def draws
-    @draw = true
+  def status_change(status)
+    @status = status
   end
 
   def reset
-    @win = nil
-    @draw = nil
+    @status = nil
   end
 
 end
