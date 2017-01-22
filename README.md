@@ -25,8 +25,10 @@ gem 'byebug'
 ## <a name="Install">Installation</a>
 The RSP Challenge is ran on Ruby version : 2.3.3
 
-* To change Ruby versions
+* To clone and change Ruby versions
 ```shell
+$ git clone https://github.com/adrianeyre/rps-challenge
+$ cd rps-challenge
 $ rvm 2.3.3
 ```
 * To install Ruby 2.3.3
