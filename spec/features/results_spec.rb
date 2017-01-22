@@ -21,9 +21,14 @@ feature "FEATURE: See Results" do
     expect(page).not_to have_css("img[class*='flip-horizonal']")
   end
 
-  scenario "win indicator arrow points right if player 1 won" do
+  scenario "win indicator arrow points left if player 2 won" do
     player_2_won
     expect(page).to have_css("img[class*='flip-horizontal']")
+  end
+
+  scenario "draw indicator arrows displayed if draw" do
+    draw
+    expect(page).to have_css("img[class*='draw-indicator-arrow']")
   end
 
   scenario "can start a new round" do

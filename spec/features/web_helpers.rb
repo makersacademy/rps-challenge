@@ -15,18 +15,12 @@ end
 
 def player_1_won
   play_two_player
-  choose("p1_choice", {:option => "lizard"})
-  click_button('p1_move')
-  choose("p2_choice", {:option => "spock"})
-  click_button('p2_move')
+  round_player_1_wins
 end
 
 def player_2_won
   play_two_player
-  choose("p1_choice", {:option => "rock"})
-  click_button('p1_move')
-  choose("p2_choice", {:option => "paper"})
-  click_button('p2_move')
+  round_player_2_wins
 end
 
 def draw
@@ -35,4 +29,22 @@ def draw
   click_button('p1_move')
   choose("p2_choice", {:option => "rock"})
   click_button('p2_move')
+end
+
+def round_player_2_wins
+  choose("p1_choice", {:option => "rock"})
+  click_button('p1_move')
+  choose("p2_choice", {:option => "paper"})
+  click_button('p2_move')
+end
+
+def round_player_1_wins
+  choose("p1_choice", {:option => "lizard"})
+  click_button('p1_move')
+  choose("p2_choice", {:option => "spock"})
+  click_button('p2_move')
+end
+
+def new_round
+  click_button('new_round')
 end

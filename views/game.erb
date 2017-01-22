@@ -1,49 +1,64 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-6 text-center" id="player_1_wrapper">
-      <h2><%= @game.players[:player_1].name %></h2>
-      <div id="p1_move_form" class="<%= 'hidden-xs-up' if !@round.nil? %>">
-        <form class="moves-form text-center" action="/p1_move" method="post">
-          <div class="form-group row text-center">
-            <label class="move-label">
-              <input name="p1_choice" type="radio" class="hidden-input" value="rock">
-              <img src="/img/rock.svg" class="move-icon">
-            </label>
-            <label class="move-label">
-              <input name="p1_choice" type="radio" class="hidden-input" value="paper">
-              <img src="/img/paper.svg" class="move-icon">
-            </label>
-            <label class="move-label">
-              <input name="p1_choice" type="radio" class="hidden-input" value="scissors">
-              <img src="/img/scissors.svg" class="move-icon">
-            </label>
-            <label class="move-label">
-              <input name="p1_choice" type="radio" class="hidden-input" value="lizard">
-              <img src="/img/lizard.svg" class="move-icon">
-            </label>
-            <label class="move-label">
-              <input name="p1_choice" type="radio" class="hidden-input" value="spock">
-              <img src="/img/spock.jpg" class="move-icon">
-            </label>
-          </div>
-          <div class="form-group row">
-            <div class="col-12">
-              <button type="submit" id="p1_move" name="p1_move" class="btn btn-lg btn-primary">Choose Move</button>
+      <div class="row">
+        <div class="col-8">
+          <h2><%= @game.players[:player_1].name %></h2>
+        </div>
+        <div id="p1_score" class="col-4">
+          <h2><%= @game.player_1_score %></h2>
+        </div>
+        <div id="p1_move_form" class="col-12 <%= 'hidden-xs-up' if !@round.nil? %>">
+          <form class="moves-form text-center" action="/p1_move" method="post">
+            <div class="form-group row text-center">
+              <label class="move-label">
+                <input name="p1_choice" type="radio" class="hidden-input" value="rock">
+                <img src="/img/rock.svg" class="move-icon">
+              </label>
+              <label class="move-label">
+                <input name="p1_choice" type="radio" class="hidden-input" value="paper">
+                <img src="/img/paper.svg" class="move-icon">
+              </label>
+              <label class="move-label">
+                <input name="p1_choice" type="radio" class="hidden-input" value="scissors">
+                <img src="/img/scissors.svg" class="move-icon">
+              </label>
+              <label class="move-label">
+                <input name="p1_choice" type="radio" class="hidden-input" value="lizard">
+                <img src="/img/lizard.svg" class="move-icon">
+              </label>
+              <label class="move-label">
+                <input name="p1_choice" type="radio" class="hidden-input" value="spock">
+                <img src="/img/spock.jpg" class="move-icon">
+              </label>
             </div>
-          </div>
-        </form>
-      </div>
-      <div id="p1_move_hider" class="<%= 'hidden-xs-up' unless !@round.nil? %>">
-        <div class="row">
-          <div class="col-12">
-            <img src="/img/padlock.svg" alt="padlock icon" class="move-hider-icon">
+            <div class="form-group row">
+              <div class="col-12">
+                <button type="submit" id="p1_move" name="p1_move" class="btn btn-lg btn-primary">Choose Move</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="p1_move_hider" class="col-12 <%= 'hidden-xs-up' unless !@round.nil? %>">
+          <div class="row">
+            <div class="col-12">
+              <img src="/img/padlock.svg" alt="padlock icon" class="move-hider-icon">
+            </div>
           </div>
         </div>
       </div>
+
     </div>
     <div class="col-6 text-center" id="player_2_wrapper">
-      <h2><%= @game.players[:player_2].name %></h2>
-      <div id="p2_move_form" class="<%= 'hidden-xs-up' unless !@round.nil? %>">
+      <div class="row">
+        <div id="p2_score" class="col-4">
+          <h2><%= @game.player_2_score %></h2>
+        </div>
+        <div class="col-8">
+          <h2><%= @game.players[:player_2].name %></h2>
+        </div>
+      </div>
+      <div id="p2_move_form" class="col-12 <%= 'hidden-xs-up' unless !@round.nil? %>">
         <form class="moves-form text-center" action="/p2_move" method="post">
           <div class="form-group row text-center">
             <label class="move-label">
@@ -74,7 +89,7 @@
           </div>
         </form>
       </div>
-      <div id="p2_move_hider" class="<%= 'hidden-xs-up' if !@round.nil? %>">
+      <div id="p2_move_hider" class="col-12 <%= 'hidden-xs-up' if !@round.nil? %>">
         <div class="row">
           <div class="col-12">
             <img src="/img/padlock.svg" alt="padlock icon" class="move-hider-icon">

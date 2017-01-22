@@ -25,6 +25,23 @@ describe Game do
     end
   end
 
+  describe "#player_1_score" do
+    it "returns player 1 score" do
+      expect(game.player_1_score).to eq 0
+    end
+  end
+
+  describe "#player_2_score" do
+    it "returns player 2 score" do
+      expect(game.player_2_score).to eq 0
+    end
+  end
+
+  describe "#update_score" do
+    it "adds one to score of specified player" do
+      expect{game.update_score(:player_1)}.to change{game.player_1_score}.by 1
+    end
+  end
 
 
 end
