@@ -1,10 +1,8 @@
 require 'spec_helper'
 
-feature "Register player's name" do
+feature "Player 01 can register name" do
   scenario 'to see it (in lights) before playing' do
-    visit('/')
-    fill_in :player_01_name, with: 'Stefan'
-    click_button 'submit'
+    register
     expect(page).to have_content('Hey, Stefan!')
   end
 end

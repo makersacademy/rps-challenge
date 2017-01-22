@@ -3,8 +3,6 @@
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
@@ -27,13 +25,6 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
 How To Download and Run the App
 ----
 
@@ -44,17 +35,18 @@ $ bundle
 $ rackup
 
 ```
+... then open `localhost:4567` in a browser and enjoy.
 
 Progress
 ----
 
 1. Story 01:
-  * if the user hasn't registered, '/' sends them (via GET) to a registration form
-  * the registration form asks for the user's name and sends it to a '/player' route that:
+  * If the user hasn't registered, '/' sends them (via GET) to a registration form
+  * The registration form asks for the user's name and sends it to a '/player' route that:
     - initialises a new player (Player class instance, singleton pattern)
     - stores the new player's object id in the session
     - redirects back to '/', where the user is recognised and sees their name
-  * the '/' route now looks like this:
+  * The '/' route now looks like this:
   ```
   get '/' do
     if player_stored
@@ -64,17 +56,14 @@ Progress
     end
   end
   ```
-  * the Player class is unit-tested for all its class methods, and the player object is tested for its sole initialisation argument.
-  * Screenshots:
-
-  ![Screenshot](https://path_to_your_image)
+  * The Player class is unit-tested for all its class methods, and the player object is tested for its sole initialisation argument.
 
 2. Story 02: Model/Logic - unit & feature tests
-  * the player can choose a weapon
-  * an error is raised if the weapon is not part of the RPS singleton
-  * the computer is a player-like object, with a default name. It too chooses a weapon randomly
-  * a game object takes the player and the computer as parameters (player_01 and player_02 respectively)
-  * the game calculates the result based on the RPS rules list it contains and it returns it (win, loss or draw).
+  * The player can choose a weapon
+  * An error is raised if the weapon is not part of the RPS set.
+  * The computer is a player-like object, with a default name. It too chooses a weapon randomly.
+  * A game object takes the player and the computer as parameters (player_01 and player_02 respectively).
+  * The game calculates the result based on the RPS rules list it contains and it returns it (win, loss or draw).
   * PRY starts with this .pryrc:
   ```
   require './lib/player.rb'
@@ -97,12 +86,35 @@ Progress
   [4] pry(main)> g.result
   => :p2
   ```
+3. Story 02: Controller, Views and associated feature tests
+  * Computer uses class instance variable just like Player.
+  * Feature-tested and coded for the controller and the views.
+  * If the human player provides a non-RPS weapon, the controller returns them to the weapon choice form, so they can provide a RPS one.
+  * A new human player can now register and replace the current one when play begins.
+  * Screenshots:
+    - registration upon starting new game (redirect from '/'):
 
+    ![Screenshot](https://www.dropbox.com/s/88uysvcvihvf8gm/Screenshot%202017-01-22%2018.50.43.png?dl=0)
+    - choice of weapon:
+
+    ![Screenshot](https://www.dropbox.com/s/jllgezymxargh5v/Screenshot%202017-01-22%2018.51.46.png?dl=0)
+    - confirmation opponent (i.e. computer) has chosen their weapon too:
+
+    ![Screenshot](https://www.dropbox.com/s/vo4rixbffl2c77q/Screenshot%202017-01-22%2018.52.39.png?dl=0)
+    - result:
+
+    ![Screenshot](https://www.dropbox.com/s/4x3mhxfd5otqj8s/Screenshot%202017-01-22%2018.53.19.png?dl=0)
+    - after clicking 'Play', the game restarts and recognises the registered user:
+
+    ![Screenshot](https://www.dropbox.com/s/n54ncwh834waef8/Screenshot%202017-01-22%2018.54.01.png?dl=0)
 
 Issues
 ----
 
 1. Story 01:
-  * I haven't implemented colours yet. I plan to do so in Story 02, where '/' redirects to a route with a view when the player has registered.
+  * I haven't implemented colours. I plan to do so after completing Story 02.
 2. Story 02: Model/Logic - unit & feature tests:
   * Not sure yet whether Computer should use class instance variable like Player.
+3. Story 02: Controller, Views and associated feature tests
+  * Not sure if the controller should check that the player chooses a RPS weapon (the logic in player.rb already does that at model level). But who else could? Now it all depends on Game::WEAPONS. If the weapon choice form could query the same constant and provide a pull-down menu instead of a text field, I could get rid of the if/else logic. But the controller would still depend on Game's constant.
+  * There is no nice HTML styling (no colours yet).

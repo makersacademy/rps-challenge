@@ -2,17 +2,17 @@ require_relative 'game'
 
 class Computer
 
-  # def self.find(id)
-  #   computers[id]
-  # end
-  #
-  # def self.add(id, computer)
-  #   computers[id] = player
-  # end
-  #
-  # def self.players
-  #   @computers ||= {}
-  # end
+  def self.find(id)
+    computers[id]
+  end
+
+  def self.add(id, computer)
+    computers[id] = computer
+  end
+
+  def self.computers
+    @computers ||= {}
+  end
 
   attr_reader :name, :weapon
 
