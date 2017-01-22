@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "so I can choose my attack" do
   scenario "I can pick an option" do
-    sign_in_and_play
+    sign_in_and_play_single_player
     expect(page).to have_button('Rock')
     expect(page).to have_button('Paper')
     expect(page).to have_button('Scissors')
@@ -39,6 +39,6 @@ feature "so I can play multiple games" do
     click_button ('Play Again')
     expect(page).to have_button('Rock')
     expect(page).to have_button('Paper')
-    expect(page).to have_button('Scissors')  
+    expect(page).to have_button('Scissors')
   end
 end

@@ -13,12 +13,19 @@ class RPSApp < Sinatra::Base
   end
 
   get '/multiplayer' do
-    erb :sign_in
+    erb :sign_in_multiplayer
   end
 
   post '/names' do
     player = Player.new(params[:player_name])
     session[:game] = Game.new(player)
+    redirect '/play'
+  end
+
+  post '/multiplayer_names' do
+    player1 = Player.new(params[:player1_name])
+    player2 = Player.new(params[:player2_name])
+    session[:game] = Game.new(player1, player2)
     redirect '/play'
   end
 
