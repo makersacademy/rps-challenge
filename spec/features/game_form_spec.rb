@@ -1,5 +1,5 @@
 #I would like to be able to play rock/paper/scissors
-feature '#game' do
+feature '#game form' do
   before do
     visit('/')
     fill_in :name, with: 'Olwen'
@@ -16,8 +16,7 @@ feature '#game' do
     expect(page).to have_content('You chose Rock')
   end
 
-  it "chooses an option 'Rock'"  do
-    click_button 'Rock'
+  it "displays a randomnly generated option"  do
     message = find(:css, "#option").text
     expect(poss_messages).to include message
   end
@@ -25,11 +24,8 @@ feature '#game' do
   def poss_messages
     [:rock, :paper, :scissors].map { |option| "Opponent chose #{option.to_s.capitalize}!"}
   end
-  xit "displays a random option" do
 
-  end
-
-  xit "displays a result" do
+  xit "displays a result and a winner" do
 
   end
 end

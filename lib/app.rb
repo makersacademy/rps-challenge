@@ -13,10 +13,8 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @name = session[:name]
-    @choice = session[:choice]
-    @option = session[:option]
-    erb(:play)
+     @game = Game.new(session)
+     erb(:play)
   end
 
   post '/play' do

@@ -1,14 +1,17 @@
 class Game
-  attr_reader :player, :choice, :option
+  attr_reader :name, :choice, :option
 
-def initialize(player,choice)
-  game = Game.new
-  @player = player
-  @choice = choice
+def initialize(options)
+
+  @name = options["name"]
+  @choice = options["choice"]
+  @option = options["option"]
+  
 end
-def option
+#this will return the value for computer
+def random_option
   rps = ["rock","paper","scissors"]
-  @option = [rand(0..2)]
+  @option = rps[rand(0..2)]
 end
 
 # def get_result(@choice, @auto_option)
