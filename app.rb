@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'tilt/erb'
 require './lib/computer'
 require './lib/player'
+require './lib/rockpaperscissors'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,13 +12,9 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/Player' do
+  post '/play' do
     player = Player.new(params[:player])
     @game = Game.new(player)
-    redirect '/play'
-  end
-
-  get '/play' do
     erb(:play)
   end
 

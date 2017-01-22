@@ -1,4 +1,4 @@
-require 'rockpaperscissors'
+require_relative 'rockpaperscissors'
 
 class Computer
   attr_reader :wins
