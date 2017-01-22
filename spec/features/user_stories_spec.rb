@@ -1,3 +1,4 @@
+require 'computer'
 
 describe 'User Stories' do
   # As a marketeer
@@ -14,11 +15,20 @@ describe 'User Stories' do
   # So that I can enjoy myself away from the daily grind
   # I would like to be able to play rock/paper/scissors
   feature 'play' do
+    let (:computer) {instance_double('Computer', select_weapon: "paper")}
+
     scenario 'a player would like to play rock/paper/scissors' do
       sign_up_and_play
       choose('rock')
       click_button 'PLAY'
       expect(page).to have_text 'You chose ROCK!'
+    end
+
+    scenario 'a player would like to play against the computer' do
+      sign_up_and_play
+      choose('rock')
+      click_button 'PLAY'
+      expect(page).to have_text 'I chose PAPER!'
     end
   end
 end

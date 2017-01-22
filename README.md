@@ -5,7 +5,9 @@ Approach to Challenge
 
 * Set up the TDD environment for the development of a web application with Sinatra.
 
-* **User Story n.1** Created a form on the index for the user to enter the name. That name is passed as argument to an instance of the Player class saved as a 'player' variable in a POST request that redirects the user to /game.
+* **User Story n.1** There is a form on the index for the user to enter the name. In a POST request, that name is passed as argument to an instance of the Player class and saved as a 'player' variable. A new instance of a Game class is created with 'player' as an argument. The user is redirected to /game to start playing.
+
+* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY. In /challenge....
 
 
 Instructions

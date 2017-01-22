@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
-
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -23,7 +23,9 @@ class RPS < Sinatra::Base
   end
 
   post '/challenge' do
-    @weapon = params[:check]
+    @player_weapon = $game.player.choose_weapon(params[:check])
+    @computer_weapon = $game.computer.select_weapon
+    @winner = $game.winner
     erb :challenge
   end
 
