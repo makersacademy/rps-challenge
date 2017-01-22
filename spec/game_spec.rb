@@ -12,6 +12,10 @@ describe Game do
     it 'allows a game to receive player 2' do
       expect(game).to respond_to(:player2)
     end
+    it 'calculates the winner' do
+      expect(game).to respond_to(:get_winner)
+    end
+
   end
 
 end
