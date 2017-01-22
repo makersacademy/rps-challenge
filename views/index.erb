@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css.css" type="text/css" /> 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,13 +9,17 @@
     <center>
       <header>
         <h1>ROCK. PAPER. SCISSORS.</h1>
-        <h2>Please enter your name below.</h2>
+        <h2>Please enter your name below</h2>
       </header>
       <div>
         <form method='POST' action='/names'>
-          <label for="player_1">Your name</label>
-          <input type="text" name="player_1_name" placeholder="Player"/>
-          <input type="submit" value="Play"/>
+          <div>
+            <input type="text" name="player_1_name" placeholder="Player"/>
+          </div>
+          <br>
+          <div>
+            <input type="submit" value="Play"/>
+          </div>
         </form>
       </div>
     </center>
