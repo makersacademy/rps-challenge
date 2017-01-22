@@ -7,4 +7,8 @@ class Game
       :paper => {:rock => "Player 1 wins", :paper => "Draw", :scissors => "Opponent wins"}
     }
   end
+
+  def play(player, opponent)
+    @rules[player.downcase.to_sym][opponent.downcase.to_sym]
+  end
 end
