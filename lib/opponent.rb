@@ -1,10 +1,11 @@
 class Opponent
-  attr_reader :name
+  attr_reader :name, :weapon
 
   ATTACKS = ["Rock", "Paper", "Scissors"]
 
   def initialize(name = "Opponent")
     @name = name
+    @weapon = nil
   end
 
   def self.create(name = "Opponent")
@@ -16,7 +17,7 @@ class Opponent
   end
 
   def attack
-    attack_selector
+    @weapon = attack_selector
   end
 
   private

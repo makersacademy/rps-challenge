@@ -1,8 +1,10 @@
 class Game
-  attr_reader :rules, :player_1, :player_2
+  attr_reader :rules, :player_1, :player_2, :current_player, :waiting_player
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    @current_player = player_1
+    @waiting_player = player_2
     @rules ={
       :rock => {:rock => "Draw", :paper => "#{@player_2.name}", :scissors => "#{@player_1.name}"},
       :scissors => {:rock => "#{@player_2.name}", :paper => "#{@player_1.name}", :scissors => "Draw"},
@@ -16,6 +18,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def switch
+    @current_player, @waiting_player = @waiting_player, @current_player
   end
 
   def play(player, opponent)

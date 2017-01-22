@@ -1,0 +1,16 @@
+<%= @game.current_player.name %>'s turn
+<%= @game.waiting_player.name %> is waiting
+<div>
+<form action='/who_wins_multiplayer' method='post'>
+  <input type='hidden' name='player_weapon' value='Rock' />
+  <input type='submit' value='Rock' />
+</form>
+<form action='/who_wins_multiplayer' method='post'>
+  <input type='hidden' name='player_weapon' value='Scissors' />
+  <input type='submit' value='Scissors' />
+</form>
+<form action='/who_wins_multiplayer' method='post'>
+  <input type='hidden' name='player_weapon' value='Paper' />
+  <input type='submit' value='Paper' />
+</form>
+</div>

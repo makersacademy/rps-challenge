@@ -14,4 +14,11 @@ describe Game do
       expect(game.play(player.player_weapon, opponent.opp_weapon)).to eq "Draw"
     end
   end
+
+  describe '#switch' do
+    it 'should switch the players' do
+      game.switch
+      expect(game.current_player).to eq opponent
+    end
+  end
 end

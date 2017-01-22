@@ -1,6 +1,6 @@
-<%= @game.player_1.name %> selected the <%= @player_weapon %>
+<%= @player_name%> selected the <%= @player_weapon %>
 <br>
-<%= @game.player_2.name%> selected the <%= @opponent_weapon %>
+<%= @opponent_name%> selected the <%= @opponent_weapon %>
 <br>
 <form action='/game_over' method='get'>
   <input type='submit' value='OK' />
