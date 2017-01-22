@@ -46,10 +46,13 @@ color: white;
 <h2><%= @winner %></h2>
 <br>
 <br>
-would you like to try again?
+Would you like to play again?
 <br>
 <br>
 <form action="/selection" method="post">
 <input type="submit" value="Yes" class='button'>
+</form>
+<form action="/" method="get">
+<input type="submit" value="No" class='button'>
 </form>
 </center>

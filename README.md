@@ -1,13 +1,11 @@
 # RPS Challenge
 
-![Rock Paper Scissors](/images/rock-paper-scissors.jpeg)
-Format: ![Alt Text](url)
 
-Alt-H3Download Instructions
+## Download Instructions
 
-$ git clone https://github.com/Justinio14/rps-challenge.git
-$ cd rps-challenge
-$ bundle
+* git clone https://github.com/Justinio14/rps-challenge.git
+* cd rps-challenge
+* bundle
 
 
 
