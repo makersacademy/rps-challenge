@@ -8,14 +8,6 @@ class Opponent
     @weapon = nil
   end
 
-  def self.create(name = "Opponent")
-    @opponent = Opponent.new(name)
-  end
-
-  def self.instance
-    @opponent
-  end
-
   def attack
     @weapon = attack_selector
   end
