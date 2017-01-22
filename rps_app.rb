@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'game'
+require './lib/game'
 
 class RPSApp < Sinatra::Base
   enable :sessions
@@ -20,10 +20,26 @@ class RPSApp < Sinatra::Base
   end
 
   get '/rock' do
+    p "I am in the rock method", params[:choice]
     @game = session[:game]
     @game.play(:rock)
-    erb :rock
+    erb :results
   end
+
+  get '/scissors' do
+    p "I am in the scissors method", params[:choice]
+    @game = session[:game]
+    @game.play(:scissors)
+    erb :results
+  end
+
+  get '/paper' do
+      p "I am in the paper method", params[:choice]
+    @game = session[:game]
+    @game.play(:paper)
+    erb :results
+  end
+
 
   run! if app_file == $0
 end

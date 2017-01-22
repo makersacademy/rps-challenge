@@ -1,11 +1,14 @@
+require_relative 'player'
+
 class Game
-  attr_reader :player, :computer_choice
+  attr_reader :player, :computer_choice, :player_choice
 
   def initialize(player)
     @player = player
   end
 
   def play(player_choice)
+    @player_choice = player_choice
     computer_picks
     if player_choice == :rock && computer_choice == :scissors
       player.wins

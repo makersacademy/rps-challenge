@@ -13,20 +13,22 @@ feature "when I choose rock" do
   scenario "I can see that I've chosen rock" do
     choose_rock
     expect(page).to have_content("Mike chose rock!")
+    expect(page).to have_content("Computer chose")
   end
-  scenario 'I want to win if I the computer chose scissors' do
-    choose_rock
-    expect(page).to have_content("Computer chose scissors!")
-    expect(page).to have_content("Mike wins!")
+end
+
+feature "when I choose paper" do
+    scenario "so I can see that I've chosen paper" do
+    choose_paper
+    expect(page).to have_content("Mike chose paper!")
+    expect(page).to have_content("Computer chose")
   end
-  scenario 'I want to lose if the computer chooses paper' do
-    choose_rock
-    expect(page).to have_content("Computer chose paper!")
-    expect(page).to have_content("Mike loses!")
-  end
-  scenario 'I want to draw if the computer chooses rock' do
-    choose_rock
-    expect(page).to have_content("Computer chose rock!")
-    expect(page).to have_content("Mike and the Computer drew!")
+end
+
+feature "when I choose scissors" do
+  scenario "I can see that I've chosen scissors" do
+    choose_scissors
+    expect(page).to have_content("Mike chose scissors!")
+    expect(page).to have_content("Computer chose")
   end
 end

@@ -8,6 +8,15 @@ end
 
 def choose_rock
   sign_in_and_play
-  allow(Game).to receive(:computer_picks).and_return(:scissors)
   click_button ('Rock')
+end
+
+def choose_paper
+  sign_in_and_play
+  click_button ('Paper')
+end
+
+def choose_scissors
+  sign_in_and_play
+  click_button ('Scissors')
 end

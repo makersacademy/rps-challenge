@@ -33,5 +33,26 @@ describe Game do
         game.play(:rock)
       end
     end
+    context "when I choose paper and computer chooses paper" do
+      it "tells the player they've drawn" do
+        expect(mike).to receive(:draws)
+        allow(game).to receive(:computer_choice).and_return(:paper)
+        game.play(:paper)
+      end
+    end
+    context "when I choose paper and computer chooses scissors" do
+      it "lets the player know they've won" do
+        expect(mike).to_not receive(:wins)
+        allow(game).to receive(:computer_choice).and_return(:scissors)
+        game.play(:paper)
+      end
+    end
+    context "when I choose rock and computer chooses rock" do
+      it "lets the player know they've drawn" do
+        expect(mike).to receive(:wins)
+        allow(game).to receive(:computer_choice).and_return(:rock)
+        game.play(:paper)
+      end
+    end
   end
 end
