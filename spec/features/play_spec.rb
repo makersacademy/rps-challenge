@@ -5,7 +5,7 @@ require 'spec_helper'
 # I would like to be able to play rock/paper/scissors
 
 feature 'Playing a game' do
-  RANDOM_SEED = 21999
+  RANDOM_SEED = 21203
   before do
     visit '/'
     fill_in 'player_name', with: 'Ferdinand' # first the player has to register by entering their name
@@ -44,8 +44,32 @@ feature 'Playing a game' do
   # I want the game to choose an option randomly
   scenario 'Game chooses a game form randomly' do # how do you imagine this scenario?
     srand(RANDOM_SEED)
-    click_button 'Scissors'
-    expect(page).to have_content "O-oh! The gamebot chose the Scissors utensil."
+    click_button 'Rock'
+    expect(page).to have_content "O-oh! The gamebot chose the Rock utensil."
+  end
+
+  # As a marketeer
+  # So I can play a game
+  # I want to be able to see a winning result
+  context 'At the end of the game' do
+    before do
+      srand(RANDOM_SEED)
+    end
+
+    scenario 'I win' do
+      click_button 'Paper'
+      expect(page).to have_content 'You win!'
+    end
+
+    scenario 'I lose' do
+      click_button 'Scissors'
+      expect(page).to have_content 'You lose!'
+    end
+
+    scenario "It's a draw" do
+      click_button 'Rock'
+      expect(page).to have_content "It's a draw!"
+    end
   end
 
   def possible_messages

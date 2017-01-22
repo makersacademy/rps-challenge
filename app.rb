@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_utensil] = params[:player_utensil]
+    session[:player_utensil] = params[:player_utensil].downcase.to_sym # converting it to downcase symbol because otherwise its a string, which will not be recognised
     session[:bot_utensil] = GameBot.new.game_utensil # Here I've created a model called gamebot and instantiated it with the game tool
     redirect '/play'
   end
