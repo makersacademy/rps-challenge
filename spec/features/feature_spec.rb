@@ -63,3 +63,15 @@ feature "computer makes a random choice and a winner is declared" do
         expect(page).to have_content("It's a draw!")
     end
 end
+
+feature "user can restart the game after finishing" do
+    scenario "user hits play again" do
+        register_and_play
+        click_button("Rock")
+        click_button("Continue!")
+        click_button("Play again!")
+        expect(page).to have_button("Rock")
+        expect(page).to have_button("Paper")
+        expect(page).to have_button("Scissors")
+    end
+end
