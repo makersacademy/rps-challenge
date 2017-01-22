@@ -13,6 +13,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+    params[:player_name] = "Anon" if params[:player_name].empty?
     player = Player.new(params[:player_name])
     @game = Game.new(player)
     redirect '/play'
@@ -24,9 +25,18 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
+    if params.empty?
+      redirect '/error'
+    else
+      @game = Game.instance
+      @game.place_moves(params[:choice])
+      redirect '/result'
+    end
+  end
+
+  get '/error' do
     @game = Game.instance
-    @game.place_moves(params[:choice])
-    redirect '/result'
+    erb(:error)
   end
 
   get '/result' do
@@ -35,5 +45,5 @@ class RPS < Sinatra::Base
   end
 
   run! if app_file == $0
-  
+
 end

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <head>
+    <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <div class="choice-error">
+      <h2><%= @game.player.name.capitalize %>, seems that you didn't select a move before pressing play!</h2>
+      <p>Your selected move will have a blue button once you've selected it correctly.</p>
+      <a href="/play" class="btn btn-success">Try again</a>
+    </div>
+
+  </body>
+</html>
