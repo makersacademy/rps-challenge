@@ -79,13 +79,15 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
   * Learnt that all static files (images and stylesheets) need to be stored in a directory name `Public` within Sinatra applications
   * Also downloaded Bootstrap and linked that into my application
   * Added in navigation links so that a user can play multiple games and someone can navigate back to the beginning and type in their name as a new player
+* **Accounting for deviant user behaviour**
+  * Currently, the app throws an error if the user does not select a radio button (rock, paper or scissors) before pressing play, and pages format badly if the user doesn't enter a name
+  * Added a new `error.erb` view file that the app redirects to if no radio button is selected
+    * Developed using an if statement in the POST route that checks whether params is empty using `params.empty?`
+  * Also, implemented an if statement so that player is given the name 'Anon' if no name is entered
 
 ### Ideas for extension
 
 Below is a list of ideas that would have been nice to implement with more time:
-* **User friendly error messages if (a) no player name is entered and (b) no move is selected**
-  * Currently, app throws an error if user doesn't select a move but still presses the play button
-  * Would be nice if this error page was more user friendly
 * **Allow for two players**
   * Bonus feature in the task set by Makers was to allow for two players
   * Challenge with this is hiding players' choices from each other so that game is fair
