@@ -1,0 +1,2 @@
+service_name: travis-pro
+repo_token: di3pMSG4z0NZlbPz5SgEPSrmP9a1a9a4C
