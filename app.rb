@@ -29,9 +29,13 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @player_weapon  = $player.weapon
-    #@computer_name = $computer_player.name
     @computer_weapon = $computer_player.choose_weapon
+    @result = RPSGame.new($player, $computer_player).play
     erb(:results_page)
+  end
+
+  get '/game_over' do
+    erb(:game_over)
   end
 
   # start the server if ruby file executed directly

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Choose weapon' do
+feature 'Display weapon' do
 
   context 'human player can select a weapon from rock, paper or scissors' do
 
@@ -26,4 +26,5 @@ feature 'Choose weapon' do
     end
 
   end
+
 end
