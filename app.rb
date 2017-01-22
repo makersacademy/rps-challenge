@@ -6,6 +6,7 @@ require './lib/rockpaperscissors'
 require './lib/game'
 
 class RPS < Sinatra::Base
+  attr_reader :rps
   enable :sessions
 
   before do
@@ -29,13 +30,18 @@ class RPS < Sinatra::Base
 
   post '/result' do
     if params[:rps] == "Rock"
-      @rps = "Rock"
+      @rps = :Rock
     elsif params[:rps] == "Paper"
-      @rps = "Paper"
+      @rps = :Paper
     else
-      @rps = "Scissors"
+      @rps = :Scissors
     end
     erb(:fight)
+  end
+
+  get '/fight' do
+    @rps
+
   end
 
   # start the server if ruby file executed directly
