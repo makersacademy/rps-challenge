@@ -38,7 +38,7 @@ feature '2.Play' do
   scenario "e) Go back to the Register page" do
     sign_in_and_play
     click_button 'Scissors'
-    click_button 'Re-register?'
+    click_button 'Play Again?'
     expect(page).to have_content 'Player 1: Enter your name:'
   end
 
