@@ -1,12 +1,12 @@
-require "compare"
+require_relative "rules"
 
 class Game
   @@current_game = nil
-  attr_writer :player_1, :player_2
+  attr_accessor :player_1, :player_2
 
-  def initialize comparator = Compare
+  def initialize rules = Rules
     @@current_game = self
-    @comparator = comparator
+    @rules = rules
   end
 
   def self.current_game
@@ -14,7 +14,7 @@ class Game
   end
 
   def player_one_win_state
-    @comparator.throws(player_1_choice, player_2_choice)
+    @rules.compare(player_1_choice, player_2_choice)
   end
 
   def player_1_name

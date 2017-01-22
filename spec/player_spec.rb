@@ -8,7 +8,7 @@ describe Player do
   it "should be able to return it's name" do
     expect(player.name).to eq name
   end
-  it "should be able to return it's choice" do
-    expect(player.choice).to eq choice.to_sym
+  it "should be able to return it's choice as a symbol" do
+    expect(player.choice).to eq choice.downcase.to_sym
   end
 end

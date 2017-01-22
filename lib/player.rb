@@ -1,13 +1,17 @@
 #understands own name and choice
+require_relative "rules"
+
 class Player
-  attr_accessor :name, :choice
-  def initialize args
+  attr_reader :name, :choice
+
+  def initialize args = {}
     args = defaults.merge(args)
     @name = args[:name]
-    @choice = args[:choice].to_sym
+    @choice = args[:choice].downcase.to_sym
   end
+
   def defaults
     {name: "Cpu",
-    choice: [:scissors,:paper,:rock].sample }
+    choice: Rules::WIN_MATRIX.keys.sample }
   end
 end
