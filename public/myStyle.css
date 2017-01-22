@@ -3,6 +3,8 @@ body {
 }
 
 h1 {
+    margin-left: 50px;
+    margin-right: 50px;
     border-bottom-style: solid;
     border-bottom-width: thin;
     border-bottom-color: white;
@@ -12,13 +14,43 @@ h1 {
     font-size: 40px
 }
 
+h2 {
+    margin-left: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px
+}
+
+h3 {
+    margin-left: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px
+}
+
+h4 {
+    margin-left: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 150px;
+    position: relative;
+    top: -180px;
+}
+
 p {
+  margin-left: 50px;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 20px
 }
 
-form { align-content: center;
+img {
+  position: relative;
+  top: -125px;
+  left: -50px;
+}
 
-
+.choice {
+  height:25px;
+  width:50px;
 }

@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.feature "Capybara feature test" do
   scenario "players can enter their name and see it on screen" do
     sign_in_and_play
-    expect(page).to have_content "Welcome to Rock, Paper, Scissors, Ben!"
+    expect(page).to have_content "Ben, select your weapon:"
   end
 
   scenario "Options include Rock" do
@@ -29,19 +29,19 @@ RSpec.feature "Capybara feature test" do
   scenario "The player chooses 'rock'" do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content("Ben chose Rock")
+    expect(page).to have_content("You chose Rock")
   end
 
   scenario "The player chooses 'paper'" do
     sign_in_and_play
     click_button "Paper"
-    expect(page).to have_content("Ben chose Paper")
+    expect(page).to have_content("You chose Paper")
   end
 
   scenario "The player chooses 'scissors'" do
     sign_in_and_play
     click_button "Scissors"
-    expect(page).to have_content("Ben chose Scissors")
+    expect(page).to have_content("You chose Scissors")
   end
 
   scenario "The computer makes a selection" do
