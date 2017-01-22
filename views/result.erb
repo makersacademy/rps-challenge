@@ -1,4 +1,4 @@
 <%= @game.player_1.name %> picked <%= @game.player_1.choice %><br>
 <%= @game.player_2.name %> picked <%= @game.player_2.choice %><br>
 
-<%= %> beats <% %> - <%= %> wins!
+<%= @game.find_result %>

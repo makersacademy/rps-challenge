@@ -32,7 +32,7 @@ feature 'Play the game' do
   	sign_in_and_play
 	allow_any_instance_of(Array).to receive(:sample).and_return(:Scissors)
 	click_button 'Rock'
-	expect(page).to have_content 'Rock beats Scissors - you win!'
+	expect(page).to have_content 'Rock beats Scissors - Player 1 wins!'
   end
 
 end
