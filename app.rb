@@ -12,6 +12,8 @@ class App < Sinatra::Base
 
   post '/choice' do
     @choice = params[:choice]
+    computer = Computer.new
+    @comp_choice = computer.comp_choice
     erb :choice
   end
 
