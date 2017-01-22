@@ -1,0 +1,12 @@
+<center>
+  <font face="Verdana" size="3">
+    <p style="max-width: 200px; border: 2px solid #1F535D;background-color: #08CEF6">
+      You have chosen <%= @player1.choice %>! <br><br>
+      <%= @computer.name %> picked <%= @computer.choice %>! <br><br>
+      <%= @game.winner %> <br><br>
+      <form action="/" method="get">
+        <button type="submit">Play again!</button>
+      </form>
+    </p>
+  </font>
+</center>

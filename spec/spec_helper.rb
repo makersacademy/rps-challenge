@@ -23,7 +23,7 @@ require 'capybara/poltergeist'
 require 'features/web_helpers'
 
 
-Capybara.app = RPS
+Capybara.app = RPSWeb
 Capybara.default_driver = :poltergeist
 
 
