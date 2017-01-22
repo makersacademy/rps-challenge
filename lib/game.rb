@@ -82,10 +82,8 @@ class Game
   end
 
   def select_winner(player1_weapon, player2_weapon)
-    WINNING_COMBO.each do |weapon1, weapon2|
-      return 0 if player1_weapon == weapon1 && player2_weapon == weapon2
-      return 1 if player2_weapon == weapon1 && player1_weapon == weapon2
-    end
+    return 0 if WINNING_COMBO[player1_weapon] == player2_weapon
+    return 1 if WINNING_COMBO[player2_weapon] == player1_weapon
     2
   end
 
