@@ -1,0 +1,11 @@
+<h3> Welcome <%= @game.player1.name %> </h3>
+
+<form method="post" action="choice">
+<h4> Please choose from the following:
+<select name="choice">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+
+<input type="submit" value="Submit"/>
