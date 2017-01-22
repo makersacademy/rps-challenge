@@ -55,5 +55,14 @@ describe MessageHandler do
       end
     end
 
+    describe "#draw_result_message" do
+      it "Adds draw game message to messages log" do
+        message_text = "Beast's Rock draws with Magneto's Rock!"
+        message_log_can_return(message_text)
+        message_handler.draw_result_message(:rock)
+        expect(message_log.messages.last).to eq message_text
+      end
+    end
+
   end
 end

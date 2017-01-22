@@ -28,3 +28,11 @@ def player_2_won
   choose("p2_choice", {:option => "paper"})
   click_button('p2_move')
 end
+
+def draw
+  play_two_player
+  choose("p1_choice", {:option => "rock"})
+  click_button('p1_move')
+  choose("p2_choice", {:option => "rock"})
+  click_button('p2_move')
+end

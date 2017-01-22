@@ -35,18 +35,59 @@ describe Round do
     end
   end
 
-  describe "#finish_round" do
-    before(:each) do
-      allow(rules_handler).to receive(:decide_winner) { winning_move }
-      allow(message_handler).to receive(:battle_result_message) { nil }
+  describe "#results_message" do
+    it { is_expected.to respond_to(:result_message) }
+  end
+
+  context "Draw" do
+    let(:player_1_move) { :lizard }
+    let(:player_2_move) { :lizard }
+    let(:draw_round) { described_class.new(player_1_move: player_1_move) }
+    before do
+      allow(message_handler).to receive(:draw_result_message) { nil }
     end
-    it "sets player 2 move" do
-      expect{round.finish_round(player_2_move: player_2_move)}.to change{round.player_2_move}
+    describe "#draw" do
+      it "returns true if player moves are the same" do
+        draw_round.finish_round(player_2_move: player_2_move)
+        expect(draw_round.draw?).to be true
+      end
     end
-    it "sets winning_move" do
-      round.finish_round(player_2_move: player_2_move)
-      expect(round.winning_move).to eq winning_move
+    describe "#finish_round" do
+      before(:each) do
+        allow(rules_handler).to receive(:decide_winner) { winning_move }
+        allow(message_handler).to receive(:draw_result_message) { "Lizard draws with Lizard!" }
+      end
+      it "sets player 2 move" do
+        expect{draw_round.finish_round(player_2_move: player_2_move)}.to change{draw_round.player_2_move}
+      end
+      it "winning move stays nil" do
+        draw_round.finish_round(player_2_move: player_2_move)
+        expect(round.winning_move).to be nil
+      end
+      it "sets result message to draw message" do
+        draw_round.finish_round(player_2_move: player_2_move)
+        expect(draw_round.result_message).to eq "Lizard draws with Lizard!"
+      end
     end
   end
 
+  context "Player 1 wins" do
+    describe "#finish_round" do
+      before(:each) do
+        allow(rules_handler).to receive(:decide_winner) { winning_move }
+        allow(message_handler).to receive(:battle_result_message) { "Lizard poisons Spock!" }
+      end
+      it "sets player 2 move" do
+        expect{round.finish_round(player_2_move: player_2_move)}.to change{round.player_2_move}
+      end
+      it "sets winning_move" do
+        round.finish_round(player_2_move: player_2_move)
+        expect(round.winning_move).to eq winning_move
+      end
+      it "sets result message to battle win message" do
+        round.finish_round(player_2_move: player_2_move)
+        expect(round.result_message).to eq "Lizard poisons Spock!"
+      end
+    end
+  end
 end

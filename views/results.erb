@@ -9,13 +9,14 @@
           <h2><%= @game.players[:player_2].name %></h2>
         </div>
         <div class="col-12">
-          <h3 id="result_message"><%="#{@round.winning_move[1][0].to_s.capitalize} #{@round.winning_move[1][2]} #{@round.winning_move[1][1].to_s.capitalize}!"%></h3>
+          <h3 id="result_message"><%="#{@round.result_message}"%></h3>
         </div>
         <div class="col-4">
           <img class="results-move-icon img-fluid px-5" src="/img/<%= @round.player_1_move.to_s %>.<%= @round.player_1_move == :spock ? 'jpg' : 'svg' %>" alt="player 1 move">
         </div>
         <div class="col-4">
-          <img id="win-indicator-arrow" src="/img/right-arrow.svg" class="img-fluid px-5<%= ' flip-horizontal' if @round.winning_move[0] == :player_2 %>" alt="arrow">
+          <%= "<img id=\"win-indicator-arrow\" src=\"/img/right-arrow.svg\" class=\"img-fluid px-5 #{'flip-horizontal' if @round.winning_move[0] == :player_2}\" alt=\"arrow\">" unless @round.draw? %>
+          
         </div>
         <div class="col-4">
           <img class="results-move-icon img-fluid px-5" src="/img/<%= @round.player_2_move.to_s %>.<%= @round.player_2_move == :spock ? 'jpg' : 'svg' %>" alt="player 2 move">
@@ -40,7 +41,7 @@
     </div>
     <div class="col-12 text-center" id="message_log_wrapper">
       <ul>
-        <%= @message_log.messages.map { |message| "<li>#{message}</li>" }.join %>
+        <%= @message_log.messages.reverse.map { |message| "<li>#{message}</li>" }.join %>
       </ul>
     </div>
   </div>

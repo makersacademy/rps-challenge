@@ -26,6 +26,13 @@ class MessageHandler
     winner_name = find_winner(winning_move)
     message = "#{winner_name}'s #{winning_move[1][0].to_s.capitalize} #{winning_move[1][2]} #{loser_name}'s #{winning_move[1][1].to_s.capitalize}!"
     add_message_to_log(message)
+    "#{winning_move[1][0].to_s.capitalize} #{winning_move[1][2]} #{winning_move[1][1].to_s.capitalize}!"
+  end
+
+  def draw_result_message(move)
+    message = "#{game.players[:player_1].name}'s #{move.to_s.capitalize} draws with #{game.players[:player_2].name}'s #{move.to_s.capitalize}!"
+    add_message_to_log(message)
+    "#{move.to_s.capitalize} draws with #{move.to_s.capitalize}!"
   end
 
   private

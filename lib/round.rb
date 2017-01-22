@@ -1,6 +1,6 @@
 class Round
 
-  attr_reader :player_1_move, :player_2_move, :winning_move
+  attr_reader :player_1_move, :player_2_move, :winning_move, :result_message
 
   @round_instance = nil
 
@@ -9,6 +9,7 @@ class Round
     @player_2_move = nil
     self.class.round_instance = self
     @winning_move = nil
+    @result_message = nil
     @rules_handler = rules_handler
     @message_handler = message_handler
   end
@@ -23,11 +24,23 @@ class Round
 
   def finish_round(player_2_move:)
     @player_2_move = player_2_move
-    @winning_move = rules_handler.decide_winner(player_1_move, player_2_move)
-    message_handler.battle_result_message(winning_move)
+    draw? ? handle_draw : handle_win
+  end
+
+  def draw?
+    player_1_move == player_2_move
   end
 
   private
 
-  attr_reader :rules_handler, :message_handler
+  def handle_draw
+    @result_message = message_handler.draw_result_message(player_1_move)
+  end
+
+  def handle_win
+    @winning_move = rules_handler.decide_winner(player_1_move, player_2_move)
+    @result_message = message_handler.battle_result_message(winning_move)
+  end
+
+  attr_reader :rules_handler, :message_handler, :draw
 end

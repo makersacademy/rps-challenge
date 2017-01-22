@@ -6,9 +6,14 @@ feature "FEATURE: See Results" do
     expect(page).to have_css("img[src*='spock']")
   end
 
-  scenario "Displays correct battle result message" do
+  scenario "Displays correct battle result message after win" do
     player_1_won
     expect(page).to have_text("Lizard poisons Spock!")
+  end
+
+  scenario "Displays correct battle result message after draw" do
+    draw
+    expect(page).to have_text("Rock draws with Rock!")
   end
 
   scenario "win indicator arrow points right if player 1 won" do
