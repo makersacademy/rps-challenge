@@ -7,6 +7,11 @@ Instructions
 * In a terminal, navigate to the repo directory and run the command: bundle
 * Start the server with the command: ruby app.rb
 * In a web browser, navigate to: http://localhost:4567
+* Enter your name and choose a weapon
+* If you want a friend to play with you, have them enter their name and choose a weapon also
+* If no second player is entered, you will play against the computer
+* If no players are entered, the computer will play as both players
+* Click the "Play!" button
 * Have fun playing Rock, Paper, Scissors, Lizard, Spock!
 
 ```sh

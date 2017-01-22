@@ -17,7 +17,6 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'byebug'
-# require 'capybara/dsl'
 require 'capybara/poltergeist'
 require 'features/web_helpers'
 
