@@ -13,7 +13,7 @@ describe Computer do
   end
 
   describe "#attack"
-    it "returns a defense from weapons array" do
+    it "returns an option from weapons array" do
       expect(described_class::WEAPONS).to include computer.attack
     end
 

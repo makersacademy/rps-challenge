@@ -25,8 +25,8 @@ describe Game do
       expect(game_paper.tie?(:paper)).to eq true
     end
 
-     it "directs to draw when both the player and computer choose paper" do
-       expect(game_paper.result(:paper)).to eq :draw
+     it "directs to tie when both the player and computer choose paper" do
+       expect(game_paper.result(:paper)).to eq :tie
      end
    end
 
@@ -35,7 +35,7 @@ describe Game do
      end
 
      it "directs to loose when player chooses rock, computer chooses paper" do
-       expect(game_paper.result(:rock)).to eq :loose
+       expect(game_paper.result(:rock)).to eq :defeat
      end
 
 

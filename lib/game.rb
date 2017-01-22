@@ -2,11 +2,9 @@ class Game
 
   attr_reader :computer_attack
 
-  RULES = {
-            rock: :scissors,
-            paper: :rock,
-            scissors: :paper
-          }
+  RULES = {  rock: :scissors,
+              paper: :rock,
+              scissors: :paper    }
 
   def initialize(computer_attack)
     @computer_attack = computer_attack
