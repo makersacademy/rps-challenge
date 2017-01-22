@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -10,8 +11,10 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+    # @p1_name = params[:p1_name_input]
     @p1_name = params[:p1_name_input]
-    erb :play # same as an internal GET
+    @p1 = Player.new(@p1_name)
+    erb :play
   end
 
   post '/result' do

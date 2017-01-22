@@ -7,7 +7,7 @@ require 'spec_helper'
 # I would like to register my name before playing an online game
 
 feature '1. Register' do
-  scenario 'submit one player name' do
+  scenario 'a) Submit one player name' do
     visit('/register')
     fill_in :p1_name_input, with: 'Me'
     click_button 'Submit'
