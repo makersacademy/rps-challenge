@@ -1,11 +1,9 @@
 <center>
-  <h1>Welcome to... RPS!</h1>
-  <h2>Please enter player name and choice below</h2>
-  <form method='POST' action='/player_1_turn'>
+  <form method='POST' action='/player_2_turn'>
 
     <div>
-      <label>Player One</label>
-      <input type="text" name="player_1_name" value="Player 1 name"/>
+      <label>Player two</label>
+      <input type="text" name="player_2_name" value="Player 2 name" />
     </div>
     <br>
 
@@ -17,14 +15,6 @@
       <input type="radio" name="choice" id="Lizard"   value="Lizard" />Lizard<br>
       <input type="radio" name="choice" id="Spock"value="Spock" />Spock<br>
     </div>
-    <br>
-
-    <div>
-      <h3> choose opponent </h3>
-      <input type="radio" name="game_mode" id="human" value="human" />human<br>
-      <input type="radio" name="game_mode" id="cpu"   value="cpu" checked/>cpu<br>
-    </div>
-    <br>
 
     <div>
       <input type="submit" value="FIGHT" />

@@ -5,13 +5,12 @@ feature "chosing throw" do
     click_button "FIGHT"
     expect(page).to have_content("Billy picked paper")
   end
-
-  scenario "player chooses a Rock" do
+  scenario "player chooses Rock" do
     choose "Rock"
     click_button "FIGHT"
     expect(page).to have_content("Billy picked rock")
   end
-  scenario "player chooses a Scissors" do
+  scenario "player chooses Scissors" do
     choose "Scissors"
     click_button "FIGHT"
     expect(page).to have_content("Billy picked scissors")
