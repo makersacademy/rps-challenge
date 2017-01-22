@@ -1,11 +1,7 @@
 # RPS Challenge
 
-<<<<<<< HEAD
 Task
 =======
-Task
->>>>>>> c157fecc2ac8285162b42ada67967a05f29e658d
-----
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -39,29 +35,6 @@ Hints on functionality
 ## Instruction to use the app
 -----------------------------
 
-<<<<<<< HEAD
-## Instruction to use the app
------------------------------
-
-- git clone git@github.com:edytawrobel/rps-challenge.git
-- bundle install
-- ruby lib/app.rb (or rackup)
-
-
-## Technologies used
---------------------
-
-* Ruby
-* Sinatra
-* Rspec-sinatra
-* Capybara
-* HTML
-* CSS
-* Git
-
-## Interface
-------------
-=======
 - git clone git@github.com:edytawrobel/rps-challenge.git
 - bundle install
 - ruby lib/app.rb (or rackup)
