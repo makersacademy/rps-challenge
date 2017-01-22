@@ -84,6 +84,11 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
   * Added a new `error.erb` view file that the app redirects to if no radio button is selected
     * Developed using an if statement in the POST route that checks whether params is empty using `params.empty?`
   * Also, implemented an if statement so that player is given the name 'Anon' if no name is entered
+* **Improved styling**
+  * Styling of the application in CSS was still quite basic at this stage
+  * Used a google webfont (called 'permanent marker') for the main headers to make it more appealing
+  * Improved the spacing of elements on the page so that objects were better spaced out and everything was centred correctly
+  * Differentiated between navigation buttons and form submission buttons using the Bootstrap button tags - form submissions are 'success' buttons and navigation links are 'primary' buttons
 
 ### Ideas for extension
 
@@ -93,6 +98,3 @@ Below is a list of ideas that would have been nice to implement with more time:
   * Challenge with this is hiding players' choices from each other so that game is fair
 * **Integrating additional rules**
   * Second bonus feature set by Makers was to extend the app to use these rules: http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
-* **Improving styling**
-  * Styling of the application in css is still currently quite basic
-  * Would be nice for it to look more user friendly
