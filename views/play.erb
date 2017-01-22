@@ -1,0 +1,17 @@
+<html>
+    <head>
+    </head>
+<body>
+  <h1> Get ready to play, <%= @game.player.name %>!</h1>
+
+  <form action="/rock">
+    <input type="submit" value="Rock" />
+  </form>
+  <form action="/paper">
+    <input type="submit" value="Paper" />
+  </form>
+  <form action="/scissors">
+    <input type="submit" value="Scissors" />
+  </form>
+</body>
+</html>

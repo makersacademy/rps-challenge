@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+<body>
+  You selected <%= @game.player.rock %>
+  <br/>
+  Opponent selects <%= @game.selection %>
+  <br/>
+
+  <form action="/play">
+    <input type="submit" value="Another round..." />
+  </form>
+
+</body>
+</html>
