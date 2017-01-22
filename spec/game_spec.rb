@@ -11,7 +11,7 @@ describe Game do
 
   describe '#winner' do
     it 'should work out who wins the game' do
-      expect(game.play(player.player_weapon, opponent.opp_weapon)).to eq "Draw"
+      expect(game.play(player.player_weapon, opponent.opp_weapon)).to eq "Neither"
     end
   end
 

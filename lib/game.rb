@@ -6,9 +6,11 @@ class Game
     @current_player = player_1
     @waiting_player = player_2
     @rules ={
-      :rock => {:rock => "Draw", :paper => "#{@player_2.name}", :scissors => "#{@player_1.name}"},
-      :scissors => {:rock => "#{@player_2.name}", :paper => "#{@player_1.name}", :scissors => "Draw"},
-      :paper => {:rock => "#{@player_1.name}", :paper => "Draw", :scissors => "#{@player_2.name}"}
+      :rock => {:rock => "Neither", :paper => "#{@player_2.name}", :scissors => "#{@player_1.name}", :lizard => "#{@player_1.name}", :spock => "#{@player_2.name}"},
+      :scissors => {:rock => "#{@player_2.name}", :paper => "#{@player_1.name}", :scissors => "Neither", :lizard => "#{@player_1.name}", :spock => "#{@player_2.name}"},
+      :paper => {:rock => "#{@player_1.name}", :paper => "Neither", :scissors => "#{@player_2.name}", :lizard => "#{@player_2.name}", :spock => "#{@player_1.name}"},
+      :lizard => {:rock => "#{@player_2.name}", :paper => "#{@player_1.name}", :scissors => "#{@player_2.name}", :lizard => "Neither", :spock => "#{@player_1.name}"},
+      :spock => {:rock => "#{@player_1.name}", :paper => "#{@player_2.name}", :scissors => "#{@player_1.name}",:lizard => "#{@player_2.name}", :spock => "Neither"}
     }
   end
 

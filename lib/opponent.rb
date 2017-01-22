@@ -1,7 +1,7 @@
 class Opponent
   attr_reader :name, :weapon
 
-  ATTACKS = ["Rock", "Paper", "Scissors"]
+  ATTACKS = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
   def initialize(name = "Opponent")
     @name = name
