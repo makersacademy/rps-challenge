@@ -1,0 +1,13 @@
+<body style="background-color:#e6e6e6;font-family:verdana">
+  <h1 style="font-size:20px" align="left">Rock, Paper and Scissors</h1>
+  <h1 align="right"><%= @player_one_name %>: <%= @player_one_hp %> HP</h1>
+  <h1 align="right"><%= @player_two_name %>: <%= @player_two_hp %> HP</h1>
+  <br><br><br><br><br>
+  <form align="center" class="" action="/player_chosen_outcome" method="post">
+    <label style="font-size:30px" for="">Choose on the following options:</label>
+    <br><br>
+    <input style="border-radius:8px;font-weight:bold;font-size:30px;text-align:center;width:250px;height:80px;border:0 none;background-color:#ff6600" id="rock_button_id" type="submit" name="rock" value="ROCK">
+    <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:250px;height:80px;border:0 none;background-color:#ff6600" id="paper_button_id" type="submit" name="paper" value="PAPER">
+    <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:250px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="SCISSORS">
+  </form>
+</body>
