@@ -29,7 +29,7 @@ feature '2.Play' do
   scenario 'd) player one chooses Scissors and the computer plays Scissors' do
     sign_in_and_play
     click_button 'Scissors'
-    msg = "You chose Scissors and The Computer chose Scissors, IT IS A DRAW!"
+    msg = "You chose Scissors and The Computer chose Scissors, IT'S A DRAW!"
     expect(page).to have_content msg
   end
 

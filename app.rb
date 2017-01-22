@@ -17,10 +17,14 @@ class RPS < Sinatra::Base
   post '/result' do
     @p1_choice = params[:p1_choice_input]
     if @p1_choice == "Rock"
+      @msg = "YOU WIN!"
       erb :winner # same as an internal GET
-    else
-      @p1_choice == "Paper"
-    erb :loser # same as an internal GET
+    elsif @p1_choice == "Paper"
+      @msg = "YOU LOSE!"
+      erb :winner # same as an internal GET
+    else @p1_choice == "Scissors"
+      @msg = "IT'S A DRAW!"
+      erb :winner # same as an internal GET
     end
   end
 
