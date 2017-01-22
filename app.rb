@@ -8,6 +8,10 @@ require './lib/game'
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
@@ -15,12 +19,22 @@ class RPS < Sinatra::Base
   post '/play' do
     player = Player.new(params[:player])
     @game = Game.new(player)
+    redirect '/player'
+  end
+
+  get '/player' do
+    @game
     erb(:play)
   end
 
   post '/result' do
-    session[:rps] = params[:rps]
-    @rps = session[:rps]
+    if params[:rps] == "Rock"
+      @rps = "Rock"
+    elsif params[:rps] == "Paper"
+      @rps = "Paper"
+    else
+      @rps = "Scissors"
+    end
     erb(:fight)
   end
 
