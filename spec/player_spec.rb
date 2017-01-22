@@ -9,8 +9,4 @@ describe Player do
   it 'should return the option' do
     expect(dave.option).to eq "option1"
   end
-
-  describe '#result' do
-    it {is_expected.to respond_to(:result)}
-  end
 end

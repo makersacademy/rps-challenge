@@ -2,21 +2,22 @@ require 'game'
 
 describe Game do
 
-  subject(:dave)  {Game.new("player1", "option1", "player2", "option2")}
-  subject(:game1) {Game.new("player1", "scissors", "player2", "paper")}
-  subject(:game2) {Game.new("player1", "scissors", "player2", "rock")}
-  subject(:game3) {Game.new("player1", "rock", "player2", "scissors")}
-  subject(:game4) {Game.new("player1", "rock", "player2", "paper")}
-  subject(:game5) {Game.new("player1", "paper", "player2", "scissors")}
-  subject(:game6) {Game.new("player1", "paper", "player2", "rock")}
-  subject(:game7) {Game.new("player1", "paper", "player2", "paper")}
+
+  subject(:dave)  {Game.new(Player.new("player1", "option1"), Player.new("player2", "option2"))}
+  subject(:game1) {Game.new(Player.new("player1", "scissors"), Player.new("player2", "paper"))}
+  subject(:game2) {Game.new(Player.new("player1", "scissors"), Player.new("player2", "rock"))}
+  subject(:game3) {Game.new(Player.new("player1", "rock"), Player.new("player2", "scissors"))}
+  subject(:game4) {Game.new(Player.new("player1", "rock"), Player.new("player2", "paper"))}
+  subject(:game5) {Game.new(Player.new("player1", "paper"), Player.new("player2", "scissors"))}
+  subject(:game6) {Game.new(Player.new("player1", "paper"), Player.new("player2", "rock"))}
+  subject(:game7) {Game.new(Player.new("player1", "paper"), Player.new("player2", "paper"))}
 
 
   it 'should return player 1 name' do
-    expect(dave.player1).to eq "player1"
+    expect(dave.player1.name).to eq "player1"
   end
   it 'should return player 2 name' do
-    expect(dave.player2).to eq 'player2'
+    expect(dave.player2.name).to eq 'player2'
   end
   it 'should return player1 chosen option' do
     expect(dave.option1).to eq "option1"
