@@ -18,5 +18,21 @@
     <div class="col-4">
       <img class="results-move-icon img-fluid px-5" src="/img/<%= @round.player_2_move.to_s %>.<%= @round.player_2_move == :spock ? 'jpg' : 'svg' %>" alt="player 2 move">
     </div>
+    <div class="col-12">
+      <form action="/reset" method="post">
+        <div class="form-group row">
+          <div class="col-12 text-center">
+            <button type="submit" id="new_round" name="new_round" class="btn btn-lg btn-primary">Next Round</button>
+          </div>
+        </div>    
+      </form>
+      <form action="/" method="get">
+        <div class="form-group row">
+          <div class="col-12 text-center">
+            <button type="submit" id="new_players" name="new_players" class="btn btn-primary">Start New Game</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
