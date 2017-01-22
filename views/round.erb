@@ -1,0 +1,12 @@
+<h3><%=@game.player.capitalize%> chose <%= @game.choice %>!</h3>
+<h3>The computer chose <%= @game.computer_choice %>!</h3>
+
+<h3>
+<% if @game.choose_round_winner == "player" %>
+  <%= @game.player.capitalize %> won this round!
+<% elsif @game.choose_round_winner == "computer" %>
+  The computer won this round!
+<% else @game.choose_round_winner == "draw" %>
+  This round is a draw.
+<% end %>
+</h3>

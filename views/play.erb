@@ -1,0 +1,20 @@
+<h1> <%= @game.player %> vs. Computer </h1>
+
+<br>
+
+<h3>Choose a play:</h3>
+
+<form action="/round" method="post">
+  <input type="hidden" name="choice" value="rock">
+  <input type="submit" value="ROCK!">
+</form>
+
+<form action="/round" method="post">
+  <input type="hidden" name="choice" value="paper">
+  <input type="submit" value="PAPER!">
+</form>
+
+<form action="/round" method="post">
+  <input type="hidden" name="choice" value="scissors">
+  <input type="submit" value="SCISSORS!">
+</form>
