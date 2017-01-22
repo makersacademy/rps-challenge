@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_name] = params[:name] # here we're saving the name from the the params to the session so we can use it later
+    session[:player_name] = params[:player_name] # here we're saving the name from the the params to the session so we can use it later
     redirect '/play' # redirecting to play, because we don't want to render a view from post action
   end
 
@@ -18,8 +18,8 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_tool] = params[:tool]
-    session[:bot_tool] = :rock
+    session[:player_utensil] = params[:player_utensil]
+    session[:bot_utensil] = GameBot.new.game_utensil # Here I've created a model called gamebot and instantiated it with the game tool
     redirect '/play'
   end
 

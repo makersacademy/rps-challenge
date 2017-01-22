@@ -2,13 +2,13 @@ Hello, <%= @turn.player_name %>!<br>
 
 <form method="POST" action="/play">
 
-  <input type="submit" name="tool" value="Rock" /><br><text=FFFFFF# we need the name here for the input to retreive for params later>
-  <input type="submit" name="tool" value="Paper" /><br>
-  <input type="submit" name="tool" value="Scissors" /><br>
+  <input type="submit" name="utensil" value="Rock" /><br><text=FFFFFF# we need the name here for the input to retreive for params later>
+  <input type="submit" name="utensil" value="Paper" /><br>
+  <input type="submit" name="utensil" value="Scissors" /><br>
 </form>
 
-<%=@turn.player_tool.to_s.capitalize%>! You chose wisely. <text=FFFFFF# this text should only be visible after the player selects the game tool>
+<%=@turn.player_utensil.to_s.capitalize%>! You chose wisely. <text=FFFFFF# this text should only be visible after the player selects the game tool>
 
-<div id="bot_tool" <text=FFFFFF# Using id here because we not expecting more than one bot>
-  O-oh! The bot chose the <%=@turn.bot_tool.to_s.capitalize%> tool.<text=FFFFFF# We ve put this text into an identifyable element using div>
+<div id="bot_utensil" <text=FFFFFF# Using id here because we not expecting more than one bot>
+  O-oh! The gamebot chose the <%=@turn.bot_utensil.to_s.capitalize%> utensil.<text=FFFFFF# We ve put this text into an identifyable element using div>
 </div>

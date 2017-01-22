@@ -34,6 +34,7 @@ I would like to be able to play rock/paper/scissors
 
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US2tool_confirmation.png)
 - the game will choose a random option
+
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US3Game_choses_randomly.png)
 
 - a winner will be declared
