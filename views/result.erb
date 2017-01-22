@@ -1,4 +1,10 @@
 <%= @game.player_1.name %> picked <%= @game.player_1.choice %><br>
 <%= @game.player_2.name %> picked <%= @game.player_2.choice %><br>
 
-<%= @game.find_result %>
+<%= @game.find_result %><br>
+
+<div align="center">
+  <form action = "/play" method = "get">
+	<input type = "submit" name = "choice" value = "Play again"/>
+  </form>
+</div>
