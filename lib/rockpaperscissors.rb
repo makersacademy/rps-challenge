@@ -1,8 +1,7 @@
 class RockPaperScissors
+  CHOICES = [:Rock, :Paper, :Scissors]
+  
   def rock_paper_scissors
-    OUTLOOKS.sample
+    CHOICES.sample
   end
-
-  private
-  OUTLOOKS = [:rock, :paper, :scissors]
 end
