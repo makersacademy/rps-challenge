@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Player
 
   def self.find(id)
@@ -12,9 +14,14 @@ class Player
     @players ||= {}
   end
 
-  attr_reader :name
+  attr_reader :name, :weapon
 
   def initialize(name)
     @name = name
+  end
+
+  def choose(weapon)
+    fail 'No such weapon in RPS!' unless Game::WEAPONS.include? weapon
+    @weapon = weapon
   end
 end
