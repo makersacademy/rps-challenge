@@ -9,5 +9,11 @@ describe Player do
  	  expect(player.name).to eq "Player 1"
   	end 
   end
+
+  describe '#choice' do
+  	it 'returns the player\'s choice' do
+  	  expect(Player::CHOICES).to include player.choice
+  	end
+  end
 	
 end
