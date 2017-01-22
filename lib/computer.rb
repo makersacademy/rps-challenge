@@ -1,6 +1,8 @@
 class Computer
 
-def initialise
+CHOICES = ["rock","paper","scissors"]
+
+def initialize
 	@choice= nil
 end 
 
@@ -11,7 +13,7 @@ end
   private 
 
 def random
-	["rock","paper","scissors"].sample
+	CHOICES.sample
 end
 
 end

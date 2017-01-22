@@ -12,6 +12,14 @@ WIN_CHART=[["rock","scissors"],["paper","rock"],["scissors","paper"]]
 		@compare = []
 	end
 
+	def self.create(player_1, player_2=Computer.new)
+  		@game = Game.new(player_1, player_2)
+	end
+
+	def self.instance
+		@game
+	end
+
 	def play		
 		user_turn
 		computer_turn
