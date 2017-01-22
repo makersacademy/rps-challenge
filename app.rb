@@ -13,7 +13,9 @@ class RPS < Sinatra::Base
   post '/name' do
     # @p1_name = params[:p1_name_input]
     @p1_name = params[:p1_name_input]
-    @p1 = Player.new(@p1_name)
+    # @p1 = Player.new(@p1_name)
+    @player1 = Player.new(@p1_name)
+    @player2 = Player.new("The Computer")
     erb :play
   end
 
