@@ -1,6 +1,18 @@
-# RPS Challenge
+# Rock Paper Scissors Challenge
 
 [![Coverage Status](https://coveralls.io/repos/github/shezdev/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/shezdev/rps-challenge?branch=master)
+
+To play Rock, Paper, Scissors
+-------
+1. Start the web server with the command
+```
+rackup -p 4567
+```
+2. Navigate to the following page in your web browser:
+```
+http://localhost:4567/register
+```
+3. Register and play against the computer!
 
 My approach
 ------------
