@@ -7,11 +7,19 @@ WINNERS = [[:ROCK, :SCISSORS],[:SCISSORS, :PAPER], [:PAPER, :ROCK]]
 
 LOSERS =  WINNERS.map { |i,j| [j,i] }
 
-attr_reader :winner
+attr_reader :winner, :player, :computer_player
 
   def initialize(player,computer_player)
     @player = player
     @computer_player = computer_player
+  end
+
+  def self.create(player, computer_player)
+    @game = RPSGame.new(player, computer_player)
+  end
+
+  def self.instance
+    @game
   end
 
   def play

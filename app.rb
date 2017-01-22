@@ -6,31 +6,40 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = RPSGame.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $player = Player.new(params[:player_name])
-    $computer_player = Player.new
+    player = Player.new(params[:player_name])
+    computer_player = Player.new
+    @game = RPSGame.create(player, computer_player)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
-    @computer_name = $computer_player.name
+    @game = RPSGame.instance
+    # @player_name = $player.name
+    # @computer_name = $computer_player.name
     erb(:play)
   end
 
   post '/play' do
-    $player.choose_weapon(params[:weapon])
+    @game.player.choose_weapon(params[:weapon])
+    #$player.choose_weapon(params[:weapon])
     redirect '/results'
   end
 
   get '/results' do
-    @player_weapon  = $player.weapon
-    @computer_weapon = $computer_player.choose_weapon
-    @result = RPSGame.new($player, $computer_player).play
+    # @player_weapon  = $player.weapon
+    # @computer_weapon = $computer_player.choose_weapon
+    # @result = RPSGame.new($player, $computer_player).play
+    @game.computer_player.choose_weapon
+    @game.play
     erb(:results_page)
   end
 
