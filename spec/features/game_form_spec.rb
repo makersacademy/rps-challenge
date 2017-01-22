@@ -16,11 +16,17 @@ feature '#game' do
     expect(page).to have_content('You chose Rock')
   end
 
+  it "chooses an option 'Rock'"  do
+    click_button 'Rock'
+    message = find(:css, "#option").text
+    expect(poss_messages).to include message
+  end
 
+  def poss_messages
+    [:rock, :paper, :scissors].map { |option| "Opponent chose #{option.to_s.capitalize}!"}
+  end
   xit "displays a random option" do
-    visit('/')
-    fill_in :player_1_name, with: 'Olwen'
-    click_button "Submit name"
+
   end
 
   xit "displays a result" do

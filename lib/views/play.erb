@@ -5,5 +5,10 @@ To play Rock, Paper Scissors enter a choice:</br>
 <input type="submit" name="choice" value="Paper" />
 <input type="submit" name="choice" value="Scissors" /></br>
 
-You chose <%=@choice%>
+You chose <%= @choice%></br>
+
+<div id="option">
+  Opponent chose <%= @option.to_s.capitalize %>!
+</div>
+
 </form>
