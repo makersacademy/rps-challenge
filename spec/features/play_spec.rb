@@ -1,5 +1,4 @@
 require 'spec_helper'
-require "game"
 # in spec/features/play_spec.rb
 
 # User story 2:
@@ -13,13 +12,15 @@ feature '2.Play' do
     expect(page).to have_content 'Enter Rock, Paper or Scissors'
   end
 
-  # scenario 'b) player one chooses Paper and the computer plays Scissors' do
+  # scenario 'b) player one chooses Rock and the computer plays Scissors' do
+  #   p1_name = "Bob"
+  #   p2_name = "The Computer"
   #   sign_in_and_play
   #   click_button 'Rock'
-  #   msg = "You chose Rock and The Computer chose Scissors, YOU WIN!"
+  #   msg = "#{p1_name} chose Rock and #{p2_name} chose Scissors, #{p1_name} WINS!"
   #   expect(page).to have_content msg
   # end
-  #
+
   # scenario 'c) player one chooses Paper and the computer plays Scissors' do
   #   sign_in_and_play
   #   click_button 'Paper'

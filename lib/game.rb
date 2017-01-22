@@ -18,10 +18,10 @@ class Game
     @p2_name = p2_name
 
     if p1_choice == "Rock" && p2_choice == "Scissors" || p1_choice == "Paper" && p2_choice == "Rock" || p1_choice == "Scissors" && p2_choice == "Paper"
-      $msg = "YOU WIN!"
+      $msg = "#{@p1_name} WINS!"
 
     elsif p1_choice == "Rock" && p2_choice == "Paper" || p1_choice == "Paper" && p2_choice == "Scissors" || p1_choice == "Scissors" && p2_choice == "Rock"
-      $msg = "YOU LOSE!"
+      $msg = "#{@p1_name} LOSES!"
 
     else p1_choice == "Rock" && p2_choice == "Rock" || p1_choice == "Paper" && p2_choice == "Paper" || p1_choice == "Scissors" && p2_choice == "Scissors"
       $msg = "IT'S A DRAW!"
