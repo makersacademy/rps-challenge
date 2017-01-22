@@ -1,0 +1,11 @@
+<div align="center">
+  <% if @game.play.include?("Sorry")%>
+    <h3><span class="blink">Sorry, missing player(s)</span></h3>
+  <%elsif @game.play.include?("wins")%>
+  <h3><span class="blink"><%=@game.play%></span></h3>
+  <%else%>
+    <h3><span class="blink">This is a tie!</span></h3>
+  <%end%>
+    <br>
+  <a href="/">Play Again</a>
+</div>
