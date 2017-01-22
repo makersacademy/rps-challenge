@@ -1,6 +1,6 @@
 class Computer
 
-  attr_reader :weapon
+  attr_reader :weapons, :weapon
 
   def initialize
     @weapons = ["rock", "paper", "scissors"]

@@ -1,4 +1,4 @@
-require 'computer'
+require './lib/computer.rb'
 
 describe 'User Stories' do
   # As a marketeer
@@ -11,11 +11,11 @@ describe 'User Stories' do
       expect(page).to have_text 'Choose your weapon Dino!'
     end
   end
+
   # As a marketeer
   # So that I can enjoy myself away from the daily grind
   # I would like to be able to play rock/paper/scissors
   feature 'play' do
-    let (:computer) {instance_double('Computer', select_weapon: "paper")}
 
     scenario 'a player would like to play rock/paper/scissors' do
       sign_up_and_play
@@ -25,6 +25,7 @@ describe 'User Stories' do
     end
 
     scenario 'a player would like to play against the computer' do
+      allow_any_instance_of(Array).to receive(:sample).and_return("paper")
       sign_up_and_play
       choose('rock')
       click_button 'PLAY'

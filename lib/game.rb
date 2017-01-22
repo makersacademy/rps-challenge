@@ -4,9 +4,9 @@ class Game
 
   attr_reader :player, :computer
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
-    @computer = Computer.new
+    @computer = computer
   end
 
   # Rock beats Scissors

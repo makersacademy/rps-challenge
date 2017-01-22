@@ -13,7 +13,8 @@ class RPS < Sinatra::Base
 
   post '/start' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect '/game'
   end
 
@@ -29,10 +30,6 @@ class RPS < Sinatra::Base
     erb :challenge
   end
 
-  # get '/challenge' do
-  #   # @weapon = params[:check]
-  #   erb :challenge
-  # end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

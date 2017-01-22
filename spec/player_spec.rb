@@ -9,7 +9,7 @@ describe Player do
     expect(player.name).to eq :name
   end
 
-  it 'allows player have a weapon' do
+  it 'allows player to have a weapon' do
     expect(player.choose_weapon(:weapon)).to eq :weapon
   end
 
