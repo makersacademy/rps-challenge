@@ -12,9 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    # @p1_name = params[:p1_name_input]
     @p1_name = params[:p1_name_input]
-    # @p1 = Player.new(@p1_name)
     @player1 = Player.new(@p1_name)
     @player2 = Player.new("The Computer")
     $game = Game.new(@player1, @player2)
@@ -26,9 +24,7 @@ class RPS < Sinatra::Base
     @p2_choice = $game.get_choice
     @p1_name = $game.player1.name
     @p2_name = $game.player2.name
-
     @msg = $game.get_winner(@p1_choice, @p2_choice, @p1_name, @p2_name)
-
     erb :winner
   end
 

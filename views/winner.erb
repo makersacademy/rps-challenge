@@ -1,5 +1,8 @@
 
-<%=@p1_name%> chose <%=@p1_choice%> and <%=@p2_name%> chose <%=@p2_choice%>, <%=@msg%>
-<form action="/register">
-  <input type="submit" value="Back!" />
+<b><%=@p1_name%></b> chose <i><%=@p1_choice%></i> and <b><%=@p2_name%></b> chose <i><%=@p2_choice%></i>,
+<br /><%=@msg%>
+<form action="/play">
+  <input type="submit" value="Play again" />
+  <form action="/register">
+    <input type="submit" value="Re-register?" />
 </form>
