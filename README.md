@@ -26,7 +26,7 @@ My approach
 * a) scenario a just tests for the presence of text - passes
 * b) scenario b tests when a radio button called Rock is selected and submitted that the content "You chose 'Rock' and The Computer chose 'Scissors', YOU WIN!" will be displayed.
 c) Adding a form in play.erb that posts to /result
-d) /result will calculate the winner and redirect to /winner.erb
+d) /result will calculate the winner (via game.rb) and redirect to /winner.erb with a message of who won!
 
 
 Instructions
@@ -47,7 +47,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
