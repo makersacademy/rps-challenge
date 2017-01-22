@@ -1,5 +1,4 @@
 require 'coveralls'
-Coveralls.wear!
 require 'simplecov'
 require 'features/web_helpers' #my file
 
@@ -7,6 +6,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
+Coveralls.wear!
 
 SimpleCov.start
 
