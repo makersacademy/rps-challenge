@@ -1,15 +1,55 @@
+
+<style type="text/css">
+
+body {
+  background-color: lightblue;
+}
+
+.form{
+  background-color: cyan;
+  border-style: dashed;
+  border-radius: 40px;
+  max-width: 250;
+  position: absolute;
+  height: 250;
+  top: 34%;
+  left: 50%;
+  padding-bottom:25px
+}
+h2 {color: red}
+
+.button{
+    cursor:pointer;
+    width: 80px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    border-radius: 12px;
+    background-color: white;
+    color: red;
+    border-radius: 12px;
+    border: 2px solid blue;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  /*  transition-duration: 0.4s;*/
+}
+
+.button:hover {
+background-color: blue; /* Green */
+color: white;
+}
+
+</style>
+
 <center>
-Your opponent has chosen <%= @opponent %>
-
+<h2>Your opponent has chosen <%= @opponent %></h2>
 <br>
-<br>
-
-<%= @winner %>
+<h3><%= @winner %></h3>
 <br>
 <br>
 would you like to try again?
 <br>
+<br>
 <form action="/selection" method="post">
-<input type="submit" value="Yes">
+<input type="submit" value="Yes" class='button'>
 </form>
 </center>

@@ -32,7 +32,7 @@ class RPSWeb < Sinatra::Base
     @choice = session[:choice]
     @opponent = Game.new.random_selection
     @winner = Winner.new.result(@choice, @opponent)
-    @marketeer = session[:marketeer_name]
+    @marketeer = params[:marketeer_name]
     erb :winner
   end
 
