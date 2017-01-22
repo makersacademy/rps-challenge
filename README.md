@@ -1,5 +1,5 @@
 # RPS Challenge
-[![Build Status](https://travis-ci.org/tamarlehmann/rps-challenge.svg?branch=master)
+[Build Status](https://travis-ci.org/tamarlehmann/rps-challenge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/tamarlehmann/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/tamarlehmann/rps-challenge?branch=master)
 
 Features
