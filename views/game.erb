@@ -1,1 +1,9 @@
 You chose <%= @choice %>
+
+<% if @choice == "Rock" %>
+<h2><%= @game.rock_result %></h2>
+<h2><% elsif @choice == "Paper" %></h2>
+<h2><%= @game.paper_result %>
+<h2><% else @choice == "Scissors" %></h2>
+<h2><%= @game.scissor_result %>
+<%end%>
