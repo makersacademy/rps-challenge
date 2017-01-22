@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/player'
+# require './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   post '/choose' do
-    @game = Game.create(Player.new(params[:player_name], params[:selection]), Player)
+    @game = Game.create(params[:player_1_name], params[:player_1_selection], params[:player_2_name], params[:player_2_selection])
     # erb :choose
     redirect '/play'
   end

@@ -17,19 +17,27 @@
         <main class="main">
             <div class="form">
                 <div class="index-left">
-                    <h2 class="index-h2">Enter your name:</h2>
                     <form id="details" action="/choose" method="post">
-                        <!-- <label for="name">Name:</label> -->
-                        <input type="text" name="player_name" id="player_name"/>
-                    </div>
-                    <div class="index-right">
+                      <h2 class="index-h2">Player 1 Name:</h2>
+                        <input type="text" name="player_1_name" id="player_1_name"/>
                         <h2 class="index-h2">Choose your weapon!</h2>
                         <label for="rock">Rock</label>
-                        <input type="radio" name="selection" id="rock" value="Rock"/>
+                        <input type="radio" name="player_1_selection" id="rock" value="Rock"/>
                         <label for="paper">Paper</label>
-                        <input type="radio" name="selection" id="paper" value="Paper"/>
+                        <input type="radio" name="player_1_selection" id="paper" value="Paper"/>
                         <label for="scissors">Scissors</label>
-                        <input type="radio" name="selection" id="scissors" value="Scissors"/>
+                        <input type="radio" name="player_1_selection" id="scissors" value="Scissors"/>
+                    </div>
+                    <div class="index-right">
+                      <h2 class="index-h2">Player 2 Name:</h2>
+                      <input type="text" name="player_2_name" id="player_2_name"/>
+                      <h2 class="index-h2">Choose your weapon!</h2>
+                      <label for="rock2">Rock</label>
+                      <input type="radio" name="player_2_selection" id="rock2" value="Rock"/>
+                      <label for="paper2">Paper</label>
+                      <input type="radio" name="player_2_selection" id="paper2" value="Paper"/>
+                      <label for="scissors2">Scissors</label>
+                      <input type="radio" name="player_2_selection" id="scissors2" value="Scissors"/>
                     </div>
                     <button form="details" class="confirm" type="submit" value="Play!">Play!</button>
                 </form>
