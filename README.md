@@ -26,29 +26,33 @@ Hints on functionality
 - a winner will be declared
 
 ## Basic Rules
+--------------
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
  
-Instruction to use the app
+## Instruction to use the app
+-----------------------------
 
 git clone git@github.com:edytawrobel/rps-challenge.git
 bundle install
 ruby lib/app.rb (or rackup)
 
 
-Technologies used
+## Technologies used
+--------------------
 
-Ruby
-Sinatra
-Rspec-sinatra
-Capybara
-HTML
-CSS
-Git
+* Ruby
+* Sinatra
+* Rspec-sinatra
+* Capybara
+* HTML
+* CSS
+* Git
 
-Interface
+## Interface
+------------
 
 ![Rock Paper Scissors](./lib/public/css/maxresdefault.jpg)
 
