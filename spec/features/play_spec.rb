@@ -9,7 +9,7 @@ require 'spec_helper'
 feature '2.Play' do
   scenario 'a) player one sees they have to choose Rock, Paper or Scissors' do
     sign_in_and_play
-    expect(page).to have_content 'Enter Rock, Paper or Scissors'
+    expect(page).to have_content 'Choose Rock, Paper or Scissors'
   end
 
   # scenario 'b) player one chooses Rock and the computer plays Scissors' do
