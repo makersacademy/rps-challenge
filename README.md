@@ -4,15 +4,15 @@
 
 To play Rock, Paper, Scissors
 -------
-1. Start the web server with the command
+Start the web server with the command
 ```
 rackup -p 4567
 ```
-2. Navigate to the following page in your web browser:
+Navigate to the following page in your web browser:
 ```
 http://localhost:4567/register
 ```
-3. Register and play against the computer!
+Register and play against the computer!
 
 My approach
 ------------
