@@ -9,9 +9,8 @@ h1 {color: royalblue;
 h2   {color: royalblue;}
 </style>
 </head>
-<h1><%= @player_name %> are now playing the computer! </h1>
-<h2>Please choose rock, paper or scissors</h2>
-<form action="/result" method="post">
+<h1>Player 1, please choose rock, paper or scissors</h1>
+<form action="/next_choice" method="post">
   <input type="submit" name = 'choice' value="Rock">
   <input type="submit" name = 'choice' value="Paper">
   <input type="submit" name = 'choice' value="Scissors">

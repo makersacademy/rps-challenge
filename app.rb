@@ -1,6 +1,6 @@
 #the main controller for rps web app
 require 'sinatra/base'
-require_relative 'lib/computer'
+# require_relative 'lib/computer'
 require_relative 'lib/game'
 
 class RPS < Sinatra::Base
@@ -9,17 +9,31 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  post '/second_name' do
+      #need to save game
+      @game = Game.create
+      @game.first_player(params[:player_name])
+      erb :second_name
+  end
+
   post '/name' do
-    @player_name = params[:player_name]
+    @game = Game.instance
+    @game.second_player(params[:player_name])
     erb :play
   end
 
+  post '/next_choice' do
+    @game = Game.instance
+    @game.set_player1_choice(params[:choice])
+    erb :second_choice
+  end
+
   post '/result' do
-    game = Game.new
-    game.set_player_choice(params[:choice])
-    @choice = game.player_choice
-    @computer_choice = game.computer_choice
-    @winner = game.winner
+    @game = Game.instance
+    @game.set_player2_choice(params[:choice])
+    @choice1 = @game.player1_choice
+    @choice2 = @game.player2_choice
+    @winner = @game.winner
     erb :result
   end
 

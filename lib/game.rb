@@ -1,29 +1,47 @@
-require_relative 'computer'
 
 class Game
 
-  attr_reader :player_choice, :computer_choice
+  attr_reader :player1_choice, :player2_choice, :computer_choice
 
   def initialize
-    @player_choice
-    @computer_choice = Computer.new.choice
+    # @computer_choice = Computer.new.choice
   end
 
-  def set_player_choice(choice)
-    @player_choice= choice
+  def set_player1_choice(choice)
+    @player1_choice= choice
+  end
+
+  def set_player2_choice(choice)
+    @player2_choice = choice
   end
 
   def winner
-    if @player_choice == @computer_choice
+    if @player1_choice == @player2_choice
       'No one'
-    elsif @player_choice == 'Rock' && @computer_choice == 'Scissors'
-      'You'
-    elsif @player_choice == 'Paper' && @computer_choice == 'Rock'
-      'You'
-    elsif @player_choice == 'Scissors' && @computer_choice == 'Paper'
-      'You'
-    else 
-      'The computer'
+    elsif @player1_choice == 'Rock' && @player2_choice == 'Scissors'
+      'Player 1'
+    elsif @player1_choice == 'Paper' && @player2_choice == 'Rock'
+      'Player 1'
+    elsif @player1_choice == 'Scissors' && @player2_choice == 'Paper'
+      'Player 1'
+    else
+      'Player 2'
     end
+  end
+
+  def first_player(name)
+    @player1_name = name
+  end
+
+  def second_player(name)
+    @player2_name = name
+  end
+
+  def self.create
+    @game ||= Game.new
+  end
+
+  def self.instance
+  @game
   end
 end
