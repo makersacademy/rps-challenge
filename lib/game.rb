@@ -24,15 +24,11 @@ WIN_CHART=[["rock","scissors"],["rock","lizard"],
 		@game
 	end
 
-	def play		
-
-	end
-
 	def play
 		user_turn
 		computer_turn
 		return draw if @compare[0] == @compare[1]
-		WIN_CHART.include?(@compare) ? win : lose
+		WIN_CHART.include?(@compare) ? "#{@player_1.name} is the winner" : "#{@player_2.name} is the winner"
 	end
 
 	private 
@@ -46,16 +42,8 @@ WIN_CHART=[["rock","scissors"],["rock","lizard"],
 		@compare<<@player_2.play
 	end
 
-	def win
-		"you win!"
-	end
-
-	def lose
-		"you lose"
-	end
-
 	def draw
-		"it's a draw"
+		"It's a draw!"
 	end
 
 end

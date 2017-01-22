@@ -12,11 +12,11 @@ class MyApp < Sinatra::Base
   get '/play' do
     check_p2
     erb :play
-    end
+  end
 
-before do
-  @game = Game.instance
-end
+      before do
+        @game = Game.instance
+      end
 
   post '/game' do
     @game.player_1.choice = params[:p1_weapon]
