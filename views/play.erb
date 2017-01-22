@@ -4,16 +4,18 @@
     <title>ROCK. PAPER. SCISSORS.</title>
   </head>
   <body>
-    <header>
-      <h1>ROCK. PAPER. SCISSORS.</h1>
-      <h2><%=current_player.name%></h2>
-    </header>
-    <div>
-      <form method="POST" action="/choice">
-        <input name="choice" type="submit" value="Rock"/>
-        <input name="choice" type="submit" value="Paper"/>
-        <input name="choice" type="submit" value="Scissors"/>
-      </form>
-    </div>
+    <center>
+      <header>
+        <h1>ROCK. PAPER. SCISSORS.</h1>
+        <h2><%=current_player.name%></h2>
+      </header>
+      <div>
+        <form method="POST" action="/choice">
+          <input name="choice" type="submit" value="Rock"/>
+          <input name="choice" type="submit" value="Paper"/>
+          <input name="choice" type="submit" value="Scissors"/>
+        </form>
+      </div>
+    </center>
   </body>
 </html>

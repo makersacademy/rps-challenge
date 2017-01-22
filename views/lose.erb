@@ -4,14 +4,17 @@
     <title>ROCK. PAPER. SCISSORS.</title>
   </head>
   <body>
-    <header>
-      <h1>ROCK. PAPER. SCISSORS.</h1>
-      <h2>Better luck next time <%=current_player.name%>, you lost!</h2>
-    </header>
-    <div>
-      <form method="GET" action="/play">
-        <input type="submit" value="Play again!"/>
-      </form>
-    </div>
+    <center>
+      <header>
+        <h1>ROCK. PAPER. SCISSORS.</h1>
+        <h2>The computer chose... <%=session[:computer_choice]%></h2>
+        <h2>Better luck next time <%=current_player.name%>, you lost!</h2>
+      </header>
+      <div>
+        <form method="GET" action="/play">
+          <input type="submit" value="Play again!"/>
+        </form>
+      </div>
+    </center>
   </body>
 </html>

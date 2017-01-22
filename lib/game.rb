@@ -18,15 +18,18 @@ class Game
     RULES = {   rock: :scissors,
                 paper: :rock,
                 scissors: :paper }
-    RESULT = [ :win, :draw, :lose ]
                 
-    def result(player_1, player_2 = Computer.new)
-        if player_1.choice == player_2.choice
-            :draw
-        elsif RULES[player_1.choice] == player_2.choice
-            :win
-        else
-            :lose
-        end
+    def result(choice_1, choice_2)
+        draw?(choice_1, choice_2) ? :draw : win_or_lose(choice_1, choice_2)
+    end
+
+    private
+
+    def draw?(choice_1, choice_2)
+        choice_1 == choice_2
+    end
+    
+    def win_or_lose(choice_1, choice_2)
+        RULES[choice_1] == choice_2 ? :win : :lose
     end
 end

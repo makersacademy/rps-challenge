@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'tilt/erb'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 
 class Rps < Sinatra::Base
     enable :sessions
@@ -34,12 +35,13 @@ class Rps < Sinatra::Base
     
     post '/choice' do
         current_player.choose(params[:choice])
+        session[:computer_choice] = Computer.new.choice
         erb(:choice)
     end
     
     post '/result' do
         game = Game.new
-        result = game.result(current_player).to_s
+        result = game.result(current_player.choice, session[:computer_choice]).to_s
         redirect "/#{result}"
     end
     
