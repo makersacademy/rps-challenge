@@ -50,7 +50,7 @@ main {
 }
 
 .left {
-    width: 50%;
+    width: 40%;
     padding-top: .5em;
     text-align: center;
     float: left;
@@ -59,7 +59,7 @@ main {
 }
 
 .right {
-    width: 50%;
+    width: 40%;
     padding-top: .5em;
     text-align: center;
     float: right;
@@ -78,6 +78,8 @@ input[type="radio" i] {
     vertical-align: middle;
     width: 2em;
     height: 2em;
+    float: right;
+    display: none;
 }
 
 input[type="text"] {
@@ -127,6 +129,23 @@ h1 {
     width: auto;
 }
 
-form {
-    display: inline-block;
+.selection-list, .selection-list li {
+    text-align: center;
+    margin: auto;
+    padding-bottom: .5em;
+    display: initial;
+    padding: 10px 0;
+}
+
+.icons {
+    font-size: 200%;
+        padding: 5px;
+}
+input[type="radio"]:checked  ~ .icons > i {
+  transform: scale(1.5);
+}
+
+.icon-holder {
+    font-size: 400%;
+    margin-top: .5em;
 }

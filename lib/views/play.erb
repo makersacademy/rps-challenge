@@ -2,22 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Rock, Paper, Scissors!</title>
+    <title>Rock, Paper, Scissors, Lizard, Spock!</title>
   <meta name="author" content="Rob Brentnall">
-  <meta name="description" content="Play Rock, Paper, Scissors now and let off a little steam! Created with love for the Makers Academy Marketing Array ( MAMA ).">
+  <meta name="description" content="Play Rock, Paper, Scissors, Lizard, Spock now and let off a little steam! Created with love for the Makers Academy Marketing Array ( MAMA ).">
   <meta name="keywords" content="rocks, paper, scissors, game">
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"> <!-- TODO - ADD FAVICON -->
   <link rel="stylesheet" href="play.css" />
+  <script src="https://use.fontawesome.com/c6d6077668.js"></script>
   </head>
   <body>
-    <header><h1>Rock, Paper, Scissors!</h1></header>
+    <header><h1>Rock, Paper, Scissors, Lizard, Spock!</h1></header>
     <main class="main">
       <h2 class="play-h2"><%= @game.player[:name] %> vs. <%= @game.opponent[:name] %></h2>
       <div class="left">
         <%= @game.player[:name] %> chooses <%= @game.player[:choice] %>!
+        <div class="icon-holder">
+          <i class="fa fa-hand-<%= @game.player[:choice].downcase %>-o" aria-hidden="true"></i>
+        </div>
       </div>
       <div class="right">
         <%= @game.opponent[:name] %> chooses <%= @game.opponent[:choice] %>!
+        <div class="icon-holder">
+          <i class="fa fa-hand-<%= @game.opponent[:choice].downcase %>-o" aria-hidden="true"></i>
+        </div>
       </div>
         <form action="/result">
           <button class="play-confirm" type="submit" value="Game on!">Game on!</button>
