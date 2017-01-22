@@ -3,7 +3,7 @@
 <<<<<<< HEAD
 Task
 =======
-Task 
+Task
 >>>>>>> c157fecc2ac8285162b42ada67967a05f29e658d
 ----
 
@@ -35,7 +35,7 @@ Hints on functionality
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
- 
+
 ## Instruction to use the app
 -----------------------------
 
@@ -62,9 +62,9 @@ Hints on functionality
 ## Interface
 ------------
 =======
-git clone git@github.com:edytawrobel/rps-challenge.git
-bundle install
-ruby lib/app.rb (or rackup)
+- git clone git@github.com:edytawrobel/rps-challenge.git
+- bundle install
+- ruby lib/app.rb (or rackup)
 
 
 ## Technologies used
@@ -80,10 +80,5 @@ ruby lib/app.rb (or rackup)
 
 ## Interface
 ------------
-
-![Rock Paper Scissors](./lib/public/css/maxresdefault.jpg)
-
-
->>>>>>> c157fecc2ac8285162b42ada67967a05f29e658d
 
 ![Rock Paper Scissors](./lib/public/css/interface_rps.png)
