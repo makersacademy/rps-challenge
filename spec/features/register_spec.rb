@@ -11,6 +11,7 @@ feature 'Register' do
     expect(page). to have_content('Varvara')
   end
 end
+
 # Functionality
 # - the marketeer should be able to enter their name before the game
 # - the marketeer will be presented the choices (rock, paper and scissors)

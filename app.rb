@@ -1,12 +1,18 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+  enable :sessions
   get '/' do
     erb(:name)
   end
 
   post '/name' do
-    @name = params[:name]
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = session[:name]
     erb(:play)
   end
   # start the server if ruby file executed directly
