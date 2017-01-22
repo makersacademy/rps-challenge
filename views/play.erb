@@ -1,1 +1,9 @@
-<h2><%= @name %>, now choose an instrument to play with: Rock, Paper or Scissors</h2>
+<h2>Hi, <%= @name %>! Please, choose an instrument to play with:</h2>
+
+<form method='POST' action='/play'>
+  <input type='submit' name='instrument' value='Rock' />
+  <input type='submit' name='instrument' value='Paper' />
+  <input type='submit' name='instrument' value='Scissors' />
+</form>
+
+<p>You chose Paper</p>

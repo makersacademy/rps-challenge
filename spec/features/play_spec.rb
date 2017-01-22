@@ -14,8 +14,14 @@ feature 'Playing a game' do
 
 #  the marketeer will be presented the choices (rock, paper and scissors)
   scenario 'Seeing the play options' do
-    expect(page). to have_content('Rock')
-    expect(page). to have_content('Paper')
-    expect(page). to have_content('Scissors')
+    expect(page). to have_button('Rock')
+    expect(page). to have_button('Paper')
+    expect(page). to have_button('Scissors')
+  end
+
+#  the marketeer can choose one option
+  scenario 'Choosing an instrument to play with' do
+    click_button 'Paper'
+    expect(page).to have_content("You chose Paper")
   end
 end
