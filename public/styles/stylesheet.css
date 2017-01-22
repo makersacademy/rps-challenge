@@ -1,0 +1,49 @@
+body {
+  text-align: center;
+}
+
+.main-img {
+  height: 150px;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.rock{background-image:url(/images/rock.png);}
+.paper{background-image:url(/images/paper.png);}
+.scissors{background-image:url(/images/scissors.png);}
+
+.cc-selector input:active +.image{opacity: .9;}
+.cc-selector input:checked +.image{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+
+.image{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:200px;height:150px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+
+.image:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}

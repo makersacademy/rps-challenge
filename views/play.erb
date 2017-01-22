@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <head>
-    <link href="/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -16,18 +16,14 @@
     </div>
 
     <form class="play-form" action="/choice" method="post">
-      <label>
-        <img src="/images/rock.png" style="height: 60px">
-        <input type="radio" name="choice" value="Rock">Rock
-      </label>
-      <label>
-        <img src="/images/paper.png" style="height: 60px">
-        <input type="radio" name="choice" value="Paper">Paper
-      </label>
-      <label>
-        <img src="/images/scissors.png" style="height: 60px">
-        <input type="radio" name="choice" value="Scissors">Scissors
-      </label>
+      <div class="moves">
+          <input id="rock" type="radio" name="choice" value="Rock" />
+          <label class="image rock" for="Rock"></label>
+          <input id="paper" type="radio" name="choice" value="Paper" />
+          <label class="image paper" for="Paper"></label>
+          <input id="scissors" type="radio" name="choice" value="Scissors" />
+          <label class="image scissors" for="Scissors"></label>
+      </div>
       <br><br>
       <input type="submit" value="Play" class="btn btn-success">
     </form>
