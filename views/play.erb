@@ -1,15 +1,13 @@
 <div align = "center">
-<h1>Select tool to play!</h1>
-
-<%= @name %>
-
-<form method="POST" action= "/play">
-  <input type="submit" name="tool" value="Rock" />
-  <input type="submit" name="tool" value="Paper" />
-  <input type="submit" name="tool" value="Scissors" />
-</form>
-
-You chose <%= @tool %>!
-<div id="opponent"
-  Opponent chose <%= @opponent_tool.to_s.capitalize %>!
-</div>
+  <% if @game.winner == [@game.player_1] %>
+        <h2>You win!</h2>
+        <% elsif @game.winner == [@game.player_2] %>
+        <h2>You lose!</h2>
+        <% else %>
+        <h2>It's a draw!</h2>
+        <% end %>
+        Hey there <%= @game.player_1.name %>! You chose <%= @game.player_1.weapon.name %>. Computer chose <%= @game.player_2.weapon.name %>.
+        <% unless @game.draw? %><%= @game.winner[0].weapon.name %> <%= (@game.winner[0].weapon.inflictions & @game.loser.weapon.weaknesses)[0] %> <%= @game.loser.weapon.name %>.<% end %>
+        <p>
+          <a href="/">Play again</href>
+        </p>

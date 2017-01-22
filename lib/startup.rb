@@ -1,4 +1,4 @@
-require_relative 'weapon'
+require_relative 'weapons'
 require_relative 'player'
 
 module Startup

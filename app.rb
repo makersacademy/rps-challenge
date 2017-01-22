@@ -1,33 +1,34 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/startup'
+require './lib/player'
+require './lib/attack'
 
 class RPS < Sinatra::Base
-
-  enable :sessions
-
-  get '/' do
-    erb (:index)
+  before do
+    @game = Game.instance
   end
 
-  post '/name' do
-    session[:name] = params[:name]
-    redirect '/play'
+  get '/' do
+    @weapons = Startup::WEAPONS
+    Game.create(@weapons)
+    erb(:index, :layout => :layout)
+  end
+
+  post '/enter-name' do
+    weapon = Startup.get_weapon_by_name(params[:weapon])
+    @player_1 = Player.new(params[:name], weapon)
+    @game.add_player(@player_1)
+    @player_2 = Player.new("Computer", Startup.random_weapon)
+    @game.add_player(@player_2)
+    redirect to '/play'
   end
 
   get '/play' do
-    @turn = Turn.new(session)
-    @name = session[:name]
-    @tool = session[:tool]
-    @opponent_tool = session[:opponent_tool]
-    erb (:play)
+    @attack = Attack.new(@game)
+    @attack.attack
+    erb(:play, layout: :layout)
   end
 
-  post '/play' do
-    session[:tool] = params[:tool]
-    session[:opponent_tool] = Opponent.new.tool
-    redirect '/play'
-  end
-
-
-  # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

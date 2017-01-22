@@ -1,10 +1,25 @@
 <div align = "center">
-<h1>Welcome to the RPS Challenge!</h1>
-<h2>Sign in to play</h2>
+<h2>Rock Paper Scissors Spock Lizard</h2>
+<form class="form-enter-name" action="/enter-name" method="post">
+<input type="text" name="name" placeholder="Name">
 
+<label>chooses</label>
 
-<form method="POST" action= "/name">
-  <input type="text" name="name" value="" />
-  <br>
-  <input type="submit" value="Submit" />
+<span class="custom_dropdown">
+  <select name="weapon">
+      <% @weapons.each do |w| %>
+        <option value="<%= w.name %>"><%= w.name %></option>
+        <% end %>
+  </select>
+</span>
+
+<label>against</label>
+
+<span class="custom_dropdown">
+  <select name="opponent">
+    <option value="computer">Computer</option>
+  </select>
+</span>
+
+<input type="submit" value="Play">
 </form>
