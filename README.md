@@ -23,7 +23,7 @@ My project is organised in the following folders:
 - RSpec tests =>  /spec
 - Capybara tests =>  spec/features
 - Ruby scripts => lib
-- HTMl pages => lib/views
+- HTML pages => lib/views
 
 
 The game I have built can be found on Heroku:
