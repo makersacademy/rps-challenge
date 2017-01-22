@@ -17,16 +17,36 @@ class Game
   end
 
   def selection
-    ["Rock" , "Paper", "Scissors"].sample
+    @selection = ["Rock" , "Paper", "Scissors"].sample
   end
 
   def rock_result
-    if selection == 'Rock'
+    if @selection == 'Rock'
       "You draw!"
-    elsif selection == 'Paper'
+    elsif @selection == 'Paper'
       "You lose!"
     else
       "You win!"
+    end
+  end
+
+  def paper_result
+    if @selection == 'Rock'
+      "You win!"
+    elsif @selection == 'Paper'
+      "You draw!"
+    else
+      "You lose!"
+    end
+  end
+
+  def scissors_result
+    if @selection == 'Rock'
+      "You lose!"
+    elsif @selection == 'Paper'
+      "You win!"
+    else
+      "You draw!"
     end
   end
 

@@ -5,6 +5,9 @@
   You selected Scissors
 
   <br/>
+  Opponent selects <%= @game.selection %>
+  <br/>
+  <%= @game.scissors_result %>
 
   <form action="/play">
     <input type="submit" value="Another round..." />
