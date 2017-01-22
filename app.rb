@@ -25,7 +25,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/p1_move' do
-    p params
     Round.new(player_1_move: params[:p1_choice].to_sym)
     if Game.game_instance.players[:player_2].human == true
       redirect '/play'
@@ -37,7 +36,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/p2_move' do
-    p params
     Round.round_instance.finish_round(player_2_move: params[:p2_choice].to_sym)
     redirect '/results'
   end
