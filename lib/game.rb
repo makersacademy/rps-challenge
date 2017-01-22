@@ -33,7 +33,3 @@ class Game
   end
 
 end
-
-x = Game.new("Rob", "Scissors","","")
-puts x.player
-puts x.opponent
