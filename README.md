@@ -9,15 +9,32 @@ Approach to Challenge
 
 ![Sign up and Play](/imgs/RPS-1.png)
 
-* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY. In /challenge the computer pick a sample from an Array which includes "Rock", "Paper" and "Scissors" and announce the winner.
+* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY.
+
+![Announce the winner](/imgs/RPS-3.png)
+
+In /challenge the computer pick a sample from an Array which includes "Rock", "Paper" and "Scissors" and announces the winner.
 
 ![Choose an option](/imgs/RPS-2.png)
-![Announce the winner](/imgs/RPS-3.png)
+
 
 * **Refactoring** I still would like to refactor the winner method in Game and get rid of the global variable.
 
 Travis CI Status Budge:
 [![Build Status](https://travis-ci.org/nenoch/rps-challenge.svg?branch=master)](https://travis-ci.org/nenoch/rps-challenge)
+
+Process Diagram
+-------
+
+```
+User                Request          Controller            Logic          View
+Types website ---- GET '/' -----------> ----------------------------------->
+<----------------- html --------------- <----------------- html ------------
+WORK IN PROGRESS
+```
+![Process Diagram draft](/imgs/process_diagram.jpg)
+
+
 
 Instructions
 -------
