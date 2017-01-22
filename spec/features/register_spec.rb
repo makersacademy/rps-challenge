@@ -12,9 +12,6 @@ feature 'Register' do
   end
 end
 
-# Functionality
-# - the marketeer should be able to enter their name before the game
+
 # -
-# - the marketeer can choose one option
-# - the game will choose a random option
 # - a winner will be declared

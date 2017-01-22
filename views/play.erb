@@ -6,4 +6,8 @@
   <input type='submit' name='instrument' value='Scissors' />
 </form>
 
-<p>You chose Paper</p>
+<p>Your choice is <%= @instrument %>! </p>
+
+<div id="computer">
+<p>Computer's choice is <%= @computer_instrument.to_s.capitalize %>! </p>
+</div>

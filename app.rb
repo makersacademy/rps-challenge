@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -13,12 +14,15 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    session[:instrument] = params[:instrument]
+    @instrument = session[:instrument]
+    @computer_instrument = session[:computer_instrument]
     erb(:play)
   end
 
   post '/play' do
-    @instrument = session[:instrument]
+
+    session[:instrument] = params[:instrument]
+    session[:computer_instrument] = Computer.new.instrument
     redirect '/play'
   end
   # start the server if ruby file executed directly
