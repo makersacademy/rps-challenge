@@ -3,13 +3,15 @@
 
 [![Build Status](https://travis-ci.org/KatHicks/rps-challenge.svg?branch=master)](https://travis-ci.org/KatHicks/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/rps-challenge?branch=master)
 
-#### Instructions
+-------------------------------------------------------------------------------
+
+### Instructions
 
 As usual, we were given from the end of the day on Friday until 9am on Monday to complete the challenge.
 
 Challenge was completed independently apart from some small assistance to debug an error with Travis CI. Someone from my course showed me that my version of the rainbow gem needed to be downgraded for Travis to be able to bundle my Gemfile. It is a known bug with Travis, but not usually a problem with Ruby 2.3 (and above).
 
-#### Task
+### Task
 
 The Makers Academy Marketing Array (MAMA) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little. Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -31,7 +33,7 @@ I would like to be able to play rock/paper/scissors
 
 You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-challenge/CONTRIBUTING.md).
 
-#### Using my application
+### Using my application
 
 * Download source code
 * Navigate to directory in your command line
@@ -43,7 +45,7 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
 * Then, interact with the application as any user
   * Idea is that user types in their name on the landing page, then picks a rock/paper/scissors move on the next page and clicks 'play' after which the move of the computer is revealed and the result is that the user either wins, loses or draws
 
-#### Dependencies
+### Dependencies
 
 * Written in **Ruby 2.4.0**
 * Built using the **Sinatra** web framework
@@ -51,7 +53,7 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
 * Styled using the **Bootstrap** web framework
 
 
-#### Steps in my development process
+### Steps in my development process
 
 * **Setting up my application structure**
   * Started off by initialising my `app.rb` file, my `config.ru` file and my `index.erb` view file.
@@ -80,7 +82,7 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
   * Also downloaded Bootstrap and linked that into my application
   * Added in navigation links so that a user can play multiple games and someone can navigate back to the beginning and type in their name as a new player
 
-#### Ideas for extension
+### Ideas for extension
 
 Below is a list of ideas that would have been nice to implement with more time:
 * **User friendly error messages if (a) no player name is entered and (b) no move is selected**
