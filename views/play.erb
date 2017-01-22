@@ -1,0 +1,10 @@
+<%= @player %>
+<h1>Choose wisely...</h1>
+<h2>rock, paper, or scissors?</h2>
+<form action="/decide" method="post">
+  <label for="your_move">
+    Your move:
+    <input type="text" name="your_move">
+  </label>
+    <input type="submit" value="Submit">
+</form>
