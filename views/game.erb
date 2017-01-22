@@ -82,5 +82,10 @@
         </div>
       </div>
     </div>
+    <div class="col-12 text-center" id="message_log_wrapper">
+      <ul>
+        <%= @message_log.messages.map { |message| "<li>#{message}</li>" }.join %>
+      </ul>
+    </div>
   </div>
 </div>

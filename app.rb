@@ -16,7 +16,8 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(name: params[:p1_name])
     player_2 = Player.new(name: params[:p2_name], human: (params[:player_2_type] == 'human'))
     Game.new(player_1: player_1, player_2: player_2)
-    MessageLog.new
+    message_handler = MessageHandler.new(message_log: MessageLog.new)
+    message_handler.enter_game_message(params[:p1_name], params[:p2_name])
     Round.round_instance = nil
     redirect '/play'
   end
@@ -24,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @game = Game.game_instance
     @round = Round.round_instance
+    @message_log = MessageLog.message_log_instance
     erb :game
   end
 
@@ -46,6 +48,7 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @round = Round.round_instance
     @game = Game.game_instance
+    @message_log = MessageLog.message_log_instance
     erb :results
   end
 
