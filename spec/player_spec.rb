@@ -24,4 +24,12 @@ describe Player do
       expect(player.draw).to eq true
     end
   end
+
+  describe "reset" do
+    it "changes the win and draw status" do
+      player.reset
+      expect(player.win).to eq nil
+      expect(player.draw).to eq nil
+    end
+  end
 end

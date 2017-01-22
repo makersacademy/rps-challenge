@@ -1,19 +1,19 @@
-<h2><%=@game.player.name%></h2>
+<h2>It's time to make a choice <%=@game.player.name%></h2>
 
 <table border="0" align='center'>
   <tr>
     <td><form action="/results">
-      <input type="hidden" name="choice" value="Rock">
+      <input type="hidden" name="choice" value="rock">
       <input type="submit" value="Rock">
     </form></td>
 
     <td><form action="/results">
-      <input type="hidden" name="choice" value="Paper">
+      <input type="hidden" name="choice" value="paper">
       <input type="submit" value="Paper">
     </form></td>
 
     <td><form action="/results">
-      <input type="hidden" name="choice" value="Scissors">
+      <input type="hidden" name="choice" value="scissors">
       <input type="submit" value="Scissors">
     </form></td>
   </tr>

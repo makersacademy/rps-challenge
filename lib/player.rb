@@ -13,4 +13,9 @@ class Player
     @draw = true
   end
 
+  def reset
+    @win = nil
+    @draw = nil
+  end
+
 end

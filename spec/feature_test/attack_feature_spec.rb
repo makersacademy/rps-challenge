@@ -32,3 +32,13 @@ feature "when I choose scissors" do
     expect(page).to have_content("Computer chose")
   end
 end
+
+feature "so I can play multiple games" do
+  scenario "I want to go back to the start play page" do
+    choose_scissors
+    click_button ('Play Again')
+    expect(page).to have_button('Rock')
+    expect(page).to have_button('Paper')
+    expect(page).to have_button('Scissors')  
+  end
+end

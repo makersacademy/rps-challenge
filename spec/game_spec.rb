@@ -11,48 +11,85 @@ describe Game do
   end
 
   describe "#play" do
-    it {is_expected.to respond_to(:play).with(1).argument}
-    context "when I choose rock and computer chooses paper" do
-      it "doesn't tell the player they've won" do
-        expect(mike).to_not receive(:wins)
+
+    describe "computer chooses paper" do
+
+      before do
         allow(game).to receive(:computer_choice).and_return(:paper)
-        game.play(:rock)
+        expect(mike).to receive(:reset)
+      end
+      context "when I choose rock" do
+        it "changes the players status to lose" do
+          expect(mike).to receive(:status_change).with(:lose)
+          game.play(:rock)
+        end
+      end
+      context "when I choose paper" do
+        it "tells the player they've drawn" do
+          expect(mike).to receive(:status_change).with(:draw)
+          game.play(:paper)
+        end
+      end
+      context "when I choose scissors" do
+        it "changes the player status to win" do
+          expect(mike).to receive(:status_change).with(:win)
+          game.play(:scissors)
+        end
       end
     end
-    context "when I choose rock and computer chooses scissors" do
-      it "lets the player know they've won" do
-        expect(mike).to receive(:wins)
-        allow(game).to receive(:computer_choice).and_return(:scissors)
-        game.play(:rock)
-      end
-    end
-    context "when I choose rock and computer chooses rock" do
-      it "lets the player know they've drawn" do
-        expect(mike).to receive(:draws)
+
+    describe "computer chooses rock" do
+
+      before do
         allow(game).to receive(:computer_choice).and_return(:rock)
-        game.play(:rock)
+        expect(mike).to receive(:reset)
+      end
+
+      context "when I choose rock" do
+        it "changes the players status to draw" do
+          expect(mike).to receive(:status_change).with(:draw)
+          game.play(:rock)
+        end
+      end
+      context "when I choose scissors" do
+        it "changes the player status to lose" do
+          expect(mike).to receive(:status_change).with(:lose)
+          game.play(:scissors)
+        end
+      end
+      context "when I choose paper" do
+        it "changes the player status to win" do
+          expect(mike).to receive(:status_change).with(:win)
+          game.play(:paper)
+        end
       end
     end
-    context "when I choose paper and computer chooses paper" do
-      it "tells the player they've drawn" do
-        expect(mike).to receive(:draws)
-        allow(game).to receive(:computer_choice).and_return(:paper)
-        game.play(:paper)
-      end
-    end
-    context "when I choose paper and computer chooses scissors" do
-      it "lets the player know they've won" do
-        expect(mike).to_not receive(:wins)
+
+    describe "computer chooses scissors" do
+      before do
         allow(game).to receive(:computer_choice).and_return(:scissors)
-        game.play(:paper)
+        expect(mike).to receive(:reset)
+      end
+
+      context "when I choose scissors" do
+        it "changes player status to draw" do
+          expect(mike).to receive(:status_change).with(:draw)
+          game.play(:scissors)
+        end
+      end
+      context "when I choose rock" do
+        it "changes player status to win" do
+          expect(mike).to receive(:status_change).with(:win)
+          game.play(:rock)
+        end
+      end
+      context "when I choose paper" do
+        it "expect player status to change to lose" do
+          expect(mike).to receive(:status_change).with(:lose)
+          game.play(:paper)
+        end
       end
     end
-    context "when I choose rock and computer chooses rock" do
-      it "lets the player know they've drawn" do
-        expect(mike).to receive(:wins)
-        allow(game).to receive(:computer_choice).and_return(:rock)
-        game.play(:paper)
-      end
-    end
+
   end
 end
