@@ -23,7 +23,7 @@ In the browser under `http://localhost:4567/`
 
 - the marketeer should be able to enter their name before the game
 
-![](https://github.com/Putterhead/rps-challenge/blob/master/US1submit_form.png)
+![](https://github.com/Putterhead/rps-challenge/blob/master/US1submit__form.png)
 
 ```
 As a marketeer
