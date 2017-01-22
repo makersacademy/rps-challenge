@@ -1,0 +1,31 @@
+<h1>Welcome</h1> <h1 class = "name"><%=@first_name%> <%=@last_name%>!</h1>
+
+<form action ="/play" method ="post">
+  <label>
+    Rock
+  <input type = "submit" name = "choice" value ="rock"/>
+  </label>
+</form>
+<form action = "/play" method ="post">
+<label>
+  Paper
+  <input type = "submit" name = "choice" value ="paper"/>
+</label>
+</form>
+<form action = "/play" method = "post">
+  <label>
+  Scissors
+  <input type = "submit" name = "choice" value = "scissors"/>
+</label>
+</form>
+<h2>Your choice: <%=@choice%></h2>
+<h2>Computer's choice: <%=@random%>
+<h2><%=@result%></h2>
+
+
+<style>
+h1.name {
+  color: red;
+  font-size: 40px
+}
+</style>
