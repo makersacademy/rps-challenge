@@ -1,9 +1,11 @@
 You chose <%= @choice %>
+<br />
 
-<% if @choice == "Rock" %>
-<h2><%= @game.rock_result %></h2>
-<h2><% elsif @choice == "Paper" %></h2>
-<h2><%= @game.paper_result %>
-<h2><% else @choice == "Scissors" %></h2>
-<h2><%= @game.scissor_result %>
-<%end%>
+The computer chose <%= @game.computer_choice %>
+
+<h1><%= @game.result(@choice) %></h1>
+
+<form action="/" method="get">
+    <input type="submit" value="Play again!"
+         name="Submit" />
+</form>

@@ -21,6 +21,9 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @choice = params[:choice]
+    @game.computer_choice
+    @game.result(@choice)
+    @game.reset
     erb :game
   end
 
