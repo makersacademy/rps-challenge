@@ -26,11 +26,11 @@ RSpec.feature "Draw", "type" => feature do
 end
 
 RSpec.feature "Player one winning", "type" => feature do
-	scenario "Play a game" do
+	scenario "Player one should do" do
 	two_names_and_submit
 	click_button("rock")
-	click_button("paper")
-	expect(page).to have_content("Dipper is the winner")
+	click_button("scissors")
+	expect(page).to have_content("Mabel is the winner")
 	end
 end
 
@@ -39,6 +39,6 @@ RSpec.feature "Player one lose", "type" => feature do
 	two_names_and_submit
 	click_button("paper")
 	click_button("scissors")
-	expect(page).to have_content("Mabel is the winner")
+	expect(page).to have_content("Dipper is the winner")
 	end
 end

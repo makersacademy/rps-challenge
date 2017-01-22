@@ -28,7 +28,7 @@ WIN_CHART=[["rock","scissors"],["rock","lizard"],
 		user_turn
 		computer_turn
 		return draw if @compare[0] == @compare[1]
-		WIN_CHART.include?(@compare) ? "#{@player_1.name} is the winner" : "#{@player_2.name} is the winner"
+		WIN_CHART.include?(@compare[0..1]) ? "#{@player_1.name} is the winner" : "#{@player_2.name} is the winner"
 	end
 
 	private 
