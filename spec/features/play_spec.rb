@@ -15,8 +15,10 @@ feature '2.Play' do
   scenario 'b) player one chooses rock and the computer plays scissors' do
     sign_in_and_play
     # choose :p1_choice_input # with: 'Rock' #radio button option
-    choose :Rock # with: 'Rock' #radio button option
-    click_button 'Submit'
+    # choose :Rock # im here - this isn;t working - check syntax on erb page
+    # click_button 'Submit'
+    # msg = "You chose Rock and The Computer chose Scissors, YOU WIN!"
+    click_button 'Rock'
     msg = "You chose Rock and The Computer chose Scissors, YOU WIN!"
     expect(page).to have_content msg
   end
