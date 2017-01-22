@@ -23,15 +23,15 @@ gem 'byebug'
 ```
 
 ## <a name="Install">Installation</a>
-The RSP Challenge is ran on Ruby version : 2.2.3
+The RSP Challenge is ran on Ruby version : 2.3.3
 
 * To change Ruby versions
 ```shell
-$ rvm 2.2.3
+$ rvm 2.3.3
 ```
-* To install Ruby 2.2.3
+* To install Ruby 2.3.3
 ```shell
-$ rvm install ruby-2.2.3
+$ rvm install ruby-2.3.3
 ```
 * To install Gems
 ```shell
