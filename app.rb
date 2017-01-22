@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "sinatra"
 require "./views/game.rb"
+require "./views/player.rb"
 
 enable :sessions
 
@@ -13,15 +14,16 @@ get '/' do
 end
 
 post '/names' do
-  @first_name = params[:first_name]
-  @last_name = params[:last_name]
-
-  erb :play
+  @@player = Player.new(params[:first_name],params[:last_name])
+   @first_name = @@player.first_name
+   @last_name = @@player.last_name
+   erb :play
 #redirect '/play'
 end
 
 post '/play' do
-  
+  @first_name = @@player.first_name
+  @last_name = @@player.last_name
   @choice = params[:choice]
   @game = Game.new(@choice)
   @result = @game.output

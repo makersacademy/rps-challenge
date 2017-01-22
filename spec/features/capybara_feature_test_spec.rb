@@ -22,7 +22,7 @@ scenario "Player should by pressing one of the the three buttons learn whether t
 
   sign_in
   click_button "rock"
-  expect(page).to have_content "Your choice rock"
+  expect(page).to have_content "Your choice: rock"
 
 end
 
