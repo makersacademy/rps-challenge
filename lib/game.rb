@@ -1,5 +1,5 @@
-require_relative 'Computer'
-require_relative 'Player'
+require_relative 'computer'
+require_relative 'player'
 
 class Game
   attr_reader :player, :player_weapon, :computer, :computer_weapon
