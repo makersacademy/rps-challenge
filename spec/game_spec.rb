@@ -11,6 +11,10 @@ describe Game do
   subject(:game5) {Game.new(Player.new("player1", "paper"), Player.new("player2", "scissors"))}
   subject(:game6) {Game.new(Player.new("player1", "paper"), Player.new("player2", "rock"))}
   subject(:game7) {Game.new(Player.new("player1", "paper"), Player.new("player2", "paper"))}
+  subject(:game8) {Game.new(Player.new("", "paper"), Player.new("player2", "paper"))}
+  subject(:game9) {Game.new(Player.new("player1", "paper"), Player.new("", "paper"))}
+
+
 
 
   it 'should return player 1 name' do
@@ -66,6 +70,18 @@ describe Game do
     context 'game7: Tie' do
       it 'returns a tie'do
         expect(game7.play).to eq "This is a tie!"
+      end
+    end
+
+    context 'game8: player1 missing' do
+      it 'return a message saying player(s) missing' do
+        expect(game8.play).to eq "Sorry, missing player(s)"
+      end
+    end
+
+    context 'game9: player2 missing' do
+      it 'return a message saying player(s) missing' do
+        expect(game9.play).to eq "Sorry, missing player(s)"
       end
     end
   end

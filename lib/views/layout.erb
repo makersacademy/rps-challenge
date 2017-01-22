@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<style type="text/css">
+  p {
+      color: blue;
+}
+  h1 {
+      font-family: Impact, Charcoal, sans-serif;
+      color: green;
+}
+
+h3 {
+     font-family: Impact, Charcoal, sans-serif;
+    color: blue;
+}
+
+.blink-text {
+  animation: blink-text 1s step-start infinite
+}
+
+@keyframes blink-text {
+
+  0% {color: black}
+  25% {color: transparent}
+  100% {color: black}
+}
+
+h5{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    text-align: center;
+}
+</style>
+  <head>
+</head>
+    <title>Rock Scissors Paper Game</title>
+  </head>
+  <body background="http://i.stack.imgur.com/YorMT.png">
+    <br>
+    <br>
+
+    <div align ="center">
+    <h1 align ="center">Welcome to Rock Paper Scissors Game</h1>
+    <br>
+    <br>
+    <%= yield %>
+
+    <br>
+    <h5> ®BasileKoko2017</h5>
+    </div>
+  </body>
+
+</html>

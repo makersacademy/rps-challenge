@@ -13,12 +13,12 @@ class Game
   end
 
   def play
-    win
+    result
   end
 
   private
 
-  def win
+  def result
     case
     when @player1_name.empty? || @player2_name.empty? then "Sorry, missing player(s)"
     when @option1 == "scissors" && @option2 == "paper"    then  "#{@player1_name} wins!"
