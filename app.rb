@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -16,21 +17,19 @@ class RPS < Sinatra::Base
     # @p1 = Player.new(@p1_name)
     @player1 = Player.new(@p1_name)
     @player2 = Player.new("The Computer")
+    $game = Game.new(@player1, @player2)
     erb :play
   end
 
   post '/result' do
     @p1_choice = params[:p1_choice_input]
-    if @p1_choice == "Rock"
-      @msg = "YOU WIN!"
-      erb :winner # same as an internal GET
-    elsif @p1_choice == "Paper"
-      @msg = "YOU LOSE!"
-      erb :winner # same as an internal GET
-    else @p1_choice == "Scissors"
-      @msg = "IT'S A DRAW!"
-      erb :winner # same as an internal GET
-    end
+    @p2_choice = $game.get_choice
+    @p1_name = $game.player1.name
+    @p2_name = $game.player2.name
+
+    @msg = $game.get_winner(@p1_choice, @p2_choice, @p1_name, @p2_name)
+
+    erb :winner
   end
 
 
