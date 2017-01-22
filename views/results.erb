@@ -1,4 +1,5 @@
-<h2><%=@game.player.name%> chose <%=@game.player_choice%>! Computer chose <%=@game.computer_choice%>!
+<h2><%=@game.player.name%> chose <%=@game.player_choice%>!</h2>
+<h2>Computer chose <%=@game.computer_choice%>!</h2>
   <% if @game.player.status == :win %>
   <h1><%=@game.player.name%> wins!</h1>
   <%elsif @game.player.status == :draw%>

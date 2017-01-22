@@ -8,6 +8,14 @@ class RPSApp < Sinatra::Base
     erb :index
   end
 
+  get '/single_player' do
+    erb :sign_in
+  end
+
+  get '/multiplayer' do
+    erb :sign_in
+  end
+
   post '/names' do
     player = Player.new(params[:player_name])
     session[:game] = Game.new(player)

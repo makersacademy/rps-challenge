@@ -1,13 +1,14 @@
 <h3>Welcome to Rock-Paper-Scissors.
-  Before we start, please register below</h3>
+  Before we start, would you like to play by yourself or with a friend</h3>
 
+<table border="0" align='center'>
+  <tr>
+    <td><form action="/single_player">
+      <input type="submit" value="Single Player">
+    </form></td>
 
-<h2>Register to play</h2>
-
-  <form action="/names" method="post">
-    <label for="player_name">
-      Name:
-    <input type="text" name="player_name">
-    </label>
-    <input type="submit" value="submit">
-  </form>
+    <td><form action="/multiplayer">
+      <input type="submit" value="Multiplayer">
+    </form></td>
+  </tr>
+<table>
