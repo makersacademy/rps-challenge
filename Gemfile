@@ -7,5 +7,6 @@ gem 'sinatra'
 gem 'rspec-sinatra'
 gem 'capybara'
 gem 'simplecov', :require => false
-gem "coveralls" , require: false
-gem "rake"
+gem 'coveralls' , require: false
+gem 'rake'
+gem 'rspec'
