@@ -32,6 +32,9 @@ I would like to be able to play rock/paper/scissors
 ```
 
 - the marketeer will be presented the choices (rock, paper and scissors)
+
+![](https://github.com/Putterhead/rps-challenge/blob/master/US0utensil_options.png)
+
 - the marketeer can choose one option
 
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US2tool_confirmation.png)
@@ -41,6 +44,8 @@ I would like to be able to play rock/paper/scissors
 - a winner will be declared
 
 ![](https://github.com/Putterhead/rps-challenge/blob/master/US4winner_is_declared.png)
+
+_I didn't manage to complete the Bonus levels yet_
 
 ## Bonus level 1: Multiplayer
 
@@ -85,6 +90,10 @@ You can see your [test coverage](https://github.com/makersacademy/course/blob/ma
 
 ```
 $ coveralls report
-```
+[Coveralls] Some handy coverage stats:
+  * spec/features/play_spec.rb => 100%
+  * spec/features/register_spec.rb => 100%
+  * spec/gamebot_spec.rb => 100%
+  * spec/turn_spec.rb => 100%
 
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+```
