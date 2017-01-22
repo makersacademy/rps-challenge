@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Choose weapon' do
 
-  context 'player can select a weapon from rock, paper or scissors' do
+  context 'human player can select a weapon from rock, paper or scissors' do
 
     scenario 'select rock' do
       sign_in_and_play
