@@ -1,14 +1,16 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player, :computer_choice, :player_choice
+  attr_reader :player1, :player2, :player1_choice, :player2_choice
 
-  def initialize(player)
-    @player = player
+  def initialize(player, player2)
+    @player1 = player
+    @player2 = player2
   end
 
-  def play(choice)
-    @player_choice = choice.to_sym
+  def play(player1_choice, player2_choice = nil)
+    @player1_choice = player1_choice.to_sym
+    @player2_choice = player2_choice.to_sym unless player2_choice.nil?
     rps
   end
 
@@ -16,26 +18,26 @@ class Game
   attr_writer :computer_choice
 
   def computer_picks
-    @computer_choice = [:rock, :paper, :scissors].sample
+    @player2_choice = [:rock, :paper, :scissors].sample
   end
 
   def setup
-    player.reset
-    computer_picks
+    player1.reset
+    computer_picks if player2_choice.nil?
   end
 
   def rps
     setup
-    if player_choice == :rock && computer_choice == :scissors
-      player.status_change(:win)
-    elsif player_choice == :paper && computer_choice == :rock
-      player.status_change(:win)
-    elsif player_choice == :scissors && computer_choice == :paper
-      player.status_change(:win)
-    elsif player_choice == computer_choice
-      player.status_change(:draw)
+    if player1_choice == :rock && player2_choice == :scissors
+      player1.status_change(:win)
+    elsif player1_choice == :paper && player2_choice == :rock
+      player1.status_change(:win)
+    elsif player1_choice == :scissors && player2_choice == :paper
+      player1.status_change(:win)
+    elsif player1_choice == player2_choice
+      player1.status_change(:draw)
     else
-      player.status_change(:lose)
+      player1.status_change(:lose)
     end
   end
 
