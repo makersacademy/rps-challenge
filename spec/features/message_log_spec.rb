@@ -5,4 +5,9 @@ feature "FEATURE: Message log" do
     expect(page).to have_content("Beast and Magneto entered the game!")
   end
 
+  scenario "Battle result message" do
+    player_1_won
+    expect(page).to have_text("Beast's Lizard poisons Magneto's Spock!")
+  end
+
 end

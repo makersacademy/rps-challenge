@@ -16,8 +16,8 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(name: params[:p1_name])
     player_2 = Player.new(name: params[:p2_name], human: (params[:player_2_type] == 'human'))
     Game.new(player_1: player_1, player_2: player_2)
-    message_handler = MessageHandler.new(message_log: MessageLog.new)
-    message_handler.enter_game_message(params[:p1_name], params[:p2_name])
+    message_handler = MessageHandler.new(message_log: MessageLog.new, game: Game.game_instance)
+    message_handler.enter_game_message
     Round.round_instance = nil
     redirect '/play'
   end

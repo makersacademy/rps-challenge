@@ -6,7 +6,13 @@ describe Round do
   let(:player_1_move) { :lizard }
   let(:player_2_move) { :spock }
   let(:rules_handler) { class_double("RulesHandler") }
+  let(:message_handler) { instance_double("MessageHandler") }
+  let(:game) { instance_double("Game") }
   let(:winning_move) { [:player_1, [:lizard, :spock, "poisons"]] }
+
+  before do
+    MessageHandler.instance_variable_set("@message_handler_instance", message_handler)
+  end
 
   describe "#round_instance" do
     it "contains latest round instance" do
@@ -29,10 +35,10 @@ describe Round do
     end
   end
 
-
   describe "#finish_round" do
     before(:each) do
       allow(rules_handler).to receive(:decide_winner) { winning_move }
+      allow(message_handler).to receive(:battle_result_message) { nil }
     end
     it "sets player 2 move" do
       expect{round.finish_round(player_2_move: player_2_move)}.to change{round.player_2_move}
