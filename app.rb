@@ -3,6 +3,7 @@ require './lib/game.rb'
 require './lib/player.rb'
 require './lib/round.rb'
 require './lib/rules_handler.rb'
+require './lib/opponent.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -29,7 +30,9 @@ class RockPaperScissors < Sinatra::Base
     if Game.game_instance.players[:player_2].human == true
       redirect '/play'
     else
-      #GENERATE PLAYER 2 MOVE, FINISH ROUND AND GO TO RESULTS
+      player_2_move = Opponent.choose_move
+      Round.round_instance.finish_round(player_2_move: player_2_move)
+      redirect '/results'
     end
   end
 

@@ -1,5 +1,5 @@
 feature "FEATURE: Choose move" do
-  context "Two player" do
+  context "Two human players" do
     before(:each) do
       play_two_player
     end
@@ -14,6 +14,15 @@ feature "FEATURE: Choose move" do
       click_button('p1_move')
       choose("p2_choice", {:option => "spock"})
       click_button('p2_move')
+      expect(page).to have_css("#results-wrapper")
+    end
+  end
+
+  context "One human player vs computer" do
+    scenario "Player 2's move is generated automatically" do
+      play_vs_computer
+      choose("p1_choice", {:option => "lizard"})
+      click_button('p1_move')
       expect(page).to have_css("#results-wrapper")
     end
   end
