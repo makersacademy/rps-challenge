@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/turn'
+require './lib/gamebot'
 
 class RPS < Sinatra::Base
   enable :sessions # you have to enable sessions first so that you can later use the session variables
