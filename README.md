@@ -38,3 +38,6 @@ $ ruby app.rb
 ```
 
 Open `localhost:4567` in your internet browser.
+
+## Further Developments
+* Should add best of 5 game-functionality.
