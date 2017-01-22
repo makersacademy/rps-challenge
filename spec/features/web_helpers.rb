@@ -12,3 +12,19 @@ def play_vs_computer
   choose("player_2_type", {:option => "computer"})
   click_button("start_game")
 end
+
+def player_1_won
+  play_two_player
+  choose("p1_choice", {:option => "lizard"})
+  click_button('p1_move')
+  choose("p2_choice", {:option => "spock"})
+  click_button('p2_move')
+end
+
+def player_2_won
+  play_two_player
+  choose("p1_choice", {:option => "rock"})
+  click_button('p1_move')
+  choose("p2_choice", {:option => "paper"})
+  click_button('p2_move')
+end

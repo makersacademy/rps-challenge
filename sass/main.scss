@@ -28,3 +28,7 @@ body, input {
   height: 150px;
   width: 150px;
 }
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}

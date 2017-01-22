@@ -23,6 +23,7 @@ class Round
   def finish_round(player_2_move:)
     @player_2_move = player_2_move
     @winning_move = rules_handler.decide_winner(player_1_move, player_2_move)
+    p winning_move
   end
 
   private

@@ -41,6 +41,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/results' do
     @round = Round.round_instance
+    @game = Game.game_instance
     erb :results
   end
 

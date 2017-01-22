@@ -14,7 +14,7 @@ feature "FEATURE: Choose move" do
       click_button('p1_move')
       choose("p2_choice", {:option => "spock"})
       click_button('p2_move')
-      expect(page).to have_text("Results")
+      expect(page).to have_css("#results-wrapper")
     end
   end
 
