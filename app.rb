@@ -10,10 +10,20 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/play' do
+  post '/Player' do
     player = Player.new(params[:player])
     @game = Game.new(player)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb(:play)
+  end
+
+  post '/result' do
+    session[:rps] = params[:rps]
+    @rps = session[:rps]
+    erb(:fight)
   end
 
   # start the server if ruby file executed directly

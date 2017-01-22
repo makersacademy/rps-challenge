@@ -1,4 +1,4 @@
-require 'rps'
+require 'rockpaperscissors'
 
 describe RockPaperScissors do
   describe '#rock_paper_scissors' do
