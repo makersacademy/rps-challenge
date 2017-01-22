@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="css.css" type="text/css" /> 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ROCK. PAPER. SCISSORS.</title>
+  </head>
+  <body>
+    <center>
+      <header>
+        <h1>ROCK. PAPER. SCISSORS.</h1>
+        <h2>You chose <%=current_player.choice%>.</h2>
+      </header>
+      <div>
+        <form method="POST" action="/result">
+          <input type="submit" value="Continue!"/>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
