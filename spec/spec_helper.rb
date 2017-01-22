@@ -12,9 +12,6 @@ SimpleCov.formatters = [
 Coveralls.wear!
 # run `open coverage/index.html` from the command line to view details
 
-require 'byebug'
-require 'capybara/rspec'
-
 
 ENV['RACK_ENV'] = 'test'
 
