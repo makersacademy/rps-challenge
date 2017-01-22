@@ -5,3 +5,7 @@ body {
 .main-img {
   height: 150px;
 }
+
+.btn {
+  margin: 50px;
+}
