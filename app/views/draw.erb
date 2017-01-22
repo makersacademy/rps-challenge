@@ -1,0 +1,23 @@
+<center>
+  <font face="Verdana" size="3">
+    <p style="max-width: 200px; border: 2px solid #1F535D;background-color: #08CEF6">
+      You have chosen <%= @player1.choice %>! <br><br>
+      <%= @computer.name %> picked <%= @computer.choice %>! <br><br>
+      <%=
+      if @game.userchoice == @game.computerchoice
+        "It's a draw!"
+      elsif @game.to_win == @game.userchoice
+        "You win!"
+      else
+        "Computer wins!"
+      end
+      %> <br><br>
+      <form action="/play" method="get">
+        <button type="submit">Play again!</button>
+      </form>
+      <form action="/" method="get">
+        <button type="submit">Go to start page</button>
+      </form>
+    </p>
+  </font>
+</center>

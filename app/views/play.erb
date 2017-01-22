@@ -1,0 +1,12 @@
+<center>
+  <font face="Verdana" size="3">
+    <p style="max-width: 200px; border: 2px solid #1F535D;background-color: #08CEF6">
+      Hi <%= @player_1_name %>! <br><br>
+      Pick an option below to start the game <br>
+      <form action="/draw" method="post">
+        <input type="radio" name="choice" onclick="javascript: submit()" value="rock" id="choice_rock"> Rock <br>
+        <input type="radio" name="choice" onclick="javascript: submit()" value="paper" id="choice_paper"> Paper <br>
+        <input type="radio" name="choice" onclick="javascript: submit()" value="scissors" id="choice_scissors"> Scissors <br>
+    </p>
+  </font>
+</center>
