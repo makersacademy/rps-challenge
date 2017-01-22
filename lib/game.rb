@@ -6,9 +6,6 @@ class Game
 
   attr_reader :player, :opponent
 
-  NAMES = %w(Adrian Basile Ben Gurminder James Jaycee Joe Justin Matthew Olwen Paul Pete Rob Sam).freeze
-  CHOICES = %w(Rock Paper Scissors).freeze
-
   def self.create(player_1_name, player_1_choice, player_2_name, player_2_choice)
     @game = Game.new(player_1_name, player_1_choice, player_2_name, player_2_choice)
   end
