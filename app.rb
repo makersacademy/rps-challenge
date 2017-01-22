@@ -4,6 +4,8 @@ require './lib/player.rb'
 require './lib/round.rb'
 require './lib/rules_handler.rb'
 require './lib/opponent.rb'
+require './lib/message_log.rb'
+require './lib/message_handler.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -14,6 +16,7 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(name: params[:p1_name])
     player_2 = Player.new(name: params[:p2_name], human: (params[:player_2_type] == 'human'))
     Game.new(player_1: player_1, player_2: player_2)
+    MessageLog.new
     Round.round_instance = nil
     redirect '/play'
   end
