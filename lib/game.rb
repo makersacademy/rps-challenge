@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :userchoice, :computerchoice, :winner
+  attr_reader :userchoice, :computerchoice, :to_win
   RULES = { rock: :paper,
             paper: :scissors,
             scissors: :rock
@@ -11,7 +11,7 @@ class Game
     @computerchoice = computerchoice.to_sym
   end
 
-  def winner(choice=@computerchoice)
+  def to_win(choice=@computerchoice)
     RULES[choice]
   end
 

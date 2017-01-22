@@ -6,7 +6,7 @@
       <%=
       if @game.userchoice == @game.computerchoice
         "It's a draw!"
-      elsif @game.winner == @game.userchoice
+      elsif @game.to_win == @game.userchoice
         "You win!"
       else
         "Computer wins!"

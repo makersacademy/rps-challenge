@@ -16,16 +16,16 @@ describe Game do
     expect(game.computerchoice).to eq :paper
   end
 
-  it "Returns the winner of the game" do
-    expect(game.winner).to eq :scissors
-    expect(game2.winner).to eq :rock
-    expect(game3.winner).to eq :paper
-    expect(game4.winner).to eq :rock
-    expect(game5.winner).to eq :paper
-    expect(game6.winner).to eq :scissors
-    expect(game7.winner).to eq :paper
-    expect(game8.winner).to eq :scissors
-    expect(game9.winner).to eq :rock
+  it "Returns the to_win of the game" do
+    expect(game.to_win).to eq :scissors
+    expect(game2.to_win).to eq :rock
+    expect(game3.to_win).to eq :paper
+    expect(game4.to_win).to eq :rock
+    expect(game5.to_win).to eq :paper
+    expect(game6.to_win).to eq :scissors
+    expect(game7.to_win).to eq :paper
+    expect(game8.to_win).to eq :scissors
+    expect(game9.to_win).to eq :rock
   end
-  
+
 end
