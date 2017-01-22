@@ -7,8 +7,8 @@ module RulesHandler
     [:lizard, :paper, "eats"],
     [:spock, :scissors, "smashes"],
     [:spock, :rock, "vaporizes"],
-    [:scissors, :paper, "cuts"],
-    [:scissors, :lizard, "decapitates"],
+    [:scissors, :paper, "cut"],
+    [:scissors, :lizard, "decapitate"],
     [:paper, :rock, "covers"],
     [:paper, :spock, "disproves"]
   ]

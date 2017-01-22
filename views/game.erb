@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-6" id="player_1_wrapper">
+    <div class="col-6 text-center" id="player_1_wrapper">
       <h2><%= @game.players[:player_1].name %></h2>
       <div id="p1_move_form" class="<%= 'hidden-xs-up' if !@round.nil? %>">
         <form class="moves-form text-center" action="/p1_move" method="post">
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="col-6" id="player_2_wrapper">
+    <div class="col-6 text-center" id="player_2_wrapper">
       <h2><%= @game.players[:player_2].name %></h2>
       <div id="p2_move_form" class="<%= 'hidden-xs-up' unless !@round.nil? %>">
         <form class="moves-form text-center" action="/p2_move" method="post">
