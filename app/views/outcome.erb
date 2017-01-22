@@ -1,0 +1,19 @@
+<link href="<%= url('/css/main.css') %>" rel="stylesheet" type="text/css" />
+<h1><%= @game.check_winner %> is the winner! </h1>
+
+<h2> <%= @game.player.name %> chose <%=@game.player.selection%>!</h2>
+<h2> AIbot chose <%=@game.computer.computer_selection%>!</h2>
+
+<img src="/img/rock.png" alt="Rock"/> <img src="/img/paper.png" alt="Paper"/> <img src="/img/scissors.png" alt="Scissors"/> <img src="/img/spock.png" alt="Spock"/> <img src="/img/lizard.png" alt="Lizard"/>
+<h3> Remember: </h3>
+<ul>
+<li> <strong> Rock </strong> crushes scissors and lizard, but gets smothered by paper and vaporised by Spock</li>
+<li> <strong> Paper </strong> smothers rock and disproves Spock, but gets cut by scissors and eaten by lizard</li>
+<li><strong> Scissors </strong> cuts paper and decapitates lizard, but gets crushed by rock and smashed by Spock </li>
+<li><strong> Spock </strong> smashes scissors and vaporises rock, but is disproved by paper and poised by lizard </li>
+<li><strong> Lizard </strong> eats paper and poinsons Spock, but is crushed by rock and decapitated by lizard </li>
+</ul>
+
+<hr>
+<br>
+<small>Icons created by Studio Fibonacci from the <a href="https://thenounproject.com/">Noun Project</a>. Used under <a href="https://creativecommons.org/licenses/by/2.0/">CC.</a></small>
