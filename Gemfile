@@ -9,7 +9,7 @@ group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
   gem 'rubocop'
-  gem 'coveralls', require: false
+  gem 'coveralls', require: true
   gem 'capybara'
   gem 'byebug'
 end
