@@ -2,7 +2,7 @@ class Game
 
   attr_reader :player, :opponent
 
-  CHOICES = %w(Rock Paper Scissors)
+  CHOICES = %w(Rock Paper Scissors).freeze
 
   def self.create(player, ai_class=Player)
     @game = Game.new(player, ai_class.new)
@@ -26,7 +26,5 @@ class Game
       "#{@opponent[:name]}'s #{@opponent[:choice]} beats #{@player[:name]}'s #{@player[:choice]} - #{@opponent[:name]} wins!"
     end
   end
-
-  CHOICES.index("Scissors") == CHOICES.index("Paper")
 
 end
