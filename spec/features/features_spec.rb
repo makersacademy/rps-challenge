@@ -37,10 +37,19 @@ feature "Displays winner" do
 end
 
 feature "Play again" do
-  scenario "After a game user can press play again to return to index" do
+  scenario "After a game user can play again without re-entering name" do
     sign_in_and_play
     choose("choice_rock")
     click_button 'Play again!'
-    expect(page).to have_content "Rock, Paper, Scissors!"
+    expect(page).to have_content "Hi Spud!"
+  end
+end
+
+feature "Go to start page" do
+  scenario "After playing a game user can return to index" do
+    sign_in_and_play
+    choose("choice_rock")
+    click_button 'Go to start page'
+    expect(page).to have_content "Enter your name"
   end
 end

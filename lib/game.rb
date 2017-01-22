@@ -1,26 +1,27 @@
 class Game
 
-  attr_reader :userchoice, :computerchoice
+  attr_reader :userchoice, :computerchoice, :result
+  
   def initialize(userchoice, computerchoice)
     @userchoice = userchoice
     @computerchoice = computerchoice
   end
 
-  def winner
+  def result
     if userchoice == 'rock' && computerchoice == 'scissors'
-      "You win!"
+      :win
     elsif userchoice == 'rock' && computerchoice == 'paper'
-      "Computer wins!"
+      :lose
     elsif userchoice == 'paper' && computerchoice == 'rock'
-      "You win!"
+      :win
     elsif userchoice == 'paper' && computerchoice == 'scissors'
-      "Computer wins!"
+      :lose
     elsif userchoice == 'scissors' && computerchoice == 'paper'
-      "You win!"
+      :win
     elsif userchoice == 'scissors' && computerchoice == 'rock'
-      "Computer wins!"
+      :lose
     else
-      "It's a draw!"
+      :draw
     end
   end
 

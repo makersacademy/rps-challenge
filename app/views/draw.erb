@@ -3,9 +3,20 @@
     <p style="max-width: 200px; border: 2px solid #1F535D;background-color: #08CEF6">
       You have chosen <%= @player1.choice %>! <br><br>
       <%= @computer.name %> picked <%= @computer.choice %>! <br><br>
-      <%= @game.winner %> <br><br>
-      <form action="/" method="get">
+      <%=
+      if @game.result == :win
+        "You win!"
+      elsif @game.result == :lose
+        "Computer wins!"
+      else
+        "It's a draw!"
+      end
+      %> <br><br>
+      <form action="/play" method="get">
         <button type="submit">Play again!</button>
+      </form>
+      <form action="/" method="get">
+        <button type="submit">Go to start page</button>
       </form>
     </p>
   </font>
