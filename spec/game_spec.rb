@@ -12,18 +12,20 @@ describe Game do
   let(:game9) { described_class.new("scissors", "scissors") }
 
   it "Initializes a game with userchoice and computer choice" do
-    expect(game.userchoice).to eq "rock"
-    expect(game.computerchoice).to eq "paper"
+    expect(game.userchoice).to eq :rock
+    expect(game.computerchoice).to eq :paper
   end
-  it "Returns the result of the game" do
-    expect(game.result).to eq :lose
-    expect(game2.result).to eq :lose
-    expect(game3.result).to eq :lose
-    expect(game4.result).to eq :win
-    expect(game5.result).to eq :win
-    expect(game6.result).to eq :win
-    expect(game7.result).to eq :draw
-    expect(game8.result).to eq :draw
-    expect(game9.result).to eq :draw
+
+  it "Returns the winner of the game" do
+    expect(game.winner).to eq :scissors
+    expect(game2.winner).to eq :rock
+    expect(game3.winner).to eq :paper
+    expect(game4.winner).to eq :rock
+    expect(game5.winner).to eq :paper
+    expect(game6.winner).to eq :scissors
+    expect(game7.winner).to eq :paper
+    expect(game8.winner).to eq :scissors
+    expect(game9.winner).to eq :rock
   end
+  
 end

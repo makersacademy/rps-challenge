@@ -1,28 +1,18 @@
 class Game
 
-  attr_reader :userchoice, :computerchoice, :result
-  
+  attr_reader :userchoice, :computerchoice, :winner
+  RULES = { rock: :paper,
+            paper: :scissors,
+            scissors: :rock
+            }
+
   def initialize(userchoice, computerchoice)
-    @userchoice = userchoice
-    @computerchoice = computerchoice
+    @userchoice = userchoice.to_sym
+    @computerchoice = computerchoice.to_sym
   end
 
-  def result
-    if userchoice == 'rock' && computerchoice == 'scissors'
-      :win
-    elsif userchoice == 'rock' && computerchoice == 'paper'
-      :lose
-    elsif userchoice == 'paper' && computerchoice == 'rock'
-      :win
-    elsif userchoice == 'paper' && computerchoice == 'scissors'
-      :lose
-    elsif userchoice == 'scissors' && computerchoice == 'paper'
-      :win
-    elsif userchoice == 'scissors' && computerchoice == 'rock'
-      :lose
-    else
-      :draw
-    end
+  def winner(choice=@computerchoice)
+    RULES[choice]
   end
 
 end

@@ -4,12 +4,12 @@
       You have chosen <%= @player1.choice %>! <br><br>
       <%= @computer.name %> picked <%= @computer.choice %>! <br><br>
       <%=
-      if @game.result == :win
-        "You win!"
-      elsif @game.result == :lose
-        "Computer wins!"
-      else
+      if @game.userchoice == @game.computerchoice
         "It's a draw!"
+      elsif @game.winner == @game.userchoice
+        "You win!"
+      else
+        "Computer wins!"
       end
       %> <br><br>
       <form action="/play" method="get">
