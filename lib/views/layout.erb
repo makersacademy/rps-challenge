@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
+
 <style type="text/css">
-  p {
-      color: blue;
+
+p {
+    color: blue;
 }
   h1 {
       font-family: Impact, Charcoal, sans-serif;
@@ -14,16 +16,17 @@ h3 {
     color: blue;
 }
 
-.blink-text {
-  animation: blink-text 1s step-start infinite
+blink, .blink {
+-webkit-animation: blink 1s step-end infinite;
+-moz-animation: blink 1s step-end infinite;
+-o-animation: blink 1s step-end infinite;
+animation: blink 1s step-end infinite;
 }
+@-webkit-keyframes blink { 67% { opacity: 0 }}
+@-moz-keyframes blink {  67% { opacity: 0 }}
+@-o-keyframes blink {  67% { opacity: 0 }}
+@keyframes blink {  67% { opacity: 0 }}
 
-@keyframes blink-text {
-
-  0% {color: black}
-  25% {color: transparent}
-  100% {color: black}
-}
 
 h5{
     position: fixed;
@@ -33,7 +36,6 @@ h5{
 }
 </style>
   <head>
-</head>
     <title>Rock Scissors Paper Game</title>
   </head>
   <body background="http://i.stack.imgur.com/YorMT.png">
@@ -47,7 +49,7 @@ h5{
     <%= yield %>
 
     <br>
-    <h5> ®BasileKoko2017</h5>
+    <h5> ®Basile-2017</h5>
     </div>
   </body>
 
