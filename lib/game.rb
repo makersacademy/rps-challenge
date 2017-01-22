@@ -25,20 +25,17 @@ class Game
 
   # ------------------ PUBLIC METHODS ------------------
 
-  def place_move(choice)
+  def place_moves(choice)
     @player.select_choice(choice)
-  end
-
-  def assign_response
     @computer.select_choice
   end
 
-  def won?(moves = [player.choice, computer.choice])
-    moves == [:rock, :scissors] || moves == [:paper, :rock] || moves == [:scissors, :paper]
-  end
-
-  def draw?(moves = [player.choice, computer.choice])
-    moves == [:rock, :rock] || moves == [:paper, :paper] || moves == [:scissors, :scissors]
+  def result(moves = [player.choice, computer.choice])
+    return :draw if moves[0] == moves[1]
+    return [
+      [:rock, :scissors],
+      [:paper, :rock],
+      [:scissors, :paper]].include?(moves) ? :win : :lost
   end
 
 end

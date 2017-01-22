@@ -12,7 +12,7 @@ describe Game do
   end
 
   it 'should respond to the method place_move' do
-    expect(game).to respond_to(:place_move).with(1).argument
+    expect(game).to respond_to(:place_moves).with(1).argument
   end
 
 end

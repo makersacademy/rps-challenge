@@ -10,11 +10,11 @@
     </div>
 
     <div class="result">
-      <% if @game.draw? %>
+      <% if @game.result == :draw %>
         <h2>Sorry, it was a draw!</h2>
-      <% elsif @game.won? %>
+      <% elsif @game.result == :win %>
         <h2>You won!!</h2>
-      <% else %>
+      <% elsif @game.result == :lost %>
         <h2>You lose!!</h2>
       <% end %>
     </div>
