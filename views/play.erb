@@ -7,8 +7,9 @@
   <body>
 
     <div class="landing-page">
-      <h1>Hi, <%= @game.player.name.capitalize %>!</h1>
+      <h1 style="font-family: 'Permanent Marker', cursive; font-size: 42px;">Hi, <%= @game.player.name.capitalize %>!</h1>
       <h2>Are you ready to play?</h2>
+      <br>
     </div>
 
     <div class="instructions">
@@ -16,23 +17,23 @@
     </div>
 
     <form class="play-form" action="/choice" method="post">
-      <label>
-        <img src="/images/rock.png" style="height: 80px">
-        <input type="radio" name="choice" value="Rock"><p>Rock</p>
+      <label id="rock">
+        <img src="/images/rock.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Rock"><br><br><p>Rock</p>
       </label>
-      <label>
-        <img src="/images/paper.png" style="height: 80px">
-        <input type="radio" name="choice" value="Paper"><p>Paper</p>
+      <label id="paper">
+        <img src="/images/paper.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Paper"><br><br><p>Paper</p>
       </label>
-      <label>
-        <img src="/images/scissors.png" style="height: 80px">
-        <input type="radio" name="choice" value="Scissors"><p>Scissors</p>
+      <label id="scissors">
+        <img src="/images/scissors.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Scissors"><br><br><p>Scissors</p>
       </label>
       <br><br>
       <input type="submit" value="Play" class="btn btn-success">
     </form>
 
-    <a href="/" class="btn btn-success">Start as new player</a>
+    <a href="/" class="btn btn-default btn-sm">Start as new player</a>
 
   </body>
 </html>

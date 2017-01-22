@@ -7,9 +7,9 @@
   <body>
 
     <div class="choice-error">
-      <h2><%= @game.player.name.capitalize %>, seems that you didn't select a move before pressing play!</h2>
+      <h1 class="error" style="font-family: 'Permanent Marker', cursive; font-size: 42px;"><%= @game.player.name.capitalize %>, seems that you didn't select a move before pressing play!</h1>
       <p>Your selected move will have a blue button once you've selected it correctly.</p>
-      <a href="/play" class="btn btn-success">Try again</a>
+      <a href="/play" class="btn btn-default btn-sm">Try again</a>
     </div>
 
   </body>

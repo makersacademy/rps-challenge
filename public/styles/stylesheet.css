@@ -1,19 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+
 body {
   text-align: center;
 }
 
+h1 {
+  background-color: #5FA5E8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 24px;
+}
+
+form {
+  margin: 20px;
+}
+
+input[type="radio"] {
+  margin: 15px;
+  transform: scale(1.5);
+}
+
+label#rock {
+  margin: 0px 30px 0px 15px;
+}
+
+label#paper {
+  margin: 0px 45px 0px 0px;
+}
+
+label#scissors {
+  margin: 0px 40px 0px -5px;
+}
+
 .main-img {
-  height: 150px;
+  height: 260px;
 }
 
 .btn {
   margin: 20px;
 }
 
-form {
-  margin: 30px;
+.choice {
+  margin-top: 10%;
 }
 
-.result {
-  color: #855EFF;
+.error {
+  background-color: #6675FF;
+}
+
+.return-to-home, .choice-error {
+  margin-top: 10%
 }

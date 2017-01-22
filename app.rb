@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra'
+require 'google-webfonts'
 
 require './lib/game.rb'
 

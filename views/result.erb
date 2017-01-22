@@ -7,22 +7,22 @@
   <body>
 
     <div class="choice">
-      <h1>You selected <em><%= @game.player.choice %></em> and the computer selected <em><%= @game.computer.choice %></em>.</h1>
+      <p>You selected <em><%= @game.player.choice %></em> and the computer selected <em><%= @game.computer.choice %></em>.</p>
     </div>
 
     <div class="result">
       <% if @game.result == :draw %>
-        <h2>Sorry, it was a draw!</h2>
+        <h1 style="font-family: 'Permanent Marker', cursive; font-size: 48px;">Sorry, it was a draw!</h1>
       <% elsif @game.result == :win %>
-        <h2>You won!!</h2>
+        <h1 style="font-family: 'Permanent Marker', cursive;font-size: 48px;">You won!!</h1>
       <% elsif @game.result == :lost %>
-        <h2>You lose!!</h2>
+        <h1 style="font-family: 'Permanent Marker', cursive;font-size: 48px;">You lose!!</h1>
       <% end %>
     </div>
 
     <div class="return-to-home">
-      <h1>Want to play again?</h1>
-      <a href='/play' class="btn btn-success">Yes</a>
+      <h2>Want to play again?</h2>
+      <a href='/play' class="btn btn-default btn-sm">Yes</a>
     </div>
 
   </body>

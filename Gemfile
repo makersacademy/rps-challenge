@@ -4,6 +4,7 @@ ruby '2.4.0'
 
 gem 'sinatra'
 gem 'rake'
+gem 'google-webfonts'
 
 group :test do
   gem 'rspec'
