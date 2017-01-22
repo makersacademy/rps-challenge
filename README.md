@@ -5,10 +5,19 @@ Approach to Challenge
 
 * Set up the TDD environment for the development of a web application with Sinatra.
 
-* **User Story n.1** There is a form on the index for the user to enter the name. In a POST request, that name is passed as argument to an instance of the Player class and saved as a 'player' variable. A new instance of a Game class is created with 'player' as an argument. The user is redirected to /game to start playing.
+* **User Story n.1** There is a form on the index for the user to enter the name. In a POST request, that name is passed as argument to an instance of the Player class and saved as a 'player' variable. A new instance of a Game class is created with 'player' and 'computer' (instance of Computer class) - the opponent - as arguments. The user is redirected to /game to start playing.
 
-* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY. In /challenge....
+![Sign up and Play](/imgs/RPS-1.png)
 
+* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY. In /challenge the computer pick a sample from an Array which includes "Rock", "Paper" and "Scissors" and announce the winner.
+
+![Choose an option](/imgs/RPS-2.png)
+![Announce the winner](/imgs/RPS-3.png)
+
+* **Refactoring** I still would like to refactor the winner method in Game and get rid of the global variable.
+
+Travis CI Status Budge:
+[![Build Status](https://travis-ci.org/nenoch/rps-challenge.svg?branch=master)](https://travis-ci.org/nenoch/rps-challenge)
 
 Instructions
 -------

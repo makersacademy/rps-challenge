@@ -1,12 +1,14 @@
-You chose <%=@player_weapon.upcase%>!<br />
-I chose <%=@computer_weapon.upcase%>!<br />
-<br />
-<%=@winner.upcase%> WINS!<br />
-<br />
-<form action="/game">
-  <input type="submit" value="Play again!">
-</form><br />
-OR<br /><br />
-<form action="/">
-  <input type="submit" value="Start a New Game">
-</form>
+<div style='text-align: center; margin-top: 5em;'>
+  You chose <%=@player_weapon.upcase%>!<br />
+  I chose <%=@computer_weapon.upcase%>!<br />
+  <br />
+  <%=@winner.upcase%> WINS!<br />
+  <br />
+  <form action="/game">
+    <input type="submit" value="Play again!">
+  </form><br />
+  OR<br /><br />
+  <form action="/">
+    <input type="submit" value="Start a New Game">
+  </form>
+</div>
