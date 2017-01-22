@@ -33,12 +33,12 @@ feature '2.Play' do
     expect(page).to have_content msg
   end
 
-  # scenario "d. Go back to the Register page" do
-  #   sign_in_and_play
-  #   click_button('Attack!')
-  #   click_button('Back!')
-  #   expect(page).to have_content 'Player 1: Enter your name:'
-  # end
+  scenario "e. Go back to the Register page" do
+    sign_in_and_play
+    click_button 'Scissors'
+    click_button 'Back'
+    expect(page).to have_content 'Player 1: Enter your name:'
+  end
 
 
 end
