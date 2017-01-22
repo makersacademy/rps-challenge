@@ -39,11 +39,16 @@ class Rps < Sinatra::Base
     
     post '/result' do
         game = Game.new
-        game.player_wins?(current_player) ? (redirect '/win') : (redirect '/lose')
+        result = game.result(current_player).to_s
+        redirect "/#{result}"
     end
     
     get '/win' do
         erb(:win)
+    end
+    
+    get '/draw' do
+        erb(:draw)
     end
     
     get '/lose' do

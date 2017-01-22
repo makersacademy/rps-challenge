@@ -18,8 +18,15 @@ class Game
     RULES = {   rock: :scissors,
                 paper: :rock,
                 scissors: :paper }
+    RESULT = [ :win, :draw, :lose ]
                 
-    def player_wins?(player_1, player_2 = Computer.new)
-        RULES[player_1.choice] == player_2.choice
+    def result(player_1, player_2 = Computer.new)
+        if player_1.choice == player_2.choice
+            :draw
+        elsif RULES[player_1.choice] == player_2.choice
+            :win
+        else
+            :lose
+        end
     end
 end

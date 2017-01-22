@@ -45,9 +45,21 @@ feature "computer makes a random choice and a winner is declared" do
         register_and_play
     end
     
-    scenario "User chose rock and wins" do
+    scenario "user chooses rock and wins" do
         click_button("Rock")
         click_button("Continue!")
         expect(page).to have_content("Congratulations Ben, you won!")
+    end
+    
+    scenario "user chooses paper and loses" do
+        click_button("Paper")
+        click_button("Continue!")
+        expect(page).to have_content("Better luck next time Ben, you lost!")
+    end
+    
+    scenario "user chooses scissors and draws" do
+        click_button("Scissors")
+        click_button("Continue!")
+        expect(page).to have_content("It's a draw!")
     end
 end
