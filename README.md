@@ -27,4 +27,4 @@ My project is organised in the following folders:
 
 
 The game I have built can be found on Heroku:
-[Play Rock-Scissors-Paper]()
+[Play Rock-Scissors-Paper](https://rockpaperscissorgame.herokuapp.com/)
