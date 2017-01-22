@@ -11,19 +11,18 @@ feature '2.Play' do
     sign_in_and_play
     expect(page).to have_content 'Enter Rock, Paper or Scissors'
   end
-  #
-  # scenario 'b) player one chooses rock and the computer plays scissors' do
-  #   sign_in_and_play
-  #   fill_in :p1_choice_input, with: 'Rock'
-  #   click_button 'Submit'
-  #   msg = "You chose Rock and The Computer chose Scissors, YOU WIN!"
-  #   expect(page).to have_content msg
-  # end
 
-  scenario 'b) player one chooses rock and the computer plays scissors' do
+  scenario 'b) player one chooses Paper and the computer plays Scissors' do
     sign_in_and_play
     click_button 'Rock'
     msg = "You chose Rock and The Computer chose Scissors, YOU WIN!"
+    expect(page).to have_content msg
+  end
+
+  scenario 'c) player one chooses Paper and the computer plays Scissors' do
+    sign_in_and_play
+    click_button 'Paper'
+    msg = "You chose Paper and The Computer chose Scissors, YOU LOSE!"
     expect(page).to have_content msg
   end
 
