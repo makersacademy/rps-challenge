@@ -1,3 +1,12 @@
-<%= @game.player_1_name %> has drawn against <%= @game.player_2_name %>
-<%= @game.player_1_name %> picked <%= @game.player_1_choice %>
-<%= @game.player_2_name %> picked <%= @game.player_2_choice %>
+<link rel="stylesheet" href="index.css" type="text/css" />
+<div class="result">
+  <center>
+    <h1>
+      <%= @game.player_1_name %> has drawn against <%= @game.player_2_name %><br>
+    </h1>
+    <h2>
+      <%= @game.player_1_name %> picked <%= @game.player_1_choice %><br>
+      <%= @game.player_2_name %> picked <%= @game.player_2_choice %>
+    </h2>
+  </center>
+</div>

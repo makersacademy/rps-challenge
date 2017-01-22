@@ -1,0 +1,25 @@
+body {
+  background: burlywood}
+
+form {
+  background-color: lightgoldenrodyellow;
+  padding: 20px;
+  max-width: 300px;
+  border: black dashed 5px;
+  border-radius: 20px;}
+
+.radio {
+  background: floralwhite;
+  border: black solid;
+  border-radius: 900px;
+  padding-top: 0px;
+  padding-bottom: 15px;}
+
+.result{
+    top: 40%;
+    background: floralwhite;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    border: black dashed 5px;
+    border-radius: 30px;}
