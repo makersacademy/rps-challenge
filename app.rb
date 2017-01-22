@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/game.rb'
+require './lib/game_rps_one_player.rb'
+require './lib/game_rps_two_players.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,23 +10,75 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
-    session[:name] = params[:name]
-    redirect '/game'
+  post '/game_choice' do
+    session[:how_many_players] = params[:how_many_players]
+    session[:which_game] = params[:which_game]
+    redirect '/name'
   end
 
-  get '/game' do
+  get '/name' do
+    @how_many_players = session[:how_many_players]
+    erb :name
+  end
+
+  post '/one_name' do
+    session[:name] = params[:name]
+    redirect '/game_one_player'
+  end
+
+  get '/game_one_player' do
     @name = session[:name]
     @choice = session[:choice]
-    game = Game.new(@choice)
+    game = GameRPSOnePlayer.new(@choice)
     @won = game.won?
     @thrown = game.thrown
-    erb :game
+    erb :game_one_player
   end
 
-  post '/game' do
+  post '/game_one_player' do
     session[:choice] = params[:choice]
-    redirect '/game'
+    redirect '/game_one_player'
+  end
+
+  post '/two_names' do
+    session[:name_one] = params[:name_one]
+    session[:name_two] = params[:name_two]
+    redirect '/game_first_player'
+  end
+
+  get '/game_first_player' do
+    @name_one = session[:name_one]
+    erb :game_first_player
+  end
+
+  post '/game_second_player' do
+    session[:choice_one] = params[:choice]
+    redirect '/game_second_player'
+  end
+
+  get '/game_second_player' do
+    @name_two = session[:name_two]
+    erb :game_second_player
+  end
+
+  post '/game_two_players' do
+    session[:choice_two] = params[:choice]
+    redirect '/game_two_players_final'
+  end
+
+  get '/game_two_players_final' do
+    @name_one = session[:name_one]
+    @name_two = session[:name_two]
+    @choice_one = session[:choice_one]
+    @choice_two = session[:choice_two]
+    game = GameRPSTwoPlayers.new(@choice_one, @choice_two)
+    @won = game.won?
+    erb :game_two_players_final
+  end
+
+  post '/replay_game_two_players' do
+    @name_one = session[:name_one]
+    erb :game_first_player
   end
 
   # start the server if ruby file executed directly

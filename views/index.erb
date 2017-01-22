@@ -10,13 +10,20 @@
 
     <h3> Welcome to the game!</h3>
 
-    <form action = "/name" method = "post">
-      <label for = "name">
-        To continue please enter your name:
-        <input type = "text" name = "name">
+    <form action = "/game_choice" method = "post">
+      <label for = "how_many_players">
+        Do you want to play with computer or with some of your colleagues?</br>
+        <input type = "radio" name = "how_many_players" value = "one" id = "one_player">Play with computer<br>
+        <input type = "radio" name = "how_many_players" value = "two" id = "two_players">Play with colleagues<br>
       </label>
-      <input type = "submit" value = "Start game">
+      <label for = "which_game">
+        Do you want to play Rock/Paper/Scissors or Rock/Paper/Scissors/Spock/Lizard?</br>
+        <input type = "radio" name = "which_game" value = "rps" id = "rock_paper_scissors">Rock/Paper/Scissors<br>
+        <input type = "radio" name = "which_game" value = "rpssl" id = "rock_paper_scissors_spock_lizard">Rock/Paper/Scissors/Spock/Lizard<br>
+      </label>
+      <input type = "submit" value = "Play!">
     </form>
+
   </div>
 
 </body>

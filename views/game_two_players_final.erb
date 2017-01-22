@@ -1,0 +1,23 @@
+<head>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700" rel="stylesheet">
+</head>
+
+<body>
+
+    <p><%=@name_one%> has chosen <%=@choice_one%>.</p>
+    <p><%=@name_two%> has chosen <%=@choice_two%>.</p>
+    <!-- <p><%=@won%>.</p> -->
+    <% if @won == :won %>
+      <h3>Congratulations to <%=@name_one%>, you won!</h3>
+    <% elsif @won == :lose %>
+      <h3>Congratulations to <%=@name_two%>, you won!</h3>
+    <% else %>
+      <h3>The game is tied. We need to replay to break the tie.</h3>
+    <% end %>
+
+    <form action = "/replay_game_two_players" method = "post">
+      <input type = "submit" value = "Play again!">
+    </form>
+
+</body>

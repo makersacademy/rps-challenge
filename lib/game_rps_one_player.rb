@@ -1,4 +1,4 @@
-class Game
+class GameRPSOnePlayer
 
   RULES = { :rock => :scissors,
           :paper => :rock,
