@@ -14,7 +14,7 @@ body {
 header {
     background-color: #fff;
     border-bottom: 1px solid #000;
-    font-family: monospace;
+    font-family: 'Assistant', sans-serif;
     font-size: 1.5em;
     text-align: center;
     margin: auto;
@@ -34,7 +34,7 @@ main {
     padding-top: .5em;
     text-align: center;
     float: left;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 1.5vw;
     margin-bottom: 1em;
 }
@@ -44,7 +44,7 @@ main {
     padding-top: .5em;
     text-align: center;
     float: right;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 1.5vw;
     margin-bottom: 1em;
 }
@@ -54,7 +54,7 @@ main {
     padding-top: .5em;
     text-align: center;
     float: left;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 2.5em;
 }
 
@@ -63,13 +63,13 @@ main {
     padding-top: .5em;
     text-align: center;
     float: right;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 2.5em;
 }
 
 .form {
     font-size: 1.2vw;
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
 }
 
 input[type="radio" i] {
@@ -93,13 +93,13 @@ h1 {
 }
 
 .play-h2 {
-    font-family: monospace;
+    font-family: 'Assistant', sans-serif;
     font-size: 3em;
 }
 
 .index-h2 {
     width: 100%;
-    font-family: monospace;
+    font-family: 'Assistant', sans-serif;
 }
 
 .confirm {
@@ -147,5 +147,5 @@ input[type="radio"]:checked  ~ .icons > i {
 
 .icon-holder {
     font-size: 400%;
-    margin-top: .5em;
+    margin-top: 5vh;
 }
