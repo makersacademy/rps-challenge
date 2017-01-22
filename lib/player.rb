@@ -6,7 +6,10 @@ class Player
   def initialize(name, score = DEFAULT_SCORE)
     @name = name
     @score = score
-    @weapon = nil
   end
 
+  def add_win
+    @score += 1
+  end
+  
 end
