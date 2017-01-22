@@ -2,10 +2,13 @@
     <head>
     </head>
 <body>
-  You selected <%= @game.player.rock %>
+  You selected Rock !
   <br/>
   Opponent selects <%= @game.selection %>
   <br/>
+  <%= @game.rock_result %>
+
+
 
   <form action="/play">
     <input type="submit" value="Another round..." />

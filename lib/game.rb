@@ -1,6 +1,7 @@
 class Game
 
-  attr_reader :selection, :player
+  attr_reader :selection, :player, :rock_result
+
   @game = nil
 
   def initialize(player)
@@ -19,8 +20,15 @@ class Game
     ["Rock" , "Paper", "Scissors"].sample
   end
 
-  def result
-    
+  def rock_result
+    if selection == 'Rock'
+      "You draw!"
+    elsif selection == 'Paper'
+      "You lose!"
+    else
+      "You win!"
+    end
+  end
 
 
 end
