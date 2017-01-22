@@ -2,8 +2,8 @@
 feature '#register'do
   scenario 'it allows player to input name' do
     visit('/')
-    fill_in :player_1_name, with: 'Olwen'
+    fill_in :name, with: 'Olwen'
     click_button "Submit name"
-    expect(page).to have_content('Welcome to Rock Paper Scissors')
+    expect(page).to have_content('Olwen')
   end
 end
