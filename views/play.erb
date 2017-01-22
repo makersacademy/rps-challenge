@@ -16,14 +16,18 @@
     </div>
 
     <form class="play-form" action="/choice" method="post">
-      <div class="moves">
-          <input id="rock" type="radio" name="choice" value="Rock" />
-          <label class="image rock" for="Rock"></label>
-          <input id="paper" type="radio" name="choice" value="Paper" />
-          <label class="image paper" for="Paper"></label>
-          <input id="scissors" type="radio" name="choice" value="Scissors" />
-          <label class="image scissors" for="Scissors"></label>
-      </div>
+      <label>
+        <img src="/images/rock.png" style="height: 80px">
+        <input type="radio" name="choice" value="Rock"><p>Rock</p>
+      </label>
+      <label>
+        <img src="/images/paper.png" style="height: 80px">
+        <input type="radio" name="choice" value="Paper"><p>Paper</p>
+      </label>
+      <label>
+        <img src="/images/scissors.png" style="height: 80px">
+        <input type="radio" name="choice" value="Scissors"><p>Scissors</p>
+      </label>
       <br><br>
       <input type="submit" value="Play" class="btn btn-success">
     </form>
