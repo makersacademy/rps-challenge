@@ -1,0 +1,24 @@
+body {
+    background-color: #085874;
+}
+
+h1 {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: white;
+    padding-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px
+}
+
+p {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px
+}
+
+form { align-content: center;
+
+
+}
