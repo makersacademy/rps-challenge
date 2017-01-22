@@ -1,10 +1,11 @@
+<div>
 <head>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
 <div>
 <h1><p><%= @game.player_1.name%>!</p> Choose your weapon</h1>
-<form action="/game" method="post">
+<form action="/switch" method="post">
 <input type="image" src="/imgs/paper.png" alt="Paper" value="paper" name="p1_weapon">
 <input type="image" src="/imgs/rock.png" alt="Rock" value="rock" name="p1_weapon">
 <input type="image" src="/imgs/scissors.png" alt="Scissors" value="scissors" name="p1_weapon">
@@ -13,3 +14,4 @@
 </form>
 </div>
 </body>
+</div>

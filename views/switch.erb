@@ -1,0 +1,17 @@
+<div>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+<div>
+<h1><p><%= @game.player_2.name%>!</p> Choose your weapon</h1>
+<form action="/game_over" method="post">
+<input type="image" src="/imgs/paper.png" alt="Paper" value="paper" name="p2_weapon">
+<input type="image" src="/imgs/rock.png" alt="Rock" value="rock" name="p2_weapon">
+<input type="image" src="/imgs/scissors.png" alt="Scissors" value="scissors" name="p2_weapon">
+<input type="image" src="/imgs/lizard.png" alt="Lizard" value="lizard" name="p2_weapon">
+<input type="image" src="/imgs/spock.png" alt="Spock" value="spock" name="p2_weapon">
+</form>
+</div>
+</body>
+</div>

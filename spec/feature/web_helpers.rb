@@ -1,5 +1,5 @@
 def name_and_submit
 	visit('/')
-	fill_in('name', with: "Mabel")
+	fill_in('p1_name', with: "Mabel")
 	click_button('submit')
 end

@@ -15,7 +15,7 @@ subject(:game){described_class.new(player_1, player_2)}
 
 	describe '#check' do
 		it 'should return draw' do
-			expect(game.check).to eq "It's a draw"
+			expect(game.check).to eq "it's a draw"
 		end
 	end
 	

@@ -4,7 +4,11 @@ class Game
 
 attr_reader :player_1, :player_2
 
-WIN_CHART=[["rock","scissors"],["paper","rock"],["scissors","paper"]]
+WIN_CHART=[["rock","scissors"],["rock","lizard"],
+				["paper","rock"],["paper","spock"],
+				["scissors","paper"],["scissors","lizard"],
+				["spock","rock"],["spock","scissors"],
+				["lizard","paper"],["lizard","spock"]]
 
 	def initialize(player_1, player_2=Computer.new)
 		@player_1 = player_1
@@ -21,11 +25,12 @@ WIN_CHART=[["rock","scissors"],["paper","rock"],["scissors","paper"]]
 	end
 
 	def play		
-		user_turn
-		computer_turn
+
 	end
 
-	def check
+	def play
+		user_turn
+		computer_turn
 		return draw if @compare[0] == @compare[1]
 		WIN_CHART.include?(@compare) ? win : lose
 	end
@@ -37,19 +42,20 @@ WIN_CHART=[["rock","scissors"],["paper","rock"],["scissors","paper"]]
 	end
 
 	def computer_turn
+		return @compare<<@player_2.choice if @player_2.is_a?(Player)
 		@compare<<@player_2.play
 	end
 
 	def win
-		"You win!"
+		"you win!"
 	end
 
 	def lose
-		"You lose"
+		"you lose"
 	end
 
 	def draw
-		"It's a draw"
+		"it's a draw"
 	end
 
 end
