@@ -6,12 +6,19 @@ describe 'User Stories' do
 
   feature 'sign up' do
     scenario 'a player would like to register to play' do
-      visit('/')
-      fill_in :player_name, with: 'Hollie'
-      click_button 'Start'
+      sign_up_and_play
+      expect(page).to have_text 'Choose your weapon Dino!'
     end
   end
   # As a marketeer
   # So that I can enjoy myself away from the daily grind
   # I would like to be able to play rock/paper/scissors
+  feature 'play' do
+    scenario 'a player would like to play rock/paper/scissors' do
+      sign_up_and_play
+      choose('rock')
+      click_button 'PLAY'
+      expect(page).to have_text 'You chose ROCK!'
+    end
+  end
 end
