@@ -59,3 +59,7 @@ What is ????
 
 Build Badge Example
 ------------------
+
+[![Build Status](https://travis-ci.org/kateloschinina/rps-challenge.svg?branch=master)](https://travis-ci.org/kateloschinina/rps-challenge)
+
+[![Coverage Status](https://coveralls.io/repos/github/kateloschinina/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/kateloschinina/rps-challenge?branch=master)
