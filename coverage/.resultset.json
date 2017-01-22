@@ -5,6 +5,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
@@ -77,6 +78,18 @@
         1,
         1,
         null,
+        null,
+        null
+      ],
+      "/Users/konradschlatte/projects/rock_paper/views/player.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        4,
+        4,
         null,
         null
       ],
@@ -179,20 +192,8 @@
         null,
         null,
         null
-      ],
-      "/Users/konradschlatte/projects/rock_paper/views/player.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        4,
-        4,
-        null,
-        null
       ]
     },
-    "timestamp": 1485105839
+    "timestamp": 1485117515
   }
 }
