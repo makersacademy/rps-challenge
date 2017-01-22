@@ -4,6 +4,7 @@ require './lib/computer'
 require './lib/player'
 require './lib/rockpaperscissors'
 require './lib/game'
+require './lib/game_choice'
 
 class RPS < Sinatra::Base
   attr_reader :rps
@@ -11,6 +12,7 @@ class RPS < Sinatra::Base
 
   before do
     @game = Game.instance
+    @game_rps = GameChoice.instance
   end
 
   get '/' do
@@ -30,18 +32,22 @@ class RPS < Sinatra::Base
 
   post '/result' do
     if params[:rps] == "Rock"
-      @rps = :Rock
+      rps = :Rock
+      @game_rps = GameChoice.new(rps)
     elsif params[:rps] == "Paper"
-      @rps = :Paper
+      rps = :Paper
+      @game_rps = GameChoice.new(rps)
     else
-      @rps = :Scissors
+      rps = :Scissors
+      @game_rps = GameChoice.new(rps)
     end
-    erb(:fight)
+    redirect '/fight'
   end
 
   get '/fight' do
-    @rps
-
+    @game
+    @game_rps
+    erb(:fight)
   end
 
   # start the server if ruby file executed directly
