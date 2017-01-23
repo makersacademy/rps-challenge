@@ -24,9 +24,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = Game.instance
-    result = @game.battle
-    redirect "/#{result.to_s}"
+    game = Game.instance
+    redirect "/#{game.battle.to_s}"
   end
 
   get '/draw' do
