@@ -14,6 +14,4 @@ feature "Two player" do
     expect(page).to have_content "Enter player 2 name"
   end
 
-
-
 end

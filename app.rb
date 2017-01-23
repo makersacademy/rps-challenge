@@ -1,6 +1,4 @@
-#the main controller for rps web app
 require 'sinatra/base'
-# require_relative 'lib/computer'
 require_relative 'lib/game'
 
 class RPS < Sinatra::Base
@@ -10,7 +8,6 @@ class RPS < Sinatra::Base
   end
 
   post '/second_name' do
-      #need to save game
       @game = Game.create
       @game.first_player(params[:player_name])
       erb :second_name
@@ -24,13 +21,13 @@ class RPS < Sinatra::Base
 
   post '/next_choice' do
     @game = Game.instance
-    @game.set_player1_choice(params[:choice])
+    @game.set_player1_choice(params[:choice].to_sym)
     erb :second_choice
   end
 
   post '/result' do
     @game = Game.instance
-    @game.set_player2_choice(params[:choice])
+    @game.set_player2_choice(params[:choice].to_sym)
     @choice1 = @game.player1_choice
     @choice2 = @game.player2_choice
     @winner = @game.winner
