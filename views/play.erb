@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Rock paper scissors lizard spock</title>
+  </head>
+  <body>
+    <h1>Rock paper scissors lizard spock</h1>
+    <p><%= @game.player1.name %> vs. <%= @game.player2.name %></p>
+    <br>It's <%= @game.players[@game.turn].name %> time!<br>
+    <form action="/giu" method="post">
+      <% Game::SIGNS.each do |sign| %>
+        <%= "<input type='radio' name='pick' id='#{sign.to_s}' value='#{sign.to_s}'>#{sign.to_s.capitalize}<br>" %>
+      <% end %>
+      <input type="submit" value="Giu!" />
+    </form>
+  </body>
+</html>
