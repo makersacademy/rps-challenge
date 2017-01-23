@@ -29,7 +29,7 @@ I chose to pursue the bonus objectives from the start, these were:
 
 I designed the following domain model to guide me in my implementation:
 
-TBC
+![DM](https://app.ardoq.com/presentation/makersacademyjan2017/587e15df72fa6d218cea11a3)
 
 I then employed the following tools to construct the application:
 
