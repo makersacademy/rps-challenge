@@ -25,11 +25,15 @@ I would like to be able to play rock/paper/scissors
 How to play
 ----
 - Enter your name before the game begins
+![Image of Sign In](https://www.dropbox.com/home/Screenshots?preview=Screenshot+2017-01-23+10.05.06.png)
 - Choose your weapon (rock, paper and scissors) from the drop-down menu
-- Click 'Ok' to submit your choice
-- The computer will choose a random weapon (rock, paper and scissors)
+![Image of Choosing Weapon](https://www.dropbox.com/home/Screenshots?preview=Screenshot+2017-01-23+10.05.38.png)
+- Click 'Ok' to submit your choice and the computer will choose a random weapon (rock, paper and scissors)
+![Showing ok button](https://www.dropbox.com/home/Screenshots?preview=Screenshot+2017-01-23+10.05.26.png)
 - A winner will be declared
-- Decide whether to play again or exit
+![Winner is declared](https://www.dropbox.com/home/Screenshots?preview=Screenshot+2017-01-23+10.06.03.png)
+- Decide whether to play again, and score board is updated, or exit.
+![Updated scoreboard](https://www.dropbox.com/s/1v2jxk6ellxjvin/Screenshot%202017-01-23%2010.19.48.png?dl=0)
 
 Set Up
 ----
