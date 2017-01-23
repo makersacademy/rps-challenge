@@ -1,0 +1,153 @@
+html {
+    background-color: #fff;
+}
+
+body {
+    height: 100vh;
+    background-color: #1a398b;
+    background-image: url(/img/rpsls.jpg);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center 95%;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    width: 75%;
+    color: #fff;
+    text-shadow: 0 3px 3px #000;
+}
+
+.index-left {
+    width: 50%;
+    padding-top: .5em;
+    text-align: center;
+    float: left;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.5vw;
+    margin-bottom: 1em;
+}
+
+.index-right {
+    width: 50%;
+    padding-top: .5em;
+    text-align: center;
+    float: right;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.5vw;
+    margin-bottom: 1em;
+}
+
+.left {
+    width: 40%;
+    padding-top: .5em;
+    text-align: center;
+    float: left;
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.5em;
+}
+
+.right {
+    width: 40%;
+    padding-top: .5em;
+    text-align: center;
+    float: right;
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.5em;
+}
+
+.form {
+    font-size: 1.2vw;
+    font-family: 'Assistant', sans-serif;
+}
+
+input[type="radio" i] {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    float: right;
+    display: none;
+}
+
+input[type="text"] {
+    width: auto;
+    font-size: 1em;
+    margin-left: 5px;
+}
+
+h1 {
+    font-size: 2.5vw;
+}
+
+.play-h2 {
+    font-family: 'Assistant', sans-serif;
+    font-size: 3em;
+}
+
+.index-h2 {
+    width: 100%;
+    font-family: 'Assistant', sans-serif;
+}
+
+.confirm {
+    display: block;
+    margin: 10vh auto;
+    padding: .6em;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: #110f5d;
+    color: white;
+    box-shadow: 0 0 8px 1px #151515;
+    width: 9vw;
+    position: absolute;
+    left: 45vw;
+    top: 35vh;
+}
+
+.play-confirm {
+    display: block;
+    margin: 2em auto;
+    padding: .6em;
+    font-size: 2em;
+    border-radius: 5px;
+    background-color: #110f5d;
+    color: white;
+    box-shadow: 0 0 8px 1px #151515;
+    width: auto;
+}
+
+.selection-list, .selection-list li {
+    text-align: center;
+    margin: auto;
+    padding-bottom: .5em;
+    display: initial;
+    padding: 10px 0;
+}
+
+.icons {
+    font-size: 200%;
+    padding: 5px;
+}
+
+input[type="radio"]:checked~.icons>i {
+    transform: scale(1.5);
+    transition: 0.3s ease-in-out;
+}
+
+.icon-holder {
+    font-size: 400%;
+    margin-top: 5vh;
+}
