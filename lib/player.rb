@@ -2,7 +2,7 @@ class Player
   attr_reader :name, :hit_points
   attr_accessor :chosen_outcome
 
-  POSSIBLE_OUTCOMES = ["ROCK", "PAPER", "SCISSORS"]
+  POSSIBLE_OUTCOMES = ["ROCK", "PAPER", "SCISSORS", "SPOCK", "LIZZARD"]
   INITIAL_HIT_POINTS = 30
   POINTS_LOST_MOVE = 10
 

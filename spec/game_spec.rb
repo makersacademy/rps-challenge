@@ -13,15 +13,57 @@ describe Game do
         expect(game.checks_winner).to eq(player_one)
       end
 
+      it 'Scissors beats Lizzard' do
+        allow(player_one).to receive(:chosen_outcome).and_return('ROCK')
+        allow(player_two).to receive(:chosen_outcome).and_return('LIZZARD')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
       it 'Paper beats Rock' do
         allow(player_one).to receive(:chosen_outcome).and_return('PAPER')
         allow(player_two).to receive(:chosen_outcome).and_return('ROCK')
         expect(game.checks_winner).to eq(player_one)
       end
 
+      it 'Paper beats Spock' do
+        allow(player_one).to receive(:chosen_outcome).and_return('PAPER')
+        allow(player_two).to receive(:chosen_outcome).and_return('SPOCK')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
       it 'Rock beats Scissors' do
         allow(player_one).to receive(:chosen_outcome).and_return('ROCK')
         allow(player_two).to receive(:chosen_outcome).and_return('SCISSORS')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
+      it 'Rock beats Lizzard' do
+        allow(player_one).to receive(:chosen_outcome).and_return('ROCK')
+        allow(player_two).to receive(:chosen_outcome).and_return('LIZZARD')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
+      it 'Lizzard beats Paper' do
+        allow(player_one).to receive(:chosen_outcome).and_return('LIZZARD')
+        allow(player_two).to receive(:chosen_outcome).and_return('PAPER')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
+      it 'Lizzard beats Spock' do
+        allow(player_one).to receive(:chosen_outcome).and_return('LIZZARD')
+        allow(player_two).to receive(:chosen_outcome).and_return('SPOCK')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
+      it 'Spock beats Scissors' do
+        allow(player_one).to receive(:chosen_outcome).and_return('SPOCK')
+        allow(player_two).to receive(:chosen_outcome).and_return('SCISSORS')
+        expect(game.checks_winner).to eq(player_one)
+      end
+
+      it 'Spock beats Rock' do
+        allow(player_one).to receive(:chosen_outcome).and_return('SPOCK')
+        allow(player_two).to receive(:chosen_outcome).and_return('ROCK')
         expect(game.checks_winner).to eq(player_one)
       end
 

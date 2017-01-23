@@ -43,10 +43,24 @@ class Game
     results = [@first_player.chosen_outcome, @second_player.chosen_outcome]
     if (results & ["SCISSORS", "PAPER"]).count == 2
       results.index("SCISSORS") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["SCISSORS", "LIZZARD"]).count == 2
+      results.index("SCISSORS") == 0 ? get_winner(@first_player) : get_winner(@second_player)
     elsif (results & ["ROCK", "SCISSORS"]).count == 2
+      results.index("ROCK") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["ROCK", "LIZZARD"]).count == 2
       results.index("ROCK") == 0 ? get_winner(@first_player) : get_winner(@second_player)
     elsif (results & ["PAPER", "ROCK"]).count == 2
       results.index("PAPER") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["PAPER", "SPOCK"]).count == 2
+      results.index("PAPER") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["LIZZARD", "PAPER"]).count == 2
+      results.index("LIZZARD") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["LIZZARD", "SPOCK"]).count == 2
+      results.index("LIZZARD") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["SPOCK", "SCISSORS"]).count == 2
+      results.index("SPOCK") == 0 ? get_winner(@first_player) : get_winner(@second_player)
+    elsif (results & ["SPOCK", "ROCK"]).count == 2
+      results.index("SPOCK") == 0 ? get_winner(@first_player) : get_winner(@second_player)
     else
       nil
     end
