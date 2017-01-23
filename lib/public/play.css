@@ -139,10 +139,11 @@ h1 {
 
 .icons {
     font-size: 200%;
-        padding: 5px;
+    padding: 5px;
 }
-input[type="radio"]:checked  ~ .icons > i {
-  transform: scale(1.5);
+
+input[type="radio"]:checked~.icons>i {
+    transform: scale(1.5);
 }
 
 .icon-holder {

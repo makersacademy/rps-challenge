@@ -13,21 +13,12 @@
   <body>
     <header><h1>Rock, Paper, Scissors, Lizard, Spock!</h1></header>
     <main class="main">
-      <h2 class="play-h2"><%= @game.p1_name %> vs. <%= @game.p2_name %></h2>
-      <div class="left">
-        <%= @game.p1_name %> chooses <%= @game.p1_choice %>!
-        <div class="icon-holder">
-          <i class="fa fa-hand-<%= @game.p1_choice.downcase %>-o" aria-hidden="true"></i>
-        </div>
+      <h2 class="play-h2"><%= @game.p2_name %>'s <%= @game.p2_choice %> beats <%= @game.p1_name %>'s <%= @game.p1_choice %> - <%= @game.p2_name %> wins!</h2>
+      <div class="icon-holder">
+        <i class="fa fa-hand-<%= @game.p2_choice.downcase %>-o" aria-hidden="true"></i>
       </div>
-      <div class="right">
-        <%= @game.p2_name %> chooses <%= @game.p2_choice %>!
-        <div class="icon-holder">
-          <i class="fa fa-hand-<%= @game.p2_choice.downcase %>-o" aria-hidden="true"></i>
-        </div>
-      </div>
-        <form action="/result">
-          <button class="play-confirm" type="submit" value="Game on!">Game on!</button>
+        <form action="/">
+          <button class="play-confirm" type="submit" value="Play again!">Play again!</button>
         </form>
     </main>
   </body>

@@ -12,7 +12,9 @@ class RPS < Sinatra::Base
   end
 
   post '/choose' do
-    @game = Game.create(params[:player_1_name], params[:player_1_selection], params[:player_2_name], params[:player_2_selection])
+    p1 = [params[:player_1_name], params[:player_1_selection]]
+    p2 = [params[:player_2_name], params[:player_2_selection]]
+    @game = Game.create(p1, p2)
     redirect '/play'
   end
 
@@ -23,7 +25,27 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    erb :result
+    result = @game.battle
+    redirect "/#{result.to_s}"
+    # erb :result
+  end
+
+  get '/draw' do
+    @game = Game.instance
+    @result = @game.battle
+    erb :draw
+  end
+
+  get '/player-1-wins' do
+    @game = Game.instance
+    @result = @game.battle
+    erb :"player-1-wins"
+  end
+
+  get '/player-2-wins' do
+    @game = Game.instance
+    @result = @game.battle
+    erb :"player-2-wins"
   end
 
   # start the server if ruby file executed directly
