@@ -14,7 +14,16 @@ I would like to be able to play rock/paper/scissors
 ```
  [Link to Makers Academy's instructions](https://github.com/dylanrhodius/rps-challenge/blob/master/MA_Instructions.md)
 
-## My Approach to the Task
+## The Approach
+
+The aim of this challenge was to re-create the famous rock, paper, scissors game.
+As usual, the application was produced following TDD principles.
+In this very simple application, only one class was created: the `Game` class.
+In hindsight, and in order to support future development of the app, the app could have been divided further into the following classes:
+* `Player`
+* `RoundWinner`
+* `PointCounter`
+* `PlayChoices` (rock, paper or scissors)
 
 ## Installing the APP
 Clone the repository from [GitHub](https://github.com/dylanrhodius/rps-challenge) and then move into that repository.
