@@ -1,1 +1,4 @@
-<%= @printer.winner(@game.winner) %>
+<p><%= "#{@game.player1.name} picked #{@game.player1.pick}" %><br>
+<%= "#{@game.player2.name} picked #{@game.player2.pick}" %><br></p>
+
+<p><%= Printer.winner(@game.winner) %></p>

@@ -5,8 +5,8 @@ describe "Feature tests" do
       choose 'scissors'
       click_button 'Giu!'
     end
-    scenario "p1: scissors, p2: spock, p1 win" do
-      choose 'spock'
+    scenario "p1: scissors, p2: paper, p1 win" do
+      choose 'paper'
       click_button 'Giu!'
       expect(page).to have_content 'Rob won!'
     end

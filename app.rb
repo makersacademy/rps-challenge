@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/printer'
 
 class Rsp < Sinatra::Base
   enable :sessions
@@ -25,7 +26,7 @@ class Rsp < Sinatra::Base
   end
 
   post '/giu' do
-    @game.players[@game.turn].pick = params[:pick]
+    @game.players[@game.turn].pick = params[:pick].to_sym
     begin
       @game.change_turn
       if @game.players[@game.turn].name == "CPU"

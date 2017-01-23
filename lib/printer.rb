@@ -1,5 +1,5 @@
 class Printer
-  def winner(winner)
+  def self.winner(winner)
     if winner == :tie
       "Game is tied!"
     else
