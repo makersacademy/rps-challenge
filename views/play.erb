@@ -6,7 +6,7 @@
   <h3>Let's Play!</h3>
   <%= @game.player.name %> it's your turn to play :)<br>
   Choose from rock, paper or scissors<br>
-  <form name ='rock_paper_scissors' action='/result' method='post'>
+  <form name ='rock_paper_scissors' action='/result' method='get'>
     <input type='submit' value='Rock' name='rps' />
     <input type='submit' value='Paper' name='rps' />
     <input type='submit' value='Scissors' name='rps' />

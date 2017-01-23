@@ -7,4 +7,8 @@ class Player
     @name = name
     @wins = wins
   end
+
+  def win
+    @wins += 1
+  end
 end

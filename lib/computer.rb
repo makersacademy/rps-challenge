@@ -13,4 +13,8 @@ class Computer
   def rock_paper_scissors
     @rockpaperscissors.rock_paper_scissors
   end
+
+  def win
+    @wins +=1
+  end
 end

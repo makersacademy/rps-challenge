@@ -10,9 +10,12 @@ describe Computer do
   end
 
 
-  describe 'points' do
+  describe '#win' do
     it "initializes with a default amount of points" do
       expect(computer.wins).to eq(Computer::HANDICAP)
+    end
+    it "increases win count if computer wins a game" do
+      expect{computer.win}.to change{computer.wins}.by 1
     end
   end
 

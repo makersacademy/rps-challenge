@@ -33,4 +33,10 @@ feature "RPS" do
     click_button 'Scissors'
     expect(page).to have_text(:Scissors)
   end
+
+  scenario "Computer choices RPS" do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_text(:Scissors || :Rock || :Paper)
+  end
 end

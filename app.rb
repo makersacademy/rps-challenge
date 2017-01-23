@@ -7,7 +7,6 @@ require './lib/game'
 require './lib/game_choice'
 
 class RPS < Sinatra::Base
-  attr_reader :rps
   enable :sessions
 
   before do
@@ -30,17 +29,8 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post '/result' do
-    if params[:rps] == "Rock"
-      rps = :Rock
-      @game_rps = GameChoice.new(rps)
-    elsif params[:rps] == "Paper"
-      rps = :Paper
-      @game_rps = GameChoice.new(rps)
-    else
-      rps = :Scissors
-      @game_rps = GameChoice.new(rps)
-    end
+  get '/result' do
+    @game_rps = GameChoice.new(params[:rps])
     redirect '/fight'
   end
 

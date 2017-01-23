@@ -1,5 +1,7 @@
+require_relative 'rockpaperscissors'
+
 class GameChoice
-  attr_reader :player_rps, :computer_rps
+  attr_reader :player_rps, :computer_rps, :result
 
   @name = nil
 
@@ -13,7 +15,27 @@ class GameChoice
 
   def initialize(player_rps, computer_rps = RockPaperScissors.new)
     @player_rps = player_rps
+    @computer = computer_rps
     @computer_rps = computer_rps.rock_paper_scissors
     self.class.instance = self
+    @result = nil
+  end
+
+  def win_tie_loose
+    if @player_rps == :Rock && @computer_rps == :Scissors
+      @result = "You win :)"
+    elsif @player_rps == :Rock && @computer_rps == :Paper
+      @result = "Computer wins :("
+    elsif @player_rps == :Paper && @computer_rps == :Scissors
+      @result = "Computer wins :("
+    elsif @player_rps == :Paper && @computer_rps == :Rock
+      @result = "You win :)"
+    elsif @player_rps == :Scissors && @computer_rps == :Rock
+      @result = "Computer wins :("
+    elsif @player_rps == :Scissors && @computer_rps == :Paper
+      @result = "You win :)"
+    else
+      @result = "Tie!"
+    end
   end
 end
