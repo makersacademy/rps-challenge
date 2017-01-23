@@ -8,6 +8,15 @@ require './lib/message_log.rb'
 require './lib/message_handler.rb'
 
 class RockPaperScissors < Sinatra::Base
+
+  helpers do
+    def get_instances
+      @game = Game.game_instance
+      @round = Round.round_instance
+      @message_log = MessageLog.message_log_instance
+    end
+  end
+
   get '/' do
     erb :enter_names
   end
@@ -23,9 +32,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.game_instance
-    @round = Round.round_instance
-    @message_log = MessageLog.message_log_instance
+    get_instances
     erb :game
   end
 
@@ -46,9 +53,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    @round = Round.round_instance
-    @game = Game.game_instance
-    @message_log = MessageLog.message_log_instance
+    get_instances
     erb :results
   end
 
