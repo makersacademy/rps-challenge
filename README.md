@@ -31,10 +31,10 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Paper beats Rock
 
 ## Extended rules: adding spock and lizard
-The best the rules of the extended game can be represented by the picture below:
+Rules of the extended game can be represented by the picture below:
 ![Screenshot](https://upload.wikimedia.org/wikipedia/commons/f/fe/Rock_Paper_Scissors_Lizard_Spock_en.svg)
 
-## How to use
+## Instructions
 
 How to download and run the app:
 
@@ -46,13 +46,15 @@ $ rackup
 ```
 Then please load http://localhost:9292 in your browser, and enjoy the application.
 
-You must have landed on the landing page.
+You must have landed on the landing page, that looks like this:
 
-[include screenshot]
+[Imgur](http://i.imgur.com/wjJ2FWL.png)
 
-On this page please select how would you like to play:
-* [Two players game]
-* [RPS or]
+On this page please select how you would like to play:
+* Do you want to play with computer or with some of your colleagues? If you are playing with computer, computer's throw will be selected randomly.
+* Do you want to play Rock/Paper/Scissors or Rock/Paper/Scissors/Spock/Lizard? You can enjoy both options.
+
+After this the game is rather self-explanatory. Enjoy!
 
 
 Build Badge Example
