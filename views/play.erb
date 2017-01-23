@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+    <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="landing-page">
+      <h1 style="font-family: 'Permanent Marker', cursive; font-size: 42px;">Hi, <%= @game.player.name.capitalize %>!</h1>
+      <h2>Are you ready to play?</h2>
+      <br>
+    </div>
+
+    <div class="instructions">
+      <h3>Select your move below and press play:</h3>
+    </div>
+
+    <form class="play-form" action="/choice" method="post">
+      <label id="rock">
+        <img src="/images/rock.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Rock"><br><br><p>Rock</p>
+      </label>
+      <label id="paper">
+        <img src="/images/paper.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Paper"><br><br><p>Paper</p>
+      </label>
+      <label id="scissors">
+        <img src="/images/scissors.png" style="height: 120px"><br><br>
+        <input type="radio" name="choice" value="Scissors"><br><br><p>Scissors</p>
+      </label>
+      <br><br>
+      <input type="submit" value="Play" class="btn btn-success">
+    </form>
+
+    <a href="/" class="btn btn-default btn-sm">Start as new player</a>
+
+  </body>
+</html>

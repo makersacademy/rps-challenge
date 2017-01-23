@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <head>
+    <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="landing-page">
+      <h1 style="font-family: 'Permanent Marker', cursive; font-size: 42px;">Welcome to Rock, Paper, Scissors!</h1>
+      <img class="main-img" src="/images/rockpaperscissors.jpg">
+    </div>
+
+    <div class="start">
+      <p class="sub-title">Want to play?</p>
+      <p>Enter your name to get started:</p>
+    </div>
+
+    <form action="/name" method="post">
+      <input type="text" name="player_name">
+      <br>
+      <input type="submit" value="Enter" class="btn btn-success">
+    </form>
+
+  </body>
+</html>

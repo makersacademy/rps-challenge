@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <head>
+    <link href="/styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="choice">
+      <p>You selected <em><%= @game.player.choice %></em> and the computer selected <em><%= @game.computer.choice %></em>.</p>
+    </div>
+
+    <div class="result">
+      <% if @game.result == :draw %>
+        <h1 style="font-family: 'Permanent Marker', cursive; font-size: 48px;">Sorry, it was a draw!</h1>
+      <% elsif @game.result == :win %>
+        <h1 style="font-family: 'Permanent Marker', cursive;font-size: 48px;">You won!!</h1>
+      <% elsif @game.result == :lost %>
+        <h1 style="font-family: 'Permanent Marker', cursive;font-size: 48px;">You lose!!</h1>
+      <% end %>
+    </div>
+
+    <div class="return-to-home">
+      <h2>Want to play again?</h2>
+      <a href='/play' class="btn btn-default btn-sm">Yes</a>
+    </div>
+
+  </body>
+</html>
