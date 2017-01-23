@@ -19,8 +19,8 @@ class Game
     @choice = choice
   end
 
-  def computer_choice
-    @computer_choice = @choices.sample
+  def computer_choice(choice = @choices.sample)
+    @computer_choice = choice
   end
 
   def choose_round_winner
