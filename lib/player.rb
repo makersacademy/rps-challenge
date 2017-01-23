@@ -1,3 +1,5 @@
+
+
 class Player
   attr_accessor :your_hand
 
@@ -19,12 +21,12 @@ class Player
 
   def win
     "You won!
-    The AI chose #{@AIhand}"
+    The Machine chose #{@AIhand}"
   end
 
   def lose
     "You lost!
-    The AI chose #{@AIhand}"
+    The Machine chose #{@AIhand}"
   end
 
   def not_draw

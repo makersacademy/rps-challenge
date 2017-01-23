@@ -13,7 +13,7 @@ describe Player do
   #   #   page.should have_selector(:button, 'Scissors')
   # end
 
-  describe "#attack_hand" do
+  describe "#your_hand" do
     it "returns the value of the players hand" do
       expect(subject.your_hand).to eq :rock
     end
