@@ -24,7 +24,6 @@ class Game
 
   def play(player, opponent)
     @outcome = OUTCOMES[player.downcase.to_sym][opponent.downcase.to_sym]
-    p @outcome
   end
 
   def winner
