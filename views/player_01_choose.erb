@@ -1,0 +1,18 @@
+<h3>Hey, <%= stored_player_01.name %>!</h3>
+
+<form action="/player_02_choose" method="post">
+  <label for="player_01_weapon">
+    rock, paper or scissors?
+  </label>
+  <input type="text" name="player_01_weapon">
+  <input type="submit" value="Choose">
+</form>
+
+<br>
+
+<form action="/register" method="get">
+  <label>
+    Not you, folks?
+  </label>
+  <input type="submit" value="Register new players">
+</form>
