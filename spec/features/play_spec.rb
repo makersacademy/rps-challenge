@@ -1,5 +1,4 @@
 require 'spec_helper.rb'
-require 'computer.rb'
 
 # Second User Story
 # As a marketeer
@@ -7,7 +6,7 @@ require 'computer.rb'
 # I would like to be able to play rock/paper/scissors
 
 feature 'Playing a game' do
-  OPTIONS_SEED = 343523
+
   before do
     visit('/')
     fill_in('name', with: 'Varvara')
@@ -36,11 +35,12 @@ feature 'Playing a game' do
   end
 
 # the game will choose a random option
-  scenario 'Game chooses an option' do
-    srand(OPTIONS_SEED)
+  scenario 'Game chooses a random option' do
+    allow_any_instance_of(Computer).to receive(:instrument).and_return('Rock')
     click_button 'Paper'
     expect(page).to have_content("Computer's choice is Rock!")
   end
+
 
   # using a helper
   def options_messages
