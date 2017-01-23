@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby '2.2.3'
 
@@ -7,6 +7,9 @@ gem 'rake'
 
 group :test do
   gem 'rspec'
+  gem 'rspec-sinatra'
+  gem 'selenium-webdriver'
+  gem 'shotgun'
   gem 'rubocop-rspec'
   gem 'rubocop'
   gem 'coveralls', require: false
