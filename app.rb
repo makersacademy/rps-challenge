@@ -27,24 +27,20 @@ class RPS < Sinatra::Base
     @game = Game.instance
     result = @game.battle
     redirect "/#{result.to_s}"
-    # erb :result
   end
 
   get '/draw' do
     @game = Game.instance
-    @result = @game.battle
     erb :draw
   end
 
   get '/player-1-wins' do
     @game = Game.instance
-    @result = @game.battle
     erb :"player-1-wins"
   end
 
   get '/player-2-wins' do
     @game = Game.instance
-    @result = @game.battle
     erb :"player-2-wins"
   end
 
