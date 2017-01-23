@@ -1,0 +1,10 @@
+<p>
+  <%= @game.player.name %> selected <%= @game.player_choice %></br>
+Computer selected <%= @game.computer_choice %>
+</p>
+<p>
+  <b><%= @game.result %></b>
+</p>
+<form name='replay' action='/player' method='get'>
+  <input type='submit' value='Replay' name='replay' />
+</form>
