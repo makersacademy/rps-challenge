@@ -1,17 +1,13 @@
 require 'sinatra/base'
 require 'tilt/erb'
-require './lib/computer'
 require './lib/player'
-require './lib/rockpaperscissors'
 require './lib/game'
-require './lib/game_choice'
 
 class RPS < Sinatra::Base
   enable :sessions
 
   before do
     @game = Game.instance
-    @game_rps = GameChoice.instance
   end
 
   get '/' do
@@ -30,16 +26,16 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game_rps = GameChoice.new(params[:rps].to_sym)
+    @game.player_rps(params[:rps].to_sym)
+    @game.computer_rps
     redirect '/fight'
   end
 
   get '/fight' do
     @game
-    @game_rps
-    @game_rps.win_tie_loose
-    @game.player.win if @game_rps.result == "You win :)"
-    @game.computer.win if @game_rps.result == "Computer wins :("
+    @game.win_tie_loose
+    @game.player.win if @game.result == "You win :)"
+    @game.computer.win if @game.result == "Computer wins :("
     erb(:fight)
   end
 

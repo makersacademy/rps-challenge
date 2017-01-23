@@ -23,14 +23,14 @@ feature "Winning points" do
     allow_any_instance_of(RockPaperScissors).to receive(:rock_paper_scissors){:Paper}
     click_button 'Rock'
     click_button 'Replay'
-    expect(page).to have_content("The computer has 1 wins")
+    expect(page).to have_content("The computer has 1 win")
   end
 
   scenario "player wins" do
     allow_any_instance_of(RockPaperScissors).to receive(:rock_paper_scissors){:Paper}
     click_button 'Scissors'
     click_button 'Replay'
-    expect(page).to have_content("Player has 1 wins")
+    expect(page).to have_content("Player has 1 win")
   end
 
   scenario "tie" do

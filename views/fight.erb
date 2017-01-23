@@ -1,9 +1,9 @@
 <p>
-  <%= @game.player.name %> selected <%= @game_rps.player_rps %></br>
-Computer selected <%= @game_rps.computer_rps %>
+  <%= @game.player.name %> selected <%= @game.player_choice %></br>
+Computer selected <%= @game.computer_choice %>
 </p>
 <p>
-  <b><%= @game_rps.result %></b>
+  <b><%= @game.result %></b>
 </p>
 <form name='replay' action='/player' method='get'>
   <input type='submit' value='Replay' name='replay' />
