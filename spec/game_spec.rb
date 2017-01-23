@@ -2,18 +2,21 @@ require 'game'
 
 describe Game do
   subject(:game){described_class.new(player, opponent)}
-  let(:opponent){double :opponent, name: nil, opp_weapon: "Scissors"}
-  let(:player){double :player, name: nil, player_weapon: "Scissors"}
+  let(:opponent){double :opponent, name: nil, weapon: "Scissors"}
+  let(:player){double :player, name: nil, weapon: "Scissors"}
 
-  it 'should initialize with a rules hash' do
-    expect(game.rules).to_not be_nil
+  describe '#play' do
+    it 'should work out the winning weapon' do
+      expect(game.play(player.weapon, opponent.weapon)).to eq :draw
+    end
   end
 
   describe '#winner' do
-    it 'should work out who wins the game' do
-      expect(game.play(player.player_weapon, opponent.opp_weapon)).to eq "Neither"
+    it 'should output who wins the game' do
+      expect(game.winner).to eq "Neither"
     end
   end
+
 
   describe '#switch' do
     it 'should switch the players' do

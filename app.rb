@@ -83,7 +83,8 @@ class RPS < Sinatra::Base
     @game = Game.instance
     @player_weapon = @game.player_1.weapon
     @opponent_weapon = @game.player_2.weapon
-    @result = @game.play(@player_weapon, @opponent_weapon)
+    @game.play(@player_weapon, @opponent_weapon)
+    @result = @game.winner
     erb(:game_over)
   end
 
