@@ -7,7 +7,6 @@ attr_reader :player1, :player2
     @player1 = Player.new(name1)
   end
 
-
   def winner
     if @player1.choice == @player2.choice
       'No one'
