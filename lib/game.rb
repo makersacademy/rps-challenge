@@ -1,14 +1,14 @@
 require_relative 'player'
 
 class Game
-  attr_reader :first_player, :second_player, :winner, :looser, :status
+  attr_reader :first_player, :second_player, :winner, :looser, :status, :switcher, :player_turn
 
   def initialize(first_player = Player.new(name), second_player = Player.new(name))
     @first_player = first_player
     @second_player = second_player
     @players = [first_player, second_player]
     @status = "ongoing"
-    @switcher = 0
+    @switcher = 1
   end
 
   def self.create(first_player, second_player)
@@ -23,6 +23,11 @@ class Game
     @winner = winner
   end
 
+  def get_player_to_play
+    @player_turn = @players[@switcher]
+    switch_turns
+  end
+
   def get_looser
     looser_index = @players.index(@winner)-1
     @looser = @players[looser_index]
@@ -32,7 +37,6 @@ class Game
     get_looser
     @looser.deduct_hp
     @status = "concluded" if @looser.hit_points == 0
-    @switcher = 1
   end
 
   def checks_winner
@@ -48,7 +52,6 @@ class Game
     end
   end
 
-  private
   def switch_turns
     if @switcher == 0
       @switcher = 1

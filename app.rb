@@ -28,14 +28,25 @@ class Rps < Sinatra::Base
     @player_two_name = @game.second_player.name
     @player_one_hp = @game.first_player.hit_points
     @player_two_hp = @game.second_player.hit_points
+    @game.switch_turns
+    @player_number = @game.switcher
     erb :play
   end
 
-  post '/player_chosen_outcome' do
+  post '/player_one_outcome' do
     @game.first_player.chosen_outcome = params[:rock] if params[:rock]
     @game.first_player.chosen_outcome = params[:paper] if params[:paper]
     @game.first_player.chosen_outcome = params[:scissors] if params[:scissors]
-    @game.second_player.chosen_outcome = @game.second_player.randomizer
+    redirect '/play'
+  end
+
+  post '/player_two_outcome' do
+    @player_number = @game.switcher
+    @player_one_page_insertion = "no"
+    @game.second_player.chosen_outcome = params[:rock] if params[:rock]
+    @game.second_player.chosen_outcome = params[:paper] if params[:paper]
+    @game.second_player.chosen_outcome = params[:scissors] if params[:scissors]
+    # @game.second_player.chosen_outcome = @game.second_player.randomizer
     redirect '/result'
   end
 

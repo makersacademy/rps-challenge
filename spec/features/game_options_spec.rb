@@ -12,6 +12,7 @@ feature 'Playing a game' do
   scenario 'choosing rock option' do
     register_process
     click_button('ROCK')
+    click_button('ROCK')
     expect(page).to have_text("You choosed ROCK")
   end
 end
