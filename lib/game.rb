@@ -33,7 +33,11 @@ class Game
     return :win if beat?
     return :draw if (@player_weapon) == (@computer_weapon)
     return :lose if lose?
-    calculate_result
+  end
+
+  def calculate_result
+    @player.add_win if beat?
+    @computer.add_win if lose?
   end
 
 private
@@ -46,9 +50,6 @@ def lose?
   RULES[@computer_weapon]== @player_weapon
 end
 
-def calculate_result
-  @player.add_win if beat?
-  @computer.add_win if lose?
-end
+
 
 end
