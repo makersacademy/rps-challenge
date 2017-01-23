@@ -65,4 +65,4 @@ Once in the game, Player 1 is prompted to choose their move. Click the desired m
 
 On the results screen you are able to continue to the next round, or start a new game with fresh players. A battle log at the bottom of the screen records the results of the rounds, as well as the players each being able to see their individual score.
 
-![Results](https://github.com/rkclark/rps-challenge/blob/master/screenshots/results.png)
+![Results](https://github.com/rkclark/rps-challenge/blob/master/screenshots/result.png)
