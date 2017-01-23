@@ -22,7 +22,6 @@ class Game
     @p1_choice = p1.choice
     @p2_name = p2.name
     @p2_choice = p2.choice
-    @winner = p1.choice.downcase
   end
 
   def battle
