@@ -90,3 +90,25 @@ $ coveralls report
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+How to install
+---
+
+1. Clone this repository to local machine `git clone [url]`
+2. Navigate to the rps-challenge folder `cd rps-challenge`
+3. Run `gem install bundle` if bundler isn't installed
+4. Run `bundle`
+5. On your terminal, run `ruby app.rb` to launch the web app
+6. Enter `localhost:4567` in the address bar of a web broswer
+7. Enter names and start playing the game!
+
+
+Game screenshots
+---
+Start and name submission
+![screen shot 2017-01-22 at 22 20 57](https://cloud.githubusercontent.com/assets/13175171/22186709/20fd69bc-e0f2-11e6-8d29-66d0b7538ebc.png)
+Player One 
+![screen shot 2017-01-22 at 22 24 23](https://cloud.githubusercontent.com/assets/13175171/22186710/20feed3c-e0f2-11e6-9a51-e45b92f2e364.png)
+Player Two
+![screen shot 2017-01-22 at 22 27 59](https://cloud.githubusercontent.com/assets/13175171/22186711/2100265c-e0f2-11e6-9adf-8bf45d7b77f9.png)
+Winner declaration
+![screen shot 2017-01-22 at 22 28 07](https://cloud.githubusercontent.com/assets/13175171/22186712/21053a84-e0f2-11e6-8371-b40cd4501869.png)
