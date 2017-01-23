@@ -17,13 +17,9 @@ class Game
   end
 
   def find_result
-    if player_1.choice.to_sym == player_2.choice
-      return "#{player_1.choice} matches #{player_2.choice} - DRAW!" 
-    elsif WIN.include?([player_1.choice.to_sym, player_2.choice])
-      return "#{player_1.choice} beats #{player_2.choice} - #{player_1.name} wins!" 
-    else
-      "#{player_2.choice} beats #{player_1.choice} - #{player_2.name} wins!"
-    end
+    return "#{player_1.choice} matches #{player_2.choice} - DRAW!" if player_1.choice.to_sym == player_2.choice
+    return "#{player_1.choice} beats #{player_2.choice} - #{player_1.name} wins!" if WIN.include?([player_1.choice.to_sym, player_2.choice])
+    "#{player_2.choice} beats #{player_1.choice} - #{player_2.name} wins!"
   end
 
 end
