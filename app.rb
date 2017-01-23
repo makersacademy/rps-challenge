@@ -19,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    player = Player.new(params[:player])
+    player = Player.new(params[:player].capitalize)
     @game = Game.new(player)
     redirect '/player'
   end
@@ -30,13 +30,14 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game_rps = GameChoice.new(params[:rps])
+    @game_rps = GameChoice.new(params[:rps].to_sym)
     redirect '/fight'
   end
 
   get '/fight' do
     @game
     @game_rps
+    @game_rps.win_tie_loose
     erb(:fight)
   end
 

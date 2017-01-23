@@ -21,7 +21,7 @@ describe GameChoice do
   end
 
   describe '#win_tie_loose' do
-    it "decides whether the player or computer wins" do
+    it "decides who wins" do
       allow(computer_rps).to receive(:rock_paper_scissors) { :Rock }
       expect(gamechoice.win_tie_loose).to eq("Tie!")
     end

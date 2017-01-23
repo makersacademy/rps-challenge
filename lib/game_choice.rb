@@ -1,4 +1,5 @@
 require_relative 'rockpaperscissors'
+require_relative 'game'
 
 class GameChoice
   attr_reader :player_rps, :computer_rps, :result
@@ -18,10 +19,10 @@ class GameChoice
     @computer = computer_rps
     @computer_rps = computer_rps.rock_paper_scissors
     self.class.instance = self
-    @result = nil
   end
 
   def win_tie_loose
+    @result = nil
     if @player_rps == :Rock && @computer_rps == :Scissors
       @result = "You win :)"
     elsif @player_rps == :Rock && @computer_rps == :Paper

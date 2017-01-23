@@ -28,7 +28,7 @@ feature "RPS" do
     expect(page).to have_button("Scissors")
   end
 
-  scenario "outputs paper if player selected paper" do
+  scenario "outputs paper if scissors selected scissors" do
     sign_in_and_play
     click_button 'Scissors'
     expect(page).to have_text(:Scissors)
