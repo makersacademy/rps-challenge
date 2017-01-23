@@ -55,6 +55,14 @@ I then employed the following tools to construct the application:
 
 The home page allows you to enter two player names. These default to Human players but Player 2 can be assigned to Computer if you would like to play single player.
 
+![Enter names](https://github.com/rkclark/rps-challenge/blob/master/screenshots/enter_names.png)
+
 Once in the game, Player 1 is prompted to choose their move. Click the desired move and and click 'Choose Move'. If playing against the computer, you will see the result of the battle. If not, Player 2 will be prompted to choose their move.
 
+![Player 1 Move](https://github.com/rkclark/rps-challenge/blob/master/screenshots/player_1_move.png)
+
+![Player 2 Move](https://github.com/rkclark/rps-challenge/blob/master/screenshots/player_2_move.png)
+
 On the results screen you are able to continue to the next round, or start a new game with fresh players. A battle log at the bottom of the screen records the results of the rounds, as well as the players each being able to see their individual score.
+
+![Results](https://github.com/rkclark/rps-challenge/blob/master/screenshots/results.png)
