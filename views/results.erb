@@ -1,0 +1,13 @@
+<h2><%=@game.player1.name%> chose <%=@game.player1_choice%>!</h2>
+<h2><%=@game.player2.name%> chose <%=@game.player2_choice%>!</h2>
+  <% if @game.player1.status == :win %>
+  <h1><%=@game.player1.name%> wins!</h1>
+  <%elsif @game.player1.status == :draw%>
+  <h1>It's a draw!</h1>
+  <%else%>
+  <h1><%=@game.player2.name%> wins!</h1>
+  <%end%>
+
+  <form action="/play">
+    <input type="submit" value="Play Again">
+  </form>
