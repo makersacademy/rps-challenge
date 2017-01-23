@@ -1,5 +1,3 @@
-
-
 class Player
   attr_accessor :your_hand
 
