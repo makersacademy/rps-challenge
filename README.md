@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors! Challenge
 
-[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/makersacademy/takeaway-challenge/badge.svg)](https://coveralls.io/github/makersacademy/takeaway-challenge)
+[![Build Status](https://travis-ci.org/dylanrhodius/rps-challenge.svg?branch=master)](https://travis-ci.org/dylanrhodius/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/dylanrhodius/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/dylanrhodius/rps-challenge?branch=master)
 
 ## The Task
 ```
