@@ -7,6 +7,7 @@
 * [User Stories] (#US)
 * [Usage] (#Usage)
 * [Screen Shots] (#Shots)
+* [Play live on Heroku] (#Heroku)
 
 ## <a name="GEMS">Gems Used</a>
 ```ruby
@@ -58,6 +59,10 @@ To load Sinatra web server
 $ ruby app.rb
 ```
 type `http://localhost:4567` into your web browser
+
+## <a name="Heroku">Play live on Heroku</a>
+
+[Rock, Paper, Scissors] (https://adrianeyre-rps.herokuapp.com)
 
 ## <a name="Shots">Screen Shots</a>
 
