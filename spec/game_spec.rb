@@ -6,6 +6,7 @@ describe Game do
   let(:name) { double :name }
   subject(:game) {described_class.new(player, computer)}
 
+
     it 'initializes with a player' do
       expect(game.player).to eq player
     end

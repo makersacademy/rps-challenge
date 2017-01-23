@@ -14,19 +14,21 @@ class RPS < Sinatra::Base
   post '/start' do
     player = Player.new(params[:player_name])
     computer = Computer.new
-    $game = Game.new(player, computer)
+    @game = Game.create(player, computer)
     redirect '/game'
   end
 
   get '/game' do
-    @player = $game.player.name
+    @game = Game.instance
+    @player = @game.player.name
     erb :game
   end
 
   post '/challenge' do
-    @player_weapon = $game.player.choose_weapon(params[:check])
-    @computer_weapon = $game.computer.select_weapon
-    @winner = $game.winner
+    @game = Game.instance
+    @player_weapon = @game.player.choose_weapon(params[:check])
+    @computer_weapon = @game.computer.select_weapon
+    @winner = @game.winner
     erb :challenge
   end
 

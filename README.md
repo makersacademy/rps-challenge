@@ -3,6 +3,8 @@
 Approach to Challenge
 -------
 
+* I spent a good amount of time domain and process modeling before start coding.
+
 * Set up the TDD environment for the development of a web application with Sinatra.
 
 * **User Story n.1** There is a form on the index for the user to enter the name. In a POST request, that name is passed as argument to an instance of the Player class and saved as a 'player' variable. A new instance of a Game class is created with 'player' and 'computer' (instance of Computer class) - the opponent - as arguments. The user is redirected to /game to start playing.
