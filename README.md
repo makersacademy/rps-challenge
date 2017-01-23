@@ -1,18 +1,10 @@
 # RPS Challenge
 
-Instructions
--------
+[![Coverage Status](https://coveralls.io/repos/github/rkclark/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/rkclark/rps-challenge?branch=master) [![Build Status](https://travis-ci.org/rkclark/rps-challenge.svg?branch=master)](https://travis-ci.org/rkclark/rps-challenge)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,65 +20,49 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## Approach
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+I chose to pursue the bonus objectives from the start, these were:
 
+- Allow the choice of playing one player vs the computer or two player
+- Extend the game to use the 'special rules': Rock, Paper, Scissors, Spock, Lizard
 
-As usual please start by
+I designed the following domain model to guide me in my implementation:
 
-* Forking this repo
-* TEST driving development of your app
+[Domain Model](https://app.ardoq.com/presentation/makersacademyjan2017/587e15df72fa6d218cea11a3)
 
+I then employed the following tools to construct the application:
 
-## Bonus level 1: Multiplayer
+**Framework**
+- Sinatra
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+**Testing**
+- RSpec
+- Capybara
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+**Front-end**
+- Bootstrap 4
+- Sass
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+## Installation
 
-## Basic Rules
+- Clone the repo
+- Run `bundle install`
+- Run `ruby app.rb`
+- Open `localhost:4567` in browser
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+## Usage
 
-In code review we'll be hoping to see:
+The home page allows you to enter two player names. These default to Human players but Player 2 can be assigned to Computer if you would like to play single player.
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+![Enter names](https://github.com/rkclark/rps-challenge/blob/master/screenshots/enter_names.png)
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+Once in the game, Player 1 is prompted to choose their move. Click the desired move and and click 'Choose Move'. If playing against the computer, you will see the result of the battle. If not, Player 2 will be prompted to choose their move.
 
-Notes on test coverage
-----------------------
+![Player 1 Move](https://github.com/rkclark/rps-challenge/blob/master/screenshots/player_1_move.png)
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+![Player 2 Move](https://github.com/rkclark/rps-challenge/blob/master/screenshots/player_2_move.png)
 
-```ruby
-require 'coveralls'
-require 'simplecov'
+On the results screen you are able to continue to the next round, or start a new game with fresh players. A battle log at the bottom of the screen records the results of the rounds, as well as the players each being able to see their individual score.
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+![Results](https://github.com/rkclark/rps-challenge/blob/master/screenshots/result.png)

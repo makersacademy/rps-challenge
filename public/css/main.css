@@ -1,0 +1,126 @@
+body, input {
+  font-family: 'Cuprum', sans-serif !important; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  background-color: #b83b5e; }
+
+#main-wrapper {
+  min-height: 100%;
+  position: relative; }
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+
+.main-content {
+  padding-bottom: 35px; }
+
+.navbar-brand, .btn {
+  font-family: 'Pacifico', cursive; }
+
+.navbar {
+  background-color: #f9ed68;
+  border-bottom: 8px solid #0099b5; }
+
+.navbar-brand {
+  font-size: 2.5rem;
+  color: #b83b5e;
+  text-shadow: 1px 1px #6a2c70; }
+
+#main-wrapper {
+  background-color: #b83b5e;
+  color: #ffffff; }
+
+.btn {
+  background-color: #f9ed68;
+  color: #b83b5e;
+  font-size: 1.3rem;
+  border-color: #6a2c70;
+  box-shadow: 3px 3px #6a2c70; }
+  .btn:hover {
+    background-color: #0099b5; }
+
+.btn-lg {
+  font-size: 1.8rem; }
+
+.hidden-input {
+  /* HIDE RADIO */
+  visibility: hidden;
+  /* Makes input not-clickable */
+  position: absolute;
+  /* Remove input from document flow */ }
+
+.move-label > input + img {
+  /* IMAGE STYLES */
+  cursor: pointer;
+  border: 5px solid transparent; }
+
+.move-label > input:checked + img {
+  /* (RADIO CHECKED) IMAGE STYLES */
+  border: 5px solid #f9ed68;
+  transition: ease 1s; }
+
+.move-icon {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  box-shadow: 2px 2px #6a2c70; }
+  .move-icon:hover {
+    border: 5px solid #f9ed68;
+    transition: ease 1s; }
+
+.results-move-icon, .move-hider-icon {
+  border-radius: 50%;
+  border: 5px solid transparent;
+  box-shadow: 4px 4px #6a2c70; }
+
+.move-hider-icon {
+  height: 150px;
+  width: 150px; }
+
+#message_log_wrapper ul {
+  padding-left: 0px; }
+#message_log_wrapper li {
+  list-style: none; }
+
+.full-height {
+  min-height: 100%; }
+
+h2 {
+  font-size: 2.5rem;
+  text-shadow: 3px 3px #6a2c70;
+  padding: 1.5rem 0px; }
+
+.flip-horizontal {
+  transform: scaleX(-1); }
+
+.draw-indicator-arrow {
+  width: 50%; }
+
+#win-indicator-arrow {
+  width: 60%; }
+
+#result_message {
+  font-size: 3rem;
+  text-shadow: 0px 2px #f08a5d;
+  border-bottom: 3px dashed #f08a5d; }
+
+#message_log_wrapper {
+  background-color: #b83b5e; }
+
+#footer {
+  background-color: #6a2c70;
+  font-size: 0.8rem;
+  color: #f9ed68; }
+  #footer a {
+    color: #f08a5d; }
+
+/*# sourceMappingURL=main.css.map */
