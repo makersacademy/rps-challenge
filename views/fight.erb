@@ -5,3 +5,6 @@ Computer selected <%= @game_rps.computer_rps %>
 <p>
   <b><%= @game_rps.result %></b>
 </p>
+<form name='replay' action='/player' method='get'>
+  <input type='submit' value='Replay' name='replay' />
+</form>

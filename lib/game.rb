@@ -18,12 +18,4 @@ class Game
     @computer = computer
     self.class.instance = self
   end
-
-  def computer_rps
-    computer.rock_paper_scissors
-  end
-
-  def player_rps
-  end
-
 end

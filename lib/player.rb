@@ -11,4 +11,8 @@ class Player
   def win
     @wins += 1
   end
+
+  def restart
+    @wins = 0
+  end
 end

@@ -24,4 +24,11 @@ describe Computer do
       expect(computer.rock_paper_scissors).to eq(:paper)
     end
   end
+
+  describe '#restart' do
+    it "restarts the computer's wins" do
+      computer.restart
+      expect(computer.wins).to eq(0)
+    end
+  end
 end

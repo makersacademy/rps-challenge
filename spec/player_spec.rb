@@ -17,4 +17,11 @@ describe Player do
       expect(player.name).to eq("Player")
     end
   end
+
+  describe '#restart' do
+    it "restarts the player's wins" do
+      player.restart
+      expect(player.wins).to eq(0)
+    end
+  end
 end

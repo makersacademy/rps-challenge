@@ -1,14 +1,18 @@
 <body>
   <h3>Player name: <%= @game.player.name %></h3>
-  <h4><%= @game.player.name %> has <%= @game.player.wins %> wins</h4><br>
+  <h4><%= @game.player.name %> has <%= @game.player.wins %> wins</h4>
   <h3>Computer</h3>
-  <h4>The computer has <%= @game.computer.wins %> wins</h4></br>
+  <h4>The computer has <%= @game.computer.wins %> wins</h4>
+  -------------------------------
   <h3>Let's Play!</h3>
   <%= @game.player.name %> it's your turn to play :)<br>
-  Choose from rock, paper or scissors<br>
-  <form name ='rock_paper_scissors' action='/result' method='get'>
+  Choose from rock, paper or scissors</br></br>
+  <form name='rock_paper_scissors' action='/result' method='get'>
     <input type='submit' value='Rock' name='rps' />
     <input type='submit' value='Paper' name='rps' />
     <input type='submit' value='Scissors' name='rps' />
+  </form><br>
+  <form name='restart' action='/restart' method='get'>
+    <input type='submit' value='Restart' name='restart' />
   </form>
 </body>

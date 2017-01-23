@@ -38,7 +38,15 @@ class RPS < Sinatra::Base
     @game
     @game_rps
     @game_rps.win_tie_loose
+    @game.player.win if @game_rps.result == "You win :)"
+    @game.computer.win if @game_rps.result == "Computer wins :("
     erb(:fight)
+  end
+
+  get '/restart' do
+    @game.player.restart
+    @game.computer.restart
+    redirect '/player'
   end
 
   # start the server if ruby file executed directly
