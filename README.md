@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/dylanrhodius/rps-challenge.svg?branch=master)](https://travis-ci.org/dylanrhodius/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/dylanrhodius/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/dylanrhodius/rps-challenge?branch=master)
 
 ## The Task
+The aim of this challenge was to re-create the famous rock, paper, scissors game.
 ```
 As a marketeer
 So that I can see my name in lights
@@ -16,8 +17,7 @@ I would like to be able to play rock/paper/scissors
 
 ## The Approach
 
-The aim of this challenge was to re-create the famous rock, paper, scissors game.
-As usual, the application was produced following TDD principles.
+The application was developed following TDD principles.
 In this very simple application, only one class was created: the `Game` class.
 In hindsight, and in order to support future development of the app, the app could have been divided further into the following classes:
 * `Player`
