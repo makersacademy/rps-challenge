@@ -1,6 +1,6 @@
 RPS Challenge
 ==================
-[![Build Status](https://travis-ci.org/mbgimot/takeaway-challenge.svg?branch=master)](https://travis-ci.org/mbgimot/takeaway-challenge)
+![Build Status](https://travis-ci.org/mbgimot/takeaway-challenge.svg?branch=master)](https://travis-ci.org/mbgimot/takeaway-challenge)
 
 Task
 -----
