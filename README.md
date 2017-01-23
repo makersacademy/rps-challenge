@@ -46,11 +46,11 @@ $ rackup
 ```
 Then please load http://localhost:9292 in your browser, and enjoy the application.
 
-You must have landed on the landing page, that looks like this:
+You must have landed on the landing page that looks like this:
 
 ![Imgur](http://i.imgur.com/wjJ2FWL.png)
 
-On this page please select how you would like to play:
+On this page you can select how you would like to play:
 * Do you want to play with computer or with some of your colleagues? If you are playing with computer, computer's throw will be selected randomly.
 * Do you want to play Rock/Paper/Scissors or Rock/Paper/Scissors/Spock/Lizard? You can enjoy both options.
 
