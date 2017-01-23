@@ -8,13 +8,11 @@ attr_reader :player1, :player2
   end
 
   def winner
-    if @player1.choice == @player2.choice
+    winning_choices = [[:Rock, :Scissors], [:Scissors, :Paper], [:Paper, :Rock]]
+    choices = [@player1.choice, @player2.choice]
+    if choices[0] == choices[1]
       'No one'
-    elsif @player1.choice == :Rock && @player2.choice == :Scissors
-      'Player 1'
-    elsif @player1.choice == :Paper && @player2.choice == :Rock
-      'Player 1'
-    elsif @player1.choice == :Scissors && @player2.choice == :Paper
+    elsif winning_choices.include?(choices)
       'Player 1'
     else
       'Player 2'
