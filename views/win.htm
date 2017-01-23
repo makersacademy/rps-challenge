@@ -1,0 +1,48 @@
+<style type="text/css">
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	margin-top: 5px;
+	background-image: url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/background.jpg);
+	background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+.Title {
+	font-size: 5em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center
+}
+.Main {
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFF;
+}
+</style>
+<div class="Title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="75">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="Title">Rock, Paper, Scissors </td>
+    </tr>
+    <tr>
+      <td height="50"></td>
+    </tr>
+  </table>
+</div>
+<div class="Main">
+  dd
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="96">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" class="Main"><%= @gamne.winner %> wins the game!</td>
+      </tr>
+    </table>
+</div>

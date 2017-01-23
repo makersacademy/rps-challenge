@@ -1,0 +1,120 @@
+<style type="text/css">
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	margin-top: 5px;
+	background-image: url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/background.jpg);
+	background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+.Title {
+	font-size: 5em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center
+}
+.PlayerInfo {
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center
+}
+.GameResult {
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center
+}
+.Main {
+
+}
+input#rock    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/rock.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:265px;
+height:190px;
+color: #FFF;
+border: 0;
+}
+input#paper    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/paper.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:265px;
+height:190px;
+color: #FFF;
+border: 0;
+}
+input#scissors    {
+background:url(https://raw.githubusercontent.com/adrianeyre/rps-challenge/master/images/scissors.png);
+background-repeat: no-repeat;
+font-size: 2em;
+width:285px;
+height:190px;
+color: #FFF;
+border: 0;
+}
+</style>
+<div class="Title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="75">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="Title">Rock, Paper, Scissors </td>
+    </tr>
+    <tr>
+      <td height="50">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="PlayerInfo">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td width="350" align="left" class="PlayerInfo">Player 1: <%= @game.player1.name %></td>
+      <td width="350" align="right" class="PlayerInfo">Score: <%= @game.player1.score %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td width="350" align="left" class="PlayerInfo">Player 2: <%= @game.player2.name %></td>
+      <td width="350" align="right" class="PlayerInfo">Score: <%= @game.player2.score %></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="Main">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="105" align="center" valign="bottom" class="PlayerInfo">
+      <% if @game.playing==1 %>
+      	Select your weapon!
+      <% else %>
+      	<%= @game.player_name %>'s turn, <%= @game.opponent_name %> look away!
+      <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><form id="playform" name="playform" method="post" action="/fight">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td width="280" align="center"><input type="submit" id="Rock" name="weapon" value="Rock" /></td>
+            <td width="280" align="center"><input type="submit" id="Paper" name="weapon" value="Paper" /></td>
+            <td width="280" align="center"><input type="submit" id="Scissors" name="weapon" value="Scissors" /></td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </form></td>
+    </tr>
+  </table>
+</div>
+<div class="GameResult"><br><%= @message %></div>
