@@ -1,7 +1,9 @@
-require 'sinatra'
-require 'shotgun'
+require 'sinatra/base'
+require 'tilt/erb'
 require './lib/game_class'
-set :session_1, 'first session'
+
+class RPS < Sinatra::Base
+  enable :sessions
 
 get '/' do
   erb :index
@@ -17,4 +19,8 @@ post '/decide' do
   @current_game = Game.new(choice)
   @result = @current_game.decider
   erb :decide
+end
+
+# start the server if ruby file executed directly
+  run! if app_file == $0
 end
