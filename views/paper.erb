@@ -1,0 +1,16 @@
+<html>
+    <head>
+    </head>
+<body>
+  You selected Paper
+  <br/>
+  Opponent selects <%= @game.selection %>
+  <br/>
+  <%= @game.paper_result %>
+
+  <form action="/play">
+    <input type="submit" value="Another round..." />
+  </form>
+
+</body>
+</html>

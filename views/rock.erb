@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+<body>
+  You selected Rock !
+  <br/>
+  Opponent selects <%= @game.selection %>
+  <br/>
+  <%= @game.rock_result %>
+
+
+
+  <form action="/play">
+    <input type="submit" value="Another round..." />
+  </form>
+
+</body>
+</html>
