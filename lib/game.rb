@@ -1,5 +1,5 @@
 class Game
-  attr_reader :winner, :p1_name, :p1_choice, :p2_name, :p2_choice
+  attr_reader :p1_name, :p1_choice, :p2_name, :p2_choice
 
   OUTCOMES = { Rock: { defeats: %w(Scissors Lizard) },
                Paper: { defeats: %w(Rock Spock) },
