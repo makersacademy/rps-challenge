@@ -1,0 +1,52 @@
+
+<style type="text/css">
+
+body {
+  background-color: lightblue;
+}
+
+.form{
+  background-color: cyan;
+  border-style: dashed;
+  border-radius: 40px;
+  max-width: 250;
+  position: absolute;
+  height: 250;
+  top: 34%;
+  left: 50%;
+  padding-bottom:25px
+}
+h2 {color: red}
+
+
+.button{
+   background:url(https://thumbs.dreamstime.com/x/rock-paper-scissors-illustration-vector-52156488.jpg) no-repeat;
+  background-size: cover;
+    cursor:pointer;
+    width: 200px;
+    height: 200px;
+    border: none;
+    color: transparent;
+    font-size: 35px;
+    border-radius: 12px;
+}
+.button:hover {
+color: black;
+}
+
+</style>
+
+<center>
+  <h2>You have chosen <%= @choice %></h2>
+<br>
+<br>
+
+
+
+<form action='/winner' method="get">
+  Click on the rules image when ready to play
+  <br>
+  <br>
+  <input type="submit" value='Play' class='button'/>
+</form>
+</center>

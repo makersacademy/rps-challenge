@@ -1,0 +1,82 @@
+<style type="text/css">
+
+body {
+  background-color: lightblue;
+}
+
+.form{
+  background-color: cyan;
+  border-style: dashed;
+  border-radius: 40px;
+  max-width: 250;
+  position: absolute;
+  height: 250;
+  top: 34%;
+  left: 50%;
+  padding-bottom:25px
+}
+h2 {color: red}
+
+.button1 {
+  background:url(http://1000awesomethings.com/wp-content/uploads/2008/08/rock-300x219.jpg) no-repeat;
+  background-size: cover;
+    cursor:pointer;
+    width: 150px;
+    height: 150px;
+    border: none;
+    color: transparent;
+    font-size: 35px;
+    border-radius: 12px;
+}
+.button1:hover {
+
+color: white;
+}
+.button2 {
+  background:url(http://1000awesomethings.com/wp-content/uploads/2008/08/paper-300x212.jpg) no-repeat;
+  background-size: cover;
+    cursor:pointer;
+    width: 150px;
+    height: 150px;
+    border: none;
+    color: transparent;
+    font-size: 35px;
+    border-radius: 12px;
+}
+.button2:hover {
+color: white;
+}
+.button3{
+   background:url(http://1000awesomethings.com/wp-content/uploads/2008/08/scissors.jpg?w=300) no-repeat;
+  background-size: cover;
+    cursor:pointer;
+    width: 150px;
+    height: 150px;
+    border: none;
+    color: transparent;
+    font-size: 35px;
+    border-radius: 12px;
+}
+.button3:hover {
+color: white;
+}
+
+
+</style>
+
+<center>
+<h2> Welcome <%= @marketeer %> </h2>
+  <form action='/game' method="post">
+    Feeling lucky?
+    <br>
+    <br>
+    <label for="choice">
+    Please enter your selection:
+    <br>
+    <br>
+    <input type="submit" name="choice" value='Rock' class="button1"/>
+    <input type="submit" name="choice" value='Paper'class="button2"/>
+    <input type="submit" name="choice" value='Scissors'class="button3"/>
+    </label>
+  </form>
+</center>

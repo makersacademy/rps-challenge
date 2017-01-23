@@ -1,5 +1,35 @@
 # RPS Challenge
 
+
+## Download Instructions
+
+* Open a terminal
+* git clone https://github.com/Justinio14/rps-challenge.git
+* cd rps-challenge
+* bundle
+
+## System set up
+
+* within the rps-challenge folder type 'ruby rps_web.rb
+This will start Sinatra
+* Open a web web-broswer and type localhost:4567
+
+## Playing the game
+
+* Enter you name and press submit
+* Make a selection Rock, Paper, Scissors by clicking the relevant image
+* Click on the rules image when ready to play
+* click yes or no if you would like to play again
+
+## Rules of the game
+
+* Rock beats Scissors
+* Scissors beats Paper
+* Paper beats Rock
+
+
+
+
 Instructions
 -------
 
@@ -9,7 +39,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +91,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +109,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -89,4 +119,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
