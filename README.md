@@ -3,9 +3,30 @@
 
 ## Download Instructions
 
+* Open a terminal
 * git clone https://github.com/Justinio14/rps-challenge.git
 * cd rps-challenge
 * bundle
+
+## System set up
+
+* within the rps-challenge folder type 'ruby rps_web.rb
+This will start Sinatra
+* Open a web web-broswer and type localhost:4567
+
+## Playing the game
+
+* Enter you name and press submit
+* Make a selection Rock, Paper, Scissors by clicking the relevant image
+* Click on the rules image when ready to play
+* click yes or no if you would like to play again
+
+## Rules of the game
+
+* Rock beats Scissors
+* Scissors beats Paper
+* Paper beats Rock
+
 
 
 
