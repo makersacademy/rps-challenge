@@ -13,7 +13,6 @@ class RPS < Sinatra::Base
 
   post '/choose' do
     @game = Game.create(params[:player_1_name], params[:player_1_selection], params[:player_2_name], params[:player_2_selection])
-    # erb :choose
     redirect '/play'
   end
 
