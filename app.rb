@@ -8,8 +8,8 @@ class RPS < Sinatra::Base
   end
 
   post '/second_name' do
-      @game = Game.create
-      @game.first_player(params[:player_name])
+      @game = Game.create(params[:player_name])
+      # @game.first_player(params[:player_name])
       erb :second_name
   end
 
@@ -21,15 +21,15 @@ class RPS < Sinatra::Base
 
   post '/next_choice' do
     @game = Game.instance
-    @game.set_player1_choice(params[:choice].to_sym)
+    @game.player1.set_choice(params[:choice].to_sym)
     erb :second_choice
   end
 
   post '/result' do
     @game = Game.instance
-    @game.set_player2_choice(params[:choice].to_sym)
-    @choice1 = @game.player1_choice
-    @choice2 = @game.player2_choice
+    @game.player2.set_choice(params[:choice].to_sym)
+    @choice1 = @game.player1.choice
+    @choice2 = @game.player2.choice
     @winner = @game.winner
     erb :result
   end
