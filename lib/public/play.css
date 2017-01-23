@@ -144,6 +144,7 @@ h1 {
 
 input[type="radio"]:checked~.icons>i {
     transform: scale(1.5);
+    transition: 0.3s ease-in-out;
 }
 
 .icon-holder {
