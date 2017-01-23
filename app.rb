@@ -42,7 +42,7 @@ class MyApp < Sinatra::Base
   private
 
   def check_p2
-    params[:p2_name] != "" ? two_player : one_player
+    params[:p2_name].empty? ? one_player : two_player
   end
 
   def one_player
