@@ -13,17 +13,17 @@
   <body>
     <header><h1>Rock, Paper, Scissors, Lizard, Spock!</h1></header>
     <main class="main">
-      <h2 class="play-h2"><%= @game.player[:name] %> vs. <%= @game.opponent[:name] %></h2>
+      <h2 class="play-h2"><%= @game.players[:player_1][:name] %> vs. <%= @game.players[:player_2][:name] %></h2>
       <div class="left">
-        <%= @game.player[:name] %> chooses <%= @game.player[:choice] %>!
+        <%= @game.players[:player_1][:name] %> chooses <%= @game.players[:player_1][:choice] %>!
         <div class="icon-holder">
-          <i class="fa fa-hand-<%= @game.player[:choice].downcase %>-o" aria-hidden="true"></i>
+          <i class="fa fa-hand-<%= @game.players[:player_1][:choice].downcase %>-o" aria-hidden="true"></i>
         </div>
       </div>
       <div class="right">
-        <%= @game.opponent[:name] %> chooses <%= @game.opponent[:choice] %>!
+        <%= @game.players[:player_2][:name] %> chooses <%= @game.players[:player_2][:choice] %>!
         <div class="icon-holder">
-          <i class="fa fa-hand-<%= @game.opponent[:choice].downcase %>-o" aria-hidden="true"></i>
+          <i class="fa fa-hand-<%= @game.players[:player_2][:choice].downcase %>-o" aria-hidden="true"></i>
         </div>
       </div>
         <form action="/result">
