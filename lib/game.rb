@@ -7,8 +7,8 @@ class Game
                lizard: { defeats: %w(Paper Spock) },
                spock: { defeats: %w(Scissors Rock) } }.freeze
 
-  def self.create(player_1_name, player_1_choice, player_2_name, player_2_choice)
-    @game = Game.new(Player.new(player_1_name, player_1_choice), Player.new(player_2_name, player_2_choice))
+  def self.create(player_1_name, player_1_choice, player_2_name, player_2_choice, player_class=Player)
+    @game = Game.new(player_class.new(player_1_name, player_1_choice), player_class.new(player_2_name, player_2_choice))
   end
 
   def self.instance
