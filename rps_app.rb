@@ -53,7 +53,9 @@ class RPSApp < Sinatra::Base
 
   get '/results' do
     @game = session[:game]
+    p "Here before the game starts", @game.player2_choice
     @game.play(params[:choice])
+    p "Here after the game ends", @game.player2_choice
     erb :results
   end
 
