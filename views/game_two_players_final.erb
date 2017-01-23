@@ -7,7 +7,6 @@
 
     <p><%=@name_one%> has chosen <%=@choice_one%>.</p>
     <p><%=@name_two%> has chosen <%=@choice_two%>.</p>
-    <!-- <p><%=@won%>.</p> -->
     <% if @won == :won %>
       <h3>Congratulations to <%=@name_one%>, you won!</h3>
     <% elsif @won == :lose %>
@@ -21,3 +20,5 @@
     </form>
 
 </body>
+
+<!-- templates that go into another templates -->

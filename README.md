@@ -48,7 +48,7 @@ Then please load http://localhost:9292 in your browser, and enjoy the applicatio
 
 You must have landed on the landing page that looks like this:
 
-![Imgur](http://i.imgur.com/wjJ2FWL.png)
+![Imgur](http://i.imgur.com/dJ1L3Pq.png)
 
 On this page you can select how you would like to play:
 * Do you want to play with computer or with some of your colleagues? If you are playing with computer, computer's throw will be selected randomly.
