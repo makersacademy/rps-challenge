@@ -1,0 +1,89 @@
+.index_img {
+  display: block;
+  margin: auto;
+  height: 330px;
+  width: 330px;
+}
+
+html {
+  background-color: #92a8d1
+}
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Geneva, Sans-serif;
+  color: #034f84;
+}
+
+h2 {
+  text-align: center;
+  font-family: Tahoma, Geneva, Sans-serif;
+  color: #034f84;
+}
+
+#stripe {
+  height: 2px;
+  background-color: #034f84
+}
+
+input[type=text] {
+  padding:5px; 
+  border:2px solid #ccc; 
+  border-radius: 5px;
+}
+
+input[type=text]:focus {
+  border-color:#333;
+}
+
+input[type=submit] {
+  display: inline-block;
+  color: #666;
+  background-color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid rgba(0 0 0 0.5);
+  border-bottom-width: 3px;
+}
+
+input[type=submit]:hover {
+	background-color: #e3e3e3;
+	border-color: #000000;
+}
+
+input[type=submit]:active {
+	background-color: #CCC;
+	border-color: #000000;
+}
+
+.square {
+	display: inline-block;
+	border: 5px solid #034f84;
+	border-radius: 10px;
+	width: 350px;
+	height: 350px;
+}
+
+.weapons {
+	width: 70%; 
+	height: 70%;
+	padding: 20px;
+}
+
+#player_1_choice {
+	display: inline-block;
+	margin: auto;
+	width: 50%;
+	float: left;
+}
+
+#player_2_choice {
+	display: inline-block;
+	margin:auto;
+	width: 50%;
+	padding-top: 50px;
+	float: right;
+}

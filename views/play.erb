@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Rock, Paper, Scissors!</title>
+  	<link rel="stylesheet" href="stylesheet.css" type="text/css">
+  </head>
+
+  <body>
+  	<h1>Hello <%= @player_name %>, are you ready to play?</h1>
+  	<div id = "stripe"></div>
+
+	<h2>Choose your weapon:<h2>
+
+	<div align="center">
+	  <div class = "square">
+	  	<img class = "weapons" src = "img/rock.png"/>
+	  	<form action = "/game" method = "post">
+		  <input type = "submit" name = "choice" value = "Rock"/>		
+  	  	</form>
+	  </div>
+
+	  <div class = "square">
+	  	<img class = "weapons" src = "img/paper.png"/>
+	  	<form action = "/game" method = "post">
+	  	  <input type = "submit" name = "choice" value = "Paper"/>
+	  	</form>
+	  </div>
+
+	  <div class = "square">
+	  	<img class = "weapons" src = "img/scissors.png"/>
+	  	<form action = "/game" method = "post">
+	  	  <input type = "submit" name = "choice" value = "Scissors"/>
+	  	</form>
+	  </div>  	  
+	</div>
+
+  </body>
+
+ </html>
+

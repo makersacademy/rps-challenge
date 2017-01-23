@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Rock, Paper, Scissors!</title>
+  	<link rel="stylesheet" href="stylesheet.css" type="text/css">
+  </head>
+
+  <body>
+  	<h2 id = "player_1_choice"><%= @game.player_1.name %> picked <%= @game.player_1.choice %></h2>
+	<h2 id = "Player_2_choice"><%= @game.player_2.name %> picked <%= @game.player_2.choice %></h2>
+	<div id = "stripe"></div>
+	<h1><%= @game.find_result %><h1>
+	<div align="center">
+  	  <form action = "/play" method = "get">
+		<input id = "play_again" type = "submit" name = "choice" value = "Play again"/>
+  	  </form>
+	</div>
+  </body>
+</html>
+
