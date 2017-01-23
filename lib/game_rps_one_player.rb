@@ -4,7 +4,7 @@ class GameRPSOnePlayer
           :paper => :rock,
           :scissors => :paper }
 
-  attr_reader :thrown, :choice
+  attr_reader :thrown
 
   def initialize(choice)
     @choice = choice.to_sym if choice

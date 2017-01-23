@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './lib/game_rps_one_player.rb'
 require './lib/game_rps_two_players.rb'
+require './lib/game_rpssl_one_player.rb'
+require './lib/game_rpssl_two_players.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -27,9 +29,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game_one_player' do
+    @which_game = session[:which_game]
     @name = session[:name]
     @choice = session[:choice]
-    game = GameRPSOnePlayer.new(@choice)
+    puts "choice = #{@choice}"
+    game = GameRPSSLOnePlayer.new(@choice)
     @won = game.won?
     @thrown = game.thrown
     erb :game_one_player
@@ -48,6 +52,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game_first_player' do
     @name_one = session[:name_one]
+    @which_game = session[:which_game]
     erb :game_first_player
   end
 
@@ -58,6 +63,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game_second_player' do
     @name_two = session[:name_two]
+    @which_game = session[:which_game]
     erb :game_second_player
   end
 
@@ -71,13 +77,14 @@ class RockPaperScissors < Sinatra::Base
     @name_two = session[:name_two]
     @choice_one = session[:choice_one]
     @choice_two = session[:choice_two]
-    game = GameRPSTwoPlayers.new(@choice_one, @choice_two)
+    game = GameRPSSLTwoPlayers.new(@choice_one, @choice_two)
     @won = game.won?
     erb :game_two_players_final
   end
 
   post '/replay_game_two_players' do
     @name_one = session[:name_one]
+    @which_game = session[:which_game]
     erb :game_first_player
   end
 

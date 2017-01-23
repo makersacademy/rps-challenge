@@ -4,7 +4,7 @@ class GameRPSTwoPlayers
           :paper => :rock,
           :scissors => :paper }
 
-  attr_reader :thrown, :choice
+  attr_reader :thrown
 
   def initialize(choice_one, choice_two)
     @choice_one = choice_one.to_sym if choice_one
