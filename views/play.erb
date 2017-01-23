@@ -1,8 +1,8 @@
 <body>
   <h3>Player name: <%= @game.player.name %></h3>
-  <h4><%= @game.player.name %> has <%= @game.player.wins %> wins</h4>
+  <h4><%= @game.player.name %> has <%= @game.player.wins %><%= @game.player.wins == 1 ? " win" : " wins"%></h4>
   <h3>Computer</h3>
-  <h4>The computer has <%= @game.computer.wins %> wins</h4>
+  <h4>The computer has <%= @game.computer.wins %><%= @game.computer.wins == 1 ? " win" : " wins"%></h4>
   -------------------------------
   <h3>Let's Play!</h3>
   <%= @game.player.name %> it's your turn to play :)<br>
