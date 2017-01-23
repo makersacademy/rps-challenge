@@ -6,11 +6,10 @@ Task
 -----
 
 [![Rock, Paper, Scissors](https://github.com/veliancreate/rps-challenge/blob/master/screenshot.png?raw=true)  
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+My task was to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
 As a marketeer
@@ -24,19 +23,23 @@ I would like to be able to play rock/paper/scissors
 
 Functionality should include:
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+* the marketeer should be able to enter their name before the game
+* the marketeer will be presented the choices (rock, paper and scissors)
+* the marketeer can choose one option
+* the game will choose a random option
+* a winner will be declared
 
+Rules
+-----
+* Rock beats Scissors
+* Paper beats Rock
+* Scissors beats Paper
 
 Further Developments
 -----
 * Add multiplayer ability
 * Ability to have rock, paper, scissors, lizard
-* Win to be singular rather than plural if only 1
-* Glamoured HTML/CSS
+* Glamorized HTML/CSS
 
 Contributors
 -----
