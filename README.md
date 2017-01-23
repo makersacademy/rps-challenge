@@ -107,6 +107,13 @@ Progress
     - after clicking 'Play', the game restarts and recognises the registered user:
 
     ![Screenshot](https://www.dropbox.com/s/n54ncwh834waef8/Screenshot%202017-01-22%2018.54.01.png?dl=0)
+4. Bonus Level 1: Multiplayer
+  * Replaced computer with second human player.
+    - Players now register both their names
+    - Player 01 chooses first
+    - Then Player 02 chooses
+    - Then the result is displayed.
+  * This change only required minor changes to the controller, the views and the feature (Capybara) tests. The model layer didn't require any modifications (except for the fact that the Computer class is not in use now).
 
 Issues
 ----
@@ -118,3 +125,6 @@ Issues
 3. Story 02: Controller, Views and associated feature tests
   * Not sure if the controller should check that the player chooses a RPS weapon (the logic in player.rb already does that at model level). But who else could? Now it all depends on Game::WEAPONS. If the weapon choice form could query the same constant and provide a pull-down menu instead of a text field, I could get rid of the if/else logic. But the controller would still depend on Game's constant.
   * There is no nice HTML styling (no colours yet).
+4. Bonus Level 1: Multiplayer.
+  * There should be an option for Player 01 to choose between a human or a computer opponent.
+  * No screenshots because I can't make Dropbox image links work in Github (yet).

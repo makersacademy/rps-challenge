@@ -19,48 +19,52 @@ feature "Player 01 can choose weapon via form" do
   end
 end
 
-feature "Then Player 01 can" do
-  scenario 'get a confirmation Computer has also chosen its weapon' do
+feature "Player 02 can choose weapon via form" do
+  scenario 'with dedicated field' do
     register_and_choose_weapon
-    expect(page).to have_content('Computer has chosen their weapon, too!')
+    expect(page).to have_field('player_02_weapon')
   end
 
-  scenario 'and click OK to get to the result page' do
+  scenario 'and button' do
+    register
+    expect(page).to have_button('Choose')
+  end
+
+  scenario 'but they will return to the form if weapon is non-RPS' do
     register_and_choose_weapon
-    expect(page).to have_button('OK')
+    fill_in :player_02_weapon, with: 'pike'
+    click_button 'Choose'
+    expect(page).to have_button('Choose')
   end
 end
 
-feature "Finally, Player 01 can" do
+feature "Finally, players can" do
   scenario 'see if they won' do
-    srand 123
-    register_weapon_result
+    register_all_choose_weapons_01
     expect(page).to have_content('Stefan, you won!')
-    expect(page).to have_content('Stefan chose rock. Computer chose scissors.')
+    expect(page).to have_content('Stefan chose rock. Yoda chose scissors.')
   end
 
   scenario 'see if they lost' do
-    srand 125
-    register_weapon_result
+    register_all_choose_weapons_02
     expect(page).to have_content('Sorry, Stefan, you lost!')
-    expect(page).to have_content('Stefan chose rock. Computer chose paper.')
+    expect(page).to have_content('Stefan chose rock. Yoda chose paper.')
   end
 
   scenario 'see if there was a draw' do
-    srand 129
-    register_weapon_result
+    register_all_choose_weapons_03
     expect(page).to have_content("It's a draw.")
-    expect(page).to have_content('Stefan chose rock. Computer chose rock.')
+    expect(page).to have_content('Stefan chose rock. Yoda chose rock.')
   end
 
   scenario 'click Play to play again' do
-    register_weapon_result
+    register_all_choose_weapons_01
     expect(page).to have_button('Play')
   end
 end
 
-feature "Player 01 can play again and returns to the page where" do
-  scenario 'it has weapon field' do
+feature "Players can play again and return to the page where" do
+  scenario 'Player 01 has weapon field' do
     replay
     expect(page).to have_field('player_01_weapon')
   end

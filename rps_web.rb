@@ -8,29 +8,29 @@ class RPSWeb < Sinatra::Base
   enable :sessions
 
   helpers do
-    def stored_player
-      Player.find(session[:player_id])
+    def stored_player_01
+      Player.find(session[:player_01_id])
     end
 
-    def add_player(player)
+    def add_player_01(player)
       id = player.object_id
       Player.add(id, player)
-      session[:player_id] = id
+      session[:player_01_id] = id
     end
 
-    def stored_computer
-      Computer.find(session[:computer_id])
+    def stored_player_02
+      Player.find(session[:player_02_id])
     end
 
-    def add_computer(computer)
-      id = computer.object_id
-      Computer.add(id, computer)
-      session[:computer_id] = id
+    def add_player_02(player)
+      id = player.object_id
+      Player.add(id, player)
+      session[:player_02_id] = id
     end
   end
 
   get '/' do
-    if stored_player
+    if stored_player_01 && stored_player_02
       redirect '/player_01_choose'
     else
       redirect '/register'
@@ -41,9 +41,11 @@ class RPSWeb < Sinatra::Base
     erb :register
   end
 
-  post '/player' do
-    player = Player.new(params[:player_01_name])
-    add_player(player)
+  post '/players' do
+    player_01 = Player.new(params[:player_01_name])
+    player_02 = Player.new(params[:player_02_name])
+    add_player_01(player_01)
+    add_player_02(player_02)
     redirect '/'
   end
 
@@ -53,19 +55,21 @@ class RPSWeb < Sinatra::Base
 
   post '/player_02_choose' do
     if Game::WEAPONS.include?(params[:player_01_weapon].to_sym)
-      stored_player.choose(params[:player_01_weapon].to_sym)
-      computer = Computer.new
-      add_computer(computer)
-      session[:player_02_weapon] = stored_computer.choose
+      stored_player_01.choose(params[:player_01_weapon].to_sym)
       erb :player_02_choose
     else
       erb :player_01_choose
     end
   end
 
-  get '/result' do
-    @game = Game.new(stored_player, stored_computer)
-    erb @game.result
+  post '/result' do
+    if Game::WEAPONS.include?(params[:player_02_weapon].to_sym)
+      stored_player_02.choose(params[:player_02_weapon].to_sym)
+      @game = Game.new(stored_player_01, stored_player_02)
+      erb @game.result
+    else
+      erb :player_02_choose
+    end
   end
 
   run! if app_file == $0
