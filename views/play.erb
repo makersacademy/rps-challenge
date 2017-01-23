@@ -1,0 +1,23 @@
+<%= @game.player_1.name %>
+<div>
+<form action='/who_wins' method='post'>
+  <input type='hidden' name='player_weapon' value='Rock' />
+  <input type='submit' value='Rock' />
+</form>
+<form action='/who_wins' method='post'>
+  <input type='hidden' name='player_weapon' value='Scissors' />
+  <input type='submit' value='Scissors' />
+</form>
+<form action='/who_wins' method='post'>
+  <input type='hidden' name='player_weapon' value='Paper' />
+  <input type='submit' value='Paper' />
+</form>
+<form action='/who_wins' method='post'>
+  <input type='hidden' name='player_weapon' value='Lizard' />
+  <input type='submit' value='Lizard' />
+</form>
+<form action='/who_wins' method='post'>
+  <input type='hidden' name='player_weapon' value='Spock' />
+  <input type='submit' value='Spock' />
+</form>
+</div>
