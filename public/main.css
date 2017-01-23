@@ -1,0 +1,42 @@
+body {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.6em;
+}
+
+body, h1, h3, input[type="submit"] {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+h1 {
+  color: blue;
+  font-size: 4em;
+  margin-top: 0.7em;
+  line-height: 1em;
+}
+
+h3 {
+  font-size: 2em;
+  margin: 2em;
+}
+
+.row {
+  margin: 0 auto;
+  width: 768px;
+}
+
+label {
+  line-height: 1.6em;
+}
+
+input[type="submit"] {
+  border-radius: 0;
+  border: solid 3px blue;
+  background-color: white;
+  margin: 1em;
+}
+
+input[type="submit" i] {
+  color: blue;
+  font-size: 2em;
+}

@@ -1,0 +1,27 @@
+<head>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700" rel="stylesheet">
+</head>
+
+
+<% if @how_many_players == "one" %>
+<form action = "/one_name" method = "post">
+  <label for = "name">
+    To continue please enter your name:
+    <input type = "text" name = "name">
+  </label>
+  <input type = "submit" value = "Start game">
+</form>
+
+<% else %>
+
+<form action = "/two_names" method = "post">
+  <label>
+    To continue please enter your names:
+    <input type = "text" name = "name_one">
+    <input type = "text" name = "name_two">
+  </label>
+  <input type = "submit" value = "Start game">
+</form>
+
+<% end %>

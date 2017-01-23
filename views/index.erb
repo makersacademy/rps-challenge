@@ -1,0 +1,29 @@
+<head>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class = "row">
+    <h1> Rock, Paper and Scissors </h1>
+
+    <h3> Welcome to the game!</h3>
+
+    <form action = "/game_choice" method = "post">
+      <label for = "how_many_players">
+        Do you want to play with computer or with some of your colleagues?</br>
+        <input type = "radio" name = "how_many_players" value = "one" id = "one_player" checked>Play with computer<br>
+        <input type = "radio" name = "how_many_players" value = "two" id = "two_players">Play with colleagues<br>
+      </label>
+      <label for = "which_game">
+        Do you want to play Rock/Paper/Scissors or Rock/Paper/Scissors/Spock/Lizard?</br>
+        <input type = "radio" name = "which_game" value = "rps" id = "rock_paper_scissors" checked>Rock/Paper/Scissors<br>
+        <input type = "radio" name = "which_game" value = "rpssl" id = "rock_paper_scissors_spock_lizard">Rock/Paper/Scissors/Spock/Lizard<br>
+      </label>
+      <input type = "submit" value = "Play!">
+    </form>
+
+  </div>
+
+</body>

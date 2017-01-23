@@ -1,0 +1,22 @@
+<head>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Welcome, <%= @name_one%>! It's your turn now!</h1>
+
+  <h3>Make your choice:</h3>
+  <form action = "/game_second_player" method = "post">
+    <input type = "radio" name = "choice" value = "rock" id = "rock" checked>Rock<br>
+    <input type = "radio" name = "choice" value = "paper" id = "paper">Paper<br>
+    <input type = "radio" name = "choice" value = "scissors" id = "scissors">Scissors<br>
+    <% if @which_game == "rpssl" %>
+    <input type = "radio" name = "choice" value = "spock" id = "spock">Spock<br>
+    <input type = "radio" name = "choice" value = "lizard" id = "lizard">Lizard<br>
+    <% end %>
+    <input type = "submit" value = "Play!">
+  </form>
+
+</body>
