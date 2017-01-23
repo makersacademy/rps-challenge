@@ -25,15 +25,15 @@ I would like to be able to play rock/paper/scissors
 How to play
 ----
 - Enter your name before the game begins
-![Image of Sign In](https://www.dropbox.com/s/1rs9b8aulws7tvq/Sign_in.png?dl=0)
+![Image of Sign In](https://www.dropbox.com/s/1rs9b8aulws7tvq/Sign_in.png?dl=1)
 - Choose your weapon (rock, paper and scissors) from the drop-down menu
-![Image of Choosing Weapon](https://www.dropbox.com/s/ms227wwv1l4mt8w/Choosing_weapon.png?dl=0)
+![Image of Choosing Weapon](https://www.dropbox.com/s/ms227wwv1l4mt8w/Choosing_weapon.png?dl=1)
 - Click 'Ok' to submit your choice and the computer will choose a random weapon (rock, paper and scissors)
-![Showing ok button](https://www.dropbox.com/s/x97kkvmt2jqguqt/Showing_ok.png?dl=0)
+![Showing ok button](https://www.dropbox.com/s/x97kkvmt2jqguqt/Showing_ok.png?dl=1)
 - A winner will be declared
-![Winner is declared](https://www.dropbox.com/s/m5cpi11p77r97y9/Winner_declared.png?dl=0)
+![Winner is declared](https://www.dropbox.com/s/m5cpi11p77r97y9/Winner_declared.png?dl=1)
 - Decide whether to play again, and score board is updated, or exit.
-![Updated scoreboard](https://www.dropbox.com/s/qvrvfqwkehashkw/Updated%20Scoreboard.png?dl=0)
+![Updated scoreboard](https://www.dropbox.com/s/qvrvfqwkehashkw/Updated%20Scoreboard.png?dl=1)
 
 Set Up
 ----
