@@ -1,4 +1,4 @@
-class GameRPSSLTwoPlayers
+class GameOnePlayer
 
   RULES = { rock: [:scissors, :lizard],
           paper: [:rock, :spock],
@@ -8,16 +8,22 @@ class GameRPSSLTwoPlayers
 
   attr_reader :thrown
 
-  def initialize(choice_one, choice_two)
-    @choice_one = choice_one ? choice_one.to_sym : :rock
-    @choice_two = choice_two ? choice_two.to_sym : :rock
+  def initialize(choice)
+    @choice =  choice ? choice.to_sym : :rock
     @options = [:rock, :paper, :scissors, :spock, :lizard]
   end
 
   def won?
-    return :tie if @choice_one == @choice_two
-    return :won if RULES[@choice_one].include? @choice_two
+    @thrown = throw
+    return :tie if @choice == @thrown
+    return :won if RULES[@choice].include? @thrown
     :lose
+  end
+
+  private
+
+  def throw
+    @options.sample
   end
 
 end

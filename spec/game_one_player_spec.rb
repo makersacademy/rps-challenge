@@ -1,6 +1,6 @@
-require 'game_rpssl_one_player'
+require 'game_one_player'
 
-describe GameRPSSLOnePlayer do
+describe GameOnePlayer do
   subject(:game) { described_class.new(choice)}
   let(:choice) { :choice}
   subject(:game_rock) { described_class.new(rock)}
@@ -15,7 +15,7 @@ describe GameRPSSLOnePlayer do
   let(:lizard) {:lizard}
 
   it 'creates an instance of Game class' do
-    expect(game).to be_a(GameRPSSLOnePlayer)
+    expect(game).to be_a(GameOnePlayer)
   end
 
   describe '#won?' do

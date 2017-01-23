@@ -1,8 +1,6 @@
 require 'sinatra/base'
-require './lib/game_rps_one_player.rb'
-require './lib/game_rps_two_players.rb'
-require './lib/game_rpssl_one_player.rb'
-require './lib/game_rpssl_two_players.rb'
+require './lib/game_one_player.rb'
+require './lib/game_two_players.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -33,7 +31,7 @@ class RockPaperScissors < Sinatra::Base
     @name = session[:name]
     @choice = session[:choice]
     puts "choice = #{@choice}"
-    game = GameRPSSLOnePlayer.new(@choice)
+    game = GameOnePlayer.new(@choice)
     @won = game.won?
     @thrown = game.thrown
     erb :game_one_player
@@ -77,7 +75,7 @@ class RockPaperScissors < Sinatra::Base
     @name_two = session[:name_two]
     @choice_one = session[:choice_one]
     @choice_two = session[:choice_two]
-    game = GameRPSSLTwoPlayers.new(@choice_one, @choice_two)
+    game = GameTwoPlayers.new(@choice_one, @choice_two)
     @won = game.won?
     erb :game_two_players_final
   end
