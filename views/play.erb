@@ -1,0 +1,17 @@
+<h1>  Hi, <span style='color:red'> <%= @game.player.name %></span>! </h1>
+
+<h2> Score Board: </h2>
+<h3> <%= @game.player.name %> : <%= @game.player.score %> , Computer : <%= @game.computer.score%> </h3>
+
+<form action="/weapon_choice" method="post" >
+    <label for="weapon_choice">
+      To play, please select your weapon from the list:
+      <select name="weapon_choice">
+  <option value="" disabled="disabled" selected="selected">Please select a weapon</option>
+  <option value="rock">Rock</option>
+  <option value="paper">Paper</option>
+  <option value="scissors">Scissors</option>
+    </label>
+    </select>
+    <input type="submit" value="Ok"/>
+</form>
