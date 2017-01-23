@@ -15,6 +15,10 @@ class RockPaperScissors < Sinatra::Base
       @round = Round.round_instance
       @message_log = MessageLog.message_log_instance
     end
+
+    def finish_round(player_2_move)
+      Round.round_instance.finish_round(player_2_move: player_2_move)
+    end
   end
 
   get '/' do
@@ -42,13 +46,13 @@ class RockPaperScissors < Sinatra::Base
       redirect '/play'
     else
       player_2_move = Opponent.choose_move
-      Round.round_instance.finish_round(player_2_move: player_2_move)
+      finish_round(player_2_move)
       redirect '/results'
     end
   end
 
   post '/p2_move' do
-    Round.round_instance.finish_round(player_2_move: params[:p2_choice].to_sym)
+    finish_round(params[:p2_choice].to_sym)
     redirect '/results'
   end
 
