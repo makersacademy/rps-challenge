@@ -12,7 +12,7 @@ class Game
   end
 
   def self.create(first_player, second_player)
-    @game = Game.new(first_player, second_player)
+    @game = self.new(first_player, second_player)
   end
 
   def self.instance
