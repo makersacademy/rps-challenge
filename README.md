@@ -1,5 +1,43 @@
 # RPS Challenge
 
+Approach to Challenge
+-------
+
+* I spent a good amount of time domain and process modeling before start coding.
+
+* Set up the TDD environment for the development of a web application with Sinatra.
+
+* **User Story n.1** There is a form on the index for the user to enter the name. In a POST request, that name is passed as argument to an instance of the Player class and saved as a 'player' variable. A new instance of a Game class is created with 'player' and 'computer' (instance of Computer class) - the opponent - as arguments. The user is redirected to /game to start playing.
+
+![Sign up and Play](/imgs/RPS-1.png)
+
+* **User Story n.2** On the /game page the user can choose an option between Rock, Paper and Scissors and moves to challenging the computer clicking PLAY.
+
+![Announce the winner](/imgs/RPS-3.png)
+
+In /challenge the computer pick a sample from an Array which includes "Rock", "Paper" and "Scissors" and announces the winner.
+
+![Choose an option](/imgs/RPS-2.png)
+
+
+* **Refactoring** I still would like to refactor the winner method in Game and get rid of the global variable.
+
+Travis CI Status Budge:
+[![Build Status](https://travis-ci.org/nenoch/rps-challenge.svg?branch=master)](https://travis-ci.org/nenoch/rps-challenge)
+
+Process Diagram
+-------
+
+```
+User                Request          Controller            Logic          View
+Types website ---- GET '/' -----------> ----------------------------------->
+<----------------- html --------------- <----------------- html ------------
+WORK IN PROGRESS
+```
+![Process Diagram draft](/imgs/process_diagram.jpg)
+
+
+
 Instructions
 -------
 
@@ -9,7 +47,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +99,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +117,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -89,4 +127,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
