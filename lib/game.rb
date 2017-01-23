@@ -21,7 +21,6 @@ attr_reader :player1, :player2
     end
   end
 
-
   def second_player(name)
     @player2 = Player.new(name)
   end
@@ -33,6 +32,7 @@ attr_reader :player1, :player2
   def player2_choice
     @player2.choice
   end
+
   def self.create(name1)
     @game ||= Game.new(name1)
   end

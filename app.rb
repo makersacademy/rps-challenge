@@ -8,9 +8,8 @@ class RPS < Sinatra::Base
   end
 
   post '/second_name' do
-      @game = Game.create(params[:player_name])
-      # @game.first_player(params[:player_name])
-      erb :second_name
+    @game = Game.create(params[:player_name])
+    erb :second_name
   end
 
   post '/name' do
