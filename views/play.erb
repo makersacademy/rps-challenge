@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h1>Welcome <%= @player %></h1>
+      <h2>Please choose one of the following!</h2>
+
+      <form action="/rock" method="post">
+        <input type="submit" name="rock" value="rock">
+      </form>
+      <form action="/paper" method="post">
+        <input type="submit" name="paper" value="paper">
+      </form>
+      <form action="/scissors" method="post">
+        <input type="submit" name="scissors" value="scissors">
+      </form>
+    </div>
+  </body>
+</html>
