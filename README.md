@@ -1,11 +1,11 @@
 RPS Challenge
 ==================
-![Build Status](https://travis-ci.org/mbgimot/takeaway-challenge.svg?branch=master)](https://travis-ci.org/mbgimot/takeaway-challenge)
+[![Build Status](https://travis-ci.org/mbgimot/takeaway-challenge.svg?branch=master)](https://travis-ci.org/mbgimot/takeaway-challenge)
 
 Task
 -----
 
-[![Rock, Paper, Scissors](https://github.com/veliancreate/rps-challenge/blob/master/screenshot.png?raw=true)  
+[Rock, Paper, Scissors](https://github.com/veliancreate/rps-challenge/blob/master/screenshot.png?raw=true)  
 Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
