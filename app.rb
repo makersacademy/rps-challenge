@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/game_one_player.rb'
-require './lib/game_two_players.rb'
+require './lib/game.rb'
+require './lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -30,10 +30,9 @@ class RockPaperScissors < Sinatra::Base
     @which_game = session[:which_game]
     @name = session[:name]
     @choice = session[:choice]
-    puts "choice = #{@choice}"
-    game = GameOnePlayer.new(@choice)
+    @thrown = (Computer.new).weapon
+    game = Game.new(@choice, @thrown)
     @won = game.won?
-    @thrown = game.thrown
     erb :game_one_player
   end
 
@@ -75,7 +74,7 @@ class RockPaperScissors < Sinatra::Base
     @name_two = session[:name_two]
     @choice_one = session[:choice_one]
     @choice_two = session[:choice_two]
-    game = GameTwoPlayers.new(@choice_one, @choice_two)
+    game = Game.new(@choice_one, @choice_two)
     @won = game.won?
     erb :game_two_players_final
   end

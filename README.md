@@ -32,7 +32,7 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 ## Extended rules: adding spock and lizard
 The best the rules of the extended game can be represented by the picture below:
-![Screenshot](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#/media/File:Rock_Paper_Scissors_Lizard_Spock_en.svg)
+![Screenshot](https://upload.wikimedia.org/wikipedia/commons/f/fe/Rock_Paper_Scissors_Lizard_Spock_en.svg)
 
 ## How to use
 

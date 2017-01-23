@@ -1,6 +1,6 @@
-require 'game_two_players'
+require 'game'
 
-describe GameTwoPlayers do
+describe Game do
   subject(:game) { described_class.new(choice_one, choice_two)}
   let(:choice_one) { :choice_one}
   let(:choice_two) { :choice_two}
@@ -26,7 +26,7 @@ describe GameTwoPlayers do
   let(:lizard) {:lizard}
 
   it 'creates an instance of Game class' do
-    expect(game).to be_a(GameTwoPlayers)
+    expect(game).to be_a(Game)
   end
 
   describe '#won?' do
