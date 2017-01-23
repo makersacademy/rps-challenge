@@ -7,7 +7,7 @@ The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game 
 
 The task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -30,6 +30,10 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
+## Extended rules: adding spock and lizard
+The best the rules of the extended game can be represented by the picture below:
+![Screenshot](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#/media/File:Rock_Paper_Scissors_Lizard_Spock_en.svg)
+
 ## How to use
 
 How to download and run the app:
@@ -49,12 +53,6 @@ You must have landed on the landing page.
 On this page please select how would you like to play:
 * [Two players game]
 * [RPS or]
-
-
-
-What is ????
-[describe what it is]
-[include screenshot from wiki]
 
 
 Build Badge Example
