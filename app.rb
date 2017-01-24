@@ -8,20 +8,18 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:player_name] = params[:name]
     redirect '/play'
   end
 
+
   get '/play' do
-    @name = session[:name]
-    @instrument = session[:instrument]
-    @computer_instrument = session[:computer_instrument]
+    @game = Game.new(session) # session contains the @name, @instrument, @computer_instrument
     erb(:play)
   end
-
+# add a result model
   post '/play' do
-
-    session[:instrument] = params[:instrument]
+    session[:player_instrument] = params[:instrument]
     session[:computer_instrument] = Computer.new.instrument
     redirect '/play'
   end

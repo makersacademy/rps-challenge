@@ -1,4 +1,4 @@
-<h2>Hi, <%= @name %>! Please, choose an instrument to play with:</h2>
+<h2>Hi, <%= @game.player_name %>! Please, choose an instrument to play with:</h2>
 
 <form method='POST' action='/play'>
   <input type='submit' name='instrument' value='Rock' />
@@ -6,8 +6,8 @@
   <input type='submit' name='instrument' value='Scissors' />
 </form>
 
-<p>Your choice is <%= @instrument %>! </p>
+<p>Your choice is <%= @game.player_instrument.to_s.capitalize %>! </p>
 
 <div id="computer">
-<p>Computer's choice is <%= @computer_instrument.to_s.capitalize %>! </p>
+  <p>Computer's choice is <%= @game.computer_instrument.to_s.capitalize %>! </p>
 </div>
