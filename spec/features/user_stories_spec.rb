@@ -25,6 +25,9 @@ describe 'User Stories' do
     end
 
     scenario 'a player would like to play against the computer' do
+      # ::???::
+      # Is there a better way to test for randomness?
+      #
       allow_any_instance_of(Array).to receive(:sample).and_return("paper")
       sign_up_and_play
       choose('rock')

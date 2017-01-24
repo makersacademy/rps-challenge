@@ -2,6 +2,12 @@ require_relative 'computer'
 
 class Game
 
+  # ::???::
+  #
+  # What should be private?
+  # Not just in this class but in all classes of this app.
+  #
+
   attr_reader :player, :computer, :game
 
   def initialize(player, computer)
@@ -16,10 +22,6 @@ class Game
   def self.instance
     @game
   end
-
-  # Rock beats Scissors
-  # Scissors beats Paper
-  # Paper beats Rock
 
   def winner
     if @player.weapon == "rock" && @computer.weapon == "scissors"

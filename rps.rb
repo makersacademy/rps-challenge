@@ -3,6 +3,17 @@ require './lib/player'
 require './lib/game'
 require './lib/computer'
 
+#::???::
+#
+# Is the succession of GET / POST requests correct?
+# How could it be better?
+#
+# I am not sure about the use of variables in the controller and across POST and GET requests.
+# What is the best practice? How could it be better?
+#
+#
+
+
 class RPS < Sinatra::Base
 
   enable :sessions
