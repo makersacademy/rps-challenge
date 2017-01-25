@@ -1,31 +1,33 @@
 require_relative 'player'
 
 class Game
-  attr_reader :first_player, :second_player, :winner, :looser, :status, :switcher, :player_turn
+  attr_reader :first_player, :second_player, :winner, :looser, :status, :switcher, :player_turn, :number_players
 
-  def initialize(first_player = Player.new(name), second_player = Player.new(name))
+  def initialize(first_player = Player.new(name), second_player = Player.new(name), number_players = 0)
     @first_player = first_player
     @second_player = second_player
+    @number_players = number_players
     @players = [first_player, second_player]
     @status = "ongoing"
-    @switcher = 1
+    @player_turn
+    @switcher = 0
   end
 
-  def self.create(first_player, second_player)
-    @game = self.new(first_player, second_player)
+  def self.create(first_player, second_player, number_players)
+    @game = self.new(first_player, second_player, number_players)
   end
 
   def self.instance
     @game
   end
 
-  def get_winner(winner)
-    @winner = winner
-  end
-
   def get_player_to_play
     @player_turn = @players[@switcher]
     switch_turns
+  end
+
+  def get_winner(winner)
+    @winner = winner
   end
 
   def get_looser

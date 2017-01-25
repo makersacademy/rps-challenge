@@ -1,6 +1,5 @@
 class Player
-  attr_reader :name, :hit_points
-  attr_accessor :chosen_outcome
+  attr_reader :name, :hit_points, :chosen_outcome
 
   POSSIBLE_OUTCOMES = ["ROCK", "PAPER", "SCISSORS", "SPOCK", "LIZZARD"]
   INITIAL_HIT_POINTS = 30
@@ -12,11 +11,16 @@ class Player
     @chosen_outcome = chosen_outcome
   end
 
-  def randomizer
-    POSSIBLE_OUTCOMES.sample
+  def player_choice(chosen_outcome)
+    @chosen_outcome = chosen_outcome
+  end
+
+  def runs_random_choice
+    @chosen_outcome = POSSIBLE_OUTCOMES.sample
   end
 
   def deduct_hp
     @hit_points -= POINTS_LOST_MOVE
   end
+
 end

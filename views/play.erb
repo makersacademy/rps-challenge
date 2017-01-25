@@ -1,31 +1,48 @@
-<body style="background-color:#e6e6e6;font-family:verdana">
+<head>
+  <style>
+    body { background-color:#e6e6e6;
+           font-family:verdana
+          }
+    input { border-radius:8px;
+            font-weight:bold;
+            font-size:30px;
+            text-align:center;
+            width:200px;
+            height:80px;
+            border:0 none;
+            background-color:#ff6600
+          }
+  </style>
+</head>
+
+<body>
 
   <h1 style="font-size:20px" align="left">Rock, Paper and Scissors</h1>
   <h1 align="right"><%= @player_one_name %>: <%= @player_one_hp %> HP</h1>
   <h1 align="right"><%= @player_two_name %>: <%= @player_two_hp %> HP</h1>
   <br><br><br><br>
 
-  <% if @player_number == 0 %>
-    <form align="center" class="" action="/player_one_outcome" method="post">
+  <% if @number_players == 1 %>
+    <form align="center" class="" action="/game_with_one_player" method="post">
       <label style="font-size:30px" for=""><%= @player_one_name %>, it's your turn, please one of the following options:</label>
       <br><br><br>
-      <input style="border-radius:8px;font-weight:bold;font-size:30px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="rock_button_id" type="submit" name="rock" value="ROCK">
-      <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="paper_button_id" type="submit" name="paper" value="PAPER">
-      <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="SCISSORS">
-      <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="SPOCK">
-      <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="LIZZARD">
+      <input id="rock_button_id" type="submit" name="rock" value="ROCK">
+      <input id="paper_button_id" type="submit" name="paper" value="PAPER">
+      <input id="scissors_button_id" type="submit" name="scissors" value="SCISSORS">
+      <input id="scissors_button_id" type="submit" name="scissors" value="SPOCK">
+      <input id="scissors_button_id" type="submit" name="scissors" value="LIZZARD">
     </form>
   <% end %>
 
-  <% if @player_number == 1 %>
-    <form align="center" class="" action="/player_two_outcome" method="post">
-      <label style="font-size:30px" for=""><%= @player_two_name %>, it's your turn, please one of the following options:</label>
+  <% if @number_players == 2 %>
+    <form align="center" class="" action="/game_with_two_players" method="post">
+      <label style="font-size:30px" for=""><%= @player_name %>, it's your turn, please one of the following options:</label>
         <br><br><br>
-        <input style="border-radius:8px;font-weight:bold;font-size:30px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="rock_button_id" type="submit" name="rock" value="ROCK">
-        <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="paper_button_id" type="submit" name="paper" value="PAPER">
-        <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="SCISSORS">
-        <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="SPOCK">
-        <input style="border-radius:8px;font-weight:bold;font-size:25px;text-align:center;width:200px;height:80px;border:0 none;background-color:#ff6600" id="scissors_button_id" type="submit" name="scissors" value="LIZZARD">
+        <input id="rock_button_id" type="submit" name="rock" value="ROCK">
+        <input id="paper_button_id" type="submit" name="paper" value="PAPER">
+        <input id="scissors_button_id" type="submit" name="scissors" value="SCISSORS">
+        <input id="scissors_button_id" type="submit" name="scissors" value="SPOCK">
+        <input id="scissors_button_id" type="submit" name="scissors" value="LIZZARD">
     </form>
   <% end %>
 

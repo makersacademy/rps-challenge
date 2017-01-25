@@ -1,18 +1,53 @@
-<body style="background-color:#e6e6e6;font-family:verdana">
+<head>
+  <style>
+    body { background-color:#e6e6e6;
+           font-family:verdana
+         }
+    label { font-size:20px;
+            color:#595959
+          }
+    input { border-radius:4px;
+            font-size:15px;
+            width:100px;
+            height:30px;
+            border-color:#ff6600;
+            background-color:#e6e6e6
+          }
+  </style>
+</head>
+
+<body>
   <div class="">
     <h1>Welcome to the game of Rock, Paper, Scissors, Spock and Lizzard!</h1>
     <br>
     <h2>To play a new game you just have to register</h2>
     <br><br>
-    <form class="" action="/name" method="post">
-      <label style="font-size:20px;color:#595959" for="player_name">Player 1, insert your name here: </label>
-      <input style="border-radius:8px;font-size:15px;width:100px;height:30px;border-color:#ff6600;background-color:#e6e6e6" id="player_one_name_id" type="text" name="player_one_name">
-      <br><br>
-      <label style="font-size:20px;color:#595959" for="player_name">Player 2, insert your name here: </label>
-      <input style="border-radius:8px;font-size:15px;width:100px;height:30px;border-color:#ff6600;background-color:#e6e6e6" id="player_two_name_id" type="text" name="player_two_name">
-      (optional)
-      <br><br>
-      <input style="border-radius:8px;font-size:15px;font-weight:bold;width:100px;height:30px;border:0 none;background-color:#ff6600" type="submit" name="start_button" value="Start!">
+    <br><br>
+    <label for="player_name">Choose one of the following game otions: </label>
+    <br><br>
+
+    <form class="" action="/" method="post">
+      <input style="background-color:#ff6600" for="game_option_id" type="submit" name="one_player_game" value="1 PLAYER">
+      <input style="background-color:#ff6600" for="game_option_id" type="submit" name="two_player_game" value="2 PLAYERS">
     </form>
+    
+    <form class="" action="/name" method="post">
+      <br><br>
+      <% if !!@one_player_game || !!@two_player_game %>
+        <label for="player_name">Player 1, insert your name here: </label>
+        <input  id="player_one_name_id" type="text" name="player_one_name">
+        <br><br>
+      <% end %>
+      <% if !!@two_player_game  %>
+        <label for="player_name">Player 2, insert your name here: </label>
+        <input id="player_two_name_id" type="text" name="player_two_name">
+        <br><br>
+      <% end %>
+      <% if !!@one_player_game || !!@two_player_game %>
+        <input style="background-color:#ff6600" for="submit_button_id" type="submit" name="start_button" value="START!">
+      <% end %>
+    </form>
+
   </div>
+
 </body>

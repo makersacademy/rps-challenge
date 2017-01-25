@@ -1,9 +1,25 @@
-<body style="background-color:#e6e6e6;font-family:verdana">
+<head>
+  <style>
+    body { background-color:#e6e6e6;
+           font-family:verdana}
+
+    input { border-radius:8px;
+            font-size:15px;
+            font-weight:bold;
+            width:120px;
+            height:40px;
+            border:0 none;
+            background-color:#ff6600
+          }
+  </style>
+</head>
+
+<body>
   <% if @game_status == "ongoing" %>
     <form style="text-align:center" class="" action="/new_game" method="post">
       <br>
-      <h2>You choosed <%= @player_one %> </h2>
-      <h2>Your opponent choosed <%= @player_two %></h2>
+      <h2>You choosed <%= @player_one_outcome %> </h2>
+      <h2>Your opponent choosed <%= @player_two_outcome %></h2>
       <br>
       <% if @winner != nil %>
         <h1> Congratulations <%= @winner %>, this time you won!</h1>
@@ -11,7 +27,7 @@
         <h1>There are no winners!</h1>
       <% end %>
 
-      <input style="border-radius:8px;font-size:15px;font-weight:bold;width:120px;height:40px;border:0 none;background-color:#ff6600" type="submit" name="new_game" value="Play Again!">
+      <input type="submit" name="new_game" value="Play Again!">
     </form>
   <% end %>
 
