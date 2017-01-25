@@ -86,6 +86,7 @@ input[type="text"] {
     width: auto;
     font-size: 1em;
     margin-left: 5px;
+    text-align: center;
 }
 
 h1 {
