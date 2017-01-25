@@ -19,5 +19,5 @@ $ ruby app.rb
 
 Screenshots
 -------
-<img src=”http://www.dropbox.com/s/7swncapme979loi/screencapture-localhost-4567-1485167178802.png"></img>
-![Screenshot](http://www.dropbox.com/s/7swncapme979loi/screencapture-localhost-4567-1485167178802.png)
+
+![Screenshot](http://www.dropbox.com/s/7swncapme979loi/screencapture-localhost-4567-1485167178802.png?raw=1)
