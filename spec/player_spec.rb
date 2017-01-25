@@ -7,9 +7,9 @@ describe Player do
   subject(:player_one){described_class.new}
   subject(:player_two){described_class.new}
 
-  describe '#randomizer' do
+  describe '#runs_random_choice' do
     it 'randoms a possible outcome for player_two' do
-      expect(Player::POSSIBLE_OUTCOMES).to include(player_two.randomizer)
+      expect(Player::POSSIBLE_OUTCOMES).to include(player_two.runs_random_choice)
     end
   end
 

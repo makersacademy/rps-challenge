@@ -27,10 +27,10 @@
     <br><br>
 
     <form class="" action="/" method="post">
-      <input style="background-color:#ff6600" for="game_option_id" type="submit" name="one_player_game" value="1 PLAYER">
-      <input style="background-color:#ff6600" for="game_option_id" type="submit" name="two_player_game" value="2 PLAYERS">
+      <input style="background-color:#ff6600" id="game_option_id" type="submit" name="one_player_game" value="1 PLAYER">
+      <input style="background-color:#ff6600" id="game_option_id" type="submit" name="two_player_game" value="2 PLAYERS">
     </form>
-    
+
     <form class="" action="/name" method="post">
       <br><br>
       <% if !!@one_player_game || !!@two_player_game %>
