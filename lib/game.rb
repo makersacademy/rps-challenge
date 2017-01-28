@@ -9,7 +9,6 @@ class Game
   def initialize(choice_one, choice_two)
     @choice_one = choice_one ? choice_one.to_sym : :rock
     @choice_two = choice_two ? choice_two.to_sym : :rock
-    @options = [:rock, :paper, :scissors, :spock, :lizard]
   end
 
   def won?

@@ -31,7 +31,7 @@ class RockPaperScissors < Sinatra::Base
     @name = session[:name]
     @choice = session[:choice]
     @thrown = (Computer.new).weapon
-    @won = (Game.new(@choice, @thrown)).won?
+    @won = Game.new(@choice, @thrown).won?
     erb :game_one_player
   end
 
@@ -73,7 +73,7 @@ class RockPaperScissors < Sinatra::Base
     @name_two = session[:name_two]
     @choice_one = session[:choice_one]
     @choice_two = session[:choice_two]
-    @won = (Game.new(@choice_one, @choice_two)).won?
+    @won = Game.new(@choice_one, @choice_two).won?
     erb :game_two_players_final
   end
 
