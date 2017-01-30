@@ -1,0 +1,7 @@
+<br>Ready for some RPS, <%= @game.player.name %>?</br>
+<br>Choose your weapon...</br>
+<br><form action="/choices" method="POST">
+  <input type="submit" name="weapon" value="Rock"/>
+  <input type="submit" name="weapon" value="Paper"/>
+  <input type="submit" name="weapon" value="Scissors"/>
+</form></br>
