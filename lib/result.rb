@@ -1,5 +1,8 @@
 class Result
 
+
+attr_reader :game_result
+
   def responses(choices)
 
     win = {:Scissors => :Paper,
@@ -14,5 +17,9 @@ class Result
     else
       choices.last
     end
+  end
+
+  def final_result(result)
+    @game_result = result
   end
 end

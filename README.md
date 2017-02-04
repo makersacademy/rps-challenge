@@ -1,5 +1,7 @@
 # RPS Challenge
 
+Author: Courtney Osborn
+
 Instructions
 -------
 
@@ -21,10 +23,36 @@ The user will be playing against the computer and selecting a button which depen
 Access:
 -------
 
-- $ git clone git@github.com:CourtneyLO/rps-challenge.git
-- $ cd rps-challenge
-- $ install bundle
-- $ ruby app.rb
+       $ git clone git@github.com:CourtneyLO/rps-challenge.git
+       $ cd rps-challenge
+       $ install bundle
+       $ ruby app.rb
 
-- Then go to localhost:4567
-- And enjoy
+       Then go to localhost:4567
+       And enjoy
+
+Gems that should be Installed:
+-----------------------------
+
+- gem 'sinatra'
+- gem 'rake'
+- gem 'rspec-sinatra'
+- gem 'rspec'
+- gem 'capybara'
+
+Run Tests
+---------
+
+- $ rspec
+
+
+Ching-Chon-Cha:
+--------------
+![alt tag](/img/Screen Shot 2017-01-02 at 12.37.26.png)
+
+------------
+
+![alt tag](/img/Screen Shot 2017-01-02 at 13.07.25.png)
+
+------------
+![alt tag](/img/Screen Shot 2017-01-02 at 12.39.44.png)

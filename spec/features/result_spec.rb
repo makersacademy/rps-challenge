@@ -34,7 +34,6 @@ feature 'Result' do
     end
   end
 
-
   context "Result status" do
 
     scenario 'test that draw is returned' do

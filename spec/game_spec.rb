@@ -5,7 +5,7 @@ describe Game do
     let(:player_1) { double(:player_1) }
     let(:player_2) { double(:player_2) }
 
-    context ".player" do
+    context "@player" do
 
       it 'test that when player_1 is called player_1 is returned' do
         expect(game.player_1).to eq player_1
