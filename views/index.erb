@@ -2,25 +2,81 @@
 <html>
   <head>
     <title>RPS</title>
+    <style type="text/css">
+      h1 {
+        text-align: center;
+        font-size: 40px;
+      }
+      .instructions {
+        position: absolute;
+        left: 200px;
+        width: 400px;
+        border: 3px solid #73AD21;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .rules {
+        position: absolute;
+        right: 200px;
+        width: 400px;
+        border: 3px solid #73AD21;
+        padding: 5px 23px 40px 23px;
+        font-size: 20px;
+
+      }
+      #sign_in {
+        position: absolute;
+        width: 350px;
+        height: 300px;
+        top: 325px;
+        left: 500px;
+        border: 5px solid grey;
+        padding: 30px;
+        font-size: 25px;
+      }
+      .sign_in_heading {
+        text-align: center;
+      }
+
+      .button {
+        background-color: white;
+        border: 3px solid #73AD21;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        position:absolute;
+        top: 70%;
+        left: 33%;
+      }
+    </style>
   </head>
   <body>
     <h1> Ching-Chong-Cha </h1>
+    <div class="instructions">
     <h3> Instructions: </h3>
       <p> It is a two player game. You will be playing against the computer</p>
       <p> You can either pick rock, paper or scissors. Depending on the computers choice you could win, lose, or draw </p>
+    </div>
+    <div class="rules">
     <h3>Rules:</h3>
       <p> Rock:beats scissors </p>
       <p> Paper: beats rock </p>
       <p> Scissors: beats paper </p>
-    <h3>Please enter your name to start</h3>
-    <div>
-      <form action='./name' method='post' >
-        <lable for="player_1">First player's Name</lable>
-        <input type="text" name="player_1">
-        <lable for="player_2">Second player's Name</lable>
-        <input type="text" name="player_2">
-        <input type="submit" value="Submit">
-      </form>
+    </div>
+    <div id="sign_in">
+      <h3 class="sign_in_heading">Please enter your name to start</h3>
+      <div class="sign_in_form">
+        <form action='./name' method='post' >
+          <lable for="player_1">First player's Name</lable>
+          <input type="text" name="player_1">
+          <lable for="player_2">Second player's Name</lable>
+          <input type="text" name="player_2">
+          <input type="submit" class="button" value="Submit">
+        </form>
+      </div>
     </div>
   </body>
 </html>
