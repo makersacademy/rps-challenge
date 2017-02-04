@@ -14,8 +14,10 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(@player_1)
-    player_2 = Player.new(@player_2)
+    @player1 = params[:player_1]
+    @player2 = params[:player_2]
+    player_1 = Player.new(@player1)
+    player_2 = Player.new(@player2)
     @game = Game.create(player_1, player_2)
     redirect '/game'
   end
