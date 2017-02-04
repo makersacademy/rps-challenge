@@ -18,7 +18,7 @@ Rules:
 My Version:
 -------
 
-The user will be playing against the computer and selecting a button which depends on the call they want to make (rock, paper or scissors).
+Two players are required to play. Player 1 will make there choice of either rock, paper or scissors and then it's player 2's turn. The winner will be determined based on the players' choices. 
 
 Access:
 -------
