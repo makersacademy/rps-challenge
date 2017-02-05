@@ -1,32 +1,48 @@
+  html {
+    border: solid green;
+  }
+
   h1 {
-    text-align: center;
+    position: relative;
+    left: 525px;
     font-size: 40px;
   }
-  .instructions {
+  .image {
     position: absolute;
-    left: 200px;
-    width: 400px;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    font-size: 20px;
+    left: 550px;
+    width: 420px;
+    height: 530px;
+    top: 350px;
+    left: 460px;
+  }
+  .instructions {
+    background-image: url("/img/rock2.png");
+    background-size: 450px 480px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50px;
+    width: 300px;
+    padding: 150px 100px 120px 100px;
+    font-size: 18px;
+    top: 110px;
   }
   .rules {
+    background-image: url("/img/paper2.png");
+    background-size: 450px 480px;
+    background-repeat: no-repeat;
     position: absolute;
-    right: 200px;
-    width: 400px;
-    border: 3px solid #73AD21;
-    padding: 5px 23px 40px 23px;
+    right: 80px;
+    width: 300px;
+    padding: 118px 50px 120px 100px;
     font-size: 20px;
-
   }
   #sign_in {
     position: absolute;
     width: 350px;
-    height: 300px;
-    top: 325px;
-    left: 500px;
-    border: 5px solid grey;
-    padding: 30px;
+    height: 250px;
+    top: 100px;
+    left: 425px;
+    padding: 100px;
     font-size: 25px;
   }
   .sign_in_heading {
@@ -35,7 +51,7 @@
 
   .button {
     background-color: white;
-    border: 3px solid #73AD21;
+    border: solid black;
     color: black;
     padding: 15px 32px;
     text-align: center;

@@ -2,16 +2,21 @@
 <html>
   <head>
     <title>RPS</title>
+    <link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1> Ching-Chong-Cha </h1>
-    <div class="instructions">
-    <h3> Instructions: </h3>
-      <p> It is a two player game. You will be playing against the computer</p>
-      <p> You can either pick rock, paper or scissors. Depending on the computers choice you could win, lose, or draw </p>
+    <div class="container">
+      <img class="image" src="/img/scissors.png"  alt="Scissors">
+      <!-- <img class="image2" src="/img/paper.png"  alt="Paper"> -->
+      <div class="instructions">
+      <h3>Instructions:</h3>
+        <p> It is a two player game. You will be playing against the computer</p>
+        <p> You can either pick rock, paper or scissors. Depending on the computers choice you could win, lose, or draw </p>
+      </div>
     </div>
     <div class="rules">
-    <h3>Rules:</h3>
+    <h4>Rules:</h4>
       <p> Rock:beats scissors </p>
       <p> Paper: beats rock </p>
       <p> Scissors: beats paper </p>
@@ -21,9 +26,9 @@
       <div class="sign_in_form">
         <form action='./name' method='post' >
           <lable for="player_1">First player's Name</lable>
-          <input type="text" name="player_1">
+          <input type="text" name="player_1" placeholder="  Please Enter Name">
           <lable for="player_2">Second player's Name</lable>
-          <input type="text" name="player_2">
+          <input type="text" name="player_2" placeholder="  Please Enter Name">
           <input type="submit" class="button" value="Submit">
         </form>
       </div>
