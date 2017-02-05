@@ -48,11 +48,11 @@ Run Tests
 
 Ching-Chon-Cha:
 --------------
-![alt tag](public/img/Screen Shot 2017-01-02 at 12.37.26.png)
+![alt tag](app/public/img/Screen Shot 2017-01-02 at 12.37.26.png)
 
 ------------
 
-![alt tag](public/img/Screen Shot 2017-01-02 at 13.07.25.png)
+![alt tag](app/public/img/Screen Shot 2017-01-02 at 13.07.25.png)
 
 ------------
-![alt tag](public/img/Screen Shot 2017-01-02 at 12.39.44.png)
+![alt tag](app/public/img/Screen Shot 2017-01-02 at 12.39.44.png)
