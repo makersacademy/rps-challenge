@@ -18,7 +18,7 @@ Rules:
 My Version:
 -------
 
-Two players are required to play. Player 1 will make there choice of either rock, paper or scissors and then it's player 2's turn. The winner will be determined based on the players' choices. 
+Two players are required to play. Player 1 will make there choice of either rock, paper or scissors and then it's player 2's turn. The winner will be determined based on the players' choices.
 
 Access:
 -------
@@ -48,11 +48,11 @@ Run Tests
 
 Ching-Chon-Cha:
 --------------
-![alt tag](/img/Screen Shot 2017-01-02 at 12.37.26.png)
+![alt tag](public/img/Screen Shot 2017-01-02 at 12.37.26.png)
 
 ------------
 
-![alt tag](/img/Screen Shot 2017-01-02 at 13.07.25.png)
+![alt tag](public/img/Screen Shot 2017-01-02 at 13.07.25.png)
 
 ------------
-![alt tag](/img/Screen Shot 2017-01-02 at 12.39.44.png)
+![alt tag](public/img/Screen Shot 2017-01-02 at 12.39.44.png)

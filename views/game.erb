@@ -13,7 +13,7 @@
       <h2> Welcome <span class='name'> <%= @game.player_1.player_name %> and <%= @game.player_2.player_name%> </span> to Ching-Chong-Cha. </h3>
     </div>
     <div>
-      <h4><%= @game.player_1.player_name %> please choose rock, paper or scissors</h4>
+      <h4><%= @game.player_1.player_name %> Please choose rock, paper or scissors</h4>
       <form action='/rps' method="post">
         <input type="submit" name="choice" value="Rock">
         <input type="submit" name="choice" value="Paper">
