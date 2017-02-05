@@ -1,11 +1,19 @@
   html {
     border: solid green;
+    padding: 50px 50px 820px 50px;
   }
 
   h1 {
     position: relative;
-    left: 525px;
+    left: 480px;
+    top: 0px;
     font-size: 40px;
+  }
+  h2 {
+    text-align: center
+  }
+  h3 {
+    text-align: center
   }
   .image {
     position: absolute;
@@ -16,18 +24,18 @@
     left: 460px;
   }
   .instructions {
-    background-image: url("/img/rock2.png");
+    background-image: url("/img/rock.png");
     background-size: 450px 480px;
     background-repeat: no-repeat;
     position: absolute;
     left: 50px;
     width: 300px;
-    padding: 150px 100px 120px 100px;
+    padding: 150px 100px 126px 100px;
     font-size: 18px;
     top: 110px;
   }
   .rules {
-    background-image: url("/img/paper2.png");
+    background-image: url("/img/paper.png");
     background-size: 450px 480px;
     background-repeat: no-repeat;
     position: absolute;
@@ -48,7 +56,6 @@
   .sign_in_heading {
     text-align: center;
   }
-
   .button {
     background-color: white;
     border: solid black;
@@ -60,5 +67,32 @@
     font-size: 16px;
     position:absolute;
     top: 70%;
-    left: 33%;
+    left: 36%;
+  }
+  .options {
+    border: solid black;
+  }
+  .rock{
+    z-index: 1;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 250px;
+    left: 300px;
+  }
+  .paper{
+    z-index: 1;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 250px;
+    right: 270px;
+  }
+  .scissors{
+    z-index: 0;
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    top: 390px;
+    left: 550px;
   }

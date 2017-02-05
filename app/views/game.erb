@@ -2,23 +2,20 @@
 <html>
   <head>
     <title>RPS-Game</title>
-    <style type="text/css">
-      .name {
-          color: rgb(170,1,20)
-          }
-    </style>
+    <link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
   </head>
   <body>
     <div>
       <h2> Welcome <span class='name'> <%= @game.player_1.player_name %> and <%= @game.player_2.player_name%> </span> to Ching-Chong-Cha. </h3>
     </div>
-    <div>
-      <h4><%= @game.player_1.player_name %> Please choose rock, paper or scissors</h4>
-      <form action='/rps' method="post">
-        <input type="submit" name="choice" value="Rock">
-        <input type="submit" name="choice" value="Paper">
-        <input type="submit" name="choice" value="Scissors">
-      </form>
+      <h3><%= @game.player_1.player_name %> please choose Rock, Paper or Scissors</h3>
+      <div class="options">
+        <form action='/rps' method="post">
+          <input type="image" src="/img/rock.png" class="rock" name="choice" value="Rock" alt="Rock">
+          <input type="image" src="/img/paper.png" class="paper" name="choice" value="Paper" alt="Paper">
+          <input type="image" src="/img/scissors.png" class="scissors" name="choice" value="Scissors" alt="Scissors">
+        </form>
     </div>
   </body>
 </html>
