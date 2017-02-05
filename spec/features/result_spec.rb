@@ -11,17 +11,17 @@ feature 'Result' do
 
       scenario 'test to see users selection of Rock' do
         click_button(:Rock)
-        expect(page).to have_content "Russell, please choose rock, paper or scissors"
+        expect(page).to have_content "Russell, please choose Rock, Paper or Scissors"
       end
 
     scenario 'test to see users selection of Scissors' do
       click_button(:Scissors)
-      expect(page).to have_content "Russell, please choose rock, paper or scissors"
+      expect(page).to have_content "Russell, please choose Rock, Paper or Scissors"
     end
 
     scenario 'test to see users selection of Paper' do
       click_button(:Paper)
-      expect(page).to have_content "Russell, please choose rock, paper or scissors"
+      expect(page).to have_content "Russell, please choose Rock, Paper or Scissors"
     end
   end
 

@@ -96,3 +96,79 @@
     top: 390px;
     left: 550px;
   }
+  #buttons2 {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  #player1 {
+    position: absolute;
+    border: solid black;
+    padding: 50px;
+    top: 100px;
+    left: 300px;
+  }
+  #player2 {
+    position: absolute;
+    border: solid black;
+    padding: 50px;
+    top: 100px;
+    right: 180px;
+  }
+  #winner {
+    border: 50px solid transparent;
+    border-image: url("http://www.gifstop.com/images/borders/pic.gif") 30;
+    position: absolute;
+    padding: 220px 200px 200px 220px;
+    top: 330px;
+    left: 300px;
+    font-size: 50px;
+  }
+  .r1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 110px;
+    left: 600px;
+  }
+  .p1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 110px;
+    left: 740px;
+  }
+  .s1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 110px;
+    left: 875px;
+  }
+  .button1 {
+    background-color: white;
+    border: solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top: 0px;
+    right: 1200px;
+  }
+
+  .button2 {
+    background-color: white;
+    border: solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top: 0px;
+    right: 30px;
+  }
