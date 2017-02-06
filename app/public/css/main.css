@@ -1,11 +1,12 @@
+
   html {
     border: solid green;
-    padding: 50px 50px 820px 50px;
+    padding: 50px 50px 830px 100px;
   }
 
   h1 {
     position: relative;
-    left: 480px;
+    left: 350px;
     top: 0px;
     font-size: 40px;
   }
@@ -21,14 +22,14 @@
     width: 420px;
     height: 530px;
     top: 350px;
-    left: 460px;
+    left: 402px;
   }
   .instructions {
     background-image: url("/img/rock.png");
     background-size: 450px 480px;
     background-repeat: no-repeat;
     position: absolute;
-    left: 50px;
+    left: 10px;
     width: 300px;
     padding: 150px 100px 126px 100px;
     font-size: 18px;
@@ -39,9 +40,9 @@
     background-size: 450px 480px;
     background-repeat: no-repeat;
     position: absolute;
-    right: 80px;
+    right: 10px;
     width: 300px;
-    padding: 118px 50px 120px 100px;
+    padding: 120px 50px 122px 100px;
     font-size: 20px;
   }
   #sign_in {
@@ -49,9 +50,9 @@
     width: 350px;
     height: 250px;
     top: 100px;
-    left: 425px;
+    left: 370px;
     padding: 100px;
-    font-size: 25px;
+    font-size: 23px;
   }
   .sign_in_heading {
     text-align: center;
@@ -78,7 +79,7 @@
     height: 300px;
     width: 300px;
     top: 250px;
-    left: 300px;
+    left: 250px;
   }
   .paper{
     z-index: 1;
@@ -86,7 +87,7 @@
     height: 300px;
     width: 300px;
     top: 250px;
-    right: 270px;
+    right: 150px;
   }
   .scissors{
     z-index: 0;
@@ -94,7 +95,7 @@
     height: 350px;
     width: 350px;
     top: 390px;
-    left: 550px;
+    left: 500px;
   }
   #buttons2 {
     position: absolute;
@@ -105,47 +106,48 @@
     position: absolute;
     border: solid black;
     padding: 50px;
-    top: 100px;
-    left: 300px;
+    top: 15%;
+    left: 10%;
   }
   #player2 {
     position: absolute;
     border: solid black;
     padding: 50px;
-    top: 100px;
-    right: 180px;
+    top: 15%;
+    right: 10%;
   }
   #winner {
+    position: absolute;
     border: 50px solid transparent;
     border-image: url("http://www.gifstop.com/images/borders/pic.gif") 30;
-    position: absolute;
     padding: 220px 200px 200px 220px;
-    top: 330px;
-    left: 300px;
+    top: 35%;
+    left: 18%;
     font-size: 50px;
   }
   .r1 {
     position: absolute;
     height: 100px;
     width: 100px;
-    top: 110px;
-    left: 600px;
+    top: 17%;
+    left: 35%;
   }
   .p1 {
     position: absolute;
     height: 100px;
     width: 100px;
-    top: 110px;
-    left: 740px;
+    top: 17%;
+    left: 46%;
   }
   .s1 {
     position: absolute;
     height: 100px;
     width: 100px;
-    top: 110px;
-    left: 875px;
+    top: 17%;
+    left: 56%;
   }
-  .button1 {
+  .play_again {
+    position: absolute;
     background-color: white;
     border: solid black;
     color: black;
@@ -155,11 +157,11 @@
     display: inline-block;
     font-size: 16px;
     position:absolute;
-    top: 0px;
-    right: 1200px;
+    top: 5px;
+    left: 30px;
   }
-
-  .button2 {
+  .new_player {
+    position: absolute;
     background-color: white;
     border: solid black;
     color: black;
@@ -169,6 +171,6 @@
     display: inline-block;
     font-size: 16px;
     position:absolute;
-    top: 0px;
+    top: 5px;
     right: 30px;
   }

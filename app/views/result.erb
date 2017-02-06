@@ -2,20 +2,18 @@
 <html>
   <head>
     <title>RPS</title>
-    <link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('/css/main.css') %>" rel="stylesheet" type="text/css" />
   </head>
   <body>
-      <div id="buttons2">
-        <form action="/game" method="get">
-          <input class="button1" type="submit" name="response" value="Play Again">
-        </form>
-        <form action="/" method="get">
-          <input class="button2" type="submit" name="response" value="New Player">
-        </form>
-      </div>
-      <img class="r1" src="/img/rock.png"  alt="Rock"><img class="p1" src="/img/paper.png"  alt="Paper"><img class="s1" src="/img/scissors.png"  alt="Scissors">
-      <div id="player1"> <%= @game.player_1.player_name %> chose: <%= @game.player_1.users_choice.to_s.capitalize %> </div>
-      <div id="player2">  <%= @game.player_2.player_name %> chose: <%= @game.player_2.users_choice.to_s.capitalize %> </div>
-      <div id="winner"> The Winner is: <%= @game.winner %> </div>
+    <form action="/game" method="get">
+      <input class="play_again" type="submit" name="response" value="Play Again">
+    </form>
+    <form action="/" method="get">
+      <input class="new_player" type="submit" name="response" value="New Player">
+    </form>
+    <img class="r1" src="/img/rock.png"  alt="Rock"><img class="p1" src="/img/paper.png"  alt="Paper"><img class="s1" src="/img/scissors.png"  alt="Scissors">
+    <div id="player1"> <%= @game.player_1.player_name %> chose: <%= @game.player_1.users_choice.to_s.capitalize %> </div>
+    <div id="player2">  <%= @game.player_2.player_name %> chose: <%= @game.player_2.users_choice.to_s.capitalize %> </div>
+    <div id="winner"> The Winner is: </br> <center><%= @game.winner %><center> </div>
   </body>
-  </html>
+</html>
