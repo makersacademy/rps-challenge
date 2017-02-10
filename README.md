@@ -11,7 +11,7 @@ Instructions
 How to play
 --------
 - http://localhost:4567
-- Enter your name
+- Enter your names
 - Player 1 chooses their weapon
 - Player 2 chooses their weapon
 - Result is shown
