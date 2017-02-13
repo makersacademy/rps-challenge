@@ -1,0 +1,9 @@
+<p>Your choice: <%= @result[1].capitalize %></p>
+<p>Computer choice: <%= @result[2].capitalize %></p>
+<p>Result: You <%= @result[0].capitalize %>!!!</p>
+
+<form action="/play" method="get">
+	<div>
+    <input type="submit" value="Play again?"/>
+  </div>
+</form>

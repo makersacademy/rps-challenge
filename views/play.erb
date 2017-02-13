@@ -1,0 +1,8 @@
+Welcome to the game <%= @game.player.name %>
+
+<form action="/result" method="post">
+  <input type="radio" name="player_choice" value="rock" id="rock" > Rock
+  <input type="radio" name="player_choice" value="paper" id="paper"> Paper
+  <input type="radio" name="player_choice" value="scissors" id="scissors"> Scissors
+  <input type="submit" value="Make Descision!">
+</form>
