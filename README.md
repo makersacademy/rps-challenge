@@ -12,6 +12,10 @@ Instructions
 * Make a selection
 * See if you win or lose!
 
+[Demo Video](https://vimeo.com/204053452) 
+
+[Blog](https://medium.com/@pelensky/weekend-challenge-rock-paper-scissors-spock-lizard-c28c6ca626a3#.z1y42upl7)
+
 The Task as described:
 -----
 
