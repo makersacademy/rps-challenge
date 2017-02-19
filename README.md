@@ -16,10 +16,9 @@ Instructions for getting started
 -------
 
 * this repo was originally forked from Makers Academy
-* Fork this repo
-* run bundle install
+* Fork or clone this repo
+* run ```bundle install```
 * initialize rspec-sinatra
-* TEST drive development of your app
 * coveralls are running to check test coverage
 
 
@@ -46,22 +45,6 @@ I would like to be able to play rock/paper/scissors
 * All tests pass
 * There is high test coverage (100%)
 
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear!
-```
 
 You can get a summary locally by running:
 
