@@ -7,10 +7,11 @@ h2   {color: royalblue;}
 h3   {color: royalblue;}
 </style>
 </head>
-<h1>Are you ready?</h2>
-<h2>Enter player 2 name to begin</h3>
-<form action="/name" method="post">
-  <input type="text" name="player_name">
+<h1>Rock Paper Scissors</h1>
+<h3>Enter player names: </h3>
+<form action="/players/names" method="post">
+  <input type="text" name="player1_name">
+  <input type="text" name="player2_name">
   <input type="submit" value="Submit">
 </form>
 </html>

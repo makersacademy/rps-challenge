@@ -2,40 +2,42 @@ require_relative 'player'
 
 class Game
 
+WINNING_CHOICES = [[:Rock, :Scissors], [:Scissors, :Paper], [:Paper, :Rock]]
+
 attr_reader :player1, :player2
-  def initialize(name1)
+
+  def initialize(name1, name2)
     @player1 = Player.new(name1)
+    @player2 = Player.new(name2)
   end
 
   def winner
-    winning_choices = [[:Rock, :Scissors], [:Scissors, :Paper], [:Paper, :Rock]]
-    choices = [@player1.choice, @player2.choice]
-    if choices[0] == choices[1]
+    if draw?
       'No one'
-    elsif winning_choices.include?(choices)
+    elsif player_1_winner?
       'Player 1'
     else
       'Player 2'
     end
   end
 
-  def second_player(name)
-    @player2 = Player.new(name)
+  def draw?
+    player_choices[0] == player_choices[1]
   end
 
-  def player1_choice
-    @player1.choice
+  def player_1_winner?
+    WINNING_CHOICES.include?(player_choices)
   end
 
-  def player2_choice
-    @player2.choice
+  def player_choices
+    [@player1.choice, @player2.choice]
   end
 
-  def self.create(name1)
-    @game ||= Game.new(name1)
+  def self.create(name1, name2)
+    @game ||= Game.new(name1, name2)
   end
 
   def self.instance
-  @game
+    @game
   end
 end

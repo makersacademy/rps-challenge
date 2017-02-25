@@ -7,30 +7,34 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/second_name' do
-    @game = Game.create(params[:player_name])
-    erb :second_name
+  post '/game/new' do
+    erb :'game/new'
   end
 
-  post '/name' do
-    @game = Game.instance
-    @game.second_player(params[:player_name])
-    erb :play
+  post '/players/names' do
+    @game = Game.create(params[:player1_name], params[:player2_name])
+    redirect 'players/1/choice'
   end
 
-  post '/next_choice' do
+  get '/players/1/choice' do
+    erb :'players/1/choice'
+  end
+
+  post '/players/2/choice' do
     @game = Game.instance
     @game.player1.set_choice(params[:choice].to_sym)
-    erb :second_choice
+    redirect '/players/2/choice'
   end
 
-  post '/result' do
+  get '/players/2/choice' do
+    erb :'players/2/choice'
+  end
+
+  post '/game/result' do
     @game = Game.instance
     @game.player2.set_choice(params[:choice].to_sym)
-    @choice1 = @game.player1.choice
-    @choice2 = @game.player2.choice
     @winner = @game.winner
-    erb :result
+    erb :'game/result'
   end
 
 end
