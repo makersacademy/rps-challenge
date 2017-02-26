@@ -13,5 +13,5 @@ def sign_in_and_make_choices
   fill_in :player2_name, with: 'Andrew'
   click_button 'Submit'
   click_button 'Rock'
-  click_button 'Paper'
+  click_button 'Spock'
 end

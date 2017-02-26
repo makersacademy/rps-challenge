@@ -1,18 +1,19 @@
 
 <html>
 <head>
-<style>
-body {background-color: lightcyan;
-  font-family: "Courier New", Courier, monospace;}
-h1 {color: royalblue;
-  font-family: "Courier New", Courier, monospace;}
-h2   {color: royalblue;}
-</style>
 </head>
-<h1>Player 2, please choose rock, paper or scissors</h1>
-<form action="/result" method="post">
-  <input type="submit" name = 'choice' value="Rock">
-  <input type="submit" name = 'choice' value="Paper">
-  <input type="submit" name = 'choice' value="Scissors">
+<h1> <%=@player2_name%>, please choose:</h1>
+<form action="/game/result" method="post">
+  <p>
+    <input id="choice" type="submit" name = 'choice' value="Rock">
+    <input id="choice" type="submit" name = 'choice' value="Paper">
+  </p>
+  <p>
+    <input id="choice" type="submit" name = 'choice' value="Scissors">
+    <input id="choice" type="submit" name = 'choice' value="Lizard">
+  </p>
+  <p>
+    <input id="choice" type="submit" name = 'choice' value="Spock">
+  </p>
 </form>
 </html>

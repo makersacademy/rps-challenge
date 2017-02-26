@@ -1,0 +1,64 @@
+body {
+  background-image: url("http://pre08.deviantart.net/b9d0/th/pre/f/2013/319/2/f/triangular_spock_wallpaper_by_mrsspock-d6uaqvl.png");
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: rgb(25,80,120);
+  margin-left: 30px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+
+#ready{
+  margin-top: 30px;
+}
+
+#new_game {
+  color: rgb(25,80,120);
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  background-color: rgb(220, 50, 0);
+  height: 75px;
+  width: 150px;
+  border-width: 5px;
+}
+
+#names{
+  margin-top: 50px;
+}
+
+#first_name{
+  border-width: 5px;
+}
+
+#second_name{
+  border-width: 5px;
+}
+
+#names_submit{
+  border-width: 5px;
+  color: rgb(25,80,120);
+  font-weight: bold;
+  width: 100px;
+}
+
+#choice{
+  border-width: 5px;
+  width: 100px;
+  color: rgb(25,80,120);
+  font-weight: bold;
+}
+
+#result{
+  margin-top: 170px;
+  margin-left: 60px;
+  font-size: 50px;
+}
+
+#diagram{
+  margin-top: 35;
+  margin-left: 40px;
+  width: 400px;
+  height: 400px;
+}

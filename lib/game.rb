@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-WINNING_CHOICES = [[:Rock, :Scissors], [:Scissors, :Paper], [:Paper, :Rock]]
+WINNING_CHOICES = [[:Scissors, :Paper], [:Paper, :Rock], [:Rock, :Lizard], [:Lizard, :Spock], [:Spock, :Scissors], [:Scissors, :Lizard], [:Lizard, :Paper], [:Paper, :Spock],  [:Spock, :Rock], [:Rock, :Scissors]]
 
 attr_reader :player1, :player2
 
@@ -15,9 +15,9 @@ attr_reader :player1, :player2
     if draw?
       'No one'
     elsif player_1_winner?
-      'Player 1'
+      @player1.name
     else
-      'Player 2'
+      @player2.name
     end
   end
 

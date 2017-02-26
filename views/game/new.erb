@@ -1,17 +1,14 @@
 <html>
 <head>
-<style>
-body {background-color: lightcyan;}
-h1   {color: royalblue;}
-h2   {color: royalblue;}
-h3   {color: royalblue;}
-</style>
 </head>
-<h1>Rock Paper Scissors</h1>
+<body>
+<div id="names">
 <h3>Enter player names: </h3>
 <form action="/players/names" method="post">
-  <input type="text" name="player1_name">
-  <input type="text" name="player2_name">
-  <input type="submit" value="Submit">
+  <input id="first_name"type="text" name="player1_name">
+  <input id="second_name" type="text" name="player2_name">
+  <input id="names_submit" type="submit" value="Submit">
+</div>
 </form>
+</body>
 </html>

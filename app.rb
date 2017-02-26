@@ -17,6 +17,8 @@ class RPS < Sinatra::Base
   end
 
   get '/players/1/choice' do
+    @game = Game.instance
+    @player1_name = @game.player1.name
     erb :'players/1/choice'
   end
 
@@ -27,6 +29,8 @@ class RPS < Sinatra::Base
   end
 
   get '/players/2/choice' do
+    @game = Game.instance
+    @player2_name = @game.player2.name
     erb :'players/2/choice'
   end
 
