@@ -64,7 +64,14 @@ h1 {
   height: 400px;
 }
 
-#new_game{
+#play_again{
   margin-top: 20px;
   margin-left: 900px;
+  color: rgb(25,80,120);
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  background-color: rgb(220, 50, 0);
+  height: 75px;
+  width: 150px;
+  border-width: 5px;
 }
