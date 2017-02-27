@@ -1,10 +1,11 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby '2.4.0'
 
 gem 'sinatra'
 gem 'rake'
-
+gem 'rack'
+gem 'selenium-webdriver'
 group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
