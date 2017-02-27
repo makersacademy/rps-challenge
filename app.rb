@@ -37,6 +37,11 @@ class RPS < Sinatra::Base
   post '/game/result' do
     @game = Game.instance
     @game.player2.set_choice(params[:choice].to_sym)
+    redirect '/game/result'
+  end
+
+  get '/game/result' do
+    @game = Game.instance
     @winner = @game.winner
     erb :'game/result'
   end

@@ -52,7 +52,7 @@ h1 {
 }
 
 #result{
-  margin-top: 170px;
+  margin-top: 50px;
   margin-left: 60px;
   font-size: 50px;
 }
@@ -62,4 +62,9 @@ h1 {
   margin-left: 40px;
   width: 400px;
   height: 400px;
+}
+
+#new_game{
+  margin-top: 40px;
+  margin-left: 150px;
 }

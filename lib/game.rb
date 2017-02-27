@@ -34,7 +34,7 @@ attr_reader :player1, :player2
   end
 
   def self.create(name1, name2)
-    @game ||= Game.new(name1, name2)
+    @game = Game.new(name1, name2)
   end
 
   def self.instance
