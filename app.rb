@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   get '/' do
-    'Testing infrastructure working!'
+    erb(:index)
   end
 
   # start the server if ruby file executed directly
