@@ -49,21 +49,27 @@ describe Game do
 
   context "#winner" do
 
-    it "returns Draw when same selection is made" do
+    it "announces Draw when same selection is made" do
       allow(player1).to receive(:selection){"rock"}
       allow(player2).to receive(:selection){"rock"}
       expect(game.winner).to eq 'Draw!'
     end
 
-    it "returns 'Dave won' when player 1 wins" do
+    it "announces player 1 won" do
       allow(player1).to receive(:selection){"rock"}
       allow(player2).to receive(:selection){"scissors"}
       expect(game.winner).to eq 'Dave won!'
     end
 
-    it "returns 'Mittens won' when player 2 wins" do
+    it "announces player 2 won" do
       allow(player1).to receive(:selection){"paper"}
       allow(player2).to receive(:selection){"scissors"}
+      expect(game.winner).to eq 'Mittens won!'
+    end
+
+    it "announces player 2 won" do
+      allow(player1).to receive(:selection){"spock"}
+      allow(player2).to receive(:selection){"lizard"}
       expect(game.winner).to eq 'Mittens won!'
     end
 

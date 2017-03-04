@@ -15,4 +15,14 @@ feature "Selection page" do
     expect{choose('scissors')}.to_not raise_error
   end
 
+  scenario "Lets the player choose 'Lizard' option" do
+    sign_in_and_play
+    expect{choose('lizard')}.to_not raise_error
+  end
+
+  scenario "Lets the player choose 'Spock' option" do
+    sign_in_and_play
+    expect{choose('spock')}.to_not raise_error
+  end
+
 end

@@ -2,9 +2,9 @@ class Bot
 
 attr_reader :name, :selection
 
-  def initialize(name = "PlayBOT")
+  def initialize(name = "PlayBOT", selection = ['rock','paper','scissors', 'spock', 'lizard'])
     @name = name
-    @selection = ['rock','paper','scissors'].sample
+    @selection = selection.sample
   end
 
 end

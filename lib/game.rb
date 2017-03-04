@@ -31,9 +31,9 @@ class Game
   end
 
   def winner
-    precedence = [ 'scissors', 'paper', 'rock' ]
+    precedence = [ 'rock', 'spock', 'paper', 'lizard', 'scissors' ]
     result = ['Draw!', "#{player1.name} won!", "#{player2.name} won!"]
-    result[precedence.index(player2.selection) - precedence.index(player1.selection) % 3]
+    player2.selection == player1.selection ? result[0] : ((precedence.index(player2.selection) - precedence.index(player1.selection)) % 5 ) < 3 ? result[2] : result[1]
   end
 
   def both_players_chose?

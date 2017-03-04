@@ -28,4 +28,14 @@ feature "Winner announced" do
     expect(page).to have_content 'Mittens won!'
   end
 
+  scenario "Announces Player 2 as winner" do
+    sign_in_and_play
+    sign_in_and_play
+    choose('lizard')
+    click_button('selected')
+    choose('scissors')
+    click_button('selected')
+    expect(page).to have_content 'Mittens won!'
+  end
+
 end
