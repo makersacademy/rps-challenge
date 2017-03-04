@@ -1,16 +1,16 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
-
-  enable :sessions
 
   get '/' do
     erb(:index)
   end
 
   post '/play' do
-    session[:plyr_name] = params[:name]
-    @player = session[:plyr_name]
+    @game = Game.create(Player.new(params[:name]), Computer.new)
     erb(:play)
   end
 
