@@ -9,6 +9,7 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     p params
     session[:name] = params[:name]
+    @player = Player.new(params[:name])
     redirect '/play'
   end
 
