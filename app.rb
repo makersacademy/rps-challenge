@@ -1,24 +1,22 @@
 require 'sinatra/base'
+require './lib/rock_paper_scissors'
 
 class Game < Sinatra::Base
-
-  enable :sessions
 
   run! if app_file == $0
 
   get '/' do
     erb :name
   end
-# this method will get the user input for player name and
-# save it to a session before redirecting to the /welcome method
+# this method calls a class method which create a new instance
+# of the RPS class and passes the name as a parameter
   post '/names' do
-    session['player_name'] = params[:player_name]
+    RPS.create(params[:player_name])
     redirect '/welcome'
   end
-# this method will take the session from /names method and
-# save it to an instance variable, then load up the welcome page
+# the welcome.erb file below can now access the same instance of
+# RPS class created above, to display the player name.
   get '/welcome' do
-    @player_name = session['player_name']
     erb :welcome
   end
 
