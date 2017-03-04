@@ -2,8 +2,16 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
-    "Welcome to Rock/Paper/Scissors"
+    erb(:index)
+  end
+
+  post '/play' do
+    session[:plyr_name] = params[:name]
+    @player = session[:plyr_name]
+    erb(:play)
   end
 
 
