@@ -6,7 +6,7 @@ class Player
     @name = name
   end
 
-  def selected(selection)
+  def selected(selection = nil)
     @selection = selection
   end
 

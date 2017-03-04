@@ -6,6 +6,9 @@
   <p><%=@game.player1.name%> selected <%=@game.player1.selection%></p>
   <p><%=@game.player2.name%> selected <%=@game.player2.selection%></p>
   <p><%=@game.winner%></p>
+  <form name="options" action="/" method="GET">
+    <input type="submit" value="Retry" id="retry">
+  </form>
 <% else %>
   <p></p>
   <p></p>

@@ -10,7 +10,8 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:name_1]), Player.new(params[:name_2]))
+    @player2 = params[:player2] == 'bot' ? Bot.new : Player.new(params[:name_2])
+    @game = Game.create(Player.new(params[:name_1]), @player2)
     redirect '/play'
   end
 
