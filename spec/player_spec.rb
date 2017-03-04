@@ -21,9 +21,9 @@ describe Player do
 
   describe 'selection' do
     it 'knows its selection' do
-      #// need to define rock - new object class??
+      rock = Weapon.new('Rock')
       player.choose_weapon(rock)
-      expect(player.weapon).to eq rock
+      expect(player.weapon).to eq (rock)
     end
   end
 
