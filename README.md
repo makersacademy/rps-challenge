@@ -91,22 +91,7 @@ Progress
   * Feature-tested and coded for the controller and the views.
   * If the human player provides a non-RPS weapon, the controller returns them to the weapon choice form, so they can provide a RPS one.
   * A new human player can now register and replace the current one when play begins.
-  * Screenshots:
-    - registration upon starting new game (redirect from '/'):
 
-    ![Screenshot](https://www.dropbox.com/s/88uysvcvihvf8gm/Screenshot%202017-01-22%2018.50.43.png?dl=0)
-    - choice of weapon:
-
-    ![Screenshot](https://www.dropbox.com/s/jllgezymxargh5v/Screenshot%202017-01-22%2018.51.46.png?dl=0)
-    - confirmation opponent (i.e. computer) has chosen their weapon too:
-
-    ![Screenshot](https://www.dropbox.com/s/vo4rixbffl2c77q/Screenshot%202017-01-22%2018.52.39.png?dl=0)
-    - result:
-
-    ![Screenshot](https://www.dropbox.com/s/4x3mhxfd5otqj8s/Screenshot%202017-01-22%2018.53.19.png?dl=0)
-    - after clicking 'Play', the game restarts and recognises the registered user:
-
-    ![Screenshot](https://www.dropbox.com/s/n54ncwh834waef8/Screenshot%202017-01-22%2018.54.01.png?dl=0)
 4. Bonus Level 1: Multiplayer
   * Replaced computer with second human player.
     - Players now register both their names
