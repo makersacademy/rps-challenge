@@ -11,7 +11,7 @@ class Game < Sinatra::Base
 # this method calls a class method which create a new instance
 # of the RPS class and passes the name as a parameter
   post '/names' do
-    RPS.create(params[:player_name])
+    Player.create(params[:player_name])
     redirect '/welcome'
   end
 # the welcome.erb file below can now access the same instance of
