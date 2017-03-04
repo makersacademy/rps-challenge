@@ -7,7 +7,7 @@ describe RockPaperScissors, :type => :feature do
   feature "main page" do
     scenario "shows the welcome message" do
       visit '/'
-      expect(page).to have_content("Welcome to Rock/Paper/Scissors!")
+      expect(page).to have_content("Play Rock-Paper-Scissors!")
     end
   end
 
@@ -22,7 +22,7 @@ describe RockPaperScissors, :type => :feature do
     scenario "shows the result page with each player's choices" do
       enter_name
       fill_in :selection, with: "rock"
-      click_button("FIGHT")
+      click_button("THROW!")
       expect(page).to have_content("Result:")
       expect(page).to have_content("#{player.name} chose rock")
       expect(page).to have_content("#{computer.name} chose #{computer.weapon}")
