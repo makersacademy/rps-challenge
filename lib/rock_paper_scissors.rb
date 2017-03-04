@@ -1,4 +1,5 @@
 require_relative 'player'
+require_relative 'opponent'
 
 class RPS
 
@@ -16,5 +17,15 @@ class RPS
 
   def display_players(name=@player)
     name
+  end
+
+  def opponent_move(move=@opponent_move)
+    @opponent_move
+  end
+
+  def rock
+    Opponent.create_opponent
+    Opponent.instance.move
+    @opponent_move = Opponent.instance.opponent_move
   end
 end
