@@ -17,9 +17,10 @@ class Game
     elsif @player.option == "Rock" && random_option == "Paper" ||
           @player.option == "Paper" && random_option == "Scissors" ||
           @player.option == "Scissors" && random_option == "Rock"
+      "computer"
     else
       @player.name
     end
   end
-  
+
 end

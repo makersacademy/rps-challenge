@@ -1,25 +1,29 @@
+html {
+  background-image: url('background.jpg');
+  background-position: center;
+}
+
 div {
-  border: 2px solid rgba(0, 73, 145, 1.0);
-  color: rgba(0, 73, 145, 1.0);
+  border: 2px solid black;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: Griffy;
-  letter-spacing: 2px;
+  font-family: 'Vast Shadow', cursive;
 }
 
 .button {
   margin: 25px;
-  font-size: 35px;
-  font-family: Griffy;
+  font-size: 40px;
+  font-family: 'Vast Shadow', cursive;
   background-color: white;
-  border: 2px solid rgba(0, 73, 145, 1.0);
-  color: rgba(0, 73, 145, 1.0);
-  letter-spacing: 4px;
+  border: 2px solid black;
 }
 
 .field {
+  text-align: center;
+  font-family: avenir;
+  font-size: 20px;
   height: 40px;
-  border: 2px solid rgba(0, 73, 145, 1.0);
+  border: 2px solid black;
 }
