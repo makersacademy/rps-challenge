@@ -1,15 +1,25 @@
+$VERBOSE=nil
 require 'sinatra'
 
 class RockPaperScissors < Sinatra::Base
-
+  enable :sessions
   get '/' do
     erb(:index)
   end
 
   post '/names' do
     p params
-    @player_1 = params[:player_1]
-    erb(:play)
+    session[:player_1_name] = params[:player_1]
+    redirect '/rules'
+  end
+
+  get '/rules' do
+    @player_1 = session[:player_1_name]
+    erb(:rules)
+  end
+
+  get '/play' do
+    "Play!"
   end
 
   # start the server if ruby file executed directly
