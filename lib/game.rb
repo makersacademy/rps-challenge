@@ -28,7 +28,7 @@ class Game
     @current_player = opponent_player
     @opponent_player = players.select{|player| player != current_player}.first
   end
-
+  
   private
   attr_reader :players
 end
