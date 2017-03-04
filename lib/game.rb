@@ -1,7 +1,11 @@
 class Game
 
+  attr_reader :current_player, :opponent_player
+
   def initialize(player1, player2)
     @players = [player1, player2]
+    @current_player = player1
+    @opponent_player = player2
   end
 
   def self.create(player1, player2)
@@ -18,6 +22,11 @@ class Game
 
   def player2
     players.last
+  end
+
+  def switch
+    @current_player = opponent_player
+    @opponent_player = players.select{|player| player != current_player}
   end
 
   private
