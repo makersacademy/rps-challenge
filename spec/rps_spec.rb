@@ -1,11 +1,13 @@
 describe RPS do
 
   it "calls the same instance of the class" do
-    expect(RPS.create('Chris')).to eq RPS.instance
+    player = Player.create('Chris')
+    expect(RPS.create(player)).to eq RPS.instance
   end
 
   it "takes the player name when creating new game" do
-    RPS.create('Chris')
-    expect(RPS.instance.display_player_name).to eq 'Chris'
+    player = Player.create('Chris')
+    RPS.create(player)
+    expect(RPS.instance.display_players).to eq player
   end
 end

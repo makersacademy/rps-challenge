@@ -1,19 +1,20 @@
+require_relative 'player'
 
 class RPS
 
-  def initialize(player_name)
-    @player_name = player_name
+  def initialize(player)
+    @player = player
   end
 
-  def self.create(player_name)
-    @game = RPS.new(player_name)
+  def self.create(player)
+    @game = RPS.new(player)
   end
 
   def self.instance
     @game
   end
 
-  def display_player_name(name=@player_name)
+  def display_players(name=@player)
     name
   end
 end
