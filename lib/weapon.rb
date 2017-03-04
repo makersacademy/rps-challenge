@@ -1,14 +1,19 @@
 class Weapon
 
-  attr_reader :name, :wins
+  attr_reader :name, :win, :lose
 
   def initialize(name)
     @name = name
-    @wins = []
+    @win = []
+    @lose = []
   end
 
-  def add_weapon(weapon)
-    @wins << weapon
+  def beats_weapon(weapon)
+    @win << weapon
+  end
+
+  def loses_to_weapon(weapon)
+    @lose << weapon
   end
 
 end
