@@ -1,6 +1,13 @@
 class Game
 
-  attr_reader :player, :option
+  OPTIONS = [:rock, :paper, :scissors]
+
+  attr_reader :player, :choice, :options, :random_choice
+
+  def initialize(player)
+    @player = player
+    @options = OPTIONS
+  end
 
   def self.create_game(player)
     @game = Game.new(player)
@@ -10,12 +17,12 @@ class Game
     @game
   end
 
-  def initialize(player)
-    @player = player
+  def select_option(choice)
+    @choice = choice.downcase.to_sym
   end
 
-  def select_option(option)
-    @option = option
+  def generate_rand_option
+    @random_choice = options.sample
   end
 
 end

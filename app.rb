@@ -3,7 +3,7 @@ require_relative 'lib/player'
 require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -30,6 +30,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/choice' do
+    @game.generate_rand_option
     erb :choice
   end
 
