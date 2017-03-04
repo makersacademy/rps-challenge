@@ -1,4 +1,4 @@
-<h1>Hi <%= @name %>! Let's play Rock Paper Scissors! </h1>
+<h1>Hi <%= @game.player.name %>! Let's play Rock Paper Scissors! </h1>
 
 <form action = "/option", method = "post">
   <input type = 'submit', name = "option", value = "Rock">
