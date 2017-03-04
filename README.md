@@ -35,7 +35,7 @@ $ bundle
 $ rackup
 
 ```
-... then open `localhost:4567` in a browser and enjoy.
+... then open [http://localhost:4567](http://localhost:4567) in a browser and enjoy.
 
 Progress
 ----
