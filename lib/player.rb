@@ -1,19 +1,18 @@
-
-class RPS
+class Player
 
   def initialize(player_name)
     @player_name = player_name
   end
 
   def self.create(player_name)
-    @game = RPS.new(player_name)
+    @player = Player.new(player_name)
   end
 
   def self.instance
-    @game
+    @player
   end
 
-  def display_player_name(name=@player_name)
+  def name(name=@player_name)
     name
   end
 end
