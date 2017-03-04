@@ -18,6 +18,6 @@ feature 'Show play page' do
   scenario 'After clicking button on rules page' do
     sign_in_and_play
     click_button('Ready!')
-    expect(page).to have_content 'Play!'
+    expect(page).to have_content 'Choose your weapon!'
   end
 end

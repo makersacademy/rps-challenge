@@ -20,7 +20,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    "Play!"
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
