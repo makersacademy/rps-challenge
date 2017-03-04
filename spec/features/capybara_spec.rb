@@ -13,3 +13,11 @@ feature 'Show to rules page' do
     expect(page).to have_content "How to play?"
   end
 end
+
+feature 'Show play page' do
+  scenario 'After clicking button on rules page' do
+    sign_in_and_play
+    click_button('Ready!')
+    expect(page).to have_content 'Play!'
+  end
+end
