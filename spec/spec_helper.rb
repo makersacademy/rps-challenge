@@ -15,5 +15,6 @@ SimpleCov.start
 require 'byebug'
 require 'capybara/rspec'
 require_relative '../app.rb'
+require_relative '../lib/game.rb'
 
 Capybara.app = RockPaperScissors

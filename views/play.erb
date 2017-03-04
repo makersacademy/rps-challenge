@@ -1,3 +1,6 @@
 <html>
-  <h3>Pick your weapon, <%= @player %></h3>
+  <div>Pick your weapon, <%=@player%>.</div>
+  <form method="POST" action="/result">
+    <input type="text" name="selection" placeholder="rock/paper/scissors">
+    <input type="submit" value="FIGHT">
 </html>
