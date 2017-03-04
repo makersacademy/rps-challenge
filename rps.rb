@@ -4,6 +4,10 @@ class RPS < Sinatra::Base
   set :sessions, true
 
   get '/' do
-    'Hello World!'
+    erb :index
+  end
+
+  post '/names' do
+    'Dave vs. Mittens'
   end
 end
