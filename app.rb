@@ -24,4 +24,8 @@ class Game < Sinatra::Base
   get '/play' do
     erb :play
   end
+
+  post '/rock' do
+    erb :rock
+  end
 end
