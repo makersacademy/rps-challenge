@@ -1,8 +1,9 @@
 class Game
 
-  attr_reader :weapons
+  attr_reader :player, :weapons
 
-  def initialize
+  def initialize(player)
+    @player = player
     @weapons = ['Rock', 'Paper', 'Scissors']
   end
 

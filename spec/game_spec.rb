@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) {described_class.new}
+  subject(:game) {described_class.new(double :player)}
 
   it 'stores a list of possible weapons' do
     expect(game.weapons).to be_an_instance_of Array
