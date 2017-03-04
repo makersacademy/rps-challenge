@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
 
   get '/' do
-    'Hello! Please enter your name:'
+    erb :index
   end
 
   run! if app_file == $0
