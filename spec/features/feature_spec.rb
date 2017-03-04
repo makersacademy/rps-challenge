@@ -35,7 +35,7 @@ feature 'playing game' do
 
   # As a marketeer
   # So that I can play rock/paper/scissors
-  # I would like to be able to choose a shape
+  # I would like to be able to choose a shape option
   scenario 'choose a shape' do
     click_button 'Rock'
     expect(page).to have_content 'Your choice: Rock'
@@ -43,11 +43,19 @@ feature 'playing game' do
 
   # As a marketeer
   # So that I can play rock/paper/scissors
-  # I would like the game to choose an option
+  # I would like the game to choose a shape option
   scenario 'game chooses "Rock"' do
     click_button 'Rock'
     message = find(:css, "#opponent").text
     expect(potential_messages).to include message
   end
 
+  # As a marketeer
+  # So that I can play rock/paper/scissors
+  # I would like the game to choose a random shape option
+  scenario 'game chooses random shape option' do
+    srand(20)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent choice: Scissors'
+  end
 end

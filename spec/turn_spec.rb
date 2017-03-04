@@ -6,7 +6,7 @@ describe Turn do
 
   describe '#player_name' do
     it 'returns the player name' do
-      expect(turn.player_name).to eq "Noora"
+      expect(turn.player_name).to eq 'Noora'
     end
   end
 
