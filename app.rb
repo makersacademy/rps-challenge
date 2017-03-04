@@ -2,7 +2,6 @@ $VERBOSE=nil #remember to remove this before pulling
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
-attr_reader :player_1
 
   get '/' do
     erb :index
@@ -14,8 +13,13 @@ attr_reader :player_1
   end
 
   get '/play' do
-    p $player_1
     erb :play
+  end
+
+  post '/round_1' do
+    $action = params[:weapon]
+    p $action
+    erb :round1
   end
 
   run! if app_file == $0
