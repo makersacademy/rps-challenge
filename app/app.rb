@@ -5,6 +5,7 @@ require_relative './game'
 
 class RPSApp < Sinatra::Base
 
+
   get '/' do
     erb :index
   end
