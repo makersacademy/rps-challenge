@@ -15,7 +15,7 @@ ENV['RACK_ENV'] = 'test'
 
 require 'byebug'
 require 'capybara'
-require 'spec'
+require 'rspec'
 require 'capybara/rspec'
 require './app'
 
