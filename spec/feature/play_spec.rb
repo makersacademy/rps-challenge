@@ -17,4 +17,9 @@ feature "play" do
     click_button('Rock')
     expect(page).to have_content('Rock')
   end
+  scenario "computer chooses an option" do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_content("Computer's choice: Paper!")
+  end
 end
