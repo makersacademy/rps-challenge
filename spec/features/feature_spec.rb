@@ -13,7 +13,22 @@ feature 'name registration' do
 end
 
 
-
 # As a marketeer
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
+feature 'playing' do
+  before do
+    visit '/'
+    fill_in 'name', with: 'Noora'
+    click_button 'Submit'
+  end
+
+  # As a marketeer
+  # So that I can play rock/paper/scissors
+  # I would like to be able to see the shape options
+  scenario 'see shape options' do
+    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'Paper'
+    expect(page).to have_content 'Scissors'
+  end
+end
