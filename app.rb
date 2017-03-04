@@ -15,7 +15,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @option = params[:option]
-    "Your chose #{@option}"
+    erb :result
   end
 
   run! if app_file == $0
