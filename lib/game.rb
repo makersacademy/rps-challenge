@@ -1,8 +1,11 @@
 class Game
 
   OPTIONS = [:rock, :paper, :scissors]
+  RULES = {:rock => :scissors,
+           :paper => :rock,
+           :scissors => :paper }
 
-  attr_reader :player, :choice, :options, :random_choice
+  attr_reader :player, :choice, :options, :random_choice, :result
 
   def initialize(player)
     @player = player
@@ -24,5 +27,16 @@ class Game
   def generate_rand_option
     @random_choice = options.sample
   end
+
+  def get_result(choice, random_choice)
+    if choice == random_choice
+      @result = :draw
+    elsif RULES[choice] == random_choice
+      @result = :win
+    else
+      @result = :lose
+    end
+  end
+
 
 end

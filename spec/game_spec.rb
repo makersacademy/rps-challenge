@@ -25,4 +25,27 @@ describe Game do
       expect(array).to include(game.generate_rand_option)
     end
   end
+
+  describe "#result" do
+    context "#player wins" do
+      it "checks both choices and chooses the winner" do
+        game.get_result(:rock, :scissors)
+        expect(game.result).to eq(:win)
+      end
+    end
+
+    context "#player loses" do
+      it "checks both choices and chooses the winner" do
+        game.get_result(:scissor, :rock)
+        expect(game.result).to eq(:lose)
+      end
+    end
+
+    context "#draw" do
+      it "checks both choices and chooses the winner" do
+        game.get_result(:paper, :paper)
+        expect(game.result).to eq(:draw)
+      end
+    end
+  end
 end
