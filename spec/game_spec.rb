@@ -9,4 +9,10 @@ describe Game do
     end
   end
 
+  describe "#WEAPONS" do
+    it "contains an array of weapons as a constant" do
+      expect(Game::WEAPONS).to eq([:rock, :paper, :scissors])
+    end
+  end
+
 end

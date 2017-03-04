@@ -2,15 +2,17 @@
 
 class Game
 
-  attr_reader :human, :computer
+  WEAPONS = [:rock, :paper, :scissors]
 
-  def initialize(human, computer)
-    @human = human
+  attr_reader :player, :computer
+
+  def initialize(player, computer)
+    @player = player
     @computer = computer
   end
 
-  def self.create(human, computer)
-    @game = Game.new(human, computer)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance
