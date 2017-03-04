@@ -28,7 +28,11 @@ class Game
     @current_player = opponent_player
     @opponent_player = players.select{|player| player != current_player}.first
   end
-  
+
+  def both_players_chose?
+    !!(player1.selection && player2.selection)
+  end
+
   private
   attr_reader :players
 end

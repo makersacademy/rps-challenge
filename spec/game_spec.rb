@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) {double(:player1)}
-  let(:player2) {double(:player2)}
+  let(:player1) {double(:player1, :selection => nil)}
+  let(:player2) {double(:player2, :selection => nil)}
   subject(:game) {described_class.new(player1,player2)}
 
   context "#player" do
@@ -21,6 +21,22 @@ describe Game do
       game.switch
       expect(game.current_player).to eq player2
     end
+  end
+
+  context "#both_players_chose?" do
+
+    it "returns false when player2 has not made a selection" do
+      expect(game.both_players_chose?).to be false
+    end
+
+    it "returns false when player1 has not made a selection" do
+      expect(game.both_players_chose?).to be false
+    end
+
+    it "returns true when both have made their selection" do
+
+    end
+
   end
 
 end
