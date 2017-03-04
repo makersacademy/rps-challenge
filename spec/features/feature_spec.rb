@@ -18,6 +18,7 @@ end
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 feature 'playing game' do
+  SEED = 20
   before do
     visit '/'
     fill_in 'name', with: 'Noora'
@@ -35,7 +36,7 @@ feature 'playing game' do
 
   # As a marketeer
   # So that I can play rock/paper/scissors
-  # I would like to be able to choose a shape
+  # I would like to be able to choose a shape option
   scenario 'choose a shape' do
     click_button 'Rock'
     expect(page).to have_content 'Your choice: Rock'
@@ -43,11 +44,19 @@ feature 'playing game' do
 
   # As a marketeer
   # So that I can play rock/paper/scissors
-  # I would like the game to choose an option
+  # I would like the game to choose a shape option
   scenario 'game chooses "Rock"' do
     click_button 'Rock'
     message = find(:css, "#opponent").text
     expect(potential_messages).to include message
   end
 
+  # As a marketeer
+  # So that I can play rock/paper/scissors
+  # I would like the game to choose a random shape option
+  scenario 'game chooses random shape option' do
+    srand(SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent choice: Scissors'
+  end
 end
