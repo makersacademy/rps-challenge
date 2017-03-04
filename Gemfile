@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.3.3'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec-sinatra'
+gem 'rack'
 
 group :test do
   gem 'rspec'
