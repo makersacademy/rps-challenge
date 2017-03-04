@@ -1,14 +1,20 @@
 <center>
-Make your choice <%=@name%>!
+Make your choice <%= @name %>!
 
-<form action="/play" method="POST">
+  <form action="/play" method="POST">
+    <div>
+      <input type="submit" name="shape" value="Rock">
+      <input type="submit" name="shape" value="Paper">
+      <input type="submit" name="shape" value="Scissors">
+    </div>
+  </form>
+
   <div>
-    <input type="submit" name="shape" value="Rock">
-    <input type="submit" name="shape" value="Paper">
-    <input type="submit" name="shape" value="Scissors">
+    Your choice: <%= @shape %>
   </div>
-</form>
 
+  <div id="opponent">
+    Opponent choice: <%= @opponent_shape.to_s.capitalize %>
+  </div>
 
-Your choice: <%=@shape%>
 </center>

@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative 'web_helper'
 
 # As a marketeer
 # So that I can see my name in lights
@@ -39,4 +40,14 @@ feature 'playing game' do
     click_button 'Rock'
     expect(page).to have_content 'Your choice: Rock'
   end
+
+  # As a marketeer
+  # So that I can play rock/paper/scissors
+  # I would like the game to choose an option
+  scenario 'game chooses "Rock"' do
+    click_button 'Rock'
+    message = find(:css, "#opponent").text
+    expect(potential_messages).to include message
+  end
+
 end
