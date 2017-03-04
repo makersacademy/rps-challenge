@@ -6,4 +6,8 @@ class Game
     @options = ["Rock", "Paper", "Scissors"]
   end
 
+  def play
+    @options.sample
+  end
+
 end

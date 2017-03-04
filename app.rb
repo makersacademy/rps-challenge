@@ -1,6 +1,7 @@
 $VERBOSE=nil
 
 require 'sinatra/base'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -15,6 +16,7 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @option = params[:option]
+    @random_option = Game.new.play
     erb :result
   end
 
