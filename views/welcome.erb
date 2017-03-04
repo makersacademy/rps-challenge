@@ -1,2 +1,10 @@
 <h1>Welcome <%= @username %> </h1>
 <p><%= @username %>: 0 pts </p>
+
+<div style="display:inline-block">
+  <form action="/play">
+    <input type="submit" value="Rock">
+    <input type="submit" value="Paper">
+    <input type="submit" value="Scissors">
+  </form>
+</div>
