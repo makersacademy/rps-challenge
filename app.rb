@@ -2,6 +2,7 @@ $VERBOSE=nil
 
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class Rps < Sinatra::Base
 
@@ -10,13 +11,14 @@ class Rps < Sinatra::Base
   end
 
   post '/new-game' do
-    @player_name = params[:name]
+    $game = Game.new(Player.new(params[:name]))
     erb :new_game
   end
 
   post '/result' do
     @option = params[:option]
-    @random_option = Game.new.play
+    $game.player.choose_option(params[:option])
+    @random_option = $game.play
     erb :result
   end
 

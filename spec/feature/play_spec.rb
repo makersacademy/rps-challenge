@@ -30,6 +30,6 @@ feature "play" do
   scenario "a winner is declared" do
     sign_in_and_play
     click_button('Rock')
-    expect(page).to have_content("the winner!")
+    expect(page).to have_content("The winner is")
   end
 end
