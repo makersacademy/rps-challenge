@@ -1,0 +1,53 @@
+body {
+    background-image: url(./welcome.jpeg);
+    background-size: 100% 100%;
+}
+
+h1 {
+    text-align: center;
+    font: 30px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+form {
+    text-align: center;
+    }
+
+    <style type="text/css">
+    .welcome{
+        font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 16px;
+        background: #F7F7F7;
+    }
+
+    .welcome input[type="submit"],
+    .welcome input[type="button"]{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 5%;
+        padding: 1%;
+        background: #4b593b;
+        border-radius: 10px;
+        border-bottom: 2px solid #4b593b;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: black;
+        cursor: pointer;
+        font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif
+    }
+
+    .welcome input[type="text"]
+    {
+      background: #b9e585;
+      border-radius: 4px;
+    }
+
+    .welcome label
+    .welcome input[type="radio"]
+    {
+      font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    </style>
