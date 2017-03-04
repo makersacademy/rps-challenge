@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
   set :sessions, true
@@ -14,8 +16,13 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @name_1 = session[:name_1]
-    @name_2 = session[:name_2]
+    @game = Game.create(Player.new(session[:name_1]), Player.new(session[:name_2]))
     erb :play
   end
+
+  post '/selection' do
+    p params
+    "You made a choice"
+  end
+
 end

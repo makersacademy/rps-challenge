@@ -1,1 +1,6 @@
-<%=@name_1%> vs. <%=@name_2%>
+<%=@game.player1.name%> vs. <%=@game.player2.name%>
+<html>
+  <form id="options" action="/selection" method="POST">
+    <input type="submit" value="Rock" id ="rock"/>
+  </form>
+</html>
