@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/game'
 require_relative './lib/player'
+require_relative './lib/bot'
 
 class RPS < Sinatra::Base
   set :sessions, true

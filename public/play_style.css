@@ -1,0 +1,32 @@
+body {
+    background-image: url(./game.jpg);
+    background-size: 100% 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    font: 30px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #f7f7f2;
+}
+
+form {
+    text-align: center;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #f7f7f2;
+}
+
+.winner input[type="submit"],
+.options input[type="submit"],
+.options input[type="button"]{
+    width: 10%;
+    padding: 1%;
+    background: #4b593b;
+    border-radius: 10px;
+    border-bottom: 2px solid #4b593b;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #f7f7f2;
+    cursor: pointer;
+    font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
