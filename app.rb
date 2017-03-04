@@ -11,7 +11,9 @@ class Rps < Sinatra::Base
   end
 
   post '/new-game' do
-    $game = Game.new(Player.new(params[:name]))
+    if $game == nil
+      $game = Game.new(Player.new(params[:name]))
+    end
     erb :new_game
   end
 

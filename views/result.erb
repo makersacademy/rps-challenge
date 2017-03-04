@@ -8,6 +8,9 @@
       <h1>Your choice: <%= @option %>!</h1>
       <h1>Computer's choice: <%= @random_option %>!</h1>
       <h1>The winner is <%= @winner %>!</h1>
+      <form method="POST" action="/new-game">
+        <input class = "button" type ="submit" value="Play again">
+      </form>
     </div>
   </body>
 </html>
