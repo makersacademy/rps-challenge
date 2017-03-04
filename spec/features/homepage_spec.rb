@@ -8,5 +8,13 @@ RSpec.feature 'homepage' do
     visit '/'
     expect(page).to have_text("Sign-in")
   end
+end
 
+RSpec.feature 'signed-in home' do
+  scenario 'user is welcomed after signing in' do
+    visit '/'
+    fill_in :username, :with => "Vicky"
+    click_button "Enter"
+    expect(page).to have_text("Welcome Vicky")
+  end
 end
