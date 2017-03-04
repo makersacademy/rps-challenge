@@ -5,7 +5,7 @@
 feature "register" do
   scenario "player registers his/her name and sees is on the screen" do
     visit('/')
-    fill_in('Enter your name', with: 'Alex')
+    fill_in('name', with: 'Alex')
     click_button('Start')
     expect(page).to have_content('Welcome, Alex!')
   end

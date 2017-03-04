@@ -1,9 +1,25 @@
 div {
-  border: 2px dotted rgba(33, 153, 232, 1.0);
+  border: 2px solid rgba(0, 73, 145, 1.0);
   color: rgba(0, 73, 145, 1.0);
   width: 500px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   font-family: Griffy;
+  letter-spacing: 2px;
+}
+
+.button {
+  margin: 25px;
+  font-size: 35px;
+  font-family: Griffy;
+  background-color: white;
+  border: 2px solid rgba(0, 73, 145, 1.0);
+  color: rgba(0, 73, 145, 1.0);
+  letter-spacing: 4px;
+}
+
+.field {
+  height: 40px;
+  border: 2px solid rgba(0, 73, 145, 1.0);
 }
