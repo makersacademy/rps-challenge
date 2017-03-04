@@ -13,11 +13,17 @@ describe Player do
     it 'knows its score' do
       expect(player.score).to eq 0
     end
-  end
 
-  describe 'winning' do
     it 'score increases after winning' do
       expect(player.win).to eq 1
+    end
+  end
+
+  describe 'selection' do
+    it 'knows its selection' do
+      #// need to define rock - new object class??
+      player.choose_weapon(rock)
+      expect(player.weapon).to eq rock
     end
   end
 
