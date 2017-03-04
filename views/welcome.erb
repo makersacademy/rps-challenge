@@ -1,10 +1,10 @@
-<h1>Welcome <%= $user.name %> </h1>
-<p><%= $user.name %>: 0 pts </p>
+<h1>Welcome <%= $user1.name %> </h1>
+<p><%= $user1.name %>: 0 pts </p>
 
 <div style="display:inline-block">
-  <form action="/play" method="post">
-    <input type="submit" value="Rock">
-    <input type="submit" value="Paper">
-    <input type="submit" value="Scissors">
+  <form name="input" action="/play" method="post">
+    <input type="submit" name="weapon" value="Rock">
+    <input type="submit" name="weapon" value="Paper">
+    <input type="submit" name="weapon" value="Scissors">
   </form>
 </div>

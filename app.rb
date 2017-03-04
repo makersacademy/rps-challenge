@@ -9,15 +9,19 @@ class RPS < Sinatra::Base
   end
 
   post '/start' do
-    $user = Player.new(params[:username])
+    $user1 = Player.new(params[:username])
     redirect '/welcome'
   end
 
   get '/welcome' do
     erb :welcome
+
   end
 
   post '/play' do
+    weapon = params[:weapon]
+    $user1.choose_weapon(weapon)
+
     #//computer chooses R, P, S
     redirect '/result'
   end
