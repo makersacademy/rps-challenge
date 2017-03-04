@@ -7,6 +7,7 @@ describe Player do
 
   it "returns players name" do
     expect(player1.name).to eq "Dave"
+    expect(player2.name).to eq "Mittens"
   end
 
 end
