@@ -52,6 +52,16 @@ describe Game do
         allow(hum).to receive_messages(:choice => :rock)
         expect(game.judge_scores(hum.choice, comp.choice)).to eq("Tie game. Play again?")
       end
+      it "determines a tie game when human and computer both throw paper" do
+        allow(comp).to receive_messages(:choice => :paper)
+        allow(hum).to receive_messages(:choice => :paper)
+        expect(game.judge_scores(hum.choice, comp.choice)).to eq("Tie game. Play again?")
+      end
+      it "determines a tie game when human and computer both throw scissors" do
+        allow(comp).to receive_messages(:choice => :scissors)
+        allow(hum).to receive_messages(:choice => :scissors)
+        expect(game.judge_scores(hum.choice, comp.choice)).to eq("Tie game. Play again?")
+      end
     end
   end
 
