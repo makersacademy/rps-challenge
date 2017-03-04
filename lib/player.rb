@@ -8,7 +8,7 @@ class Player
 
   def choice(weapon)
     raise "Please pick rock, paper or scissors." unless Game::WEAPONS.include?(weapon.downcase.to_sym)
-    @weapon = weapon
+    @weapon = weapon.downcase.to_sym
   end
 
 end

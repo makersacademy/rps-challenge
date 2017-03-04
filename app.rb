@@ -16,10 +16,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @game.player.choice(params[:selection])
-    @game.computer.choice
-    # JUDGE SCORES NOW 
-    # @game.judge_scores(@game.player.choice(params[:selection], @game.computer.choice)
+    @result = @game.judge_scores(@game.player.choice(params[:selection]), @game.computer.choice)
     erb(:result)
   end
 

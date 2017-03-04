@@ -2,7 +2,7 @@ describe Computer do
   let(:computer) { Computer.new }
   let(:game) { double("game", :weapons => [:rock, :paper, :scissors])}
 
-  describe "new" do
+  describe "#new" do
     it "responds to new" do
       expect(Computer).to respond_to(:new)
     end

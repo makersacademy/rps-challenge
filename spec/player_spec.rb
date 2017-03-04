@@ -10,7 +10,7 @@ describe Player do
   describe "#choice" do
     it "returns the player's choice of weapon" do
       player.choice("rock")
-      expect(player.weapon).to eq("rock")
+      expect(player.weapon).to eq(:rock)
     end
 
     it "raises error when invalid weapon entered" do
