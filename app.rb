@@ -9,7 +9,8 @@ class App < Sinatra::Base
   end
 
   post '/name' do
-    $player ||= Player.new(params[:name])
+    $player = Player.new(params[:name])
+    $game = Game.new($player)
     redirect '/play'
   end
 
@@ -18,7 +19,7 @@ class App < Sinatra::Base
   end
 
   post '/choice' do
-    params[:choice]
+    $player.move = params[:choice]
     redirect '/result'
   end
 
