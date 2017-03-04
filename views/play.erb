@@ -1,6 +1,9 @@
 <%=@game.player1.name%> vs. <%=@game.player2.name%>
 <html>
-  <form id="options" action="/selection" method="POST">
-    <input type="submit" value="Rock" id ="rock"/>
+  <form name="options" action="/selection" method="POST">
+    <input type="radio" name="selection" value="rock" id="rock"> Rock<br>
+    <input type="radio" name="selection" value="paper" id="paper"> Paper<br>
+    <input type="radio" name="selection" value="scissors" id="scissors"> Scissors<br>
+    <input type="submit" value="Submit" id="selected">
   </form>
 </html>

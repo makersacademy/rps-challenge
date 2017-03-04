@@ -21,8 +21,9 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    p params
+    p params[:selection]
     "You made a choice"
+    redirect '/play'
   end
 
 end
