@@ -1,18 +1,19 @@
 require 'sinatra/base'
 
 class App < Sinatra::Base
-  set :Session, true
+  set :sessions, true
 
   get '/' do
     erb(:index)
   end
 
   post '/name' do
-    @name = param[:name]
+    session[:name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    
+    @name = session[:name]
+    erb(:play)
   end
 end

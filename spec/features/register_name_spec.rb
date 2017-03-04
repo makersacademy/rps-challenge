@@ -6,6 +6,6 @@ feature 'allows marketeer to register name', :type => :feature do
     visit('/')
     fill_in :name, with: 'Albert'
     click_button 'submit'
-    expect(page).to have_content('Welcome Albert,')
+    expect(page).to have_content('Welcome Albert')
   end
 end
