@@ -1,1 +1,10 @@
-<div>Welcome <%= @name %>!</div>
+<body>
+<title>Rock-Paper-Scissors</title>
+<h1>Hi <%= $player.name %>!</h1>
+<div>
+  <form action="/move" method="post">
+  <input type="submit" value="rock" name="choice">
+  <input type="submit" value="paper" name="choice">
+  <input type="submit" value="scissors" name="choice">
+  </form>
+</body>
