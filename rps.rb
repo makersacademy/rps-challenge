@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
 
   post '/selection' do
     @game = Game.object
+    @game.current_player.selected(params[:selection])
     @game.switch
     redirect '/play'
   end

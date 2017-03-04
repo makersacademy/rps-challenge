@@ -1,4 +1,4 @@
-feature "Game page" do
+feature "Switch players" do
 
   scenario "starts with the first player" do
     sign_in_and_play

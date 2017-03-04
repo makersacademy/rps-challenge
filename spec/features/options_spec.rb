@@ -1,4 +1,4 @@
-feature "Game page" do
+feature "Selection page" do
 
   scenario "Lets the player choose 'Rock' option" do
     sign_in_and_play
