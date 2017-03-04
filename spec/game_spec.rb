@@ -11,4 +11,11 @@ describe Game do
       expect(game.player.name).to eq "Bob"
     end
   end
+
+  describe "#option" do
+    it "returns the selected option" do
+      game.select_option("Rock")
+      expect(game.option).to eq "Rock"
+    end
+  end
 end

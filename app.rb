@@ -25,12 +25,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/option' do
     p params
-    session[:option] = params[:option]
+    @game.select_option(params[:option])
     redirect '/choice'
   end
 
   get '/choice' do
-    @option = session[:option]
     erb :choice
   end
 

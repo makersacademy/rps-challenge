@@ -1,5 +1,7 @@
 class Game
 
+  attr_reader :player, :option
+
   def self.create_game(player)
     @game = Game.new(player)
   end
@@ -8,10 +10,12 @@ class Game
     @game
   end
 
-  attr_reader :player
-
   def initialize(player)
     @player = player
+  end
+
+  def select_option(option)
+    @option = option
   end
 
 end
