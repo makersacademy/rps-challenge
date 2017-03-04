@@ -1,9 +1,10 @@
-<title>Rock-Paper-Scissors</title>
-<body>
-<div>
-<p><%= $player.name %> choose <%= $player.move %></p>
-<div>
-  <div>
-  <p>Computer choose <%= $game.computer_move %></p>
-  <div>
-</body>
+
+<p><%= $game.player.name %> choose <%= $game.player_move %></p>
+<p>Computer choose <%= $game.computer_move %></p>
+<% if $game.win? %>
+<p>You have won the game </p>
+<% elsif $game.draw? %>
+<p>You have have drawn with the computer </p>
+<% else $game.lose? %>
+<p>You have lost the game </p>
+<% end %>
