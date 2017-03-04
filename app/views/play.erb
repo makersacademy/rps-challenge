@@ -1,5 +1,14 @@
-Welcome <%=@name%>
+<center>
+Make your choice <%=@name%>!
 
-Rock
-Paper
-Scissors
+<form action="/play" method="POST">
+  <div>
+    <input type="submit" name="shape" value="Rock">
+    <input type="submit" name="shape" value="Paper">
+    <input type="submit" name="shape" value="Scissors">
+  </div>
+</form>
+
+
+Your choice: <%=@shape%>
+</center>
