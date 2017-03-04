@@ -19,6 +19,7 @@ class Rps < Sinatra::Base
     @option = params[:option]
     $game.player.choose_option(params[:option])
     @random_option = $game.play
+    @winner = $game.declare_winner(@random_option)
     erb :result
   end
 

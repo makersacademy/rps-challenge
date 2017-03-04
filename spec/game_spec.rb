@@ -17,7 +17,8 @@ describe Game do
     end
 
     it 'declares_winner' do
-      expect(["Alex", "Computer"].include?(subject.declare_winner)).to eq true
+      allow(:player).to receive(:option).and_return('Rock')
+      expect(["Alex", "Computer", "nobody"].include?(subject.declare_winner('Rock'))).to eq true
     end
   end
 end

@@ -1,10 +1,17 @@
 require 'player'
 
 describe Player do
+
+  subject = Player.new('Alex')
   context 'name' do
     it "should remembers player's name" do
-      player_one = Player.new('Alex')
-      expect(player_one.name).to eq('Alex')
+      expect(subject.name).to eq('Alex')
     end
+
+  context 'option' do
+    it "should remember player's choice" do
+      expect(subject.choose_option('Rock')).to eq(subject.option)
+    end
+  end
   end
 end
