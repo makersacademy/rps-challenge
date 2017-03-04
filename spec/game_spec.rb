@@ -26,10 +26,12 @@ describe Game do
   context "#both_players_chose?" do
 
     it "returns false when player2 has not made a selection" do
+      allow(player1).to receive(:selection){"rock"}
       expect(game.both_players_chose?).to be false
     end
 
     it "returns false when player1 has not made a selection" do
+      allow(player2).to receive(:selection){"rock"}
       expect(game.both_players_chose?).to be false
     end
 
