@@ -8,4 +8,17 @@ describe Player do
       expect(player.name).to eq 'Susie'
     end
   end
+
+  describe 'score' do
+    it 'knows its score' do
+      expect(player.score).to eq 0
+    end
+  end
+
+  describe 'winning' do
+    it 'score increases after winning' do
+      expect(player.win).to eq 1
+    end
+  end
+
 end
