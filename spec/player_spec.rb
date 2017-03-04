@@ -18,7 +18,7 @@ describe Player do
     end
 
     it "can be set to a value" do
-      player1.selection = "rock"
+      player1.selected("rock")
       expect(player1.selection).to eq "rock"
     end
   end
