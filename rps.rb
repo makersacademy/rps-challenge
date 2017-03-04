@@ -10,19 +10,18 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:name_1] = params[:name_1]
-    session[:name_2] = params[:name_2]
+    @game = Game.create(Player.new(params[:name_1]), Player.new(params[:name_2]))
     redirect '/play'
   end
 
   get '/play' do
-    @game = Game.create(Player.new(session[:name_1]), Player.new(session[:name_2]))
+    @game = Game.object
     erb :play
   end
 
   post '/selection' do
-    p params[:selection]
-    "You made a choice"
+    @game = Game.object
+    @game.switch
     redirect '/play'
   end
 

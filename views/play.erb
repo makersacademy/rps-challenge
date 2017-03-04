@@ -1,9 +1,16 @@
-<%=@game.player1.name%> vs. <%=@game.player2.name%>
+<p><%=@game.player1.name%> vs. <%=@game.player2.name%></p>
+<p></p>
+<p></p>
+<%=@game.current_player.name%>'s turn
 <html>
+<p></p>
+<p></p>
   <form name="options" action="/selection" method="POST">
     <input type="radio" name="selection" value="rock" id="rock"> Rock<br>
     <input type="radio" name="selection" value="paper" id="paper"> Paper<br>
     <input type="radio" name="selection" value="scissors" id="scissors"> Scissors<br>
+    <p></p>
+    <p></p>
     <input type="submit" value="Submit" id="selected">
   </form>
 </html>

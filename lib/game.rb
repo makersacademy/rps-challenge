@@ -26,7 +26,7 @@ class Game
 
   def switch
     @current_player = opponent_player
-    @opponent_player = players.select{|player| player != current_player}
+    @opponent_player = players.select{|player| player != current_player}.first
   end
 
   private
