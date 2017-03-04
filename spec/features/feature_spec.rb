@@ -17,6 +17,17 @@ describe RockPaperScissors, :type => :feature do
     end
   end
 
+  feature "#result" do
+    it "shows the result" do
+      visit'/'
+      fill_in :name, with: human
+      click_button("Go")
+      fill_in :selection, with: "rock"
+      click_button("FIGHT")
+      expect(page).to have_content("Result:")
+    end
+  end
+
   # feature "weapon selection page" do
   #   it "provides a choice of weapons" do
   #     visit'/'
@@ -24,7 +35,7 @@ describe RockPaperScissors, :type => :feature do
   #     click_button("Go")
   #     fill_in :selection, with: "rock"
   #     click_button("FIGHT")
-  #     # STUB COMPUTERS CHOICE HERE TO SCISSORS
+  #     # STUB COMPUTER'S CHOICE HERE TO SCISSORS
   #     expect(page).to have_content("You win, #{human}!")
   #   end
   # end
