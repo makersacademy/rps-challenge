@@ -18,5 +18,6 @@ require 'capybara'
 require 'rspec'
 require 'capybara/rspec'
 require './app'
+require 'web_helpers'
 
 Capybara.app = Rps
