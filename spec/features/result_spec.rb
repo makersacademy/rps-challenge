@@ -1,7 +1,7 @@
 feature "Showing the result" do
 
   before do
-      allow_any_instance_of(Game).to receive(:random_choice).and_return(:scissors)
+      allow_any_instance_of(Game).to receive(:computer_choice).and_return(:scissors)
   end
 
   scenario "Show when player wins" do

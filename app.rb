@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -11,7 +12,8 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     p params
     player = Player.new(params[:name])
-    @game = Game.create_game(player)
+    computer = Computer.new
+    @game = Game.create_game(player, computer)
     redirect '/play'
   end
 
@@ -30,8 +32,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @game.generate_rand_option
-    @game.get_result(@game.choice, @game.random_choice)
+    @game.get_computer_choice
+    @game.get_result(@game.choice, @game.computer_choice)
     erb :result
   end
 

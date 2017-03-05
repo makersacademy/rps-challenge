@@ -5,15 +5,16 @@ class Game
            :paper => :rock,
            :scissors => :paper }
 
-  attr_reader :player, :choice, :options, :random_choice, :result
+  attr_reader :player, :computer, :choice, :options, :computer_choice, :result
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
+    @computer = computer
     @options = OPTIONS
   end
 
-  def self.create_game(player)
-    @game = Game.new(player)
+  def self.create_game(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance
@@ -24,14 +25,14 @@ class Game
     @choice = choice.downcase.to_sym
   end
 
-  def generate_rand_option
-    @random_choice = options.sample
+  def get_computer_choice
+    @computer_choice = computer.generate_rand_option
   end
 
-  def get_result(choice, random_choice)
-    if choice == random_choice
+  def get_result(choice, computer_choice)
+    if choice == computer_choice
       @result = :draw
-    elsif RULES[choice] == random_choice
+    elsif RULES[choice] == computer_choice
       @result = :win
     else
       @result = :lose
