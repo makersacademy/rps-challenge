@@ -42,5 +42,13 @@ class Game
       @result = :lose
     end
   end
-  
+
+  def keep_score(result)
+    if @result == :win
+      player_1.add_point
+    elsif @result == :lose
+      player_2.add_point
+    end
+  end
+
 end

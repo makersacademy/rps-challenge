@@ -1,7 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
 <h2> Now, it's <%= @game.player_2.name %>'s turn. <%= @game.player_1.name %>, please close your eyes.</h2>
 
 <form action = "/p2_option", method = "post">
-  <input type = 'submit', name = "option", value = "Rock">
-  <input type = 'submit', name = "option", value = "Paper">
-  <input type = 'submit', name = "option", value = "Scissors">
+  <input type = 'submit', name = "option", value = "Rock", id="submit">
+  <input type = 'submit', name = "option", value = "Paper", id="submit">
+  <input type = 'submit', name = "option", value = "Scissors", id="submit">
 </form>

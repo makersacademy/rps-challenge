@@ -70,11 +70,13 @@ class RockPaperScissors < Sinatra::Base
   get '/single_player_result' do
     @game.get_computer_choice
     @game.get_result(@game.p1_choice, @game.p2_choice)
+    @game.keep_score(@game.result)
     erb :single_player_result
   end
 
   get '/multi_player_result' do
     @game.get_result(@game.p1_choice, @game.p2_choice)
+    @game.keep_score(@game.result)
     erb :multi_player_result
   end
 

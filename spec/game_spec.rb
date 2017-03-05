@@ -66,6 +66,14 @@ describe Game do
       end
     end
 
+    describe "#score" do
+      it "keeps score" do
+        multi_player_game.get_result(:rock, :scissors)
+        multi_player_game.keep_score(multi_player_game.result)
+        expect(multi_player_game.player_1.score).to eq 1
+      end
+    end
+
   end
 
 end
