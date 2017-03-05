@@ -1,5 +1,4 @@
 require_relative 'player'
-require_relative 'weapon'
 
 class Game
 
@@ -7,6 +6,14 @@ class Game
 
   def initialize(player1, player2)
     @player1, @player2 = player1, player2
+  end
+
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
   end
 
   def play(weapon1, weapon2)
