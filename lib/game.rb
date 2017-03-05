@@ -10,7 +10,7 @@ class Game
 
   def result
     return :draw if computer_selection == @player_selection
-    winning_combos = [[:rock, :scissors], [:scissors, :paper], [:paper, :rock]]
+    winning_combos = [[:ROCK, :SCISSORS], [:SCISSORS, :PAPER], [:PAPER, :ROCK]]
     winning_combos.include?(current_selection) ? :win : :lose
   end
 

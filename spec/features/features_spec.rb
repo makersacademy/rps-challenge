@@ -25,29 +25,29 @@ feature "Play Rock, Paper, Scissors" do
   feature "Tells player whether they have lost, won, or drawn" do
 
     scenario "tells player they have lost when they lose" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:PAPER)
       visit '/'
       fill_in('NAME', with: "Wanda Maximoff")
       click_button "ENTER"
-      click_button "rock"
+      click_button "ROCK"
       expect(page).to have_content("YOU LOSE!")
     end
 
     scenario "tells player they have won when they win" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:PAPER)
       visit '/'
       fill_in('NAME', with: "Steve Rogers")
       click_button "ENTER"
-      click_button "scissors"
+      click_button "SCISSORS"
       expect(page).to have_content("YOU WIN!")
     end
 
     scenario "tells player they have drawn when they draw" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:SCISSORS)
       visit '/'
       fill_in('NAME', with: "Peter Parker")
       click_button "ENTER"
-      click_button "scissors"
+      click_button "SCISSORS"
       expect(page).to have_content("DRAW!")
     end
 
