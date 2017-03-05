@@ -1,0 +1,10 @@
+p1,p2,result,verb
+Rock,Scissors,1,crushed
+Rock,Rock,0,drew
+Rock,Paper,-1,smothered
+Paper,Rock,1,smothered
+Paper,Paper,0,drew
+Paper,Scissors,-1,sliced
+Scissors,Paper,1,sliced
+Scissors,Scissors,0,drew
+Scissors,Rock,-1,crushed

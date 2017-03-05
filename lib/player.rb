@@ -1,21 +1,23 @@
 class Player
 
-  attr_reader :name, :score, :choices
+  attr_reader :name, :score, :choices_simple, :choices_advanced
   attr_accessor :choice
 
   def initialize(name)
     name == "" ? @name = "Computer" : @name = name
     name == "" ? @automated = true : @automated = false
     @score = 0
-    @choices = ["Rock", "Paper", "Scissors"]
+    @choices_simple = ["Rock", "Paper", "Scissors"]
+    @choices_advanced = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   end
 
   def win
     @score += 1
   end
 
-  def get_random_choice
-    @choice = choices.sample
+  def get_random_choice(game_type)
+    return @choices_simple.sample if game_type == 0
+    return @choices_advanced.sample if game_type == 1
   end
 
   def automated?

@@ -6,19 +6,19 @@ describe Game do
   name_two = "Alice"
   let(:player_1) {double :player_1, name: name_one, score: 0}
   let(:player_2) {double :player_2, name: name_two, score: 0}
-
+  game_type = "0"
+  basic_rules = File.expand_path("../../public/logictable_rps.csv", __FILE__)
   before(:all) do
     srand(67809)
   end
 
-  subject(:game) {described_class.new(player_1, player_2)}
-  let(:game_singleton) {described_class.create(player_1, player_2)}
+  subject(:game) {described_class.new(player_1, player_2, basic_rules, game_type)}
+  let(:game_singleton) {described_class.create(player_1, player_2, basic_rules, game_type)}
 
-    specify '.instance always refers to the same instance' do
+    it '.instance always refers to the same instance' do
       expect(game_singleton).to be_a_kind_of(described_class)
       expect(game_singleton).to eq described_class.instance
     end
-
 
    it 'has an array of players containing both players' do
     expect(game.players).to include(player_1)
@@ -38,8 +38,8 @@ describe Game do
    end
 
    it 'change_player changes the current player' do
-     expect{game.change_player}.to change{game.current_player}.to player_1
      expect{game.change_player}.to change{game.current_player}.to player_2
+     expect{game.change_player}.to change{game.current_player}.to player_1
    end
 
    it 'gets the opponent of the current player' do
@@ -51,5 +51,14 @@ describe Game do
      allow(player_2).to receive(:choice).and_return("Rock")
      expect(game.get_result).to eq 1
    end
+
+   it 'can finish a round' do
+    expect(game.finish_round).to eq 1
+   end
+
+   it 'can start a new round' do
+      expect{game.new_round}.to change{game.current_player}.to player_2
+   end
+
 
 end

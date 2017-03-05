@@ -8,6 +8,7 @@ describe Player do
 
   name = "Joe"
   random_choice = "Scissors"
+  random_choice_advanced = "Paper"
   let(:player) {described_class.new(name)}
   let(:player_auto) {described_class.new("")}
   let(:choice) {double :choice}
@@ -29,8 +30,12 @@ describe Player do
     expect(player.choice).to eq choice
   end
 
-  it 'has a list of three choices' do
-    expect(player.choices.length).to eq 3
+  it 'has a list of three choices for simple game' do
+    expect(player.choices_simple.length).to eq 3
+  end
+
+  it 'has a list of five choices for advanced_rules game' do
+    expect(player.choices_advanced.length).to eq 5
   end
 
   it 'expect player not to be automated if the name is set' do
@@ -41,9 +46,12 @@ describe Player do
     expect(player_auto.automated?).to eq true
   end
 
-  it 'gets a random choice' do
+  it 'gets a random choice for a simple game' do
+      expect(player_auto.get_random_choice(0)).to eq random_choice
+  end
 
-      expect(player_auto.get_random_choice).to eq random_choice
+  it 'gets a random choice for an advanced game' do
+      expect(player_auto.get_random_choice(1)).to eq random_choice_advanced
   end
 
 end
