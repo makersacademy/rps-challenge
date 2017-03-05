@@ -32,6 +32,7 @@ How To Download and Run the App
 $ git clone https://github.com/sliute/rps-challenge.git
 $ cd rps-challenge
 $ bundle
+$ rspec
 $ rackup
 
 ```
