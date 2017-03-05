@@ -1,3 +1,7 @@
 You have selected <%= @player_weapon %>
 
 <p>Computer selected <%= $game.play(@player_weapon.to_sym) %></p>
+
+<form action="/play">
+    <input type="submit" value="Play again">
+</form>

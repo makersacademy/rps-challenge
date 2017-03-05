@@ -19,7 +19,6 @@ class RpsApp < Sinatra::Base
   end
 
   get '/in_play' do
-    p params
     @player_weapon = params[:player_selection]
     @computer_selection = :paper
     erb :result
