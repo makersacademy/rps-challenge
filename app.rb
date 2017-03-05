@@ -26,9 +26,38 @@ class Game < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    RPS.instance.player.choice('Rock')
-    RPS.instance.outcome
-    erb :rock
+  post '/choose_move' do
+    RPS.instance.player.choice(params[:choice])
+    result = RPS.instance.outcome
+    if (result == :win)
+      redirect '/winner'
+    elsif (result == :lose)
+      redirect '/loser'
+    else
+      redirect '/tie'
+    end
   end
+
+  get '/winner' do
+    erb :winner
+  end
+
+  get '/tie' do
+    erb :tie
+  end
+
+  get '/loser' do
+    erb :loser
+  end
+  # post '/paper' do
+  #   RPS.instance.player.choice('Paper')
+  #   RPS.instance.outcome
+  #   erb :paper
+  # end
+  #
+  # post '/scissors' do
+  #   RPS.instance.player.choice('Scissors')
+  #   RPS.instance.outcome
+  #   erb :scissors
+  # end
 end
