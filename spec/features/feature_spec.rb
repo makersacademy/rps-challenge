@@ -84,7 +84,7 @@ feature 'playing game' do
 
     # As a marketeer
     # So that I can play rock/paper/scissors
-    # I would like to be able to lose
+    # I would like to be able to draw
     scenario 'I draw' do
       click_button 'Scissors'
       expect(page).to have_content 'You draw!'
