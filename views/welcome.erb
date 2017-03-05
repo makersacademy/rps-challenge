@@ -1,10 +1,8 @@
-<h1>Welcome <%= $game.player.name %> </h1>
-<p><%= $game.player.name %>: 0 pts </p>
+<h1>Welcome <%= $game.player1.name %> and <%= $game.player2.name %> </h1>
+<p><%= $game.player1.name %>: <%= $game.player1.score %> pts </p>
+<p><%= $game.player2.name %>: <%= $game.player2.score %> pts </p>
 
-<div style="display:inline-block">
-  <form name="input" action="/play" method="post">
-    <input type="submit" name="weapon" value="Rock">
-    <input type="submit" name="weapon" value="Paper">
-    <input type="submit" name="weapon" value="Scissors">
-  </form>
-</div>
+<h1>Ready?</h1>
+<a style="text-decoration:none;color:white" href="/first_player">
+  <button style="width:400px; background-color:orange;color:black;font-size:40px;">Play</button>
+</a>

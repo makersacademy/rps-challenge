@@ -15,4 +15,8 @@ attr_reader :name, :score, :weapon
     @score += points
   end
 
+  def lose(points)
+    @score -= points
+  end
+
 end
