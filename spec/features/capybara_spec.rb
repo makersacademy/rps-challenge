@@ -7,7 +7,7 @@ feature 'Player name entry' do
   end
 end
 
-feature 'Show to rules page' do
+feature 'Show rules page' do
   scenario 'After entering name' do
     sign_in_and_play
     expect(page).to have_content "How to play?"
@@ -16,16 +16,23 @@ end
 
 feature 'Show play page' do
   scenario 'After clicking button on rules page' do
-    sign_in_and_play
-    click_button('Ready!')
+    signed_in_and_ready
     expect(page).to have_content 'Choose your weapon!'
+  end
+end
+
+feature 'Should allow user to select an option' do
+  scenario 'Player can select any weapon' do
+    signed_in_and_ready
+    click_button('Scissors')
   end
 end
 
 feature 'Show outcome page' do
   scenario 'After both players have chosen their weapon' do
-    sign_in_and_play
-    click_button('Ready!')
+    allow_any_instance_of(Computer).to receive(:move).and_return(:rock)
+    signed_in_and_ready
     click_button('Rock')
+    expect(page).to have_content "And the winner is..."
   end
 end

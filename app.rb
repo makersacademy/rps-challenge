@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     @game = Game.create((Player.new(params[:player_1])), Computer.new.move)
-    p @game
+    # p @game
     redirect '/rules'
   end
 
@@ -28,13 +28,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/players_choice' do
+    # @game = Game.instance
     @player_choice = session[:weapon], params[:weapon]
-    @game = Game.instance
-    @game.play(@player_choice, player_2)
+    Game.instance.play(@player_choice, Computer.new.move)
     redirect '/outcome'
   end
 
   get '/outcome' do
+    @game = Game.instance
     erb(:outcome)
   end
 

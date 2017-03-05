@@ -1,5 +1,5 @@
 class Game
-  attr_reader :create, :player_1, :player_2
+  attr_reader :create, :player_1, :player_2, :result
 
   WEAPON = [:rock, :paper, :scissors]
   WINNING_COMBO = [[:rock, :scissors], [:paper, :rock], [:scissors, :paper]]
@@ -29,7 +29,7 @@ class Game
   end
 
   def win
-    @result = "You, woo!"
+    @result = "You, yippee!"
   end
 
   def lose
