@@ -1,7 +1,7 @@
 require 'sinatra/base'
+require_relative 'lib/game'
 require_relative 'lib/player'
 require_relative 'lib/computer'
-require_relative 'lib/game'
 
 class RPS < Sinatra::Base
 
@@ -27,14 +27,12 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    session[:player_choice] = @game.player.choose(params[:choice])
-    session[:comp_choice] = @game.computer.choose_hand
+    @game.player.choose(params[:choice])
+    @game.computer.choose_hand
     redirect '/result'
   end
 
   get '/result' do
-    @player_choice = session[:player_choice]
-    @comp_choice = session[:comp_choice]
     erb(:result)
   end
 

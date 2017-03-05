@@ -1,19 +1,23 @@
 
 feature 'player_name has three choices' do
 
-  scenario 'player can select rock' do
+  before do
     sign_in_and_play
-    click_button('Rock')
+  end
+
+  scenario 'player can select rock' do
+    click_button('rock')
+    expect(page).to have_content "You chose rock!"
   end
 
   scenario 'player can select paper' do
-    sign_in_and_play
-    click_button('Paper')
+    click_button('paper')
+    expect(page).to have_content "You chose paper!"
   end
 
   scenario 'player can select scissors' do
-    sign_in_and_play
-    click_button('Scissors')
+    click_button('scissors')
+    expect(page).to have_content "You chose scissors!"
   end
 
 end
