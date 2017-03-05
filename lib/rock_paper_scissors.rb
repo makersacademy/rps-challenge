@@ -23,30 +23,19 @@ class RPS
   def self.instance
     @game
   end
-
-  def display_players(name=@player)
-    name
-  end
-
-  def win
-    "Congratulations, you have won!"
-  end
-
+# opponent makes their move which is then assigned to an instance variable
+# this is then passed to the evaluate_result method which calculates the outcome
   def outcome
     @opponent_move = @opponent.move
+    evaluate_result
+  end
+
+  def evaluate_result
     return :tie if same_choice?
     return :win if player_wins?
     return :lose if player_loses?
   end
 
-  def lose
-    "Unlucky, you have lost!"
-  end
-
-  def tie
-    "It's a tie!"
-  end
-  
   private
 
   def same_choice?

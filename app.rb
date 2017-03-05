@@ -25,17 +25,13 @@ class Game < Sinatra::Base
   get '/play' do
     erb :play
   end
-
+# the weapon choice the player makes is noted, and then the opponent makes their move
+# this is then sent to the evaluate_outcome method where it is compared with the player
+# move to see who has won.
   post '/choose_move' do
     RPS.instance.player.choice(params[:choice])
     result = RPS.instance.outcome
-    if (result == :win)
-      redirect '/winner'
-    elsif (result == :lose)
-      redirect '/loser'
-    else
-      redirect '/tie'
-    end
+    evaluate_outcome(result)
   end
 
   get '/winner' do
@@ -49,15 +45,16 @@ class Game < Sinatra::Base
   get '/loser' do
     erb :loser
   end
-  # post '/paper' do
-  #   RPS.instance.player.choice('Paper')
-  #   RPS.instance.outcome
-  #   erb :paper
-  # end
-  #
-  # post '/scissors' do
-  #   RPS.instance.player.choice('Scissors')
-  #   RPS.instance.outcome
-  #   erb :scissors
-  # end
+
+  private
+
+  def evaluate_outcome(result)
+    if (result == :win)
+      redirect '/winner'
+    elsif (result == :lose)
+      redirect '/loser'
+    else
+      redirect '/tie'
+    end
+  end
 end
