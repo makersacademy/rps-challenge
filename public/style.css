@@ -1,0 +1,46 @@
+html {
+  color: rgba(27, 38, 87, 1.0);
+  font-size: 35px;
+}
+
+div {
+  background-color: rgba(180, 211, 232, 1);
+  padding: 20px;
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.button {
+  margin: 25px;
+  font-size: 40px;
+  font-family: 'Cabin Sketch', cursive;
+  border: 1px solid rgba(27, 38, 87, 1.0);
+  color: rgba(27, 38, 87, 1.0);
+}
+
+a.button {
+  padding: 2px 6px 3px;
+  line-height: 85px;
+  text-decoration: none;
+  color: rgba(27, 38, 87, 1.0);
+}
+
+.field {
+  text-align: center;
+  font-family: avenir;
+  font-size: 20px;
+  height: 40px;
+}
+
+.winner {
+  font-size: 45px;
+  color: rgba(147, 21, 24, 1.0);
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+input.button {
+  background-color: rgba(180, 211, 232, 0.5);
+}

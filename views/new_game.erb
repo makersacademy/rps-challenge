@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <p>So, <%= @game.player.name %>,</p>
+      <p>ready to play? Click an option</p>
+      <form method="POST" action="/result">
+        <input class="button" type="submit" value="paper" name="option">
+        <input class="button" type="submit" value="scissors" name="option">
+        <input class="button" type="submit" value="rock" name="option">
+      </form>
+    </div>
+  </body>
+</html>

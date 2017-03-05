@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  <body>
+    <div>
+      <p>Your choice...</p>
+      <p><%= @game.player.option %></p>
+      <p>Computer's choice...</p>
+      <p><%= @random_option %></p>
+      <p>The winner is</p>
+      <p class="winner"><%= @winner %></p>
+        <a href="/play-again" class="button">Play again</a>
+        <a href="/" class="button">Switch user</a>
+    </div>
+  </body>
+</html>
