@@ -3,12 +3,10 @@ require 'computer'
 describe Computer do
   subject(:computer) {described_class.new}
 
-  it 'responds to weapon method' do
-    expect(computer).to respond_to :weapon
-  end
-
-  it 'randomises a weapon' do
-    allow(computer).to receive(:weapon).and_return('rock')
-    expect(computer.weapon).to eq 'rock'
+  describe '#move' do
+    it 'randomises a move' do
+      srand(1)
+      expect(computer.move).to eq :paper
+    end
   end
 end

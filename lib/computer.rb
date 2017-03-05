@@ -1,7 +1,8 @@
-class Computer
-  attr_reader :weapon
+require 'game'
 
-  def initialize
-    @weapon = ['rock', 'paper', 'scissors'].sample
+class Computer
+
+  def move
+    Game::WEAPON.sample
   end
 end

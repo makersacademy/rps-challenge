@@ -5,11 +5,15 @@ describe Game do
   let(:player_2) {double :player_2}
   subject(:game) {described_class.new(player_1, player_2)}
 
-  it 'is initialized with two players' do
+  it 'has a constant with weapon options' do
+    expect(described_class::WEAPON).to eq [:rock, :paper, :scissors]
+  end
+  
+  it 'returns player 1' do
     expect(game.player_1).to eq player_1
   end
 
-  it 'has an array of weapons' do
-    expect(game.weapons).to eq ['rock', 'paper', 'scissors']
+  it 'returns player 2' do
+    expect(game.player_2).to eq player_2
   end
 end
