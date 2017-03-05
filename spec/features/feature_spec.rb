@@ -59,4 +59,35 @@ feature 'playing game' do
     click_button 'Rock'
     expect(page).to have_content 'Opponent choice: Scissors'
   end
+
+
+  context 'game over' do
+    before do
+      srand(SEED)
+    end
+
+    # As a marketeer
+    # So that I can play rock/paper/scissors
+    # I would like to be able to win
+    scenario 'I win' do
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
+    end
+
+    # As a marketeer
+    # So that I can play rock/paper/scissors
+    # I would like to be able to lose
+    scenario 'I lose' do
+      click_button 'Paper'
+      expect(page).to have_content 'You lose!'
+    end
+
+    # As a marketeer
+    # So that I can play rock/paper/scissors
+    # I would like to be able to lose
+    scenario 'I draw' do
+      click_button 'Scissors'
+      expect(page).to have_content 'You draw!'
+    end
+  end
 end
