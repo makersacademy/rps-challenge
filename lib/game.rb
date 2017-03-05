@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :current_player, :opponent
+  attr_reader :players, :current_player, :opponent, :evaluate_engine, :game
 
-  def initialize(player_1, player_2)
+  def initialize(player_1, player_2, evaluate_engine = Evaluate)
     @players = [player_1, player_2]
     @current_player = @players[rand(0..1)]
+    @evaluate_engine = evaluate_engine.new
   end
 
   def self.create(player_1, player_2)
@@ -23,22 +24,16 @@ class Game
     @players.last
   end
 
+  def get_result
+    @evaluate_engine.get_result(player_1.choice, player_2.choice)
+  end
+
   def change_player
     @current_player = opponent_of(current_player)
-    check_missed_turn
-    @players.each { |player| player.check_poisoned_player }
   end
 
   def opponent_of(curr_player)
     @players.select { |player| player != curr_player}.first
-  end
-
-  def loser
-    @players.select { |player| player.health_points <= 0}.first
-  end
-
-  def game_over?
-    loser ? true : false
   end
 
 end

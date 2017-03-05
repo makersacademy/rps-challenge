@@ -1,10 +1,10 @@
 p1,p2,result
-Rock, Scissors, 1
-Rock, Rock, 0
-Rock, Paper, -1
-Paper, Rock, 1
-Paper, Paper, 0
-Paper, Scissors, -1
-Scissors, Paper, 1
-Scissors, Scissors, 0
-Scissors, Rock, -1
+Rock,Scissors,1
+Rock,Rock,0
+Rock,Paper,-1
+Paper,Rock,1
+Paper,Paper,0
+Paper,Scissors,-1
+Scissors,Paper,1
+Scissors,Scissors,0
+Scissors,Rock,-1
