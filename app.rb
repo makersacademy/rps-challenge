@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
     @game = Game.instance
   end
 
-  post '/play-again' do
+  get '/play-again' do
     erb :new_game
   end
 

@@ -11,9 +11,12 @@
       <h1><%= @random_option %></h1>
       <h3>The winner is</h3>
       <h1 class="winner"><%= @winner %></h1>
-      <form method="POST" action="/play-again">
-        <input class = "button" type ="submit" value="Play again">
-      </form>
+      <a href= "/play-again" class = "button">
+        Play again
+      </a>
+      <a href= "/" class = "button">
+        Switch user
+      </a>
     </div>
   </body>
 </html>
