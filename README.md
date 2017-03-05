@@ -65,6 +65,7 @@ Usage
 - Winner is declared
 
 ![Image usage in irb](https://github.com/Noora-q/rps-challenge/blob/master/Screen%20Shot%202017-03-05%20at%2017.33.36.png)
+
 ![Image usage in irb](https://github.com/Noora-q/rps-challenge/blob/master/Screen%20Shot%202017-03-05%20at%2017.42.15.png)
 
 Status
