@@ -5,17 +5,25 @@ require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
-  post '/play' do
+  get '/game_start' do
     @game = Game.create(Player.new(params[:name]), Computer.new)
+    redirect('/play')
+  end
+
+  get '/play' do
+    @name = Game.player_name
     erb(:play)
   end
 
   post '/result' do
-    @game = Game.instance
     @result = @game.judge_scores(@game.player.choice(params[:selection]), @game.computer.choice)
     erb(:result)
   end

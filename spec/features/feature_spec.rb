@@ -28,4 +28,14 @@ describe RockPaperScissors, :type => :feature do
       expect(page).to have_content("#{computer.name} chose #{computer.weapon}")
     end
   end
+
+  feature "#play again" do
+    scenario "can play again from result page" do
+      enter_name
+      fill_in :selection, with: "rock"
+      click_button("THROW!")
+      click_button("Play again")
+      expect(page).to have_content("Pick your weapon, #{player.name}.")
+    end
+  end
 end

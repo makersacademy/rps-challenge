@@ -20,6 +20,10 @@ class Game
     @game
   end
 
+  def self.player_name
+    @game.player.name
+  end
+
   def judge_scores(player_choice, computer_choice)
     if winning_moves.include?(player_result(player_choice, computer_choice))
       "#{player.name} won!"

@@ -1,7 +1,9 @@
 <html>
   <h1>Result:</h1>
-  <h2><%= @game.player.name %> chose <%= @game.player.weapon %></h2>
-  <h2><%= @game.computer.name %> chose <%= @game.computer.weapon %></h2>
+  <p><%= @game.player.name %> chose <%= @game.player.weapon %></p>
+  <p><%= @game.computer.name %> chose <%= @game.computer.weapon %></p>
   <h1><%= @result %></h1>
-
+  <form method="GET" action="/play">
+    <input type="submit" value="Play again">
+  </form>
 </html>
