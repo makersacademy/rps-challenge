@@ -1,5 +1,3 @@
-$VERBOSE=nil
-
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
