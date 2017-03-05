@@ -1,5 +1,8 @@
 $VERBOSE=nil
 require 'sinatra'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
