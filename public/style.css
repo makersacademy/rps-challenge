@@ -6,7 +6,7 @@ html {
 
 div {
   background-color: rgba(180, 211, 232, 0.5);
-  border: 2px solid rgba(27, 38, 87, 1.0);
+  border: 1px solid rgba(27, 38, 87, 1.0);
   width: 550px;
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +22,7 @@ div {
   font-size: 40px;
   font-family: 'Griffy', cursive;
   background-color: white;
-  border: 2px solid rgba(27, 38, 87, 1.0);
+  border: 1px solid rgba(27, 38, 87, 1.0);
   color: rgba(27, 38, 87, 1.0);
   box-shadow: 4px 4px 4px #aaa;
 }
@@ -40,7 +40,7 @@ a.button {
   font-family: avenir;
   font-size: 20px;
   height: 40px;
-  border: 2px solid rgba(27, 38, 87, 1.0);
+  border: 1px solid rgba(27, 38, 87, 1.0);
   box-shadow: 4px 4px 4px #aaa;
 }
 
