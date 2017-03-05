@@ -10,7 +10,7 @@ describe Player do
 
   context 'option' do
     it "should remember player's choice" do
-      expect(subject.choose_option('Rock')).to eq(subject.option)
+      expect(subject.choose_option('rock')).to eq(subject.option)
     end
   end
   end

@@ -1,12 +1,11 @@
 class Computer
 
-  def initialize(options)
+  def initialize
     @name = :computer
-    @options = options
   end
 
-  def option
-    @options.sample
+  def option(options)
+    options.sample
   end
 
 end

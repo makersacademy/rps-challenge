@@ -11,7 +11,7 @@ feature "register" do
 
   scenario "switch user name" do
     sign_in_and_play
-    click_button('Rock')
+    click_button('rock')
     click_link('Switch user')
     expect(page).to have_content('Hello! Please enter your name')
   end

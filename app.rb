@@ -3,6 +3,7 @@ $VERBOSE=nil
 require 'sinatra/base'
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 
 class Rps < Sinatra::Base
 
@@ -24,9 +25,8 @@ class Rps < Sinatra::Base
   end
 
   post '/result' do
-    @game = Game.instance
     @game.player.choose_option((params[:option]).to_sym)
-    @random_option = Computer.new(@game.options).option
+    @random_option = Computer.new.option(@game.options)
     @winner = @game.declare_winner(@random_option)
     erb :result
   end
