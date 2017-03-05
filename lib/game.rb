@@ -3,31 +3,20 @@ require_relative 'weapon'
 
 class Game
 
-  attr_reader :player1, :player2, :weapons, :result
+  attr_reader :player1, :player2, :result
 
   def initialize(player1, player2)
     @player1, @player2 = player1, player2
-    # @weapons = ['Rock', 'Paper', 'Scissors']
   end
 
-  def play(player_one_weapon, player_two_weapon)
-    @player_one_weapon = player_one_weapon
-    @player_two_weapon = player_two_weapon
-    declare_winner(player_one_weapon, player_two_weapon)
-  end
-
-  # def random_weapon_selection
-  #   @weapons.sample
-  # end
-
-  def declare_winner(weapon1, weapon2)
+  def play(weapon1, weapon2)
     case [weapon1, weapon2]
     when ['Rock', 'Rock'], ['Paper', 'Paper'], ['Scissors', 'Scissors']
       draw
     when ['Rock', 'Scissors'], ['Paper', 'Rock'], ['Scissors', 'Paper']
-      win
+      assign_winner(@player1)
     when ['Rock', 'Paper'], ['Scissors', 'Rock'], ['Paper', 'Scissors']
-      lose
+      assign_winner(@player2)
     end
   end
 
@@ -35,19 +24,9 @@ class Game
     @result = "It's a draw - play again!"
   end
 
-  def win
-    @player1.win(1)
-    @player2.lose(1)
-    @result = "Player 1 Wins!"
+  def assign_winner(player)
+    player.adjust_score(5)
+    @result = "#{player.name} wins!"
   end
-
-  def lose
-    @player2.win(1)
-    @player1.lose(1)
-    @result = "Player 2 Wins!"
-  end
-    # p computer
-    # p @player.weapon.win
-    # p @player.weapon.win.include? computer
 
 end
