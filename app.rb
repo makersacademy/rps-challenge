@@ -12,7 +12,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create((Player.new(params[:player_1])), Computer.new)
+    @game = Game.create((Player.new(params[:player_1])), Computer.new.move)
+    p @game
     redirect '/rules'
   end
 
@@ -24,6 +25,17 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @game = Game.instance
     erb(:play)
+  end
+
+  post '/players_choice' do
+    @player_choice = session[:weapon], params[:weapon]
+    @game = Game.instance
+    @game.play(@player_choice, player_2)
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    erb(:outcome)
   end
 
   # start the server if ruby file executed directly

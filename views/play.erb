@@ -1,7 +1,7 @@
 <!-- <h1><%= @player_1%>, choose your weapon!</h1> (Scope not working, put in some class methods to store name!)-->
 <h1>Choose your weapon!</h1>
-<form action="/outcome" type="get">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/players_choice" type="post">
+  <input type="submit" name ="weapon" value="Rock">
+  <input type="submit" name ="weapon" value="Paper">
+  <input type="submit" name ="weapon" value="Scissors">
 </form>

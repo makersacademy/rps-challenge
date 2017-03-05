@@ -21,3 +21,11 @@ feature 'Show play page' do
     expect(page).to have_content 'Choose your weapon!'
   end
 end
+
+feature 'Show outcome page' do
+  scenario 'After both players have chosen their weapon' do
+    sign_in_and_play
+    click_button('Ready!')
+    click_button('Rock')
+  end
+end
