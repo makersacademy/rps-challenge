@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-  #subject(:game) { described_class.new (jamie, computer) }
-  let(:jamie) { double :jamie }
-  let(:computer) { double :computer }
+  let(:jamie) { Player.new "Jamie" }
+  let(:computer) { Computer.new }
+  subject(:game) { Game.new(jamie, computer) }
 
   describe '#initialize' do
     it 'is initialized with a player and computer' do
@@ -13,10 +13,9 @@ describe Game do
     end
   end
 
-  describe '#weapons', focus: true do
-    it 'is aware of the weapon selection' do
-      #p subject.weapons
-    end
-  end
+   it { is_expected.to respond_to(:play).with(1).argument }
+
+  #  describe '#play' do
+  #    it 'game delegates to computer '
 
 end
