@@ -13,7 +13,7 @@ class Game
 
   def play(player_weapon)
     @player.check_weapon(player_weapon)
-  #  @computer.select_weapon
+    @computer.select_weapon
   end
 
 end

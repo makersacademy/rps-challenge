@@ -1,3 +1,5 @@
+require_relative 'weapon'
+
 class Player
 
   attr_reader :name
@@ -7,7 +9,14 @@ class Player
   end
 
   def check_weapon(weapon)
-    false
+    raise 'Weapon does not exist' unless weapon_exist?(weapon)
+    true
+  end
+
+  private
+
+  def weapon_exist?(weapon)
+    Weapon::WEAPONS.include?(weapon)
   end
 
 end
