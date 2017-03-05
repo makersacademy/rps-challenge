@@ -29,5 +29,16 @@ feature 'sends action through to game' do
     expect(page).to have_content "Ryan chose Rock"
   end
 end
-
-#play.erb form selection needs to send data
+#
+feature 'game selects an action' do
+  scenario 'player chooses an option (rock)' do
+    # allow(game).to receive(:random).and_return("Rock")
+    player_1 = 'Ryan'
+    visit '/'
+    fill_in(:player_1, with: player_1)
+    click_button('Submit')
+    choose('Rock')
+    click_button('Submit')
+    expect(page).to have_content "I chose"
+  end
+end

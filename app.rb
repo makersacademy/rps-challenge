@@ -1,5 +1,6 @@
 $VERBOSE=nil #remember to remove this before pulling
 require 'sinatra/base'
+require_relative 'lib/game'
 
 class RPS < Sinatra::Base
 
@@ -8,7 +9,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = params[:player_1]
+    $game = Game.new(params[:player_1])
     redirect '/play'
   end
 
@@ -17,8 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/round_1' do
-    $action = params[:weapon]
-    p $action
+    $game.player_choice = params[:weapon]
     erb :round1
   end
 
