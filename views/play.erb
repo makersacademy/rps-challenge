@@ -1,0 +1,15 @@
+<h2> <%= @playername %> vs Computer</h2>
+<div>
+<form method="post" action="/rock">
+  <input type="submit" name="confirmation" value="Rock" >
+</form>
+
+<form method="post" action="/paper">
+  <input type="submit" value="Paper" >
+</form>
+
+<form method="post" action="/scissors">
+  <input type="submit" value="Scissors" >
+</form>
+</div>
+<h3> <%= @confirmation %> </h3>
