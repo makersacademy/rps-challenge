@@ -1,4 +1,4 @@
-Narayan's RPS Challenge [![Build Status](https://travis-ci.org/nryn/rps_challenge.svg?branch=master)](https://travis-ci.org/nryn/rps_challenge)
+Narayan's RPS Challenge [![Build Status](https://travis-ci.org/nryn/rps-challenge.svg?branch=master)](https://travis-ci.org/nryn/rps-challenge)
 
 =================
 
