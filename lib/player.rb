@@ -9,7 +9,7 @@ class Player
   end
 
   def check_weapon(weapon)
-    raise 'Weapon does not exist' unless weapon_exist?(weapon)
+    raise 'Weapon does not exist' unless weapon_exist?(weapon.to_sym)
     true
   end
 

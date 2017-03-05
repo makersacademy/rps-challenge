@@ -18,16 +18,11 @@ class RpsApp < Sinatra::Base
     erb(:play)
   end
 
-  get '/in_play' do
+  get '/result' do
     @player_weapon = params[:player_selection]
-    @computer_selection = :paper
-    erb :result
+    @computer_selection = $game.play(@player_weapon)
+    erb $game.result
   end
-
-  # get '/result' do
-  #   @player_weapon = $game.play(params[:player_selection])
-  #   erb :result
-  # end
 
   run! if app_file == $0
 
