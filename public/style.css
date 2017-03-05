@@ -1,5 +1,5 @@
 body{
-  background-image:url("http://wallpapercave.com/wp/saiUfL2.png");
+  background-image:url("http://wallpapercave.com/wp/nHXaKvf.jpg");
   font-family:arial;
   color: white;
 }
@@ -18,9 +18,13 @@ div {
   background-color: #4CAF50; /* Green */
   border: solid 2px yellow;
   color: white;
-  padding: 5px 90px;
+  padding: 5px 40px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+}
+
+.logo{
+  color: skyblue;
+  text-shadow: 1px 0 white, 0 -1px white, 1px 0 white, 0 -1px white;
 }

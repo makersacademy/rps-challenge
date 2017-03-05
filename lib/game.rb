@@ -2,11 +2,11 @@ require_relative 'evaluate'
 
 class Game
 
-  attr_reader :players, :current_player, :opponent, :evaluate_engine, :game, :result
+  attr_reader :players, :current_player, :opponent, :evaluate_engine, :game, :result, :game_type
 
   def initialize(player_1, player_2, rules_file, game_type, evaluate_engine = Evaluate)
     @players = [player_1, player_2]
-    @current_player = player_1
+    @current_player = player_2
     @evaluate_engine = evaluate_engine.new(rules_file)
     @game_type = game_type
   end
@@ -32,11 +32,12 @@ class Game
   end
 
   def finish_round
+    player_2.make_random_choice(game_type) unless player_2.automated?
     get_result
   end
 
   def new_round
-    change_player
+    @current_player = player_2
   end
 
   def get_result

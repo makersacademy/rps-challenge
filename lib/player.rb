@@ -15,9 +15,11 @@ class Player
     @score += 1
   end
 
-  def get_random_choice(game_type)
-    return @choices_simple.sample if game_type == 0
-    return @choices_advanced.sample if game_type == 1
+  def make_random_choice(game_type)
+
+    @choice = @choices_simple.sample if game_type == 0
+    @choice = @choices_advanced.sample if game_type == 1
+    @choice
   end
 
   def automated?

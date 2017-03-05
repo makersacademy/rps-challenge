@@ -47,11 +47,11 @@ describe Player do
   end
 
   it 'gets a random choice for a simple game' do
-      expect(player_auto.get_random_choice(0)).to eq random_choice
+      expect(player_auto.make_random_choice(0)).to eq random_choice
   end
 
   it 'gets a random choice for an advanced game' do
-      expect(player_auto.get_random_choice(1)).to eq random_choice_advanced
+      expect(player_auto.make_random_choice(1)).to eq random_choice_advanced
   end
 
 end
