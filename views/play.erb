@@ -1,1 +1,8 @@
-Hello <%= @name %> 
+<h1> <%= @game.player.name%> vs AIcomp!</h1>
+<h2> Choose your weapon!</h2>
+
+<form action="/selection" method="POST">
+  <input type="submit" name ="choose_your_weapon" value="Rock" />
+  <input type="submit" name ="choose_your_weapon" value="Paper" />
+  <input type="submit" name ="choose_your_weapon" value="Scissors" />
+</form>
