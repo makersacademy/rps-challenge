@@ -1,9 +1,9 @@
 require 'game'
+require 'player'
 
 describe Game do
 
-  let(:player) { double :player }
-  subject(:game) { described_class.new(player) }
+  subject(:game) { described_class.new(Player.new('Alex')) }
 
   context 'options' do
     it 'keeps all the options' do
@@ -17,8 +17,8 @@ describe Game do
     end
 
     it 'declares_winner' do
-      allow(:player).to receive(:option).and_return('Rock')
-      expect(["Alex", "Computer", "nobody"].include?(subject.declare_winner('Rock'))).to eq true
+      expect(["Alex", "computer", "nobody"].include?(subject.declare_winner('Rock'))).to eq true
     end
   end
+
 end

@@ -32,4 +32,11 @@ feature "play" do
     click_button('Rock')
     expect(page).to have_content("The winner is")
   end
+
+  scenario "player can play again" do
+    sign_in_and_play
+    click_button('Rock')
+    click_button('Play again')
+    expect(page).to have_content('So, Alex, ready to play?')
+  end
 end
