@@ -1,15 +1,17 @@
+require_relative './computer.rb'
+
 class Game
 
-  attr_reader :player_selection, :computer_select
+  attr_accessor :player_selection, :computer_selection
 
-  def initialize(player_selection = nil)
+  def initialize(player_selection, computer_selection)
     @player_selection = player_selection
+    @computer_selection = computer_selection
   end
 
   def result
-    @computer_select = computer_selection()
-    return "DRAW!" if @computer_select == @player_selection
-    arr = [@player_selection, @computer_select]
+    return "DRAW!" if @computer_selection == @player_selection
+    arr = [@player_selection, @computer_selection]
     if arr == [:rock, :scissors]
       "YOU WIN!"
     elsif arr == [:scissors, :paper]
@@ -21,10 +23,5 @@ class Game
     end
   end
 
-  RPS_TOOLS = [:rock, :paper, :scissors] #is this pointless here?
-
-  def computer_selection
-    RPS_TOOLS.sample
-  end
 
 end

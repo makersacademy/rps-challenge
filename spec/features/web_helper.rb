@@ -1,4 +1,3 @@
-require 'game'
 
 def new_player
   @player1 = session[:p1]
@@ -16,9 +15,9 @@ def button_pressed
 end
 
 def new_game
-  @game = Game.new(@button_pressed)
+  @game = Game.new(@button_pressed, Computer.new.selection)
 end
 
 def computer_choice
-  @x = @game.computer_select
+  @game.computer_selection
 end

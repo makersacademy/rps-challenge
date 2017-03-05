@@ -3,6 +3,7 @@ $VERBOSE=nil
 require 'sinatra/base'
 require_relative 'lib/players.rb'
 require_relative 'lib/game.rb'
+require_relative 'lib/computer.rb'
 require_relative 'spec/features/web_helper.rb'
 
 class Rps < Sinatra::Base
@@ -26,7 +27,7 @@ enable :sessions
   get '/final' do
     button_pressed()
     new_game()
-    computer_choice()
+    @x = computer_choice()
     erb :final
   end
 

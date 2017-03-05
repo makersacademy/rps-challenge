@@ -1,4 +1,5 @@
 require './app'
+require './lib/computer'
 
 # As a marketeer
 # So that I can see my name in lights
@@ -22,6 +23,7 @@ end
 feature "Play Rock, Paper, Scissors" do
 
   feature "Tells player whether they have lost, won, or drawn" do
+
     scenario "tells player they have lost when they lose" do
       allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
       visit '/'
@@ -39,8 +41,16 @@ feature "Play Rock, Paper, Scissors" do
       click_button "scissors"
       expect(page).to have_content("YOU WIN!")
     end
+
+    scenario "tells player they have drawn when they draw" do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+      visit '/'
+      fill_in('NAME', with: "Peter Parker")
+      click_button "ENTER"
+      click_button "scissors"
+      expect(page).to have_content("DRAW!")
+    end
+
   end
-
-
 
 end
