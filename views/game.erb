@@ -1,0 +1,15 @@
+<link rel='stylesheet' href='css/styles.css'>
+
+<div class="container">
+
+  <h1>Welcome<%if @restart%><%=" back"%><%end%><%if !@name.empty?%><%=", " + @name %><%end%>.</h1>
+
+  <p>Choose your weapon:</p>
+  <div class="animated fadeIn">
+    <div class="padder">
+      <a href="/result?weapon=Rock"><button class="rps-button"><img alt="Rock" src="/img/r.png"></button></a>
+      <a href="/result?weapon=Paper"><button class="rps-button"><img alt="Paper" src="/img/p.png"></button></a>
+      <a href="/result?weapon=Scissors"><button class="rps-button"><img alt="Scissors" src="/img/s.png"></button></a>
+    </div>
+  </div>
+</div>

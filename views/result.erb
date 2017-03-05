@@ -1,0 +1,17 @@
+<link rel='stylesheet' href='css/styles.css'>
+
+<div class ="container">
+
+  <h1 class="result_heading">You <%=@outcome%>.</h1>
+
+  <img class="result_pic padder" src="<%=@result_pic%>">
+
+  <p>You chose <%= @weapon %>.</p>
+
+  <p>The computer chose <%= @comp_weapon %>.</p>
+
+  <form class="padder" action="/game">
+    <input class="rps-button" name="restart" type="submit" value="Restart">
+  </form>
+
+</div>
