@@ -11,17 +11,17 @@ class Rps < Sinatra::Base
   end
 
   post '/new-game' do
-    if $game == nil
-      $game = Game.new(Player.new(params[:name]))
-    end
+    @game = Game.create(Player.new(params[:name]))
     erb :new_game
   end
 
   post '/result' do
+    @game = Game.instance
+    p @game
     @option = params[:option]
-    $game.player.choose_option(params[:option])
-    @random_option = $game.play
-    @winner = $game.declare_winner(@random_option)
+    @game.player.choose_option(@option)
+    @random_option = @game.play
+    @winner = @game.declare_winner(@random_option)
     erb :result
   end
 

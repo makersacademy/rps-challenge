@@ -1,11 +1,12 @@
 html {
   background-image: url('background.jpg');
-  background-position: center;
+  background-size: cover;
 }
 
 div {
+  background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid black;
-  width: 500px;
+  width: 550px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -26,4 +27,8 @@ div {
   font-size: 20px;
   height: 40px;
   border: 2px solid black;
+}
+
+.winner {
+  color: rgba(147, 21, 24, 1.0);
 }
