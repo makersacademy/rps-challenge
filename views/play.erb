@@ -1,0 +1,20 @@
+<h1 style="color:blue">Player: <%=@game.player_name%> </h1>
+<%if @result == "#{@game.player_name} wins."
+    @color = 'green'
+  elsif @result == "Computer wins."
+    @color = 'crimson'
+  else
+    @color = 'goldenrod'
+  end%>
+<%if !!@result %>
+  <div><%=@game.player_name%>: <%=@game.player_choice%> vs Computer: <%=@game.computer_choice%></div>
+  <h2 style="color:<%=@color%>"><%=@result%></h2>
+<%end%>
+
+<h1>Take your pick:</h1>
+
+<form action="choice" method="post">
+  <input style="height:200px; width:100px" type="submit" value="Rock" name='player_choice'>
+  <input style="height:200px; width:100px" type="submit" value="Paper" name='player_choice'>
+  <input style="height:200px; width:100px" type="submit" value="Scissors" name='player_choice'>
+</form>
