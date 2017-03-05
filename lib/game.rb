@@ -38,5 +38,13 @@ class Game
     end
   end
 
+  def print_message(result)
+    if result == :draw
+      "It's a #{result.to_s}!"
+    else
+      "You #{result}!"
+    end
+  end
+
 
 end

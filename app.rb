@@ -26,13 +26,15 @@ class RockPaperScissors < Sinatra::Base
   post '/option' do
     p params
     @game.select_option(params[:option])
-    redirect '/choice'
+    redirect '/result'
   end
 
-  get '/choice' do
+  get '/result' do
     @game.generate_rand_option
-    erb :choice
+    @game.get_result(@game.choice, @game.random_choice)
+    erb :result
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
