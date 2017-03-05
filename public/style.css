@@ -21,6 +21,12 @@ div {
   border: 2px solid black;
 }
 
+a.button {
+  line-height: 85px;
+  text-decoration: none;
+  color: black;
+}
+
 .field {
   text-align: center;
   font-family: avenir;
@@ -31,4 +37,5 @@ div {
 
 .winner {
   color: rgba(147, 21, 24, 1.0);
+  text-shadow: 4px 4px 4px #aaa;
 }

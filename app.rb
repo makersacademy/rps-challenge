@@ -25,8 +25,8 @@ class Rps < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    @game.player.choose_option(params[:option])
-    @random_option = @game.play
+    @game.player.choose_option((params[:option]).to_sym)
+    @random_option = Computer.new(@game.options).option
     @winner = @game.declare_winner(@random_option)
     erb :result
   end
