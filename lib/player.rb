@@ -1,18 +1,13 @@
 class Player
 
+  attr_reader :player_name, :player_choice
+
   def initialize(player_name)
     @player_name = player_name
+    @player_choice
   end
 
-  def self.create(player_name)
-    @player = Player.new(player_name)
-  end
-
-  def self.instance
-    @player
-  end
-
-  def name(name=@player_name)
-    name
+  def choice(move)
+    @player_choice = move.to_sym
   end
 end

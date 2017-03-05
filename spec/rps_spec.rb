@@ -1,21 +1,46 @@
-describe RPS do
+require 'opponent'
+require 'rock_paper_scissors'
 
-  it "calls the same instance of the class" do
-    player = Player.create('Chris')
-    expect(RPS.create(player)).to eq RPS.instance
-  end
+describe RPS do
+  #  subject(:rps) { described_class.new(player, opponent) }
+  #  let(:opponent) { spy(:opponent) }
+  #  let(:player) { spy(:player) }
 
   it "takes the player name when creating new game" do
-    player = Player.create('Chris')
+    player = 'Chris'
     RPS.create(player)
-    expect(RPS.instance.display_players).to eq player
+    expect(RPS.instance.player.player_name).to eq player
   end
 
-  it "evaluates opponent move after player has selected theirs" do
-    player = Player.create('Chris')
-    RPS.create(player)
-    RPS.instance.rock
-    opponent = Opponent.create_opponent
-    expect(RPS.instance.opponent_move).not_to eq nil
+  it "rock vs scissors, rock wins", :x do
+    RPS.create('Chris')
+    RPS.instance.player.choice('Rock')
+    opponent = RPS.instance.opponent
+    allow(opponent).to receive(:move).and_return :Scissors
+    expect(RPS.instance.outcome).to eq :win
+  end
+
+  it "scissors vs paper, scissors wins", :x do
+    RPS.create('Chris')
+    RPS.instance.player.choice('Scissors')
+    opponent = RPS.instance.opponent
+    allow(opponent).to receive(:move).and_return :Paper
+    expect(RPS.instance.outcome).to eq :win
+  end
+
+  it "paper vs rock, paper wins", :x do
+    RPS.create('Chris')
+    RPS.instance.player.choice('Rock')
+    opponent = RPS.instance.opponent
+    allow(opponent).to receive(:move).and_return :Paper
+    expect(RPS.instance.outcome).to eq :lose
+  end
+
+  it "is a tie when both weapons are the same", :x do
+    RPS.create('Chris')
+    RPS.instance.player.choice('Paper')
+    opponent = RPS.instance.opponent
+    allow(opponent).to receive(:move).and_return :Paper
+    expect(RPS.instance.outcome).to eq :tie
   end
 end

@@ -3,12 +3,21 @@ require_relative 'opponent'
 
 class RPS
 
-  def initialize(player)
+  attr_reader :player, :opponent, :player_choice, :opponent_move
+
+  RULES = {Rock: :Scissors,
+           Paper: :Rock,
+           Scissors: :Paper}
+
+  def initialize(player, opponent=Opponent.new)
     @player = player
+    @opponent = opponent
+    @opponent_move
   end
 
   def self.create(player)
-    @game = RPS.new(player)
+    @player = Player.new(player)
+    @game = RPS.new(player=@player)
   end
 
   def self.instance
@@ -19,13 +28,36 @@ class RPS
     name
   end
 
-  def opponent_move(move=@opponent_move)
-    @opponent_move
+  def win
+    "Congratulations, you have won!"
   end
 
-  def rock
-    Opponent.create_opponent
-    Opponent.instance.move
-    @opponent_move = Opponent.instance.opponent_move
+  def outcome
+    @opponent_move = @opponent.move
+    return :tie if same_choice?
+    return :win if player_wins?
+    return :lose if player_loses?
+  end
+
+  def lose
+    "Unlucky, you have lost!"
+  end
+
+  def tie
+    "It's a tie!"
+  end
+  
+  private
+
+  def same_choice?
+    @player.player_choice == @opponent_move
+  end
+
+  def player_wins?
+    RULES[@player.player_choice] == @opponent_move
+  end
+
+  def player_loses?
+    RULES[@player.player_choice] != @opponent_move
   end
 end

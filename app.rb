@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/rock_paper_scissors'
 require './lib/player'
+require './lib/opponent'
 
 class Game < Sinatra::Base
 
@@ -12,7 +13,7 @@ class Game < Sinatra::Base
 # this method calls a class method which create a new instance
 # of the Player class and passes the name as a parameter
   post '/names' do
-    Player.create(params[:player_name])
+    RPS.create(params[:player_name])
     redirect '/welcome'
   end
 # the welcome.erb file below can now access the same instance of
@@ -26,6 +27,8 @@ class Game < Sinatra::Base
   end
 
   post '/rock' do
+    RPS.instance.player.choice('Rock')
+    RPS.instance.outcome
     erb :rock
   end
 end
