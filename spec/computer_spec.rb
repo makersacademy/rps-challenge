@@ -10,7 +10,6 @@ describe Computer do
       srand(2)
       expect(computer.selection).to eq 'Rock'
       expect(computer.selection).to eq 'Paper'
-      #expect(computer.selection).to eq 'Scissors'
     end
   end
 
