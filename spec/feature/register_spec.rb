@@ -5,6 +5,6 @@
 feature "register" do
   scenario "player registers his/her name and sees it on the screen" do
     sign_in_and_play
-    expect(page).to have_content('Welcome, Alex!')
+    expect(page).to have_content('So, Alex, ready to play?')
   end
 end

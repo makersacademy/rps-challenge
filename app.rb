@@ -15,11 +15,14 @@ class Rps < Sinatra::Base
     erb :new_game
   end
 
+  post '/play-again' do
+    @game = Game.instance
+    erb :new_game
+  end
+
   post '/result' do
     @game = Game.instance
-    p @game
-    @option = params[:option]
-    @game.player.choose_option(@option)
+    @game.player.choose_option(params[:option])
     @random_option = @game.play
     @winner = @game.declare_winner(@random_option)
     erb :result

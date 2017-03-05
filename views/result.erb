@@ -6,12 +6,12 @@
   <body>
     <div>
       <h3>Your choice...</h3>
-      <h1><%= @option %></h1>
+      <h1><%= @game.player.option %></h1>
       <h3>Computer's choice...</h3>
       <h1><%= @random_option %></h1>
       <h3>The winner is</h3>
       <h1 class="winner"><%= @winner %></h1>
-      <form method="POST" action="/new-game">
+      <form method="POST" action="/play-again">
         <input class = "button" type ="submit" value="Play again">
       </form>
     </div>
