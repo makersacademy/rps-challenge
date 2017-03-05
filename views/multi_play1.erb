@@ -1,0 +1,9 @@
+<h1>Hi <%= @game.player_1.name %> and <%= @game.player_2.name %>! Let's play Rock Paper Scissors! </h1>
+
+<h2> <%= @game.player_1.name %> goes first. Please make your choice.</h2>
+
+<form action = "/option", method = "post">
+  <input type = 'submit', name = "option", value = "Rock">
+  <input type = 'submit', name = "option", value = "Paper">
+  <input type = 'submit', name = "option", value = "Scissors">
+</form>

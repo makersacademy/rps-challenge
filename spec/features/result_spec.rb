@@ -5,19 +5,19 @@ feature "Showing the result" do
   end
 
   scenario "Show when player wins" do
-    sign_in_and_play
+    single_sign_in_and_play
     click_button "Rock"
     expect(page).to have_content("You win!")
   end
 
   scenario "Show when player loses" do
-    sign_in_and_play
+    single_sign_in_and_play
     click_button "Paper"
     expect(page).to have_content("You lose!")
   end
 
   scenario "Show when draw" do
-    sign_in_and_play
+    single_sign_in_and_play
     click_button "Scissors"
     expect(page).to have_content("It's a draw!")
   end

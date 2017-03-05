@@ -5,11 +5,11 @@ class Game
            :paper => :rock,
            :scissors => :paper }
 
-  attr_reader :player, :computer, :choice, :options, :computer_choice, :result
+  attr_reader :player_1, :player_2, :choice, :options, :computer_choice, :result
 
-  def initialize(player, computer)
-    @player = player
-    @computer = computer
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
     @options = OPTIONS
   end
 
@@ -26,7 +26,7 @@ class Game
   end
 
   def get_computer_choice
-    @computer_choice = computer.generate_rand_option
+    @computer_choice = player_2.generate_rand_option
   end
 
   def get_result(choice, computer_choice)
