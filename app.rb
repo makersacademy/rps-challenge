@@ -16,9 +16,15 @@ enable :sessions
     redirect '/play'
   end
 
+  # before do
+  #   @confirmation = params[:confirmation]
+  # end
+
   get '/play' do
     @playername = session['playername']
-    @confirmation = session['confirmation']
+    @confirmation = session['confirmation'] || "#{@playername} is selecting..."
+    @print_comp_choice = session['print_comp_choice'] || ""
+    @result = session['result'] || ""
     erb(:play)
   end
 
@@ -28,37 +34,69 @@ enable :sessions
   # end
 
   post '/rock' do
-      rock
-      session['confirmation'] = params[:confirmation]
-      redirect '/play'
+    rock
+    redirect '/play'
   end
 
   post '/paper' do
-      paper
-      redirect '/play'
+    paper
+    redirect '/play'
   end
 
   post '/scissors' do
-      scissors
-      redirect '/play'
+    scissors
+    redirect '/play'
   end
 
   def rock
-    #random_method
-    #if rock, etc.
-    @confirmation = "#{@playername} chose rock!"
+    random
+    case
+    when @comp_choice == "paper" then lose
+    when @comp_choice == "rock" then draw
+    when @comp_choice == "scissors" then win
+    end
+    session['confirmation'] = "#{session[:playername]} selected rock."
   end
 
   def paper
+    random
+    case
+    when @comp_choice == "paper" then draw
+    when @comp_choice == "rock" then win
+    when @comp_choice == "scissors" then lose
+    end
+    session['confirmation'] = "#{session[:playername]} selected paper."
+  end
+
+  def scissors
+    random
+    case
+    when @comp_choice == "paper" then win
+    when @comp_choice == "rock" then lose
+    when @comp_choice == "scissors" then draw
+    end
+    session['confirmation'] = "#{session[:playername]} selected scissors."
     #random_method
     #if rock, etc.
     #@confirmation =
   end
 
-  def scissors
-    #random_method
-    #if rock, etc.
-    #@confirmation =
+  def random
+    @arr = ['rock', 'paper', 'scissors']
+    @comp_choice = @arr.sample
+    session['print_comp_choice'] = "Computer chose #{@comp_choice}."
+  end
+
+  def lose
+    session['result'] = "You lose."
+  end
+
+  def draw
+    session['result'] = "Draw."
+  end
+
+  def win
+    session['result'] = "You win."
   end
 
 run! if app_file == $0 #maybe move
