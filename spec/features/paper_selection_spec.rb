@@ -6,7 +6,7 @@ RSpec.feature "confirms you have selected rock" do
     fill_in("player_name", with: "Chris")
     click_button("Submit")
     click_button("Begin Game")
-    click_button("Rock")
-    expect(page).to have_text("You have selected ROCK!")
+    click_button("Paper")
+    expect(page).to have_text("You have selected PAPER!")
   end
 end
