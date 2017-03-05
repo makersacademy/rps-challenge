@@ -9,17 +9,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    p params
-    session[:player_1_name] = params[:player_1]
+    @game = Game.create((Player.new(params[:player_1])), Computer.new)
     redirect '/rules'
   end
 
   get '/rules' do
-    @player_1 = session[:player_1_name]
+    @game = Game.instance
     erb(:rules)
   end
 
   get '/play' do
+    @game = Game.instance
     erb(:play)
   end
 

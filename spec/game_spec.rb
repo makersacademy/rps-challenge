@@ -8,7 +8,7 @@ describe Game do
   it 'has a constant with weapon options' do
     expect(described_class::WEAPON).to eq [:rock, :paper, :scissors]
   end
-  
+
   it 'returns player 1' do
     expect(game.player_1).to eq player_1
   end
