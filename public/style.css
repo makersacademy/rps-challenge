@@ -10,18 +10,19 @@ div {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: 'Vast Shadow', cursive;
+  font-family: 'Griffy', cursive;
 }
 
 .button {
   margin: 25px;
   font-size: 40px;
-  font-family: 'Vast Shadow', cursive;
+  font-family: 'Griffy', cursive;
   background-color: white;
   border: 2px solid black;
 }
 
 a.button {
+  padding: 2px 6px 3px;
   line-height: 85px;
   text-decoration: none;
   color: black;

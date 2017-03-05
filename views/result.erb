@@ -1,15 +1,15 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Vast+Shadow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
   </head>
   <body>
     <div>
-      <h3>Your choice...</h3>
+      <h2>Your choice...</h2>
       <h1><%= @game.player.option %></h1>
-      <h3>Computer's choice...</h3>
+      <h2>Computer's choice...</h2>
       <h1><%= @random_option %></h1>
-      <h3>The winner is</h3>
+      <h2>The winner is</h2>
       <h1 class="winner"><%= @winner %></h1>
         <a href="/play-again" class="button">Play again</a>
         <a href="/" class="button">Switch user</a>
