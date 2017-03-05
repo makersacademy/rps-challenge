@@ -47,15 +47,37 @@ class RockPaperScissors < Sinatra::Base
 
   post '/option' do
     p params
-    @game.select_option(params[:option])
-    redirect '/result'
+    @game.p1_select_option(params[:option])
+    redirect '/single_player_result'
   end
 
-  get '/result' do
-    @game.get_computer_choice
-    @game.get_result(@game.choice, @game.computer_choice)
-    erb :result
+  post '/p1_option' do
+    p params
+    @game.p1_select_option(params[:option])
+    redirect '/multi_play2'
   end
+
+  get '/multi_play2' do
+    erb :multi_play2
+  end
+
+  post '/p2_option' do
+    p params
+    @game.p2_select_option(params[:option])
+    redirect '/multi_player_result'
+  end
+
+  get '/single_player_result' do
+    @game.get_computer_choice
+    @game.get_result(@game.p1_choice, @game.p2_choice)
+    erb :single_player_result
+  end
+
+  get '/multi_player_result' do
+    @game.get_result(@game.p1_choice, @game.p2_choice)
+    erb :multi_player_result
+  end
+
 
 
   # start the server if ruby file executed directly

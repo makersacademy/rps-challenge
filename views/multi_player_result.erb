@@ -1,0 +1,15 @@
+<h1><%= @game.player_1.name %> picked <%= @game.p1_choice.capitalize %></h1>
+
+<h1><%= @game.player_2.name %> picked <%= @game.p2_choice.capitalize %></h1>
+
+<% if @game.result == :draw %>
+<h1>It's a draw!</h1>
+<% elsif @game.result == :win %>
+<h1> <%= @game.player_1.name %> won!</h1>
+<% else %>
+<h1> <%= @game.player_2.name %> won!</h1>
+<% end %>
+
+<form action = "/multi_play1", method = "get">
+  <input type = 'submit', value = "Try again">
+</form>

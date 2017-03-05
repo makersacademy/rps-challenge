@@ -5,7 +5,7 @@ class Game
            :paper => :rock,
            :scissors => :paper }
 
-  attr_reader :player_1, :player_2, :choice, :options, :computer_choice, :result
+  attr_reader :player_1, :player_2, :p1_choice, :options, :p2_choice, :result
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -21,31 +21,26 @@ class Game
     @game
   end
 
-  def select_option(choice)
-    @choice = choice.downcase.to_sym
+  def p1_select_option(choice)
+    @p1_choice = choice.downcase.to_sym
+  end
+
+  def p2_select_option(choice)
+    @p2_choice = choice.downcase.to_sym
   end
 
   def get_computer_choice
-    @computer_choice = player_2.generate_rand_option
+    @p2_choice ||= player_2.generate_rand_option
   end
 
-  def get_result(choice, computer_choice)
-    if choice == computer_choice
+  def get_result(p1_choice, p2_choice)
+    if p1_choice == p2_choice
       @result = :draw
-    elsif RULES[choice] == computer_choice
+    elsif RULES[p1_choice] == p2_choice
       @result = :win
     else
       @result = :lose
     end
   end
-
-  def print_message(result)
-    if result == :draw
-      "It's a #{result.to_s}!"
-    else
-      "You #{result}!"
-    end
-  end
-
-
+  
 end
