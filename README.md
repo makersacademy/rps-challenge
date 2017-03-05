@@ -16,8 +16,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Usage 
-----
+Functionality
 
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -55,6 +54,18 @@ As a marketeer
 So that I can play rock/paper/scissors
 I would like to be able to draw
 ```
+
+Usage
+----
+- Run rackup on terminal
+- Go to localhost:9292
+- Enter name and click submit
+- Click on rock, paper or scissors button to make choice
+- Computer then makes it's choice
+- Winner is declared
+
+![Image usage in irb](https://github.com/Noora-q/rps-challenge/blob/master/Screen%20Shot%202017-03-05%20at%2017.33.36.png)
+![Image usage in irb](https://github.com/Noora-q/rps-challenge/blob/master/Screen%20Shot%202017-03-05%20at%2017.42.15.png)
 
 Status
 -----
