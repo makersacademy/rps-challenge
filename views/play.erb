@@ -1,0 +1,25 @@
+
+<style>
+body {font-family: Impact, Charcoal, sans-serif}
+</style>
+
+
+<body>
+
+<h1>  Welcome <%= @game.player_name %> </h2>
+<br>
+<h2> Choose your hand <h2>
+
+  <form action ="/result" method = "post" >
+    <input type= "submit" name ="hand" value = "Rock">
+  </form>
+
+  <form action ="/result" method = "post" >
+    <input type= "submit" name= "hand" value = "Paper">
+  </form>
+
+  <form action = "/result" method ="post" >
+    <input type = "submit" name ="hand" value = "Scissors" >
+  </form>
+
+</body>
