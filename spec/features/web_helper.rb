@@ -1,4 +1,3 @@
-
 def new_player
   @player1 = session[:p1]
   Players.new(@player1)

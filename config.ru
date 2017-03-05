@@ -1,2 +1,2 @@
 require './app'
-run Rps
+run RPS

@@ -1,21 +1,20 @@
-require 'game'
 
 describe Game do
 
   describe '#result' do
-    it "prints 'DRAW!' when computer and player selection match" do
+    it "returns draw when computer and player selection match" do
       game = Game.new(:rock, :rock)
-      expect(game.result).to eq("DRAW!")
+      expect(game.result).to eq(:draw)
     end
 
-    it "prints 'YOU WIN!' when player beats computer" do
+    it "returns you win when player beats computer" do
       game = Game.new(:rock, :scissors)
-      expect(game.result).to eq("YOU WIN!")
+      expect(game.result).to eq(:win)
     end
 
-    it "prints 'YOU LOSE!' when computer beats player" do
+    it "returns you lose when computer beats player" do
       game = Game.new(:rock, :paper)
-      expect(game.result).to eq("YOU LOSE!")
+      expect(game.result).to eq(:lose)
     end
   end
 

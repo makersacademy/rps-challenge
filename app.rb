@@ -6,9 +6,9 @@ require_relative 'lib/game.rb'
 require_relative 'lib/computer.rb'
 require_relative 'spec/features/web_helper.rb'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
 
-enable :sessions
+  enable :sessions
 
   get '/' do
     erb :index
@@ -27,8 +27,8 @@ enable :sessions
   get '/final' do
     button_pressed()
     new_game()
-    @x = computer_choice()
-    erb :final
+    computer_choice()
+    erb @game.result
   end
 
 end
