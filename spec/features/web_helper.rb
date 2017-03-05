@@ -4,13 +4,8 @@ def new_player
 end
 
 def button_pressed
-  if params[:rock] != nil
-     @button_pressed = params[:rock].to_sym
-  elsif params[:paper] != nil
-     @button_pressed = params[:paper].to_sym
-  else params[:scissors] != nil
-      @button_pressed = params[:scissors].to_sym
-  end
+  arr = [params[:rock], params[:paper], params[:scissors]]
+  arr.each {|x| @button_pressed = x.to_sym unless x == nil}
 end
 
 def new_game
