@@ -5,6 +5,6 @@ feature 'The result is presented' do
     fill_in :player_selection, with: 'rock'
     click_button('Play!')
     click_button('Play again')
-    expect(page).to have_content 'Select your weapon of choice:'
+    expect(page).to have_content 'Select your weapon of choice (rock, paper, scissors):'
   end
 end

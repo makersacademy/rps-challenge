@@ -1,9 +1,19 @@
-You lost!
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-<p>You have selected <%= @player_weapon %></p>
+<body>
+  <h2>You lost!</h2>
 
-<p>Computer selected <%= @computer_selection %></p>
+  <p>You have selected <%= @player_weapon %></p>
 
-<form action="/play">
-    <input type="submit" value="Play again">
-</form>
+  <p>Computer selected <%= @computer_selection %></p>
+
+  <form action="/play">
+    <input type="submit" class="btn" value="Play again">
+  </form>
+</body>
+
+</html>
