@@ -1,6 +1,8 @@
-
-<p><%= $game.player.name %> choose <%= $game.player_move %></p>
-<p>Computer choose <%= $game.computer_move %></p>
+<title>Rock-Paper-Scissors</title>
+<body>
+<div>
+<p><%= $game.player.name %> chose <%= $game.player_move %></p>
+<p>Computer chose <%= $game.computer_move %></p>
 <% if $game.win? %>
 <p>You have won the game </p>
 <% elsif $game.draw? %>
@@ -8,3 +10,8 @@
 <% else $game.lose? %>
 <p>You have lost the game </p>
 <% end %>
+<div>
+  <form action="/play" method="get">
+  <input type="submit" value="play again">
+  </form>
+</body>
