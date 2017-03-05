@@ -46,6 +46,8 @@ class Game < Sinatra::Base
     erb :loser
   end
 
+  # add button to restart game
+
   private
 
   def evaluate_outcome(result)
