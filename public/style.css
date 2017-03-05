@@ -1,0 +1,26 @@
+body{
+  background-image:url("http://wallpapercave.com/wp/saiUfL2.png");
+  font-family:arial;
+  color: white;
+}
+
+div {
+    display: inline-block;
+}
+
+.giphy{
+  border-color: red;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: solid 2px yellow;
+  color: white;
+  padding: 5px 90px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
