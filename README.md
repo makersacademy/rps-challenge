@@ -14,14 +14,16 @@ Instructions
 * Click the "Play!" button
 * Have fun playing Rock, Paper, Scissors, Lizard, Spock!
 
-```sh
+```
 $ git clone https://github.com/treborb/rps-challenge.git
 $ cd rps-challenge
 $ gem install bundler
 $ bundle
 $ ruby app.rb
-In the web browser: http://localhost:4567
+$ open http://localhost:4567
 ```
+
+### [You can also play the online demo by clicking here][a47ccf75]
 
 ## Rules for Rock, Paper, Scissors, Lizard, Spock:
 
@@ -32,3 +34,15 @@ In the web browser: http://localhost:4567
 * Spock defeats Scissors and Rock
 
 http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
+
+### Screenshots
+
+![Choosing a weapon](lib/public/img/screenshots/screenshot1.png)
+
+
+![The weigh in](lib/public/img/screenshots/screenshot2.png)
+
+
+![Link wins!](lib/public/img/screenshots/screenshot3.png)
+
+[a47ccf75]: https://rock-paper-scissors-liz-spk.herokuapp.com "Heroku link"
