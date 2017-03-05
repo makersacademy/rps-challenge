@@ -41,8 +41,10 @@ class Game
     else
       @result = :lose
     end
+    keep_score(result)
   end
 
+  private
   def keep_score(result)
     if @result == :win
       player_1.add_point

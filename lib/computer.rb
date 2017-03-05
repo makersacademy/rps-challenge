@@ -10,12 +10,14 @@ class Computer
     @score = 0
   end
 
+  def add_point
+    @score += 1
+  end
+
   def generate_rand_option
     @random_choice = options.sample
   end
 
-  def add_point
-    @score += 1
-  end
+
 
 end
