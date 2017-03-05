@@ -15,7 +15,8 @@ describe Player do
     end
 
     it 'score increases after winning' do
-      expect(player.win).to eq 1
+      player.win(1)
+      expect(player.score).to eq 1
     end
   end
 
