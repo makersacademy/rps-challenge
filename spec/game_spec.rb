@@ -3,7 +3,7 @@ describe Game do
   let(:hum) { double("human", :name => "Human", :choice => :rock) }
   let(:comp) { double("comp", :name => "Computer", :choice => :scissors) }
 
-  describe "#judge_scores" do
+  describe "#judge_scores", :jd do
     it "responds to judge_scores" do
       expect(game).to respond_to(:judge_scores)
     end
