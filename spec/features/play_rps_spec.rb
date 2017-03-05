@@ -14,4 +14,13 @@ feature 'to play rock-paper-scissors', :type => :feature do
     click_button('rock')
     expect(page).to have_content "Albert choose rock"
   end
+
+  scenario "user plays game and can play again" do
+    sign_in_and_play
+    click_button('rock')
+    click_button('play again')
+    expect(page).to have_selector(:button, 'rock')
+    expect(page).to have_selector(:button, 'paper')
+    expect(page).to have_selector(:button, 'scissors')
+  end
 end

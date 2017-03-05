@@ -26,10 +26,6 @@ class App < Sinatra::Base
   end
 
   get '/result' do
-    p $game.player_move
-    p $game.win?
-    p $game.draw?
-    p $game.lose?
     erb(:result)
   end
 end
