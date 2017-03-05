@@ -15,3 +15,7 @@ end
 def computer_choice
   @game.computer_selection
 end
+
+def player_choice
+  @game.player_selection
+end

@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :computer_selection, :current_selection
+  attr_reader :computer_selection, :current_selection, :player_selection
 
   def initialize(player_selection, computer_selection)
     @player_selection = player_selection
