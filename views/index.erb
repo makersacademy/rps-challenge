@@ -1,14 +1,10 @@
 <link rel='stylesheet' href='css/styles.css'>
 
-<div class="container">
-
-  <h1>Welcome.</h1>
-
-  <p>Please enter your name:</p>
+<div class="container animated fadeIn">
+  <h1 id="Title">Rock. Paper. Scissors.</h1>
 
   <form class="padder" method="post" action="/name">
-    <input class="rps-button" name="name" value="<%= ["Zelda","Luigi","Donkey Kong","Peach"].sample %>">
+    <input class="rps-button" name="name" placeholder="Enter your name">
     <input class="rps-button" type="submit" value="Go">
   </form>
-
 </div>

@@ -19,6 +19,7 @@ class Rps < Sinatra::Base
 
   get '/game' do
     session[:game] = Game.new(session[:name])
+    @restart = params[:restart]
     @name = session[:game].player_name
     erb :game
   end
@@ -27,6 +28,7 @@ class Rps < Sinatra::Base
     @weapon = params[:weapon]
     @comp_weapon = session[:game].computer_weapon
     @outcome = session[:game].battle(params[:weapon])
+    @result_pic = session[:game].result_img_url(@weapon, @comp_weapon)
     erb :result
   end
 

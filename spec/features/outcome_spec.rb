@@ -5,7 +5,13 @@ feature "the outcome of the battle" do
   scenario "the battle is over" do
     submit_name
     click_link "Paper"
-    expect(page).to have_content "Result:"
+    expect(page).to have_css('h1[class="result_heading"]')
+  end
+
+  scenario "the result picture is printed" do
+    submit_name
+    click_link "Paper"
+    have_css('img[class="result_pic"]')
   end
 
   # before :each do

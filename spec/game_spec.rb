@@ -24,4 +24,12 @@ describe Game do
     end
   end
 
+  describe '#result_img_url' do
+    it "tells you the image url for the outcome of a battle" do
+      expect(game.result_img_url("Scissors","Paper")).to eq "img/s_win.png"
+      expect(game.result_img_url("Scissors","Rock")).to eq "img/r_win.png"
+      expect(game.result_img_url("Paper","Rock")).to eq "img/p_win.png"
+    end
+  end
+
 end
