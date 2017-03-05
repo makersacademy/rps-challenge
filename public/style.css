@@ -1,6 +1,5 @@
 html {
-  background-image: url('background.jpg');
-  background-size: cover;
+  background-color: rgba(223, 233, 238, 1.0);
 }
 
 div {
