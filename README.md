@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/Christos-Paraskeva/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Christos-Paraskeva/rps-challenge?branch=master)
+
 # RPS Challenge
 
 Instructions
