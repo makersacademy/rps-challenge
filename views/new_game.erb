@@ -1,12 +1,12 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
   </head>
   <body>
     <div>
-      <h2>So, <%= @game.player.name %>,</h2>
-      <h2>ready to play? Click an option</h2>
+      <p>So, <%= @game.player.name %>,</p>
+      <p>ready to play? Click an option</p>
       <form method="POST" action="/result">
         <input class="button" type="submit" value="paper" name="option">
         <input class="button" type="submit" value="scissors" name="option">

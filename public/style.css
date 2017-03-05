@@ -1,34 +1,27 @@
 html {
-  background-color: rgba(186, 217, 213, 1.0);
-  text-shadow: 4px 4px 4px #aaa;
   color: rgba(27, 38, 87, 1.0);
+  font-size: 35px;
 }
 
 div {
-  background-color: rgba(180, 211, 232, 0.5);
-  border: 1px solid rgba(27, 38, 87, 1.0);
+  background-color: rgba(180, 211, 232, 1);
+  padding: 20px;
   width: 550px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: 'Griffy', cursive;
-  box-shadow: 4px 4px 4px #aaa;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .button {
-  background-color: rgba(180, 211, 232, 0.5);
-  text-shadow: 4px 4px 4px #aaa;
   margin: 25px;
   font-size: 40px;
-  font-family: 'Griffy', cursive;
-  background-color: white;
+  font-family: 'Cabin Sketch', cursive;
   border: 1px solid rgba(27, 38, 87, 1.0);
   color: rgba(27, 38, 87, 1.0);
-  box-shadow: 4px 4px 4px #aaa;
 }
 
 a.button {
-  background-color: rgba(180, 211, 232, 0.5);
   padding: 2px 6px 3px;
   line-height: 85px;
   text-decoration: none;
@@ -40,11 +33,10 @@ a.button {
   font-family: avenir;
   font-size: 20px;
   height: 40px;
-  border: 1px solid rgba(27, 38, 87, 1.0);
-  box-shadow: 4px 4px 4px #aaa;
 }
 
 .winner {
+  font-size: 45px;
   color: rgba(147, 21, 24, 1.0);
   text-shadow: 4px 4px 4px #aaa;
 }
