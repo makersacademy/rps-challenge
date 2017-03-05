@@ -1,6 +1,9 @@
 $VERBOSE=nil
 
 require 'sinatra/base'
+require_relative 'lib/players.rb'
+require_relative 'lib/game.rb'
+require_relative 'spec/features/web_helper.rb'
 
 class Rps < Sinatra::Base
 
@@ -10,14 +13,21 @@ enable :sessions
     erb :index
   end
 
-  post '/name' do
-    session[:p1]=params[:PLAYER]
+  post '/storage' do
+    session[:p1]=params[:NAME]
     redirect '/welcome'
   end
 
   get '/welcome' do
-    @player1 = session[:p1]
+    new_player
     erb :welcome
+  end
+
+  get '/final' do
+    button_pressed()
+    new_game()
+    computer_choice()
+    erb :final
   end
 
 end
