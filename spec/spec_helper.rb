@@ -1,11 +1,10 @@
 require 'coveralls'
-Coveralls.wear!
 require 'simplecov'
 
 ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
 require 'rspec'
-require 'features/web_helpers'
+# require 'features/web_helpers'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -16,8 +15,9 @@ SimpleCov.formatters = [
   Coveralls::SimpleCov::Formatter
 ]
 # replace following line with SimpleCov.start to get coverage stats locally
-SimpleCov.start
-# Coveralls.wear!
+#SimpleCov.start
+Coveralls.wear!
 # run `open coverage/index.html` from the command line to view details
 
 require 'byebug'
+#require 'capybara/rspec'
