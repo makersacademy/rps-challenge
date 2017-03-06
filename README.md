@@ -3,7 +3,7 @@ Instructions
 
 The Rock-Paper-Scissors challenge was issued by Makers Academy at the end of week 3, as our weekend challenge. The aim of this challenge is to build a Rock, Paper, Scissors game using a Sinatra Server. The User Stories are as follows:
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -18,37 +18,59 @@ How to use the Program
 
 Once the repo has been cloned, you should first install and run bundle to install all gems in the gem file needed for the program to function correctly.
 
-```sh
+```
 $ bundler install
 $ bundle
 ```
 
 To start the Server run the Rackup command.
 
-```sh
+```
 $ rackup
 ```
 
 The website will be served on http://localhost:9292. To run the rspec test suit simply run the 'rspec' command in the command line from the root folder.
 
-```sh
+```
 $ rspec
 ```
 
 You will be greeted by a start screen where you will need to enter your name:
 
+
+<kbd>
+![Alt text](/images/1.jpg?raw=true "Optional Title")
+</kbd>
+
 Then you will get a welcome message, and will need to click on the "Begin Game" button:
+
+
+<kbd>
+![Alt text](/images/2.jpg?raw=true "Optional Title")
+</kbd>
+
 
 Here you will need to select your weapon:
 
+
+<kbd>
+![Alt text](/images/3.jpg?raw=true "Optional Title")
+</kbd>
+
+
 Finally, you will get a confirmation message for your weapon choice, as well as your opponent's weapon.  From here, a winner will be declared.  Click on 'New Game' to restart the game:
 
-Basic Rules
--------
 
-Rock beats Scissors,
-Scissors beats Paper,
-Paper beats Rock
+<kbd>
+![Alt text](/images/4.jpg?raw=true "Optional Title")
+</kbd>
+
+
+## Basic Rules
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
 
 
 How I Tackled the Challenge
