@@ -1,0 +1,15 @@
+<h1>Welcome <%= @player %></h1>
+<h2>Please choose an option:</h2>
+
+<!-- <select action="/game">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select> -->
+<form action="/select" method="post">
+  <div>
+    <input type="submit" name="choice" value="rock">
+    <input type="submit" name="choice" value="paper">
+    <input type="submit" name="choice" value="scissors">
+  </div>
+</form>
