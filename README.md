@@ -1,18 +1,5 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
+Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,65 +15,21 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+My Approach
+----
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+- I began by making a single player game, where the user plays the computer. I decided that the model should take three classes: Player, which saves the players name and keeps track of score, Computer, which generates a random option, and Game, which contains the logic for selecting options and deciding the result.
+- A new game instance is initialized with player_1 and player_2, and a computer can be passed in as player_2.
+- The player can first enter their name, then they are redirected to the next page where they can select their weapon of choice.
+- The computer then generates a random choice, and the game compares the two to decide the winner.
+- When I added the two player option, the game class did not need to change, as it was able to receive a second player rather than a computer.
 
+![alt text](screenshots/RPS_options.png)
+![alt text](screenshots/RPS_result.png)
 
-As usual please start by
+Issues I encountered
+----
 
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+- Where to place if/else statements when there were several possible messages to be displayed (e.g. declaring the winner). I decided to keep these in the view to keep presentation logic out of the model.
+- Stubbing out the randomness in the feature tests. After realising the usual rspec 'allow...to receive' doesn't work because we are not testing instances, I discovered 'allow_any_instance_of...' would solve this problem.
+- When there are different paths the game can take (e.g. after the user selects single or multiplayer), should those paths all go in the controller? I ended up defining duplicate routes depending on the player's selection, e.g. '/single-player' and '/multiplayer'.

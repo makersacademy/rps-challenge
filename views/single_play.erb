@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
+<h1>Hi <%= @game.player_1.name %>! Let's play Rock Paper Scissors! </h1>
+
+<h2> <%= @game.player_1.name %>, please make your choice.</h2>
+
+<form action = "/option", method = "post">
+  <input type = 'submit', name = "option", value = "Rock", id="submit">
+  <input type = 'submit', name = "option", value = "Paper", id="submit">
+  <input type = 'submit', name = "option", value = "Scissors", id="submit">
+</form>
