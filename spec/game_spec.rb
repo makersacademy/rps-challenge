@@ -7,13 +7,12 @@ describe Game do
   let(:player_1) {double :player_1, name: name_one, score: 0}
   let(:player_2) {double :player_2, name: name_two, score: 0}
   game_type = 0
-  basic_rules = File.expand_path("../../public/logictable_rps.csv", __FILE__)
   before(:all) do
     srand(67809)
   end
 
-  subject(:game) {described_class.new(player_1, player_2, basic_rules, game_type)}
-  let(:game_singleton) {described_class.create(player_1, player_2, basic_rules, game_type)}
+  subject(:game) {described_class.new(player_1, player_2, game_type)}
+  let(:game_singleton) {described_class.create(player_1, player_2, game_type)}
 
     it '.instance always refers to the same instance' do
       expect(game_singleton).to be_a_kind_of(described_class)
@@ -22,6 +21,10 @@ describe Game do
 
     it 'has a game type' do
       expect(game.game_type).to eq game_type
+    end
+
+    it 'winner is initially nill' do
+      expect(game.winner).to eq nil
     end
 
    it 'has an array of players containing both players' do
@@ -42,8 +45,8 @@ describe Game do
    end
 
    it 'change_player changes the current player' do
-     expect{game.change_player}.to change{game.current_player}.to player_1
      expect{game.change_player}.to change{game.current_player}.to player_2
+     expect{game.change_player}.to change{game.current_player}.to player_1
    end
 
    it 'gets the opponent of the current player' do
@@ -56,17 +59,8 @@ describe Game do
      expect(game.get_result).to eq 1
    end
 
-   it 'can finish a round' do
-     allow(player_1).to receive(:choice).and_return("Paper")
-     allow(player_2).to receive(:choice).and_return("Rock")
-     allow(player_1).to receive(:automated?).and_return(true)
-     allow(player_2).to receive(:automated?).and_return(true)
-     expect(game.finish_round).to eq 1
-   end
-
    it 'can start a new round' do
-    game.change_player
-    expect{game.new_round}.to change{game.current_player}.to player_2
+    expect(game).to respond_to(:new_round)
    end
 
 

@@ -13,6 +13,7 @@ class Evaluate
 
   def get_result(p1,p2)
     result = @logic_table.find {|logic| logic.p1 == p1 && logic.p2 == p2}.result
+    p result
   end
 
   def get_verb(p1,p2)

@@ -5,7 +5,7 @@ class Player
 
   def initialize(name)
     name == "" ? @name = "Computer" : @name = name
-    name == "" ? @automated = true : @automated = false
+    @name == "Computer" ? @automated = true : @automated = false
     @score = 0
     @choices_simple = ["Rock", "Paper", "Scissors"]
     @choices_advanced = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
@@ -16,7 +16,6 @@ class Player
   end
 
   def make_random_choice(game_type)
-
     @choice = @choices_simple.sample if game_type == 0
     @choice = @choices_advanced.sample if game_type == 1
     @choice

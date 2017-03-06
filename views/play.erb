@@ -5,6 +5,7 @@
  </br>
  <img class="giphy" src='https://media.giphy.com/media/sBl8Fowq0ErFC/giphy.gif'/>
  </br>
+ <% if !@game.finished? %>
  <h3><%= @game.current_player.name %>, you're up! Choose a move.</h3>
 
  <div id="actions">
@@ -37,7 +38,20 @@
    </form>
    <% end %>
 </div>
+<% end %>
+<% if @game.finished? %>
+
+  <% if @game.winner == "Draw" %>
+It was a Draw
+    <% else %>
+      <%= @game.winner.name %> beat <%= @game.opponent_of(@game.winner).name %>!
+      <%= @game.winner.name %>'s <%= @game.winner.choice %> <%= @game.verb %> <%= @game.opponent_of(@game.winner).name %>'s <%= @game.opponent_of(@game.winner).choice %>
+
+    <% end %>
+<% end %>
 </br>
 </br>
 
-https://i.ytimg.com/vi/EBg9T_3CI1A/hqdefault.jpg
+Laugh: https://i.ytimg.com/vi/EBg9T_3CI1A/hqdefault.jpg
+
+Sad: http://bufordp.com/FR/pics/spock_wtf.jpg
