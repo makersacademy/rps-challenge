@@ -36,15 +36,15 @@ feature "Winner announced" do
     expect(page).to have_content 'Mittens won!'
   end
 
-  scenario "Announces Player 2 as winner" do
-    visit('/')
-    allow_any_instance_of(Bot).to receive(:selection).and_return(:lizard)
-    fill_in :name_1, with: 'Dave'
-    choose('bot')
-    click_button 'start'
-    choose('lizard')
-    click_button('selected')
-    expect(page).to have_content 'Draw!'
-  end
+  # scenario "Human player Vs Bot" do
+  #   allow_any_instance_of(Bot).to receive(:selection).and_return(:lizard)
+  #   visit('/')
+  #   fill_in :name_1, with: 'Dave'
+  #   choose('bot')
+  #   click_button 'start'
+  #   choose('lizard')
+  #   click_button('selected')
+  #   expect(page).to have_content 'Draw!'
+  # end
 
 end
