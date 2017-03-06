@@ -15,6 +15,8 @@ I decided to move the Scissors button to the middle of the three even though it 
 
 #Issues
 
-The Game class repeats instantiation in every ‘it’ block. I considered using doubles at each expectation but that seemed to be replacing one type of repetition for another. I'm sure there's a way to accompish this but it eludes me at present.
+The Game class repeats instantiation in every ‘it’ block. I considered using doubles at each expectation but that seemed to be replacing one type of repetition for another. I'm sure there's a way to accomplish this but it eludes me at present.
 
 I couldn't see any other way to tackle the problem other than by overhauling my code so that the Game class wouldn't expect any arguments.
+
+- Didn't have a chance to add images and
