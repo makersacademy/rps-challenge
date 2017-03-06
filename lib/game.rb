@@ -2,7 +2,7 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors]
 
-  attr_reader :player, :computer, :winning_moves
+  attr_reader :player, :computer, :winning_moves, :result
 
   def initialize(player, computer)
     @player = player
@@ -10,6 +10,7 @@ class Game
     @winning_moves = [  {:rock => :scissors},
                         {:scissors => :paper},
                         {:paper => :rock}  ]
+    @result = nil
   end
 
   def self.create(player, computer)
@@ -26,11 +27,11 @@ class Game
 
   def judge_scores(player_choice, computer_choice)
     if winning_moves.include?(player_result(player_choice, computer_choice))
-      "#{player.name} won!"
+      @result = :win
     elsif winning_moves.include?(computer_result(player_choice, computer_choice))
-      "#{computer.name} won!"
+      @result = :lose
     elsif player_choice == computer_choice
-      "Tie game. Play again?"
+      @result = :tie
     end
   end
 

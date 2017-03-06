@@ -38,4 +38,30 @@ describe RockPaperScissors, :type => :feature do
       expect(page).to have_content("Pick your weapon, #{player.name}.")
     end
   end
+
+  feature "winning and losing" do
+    scenario "player throws paper and beats computer's rock" do
+      enter_name
+      fill_in :selection, with: "paper"
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:rock)
+      click_button("THROW!")
+      expect(page).to have_content("#{player.name} won!")
+    end
+
+    scenario "computer throws scissors and beats player's paper" do
+      enter_name
+      fill_in :selection, with: "paper"
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:scissors)
+      click_button("THROW!")
+      expect(page).to have_content("#{computer.name} won!")
+    end
+
+    scenario "player and computer both throw rock and tie" do
+      enter_name
+      fill_in :selection, with: "rock"
+      allow_any_instance_of(Computer).to receive(:choice).and_return(:rock)
+      click_button("THROW!")
+      expect(page).to have_content("Tie game. Play again?")
+    end
+  end
 end

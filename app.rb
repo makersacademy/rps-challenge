@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  get '/game_start' do
+  post '/game_start' do
     @game = Game.create(Player.new(params[:name]), Computer.new)
     redirect('/play')
   end
@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    @result = @game.judge_scores(@game.player.choice(params[:selection]), @game.computer.choice)
+    @game.judge_scores(@game.player.choice(params[:selection]), @game.computer.choice)
     erb(:result)
   end
 
