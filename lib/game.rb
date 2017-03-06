@@ -79,6 +79,7 @@ private
     end
   end
 
+
   def rules_file
     return File.expand_path("../../public/logictable_rps.csv", __FILE__) if game_type == 0
     return File.expand_path("../../public/logictable_rpsls.csv", __FILE__) if game_type == 1
