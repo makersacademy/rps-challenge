@@ -6,6 +6,6 @@ describe Game do
   subject(:game) { described_class.new(dbl) }
 
   it 'chooses a random sign for the computer' do
-    expect(['rock','paper','scissor']).to include(game.assign_computer_move)
+    expect(['rock','paper','scissors']).to include(game.assign_computer_move)
   end
 end
