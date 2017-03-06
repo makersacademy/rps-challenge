@@ -7,6 +7,7 @@ describe Game do
   let(:player_1) {double :player_1, name: name_one, score: 0}
   let(:player_2) {double :player_2, name: name_two, score: 0}
   game_type = 0
+
   before(:all) do
     srand(67809)
   end
