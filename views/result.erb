@@ -1,0 +1,41 @@
+<title>Rock-Paper-Scissors</title>
+<body>
+<div style ="text-align: center;font-family: Tahoma">
+<p><%= $game.player.name %> chose <%= $game.player_move %></p>
+<p>Computer chose <%= $game.computer_move %></p>
+</div>
+<div style ="display: inline-block">
+<% if $game.player_move == 'rock' %>
+<img src="img/lrock.jpg" height="150" width="320"/>
+<% elsif $game.player_move == 'paper'%>
+<img src="img/lpaper.jpg" height="150" width="320"/>
+<% elsif $game.player_move == 'scissors'%>
+<img src="img/lscissors.jpg" height="150" width="320"/>
+<% end %>
+</div>
+<div style ="display: inline-block;margin-right: -50px">
+<% if $game.computer_move == 'rock' %>
+<img src="img/rrock.jpg" height="150" width="320"/>
+<% elsif $game.computer_move == 'paper'%>
+<img src="img/rpaper.jpg" height="150" width="320"/>
+<% elsif $game.computer_move == 'scissors'%>
+<img src="img/rscissors.jpg" height="150" width="320"/>
+<% end %>
+</div>
+<div style ="text-align: center">
+<% if $game.win? %>
+<p style ="text-align: center;font-family: Impact;font-size: 50px">WIN!</p>
+<p style ="font-family: Tahoma">You have won the game </p>
+<% elsif $game.draw? %>
+<p style ="text-align: center;font-family: Impact;font-size: 50px">DRAW!</p>
+<p style ="font-family: Tahoma">You have have drawn with the computer </p>
+<% else $game.lose? %>
+<p style ="text-align: center;font-family: Impact;font-size: 50px">LOSE!</p>
+<p style ="font-family: Tahoma">You have lost the game </p>
+<% end %>
+</div>
+<div style ="text-align: center">
+  <form action="/play" method="get">
+  <input type="submit" value="play again">
+  </form>
+</body>

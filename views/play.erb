@@ -1,0 +1,15 @@
+<title>Rock-Paper-Scissors</title>
+<body>
+<div style ="text-align: center;font-family: American Typewriter">
+<h1>Hi <%= $game.player.name %>!</h1>
+<h2>How to play</h2>
+</div>
+<p style ="text-align: center;font-family: Tahoma" >It's really quite simple! Rock beats paper, scissors beats paper, paper beats rock and if you pick the same it's a draw!</p>
+<div style ="text-align: center;">
+  <form action="/choice" method="post">
+  <input type="submit" value="rock" name="choice">
+  <input type="submit" value="paper" name="choice">
+  <input type="submit" value="scissors" name="choice">
+  </form>
+</div>
+</body>
