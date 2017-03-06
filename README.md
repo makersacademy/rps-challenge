@@ -6,9 +6,12 @@ I decided to move the Scissors button to the middle of the three even though it 
 
 #With more time I would -
 
-Implement a best-of-three game as per the accepted game rules, perhaps using an array to store scores temporarily within the Game class.
+ - Implement a best-of-three game as per the accepted game rules, perhaps using an array to store scores temporarily within the Game class.
 
-The HTML in the .erb files is repetitive. With time I would research how to farm it out to a single file and then link the rest of them to it.
+ - The HTML in the .erb files is repetitive. With time I would research how to farm it out to a single file and then link the rest of them to it.
+
+- After the initial play, when clicking the 'Try Again' button, the user is taken back to the same greeting page as before as if visiting the site for the first time. This needs to be changed.
+
 
 #Issues
 
