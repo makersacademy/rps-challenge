@@ -28,12 +28,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/players_choice' do
-    @player_choice = session[:weapon], params[:weapon]
-    redirect '/outcome'
-  end
-
-  get '/outcome' do
+  post '/outcome' do
     @game.play(params[:weapon])
     erb(:outcome)
   end
