@@ -27,7 +27,6 @@ class RPS < Sinatra::Base
   get '/final' do
     button_pressed()
     new_game()
-    computer_choice()
     erb @game.result
   end
 
