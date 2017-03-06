@@ -22,7 +22,6 @@ describe Game do
       tie_message = "Nobody, it's a tie!"
       expect(game.play(:rock, :rock)).to eq tie_message
       expect(game.play(:scissors, :scissors)).to eq tie_message
-      p @result
     end
 
     it 'returns win when p1 wins' do

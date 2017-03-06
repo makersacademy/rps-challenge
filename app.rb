@@ -12,30 +12,29 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create((Player.new(params[:player_1])), Computer.new.move)
-    # p @game
+    @game = Game.create(Player.new(params[:player_1]), Computer.new)
     redirect '/rules'
   end
 
-  get '/rules' do
+  before do
     @game = Game.instance
+  end
+
+  get '/rules' do
     erb(:rules)
   end
 
   get '/play' do
-    @game = Game.instance
     erb(:play)
   end
 
   post '/players_choice' do
-    # @game = Game.instance
     @player_choice = session[:weapon], params[:weapon]
-    Game.instance.play(@player_choice, Computer.new.move)
     redirect '/outcome'
   end
 
   get '/outcome' do
-    @game = Game.instance
+    @game.play(params[:weapon])
     erb(:outcome)
   end
 

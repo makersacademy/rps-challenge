@@ -24,7 +24,7 @@ end
 feature 'Should allow user to select an option' do
   scenario 'Player can select any weapon' do
     signed_in_and_ready
-    click_button('Scissors')
+    click_button('scissors')
   end
 end
 
@@ -32,7 +32,7 @@ feature 'Show outcome page' do
   scenario 'After both players have chosen their weapon' do
     allow_any_instance_of(Computer).to receive(:move).and_return(:rock)
     signed_in_and_ready
-    click_button('Rock')
-    expect(page).to have_content "And the winner is..."
+    click_button('rock')
+    expect(page).to have_content "Nobody, it's a tie!"
   end
 end

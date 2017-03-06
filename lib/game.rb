@@ -1,3 +1,5 @@
+require_relative 'computer'
+
 class Game
   attr_reader :create, :player_1, :player_2, :result
 
@@ -8,6 +10,7 @@ class Game
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    @result = "Players haven't selected yet"
   end
 
   def self.create(player_1, player_2)
@@ -18,9 +21,9 @@ class Game
     @game
   end
 
-  def play(p1_weapon, p2_weapon)
-    weapons = [p1_weapon, p2_weapon]
-    return tie if p1_weapon == p2_weapon
+  def play(p1_weapon, p2_weapon = Computer.new.move)
+    weapons = [p1_weapon.to_sym, p2_weapon]
+    return tie if p1_weapon.to_sym == p2_weapon
     return win if WINNING_COMBO.include?(weapons) else lose
   end
 
