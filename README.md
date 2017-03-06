@@ -46,8 +46,8 @@ Finally, you will get a confirmation message for your weapon choice, as well as 
 Basic Rules
 -------
 
-Rock beats Scissors
-Scissors beats Paper
+Rock beats Scissors,
+Scissors beats Paper,
 Paper beats Rock
 
 
