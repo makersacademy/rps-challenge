@@ -19,6 +19,8 @@ Hints on functionality
 ## Outline
 
 ## Screenshots  
+#### Welcome screen
+![Welcome screen](/public/img/welcome.png?raw=true "Optional Title")
 
 ## User Stories
 ```
