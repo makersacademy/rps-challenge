@@ -4,10 +4,9 @@
    <h1 class="logo">Rock, Paper, Scissors, Lizard, Spock</h1>
    <h3><i>This game is highly illogical</i></h3>
    <img class="giphy" src='https://media.giphy.com/media/sBl8Fowq0ErFC/giphy.gif'/>
-   <h2>Enter names to play</h2>
    <form id="name_entry" method="POST" action="/names">
    </br>
-   <label>Game Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+   <label style="color:yellow;">Game Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
 
    <select name="game_type">
      <option value="0">Basic</option>
@@ -15,17 +14,15 @@
    </select>
     </br>
    </br>
-      <label>Player 1:</label>
+      <label style="color:yellow;">Player 1:</label>
       <input name="name_player_one" type="text"/>
       </br>
       </br>
-      <label>Player 2:</label>
+      <label style="color:yellow;">Player 2:</label>
       <input id="name_player_two" name="name_player_two" type="text"/>
       </br>
       </br>
-      OR
-      </br>
-      <input type="checkbox" onchange="toggle()"  name="automated_opp">I have no friends, play against the computer</input>
+      <input type="checkbox" onchange="toggle()"  name="automated_opp"><label style="color:yellow;">I have no friends, play against the computer</label></input>
       </br>
       </br>
       <input class="button" value="Play" type="submit"/>

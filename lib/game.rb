@@ -34,8 +34,10 @@ class Game
     @players.select { |player| player != curr_player}.first
   end
 
-  def update_state
-    player_2.automated? ? update_state_1P : update_state_2P
+  def update(choice)
+    current_player.choice = choice
+    change_player
+    update_state
   end
 
   def new_round
@@ -77,6 +79,10 @@ private
   def rules_file
     return File.expand_path("../../public/logictable_rps.csv", __FILE__) if game_type == 0
     return File.expand_path("../../public/logictable_rpsls.csv", __FILE__) if game_type == 1
+  end
+
+  def update_state
+    player_2.automated? ? update_state_1P : update_state_2P
   end
 
   def update_state_2P

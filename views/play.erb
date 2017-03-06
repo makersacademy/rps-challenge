@@ -3,9 +3,10 @@
    <h1 class="logo">Rock, Paper, Scissors, Lizard, Spock</h1>
    <h3><i>This game is highly illogical</i></h3>
  </br>
+ <% if !@game.finished? %>
  <img class="giphy" src='https://media.giphy.com/media/sBl8Fowq0ErFC/giphy.gif'/>
  </br>
- <% if !@game.finished? %>
+
  <h3><%= @game.current_player.name %>, you're up! Choose a move.</h3>
 
  <div id="actions">
@@ -40,18 +41,18 @@
 </div>
 <% end %>
 <% if @game.finished? %>
+<img width="325" height="250" class="giphy" src='http://bufordp.com/FR/pics/spock_wtf.jpg'/>
+</br>
+
 
   <% if @game.winner == "Draw" %>
-It was a Draw
+<h1 class="logo">It was a Draw. How dull.</h1>
     <% else %>
-      <%= @game.winner.name %> beat <%= @game.opponent_of(@game.winner).name %>!
-      <%= @game.winner.name %>'s <%= @game.winner.choice %> <%= @game.verb %> <%= @game.opponent_of(@game.winner).name %>'s <%= @game.opponent_of(@game.winner).choice %>
+      <h1 class="logo"><%= @game.winner.name %> beat <%= @game.opponent_of(@game.winner).name %>!</h1>
+
+      <i><h3 style="color:yellow;"><%= @game.winner.name %>'s <%= @game.winner.choice %> <%= @game.verb %> <%= @game.opponent_of(@game.winner).name %>'s <%= @game.opponent_of(@game.winner).choice %></i></h3>
 
     <% end %>
 <% end %>
 </br>
 </br>
-
-Laugh: https://i.ytimg.com/vi/EBg9T_3CI1A/hqdefault.jpg
-
-Sad: http://bufordp.com/FR/pics/spock_wtf.jpg

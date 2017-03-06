@@ -22,36 +22,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @game.current_player.choice = "Rock"
-    @game.change_player
-    @game.update_state
+    @game.update("Rock")
     redirect '/play'
   end
 
   get '/paper' do
-    @game.current_player.choice = "Paper"
-    @game.change_player
-    @game.update_state
+    @game.update("Paper")
     redirect '/play'
   end
 
   get '/scissors' do
-    @game.current_player.choice = "Scissors"
-    @game.change_player
-    @game.update_state
+      @game.update("Scissors")
     redirect '/play'
   end
   get '/lizard' do
-    @game.current_player.choice = "Lizard"
-    @game.change_player
-    @game.update_state
+      @game.update("Lizard")
     redirect '/play'
   end
 
   get '/spock' do
-    @game.current_player.choice = "Spock"
-    @game.change_player
-    @game.update_state
+    @game.update("Spock")
     redirect '/play'
   end
 
