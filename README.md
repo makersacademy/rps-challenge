@@ -17,6 +17,9 @@ Hints on functionality
 * a winner will be declared
 
 ## Outline
+This project helped to consolidate my understanding of Sinatra and testing using Capybara.  It was also my first attempt at using CSS to style a web app.
+
+My solution uses two classes - 'Game' and 'Player'.  I initially had a third, 'ComputerPlayer' class but decided to remove this when it became clear that it would share all of its behaviour with the 'Player' class.  Computer choices are made at random by using the .sample method on an array of possible choices, and the result of the match is determined by checking against an array of outcomes defined as a constant within the 'Game' class. 
 
 ## Screenshots  
 #### Welcome screen
