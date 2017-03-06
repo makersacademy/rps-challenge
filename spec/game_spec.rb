@@ -15,17 +15,17 @@ describe Game do
 
       it 'it draws with rock' do
         game.play('Rock', 'Rock')
-        expect(game.result).to eq "It's a draw - play again!"
+        expect(game.winner).to eq nil
       end
 
       it 'it wins against scissors' do
         game.play('Rock', 'Scissors')
-        expect(game.result).to eq "Tim wins!"
+        expect(game.winner.name).to eq "Tim"
       end
 
       it 'it loses against paper' do
         game.play('Rock', 'Paper')
-        expect(game.result).to eq "Vicky wins!"
+        expect(game.winner.name).to eq "Vicky"
       end
 
     end
@@ -34,17 +34,17 @@ describe Game do
 
       it 'it draws with paper' do
         game.play('Paper', 'Paper')
-        expect(game.result).to eq "It's a draw - play again!"
+        expect(game.winner).to eq nil
       end
 
       it 'it wins against rock' do
         game.play('Paper', 'Rock')
-        expect(game.result).to eq "Tim wins!"
+        expect(game.winner.name).to eq "Tim"
       end
 
       it 'it loses against scissors' do
         game.play('Paper', 'Scissors')
-        expect(game.result).to eq "Vicky wins!"
+        expect(game.winner.name).to eq "Vicky"
       end
 
     end
@@ -53,17 +53,17 @@ describe Game do
 
       it 'it draws with scissors' do
         game.play('Scissors', 'Scissors')
-        expect(game.result).to eq "It's a draw - play again!"
+        expect(game.winner).to eq nil
       end
 
       it 'it wins against paper' do
         game.play('Scissors', 'Paper')
-        expect(game.result).to eq "Tim wins!"
+        expect(game.winner.name).to eq "Tim"
       end
 
       it 'it loses against rock' do
         game.play('Scissors', 'Rock')
-        expect(game.result).to eq "Vicky wins!"
+        expect(game.winner.name).to eq "Vicky"
       end
 
     end

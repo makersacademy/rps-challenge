@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player1, :player2, :result
+  attr_reader :player1, :player2, :winner
 
   def initialize(player1, player2)
     @player1, @player2 = player1, player2
@@ -28,12 +28,12 @@ class Game
   end
 
   def draw
-    @result = "It's a draw - play again!"
+    @winner = nil
   end
 
   def assign_winner(player)
     player.adjust_score(5)
-    @result = "#{player.name} wins!"
+    @winner = player
   end
 
 end
