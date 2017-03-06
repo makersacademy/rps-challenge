@@ -31,28 +31,28 @@ form {
   opacity: 0.7;
 }
 
-		#submit{
-      font-size: 40px;
-      color: black;
-      opacity: 0.7;
-			/*border-radius: 50%;*/
-			height: 200px;
-			width: 200px;
-			-webkit-transition: all .1s linear;
-			transition: all .1s linear;
-		}
+	#submit{
+    font-size: 40px;
+    color: black;
+    opacity: 0.7;
+		/*border-radius: 50%;*/
+		height: 200px;
+		width: 200px;
+		-webkit-transition: all .1s linear;
+		transition: all .1s linear;
+	}
 
-		#submit:hover{
-			color: grey;
-		}
+	#submit:hover{
+		color: grey;
+	}
 
-		#submit:active{
-			background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
-			background-image: linear-gradient(top, #efedec, #f7f4f4);
-			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
-		}
+	#submit:active{
+		box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+	}
 
-		#submit:active:after{
-			color: grey;
-			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
-		}
+	#submit:active:after{
+		color: grey;
+		text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+	}
+
+  
