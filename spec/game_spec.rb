@@ -16,9 +16,17 @@ describe Game do
 
   it "compares selections to choose a winner" do
     allow(game).to receive(:player_choice).and_return("Paper")
-    allow(game).to receive(:random).and_return("Rock")
-    expect(game.calculate).to eq("You won")
+    allow(game).to receive(:computer_choice).and_return("Rock")
+    expect(game.calculate).to eq("#{name} wins")
   end
+
+  it "compares selections to show tie" do
+    allow(game).to receive(:player_choice).and_return("Paper")
+    allow(game).to receive(:computer_choice).and_return("Paper")
+    expect(game.calculate).to eq("Tied")
+  end
+
+
 end
 
 #we have 1) Player's choice (string) 2) Comp's choice (string)

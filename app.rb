@@ -19,6 +19,8 @@ class RPS < Sinatra::Base
 
   post '/round_1' do
     $game.player_choice = params[:weapon]
+    $game.computer_choice = $game.random
+    @result = $game.calculate
     erb :round1
   end
 
