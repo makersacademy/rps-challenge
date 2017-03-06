@@ -19,19 +19,19 @@ describe Game do
 
   describe '#play' do
     it 'returns tie when both weapons are the same' do
-      tie_message = "Nobody, it's a tie!"
+      tie_message = "nobody, it's a tie!"
       expect(game.play(:rock, :rock)).to eq tie_message
       expect(game.play(:scissors, :scissors)).to eq tie_message
     end
 
     it 'returns win when p1 wins' do
-      win_message = "You, yippee!"
+      win_message = "you, yippee!"
       expect(game.play(:rock, :scissors)).to eq win_message
       expect(game.play(:scissors, :paper)).to eq win_message
     end
 
     it 'returns lose when computer wins' do
-      lose_message = "Machine. Your tiny brain is no match."
+      lose_message = "machine. Your tiny brain is no match."
       expect(game.play(:scissors, :rock)).to eq lose_message
       expect(game.play(:paper, :scissors)).to eq lose_message
     end

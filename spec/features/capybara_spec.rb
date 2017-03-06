@@ -33,6 +33,6 @@ feature 'Show outcome page' do
     allow_any_instance_of(Computer).to receive(:move).and_return(:rock)
     signed_in_and_ready
     click_button('rock')
-    expect(page).to have_content "Nobody, it's a tie!"
+    expect(page).to have_content "nobody, it's a tie!"
   end
 end

@@ -1,7 +1,7 @@
 require_relative 'computer'
 
 class Game
-  attr_reader :create, :player_1, :player_2, :result
+  attr_reader :create, :player_1, :player_2, :result, :p2_weapon
 
   WEAPON = [:rock, :paper, :scissors]
   WINNING_COMBO = [[:rock, :scissors], [:paper, :rock], [:scissors, :paper]]
@@ -22,20 +22,21 @@ class Game
   end
 
   def play(p1_weapon, p2_weapon = Computer.new.move)
+    @p2_weapon = p2_weapon
     weapons = [p1_weapon.to_sym, p2_weapon]
     return tie if p1_weapon.to_sym == p2_weapon
     return win if WINNING_COMBO.include?(weapons) else lose
   end
 
   def tie
-    @result = "Nobody, it's a tie!"
+    @result = "nobody, it's a tie!"
   end
 
   def win
-    @result = "You, yippee!"
+    @result = "you, yippee!"
   end
 
   def lose
-    @result = "Machine. Your tiny brain is no match."
+    @result = "machine. Your tiny brain is no match."
   end
 end
