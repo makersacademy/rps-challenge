@@ -16,6 +16,7 @@ I would like to be able to play rock/paper/scissors
 ```
 
 My Approach
+----
 
 - I began by making a single player game, where the user plays the computer. I decided that the model should take three classes: Player, which saves the players name and keeps track of score, Computer, which generates a random option, and Game, which contains the logic for selecting options and deciding the result.
 - A new game instance is initialized with player_1 and player_2, and a computer can be passed in as player_2.
@@ -23,10 +24,11 @@ My Approach
 - The computer then generates a random choice, and the game compares the two to decide the winner.
 - When I added the two player option, the game class did not need to change, as it was able to receive a second player rather than a computer.
 
-![alt text](screenshots/RPS_options.png)
 ![alt text](screenshots/RPS_result.png)
+![alt text](screenshots/RPS_options.png)
 
 Issues I encountered
+----
 
 - Where to place if/else statements when there were several possible messages to be displayed (e.g. declaring the winner). I decided to keep these in the view to keep presentation logic out of the model.
 - Stubbing out the randomness in the feature tests. After realising the usual rspec 'allow...to receive' doesn't work because we are not testing instances, I discovered 'allow_any_instance_of...' would solve this problem.
