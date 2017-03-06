@@ -18,7 +18,7 @@ class RPS < Sinatra::Base
   end
 
   get '/welcome' do
-    new_player
+    new_player()
     erb :welcome
   end
 
