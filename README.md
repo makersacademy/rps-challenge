@@ -20,7 +20,11 @@ Hints on functionality
 
 ## Screenshots  
 #### Welcome screen
-![Welcome screen](/public/img/welcome.png?raw=true "Optional Title")
+![Welcome screen](/public/img/welcome.png?raw=true "Welcome screen")
+#### Choose your weapon!
+![Choose you weapon!](/public/img/choose.png?raw=true "Choose your weapon")
+#### Results screen
+![Results screen](/public/img/summary.png?raw=true "Results screen")
 
 ## User Stories
 ```
