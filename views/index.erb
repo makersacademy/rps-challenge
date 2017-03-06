@@ -1,0 +1,24 @@
+<html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="index_style.css">
+   <title>Welcome to Rock-Paper-Scissors-Lizard-Spock</title>
+ </head>
+ <body>
+   <header height=50px>
+     <div id="upper">
+     <h1>Welcome to Rock-Paper-Scissors-Lizard-Spock</h1>
+   </div>
+   </header>
+   <div id="inner">
+      <form id="name_entry" action="/names" method="POST" class="welcome">
+        <p><label>Player 1</label>
+        <input type="text" name="name_1" placeholder="Dave"/></p>
+        <p><label>Player 2</label>
+        <input type="text" name="name_2" placeholder="Mittens"/></p>
+        <input type="radio" name="player2" value="human" id="human"> Human
+        <input type="radio" name="player2" value="bot" id="bot"> Computer
+        <p><input type="submit" value="Go" id ="start"/></p>
+    </form>
+  </div>
+ </body>
+</html>

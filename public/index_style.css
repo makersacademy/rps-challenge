@@ -1,0 +1,54 @@
+#inner {
+    background-image: url(./the_lizard_spock.jpg);
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font: 30px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+form {
+    text-align: center;
+    }
+
+    <style type="text/css">
+    .welcome{
+        font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 16px;
+        background: #F0E8E7;
+    }
+
+    .welcome input[type="submit"],
+    .welcome input[type="button"]{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 5%;
+        padding: 1%;
+        background: #F0E8E7;
+        border-radius: 10px;
+        border-bottom: 2px solid #F0E8E7;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: black;
+        cursor: pointer;
+        font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif
+    }
+
+    .welcome input[type="text"]
+    {
+      background: #F0E8E7;
+      border-radius: 4px;
+    }
+
+    .welcome label
+    .welcome input[type="radio"]
+    {
+      font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    </style>
