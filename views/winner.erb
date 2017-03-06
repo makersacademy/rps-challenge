@@ -1,0 +1,13 @@
+<div style="width:250px;height:50px;padding:10px;border:10px inset cyan;">
+<font color="blue" size=5>You have selected <%= RPS.instance.player.player_choice.to_s.upcase %>! </font>
+</div>
+<div style="width:250px;height:50px;padding:10px;border:10px inset red;">
+<font color="red" size=5>Your opponent has selected <%= RPS.instance.opponent_move.to_s.upcase %>! </font>
+</div>
+<div style="width:250px;height:50px;padding:10px;border:10px inset blue;">
+<font color="blue" size=5> Congratulations, you are the winner! </font>
+</div>
+
+<form action='/' method='get'>
+  <button type='button'> <input type='submit' value='New Game'</button>
+</form>
