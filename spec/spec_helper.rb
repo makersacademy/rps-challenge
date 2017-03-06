@@ -11,5 +11,9 @@ SimpleCov.formatters = [
 Coveralls.wear!
 # run `open coverage/index.html` from the command line to view details
 
+require_relative '../app'
 require 'byebug'
 require 'capybara/rspec'
+require 'features/web_helpers'
+ENV['RACK_ENV']='test'
+Capybara.app = RockPaperScissors

@@ -41,6 +41,7 @@ class Game
   end
 
   def new_round
+    @finished = false
     @current_player = player_1
     player_1.choice = nil
     player_2.choice = nil
@@ -69,8 +70,10 @@ private
   def set_winner(logic)
     if logic == 1
       @winner = player_1
+      @winner.win
     elsif logic == -1
       @winner = player_2
+      @winner.win
     else
       @winner = "Draw"
     end

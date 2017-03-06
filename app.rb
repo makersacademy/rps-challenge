@@ -46,8 +46,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    p @game.player_2.automated?
     erb :play
+  end
+
+  get '/new_round' do
+    @game.new_round
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
