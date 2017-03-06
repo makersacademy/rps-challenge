@@ -15,7 +15,7 @@ I decided to move the Scissors button to the middle of the three even though it 
   * Didn't have a chance to add images and setup instructions.
 
 
-#Issues
+##Issues
 
   * The **Game** class repeats instantiation in every *it* block. I considered inserting *let* helper methods at each example but that seemed to be replacing one type of repetition for another. I'm sure there's a way to accomplish this but it eludes me at present.
 
