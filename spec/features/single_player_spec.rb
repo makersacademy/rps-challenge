@@ -16,7 +16,7 @@ end
 
 feature "In single player game, Computer generates random option" do
   scenario "after player picks option, they can see the computer_choice's option" do
-    allow(Computer).to receive(:generate_rand_option).and_return(:rock)
+    allow_any_instance_of(Computer).to receive(:generate_rand_option).and_return(:rock)
     single_sign_in_and_play
     click_button "Rock"
     expect(page).to have_content("The Computer picked Rock")
