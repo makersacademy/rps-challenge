@@ -1,0 +1,29 @@
+<h2> <%= @playername %> vs Computer</h2>
+<center><img src="http://vignette1.wikia.nocookie.net/bigbangtheory/images/7/7d/RPSLS.png"></center>
+<form method="post" action="/rock">
+  <input type="submit" style="background-color:pink;margin-left:auto;margin-right:32%;display:block;margin-top:-2%;margin-bottom:0%" value="Rock" >
+</form>
+
+<form method="post" action="/paper">
+  <input type="submit" style="background-color:yellow;margin-left:auto;margin-right:24%;display:block;margin-top:-34%;margin-bottom:auto" value="Paper" >
+</form>
+
+<form method="post" action="/scissors">
+  <input type="submit" style="background-color:purple;margin-left:auto;margin-right:46%;display:block;margin-top:-43%;margin-bottom:auto" value="Scissors" >
+</form>
+
+<div class="div1">
+<h3><%= @confirmation %></h3>
+<h3><%=@print_comp_choice%></h3>
+<h3><%=@result%></h3>
+</div>
+<!-- <h3><%= $confirmation %></h3> -->
+<style>
+.div1 {
+    float: left;
+    /*width: 100px;
+    height: 50px;
+    margin: 10px;
+    border: 3px solid #73AD21;*/
+}
+</style>
