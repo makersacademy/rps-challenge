@@ -1,92 +1,22 @@
-# RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+#Rock, Paper, Scissors Weekend Challenge
 
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+  * I decided to move the Scissors button to the middle of the three even though it doesn't read as expected (Rock, Scissors, Paper?). I did this because being the longest word it stuck out at the end and was graphically jarring. At this eye-candy stage in the game I felt the user would notice the asymmetry before the odd word order.
 
 
-## Bonus level 1: Multiplayer
+##With more time I would...
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+  * Implement a best-of-three game as per the accepted game rules, perhaps using an array to store scores temporarily within the Game class.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+  * Curb the HTML repetition in the *.erb*. With time I would research how to farm it out to a single file and then link the rest of them to it.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+  * Make the game a touch more intuitiveAfter the initial play, when clicking the **Try Again** button, the user is taken back to the same greeting page as before as if visiting the site for the first time. This needs to be changed.
 
-## Basic Rules
+  * Didn't have a chance to add images and setup instructions.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
 
-In code review we'll be hoping to see:
+##Issues
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+  * The **Game** class repeats instantiation in every *it* block. I considered inserting *let* helper methods at each example but that seemed to be replacing one type of repetition for another. I'm sure there's a way to accomplish this but it eludes me at present.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+  I couldn't see any other way to tackle the problem other than by overhauling my code so that the **Game** class wouldn't expect any arguments.
