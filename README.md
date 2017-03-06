@@ -24,8 +24,7 @@ My Approach
 - The computer then generates a random choice, and the game compares the two to decide the winner.
 - When I added the two player option, the game class did not need to change, as it was able to receive a second player rather than a computer.
 
-![alt text](screenshots/RPS_result.png)
-![alt text](screenshots/RPS_options.png)
+![alt text](screenshots/Example.png)
 
 Issues I encountered
 ----
