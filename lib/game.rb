@@ -1,8 +1,5 @@
-# require_relative 'computer'
-# require_relative 'player'
-
 class Game
-      attr_reader :player, :computer
+  attr_reader :player, :computer
 
   WIN = [
     ["Rock", "Scissors"],
@@ -26,8 +23,6 @@ class Game
     @game = Game.new(player, computer)
   end
 
-  #singleton is a design pattern where a single instance of a class is created
-  #and used by any other classes that need access
   def self.instance
     @game
   end

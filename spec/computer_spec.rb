@@ -12,5 +12,4 @@ describe Computer do
       expect(computer.selection).to eq 'Paper'
     end
   end
-
 end
