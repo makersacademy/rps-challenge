@@ -4,6 +4,7 @@ require 'simplecov'
 ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/web_helpers'
 # require 'features/web_helpers'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
