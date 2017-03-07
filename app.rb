@@ -10,6 +10,7 @@ class App < Sinatra::Base
   end
 
   post '/name' do
+    # @player = Player.new(params[:player])
     session[:player] = params[:player]
     redirect '/choice'
   end
