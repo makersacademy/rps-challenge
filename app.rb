@@ -10,10 +10,14 @@ class RPS < Sinatra::Base
   end
 
   post '/start' do
-    user1 = Player.new(params[:username_1])
-    user2 = Player.new(params[:username_2])
-    @game = Game.create(user1, user2)
-    redirect '/welcome'
+    user1, user2 = Player.new(params[:username_1]), Player.new(params[:username_2])
+    if user2.name != '' && user2.name != 'Optional'
+      @game = Game.create(user1, user2)
+      redirect '/welcome'
+    else
+      @game = Game.create(user1)
+      redirect '/single_player'
+    end
   end
 
   before do
@@ -22,6 +26,20 @@ class RPS < Sinatra::Base
 
   get '/welcome' do
     erb :welcome
+  end
+
+  get '/single_player' do
+    erb :single_player
+  end
+
+  post '/single_player_choice' do
+    $computer_weapon = @game.player2.select_random_weapon
+    @game.play(params[:weapon], $computer_weapon)
+    redirect '/single_player_result'
+  end
+
+  get '/single_player_result' do
+    erb :single_player_results
   end
 
   get '/first_player' do

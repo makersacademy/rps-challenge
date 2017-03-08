@@ -1,19 +1,24 @@
 require_relative 'player'
+require_relative 'computer'
 
 class Game
 
   attr_reader :player1, :player2, :winner
 
-  def initialize(player1, player2)
+  def initialize(player1, player2 = Computer.new)
     @player1, @player2 = player1, player2
   end
 
-  def self.create(player1, player2)
+  def self.create(player1, player2 = Computer.new)
     @game = Game.new(player1, player2)
   end
 
   def self.instance
     @game
+  end
+
+  def multiplayer?
+    player2.name != '' && player2.name != 'Optional'
   end
 
   def play(weapon1, weapon2)
