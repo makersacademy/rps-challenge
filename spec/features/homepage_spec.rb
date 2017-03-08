@@ -16,6 +16,24 @@ RSpec.feature 'signed-in home' do
   end
 end
 
+RSpec.feature 'single-player mode' do
+  scenario 'a single player can sign in' do
+    visit '/'
+    fill_in :username_1, :with => "Vicky"
+    click_button "Enter"
+    expect(page).to have_button('Rock')
+  end
+end
+
+RSpec.feature 'single-player mode' do
+  scenario 'a single player can compete against the computer' do
+    visit '/'
+    fill_in :username_1, :with => "Vicky"
+    click_button "Enter"
+    expect(page).to have_text('Computer: 0')
+  end
+end
+
 RSpec.feature 'score' do
   scenario 'user can see score on sign-in' do
     register

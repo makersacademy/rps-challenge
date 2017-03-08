@@ -1,6 +1,6 @@
 class Computer
 
-  attr_reader :name, :score
+  attr_reader :name, :score, :weapons
 
   def initialize(name = 'Computer', score = 0)
     @name = name
