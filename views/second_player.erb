@@ -1,0 +1,22 @@
+<body style="margin:0;padding:0; font-family:Helvetica">
+  <wrapper>
+    <div id="side-menu" style="float:left;display:inline-block;color:white; font-size:18px; padding:10px 0 10px 20px;border-right: 3px solid pink;background-color:#333; height:100%; width:200px">
+      <p style="margin-bottom:40px; color:#fff">SCORE:</p>
+      <p><span style="color:pink"><%= @game.player1.name %>:</span> <%= @game.player1.score %> pts </p>
+      <p><span style="color:pink"><%= @game.player2.name %>:</span> <%= @game.player2.score %> pts </p>
+    </div>
+
+    <div id="content" style="max-width:1000px;padding-left:30px;display:inline-block;width;float:left">
+      <h1><span style="color:#991251"><%= @game.player2.name %>:</span> choose your weapon!</h1>
+
+      <div style="display:inline-block;margin-top:70px">
+        <form name="input" action="/second_player_choice" method="post">
+          <button style="margin: 0 10px; border:0; background-color:transparent" type="submit" name="weapon" value="Rock"><img style="height:180px;" src="https://img.clipartfest.com/564f4a03d969fe430705634ba1c03465_rock-clip-art-at-vector-clip-clipart-rock_299-210.png" /></button>
+          <button style="margin: 0 10px 0 30px; border:0; background-color:transparent" type="submit" name="weapon" value="Paper"><img style="transform: scaleX(-1);height:180px;" src="http://www.clipartkid.com/images/401/paper-airplane-clip-art-clipart-best-NcaNh0-clipart.png" /></button>
+          <button style="margin: 0 10px; border:0; background-color:transparent" type="submit" name="weapon" value="Scissors"><img style="transform: rotate(-30deg);height:180px" src="http://www.clipartbilder.com/wp-content/uploads/2014/09/Schere-7.jpg" /></button>
+        </form>
+      </div>
+
+    </div>
+  </wrapper>
+</body>

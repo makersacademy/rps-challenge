@@ -1,0 +1,19 @@
+<body style="margin:0;padding:0; font-family:Helvetica">
+  <wrapper>
+
+    <div id="side-menu" style="float:left;display:inline-block;color:white; font-size:18px; padding:10px 0 10px 20px;border-right: 3px solid pink;background-color:#333; height:100%; width:200px">
+      <p style="margin-bottom:40px; color:#fff">SCORE:</p>
+      <p><span style="color:pink"><%= @game.player1.name %>:</span> <%= @game.player1.score %> pts </p>
+      <p><span style="color:pink"><%= @game.player2.name %>:</span> <%= @game.player2.score %> pts </p>
+      <a href="/"><button style="margin-top:400px; text-decoration:none; color:black; height:22px;width:100px">Sign out</button></a>
+    </div>
+
+    <div id="content" style="padding-left:30px;display:inline-block;width;float:left">
+      <h1 style="margin:150px 0;font-size:50px"><%= @game.winner != nil ? "#{@game.winner.name} wins!" : "It's a draw - play again" %></h1>
+      <a style="text-decoration:none;color:white" href="/welcome">
+        <button style="width:400px; background-color:#ddd;border-radius:5%;margin-top:20px; padding:3px 20px;font-size:40px;">Play again</button>
+      </a>
+    </div>
+
+  </wrapper>
+</body>
