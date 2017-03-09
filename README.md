@@ -19,9 +19,9 @@ I would like to be able to play rock/paper/scissors
 
 ## Approach
 
-- Given the smaller number of user stories than previously on Makers project, the first step was to break these down further.
+- Given the smaller number of user stories given than previously on Makers project, the first step was to break these down further.
 - Working from the user stories, the design stage had two key elements: the design of the user interface and the domain model.
-- I initially began with Sinatra set up and fulfilment of the first user story (having the user's name in lights!) before creating four classes mapped on in the domain model: Game, Computer, Player and Weapon.
+- I initially began with Sinatra set up and fulfilment of the first user story (having the user's name in lights!) before creating four Ruby classes, which I had designed whilst domain modelling: Game, Computer, Player and Weapon.
 - Once the Ruby infrastructure was in place, I brought this functionality to the controller and view to enable a user to play rock-paper-scissors against the computer.
 - All code was test-driven.
 
@@ -38,13 +38,16 @@ I would like to be able to play rock/paper/scissors
 ## Screenshots
 
 Welcome screen invites you to enter your name:
-![Screenshot](http://imgur.com/a/oXYLQ)
+
+![Screenshot](http://i.imgur.com/SksQcmH.png)
 
 The play screen invites you to pick your weapon:
-![Screenshot](http://imgur.com/a/xSi2z)
+
+![Screenshot](http://i.imgur.com/R4OCdtQ.png)
 
 All outcomes:
-![Screenshot](http://imgur.com/a/38l2i)
+
+![Screenshot](http://i.imgur.com/ArYYsVv.png)
 
 
 ## Tools/Languages
@@ -56,5 +59,5 @@ All outcomes:
 
 ## Limitations
 
-- Currently a user has to enter their weapon choice and an error is thrown if they select something other than rock-paper-scissors.
+- Currently a user has to enter their weapon choice and an error is thrown if they select something other than rock-paper-scissors. I would ideally create buttons for the user to press.
 - The marketeer can only currently play against the computer. I would like to extend the game so they can play against a friend.
