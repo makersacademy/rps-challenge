@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h2>Welcome <%= @player.name %></h2>
+
+  <p>Select your weapon of choice (rock, paper, scissors):</p>
+
+  <form action="/result">
+      <input type="text" name="player_selection">
+      <input type="submit" class="btn" value="Play!">
+  </form>
+</body>
+
+</html>

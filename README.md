@@ -1,24 +1,6 @@
-# RPS Challenge
+# RPS Challenge: Makers Weekend Challenge 3
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task 
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -28,8 +10,6 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
@@ -37,56 +17,47 @@ Hints on functionality
 - a winner will be declared
 
 
-As usual please start by
+## Approach
 
-* Forking this repo
-* TEST driving development of your app
+- Given the smaller number of user stories given than previously on Makers project, the first step was to break these down further.
+- Working from the user stories, the design stage had two key elements: the design of the user interface and the domain model.
+- I initially began with Sinatra set up and fulfilment of the first user story (having the user's name in lights!) before creating four Ruby classes, which I had designed whilst domain modelling: Game, Computer, Player and Weapon.
+- Once the Ruby infrastructure was in place, I brought this functionality to the controller and view to enable a user to play rock-paper-scissors against the computer.
+- All code was test-driven.
+
+## How to run
+
+- Clone this repo to your local machine `git clone [url]`
+- Navigate to the rps-challenge folder `cd rps-challenge`
+- Run `gem install bundle` if bundler isn't installed
+- Run `bundle`
+- On your terminal, run `rackup` to launch the web app
+- Enter localhost:9292 in the address bar of a web browser
+- Enter your name and start playing the game!
+
+## Screenshots
+
+Welcome screen invites you to enter your name:
+
+![Screenshot](http://i.imgur.com/SksQcmH.png)
+
+The play screen invites you to pick your weapon:
+
+![Screenshot](http://i.imgur.com/R4OCdtQ.png)
+
+All outcomes:
+
+![Screenshot](http://i.imgur.com/ArYYsVv.png)
 
 
-## Bonus level 1: Multiplayer
+## Tools/Languages
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+- Sinatra
+- Capybara
+- Ruby v 2.4.0
+- rspec
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Limitations
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'coveralls'
-require 'simplecov'
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
-Coveralls.wear! 
-```
-
-You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
-
-```
-$ coveralls report
-```
-
-This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
+- Currently a user has to enter their weapon choice and an error is thrown if they select something other than rock-paper-scissors. I would ideally create buttons for the user to press.
+- The marketeer can only currently play against the computer. I would like to extend the game so they can play against a friend.

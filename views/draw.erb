@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h2>You have drawn!</h2>
+
+  <p>You have selected <%= @player_weapon %></p>
+
+  <p>Computer selected <%= @computer_selection %></p>
+
+  <form action="/play">
+    <input type="submit" class="btn" value="Play again">
+  </form>
+</body>
+
+</html>
