@@ -6,14 +6,14 @@
 ## [Makers Academy](http://www.makersacademy.com) - Week 3 Solo Weekend Challenge
 
 ## Technologies
-Ruby v2.3.3
+[Ruby v2.3.3](https://www.ruby-lang.org/en/)
 
-Sinatra
+[Sinatra](http://www.sinatrarb.com/)
 
 ## Jump To
+* [Game Rules](#rules)
 * [Installation](#install)
 * [Usage](#usage)
-* [Game Rules](#rules)
 * [Tests](#tests)
 * [Heroku Demo](#demo)
 * [Screenshots](#screenshots)
@@ -61,7 +61,7 @@ Use the _special_ rules [Wikipedia](http://en.wikipedia.org/wiki/Rock-paper-scis
 * Spock defeats Scissors and Rock
 
 ## <a name="install">Installation</a>
-```
+```sh
 $ git clone https://github.com/treborb/rps-challenge.git
 $ cd rps-challenge
 $ rvm 2.3.3
@@ -82,7 +82,7 @@ $ open http://localhost:9292
 * Have fun playing Rock, Paper, Scissors, Lizard, Spock!
 
 ## <a name="tests">Running the tests</a>
-```ruby
+```sh
 $ rspec
 ```
 
