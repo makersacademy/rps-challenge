@@ -11,10 +11,9 @@ group :test do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
-  # gem 'byebug'
   gem 'pry-byebug'
   gem 'rspec-sinatra'
-  gem 'simplecov', require: false
+  gem 'codecov', :require => false, :group => :test
 end
 
 gem 'shotgun'

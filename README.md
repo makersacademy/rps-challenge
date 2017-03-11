@@ -1,12 +1,70 @@
 # RPS Challenge
 
-Instructions
--------
+[![Build Status](https://travis-ci.org/treborb/rps-challenge.svg?branch=master)](https://travis-ci.org/treborb/rps-challenge)
+[![codecov](https://codecov.io/gh/treborb/rps-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/rps-challenge)
 
-* Clone this repo to your local machine
-* In a terminal, navigate to the repo directory and run the command: bundle
-* Start the server with the command: ruby app.rb
-* In a web browser, navigate to: http://localhost:4567
+## [Makers Academy](http://www.makersacademy.com) - Week 3 Solo Weekend Challenge
+
+## Technologies
+###### Ruby v2.3.3
+###### Sinatra
+
+## Jump To
+* [Installation](#install)
+* [Usage](#usage)
+* [Game Rules](#rules)
+* [Tests](#tests)
+* [Heroku Demo](#demo)
+* [Screenshots](#screenshots)
+
+## The brief
+
+Knowing how to build web applications is getting us almost there as web developers!
+
+The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+
+Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+
+```
+As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game
+
+As a marketeer
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+#### Required functionality
+
+- the marketeer should be able to enter their name before the game
+- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer can choose one option
+- the game will choose a random option
+- a winner will be declared
+
+#### Bonus level 1: Multiplayer
+
+Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+
+#### Bonus level 2: Rock, Paper, Scissors, Lizard, Spock
+
+Use the _special_ rules [Wikipedia](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
+
+## <a name="install">Installation</a>
+```
+$ git clone https://github.com/treborb/rps-challenge.git
+$ cd rps-challenge
+$ rvm 2.3.3
+$ gem install bundler
+$ bundle
+$ rackup
+$ open http://localhost:9292
+```
+
+## <a name="usage">Usage</a>
+
+* Follow the installation instructions above, or view the demo on [Heroku](https://rock-paper-scissors-liz-spk.herokuapp.com)
 * Enter your name and choose a weapon
 * If you want a friend to play with you, have them enter their name and choose a weapon also
 * If no second player is entered, you will play against the computer
@@ -14,18 +72,7 @@ Instructions
 * Click the "Play!" button
 * Have fun playing Rock, Paper, Scissors, Lizard, Spock!
 
-```
-$ git clone https://github.com/treborb/rps-challenge.git
-$ cd rps-challenge
-$ gem install bundler
-$ bundle
-$ ruby app.rb
-$ open http://localhost:4567
-```
-
-### [You can also play the online demo by clicking here][a47ccf75]
-
-## Rules for Rock, Paper, Scissors, Lizard, Spock:
+## <a name="rules">Game Rules</a>
 
 * Rock defeats Scissors and Lizard
 * Paper defeats Rock and Spock
@@ -33,9 +80,15 @@ $ open http://localhost:4567
 * Lizard defeats Paper and Spock
 * Spock defeats Scissors and Rock
 
-http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
+## <a name="tests">Running the tests</a>
+```ruby
+$ rspec
+```
 
-### Screenshots
+## <a name="demo">[Heroku Demo](https://rock-paper-scissors-liz-spk.herokuapp.com)</a>
+Click on the link above to see a live demo
+
+## <a name="screenshots">Screenshots</a>
 
 ![Choosing a weapon](lib/public/img/screenshots/screenshot1.png)
 
@@ -44,5 +97,3 @@ http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
 
 
 ![Link wins!](lib/public/img/screenshots/screenshot3.png)
-
-[a47ccf75]: https://rock-paper-scissors-liz-spk.herokuapp.com "Heroku link"

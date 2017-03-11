@@ -1,13 +1,8 @@
-require 'coveralls'
 require 'simplecov'
-
-# SimpleCov.formatters = [
-#   SimpleCov::Formatter::HTMLFormatter,
-#   Coveralls::SimpleCov::Formatter
-# ]
-# Coveralls.wear!
-# run `open coverage/index.html` from the command line to view details
 SimpleCov.start
+
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 ENV['RACK_ENV'] = 'test'
 
