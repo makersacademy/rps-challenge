@@ -1,4 +1,4 @@
-# RPS Challenge
+# Rock, Paper, Scissors, Lizard, Spock
 
 [![Build Status](https://travis-ci.org/treborb/rps-challenge.svg?branch=master)](https://travis-ci.org/treborb/rps-challenge)
 [![codecov](https://codecov.io/gh/treborb/rps-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/rps-challenge)
@@ -51,6 +51,14 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 Use the _special_ rules [Wikipedia](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
 
+## <a name="rules">Game Rules</a>
+
+* Rock defeats Scissors and Lizard
+* Paper defeats Rock and Spock
+* Scissors defeats Paper and Lizard
+* Lizard defeats Paper and Spock
+* Spock defeats Scissors and Rock
+
 ## <a name="install">Installation</a>
 ```
 $ git clone https://github.com/treborb/rps-challenge.git
@@ -71,14 +79,6 @@ $ open http://localhost:9292
 * If no players are entered, the computer will play as both players
 * Click the "Play!" button
 * Have fun playing Rock, Paper, Scissors, Lizard, Spock!
-
-## <a name="rules">Game Rules</a>
-
-* Rock defeats Scissors and Lizard
-* Paper defeats Rock and Spock
-* Scissors defeats Paper and Lizard
-* Lizard defeats Paper and Spock
-* Spock defeats Scissors and Rock
 
 ## <a name="tests">Running the tests</a>
 ```ruby
