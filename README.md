@@ -6,8 +6,9 @@
 ## [Makers Academy](http://www.makersacademy.com) - Week 3 Solo Weekend Challenge
 
 ## Technologies
-###### Ruby v2.3.3
-###### Sinatra
+Ruby v2.3.3
+
+Sinatra
 
 ## Jump To
 * [Installation](#install)
