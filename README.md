@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/treborb/rps-challenge.svg?branch=master)](https://travis-ci.org/treborb/rps-challenge)
 [![codecov](https://codecov.io/gh/treborb/rps-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/rps-challenge)
 
-## [Makers Academy](http://www.makersacademy.com) - Week 3 Solo Weekend Challenge
+## [Makers Academy](http://www.makersacademy.com) - Week 3 - Solo Weekend Challenge
 
 ## Technologies
 [Ruby v2.3.3](https://www.ruby-lang.org/en/)
