@@ -6,16 +6,16 @@
 ## [Makers Academy](http://www.makersacademy.com) - Week 3 - Solo Weekend Challenge
 
 ## Technologies
-[Ruby v2.3.3](https://www.ruby-lang.org/en/)
-
-[Sinatra](http://www.sinatrarb.com/)
+* [Ruby v2.3.3](https://www.ruby-lang.org/en/)
+* [Sinatra](http://www.sinatrarb.com/)
+* [Rspec](http://rspec.info/)
 
 ## Jump To
 * [Game Rules](#rules)
 * [Installation](#install)
 * [Usage](#usage)
 * [Tests](#tests)
-* [Heroku Demo](#demo)
+* [Heroku Demo](https://rock-paper-scissors-liz-spk.herokuapp.com)
 * [Screenshots](#screenshots)
 
 ## The brief
@@ -83,9 +83,6 @@ $ open http://localhost:9292
 ```sh
 $ rspec
 ```
-
-## <a name="demo">[Heroku Demo](https://rock-paper-scissors-liz-spk.herokuapp.com)</a>
-Click on the link above to see a live demo
 
 ## <a name="screenshots">Screenshots</a>
 
