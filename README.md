@@ -50,7 +50,6 @@ You can see the full task and instructions given to us in [CONTRIBUTING.md](rps-
 * Tested using **RSpec** (for unit testing) and **Capybara** (for feature testing)
 * Styled using the **Bootstrap** web framework
 
-
 ### Steps in my development process
 
 * **Setting up my application structure**
