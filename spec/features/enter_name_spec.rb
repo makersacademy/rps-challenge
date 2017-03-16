@@ -11,6 +11,6 @@ feature 'registering name' do
     visit '/'
     fill_in 'name', with: 'Katie'
     click_button 'Submit'
-    expect(page).to have_content 'Welcome to the game Katie'
+    expect(page).to have_content 'Welcome Katie'
   end
 end
