@@ -1,5 +1,8 @@
 require 'sinatra/base'
 
+require './lib/turn.rb'
+require './lib/opponent.rb'
+
 class RPS < Sinatra::Base
 enable :sessions
 
@@ -19,11 +22,9 @@ enable :sessions
 
   post '/play' do
     session[:player_weapon] = params[:weapon]
-    session[:opponent_weapon] = :rock
+    session[:opponent_weapon] = Opponent.new.weapon
     redirect '/play'
   end
-
-
 
 
 run! if app_file == $0
