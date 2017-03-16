@@ -8,19 +8,17 @@ enable :sessions
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:player_name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
-    @weapon = session[:weapon]
-    @opponent_weapon = session[:opponent_weapon]
+    @turn = Turn.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:weapon] = params[:weapon]
+    session[:player_weapon] = params[:weapon]
     session[:opponent_weapon] = :rock
     redirect '/play'
   end
