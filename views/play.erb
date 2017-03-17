@@ -13,5 +13,13 @@
   You have chosen <%=@turn.player_weapon.to_s.capitalize %>
 
   <div id="opponent_weapon">
-  Your opponent has chosen <%=@turn.opponent_weapon.to_s.capitalize%>
-</div>
+    Your opponent has chosen <%=@turn.opponent_weapon.to_s.capitalize%>
+  </div>
+
+  <% if @turn.win? %>
+  You win!
+  <%elsif @turn.lose? %>
+  You lose!
+  <%else%>
+  Draw!
+  <%end %>
