@@ -63,7 +63,7 @@ type `http://localhost:4567` into your web browser
 
 ## <a name="Heroku">Play live on Heroku</a>
 
-[Rock, Paper, Scissors](https://adrianeyre-rps.herokuapp.com)
+[![heroku-48](https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/heroku.png)](https://adrianeyre-rps.herokuapp.com) [Use on Heroku](https://adrianeyre-rps.herokuapp.com)
 
 ## <a name="Shots">Screen Shots</a>
 
