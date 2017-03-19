@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/KatHicks/rps-challenge.svg?branch=master)](https://travis-ci.org/KatHicks/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/rps-challenge?branch=master)
 
+![Landing Page](/docs/landing_page.png?raw=true "Screenshot of landing page")
+
 ### Instructions
 
 As usual, we were given from the end of the day on Friday until 9am on Monday to complete the challenge.
