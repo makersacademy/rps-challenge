@@ -1,7 +1,7 @@
 # Rock, Paper, Scissors
 ### Makers Academy Weekend Challenge No.3
 
-[![Build Status](https://travis-ci.org/KatHicks/rps-challenge.svg?branch=master)](https://travis-ci.org/KatHicks/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/rps-challenge?branch=master)
+[![Build Status](https://travis-ci.org/KatHicks/rps-challenge.svg?branch=master)](https://travis-ci.org/KatHicks/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/KatHicks/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/KatHicks/rps-challenge?branch=master) [![Code Climate](https://codeclimate.com/github/KatHicks/rps-challenge/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/rps-challenge)
 
 ![Landing Page](/docs/landing_page.png?raw=true "Screenshot of landing page")
 
