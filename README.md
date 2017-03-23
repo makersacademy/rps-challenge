@@ -1,5 +1,8 @@
-Week 3 challenge for makers
+Rock Paper Scissors
 ---
+Makers Academy Weekend 3 Challenge
+
+
 A small webapp to play rock paper scissors with
 
 original challenge text can be found in "challenge.md"
