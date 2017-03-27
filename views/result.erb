@@ -1,5 +1,5 @@
 </!DOCTYPE html>
-  <html>
+<!-- <html> -->
     <head>
       <title>_my RPS game_</title>
       <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
@@ -10,8 +10,8 @@
       <div class="header_play">
         <div class="side_txt_1"><b>Your </b> choice:</div>
         <div class="img_box">
-          <img id="<%= @players_card.id %>" src="img/<%= @players_card.index %>.png" />
-          <img id="<%= @random_card.id %>" src="img/<%= @random_card.index %>.png" />
+          <img id="<%= @players_card.idx %>" src="img/<%= @players_card.idx %>.png" />
+          <img id="<%= @random_card.idx %>" src="img/<%= @random_card.idx %>.png" />
           </div>
           <div class="side_txt_2">: <b>Oponent's</b> choice</div>
         <h1>You: <%= @message %></h1>

@@ -1,14 +1,8 @@
 class Card
-  attr_reader :index, :id
-  RANDOM_INDEX= rand(1..3)
+  attr_reader :idx
+  RANDOM_INDEX = rand(0..2)
 
-  def initialize(index= RANDOM_INDEX)
-    @index= index
-    @id= id
-  end
-
-  def id
-    idx= @index.to_i 
-    @id= ["rock", "paper", "scissors"].at(idx-1)
+  def initialize(idx = RANDOM_INDEX)
+    @idx = idx
   end
 end

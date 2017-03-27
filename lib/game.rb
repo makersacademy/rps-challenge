@@ -1,23 +1,26 @@
 class Game
-  attr_reader :player, :random_card, :enemy_card, :result
 
-  def initialize(player, random_card)
-    @player= player
-    @random_card= random_card
-    @result= ""
+  def initialize(players_card, random_card)
+    @players_card = players_card.idx
+    @random_card = random_card.idx
+    @result = ""
   end
 
-  def fight_against(enemy_card)
-    enemy_card = enemy_card.index.to_i
-    return @result= :draw if enemy_card == @random_card.index.to_i
-    enemy_card-1 != 0 && enemy_card != @random_card.index.to_i ? @result= :win : @result= :lose
+  def play
+    if @random_card == @players_card
+      @result = :draw
+    else
+      type = [@random_card-1, @random_card-2, @random_card].at(@players_card)
+      type != 0 ? @result = :win : @result = :lose
+    end
+    return @result
+  end
+
+  def self.create(players_card, random_card)
+    game = Game.new(players_card, random_card)
+    game.play
   end
 
   private
   attr_reader :win, :lose, :draw
-
-def subtract
-  enemy_card -=1
-end
-
 end

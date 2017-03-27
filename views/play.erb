@@ -3,29 +3,29 @@
 </!DOCTYPE html>
   <html>
     <head>
-      <title>_my RPS game_</title>
+      <title>_RPS game_</title>
       <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
       <link rel="stylesheet" type="text/css" href="../css/content.css" />
     </head>
     <body>
       <div class="container">
       <div class="header_play">
-        <h1> Welcome to the game, <%= @player %>!!</h1>
+        <h1> Welcome to the game, <%= @name %>!!</h1>
         <p>Choose your card, please.</p>
         </div>
         <div class="wrap">
           <form action='/card' method='post'>
-            <img id='rock' src="img/1.png" >
-            <img id='paper' src="img/2.png" >
-            <img id='scissors' src="img/3.png" >
+            <img id='0' src="img/0.png" >
+            <img id='1' src="img/1.png" >
+            <img id='2' src="img/2.png" >
             <div class="radio_btns">
-            <input id='rock' type='radio' name='choose' value='1'>
-            <input id='paper'  type='radio' name='choose' value='2'>
-            <input id= "scissors" type='radio' name='choose' value='3'></br>
+              <input id='0' type='radio' name='choose' value='0'>
+              <input id='1'  type='radio' name='choose' value='1'>
+              <input id= '2' type='radio' name='choose' value='2'></br>
             </div>
             <button class="btn_play btn-6_play btn-6d_play" type="submit" value="Submitt">P l a y</button>
           </form>
-          </div>
+        </div>
       </div>
     </body>
 </html>
