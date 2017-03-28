@@ -1,21 +1,22 @@
 </!DOCTYPE html>
-<!-- <html> -->
-    <head>
-      <title>_my RPS game_</title>
-      <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
-      <link rel="stylesheet" type="text/css" href="../css/content.css" />
-    </head>
-    <body>
-      <div class="container_result">
+  <head>
+    <title>_RPS game_</title>
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/content.css" />
+  </head>
+
+  <body>
+    <div class="container_result">
       <div class="header_play">
-        <div class="side_txt_1"><b>Your </b> choice:</div>
         <div class="img_box">
           <img id="<%= @players_card.idx %>" src="img/<%= @players_card.idx %>.png" />
           <img id="<%= @random_card.idx %>" src="img/<%= @random_card.idx %>.png" />
-          </div>
-          <div class="side_txt_2">: <b>Oponent's</b> choice</div>
+        </div>
         <h1>You: <%= @message %></h1>
+        <form action="/result" method='post'>
+          <button class="btn_play2 btn-6_play btn-6d_play" type="submit" value="Submit">Play again?</button>
+        </form>
       </div>
-      </div>
-      </body>
-      </html>
+    </div>
+  </body>
+</html>

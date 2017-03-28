@@ -1,8 +1,7 @@
 class Card
   attr_reader :idx
-  RANDOM_INDEX = rand(0..2)
 
-  def initialize(idx = RANDOM_INDEX)
+  def initialize(idx =[0,1,2].sample)
     @idx = idx
   end
 end

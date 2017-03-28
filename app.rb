@@ -31,5 +31,9 @@ class RPS < Sinatra::Base
     erb :result
   end
 
+  post '/result' do
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end

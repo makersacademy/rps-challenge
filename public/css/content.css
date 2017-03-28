@@ -90,12 +90,10 @@ body {
 }
 
 .wrap {
-  margin-left: auto;
-    margin-right: auto;
-    width: 53%
+  margin-left: 39%;
+  margin-right: auto;
+  /*width: 53%*/
 }
-
-
 
 /* General button style (reset) */
 .btn {
@@ -107,7 +105,7 @@ body {
   cursor: pointer;
   padding: 25px 80px;
   display: inline-block;
-  margin: 15px 30px;
+  margin: 5px 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -118,16 +116,31 @@ body {
   transition: all 0.3s;
 }
 
-.btn:after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+.btn_play {
+  margin-top: 35px;
+  border: none;
+  width: 130px;
+  height: 30px;
+  background: #ab3c3c;
+  color: #e6e6e6;
+  margin-left: 10%;
+  margin-right: auto;
+  text-align: center;
 }
 
-.btn_play {
+.btn_play2 {
+  margin-top: 35px;
+  border: none;
+  width: 130px;
+  height: 30px;
+  background: #ab3c3c;
+  color: #e6e6e6;
+  margin-left: 0%;
+  margin-right: auto;
+  text-align: center;
+}
+
+.btn_play_again {
   margin-top: 35px;
   border: none;
   width: 180px;
@@ -139,15 +152,6 @@ body {
   text-align: center;
 }
 
-.btn-6 {
-  background: #9CD4A2;
-  color: #e6e6e6;
-  box-shadow: 0 4px #ab3c3c;
-  -webkit-transition: none;
-  -moz-transition: none;
-  transition: none;
-}
-
 .btn-6_play {
   background: #ab3c3c;
   color: #e6e6e6;
@@ -155,11 +159,6 @@ body {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
-}
-
-
-.btn-6d {
-  border-radius: 0 0 5px 5px;
 }
 
 .btn-6d_play {
@@ -186,7 +185,7 @@ body {
 }
 
 .input__field--juro {
-  
+
   z-index: 100;
   padding: 0.15em 0.35em 0;
   width: 20%;
@@ -213,4 +212,14 @@ body {
   margin-left: 130px;
 }
 
-
+label > input{
+  visibility: hidden;
+  position: absolute;
+}
+label > input + img{
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{
+  border:1px solid #ab3c3c;
+}
