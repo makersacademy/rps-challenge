@@ -14,6 +14,9 @@ The game has only three possible outcomes other than a tie:
 
 <!-- ![Screenshot](http://i.imgur.com/fvkCKnj.png?1) -->
 
+## Heroku
+[RPS game](https://rps-game-k.herokuapp.com/play)
+
 ## Download and Run
 After cloning the project, enter the following lines on the command-line:
 ```
