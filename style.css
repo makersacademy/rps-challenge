@@ -1,0 +1,30 @@
+/* GLOBAL STYLES
+===========================================
+*/
+
+body {
+  background: url(https://goo.gl/H5qdDs) no-repeat top center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 20px
+}
+
+h2 {
+
+}
+
+form {
+
+}
+
+
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    max-width: 100%;
+    height: auto;
+  	left: 0;
+  	position: absolute;
+}
