@@ -22,7 +22,7 @@ describe Game do
     end
   end
 
-  describe '#selection' do
+  describe '#reselect' do
     it 'reassigns selection' do
       game.reselect
       expect(['Rock', 'Paper', 'Scissors']).to include(game.selection)

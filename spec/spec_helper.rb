@@ -16,4 +16,5 @@ ENV['RACK_ENV'] = 'test'
 require './app'
 require 'byebug'
 require 'capybara/rspec'
+require './spec/features/web_helpers.rb'
 Capybara.app = Rps
