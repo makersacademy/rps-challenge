@@ -23,12 +23,14 @@ class RockPaperScissorsLizardSpock < Sinatra::Base
   post '/decider' do
     @player_choice = Player.instance.player_choice(params[:choice])
     @computer_choice = AutomatedOpponent.create
+    @game_result = Game.create(params[:choice], AutomatedOpponent.instance.automated_choice)
     redirect to('/results')
   end
 
   get '/results' do
     @player = Player.instance
     @computer_choice = AutomatedOpponent.instance.automated_choice
+    @game_result = Game.instance.result
     erb(:results)
   end
 
