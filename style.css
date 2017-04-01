@@ -5,18 +5,36 @@
 body {
   background: url(https://goo.gl/H5qdDs) no-repeat top center fixed;
   background-size: cover;
+  text-align: center;
+  color: #f7f9ff;
+  text-shadow: 1px 1px #19191a;
+}
+
+.centered {
+  position: absolute;
+  height: 100px;
+  width: 600px;
+  margin: auto;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 h1 {
-  font-size: 20px
+  font-size: 55px;
 }
 
 h2 {
-
+  font-size: 35px;
 }
 
 form {
+  font-size: 25px;
+}
 
+input.submit {
+    width: 6em;  height: 8em;
 }
 
 

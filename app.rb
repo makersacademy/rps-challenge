@@ -1,8 +1,9 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 # keep me slim controller
-class RPS < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
   set :public_folder, File.dirname(__FILE__) + '/'
@@ -12,15 +13,15 @@ class RPS < Sinatra::Base
   end
 
   post '/registered' do
-    player = Player.new(params[:marketeer])
-    robot = Player.new(params[:marketeer])
-    game = Game.new(player, robot)
+    player_1 = Player.new(params[:player_1])
+    # player_2 = Player.new(params[:player_2])
+    $game = Game.new(player_1)
     # create a game and pass player....
     redirect '/play', 303
   end
 
   get '/play' do
-    @player = $player
+    @game = $game
     erb :play
   end
 

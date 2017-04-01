@@ -1,5 +1,5 @@
 def register_and_play
   visit('/')
-  fill_in :marketeer, with: 'Ruan'
-  click_button 'Submit'
+  fill_in :player_1, with: 'Ruan'
+  click_button 'Battle'
 end

@@ -6,16 +6,36 @@
 </head>
 
   <body>
-    <h2>Welcome to....</h2>
-    <h1>Rock, Paper, Scissors</h1>
-    <br></br>
-    <h2>Please sign in to play</h2>
-    <form action="/registered" method="post">
-      <label for="player">
-          Enter your name:
-        <input type="text" name="marketeer">
-      </label>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="centered">
+      <h2>Welcome to....</h2>
+      <h1>Rock, Paper, Scissors</h1>
+      <br></br>
+      <h2>Please sign in to play</h2>
+      <form action="/registered" method="post">
+        <label for="player_1">
+          Enter player 1:
+          <input type="text" id="player_1" name="player_1">
+        </label>
+        <!-- <label for="player_2">
+          Enter player 2:
+          <input type="text" id="player_2" name="player_2">
+        </label> -->
+        <button type="submit" class="submit">
+          Battle!
+        </button>
+      </form>
+    </div>
   </body>
 </html>
+
+<!-- <form action="/registered" method="post">
+  <label for="player">
+      Enter player 1:
+      <input type="text" name="player_1">
+  </label>
+  <label for="player">
+      Enter player 2:
+      <input type="text" name="player_2">
+  </label>
+  <input type="submit" value="Submit" class="submit">
+</form> -->
