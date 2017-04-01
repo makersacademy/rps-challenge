@@ -11,10 +11,21 @@ class Rps < Sinatra::Base
     erb :enter_name
   end
 
+  get '/enter_names' do
+    erb :enter_names
+  end
+
   post '/make_game' do
-    @player_1 = Player.new(params[:player_name])
-    @player_2 = Player.new('The computer')
-    Game.create(@player_1,@player_2)
+    player_1 = Player.new(params[:player_name])
+    player_2 = Player.new('The computer')
+    Game.create(player_1, player_2)
+    redirect '/choose_weapon'
+  end
+
+  post '/make_two_man_game' do
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    Game.create(player_1, player_2, false)
     redirect '/choose_weapon'
   end
 
@@ -24,10 +35,14 @@ class Rps < Sinatra::Base
   end
 
   post '/find_winner' do
-    @game = Game.instance
-    @game.player_1.set_hand(params[:hand])
-    @game.player_2.set_hand(@game.player_2.hands.sample)
-    redirect '/victory'
+    game = Game.instance
+    game.player_1.set_hand(params[:hand])
+    if game.solo
+      game.player_2.set_hand(game.player_2.hands.sample)
+      redirect '/victory'
+    else
+      redirect '/choose_weapon'
+    end
   end
 
   get '/victory' do
