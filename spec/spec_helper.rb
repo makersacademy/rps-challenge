@@ -4,6 +4,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'coveralls'
 require 'simplecov'
+require './spec/features/web_helpers.rb'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
