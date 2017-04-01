@@ -1,10 +1,14 @@
 require 'player'
 
 describe Player do
-  subject(:player) {described_class.new("Roberto")}
+  subject(:player) {described_class.new("Roberto", "Human")}
   
   it 'returns player name' do
     expect(player.name).to eq "Roberto"
+  end
+
+  it 'returns player type' do
+    expect(player.type).to eq "Human"
   end
 
   it 'assignes players choice to yellow-throat' do

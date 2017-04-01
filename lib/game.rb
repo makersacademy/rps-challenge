@@ -1,18 +1,18 @@
 class Game
-  attr_reader :player, :comp
+  attr_reader :human, :comp
 
-  def initialize(player, comp)
-    @player = player
+  def initialize(human, comp)
+    @human = human
     @comp = comp
   end
 
   def calculate_winner
-    if player.choice == comp.choice
+    if human.choice == comp.choice
       "Draw"
-    elsif player.choice == "orange-throat" && comp.choice == "blue-throat" || player.choice == "blue-throat" && comp.choice == "yellow-throat" || player.choice == "yellow-throat" && comp.choice == "orange-throat"
-      player
+    elsif human.choice == "orange-throat" && comp.choice == "blue-throat" || human.choice == "blue-throat" && comp.choice == "yellow-throat" || human.choice == "yellow-throat" && comp.choice == "orange-throat"
+      human.name
     else
-      comp
+      comp.name 
     end
   end
 end

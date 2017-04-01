@@ -10,7 +10,8 @@ enable :sessions
    end
 
    post '/player_names' do
-     $player_1 = Player.new(params[:player_1])
+     $player_1 = Player.new(params[:player_1], "human")
+     $player_2 = Player.new("comp")
      redirect '/play'
    end
 
