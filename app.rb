@@ -18,7 +18,7 @@ class Rps < Sinatra::Base
   end
 
   post '/initiate' do
-    Rps.game.assign(Player.new(params['name'])
+    Rps.game.assign(Player.new(params['name']))
     redirect to('/play')
   end
 
