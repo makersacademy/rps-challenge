@@ -10,12 +10,22 @@ describe Game do
     it 'initiates with a player' do
       expect(game.player).to eq steph
     end
+    it 'has a selection' do
+      expect(['Rock', 'Paper', 'Scissors']).to include(game.selection)
+    end
   end
 
   describe '#assign' do
     it 'reassigns the player' do
       game.assign(pinkiepie)
       expect(game.player).to eq pinkiepie
+    end
+  end
+
+  describe '#selection' do
+    it 'reassigns selection' do
+      game.reselect
+      expect(['Rock', 'Paper', 'Scissors']).to include(game.selection)
     end
   end
 

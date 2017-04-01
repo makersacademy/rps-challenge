@@ -35,4 +35,9 @@ class Rps < Sinatra::Base
     erb :winlose
   end
 
+  get '/playagain' do
+    Rps.game.reselect
+    redirect to('/play')
+  end
+
 end

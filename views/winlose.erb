@@ -1,1 +1,22 @@
-<p><%= Rps.game.player.selection %></p>
+<p><%= Rps.game.player.name %>: <%= Rps.game.player.selection %></p>
+
+<p>Opponent: <%= Rps.game.selection %></p>
+
+<%if [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']].include?([Rps.game.player.selection, Rps.game.selection])%>
+
+<p>You win!</p>
+
+<%elsif [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']].include?([Rps.game.selection, Rps.game.player.selection])%>
+
+<p>You lose!</p>
+
+<%else%>
+<p>It's a draw!</p>
+
+<% end %>
+
+<form action='playagain'>
+  <button>
+    Play again!
+  </button>
+</form>
