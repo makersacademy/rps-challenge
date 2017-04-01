@@ -10,5 +10,9 @@ SimpleCov.formatters = [
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
+require_relative '../app'
 require 'byebug'
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers'
