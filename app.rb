@@ -19,9 +19,19 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/attack' do
+  post '/attack_rock_win' do
     @player_1 = $player_1.name
-    erb :attack
+    erb :attack_rock_win
+  end
+
+  post '/attack_loss' do
+    @player_1 = $player_1.name
+    erb :attack_loss
+  end
+
+  post '/attack_scissor_win' do
+    @player_1 = $player_1.name
+    erb :attack_scissor_win
   end
 
 end
