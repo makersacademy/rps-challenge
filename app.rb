@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/player'
 
 class Rps < Sinatra::Base
 
@@ -10,7 +11,7 @@ class Rps < Sinatra::Base
     erb :enter_name
   end
 
-  post '/choose_weapon' do
+  get '/choose_weapon' do
     @player_name = params[:player_name]
     erb :choose_weapon
   end
