@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/automated_opponent'
 
 class RockPaperScissorsLizardSpock < Sinatra::Base
   enable :sessions
@@ -20,10 +21,14 @@ class RockPaperScissorsLizardSpock < Sinatra::Base
   end
 
   post '/decider' do
+    @player_choice = Player.instance.player_choice(params[:choice])
+    @computer_choice = AutomatedOpponent.create
     redirect to('/results')
   end
 
   get '/results' do
+    @player = Player.instance
+    @computer_choice = AutomatedOpponent.instance.automated_choice
     erb(:results)
   end
 

@@ -7,19 +7,24 @@
   <body>
     <h1><%= @player.name %> make your choice</h1>
       <form action="/decider" method='post'>
-        <input type="submit" value="ROCK">
+        <input type="submit" value="Rock">
+        <input type="hidden" value="Rock" name="choice">
       </form>
       <form action="/decider" method='post'>
-        <input type="submit" value="PAPER">
+        <input type="submit" value="Paper">
+        <input type="hidden" value="Paper" name="choice">
       </form>
       <form action="/decider" method='post'>
-        <input type="submit" value="SCISSORS">
+        <input type="submit" value="Scissors">
+        <input type="hidden" value="Scissors" name="choice">
       </form>
       <form action="/decider" method='post'>
-        <input type="submit" value="LIZARD">
+        <input type="submit" value="Lizard">
+        <input type="hidden" value="Lizard" name="choice">
       </form>
       <form action="/decider" method='post'>
-        <input type="submit" value="SPOCK">
+        <input type="submit" value="Spock">
+        <input type="hidden" value="Spock" name="choice">
       </form>
   </body>
 </html>
