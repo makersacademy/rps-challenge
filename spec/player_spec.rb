@@ -11,8 +11,8 @@ describe Player do
 
   describe '#choice' do
     it 'records the user choide' do
-      player.save_choice("Rock")
-      expect(player.choice).to eq "Rock"
+      player.save_choice("rock")
+      expect(player.choice).to eq :rock
     end
   end
 

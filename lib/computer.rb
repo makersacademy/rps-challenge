@@ -1,16 +1,20 @@
 class Computer
 
-  attr_reader :choices
+  attr_reader :choice
 
   def initialize
     @choices = [:rock, :paper, :scissors]
+    pick
   end
+  
+  private
 
-  def choice
-    choices.sample
+  attr_reader :choices
+  attr_writer :choice
+
+  def pick
+    self.choice = choices.sample
   end
-
-  # def self.set_instance
 
 
 end

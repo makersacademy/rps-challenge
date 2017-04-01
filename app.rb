@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/computer'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -26,8 +28,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    # Game.new(@player, Computer.new)
-    erb(:result)
+    @result = Game.new(@player, Computer.new).result    
+    p @result
+    # erb(:result)
   end
 
     run! if app_file == $0
