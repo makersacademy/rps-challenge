@@ -14,7 +14,7 @@ class Computer
   end
 
   def attack_method
-    "Rock"
+    ["Rock", "Paper", "Scissors"].sample
   end
 
 end
