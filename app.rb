@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
+require_relative './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -12,7 +13,9 @@ class Rps < Sinatra::Base
   end
 
   get '/choose_weapon' do
-    @player_name = params[:player_name]
+    @player_1 = Player.new(params[:player_name])
+    @player_2 = Player.new('Computer')
+    Game.create(@player_1,@player_2)
     erb :choose_weapon
   end
 
