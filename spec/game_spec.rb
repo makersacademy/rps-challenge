@@ -25,4 +25,12 @@ let(:player_2) { double :player_2, :hand => 'rock' }
     end
   end
 
+  describe
+
+  describe "#solo" do
+    it 'returns false if the game is two-player' do
+      expect(game.solo).to eq false
+    end
+  end
+
 end

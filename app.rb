@@ -38,7 +38,7 @@ class Rps < Sinatra::Base
     game = Game.instance
     if game.solo
       game.player_1.set_hand(params[:hand])
-      game.player_2.set_hand(game.player_2.auto)
+      game.player_2.auto
       redirect '/victory'
     elsif game.playing == game.player_1
       game.player_1.set_hand(params[:hand])
