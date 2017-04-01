@@ -28,13 +28,8 @@ body
 </style>
 <body>
 
-  <h1> WELCOME TO ROCK PAPER SCISSORS </h1>
-  <h2> Enter your name to play <h2>
-  <form action="/player_names" method = 'post'>
-    Name: <br>
-    <input type="text" name="name" >
-    <input type="submit" value="Let's Play!!"
-  </form>
+<h1> <%=session[:name]%> picked <%=session[:option]%> </h1>
+
 </center>
 </body>
 </html>

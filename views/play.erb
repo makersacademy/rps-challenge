@@ -28,13 +28,19 @@ body
 </style>
 <body>
 
-  <h1> WELCOME TO ROCK PAPER SCISSORS </h1>
-  <h2> Enter your name to play <h2>
-  <form action="/player_names" method = 'post'>
-    Name: <br>
-    <input type="text" name="name" >
-    <input type="submit" value="Let's Play!!"
-  </form>
+  <h1> Hi <%=session[:name]%>, Let's play!!! :) </h1>
+
 </center>
+<p>
+  <form action="/store_rock" method=post>
+    <input type="image" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg" alt="rock" />
+  </form>
+  <form action="/store_paper" method=post>
+    <input type="image" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" />
+  </form>
+  <form action="/store_scissors" method=post>
+    <input type="image" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" />
+  </form>
+</p>
 </body>
 </html>
