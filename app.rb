@@ -26,6 +26,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    # Game.new(@player, Computer.new)
     erb(:result)
   end
 

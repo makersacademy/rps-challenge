@@ -14,4 +14,10 @@ describe Computer do
       computer.pick
     end
   end
+
+  # describe '.set_instance' do
+  #   it 'creates a new computer' do
+  #     expect(described_class.set_instance).to be_instance_of described_class
+  #   end
+  # end
 end

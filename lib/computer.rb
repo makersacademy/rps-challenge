@@ -10,4 +10,7 @@ class Computer
     choices.sample
   end
 
+  # def self.set_instance
+    
+
 end
