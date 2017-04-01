@@ -38,11 +38,15 @@ end
 
 feature 'Enter two names' do
   scenario 'Enter two names' do
-    visit('/')
-    click_button 'Two Players'
-    fill_in :player_1_name, with: 'Thor'
-    fill_in :player_2_name, with: 'Loki'
-    click_button 'Submit'
+    choose_two_man_and_enter_names
     expect(page).to have_content 'Welcome Thor'
+  end
+end
+
+feature 'Player 1 has a turn, and then...' do
+  scenario 'Second player gets a go' do
+    choose_two_man_and_enter_names
+    click_button 'Rock'
+    expect(page).to have_content 'Welcome Loki'
   end
 end

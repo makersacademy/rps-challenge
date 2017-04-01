@@ -18,4 +18,11 @@ let(:player_2) { double :player_2, :hand => 'rock' }
     end
   end
 
+  describe '#switch_turn' do
+    it 'gives player 2 a go' do
+      game.switch_turn
+      expect(game.playing).to eq player_2
+    end
+  end
+
 end
