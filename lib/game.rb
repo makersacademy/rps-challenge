@@ -25,17 +25,13 @@ class Game
   end
 
   def winner
-    hand_1 = player_1.hand
-    hand_2 = player_2.hand
-    if hand_1=='scissors' && hand_2=='paper'
-      player_1
-    elsif hand_1=='rock' && hand_2=='scissors'
-      player_1
-    elsif hand_1=='paper' && hand_2=='rock'
-      player_1
-    else
-      player_2
-    end
+    better?(player_1.hand, player_2.hand) ? player_1 : player_2
+  end
+
+  private
+
+  def better?(hand_1,hand_2)
+    (hand_1=='scissors' && hand_2=='paper') || (hand_1=='rock' && hand_2=='scissors') || (hand_1=='paper' && hand_2=='rock')
   end
 
 end
