@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
   end
 
   get '/start' do
-    "#{@player.name}, it's your turn!"
+    erb(:play)
   end
 
     run! if app_file == $0

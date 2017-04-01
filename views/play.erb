@@ -1,0 +1,56 @@
+<style>
+
+h1 {
+  text-align: center;
+  font-style: italic;
+  font-weight: 200;
+}
+
+form {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+label > input + img {
+  width:200px;
+  height:200px;
+  cursor: pointer;
+  border: 2px solid;
+  }
+
+input {
+  visibility: hidden;
+  position: absolute;
+  }
+
+button {
+  display: block;
+  margin: auto;
+  width: 100px
+  }
+
+#button {
+  width: 100%;
+  }
+</style>
+
+<h1> <%=@player.name %>, it's your turn! </h1>
+
+<form action='/choice' method='post'>
+  <label for="rock">
+    <input type='radio' name='choice' value="rock" id="rock">
+    <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock">
+  </label>
+  <label for="paper">
+    <input type='radio' name='choice' value="paper" id="paper">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper">
+  </label>
+  <label for="scissors">
+    <input type='radio' name='choice' value="scissors" id="scissors">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors">
+  </label>
+  <div id="button">
+    <button type="submit" value="Submit"></button>
+  </div>
+</form>
