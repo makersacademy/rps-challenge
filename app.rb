@@ -17,7 +17,7 @@ class RockPaperScissors < Sinatra::Base
     # player_2 = Player.new(params[:player_2])
     $game = Game.new(player_1)
     # create a game and pass player....
-    redirect '/play', 303
+    redirect '/play', 302
   end
 
   get '/play' do
@@ -25,9 +25,15 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  # get '/result'
-  # this is where the result of the
-  # player vs comp rps was
+  post '/choice' do
+    @game = $game
+    @game.player_selection(params[:selection])
+    redirect '/result', 302
+  end
 
+  get '/result' do
+    @game = $game
+    erb :result
+  end
 
 end

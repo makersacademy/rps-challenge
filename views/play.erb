@@ -1,11 +1,36 @@
-<h1>Registeration confirmed, get ready...</h1>
-<%= @game.player1.name.capitalize %>
-<br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Game</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="centered">
+
+    <h2>Make your selection <%= @game.player.name.capitalize %>:</h2>
+    <br>
+    <form action="/choice" method="post">
+      <button type="submit" class="btn" name="selection" value="rock">
+        Rock
+      </button>
+      <p>
+      <button type="submit" class="btn" name="selection" value="paper">
+        Paper
+      </button>
+      <p>
+      <button type="submit" class="btn" name="selection" value="scissors">
+        Scissors
+      </button>
+    </form>
+  </div>
+</body>
+
+
+
 
 
 <!--
-
-insert "<%= @game.player1.name %> turn to play"
 
 
 # 3 buttons
