@@ -18,3 +18,5 @@ require File.join(File.dirname(__FILE__), '..','app.rb')
 
 # tell Capybara about RPS
 Capybara.app = RPS
+
+require 'features/web_helpers'

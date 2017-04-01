@@ -1,8 +1,6 @@
-feature 'Select rock paper scissors' do
+feature 'Select rock, paper, or scissors' do
   scenario 'View your choice after making a selection' do
-    visit('/')
-    fill_in :player, with: 'Freddy'
-    click_button('Submit')
+    fill_in_and_submit
     choose('Rock')
     click_button ('OK')
     expect(page).to have_content("You chose Rock")
