@@ -2,7 +2,11 @@
 
 <h2><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</h2>
 
+<% if @game.player_1.hand == @game.player_2.hand %>
+<h2>'It's a draw!'</h2>
+<% else %>
 <h2><%=@game.winner.name%> wins!</h>
+<% end %>
 
 
 <form action='/choose_weapon'>

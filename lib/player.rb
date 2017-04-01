@@ -7,10 +7,8 @@ class Player
     @hands = ['rock','paper','scissors']
   end
 
-
   def set_hand(hand)
-    @hand = hand 
+    @hand = hand
   end
-
 
 end
