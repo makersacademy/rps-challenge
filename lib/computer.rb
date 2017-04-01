@@ -6,4 +6,8 @@ class Computer
     @choices = [:rock, :paper, :scissors]
   end
 
+  def pick
+    choices.sample
+  end
+
 end
