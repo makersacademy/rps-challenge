@@ -1,0 +1,40 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  background-color: rgb(146, 168, 204);
+  text-align: center;
+}
+p {
+  font-family: helvetica, sans-serif;
+  font-size: 22px;
+}
+h1 {
+  font-family: helvetica oblique, sans-serif;
+  font-size: 50px
+}
+h2 {
+  font-family: helvetica oblique, sans-serif;
+  font-size: 34px
+}
+p {
+  font-family: helvetica oblique, sans-serif;
+  font-size: 34px
+}
+input[type=submit] {
+  float: none;
+  padding:5px 15px;
+  background:#ccc;
+  border:0 none;
+  border-radius: 10px;
+  color: black;
+  background-color: #5151af;
+  margin: 10px;
+  font-size: 20px;
+}
+div {
+  margin-left:auto;
+  margin-right:auto;
+  height: 30px !important;
+}

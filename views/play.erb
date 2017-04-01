@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Make your choice</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1><%= @player.name %> make your choice</h1>
+    <div>
       <form action="/decider" method='post'>
         <input type="submit" value="Rock">
         <input type="hidden" value="Rock" name="choice">
@@ -26,5 +28,6 @@
         <input type="submit" value="Spock">
         <input type="hidden" value="Spock" name="choice">
       </form>
+    </div>
   </body>
 </html>
