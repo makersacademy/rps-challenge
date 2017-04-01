@@ -11,7 +11,7 @@ describe Computer do
 
   describe '#attack_method' do
     it 'returns an attack method' do
-      expect(deepblue.attack_method).to eq("Rock").or eq("Paper").or eq("Scissors")
+      expect(deepblue.get_attack).to eq("Rock").or eq("Paper").or eq("Scissors")
     end
   end
 end

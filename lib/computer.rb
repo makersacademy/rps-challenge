@@ -13,8 +13,8 @@ class Computer
     @computer
   end
 
-  def attack_method
-    ["Rock", "Paper", "Scissors"].sample
+  def get_attack
+    @attack_method = ["Rock", "Paper", "Scissors"].sample
   end
 
 end

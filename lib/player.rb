@@ -1,5 +1,5 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :attack_method
 
   def initialize(name)
     @name = name
@@ -11,5 +11,9 @@ class Player
 
   def self.instance
     @player
+  end
+
+  def attack(attack_method)
+    @attack_method = attack_method
   end
 end

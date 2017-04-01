@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -12,12 +13,14 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     @player = Player.create(params[:player_1_name])
     @computer = Computer.create(params[:computer_name])
+    @game = Game.create(@player,@computer)
     redirect '/play'
   end
 
   before do
     @player = Player.instance
     @computer = Computer.instance
+    @game = Game.instance
   end
 
   get '/play' do
@@ -27,10 +30,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/attack' do
-    @player_1_name = @player.name
-    @computer_name = @computer.name
-    @player_attack_method = params[:player_attack_method]
-    @computer_attack_method = @computer.attack_method
+    @player.attack(params[:player_attack_method])
+    @computer.get_attack
+    @result = @game.winner
     erb(:attack)
   end
 

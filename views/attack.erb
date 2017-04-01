@@ -1,7 +1,15 @@
 <body style="background: #A7BFE8;
 font-family: Verdana, Geneva, sans-serif;">
   <center>
-    <h1><%= @player_1_name %> used <%= @player_attack_method %></h1>
-    <h1><%= @computer_name %> used <%= @computer_attack_method %></h1>
+    <h1><%= @player.name %> used <%= @player.attack_method %></h1>
+    <h1><%= @computer.name %> used <%= @computer.attack_method %></h1>
+    <br /><br />
+    <% if @result == "SOMETHING WENT WRONG!" %>
+      <h2>Something went wrong!</h2>
+    <% elsif @result == "Draw" %>
+      <h2>Draw!</h2>
+    <% else %>
+      <h2><%= @result.name %> won!</h2>
+    <% end %>
   </center>
 </body>
