@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :type, :choice
 
-  def initialize(name = "comp", type)
+  def initialize(name = "comp", type = "comp")
     @name = name
     @type = type
   end

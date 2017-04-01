@@ -6,6 +6,14 @@ class Game
     @comp = comp
   end
 
+  def self.create(human, comp)
+    @game = Game.new(human, comp)
+  end
+
+  def self.instance
+    @game
+  end
+
   def calculate_winner
     if human.choice == comp.choice
       "Draw"
