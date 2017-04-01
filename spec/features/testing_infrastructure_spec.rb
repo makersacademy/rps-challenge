@@ -50,3 +50,12 @@ feature 'Player 1 has a turn, and then...' do
     expect(page).to have_content 'Welcome Loki'
   end
 end
+
+feature 'Victory message' do
+  scenario 'A player wins' do
+    choose_two_man_and_enter_names
+    click_button 'Rock'
+    click_button 'Paper'
+    expect(page).to have_content 'Loki wins'
+  end
+end

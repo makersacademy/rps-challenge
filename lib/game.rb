@@ -2,8 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_1, :player_2, :solo, :switched
-  attr_accessor :playing
+  attr_reader :player_1, :player_2, :solo, :playing
 
   def initialize(player_1, player_2, solo)
     @player_1 = player_1
@@ -29,6 +28,8 @@ class Game
   end
 
   private
+
+  attr_writer :playing
 
   def better?(hand_1,hand_2)
     (hand_1=='scissors' && hand_2=='paper') || (hand_1=='rock' && hand_2=='scissors') || (hand_1=='paper' && hand_2=='rock')
