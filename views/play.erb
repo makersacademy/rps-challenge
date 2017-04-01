@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Make your choice</title>
+  </head>
+  <body>
+    <h1><%= @player.name %> make your choice</h1>
+      <form action="/decider" method='post'>
+        <input type="submit" value="ROCK">
+      </form>
+      <form action="/decider" method='post'>
+        <input type="submit" value="PAPER">
+      </form>
+      <form action="/decider" method='post'>
+        <input type="submit" value="SCISSORS">
+      </form>
+      <form action="/decider" method='post'>
+        <input type="submit" value="LIZARD">
+      </form>
+      <form action="/decider" method='post'>
+        <input type="submit" value="SPOCK">
+      </form>
+  </body>
+</html>
