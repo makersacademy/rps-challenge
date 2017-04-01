@@ -10,6 +10,7 @@ feature 'register' do
   end
 
   scenario 'name is shown at start of game' do
-    
+    sign_in_and_play
+    expect(page).to have_content "Yoda, it's your turn!"
   end
 end

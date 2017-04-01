@@ -6,11 +6,11 @@ class Player
     @name = name
   end
 
-  def self.set_player(name)
+  def self.set_instance(name)
     @player = Player.new(name)
   end
 
-  def self.get_player
+  def self.get
     @player
   end
 end
