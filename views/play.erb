@@ -1,1 +1,7 @@
 <h1>You chose <%= @game.player_1.choice %></h1>
+
+<h2>Your opponent chose <%=@computer.choice %>.</h2>
+
+<h2><%=@game.play(@game.player_1.choice, @computer.choice)%></h2>
+
+<a href="/">Play again</a>

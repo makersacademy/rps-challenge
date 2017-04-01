@@ -1,3 +1,4 @@
+require 'player'
 describe Player do
   let(:name) {double(:name)}
   let(:player) {described_class.new(name)}

@@ -28,6 +28,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @computer = Computer.new
     erb(:play)
   end
 end
