@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -21,17 +22,26 @@ enable :sessions
   end
 
   get '/play' do
-    @game = Game.instance
     erb :play
   end
 
   post '/orange-throat' do
-    @player_1.choose_orange
+    @game.human.choose_orange
+    redirect '/result'
   end
   
+  post '/blue-throat' do
+    @game.human.choose_blue
+    redirect '/result'
+  end
+
+  post '/yellow-throat' do
+    @game.human.choose_yellow
+    redirect '/result'
+  end
+
   get '/result' do
-    @player_1 = $player_1
-    @game.calculate_winner
+    @game.comp.choose_rand
     erb :result
   end
 
