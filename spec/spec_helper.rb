@@ -17,6 +17,6 @@ require 'byebug'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-#require_relative 'features/web_helpers'
+require_relative 'features/web_helpers'
 
 Capybara.app = RPS
