@@ -11,15 +11,19 @@ describe Player do
   end
 
   describe '#random_attack' do
-    it 'sets up for a paper attack' do
-      allow(Kernel).to receive(:rand).and_return(2)
-      expect(rocky.paper?).to eq true
+    it "does a random rock attack" do
+      allow(computer).to receive(:roll).and_return 1
+      expect(computer.random_attack).to eq "Rock"
     end
 
     it "does a random paper attack" do
-      allow(Kernel).to receive(:random_attack).and_return(2)
+      allow(computer).to receive(:roll).and_return 4
       expect(computer.random_attack).to eq "Paper"
     end
 
+    it "does a random scissors attack" do
+      allow(computer).to receive(:roll).and_return 8
+      expect(computer.random_attack).to eq "Scissors"
+    end
   end
 end

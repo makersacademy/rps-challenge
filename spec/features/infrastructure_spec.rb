@@ -28,9 +28,9 @@ feature "Testing infrastructure" do
     expect(page).to have_content "Rocky picked scissors. Stoney picked paper. Scissors damaged paper. Rocky wins!"
   end
 
-  scenario "testing for random paper attack" do
-    sign_in_and_play
-    click_button "Rock_two"
-    expect(page).to have_content "I am doing a test here"
-  end
+  # scenario "testing for random paper attack" do
+  #   sign_in_and_play
+  #   click_button "Rock_two"
+  #   expect(page).to have_content "I am doing a test here"
+  # end
 end
