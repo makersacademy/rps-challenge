@@ -2,5 +2,14 @@
 font-family: Verdana, Geneva, sans-serif;">
   <center>
     <h1><%= @player_1_name %> vs. Deep Blue</h1>
+    <form action="/attack" method="post">
+      <label for="action">Options:</label>
+      <select name="player_attack_method" id="action">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <button type="submit" value="Battle">Battle</button>
+    </form>
   </center>
 </body>

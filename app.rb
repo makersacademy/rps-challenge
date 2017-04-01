@@ -17,5 +17,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/attack' do
+    @player_1_name = session[:player_1_name]
+    @player_attack_method = params[:player_attack_method]
+    erb(:attack)
+  end
+
   run! if app_file == $0
 end
