@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     @player = Player.create(params[:player_1_name])
-    @computer = Computer.create
+    @computer = Computer.create(params[:computer_name])
     redirect '/play'
   end
 

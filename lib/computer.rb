@@ -1,12 +1,12 @@
 class Computer
   attr_reader :attack_method, :name
 
-  def initialize
-    @name = "Deep Blue"
+  def initialize(name)
+    @name = name
   end
 
-  def self.create
-    @computer = Computer.new
+  def self.create(name="Deep Blue")
+    @computer = Computer.new(name)
   end
 
   def self.instance
