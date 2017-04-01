@@ -5,6 +5,16 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @win_map = {rock: "paper", paper: "scissors", scissors: "rock"}
+    @win_map = {rock: :paper, paper: :scissors, scissors: :rock}
+  end
+
+  def result
+    if player1.choice == player2.choice
+      return "It's a tie."
+    elsif win_map[player2.choice] == player1.choice
+      return "You lucky opposum. Congratulations!"
+    else
+      return "You lost! Don't cry now!"
+    end
   end
 end

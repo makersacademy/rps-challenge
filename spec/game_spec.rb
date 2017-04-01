@@ -16,4 +16,22 @@ describe Game do
   it 'has a hash of winnig choices' do
     expect(game.win_map).to be_instance_of Hash
   end
+
+  describe '#result' do
+    context "when there is winner" do
+      it 'returns the winner' do
+        allow(user).to receive(:choice) {:paper}
+        allow(computer).to receive(:choice) {:rock}
+        expect(game.result).to eq "You lucky opposum. Congratulations!"
+      end
+    end
+
+    context "when it's a tie" do
+      it 'returns a message' do
+        allow(user).to receive(:choice) {"paper"}
+        allow(computer).to receive(:choice) {"paper"}
+        expect(game.result).to eq "It's a tie."
+      end
+    end
+  end
 end

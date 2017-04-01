@@ -8,7 +8,7 @@ class Player
   end
 
   def save_choice(input)
-    self.choice = input
+    self.choice = input.to_s
   end
 
   def self.set_instance(name)

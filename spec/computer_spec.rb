@@ -11,7 +11,7 @@ describe Computer do
   describe '#pick' do
     it "returns computer's choice" do
       expect(computer.choices).to receive(:sample)
-      computer.pick
+      computer.choice
     end
   end
 

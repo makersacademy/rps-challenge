@@ -6,11 +6,11 @@ class Computer
     @choices = [:rock, :paper, :scissors]
   end
 
-  def pick
+  def choice
     choices.sample
   end
 
   # def self.set_instance
-    
+
 
 end
