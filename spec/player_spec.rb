@@ -17,4 +17,18 @@ subject(:player) { described_class.new('Thor') }
     end
   end
 
+  describe '#play' do
+    it 'sets three to a specific string' do
+      player.play('rock')
+      expect(player.three).to eq 'rock'
+    end
+  end
+
+  describe '#auto_play' do
+    it 'sets three to one of the strings in the hand array' do
+      player.auto_play
+      expect(player.hand).to include(player.three)
+    end
+  end
+
 end
