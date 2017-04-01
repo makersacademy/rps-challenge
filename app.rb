@@ -3,6 +3,7 @@ require './lib/game'
 require './lib/player'
 
 class RPS < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb(:index)

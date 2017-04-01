@@ -1,4 +1,8 @@
 class Computer
+  attr_reader :option, :computer
+  def initialize
+    @option = self.choice
+  end
 
   def choice
     random = rand(0..2)
@@ -10,5 +14,7 @@ class Computer
       "Scissors"
     end
   end
-  
+
+
+
 end
