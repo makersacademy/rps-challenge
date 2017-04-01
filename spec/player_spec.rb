@@ -14,4 +14,11 @@ describe Player do
       expect(described_class.set_player("Yoda")).to be_instance_of described_class
     end
   end
+
+  describe '.get_player' do
+    it 'returns the name of the player' do
+      described_class.set_player("Yoda")
+      expect(described_class.get_player.name).to eq "Yoda"
+    end
+  end
 end
