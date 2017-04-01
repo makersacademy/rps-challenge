@@ -1,1 +1,16 @@
-Welcome <%=Game.instance.player_1.name%>.
+Welcome <%=@game.player_1.name%>.
+
+<form action='/find_winner' method = 'post'>
+  <input type="submit" value="Rock">
+  <input type="hidden" name="hand" value="rock">
+</form>
+
+<form action='/find_winner' method = 'post'>
+  <input type="submit" value="Paper">
+  <input type="hidden" name="hand" value="paper">
+</form>
+
+<form action='/find_winner' method = 'post'>
+  <input type="submit" value="Scissors">
+  <input type="hidden" name="hand" value="scissors">
+</form>

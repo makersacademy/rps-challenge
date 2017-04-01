@@ -15,10 +15,15 @@ end
 
 feature 'Enter name' do
   scenario 'Enter player name' do
-    visit('/')
-    click_button 'One Player'
-    fill_in :player_name, with: 'Thor'
-    click_button 'Submit'
+    choose_solo_play_and_enter_name
     expect(page).to have_content 'Thor'
+  end
+end
+
+feature 'Choose weapon' do
+  scenario 'Pick rock, paper or scissors' do
+    choose_solo_play_and_enter_name
+    click_button 'Rock'
+    expect(page).to have_content 'rock'
   end
 end
