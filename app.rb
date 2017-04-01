@@ -1,9 +1,12 @@
 require 'sinatra/base'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
   get '/' do
-    "Welcome, enter name:"
+    erb(:index)
   end
+
+
 
 end
