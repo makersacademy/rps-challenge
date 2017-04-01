@@ -13,17 +13,17 @@ describe Player do
 
   it 'assignes players choice to yellow-throat' do
     player.choose_yellow
-    expect(player.choice).to eq "yellow-throat"
+    expect(player.choice).to eq "Yellow-throated sneaker"
   end
   
   it 'assignes players choice to blue-throat' do
     player.choose_blue
-    expect(player.choice).to eq "blue-throat"
+    expect(player.choice).to eq "Dominant blue-throat"
   end
 
   it 'assignes players choice to orange-throat' do
     player.choose_orange
-    expect(player.choice).to eq "orange-throat"
+    expect(player.choice).to eq "Ultradominant orange-throat"
   end
 end
 

@@ -8,25 +8,25 @@ class Player
   end
 
   def choose_yellow
-    @choice = "yellow-throat"
+    @choice = "Yellow-throated sneaker"
   end
 
   def choose_blue
-    @choice = "blue-throat"
+    @choice = "Dominant blue-throat"
   end
 
   def choose_orange
-    @choice = "orange-throat"
+    @choice = "Ultradominant orange-throat"
   end
 
   def choose_rand
     selection = rand(3)
     if selection == 0
-      @choice = "yellow-throat"
+      @choice = "Yellow-throated sneaker"
     elsif selection == 1
-      @choice = "blue-throat"
+      @choice = "Dominant blue-throat"
     else
-      @choice = "orange-throat"
+      @choice = "Ultradominant orange-throat"
     end
   end
 

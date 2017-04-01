@@ -17,10 +17,10 @@ class Game
   def calculate_winner
     if human.choice == comp.choice
       "Draw"
-    elsif human.choice == "orange-throat" && comp.choice == "blue-throat" || human.choice == "blue-throat" && comp.choice == "yellow-throat" || human.choice == "yellow-throat" && comp.choice == "orange-throat"
-      human.name
+    elsif (human.choice == "Ultradominant orange-throat" && comp.choice == "Dominant blue-throat") || (human.choice == "Dominant blue-throat" && comp.choice == "Yellow-throated sneaker") || (human.choice == "Yellow-throated sneaker" && comp.choice == "Ultradominant orange-throat")
+      "Human wins"
     else
-      comp.name 
+      "Comp wins"
     end
   end
 end
