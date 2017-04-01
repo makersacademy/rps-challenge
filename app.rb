@@ -10,7 +10,7 @@ class RockPaperScissorsLizardSpock < Sinatra::Base
   end
 
   post '/name' do
-    @player = Player.create(params[:name])
+    @player = Player.create(params[:player_name])
     redirect to('/play')
   end
 
