@@ -1,1 +1,43 @@
-<p><%= Rps.game.player.name %></p>
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!--<link rel="javascript" type="text/javascript" href="/javascript">-->
+
+</head>
+
+<body>
+
+<p><%= Rps.game.player.name %>! Rock, paper, scissors!</p>
+
+<table>
+  <tr>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Rock'>
+        <button>
+          Rock!
+        </button>
+      </form>
+    </td>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Paper'>
+        <button>
+          Paper!
+        </button>
+      </form>
+    </td>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Scissors'>
+        <button>
+          Scissors!
+        </button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

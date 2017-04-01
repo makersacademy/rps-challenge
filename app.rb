@@ -26,4 +26,13 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/compare' do
+    Rps.game.player.assign_choice(params['choice'])
+    redirect to('/winlose')
+  end
+
+  get '/winlose' do
+    erb :winlose
+  end
+
 end

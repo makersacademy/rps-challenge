@@ -10,5 +10,12 @@ describe Player do
     end
   end
 
+  describe '#assign_choice' do
+    it 'assigns a choice' do
+      player.assign_choice('Rock')
+      expect(player.selection).to eq 'Rock'
+    end
+  end
+
 
 end
