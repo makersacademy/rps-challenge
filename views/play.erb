@@ -1,9 +1,9 @@
 <body style="background: #A7BFE8;
 font-family: Verdana, Geneva, sans-serif;">
   <center>
-    <h1><%= @player_1_name %> vs. Deep Blue</h1>
+    <h1><%= @player_1_name %> vs. <%= @computer_name %></h1>
     <form action="/attack" method="post">
-      <label for="action">Options:</label>
+      <label for="action">Weapon of Choice:</label>
       <select name="player_attack_method" id="action">
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
