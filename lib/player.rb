@@ -7,12 +7,16 @@ class Player
     @hand = ['rock','paper','scissors']
   end
 
-  def play(option)
-    @three = option
-  end
 
-  def auto_play
-    @three = hand.sample
+  def latest_play(three)
+    @three = three 
   end
+  # def play(option)
+  #   @three = option
+  # end
+  #
+  # def auto_play
+  #   @three = hand.sample
+  # end
 
 end

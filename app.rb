@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require_relative './lib/player'
 require_relative './lib/game'
 
 class Rps < Sinatra::Base
@@ -14,7 +13,7 @@ class Rps < Sinatra::Base
 
   post '/make_game' do
     @player_1 = Player.new(params[:player_name])
-    @player_2 = Player.new('Computer')
+    @player_2 = Player.new('The computer')
     Game.create(@player_1,@player_2)
     redirect '/choose_weapon'
   end
@@ -25,8 +24,9 @@ class Rps < Sinatra::Base
   end
 
   post '/find_winner' do
-    p params
-    @hand = params[:hand]
+    @game = Game.instance
+    @hand_1 = params[:hand]
+    @hand_2 = @game.player_2.hand.sample
     erb :find_winner
   end
 
