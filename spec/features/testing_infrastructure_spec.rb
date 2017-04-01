@@ -11,8 +11,8 @@ feature "Testing infrastructure" do
     expect(page).to have_content "Connie" # Display content.
   end
 
-  scenario "Expect player to have 'rock' button" do
-    sign_in_and_play
-    expect(page).to have_content "Rock"
-  end
+  # scenario "Expect player to have 'rock' button" do
+  #   sign_in_and_play
+  #   expect(page).to have_content "Rock"
+  # end
 end
