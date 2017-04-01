@@ -25,9 +25,14 @@ class Rps < Sinatra::Base
 
   post '/find_winner' do
     @game = Game.instance
-    @hand_1 = params[:hand]
-    @hand_2 = @game.player_2.hand.sample
-    erb :find_winner
+    @game.player_1.set_hand(params[:hand])
+    @game.player_2.set_hand(@game.player_2.hands.sample)
+    redirect '/victory'
+  end
+
+  get '/victory' do
+    @game = Game.instance
+    erb :victory
   end
 
   run! if app_file == $0

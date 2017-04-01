@@ -1,0 +1,10 @@
+<h2><%=@game.player_1.name%> played <%=@game.player_1.hand%>!</h2>
+
+<h2><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</h2>
+
+<h2><%=@game.winner.name%> wins!</h>
+
+
+<form action='/choose_weapon'>
+  <input type="submit" value="Play again">
+</form>
