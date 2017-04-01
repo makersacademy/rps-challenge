@@ -1,16 +1,24 @@
-<h3>Welcome <%=@game.playing.name%>.  Choose your weapon!</h3>
 
+<div><center><font face="courier" size = 6>Welcome <%=@game.playing.name%>.  Choose your weapon!</font></center></div>
+
+
+<div><center>
 <form action='/find_winner' method = 'post'>
-  <input type="submit" value="Rock">
+  <input type="image" src ='https://s-media-cache-ak0.pinimg.com/originals/fc/52/1b/fc521b0f81177ca9fe500615a04c11f0.jpg' style="height:300px;width:210px" value="Rock">
   <input type="hidden" name="hand" value="rock">
 </form>
+</center></div>
 
+<div><center>
 <form action='/find_winner' method = 'post'>
-  <input type="submit" value="Paper">
+  <input type="image" src = 'https://cdn-images-1.medium.com/max/800/1*kmXh9Dn7NdpcbSn9wPywHQ.png' style="height:300px;width:210px"value="Paper">
   <input type="hidden" name="hand" value="paper">
 </form>
+</center></div>
 
+<div><center>
 <form action='/find_winner' method = 'post'>
-  <input type="submit" value="Scissors">
+  <input type="image" src ='https://rlv.zcache.co.uk/give_peace_a_chance_band_poster-r067f38e8f06c4a6d83865e4391c497e4_ilb22_324.jpg?rlvnet=1' style="height:300px;width:300px" value="Scissors">
   <input type="hidden" name="hand" value="scissors">
 </form>
+</center></div>

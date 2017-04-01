@@ -1,13 +1,17 @@
-<h2><%=@game.player_1.name%> played <%=@game.player_1.hand%>!</h2>
+<body background='https://dutron.files.wordpress.com/2008/09/mai-68-moutons-retour-a-la-normale.gif'>
 
-<h2><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</h2>
+<div><center><font face = "courier" size=10><%=@game.player_1.name%> played <%=@game.player_1.hand%>!</font></center></div>
+
+<div><center><font face = "courier" size=10><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</font></center></div>
 
 <% if @game.player_1.hand == @game.player_2.hand %>
-<h2>It's a draw!</h2>
+<div><center><font face = "courier" size=10>It's a draw!</font></center></div>
 <% else %>
-<h2><%=@game.winner.name%> wins!</h>
+<div><center><font face = "courier"size=10><%=@game.winner.name%> wins!</font></center></div>
 <% end %>
 
+<div><center>
 <form action='/choose_weapon'>
   <input type="submit" value="Play again">
 </form>
+</center></div>
