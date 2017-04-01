@@ -19,41 +19,36 @@ class Game
       @result = "You tie!"
     elsif
       choice == "Rock" && computer_choice == "Scissors"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Paper" && computer_choice == "Rock"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Scissors" && computer_choice == "Paper"
       @result = "Winner, winner! Chicken dinner!"
     elsif
       choice == "Paper" && computer_choice == "Spock"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Rock" && computer_choice == "Lizard"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Scissors" && computer_choice == "Lizard"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Spock" && computer_choice == "Rock"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Spock" && computer_choice == "Scissors"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Lizard" && computer_choice == "Paper"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     elsif
       choice == "Lizard" && computer_choice == "Spock"
-      @result = "Winner, winner! Chicken dinner!"
+      @result = "You win!"
     else
-      @result = "You're a big stinky loser!"
+      @result = "You lose!"
     end
   end
-
-
-# Win = "Rock" && "Scissors", "Paper" && "Rock" "Scissors" && "Paper" "Paper" && "Spock" "Rock" && "Lizard" "Scissors" && "Lizard" "Spock" && "Rock" "Spock" && "Scissors" "Lizard" && "Paper" "Lizard" && "Spock"
-
-
 end
