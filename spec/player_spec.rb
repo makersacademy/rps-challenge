@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:player) { described_class.new }
+  subject(:player) { described_class.new("Connie") }
 
   describe "initialize" do
   it "initialized with rock instance variable set to false" do

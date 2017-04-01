@@ -1,5 +1,6 @@
 
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -9,17 +10,17 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name] # Saving name in session.
+    $player1 = Player.new(params[:player_name]) # Saving name in session.
     redirect '/play' # Redirecting to play.
   end
 
   get '/play' do
-    @player_name = session[:player_name] #Assinging session name to variable.
+    @player_name = $player1.name#Assinging session name to variable.
     erb :play # Referrin to play document.
   end
 
   get '/rock' do
-    @player_name = session[:player_name]
+    @player_name = $player1.name
     erb :rock
   end
 

@@ -1,9 +1,11 @@
 
 class Player
 
-attr_reader :rock, :paper, :scissors
+attr_reader :rock, :paper, :scissors, :name
+attr_writer :name
 
-  def initialize
+  def initialize(name)
+    @name = name
     @rock = false
     @paper = false
     @scissors = false
@@ -19,6 +21,6 @@ attr_reader :rock, :paper, :scissors
 
   def choose_scissors
     @scissors = true
-  end 
+  end
 
 end
