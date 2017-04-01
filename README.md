@@ -31,7 +31,7 @@ Functionality:
 
 I first broke down the user stories using domain modelling. My resulting models were then converted into Capybara feature tests, after which I wrote unit tests in RSpec. Following that, I wrote my code.
 
-After learning about the polymorphic competition exhibited in the [Side-blotched lizard] (https://en.wikipedia.org/wiki/Common_side-blotched_lizard), I decided to theme my web app around the 3 different morphs competing for a female.
+After learning about the polymorphic competition exhibited in the [Side-blotched lizard](https://en.wikipedia.org/wiki/Common_side-blotched_lizard), I decided to theme my web app around the 3 different morphs competing for a female.
 
 ### Installation
 
