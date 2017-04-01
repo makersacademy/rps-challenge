@@ -1,6 +1,7 @@
 
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -10,18 +11,29 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $player1 = Player.new(params[:player_name]) # Saving name in session.
+    player = Player.new(params[:player_name]) # Saving name in session.
+    $new_game = Game.new(player)
     redirect '/play' # Redirecting to play.
   end
 
   get '/play' do
-    @player_name = $player1.name#Assinging session name to variable.
+    @game = $new_game#Assinging session name to variable.
     erb :play # Referrin to play document.
   end
 
   get '/rock' do
-    @player_name = $player1.name
+    @game = $new_game
     erb :rock
+  end
+
+  get '/paper' do
+    @game = $new_game
+    erb :paper
+  end
+
+  get '/scissors' do
+    @game = $new_game
+    erb :scissors
   end
 
   # start the server if ruby file executed directly

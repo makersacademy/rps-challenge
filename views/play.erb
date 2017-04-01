@@ -1,8 +1,20 @@
 
 <!-- WELCOME MESSAGE  -->
-Welcome <%= @player_name %>
+Welcome <%= @game.player.name %>
 
 <!-- ROCK BUTTON -->
 <form action="/rock">
   <input type='submit' value="Rock">
+</form>
+
+<br><br>
+
+<form action="/paper">
+  <input type='submit' value="Paper">
+</form>
+
+<br><br>
+
+<form action="/scissors">
+  <input type='submit' value="Scissors">
 </form>

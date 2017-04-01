@@ -1,26 +1,27 @@
+# Creates the player and stores choice.
 
 class Player
 
-attr_reader :rock, :paper, :scissors, :name
+  DEFAULT_CHOICE = "No choice made."
+
+attr_reader :choice, :name
 attr_writer :name
 
   def initialize(name)
     @name = name
-    @rock = false
-    @paper = false
-    @scissors = false
+    @choice = DEFAULT_CHOICE
   end
 
   def choose_rock
-    @rock = true
+    @choice = "rock"
   end
 
   def choose_paper
-    @paper = true
+    @choice = "paper"
   end
 
   def choose_scissors
-    @scissors = true
+    @choice = "scissors"
   end
 
 end
