@@ -7,6 +7,15 @@ class Rps < Sinatra::Base
     erb(:index)
   end
 
+  post '/name' do
+    @player = params[:player_name]
+    redirect('/weapons')
+  end
+
+  get '/weapons' do
+    erb(:weapons)
+  end
+
 
 
 end
