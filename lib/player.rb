@@ -4,6 +4,7 @@ class Player
   def initialize(name = "comp", type = "comp")
     @name = name
     @type = type
+    choose_rand if type == "comp"
   end
 
   def choose_yellow

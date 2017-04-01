@@ -41,7 +41,6 @@ enable :sessions
   end
 
   get '/result' do
-    @game.comp.choose_rand
     erb :result
   end
 
