@@ -15,6 +15,4 @@ class Computer
     end
   end
 
-
-
 end

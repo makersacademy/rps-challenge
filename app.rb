@@ -9,6 +9,14 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
+  get '/one_player' do
+    erb(:one_player)
+  end
+
+  get '/two_player' do
+    erb(:two_player)
+  end
+
   post '/name' do
     @player = Player.new(params[:player])
     @game = Game.create(@player)
