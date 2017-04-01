@@ -2,11 +2,11 @@
 
 <p>Opponent: <%= Rps.game.selection %></p>
 
-<%if [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']].include?([Rps.game.player.selection, Rps.game.selection])%>
+<%if Rps.game.decision.decide == :playerwin %>
 
 <p>You win!</p>
 
-<%elsif [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']].include?([Rps.game.selection, Rps.game.player.selection])%>
+<%elsif Rps.game.decision.decide == :playerlose %>
 
 <p>You lose!</p>
 

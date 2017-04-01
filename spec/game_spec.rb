@@ -29,5 +29,13 @@ describe Game do
     end
   end
 
+  describe '#decide' do
+    it 'reports correctly for player: rock, computer: scissors' do
+      allow(steph).to receive(:selection).and_return('Rock')
+      allow(game).to receive(:selection).and_return('Scissors')
+      expect(game.decide).to eq :playerwin
+    end
+  end
+
 
 end
