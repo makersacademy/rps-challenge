@@ -1,0 +1,41 @@
+<style>
+  section {
+    width: 100%
+  }
+
+  #player_1 {
+    max-width: 50%;
+    box-sizing: border-box;
+    float: left;
+    padding: 20px
+  }
+
+  #computer {
+    max-width: 50%;
+    box-sizing: border-box;
+    float: right;
+    padding: 20px
+  }
+
+</style>
+
+<center><h1><%=@game.player_1.name%> vs. Computer</h1></center>
+
+<section>
+  <div id='player_1' style='background-color:rgba(150,150,150,0.5)'>
+    <h2><%=@game.player_1.name%></h2>
+    <form action='/attack' method='post'>
+      <input type='submit' name='player_attack' value='Rock'><br />
+      <input type='submit' name='player_attack' value='Paper'><br />
+      <input type='submit' name='player_attack' value='Scissors'><br />
+    </form>
+  </div>
+  <div id='computer'>
+    <h2>Computer</h2>
+    <form action='/attack' method='post'>
+      <input type='submit' value='Rock' disabled><br />
+      <input type='submit' value='Paper' disabled><br />
+      <input type='submit' value='Scissors' disabled><br />
+    </form>
+  </div>
+</section>
