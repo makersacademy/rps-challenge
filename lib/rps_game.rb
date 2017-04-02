@@ -2,24 +2,32 @@ class RPSGame
 
   attr_reader :choices, :player_1_choice, :player_2_choice
 
-  def initialize(player_1_choice,player_2_choice,choices)
+  def initialize(choices)
     @choices = choices
-    @player_1_choice = player_1_choice
-    @player_2_choice = player_2_choice
+    @player_1_choice = nil
+    @player_2_choice = nil
   end
 
   def game_choices
     choices.list
   end
 
-  def player_1_outcome(player_1_choice, player_2_choice)
+  def update_player_1_choice(choice)
+    self.player_1_choice = choice
+  end
+
+  def update_player_2_choice(choice)
+    self.player_2_choice = choice
+  end
+
+  def outcome
     return "draw" if player_1_choice == player_2_choice
 
     player_1_winning_choices = choices_that_win_against(player_2_choice)
     if player_1_winning_choices.include?(player_1_choice)
-      "win"
+      "player_1"
     else
-      "lose"
+      "player_2"
     end
   end
 
@@ -30,6 +38,7 @@ class RPSGame
   end
 
   private
+  attr_writer :player_1_choice, :player_2_choice
 
   def make_first_in_array(choice)
     rearranged_array = game_choices

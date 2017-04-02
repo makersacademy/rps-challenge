@@ -2,7 +2,7 @@ require 'rps_game'
 require 'player'
 describe RPSGame do
 
-  subject(:rps) {described_class.new(player_1_choice, player_2_choice,choices)}
+  subject(:rps) {described_class.new(choices)}
   let(:player_1_choice) {"rock"}
   let(:player_2_choice) {"scissors"}
   let(:choices)  {double(:choices, :list => game_of_3_choices)}
@@ -28,16 +28,39 @@ describe RPSGame do
 
 
   describe '#p_1_outcome' do
+
     it 'returns draw when players have matching choices' do
-      expect(rps.player_1_outcome('rock','rock')).to eq ("draw")
+      allow(rps).to receive(:player_1_choice) {"rock"}
+      allow(rps).to receive(:player_2_choice) {"rock"}
+      expect(rps.outcome).to eq ("draw")
     end
 
-    it 'returns "win" when p1 wins' do
-      expect(rps.player_1_outcome('rock','scissors')).to eq("win")
+    it 'returns "player_1" when p1 wins' do
+      allow(rps).to receive(:player_1_choice) {"rock"}
+      allow(rps).to receive(:player_2_choice) {"scissors"}
+      expect(rps.outcome).to eq("player_1")
     end
 
-    it 'returns "lose" when p1 loses' do
-      expect(rps.player_1_outcome('rock','paper')).to eq("lose")
+    it 'returns "player_2" when p1 loses' do
+      allow(rps).to receive(:player_1_choice) {"rock"}
+      allow(rps).to receive(:player_2_choice) {"paper"}
+      expect(rps.outcome).to eq("player_2")
+    end
+
+  end
+
+
+
+  describe '#update_choice' do
+
+    it 'allows the choices to be updated' do
+      rps.update_player_1_choice("rock")
+      expect(rps.player_1_choice).to eq("rock")
+    end
+
+    it 'allows the choices to be updated' do
+      rps.update_player_2_choice("paper")
+      expect(rps.player_2_choice).to eq("paper")
     end
 
   end
