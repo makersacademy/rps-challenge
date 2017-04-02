@@ -28,9 +28,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @result = Game.new(@player, Computer.new).result    
-    p @result
-    # erb(:result)
+    @game = Game.new(@player, Computer.new)
+    @result = @game.result
+    erb(:result)
   end
 
     run! if app_file == $0

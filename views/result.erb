@@ -6,21 +6,48 @@ h1 {
   font-weight: 200;
 }
 
+section {
+  margin: 20px;
+}
+
 #user_choice {
-  width:200px;
-  height:200px;
-  float: left
+  width:300px;
+  height:300px;
+  float: left;
+  /*padding-left: 50px;*/
+  }
+
+#computer_choice {
+  width:300px;
+  height:300px;
+  float: right;
+  /*padding-right: 100px;*/
   }
 
 </style>
 
+<center><%= @result %></center>
+
+<section>
 <div id="user_choice">
 <h1> You picked <%= @player.choice %> </h1>
-<% if @player.choice == "rock" %>
+<% if @player.choice == :rock %>
   <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" id="user_choice">
-<% elsif @player.choice == "paper" %>
+<% elsif @player.choice == :paper %>
   <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" id="user_choice">
-<% elsif @player.choice == "scissors" %>
+<% elsif @player.choice == :scissors %>
   <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" id="user_choice">
 <% end %>
 </div>
+
+<div id="computer_choice">
+<h1> Computer picked <%= @game.player2.choice %> </h1>
+<% if @game.player2.choice == :rock %>
+  <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" id="user_choice">
+<% elsif @game.player2.choice == :paper %>
+  <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" id="user_choice">
+<% elsif @game.player2.choice == :scissors %>
+  <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" id="user_choice">
+<% end %>
+</div>
+</section>
