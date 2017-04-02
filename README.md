@@ -22,7 +22,6 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-I
 ## Rock Paper Scissors Lizard Spock Rules
 
 The rules in the words of Sheldon Cooper:
