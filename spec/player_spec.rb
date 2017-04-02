@@ -12,8 +12,8 @@ describe Player do
 
   describe '#assign_choice' do
     it 'assigns a choice' do
-      player.assign_choice('Rock')
-      expect(player.selection).to eq 'Rock'
+      player.assign_choice(:rock)
+      expect(player.selection).to eq :rock
     end
   end
 

@@ -1,0 +1,11 @@
+<p><%= Rps.game.player.name %>: <%= (Rps.game.player.selection).to_s.capitalize %></p>
+
+<p>Opponent: <%= Rps.game.computer.selection %></p>
+
+<p>You've not won!</p>
+
+<form action='playagain'>
+  <button>
+    Play again!
+  </button>
+</form>

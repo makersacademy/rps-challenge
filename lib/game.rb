@@ -1,23 +1,19 @@
 require_relative 'player'
 class Game
 
-  attr_reader :player, :selection
+  attr_reader :player, :computer
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
-    @selection = ['Rock', 'Paper', 'Scissors'].sample
+    @computer = computer
   end
 
   def assign(player)
     self.player = player
   end
 
-  def reselect
-    self.selection = ['Rock', 'Paper', 'Scissors'].sample
-  end
-
   private
 
-  attr_writer :player, :selection
+  attr_writer :player
 
 end

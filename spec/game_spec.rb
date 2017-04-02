@@ -2,16 +2,14 @@ require 'game'
 
 describe Game do
 
-  subject(:game) {described_class.new(steph)}
+  subject(:game) {described_class.new(steph, computer)}
   let(:steph) {double(:steph)}
   let(:pinkiepie) {double(:pinkiepie)}
+  let(:computer) {double(:computer)}
 
   describe '#initialize' do
     it 'initiates with a player' do
       expect(game.player).to eq steph
-    end
-    it 'has a selection' do
-      expect(['Rock', 'Paper', 'Scissors']).to include(game.selection)
     end
   end
 
@@ -22,11 +20,5 @@ describe Game do
     end
   end
 
-  describe '#reselect' do
-    it 'reassigns selection' do
-      game.reselect
-      expect(['Rock', 'Paper', 'Scissors']).to include(game.selection)
-    end
-  end
 
 end

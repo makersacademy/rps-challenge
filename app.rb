@@ -2,13 +2,14 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/decision'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   set :sessions, true
   enable :sessions
   set :public_folder, File.dirname(__FILE__) + '/'
 
-  @game = Game.new(:steph)
+  @game = Game.new(:steph, Computer.new)
 
   def self.game
     @game
@@ -28,17 +29,22 @@ class Rps < Sinatra::Base
   end
 
   post '/compare' do
-    Rps.game.player.assign_choice(params['choice'])
-    redirect to('/winlose')
+    Rps.game.player.assign_choice((params['choice']).downcase.to_sym)
+    @decision = Decision.new(Rps.game.player.selection, Rps.game.computer.selection)
+    redirect to('/win') if @decision.win
+    redirect to('/lose')
   end
 
-  get '/winlose' do
-    @decision = Decision.new(Rps.game.player.selection, Rps.game.selection)
-    erb :winlose
+  get '/win' do
+    erb :win
+  end
+
+  get '/lose' do
+    erb :lose
   end
 
   get '/playagain' do
-    Rps.game.reselect
+    Rps.game.computer.reselect
     redirect to('/play')
   end
 

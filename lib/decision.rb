@@ -1,19 +1,11 @@
 class Decision
 
-  attr_reader :outcome
+  attr_reader :win
 
-  PERM = [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']]
+  RULES = {:rock => :scissors, :scissors => :paper, :paper => :rock}
 
-  def initialize(playerchoice, machinechoice)
-    if playerchoice == machinechoice
-      @outcome = :draw
-    elsif PERM.include?([playerchoice, machinechoice])
-      @outcome = :playerwin
-    elsif PERM.include?([machinechoice, playerchoice])
-      @outcome = :playerlose
-    else
-      @outcome
-    end
+  def initialize(playerchoice, computerchoice)
+    @win = (RULES[playerchoice] == computerchoice)
   end
 
 private
