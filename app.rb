@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -8,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player = 'player_name'
+    $player = Player.new(params[:player_name])
     redirect('/play')
   end
 
