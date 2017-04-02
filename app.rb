@@ -6,6 +6,8 @@ class RPS < Sinatra::Base
     erb(:sign_in)
   end
 
-  post ""
+  post "/names" do
+    
+  end
 
 end
