@@ -14,6 +14,11 @@ require_relative '../../app.rb'
 
     scenario 'player chooses a weapon and then is taken to results page' do
       sign_in_and_play_rock
-      expect(page).to have_content("And the winner is...")
+      expect(page).to have_content("The gods declare...")
+    end
+
+    scenario 'player chooses rock, computer chooses scissors, player wins' do
+      sign_in_and_play_rock
+      expect(page).to have_content("A player victory")
     end
   end
