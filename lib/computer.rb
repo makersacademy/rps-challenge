@@ -1,8 +1,9 @@
 class Computer
-  attr_reader :attack_method, :name
+  attr_reader :attack_method, :name, :score
 
   def initialize(name)
     @name = name
+    @score = 0
   end
 
   def self.create(name="Deep Blue")
@@ -15,6 +16,10 @@ class Computer
 
   def get_attack
     @attack_method = ["Rock", "Paper", "Scissors"].sample
+  end
+
+  def add_score
+    @score += 1
   end
 
 end

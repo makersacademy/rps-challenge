@@ -8,11 +8,13 @@ describe Game do
   describe '#winner' do
     it 'player wins, Rock -> Scissors' do
       allow(deepblue).to receive(:attack_method).and_return("Scissors")
+      allow(dave).to receive(:add_score).and_return(true)
       expect(game.winner).to eq dave
     end
 
     it 'computer wins, Rock -> Paper' do
       allow(deepblue).to receive(:attack_method).and_return("Paper")
+      allow(deepblue).to receive(:add_score).and_return(true)
       expect(game.winner).to eq deepblue
     end
 

@@ -17,25 +17,30 @@ class Game
   def winner
     player = @player.attack_method
     computer = @computer.attack_method
-    puts "#{player} #{computer}"
     if player == computer
       "Draw"
     elsif player == "Rock"
       if computer == "Scissors"
+        @player.add_score
         @player
       else
+        @computer.add_score
         @computer
       end
     elsif player == "Scissors"
       if computer == "Paper"
+        @player.add_score
         @player
       else
+        @computer.add_score
         @computer
       end
     elsif player == "Paper"
       if computer == "Rock"
+        @player.add_score
         @player
       else
+        @computer.add_score
         @computer
       end
     else

@@ -24,8 +24,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_name = @player.name
-    @computer_name = @computer.name
     erb(:play)
   end
 

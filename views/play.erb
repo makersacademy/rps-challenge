@@ -1,7 +1,13 @@
-<body style="background: #A7BFE8;
+<body style="background: #E0EAFC;
+background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
+background: linear-gradient(to left, #E0EAFC , #CFDEF3);
 font-family: Verdana, Geneva, sans-serif;">
   <center>
-    <h1><%= @player_1_name %> vs. <%= @computer_name %></h1>
+    <h1>🙋 <%= @player.name %> vs. <%= @computer.name %> 💻</h1>
+    <h3> Current Score: </h3>
+    <h3>🙋 <%= @player.name %> <%= @player.score %>-<%= @computer.score %> <%= @computer.name %> 💻</h3>
+    <img src="https://m0.joe.ie/wp-content/uploads/2015/06/11172535/RPS.gif", style= "border-radius:35px">
+    <br />
     <form action="/attack" method="post">
       <label for="action">Weapon of Choice:</label>
       <select name="player_attack_method" id="action">

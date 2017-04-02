@@ -1,15 +1,24 @@
-<body style="background: #A7BFE8;
+<body style="background: #E0EAFC;
+background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
+background: linear-gradient(to left, #E0EAFC , #CFDEF3);
 font-family: Verdana, Geneva, sans-serif;">
   <center>
-    <h1><%= @player.name %> used <%= @player.attack_method %></h1>
-    <h1><%= @computer.name %> used <%= @computer.attack_method %></h1>
-    <br /><br />
+    <h2>🙋 <%= @player.name %> used <%= @player.attack_method %></h2>
+    <h2>💻 <%= @computer.name %> used <%= @computer.attack_method %></h2>
     <% if @result == "SOMETHING WENT WRONG!" %>
       <h2>Something went wrong!</h2>
     <% elsif @result == "Draw" %>
-      <h2>Draw!</h2>
-    <% else %>
-      <h2><%= @result.name %> won!</h2>
+      <img src="http://www.reactiongifs.com/r/2013/02/tied.gif", style= "border-radius:35px">
+      <h2>We have a tie! 👔</h2>
+    <% elsif @result == @player %>
+      <img src="https://media.giphy.com/media/l4hLwMmFVBOAKF3EI/giphy.gif", height="225" width="400" style= "border-radius:35px">
+      <h2>🙋 <%= @result.name %> won! 👍</h2>
+    <% elsif @result == @computer %>
+      <img src="https://media.giphy.com/media/rfskmSvktqSoo/giphy.gif", height="223" width="446" style= "border-radius:35px">
+      <h2>💻 <%= @result.name %> won! 👎</h2>
     <% end %>
+    <form action="/play", method="get">
+      <button type='submit' value="PlayAgain">Play Again</button>
+    </form>
   </center>
 </body>
