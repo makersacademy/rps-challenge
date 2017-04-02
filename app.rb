@@ -9,8 +9,13 @@ class RPS < Sinatra::Base
   end
 
   post '/player_names' do
-    session[:name] = params[:name]
+    player = Player.new(params[:name])
+    @game = Game.create(player)
     redirect('/play')
+  end
+
+  before do
+    @game = Game.instance
   end
 
   get '/play' do
@@ -19,19 +24,19 @@ class RPS < Sinatra::Base
   run! if app_file == $0
 
   post'/store_rock' do
-    session[:option] = "Rock"
+    @game.store_player_rpc(:rock)
     redirect('/result')
   end
 
   post'/store_paper' do
-    session[:option] = "Paper"
+    @game.store_player_rpc(:paper)
     redirect('/result')
   end
 
   post'/store_scissors' do
-    session[:option] = "Scissors"
+    @game.store_player_rpc(:scissors)
     redirect('/result')
-  end  
+  end
 
   get '/result' do
     erb :result

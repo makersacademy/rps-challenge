@@ -1,7 +1,7 @@
 require 'game'
 describe Game do
 
-  let(:ed) {double(:player)}
+  let(:ed) {double(:player, name: "Ed")}
   subject(:game) {described_class.new(ed)}
 
 
@@ -26,7 +26,40 @@ describe Game do
     it 'checks rock beats paper' do
       game.store_player_rpc(:rock)
       game.instance_variable_set("@comp_rpc", :scissors)
-      expect(game.check_winner).to eq "PLAYER WINS!!"
+      game.check_winner
+      expect(game.winner).to eq "Ed"
+    end
+    it 'checks winner can be reset' do
+      game.store_player_rpc(:rock)
+      game.instance_variable_set("@comp_rpc", :scissors)
+      game.check_winner
+      game.instance_variable_set("@comp_rpc", :paper)
+      game.check_winner
+      expect(game.winner).to eq "Computer"
+    end
+  end
+
+  describe '#print_winner' do
+    it 'checks and prints the winner when player' do
+      game.store_player_rpc(:rock)
+      game.instance_variable_set("@comp_rpc", :scissors)
+      game.check_winner
+      expect(game.print_winner). to eq "Ed has won!"
+    end
+
+    it 'checks and prints the winner when player' do
+      game.store_player_rpc(:rock)
+      game.instance_variable_set("@comp_rpc", :scissors)
+      game.check_winner
+      game.instance_variable_set("@comp_rpc", :paper)
+      game.check_winner
+      expect(game.print_winner). to eq "Computer has won!"
+    end
+    it 'checks and prints the winner when player' do
+      game.store_player_rpc(:rock)
+      game.instance_variable_set("@comp_rpc", :rock)
+      game.check_winner
+      expect(game.print_winner). to eq "It's a draw, play again?"
     end
   end
 end
