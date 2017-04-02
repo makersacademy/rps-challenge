@@ -14,7 +14,7 @@ body {
 </style>
 <body>
   <h3><%= @game.human.name %> chose the <%= @game.human.choice %></h3>
-  <h3>The computer chose the <%= @game.comp.choice %></h3>
+  <h3>You came up against a <%= @game.comp.choice %></h3>
 <% if @game.calculate_winner == "Human wins" %>
   <h2>You got the girl!</h2>
   <% elsif @game.calculate_winner == "Comp wins" %>
