@@ -59,7 +59,7 @@ describe Game do
       game.store_player_rpc(:rock)
       game.instance_variable_set("@comp_rpc", :rock)
       game.check_winner
-      expect(game.print_winner). to eq "It's a draw, play again?"
+      expect(game.print_winner). to eq "It's a draw"
     end
   end
 end

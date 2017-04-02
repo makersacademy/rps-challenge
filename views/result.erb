@@ -28,7 +28,14 @@ body
 </style>
 <body>
 
-<h1> <%=@game.player.name%> picked <%=@game.player_rpc%> </h1>
+<h1> <%=@game.player.name%> picked <%=@game.player_rpc.to_s%> </h1>
+<h1> RPS-Bot picked <%=@game.comp_rpc%> </h1>
+<h1> <%=@game.print_winner%> </h1>
+
+<form action="/play" >
+  <input type="submit" text='Play Again' />
+</form>
+
 
 </center>
 </body>

@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -39,6 +41,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @game.generate_rpc
+    @game.check_winner
     erb :result
   end
 end

@@ -1,4 +1,5 @@
 require_relative 'player'
+
 class Game
 
   attr_reader :player, :comp_rpc, :player_rpc, :winner
@@ -25,24 +26,19 @@ class Game
 
   def check_winner
     if draw
-      self.comp_rpc = nil
-      self.player_rpc = nil
-      "Draw"
       @winner = nil
     elsif win
       @winner = player.name
     else
-      "Player loses"
       @winner = "Computer"
     end
-    reset_choices
   end
 
   def print_winner
     if winner
       "#{winner} has won!"
     else
-      "It's a draw, play again?"
+      "It's a draw"
     end
   end
 
