@@ -18,4 +18,10 @@ feature 'register' do
     visit('/')
     expect(page.has_field?("opponent")).to be_truthy
   end
+
+  scenario 'can enter a second name' do
+    visit('/')
+    choose "user"
+    expect(page).to have_css "#second_name", :visible => false
+  end
 end
