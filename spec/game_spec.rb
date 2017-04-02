@@ -15,7 +15,7 @@ describe Game do
 
     describe '#result' do
       it 'returns the correct winner of the match' do
-        expect(game.result).to eq(:player)
+        expect(game.result).to eq("A player victory")
       end
     end
   end

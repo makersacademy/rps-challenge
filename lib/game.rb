@@ -11,12 +11,19 @@ class Game
 
   attr_reader :player_choice, :computer_choice, :rules, :result
 
+  def self.create(player_choice, computer_choice)
+    @game = Game.new(player_choice, computer_choice)
+  end
+
+  def self.instance
+    @game
+  end
   def winner
-    return self.result = :draw if player_choice == computer_choice
+    return "Draw" if player_choice == computer_choice
     if RULES[player_choice] == computer_choice
-    self.result = :player 
+    return "A player victory"
     else
-    self.result = :computer
+    return "A computer victory"
     end
   end
   private

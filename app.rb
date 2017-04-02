@@ -22,12 +22,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_choice' do
-    session[:player_choice] = params[:radioSelect].downcase.to_sym
+    @game = Game.create(params[:radioSelect].downcase.to_sym, ComputerWeaponChoice.new.choice)
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.new(session[:player_choice], ComputerWeaponChoice.new.choice)
+    @game = Game.instance
     erb :result
   end
 
