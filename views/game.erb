@@ -1,0 +1,90 @@
+<style>
+  body {
+    background-image: url(https://zellox.com/wp-content/uploads/2016/05/good-background-colors-7-1024x768.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white
+  }
+
+</style>
+
+<body>
+  <h1><%= @game %> Vs Computer</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <table align="center">
+    <tr>
+      <% if !!@rock %>
+        <th> <h2>Rock</h2> </th>
+      <% elsif !!@paper %>
+        <th> <h2>Paper</h2> </th>
+      <% else %>
+        <th> <h2>Scissors</h2> </th>
+      <% end %>
+
+      <th> </th>
+
+      <% if @computer.eql?("Rock") %>
+        <th> <h2>Rock</h2> </th>
+      <% elsif @computer.eql?("Paper") %>
+        <th> <h2>Paper</h2> </th>
+      <% else %>
+        <th> <h2>Scissors</h2> </th>
+      <% end %>
+
+        <th>  </th>
+    </tr>
+
+    <tr>
+      <% if !!@rock %>
+        <th>
+          <img  src="http://img06.deviantart.net/3c06/i/2012/077/2/5/sea_rock_png_3_by_irisustockimages-d4t45s7.png" height="200" width="333">
+        </th>
+      <% elsif !!@paper %>
+        <th>
+          <img  src="http://braillepaper.com/wp-content/uploads/2014/01/stack-braille-paper.png" height="200" width="333">
+
+        </th>
+      <% else %>
+        <th>
+          <img  src="https://openclipart.org/image/800px/svg_to_png/226784/dabnotu_scissors_2015_.png" height="200" width="333">
+        </th>
+      <% end %>
+
+      <th> <font size="30">VS</font> </th>
+
+      <% if @computer.eql?("Rock") %>
+        <th>
+          <img  src="http://img06.deviantart.net/3c06/i/2012/077/2/5/sea_rock_png_3_by_irisustockimages-d4t45s7.png" height="200" width="333">
+        </th>
+      <% elsif @computer.eql?("Paper") %>
+        <th>
+          <img  src="http://braillepaper.com/wp-content/uploads/2014/01/stack-braille-paper.png" height="200" width="333">
+
+        </th>
+      <% else %>
+        <th>
+          <img  src="https://openclipart.org/image/800px/svg_to_png/226784/dabnotu_scissors_2015_.png" height="200" width="333">
+        </th>
+      <% end %>
+    </tr>
+
+  </table>
+  <h1>You <%= @result.to_s %> <h1>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <form action="/play" method="get" size="20">
+    <input size="20" type="submit" value="Play again">
+  </form>
+</body>

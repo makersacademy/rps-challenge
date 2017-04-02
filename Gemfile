@@ -13,3 +13,7 @@ group :test do
   gem 'capybara'
   gem 'byebug'
 end
+
+gem 'selenium-webdriver'
+gem 'shotgun'
+gem 'pry'

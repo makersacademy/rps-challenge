@@ -1,0 +1,49 @@
+<style>
+  body {
+    background-image: url(https://zellox.com/wp-content/uploads/2016/05/good-background-colors-7-1024x768.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white
+  }
+
+</style>
+
+<body>
+  <h1>Welcome, <%= @game%>!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <h2>Choose rock, paper or scissors</h2>
+<br>
+
+  <table align="center">
+    <tr>
+      <th> <h2>Rock</h2> </th>
+      <th> <h2>Paper</h2> </th>
+      <th> <h2>Scissors</h2> </th>
+    </tr>
+
+    <tr>
+      <th>
+        <form action="/playing" method="post">
+          <button id="Rock" value="Rock" name="Rock"> <img  src="http://img06.deviantart.net/3c06/i/2012/077/2/5/sea_rock_png_3_by_irisustockimages-d4t45s7.png" height="200" width="333"> </button>
+        </form>
+      </th>
+
+      <th>
+        <form action="/playing" method="post">
+          <button id='Paper' value="Paper" name="Paper"> <img  src="http://braillepaper.com/wp-content/uploads/2014/01/stack-braille-paper.png" height="200" width="333"> </button>
+        </form>
+      </th>
+
+      <th>
+        <form action="/playing" method="post">
+          <button id='Scissors' value="Scissors" name="Scissors"> <img  src="https://openclipart.org/image/800px/svg_to_png/226784/dabnotu_scissors_2015_.png" height="200" width="333"> </button>
+        </form>
+      </th>
+    </tr>
+
+  </table>
+</body>
