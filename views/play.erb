@@ -11,15 +11,15 @@
     <h2>Make your selection <%= @game.player.name.capitalize %>:</h2>
     <br>
     <form action="/choice" method="post">
-      <button type="submit" class="btn" name="selection" value="rock">
+      <button type="submit" class="btn" name="choice" value="rock">
         Rock
       </button>
       <p>
-      <button type="submit" class="btn" name="selection" value="paper">
+      <button type="submit" class="btn" name="choice" value="paper">
         Paper
       </button>
       <p>
-      <button type="submit" class="btn" name="selection" value="scissors">
+      <button type="submit" class="btn" name="choice" value="scissors">
         Scissors
       </button>
     </form>
