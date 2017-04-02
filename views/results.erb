@@ -10,8 +10,7 @@
     <p><%= @player.name %> choose <%= @player.choice %></p>
     <p>Computer choose <%= @computer_choice %></p>
     <p><%=@game_result%><p>
-    <form action="/play" method="get">
-    <input type="submit" value="Replay">
-    </form>
+    <a href="/play">Replay</a>
+        <p class="emoji"><%= @emoji %></p>
   </body>
 </html>

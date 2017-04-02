@@ -31,6 +31,7 @@ class RockPaperScissorsLizardSpock < Sinatra::Base
     @player = Player.instance
     @computer_choice = AutomatedOpponent.instance.automated_choice
     @game_result = Game.instance.result
+    @emoji = Game.instance.emoji
     erb(:results)
   end
 

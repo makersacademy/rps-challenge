@@ -9,19 +9,11 @@ body {
 }
 p {
   font-family: helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 25px;
 }
 h1 {
   font-family: helvetica oblique, sans-serif;
   font-size: 50px
-}
-h2 {
-  font-family: helvetica oblique, sans-serif;
-  font-size: 34px
-}
-p {
-  font-family: helvetica oblique, sans-serif;
-  font-size: 34px
 }
 input[type=submit] {
   font-family: helvetica oblique, sans-serif;
@@ -31,5 +23,24 @@ input[type=submit] {
   color: black;
   background-color: #5151af;
   margin: 10px;
+  font-size: 20px;
+}
+.emoji {
+  font-size: 200px !important;
+  margin: 0;
+}
+a {
+  display: inline-block;
+  font-family: helvetica oblique, sans-serif;
+  font-size: 10px;
+  background-color: #5151af !important;
+  border-radius: 10px;
+  border:0 none;
+  padding: 5px 15px;
+  margin: 10px;
+  width: 120px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
   font-size: 20px;
 }

@@ -51,4 +51,14 @@ class Game
       @result = "You lose!"
     end
   end
+
+  def emoji
+    if @result == 'You tie!'
+      '👔'
+    elsif @result.include?('You win!')
+      '🎉'
+    else
+      '☠️'
+    end
+  end
 end
