@@ -1,14 +1,16 @@
 require_relative 'player'
+require_relative 'rules'
 
 class Game
 
-  attr_reader :player_1, :player_2, :solo, :playing
+  attr_reader :player_1, :player_2, :solo, :playing, :rules
 
   def initialize(player_1, player_2, solo)
     @player_1 = player_1
     @player_2 = player_2
     @solo = solo
     @playing = player_1
+    @rules = Rules.traditional
   end
 
   def self.create(player_1, player_2, solo=true)

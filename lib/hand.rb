@@ -2,7 +2,7 @@ class Hand
 
   attr_reader :worse_hands, :name
 
-  def initialize(name, worse_hand_1, worse_hand_2)
+  def initialize(name, worse_hand_1, worse_hand_2=nil)
     @worse_hands = [worse_hand_1, worse_hand_2]
     @name = name
   end
