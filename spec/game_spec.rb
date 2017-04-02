@@ -1,6 +1,7 @@
 describe Game do
   let(:name) {double(:name)}
-  let(:game) {described_class.new(name)}
+  let(:other_name) {double(:other_name)}
+  let(:game) {described_class.new(name, other_name)}
 
   describe '#play' do
     it 'should determine a winner' do

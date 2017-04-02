@@ -1,10 +1,10 @@
 class Computer
-  attr_reader :option, :computer
+  attr_reader :choice, :computer
   def initialize
-    @option = self.choice
+    @choice = self.choose
   end
 
-  def choice
+  def choose
     random = rand(0..2)
     if random == 0
       "Rock"
