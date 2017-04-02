@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/computer_choice' do
     @player = $game.player
-    @player.rock
+    @player.send(params[:choice].downcase)
     erb(:computer_choice)
   end
 
