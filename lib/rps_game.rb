@@ -1,7 +1,6 @@
 class RPSGame
 
   attr_reader :choices
-  Gamesize = 3
   Players = 2
 
   def initialize(player_1,player_2)
@@ -31,6 +30,7 @@ class RPSGame
 
   def player_1_outcome(player_1_choice, player_2_choice)
     return "draw" if player_1_choice == player_2_choice
+
     player_1_winning_choices = choices_that_win_against(player_2_choice)
     if player_1_winning_choices.include?(player_1_choice)
       "win"
@@ -40,19 +40,14 @@ class RPSGame
   end
 
 
-
   def choices_that_win_against(choice)
     choice_array = make_first_in_array(choice)
     choice_array[1]
   end
 
-
   def random_choice
     choices.sample
   end
-
-
-
 
   private
 

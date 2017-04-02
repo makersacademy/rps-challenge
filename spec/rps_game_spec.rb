@@ -9,10 +9,7 @@ describe RPSGame do
   let(:game_of_3_choices) {["rock", "paper", "scissors"]}
 
   describe '#initialize' do
-    it 'has an an array with correct number of components in it' do
-      expect(rps.game_choices.length).to eq RPSGame::Gamesize
-    end
-
+    
     it 'has two player classes passed into it' do
       expect(rps.current_players.length).to eq RPSGame::Players
     end
