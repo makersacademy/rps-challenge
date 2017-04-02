@@ -6,7 +6,7 @@ feature 'Select rock, paper, or scissors' do
     expect(page).to have_content("Freddy chose Rock")
   end
 
-  scenario 'Player 1 views choice after making selection in 2 player' do
+  scenario 'Players view choices after making selection in 2 player' do
     fill_in_and_submit_2p
     choose('Rock')
     click_button ('OK')
