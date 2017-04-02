@@ -10,10 +10,10 @@ class Game
     @player_2 = player_2
     @solo = solo
     @playing = player_1
-    @rules = Rules.traditional
+    @rules = Rules.spock
   end
 
-  def self.create(player_1, player_2, solo=true)
+  def self.create(player_1, player_2, solo)
     @game = Game.new(player_1, player_2, solo)
   end
 
@@ -30,18 +30,16 @@ class Game
   end
 
   def robot
-    key = ['paper', 'scissors', 'rock'].sample
-    hand = rules[key]
-    player_2.set_hand(hand) 
+    hands = []
+    rules.each do |x,y|
+      hands << y
+    end
+    player_2.set_hand(hands.sample)
   end
 
   private
 
   attr_writer :playing
-
-  # def better?(hand_1,hand_2)
-  #   (hand_1=='scissors' && hand_2=='paper') || (hand_1=='rock' && hand_2=='scissors') || (hand_1=='paper' && hand_2=='rock')
-  # end
 
   def better?(hand_1, hand_2)
     hand_1.better?(hand_2.name)

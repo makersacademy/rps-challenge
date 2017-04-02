@@ -18,11 +18,4 @@ subject(:player) { described_class.new('Thor') }
     end
   end
 
-  describe '#auto' do
-    it 'returns rock paper or scissors' do
-      player.auto
-      expect(['rock','paper','scissors']).to include player.hand 
-    end
-  end
-
 end

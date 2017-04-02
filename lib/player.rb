@@ -10,8 +10,4 @@ class Player
     @hand = hand
   end
 
-  def auto
-    @hand = ['rock','paper','scissors'].sample
-  end
-
 end

@@ -18,7 +18,7 @@ class Rps < Sinatra::Base
   post '/make_game' do
     player_1 = Player.new(params[:player_name])
     player_2 = Player.new('The computer')
-    Game.create(player_1, player_2)
+    Game.create(player_1, player_2, true)
     redirect '/choose_weapon'
   end
 
