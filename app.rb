@@ -19,12 +19,24 @@ class RPS < Sinatra::Base
 
   post "/choice_rock" do
     @game = $game
-    @player1.choice("Rock")
+    @game.player1.rock
+    redirect '/confirm'
+  end
+
+  post "/choice_paper" do
+    @game = $game
+    @game.player1.paper
+    redirect '/confirm'
+  end
+
+  post "/choice_scissors" do
+    @game = $game
+    @game.player1.scissors
     redirect '/confirm'
   end
 
   get "/confirm" do
-
+    @game = $game
     erb(:confirm)
   end
 
