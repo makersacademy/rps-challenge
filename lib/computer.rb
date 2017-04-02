@@ -1,7 +1,8 @@
 class Computer
-  attr_reader :choice, :computer
+  attr_reader :choice, :computer, :name
   def initialize
     @choice = self.choose
+    @name = "Computer"
   end
 
   def choose

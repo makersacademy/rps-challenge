@@ -24,6 +24,13 @@ class RPS < Sinatra::Base
     redirect '/choose'
   end
 
+  post '/names' do
+    @player_1 = Player.new(params[:player_1])
+    @player_2 = Player.new(params[:player_2])
+    @game = Game.create(@player_1, @player_2)
+    redirect '/choose_1p'
+  end
+
   before do
     @game = Game.instance
   end
@@ -40,5 +47,23 @@ class RPS < Sinatra::Base
 
   get '/play' do
     erb(:play)
+  end
+
+  get '/choose_1p' do
+    erb(:choose_1p)
+  end
+
+  post '/choice_1p' do
+    @game.player_1.choose(params[:rps])
+    redirect '/choose_2p'
+  end
+
+  get '/choose_2p' do
+    erb(:choose_2p)
+  end
+
+  post '/choice_2p' do
+    @game.player_2.choose(params[:rps])
+    redirect '/play'
   end
 end

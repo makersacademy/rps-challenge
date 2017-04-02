@@ -22,9 +22,9 @@ class Game
       if p1_choice == p2_choice
         "It's a draw!"
       elsif winmap[p1_choice] == p2_choice
-        "Congrats! You won!"
+        "#{@player_1.name} won!"
       else
-        "Sorry, you lost!"
+        "#{@player_2.name} won!"
       end
   end
 end

@@ -1,7 +1,7 @@
 <h2>Welcome <%= @game.player_1.name %></h2>
 
-  <label>Make your choice</label>
   <form action='/choice' method="post">
+    <label>Make your choice</label><br>
     <input type='radio' name='rps' id="Rock" value="Rock">Rock<br>
     <input type='radio' name='rps' id="Paper" value ="Paper">Paper<br>
     <input type='radio' name='rps' id="Scissors" value="Scissors">Scissors<br>
