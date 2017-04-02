@@ -1,0 +1,18 @@
+<h3> Welcome to RPS, <%= @player_name %> </h3>
+<h3> Please select your weapon of choice:</h3>
+
+<form action="/weapon" method="post">
+
+  <!-- <input type="radio" name="rock" value="rock"> Rock </br>
+  <input type="radio" name="paper" value="paper"> Paper </br>
+  <input type="radio" name="scissors" valie="scissors"> Scissors -->
+
+  <select name="weapon_of_choice">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+
+
+  <input type="submit" value="Play">
+</form>
