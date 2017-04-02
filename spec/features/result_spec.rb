@@ -8,6 +8,6 @@ feature "Show the results of players & game's choice" do
   scenario "game makes a choice and can see result"  do
     register_and_play
     click_button 'Rock'
-    expect(page).to have_content "The game chose: Scissors"
+    expect(page).to have_content "The game chose: "
   end
 end
