@@ -5,9 +5,9 @@ describe Game do
   let(:player1) {double(:player)}
   let(:player2) {double(:player)}
 
-  it 'initializes with weapons' do
-    expect(Game::WEAPONS).to eq [:rock, :paper, :scissors]
-  end
+  # it 'initializes with weapons' do
+  #   expect(Game::WEAPONS).to eq [:rock, :paper, :scissors]
+  # end
 
   it 'initializes with players' do
     expect(game.player1).to eq player1

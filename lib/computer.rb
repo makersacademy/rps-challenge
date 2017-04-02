@@ -1,8 +1,12 @@
-require_relative 'game'
+
 
 class Computer
+  attr_reader :choice
 
-  def weapon
-    Game::WEAPONS.sample
+  WEAPONS = [:rock, :paper, :scissors]
+
+  def set_choice(choice = WEAPONS.sample)
+    @choice = choice
+    @name = "Computer"
   end
 end
