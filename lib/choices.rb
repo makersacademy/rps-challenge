@@ -6,8 +6,14 @@ def initialize
 
 @list = [
   'rock',
-  'paper',
+  'lizard',
+  'spock',
+  'wizard',
+  'batman',
+  'spiderman',
+  'glock',
   'scissors',
+  'paper',
 ]
 end
 

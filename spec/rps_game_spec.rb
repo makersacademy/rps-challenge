@@ -5,26 +5,53 @@ describe RPSGame do
   subject(:rps) {described_class.new(choices)}
   let(:player_1_choice) {"rock"}
   let(:player_2_choice) {"scissors"}
-  let(:choices)  {double(:choices, :list => game_of_3_choices)}
+  let(:choices)  {double(:choices, :list => game_of_9_choices)}
   let(:game_of_5_choices) {["rock", "paper", "scissors", "lizard", "spock"]}
   let(:game_of_3_choices) {["rock", "paper", "scissors"]}
-
+  let(:game_of_9_choices) {[
+    'rock',
+    'lizard',
+    'spock',
+    'wizard',
+    'batman',
+    'spiderman',
+    'glock',
+    'scissors',
+    'paper',
+  ]}
 
 
   describe '#choices_that_win_against' do
-    it 'returns paper when input rock' do
-      expect(rps.choices_that_win_against('rock')).to eq('paper')
-    end
+    # it 'returns paper when input rock' do
+    #   expect(rps.choices_that_win_against('rock')).to eq('paper')
+    # end
+    #
+    # it 'returns scissors when input paper' do
+    #   expect(rps.choices_that_win_against('paper')).to eq('scissors')
+    #
+    # end
+    #
+    # it 'returns rock when input scissors' do
+    #   expect(rps.choices_that_win_against('scissors')).to eq('rock')
+    # end
 
-    it 'returns scissors when input paper' do
-      expect(rps.choices_that_win_against('paper')).to eq('scissors')
 
-    end
+    it 'Tests for all extra features' do
 
-    it 'returns rock when input scissors' do
-      expect(rps.choices_that_win_against('scissors')).to eq('rock')
+    expect(rps.choices_that_win_against('spock').sort).to eq((game_of_9_choices - ['rock','wizard','spiderman','scissors']).sort)
+    expect(rps.choices_that_win_against('lizard').sort).to eq((game_of_9_choices - ['spock','batman','glock','paper']).sort)
+    expect(rps.choices_that_win_against('wizard').sort).to eq((game_of_9_choices - ['batman','glock','paper','lizard']).sort)
+    expect(rps.choices_that_win_against('batman').sort).to eq((game_of_9_choices - ['spiderman','scissors','rock','spock']).sort)
+    expect(rps.choices_that_win_against('spiderman').sort).to eq((game_of_9_choices - %w(glock paper lizard wizard)).sort)
+    expect(rps.choices_that_win_against('glock').sort).to eq((game_of_9_choices - %w(scissors rock spock batman)).sort)
+    expect(rps.choices_that_win_against('scissors').sort).to eq((game_of_9_choices - %w(paper lizard wizard spiderman)).sort)
+    expect(rps.choices_that_win_against('paper').sort).to eq((game_of_9_choices - %w(rock spock batman glock)).sort)
+    expect(rps.choices_that_win_against('rock').sort).to eq((game_of_9_choices - %w(lizard wizard spiderman scissors)).sort)
     end
   end
+
+
+
 
 
   describe '#p_1_outcome' do

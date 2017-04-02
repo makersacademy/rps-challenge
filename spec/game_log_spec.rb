@@ -43,7 +43,18 @@ describe GameLog do
 
     describe '#winner' do
       it 'outputs the name of the winner' do
-        expect(game_log.winner).to eq "Xenith"
+        allow(game_log).to receive(:current_outcome) { "player_1" }
+        expect(game_log.winner).to eq player_1.name
+      end
+
+      it 'outputs the name of the winner' do
+        allow(game_log).to receive(:current_outcome) { "player_2" }
+        expect(game_log.winner).to eq player_2.name
+      end
+
+      it 'outputs a draw' do
+        allow(game_log).to receive(:current_outcome) { "draw" }
+        expect(game_log.winner).to eq "draw"
       end
     end
 

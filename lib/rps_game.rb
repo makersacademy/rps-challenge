@@ -33,8 +33,14 @@ class RPSGame
 
 
   def choices_that_win_against(choice)
+
     choice_array = make_first_in_array(choice)
-    choice_array[1]
+
+    output = choice_array.select.with_index do |choice, index|
+      choice unless index%2 == 1
+    end
+
+    return output
   end
 
   private
@@ -42,11 +48,12 @@ class RPSGame
 
   def make_first_in_array(choice)
     rearranged_array = game_choices
-
     rearranged_array.length.times do
       return rearranged_array if rearranged_array.first == choice
       rearranged_array.rotate!
     end
+
+    return rearranged_array
 
   end
 end

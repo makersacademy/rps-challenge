@@ -39,7 +39,7 @@ class GameLog
 
   def winner
     case current_outcome
-    when "player_1" then player_2_name
+    when "player_1" then player_1_name
     when "player_2" then player_2_name
     when "draw"     then "draw"
     end
