@@ -1,1 +1,11 @@
 <%=@player_name %> vs. COMPUTER
+
+<form action="/choice" method="post">
+<label for="action">Options:</label>
+<select name="player_choice" id="action">
+  <option value="Rock">ROCK</option>
+  <option value="Paper">PAPER</option>
+  <option value="Scissors">SCISSORS</option>
+</select>
+<button type="submit" value="submit">PLAY!</button>
+</form>

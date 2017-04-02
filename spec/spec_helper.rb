@@ -13,6 +13,8 @@ SimpleCov.start
 require 'byebug'
 require 'capybara/rspec'
 
+require_relative './features/web_helpers'
+
 
 
 
