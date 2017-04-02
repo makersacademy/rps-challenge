@@ -1,3 +1,5 @@
+![Travis CI](https://travis-ci.org/kittysquee/rps-challenge.svg?branch=master)
+
 # RPS Challenge
 
 I was tasked this week with building a game using the skills that I have gained this week at [Maker's Academy](www.makersacademy.com). The skills I have gained this week revolve around the Web. I learnt about HTTP protocols, Sinatra and built on some basic HTML and CSS skills that I previously had. I also learned about feature testing with Capybara and built on my RSpec testing skills. I used all these newfound skills and knowledge to create this web application.
