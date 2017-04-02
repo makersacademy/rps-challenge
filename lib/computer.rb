@@ -9,5 +9,5 @@ class Computer
   end
 
   private
-  PC_CHOICE = [:Rock, :Paper, :Scissors]
+  PC_CHOICE = [:rock, :paper, :scissors]
 end

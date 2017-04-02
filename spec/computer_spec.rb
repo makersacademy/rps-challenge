@@ -8,6 +8,6 @@ describe Computer do
 
   it "checks #random_choice returns :Rock, :Paper or :Scissors" do
     pc.random_choice
-    expect(pc.choice).to eq(:Rock).or(eq(:Paper).or(eq(:Scissors)))
+    expect(pc.choice).to eq(:rock).or(eq(:paper).or(eq(:scissors)))
   end
 end

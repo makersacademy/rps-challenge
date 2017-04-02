@@ -27,11 +27,13 @@ class RPS < Sinatra::Base
 
   post '/player_choice' do
     @game.player.get_choice(params[:choice])
+    @game.set_player_choice
     redirect '/play'
   end
 
   get '/end_game' do
     erb :end_game
   end
+
   run! if app_file == $0
 end

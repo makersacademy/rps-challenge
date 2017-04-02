@@ -11,9 +11,9 @@ feature 'be able to play the game' do
   scenario 'Player can pick an option and get confirmation' do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content("You chose Rock!")
+    expect(page).to have_content("You chose rock!")
   end
-  
+
   scenario 'PC makes a choice' do
     sign_in_and_play
     click_button "Rock"
