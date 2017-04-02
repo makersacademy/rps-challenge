@@ -16,7 +16,7 @@ require 'capybara/rspec'
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
-require './app.rb'
+require './app'
 require_relative 'features/web_helpers'
 
 Capybara.app = RPS
