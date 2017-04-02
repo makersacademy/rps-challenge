@@ -1,31 +1,38 @@
  # Executes the game.
-
 require_relative 'computer'
 
 class Game
-  include Computer
 
-  attr_reader :player
+  attr_reader :player, :computer
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
+    @computer = computer
+  end
+
+  def computer_wins
+    "Computer wins!"
+  end
+
+  def player_wins
+    player.name + " wins!"
   end
 
   def lets_play
-  if player.choice == Computer::choice
-    "It's a tie!"
-  elsif player.choice == "rock" && Computer::choice == "scissors"
-    "Player wins!"
-  elsif player.choice == "rock" && Computer::choice == "paper"
-    "Computer wins!"
-  elsif player.choice == "paper" && Computer::choice == "scissors"
-    "Computer wins!"
-  elsif player.choice == "paper" && Computer::choice == "rock"
-    "Player wins!"
-  elsif player.choice == "scissors" && Computer::choice == "paper"
-    "Computer wins!"
-  else player.choice == "scissors" && Computer::choice == "rock"
-      "Player wins!"
+    if player.choice == computer.choice
+      "It's a tie!"
+    elsif player.choice == "rock" && computer.choice == "scissors"
+      player_wins
+    elsif player.choice == "rock" && computer.choice == "paper"
+      computer_wins
+    elsif player.choice == "paper" && computer.choice == "scissors"
+      computer_wins
+    elsif player.choice == "paper" && computer.choice == "rock"
+      player_wins
+    elsif player.choice == "scissors" && computer.choice == "paper"
+      player_wins
+    else player.choice == "scissors" && computer.choice == "rock"
+      computer_wins
     end
   end
 end

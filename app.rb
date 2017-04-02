@@ -11,8 +11,9 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player_name]) # Saving name in session.
-    $new_game = Game.new(player)
+    player = Player.new(params[:player_name])
+    computer = Computer.new # Saving name in session.
+    $new_game = Game.new(player, computer)
     redirect '/play' # Redirecting to play.
   end
 

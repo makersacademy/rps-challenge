@@ -3,13 +3,14 @@
 class Player
 
   DEFAULT_CHOICE = "No choice made."
+  DEFAULT_NAME = "Player"
 
-attr_reader :choice, :name
-attr_writer :name
+  attr_reader :name, :choice
+  attr_writer :name, :choice
 
-  def initialize(name)
+  def initialize(name = DEFAULT_NAME, choice = DEFAULT_CHOICE)
     @name = name
-    @choice = DEFAULT_CHOICE
+    @choice = choice
   end
 
   def choose_rock

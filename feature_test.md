@@ -1,4 +1,6 @@
 require './lib/game.rb'
 require './lib/player.rb'
+require './lib/computer'
 player = Player.new("Connie")
-game = Game.new(player)
+computer = Computer.new
+game = Game.new(player, computer)

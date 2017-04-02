@@ -4,37 +4,33 @@ describe Player do
   subject(:player) { described_class.new("Connie") }
 
   describe "initialize" do
-  it "initialized with rock instance variable set to false" do
-    expect(player.rock).to eq false
+  it "initialized with choice instance variable set to default choice" do
+    expect(player.choice).to eq Player::DEFAULT_CHOICE
     end
 
-  it "initialized with paper instance variable set to false" do
-    expect(player.paper).to eq false
-    end
-
-  it "initialized with scissors instance variable set to false" do
-    expect(player.scissors).to eq false
+    it "initialized with name instance variable" do
+      expect(player.name).to eq "Connie"
     end
   end
 
-  describe "#rock" do
-    it "rock changes to true when called" do
+  describe "#choose_rock" do
+    it "changes instance variable choice to rock" do
       player.choose_rock
-      expect(player.rock).to eq true
+      expect(player.choice).to eq "rock"
     end
   end
 
-  describe "#paper" do
-    it "paper changes to true when called" do
+  describe "#choose_paper" do
+    it "changes instance variable choice to paper" do
       player.choose_paper
-      expect(player.paper).to eq true
+      expect(player.choice).to eq "paper"
     end
   end
 
-  describe "#scissors" do
-    it "scissors changes to true when called" do
+  describe "#choose_scissors" do
+    it "changes instance variable choice to scissors" do
       player.choose_scissors
-      expect(player.scissors).to eq true
+      expect(player.choice).to eq "scissors"
     end
   end
 end
