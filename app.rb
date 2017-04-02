@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require 'pry'
 
 # keep me slim controller
 class RockPaperScissors < Sinatra::Base
@@ -16,7 +17,6 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(params[:player_1])
     # player_2 = Player.new(params[:player_2])
     $game = Game.new(player_1)
-    # create a game and pass player....
     redirect '/play', 302
   end
 
@@ -27,13 +27,25 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     @game = $game
-    @game.player_choice(params[:selection])
+    @game.player_choice(params[:choice])
     redirect '/result', 302
   end
 
   get '/result' do
     @game = $game
     erb :result
+  end
+
+  post '/next_round' do
+    @game = $game
+    @game.update_round
+    redirect '/play', 302
+  end
+
+  post '/reset' do
+    @game = $game
+
+    redirect '/', 302
   end
 
 end

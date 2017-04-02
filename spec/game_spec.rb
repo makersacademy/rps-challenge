@@ -11,18 +11,28 @@ describe Game do
     end
   end
 
-  describe '#player_selection' do
+  describe '#player_choice' do
     it 'should return the button the player clicked' do
       game.player_choice('rock')
       expect(game.user_choice).to eq 'rock'
     end
   end
 
+  describe '#update_round' do
+    it 'updates round by one' do
+      allow(game).to receive(:round_number) { 2 }
+      expect(game.update_round).to eq 3
+    end
+  end
+
   describe '#round_winner' do
+    before do
+      game.player_choice('rock')
+    end
+
     context 'if a draw' do
       it "returns 'draw' if a draw" do
         allow(game).to receive(:game_choice) { 'rock' }
-        game.player_choice('rock')
         expect(game.round_winner).to eq 'draw'
       end
     end
@@ -30,7 +40,6 @@ describe Game do
     context 'if player wins' do
       it 'returns the player if they win' do
         allow(game).to receive(:game_choice) { 'scissors' }
-        game.player_choice('rock')
         expect(game.round_winner).to eq player1.name
       end
     end
@@ -38,11 +47,13 @@ describe Game do
     context 'if robot wins' do
       it 'returns robot if they win' do
         allow(game).to receive(:game_choice) { 'paper' }
-        game.player_choice('rock')
         expect(game.round_winner).to eq 'robot'
       end
     end
 
+    # it 'adds count to winners ' do
+    #
+    # end
   end
 
 

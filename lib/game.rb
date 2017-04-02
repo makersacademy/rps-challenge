@@ -1,22 +1,28 @@
 class Game
 
-  attr_reader :player, :user_choice, :game_choice
+  attr_reader :player, :user_choice, :game_choice, :round_number, :winner_count
+  attr_writer :round_number
 
   def initialize(player)
     @player = player
+    @round_number = 1
+    @winner_count = {}
   end
 
   def player_choice(choice)
     @user_choice = choice
   end
 
+  def update_round
+    self.round_number += 1
+  end
+
   def round_winner
     game_pick
-    
     if draw?
       return 'draw'
     else
-      who_won
+      return who_won
     end
   end
 
@@ -38,7 +44,6 @@ class Game
           (user_choice == 'paper' && game_choice == 'scissors'))
       'robot'
     else
-
       self.player.name
     end
   end

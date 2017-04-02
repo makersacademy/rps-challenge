@@ -1,6 +1,22 @@
 /* GLOBAL STYLES
 ===========================================
 */
+h1 {
+  font-size: 65px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+form {
+  font-size: 25px;
+  display: inline;
+}
 
 body {
   background: url("rps.jpg") no-repeat top center fixed;
@@ -10,6 +26,10 @@ body {
   text-shadow: 1px 1px #19191a;
 }
 
+.left {
+  position: relative;
+  text-align: left;
+}
 .centered {
   position: absolute;
   height: 100px;
@@ -20,16 +40,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-h1 {
-  font-size: 55px;
-}
-
-h2 {
-  font-size: 35px;
-}
-
-form {
-  font-size: 25px;
+.field {
+   width: 150px;
+   height: 30px;
+   font-size: 22px;
 }
 
 .btn {
@@ -48,6 +62,8 @@ form {
   padding: 10px 20px 10px 20px;
   border: solid #ffffff 0px;
   text-decoration: none;
+  width: 130px;
+  line-height: 20px;
 }
 
 .btn:hover {
@@ -60,11 +76,11 @@ form {
   text-decoration: none;
 }
 
-img {
+/*img {
     opacity: 0.5;
     filter: alpha(opacity=50);
     max-width: 100%;
     height: auto;
   	left: 0;
   	position: absolute;
-}
+}*/
