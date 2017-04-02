@@ -16,40 +16,42 @@ class RPS < Sinatra::Base
   end
 
   post('/single_player_name') do
-    session[:player_1_name] = params[:player_1_name]
+    choices  = Choices.new
+    rps_game = RPSGame.new(choices)
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new
+    GameLog.create(player_1, player_2,rps_game)
+
     redirect('/single_player_play')
+
   end
 
   get('/single_player_play') do
-    choices  = Choices.new
-    rps_game = RPSGame.new(choices)
-    player_1 = Player.new(session[:player_1_name])
-    player_2 = Player.new
-    GameLog.create(player_1, player_2,rps_game)
     @game = GameLog.instance
     erb(:single_player_play)
   end
 
-  post('/player_1_rock') do
-    session[:player_1_selection] = "rock"
-    redirect('/single_player_fight')
-  end
-
-  post('/player_1_paper') do
-    session[:player_1_selection] = "paper"
-    redirect('/single_player_fight')
-  end
-
-  post('/player_1_scissors') do
-    session[:player_1_selection] = "scissors"
+  post('/player_1_selection') do
+    session[:player_1_selection] = params[:selection]
     redirect('/single_player_fight')
   end
 
   get('/single_player_fight') do
-    @selection = session[:player_1_selection]
+    @game = GameLog.instance
+    @scorecard = @game.scorecard
+    random_choice = @game.current_game.choices.random_choice
+    @game.play_game(session[:player_1_selection],random_choice)
+    # require'pry';binding.pry
     erb(:single_player_fight)
   end
 
+  get('/end_round') do
+    redirect('/single_player_fight')
+  end
+
+
+
+#MULTIPLAYER GETS
   get('/multiplayer_names') do
     erb(:multiplayer_names)
   end

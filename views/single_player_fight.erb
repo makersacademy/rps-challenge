@@ -3,6 +3,12 @@
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
-    <h1><%=@selection.capitalize%></h1>
+    <h1><%=@game.current_game.player_1_choice %></h1>
+    <h1><%=@game.current_game.outcome %></h1>
+    <h1><%=@game.current_game.player_2_choice %></h1>
   </body>
+
+  <form action='/single_player_play' method='get'>
+    <input type="submit" value="Play Again">
+  </form>
 </html>

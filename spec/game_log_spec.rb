@@ -21,10 +21,6 @@ describe GameLog do
 
   end
 
-    it 'takes input from two choices' do
-
-    end
-
     describe '#play_round' do
       it 'makes a new RPS_game_class' do
 
@@ -42,6 +38,12 @@ describe GameLog do
     describe '#update_scorecard' do
       it 'updates player_1 scorecard after player_1 win' do
         expect{game_log.update_scorecard("player_1")}.to change{game_log.scorecard[player_1.name]}.by(1)
+      end
+    end
+
+    describe '#winner' do
+      it 'outputs the name of the winner' do
+        expect(game_log.winner).to eq "Xenith"
       end
     end
 
