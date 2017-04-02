@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-subject(:game) { described_class.new(player_1, player_2, false)}
+subject(:game) { described_class.new(player_1, player_2)}
 let(:player_1) { double :player_1 }
 let(:player_2) { double :player_2 }
 
@@ -21,14 +21,8 @@ let(:player_2) { double :player_2 }
 
   describe '#create' do
     it 'creates and stores a new instance of game' do
-      Game.create(player_1, player_2, true)
+      Game.create(player_1, player_2)
       expect(Game.instance).to be_kind_of(Game)
-    end
-  end
-
-  describe "#solo" do
-    it 'returns false if the game is two-player' do
-      expect(game.solo).to eq false
     end
   end
 

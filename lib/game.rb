@@ -1,18 +1,18 @@
 require_relative 'player'
+require_relative 'robot'
 
 class Game
 
-  attr_reader :player_1, :player_2, :solo, :playing, :rules
+  attr_reader :player_1, :player_2, :playing, :rules
 
-  def initialize(player_1, player_2, solo)
+  def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @solo = solo
     @playing = player_1
   end
 
-  def self.create(player_1, player_2, solo)
-    @game = Game.new(player_1, player_2, solo)
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
   end
 
   def self.instance

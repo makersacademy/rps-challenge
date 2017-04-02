@@ -1,16 +1,16 @@
 require_relative 'rules'
 
-class Player
+class Robot
 
   attr_reader :name, :hand, :rules
 
-  def initialize(name)
-    @name = name
+  def initialize
+    @name = 'The computer'
     @rules = Rules.spock
   end
 
-  def set_hand(hand)
-    @hand = rules[hand]
+  def set_hand 
+    @hand = rules.values.sample
   end
 
 end
