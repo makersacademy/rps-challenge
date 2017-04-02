@@ -1,10 +1,11 @@
 
 class Game
 
-  # def initialize(choice)
-  #   @choice = choice
-  # end
-  #
+  def initialize(player, computer)
+    @player = player
+    @computer = computer
+  end
+
 
 
 end
