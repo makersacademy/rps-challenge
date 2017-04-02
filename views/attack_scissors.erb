@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+  <body>
+    <div class="title">
+      <h2> <%= @player_1 %> picked scissors.</h2>
+    </div>
+    <% if $player_2.random_attack == "Rock" %>
+      <!-- img for Scissors vs Rock -->
+      <div class="attack">
+        <div class="rps-challenge">
+          <img src="scissors.png">
+          <img src="rock-win.png">
+        </div>
+      </div>
+      <p>Stoney shows rock!</p>
+      <p>Rock crushed scissors, uh oh! <%= @player_1 %> lost!</p>
+      <audio autoplay="false">
+        <source src="lose.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <% elsif $player_2.random_attack == "Paper" %>
+      <!-- img for Scissors vs Paper -->
+      <div class="attack">
+        <div class="rps-challenge">
+          <img src="scissors-win.png">
+          <img src="paper.png">
+        </div>
+      </div>
+      <p>Stoney shows paper!</p>
+      <p>Scissors snip snipped paper. Take that! <%= @player_1 %> wins!</p>
+      <audio autoplay="false">
+        <source src="win.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <% else %>
+      <!-- placeholder Scissors vs Scissors-->
+      <div class="attack">
+        <div class="rps-challenge">
+          <img src="scissors.png">
+          <img src="scissors.png">
+        </div>
+      </div>
+      <p>Stoney shows scissors!</p>
+      <p>Hmm, nothing happened...</p>
+      <audio autoplay="false">
+        <source src="lose.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <% end %>
+    <form class="form-block" method='get' action='/play'>
+        <button type="submit" value="Play again" class="button btn btn-default">
+          Play again
+        </button>
+    </form>
+
+

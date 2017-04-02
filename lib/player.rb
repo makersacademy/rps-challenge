@@ -6,23 +6,17 @@ class Player
     @name = name
   end
 
-  def paper?
-    true
-  end
-
   def roll
-    rand(1..9)
+    rand(0..2)
   end
 
   def random_attack
-    if roll >= 7
-      "Scissors"
-    elsif roll >= 4
-      "Paper"
-    elsif roll >= 1
+    if roll == 2
       "Rock"
+    elsif roll == 1
+      "Paper"
+    else
+      "Scissors"
     end
   end
-
-  # require 'pry'; binding.pry
 end

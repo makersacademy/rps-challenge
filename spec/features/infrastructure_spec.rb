@@ -2,7 +2,7 @@ feature "Testing infrastructure" do
 
   scenario "Can run content on homepage" do
     visit('/')
-    expect(page).to have_content 'Enter player names:'
+    expect(page).to have_content 'Preparing for battle! Enter name:'
   end
 
   scenario "to start playing" do
@@ -13,24 +13,25 @@ feature "Testing infrastructure" do
   scenario "choosing rock attack" do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content "Rocky picked rock. Stoney picked scissors. rock damaged scissors. Rocky wins!"
+    expect(page).to have_content "Rocky picked rock."
   end
 
   scenario "choosing paper attack" do
     sign_in_and_play
     click_button "Paper"
-    expect(page).to have_content "Rocky picked paper. Stoney picked scissors. Scissors damaged paper. Rocky lost!"
+    expect(page).to have_content "Rocky picked paper."
   end
 
   scenario "choosing scissors attack" do
     sign_in_and_play
     click_button "Scissors"
-    expect(page).to have_content "Rocky picked scissors. Stoney picked paper. Scissors damaged paper. Rocky wins!"
+    expect(page).to have_content "Rocky picked scissors."
   end
 
-  # scenario "testing for random paper attack" do
-  #   sign_in_and_play
-  #   click_button "Rock_two"
-  #   expect(page).to have_content "I am doing a test here"
-  # end
+  scenario "plays again when game ended" do
+    sign_in_and_play
+    click_button "Rock"
+    click_button "Play again"
+    expect(page).to have_content "Choose wisely..."
+  end
 end

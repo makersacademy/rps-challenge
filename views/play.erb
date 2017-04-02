@@ -1,18 +1,51 @@
-<h3><%= @player_1 %> vs. Stoney. Fight!</h3>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+  <body>
+  <div class="title">
+    <h3><%= @player_1 %> vs. Stoney. Fight!</h3>
+  </div>
 
-<h3>Choose Rock</h3>
-<form method='post' action='/attack_rock_win'>
-  <input type='submit' value='Rock'></input>
-</form>
+    <h3>Choose wisely...</h3>
+    <div class="attack-options">
+      <form class ="form-block" method='post' action='/attack_rock'>
+          <button type="submit" value="Rock" class="button btn btn-default">
+            Rock
+          </button>
+      </form>
 
-<form method='post' action='/attack_loss'>
-  <input type='submit' value='Paper'></input>
-</form>
+      <form class ="form-block" method='post' action='/attack_paper'>
+          <button type="submit" value="Paper" class="button btn btn-default">
+            Paper
+          </button>
+      </form>
 
-<form method='post' action='/attack_scissor_win'>
-  <input type='submit' value='Scissors'></input>
-</form>
+      <form class="form-block" method='post' action='/attack_scissors'>
+          <button type="submit" value="Scissors" class="button btn btn-default">
+            Scissors
+          </button>
+      </form>
+    </div>
 
-<form method='post' action='/outcome'>
-  <input type='submit' value='Rock_two'></input>
-</form>
+
+<style>
+  body {
+    background-color: #AA3939;
+  }
+  .title h1 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 26px;
+  text-align: center;
+  color: #FFFFFF;
+
+  }
+</style>

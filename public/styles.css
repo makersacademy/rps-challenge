@@ -1,0 +1,116 @@
+
+
+  body {
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://orig09.deviantart.net/879c/f/2012/119/1/0/pixel_waterfall_bg__by_isohei-d4xntof.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: 'Space Mono', monospace;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+
+
+  .title {
+    margin-top: 90px;
+  }
+
+  .title h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 500px;
+  }
+
+  .form-block {
+    text-align: center;
+    margin: 0;
+    color: #FFFFFF;
+    margin-top: 25px;
+  }
+
+  .form-block .input {
+    vertical-align: middle;
+    color: #000000;
+  }
+
+  .form-block label {
+    font-size: 20px;
+  }
+
+  .form-block .button {
+    margin-bottom: 5px;
+    font-size: 16px;
+    height: 37px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+
+  .attack {
+    margin:auto;
+    text-align: center;
+
+  }
+
+  .attack .rps-challenge img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 120px;
+    vertical-align: bottom;
+
+  }
+
+  .attack-options {
+
+    text-align: center;
+    vertical-align:middle;
+  }
+
+  .audio {
+    display: hidden;
+   }
+
+  .footer {
+    margin-top: 30px;
+  }
+
+  .footer p {
+    color: #FFFFFF;
+    font-size: 10px;
+  }
+
+
+
+
+
+

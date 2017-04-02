@@ -12,17 +12,17 @@ describe Player do
 
   describe '#random_attack' do
     it "does a random rock attack" do
-      allow(computer).to receive(:roll).and_return 1
+      allow(computer).to receive(:roll).and_return 2
       expect(computer.random_attack).to eq "Rock"
     end
 
     it "does a random paper attack" do
-      allow(computer).to receive(:roll).and_return 4
+      allow(computer).to receive(:roll).and_return 1
       expect(computer.random_attack).to eq "Paper"
     end
 
     it "does a random scissors attack" do
-      allow(computer).to receive(:roll).and_return 8
+      allow(computer).to receive(:roll).and_return 0
       expect(computer.random_attack).to eq "Scissors"
     end
   end
