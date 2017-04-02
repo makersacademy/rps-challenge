@@ -18,7 +18,7 @@ feature 'page_infrastructure' do
 
   scenario 'player 1 signs in and enters name and is then taken to play page' do
     DEFAULT_PLAYER_NAME = 'Nick'
-    visit('/single_player')
+    visit('/single_player_name')
     fill_in('player_1_name', :with => DEFAULT_PLAYER_NAME)
     click_button('Play')
     expect(page).to have_content('Play')
@@ -28,7 +28,7 @@ feature 'page_infrastructure' do
   context 'player on play page' do
 
     before(:each) do
-      visit('/single_player')
+      visit('/single_player_name')
       fill_in('player_1_name', :with => DEFAULT_PLAYER_NAME)
       click_button('Play')
     end
