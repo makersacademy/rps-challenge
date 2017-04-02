@@ -1,6 +1,15 @@
 class GameLog
 
+
   attr_reader :scorecard
+
+  def self.create(player_1, player_2, rps_game)
+    @game = GameLog.new(player_1,player_2,rps_game)
+  end
+
+  def self.instance
+    @game
+  end
 
   def initialize(player_1,player_2,rps_game)
     @player_1 = player_1
@@ -31,10 +40,10 @@ class GameLog
     current_game.update_player_2_choice(player_2_choice)
     current_game.update_player_1_choice(player_1_choice)
   end
+  attr_reader :current_game, :player_1, :player_2
 private
 
 
-attr_reader :current_game, :player_1, :player_2
 
 
 end

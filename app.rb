@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/choices'
+require_relative 'lib/game_log'
+require_relative 'lib/rps_game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -12,15 +15,19 @@ class RPS < Sinatra::Base
     erb(:single_player_name)
   end
 
-  get('/single_player_play') do
-    @player_1 = Player.new(session[:player_1_name])
-    @player_2 = Player.new
-    erb(:single_player_play)
-  end
-
   post('/single_player_name') do
     session[:player_1_name] = params[:player_1_name]
     redirect('/single_player_play')
+  end
+
+  get('/single_player_play') do
+    choices  = Choices.new
+    rps_game = RPSGame.new(choices)
+    player_1 = Player.new(session[:player_1_name])
+    player_2 = Player.new
+    GameLog.create(player_1, player_2,rps_game)
+    @game = GameLog.instance
+    erb(:single_player_play)
   end
 
   post('/player_1_rock') do
