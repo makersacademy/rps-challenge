@@ -3,9 +3,13 @@
   <h2> Affirmative, <%= @game.player1.name %>. I read you. </h2>
 
  <% elsif @game.player1.choice == "Paper" %>
- <h2> Just what do you think you're doing, <%= @game.player1.name %>? </h2>
+  <h2> Just what do you think you're doing, <%= @game.player1.name %>? </h2>
 
  <% elsif @game.player1.choice == "Scissors" %>
- <h2> Without your space helmet, <%= @game.player1.name %>? You're going to find that rather difficult.</h2>
+  <h2> Without your space helmet, <%= @game.player1.name %>? You're going to find that rather difficult.</h2>
 
  <% end %>
+
+ <form action="/check_winner" method="post">
+   <input type="submit" value="OK">
+ </form>

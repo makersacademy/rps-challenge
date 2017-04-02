@@ -75,6 +75,7 @@ rackup -p 9292
 ## Resources
 Markdown cheatsheet
 <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links>
+
 WK3 Makers - Battle challenge
 - [Trump vs. Truth] (https://github.com/Alicespyglass/Battle)
 - [Volkswagen vs. Polar Bear] (https://github.com/Alicespyglass/Battle-Friday)
@@ -84,16 +85,20 @@ ___
 ### PLANNING
 ### Principle
 **1) Make it work**
+
 **2) Make it pretty**
 
 ### Model View Controller
 ## Model
-#Lib (.rb)
+Lib (.rb)
+
 **Game**
 Responsible for knowing which player won
+
 **Player**
 Responsible for knowing holding player information
 - name
 - choice (Rock, Paper, Scissors)
+
 **Computer_choice**
 Responsible for randomly generating choice (Rock, Paper, Scissors)

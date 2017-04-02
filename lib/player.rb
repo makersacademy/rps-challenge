@@ -1,10 +1,11 @@
 class Player
 
-attr_reader :name, :choice
+attr_reader :name, :choice, :rps
 
   def initialize(name)
     @name = name
     @choice
+    @rps = ["Rock", "Paper", "Scissors"]
   end
 
   def rock
@@ -17,6 +18,10 @@ attr_reader :name, :choice
 
   def scissors
     @choice = "Scissors"
+  end
+
+  def computer
+    @choice = rps.sample
   end
 
 end

@@ -31,5 +31,11 @@ subject(:player2) { described_class.new("Hal 9000")}
     end
   end
 
+  describe '#computer' do
+    it 'randomly selects Rock/Paper/Scissors for computer player' do
+      player2.computer
+      expect(player2.choice).to eq("Rock").or eq("Paper").or eq("Scissors")
+    end
+  end
 
 end
