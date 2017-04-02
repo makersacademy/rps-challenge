@@ -1,6 +1,6 @@
 
 class Player
-  DEFAULT_NAMES = %w(Dante Rocco  Giana  Kaira  Verena  Aldis)
+  DEFAULT_NAMES = ['Mary Dingle', "Roi's Beard", "A 5 Year Old Arnie", "The Phattest Jeffrey You Ever Saw", "Terry Crew's Left Nipple"]
 
   attr_reader :name, :choice
 

@@ -1,11 +1,22 @@
 <html>
   <head>
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="fight_style.css">
   </head>
   <body>
-    <h1><%=@game.current_game.player_1_choice.capitalize %></h1>
-    <h1><%=@game.current_game.outcome %></h1>
-    <h1><%=@game.current_game.player_2_choice.capitalize %></h1>
+    <h1><%=@game.player_1.name%>: <%=@game.current_game.player_1_choice.capitalize %></h1>
+    <h1><%=@game.player_2.name%>: <%=@game.current_game.player_2_choice.capitalize %></h1>
+
+    <%if @game.winner == "draw"%>
+      <h1>It's a Draw!</h1>
+    <%else @game.winner == "draw"%>
+      <h1><%=@game.winner %> Wins!</h1>
+    <%end%>
+
+    <h1><%=@game.player_1.name%>: <%=@game.scorecard[@game.player_1.name]%> </h1>
+    <h1><%=@game.player_2.name%>: <%=@game.scorecard[@game.player_2.name]%> </h1>
+
+
   </body>
 
   <form action='/single_player_play' method='get'>

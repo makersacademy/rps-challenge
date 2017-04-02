@@ -1,9 +1,11 @@
 <html>
   <head>
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="play_style.css">
+
   </head>
   <body>
-    <h1><%=@game.player_1.name%>, You are battling <%=@game.player_2.name%></h1>
+    <h1><%=@game.player_1.name%> VS. <%=@game.player_2.name%> (AI) </h1>
     <h1>Play</h1>
 
 
@@ -46,8 +48,8 @@
       <!-- <button type="submit" value="Rock" style="border: 0; background: transparent">
         <img src='http://www.onlygfx.com/wp-content/uploads/2016/05/hand-drawn-heart-1.png' width="150" height="150" alt="submit" />
       </button> -->
-      <h1><%=@game.player_1.name%>: <%=@game.scorecard[@game.player_1.name]%> </h1><br>
-      <h1><%=@game.player_2.name%>: <%=@game.scorecard[@game.player_2.name]%> </h1><br>
+      <h1><%=@game.player_1.name%>: <%=@game.scorecard[@game.player_1.name]%> </h1>
+      <h1><%=@game.player_2.name%>: <%=@game.scorecard[@game.player_2.name]%> </h1>
 
 
 
