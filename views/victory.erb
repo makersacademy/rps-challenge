@@ -1,8 +1,8 @@
 <body background='https://dutron.files.wordpress.com/2008/09/mai-68-moutons-retour-a-la-normale.gif'>
 
-<div><center><font face = "courier" size=10><%=@game.player_1.name%> played <%=@game.player_1.hand%>!</font></center></div>
+<div><center><font face = "courier" size=10><%=@game.player_1.name%> played <%=@game.player_1.hand.name%>!</font></center></div>
 
-<div><center><font face = "courier" size=10><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</font></center></div>
+<div><center><font face = "courier" size=10><%=@game.player_2.name%> played <%=@game.player_2.hand.name%>!</font></center></div>
 
 <% if @game.player_1.hand == @game.player_2.hand %>
 <div><center><font face = "courier" size=10>It's a draw!</font></center></div>

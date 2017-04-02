@@ -37,15 +37,18 @@ class Rps < Sinatra::Base
   post '/find_winner' do
     game = Game.instance
     if game.solo
-      game.player_1.set_hand(params[:hand])
-      game.player_2.auto
+      hand_1 = game.rules[params[:hand]]
+      game.player_1.set_hand(hand_1)
+      game.robot
       redirect '/victory'
     elsif game.playing == game.player_1
-      game.player_1.set_hand(params[:hand])
+      hand_1 = game.rules[params[:hand]]
+      game.player_1.set_hand(hand_1)
       game.switch_turn
       redirect '/choose_weapon'
     elsif game.playing == game.player_2
-      game.player_2.set_hand(params[:hand])
+      hand_2 = game.rules[params[:hand]]
+      game.player_2.set_hand(hand_2)
       redirect '/victory'
     end
   end
