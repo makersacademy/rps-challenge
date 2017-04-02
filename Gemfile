@@ -5,7 +5,7 @@ ruby '2.4.0'
 gem 'sinatra'
 gem 'rake'
 gem 'selenium-webdriver'
-
+gem 'pry'
 
 group :test do
   gem 'rspec'
