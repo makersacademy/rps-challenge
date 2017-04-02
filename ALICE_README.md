@@ -32,7 +32,7 @@ RPS-Challenge
 
   |-\__features
 
-    |web_helpers.rb
+    |-web_helpers.rb
 
 |-_views
 
@@ -40,7 +40,7 @@ RPS-Challenge
 
 ## Development Environment
 Run Makers init
-`makersinit`
+- `makersinit`
 
 Added Selenium
 - Gemfile -> `gem 'selenium-webdriver'`
