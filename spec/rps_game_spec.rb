@@ -2,39 +2,14 @@ require 'rps_game'
 require 'player'
 describe RPSGame do
 
-  subject(:rps) {described_class.new(player_1, player_2)}
-  let(:player_1) {double("Player1")}
-  let(:player_2) {double("Player2")}
+  subject(:rps) {described_class.new(player_1_choice, player_2_choice,choices)}
+  let(:player_1_choice) {"rock"}
+  let(:player_2_choice) {"scissors"}
+  let(:choices)  {double(:choices, :list => game_of_3_choices)}
   let(:game_of_5_choices) {["rock", "paper", "scissors", "lizard", "spock"]}
   let(:game_of_3_choices) {["rock", "paper", "scissors"]}
 
-  describe '#initialize' do
-    
-    it 'has two player classes passed into it' do
-      expect(rps.current_players.length).to eq RPSGame::Players
-    end
-  end
 
-  describe '#random_choice' do
-    it 'expect .sample to be called on @choices' do
-      expect(rps.choices).to receive(:sample)
-      rps.random_choice
-    end
-  end
-
-  describe 'player_1_choice' do
-    it 'extracts player choice from player 1' do
-      expect(rps.current_players.first).to receive(:choice)
-      rps.player_1_choice
-    end
-  end
-
-  describe 'player_2_choice' do
-    it 'extracts player choice from player 2' do
-      expect(rps.current_players.last).to receive(:choice)
-      rps.player_2_choice
-    end
-  end
 
   describe '#choices_that_win_against' do
     it 'returns paper when input rock' do
@@ -51,12 +26,6 @@ describe RPSGame do
     end
   end
 
-  describe '#game_size' do
-    it 'returns the correct number of game components' do
-      allow(rps).to receive(:choices) {game_of_5_choices}
-      expect(rps.game_size).to eq(5)
-    end
-  end
 
   describe '#p_1_outcome' do
     it 'returns draw when players have matching choices' do

@@ -1,23 +1,25 @@
 class Choices
 
+attr_reader :list
+
 def initialize
 
-@choice_list = [
+@list = [
   'rock',
   'paper',
   'scissors',
 ]
 end
 
-def list
-  choice_list.dup
-end
-
 def random_choice
   list.sample
 end
 
+def game_size
+  list.length
+end
+
+
 private
-attr_reader :choice_list
 
 end

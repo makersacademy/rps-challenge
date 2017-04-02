@@ -1,31 +1,15 @@
 class RPSGame
 
-  attr_reader :choices
-  Players = 2
+  attr_reader :choices, :player_1_choice, :player_2_choice
 
-  def initialize(player_1,player_2)
-    @choices = ['rock','paper','scissors']
-    @players = [player_1, player_2]
-  end
-
-  def game_size
-    choices.length
-  end
-
-  def current_players
-    players.dup
-  end
-
-  def player_1_choice
-    current_players.first.choice
-  end
-
-  def player_2_choice
-    current_players.last.choice
+  def initialize(player_1_choice,player_2_choice,choices)
+    @choices = choices
+    @player_1_choice = player_1_choice
+    @player_2_choice = player_2_choice
   end
 
   def game_choices
-    choices.dup
+    choices.list
   end
 
   def player_1_outcome(player_1_choice, player_2_choice)
@@ -45,13 +29,7 @@ class RPSGame
     choice_array[1]
   end
 
-  def random_choice
-    choices.sample
-  end
-
   private
-
-  attr_reader :players
 
   def make_first_in_array(choice)
     rearranged_array = game_choices
