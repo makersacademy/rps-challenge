@@ -22,8 +22,8 @@ I would like to be able to play rock/paper/scissors
 ## Functionality
 
 - [x] the marketeer should be able to enter their name before the game
-- [ ] the marketeer will be presented the choices (rock, paper and scissors)
-- [ ] the marketeer can choose one option
+- [x] the marketeer will be presented the choices (rock, paper and scissors)
+- [x] the marketeer can choose one option
 - [ ] the game will choose a random option
 - [ ] a winner will be declared
 
