@@ -4,7 +4,7 @@
 
 <div><center><font face = "courier" size=10><%=@game.player_2.name%> played <%=@game.player_2.hand.name%>!</font></center></div>
 
-<% if @game.player_1.hand == @game.player_2.hand %>
+<% if @game.player_1.hand.name == @game.player_2.hand.name %>
 <div><center><font face = "courier" size=10>It's a draw!</font></center></div>
 <% else %>
 <div><center><font face = "courier"size=10><%=@game.winner.name%> wins!</font></center></div>

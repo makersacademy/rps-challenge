@@ -59,3 +59,12 @@ feature 'Victory message' do
     expect(page).to have_content 'Loki wins'
   end
 end
+
+feature 'Draw message' do
+  scenario 'Players choose same hand' do
+    choose_two_man_and_enter_names
+    click_button 'Spock'
+    click_button 'Spock'
+    expect(page).to have_content "It's a draw!"
+  end
+end
