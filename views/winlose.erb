@@ -2,11 +2,11 @@
 
 <p>Opponent: <%= Rps.game.selection %></p>
 
-<%if Rps.game.decision.decide == :playerwin %>
+<%if @decision.outcome == :playerwin %>
 
 <p>You win!</p>
 
-<%elsif Rps.game.decision.decide == :playerlose %>
+<%elsif @decision.outcome == :playerlose %>
 
 <p>You lose!</p>
 

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/decision'
 
 class Rps < Sinatra::Base
   set :sessions, true
@@ -32,6 +33,7 @@ class Rps < Sinatra::Base
   end
 
   get '/winlose' do
+    @decision = Decision.new(Rps.game.player.selection, Rps.game.selection)
     erb :winlose
   end
 
