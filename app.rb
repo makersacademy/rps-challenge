@@ -8,6 +8,15 @@ class RPS < Sinatra::Base
     erb(:splash)
   end
 
+  get('/single_player') do
+    erb(:single_player)
+  end
+
+  get('/multiplayer') do
+    erb(:multiplayer)
+  end
+
+
   get('/play') do
     @player_1 = Player.new(session[:player_1_name])
     erb(:play)

@@ -7,9 +7,18 @@ feature 'page_infrastructure' do
     #expect(page.has_xpath?('/').to eq(true)
   end
 
+  scenario 'expects splash page to be able to choose between 1 player and 2 player' do
+    visit('/')
+    click_button('1P')
+    expect(page).to have_content('Single Player')
+    visit('/')
+    click_button('2P')
+    expect(page).to have_content('Multiplayer')
+  end
+
   scenario 'player 1 signs in and enters name and is then taken to play page' do
     DEFAULT_PLAYER_NAME = 'Nick'
-    visit('/')
+    visit('/single_player')
     fill_in('player_1_name', :with => DEFAULT_PLAYER_NAME)
     click_button('Play')
     expect(page).to have_content('Play')
@@ -19,7 +28,7 @@ feature 'page_infrastructure' do
   context 'player on play page' do
 
     before(:each) do
-      visit('/')
+      visit('/single_player')
       fill_in('player_1_name', :with => DEFAULT_PLAYER_NAME)
       click_button('Play')
     end
