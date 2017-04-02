@@ -10,18 +10,20 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect('/choose_weapon')
   end
 
   get '/choose_weapon' do
-    @player = $player.name
+    @player_name = $game.player.name
     erb(:choose_weapon)
   end
 
   post '/weapon' do
     $weapon = params[:weapon_of_choice]
-    $computer_weapon = Computer.new.choice
+    $computer_weapon = $game.computer.choice
     redirect('/play')
   end
 
