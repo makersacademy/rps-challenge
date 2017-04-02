@@ -5,6 +5,7 @@ html {
 body {
   background-color: rgb(146, 168, 204);
   text-align: center;
+  margin: 0;
 }
 p {
   font-family: helvetica, sans-serif;
@@ -13,17 +14,18 @@ p {
 h1 {
   font-family: helvetica oblique, sans-serif;
   font-size: 50px
-  color: green;
 }
 h2 {
   font-family: helvetica oblique, sans-serif;
   font-size: 34px
 }
 p {
+  display: inline-block;
   font-family: helvetica oblique, sans-serif;
   font-size: 34px
 }
 input[type=submit] {
+  font-family: helvetica oblique, sans-serif;
   padding:5px 15px;
   border:0 none;
   border-radius: 10px;
@@ -36,15 +38,20 @@ form {
   display: inline-block;
 }
 a {
-  display: block;
-  font-size: 14px;
+  display: inline-block;
+  font-family: helvetica oblique, sans-serif;
+  font-size: 10px;
   background-color: #5151af !important;
   border-radius: 10px;
+  border:0 none;
   padding: 5px 15px;
-  margin-bottom: 10px;
-  width: 100px;
+  margin: 10px;
+  width: 120px;
   margin: 10px;
   text-decoration: none;
   color: black;
   font-size: 20px;
+}
+img {
+  width: 100%;
 }

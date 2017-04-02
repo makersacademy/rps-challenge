@@ -22,7 +22,7 @@ class Game
       @result = "Rock breaks scissors! You win!"
     elsif
       choice == "Paper 📄" && computer_choice == "Rock 🤘"
-      @result = "You win!"
+      @result = "Paper covers rock! You win!"
     elsif
       choice == "Scissors ✂️" && computer_choice == "Paper 📄"
       @result = "Scissors cut paper! You win!"
@@ -37,10 +37,10 @@ class Game
       @result = "Scissors decapitates lizard! You win!"
     elsif
       choice == "Spock 🖖" && computer_choice == "Rock 🤘"
-      @result = "You win!"
+      @result = "Spock vaporises rock! You win!"
     elsif
       choice == "Spock 🖖" && computer_choice == "Scissors ✂️"
-      @result = "You win!"
+      @result = "Spock smashes scissors! You win!"
     elsif
       choice == "Lizard 🦎" && computer_choice == "Paper 📄"
       @result = "Lizard eats paper! You win!"

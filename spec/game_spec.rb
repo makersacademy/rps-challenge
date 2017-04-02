@@ -9,7 +9,7 @@ describe Game do
     end
 
     it 'expects win when player wins' do
-      expect(subject.worker_outer('Paper 📄', 'Rock 🤘')).to eq 'You win!'
+      expect(subject.worker_outer('Paper 📄', 'Rock 🤘')).to eq 'Paper covers rock! You win!'
     end
 
     it 'expects lose when player loses' do
