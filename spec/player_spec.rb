@@ -14,8 +14,15 @@ subject(:player) { described_class.new('Thor') }
   describe '#set_hand' do
     it 'sets the hand' do
       player.set_hand('scissors')
-      expect(player.hand).to eq 'scissors'
+      expect(player.hand).to eq player.rules['scissors']
     end
+  end
+
+  describe '#robot' do
+    it 'sets the player hand to a random hand from the rules' do
+      player.robot
+      expect(player.hand).to be_kind_of(Hand)
+    end 
   end
 
 end

@@ -13,7 +13,7 @@ end
 
 describe '#better' do
   it 'returns true if the hand is better' do
-    expect(spock.better?(scissors.name)).to eq true
+    expect(spock.better?(scissors)).to eq true
   end
 end
 

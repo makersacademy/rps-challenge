@@ -8,7 +8,7 @@ class Hand
   end
 
   def better?(other_hand)
-    worse_hands.include?(other_hand)
+    worse_hands.include?(other_hand.name)
   end
 
 end
