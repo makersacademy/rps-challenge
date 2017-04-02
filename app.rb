@@ -17,8 +17,9 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  post "/choice" do
+  post "/choice_rock" do
     @game = $game
+    @player1.choice("Rock")
     redirect '/confirm'
   end
 

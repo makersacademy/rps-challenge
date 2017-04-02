@@ -1,12 +1,35 @@
 require 'player'
 
 describe Player do
-subject(:hans) { described_class.new("hans") }
+subject(:player1) { described_class.new("Dave") }
+subject(:player2) { described_class.new("Hal 9000")}
 
   describe '#name' do
     it 'returns the name of the player' do
-      expect(hans.name).to eq "hans"
+      expect(player1.name).to eq "Dave"
     end
   end
+
+  describe '#rock' do
+    it 'sets player choice as rock' do
+      player1.rock
+      expect(player1.choice).to eq "Rock"
+    end
+  end
+
+  describe '#paper' do
+    it 'sets player choice as paper' do
+      player1.paper
+      expect(player1.choice).to eq "Paper"
+    end
+  end
+
+  describe '#scissors' do
+    it 'sets player choice as scissors' do
+      player1.scissors
+      expect(player1.choice).to eq "Scissors"
+    end
+  end
+
 
 end

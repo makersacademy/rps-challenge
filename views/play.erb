@@ -1,22 +1,18 @@
 <html>
+
 <style>
-
-form { display: inline; }
-
+  form { display: inline; }
 </style>
-
-
-
 
 <h2> Hello <%= @game.player1.name %>. </h2>
 </p>
 <h2> You are playing against <%= @game.player2.name %>. </h2>
 </p>
-<h2> Choose wisely. <h2>
+<h2> Choose wisely: <h2>
 </p>
 
 <body>
-    <form action="/choice" method="post">
+    <form action="/choice_rock" method="post">
       <input type="image" src="http://picoplex.net/games/rpslp/rock.png" width="200" height="200" alt="Rock">
     </form>
     <form action="/choice" method="post">
@@ -25,4 +21,5 @@ form { display: inline; }
       <input type="image" src="http://picoplex.net/games/rpslp/scissors.png" width="200" height="200" alt="Scissors">
     </form>
 </body>
+
 </html>
