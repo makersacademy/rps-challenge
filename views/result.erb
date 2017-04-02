@@ -1,0 +1,8 @@
+<h2> <%=@player.name%> you chose <%=@player.choice%>, on the other hand <%=@computer.name%> chose <%=@computer.choice%>.</h2>
+<% if @game.result == true %>
+  <h2>Congratulations ! You win \"/</h2>
+<%end%>
+
+<% if @game.result == false %>
+  <h2>Haha, looser !</h2>
+<%end%>

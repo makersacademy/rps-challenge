@@ -1,7 +1,7 @@
-<h2> Congratulations <%=@player.name%>. You decided to go for Rock.</h2>
+<h2> Congratulations <%=@player.name%>. You decided to go for <%=@player.choice%>.</h2>
 
-<h2> Now it's time for the computer to make its choice</h2>
+<h2> GLaDOS made its choice as well. Ready to know who won ??</h2>
 
-<form action='/are_you_sure'>
+<form action='/result'>
   <input type='submit' value="Computer's choice">
 </form>
