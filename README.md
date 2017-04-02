@@ -1,4 +1,4 @@
-#RPS Challenge
+# RPS Challenge
 
 Task
 ----
@@ -19,7 +19,7 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-#Functionality
+# Functionality
 
 [x] the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
@@ -27,7 +27,7 @@ I would like to be able to play rock/paper/scissors
 - the game will choose a random option
 - a winner will be declared
 
-#To use
+# To use
 ```sh
 $ git clone git@github.com:eugeniaguerrero/rps-challenge.git
 $ cd rps-challenge
