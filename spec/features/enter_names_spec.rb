@@ -1,6 +1,6 @@
 feature 'Enter names' do
   scenario 'submitting names' do
-    visit('/')
+    visit('/multiplayer')
     fill_in :player_1_name, with: 'Pedro'
     fill_in :player_2_name, with: 'Trish'
     click_button 'Submit'

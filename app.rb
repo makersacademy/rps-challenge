@@ -6,7 +6,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/' do
     erb :index
+  end
 
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  get '/single-player' do
+    erb :single_player
   end
 
   post '/names' do
