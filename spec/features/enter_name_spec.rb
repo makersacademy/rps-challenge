@@ -13,4 +13,9 @@ feature 'register' do
     sign_in_and_play
     expect(page).to have_content "Yoda, it's your turn!"
   end
+
+  scenario 'have a choice to enter another name or pick computer' do
+    visit('/')
+    expect(page.has_field?("opponent")).to be_truthy
+  end
 end
