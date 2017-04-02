@@ -2,7 +2,7 @@ class AutomatedOpponent
   attr_reader :automated_choice
 
   def initialize
-    @automated_choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
+    @automated_choice = ["Rock 🤘", "Paper 📄", "Scissors ✂️", "Lizard 🦎", "Spock 🖖"].sample
   end
 
   def self.create

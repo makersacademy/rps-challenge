@@ -18,35 +18,35 @@ class Game
     if choice == computer_choice
       @result = "You tie!"
     elsif
-      choice == "Rock" && computer_choice == "Scissors"
+      choice == "Rock 🤘" && computer_choice == "Scissors ✂️"
+      @result = "Rock breaks scissors! You win!"
+    elsif
+      choice == "Paper 📄" && computer_choice == "Rock 🤘"
       @result = "You win!"
     elsif
-      choice == "Paper" && computer_choice == "Rock"
+      choice == "Scissors ✂️" && computer_choice == "Paper 📄"
+      @result = "Scissors cut paper! You win!"
+    elsif
+      choice == "Paper 📄" && computer_choice == "Spock 🖖"
+      @result = "Paper disproves Spock! You win!"
+    elsif
+      choice == "Rock 🤘" && computer_choice == "Lizard 🦎"
+      @result = "Rock crushes lizard! You win!"
+    elsif
+      choice == "Scissors ✂️" && computer_choice == "Lizard 🦎"
+      @result = "Scissors decapitates lizard! You win!"
+    elsif
+      choice == "Spock 🖖" && computer_choice == "Rock 🤘"
       @result = "You win!"
     elsif
-      choice == "Scissors" && computer_choice == "Paper"
-      @result = "Winner, winner! Chicken dinner!"
-    elsif
-      choice == "Paper" && computer_choice == "Spock"
+      choice == "Spock 🖖" && computer_choice == "Scissors ✂️"
       @result = "You win!"
     elsif
-      choice == "Rock" && computer_choice == "Lizard"
-      @result = "You win!"
+      choice == "Lizard 🦎" && computer_choice == "Paper 📄"
+      @result = "Lizard eats paper! You win!"
     elsif
-      choice == "Scissors" && computer_choice == "Lizard"
-      @result = "You win!"
-    elsif
-      choice == "Spock" && computer_choice == "Rock"
-      @result = "You win!"
-    elsif
-      choice == "Spock" && computer_choice == "Scissors"
-      @result = "You win!"
-    elsif
-      choice == "Lizard" && computer_choice == "Paper"
-      @result = "You win!"
-    elsif
-      choice == "Lizard" && computer_choice == "Spock"
-      @result = "You win!"
+      choice == "Lizard 🦎" && computer_choice == "Spock 🖖"
+      @result = "Lizard poisons Spock! You win!"
     else
       @result = "You lose!"
     end
