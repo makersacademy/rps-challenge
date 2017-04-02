@@ -10,12 +10,21 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     $player = Player.new(params[:player_name])
-    redirect('/play')
+    redirect('/player_choice')
   end
 
-  get '/play' do
+  get '/player_choice' do
     @player = $player
-    erb(:play)
+    erb(:player_choice)
+  end
+
+  get '/computer_choice' do
+    @player = $player
+    erb(:computer_choice)
+  end
+
+  get '/are_you_sure' do
+
   end
 
 end
