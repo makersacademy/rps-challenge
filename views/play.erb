@@ -1,4 +1,4 @@
-<h2>Welcome <%=@player%>, prepare yourself for the game of your life!<h2>
+<h2>Welcome <%=@game.player.name%>, prepare yourself for the game of your life!<h2>
 <h3>Which do you choose?<h3>
 <form action='/player_choice' method='POST'>
   <input type='submit' name="choice" value="Rock">
@@ -6,8 +6,8 @@
   <input type='submit' name="choice" value="Scissors">
 </form>
 
-<% if @choice %>
-  You chose <%= @choice %>!
+<% if @game.player.choice %>
+  You chose <%= @game.player.choice %>!
   <form action='/end_game'>
     <input type='submit' value='Confirm'>
   </form>

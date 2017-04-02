@@ -13,6 +13,7 @@ feature 'be able to play the game' do
     click_button "Rock"
     expect(page).to have_content("You chose Rock!")
   end
+  
   scenario 'PC makes a choice' do
     sign_in_and_play
     click_button "Rock"
