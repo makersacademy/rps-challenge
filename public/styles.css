@@ -31,10 +31,12 @@
     font-family: 'Press Start 2P', cursive;
   }
 
-
-
   .title {
     margin-top: 90px;
+  }
+
+  .gameplay-title {
+    margin-top: 30px;
   }
 
   .title h1 {
@@ -70,7 +72,7 @@
 
   .form-block .button {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 14px;
     height: 37px;
     font-family: 'Press Start 2P', cursive;
   }
@@ -89,12 +91,12 @@
     vertical-align: bottom;
 
   }
-
+/*
   .attack-options {
 
     text-align: center;
     vertical-align:middle;
-  }
+  }*/
 
   .audio {
     display: hidden;
@@ -108,6 +110,54 @@
     color: #FFFFFF;
     font-size: 10px;
   }
+
+  .rock-attack img {
+    width:100px;
+  }
+
+  .paper-attack, .rock-attack, .scissors-attack {
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 258px;
+  }
+
+  .paper-attack img {
+    width: 100px;
+  }
+
+  .scissors-attack img {
+    width: 100px;
+  }
+
+  .attack-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    width: 175px;
+    color: #000000;
+    border-radius: 5px;
+    background: #FFFFFF;
+  }
+
+  .back-to-home {
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 14px;
+    height: 37px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .back-to-home button {
+    width: 95px;
+
+  }
+
 
 
 

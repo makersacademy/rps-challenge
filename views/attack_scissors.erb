@@ -11,7 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   </head>
   <body>
-    <div class="title">
+    <form class ="back-to-home" method='get' action='/'>
+      <button type="submit" value="Home" class="button btn btn-default">
+        Home
+      </button>
+    </form>
+    <div class="gameplay-title">
       <h2> <%= @player_1 %> picked scissors.</h2>
     </div>
     <% if $player_2.random_attack == "Rock" %>
@@ -62,5 +67,5 @@
           Play again
         </button>
     </form>
-
-
+  </body>
+</html>

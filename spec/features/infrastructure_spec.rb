@@ -34,4 +34,11 @@ feature "Testing infrastructure" do
     click_button "Play again"
     expect(page).to have_content "Choose wisely..."
   end
+
+  scenario "go back to home screen" do
+    sign_in_and_play
+    click_button "Home"
+    expect(page).to have_content 'Preparing for battle! Enter name:'
+  end
+
 end
