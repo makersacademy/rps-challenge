@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/computer'
+require_relative './lib/results'
 
 class RPS < Sinatra::Base
 
@@ -24,7 +26,10 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    computer = Computer.new
+    $computer_choice = computer.make_decision
     @player_choice = session[:player_choice]
+    $result = Results.new.result(@player_choice, $computer_choice)
     erb(:result)
   end
 
