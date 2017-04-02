@@ -18,4 +18,25 @@ class RPS < Sinatra::Base
     redirect('/play')
   end
 
+  get('/fight') do
+    @selection = session[:player_1_selection]
+    erb(:fight)
+  end
+
+  post('/player_1_rock') do
+    session[:player_1_selection] = "rock"
+    redirect('/fight')
+  end
+
+  post('/player_1_paper') do
+    session[:player_1_selection] = "paper"
+    redirect('/fight')
+  end
+
+  post('/player_1_scissors') do
+    session[:player_1_selection] = "scissors"
+    redirect('/fight')
+  end
+
+
 end
