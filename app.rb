@@ -25,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   get '/computer_choice' do
     @player = $game.player
     @player.send(params[:choice].downcase)
+    @computer = $game.computer
     erb(:computer_choice)
   end
 
@@ -33,6 +34,7 @@ class RockPaperScissors < Sinatra::Base
     @computer = $game.computer
     @computer.choosing
     @game = $game
+    @game.choice
     erb(:result)
   end
 

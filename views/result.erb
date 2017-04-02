@@ -4,5 +4,15 @@
 <%end%>
 
 <% if @game.result == false %>
-  <h2>Haha, looser !</h2>
+  <h2>Haha, loser!</h2>
 <%end%>
+
+<% if @game.result == nil %>
+  <h2>Hmmmm, it's tied... That's boring!</h2>
+<%end%>
+
+<h2> Wanna play a new game? (I think you do) </h2>
+
+<form action='/player_choice'>
+  <input type='submit' value='New Game'>
+</form>

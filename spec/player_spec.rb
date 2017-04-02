@@ -11,5 +11,15 @@ describe Player do
     player.rock
     expect(player.choice).to eq player.rock
   end
+
+  it "Can choose paper and it changes the variable choice" do
+    player.paper
+    expect(player.choice).to eq player.paper
+  end
+
+  it "Can choose scissors and it changes the variable choice" do
+    player.scissors
+    expect(player.choice).to eq player.scissors
+  end
   
 end
