@@ -1,0 +1,17 @@
+<style>
+
+body {
+    background-image: url(https://media.giphy.com/media/6Fl8k0igiI5I4/giphy.gif);
+    background-size: cover;
+    color: white;
+}
+
+</style>
+
+<h1> You Lose </h1>
+
+<h2> Look <%= @game.player1.name %>, I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over. </h2>
+
+<form action="/play" method="get">
+  <input type="submit" value="play again">
+</form>
