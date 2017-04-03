@@ -39,3 +39,17 @@ $ rackup
 Rackup will enable you to visit 'localhost:9292' on your web browser and play my game. When you've had enough RPS excitement you can kill the server by entering `ctrl` + `c`.
 
 I hope you has as much fun playing this game as I did building it! 🎉
+
+## Screenshots
+
+Home page
+
+![Home page](http://imgur.com/a/t4Bns)
+
+Selection page
+
+![Selection page](http://imgur.com/a/LDGK9)
+
+Results page
+
+![Results page](http://imgur.com/a/mrk2t)
