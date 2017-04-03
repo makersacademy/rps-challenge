@@ -4,6 +4,7 @@ ruby '2.4.0'
 
 gem 'sinatra'
 gem 'rake'
+gem 'pry'
 
 group :test do
   gem 'rspec'
@@ -12,4 +13,5 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'rack'
 end

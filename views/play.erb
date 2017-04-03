@@ -1,0 +1,21 @@
+<body style="background: #E0EAFC;
+background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
+background: linear-gradient(to left, #E0EAFC , #CFDEF3);
+font-family: Verdana, Geneva, sans-serif;">
+  <center>
+    <h1>🙋 <%= @player.name %> vs. <%= @computer.name %> 💻</h1>
+    <h3> Current Score: </h3>
+    <h3>🙋 <%= @player.name %> <%= @player.score %>-<%= @computer.score %> <%= @computer.name %> 💻</h3>
+    <img src="https://m0.joe.ie/wp-content/uploads/2015/06/11172535/RPS.gif", style= "border-radius:35px">
+    <br />
+    <form action="/attack" method="post">
+      <label for="action">Weapon of Choice:</label>
+      <select name="player_attack_method" id="action">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <button type="submit" value="Battle">Battle</button>
+    </form>
+  </center>
+</body>
