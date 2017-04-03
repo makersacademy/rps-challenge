@@ -2,6 +2,17 @@
 require 'coveralls'
 require 'simplecov'
 
+ENV['RACK_ENV'] = 'test'
+
+require './rps.rb'
+# require 'features/web_helpers.rb'
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+Capybara.app = RPS
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
