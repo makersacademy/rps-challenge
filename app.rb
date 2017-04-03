@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/game'
+require_relative './lib/player'
 
 class Spar < Sinatra::Base
 
@@ -18,7 +19,14 @@ class Spar < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    @game = Game.instance
+    @game.player.player_choice(params[:choice])
+    redirect '/result'
+  end
+
   get '/result' do
+    @game = Game.instance
     erb :result
   end
 
