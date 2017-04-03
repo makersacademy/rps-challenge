@@ -26,10 +26,6 @@ class Game
     @user_choice = choice
   end
 
-  def update_round
-    self.round_number += 1
-  end
-
   def game_pick
     @game_choice = [:rock, :paper, :scissors].sample
   end
@@ -44,6 +40,10 @@ class Game
 
   def draw?
     result == :draw
+  end
+
+  def update_round
+    self.round_number += 1
   end
 
   private

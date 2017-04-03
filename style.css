@@ -29,6 +29,7 @@ body {
 .left {
   position: relative;
   text-align: left;
+  left: 4%;
 }
 
 .centered {
