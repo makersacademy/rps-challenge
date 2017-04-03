@@ -37,5 +37,4 @@ class Computer
           choose_scissors
         end
     end
-    
   end

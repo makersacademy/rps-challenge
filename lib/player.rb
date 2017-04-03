@@ -24,5 +24,4 @@ class Player
   def choose_scissors
     @choice = "scissors"
   end
-
 end

@@ -2,6 +2,8 @@
 
 Rock, Paper, Scissors Online Game which allows the player to put in their name, choose from three weapons and play against the computer. The game will declare a winner!
 
+![Screenshot] (https://www.dropbox.com/home?preview=Screen+Shot+2017-04-03+at+11.50.04.png)
+
 ### Key features:
 - Allows marketeer to input name
 - Marketeer is present the choices (rock, paper and scissors)
@@ -9,6 +11,7 @@ Rock, Paper, Scissors Online Game which allows the player to put in their name, 
 - Game will choose a random option
 - Computer chooses its weapon
 - A winner is declared
+
 
 ### To install:
 1. git clone https://github.com/connie-reinholdsson/rps-challenge.git
@@ -37,8 +40,6 @@ Rock, Paper, Scissors Online Game which allows the player to put in their name, 
 |             |                   |player_wins    |
 |             |                   |lets_play      |
 |             |                   |confirmation  ||
-
-```
 
 
 # RPS Challenge
