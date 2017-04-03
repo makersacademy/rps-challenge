@@ -13,11 +13,11 @@ body {
 }
 </style>
 <body>
-  <h3><%= @game.human.name %> chose the <%= @game.human.choice %></h3>
-  <h3>You came up against a <%= @game.comp.choice %></h3>
-<% if @game.calculate_winner == "Human wins" %>
+  <h3><%= @game.player_1.name %> chose the <%= @game.player_1_choice %></h3>
+  <h3>You came up against a <%= @game.player_2_choice %></h3>
+<% if @game.calculate_winner == :player_1_win %>
   <h2>You got the girl!</h2>
-  <% elsif @game.calculate_winner == "Comp wins" %>
+  <% elsif @game.calculate_winner == :player_2_win %>
   <h2>You were outcompeted! Better luck next mating season</h2>
   <% else %>
     <h2>You came up against your own kind. Draw!</h2>
