@@ -1,3 +1,4 @@
+#stores name and selection of player
 
 class Player
 

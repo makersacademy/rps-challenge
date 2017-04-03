@@ -1,3 +1,6 @@
+#stores instances of player and computer
+
+require_relative 'player'
 require_relative 'player'
 class Game
 

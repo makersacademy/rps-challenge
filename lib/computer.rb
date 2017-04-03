@@ -1,3 +1,5 @@
+#stores and chooses the selection of the computer
+
 class Computer
 
   attr_reader :selection

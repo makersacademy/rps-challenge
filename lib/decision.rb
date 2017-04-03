@@ -1,3 +1,5 @@
+#Decides whether the player or computer has won
+
 class Decision
 
   attr_reader :win
