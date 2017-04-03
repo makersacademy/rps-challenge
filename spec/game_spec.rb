@@ -3,8 +3,10 @@ require 'game'
 describe Game do
 
 subject(:game) { described_class.new(player_1, player_2)}
-let(:player_1) { double :player_1 }
-let(:player_2) { double :player_2 }
+let(:player_1) { double :player_1, :hand => hand_1 }
+let(:player_2) { double :player_2, :hand => hand_2 }
+let(:hand_1) {double :hand_1, :name => 'scissors'}
+let(:hand_2) {double :hand_2, :name => 'scissors'}
 
   describe '#player_1' do
     it 'returns player_1' do
@@ -32,5 +34,10 @@ let(:player_2) { double :player_2 }
     end
   end
 
+  describe '#draw' do
+    it 'is true if the hands have the same name' do
+      expect(game).to be_draw
+    end
+  end
 
 end

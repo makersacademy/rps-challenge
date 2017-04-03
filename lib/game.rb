@@ -3,7 +3,7 @@ require_relative 'robot'
 
 class Game
 
-  attr_reader :player_1, :player_2, :playing, :rules
+  attr_reader :player_1, :player_2, :playing
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -21,6 +21,10 @@ class Game
 
   def switch_turn
     playing == player_1 ? self.playing = player_2 : self.playing = player_1
+  end
+
+  def draw?
+    player_1.hand.name == player_2.hand.name
   end
 
   def winner

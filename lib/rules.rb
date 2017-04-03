@@ -16,4 +16,6 @@ class Rules
       "lizard" => Hand.new('lizard', 'spock', 'paper') }
   end
 
+
+
 end
