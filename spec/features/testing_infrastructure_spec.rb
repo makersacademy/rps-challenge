@@ -41,4 +41,8 @@ end
             expect(page).to have_content "Connie chose scissors" # Display content.
             end
           end
-end
+        end
+
+
+# Add button
+# Add link
