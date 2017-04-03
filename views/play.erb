@@ -1,1 +1,13 @@
-<%= @player_1_name %> vs. Computer
+<h1><%=player_1%> vs. Computer</h1>
+
+<h3>What will you pick?</h3>
+
+<form action="/result" method="post">
+  <input type="submit" value="Rock">
+</form>
+<form action="/result" method="post">
+  <input type="submit" value="Paper">
+</form>
+<form action="/result" method="post">
+  <input type="submit" value="Scissors">
+</form>

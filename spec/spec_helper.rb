@@ -19,6 +19,6 @@ require 'capybara/rspec'
 require 'rspec'
 
 require 'features/app_features'
-# require 'features/web_helpers'
+require 'features/web_helper'
 
 Capybara.app = Spar
