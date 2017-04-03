@@ -6,11 +6,11 @@ class Robot
 
   def initialize
     @name = 'The computer'
-    @rules = Rules.spock
+    @rules = Rules.lizard 
   end
 
-  def set_hand 
-    @hand = rules.values.sample
+  def set_hand
+    @hand = rules.keys.sample
   end
 
 end

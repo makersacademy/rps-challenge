@@ -13,7 +13,7 @@ subject(:player) { described_class.new('Thor') }
   describe '#set_hand' do
     it 'sets the hand' do
       player.set_hand('scissors')
-      expect(player.hand).to eq player.rules['scissors']
+      expect(player.hand).to eq :scissors 
     end
   end
 

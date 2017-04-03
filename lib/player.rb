@@ -2,15 +2,14 @@ require_relative 'rules'
 
 class Player
 
-  attr_reader :name, :hand, :rules
+  attr_reader :name, :hand 
 
   def initialize(name)
     @name = name
-    @rules = Rules.spock
   end
 
   def set_hand(hand)
-    @hand = rules[hand]
+    @hand = hand.to_sym
   end
 
 end
