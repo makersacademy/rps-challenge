@@ -1,0 +1,14 @@
+<h1> You chose <%=@game.player_1.hand%>, while <%= @game.player_2.name %> chose <%=@game.player_2.hand%> </h1>
+
+<% @game.result %>
+<% if @game.draw? %>
+Therefore, it's a draw!
+
+<% elsif @game.player_1.name == @game.result %>
+Therefore, you won the game!
+
+<% else %>
+
+Therefore, <%= @game.player_2.name %> won the game!
+
+<% end %>

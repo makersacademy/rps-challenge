@@ -1,3 +1,8 @@
-<h1>
-  <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-</h1>
+<h1> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h1>
+
+<form action='/game' method='post'>
+  <input type='submit' value='rock' name='hand'>
+  <input type='submit' value='paper' name='hand'>
+  <input type='submit' value='scissors' name='hand'>
+
+</form>
