@@ -1,0 +1,23 @@
+<body background='https://dutron.files.wordpress.com/2008/09/mai-68-moutons-retour-a-la-normale.gif'>
+
+<div><center><font face = "courier" size=10><%=@game.player_1.name%> played <%=@game.player_1.hand%>!</font></center></div>
+
+<div><center><font face = "courier" size=10><%=@game.player_2.name%> played <%=@game.player_2.hand%>!</font></center></div>
+
+<% if @game.draw? %>
+<div><center><font face = "courier" size=10>It's a draw!</font></center></div>
+<% else %>
+<div><center><font face = "courier"size=10><%=@game.winner.name%> wins!</font></center></div>
+<% end %>
+
+<div><center>
+<form action='/choose_weapon'>
+  <input type="submit" value="Play again">
+</form>
+</center></div>
+
+<div><center>
+<form action='/'>
+  <input type="submit" value="Start again">
+</form>
+</center></div>
