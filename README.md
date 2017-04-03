@@ -2,11 +2,10 @@
 
 Rock, Paper, Scissors Online Game which allows the player to put in their name, choose from three weapons and play against the computer. The game will declare a winner!
 
-
 ![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2011.50.04.png)
 
 
-![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2011.50.04.png)
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2012.34.28.png)
 
 
 ![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2012.34.48.png)
