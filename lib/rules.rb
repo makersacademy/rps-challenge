@@ -3,9 +3,12 @@ require_relative 'hand'
 class Rules
 
   def self.lizard
-    {rock: [:scissors, :lizard], paper: [:rock, :spock], scissors: [:paper, :lizard], spock: [:scissors, :rock], lizard: [:spock, :paper]}
+    @hands = [:rock, :lizard, :spock, :scissors, :paper]
+    @rules = {}
+    @hands.each do |x|
+      @rules[x] = [@hands[@hands.index(x)-2], @hands[@hands.index(x)-4] ]
+    end
+    @rules
   end
-
-
 
 end
