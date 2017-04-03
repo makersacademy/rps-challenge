@@ -23,9 +23,20 @@ describe Player do
   end
 
   describe '.get' do
-    it 'returns the name of the player' do
-      described_class.set_instance("Yoda")
-      expect(described_class.get.name).to eq "Yoda"
+    context "when singleplayer" do
+      it 'returns the player' do
+        described_class.set_instance("Yoda")
+        expect(described_class.get.first.name).to eq "Yoda"
+    end
+    end
+
+    context "when multiplayer" do
+      it 'returns both players' do
+        described_class.set_instance("Yoda")
+        described_class.set_instance("Darth Vader")
+        p described_class.get
+        expect(described_class.get.count).to eq 2
+      end
     end
   end
 end

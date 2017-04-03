@@ -6,7 +6,7 @@ require_relative './lib/game'
 class RPS < Sinatra::Base
 
   before '/*' do
-    @player = Player.get
+    @player1, @player2 = Player.get
   end
 
   get '/' do
@@ -15,6 +15,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     Player.set_instance(params["name"])
+    Player.set_instance(params["second_name"]) if params["second_name"]
     redirect '/start'
   end
 
@@ -23,12 +24,16 @@ class RPS < Sinatra::Base
   end
 
   post '/choice' do
-    @player.save_choice(params["choice"])
+    @player1.save_choice(params["choice"])
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.new(@player, Computer.new)
+    if @player2.nil?
+      @game = Game.new(@player, Computer.new)
+    else
+      @game = Game.new(@player1, @player2)
+    end
     @result = @game.result
     erb(:result)
   end

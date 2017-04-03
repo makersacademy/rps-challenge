@@ -30,12 +30,12 @@ section {
 
 <section>
 <div id="user_choice">
-<h1> You picked <%= @player.choice %> </h1>
-<% if @player.choice == :rock %>
+<h1> You picked <%= @player1.choice %> </h1>
+<% if @player1.choice == :rock %>
   <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" id="user_choice">
-<% elsif @player.choice == :paper %>
+<% elsif @player1.choice == :paper %>
   <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" id="user_choice">
-<% elsif @player.choice == :scissors %>
+<% elsif @player1.choice == :scissors %>
   <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" id="user_choice">
 <% end %>
 </div>

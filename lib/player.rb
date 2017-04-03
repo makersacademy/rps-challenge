@@ -12,11 +12,15 @@ class Player
   end
 
   def self.set_instance(name)
-    @player = Player.new(name)
+    if @player.nil?
+      @player = Player.new(name)
+    else
+      @player2 = Player.new(name)
+    end
   end
 
   def self.get
-    @player
+    [@player, @player2]
   end
 
   private
