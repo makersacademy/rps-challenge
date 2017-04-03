@@ -1,8 +1,10 @@
 class Computer
   attr_reader :result
 
+  SHAPES = %w[Rock Paper Scissors]
+
   def initialize
-    @result = %w[Rock Paper Scissors].sample
+    @result = SHAPES.sample
   end
 
 end

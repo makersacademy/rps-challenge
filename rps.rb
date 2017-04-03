@@ -39,7 +39,7 @@ class RPS < Sinatra::Base
     @scissors = session[:scissors]
 
     @computer = Computer.new.result
-    @result = Game.new(@rock.to_s + @paper.to_s + @scissors.to_s,@computer).winner
+    @result = Game.new(@rock.to_s + @paper.to_s + @scissors.to_s,@computer).result.to_s
 
     erb(:game)
   end
