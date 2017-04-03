@@ -1,7 +1,9 @@
 # ensure the following is AT THE TOP of your spec_helper.rb to get test coverage stats
+require 'spec_helper'
 ENV['RACK_ENV'] = 'test'
+require './app.rb'
 
-# require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
 
 require 'capybara'
 require 'capybara/rspec'
@@ -21,3 +23,5 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+Capybara.app = Rps
