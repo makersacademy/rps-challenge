@@ -6,9 +6,9 @@ def register_and_play
 end
 
 
-def play_three_times
-  register_and_play
-  click_button 'Rock'
-  click_button 'Play again'
-  click_button 'Paper'
-end
+# def play_three_times
+#   register_and_play
+#   click_button 'Rock'
+#   click_button 'Play again'
+#   click_button 'Paper'
+# end

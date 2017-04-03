@@ -9,6 +9,10 @@ class RockPaperScissors < Sinatra::Base
   set :session_secret, 'super secret'
   set :public_folder, File.dirname(__FILE__) + '/'
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -16,35 +20,30 @@ class RockPaperScissors < Sinatra::Base
   post '/registered' do
     player_1 = Player.new(params[:player_1])
     # player_2 = Player.new(params[:player_2])
-    $game = Game.new(player_1)
+    @game = Game.create(player_1)
     redirect '/play', 302
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   post '/choice' do
-    @game = $game
     @game.player_choice(params[:choice])
     @game.game_pick
     redirect '/result', 302
   end
 
   get '/result' do
-    @game = $game
     erb :result
   end
 
   post '/next_round' do
-    @game = $game
     @game.update_round
     redirect '/play', 302
   end
 
   post '/reset' do
-    @game = $game
     redirect '/', 302
   end
 
