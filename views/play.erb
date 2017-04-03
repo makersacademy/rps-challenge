@@ -38,21 +38,23 @@ img:hover {
   opacity: 0.5;
 }
 
+
 </style>
 
+<% if @player2.nil? %>
 <h1> <%=@player1.name %>, it's your turn! </h1>
 
 <form action='/choice' method='post'>
   <label for="rock">
-    <input type='radio' name='choice' value="rock" id="rock">
+    <input type='radio' name='choice' value="rock" id="rock" onclick="show()">
     <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" onclick="myFunction(this)">
   </label>
   <label for="paper">
-    <input type='radio' name='choice' value="paper" id="paper">
+    <input type='radio' name='choice' value="paper" id="paper" onclick="show()">
     <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" onclick="myFunction(this)">
   </label>
   <label for="scissors">
-    <input type='radio' name='choice' value="scissors" id="scissors">
+    <input type='radio' name='choice' value="scissors" id="scissors" onclick="show()">
     <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" onclick="myFunction(this)">
   </label>
   <div id="button">
@@ -60,10 +62,61 @@ img:hover {
   </div>
 </form>
 
+<% else %>
+<div id="player1">
+<h1> <%=@player1.name %>, it's your turn! </h1>
+
+<form action='/choice' method='post'>
+  <label for="rock">
+    <input type='radio' name='choice' value="rock" id="rock" onclick="show(); dissapear()">
+    <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" onclick="myFunction(this)">
+  </label>
+  <label for="paper">
+    <input type='radio' name='choice' value="paper" id="paper" onclick="show(); dissapear()">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" onclick="myFunction(this)">
+  </label>
+  <label for="scissors">
+    <input type='radio' name='choice' value="scissors" id="scissors" onclick="show(); dissapear">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" onclick="myFunction(this)">
+  </label>
+</div>
+
+<div id="player2" hidden style="text-align:center">
+<h1> <%=@player2.name %>, it's your turn! </h1>
+
+  <label for="rock2">
+    <input type='radio' name='choice2' value="rock" id="rock2">
+    <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" onclick="myFunction(this)">
+  </label>
+  <label for="paper2">
+    <input type='radio' name='choice2' value="paper" id="paper2">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg" alt="paper" onclick="myFunction(this)">
+  </label>
+  <label for="scissors2">
+    <input type='radio' name='choice2' value="scissors" id="scissors2">
+    <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg" alt="scissors" onclick="myFunction(this)">
+  </label>
+  <div id="button">
+    <button type="submit" value="Submit">Shoot</button>
+  </div>
+</div>
+</form>
+<% end %>
+
 <script>
   function myFunction(image)
   {
     image.style.opacity = "0.7";
     image.style.border = "2px solid yellow";
+  }
+
+  function show()
+  {
+    document.getElementById("player2").removeAttribute("hidden");
+  }
+
+  function dissapear()
+  {
+    document.getElementById("player1").setAttribute("style","display:none");
   }
 </script>
