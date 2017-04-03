@@ -1,6 +1,7 @@
 
 class Game
 
+  WEAPONS = [:rock, :paper, :scissors]
   RULES = {:rock => :scissors, :paper => :rock, :scissors => :paper}
 
   def initialize(player_choice, computer_choice)

@@ -1,7 +1,8 @@
+require 'game'
 class ComputerWeaponChoice
 
   def initialize
-    @choice = [:rock, :paper, :scissors].sample
+    @choice = Game::WEAPONS.sample
   end
 
   attr_reader :choice

@@ -21,4 +21,14 @@ require_relative '../../app.rb'
       sign_in_and_play_rock
       expect(page).to have_content("A player victory")
     end
+
+    scenario 'player chooses paper, computer chooses scissors, player loses' do
+      sign_in_and_play_paper
+      expect(page).to have_content("A computer victory")
+    end
+
+    scenario 'player chooses paper, computer chooses scissors, player loses' do
+      sign_in_and_play_scissors
+      expect(page).to have_content("A computer victory")
+    end
   end
