@@ -15,39 +15,39 @@ describe Decision do
   describe '#initialize' do
 
     it 'rock scissors outcome' do
-      expect(prockcscissors.win).to be true
+      expect(Decision.result(:rock, :scissors)).to eq :win
     end
 
     it 'rock paper outcome' do
-      expect(prockcpaper.win).to be false
+      expect(Decision.result(:rock, :paper)).to eq :lose
     end
 
     it 'rock rock outcome' do
-      expect(prockcrock.win).to be false
+      expect(Decision.result(:rock, :rock)).to eq :draw
     end
 
     it 'paper scissors outcome' do
-      expect(ppapercscissors.win).to be false
+      expect(Decision.result(:paper, :scissors)).to eq :lose
     end
 
     it 'paper paper outcome' do
-      expect(ppapercpaper.win).to be false
+      expect(Decision.result(:paper, :paper)).to eq :draw
     end
 
     it 'paper rock outcome' do
-      expect(ppapercrock.win).to be true
+      expect(Decision.result(:paper, :rock)).to eq :win
     end
 
     it 'scissors scissors outcome' do
-      expect(pscissorscscissors.win).to be false
+      expect(Decision.result(:scissors, :scissors)).to eq :draw
     end
 
     it 'scissors paper outcome' do
-      expect(pscissorscpaper.win).to be true
+      expect(Decision.result(:scissors, :paper)).to eq :win
     end
 
     it 'scissors rock outcome' do
-      expect(pscissorscrock.win).to be false
+      expect(Decision.result(:scissors, :rock)).to eq :lose
     end
 
   end

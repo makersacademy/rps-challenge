@@ -30,17 +30,11 @@ class Rps < Sinatra::Base
 
   post '/compare' do
     Rps.game.player.assign_choice((params['choice']).downcase.to_sym)
-    @decision = Decision.new(Rps.game.player.selection, Rps.game.computer.selection)
-    redirect to('/win') if @decision.win
-    redirect to('/lose')
+    redirect to('/result')
   end
 
-  get '/win' do
-    erb :win
-  end
-
-  get '/lose' do
-    erb :lose
+  get '/result' do
+    erb Decision.result(Rps.game.player.selection, Rps.game.computer.selection)
   end
 
   get '/playagain' do

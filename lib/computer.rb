@@ -2,14 +2,16 @@
 
 class Computer
 
+  WEAPONS = [:rock, :paper, :scissors]
+
   attr_reader :selection
 
   def initialize
-    @selection = [:rock, :paper, :scissors].sample
+    @selection = WEAPONS.sample
   end
 
   def reselect
-    self.selection = [:rock, :paper, :scissors].sample
+    self.selection = WEAPONS.sample
   end
 
   private

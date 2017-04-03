@@ -6,8 +6,10 @@ class Decision
 
   RULES = {:rock => :scissors, :scissors => :paper, :paper => :rock}
 
-  def initialize(playerchoice, computerchoice)
-    @win = (RULES[playerchoice] == computerchoice)
+  def self.result(playerchoice, computerchoice)
+    return :win if (RULES[playerchoice] == computerchoice)
+    return :draw if (playerchoice == computerchoice)
+    :lose
   end
 
 private
