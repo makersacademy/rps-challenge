@@ -51,9 +51,11 @@ describe Game do
       end
     end
 
-    # it 'adds count to winners ' do
-    #
-    # end
+    describe '#game_pick' do
+      it 'should pick rock, paper or scissors' do
+        expect(game).to respond_to(:game_pick)
+      end
+    end
   end
 
 
