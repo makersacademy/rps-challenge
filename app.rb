@@ -26,7 +26,6 @@ class RPS < Sinatra::Base
   post '/choice' do
     @player1.save_choice(params["choice"])
     @player2.save_choice(params["choice2"]) if !!@player2
-    p params["choice"]
     redirect '/result'
   end
 

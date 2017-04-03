@@ -22,7 +22,8 @@ describe Game do
       it 'returns the winner' do
         allow(user).to receive(:choice) {:paper}
         allow(computer).to receive(:choice) {:rock}
-        expect(game.result).to eq "You lucky opposum. Congratulations!"
+        allow(computer).to receive(:name)
+        expect(game.result).to eq "#{computer}, you lucky opposum. Congratulations!"
       end
     end
 
