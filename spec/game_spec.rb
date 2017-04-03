@@ -25,38 +25,61 @@ describe Game do
     end
   end
 
-  describe '#round_winner' do
-    before do
-      game.player_choice('rock')
-    end
-
-    context 'if a draw' do
-      it "returns 'draw' if a draw" do
-        allow(game).to receive(:game_choice) { 'rock' }
-        expect(game.round_winner).to eq 'draw'
-      end
-    end
-
-    context 'if player wins' do
-      it 'returns the player if they win' do
-        allow(game).to receive(:game_choice) { 'scissors' }
-        expect(game.round_winner).to eq player1.name
-      end
-    end
-
-    context 'if robot wins' do
-      it 'returns robot if they win' do
-        allow(game).to receive(:game_choice) { 'paper' }
-        expect(game.round_winner).to eq 'robot'
-      end
-    end
-
-    describe '#game_pick' do
-      it 'should pick rock, paper or scissors' do
-        expect(game).to respond_to(:game_pick)
-      end
+  describe '#draw?' do
+    it "returns 'draw' if a draw" do
+      allow(game).to receive(:game_choice) { :rock }
+      game.player_choice(:rock)
+      expect(game.draw?).to be_truthy
     end
   end
+
+  describe '#win?' do
+    it 'returns true if player wins (player choice = rock)' do
+      allow(game).to receive(:game_choice) { :scissors }
+      game.player_choice(:rock)
+      expect(game.win?).to be_truthy
+    end
+
+    it 'returns true if player wins (player choice = scissors)' do
+      allow(game).to receive(:game_choice) { :paper }
+      game.player_choice(:scissors)
+      expect(game.win?).to be_truthy
+    end
+
+    it 'returns true if player wins (player choice = paper)' do
+      allow(game).to receive(:game_choice) { :rock }
+      game.player_choice(:paper)
+      expect(game.win?).to be_truthy
+    end
+  end
+
+  describe '#lose' do
+    it 'returns true if robot wins (robot choice = paper)' do
+      allow(game).to receive(:game_choice) { :paper }
+      game.player_choice(:rock)
+      expect(game.lose?).to be_truthy
+    end
+
+    it 'returns true if robot wins (robot choice = scissors)' do
+      allow(game).to receive(:game_choice) { :scissors }
+      game.player_choice(:paper)
+      expect(game.lose?).to be_truthy
+    end
+
+    it 'returns true if robot wins (robot choice = rock)' do
+      allow(game).to receive(:game_choice) { :rock }
+      game.player_choice(:scissors)
+      expect(game.lose?).to be_truthy
+    end
+  end
+
+  describe '#game_pick' do
+    it 'should pick rock, paper or scissors' do
+      game.player_choice(:rock)
+      expect(game).to respond_to(:game_pick)
+    end
+  end
+
 
 
 end

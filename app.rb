@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
-require 'pry'
 
 # keep me slim controller
 class RockPaperScissors < Sinatra::Base
@@ -29,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    @game.player_choice(params[:choice])
+    @game.player_choice(params[:choice].to_sym)
     @game.game_pick
     redirect '/result', 302
   end
@@ -41,10 +40,6 @@ class RockPaperScissors < Sinatra::Base
   post '/next_round' do
     @game.update_round
     redirect '/play', 302
-  end
-
-  post '/reset' do
-    redirect '/', 302
   end
 
 end

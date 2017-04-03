@@ -1,12 +1,17 @@
 class Game
 
-  attr_reader :player, :user_choice, :game_choice, :round_number, :winner_count
+  attr_reader :player, :user_choice, :game_choice, :round_number
   attr_writer :round_number
+
+  GAME_RULES = {
+    rock: {rock: :draw, paper: :lose, scissors: :win},
+    paper: {rock: :win, paper: :draw, scissors: :lose},
+    scissors: {rock: :lose, paper: :win, scissors: :draw}
+    }
 
   def initialize(player)
     @player = player
     @round_number = 1
-    @winner_count = {}
   end
 
   def self.create(player)
@@ -25,42 +30,28 @@ class Game
     self.round_number += 1
   end
 
-  def round_winner
-    if draw?
-      return 'draw'
-    else
-      return who_won
-    end
+  def game_pick
+    @game_choice = [:rock, :paper, :scissors].sample
   end
 
-  def game_pick
-    @game_choice = ['rock', 'paper', 'scissors'].sample
+  def win?
+    result == :win
+  end
+
+  def lose?
+    result == :lose
+  end
+
+  def draw?
+    result == :draw
   end
 
   private
 
   attr_writer :user_choice, :game_choice
 
-  def draw?
-    game_choice == user_choice
-  end
-
-  def who_won
-    if ((user_choice == 'rock' && game_choice == 'paper') ||
-          (user_choice == 'scissors' && game_choice == 'rock') ||
-          (user_choice == 'paper' && game_choice == 'scissors'))
-      'robot'
-    else
-      self.player.name
-    end
+  def result
+    GAME_RULES[user_choice][game_choice]
   end
 
 end
-
-# robot_win = ((user_choice == 'rock' && game_choice == 'paper') ||
-#       (user_choice == 'scissors' && game_choice == 'rock') ||
-#       (user_choice == 'paper' && game_choice == 'scissors'))
-
-# robot_lose = ((user_choice == 'rock' && game_choice == 'scissors') ||
-#       (user_choice == 'scissors' && game_choice == 'paper') ||
-#       (user_choice == 'paper' && game_choice == 'rock'))
