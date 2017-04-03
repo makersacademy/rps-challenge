@@ -6,7 +6,7 @@ class Robot
 
   def initialize
     @name = 'The computer'
-    @rules = Rules.lizard 
+    @rules = Rules.make_rules 
   end
 
   def set_hand

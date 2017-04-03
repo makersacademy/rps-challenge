@@ -30,7 +30,6 @@ class Game
 
   def winner
     rules[player_1.hand].include?(player_2.hand) ? player_1 : player_2
-
   end
 
   private
