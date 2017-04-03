@@ -6,23 +6,23 @@ Walkthrough
 
 1. Open the web app.
 
-![Homepage] (http://imgur.com/U1mFnJg)
+(http://imgur.com/U1mFnJg)
 
 2. Enter the player name.
 
-![PlayerName] (http://imgur.com/a/lycCv)
+(http://imgur.com/a/lycCv)
 
 3. Enter the Arena!
 
 4. Choose your weapon.
 
-![WeaponSelect] (http://imgur.com/a/mVMHA)
+(http://imgur.com/a/mVMHA)
 
 5. Go to Battle!
 
 6. See the results...
 
-![Results] (http://imgur.com/a/CFhgC)
+(http://imgur.com/a/CFhgC)
 
 Instructions
 -------
