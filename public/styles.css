@@ -1,5 +1,3 @@
-
-
   body {
     background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://orig09.deviantart.net/879c/f/2012/119/1/0/pixel_waterfall_bg__by_isohei-d4xntof.gif") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -59,16 +57,25 @@
     margin: 0;
     color: #FFFFFF;
     margin-top: 25px;
-  }
+    font-family: 'Press Start 2P', cursive;
 
-  .form-block .input {
-    vertical-align: middle;
-    color: #000000;
   }
 
   .form-block label {
     font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
   }
+
+  .form-block label input {
+    vertical-align: middle;
+    color: #000000;
+    height: 36px;
+    width: 260px;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+
 
   .form-block .button {
     margin-bottom: 5px;
@@ -143,6 +150,11 @@
     color: #000000;
     border-radius: 5px;
     background: #FFFFFF;
+  }
+
+  .button:hover {
+    box-shadow:
+      0px 0px 5px rgba(57,32,22,0.7);
   }
 
   .back-to-home {

@@ -13,7 +13,7 @@ class RPS < Sinatra::Base
 
   post '/names' do
     $player_1 = Player.new(params[:player_1_name])
-    $player_2 = Player.new("computer")
+    $computer = Player.new("computer")
     redirect to('/play')
   end
 
@@ -29,13 +29,13 @@ class RPS < Sinatra::Base
 
   post '/attack_paper' do
     @player_1 = $player_1.name
-    $player_2.random_attack
+    $computer.random_attack
     erb :attack_paper
   end
 
   post '/attack_scissors' do
     @player_1 = $player_1.name
-    $player_2.random_attack
+    $computer.random_attack
     erb :attack_scissors
   end
 end

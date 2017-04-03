@@ -19,7 +19,7 @@
     <div class="gameplay-title">
       <h2> <%= @player_1 %> picked paper.</h2>
     </div>
-    <% if $player_2.random_attack == "Rock" %>
+    <% if $computer.random_attack == "Rock" %>
       <!-- img for Paper vs Rock -->
       <div class="attack">
         <div class="rps-challenge">
@@ -33,7 +33,7 @@
       <source src="win.wav" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
-    <% elsif $player_2.random_attack == "Paper" %>
+    <% elsif $computer.random_attack == "Paper" %>
       <!-- img for Paper vs Paper -->
       <div class="attack">
         <div class="rps-challenge">
