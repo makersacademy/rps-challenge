@@ -10,5 +10,14 @@ SimpleCov.formatters = [
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
+ENV["RACK_ENV"] = "test"
+
 require 'byebug'
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require_relative './features/web_helpers'
+
+require File.join(File.dirname(__FILE__),'..','app.rb')
+
+Capybara.app = RPS

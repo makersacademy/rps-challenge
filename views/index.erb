@@ -1,0 +1,19 @@
+<center>
+  <h1> Ready to try your luck? </h1>
+  <form action='/name' method="post">
+    <label for="name">Name: <input type="text", name="name"></label>
+  </p>
+    <label for="computer">Computer<input type="radio", name="opponent" value="computer" id="computer" required></label>
+    <label for="user" onclick="myFunction()">Friend<input type="radio", name="opponent" value="user" id="user" required></label>
+  </p>
+    <input type="text" name="second_name" hidden id="second_name">
+  </p>
+    <input type="submit", value="Let me play">
+  </form>
+</center>
+
+<script>
+function myFunction() {
+  document.getElementById('second_name').removeAttribute("hidden")
+}
+</script>
