@@ -39,6 +39,8 @@ Clone repository:
 ```
 $ git clone git@github.com:nazwhale/rps-challenge.git
 $ cd rps-challenge
+$ bundle
+$ rackup
 ```
 
 Install dependencies with bundle:

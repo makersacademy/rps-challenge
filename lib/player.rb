@@ -1,6 +1,8 @@
 class Player
   attr_reader :name, :type, :choice
 
+  CHOICE = ["Yellow-throated sneaker", "Dominant blue-throat", "Ultradominant orange-throat"]
+
   def initialize(name = "comp", type = "comp")
     @name = name
     @type = type
@@ -8,26 +10,19 @@ class Player
   end
 
   def choose_yellow
-    @choice = "Yellow-throated sneaker"
+    @choice = CHOICE[0]
   end
 
   def choose_blue
-    @choice = "Dominant blue-throat"
+    @choice = CHOICE[1]
   end
 
   def choose_orange
-    @choice = "Ultradominant orange-throat"
+    @choice = CHOICE[2]
   end
 
   def choose_rand
-    selection = rand(3)
-    if selection == 0
-      @choice = "Yellow-throated sneaker"
-    elsif selection == 1
-      @choice = "Dominant blue-throat"
-    else
-      @choice = "Ultradominant orange-throat"
-    end
+    self.choice = CHOICE.sample
   end
 
   private

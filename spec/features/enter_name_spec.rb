@@ -1,4 +1,4 @@
-require 'capybara/rspec'
+require 'spec_helper'
 
 feature 'input name' do
   scenario 'player can input their name' do
