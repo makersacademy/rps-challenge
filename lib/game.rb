@@ -5,11 +5,10 @@ class Game
     scissors: {rock: :lose, paper: :win, scissors: :draw}
   }
 
-  attr_reader :player, :computer, :result, :player_choice, :computer_choice
+  attr_reader :player, :computer, :player_choice, :computer_choice
   def initialize(player, computer)
     @player = player
     @computer = computer
-    @result = nil
   end
 
   def self.create(player, computer)
@@ -21,32 +20,35 @@ class Game
   end
 
   def player_won?
-    @result == :win
+    get_result == :win
   end
 
   def player_lost?
-    @result == :lose
+    get_result == :lose
   end
 
   def player_draw?
-    @result == :draw
+    get_result == :draw
   end
 
   def set_player_choice
-    @player_choice = @player.choice.downcase.to_sym
+    self.player_choice = player.choice.downcase.to_sym
   end
 
   def set_computer_choice
-    @computer_choice = computer.random_choice.downcase.to_sym
+    self.computer_choice = computer.random_choice.downcase.to_sym
   end
 
   def get_result
-    @result = GAME_RULES[@player_choice][@computer_choice]
+    GAME_RULES[player_choice][computer_choice]
   end
 
   def reset_choices
-    @player_choice = nil
-    @computer_choice = nil
+    self.player_choice = nil
+    self.computer_choice = nil
   end
+
+  private
+  attr_writer :player_choice, :computer_choice
 
 end

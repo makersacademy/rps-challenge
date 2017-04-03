@@ -4,11 +4,9 @@
 <% @game.get_result %>
 <% if @game.player_won? %>
   <h3> Congrats, you won! </h3>
-<% end %>
-<% if @game.player_lost? %>
+<% elsif @game.player_lost? %>
   <h3> Unlucky, you lost! </h3>
-<% end %>
-<% if @game.player_draw? %>
+<% elsif @game.player_draw? %>
   <h3> Could be worse, it was a draw! </h3>
 <% end %>
 <form action='/reset'>
