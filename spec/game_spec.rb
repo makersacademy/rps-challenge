@@ -17,7 +17,7 @@ let(:computer) { double :computer, name: "hal_9000" }
     end
   end
 
-  describe '#win?' do
+  xdescribe '#win?' do
     context 'when player is Rock' do
       before do
         allow(player).to receive(:choice).and_return("Rock")
@@ -31,9 +31,3 @@ let(:computer) { double :computer, name: "hal_9000" }
   end
 
 end
-
-# it 'instructs a plane to take off' do
-#     airport.land(plane)
-#     expect(plane).to receive(:take_off)
-#     airport.take_off(plane)
-#   end

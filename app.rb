@@ -52,9 +52,9 @@ class RPS < Sinatra::Base
   get "/result" do
     @game = $game
     if @game.win?
-      erb(:winner)
+      erb(:win)
     else
-      erb(:loser)
+      erb(:lose)
     end
   end
 
