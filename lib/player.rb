@@ -1,6 +1,6 @@
 
 class Player
-  DEFAULT_NAMES = ['Mary Dingle', "Roi's Beard", "A 5 Year Old Arnie", "The Phattest Jeffrey You Ever Saw", "Terry Crew's Left Nipple"]
+  DEFAULT_NAMES = ["Roi's Beard", "The Phattest Jeffrey You Ever Saw", "Terry Crew's Left Nipple"]
 
   attr_reader :name, :choice
 

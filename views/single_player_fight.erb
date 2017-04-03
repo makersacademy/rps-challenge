@@ -2,6 +2,7 @@
   <head>
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="fight_style.css">
+
   </head>
   <body>
     <h1><%=@game.player_1.name%>: <%=@game.current_game.player_1_choice.capitalize %></h1>
@@ -16,6 +17,9 @@
     <h1><%=@game.player_1.name%>: <%=@game.scorecard[@game.player_1.name]%> </h1>
     <h1><%=@game.player_2.name%>: <%=@game.scorecard[@game.player_2.name]%> </h1>
 
+    <audio controls autoplay>
+      <source src="Rickroll.mp3" type="audio/mpeg" autoplay>
+    </audio>
 
   </body>
 
