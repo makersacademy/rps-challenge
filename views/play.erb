@@ -1,0 +1,18 @@
+<h1>The Arena</h1>
+<h2>A new challenger appears! <span style="color: red;"><%= @player_name %></span>, step forth!</h2>
+<h2>Choose your weapon: </h2>
+    <form method='post' action='/player_choice'>
+      <label for='rock'>
+        Rock
+        <input type='radio' name='radioSelect' value='rock' class='rock'>
+      </label>
+      <label for='paper'>
+        Paper
+        <input type='radio' name='radioSelect' value='paper' class='paper'>
+      </label>
+      <label for='scissors'>
+        Scissors
+        <input type='radio' name='radioSelect' value='scissors' class='scissors'>
+      </label>
+      <input type='submit' value='Go to Battle!'/>
+    </form>
