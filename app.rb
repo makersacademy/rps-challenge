@@ -45,7 +45,6 @@ class RPS < Sinatra::Base
 
   post "/check_winner" do
     @game = $game
-
     redirect '/result'
   end
 
