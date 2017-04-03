@@ -1,0 +1,18 @@
+<center>
+<h1>Hello <%=@game.player1.name%>! </h1>
+<br></br>
+<iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/random-recall-jTZVegIrdLCCY"></a></p>
+<h2> Please choose one of the following options: </h2>
+
+<form action = "/choice" method = "post">
+       <input type="submit" name="choice" value="rock"/>
+   </form>
+
+<form action = "/choice" method = "post">
+      <input type="submit" name="choice" value="paper" />
+  </form>
+
+  <form action = "/choice" method = "post">
+        <input type="submit" name="choice" value="scissors" />
+    </form>
+</center>

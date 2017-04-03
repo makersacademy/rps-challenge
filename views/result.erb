@@ -1,0 +1,20 @@
+<center>
+<h2>You chose <%= @game.player1.choice %>!</h2><br>
+<h2>Computer chose <%= @game.player2.choice %>!</h2><br>
+<% if @game.result == :win %>
+<iframe src="//giphy.com/embed/xTiTnz33weTH3K8Uvu" width="480" height="270.40000000000003" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbull-xTiTnz33weTH3K8Uvu"></a></p>
+	<h2>You won!</h2>
+<% elsif @game.result == :draw %>
+<iframe src="//giphy.com/embed/JmWe1k92AV6ms" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/JmWe1k92AV6ms"></a></p>
+  <h2>You drew!</h2>
+<% elsif @game.result == :lose %>
+<iframe src="//giphy.com/embed/l2Jeb9N7yBOlDyQik" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-3-the-simpsons-3x9-l2Jeb9N7yBOlDyQik"></a></p>
+  <h2>You lost!</h2>
+<% else %>
+Error!
+<% end %>
+<br></br>
+<form action = "/play" method = "get">
+      <input type="submit" value="Play Again" />
+  </form>
+</center>
