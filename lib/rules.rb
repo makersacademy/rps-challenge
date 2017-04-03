@@ -1,6 +1,6 @@
 class Rules
 
-  def self.lizard
+  def self.make_rules
     hands = [:rock, :lizard, :spock, :scissors, :paper]
     rules = {}
     hands.each do |x|
@@ -9,7 +9,7 @@ class Rules
     rules
   end
 
-  def self.make_rules
+  def self.make_rules_2 
     hands = [:rock, :lizard, :spock, :scissors, :paper]
     rules = {}
     hands.each do |x|

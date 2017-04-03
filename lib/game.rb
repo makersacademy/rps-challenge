@@ -9,7 +9,7 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @playing = player_1
-    @rules = Rules.make_rules
+    @rules = Rules.make_rules_2
   end
 
   def self.create(player_1, player_2)
