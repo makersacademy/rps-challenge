@@ -1,0 +1,33 @@
+
+<!-- WELCOME MESSAGE  -->
+<html>
+<!-- <head>
+  <link rel="stylesheet" href="play-style.css">
+</head> -->
+
+<h1>
+Welcome
+<%= @game.player.name %>
+</h1>
+
+<!-- ROCK BUTTON -->
+<form action="/rock">
+  <input type='submit' value="Rock">
+</form>
+
+<br><br>
+
+<!-- PAPER BUTTON -->
+
+<form action="/paper">
+  <input type='submit' value="Paper">
+</form>
+
+<br><br>
+
+<!-- SCISSORS BUTTON -->
+
+<form action="/scissors">
+  <input type='submit' value="Scissors">
+</form>
+</html>

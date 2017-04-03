@@ -1,3 +1,55 @@
+# Rock, Paper, Scissors Challenge Completed
+
+Rock, Paper, Scissors Online Game which allows the player to put in their name, choose from three weapons and play against the computer. The game will declare a winner!
+
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2011.50.04.png)
+
+
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2012.34.28.png)
+
+
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2012.34.48.png)
+
+
+
+
+### Key features:
+- Allows marketeer to input name
+- Marketeer is present the choices (rock, paper and scissors)
+- Marketeer can choose one option
+- Game will choose a random option
+- Computer chooses its weapon
+- A winner is declared
+
+
+### To install:
+1. git clone https://github.com/connie-reinholdsson/rps-challenge.git
+2. cd rps-challenge
+3. bundle
+4. rackup
+
+## Class Design Approach
+
+| **Objects** | **Initialize**    | **Messages**
+|-------------|-------------------|---------------|
+| Player      | name              |               |
+|             | choice            |               |
+|             |                   |choose_rock    |
+|             |                   |choose_paper   |
+|             |                   |choose_scissors|
+| Computer    | choice            |               |
+|             |                   |choose_rock    |
+|             |                   |choose_paper   |
+|             |                   |choose_scissors|
+|             |                   |random_number  |
+|             |                   |computer_choice|
+| Game        | player            |               |
+|             |                   |computer_wins  |
+|             |                   |player_wins    |
+|             |                   |lets_play      |
+|             |                   |confirmation  ||
+
+
 # RPS Challenge
 
 Instructions
@@ -9,7 +61,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +113,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +131,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -89,4 +141,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
