@@ -12,3 +12,11 @@ SimpleCov.start
 
 require 'byebug'
 require 'capybara/rspec'
+
+ENV['RACK_ENV'] = 'test'
+require_relative '../app.rb'
+require 'rspec'
+require 'capybara'
+require 'features/web_helpers'
+
+Capybara.app = RPS
