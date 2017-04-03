@@ -6,6 +6,14 @@ Rock, Paper, Scissors Online Game which allows the player to put in their name, 
 ![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2011.50.04.png)
 
 
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2011.50.04.png)
+
+
+![Screenshot](https://raw.githubusercontent.com/connie-reinholdsson/rps-challenge/master/img/Screen%20Shot%202017-04-03%20at%2012.34.48.png)
+
+
+
+
 ### Key features:
 - Allows marketeer to input name
 - Marketeer is present the choices (rock, paper and scissors)
