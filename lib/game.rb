@@ -9,7 +9,7 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @playing = player_1
-    @rules = Rules.lizard
+    @rules = Rules.make_rules
   end
 
   def self.create(player_1, player_2)
@@ -32,11 +32,6 @@ class Game
     rules[player_1.hand].include?(player_2.hand) ? player_1 : player_2
 
   end
-
-
-  # def winner
-  #   player_1.hand.better?(player_2.hand) ? player_1 : player_2
-  # end
 
   private
 
