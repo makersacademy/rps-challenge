@@ -15,13 +15,11 @@ class RPS < Sinatra::Base
 
   post '/name' do
     Player.set_instance(params["name"])
-    p params["second_name"]
-    p Player.set_instance(params["second_name"]) if params["second_name"] != ""
+    Player.set_instance(params["second_name"]) if params["second_name"] != ""
     redirect '/start'
   end
 
   get '/start' do
-    p @player2
     erb(:play)
   end
 
@@ -33,7 +31,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    p @player2
     if @player2.nil?
       @game = Game.new(@player1, Computer.new)
     else

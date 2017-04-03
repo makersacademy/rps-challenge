@@ -30,7 +30,7 @@ section {
 
 <section>
 <div id="user_choice">
-<h1> You picked <%= @player1.choice %> </h1>
+<h1> <%= @player1.name %> picked <%= @player1.choice %> </h1>
 <% if @player1.choice == :rock %>
   <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" id="user_choice">
 <% elsif @player1.choice == :paper %>
@@ -41,7 +41,7 @@ section {
 </div>
 
 <div id="computer_choice">
-<h1> Computer picked <%= @game.player2.choice %> </h1>
+  <h1> <% if @player2.nil?  %>Computer <% else %> <%= @player2.name %> <% end %> picked <%= @game.player2.choice %> </h1>
 <% if @game.player2.choice == :rock %>
   <img src='https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg' alt="rock" id="user_choice">
 <% elsif @game.player2.choice == :paper %>

@@ -12,9 +12,9 @@ class Game
     if player1.choice == player2.choice
       return "It's a tie."
     elsif win_map[player2.choice] == player1.choice
-      return "You lucky opposum. Congratulations!"
+      return "#{player2.name||player2}, you lucky opposum. Congratulations!"
     else
-      return "You lost! Don't cry now!"
+      return "#{player1.name} lost! Don't cry now!"
     end
   end
 end
