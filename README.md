@@ -55,15 +55,15 @@ I would like to be able to play rock/paper/scissors
 
 Welcome screen invites you to enter your name:
 
-![Screenshot][RPS game homepage](http://i.imgur.com/xOEQMPW.png)
+![Screenshot](http://i.imgur.com/xOEQMPW.png)
 
 Choose your weapon:
 
-![Screenshot][RPS choice page](http://i.imgur.com/L7CAjvs.png)
+![Screenshot](http://i.imgur.com/L7CAjvs.png)
 
 Result:
 
-![Screenshot][RPS results page](http://i.imgur.com/At9xVa6.png)
+![Screenshot](http://i.imgur.com/At9xVa6.png)
 
 
 ## Tools/Languages
