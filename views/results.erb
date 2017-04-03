@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="results.css">
+  </head>
+  <body>
+    <h1>The results are in!</h1>
+    <p><%= @player.name %> choose <%= @player.choice %></p>
+    <p>Computer choose <%= @computer_choice %></p>
+    <p><%=@game_result%><p>
+    <a href="/play">Replay</a>
+        <p class="emoji"><%= @emoji %></p>
+  </body>
+</html>
