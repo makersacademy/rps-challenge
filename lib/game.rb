@@ -18,7 +18,6 @@ class Game
   end
 
   def round_winner
-    game_pick
     if draw?
       return 'draw'
     else
@@ -26,13 +25,13 @@ class Game
     end
   end
 
-  private
-
-  attr_writer :user_choice, :game_choice
-
   def game_pick
     @game_choice = ['rock', 'paper', 'scissors'].sample
   end
+
+  private
+
+  attr_writer :user_choice, :game_choice
 
   def draw?
     game_choice == user_choice

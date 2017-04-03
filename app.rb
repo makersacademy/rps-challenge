@@ -28,6 +28,7 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     @game = $game
     @game.player_choice(params[:choice])
+    @game.game_pick
     redirect '/result', 302
   end
 
@@ -44,7 +45,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/reset' do
     @game = $game
-
     redirect '/', 302
   end
 

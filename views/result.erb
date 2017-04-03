@@ -3,41 +3,43 @@
   <head>
     <title>RPS Game</title>
     <link rel="stylesheet" href="/style.css">
-</head>
+  </head>
 
 
 
-<body>
-  <div class="left" >
-    <h3>Round <%= @game.round_number %></h3>
-  </div>
-  <div class="centered">
-    <p>
-    <h2>You chose: <%=@game.user_choice.capitalize%></h2>
-    <p>
+  <body>
+    <div class="left" >
+      <h3>Round <%= @game.round_number %></h3>
+    </div>
+    <div class="centered">
+      <p>
+      <h2>You chose: <%=@game.user_choice.capitalize%></h2>
+      <p>
 
-    <!-- add if statement to check if someone has won 3.. -->
+      <!-- add if statement to check if someone has won 3.. -->
 
-    <% if @game.round_winner == @game.player.name %>
-      <h1>You won that round!</h1>
-    <% elsif @game.round_winner == 'robot' %>
-      <h1>Robot won that round!</h1>
-    <% else  %>
-      <h1>It was a draw!!</h1>
-    <% end %>
-    <br>
-    <h2>The game chose: <%=@game.game_choice.capitalize%></h2>
-    <br>
-    <br>
-    <form action="/next_round" method="post">
-      <button type="submit" class="btn" name="choice" value="play">
-        Play again
-      </button>
-    </form>
-    <form action="/reset" method="post">
-      <button type="submit" class="btn" name="choice" value="reset">
-        Reset
-      </button>
-    </form>
-  </div>
-</body>
+      <% if @game.round_winner == @game.player.name %>
+        <h1>You won that round!</h1>
+      <% elsif @game.round_winner == 'robot' %>
+        <h1>Robot won that round!</h1>
+      <% else  %>
+        <h1>It was a draw!!</h1>
+      <% end %>
+      <br>
+      <h2>The game chose: <%=@game.game_choice.capitalize%></h2>
+      <br>
+      <br>
+      <form action="/next_round" method="post">
+        <button type="submit" class="btn" name="choice" value="play">
+          Play again
+        </button>
+      </form>
+      <form action="/reset" method="post">
+        <button type="submit" class="btn" name="choice" value="reset">
+          Reset
+        </button>
+      </form>
+    </div>
+  </body>
+
+</html>

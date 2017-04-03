@@ -30,6 +30,7 @@ body {
   position: relative;
   text-align: left;
 }
+
 .centered {
   position: absolute;
   height: 100px;
@@ -75,12 +76,3 @@ body {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
-
-/*img {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    max-width: 100%;
-    height: auto;
-  	left: 0;
-  	position: absolute;
-}*/
