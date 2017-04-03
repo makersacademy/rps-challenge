@@ -20,11 +20,11 @@ class Game
   def play(p1_choice, p2_choice)
     winmap = { 'Scissors' => 'Paper', 'Paper' =>  'Rock', 'Rock' => 'Scissors'}
       if p1_choice == p2_choice
-        "It's a draw!"
+        :draw
       elsif winmap[p1_choice] == p2_choice
-        "#{@player_1.name} won!"
+        :player_1_win
       else
-        "#{@player_2.name} won!"
+        :player_2_win
       end
   end
 end

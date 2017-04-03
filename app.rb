@@ -46,7 +46,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    erb(:play)
+    erb @game.play(@game.player_1.choice, @game.player_2.choice)
   end
 
   get '/choose_1p' do

@@ -10,15 +10,15 @@ describe Game do
 
   describe '#play' do
     it 'should determine a winner' do
-      expect(game.play('Rock', 'Scissors')).to eq("Freddy won!")
+      expect(game.play('Rock', 'Scissors')).to eq(:player_1_win)
     end
 
     it 'should determine a loser' do
-      expect(game.play('Rock', 'Paper')).to eq("Lucy won!")
+      expect(game.play('Rock', 'Paper')).to eq(:player_2_win)
     end
 
     it 'should flag if there is a draw' do
-      expect(game.play('Rock', 'Rock')).to eq("It's a draw!")
+      expect(game.play('Rock', 'Rock')).to eq(:draw)
     end
   end
 
