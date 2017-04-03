@@ -44,12 +44,12 @@ I hope you has as much fun playing this game as I did building it! 🎉
 
 Home page
 
-![Home page](http://imgur.com/a/t4Bns)
+![Home page](http://i.imgur.com/Q2aoRnq.png)
 
 Selection page
 
-![Selection page](http://imgur.com/a/LDGK9)
+![Selection page](http://i.imgur.com/uVvjYt1.png)
 
 Results page
 
-![Results page](http://imgur.com/a/mrk2t)
+![Results page](http://i.imgur.com/cdw2oVh.png)
