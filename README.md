@@ -30,6 +30,7 @@ I would like to be able to play rock/paper/scissors
 ## How to play
 
 - Enter your player name to play, you will play against the computer.
+
 - Select a _Rock, Paper, Scissors_ option, the computer will also select an option.
 - Battle! The winner will be announced.
 

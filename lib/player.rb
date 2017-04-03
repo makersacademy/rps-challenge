@@ -1,3 +1,4 @@
+# Player initializes a name for the player 1 and roll functionality for computer
 class Player
 
   attr_reader :name, :random_attack, :roll

@@ -76,7 +76,6 @@
   }
 
 
-
   .form-block .button {
     margin-bottom: 5px;
     font-size: 14px;
@@ -98,12 +97,6 @@
     vertical-align: bottom;
 
   }
-/*
-  .attack-options {
-
-    text-align: center;
-    vertical-align:middle;
-  }*/
 
   .audio {
     display: hidden;
@@ -169,10 +162,3 @@
     width: 95px;
 
   }
-
-
-
-
-
-
-
