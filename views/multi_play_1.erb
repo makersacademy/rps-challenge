@@ -1,0 +1,42 @@
+<style>
+  section {
+    width: 100%
+  }
+
+  #player_1 {
+    max-width: 50%;
+    box-sizing: border-box;
+    float: left;
+    padding: 20px
+  }
+
+  #player_2 {
+    max-width: 50%;
+    box-sizing: border-box;
+    float: right;
+    padding: 20px
+  }
+
+</style>
+
+<center>
+  <h1><%=@game.player_1.name%> vs. <%=@game.player_2.name%></h1>
+  <h2><%=@game.player_1.name%> it's your turn. <%=@game.player_2.name%> avert your eyes!</h2>
+</center>
+
+<section>
+  <div id='player_1'>
+    <h2><%=@game.player_1.name%></h2>
+    <form action='/attack1' method='post'>
+      <input type='submit' name='player_1_attack' value='Rock'><br />
+      <input type='submit' name='player_1_attack' value='Paper'><br />
+      <input type='submit' name='player_1_attack' value='Scissors'><br />
+    </form>
+  </div>
+  <div id='player_2'>
+    <h2><%=@game.player_2.name%></h2>
+      <input type='submit' name='player_2_attack' value='Rock' disabled><br />
+      <input type='submit' name='player_2_attack' value='Paper' disabled><br />
+      <input type='submit' name='player_2_attack' value='Scissors' disabled><br />
+  </div>
+</section>

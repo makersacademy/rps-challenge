@@ -1,0 +1,11 @@
+<h1><%=@game.player_1.name%> used <%=@player_attack.capitalize%></h1>
+<h1><%=@game.player_2.name%> used <%=@opponent_attack%></h1>
+<% if @result == :draw %>
+<h1> It's a draw! The tension builds...</h1>
+<% else %>
+<h1><%=@game.player_1.name%>, you <%=@result%>!</h1>
+<% end %>
+
+<form action='/multiplayer/play1' method='get'>
+  <input type='submit' value='Play Again'>
+</form>

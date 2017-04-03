@@ -11,12 +11,13 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  get '/multiplayer' do
-    erb :multiplayer
+  before do
+    @game = Game.instance
   end
 
-  get '/single-player' do
-    erb :single_player
+# Multiplayer mode selected
+  get '/multiplayer' do
+    erb :multiplayer
   end
 
   post '/names' do
@@ -24,23 +25,44 @@ class RockPaperScissors < Sinatra::Base
     @player_1 = Player.new(params[:player_1_name])
     @player_2 = Player.new(params[:player_2_name])
     @game = Game.create(@player_1, @player_2)
-    redirect '/multiplayer/play'
+    redirect '/multiplayer/play1'
+  end
+
+  get '/multiplayer/play1' do
+    erb :multi_play_1
+  end
+
+  get '/multiplayer/play2' do
+    erb :multi_play_2
+  end
+
+  post '/attack1' do
+    session[:player_1_attack] = params[:player_1_attack].downcase.to_sym
+    redirect '/multiplayer/play2'
+  end
+
+  post '/attack2' do
+    session[:player_2_attack] = params[:player_2_attack].downcase.to_sym
+    redirect '/multiplayer/play/duel'
+  end
+
+  get '/multiplayer/play/duel' do
+    @player_attack = session[:player_1_attack]
+    @opponent_attack = session[:player_2_attack]
+    @result = @game.result(@player_attack,@opponent_attack)
+    erb :multi_duel
+  end
+
+# Single player mode selected
+  get '/single-player' do
+    erb :single_player
   end
 
   post '/name' do
-    p params
     @player_1 = Player.new(params[:player_1_name])
     @computer = Player.new(params["Computer"])
     @game = Game.create(@player_1, @computer)
     redirect '/single-player/play'
-  end
-
-  before do
-    @game = Game.instance
-  end
-
-  get '/multiplayer/play' do
-    erb :multi_play
   end
 
   get '/single-player/play' do
@@ -48,17 +70,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/attack' do
-    p params
     session[:player_attack] = params[:player_attack].downcase.to_sym
     redirect '/single-player/play/duel'
   end
 
   get '/single-player/play/duel' do
-    @computer_attack = Computer.new.attack
     @player_attack = session[:player_attack]
-    p @player_attack; p @computer_attack
+    @computer_attack = Computer.new.attack
     @result = @game.result(@player_attack,@computer_attack)
-    erb :duel
+    erb :single_duel
   end
 
   # start the server if ruby file executed directly
