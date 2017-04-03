@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<style>
+body {
+  background-image: url("https://goo.gl/y4IMBR");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body>
+
+<p><%= Rps.game.player.name %>! Rock, paper, scissors!</p>
+
+<table>
+  <tr>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Rock'>
+        <button style="font-size: 20px;"><img src="https://goo.gl/DuixgA" width="150px" height="70px">
+          Rock!
+        </button>
+      </form>
+    </td>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Paper'>
+        <button style="font-size: 20px;"><img src="https://goo.gl/izcuan" width="150px" height="70px">
+          Paper!
+        </button>
+      </form>
+    </td>
+    <td>
+      <form action='/compare' method='post'>
+        <input type='hidden' name='choice' value='Scissors'>
+        <button style="font-size: 20px;"><img src="https://goo.gl/n3lCrO" width="150px" height="70px">
+          Scissors!
+        </button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

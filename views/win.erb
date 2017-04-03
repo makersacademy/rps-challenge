@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<style>
+body {
+  background-image: url("https://goo.gl/5ckQe3");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body>
+
+<p><%= Rps.game.player.name %>: <%= (Rps.game.player.selection).to_s.capitalize %></p>
+
+<p>Opponent: <%= Rps.game.computer.selection %></p>
+
+<p>You win!</p>
+
+<form action='playagain'>
+  <button style="font-size : 20px;" ><img src="https://goo.gl/bcfmX2" width='150px' height='70px' align='middle'>
+
+    Play again!
+  </button>
+</form>
+</body>
+</html>
