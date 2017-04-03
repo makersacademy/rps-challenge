@@ -1,0 +1,27 @@
+<style>
+* {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+body {
+  height:100%;
+  width:100%;
+  position:fixed;
+  background-image: url("http://www.radleyice.com/wp-content/uploads/2012/06/DSC_3375-Edit.jpg");
+  background-color: #93B874;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body>
+  <h3><%= @game.player_1.name %> chose the <%= @game.player_1_choice %></h3>
+  <h3>You came up against a <%= @game.player_2_choice %></h3>
+<% if @game.calculate_winner == :player_1_win %>
+  <h2>You got the girl!</h2>
+  <% elsif @game.calculate_winner == :player_2_win %>
+  <h2>You were outcompeted! Better luck next mating season</h2>
+  <% else %>
+    <h2>You came up against your own kind. Draw!</h2>
+  <% end %>
+<form action="/">
+    <input type="submit" value="Play again" />
+</form>
