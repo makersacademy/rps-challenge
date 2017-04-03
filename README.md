@@ -32,8 +32,7 @@ I would like to be able to play rock/paper/scissors
 - Enter your player name to play, you will play against the computer.
 
 
-![Start]
-(https://github.com/j-rods/rps-challenge/blob/master/public/start.png)
+![Start](https://raw.githubusercontent.com/j-rods/rps-challenge/master/public/start.png)
 
 
 - Select a _Rock, Paper, Scissors_ option, the computer will also select an option.
