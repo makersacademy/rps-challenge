@@ -1,0 +1,14 @@
+<h3> You chose <%= @game.player_choice %>!</h3>
+<% @game.set_computer_choice %>
+<h3> PC chose <%= @game.computer_choice %> </h3>
+<% @game.get_result %>
+<% if @game.player_won? %>
+  <h3> Congrats, you won! </h3>
+<% elsif @game.player_lost? %>
+  <h3> Unlucky, you lost! </h3>
+<% elsif @game.player_draw? %>
+  <h3> Could be worse, it was a draw! </h3>
+<% end %>
+<form action='/reset'>
+  <input type='submit' value='Play again?'>
+</form>
