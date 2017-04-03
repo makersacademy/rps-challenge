@@ -18,7 +18,7 @@ class Game
   end
 
   def play(p1_choice, p2_choice)
-    winmap = { 'Scissors' => 'Paper', 'Paper' =>  'Rock', 'Rock' => 'Scissors'}
+    winmap = { "Scissors" => "Paper", "Paper" => "Rock", "Rock" => "Scissors" }
       if p1_choice == p2_choice
         :draw
       elsif winmap[p1_choice] == p2_choice
