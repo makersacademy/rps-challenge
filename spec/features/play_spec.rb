@@ -1,27 +1,21 @@
 feature 'play' do
 
-  scenario 'Player can select Rock' do
-    visit('/')
-    fill_in('player_name', :with => 'Vivien')
-    click_button('Submit')
-    click_button('Rock')
-    expect(page).to have_content "You chose Rock"
+  scenario 'Player can select rock' do
+    sign_in_and_play
+    click_button('rock')
+    expect(page).to have_content "You chose rock"
   end
 
   scenario 'Player can select paper' do
-    visit('/')
-    fill_in('player_name', :with => 'Vivien')
-    click_button('Submit')
-    click_button('Paper')
-    expect(page).to have_content "You chose Paper"
+    sign_in_and_play
+    click_button('paper')
+    expect(page).to have_content "You chose paper"
   end
 
-  scenario 'Player can select Scissors' do
-    visit('/')
-    fill_in('player_name', :with => 'Vivien')
-    click_button('Submit')
-    click_button('Scissors')
-    expect(page).to have_content "You chose Scissors"
+  scenario 'Player can select scissors' do
+    sign_in_and_play
+    click_button('scissors')
+    expect(page).to have_content "You chose scissors"
   end
 
 end

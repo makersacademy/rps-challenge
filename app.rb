@@ -27,6 +27,7 @@ end
 post ('/choice') do
    @game.player1.set_choice(params[:choice])
    @game.player2.set_choice
+
    redirect('./result')
  end
 

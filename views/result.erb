@@ -1,9 +1,11 @@
 You chose <%= @game.player1.choice %>!<br>
-Computer chose <%= @game.player2.choice.capitalize %>!<br>
+Computer chose <%= @game.player2.choice %>!<br>
 <% if @game.result == :win %>
 	You won!
 <% elsif @game.result == :draw %>
   You drew!
-<% else %>
+<% elsif @game.result == :lose %>
   You lost!
+<% else %>
+Error!
 <% end %>
