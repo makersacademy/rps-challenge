@@ -15,14 +15,4 @@ describe Game do
   it 'checks @result is set to nil by default' do
     expect(game.result).to eq nil
   end
-
-  # it 'checks #get_result is draw' do
-  #   game.get_result
-  #   expect(game.result).to eq "It's a draw!"
-  # end
-
-
-  # it 'checks instance returns itself' do
-  #   expect(game.instance).to eq game
-  # end
 end
