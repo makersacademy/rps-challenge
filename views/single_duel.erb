@@ -1,5 +1,7 @@
 <h1><%=@game.player_1.name%> used <%=@player_attack.capitalize%></h1>
-<h1>Computer used <%=@computer_attack%></h1>
+<div id='computer'>
+  <h1>Computer used <%=@computer_attack.capitalize%></h1>
+</div>
 <% if @result == :draw %>
 <h1> It's a draw! The tension builds...</h1>
 <% else %>
