@@ -21,7 +21,15 @@ class Game
   end
 
   def player_won?
-    get_result == :win
+    @result == :win
+  end
+
+  def player_lost?
+    @result == :lose
+  end
+
+  def player_draw?
+    @result == :draw
   end
 
   def set_player_choice
@@ -34,6 +42,11 @@ class Game
 
   def get_result
     @result = GAME_RULES[@player_choice][@computer_choice]
+  end
+
+  def reset_choices
+    @player_choice = nil
+    @computer_choice = nil
   end
 
 end

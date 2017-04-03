@@ -35,5 +35,10 @@ class RPS < Sinatra::Base
     erb :end_game
   end
 
+  get '/reset' do
+    @game.reset_choices
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end
