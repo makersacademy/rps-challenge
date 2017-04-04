@@ -19,8 +19,13 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_1 = session[:player_1]
-
+    @attack = session[:attack]
     erb :play
+  end
+
+  post 'play' do
+    session[:attack] = params[:attack]
+    redirect '/play'
   end
 
   post '/attack_rock' do
