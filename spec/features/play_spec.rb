@@ -16,10 +16,21 @@ feature "playing a game" do
   # as a user,
   # so I can play a game,
   # I want to choose an attack to play
-  scenario "choose an attack" do
+  scenario "choose an attackc" do
     click_button "Rock"
-    expect(page).to have_content "Rocky picked rock."
-
+    expect(page).to have_content "Rocky picked Rock!"
   end
 
+  # as a user,
+  # so I can play a game
+  # I want the game to choose an option
+  scenario "game chooses 'Rock'" do
+    click_button 'Rock'
+    message = find(:css, "#computer").text
+    expect(possible_messages).to include message
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map {|shape| "Computer chose #{shape.to_s.capitalize}!"}
+  end
 end

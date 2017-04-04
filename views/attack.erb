@@ -1,0 +1,14 @@
+<form class ="form-block" method='post' action='/attack'>
+  <!-- <button type="submit" value="Rock" class="button btn btn-default">
+    Rock
+  </button> -->
+  <input type="submit" name="attack" value="Rock" />
+  <input type="submit" name="attack" value="Paper" />
+  <input type="submit" name="attack" value="Scissors" />
+</form>
+
+Rocky picked <%= @attack %>!
+
+<div id="computer">
+  Computer chose <%= @computer_attack.to_s.capitalize %>!
+</div>
