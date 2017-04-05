@@ -16,6 +16,8 @@ class RPS < Sinatra::Base
   end
 
   get '/attack' do
+    @turn = Turn.new(session)
+
     @player_1 = session[:player_1]
     @attack = session[:attack]
     @computer_attack = session[:computer_attack]
