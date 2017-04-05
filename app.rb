@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
 
   post '/attack' do
     session[:attack] = params[:attack]
-    session[:computer_attack] = :rock
+    session[:computer_attack] = Computer.new.attack
     redirect '/attack'
   end
 
