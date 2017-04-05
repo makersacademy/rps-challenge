@@ -11,21 +11,17 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = params[:player_1_name]
+    session[:player_name] = params[:name]
     redirect '/attack'
   end
 
   get '/attack' do
     @turn = Turn.new(session)
-
-    @player_1 = session[:player_1]
-    @attack = session[:attack]
-    @computer_attack = session[:computer_attack]
     erb :attack
   end
 
   post '/attack' do
-    session[:attack] = params[:attack]
+    session[:player_attack] = params[:attack]
     session[:computer_attack] = Computer.new.attack
     redirect '/attack'
   end

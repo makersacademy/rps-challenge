@@ -1,3 +1,5 @@
+Hello, <%= @turn.player_name %>
+
 <form class ="form-block" method='post' action='/attack'>
   <!-- <button type="submit" value="Rock" class="button btn btn-default">
     Rock
@@ -7,8 +9,8 @@
   <input type="submit" name="attack" value="Scissors" />
 </form>
 
-Rocky picked <%= @attack %>!
+Rocky picked <%= @turn.player_attack.to_s.capitalize %>!
 
 <div id="computer">
-  Computer chose <%= @computer_attack.to_s.capitalize %>!
+  Computer chose <%= @turn.computer_attack.to_s.capitalize %>!
 </div>
