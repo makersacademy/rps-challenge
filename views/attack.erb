@@ -12,5 +12,13 @@ Hello, <%= @turn.player_name %>
 Rocky picked <%= @turn.player_attack.to_s.capitalize %>!
 
 <div id="computer">
-  Computer chose <%= @turn.computer_attack.to_s.capitalize %>!
+  Computer chose <%= @turn. computer_attack.to_s.capitalize %>!
 </div>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.draw? %>
+  It's a draw.
+<% else %>
+  You lose!
+<% end %>

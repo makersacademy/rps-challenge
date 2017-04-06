@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/turn'
+require './lib/computer'
 
 
 class RPS < Sinatra::Base
@@ -21,7 +23,7 @@ class RPS < Sinatra::Base
   end
 
   post '/attack' do
-    session[:player_attack] = params[:attack]
+    session[:player_attack] = params[:attack].downcase.to_sym
     session[:computer_attack] = Computer.new.attack
     redirect '/attack'
   end
