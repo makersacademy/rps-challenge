@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/turn'
 require './lib/computer'
 
-
 class RPS < Sinatra::Base
   set :sessions, true
   enable :sessions
@@ -13,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:name]
+    session[:player_name] = params[:player_1_name]
     redirect '/attack'
   end
 
@@ -22,11 +21,14 @@ class RPS < Sinatra::Base
     erb :attack
   end
 
-  post '/attack' do
+  post '/result' do
     session[:player_attack] = params[:attack].downcase.to_sym
     session[:computer_attack] = Computer.new.attack
-    redirect '/attack'
+    @turn = Turn.new(session)
+    erb :result
   end
+
+
 
   # post '/attack_rock' do
   #   @player_1 = session[:player_1]

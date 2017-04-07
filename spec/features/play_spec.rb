@@ -18,9 +18,9 @@ feature "playing a game" do
   # as a user,
   # so I can play a game,
   # I want to choose an attack to play
-  scenario "choose an attackc" do
+  scenario "choose an attack" do
     click_button "Rock"
-    expect(page).to have_content "Rocky picked Rock!"
+    expect(page).to have_content "You picked Rock!"
   end
 
   # as a user,
@@ -38,7 +38,7 @@ feature "playing a game" do
   scenario "game chooses a random option" do
     srand(PLAY_SEED)
     click_button "Rock"
-    expect(page).to have_content "Computer chose Scissors!"
+    expect(page).to have_content "Computer picked Scissors!"
   end
 
   # as a user,
@@ -66,6 +66,6 @@ feature "playing a game" do
   end
 
   def possible_messages
-    [:rock, :paper, :scissors].map {|shape| "Computer chose #{shape.to_s.capitalize}!"}
+    [:rock, :paper, :scissors].map {|shape| "Computer picked #{shape.to_s.capitalize}!"}
   end
 end
