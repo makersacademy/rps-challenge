@@ -1,4 +1,4 @@
-# RPS Challenge
+# Makers Academy - Rock/Paper/Scissors Challenge (Week 3 weekend challenge)
 
 Player VS Computer Rock-Paper-Scissors game.
 
