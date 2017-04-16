@@ -1,0 +1,27 @@
+<center>
+Make your choice <%= @turn.player_name %>!
+
+  <form action="/play" method="POST">
+    <div>
+      <input type="submit" name="shape" value="Rock">
+      <input type="submit" name="shape" value="Paper">
+      <input type="submit" name="shape" value="Scissors">
+    </div>
+  </form>
+
+  <div>
+    Your choice: <%= @turn.player_shape.to_s.capitalize %>
+  </div>
+
+  <div id="opponent">
+    Opponent choice: <%= @turn.opponent_shape.to_s.capitalize %>
+  </div>
+
+  <% if @turn.win? %>
+    You win!
+  <% elsif @turn.lose? %>
+    You lose!
+  <% elsif @turn.draw? %>
+    You draw!
+  <% end %>
+</center>
