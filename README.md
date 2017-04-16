@@ -1,6 +1,6 @@
-# Makers Academy - Rock/Paper/Scissors Challenge (Week 3 weekend challenge)
+# Rock/Paper/Scissors Challenge
 
-Player VS Computer Rock-Paper-Scissors game.
+Player VS Computer Rock-Paper-Scissors game. Weekend challenge of week 3 at Makers Academy
 
 - Enter name
 - Type in weapon choice (case insensitive)
