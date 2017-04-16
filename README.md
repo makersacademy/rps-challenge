@@ -1,4 +1,4 @@
-# Rock/Paper/Scissors Challenge
+# Rock/Paper/Scissors
 
 Player VS Computer Rock-Paper-Scissors game. Weekend challenge of week 3 at Makers Academy
 
