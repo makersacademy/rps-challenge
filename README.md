@@ -18,7 +18,7 @@ New game
 ![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/newgame.png)
 
 Playing a game
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/attack.png)
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/play.png)
 
 End of round evaluation
 ![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/lose.png)
