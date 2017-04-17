@@ -1,0 +1,39 @@
+<link href="<%= url('style.css') %>" rel="stylesheet" type="text/css" />
+<center>
+   <h1 class="logo">Rock, Paper, Scissors, Lizard, Spock</h1>
+   <h3><i>This game is highly illogical</i></h3>
+   <img class="giphy" src='https://media.giphy.com/media/sBl8Fowq0ErFC/giphy.gif'/>
+   <form id="name_entry" method="POST" action="/names">
+      </br>
+      <label style="color:yellow;">Game Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+      <select id="game_type" name="game_type">
+         <option value="0">Basic</option>
+         <option value="1">Advanced</option>
+      </select>
+      </br>
+      </br>
+      <label style="color:yellow;">Player 1:</label>
+      <input name="name_player_one" type="text"/>
+      </br>
+      </br>
+      <label style="color:yellow;">Player 2:</label>
+      <input id="name_player_two" name="name_player_two" type="text"/>
+      </br>
+      </br>
+      <input type="checkbox" onchange="toggle()"  name="automated_opp"><label style="color:yellow;">I have no friends, play against the computer</label></input>
+      </br>
+      </br>
+      <input class="button" value="Play" type="submit"/>
+   </form>
+</center>
+<script>
+function toggle() {
+  var tb = document.getElementById("name_player_two");
+  tb.value = ""
+  if(tb.disabled == true){
+    tb.style="background-color:white";
+    tb.disabled = false;}
+  else {
+    tb.style="background-color:gray";
+    tb.disabled = true;}}
+</script>

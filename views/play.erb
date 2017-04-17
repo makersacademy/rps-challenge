@@ -1,0 +1,57 @@
+<link href="<%= url('style.css') %>" rel="stylesheet" type="text/css" />
+<center>
+<h1 class="logo">Rock, Paper, Scissors, Lizard, Spock</h1>
+<h3><i>This game is highly illogical</i></h3>
+</br>
+<h3><%= @game.player_1.name %> VS <%= @game.player_2.name %></h3>
+</br>
+<% if !@game.finished? %>
+<img class="giphy" src='https://media.giphy.com/media/sBl8Fowq0ErFC/giphy.gif'/>
+</br>
+<h3><%= @game.current_player.name %>, you're up! Choose a move.</h3>
+<div id="actions">
+   <div>
+      <form action="/rock">
+         <input class="button" class="btn" type='submit' value ='Rock'>
+      </form>
+   </div>
+   <div>
+      <form action="/paper">
+         <input class="button" class="btn" type='submit' value ='Paper'>
+      </form>
+   </div>
+   <div>
+      <form action="/scissors">
+         <input class="button" class="btn" type='submit' value ='Scissors'>
+      </form>
+   </div>
+   <% if @game.game_type == 1 %>
+   </br>
+   <div>
+      <form action="/lizard">
+         <input class="button" class="btn" type='submit' value ='Lizard'>
+      </form>
+   </div>
+   <div>
+      <form action="/spock">
+         <input class="button" type='submit' value ='Spock'>
+   </div>
+   </form>
+   <% end %>
+</div>
+<% end %>
+<% if @game.finished? %>
+  <img width="325" height="250" class="giphy" src='http://bufordp.com/FR/pics/spock_wtf.jpg'/>
+  </br>
+    <% if @game.winner == "Draw" %>
+      <h1 class="logo">It was a Draw. How dull.</h1>
+    <% else %>
+      <h1 class="logo"><%= @game.winner.name %> beat <%= @game.opponent_of(@game.winner).name %>!</h1>
+      <i><h3 style="color:yellow;"><%= @game.winner.name %>'s <%= @game.winner.choice %> <%= @game.verb %> <%= @game.opponent_of(@game.winner).name %>'s <%= @game.opponent_of(@game.winner).choice %></i></h3>
+    <% end %>
+  <h2 style="color: yellow;"><i><%= @game.player_1.name %>:  <%= @game.player_1.score %> points  --- <%= @game.player_2.name %>:  <%= @game.player_2.score %> points</i></h3>
+<% end %>
+<form action="/new_round">
+   <input class="button-newround" type='submit' value ='New Round'>
+   </div>
+</form>

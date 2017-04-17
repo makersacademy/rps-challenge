@@ -1,0 +1,40 @@
+body{
+  background-image:url("http://wallpapercave.com/wp/nHXaKvf.jpg");
+  font-family:arial;
+  color: white;
+}
+
+div {
+    display: inline-block;
+}
+
+.giphy{
+  border-color: yellow;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: solid 2px yellow;
+  color: white;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.button-newround {
+  background-color: red; /* Green */
+  border: solid 2px yellow;
+  color: white;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.logo{
+  color: #62c527;
+  text-shadow: 1px 0 red, 0 -1px red, 1px 0 red, 0 -1px red;
+}
