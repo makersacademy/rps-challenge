@@ -1,0 +1,21 @@
+<div style='text-align: center; font-family: Helvetica'>
+<h2><%= @game.player_1.name %> selected <%= @game.player_1.weapon %></h2>
+<h2><%= @game.player_2.name %> selected <%= @game.player_2.weapon %></h2>
+<% if @game.winner == 'tie' %>
+  <p>All even!</p>
+<% else %>
+  <p><%= @game.winner %> beats <%= @game.loser %></p>
+<% end %>
+<% if @game.winner == @game.player_1.weapon %>
+  <h1><%= @game.player_1.name %> wins!</h1>
+<% elsif @game.winner == @game.player_2.weapon %>
+  <h1><%= @game.player_2.name %> wins!</h1>
+<% else %>
+  <h1>No winner!</h1>
+<% end %>
+<p>
+<form action="/">
+    <input type="submit" value="Play again">
+  </form>
+</p>
+</div>

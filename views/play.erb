@@ -1,0 +1,9 @@
+<div style='text-align: center; font-family: Helvetica'>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+<h2>Please select a weapon</h2>
+<form action="/result" method=post>
+  <input type="submit" name="weapon" value="rock">
+  <input type="submit" name="weapon" value="paper">
+  <input type="submit" name="weapon" value="scissors">
+</form>
+</div>
