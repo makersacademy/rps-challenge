@@ -4,6 +4,8 @@ ruby '2.4.0'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rspec-sinatra'
+gem 'capybara'
 
 group :test do
   gem 'rspec'

@@ -1,5 +1,6 @@
 # RPS Challenge
 
+
 Instructions
 -------
 
@@ -89,4 +90,21 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
+
+My approach
+------------------
+
+Instructions for using the appliation
+-------------------------------------
+
+The application can be run by users by running a local server after cloning 
+this repo. 
+
+```
+$ git clone git@github.com:[ric9176]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+```
 
