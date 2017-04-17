@@ -1,0 +1,16 @@
+<div style='text-align: center; font-family: Helvetica'>
+<h1> Get ready <%= @player_1_name %>! </h1>
+<h2> <%= @player_1_name %>: <%= @score %> vs. Computer: <%= @computer_score %>
+  <h2>  1, 2, 3... </h2>
+<div>
+    <form action="/rock" method="post">
+    <input type="submit" value="Rock">
+    </form>
+ <div>
+    <form action="/paper" method="post">
+    <input type="submit" value="Paper">
+    </form>
+<div>
+    <form action="/scissors" method="post">
+    <input type="submit" value="Scissors">
+    </form>

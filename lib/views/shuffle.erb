@@ -1,0 +1,18 @@
+<div style='text-align: center; font-family: Helvetica'>
+<h1> You picked rock </h1>
+<% if $game.shuffle == 'rock' %>
+  <h2> IT'S A DRAW! </h2>
+    The computer also picked rock and an awkward stand off begins...
+<% elsif $game.shuffle == 'paper' %>
+<% $game.computer_win %>
+  <h2> YOU LOSE! </h2>
+    The computer picked paper - The paper surrounds the rock and destroys it!
+<% else %>
+<% $game.win %>
+  <h2> YOU WIN! </h2>
+    The computer picked scissors - The scissors are no match for the mighty rock!
+<%end%>
+<br>
+<form action="/play" method="get">
+<input type="submit" value="OK">
+</form>

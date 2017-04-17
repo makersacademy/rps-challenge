@@ -7,6 +7,7 @@ gem 'rake'
 
 group :test do
   gem 'rspec'
+  gem 'sinatra-rspec'
   gem 'rubocop-rspec'
   gem 'rubocop'
   gem 'coveralls', require: false
