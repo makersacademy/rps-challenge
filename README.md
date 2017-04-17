@@ -13,16 +13,6 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/lizard/spock
 ```
 
-# Screenshots
-New game
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/newgame.png)
-
-Playing a game
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/play.png)
-
-End of round evaluation
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/lose.png)
-
 # Technologies Used
 - Rspec
 - Sinatra
@@ -45,3 +35,13 @@ End of round evaluation
 ### Playing
 - Run `rackup`
 - Visit `localhost:9292` in your browser
+
+# Screenshots
+New game
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/newgame.png)
+
+Playing a game
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/play.png)
+
+End of round evaluation
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/lose.png)
