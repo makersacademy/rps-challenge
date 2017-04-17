@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors, Lizard, Spock 
+# Rock, Paper, Scissors, Lizard, Spock [![Build Status](https://travis-ci.org/joemaidman/rps-challenge.svg?branch=master)](https://travis-ci.org/joemaidman/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/makersacademy/rps-challenge/badge.svg?branch=zdajani)](https://coveralls.io/github/makersacademy/rps-challenge?branch=zdajani)
 
 A [Rock, Paper, Scissors, Lizard, Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_) game built using the Sinatra framework, RSpec and Capybara. A demo is available at https://rpslizardspock.herokuapp.com/. The program makes use of logic tables stored in CSV files to determine the outcome of each round and provides a verb to reflect the interaction.
 
