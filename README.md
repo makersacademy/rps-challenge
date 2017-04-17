@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors, Lizard, Spock
 
-A [Rock, Paper, Scissors, Lizard, Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_) game built using the Sinatra framework, RSpec and Capybara. A demo is available at https://rpslizardspock.herokuapp.com/
+A [Rock, Paper, Scissors, Lizard, Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_) game built using the Sinatra framework, RSpec and Capybara. A demo is available at https://rpslizardspock.herokuapp.com/. The program makes use of logic tables stored in CSV files to determine the outcome of each round and provides a verb to the user to reflect the interaction.
 
 The game addresses the following user stories:
 ```sh
