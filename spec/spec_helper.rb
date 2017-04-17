@@ -9,6 +9,10 @@ SimpleCov.formatters = [
 # replace following line with SimpleCov.start to get coverage stats locally
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
+ENV['RACK_ENV'] = 'test'
 
+require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
+require File.join(File.dirname(__FILE__), '', 'web_helpers.rb')
 require 'byebug'
 require 'capybara/rspec'
+Capybara.app = Rps

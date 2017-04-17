@@ -1,0 +1,18 @@
+
+<h1><%= @player1_name %> VS <%= @player2_name %></h1>
+<p>
+  <p>1 = Rock</p>
+  <p>2 = Paper </p>
+  <p>3 = Scissors </p>
+</p>
+<br>
+<form action="/p_results" method = "post">
+  <h3>Choose Your Weapons</h3>
+  <p><%= @player1_name %> Select :</p><br>
+  <input class="input" type="password" autocomplete="off" name="answer_1" maxlength="1">
+  <br>
+  <p><%= @player2_name %> Select:</p><br>
+  <input class="input" type = "password"  autocomplete="off" name="answer_2" maxlength="1">
+  <br><br>
+  <input class="button" type="submit" value="Submit">
+</form>

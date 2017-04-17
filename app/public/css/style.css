@@ -1,0 +1,47 @@
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", Arial, sans-serif;
+}
+
+p {
+    font-family: "Raleway", Times, serif;
+    font-size: 20px;
+}
+
+body {
+  background-color: rgb(221, 215, 215);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+    float: left;
+		padding:15px 0;
+		min-width:100%;
+    background-color: rgb(12, 195, 136);
+	}
+
+.game_panel {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-top: 30%;*/
+}
+
+.input {
+    text-align: center;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    width: 50px;
+}
+
+.button {
+  padding:5px;
+  background-color: rgb(12, 195, 136);
+  border: 1px solid #666;
+  color:#000;
+  text-decoration:none;
+}
