@@ -1,0 +1,24 @@
+<div style="text-align: center">
+
+  <h1>
+    <%= "#{@player.name} wins" if @result == :win %>
+    <%= "Computer wins" if @result == :lose %>
+    <%= "It is a draw" if @result == :draw %>
+  </h1>
+
+  <h3><%= @player.move.capitalize %> - <%= @computer.move.capitalize %></h3>
+  <table style="margin: 0px auto">
+    <tr>
+      <td>
+        <form method='get' action='/play'>
+          <input type='submit' value='Play again'>
+        </form>
+      </td>
+      <td>
+        <form method='get' action='/'>
+          <input type='submit' value='New player'>
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>

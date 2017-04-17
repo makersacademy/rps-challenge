@@ -12,4 +12,6 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara'
   gem 'byebug'
+  gem 'sinatra'
+  gem 'rspec-sinatra'
 end
