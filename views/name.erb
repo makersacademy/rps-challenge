@@ -1,0 +1,12 @@
+<div>
+  <%if !@player || @player == ""%>
+    <form action="/name">
+    What's your name?
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+    </form>
+    <% else %>
+    Let's play <FONT COLOR="red"><%= @player %>!</FONT>
+    <a href="/game"> Play Game </a>
+  <%end%>
+</div>
