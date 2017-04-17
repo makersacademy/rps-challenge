@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors, Lizard, Spock 
+# Rock, Paper, Scissors, Lizard, Spock
 
 A [Rock, Paper, Scissors, Lizard, Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_) game built using the Sinatra framework, RSpec and Capybara. A demo is available at https://rpslizardspock.herokuapp.com/. The program makes use of logic tables stored in CSV files to determine the outcome of each round and provides a verb to reflect the interaction.
 
@@ -12,16 +12,6 @@ As a player
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/lizard/spock
 ```
-
-# Screenshots
-New game
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/newgame.png)
-
-Playing a game
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/play.png)
-
-End of round evaluation
-![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/lose.png)
 
 # Technologies Used
 - Rspec
@@ -45,3 +35,13 @@ End of round evaluation
 ### Playing
 - Run `rackup`
 - Visit `localhost:9292` in your browser
+
+# Screenshots
+New game
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/newgame.png)
+
+Playing a game
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/play.png)
+
+End of round evaluation
+![play](https://github.com/joemaidman/rps-challenge/blob/master/screenshots/lose.png)
