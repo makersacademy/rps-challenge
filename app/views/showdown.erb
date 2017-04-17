@@ -1,0 +1,12 @@
+<div>
+  <body>You chose <b><%= "#{@player_1_hand}" %></br></b>
+  Your opponent chose <b><%= @player_2_hand %></br></b>
+<b><%= @result == "draw" ? "Draw - play again!" : "#{@result} wins!" %></b>
+</div>
+<div>
+  <form action="/rps" method="get">
+    <input id="Play Again" type="submit" value="play again">
+  </form>
+</div>
+Results so far: <%= @result_history %>
+</body>
