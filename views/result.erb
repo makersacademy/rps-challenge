@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  You chose <%= $game.player_1_weapon %>.</br>
+  The computer chose <%= $game.player_2_weapon %> </br>
+  <% if $game.result == :draw %>
+    It's a draw! </br>
+    <img src='draw.jpg'>
+  <% elsif $game.result == true %>
+    Congratulations, you win! </br>
+    <img src='win.jpg'>
+  <% else %>
+    Bad luck, you lose! </br>
+    <img src='lose.jpg'>
+  <% end %>
+</br>
+  <form action="/" method="get">
+    <input type="submit" value="Play again?">
+  </form>
+</body>
+</html>

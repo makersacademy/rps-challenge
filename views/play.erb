@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <h1>Welcome to RPS, <%= $game.player_1_name %>!</h1>
+  <h2>Please enter your preferred weapon:</br>
+      Rock Paper or Scissors</h2>
+  <form id="weapon" action="/selection" method="post">
+    <input type="radio" name="weapon" value='<%= $game.weapons[0] %>' checked><%= $game.weapons[0].capitalize %><br/>
+    <input type="radio" name="weapon" value='<%= $game.weapons[1] %>' ><%= $game.weapons[1].capitalize %><br/>
+    <input type="radio" name="weapon" value='<%= $game.weapons[2] %>' ><%= $game.weapons[2].capitalize %><br/>
+    <input type="radio" name="weapon" value='<%= $game.weapons[3] %>' ><%= $game.weapons[3].capitalize %><br/>
+    <input type="radio" name="weapon" value='<%= $game.weapons[4] %>' ><%= $game.weapons[4].capitalize %><br/>
+    <input type="submit" value="Choose!">
+  </form>
+</body>
+</html>

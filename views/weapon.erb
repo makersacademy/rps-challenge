@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  You selected <%= $game.player_1.weapon_choice.capitalize %>!
+  </br>
+  <form action="/result" method="get">
+    <input type="submit" value="OK">
+  </form>
+</body>
+</html>
