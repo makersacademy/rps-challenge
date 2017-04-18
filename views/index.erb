@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paper, Rock, Scissors</title>
+  </head>
+  <style>
+    body {background-color: lightgrey;
+            font-family: 'Verdana';}
+    h1   {color: darkred;}
+    h2   {color: darkred;
+          font-family: 'Verdana';}
+  </style>
+  <body align="center">
+    <form action="/names" method="POST">
+      <h2>Welcome to Paper, Scissors, Rock!</h2>
+      <p>Enter your name to play!</p>
+      <br>
+      <label for="player_1_name">
+        Player name: <br><br>
+        <input type="text" name="player_1_name"> 
+      </label>
+    </form>
+    <br>
+    <input type="submit" value="Play!">
+  </body>
+</html>

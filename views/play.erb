@@ -1,0 +1,45 @@
+<style>
+  body, img, button {
+    font-family: 'Verdana';
+  }
+  h1, h2  {
+    color: darkred;
+    font-family: 'Verdana';
+  }
+  h4 {
+    font-size: 16px;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #fff;
+    border-style: none;
+  }
+  img {
+    height: 150px;
+    width: auto;
+    margin: 10px 20px;
+    cursor: pointer;
+  }
+
+</style>
+
+<div align="center">
+  <h2>Welcome <%=@game.player_1.name%>!</h2>
+  <h3>Choose paper, rock or scissors...</h3>
+  <form action="/choose" method="POST">
+    <button class="choose-option" name="choice" value="Paper">
+      <img src="img/paper.png">
+      <h4 class="caption">Paper</h4>
+    </button>
+    <button class="choose-option" name="choice" value="Rock">
+      <img src="img/rock.png">
+      <h4 class="caption">Rock</h4>
+    </button>
+    <button class="choose-option" name="choice" value="Scissors">
+      <img src="img/scissors.png">
+      <h4 class="caption">Scissors</h4>
+    </button>
+  </form>
+  <input type="hidden" name="name" value=<%=@player_1_name%>>
+</div>

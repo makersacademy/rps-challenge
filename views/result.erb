@@ -1,0 +1,19 @@
+<style>
+  body, img, button {
+    font-family: 'Verdana';}
+  h1   {color: darkred;}
+  h2   {color: darkred;
+        font-family: 'Verdana';}
+</style>
+
+<div align="center">
+  <div>
+  You chose <%=@game.player_1.choice%>. 
+  <br><br>
+  Computer chose <%=@game.computer_choice%>.
+  </div>
+  <br>
+  <div class="narrative">
+    <%=@game.winner%>
+  </div>
+</div>
