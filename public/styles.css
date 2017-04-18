@@ -1,0 +1,77 @@
+body {
+  background-color: #f6eddf;
+  color: #B29D93;
+  font-family: verdana;
+  font: bold;
+  text-align: center;
+}
+
+#submit {
+  	display: block;
+  	height: 100px;
+  	width: 300px;
+  	background: #81b2b0;
+  	border: 2px solid rgba(33, 68, 72, 0.59);
+
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#rock {
+  background: #C5D6D6;
+  border: 2px solid #699190;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  font: verdana;
+}
+
+#scissors {
+  background: #C5D6D6;
+  border: 2px solid #699190;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  font: verdana;
+}
+#paper {
+  background: #C5D6D6;
+  border: 2px solid #699190;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  font: verdana;
+}
+
+img {
+  height:250px;
+  width:250px;
+  border: solid 1px #96A3A3;
+}
+
+div.player {
+  float: left;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+div.comp {
+  float: right;
+  margin-right: 100px;
+  margin-top: 50px;
+}
+
+div.image {
+  height:auto;
+  width: auto;
+}
+
+/*form.id {
+  background: #C5D6D6;
+  border: 2px solid #699190;
+  height: 60px;
+  width: 150px;
+  text-align: center;
+  font: verdana;
+}*/

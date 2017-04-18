@@ -1,0 +1,15 @@
+<link href="/styles.css" type="text/css" rel="stylesheet">
+
+<body>
+<h1><%= @selected.player.name %>, pick your hand.</h1>
+<br><br>
+<form method="post" action="/rock">
+    <input type='submit' value='Rock' id="rock">
+</form>
+<form method="post" action="/scissors">
+    <input type='submit' value='Scissors' id="scissors">
+</form>
+<form method="post" action="/paper">
+    <input type='submit' value='Paper' id="paper">
+</form>
+</body

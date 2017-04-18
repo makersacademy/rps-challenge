@@ -1,0 +1,35 @@
+<link href="/styles.css" type="text/css" rel="stylesheet">
+<body>
+  <h1>You <%= @selected.result %>!</h1>
+<div class="player">
+You chose <%= @selected.player.selected %>! <br>
+<% if @selected.player.selected == "rock" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg">
+<% elsif @selected.player.selected == "paper" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg">
+<% elsif @selected.player.selected == "scissors" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg">
+<% end %>
+</div>
+<div class="comp">
+Computer chose <%= @selected.computer.chosen %>! <br>
+<% if @selected.computer.chosen == "rock" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-XOE4/21mag-abstractimages-slide-XOE4-jumbo.jpg">
+<% elsif @selected.computer.chosen == "paper" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg">
+<% elsif @selected.computer.chosen == "scissors" %>
+  <img src="http://graphics8.nytimes.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg">
+<% end %>
+</div>
+<br><br><br><br><br>
+  <h1>Score</h1>
+<br>
+You: <%= @selected.player_score %>
+<br>
+Computer: <%= @selected.comp_score %>
+<br>
+<br>
+<form id="button" method="get" action="/play">
+    <input type='submit' value='Again!'>
+</form>
+</body>
