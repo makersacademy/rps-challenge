@@ -1,0 +1,11 @@
+ <%= @turn.player %> vs Computer
+ Select one of the following
+<form action="/play" method="post">
+  <input type="submit" name="value" value="Rock">
+  <input type="submit" name="value" value="Paper">
+  <input type="submit" name="value" value="Scissors">
+</form>
+ You picked <%= @turn.player_option%>!
+<div id="computer">
+  The Computer picked <%= @turn.computer_option.to_s.capitalize%>!
+</div>
