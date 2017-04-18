@@ -1,0 +1,9 @@
+<div align="center">
+<h1> <%=@round.player_1.name %> chose to use a <%= @round.player_1.weapon_choice %> </h1>
+
+<h2> Click "result" to see if you won </h2>
+
+<form action="/result">
+  <input type="submit" value="Result">
+</form>
+</div>

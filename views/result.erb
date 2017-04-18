@@ -1,0 +1,14 @@
+<div align="center">
+<h1><%=@round.result%> wins!</h1>
+<%if @round.result == "No-one"%>
+  <h2> Well that is incredibly boring, maybe you should find real friends to play with </h3>
+<%elsif @round.result == "Computer"%>
+  <h4>Lets not tell anyone about this...</h4>
+<%else %>
+  <h1> WOOOOHOOOOOOOOOOOO YOU ARE AWESOME. Go write a book about your experience </h1>
+<%end%>
+
+<form action="/" method="get">
+  <input type="submit" value="Finish">
+</form>
+</div>

@@ -1,5 +1,36 @@
 # RPS Challenge
 
+Author: Robin Heathcote
+
+Approach
+-------
+
+For this challenge the User Story required a game of Rock, Paper, Scissors that could be played online. The player wanted to enter their name to start the game, chose a weapon and see if they had won against a computer opponent. It uses the DSL 'Sinatra' to make the Ruby code accessible and the program was test driven in the London TDD style using RSpec and Capyabara.
+
+The program consists of Models, Views and a controller. In the controller, the user is first pointed to the index view where there is a form to enter your name and enter a weapon. These parameters are stored through a post request to '/choose' as a player1 for the game and a new instance of a game is created. The player sees a confirmation of their weapon and clicks a button to see if they have won. The player is moved to the result path. Whilst this is happening the methods random_opponent and result are called on the game class. The first method generates a random weapon for the computer, and the second method checks for the winner. The winner is then displayed on the result view and the player can then choose to play again.
+
+Feature test
+-------
+A player is created with a name and weapon. A round of the game is created. A random weapon is chosen for the opponent. It checks if this weapon is stored as the opponents weapon. It calls result to see who wins the game.
+
+```
+2.2.3 :001 > require './lib/round.rb'
+ => true
+2.2.3 :002 > require './lib/player.rb'
+ => true
+2.2.3 :003 > kanye = Player.new('Kanye', :rock)
+ => #<Player:0x007fe88b00f188 @name="Kanye", @weapon_choice=:rock>
+2.2.3 :004 > round = Round.new(kanye)
+ => #<Round:0x007fe889813228 @player_1=#<Player:0x007fe88b00f188 @name="Kanye", @weapon_choice=:rock>, @player_1_weapon=:rock>
+2.2.3 :005 > round.random_opponent
+ => :scissors
+2.2.3 :006 > round.player_2_weapon
+ => :scissors
+2.2.3 :007 > round.result
+ => "Kanye"
+ ```
+
+
 Instructions
 -------
 
@@ -9,7 +40,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +92,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +110,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -89,4 +120,3 @@ $ coveralls report
 ```
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
-
