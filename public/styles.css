@@ -1,0 +1,167 @@
+  body {
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://orig09.deviantart.net/879c/f/2012/119/1/0/pixel_waterfall_bg__by_isohei-d4xntof.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: 'Space Mono', monospace;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .title {
+    margin-top: 90px;
+  }
+
+  .gameplay-title {
+    margin-top: 30px;
+  }
+
+  .title h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 500px;
+  }
+
+  .form-block {
+    text-align: center;
+    margin: 0;
+    color: #FFFFFF;
+    margin-top: 25px;
+    font-family: 'Press Start 2P', cursive;
+
+  }
+
+  .form-block label {
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .form-block label input {
+    vertical-align: middle;
+    color: #000000;
+    height: 36px;
+    width: 260px;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+
+  .form-block .button {
+    margin-bottom: 5px;
+    font-size: 14px;
+    height: 37px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+
+  .attack {
+    margin:auto;
+    text-align: center;
+
+  }
+
+  .attack .rps-challenge img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 120px;
+    vertical-align: bottom;
+
+  }
+
+  .audio {
+    display: hidden;
+   }
+
+  .footer {
+    margin-top: 30px;
+  }
+
+  .footer p {
+    color: #FFFFFF;
+    font-size: 10px;
+  }
+
+  .rock-attack img {
+    width:100px;
+  }
+
+  .paper-attack, .rock-attack, .scissors-attack {
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 258px;
+  }
+
+  .paper-attack img {
+    width: 100px;
+  }
+
+  .scissors-attack img {
+    width: 100px;
+  }
+
+  .attack-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    width: 175px;
+    color: #000000;
+    border-radius: 5px;
+    background: #FFFFFF;
+  }
+
+  .button:hover {
+    box-shadow:
+      0px 0px 5px rgba(57,32,22,0.7);
+  }
+
+  .back-to-home {
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 14px;
+    height: 37px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .back-to-home button {
+    width: 95px;
+  }
+
+  #computer {
+    margin-top: 30px;
+  }
