@@ -1,0 +1,30 @@
+<h1>Welcome, puny mortal <%= @player_name %></h1>
+<h2>Let's play rock paper scissors!</h2>
+<h3>CHOOSE YOUR WEAPON</h3>
+<form action="/choice " method="post" class="weapons">
+	<input type="text" name="choice" value="rock" hidden>
+	<button type="submit"><i class="fa fa-hand-rock-o" aria-hidden="true"></i> ROCK</button>
+</form>
+<form action="/choice" method="post" class="weapons">
+	<input type="text" name="choice" value="paper" hidden>
+	<button type="submit"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> PAPER</button>
+</form>
+<form action="/choice" method="post" class="weapons">
+	<input type="text" name="choice" value="scissors" hidden>
+	<button type="submit"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i> SCISSORS</button>
+</form>
+<% if @lizardspock %>
+	<form action="/choice" method="post" class="weapons">
+		<input type="text" name="choice" value="lizard" hidden>
+		<button type="submit"><i class="fa fa-hand-lizard-o" aria-hidden="true"></i> LIZARD</button>
+	</form>
+	<form action="/choice" method="post" class="weapons">
+		<input type="text" name="choice" value="spock" hidden>
+		<button type="submit"><i class="fa fa-hand-spock-o" aria-hidden="true"></i> SPOCK</button>
+	</form>
+<% end %>
+<div class="hands">
+	<i class="fa fa-hand-rock-o" id="left" aria-hidden="true"></i>
+	<i class="fa fa-hand-rock-o" id="right" aria-hidden="true"></i>
+	<strong>And defend your honor</strong>
+</div>

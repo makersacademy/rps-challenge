@@ -1,0 +1,154 @@
+body {
+  font-family: Sans-serif;
+  font-size: 20px;
+  background: #F8F7EF;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+.hands, .result {
+  text-transform: uppercase;
+  color: #44474A;
+  text-shadow: 0px 2px 3px #666;
+}
+
+.weapons button {
+  background: #FEEB78;
+  color: #C14D40;
+  margin: 9px;
+  padding: 11px;
+  border-radius: 5%;
+  border-color: #E4D36B;
+  text-align: center;
+  font-size: 23px;
+  transition: all 0.3s ease 0s;
+  border-style: solid;
+}
+.weapons {
+  display: inline-block;
+  margin: 10px 0
+}
+.weapons a:hover {
+  background: #C14D40;
+  color: #FEEB78
+}
+.result{
+  margin: 42px 0;
+}
+.result i{
+  font-size: 60px
+}
+.hands {
+  font-size: 100px
+}
+
+.hands strong {
+  display: block;
+  font-size: 30px;
+  margin: 25px
+}
+
+#human {
+  color: rebeccapurple;
+}
+#human::after{
+  content: "You";
+}
+#computer {
+  color: blue;
+}
+#computer::after{
+  content: "Computer";
+}
+#human, #computer{
+  position: relative;
+  top: 10px;
+}
+.victory{
+  color: green
+}
+.defeat{
+  color: red
+}
+.tie{
+  color: orange
+}
+#human::after,
+#computer::after {
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 5px;
+}
+
+#left {
+  transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+
+#right {
+  transform: rotate(-90deg) scaleX(-1);
+  -o-transform: rotate(-90deg) scaleX(-1);
+  -ms-transform: rotate(-90deg) scaleX(-1);
+  -webkit-transform: rotate(-90deg) scaleX(-1);
+}
+
+#left,
+#right {
+  position: relative;
+  -webkit-animation-name: bounce;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.7s;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: infinite;
+  /* Chrome, Safari, Opera */
+  animation-name: bounce;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 3px;
+  }
+  25% {
+    top: 6px;
+  }
+  50% {
+    top: 9px;
+  }
+  75% {
+    top: 6px;
+  }
+  100% {
+    top: 3px;
+  }
+}
+
+
+/* Standard syntax */
+
+@keyframes bounce {
+  0% {
+    top: 3px;
+  }
+  25% {
+    top: 6px;
+  }
+  50% {
+    top: 9px;
+  }
+  75% {
+    top: 6px;
+  }
+  100% {
+    top: 3px;
+  }
+}

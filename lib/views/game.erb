@@ -1,0 +1,24 @@
+<h1>Let the battle begin!</h1>
+
+<div class="hands">
+	<i class="fa fa-hand-<%=@player%>-o" id="human" aria-hidden="true"></i> VS
+	<i class="fa fa-hand-<%=@computer%>-o" id="computer" aria-hidden="true"></i>
+</div>
+
+<div class="result">
+	<h2>And the verdict is</h2>
+	<% if @result == :victory %>
+		<i class="victory fa fa-smile-o" aria-hidden="true"></i>
+		<h3 class="victory">Victory is yours</h3>
+	<% end %>
+	<% if @result == :defeat %>
+		<i class="defeat fa fa-frown-o" aria-hidden="true"></i>
+		<h3 class="defeat">You have been defeated</h3>
+	<% end %>
+	<% if @result == :tie %>
+		<i class="tie fa fa-meh-o" aria-hidden="true"></i>
+		<h3 class="tie">It's a tie</h3>
+	<% end %>
+</div>
+
+<a href="/play">Play again</a>
