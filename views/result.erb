@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+  <body>
+    <form class ="back-to-home" method='get' action='/'>
+      <button type="submit" value="Home" class="button btn btn-default">
+        Home
+      </button>
+    </form>
+    <div class="gameplay-title">
+      <h2><%= @turn.player_name %> picked <%= @turn.player_attack.to_s.capitalize %>!</h2>
+      <div id="computer">
+        <h2>Computer picked <%= @turn.computer_attack.to_s.capitalize %>!</h2>
+      </div>
+    </div>
+<% if @turn.win? %>
+  <% if (@turn.player_attack.to_s.capitalize == "Rock") && (@turn.computer_attack.to_s.capitalize == "Scissors") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="rock-win.png">
+        <img src="scissors.png">
+      </div>
+    </div>
+    <p>Stoney shows <%= @turn.computer_attack.to_s.capitalize %>!</p>
+    <p>Rock crushed scissors, BOOM! <%= @turn.player_name %> wins!</p>
+  <% elsif (@turn.player_attack.to_s.capitalize == "Paper") && (@turn.computer_attack.to_s.capitalize == "Rock") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="paper-win.png">
+        <img src="scissors.png">
+      </div>
+    </div>
+    <p>Stoney shows rock!</p>
+    <p>Paper suffocated rock, woop woop! <%= @turn.player_name %> wins!</p>
+  <% elsif (@turn.player_attack.to_s.capitalize == "Scissors") && (@turn.computer_attack.to_s.capitalize == "Paper") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="scissors-win.png">
+        <img src="paper.png">
+      </div>
+    </div>
+  <p>Stoney shows paper!</p>
+  <p>Scissors snip snipped paper. Take that! <%= @turn.player_name %> wins!</p>
+  <% end %>
+    <h3>You win!</h3>
+    <audio autoplay="false">
+      <source src="win.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+<% elsif @turn.draw? %>
+  <% if (@turn.player_attack.to_s.capitalize && @turn.computer_attack.to_s.capitalize) == "Rock" %>
+    <div class="attack">
+          <div class="rps-challenge">
+            <img src="rock.png">
+            <img src="rock.png">
+          </div>
+        </div>
+      <p>Stoney shows <%= @turn.computer_attack.to_s.capitalize %>!</p>
+      <p>Nothing happened...</p>
+  <% elsif (@turn.player_attack.to_s.capitalize && @turn.computer_attack.to_s.capitalize) == "Paper" %>
+    <div class="attack">
+        <div class="rps-challenge">
+          <img src="paper.png">
+          <img src="paper.png">
+        </div>
+      </div>
+      <p>Stoney shows <%= @turn.computer_attack.to_s.capitalize %>!</p>
+      <p>Nothing happened...</p>
+  <% elsif (@turn.player_attack.to_s.capitalize && @turn.computer_attack.to_s.capitalize) == "Scissors" %>
+    <div class="attack">
+        <div class="rps-challenge">
+          <img src="scissors.png">
+          <img src="scissors.png">
+        </div>
+      </div>
+      <p>Stoney shows scissors!</p>
+      <p>Hmm, nothing happened...</p>
+  <% end %>
+    <h3>It's a draw.</h3>
+      <audio autoplay="false">
+        <source src="lose.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+<% else %>
+  <% if (@turn.player_attack.to_s.capitalize == "Paper") && (@turn.computer_attack.to_s.capitalize == "Rock") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="rock.png">
+        <img src="paper-win.png">
+      </div>
+    </div>
+    <p>Stoney shows paper!</p>
+    <p>Paper suffocated rock, uh oh! <%= @turn.player_name %> lost!</p>
+  <% elsif (@turn.player_attack.to_s.capitalize == "Paper") && (@turn.computer_attack.to_s.capitalize == "Scissors") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="paper.png">
+        <img src="scissors-win.png">
+      </div>
+    </div>
+    <p>Stoney shows scissors!</p>
+    <p>Scissors snip snipped paper, uh oh! <%= @turn.player_name %> lost!</p>
+  <% elsif (@turn.player_attack.to_s.capitalize == "Scissors") && (@turn.computer_attack.to_s.capitalize == "Rock") %>
+    <div class="attack">
+      <div class="rps-challenge">
+        <img src="scissors.png">
+        <img src="rock-win.png">
+      </div>
+    </div>
+    <p>Stoney shows rock!</p>
+    <p>Rock crushed scissors, uh oh! <%= @player_1 %> lost!</p>
+  <% end %>
+  <h3>You lose!</h3>
+    <audio autoplay="false">
+      <source src="lose.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+<% end %>
+  <form class="form-block" method='get' action='/attack'>
+      <button type="submit" value="Play again" class="button btn btn-default">
+        Play again
+      </button>
+  </form>
+  </body>
+</html>
