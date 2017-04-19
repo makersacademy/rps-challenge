@@ -28,29 +28,5 @@ class RPS < Sinatra::Base
     erb :result
   end
 
-
-
-  # post '/attack_rock' do
-  #   @player_1 = session[:player_1]
-  #   @computer = session[:computer]
-  #   @computer.random_attack
-  #   erb :attack_rock
-  # end
-
-  # post '/attack_paper' do
-  #   @player_1 = session[:player_1]
-  #   @computer = session[:computer]
-  #   @computer.random_attack
-  #   erb :attack_paper
-  # end
-
-
-  # post '/attack_scissors' do
-  #   @player_1 = session[:player_1]
-  #   @computer = session[:computer]
-  #   @computer.random_attack
-  #   erb :attack_scissors
-  # end
-
   run! if app_file == $0
 end
