@@ -9,7 +9,7 @@ Instructions
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-Task 
+Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -61,7 +61,7 @@ In code review we'll be hoping to see:
 
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc. 
+* The code is elegant: every class has a clear responsibility, methods are short etc.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
@@ -79,7 +79,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-Coveralls.wear! 
+Coveralls.wear!
 ```
 
 You can see your [test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) when you submit a pull request, and you can also get a summary locally by running:
@@ -90,3 +90,25 @@ $ coveralls report
 
 This repo works with [Coveralls](https://coveralls.io/) to calculate test coverage statistics on each pull request.
 
+### Alwin's Notes
+Used Battle as a guide for User story one.
+app.rb is game.rb in this rps-challenge.
+
+first spec file is called register_marketeer_name_spec.rb
+
+index.erb is the home page at the root.
+
+play.erb is the page with the players name displayed.
+
+Redid game.rb to include sessions
+
+Sessions 1 and 2 done following the Battle game as a template.
+Needed help on part 3 from class mates.
+
+Got stuck on randomised opponent functionality so used the walkthrough as guide.
+
+Submitting incomplete Challenge
+1. Display name - done
+2. Choose Rock Paper Scissors - done
+3. Opponent chooses Rock Paper Scissors - part completed
+4. Winner declared - not done. 
