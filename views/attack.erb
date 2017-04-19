@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Jquery UI  -->
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/redmond/jquery-ui.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+      .attack {
+        width: 200px;
+        height: 70px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well text-center">
+            <h1>Welcome to the game, <%= @game.player_name %>!</h1>
+            <br>
+            <h2>Choose an attack:</h2>
+            <br>
+            <form action="/rps" method="post">
+              <div class="btn-group">
+                <button type="submit" value="Rock" name="attack" class="btn btn-primary attack">Rock <i class="fa fa-hand-rock-o fa-2x"></i></button>
+                <button type="submit" value="Paper" name="attack" class="btn btn-success attack">Paper <i class="fa fa-hand-paper-o fa-2x"></i></button>
+                <button type="submit" value="Scissors" name="attack" class="btn btn-warning attack">Scissors <i class="fa fa-hand-scissors-o fa-2x"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
