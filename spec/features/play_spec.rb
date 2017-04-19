@@ -25,24 +25,6 @@ feature "playing a game" do
 
   # as a user,
   # so I can play a game
-  # I want the game to choose an option
-  scenario "game chooses 'Rock'" do
-    click_button 'Rock'
-    message = find(:css, "#computer").text
-    expect(possible_messages).to include message
-  end
-
-  # as a user,
-  # so I can play a game
-  # I want the game to choose a random option
-  scenario "game chooses a random option" do
-    srand(PLAY_SEED)
-    click_button "Rock"
-    expect(page).to have_content "Computer picked Scissors!"
-  end
-
-  # as a user,
-  # so I can play a game
   # I want to see a winner
   context "end game" do
     before do
@@ -51,12 +33,12 @@ feature "playing a game" do
 
     scenario "I win" do
       click_button "Rock"
-      expect(page).to have_content "You win!"
+      expect(page).to have_content "Rocky wins!"
     end
 
     scenario "I lose" do
       click_button "Paper"
-      expect(page).to have_content "You lose!"
+      expect(page).to have_content "Rocky lost!"
     end
 
     scenario "I draw" do
@@ -66,6 +48,6 @@ feature "playing a game" do
   end
 
   def possible_messages
-    [:rock, :paper, :scissors].map {|shape| "Computer picked #{shape.to_s.capitalize}!"}
+    [:rock, :paper, :scissors].map {|shape| "Rocky picked #{shape.to_s.capitalize}!"}
   end
 end
