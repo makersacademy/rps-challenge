@@ -1,0 +1,19 @@
+<h1>Howdy <%= @name %>!! Welcome to the game!</h1>
+
+<p>
+  =========================
+<p>
+
+<form action='/choice' method='post'>
+  <input type="radio" name="choice" id="Rock" value="Rock" checked>Rock<br>
+  <input type="radio" name="choice" value="Paper">Paper<br>
+  <input type="radio" name="choice" value="Scissors">Scissors
+  <input type= 'submit' value='Choose!'>
+</form>
+
+<h1> Your choice is <%= @choice %> </h1>
+
+<h1> Computers choice is <%= @answer if @answer %> </h1>
+<!-- <form method='get' action = '/game_play'>
+    <input type= 'submit' value='Play'>
+</form> -->
