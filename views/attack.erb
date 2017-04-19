@@ -1,39 +1,38 @@
 <html>
-<head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- styles -->
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-</head>
-  <body>
-    <form class ="back-to-home" method='get' action='/'>
-      <button type="submit" value="Home" class="button btn btn-default">
-        Home
-      </button>
-    </form>
-    <div class="gameplay-title">
-      <h3><%= @turn.player_name %> vs. Stoney. Fight!</h3>
-    </div>
-    <h3>Choose wisely...</h3>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+    <body>
+      <form class ="back-to-home" method='get' action='/'>
+        <button type="submit" value="Home" class="button btn btn-default">
+          Home
+        </button>
+      </form>
+      <div class="gameplay-title">
+        <h3><%= @turn.player_name %> vs. Stoney. Fight!</h3>
+      </div>
+      <h3>Choose wisely...</h3>
     <div class="attack-options">
       <div class="rock-attack">
         <img src="rock.png">
         <form class ="form-block" method='post' action='/result'>
-            <button type="submit" value="Rock" class="button btn btn-default">
+            <button type="submit" name="attack" value="Rock" class="button btn btn-default">
               Rock
             </button>
         </form>
       </div>
-
       <div class="paper-attack">
         <img src="paper.png">
         <form class ="form-block" method='post' action='/result'>
-            <button type="submit" value="Paper" class="button btn btn-default">
+            <button type="submit" name="attack" value="Paper" class="button btn btn-default">
               Paper
             </button>
         </form>
@@ -41,7 +40,7 @@
       <div class="scissors-attack">
         <img src="scissors.png">
         <form class ="form-block" method='post' action='/result'>
-            <button type="submit" value="Scissors" class="button btn btn-default">
+            <button type="submit" name="attack" value="Scissors" class="button btn btn-default">
               Scissors
             </button>
         </form>

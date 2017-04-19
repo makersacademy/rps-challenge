@@ -20,7 +20,7 @@ feature "playing a game" do
   # I want to choose an attack to play
   scenario "choose an attack" do
     click_button "Rock"
-    expect(page).to have_content "You picked Rock!"
+    expect(page).to have_content "Rocky picked Rock!"
   end
 
   # as a user,
