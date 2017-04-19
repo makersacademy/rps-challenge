@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>RPS Challenge</title>
+    <!-- Bootstrap complete CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Font Awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+    .jumbotron {
+      display: flex;
+      align-items: center;
+      background-image: url('http://media1.s-nbcnews.com/j/newscms/2016_11/1016196/rock-paper-scissors-today-tease-160317_de7dcaf2904059d3334a924d83d3d836.today-inline-large2x.jpg');
+      background-size: cover;
+      color: #ffffff;
+      height: 500px;
+      text-shadow: 0.25px 0.25px 0.25px #000000;
+    }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="col-sm-8">Rock Paper Scissors</h1>
+        <nav class="col-sm-4"></nav>
+      </div>
+    </header>
+    <section class="jumbotron">
+      <div class="container">
+        <div class="row text-center">
+          <h1>Fancy a game?</h1>
+          <h2>Please choose a game mode</h2>
+          <form class="form-inline" action="/game_type">
+            <div class="btn-group">
+              <button type="submit" value="singleplayer" name="game_type" class="btn btn-primary btn-lg">Single player</button>
+              <button type="submit" value="multiplayer" name="game_type" class="btn btn-primary btn-lg">Multiplayer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="container">
+      <div class="row">
+        <p class="col-sm-4">created by Peter Miklos</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>RPS Challenge - result</title>
+    <!-- Bootstrap complete CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Font Awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+    .jumbotron {
+      display: flex;
+      align-items: center;
+      background-image: url('http://media1.s-nbcnews.com/j/newscms/2016_11/1016196/rock-paper-scissors-today-tease-160317_de7dcaf2904059d3334a924d83d3d836.today-inline-large2x.jpg');
+      background-size: cover;
+      color: #ffffff;
+      height: 500px;
+      text-shadow: 0.25px 0.25px 0.25px #000000;
+    }
+    header .row,
+    footer .row {
+      display: flex;
+      align-items: center;
+    }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="col-sm-8">Rock Paper Scissors</h1>
+        <nav class="col-sm-4 text-right">
+          <p><%= @game.player_1.name %>: <%= @game.player_1.wins %> wins</p>
+          <p><%= @game.player_2.name %>: <%= @game.player_2.wins %> wins</p>
+        </nav>
+      </div>
+    </header>
+    <section class="jumbotron">
+      <div class="container">
+        <div class="row text-center">
+          <h3><%= @game.player_1.name%>'s choice was: <%= @player1_choice %></h3>
+          <h3><%= @game.player_2.name%>'s choice was: <%= @player2_choice %></h3>
+          <% if @winner == "draw" %>
+          <h2>Outcome is a tie</h2>
+          <% else %>
+          <h2>The winner is: <%= @winner.name %></h2>
+          <% end %><br>
+          <form action="/after_result">
+            <div class="btn-group">
+              <button type="submit" value="play_again" name="choice" class="btn btn-success btn-lg">Play again</button>
+              <button type="submit" value="new_game" name="choice" class="btn btn-primary btn-lg">New game</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="container">
+      <div class="row">
+        <p class="col-sm-4">created by Peter Miklos</p>
+      </div>
+    </footer>
+  </body>
+</html>
