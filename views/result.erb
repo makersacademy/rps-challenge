@@ -19,7 +19,6 @@
     <div class="gameplay-title">
       <h2><%= @turn.player_name %> picked <%= @turn.player_attack.to_s.capitalize %>!</h2>
       <div id="computer">
-        <h2>Computer picked <%= @turn.computer_attack.to_s.capitalize %>!</h2>
       </div>
     </div>
 <% if @turn.win? %>
@@ -51,7 +50,6 @@
   <p>Stoney shows paper!</p>
   <p>Scissors snip snipped paper. Take that! <%= @turn.player_name %> wins!</p>
   <% end %>
-    <h3>You win!</h3>
     <audio autoplay="false">
       <source src="win.wav" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -65,7 +63,7 @@
           </div>
         </div>
       <p>Stoney shows <%= @turn.computer_attack.to_s.capitalize %>!</p>
-      <p>Nothing happened...</p>
+      <p>Nothing happened... It's a draw.</p>
   <% elsif (@turn.player_attack.to_s.capitalize && @turn.computer_attack.to_s.capitalize) == "Paper" %>
     <div class="attack">
         <div class="rps-challenge">
@@ -74,7 +72,7 @@
         </div>
       </div>
       <p>Stoney shows <%= @turn.computer_attack.to_s.capitalize %>!</p>
-      <p>Nothing happened...</p>
+      <p>Nothing happened... It's a draw.</p>
   <% elsif (@turn.player_attack.to_s.capitalize && @turn.computer_attack.to_s.capitalize) == "Scissors" %>
     <div class="attack">
         <div class="rps-challenge">
@@ -83,15 +81,14 @@
         </div>
       </div>
       <p>Stoney shows scissors!</p>
-      <p>Hmm, nothing happened...</p>
+      <p>Hmm, nothing happened... It's a draw.</p>
   <% end %>
-    <h3>It's a draw.</h3>
       <audio autoplay="false">
         <source src="lose.wav" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
 <% else %>
-  <% if (@turn.player_attack.to_s.capitalize == "Paper") && (@turn.computer_attack.to_s.capitalize == "Rock") %>
+  <% if (@turn.player_attack.to_s.capitalize == "Rock") && (@turn.computer_attack.to_s.capitalize == "Paper") %>
     <div class="attack">
       <div class="rps-challenge">
         <img src="rock.png">
@@ -119,7 +116,6 @@
     <p>Stoney shows rock!</p>
     <p>Rock crushed scissors, uh oh! <%= @player_1 %> lost!</p>
   <% end %>
-  <h3>You lose!</h3>
     <audio autoplay="false">
       <source src="lose.wav" type="audio/mpeg">
       Your browser does not support the audio element.
