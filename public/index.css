@@ -1,0 +1,21 @@
+html, body {
+  color: black;
+}
+
+form{
+  text-align: center;
+  margin-top: 2em;
+}
+
+img {
+  height: 20em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+h1, h3 {
+  text-align:center;
+}
