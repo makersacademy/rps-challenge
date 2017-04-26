@@ -1,22 +1,9 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Build a web application for a _Rock, Paper, Scissors_ game you can play on the web with the following user stories:
 
 ```
 As a marketeer
@@ -43,12 +30,12 @@ I would like to be able to play rock/paper/scissors
 
 ## How to run
 
-- Clone this repo `git clone [url]`
-- Navigate to the rps-challenge folder `cd rps-challenge`
-- Run `gem install bundle` if bundler isn't installed
-- Run `bundle`
-- On your terminal, run `rackup` to launch the web app
-- Enter localhost:9292 in your browser
+- Clone this repo `git clone [url]`.
+- Navigate to the rps-challenge folder `cd rps-challenge`.
+- Run `gem install bundle` if bundler isn't installed.
+- Run `bundle`.
+- On your terminal, run `rackup` to launch the web app.
+- Enter localhost:9292 in your browser.
 - Playing the game!
 
 ## Screenshots
@@ -71,8 +58,10 @@ Result:
 - Sinatra
 - Capybara
 - Ruby v 2.4.0
-- rspec
+- RSpec
 
 
 ### TODO
 ## Future enhancements...
+- single page 2 player with buttons disabled depending on whose turn it is.
+-
