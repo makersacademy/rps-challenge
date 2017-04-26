@@ -2,6 +2,12 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Application
   get '/' do
-      "Hello World!"
+    erb :index
   end
+
+  post '/name' do
+    @name = params[:name]
+    erb :play
+  end
+
 end
