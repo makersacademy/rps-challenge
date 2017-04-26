@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Game</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+
+
+  <body>
+    <div class="left" >
+      <h3>Round <%= @game.round_number %></h3>
+    </div>
+    <div class="centered">
+      <p>
+      <h2>You chose: <%=@game.user_choice.capitalize%></h2>
+      <p>
+
+      <!-- add if statement to check if someone has won 3.. -->
+
+      <% if @game.win? %>
+        <h1>You won that round!</h1>
+      <% elsif @game.lose? %>
+        <h1>Robot won that round!</h1>
+      <% elsif @game.draw? %>
+        <h1>It was a draw!!</h1>
+      <% end %>
+      <br>
+      <h2>The game chose: <%=@game.game_choice.capitalize%></h2>
+      <br>
+      <br>
+      <form action="/next_round" method="post">
+        <button type="submit" class="btn" name="choice" value="play">
+          Play again
+        </button>
+      </form>
+      <form action="/" method="get">
+        <button type="submit" class="btn" name="choice" value="reset">
+          Reset
+        </button>
+      </form>
+    </div>
+  </body>
+
+</html>
