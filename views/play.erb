@@ -1,1 +1,7 @@
-<h2> <%= "Welcome #{@name}!"%> </h2>
+<h2> Welcome <%= @name %>!</h2>
+<h3> Please choose an action: <h3>
+<form id="your_choice" action="/game" method="post">
+  <input type="submit" name="weapon" value="rock">
+  <input type="submit" name="weapon" value="paper">
+  <input type="submit" name="weapon" value="scissors">
+</form>
