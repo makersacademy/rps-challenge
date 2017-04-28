@@ -14,11 +14,11 @@ class Game
   end
 
   def result
-    self.check(@weapon, @computer_weapon) ? :win : :lose
+    check(@weapon, @computer_weapon) ? :win : :lose
   end
 
-  def check(weapon,computer_weapon)
-    RULES.any? {|key,value| key == weapon && value == computer_weapon }
+  def check(weapon, computer_weapon)
+    RULES.any? { |key, value| key == weapon && value == computer_weapon }
   end
 
 end

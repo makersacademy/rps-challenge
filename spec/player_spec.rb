@@ -1,8 +1,8 @@
 require 'player'
 
 describe Player do
-  subject(:player){ described_class.new("John")}
-  let(:weapon){ double :weapon }
+  subject(:player) { described_class.new("John") }
+  let(:weapon) { double :weapon }
 
   it 'has a name' do
     expect(player).to respond_to(:name)

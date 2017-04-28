@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  subject(:game){ described_class.new(:rock,:scissors)}
-  let(:weapon){ double :weapon }
+  subject(:game) { described_class.new(:rock, :scissors) }
+  let(:weapon) { double :weapon }
 
   it 'has a weapons array' do
     expect(Game::WEAPONS).to be_instance_of(Array)
@@ -13,7 +13,7 @@ describe Game do
   end
 
   it 'can check the result' do
-    expect(game.check(:rock,:scissors)).to be true
+    expect(game.check(:rock, :scissors)).to be true
   end
 
 end
