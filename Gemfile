@@ -9,8 +9,8 @@ group :test do
   gem 'rspec'
   gem 'rubocop-rspec'
   gem 'rubocop'
-  gem 'coveralls', require: false
   gem 'capybara'
-  gem 'byebug'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
   gem 'shotgun'
 end
