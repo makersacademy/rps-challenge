@@ -26,9 +26,7 @@ class Game
 
   def play(player_choice)
     @bot_choice = Bot.play
-    win if WINNING_HANDS.include?([player_choice, bot_choice])
-    loss if LOSING_HANDS.include?([player_choice, bot_choice])
-    draw if player_choice == @bot_choice
+    evaluate_hand(player_choice, @bot_choice)
   end
 
   def won?
@@ -40,6 +38,12 @@ class Game
   end
 
   private
+
+  def evaluate_hand(player_choice, bot_choice)
+    win if WINNING_HANDS.include?([player_choice, bot_choice])
+    loss if LOSING_HANDS.include?([player_choice, bot_choice])
+    draw if player_choice == bot_choice
+  end
 
   def win
     @result = :win
@@ -54,4 +58,5 @@ class Game
   def draw
     @result = :draw
   end
+
 end

@@ -20,29 +20,15 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post '/rock' do
-    Game.instance.play(:rock)
-    redirect '/result'
-  end
-
-  post '/paper' do
-    Game.instance.play(:paper)
-    redirect '/result'
-  end
-
-  post '/scissors' do
-    Game.instance.play(:scissors)
+  post '/choice' do
+    choice_symbol = params[:choice].downcase.to_sym
+    Game.instance.play(choice_symbol)
+    check_result
     redirect '/result'
   end
 
   get '/result' do
     @game = Game.instance
-    if @game.won?
-      redirect '/win_screen'
-    end
-    if @game.lost?
-      redirect '/lose_screen'
-    end
     erb(:result)
   end
 
@@ -54,5 +40,16 @@ class RockPaperScissors < Sinatra::Base
   get '/lose_screen' do
     @game = Game.instance
     erb(:loser)
+  end
+
+  private
+
+  def check_result
+    if Game.instance.won?
+      redirect '/win_screen'
+    end
+    if Game.instance.lost?
+      redirect '/lose_screen'
+    end
   end
 end
