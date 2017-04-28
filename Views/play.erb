@@ -1,0 +1,18 @@
+<h1><%= @game.player.name %> win/loss <%= @game.player.score %></h1>
+<body>
+<form action ="/rock" method='post'>
+  <div>
+    <input type="submit" value="ROCK" name="rock">
+  </div>
+</form>
+<form action ="/paper" method='post'>
+  <div>
+    <input type="submit" value="PAPER" name="paper">
+  </div>
+</form>
+<form action ="/scissors" method='post'>
+  <div>
+    <input type="submit" value="SCISSORS" name="scissors">
+  </div>
+</form>
+</body>
