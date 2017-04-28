@@ -1,0 +1,10 @@
+exit
+clear && pry
+load './lib/game.rb'
+load './lib/player.rb'
+load './lib/bot.rb'
+player = Player.new('Name')
+game = Game.new(player)
+game.player.win
+game.player.loss
+game.player
