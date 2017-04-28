@@ -11,24 +11,26 @@ class RPS < Sinatra::Application
   end
 
   post '/name' do
-    $current_player = Player.new(params[:name])
+    @player = Player.create(params[:name])
     redirect to('/play')
   end
 
   get '/play' do
-    @name = $current_player.name
+    @player = Player.instance
+    @name = @player.name
     erb :play
   end
 
   post '/game' do
-    $current_player.weapon = params[:weapon]
+    @player = Player.instance
+    @player.weapon = params[:weapon]
     computer = Computer.new
-    $game = Game.new(params[:weapon].to_sym, computer.weapon)
+    @game = Game.create(params[:weapon].to_sym, computer.weapon)
     redirect to('/result')
   end
 
   get '/result' do
-    @game = $game
+    @game = Game.instance
     erb @game.result
   end
 
