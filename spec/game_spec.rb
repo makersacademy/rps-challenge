@@ -7,6 +7,8 @@ describe Game do
   let(:player_3) { double(:player) }
   let(:player_4) { double(:player) }
   let(:game) { described_class.new(player_1, player_2) }
+  let(:game_2) { described_class.new(player_1, player_4) }
+  let(:game_3) { described_class.new(player_1, player_3) }
 
   before do
     allow(player_1).to receive_messages(:name => "Pietro", :choice => :rock)
@@ -30,15 +32,15 @@ describe Game do
   context 'outcome' do
 
     it 'can correctly determine a winner' do
-      expect(game.who_won(player_1, player_2)).to eq player_1.name
+      expect(game.who_won).to eq player_1.name
     end
 
     it 'can correctly determine a winner' do
-      expect(game.who_won(player_1, player_4)).to eq player_4.name
+      expect(game_2.who_won).to eq player_4.name
     end
 
     it 'can correctly determine a draw' do
-      expect(game.who_won(player_1, player_3)).to eq :draw
+      expect(game_3.who_won).to eq :draw
     end
 
   end

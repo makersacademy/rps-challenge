@@ -10,7 +10,7 @@ class Game
     @player_2 = player_2
   end
 
-  def who_won(player_1, player_2)
+  def who_won
     ResultDeterminer.calculate(player_1, player_2)
   end
 
