@@ -26,7 +26,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/paper' do
     @comp_choice = $computer.choice
-
     erb :paper
   end
 

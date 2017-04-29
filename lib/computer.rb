@@ -6,6 +6,7 @@ class Computer
 
   def initialize(choice = CHOICES.sample)
     @choice = choice
+    # @result = result
   end
 
 end

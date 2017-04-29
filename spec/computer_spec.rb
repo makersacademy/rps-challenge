@@ -1,12 +1,14 @@
 require 'computer'
 
 describe Computer do
-  subject(:game) { described_class.new }
+  subject(:computer) { described_class.new }
+  # let(:result) { double :result }
 
-  # describe '#choose_weapon' do
-  #   it 'chooses rock, paper or scissors for computer' do
-  #     expect(Game::CHOICES).to include :rock, :paper, :scissors
+  # context '#result' do
+  #   it 'returns the result of the round' do
+  #     player.choice == 'Rock'
+  #     computer.choice == 'Scissors'
+  #     expect(game.result).to eq 'You won this round'
   #   end
   # end
-
 end
