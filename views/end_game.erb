@@ -1,10 +1,11 @@
-
+<div style="margin:0 auto" align=center>
 <% if @game.current_turn.score == 3 %>
 <%= "Game over! #{@game.current_turn.name} wins!" %>
 <% else %>
 <%= "Game over! #{@game.next_turn.name} wins!" %>
 <% end %>
-
+<p>
 <form action="/" method="get">
   <input type="submit" value="Play again">
 </form>
+</div>

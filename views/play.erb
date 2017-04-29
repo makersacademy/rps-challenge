@@ -1,6 +1,6 @@
-
+<div style="margin:0 auto" align=center>
 <%= "#{@game.current_turn.name} vs #{@game.next_turn.name}"%>
-
+<p>
 <form action="/rock" method="get">
   <input type="submit" value="Rock">
 </form>
@@ -10,3 +10,4 @@
 <form action="/scissors" method="get">
   <input type="submit" value="Scissors">
 </form>
+</div
