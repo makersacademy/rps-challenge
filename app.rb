@@ -23,7 +23,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @game.win(@game.current_turn)
     erb(:rock)
   end
 

@@ -26,4 +26,5 @@ class Game
   def win(player)
     player.win_game
   end
+
 end
