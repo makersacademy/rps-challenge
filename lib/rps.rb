@@ -1,6 +1,6 @@
 class RPS
-  COMBINATIONS = { :rock => :scissors, :scissors => :rock, :paper => :rock }
-
+  COMBINATIONS = { :rock => :scissors, :scissors => :paper, :paper => :rock }
+  
   def combos
     COMBINATIONS
   end
