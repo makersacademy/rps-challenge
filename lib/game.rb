@@ -14,16 +14,36 @@ class Game
     evaluate
   end
 
+  def paper
+    @a.paper
+    @b.random_hand
+    evaluate
+  end
+
+  def scissors
+    @a.scissors
+    @b.random_hand
+    evaluate
+  end
+
   private
 
   def evaluate
-    puts "It's a draw! Try again!" if @a.hand == @b.hand
-    puts "#{@b.name} won!!" if @a.hand == 1 && @b.hand == 2
-    puts "#{@a.name} won!!" if @a.hand == 1 && @b.hand == 3
-    puts "#{@a.name} won!!" if @a.hand == 2 && @b.hand == 1
-    puts "#{@b.name} won!!" if @a.hand == 2 && @b.hand == 3
-    puts "#{@b.name} won!!" if @a.hand == 3 && @b.hand == 1
-    puts "#{@a.name} won!!" if @a.hand == 3 && @b.hand == 2
+    puts "It's a draw! Try again!" if draw?
+    puts "#{@b.name} won!!" if b_wins?
+    puts "#{@a.name} won!!" if a_wins?
+  end
+
+  def draw?
+    @a.hand == @b.hand
+  end
+
+  def a_wins?
+    @a.hand == 1 && @b.hand == 3 || @a.hand == 2 && @b.hand == 1 || @a.hand == 3 && @b.hand == 2
+  end
+
+  def b_wins?
+    @a.hand == 2 && @b.hand == 3 || @a.hand == 3 && @b.hand == 1 || @a.hand == 1 && @b.hand == 2
   end
 
 end

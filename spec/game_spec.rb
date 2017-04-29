@@ -16,4 +16,18 @@ describe Game do
       expect(player2.hand).to eq 2
     end
   end
+  describe '#paper' do
+    it 'chooses paper for player 1 and it is a draw' do
+      srand(1)
+      game.paper
+      expect(player1.hand).to eq 2
+    end
+  end
+  describe 'scissors' do
+    it 'chooses scissors for player 1 and it wins' do
+      srand(1)
+      game.scissors
+      expect(player1.hand).to eq 3
+    end
+  end
 end
