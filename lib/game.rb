@@ -18,8 +18,8 @@ class Game
 
   def declare_winner
     return "#{@player_2.message}. It's a draw!" if equal?
-    return "#{@player_2.message}. You win!" if player_wins?
-    "#{@player_2.message}. You lose!"
+    return "#{@player_2.message}. #{@player_1.name} wins!" if player_wins?
+    "#{@player_2.message}. #{@player_2.name} wins!"
   end
 
   def add_player_two(player)

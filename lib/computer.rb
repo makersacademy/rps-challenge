@@ -1,5 +1,5 @@
 class Computer
-  attr_reader :choice, :old_name
+  attr_reader :choice, :old_name, :name
 
   CHOICES = [:Rock, :Paper, :Scissors]
 
