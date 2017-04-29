@@ -1,1 +1,8 @@
+<title>Rock Paper Scissors</title>
+
 <h2><i><%=@name%> chose Scissors!<i></h2>
+  <h2>Computer chose <%=@rps.pair[:computer]%>!</h2>
+  <br>
+  <form action='/play'>
+    <input type='submit' value='Play again'>
+  </form>

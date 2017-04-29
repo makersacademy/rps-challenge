@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/rps'
 
 class Game < Sinatra::Base
 
@@ -20,16 +21,22 @@ class Game < Sinatra::Base
 
   get '/rock' do
     @name = session[:name]
+    @rps = RPS.new(:rock)
+    @rps.pair_weapons
     erb :rock
   end
 
   get '/paper' do
     @name = session[:name]
+    @rps = RPS.new(:paper)
+    @rps.pair_weapons
     erb :paper
   end
 
   get '/scissors' do
     @name = session[:name]
+    @rps = RPS.new(:scissors)
+    @rps.pair_weapons
     erb :scissors
   end
 

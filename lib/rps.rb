@@ -12,16 +12,16 @@ class RPS
   end
 
   def pair_weapons
-    @pair = { @user_weapon => computer_weapon }
+    @pair = { user: @user_weapon, computer: random_computer_weapon }
   end
 
-  def combos
+  def combinations
     RULES
   end
 
   private
 
-  def computer_weapon
+  def random_computer_weapon
     @computer.random_weapon
   end
 
