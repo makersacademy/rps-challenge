@@ -10,8 +10,9 @@ end
 
 post '/users' do
   p params
-  @username = params[:user]
-  redirect '/play'
+  @username = params[:"user"]
+  p @username
+  erb(:play)
 end
 
 get '/play' do
