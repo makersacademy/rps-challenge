@@ -6,6 +6,7 @@ require 'simplecov-console'
 require 'rspec'
 require 'pry'
 require_relative '../app.rb'
+require_relative '../spec/features/web_helpers.rb'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
