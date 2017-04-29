@@ -1,6 +1,6 @@
 require 'player'
 describe 'Player' do
-  subject(:paula) { Player.new}
+  subject(:paula) { Player.new("Paula")}
   computer = Computer.new
 
   describe '#score' do

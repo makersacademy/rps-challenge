@@ -6,23 +6,25 @@ require_relative './lib/player'
 class RPS < Sinatra::Base
   enable :sessions
     set :session_secret, 'super secret'
-    
+
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    $player = Player.new(params[:player])
     redirect '/setup'
   end
 
   get '/setup' do
-    @player = session[:player]
+    @player = $player.name
+    @score = $player.score
     erb :setup
   end
 
   get '/attack' do
-    @player = session[:player]
+    @player = $player.name
+    @score = $player.score
     erb :attack
   end
 

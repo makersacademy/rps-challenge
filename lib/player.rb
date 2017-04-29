@@ -1,8 +1,9 @@
 require_relative 'computer'
 class Player
-  attr_reader :score
+  attr_reader :name, :score
 
-  def initialize(score = 0)
+  def initialize(name, score = 0)
+    @name = name
     @score = score
   end
 
