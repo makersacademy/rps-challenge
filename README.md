@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-![](http://gph.is/1kmOo4f)
+![](https://media.giphy.com/media/kWJlSWnPgdlba/giphy.gif)
 
 ## Basic Rules
 
