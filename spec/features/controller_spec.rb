@@ -11,6 +11,6 @@ feature 'Starting up the app' do
     fill_in 'player', with: 'Trump'
     find("input[value='Rock']").click
     click_button 'Play'
-    expect(page).to have_content 'You chose Rock'
+    expect(page).to have_content 'Trump chose Rock'
   end
 end

@@ -5,7 +5,11 @@
   </head>
 
   <body>
-      <p><%= "You chose #{@choice}" %></p>
+      <h1>Rock, Paper, Scissors!</h1>
+      <p><%= "#{@game.player} chose #{@game.choice}" %></p>
+      <form method='get' action='/result'>
+        <input type='submit' value='Check winner'> <br>
+      </form>
   </body>
 
 </html>

@@ -1,14 +1,16 @@
 require 'sinatra'
 
 class RockPaperScissors < Sinatra::Base
+  before do
+    @game = Game.current unless @game.nil?
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/info' do
-    @name = params[:player]
-    @choice = params[:choice]
+    @game = Game.start(params[:player], params[:choice])
     erb(:play)
   end
 end
