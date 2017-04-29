@@ -1,11 +1,12 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player, name: 'Player', wins: 3, loses: 3 }
-  let(:game) { Game.new(player, 5) }
+  let(:player) { double :player, name: 'Player', type: :human, wins: 3 }
+  let(:bot) { double :player, name: 'Bot', type: :bot, wins: 0 }
+  let(:game) { Game.new(player, player, 5) }
 
   it 'has player' do
-    expect(game.player.name).to eq 'Player'
+    expect(game.player1.name).to eq 'Player'
   end
 
   it 'gets best_of number' do
@@ -13,16 +14,20 @@ describe Game do
   end
 
   it 'has default best of 5' do
-    default_game = Game.new(player, "")
+    default_game = Game.new(player, player, "")
     expect(default_game.best_of).to eq 5
   end
 
-  it 'knows when player has won' do
-    expect(game).to be_won
+  it 'knows when player1 has won' do
+    expect(game).to be_p1_won
   end
 
-  it 'knows when player has lost' do
-    expect(game).to be_lost
+  it 'knows when player2 has won' do
+    expect(game).to be_p2_won
   end
 
+  it 'can have bots' do
+    default_game = Game.new(player, bot, "")
+    expect(default_game.player2.type).to eq :bot
+  end
 end

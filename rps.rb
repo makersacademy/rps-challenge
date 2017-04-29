@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/game'
 require './lib/bot'
 require 'pry'
+require 'bootstrap'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -10,20 +11,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player_1])
-    Game.start(player, params[:best_of])
-    redirect '/play'
+    player1 = Player.new(params[:player_1], :human)
+    player2 = player2_create(params[:player_2])
+    Game.start(player1, player2, params[:best_of])
+    redirect '/play1'
   end
 
-  get '/play' do
+  get '/play1' do
     @game = Game.instance
     erb(:play)
   end
 
   post '/choice' do
-    choice_symbol = params[:choice].to_sym
-    Game.instance.play(choice_symbol)
-    redirect '/result'
+    Game.instance.order[0].choice(params[:choice].to_sym)
+    two_player? ? two_player_route : one_player_route
   end
 
   get '/result' do
@@ -31,4 +32,34 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
+  private
+
+  def two_player?
+    Game.instance.player2.type == :human
+  end
+
+  def player2_create(player2)
+    if player2 == ""
+      Player.new(Bot.name, :bot)
+    else
+      Player.new(player2, :human)
+    end
+  end
+
+  def one_player_route
+    Game.instance.player2.random_choice
+    Game.instance.play1
+    redirect '/result'
+  end
+
+  def two_player_route
+    if Game.instance.order[0] == Game.instance.player1
+      Game.instance.switch_player
+      redirect '/play1'
+    else
+      Game.instance.play1
+      Game.instance.switch_player
+      redirect '/result'
+    end
+  end
 end

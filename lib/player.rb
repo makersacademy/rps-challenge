@@ -1,17 +1,21 @@
 class Player
-  attr_reader :name, :wins, :loses
+  attr_reader :name, :wins, :type, :last_choice
 
-  def initialize(name)
+  def initialize(name, type)
     @name = name
     @wins = 0
-    @loses = 0
+    @type = type
+  end
+
+  def choice(choice)
+    @last_choice = choice
   end
 
   def win
     @wins += 1
   end
 
-  def loss
-    @loses += 1
+  def random_choice
+    @last_choice = Bot.play
   end
 end

@@ -1,11 +1,18 @@
-<img src="https://goo.gl/O5CCGq" height="500">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
-<form action ="/names" method='post'>
-  <div>
-    <label for="player_1">Player Name</label>
-    <input type="text" name="player_1">
-    <label for="best_of">Best of...</label>
-    <input type="text" name="best_of">
-    <input type="submit" value="Submit" name="Submit">
-  </div>
+<img src="https://goo.gl/O5CCGq" height="580">
+<body>
+  <h2>ROCK|PAPER|SCISSORS|LIZARD|SPOCK</h2>
+  <div class="container">
+  <p class="text-center">
+<form action ="/names" method='post' style="leftmargin:50">
+    <label for="player_1">Player One Name</label>
+    <input type="text" name="player_1" size="40"><p>
+    <label for="player_2">Player Two Name</label>
+    <input type="text" name="player_2" placeholder="Leave blank for 1-player game" size="40"></p></p>
+    <label for="best_of">Best of</label>
+    <input type="text" name="best_of" size="2" placeholder="5" >
+    <input class="btn btn-default" type="submit" value="Submit" name="Submit">
 </form>
+</body>
+</div>

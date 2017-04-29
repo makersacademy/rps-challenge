@@ -1,14 +1,17 @@
-<h1> ROCK:PAPER:SCISSORS:LIZARD:SPOCK best of <%= @game.best_of %> </h1>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+<h1> ROCK|PAPER|SCISSORS|LIZARD|SPOCK <p>
+  <%= @game.order[0].name %>'s turn </h1>
 <body>
 <form action ="/choice" method='post'>
 
-    <input type="image" id="rock" src="https://goo.gl/qDgfhF" value="rock" name="choice" height="200">
-    <input type="image" src="https://goo.gl/qV9Uxs" value="paper" name="choice" height="200">
-    <input type="image" src="https://goo.gl/MXYFw7" value="scissors" name="choice" height="200">
-    <input type="image" src="https://goo.gl/okkjMp" value="lizard" name="choice" height="200">
-    <input type="image" src="https://goo.gl/lWOPHY" value="spock" name="choice" height="200">
+    <input type="image" id="rock" src="https://goo.gl/qDgfhF" value="rock" name="choice" height="180">
+    <input type="image" id="paper" src="https://goo.gl/qV9Uxs" value="paper" name="choice" height="180">
+    <input type="image" src="https://goo.gl/MXYFw7" value="scissors" name="choice" height="180">
+    <input type="image" src="https://goo.gl/okkjMp" value="lizard" name="choice" height="180">
+    <input type="image" src="https://goo.gl/lWOPHY" value="spock" name="choice" height="180">
 
 </form>
-<h1><%= @game.player.name.upcase %> Wins: <%= @game.player.wins %> Loses: <%= @game.player.loses %></h1>
-
+<h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
+<h2> (Best of <%= @game.best_of %>) </h2>
 </body>

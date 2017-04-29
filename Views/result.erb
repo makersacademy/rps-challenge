@@ -1,57 +1,65 @@
-<h1>You <%= @game.result.to_s.upcase %> that round!</h1>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+<% if @game.result == :p1win %>
+<h1> <%= @game.player1.name.upcase %> WON THAT ROUND! </h1>
+<% elsif @game.result == :p2win %>
+<h1> <%= @game.player2.name.upcase %> WON THAT ROUND! </h1>
+<% else %>
+<h1> THAT ROUND WAS A DRAW </h1>
+<% end %>
 
   <h1>
-  <% if @game.player_choice == :rock %>
+  <% if @game.p1_choice == :rock %>
   <img src="https://goo.gl/qDgfhF" height="200">
   <% end %>
-  <% if @game.player_choice == :paper %>
+  <% if @game.p1_choice == :paper %>
   <img src="https://goo.gl/qV9Uxs" height="200">
   <% end %>
-  <% if @game.player_choice == :scissors %>
+  <% if @game.p1_choice == :scissors %>
   <img src="https://goo.gl/MXYFw7" height="200">
   <% end %>
-  <% if @game.player_choice == :lizard %>
+  <% if @game.p1_choice == :lizard %>
   <img src="https://goo.gl/okkjMp" height="200">
   <% end %>
-  <% if @game.player_choice == :spock %>
+  <% if @game.p1_choice == :spock %>
   <img src="https://goo.gl/lWOPHY" height="200">
   <% end %>
 
-  <% if @game.result == :win %>beats<% end%>
-  <% if @game.result == :lose %>is beaten by<% end%>
+  <% if @game.result == :p1win %>beats<% end%>
+  <% if @game.result == :p2win %>is beaten by<% end%>
   <% if @game.result == :draw %>draws with<% end%>
 
-  <% if @game.bot_choice == :rock %>
+  <% if @game.p2_choice == :rock %>
   <img src="https://goo.gl/qDgfhF" height="200">
   <% end %>
-  <% if @game.bot_choice == :paper %>
+  <% if @game.p2_choice == :paper %>
   <img src="https://goo.gl/qV9Uxs" height="200">
   <% end %>
-  <% if @game.bot_choice == :scissors %>
+  <% if @game.p2_choice == :scissors %>
   <img src="https://goo.gl/MXYFw7" height="200">
   <% end %>
-  <% if @game.bot_choice == :lizard %>
+  <% if @game.p2_choice == :lizard %>
   <img src="https://goo.gl/okkjMp" height="200">
   <% end %>
-  <% if @game.bot_choice == :spock %>
+  <% if @game.p2_choice == :spock %>
   <img src="https://goo.gl/lWOPHY" height="200">
   <% end %>
   </h1>
 
-  <h1><%= @game.player.name.upcase %> Wins: <%= @game.player.wins %> Loses: <%= @game.player.loses %></h1>
+  <h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
 
-<% if @game.won? %>
-<h1>YOU WIN <%= @game.player.wins %>-<%= @game.player.loses %></h1>
+<% if @game.p1_won? %>
+<h1><%= @game.player1.name.upcase %> WINS! <%= @game.player1.wins %>-<%= @game.player2.wins %></h1>
 <form action='/'>
-<input type='submit' value='Play again' name='Next'>
+<input class="btn btn-default" type='submit' value='Play again' name='Next'>
 </form>
-<% elsif @game.lost? %>
-<h1>YOU LOSE <%= @game.player.wins %>-<%= @game.player.loses %></h1>
+<% elsif @game.p2_won? %>
+<h1><%= @game.player2.name.upcase %> WINS! <%= @game.player2.wins %>-<%= @game.player1.wins %></h1>
 <form action='/'>
-<input type='submit' value='Play again' name='Next'>
+<input class="btn btn-default" type='submit' value='Play again' name='Next'>
 </form>
 <% else %>
-<form action='/play'>
-<input type='submit' value='Next turn' name='Next'>
+<form action='/play1'>
+<input class="btn btn-default" type='submit' value='Next turn' name='Next'>
 </form>
 <% end %>
