@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
 
   get '/attack' do
     @player = $player.name
-    @player_core = $player.score
+    @player_score = $player.score
     erb :attack
   end
 
