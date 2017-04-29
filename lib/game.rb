@@ -14,7 +14,7 @@ class Game
     @game
   end
 
-  def set_choice(choice)
+  def define_choice(choice)
     @choice = choice
   end
 
@@ -25,20 +25,24 @@ class Game
   def result
     if @choice == @robo_choice
       'It is a draw'
-    elsif @robo_choice == 'rock' && @choice == 'scissors'
+    elsif robo_win?
       'Robot wins'
-    elsif @robo_choice == 'scissors' && @choice == 'paper'
-      'Robot wins'
-    elsif @robo_choice == 'paper' && @choice == 'rock'
-      'Robot wins'
-    elsif @choice == 'rock' && @robo_choice == 'scissors'
-      'You win'
-    elsif @choice == 'scissors' && @robo_choice == 'paper'
-      'You win'
-    elsif @choice == 'paper' && @robo_choice == 'rock'
+    elsif you_win?
       'You win'
     else
       'the logic has not worked'
     end
+  end
+
+  def robo_win?
+    @robo_choice == 'rock' && @choice == 'scissors' ||
+    @robo_choice == 'scissors' && @choice == 'paper' ||
+    @robo_choice == 'paper' && @choice == 'rock'
+  end
+
+  def you_win?
+    @choice == 'rock' && @robo_choice == 'scissors' ||
+    @choice == 'scissors' && @robo_choice == 'paper' ||
+    @choice == 'paper' && @robo_choice == 'rock'
   end
 end

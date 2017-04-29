@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    @choice = @game.set_choice(params[:choice])
+    @choice = @game.define_choice(params[:choice])
     redirect to('/result')
   end
 
