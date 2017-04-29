@@ -4,17 +4,25 @@ describe Player do
 
   let(:player) { described_class.new("Pietro") }
 
-  it 'must have a name' do
-    expect { described_class.new() } .to raise_error(ArgumentError)
+  context 'set-up' do
+
+    it 'must have a name' do
+      expect { described_class.new() } .to raise_error(ArgumentError)
+    end
+
   end
 
-  it 'knows its name' do
-    expect(player.name).to eq "Pietro"
-  end
+  context 'behaviour' do
 
-  it 'can be assigned a choice' do
-    player.choice = :rock
-    expect(player.choice).to eq :rock
+    it 'knows its name' do
+      expect(player.name).to eq "Pietro"
+    end
+
+    it 'can be assigned a choice' do
+      player.choice = :rock
+      expect(player.choice).to eq :rock
+    end
+
   end
 
 end

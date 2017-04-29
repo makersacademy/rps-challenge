@@ -13,7 +13,7 @@ describe Game do
   before do
     allow(player_1).to receive_messages(:name => "Pietro", :choice => :rock)
     allow(player_2).to receive_messages(:name => "Andrea", :choice => :scissors)
-    allow(player_3).to receive_messages(:name => "Jessica", :choice => :rock)
+    allow(player_3).to receive_messages(:choice => :rock)
     allow(player_4).to receive_messages(:name => "Thierry", :choice => :paper)
   end
 

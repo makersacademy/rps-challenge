@@ -8,7 +8,9 @@ class RPSWeb < Sinatra::Application
   end
 
   post '/play' do
-    @val = params[:weapon]
+    player_1, player_2 = Player.new('Him'), Player.new('Her')
+    @game = Game.new(player_1, player_2)
+    @game.player_1.choice = params[:weapon]
     erb(:outcome)
   end
 
