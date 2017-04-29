@@ -2,6 +2,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'rps_game.rb')
+require 'features/web_helpers.rb'
 
 require 'capybara'
 require 'capybara/rspec'

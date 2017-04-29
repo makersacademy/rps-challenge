@@ -2,8 +2,6 @@ require './rps_game.rb'
 
 feature 'Entering name information' do
   scenario 'Player can enter their name' do
-    visit "/"
-    fill_in :player_name, with: 'The Donald'
-    click_button "Submit"
+    sign_in_and_play
   end
 end
