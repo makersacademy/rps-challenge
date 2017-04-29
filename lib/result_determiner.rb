@@ -7,6 +7,7 @@ class ResultDeterminer
   }
 
   def self.calculate(player_1, player_2)
+    raise 'Not all players have names' if player_1.name.empty? || player_1.name.empty?
     return :draw if player_1.choice == player_2.choice
     hash = {
       player_1.choice => player_1.name,
