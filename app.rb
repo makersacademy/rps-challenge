@@ -10,8 +10,7 @@ class RPSWeb < Sinatra::Application
   end
 
   post '/play' do
-    player_1, player_2 = Player.new(params[:name]), Ai.new
-    Game.create(player_1, player_2)
+    Game.create(Player.new(params[:name]), Ai.new)
     @game = Game.instance
     @game.player_1.choice = params[:weapon].to_sym
     @winner = @game.who_won

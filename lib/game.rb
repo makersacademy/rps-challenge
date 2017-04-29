@@ -5,6 +5,7 @@ require_relative './ai'
 class Game
 
   attr_reader :player_1, :player_2
+  @@game = nil
 
   def initialize(player_1, player_2)
     @player_1 = player_1
