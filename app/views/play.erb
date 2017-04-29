@@ -8,6 +8,9 @@
       <h1>Rock, Paper, Scissors!</h1>
       <p><%= "#{@game.player} chose #{@game.choice}" %></p>
       <p><%= "#{@game.declare_winner}" %></p>
+      <form action='/' method="get">
+        <input type='submit' value='Play again!'>
+      </form>
   </body>
 
 </html>
