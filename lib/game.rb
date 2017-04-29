@@ -33,10 +33,26 @@ class Game
   end
 
   def player_one_wins?
-    @player_1.choice == :Rock && [:Scissors, :Lizard].include?(@player_2.choice) ||
-    @player_1.choice == :Scissors && [:Paper, :Lizard].include?(@player_2.choice) ||
-    @player_1.choice == :Paper && [:Rock, :Spock].include?(@player_2.choice) ||
-    @player_1.choice == :Lizard && [:Paper, :Spock].include?(@player_2.choice) ||
+    rock_wins? || scissors_wins? || paper_wins? || lizard_wins? || spock_wins?
+  end
+
+  def rock_wins?
+    @player_1.choice == :Rock && [:Scissors, :Lizard].include?(@player_2.choice)
+  end
+
+  def scissors_wins?
+    @player_1.choice == :Scissors && [:Paper, :Lizard].include?(@player_2.choice)
+  end
+
+  def paper_wins?
+    @player_1.choice == :Paper && [:Rock, :Spock].include?(@player_2.choice)
+  end
+
+  def lizard_wins?
+    @player_1.choice == :Lizard && [:Paper, :Spock].include?(@player_2.choice)
+  end
+
+  def spock_wins?
     @player_1.choice == :Spock && [:Rock, :Scissors].include?(@player_2.choice)
   end
 end
