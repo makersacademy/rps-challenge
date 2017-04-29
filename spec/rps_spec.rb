@@ -5,7 +5,7 @@ describe RPS do
 
   describe '#winning_combinations' do
     it 'contains winning combos' do
-      expect(rps.combos).to eq RPS::COMBINATIONS
+      expect(rps.combos).to eq RPS::RULES
     end
   end
 

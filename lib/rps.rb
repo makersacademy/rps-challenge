@@ -1,7 +1,7 @@
 require_relative 'computer'
 
 class RPS
-  COMBINATIONS = { :rock => :scissors, :scissors => :paper, :paper => :rock }
+  RULES = { :rock => :scissors, :scissors => :paper, :paper => :rock }
 
   attr_reader :pair
 
@@ -16,7 +16,7 @@ class RPS
   end
 
   def combos
-    COMBINATIONS
+    RULES
   end
 
   private
