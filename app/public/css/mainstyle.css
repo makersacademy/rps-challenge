@@ -185,8 +185,13 @@ body {
 
 .force-left {
 
-  left:35px;
-  top:20px;
+  float: left !important;
+
+}
+
+.force-right {
+
+  float: right !important;
 
 }
 
