@@ -4,4 +4,7 @@ class Player
   def initialize(score = 0)
     @score = score
   end
+
+  def attack_with_rock(computer)
+  end
 end
