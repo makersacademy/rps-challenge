@@ -1,3 +1,4 @@
+require_relative 'player'
 class Computer
   attr_reader :score
 

@@ -1,3 +1,4 @@
+require_relative 'computer'
 class Player
   attr_reader :score
 
@@ -6,5 +7,6 @@ class Player
   end
 
   def attack_with_rock(computer)
+    @score += 1
   end
 end
