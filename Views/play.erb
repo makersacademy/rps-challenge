@@ -1,10 +1,11 @@
-<h1><%= @game.player.name %> win/loss <%= @game.player.wins %>/<%= @game.player.loses %></h1>
+<h1><%= @game.player.name.upcase %> Wins: <%= @game.player.wins %> Loses: <%= @game.player.loses %></h1>
+
 <body>
 <form action ="/choice" method='post'>
 
-    <input type="submit" value="ROCK" name="choice">
-    <input type="submit" value="PAPER" name="choice">
-    <input type="submit" value="SCISSORS" name="choice">
+    <input type="image" id="rock" src="https://goo.gl/qDgfhF" value="rock" name="choice" height="200">
+    <input type="image" src="https://goo.gl/qV9Uxs" value="paper" name="choice" height="200">
+    <input type="image" src="https://goo.gl/MXYFw7" value="scissors" name="choice" height="200">
 
 </form>
 </body>

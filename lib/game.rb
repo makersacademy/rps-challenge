@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :hands, :bot_choice, :result
+  attr_reader :player, :hands, :bot_choice, :result, :best_of, :player_choice
   WINNING_HANDS = [
     [:rock, :scissors],
     [:scissors, :paper],
@@ -10,12 +10,15 @@ class Game
     [:scissors, :rock],
     [:paper, :scissors]
   ]
-  def self.start(player)
-    @game = Game.new(player)
+  BEST_OF_DEFAULT = 5
+
+  def self.start(player, best_of)
+    @game = Game.new(player, best_of)
   end
 
-  def initialize(player)
+  def initialize(player, best_of)
     @player = player
+    best_of == "" ? @best_of = BEST_OF_DEFAULT : @best_of = best_of.to_i
     @bot_choice = ''
     @result = ''
   end
@@ -26,15 +29,16 @@ class Game
 
   def play(player_choice)
     @bot_choice = Bot.play
-    evaluate_hand(player_choice, @bot_choice)
+    @player_choice = player_choice
+    evaluate_hand(@player_choice, @bot_choice)
   end
 
   def won?
-    @player.wins >= 3
+    @player.wins >= (@best_of / 2)+1
   end
 
   def lost?
-    @player.loses >=3
+    @player.loses >= (@best_of / 2) + 1
   end
 
   private
@@ -51,7 +55,7 @@ class Game
   end
 
   def loss
-    @result = :loss
+    @result = :lose
     @player.loss
   end
 

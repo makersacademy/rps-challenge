@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_1])
-    Game.start(player)
+    Game.start(player, params[:best_of])
     redirect '/play'
   end
 
@@ -21,9 +21,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    choice_symbol = params[:choice].downcase.to_sym
+    choice_symbol = params[:choice].to_sym
     Game.instance.play(choice_symbol)
-    check_result
+    #check_result
     redirect '/result'
   end
 
@@ -32,24 +32,4 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
-  get '/win_screen' do
-    @game = Game.instance
-    erb(:winner)
-  end
-
-  get '/lose_screen' do
-    @game = Game.instance
-    erb(:loser)
-  end
-
-  private
-
-  def check_result
-    if Game.instance.won?
-      redirect '/win_screen'
-    end
-    if Game.instance.lost?
-      redirect '/lose_screen'
-    end
-  end
 end
