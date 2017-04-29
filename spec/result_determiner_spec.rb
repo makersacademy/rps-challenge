@@ -13,16 +13,12 @@ describe ResultDeterminer do
     allow(player_3).to receive_messages(:name => "Jessica", :choice => :rock)
   end
 
-  context 'behaviour' do
+  it 'can correctly determine a winner' do
+    expect(rd.calculate(player_1, player_2)).to eq player_1.name
+  end
 
-    it 'can correctly determine a winner' do
-      expect(rd.calculate(player_1, player_2)).to eq player_1.name
-    end
-
-    it 'can correctly determine a draw' do
-      expect(rd.calculate(player_1, player_3)).to eq :draw
-    end
-
+  it 'can correctly determine a draw' do
+    expect(rd.calculate(player_1, player_3)).to eq :draw
   end
 
 end

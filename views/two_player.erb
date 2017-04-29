@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h1>Rock Paper Scissors <small>Two Players</small></h1>
+</div>
+
+<form name="rpsForm" action="/play" method="post" onsubmit="return validateForm()" id="rpsForm">
+
+        <p class="text-info">
+        <label for="name1">Player 1 Enter Your Name</label>
+        <input type="text" name="name1" id="name1" class="form-control" value="<%= session[:name1] %>">
+
+        <label >Player 2 Enter Your Name</label>
+        <input type="text" name="name2" id="name2" class="form-control" value="<%= session[:name2] %>">
+        </p>
+
+        <p class="text-info">
+          <label for="weapon1">Player 1 Select a weapon</label>
+        <select name="weapon1" id="weapon1" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+        </select>
+        </p>
+
+        <p class="text-info">
+          <label for="weapon2">Player 2 Select a weapon</label>
+        <select name="weapon2" id="weapon2" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+        </select>
+        </p>
+
+        <input type="submit" class="btn btn-primary" value="Play!">
+
+
+    </form>
