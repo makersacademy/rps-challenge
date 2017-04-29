@@ -24,6 +24,8 @@ class RPS < Sinatra::Base
 
   get '/attack' do
     @player = $player.name
+    ogruk = Computer.new
+    $player.attack_with_rock(ogruk)
     @player_score = $player.score
     erb :attack
   end
