@@ -2,7 +2,7 @@ feature 'Choose one option' do
 
   scenario 'Can see the instructions' do
     sign_in_and_play
-    expect(page).to have_content('Cristina, choose one from the following options: rock, paper or scissors.')
+    expect(page).to have_content('Cristina, choose one from the following options to play:')
   end
 
   scenario 'Can see the three options' do
