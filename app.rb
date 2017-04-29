@@ -5,8 +5,19 @@ class RockPaperScissors < Sinatra::Base
   set :session_secret, 'super-secret'
 
   get '/' do
-    'Hello, world!'
+    erb :index
   end
+
+  post '/save-name' do
+    session[:user_1] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player = session[:user_1]
+    erb :play
+  end
+
 
   run! if app_file == $0
 end

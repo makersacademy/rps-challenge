@@ -1,8 +1,8 @@
 require_relative '../../app.rb'
 
-feature 'index page loads' do
+feature 'homepage' do
   scenario 'user navigates to page' do
     visit('/')
-    expect(page).to have_content 'Hello, world!'
+    expect(page).to have_content 'Welcome to Rock, Paper, Scissors'
   end
 end
