@@ -13,6 +13,17 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/choice' do
+    session[:choice] = params[:choice].capitalize
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = session[:user_1]
+    @choice = session[:choice]
+    erb :result
+  end
+
   get '/play' do
     @player = session[:user_1]
     erb :play

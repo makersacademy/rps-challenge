@@ -1,10 +1,10 @@
 require_relative '../../app.rb'
 
-feature 'displaying user\'s name' do
+feature 'displaying rps choices' do
   scenario 'user enters name' do
     sign_in
-    find_link('Rock')
-    find_link('Paper')
-    find_link('Scissors')
+    expect(page).to have_content('Rock')
+    expect(page).to have_content('Paper')
+    expect(page).to have_content('Scissors')
   end
 end

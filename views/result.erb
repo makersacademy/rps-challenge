@@ -1,0 +1,9 @@
+<h1><%= "#{@player} vs Random Ruby" %></h1>
+<h1><%= "You chose #{@choice}" %></h1>
+<img src='/stop-fighting.jpg' alt='Rock, paper and scissors fight'>
+<br>
+<form action="/choice" method="post">
+  <input type="submit" value="Rock" name="Rock">
+  <input type="submit" value="Paper" name="Paper">
+  <input type="submit" value="Scissors" name="Scissors">
+</form>
