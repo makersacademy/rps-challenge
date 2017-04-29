@@ -3,6 +3,12 @@ require 'sinatra'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    'Testing infrastructure working!'
+    erb(:index)
+  end
+
+  post '/info' do
+    @name = params[:player]
+    @choice = params[:choice]
+    erb(:play)
   end
 end
