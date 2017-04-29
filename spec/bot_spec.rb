@@ -1,13 +1,13 @@
 require 'bot'
 
 describe Bot do
-  it 'picks rock' do
+  it 'picks spock' do
     srand(0)
-    expect(Bot.play).to eq :rock
+    expect(Bot.play).to eq :spock
   end
-  it 'picks paper' do
+  it 'picks lizard' do
     srand(1)
-    expect(Bot.play).to eq :paper
+    expect(Bot.play).to eq :lizard
   end
   it 'picks scissors' do
     srand(3)

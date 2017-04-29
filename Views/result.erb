@@ -1,5 +1,6 @@
 <h1>You <%= @game.result.to_s.upcase %> that round!</h1>
 
+  <h1>
   <% if @game.player_choice == :rock %>
   <img src="https://goo.gl/qDgfhF" height="200">
   <% end %>
@@ -8,6 +9,12 @@
   <% end %>
   <% if @game.player_choice == :scissors %>
   <img src="https://goo.gl/MXYFw7" height="200">
+  <% end %>
+  <% if @game.player_choice == :lizard %>
+  <img src="https://goo.gl/okkjMp" height="200">
+  <% end %>
+  <% if @game.player_choice == :spock %>
+  <img src="https://goo.gl/lWOPHY" height="200">
   <% end %>
 
   <% if @game.result == :win %>beats<% end%>
@@ -23,6 +30,13 @@
   <% if @game.bot_choice == :scissors %>
   <img src="https://goo.gl/MXYFw7" height="200">
   <% end %>
+  <% if @game.bot_choice == :lizard %>
+  <img src="https://goo.gl/okkjMp" height="200">
+  <% end %>
+  <% if @game.bot_choice == :spock %>
+  <img src="https://goo.gl/lWOPHY" height="200">
+  <% end %>
+  </h1>
 
   <h1><%= @game.player.name.upcase %> Wins: <%= @game.player.wins %> Loses: <%= @game.player.loses %></h1>
 

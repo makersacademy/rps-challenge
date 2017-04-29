@@ -7,20 +7,20 @@ end
 
 def play_winning_game
   2.times do
-    srand(3)
-    find("#rock").click
-    click_button('Next')
-  end
-  srand(3)
-  find("#rock").click
-end
-
-def play_losing_game
-  2.times do
     srand(1)
     find("#rock").click
     click_button('Next')
   end
   srand(1)
+  find("#rock").click
+end
+
+def play_losing_game
+  2.times do
+    srand(9)
+    find("#rock").click
+    click_button('Next')
+  end
+  srand(9)
   find("#rock").click
 end

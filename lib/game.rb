@@ -2,13 +2,27 @@ class Game
   attr_reader :player, :hands, :bot_choice, :result, :best_of, :player_choice
   WINNING_HANDS = [
     [:rock, :scissors],
+    [:rock, :lizard],
     [:scissors, :paper],
-    [:paper, :rock]
+    [:scissors, :lizard],
+    [:paper, :rock],
+    [:paper, :spock],
+    [:lizard, :spock],
+    [:lizard, :paper],
+    [:spock, :rock],
+    [:spock, :scissors]
   ]
   LOSING_HANDS = [
     [:rock, :paper],
+    [:rock, :spock],
     [:scissors, :rock],
-    [:paper, :scissors]
+    [:scissors, :spock],
+    [:paper, :scissors],
+    [:paper, :lizard],
+    [:lizard, :scissors],
+    [:lizard, :rock],
+    [:spock, :paper],
+    [:spock, :lizard]
   ]
   BEST_OF_DEFAULT = 5
 
@@ -34,7 +48,7 @@ class Game
   end
 
   def won?
-    @player.wins >= (@best_of / 2)+1
+    @player.wins >= (@best_of / 2) + 1
   end
 
   def lost?

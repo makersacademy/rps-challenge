@@ -23,7 +23,6 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     choice_symbol = params[:choice].to_sym
     Game.instance.play(choice_symbol)
-    #check_result
     redirect '/result'
   end
 

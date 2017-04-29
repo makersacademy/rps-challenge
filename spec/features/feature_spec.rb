@@ -17,7 +17,7 @@ feature 'Testing infrastructure' do
   end
   scenario 'win turn' do
     sign_in_and_play
-    srand(4)
+    srand(1)
     find("#rock").click
     expect(page).to have_content('WIN')
   end
@@ -29,7 +29,7 @@ feature 'Testing infrastructure' do
   end
   scenario 'lose turn' do
     sign_in_and_play
-    srand(1)
+    srand(9)
     find("#rock").click
     expect(page).to have_content('LOSE')
   end
