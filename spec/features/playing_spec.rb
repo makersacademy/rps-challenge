@@ -3,7 +3,7 @@ require_relative './web_helpers.rb'
 
 feature 'Runs the game' do
   scenario 'computer wins' do
-    srand(1)
+    srand(10)
     sign_in_and_play
     expect(page).to have_content 'Computer chose Paper. Computer wins!'
   end

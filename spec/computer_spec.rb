@@ -9,7 +9,7 @@ describe Computer do
     end
 
     it 'can choose "paper"' do
-      srand(1)
+      srand(10)
       expect(computer.generate_response).to eq :Paper
     end
 
@@ -17,13 +17,23 @@ describe Computer do
       srand(3)
       expect(computer.generate_response).to eq :Scissors
     end
+
+    it 'can choose "lizard"' do
+      srand(1)
+      expect(computer.generate_response).to eq :Lizard
+    end
+
+    it 'can choose "spock"' do
+      srand(7)
+      expect(computer.generate_response).to eq :Spock
+    end
   end
 
   describe '#message' do
     it 'explains what the computer chose' do
       srand(1)
       computer.generate_response
-      expect(computer.message).to eq 'Computer chose Paper'
+      expect(computer.message).to eq 'Computer chose Lizard'
     end
   end
 end

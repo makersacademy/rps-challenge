@@ -1,7 +1,7 @@
 require_relative 'computer'
 
 class Game
-  attr_reader :player_1, :player_2, :choice, :old_name
+  attr_reader :player_1, :player_2, :choice, :old_players
 
   def initialize(player1, player2 = Computer.new)
     @player_1 = player1
@@ -18,7 +18,7 @@ class Game
 
   def declare_winner
     return "It's a draw!" if equal?
-    return "#{@player_1.name} wins!" if player_wins?
+    return "#{@player_1.name} wins!" if player_one_wins?
     "#{@player_2.name} wins!"
   end
 
@@ -32,9 +32,11 @@ class Game
     @player_1.choice == @player_2.choice
   end
 
-  def player_wins?
-    @player_1.choice == :Rock && @player_2.choice == :Scissors ||
-    @player_1.choice == :Scissors && @player_2.choice == :Paper ||
-    @player_1.choice == :Paper && @player_2.choice == :Rock
+  def player_one_wins?
+    @player_1.choice == :Rock && [:Scissors, :Lizard].include?(@player_2.choice) ||
+    @player_1.choice == :Scissors && [:Paper, :Lizard].include?(@player_2.choice) ||
+    @player_1.choice == :Paper && [:Rock, :Spock].include?(@player_2.choice) ||
+    @player_1.choice == :Lizard && [:Paper, :Spock].include?(@player_2.choice) ||
+    @player_1.choice == :Spock && [:Rock, :Scissors].include?(@player_2.choice)
   end
 end

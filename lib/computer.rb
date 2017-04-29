@@ -1,7 +1,7 @@
 class Computer
   attr_reader :choice, :old_name, :name
 
-  CHOICES = [:Rock, :Paper, :Scissors]
+  CHOICES = [:Rock, :Paper, :Scissors, :Lizard, :Spock]
 
   def initialize
     @name = :Computer
