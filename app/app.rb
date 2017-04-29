@@ -13,7 +13,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/info' do
     @game = Game.start(Player.new(params[:player], params[:choice]))
+    redirect '/player_two' if params[:no_of_players] == 'two_player'
     @game.generate_response
     erb(:play)
+  end
+
+  get '/player_two' do
+    "Second player fills in info here"
   end
 end

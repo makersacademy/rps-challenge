@@ -8,9 +8,12 @@
       <form method='post' action='/info'>
         <h1>Rock, Paper, Scissors!</h1>
         <%= "<h2>Player Name:</h2> <input type='text' name='player' value='#{@game.player_1.old_name unless @game.nil?}'>" %><br>
-        <input type='radio' name='choice' value='Rock'> Rock <br>
+        <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
         <input type='radio' name='choice' value='Paper'> Paper <br>
         <input type='radio' name='choice' value='Scissors'> Scissors <br>
+        <p> -------- </p>
+        <input type='radio' name='no_of_players' value='one_player' checked='checked'> One Player <br>
+        <input type='radio' name='no_of_players' value='two_player'> Two Players <br>
         <input type='submit' value='Play'> <br>
       </form>
   </body>
