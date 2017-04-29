@@ -6,7 +6,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   before do
-     @game = Game.current_game
+    @game = Game.current_game
   end
 
   get '/' do
@@ -26,11 +26,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:rock)
   end
 
-  # get '/paper' do
-  #   erb(:paper)
-  # end
-  #
-  # get '/scissors' do
-  #   erb(:scissors)
-  # end
+  get '/paper' do
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    erb(:scissors)
+  end
 end

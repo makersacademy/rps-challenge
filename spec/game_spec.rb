@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new('CaptainCode', 'RosiePoSie')}
+  subject(:game) { described_class.new('CaptainCode', 'RosiePoSie') }
   let(:player) { double :player }
 
   it 'assigns players correctly' do

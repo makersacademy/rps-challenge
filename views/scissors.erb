@@ -1,0 +1,19 @@
+<% if @game.auto_play == 'rocl' %>
+<% @game.win(@game.next_turn) %>
+<%= "Uh oh, rock beats scissors! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
+ <% elsif @game.auto_play == 'paper' %>
+ <%= "Hmm, you both got scissors...it's a tie, no winners!" %>
+ <% else @game.auto_play == 'paper' %>
+  <% @game.win(@game.current_turn) %>
+<%= "Woo, scissors beats paper! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
+<% end %>
+
+<form action="/rock" method="get">
+  <input type="submit" value="Rock">
+</form>
+  <form action="/paper" method="get">
+    <input type="submit" value="Paper">
+  </form>
+<form action="/scissors" method="get">
+  <input type="submit" value="Scissors">
+</form>
