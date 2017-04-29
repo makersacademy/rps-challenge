@@ -18,13 +18,13 @@ class RPS < Sinatra::Base
 
   get '/setup' do
     @player = $player.name
-    @score = $player.score
+    @player_score = $player.score
     erb :setup
   end
 
   get '/attack' do
     @player = $player.name
-    @score = $player.score
+    @player_core = $player.score
     erb :attack
   end
 
