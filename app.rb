@@ -5,13 +5,16 @@ class RPSWeb < Sinatra::Application
 
   set :public_folder, 'public'
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/play' do
-    Game.create(Player.new(params[:name]), Ai.new)
-    @game = Game.instance
+    @game = Game.create(Player.new(params[:name]), Ai.new)
     @game.player_1.choice = params[:weapon].to_sym
     @winner = @game.who_won
     erb(:outcome)
