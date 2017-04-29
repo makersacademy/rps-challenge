@@ -1,12 +1,12 @@
 
-    <form action="/play" method="post">
-      <div>
+<form name="rpsForm" action="/play" method="post" onsubmit="return validateForm()">
 
         <p class="text-info">
           <label for="name">Enter Your Name</label>
         <input type="text" name="name" id="name" class="form-control"></p>
 
-        <p class="text-info"><label for="weapon">Select a weapon</label>
+        <p class="text-info">
+          <label for="weapon">Select a weapon</label>
         <select name="weapon" id="weapon" class="form-control">
           <option value="rock">Rock</option>
           <option value="paper">Paper</option>
@@ -15,6 +15,5 @@
 
         <input type="submit" class="btn btn-primary" value="Play!">
 
-    </div>
 
     </form>
