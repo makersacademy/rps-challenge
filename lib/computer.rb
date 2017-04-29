@@ -5,7 +5,6 @@ class Computer
 
   def initialize
     @name = :Computer
-    @old_name = ''
   end
 
   def generate_response

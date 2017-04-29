@@ -1,11 +1,333 @@
 <html>
 
   <head>
+    <style>
+      body {
 
+
+        color:white;
+        background-image:url("images/flag.gif");
+        background-size: cover;
+        text-shadow: 2px 2px 2px #000000;
+        font-weight:bold;
+
+      }
+
+      .image-container {
+
+        width:400px;
+        border: black 2px solid;
+        overflow: hidden;
+        margin-top:35px;
+        border-radius:10%;
+
+      }
+
+      #profile-pic {
+
+        width:600px;
+        border: red 2px solid;
+        overflow: hidden;
+        margin-top:35px;
+        border-radius:10%;
+
+      }
+
+      #profile-pic-2 {
+
+        width:600px;
+        border: red 2px solid;
+        overflow: hidden;
+        margin-top:35px;
+        border-radius:10%;
+        float:right;
+        position:relative;
+        right:50px;
+
+      }
+
+      .left {
+
+        float:left;
+
+      }
+
+      .right {
+
+        float:right;
+
+      }
+
+      .page-container {
+
+        width:98%;
+        height:700px;
+
+      }
+
+      .banner-container {
+
+        height:342px;
+
+      }
+
+      .heading {
+
+        margin:0;
+        margin-left:32%;
+        font-size: 40;
+        position:absolute;
+        font-family:fantasy;
+      }
+
+      .char-title {
+
+        margin:12px 40px;
+        font-size:70;
+        font-family:fantasy;
+
+      }
+
+      .char-adviser {
+
+        margin:12px 40px;
+        font-size:30;
+        font-family:fantasy;
+
+      }
+
+      .clear {
+
+        clear:both;
+
+      }
+
+      .republican {
+
+        color:red;
+
+      }
+
+      .democrat {
+
+        color:blue;
+
+      }
+
+      .body-text {
+
+        position: fixed;
+        font-size:35px;
+        font-family:fantasy;
+        top: 20%;
+        left: 34%;
+        text-align: center;
+
+      }
+
+      #play-again {
+
+        position:absolute;
+        background-color: transparent;
+        font-family: monospace;
+        font-size:38;
+        color:yellow;
+        left:38%;
+        top:550px;
+        width:300px;
+        height:150px;
+        padding-left: 15px;
+        border-radius:10%;
+        border:2px yellow solid;
+        text-shadow: 2px 2px 2px #000000;
+        transition: border 1s;
+        transition: color 0.5s;
+
+      }
+
+      #play-again:hover {
+
+        border:2px green solid;
+        color:green;
+
+      }
+
+      .mainpage-header {
+
+        font-size:80;
+        font-family:monospace;
+        position:relative;
+        left:650px;
+        top:50px;
+
+      }
+
+      .mainpage-header-2 {
+
+        font-size:80;
+        font-family:monospace;
+        position:relative;
+        right:850px;
+        top:30px;
+
+      }
+
+      .force-left {
+
+        left:35px;
+        top:20px;
+
+      }
+
+      .mainpage-notice {
+
+        position:absolute;
+        font-size: 40px;
+        font-family:fantasy;
+        color:yellow;
+        bottom:30px;
+        right:20px;
+        z-index:0;
+
+      }
+
+      .force-down {
+
+        top:450px;
+
+      }
+
+      .main-form {
+
+        font-size:25px;
+        font-family:monospace;
+        position:absolute;
+        top:20px;
+        left:20px;
+
+      }
+
+      .main-form-2 {
+
+        font-size:25px;
+        font-family:monospace;
+        position:absolute;
+        top:20px;
+        left:900px;
+        z-index:1;
+
+      }
+
+      .player-selection {
+
+        position:absolute;
+        left:300px;
+        bottom:200px;
+        font-size:25px;
+
+      }
+
+      .name-input {
+
+        font-size:25px;
+        margin:0;
+        margin-left:15px;
+        padding:0;
+        outline:none;
+        background-color:transparent;
+        border:1px solid black;
+        border-radius:10%;
+        padding-left: 20px;
+        width:200px;
+        font-family:monospace;
+      }
+
+      .name-input:focus {
+
+        background-color:black;
+        color:white;
+
+      }
+
+      .no-space {
+
+        margin:0;
+        padding:0;
+
+      }
+
+      .start-button {
+
+        position:absolute;
+        width:170px;
+        height:120px;
+        bottom:30px;
+        left:200px;
+        font-size:40px;
+        font-family:monospace;
+        font-weight:bold;
+        text-shadow: 2px 2px 2px #000000;
+        color:red;
+        background-color:rgba(255, 0, 0, 0.3);
+        border:black 2px solid;
+        border-radius:5%;
+        transition: background-color 1s;
+      }
+
+      .button-two {
+
+        color:blue;
+        background-color:rgba(0, 0, 255, 0.3);
+        transition: background-color 1s;
+
+      }
+
+      .button-two:hover {
+
+        background-color:rgba(0, 0, 255, 0.8) !important;
+
+      }
+
+      .start-button:hover {
+        background-color:rgba(255, 0, 0, 0.8);
+      }
+
+    </style>
   </head>
 
   <body>
-      <form method='post' action='/play'>
+    <div id='profile-pic-2' class='left'>
+      <%= "<img src='images/Clinton.jpg' height='350' width='600'>" %>
+    </div>
+    <form class='main-form-2' method='post' action='/play'>
+      <h1 class='mainpage-header-2'><span class='republican'>ROCK,</span><br />
+        <span style='padding-left:150px;'>PAPER,</span><br />
+        <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
+      <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
+      Your suggestion:<br>
+      <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
+      <input type='radio' name='choice' value='Paper'> Paper <br>
+      <input type='radio' name='choice' value='Scissors'> Scissors <br>
+      <input type='radio' name='choice' value='Lizard'> Lizard <br>
+      <input type='radio' name='choice' value='Spock'> Spock <br>
+      <input class='start-button button-two' type='submit' value='PLAY'> <br>
+    </form>
+
+    <p class='mainpage-notice force-left force-down'>Clinton wants you on board, player two, to help<br>
+      her beat Trump and win the election.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <form method='post' action='/play'>
         <h1>Rock, Paper, Scissors!</h1>
         <%= "<h2>Player Two\'s Name:</h2> <input type='text' name='player' value='#{@game.player_2.old_name unless @game.nil?}'>" %><br>
         <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
@@ -13,9 +335,8 @@
         <input type='radio' name='choice' value='Scissors'> Scissors <br>
         <input type='radio' name='choice' value='Lizard'> Lizard <br>
         <input type='radio' name='choice' value='Spock'> Spock <br>
-        <p> -------- </p>
         <input type='submit' value='Play'> <br>
-      </form>
+      </form> -->
   </body>
 
 </html>

@@ -1,17 +1,164 @@
 <html>
 
   <head>
+    <style>
+
+      body {
+
+
+        color:white;
+        background-image:url("images/usa.gif");
+        background-size: cover;
+        text-shadow: 2px 2px 2px #000000;
+        font-weight:bold;
+
+      }
+
+      .image-container {
+
+        width:400px;
+        border: black 2px solid;
+        overflow: hidden;
+        margin-top:35px;
+        border-radius:10%;
+
+      }
+
+      .left {
+
+        float:left;
+
+      }
+
+      .right {
+
+        float:right;
+
+      }
+
+      .page-container {
+
+        width:98%;
+        height:700px;
+
+      }
+
+      .banner-container {
+
+        height:342px;
+
+      }
+
+      .heading {
+
+        margin:0;
+        margin-left:32%;
+        font-size: 40;
+        position:absolute;
+        font-family:fantasy;
+      }
+
+      .char-title {
+
+        margin:12px 40px;
+        font-size:70;
+        font-family:fantasy;
+
+      }
+
+      .char-adviser {
+
+        margin:12px 40px;
+        font-size:30;
+        font-family:fantasy;
+
+      }
+
+      .clear {
+
+        clear:both;
+
+      }
+
+      .republican {
+
+        color:red;
+
+      }
+
+      .democrat {
+
+        color:blue;
+
+      }
+
+      .body-text {
+
+        position: fixed;
+        font-size:35px;
+        font-family:fantasy;
+        top: 20%;
+        left: 34%;
+        text-align: center;
+
+      }
+
+      #play-again {
+
+        position:absolute;
+        background-color: transparent;
+        font-family: monospace;
+        font-size:38;
+        color:yellow;
+        left:38%;
+        top:550px;
+        width:300px;
+        height:150px;
+        padding-left: 15px;
+        border-radius:10%;
+        border:2px yellow solid;
+        text-shadow: 2px 2px 2px #000000;
+        transition: border 1s;
+        transition: color 0.5s;
+
+      }
+
+      #play-again:hover {
+
+        border:2px green solid;
+        color:green;
+
+      }
+
+    </style>
 
   </head>
 
   <body>
-      <h1>Rock, Paper, Scissors!</h1>
-      <p><%= "#{@game.player_1.message}." %></p>
-      <p><%= "#{@game.player_2.message}." %></p>
-      <p><%= "#{@game.declare_winner}" %></p>
-      <form action='/' method="get">
-        <input type='submit' value='Play again!'>
-      </form>
+      <div class='page-container'>
+        <div class='banner-container'>
+          <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
+          <div class='image-container left'>
+            <%= "<img src='images/Trump#{@game.player_1.choice}.jpg' height=300>" %>
+          </div>
+          <div class='image-container right'>
+            <%= "<img src='images/Clinton#{@game.player_2.choice}.jpg' height='300'>" %>
+          </div>
+          <div class='body-text'>
+            <p><%= "#{@game.player_1.message}." %></p>
+            <p><%= "#{@game.player_2.message}." %></p>
+            <p><%= "#{@game.declare_winner}" %></p>
+          </div>
+          <form action='/' method="get">
+            <input id='play-again' type='submit' value='Play again!'>
+          </form>
+        </div>
+        <h1 class='char-title left'>Donald Trump</h1>
+        <h1 class='char-title right'>Hillary Clinton</h1>
+        <div class='clear'></div>
+        <h2 class='char-adviser left'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
+        <h2 class='char-adviser right'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>
+      </div>
   </body>
 
 </html>
