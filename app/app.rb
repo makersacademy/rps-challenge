@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/info' do
-    @game = Game.start(params[:player], params[:choice])
+    @game = Game.start(Player.new(params[:player], params[:choice]))
     @game.generate_response
     @game.previous_name
     erb(:play)

@@ -1,16 +1,14 @@
 class Game
-  attr_reader :player, :choice, :old_name
+  attr_reader :player_1, :choice, :old_name
 
   CHOICES = [:Rock, :Paper, :Scissors]
 
-  def initialize(player, weapon)
-    @player = player
-    @choice = weapon.to_sym
-    @old_name = ''
+  def initialize(player1)
+    @player_1 = player1
   end
 
-  def self.start(player, weapon)
-    @game = Game.new(player, weapon)
+  def self.start(player)
+    @game = Game.new(player)
   end
 
   def self.current
@@ -28,7 +26,7 @@ class Game
   end
 
   def previous_name
-    @old_name = @player
+    @old_name = @player_1.name
   end
 
   private
@@ -38,12 +36,12 @@ class Game
   end
 
   def equal?
-    @choice == @comp_choice
+    @player_1.choice == @comp_choice
   end
 
   def player_wins?
-    @choice == :Rock && @comp_choice == :Scissors ||
-    @choice == :Scissors && @comp_choice == :Paper ||
-    @choice == :Paper && @comp_choice == :Rock
+    @player_1.choice == :Rock && @comp_choice == :Scissors ||
+    @player_1.choice == :Scissors && @comp_choice == :Paper ||
+    @player_1.choice == :Paper && @comp_choice == :Rock
   end
 end
