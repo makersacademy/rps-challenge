@@ -2,7 +2,7 @@ require 'sinatra'
 require './lib/game'
 
 class RPSWeb < Sinatra::Application
-  enable :sessions
+  #enable :sessions
   set :public_folder, 'public'
 
   helpers do
@@ -28,6 +28,10 @@ class RPSWeb < Sinatra::Application
 
   get '/' do
     erb(:index)
+  end
+
+  get '/two_player' do
+    erb(:two_player)
   end
 
   post '/play' do

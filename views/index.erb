@@ -1,7 +1,7 @@
 
 <%= erb(:single_player) %>
 
-<form name="rpsForm" action="/play" method="post" onsubmit="return validateForm()">
+<form name="rpsForm" action="/play" method="post" onsubmit="return validateForm()" id="rpsForm">
 
         <p class="text-info">
           <label for="name">Enter Your Name</label>
@@ -12,7 +12,7 @@
         <select name="weapon" id="weapon" class="form-control">
           <option value="rock">Rock</option>
           <option value="paper">Paper</option>
-          <option value="scissors">Scisors</option>
+          <option value="scissors">Scissors</option>
         </select></p>
 
         <input type="submit" class="btn btn-primary" value="Play!">
