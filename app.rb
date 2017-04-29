@@ -5,7 +5,7 @@ class Game < Sinatra::Base
   enable :sessions
 
   get '/' do
-     erb :index
+    erb :index
   end
 
   post '/names' do
