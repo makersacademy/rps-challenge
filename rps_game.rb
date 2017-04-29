@@ -2,9 +2,9 @@ require 'sinatra/base'
 
 class RPSGame < Sinatra::Base
 
-get '/' do
-  'Testing infrastructure works'
-end
+  get '/' do
+    erb(:index)
+  end
 
 run! if app_file == $0
 
