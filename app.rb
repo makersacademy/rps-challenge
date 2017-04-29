@@ -20,16 +20,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
+    @player = session[:player]
     @comp_choice = $computer.choice
     erb :rock
   end
 
   get '/paper' do
+    @player = session[:player]
     @comp_choice = $computer.choice
     erb :paper
   end
 
   get '/scissors' do
+    @player = session[:player]
     @comp_choice = $computer.choice
     erb :scissors
   end

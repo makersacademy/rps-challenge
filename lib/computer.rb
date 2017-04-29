@@ -4,9 +4,7 @@ class Computer
 
   attr_reader :choice
 
-  def initialize(choice = CHOICES.sample)
-    @choice = choice
-    # @result = result
+  def initialize(computer_choice = CHOICES.sample)
+    @choice = computer_choice
   end
-
 end
