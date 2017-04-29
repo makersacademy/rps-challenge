@@ -5,4 +5,8 @@ class Computer
     WEAPONS
   end
 
+  def random_weapon
+    WEAPONS.sample
+  end
+
 end
