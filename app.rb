@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/computer'
+require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
   get '/' do
@@ -7,10 +10,12 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @player = params[:player]
-    redirect '/setup'
+    # redirect '/setup'
+    erb :setup
   end
 
   get '/setup' do
+    @player = params[:player]
     erb :setup
   end
 
