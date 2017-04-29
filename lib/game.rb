@@ -44,7 +44,7 @@ class Game
     @game
   end
 
-  def play1
+  def play
     @p1_choice = @player1.last_choice
     @p2_choice = @player2.last_choice
     evaluate_hand(@p1_choice, @p2_choice)

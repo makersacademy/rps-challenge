@@ -3,7 +3,7 @@ require 'bot'
 describe Bot do
   it 'gives itself a name' do
     srand(1)
-    expect(Bot.name).to eq "Leonardbot"
+    expect(Bot.name).to eq "Amybot"
   end
   it 'picks spock' do
     srand(0)

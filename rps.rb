@@ -14,10 +14,10 @@ class RockPaperScissors < Sinatra::Base
     player1 = Player.new(params[:player_1], :human)
     player2 = player2_create(params[:player_2])
     Game.start(player1, player2, params[:best_of])
-    redirect '/play1'
+    redirect '/play'
   end
 
-  get '/play1' do
+  get '/play' do
     @game = Game.instance
     erb(:play)
   end
@@ -48,16 +48,16 @@ class RockPaperScissors < Sinatra::Base
 
   def one_player_route
     Game.instance.player2.random_choice
-    Game.instance.play1
+    Game.instance.play
     redirect '/result'
   end
 
   def two_player_route
     if Game.instance.order[0] == Game.instance.player1
       Game.instance.switch_player
-      redirect '/play1'
+      redirect '/play'
     else
-      Game.instance.play1
+      Game.instance.play
       Game.instance.switch_player
       redirect '/result'
     end

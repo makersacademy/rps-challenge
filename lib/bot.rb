@@ -6,7 +6,10 @@ class Bot
       'Sheldonbot',
       'Leonardbot',
       'Rajeshbot',
-      'Howardbot'
+      'Howardbot',
+      'Pennybot',
+      'Amybot',
+      'Berniebot'
     ]
     names.sample
   end
