@@ -12,23 +12,20 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player1 = Player.new(params[:player1])
-    single_player ? $player2 = bot : $player2 = Player.new(params[:player2])
-    redirect '/players'
+    player1 = Player.new(params[:player1])
+    single_player ? player2 = bot : player2 = Player.new(params[:player2])
+    @game = Game.start(player1, player2)
+    redirect '/game'
   end
 
-  get '/players' do
-    @player1 = $player1.name
-    @player2 = $player2.name
-    erb :players
+  get '/game' do
+    @game = Game.instance
+    erb :game
   end
 
   get '/rock' do
-    'You chose rock!'
+    @game.rock
   end
-
-  run! if app_file == $0
-  private
 
   def single_player
     params[:player2] == 'Computer'
@@ -38,4 +35,5 @@ class RPS < Sinatra::Base
     Computer.new('Computer')
   end
 
+  run! if app_file == $0
 end

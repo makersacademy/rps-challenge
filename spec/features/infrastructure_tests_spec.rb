@@ -18,12 +18,12 @@ describe RPS, :type => :feature do
     end
   end
 
-  feature 'single player chooses rock' do
-    scenario 'takes you to rock page' do
-      single_player_sign_in
-      click_on 'ROCK'
-      expect(page).to have_content 'rock'
-    end
+  # feature 'single player chooses rock' do
+  #   scenario 'takes you to rock page' do
+  #     single_player_sign_in
+  #     click_on 'ROCK'
+  #     expect(page).to have_content 'rock'
+  #   end
+  # end
 
-  end
 end

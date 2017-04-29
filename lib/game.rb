@@ -8,6 +8,14 @@ class Game
     @b = player2
   end
 
+  def self.start(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def rock
     @a.rock
     @b.random_hand

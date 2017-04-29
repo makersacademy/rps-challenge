@@ -7,7 +7,9 @@
 
 <html>
   <body>
-    <%= @player1 %> vs. <%= @player2 %>
+    <div>
+    <%= @game.player1.name %> vs. <%= @game.player2.name %>
+  </div>
     <a href="/rock" class="btn btn-default" value='ROCK'>ROCK</a>
   </body>
 </html>
