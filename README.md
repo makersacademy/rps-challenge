@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors
 
+![](http://gph.is/1kmOo4f)
+
 ## Basic Rules
 
 - Rock beats Scissors
