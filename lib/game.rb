@@ -1,3 +1,5 @@
+require_relative 'computer'
+
 class Game
   attr_reader :player_1, :player_2, :choice, :old_name
 
@@ -17,7 +19,11 @@ class Game
   def declare_winner
     return "#{@player_2.message}. It's a draw!" if equal?
     return "#{@player_2.message}. You win!" if player_wins?
-    "#{comp_message}. You lose!"
+    "#{@player_2.message}. You lose!"
+  end
+
+  def add_player_two(player)
+    @player_2 = player
   end
 
   private

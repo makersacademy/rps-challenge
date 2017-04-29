@@ -7,4 +7,8 @@ class Player
     @old_name = @name
   end
 
+  def message
+    "#{@name} chose #{@choice}"
+  end
+
 end
