@@ -5,6 +5,8 @@ require_relative './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
+    set :session_secret, 'super secret'
+    
   get '/' do
     erb :index
   end
@@ -21,7 +23,6 @@ class RPS < Sinatra::Base
 
   get '/attack' do
     @player = session[:player]
-    p @player
     erb :attack
   end
 
