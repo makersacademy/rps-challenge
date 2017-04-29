@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   before do
@@ -13,7 +14,6 @@ class RockPaperScissors < Sinatra::Base
   post '/info' do
     @game = Game.start(Player.new(params[:player], params[:choice]))
     @game.generate_response
-    @game.previous_name
     erb(:play)
   end
 end

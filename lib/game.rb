@@ -24,11 +24,7 @@ class Game
     return "#{comp_message}. You win!" if player_wins?
     "#{comp_message}. You lose!"
   end
-
-  def previous_name
-    @old_name = @player_1.name
-  end
-
+  
   private
 
   def comp_message
