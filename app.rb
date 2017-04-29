@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,18 +15,23 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
+    $computer = Computer.new
     erb :play
   end
 
   get '/rock' do
+    @comp_choice = $computer.choice
     erb :rock
   end
 
   get '/paper' do
+    @comp_choice = $computer.choice
+
     erb :paper
   end
 
   get '/scissors' do
+    @comp_choice = $computer.choice
     erb :scissors
   end
 

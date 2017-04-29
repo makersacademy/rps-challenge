@@ -1,5 +1,3 @@
-require_relative 'web_helpers'
-
 feature 'Test name' do
   scenario 'player fills in name to play' do
     sign_in_and_play
