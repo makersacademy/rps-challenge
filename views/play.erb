@@ -1,3 +1,12 @@
 
+<%= "#{@game.current_turn.name} vs #{@game.next_turn.name}"%>
 
-<%= @player1 vs @player2 %> 
+<form action="/rock" method="get">
+  <input type="submit" value="Rock">
+</form>
+  <form action="/paper" method="get">
+    <input type="submit" value="Paper">
+  </form>
+<form action="/scissors" method="get">
+  <input type="submit" value="Scissors">
+</form>

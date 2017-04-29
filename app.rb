@@ -1,15 +1,20 @@
 require 'sinatra'
+require_relative './lib/player'
+require './lib/game'
 
-class RPS < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   enable :sessions
+
+  before do
+     @game = Game.current_game
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    @player1 = Player.new(params[:Player1])
-    @player2 = Player.new('RosiePoSie')
+    @game = Game.start(Player.new(params[:Player1]), Player.new('RosiePoSie'))
     redirect '/play'
   end
 
@@ -17,4 +22,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/rock' do
+    @game.win(@game.current_turn)
+    erb(:rock)
+  end
+
+  # get '/paper' do
+  #   erb(:paper)
+  # end
+  #
+  # get '/scissors' do
+  #   erb(:scissors)
+  # end
 end

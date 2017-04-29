@@ -1,12 +1,15 @@
-require 'player'
 
 class Player
 
-  attr_reader :name, :games_won
+  attr_accessor :name, :score
 
   def initialize(name)
     @name = name
-    @games_won = 0
+    @score = 0
+  end
+
+  def win_game
+    @score += 1
   end
 
 end

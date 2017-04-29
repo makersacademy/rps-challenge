@@ -1,2 +1,2 @@
 require './app'
-run RPS
+run RockPaperScissors
