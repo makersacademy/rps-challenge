@@ -13,4 +13,11 @@ feature do
     click_button('Start')
     expect(page).to have_text("It's time for Foo to play!")
   end
+
+  scenario 'There should be a choice of three options after start' do
+    visit('/')
+    fill_in('player', with: 'Foo')
+    click_button('Start')
+    expect(page).to have_text("Rock")
+  end
 end
