@@ -7,9 +7,14 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    @player = params[:player]
+  post '/name' do
+    $player = params[:player]
     erb :play
+  end
+
+  post '/play' do
+    @option = params[:option]
+    erb :option
   end
 
   run! if app_file == $0

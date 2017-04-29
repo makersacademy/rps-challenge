@@ -11,13 +11,10 @@ feature 'Choose one option' do
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
   end
-end
 
-=begin
-  scenario 'Can choose one option' do
+  scenario 'Can submit an option' do
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content 'You have chosen: Rock'
+    expect(page).to have_content 'Cristina has chosen: Rock.'
   end
 end
-=end
