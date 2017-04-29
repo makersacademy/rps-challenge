@@ -12,12 +12,12 @@ describe RPS do
 
   context 'Tests using stub' do
 
-    describe '#pair_weapons' do
+    describe '#draw_weapons' do
       let(:pair) { { :user => :rock, :computer => :scissors } }
 
       it 'pairs user weapon with random computer generated weapon' do
         rps.stub(:random_computer_weapon) { :scissors }
-        expect(rps.pair_weapons).to eq pair
+        expect(rps.draw_weapons).to eq pair
       end
     end
 

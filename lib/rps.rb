@@ -1,7 +1,10 @@
 require_relative 'computer'
 
 class RPS
-  RULES = { :rock => :scissors, :scissors => :paper, :paper => :rock }
+  RULES = [ { user: :rock, computer: :scissors },
+            { user: :paper, computer: :rock },
+            { user: :scissors, computer: :paper }
+          ]
 
   attr_reader :pair
 
@@ -11,7 +14,7 @@ class RPS
     @computer = computer.new
   end
 
-  def pair_weapons
+  def draw_weapons
     @pair = { user: @user_weapon, computer: random_computer_weapon }
   end
 
@@ -19,7 +22,20 @@ class RPS
     RULES
   end
 
+  def result
+    return "Its a Draw!" if draw?
+    if @pair == RULES[0] || @pair == RULES[1] || @pair == RULES[2]
+      return 'User wins!'
+    else
+      return 'Computer wins :('
+    end
+  end
+
   private
+
+  def draw?
+    self.pair[:user] == self.pair[:computer]
+  end
 
   def random_computer_weapon
     @computer.random_weapon
