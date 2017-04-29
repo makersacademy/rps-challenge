@@ -8,6 +8,18 @@ class Game
     @player_2 = player2
   end
 
+  def self.default
+    @actors = [:Trump, :Clinton]
+  end
+
+  def self.french
+    @actors = [:LePen, :Macron]
+  end
+
+  def self.actors
+    @actors
+  end
+
   def self.start(player)
     @game = Game.new(player)
   end

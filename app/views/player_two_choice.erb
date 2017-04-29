@@ -2,29 +2,34 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <%= "<style type='text/css'>
+      body {
+        background-image:url('../images/gifs/#{@actors[0]}.gif') !important;
+      }
+    </style>" %>
   </head>
 
   <body>
-    <audio src="audio/music/Clinton_music.wav" autoplay="autoplay" loop="loop"></audio>
-    <div id='profile-pic-2' class='left'>
-      <%= "<img src='images/Clinton.jpg' height='350' width='600'>" %>
-    </div>
-    <form class='main-form-2' method='post' action='/play'>
-      <h1 class='mainpage-header-2'><span class='republican'>ROCK,</span><br />
-        <span style='padding-left:150px;'>PAPER,</span><br />
-        <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
-      <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
-      Your suggestion:<br>
-      <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
-      <input type='radio' name='choice' value='Paper'> Paper <br>
-      <input type='radio' name='choice' value='Scissors'> Scissors <br>
-      <input type='radio' name='choice' value='Lizard'> Lizard <br>
-      <input type='radio' name='choice' value='Spock'> Spock <br>
-      <input class='start-button button-two' type='submit' value='PLAY'> <br>
-    </form>
+      <%= "<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>" %>
+      <div id='profile-pic-2' class='left'>
+        <%= "<img src='images/#{@actors[1]}.jpg' height='350' width='600'>" %>
+      </div>
+      <form class='main-form-2' method='post' action='/play'>
+        <h1 class='mainpage-header-2'><span class='republican'>ROCK,</span><br />
+          <span style='padding-left:150px;'>PAPER,</span><br />
+          <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
+        <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
+        Your suggestion:<br>
+        <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
+        <input type='radio' name='choice' value='Paper'> Paper <br>
+        <input type='radio' name='choice' value='Scissors'> Scissors <br>
+        <input type='radio' name='choice' value='Lizard'> Lizard <br>
+        <input type='radio' name='choice' value='Spock'> Spock <br>
+        <input class='start-button button-two' type='submit' value='PLAY'> <br>
+      </form>
 
-    <p class='mainpage-notice force-left force-down'>Clinton wants you on board, player two, to help<br>
-      her beat Trump and win the election.</p>
+      <p class='mainpage-notice force-left force-down'><%= @actors[1] %> wants you on board, player two, to help<br>
+        her beat <%= @actors[0] %> and win the election.</p>
   </body>
 
 </html>

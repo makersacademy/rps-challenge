@@ -5,9 +5,11 @@ require './lib/player'
 class RockPaperScissors < Sinatra::Base
   before do
     @game = Game.current
+    @actors = Game.actors
   end
 
   get '/' do
+    @actors = Game.default
     erb(:index)
   end
 

@@ -2,25 +2,24 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
-    <style type='text/css'>
+    <%= "<style type='text/css'>
       body {
-
-        background-image:url("../images/usa.gif") !important;
-
+        background-image:url('../images/gifs/#{@actors[1]}.gif') !important;
       }
-    </style>
+    </style>" %>
   </head>
 
   <body>
+
       <%= "<audio src='audio/vocals/#{@game.winner}_wins.wav' autoplay='autoplay'></audio>" %>
       <div class='page-container'>
         <div class='banner-container'>
           <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
           <div class='image-container left'>
-            <%= "<img src='images/Trump#{@game.player_1.choice}.jpg' height=300>" %>
+            <%= "<img src='images/#{@actors[0]}#{@game.player_1.choice}.jpg' height=300>" %>
           </div>
           <div class='image-container right'>
-            <%= "<img src='images/Clinton#{@game.player_2.choice}.jpg' height='300'>" %>
+            <%= "<img src='images/#{@actors[1]}#{@game.player_2.choice}.jpg' height='300'>" %>
           </div>
           <div class='body-text'>
             <p><%= "#{@game.player_1.message}." %></p>
@@ -31,8 +30,8 @@
             <input id='play-again' type='submit' value='Play again!'>
           </form>
         </div>
-        <h1 class='char-title left'>Trump</h1>
-        <h1 class='char-title right'>Clinton</h1>
+        <h1 class='char-title left'><%= @actors[0] %></h1>
+        <h1 class='char-title right'><%= @actors[1] %></h1>
         <div class='clear'></div>
         <h2 class='char-adviser left'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
         <h2 class='char-adviser right'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>

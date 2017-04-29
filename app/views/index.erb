@@ -2,33 +2,38 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <%= "<style type='text/css'>
+      body {
+        background-image:url('../images/gifs/#{@actors[0]}.gif') !important;
+      }
+    </style>" %>
   </head>
 
   <body>
-      <audio src="audio/music/Trump_music.wav" autoplay="autoplay" loop="loop"></audio>
-      <div id='profile-pic' class='left'>
-        <%= "<img src='images/Trump.jpg' height='350' width='600'>" %>
-      </div>
-      <form class='main-form' method='post' action='/info'>
-        <h1 class='mainpage-header'><span class='republican'>ROCK,</span><br />
-          <span style='padding-left:150px;'>PAPER,</span><br />
-          <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
-        <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
-        Your suggestion:<br>
-        <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
-        <input type='radio' name='choice' value='Paper'> Paper <br>
-        <input type='radio' name='choice' value='Scissors'> Scissors <br>
-        <input type='radio' name='choice' value='Lizard'> Lizard <br>
-        <input type='radio' name='choice' value='Spock'> Spock <br>
-        <div class='player-selection'>
-          <input type='radio' name='no_of_players' value='one_player' checked='checked'> One Player <br>
-          <input type='radio' name='no_of_players' value='two_player'> Two Players <br>
+        <%="<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>"%>
+        <div id='profile-pic' class='left'>
+          <%= "<img src='images/#{@actors[0]}.jpg' height='350' width='600'>" %>
         </div>
-        <input class='start-button' type='submit' value='PLAY'> <br>
-      </form>
+        <form class='main-form' method='post' action='/info'>
+          <h1 class='mainpage-header'><span class='republican'>ROCK,</span><br />
+            <span style='padding-left:150px;'>PAPER,</span><br />
+            <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
+          <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
+          Your suggestion:<br>
+          <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
+          <input type='radio' name='choice' value='Paper'> Paper <br>
+          <input type='radio' name='choice' value='Scissors'> Scissors <br>
+          <input type='radio' name='choice' value='Lizard'> Lizard <br>
+          <input type='radio' name='choice' value='Spock'> Spock <br>
+          <div class='player-selection'>
+            <input type='radio' name='no_of_players' value='one_player' checked='checked'> One Player <br>
+            <input type='radio' name='no_of_players' value='two_player'> Two Players <br>
+          </div>
+          <input class='start-button' type='submit' value='PLAY'> <br>
+        </form>
 
-      <p class='mainpage-notice'>Trump doesn't know how to play Rock, Paper, Scissors,<br>
-        Lizard, Spock and needs your help to win the election.</p>
+        <p class='mainpage-notice'><%= @actors[0] %> doesn't know how to play Rock, Paper, Scissors,<br>
+          Lizard, Spock and needs your help to win the election.</p>
   </body>
 
 </html>
