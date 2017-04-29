@@ -6,6 +6,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   before do
+    next if request.path_info == '/'
     @game = Game.current_game
   end
 
@@ -23,17 +24,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
+    redirect '/end_game'
     erb(:rock)
   end
 
   get '/paper' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
+    redirect '/end_game'
     erb(:paper)
   end
 
   get '/scissors' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
+    redirect '/end_game'
     erb(:scissors)
   end
 
