@@ -13,11 +13,17 @@ describe RPS, :type => :feature do
 
   feature 'single player sign in' do
     scenario 'will return players name and Computer' do
-      visit '/'
-      fill_in :player1, with: 'Unai'
-      click_button 'Submit'
+      single_player_sign_in
       expect(page).to have_content 'Unai' && 'Computer'
     end
   end
 
+  feature 'single player chooses rock' do
+    scenario 'takes you to rock page' do
+      single_player_sign_in
+      click_on 'ROCK'
+      expect(page).to have_content 'rock'
+    end
+
+  end
 end

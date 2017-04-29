@@ -21,5 +21,9 @@ class RPS < Sinatra::Base
     erb :players
   end
 
+  get '/rock' do
+    'You chose rock!'
+  end
+
   run! if app_file == $0
 end
