@@ -18,7 +18,7 @@ describe Player do
       expect(player.name).to eq "Pietro"
     end
 
-    it 'can be assigned a choice' do
+    it 'can be assigned a weapon choice' do
       player.choice = :rock
       expect(player.choice).to eq :rock
     end

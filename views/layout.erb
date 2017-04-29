@@ -5,24 +5,20 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-
-    <div class="row text-center" style="margin-top: 20px">
-      <a href='/two_player' class="btn btn-primary">Go To Two Player Game</a>
-    </div>
-
-    <div class="row text-center" style="margin-top: 20px">
-      <img src="rps.jpg" class="half-sized">
-    </div>
-
+    <div class="container">
       <div class="row text-center" style="margin-top: 20px">
-        <div class="col-md-4"></div>
-          <div class="col-md-4" >
-
-            <%= yield %>
-
-          </div>
-        <div class="col-md-4"></div>
+        <img src="rps.jpg" class="half-sized">
       </div>
 
+        <div class="row text-center" style="margin-top: 20px">
+          <div class="col-md-4"></div>
+            <div class="col-md-4" >
+
+              <%= yield %>
+
+            </div>
+          <div class="col-md-4"></div>
+        </div>
+    </div>
   </body>
 </html>

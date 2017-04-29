@@ -23,7 +23,7 @@ describe Game do
       expect(game.player_1.name).to eq "Pietro"
     end
 
-    it 'can read its player choice attribute' do
+    it 'can read its player weapon choice attribute' do
       expect(game.player_1.choice).to eq :rock
     end
 
