@@ -5,18 +5,18 @@ feature 'Runs the game' do
   scenario 'computer wins' do
     srand(10)
     sign_in_and_play
-    expect(page).to have_content 'Computer chose Paper. Computer wins!'
+    expect(page).to have_content 'Computer chose Paper. COMPUTER WINS!'
   end
 
   scenario 'player wins' do
     srand(3)
     sign_in_and_play
-    expect(page).to have_content 'Computer chose Scissors. Trump wins!'
+    expect(page).to have_content 'Computer chose Scissors. TRUMP WINS!'
   end
 
   scenario 'comes to a draw' do
     srand(2)
     sign_in_and_play
-    expect(page).to have_content 'Computer chose Rock. It\'s a draw!'
+    expect(page).to have_content 'Computer chose Rock. IT\'S A DRAW!'
   end
 end

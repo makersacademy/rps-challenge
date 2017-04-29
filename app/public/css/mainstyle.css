@@ -115,9 +115,13 @@ body {
   position: fixed;
   font-size:35px;
   font-family:fantasy;
-  top: 20%;
-  left: 39%;
+  top:100px;
+  width:400px;
+  left:500px;
   text-align: center;
+  border-radius:5%;
+  background-color:rgba(255, 0, 0, 0.3);
+  overflow:visible;
 
 }
 

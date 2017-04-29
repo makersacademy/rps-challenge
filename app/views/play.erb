@@ -2,9 +2,17 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <style type='text/css'>
+      body {
+
+        background-image:url("../images/Trump.gif") !important;
+
+      }
+    </style>
   </head>
 
   <body>
+      <audio src="audio/music/end_music.wav" autoplay="autoplay" loop="loop"></audio>
       <div class='page-container'>
         <div class='banner-container'>
           <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
@@ -17,14 +25,14 @@
           <div class='body-text'>
             <p><%= "#{@game.player_1.message}." %></p>
             <p><%= "#{@game.player_2.message}." %></p>
-            <p><%= "#{@game.declare_winner}" %></p>
+            <p><%= "#{@game.declare_winner.upcase}" %></p>
           </div>
           <form action='/' method="get">
             <input id='play-again' type='submit' value='Play again!'>
           </form>
         </div>
-        <h1 class='char-title left'>Donald Trump</h1>
-        <h1 class='char-title right'>Hillary Clinton</h1>
+        <h1 class='char-title left'>Trump</h1>
+        <h1 class='char-title right'>Clinton</h1>
         <div class='clear'></div>
         <h2 class='char-adviser left'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
         <h2 class='char-adviser right'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>
