@@ -19,5 +19,10 @@ class RPS < Sinatra::Base
     erb :setup
   end
 
+  get '/attack' do
+    @player = params[:player]
+    erb :attack
+  end
+
   run! if app_file == $0
 end
