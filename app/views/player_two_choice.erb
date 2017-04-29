@@ -12,12 +12,12 @@
   <body>
       <%= "<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>" %>
       <div id='profile-pic-2' class='left'>
-        <%= "<img src='images/#{@actors[1]}.jpg' height='350' width='600'>" %>
+        <%= "<img src='images/#{@actors[1]}/#{@actors[1]}.jpg' height='350' width='600'>" %>
       </div>
       <form class='main-form-2' method='post' action='/play'>
         <h1 class='mainpage-header-2'><span class='republican'>ROCK,</span><br />
-          <span style='padding-left:150px;'>PAPER,</span><br />
-          <span class='democrat' style='padding-left:300px;'>POLITICS</span></h1>
+          PAPER,<br />
+          POLITICS</h1>
         <%= "<h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'>" %><br>
         Your suggestion:<br>
         <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>

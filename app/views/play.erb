@@ -16,10 +16,10 @@
         <div class='banner-container'>
           <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
           <div class='image-container left'>
-            <%= "<img src='images/#{@actors[0]}#{@game.player_1.choice}.jpg' height=300>" %>
+            <%= "<img src='images/#{@actors[0]}/#{@game.player_1.choice}.jpg' height=300>" %>
           </div>
           <div class='image-container right'>
-            <%= "<img src='images/#{@actors[1]}#{@game.player_2.choice}.jpg' height='300'>" %>
+            <%= "<img src='images/#{@actors[1]}/#{@game.player_2.choice}.jpg' height='300'>" %>
           </div>
           <div class='body-text'>
             <p><%= "#{@game.player_1.message}." %></p>
