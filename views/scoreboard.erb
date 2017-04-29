@@ -3,9 +3,3 @@
 
 <p class="text-info"><%= @game.player_2.name %> chose <%= @game.player_2.choice %></p>
 <br>
-
-<% if @winner == :draw %>
-  <%= erb(:draw) %>
-<% else %>
-  <%= erb(:victory) %>
-<% end %>

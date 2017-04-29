@@ -1,9 +1,11 @@
 
+<%= erb(:single_player) %>
+
 <form name="rpsForm" action="/play" method="post" onsubmit="return validateForm()">
 
         <p class="text-info">
           <label for="name">Enter Your Name</label>
-        <input type="text" name="name" id="name" class="form-control"></p>
+        <input type="text" name="name" id="name" class="form-control" value="<%= session[:name] %>"></p>
 
         <p class="text-info">
           <label for="weapon">Select a weapon</label>
