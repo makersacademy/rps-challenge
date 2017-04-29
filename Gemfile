@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rake'
 gem 'sinatra'
 
