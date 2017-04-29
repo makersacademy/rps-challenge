@@ -22,21 +22,18 @@ class Game < Sinatra::Base
   get '/rock' do
     @name = session[:name]
     @rps = RPS.new(:rock)
-    @rps.draw_weapons
     erb :rock
   end
 
   get '/paper' do
     @name = session[:name]
     @rps = RPS.new(:paper)
-    @rps.draw_weapons
     erb :paper
   end
 
   get '/scissors' do
     @name = session[:name]
     @rps = RPS.new(:scissors)
-    @rps.draw_weapons
     erb :scissors
   end
 

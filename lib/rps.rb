@@ -12,6 +12,7 @@ class RPS
     @pair = {}
     @user_weapon = user_weapon
     @computer = computer.new
+    draw_weapons
   end
 
   def draw_weapons
@@ -25,7 +26,7 @@ class RPS
   def result
     return "Its a Draw!" if draw?
     if @pair == RULES[0] || @pair == RULES[1] || @pair == RULES[2]
-      return 'User wins!'
+      return 'You win!'
     else
       return 'Computer wins :('
     end
