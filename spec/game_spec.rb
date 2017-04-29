@@ -45,4 +45,16 @@ describe Game do
 
   end
 
+  context 'scope' do
+
+    it 'creates its own instances' do
+      expect(described_class.create(player_1, player_2)).to be_an_instance_of(described_class)
+    end
+
+    it 'returns its own instances' do
+      expect(described_class.instance).to be_an_instance_of(described_class)
+    end
+
+  end
+
 end
