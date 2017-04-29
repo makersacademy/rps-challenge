@@ -5,5 +5,14 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  post '/name' do
+    @player = params[:player]
+    redirect '/setup'
+  end
+
+  get '/setup' do
+    erb :setup
+  end
+
   run! if app_file == $0
 end
