@@ -6,4 +6,11 @@ feature do
     visit('/')
     expect(page).to have_text("Let's play Rock, Paper, Scissors!")
   end
+
+  scenario 'Putting your name in the form should work' do
+    visit('/')
+    fill_in('player', with: 'Foo')
+    click_button('Start')
+    expect(page).to have_text("It's time for Foo to play!")
+  end
 end

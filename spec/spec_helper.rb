@@ -8,7 +8,7 @@ require './spec/features/web_helpers.rb'
 require 'simplecov'
 require 'simplecov-console'
 
-Capybara.app = Game
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
