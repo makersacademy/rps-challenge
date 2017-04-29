@@ -1,7 +1,7 @@
 require_relative 'computer'
 
 class Game
-  attr_reader :player_1, :player_2, :choice, :old_players
+  attr_reader :player_1, :player_2, :choice, :winner
 
   def initialize(player1, player2 = Computer.new)
     @player_1 = player1
@@ -24,6 +24,10 @@ class Game
 
   def add_player_two(player)
     @player_2 = player
+  end
+
+  def pick_winner
+    declare_winner.include?(@player_1.name) ? @winner = 'Trump' : @winner = 'Clinton'
   end
 
   private

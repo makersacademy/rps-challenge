@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @game.add_player_two(Player.new(params[:player], params[:choice]))
+    @game.pick_winner
     erb(:play)
   end
 
@@ -20,6 +21,7 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.start(Player.new(params[:player], params[:choice]))
     redirect '/player_two' if params[:no_of_players] == 'two_player'
     @game.player_2.generate_response
+    @game.pick_winner
     erb(:play)
   end
 
