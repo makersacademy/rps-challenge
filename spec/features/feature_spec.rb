@@ -20,4 +20,13 @@ feature do
     click_button('Start')
     expect(page).to have_text("Rock")
   end
+
+  scenario 'The choice should show up on the next page' do
+    visit('/')
+    fill_in('player', with: 'Foo')
+    click_button('Start')
+    choose('scissors')
+    click_button('Play')
+    expect(page).to have_text("scissors")
+  end
 end

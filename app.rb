@@ -21,4 +21,14 @@ class RockPaperScissors < Sinatra::Base
     @player = @game.player.name
     erb(:start)
   end
+
+  post '/choice' do
+    @choice = @game.set_choice(params[:choice])
+    redirect to('/result')
+  end
+
+  get '/result' do
+    @choice = @game.choice
+    erb(:result)
+  end
 end
