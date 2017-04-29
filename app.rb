@@ -8,11 +8,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    $player = params[:player]
+    session[:player] = params[:player]
+    @player = session[:player]
     erb :play
   end
 
   post '/play' do
+    @player = session[:player]
     @option = params[:option]
     erb :option
   end

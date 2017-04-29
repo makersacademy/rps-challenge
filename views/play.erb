@@ -1,5 +1,5 @@
-<h2> <%= $player %> vs. Computer </h2>
-<h3><%= $player %>, choose one from the following options: <i>rock</i>, <i>paper</i> or <i>scissors</i>.</h3>
+<h2> <%= @player %> vs. Computer </h2>
+<h3><%= @player %>, choose one from the following options: <i>rock</i>, <i>paper</i> or <i>scissors</i>.</h3>
 <form action="/play" method="post">
   <input type="submit" value="Rock" name="option">
   <br>
