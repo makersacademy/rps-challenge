@@ -3,7 +3,7 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   before do
-    @game = Game.current unless @game.nil?
+    @game = Game.current
   end
 
   get '/' do
@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   post '/info' do
     @game = Game.start(params[:player], params[:choice])
     @game.generate_response
+    @game.previous_name
     erb(:play)
   end
 end

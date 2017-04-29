@@ -7,7 +7,7 @@
   <body>
       <form method='post' action='/info'>
         <h1>Rock, Paper, Scissors!</h1>
-        <h2>Player Name:</h2> <input type='text' name='player'> <br>
+        <%= "<h2>Player Name:</h2> <input type='text' name='player' value='#{@game.old_name unless @game.nil?}'>" %><br>
         <input type='radio' name='choice' value='Rock'> Rock <br>
         <input type='radio' name='choice' value='Paper'> Paper <br>
         <input type='radio' name='choice' value='Scissors'> Scissors <br>

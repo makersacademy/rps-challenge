@@ -1,11 +1,12 @@
 class Game
-  attr_reader :player, :choice
+  attr_reader :player, :choice, :old_name
 
   CHOICES = [:Rock, :Paper, :Scissors]
 
   def initialize(player, weapon)
     @player = player
     @choice = weapon.to_sym
+    @old_name = ''
   end
 
   def self.start(player, weapon)
@@ -24,6 +25,10 @@ class Game
     return "#{comp_message}. It's a draw!" if equal?
     return "#{comp_message}. You win!" if player_wins?
     "#{comp_message}. You lose!"
+  end
+
+  def previous_name
+    @old_name = @player
   end
 
   private
