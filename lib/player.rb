@@ -8,7 +8,7 @@ class Player
     @score = 0
   end
 
-  def win_game
+  def win_round
     @score += 1
   end
 

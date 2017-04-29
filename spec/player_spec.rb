@@ -17,7 +17,7 @@ describe Player do
 
   describe '#win_game' do
     it 'adds 1 score point to score' do
-      player.win_game
+      player.win_round
       expect(player.score). to eq 1
     end
   end

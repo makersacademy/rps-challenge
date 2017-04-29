@@ -23,7 +23,7 @@ class Game
   end
 
   def win(player)
-    player.win_game
+    player.win_round
   end
 
 end
