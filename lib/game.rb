@@ -13,7 +13,6 @@ class Game
   end
 
   def initialize(player1, player2)
-    # @players = [player1, player2]
     @current_turn = player1
     @next_turn = player2
     @computer_moves = ['scissors', 'paper', 'rock']
