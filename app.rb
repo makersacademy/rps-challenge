@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Game < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -17,9 +17,16 @@ class Game < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
-    @player = session[:player]
-    erb :result
+  get '/rock' do
+    erb :rock
+  end
+
+  get '/paper' do
+    erb :paper
+  end
+
+  get '/scissors' do
+    erb :scissors
   end
 
   run! if app_file == $0
