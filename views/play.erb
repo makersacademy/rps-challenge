@@ -1,9 +1,3 @@
 <h1><%= "#{@player} vs Random Ruby" %></h1>
-<img src='/stop-fighting.jpg' alt='Rock, paper and scissors fight'>
-<br>
-<form action="/choice" method="post">
-  <input type="radio" id="rock" value="rock" name="choice">Rock<br>
-  <input type="radio" id="paper" value="paper" name="choice">Paper<br>
-  <input type="radio" id="scissors" value="scissors" name="choice">Scissors<br>
-  <input type="submit" value="Submit">
-</form>
+<%= erb :image_partial %>
+<%= erb :rps_form_partial %>
