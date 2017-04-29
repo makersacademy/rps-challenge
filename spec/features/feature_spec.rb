@@ -8,12 +8,21 @@ feature 'Entering name' do
 end
 
 feature 'Gameplay' do
-  scenario 'player wins with rock' do
-    game = double("game")
-    allow(game). to receive(:auto_play) { 'scissors' }
+  scenario 'winning with rock' do
     sign_in_and_play
     click_on 'Rock'
-      game.auto_play
-    expect(page).to have_content("Woo, rock beats scissors!")
+    page.has_content?('Woo, rock beats scissors')
+  end
+
+  scenario 'losing with rock' do
+    sign_in_and_play
+    click_on 'Rock'
+    page.has_content?('Uh oh, paper beats rock!')
+  end
+
+  scenario 'tying with rock' do
+    sign_in_and_play
+    click_on 'Rock'
+    page.has_content?('Hmm, you both got rock...')
   end
 end
