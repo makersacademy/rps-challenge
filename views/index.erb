@@ -1,24 +1,19 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <form action="/play" method="post">
+      <div>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <p class="text-info"><label for="name">Enter Your Name</label>
+        <input type="text" name="name" id="name" class="form-control"></p>
 
+        <p class="text-info"><label for="weapon">Select a weapon</label>
+        <select name="weapon" id="weapon" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scisors</option>
+        </select></p>
 
-<div class="row center">
-  <div class="col-md-4"></div
-  <div class="col-md-4">
-    <form class="input-group" action="/play" method="post">
-      <select name="weapon">
-        <option value="rock">Rock</option>
-        <option value="paper">Paper</option>
-        <option value="scissors">Scisors</option>
-      </select>
-      <input type="submit" value="Play!">
+        <input type="submit" class="btn btn-primary" value="Play!">
+
+    </div>
+
     </form>
-  </div>
-  <div class="col-md-4"></div>
-</div>
