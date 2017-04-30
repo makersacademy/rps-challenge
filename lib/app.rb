@@ -10,14 +10,23 @@ get '/' do
 end
 
 post '/users' do
-  session[:user] = params[:user]
+  $user  = User.new(params[:user])
+  p params
   redirect '/play'
 end
 
 get '/play' do
-  @username = session[:user]
-erb(:play)
+  @user = $user.name
+  p @user
+  erb(:play)
 end
+
+get '/opponent_turn' do
+  p params
+  @option1 = params[:option]
+  erb(:opponent_turn)
+end
+
 
   run! if app_file == $0
 end
