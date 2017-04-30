@@ -1,3 +1,3 @@
-class RPS
+class Game
 
 end

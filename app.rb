@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "./lib/game"
 
 class RPS < Sinatra::Base
 
@@ -11,5 +12,10 @@ class RPS < Sinatra::Base
     @player_1_name = params[:player_1_name]
     erb :names
   end
+
+  get '/play' do
+    erb :play
+  end
+
 
 end
