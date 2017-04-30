@@ -1,8 +1,9 @@
 class Game
 
-  attr_reader :computer
+  attr_reader :player, :computer
 
   def initialize(player, computer = "Ogruk")
+    @player = player
     @computer = computer
   end
 

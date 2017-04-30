@@ -8,6 +8,10 @@ describe '#game' do
     it 'expects the default computer to be Ogruk' do
       expect(rps.computer).to eq "Ogruk"
     end
+
+    it 'expects the player to be a new instance of Player' do
+      expect(rps.player).to eq "Paula"
+    end
   end
 
   describe '#finish'do
