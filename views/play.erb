@@ -1,1 +1,51 @@
-<%= @game.player1.name %> vs <%= @game.computer.name %>
+<h1><%= @game.player1.name %> vs <%= @game.computer.name %></h1>
+<form action="/rock" id="form2">
+</form>
+<div class="wrapper">
+<button type="submit" form="form2" value="rock"> Rock </button>
+</div>
+<form action="/paper" id="form3">
+</form>
+<div class="wrapper">
+<button type="submit" form="form3" value="paper"> Paper </button>
+</div>
+<h2> You choose: <%= @game.player1.current_choice %></h2>
+<h2> AI chooses: <%= @game.computer.current_choice %></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+.wrapper {
+    text-align: left;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+button {
+  width: 100px;
+  background: #09C;
+  color: #fff;
+  font-family: 'Comic Sans MS', sans-serif;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #999;
+}
+
+button:hover {
+  background: #fff;
+  color: #09C;
+}
+</style>
