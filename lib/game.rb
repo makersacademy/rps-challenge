@@ -20,7 +20,7 @@ class Game
     @actors = [:Corbyn, :May]
   end
 
-  def self.actors
+  def self.country
     @actors
   end
 
@@ -43,7 +43,7 @@ class Game
   end
 
   def pick_winner
-    declare_winner.include?(@player_1.name) ? @winner = Game.actors[0] : @winner = Game.actors[1]
+    declare_winner.include?(@player_1.name) ? @winner = Game.country[0] : @winner = Game.country[1]
   end
 
   private

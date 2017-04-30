@@ -5,7 +5,7 @@ require './lib/player'
 class RockPaperScissors < Sinatra::Base
   before do
     @game = Game.current
-    @actors = Game.actors
+    @actors = Game.country
   end
 
   get '/' do
