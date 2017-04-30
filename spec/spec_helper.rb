@@ -8,6 +8,13 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+Capybara.app = Rock_Paper_Scissors
 
 RSpec.configure do |config|
   config.after(:suite) do
