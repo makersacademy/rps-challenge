@@ -25,6 +25,6 @@ class Game
 
   def computer_play(computer)
     computer.auto_play
- end
+  end
 
 end

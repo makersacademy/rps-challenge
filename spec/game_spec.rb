@@ -8,7 +8,7 @@ describe Game do
     expect(game.current_turn). to eq 'CaptainCode'
   end
 
-  describe '#auto_play' do
+  describe '#computer_play' do
     it 'selects a random string from the moves array' do
       allow(game).to receive(:auto_play).and_return('rock', 'paper', 'scissors')
       expect(game.auto_play).to eq 'rock'
