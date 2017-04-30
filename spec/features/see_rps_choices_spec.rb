@@ -6,18 +6,10 @@ feature 'Presents choices' do
     expect(page).to have_content 'The Donald'
   end
 
-  scenario 'Clicks Rock' do
+  scenario 'Available Choices' do
     sign_in_and_play
-    click_button 'Rock'
-  end
-
-  scenario 'Clicks Paper' do
-    sign_in_and_play
-    click_button 'Paper'
-  end
-
-  scenario 'Clicks Scissors' do
-    sign_in_and_play
-    click_button 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 end

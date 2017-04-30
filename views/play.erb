@@ -1,11 +1,10 @@
 <h2><%= @player.name %> vs. Computer</h2>
 
-<form>
-  <input type='submit' value='Rock'>
+<form method= "POST" action='/play'>
+  <input type='submit' name='shape' value='Rock'>
+  <input type='submit' name='shape' value='Paper'>
+  <input type='submit' name='shape' value='Scissors'>
 </form>
-<form>
-  <input type='submit' value='Paper'>
-</form>
-<form>
-  <input type='submit' value='Scissors'>
-</form>
+
+<p>You threw a <%= @choice %></p>
+<p>Computer threw a <%= @choice %></p>

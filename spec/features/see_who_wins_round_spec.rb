@@ -1,6 +1,6 @@
 require './rps_game.rb'
 
-feature 'See who wins the round' do
+xfeature 'See who wins the round' do
   scenario 'clicks Rock & wins' do
     sign_in_and_play
     click_button 'Rock'
