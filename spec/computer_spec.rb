@@ -1,5 +1,9 @@
 describe Computer do
-  it 'returns the Rock option' do
-    expect(subject.computers_option).to eq 'Rock'
+
+  describe '#randomiser' do
+    it 'returns one of the three options' do
+      allow(subject).to receive(:randomiser) { 'Rock' }
+      expect(subject.randomiser).to eq 'Rock'
+    end
   end
 end

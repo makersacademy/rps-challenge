@@ -1,3 +1,8 @@
 <h2> <i><%= @player %></i> vs. <i>Computer</i> </h2>
-<h3><i><%= @player %></i> has chosen: <%= @option %>.
-  <h3><i>Computer</i> has chosen: <%=@computers_option %> - it's a draw!
+<h3><i><%= @player %></i> has chosen: <%= @players_option %>.
+  <h3><i>Computer</i> has chosen: <%=@computers_option %>.
+    <br>
+    <h3>And the winner is.. <%= @display_result %>!<h3/>
+    <form action="/game" method="get">
+      <input type="submit" value="Play again!">
+    </form>
