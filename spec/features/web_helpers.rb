@@ -1,5 +1,5 @@
-def type_name_and_play
+def start_game
   visit('/')
-  fill_in :player_1, with: 'David'
+  fill_in :player_1, with: 'david'
   click_button 'Submit'
 end

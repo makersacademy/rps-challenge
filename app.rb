@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
+
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -13,7 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1  = session[:player_1]
+    @player_1 = session[:player_1]
     erb :play
   end
 

@@ -1,4 +1,13 @@
-<h1><%= "#{@player_1.capitalize} vs The Great Cthulhu" %></h1>
+<h1><%= "#{@player_1} vs The Great Cthulhu" %></h1>
 <br>
-<%= "#{@player_1.capitalize}, what is your weapon of choice?" %>
+<%= "#{@player_1}, what is your weapon of choice?" %>
 <br>
+<form action="/name" method="post">
+  <input type="submit" value="Rock">
+</form>
+<form action="/name" method="post">
+  <input type="submit" value="Paper">
+</form>
+<form action="/name" method="post">
+  <input type="submit" value="Scissors">
+</form>
