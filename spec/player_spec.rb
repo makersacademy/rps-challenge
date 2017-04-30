@@ -12,7 +12,7 @@ describe 'Player' do
 
   describe '#attack_with_rock' do
     it 'expects player to respond to #attack_with_rock' do
-      expect(paula).to respond_to(:attack_with_rock).with(1).argument
+      expect(paula).to respond_to(:attack_with_rock)
     end
   end
 

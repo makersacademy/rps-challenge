@@ -60,5 +60,9 @@ class RPS < Sinatra::Base
     erb :finish
   end
 
+  get '/test' do
+    $player.name
+  end
+
   run! if app_file == $0
 end
