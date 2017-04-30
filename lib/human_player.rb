@@ -1,5 +1,9 @@
 class HumanPlayer
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
   def choice(arg)
-    arg.capitalize
+    arg.downcase.to_sym
   end
 end
