@@ -39,3 +39,9 @@ I would like to be able to play rock/paper/scissors
 - Start the server by running *rackup config.ru*
 - Visit the appropriate local port in your browser.
 - Rock... Paper... Politics!
+
+## Images & Sounds
+
+- All music is royalty free and was acquired through various websites. A personal recommendation: https://incompetech.com/
+- All images used are in the public domain and available online.
+- The soundbites used on the victory screen are from freely distributed interviews or rallies.
