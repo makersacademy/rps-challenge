@@ -1,10 +1,12 @@
 
 describe Game do
 
-  let(:game) { described_class.new('Henry') }
+  let (:player) { double(:player) }
+  let (:game) { described_class.new(player) }
 
   it '#Registers number of turns played' do
-    expect { game.play('ROCK') }.to change { game.turns }.by 1
+    allow(player).to receive(:name)
+    expect { game.play('ROCK') }.to change { game.round }.by 1
   end
 
   it '#Gives random return of AI play' do

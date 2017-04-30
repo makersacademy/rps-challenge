@@ -1,18 +1,22 @@
+require './lib/result_generator.rb'
+
 # controls the game actions including turns
 class Game
 
-  attr_reader :player, :turns, :player_play, :ai_play
+  attr_reader :player, :round, :player_play, :ai_play, :results
 
   def initialize(player)
     @player = player
-    @turns = 0
+    @round = 1
+    @results = []
   end
 
   def play(play_type)
     @player_play = play_type
     @ai_play = ai_play_get
-
-    @turns += 1
+    turn_input = Hash[@player.name => @player_play, :computer => @ai_play]
+    @results << Result_generator.new.generate(turn_input)
+    @round += 1
   end
 
   def ai_play_get
