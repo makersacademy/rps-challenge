@@ -4,6 +4,7 @@ class Game
   end
 
   def finish
+    true
   end
 
 end
