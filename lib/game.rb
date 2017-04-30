@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :computer_moves, :current_turn, :next_turn,
+  attr_reader :computer_moves, :current_turn, :next_turn, :players
 
   def self.start(player1, player2)
     @game = Game.new(player1, player2)
@@ -25,5 +25,4 @@ class Game
   def win(player)
     player.win_round
   end
-
 end

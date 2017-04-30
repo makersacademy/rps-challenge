@@ -9,56 +9,23 @@ end
 
 feature 'Gameplay' do
   scenario 'winning with rock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
     sign_in_and_play
     click_on 'Rock'
-    page.has_content?('Woo, rock beats scissors')
-  end
-
-  scenario 'losing with rock' do
-    sign_in_and_play
-    click_on 'Rock'
-    page.has_content?('Uh oh, paper beats rock!')
-  end
-
-  scenario 'tying with rock' do
-    sign_in_and_play
-    click_on 'Rock'
-    page.has_content?('Hmm, you both got rock...')
+    expect(page).to have_content('Woo, rock beats scissors')
   end
 
   scenario 'winning with paper' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('rock')
     sign_in_and_play
     click_on 'Paper'
-    page.has_content?('Woo, paper beats rock')
-  end
-
-  scenario 'losing with paper' do
-    sign_in_and_play
-    click_on 'Paper'
-    page.has_content?('Uh oh, scissors beats paper!')
-  end
-
-  scenario 'tying with paper' do
-    sign_in_and_play
-    click_on 'Paper'
-    page.has_content?('Hmm, you both got paper...')
+    expect(page).to have_content('Woo, paper beats rock')
   end
 
   scenario 'winning with scissors' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('paper')
     sign_in_and_play
     click_on 'Scissors'
-    page.has_content?('Woo, scissors beats paper')
-  end
-
-  scenario 'losing with scissors' do
-    sign_in_and_play
-    click_on 'Scissors'
-    page.has_content?('Uh oh, rock beats scissors!')
-  end
-
-  scenario 'tying with scissors' do
-    sign_in_and_play
-    click_on 'Scissors'
-    page.has_content?('Hmm, you both got scissors...')
+    expect(page).to have_content('Woo, scissors beats paper')
   end
 end

@@ -1,21 +1,26 @@
 <div style="margin:0 auto" align=center>
-<% if @game.auto_play == 'paper' %>
-<% @game.win(@game.next_turn) %>
-<%= "Uh oh, paper beats rock! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
- <% elsif @game.auto_play == 'rock' %>
- <%= "Hmm, you both got rock...it's a tie, no winners!" %>
- <% else @game.auto_play == 'scissors' %>
+<%= "#{@game.current_turn.name} vs #{@game.next_turn.name}"%>
+
+<% if @game.auto_play == 'paper'%>
+  <% @game.win(@game.next_turn) %>
+  <%= "Uh oh, paper beats rock! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
+
+  <% elsif @game.auto_play == 'rock' %>
+  <%= "Hmm, you both got rock...it's a tie, no winners!" %>
+
+  <% else @game.auto_play == 'scissors' %>
   <% @game.win(@game.current_turn) %>
-<%= "Woo, rock beats scissors! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
-<% end %>
-<p>
-<form action="/rock" method="get">
-  <input type="submit" value="Rock">
-</form>
-  <form action="/paper" method="get">
-    <input type="submit" value="Paper">
-  </form>
-<form action="/scissors" method="get">
-  <input type="submit" value="Scissors">
-</form>
-</div>
+  <%= "Woo, rock beats scissors! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
+  <% end %>
+
+  <p>
+    <form action="/rock" method="get">
+      <input type="submit" value="Rock">
+    </form>
+    <form action="/paper" method="get">
+      <input type="submit" value="Paper">
+    </form>
+    <form action="/scissors" method="get">
+      <input type="submit" value="Scissors">
+    </form>
+  </div>
