@@ -8,12 +8,12 @@ class Game
     scissors: { rock: :lose, paper: :win, scissors: :draw }
   }
 
-attr_reader :player_name, :player_tool, :skynet_tool
+attr_reader :player_name, :player_tool, :computer_tool
 
   def initialize(options)
     @player_name = options["player_name"]
     @player_tool = options["player_tool"]
-    @skynet_tool = options["skynet_tool"]
+    @computer_tool = options["computer_tool"]
   end
 
   def win?
@@ -31,7 +31,7 @@ attr_reader :player_name, :player_tool, :skynet_tool
   private
 
   def result
-    return if @skynet_tool.nil?
-    RULES[@player_tool][@skynet_tool]
+    return if @computer_tool.nil?
+    RULES[@player_tool][@computer_tool]
   end
 end

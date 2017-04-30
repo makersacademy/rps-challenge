@@ -21,7 +21,7 @@ class Rock_Paper_Scissors < Sinatra::Base
 
   post '/play' do
     session[:player_tool] = params[:tool].downcase.to_sym
-    session[:skynet_tool] = Computer.new.tool
+    session[:computer_tool] = Computer.new.tool
     redirect '/play'
   end
 
