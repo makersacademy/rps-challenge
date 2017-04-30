@@ -9,6 +9,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+Capybara.app = MyRackApp
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
