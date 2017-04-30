@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 gem 'rake'
-gem 'sinatra'
 gem 'rspec-sinatra'
+gem 'sinatra'
 
 group :test do
   gem 'byebug'

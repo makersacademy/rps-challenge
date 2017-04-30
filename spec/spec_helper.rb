@@ -16,6 +16,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'byebug'
+require 'web_helpers'
 
 Capybara.app = RockPaperScissors
 RSpec.configure do |config|
