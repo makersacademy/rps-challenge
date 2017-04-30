@@ -28,8 +28,8 @@ class RPS < Sinatra::Base
   end
 
   post '/evaluate_round' do
-    @p1_pick = @game.player1_chooses(params[:player1_pick])
-    @p2_pick = @game.player2_chooses
+    @p1_pick = @game.player_1_chooses(params[:player_1_pick])
+    @p2_pick = @game.player_2_chooses
     @result = @game.evaluate_round
     erb :result
   end

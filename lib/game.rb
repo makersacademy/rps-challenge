@@ -1,6 +1,6 @@
 class Game
-  attr_reader :throws, :player1_wins,
-              :player1_pick, :player2_pick, :result,
+  attr_reader :throws, :player_1_wins,
+              :player_1_pick, :player_2_pick, :result,
               :player_1, :player_2
 
   def Game.start(player_1, player_2)
@@ -15,24 +15,24 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @throws = [:Rock, :Paper, :Scissors]
-    @player1_wins = [[:Paper, :Rock], [:Scissors, :Paper], [:Rock, :Scissors]]
+    @player_1_wins = [[:Paper, :Rock], [:Scissors, :Paper], [:Rock, :Scissors]]
   end
 
-  def player1_chooses(player1_pick)
-    @player1_pick = player1_pick.to_sym
+  def player_1_chooses(player_1_pick)
+    @player_1_pick = player_1_pick.to_sym
   end
 
-  def player2_chooses
-    @player2_pick = @throws.sample
+  def player_2_chooses
+    @player_2_pick = @throws.sample
   end
 
   def evaluate_round
-    if @player1_wins.include? [@player1_pick, @player2_pick]
-      @result = "Player One wins!"
-    elsif @player1_pick == @player2_pick
+    if @player_1_wins.include? [@player_1_pick, @player_2_pick]
+      @result = "#{player_1.name} wins!"
+    elsif @player_1_pick == @player_2_pick
       @result = "Round is a draw!"
     else
-      @result = "Player Two wins!"
+      @result = "#{player_2.name} wins!"
     end
   end
 

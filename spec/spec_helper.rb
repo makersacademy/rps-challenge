@@ -12,6 +12,7 @@ require 'capybara'
 require 'capybara/rspec'
 ENV['RACK_ENV'] = 'test'
 require_relative '../app'
+require_relative './features/web_helpers'
 Capybara.app = RPS
 
 RSpec.configure do |config|

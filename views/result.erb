@@ -1,4 +1,4 @@
-Player 1 picked <%= @p1_pick %>; Player 2 picked <%= @p2_pick %></br>
+<%= @game.player_1.name %> picked <%= @p1_pick %>; <%= @game.player_2.name %> picked <%= @p2_pick %></br>
 <br><%= @result %></br>
 
 <form action='/new_round' method="get">
