@@ -1,9 +1,11 @@
 class ResultDeterminer
 
   RULES = {
-  :rock     => { :rock => :draw, :paper => :paper, :scissors => :rock },
-  :paper    => { :rock => :paper, :paper => :draw, :scissors => :scissors },
-  :scissors => { :rock => :rock, :paper => :scissors, :scissors => :draw }
+  :rock     => { :rock => :draw, :paper => :paper, :scissors => :rock, :lizard => :rock, :spock => :spock},
+  :paper    => { :rock => :paper, :paper => :draw, :scissors => :scissors, :lizard => :lizard, :spock => :paper},
+  :scissors => { :rock => :rock, :paper => :scissors, :scissors => :draw, :lizard => :scissors, :spock => :spock },
+  :spock => { :rock => :spock, :paper => :paper, :lizard => :lizard, :spock => :draw, :scissors => :spock},
+  :lizard => { :lizard => :draw, :paper => :lizard, :scissors => :scissors, :spock => :lizard, :rock => :rock }
   }
 
   def self.calculate(player_1, player_2)
