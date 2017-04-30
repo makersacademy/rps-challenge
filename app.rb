@@ -1,16 +1,15 @@
 require "sinatra/base"
 
-class APP  < Sinatra::Base
+class RPS < Sinatra::Base
 
   get '/' do
-    erb:index
+    erb :index
   end
 
-  post '/players' do
+  post '/names' do
     p params
     @player_1_name = params[:player_1_name]
-    @player_2_name = params[:player_2_name]
-    erb:players
+    erb :names
   end
 
 end
