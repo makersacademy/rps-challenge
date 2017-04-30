@@ -17,7 +17,7 @@ let(:game) { described_class.new(player, computer)}
   end
 
   describe 'self.load_instance' do
-    it 'loads the instance created by self.create' do
+    it 'loads an instance of self' do
       described_class.create(player, computer)
       expect(described_class.load_instance).to be_a Game
     end
