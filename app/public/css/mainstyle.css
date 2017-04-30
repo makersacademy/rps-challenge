@@ -87,6 +87,8 @@ body {
 .banner-container {
 
   height:342px;
+  width:1210px;
+  margin:0 auto;
 
 }
 
@@ -137,20 +139,16 @@ body {
   font-size:35px;
   font-family:fantasy;
   text-align: center;
-  border-radius:5%;
-  background-color:rgba(255, 0, 0, 0.3);
-  overflow:visible;
 
 }
 
 #play-again {
 
-  background-color: transparent;
+  background-color: rgba(200, 200, 0, 0.5);
   font-family: monospace;
   font-size:38;
   color:yellow;
-  left:38%;
-  top:550px;
+  margin-left:50px;
   width:300px;
   height:150px;
   padding-left: 15px;
@@ -308,6 +306,21 @@ body {
   margin:0 auto;
   margin-left:20px;
   margin-top:20px;
+
+}
+
+.profile {
+
+  height: 520px;
+  width:405px;
+  float:left;
+
+}
+
+.text-holder {
+
+  width:400px;
+  float:left;
 
 }
 

@@ -13,29 +13,34 @@
 
       <%= "<audio src='audio/vocals/#{@game.winner}_wins.wav' autoplay='autoplay'></audio>" %>
       <div class='page-container'>
+        <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
         <div class='banner-container'>
-          <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
-          <div class='image-container left'>
-            <%= "<img src='images/#{@actors[0]}/#{@game.player_1.choice}.jpg' height=300>" %>
+          <div class='profile'>
+            <div class='image-container'>
+              <%= "<img src='images/#{@actors[0]}/#{@game.player_1.choice}.jpg' height=300>" %>
+            </div>
+            <h1 class='char-title'><%= @actors[0] %></h1>
+            <h2 class='char-adviser'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
           </div>
-          <div class='image-container right'>
-            <%= "<img src='images/#{@actors[1]}/#{@game.player_2.choice}.jpg' height='300'>" %>
+          <div class='text-holder'>
+            <div class='body-text'>
+              <p><%= "#{@game.player_1.message}." %></p>
+              <p><%= "#{@game.player_2.message}." %></p>
+              <p><%= "#{@game.declare_winner.upcase}" %></p>
+            </div>
+            <form action='/' method="get">
+              <input id='play-again' type='submit' value='Play again!'>
+            </form>
           </div>
-          <div class='body-text'>
-            <p><%= "#{@game.player_1.message}." %></p>
-            <p><%= "#{@game.player_2.message}." %></p>
-            <p><%= "#{@game.declare_winner.upcase}" %></p>
+          <div class='profile'>
+            <div class='image-container'>
+              <%= "<img src='images/#{@actors[1]}/#{@game.player_2.choice}.jpg' height='300'>" %>
+            </div>
+            <h1 class='char-title'><%= @actors[1] %></h1>
+            <h2 class='char-adviser'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>
           </div>
-          <form action='/' method="get">
-            <input id='play-again' type='submit' value='Play again!'>
-          </form>
-        </div>
-        <h1 class='char-title left'><%= @actors[0] %></h1>
-        <h1 class='char-title right'><%= @actors[1] %></h1>
-        <div class='clear'></div>
-        <h2 class='char-adviser left'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
-        <h2 class='char-adviser right'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>
       </div>
+    </div>
   </body>
 
 </html>
