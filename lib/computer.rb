@@ -10,8 +10,14 @@ class Computer
     @current_choice = nil
   end
 
-  def choose(n = rand(1..3))
+  def choose(n = random_number)
     @current_choice = @choice.options[n]
+  end
+
+  private
+
+  def random_number
+    Kernel.rand(1..3)
   end
 
 end

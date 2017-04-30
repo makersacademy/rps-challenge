@@ -11,7 +11,7 @@ let(:computer) { described_class.new }
 
   describe '#choose' do
     it 'picks a choice at random ' do
-      srand(11)
+      allow(Kernel).to receive(:rand).and_return(2)
       computer.choose
       expect(computer.current_choice).to eq 'paper'
     end
