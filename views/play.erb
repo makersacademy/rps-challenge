@@ -1,1 +1,10 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<%= @player_1_name %> vs. <%= @player_2_name %><br/>
+
+<br><%= @player_1_name %> - make your choice<br/>
+
+<br><form action='/evaluate_round' method="post">
+  <input type="radio" value="Rock" checked required name="player1_pick"> Rock<br/>
+  <input type="radio" value="Paper"  name="player1_pick"> Paper<br/>
+  <input type="radio" value="Scissors" name="player1_pick"> Scissors<br/>
+<br/><input type="submit" value='OK'>
+</form>

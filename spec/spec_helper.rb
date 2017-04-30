@@ -1,11 +1,5 @@
-ENV['RACK_ENV'] = 'test'
-require 'capybara'
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require_relative '../app'
-
-Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -13,6 +7,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require 'capybara'
+require 'capybara/rspec'
+ENV['RACK_ENV'] = 'test'
+require_relative '../app'
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.include Capybara::DSL
