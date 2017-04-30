@@ -1,6 +1,13 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative '../app'
+require 'capybara'
+require 'rspec'
+require 'rack/test'
+
+Capybara.app = RPS
+ENV['RACK_ENV'] = 'test'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -10,7 +17,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 RSpec.configure do |config|
+  config.include Capybara::DSL
   config.after(:suite) do
+
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
