@@ -1,5 +1,7 @@
 class Game
-  attr_reader :player1, :player2, :p1_choice, :p2_choice, :hands, :result, :best_of, :order
+  attr_reader :player1, :player2, :p1_choice, :p2_choice,
+  :result, :best_of, :order, :winner, :loser
+
   WINNING_HANDS = [
     [:rock, :scissors],
     [:rock, :lizard],
@@ -53,6 +55,11 @@ class Game
     p1win if WINNING_HANDS.include?([@player1.choice, @player2.choice])
     p2win if LOSING_HANDS.include?([@player1.choice, @player2.choice])
     draw if @player1.choice == @player2.choice
+  end
+
+  def declare_winner
+    @player1.wins > (@best_of / 2) ? @winner = @player1 : @winner = @player2
+    @player1.wins > (@best_of / 2) ? @loser = @player2 : @loser = @player1
   end
 
   private

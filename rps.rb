@@ -28,7 +28,12 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-    @game.game_over? ? erb(:winner) : erb(:result)
+    @game.game_over? ? end_game : erb(:result)
+  end
+
+  get '/end_game' do
+    @game = Game.instance
+    erb(:winner)
   end
 
   private
@@ -68,5 +73,10 @@ class RockPaperScissors < Sinatra::Base
     Game.instance.play
     Game.instance.switch_player
     redirect '/result'
+  end
+
+  def end_game
+    Game.instance.declare_winner
+    redirect '/end_game'
   end
 end

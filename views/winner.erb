@@ -20,7 +20,7 @@ body {
 
   <h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
 
-<h1><%= @game.order[1].name.upcase %> WINS! <%= @game.order[1].wins %>-<%= @game.order[0].wins %></h1>
+<h1><%= @game.winner.name.upcase %> WINS! <%= @game.winner.wins %>-<%= @game.loser.wins %></h1>
 <form action='/'>
 <input class="btn btn-default" type='submit' value='Play again' name='Next'>
 </form>

@@ -36,12 +36,12 @@ feature 'Testing infrastructure' do
   scenario 'win in three turns' do
     sign_in_and_play
     play_winning_game
-    expect(page).to have_content('PLAYERONE (Wins: 3)')
+    expect(page).to have_content('PLAYERONE WINS')
   end
   scenario 'lose in three turns' do
     sign_in_and_play
     play_losing_game
-    expect(page).to have_content('PLAYERONE (Wins: 0)')
+    expect(page).to have_content(' WINS! 3-0')
   end
   scenario 'can be two player' do
     sign_in_2_players_and_play
