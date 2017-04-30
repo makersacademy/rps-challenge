@@ -1,50 +1,48 @@
 <html>
-
   <head>
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
     <%= "<style type='text/css'>
-      body {
-        background-image:url('../images/gifs/#{@actors[0]}.gif') !important;
-      }
+    body {
+    background-image:url('../images/gifs/#{@actors[0]}.gif') !important;
+    }
     </style>" %>
   </head>
 
   <body>
-        <%="<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>"%>
-        <div class='top-bar'>
-          <div id='profile-pic' class='left'>
-            <%= "<img src='images/#{@actors[0]}/#{@actors[0]}.jpg' height='350' width='600'>" %>
-          </div>
-            <div class='politics-text-box'>
-            <h1 class='mainpage-header'><span class='republican'>ROCK,</span><br />
-              <span style='padding-left:50px;'>PAPER,</span><br />
-              <span class='democrat' style='padding-left:100px;'>POLITICS</span></h1>
-            </div>
+    <%="<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>"%>
+    <div class='top-bar'>
+      <div id='profile-pic' class='left'>
+        <%= "<img src='images/#{@actors[0]}/#{@actors[0]}.jpg' height='350' width='600'>" %>
+      </div>
+      <div class='politics-text-box'>
+        <h1 class='mainpage-header'><span class='republican'>ROCK,</span><br />
+        <span style='padding-left:50px;'>PAPER,</span><br />
+        <span class='democrat' style='padding-left:100px;'>POLITICS</span></h1>
+      </div>
+    </div>
+    <div class='big-form'>
+      <form method='post' action='/info'>
+        <div class='selection-area'>
+          <h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'><br>
+          Your suggestion:<br>
+          <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
+          <input type='radio' name='choice' value='Paper'> Paper <br>
+          <input type='radio' name='choice' value='Scissors'> Scissors <br>
+          <input type='radio' name='choice' value='Lizard'> Lizard <br>
+          <input type='radio' name='choice' value='Spock'> Spock <br>
         </div>
-        <div class='big-form'>
-          <form method='post' action='/info'>
-          <div class='selection-area'>
-            <h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'><br>
-            Your suggestion:<br>
-            <input type='radio' name='choice' value='Rock' checked='checked'> Rock <br>
-            <input type='radio' name='choice' value='Paper'> Paper <br>
-            <input type='radio' name='choice' value='Scissors'> Scissors <br>
-            <input type='radio' name='choice' value='Lizard'> Lizard <br>
-            <input type='radio' name='choice' value='Spock'> Spock <br>
-          </div>
-          <div class='player-selection'>
-            <input type='radio' name='no_of_players' value='one_player' checked='checked'> One Player <br>
-            <input type='radio' name='no_of_players' value='two_player'> Two Players <br>
-          </div>
-          <div class='button-container'>
-            <input class='start-button' type='submit' value='PLAY'> <br>
-            <div class='player-notice'>
-              <p class='mainpage-notice'><%= @actors[0] %> doesn't know how to play Rock, Paper, Scissors,<br>
-                Lizard, Spock and needs your help to win the election.</p>
-            </div>
+        <div class='player-selection'>
+          <input type='radio' name='no_of_players' value='one_player' checked='checked'> One Player <br>
+          <input type='radio' name='no_of_players' value='two_player'> Two Players <br>
+        </div>
+        <div class='button-container'>
+          <input class='start-button' type='submit' value='PLAY'> <br>
+          <div class='player-notice'>
+            <p class='mainpage-notice'><%= @actors[0] %> doesn't know how to play Rock, Paper, Scissors,<br>
+            Lizard, Spock and needs your help to win the election.</p>
           </div>
         </div>
-        </form>
+      </form>
+    </div>
   </body>
-
 </html>
