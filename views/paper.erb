@@ -1,13 +1,13 @@
 <div style="margin:0 auto" align=center>
 
-<% if @game.auto_play == 'scissors' %>
+<% if @game.computer_play(@game.next_turn) == 'scissors' %>
   <% @game.win(@game.next_turn) %>
   <%= "Uh oh, scissors beats paper! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
 
-  <% elsif @game.auto_play == 'paper' %>
+  <% elsif @game.computer_play(@game.next_turn) == 'paper' %>
   <%= "Hmm, you both got paper...it's a tie, no winners!" %>
 
-  <% else @game.auto_play == 'scissors' %>
+  <% else @game.computer_play(@game.next_turn) == 'scissors' %>
   <% @game.win(@game.current_turn) %>
   <%= "Woo, paper beats rock! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
   <% end %>

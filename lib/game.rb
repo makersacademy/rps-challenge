@@ -1,8 +1,11 @@
 require_relative 'player'
+require_relative 'computer'
 
 class Game
 
-  attr_reader :computer_moves, :current_turn, :next_turn, :players
+  attr_reader :current_turn, :next_turn, :players
+
+
 
   def self.start(player1, player2)
     @game = Game.new(player1, player2)
@@ -15,14 +18,14 @@ class Game
   def initialize(player1, player2)
     @current_turn = player1
     @next_turn = player2
-    @computer_moves = ['scissors', 'paper', 'rock']
-  end
-
-  def auto_play
-    @computer_moves.sample
   end
 
   def win(player)
     player.win_round
   end
+
+  def computer_play(computer)
+    computer.auto_play
+end
+
 end

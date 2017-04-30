@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative './lib/player'
 require './lib/game'
+require_relative './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,7 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.start(Player.new(params[:Player1]), Player.new('RosiePoSie'))
+    @game = Game.start(Player.new(params[:Player1]), Computer.new)
     redirect '/play'
   end
 
@@ -25,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/rock' do
     redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
+    @game.current_turn.play(rock)
     erb(:rock)
   end
 
