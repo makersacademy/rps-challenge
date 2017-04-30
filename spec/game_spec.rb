@@ -29,13 +29,13 @@ describe Game do
     let(:always_paper) { double :choice => :paper, :sym_name => :always_paper }
     subject(:Game) { described_class }
     scenario 'rock vs scissors' do
-      expect(Game.new({ player_1: always_rock, player_2: always_scissors }).decide_winner).to eq :always_rock
+      expect(Game.new({ player_1: always_rock, player_2: always_scissors }).decide_winner).to eq always_rock
     end
     scenario 'rock vs paper' do
-      expect(Game.new({ player_1: always_rock, player_2: always_paper }).decide_winner).to eq :always_paper
+      expect(Game.new({ player_1: always_paper, player_2: always_rock }).decide_winner).to eq always_paper
     end
     scenario 'scissors vs paper' do
-      expect(Game.new({ player_1: always_scissors, player_2: always_paper }).decide_winner).to eq :always_scissors
+      expect(Game.new({ player_1: always_scissors, player_2: always_paper }).decide_winner).to eq always_scissors
     end
     scenario 'paper vs paper' do
       expect(Game.new({ player_1: always_paper, player_2: always_paper }).decide_winner).to eq :draw

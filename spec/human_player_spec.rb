@@ -6,10 +6,14 @@ describe HumanPlayer do
     it 'sets its arg to @name' do
       expect(human_player).to have_attributes(name: "James Jameson")
     end
+    it 'sets @choice to nil' do
+      expect(human_player).to have_attributes(choice: nil)
+    end
   end
-  describe '#choice' do
-    it 'returns its arg as lowercase symbol' do
-      expect(human_player.choice("Rock")).to eq :rock
+  describe '#set_choice' do
+    it 'sets @choice to arg' do
+      human_player.set_choice(:rock)
+      expect(human_player.choice).to eq :rock
     end
   end
 
