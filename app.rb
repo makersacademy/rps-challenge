@@ -6,7 +6,16 @@ class RPS < Sinatra::Base
   set :session_secret, 'super secret'
 
   get '/' do
-    "Hello RPS!"
+    erb :index
+  end
+
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/game'
+  end
+
+  get '/game' do
+    erb :game
   end
 
 
