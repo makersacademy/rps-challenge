@@ -1,7 +1,7 @@
 <div style="margin:0 auto" align=center>
 
 <%= "#{@game.current_turn.name} vs #{@game.next_turn.name}"%>
-
+<p>
 <% if @game.computer_play(@game.next_turn) == 'rock' %>
   <% @game.win(@game.next_turn) %>
   <%= "Uh oh, rock beats scissors! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>

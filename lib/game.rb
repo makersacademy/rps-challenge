@@ -1,11 +1,10 @@
+
 require_relative 'player'
 require_relative 'computer'
 
 class Game
 
   attr_reader :current_turn, :next_turn, :players
-
-
 
   def self.start(player1, player2)
     @game = Game.new(player1, player2)
@@ -26,6 +25,6 @@ class Game
 
   def computer_play(computer)
     computer.auto_play
-end
+ end
 
 end

@@ -10,6 +10,12 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.current_game
   end
 
+  ['/rock', '/paper', '/scissors'].each do |path|
+    before path do
+      redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
+    end
+  end
+
   get '/' do
     erb(:index)
   end
@@ -25,18 +31,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
-    @game.current_turn.play(rock)
     erb(:rock)
   end
 
   get '/paper' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
     erb(:paper)
   end
 
   get '/scissors' do
-    redirect '/end_game' if @game.current_turn.score == 3 || @game.next_turn.score == 3
     erb(:scissors)
   end
 

@@ -1,7 +1,9 @@
 
 class Player
 
-  attr_accessor :name, :score
+  attr_accessor :name, :score, :move
+
+  MOVES = [ :rock, :paper, :scissors ]
 
   def initialize(name)
     @name = name
@@ -12,4 +14,7 @@ class Player
     @score += 1
   end
 
+  def play(move)
+    @move = move
+  end
 end
