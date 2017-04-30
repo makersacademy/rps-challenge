@@ -37,6 +37,18 @@ class Game < Sinatra::Base
     erb :scissors
   end
 
+  get '/lizard' do
+    @name = session[:name]
+    @rps = RPS.new(:lizard)
+    erb :lizard
+  end
+
+  get '/spock' do
+    @name = session[:name]
+    @rps = RPS.new(:spock)
+    erb :spock
+  end
+
   run! if app_file == $0
 
 end
