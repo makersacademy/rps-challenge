@@ -9,8 +9,20 @@
 <div class="wrapper">
 <button type="submit" form="form3" value="paper"> Paper </button>
 </div>
+<form action="/scissors" id="form4">
+</form>
+<div class="wrapper">
+<button type="submit" form="form4" value="scissors"> Scissors </button>
+</div>
 <h2> You choose: <%= @game.player1.current_choice %></h2>
 <h2> AI chooses: <%= @game.computer.current_choice %></h2>
+<% if @game.player_wins %>
+<h2> <%= @game.player1.name %> wins!</h2>
+<% elsif @game.draw? && @game.player1.current_choice != nil %>
+<h2> Draw! </h2>
+<% elsif !@game.player_wins && @game.player1.current_choice != nil %>
+<h2> AI wins! </h2>
+<% end %>
 
 
 

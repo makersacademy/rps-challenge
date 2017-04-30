@@ -35,6 +35,13 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  get '/scissors' do
+    @game = Game.load_instance
+    @game.player1.choose(3)
+    @game.computer.choose
+    redirect '/play'
+  end
+
   get '/play' do
     @game = Game.load_instance
     erb :play

@@ -41,4 +41,14 @@ let(:game) { described_class.new(player, computer)}
     end
   end
 
+  describe '#draw?' do
+    context 'player and computer choose same option' do
+      it 'returns true' do
+        allow(player).to receive(:current_choice) { 'paper' }
+        allow(computer).to receive(:current_choice) { 'paper' }
+        expect(game).to be_draw
+      end
+    end
+  end
+
 end

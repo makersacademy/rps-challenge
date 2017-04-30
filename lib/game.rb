@@ -29,6 +29,10 @@ class Game
     end
   end
 
+  def draw?
+    player1.current_choice == computer.current_choice
+  end
+
   private
 
   def rock?(player)
