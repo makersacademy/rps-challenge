@@ -1,4 +1,10 @@
 
 <%= "#{@game.player_1.name} vs #{@game.player_2.name} " %>
-
+<br>
+<form action="/choice" method="post">
+ <input type="radio" name="rock" value='rock'>Rock
+ <input type="radio" name="paper" value='paper'>Paper
+ <input type="radio" name="scissor" value='scissor'>Scissor
+ <input type="submit" value="Submit">
+</form>
 

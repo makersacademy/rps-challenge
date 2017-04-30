@@ -18,19 +18,25 @@ describe Game do
 
 	describe '#players' do
 		it 'returns all Player instances as array' do
-			expect(game.players).to eq [sam, dan]
+			expect(game.players).to be_a Array
 		end
 	end
 
 	describe '#player_1' do
+		it 'returns Player instance' do
+			expect(game.player_1).to be_a Player
+		end
 		it 'returns player_1 instance' do
-			expect(game.player_1).to eq sam
+			expect(game.player_1.name).to eq sam
 		end
 	end
 
 	describe '#player_2' do
+		it 'returns Player instance' do
+			expect(game.player_2).to be_a Player
+		end
 		it 'returns player_2 instance' do
-			expect(game.player_2).to eq dan
+			expect(game.player_2.name).to eq dan
 		end
 		it 'Single player game sets up Computer as opposition' do
 			single_player = Game.new(sam)

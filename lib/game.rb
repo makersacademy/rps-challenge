@@ -1,4 +1,3 @@
-require 'player'
 
 class Game
 
@@ -13,8 +12,9 @@ class Game
 	end
 
 
-	def initialize(player_1, player_2 = Player.new("Computer"))
-		@players = [player_1, player_2]
+	def initialize(player_1_name, player_2_name = "Computer")
+		player_2_name = "Computer" if player_2_name == ""
+		@players = [Player.new(player_1_name), Player.new(player_2_name)]
 	end
 
 	def player_1
