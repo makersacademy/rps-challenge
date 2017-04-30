@@ -1,4 +1,4 @@
-#Defines player attributes
+# Defines player attributes
 class Player
 
   attr_reader :name

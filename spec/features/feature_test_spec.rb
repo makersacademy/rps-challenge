@@ -24,7 +24,14 @@ feature 'Player can play rock/paper/scissors' do
   scenario '#can choose rock, paper or scissors and choice is registered' do
     sign_in_and_play
     find_button('ROCK').click
-    expect(page).to have_content('You played rock')
+    expect(page).to have_content('played ROCK')
+  end
+
+  scenario "#AI returns 'PAPER' and displays it" do
+    srand(10)
+    sign_in_and_play
+    find_button('ROCK').click
+    expect(page).to have_content('computer has played PAPER')
   end
 
 end

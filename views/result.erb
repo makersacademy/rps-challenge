@@ -5,7 +5,11 @@
   <body>
     <div style="text-align:center;">
       <br><br><br>
-      <h1> Welcome <%= @game.player.name %> you have played... TBC</h1>
+      <h2> Welcome <%= @game.player.name %> you have played <%= @game.player_play %></h2>
+    </div>
+    <div style="text-align:center;">
+      <br><br><br>
+      <h2> The dastardly computer has played <%= @game.ai_play %></h2>
     </div>
   </body>
 </html>

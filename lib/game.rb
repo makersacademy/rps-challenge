@@ -1,7 +1,7 @@
-#controls the game actions including turns
+# controls the game actions including turns
 class Game
 
-  attr_reader :player, :turns
+  attr_reader :player, :turns, :player_play, :ai_play
 
   def initialize(player)
     @player = player
@@ -10,12 +10,12 @@ class Game
 
   def play(play_type)
     @player_play = play_type
-    get_ai_play
+    @ai_play = ai_play_get
 
     @turns += 1
   end
 
-  def get_ai_play
+  def ai_play_get
     types = ['ROCK', 'PAPER', 'SCISSORS']
     types.sample
   end
