@@ -16,6 +16,10 @@ class Game
     @actors = [:Macron, :LePen]
   end
 
+  def self.english
+    @actors = [:Corbyn, :May]
+  end
+
   def self.actors
     @actors
   end
