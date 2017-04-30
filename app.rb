@@ -3,7 +3,7 @@ require './lib/game'
 require './spec/my_helper'
 
 class RPSWeb < Sinatra::Application
-  enable :sessions
+
   set :public_folder, 'public'
 
   before do

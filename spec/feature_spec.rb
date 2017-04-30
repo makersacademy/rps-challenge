@@ -2,7 +2,15 @@ require 'my_helper'
 
 feature 'Playability feature Test' do
 
-  optionsArray = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
+  options_array = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
+
+  before do
+    Capybara.current_driver = :selenium
+  end
+
+  after() do
+    Capybara.use_default_driver
+  end
 
   context 'single player' do
 
@@ -10,7 +18,9 @@ feature 'Playability feature Test' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:lizard)
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
-      expect(page).to have_select("weapon", options: optionsArray)
+      expect(page).to have_select("weapon", options: options_array)
+      click_button 'Play!'
+      page.driver.browser.switch_to.alert.accept
       fill_in 'name1', with: 'Pietro'
       select "Rock", :from => "weapon1"
       click_button 'Play!'
@@ -23,7 +33,10 @@ feature 'Playability feature Test' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
-      expect(page).to have_select("weapon", options: optionsArray)
+      expect(page).to have_select("weapon", options: options_array)
+      fill_in 'name1', with: ''
+      click_button 'Play!'
+      page.driver.browser.switch_to.alert.accept
       fill_in 'name1', with: 'Pietro'
       select "Scissors", :from => "weapon1"
       click_button 'Play!'
@@ -40,7 +53,9 @@ feature 'Playability feature Test' do
       visit '/'
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'
-      expect(page).to have_select("weapon", options: optionsArray)
+      expect(page).to have_select("weapon", options: options_array)
+      click_button 'Play!'
+      page.driver.browser.switch_to.alert.accept
       fill_in 'name1', with: 'Pietro'
       fill_in 'name2', with: 'Joanna'
       select "Rock", :from => "weapon1"
@@ -55,7 +70,10 @@ feature 'Playability feature Test' do
       visit '/'
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'
-      expect(page).to have_select("weapon", options: optionsArray)
+      expect(page).to have_select("weapon", options: options_array)
+      fill_in 'name1', with: ''
+      click_button 'Play!'
+      page.driver.browser.switch_to.alert.accept
       fill_in 'name1', with: 'Pietro'
       fill_in 'name2', with: 'Joanna'
       select "Scissors", :from => "weapon1"

@@ -14,13 +14,17 @@ class ResultDeterminer
   }
 
   def self.calculate(player_1, player_2)
-    raise 'Not all players have names' if player_1.name.empty? || player_1.name.empty?
+    self.check_raises(player_1, player_2)
     return :draw if player_1.choice == player_2.choice
     hash = {
       player_1.choice => player_1.name,
       player_2.choice => player_2.name,
      }
     hash[RULES[player_1.choice][player_2.choice]]
+  end
+
+  def self.check_raises(player_1, player_2)
+    raise 'Not all players have names' if player_1.name.empty? || player_2.name.empty?
   end
 
 end
