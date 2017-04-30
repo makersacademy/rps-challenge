@@ -18,29 +18,36 @@ describe Game do
     end
   end
 
-    describe 'result' do
-      subject(:win_game) { game }
-      subject(:lose_game) { described_class.new(lose_options) }
-      subject(:draw_game) { described_class.new(draw_options) }
+  describe '#skynet_tool' do
+    it 'returns computers shape' do
+      expect(game.skynet_tool).to eq :scissors
+    end
+  end
 
-      let(:lose_options) { { "player_name" => "Daniel", "player_tool" => :rock, "skynet_tool" => :paper } }
-      let(:draw_options) { { "player_name" => "Daniel", "player_tool" => :rock, "skynet_tool" => :rock } }
+  describe 'result' do
+    subject(:win_game) { game }
+    subject(:lose_game) { described_class.new(lose_options) }
+    subject(:draw_game) { described_class.new(draw_options) }
 
-      describe '#win?' do
-        it 'returns true if player_tool is rock and skynet_tool is scissors' do
-          expect(win_game.win?).to eq true
-        end
-      end
+    let(:lose_options) { { "player_name" => "Daniel", "player_tool" => :rock, "skynet_tool" => :paper } }
+    let(:draw_options) { { "player_name" => "Daniel", "player_tool" => :rock, "skynet_tool" => :rock } }
 
-      describe '#lose?' do
-        it 'returns true if player_tool is rock and skynet_tool is paper' do
-          expect(lose_game.lose?).to eq true
-        end
-      end
-
-      describe '#draw?' do
-        it 'returns true if player_tool is rock and skynet_tool is rock' do
-          expect(draw_game.draw?).to eq true
-        end
+    describe '#win?' do
+      it 'returns true if player_tool is rock and skynet_tool is scissors' do
+        expect(win_game.win?).to eq true
       end
     end
+
+    describe '#lose?' do
+      it 'returns true if player_tool is rock and skynet_tool is paper' do
+        expect(lose_game.lose?).to eq true
+      end
+    end
+
+    describe '#draw?' do
+      it 'returns true if player_tool is rock and skynet_tool is rock' do
+        expect(draw_game.draw?).to eq true
+      end
+    end
+  end
+end
