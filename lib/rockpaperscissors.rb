@@ -1,7 +1,7 @@
 
 class Rockpaperscissors
 
-RPS = ['rock', 'paper', 'scissors']
+RPS = ['Rock', 'Paper', 'Scissors']
 
 def random_select
 RPS.sample

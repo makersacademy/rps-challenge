@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/user'
-#require './lib/rockpaperscissors'
+require './lib/rockpaperscissors'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -17,13 +17,13 @@ end
 
 get '/play' do
   @user = $user.name
-  p @user
   erb(:play)
 end
 
 get '/opponent_turn' do
   p params
-  @option1 = params[:option]
+  @option1 = $user.choose(params[:option])
+  @option2 = Rockpaperscissors::RPS.sample
   erb(:opponent_turn)
 end
 
