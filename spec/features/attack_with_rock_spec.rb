@@ -4,7 +4,7 @@ feature 'Testing attack' do
     fill_in :player, with: 'Paula'
     click_button("Start the game")
     click_button("Attack with rock")
-    expect(page).to have_content("Paula attacked Ogruk")
+    expect(page).to have_content("Paula attacked Ogruk with a rock")
   end
 
   scenario 'shows the score' do

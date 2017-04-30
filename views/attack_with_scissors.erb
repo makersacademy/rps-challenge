@@ -1,1 +1,24 @@
-empty for now...scissors
+<%= @player %> attacked Ogruk with scissors
+
+<p> <%= @player %> won that round</p>
+
+The score is now:
+<br><%= @player %>: <%= @player_score %>
+<br>Ogruk: 0
+<br>
+<h3> Make your next move </h3>
+<form action="/attack_with_rock" method="get">
+  <input type="submit" value="Attack with rock">
+  <br>
+  <br>
+</form>
+
+<form action="/attack_with_paper" method="get">
+  <input type="submit" value = "Attack with paper (I bet you use disposable water bottles too)"
+  <br>
+</form>
+
+<form action="/attack_with_scissors" method="get">
+  <br>
+  <input type="submit" value="Attack with scissors">
+</form>

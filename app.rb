@@ -32,7 +32,6 @@ class RPS < Sinatra::Base
     $player.attack_with_rock($computer)
     @player_score = $player.score
     erb :attack_with_rock
-    # redirect '/finish' if @player_score >= 5
   end
 
   get '/attack_with_paper' do
@@ -40,6 +39,7 @@ class RPS < Sinatra::Base
     @computer = $computer.name
     @computer_score = $computer.score
     $player.attack_with_paper($computer)
+    @player_score = $player.score
     erb :attack_with_paper
   end
 
@@ -48,6 +48,7 @@ class RPS < Sinatra::Base
     @computer = $computer.name
     @computer_score = $computer.score
     $player.attack_with_scissors($computer)
+    @player_score = $player.score
     erb :attack_with_scissors
   end
 

@@ -1,4 +1,4 @@
-<%= @player %> attacked Ogruk
+<%= @player %> attacked Ogruk with a rock.
 
 <p> <%= @player %> won that round</p>
 
@@ -7,6 +7,8 @@ The score is now:
 <br>Ogruk: 0
 <br>
 <h3> Make your next move </h3>
+
+
 <form action="/attack_with_rock" method="get">
   <input type="submit" value="Attack with rock">
   <br>
@@ -21,4 +23,13 @@ The score is now:
 <form action="/attack_with_scissors" method="get">
   <br>
   <input type="submit" value="Attack with scissors">
+</form>
+
+<form action="/finish" method="get">
+  <label for="finish">
+    Tired of playing?  Time to go market Makers some more?  Click Finish to see the final score.
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="Finish">
 </form>

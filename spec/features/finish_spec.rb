@@ -4,7 +4,7 @@ feature 'Testing finish' do
     fill_in :player, with: 'Paula'
     click_button("Start the game")
     click_button("Attack with rock")
-    4.times{ click_button("Attack with rock") }
-    expect(page).to have_content("The winner is")
+    click_button("Finish")
+    expect(page).to have_content("Final score")
   end
 end
