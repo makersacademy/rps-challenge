@@ -55,13 +55,9 @@ class RPS < Sinatra::Base
   get '/finish' do
     @player = $player.name
     @computer = $computer.name
-    @computer_score = $computer.score
+    @computer_score = $player.computer_score
     @player_score = $player.score
     erb :finish
-  end
-
-  get '/test' do
-    $player.name
   end
 
   run! if app_file == $0
