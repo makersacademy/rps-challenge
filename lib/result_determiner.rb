@@ -3,6 +3,8 @@ require 'set'
 
 class ResultDeterminer
 
+  WEAPONS = Ai::CHOICES.to_set
+
   RULES = {
   :rock     => { :rock => :draw, :paper => :paper, :scissors => :rock,
     :lizard => :rock, :spock => :spock },
@@ -33,8 +35,7 @@ class ResultDeterminer
 
   def self.check_weapons(player_1, player_2)
     choices = [player_1.choice, player_2.choice].to_set
-    weapons = Ai::CHOICES.to_set
-    raise 'That is not an accepted weapon' unless choices.subset?(weapons)
+    raise 'That is not an accepted weapon' unless choices.subset?(WEAPONS)
   end
 
 end
