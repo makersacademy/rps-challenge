@@ -1,3 +1,6 @@
+require_relative './ai'
+require 'set'
+
 class ResultDeterminer
 
   RULES = {
@@ -14,7 +17,8 @@ class ResultDeterminer
   }
 
   def self.calculate(player_1, player_2)
-    check_raises(player_1, player_2)
+    check_names(player_1, player_2)
+    check_weapons(player_1, player_2)
     return :draw if player_1.choice == player_2.choice
     hash = {
       player_1.choice => player_1.name,
@@ -23,8 +27,14 @@ class ResultDeterminer
     hash[RULES[player_1.choice][player_2.choice]]
   end
 
-  def self.check_raises(player_1, player_2)
-    raise 'Not all players have names' if player_1.name.empty? || player_2.name.empty?
+  def self.check_names(player_1, player_2)
+    raise 'Each player must have a name' if player_1.name.empty? || player_2.name.empty?
+  end
+
+  def self.check_weapons(player_1, player_2)
+    choices = [player_1.choice, player_2.choice].to_set
+    weapons = Ai::CHOICES.to_set
+    raise 'That is not an accepted weapon' unless choices.subset?(weapons)
   end
 
 end

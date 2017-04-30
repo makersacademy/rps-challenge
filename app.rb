@@ -5,7 +5,7 @@ require './spec/my_helper'
 class RPSWeb < Sinatra::Application
 
   set :public_folder, 'public'
-
+  enable :sessions
   before do
     @game = Game.instance
   end
