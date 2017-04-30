@@ -10,4 +10,7 @@ class Player
   def attack_with_rock(computer)
     @score += 1
   end
+
+  def attack_with_paper(computer)
+  end
 end

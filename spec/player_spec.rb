@@ -22,9 +22,9 @@ describe 'Player' do
     end
   end
 
-  # describe '#attack_with_paper' do
-  #   it 'expects player to respond to #attack_with_paper' do
-  #     expect(paula).to respond_to(:attack_with_paper).with(1).argument
-  #   end
-  # end
+  describe '#attack_with_paper' do
+    it 'expects player to respond to #attack_with_paper' do
+      expect(paula).to respond_to(:attack_with_paper).with(1).argument
+    end
+  end
 end
