@@ -16,11 +16,13 @@ class RPSGame < Sinatra::Base
   get '/play' do
     @player = session[:player]
     @choice = session[:choice]
+    @computer_choice = session[:computer_choice]
     erb(:play)
   end
 
   post '/play' do
     session[:choice] = params[:shape]
+    session[:computer_choice] = 'Rock'
     redirect '/play'
   end
 
