@@ -25,5 +25,10 @@ class RPSapp < Sinatra::Base
     erb :play
   end
 
+  post '/result' do
+    @game.play(params[:type])
+    erb :result
+  end
+
   run! if app_file == $0
 end

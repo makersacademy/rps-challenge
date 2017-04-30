@@ -6,5 +6,16 @@
       <br><br><br>
       <h1> Welcome <%= @game.player.name %> to your game of Rock-Paper-Scissors! </h1>
     </div>
+    <div style="text-align:center;">
+      <h2>Today you are playing the dastardily computer. How do you want to outwit this simple machine:</h2>
+      <div>
+        <form action='/result' method="post">
+          <br><br>
+          <input type="submit" id="play_type" value='ROCK' name='type'>
+          <br><br>
+          <input type="submit" id="play_type" value='PAPER' name='type'>
+          <br><br>
+          <input type="submit" id="play_type" value='SCISSORS' name='type'>
+        </form>
   </body>
 </html>
