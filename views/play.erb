@@ -1,1 +1,19 @@
-<%= @game.player1 %>
+<%= @game.player1.name %> VS <%= @game.player2.name %>
+
+<% if !@game.player1.move %>
+<form action="/player_move" method="post">
+  <div>
+    <label for="Rock">Rock</label>
+    <input type="radio" name="move" value="Rock">
+    <label for="Paper">Paper</label>
+    <input type="radio" name="move" value="Paper">
+    <label for="Scissor">Scissor</label>
+    <input type="radio" name="move" value="Scissor">
+    <button type="submit" value="submit">Play!</button>
+  </div>
+</form>
+
+<% else %>
+<h1>The computer chose...'</h1>
+
+<% end %>
