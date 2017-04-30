@@ -1,5 +1,26 @@
 # RPS Challenge
 
+ My project is organised in the following folders:
+ RSpec tests =>  /spec
+ Capybara tests =>  spec/features
+ Ruby scripts => lib
+ HTML pages => lib/views
+
+# Basic Rules
+
+ <=> Rock beats Scissors
+ <=> Scissors beats Paper
+ <=> Paper beats Rock
+
+# Implementation
+
+  The user enters their name in the first screen of the game and clicks the  button to `Submit`.
+  In the second screen the user will be presented the choices (rock, paper and scissors)
+  The user can choose one option
+  The game will choose a random option
+  If he losses computer will say "You lost",else "You won" or "You draw"
+
+
 Instructions
 -------
 
