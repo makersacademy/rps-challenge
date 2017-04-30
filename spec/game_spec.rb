@@ -12,7 +12,7 @@ describe Game do
     expect(described_class.instance.player1.name).to eq 'Will'
   end
 
-  it 'self-initializes with Player 2 as \'Computer\' when no name given' do
+  it 'self-initializes with Player 2 as a Computer when no name given' do
     described_class.start_game('Will')
     expect(described_class.instance.player2.name).to eq 'Computer'
   end
