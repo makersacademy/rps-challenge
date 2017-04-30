@@ -11,4 +11,12 @@ class RPS < Sinatra::Base
     erb :single_player_name
   end
 
+  post '/single_player/game' do
+    erb :single_player_game
+  end
+
+  post '/single_player/game/result' do
+    erb :result
+  end
+  
 end
