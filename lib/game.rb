@@ -2,15 +2,17 @@ require_relative './player'
 require_relative './computer'
 
 class Game
-  attr_reader :player1, :player2, :hand
+  attr_reader :a, :b, :hand
+
+  def self.start(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
   def initialize(player1, player2)
     @a = player1
     @b = player2
   end
 
-  def self.start(player1, player2)
-    @game = Game.new(player1, player2)
-  end
 
   def self.instance
     @game
