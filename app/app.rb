@@ -13,6 +13,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
+  get '/french' do
+    @actors = Game.french
+    erb(:index)
+  end
+
   post '/play' do
     @game.add_player_two(Player.new(params[:player], params[:choice]))
     @game.pick_winner

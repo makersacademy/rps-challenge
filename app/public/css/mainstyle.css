@@ -142,6 +142,35 @@ body {
 
 }
 
+.absolute-buttons {
+
+  position:absolute;
+  right:10px;
+  font-family:fantasy;
+
+}
+
+.nation-button {
+
+  color:white;
+  border:black;
+  border-radius:15%;
+  font-size:20px;
+
+}
+
+.france {
+
+  background-color:red;
+
+}
+
+.america {
+
+  background-color:blue;
+
+}
+
 #play-again {
 
   background-color: rgba(200, 200, 0, 0.5);

@@ -10,8 +10,6 @@
 
   <body>
     <%= "<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>" %>
-
-    <%="<audio src='audio/music/#{@actors[0]}_music.wav' autoplay='autoplay' loop='loop'></audio>"%>
     <div class='top-bar'>
       <div id='profile-pic' class='force-right'>
         <%= "<img src='images/#{@actors[1]}/#{@actors[1]}.jpg' height='350' width='600'>" %>
@@ -22,7 +20,7 @@
         <span class='democrat' style='padding-left:100px;'>POLITICS</span></h1>
       </div>
     </div>
-    <form class='main-form' method='post' action='/info'>
+    <form class='main-form' method='post' action='/play'>
       <div class='big-form'>
         <div class='selection-area'>
           <h2 class='no-space'>Your Name:</h2> <input class='name-input' type='text' name='player'> <br>

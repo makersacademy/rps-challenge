@@ -13,7 +13,7 @@ class Game
   end
 
   def self.french
-    @actors = [:LePen, :Macron]
+    @actors = [:Macron, :LePen]
   end
 
   def self.actors
@@ -39,7 +39,7 @@ class Game
   end
 
   def pick_winner
-    declare_winner.include?(@player_1.name) ? @winner = 'Trump' : @winner = 'Clinton'
+    declare_winner.include?(@player_1.name) ? @winner = Game.actors[0] : @winner = Game.actors[1]
   end
 
   private
