@@ -14,7 +14,7 @@ feature 'Playability feature Test' do
 
   context 'single player' do
 
-    it 'game version against Ai - win' do
+    it 'game version against Ai - Player beats Ai with Rock vs Lizard' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:lizard)
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
@@ -28,7 +28,7 @@ feature 'Playability feature Test' do
       bottom_expectations
     end
 
-    it 'game version against Ai - draw' do
+    it 'game version against Ai - Player in a draw with Ai with Scissors vs Scissors' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
@@ -46,7 +46,7 @@ feature 'Playability feature Test' do
 
   context 'two player' do
 
-    it 'game version - win' do
+    it 'game version - Spock beats Rock' do
       visit '/'
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'
@@ -62,7 +62,7 @@ feature 'Playability feature Test' do
       bottom_expectations
     end
 
-    it 'game version - draw' do
+    it 'game version - Scissors vs Scissors' do
       visit '/'
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'

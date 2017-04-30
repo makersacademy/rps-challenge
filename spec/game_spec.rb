@@ -31,15 +31,15 @@ describe Game do
 
   context 'outcome' do
 
-    it 'can correctly determine a winner' do
+    it 'can correctly determine a winner - Rock vs Scissors' do
       expect(game.who_won).to eq player_1.name
     end
 
-    it 'can correctly determine a winner' do
+    it 'can correctly determine a winner - Rock vs Paper' do
       expect(game_2.who_won).to eq player_4.name
     end
 
-    it 'can correctly determine a draw' do
+    it 'can correctly determine a draw - Rock vs Rock' do
       expect(game_3.who_won).to eq :draw
     end
 
