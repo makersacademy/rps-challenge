@@ -27,7 +27,7 @@ class RPSapp < Sinatra::Base
   end
 
   post '/result' do
-    @game.play(params[:type])
+    @game.play_control(params[:type])
     erb :result
   end
 

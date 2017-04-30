@@ -38,7 +38,7 @@ feature 'Player can play rock/paper/scissors' do
     srand(10)
     sign_in_and_play
     find_button('ROCK').click
-    expect(page).to have_content('Bad times. The AI outfoxed you this time')
+    expect(page).to have_content('The winner is therefore Computer')
   end
 
 end
