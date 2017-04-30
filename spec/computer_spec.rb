@@ -13,4 +13,10 @@ describe 'computer' do
       expect(computer.score).to eq 0
     end
   end
+
+  describe '#attack' do
+    it 'expects the computer to respond to attack' do
+      expect(computer).to respond_to(:attack)
+    end
+  end
 end

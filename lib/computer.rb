@@ -6,4 +6,7 @@ class Computer
     @name = name
     @score = score
   end
+
+  def attack
+  end
 end
