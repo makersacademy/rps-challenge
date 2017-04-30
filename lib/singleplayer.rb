@@ -1,25 +1,31 @@
+require_relative './computer'
+require_relative './player'
+
 class SinglePlayer
 
-  def self.create_game
-    @game = SinglePlayer.new
+  attr_reader :player, :computer
+
+  def initialize(name)
+    @player = Player.new(name)
+    @computer = Computer.new
+  end
+
+  def self.create_game(name)
+    @game = SinglePlayer.new(name)
   end
 
   def self.instance
     @game
   end
 
-  def computer_choice
-    [:rock, :paper, :scissor].sample
-  end
-
-  def decide_winner(player_choice)
+  def decide_winner(player_choice, computer_choice)
     weapons = [player_choice, computer_choice]
     if weapons[0] == weapons[1]
       :tied
-    elsif weapons == [:rock, :scissor] || weapons == [:scissor, :paper] || weapons == [:paper, :rock]
-      :player
+    elsif weapons == [:rock, :scissors] || weapons == [:scissors, :paper] || weapons == [:paper, :rock]
+      @player
     else
-      :computer
+      @computer
     end
   end
 

@@ -1,0 +1,74 @@
+<style>
+body {background-color: lightskyblue;}
+h1 {
+    color: black;
+    font-family: "papyrus";
+    font-size: 50;
+    position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+p {
+    color: black;
+    font-family: "papyrus";
+    font-size: 75;
+    text-align: center;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+        }
+
+.next_round {
+    height:40px;
+    width:200px;
+    position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+.imgplayer {
+  position: fixed;
+  left: 275px;
+  top: 275px;
+}
+.imgcomputer{
+  position: fixed;
+  right: 275px;
+  top: 275px;
+}
+</style>
+
+<h1> <% if @winner == :tied %>
+  TIED!
+<% else %>
+  <%= @winner.name %> WON!
+<% end %></h1>
+
+<p> VS </p>
+
+<div class ="imgplayer">
+<% if @player_weapon == :rock %>
+<img src='http://i68.tinypic.com/1zpmq8w.png' alt="some_text">
+<% elsif @player_weapon == :paper %>
+<img src='http://i66.tinypic.com/11v7d44.png'>
+<% else %>
+<img src='http://i65.tinypic.com/dmcjdf.png'>
+<% end %>
+</div>
+
+<div class ="imgcomputer">
+<% if @computer_weapon == :rock %>
+<img src='http://i68.tinypic.com/1zpmq8w.png'>
+<% elsif @computer_weapon == :paper %>
+<img src='http://i66.tinypic.com/11v7d44.png'>
+<% else %>
+<img src='http://i65.tinypic.com/dmcjdf.png'>
+<% end %>
+</div>
+
+<form action="/single_player/game" method="post">
+  <button type="submit" class="next_round">
+    NEXT ROUND
+  </button>

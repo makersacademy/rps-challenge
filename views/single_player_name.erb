@@ -1,6 +1,28 @@
-<h1>Please type in your name</h1>
+<style>
+body {background-color: lightskyblue;}
+p {
+    color: black;
+    font-family: "papyrus";
+    font-size: 50;
+    text-align: center;
+    position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-<form action="/single_player/game" method="post">
+.name {
+      position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+</style>
+
+<p>PLEASE TYPE IN YOUR NAME</p>
+
+<form action="/single_player/name" method="post" class="name">
         <input type="text" name="player">
         <input type = "submit" value = "Submit">
 </form>

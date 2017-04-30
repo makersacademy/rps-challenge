@@ -8,26 +8,27 @@ describe RPS do
   end
 
   scenario 'has the option to change from different games' do
-    expect(page).to have_content "Please choose the game you would like to play"
+    expect(page).to have_content "MAIN MENU"
   end
 
   scenario 'select single player mode' do
     click_button 'Single Player'
-    expect(page).to have_content "Please type in your name"
+    expect(page).to have_content "PLEASE TYPE IN YOUR NAME"
   end
 
   scenario 'add a player name to start the game' do
     click_button 'Single Player'
-    fill_in 'player', with: 'Peter'
+    fill_in 'player', with: 'TestPlayer'
     click_button 'Submit'
-    expect(page).to have_content 'Choose your weapon'
+    expect(page).to have_content 'CHOOSE YOUR WEAPON'
   end
 
-  scenario 'choose a weapon and win' do
+  scenario 'choose a weapon and fight' do
     click_button 'Single Player'
-    fill_in 'player', with: 'Peter'
+    fill_in 'player', with: 'TestPlayer'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content "You won"
+    srand(2)
+    expect(page).to have_content "VS"
   end
 end
