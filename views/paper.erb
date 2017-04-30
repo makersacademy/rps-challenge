@@ -2,9 +2,8 @@
 
 <h1><%=@rps.result%></h1>
 <br>
-<h2><i><%=@name%> chose Paper!<i></h2>
-  <h2>Computer chose <%=@rps.pair[:computer]%>!</h2>
-    <br>
-    <form action='/play'>
-      <input type='submit' value='Play again'>
-    </form>
+<h2><i><%=@name%> chose Paper! Computer chose <%=@rps.pair[:computer]%>!<i></h2>
+  <br>
+  <form action='/play'>
+    <input type='submit' value='Play again'>
+  </form>
