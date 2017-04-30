@@ -1,3 +1,5 @@
+
+# Understands randomising choices
 class Computer
   attr_reader :choice, :old_name, :name
 

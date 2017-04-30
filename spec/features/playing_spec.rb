@@ -19,4 +19,10 @@ feature 'Runs the game' do
     sign_in_and_play
     expect(page).to have_content 'Computer chose Rock. IT\'S A DRAW!'
   end
+
+  scenario 'rules still apply to special moves' do
+    srand(67)
+    sign_in_and_play
+    expect(page).to have_content 'Computer chose Lizard. TRUMP WINS!'
+  end
 end
