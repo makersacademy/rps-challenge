@@ -1,3 +1,4 @@
+require 'player'
 
 class Game
 
@@ -12,7 +13,7 @@ class Game
 	end
 
 
-	def initialize(player_1, player_2)
+	def initialize(player_1, player_2 = Player.new("Computer"))
 		@players = [player_1, player_2]
 	end
 

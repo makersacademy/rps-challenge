@@ -32,6 +32,10 @@ describe Game do
 		it 'returns player_2 instance' do
 			expect(game.player_2).to eq dan
 		end
+		it 'Single player game sets up Computer as opposition' do
+			single_player = Game.new(sam)
+			expect(single_player.player_2.name).to eq "Computer"
+		end
 	end
 
 end
