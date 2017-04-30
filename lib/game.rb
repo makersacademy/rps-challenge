@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :instance
 
   def initialize(player1, player2 = nil)
     @player1 = Player.new(player1)

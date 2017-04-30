@@ -18,21 +18,21 @@ feature 'Lets players choose their names' do
   end
 end
 
+feature 'Player can choose their weapon' do
+  scenario 'human player can select rock, paper or scissor' do
+    start_single_player
+    choose("move", option: "Scissor")
+    click_button('Play!')
+    expect(page).to have_content "Will played Scissor"
+  end
+end
+
 feature 'Computer player plays against the human player' do
   scenario 'computer plays rock, paper or scissors at random' do
     start_single_player
     choose("move", option: "Scissor")
+    allow_any_instance_of(Player).to receive(:move).and_return('Rock')
     click_button('Play!')
-    expect(page).to have_content 'The computer chose...'
-  end
-end
-
-# This test passes in isolation, but fails when the above test is run first
-feature 'Lets players select a move to play the game' do
-  scenario 'player can select rock, paper or scissors in single-player mode' do
-    start_single_player
-    choose("move", option: "Scissor")
-    click_button('Play!')
-    expect(page).to have_content 'The computer chose...'
+    expect(page).to have_content "Computer played Rock"
   end
 end

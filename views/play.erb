@@ -1,4 +1,4 @@
-<%= @game.player1.name %> VS <%= @game.player2.name %>
+<h1><%= @game.player1.name %> VS <%= @game.player2.name %></h1>
 
 <% if !@game.player1.move %>
 <form action="/player_move" method="post">
@@ -14,6 +14,15 @@
 </form>
 
 <% else %>
-<h1>The computer chose...'</h1>
+<br><%= @game.player1.name %> played <%= @game.player1.move %>
+<br><%= @game.player2.name %> played <%= @game.player2.move %>
+<% @winner = @game.player1.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 1" %>
+<% @winner = @game.player2.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 2" %>
+<% @winner = "Nobody" if Results.new.check(@game.player1.move, @game.player2.move) == "Nobody" %>
+<br><%= @winner %> wins!
+<% @game.player1.move = nil %>
+<form action="/play" method="get">
+<button type="submit" value="submit">Play again</button>
+</form>
 
 <% end %>
