@@ -33,4 +33,16 @@ describe 'Player' do
       expect{paula.attack_with_paper(computer)}.to change{paula.score}.by 1
     end
   end
+
+  describe '#attack_with_scissors' do
+    it 'expects player to respond to #attack_with_scissors' do
+      expect(paula).to respond_to(:attack_with_scissors).with(1).argument
+    end
+  end
+
+  describe '#attack_with_scissors' do
+    it 'expects player to win when computer plays paper' do
+      expect{paula.attack_with_scissors(computer)}.to change{paula.score}.by 1
+    end
+  end
 end

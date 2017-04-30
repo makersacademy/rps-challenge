@@ -14,4 +14,8 @@ class Player
   def attack_with_paper(computer)
     @score += 1
   end
+
+  def attack_with_scissors(computer)
+    @score += 1
+  end
 end
