@@ -1,0 +1,84 @@
+<audio autoplay>
+
+<source src="/Users/hyper0009/Downloads/mkts.mp3">
+</audio>
+
+<img src="http://wallpaperpulse.com/img/2927329.jpg"
+style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+
+<div align="center">
+<h1>RESULT:<%=@outcome.evaluate%></h1>
+</div>
+
+<style>
+.flash {
+   animation-name: flash;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: yellow;}
+    to {color: black;}
+}
+</style>
+
+<h3 class="flash"> <p style="text-align:left;">
+   <%=@outcome.player_name_1%> chose: <%=@outcome.player_choice%>
+  <span style="float:right;">
+Computer chose: <%=@outcome.game%>
+</span></p>
+</h3>
+
+
+  <div>
+    <form action="/outcome" align="center">
+      <input type="hidden" name="product" value="Rock">
+      <input type="submit" value="Rock">
+    </form>
+  </div>
+
+  <div>
+    <form action="/outcome" align="center">
+      <input type="hidden" name="product" value="Paper">
+      <input type="submit" value="Paper">
+    </form>
+  </div>
+
+  <div>
+    <form action="/outcome" align="center">
+      <input type="hidden" name="product" value="Scissors">
+      <input type="submit" value="Scissors">
+    </form>
+  </div>
+
+<% if @outcome.player_choice == "Rock"  %>
+<div>
+  <img src="https://media.giphy.com/media/SIuoHZbiImOxG/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% elsif @outcome.player_choice == "Scissors"%>
+<div>
+  <img src="https://media.giphy.com/media/wey5YtyzlChck/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% elsif @outcome.player_choice == "Paper"%>
+<div>
+  <img src="https://media.giphy.com/media/UUtTJNPsw641y/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% end%>
+
+<% if @outcome.game == "Rock"  %>
+<div>
+  <img src="https://media.giphy.com/media/SIuoHZbiImOxG/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% elsif @outcome.game == "Scissors"%>
+<div>
+  <img src="https://media.giphy.com/media/wey5YtyzlChck/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% elsif @outcome.game == "Paper"%>
+<div>
+  <img src="https://media.giphy.com/media/UUtTJNPsw641y/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="293.1543624161074" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></img></a>
+</div>
+<% end%>

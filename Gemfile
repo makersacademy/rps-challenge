@@ -1,9 +1,10 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
+source "https://rubygems.org"
 
-ruby '2.4.0'
-
-gem 'rake'
-gem 'sinatra'
+gem "rspec"
+gem "capybara"
+gem "sinatra"
+gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
