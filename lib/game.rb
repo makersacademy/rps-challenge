@@ -1,14 +1,10 @@
 class Game
 
-  def initialize(player, computer)
-    @players = [player, computer]
+  def initialize(player)
+    @player = player
   end
 
   def player
-    @players.first
-  end
-
-  def computer
-    @players.last
+    @player
   end
 end

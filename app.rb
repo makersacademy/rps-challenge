@@ -10,34 +10,33 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/play' do
     player = Player.new(params[:player])
-    computer = Computer.new(params[:computer])
-    $game = Game.new(player, computer)
+    @@game = Game.new(player)
     redirect('/play')
   end
 
   get '/play' do
-    @game = $game
-    $computer = Computer.new
+    @game = @@game
+    @@computer = Computer.new
     erb :play
   end
 
   get '/rock' do
-    @game = $game
-    @comp = $computer
+    @game = @@game
+    @comp = @@computer
     erb :rock
   end
 
   get '/paper' do
-    @game = $game
-    @comp = $computer
+    @game = @@game
+    @comp = @@computer
     erb :paper
   end
 
   get '/scissors' do
-    @game = $game
-    @comp = $computer
+    @game = @@game
+    @comp = @@computer
     erb :scissors
   end
 
