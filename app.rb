@@ -29,7 +29,6 @@ class Rps < Sinatra::Base
     @result = Result.new(@players_option, @computers_option)
     @winner = @result.winner
     @display_result = DisplayResult.new(@winner, @player)
-    p @display_result
     erb :computers_option
   end
 
