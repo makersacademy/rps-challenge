@@ -9,16 +9,16 @@ class RPS
 
   attr_reader :pair
 
-  def initialize(user_weapon, computer = Computer)
+  def initialize(user_weapon, computer = Computer.new)
     @pair = {}
     @user_weapon = user_weapon
-    @computer = computer.new
+    @computer = computer
     draw_weapons
   end
 
   def result
     return OUTCOME[:draw] if draw?
-    RULES.each { |hash| @pair == hash } ? OUTCOME[:win] : OUTCOME[:lose]
+    @pair == RULES[0] || @pair == RULES[1] || @pair == RULES[2] ? OUTCOME[:win] : OUTCOME[:lose]
   end
 
   private

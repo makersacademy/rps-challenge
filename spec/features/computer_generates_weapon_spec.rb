@@ -1,5 +1,5 @@
 feature 'Computer can generate weapon' do
-  scenario 'User draws rock, Computer draws scissors' do
+  scenario 'User wins' do
     allow_any_instance_of(Computer).to receive(:random_weapon).and_return(:scissors)
     sign_in
     click_button 'Rock'
