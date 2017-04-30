@@ -1,6 +1,6 @@
 require_relative 'player'
 class Computer
-  attr_reader :name, :score
+  attr_accessor :name, :score
 
   WEAPONS = [:rock, :paper, :scissors]
 
