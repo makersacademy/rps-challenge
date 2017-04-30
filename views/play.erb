@@ -1,7 +1,6 @@
 <h1><%= @game.player1.name %> VS <%= @game.player2.name %></h1>
 
-<% if !@game.player1.move %>
-<form action="/player_move" method="post">
+<form action="/player1_move" method="post">
   <div>
     <label for="Rock">Rock</label>
     <input type="radio" name="move" value="Rock">
@@ -9,20 +8,50 @@
     <input type="radio" name="move" value="Paper">
     <label for="Scissor">Scissor</label>
     <input type="radio" name="move" value="Scissor">
-    <button type="submit" value="submit">Play!</button>
+    <button type="submit" value="submit"><%= @game.player1.name %>'s move</button>
   </div>
 </form>
 
-<% else %>
+<% if @game_mode == 'multiplayer' && !@game.player2.move %>
+<form action="/player2_move" method="post">
+  <div>
+    <label for="Rock">Rock</label>
+    <input type="radio" name="move" value="Rock">
+    <label for="Paper">Paper</label>
+    <input type="radio" name="move" value="Paper">
+    <label for="Scissor">Scissor</label>
+    <input type="radio" name="move" value="Scissor">
+    <button type="submit" value="submit"><%= @game.player2.name %>'s move</button>
+  </div>
+</form>
+<% end %>
+
+<% if @game_mode == 'single_player' && !!@game.player1.move %>
+<% @game.player2.make_move if @game.player2.name == 'Computer' %>
+
 <br><%= @game.player1.name %> played <%= @game.player1.move %>
 <br><%= @game.player2.name %> played <%= @game.player2.move %>
 <% @winner = @game.player1.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 1" %>
 <% @winner = @game.player2.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 2" %>
 <% @winner = "Nobody" if Results.new.check(@game.player1.move, @game.player2.move) == "Nobody" %>
 <br><%= @winner %> wins!
-<% @game.player1.move = nil %>
+<% @game.player1.move = nil; @game.player2.move %>
 <form action="/play" method="get">
 <button type="submit" value="submit">Play again</button>
 </form>
+<% end %>
 
+<% if @game_mode == 'multiplayer' && !!@game.player1.move && !!@game.player2.move %>
+<% @game.player2.make_move if @game.player2.name == 'Computer' %>
+
+<br><%= @game.player1.name %> played <%= @game.player1.move %>
+<br><%= @game.player2.name %> played <%= @game.player2.move %>
+<% @winner = @game.player1.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 1" %>
+<% @winner = @game.player2.name if Results.new.check(@game.player1.move, @game.player2.move) == "Player 2" %>
+<% @winner = "Nobody" if Results.new.check(@game.player1.move, @game.player2.move) == "Nobody" %>
+<br><%= @winner %> wins!
+<% @game.player1.move = nil; @game.player2.move = nil %>
+<form action="/play" method="get">
+<button type="submit" value="submit">Play again</button>
+</form>
 <% end %>

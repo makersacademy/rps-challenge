@@ -36,3 +36,13 @@ feature 'Computer player plays against the human player' do
     expect(page).to have_content "Computer played Rock"
   end
 end
+
+# This test isn't finished because need to find way to get capybara to distinguish between radio buttons with same name
+
+#'Allows two human players to play each other' do
+#  scenario 'adds two players and chooses weapons' do
+#    start_multiplayer
+#    click_button('Play!')
+
+  end
+end

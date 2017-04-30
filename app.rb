@@ -32,12 +32,17 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
+    @game_mode = session[:gamemode]
     erb(:play)
   end
 
-  post '/player_move' do
+  post '/player1_move' do
     @game.player1.make_move(params[:move])
-    @game.player2.make_move
+    redirect '/play'
+  end
+
+  post '/player2_move' do
+    @game.player2.make_move(params[:move])
     redirect '/play'
   end
 end
