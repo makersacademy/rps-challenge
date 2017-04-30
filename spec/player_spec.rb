@@ -7,7 +7,7 @@ describe Player do
   context 'set-up' do
 
     it 'must have a name' do
-      expect { described_class.new() } .to raise_error(ArgumentError)
+      expect { described_class.new } .to raise_error(ArgumentError)
     end
 
   end

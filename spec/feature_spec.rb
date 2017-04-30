@@ -8,7 +8,7 @@ feature 'Playability feature Test' do
     Capybara.current_driver = :selenium
   end
 
-  after() do
+  after do
     Capybara.use_default_driver
   end
 
