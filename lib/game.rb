@@ -20,20 +20,18 @@ class Game
 
   def rock
     @a.rock
-    @b.random_hand
-    evaluate
+  end
+
+  def bot_move
+    @b.random_hand 
   end
 
   def paper
     @a.paper
-    @b.random_hand
-    evaluate
   end
 
   def scissors
     @a.scissors
-    @b.random_hand
-    evaluate
   end
 
   private
