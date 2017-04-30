@@ -8,7 +8,7 @@ describe Computer do
   end
   describe '#record_score' do
     it 'records when a player won a tie' do
-      expect { computer.record_score }.to change {computer.score}.by 1
+      expect { computer.record_score }.to change { computer.score }.by 1
     end
   end
 end
