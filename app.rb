@@ -5,6 +5,7 @@ require './spec/my_helper'
 class RPSWeb < Sinatra::Application
 
   set :public_folder, 'public'
+  enable :sessions
   before do
     @game = Game.instance
   end
@@ -18,6 +19,8 @@ class RPSWeb < Sinatra::Application
   end
 
   post '/play' do
+    session[:name1], session[:choice1] = params[:name1], params[:choice1]
+    session[:name2], session[:choice2] = params[:name2], params[:choice2]
     set_up_the_game
     erb(choose_page)
   end
