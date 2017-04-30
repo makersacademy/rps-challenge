@@ -4,7 +4,7 @@ class Computer
 
   attr_reader :name, :current_choice
 
-  def initialize(name = 'AI', choice = Choice.new )
+  def initialize(name = 'AI', choice = Choice.new)
     @name = name
     @choice = choice
     @current_choice = nil

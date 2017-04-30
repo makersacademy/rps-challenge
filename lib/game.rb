@@ -1,6 +1,5 @@
 class Game
 
-
   def initialize(player, computer)
     @players = [player, computer]
   end
@@ -22,10 +21,10 @@ class Game
   end
 
   def player_wins
-    if rock?(player1) && scissors?(computer) ; true
-    elsif scissors?(player1) && paper?(computer) ; true
-    elsif paper?(player1) && rock?(computer) ; true
-    else ; false
+    if rock?(player1) && scissors?(computer); true
+    elsif scissors?(player1) && paper?(computer); true
+    elsif paper?(player1) && rock?(computer); true
+    else; false
     end
   end
 

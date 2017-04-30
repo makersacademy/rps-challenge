@@ -2,9 +2,9 @@ require_relative 'choice'
 
 class Player
 
-attr_reader :name, :current_choice
+  attr_reader :name, :current_choice
 
-  def initialize(name, choice = Choice.new )
+  def initialize(name, choice = Choice.new)
     @name = name
     @choice = choice
     @current_choice = nil
@@ -14,8 +14,8 @@ attr_reader :name, :current_choice
     @current_choice = @choice.options[n]
   end
 
-private
+  private
 
-attr_reader :choice
+  attr_reader :choice
 
 end

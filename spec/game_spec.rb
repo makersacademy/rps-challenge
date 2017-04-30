@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-let(:computer) {double :computer}
-let(:player) { double :player}
-let(:game) { described_class.new(player, computer)}
+  let(:computer) { double :computer }
+  let(:player) { double :player }
+  let(:game) { described_class.new(player, computer) }
 
   describe '::new' do
     it 'has a player' do

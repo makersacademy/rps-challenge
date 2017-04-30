@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
+gem 'pry'
 gem 'rake'
 gem 'sinatra'
-gem 'pry'
 
 group :test do
   gem 'capybara'

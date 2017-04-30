@@ -3,12 +3,13 @@ require_relative './lib/player'
 require_relative './lib/computer'
 require_relative './lib/game'
 
-
-
 class RockPaperScissors < Sinatra::Base
 
   set :session_secret, "Here be Dragons"
 
+  before do
+    @game = Game.load_instance
+  end
 
   get '/' do
     erb :form
@@ -22,28 +23,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @game = Game.load_instance
     @game.player1.choose(1)
     @game.computer.choose
     redirect '/play'
   end
 
   get '/paper' do
-    @game = Game.load_instance
     @game.player1.choose(2)
     @game.computer.choose
     redirect '/play'
   end
 
   get '/scissors' do
-    @game = Game.load_instance
     @game.player1.choose(3)
     @game.computer.choose
     redirect '/play'
   end
 
   get '/play' do
-    @game = Game.load_instance
     erb :play
   end
 
