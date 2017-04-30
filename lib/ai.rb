@@ -1,6 +1,6 @@
 class Ai
 
-  CHOICES = [:rock, :paper, :scissors]
+  CHOICES = [:rock, :paper, :scissors, :lizard, :spock]
 
   attr_reader :name, :choice
 
