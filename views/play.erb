@@ -5,8 +5,17 @@
 <body>
   <h1>Welcome, </h1>
   <h2 class="budmo"><%= @player.name.upcase %></h2>
+  <h2>Score: <%= @player.score %></h2>
   <h1>Choose your weapon:</h1>
-  <h3>Rock</h3><h3>Paper</h3><h3>Scissors</h3>
+  <form>
+    <input class='weapon_button' type='submit' value='Rock'>
+    <input class='weapon_button' type='submit' value='Paper'>
+    <input class='weapon_button' type='submit' value='Scissors'>
+  </form>
+
+  <h1 class='bot'>The Bored Bot</h1>
+  <h2>Score: <%= @player.score %></h2>
+
 
   <style type="text/css">
   @font-face {
@@ -19,6 +28,14 @@
       font-family: 'Budmo Jiggler';
       font-size: 100px;
     }
+
+  input.weapon_button {
+    font-size: 100px;
+  }
+
+  h1.bot {
+    font-family: 'Courier New';
+  }
   </style>
 </body>
 </html>

@@ -1,9 +1,10 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :score
 
-  def initialize(name)
+  def initialize(name, score = 0)
     @name = name
+    @score = score
   end
 
   def self.create(name)
