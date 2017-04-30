@@ -1,1 +1,23 @@
-<h1>Choose your weapon, <%= @player.name %>!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Welcome, </h1>
+  <h2 class="budmo"><%= @player.name.upcase %></h2>
+  <h1>Choose your weapon:</h1>
+
+  <style type="text/css">
+  @font-face {
+    font-family: 'Budmo Jiggler';
+    src: url('budmojiggler.eot') format('eot'), url('budmojiggler.ttf') format('truetype'), url('budmojiggler.svg') format('svg');
+    font-style: normal;
+  }
+
+  h2.budmo {
+      font-family: 'Budmo Jiggler';
+      font-size: 100px;
+    }
+  </style>
+</body>
+</html>
