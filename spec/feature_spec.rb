@@ -19,8 +19,7 @@ feature 'Playability feature Test' do
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
       expect(page).to have_select("weapon", options: options_array)
-      click_button 'Play!'
-      page.driver.browser.switch_to.alert.accept
+      expect_alert_box_warning_and_ok
       fill_in 'name1', with: 'Pietro'
       select "Rock", :from => "weapon1"
       click_button 'Play!'
@@ -34,9 +33,7 @@ feature 'Playability feature Test' do
       visit '/'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Single Player'
       expect(page).to have_select("weapon", options: options_array)
-      fill_in 'name1', with: ''
-      click_button 'Play!'
-      page.driver.browser.switch_to.alert.accept
+      expect_alert_box_warning_and_ok
       fill_in 'name1', with: 'Pietro'
       select "Scissors", :from => "weapon1"
       click_button 'Play!'
@@ -54,8 +51,7 @@ feature 'Playability feature Test' do
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'
       expect(page).to have_select("weapon", options: options_array)
-      click_button 'Play!'
-      page.driver.browser.switch_to.alert.accept
+      expect_alert_box_warning_and_ok
       fill_in 'name1', with: 'Pietro'
       fill_in 'name2', with: 'Joanna'
       select "Rock", :from => "weapon1"
@@ -71,9 +67,7 @@ feature 'Playability feature Test' do
       click_link 'Go To Two Player Game'
       expect(page).to have_content 'Rock Paper Scissors Lizard Spock Two Player'
       expect(page).to have_select("weapon", options: options_array)
-      fill_in 'name1', with: ''
-      click_button 'Play!'
-      page.driver.browser.switch_to.alert.accept
+      expect_alert_box_warning_and_ok
       fill_in 'name1', with: 'Pietro'
       fill_in 'name2', with: 'Joanna'
       select "Scissors", :from => "weapon1"

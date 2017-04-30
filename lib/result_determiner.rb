@@ -14,7 +14,7 @@ class ResultDeterminer
   }
 
   def self.calculate(player_1, player_2)
-    self.check_raises(player_1, player_2)
+    check_raises(player_1, player_2)
     return :draw if player_1.choice == player_2.choice
     hash = {
       player_1.choice => player_1.name,

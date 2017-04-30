@@ -19,3 +19,8 @@ def set_up_the_game
   @game.player_1.choice = params[:weapon1].to_sym
   @game.player_2.choice = params[:weapon2].to_sym unless params[:name2].nil?
 end
+
+def expect_alert_box_warning_and_ok
+  click_button 'Play!'
+  page.driver.browser.switch_to.alert.accept
+end
