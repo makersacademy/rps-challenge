@@ -13,7 +13,7 @@ describe Computer do
     end
   end
   describe '#random_hand' do
-    it 'changes the value of hand to a random value betweem 1 and 3' do
+    it 'changes the value of hand to a random value between 1 and 3' do
       srand(1)
       bot.random_hand
       expect(bot.hand).to eq 2
