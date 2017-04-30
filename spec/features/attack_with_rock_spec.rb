@@ -1,5 +1,5 @@
-feature 'Testing attack' do
-  scenario 'player attacks Ogruk' do
+feature 'Testing attack_with_rock' do
+  scenario 'player attacks Ogruk with rock' do
     visit '/'
     fill_in :player, with: 'Paula'
     click_button("Start the game")

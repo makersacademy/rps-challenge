@@ -53,6 +53,10 @@ class RPS < Sinatra::Base
   end
 
   get '/finish' do
+    @player = $player.name
+    @computer = $computer.name
+    @computer_score = $computer.score
+    @player_score = $player.score
     erb :finish
   end
 

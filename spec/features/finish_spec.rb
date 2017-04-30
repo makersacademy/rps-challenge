@@ -7,4 +7,5 @@ feature 'Testing finish' do
     click_button("Finish")
     expect(page).to have_content("Final score")
   end
+
 end
