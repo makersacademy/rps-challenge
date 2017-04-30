@@ -22,7 +22,7 @@ feature 'Player can choose their weapon' do
   scenario 'human player can select rock, paper or scissor' do
     start_single_player
     choose("move", option: "Scissor")
-    click_button('Play!')
+    click_button('Will\'s move')
     expect(page).to have_content "Will played Scissor"
   end
 end
@@ -32,7 +32,7 @@ feature 'Computer player plays against the human player' do
     start_single_player
     choose("move", option: "Scissor")
     allow_any_instance_of(Player).to receive(:move).and_return('Rock')
-    click_button('Play!')
+    click_button('Will\'s move')
     expect(page).to have_content "Computer played Rock"
   end
 end
@@ -43,6 +43,3 @@ end
 #  scenario 'adds two players and chooses weapons' do
 #    start_multiplayer
 #    click_button('Play!')
-
-  end
-end
