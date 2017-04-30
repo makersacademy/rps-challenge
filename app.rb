@@ -12,5 +12,17 @@ class Rock_Paper_Scissors < Sinatra::Base
       redirect '/play'
     end
 
-    run! if app_file == $0
-end
+
+      get '/play' do
+        @game = Game.new(session)
+        erb :play
+      end
+
+      post '/play' do
+        session[:player_tool] = params[:tool].downcase.to_sym
+        session[:skynet_tool] = Computer.new.tool
+        redirect '/play'
+      end
+
+      run! if app_file == $0
+    end

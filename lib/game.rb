@@ -15,4 +15,23 @@ attr_reader :player_name, :player_tool, :skynet_tool
     @player_tool = options["player_tool"]
     @skynet_tool = options["skynet_tool"]
   end
+
+  def win?
+    result == :win
+  end
+
+  def lose?
+    result == :lose
+  end
+
+  def draw?
+    result == :draw
+  end
+
+  private
+
+  def result
+    return if @skynet_tool.nil?
+    RULES[@player_tool][@skynet_tool]
+  end
 end
