@@ -1,7 +1,8 @@
 require 'player'
 describe 'Player' do
   subject(:paula) { Player.new("Paula")}
-  computer = Computer.new
+  let(:computer) { double :computer }
+
 
   describe '#score' do
     it 'expects a new player to have a default score of 0' do
@@ -20,4 +21,10 @@ describe 'Player' do
       expect{paula.attack_with_rock(computer)}.to change{paula.score}.by 1
     end
   end
+
+  # describe '#attack_with_paper' do
+  #   it 'expects player to respond to #attack_with_paper' do
+  #     expect(paula).to respond_to(:attack_with_paper).with(1).argument
+  #   end
+  # end
 end
