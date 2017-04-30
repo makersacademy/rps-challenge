@@ -25,13 +25,34 @@ class RPS < Sinatra::Base
     erb :setup
   end
 
-  get '/attack' do
+  get '/attack_with_rock' do
     @player = $player.name
     @computer = $computer.name
-    @computer = $computer.score
+    @computer_score = $computer.score
     $player.attack_with_rock($computer)
     @player_score = $player.score
-    erb :attack
+    erb :attack_with_rock
+    # redirect '/finish' if @player_score >= 5
+  end
+
+  get '/attack_with_paper' do
+    @player = $player.name
+    @computer = $computer.name
+    @computer_score = $computer.score
+    $player.attack_with_paper($computer)
+    erb :attack_with_paper
+  end
+
+  get '/attack_with_scissors' do
+    @player = $player.name
+    @computer = $computer.name
+    @computer_score = $computer.score
+    $player.attack_with_scissors($computer)
+    erb :attack_with_scissors
+  end
+
+  get '/finish' do
+    erb :finish
   end
 
   run! if app_file == $0
