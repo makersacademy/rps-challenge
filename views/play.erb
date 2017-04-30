@@ -3,15 +3,15 @@
 <head>
 </head>
 <body>
-  <h1>Welcome, </h1>
   <h2 class="budmo"><%= @player.name.upcase %></h2>
   <h2>Score: <%= @player.score %></h2>
-  <h1>Choose your weapon:</h1>
-  <form>
-    <input class='weapon_button' type='submit' value='Rock'>
-    <input class='weapon_button' type='submit' value='Paper'>
-    <input class='weapon_button' type='submit' value='Scissors'>
-  </form>
+  <div class="weapons_button"><h1>Choose your weapon:</h1>
+    <form action='/confirmation' method='post'>
+      <input type='submit' name='choice' value='Rock'>
+      <input type='submit' name='choice' value='Paper'>
+      <input type='submit' name='choice' value='Scissors'>
+    </form>
+  </div>
 
   <h1 class='bot'>The Bored Bot</h1>
   <h2>Score: <%= @player.score %></h2>
@@ -29,8 +29,8 @@
       font-size: 100px;
     }
 
-  input.weapon_button {
-    font-size: 100px;
+  div.weapon_button {
+    text-align: center;
   }
 
   h1.bot {
