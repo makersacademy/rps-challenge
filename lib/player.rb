@@ -8,7 +8,11 @@ class Player
   end
 
   def attack_with_rock(computer)
-    @score += 1
+    if Computer::WEAPONS.sample == :scissors
+      @score += 1
+    elsif Computer::WEAPONS.sample == :paper
+      computer.score += 1
+    end
   end
 
   def attack_with_paper(computer)

@@ -1,8 +1,7 @@
 require 'player'
 describe 'Player' do
-  subject(:paula) { Player.new("Paula")}
-  let(:computer) { double :computer }
-
+  subject(:paula) { Player.new("Paula") }
+  computer = Computer.new("Ogruk")
 
   describe '#score' do
     it 'expects a new player to have a default score of 0' do
@@ -18,7 +17,15 @@ describe 'Player' do
 
   describe '#attack_with_rock score' do
     it 'expects the player to win when computer plays scissors' do
+      allow(Computer::WEAPONS).to receive_messages(sample: :scissors)
       expect{paula.attack_with_rock(computer)}.to change{paula.score}.by 1
+    end
+
+    it 'expects the player to lose when computer plays paper' do
+      allow(Computer::WEAPONS).to receive_messages(sample: :paper)
+      allow(computer).to receive_messages(score: 0)
+      p computer.score
+      expect{paula.attack_with_rock(computer)}.to change{computer.score}.by 1
     end
   end
 
