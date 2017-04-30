@@ -18,6 +18,7 @@ class RPSGame < Sinatra::Base
     @player = session[:player]
     @choice = session[:choice]
     @computer_choice = session[:computer_choice]
+    @game = Game.new(session[:choice], session[:computer_choice])
     erb(:play)
   end
 
