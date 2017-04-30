@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   get '/attack_with_rock' do
     @player = $player.name
     @computer = $computer.name
-    @computer_score = $computer.score
+    @computer_score = $player.computer_score
     $player.attack_with_rock($computer)
     @player_score = $player.score
     erb :attack_with_rock
@@ -37,7 +37,7 @@ class RPS < Sinatra::Base
   get '/attack_with_paper' do
     @player = $player.name
     @computer = $computer.name
-    @computer_score = $computer.score
+    @computer_score = $player.computer_score
     $player.attack_with_paper($computer)
     @player_score = $player.score
     erb :attack_with_paper
@@ -46,7 +46,7 @@ class RPS < Sinatra::Base
   get '/attack_with_scissors' do
     @player = $player.name
     @computer = $computer.name
-    @computer_score = $computer.score
+    @computer_score = $player.computer_score
     $player.attack_with_scissors($computer)
     @player_score = $player.score
     erb :attack_with_scissors

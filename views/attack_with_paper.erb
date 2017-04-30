@@ -1,12 +1,11 @@
 <%= @player %> attacked Ogruk with paper
 
-<p> <%= @player %> won that round</p>
-
 The score is now:
 <br><%= @player %>: <%= @player_score %>
-<br>Ogruk: 0
+<br>Ogruk: <%= @computer_score %>
 <br>
 <h3> Make your next move </h3>
+
 <form action="/attack_with_rock" method="get">
   <input type="submit" value="Attack with rock">
   <br>
