@@ -2,7 +2,7 @@
 <h3><i><%= @player %></i> has chosen: <%= @players_option %>.
   <h3><i>Computer</i> has chosen: <%=@computers_option %>.
     <br>
-    <h3>And the winner is.. <%= @display_result %>!<h3/>
+    <h3>And the winner is.. <%= @display_result.winner_name %>!<h3/>
     <form action="/game" method="get">
       <input type="submit" value="Play again!">
     </form>

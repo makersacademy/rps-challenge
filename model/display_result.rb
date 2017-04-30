@@ -8,16 +8,19 @@ class DisplayResult
     @player = player
   end
 
-  case @winner
-  when :player
-    @winner_name = @player
-  when :computer
-    @winner_name = "Computer"
-  when :draw
-    @winner_name = "None. It's a draw!"
+  def winner_name
+    case @winner
+    when :player
+      @player
+    when :computer
+      "Computer"
+    when :draw
+      "None. It's a draw"
+    end
   end
 
 end
+
 =begin
 "The Paper wraps the Rock. You lose :("
  "The Rock breaks the Scissors. You win. Or better, you rock! :)"
@@ -25,4 +28,4 @@ end
  "The Scissors cut the Paper. You lose :("
  "The Rock breaks the Scissors. You lose :("
  "The Scissors cut the Paper. You win :)"
- =end
+=end

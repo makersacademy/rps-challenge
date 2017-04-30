@@ -12,9 +12,6 @@ class Result
     return :computer
   end
 
-  def description
-  end
-
   private
 
   def winning_conditions
@@ -34,5 +31,4 @@ class Result
 
     false
   end
-
 end
