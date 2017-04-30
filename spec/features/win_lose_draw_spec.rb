@@ -3,6 +3,6 @@ feature 'result' do
     sign_in
     choose('rock')
     click_on('Submit')
-    expect(page).to have_content("won")
+    expect(page).to have_content("The winner is")
   end
 end

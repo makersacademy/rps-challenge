@@ -11,9 +11,16 @@ describe HumanPlayer do
     end
   end
   describe '#set_choice' do
-    it 'sets @choice to arg' do
-      human_player.set_choice(:rock)
+    it 'sets @choice to arg as lowercase symbol' do
+      human_player.set_choice "rock"
       expect(human_player.choice).to eq :rock
+    end
+  end
+
+  describe '#print_choice' do
+    it 'returns @choice as capitalized symbol' do
+      human_player.set_choice "rock"
+      expect(human_player.print_choice).to eq "Rock"
     end
   end
 

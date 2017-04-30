@@ -9,8 +9,12 @@ class HumanPlayer
     self.choice = arg.downcase.to_sym
   end
 
+  def print_choice
+    choice.capitalize.to_s
+  end
+
   def sym_name
-    name.downcase.gsub(/ /, "_").to_sym
+    name.downcase.gsub(" ", "_").to_sym
   end
 
   private
