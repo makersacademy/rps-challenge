@@ -1,10 +1,8 @@
-exit
+cd /Users/adamsnow/OneDrive/MacBook\ Only/Coding/weekend_challenge/rps-challenge
 clear && pry
 load './lib/game.rb'
 load './lib/player.rb'
 load './lib/bot.rb'
-player = Player.new('Name')
-game = Game.new(player)
-game.player.win
-game.player.loss
-game.player
+player1 = Player.new('Name1', :human)
+player2 = Player.new('Name2', :human)
+game = Game.new(player1, player2, 5)

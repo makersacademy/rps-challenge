@@ -18,12 +18,8 @@ describe Game do
     expect(default_game.best_of).to eq 5
   end
 
-  it 'knows when player1 has won' do
-    expect(game).to be_p1_won
-  end
-
-  it 'knows when player2 has won' do
-    expect(game).to be_p2_won
+  it 'knows when someone has won' do
+    expect(game).to be_game_over
   end
 
   it 'can have bots' do

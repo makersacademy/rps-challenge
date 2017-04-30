@@ -19,10 +19,10 @@ body {
   </h1>
 
   <h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
-  <h2> (Best of <%= @game.best_of %>) </h2>
-  
-<form action='/play'>
-<input class="btn btn-default" type='submit' value='Next Turn' name='Next'>
+
+<h1><%= @game.order[1].name.upcase %> WINS! <%= @game.order[1].wins %>-<%= @game.order[0].wins %></h1>
+<form action='/'>
+<input class="btn btn-default" type='submit' value='Play again' name='Next'>
 </form>
 
 </body>

@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/game'
 require './lib/bot'
 require 'pry'
-require 'bootstrap'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -23,13 +22,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    Game.instance.order[0].choice(params[:choice].to_sym)
+    Game.instance.order[0].log(params[:choice].to_sym)
     two_player? ? two_player_route : one_player_route
   end
 
   get '/result' do
     @game = Game.instance
-    erb(:result)
+    @game.game_over? ? erb(:winner) : erb(:result)
   end
 
   private
@@ -54,12 +53,20 @@ class RockPaperScissors < Sinatra::Base
 
   def two_player_route
     if Game.instance.order[0] == Game.instance.player1
-      Game.instance.switch_player
-      redirect '/play'
+      player2s_turn
     else
-      Game.instance.play
-      Game.instance.switch_player
-      redirect '/result'
+      player1s_turn
     end
+  end
+
+  def player2s_turn
+    Game.instance.switch_player
+    redirect '/play'
+  end
+
+  def player1s_turn
+    Game.instance.play
+    Game.instance.switch_player
+    redirect '/result'
   end
 end
