@@ -23,14 +23,14 @@ end
 
 feature 'Show play page' do
   scenario 'After clicking button on rules page' do
-    signed_in_and_ready
+    paul_sign_in
     expect(page).to have_content 'Choose your weapon!'
   end
 end
 
 feature 'Should allow user to select an option' do
   scenario 'Player can select any weapon' do
-    signed_in_and_ready
+    paul_sign_in 
     click_button('scissors')
   end
 end
