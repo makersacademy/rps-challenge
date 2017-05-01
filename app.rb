@@ -9,14 +9,12 @@ class RPS < Sinatra::Base
   end
 
   post '/play_screen' do
-    @player_name = params['player_name']
+    session['player_name'] = params['player_name']
     erb(:play_screen)
   end
 
   post '/play_game' do
-    @choice = params['choice']
-    @player_name = params['player_name']
-    p @player_name
+    session['choice'] = params['choice']
     erb(:play_game)
   end
 end
