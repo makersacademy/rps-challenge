@@ -2,7 +2,8 @@
 
 ### How to run application
 
-```$ git clone git@github.com:[USERNAME]/rps-challenge.git
+```
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
@@ -19,7 +20,8 @@ $ rackup
 
 ### Rspec report
 
-```➜  rps-challenge git:(master) ✗ rspec
+```
+➜  rps-challenge git:(master) ✗ rspec
 
 Rock, Paper, Scissors buttons
   Player chooses Rock
@@ -52,7 +54,8 @@ COVERAGE: 100.00% -- 43/43 lines in 6 files
 - Could not implement the last bit of functionality for a winner being declared. I was trying to get it to call the player's choice in the controllers but couldn't achieve the desired result. Plus game logic should go in controllers.
 - Was thinking of using logic for winner/ looser along the lines of:
 
-```def choose_rock
+```
+def choose_rock
   return "You won this round" if @@computer.choice == :scissors
   draw_or_loose
 end
@@ -77,3 +80,7 @@ end
 
 - Used class variables instead of global variables as they are very slightly better (I hope) though still not great to use.
 - Struggled writing non-vacuous unit tests. Coverage still at 100% but doesn't feel like it is as well tested as it ought to be.
+
+### Update on struggles
+
+- Also struggled viewing screenshots in this README after uploading them to dropbox.
