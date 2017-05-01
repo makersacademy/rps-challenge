@@ -1,6 +1,6 @@
 require_relative 'computer'
 
-class RPS
+class RPSLS
   OUTCOME = { draw: 'Its a Draw!', win: 'You win!', lose: 'Computer wins :(' }.freeze
   RULES = [{ user: :rock, computer: :scissors },
             { user: :paper, computer: :rock },

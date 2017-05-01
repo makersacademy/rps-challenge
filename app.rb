@@ -1,7 +1,7 @@
 require 'sinatra/base'
-require './lib/rps'
+require './lib/rpsls'
 
-class RPSWeb < Sinatra::Base
+class RPSLSWeb < Sinatra::Base
 
   enable :sessions
 
@@ -21,31 +21,31 @@ class RPSWeb < Sinatra::Base
 
   get '/rock' do
     @name = session[:name]
-    @rps = RPS.new(:rock)
+    @rpsls = RPSLS.new(:rock)
     erb :rock
   end
 
   get '/paper' do
     @name = session[:name]
-    @rps = RPS.new(:paper)
+    @rpsls = RPSLS.new(:paper)
     erb :paper
   end
 
   get '/scissors' do
     @name = session[:name]
-    @rps = RPS.new(:scissors)
+    @rpsls = RPSLS.new(:scissors)
     erb :scissors
   end
 
   get '/lizard' do
     @name = session[:name]
-    @rps = RPS.new(:lizard)
+    @rpsls = RPSLS.new(:lizard)
     erb :lizard
   end
 
   get '/spock' do
     @name = session[:name]
-    @rps = RPS.new(:spock)
+    @rpsls = RPSLS.new(:spock)
     erb :spock
   end
 
