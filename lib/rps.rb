@@ -1,8 +1,7 @@
 require_relative 'computer'
-require './lib/app.rb'
 
 class RPS
-  OUTCOME = { draw: 'Its a Draw!', win: 'You win!', lose: 'Computer wins :(' }
+  OUTCOME = { draw: 'Its a Draw!', win: 'You win!', lose: 'Computer wins :(' }.freeze
   RULES = [{ user: :rock, computer: :scissors },
             { user: :paper, computer: :rock },
             { user: :scissors, computer: :paper },
@@ -13,7 +12,7 @@ class RPS
             { user: :lizard, computer: :paper },
             { user: :paper, computer: :spock },
             { user: :spock, computer: :rock }
-          ]
+          ].freeze
 
   attr_reader :weapons
 
@@ -26,10 +25,18 @@ class RPS
 
   def result
     return OUTCOME[:draw] if draw?
-    RULES.include?(@weapons) ? OUTCOME[:win] : OUTCOME[:lose]
+    RULES.include?(@weapons) ? win : lose
   end
 
   private
+
+  def win
+    OUTCOME[:win]
+  end
+
+  def lose
+    OUTCOME[:lose]
+  end
 
   def draw_weapons
     @weapons = { user: @user_weapon, computer: random_computer_weapon }
