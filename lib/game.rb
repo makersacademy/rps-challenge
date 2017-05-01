@@ -4,7 +4,7 @@ class Game
 
   OPTIONS = [:rock, :paper, :scissors]
 
-  LOSES = { rock: :scissors, paper: :rock, scissors: :paper}
+  BEATS = { scissors: :rock, rock: :paper, paper: :scissors}
 
   attr_reader :playing, :current_player
 
@@ -26,8 +26,8 @@ class Game
   end
 
   def result
-    return player_1.name if cpu_player.hand == LOSES[player_1.hand]
-    return cpu_player.name if player_1.hand == LOSES[cpu_player.hand]
+    return player_1.name if player_1.hand == BEATS[cpu_player.hand]
+    return cpu_player.name if cpu_player.hand == BEATS[player_1.hand]
     return "Its a draw!" if player_1.hand == cpu_player.hand
   end
 
@@ -36,6 +36,5 @@ class Game
   def opponent(of_player)
     @playing.select{ |player| player != of_player }[0]
   end
-
-
+  
 end

@@ -6,6 +6,8 @@ end
 
 def battle_commences
   player_1 = Player.new("Chris")
-  player_2 = Player.new("Computer")
-  @game = Game.new(player_1, player_2)
+  cpu_player = Player.new("Computer")
+  @game = Game.new(player_1, cpu_player)
+  player_1.chooses(:rock)
+  cpu_player.random_choice
 end

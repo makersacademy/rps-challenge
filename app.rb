@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "./lib/game"
+require "./lib/player"
 
 class RPS < Sinatra::Base
 
@@ -11,7 +12,7 @@ class RPS < Sinatra::Base
     p params
     player_1 = Player.new(params[:player_1_name])
     cpu_player = Player.new(params[:player_2_name])
-    @game = Game.new(player_1, cpu_player)
+    $game = Game.new(player_1, cpu_player)
     erb :names
   end
 
@@ -19,12 +20,16 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
+  post '/choice' do
     p params
-    $game = @game
-    $player = @player
-    item = params[:rock]
-    @game.play
+    item = params[:name]
+    redirect('/result')
+  end
+
+  get '/result' do
+    @game = $game
+    @player_1 = $game.player_1
+    @cpu_player = $game.cpu_player
     erb :result
   end
 

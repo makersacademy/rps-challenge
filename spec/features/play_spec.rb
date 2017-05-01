@@ -5,13 +5,4 @@ feature "Game on" do
     expect(page).to have_content "Choose your item:"
   end
 
-  # scenario "finds an item" do
-  #   visit('/play')
-  #   choose('Scissors')
-  #   click_button('Submit')
-  #   ex
-  # end
-
-
-
 end
