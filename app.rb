@@ -15,6 +15,8 @@ class RPS < Sinatra::Base
 
   post '/play_game' do
     @choice = params['choice']
-    p @choice
+    @player_name = params['player_name']
+    p @player_name
+    erb(:play_game)
   end
 end
