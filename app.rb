@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/game_logic.rb'
 
 class Rockpaperscissors <  Sinatra::Base
   enable :sessions
@@ -15,9 +16,31 @@ class Rockpaperscissors <  Sinatra::Base
   get '/play' do
     @player_1_name = session[:player_1_name]
     erb :play
+
   end
 
-  post 'result' do
+  post '/showdown' do
+    session[:weapon] = params[:weapon]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @weapon = session[:weapon]
+    @ai_weapon = %w[Rock Paper Scissors].sample
+    erb :result
+  end
+
+  helpers do
+    def end_game_message
+      return "it's a tie" if @weapon == @ai_weapon
+
+      winning_combos = [["Paper","Rock"],["Rock","Scissor"],["Scissors","Paper"]]
+      if winning_combos.include?([@weapon, @ai_weapon])
+      "You Win"
+      else
+      "You Lose"
+      end  
+    end
   end
 
 
