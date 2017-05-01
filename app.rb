@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/name' do
-    'working!'
+  post '/play_screen' do
+    erb(:play_screen)
   end
 end
