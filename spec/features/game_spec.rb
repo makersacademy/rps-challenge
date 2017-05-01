@@ -20,7 +20,7 @@ feature 'play the game' do
 
   scenario 'the game chooses "Rock"' do
     click_button 'Rock'
-    option = find(:css, "#opponent").text.strip
+    option = find(:css, "#opponent").text
     expect(possible_options).to include option
   end
 

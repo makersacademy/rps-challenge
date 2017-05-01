@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,7 +22,7 @@ class RPS < Sinatra::Base
 
   post '/game' do
     session[:shape] = params[:shape]
-    session[:opposition_shape] = :rock 
+    session[:opposition_shape] = Opponent.new.randomise
     redirect '/game'
   end
 
