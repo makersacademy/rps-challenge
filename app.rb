@@ -19,6 +19,7 @@ class RPS < Sinatra::Application
 
   post '/play' do
     session[:player_1_weapon] = params[:weapon]
+    "#{session[:player_1_name]} used #{session[:player_1_weapon]}"
   end
 
 run! if app_file == $0
