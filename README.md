@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Now you can play Rock, Paper Scissors on your very own local server!
+Now you can play Rock, Paper, Scissors on your very own local server!
 
 ## Installation
 
