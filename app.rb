@@ -1,4 +1,5 @@
 require_relative './lib/player.rb'
+require_relative './lib/randomiser.rb'
 require 'sinatra/base'
 require 'shotgun'
 
@@ -20,8 +21,15 @@ class Rps < Sinatra::Base
     erb(:game)
   end
 
-  get '/result' do 
+  get '/choose' do 
     @player_1 = $player_1
+    erb(:choose)
+  end
+
+  post '/result' do 
+    @player_1 = $player_1
+    @player_1_result = params[:selection]
+    @result = Randomiser.new.randomise
     erb(:result)
   end
 
