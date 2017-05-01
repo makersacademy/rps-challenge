@@ -20,14 +20,13 @@ feature 'play the game' do
 
   scenario 'the game chooses "Rock"' do
     click_button 'Rock'
-
-
     option = find(:css, "#opponent").text.strip
-
     expect(possible_options).to include option
   end
 
   def possible_options
-    [:rock, :paper, :scissors].map { |option| "The other player chose #{option.to_s.capitalize}!" }
+    [:rock, :paper, :scissors].map do
+      |option| "The other player chose #{option.to_s.capitalize}!"
+    end
 end
-end 
+end
