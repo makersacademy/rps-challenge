@@ -8,7 +8,6 @@ SimpleCov.formatters = [
 
 # replace following line with SimpleCov.start to get coverage stats locally
 SimpleCov.start
-# run `open coverage/index.html` from the command line to view details
 
 RSpec.configure do |config|
   config.after(:suite) do
