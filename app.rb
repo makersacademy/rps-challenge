@@ -13,6 +13,7 @@ class RPSapp < Sinatra::Base
   end
 
   post '/' do
+    p params
     player = Player.new(params[:player_name])
     @game = Game.create(player)
     redirect '/game'
@@ -23,8 +24,11 @@ class RPSapp < Sinatra::Base
   end
 
   get '/game' do
-    #if @game.check_win_count == true; erb :finish_game
-    erb :play
+    if @game.round_with_result == 3;
+      @game.results.confirm_winner
+      erb :finish_game
+    else erb :play
+    end
   end
 
   post '/result' do

@@ -4,7 +4,26 @@
   <body>
     <div style="text-align:center;">
       <br><br><br>
-      <h1><%= @game.player.name %> you have completed Rock/Paper/Scissors! </h1>
+      <h1><%= @game.player.name %> - The game of Rock/Paper/Scissors is finished! </h1>
+    </div>
+    <div style="text-align:center;">
+      <h3> Each plays results were: </h3>
+      <% @game.results.results_store.each_with_index do |result, index| %>
+        <p>Round <%= index + 1 %> : <%= result[:winner] %></p>
+      <% end %>
+    </div>
+    <div style="text-align:center;">
+      <% if @game.results.winner == 'Computer' %>
+        <h2> It looks like you lost. That sucks. </h2>
+      <% else %>
+        <h2> <%= @game.player.name %>, You won. What a legend. </h2>
+      <% end %>
+    </div>
+    <div style="text-align:center;">
+      <form action='/' method="post">
+        <br><br>
+        <button type="submit" value='<%= @game.player.name %>' name='player_name'> PLAY AGAIN? </button>
+      </form>
     </div>
   </body>
 </html>

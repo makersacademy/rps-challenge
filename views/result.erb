@@ -13,7 +13,7 @@
     </div>
     <div style="text-align:center;">
       <br><br><br>
-      <h3> The winner is therefore <%= @game.results[(@game.round-2)] %></h3>
+      <h3> The winner is therefore <%= @game.results.results_store[(@game.round - 2)][:winner] %></h3>
     </div>
   </body>
 </html>

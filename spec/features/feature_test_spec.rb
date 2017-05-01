@@ -44,10 +44,15 @@ feature 'Player can play rock/paper/scissors' do
   scenario '#The play page displays previous round results' do
     srand(10)
     sign_in_and_play
-    find_button('ROCK').click
-    using_wait_time 6 do
-      expect(page).to have_content('Round 1: Henry - Rock, Computer - Paper')
-    end
+    click_button('ROCK')
+    expect(page).to have_content('Round 1: Henry')
   end
 
+  scenario '#A player will win the match' do
+    srand(10)
+    sign_in_and_play
+    10.times { click_button('ROCK') }
+    expect(page).to have_content('You have won')
+  end
+  
 end

@@ -1,4 +1,4 @@
-describe AI_randomiser do
+describe AI do
 
   it '#Gives random return of AI play' do
     srand(10)
