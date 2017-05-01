@@ -18,7 +18,7 @@
   In the second screen the user will be presented the choices (rock, paper and scissors)
   The user can choose one option
   The game will choose a random option
-  If he losses computer will say "You lost",else "You won" or "You draw"
+  If he losses computer will say "You lost",if he wins computer will say "You won" or  if it's a draw the computer will say "You draw"
 
 
 Instructions
