@@ -9,6 +9,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play_screen' do
+    @player_name = params['player_name']
     erb(:play_screen)
   end
 end
