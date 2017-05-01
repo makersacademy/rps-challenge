@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/new_game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,6 +16,7 @@ class RPS < Sinatra::Base
 
   post '/play_game' do
     session['choice'] = params['choice']
+    session['game'] = NewGame.new(session['choice'])
     erb(:play_game)
   end
 end
