@@ -5,15 +5,15 @@ require 'shotgun'
 class Rps < Sinatra::Base
 
   get '/' do 
-    "Hello World"
+    "Home Page"
   end
 
-  get '/secret' do 
-    "Hello World secret"
+  get '/game' do 
+    "game page"
   end
 
-  get '/newurl' do 
-    "new message"
+  get '/result' do 
+    "result page"
   end
 
   run! if app_file == $0
