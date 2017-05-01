@@ -32,14 +32,14 @@ class Rockpaperscissors <  Sinatra::Base
 
   helpers do
     def end_game_message
-      return "it's a tie" if @weapon == @ai_weapon
+      return "The Result is: You're tied!" if @weapon == @ai_weapon
 
       winning_combos = [["Paper","Rock"],["Rock","Scissor"],["Scissors","Paper"]]
       if winning_combos.include?([@weapon, @ai_weapon])
-      "You Win"
+      "The Result is: You're victorius!"
       else
-      "You Lose"
-      end  
+      "The Result is: Defeat!"
+      end
     end
   end
 
