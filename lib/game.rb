@@ -1,5 +1,5 @@
 class Game
   def random_selection
-    ["Rock","Paper","Scissors"].sample
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 end

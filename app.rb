@@ -2,13 +2,13 @@ require 'sinatra/base'
 require './lib/game.rb'
 require './lib/outcome.rb'
 
-class RPS<Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
 
   get '/' do
-  @outcome = Outcome.create
-  erb(:home)
+    @outcome = Outcome.create
+    erb(:home)
   end
 
   get '/single_player' do

@@ -1,4 +1,4 @@
-feature 'testing' do
+feature 'playing the game' do
   scenario 'expects main page to be loaded' do
     visit '/'
     expect(page).to have_content "THE EPIC SHOWDOWN"
@@ -32,13 +32,18 @@ feature 'testing' do
   end
 
   scenario 'expects bored individuals to play together' do
-    visit '/'
-    click_button 'TWO PLAYER'
-    fill_in :name , with: 'bob'
-    fill_in :name2 , with: 'oogy'
-    click_button 'submit'
+    two_player_names
     expect(page).to have_content "bob vs oogy"
   end
 
+  scenario 'expects bored individuals to swap turns' do
+    play_two_player
+    expect(page).to have_content "oogy's turn"
+  end
 
+  scenario 'expects bored individuals to have an outcome' do
+    play_two_player
+    click_button 'Paper'
+    expect(page).to have_content "oogy WINS"
+  end
 end

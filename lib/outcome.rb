@@ -21,7 +21,6 @@ class Outcome
       "IT'S A DRAW"
     else
       "YOU LOSE"
+    end
   end
-end
-
 end
