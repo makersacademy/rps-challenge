@@ -4,7 +4,7 @@ require './lib/player'
 
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
+  #enable :sessions
 
   get '/' do
     erb :index
@@ -15,9 +15,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
+    @computer = Computer.new
     @player_1 = Player.new(params[:player_1])
-    @game = Game.new_game(@player_1)
-    @computer= Computer.new
+    @game = Game.new_game(@player_1, @computer)
     redirect '/play'
   end
 
