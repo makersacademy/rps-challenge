@@ -1,7 +1,7 @@
 class Game
 
   def random_weapon
-    ["Rock","Paper","scissors"].sample
+    ["Rock","Paper","Scissors"].sample
   end
 
 end
