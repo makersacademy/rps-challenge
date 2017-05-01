@@ -9,12 +9,15 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do 
-    player_1 = params[:player_name]
-    "Hey #{player_1} you are now playing RPS"
+    @player_1 = params[:player_name]
+    $player_1 = @player_1
+    redirect '/game'
+    # "Hey #{player_1} you are now playing RPS"
   end
 
-  get '/game' do 
-    player_1 = params[:player_name]
+  get '/game' do
+    @player_1 = $player_1
+    erb(:game)
   end
 
   get '/result' do 
