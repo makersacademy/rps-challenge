@@ -5,7 +5,7 @@ class Computer
   def initialize
     @name = "The Great Cthulhu"
     @weapon_rack = ["Rock", "Paper", "Scissors"]
-    @weapon_choice = self.choose
+    @weapon_choice = choose
   end
 
   def choose

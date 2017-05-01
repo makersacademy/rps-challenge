@@ -4,7 +4,7 @@ require './lib/player'
 
 
 class RockPaperScissors < Sinatra::Base
-  #enable :sessions
+  enable :sessions
 
   get '/' do
     erb :index
@@ -24,6 +24,16 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_1 = @game.player_1
     erb :play
+  end
+
+  post '/choice' do
+    @game.player_1.set_weapon(params[:weapon])
+    @game.player_2.weapon_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb @game.check_winner(@game.player_1.weapon, @game.player_2.weapon_choice)
   end
 
   run! if app_file == $0

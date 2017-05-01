@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
+  def set_weapon(weapon)
     @weapon = weapon
   end
 

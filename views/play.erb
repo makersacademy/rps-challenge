@@ -2,12 +2,8 @@
 <br>
 <%= "#{@game.player_1.name}, what is your weapon of choice?" %>
 <br>
-<form action="/name" method="post">
-  <input type="submit" value="Rock">
-</form>
-<form action="/name" method="post">
-  <input type="submit" value="Paper">
-</form>
-<form action="/name" method="post">
-  <input type="submit" value="Scissors">
+<form action="/choice" method="post">
+  <input name="weapon" type="submit" value="Rock">
+  <input name="weapon" type="submit" value="Paper">
+  <input name="weapon" type="submit" value="Scissors">
 </form>

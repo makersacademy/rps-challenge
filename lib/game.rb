@@ -24,9 +24,9 @@ class Game
       if player_1_choice == player_2_choice
         :draw
       elsif win_logic[player_1_choice] == player_2_choice
-        :player_1_win
+        :player_win
       else
-        :player_2_win
+        :computer_win
       end
   end
 

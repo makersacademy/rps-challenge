@@ -9,7 +9,7 @@ describe Player do
     end
 
     it 'returns the players weapon' do
-      expect(david.weapon("Rock")).to eq "Rock"
+      expect(david.set_weapon("Rock")).to eq "Rock"
     end
   end
 end
