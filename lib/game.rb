@@ -7,6 +7,7 @@ class Game
   def initialize(player1, player2 = Computer.new)
     @player_1 = player1
     @player_2 = player2
+    @compare = Proc.new { |x, y| [x, y].include?(@player_2.choice) }
   end
 
   def self.default
@@ -58,22 +59,22 @@ class Game
   end
 
   def rock
-    [:Scissors, :Lizard].include?(@player_2.choice)
+    @compare.call(:Scissors, :Lizard)
   end
 
   def scissors
-    [:Paper, :Lizard].include?(@player_2.choice)
+    @compare.call(:Paper, :Lizard)
   end
 
   def paper
-    [:Rock, :Spock].include?(@player_2.choice)
+    @compare.call(:Rock, :Spock)
   end
 
   def lizard
-    [:Paper, :Spock].include?(@player_2.choice)
+    @compare.call(:Paper, :Spock)
   end
 
   def spock
-    [:Rock, :Scissors].include?(@player_2.choice)
+    @compare.call(:Scissors, :Rock)
   end
 end
