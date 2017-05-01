@@ -24,7 +24,7 @@ class Game
     @p2_weapon = p2_weapon
     weapons = [p1_weapon.to_sym, p2_weapon]
     return draw if p1_weapon.to_sym == p2_weapon
-    return win if WINNING_PARIS.include?(weapons) else lose
+    return win if WINNING_PAIRS.include?(weapons) else lose
   end
 
   def draw

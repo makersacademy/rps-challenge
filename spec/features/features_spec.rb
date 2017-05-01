@@ -37,6 +37,6 @@ end
 
 feature 'Should allow a win' do
   scenario 'Player selects rock and wins against' do
-    #need to find a randomized way to test this
+  # need to find a randomized way to test this
   end
 end

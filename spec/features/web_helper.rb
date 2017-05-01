@@ -1,6 +1,6 @@
 def paul_sign_in
   visit('/')
-  fill_in('player_1', with:'Paul')
+  fill_in('player_1', with: 'Paul')
   click_button('OK!')
 end
 
