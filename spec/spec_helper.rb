@@ -6,11 +6,10 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-Capybara.app = Game
+Capybara.app = RPSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
+SimpleCov::Formatter::Console,
 SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
