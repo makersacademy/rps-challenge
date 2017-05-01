@@ -8,4 +8,7 @@ feature RPS do
     visit '/'
     expect(page).to have_content 'Welcome to Rock Paper Scissors!'
   end
+
+  it 'allows the player to enter their name' do
+  end
 end
