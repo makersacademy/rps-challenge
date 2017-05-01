@@ -21,7 +21,7 @@ describe Game do
     end
 
     it "Draws if weapons are equal" do
-      expect(subject.check("Rock","Rock")).to eq("DRAW!")
+      expect(subject.check("Rock", "Rock")).to eq("DRAW!")
     end
 
   end

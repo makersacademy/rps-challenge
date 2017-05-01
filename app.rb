@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPS < Sinatra::Application
 
@@ -19,7 +20,14 @@ class RPS < Sinatra::Application
 
   post '/play' do
     session[:player_1_weapon] = params[:weapon]
-    "#{session[:player_1_name]} used #{session[:player_1_weapon]}"
+    redirect to('/game')
+  end
+
+  get '/game' do
+    @game = Game.new
+    @opponent_weapon = @game.random_weapon
+    @winner = @game.check(session[:player_1_weapon], @opponent_weapon)
+    erb :game
   end
 
   run! if app_file == $0
