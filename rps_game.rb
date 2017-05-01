@@ -23,12 +23,12 @@ class RPSGame < Sinatra::Base
     erb(:play)
   end
 
-  post '/play' do
+  post '/choose' do
     session[:choice] = params[:shape].downcase.to_sym
-    session[:computer_choice] = (Computer.new).play_hand
+    session[:computer_choice] = Computer.new.play_hand
     redirect '/play'
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 
 end
