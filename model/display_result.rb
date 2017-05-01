@@ -20,12 +20,3 @@ class DisplayResult
   end
 
 end
-
-=begin
-"The Paper wraps the Rock. You lose :("
- "The Rock breaks the Scissors. You win. Or better, you rock! :)"
- "The Paper wraps the Rock. You win :)"
- "The Scissors cut the Paper. You lose :("
- "The Rock breaks the Scissors. You lose :("
- "The Scissors cut the Paper. You win :)"
-=end
