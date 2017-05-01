@@ -1,12 +1,27 @@
 # RPS Challenge
 
+![Screenshot](https://www.dropbox.com/pri/get/Web/rps-logo-og.png?_subject_uid=63541668&w=AAA8UCHCAHCNmi3TqBoHB3H6toSX3_wRSs432NeMsWThUw)
+
 Installation Instructions
 --------
 
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ git clone https://github.com/chrisjmit/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
+
+
+Status
+--------
+There is currently an issue with linking instance variables in the controller layer. The application works in a REPL, using these example steps:
+
+require "./lib/game.rb"
+player_1 = Player.new("Chris")
+cpu_player = Player.new("Computer")
+game = Game.new(player_1, cpu_player)
+player_1.chooses(:rock)
+cpu_player.random_choice
+game.result
 
 
 Instructions

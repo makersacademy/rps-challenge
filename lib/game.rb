@@ -6,7 +6,7 @@ class Game
 
   BEATS = { scissors: :rock, rock: :paper, paper: :scissors}
 
-  attr_reader :playing, :current_player
+  attr_reader :playing, :current_player, :player_1
 
   def initialize(player_1, cpu_player)
     @playing = [player_1, cpu_player]
