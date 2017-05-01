@@ -1,3 +1,23 @@
+![Rock-Paper-Scissors-Spock-Lizard](http://www.samkass.com/rpsls_images/Banner_10x3_sticker.png)
+
+clone this repository
+
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+This game has a one player or a two player version.
+
+From the index page, follow the link buttons to decide which game version you would like to play.
+
+Enter your name and chose your weapon from the dropdown menu, then click Play!
+
+Player choices and names will be displayed, and the winner announced on the results page!
+
+Good luck…
+
+
+
 # RPS Challenge
 
 Instructions
