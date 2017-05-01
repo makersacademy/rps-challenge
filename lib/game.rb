@@ -2,7 +2,7 @@
 class Game
 
 	RULES = {rock: :scissors, paper: :rock, scissors: :paper}
-	attr_reader :players
+	attr_reader :players, :outcome
 
 	def self.game
 		@game
@@ -15,6 +15,7 @@ class Game
 	def initialize(player_name, player_2_name = "Computer")
 		player_2_name = "Computer" if player_2_name == ""
 		@players = [Player.new(player_name), Player.new(player_2_name)]
+		@outcome = nil
 	end
 
 	def player_1
@@ -25,17 +26,17 @@ class Game
 		@players[1]
 	end
 
-	def play(weapon)		
-		outcome(player_weapon(weapon), computer_weapon)
+	def play(weapon)
+		result(player_weapon(weapon), computer_weapon)
 	end
 
-	def outcome(player_weapon, computer_weapon)
+	def result(player_weapon, computer_weapon)
 		if RULES[player_weapon] == computer_weapon
-			:win
+			@outcome = :win
 		elsif  player_weapon == computer_weapon
-			:draw
+			@outcome = :draw
 		else
-			:lose
+			@outcome = :lose
 		end
 	end
 

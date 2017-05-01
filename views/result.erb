@@ -1,2 +1,11 @@
-
-"You won! You lost"
+<%= case @game.outcome 
+	when :win
+		"You won!"
+	when :lose
+		"You lost."
+	when :draw
+		"You drew."
+end
+%>
+<br>
+<a href="/play">Play again</a>
