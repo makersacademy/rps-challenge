@@ -1,9 +1,9 @@
 feature "play page:" do
 
-  before { submit_names("Ant") }
+  before { submit_single_name("Ant") }
 
   scenario "user sees name" do
-    expect(page).to have_content "Player One: Ant"
+    expect(page).to have_content "Ant's turn"
   end
 
   scenario "user sees three options" do
@@ -13,15 +13,15 @@ feature "play page:" do
   end
 
   scenario "user can choose rock" do
-    within('div#options') { within('div#rock') { click_button 'Choose' } }
+    choose_rock
   end
 
   scenario "user can choose paper" do
-    within('div#options') { within('div#paper') { click_button 'Choose' } }
+    choose_paper
   end
 
   scenario "user can choose scissors" do
-    within('div#options') { within('div#scissors') { click_button 'Choose' } }
+    choose_scissors
   end
 
 end

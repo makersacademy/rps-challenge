@@ -1,7 +1,14 @@
 <body>
-  <form action="/names" method="post">
-    <label for="player_one_name">
-      Enter your name: <input type='text' name='player_one'>
-    <input type='submit' value='Submit'>
-  </form>
+
+  <h1>Rock Paper Scissors</h1>
+
+  <div id="gametype">
+    <form action="/single_player">
+      <input type='submit' value='single-player'>
+    </form>
+    <form action="/multi_player">
+      <input type='submit' value='multi-player'>
+    </form>
+  </div>
+
 </body>

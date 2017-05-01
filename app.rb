@@ -5,13 +5,21 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    $player_one = params[:player_one]
+  get '/single_player' do
+    erb :single_player
+  end
+
+  get '/multi_player' do
+    erb :multi_player
+  end
+
+  post '/playernames' do
+    $player_1 = params[:player_1]
     redirect '/play'
   end
 
   get '/play' do
-    @player_one = $player_one
+    @player_1 = $player_1
     erb :play
   end
 
