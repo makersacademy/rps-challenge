@@ -22,6 +22,6 @@ class RPS < Sinatra::Application
     "#{session[:player_1_name]} used #{session[:player_1_weapon]}"
   end
 
-run! if app_file == $0
+  run! if app_file == $0
 
 end
