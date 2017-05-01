@@ -10,11 +10,13 @@ Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons Spoc
 As a visiter
 So that I can see my name
 I would like to register my name before playing an online game
-
+```
+```
 As a visiter
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors/lizard/spock
-
+```
+```
 As a visiter
 So that I can know who has won the game
 I would like to see a confirmation of the result
@@ -26,16 +28,21 @@ $ git clone git@github.com:[USERNAME]/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
-# whilst running rackup visit localhost:9292 to play!
+# whilst running rackup visit localhost:9292  in your browser to play!
 ```
 ![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/you-win.png "you-win")
 
-##### Problems encountered:
+#### Problems encountered:
 
 1. Storing the User's weapon choice as a session.
 
-- I had planned on having a post-redirect-loop(similar to the /names post request) for when the User chooses their weapon. I wanted to store this memory in session params, however I struggled to then pass this as an argument to the RPSLS class.
+-I had planned on having a post-redirect-loop(similar to the /names post request) for when the User chooses their weapon. I wanted to store this memory in session params, however I struggled to then pass this as an argument to the RPSLS class.
 
 -This means that I had to have views for each weapon choice, and I had to hard-code the argument to the RPSLS class
 
 #### Test coverage 100%
+
+Testing covers all cases of User and Computer winning, losing and drawing. Also tests for the correct output and storage of 'name' using Sinatra sessions.
+
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/test-coverage.png "test-coverage")
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/tests.png "tests")
