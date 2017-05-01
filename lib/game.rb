@@ -22,6 +22,7 @@ class Game
   end
 
   def result
+    @weapon == @computer_weapon ? :draw :
     check(@weapon, @computer_weapon) ? :win : :lose
   end
 
