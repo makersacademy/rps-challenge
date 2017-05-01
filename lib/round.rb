@@ -1,5 +1,5 @@
 class Round
-  attr_reader :name
+  attr_reader :name, :shape, :opposition_shape
 
   def initialize(options)
     @name = options["name"]

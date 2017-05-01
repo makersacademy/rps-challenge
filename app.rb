@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/opponent'
+require './lib/round'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -15,9 +16,9 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @round = Round.new(session)
-    @name = session[:name]
-    @shape = session[:shape]
-    @opposition_shape = session[:opposition_shape]
+    # @name = session[:name]
+    # @shape = session[:shape]
+    # @opposition_shape = session[:opposition_shape]
     erb :game
   end
 
