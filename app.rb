@@ -23,6 +23,7 @@ class RPSapp < Sinatra::Base
   end
 
   get '/game' do
+    #if @game.check_win_count == true; erb :finish_game
     erb :play
   end
 

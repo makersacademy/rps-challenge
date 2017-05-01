@@ -1,4 +1,4 @@
-describe Result_workey_outey do
+describe Results do
 
   let (:turn) { double(:turn) }
 =begin
