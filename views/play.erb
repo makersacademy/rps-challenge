@@ -6,7 +6,7 @@
   <input type='submit' name='shape' value='Scissors'>
 </form>
 
-<p>You threw: <%= @choice %></p>
+<p>You threw: <%= @choice.to_s.capitalize %></p>
 <p>Computer threw: <%= @computer_choice.to_s.capitalize %></p>
 
-<p>Result: You Win!</p>
+<p>Result: You <%= @game.result %>!</p>
