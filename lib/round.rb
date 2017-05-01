@@ -17,6 +17,14 @@ class Round
     outcome == :win
   end
 
+  def lose?
+    outcome == :lose
+  end
+
+  def draw?
+    outcome == :draw
+  end
+
   def outcome
     return if @opposition_shape.nil?
     RULES[@shape][@opposition_shape]

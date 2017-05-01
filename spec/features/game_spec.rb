@@ -28,12 +28,31 @@ feature 'play the game' do
       expect(page).to have_content 'You chose Scissors!'
      end
 
-     scenario 'Player wins' do
+     context 'game over' do
+       scenario 'Player wins' do
+         allow_any_instance_of(Opponent).to receive(:randomise).and_return(:scissors)
+         visit '/'
+         fill_in 'name', with: 'Ben'
+         click_button 'Submit'
+         click_button 'Rock'
+         expect(page).to have_content "You win!"
+       end
+
+     scenario 'Player loses' do
        allow_any_instance_of(Opponent).to receive(:randomise).and_return(:scissors)
        visit '/'
        fill_in 'name', with: 'Ben'
        click_button 'Submit'
-       click_button 'Rock'
-       expect(page).to have_content "You win!"
+       click_button 'Paper'
+       expect(page).to have_content "You lose!"
      end
- end
+     scenario 'Player draws' do
+       allow_any_instance_of(Opponent).to receive(:randomise).and_return(:scissors)
+       visit '/'
+       fill_in 'name', with: 'Ben'
+       click_button 'Submit'
+       click_button 'Scissors'
+       expect(page).to have_content "You draw!"
+     end
+   end
+end

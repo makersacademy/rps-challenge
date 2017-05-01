@@ -27,9 +27,37 @@ describe Round do
   end
 
   context 'game over' do
+    subject(:win_round) { round }
+    subject(:lose_round) { described_class.new(lose_options) }
+    subject(:draw_round) { described_class.new(draw_options)}
+
+    let(:lose_options) {
+      {"name" => "Ben",
+        "shape" => :rock,
+        "opposition_shape" => :paper}
+      }
+
+    let(:draw_options) {
+      {"name" => "Ben",
+        "shape" => :rock,
+        "opposition_shape" => :rock}
+      }
+
     describe '#win?' do
       it 'returns true if the player wins' do
-        expect(round.win?).to eq true
+        expect(win_round.win?).to eq true
+      end
+    end
+
+    describe '#lose?' do
+      it 'returns true if the player loses' do
+        expect(lose_round.lose?).to eq true
+      end
+    end
+
+    describe '#draw?' do
+      it 'returns true if the player draws' do
+        expect(draw_round.draw?).to eq true
       end
     end
   end

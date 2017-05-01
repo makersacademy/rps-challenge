@@ -14,4 +14,8 @@ Hello, <%= @round.name %>!
 
 <%if @round.win? %>
   You win!
+<%elsif @round.lose? %>
+  You lose!
+<%elsif @round.draw? %>
+  You draw!
 <% end %>
