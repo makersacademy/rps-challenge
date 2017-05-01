@@ -1,3 +1,4 @@
+![Travis](https://travis-ci.org/Robert-G-J/rps-challenge.svg?branch=master)
 # RPS Challenge- Makers Academy, Week 3
 
 Installation
