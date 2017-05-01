@@ -6,5 +6,5 @@ describe Game do
   it 'gets an instance of player 1' do
     expect(game.player_1).to eq player_1
   end
-
+  
 end
