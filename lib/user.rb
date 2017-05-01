@@ -5,11 +5,11 @@ attr_reader :name, :option
 
 def initialize(name)
   @name = name
-  @option
+  @option1
 end
 
 def choose(option)
-  @option =  option
+  @option1 =  option
 end
 
 end

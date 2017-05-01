@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/user'
-require './lib/rockpaperscissors'
+require './lib/computer'
+require './lib/options'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -23,7 +24,9 @@ end
 get '/opponent_turn' do
   p params
   @option1 = $user.choose(params[:option])
-  @option2 = Rockpaperscissors::RPS.sample
+  @option2 = Computer.new.random_select
+  $options = Options.new
+  $options.winner(@option1,@option2)
   erb(:opponent_turn)
 end
 
