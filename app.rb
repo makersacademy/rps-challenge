@@ -1,9 +1,7 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
-
   enable :sessions
-  set :session_secret, 'super secret'
 
   get '/' do
     erb :index
@@ -16,7 +14,13 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @name = session[:name]
-    erb :game 
+    @shape = session[:shape]
+    erb :game
+  end
+
+  post '/game' do
+    session[:shape] = params[:shape]
+    redirect '/game'
   end
 
 

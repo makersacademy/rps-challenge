@@ -1,5 +1,9 @@
-Hello, <%=@name %>!
+Hello, <%= @name %>!
 
-<p>Rock</p>
-<p>Paper</p>
-<p>Scissors</p>
+<form method="POST" action="/game">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+</form>
+
+  You chose <%= @shape %>!
