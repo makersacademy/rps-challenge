@@ -1,4 +1,5 @@
 require_relative 'computer'
+require './lib/app.rb'
 
 class RPS
   OUTCOME = { draw: 'Its a Draw!', win: 'You win!', lose: 'Computer wins :(' }
