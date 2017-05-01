@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 
 class RPS_Battle < Sinatra::Base
@@ -10,13 +11,18 @@ class RPS_Battle < Sinatra::Base
   end
 
   post '/VS' do
-    $player_1 = Player.new(params[:player_1])
-    @player_1 = $player_1
+    if params[:player_2] == ""
+      $game = Game.new(Player.new(params[:player_1]))
+    else
+      $game = Game.new(Player.new(params[:player_1]),Player.new(params[:player_2]))
+    end
+    p $game
+    @game = $game
     erb :versus
   end
 
   get '/play' do
-    @player_1 = $player_1
+    @game = $game
     erb :play
   end
 
