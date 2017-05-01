@@ -17,7 +17,7 @@ class Rockpaperscissors <  Sinatra::Base
     erb :play
   end
 
-  get '/weapons' do
+  post 'result' do
   end
 
 
