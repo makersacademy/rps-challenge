@@ -10,11 +10,11 @@ $ rackup
 * In your chosen web-browser use: `localhost:9292` (if running Rackup's default port).
 
 #### The following should be displayed:
-![Screenshot](https://www.dropbox.com/s/8ncdco60cxg3g2j/Screen%20Shot%202017-05-01%20at%2023.37.21.png?dl=0)
+![alt text](https://www.dropbox.com/s/8ncdco60cxg3g2j/Screen%20Shot%202017-05-01%20at%2023.37.21.png?dl=0)
 #### Enter your name.
-![Screenshot](https://www.dropbox.com/s/1egh1qsn1pvqh7z/Screen%20Shot%202017-05-01%20at%2023.37.47.png?dl=0)
+![alt text](https://www.dropbox.com/s/1egh1qsn1pvqh7z/Screen%20Shot%202017-05-01%20at%2023.37.47.png?dl=0)
 #### Choose an option from the buttons.
-![Screenshot](https://www.dropbox.com/s/nfiqilc89ak7lfp/Screen%20Shot%202017-05-01%20at%2023.38.04.png?dl=0)
+![alt text](https://www.dropbox.com/s/nfiqilc89ak7lfp/Screen%20Shot%202017-05-01%20at%2023.38.04.png?dl=0)
 #### Result. Play again takes you back to the second screenshot, quit returns you to the index page.
 
 ### Rspec report
