@@ -1,0 +1,9 @@
+<h1><%= "#{@game.player_1.name} vs #{@game.player_2.name}" %></h1>
+<br>
+<%= "#{@game.player_1.name}, what is your weapon of choice?" %>
+<br>
+<form action="/choice" method="post">
+  <input name="weapon" type="submit" value="Rock">
+  <input name="weapon" type="submit" value="Paper">
+  <input name="weapon" type="submit" value="Scissors">
+</form>

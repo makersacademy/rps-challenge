@@ -1,6 +1,16 @@
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'features/web_helpers'
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers'
 require 'simplecov'
 require 'simplecov-console'
+
+ENV['RACK_ENV'] = 'test'
+
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
