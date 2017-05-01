@@ -14,6 +14,8 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    p params
+    player_1 = Player.new(params[:player_1_name])
     erb :play
   end
 

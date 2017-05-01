@@ -1,3 +1,5 @@
+require "./lib/player.rb"
+
 class Game
 
   def options

@@ -9,6 +9,6 @@ feature "finds players exist" do
 
   scenario "finds opponent" do
     sign_in_and_play
-    expect(page).to have_content("versus")
+    expect(page).to have_content("vs.")
   end
 end
