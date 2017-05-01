@@ -1,7 +1,5 @@
 class Randomiser
 
-  # attr_reader :outcomes
-
   def initialize
     @outcomes = ['rock', 'paper', 'scissors']
   end

@@ -1,5 +1,7 @@
 require_relative './lib/player.rb'
 require_relative './lib/randomiser.rb'
+require_relative './lib/game.rb'
+require_relative './lib/result.rb'
 require 'sinatra/base'
 require 'shotgun'
 
@@ -10,26 +12,26 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do 
-    @player_1 = params[:player_name]
-    $player_1 = @player_1
-    redirect '/game'
-    # "Hey #{player_1} you are now playing RPS"
+    $game = Game.new(params[:player_name])
+    @game = $game 
+    redirect '/choose'
   end
 
-  get '/game' do
-    @player_1 = $player_1
-    erb(:game)
-  end
+  # get '/game' do
+  #   @game = $game
+  #   erb(:game)
+  # end
 
-  get '/choose' do 
-    @player_1 = $player_1
+  get '/choose' do
+    @game = $game
     erb(:choose)
   end
 
   post '/result' do 
-    @player_1 = $player_1
-    @player_1_result = params[:selection]
-    @result = Randomiser.new.randomise
+    @game = $game
+    @p1_result = params[:selection]
+    @p2_result = Randomiser.new.randomise
+    @result = Result.new(@p1_result, @p2_result).return_winner
     erb(:result)
   end
 

@@ -5,10 +5,9 @@ feature 'Play RPS' do
     visit '/'
     fill_in :player_name, with: 'Sandy'
     click_button('Play!')
-    click_button('RPS!')
     select "Rock", from: "selection"
     click_button('RPS!')
-    expect(page).to have_content('Sandy result:')
-    expect(page).to have_content('Computer result:')  
+    expect(page).to have_content('Sandy result: rock')
+    expect(page).to have_content('Player 2 result:')  
   end
 end
