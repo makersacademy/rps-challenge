@@ -14,7 +14,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
-Capybara.app = Rock_Paper_Scissors
+Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
   config.after(:suite) do

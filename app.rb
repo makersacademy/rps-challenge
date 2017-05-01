@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/computer'
 
-class Rock_Paper_Scissors < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do

@@ -3,8 +3,7 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(options) }
-  let(:options) { {"player_name" => "Daniel", "player_tool" => :rock, "computer_tool" => :scissors} }
-
+  let(:options) { { "player_name" => "Daniel", "player_tool" => :rock, "computer_tool" => :scissors } }
 
   describe '#player_name' do
     it 'returns player name' do
