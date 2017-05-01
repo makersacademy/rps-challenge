@@ -21,7 +21,7 @@ describe ResultDeterminer do
     expect(rd.calculate(player_1, player_2)).to eq player_1.name
   end
 
-  it 'can correctly determine a draw = Paper vs Paper' do
+  it 'can correctly determine a draw - Paper vs Paper' do
     expect(rd.calculate(player_1, player_3)).to eq :draw
   end
 
