@@ -1,8 +1,16 @@
-Player 1, choose your item:
+<h1>Choose your item:</h1>
 <table>
   <tr>
-    <td>Rock</td>
-    <td>Paper</td>
-    <td>Scissors</td>
+    <td><div><img src="https://www.dropbox.com/pri/get/Web/rock.jpg?_subject_uid=63541668&w=AABJvY-4YD4bJSBaKRPz7i2NsIv0Bo-8NXrLBuraGdYyyw"></div></td>
+    <td><div><img src="https://www.dropbox.com/pri/get/Web/paper.jpg?_subject_uid=63541668&w=AACmW2yNVBMDVE817u8qw0zNvTeX9GUI7RwNNCNmN7xNxQ"></div></td>
+    <td><div><img src="https://www.dropbox.com/pri/get/Web/scissors.jpg?_subject_uid=63541668&w=AAC7T6gA-rBAH7oMJ0Dngg0N3vGbj4LqkNcZGy-QJ7xO2Q"></div></td>
   </tr>
-<table>
+  <tr>
+    <form action="/result" method="post">
+    <td><input type="radio" name="Rock" value="rock"></td>
+    <td><input type="radio" name="Paper" value="paper"></td>
+    <td><input type="radio" name="Scissors" value="scissors"></td>
+  </tr>
+    <td><input type="submit"></td>
+  </form>
+</table>

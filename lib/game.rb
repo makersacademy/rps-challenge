@@ -2,23 +2,40 @@ require "./lib/player.rb"
 
 class Game
 
-  attr_reader :playing, :current_turn
+  OPTIONS = [:rock, :paper, :scissors]
 
-  def initialize(player_1, player_2)
-    @playing = [player_1, player_2]
-    @current_turn = player_1
+  LOSES = { rock: :scissors, paper: :rock, scissors: :paper}
+
+  attr_reader :playing, :current_player
+
+  def initialize(player_1, cpu_player)
+    @playing = [player_1, cpu_player]
+    @current_player = player_1
   end
 
   def player_1
-    @playing.first
+    @playing[0]
   end
 
-  def player_2
-    @playing.last
+  def cpu_player
+    @playing[-1]
   end
 
-  def options
-    { :rock => "Rock", :paper => "Paper", :scissors => "Scissors" }
+  def change_turn
+    @current_player = opponent(current_player)
   end
+
+  def result
+    return player_1.name if cpu_player.hand == LOSES[player_1.hand]
+    return cpu_player.name if player_1.hand == LOSES[cpu_player.hand]
+    return "Its a draw!" if player_1.hand == cpu_player.hand
+  end
+
+  private
+
+  def opponent(of_player)
+    @playing.select{ |player| player != of_player }[0]
+  end
+
 
 end
