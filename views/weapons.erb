@@ -1,1 +1,13 @@
-<%= session[:player_1_name]%>
+<%= session[:player_1_name] %>
+<br>
+Select your weapon:
+<br>
+<form action="/play" method="post">
+  Rock:
+  <input type="radio" name="weapon" id="Rock" value="Rock">
+  Paper:
+  <input type="radio" name="weapon" id="Paper" value="Paper">
+  Scissors
+  <input type="radio" name="weapon" id="Scissors" value="Scissors">
+  <input type="submit" value="Play">
+</form>

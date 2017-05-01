@@ -17,6 +17,10 @@ class RPS < Sinatra::Application
     erb :weapons
   end
 
+  post '/play' do
+    session[:player_1_weapon] = params[:weapon]
+  end
+
 run! if app_file == $0
 
 end
