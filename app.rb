@@ -5,11 +5,16 @@ require 'shotgun'
 class Rps < Sinatra::Base
 
   get '/' do 
-    "Home Page"
+    erb(:index)
+  end
+
+  post '/names' do 
+    player_1 = params[:player_name]
+    "Hey #{player_1} you are now playing RPS"
   end
 
   get '/game' do 
-    "game page"
+    player_1 = params[:player_name]
   end
 
   get '/result' do 
