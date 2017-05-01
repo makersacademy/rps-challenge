@@ -1,9 +1,14 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  'Welcome to Rock Paper Scissors!'
-end
+class RPS < Sinatra::Base
+  enable :sessions
+  set :session_secret, ""
 
-get '/secret' do
-  'This is the secret test!'
+  get '/' do
+    erb(:index)
+  end
+
+  get '/name' do
+    'working!'
+  end
 end
