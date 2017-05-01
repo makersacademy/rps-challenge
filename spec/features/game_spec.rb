@@ -13,20 +13,18 @@ feature 'play the game' do
     expect(page).to have_button 'Scissors'
   end
 
-  scenario 'choose move' do
+  scenario 'choose Rock' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock!'
-  end
+   end
 
-  scenario 'the game chooses "Rock"' do
-    click_button 'Rock'
-    option = find(:css, "#opponent").text
-    expect(possible_options).to include option
-  end
-
-  def possible_options
-    [:rock, :paper, :scissors].map do
-      |option| "The other player chose #{option.to_s.capitalize}!"
+   scenario 'choose Paper' do
+     click_button 'Paper'
+     expect(page).to have_content 'You chose Paper!'
     end
-end
-end
+
+    scenario 'choose Scissors' do
+      click_button 'Scissors'
+      expect(page).to have_content 'You chose Scissors!'
+     end
+ end
