@@ -4,6 +4,8 @@ require "./lib/player"
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -17,20 +19,23 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @game = $game
     erb :play
   end
 
-  post '/choice' do
-    p params
-    item = params[:name]
-    redirect('/result')
+  post '/rock' do
+    @game = $game
+    @game.player_1.chooses(:rock)
+    @game.cpu_player.random_choice
+    erb :rock
   end
 
-  get '/result' do
-    @game = $game
-    @player_1 = $game.player_1
-    @cpu_player = $game.cpu_player
-    erb :result
+  post '/paper' do
+    erb :paper
+  end
+
+  post '/scissors' do
+    erb :scissors
   end
 
 run! if app_file == $0

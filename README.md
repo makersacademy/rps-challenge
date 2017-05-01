@@ -1,5 +1,14 @@
 # RPS Challenge
 
+Installation Instructions
+--------
+
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+
 Instructions
 -------
 

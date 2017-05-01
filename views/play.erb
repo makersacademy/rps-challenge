@@ -6,12 +6,15 @@
     <td><div><img src="https://www.dropbox.com/pri/get/Web/scissors.jpg?_subject_uid=63541668&w=AAC7T6gA-rBAH7oMJ0Dngg0N3vGbj4LqkNcZGy-QJ7xO2Q"></div></td>
   </tr>
   <tr>
-    <form action="/choice" method="post">
-    <td><input type="radio" name="Rock" value="rock"></td>
-    <td><input type="radio" name="Paper" value="paper"></td>
-    <td><input type="radio" name="Scissors" value="scissors"></td>
-    
+    <td><form action="/rock" method="post">
+      <input type="submit" name="Rock">
+    </form></td>
+    <td><form action="/paper" method="post">
+      <input type="submit" name="Paper">
+    </form></td>
+    <td><form action="/scissors" method="post">
+      <input type="submit" name="Scissors">
+    </form></td>
   </tr>
-    <td><input type="submit"></td>
   </form>
 </table>

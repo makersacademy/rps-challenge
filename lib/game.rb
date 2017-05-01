@@ -36,5 +36,5 @@ class Game
   def opponent(of_player)
     @playing.select{ |player| player != of_player }[0]
   end
-  
+
 end
