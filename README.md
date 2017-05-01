@@ -5,6 +5,7 @@
 ## Rules:
 Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons Spock. Spock smashes scissors. Scissors decapitates lizard. Lizard eats paper. Paper disproves Spock. Spock vaporizes rock. Rock crushes scissors.
 
+## User stories considered
 
 ```
 As a visiter
@@ -41,8 +42,8 @@ $ rackup
 -This means that I had to have views for each weapon choice, and I had to hard-code the argument to the RPSLS class
 
 #### Test coverage 100%
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/test-coverage.png "test-coverage")
 
 Testing covers all cases of User and Computer winning, losing and drawing. Also tests for the correct output and storage of 'name' using Sinatra sessions.
 
-![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/test-coverage.png "test-coverage")
 ![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/tests.png "tests")
