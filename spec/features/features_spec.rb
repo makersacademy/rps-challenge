@@ -23,14 +23,20 @@ end
 
 feature 'Show play page' do
   scenario 'After clicking button on rules page' do
-    paul_sign_in
+    paul_ready
     expect(page).to have_content 'Choose your weapon!'
   end
 end
 
 feature 'Should allow user to select an option' do
   scenario 'Player can select any weapon' do
-    paul_sign_in 
+    paul_ready
     click_button('scissors')
+  end
+end
+
+feature 'Should allow a win' do
+  scenario 'Player selects rock and wins against' do
+    #need to find a randomized way to test this
   end
 end

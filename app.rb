@@ -1,18 +1,35 @@
-require 'sinatra/base'
+require 'sinatra'
+require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class Rps < Sinatra::Base
+  enable :sessions
 
-  get "/" do
+  get '/' do
     erb(:index)
   end
 
-  get "/names" do
+  post '/names' do
     @game = Game.create(Player.new(params[:player_1]), Computer.new)
-    redirect "/rules"
+    redirect '/rules'
   end
 
-  get "/rules" do
+  before do
+    @game = Game.instance
+  end
+
+  get '/rules' do
     erb(:rules)
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
+  post '/result' do
+    @game.play(params[:weapon])
+    erb(:result)
   end
 
 end

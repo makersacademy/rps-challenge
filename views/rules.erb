@@ -1,3 +1,7 @@
-<h1> Rock crushes scissors
-Paper wraps rock
-Scissors cuts paper </h1>
+<h1>OK <%=@game.player_1.name%>, a little reminder about the rules: </h1>
+<body>Rock crushes scissors,
+<br />Paper wraps rock,
+<br />Scissors cuts paper.
+<br />When you are ready to move on: <form action='/play' method='get'>
+  <input type='submit' value='Play!'>
+</form></body>
