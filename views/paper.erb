@@ -1,0 +1,10 @@
+<%= @game.player.name %> chose Paper and Computer chose <%= @comp.choice %>
+<br>
+<%= @result %>
+<br>
+<form action='/play' method='get'>
+  <input type='submit' value='Play Again'>
+</form>
+<form action='/' method='get'>
+  <input type='submit' value='Quit'>
+</form>
