@@ -1,2 +1,11 @@
 <h1> <%=@game.players[0].name%> vs. <%=@game.players[1].name%> </hi>
-  <h2>Round 1! Fight</h2>
+  <h2>Round <%=@game.round%>! Fight</h2>
+  <h3> <%=@game.players[0].name%> make your choice!</h3>
+<form action='/round' method='post'>
+  <select name='RPS'>
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type='submit' value='Submit'>
+</form>

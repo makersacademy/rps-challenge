@@ -1,0 +1,11 @@
+<h1> <%=@game.players[0].name%> vs. <%=@game.players[1].name%> </hi>
+  <h2> <%=@game.outcome%> </h2>
+  <p> <%=@game.players[0].name%> chose <%=@game.choices[0]%> </p>
+
+  <p> <%=@game.players[1].name%> chose <%=@game.choices[1]%> </p>
+
+  <form action='/play'>
+    <div class='button'>
+      <button type='submit' value='Play Round'>Play Round <%=@game.round%></button>
+    </div>
+  </form>
