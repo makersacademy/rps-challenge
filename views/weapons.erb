@@ -1,0 +1,15 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+  <form method="post">
+    <% ["Rock", "Paper", "Scissors"].each do |weapon| %>
+      <input type="radio" name="weapon" value="<%= weapon %>">
+        <%= weapon %>
+      </input>
+    <% end %>
+    <input type="submit" value="Shoot">
+  </form>
+</body>
+</html>
