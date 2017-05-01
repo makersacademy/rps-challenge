@@ -1,17 +1,12 @@
-<%= session[:player_1_name] %>
-<br>
-Select your weapon:
-<br>
-<form action="/play_computer" method="post">
+<form action="/play_opponent" method="post">
+  Player 2: <input type="text" name="name">
+  Select your weapon:
+  <br>
   Rock:
   <input type="radio" name="weapon" id="Rock" value="Rock">
   Paper:
   <input type="radio" name="weapon" id="Paper" value="Paper">
   Scissors
   <input type="radio" name="weapon" id="Scissors" value="Scissors">
-  <br>
-  Play the computer:
   <input type="submit" value="Play">
-  Or add another player:
-  <input type="submit" value="Add player" formaction="/multiplayer">
 </form>

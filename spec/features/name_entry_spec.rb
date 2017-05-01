@@ -9,8 +9,9 @@ feature "Name Entry" do
     dwayne_signs_in
     choose "Rock"
     click_button "Add player"
-    fill_in :player_2_name, with: "Edward Marketeerhands"
-    click_button "Submit"
+    fill_in :name, with: "Edward Marketeerhands"
+    choose "Scissors"
+    click_button "Play"
     expect(page).to have_content "Edward Marketeerhands"
   end
 
