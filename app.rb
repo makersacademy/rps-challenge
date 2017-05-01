@@ -21,7 +21,8 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do 
-    "result page"
+    @player_1 = $player_1
+    erb(:result)
   end
 
   run! if app_file == $0

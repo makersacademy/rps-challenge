@@ -1,7 +1,7 @@
 # require_relative '../../app'
 require'./app'
 
-feature 'Create Player' do
+feature 'Create new Player' do
   it "enters a player's name" do
     visit '/'
     fill_in :player_name, with: 'Sandy'
