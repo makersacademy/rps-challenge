@@ -1,7 +1,7 @@
-#Overview
+# Overview
 This gif showcases how my app works.
 
-  ![]http://i.imgur.com/zdBCsDD.gif
+  ![](http://i.imgur.com/zdBCsDD.gif)
 * The user loads the website's homepage
 * The homepage directs the user to a form
 * The user fills out the form with his/her name
