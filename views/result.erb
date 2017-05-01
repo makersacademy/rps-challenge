@@ -1,0 +1,17 @@
+<body>
+
+  <h1>Hey <%= @game.player_1 %> what a great game of RPS!!</h1>
+  <%= @game.player_1 %> result: <%= @p1_result %><br>
+  Player 2 result: <%= @p2_result %><br>
+  <br>
+  <%= @result %>
+
+  <form action='/choose'>
+    <input type="submit" value='Play Again?'>
+  </form>
+
+  <!-- <form action='result'>
+    <input type="submit" value='RPS!'>
+  </form> -->
+
+</body>
