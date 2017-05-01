@@ -28,14 +28,14 @@ class Game
   end
 
   def draw
-    @result = "DRAW"
+    @result = "it's a DRAW"
   end
 
   def win
-    @result = "WIN"
+    @result = "it's a WIN"
   end
 
   def lose
-    @result = "LOST"
+    @result = "you LOST"
   end
 end
