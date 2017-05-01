@@ -28,4 +28,13 @@ feature 'Opponent randomly selects a shape' do
        click_button 'Rock'
        expect(page).to have_content "The other player chose Scissors!"
      end
+
+     scenario 'Player wins' do
+       allow_any_instance_of(Opponent).to receive(:randomise).and_return(:scissors)
+       visit '/'
+       fill_in 'name', with: 'Ben'
+       click_button 'Submit'
+       click_button 'Rock'
+       expect(page).to have_content "You win!"
+     end
   end

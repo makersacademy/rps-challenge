@@ -16,14 +16,11 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @round = Round.new(session)
-    # @name = session[:name]
-    # @shape = session[:shape]
-    # @opposition_shape = session[:opposition_shape]
     erb :game
   end
 
   post '/game' do
-    session[:shape] = params[:shape]
+    session[:shape] = params[:shape].downcase.to_sym
     session[:opposition_shape] = Opponent.new.randomise
     redirect '/game'
   end

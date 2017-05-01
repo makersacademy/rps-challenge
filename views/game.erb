@@ -11,3 +11,7 @@ Hello, <%= @round.name %>!
 <div id="opponent">
   The other player chose <%= @round.opposition_shape.to_s.capitalize %>!
 </div>
+
+<%if @round.win? %>
+  You win!
+<% end %>
