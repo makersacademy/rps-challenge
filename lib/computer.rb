@@ -1,6 +1,6 @@
 class Computer
 
-  CHOICES = 'Rock', 'Paper', 'Scissors'
+  CHOICES = [:rock, :paper, :scissors]
 
   attr_reader :choice
 

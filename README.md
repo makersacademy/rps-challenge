@@ -1,86 +1,79 @@
 # RPS Challenge
 
-Instructions
--------
+### How to run application
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+```$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+* In your chosen web-browser use: `localhost:9292` (if running Rackup's default port).
 
-Task
-----
+#### The following should be displayed:
+![Screenshot](https://www.dropbox.com/s/8ncdco60cxg3g2j/Screen%20Shot%202017-05-01%20at%2023.37.21.png?dl=0)
+#### Enter your name.
+![Screenshot](https://www.dropbox.com/s/1egh1qsn1pvqh7z/Screen%20Shot%202017-05-01%20at%2023.37.47.png?dl=0)
+#### Choose an option from the buttons.
+![Screenshot](https://www.dropbox.com/s/nfiqilc89ak7lfp/Screen%20Shot%202017-05-01%20at%2023.38.04.png?dl=0)
+#### Result. Play again takes you back to the second screenshot, quit returns you to the index page.
 
-Knowing how to build web applications is getting us almost there as web developers!
+### Rspec report
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+```➜  rps-challenge git:(master) ✗ rspec
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Rock, Paper, Scissors buttons
+  Player chooses Rock
+  Player chooses Paper
+  Player choose Scissors
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+testing infrastructure
+  runs app and tests page content
+  returns to /play when Play Again is clicked
+  returns to /index when Quit is clicked
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+Test name
+  player fills in name to play
+
+Player
+  #name
+    returns the name
+
+Finished in 0.0988 seconds (files took 0.67302 seconds to load)
+8 examples, 0 failures
+
+
+COVERAGE: 100.00% -- 43/43 lines in 6 files
 ```
 
-Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### Issues with program
 
+- Was unsure if best to put a `/result` view rather than a view for each i.e. `/rock`, `/paper`, `/scissors`. Tried `/result` in my diagrams but found it easier to use a view for each outcome. Not very DRY though.
+- Could not implement the last bit of functionality for a winner being declared. I was trying to get it to call the player's choice in the controllers but couldn't achieve the desired result. Plus game logic should go in controllers.
+- Was thinking of using logic for winner/ looser along the lines of:
 
-As usual please start by
+```def choose_rock
+  return "You won this round" if @@computer.choice == :scissors
+  draw_or_loose
+end
 
-* Forking this repo
-* TEST driving development of your app
+def choose_scissors
+  return "You won this round" if @@computer.choice == :paper
+  draw_or_loose
+end
 
+def choose_paper
+  return "You won this round" if @@computer.choice == :rock
+  draw_or_loose
+end
 
-## Bonus level 1: Multiplayer
+private
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+def draw_or_loose
+  return "It's a draw" if player.choice == computer.choice
+  return "Computer won this round"
+end
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- Used class variables instead of global variables as they are very slightly better (I hope) though still not great to use.
+- Struggled writing non-vacuous unit tests. Coverage still at 100% but doesn't feel like it is as well tested as it ought to be.

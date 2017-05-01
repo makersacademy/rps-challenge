@@ -23,18 +23,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
+    @player_choice = :rock
     @game = @@game
     @comp = @@computer
     erb :rock
   end
 
   get '/paper' do
+    @player_choice = :paper
     @game = @@game
     @comp = @@computer
     erb :paper
   end
 
   get '/scissors' do
+    @player_choice = :scissors
     @game = @@game
     @comp = @@computer
     erb :scissors

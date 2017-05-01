@@ -1,3 +1,5 @@
+require_relative '../app'
+
 class Game
 
   def initialize(player)
