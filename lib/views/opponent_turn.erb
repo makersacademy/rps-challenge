@@ -1,3 +1,10 @@
 <p>You chose <%= @option1 %> </p><br>
 <p>The computer choice is <%= @option2 %></p><br>
-<p>And the winner is: <%= $options.result%></p>
+
+<% if $options.result == :draw %>
+<p> It's a draw!</p>
+<% elsif $options.result == :option1_wins %>
+<p>Congrats! You won!</p>
+<% else %>
+<p>Oh, no! A computer beat you!</p>
+<% end %>

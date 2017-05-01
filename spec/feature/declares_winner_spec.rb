@@ -2,7 +2,8 @@ feature 'declares the winner of the game' do
   scenario 'the user wins' do
     register
     click_button("Submit your choice")
-    expect(page).to have_content 'You won!Congrats'
+    
+    expect(page).to have_content 'Congrats! You won!'
   end
 
   # scenario 'the user loses' do
