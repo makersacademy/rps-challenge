@@ -1,4 +1,4 @@
-feature "weapon selection" do
+feature "Weapon selection" do
   scenario "player 1 can select a weapon" do
     dwayne_signs_in
     choose "Rock"
