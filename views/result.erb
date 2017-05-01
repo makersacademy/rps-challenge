@@ -2,15 +2,15 @@
 <html>
   <head>
     <title>RPS Game</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="public/style.css">
   </head>
 
-
-
   <body>
+
     <div class="left" >
       <h3>Round <%= @game.round_number %></h3>
     </div>
+
     <div class="centered">
       <p>
       <h2>You chose: <%=@game.user_choice.capitalize%></h2>
@@ -41,5 +41,4 @@
       </form>
     </div>
   </body>
-
 </html>
