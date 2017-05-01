@@ -1,4 +1,4 @@
-require './lib/Outcome.rb'
+require './lib/outcome.rb'
 
 RSpec.describe Outcome do
   describe '#evaluate' do
