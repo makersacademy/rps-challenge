@@ -21,5 +21,14 @@ class RpsWeb < Sinatra::Base
 		erb :play
 	end
 
+	post '/choice' do
+		@game.play(params[:weapon])
+		redirect '/result'
+	end
+
+	get '/result' do
+		erb :result
+	end
+
 end
 

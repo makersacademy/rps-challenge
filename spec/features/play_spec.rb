@@ -2,19 +2,19 @@
 feature 'play Rock Paper Scissors' do
 	scenario 'choose a rock and play' do
 		register
-		choose "rock"
+		choose "weapon", :option => "rock"
 		click_button "Submit"
 		expect(page).to have_content("You won!") || ("You lost.")
 	end
-	xscenario 'choose paper and play' do
+	scenario 'choose paper and play' do
 		register
-		choose "paper"
+		choose "weapon", :option => "paper"
 		click_button "Submit"
 		expect(page).to have_content("You won!") || ("You lost.")
 	end
-	xscenario 'choose scissor and play' do
+	scenario 'choose scissor and play' do
 		register
-		choose "scissor"
+		choose "weapon", :option => "scissors"
 		click_button "Submit"
 		expect(page).to have_content("You won!") || ("You lost.")
 	end
