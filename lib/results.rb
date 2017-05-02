@@ -15,11 +15,12 @@ class Results
   end
 
   def generate(turn)
-    if turn[:player] == turn[:computer]
+    if turn[:player] == turn[:computer] # Draw
       @results_store << { winner: 'Draw', turn: turn }
-    elsif WIN_COMBOS.include?(turn)
+    elsif WIN_COMBOS.include?(turn) # Player win
       @results_store << { winner: @game.player.name, turn: turn }
-    else @results_store << { winner: 'Computer', turn: turn }
+    else # Computer win
+      @results_store << { winner: 'Computer', turn: turn }
     end
   end
 
