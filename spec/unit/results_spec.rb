@@ -1,6 +1,6 @@
 describe Results do
 
-  let (:turn) { double(:turn) }
+  let(:turn) { double(:turn) }
 =begin
   it '#takes and hash and when play_types match, returns draw' do
     allow(:generate).to receive(:turn).and_return({:player => 'ROCK', :computer => 'ROCK'})

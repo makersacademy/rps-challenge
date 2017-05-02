@@ -1,9 +1,10 @@
 # gives a random return of RPS's to compete with player
 class AI
 
+  WEAPONS = [:ROCK, :PAPER, :SCISSORS]
+
   def result
-    play_options = ['ROCK', 'PAPER', 'SCISSORS']
-    play_options.sample
+    WEAPONS.sample
   end
 
 end
