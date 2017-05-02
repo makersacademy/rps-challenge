@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h2 class="budmo"><%= @player.name.upcase %></h2>
+  <h2>Score: <%= @player.score %></h2>
+  <div class="weapons_button"><h1>Choose your weapon:</h1>
+    <form action='/confirmation' method='post'>
+      <input type='submit' name='choice' value='Rock'>
+      <input type='submit' name='choice' value='Paper'>
+      <input type='submit' name='choice' value='Scissors'>
+    </form>
+  </div>
+
+  <h1 class='bot'>The Bored Bot</h1>
+  <h2>Score: <%= @player.score %></h2>
+
+
+  <style type="text/css">
+  @font-face {
+    font-family: 'Budmo Jiggler';
+    src: url('budmojiggler.eot') format('eot'), url('budmojiggler.ttf') format('truetype'), url('budmojiggler.svg') format('svg');
+    font-style: normal;
+  }
+
+  h2.budmo {
+      font-family: 'Budmo Jiggler';
+      font-size: 100px;
+    }
+
+  div.weapon_button {
+    text-align: center;
+  }
+
+  h1.bot {
+    font-family: 'Courier New';
+  }
+  </style>
+</body>
+</html>
