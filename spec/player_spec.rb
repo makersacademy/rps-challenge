@@ -2,8 +2,8 @@ require 'player'
 
 describe Player do
 
-  subject(:dwayne) {Player.new("Dwayne 'The Marketeer' Johnson")}
-  let(:weapon) {double(:weapon)}
+  subject(:dwayne) { Player.new("Dwayne 'The Marketeer' Johnson") }
+  let(:weapon) { double(:weapon) }
 
   it "has a name" do
     expect(subject.name).to eq("Dwayne 'The Marketeer' Johnson")
