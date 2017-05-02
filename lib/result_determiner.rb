@@ -14,23 +14,21 @@ class ResultDeterminer
     :spock => :lizard, :rock => :rock }
   }
 
-  def self.calculate(player_1, player_2)
+  class << self
+
+  def winning_name(player_1, player_2)
     return :draw if player_1.choice == player_2.choice
-    winning_name(player_1, player_2)
-  end
-
-  private
-
-  def self.winning_hand(player_1, player_2)
-    RULES[player_1.choice][player_2.choice]
-  end
-
-  def self.winning_name(player_1, player_2)
     hash = {
       player_1.choice => player_1.name,
       player_2.choice => player_2.name,
     }
     hash[winning_hand(player_1, player_2)]
+  end
+
+  def winning_hand(player_1, player_2)
+    RULES[player_1.choice][player_2.choice]
+  end
+
   end
 
 end

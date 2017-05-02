@@ -17,7 +17,7 @@ class Game
   def who_won
     check_names(player_1, player_2)
     check_weapons(player_1, player_2)
-    ResultDeterminer.calculate(player_1, player_2)
+    ResultDeterminer.winning_name(player_1, player_2)
   end
 
   def self.create(player_1, player_2)
@@ -29,7 +29,7 @@ class Game
   end
 
   private
-  
+
   def check_names(player_1, player_2)
     raise 'Each player must have a name' if player_1.name.empty? || player_2.name.empty?
   end
