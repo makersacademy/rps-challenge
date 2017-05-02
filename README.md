@@ -9,6 +9,7 @@
 * Some methods are a bit long, 8-9 lines
 * I think all classes/tests are isolated
 * Don't know HTML style conventions, rubocop doesn't tell me about offences
+* Uploaded to Heroku: https://serene-dusk-87883.herokuapp.com/
 
 #### Loading
 
