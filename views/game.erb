@@ -1,0 +1,15 @@
+<%="#{@player_1.name} used #{@player_1.weapon}"%>
+<br>
+<%="#{@player_2.name} used #{@player_2.weapon}"%>
+<br>
+<% if @winner == @player_1.weapon%>
+  <%= "Congratulations #{@player_1.name}! You win!" %>
+  <br>
+  <%= "#{@player_2.name} you are the loser" %>
+<% elsif @winner == @player_2.weapon%>
+  <%= "Congratulations #{@player_2.name}! You win!" %>
+  <br>
+  <%= "#{@player_1.name} you are the loser" %>
+<% else %>
+  <%= "Draw huh, oh well. Back to work!" %>
+<% end %>
