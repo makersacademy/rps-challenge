@@ -30,7 +30,6 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @choice = @game.choice
     @robo_choice = @game.robo_choice
-    @result = @game.result
-    erb(:result)
+    erb @game.result
   end
 end

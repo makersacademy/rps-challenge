@@ -24,13 +24,13 @@ class Game
 
   def result
     if @choice == @robo_choice
-      'It is a draw'
+      :draw
     elsif robo_win?
-      'Robot wins'
+      :lose
     elsif you_win?
-      'You win'
+      :win
     else
-      'the logic has not worked'
+      raise 'Oops, something went wrong'
     end
   end
 

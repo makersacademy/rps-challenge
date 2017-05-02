@@ -13,14 +13,21 @@ describe Game do
       game_new = Game.new('Bob')
       game_new.define_choice('scissors')
       game_new.robo_choice('paper')
-      expect(game_new.result).to eq 'You win'
+      expect(game_new.result).to eq :win
     end
 
     it 'declares a draw if it is scissors vs scissors' do
       game_new = Game.new('Bob')
       game_new.define_choice('scissors')
       game_new.robo_choice('scissors')
-      expect(game_new.result).to eq 'It is a draw'
+      expect(game_new.result).to eq :draw
+    end
+
+    it 'declares a lost result if it is scissors vs rock' do
+      game_new = Game.new('Bob')
+      game_new.define_choice('scissors')
+      game_new.robo_choice('rock')
+      expect(game_new.result).to eq :lose
     end
   end
 end
