@@ -1,0 +1,21 @@
+<%= "Player's name is" %>
+<div id="allofthelights">
+  <canvas width="80" height="40"></canvas>
+  <h1 contenteditable="true">
+    <%= $user.name %></h1>
+</div>
+
+Now make your choice:
+
+<form action='/opponent_turn' method="get">
+  <input type="radio" , name='option' , value='Rock'>
+  Rock
+  <br>
+  <input type="radio" , name='option' , value='Paper'>
+  Paper
+  <br>
+  <input type="radio" , name='option' , value='Scissors'>
+  Scissors
+  <br>
+  <input type="submit" value="Submit your choice">
+</form>

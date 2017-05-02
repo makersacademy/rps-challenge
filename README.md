@@ -1,3 +1,35 @@
+Download and run:
+```
+$ git clone git@github.com:anaalta/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+The domain model contains 3 CRC cards and a controller:
+**User class** - has name attribute and can choose an option(rps)
+**Computer class** - randomly choses an option from Rock, Paper, Scissors (a constant declared within the class).
+**Options class** - it contains the rules of the game as a hash; it has an attribute, result and a method - winner - with two arguments - option 1 and option 2. The method compares the options and returns the result (draw, option1 wins, option2 wins).
+**The controller** - takes you to an index page that has a form and asks the user to insert their username and click the register button, as in the photo below:
+
+![Image of takes_username](https://drive.google.com/open?id=0B9NojpN8a8wmWTI2OEhyRDB5d3M)
+
+After registering their name, the user's name is printed and three choices are offered in the form of radio buttons. The user selects one, but then it has to click a 'Submit your choice' button.
+![Image of takes_username](https://drive.google.com/open?id=0B9NojpN8a8wmQXJSaHZRVGJhd0k)
+
+The user is then redirected to a page which prints out user's choice, the computer's random choice and the result of the game.
+
+![Image of a win ](https://drive.google.com/open?id=0B9NojpN8a8wmZkZFNkVRci01djg)
+
+![Image of a draw ](https://drive.google.com/open?id=0B9NojpN8a8wmV3lqc1pubmhsb2s)
+
+![Image of user loses ](https://drive.google.com/open?id=0B9NojpN8a8wmcUdzMElTODJ5WGc)
+
+Bellow, see the challenge instructions and user stories:
+
+_________________________________________________________________
+=======
+
+
 # RPS Challenge
 
 Instructions
@@ -30,10 +62,10 @@ I would like to be able to play rock/paper/scissors
 
 Hints on functionality
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
+- *the marketeer should be able to enter their name before the game"*
+- *the marketeer will be presented the choices (rock, paper and scissors)*
+- *the marketeer can choose one option*
+- *the game will choose a random option*
 - a winner will be declared
 
 
