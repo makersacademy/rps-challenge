@@ -13,6 +13,7 @@ class Results
 
   def winner(user_name, user_choice)
     chosen_bot_weapon = bot_weapon
+    return "Nobody" if chosen_bot_weapon == user_choice
     return user_name if chosen_bot_weapon == "Rock" && user_choice == "Paper"
     return user_name if chosen_bot_weapon == "Paper" && user_choice == "Scissors"
     return user_name if chosen_bot_weapon == "Scissors" && user_choice == "Rock"
