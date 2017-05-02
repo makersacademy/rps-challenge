@@ -1,0 +1,33 @@
+<h3>Your name is:
+<br><%= @player %>
+<br>
+
+<br> You are playing against Ogruk the Bad, the evil
+computer who likes to eat marmite at the full of the moon.
+
+<p>It's your turn to make the first move.  Will you choose rocks, paper, or scissors?</p>
+
+<p>Don't cock it up.</p>
+
+<br>
+
+<form action="/attack_with_rock" method="get">
+  <label for="attack_with_rock">
+    Make your move.
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="Attack with rock">
+</form>
+
+<form action="/attack_with_paper" method="get">
+  <br>
+  <input type="submit" value="Attack with paper">
+</form>
+
+<form action="/attack_with_scissors" method="get">
+  <br>
+  <input type="submit" value="Attack with scissors">
+</form>
+
+(Unless your name is Edward Scissorhands, in which case attack with your hands.)
