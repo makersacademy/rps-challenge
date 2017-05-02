@@ -1,5 +1,9 @@
+require './lib/computer.rb'
+
 class Game
   attr_reader :player, :choice, :robo_choice
+
+  WEAPON = ['rock', 'paper', 'scissors']
 
   def initialize(player)
     @player = player
@@ -18,7 +22,7 @@ class Game
     @choice = choice
   end
 
-  def robo_choice(robo_choice = ['rock', 'paper', 'scissors'].sample)
+  def robo_choice(robo_choice = Computer.new.robo_choice)
     @robo_choice = robo_choice
   end
 
