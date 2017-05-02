@@ -1,3 +1,13 @@
+# Overview
+This gif showcases how my app works.
+
+  ![](http://i.imgur.com/zdBCsDD.gif)
+* The user loads the website's homepage
+* The homepage directs the user to a form
+* The user fills out the form with his/her name
+* The user is redirected to another page, asking him to choose his weapon of choice
+* Lasty after the user submits their weapon of choice, he/she will be greeted with the result page displaying the choosen weapons and the end result
+
 # RPS Challenge
 
 Instructions

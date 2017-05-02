@@ -1,0 +1,40 @@
+<div>
+  <h1><%= @player_1_name %>
+    dares to challenge the AI!</h1>
+</div>
+<br>
+<form action='/showdown' method="post">
+  <p>
+    Select your weapon of choice
+  </P>
+  <input type="radio" id="Rock" name="weapon" value="Rock">
+  Rock<br>
+  <input type="radio" id="Paper" name="weapon" value="Paper">
+  Paper<br>
+  <input type="radio" id="Scissors" name="weapon" value="Scissors">
+  Scissors<br>
+  <button type="submit">Submit</button>
+</form>
+
+<style>
+
+  form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: center;
+
+  }
+
+  div {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: center;
+  }
+
+</style>
