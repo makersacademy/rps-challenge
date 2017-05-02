@@ -21,12 +21,6 @@ describe 'Player' do
       allow(Computer::WEAPONS).to receive_messages(sample: :scissors)
       expect{paula.attack_with_rock(computer)}.to change{paula.score}.by 1
     end
-
-    # it 'expects the player to lose when computer plays paper' do
-    #   allow(Computer::WEAPONS).to receive_messages(sample: :paper)
-    #   allow(computer_score).to receive_messages(score: 0)
-    #   expect{paula.attack_with_rock(computer)}.to change{computer_score}.by 1
-    # end
   end
 
   describe '#attack_with_paper' do
