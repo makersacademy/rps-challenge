@@ -21,5 +21,4 @@ describe Player do
       expect(player.score). to eq 1
     end
   end
-
 end

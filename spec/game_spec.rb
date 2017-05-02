@@ -16,11 +16,4 @@ describe Game do
       expect(game.auto_play).to eq 'scissors'
     end
   end
-
-  # describe '#win' do
-  #   'it increases player score by 1' do
-  #     allow(player).to_receive(:)
-  #     expect(game.win(player)).to change { player.score }.by(1)
-  #   end
-  # end
 end
