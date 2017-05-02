@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './lib/singleplayer'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -12,24 +12,26 @@ class RPS < Sinatra::Base
   end
 
   post '/single_player/name' do
-    @game = SinglePlayer.create_game(params[:player])
+    @player1 = Player.new(params[:player])
+    @player2 = Computer.new
+    @game = Game.create_game(@player1, @player2)
     redirect '/single_player/game'
   end
 
   get '/single_player/game' do
-    @game = SinglePlayer.instance
+    @game = Game.instance
     erb :single_player_game
   end
 
   post '/single_player/game' do
-    @game = SinglePlayer.instance
+    @game = Game.instance
     erb :single_player_game
   end
 
   post '/single_player/game/result' do
-    @game = SinglePlayer.instance
+    @game = Game.instance
     @player_weapon = params[:choice].downcase.to_sym
-    @computer_weapon = @game.computer.choice
+    @computer_weapon = @game.player2.choice
     @winner = @game.decide_winner(@player_weapon, @computer_weapon)
     @winner.record_score if @winner != :tied
     erb :result
