@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative 'lib/player'
+require_relative 'lib/game'
+require_relative 'lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -13,14 +16,60 @@ class RockPaperScissors < Sinatra::Base
     erb :multi_player
   end
 
-  post '/playernames' do
-    $player_1 = params[:player_1]
-    redirect '/play'
+  post '/name' do
+    player = Player.new(params[:name])
+    computer = Computer.new
+    @game = Game.create_game(player, computer)
+    redirect '/single_play'
   end
 
-  get '/play' do
-    @player_1 = $player_1
-    erb :play
+  post '/names' do
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    @game = Game.create_game(player_1, player_2)
+    redirect '/multi_play1'
+  end
+
+  before do
+    @game = Game.instance
+  end
+
+  get '/single_play' do
+    erb :single_play
+  end
+
+  get '/multi_play1' do
+    erb :multi_play1
+  end
+
+  post '/option' do
+    @game.p1_select_option(params[:option])
+    redirect '/single_player_result'
+  end
+
+  post '/p1_option' do
+    @game.p1_select_option(params[:option])
+    redirect '/multi_play2'
+  end
+
+  get '/multi_play2' do
+    erb :multi_play2
+  end
+
+  post '/p2_option' do
+    @game.p2_select_option(params[:option])
+    redirect '/multi_player_result'
+  end
+
+  get '/single_player_result' do
+    @game.get_computer_choice
+    @game.get_result(@game.p1_choice, @game.p2_choice)
+    erb :single_player_result
+  end
+
+  get '/multi_player_result' do
+    @game.get_result(@game.p1_choice, @game.p2_choice)
+    erb :multi_player_result
   end
 
   run! if app_file == $0

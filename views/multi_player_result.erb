@@ -1,0 +1,23 @@
+<h2><%= @game.player_1.name %> picked <%= @game.p1_choice.capitalize %></h2>
+
+<h2><%= @game.player_2.name %> picked <%= @game.p2_choice.capitalize %></h2>
+
+<% if @game.result == :draw %>
+<div>It's a draw!</div>
+<% elsif @game.result == :win %>
+<div> <%= @game.player_1.name %> won!</div>
+<% else %>
+<div> <%= @game.player_2.name %> won!</div>
+<% end %>
+
+<h2> Score </h2>
+<p> <%= @game.player_1.name %>: <%= @game.player_1.score %></p>
+<p> <%= @game.player_2.name %>: <%= @game.player_2.score %></p>
+
+<form action = "/multi_play1", method = "get">
+  <input type = 'submit', value = "Try again", id="submit">
+</form>
+
+<form action = "/", method = "get">
+  <input type = 'submit', value = "Change players", id="submit">
+</form>
