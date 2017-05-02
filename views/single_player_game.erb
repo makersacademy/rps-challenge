@@ -1,0 +1,54 @@
+<style>
+body {background-color: lightskyblue;}
+h1 {
+    color: black;
+    font-family: "papyrus";
+    font-size: 50;
+    position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+p {
+    color: black;
+    font-family: "papyrus";
+    font-size: 50;
+    position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+.rock {
+    position:fixed;
+    left:200px;
+    top:275px;
+  }
+.paper {
+    position:fixed;
+    left: 50%;
+    top:275px;
+    transform: translate(-50%);
+  }
+.scissors {
+    position:fixed;
+    right: 200px;
+    top:275px;
+    }
+</style>
+
+<h1> <%= @game.player1.name %>(<%= @game.player1.score %>) --VS-- <%= @game.player2.name %>(<%= @game.player2.score %>)</h1>
+
+<p>CHOOSE YOUR WEAPON</p>
+
+<form action="/single_player/game/result" method="post">
+  <button type="submit" name= "choice" value = "Rock" class="rock">
+  <img src="http://i68.tinypic.com/1zpmq8w.png"/>
+</button>
+<button type="submit" name= "choice" value = "Paper" class="paper">
+  <img src="http://i66.tinypic.com/11v7d44.png"/>
+</button>
+<button type="submit" name= "choice" value = "Scissors" class="scissors">
+  <img src="http://i65.tinypic.com/dmcjdf.png"/>
+</button>
+</form>
