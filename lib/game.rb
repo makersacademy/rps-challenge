@@ -7,4 +7,4 @@ def initialize
   @computer = computer
 end
 
-def
+def 
