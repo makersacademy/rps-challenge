@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html>
+  <p>You chose <%= @choices.player1_choice %></p>
+  <p>The computer chose <%= @choices.incumbent_choice %> at random</p>
+  <br>
+
+  <p><%= @result.game_result %><p>
+
+    <form action="/game" method="get">
+      <input name = "Scissors" type="submit" value="Play Again">
+    </form>
+
+</html>
