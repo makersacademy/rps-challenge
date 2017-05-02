@@ -1,6 +1,6 @@
 require 'options'
 
-describe  Options do
+describe Options do
   let(:option) { described_class.new }
 
   context 'draws'
@@ -10,7 +10,7 @@ describe  Options do
 
   context 'not draws'
   it 'Rock beats Scissors' do
-    expect(option.winner('Rock','Scissors')).to eq option.result
+    expect(option.winner('Rock', 'Scissors')).to eq option.result
   end
 
   it 'Paper beats Rock' do

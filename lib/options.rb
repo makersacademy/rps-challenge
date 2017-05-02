@@ -1,15 +1,15 @@
 
 class Options
 
-RULES = { "Rock" => "Scissors", "Paper" => "Rock" , "Scissors" => "Paper" }
+  RULES = { "Rock" => "Scissors", "Paper" => "Rock", "Scissors" => "Paper" }
 
-attr_reader :result
+  attr_reader :result
 
   def initialize
     @result
   end
 
-  def winner(option1,option2)
+  def winner(option1, option2)
     if option1 == option2
       @result = :draw
     elsif RULES[option1] == option2
@@ -18,6 +18,5 @@ attr_reader :result
       @result = :option2_wins
     end
   end
-
 
 end

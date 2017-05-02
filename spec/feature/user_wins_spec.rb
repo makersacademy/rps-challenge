@@ -1,5 +1,3 @@
-
-
 feature 'tells user she/he won' do
   let(:option) { double :option }
 
