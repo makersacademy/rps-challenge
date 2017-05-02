@@ -8,6 +8,7 @@ class SinglePlayer
   def initialize(name)
     @player = Player.new(name)
     @computer = Computer.new
+    @win = { rock: :scissors, scissors: :paper, paper: :rock }
   end
 
   def self.create_game(name)
@@ -19,14 +20,8 @@ class SinglePlayer
   end
 
   def decide_winner(player_choice, computer_choice)
-    weapons = [player_choice, computer_choice]
-    if weapons[0] == weapons[1]
-      :tied
-    elsif weapons == [:rock, :scissors] || weapons == [:scissors, :paper] || weapons == [:paper, :rock]
-      @player
-    else
-      @computer
-    end
+    return :tied if player_choice == computer_choice
+    @win[player_choice] == computer_choice ? @player : @computer
   end
 
 end
