@@ -1,0 +1,42 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div style="text-align:center;">
+      <br><br><br>
+      <h1> Welcome <%= @game.player.name %> to your game of Rock-Paper-Scissors! </h1>
+    </div>
+    <div style="text-align:center;">
+      <h2>Today you are playing the dastardly computer. How do you want to outwit this simple machine:</h2>
+      <div>
+        <form action='/result' method="post">
+          <br><br>
+          <button type="submit" id="play_type" value='ROCK' name='type'>ROCK</button>
+          <br><br>
+          <button type="submit" id="play_type" value='PAPER' name='type'>PAPER</button>
+          <br><br>
+          <button type="submit" id="play_type" value='SCISSORS' name='type'>SCISSORS</button>
+        </form>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <h4> This is round <%= @game.round %>. There has been <%= @game.round_with_result %> rounds with a result in a game to the best of three </h4>
+    </div>
+    <% if @game.round > 1 %>
+    <div style="text-align:center;">
+      <br>
+      <h2> LAST ROUND : </h2>
+      <br><br>
+      <h3> The dastardly computer has played <%= @game.ai_play %></h3>
+    </div>
+    <div style="text-align:center;">
+      <br><br><br>
+      <h3> <%= @game.player.name %> you have played <%= @game.player_play %></h3>
+    </div>
+    <div style="text-align:center;">
+      <br>
+      <h2> The winner is therefore <%= @game.results.results_store[(@game.round - 2)][:winner] %></h2>
+    </div>
+    <% end %>
+  </body>
+</html>
