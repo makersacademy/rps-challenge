@@ -29,8 +29,8 @@ class ResultDeterminer
     hash = {
       player_1.choice => player_1.name,
       player_2.choice => player_2.name,
-     }
-     hash[winning_hand(player_1, player_2)]
+    }
+    hash[winning_hand(player_1, player_2)]
   end
 
 end
