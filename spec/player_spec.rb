@@ -8,8 +8,8 @@ describe Player do
     end
   end
   describe '#hand' do
-    it 'initializes the hand value as 0' do
-      expect(player.hand).to eq 0
+    it 'initializes the hand value as none' do
+      expect(player.hand).to eq :none
     end
   end
 end

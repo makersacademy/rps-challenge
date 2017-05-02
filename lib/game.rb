@@ -20,17 +20,17 @@ class Game
   end
 
   def rock
-    @turn.hand = 1
+    @turn.hand = :rock
     turn_switcher
   end
 
   def paper
-    @turn.hand = 2
+    @turn.hand = :paper
     turn_switcher
   end
 
   def scissors
-    @turn.hand = 3
+    @turn.hand = :scissors
     turn_switcher
   end
 
@@ -57,11 +57,11 @@ private
   end
 
   def a_wins?
-    @a.hand == 1 && @b.hand == 3 || @a.hand == 2 && @b.hand == 1 || @a.hand == 3 && @b.hand == 2
+    @a.hand == :rock && @b.hand == :scissors || @a.hand == :paper && @b.hand == :rock || @a.hand == :scissors && @b.hand == :paper
   end
 
   def b_wins?
-    @a.hand == 2 && @b.hand == 3 || @a.hand == 3 && @b.hand == 1 || @a.hand == 1 && @b.hand == 2
+    @a.hand == :paper && @b.hand == :scissors || @a.hand == :scissors && @b.hand == :rock || @a.hand == :rock && @b.hand == :paper
   end
 
 end

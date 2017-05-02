@@ -62,6 +62,8 @@ class RPS < Sinatra::Base
     erb :result
   end
 
+  private
+  
   def draw_and_evaluate
     @game.evaluate
     redirect '/result'

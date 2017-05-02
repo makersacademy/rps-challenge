@@ -6,30 +6,30 @@ describe Game do
   let(:game) { described_class.new(player1, player2) }
   describe '#rock' do
     it 'chooses rock for player 1' do
-      srand(1)
+      # srand(1)
       game.rock
-      expect(player1.hand).to eq 1
+      expect(player1.hand).to eq :rock
     end
   end
   describe '#paper' do
     it 'chooses paper for player 1' do
-      srand(1)
+      # srand(1)
       game.paper
-      expect(player1.hand).to eq 2
+      expect(player1.hand).to eq :paper
     end
   end
   describe 'scissors' do
     it 'chooses scissors for player 1' do
-      srand(1)
+      # srand(1)
       game.scissors
-      expect(player1.hand).to eq 3
+      expect(player1.hand).to eq :scissors
     end
   end
   describe '#random_move' do
     it 'chooses a random value for computer and computer wins' do
       srand(1)
       game.bot_move
-      expect(player2.hand).to eq 2
+      expect(player2.hand).to eq :paper
     end
   end
 end

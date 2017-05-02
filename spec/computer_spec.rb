@@ -7,16 +7,12 @@ describe Computer do
       expect(bot.name).to eq :Computer
     end
   end
-  describe '#hand' do
-    it 'initializes the hand value as 0' do
-      expect(bot.hand).to eq 0
-    end
-  end
+
   describe '#random_hand' do
-    it 'changes the value of hand to a random value between 1 and 3' do
+    it 'changes the value of hand to a random value between rock/paper/scissors' do
       srand(1)
       bot.random_hand
-      expect(bot.hand).to eq 2
+      expect(bot.hand).to eq :paper
     end
   end
 end

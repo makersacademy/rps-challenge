@@ -6,7 +6,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @hand = 0
+    @hand = :none
   end
 
 end

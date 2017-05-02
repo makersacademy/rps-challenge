@@ -35,5 +35,4 @@ describe RPS, :type => :feature do
       expect(page).to have_content 'Xabier won!!'
     end
   end
-  
 end

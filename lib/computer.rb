@@ -2,10 +2,10 @@ class Computer
   attr_reader :name, :hand
   def initialize(name)
     @name = name
-    @hand = 0
+    @hand_array = [:rock, :paper, :scissors]
   end
 
   def random_hand
-    @hand = rand(1..3)
+    @hand = @hand_array.sample
   end
 end
