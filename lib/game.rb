@@ -1,29 +1,14 @@
 require_relative 'computer'
+require_relative 'country'
 
-# Understand play mechanics
+# Understands play mechanics
 class Game
-  attr_reader :player_1, :player_2, :choice, :winner
+  attr_reader :player_1, :player_2, :choice
 
   def initialize(player1, player2 = Computer.new)
     @player_1 = player1
     @player_2 = player2
     @compare = Proc.new { |x, y| [x, y].include?(@player_2.choice) }
-  end
-
-  def self.default
-    @actors = [:Trump, :Clinton]
-  end
-
-  def self.french
-    @actors = [:Macron, :LePen]
-  end
-
-  def self.english
-    @actors = [:Corbyn, :May]
-  end
-
-  def self.country
-    @actors
   end
 
   def self.start(player)
@@ -44,8 +29,9 @@ class Game
     @player_2 = player
   end
 
-  def pick_winner
-    declare_winner.include?(@player_1.name) ? @winner = Game.country[0] : @winner = Game.country[1]
+  def winner_name
+    declare_winner.include?(@player_1.name) ?
+    Country.current[0] : Country.current[1]
   end
 
   private

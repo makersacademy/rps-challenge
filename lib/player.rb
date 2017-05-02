@@ -1,7 +1,7 @@
 
 # Understands input choices
 class Player
-  attr_reader :name, :choice, :old_name
+  attr_reader :name, :choice
   attr_writer :name
 
   def initialize(name, choice)
@@ -13,5 +13,4 @@ class Player
   def message
     "#{@name} chose #{@choice}"
   end
-
 end

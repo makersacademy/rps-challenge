@@ -1,7 +1,7 @@
 
 # Understands randomising choices
 class Computer
-  attr_reader :choice, :old_name, :name
+  attr_reader :choice, :name
 
   CHOICES = [:Rock, :Paper, :Scissors, :Lizard, :Spock]
 

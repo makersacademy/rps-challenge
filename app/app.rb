@@ -1,31 +1,31 @@
 require 'sinatra'
 require './lib/game'
 require './lib/player'
+require './lib/country'
 
 class RockPaperScissors < Sinatra::Base
   before do
     @game = Game.current
-    @actors = Game.country
+    @actors = Country.current
   end
 
   get '/' do
-    @actors = Game.default
+    @actors = Country.default
     erb(:index)
   end
 
   get '/french' do
-    @actors = Game.french
+    @actors = Country.french
     erb(:index)
   end
 
   get '/english' do
-    @actors = Game.english
+    @actors = Country.english
     erb(:index)
   end
 
   post '/play' do
     @game.add_player_two(Player.new(params[:player], params[:choice]))
-    @game.pick_winner
     erb(:play)
   end
 
@@ -33,7 +33,6 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.start(Player.new(params[:player], params[:choice]))
     redirect '/player_two' if params[:no_of_players] == 'two_player'
     @game.player_2.generate_response
-    @game.pick_winner
     erb(:play)
   end
 
