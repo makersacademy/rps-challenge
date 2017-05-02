@@ -2,14 +2,14 @@
 
 <%= "#{@game.current_turn.name} vs #{@game.next_turn.name}"%>
 <p>
-<% if @game.computer_play(@game.next_turn) == 'rock' %>
+<% if @game.computer_play == 'rock' %>
   <% @game.win(@game.next_turn) %>
   <%= "Uh oh, rock beats scissors! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
 
-<% elsif @game.computer_play(@game.next_turn) == 'scissors' %>
+<% elsif @game.computer_play == 'scissors' %>
   <%= "Hmm, you both got scissors...it's a tie, no winners!" %>
 
-<% else @game.computer_play(@game.next_turn) == 'paper' %>
+<% else @game.computer_play == 'paper' %>
   <% @game.win(@game.current_turn) %>
   <%= "Woo, scissors beats paper! #{@game.current_turn.name}: #{@game.current_turn.score.to_s}, #{@game.next_turn.name}: #{@game.next_turn.score.to_s}" %>
 <% end %>

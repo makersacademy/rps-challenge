@@ -12,9 +12,4 @@ class Computer
   def win_round
     @score += 1
   end
-
-  def auto_play
-    @computer_moves.sample
-  end
-
 end

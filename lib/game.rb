@@ -23,8 +23,8 @@ class Game
     player.win_round
   end
 
-  def computer_play(computer)
-    computer.auto_play
+  def computer_play
+    @next_turn.computer_moves.sample
   end
 
 end

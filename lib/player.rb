@@ -12,7 +12,7 @@ class Player
     @score += 1
   end
 
-  def play(move)
-    @move = move
-  end
+  # def play(move)
+  #   @move = move
+  # end
 end
