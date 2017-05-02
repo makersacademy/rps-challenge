@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <%= "<style type='text/css'>
+    body {
+    background-image:url('../images/gifs/#{@actors[1]}.gif') !important;
+    }
+    </style>" %>
+  </head>
+  <body>
+    <%= "<audio src='audio/vocals/#{@game.winner_name}_wins.wav' autoplay='autoplay'></audio>" %>
+    <div class='page-container'>
+      <h1 class='heading'>ROCK, PAPER, POLITICS!</h1>
+      <div class='banner-container'>
+        <div class='profile'>
+          <div class='image-container'>
+            <%= "<img src='images/#{@actors[0]}/#{@game.player_1.choice}.jpg' height=300>" %>
+          </div>
+          <h1 class='char-title'><%= @actors[0] %></h1>
+          <h2 class='char-adviser'><span class='republican'>Personal advisor: <%= "#{@game.player_1.name}" %></span></h1>
+        </div>
+        <div class='text-holder'>
+          <div class='body-text'>
+            <p><%= "#{@game.player_1.message}." %></p>
+            <p><%= "#{@game.player_2.message}." %></p>
+            <p><%= "#{@game.declare_winner.upcase}" %></p>
+          </div>
+          <form action='/' method="get">
+            <input id='play-again' type='submit' value='Play again!'>
+          </form>
+        </div>
+        <div class='profile'>
+          <div class='image-container'>
+            <%= "<img src='images/#{@actors[1]}/#{@game.player_2.choice}.jpg' height='300'>" %>
+          </div>
+          <h1 class='char-title'><%= @actors[1] %></h1>
+          <h2 class='char-adviser'><span class='democrat'>Personal advisor: <%= "#{@game.player_2.name}" %></span></h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

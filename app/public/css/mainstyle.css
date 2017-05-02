@@ -1,0 +1,370 @@
+body {
+
+
+  color:white;
+  background-size: cover;
+  text-shadow: 2px 2px 2px #000000;
+  font-weight:bold;
+
+}
+
+.image-container {
+
+  width:400px;
+  border: black 2px solid;
+  overflow: hidden;
+  margin-top:35px;
+  border-radius:10%;
+
+}
+
+.top-bar {
+
+  height:390px;
+
+}
+
+
+#profile-pic {
+
+  width:600px;
+  border: red 2px solid;
+  overflow: hidden;
+  margin:35px 0px 0px 5px;
+  border-radius:10%;
+  float:left;
+
+}
+
+#profile-pic-2 {
+
+  width:600px;
+  border: red 2px solid;
+  overflow: hidden;
+  margin-top:35px;
+  border-radius:10%;
+
+}
+
+.politics-text-box {
+
+  width:460px;
+  margin: 0 auto;
+  float:left;
+  padding-left:10px;
+
+}
+
+.selection-area {
+
+  width:300px;
+  font-size:25px;
+  text-align: center;
+  float:left;
+  font-family: fantasy;
+  background-color:rgba(0, 0, 0, 0.2);
+  border-radius:15%;
+
+}
+
+.left {
+
+  float:left;
+
+}
+
+.right {
+
+  float:right;
+
+}
+
+.page-container {
+
+  width:98%;
+  height:700px;
+
+}
+
+.banner-container {
+
+  height:342px;
+  width:1210px;
+  margin:0 auto;
+
+}
+
+.heading {
+
+  margin:0;
+  margin-left:32%;
+  font-size: 40;
+  font-family:fantasy;
+}
+
+.char-title {
+
+  margin:12px 40px;
+  font-size:70;
+  font-family:fantasy;
+
+}
+
+.char-adviser {
+
+  margin:12px 40px;
+  font-size:30;
+  font-family:fantasy;
+
+}
+
+.clear {
+
+  clear:both;
+
+}
+
+.republican {
+
+  color:red;
+
+}
+
+.democrat {
+
+  color:blue;
+
+}
+
+.body-text {
+
+  font-size:35px;
+  font-family:fantasy;
+  text-align: center;
+
+}
+
+.absolute-buttons {
+
+  position:absolute;
+  right:10px;
+  font-family:fantasy;
+
+}
+
+.nation-button {
+
+  color:white;
+  border:black;
+  border-radius:15%;
+  font-size:20px;
+
+}
+
+.france {
+
+  background-color:red;
+
+}
+
+.america {
+
+  background-color:blue;
+
+}
+
+.english {
+
+  background-color:white;
+  color:black;
+
+}
+
+#play-again {
+
+  background-color: rgba(200, 200, 0, 0.5);
+  font-family: monospace;
+  font-size:38;
+  color:yellow;
+  margin-left:50px;
+  width:300px;
+  height:150px;
+  padding-left: 15px;
+  border-radius:10%;
+  border:2px yellow solid;
+  text-shadow: 2px 2px 2px #000000;
+  transition: border 1s;
+  transition: color 0.5s;
+
+}
+
+#play-again:hover {
+
+  border:2px green solid;
+  color:green;
+
+}
+
+.mainpage-header {
+
+  font-size:80;
+  font-family:monospace;
+
+}
+
+.mainpage-header-2 {
+
+  font-size:80;
+  font-family:monospace;
+
+}
+
+.force-left {
+
+  float: left !important;
+
+}
+
+.force-right {
+
+  float: right !important;
+
+}
+
+.mainpage-notice {
+
+  font-size: 40px;
+  font-family:fantasy;
+  color:yellow;
+
+}
+
+.force-down {
+
+  top:450px;
+
+}
+
+.main-form {
+
+  font-size:25px;
+  font-family:monospace;
+
+}
+
+.main-form-2 {
+
+  font-size:25px;
+  font-family:monospace;
+  z-index:1;
+
+}
+
+.player-selection {
+
+  font-size:35px;
+  width:220px;
+  float:left;
+  font-family:fantasy;
+
+}
+
+.name-input {
+
+  font-size:25px;
+  margin:0;
+  margin-left:15px;
+  padding:0;
+  outline:none;
+  background-color:transparent;
+  border:1px solid black;
+  border-radius:10%;
+  padding-left: 20px;
+  width:200px;
+  font-family:monospace;
+}
+
+.name-input:focus {
+
+  background-color:black;
+  color:white;
+
+}
+
+.no-space {
+
+  margin:0;
+  padding:0;
+
+}
+
+.start-button {
+
+  width:170px;
+  height:120px;
+  font-size:40px;
+  font-family:monospace;
+  font-weight:bold;
+  text-shadow: 2px 2px 2px #000000;
+  color:red;
+  background-color:rgba(255, 0, 0, 0.3);
+  border:black 2px solid;
+  border-radius:5%;
+  transition: background-color 1s;
+}
+
+.button-two {
+
+  color:blue;
+  background-color:rgba(0, 0, 255, 0.3);
+  transition: background-color 1s;
+
+}
+
+.button-two:hover {
+
+  background-color:rgba(0, 0, 255, 0.8) !important;
+
+}
+
+.big-form {
+
+  width:520px;
+  height:100px;
+
+}
+
+.start-button:hover {
+  background-color:rgba(255, 0, 0, 0.8);
+}
+
+.button-container {
+
+  width:1400px;
+  margin:0 auto;
+  margin-left:20px;
+  margin-top:20px;
+
+}
+
+.profile {
+
+  height: 520px;
+  width:405px;
+  float:left;
+
+}
+
+.text-holder {
+
+  width:400px;
+  float:left;
+
+}
+
+.player-notice {
+
+  width:1100px;
+  float:right;
+
+}
