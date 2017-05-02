@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   it "selects a random weapon" do
-    expect(["Rock", "Paper", "Scissors"]).to include(subject.random_weapon)
+    expect(["Rock", "Paper", "Scissors","Spock", "Lizard"]).to include(subject.random_weapon)
   end
 
   describe "Checks outcome and returns winning weapon" do
