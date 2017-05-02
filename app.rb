@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Application
 
@@ -10,41 +11,39 @@ class RPS < Sinatra::Application
   end
 
   post '/names' do
-    session[:player_1_name] = params[:name]
+    Player.create_player_1(params[:name])
     redirect to('/weapons')
   end
 
   get '/weapons' do
+    @player_1 = Player.player_1
     erb :weapons
   end
 
   post '/multiplayer' do
-    session[:player_1_weapon] = params[:weapon]
+    Player.player_1.choose(params[:weapon])
     erb :multiplayer_weapons
   end
 
   post '/play_computer' do
-    session[:player_1_weapon] = params[:weapon]
-    redirect to('/1p_game')
+    Player.player_1.choose(params[:weapon])
+    Player.create_player_2("RandomMAMAjamma")
+    Player.player_2.choose(Game.new.random_weapon)
+    redirect to('/game')
   end
 
   post '/play_opponent' do
-    session[:player_2_name] = params[:name]
-    session[:player_2_weapon] = params[:weapon]
-    redirect to('/2p_game')
+    Player.create_player_2(params[:name])
+    Player.player_2.choose(params[:weapon])
+    redirect to('/game')
   end
 
-  get '/1p_game' do
+  get '/game' do
     @game = Game.new
-    @opponent_weapon = @game.random_weapon
-    @winner = @game.check(session[:player_1_weapon], @opponent_weapon)
+    @player_1 = Player.player_1
+    @player_2 = Player.player_2
+    @winner = @game.check(@player_1.weapon, @player_2.weapon)
     erb :game
-  end
-
-  get '/2p_game' do
-    @game = Game.new
-    @winner = @game.check(session[:player_1_weapon], session[:player_2_weapon])
-    erb :multiplayer_game
   end
 
   run! if app_file == $0

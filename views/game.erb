@@ -1,11 +1,15 @@
-<%="#{session[:player_1_name]} used #{session[:player_1_weapon]}"%>
+<%="#{@player_1.name} used #{@player_1.weapon}"%>
 <br>
-<%="RandomMAMAjamma used #{@opponent_weapon}"%>
+<%="#{@player_2.name} used #{@player_2.weapon}"%>
 <br>
-<% if @winner == session[:player_1_weapon]%>
-  <%= "Congratulations #{session[:player_1_name]}! You win!" %>
-<% elsif @winner == @opponent_weapon%>
-  <%= "You lose, back to work!" %>
+<% if @winner == @player_1.weapon%>
+  <%= "Congratulations #{@player_1.name}! You win!" %>
+  <br>
+  <%= "#{@player_2.name} you are the loser" %>
+<% elsif @winner == @player_2.weapon%>
+  <%= "Congratulations #{@player_2.name}! You win!" %>
+  <br>
+  <%= "#{@player_1.name} you are the loser" %>
 <% else %>
   <%= "Draw huh, oh well. Back to work!" %>
 <% end %>

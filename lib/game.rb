@@ -1,4 +1,5 @@
 class Game
+  
   WEAPONS = ["Rock", "Paper", "Scissors"]
 
   def random_weapon
