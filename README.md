@@ -1,3 +1,27 @@
+Download and run:
+```
+$ git clone git@github.com:anaalta/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+The domain model contains 3 CRC cards and a controller:
+**User class** - has name attribute and can choose an option(rps)
+**Computer class** - randomly choses an option from Rock, Paper, Scissors (a constant declared within the class).
+**Options class** - it contains the rules of the game as a hash; it has an attribute, result and a method - winner - with two arguments - option 1 and option 2. The method compares the options and returns the result (draw, option1 wins, option2 wins).
+**The controller** - takes you to an index page that has a form and asks the user to insert their username and click the register button, as in the photo below:
+
+![Image of takes_username](https://drive.google.com/drive/folders/0B9NojpN8a8wmcG5YYmlXdGJTUFE)
+
+After registering their name, the user's name is printed and three choices are offered in the form of radio buttons. The user selects one, but then it has to click a 'Submit your choice' button.
+![Image of takes_username](https://drive.google.com/drive/folders/0B9NojpN8a8wmcG5YYmlXdGJTUFE)
+
+The user is then redirected to a page which prints out user's choice, the computer's random choice and the result of the game.
+
+
+
+
+
 # RPS Challenge
 
 Instructions
