@@ -33,7 +33,7 @@ class RPSapp < Sinatra::Base
 
   post '/result' do
     @game.play_control(params[:type].to_sym)
-    erb :result
+    redirect '/game'
   end
 
   run! if app_file == $0

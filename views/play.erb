@@ -22,5 +22,21 @@
     <div style="text-align:center;">
       <h4> This is round <%= @game.round %>. There has been <%= @game.round_with_result %> rounds with a result in a game to the best of three </h4>
     </div>
+    <% if @game.round > 1 %>
+    <div style="text-align:center;">
+      <br>
+      <h2> LAST ROUND : </h2>
+      <br><br>
+      <h3> The dastardly computer has played <%= @game.ai_play %></h3>
+    </div>
+    <div style="text-align:center;">
+      <br><br><br>
+      <h3> <%= @game.player.name %> you have played <%= @game.player_play %></h3>
+    </div>
+    <div style="text-align:center;">
+      <br>
+      <h2> The winner is therefore <%= @game.results.results_store[(@game.round - 2)][:winner] %></h2>
+    </div>
+    <% end %>
   </body>
 </html>

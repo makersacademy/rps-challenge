@@ -45,14 +45,14 @@ feature 'Player can play rock/paper/scissors' do
     srand(10)
     sign_in_and_play
     click_button('ROCK')
-    expect(page).to have_content('Round 1: Henry')
+    expect(page).to have_content('winner is therefore Computer')
   end
 
   scenario '#A player will win the match' do
     srand(10)
     sign_in_and_play
-    10.times { click_button('ROCK') }
-    expect(page).to have_content('You have won')
+    5.times { click_button('ROCK') }
+    expect(page).to have_content('looks like you lost. That sucks.')
   end
-  
+
 end
