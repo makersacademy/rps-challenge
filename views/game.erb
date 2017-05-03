@@ -1,0 +1,11 @@
+<h2> <i><%= @player %></i> vs. <i>Computer</i> </h2>
+<h3><i><%= @player %></i>, choose one from the following options to play:</h3>
+<form action="/play" method="post">
+  <input type="submit" value="Rock" name="players_option" name="computers_option">
+  <br>
+  <br>
+  <input type="submit" value="Paper" name="players_option" name="computers_option">
+  <br>
+  <br>
+  <input type="submit" value="Scissors" name="players_option" name="computers_option">
+</form>
