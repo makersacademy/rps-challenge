@@ -24,7 +24,7 @@ And finally use rackup to start the server and navigate to your chosen localhost
 
 `bundle exec rackup`
 
-![Screenshot] (http://imgur.com/OE9samJ)
+![Alt text](https://github.com/enonnai/rps-challenge/blob/master/links/screenshot.png "screenshot")
 
 ## Game Rules
 
