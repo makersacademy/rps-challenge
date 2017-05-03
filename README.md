@@ -28,15 +28,13 @@ I would like to be able to play rock/paper/scissors
 - go to local host page to start the game.
 
 ## How to play
-
-- Enter your player name to play, you will play against the computer.
-
-
 ![Start](https://raw.githubusercontent.com/j-rods/rps-challenge/master/public/start.png)
 
-
+- Enter your player name to play, you will play against the computer.
 - Select a _Rock, Paper, Scissors_ option, the computer will also select an option.
 - Battle! The winner will be announced.
+
+Play it live [here](the-rps.herokuapp.com)!
 
 ## My approach
 
