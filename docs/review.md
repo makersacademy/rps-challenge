@@ -304,7 +304,7 @@ class RPSWeb < Sinatra::Application
 end
 ```
 
-## Not storing the weapons in a constant
+## Storing the weapons in a constant
 
 If you have something like this:
 
