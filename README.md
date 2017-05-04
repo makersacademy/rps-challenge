@@ -1,86 +1,49 @@
-# RPS Challenge
+# Rock-Paper-Scissors-Lizard-Spock
 
-Instructions
--------
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/rpsls.jpg "rpsls")
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Rules:
+Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons Spock. Spock smashes scissors. Scissors decapitates lizard. Lizard eats paper. Paper disproves Spock. Spock vaporizes rock. Rock crushes scissors.
 
-Task
-----
+## User stories considered
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
+```
+As a visiter
+So that I can see my name
 I would like to register my name before playing an online game
-
-As a marketeer
+```
+```
+As a visiter
 So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I would like to be able to play rock/paper/scissors/lizard/spock
+```
+```
+As a visiter
+So that I can know who has won the game
+I would like to see a confirmation of the result
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+### Installation:
 ```
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+# whilst running rackup visit localhost:9292  in your browser to play!
+```
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/you-win.png "you-win")
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+#### Problems encountered:
+
+1. Storing the User's weapon choice as a session.
+
+-I had planned on having a post-redirect-loop(similar to the /names post request) for when the User chooses their weapon. I wanted to store this memory in session params, however I struggled to then pass this as an argument to the RPSLS class.
+
+-This means that I had to have views for each weapon choice, and I had to hard-code the argument to the RPSLS class
+
+#### Test coverage 100%
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/test-coverage.png "test-coverage")
+
+Testing covers all cases of User and Computer winning, losing and drawing. Also tests for the correct output and storage of 'name' using Sinatra sessions.
+
+![Alt text](https://github.com/JessicaBarclay/rps-challenge/blob/master/links/tests.png "tests")

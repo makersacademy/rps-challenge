@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'nyan-cat-formatter'
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov', require: false
