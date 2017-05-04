@@ -19,36 +19,13 @@ class RPSLSWeb < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
+  get '/result' do
     @name = session[:name]
-    @rpsls = RPSLS.new(:rock)
-    erb :rock
+    @choice = params['choice'].downcase.to_sym
+    @rpsls = RPSLS.new(@choice)
+    erb :result
   end
-
-  get '/paper' do
-    @name = session[:name]
-    @rpsls = RPSLS.new(:paper)
-    erb :paper
-  end
-
-  get '/scissors' do
-    @name = session[:name]
-    @rpsls = RPSLS.new(:scissors)
-    erb :scissors
-  end
-
-  get '/lizard' do
-    @name = session[:name]
-    @rpsls = RPSLS.new(:lizard)
-    erb :lizard
-  end
-
-  get '/spock' do
-    @name = session[:name]
-    @rpsls = RPSLS.new(:spock)
-    erb :spock
-  end
-
+  
   run! if app_file == $0
 
 end

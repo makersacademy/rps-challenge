@@ -43,7 +43,9 @@ class RPSLS
   end
 
   def draw?
-    @weapons[:user] == @weapons[:computer]
+    p @weapons[:user]
+    p @weapons[:computer]
+    p @weapons[:user] == @weapons[:computer]
   end
 
   def random_computer_weapon
