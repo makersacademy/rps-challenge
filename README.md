@@ -34,7 +34,7 @@ I would like to be able to play rock/paper/scissors
 - Select a _Rock, Paper, Scissors_ option, the computer will also select an option.
 - Battle! The winner will be announced.
 
-Play it live [here](the-rps.herokuapp.com)!
+Play it live [here](https://the-rps.herokuapp.com/)!
 
 ## My approach
 
