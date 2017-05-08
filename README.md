@@ -39,4 +39,4 @@ This will download the necessary files to your machine.
 
   * The game_spec file's **Game** class repeats instantiation in each of it's *it* block. I considered inserting *let* helper methods at each example but that seemed to be replacing one type of repetition for another. I'm sure there's a way to accomplish this but it eludes me at present.
 
-  I couldn't see any other way to tackle the problem other than by overhauling my code so that the **Game** class wouldn't expect any arguments.
+  * I couldn't see any other way to tackle the problem other than by overhauling my code so that the **Game** class wouldn't expect any arguments.
