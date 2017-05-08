@@ -1,4 +1,3 @@
-
 describe Game do
 
   describe '#result' do

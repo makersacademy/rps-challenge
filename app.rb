@@ -9,7 +9,7 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb :index
+    erb :index, :layout => true
   end
 
   post '/storage' do

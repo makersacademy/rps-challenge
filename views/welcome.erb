@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-  <br>
-  <center>
-    <style>
-      h1 {font-family: helvetica;}
-    </style>
-    <h1>Hello <%= @player1 %>! Let's play!</h1>
+    <h1 id = "player-name">Hello <%= @player1 %>! Let's play!</h1>
     <br>
     <br>
-    <form action=/final method=get>
+    <form id = "rsp-buttons" action=/final method=get>
       <button type=submit value=ROCK name=ROCK class="btn btn-primary">ROCK</button>
       &nbsp;&nbsp;&nbsp;&nbsp;<button type=submit value=SCISSORS name=SCISSORS class="btn btn-primary">SCISSORS</button>&nbsp;&nbsp;&nbsp;&nbsp;
       <button type=submit value=PAPER name=PAPER class="btn btn-primary">PAPER</button>
     </form>
-  </center>
-</body>
