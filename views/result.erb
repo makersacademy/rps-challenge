@@ -1,0 +1,12 @@
+<% @game.player_1.set_choice(session[:choice]) %>
+<% @game.player_2.set_choice %>
+<% @player_1 = @game.player_1.name %>
+<% @player_2 = @game.player_2.name %>
+<% @p1_choice = @game.player_1.choice.to_s.capitalize %>
+<% @p2_choice = @game.player_2.choice.to_s.capitalize %>
+
+
+<h1><%= "#{@player_1} vs Random Ruby" %></h1>
+<%= erb :image_partial %>
+<h2><%= "#{@player_1} chose #{@p1_choice}; #{@player_2} chose #{@p2_choice}" %></h2>
+<h2><%= Game.game.print_result %></h2>

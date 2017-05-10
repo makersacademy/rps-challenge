@@ -1,86 +1,32 @@
 # RPS Challenge
 
-Instructions
--------
+Now you can play Rock, Paper, Scissors on your very own local server!
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Installation
 
-Task
-----
+1. Clone the repository: `git clone git@github.com:adc17/takeaway-challenge.git`
+2. Install dependencies: `cd path/to/dir` then `bundle install`. 
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Usage
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+1. Start a local server: `rackup -p 4567`, then navigate to `localhost:4567`.
+2. Enter your name and start playing.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## Tests
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+To test, navigate to the project root and run `rspec`.
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Challenges
 
-Hints on functionality
+1. Programming the RPS rules: I resorted to a nasty if/else tree. I tried to implement a simpler solution using an array and `sort`, but was unsuccessful. In the end, I couldn't find a better solution than the obvious undesirable one.
+2. Capybara testing: I don't feel clear on how thorough my feature tests should be, or on how they should be organised. I'm also unclear on how to check pages have content that is not a string, e.g. an image or a button.
+3. Two-player functionality. I had a go at this in a separate branch (see the [hacky-2p-solution](https://github.com/adc17/rps-challenge/tree/hacky_2p_solution) branch), but it ended up being, well, hacky—there was duplication everywhere and so I didn't include it in my final version.
+4. General lack of simplicity. I got ahead of myself thinking about a two-player game, and I didn't keep it simple as a result.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Strengths
 
+Hard to come by this weekend—I was unhappy with my work—but I did manage to remain disciplined about testing first. 
 
-As usual please start by
+## Other notes
 
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+Created as my third weekend challenge during the [Makers Academy](http://www.makersacademy.com) Bootcamp.
