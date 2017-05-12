@@ -36,6 +36,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:winner)
   end
 
+  get '/thermostat' do
+    
+  end
+
   private
 
   def two_player?
