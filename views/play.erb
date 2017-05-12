@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<head>
+<style>
+body {
+    text-align: center;
+}
+</style>
+</head>
+<body>
+  <div>
+<h1> ROCK|PAPER|SCISSORS|LIZARD|SPOCK <p>
+  <%= @game.order[0].name %>'s turn </h1>
+
+<form action ="/choice" method='post'>
+
+    <input type="image" id="rock" src="rock.png" value="rock" name="choice" height="180">
+    <input type="image" id="paper" src="paper.png" value="paper" name="choice" height="180">
+    <input type="image" src="scissors.png" value="scissors" name="choice" height="180">
+    <input type="image" src="lizard.png" value="lizard" name="choice" height="180">
+    <input type="image" src="spock.png" value="spock" name="choice" height="180">
+
+</form>
+<h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
+<h2> (Best of <%= @game.best_of %>) </h2>
+</div>
+</body>
+</html>

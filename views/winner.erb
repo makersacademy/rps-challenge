@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<head>
+<style>
+body {
+    background-color: black;
+    text-align: center;
+    color: white
+}
+</style>
+</head>
+<body>
+
+<h1><%= @game.result[1] %></h1>
+
+  <h1>
+    <img src=<%= @game.player1.choice.to_s %>.png height="213">
+  <%= @game.result[2] %>
+    <img src=<%= @game.player2.choice.to_s %>.png height="213">
+  </h1>
+
+  <h1><%= @game.player1.name.upcase %> (Wins: <%= @game.player1.wins %>) vs. <%= @game.player2.name.upcase %> (Wins: <%= @game.player2.wins %>)</h1>
+
+<h1><%= @game.winner.name.upcase %> WINS! <%= @game.winner.wins %>-<%= @game.loser.wins %></h1>
+<form action='/'>
+<input class="btn btn-default" type='submit' value='Play again' name='Next'>
+</form>
+
+</body>
+</html>
