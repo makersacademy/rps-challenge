@@ -6,7 +6,7 @@ Walkthrough
 
 1. Open the web app.
 
-  ![Image of Welcome Screen](http://imgur.com/U1mFnJg.png)
+ (http://imgur.com/U1mFnJg)
 
 2. Enter the player name.
 
