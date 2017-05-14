@@ -6,6 +6,8 @@ Walkthrough
 
 1. Open the web app.
 
+ ![Welcome Screen](https://github.com/AlexJukes/rps-challenge/blob/master/images/U1mFnJg.png?raw=true)
+
  (http://imgur.com/U1mFnJg)
 
 2. Enter the player name.
