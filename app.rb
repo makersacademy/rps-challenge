@@ -1,11 +1,11 @@
-require './lib/game'
-require './lib/computer_weapon_choice'
 require 'sinatra/base'
+require_relative 'lib/game.rb'
+require_relative 'lib/computer_weapon_choice.rb'
+
 
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
-
 
   get '/' do
     erb :index

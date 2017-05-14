@@ -1,4 +1,5 @@
-require 'game'
+require './lib/game'
+
 class ComputerWeaponChoice
 
   def initialize
