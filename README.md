@@ -3,7 +3,7 @@
 
 ## To Play
 
-1. Please navigate to your chosen directory and in your console insert the following:
+1. Please navigate to your chosen directory in your Terminal and insert the following:
 
 - git clone https://github.com/marudine/rps-challenge.git
 
@@ -13,13 +13,15 @@ This will download the necessary files to your machine.
 
 3. Type 'bundle install' to download the external libraries (gems) you will need to run this application.
 
-4. Type 'rspec' in order to run the unit and feature tests.
+4. Type 'rspec --init' to set up your test components.
 
-5. Type 'rackup' in order to start the server. The output will tell you which port to use for the next step.
+5. Type 'rspec' in order to run the unit and feature tests.
 
-6. In your browser, type 'localhost: ' followed by whatever port number the server has specified.
+6. Type 'rackup' in order to start the server. The output will tell you which port to use for the next step.
 
-7. Play!
+7. In your browser, type 'localhost: ' followed by whatever port number the server has specified.
+
+8. Play!
 
 
 ## Styling
