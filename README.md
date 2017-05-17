@@ -17,7 +17,7 @@ This will download the necessary files to your machine.
 
 5. Type 'rackup' in order to start the server. The output will tell you which port to use for the next step.
 
-6. In your browser, type 'localhost: ' followed by whatever port the server has selected.
+6. In your browser, type 'localhost: ' followed by whatever port number the server has specified.
 
 7. Play!
 

@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.3.2'
 
 gem 'sinatra'
 gem 'rake'
+gem 'rerun'
 
 group :test do
   gem 'rspec'
