@@ -1,12 +1,13 @@
 require 'sinatra/base'
-require_relative 'lib/players.rb'
-require_relative 'lib/game.rb'
-require_relative 'lib/computer.rb'
-require_relative 'spec/features/web_helper.rb'
+require_relative '../models/players.rb'
+require_relative '../models/game.rb'
+require_relative '../models/computer.rb'
+require_relative '../../spec/features/web_helper.rb'
 
 class RPS < Sinatra::Base
 
   enable :sessions
+  set :root, '/Users/Hyper/GIT/rps-challenge/application'
 
   get '/' do
     erb :index, :layout => true

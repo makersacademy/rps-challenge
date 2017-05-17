@@ -10,7 +10,7 @@ SimpleCov.formatters = [
 SimpleCov.start
 # run `open coverage/index.html` from the command line to view details
 
-ENV['RACK_ENV'] = 'test' #????????
+ENV['RACK_ENV'] = 'test'
 
 
 require 'byebug'
