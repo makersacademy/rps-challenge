@@ -1,2 +1,2 @@
-require './application/controllers/app'
+require './app/controllers/app'
 run RPS

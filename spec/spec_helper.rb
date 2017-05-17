@@ -17,7 +17,7 @@ require 'byebug'
 require 'capybara/rspec'
 require 'capybara'
 
-require './app'
+require './app/controllers/app'
 
 Capybara.app = RPS
 

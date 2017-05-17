@@ -7,7 +7,7 @@ require_relative '../../spec/features/web_helper.rb'
 class RPS < Sinatra::Base
 
   enable :sessions
-  set :root, '/Users/Hyper/GIT/rps-challenge/application'
+  set :root, '/Users/Hyper/GIT/rps-challenge/app'
 
   get '/' do
     erb :index, :layout => true

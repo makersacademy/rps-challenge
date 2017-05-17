@@ -1,5 +1,5 @@
-require '../app/controllers/app'
-require '../app/models/computer'
+require './app/controllers/app'
+require './app/models/computer'
 
 feature "Start the game" do
 
