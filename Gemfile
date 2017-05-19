@@ -6,6 +6,9 @@ gem 'sinatra'
 gem 'rake'
 gem 'shotgun'
 gem 'pry'
+gem 'data_mapper'
+gem 'dm-migrations'
+gem 'dm-postgres-adapter'
 
 group :test do
   gem 'rspec'
