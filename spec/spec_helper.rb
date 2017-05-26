@@ -1,4 +1,5 @@
 require_relative '../rock_paper_scissors.rb'
+require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
