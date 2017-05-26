@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
-gem 'rake'
 gem 'sinatra'
+gem 'rake'
+gem 'shotgun'
 
 group :test do
   gem 'capybara'
