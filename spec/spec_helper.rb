@@ -11,7 +11,7 @@ Capybara.app = RPSWeb
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
-require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
+require File.join(File.dirname(__FILE__), '..', 'app/rps_web.rb')
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
