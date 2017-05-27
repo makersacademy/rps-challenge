@@ -6,14 +6,22 @@ require 'rspec'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
 
-  post '/name' do
-    @player = params[:player]
+  get '/play' do
+    @player = session[:player]
     erb(:play)
   end
 
-  run! if app_file == $0
+  post '/name' do
+    #@player = params[:player]
+    session[:player] = params[:player]
+    redirect '/play'
+  end
+
+   run! if app_file == $0
 end
