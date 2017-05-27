@@ -17,10 +17,15 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Functionality
+Functionality:
 
 - the marketeer can enter their name before the game
 - the marketeer is presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
+
+To play
+----
+
+The game is available to play on Heroku. [Check it out here!](https://rosieposie.herokuapp.com/)
