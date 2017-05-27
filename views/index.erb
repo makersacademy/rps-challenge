@@ -2,6 +2,11 @@
 
 <h3>To start a new game please insert your name</h3>
 
-<form action="/play" method="post">
-  <input type="text" name="player_name">
+<form action="/name" method="post">
+  <label for="name">Name:
+    <input type="text" name="player_name" placeholder="Your Name">
+  </label>
+  <p>
+    <input type="submit" value="Start Game!">
+  </p>
 </form>
