@@ -1,4 +1,10 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
-end 
+  #enable :sessions 
+
+  get '/' do
+    erb(:index)
+  end
+
+end
