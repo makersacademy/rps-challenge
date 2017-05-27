@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/arena' do
     @choice = params[:choice]
+    @opponent_choice = Opponent.new.choose_hand
     erb :arena
   end
 
