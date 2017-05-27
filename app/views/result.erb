@@ -1,5 +1,9 @@
 You <%= @game.battle.to_s %>.
 <br>
-You chose <%= @player1.weapon.capitalize %>
+You chose <%= @player1.weapon.capitalize %>.
 <br>
-The computer chose <%= @game.player_2.weapon.capitalize %>
+The computer chose <%= @game.player_2.weapon.capitalize %>.
+<br>
+<form action="/" method="get">
+  <input type="submit" value="New Game">
+</form>
