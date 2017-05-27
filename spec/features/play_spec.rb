@@ -1,7 +1,7 @@
 feature "Testing user enter names" do
-  scenario "Allows users to submit names and see them on a screen" do
+  scenario "Allows users to submit names and see them on a screen with a welcome message" do
     sign_in_and_register
-    expect(page).to have_content "Welcome to the game Charlotte!"
+    expect(page).to have_content "Welcome to the game Charlotte! choose your weapon to start the game against the evil computer:"
   end
     scenario "Player can see the rock button" do
       sign_in_and_register
@@ -15,5 +15,4 @@ feature "Testing user enter names" do
       sign_in_and_register
       find_button('Scissor').click
     end
-    scenario "Player is invited to click "
   end
