@@ -1,8 +1,10 @@
 require 'capybara'
 require 'capybara/rspec'
+require 'features/web_helpers.rb'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
 
 # require 'features/web_helpers.rb'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
