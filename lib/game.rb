@@ -8,7 +8,7 @@ class Game
   WEAPONS = [:rock, :paper, :scissors]
   RULES = { :scissors => :paper, :paper => :rock, :rock => :scissors }
 
-  def initialize(player_1,player_2)
+  def initialize(player_1 = Player.new, player_2 = Computer.new)
     @player_1 = player_1
     @player_2 = player_2
   end
