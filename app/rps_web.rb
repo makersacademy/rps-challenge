@@ -18,4 +18,7 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/result' do
+  end 
+
 end
