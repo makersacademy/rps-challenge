@@ -1,0 +1,8 @@
+feature 'a player can play a game of RPS' do
+  scenario ' a player chooses their first hand' do
+    register
+    expect(page).to have_button "Rock"
+    expect(page).to have_button "Scissors"
+    expect(page).to have_button "Paper"
+  end
+end

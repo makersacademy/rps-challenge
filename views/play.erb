@@ -1,3 +1,11 @@
 <h1>Rock, Paper, Scissors</h1>
 
 <h2><%= "Prepare to enter the arena, #{@player}!" %></h2>
+
+<h3>'Make your choice!'</h3>
+
+<form action="/arena" method="post" id="choice">
+  <input type="submit" name="choice" value="Rock">
+  <input type="submit" name="choice" value="Paper">
+  <input type="submit" name="choice" value="Scissors">
+</form>
