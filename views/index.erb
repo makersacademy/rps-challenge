@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF=8">
+  <title>Ruby, Paper, Scissors!</title>
+  <script src="js/jquery-3.2.0.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <link href="css/rps-stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="title-box">
+  <h1>Ruby, Paper, Scissors!</h1>
+</div>
+
+<div id="subtitle-box">
+  <h3>Please enter your name below.</h3>
+</div>
+
+<div id="form-box">
+  <form method="post" action="/play.erb">
+    <input id="name-box" title="player-name" type="text"><br>
+    <input id="submit-button" type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+
+</html>
