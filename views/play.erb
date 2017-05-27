@@ -5,6 +5,10 @@
     <h3> <%= @player.name%> plays: <%= @player.hand%> </h3>
 <% end %>
 
+<% if @computer.hand %>
+  <h3> Computer plays: <%= @computer.hand%> </h3>
+<% end %>
+
 <form action='/rock', method='post'>
   <input type='submit' value='Rock'>
 </form>
