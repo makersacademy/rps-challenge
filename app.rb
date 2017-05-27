@@ -23,4 +23,11 @@ class Rps < Sinatra::Base
     @player.draw_rock
     redirect '/play'
   end
+
+  post '/scissors' do
+    @player = session[:player]
+    @player.draw_scissors
+    redirect '/play'
+  end
+
 end

@@ -9,4 +9,13 @@ class Player
   def draw_rock
     @hand = 'Rock'
   end
+  
+  def draw_scissors
+    @hand = 'Scissors'
+  end
+
+  def draw_paper
+    @hand = 'Paper'
+  end
+
 end
