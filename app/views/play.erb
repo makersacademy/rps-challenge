@@ -1,3 +1,23 @@
-</br>
-<h1> <%= "Welcome to the game #{@game.player.name}!" %> </h1>
-</br>
+<html>
+<head>
+</head>
+
+<body>
+  <h1> <center>  <font face='Courier New' color="blue"><%= "Welcome to the game #{@game.player.name}!" %></font> </center> </h1>
+    <form action="/play" method="get">
+      <input type="submit" value= "Rock"
+      name="Rock" id="rock_submit" />
+    </form>
+
+    <form action="/play" method="get">
+      <input type="submit" value= "Paper"
+      name="Paper" id="paper_submit" />
+    </form>
+
+
+    <form action="/play" method="get">
+      <input type="submit" value= "Scissor"
+      name="Scissor" id="scissor_submit" />
+    </form>
+</body>
+</html>

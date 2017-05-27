@@ -19,6 +19,12 @@ class RPSWeb < Sinatra::Base
     @game = @@game
     erb(:play)
   end
+  #
+  # post '/start' do
+  #   @@game.start
+  #   @game = @@game
+  #   erb(:weapon)
+  # end
 
   run! if app_file == $0
 
