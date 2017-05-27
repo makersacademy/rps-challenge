@@ -24,6 +24,7 @@ class RPS < Sinatra::Base
   get '/result' do
     @player1 = Player.instance
     @player1.weapon=(params[:weapon])
+    @game = Game.create(@player1, Computer.new)
     erb(:result)
   end
 
