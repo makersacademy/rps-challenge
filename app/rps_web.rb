@@ -22,6 +22,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @player1 = Player.instance
+    @player1.weapon=(params[:weapon])
     erb(:result)
   end
 

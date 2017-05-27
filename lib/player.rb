@@ -17,10 +17,11 @@ class Player
   def self.instance
     @player
   end
+
   private
 
   def validate_weapon(weapon)
-    raise 'Not valid weapon' unless Game::WEAPONS.include?(weapon)
+    raise 'Not valid weapon' unless Game::WEAPONS.include?(weapon.to_sym)
   end
 
 end
