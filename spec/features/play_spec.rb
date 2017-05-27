@@ -5,4 +5,10 @@ feature 'a player can play a game of RPS' do
     expect(page).to have_button "Scissors"
     expect(page).to have_button "Paper"
   end
+
+  scenario 'a player chooses rock and sees their choice' do
+    register
+    click_button "Rock"
+    expect(page).to have_content "You chose Rock"
+  end
 end

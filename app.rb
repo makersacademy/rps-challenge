@@ -11,5 +11,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/arena' do
+    @choice = params[:choice]
+    erb :arena
+  end
+
   run! if app_file == $0
 end
