@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RockPaperScissors < Sinatra::Base
+class RubyPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
