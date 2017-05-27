@@ -9,7 +9,7 @@ class RPSWeb < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
+  post '/game' do
     player = Player.new(params[:name])
     @@game = Game.new(player)
     redirect '/play'
