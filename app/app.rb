@@ -2,11 +2,11 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 
-enable :sessions
+  enable :sessions
 
-get '/' do
-  "Hello world!"
-end
+  get '/' do
+    erb :index
+  end
 
-run! if app_file == $0
+  run! if app_file == $0
 end
