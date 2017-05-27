@@ -3,11 +3,11 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
 
 get '/' do
-  "Hello!"
+  erb :index
 end
 
-get '/secret' do
-  "Try this page for size!"
+get '/names' do
+  "Ian"
 end
 
 end
