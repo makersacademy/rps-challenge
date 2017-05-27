@@ -5,4 +5,12 @@ class Game
     @players = [player, opponent]
   end
 
+  def self.create(player, opponent)
+    @game = Game.new(player, opponent)
+  end
+
+  def self.instance
+    @game
+  end
+
 end

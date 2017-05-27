@@ -10,13 +10,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/register' do
-    @player = params[:player_name]
+    # @player = params[:player_name]
+    @game = Game.create(Player.new(params[:player_name]),Opponent.new)
     erb :play
+  end
+
+  before do
+    @game = Game.instance
   end
 
   post '/arena' do
     @choice = params[:choice]
-    @opponent_choice = Opponent.new.choose_hand
+    @opponent_choice = @game.players[1].choose_hand
     erb :arena
   end
 
