@@ -1,1 +1,18 @@
 <%= @game.player_one.name %>: choose your weapon!
+<br>
+
+<form action='/result' method='get'>
+  <label for='Rock'>
+    <input type='radio' name='weapon' id='weapon' value='Rock'> Rock
+  </label>
+  <br>
+  <label for='Paper'>
+    <input type='radio' name='weapon' id='weapon' value='Paper'> Paper
+  </label>
+  <br>
+  <label for='Scissors'>
+    <input type='radio' name='weapon' id='weapon' value='Scissors'> Scissors
+  </label>
+  <br>
+  <input type='submit' value='Go!'>
+</form>
