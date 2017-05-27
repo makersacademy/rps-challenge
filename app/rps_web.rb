@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 class RPS < Sinatra::Base
   enable :sessions
+  set :static, true
 
   get '/' do
     erb(:index)
