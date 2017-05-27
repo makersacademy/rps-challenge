@@ -6,8 +6,8 @@ get '/' do
   erb :index
 end
 
-get '/names' do
-  "Ian"
+post '/names' do
+  "Bert Vs. Ernie"
 end
 
 end
