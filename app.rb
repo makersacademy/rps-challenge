@@ -30,4 +30,11 @@ class Rps < Sinatra::Base
     redirect '/play'
   end
 
+  post '/paper' do
+    @player = session[:player]
+    @player.draw_paper
+    redirect '/play'
+  end
+
+
 end
