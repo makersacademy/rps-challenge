@@ -3,7 +3,9 @@ Hello <%= @player %>, let's play!
 <form action="/play" method="post">
   <input type="submit" name="object" value="Rock">
   <input type="submit" name="object" value="Paper">
-  <input type="submit" name="object" value="scissors">
+  <input type="submit" name="object" value="Scissors">
 </form>
 
 <h2>You are <%= @object %><h2>
+
+<h2>Computer is <%= @computer_object %></h2>
