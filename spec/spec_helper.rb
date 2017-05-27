@@ -3,7 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 SimpleCov.formatters = [
-  SimpleCov::Formatter::MultiFormatter
+  SimpleCov::Formatter::Console
 ]
 
 # replace following line with SimpleCov.start to get coverage stats locally

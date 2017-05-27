@@ -1,4 +1,6 @@
-# RPS Challenge
+# Rock Paper Scissors
+
+Test driven development of a simple game of RPS using Ruby, RSpec, Capybara, Sinatra. 
 
 Instructions
 -------
