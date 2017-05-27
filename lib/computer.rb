@@ -5,6 +5,6 @@ class Computer
   attr_reader :weapon
 
   def weapon
-    Game::WEAPONS.sample
+    Game::WEAPONS.sample.to_sym
   end
 end
