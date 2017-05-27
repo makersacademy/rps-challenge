@@ -1,31 +1,36 @@
 class Game
 
- attr_reader :words, :player, :computer_c, :player_c
+ attr_reader :words, :player, :computer_c, :player_c, :result
 
-  def initialize(player)
+  def initialize(player, player_c= '', computer_c= '')
   @words = [:rock, :paper, :scissors]
   @player = player
-  @computer_c
-  @player_c
+  @computer_c = computer_c
+  @player_c = player_c
+  @result =''
   end
 
   def computer_choice
     @computer_c = rand(3)
   end
 
+  def choice_into_word
+    @words[@computer_c]
+  end
+
   def player_choice
-     @player_c = @words.each_index.detect{|i| @words[i] == @player.choice}
+    @player_c = @words.each_index.detect{|i| @words[i] == @player.choice}
   end
 
   def winner
     if @player_c  == @computer_c
-      'DRAW'
+      @result = 'DRAW'
     elsif @player_c == @words.length-1 && @computer_c== 0
-        'COMPUTER WON'
+        @result = 'COMPUTER WON'
     elsif @computer_c == @player_c + 1
-      'COMPUTER WON'
+      @result = 'COMPUTER WON'
     else
-      'PLAYER WON'
+      @result = 'PLAYER WON'
     end
   end
 end

@@ -14,51 +14,56 @@ subject(:game) {described_class.new(player)}
     end
   end
 
+  describe '#@computer_c' do
+    it 'holds the value from the computer_choice method' do
+      game.computer_choice
+      expect(game.computer_c).to be_an_integer
+    end
+  end
+
+  describe '#@player_c' do
+    it 'holds the value from the player_c method' do
+      game.player_choice
+      expect(game.player_c).to eq 0
+    end
+  end
+
   describe '#winner' do
     it 'returns DRAW if the player and computer gives the same value' do
-      allow(game).to receive(:player_c).and_return(0)
-      allow(game).to receive(:computer_c).and_return(0)
+      game1 = Game.new(player,0,0)
       expect(game.winner).to eq 'DRAW'
     end
     it 'returns DRAW if the player and computer gives the same value' do
-      allow(game).to receive(:player_c).and_return(1)
-      allow(game).to receive(:computer_c).and_return(1)
+      game1 = Game.new(player,1,1)
       expect(game.winner).to eq 'DRAW'
     end
     it 'returns DRAW if the player and computer gives the same value' do
-      allow(game).to receive(:player_c).and_return(2)
-      allow(game).to receive(:computer_c).and_return(2)
-      expect(game.winner).to eq 'DRAW'
+      game1 = Game.new(player,2,2)
+      expect(game1.winner).to eq 'DRAW'
     end
     it 'returns PLAYER WON if the player gives rock and computer gives scissors' do
-      allow(game).to receive(:player_c).and_return(0)
-      allow(game).to receive(:computer_c).and_return(2)
-      expect(game.winner).to eq 'PLAYER WON'
+      game1 = Game.new(player,0,2)
+      expect(game1.winner).to eq 'PLAYER WON'
     end
     it 'returns PLAYER WON if the player gives paper and computer gives rock' do
-      allow(game).to receive(:player_c).and_return(1)
-      allow(game).to receive(:computer_c).and_return(0)
-      expect(game.winner).to eq 'PLAYER WON'
+      game1 = Game.new(player,1,0)
+      expect(game1.winner).to eq 'PLAYER WON'
     end
     it 'returns PLAYER WON if the player gives scissors and computer paper ' do
-      allow(game).to receive(:player_c).and_return(2)
-      allow(game).to receive(:computer_c).and_return(1)
-      expect(game.winner).to eq 'PLAYER WON'
+      game1 = Game.new(player,2,1)
+      expect(game1.winner).to eq 'PLAYER WON'
     end
     it 'returns COMPUTER WON if the player gives rock and computer gives paper' do
-      allow(game).to receive(:player_c).and_return(0)
-      allow(game).to receive(:computer_c).and_return(1)
-      expect(game.winner).to eq 'COMPUTER WON'
+      game1 = Game.new(player,0,1)
+      expect(game1.winner).to eq 'COMPUTER WON'
     end
     it 'returns COMPUTER WON if the player gives scissors and computer gives rock' do
-      allow(game).to receive(:player_c).and_return(2)
-      allow(game).to receive(:computer_c).and_return(0)
-      expect(game.winner).to eq 'COMPUTER WON'
+      game1 = Game.new(player,2,0)
+      expect(game1.winner).to eq 'COMPUTER WON'
     end
     it 'returns COMPUTER WON if the player gives paper and computer gives scissors' do
-      allow(game).to receive(:player_c).and_return(1)
-      allow(game).to receive(:computer_c).and_return(2)
-      expect(game.winner).to eq 'COMPUTER WON'
+      game1 = Game.new(player,1,2)
+      expect(game1.winner).to eq 'COMPUTER WON'
     end
   end
 end
