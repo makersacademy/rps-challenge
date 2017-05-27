@@ -2,7 +2,7 @@
 <h2> Playing: <%= @player.name %> vs. the Computer </h2></br>
 
 <% if @player.hand %>
-    <h3> <%= @player.name%>: <%= @player.hand%> </h3>
+    <h3> <%= @player.name%> plays: <%= @player.hand%> </h3>
 <% end %>
 
 <form action='/rock', method='post'>
