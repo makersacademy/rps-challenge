@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    erb(:win)
+    erb(:result)
   end
 
 
