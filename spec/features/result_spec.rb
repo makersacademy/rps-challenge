@@ -32,4 +32,11 @@ feature 'outcome of game is displayed correctly' do
     expect(page).to have_content 'You lose.'
   end
 
+  scenario 'player draws when player puts Rock and computer puts rock' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+    sign_in
+    click_link('Rock')
+    expect(page).to have_content 'You draw.'
+  end
+
 end
