@@ -13,4 +13,5 @@ describe Game do
     player = Player.new("name")
     expect(player.choice).to eq nil
   end
+
 end
