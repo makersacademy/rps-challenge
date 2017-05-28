@@ -12,7 +12,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-require File.join(File.dirname(__FILE__), '..', './app/rps_web.rb')
+require File.join(File.dirname(__FILE__), '..', './app.rb')
 
 ENV['RACK_ENV'] = 'test'
 
