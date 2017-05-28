@@ -7,4 +7,11 @@ feature 'Player has different choices' do
     expect(page).to have_button('Rock')
   end
 
+  scenario 'Player can choose Paper' do
+    visit('/')
+    fill_in :player_name, with: 'Tim'
+    click_button :Enter
+    expect(page).to have_button('Paper')
+  end
+
 end
