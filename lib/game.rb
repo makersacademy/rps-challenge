@@ -17,8 +17,8 @@ class Game
   end
 
   def decide_winner
-    @winner = @player_one if @player_one.weapon.beats?(@player_two.weapon)
-    @winner = @player_two if @player_two.weapon.beats?(@player_one.weapon)
+    @winner = @player_one.name if @player_one.weapon.beats?(@player_two.weapon)
+    @winner = @player_two.name if @player_two.weapon.beats?(@player_one.weapon)
     @winner
   end
 

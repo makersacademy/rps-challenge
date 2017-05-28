@@ -2,4 +2,7 @@
 <br>
 <%= @game.player_two.name %> chose <%= @game.player_two.weapon.type %>
 <br>
-<%= @game.winner.name %> wins!
+<%= @game.winner %> wins!
+<form action='/play' method='get'>
+  <input type='submit' value='OK'>
+</form>
