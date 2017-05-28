@@ -24,9 +24,22 @@ class Game
   end
 
   def game_weapons
+    @games_weapons = []
     @player_weapon << computer_weapon()
-    @player_weapon.flatten
+    @games_weapons << @player_weapon.flatten
   end
+
+  def finish
+    if win? == true
+      "#{@player.name}"
+    elsif draw? == true
+      "No one! It's a draw for #{@player.name} and #{@computer.name}"
+    else
+      "#{@computer.name}"
+    end
+  end
+
+  private
 
   WIN = [
     [:rock, :scissors],
@@ -41,21 +54,11 @@ class Game
   ]
 
   def win?
-    WIN.include?(game_weapons())
+    WIN.include?(@game_weapons)
   end
 
   def draw?
-    DRAW.include?(game_weapons())
-  end
-
-  def finish
-    if win? == true
-      "#{@player.name}"
-    elsif draw? == true
-      "No one! It's a draw for #{@player.name} and #{@computer.name}"
-    else
-      "#{@computer.name}"
-    end
+    DRAW.include?(@game_weapons)
   end
 
 end
