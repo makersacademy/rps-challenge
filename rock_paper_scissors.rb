@@ -14,17 +14,17 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     session[:player_1_name] = params[:name]
-    # p params[:name]
-    # p session[:player_1_name]
-    # # p 'Get Visibility'
-    # p player_1_name
     redirect '/play'
   end
 
   get '/play' do
-    # puts session[:player_1_name]
     @player = session[:player_1_name]
     erb :play
+  end
+
+  post '/turn' do
+    @choice = params[:choice]
+    erb :turn
   end
 
 end
