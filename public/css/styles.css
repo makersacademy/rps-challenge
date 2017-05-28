@@ -12,5 +12,9 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 min-height: 100vh;
-background-color: rgb(113, 159, 202);
+background-color: rgb(59, 188, 239);
+}
+
+#Title {
+  font-size: 90px;
 }

@@ -1,3 +1,4 @@
+<div class="container">
 You <%= @outcome %>.
 <br>
 You chose <%= @game.player_1.weapon.capitalize %>.
@@ -7,3 +8,4 @@ The computer chose <%= @game.player_2.weapon.capitalize %>.
 <form action="/play" method="get">
   <input type="submit" value="New Game">
 </form>
+</div>
