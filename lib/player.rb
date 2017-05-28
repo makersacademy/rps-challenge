@@ -1,35 +1,35 @@
 class Player
-  attr_reader :name, :hand, :points, :value_hand
+  attr_reader :name, :hand, :points, :winning_hand_from
 
   def initialize(name)
     @name = name
     @hand = false
     @points = 0
-    @value_hand = 0
+    @winning_hand_from = []
   end
 
   def draw_rock
-    @value_hand = 1
+    @winning_hand_from = ['Scissors', 'Lizard']
     @hand = 'Rock'
   end
     
   def draw_paper
-    @value_hand = 2
+    @winning_hand_from = ['Rock', 'Spock']
     @hand = 'Paper'
   end
 
   def draw_scissors
-    @value_hand = 4
+    @winning_hand_from = ['Paper', 'Lizard']
     @hand = 'Scissors'
   end
   
   def draw_lizard
-    @value_hand = 8
+    @winning_hand_from = ['Paper', 'Spock']
     @hand = 'Lizard'
   end
   
   def draw_spock
-    @value_hand = 13
+    @winning_hand_from = ['Scissors', 'Rock']
     @hand = 'Spock'
   end
 
