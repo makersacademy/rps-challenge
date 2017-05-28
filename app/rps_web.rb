@@ -26,6 +26,7 @@ class RPSWeb < Sinatra::Base
     @game = @@game
     @player_weapon = params[:weapon_choice]
     @game.start(@player_weapon)
+    @game.games_weapons
     @game.finish
     redirect '/weapon'
   end
@@ -34,14 +35,6 @@ class RPSWeb < Sinatra::Base
     @game = @@game
     erb(:weapon)
   end
-  #
-  # finish?
-  #
-  # post '/restart' do
-  #   erb(:index)
-  # end
-  #
-  # restart?
 
   run! if app_file == $0
 
