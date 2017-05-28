@@ -1,16 +1,14 @@
 class Computer
-  attr_reader :hand, :points, :value_hand
+  attr_reader :hand, :points
 
   def initialize
     @hand = false
-    @hands = { 'Rock' => 1, 'Paper' => 2, 'Scissors' => 4, 'Lizard' => 7, 'Spock' => 12 }
+    @hands = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
     @points = 0
-    @value_hand = 0
   end
 
   def play_hand
-    @hand = @hands.keys.sample
-    @value_hand = @hands[@hand] 
+    @hand = @hands.sample
   end
 
   def wins
