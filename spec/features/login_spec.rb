@@ -8,6 +8,6 @@ feature 'main' do
     visit '/'
     fill_in('player', with: 'The Obsidian Man') 
     click_button('Submit')
-    expect(page).to have_content 'The Obsidian Man vs. the Computer' 
+    expect(page).to have_content 'The Obsidian Man(0) vs. the Computer(0)' 
   end
 end

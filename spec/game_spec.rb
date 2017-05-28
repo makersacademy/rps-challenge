@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:player) { double(:player, name: 'Jerry', hand: 'Rock', value_hand: 2, wins: true) }
+  let(:player) { double(:player, name: 'Jerry', hand: 'Rock', wins_from: ['Scissors', 'Lizard'], wins: true) }
   let(:computer) { double(:computer, hand: 'Scissors', value_hand: 4, wins: false) }
   subject(:game) { described_class.new(player, computer) }
 
@@ -13,7 +13,7 @@ describe Game do
 
   describe '#winner' do
     it 'shows whose hand has won' do
-      expect(game.winner).to eq 'Scissors wins!'
+      expect(game.winner).to eq 'Rock wins!'
     end
   end
 end

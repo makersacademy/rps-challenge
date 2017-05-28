@@ -7,21 +7,17 @@ class Game
   end
 
   def winner
-    if @computer.hand == @player.hand
-      return 'Tie!'
-    elsif total_points < 4
-      declare_winner 'Paper'
-    elsif total_points < 6
-      declare_winner 'Rock'
-    elsif total_points == 6
-      declare_winner 'Scissors'
-     end
+    return "Tie!" if @player.hand == @computer.hand  
+    if @player.wins_from.include? @computer.hand 
+       @player.wins
+       "#{@player.hand} wins!" 
+    else
+       @computer.wins
+       "#{@computer.hand} wins!" 
+    end 
   end 
 
   private
-  def total_points
-    @computer.value_hand + @player.value_hand
-  end
 
   def add_points(hand)
     @player.hand == hand ? @player.wins : @computer.wins
