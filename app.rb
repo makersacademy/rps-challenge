@@ -7,14 +7,25 @@ class Rsp < Sinatra::Base
     erb :index
   end
 
-  post '/start' do
+  post '/play' do
     session[:player_1_name] = params[:player_1_name]
-    redirect '/start'
+    redirect '/play'
   end
 
-  get '/start' do
+  get '/play' do
     @player_1_name = session[:player_1_name]
-    erb :start
+    erb :play
+  end
+
+  post '/results' do
+    session[:player_selection] = params[:player_selection]
+    redirect '/results'
+  end
+
+  get '/results' do
+    @player_1_name = session[:player_1_name]
+    @player_selection = session[:player_selection]
+    erb :results
   end
 
   run! if app_file == $0

@@ -1,0 +1,9 @@
+<h1><%= @player_1_name %> vs. Computer!</h1>
+<p>Please select an option to start a game.</p>
+<h2>Rock Paper Scissors</h2>
+<form action="/results" method="post">
+  <input type="radio" name="player_selection" id="rock" value="Rock">
+  <input type="radio" name="player_selection" id="paper" value="Paper">
+  <input type="radio" name="player_selection" id="scissors" value="Scissors">
+  <input type="submit" value="Submit">
+</form>

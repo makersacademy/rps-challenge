@@ -5,6 +5,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
+require_relative './features/web_helpers.rb'
 
 Capybara.app = Rsp
 
