@@ -1,7 +1,8 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(Player.new("Charlotte"), Computer.new) }
+  let(:charlotte) { Player.new("Charlotte")}
+  subject(:game) { described_class.new(charlotte, Computer.new) }
   let(:computer) { spy(:computer) }
 
   describe '#initialize' do
@@ -16,15 +17,15 @@ describe Game do
   describe '#start' do
     it 'stores the Rock weapon for the player' do
       game.start("Rock")
-      expect(game.player_weapon).to eq [:rock]
+      expect(game.player_weapon).to eq :rock
     end
     it 'stores the Paper weapon for the player' do
       game.start("Paper")
-      expect(game.player_weapon).to eq [:paper]
+      expect(game.player_weapon).to eq :paper
     end
     it 'stores the scissors weapon for the player' do
       game.start("Scissors")
-      expect(game.player_weapon).to eq [:scissors]
+      expect(game.player_weapon).to eq :scissors
     end
   end
 
@@ -36,18 +37,23 @@ describe Game do
       expect(rock_double.computer_weapon).to eq :rock
     end
   end
-  xdescribe '#game_weapons' do
+  describe '#game_weapons' do
     it 'stores the player and computer weapons in an array' do
-      # TODO correct this is it works correctly
-      game = double(:game)
-      allow(:game).to receive().and_return([:rock, :rock])
-      expect(game.game_weapons).to eq [:rock, :rock]
+      rock_computer = double(:computer)
+      allow(rock_computer).to receive(:weapon_choice).and_return(:rock)
+      game = Game.new(charlotte, rock_computer)
+      game.start("Paper")
+      expect(game.games_weapons).to eq [:paper, :rock]
     end
   end
-  
+
   # TODO correct this is it works correctly
-  xdescribe 'win_game?' do
+  describe '#win_game?' do
     it 'returns true if the game has been won' do
+      rock_computer = double(:computer)
+      allow(rock_computer).to receive(:weapon_choice).and_return(:rock)
+      game = Game.new(charlotte, rock_computer)
+      game.start("Paper")
       expect(game.win_game?).to eq true
     end
   end

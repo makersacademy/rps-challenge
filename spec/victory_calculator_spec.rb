@@ -72,4 +72,5 @@ describe VictoryCalculator do
       expect(victory_calc.draw?(array1)).to eq false
     end
   end
+
 end

@@ -13,8 +13,7 @@ class RPSWeb < Sinatra::Base
 
   post '/game' do
     player = Player.new(params[:name])
-    computer = Computer.new
-    @@game = Game.new(player, computer)
+    @@game = Game.new(player, Computer.new)
     redirect '/play'
   end
 
@@ -25,8 +24,8 @@ class RPSWeb < Sinatra::Base
 
   post '/weapon' do
     @game = @@game
-    @player_weapon = params[:weapon_choice]
-    @game.start(@player_weapon)
+    player_weapon = params[:weapon_choice]
+    @game.start(player_weapon)
     redirect '/weapon'
   end
 
