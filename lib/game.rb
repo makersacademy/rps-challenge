@@ -20,7 +20,7 @@ class Game
   end
 
   def computer_choice
-    @computer_c = rand(3)
+    @computer_c = rand(5)
   end
 
   def choice_into_word
