@@ -2,8 +2,14 @@
 <p>Please select an option to start a game.</p>
 <h2>Rock Paper Scissors</h2>
 <form action="/results" method="post">
-  <input type="radio" name="player_selection" id="rock" value="Rock">
-  <input type="radio" name="player_selection" id="paper" value="Paper">
-  <input type="radio" name="player_selection" id="scissors" value="Scissors">
+  <label for="Rock"> Rock
+    <input type="radio" name="player_selection" id="rock" value="Rock">
+  </label>
+  <label for="Paper"> Paper
+    <input type="radio" name="player_selection" id="paper" value="Paper">
+  </label>
+  <label for="Scissors"> Scissors
+    <input type="radio" name="player_selection" id="scissors" value="Scissors">
+  </label>
   <input type="submit" value="Submit">
 </form>
