@@ -1,11 +1,9 @@
 require './lib/player'
 
 describe Player do
-  subject(:bert) { described_class.new("Bert") }
-  subject(:ernie) {described_class.new("Ernie") }
+  subject(:player1) { described_class.new('Ian') }
 
-
-  it 'should return its name' do
-    expect(bert.name).to eq 'Bert'
+  it 'will enter name' do
+    expect(player1.name).to eq 'Ian'
   end
 end
