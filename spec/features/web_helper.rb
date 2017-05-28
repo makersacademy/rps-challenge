@@ -5,6 +5,6 @@ def set_up
 end
 
 def choice
-  fill_in "choice", :with => "rock"
+  choose "rock"
   click_button "Confirm"
 end

@@ -68,5 +68,6 @@ feature 'Able to choose an option' do
       choose "rock"
       click_button "Confirm"
     expect(page).to have_content "You chose rock"
+    save_and_open_page
   end
 end

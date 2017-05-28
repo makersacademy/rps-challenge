@@ -11,6 +11,14 @@ class Game
   @result
   end
 
+  def self.create(player_1)
+  @game = Game.new(player_1)
+  end
+
+def self.instance
+  @game
+end
+
   def computer_choice
     @computer_c = rand(3)
   end
