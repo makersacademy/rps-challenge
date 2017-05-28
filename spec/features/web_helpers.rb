@@ -3,3 +3,11 @@ def sign_in_and_play
   fill_in :player_name, with: "Marketeer"
   click_button 'Submit'
 end
+
+def play_as_rock
+  visit '/'
+  fill_in :player_name, with: "Rock Fan"
+  click_button 'Submit'
+  click_button 'Rock'
+  click_button 'Submit'
+end

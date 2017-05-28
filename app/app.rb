@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require '../lib/game.rb'
-require '../lib/player.rb'
+require '/Users/jenniferwem/Projects/rps-challenge/lib/game.rb'
+require '/Users/jenniferwem/Projects/rps-challenge/lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
