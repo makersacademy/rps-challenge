@@ -18,4 +18,8 @@ class Game
     @game
   end
 
+  def wins?
+    return true if @choice.pop == "Rock" && @computer_choice
+  end
+
 end
