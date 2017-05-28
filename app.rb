@@ -25,10 +25,10 @@ class Rps < Sinatra::Base
 
   post '/login_multi' do
     session[:game] = Game.new(Player.new(params[:player1]),Player.new(params[:player2]))
+    session[:game].set_multiplayer
     redirect '/play'
   end
 
-  
   get '/play' do
     @game = session[:game]
     @player1 = @game.player1
@@ -37,18 +37,20 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    @player1 = session[:game].player1
-    @player1.draw_rock
-    session[:game].player2.play_hand
-    session[:game].winner
+    @current_player = session[:game].current_player
+    @current_player.draw_rock unless session[:game].computer_mode 
+    @session.play_hand if session[:game].computer_mode
+    session[:game].winner if session[:game].final_hand?
+    session[:game].switch_player
     redirect '/play'
   end
 
   post '/scissors' do
-    @player1 = session[:game].player1
-    @player1.draw_scissors
-    session[:game].player2.play_hand
-    session[:game].winner
+    @current_player = session[:game].current_player
+    @current_player.draw_scissors unless session[:game].computer_mode 
+    @session.play_hand if session[:game].computer_mode
+    session[:game].winner if session[:game].final_hand?
+    session[:game].switch_player
     redirect '/play'
   end
 
