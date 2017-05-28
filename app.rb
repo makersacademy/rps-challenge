@@ -3,7 +3,7 @@ require 'sinatra'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require './lib/ComputerPlayer'
+require './lib/Game'
 require './lib/Player'
 
 class RPS < Sinatra::Base
@@ -28,9 +28,13 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:object] = params[:object]
-    session[:computer_object] = ComputerPlayer.new.random_selection
+    session[:computer_object] = Game.new.random_selection
     redirect '/play'
   end
+
+  # post '/commence' do
+  #
+  # end
 
    run! if app_file == $0
 end
