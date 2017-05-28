@@ -4,21 +4,29 @@
 
 <body>
   <h1> <center>  <font face='Courier New' color="blue"><%= "Welcome to the game #{@game.player.name}! choose your weapon to start the game against #{@game.computer.name}:" %></font> </center> </h1>
-
+  <br>
+  <center> <img src="https://media2.giphy.com/media/hEMF9k5UHh2U0/giphy.gif" alt="media2.giphy.com"></center>
+  </br>
+  <center>
     <form action="/weapon" method="POST">
       <input type="submit" value= "Rock"
       name="weapon_choice" id="weapon_choice" />
       </label>
     </form>
+    </center>
 
+    <center>
     <form action="/weapon" method="POST">
       <input type="submit" value= "Paper"
       name="weapon_choice" id="weapon_choice" />
     </form>
+    </center>
 
+    <center>
     <form action="/weapon" method="POST">
       <input type="submit" value= "Scissors"
       name="weapon_choice" id="weapon_choice" />
     </form>
+    </center>
 </body>
 </html>
