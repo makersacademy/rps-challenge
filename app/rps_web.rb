@@ -11,7 +11,8 @@ class RPSWeb < Sinatra::Base
 
   post '/game' do
     player = Player.new(params[:name])
-    @@game = Game.new(player)
+    computer = Computer.new
+    @@game = Game.new(player, computer)
     redirect '/play'
   end
 
@@ -19,12 +20,11 @@ class RPSWeb < Sinatra::Base
     @game = @@game
     erb(:play)
   end
-  #
-  # post '/start' do
-  #   @@game.start
-  #   @game = @@game
-  #   erb(:weapon)
-  # end
+
+  post '/weapon' do
+    @game.start
+    erb(:weapon)
+  end
 
   run! if app_file == $0
 
