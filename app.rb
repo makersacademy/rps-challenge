@@ -24,7 +24,6 @@ class RPS < Sinatra::Base
     random_choice.picked_randomly
   end
 
-
   def rule(button)
     choice = automated_choice
     if button.beats(choice)
@@ -37,17 +36,14 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    "This is rock"
     rule(Item.rock)
   end
 
   post '/paper' do
-    "This is paper"
     rule(Item.paper)
   end
 
   post '/scissors' do
-    "This is scissors"
     rule(Item.scissors)
   end
 
