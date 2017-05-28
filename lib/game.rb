@@ -17,6 +17,11 @@ class Game
     RULES[@players[0].weapon]  == @players[1].weapon ? :won : :lose
   end
 
+  def outcome
+    return "We have a draw." if battle == :draw
+    battle == :won ? "#{@players[0].name} won." : "#{@players[1].name} won."
+  end
+
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end

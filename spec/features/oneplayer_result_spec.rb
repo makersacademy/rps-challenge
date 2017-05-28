@@ -1,4 +1,4 @@
-feature 'infrastructure of result page is set up properly' do
+feature 'infrastructure of 1 player result page is set up properly' do
   scenario 'player is taken to results page after choosing weapon' do
     one_player_sign_in_play_rock
     expect(page).to have_content 'You chose'
@@ -16,7 +16,7 @@ feature 'infrastructure of result page is set up properly' do
   end
 end
 
-feature 'outcome of game is displayed correctly' do
+feature 'outcome of 1 player game is displayed correctly' do
   scenario 'player wins when player puts Rock and computer puts Scissors' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     one_player_sign_in_play_rock
@@ -42,7 +42,7 @@ feature 'outcome of game is displayed correctly' do
   end
 end
 
-feature 'player can restart game' do
+feature 'player can restart 1 player game' do
   scenario 'player can click New Game button to restart' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
     one_player_sign_in_play_rock

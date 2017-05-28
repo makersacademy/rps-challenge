@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <div class="container">
-  <h1>You <%= @game.battle %>.</h1>
+  <h1><%= @game.outcome %></h1>
   <p><%= @game.players[0].name %> chose <%= @game.players[0].weapon.capitalize %>.</p>
   <p><%= @game.players[1].name %> chose <%= @game.players[1].weapon.capitalize %>.</p>
   <form action="/play" method="get">
