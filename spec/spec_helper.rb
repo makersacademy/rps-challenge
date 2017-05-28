@@ -2,8 +2,6 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-
-
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
@@ -14,9 +12,6 @@ require 'rspec'
 
 # tell Capybara about our app class
 Capybara.app = RPS
-
-
-
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

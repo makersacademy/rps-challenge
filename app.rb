@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    session[:name]= params[:player_name]
+    session[:name] = params[:player_name]
     redirect '/play'
   end
 
@@ -47,5 +47,5 @@ class RPS < Sinatra::Base
     rule(Item.scissors)
   end
 
-run! if $0 == __FILE__
+  run! if $0 == __FILE__
 end

@@ -2,9 +2,9 @@ require 'item'
 
 describe Item do
 
-  let(:rock){ Item.rock }
-  let(:scissors){ Item.scissors }
-  let(:paper){ Item.paper }
+  let(:rock) { Item.rock }
+  let(:scissors) { Item.scissors }
+  let(:paper) { Item.paper }
 
   it 'Rock beats Scissors' do
     expect(rock.beats(scissors)).to eq true
