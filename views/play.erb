@@ -1,8 +1,8 @@
-<h2>Hello <%= @name %>!</h2>
+<h2>Hello <%= @player.name %>!</h2>
 <p>Please select your weapon for this round</p>
 
-<form action="/weapons" >
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissor">
+<form action="/weapons" method="post" >
+  <input type="submit" name="weapon" value="Rock">
+  <input type="submit" name="weapon" value="Paper">
+  <input type="submit" name="weapon" value="Scissor">
 </form>
