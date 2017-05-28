@@ -1,9 +1,10 @@
 <h1> It's Rock Paper Scissors! </h1></br>
-<h3> First things first, what is your name? </h3>
+<h3> First things first: do you want to play against the computer, or another human?</h3>
 
-<form action = '/login' method='post'>
-  <label for='player'>Player:
-    <input type='text' name='player'>
-  </label>
-  <button type='submit'>Submit'</button>
+<form action='/login_single' method='post'>
+  <button type='submit'>Single Player'</button>
 </form>
+<form action='/login_multi' method='post'>
+  <button type='submit'>Multiplayer</button>
+</form>
+
