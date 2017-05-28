@@ -26,6 +26,9 @@ class RPS < Sinatra::Base
     "This is paper"
   end
 
+  post '/scissors' do
+    "This is scissors"
+  end
 
 run! if $0 == __FILE__
 end
