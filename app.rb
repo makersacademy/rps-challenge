@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "./lib/player"
 
 class RockPaperScissor < Sinatra::Base
 
@@ -17,6 +18,21 @@ class RockPaperScissor < Sinatra::Base
   get '/play' do
     @player1 = session[:player1]
     erb :play
+  end
+
+  get '/rock' do
+    @player1 = session[:player1]
+    erb :rock
+  end
+
+  get '/paper' do
+    @player1 = session[:player1]
+    erb :paper
+  end
+
+  get '/scissors' do
+    @player1 = session[:player1]
+    erb :scissors
   end
 
   run! if app_file ==$0
