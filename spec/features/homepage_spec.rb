@@ -1,4 +1,14 @@
 feature 'test infrastructure' do
+
+  scenario 'player can choose to play single player mode' do
+    visit('/')
+    choose('mode_1')
+  end
+
+  scenario 'player can choose to play two player mode' do
+    visit('/')
+  end
+
   scenario 'player can sign in' do
     sign_in
   end
