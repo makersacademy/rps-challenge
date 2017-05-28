@@ -25,7 +25,8 @@ class Rsp < Sinatra::Base
   get '/results' do
     @player_1_name = session[:player_1_name]
     @player_selection = session[:player_selection]
-    @computer_selection = ["Scissors"].sample
+    @computer_selection = ["Rock","Paper","Scissors"].sample
+    @result_hash = {["Rock","Scissors"] => :win, ["Paper", "Rock"] => :win, ["Scissors","Paper"] => :win, ["Rock", "Paper"] => :lose, ["Paper","Scissors"] => :lose, ["Scissors", "Rock"] => :lose, ["Rock","Rock"] => :tie, ["Paper", "Paper"] => :tie, ["Scissors","Scissors"] => :tie}
     erb :results
   end
 
