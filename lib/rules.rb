@@ -2,7 +2,11 @@
 class Rules
 
   def initialize
-    @beats = { :Rock => :Scissors, :Paper => :Rock, :Scissors => :Paper }
+    @beats = { :Rock => [:Scissors, :Lizard],
+               :Paper => [:Rock, :Spock],
+               :Scissors => [:Paper, :Lizard],
+               :Lizard => [:Spock, :Paper],
+               :Spock => [:Scisors, :Rock] }
   end
 
   def draw?(players_array)
@@ -10,6 +14,6 @@ class Rules
   end
 
   def check_rules(players_array)
-    players_array.last.choice == @beats[players_array.first.choice]
+    @beats[players_array.first.choice].include?(players_array.last.choice)
   end
 end

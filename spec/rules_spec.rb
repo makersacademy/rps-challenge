@@ -31,4 +31,20 @@ describe Rules do
     allow(opponent).to receive(:choice).and_return :Rock
     expect(rules.draw?(players_array)).to eq true
   end
+
+  it 'allows one of two beatable choices' do
+    allow(players_array).to receive(:first).and_return player
+    allow(players_array).to receive(:last).and_return opponent
+    allow(player).to receive(:choice).and_return :Lizard
+    allow(opponent).to receive(:choice).and_return :Paper
+    expect(rules.check_rules(players_array)).to eq true
+  end
+
+    it 'denies one of two unbeatable choices' do
+      allow(players_array).to receive(:first).and_return player
+      allow(players_array).to receive(:last).and_return opponent
+      allow(player).to receive(:choice).and_return :Spock
+      allow(opponent).to receive(:choice).and_return :Paper
+      expect(rules.check_rules(players_array)).to eq false
+    end
 end
