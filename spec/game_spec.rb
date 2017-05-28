@@ -14,22 +14,62 @@ describe Game do
     expect(game.players[1]).to eq player_2
   end
 
-  it 'player 1 should win if they play rock, computer plays scissors' do
-    allow(player_1).to receive(:weapon) { :rock }
-    allow(player_2).to receive(:weapon) { :scissors }
-    expect(game.battle).to eq :won
+  describe 'player 1 plays rock' do
+    before { allow(player_1).to receive(:weapon) { :rock } }
+
+    it 'player 1 should win if computer plays scissors' do
+      allow(player_2).to receive(:weapon) { :scissors }
+      expect(game.battle).to eq :won
+    end
+
+    it 'player 1 should draw if computer plays rock' do
+      allow(player_2).to receive(:weapon) { :rock }
+      expect(game.battle).to eq :draw
+    end
+
+
+    it 'player 1 should lose if computer plays paper' do
+      allow(player_2).to receive(:weapon) { :paper }
+      expect(game.battle).to eq :lose
+    end
   end
 
-  it 'player 1 should draw if they play rock, computer plays rock' do
-    allow(player_1).to receive(:weapon) { :rock }
-    allow(player_2).to receive(:weapon) { :rock }
-    expect(game.battle).to eq :draw
+  describe 'player 1 plays paper' do
+    before { allow(player_1).to receive(:weapon) { :paper} }
+
+    it 'player 1 should win if computer plays rock ' do
+      allow(player_2).to receive(:weapon) { :rock }
+      expect(game.battle).to eq :won
+    end
+
+    it 'player 1 should lose if computer plays scissors' do
+      allow(player_2).to receive(:weapon) { :scissors }
+      expect(game.battle).to eq :lose
+    end
+
+    it 'player 1 should draw if computer plays paper' do
+      allow(player_2).to receive(:weapon) { :paper }
+      expect(game.battle).to eq :draw
+    end
   end
 
+  describe 'player 1 plays scissors' do
+    before { allow(player_1).to receive(:weapon) { :scissors } }
 
-  it 'player 1 should lose if they play paper, computer plays scissors' do
-    allow(player_1).to receive(:weapon) { :paper }
-    allow(player_2).to receive(:weapon) { :scissors }
-    expect(game.battle).to eq :lose
+    it 'player 1 should lose if computer plays rock ' do
+      allow(player_2).to receive(:weapon) { :rock }
+      expect(game.battle).to eq :lose
+    end
+
+    it 'player 1 should draw if computer plays scissors' do
+      allow(player_2).to receive(:weapon) { :scissors }
+      expect(game.battle).to eq :draw
+    end
+
+    it 'player 1 should win if computer plays paper' do
+      allow(player_2).to receive(:weapon) { :paper }
+      expect(game.battle).to eq :won
+    end
   end
+
 end
