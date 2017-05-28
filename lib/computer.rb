@@ -3,7 +3,7 @@ class Computer
 
   def initialize
     @hand = false
-    @hands = { 'Rock' => 1, 'Paper' => 2, 'Scissors' => 4 }
+    @hands = { 'Rock' => 1, 'Paper' => 2, 'Scissors' => 4, 'Lizard' => 7, 'Spock' => 12 }
     @points = 0
     @value_hand = 0
   end

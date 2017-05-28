@@ -22,6 +22,16 @@ class Player
     @value_hand = 4
     @hand = 'Scissors'
   end
+  
+  def draw_lizard
+    @value_hand = 8
+    @hand = 'Lizard'
+  end
+  
+  def draw_spock
+    @value_hand = 13
+    @hand = 'Spock'
+  end
 
   def wins
     @points += 1
