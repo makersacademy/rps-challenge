@@ -34,6 +34,12 @@ feature 'outcome of game is displayed correctly' do
     sign_in_play_rock
     expect(page).to have_content 'You draw.'
   end
+
+  scenario 'player draws when player puts Scissors and computer puts Scissors' do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    sign_in_play_scissors
+    expect(page).to have_content 'You draw.'
+  end
 end
 
 feature 'player can restart game' do

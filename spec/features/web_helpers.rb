@@ -10,3 +10,10 @@ def sign_in_play_rock
   click_button('Submit')
   click_link('Rock')
 end
+
+def sign_in_play_scissors
+  visit ('/')
+  fill_in('player1_name', with: 'Kavita')
+  click_button('Submit')
+  click_link('Scissors')
+end

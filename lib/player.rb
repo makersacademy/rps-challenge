@@ -7,7 +7,7 @@ class Player
 
   def weapon=(weapon)
     validate_weapon(weapon)
-    @weapon = weapon.to_sym
+    @weapon = weapon.downcase.to_sym
   end
 
   def self.create(name)
