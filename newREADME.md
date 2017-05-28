@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors! #
+# Rock, Paper, Scissors, Lizard, Spock! #
 
 ## Where a player fights the computer to a digital death  ##
 
@@ -22,18 +22,53 @@ You will need to run the command ```$ gem install bundle``` if you don't have bu
 
 Rock, Paper, Scissors is a game of skill. The rules are as follows:
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+- Rock crushes Scissors and Lizards
+- Paper wraps Rock and disproves Spock
+- Scissors cut Paper and decapitate Lizards
+- Lizard poisons Spock and eats Paper
+- Spock vaporises Rock and smashes Scissors
 
-- The player will be presented the choices (rock, paper and scissors)
+  http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
+
+- The player will be presented the choices
 - the player can choose one option
 - the game will choose a random option
 - a winner will be declared
 
 ### Structure ###
-
-#'''tree'''
+    .
+    ├── CONTRIBUTING.md
+    ├── Gemfile
+    ├── Gemfile.lock
+    ├── LICENSE
+    ├── README.md
+    ├── Rakefile
+    ├── app.rb
+    ├── config.ru
+    ├── coverage
+    ├── docs
+    │   └── review.md
+    ├── lib
+    │   ├── game.rb
+    │   ├── opponent.rb
+    │   ├── player.rb
+    │   └── rules.rb
+    ├── newREADME.md
+    ├── spec
+    │   ├── features
+    │   │   ├── play_spec.rb
+    │   │   └── register_spec.rb
+    │   ├── game_spec.rb
+    │   ├── opponent_spec.rb
+    │   ├── player_spec.rb
+    │   ├── rules_spec.rb
+    │   ├── spec_helper.rb
+    │   └── web_helper.rb
+    ├── user_stories.md
+    └── views
+        ├── arena.erb
+        ├── index.erb
+        └── play.erb
 
 ### Development Methodology
 
