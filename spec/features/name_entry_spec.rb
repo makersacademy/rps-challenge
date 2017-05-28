@@ -4,4 +4,9 @@ feature 'Name entry' do
     visit('/')
     expect(page).to have_field 'player_name'
   end
+
+  scenario 'runs app, enters name, name is displayed on game page' do
+    sign_in_and_play
+    expect(page).to have_content 'Marketeer'
+  end
 end
