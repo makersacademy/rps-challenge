@@ -7,11 +7,11 @@ describe Game do
 
 
   it 'each game should have a Player 1' do
-    expect(game.player_1).to eq player_1
+    expect(game.players[0]).to eq player_1
   end
 
   it 'each game should have a Player 2' do
-    expect(game.player_2).to eq player_2
+    expect(game.players[1]).to eq player_2
   end
 
   it 'player 1 should win if they play rock, computer plays scissors' do
