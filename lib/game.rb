@@ -1,4 +1,5 @@
-require 'rules'
+# Responsible for allowing the game to result in a winner and loser
+require_relative 'rules'
 
 class Game
   attr_reader :players
@@ -22,6 +23,8 @@ class Game
   end
 
   def winner
-    @rules.check_rules(@players)
+    return 'You Win!' if @rules.check_rules(@players)
+    return 'You Lost'
   end
+
 end

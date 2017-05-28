@@ -1,12 +1,13 @@
+# Responsible for deciding who wins
+
 class Rules
 
-    # def initialize(player_choice, opponent_choice)
-    #   @player_choice = player_choice
-    #   @opponent_choice = opponent_choice
-    # end
+  def initialize
+    @beats = { :Rock => :Scissors, :Paper => :Rock, :Scissors => :Paper }
+  end
 
   def check_rules(players_array)
-    players_array.first
+    players_array.last.choice == @beats[players_array.first.choice]
   end
 
 end

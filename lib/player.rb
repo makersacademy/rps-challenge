@@ -1,3 +1,4 @@
+# Responsible for player information
 class Player
   attr_reader :name, :choice
 
@@ -6,7 +7,7 @@ class Player
   end
 
   def choose_hand(choice)
-    @choice = choice
+    @choice = choice.to_sym
   end
 
 end

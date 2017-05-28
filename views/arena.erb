@@ -1,5 +1,15 @@
+<div style="text-align: center; padding: 70px">
+
 <h1>Rock, Paper, Scissors</h1>
 
 <h3><%= "You chose #{@game.players[0].choice}" %></h3>
 
-<h2><%= "Your opponent chose #{@game.players[1].choice}" %></h2>
+<h3><%= "Your opponent chose #{@game.players[1].choice}" %></h3>
+
+<h2><%= @game.winner %> </h2>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play Again?">
+</form>
+
+</div>

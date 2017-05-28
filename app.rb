@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/opponent'
 require './lib/game'
+require './lib/opponent'
 require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
@@ -11,11 +11,15 @@ class RockPaperScissors < Sinatra::Base
 
   post '/register' do
     @game = Game.create(Player.new(params[:player_name]), Opponent.new)
-    erb :play
+    redirect '/play'
   end
 
   before do
     @game = Game.instance
+  end
+
+  get '/play' do
+    erb :play
   end
 
   post '/arena' do

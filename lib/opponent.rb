@@ -1,9 +1,10 @@
+# Responsible for deciding opoonent moves
 class Opponent
 
   attr_reader :choice
 
   def initialize
-    @weapons = ['Rock', 'Paper', 'Scissors']
+    @weapons = [:Rock, :Paper, :Scissors]
   end
 
   def choose_hand
