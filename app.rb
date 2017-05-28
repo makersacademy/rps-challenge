@@ -39,15 +39,15 @@ class RPS < Sinatra::Base
     erb(:play2)
   end
 
-  get '/result2' do
+  get '/twoplayer_result' do
     @game.players[1].weapon=(params[:weapon])
-    erb(:result2)
+    erb(:twoplayer_result)
   end
 
-  get '/result' do
+  get '/oneplayer_result' do
     @game.players[0].weapon=(params[:weapon])
     @game.players[1].choose_weapon
-    erb(:result)
+    erb(:oneplayer_result)
   end
 
 end
