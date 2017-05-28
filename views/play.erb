@@ -1,13 +1,15 @@
-<div>Welcome <%=$player1.name%>!</div></br>
+<h1><div>Welcome <%=$player1.name%>!</div></h1></br>
+<h3>Please select one of the below:</h3>
 
-<form action='/rock'>
-  <input type='submit' value='Rock'>
+<form action='/choice' method='post'>
+
+  <select name='weapon_choice'>
+    <option value='rock'>Rock</option>
+    <option value='paper'>Paper</option>
+    <option value='scissors'>Scissors</option>
+  </select>
+
+  <input type='submit' value='FIGHT!'>
 </form>
 
-<form action='/paper'>
-  <input type='submit' value='Paper'>
-</form>
-
-<form action='/scissors'>
-  <input type='submit' value='Scissors'>
-</form>
+<h3>You chose <%=$weapon%></h3>

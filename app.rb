@@ -17,22 +17,13 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @player1 = $player1
+    @weapon = $weapon
     erb :play
   end
 
-  get '/rock' do
-    @player1 = $player1
-    erb :rock
-  end
-
-  get '/paper' do
-    @player1 = $player1
-    erb :paper
-  end
-
-  get '/scissors' do
-    @player1 = $player1
-    erb :scissors
+  post '/choice' do
+    $weapon = params[:weapon_choice]
+    redirect '/play'
   end
 
 end
