@@ -1,4 +1,4 @@
-def sign_in
+def one_player_sign_in
   visit ('/')
   choose('mode_1')
   click_button('Submit')
@@ -6,7 +6,7 @@ def sign_in
   click_button('Submit')
 end
 
-def sign_in_play_rock
+def one_player_sign_in_play_rock
   visit ('/')
   choose('mode_1')
   click_button('Submit')
@@ -15,11 +15,20 @@ def sign_in_play_rock
   click_link('Rock')
 end
 
-def sign_in_play_scissors
+def one_player_sign_in_play_scissors
   visit ('/')
   choose('mode_1')
   click_button('Submit')
   fill_in('player1_name', with: 'Kavita')
   click_button('Submit')
   click_link('Scissors')
+end
+
+def two_player_sign_in
+  visit ('/')
+  choose('mode_2')
+  click_button('Submit')
+  fill_in('player1_name', with: 'Kavita')
+  fill_in('player2_name', with: 'Vanita')
+  click_button('Submit')
 end

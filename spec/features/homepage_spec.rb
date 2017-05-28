@@ -12,55 +12,44 @@ end
 
 feature 'two player mode' do
   scenario 'both players can sign in' do
-    visit ('/')
-    choose('mode_2')
-    click_button('Submit')
-    fill_in('player1_name', with: 'Kavita')
-    fill_in('player2_name', with: 'Vanita')
-    click_button('Submit')
+    two_player_sign_in
     expect(page).to have_content "Kavita, you're up first!"
   end
 
   scenario 'Player 2 has to choose after Player 1 chooses weapon' do
-    visit ('/')
-    choose('mode_2')
-    click_button('Submit')
-    fill_in('player1_name', with: 'Kavita')
-    fill_in('player2_name', with: 'Vanita')
-    click_button('Submit')
+    two_player_sign_in
     click_link('Rock')
     expect(page).to have_content "Vanita, you're up next!"
   end
-
 end
 
 feature 'one player mode' do
   scenario 'player can sign in' do
-    sign_in
+    one_player_sign_in
   end
 
   scenario 'player can view name' do
-    sign_in
+    one_player_sign_in
     expect(page).to have_content 'Welcome, Kavita'
   end
 
   scenario 'player is told to choose a weapon' do
-    sign_in
+    one_player_sign_in
     expect(page).to have_content 'Choose your weapon:'
   end
 
   scenario 'player is given a choice of Rock' do
-    sign_in
+    one_player_sign_in
     find_button('Rock').click
   end
 
   scenario 'player is given a choice of Paper' do
-    sign_in
+    one_player_sign_in
     find_button('Paper').click
   end
 
   scenario 'player is given a choice of Scissors' do
-    sign_in
+    one_player_sign_in
     find_button('Scissors').click
   end
 end
