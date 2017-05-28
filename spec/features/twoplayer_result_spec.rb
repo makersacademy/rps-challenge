@@ -20,4 +20,19 @@ feature 'outcome of 2 player game is displayed correctly' do
     two_player_sign_in_and_play
     expect(page).to have_content 'Vanita won.'
   end
+
+  scenario 'player 2 loses - player 1 puts Scissors and player 2 puts Paper' do
+    two_player_sign_in
+    click_link('Scissors')
+    click_link('Paper')
+    expect(page).to have_content 'Kavita won.'
+  end
+
+  scenario 'it is a draw - player 1 puts Paper and player 2 puts Paper' do
+    two_player_sign_in
+    click_link('Paper')
+    click_link('Paper')
+    expect(page).to have_content 'We have a draw.'
+  end
+
 end
