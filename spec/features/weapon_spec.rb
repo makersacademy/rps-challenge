@@ -2,16 +2,25 @@ feature "The player can choose a weapon of their choice" do
   scenario "Player can choose the rock button" do
     sign_in_and_register
     click_button('Rock')
-    expect(page).to have_content "You chose [:rock]!"
+    expect(page).to have_content "You chose rock"
   end
   scenario "Player can choose the paper button" do
     sign_in_and_register
     click_button('Paper')
-    expect(page).to have_content "You chose [:paper]!"
+    expect(page).to have_content "You chose paper"
   end
-  scenario "Player can choose the scissor button" do
+  scenario "Player can choose the scissors button" do
     sign_in_and_register
-    click_button('Scissor')
-    expect(page).to have_content "You chose [:scissor]!"
+    click_button('Scissors')
+    expect(page).to have_content "You chose scissors"
+  end
+
+  feature "The Evil computer can choose a weapon of their choice" do
+    scenario "Computer's choice is displayed" do
+      sign_in_and_register
+      click_button('Scissors')
+      # TODO work out how to test this feature for randomly selected computer method
+      expect(page).to have_content "The Evil Computer chose"
+    end
   end
 end

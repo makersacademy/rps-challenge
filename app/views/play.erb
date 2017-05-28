@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <h1> <center>  <font face='Courier New' color="blue"><%= "Welcome to the game #{@game.player.name}! choose your weapon to start the game against the evil computer:" %></font> </center> </h1>
+  <h1> <center>  <font face='Courier New' color="blue"><%= "Welcome to the game #{@game.player.name}! choose your weapon to start the game against #{@game.computer.name}:" %></font> </center> </h1>
 
     <form action="/weapon" method="POST">
       <input type="submit" value= "Rock"
@@ -17,7 +17,7 @@
     </form>
 
     <form action="/weapon" method="POST">
-      <input type="submit" value= "Scissor"
+      <input type="submit" value= "Scissors"
       name="weapon_choice" id="weapon_choice" />
     </form>
 </body>
