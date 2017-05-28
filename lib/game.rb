@@ -14,7 +14,7 @@ class Game
     @scores = { player1: 0, player2: 0 }
   end
 
-  def create_players(player1, player2 = Computer.new('Sgt. Quack'))
+  def create_players(player1, player2 = Computer.new('computer'))
     @players << player1
     @players << player2
   end

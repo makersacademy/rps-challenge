@@ -148,29 +148,38 @@ div {
     text-align: center;
 }
 
-p {
-    text-align: center;
-    font-family: Barrio, cursive;
-    color: white;
+#player_1_throw {
     font-size: 35px;
-}
-
-/*
-
-#weapons_box {
     margin: auto;
-    padding: 10px;
+    /*border: 1px white solid;*/
+    width: 500px;
+    left: 350px;
+    position: relative;
+}
+
+#player_2_throw {
+    font-size: 35px;
+    margin: auto;
+    /*border: 1px white solid;*/
+    width: 500px;
+    right: 350px;
+    position: relative;
+}
+
+#player_1_weapon {
+    width: 260px;
+    /*border: 1px white solid;*/
+}
+
+#player_2_weapon {
+    width: 260px;
+    -webkit-transform: rotate(90deg);
+    /*border: 1px white solid;*/
+}
+
+#outcome {
+    padding-top: 50px;
     width: 100%;
+    /*border: white solid 5px;*/
+    position: absolute;
 }
-
-li.weapon_list {
-    display: inline;
-    background-color: transparent;
-    height: 300px;
-}
-
-ul {
-    background-color: transparent;
-}
-
- */

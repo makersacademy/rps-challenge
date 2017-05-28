@@ -4,12 +4,12 @@ require './lib/game'
 class RubyPaperScissors < Sinatra::Base
   enable :sessions
 
-
   before do
     @game = session[:game]
   end
 
   get '/' do
+    session.clear
     session[:game] = Game.new
     erb :index
   end
@@ -36,6 +36,8 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
+    @player_1_name = @game.players[0].name
+    @player_2_name = @game.players[1].name
     erb :outcome
   end
 
