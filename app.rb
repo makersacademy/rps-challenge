@@ -3,6 +3,8 @@ require 'sinatra'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require './lib/ComputerPlayer'
+require './lib/Player'
 
 class RPS < Sinatra::Base
 
@@ -26,7 +28,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:object] = params[:object]
-    session[:computer_object] = :Scissors
+    session[:computer_object] = ComputerPlayer.new.random_selection
     redirect '/play'
   end
 
