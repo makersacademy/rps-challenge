@@ -7,5 +7,9 @@ class RubyPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/play' do
+    erb :play
+  end
+
   run! if __FILE__ == $PROGRAM_NAME
 end
