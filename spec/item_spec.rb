@@ -14,4 +14,8 @@ describe Item do
     expect(scissors.beats(paper)).to eq true
   end
 
+  it 'Paper beats Rock' do
+    expect(paper.beats(rock)).to eq true
+  end
+
 end
