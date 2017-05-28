@@ -12,7 +12,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 min-height: 100vh;
-background-color: rgb(59, 188, 239);
+background-color: rgb(179, 217, 255);
 }
 
 #Title {
@@ -26,7 +26,7 @@ background-color: rgb(59, 188, 239);
   font-family: Courier New;
   color: #ffffff;
   font-size: 18px;
-  background: transparent;
+  background: #11527a;
   padding: 7px 20px 7px 20px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -46,5 +46,5 @@ background-color: rgb(59, 188, 239);
 
 .weapon-button:hover {
   border: none;
-  background: #11527a;
+  background: rgb(204, 230, 255);
 }

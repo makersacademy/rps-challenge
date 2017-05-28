@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <div class="container">
-  <h1 id="Title"> Rock / Paper / Scissors </h1>
+  <h1 id="Title"> Rock / Paper / Scissors</h1>
   <br>
   <% if @player2 == nil %>
   <form action="/names" method="post">
@@ -9,7 +9,8 @@
       Player 1:
       <input type="text" name="player1_name" placeholder="Enter your name">
     </label>
-    <input type="submit" value="Submit">
+    <p>
+    <input class="restart-button" type="submit" value="Submit">
   </form>
   <% else %>
   <form action="/name" method="post">
