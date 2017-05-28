@@ -1,26 +1,26 @@
 class Game
-  attr_reader :player, :computer
+  attr_reader :player1, :player2
 
-  def initialize(player, computer = Computer.new)
-    @player = player
-    @computer = computer
+  def initialize(player1, player2 = Computer.new)
+    @player1 = player1
+    @player2 = player2
   end
 
   def winner
-    return "Tie!" if @player.hand == @computer.hand  
-    if @player.wins_from.include? @computer.hand 
-       @player.wins
-       "#{@player.hand} wins!" 
+    return "Tie!" if @player1.hand == @player2.hand  
+    if @player1.wins_from.include? @player2.hand 
+       @player1.wins
+       "#{@player1.hand} wins!" 
     else
-       @computer.wins
-       "#{@computer.hand} wins!" 
+       @player2.wins
+       "#{@player2.hand} wins!" 
     end 
   end 
 
   private
 
   def add_points(hand)
-    @player.hand == hand ? @player.wins : @computer.wins
+    @player1.hand == hand ? @player1.wins : @player2.wins
   end
 
   def declare_winner(hand)

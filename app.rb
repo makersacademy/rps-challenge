@@ -19,7 +19,7 @@ class Rps < Sinatra::Base
   end
   
   post '/login_single' do
-    session[:game] = Game.new(Player.new(params[:player]))	  
+    session[:game] = Game.new(Player.new(params[:player1]))	  
     redirect '/play'
   end
 
@@ -37,41 +37,41 @@ class Rps < Sinatra::Base
   end
 
   post '/rock' do
-    @player = session[:game].player
-    @player.draw_rock
-    session[:game].computer.play_hand
+    @player1 = session[:game].player1
+    @player1.draw_rock
+    session[:game].player2.play_hand
     session[:game].winner
     redirect '/play'
   end
 
   post '/scissors' do
-    @player = session[:game].player
-    @player.draw_scissors
-    session[:game].computer.play_hand
+    @player1 = session[:game].player1
+    @player1.draw_scissors
+    session[:game].player2.play_hand
     session[:game].winner
     redirect '/play'
   end
 
   post '/paper' do
-    @player = session[:game].player
-    @player.draw_paper
+    @player1 = session[:game].player1
+    @player1.draw_paper
     session[:game].winner
-    session[:game].computer.play_hand
+    session[:game].player2.play_hand
     redirect '/play'
   end
 
   post '/lizard' do
-    @player = session[:game].player
-    @player.draw_lizard
+    @player1 = session[:game].player1
+    @player1.draw_lizard
     session[:game].winner
-    session[:game].computer.play_hand
+    session[:game].player2.play_hand
     redirect '/play'
   end
   post '/spock' do
-    @player = session[:game].player
-    @player.draw_spock
+    @player1 = session[:game].player1
+    @player1.draw_spock
     session[:game].winner
-    session[:game].computer.play_hand
+    session[:game].player2.play_hand
     redirect '/play'
   end
 end
