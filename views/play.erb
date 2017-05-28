@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF=8">
+  <title>Ruby, Paper, Scissors!</title>
+  <link href="css/rps-stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="main_game_header">
+  <h2>Round 1<%= @round_no %></h2>
+  <h2>Choose your weapon!</h2>
+  <br>
+</div>
+
+<div id="weapons_box">
+  <form>
+    <ul>
+      <li><button class="weapon_option" type="submit"><img class="weapon_icon" src="images/ruby.png"></button></li>
+      <li><button class="weapon_option" type="submit"><img class="weapon_icon" src="images/paper.png"></button></li>
+      <li><button class="weapon_option" type="submit"><img class="weapon_icon" src="images/scissors.png"></button></li>
+    </ul>
+  </form>
+</div>
+
+</body>
+
+</html>

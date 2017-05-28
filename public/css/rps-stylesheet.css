@@ -30,6 +30,7 @@ form {
     width: 100%;
     text-align: center;
     border: solid 1px transparent;
+    background-color: transparent;
 }
 
 #form-box {
@@ -75,7 +76,8 @@ form {
 }
 
 li {
-    display: inline
+    display: inline;
+    background-color: transparent;
 }
 
 #submit-button {
@@ -98,13 +100,56 @@ input {
     font-size: 30px;
 }
 
-a {
+.rounds_option {
+    border: solid 1px transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-family: Barrio, cursive;
+    font-size: 250px;
     color: white;
-    text-decoration: none;
 }
 
-a:hover {
+.rounds_option:hover {
     -webkit-text-fill-color: #D34644;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
 }
+
+#main_game_header {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+img.weapon_icon {
+    background-color: transparent;
+    width: 75%;
+}
+
+.weapon_option {
+    border: solid 1px transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 300px;
+}
+
+/*
+
+#weapons_box {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+li.weapon_list {
+    display: inline;
+    background-color: transparent;
+    height: 300px;
+}
+
+ul {
+    background-color: transparent;
+}
+
+ */
