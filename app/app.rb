@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 
-  attr_reader :player_name
+  attr_reader :player
 
   enable :sessions
 
@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @player_name = params[:player_name]
+    @player = Player.new(params[:player_name])
     erb :play
   end
 
