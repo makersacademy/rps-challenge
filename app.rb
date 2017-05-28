@@ -19,12 +19,11 @@ class RPS < Sinatra::Base
   end
 
   post '/compare_weapon' do
-    session[:weapon_choice] = params[:weapon_choice]
+    $game.player.make_weapon_choice(params[:weapon_choice])
     redirect '/bout_result'
   end
 
   get '/bout_result' do
-    @weapon_choice = session[:weapon_choice]
     erb :bout_result
   end
 
