@@ -1,8 +1,21 @@
 require 'sinatra/base'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
+
   get '/' do
-    'Hello Owliver!'
+    erb :index
+  end
+
+  post '/name' do
+    @name = params[:name]
+    redirect '/play'
+  end
+
+
+  get '/play' do
+    @name = params[:name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
