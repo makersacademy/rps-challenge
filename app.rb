@@ -21,50 +21,34 @@ class RPS < Sinatra::Base
 
   def automated_choice
     random_choice = Randomiser.new
-    puts "new_choice"
     random_choice.picked_randomly
   end
 
 
-
   def rule(button)
     choice = automated_choice
-    if choice == "Rock" && button == 'Rock'
-      return "Randomizer: #{choice}, You: #{button}: The game is equal, play again"
-    elsif choice == "Rock" && button == 'Paper'
-      return "Randomizer: #{choice}, You: #{button}: You won"
-    elsif choice == "Rock" && button == 'Scissors'
-      return "Randomizer: #{choice}, You: #{button}: You lost"
-    elsif choice == "Paper" && button == 'Paper'
-      return "Randomizer: #{choice}, You: #{button}: The game is equal, play again"
-    elsif choice == "Paper" && button == 'Rock'
-      return "Randomizer: #{choice}, You: #{button}: You lost"
-    elsif choice == "Paper" && button == 'Scissors'
-      return "Randomizer: #{choice}, You: #{button}: You won"
-    elsif choice == "Scissors" && button == 'Scissors'
-      return "Randomizer: #{choice}, You: #{button}: The game is equal, play again"
-    elsif choice == "Scissors" && button == 'Paper'
-      return "Randomizer: #{choice}, You: #{button}: You lost"
-    elsif choice == "Scissors" && button == 'Rock'
-      return "Randomizer: #{choice}, You: #{button}: You won"
+    if button.beats(choice)
+      return "Randomizer: #{choice.name}, You: #{button.name}: You won"
+    elsif choice.beats(button)
+      return "Randomizer: #{choice.name}, You: #{button.name}: You lost"
     else
-      return "Error: #{choice}, #{button}"
-  end
+      return "Randomizer: #{choice.name}, You: #{button.name}: The game is equal, play again"
+    end
   end
 
   post '/rock' do
     "This is rock"
-    rule('Rock')
+    rule(Item.rock)
   end
 
   post '/paper' do
     "This is paper"
-    rule('Paper')
+    rule(Item.paper)
   end
 
   post '/scissors' do
     "This is scissors"
-    rule('Scissors')
+    rule(Item.scissors)
   end
 
 run! if $0 == __FILE__
