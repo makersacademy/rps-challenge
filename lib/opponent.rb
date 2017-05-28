@@ -1,6 +1,5 @@
 # Responsible for deciding opoonent moves
 class Opponent
-
   attr_reader :choice
 
   def initialize

@@ -35,4 +35,13 @@ describe Game do
     game.play_a_round(:Rock)
     expect(game.winner).to eq 'You Lost'
   end
+
+  it "knows if it's a draw" do
+    allow(player).to receive(:choose_hand).with(:Rock).and_return(:Rock)
+    allow(player).to receive(:choice).and_return(:Rock)
+    allow(opponent).to receive(:choose_hand).and_return(:Rock)
+    allow(opponent).to receive(:choice).and_return(:Rock)
+    game.play_a_round(:Rock)
+    expect(game.winner).to eq "It's a Draw"
+  end
 end

@@ -23,6 +23,7 @@ class Game
   end
 
   def winner
+    return "It's a Draw" if @rules.draw?(@players)
     return 'You Win!' if @rules.check_rules(@players)
     return 'You Lost'
   end
