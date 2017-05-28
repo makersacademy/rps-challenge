@@ -69,4 +69,21 @@ describe Game do
       expect(game.draw?).to eq false
     end
   end
+
+# TODO use doubles/spies properly here so it works use doubles/spies properly here so it works
+  xdescribe '#finish' do
+    it 'returns the player name if the player has won' do
+      game.win? == true
+      expect(game.finish).to eq "Charlotte"
+    end
+    it 'returns the player & computer name if the game is a draw' do
+      game.draw? == true
+      expect(game.finish).to eq "No one! It's a draw for Charlotte and The Evil Computer"
+    end
+    it 'returns the computer name if the computer has won' do
+      game.win? == false
+      game.draw? == false
+      expect(game.finish).to eq "Charlotte and The Evil Computer"
+    end
+  end
 end

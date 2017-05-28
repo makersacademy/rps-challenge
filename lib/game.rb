@@ -52,7 +52,7 @@ class Game
     if win? == true
       "#{@player.name}"
     elsif draw? == true
-      "#{@player.name} and #{@computer.name}"
+      "No one! It's a draw for #{@player.name} and #{@computer.name}"
     else
       "#{@computer.name}"
     end
