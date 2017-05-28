@@ -5,5 +5,5 @@ class Computer
   def initialize
     @name = "The Evil Computer"
   end
-  
+
 end
