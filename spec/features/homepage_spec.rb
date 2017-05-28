@@ -10,17 +10,17 @@ feature 'test infrastructure' do
   end
 end
 
-# feature 'two player mode' do
-#   scenario 'both players can sign in' do
-#     visit ('/')
-#     choose('mode_2')
-#     click_button('Submit')
-#     fill_in('player1_name', with: 'Kavita')
-#     fill_in('player2_name', with: 'Vanita')
-#     click_button('Submit')
-#     expect(page).to have_content "Kavita, you're up first"
-#   end
-# end
+feature 'two player mode' do
+  scenario 'both players can sign in' do
+    visit ('/')
+    choose('mode_2')
+    click_button('Submit')
+    fill_in('player1_name', with: 'Kavita')
+    fill_in('player2_name', with: 'Vanita')
+    click_button('Submit')
+    expect(page).to have_content 'NINJA!'
+  end
+end
 
 feature 'one player mode' do
   scenario 'player can sign in' do

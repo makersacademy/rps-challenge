@@ -7,12 +7,5 @@ class Computer
   def choose_weapon
     @weapon = Game::WEAPONS.sample
   end
-
-  def self.create
-    @computer = Computer.new
-  end
-
-  def self.instance
-    @computer
-  end
+  
 end

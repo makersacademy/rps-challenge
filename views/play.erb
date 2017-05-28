@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <div class="container">
+  <% if @game.players[1].instance_of? Computer %>
   <h1>Welcome, <%= @game.players[0].name %></h1>
   Choose your weapon:
   <p>
   <a href="/result?weapon=rock"><button class="weapon-button"><img alt="Rock" src="/images/rock.jpg"></button></a>
   <a href="/result?weapon=paper"><button class="weapon-button"><img alt="Paper" src="/images/paper_fn.jpg"></button></a>
   <a href="/result?weapon=scissors"><button class="weapon-button"><img alt="Scissors" src="/images/scissors.png"></button></a>
+  <% else %>
+  NINJA!
+  <% end %>
 </div>
