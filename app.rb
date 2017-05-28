@@ -8,7 +8,10 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-
+  post '/name' do
+    session[:player_name] = params[:player_name]
+    session[:player_name]
+  end
 
 
 run! if $0 == __FILE__
