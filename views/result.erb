@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="css/styles.css">
+
 <div class="container">
-You <%= @outcome %>.
-<br>
-You chose <%= @game.player_1.weapon.capitalize %>.
-<br>
-The computer chose <%= @game.player_2.weapon.capitalize %>.
-<br>
-<form action="/play" method="get">
-  <input type="submit" value="New Game">
-</form>
+  <h1>You <%= @outcome %>.</h1>
+  <p>You chose <%= @game.player_1.weapon.capitalize %>.
+  <br>The computer chose <%= @game.player_2.weapon.capitalize %>.</p>
+  <form action="/play" method="get">
+    <input type="submit" value="Rematch!">
+  </form>
+  <form action="/" method="get">
+    <input type="submit" value="New Game">
+  </form>
 </div>
