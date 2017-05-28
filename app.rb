@@ -14,9 +14,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-      @name = session[:name]
+    @name = session[:name]
     erb :play
   end
+
+  post '/rock' do
+    "This is rock"
+  end
+
 
 run! if $0 == __FILE__
 end
