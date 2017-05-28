@@ -2,9 +2,13 @@
 
   <h1><%= @name %> vs. Computer </h1>
   <br/><br/>
-rock
-paper
-scissors
+
+  <form action="/play" method="post">
+    <input type="submit" name="shape" value="Rock">
+    <input type="submit" name="shape" value="Paper">
+    <input type="submit" name="shape" value="Scissors">
+  </form>
+  You have chose <%= @shape %>
 
   <br/><br/>
   <form action="/play">
