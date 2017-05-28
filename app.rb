@@ -52,8 +52,6 @@ class RPS < Sinatra::Base
   end
   end
 
-
-
   post '/rock' do
     "This is rock"
     rule('Rock')
