@@ -12,16 +12,16 @@ class Rps < Sinatra::Base
   post '/play' do
     @player = Player.new(params[:name])
     $game = Game.new(@player)
-    @name = params[:name]
+    @game = $game
     erb:play
  end
 
  post '/result' do
-   @choice = params[:choice]
-   $game.player.choose(@choice)
-   $game.computer_choice
-   $game.player_choice
-   $game.winner
+   @game = $game
+   @game.player.choose(params[:choice])
+   @game.computer_choice
+   @game.player_choice
+   @game.winner
    erb:result
  end
 

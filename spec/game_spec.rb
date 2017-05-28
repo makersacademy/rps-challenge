@@ -14,28 +14,15 @@ subject(:game) {described_class.new(player)}
     end
   end
 
-  describe '#@computer_c' do
-    it 'holds the value from the computer_choice method' do
-      game.computer_choice
-      expect(game.computer_c).to be_an_integer
-    end
-  end
-
-  describe '#@player_c' do
-    it 'holds the value from the player_c method' do
-      game.player_choice
-      expect(game.player_c).to eq 0
-    end
-  end
 
   describe '#winner' do
     it 'returns DRAW if the player and computer gives the same value' do
       game1 = Game.new(player,0,0)
-      expect(game.winner).to eq 'DRAW'
+      expect(game1.winner).to eq 'DRAW'
     end
     it 'returns DRAW if the player and computer gives the same value' do
       game1 = Game.new(player,1,1)
-      expect(game.winner).to eq 'DRAW'
+      expect(game1.winner).to eq 'DRAW'
     end
     it 'returns DRAW if the player and computer gives the same value' do
       game1 = Game.new(player,2,2)

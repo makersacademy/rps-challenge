@@ -1,6 +1,10 @@
-<%=$game.player.name%> - time to take your turn
+<%=@game.player.name%> - time to take your turn
 <form action='/result' method='post'>
 </br></br>
   <input type='text' name='choice'>
+
+  <input type="radio" name="radios1" id="rock" value="rock">rock
+  <input type="radio" name="radios1" id="paper" value="paper">paper
+  <input type="radio" name="radios1" id="scissors" value="scissors">scissors
   <input type='submit' value='Confirm!'>
 </form>

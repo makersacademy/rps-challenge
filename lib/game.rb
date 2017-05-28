@@ -1,13 +1,14 @@
 class Game
 
- attr_reader :words, :player, :computer_c, :player_c, :result
+ attr_reader :player, :result
 
   def initialize(player, player_c= '', computer_c= '')
-  @words = [:rock, :paper, :scissors]
+  @words = [:rock, :paper, :scissors, :spock, :lizard]
+  @outcome = ['DRAW', 'PLAYER WON', 'COMPUTER WON','PLAYER WON','COMPUTER WON']
   @player = player
   @computer_c = computer_c
   @player_c = player_c
-  @result =''
+  @result
   end
 
   def computer_choice
@@ -23,14 +24,7 @@ class Game
   end
 
   def winner
-    if @player_c  == @computer_c
-      @result = 'DRAW'
-    elsif @player_c == @words.length-1 && @computer_c== 0
-        @result = 'COMPUTER WON'
-    elsif @computer_c == @player_c + 1
-      @result = 'COMPUTER WON'
-    else
-      @result = 'PLAYER WON'
-    end
+    @result = @outcome[@player_c - @computer_c]
   end
+
 end

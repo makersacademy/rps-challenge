@@ -61,3 +61,12 @@ feature 'Able to choose an option' do
     expect(page).to have_content "Results"
   end
 end
+
+feature 'Able to choose an option' do
+  scenario 'When a player gives their name and clicks okay then they are brought to the play page  ' do
+    set_up
+      choose "rock"
+      click_button "Confirm"
+    expect(page).to have_content "You chose rock"
+  end
+end
