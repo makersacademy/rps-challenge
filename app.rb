@@ -45,4 +45,19 @@ class Rps < Sinatra::Base
     session[:game].computer.play_hand
     redirect '/play'
   end
+
+  post '/lizard' do
+    @player = session[:game].player
+    @player.draw_lizard
+    session[:game].winner
+    session[:game].computer.play_hand
+    redirect '/play'
+  end
+  post '/spock' do
+    @player = session[:game].player
+    @player.draw_spock
+    session[:game].winner
+    session[:game].computer.play_hand
+    redirect '/play'
+  end
 end
