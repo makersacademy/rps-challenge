@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Rps < Sinatra::Base
 
@@ -9,28 +10,28 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    session[:player1] = params[:player1]
+    $player1 = Player.new(params[:player1])
     erb :play
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:player1]
+    @player1 = $player1
     erb :play
   end
 
   get '/rock' do
-    @player1 = session[:player1]
+    @player1 = $player1
     erb :rock
   end
 
   get '/paper' do
-    @player1 = session[:player1]
+    @player1 = $player1
     erb :paper
   end
 
   get '/scissors' do
-    @player1 = session[:player1]
+    @player1 = $player1
     erb :scissors
   end
 
