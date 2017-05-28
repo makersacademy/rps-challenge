@@ -23,4 +23,13 @@ feature "The player can choose a weapon of their choice" do
       expect(page).to have_content "The Evil Computer chose"
     end
   end
+
+  feature "The player is shown the outcome of the game" do
+    scenario "the player wins" do
+      sign_in_and_register
+      click_button('Scissors')
+      # TODO work out how to test this feature for randomly selected computer method
+      expect(page).to have_content "The winner of the game is:"
+    end
+  end
 end

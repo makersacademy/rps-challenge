@@ -45,15 +45,28 @@ describe Game do
     end
   end
 
-  # TODO correct this is it works correctly
+  # TODO use doubles/spies properly here so it works
   xdescribe '#win?' do
-    it 'returns true if the player has won the game' do
+    it 'returns true if the player has won' do
       game.start("Start")
       game = double(:game)
       allow(:game).to receive(:computer_weapons).and_return(:rock)
       game.computer_weapons
       game.game_weapons
       expect(game.win?).to eq true
+    end
+    it 'returns false if the computer has won' do
+      expect(game.win?).to eq false
+    end
+  end
+
+  # TODO use doubles/spies properly here so it works use doubles/spies properly here so it works
+  xdescribe '#draw?' do
+    it 'returns true if the player draws with the computer' do
+      expect(game.draw?).to eq true
+    end
+    it 'returns false if the player does not draw with the computer' do
+      expect(game.draw?).to eq false
     end
   end
 end

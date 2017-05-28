@@ -11,8 +11,8 @@ class Game
 
   def start(player_weapon)
     if @weapons.has_key?(player_weapon)
-    @player_weapon << @weapons.fetch(player_weapon)
-  end
+      @player_weapon << @weapons.fetch(player_weapon)
+    end
   end
 
   def player_weapon_string
@@ -42,6 +42,20 @@ class Game
 
   def win?
     WIN.include?(game_weapons())
+  end
+
+  def draw?
+    DRAW.include?(game_weapons())
+  end
+
+  def finish
+    if win? == true
+      "#{@player.name}"
+    elsif draw? == true
+      "#{@player.name} and #{@computer.name}"
+    else
+      "#{@computer.name}"
+    end
   end
 
 end
