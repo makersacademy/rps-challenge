@@ -1,6 +1,6 @@
 require 'Game'
 
-describe ComputerPlayer do
+describe Game do
   # subject(:computerplayer) {described_class.new}
 
 

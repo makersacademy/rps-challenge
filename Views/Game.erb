@@ -1,0 +1,11 @@
+<center>
+  <%= @game.player_1.name %>
+  <h2>you're a winner!</h2>
+  <%= @game.player_1.name %>
+  <h2>you drew!</h2>
+  <%= @game.player_1.name %>
+  <h2>you're a loser!</h2>
+<form action="/play" method="get">
+  <input type="submit" value="back to play">
+</form>
+</center>

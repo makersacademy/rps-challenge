@@ -18,6 +18,7 @@ class RPS < Sinatra::Base
     @player = session[:player]
     @object = session[:object]
     @computer_object = session[:computer_object]
+    @game = session[:game]
     erb(:play)
   end
 
@@ -32,9 +33,10 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-  # post '/commence' do
-  #
-  # end
+   post '/game' do
+    session[:game] = Game.new.winner
+    erb(:game)
+   end
 
    run! if app_file == $0
 end
