@@ -7,16 +7,12 @@ feature 'infrastructure of result page is set up properly' do
   end
 
   scenario 'player 1 can see their choice on results page' do
-    two_player_sign_in
-    click_link('Rock')
-    click_link('Paper')
+    two_player_sign_in_and_play
     expect(page).to have_content 'Kavita chose Rock.'
   end
 
   scenario 'player 2 can see their choice on results page' do
-    two_player_sign_in
-    click_link('Rock')
-    click_link('Paper')
+    two_player_sign_in_and_play
     expect(page).to have_content 'Vanita chose Paper.'
   end
 end
