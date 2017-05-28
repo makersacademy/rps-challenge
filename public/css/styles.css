@@ -18,3 +18,21 @@ background-color: rgb(59, 188, 239);
 #Title {
   font-size: 90px;
 }
+
+.restart-button {
+  -webkit-border-radius: 100;
+  -moz-border-radius: 100;
+  border-radius: 100px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 18px;
+  background: transparent;
+  padding: 7px 20px 7px 20px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.restart-button:hover {
+  border: none;
+  background: #11527a;
+}
