@@ -132,6 +132,27 @@ img.weapon_icon {
     -webkit-appearance: none;
     background-color: transparent;
     width: 300px;
+    font-family: Barrio, cursive;
+    font-size: 40px;
+    color: white;
+    /*border-radius: 100%;*/
+}
+
+.weapon_option:hover {
+    -webkit-text-fill-color: #D34644;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+div {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-family: Barrio, cursive;
+    color: white;
+    font-size: 35px;
 }
 
 /*
