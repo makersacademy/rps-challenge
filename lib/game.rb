@@ -15,11 +15,11 @@ class Game
 
   def battle
     if @player_1.weapon == @player_2.weapon
-      return 'draw'
+      return :draw
     elsif RULES[@player_1.weapon]  == @player_2.weapon
-      return 'won'
+      return :won
     else
-      return 'lose'
+      return :lose
     end
   end
 
