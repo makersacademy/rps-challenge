@@ -9,16 +9,30 @@ class Rps < Sinatra::Base
   get '/' do
     erb :index
   end
+  
+  get '/start_single' do
+    erb :login_single
+  end
 
-  post '/login' do
+  get '/start_multi' do
+    erb :login_multi
+  end
+  
+  post '/login_single' do
     session[:game] = Game.new(Player.new(params[:player]))	  
     redirect '/play'
   end
 
+  post '/login_multi' do
+    session[:game] = Game.new(Player.new(params[:player1]),Player.new(params[:player2]))
+    redirect '/play'
+  end
+
+  
   get '/play' do
     @game = session[:game]
-    @player = @game.player
-    @computer = @game.computer
+    @player1 = @game.player1
+    @player2 = @game.player2
     erb :play
   end
 
