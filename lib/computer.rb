@@ -1,5 +1,8 @@
+require_relative 'game'
+
 class Computer
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = [Weapon.new(:rock), Weapon.new(:paper), Weapon.new(:scissors)]
+
   attr_reader :weapon
 
   def name
@@ -7,6 +10,6 @@ class Computer
   end
 
   def choose_weapon
-    @weapon = Weapon.new(WEAPONS.sample)
+    @weapon = WEAPONS.sample
   end
 end

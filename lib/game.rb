@@ -1,4 +1,5 @@
 class Game
+
   attr_reader :player_one, :player_two, :winner
 
   def initialize(player_one, player_two)
@@ -16,12 +17,9 @@ class Game
   end
 
   def decide_winner
-    @winner = @player_one.name if @player_one.weapon.beats?(@player_two.weapon)
-    @winner = @player_two.name if @player_two.weapon.beats?(@player_one.weapon)
-  end
-
-  def not_the_winner
-    [@player_one, @player_two].select{ |player| player !=@winner }
+    @winner = @player_one if @player_one.weapon.beats?(@player_two.weapon)
+    @winner = @player_two if @player_two.weapon.beats?(@player_one.weapon)
+    @winner
   end
 
 end

@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Player
   attr_reader :name, :weapon
 
@@ -6,6 +8,6 @@ class Player
   end
 
   def choose_weapon(type)
-    @weapon = Weapon.new(type)
+    @weapon = Game::WEAPONS.sample
   end
 end
