@@ -17,5 +17,15 @@ class RPS < Sinatra::Base
     erb :play_rps
   end
 
+  post '/compare_weapon' do
+    session[:weapon_choice] = params[:weapon_choice]
+    redirect '/bout_result'
+  end
+
+  get '/bout_result' do
+    @weapon_choice = session[:weapon_choice]
+    erb :bout_result
+  end
+
 run! if app_file == $0
 end
