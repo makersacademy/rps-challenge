@@ -3,12 +3,12 @@
 Instructions
 -------
 
-* Classic **rock, paper, scissors** game, where the player sets up Rackup in order to open the webpage on a local host and load the page.  They then play the game against the computer and see who wins! :)
-* set up as follows:
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
-$ cd rps-challenge
-$ bundle
-$ rackup
+* -  Classic **rock, paper, scissors** game, where the player sets up Rackup in order to open the webpage on a local host and load the page.  They then play the game against the computer and see who wins! :)
+* -  set up as follows:
+* git clone git@github.com:[USERNAME]/rps-challenge.git
+* cd rps-challenge
+* bundle
+* rackup
 
 User Stories
 ----
