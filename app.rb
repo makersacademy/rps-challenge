@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/game'
 
 class RPS < Sinatra::Application
 
@@ -18,6 +19,19 @@ class RPS < Sinatra::Application
   get '/play' do
     @player_name = session[:player_name]
     erb :play
+  end
+
+  post '/weapons' do
+    @player1 = params[:weapon]
+    @game = Game.new(@player1, 'paper')
+    session[:game] = @game
+    session[:result] = @game.result
+    redirect '/results'
+  end
+
+  get '/results' do
+    @result = session[:result]
+    erb :result
   end
 
   # start the server if ruby file executed directly

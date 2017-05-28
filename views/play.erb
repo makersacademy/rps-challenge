@@ -1,8 +1,8 @@
 <h1>Welcome to Rock, Paper, Scissors <%= @player_name %>!</h1>
-<form action="/weapons">
+<form action="/weapons" method="POST">
   <div class="form-group">
-    <input class="btn btn-default" type="submit" value="rock">
-    <input class="btn btn-default" type="submit" value="paper">
-    <input class="btn btn-default" type="submit" value="scissors">
+    <input class="btn btn-default" type="submit" name="weapon" value="rock">
+    <input class="btn btn-default" type="submit" name="weapon" value="paper">
+    <input class="btn btn-default" type="submit" name="weapon" value="scissors">
   </div>
 </form>
