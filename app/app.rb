@@ -4,7 +4,7 @@ require '/Users/jenniferwem/Projects/rps-challenge/lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
-  attr_reader :player
+  # attr_reader :player, :game, :choice
 
   enable :sessions
 
@@ -14,15 +14,23 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     player = Player.new(params[:player_name])
-    @game = Game.new(player)
+    @game = Game.create(player)
     erb :play
   end
 
   get '/play' do
+    @game = Game.instance
     erb :play
   end
 
+  post '/choice' do
+    @game = Game.instance
+    @game.choice << (params[:weapon])
+    redirect '/results'
+  end
+
   get '/results' do
+    @game = Game.instance
     erb :results
   end
 
