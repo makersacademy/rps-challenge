@@ -7,6 +7,7 @@ feature 'test infrastructure' do
 
   scenario 'player can choose to play two player mode' do
     visit('/')
+    choose('mode_2')
   end
 
   scenario 'player can sign in' do
