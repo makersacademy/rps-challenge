@@ -34,5 +34,4 @@ feature 'outcome of 2 player game is displayed correctly' do
     click_link('Paper')
     expect(page).to have_content 'We have a draw.'
   end
-
 end

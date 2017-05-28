@@ -1,5 +1,5 @@
 def one_player_sign_in
-  visit ('/')
+  visit '/'
   choose('mode_1')
   click_button('Submit')
   fill_in('player1_name', with: 'Kavita')
@@ -17,7 +17,7 @@ def one_player_sign_in_play_scissors
 end
 
 def two_player_sign_in
-  visit ('/')
+  visit '/'
   choose('mode_2')
   click_button('Submit')
   fill_in('player1_name', with: 'Kavita')
