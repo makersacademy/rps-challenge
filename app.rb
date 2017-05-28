@@ -7,7 +7,17 @@ class RubyPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/player_name' do
+    session[:player_name] = params[:player_name]
+    redirect '/rounds'
+  end
+
+  get '/rounds' do
+    @player_name = session[:player_name]
+    erb :rounds
+  end
+
+  get '/play' do
     erb :play
   end
 

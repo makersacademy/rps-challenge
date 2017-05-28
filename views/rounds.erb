@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF=8">
+  <title>Ruby, Paper, Scissors!</title>
+  <link href="css/rps-stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="rounds_question_box">
+  <h3>Hi there, <%= @player_name %>!</h3><br>
+  <h3>How many rounds would you like to play?</h3>
+</div>
+
+<div id="rounds_option_box">
+  <ul id="rounds_option_list">
+    <li><a href="/play">1</a></li>
+    <li><a href="/play">3</a></li>
+    <li><a href="/play">5</a></li>
+    <li><a href="/play">7</a></li>
+  </ul>
+</div>
+
+</body>
+
+</html>

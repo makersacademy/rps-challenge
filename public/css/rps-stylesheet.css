@@ -51,6 +51,33 @@ form {
     height: 50px;
 }
 
+#rounds_question_box {
+    padding-top: 30px;
+    font-size: 45px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    line-height: 10px;
+}
+
+#rounds_option_box {
+    padding-top: 100px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#rounds_option_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 250px;
+}
+
+li {
+    display: inline
+}
+
 #submit-button {
     border: solid 1px transparent;
     -webkit-appearance: none;
@@ -62,11 +89,22 @@ form {
 }
 
 #submit-button:hover {
-    -webkit-text-fill-color: #D34644; /* Will override color (regardless of order) */
+    -webkit-text-fill-color: #D34644;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
 }
 
 input {
     font-size: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    -webkit-text-fill-color: #D34644;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
 }
