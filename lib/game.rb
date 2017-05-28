@@ -1,8 +1,11 @@
+require 'rules'
+
 class Game
   attr_reader :players
 
-  def initialize(player, opponent)
+  def initialize(player, opponent, rules = Rules.new)
     @players = [player, opponent]
+    @rules = rules
   end
 
   def self.create(player, opponent)
@@ -18,4 +21,7 @@ class Game
     @players[1].choose_hand
   end
 
+  def winner
+    @rules.check_rules(@players)
+  end
 end
