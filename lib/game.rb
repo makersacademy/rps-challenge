@@ -22,4 +22,8 @@ class Game
     @winner
   end
 
+  def reset
+    @winner = "Nobody"
+  end
+
 end
