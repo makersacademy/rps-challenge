@@ -10,7 +10,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/register' do
-    # @player = params[:player_name]
     @game = Game.create(Player.new(params[:player_name]),Opponent.new)
     erb :play
   end
@@ -22,6 +21,7 @@ class RockPaperScissors < Sinatra::Base
   post '/arena' do
     @choice = params[:choice]
     @opponent_choice = @game.players[1].choose_hand
+      # TODO - look up ways to satisfy law of demeter e.g. Presentation Class?
     erb :arena
   end
 
