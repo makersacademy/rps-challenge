@@ -1,7 +1,7 @@
 require 'computer'
 
 describe Computer do
-  subject(:computer) { described_class.new }
+  let (:computer) { Computer.create }
 
   it 'allow Computer to choose a weapon' do
     computer.choose_weapon
