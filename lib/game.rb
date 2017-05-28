@@ -15,9 +15,9 @@ class Game
   @game = Game.new(player_1)
   end
 
-def self.instance
-  @game
-end
+  def self.instance
+    @game
+  end
 
   def computer_choice
     @computer_c = rand(3)

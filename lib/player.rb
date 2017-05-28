@@ -8,7 +8,7 @@ attr_reader :name, :choice
   end
 
   def choose(choice)
-    @choice = choice.downcase.to_sym
+    @choice = choice.to_sym
 
   end
 

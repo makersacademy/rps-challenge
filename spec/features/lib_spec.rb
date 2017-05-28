@@ -58,7 +58,7 @@ feature 'Able to choose an option' do
   scenario 'When a player gives their name and clicks okay then they are brought to the play page ' do
     set_up
     choice
-    expect(page).to have_content "Results"
+    expect(page).to have_content "Result"
   end
 end
 
