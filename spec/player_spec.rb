@@ -7,5 +7,12 @@ describe Player do
       expect(player.name).to eq "Jerry"
     end
   end
+ 
+  describe '#wins' do
+    it 'adds a point when a hand has won' do
+      expect { player.wins }.to change { player.points }.by 1
+    end
+  end
+ 
 end
 

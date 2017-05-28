@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -10,35 +11,37 @@ class Rps < Sinatra::Base
   end
 
   post '/login' do
-    session[:player] = Player.new(params[:player])
-    session[:computer] = Computer.new
+    session[:game] = Game.new(Player.new(params[:player]))	  
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
-    @computer = session[:computer]
+    @player = session[:game].player
+    @computer = session[:game].computer
     erb :play
   end
 
   post '/rock' do
-    @player = session[:player]
+    @player = session[:game].player
     @player.draw_rock
-    session[:computer].play_hand
+    session[:game].computer.play_hand
+    session[:game].winner
     redirect '/play'
   end
 
   post '/scissors' do
-    @player = session[:player]
+    @player = session[:game].player
     @player.draw_scissors
-    session[:computer].play_hand
+    session[:game].computer.play_hand
+    session[:game].winner
     redirect '/play'
   end
 
   post '/paper' do
-    @player = session[:player]
+    @player = session[:game].player
     @player.draw_paper
-    session[:computer].play_hand
+    session[:game].winner
+    session[:game].computer.play_hand
     redirect '/play'
   end
 

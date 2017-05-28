@@ -1,6 +1,8 @@
 <h1> Let the games begin!</h1></br>
 <h2> Playing: <%= @player.name %> vs. the Computer </h2></br>
 
+<h3> wins: <%= @player.points %>   wins: <%= @computer.points %></h3></br> 
+	
 <% if @player.hand %>
     <h3> <%= @player.name%> plays: <%= @player.hand%> </h3>
 <% end %>
