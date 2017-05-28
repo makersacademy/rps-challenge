@@ -4,13 +4,13 @@ require './lib/game'
 class RubyPaperScissors < Sinatra::Base
   enable :sessions
 
-  game = Game.new
 
   before do
-    @game = game
+    @game = session[:game]
   end
 
   get '/' do
+    session[:game] = Game.new
     erb :index
   end
 
@@ -27,6 +27,19 @@ class RubyPaperScissors < Sinatra::Base
   post '/play' do
     rounds = params[:no_of_rounds].to_i
     @game.no_of_rounds = [*1..rounds]
+    erb :play
+  end
+
+  post '/fight' do
+    session[:weapon] = params[:weapon]
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    erb :outcome
+  end
+
+  get 'play' do
     erb :play
   end
 

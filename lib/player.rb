@@ -10,8 +10,4 @@ class Player
     @weapon_choice = weapon_choice
   end
 
-  def wins_round
-
-  end
-
 end

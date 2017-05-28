@@ -125,6 +125,7 @@ input {
 img.weapon_icon {
     background-color: transparent;
     width: 75%;
+    padding-right: 30px;
 }
 
 .weapon_option {
@@ -135,7 +136,6 @@ img.weapon_icon {
     font-family: Barrio, cursive;
     font-size: 40px;
     color: white;
-    /*border-radius: 100%;*/
 }
 
 .weapon_option:hover {
