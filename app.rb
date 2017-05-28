@@ -55,19 +55,15 @@ class Rps < Sinatra::Base
   end
 
   post '/lizard' do
-    @player1 = session[:game].player1
-    @player1.draw_lizard
-    session[:game].winner
-    session[:game].player2.play_hand
-    redirect '/play'
+    @current_player = session[:game].current_player
+    @current_player.draw_lizard
+    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
  
   post '/spock' do
-    @player1 = session[:game].player1
-    @player1.draw_spock
-    session[:game].winner
-    session[:game].player2.play_hand
-    redirect '/play'
+    @current_player = session[:game].current_player
+    @current_player.draw_spock
+    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
 
   get '/multiplayer' do
