@@ -18,8 +18,20 @@ feature 'two player mode' do
     fill_in('player1_name', with: 'Kavita')
     fill_in('player2_name', with: 'Vanita')
     click_button('Submit')
-    expect(page).to have_content 'NINJA!'
+    expect(page).to have_content "Kavita, you're up first!"
   end
+
+  scenario 'Player 2 has to choose after Player 1 chooses weapon' do
+    visit ('/')
+    choose('mode_2')
+    click_button('Submit')
+    fill_in('player1_name', with: 'Kavita')
+    fill_in('player2_name', with: 'Vanita')
+    click_button('Submit')
+    click_link('Rock')
+    expect(page).to have_content "Vanita, you're up next!"
+  end
+
 end
 
 feature 'one player mode' do

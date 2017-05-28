@@ -9,6 +9,11 @@
   <a href="/result?weapon=paper"><button class="weapon-button"><img alt="Paper" src="/images/paper_fn.jpg"></button></a>
   <a href="/result?weapon=scissors"><button class="weapon-button"><img alt="Scissors" src="/images/scissors.png"></button></a>
   <% else %>
-  NINJA!
+  <h1><%= @game.players[0].name %>, you're up first!</h1>
+  Choose your weapon:
+  <p>
+  <a href="/switch_turn?weapon=rock"><button class="weapon-button"><img alt="Rock" src="/images/rock.jpg"></button></a>
+  <a href="/switch_turn?weapon=paper"><button class="weapon-button"><img alt="Paper" src="/images/paper_fn.jpg"></button></a>
+  <a href="/switch_turn?weapon=scissors"><button class="weapon-button"><img alt="Scissors" src="/images/scissors.png"></button></a>
   <% end %>
 </div>

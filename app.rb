@@ -34,6 +34,16 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/switch_turn' do
+    @game.players[0].weapon=(params[:weapon])
+    erb(:play2)
+  end
+
+  get '/result2' do
+    @game.players[1].weapon=(params[:weapon])
+    erb(:result2)
+  end
+
   get '/result' do
     @game.players[0].weapon=(params[:weapon])
     @game.players[1].choose_weapon
