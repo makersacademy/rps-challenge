@@ -40,50 +40,15 @@ describe Game do
     it 'stores the player and computer weapons in an array' do
       # TODO correct this is it works correctly
       game = double(:game)
-      allow(:game).to receive(:game_weapons).and_return([:rock, :rock])
+      allow(:game).to receive().and_return([:rock, :rock])
       expect(game.game_weapons).to eq [:rock, :rock]
     end
   end
-
-  # TODO use doubles/spies properly here so it works
-  xdescribe '#win?' do
-    it 'returns true if the player has won' do
-      game.start("Start")
-      game = double(:game)
-      allow(:game).to receive(:computer_weapons).and_return(:rock)
-      game.computer_weapons
-      game.game_weapons
-      expect(game.win?).to eq true
-    end
-    it 'returns false if the computer has won' do
-      expect(game.win?).to eq false
-    end
-  end
-
-  # TODO use doubles/spies properly here so it works use doubles/spies properly here so it works
-  xdescribe '#draw?' do
-    it 'returns true if the player draws with the computer' do
-      expect(game.draw?).to eq true
-    end
-    it 'returns false if the player does not draw with the computer' do
-      expect(game.draw?).to eq false
-    end
-  end
-
-# TODO use doubles/spies properly here so it works use doubles/spies properly here so it works
-  xdescribe '#finish' do
-    it 'returns the player name if the player has won' do
-      game.win? == true
-      expect(game.finish).to eq "Charlotte"
-    end
-    it 'returns the player & computer name if the game is a draw' do
-      game.draw? == true
-      expect(game.finish).to eq "No one! It's a draw for Charlotte and The Evil Computer"
-    end
-    it 'returns the computer name if the computer has won' do
-      game.win? == false
-      game.draw? == false
-      expect(game.finish).to eq "Charlotte and The Evil Computer"
+  
+  # TODO correct this is it works correctly
+  xdescribe 'win_game?' do
+    it 'returns true if the game has been won' do
+      expect(game.win_game?).to eq true
     end
   end
 end

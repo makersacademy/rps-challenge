@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
 require './lib/computer.rb'
+require './lib/victory_calculator.rb'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -26,8 +27,6 @@ class RPSWeb < Sinatra::Base
     @game = @@game
     @player_weapon = params[:weapon_choice]
     @game.start(@player_weapon)
-    @game.games_weapons
-    @game.finish
     redirect '/weapon'
   end
 
