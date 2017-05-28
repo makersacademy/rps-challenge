@@ -9,8 +9,8 @@ describe Game do
     expect(game.player.name).to eq 'name'
   end
 
-  it 'initialises with an empty array, @choice' do
+  it 'initialises with an instance variable, @choice' do
     player = Player.new("name")
-    expect(player.choice).to eq []
+    expect(player.choice).to eq nil
   end
 end
