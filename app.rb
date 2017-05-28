@@ -28,7 +28,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    session[:object] = params[:object]
+    session[:object] = params[:object].to_sym
     session[:computer_object] = Game.new.random_selection
     redirect '/play'
   end
