@@ -8,6 +8,6 @@ class Player
   end
 
   def choose_weapon(type)
-    @weapon = Game::WEAPONS.sample
+    @weapon = Weapon.new(type)
   end
 end
