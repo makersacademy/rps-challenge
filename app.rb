@@ -25,6 +25,7 @@ class Rsp < Sinatra::Base
   get '/results' do
     @player_1_name = session[:player_1_name]
     @player_selection = session[:player_selection]
+    @computer_selection = ["Scissors"].sample
     erb :results
   end
 
