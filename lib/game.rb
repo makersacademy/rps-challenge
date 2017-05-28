@@ -29,15 +29,15 @@ class Game
   end
 
   WIN = [
-    [:rock, :s],
+    [:rock, :scissors],
     [:paper, :rock],
-    [:s, :paper]
+    [:scissors, :paper]
   ]
 
   DRAW = [
     [:rock, :rock],
     [:paper, :paper],
-    [:s, :s]
+    [:scissors, :scissors]
   ]
 
   def win?
