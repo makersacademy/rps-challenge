@@ -36,4 +36,8 @@ class Player
   def wins
     @points += 1
   end
+  
+  def empty_hand
+    @hand = false 
+  end
 end

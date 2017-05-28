@@ -38,28 +38,20 @@ class Rps < Sinatra::Base
 
   post '/rock' do
     @current_player = session[:game].current_player
-    @current_player.draw_rock unless session[:game].computer_mode 
-    @session.play_hand if session[:game].computer_mode
-    session[:game].winner if session[:game].final_hand?
-    session[:game].switch_player
-    redirect '/play'
+    @current_player.draw_rock
+    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
 
   post '/scissors' do
     @current_player = session[:game].current_player
-    @current_player.draw_scissors unless session[:game].computer_mode 
-    @session.play_hand if session[:game].computer_mode
-    session[:game].winner if session[:game].final_hand?
-    session[:game].switch_player
-    redirect '/play'
+    @current_player.draw_scissors
+    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
 
   post '/paper' do
-    @player1 = session[:game].player1
-    @player1.draw_paper
-    session[:game].winner
-    session[:game].player2.play_hand
-    redirect '/play'
+    @current_player = session[:game].current_player
+    @current_player.draw_paper 
+    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
 
   post '/lizard' do
@@ -69,6 +61,7 @@ class Rps < Sinatra::Base
     session[:game].player2.play_hand
     redirect '/play'
   end
+ 
   post '/spock' do
     @player1 = session[:game].player1
     @player1.draw_spock
@@ -76,4 +69,15 @@ class Rps < Sinatra::Base
     session[:game].player2.play_hand
     redirect '/play'
   end
+
+  get '/multiplayer' do
+    session[:game].winner if session[:game].final_hand?
+    session[:game].switch_player
+    redirect '/play'
+  end
+
+  get '/singleplayer' do
+    session[:game].opponent.play_hand 
+    redirect '/play'
+  end 
 end
