@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
   end
 
   post '/compare_weapon' do
+    $game.opponent.make_weapon_choice
     $game.player.make_weapon_choice(params[:weapon_choice])
     redirect '/bout_result'
   end
