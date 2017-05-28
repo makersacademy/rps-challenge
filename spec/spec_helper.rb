@@ -3,6 +3,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
+require 'features/web_helpers.rb'
 
 require File.join(File.dirname(__FILE__), '..', 'rps_web.rb')
 
