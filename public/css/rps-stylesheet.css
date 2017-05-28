@@ -150,36 +150,34 @@ div {
 
 #player_1_throw {
     font-size: 35px;
+    text-align: right;
     margin: auto;
-    /*border: 1px white solid;*/
     width: 500px;
     left: 350px;
     position: relative;
+    top: 386px;
 }
 
 #player_2_throw {
     font-size: 35px;
+    text-align: left;
     margin: auto;
-    /*border: 1px white solid;*/
     width: 500px;
     right: 350px;
     position: relative;
+    bottom: -20px;
 }
 
 #player_1_weapon {
     width: 260px;
-    /*border: 1px white solid;*/
 }
 
 #player_2_weapon {
     width: 260px;
     -webkit-transform: rotate(90deg);
-    /*border: 1px white solid;*/
 }
 
 #outcome {
-    padding-top: 50px;
     width: 100%;
-    /*border: white solid 5px;*/
     position: absolute;
 }
