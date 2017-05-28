@@ -11,13 +11,13 @@
 
 <body id="outcome">
 <div id="player_1_throw">
-  <img src="images/right/scissors.png" id="player_1_weapon"><br>
-  <%= @player_1_name %> throws scissors!
+  <img src="images/right/<%= @player_1_weapon %>.png" id="player_1_weapon"><br>
+  <%= @player_1_name %> throws <%= @player_1_weapon %>!
 </div>
 <br><br><br>
 <div id="player_2_throw">
-  <img src="images/left/paper.png" id="player_2_weapon"><br>
-  <%= @player_2_name %> throws paper!
+  <img src="images/left/<%= @player_2_weapon %>.png" id="player_2_weapon"><br>
+  <%= @player_2_name %> throws <%= @player_2_weapon %>!
 </div>
 </body>
 

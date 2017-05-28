@@ -6,7 +6,8 @@ class Game
   attr_reader :players
   attr_accessor :scores, :no_of_rounds
 
-  WEAPONS = { :ruby => :scissors, :scissors => :paper, :paper => :ruby }.freeze
+  WEAPONS = [:ruby, :paper, :scissors]
+  RULES = { :ruby => :scissors, :scissors => :paper, :paper => :ruby }.freeze
 
   def initialize
     @players = []

@@ -36,6 +36,8 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
+    @player_1_weapon = session[:weapon].to_s
+    @player_2_weapon = Game::WEAPONS.sample.to_s
     @player_1_name = @game.players[0].name
     @player_2_name = @game.players[1].name
     erb :outcome
