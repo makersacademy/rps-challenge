@@ -38,5 +38,13 @@ background-color: rgb(59, 188, 239);
 }
 
 .weapon-button {
-  background: transparent; 
+  border: none;
+  background: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.weapon-button:hover {
+  border: none;
+  background: #11527a;
 }
