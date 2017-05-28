@@ -13,6 +13,5 @@ describe Player do
       expect { player.wins }.to change { player.points }.by 1
     end
   end
- 
 end
 

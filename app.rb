@@ -16,8 +16,9 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:game].player
-    @computer = session[:game].computer
+    @game = session[:game]
+    @player = @game.player
+    @computer = @game.computer
     erb :play
   end
 
@@ -44,6 +45,4 @@ class Rps < Sinatra::Base
     session[:game].computer.play_hand
     redirect '/play'
   end
-
-
 end

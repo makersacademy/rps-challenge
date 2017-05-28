@@ -2,7 +2,7 @@ require 'computer'
 
 describe Computer do
   subject(:computer) { described_class.new }
-  let(:possible_hands) { ['Rock','Paper','Scissors'] }
+  let(:possible_hands) { ['Rock', 'Paper', 'Scissors'] }
  
   
   describe '#play_hand' do

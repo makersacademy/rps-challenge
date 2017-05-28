@@ -4,11 +4,12 @@
 <h3> wins: <%= @player.points %>   wins: <%= @computer.points %></h3></br> 
 	
 <% if @player.hand %>
-    <h3> <%= @player.name%> plays: <%= @player.hand%> </h3>
+    <h3> <%= @player.name %> plays: <%= @player.hand %> </h3>
+    <h3> <%= @game.winner %> </h3>
 <% end %>
 
 <% if @computer.hand %>
-  <h3> Computer plays: <%= @computer.hand%> </h3>
+  <h3> Computer plays: <%= @computer.hand %> </h3>
 <% end %>
 
 <form action='/rock', method='post'>

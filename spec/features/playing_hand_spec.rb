@@ -16,6 +16,5 @@ feature 'playing hand' do
     click_button 'Paper'
     expect(page).to have_content 'The Obsidian Man plays: Paper'
   end
-
 end
 

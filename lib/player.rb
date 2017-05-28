@@ -1,24 +1,25 @@
 class Player
-  attr_reader :name, :hand, :points
+  attr_reader :name, :hand, :points, :value_hand
 
   def initialize(name)
     @name = name
     @hand = false
     @points = 0
+    @value_hand = 0
   end
 
   def draw_rock
-    @value = 1
+    @value_hand = 1
     @hand = 'Rock'
   end
     
   def draw_paper
-    @value = 2
+    @value_hand = 2
     @hand = 'Paper'
   end
 
   def draw_scissors
-    @value = 4
+    @value_hand = 4
     @hand = 'Scissors'
   end
 
