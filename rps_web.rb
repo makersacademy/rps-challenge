@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class RPSWeb < Sinatra::Base
 
-  get '/' do
+  get '/infrastructure_testing' do
     'Hello RPSWeb!'
   end
 
