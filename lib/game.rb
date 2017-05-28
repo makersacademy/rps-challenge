@@ -14,13 +14,8 @@ class Game
   end
 
   def battle
-    if @player_1.weapon == @player_2.weapon
-      return :draw
-    elsif RULES[@player_1.weapon]  == @player_2.weapon
-      return :won
-    else
-      return :lose
-    end
+    return :draw if @player_1.weapon == @player_2.weapon
+    RULES[@player_1.weapon]  == @player_2.weapon ? :won : :lose
   end
 
   def self.create(player_1, player_2)
