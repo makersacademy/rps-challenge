@@ -174,7 +174,6 @@ div {
 
 #player_2_weapon {
     width: 260px;
-    -webkit-transform: rotate(90deg);
 }
 
 #outcome {
