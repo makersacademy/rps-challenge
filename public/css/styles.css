@@ -36,3 +36,7 @@ background-color: rgb(59, 188, 239);
   border: none;
   background: #11527a;
 }
+
+.weapon-button {
+  background: transparent; 
+}
