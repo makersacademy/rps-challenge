@@ -1,6 +1,6 @@
 class Player
 
-attr_reader :name, :choice
+  attr_reader :name, :choice
 
   def initialize(name)
     @name = name
@@ -9,7 +9,6 @@ attr_reader :name, :choice
 
   def choose(choice)
     @choice = choice.to_sym
-
   end
 
 end
