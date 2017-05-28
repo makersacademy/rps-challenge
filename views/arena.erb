@@ -1,5 +1,5 @@
 <h1>Rock, Paper, Scissors</h1>
 
-<h3><%= "You chose #{@choice}" %></h3>
+<h3><%= "You chose #{@game.players[0].choice}" %></h3>
 
-<h2><%= "Your opponent chose #{@opponent_choice}" %></h2>
+<h2><%= "Your opponent chose #{@game.players[1].choice}" %></h2>

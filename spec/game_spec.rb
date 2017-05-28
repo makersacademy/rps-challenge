@@ -8,4 +8,9 @@ describe Game do
   it 'knows who is in the game' do
     expect(game.players).to eq [player, opponent]
   end
+
+  it 'knows what the player chose' do
+    
+
+  end
 end

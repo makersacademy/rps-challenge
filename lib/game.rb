@@ -13,4 +13,9 @@ class Game
     @game
   end
 
+  def play_a_round(player_choice)
+    @players[0].choose_hand(player_choice)
+    @players[1].choose_hand
+  end
+
 end

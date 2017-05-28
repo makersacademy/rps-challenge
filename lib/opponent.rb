@@ -1,11 +1,13 @@
 class Opponent
 
+  attr_reader :choice
+
   def initialize
     @weapons = ['Rock', 'Paper', 'Scissors']
   end
 
   def choose_hand
-    @weapons[random_pick - 1]
+    @choice = @weapons[random_pick - 1]
   end
 
   private
