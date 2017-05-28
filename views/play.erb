@@ -9,6 +9,7 @@
     <input type="submit" name="shape" value="Scissors">
   </form>
   You have chose <%= @shape %>
+  <div>Computer has chose <%= @opposing_player_shape.to_s.capitalize %></div>
 
   <br/><br/>
   <form action="/play">

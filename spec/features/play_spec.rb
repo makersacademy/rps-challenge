@@ -18,5 +18,17 @@ feature 'play a RPS game' do
     expect(page).to have_content('You have chose Paper')
   end
 
+  # The computer chose an option
+  scenario 'computer chooses a shape ' do
+    srand 1234
+    sign_in_and_play
+    click_button('Rock')
+    shape = find('div').text.split.last
+    expect(possible_shapes).to include shape
+  end
+
+  def possible_shapes
+    [:rock, :paper, :scissors].sample.to_s.capitalize!
+  end
 
 end

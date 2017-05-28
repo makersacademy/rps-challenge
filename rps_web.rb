@@ -9,7 +9,6 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/names' do
-    p params
     session[:name] = params[:name]
     redirect '/play'
   end
@@ -17,13 +16,14 @@ class RPSWeb < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @shape = session[:shape]
-    p @name, @shape
+    @opposing_player_shape = session[:opposing_player_shape]
+    p 'opposing', @opposing_player_shape
     erb :play
   end
 
   post '/play' do
-    p params
     session[:shape] = params[:shape]
+    session[:opposing_player_shape] = :scissors
     redirect '/play'
   end
 
