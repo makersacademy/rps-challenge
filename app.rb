@@ -9,10 +9,15 @@ class RPS < Sinatra::Application
     erb :name_form
   end
 
-  post '/game' do
+  post '/game-setup' do
     @player_name = params[:player_name]
     session[:player_name] = @player_name
-    erb :game
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
