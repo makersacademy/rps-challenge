@@ -1,9 +1,10 @@
 class Game
-  attr_reader :player_one, :player_two
+  attr_reader :player_one, :player_two, :winner
 
   def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
+    @winner = "Nobody"
   end
 
   def self.create(player_one, player_two)
@@ -12,6 +13,15 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def decide_winner
+    @winner = @player_one.name if @player_one.weapon.beats?(@player_two.weapon)
+    @winner = @player_two.name if @player_two.weapon.beats?(@player_one.weapon)
+  end
+
+  def not_the_winner
+    [@player_one, @player_two].select{ |player| player !=@winner }
   end
 
 end

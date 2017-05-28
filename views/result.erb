@@ -1,2 +1,5 @@
-<%= @game.player_one.name %> chose [?]
-<%= @game.player_two.name %> chose <%= @computer_choice %>
+<%= @game.player_one.name %> chose <%= @game.player_one.weapon.type %>
+<br>
+<%= @game.player_two.name %> chose <%= @game.player_two.weapon.type %>
+<br>
+<%= @game.winner %> wins!

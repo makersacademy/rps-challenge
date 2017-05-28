@@ -5,10 +5,7 @@ describe Computer do
 
   describe '#choose_weapon' do
     it 'chooses rock, paper or scissors' do
-      srand 1234
-      expect(computer.choose_weapon).to eq :scissors
-      expect(computer.choose_weapon).to eq :paper
-      expect(computer.choose_weapon).to eq :rock
+      expect(computer.choose_weapon.type).to satisfy { |weapon| weapon == :rock || weapon == :paper || weapon == :scissors }
     end
   end
 end

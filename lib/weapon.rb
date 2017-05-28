@@ -13,7 +13,7 @@ class Weapon
   end
 
   def beats?(opponent)
-    RULES[type].include?(opponent.type)
+    RULES[@type].include?(opponent.type)
   end
-  
+
 end

@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require_relative './lib/game'
 require_relative './lib/player'
+require_relative './lib/weapon'
+require_relative './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -20,12 +22,17 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/result' do
+  post '/decide_winner' do
     @game = Game.instance
-    @computer_choice = @game.player_two.choose_weapon
-    erb(:result)
+    @game.player_one.choose_weapon(params[:player_one_weapon])
+    @game.player_two.choose_weapon
+    @game.decide_winner
+    redirect('/result')
   end
 
-
+  get '/result' do
+    @game = Game.instance
+    erb(:result)
+  end
 
 end
