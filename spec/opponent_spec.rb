@@ -18,5 +18,15 @@ describe Opponent do
       allow(opponent).to receive(:random_pick).and_return 3
       expect(opponent.choose_hand).to eq :Scissors
     end
+
+    it 'allows the opponent to choose Lizard randomly' do
+      allow(opponent).to receive(:random_pick).and_return 4
+      expect(opponent.choose_hand).to eq :Lizard
+    end
+
+    it 'allows the opponent to choose Spock randomly' do
+      allow(opponent).to receive(:random_pick).and_return 5
+      expect(opponent.choose_hand).to eq :Spock
+    end
   end
 end

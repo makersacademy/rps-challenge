@@ -22,7 +22,7 @@ class Game
     @players[1].choose_hand
   end
 
-  def winner
+  def declare_winner
     return "It's a Draw" if @rules.draw?(@players)
     return 'You Win!' if @rules.check_rules(@players)
     return 'You Lost'

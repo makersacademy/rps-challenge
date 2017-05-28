@@ -3,7 +3,7 @@ class Opponent
   attr_reader :choice
 
   def initialize
-    @weapons = [:Rock, :Paper, :Scissors]
+    @weapons = [:Rock, :Paper, :Scissors, :Lizard, :Spock]
   end
 
   def choose_hand
@@ -13,7 +13,7 @@ class Opponent
   private
 
   def random_pick
-    1 + rand(3)
+    1 + rand(5)
   end
 
 end

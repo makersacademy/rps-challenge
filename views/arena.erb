@@ -1,4 +1,4 @@
-<div style="text-align: center; padding: 70px">
+<div style="text-align: center; padding: 20px" height="100vh">
 
 <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
 
@@ -6,10 +6,17 @@
 
 <h3><%= "Your opponent chose #{@game.players[1].choice}" %></h3>
 
-<h2><%= @game.winner %> </h2>
+<h2><%= @game.declare_winner %> </h2>
 
 <form action="/play" method="get">
   <input type="submit" value="Play Again?">
 </form>
+<br></br>
+
+<p>Rock crushes Scissors and Lizards</p>
+<p>Paper wraps Rock and disproves Spock</p>
+<p>Scissors cut Paper and decapitate Lizards</p>
+<p>Lizard poisons Spock and eats Paper</p>
+<p>Spock vaporises Rock and smashes Scissors</p>
 
 </div>
