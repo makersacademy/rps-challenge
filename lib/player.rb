@@ -10,14 +10,6 @@ class Player
     @weapon = weapon.downcase.to_sym
   end
 
-  def self.create(name)
-    @player = Player.new(name)
-  end
-
-  def self.instance
-    @player
-  end
-
   private
 
   def validate_weapon(weapon)

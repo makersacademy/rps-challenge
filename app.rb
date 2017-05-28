@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
   set :static, true
 
   before do
-    @player1 = Player.instance
+    @game = Game.instance
   end
 
   get '/' do
@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @player1 = Player.create(params[:player1_name])
+    @game = Game.create(Player.new(params[:player1_name]), Computer.new)
     redirect '/play'
   end
 
@@ -30,7 +30,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = Game.create(@player1, Computer.new)
     @game.players[0].weapon=(params[:weapon])
     @game.players[1].choose_weapon
     erb(:result)
