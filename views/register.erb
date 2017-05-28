@@ -3,6 +3,7 @@
 <div class="container">
   <h1 id="Title"> Rock / Paper / Scissors </h1>
   <br>
+  <% if @player2 == nil %>
   <form action="/names" method="post">
     <label for="player1_name">
       Player 1:
@@ -10,4 +11,17 @@
     </label>
     <input type="submit" value="Submit">
   </form>
+  <% else %>
+  <form action="/names" method="post">
+    <label for="player1_name">
+      Player 1:
+      <input type="text" name="player1_name" placeholder="Enter your name">
+    </label>
+    <label for="player2_name">
+      Player 2:
+      <input type="text" name="player2_name" placeholder="Enter your name">
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+  <% end %>
 </div>

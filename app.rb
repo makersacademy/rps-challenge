@@ -16,11 +16,12 @@ class RPS < Sinatra::Base
   end
 
   post '/register' do
+    @player2 = params[:mode_2]
     erb(:register)
   end
 
   post '/names' do
-    @player = Player.create(params[:player1_name])
+    @player1 = Player.create(params[:player1_name])
     redirect '/play'
   end
 
