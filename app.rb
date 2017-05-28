@@ -14,7 +14,6 @@ class RPS < Sinatra::Base
   end
 
   get '/play_rps' do
-    @player_name = $player.name
     erb :play_rps
   end
 
