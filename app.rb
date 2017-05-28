@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'player'
+require 'opponent'
 require 'game'
 
 class RPS < Sinatra::Base
@@ -10,7 +11,7 @@ class RPS < Sinatra::Base
   end
 
   post '/player_name' do
-    $game = Game.new(Player.new(params[:player_name]))
+    $game = Game.new(Player.new(params[:player_name]), Opponent.new)
     redirect '/play_rps'
   end
 
