@@ -8,4 +8,9 @@ describe Game do
     game = Game.new(player)
     expect(game.player.name).to eq 'name'
   end
+
+  it 'initialises with an empty array, @choice' do
+    player = Player.new("name")
+    expect(player.choice).to eq []
+  end
 end

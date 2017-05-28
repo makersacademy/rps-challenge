@@ -8,6 +8,6 @@ def play_as_rock
   visit '/'
   fill_in :player_name, with: "Rock Fan"
   click_button 'Submit'
-  click_button 'Rock'
+  choose('Rock')
   click_button 'Submit'
 end
