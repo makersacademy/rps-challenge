@@ -11,7 +11,7 @@ Probably rackup and then visit your specified port in your browser. Past that I'
 
 
 ### My Approach
-I assume I'll draw a diagram? They always help.
+![A diagram](https://github.com/wemmm/rps-challenge/blob/master/plan.PNG)
 
 ### Additional Things
 No additional things yet but the night is young!
