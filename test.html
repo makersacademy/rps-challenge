@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+
+<body>
+  <h1> <center>  <font face='Courier New' color="blue"><%= "Welcome to the game #{@game.player.name}! choose your weapon to start the game against #{@game.computer.name}:" %></font> </center> </h1>
+
+    <form action="/weapon" method="POST">
+      <input type="submit" value= "Rock"
+      name="weapon_choice" id="weapon_choice" />
+      </label>
+    </form>
+
+    <form action="/weapon" method="POST">
+      <input type="submit" value= "Paper"
+      name="weapon_choice" id="weapon_choice" />
+    </form>
+
+    <form action="/weapon" method="POST">
+      <input type="submit" value= "Scissors"
+      name="weapon_choice" id="weapon_choice" />
+    </form>
+</body>
+</html>
