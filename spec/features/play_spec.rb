@@ -1,5 +1,5 @@
-feature "Users can submit their name and see game options" do
-  scenario "Allows users to submit names and see them on a screen with a welcome message" do
+feature "A registered player can see their name and see game options" do
+  scenario "Allows to register name and see it on screen with a welcome message" do
     sign_in_and_register
     expect(page).to have_content "Welcome to the game Charlotte! choose your weapon to start the game against the evil computer:"
   end
