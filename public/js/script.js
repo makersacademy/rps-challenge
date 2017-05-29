@@ -13,6 +13,13 @@ Mousetrap.bind('s', function(){
     })
 });
 
+Mousetrap.bind('p', function(){
+    $("#preferences_popup").css("visibility", "visible");
+    $("#preferences_popup, #preferences_contents").click(function() {
+        $("#preferences_popup").css("visibility", "hidden");
+    })
+});
+
 Mousetrap.bind('q u a c k', function(){
     $("#easter_egg_popup").css("visibility", "visible");
     $("#easter_egg_popup, #easter_egg_contents").click(function() {

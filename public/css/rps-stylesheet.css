@@ -2,10 +2,6 @@ html {
     font-family: Barrio, cursive;
     color: white;
     background-color: #D34644;
-    /*background-color: #776D94;*/
-    /*background-color: #FEBF13;*/
-    /*background-color: #4285F4;*/
-    /*background-color: #34A853;*/
 }
 
 body {
@@ -286,4 +282,44 @@ div {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
+}
+
+.colour_option {
+    width: 100px;
+    height: 100px;
+    border: white 2px solid;
+    border-radius: 100%;
+}
+
+#red {
+    background-color: #D34644;
+}
+
+#green {
+    background-color: #34A853;
+}
+
+#blue {
+    background-color: #4285F4;
+}
+
+#yellow {
+    background-color: #FEBF13;
+}
+
+#lilac {
+    background-color: #776D94;
+}
+
+#grey {
+    background-color: #303E4E;
+}
+
+#preferences_popup {
+    z-index: 99;
+    margin: auto;
+    position: relative;
+    display: inline;
+    text-align: center;
+    border: 1px solid white;
 }
