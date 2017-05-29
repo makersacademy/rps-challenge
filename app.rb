@@ -17,6 +17,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/battle_ground' do
+    @attack_method = params[:attack_method]
+    erb :battle_ground
+  end
 
   run! if app_file == $0
 
