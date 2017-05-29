@@ -1,10 +1,10 @@
 class Player
 
-  attr_reader :name, :choice
+  attr_reader :name, :wins
 
   def initialize(player_name)
     @name = player_name
-    # @choice
+    @wins = 0
   end
 
 end

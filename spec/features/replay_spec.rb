@@ -5,3 +5,4 @@ feature 'Replay' do
     click_button("Let's go!")
     expect(page).to have_button "Play again?"
   end
+end

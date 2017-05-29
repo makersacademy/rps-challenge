@@ -1,30 +1,34 @@
 <% combination = [] %>
+<% combination.clear %>
 <% @game.pick_opposing_weapon %>
-<%
-   combination << @game.choice
+<% combination << @game.choice
    combination << @game.computer_choice
    combination.flatten! %>
-
 <br>
-
 
 <h1><%= combination.first %> VS. <%= combination.last %></h1>
 <br>
 
 <% if combination.first == "Rock" && combination.last == "Scissors" || combination.first == "Paper" && combination.last == "Rock" || combination.first == "Scissors" && combination.last == "Paper" %>
 
+<% combination.clear %>
+<% @game.reset_game %>
 <form method="get" action="/win">
   <button type="submit">Let's go!</button>
 </form>
 
 <% elsif combination.first == combination.last %>
 
+<% combination.clear %>
+<% @game.reset_game %>
 <form method="get" action="/draw">
   <button type="submit">Let's go!</button>
 </form>
 
 <% else %>
 
+<% combination.clear %>
+<% @game.reset_game %>
 <form method="get" action="/lose">
   <button type="submit">Let's go!</button>
 </form>
