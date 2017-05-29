@@ -21,4 +21,19 @@ describe Game do
 #   end
 # end
 
+  it 'can pick a weapon and add it to @computer_choice' do
+    player = Player.new("name")
+    game = Game.new(player)
+    game.pick_opposing_weapon
+    expect(game.computer_choice.count).to eq 1
+  end
+
+  it 'can reset weapon choices' do
+    player = Player.new("name")
+    game = Game.new(player)
+    game.pick_opposing_weapon
+    game.reset_game
+    expect(game.computer_choice).to eq []
+  end
+
 end

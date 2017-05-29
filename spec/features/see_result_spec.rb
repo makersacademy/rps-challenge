@@ -13,4 +13,11 @@ feature 'Player is shown result of game' do
     click_button("Let's go!")
     expect(page).to have_content "You lose!"
   end
+
+  scenario 'player is told if the result is a draw' do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    play_as_scissors
+    click_button("Let's go!")
+    expect(page).to have_content "It's a draw!"
+  end
 end

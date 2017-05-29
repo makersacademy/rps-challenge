@@ -8,6 +8,12 @@
   <button type="submit">Let's go!</button>
 </form>
 
+<% elsif @game.choice == @game.computer_choice %>
+
+<form method="get" action="/draw">
+  <button type="submit">Let's go!</button>
+</form>
+
 <% else %>
 
 <form method="get" action="/lose">

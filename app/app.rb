@@ -42,5 +42,9 @@ class RockPaperScissors < Sinatra::Base
     erb :lose
   end
 
+  get '/draw' do
+    erb :draw
+  end
+
   run! if app_file == $0
 end
