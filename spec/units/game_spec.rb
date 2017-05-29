@@ -30,32 +30,4 @@ describe Game do
     expect(game.computer_choice).to eq []
   end
 
-  it 'can report whether a game ended in a draw' do
-    player = Player.new("name")
-    game = Game.new(player)
-    game.choice << "Scissors"
-    game.computer_choice << "Scissors"
-    expect(game.draw?).to eq true
-    game.reset_game
-    game.choice << "Rock"
-    game.computer_choice << "Scissors"
-    expect(game.draw?).to eq false
-  end
-
-  it 'can report if a game was won' do
-    player = Player.new("name")
-    game = Game.new(player)
-    game.choice << "Paper"
-    game.computer_choice << "Rock"
-    expect(game.win?).to eq true
-  end
-
-  it 'can report if a game was lost' do
-    player = Player.new("name")
-    game = Game.new(player)
-    game.choice << "Paper"
-    game.computer_choice << "Scissors"
-    expect(game.lose?).to eq true
-  end
-
 end
