@@ -8,13 +8,15 @@
   <link href="css/rps-stylesheet.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.0.js"></script>
 </head>
 
 <body id="outcome">
 
 <div id="result_box">
-  <p id="result"><%= @round_winner %> wins the round!</p><br>
-  <a id="continue" href="/play">Continue</a>
+  <p id="result"><%= @round_winner %> wins this round!</p><br>
+  <a id="continue" href="/play">Continue...</a>
 </div>
 
 <div id="player_1_throw">
@@ -29,6 +31,41 @@
   <%= @player_2_name %> throws <%= @player_2_weapon %>!
 </div>
 
+<div class="popup" id="scores_popup">
+  <p class="popup_contents" id="scores_contents">Scores!</p>
+</div>
+
+<div class="popup" id="rules_popup">
+  <p class="popup_contents" id="rules_contents">Rules!</p>
+</div>
+
+<div class="popup" id="easter_egg_popup">
+  <p class="popup_contents" id="easter_egg_contents">Easter egg!</p>
+</div>
+
 </body>
+
+<!--<script type="text/javascript">-->
+//    Mousetrap.bind('r', function(){
+//        $("#rules_popup").css("visibility", "visible");
+//        $("#rules_popup, #rules_contents").click(function() {
+//            $("#rules_popup").css("visibility", "hidden");
+//        })
+//    });
+//
+//    Mousetrap.bind('s', function(){
+//        $("#scores_popup").css("visibility", "visible");
+//        $("#scores_popup, #scores_contents").click(function() {
+//            $("#scores_popup").css("visibility", "hidden");
+//        })
+//    });
+//
+//    Mousetrap.bind('q u a c k', function(){
+//        $("#easter_egg_popup").css("visibility", "visible");
+//        $("#easter_egg_popup, #easter_egg_contents").click(function() {
+//            $("#easter_egg_popup").css("visibility", "hidden");
+//        })
+//    });
+<!--</script>-->
 
 </html>
