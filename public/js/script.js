@@ -13,10 +13,10 @@ Mousetrap.bind('s', function(){
     })
 });
 
-Mousetrap.bind('p', function(){
-    $("#preferences_popup").css("visibility", "visible");
-    $("#preferences_popup, #preferences_contents").click(function() {
-        $("#preferences_popup").css("visibility", "hidden");
+Mousetrap.bind('t', function(){
+    $("#themes_popup").css("visibility", "visible");
+    $("#themes_popup, #themes_contents").click(function() {
+        $("#themes_popup").css("visibility", "hidden");
     })
 });
 
