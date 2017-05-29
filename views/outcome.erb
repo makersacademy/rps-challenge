@@ -16,22 +16,33 @@
 
 <body id="outcome">
 
-<div id="result_box">
-  <p id="result"><%= @round_winner %> wins this round!</p><br>
-  <a id="continue" href="/play">Continue...</a>
-</div>
+<table id="result_box">
+  <tr>
+    <th>
+      <div id="result_box">
+        <p id="result"><%= @round_winner %> wins this round!</p><br>
+        <a id="continue" href="/play">Continue...</a>
+      </div>
+    </th>
+  </tr>
+</table>
 
-<div id="player_1_throw">
-  <img src="images/right/<%= @player_1_weapon %>.png" id="player_1_weapon"><br>
-  <%= @player_1_name %> throws <%= @player_1_weapon %>!
-</div>
-
-<br><br><br>
-
-<div id="player_2_throw">
-  <img src="images/left/<%= @player_2_weapon %>.png" id="player_2_weapon"><br>
-  <%= @player_2_name %> throws <%= @player_2_weapon %>!
-</div>
+<table>
+  <tr>
+    <th>
+      <div id="player_1_throw">
+        <img src="images/left/<%= @player_1_weapon %>.png" id="player_1_weapon"><br>
+        <%= @player_1_name %> throws <%= @player_1_weapon %>!
+      </div>
+    </th>
+    <th>
+      <div id="player_2_throw">
+        <img src="images/right/<%= @player_2_weapon %>.png" id="player_2_weapon"><br>
+        <%= @player_2_name %> throws <%= @player_2_weapon %>!
+      </div>
+    </th>
+  </tr>
+</table>
 
 <div class="popup" id="scores_popup">
   <img class="close_button" src="images/exit.png">

@@ -150,22 +150,22 @@ div {
 
 #player_1_throw {
     font-size: 35px;
-    text-align: right;
+    text-align: left;
     margin: auto;
     width: 500px;
-    left: 350px;
     position: relative;
-    top: 200px;
+    padding-top: 180px;
+    padding-right: 90px;
 }
 
 #player_2_throw {
     font-size: 35px;
-    text-align: left;
+    text-align: right;
     margin: auto;
     width: 500px;
-    right: 350px;
     position: relative;
-    bottom: 160px
+    padding-top: 180px;
+    padding-left: 90px;
 }
 
 #player_1_weapon {
