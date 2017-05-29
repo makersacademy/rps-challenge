@@ -47,7 +47,7 @@ I would like to be able to play with 2 players
 Screenshots
 ----
 ![Home Page](http://i.imgur.com/wqRSMrO.png)
-![Register] (http://i.imgur.com/XI87mLZ.png)
+![Sign In](http://i.imgur.com/XI87mLZ.png)
 ![Results](http://i.imgur.com/elE5r16.png)
 
 My Approach
