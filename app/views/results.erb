@@ -1,2 +1,7 @@
 
 <h1><%= @game.choice.pop %> VS. <%= @game.computer_choice.sample %></h1>
+<br>
+
+<form method="get" action="/win">
+  <button type="submit">Let's go!</button>
+</form>
