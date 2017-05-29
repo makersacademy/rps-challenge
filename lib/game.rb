@@ -1,3 +1,5 @@
+require 'csv'
+
 class Game
 
   def self.create(player, computer)
@@ -41,4 +43,10 @@ class Game
     end
   end
 
+  def save_game
+    CSV.open("rps_game.csv", "w") do |csv|
+      csv << [@player.name]
+      csv << [@player_weapon, @computer_weapon]
+    end
+  end
 end

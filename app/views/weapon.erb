@@ -8,7 +8,6 @@
 <h1> <center>  <font face='Courier New' color="green"><%= "The winner of the game is: #{@game.outcome}" %></font> </center> </h1>
 </br>
 
-
 <center>
   <form action="/restart" method="POST">
     <input type="submit" value= "Reset Game"
@@ -20,5 +19,12 @@
   <form action="/play_again" method="POST">
     <input type="submit" value= "Play Again"
     name="play_again" id="play_again" />
+  </form>
+</center>
+
+<center>
+  <form action="/save_game" method="POST">
+    <input type="submit" value= "Save Game"
+    name="save_game" id="save_game" />
   </form>
 </center>

@@ -53,4 +53,14 @@ feature "The player can choose a weapon of their choice" do
       expect(page).to have_content "Welcome to the game Charlotte! choose your weapon to start the game against The Evil Computer:"
     end
   end
+
+  feature "A registered player who has played the game once can save their game and exit" do
+    scenario "Player can see a save game button" do
+      sign_in_and_register
+      find_button('Scissors').click
+      find_button('Save Game').click
+      visit '/exit'
+      expect(page).to have_content "Thanks you've successfully saved your game for next time!"
+    end
+  end
 end

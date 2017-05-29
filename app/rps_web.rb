@@ -3,6 +3,8 @@ require './lib/player.rb'
 require './lib/game.rb'
 require './lib/computer.rb'
 require './lib/victory_calculator.rb'
+require 'csv'
+
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -42,6 +44,20 @@ class RPSWeb < Sinatra::Base
   post '/play_again' do
     params[:play_again]
     redirect '/play'
+  end
+
+  post '/save_game' do
+    params[:save_game]
+    # CSV.open("rps_game.csv", "w") do |csv|
+    #   csv << params[:weapon_choice]
+    #   csv << params[:name]
+    # end
+    # @game.save_game
+    redirect '/exit'
+  end
+
+  get '/exit' do
+    erb(:exit)
   end
 
   run! if app_file == $0

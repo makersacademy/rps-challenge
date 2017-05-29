@@ -66,4 +66,24 @@ describe Game do
     end
   end
 
+  describe '#save_game' do
+    let(:rock_computer) do
+      doubled = double(:computer)
+      allow(doubled).to receive(:weapon_choice).and_return(:rock)
+      allow(doubled).to receive(:name).and_return("The Evil Computer")
+      doubled
+    end
+
+    subject(:game1) { Game.new(charlotte, rock_computer) }
+
+    xit 'should create a filename and put name and game weapons in it' do
+      game1.start("Paper")
+      game1.outcome
+      game1.save_game
+      file = mock('.rps_game.csv') # update with actual name
+      File.should_receive(:open).with("rps_game.csv", "w").and_yield(file) # add in with actual names
+      file.should_receive(:write).with("text")
+      "Charlotte"
+    end
+  end
 end
