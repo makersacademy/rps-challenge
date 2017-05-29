@@ -1,5 +1,6 @@
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 require 'sinatra/base'
 
 class RockPaperScissiors < Sinatra::Base
@@ -27,6 +28,8 @@ class RockPaperScissiors < Sinatra::Base
 
   get '/attack' do
     @weapon_choice = session[:weapon]
+    ai = Computer.new
+    @ai_option = ai.make_selection
     erb :attack
   end
 end

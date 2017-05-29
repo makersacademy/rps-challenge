@@ -3,6 +3,6 @@ feature 'computer make a selection' do
     srand(1234)
     sign_in
     click_button 'Rock'
-    expect(page).to have_content('Computer chose Rock')
+    expect(page).to have_content('Computer chose Scissors')
   end
 end
