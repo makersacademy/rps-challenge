@@ -242,7 +242,7 @@ div {
 
 #game_over_header {
     font-size: 120px;
-    line-height: 40px;
+    line-height: 10px;
     margin: auto;
 }
 
@@ -260,6 +260,26 @@ div {
 #game_over {
     position: relative;
     text-align: center;
-    margin: auto
+    margin: auto;
+
 }
 
+#new_game {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#new_game_link {
+    font-size: 40px;
+    line-height: 20px;
+    text-align: center;
+    /*position: relative;*/
+    text-decoration: none;
+    color: white;
+}
+
+#new_game_link:hover {
+    -webkit-text-fill-color: #D34644;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
