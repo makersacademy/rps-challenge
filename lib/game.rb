@@ -34,9 +34,9 @@ class Game
   end
 
   def outcome
-    if @victory_calc.win?(games_weapons())
+    if @victory_calc.win?(games_weapons)
       "#{@player.name}"
-    elsif @victory_calc.draw?(games_weapons())
+    elsif @victory_calc.draw?(games_weapons)
       "No one! It's a draw for #{@player.name} and #{@computer.name}"
     else
       "#{@computer.name}"

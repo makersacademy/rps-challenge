@@ -23,7 +23,7 @@ I would like to be able to play rock/paper/scissors
 
 ![Imgur](http://i.imgur.com/CxaojEQ.png)
 
-![Imgur](http://i.imgur.com/zFekV6a.png)
+![Imgur](http://i.imgur.com/qcWCgBw.png)
 
 My approach
 ----
