@@ -1,3 +1,4 @@
+<% @game.player.losses += 1 %>
 <h1><%="You lose, #{@game.player.name}!"%></h1>
 <br>
 <form method="get" action="/play" id="replay">

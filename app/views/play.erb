@@ -9,3 +9,8 @@
   <input type="radio" name="weapon" value="Scissors" id="s"> Scissors<br>
   <input type="submit" value="Submit">
 </form>
+<br>
+<h3>Here's your scores so far:</h3>
+<p><%="Wins: #{@game.player.wins}"%></p>
+<p><%="Losses: #{@game.player.losses}"%></p>
+<p><%="Draws: #{@game.player.draws}"%></p>
