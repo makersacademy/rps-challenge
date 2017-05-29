@@ -53,6 +53,10 @@ class RPS < Sinatra::Base
 
   post '/save_game' do
     @game.save_game
+    redirect '/saved_game'
+  end
+
+  get '/saved_game' do
     erb(:saved_game)
   end
 
