@@ -1,4 +1,5 @@
 require "sinatra/base"
+require_relative "./lib/player.rb"
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -17,8 +18,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get "/play" do
-    @name = session[:name]
-    @choice = session[:choice]
+    @player = Player.new(session)
     @computer_choice = session[:computer_choice]
     erb :play
   end
@@ -26,7 +26,7 @@ class RPSWeb < Sinatra::Base
   post "/play" do
     session[:choice] = params[:choice]
     session[:computer_choice] = [:rock, :paper, :scissors].sample
-    redirect("play")
+    redirect("/play")
   end
 
   # start the server if ruby file executed directly

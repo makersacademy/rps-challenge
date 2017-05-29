@@ -5,7 +5,7 @@
     <title>RPS Game</title>
   </head>
   <body>
-    <h1><%= @name %></h1>
+    <h1><%= @player.name %></h1>
 
     <div>
       <form method="post" action="/play">
@@ -16,9 +16,9 @@
       </form>
     </div>
 
-    <% if @choice != nil %>
+    <% if @player.choice != nil %>
     <div>
-      <p>You have selected <%= @choice.to_s.capitalize %>!</p>
+      <p>You have selected <%= @player.choice.to_s.capitalize %>!</p>
     </div>
     <div>
       <p>The computer had selected <%= @computer_choice.to_s.capitalize %>!</p>
