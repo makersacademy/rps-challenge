@@ -1,0 +1,9 @@
+<%=@game.player.name%> - time to take your turn
+<form action='/result' method='post'>
+  <input type="radio" name="radios1" id="rock" value="rock">rock
+  <input type="radio" name="radios1" id="paper" value="paper">paper
+  <input type="radio" name="radios1" id="scissors" value="scissors">scissors
+<input type="radio" name="radios1" id="lizard" value="lizard">lizard
+  <input type="radio" name="radios1" id="spock" value="spock">spock
+  <input type='submit' value='Confirm!'>
+</form>
