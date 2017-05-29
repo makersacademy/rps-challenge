@@ -1,6 +1,7 @@
 class Game
 
-  def self.new_game(player, computer)
+# TODO call this self.create
+  def self.create(player, computer)
     @game = Game.new(player, computer)
     @game
   end
@@ -14,7 +15,8 @@ class Game
     @victory_calc = VictoryCalculator.new
   end
 
-  def self.start
+# TODO call this self.instance
+  def self.instance
     @game
   end
 

@@ -12,14 +12,12 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/game' do
-    player = Player.new(params[:name])
-    computer = Computer.new
-    @game = Game.new_game(player, computer)
+    @game = Game.create(Player.new(params[:name]), Computer.new)
     redirect '/play'
   end
 
   before do
-    @game = Game.start
+    @game = Game.instance
   end
 
   get '/play' do

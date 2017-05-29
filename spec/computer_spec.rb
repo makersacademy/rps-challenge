@@ -9,4 +9,6 @@ describe Computer do
       expect(computer.name).to eq "The Evil Computer"
     end
   end
+
+  # TODO test the computer sample
 end

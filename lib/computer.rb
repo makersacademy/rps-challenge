@@ -6,6 +6,7 @@ class Computer
     @name = "The Evil Computer"
   end
 
+  # TODO consider using srand with rand or assigning this to a consanant 
   def weapon_choice
     [:rock, :paper, :scissors].sample
   end
