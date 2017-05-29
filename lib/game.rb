@@ -13,9 +13,11 @@ class Game
     return "Tie!" if @current_player.hand == @opponent.hand 
     if @current_player.wins_from.include? @opponent.hand 
        @current_player.wins
+       empty_hands
        "#{@current_player} wins!" 
     else
        @opponent.wins
+       empty_hands
       "#{@opponent} wins!" 
     end 
   end 
@@ -29,7 +31,7 @@ class Game
   end
   
   def final_hand?
-    @opponent.hand != false
+    @opponent.hand 
   end
   
   def computer_mode
