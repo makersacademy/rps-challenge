@@ -27,7 +27,7 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = $game
-    item = Item.send(params[:item].lowercase)
+    item = Item.send(params[:item].downcase)
 
     result = @game.play(item)
 
