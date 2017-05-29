@@ -248,26 +248,40 @@ div {
 
 #red {
     background-color: #D34644;
+    z-index: 99;
 }
 
 #green {
     background-color: #34A853;
+    z-index: 99;
 }
 
 #blue {
     background-color: #4285F4;
+    z-index: 99;
 }
 
 #yellow {
     background-color: #FEBF13;
+    z-index: 99;
 }
 
 #lilac {
     background-color: #776D94;
+    z-index: 99;
 }
 
 #grey {
     background-color: #303E4E;
+    z-index: 99;
+}
+
+.colour-option {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 5px white solid;
+    border-radius: 100%;
 }
 
 .popup {
@@ -278,7 +292,7 @@ div {
     top: 0;
     left: 0;
     text-align: center;
-    background-color: rgba(0, 0, 0, .60);
+    background-color: rgba(0, 0, 0, .75);
     padding-top: 120px;
     visibility: hidden;
 }
@@ -296,15 +310,7 @@ div {
 
 #quack {
     border: solid 4px white;
-    width: 300px;
-}
-
-#easter_egg_contents {
-    background-color: #D34644;
-    border: solid 4px white;
-    width: 300px;
-    height: 40px;
-    padding: 10px;
+    width: 600px;
 }
 
 table {
@@ -323,4 +329,13 @@ tr {
 .rules_image {
     width: 120px;
     padding: 15px;
+}
+
+.close_button {
+    width: 40px;
+    height: 40px;
+    left: 15px;
+    top: 15px;
+    position: fixed;
+    z-index: 98;
 }
