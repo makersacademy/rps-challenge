@@ -5,6 +5,6 @@ class Rules
   end
 
   def winner(player_choice, computer_choice)
-      @outcome[player_choice - computer_choice]
+    @outcome[player_choice - computer_choice]
   end
 end

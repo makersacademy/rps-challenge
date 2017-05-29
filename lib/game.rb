@@ -39,7 +39,7 @@ class Game
 
   def print_results
     CSV.open("database.csv", "a+") do |csv|
-      csv << [@player.name , @words[@computer_c], @words[@player_c], @result]
+      csv << [@player.name, @words[@computer_c], @words[@player_c], @result]
     end
   end
 end

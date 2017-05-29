@@ -5,10 +5,10 @@ describe Rules do
 
   describe '#winner' do
     it 'returns DRAW if the player and computer gives the same value' do
-      expect(rules.winner(0,0)).to eq 'DRAW'
+      expect(rules.winner(0, 0)).to eq 'DRAW'
     end
     it 'returns COMPUTER WON if the player gives rock and computer gives paper' do
-      expect(rules.winner(0,1)).to eq 'COMPUTER WON'
+      expect(rules.winner(0, 1)).to eq 'COMPUTER WON'
     end
 
     it 'returns DRAW if the player and computer gives the same value' do
