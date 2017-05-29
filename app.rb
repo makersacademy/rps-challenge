@@ -2,8 +2,11 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/opponent'
 require './lib/player'
+require 'csv'
 
 class RockPaperScissors < Sinatra::Base
+
+  enable :sessions
 
   get '/' do
     erb :index
@@ -19,12 +22,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    # session.delete[:info]
     erb :play
   end
 
   post '/arena' do
     @game.play_a_round(params[:choice])
+    session[:game_info] = [@game.players[0].name, @game.game_history]
     erb :arena
+  end
+
+  post '/save_game' do
+    @game.save_game(session)
+    erb :save_game
   end
 
   run! if app_file == $0
