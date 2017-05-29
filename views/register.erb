@@ -4,7 +4,7 @@
   <h1 id="Title"> Rock / Paper / Scissors</h1>
   <br>
   <% if @player2 == nil %>
-  <form action="/names" method="post">
+  <form action="/oneplayer_name" method="post">
     <label for="player1_name">
       Player 1:
       <input type="text" name="player1_name" placeholder="Enter your name">
@@ -13,7 +13,7 @@
     <input class="restart-button" type="submit" value="Submit">
   </form>
   <% else %>
-  <form action="/name" method="post">
+  <form action="/twoplayer_name" method="post">
     <label for="player1_name">
       Player 1:
       <input type="text" name="player1_name" placeholder="Enter your name">

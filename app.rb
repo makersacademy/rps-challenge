@@ -20,12 +20,12 @@ class RPS < Sinatra::Base
     erb(:register)
   end
 
-  post '/name' do
+  post '/twoplayer_name' do
     @game = Game.create(Player.new(params[:player1_name]), Player.new(params[:player2_name]))
     redirect '/play'
   end
 
-  post '/names' do
+  post '/oneplayer_name' do
     @game = Game.create(Player.new(params[:player1_name]), Computer.new)
     redirect '/play'
   end
