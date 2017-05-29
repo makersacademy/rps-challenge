@@ -1,0 +1,20 @@
+<body>
+<p> Welcome <%= @player_1.name %> </p>
+
+<form method='POST' action='/play'>
+  <input type='submit' name='move' value='Rock'>
+  <input type='submit' name='move' value='Paper'>
+  <input type='submit' name='move' value='Scissors'>
+</form>
+
+
+<div> You threw <%= @player_1.move.to_s.downcase %>! </div>
+
+<div id='opponent'>
+  Your opponent threw <%= @opponent.move.to_s.downcase %>!
+</div>
+
+<div id='result'>
+  You <%= @game.calculate_winner(@player_1, @opponent) %>!
+</div>
+</body>
