@@ -1,28 +1,28 @@
-require 'sinatra/base'
+require "sinatra/base"
 
 class RPSWeb < Sinatra::Base
   enable :sessions
 
-  get '/infrastructure_testing' do
-    'Hello RPSWeb!'
+  get "/infrastructure_testing" do
+    "Hello RPSWeb!"
   end
 
-  get '/' do
+  get "/" do
     erb(:index)
   end
 
-  get '/play' do
+  get "/play" do
     @name = session[:name]
     @choice = session[:choice]
     @computer_choice = session[:computer_choice]
     erb :play
   end
 
-  post '/play' do
+  post "/play" do
     session[:name] = params[:name]
     session[:choice] = params[:choice]
     session[:computer_choice] = [:rock, :paper, :scissors].sample
-    redirect('play')
+    redirect("play")
   end
 
   # start the server if ruby file executed directly
