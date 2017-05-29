@@ -6,16 +6,16 @@ feature 'Player start a game' do
 
   scenario "Player can choose the rock button" do
     sign_in_and_play
-    expect(page).to have_button('Rock')
+    page.has_button?('Rock')
   end
 
   scenario "Player can choose the paper button" do
     sign_in_and_play
-    expect(page).to have_button('Paper')
+    page.has_button?('Paper')
   end
 
   scenario "Player can choose the scissor button" do
     sign_in_and_play
-    expect(page).to have_button('Scissor')
+    page.has_button?('Scissor')
   end
 end
