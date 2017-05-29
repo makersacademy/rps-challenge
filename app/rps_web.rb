@@ -41,6 +41,11 @@ class RPSWeb < Sinatra::Base
     redirect '/'
   end
 
+  post '/play_again' do
+    params[:play_again]
+    redirect '/play'
+  end
+
   run! if app_file == $0
 
 end

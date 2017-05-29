@@ -42,4 +42,14 @@ feature "The player can choose a weapon of their choice" do
       expect(page).to have_content "Welcome to the most incredible game in the world: Rock, Paper, Scissors!"
     end
   end
+
+  feature "Player can click a button to play again without registering their name" do
+    scenario "Player can see the Play Again button" do
+      sign_in_and_register
+      click_button('Scissors')
+      click_button('Play Again')
+      visit '/play'
+      expect(page).to have_content "Welcome to the game Charlotte! choose your weapon to start the game against The Evil Computer:"
+    end
+  end
 end
