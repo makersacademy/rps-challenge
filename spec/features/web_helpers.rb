@@ -11,3 +11,11 @@ def play_as_rock
   choose("r")
   click_button 'Submit'
 end
+
+def play_as_paper
+  visit '/'
+  fill_in :player_name, with: "Paper Fan"
+  click_button 'Submit'
+  choose("p")
+  click_button 'Submit'
+end
