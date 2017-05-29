@@ -1,35 +1,44 @@
 class Game
 
-def initialize(player_1, player_2 = Player.new)
-  @player_1 = player_1
-  @player_2 = player_2
-end
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
+  end
+
+  MOVES = [:rock, :paper, :scissors]
+
+ def add_player(name)
+   @player_1 = Player.new(name)
+ end
 
   def calculate_winner(player_1, player_2)
-    case player_1.throws == :rock
-      when player_2.throws == :rock
+    if player_1.move == :rock
+      if player_2.move == :rock
         'Draw'
-      when player_2.throws == :paper
+      elsif player_2.move == :paper
         'Lose'
       else
         'Win'
       end
-    case player_1.throws == :paper
-      when player_2.throws == :rock
+    elsif player_1.move == :paper
+      if player_2.move == :rock
         'Win'
-      when player_2.throws == :paper
+      elsif player_2.move == :paper
         'Draw'
       else
         'Lose'
       end
-    case player_1.throws == :scissors
-      when player_2.throws == :rock
+    elsif player_1.move == :scissors
+      if player_2.move == :rock
         'Lose'
-      when player_2.throws == :paper
+      elsif player_2.move == :paper
         'Win'
       else
         'Draw'
       end
+    end
   end
+
+
 
 end

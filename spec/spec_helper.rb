@@ -9,6 +9,7 @@ require 'rack/test'
 require 'simplecov'
 require 'simplecov-console'
 require './lib/game'
+require './lib/player'
 
 Capybara.app = RockPaperScissors
 
