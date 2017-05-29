@@ -14,13 +14,6 @@ describe Game do
     expect(player.choice).to eq nil
   end
 
-# describe '#wins?' do
-#   let(:game) { double(:game, choice: "Rock", computer_choice: "Paper") }
-#     it 'has a method for establishing if a move wins' do
-#       expect(game.wins?).to eq true
-#   end
-# end
-
   it 'can pick a weapon and add it to @computer_choice' do
     player = Player.new("name")
     game = Game.new(player)
@@ -54,6 +47,14 @@ describe Game do
     game.choice << "Paper"
     game.computer_choice << "Rock"
     expect(game.win?).to eq true
+  end
+
+  it 'can report if a game was lost' do
+    player = Player.new("name")
+    game = Game.new(player)
+    game.choice << "Paper"
+    game.computer_choice << "Scissors"
+    expect(game.lose?).to eq true
   end
 
 end
