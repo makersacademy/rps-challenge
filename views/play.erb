@@ -23,13 +23,17 @@
       </div>
 
 
-      <%= @computer.choice.class %>
-      <%= @player.choice.class %>
+      <%= @computer.choice %>
+      <%= @player.choice %>
+      <%= @defeats[@computer.choice] %>
+      <%= @defeats[@computer.choice] == @player.choice.to_sym%>
       <%= @computer.choice == @player.choice %>
 
       <div>
         <% if @computer.choice == @player.choice.to_sym %>
           <h1>It's a draw!</h1>
+        <% elsif @defeats[@computer.choice] == @player.choice.to_sym%>
+          <h1>You won the game!</h1>
         <% end %>
       </div>
     <% end %>

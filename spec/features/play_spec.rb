@@ -47,4 +47,15 @@ feature "playing a RPS game" do
     click_button("scissors")
     expect(page).to have_content("It's a draw!")
   end
+
+  # As a marketeer
+  # So I can enjoy a challenge
+  # I would like the game to lose
+
+  scenario "I want to win a game and confirm it" do
+    sign_in_and_play
+    srand(RANDOM_SEED)
+    click_button("rock")
+    expect(page).to have_content("You won the game!")
+  end
 end
