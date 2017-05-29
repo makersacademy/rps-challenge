@@ -2,8 +2,8 @@
 <p><%= @player1.name %>: <%= @player1.weapon.capitalize %></p>
 <p><%= @player2.name %>: <%= @player2.weapon.capitalize %></p>
 
-<% if @result == 'draw'%>
+<% if @result == 'draw' %>
 It's a draw!
 <% else %>
-Winner: <%= @result %>
+Winner: <%= @result.name %>
 <% end %>
