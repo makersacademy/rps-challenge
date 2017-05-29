@@ -50,12 +50,23 @@ feature "playing a RPS game" do
 
   # As a marketeer
   # So I can enjoy a challenge
-  # I would like the game to lose
+  # I would like the game to win
 
   scenario "I want to win a game and confirm it" do
     sign_in_and_play
     srand(RANDOM_SEED)
     click_button("rock")
     expect(page).to have_content("You won the game!")
+  end
+
+  # As a marketeer
+  # So I can enjoy a challenge
+  # I would like the game to lose
+
+  scenario "I want to lose a game and confirm it" do
+    sign_in_and_play
+    srand(RANDOM_SEED)
+    click_button("paper")
+    expect(page).to have_content("You lost the game!")
   end
 end
