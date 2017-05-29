@@ -67,13 +67,14 @@ class Rps < Sinatra::Base
   end
 
   get '/multiplayer' do
-    session[:game].winner if session[:game].final_hand?
+    session[:game].find_winner if session[:game].final_hand?
     session[:game].switch_player
     redirect '/play'
   end
 
   get '/singleplayer' do
     session[:game].opponent.play_hand 
+    session[:game].find_winner
     redirect '/play'
   end 
 end

@@ -13,9 +13,9 @@ describe Game do
     end
   end 
 
-  describe '#winner' do
+  describe '#find_winner' do
     it 'shows whose hand has won' do
-      expect(game_single.winner).to eq "#{player1} wins!"
+      expect { game_single.find_winner }.to change { game_single.winner }.to 'Jerry wins!'
     end
   end
 

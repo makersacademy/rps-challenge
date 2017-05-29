@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player1, :player2, :current_player, :opponent, :multiplayer
+  attr_reader :player1, :player2, :current_player, :opponent, :multiplayer, :winner
 
   def initialize(player1, player2 = Computer.new)
     @player1 = player1
@@ -9,17 +9,19 @@ class Game
     @multiplayer = false
   end
 
-  def winner
+  def find_winner
     if @current_player.hand && @opponent.hand
-      return "Tie!" if @current_player.hand == @opponent.hand 
-      if @current_player.wins_from.include? @opponent.hand 
+      if @current_player.hand == @opponent.hand 
+	empty_hands 
+        @winner = "Tie!"       
+      elsif @current_player.wins_from.include? @opponent.hand 
          @current_player.wins
          empty_hands
-         "#{@current_player} wins!" 
+         @winner = "#{@current_player.name} wins!" 
       else
          @opponent.wins
          empty_hands
-        "#{@opponent} wins!" 
+        @winner = "#{@opponent.name} wins!" 
       end 
     end
   end 

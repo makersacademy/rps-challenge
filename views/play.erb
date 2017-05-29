@@ -9,9 +9,7 @@
   <h3> <%= @player2.name %> plays: <%= @player2.hand %> </h3>
 <% end %>
 
-<% if @game.final_hand? %> 
   <h3> <%= @game.winner %> </h3>
-<% end %> 
 
 <form action='/rock', method='post'>
     <input type='submit' value='Rock'>
