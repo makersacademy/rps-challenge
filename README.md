@@ -51,7 +51,7 @@ I would like to be able to save my games
 Screenshots
 ----
 ![Home Page](http://i.imgur.com/wqRSMrO.png)
-![Game](http://i.imgur.com/undefined.png)
+![Game](http://i.imgur.com/7yicewi.png)
 ![Results](http://i.imgur.com/elE5r16.png)
 
 My Approach
