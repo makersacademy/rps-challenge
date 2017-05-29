@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPSWeb < Sinatra::Base
 
@@ -9,21 +10,19 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/names' do
-    session[:name] = params[:name]
+    session[:player_1_name] = params[:player_1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @name = session[:name]
-    @shape = session[:shape]
-    @opposing_player_shape = session[:opposing_player_shape]
-    p 'opposing', @opposing_player_shape
+    #p session
+    @game = Game.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:shape] = params[:shape]
-    session[:opposing_player_shape] = :scissors
+    session[:player_1_choice] = params[:player_1_choice]
+    session[:player_2_choice] = :scissors
     redirect '/play'
   end
 
