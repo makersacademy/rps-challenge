@@ -1,5 +1,11 @@
 class Player
   attr_reader :name, :hand, :points, :wins_from
+  RULES = { 'Rock' => ['Scissors', 'Lizard'],
+	    'Paper' => ['Rock', 'Spock'],
+	    'Scissors' => ['Paper', 'Lizard'],
+	    'Lizard' => ['Paper', 'Spock'],
+	    'Spock' => ['Scissors', 'Rock'] 
+   	  }
 
   def initialize(name)
     @name = name
@@ -8,29 +14,9 @@ class Player
     @wins_from = []
   end
 
-  def draw_rock
-    @wins_from = ['Scissors', 'Lizard']
-    @hand = 'Rock'
-  end
-    
-  def draw_paper
-    @wins_from = ['Rock', 'Spock']
-    @hand = 'Paper'
-  end
-
-  def draw_scissors
-    @wins_from = ['Paper', 'Lizard']
-    @hand = 'Scissors'
-  end
-  
-  def draw_lizard
-    @wins_from = ['Paper', 'Spock']
-    @hand = 'Lizard'
-  end
-  
-  def draw_spock
-    @wins_from = ['Scissors', 'Rock']
-    @hand = 'Spock'
+  def draw(hand)
+    @hand = hand
+    @wins_from = RULES[hand]
   end
 
   def wins

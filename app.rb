@@ -38,33 +38,9 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
+  post '/draw' do
     @current_player = session[:game].current_player
-    @current_player.draw_rock
-    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
-  end
-
-  post '/scissors' do
-    @current_player = session[:game].current_player
-    @current_player.draw_scissors
-    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
-  end
-
-  post '/paper' do
-    @current_player = session[:game].current_player
-    @current_player.draw_paper 
-    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
-  end
-
-  post '/lizard' do
-    @current_player = session[:game].current_player
-    @current_player.draw_lizard
-    session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
-  end
- 
-  post '/spock' do
-    @current_player = session[:game].current_player
-    @current_player.draw_spock
+    @current_player.draw(params[:hand])
     session[:game].multiplayer ? redirect('/multiplayer') : redirect('/singleplayer')
   end
 

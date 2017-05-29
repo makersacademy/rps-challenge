@@ -11,27 +11,13 @@
 
   <h3> <%= @game.win.winner %> </h3>
 
-<div>
-<form action='/rock', method='post'>
-    <input type='submit' value='Rock'>
- </form>
-
-<form action='/scissors', method='post'>
-    <input type='submit' value='Scissors'>
+<form action='/draw', method='post'>
+  <input type='submit', name='hand', value='Rock'>
+  <input type='submit', name='hand', value='Scissors'>
+  <input type='submit', name='hand', value='Paper'>
+  <input type='submit', name='hand', value='Lizard'>
+  <input type='submit', name='hand', value='Spock'>
 </form>
-
-<form action='/paper', method='post'>
-    <input type='submit' value='Paper'>
-</form>
-
-<form action='/lizard', method='post'>
-    <input type='submit' value='Lizard'>
-</form>
-
-<form action='/spock', method='post'>
-    <input type='submit' value='Spock'>
-</form>
-</div>
 
 <form action='/save', method='post'>
     <input type='submit' value='Save & Quit'>
