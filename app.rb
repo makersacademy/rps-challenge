@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/computer'
+
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -19,6 +21,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/battle_ground' do
     @attack_method = params[:attack_method]
+    @computer_attack = Computer.new.computer_attack
     erb :battle_ground
   end
 
