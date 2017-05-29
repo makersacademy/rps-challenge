@@ -1,13 +1,19 @@
 class Win
-  attr_reader :winner
+  attr_reader :winner, :current, :opponent
 
   def find_winner(current, opponent)
+	  @current = current
+	  @opponent = opponent
     return nil unless hands_drawn?(current, opponent)
     return @winner = "Tie!" if current.hand == opponent.hand 
-    current.wins_from.include? opponent.hand ? declare_winner(current) : declare_winner(opponent) 
+    if current.wins_from.include? opponent.hand 
+      declare_winner(current) 
+    else
+      declare_winner(opponent) 
+    end
   end
 
-  private
+  # private
   def hands_drawn?(current, opponent)
     current.hand && opponent.hand
   end
