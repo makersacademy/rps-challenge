@@ -58,7 +58,7 @@ form {
     margin: auto;
     width: 100%;
     text-align: center;
-    line-height: 10px;
+    /*line-height: 10px;*/
 }
 
 #rounds_option_box {

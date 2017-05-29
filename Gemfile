@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# gem 'em-websocket'
 gem 'rake'
 gem 'sinatra'
 # gem 'thin'
