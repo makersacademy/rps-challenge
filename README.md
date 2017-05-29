@@ -48,3 +48,4 @@ Screenshots
 ----
 My Approach
 ----
+![Diagram](http://imgur.com/a/y8xur)

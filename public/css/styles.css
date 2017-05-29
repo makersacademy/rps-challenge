@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+font-family: 'Rajdhani', sans-serif;
 margin-left: auto;
 margin-right: auto;
 display: flex;
@@ -18,10 +19,12 @@ background-color: rgb(179, 217, 255);
 
 #Title {
   font-size: 90px;
+  font-family: 'Bungee Inline', cursive;
 }
 
 .form {
-  border-radius: 100px
+  border-radius: 30px
+  padding: 10px 10px
 }
 
 .restart-button {
@@ -39,7 +42,7 @@ background-color: rgb(179, 217, 255);
 
 .restart-button:hover {
   border: none;
-  background: #11527a;
+  background: #11527a; /* maybe change to black on hover? */
 }
 
 .weapon-button {
