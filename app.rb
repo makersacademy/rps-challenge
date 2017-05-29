@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/computer'
 require './lib/game'
 require './lib/win'
+require 'csv'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -21,7 +22,7 @@ class Rps < Sinatra::Base
   
   post '/login_single' do
     session[:game] = Game.new(Player.new(params[:player1]))	  
-    redirect '/play'
+        redirect '/play'
   end
 
   post '/login_multi' do
@@ -77,5 +78,18 @@ class Rps < Sinatra::Base
     session[:game].opponent.play_hand 
     session[:game].find_winner
     redirect '/play'
+  end
+
+  post '/save' do
+    CSV.open('player_data', 'wb') do |csv|  
+      csv << [session[:game].player1.name, session[:game].player1.points] 
+      csv << [session[:game].player2.name, session[:game].player2.points]
+    end 
+    redirect '/quit'
   end 
+ 
+  get '/quit' do
+     'Thanks for playing!'
+  end
+
 end
