@@ -6,7 +6,7 @@ Weekend Challenge 3 at Makers Academy was building the classic Rock, Paper and S
 
 ## Play Online
 
-http://warm-spire-30879.herokuapp.com/
+http://play-rock-paper-scissors-web.herokuapp.com/
 
 
 ## User Stories
