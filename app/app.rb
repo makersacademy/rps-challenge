@@ -25,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     @game = Game.instance
-    @game.choice << (params[:weapon])
+    @game.choice << params[:weapon]
     redirect '/results'
   end
 
@@ -36,6 +36,10 @@ class RockPaperScissors < Sinatra::Base
 
   get '/win' do
     erb :win
+  end
+
+  get '/lose' do
+    erb :lose
   end
 
   run! if app_file == $0

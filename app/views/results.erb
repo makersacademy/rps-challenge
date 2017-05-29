@@ -1,7 +1,17 @@
-
-<h1><%= @game.choice.pop %> VS. <%= @game.computer_choice.sample %></h1>
+<% @game.pick_opposing_weapon %>
+<h1><%= @game.choice.pop %> VS. <%= @game.computer_choice.pop %></h1>
 <br>
+
+<% if @game.choice.pop == "Rock" && @game.computer_choice.pop == "Scissors" %>
 
 <form method="get" action="/win">
   <button type="submit">Let's go!</button>
 </form>
+
+<% else %>
+
+<form method="get" action="/lose">
+  <button type="submit">Let's go!</button>
+</form>
+
+<% end %>

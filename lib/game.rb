@@ -2,12 +2,13 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player, :choice, :game, :computer_choice
+  attr_reader :player, :choice, :game, :computer_choice, :potential_choices
 
   def initialize(player = Player.new)
     @player = player
     @choice = []
-    @computer_choice = ["Rock", "Paper", "Scissors"]
+    @computer_choice = []
+    @potential_choices = ["Rock", "Paper", "Scissors"]
   end
 
   def self.create(player)
@@ -18,8 +19,8 @@ class Game
     @game
   end
 
-  def wins?
-    return true if @choice.pop == "Rock" && @computer_choice
+  def pick_opposing_weapon
+    @computer_choice << @potential_choices.sample
   end
 
 end
