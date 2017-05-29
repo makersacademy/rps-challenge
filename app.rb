@@ -11,6 +11,7 @@ class RockPaperScissor < Sinatra::Base
   rock = player.rock
   paper = player.paper
   scissors = player.scissors
+  computer_move = computer.computer_move
 
 
 
@@ -21,6 +22,7 @@ class RockPaperScissor < Sinatra::Base
     @rock = rock
     @paper = paper
     @scissors = scissors
+    @computer_move = computer_move
   end
 
   enable :sessions

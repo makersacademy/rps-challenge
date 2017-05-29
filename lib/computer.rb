@@ -6,8 +6,8 @@ class Computer
   end
 
   def computer_move
-    @computer_move = ["rock", "paper", "scissors"]
-   @computer_move.sample
+    @computer_move = ["rock", "paper", "scissors"].sample
+   @computer_move
   end
 
 end

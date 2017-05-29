@@ -36,7 +36,7 @@ feature 'Computer chooses rock which is randomly generated' do
   scenario 'Computer chooses Rock' do
     register_name_to_play
     click_button "rock"
-    expect(page).to have_content("Computer chooses Rock")
+    expect(page).to have_content("Computer chooses: ")
   end
 end
 
@@ -44,7 +44,7 @@ feature 'Computer chooses Paper which is randomly generated' do
   scenario 'Computer chooses Paper' do
     register_name_to_play
     click_button "scissors"
-    expect(page).to have_content("Computer chooses Paper")
+    expect(page).to have_content("Computer chooses: ")
   end
 end
 
@@ -52,6 +52,6 @@ feature 'Computer chooses Paper which is randomly generated' do
   scenario 'Computer chooses Scissors' do
     register_name_to_play
     click_button "paper"
-    expect(page).to have_content("Computer chooses Scissors")
+    expect(page).to have_content("Computer chooses: ")
   end
 end
