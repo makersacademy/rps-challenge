@@ -1,0 +1,12 @@
+<h1><%=@player_1_name%> selects <%=@player_selection%></h1>
+<h1> Computer selects <%=@computer_selection%></h1>
+<% if @result_hash[[@player_selection,@computer_selection]] == :win %>
+  <h1> You win!!! </h1>
+<% elsif @result_hash[[@player_selection,@computer_selection]] == :lose %>
+  <h1> Computer wins. :-( </h1>
+<% else %>
+  <h1> It's a tie. </h1>
+<% end %>
+<form action="/play" method="get">
+  <input type="submit" value="Play again!">
+</form>
