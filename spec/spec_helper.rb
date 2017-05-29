@@ -9,6 +9,7 @@ require 'rack/test'
 require 'simplecov'
 require 'simplecov-console'
 
+
 Capybara.app = RockPaperScissors
 
 Capybara::Session.new(:rack_test, RockPaperScissors)
