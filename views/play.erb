@@ -1,2 +1,8 @@
 <h1> Welcome <%= @player_1_name %> </h1>
 <h2> Make your selection of weapon </h2>
+<h3> Rock, Paper or Scissors </h3>
+<form action='/play' method='post'>
+  <input type='submit' name='weapon' value='Rock'>
+  <input type='submit' name='weapon' value='Paper'>
+  <input type='submit' name='weapon' value='Scissors'>
+</form>
