@@ -49,7 +49,8 @@ feature 'play a RPS game' do
     sign_in_and_play
     click_button('Scissors')
     click_button('Play')
-    expect(page).to have_content("No winner, it's a draw!")
+    p page
+    expect(page).to have_content("a draw. Nobody wins!")
   end
 
 end

@@ -24,13 +24,13 @@ describe Game do
 
   describe '#win?' do
     it 'returns true if player wins' do
-      expect(game.win?).to be false
+      expect(game.win?).to be true
     end
   end
 
   describe '#lose?' do
     it 'returns true if player has lost' do
-      expect(game.lose?).to be true
+      expect(game.lose?).to be false
     end
   end
 

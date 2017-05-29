@@ -37,7 +37,7 @@ private
 
   def result
     return :draw if @player_1_choice == @player_2_choice
-    WIN_RULES[@player_1_choice] == [@player_2_choice] ? :win : :lose
+    WIN_RULES[@player_1_choice] == @player_2_choice ? :win : :lose
   end
 
 end

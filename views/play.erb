@@ -9,7 +9,7 @@
     <input type="submit" name="player_1_choice" value="Scissors">
   </form>
 
-  You have chose <%= @game.player_1_choice %>
+  You have chose <%= @game.player_1_choice.to_s.capitalize %>
   <div>Computer has chose <%= @game.player_2_choice.to_s.capitalize %></div>
 
   <br/><br/>

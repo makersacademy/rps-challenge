@@ -1,11 +1,12 @@
 <body style="color:darkblue;">
-  <% if @game.win?%>
+  <%= p @game.win?,  @game.lose?, @game.draw?%>
+  <% if @game.win? %>
     <h1>The result is .... You won!</h1>
   <% end %>
-  <% if @game.lose?%>
+  <% if @game.lose? %>
     <h1>The result is .... You lost!</h1>
   <% end %>
-  <% if @game.draw?%>
+  <% if @game.draw? %>
     <h1>The result is .... a draw. Nobody wins!</h1>
   <% end %>
 
