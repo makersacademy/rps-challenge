@@ -8,7 +8,7 @@ feature 'register name' do
   end
 end
 
-feature 'Chooses a weapon' do
+feature 'Chooses a weapon, rock' do
   scenario 'A player chooses Rock!' do
     register_name_to_play
     click_button "rock"
@@ -16,7 +16,7 @@ feature 'Chooses a weapon' do
   end
 end
 
-feature 'Chooses a weapon' do
+feature 'Chooses a weapon, paper' do
   scenario 'A player chooses Paper!' do
     register_name_to_play
     click_button "paper"
@@ -24,10 +24,34 @@ feature 'Chooses a weapon' do
   end
 end
 
-feature 'Chooses a weapon' do
+feature 'Chooses a weapon, scissors' do
   scenario 'A player chooses Scissors!' do
     register_name_to_play
     click_button "scissors"
     expect(page).to have_content("You choose Scissors")
+  end
+end
+
+feature 'Computer chooses rock which is randomly generated' do
+  scenario 'Computer chooses Rock' do
+    register_name_to_play
+    click_button "rock"
+    expect(page).to have_content("Computer chooses Rock")
+  end
+end
+
+feature 'Computer chooses Paper which is randomly generated' do
+  scenario 'Computer chooses Paper' do
+    register_name_to_play
+    click_button "scissors"
+    expect(page).to have_content("Computer chooses Paper")
+  end
+end
+
+feature 'Computer chooses Paper which is randomly generated' do
+  scenario 'Computer chooses Scissors' do
+    register_name_to_play
+    click_button "paper"
+    expect(page).to have_content("Computer chooses Scissors")
   end
 end

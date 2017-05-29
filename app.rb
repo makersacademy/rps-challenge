@@ -1,7 +1,19 @@
 require "sinatra/base"
 require "./lib/player"
+require "./lib/computer"
+require "./lib/game"
 
 class RockPaperScissor < Sinatra::Base
+
+  player = Player.new('spencer')
+  computer = Computer.new
+  game = Game.new
+
+  before do
+    @player = player
+    @computer = computer
+    @game = game
+  end
 
   enable :sessions
 
