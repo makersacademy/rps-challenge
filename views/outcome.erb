@@ -10,15 +10,24 @@
 </head>
 
 <body id="outcome">
+
+<div id="result_box">
+  <p id="result"><%= @round_winner %> wins the round!</p><br>
+  <a id="continue" href="/play">Continue</a>
+</div>
+
 <div id="player_1_throw">
   <img src="images/right/<%= @player_1_weapon %>.png" id="player_1_weapon"><br>
   <%= @player_1_name %> throws <%= @player_1_weapon %>!
 </div>
+
 <br><br><br>
+
 <div id="player_2_throw">
   <img src="images/left/<%= @player_2_weapon %>.png" id="player_2_weapon"><br>
   <%= @player_2_name %> throws <%= @player_2_weapon %>!
 </div>
+
 </body>
 
 </html>

@@ -25,12 +25,17 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    rounds = params[:no_of_rounds].to_i
-    @game.no_of_rounds = [*1..rounds]
+    @game.no_of_rounds = params[:no_of_rounds].to_i
+    redirect '/play'
+  end
+
+  get '/play' do
+    @round_no = @game.round
     erb :play
   end
 
   post '/fight' do
+    @game.next_round
     session[:weapon] = params[:weapon]
     redirect '/outcome'
   end
@@ -40,11 +45,8 @@ class RubyPaperScissors < Sinatra::Base
     @player_2_weapon = Game::WEAPONS.sample.to_s
     @player_1_name = @game.players[0].name
     @player_2_name = @game.players[1].name
+    @round_winner = @game.fight(@player_1_weapon, @player_2_weapon)
     erb :outcome
-  end
-
-  get 'play' do
-    erb :play
   end
 
   run! if __FILE__ == $PROGRAM_NAME

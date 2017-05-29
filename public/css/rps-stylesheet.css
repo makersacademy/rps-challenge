@@ -155,7 +155,7 @@ div {
     width: 500px;
     left: 350px;
     position: relative;
-    top: 386px;
+    top: 200px;
 }
 
 #player_2_throw {
@@ -165,7 +165,7 @@ div {
     width: 500px;
     right: 350px;
     position: relative;
-    bottom: -20px;
+    bottom: 160px
 }
 
 #player_1_weapon {
@@ -177,6 +177,27 @@ div {
 }
 
 #outcome {
-    width: 100%;
-    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+#result {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+}
+
+#continue {
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+#continue:hover {
+    -webkit-text-fill-color: #D34644;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
 }
