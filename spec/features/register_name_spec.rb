@@ -4,9 +4,7 @@
 
 feature 'the player can register it\'s name' do
   scenario 'player register it\'s name and can see it' do
-    visit('/')
-    fill_in('name', with: 'Guillermo')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content('Guillermo')
   end
 end
