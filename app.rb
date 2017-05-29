@@ -15,7 +15,7 @@ class RPS < Sinatra::Application
   post '/game-setup' do
     session[:player1] = Player.new(params[:player_name])
     session[:player2] = Computer.new
-    session[:game]    = Game.new(session[:player1],session[:player2] )
+    session[:game]    = Game.new(session[:player1], session[:player2])
     redirect '/play'
   end
 
