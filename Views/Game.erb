@@ -1,9 +1,9 @@
 <center>
-  <%= @game.beats?(other) %>
+  <%= @game.winner %>
   <h2>you won!</h2>
-  <%= @game.beats?(other) %>
+  <%= @game.winner %>
   <h2>you drew!</h2>
-  <%= @game.beats?(other)%>
+  <%= @game.winner%>
   <h2>you lost!</h2>
 <form action="/play" method="get">
   <input type="submit" value="back to play">

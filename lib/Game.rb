@@ -5,9 +5,9 @@ class Game
   attr_reader :player, :object, :computer_object
 
   WIN = [
-    [Rock: :Scissors],
-    [Paper: :Rock],
-    [Scissors: :Paper]
+    [:Rock, :Scissors],
+    [:Paper, :Rock],
+    [:Scissors, :Paper]
   ]
 
   LOSE = [
@@ -27,8 +27,7 @@ class Game
   end
 
   def match
-
-    p [@object, @random_selection]
+    [@object, @random_selection]
   end
 
   def winner
