@@ -179,7 +179,7 @@ div {
 #outcome {
     height: 100vh;
     width: 100vw;
-    position: fixed;
+    position: relative;
 }
 
 #result {

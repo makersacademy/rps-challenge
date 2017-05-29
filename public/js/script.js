@@ -13,12 +13,12 @@ Mousetrap.bind('s', function(){
     })
 });
 
-Mousetrap.bind('t', function(){
-    $("#themes_popup").css("visibility", "visible");
-    $(".close_button").click(function() {
-        $("#themes_popup").css("visibility", "hidden");
-    })
-});
+// Mousetrap.bind('t', function(){
+//     $("#themes_popup").css("visibility", "visible");
+//     $(".close_button").click(function() {
+//         $("#themes_popup").css("visibility", "hidden");
+//     })
+// });
 
 Mousetrap.bind('q u a c k', function(){
     $("#easter_egg_popup").css("visibility", "visible");
