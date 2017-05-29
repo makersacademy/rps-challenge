@@ -1,4 +1,5 @@
-Welcome to the game, <%= @game.player_1.name %>. You are competing against <%= @game.player_2.name %>.
+<center><h1>Welcome to the game, <%= @game.player_1.name %>! You are competing against <%= @game.player_2.name %>.</h1>
+  <br><h2>Make a choice</h2><br>
 
 <form action="/result" method="post">
   <input type="submit" name="item" value="Rock">
@@ -11,3 +12,4 @@ Welcome to the game, <%= @game.player_1.name %>. You are competing against <%= @
 <form action="/result" method="post">
   <input type="submit" name="item" value="Scissors">
 </form>
+</center>
