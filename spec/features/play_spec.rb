@@ -3,6 +3,7 @@
 # I would like to be able to play rock/paper/scissors
 
 feature "playing a RPS game" do
+  RANDOM_SEED = 221563
 
   # As a marketeer
   # So I can play a game
@@ -31,9 +32,10 @@ feature "playing a RPS game" do
 
   scenario "The computer select a random shape" do
     sign_in_and_play
+    srand(RANDOM_SEED)
     click_button("Rock")
-    expect(computer_possible_choice_message).to include("The computer had selected Rock!")
-    expect(computer_possible_choice_message).to include("The computer had selected Paper!")
-    expect(computer_possible_choice_message).to include("The computer had selected Scissors!")
+    expect(page).to have_content("The computer had selected Scissors!")
+    # expect(computer_possible_choice_message).to include("The computer had selected Paper!")
+    # expect(computer_possible_choice_message).to include("The computer had selected Scissors!")
   end
 end

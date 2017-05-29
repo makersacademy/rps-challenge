@@ -17,12 +17,10 @@
     </div>
 
     <% if @player.choice != nil %>
-    <div>
-      <p>You have selected <%= @player.choice.to_s.capitalize %>!</p>
-    </div>
-    <div>
-      <p>The computer had selected <%= @computer_choice.to_s.capitalize %>!</p>
-    </div>
+      <div>
+        <p>You have selected <%= @player.choice.to_s.capitalize %>!</p>
+        <p>The computer had selected <%= @computer.choice.to_s.capitalize %>!</p>
+      </div>
     <% end %>
 
   </body>

@@ -19,13 +19,13 @@ class RPSWeb < Sinatra::Base
 
   get "/play" do
     @player = Player.new(session)
-    @computer_choice = session[:computer_choice]
+    @computer = Computer.new
+    @defeats = {:rock => :paper, :paper => :scissors, :scissors => :rock}
     erb :play
   end
 
   post "/play" do
     session[:choice] = params[:choice]
-    session[:computer_choice] = [:rock, :paper, :scissors].sample
     redirect("/play")
   end
 
