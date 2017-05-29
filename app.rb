@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require'./lib/game.rb'
 require'./lib/player.rb'
+require'./lib/rules.rb'
+require'./lib/review.rb'
 class Rps < Sinatra::Base
 
   enable  :sessions
@@ -22,7 +24,15 @@ class Rps < Sinatra::Base
     @game.computer_choice
     @game.player_choice
     @game.winner
+    @game.print_results
     erb:result
+  end
+
+  get '/review' do
+    @review = Review.create(Game.instance.player.name)
+    @review.values
+    @review.print_values
+    erb:review
   end
 
 end

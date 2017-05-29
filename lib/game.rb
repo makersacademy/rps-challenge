@@ -1,3 +1,4 @@
+require "csv"
 class Game
 
   attr_reader :player, :result
@@ -32,7 +33,13 @@ class Game
   end
 
   def winner
-    @result = @outcome[@player_c - @computer_c]
+    @rules = Rules.new
+    @result = @rules.winner(@player_c, @computer_c)
   end
 
+  def print_results
+    CSV.open("database.csv", "a+") do |csv|
+      csv << [@player.name , @words[@computer_c], @words[@player_c], @result]
+    end
+  end
 end

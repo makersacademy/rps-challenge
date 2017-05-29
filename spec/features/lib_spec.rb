@@ -68,3 +68,12 @@ feature 'Able to choose an option' do
     expect(page).to have_content "You chose rock"
   end
 end
+
+feature 'Able to review old games' do
+  scenario "After a player is done, they can see all their previous results" do
+    set_up
+    choice
+    click_button "review"
+    expect(page).to have_content "Your results are"
+  end
+end
