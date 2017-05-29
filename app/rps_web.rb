@@ -36,6 +36,11 @@ class RPSWeb < Sinatra::Base
     erb(:weapon)
   end
 
+  post '/restart' do
+    params[:reset_game]
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end

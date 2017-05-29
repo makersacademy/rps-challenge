@@ -32,4 +32,14 @@ feature "The player can choose a weapon of their choice" do
       expect(page).to have_content "The winner of the game is:"
     end
   end
+
+  feature "Player can click a button to redirect them to restart the game " do
+    scenario "Player can see the Reset Game button" do
+      sign_in_and_register
+      click_button('Rock')
+      click_button('Reset Game')
+      visit '/'
+      expect(page).to have_content "Welcome to the most incredible game in the world: Rock, Paper, Scissors!"
+    end
+  end
 end
