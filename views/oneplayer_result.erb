@@ -8,7 +8,7 @@
   <p>You chose <%= @game.players[0].weapon.capitalize %>.</p>
   <p>The computer chose <%= @game.players[1].weapon.capitalize %>.</p>
   <br>
-  <div class="results">
+  <div>
     <form action="/play" method="get">
       <input class="restart-button" type="submit" value="Rematch">
     </form>
@@ -16,4 +16,7 @@
       <input class="restart-button" type="submit" value="New Game">
     </form>
   </div>
+  <form action="/save_game" method="post">
+    <input type="submit" value="Save Game">
+  </form>
 </div>

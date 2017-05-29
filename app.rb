@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 require './lib/player'
 require './lib/computer'
+require 'csv'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -48,6 +49,11 @@ class RPS < Sinatra::Base
     @game.players[0].weapon=(params[:weapon])
     @game.players[1].choose_weapon
     erb(:oneplayer_result)
+  end
+
+  post '/save_game' do
+    @game.save_game
+    erb(:saved_game)
   end
 
 end
