@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
-
+# gem 'em-websocket'
 gem 'rake'
 gem 'sinatra'
+# gem 'thin'
 
 group :test do
   gem 'capybara'

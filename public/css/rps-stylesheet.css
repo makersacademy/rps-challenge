@@ -1,0 +1,339 @@
+html {
+    font-family: Barrio, cursive;
+    color: white;
+    background-color: #D34644;
+}
+
+body {
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+}
+
+#title-box {
+    font-size: 65px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#subtitle-box {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+form {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    border: solid 1px transparent;
+    background-color: transparent;
+}
+
+#form-box {
+    margin: auto;
+    text-align: center;
+}
+
+#name-box {
+    background-color: transparent;
+    color: white;
+    font-family: Barrio, cursive;
+    text-align: center;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+    border: solid 1px transparent;
+    border-bottom: dotted 4px white;
+    width: 280px;
+    height: 50px;
+}
+
+#rounds_question_box {
+    padding-top: 30px;
+    font-size: 45px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    /*line-height: 10px;*/
+}
+
+#rounds_option_box {
+    padding-top: 100px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#rounds_option_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 250px;
+}
+
+li {
+    display: inline;
+    background-color: transparent;
+}
+
+#submit-button {
+    border: solid 1px transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-family: Barrio, cursive;
+    font-size: 35px;
+    color: white;
+    padding-top: 40px;
+}
+
+#submit-button:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+input {
+    font-size: 30px;
+}
+
+.rounds_option {
+    border: solid 1px transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-family: Barrio, cursive;
+    font-size: 250px;
+    color: white;
+}
+
+.rounds_option:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+}
+
+#main_game_header {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+img.weapon_icon {
+    background-color: transparent;
+    width: 75%;
+    padding-right: 30px;
+}
+
+.weapon_option {
+    border: solid 1px transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 300px;
+    font-family: Barrio, cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.weapon_option:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+div {
+    text-align: center;
+}
+
+#player_1_throw {
+    font-size: 35px;
+    text-align: left;
+    margin: auto;
+    position: relative;
+    padding-top: 182px;
+    width: 47vw;
+}
+
+#player_2_throw {
+    font-size: 35px;
+    text-align: right;
+    margin: auto;
+    position: relative;
+    padding-top: 182px;
+    width: 47vw;
+}
+
+#player_1_weapon {
+    width: 260px;
+}
+
+#player_2_weapon {
+    width: 260px;
+}
+
+#outcome {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#result {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+}
+
+#continue {
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+#continue:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+#game_over_header {
+    font-size: 120px;
+    line-height: 10px;
+    margin: auto;
+}
+
+#winner {
+    font-size: 50px;
+    line-height: 20px;
+    margin: auto;
+}
+
+#trophy {
+    width: 250px;
+    margin: auto;
+}
+
+#game_over {
+    position: relative;
+    text-align: center;
+    margin: auto;
+
+}
+
+#new_game {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#new_game_link {
+    font-size: 40px;
+    line-height: 20px;
+    text-align: center;
+    /*position: relative;*/
+    text-decoration: none;
+    color: white;
+}
+
+#new_game_link:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+#red {
+    background-color: #D34644;
+    z-index: 99;
+}
+
+#green {
+    background-color: #34A853;
+    z-index: 99;
+}
+
+#blue {
+    background-color: #4285F4;
+    z-index: 99;
+}
+
+#yellow {
+    background-color: #FEBF13;
+    z-index: 99;
+}
+
+#lilac {
+    background-color: #776D94;
+    z-index: 99;
+}
+
+#grey {
+    background-color: #303E4E;
+    z-index: 99;
+}
+
+.colour-option {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 5px white solid;
+    border-radius: 100%;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .75);
+    padding-top: 120px;
+    visibility: hidden;
+}
+
+.popup_contents {
+    background-color: #D34644;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    width: 850px;
+    height: 600px;
+    border: 4px solid white;
+}
+
+#quack {
+    border: solid 4px white;
+    width: 600px;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+}
+
+th {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+.rules_image {
+    width: 120px;
+    padding: 15px;
+}
+
+.close_button {
+    width: 40px;
+    height: 40px;
+    left: 15px;
+    top: 15px;
+    position: fixed;
+    z-index: 98;
+}

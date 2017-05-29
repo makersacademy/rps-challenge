@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF=8">
+  <title>Ruby, Paper, Scissors!</title>
+  <link href="css/rps-stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script type="text/javascript" src="js/mousetrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body id="outcome">
+
+<table id="result_box">
+  <tr>
+    <th>
+      <div id="result_box">
+        <p id="result"><%= @round_winner %> wins this round!</p><br>
+        <a id="continue" href="/play">Continue...</a>
+      </div>
+    </th>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>
+      <div id="player_1_throw">
+        <img src="images/left/<%= @player_1_weapon %>.png" id="player_1_weapon"><br>
+        <%= @player_1_name %> throws <%= @player_1_weapon %>!
+      </div>
+    </th>
+    <th>
+      <div id="player_2_throw">
+        <img src="images/right/<%= @player_2_weapon %>.png" id="player_2_weapon"><br>
+        <%= @player_2_name %> throws <%= @player_2_weapon %>!
+      </div>
+    </th>
+  </tr>
+</table>
+
+<div class="popup" id="scores_popup">
+  <img class="close_button" src="images/exit.png">
+  <p class="popup_contents" id="scores_contents">The Scores</p>
+</div>
+
+<div class="popup" id="rules_popup">
+  <img class="close_button" src="images/exit.png">
+  <div class="popup_contents" id="rules_contents">
+    <p id="rules_header">The Rules...</p>
+    <table>
+      <tr>
+        <th><img class="rules_image" src="images/left/ruby.png"></th>
+        <th>ruby beats scissors</th>
+        <th><img class="rules_image" src="images/right/scissors.png"></th>
+      </tr>
+      <tr>
+        <th><img class="rules_image" src="images/left/scissors.png"></th>
+        <th>scissors beat paper</th>
+        <th><img class="rules_image" src="images/right/paper.png"></th>
+      </tr>
+      <tr>
+        <th><img class="rules_image" src="images/left/paper.png"></th>
+        <th>paper beats ruby</th>
+        <th><img class="rules_image" src="images/right/ruby.png"></th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="popup" id="themes_popup">
+  <img class="close_button" src="images/exit.png">
+  <div class="popup_contents" id="themes_contents">
+    <p>The Themes</p>
+    <p>Check out one of the themes below...</p>
+    <table>
+      <tr>
+        <th><div class="colour-option" id="red"></div></th>
+        <th><div class="colour-option" id="green"></div></th>
+        <th><div class="colour-option" id="blue"></div></th>
+        <th><div class="colour-option" id="yellow"></div></th>
+        <th><div class="colour-option" id="lilac"></div></th>
+        <th><div class="colour-option" id="grey"></div></th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="popup" id="easter_egg_popup">
+  <img class="close_button" src="images/exit.png">
+  <img id="quack" src="images/quack.jpg">
+</div>
+
+</body>
+
+</html>
