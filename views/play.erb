@@ -1,12 +1,13 @@
-Welcome to the game, <%= @game.player_1.name %>
-<form action="/rock" method="post">
-  <input type="submit" value="Rock">
+Welcome to the game, <%= @game.player_1.name %>. You are competing against <%= @game.player_2.name %>.
+
+<form action="/result" method="post">
+  <input type="submit" name="item" value="Rock">
 </form>
 
-<form action="/paper" method="post">
-  <input type="submit" value="Paper">
+<form action="/result" method="post">
+  <input type="submit" name="item" value="Paper">
 </form>
 
-<form action="/scissors" method="post">
-  <input type="submit" value="Scissors">
+<form action="/result" method="post">
+  <input type="submit" name="item" value="Scissors">
 </form>

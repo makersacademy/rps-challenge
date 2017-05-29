@@ -1,5 +1,9 @@
 class Game
 
+WIN = :Win
+LOSE = :Lose
+DRAW = :Draw
+
   def initialize(player1, player2)
     @player = [player1, player2]
   end
@@ -13,14 +17,14 @@ class Game
   end
 
   def play(item)
-    player_1.choose(Randomiser.new.picked_randomly)
-    player_2.choose(item)
+    player_2.choose(Randomiser.new.picked_randomly)
+    player_1.choose(item)
     if player_1.item.beats(player_2.item)
-      return [player_1]
+      return WIN
     elsif player_2.item.beats(player_1.item)
-      return [player_2]
+      return LOSE
     else
-      return [player_1, player_2]
+      return DRAW
     end
   end
 
