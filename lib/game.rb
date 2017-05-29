@@ -11,26 +11,26 @@ class Game
   end
 
   def result
-    if @player1.weapon == 'rock'
-      if @player2.weapon == 'scissors'
+    if @player1.weapon == :rock
+      if @player2.weapon == :scissors
         @winner = @player1.name
-      elsif @player2.weapon == 'paper'
+      elsif @player2.weapon == :paper
         @winner = @player2.name
       else
         @winner = 'draw'
       end
-    elsif @player1.weapon == 'paper'
-      if @player2.weapon == 'rock'
+    elsif @player1.weapon == :paper
+      if @player2.weapon == :rock
         @winner = @player1.name
-      elsif @player2.weapon == 'scissors'
+      elsif @player2.weapon == :scissors
         @winner = @player2.name
       else
         @winner = 'draw'
       end
-    elsif @player1.weapon == 'scissors'
-      if @player2.weapon == 'paper'
+    elsif @player1.weapon == :scissors
+      if @player2.weapon == :paper
         @winner = @player1.name
-      elsif @player2.weapon == 'rock'
+      elsif @player2.weapon == :rock
         @winner = @player2.name
       else
         @winner = 'draw'
