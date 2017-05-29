@@ -3,6 +3,29 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+input[type=text] {
+  margin: 10px;
+  padding-left: 10px;
+  border: 2px solid #000;
+  font-size: 15px;
+  height: 30px;
+  border-radius: 0;
+}
+input[type=submit] {
+  border: 0px;
+  margin: 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  width: 120px;
+  height: 35px;
+  border-radius: 0;
+}
+
+.logo {
+  padding: 20px;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;

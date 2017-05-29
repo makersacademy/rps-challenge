@@ -1,6 +1,7 @@
-<h1>Let's play RPS!</h1>
-<form action="/game-setup" method="POST">
+<img class="logo" src="img/logo.png" alt="Logo RPS">
+<h1>Let's play!</h1>
+<form name="player_name_form" action="/game-setup" method="POST">
   <label for="player_name">Name:</label>
-  <input class="form-control" type="text" name="player_name">
-  <input class="btn btn-default" type="submit" value="Start Game!">
+  <input type="text" name="player_name">
+  <input onclick="return NameIsEmpty()" type="submit" value="Start Game!">
 </form>
