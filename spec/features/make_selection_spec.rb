@@ -1,4 +1,4 @@
-feature 'make selection' do
+feature 'user can make selection' do
   scenario 'player can choosse Rock' do
     sign_in
     click_button 'Rock'
