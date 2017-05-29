@@ -1,8 +1,8 @@
-#RPS Challenge
+# RPS Challenge
 
 ![](http://i.imgur.com/z5sAVfl.png)
 
-#Instructions
+# Instructions
 
 How to run the code
 -------
