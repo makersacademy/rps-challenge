@@ -11,7 +11,8 @@ describe Game do
 
   it 'initialises with an instance variable, @choice' do
     player = Player.new("name")
-    expect(player.choice).to eq nil
+    game = Game.new(player)
+    expect(game.choice).to eq []
   end
 
   it 'can pick a weapon and add it to @computer_choice' do

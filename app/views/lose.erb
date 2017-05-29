@@ -1,4 +1,4 @@
-<h1>You lose!</h1>
+<h1><%="You lose, #{@game.player.name}!"%></h1>
 <br>
 <form method="get" action="/play" id="replay">
   <button type="submit">Play again?</button>

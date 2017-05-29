@@ -4,8 +4,6 @@ require '/Users/jenniferwem/Projects/rps-challenge/lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
-  # attr_reader :player, :game, :choice
-
   enable :sessions
 
   get '/' do
@@ -35,14 +33,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/win' do
+    @game = Game.instance
     erb :win
   end
 
   get '/lose' do
+    @game = Game.instance
     erb :lose
   end
 
   get '/draw' do
+    @game = Game.instance
     erb :draw
   end
 
