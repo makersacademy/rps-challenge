@@ -1,7 +1,7 @@
 require 'Game'
 
 describe Game do
-  subject(:game) {described_class.new("Rock")}
+  subject(:game) {described_class.new}
 
 
   describe '#random_selection' do
@@ -21,6 +21,7 @@ describe Game do
       # game = double('game')
       # allow(game).to receive(:random_selection) {"Paper"}
       allow(Game::WEAPONS).to receive(:sample) {:Scissors}
+      game.choice(:Rock)
       game.random_selection
       p game.match
       expect(game.winner).to eq :winner
@@ -30,6 +31,7 @@ describe Game do
     # game = double('game')
     # allow(game).to receive(:random_selection) {"Paper"}
     allow(Game::WEAPONS).to receive(:sample) {:Rock}
+    game.choice(:Rock)
     game.random_selection
     p game.match
     expect(game.winner).to eq :draw
@@ -39,6 +41,7 @@ describe Game do
     # game = double('game')
     # allow(game).to receive(:random_selection) {"Paper"}
     allow(Game::WEAPONS).to receive(:sample) {:Paper}
+    game.choice(:Rock)
     game.random_selection
     p game.match
     expect(game.winner).to eq :loser

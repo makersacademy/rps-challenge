@@ -19,7 +19,7 @@ class Game
  WEAPONS = [:Rock, :Paper, :Scissors]
 
   def choice(object)
-    @object= object.capitalize.to_sym
+    @object = object.capitalize.to_sym
   end
 
 
