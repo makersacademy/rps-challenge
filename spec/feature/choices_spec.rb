@@ -21,4 +21,13 @@ feature 'Player has different choices' do
     expect(page).to have_button('Scissors')
   end
 
+  scenario 'If player chooses Paper and computer chooses rock, player wins' do
+    allow(Item.items).to receive(:sample).and_return(Item.rock)
+    visit('/')
+    fill_in :player_1_name, with: 'Tim'
+    click_button :Enter
+    click_button :Paper
+    expect(page).to have_content('Tim wins!')
+  end
+
 end

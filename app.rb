@@ -28,7 +28,8 @@ class RPS < Sinatra::Base
   post '/result' do
     @game = $game
     item_name = params[:item].downcase
-    return 'Error' if !Item.items.include? item_name
+    puts "Item name #{item_name}"
+    #return 'Error' if !Item.items.include? item_name
     item = Item.send(item_name)
     erb @game.play(item)
   end

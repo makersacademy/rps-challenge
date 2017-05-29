@@ -3,7 +3,7 @@ class Item
   attr_reader :index, :name
 
   def self.items
-    [Item.rock, Item.paper, Item.scissors]
+    @items ||= [Item.rock, Item.paper, Item.scissors]
   end
 
   def self.rock
