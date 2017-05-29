@@ -14,9 +14,11 @@
 </form>
 
 <center>
-<h2>You are <%= @object %><h2>
 
-<h2>Computer is <%= @computer_object %></h2>
+<h2>You are <%= @game.object.to_s %><h2>
+<% if @game.object %>
+<h2>Computer is <%= @game.random_selection %></h2>
+<% end %>
 
 <form action="/game" method="get">
       <input type="submit" value="Submit">

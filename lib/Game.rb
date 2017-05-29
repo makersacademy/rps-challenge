@@ -18,9 +18,10 @@ class Game
 
  WEAPONS = [:Rock, :Paper, :Scissors]
 
-  def initialize(object)
-    @object = object.capitalize.to_sym
+  def choice(object)
+    @object= object.capitalize.to_sym
   end
+
 
   def random_selection
     @random_selection = WEAPONS.sample
@@ -39,4 +40,12 @@ class Game
       :draw
     end
   end
+
+  # def self.instance #allows you to access @game
+  #   @game
+  # end
+  #
+  # def self.create(object)  #replaces/updates @game instance variable
+  #   @game = Game.new(object)
+  # end
 end

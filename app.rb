@@ -14,27 +14,36 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/play' do
-    @player = session[:player]
-    @object = session[:object]
-    @computer_object = session[:computer_object]
-    @game = session[:game]
-    erb(:play)
-  end
-
   post '/name' do
+    session[:game] = Game.new
     session[:player] = params[:player]
     redirect '/play'
   end
 
+
   post '/play' do
-    session[:object] = params[:object].to_sym
-    session[:computer_object] = Game.new.random_selection
+    p "POST PLAY"
+    @game = session[:game]
+    p @game
+    p session[:game]
+    # session[:object] = params[:object].to_sym
+    @game.choice(params[:object])
+    session[:computer_object] = @game.random_selection
+    session[:game] = @game
     redirect '/play'
   end
 
+  get '/play' do
+    p "GET PLAY"
+    @game = session[:game]
+    @player = session[:player]
+    # @computer_object = session[:computer_object]
+    session[:game] = @game
+    erb(:play)
+  end
+
    get '/game' do
-    session[:game] = Game.new.winner(:object)
+    @game = session[:game]
     erb(:game)
    end
 

@@ -1,10 +1,11 @@
 <center>
-  <%= @game.winner %>
-  <h2>you won!</h2>
-  <%= @game.winner %>
-  <h2>you drew!</h2>
-  <%= @game.winner%>
-  <h2>you lost!</h2>
+  <% if @game.winner == :winner %>
+    <h2>you won!</h2>
+  <% elsif @game.winner == :draw %>
+    <h2>you drew!</h2>
+  <% else %>
+    <h2>you lost!</h2>
+  <% end %>
 <form action="/play" method="get">
   <input type="submit" value="back to play">
 </form>

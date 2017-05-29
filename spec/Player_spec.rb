@@ -5,7 +5,7 @@ describe Player do
   # let(:jade) { double('Jade')}  #, attack:'' ) }
 
   it 'should be able to register name before playing game' do
-    expect(player).to eq 'Jade'
+    expect(player.name).to eq 'Jade'
   end
 
 

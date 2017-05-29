@@ -43,5 +43,5 @@ describe Game do
     p game.match
     expect(game.winner).to eq :loser
   end
-end
+  end
 end
