@@ -1,11 +1,14 @@
+<head>
 <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Poiret+One" rel="stylesheet">
+</head>
 
 <div class="container">
-  <h1>You <%= @game.battle %>.</h1>
+  <h1 id="Subtitle">You <%= @game.battle %>.</h1>
   <p>You chose <%= @game.players[0].weapon.capitalize %>.</p>
   <p>The computer chose <%= @game.players[1].weapon.capitalize %>.</p>
   <form action="/play" method="get">
-    <input class="restart-button" type="submit" value="Rematch!">
+    <input class="restart-button" type="submit" value="Rematch">
   </form>
   <form action="/" method="get">
     <input class="restart-button" type="submit" value="New Game">

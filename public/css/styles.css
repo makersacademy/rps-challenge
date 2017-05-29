@@ -1,11 +1,12 @@
 
 body {
   margin: 0;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .container {
-font-family: 'Rajdhani', sans-serif;
+font-family:'Poiret One', cursive;
 margin-left: auto;
 margin-right: auto;
 display: flex;
@@ -19,22 +20,29 @@ background-color: rgb(179, 217, 255);
 
 #Title {
   font-size: 90px;
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bangers', cursive;
+}
+
+#Subtitle {
+  font-size: 50px;
+  font-weight: 900;
 }
 
 .form {
-  border-radius: 30px
-  padding: 10px 10px
+  border-radius: 10px;
+  padding: 8px;
 }
 
 .restart-button {
   -webkit-border-radius: 100;
   -moz-border-radius: 100;
   border-radius: 100px;
-  font-family: Courier New;
+  border: none;
+  font-family: 'Poiret One', cursive;
+  font-weight: 500;
   color: #ffffff;
   font-size: 18px;
-  background: #11527a;
+  background: #000000;
   padding: 7px 20px 7px 20px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

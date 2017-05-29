@@ -1,7 +1,11 @@
+<head>
 <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Poiret+One" rel="stylesheet">
+</head>
+
 
 <div class="container">
-  <h1 id="Title"> Rock / Paper / Scissors</h1>
+  <h1 id="Title">Rock! Paper! Scissors!</h1>
   <br>
   <% if @player2 == nil %>
   <form action="/oneplayer_name" method="post">
@@ -22,7 +26,8 @@
       Player 2:
       <input class="form" type="text" name="player2_name" placeholder="Enter your name">
     </label>
-    <input type="submit" value="Submit">
+    <p>
+    <input class="restart-button" type="submit" value="Submit">
   </form>
   <% end %>
 </div>
