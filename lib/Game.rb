@@ -2,31 +2,42 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :object, :computer_object
+  attr_reader :player, :object, :computer_object
 
-  RULES = { Rock: :Scissors,
-          Paper: :Rock,
-          Scissors: :Paper }
+  WIN = [
+    [Rock: :Scissors],
+    [Paper: :Rock],
+    [Scissors: :Paper]
+  ]
+
+  LOSE = [
+   [:Rock, :Paper],
+   [:Paper, :Scissors],
+   [:Scissors, :Rock]
+ ]
+
+ WEAPONS = [:Rock, :Paper, :Scissors]
 
   def initialize(object)
-    @object = object.to_sym
+    @object = object.capitalize.to_sym
   end
 
   def random_selection
-    [:Rock, :Paper, :Scissors].sample
+    @random_selection = WEAPONS.sample
   end
 
-  def beats?(other)
-    # if object == :Rock && random_selection == :Rock
-    # if ({:Rock => :Scissors} || {:Paper => :Rock} || {:Scissors => :Paper})
-    #   :winner
-    # if ({:Rock => :Rock} || {:Paper => :Paper} || {:Scissors => :Scissors})
-    #   :draw
-    # elsif ({:Rock => :Paper} || {:Paper => :Scissors} || {:Scissors => :Rock})
-    #   :loser
-    # end
-  # end
-     RULES[object][other.object]
+  def match
+
+    p [@object, @random_selection]
   end
 
+  def winner
+    if WIN.include?(match)
+      :winner
+    elsif LOSE.include?(match)
+       :loser
+    else
+      :draw
+    end
+  end
 end

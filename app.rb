@@ -33,8 +33,8 @@ class RPS < Sinatra::Base
     redirect '/play'
   end
 
-   post '/game' do
-    session[:game] = Game.new.winner
+   get '/game' do
+    session[:game] = Game.new.winner(:object)
     erb(:game)
    end
 

@@ -1,7 +1,7 @@
 require 'Game'
 
 describe Game do
-  # subject(:computerplayer) {described_class.new}
+  subject(:game) {described_class.new("Rock")}
 
 
   describe '#random_selection' do
@@ -10,10 +10,17 @@ describe Game do
       # computerplayer.stub(:object) { 'Computer is Rock' }
       # computerplayer = described_class.new
       # double(random_selection: :scissors)
-      game = double('game')
-      allow(game).to receive(:random_selection) {"Computer is Scissors"}
-      expect(game.random_selection).to eq "Computer is Scissors"
+      allow(Game::WEAPONS).to receive(:sample) {"Scissor"}
+      expect(game.random_selection).to eq "Scissors"
       # expect(random_selection.object).to satisfy { |object| object == "Rock" || object == "Paper" || object == "Scissors"}
+    end
+  end
+
+  describe '#beats?(other)' do
+    it 'should return true if player beats computer' do
+      game = double('game')
+      allow(game).to receive(:random_selection) {"Paper"}
+      expect(game.beats?(:scissors)).to eq true
     end
   end
 end
