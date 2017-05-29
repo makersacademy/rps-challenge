@@ -30,6 +30,17 @@ class Game
 
   def draw?
     return true if @choice == @computer_choice
+      else
+    return false
   end
+
+  def win?
+    combination = []
+    combination << @choice
+    combination << @computer_choice
+    combination.flatten!
+    return true if combination == ["Scissors", "Paper"] || ["Rock", "Scissors"] || ["Paper", "Rock"]
+  end
+
 
 end

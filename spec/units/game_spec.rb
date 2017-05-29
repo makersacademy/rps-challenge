@@ -42,6 +42,18 @@ describe Game do
     game.choice << "Scissors"
     game.computer_choice << "Scissors"
     expect(game.draw?).to eq true
+    game.reset_game
+    game.choice << "Rock"
+    game.computer_choice << "Scissors"
+    expect(game.draw?).to eq false
+  end
+
+  it 'can report if a game was won' do
+    player = Player.new("name")
+    game = Game.new(player)
+    game.choice << "Paper"
+    game.computer_choice << "Rock"
+    expect(game.win?).to eq true
   end
 
 end
