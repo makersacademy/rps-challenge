@@ -19,4 +19,10 @@ describe Game do
     expect(subject.play(item_1)).to eq Game::LOSE
   end
 
+  it 'returns draw if neither player beats the other' do
+    allow(item_1).to receive(:beats).and_return(false)
+    allow(item_2).to receive(:beats).and_return(false)
+    expect(subject.play(item_1)).to eq Game::DRAW
+  end
+
 end
