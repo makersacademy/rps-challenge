@@ -1,4 +1,7 @@
 <p>You have selected <%= @choice %></p>
+
+<p>Opponent has selected <%= @opponent_choice %></p>
+<p>The winner is: <%= @winner %></p>
 <form action="/play" method="get">
   <input type="submit" value="Back to Play">
 </form>

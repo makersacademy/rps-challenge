@@ -2,9 +2,9 @@ require 'sinatra'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require 'game'
-require 'player'
-require 'opponent'
+require './lib/game'
+require './lib/player'
+require './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -30,7 +30,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/turn' do
-    @choice = params[:choice]
+    @opponent_choice = @game.players[1].choose_random_weapon
+    @choice = params[:choice].to_sym
+    @game.players[0].choice = @choice
+    @winner = @game.declare_winner
     erb :turn
   end
 

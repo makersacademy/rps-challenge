@@ -11,7 +11,7 @@ describe Player do
 
   describe '#choice' do
     it 'stores the choice hand of the player' do
-      player.stub(:choice).with('rock')
+      allow(player).to receive(:choice) { 'rock' }
       expect(player.choice).to eq 'rock'
     end
   end
