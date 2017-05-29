@@ -12,11 +12,11 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-
   get '/play' do
     @player_1_name = session[:player_1_name]
     erb :play
   end
+
 
   run! if app_file == $0
 

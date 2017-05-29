@@ -1,1 +1,10 @@
-<%="Prepare for hand-to-hand combat #{@player_1_name}!"%>
+<h1>Rock - Paper - Scissors</h1>
+
+<h2><%="Prepare for hand-to-hand combat #{@player_1_name}!"%></h2>
+
+<h3><%="Select your attack method."%></h3>
+<form action="/battle-ground" method="post" id="attack_method">
+  <input type="submit" name="attack_method" value="Rock">
+  <input type="submit" name="attack_method" value="Paper">
+  <input type="submit" name="attack_method" value="Scissors">
+</form>
