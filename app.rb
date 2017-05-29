@@ -43,13 +43,8 @@ class RPS < Sinatra::Application
 
   post '/reset_game' do
     @game = session[:game]
-    if params[:action] == "Reset Game"
-      @game.reset_game
-      redirect '/play'
-    else
-      @game.reset_game
-      redirect '/'
-    end
+    @game.reset_game
+    redirect params[:action] == "Reset Game" ? '/play' : '/'
   end
 
   # start the server if ruby file executed directly

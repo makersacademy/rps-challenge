@@ -5,6 +5,6 @@ feature 'player can enter name' do
     visit '/'
     fill_in('player_name', with: 'Patrick')
     click_on 'Start Game!'
-    expect(page).to have_content "Welcome to Rock, Paper, Scissors Patrick!"
+    expect(page).to have_content "Let's play Rock, Paper & Scissors Patrick!"
   end
 end
