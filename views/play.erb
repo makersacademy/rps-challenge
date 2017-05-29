@@ -8,8 +8,10 @@
 </form>
 
 
-<div> You threw <%= @throw %>! </div>
+<div> You threw <%= @throw.to_s.downcase %>! </div>
 
-<div> Your opponent threw <%= @opponent_throw %>! </div>
+<div id='opponent'>
+  Your opponent threw <%= @opponent_throw.to_s.downcase %>!
+</div>
 
 </body>

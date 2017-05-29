@@ -24,19 +24,19 @@ feature 'playing a game of rock paper scissors' do
 # I want to choose either either rock, paper or scissors
   scenario 'choose an option' do
     click_button('Rock')
-    expect(page).to have_content'You threw Rock!'
+    expect(page).to have_content'You threw rock!'
   end
 # As a marketeer
-# So I have an opponent
-# The game will chose an option
-  scenario 'game choses an option' do
-    click_button('Rock')
-    expect(page).to have_content'Your opponent threw Rock!'
-  end
-# As a marketeer
-# So I can win or lose
-# The games option will be chosen randomly
+# So I can win or lose to an opponent
+# The game will chose an option randomly
   scenario 'game choses option randomly' do
-
+    click_button('Rock')
+    message = find(:css, '#opponent').text
+    expect(message_options).to include message
   end
+
+  def message_options
+    [:rock, :paper, :scissors].map {|option| "Your opponent threw #{option}!"}
+  end
+
 end
