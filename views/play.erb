@@ -1,5 +1,13 @@
 <body>
 <p> Welcome <%= @name %> </p>
 
-Rock Paper Scissors
+<form method='POST' action='/play'>
+  <input type='submit' name='throw' value='Rock'>
+  <input type='submit' name='throw' value='Paper'>
+  <input type='submit' name='throw' value='Scissors'>
+</form>
+
+
+You threw <%= @throw %>!
+
 </body>

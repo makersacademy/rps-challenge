@@ -4,7 +4,7 @@ require 'spec_helper'
 # So that I can enjoy myself away from the daily grind
 # I would like to be able to play rock/paper/scissors
 
-feature 'playing rock paper scissors' do
+feature 'playing a game of rock paper scissors' do
 
   before do
     visit '/'
@@ -15,8 +15,15 @@ feature 'playing rock paper scissors' do
   # So I can play a game
   # I want to see the choices (rock, paper, scissors)"
   scenario 'see the move choices' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+  end
+# As a marketeer
+# So I can play a game
+# I want to choose either either rock, paper or scissors
+  scenario 'choose an option' do
+    click_button('Rock')
+    expect(page).to have_content'You threw Rock!'
   end
 end
