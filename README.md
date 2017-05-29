@@ -36,51 +36,37 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+# Step 1: Structure and supporting files
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+## Instructions
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+Instructions for how to download and run the app:
 
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+```sh
+$ git clone git@github.com:[USERNAME]/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Folder layout (Sinatra structure)
+
+Sinatra is not a particularly opinionated framework (unlike Rails).  This means it does not mandate folder structures and naming conventions.
+
+```
+├── lib
+│   ├── game.rb
+│   ├── computer.rb
+│   └── player.rb
+├── spec
+│   └── spec_helper.rb
+├── views
+│   └── index.erb
+└── rps_web.rb
+```
