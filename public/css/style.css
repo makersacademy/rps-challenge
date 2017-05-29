@@ -3,6 +3,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 input[type=text] {
   margin: 10px;
   padding-left: 10px;
@@ -49,17 +53,31 @@ input[type=submit].exit-game {
   height: 220px;
   float: left;
 }
+
+.player-label {
+  font-size: 10px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 15px;
+}
+
 .vs {
   font-size: 14px;
 }
 
 .winner {
   font-size: 16px;
+  width: 60%;
+  padding: 5px;
+  border: 2px solid #000;
+  margin: 20px auto;
 }
 
 .scores {
   background-color: #7C7877;
-  font-size: 20px;
+  font-size: 18px;
   width: 40%;
   height: 220px;
   margin: 20px;
@@ -67,8 +85,19 @@ input[type=submit].exit-game {
   float: right;
 }
 
-.rounds {
+.scores p {
+  padding: 2px;
+  margin: 2px;
+}
+
+.scores .rounds {
   font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  width: 20%;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 10px auto;
 }
 
 .hand-icon {
