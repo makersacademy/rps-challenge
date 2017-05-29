@@ -27,6 +27,7 @@ feature 'Player has different choices' do
     fill_in :player_1_name, with: 'Tim'
     click_button :Enter
     click_button :Paper
+    puts page.body
     expect(page).to have_content('Tim wins!')
   end
 

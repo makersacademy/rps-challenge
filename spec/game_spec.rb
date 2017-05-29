@@ -4,7 +4,7 @@ describe Game do
 
   let(:item_1) { double :item }
   let(:item_2) { double :item }
-  let(:player_2) { double :player, item: item_2 , choose: 'Rock' }
+  let(:player_2) { double :player, item: item_2, choose: 'Rock' }
   let(:player_1) { double :player, item: item_1, choose: 'Paper' }
   let(:subject) { Game.new(player_1, player_2) }
 
