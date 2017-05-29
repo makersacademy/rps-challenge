@@ -33,8 +33,7 @@ class RPSWeb < Sinatra::Base
 
   get '/save_game' do
     @game = Game.instance
-    p 'in rps web', session
-    @game.save_game(session)
+    @game.save_game(@game)
     redirect '/'
   end
 

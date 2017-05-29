@@ -1,5 +1,4 @@
-#<Game:0x007ff10f1a8940>#<Rack::Session::Abstract::SessionHash:0x007fcfa3975020>
-#<Rack::Session::Abstract::SessionHash:0x007fe7cb20e3a0>
-#<Rack::Session::Abstract::SessionHash:0x007fb2d5ac3908>
-#<Rack::Session::Abstract::SessionHash:0x007fd451041078>
-#<Rack::Session::Abstract::SessionHash:0x007fd45111c4e8>
+!ruby/object:Game
+player_1_name: Putin
+player_1_choice: :paper
+player_2_choice: :rock

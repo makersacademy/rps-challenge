@@ -1,3 +1,4 @@
+require 'yaml'
 
 class Game
 
@@ -40,16 +41,10 @@ class Game
   end
 
   def save_game(data)
-    file = File.open(OUTPUT_FILE, 'a')
-    if file
-      p 'in save_game method', data
-      file.puts(data)
-      file.flush
-      file.chmod(0700)
-      file.close
-    else
-      puts "Unable to open the output file!"
+    File.open(OUTPUT_FILE, 'a') do |f|
+      f << data.to_yaml
     end
+    File.chmod(0600, OUTPUT_FILE)
   end
 
 private
