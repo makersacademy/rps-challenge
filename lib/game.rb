@@ -21,25 +21,34 @@ class Game
     @players << player2
   end
 
-  def next_round
-    @round += 1 unless @round == @no_of_rounds
-  end
-
   def fight(player1_weapon, player2_weapon)
-    if RULES[player1_weapon.to_sym] == player2_weapon.to_sym
-      @scores[:player1] += 1
-      next_round
-      @players[0].name
-    elsif RULES[player2_weapon.to_sym] == player1_weapon.to_sym
-      @scores[:player2] += 1
-      next_round
-      @players[1].name
+    if compare(player1_weapon, player2_weapon)
+      victory(1)
+    elsif compare(player2_weapon, player1_weapon)
+      victory(2)
     else
       draw
     end
   end
 
+  private
+
+  def next_round
+    @round += 1 unless @round == @no_of_rounds
+  end
+
+  def compare(weapon1, weapon2)
+    RULES[weapon1.to_sym] == weapon2.to_sym
+  end
+
   def draw
     'nobody'
+  end
+
+  def victory(player_no)
+    winner = "player#{player_no}".to_sym
+    @scores[winner] += 1
+    next_round
+    @players[player_no - 1].name
   end
 end
