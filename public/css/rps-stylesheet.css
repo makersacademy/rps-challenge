@@ -152,20 +152,18 @@ div {
     font-size: 35px;
     text-align: left;
     margin: auto;
-    width: 500px;
     position: relative;
-    padding-top: 180px;
-    padding-right: 90px;
+    padding-top: 182px;
+    width: 47vw;
 }
 
 #player_2_throw {
     font-size: 35px;
     text-align: right;
     margin: auto;
-    width: 500px;
     position: relative;
-    padding-top: 180px;
-    padding-left: 90px;
+    padding-top: 182px;
+    width: 47vw;
 }
 
 #player_1_weapon {
