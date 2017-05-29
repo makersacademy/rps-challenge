@@ -9,6 +9,22 @@ feature 'Winning / Losing hand' do
     sign_in_multi
     click_button 'Rock'
     click_button 'Scissors'
-    expect(page).to have_content '(1)'
+    expect(page).to have_content 'The Obsidian Man(1)'
+  end
+
+  scenario 'multiplayer: player 2 wins' do
+    sign_in_multi
+    click_button 'Lizard'
+    click_button 'Scissors'
+    expect(page).to have_content 'Paperboy(1)'
+  end
+
+  scenario 'multiplayer: there is a tie' do
+    sign_in_multi
+    click_button 'Lizard'
+    click_button 'Lizard'
+    expect(page).to have_content 'Tie!'
+   
+
   end
 end
