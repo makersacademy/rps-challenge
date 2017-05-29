@@ -28,4 +28,8 @@ class Game
     @choice.clear
   end
 
+  def draw?
+    return true if @choice == @computer_choice
+  end
+
 end
