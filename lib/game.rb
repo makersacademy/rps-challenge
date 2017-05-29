@@ -20,7 +20,7 @@ class Game
 
   def save_game
     CSV.open("gamelog.csv", "a+") do |csv|
-      csv << [@players[0], @players[1], winner]
+      csv << [@players[0].name, @players[1].name, winner]
     end
   end
 
