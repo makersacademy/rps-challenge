@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def weapon=(weapon)
+  def choose_weapon(weapon)
     validate_weapon(weapon)
     @weapon = weapon.downcase.to_sym
   end
@@ -13,7 +13,7 @@ class Player
   private
 
   def validate_weapon(weapon)
-    raise 'Not valid weapon' unless Game::WEAPONS.include?(weapon.to_sym)
+    raise 'Not valid weapon' unless Game::WEAPONS.include?(weapon.downcase.to_sym)
   end
 
 end

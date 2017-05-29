@@ -5,7 +5,6 @@ describe Game do
   let(:player_2) { double :computer }
   subject(:game) { described_class.new(player_1, player_2) }
 
-
   it 'each game should have a Player 1' do
     expect(game.players[0]).to eq player_1
   end
@@ -27,7 +26,6 @@ describe Game do
       expect(game.battle).to eq :draw
     end
 
-
     it 'player 1 should lose if computer plays paper' do
       allow(player_2).to receive(:weapon) { :paper }
       expect(game.battle).to eq :lose
@@ -35,7 +33,7 @@ describe Game do
   end
 
   describe 'player 1 plays paper' do
-    before { allow(player_1).to receive(:weapon) { :paper} }
+    before { allow(player_1).to receive(:weapon) { :paper } }
 
     it 'player 1 should win if computer plays rock ' do
       allow(player_2).to receive(:weapon) { :rock }

@@ -36,17 +36,17 @@ class RPS < Sinatra::Base
   end
 
   get '/switch_turn' do
-    @game.players[0].weapon=(params[:weapon])
+    @game.players[0].choose_weapon(params[:weapon])
     erb(:play2)
   end
 
   get '/twoplayer_result' do
-    @game.players[1].weapon=(params[:weapon])
+    @game.players[1].choose_weapon(params[:weapon])
     erb(:twoplayer_result)
   end
 
   get '/oneplayer_result' do
-    @game.players[0].weapon=(params[:weapon])
+    @game.players[0].choose_weapon(params[:weapon])
     @game.players[1].choose_weapon
     erb(:oneplayer_result)
   end
