@@ -8,10 +8,17 @@
     <h1><%= @name %></h1>
 
     <div>
-      <p>Select a shape to play:</p>
-      Rock
-      Paper
-      Scissors
+      <form method="post" action="/play">
+        <p>Select a shape to play:</p>
+        Rock <input type="submit" name="choice" value="Rock">
+        Paper <input type="submit" name="choice" value="Paper">
+        Scissors <input type="submit" name="choice" value="Scissors">
+      </form>
     </div>
+
+    <% if @choice != nil %>
+    <p>You have selected <%= @choice.to_s.capitalize %>!</p>
+    <% end %>
+
   </body>
 </html>

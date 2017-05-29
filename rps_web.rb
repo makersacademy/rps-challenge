@@ -18,7 +18,13 @@ class RPSWeb < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @choice = session[:choice]
     erb :play
+  end
+
+  post '/play' do
+    session[:choice] = params[:choice]
+    redirect('play')
   end
 
   # start the server if ruby file executed directly
