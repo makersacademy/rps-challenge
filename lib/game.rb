@@ -5,7 +5,7 @@ class Game
     @game
   end
 
-  attr_reader :player, :computer, :weapons, :player_weapon, :victory_calc, :computer_weapon
+  attr_reader :player, :computer, :player_weapon, :computer_weapon
 
   def initialize(player, computer)
     @player = player
