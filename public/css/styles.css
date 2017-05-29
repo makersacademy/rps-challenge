@@ -5,6 +5,10 @@ body {
   font-weight: 500;
 }
 
+form {
+  display: inline-block;
+}
+
 .container {
 font-family:'Poiret One', cursive;
 margin-left: auto;
