@@ -28,14 +28,13 @@ class RPS < Sinatra::Application
     @player2 = session[:player2]
     @player1.weapon_choice(params[:weapon])
     @player2.random_weapon
-    @player2.weapon
-    @player1.weapon
     @game = session[:game]
     session[:result] = @game.result
     redirect '/results'
   end
 
   get '/results' do
+    @game = session[:game]
     @player1 = session[:player1]
     @player2 = session[:player2]
     @result = session[:result]

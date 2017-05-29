@@ -1,8 +1,6 @@
 <h1>Welcome to Rock, Paper, Scissors <%= session[:player1].name %>!</h1>
 <form action="/weapons" method="POST">
-  <div class="form-group">
-    <input class="btn btn-default" type="submit" name="weapon" value="rock">
-    <input class="btn btn-default" type="submit" name="weapon" value="paper">
-    <input class="btn btn-default" type="submit" name="weapon" value="scissors">
-  </div>
+  <button class="hand-icon" name="weapon" value="rock" type="submit"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></button>
+  <button class="hand-icon" name="weapon" value="paper" type="submit"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></button>
+  <button class="hand-icon" name="weapon" value="scissors" type="submit"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></button>
 </form>

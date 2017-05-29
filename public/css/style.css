@@ -1,0 +1,52 @@
+body {
+  background-color: #F0E5DE;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.results {
+  margin: 20px;
+  background-color: #ABD0CE;
+  border-radius: 20px;
+  font-size: 24px;
+  width: 40%;
+  height: 220px;
+  float: left;
+}
+.vs {
+  font-size: 14px;
+}
+
+.winner {
+  font-size: 16px;
+}
+
+.scores {
+  background-color: #7C7877;
+  font-size: 24px;
+  width: 40%;
+  height: 220px;
+  margin: 20px;
+  border-radius: 20px;
+  float: right;
+}
+
+.hand-icon {
+  color: #000;
+  font-size: 120px;
+  width: 200px;
+  height: 200px;
+  background-color: #F0E5DE;
+  border: 0;
+}
+
+.hand-icon:hover {
+  color: #FFF;
+  background-color: #F0E5DE;
+  border: 0;
+}
