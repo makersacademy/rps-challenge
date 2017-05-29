@@ -11,6 +11,11 @@ class RPSWeb < Sinatra::Base
     erb(:index)
   end
 
+  post '/name' do
+    session[:name] = params[:name]
+    redirect('/play')
+  end
+
   get "/play" do
     @name = session[:name]
     @choice = session[:choice]
@@ -19,7 +24,6 @@ class RPSWeb < Sinatra::Base
   end
 
   post "/play" do
-    session[:name] = params[:name]
     session[:choice] = params[:choice]
     session[:computer_choice] = [:rock, :paper, :scissors].sample
     redirect("play")
