@@ -6,6 +6,10 @@ require_relative './lib/computer'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
@@ -18,13 +22,11 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     @game.reset
     erb(:play)
   end
 
   post '/decide_winner' do
-    @game = Game.instance
     @game.player_one.choose_weapon(params[:player_one_weapon])
     @game.player_two.choose_weapon
     @game.decide_winner
@@ -32,7 +34,6 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game = Game.instance
     erb(:result)
   end
 
