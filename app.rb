@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
 require './lib/game'
+require './lib/win'
 
 class Rps < Sinatra::Base
   enable :sessions

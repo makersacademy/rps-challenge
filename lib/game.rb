@@ -1,29 +1,18 @@
 class Game
-  attr_reader :player1, :player2, :current_player, :opponent, :multiplayer, :winner
+  attr_reader :player1, :player2, :current_player, :opponent, :multiplayer, :win
 
-  def initialize(player1, player2 = Computer.new)
+  def initialize(player1, player2 = Computer.new, win = Win.new)
     @player1 = player1
     @player2 = player2
     @current_player = player1
     @opponent = player2
     @multiplayer = false
+    @win = win
   end
 
   def find_winner
-    if @current_player.hand && @opponent.hand
-      if @current_player.hand == @opponent.hand 
-        empty_hands 
-        @winner = "Tie!"       
-      elsif @current_player.wins_from.include? @opponent.hand 
-         @current_player.wins
-         empty_hands
-         @winner = "#{@current_player.name} wins!" 
-      else
-         @opponent.wins
-         empty_hands
-        @winner = "#{@opponent.name} wins!" 
-      end 
-    end
+    @win.find_winner(@current_player,@opponent)	  
+    empty_hands
   end 
 
   def switch_player
@@ -44,6 +33,6 @@ class Game
 
   private
   def empty_hands
-     (@current_player.empty_hand; @opponent.empty_hand) if @multiplayer
+   (@current_player.empty_hand; @opponent.empty_hand) if @multiplayer
   end
 end

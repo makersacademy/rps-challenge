@@ -9,8 +9,9 @@
   <h3> <%= @player2.name %> plays: <%= @player2.hand %> </h3>
 <% end %>
 
-  <h3> <%= @game.winner %> </h3>
+  <h3> <%= @game.win.winner %> </h3>
 
+<div>
 <form action='/rock', method='post'>
     <input type='submit' value='Rock'>
  </form>
@@ -30,4 +31,6 @@
 <form action='/spock', method='post'>
     <input type='submit' value='Spock'>
 </form>
+</div>
 
+<div> <img src='rpsls.jpg'> </div>

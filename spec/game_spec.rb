@@ -13,13 +13,7 @@ describe Game do
     end
   end 
 
-  describe '#find_winner' do
-    it 'shows whose hand has won' do
-      expect { game_single.find_winner }.to change { game_single.winner }.to 'Jerry wins!'
-    end
-  end
-
-  describe '#switch_player' do
+   describe '#switch_player' do
     it 'switches the current player' do
       expect { game_multi.switch_player }.to change { game_multi.current_player }.to player2
     end
