@@ -1,5 +1,6 @@
 require "sinatra/base"
 require_relative "./lib/player.rb"
+require_relative "./lib/computer.rb"
 
 class RPSWeb < Sinatra::Base
   enable :sessions

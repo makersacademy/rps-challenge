@@ -22,7 +22,7 @@ feature "playing a RPS game" do
 
   scenario "I can select and confirm a shape to play" do
     sign_in_and_play
-    click_button("Rock")
+    click_button("rock")
     expect(page).to have_content("You have selected Rock!")
   end
 
@@ -33,9 +33,18 @@ feature "playing a RPS game" do
   scenario "The computer select a random shape" do
     sign_in_and_play
     srand(RANDOM_SEED)
-    click_button("Rock")
+    click_button("rock")
     expect(page).to have_content("The computer had selected Scissors!")
-    # expect(computer_possible_choice_message).to include("The computer had selected Paper!")
-    # expect(computer_possible_choice_message).to include("The computer had selected Scissors!")
+  end
+
+  # As a marketeer
+  # So I can enjoy a challenge
+  # I would like the game to draw
+
+  scenario "I draw a game and confirm it" do
+    sign_in_and_play
+    srand(RANDOM_SEED)
+    click_button("scissors")
+    expect(page).to have_content("It's a draw!")
   end
 end
