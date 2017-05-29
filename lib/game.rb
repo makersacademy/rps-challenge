@@ -1,5 +1,10 @@
 class Game
 
+  def self.new_game(player, computer)
+    @game = Game.new(player, computer)
+    @game
+  end
+
   attr_reader :player, :computer, :weapons, :player_weapon, :victory_calc, :computer_weapon
 
   def initialize(player, computer)
@@ -7,6 +12,10 @@ class Game
     @computer = computer
     @weapons = { "Rock" => :rock, "Paper" => :paper, "Scissors" => :scissors }
     @victory_calc = VictoryCalculator.new
+  end
+
+  def self.start
+    @game
   end
 
   def start(player_weapon)
@@ -31,7 +40,6 @@ class Game
   end
 
   def outcome
-    p games_weapons
     if win_game?
       "#{@player.name}"
     elsif draw_game?

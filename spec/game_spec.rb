@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  let(:charlotte) { Player.new("Charlotte")}
+  let(:charlotte) { Player.new("Charlotte") }
   subject(:game) { described_class.new(charlotte, Computer.new) }
   let(:computer) { spy(:computer) }
 
