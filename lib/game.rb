@@ -12,7 +12,7 @@ class Game
   def find_winner
     if @current_player.hand && @opponent.hand
       if @current_player.hand == @opponent.hand 
-	empty_hands 
+        empty_hands 
         @winner = "Tie!"       
       elsif @current_player.wins_from.include? @opponent.hand 
          @current_player.wins
@@ -44,7 +44,6 @@ class Game
 
   private
   def empty_hands
-     @current_player.empty_hand
-     @opponent.empty_hand
+     (@current_player.empty_hand; @opponent.empty_hand) if @multiplayer
   end
 end
