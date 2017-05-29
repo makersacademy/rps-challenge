@@ -12,6 +12,7 @@ class RockPaperScissor < Sinatra::Base
   paper = player.paper
   scissors = player.scissors
   computer_move = computer.computer_move
+  game_rules = game.rules
 
 
 
@@ -23,6 +24,7 @@ class RockPaperScissor < Sinatra::Base
     @paper = paper
     @scissors = scissors
     @computer_move = computer_move
+    @game_rules = game_rules
   end
 
   enable :sessions
@@ -40,6 +42,7 @@ class RockPaperScissor < Sinatra::Base
 
   get '/play' do
     @player = session[:player1]
+    @computer_move = session[:computer]
     erb :play
   end
 
