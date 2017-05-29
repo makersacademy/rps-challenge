@@ -28,17 +28,7 @@ class RPS < Sinatra::Base
   post '/result' do
     @game = $game
     item = Item.send(params[:item].downcase)
-
-    result = @game.play(item)
-
-    if result == Game::WIN
-      erb :win
-    elsif result == Game::LOSE
-      erb :lose
-    else
-      erb :draw
-    end
-
+    erb @game.play(item)
   end
 
 
