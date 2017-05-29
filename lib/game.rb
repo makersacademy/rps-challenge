@@ -23,9 +23,9 @@ class Game
   end
 
   def declare_winner
-    return "It's a Draw" if @rules.draw?(@players)
-    return 'You Win!' if @rules.check_rules(@players)
-    return 'You Lost'
+    return :draw if @rules.draw?(@players)
+    return :win if @rules.check_rules(@players)
+    :lose
   end
 
 end

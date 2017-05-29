@@ -17,6 +17,7 @@ describe Game do
 
   it 'knows what the player chose' do
     allow(opponent).to receive(:choose_hand).and_return(:Scissors)
+    allow(opponent).to receive(:choice).and_return(:Scissors)
     game.play_a_round(:Rock)
     expect(game.players[0].choice).to eq :Rock
   end
@@ -25,20 +26,20 @@ describe Game do
     allow(opponent).to receive(:choose_hand).and_return(:Scissors)
     allow(opponent).to receive(:choice).and_return(:Scissors)
     game.play_a_round(:Rock)
-    expect(game.declare_winner).to eq 'You Win!'
+    expect(game.declare_winner).to eq :win
   end
 
   it 'knows the loser' do
     allow(opponent).to receive(:choose_hand).and_return(:Paper)
     allow(opponent).to receive(:choice).and_return(:Paper)
     game.play_a_round(:Rock)
-    expect(game.declare_winner).to eq 'You Lost'
+    expect(game.declare_winner).to eq :lose
   end
 
   it "knows if it's a draw" do
     allow(opponent).to receive(:choose_hand).and_return(:Rock)
     allow(opponent).to receive(:choice).and_return(:Rock)
     game.play_a_round(:Rock)
-    expect(game.declare_winner).to eq "It's a Draw"
+    expect(game.declare_winner).to eq :draw
   end
 end

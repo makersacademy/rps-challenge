@@ -6,7 +6,7 @@
 
 <h3><%= "Your opponent chose #{@game.players[1].choice}" %></h3>
 
-<h2><%= @game.declare_winner %> </h2>
+<h2><%= "You #{@game.declare_winner.to_s}" %> </h2>
 
 <form action="/play" method="get">
   <input type="submit" value="Play Again?">
