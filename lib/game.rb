@@ -1,8 +1,8 @@
 class Game
 
-WIN = :Win
-LOSE = :Lose
-DRAW = :Draw
+WIN = :win
+LOSE = :lose
+DRAW = :draw
 
   def initialize(player1, player2)
     @player = [player1, player2]
