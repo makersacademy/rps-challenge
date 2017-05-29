@@ -1,7 +1,13 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <div class="container">
-  <h1><%= @game.outcome %></h1>
+  <% if @game.battle == :draw %>
+    <h1>We have a draw.</h1>
+  <% elsif @game.battle == :won %>
+    <h1><%= @game.players[0].name %> won.</h1>
+  <% else %>
+    <h1><%= @game.players[1].name %> won.</h1>
+  <% end %>
   <p><%= @game.players[0].name %> chose <%= @game.players[0].weapon.capitalize %>.</p>
   <p><%= @game.players[1].name %> chose <%= @game.players[1].weapon.capitalize %>.</p>
   <form action="/play" method="get">
