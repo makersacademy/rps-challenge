@@ -13,4 +13,10 @@ describe Game do
     expect(subject.play(item_1)).to eq Game::WIN
   end
 
+  it 'returns lose if player_2 beats player_1' do
+    allow(item_1).to receive(:beats).and_return(false)
+    allow(item_2).to receive(:beats).and_return(true)
+    expect(subject.play(item_1)).to eq Game::LOSE
+  end
+
 end
