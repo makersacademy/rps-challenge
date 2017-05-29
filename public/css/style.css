@@ -20,6 +20,14 @@ input[type=submit] {
   width: 120px;
   height: 35px;
   border-radius: 0;
+  font-weight: bold
+}
+
+input[type=submit].exit-game {
+  border: 3px solid black;
+  background-color: #F0E5DE;
+  color: #000;
+  font-weight: bold;
 }
 
 .logo {
@@ -51,12 +59,16 @@ input[type=submit] {
 
 .scores {
   background-color: #7C7877;
-  font-size: 24px;
+  font-size: 20px;
   width: 40%;
   height: 220px;
   margin: 20px;
   border-radius: 20px;
   float: right;
+}
+
+.rounds {
+  font-size: 14px;
 }
 
 .hand-icon {

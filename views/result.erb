@@ -1,6 +1,4 @@
 <%= erb(:play) %>
-
-
 <div class="results">
   <h2>Result:</h2>
   <i class="fa fa-hand-<%= @game.player1.weapon.to_s %>-o" aria-hidden="true"></i>
@@ -14,7 +12,11 @@
 </div>
 
 <div class="scores">
-  <h2>Scores:</h2>
+  <h2>Score:</h2>
+  <p class="rounds">Round <%= @game.rounds %></p>
   <p><%= @game.player1.name %>: <%= @game.player1_score %></p>
   <p><%= @game.player2.name %>: <%= @game.player2_score %></p>
+</div>
+<div class="reset">
+  <%= erb(:reset_game) %>
 </div>
