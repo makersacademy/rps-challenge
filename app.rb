@@ -35,7 +35,6 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   post '/fight' do
-    @game.next_round
     session[:weapon] = params[:weapon]
     redirect '/outcome'
   end
