@@ -2,6 +2,10 @@ class Item
 
   attr_reader :index, :name
 
+  def self.items
+    [Item.rock, Item.paper, Item.scissors]
+  end
+
   def self.rock
     @rock ||= Item.new('Rock', 0)
   end
