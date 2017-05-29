@@ -8,11 +8,19 @@ class RockPaperScissor < Sinatra::Base
   player = Player.new('spencer')
   computer = Computer.new
   game = Game.new
+  rock = player.rock
+  paper = player.paper
+  scissors = player.scissors
+
+
 
   before do
     @player = player
     @computer = computer
     @game = game
+    @rock = rock
+    @paper = paper
+    @scissors = scissors
   end
 
   enable :sessions
@@ -23,27 +31,28 @@ class RockPaperScissor < Sinatra::Base
 
   post '/names' do
     session[:player1] = params[:player1]
+    @computer = params[:computer]
     redirect to('/play')
     erb :play
   end
 
   get '/play' do
-    @player1 = session[:player1]
+    @player = session[:player1]
     erb :play
   end
 
   get '/rock' do
-    @player1 = session[:player1]
+    @player = session[:player1]
     erb :rock
   end
 
   get '/paper' do
-    @player1 = session[:player1]
+    @player = session[:player1]
     erb :paper
   end
 
   get '/scissors' do
-    @player1 = session[:player1]
+    @player = session[:player1]
     erb :scissors
   end
 
