@@ -1,5 +1,8 @@
 
 feature 'In-game' do
+  before do
+    log_in
+  end
 
   scenario 'User is presented with weapon choices' do
     log_in
@@ -25,4 +28,22 @@ feature 'In-game' do
     click_button('SCISSORS')
     expect(page).to have_content 'Weapon Choice: SCISSORS?'
   end
+
+  scenario 'Game chooses Rock' do
+    click
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
