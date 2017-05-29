@@ -38,5 +38,16 @@ feature 'playing a game of rock paper scissors' do
   def message_options
     [:rock, :paper, :scissors].map {|option| "Your opponent threw #{option}!"}
   end
+# As a marketeer
+# So I can win or lose or lose to an opponent
+# The game will calculate the and declare the winner
+  scenario 'the game declares a winner' do
+    click_button('Rock')
+    message = find(:css, '#result').text
+    expect(result_message).to include message
+  end
 
+  def result_message
+    [:win, :lose, :draw].map {|result| "You #{result}!"}
+  end
 end
