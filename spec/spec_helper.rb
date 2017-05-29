@@ -8,6 +8,8 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+require_relative './features/web_helpers.rb'
+
 Capybara.app = RPSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
