@@ -30,8 +30,12 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @round_no = @game.round
-    erb :play
+    if @game.round <= @game.no_of_rounds
+      @round_no = @game.round
+      erb :play
+    else
+      redirect '/game_over'
+    end
   end
 
   post '/fight' do
@@ -46,6 +50,10 @@ class RubyPaperScissors < Sinatra::Base
     @player_2_name = @game.players[1].name
     @round_winner = @game.fight(@player_1_weapon, @player_2_weapon)
     erb :outcome
+  end
+
+  get '/game_over' do
+    erb :game_over
   end
 
   run! if __FILE__ == $PROGRAM_NAME

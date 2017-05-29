@@ -34,7 +34,7 @@ class Game
   private
 
   def next_round
-    @round += 1 unless @round == @no_of_rounds
+    @round += 1
   end
 
   def compare(weapon1, weapon2)
