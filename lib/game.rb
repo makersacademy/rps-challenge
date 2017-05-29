@@ -1,3 +1,6 @@
+require_relative 'player'
+require 'csv'
+
 class Game
 
   attr_reader :player, :opponent
@@ -7,6 +10,7 @@ class Game
     @player = player
     @opponent = opponent
     @result = nil
+    # @readwrite = Readwrite.new
   end
 
   def self.create(player, opponent)
@@ -23,36 +27,70 @@ class Game
 
   def compete(player, opponent)
     if player == 'Rock'
-      if opponent == 'Rock'
-        return 'A draw!'
-      elsif opponent == 'Scissors'
-        self.player.score += 1
-        return 'You win! Rock beats scissors!'
-      else
-        self.opponent.score += 1
-        return 'You lose! Paper beats rock!'
-      end
+      rock_results(player, opponent)
     elsif player == 'Paper'
-      if opponent == 'Paper'
-        return 'A draw!'
-      elsif opponent == 'Rock'
-        self.player.score += 1
-        return 'You win! Paper beats rock!'
-      else
-        self.opponent.score += 1
-        return 'You lose! Scissors beats paper'
-      end
+      paper_results(player, opponent)
     else
-      if opponent == 'Scissors'
-        return 'A draw!'
-      elsif opponent == 'Paper'
-        self.player.score += 1
-        return 'You win! Scissors beats paper'
-      else
-        self.opponent.score += 1
-        return 'You lose! Rock beats scissors!'
-      end
+      scissors_results(player, opponent)
     end
+  end
+
+  def write(path)
+    CSV.open(path, 'wb') do |csv|
+      csv << [self.player.name, self.opponent.name, self.player.score, self.opponent.score]
+    end
+  end
+
+  def self.read(path)
+    CSV.foreach(path) do |row|
+      create(Player.new(row[0], row[2].to_i), Player.new(row[1], row[3].to_i))
+    end
+  end
+
+  private
+
+  def rock_results(player, opponent)
+    if opponent == 'Rock'
+      draw
+    elsif opponent == 'Scissors'
+      win(player, opponent)
+    else
+      lose(player, opponent)
+    end
+  end
+
+  def paper_results(player, opponent)
+    if opponent == 'Paper'
+      draw
+    elsif opponent == 'Rock'
+      win(player, opponent)
+    else
+      lose(player, opponent)
+    end
+  end
+
+  def scissors_results(player, opponent)
+    if opponent == 'Scissors'
+      draw
+    elsif opponent == 'Paper'
+      win(player, opponent)
+    else
+      lose(player, opponent)
+    end
+  end
+
+  def draw
+    'A draw!'
+  end
+
+  def win(win, lose)
+    self.player.score += 1
+    "You win! #{win} beats #{lose}!"
+  end
+
+  def lose(lose, win)
+    self.opponent.score += 1
+    "You lose! #{win} beats #{lose}!"
   end
 
 end

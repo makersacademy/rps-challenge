@@ -12,8 +12,13 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/namenew' do
     @game = Game.create(Player.new(params[:player_name]), Player.new('Computer'))
+    redirect '/play'
+  end
+
+  get '/load' do
+    @game = Game.read('./saves/save1.csv')
     redirect '/play'
   end
 
@@ -30,6 +35,11 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @game.result = @game.compete(@game.player.choice, @game.opponent.choice)
     erb :result
+  end
+
+  get '/confirmsave' do
+    @game.write('./saves/save1.csv')
+    erb :confirmsave
   end
 
   # start the server if ruby file executed directly
