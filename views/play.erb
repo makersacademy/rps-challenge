@@ -4,8 +4,10 @@ Player: <%= @player_name %> <br>
 Select your weapon of choice <br>
 <br>
 
-<form action="/result" method="post">
-  <input type="submit" value="ROCK">
-  <input type="submit" value="PAPER">
-  <input type="submit" value="SCISSORS">
+<form action="/play" method="post">
+  <input type="submit" name="weapon" value="ROCK">
+  <input type="submit" name="weapon" value="PAPER">
+  <input type="submit" name="weapon" value="SCISSORS">
 </form>
+
+Weapon Choice: <%= @player_weapon %>?
