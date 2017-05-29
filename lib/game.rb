@@ -23,4 +23,9 @@ class Game
     @computer_choice << @potential_choices.sample
   end
 
+  def reset_game
+    @computer_choice.clear
+    @choice.clear
+  end
+
 end

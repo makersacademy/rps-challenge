@@ -19,3 +19,11 @@ def play_as_paper
   choose("p")
   click_button 'Submit'
 end
+
+def play_as_scissors
+  visit '/'
+  fill_in :player_name, with: "Scissor Fan"
+  click_button 'Submit'
+  choose("s")
+  click_button 'Submit'
+end
