@@ -15,3 +15,21 @@
 
 <h3>You chose <%=$weapon%></h3>
 <h3>Computer chose <%=$computer_weapon%></h3>
+
+<% if $weapon == 'rock' || $weapon == 'paper' || $weapon == 'scissors'
+  if $weapon == $computer_weapon %>
+  This match was drawn!!!
+<% elsif $weapon == 'rock' && $computer_weapon == 'scissors' %>
+  You win :)
+<% elsif $weapon == 'rock' && $computer_weapon == 'paper' %>
+  Computer wins :(
+<% elsif $weapon == 'paper' && $computer_weapon == 'scissors' %>
+  Computer wins :(
+<% elsif $weapon == 'paper' && $computer_weapon == 'rock' %>
+  You win :)
+<% elsif $weapon == 'scissors' && $computer_weapon == 'paper' %>
+  You win :)
+<% elsif $weapon == 'scissors' && $computer_weapon == 'rock' %>
+  Computer wins :(
+<% end %>
+<% end %>
