@@ -1,0 +1,10 @@
+<%= @game.player.name %> chose <%= @game.player.choice %>
+<br>
+<%= @game.opponent.name %> chose <%= @game.opponent.choice %>
+
+
+<h1><%= @game.result %></h1>
+
+<form action='/play' method="get">
+<input type="submit" value="Next Turn">
+</form>
