@@ -16,8 +16,7 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/play' do
-    $game = Game.new(session)
-    @game = $game
+    @game = Game.create(session)
     erb :play
   end
 
@@ -28,9 +27,10 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/results' do
-    @game = $game
+    @game = Game.instance
     erb :results
   end
+
 
   run! if app_file == $0
 end

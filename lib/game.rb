@@ -1,7 +1,7 @@
 
 class Game
 
-  attr_reader :player_1_name, :player_1_choice, :player_2_choice
+  attr_reader :player_1_name, :player_1_choice, :player_2_choice, :game
 
   DEFAULT_FINISH_SCORE = 20
   SHAPES = [:rock, :paper, :scissors]
@@ -13,6 +13,14 @@ class Game
     @player_1_name = choices["player_1_name"]
     @player_1_choice = choices["player_1_choice"]
     @player_2_choice = choices["player_2_choice"]
+  end
+
+  def self.create(choices)
+    @game = Game.new(choices)
+  end
+
+  def self.instance
+    @game
   end
 
   def win?
