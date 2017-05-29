@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/game'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Application
 
@@ -11,25 +13,31 @@ class RPS < Sinatra::Application
   end
 
   post '/game-setup' do
-    @player_name = params[:player_name]
-    session[:player_name] = @player_name
+    session[:player1] = Player.new(params[:player_name])
+    session[:player2] = Computer.new
+    session[:game]    = Game.new(session[:player1],session[:player2] )
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
     erb :play
   end
 
   post '/weapons' do
-    @player1 = params[:weapon]
-    @game = Game.new(@player1, 'paper')
-    session[:game] = @game
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    @player1.weapon_choice(params[:weapon])
+    @player2.random_weapon
+    p @player2.weapon
+    p @player1.weapon
+    @game = session[:game]
     session[:result] = @game.result
     redirect '/results'
   end
 
   get '/results' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
     @result = session[:result]
     erb :result
   end

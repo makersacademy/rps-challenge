@@ -1,4 +1,4 @@
-<h1>Welcome to Rock, Paper, Scissors <%= @player_name %>!</h1>
+<h1>Welcome to Rock, Paper, Scissors <%= session[:player1].name %>!</h1>
 <form action="/weapons" method="POST">
   <div class="form-group">
     <input class="btn btn-default" type="submit" name="weapon" value="rock">
