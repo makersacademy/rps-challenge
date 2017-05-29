@@ -13,10 +13,13 @@
   <% end %>
   <p><%= @game.players[0].name %> chose <%= @game.players[0].weapon.capitalize %>.</p>
   <p><%= @game.players[1].name %> chose <%= @game.players[1].weapon.capitalize %>.</p>
-  <form action="/play" method="get">
-    <input class="restart-button" type="submit" value="Rematch">
-  </form>
-  <form action="/" method="get">
-    <input class="restart-button" type="submit" value="New Game">
-  </form>
+  <br>
+  <div>
+    <form action="/play" method="get">
+      <input class="restart-button" type="submit" value="Rematch">
+    </form>
+    <form action="/" method="get">
+      <input class="restart-button" type="submit" value="New Game">
+    </form>
+  </div>
 </div>
