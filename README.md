@@ -1,3 +1,5 @@
+![RPS Logo](public/img/logo.png)
+
 # Rock, Paper, Scissors !
 Weekend Challenge 3 at Makers Academy was building the classic Rock, Paper and Scissors game using the learning from this week, where we were introduced to the web using Sinatra.
 
