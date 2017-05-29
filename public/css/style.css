@@ -1,0 +1,145 @@
+body {
+  background-color: #F0E5DE;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+input[type=text] {
+  margin: 10px;
+  padding-left: 10px;
+  border: 2px solid #000;
+  font-size: 15px;
+  height: 30px;
+  border-radius: 0;
+
+}
+input[type=submit] {
+  border: 0px;
+  margin: 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  width: 120px;
+  height: 35px;
+  border-radius: 0;
+  font-weight: bold
+}
+
+input[type=submit]:hover {
+  background-color: #ABD0CE;
+  border: 3px solid black;
+  color: #000;
+  font-size: 15px;
+  width: 120px;
+  height: 35px;
+  border-radius: 0;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+input[type=submit].exit-game {
+  border: 3px solid black;
+  background-color: #F0E5DE;
+  color: #000;
+  font-weight: bold;
+}
+
+input[type=submit].exit-game:hover {
+  border: 3px solid black;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+
+.logo {
+  padding: 20px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.results {
+  margin: 20px;
+  background-color: #ABD0CE;
+  border-radius: 20px;
+  font-size: 24px;
+  width: 40%;
+  height: 220px;
+  float: left;
+}
+
+.player-label {
+  font-size: 10px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 15px;
+}
+
+.vs {
+  font-size: 14px;
+}
+
+.winner {
+  font-size: 16px;
+  width: 60%;
+  padding: 5px;
+  border: 2px solid #000;
+  margin: 20px auto;
+}
+
+.scores {
+  background-color: #7C7877;
+  font-size: 18px;
+  width: 40%;
+  height: 220px;
+  margin: 20px;
+  border-radius: 20px;
+  float: right;
+}
+
+.scores p {
+  padding: 2px;
+  margin: 2px;
+}
+
+.scores .rounds {
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  width: 20%;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 10px auto;
+}
+
+.reset {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  float: right;
+}
+
+.hand-icon {
+  color: #000;
+  font-size: 120px;
+  width: 200px;
+  height: 200px;
+  background-color: #F0E5DE;
+  border: 0;
+}
+
+.hand-icon:hover {
+  color: #FFF;
+  background-color: #F0E5DE;
+  border: 0;
+}
