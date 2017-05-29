@@ -2,6 +2,10 @@ html {
     font-family: Barrio, cursive;
     color: white;
     background-color: #D34644;
+    /*background-color: #776D94;*/
+    /*background-color: #FEBF13;*/
+    /*background-color: #4285F4;*/
+    /*background-color: #34A853;*/
 }
 
 body {
@@ -91,7 +95,7 @@ li {
 }
 
 #submit-button:hover {
-    -webkit-text-fill-color: #D34644;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
 }
@@ -110,7 +114,7 @@ input {
 }
 
 .rounds_option:hover {
-    -webkit-text-fill-color: #D34644;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
 }
@@ -139,7 +143,7 @@ img.weapon_icon {
 }
 
 .weapon_option:hover {
-    -webkit-text-fill-color: #D34644;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
 }
@@ -197,7 +201,7 @@ div {
 }
 
 #continue:hover {
-    -webkit-text-fill-color: #D34644;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
 }
@@ -279,7 +283,7 @@ div {
 }
 
 #new_game_link:hover {
-    -webkit-text-fill-color: #D34644;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
 }
