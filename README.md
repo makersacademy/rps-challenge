@@ -36,6 +36,10 @@ I would like to be able to play with a computerised opponent
 As a marketeer
 So that I can play when I have a friend(yay!)
 I would like to be able to play with 2 players
+
+As a marketeer
+So that I can remember my victories (and losses)
+I would like to be able to save my games
 ```
 
 ## Basic Rules
