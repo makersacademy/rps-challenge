@@ -15,15 +15,29 @@ class Game
     @player_2_choice = choices["player_2_choice"]
   end
 
-  def result
-    return :draw if @player_1_choice == @player_2_choice
-    WIN_RULES[@player_1_choice] == [@player_2_choice] ? :win : :lose
+  def win?
+    result == :win
+  end
+
+  def draw?
+    result == :draw
+  end
+
+  def lose?
+    result == :lose
   end
 
   def game_over?
   end
 
   def save_game
+  end
+
+private
+
+  def result
+    return :draw if @player_1_choice == @player_2_choice
+    WIN_RULES[@player_1_choice] == [@player_2_choice] ? :win : :lose
   end
 
 end
