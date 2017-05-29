@@ -1,6 +1,14 @@
 Player 1, Player 2, Winner
-#<Player:0x007fa867997d68>,#<Computer:0x007fa867997d40>,draw
 Kavita,Vanita,player_2
 Kavita,Vanita,player_2
 Kavita,Vanita,player_2
 Kavita,Vanita,player_2
+Voldemort,Harry,player_2
+Voldemort,Harry,player_1
+Kavita,Computer,player_1
+Kavita,Computer,player_1
+Kavita,Vanita,player_2
+Kavita,Vanita,player_2
+Superman,Computer,draw
+Superman,Computer,player_2
+Superman,Computer,player_1
