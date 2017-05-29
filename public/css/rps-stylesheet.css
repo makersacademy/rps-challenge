@@ -221,4 +221,10 @@ div {
     text-align: center;
     margin: auto;
     color: #D34644;
+    width: 300px;
+}
+
+#quack {
+    border: solid 4px white;
+    width: 300px;
 }
