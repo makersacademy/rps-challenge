@@ -8,6 +8,7 @@ class Game
   WIN_RULES = { rock: :scissors,
               paper: :rock,
               scissors: :paper }
+  OUTPUT_FILE = "game.results"
 
   def initialize(choices)
     @player_1_name = choices["player_1_name"]
@@ -38,7 +39,17 @@ class Game
   def game_over?
   end
 
-  def save_game
+  def save_game(data)
+    file = File.open(OUTPUT_FILE, 'a')
+    if file
+      p 'in save_game method', data
+      file.puts(data)
+      file.flush
+      file.chmod(0700)
+      file.close
+    else
+      puts "Unable to open the output file!"
+    end
   end
 
 private

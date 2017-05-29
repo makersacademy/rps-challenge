@@ -31,6 +31,12 @@ class RPSWeb < Sinatra::Base
     erb :results
   end
 
+  get '/save_game' do
+    @game = Game.instance
+    p 'in rps web', session
+    @game.save_game(session)
+    redirect '/'
+  end
 
   run! if app_file == $0
 end
