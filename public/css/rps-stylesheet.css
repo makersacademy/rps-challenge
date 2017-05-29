@@ -239,3 +239,27 @@ div {
     height: 40px;
     padding: 10px;
 }
+
+#game_over_header {
+    font-size: 120px;
+    line-height: 40px;
+    margin: auto;
+}
+
+#winner {
+    font-size: 50px;
+    line-height: 20px;
+    margin: auto;
+}
+
+#trophy {
+    width: 250px;
+    margin: auto;
+}
+
+#game_over {
+    position: relative;
+    text-align: center;
+    margin: auto
+}
+

@@ -31,6 +31,10 @@ class Game
     end
   end
 
+  def winner
+    @scores[:player1] > @scores[:player2] ? players[0].name : players[1].name
+  end
+
   private
 
   def next_round

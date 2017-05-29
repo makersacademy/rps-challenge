@@ -53,6 +53,7 @@ class RubyPaperScissors < Sinatra::Base
   end
 
   get '/game_over' do
+    @winner = @game.winner
     erb :game_over
   end
 
