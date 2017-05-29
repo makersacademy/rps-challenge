@@ -26,6 +26,10 @@ describe Game do
       game.start("Scissors")
       expect(game.player_weapon).to eq :scissors
     end
+    it 'puts an error message if a user tries to submit a non RPS weapon choice' do
+      game.start("Skizzers")
+      expect { game.start("Skizzers") }.to output(/I did not understand your weapon Skizzers/).to_stdout
+    end
   end
 
   describe '#games_weapons' do
@@ -38,15 +42,28 @@ describe Game do
     end
   end
 
-  describe '#win_game?' do
-    it 'returns true if the game has been won' do
-      rock_computer = double(:computer)
-      allow(rock_computer).to receive(:weapon_choice).and_return(:rock)
-      game = Game.new(charlotte, rock_computer)
-      game.start("Paper")
-      expect(game.win_game?).to eq true
+  describe '#outcome' do
+    let(:rock_computer) do
+      doubled = double(:computer)
+      allow(doubled).to receive(:weapon_choice).and_return(:rock)
+      allow(doubled).to receive(:name).and_return("The Evil Computer")
+      doubled
+    end
+
+    subject(:game1) { Game.new(charlotte, rock_computer) }
+
+    it 'returns the player name if the game has been won' do
+      game1.start("Paper")
+      expect(game1.outcome).to eq "Charlotte"
+    end
+    it 'returns a draw message & both names if a draw' do
+      game1.start("Rock")
+      expect(game1.outcome).to eq "No one! It's a draw for Charlotte and The Evil Computer"
+    end
+    it 'returns a draw message & both names if a draw' do
+      game1.start("Scissors")
+      expect(game1.outcome).to eq "The Evil Computer"
     end
   end
 
-  # TODO add in tests for draw_game & outcome 
 end

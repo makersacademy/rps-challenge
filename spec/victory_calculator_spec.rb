@@ -4,6 +4,7 @@ describe VictoryCalculator do
 
   subject(:victory_calc) { described_class.new }
 
+  # TODO try to DRY up these tests= feels like there are too many 
   describe '#win?' do
     it 'returns true if the array matches :rock, :scissors' do
       array1 = [:rock, :scissors]

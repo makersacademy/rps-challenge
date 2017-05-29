@@ -1,6 +1,5 @@
 class Game
 
-# TODO call this self.create
   def self.create(player, computer)
     @game = Game.new(player, computer)
     @game
@@ -15,7 +14,6 @@ class Game
     @victory_calc = VictoryCalculator.new
   end
 
-# TODO call this self.instance
   def self.instance
     @game
   end
@@ -25,7 +23,7 @@ class Game
       @player_weapon = @weapons.fetch(player_weapon)
       @computer_weapon = @computer.weapon_choice
     else
-      puts "I did not understand your weapon #{player_weapon}"
+      print "I did not understand your weapon #{player_weapon}"
     end
   end
 
@@ -33,18 +31,10 @@ class Game
     [@player_weapon, @computer_weapon]
   end
 
-  def win_game?
-    @victory_calc.win?(games_weapons())
-  end
-
-  def draw_game?
-    @victory_calc.draw?(games_weapons())
-  end
-
   def outcome
-    if win_game?
+    if @victory_calc.win?(games_weapons())
       "#{@player.name}"
-    elsif draw_game?
+    elsif @victory_calc.draw?(games_weapons())
       "No one! It's a draw for #{@player.name} and #{@computer.name}"
     else
       "#{@computer.name}"
