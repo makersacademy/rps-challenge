@@ -16,11 +16,13 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @throw = session[:throw]
+    @opponent_throw = session[:opponent_throw]
     erb :play
   end
 
   post '/play' do
     session[:throw] = params[:throw]
+    session[:opponent_throw] = 'Rock'
     redirect '/play'
   end
 

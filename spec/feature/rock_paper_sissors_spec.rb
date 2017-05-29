@@ -26,4 +26,17 @@ feature 'playing a game of rock paper scissors' do
     click_button('Rock')
     expect(page).to have_content'You threw Rock!'
   end
+# As a marketeer
+# So I have an opponent
+# The game will chose an option
+  scenario 'game choses an option' do
+    click_button('Rock')
+    expect(page).to have_content'Your opponent threw Rock!'
+  end
+# As a marketeer
+# So I can win or lose
+# The games option will be chosen randomly
+  scenario 'game choses option randomly' do
+
+  end
 end
