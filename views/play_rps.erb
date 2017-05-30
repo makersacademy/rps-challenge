@@ -1,0 +1,9 @@
+<h1>Player: <%= @game.player.name %>!</h1>
+<br>
+<h2>Choose your weapon!</h2>
+<form action="/compare_weapon" method="POST">
+  <input type="radio" id="weapon_choice_rock" name="weapon_choice" value="rock">ROCK!<br>
+  <input type="radio" id="weapon_choice_paper" name="weapon_choice" value="paper">PAPER!<br>
+  <input type="radio" id="weapon_choice_scissors" name="weapon_choice" value="scissors">SCISSORS!<br>
+  <input type="submit" value="ATTACK!">
+</form>
