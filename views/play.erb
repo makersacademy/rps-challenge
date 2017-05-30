@@ -1,0 +1,29 @@
+<h2>Welcome to Rock, Paper, Scissors</h2>
+<h3><%= @game.player.name %> vs <%= @game.opponent.name %></h3>
+Current Score
+<br>
+<%= @game.player.name %>:<%= @game.player.score %>
+<br>
+<%= @game.opponent.name %>:<%= @game.opponent.score %>
+<br>
+<h2>Please choose Rock, Paper or Scissors below</h2>
+
+<form action="/rock" method="post">
+<input type="image" value="Rock" src = "http://i.imgur.com/jmKJw0h.png" style="float: left;">
+</form>
+
+<form action="/paper" method="post">
+  <input type="image" value="Paper" src = "http://i.imgur.com/7lNvdVL.png" style="float: left;">
+</form>
+
+<form action="/scissors" method="post">
+<input type="image" value="Scissors" src = "http://i.imgur.com/VSQljOo.png" style="float: left;">
+</form>
+
+
+
+<!-- <form action="/process" method="post">
+<input type="image" name='choice' value="Scissors" alt='Submit' src = "http://i.imgur.com/VSQljOo.png" >
+<input type="image" name='choice' value="Rock" alt='Submit' src = "http://i.imgur.com/jmKJw0h.png" >
+<input type="image" name='choice' value="Scissors" alt='Submit' src = "http://i.imgur.com/VSQljOo.png" >
+</form> -->
