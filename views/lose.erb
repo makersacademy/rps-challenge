@@ -1,0 +1,7 @@
+<center><form action="/play" method="post">
+  <input style="background-color: white; border: 2px solid #4CAF50; width: 150px; border-radius: 8px" type="submit" name="back" value="Back to the game" >
+</form>
+
+<h3><%= @game.player_1.name %> choice: <%= @game.player_1.item.name %></h3><br>
+<h3><%= @game.player_2.name %> choice: <%= @game.player_2.item.name %></h3><br>
+<h2><%= @game.player_2.name %> wins!</h2></center>

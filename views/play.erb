@@ -1,0 +1,15 @@
+<center><h1>Welcome to the game, <%= @game.player_1.name %>! You are competing against <%= @game.player_2.name %>.</h1>
+  <br><h2>Make a choice</h2><br>
+
+<form action="/result" method="post">
+  <input style="background-color: white; border: 2px solid #4CAF50; width: 150px; border-radius: 8px" type="submit" name="item" value="Rock" >
+</form>
+
+<form action="/result" method="post">
+  <input style="background-color: white; border: 2px solid #008CBA; width: 150px; border-radius: 8px" type="submit" name="item" value="Paper">
+</form>
+
+<form action="/result" method="post">
+  <input style="background-color: white; border: 2px solid #f44336; width: 150px; border-radius: 8px" type="submit" name="item" value="Scissors">
+</form>
+</center>
