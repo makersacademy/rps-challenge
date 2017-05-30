@@ -5,6 +5,8 @@ feature 'Select a weapon' do
     expect(page).to have_content "Rock"
     expect(page).to have_content "Paper"
     expect(page).to have_content "Scissors"
+    expect(page).to have_content "Lizard"
+    expect(page).to have_content "Spock"
   end
 
   scenario 'player can submit weapon choice' do

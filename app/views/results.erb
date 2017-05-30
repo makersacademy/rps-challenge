@@ -9,7 +9,7 @@
 <h1><%= combination.first %> VS. <%= combination.last %></h1>
 <br>
 
-<% if combination.first == "Rock" && combination.last == "Scissors" || combination.first == "Paper" && combination.last == "Rock" || combination.first == "Scissors" && combination.last == "Paper" %>
+<% if combination.first == "Rock" && combination.last == "Scissors" || combination.first == "Paper" && combination.last == "Rock" || combination.first == "Scissors" && combination.last == "Paper" || combination.first == "Lizard" && combination.last == "Spock" || combination.first == "Paper" && combination.last == "Spock" || combination.first == "Spock" && combination.last == "Rock" || combination.first == "Spock" && combination.last == "Scissors" || combination.first == "Lizard" && combination.last == "Paper" %>
 
 <% combination.clear %>
 <% @game.reset_game %>
