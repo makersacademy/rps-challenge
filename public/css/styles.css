@@ -1,0 +1,70 @@
+
+body {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+form {
+  display: inline-block;
+}
+
+.container {
+font-family:'Poiret One', cursive;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+justify-content: center;
+min-height: 100vh;
+background-color: rgb(179, 217, 255);
+}
+
+#Title {
+  font-size: 90px;
+  font-family: 'Bangers', cursive;
+}
+
+#Subtitle {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.form {
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.restart-button {
+  -webkit-border-radius: 100;
+  -moz-border-radius: 100;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Poiret One', cursive;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 18px;
+  background: #000000;
+  padding: 7px 20px 7px 20px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.restart-button:hover {
+  border: none;
+  background: #11527a; /* maybe change to black on hover? */
+}
+
+.weapon-button {
+  border: none;
+  background: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.weapon-button:hover {
+  border: none;
+  background: rgb(204, 230, 255);
+}

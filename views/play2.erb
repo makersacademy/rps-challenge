@@ -1,0 +1,13 @@
+<head>
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Poiret+One" rel="stylesheet">
+</head>
+
+<div class="container">
+<h1 id="Subtitle"><%= @game.players[1].name %>, you're up next!</h1>
+Choose your weapon:
+<p>
+<a href="/twoplayer_result?weapon=rock"><button class="weapon-button"><img alt="Rock" src="/images/rock.png"></button></a>
+<a href="/twoplayer_result?weapon=paper"><button class="weapon-button"><img alt="Paper" src="/images/paper2.png"></button></a>
+<a href="/twoplayer_result?weapon=scissors"><button class="weapon-button"><img alt="Scissors" src="/images/scissors.png"></button></a>
+</div>

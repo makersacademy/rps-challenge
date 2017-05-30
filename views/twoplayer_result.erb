@@ -1,0 +1,28 @@
+<head>
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Poiret+One" rel="stylesheet">
+</head>
+
+<div class="container">
+  <% if @game.battle == :draw %>
+    <h1 id="Subtitle">We have a draw.</h1>
+  <% elsif @game.battle == :won %>
+    <h1 id="Subtitle"><%= @game.players[0].name %> won.</h1>
+  <% else %>
+    <h1 id="Subtitle"><%= @game.players[1].name %> won.</h1>
+  <% end %>
+  <p><%= @game.players[0].name %> chose <%= @game.players[0].weapon.capitalize %>.</p>
+  <p><%= @game.players[1].name %> chose <%= @game.players[1].weapon.capitalize %>.</p>
+  <br>
+  <div>
+    <form action="/play" method="get">
+      <input class="restart-button" type="submit" value="Rematch">
+    </form>
+    <form action="/" method="get">
+      <input class="restart-button" type="submit" value="New Game">
+    </form>
+  </div>
+  <form action="/save_game" method="post">
+    <input class="restart-button" type="submit" value="Save Game">
+  </form>
+</div>
