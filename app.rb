@@ -31,7 +31,7 @@ class RPS < Sinatra::Base
 
   post '/result' do
     @game = Game.instance
-    item = Item.send(params[:item].downcase)
+    item = Item.const_get(params[:item].upcase)
     erb @game.play(item)
   end
 

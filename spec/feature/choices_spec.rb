@@ -22,7 +22,7 @@ feature 'Player has different choices' do
   end
 
   scenario 'If player chooses Paper and computer chooses rock, player wins' do
-    allow(Item.items).to receive(:sample).and_return(Item.rock)
+    allow(Item::POSSIBILITIES).to receive(:sample).and_return(Item.new('Rock', 0))
     visit('/')
     fill_in :player_1_name, with: 'Tim'
     click_button :Enter

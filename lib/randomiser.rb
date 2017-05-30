@@ -4,7 +4,7 @@ class Randomiser
 
   attr_reader :picked_randomly
 
-  def initialize(array = Item.items)
+  def initialize(array = Item::POSSIBILITIES)
     @picked_randomly = array.sample
   end
 
