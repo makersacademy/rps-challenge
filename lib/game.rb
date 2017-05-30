@@ -16,6 +16,14 @@ class Game
     @player.last
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def play(item)
     player_2.choose(Randomiser.new.picked_randomly)
     player_1.choose(item)
