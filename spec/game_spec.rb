@@ -5,7 +5,6 @@ describe Game do
   let(:player_2) { double :computer }
   subject(:game) { described_class.new(player_1, player_2) }
 
-
   describe 'correct number of players' do
     it 'each game should have a Player 1' do
       expect(game.players[0]).to eq player_1
