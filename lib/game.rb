@@ -37,9 +37,6 @@ class Game
     result == :lose
   end
 
-  def game_over?
-  end
-
   def save_game(data)
     File.open(OUTPUT_FILE, 'a') do |f|
       f << data.to_yaml

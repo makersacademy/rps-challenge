@@ -31,7 +31,7 @@ class RPSWeb < Sinatra::Base
     erb :results
   end
 
-  get '/save_game' do
+  post '/save_game' do
     @game = Game.instance
     @game.save_game(@game)
     redirect '/'
