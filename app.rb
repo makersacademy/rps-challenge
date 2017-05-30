@@ -24,6 +24,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/play' do
+    @game = Game.instance
+    erb :play
+  end
+
   post '/result' do
     @game = Game.instance
     item = Item.send(params[:item].downcase)
