@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player'
 
 class Game
 
@@ -12,18 +12,28 @@ class Game
 
   def outcome
     player_weapon_choice
-    if @player_weapon_choice[0][:beats] == @opponent.weapon_choice
+    if @player_weapon_choice[:beats] == @opponent.weapon_choice
       :player_wins
-    elsif @player_weapon_choice[0][:beaten_by] == @opponent.weapon_choice
+    elsif @player_weapon_choice[:beaten_by] == @opponent.weapon_choice
       :player_loses
     else
       :player_draws
     end
   end
 
+
+    def self.create(player, opponent)
+      @game = Game.new(player, opponent)
+    end
+
+    def self.instance
+      @game
+    end
+
   private
 
   def player_weapon_choice
-    @player_weapon_choice = @available_weapons.select {|weapon| weapon[:name] == @player.weapon_choice}
+    @player_weapon_choice = @available_weapons.find {|weapon| weapon[:name] == @player.weapon_choice}
   end
+
 end

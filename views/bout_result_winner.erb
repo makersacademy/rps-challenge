@@ -1,0 +1,5 @@
+<h1>You chose: <%= @game.player.weapon_choice %> Vs. Your Opponent: <%= @game.opponent.weapon_choice %></h1><br>
+YOU WIN!<br>
+<form action="/play_rps" method="GET">
+  <input type="submit" value="Play Again!">
+</form>
