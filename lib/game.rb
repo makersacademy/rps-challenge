@@ -1,5 +1,6 @@
 require_relative 'player'
 require 'csv'
+# include 'rules'
 
 class Game
 
@@ -10,7 +11,6 @@ class Game
     @player = player
     @opponent = opponent
     @result = nil
-    # @readwrite = Readwrite.new
   end
 
   def self.create(player, opponent)
@@ -25,6 +25,18 @@ class Game
     ['Rock', 'Paper', 'Scissors'].sample
   end
 
+  def write(path)
+    CSV.open(path, 'wb') do |csv|
+      csv << [player.name, opponent.name, player.score, opponent.score]
+    end
+  end
+
+  def self.read(path)
+    CSV.foreach(path) do |row|
+      create(Player.new(row[0], row[2].to_i), Player.new(row[1], row[3].to_i))
+    end
+  end
+
   def compete(player, opponent)
     if player == 'Rock'
       rock_results(player, opponent)
@@ -32,18 +44,6 @@ class Game
       paper_results(player, opponent)
     else
       scissors_results(player, opponent)
-    end
-  end
-
-  def write(path)
-    CSV.open(path, 'wb') do |csv|
-      csv << [self.player.name, self.opponent.name, self.player.score, self.opponent.score]
-    end
-  end
-
-  def self.read(path)
-    CSV.foreach(path) do |row|
-      create(Player.new(row[0], row[2].to_i), Player.new(row[1], row[3].to_i))
     end
   end
 
@@ -84,12 +84,12 @@ class Game
   end
 
   def win(win, lose)
-    self.player.score += 1
+    player.score += 1
     "You win! #{win} beats #{lose}!"
   end
 
   def lose(lose, win)
-    self.opponent.score += 1
+    opponent.score += 1
     "You lose! #{win} beats #{lose}!"
   end
 

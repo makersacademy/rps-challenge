@@ -1,4 +1,4 @@
-# class Rules
+# method Rules
 #
 #   def rock_results(player, opponent)
 #     if opponent == 'Rock'

@@ -26,11 +26,29 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/process' do
-    @game.player.choice = params[:choice]
+  post '/rock' do
+    @game.player.choice = 'Rock'
     @game.opponent.choice = @game.rps
     redirect '/result'
   end
+
+  post '/paper' do
+    @game.player.choice = 'Paper'
+    @game.opponent.choice = @game.rps
+    redirect '/result'
+  end
+
+  post '/scissors' do
+    @game.player.choice = 'Scissors'
+    @game.opponent.choice = @game.rps
+    redirect '/result'
+  end
+
+  # post '/process' do
+  #   @game.player.choice = params[:choice]
+  #   @game.opponent.choice = @game.rps
+  #   redirect '/result'
+  # end
 
   get '/result' do
     @game.result = @game.compete(@game.player.choice, @game.opponent.choice)
@@ -42,6 +60,5 @@ class RockPaperScissors < Sinatra::Base
     erb :confirmsave
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
