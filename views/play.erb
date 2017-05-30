@@ -1,6 +1,8 @@
-<h1> Let the games begin!</h1></br>
-<h2> Playing: <%= @player1.name %>(<%= @player1.points %>) vs. <%= @player2.name %>(<%= @player2.points %>) </h2></br>
+<div><center> <h1> Let the games begin!</h1></br>
+  <h2> Playing: <%= @player1.name %>(<%= @player1.points %>) vs. <%= @player2.name %>(<%= @player2.points %>) </h2></br>
+</center></div>
 
+<div><center>
 <% if @player1.hand %>
     <h3> <%= @player1.name %> plays: <%= @player1.hand %> </h3>
 <% end %>
@@ -10,7 +12,9 @@
 <% end %>
 
   <h3> <%= @game.win.winner %> </h3>
+</div></center>
 
+<div><center>  
 <form action='/draw', method='post'>
   <input type='submit', name='hand', value='Rock'>
   <input type='submit', name='hand', value='Scissors'>
@@ -18,9 +22,9 @@
   <input type='submit', name='hand', value='Lizard'>
   <input type='submit', name='hand', value='Spock'>
 </form>
-
-<form action='/save', method='post'>
+  <form action='/save', method='post'>
     <input type='submit' value='Save & Quit'>
 </form>
+</div></center>
 
-<div> <img src='rpsls.jpg'> </div>
+<div><center> <img src='rpsls.jpg'> </center></div>

@@ -65,7 +65,7 @@ class Rps < Sinatra::Base
   end 
  
   get '/quit' do
-     'Thanks for playing!'
+    @game = session[:game]
+    erb :win
   end
-
 end

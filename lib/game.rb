@@ -31,6 +31,11 @@ class Game
     final_hand? && !@multiplayer
   end
 
+  def ultimate_winner
+    return 'You both' if @player1.points == @player2.points
+    @player1.points > @player2.points ? @player1.name : @player2.name
+  end
+
   private
   def empty_hands
    (@current_player.empty_hand; @opponent.empty_hand) if @multiplayer
