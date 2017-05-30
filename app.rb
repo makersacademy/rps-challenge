@@ -12,7 +12,7 @@ class RockPaperScissor < Sinatra::Base
   paper = player.paper
   scissors = player.scissors
   computer_move = computer.computer_move
-  game_rules = game.rules
+
 
 
 
@@ -24,7 +24,7 @@ class RockPaperScissor < Sinatra::Base
     @paper = paper
     @scissors = scissors
     @computer_move = computer_move
-    @game_rules = game_rules
+
   end
 
   enable :sessions
@@ -46,20 +46,21 @@ class RockPaperScissor < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
-    @player = session[:player1]
-    erb :rock
+  get '/choice' do
+    @player_choice = params[:choice]
+    @results = @game.rules(@player_choice)
+    erb :results
   end
 
-  get '/paper' do
-    @player = session[:player1]
-    erb :paper
-  end
-
-  get '/scissors' do
-    @player = session[:player1]
-    erb :scissors
-  end
+  # get '/paper' do
+  #   @player = session[:player1]
+  #   erb :paper
+  # end
+  #
+  # get '/scissors' do
+  #   @player = session[:player1]
+  #   erb :scissors
+  # end
 
   run! if app_file ==$0
 end
