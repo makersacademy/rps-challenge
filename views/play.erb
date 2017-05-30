@@ -1,0 +1,36 @@
+<h1><div>Welcome <%=$player1.name%>!</div></h1></br>
+<h3>Please select one of the below:</h3>
+
+
+<form action='/choice' method='post'>
+
+  <select name='weapon_choice'>
+    <option value='rock'>Rock</option>
+    <option value='paper'>Paper</option>
+    <option value='scissors'>Scissors</option>
+  </select>
+
+  <input type='submit' value='FIGHT!'>
+</form>
+
+
+<h3>You chose <%=$weapon%></h3>
+<h3>Computer chose <%=$computer_weapon%></h3>
+
+<% if $weapon == 'rock' || $weapon == 'paper' || $weapon == 'scissors'
+  if $weapon == $computer_weapon %>
+  This match was drawn!!!
+<% elsif $weapon == 'rock' && $computer_weapon == 'scissors' %>
+  You win :)
+<% elsif $weapon == 'rock' && $computer_weapon == 'paper' %>
+  Computer wins :(
+<% elsif $weapon == 'paper' && $computer_weapon == 'scissors' %>
+  Computer wins :(
+<% elsif $weapon == 'paper' && $computer_weapon == 'rock' %>
+  You win :)
+<% elsif $weapon == 'scissors' && $computer_weapon == 'paper' %>
+  You win :)
+<% elsif $weapon == 'scissors' && $computer_weapon == 'rock' %>
+  Computer wins :(
+<% end %>
+<% end %>
