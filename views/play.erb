@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RPS Game</title>
+  </head>
+  <body>
+    <h1><%= @player.name %></h1>
+
+    <div>
+      <form method="post" action="/play">
+        <p>Select a shape to play:</p>
+        Rock <input type="submit" name="choice" value="rock">
+        Paper <input type="submit" name="choice" value="paper">
+        Scissors <input type="submit" name="choice" value="scissors">
+      </form>
+    </div>
+
+    <% if @player.choice != nil %>
+      <div>
+        <p>You have selected <%= @player.choice.to_s.capitalize %>!</p>
+        <p>The computer had selected <%= @computer.choice.to_s.capitalize %>!</p>
+      </div>
+
+      <div>
+        <% if @computer.choice == @player.choice.to_sym %>
+          <h1>It's a draw!</h1>
+        <% elsif @defeats[@computer.choice] == @player.choice.to_sym%>
+          <h1>You won the game!</h1>
+        <% else %>
+          <h1>You lost the game!</h1>
+        <% end %>
+      </div>
+    <% end %>
+
+  </body>
+</html>
