@@ -6,7 +6,6 @@ require 'csv'
 
 class RPS < Sinatra::Base
   enable :sessions
-  set :static, true
 
   before do
     @game = Game.instance
