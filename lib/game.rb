@@ -2,12 +2,13 @@
 require_relative 'rules'
 
 class Game
-  attr_reader :players, :game_history
+  attr_reader :players, :game_history, :saved_session
 
   def initialize(player, opponent, rules = Rules.new)
     @players = [player, opponent]
     @rules = rules
     @game_history = Array.new
+    @filename = 'saved_games/rps_savegame.csv'
   end
 
   def self.create(player, opponent)
@@ -31,11 +32,20 @@ class Game
     :lose
   end
 
+  # TODO Extract class to Database class
   def save_game(session)
-    CSV.open('saved_games/rps_savegame.csv', 'w') do |csv|
+    CSV.open(@filename, 'w') do |csv|
       csv << session
     end
   end
+
+  # def load_game
+  #   CSV.open(@filename, 'r') do |file|
+  #     file.each do |row|
+  #       @saved_session = row
+  #     end
+  #   end
+  # end
 
   private
 

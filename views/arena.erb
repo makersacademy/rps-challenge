@@ -4,7 +4,7 @@
 
 <h3><%= "You chose #{@game.players[0].choice}" %></h3>
 
-<h3><%= "Your opponent chose #{@game.players[1].choice}" %></h3>
+<h3><p>Your opponent chose </p> <a name='result'> <<%= @game.players[1].choice %></a></h3>
 
 <h2><%= "You #{@game.declare_winner.to_s}" %> </h2>
 

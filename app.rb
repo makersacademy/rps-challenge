@@ -17,12 +17,17 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  # TODO: Extract a Database class to allow laod a game
+  # post '/load_game' do
+  #   Database.new.load_game
+  #   erb :load_game
+  # end
+
   before do
     @game = Game.instance
   end
 
   get '/play' do
-    # session.delete[:info]
     erb :play
   end
 
@@ -37,5 +42,4 @@ class RockPaperScissors < Sinatra::Base
     erb :save_game
   end
 
-  run! if app_file == $0
 end
