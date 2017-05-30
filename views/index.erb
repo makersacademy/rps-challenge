@@ -1,0 +1,25 @@
+<body style="color:darkgreen;width:100%;text-align:center">
+<h1>Welcome to the RPS Game!!</h1>
+<h3>Please, sign in to play</h3>
+
+<form action='/names' method='post'>
+  <label for="player">
+    Player's name:
+    <input type='text' name='player_1_name'>
+  </label>
+
+  <br/><br/>
+  <input type='submit'  value='Submit'>
+</form>
+  <br/><br/>
+  <br/><br/>
+
+<form action="/load_game" method="post">
+  <input type="submit" value="Load Game">
+</form>
+
+<form action="/exit_game">
+  <input type="submit" value="Exit Game">
+</form>
+
+</body>

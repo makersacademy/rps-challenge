@@ -1,0 +1,27 @@
+<body style="color:darkred;width:100%;text-align:center">
+
+  <h1><%= @game.player_1_name %> vs. Computer </h1>
+  <br/><br/>
+
+  <form action="/play" method="post">
+    <input type="submit" name="player_1_choice" value="Rock">
+    <input type="submit" name="player_1_choice" value="Paper">
+    <input type="submit" name="player_1_choice" value="Scissors">
+  </form>
+
+  You have chose <%= @game.player_1_choice.to_s.capitalize %>
+  <div>Computer has chose <%= @game.player_2_choice.to_s.capitalize %></div>
+
+  <br/><br/>
+  <form action="/results">
+    <input type="submit" value="Play">
+  </form>
+  <br/><br/>
+  <form action="/save_game" method="post">
+    <input type="submit" value="Save Game">
+  </form>
+  <form action="/exit_game">
+    <input type="submit" value="Exit Game">
+  </form>
+
+</body>
