@@ -22,13 +22,6 @@
         <p>The computer had selected <%= @computer.choice.to_s.capitalize %>!</p>
       </div>
 
-
-      <%= @computer.choice %>
-      <%= @player.choice %>
-      <%= @defeats[@computer.choice] %>
-      <%= @defeats[@computer.choice] == @player.choice.to_sym%>
-      <%= @computer.choice == @player.choice %>
-
       <div>
         <% if @computer.choice == @player.choice.to_sym %>
           <h1>It's a draw!</h1>
