@@ -2,7 +2,7 @@ require 'yaml'
 
 class Game
 
-  attr_reader :player_1_name, :player_1_choice, :player_2_choice, :game
+  attr_reader :player_1_name, :player_1_choice, :player_2_choice
 
   DEFAULT_FINISH_SCORE = 20
   SHAPES = [:rock, :paper, :scissors]
