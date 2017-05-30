@@ -1,0 +1,16 @@
+Player: <%= @player_name %> <br>
+</br>
+
+Select your weapon of choice <br>
+<br>
+
+<form action="/play" method="post">
+  <input type="submit" name="weapon" value="ROCK">
+  <input type="submit" name="weapon" value="PAPER">
+  <input type="submit" name="weapon" value="SCISSORS">
+</form>
+
+Player Choice: <%= @player_weapon %> <br>
+</br>
+
+Computer Choice: <%= @computer_weapon %>
