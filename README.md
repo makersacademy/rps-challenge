@@ -6,8 +6,8 @@ Instructions
 -------
 
 ```sh
-$ git clone git@github.com:sophieklm/rps-challenge.git
-$ cd rps-challenge
+$ git clone git@github.com:sophieklm/rock-paper-scissors.git
+$ cd rock-paper-scissors
 $ bundle
 $ rackup
 ```
