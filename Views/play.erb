@@ -1,0 +1,26 @@
+<center>
+<font color="blue">
+  <h1> Hello <%= @player %>, let's play! </h1>
+  <h2> Rock / Paper / Scissors </h2>
+<center>
+</font>
+
+<form action="/play" method="post">
+<center>
+  <input type="submit" name="object" value="Rock"> <img src="http://preview.cutcaster.com/902949015-cartoon-rock.jpg" width = "220" height = "240" alt="Rock">
+  <input type="submit" name="object" value="Paper"><img src="http://st.depositphotos.com/1742172/2155/v/950/depositphotos_21550509-stock-illustration-cartoon-happy-paper-character.jpg" width = "180" height = "200" alt="Paper">
+  <input type="submit" name="object" value="Scissors"><img src="http://4.bp.blogspot.com/-qwqZFXy1BD0/TaidU9iUUMI/AAAAAAAAADs/EDBYAjpIb7Y/s1600/scissors.gif" width = "180" height = "200" alt="Scissors">
+</center>
+</form>
+
+<center>
+
+<h2>You are <%= @game.object.to_s %><h2>
+<% if @game.object %>
+<h2>Computer is <%= @game.random_selection %></h2>
+<% end %>
+
+<form action="/game" method="get">
+      <input type="submit" value="Submit">
+    </form>
+</center>
