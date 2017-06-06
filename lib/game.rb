@@ -8,7 +8,7 @@ class Game
     @player = player
     @choice = []
     @computer_choice = []
-    @potential_choices = ["Rock", "Paper", "Scissors"]
+    @potential_choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   end
 
   def self.create(player)
