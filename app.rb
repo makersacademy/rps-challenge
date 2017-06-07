@@ -1,6 +1,9 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -11,9 +14,11 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @name = session[:name]
     erb :play
   end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
+
 end
