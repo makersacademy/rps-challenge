@@ -20,4 +20,9 @@ feature 'Playing Rock Paper Scissors' do
     expect(page).to have_content 'Rock selected!'
   end
 
+  scenario 'Game chooses Rock' do
+    click_button 'Rock'
+    expect(page).to have_content 'Rock selected by Opponent!'
+  end
+
 end
