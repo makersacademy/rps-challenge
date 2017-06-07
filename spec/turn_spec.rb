@@ -9,4 +9,17 @@ describe Turn do
       expect(turn.player_name).to eq 'Ron'
     end
   end
+
+  describe '#player_shape' do
+    it 'returns player shape' do
+      expect(turn.player_shape).to eq :rock
+    end
+  end
+
+  describe '#opponent_shape' do
+    it 'returns opponent shape' do
+      expect(turn.opponent_shape).to eq :rock
+    end
+  end
+
 end

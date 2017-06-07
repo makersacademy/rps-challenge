@@ -1,6 +1,6 @@
 class Turn
 
-  attr_reader :player_name
+  attr_reader :player_name, :player_shape, :opponent_shape
 
   def initialize(options)
     @player_name = options["player_name"]
