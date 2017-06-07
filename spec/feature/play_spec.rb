@@ -22,7 +22,14 @@ feature 'Playing Rock Paper Scissors' do
 
   scenario 'Game chooses Rock' do
     click_button 'Rock'
-    expect(page).to have_content 'Rock selected by Opponent!'
+
+    message = find(:css, "#opponent").text.strip
+
+    expect(possible_messages).to include message
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map { |shape| "#{shape.to_s.capitalize} selected by Opponent!" }
   end
 
 end
