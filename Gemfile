@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.3'
 
-gem 'sinatra'
 gem 'rake'
-
+gem 'sinatra'
 
 group :test do
-  gem 'rspec'
-  gem 'rubocop-rspec'
-  gem 'rubocop'
-  gem 'coveralls', require: false
   gem 'capybara'
-  gem 'byebug'
+  gem 'rspec'
+  gem 'rspec-sinatra'
+  gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
