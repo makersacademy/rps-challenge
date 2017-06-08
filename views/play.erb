@@ -14,3 +14,11 @@ Hello <%= @turn.player_name %>!
 <div id="opponent">
   <%= @turn.opponent_shape.to_s.capitalize %> selected by Opponent!
 </div>
+
+<% if @turn.win? %>
+  You Winner!
+<% elsif @turn.lose? %>
+    You Loser!
+<% elsif @turn.draw? %>
+    Stalemate!
+<% end %>

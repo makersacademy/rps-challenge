@@ -8,7 +8,6 @@ feature 'Playing Rock Paper Scissors' do
     visit '/'
     fill_in 'name', with: 'Ron'
     click_button 'Submit'
-    expect(page).to have_content 'Ron'
   end
 
   scenario 'see the options to play game' do
@@ -32,6 +31,29 @@ feature 'Playing Rock Paper Scissors' do
     srand(PLAY_SEED)
     click_button 'Rock'
     expect(page).to have_content 'Scissors selected by Opponent!'
+  end
+
+  context 'End Game' do
+
+    before do
+      srand(PLAY_SEED)
+    end
+
+    scenario 'I Win' do
+      click_button 'Rock'
+      expect(page).to have_content 'You Winner!'
+    end
+
+    scenario 'I Lose' do
+      click_button 'Paper'
+      expect(page).to have_content 'You Loser!'
+    end
+
+    scenario 'I Draw' do
+      click_button 'Scissors'
+      expect(page).to have_content 'Stalemate!'
+    end
+
   end
 
   def possible_messages
