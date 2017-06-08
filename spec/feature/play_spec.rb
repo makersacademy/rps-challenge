@@ -2,6 +2,8 @@ require 'spec_helper'
 
 feature 'Playing Rock Paper Scissors' do
 
+  PLAY_SEED = 221563
+
   before do
     visit '/'
     fill_in 'name', with: 'Ron'
@@ -22,10 +24,14 @@ feature 'Playing Rock Paper Scissors' do
 
   scenario 'Game chooses Rock' do
     click_button 'Rock'
-
-    message = find(:css, "#opponent").text.strip
-
+    message = find(:css, "#opponent").text
     expect(possible_messages).to include message
+  end
+
+  scenario 'Game chooses a random option' do
+    srand(PLAY_SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Scissors selected by Opponent!'
   end
 
   def possible_messages
