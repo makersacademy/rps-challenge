@@ -3,6 +3,13 @@
 <div><center><font face="courier" size = 6>Welcome <%=@game.playing.name%>.  Choose your weapon!</font></center></div>
 
 
+<% Rules.make_rules_2.keys.each do |x| %>
+<form action='/find_winner' method = 'post'>
+  <input type="submit" name="hand" value= <%=x%> >
+</form>
+
+<% end %>
+
 <div><center>
 <form action='/find_winner' method = 'post'>
   <input type="image" name="hand" value="rock" src ='https://s-media-cache-ak0.pinimg.com/originals/fc/52/1b/fc521b0f81177ca9fe500615a04c11f0.jpg' style="height:300px;width:210px">
