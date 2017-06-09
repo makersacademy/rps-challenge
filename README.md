@@ -1,7 +1,7 @@
 Introduction  
 ------------  
 
-* Week three Makers Academy weekend challenge.
+* Week three Makers Academy weekend challenge, worked on independently.
 
 * A Rock Paper Scissors game built using Sinatra.
 
