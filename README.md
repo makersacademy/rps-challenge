@@ -3,7 +3,11 @@ Introduction
 
 * Week three Makers Academy weekend challenge.
 
-* Rock Paper Scissors Lizard Spock, for one or two players.
+* A Rock Paper Scissors game built using Sinatra.
+
+* For one or two players.
+
+* Two extra options!  Spock beats scissors and rock but loses to lizard and paper.  Lizard beats spock and paper but loses to scissor and rock.
 
 * You can play it <a href="https://scissorslizardspock.herokuapp.com">here</a>.
 
