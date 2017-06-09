@@ -7,7 +7,7 @@ Introduction
 
 * For one or two players.
 
-* Two extra options!  Spock beats scissors and rock but loses to lizard and paper.  Lizard beats spock and paper but loses to scissor and rock.
+* Two extra options!  Spock beats scissors and rock but loses to lizard and paper.  Lizard beats spock and paper but loses to scissors and rock.
 
 * You can play it <a href="https://scissorslizardspock.herokuapp.com">here</a>.
 
