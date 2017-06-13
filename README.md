@@ -1,86 +1,30 @@
-# RPS Challenge
+# Rock, Paper, Scissors
+## Makers Academy Week 3 Weekend Challenge
 
-Instructions
--------
+![A picture](https://github.com/wemmm/rps-challenge/blob/master/hands.png)
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+### What it Does
+A web app for playing Rock, Paper, Scissors.
 
-Task
-----
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+### How to Use
+1. Clone the directory to your machine.
+2. Install the relevent gems using ```bundle install```
+3. Navigate to the /app folder from the command line. 
+4. Run the app with ```ruby app.rb```
+5. Use a browser to go to localhost/4567 (or specified port)
+5. Input name and choice, then submit.
+6. You will be redirected to the outcome of the round.
+7. Play another round by clicking ```play again?```
+8. The game will keep track of your name, total wins, total losses and draws!
+9. Maximum gaming enjoyment is now yours.
 
 
-As usual please start by
+### My Approach
+![A diagram](https://github.com/wemmm/rps-challenge/blob/master/plan.PNG)
 
-* Forking this repo
-* TEST driving development of your app
+### Additional Things
+I had a really tough time setting up Sinatra and the structure for the web app! The more complex structure also caused me some issues with debugging, with one particularly annoying glitch taking me a full two hours to resolve. This had quite a major effect on my time management, so as of my pull request there's very little game logic in the code. It's a bank holiday tomorrow so I'm going to aim to get the game fully functional and possibly even looking good with a bit of CSS before Tuesday. 
 
+I'm quite happy that I managed to 'kill the global variable' by using class instance variables, and even though I'm not entirely happy with my rate of progress, I am satisfied that I managed to overcome a lot of bugs and roadblocks over the weekend I spent working on this!
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+**BANK HOLIDAY UPDATE**: The game logic actually works now! The game can be played and replayed and even keeps a running total of all the results from the current instance. 

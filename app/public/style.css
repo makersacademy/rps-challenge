@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+
+html {
+  height: 120%;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Concert One';
+  font-size: 42px;
+  color: darkslategrey;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Concert One';
+  font-size: 32px;
+  color: darkslategrey;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Concert One';
+  font-size: 32px;
+  color: darkslategrey;
+}
+
+p {
+  text-align: center;
+  font-family: 'Concert One';
+  color: darkslategrey;
+}
+
+.scores {
+  text-align: center;
+  font-family: 'Concert One';
+  color: darkslategrey;
+}
+
+form {
+  text-align: center;
+  font-family: 'Concert One';
+  font-size: 22px;
+  color: darkslategrey;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: linear-gradient(to top, #70e1f5, #ffd194);
+  text-align: center;
+}
+
+input {
+  background-color: honeydew;
+  font-family: 'Concert One';
+  border-style: groove;
+  border-radius: 10px;
+}
+
+button {
+  background-color: honeydew;
+  font-family: 'Concert One';
+  border-style: groove;
+  border-radius: 10px;
+}
+
+img {
+  border-style: groove;
+  border-radius: 50px;
+}

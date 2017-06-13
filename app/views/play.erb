@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link  href="/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1><%= "Hi #{@game.player.name}!" %></h1>
+<h2>Pick your weapon:</h2>
+<br>
+
+<form method="post" action="/choice">
+  <input type="radio" name="weapon" value="Rock" id="r"> Rock<br>
+  <input type="radio" name="weapon" value="Paper" id="p"> Paper<br>
+  <input type="radio" name="weapon" value="Scissors" id="s"> Scissors<br>
+  <input type="radio" name="weapon" value="Lizard" id="l"> Lizard<br>
+  <input type="radio" name="weapon" value="Spock" id="sp"> Spock<br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<h3>Here's your scores so far:</h3>
+<div class=scores>
+<p><%="Wins: #{@game.player.wins}"%></p>
+<p><%="Losses: #{@game.player.losses}"%></p>
+<p><%="Draws: #{@game.player.draws}"%></p>
+</div>

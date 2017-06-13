@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link  href="/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<% combination = [] %>
+<% combination.clear %>
+<% @game.pick_opposing_weapon %>
+<% combination << @game.choice
+   combination << @game.computer_choice
+   combination.flatten! %>
+<br>
+
+<h1><%= combination.first %> VS. <%= combination.last %></h1>
+<br>
+
+<% if combination.first == "Rock" && combination.last == "Scissors" || combination.first == "Paper" && combination.last == "Rock" || combination.first == "Scissors" && combination.last == "Paper" || combination.first == "Lizard" && combination.last == "Spock" || combination.first == "Paper" && combination.last == "Spock" || combination.first == "Spock" && combination.last == "Rock" || combination.first == "Spock" && combination.last == "Scissors" || combination.first == "Lizard" && combination.last == "Paper" %>
+
+<% combination.clear %>
+<% @game.reset_game %>
+<form method="get" action="/win">
+  <button type="submit">Let's go!</button>
+</form>
+
+<% elsif combination.first == combination.last %>
+
+<% combination.clear %>
+<% @game.reset_game %>
+<form method="get" action="/draw">
+  <button type="submit">Let's go!</button>
+</form>
+
+<% else %>
+
+<% combination.clear %>
+<% @game.reset_game %>
+<form method="get" action="/lose">
+  <button type="submit">Let's go!</button>
+</form>
+
+<% end %>
