@@ -8,34 +8,40 @@ h1 {
   text-align: center;
   font-family: 'Concert One';
   font-size: 42px;
+  color: darkslategrey;
 }
 
 h2 {
   text-align: center;
   font-family: 'Concert One';
   font-size: 32px;
+  color: darkslategrey;
 }
 
 h3 {
   text-align: center;
   font-family: 'Concert One';
   font-size: 32px;
+  color: darkslategrey;
 }
 
 p {
   text-align: center;
   font-family: 'Concert One';
+  color: darkslategrey;
 }
 
 .scores {
   text-align: center;
   font-family: 'Concert One';
+  color: darkslategrey;
 }
 
 form {
   text-align: center;
   font-family: 'Concert One';
   font-size: 22px;
+  color: darkslategrey;
 }
 
 body {
