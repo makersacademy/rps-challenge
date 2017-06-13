@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-h1 {text-align:center; font-family:Helvetica,sans-serif;}
-h2 {text-align:center; font-family:Helvetica,sans-serif;}
-form {text-align:center; font-family:Helvetica,sans-serif;}
-p {text-align:center; font-family:Helvetica,sans-serif;}
-h3 {text-align:center; font-family:Helvetica,sans-serif;}
-</style>
+<link  href="/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -26,6 +20,8 @@ h3 {text-align:center; font-family:Helvetica,sans-serif;}
 </form>
 <br>
 <h3>Here's your scores so far:</h3>
+<div class=scores>
 <p><%="Wins: #{@game.player.wins}"%></p>
 <p><%="Losses: #{@game.player.losses}"%></p>
 <p><%="Draws: #{@game.player.draws}"%></p>
+</div>
