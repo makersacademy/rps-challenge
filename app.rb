@@ -1,6 +1,7 @@
 
 require_relative "./lib/player"
 require_relative "./lib/game"
+require_relative "./lib/computer"
 require 'sinatra'
 
 class App < Sinatra::Base
@@ -10,17 +11,18 @@ class App < Sinatra::Base
   end
 
   post '/name' do
-    $game = Game.new(Player.new(params[:name]), Player.new)
+    Game.create(Player.new(params[:name]), Computer.new)
     redirect('/name')
   end
 
   get '/name' do
-    @game = $game
+    @game = Game.instance
     erb(:name)
   end
 
   post '/choice' do
-    $game.player_one.weapon_of_choice_is(params[:weapon])
+    Game.instance.player.weapon_of_choice_is(params[:weapon])
+    Game.instance.computer.weapon_of_choice
     redirect('/outcome')
   end
 
@@ -29,7 +31,7 @@ class App < Sinatra::Base
   end
 
   get '/outcome' do
-    @game = $game
+    @game = Game.instance
     erb(:outcome)
   end
 

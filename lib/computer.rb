@@ -1,5 +1,5 @@
 
-require 'player'
+require_relative 'player'
 
 class Computer
 
