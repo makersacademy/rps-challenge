@@ -7,8 +7,12 @@ require 'sinatra'
 class App < Sinatra::Base
 
   get '/' do
-    $game = Game.instance
     erb(:index)
+  end
+
+  post '/name' do
+    $game = Game.new(Player.new(params[:name]), Player.new)
+    redirect('/name')
   end
 
   get '/name' do
@@ -16,13 +20,12 @@ class App < Sinatra::Base
     erb(:name)
   end
 
-  post '/name' do
-    $game.set_player_one(Player.new(params[:name]))
-    redirect('/name')
+  get '/choice' do
+    erb(:choice)
   end
 
-  get '/play' do
-    erb(:play)
+  get '/outcome' do
+    erb(:outcome)
   end
 
 end
