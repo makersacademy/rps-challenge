@@ -2,15 +2,16 @@
 
 class Player
 
+  WEAPONS = [:rock, :paper, :scissors]
+
   attr_reader :name, :weapon
 
-  def initialize(name='computer')
+  def initialize(name)
     @name = name
-    @weapon = nil
   end
 
   def weapon_of_choice_is(weapon)
-    @weapon = weapon
+    @weapon = weapon.to_sym
   end
 
 end

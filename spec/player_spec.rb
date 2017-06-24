@@ -3,7 +3,7 @@
 describe Player do
 
   let(:name) { :Maker }
-  let(:weapon) { :Rock }
+  let(:weapon) { :paper }
   subject(:player) { described_class.new(name)}
 
   describe "attributes" do
@@ -15,7 +15,7 @@ describe Player do
 
   describe "#weapon_of_choice_is" do
     it "assigns a weapon" do
-      expect{player.weapon_of_choice_is(weapon)}.to change{player.weapon}.from(nil).to(:Rock)
+      expect{player.weapon_of_choice_is(weapon)}.to change{player.weapon}.from(nil).to(:paper)
     end
   end
 end
