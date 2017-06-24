@@ -1,13 +1,12 @@
 class Computer
 
-attr_reader :choice
+attr_reader :move
 
   def initialize
-    @choice = random_choice
+    @move = random_choice
   end
 
   def random_choice
     ["rock", "paper", "scissors"].sample
   end
-
 end

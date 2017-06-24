@@ -1,12 +1,5 @@
-<h1>You threw <%= @player_choice %>!</h1>
+<h1>You threw <%= $player_1.move %>!</h1>
 
-<h1>Your opponent threw <%= @computer_choice %>!</h1>
+<h1>Your opponent threw <%= $player_2.move %>!</h1>
 
-<% if @player_choice == @computer_choice %> It's a draw!
-<% elsif @player_choice == 'rock' && @computer_choice == 'scissors' %>You win!
-<% elsif @player_choice == 'rock' && @computer_choice == 'paper' %>You lose.
-<% elsif @player_choice == 'paper' && @computer_choice == 'scissors' %>You lose.
-<% elsif @player_choice == 'paper' && @computer_choice == 'rock' %>You win!
-<% elsif @player_choice == 'scissors' && @computer_choice == 'paper' %>You win!
-<% elsif @player_choice == 'scissors' && @computer_choice == 'rock' %>You lose.
-<% end %>
+<h2> <%= @game.calculate_result(@player_1, @player_2) %></h2>

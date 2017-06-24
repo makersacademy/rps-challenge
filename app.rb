@@ -1,9 +1,9 @@
 require 'sinatra/base'
 require './docs/computer.rb'
+require './docs/player.rb'
+require './docs/game.rb'
 
 class RPS < Sinatra::Base
-
-attr_reader :player_name, :computer_choice
 
 enable :sessions
 
@@ -12,17 +12,14 @@ enable :sessions
   end
 
   post '/name' do
-    @player_name = params[:player_name]
+    $player_1 = Player.new(params[:player_name])
     erb :play
   end
 
   post '/battle' do
-    @player_choice = params[:move]
-    @computer = Computer.new
-    @computer_choice = @computer.choice
+    $player_1.choose_move(params[:move])
+    $player_2 = Computer.new
+    @game = Game.new($player_1, $player_2)
     erb :battle
   end
-
-  run! if app_file == $0
-
 end

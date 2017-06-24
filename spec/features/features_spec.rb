@@ -34,12 +34,12 @@ describe RPS, :type => :feature do
       expect(page).to have_content 'Hi, Elle'
     end
 
-    it "prompts player to make a move choice" do
+    it "prompts player to choose a move" do
       expect(page).to have_content 'Choose what move you want to make'
     end
 
     describe "enter choice form" do
-      it "has a text field for the player's choice of throw" do
+      it "has a text field for the player's choice of move" do
         expect { find_field('move') }.to_not raise_error
       end
 
@@ -52,6 +52,10 @@ describe RPS, :type => :feature do
   describe "battle.erb" do
 
   let(:computer) { double'computer' }
+  let(:game) { double'game' }
+  let(:player_1) { double(:player) }
+  let(:player_2) { double(:player) }
+
 
     before do
       sign_in_and_play
@@ -63,9 +67,14 @@ describe RPS, :type => :feature do
       expect(page).to have_content 'You threw rock!'
     end
 
-
     it "shows the computer's choice" do
       expect(page).to have_content 'Your opponent threw '
+    end
+
+#this needs to be stubbed for randomness
+    it "shows the result of the game" do
+      allow(player_2).to receive(:move).and_return('rock')
+      expect(page).to have_content 'It\'s a draw!'
     end
   end
 end
