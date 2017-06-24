@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require './lib/player.rb'
+require './lib/player1.rb'
+require './lib/player2.rb'
 require './lib/game.rb'
 
 class Rps < Sinatra::Base
@@ -8,10 +9,13 @@ class Rps < Sinatra::Base
     erb :index
   end
   
-  post '/choose' do
-    @game = Game.create_new_game(Player.new(params[:player_1]))
+  
+  post '/names' do
+    Player1.instance.naming(params[:player_1])
+    Player2.instance.naming(params[:player_2])
+    @game = Game.create_new_game(Player1.instance, Player2.instance)
     @game = Game.game_instance
-    erb :choose
+    erb :names
   end
   
   # before do
@@ -19,4 +23,5 @@ class Rps < Sinatra::Base
   # end
   
   run! if app_file == $0
+  
 end
