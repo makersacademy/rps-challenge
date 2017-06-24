@@ -10,7 +10,7 @@ feature "Picking a weapon" do
 end
 
 feature "Picking a weapon" do
-  scenario "player picks a rock" do
+  scenario "player picks paper" do
     sign_in_and_play
     click_on("Pick your weapon")
     find(:css, "#paper").set true
@@ -20,7 +20,7 @@ feature "Picking a weapon" do
 end
 
 feature "Picking a weapon" do
-  scenario "player picks a rock" do
+  scenario "player picks scissors" do
     sign_in_and_play
     click_on("Pick your weapon")
     find(:css, "#scissors").set true

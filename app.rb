@@ -1,7 +1,6 @@
 
 require_relative "./lib/player"
 require_relative "./lib/game"
-
 require 'sinatra'
 
 class App < Sinatra::Base
