@@ -8,6 +8,7 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'shotgun'
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
