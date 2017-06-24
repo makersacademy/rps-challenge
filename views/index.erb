@@ -1,9 +1,41 @@
-<h1>Rock, Paper, Scissors!</h1>
-<h2>Enter your name to play</h2>
-<form action="/name" method="post">
-  <label for="player_name">
-    Player name
-  <input type="text" name="player_name">
-</label>
-  <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link href="https://fonts.googleapis.com/css?family=Barrio|Cabin+Sketch" rel="stylesheet">
+    <style>
+    body  {
+      background-image: url("../../images/rpsls-bkg.jpg");
+      background-repeat: no-repeat;
+      background-color: #15133c;
+      background-position: right -55px;
+      text-align: center;
+      color: #4A87E6;
+      font-family: 'Cabin Sketch', cursive;
+    }
+    h1 {
+      color: #81C737;
+      font-size: 60px;
+      font-family: 'Barrio', cursive;
+    }
+    h2 {
+      font-size: 30px;
+      font-family: 'Cabin Sketch', cursive;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h1>Rock, Paper, Scissors!</h1>
+    <br></br>
+    <h2>Enter your name to play</h2>
+
+    <form action="/name" method="post">
+      <label for="player_name">
+        Player name:
+      <input type="text" name="player_name">
+      </label>
+      <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
