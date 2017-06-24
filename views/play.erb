@@ -1,1 +1,48 @@
-<%= @player_name %> has entered into battle!
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link href="https://fonts.googleapis.com/css?family=Barrio|Cabin+Sketch" rel="stylesheet">
+    <style>
+    body  {
+      background-image: url("../../images/rpsls-bkg.jpg");
+      background-repeat: no-repeat;
+      background-color: #15133c;
+      background-position: right -55px;
+      text-align: center;
+      color: #4A87E6;
+      font-family: 'Cabin Sketch', cursive;
+    }
+    h1 {
+      color: #81C737;
+      font-size: 60px;
+      font-family: 'Barrio', cursive;
+    }
+    span {
+      color: #D40D58;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    </style>
+  </head>
+<body>
+
+  <h1><span><%= @game.player.name %></span> has entered into battle!</h1>
+
+  <br></br>
+    <h2>Beat the NPC to be the WINNER!</h2>
+    <form action="/fist_battle1">
+      <input type="submit" value="ROCK">
+    </form>
+
+    <form action="/fist_battle2">
+      <input type="submit" value="PAPER">
+    </form>
+
+    <form action="/fist_battle3">
+      <input type="submit" value="SCISSORS">
+    </form>
+
+  </body>
+</html>
