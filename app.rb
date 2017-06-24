@@ -20,11 +20,17 @@ class App < Sinatra::Base
     erb(:name)
   end
 
+  post '/choice' do
+    $game.player_one.weapon_of_choice_is(params[:weapon])
+    redirect('/outcome')
+  end
+
   get '/choice' do
     erb(:choice)
   end
 
   get '/outcome' do
+    @game = $game
     erb(:outcome)
   end
 
