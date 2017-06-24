@@ -17,14 +17,13 @@ describe Game do
   end
 
   describe "#calculate_result" do
-    context "when the game is a draw" do
-      it "should show a drawing message" do
+    context "when both players throw rocks" do
+      it "should return a draw" do
         allow(player_1).to receive(:move).and_return("rock")
         allow(player_2).to receive(:move).and_return("rock")
         expect(game.calculate_result(player_1, player_2)).to eq('It\'s a draw!')
       end
     end
-
     context "when the player has won" do
       it "should show a winning message" do
         allow(player_1).to receive(:move).and_return("rock")
@@ -32,12 +31,60 @@ describe Game do
         expect(game.calculate_result(player_1, player_2)).to eq('You win!')
       end
     end
-
+    context "when the player has won" do
+      it "should show a winning message" do
+        allow(player_1).to receive(:move).and_return("paper")
+        allow(player_2).to receive(:move).and_return("rock")
+        expect(game.calculate_result(player_1, player_2)).to eq('You win!')
+      end
+    end
+    context "when the player has won" do
+      it "should show a winning message" do
+        allow(player_1).to receive(:move).and_return("rock")
+        allow(player_2).to receive(:move).and_return("scissors")
+        expect(game.calculate_result(player_1, player_2)).to eq('You win!')
+      end
+    end
+    context "when the player has lost" do
+      it "should show a winning message" do
+        allow(player_1).to receive(:move).and_return("paper")
+        allow(player_2).to receive(:move).and_return("scissors")
+        expect(game.calculate_result(player_1, player_2)).to eq('You lose.')
+      end
+    end
+    context "when the player has lost" do
+      it "should show a winning message" do
+        allow(player_1).to receive(:move).and_return("paper")
+        allow(player_2).to receive(:move).and_return("scissors")
+        expect(game.calculate_result(player_1, player_2)).to eq('You lose.')
+      end
+    end
     context "when the player has lost" do
       it "should show a losing message" do
         allow(player_1).to receive(:move).and_return("rock")
         allow(player_2).to receive(:move).and_return("paper")
         expect(game.calculate_result(player_1, player_2)).to eq('You lose.')
+      end
+    end
+    context "when the player has lost" do
+      it "should show a losing message" do
+        allow(player_1).to receive(:move).and_return("scissors")
+        allow(player_2).to receive(:move).and_return("rock")
+        expect(game.calculate_result(player_1, player_2)).to eq('You lose.')
+      end
+    end
+    context "when both players throw scissors" do
+      it "should return a draw" do
+        allow(player_1).to receive(:move).and_return("scissors")
+        allow(player_2).to receive(:move).and_return("scissors")
+        expect(game.calculate_result(player_1, player_2)).to eq('It\'s a draw!')
+      end
+    end
+    context "when both players throw paper" do
+      it "should return a draw" do
+        allow(player_1).to receive(:move).and_return("paper")
+        allow(player_2).to receive(:move).and_return("paper")
+        expect(game.calculate_result(player_1, player_2)).to eq('It\'s a draw!')
       end
     end
   end

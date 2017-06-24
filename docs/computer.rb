@@ -6,6 +6,7 @@ attr_reader :move
     @move = random_choice
   end
 
+private
   def random_choice
     ["rock", "paper", "scissors"].sample
   end

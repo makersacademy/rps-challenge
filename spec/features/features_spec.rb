@@ -71,10 +71,8 @@ describe RPS, :type => :feature do
       expect(page).to have_content 'Your opponent threw '
     end
 
-#this needs to be stubbed for randomness
     it "shows the result of the game" do
-      allow(player_2).to receive(:move).and_return('rock')
-      expect(page).to have_content 'It\'s a draw!'
+      expect(page).to have_content 'You win!'
     end
   end
 end
