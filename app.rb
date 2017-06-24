@@ -1,18 +1,27 @@
 
 require_relative "./lib/player"
+require_relative "./lib/game"
 
 require 'sinatra'
 
 class App < Sinatra::Base
 
   get '/' do
-    "Hi world!"
-    $player = Player.new("jas")
-    redirect('/play')
+    $game = Game.instance
+    erb(:index)
+  end
+
+  get '/name' do
+    @game = $game
+    erb(:name)
+  end
+
+  post '/name' do
+    $game.set_player_one(Player.new(params[:name]))
+    redirect('/name')
   end
 
   get '/play' do
-    @player = $player
     erb(:play)
   end
 
