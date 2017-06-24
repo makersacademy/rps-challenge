@@ -8,3 +8,10 @@ feature 'sign in page' do
     expect(page).to have_content 'Enter Your Name'
   end
 end
+
+feature 'sign in page' do
+  scenario 'Can see a button called "let\'s Play!"' do
+    visit('/')
+    expect(page).to have_button "Let's Play!"
+  end
+end
