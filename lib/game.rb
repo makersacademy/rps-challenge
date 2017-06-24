@@ -1,14 +1,16 @@
+require "./lib/player.rb"
+
 class Game
   
-  attr_reader :name
+  attr_reader :player
   
   
-  def initialize(name)
-    @name = name
+  def initialize(player)
+    @player = player
   end
   
-  def self.create_new_game
-    @game = Game.new(name)
+  def self.create_new_game(player)
+    @game = Game.new(player)
   end
   
   def self.game_instance
