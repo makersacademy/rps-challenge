@@ -7,7 +7,7 @@ describe RPS, :type => :feature do
       visit '/'
     end
 
-    it "shows an expected string" do
+    it "shows a welcome" do
         expect(page).to have_content 'Welcome to Rock Paper Scissors!'
     end
 
@@ -27,13 +27,45 @@ describe RPS, :type => :feature do
 
   describe "play.erb" do
     before do
-      visit '/'
-      fill_in 'player_name', with: 'Elle'
-      click_button('Enter name')
+      sign_in_and_play
     end
 
     it "displays player name" do
       expect(page).to have_content 'Hi, Elle'
+    end
+
+    it "prompts player to make a move choice" do
+      expect(page).to have_content 'Choose what move you want to make'
+    end
+
+    describe "enter choice form" do
+      it "has a text field for the player's choice of throw" do
+        expect { find_field('move') }.to_not raise_error
+      end
+
+      it 'has a submit button' do
+        expect { find_button('Continue') }.to_not raise_error
+      end
+    end
+  end
+
+  describe "battle.erb" do
+
+  let(:computer) { double'computer' }
+
+    before do
+      sign_in_and_play
+      fill_in 'move', with: 'rock'
+      click_button('Continue')
+    end
+
+    it "shows the player's choice" do
+      expect(page).to have_content 'You threw rock!'
+    end
+
+
+    it "shows the computer's choice" do
+      expect(page).to have_content 'Your opponent threw '
     end
   end
 end

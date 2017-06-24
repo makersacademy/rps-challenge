@@ -1,1 +1,8 @@
 <h1>Hi, <%= @player_name %> </h1>
+
+<h2>Choose what move you want to make (rock, paper or scissors)</h2>
+
+<form action="/battle" method="post">
+  <input type="text" name="move">
+  <input type="submit" value="Continue">
+</form>
