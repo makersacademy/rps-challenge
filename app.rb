@@ -2,7 +2,8 @@ require "sinatra/base"
 
 class RPS < Sinatra::Base
   get "/" do
-    'Testing infrastructure working!'
+    params[:player1]
+    erb :index
   end
 
   run! if app_file == $0
