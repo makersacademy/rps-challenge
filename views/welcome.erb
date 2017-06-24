@@ -1,5 +1,17 @@
 <html>
   <body>
-    welcome <%= @name %>!
+    <div>
+      <h1>welcome <%= @name %>!</h1>
+      <br></br>
+      <h2>Make your choice!</h2>
+      <br></br>
+    </div>
+    <div>
+      <form action="/play" method="post">
+      <input type="submit" value="rock">
+      <input type="submit" value="paper">
+      <input type="submit" value="scissors">
+      </form>
+    </div>
   </body>
 </html>
