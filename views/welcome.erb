@@ -1,17 +1,52 @@
 <html>
   <body>
-    <div>
-      <h1>welcome <%= @game.player.name %>!</h1>
-      <br></br>
-      <h2>Make your choice!</h2>
-      <br></br>
+    <div align="center">
+      <h1 style="color:white;">Welcome <%= @game.player.name %>!</h1>
+      <br>
+      <h1 style="color:white;">Make your choice!</h1>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
-    <div>
+    <div align="center">
       <form action="/play" method="post">
-      <input type="submit" value="rock" name="choice">
-      <input type="submit" value="paper" name="choice">
-      <input type="submit" value="scissors" name="choice">
+      <input type="submit" class="button buttonblack" value="paper" name="choice">
+      <input type="submit" class="button buttonblack" value="rock" name="choice">
+      <input type="submit" class="button buttonblack" value="scissors" name="choice">
       </form>
     </div>
   </body>
 </html>
+
+<style>
+body {
+  background: url(http://allswalls.com/images/rock-paper-scissors-wallpaper-1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+.buttonblack {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.buttonblack:hover {
+    background-color: #555555;
+    color: white;
+}
+</style>

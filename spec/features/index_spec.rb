@@ -5,7 +5,7 @@
 feature 'sign in page' do
   scenario 'Can see a form with a field to sign in my name' do
     visit('/')
-    expect(page).to have_content 'Enter Your Name'
+    expect(page).to have_content "Let's Play!"
   end
 end
 

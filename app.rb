@@ -23,14 +23,15 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @game.player.choose(params[:choice])
+    @game.player.choose(params[:choice]).to_sym
+    @game.choose
     redirect '/play'
   end
 
   get '/play' do
     erb :play
   end
-  
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

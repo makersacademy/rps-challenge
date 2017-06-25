@@ -2,7 +2,13 @@ require "./lib/player.rb"
 
 class Game
 
-  attr_reader :player
+  GAME_RULES = {
+               rock: { :rock => :tie, :paper => :lose, :scissors => :win },
+               paper: { :rock => :win, :paper => :tie, :scissors => :lose },
+               scissors: { :rock => :lose, :paper => :win, :scissors => :tie }
+              }
+
+  attr_reader :player, :opponent_choice
 
   def self.create(player)
     @game = Game.new(player)
@@ -16,8 +22,22 @@ class Game
     @player = player
   end
 
-  def opponent_choice
-    [:rock, :paper, :scissors].sample
+  def choose
+    @opponent_choice = [:rock, :paper, :scissors].sample
+  end
+
+  def win?
+    result == :win
+  end
+
+  def tie?
+    result == :tie
+  end
+
+  private
+
+  def result
+    GAME_RULES[player.choice][@opponent_choice]
   end
 
 end

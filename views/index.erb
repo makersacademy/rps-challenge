@@ -1,8 +1,55 @@
 <html>
   <body>
     <form action="/names" method="post">
-      Enter Your Name:<input type="test" name="player_name">
-      <input type="submit" value ="Let's Play!">
+      <input type="text" id="name" name="player_name" placeholder="Your name goes here">
+      <br></br>
+      <button class="button buttonblack">Let's Play!</button>
     </form>
   </body>
 </html>
+
+<style>
+body {
+  background: url(https://www.walldevil.com/wallpapers/w02/771994-blue-background-funny-minimalistic-paper-rocks-scissors.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+.buttonblack {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.buttonblack:hover {
+    background-color: #555555;
+    color: white;
+}
+</style>

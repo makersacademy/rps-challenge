@@ -4,6 +4,24 @@
       <h1>You chose <%= @game.player.choice %>!</h1>
       <br></br>
       <h1>Your opponent chose <%= @game.opponent_choice %>!</h1>
+      <br></br>
     </div>
+
+    <div>
+      <% if @game.win? %>
+        <h1> Congratulations <%= @game.player.name %>! You win! </h1>
+      <% elsif @game.tie? %>
+         <h1> Congratulations <%= @game.player.name %>! You tied! </h1>
+      <% else %>
+        <h1> Sorry <%= @game.player.name %>! You lose, try again. </h1>
+      <% end %>
+    </div>
+
+    <div>
+      <form action="/welcome">
+      <input type="submit" value="Play again?">
+      </form>
+    </div>
+
   </body>
 </html>
