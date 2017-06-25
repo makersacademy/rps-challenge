@@ -18,8 +18,9 @@ class Game
     @game
   end
 
-  def initialize(player)
+  def initialize(player, opponent_choice = nil)
     @player = player
+    @opponent_choice = opponent_choice
   end
 
   def choose

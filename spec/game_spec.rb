@@ -5,6 +5,9 @@ describe Game do
   let(:player) { double(:player, name: 'jini') }
   subject(:game) { described_class.new(player) }
 
+  let(:player2) { double(:player, name: 'john', choice: :scissors) }
+  subject(:game2) { described_class.new(player2, :rock) }
+
   describe '#attributes' do
     it 'gets player' do
       expect(game.player).to eq player
@@ -20,19 +23,13 @@ describe Game do
 
   describe '#win?' do
     it 'tells me if I\'ve won' do
-      allow(player).to receive(:choose).and_return :scissors
-      player.choose("scissors")
-      allow(game).to receive(:opponent_choice).and_return :rock
-      expect(game.win?).to be false
+      expect(game2.win?).to be false
     end
   end
 
   describe '#tie?' do
     it 'tells me if there is a tie' do
-      allow(player).to receive(:choose).and_return :rock
-      player.choose("rock")
-      allow(game).to receive(:opponent_choice).and_return :rock
-      expect(game.tie?).to be true
+      expect(game2.tie?).to be false
     end
   end
 end
