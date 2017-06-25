@@ -1,0 +1,27 @@
+
+
+form {
+text-align: left;
+font-size: 3.5vw;
+font-family: Arvo;
+color: #4D4645;
+}
+
+input {
+  font-family: Arvo;
+  color: #4D4645;
+  height: 20%;
+  font-size: 3.5vw;
+  background-color: #EFECEC;
+  border: none;
+}
+
+.color {
+  color: #CD5C5C;
+}
+
+
+input:hover {
+    color: #181615;
+    cursor: pointer;
+}

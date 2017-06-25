@@ -1,0 +1,16 @@
+
+
+<%= erb :_error %>
+
+<p> Pick your weapon: </p>
+
+<form action="/choice" method="post">
+   <label> Rock </label>
+   <input id="rock" type="radio" name="weapon" value="rock"/>
+   <label> Paper </label>
+   <input id="paper" type="radio" name="weapon" value="paper"/>
+   <label> Scissors </label>
+   <input id="scissors" type="radio" name="weapon" value="scissors"/>
+   <input type="submit" value="Submit"/>
+   </label>
+</form>

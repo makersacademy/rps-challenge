@@ -1,0 +1,23 @@
+
+
+p {
+  font-family: Arvo;
+  color: #4D4645;
+  font-size: 3.0vw;
+  text-align: left;
+}
+
+.color {
+  color: #CD5C5C;
+}
+
+a p:hover {
+    color: #181615;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a:hover {
+color: #508ADB;
+text-decoration: none
+}
