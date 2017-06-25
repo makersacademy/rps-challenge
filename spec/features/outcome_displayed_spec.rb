@@ -1,7 +1,4 @@
 
-
-# how do I feature test for randomness?
-
 feature "game outcome is displayed" do
 
   before(:each) do

@@ -10,3 +10,8 @@ def pick_rock
   find(:css, "#rock").set true
   click_on("Submit")
 end
+
+def one_whole_game
+  sign_in_and_play
+  pick_rock
+end
