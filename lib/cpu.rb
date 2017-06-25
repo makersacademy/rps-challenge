@@ -1,7 +1,9 @@
 class Cpu
 
+  attr_reader :move
+
   def roll_attack
-    [:rock, :paper, :scissors].sample
+    @move = [:rock, :paper, :scissors].sample
   end
 
 end

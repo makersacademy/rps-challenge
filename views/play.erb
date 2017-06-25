@@ -2,4 +2,33 @@
   <h1 align ="center">
     <%= @game.player.name %> vs CPU
   </h1>
+
+  <% if @game.game_result == :win %>
+  Player won!
+  <% end %>
+
+  <%if @game.game_result == :lose %>
+  Player lost!
+  <% end %>
+
+  <%if @game.game_result == :draw %>
+  It's a draw!
+  <% end %>
+
+  <h2 align="left">
+    Choose a move:
+  </h2>
+
+  <form align="left" action="/rock" method="post">
+    <button type="submit">Rock</button>
+  </form>
+
+  <form align="left" action="/paper" method="post">
+    <button type="submit">Paper</button>
+  </form>
+
+  <form align="left" action="/scissors" method="post">
+    <button type="submit">Scissors</button>
+  </form>
+
 </body>

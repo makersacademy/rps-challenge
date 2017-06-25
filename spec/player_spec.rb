@@ -10,31 +10,12 @@ describe Player do
     end
   end
 
-  describe "#move" do
-    it "should initialize as nil" do
-      expect(john.move).to be nil
+  describe "#select_move" do
+    it "should change move to specified attack" do
+      john.select_move(:rock)
+      expect(john.move).to eq(:rock)
     end
   end
 
-  describe "#rock" do
-    it "should change move to rock" do
-      john.rock
-      expect(john.move).to eq :rock
-    end
-  end
-
-  describe "#paper" do
-    it "should change move to rock" do
-      john.paper
-      expect(john.move).to eq :paper
-    end
-  end
-
-  describe "#scissors" do
-    it "should change move to scissors" do
-      john.scissors
-      expect(john.move).to eq :scissors
-    end
-  end
 
 end
