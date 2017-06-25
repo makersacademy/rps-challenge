@@ -61,16 +61,17 @@ Usage
 - `http://localhost:9292/`  
 Type your name and click on `Enter game`  
 
-![Homepage](http://i.imgur.com/hfskGJi.png)
+<img src="http://i.imgur.com/hfskGJi.png" alt="Homepage" style="width: 600px;"/>
 
 - `http://localhost:9292/play`  
 Enter your choice between `Rock`, `Paper` or `Scissors` and press `Play`
 
-![Making the choice](http://i.imgur.com/nd0BlHD.png)
+<img src="http://i.imgur.com/nd0BlHD.png" alt="Making the choice" style="width: 600px;"/>
 
 - `http://localhost:9292/result`  
 See the result and press `Play again?` to restart
-![Result](http://i.imgur.com/R8nZ2lT.png)
+
+<img src="http://i.imgur.com/R8nZ2lT.png" alt="Result" style="width: 600px;"/>
 
 Running tests
 ----
