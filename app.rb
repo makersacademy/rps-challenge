@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
     @game = $game
     @player1 = @game.player1
     @player2 = @game.player2
+    @result = @game.result 
     erb :play
   end
 

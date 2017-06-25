@@ -11,8 +11,8 @@ describe Computer do
 
   describe "#random_weapon" do
     it "selects a random weapon" do
-      allow(computer).to receive(:random_weapon).and_return(:scissors)
-      expect(computer.random_weapon).to eq :scissors
+      allow(computer).to receive(:random_weapon).and_return("Scissors")
+      expect(computer.random_weapon).to eq "Scissors"
     end
   end
 end
