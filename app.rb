@@ -19,7 +19,6 @@ class RPS < Sinatra::Base
   end
 
   get '/welcome' do
-    @name = @game.player.name
     erb :welcome
   end
 
@@ -29,10 +28,9 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_choice = @game.player.choice
-    @opponent_choice = @game.opponent_choice
     erb :play
   end
+  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
