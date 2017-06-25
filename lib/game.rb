@@ -1,3 +1,5 @@
+require './lib/player.rb'
+
 class Game
   WEAPONS = [:rock, :paper, :scissors]
 
@@ -12,7 +14,7 @@ class Game
   end
 
   def initialize(player)
-    @player = player
+    @player = Player.new(player)
   end
 
 end

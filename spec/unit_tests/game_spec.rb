@@ -7,9 +7,9 @@ describe Game do
 
   describe '#.create' do
     it 'creates a new instance of game' do
-        Game.create(player)
-        expect(Game.instance).to respond_to(:player)
-      end
+      Game.create(player)
+      expect(Game.instance).to respond_to(:player)
+    end
   end
 
   describe '#initialize' do
@@ -17,5 +17,4 @@ describe Game do
       expect(game.player).to_not be_nil
     end
   end
-
 end
