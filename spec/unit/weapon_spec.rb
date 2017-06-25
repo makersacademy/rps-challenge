@@ -2,8 +2,8 @@ require 'weapon'
 
 describe Weapon do
   let(:weapon)   { described_class.new('rock') }
-  let(:paper)    { described_class.new('paper')}
-  let(:scissors) { described_class.new('scissors')}
+  let(:paper)    { described_class.new('paper') }
+  let(:scissors) { described_class.new('scissors') }
   # it { is_expected.to be_a Weapon }
 
   describe 'Initialization' do

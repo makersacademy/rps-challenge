@@ -5,7 +5,7 @@ describe Computer do
 
   describe 'Initialization' do
     it "has a name" do
-      expect(subject.name).to eq "the Computer"
+      expect(subject.name).to eq "Wintermute"
     end
   end
 

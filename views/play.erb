@@ -22,7 +22,7 @@
 
     h1 {
       font-family: 'Permanent Marker', cursive;
-      font-size: 100pt;
+      font-size: 70pt;
       font-weight: 600;
       background: -webkit-linear-gradient(#70c8f8, #fa21e2);
       -webkit-background-clip: text;
@@ -33,6 +33,7 @@
       font-family: 'Permanent Marker';
       font-size: 30pt;
       color: #dd09db;
+      margin-bottom: 70pt;
     }
 
     video#bgvid {
@@ -50,6 +51,26 @@
       transform: translateX(-50%) translateY(-50%);
     }
 
+    .padded {
+      margin: 10pt;
+      padding: 20pt;
+    }
+
+    div#rock {
+      border: 3pt solid #fa21e2;
+      background-color: #000;
+    }
+
+    div#paper {
+      border: 3pt solid #00ff00;
+      background-color: #000;
+    }
+
+    div#scissors {
+      border: 3pt solid #70c8f8;
+      background-color: #000;
+    }
+
     p#copyright {
       font-family: 'Press Start 2P';
       color: #bbb;
@@ -63,15 +84,32 @@
       color: white;
     }
 
-    input[type=text]:focus {
-      border: 3pt solid #70c8f8;
-    }
-
     button {
       font-family: 'Press Start 2P';
+      font-size: 18pt;
       background-color: #000;
       border: 3pt solid #fa21e2;
       color: #fa21e2;
+    }
+
+    button#rock {
+      border: 3pt solid #fa21e2;
+      color: #fa21e2;
+    }
+
+    button#paper {
+      border: 3pt solid #00ff00;
+      color: #00ff00;
+    }
+
+    button#scissors {
+      border: 3pt solid #70c8f8;
+      color: #70c8f8;
+    }
+
+    .svg {
+      width: 40%;
+      height: auto;
     }
   </style>
 
@@ -79,21 +117,42 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="text-center">CYBER</h1>
-      <h2 class="text-center">Rock Paper Scissors</h2>
-      <p id="copyright">Copyright 1984 Tessier-Ashpool SA</p>
+      <h1><%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
+      <h2>Choose your Weapon</h2>
 
-
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <form class="form-inline" action="/names" method="post">
-            <div class="form-group">
-              <input type="text" class="form-control" name="player1" placeholder="Player 1">
-              <button type="submit" class="btn" name="play">Play</button>
-            </div>
-          </form>
+    <div class="row">
+        <div class="col-md-4">
+          <div id="rock" class="padded">
+            <img class="svg" src="img/rock.svg" alt="">
+            <form class="rock" action="/attack" method="post">
+              <div class="btn-group">
+                <button id="rock" type="submit" name="rock">Rock</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+
+        <div class="col-md-4">
+          <div id="paper" class="padded">
+            <img class="svg" src="img/paper.svg" alt="">
+            <form class="paper" action="/attack" method="post">
+              <div class="btn-group">
+                <button id="paper" type="submit" name="paper">Paper</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div id="scissors" class="padded">
+            <img class="svg" src="img/scissors.svg" alt="">
+            <form class="scissors" action="/attack" method="post">
+              <div class="btn-group">
+                <button id="scissors" type="submit" name="scissors">Scissors</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
   </body>
 </html>

@@ -5,8 +5,6 @@ require './lib/computer'
 require './lib/weapon'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-
   before do
     @game = Game.instance
   end
@@ -15,12 +13,18 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  get '/hello' do
-    "CYBER RPS"
+  post '/names' do
+    @game = Game.create(Player.new(params[:player1]), Computer.new)
+    redirect to '/play'
   end
 
-  get '/test' do
-    "Hello world!"
+  get '/play' do
+    erb :play
+  end
+
+  post '/attack' do
+    choice = params.first.first.to_sym
+    erb @game.result(@game.player1.choose(choice), @game.player2.choose)
   end
 
   run! if app_file == $PROGRAM_NAME

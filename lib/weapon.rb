@@ -1,6 +1,6 @@
 class Weapon
   attr_reader :type
-  
+
   RULES = {
     rock: :scissors,
     scissors: :paper,
