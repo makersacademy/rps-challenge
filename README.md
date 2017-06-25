@@ -20,6 +20,8 @@ I would like to be able to play rock/paper/scissors
 - The game will choose a random weapon
 - A winner is declared
 
+With more time I would like to refactor the code and add multiplayer functionality. 
+
 # How to use # 
 
 Run: 
