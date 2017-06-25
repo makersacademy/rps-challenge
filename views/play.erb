@@ -1,17 +1,23 @@
 <html>
 <body>
-  <% if @player.weapon == nil %>
-  <h1><%= @player.name %></h1>
+  <% if @player1.weapon == nil %>
+  <h1><%= @player1.name %></h1>
   <h2> Choose your weapon!</h2>
   <form action="/rock" method="post">
     <input type="submit" value="Rock">
+  </form>
   <form action="/paper" method="post">
     <input type="submit" value="Paper">
+  </form>
   <form action="/scissors" method="post">
     <input type="submit" value="Scissors">
   </form>
   <% else %>
-  <%= @player.name %> has picked <%= @player.weapon %>
+  <%= @player1.name %> has picked <%= @player1.weapon %><br/>
+  <%= @player2.name %> has picked <%= @player2.random_weapon %>
+  <form action='/' method="get">
+    <input type="submit" value="Play again">
+  </form>
   <% end %>
 </body>
 </html>

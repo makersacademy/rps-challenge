@@ -9,5 +9,5 @@ class Player
   def weapon_choice(choice)
     @weapon = choice
   end
-  
+
 end
