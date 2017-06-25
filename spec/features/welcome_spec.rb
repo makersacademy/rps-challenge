@@ -36,7 +36,7 @@ feature 'computer chooses an option' do
     sign_in_and_play
     click_button('rock')
     expect(page).to have_content 'You chose rock!'
-    expect(page).to have_content 'Your opponent chose paper!'
+    expect(page).to have_content 'Your opponent chose'
   end
 end
 
@@ -45,6 +45,6 @@ feature 'computer chooses a random option' do
     sign_in_and_play
     click_button('rock')
     expect(page).to have_content 'You chose rock!'
-    expect(page).to have_content 'Your opponent chose paper!'
+    expect(page).to have_content 'Your opponent chose'
   end
 end

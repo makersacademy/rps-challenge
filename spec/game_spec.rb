@@ -10,4 +10,11 @@ describe Game do
       expect(game.player).to eq player
     end
   end
+
+  describe '#opponent_choice' do
+    it 'makes a random choice' do
+      allow(game).to receive(:opponent_choice).and_return :rock
+      expect(game.opponent_choice).to eq :rock
+    end
+  end
 end

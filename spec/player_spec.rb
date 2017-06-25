@@ -9,4 +9,11 @@ describe Player do
       expect(player.name).to eq "jini"
     end
   end
+
+  describe "#choice" do
+    it "can choose between rock, paper or scissors" do
+      player.choose(:rock)
+      expect(player.choice).to eq :rock
+    end
+  end
 end
