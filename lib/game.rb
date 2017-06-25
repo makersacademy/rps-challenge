@@ -20,6 +20,14 @@ class Game
       @player2 = @players.last
     end
 
+    def self.create_new_game(player1, player2)
+      @game = Game.new(player1, player2)
+    end
+
+    def self.instance
+      @game
+    end
+
     def player1_choice
       @player1.weapon
     end
