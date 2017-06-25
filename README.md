@@ -1,24 +1,125 @@
 # RPS Challenge
 
-Instructions
--------
+Strap into your console and play Rock Paper Scissors in **cyberspace!**
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Some highlight features:
+- 4 colour display!
+- High tech cyberspace visuals!
+- An AI opponent that doesn't cheat.
 
-Task
-----
+All tests are passing with 100% coverage. I went overboard with my Capybara-driven feature tests in the [weekly challenge](https://github.com/tbscanlon/battle), so I made a point of not going quite as crazy for this one. Somehow, I have still ended up with 29 tests in total, which is a lot for the amount of code this app comprises in my opinion.
 
-Knowing how to build web applications is getting us almost there as web developers!
+This was - by an order of magnitude - the hardest challenge thus far. My main difficulty came from the need to have 3 potential outcomes for each game of RPS: win, lose, or draw. I got bogged down in design minutae for most of a day and ended up rushing a bit towards the end.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+I had wanted to implement multiplayer in this challenge; my class design (and attempt at polymorphism) reflects this. Unfortunately, I ran out of time because of how difficult this challenge was.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This app was made for the week 3 weekend challenge for Makers Academy. At the time of writing, I'm dreading whatever comes next.
 
-```sh
+## Installation
+1. Clone this repo by running `git clone git@github.com:tbscanlon/rps-challenge.git` from your terminal
+2. Navigate to the project folder: `cd rps-challenge/`.
+3. Install dependencies by running `bundle install` (you may need to `gem install bundle`).
+
+## Usage
+1. Run `rackup -p 4567` in the project folder.
+2. Open your favourite web browser (unless it's Internet Explorer, in which case I advise you to stop and consider your life choices) and navigate to `http://localhost:4567`.
+
+## Code Examples
+
+### Rules
+```ruby
+RULES = {
+  rock: :scissors,
+  scissors: :paper,
+  paper: :rock
+}
+```
+### Computing the Outcome of a Game of RPS
+```ruby
+class weapon
+
+  # ...a few methods...
+
+  def <=>(other)
+    return 1 if RULES[type] == other.type
+    return -1 if RULES[other.type] == type
+    0
+  end
+end
+
+rock = Weapon.new(:rock)
+scissors = Weapon.new(:scissors)
+
+rock <=> scissors # => 1
+scissors <=> rock # => -1
+rock <=> rock # => 0
+```
+
+### Using class methods for Persistence Across Multiple Webpages
+```ruby
+# ./lib/game.rb
+class Game
+  attr_reader :player1, :player2, :weapon1, :weapon2
+
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
+  # ...instance methods...
+end
+
+# ./app.rb
+class RockPaperScissors < Sinatra::Base
+  before do
+    @game = Game.instance
+  end
+
+  #...routes...
+end
+```
+
+### Deferring Rendering Logic to the Model
+```ruby
+# ./lib/game.rb
+class Game
+  #...other methods...
+  def result(weapon1, weapon2)
+    register_weapons(weapon1, weapon2)
+    determine_outcome
+  end # => returns :win, :lose or :draw
+
+  private
+  def register_weapons(weapon1, weapon2)
+    @weapon1 = weapon1
+    @weapon2 = weapon2
+  end
+
+  def determine_outcome
+    case weapon1 <=> weapon2
+    when 1 then :win
+    when -1 then :lose
+    else :draw
+    end
+  end
+end
+
+# ./app.rb
+post '/attack' do
+  choice = params.first.first.to_sym
+  erb @game.result(Weapon.new(@game.player1.choose(choice)), Weapon.new(@game.player2.choose)) # => erb :win || erb :lose || erb :draw
+end
+```
+
+## Credits
+- Icons by [Hugo Alberto](https://thenounproject.com/hugugolplex/).
+- The grid MP4 came from Youtube. I can't track down where I got it, sorry!
+
+## User Stories
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -27,60 +128,3 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
