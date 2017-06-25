@@ -12,7 +12,7 @@ describe 'sign in and play sudden death' do
     
     feature 'doesn\'t show continue button' do
       scenario 'doesn\'t show continue button for sudden death' do
-        expect { find_button('Next round')}.to raise_error(Capybara::ElementNotFound)
+        expect { find_button('Next round') }.to raise_error(Capybara::ElementNotFound)
       end
     end
   end
@@ -25,7 +25,7 @@ describe 'sign in and play 3 out of 5' do
   
   feature 'shows continue button' do
     scenario 'shows continue button for 3 out of 5 games' do
-      expect { find_button('Next round')}.to_not raise_error
+      expect { find_button('Next round') }.to_not raise_error
     end
   end
 end

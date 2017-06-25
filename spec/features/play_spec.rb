@@ -51,7 +51,6 @@ describe 'first play page' do
   end
 end
 
-
 describe 'subsequent play pages' do
   
   before do
@@ -59,7 +58,7 @@ describe 'subsequent play pages' do
   end
   feature 'has play button for mutliplay game' do
     scenario 'has play button' do
-      expect{ find_button('Play')}.to_not raise_error
+      expect { find_button('Play') }.to_not raise_error
     end
   end
   

@@ -11,5 +11,15 @@
 <%end%>
 
 <form action="/play_subsequent" method="get">
+  <% if @game.score.length == 5 %>
+  <% if @game.winner.nil? %>
+  It's a tie! Even though 5 is an odd number. Weird...
+  <% elsif @game.winner == @game.player1  %>
+  Player <%= Player1.instance.name %> has won <%= @game.score.count(1) %> games out of 5!
+  <% else %>
+  Player <%= Player2.instance.name %> has won <%= @game.score.count(2) %> games out of 5!
+  <% end %>
+  <% else %>
   <input type="submit" value="Next round"/>
+  <% end %>
 </form>

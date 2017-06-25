@@ -17,9 +17,21 @@ describe Game do
   
   
   describe 'attributes' do
-    it 'receives player as an argument' do
+    it 'receives player 1 as an argument' do
       expect(game.player1).to eq player1
     end
+    
+    it 'receives player 2 as an argument' do
+      expect(game.player2).to eq player2
+    end
+    
+    it 'keeps score' do
+      allow(player1).to receive(:current_choice) { :rock }
+      allow(player2).to receive(:current_choice) { :paper }
+      game.result_rps(player1.current_choice, player2.current_choice)
+      expect(game.score.last).to eq 2
+    end
+    
   end
   
   describe '#create_new_game' do
@@ -61,6 +73,20 @@ describe Game do
     it 'registers a 3 out of 5 game' do
       game.register_type("Play Rock, Paper, Scissors 3 out of 5!!!!")
       expect(game.type).to eq :multiple
+    end
+  end
+  
+  describe '#winner' do
+    it 'decides the winner' do
+      allow(player1).to receive(:current_choice) { :rock }
+      allow(player2).to receive(:current_choice) { :paper }
+      game.result_rps(player1.current_choice, player2.current_choice)
+      4.times do
+        allow(player1).to receive(:current_choice) { :scissors }
+        allow(player2).to receive(:current_choice) { :scissors }
+        game.result_rps(player1.current_choice, player2.current_choice)
+      end
+      expect(game.winner).to eq player2
     end
   end
   

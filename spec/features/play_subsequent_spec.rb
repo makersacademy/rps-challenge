@@ -6,7 +6,7 @@ describe 'first play page' do
   
   feature 'shows players names' do
     scenario 'shows player 1 name' do
-      expect(page).to have_content 'Vivi'
+      expect(page).to have_content 'Momo'
     end
     
     scenario 'shows player 2 name' do

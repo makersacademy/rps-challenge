@@ -3,13 +3,14 @@ require "./lib/player2.rb"
 
 class Game
   
-  attr_reader :player1, :player2, :type
+  attr_reader :player1, :player2, :type, :score, :winner
   
   OPTIONS = [:rock, :scissors, :paper]
   
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+    @score = []
   end
   
   def self.create_new_game(player1, player2)
@@ -37,6 +38,7 @@ class Game
   
   def result_rps(player1_current_choice, player2_current_choice)
     index_in_options(player1_current_choice, player2_current_choice)
+    @score << compare_index(@index_player1, @index_player2)
     compare_index(@index_player1, @index_player2)
   end
   
@@ -49,4 +51,18 @@ class Game
     @type = format_string(game_type)
   end
   
+  def verify_winner
+    if @score.count(1) > @score.count(2)
+      @winner = @player1
+    elsif @score.count(1) < @score.count(2)
+      @winner = @player2
+    else
+      @winner = nil
+    end
+  end
+  
+  def winner
+    verify_winner
+    @winner
+  end
 end
