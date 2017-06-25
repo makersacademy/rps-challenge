@@ -7,6 +7,6 @@ feature 'Player and computer with same weapon' do
     fill_in('choice', with: 'Scissors')
     allow_any_instance_of(Computer).to receive(:weapon).and_return(:scissors)
     click_button('Play')
-    expect(page).to have_content('You used the same weapon')
+    expect(page).to have_content('You tied')
   end
 end

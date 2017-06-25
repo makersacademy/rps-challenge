@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
     choice = params[:choice]
     @game = Game.instance
     @game.player.weapon = choice
+    @game.computer.chose_weapon
     redirect '/result'
   end
 

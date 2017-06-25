@@ -1,9 +1,61 @@
 <html>
   <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
+    body {
+      background-image: url(http://canitbesaturdaynow.com/images/fpics/3628/da77b885826e5a458baa7ba182b38913.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+    div {
+      margin: auto;
+      text-align: center;
+      width: 40%;
+      border-radius: 5px;
+      background-color: #08253a;
+      background-size: 50%;
+      opacity: 0.8;
+      padding: 20px;
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    input[type=text] {
+      width: 30%;
+      padding: 6px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 2.5px;
+    }
+    input[type=submit] {
+      width: 25%;
+      padding:5px 15px;
+      background: #196ec4;
+      color: white;
+      border:0 none;
+      cursor:pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 2.5px;
+      font-size: 20px;
+    }
+    h1 {
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: Helvetica;
+    }
   </style>
 
   <body>
-    <h2>You lose</h2>
-    <h2><%=@game.player.weapon.capitalize%> <=> <%=@game.computer.weapon.capitalize%></h2>
+    <div>
+      <h1>You lose</h1>
+      <h2><%=@game.player.weapon.capitalize%> VS. <%=@game.computer.weapon.capitalize%></h2>
+      <form action="/play" method="get">
+        <input type="submit" value="Play again?"/>
+      </form>
+    </div>
   </body>
 </html>

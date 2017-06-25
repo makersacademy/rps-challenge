@@ -6,7 +6,7 @@ describe Computer do
 
   describe '#weapon' do
     it 'returns a random weapon' do
-      result = computer.weapon
+      result = computer.chose_weapon
       expect(Game::WEAPONS.include?(result)).to be true
     end
   end

@@ -1,12 +1,65 @@
 <html>
   <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
+    body {
+      background-image: url(http://canitbesaturdaynow.com/images/fpics/3628/da77b885826e5a458baa7ba182b38913.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+    div {
+      margin: auto;
+      text-align: center;
+      width: 40%;
+      border-radius: 5px;
+      background-color: #08253a;
+      background-size: 50%;
+      opacity: 0.8;
+      padding: 20px;
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+    .hit-the-floor {
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: Helvetica;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+    }
+    input[type=text] {
+      width: 30%;
+      padding: 6px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 2.5px;
+    }
+    input[type=submit] {
+      width: 25%;
+      padding:5px 15px;
+      background: #196ec4;
+      color: white;
+      border:0 none;
+      cursor:pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 2.5px;
+      font-size: 20px;
+    }
   </style>
 
   <body>
-    <h2><%=@game.player.name%> vs. the unicorn</h2>
-    <form action="/choice" method="post">
-      <input type="text" name="choice"/>
-      <input type="submit" value="Play"/>
-    </form>
+    <div>
+      <h2 class="hit-the-floor"><%=@game.player.name%></h2> vs. <h2 class="hit-the-floor"> <%= @game.computer.name %> </h2>
+      <br>
+      <br>
+      <form action="/choice" method="post">
+        <h2>Type your pick</h2>
+        <input type="text" style="font-size: 15px" name="choice"/><br>
+        <input type="submit" value="Play"/>
+      </form>
+    </div>
   </body>
 </html>
