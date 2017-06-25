@@ -8,7 +8,7 @@ feature "Picking a weapon" do
     click_on("Submit")
     expect(page).to have_content("Maker went with rock")
   end
-end
+
 
   scenario "player picks paper" do
     sign_in_and_play
