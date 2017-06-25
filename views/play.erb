@@ -22,7 +22,59 @@
       color: #D40D58;
     }
     h2 {
+      font-size: 40px;
+    }
+    h3 {
       font-size: 30px;
+      color: #FF60B0;
+    }
+    .button {
+      background-color: #E78C09;
+      border: none;
+      border-radius: 14px;
+      color: #EA1A50;
+      padding: 4px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 28px;
+      margin: 4px 10px;
+      cursor: pointer;
+      font-family: 'Cabin Sketch', cursive;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
+    .button2 {
+      background-color: #5F44A4;
+      border: none;
+      border-radius: 6px;
+      color: #8AD4ED;
+      padding: 4px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-family: 'Cabin Sketch', cursive;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
+    .button:hover {
+      background-color: #0AAE89;
+      color: #84DAF5;
+    }
+    .button2:hover {
+      background-color: #46C6EC;
+      color: #291173;
+    }
+    .button-container form,
+    .button-container form div {
+      display: inline;
+    }
+    .button-container button {
+      display: inline;
+      vertical-align: middle;
     }
     </style>
   </head>
@@ -30,18 +82,27 @@
 
   <h1><span><%= @game.player.name %></span> has entered into battle!</h1>
 
-  <br></br>
     <h2>Beat the NPC to be the WINNER!</h2>
-    <form action="/fist_battle1">
-      <input type="submit" value="ROCK">
-    </form>
+    <br></br>
+    <br></br>
+    <h3> >> Choose your weapon << </h3>
+    <div class= "button-container">
+      <form action="/fist_battle1">
+        <input type="submit" class="button" value="ROCK">
+      </form>
 
-    <form action="/fist_battle2">
-      <input type="submit" value="PAPER">
-    </form>
+      <form action="/fist_battle2">
+        <input type="submit" class="button" value="PAPER">
+      </form>
 
-    <form action="/fist_battle3">
-      <input type="submit" value="SCISSORS">
+      <form action="/fist_battle3">
+        <input type="submit" class="button" value="SCISSORS">
+      </form>
+    </div>
+
+    <br></br>
+    <form action="/">
+      <input type="submit" class="button2" value="Change player name">
     </form>
 
   </body>

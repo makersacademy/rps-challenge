@@ -12,6 +12,7 @@
       text-align: center;
       color: #4A87E6;
       font-family: 'Cabin Sketch', cursive;
+      font-size: 40px;
     }
     h1 {
       color: #81C737;
@@ -22,6 +23,27 @@
       font-size: 30px;
       font-family: 'Cabin Sketch', cursive;
     }
+    .button {
+    background-color: #E78C09;
+    border: none;
+    border-radius: 14px;
+    color: #EA1A50;
+    padding: 4px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Cabin Sketch', cursive;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    }
+    .button:hover {
+    background-color: #0AAE89;
+    color: #84DAF5;
+    }
+
     </style>
     </head>
     <body>
@@ -29,13 +51,12 @@
     <h1>Rock, Paper, Scissors!</h1>
     <br></br>
     <h2>Enter your name to play</h2>
-
+    <div style="color :#FF60B0">Player name:</div>
     <form action="/name" method="post">
-      <label for="player_name">
-        Player name:
       <input type="text" name="player_name">
-      </label>
-      <input type="submit" value="Submit">
+      <div>
+      <input type="submit" class="button" value="Submit">
+      </div>
     </form>
-</body>
+  </body>
 </html>
