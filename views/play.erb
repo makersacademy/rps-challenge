@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player names and options</title>
+  <style>
+  
+  #choice-form button {
+    margin: 30px;
+  }
+  
+  </style>
+  
+</head>
+<body>
+  <h1> <%= @game.player1.name %> </h1>
+  <form action="/result" method="post" id="choice-form">
+    <div>
+      <label for="rock_player_1">
+        <img src="Rock.jpg"/>
+        <input type="radio" name="choice_player_1" value="rock" id="rock_player_1" required/>
+      </label>
+      <label for="paper_player_1">
+        <img src="Paper.jpg"/>
+        <input type="radio" name="choice_player_1" value="paper" id="paper_player_1"/>
+      </label>
+      <label for="scissors_player_1">
+        <img src="Scissors.jpg"/>
+        <input type="radio" name="choice_player_1"  value="scissors" id="scissors_player_1"/>
+      </label>
+    </div>
+    <h1> <%= @game.player2.name %> </h1>
+    <div>
+      <label for="rock_player_2">
+        <img src="Rock.jpg"/>
+        <input type="radio" name="choice_player_2" value="rock" id="rock_player_2" />
+      </label>
+      <label for="paper_player_2">
+        <img src="Paper.jpg"/>
+        <input type="radio" name="choice_player_2" value="paper" id="paper_player_2"/>
+      </label>
+      <label for="scissors_player_2">
+        <img src="Scissors.jpg"/>
+        <input type="radio" name="choice_player_2"  value="scissors" id="scissors_player_2"/>
+      </label>
+    </div>
+    <input type="submit" value="Play Rock, Paper, Scissors!!!!">
+  </form>
+</body>
+</html>

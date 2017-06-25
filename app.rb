@@ -10,17 +10,25 @@ class Rps < Sinatra::Base
   end
   
   
-  post '/names' do
+  post '/play' do
     Player1.instance.naming(params[:player_1])
     Player2.instance.naming(params[:player_2])
     @game = Game.create_new_game(Player1.instance, Player2.instance)
-    @game = Game.game_instance
-    erb :names
+    redirect '/play'
   end
   
-  # before do
-  #   @game = Game.game_instance
-  # end
+  before do
+    @game = Game.game_instance
+  end
+  
+  get '/play' do
+    erb :play
+  end
+  
+  post '/result' do
+    p params
+    Player1.instance.choice(params[:choice_player_1])
+  end
   
   run! if app_file == $0
   

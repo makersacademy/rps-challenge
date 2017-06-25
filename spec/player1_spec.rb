@@ -2,6 +2,7 @@ require 'player1'
 
 describe Player1 do
   subject(:player1) { Class.new(Player1).instance }
+  let(:current_choice) { :Rock }
   
   describe 'attributes' do
     it 'has a name' do
@@ -12,9 +13,9 @@ describe Player1 do
   
   describe '#choice' do
     it 'shows the choice made by player' do
-      expect(Player1::OPTIONS).to include(player1.choice)
+      player1.choice(current_choice)
+      expect(player1.current_choice).to eq :Rock
     end
+    
   end
-  
-  
 end
