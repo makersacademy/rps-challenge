@@ -13,15 +13,15 @@ describe Game do
 
   describe '#opponent_choice' do
     it 'makes a random choice' do
-      allow(game).to receive(:choose).and_return :rock
       game.choose
-      expect(game.opponent_choice).to eq :rock
+      expect([:rock, :paper, :scissors]).to include game.opponent_choice
     end
   end
 
   describe '#win?' do
     it 'tells me if I\'ve won' do
-      allow(player).to receive(:choose).with(:rock)
+      allow(player).to receive(:choose).and_return :scissors
+      player.choose("scissors")
       allow(game).to receive(:opponent_choice).and_return :rock
       expect(game.win?).to be false
     end
@@ -29,7 +29,8 @@ describe Game do
 
   describe '#tie?' do
     it 'tells me if there is a tie' do
-      allow(player).to receive(:choose).with(:rock)
+      allow(player).to receive(:choose).and_return :rock
+      player.choose("rock")
       allow(game).to receive(:opponent_choice).and_return :rock
       expect(game.tie?).to be true
     end
