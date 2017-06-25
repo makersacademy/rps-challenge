@@ -33,5 +33,4 @@ feature "Picking a weapon" do
     expect(page).to have_content("Comp went with rock")
   end
 
-
 end

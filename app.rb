@@ -6,7 +6,6 @@ require_relative "./lib/helpers"
 require 'sinatra'
 require 'rack-flash'
 
-
 class App < Sinatra::Base
 
   include Helpers
