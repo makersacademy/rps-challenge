@@ -7,6 +7,10 @@ p {
   text-align: left;
 }
 
+.color {
+  color: #CD5C5C;
+}
+
 a p:hover {
     color: #181615;
     cursor: pointer;
