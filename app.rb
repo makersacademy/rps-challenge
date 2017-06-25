@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:player_1_name]))
+    @game = Game.create(Player.new(params[:player_1_name]), Cpu.new)
     redirect('/play')
   end
 
