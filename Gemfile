@@ -7,6 +7,7 @@ gem "rack"
 gem "rspec"
 gem "shotgun"
 gem "sinatra"
+gem 'rack-flash3'
 
 group :test do
   gem 'capybara'

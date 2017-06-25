@@ -1,4 +1,8 @@
 
+<% if flash[:error] %>
+ <p class="color"> <%= flash[:error] %> </p>
+<% end %>
+
 <p> Pick your weapon </p>
 
 <form action="/choice" method="post">

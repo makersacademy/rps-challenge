@@ -10,21 +10,21 @@ feature "game outcome is displayed" do
     click_on("Pick your weapon")
     find(:css, "#rock").set true
     click_on("Submit")
-    expect(page).to have_content("Maker draw!")
+    expect(page).to have_content("Maker draws!")
   end
 
   scenario "player picks paper" do
     click_on("Pick your weapon")
     find(:css, "#paper").set true
     click_on("Submit")
-    expect(page).to have_content("Maker win!")
+    expect(page).to have_content("Maker wins!")
   end
 
   scenario "player picks scissors" do
     click_on("Pick your weapon")
     find(:css, "#scissors").set true
     click_on("Submit")
-    expect(page).to have_content("Maker lose!")
+    expect(page).to have_content("Maker loses!")
   end
 
 end

@@ -1,5 +1,8 @@
 
 
+<% if flash[:error] %>
+ <p class="color"> <%= flash[:error]%> </p>
+<% end %>
 
   <form action="/name" method="post">
     <input type="text" name="name"/ placeholder="Enter your name">

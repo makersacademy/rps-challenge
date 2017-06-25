@@ -11,7 +11,7 @@ class Player
   end
 
   def weapon_of_choice_is(weapon)
-    @weapon = weapon.to_sym
+    @weapon = weapon.to_sym unless weapon.nil?
   end
 
 end

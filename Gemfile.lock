@@ -27,6 +27,8 @@ GEM
     powerpack (0.1.1)
     public_suffix (2.0.5)
     rack (1.6.5)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -80,6 +82,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   rack
+  rack-flash3
   rspec
   rubocop
   shotgun
