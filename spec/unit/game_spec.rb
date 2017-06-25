@@ -60,4 +60,19 @@ describe Game do
       expect(game.result(paper, paper)).to eq :draw
     end
   end
+
+  describe 'Class Methods' do
+    describe '#self.create' do
+      it 'can create itself' do
+        expect(Game.create(player1, player2)).to be_a Game
+      end
+    end
+
+    describe '#self.instance' do
+      it 'can access an instance of Game' do
+        test_game = Game.create(player1, player2)
+        expect(Game.instance).to eq test_game
+      end
+    end
+  end
 end
