@@ -3,13 +3,15 @@ require 'game'
 describe Game do
   let(:rock) do
     rock = double(:rock)
-    allow(rock).to receive :<=> { 1 }
+    allow(rock).to receive :name { "rock" }
+    allow(rock).to receive :<=>  { 1 }
     rock
   end
 
   let(:scissors) do
     scissors = double(:scissors)
-    allow(scissors).to receive :<=> { -1 }
+    allow(scissors).to receive :name { "scissors" }
+    allow(scissors).to receive :<=>  { -1 }
     scissors
   end
 
@@ -58,6 +60,20 @@ describe Game do
 
     it 'returns 0 on a draw' do
       expect(game.result(paper, paper)).to eq :draw
+    end
+
+    context "Registering weapons" do
+      before do
+        game.result(rock, scissors)
+      end
+
+      it 'registers player 1\'s weapon' do
+        expect(game.weapon1.name).to eq "rock"
+      end
+
+      it 'registers player 2\'s weapon' do
+        expect(game.weapon2.name).to eq "scissors"
+      end
     end
   end
 

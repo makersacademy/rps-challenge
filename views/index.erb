@@ -50,7 +50,7 @@
       transform: translateX(-50%) translateY(-50%);
     }
 
-    p#copyright {
+    p {
       font-family: 'Press Start 2P';
       color: #bbb;
       font-size: 8pt;
@@ -70,8 +70,17 @@
     button {
       font-family: 'Press Start 2P';
       background-color: #000;
-      border: 3pt solid #fa21e2;
       color: #fa21e2;
+    }
+
+    .btn:hover {
+      color: #70c8f8
+    }
+
+    #index-footer {
+      background: #000;
+      border-top: 3pt solid #fa21e2;
+      padding: 5pt;
     }
   </style>
 
@@ -94,6 +103,10 @@
           </form>
         </div>
       </div>
+
+      <footer id="index-footer" class="navbar navbar-default navbar-fixed-bottom">
+        <p class="text-center">Makers Academy Weekend Challenge 3 -- Made by Tom</p>
+      </footer>
     </div>
   </body>
 </html>

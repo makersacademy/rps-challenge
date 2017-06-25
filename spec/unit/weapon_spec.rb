@@ -4,11 +4,8 @@ describe Weapon do
   let(:weapon)   { described_class.new('rock') }
   let(:paper)    { described_class.new('paper') }
   let(:scissors) { described_class.new('scissors') }
-  # it { is_expected.to be_a Weapon }
 
   describe 'Initialization' do
-    # it { is_expected.to respond_to :type }
-
     it 'is a valid type of weapon' do
       expect(weapon.type).to eq :rock
     end

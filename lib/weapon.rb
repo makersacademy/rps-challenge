@@ -1,5 +1,5 @@
 class Weapon
-  attr_reader :type
+  attr_reader :name, :type
 
   RULES = {
     rock: :scissors,
@@ -7,8 +7,9 @@ class Weapon
     paper: :rock
   }
 
-  def initialize(type)
-    @type = type.to_sym
+  def initialize(name)
+    @name = name
+    @type = name.to_sym
   end
 
   def <=>(other)

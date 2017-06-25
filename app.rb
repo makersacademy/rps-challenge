@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/attack' do
     choice = params.first.first.to_sym
-    erb @game.result(@game.player1.choose(choice), @game.player2.choose)
+    erb @game.result(Weapon.new(@game.player1.choose(choice)), Weapon.new(@game.player2.choose))
   end
 
   run! if app_file == $PROGRAM_NAME

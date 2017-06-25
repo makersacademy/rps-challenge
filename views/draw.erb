@@ -3,19 +3,133 @@
   <head>
     <meta charset="utf-8">
     <title>CYBER RPS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Press+Start+2P" rel="stylesheet">
+
+    <video playsinline autoplay muted loop id="bgvid">
+    <source src="img/index-bg.mp4" type="video/mp4">
+    </video>
+
+    <style media="screen">
+    body {
+      background: url(img/index-bg.mp4);
+      background-size: 100%;
+    }
+
+    h1 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 70pt;
+      font-weight: 600;
+      background: -webkit-linear-gradient(#70c8f8, #fa21e2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-family: 'Permanent Marker';
+      font-size: 30pt;
+      color: #dd09db;
+      margin-bottom: 70pt;
+    }
+
+    video#bgvid {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    .padded {
+      margin: 10pt;
+      padding: 20pt;
+    }
+
+    input[type=text] {
+      font-family: 'Press Start 2P';
+      border: 3pt solid #fa21e2;
+      background-color: #000;
+      color: white;
+    }
+
+    button {
+      font-family: 'Press Start 2P';
+      font-size: 18pt;
+      background-color: #000;
+      border: 3pt solid #fa21e2;
+      color: #fa21e2;
+      margin-right: 10pt;
+    }
+
+    button#rock {
+      border: 3pt solid #fa21e2;
+      color: #fa21e2;
+    }
+
+    button#paper {
+      border: 3pt solid #00ff00;
+      color: #00ff00;
+    }
+
+    button#scissors {
+      border: 3pt solid #70c8f8;
+      color: #70c8f8;
+    }
+
+    .svg {
+      width: 40%;
+      height: auto;
+    }
+
+    .right {
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
+    }
+  </style>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
   </head>
   <body>
-    <div class="container-fluid">
-      <h1>It's a Draw!</h1>
+    <div class="container-fluid text-center">
+      <h1><%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
+      <h2>It's a Draw!</h2>
 
     <div class="row">
-        <div class="col-md-12">
-          <form class="play-again" action="/play">
+        <div class="col-xs-6">
+          <div id="winner" class="padded">
+            <img class="svg right" src=<%= "img/#{@game.weapon1.name}.svg" %> alt="">
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div id="loser" class="padded">
+            <img class="svg" src=<%= "img/#{@game.weapon2.name}.svg" %> alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <form class="play-again">
             <div class="btn-group">
-              <button type="submit">Play Again</button>
+              <button type="submit" formaction="/play">Play Again</button>
+              <button type="submit" formaction="/">Back to Title</button>
             </div>
           </form>
-        </div>
-    </div>
+      </div>
+
+  </div>
   </body>
 </html>
