@@ -1,9 +1,10 @@
 require 'weapon'
 
 describe Weapon do
-  let(:weapon)   { described_class.new('rock') }
-  let(:paper)    { described_class.new('paper') }
-  let(:scissors) { described_class.new('scissors') }
+  let(:weapon)     { described_class.new('rock') }
+  let(:other_rock) { described_class.new('rock') }
+  let(:paper)      { described_class.new('paper') }
+  let(:scissors)   { described_class.new('scissors') }
 
   describe 'Initialization' do
     it 'is a valid type of weapon' do
@@ -35,7 +36,7 @@ describe Weapon do
     end
 
     it 'returns 0 on a draw' do
-      expect(weapon <=> weapon).to eq 0
+      expect(weapon <=> other_rock).to eq 0
     end
   end
 end

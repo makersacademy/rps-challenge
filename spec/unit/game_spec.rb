@@ -3,21 +3,21 @@ require 'game'
 describe Game do
   let(:rock) do
     rock = double(:rock)
-    allow(rock).to receive :name { "rock" }
-    allow(rock).to receive :<=>  { 1 }
+    allow(rock).to receive(:name) { "rock" }
+    allow(rock).to receive(:<=>)  { 1 }
     rock
   end
 
   let(:scissors) do
     scissors = double(:scissors)
-    allow(scissors).to receive :name { "scissors" }
-    allow(scissors).to receive :<=>  { -1 }
+    allow(scissors).to receive(:name) { "scissors" }
+    allow(scissors).to receive(:<=>)  { -1 }
     scissors
   end
 
   let(:paper) do
     paper = double(:paper)
-    allow(paper).to receive :<=> { 0 }
+    allow(paper).to receive(:<=>) { 0 }
     paper
   end
 
