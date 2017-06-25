@@ -39,3 +39,12 @@ feature 'computer chooses an option' do
     expect(page).to have_content 'Your opponent chose paper!'
   end
 end
+
+feature 'computer chooses a random option' do
+  scenario 'Computer chooses a random option: rock, paper, or scissors' do
+    sign_in_and_play
+    click_button('rock')
+    expect(page).to have_content 'You chose rock!'
+    expect(page).to have_content 'Your opponent chose paper!'
+  end
+end
