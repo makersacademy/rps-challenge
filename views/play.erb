@@ -1,7 +1,9 @@
 <html>
 <body>
-  <figure>
-    <figcaption> <%= @player %> </figcaption>
-  </figure>
+  <h1><%= @player_name %></h1>
+  <h2> Choose your weapon!</h2>
+  <form action='/result' method="post">
+    <input type="submit" value="Rock">
+  </form>
 </body>
 </html>
