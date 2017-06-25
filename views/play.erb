@@ -1,15 +1,23 @@
 <style>
+h1 {
+  font-family: monospace;
+  font-size: 40px;
+  float: center;
+}
 div {
+  font-family: monospace;
   float: center;
   align: center;
 }
 div1 {
+  font-family: monospace;
   font-size: 20px;
   margin: 0 0 10px 10px;
   float: left;
 }
 
 div2 {
+  font-family: monospace;
   font-size: 20px;
   margin: 0 0 10px 10px;
   float: right;
@@ -23,73 +31,73 @@ div2 {
 </style>
 
 <body>
-  <h1 align ="center">
-    <%= @game.player.name %> vs CPU
-  </h1>
 
   <div1 class="ascii-art">
     <%if @game.player.move == :rock %>
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
+    ______
+---'    ___)
+       (____)
+       (____)
+       (___)
+---.___(_)
 
     <% end %>
 
     <%if @game.player.move == :paper %>
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
+    _____
+---'   __)___
+          ___)
+          ____)
+         ____)
+---._______)
 
     <% end %>
 
     <%if @game.player.move == :scissors %>
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
+    ____
+---'  __)____
+         ____)
+       ______)
+      (__)
+---.__(_)
 
     <% end %>
   </div1>
 
   <div2 align="left" class = "ascii-art">
     <%if @game.cpu.move == :rock %>
-    _________
-   (______   '---
-  (______)
-  (______)
-   (_____)
-     (___)___.---
+     ______
+    (____  '---
+  (____)
+  (____)
+   (___)
+     (_)___.---
 
     <% end %>
 
     <%if @game.cpu.move == :paper %>
-      _______
-  ___(____   '---
- (______
- (_______
- (______
- (___________.---
+     ____
+  __(__   '---
+ (____
+(_____
+ (____
+  (_______.---
     <% end %>
 
     <%if @game.cpu.move == :scissors %>
-      _______
-  ___(____   '---
- (______
- (__________
-      (____)
-      (_______.---
+     ______
+  __(___   '---
+ (_____
+ (_______
+      (__)
+       (_)_.---
 
     <% end %>
   </div2>
 
+  <h1 align ="center">
+    <%= @game.player.name %> vs CPU
+  </h1>
 
   <div align="center">
     <% if @game.game_result == :win %>
