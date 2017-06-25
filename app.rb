@@ -26,8 +26,11 @@ class Rps < Sinatra::Base
   end
   
   post '/result' do
-    p params
+    p "params #{params}"
     Player1.instance.choice(params[:choice_player_1])
+    Player2.instance.choice(params[:choice_player_2])
+    p "P1 #{Player1.instance.current_choice}"
+    p "P2 #{Player2.instance.current_choice}"
   end
   
   run! if app_file == $0
