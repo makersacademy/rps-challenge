@@ -7,12 +7,12 @@ feature 'Display result' do
 
   scenario 'Player selects rock' do
     click_button 'Rock'
-    expect(page).to have_content('Player lost!')
+    expect(page).to have_content('You lost!')
   end
 
   scenario 'Player selects scissors' do
     click_button 'Scissors'
-    expect(page).to have_content('Player won!')
+    expect(page).to have_content('You won!')
   end
 
   scenario 'Player selects paper' do

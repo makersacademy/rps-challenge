@@ -1,33 +1,123 @@
+<style>
+div {
+  float: center;
+  align: center;
+}
+div1 {
+  font-size: 20px;
+  margin: 0 0 10px 10px;
+  float: left;
+}
+
+div2 {
+  font-size: 20px;
+  margin: 0 0 10px 10px;
+  float: right;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+}
+
+</style>
+
 <body>
   <h1 align ="center">
     <%= @game.player.name %> vs CPU
   </h1>
 
-  <% if @game.game_result == :win %>
-  Player won!
-  <% end %>
+  <div1 class="ascii-art">
+    <%if @game.player.move == :rock %>
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
 
-  <%if @game.game_result == :lose %>
-  Player lost!
-  <% end %>
+    <% end %>
 
-  <%if @game.game_result == :draw %>
-  It's a draw!
-  <% end %>
+    <%if @game.player.move == :paper %>
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
 
-  <h2 align="left">
+    <% end %>
+
+    <%if @game.player.move == :scissors %>
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+    <% end %>
+  </div1>
+
+  <div2 align="left" class = "ascii-art">
+    <%if @game.cpu.move == :rock %>
+    _________
+   (______   '---
+  (______)
+  (______)
+   (_____)
+     (___)___.---
+
+    <% end %>
+
+    <%if @game.cpu.move == :paper %>
+      _______
+  ___(____   '---
+ (______
+ (_______
+ (______
+ (___________.---
+    <% end %>
+
+    <%if @game.cpu.move == :scissors %>
+      _______
+  ___(____   '---
+ (______
+ (__________
+      (____)
+      (_______.---
+
+    <% end %>
+  </div2>
+
+
+  <div align="center">
+    <% if @game.game_result == :win %>
+    You won!
+    <% end %>
+
+    <%if @game.game_result == :lose %>
+    You lost!
+    <% end %>
+
+    <%if @game.game_result == :draw %>
+    It's a draw!
+    <% end %>
+  </div>
+
+  <div align= "center">
     Choose a move:
-  </h2>
+  <div>
 
-  <form align="left" action="/rock" method="post">
+  <form align="center" action="/rock" method="post">
     <button type="submit">Rock</button>
   </form>
 
-  <form align="left" action="/paper" method="post">
+  <form align="center" action="/paper" method="post">
     <button type="submit">Paper</button>
   </form>
 
-  <form align="left" action="/scissors" method="post">
+  <form align="center" action="/scissors" method="post">
     <button type="submit">Scissors</button>
   </form>
 
