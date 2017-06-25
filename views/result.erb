@@ -1,0 +1,11 @@
+<h2>Player 1 choice <%=Player1.instance.current_choice%></h2>
+<h2>Player 2 choice <%=Player2.instance.current_choice%></h2>
+
+
+<% if @result_rps.zero? %>
+<h2>It's a tie</h2>
+<% elsif @result_rps == 1%>
+<h2>Player 1 wins</h2>
+<% else %>
+<h2>Player 2 wins</h2>
+<%end%>

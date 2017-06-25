@@ -32,22 +32,22 @@ describe Game do
     it 'shows player 2 won' do
       allow(player1).to receive(:current_choice) { :rock }
       allow(player2).to receive(:current_choice) { :paper }
-      expect(game.result(player1.current_choice, player2.current_choice)).to eq "Player 2 wins"
+      expect(game.result_rps(player1.current_choice, player2.current_choice)).to eq 2
     end
     it 'shows player 1 won' do
       allow(player1).to receive(:current_choice) { :scissors }
       allow(player2).to receive(:current_choice) { :paper }
-      expect(game.result(player1.current_choice, player2.current_choice)).to eq "Player 1 wins"
+      expect(game.result_rps(player1.current_choice, player2.current_choice)).to eq 1
     end
     it 'shows player 2 won' do
       allow(player1).to receive(:current_choice) { :scissors }
       allow(player2).to receive(:current_choice) { :rock }
-      expect(game.result(player1.current_choice, player2.current_choice)).to eq "Player 2 wins"
+      expect(game.result_rps(player1.current_choice, player2.current_choice)).to eq 2
     end
     it 'shows it is a tie' do
       allow(player1).to receive(:current_choice) { :rock }
       allow(player2).to receive(:current_choice) { :rock }
-      expect(game.result(player1.current_choice, player2.current_choice)).to eq "It's a tie!"
+      expect(game.result_rps(player1.current_choice, player2.current_choice)).to eq 0
     end
   end
   

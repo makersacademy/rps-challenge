@@ -13,7 +13,7 @@ class Player1
   end
   
   def choice(current_choice)
-    @current_choice = current_choice
+    @current_choice = current_choice.to_sym
     @previous_choices << current_choice
     @current_choice
   end

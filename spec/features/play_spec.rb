@@ -35,6 +35,6 @@ feature 'playing against computer' do
   end
   
   scenario 'shows scissors option for player 2' do
-    expect { page.choose("scissors_player_2") }.to_not raise_error 
+    expect { page.choose("scissors_player_2") }.to_not raise_error
   end
 end
