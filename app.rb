@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "./lib/player.rb"
+require "./lib/game.rb"
 
 class RPS < Sinatra::Base
   enable:sessions
@@ -9,24 +10,36 @@ class RPS < Sinatra::Base
   end
 
   post "/play" do
-    $player = Player.new(params[:player_name])
+    player1 = Player.new(params[:player_name])
+    $game = Game.new(player1)
     redirect "/play"
   end
 
   get "/play" do
-    @player_name = $player.name
+    @game = $game
+    @player = @game.player1
     erb :play
   end
 
-  post "/result" do
-    @weapon = "Rock"
-    @player_name = $player.name
-    erb :result
+  post "/rock" do
+    @game = $game
+    @player = @game.player1
+    @player.weapon_choice("Rock")
+    redirect "/play"
   end
 
-  get "/result" do
-    @player_name = $player.name
-    erb :result
+  post "/paper" do
+    @game = $game
+    @player = @game.player1
+    @player.weapon_choice("Paper")
+    redirect "/play"
+  end
+
+  post "/scissors" do
+    @game = $game
+    @player = @game.player1
+    @player.weapon_choice("Scissors")
+    redirect "/play"
   end
 
   run! if app_file == $0

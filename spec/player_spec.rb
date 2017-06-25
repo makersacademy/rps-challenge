@@ -15,5 +15,4 @@ describe Player do
       expect(player.weapon).to eq "Rock"
     end
   end
-
 end

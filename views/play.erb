@@ -1,9 +1,17 @@
 <html>
 <body>
-  <h1><%= @player_name %></h1>
+  <% if @player.weapon == nil %>
+  <h1><%= @player.name %></h1>
   <h2> Choose your weapon!</h2>
-  <form action='/result' method="post">
+  <form action="/rock" method="post">
     <input type="submit" value="Rock">
+  <form action="/paper" method="post">
+    <input type="submit" value="Paper">
+  <form action="/scissors" method="post">
+    <input type="submit" value="Scissors">
   </form>
+  <% else %>
+  <%= @player.name %> has picked <%= @player.weapon %>
+  <% end %>
 </body>
 </html>
