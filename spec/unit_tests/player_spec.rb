@@ -12,7 +12,7 @@ describe Player do
 
   describe '#weapon' do
     it "raises an error if the weapon doesn't exist" do
-      expect { player.weapon=("Sword") }.to raise_error("This weapon is not valid")
+      expect { player.weapon = "Sword" }.to raise_error("This weapon is not valid")
     end
 
     it "assigns the weapon if value is valid" do
