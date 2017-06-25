@@ -21,7 +21,9 @@ $ rspec
 
 ## Run ##
 
+```
 $ git clone git@github.com:jkingharman/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ ruby ./app/rps.rb
+```
