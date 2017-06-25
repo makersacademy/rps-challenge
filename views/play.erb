@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+body  {
+    background-image: url("http://now-here-this.timeout.com/wp-content/uploads/2013/11/rockpaper.jpg");
+  }
+  </style>
+</head>
+    <body>
+      <div>
+      Hello <%= @game.player_name %> </div>
+      <form method="POST" action="/play">
+        <input type="submit" name="choice" value="Rock">
+        <input type="submit" name="choice" value="Paper">
+        <input type="submit" name="choice" value="Scissors">
+      </form>
+      Rock, Paper, Scissors <br> </br>
+      <%= @game.player_name %> chose <%= @game.player_choice.to_s.capitalize %>! 
+      Opponent chose <%= @game.opponent_choice.to_s.capitalize %>!
+      <br> </br>
+      <% if @game.win? %>
+       <%=@game.player_name%> wins.
+      <% elsif @game.lose? %>
+       <%=@game.player_name%> loses.
+      <% elsif @game.draw? %>
+       <%=@game.player_name%> draws.
+      <% end %>
+
+    </body>
+  </html>
