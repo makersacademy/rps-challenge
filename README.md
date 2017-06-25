@@ -19,8 +19,8 @@ I would like to be able to play rock/paper/scissors
 Installation
 ----
 
-- Run `git clone https://github.com/MarySalemme/takeaway-challenge.git`
-- Navigate to the repo `cd takeaway-challenge`
+- Run `git clone https://github.com/MarySalemme/rps-challenge.git`
+- Navigate to the repo `cd rps-challenge`
 - Run `gem install bundle` from the command line
 - Run `bundle`
 
