@@ -1,5 +1,7 @@
 # RPS Challenge
 
+![Imgur](http://i.imgur.com/sTi1Reh.png)
+
 Instructions
 -------
 ```
