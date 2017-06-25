@@ -26,17 +26,35 @@ class Rps < Sinatra::Base
   end
   
   post '/result' do
+    p params
     Player1.instance.choice(params[:choice_player_1])
     Player2.instance.choice(params[:choice_player_2])
+    @game.register_type(params[:game_type])
     redirect '/result'
   end
   
   get '/result' do
-    p Player1.instance.current_choice
-    p Player2.instance.current_choice
     @result_rps = @game.result_rps(Player1.instance.current_choice, Player2.instance.current_choice)
     erb :result
   end
+  
+  get '/play_subsequent' do
+    erb :play_subsequent
+  end
+  
+  post '/result_subsequent' do
+    p params
+    Player1.instance.choice(params[:choice_player_1])
+    Player2.instance.choice(params[:choice_player_2])
+    redirect '/result_subsequent'
+  end
+  
+  get '/result_subsequent' do
+    @result_rps =@game.result_rps(Player1.instance.current_choice, Player2.instance.current_choice)
+    erb :result_subsequent
+  end
+  
+  
   
   run! if app_file == $0
   

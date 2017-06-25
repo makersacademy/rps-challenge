@@ -3,7 +3,7 @@ require "./lib/player2.rb"
 
 class Game
   
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :type
   
   OPTIONS = [:rock, :scissors, :paper]
   
@@ -40,15 +40,13 @@ class Game
     compare_index(@index_player1, @index_player2)
   end
   
-  # def result(player1_current_choice, player2_current_choice)
-  #   @result = rules(player1_current_choice, player2_current_choice)
-  #   if @result.zero?
-  #     "It's a tie!"
-  #   elsif @result == 1
-  #     "Player 1 wins"
-  #   else
-  #     "Player 2 wins"
-  #   end
-  # end
+  def format_string(string)
+    return :sudden_death if string.include?('sudden death')
+    :multiple if string.include?('3 out of 5')
+  end
+  
+  def register_type(game_type)
+    @type = format_string(game_type)
+  end
   
 end

@@ -10,8 +10,6 @@
 <h2>Player 2 wins</h2>
 <%end%>
 
-<% if @game.type == :multiple %>
 <form action="/play_subsequent" method="get">
-<input type="submit" value="Next round"/>
+  <input type="submit" value="Next round"/>
 </form>
-<% end %>

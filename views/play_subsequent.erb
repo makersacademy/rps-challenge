@@ -13,7 +13,7 @@
 </head>
 <body>
   <h1> <%= @game.player1.name %> </h1>
-  <form action="/result" method="post" id="choice-form">
+  <form action="/result_subsequent" method="post" id="choice-form">
     <div>
       <label for="rock_player_1">
         <img src="Rock.jpg"/>
@@ -43,12 +43,9 @@
         <input type="radio" name="choice_player_2"  value="scissors" id="scissors_player_2"/>
       </label>
     </div>
-    <% if @game.type.nil? %>
-    <input type="submit" value="Play Rock, Paper, Scissors sudden death!!!!" name="game_type" />
-    <input type="submit" value="Play Rock, Paper, Scissors 3 out of 5!!!!" name="game_type" />
-    <% elsif @game.type == :multiple %>
+    <% if @game.type == :multiple %>
     <input type="submit" value="Play">
     <% end %>
-  </form>  
+  </form>
 </body>
 </html>

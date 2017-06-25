@@ -15,6 +15,7 @@ describe Game do
     player2
   end
   
+  
   describe 'attributes' do
     it 'receives player as an argument' do
       expect(game.player1).to eq player1
@@ -28,7 +29,7 @@ describe Game do
     end
   end
   
-  describe '#rules' do
+  describe '#result_rps' do
     it 'shows player 2 won' do
       allow(player1).to receive(:current_choice) { :rock }
       allow(player2).to receive(:current_choice) { :paper }
@@ -51,5 +52,16 @@ describe Game do
     end
   end
   
+  describe '#type' do
+    it 'registers a sudden death game' do
+      game.register_type("Play Rock, Paper, Scissors sudden death!!!!")
+      expect(game.type).to eq :sudden_death
+    end
+    
+    it 'registers a 3 out of 5 game' do
+      game.register_type("Play Rock, Paper, Scissors 3 out of 5!!!!")
+      expect(game.type).to eq :multiple
+    end
+  end
   
 end
