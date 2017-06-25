@@ -5,15 +5,20 @@
     <link href="https://fonts.googleapis.com/css?family=Barrio|Cabin+Sketch" rel="stylesheet">
     <style>
     body  {
-      background-image: url("../../images/rpsls-bkg.jpg");
-      background-repeat: no-repeat;
-      background-color: #15133c;
-      background-position: right -55px;
+      background-image: url("../../images/rpsls-bkg3.jpg");
+      background-repeat: repeat-y;
+      background-color: #04204D;
+      background-size: 1000px;
+      background-position: center;
       text-align: center;
       color: #4A87E6;
       font-family: 'Cabin Sketch', cursive;
       font-size: 40px;
     }
+    img {
+      height: 250px;
+    }
+
     h1 {
       color: #81C737;
       font-size: 60px;
@@ -47,15 +52,16 @@
     </style>
     </head>
     <body>
-
     <h1>Rock, Paper, Scissors!</h1>
-    <br></br>
+
     <h2>Enter your name to play</h2>
     <div style="color :#FF60B0">Player name:</div>
     <form action="/name" method="post">
       <input type="text" name="player_name">
       <div>
       <input type="submit" class="button" value="Submit">
+      <br></br>
+      <img src="../../images/rps-cry.png">
       </div>
     </form>
   </body>

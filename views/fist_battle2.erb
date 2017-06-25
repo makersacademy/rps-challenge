@@ -5,10 +5,11 @@
     <link href="https://fonts.googleapis.com/css?family=Barrio|Cabin+Sketch" rel="stylesheet">
     <style>
     body  {
-      background-image: url("../../images/rpsls-bkg.jpg");
-      background-repeat: no-repeat;
-      background-color: #15133c;
-      background-position: right -55px;
+      background-image: url("../../images/rpsls-bkg3.jpg");
+      background-repeat: repeat-y;
+      background-color: #04204D;
+      background-size: 1000px;
+      background-position: center;
       text-align: center;
       color: #4A87E6;
       font-family: 'Cabin Sketch', cursive;
@@ -20,36 +21,72 @@
     }
     h2 {
       font-size: 40px;
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     span {
       color: #D40D58;
     }
+    .button {
+      background-color: #E78C09;
+      border: none;
+      border-radius: 14px;
+      color: #EA1A50;
+      padding: 4px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 28px;
+      margin: 4px 10px;
+      cursor: pointer;
+      font-family: 'Cabin Sketch', cursive;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
+    .button:hover {
+      background-color: #0AAE89;
+      color: #84DAF5;
+    }
+    .button-container form,
+    .button-container form div {
+      display: inline;
+    }
+    .button-container button {
+      display: inline;
+      vertical-align: middle;
+    }
+    img {
+      height: 200px;
+    }
     </style>
   </head>
-<body>
-  <div>
-    <h1><span><%= @game.player.name %> played PAPER</span></h1>
-  </div>
+    <body>
+    <div>
+      <h1><span><%= @game.player.name %></span> played <span style="color:#117AEA">PAPER</span></h1>
+    </div>
 
-  <div>
-    <h1>NPC played <%= @npc_weapon %><h1>
-  </div>
+    <div>
+      <h1><span style="color:#EA9111">NPC</span> played <span style="color:#117AEA"><%= @npc_weapon %></span><h1>
+        <img src="../../images/paper.png">
+    </div>
 
-  <br></br>
-  <br></br>
-  <% if @npc_weapon == "ROCK" %>
-    <h2>Paper beats Rock</h2>
-    <h3><%= @game.player.name %> is the WINNER!</h3>
-  <% elsif @npc_weapon == "PAPER" %>
-    <h3> It's a DRAW! </h3>
-  <% else %>
-    <h2>Scissors beats Paper</h2>
-    <h3>...<%= @game.player.name %> LOST!</h3>
-  <% end %>
+    <% if @npc_weapon == "ROCK" %>
+      <h2><span style="color:#67D3FF">Paper beats Rock</span></h2>
+      <h3><span><%= @game.player.name %></span> is the <span style="color:#15D693">WINNER!</span></h3>
+    <% elsif @npc_weapon == "PAPER" %>
+      <h3> It's a <span style="color:#15D693">DRAW!</span> </h3>
+    <% else %>
+      <h2><span style="color:#67D3FF">Scissors beats Paper</span></h2>
+      <h3>...<%= @game.player.name %> <span style="color:#15D693">LOST!</span></h3>
+    <% end %>
 
-    <form action="/play">
-      <input type="submit" value="Play again">
-    </form>
+      <form action="/play">
+        <input type="submit" class="button" value="Play again">
+      </form>
 
-  </body>
-</html>
+    </body>
+  </html>

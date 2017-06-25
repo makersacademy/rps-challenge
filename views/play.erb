@@ -5,10 +5,11 @@
     <link href="https://fonts.googleapis.com/css?family=Barrio|Cabin+Sketch" rel="stylesheet">
     <style>
     body  {
-      background-image: url("../../images/rpsls-bkg.jpg");
-      background-repeat: no-repeat;
-      background-color: #15133c;
-      background-position: right -55px;
+      background-image: url("../../images/rpsls-bkg3.jpg");
+      background-repeat: repeat-y;
+      background-color: #04204D;
+      background-size: 1000px;
+      background-position: center;
       text-align: center;
       color: #4A87E6;
       font-family: 'Cabin Sketch', cursive;
@@ -79,11 +80,9 @@
     </style>
   </head>
 <body>
+  <h1><span><%= @game.player.name %></span>, are you ready?!</h1>
 
-  <h1><span><%= @game.player.name %></span> has entered into battle!</h1>
-
-    <h2>Beat the NPC to be the WINNER!</h2>
-    <br></br>
+    <h2>Beat the <span style="color:#EA9111">NPC</span> to be the WINNER!</h2>
     <br></br>
     <h3> >> Choose your weapon << </h3>
     <div class= "button-container">
@@ -104,6 +103,7 @@
     <form action="/">
       <input type="submit" class="button2" value="Change player name">
     </form>
-
+    <br></br>
+    <img src="../../images/rps-fists.png">
   </body>
 </html>
