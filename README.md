@@ -12,10 +12,10 @@ How to use
 2. Run ```bundle install```
 
 3. Enter your name as prompted
-![alt text](https://postimg.org/image/78tdx5zuv/)
+![alt text](http://imgur.com/a/pk0Gl)
 
 4. Choose your move
-![alt text](https://postimg.org/image/joq3qwt6v/)
+![alt text](http://imgur.com/a/44jx2)
 
 5. Win or lose!
-![alt text](https://postimg.org/image/fgvbi5rrb/)
+![alt text](http://imgur.com/a/YHeIt)
