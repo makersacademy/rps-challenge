@@ -30,6 +30,4 @@ I would like to be able to play rock/paper/scissors
 
 To do if I had more time
 ------------------------
-I would like to refactor my controller. Currently I have three separate routes for Rock, Paper and Scissors.
-
-Ideally, my button should store an input (either Rock, Paper or Scissors) into a parameter in a single route i.e. "/attack".  This way I would be able to have one route for all three buttons.
+I would like to refactor my controller which currently looks too large. I would like to attempt to move some of the logic into the model layer.

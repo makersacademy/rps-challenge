@@ -117,16 +117,19 @@ div2 {
     Choose a move:
   <div>
 
-  <form align="center" action="/rock" method="post">
-    <button type="submit">Rock</button>
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="rock">
+    <button type="submit" value="submit">Rock</button>
   </form>
 
-  <form align="center" action="/paper" method="post">
-    <button type="submit">Paper</button>
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="paper">
+    <button type="submit" value="submit">Paper</button>
   </form>
 
-  <form align="center" action="/scissors" method="post">
-    <button type="submit">Scissors</button>
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="scissors">
+    <button type="submit" value="submit">Scissors</button>
   </form>
 
 </body>

@@ -17,22 +17,9 @@ class Rps < Sinatra::Base
     @game = Game.instance
   end
 
-  post '/rock' do
-    @game.player.select_move(:rock)
-    @game.cpu.roll_attack
-    @game.generate_result
-    redirect('/play')
-  end
-
-  post '/paper' do
-    @game.player.select_move(:paper)
-    @game.cpu.roll_attack
-    @game.generate_result
-    redirect('/play')
-  end
-
-  post '/scissors' do
-    @game.player.select_move(:scissors)
+  post '/attack' do
+    move = params[:move].to_sym
+    @game.player.select_move(move)
     @game.cpu.roll_attack
     @game.generate_result
     redirect('/play')
