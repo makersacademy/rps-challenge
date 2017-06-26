@@ -17,7 +17,7 @@ describe 'index.erb' do
   
   feature 'it has a name form' do
     scenario 'contains submit button' do
-      expect { find_button('Submit') }.to_not raise_error
+      expect { find_button('Start the game') }.to_not raise_error
     end
     
     scenario 'has a field for player 1' do

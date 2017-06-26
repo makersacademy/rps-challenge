@@ -1,25 +1,67 @@
-<h2>Player 1 choice <%=Player1.instance.current_choice%></h2>
-<h2>Player 2 choice <%=Player2.instance.current_choice%></h2>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
+#choice-form button {
+  margin: 30px;
+}
 
-<% if @result_rps.zero? %>
-<h2>It's a tie</h2>
-<% elsif @result_rps == 1%>
-<h2>Player 1 wins</h2>
-<% else %>
-<h2>Player 2 wins</h2>
-<%end%>
+h2 {
+  color: #B33332;
+}
 
-<form action="/play_subsequent" method="get">
-  <% if @game.score.length == 5 %>
-  <% if @game.winner.nil? %>
-  It's a tie! Even though 5 is an odd number. Weird...
-  <% elsif @game.winner == @game.player1  %>
-  Player <%= Player1.instance.name %> has won <%= @game.score.count(1) %> games out of 5!
+h1 {
+  color: #B33332;
+}
+
+input[type=submit] {
+  display: block;
+  padding: 15px 15px;
+  margin: 20px 0;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  color: #18174F;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+em {
+  color: #4E7719;
+}
+</style>
+</head>
+<body>
+  
+  <h3><%= Player1.instance.name %> chose <em><%=Player1.instance.current_choice%></em></h3>
+  <h3><%=Player2.instance.name %> chose <em><%=Player2.instance.current_choice%></em></h3>
+  
+  
+  <% if @result_rps.zero? %>
+  <h2>This round it's a tie</h2>
+  <% elsif @result_rps == 1%>
+  <h2>This round <%= Player1.instance.name %> wins</h2>
   <% else %>
-  Player <%= Player2.instance.name %> has won <%= @game.score.count(2) %> games out of 5!
-  <% end %>
-  <% else %>
-  <input type="submit" value="Next round"/>
-  <% end %>
-</form>
+  <h2>This round <%= Player2.instance.name %> wins</h2>
+  <%end%>
+  
+  <form action="/play_subsequent" method="get">
+    <% if @game.score.length == 5 %>
+    <% if @game.winner.nil? %>
+    <h1>It's a tie! Even though 5 is an odd number. Weird... </h1>
+    <% elsif @game.winner == @game.player1  %>
+    <h1>Player <%= Player1.instance.name %> has won <%= @game.score.count(1) %> games out of 5!</h1>
+    <% else %>
+    <h1>Player <%= Player2.instance.name %> has won <%= @game.score.count(2) %> games out of 5!<h1>
+      <% end %>
+      <% else %>
+      <input type="submit" value="Next round"/>
+      <% end %>
+    </form>
+    
+  </body>
+  </html>
+  

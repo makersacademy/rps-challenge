@@ -2,7 +2,7 @@ require 'game.rb'
 def sign_in
   visit '/'
   fill_in 'player_1', with: 'Momo'
-  click_button 'Submit'
+  click_button 'Start the game'
 end
 
 def sign_in_and_play_sudden_death

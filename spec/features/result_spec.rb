@@ -7,7 +7,7 @@ describe 'sign in and play sudden death' do
   
   feature 'shows the winner' do
     scenario 'shows player 1 win' do
-      expect(page).to have_content "Player 1 wins"
+      expect(page).to have_content "This round Momo wins"
     end
     
     feature 'doesn\'t show continue button' do
