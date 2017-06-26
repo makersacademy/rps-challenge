@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player names and options</title>
+  <style>
+  
+  #choice-form button {
+    margin: 30px;
+  }
+  
+  h2 {
+    color: #B33332;
+  }
+  
+  input[type=submit] {
+    display: block;
+    padding: 15px 15px;
+    margin: 80px 40px 40px 20px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    color: #18174F;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  </style>
+  
+</head>
+<body>
+  <h2> <%= @game.player1.name %> make your choice: </h2>
+  <form action="/result" method="post" id="choice-form">
+    <table width="100%">
+      <td>
+        <div>
+          <label for="rock_player_1">
+            <img src="Rock.jpg"/>
+            <input type="radio" name="choice_player_1" value="rock" id="rock_player_1" required/>
+          </label>
+          <label for="paper_player_1">
+            <img src="Paper.jpg"/>
+            <input type="radio" name="choice_player_1" value="paper" id="paper_player_1"/>
+          </label>
+          <label for="scissors_player_1">
+            <img src="Scissors.jpg"/>
+            <input type="radio" name="choice_player_1"  value="scissors" id="scissors_player_1"/>
+          </label>
+        </div>
+        <h2> <%= @game.player2.name %> make your choice:</h2>
+        <div>
+          <label for="rock_player_2">
+            <img src="Rock.jpg"/>
+            <input type="radio" name="choice_player_2" value="rock" id="rock_player_2" />
+          </label>
+          <label for="paper_player_2">
+            <img src="Paper.jpg"/>
+            <input type="radio" name="choice_player_2" value="paper" id="paper_player_2"/>
+          </label>
+          <label for="scissors_player_2">
+            <img src="Scissors.jpg"/>
+            <input type="radio" name="choice_player_2"  value="scissors" id="scissors_player_2"/>
+          </label>
+        </div>
+      </td>
+      <td>
+        <% if @game.type.nil? %>
+        <input type="submit" value="Play Rock, Paper, Scissors sudden death!!!!" name="game_type" />
+        <input type="submit" value="Play Rock, Paper, Scissors 3 out of 5!!!!" name="game_type" />
+        <% elsif @game.type == :multiple %>
+        <input type="submit" value="Play">
+        <% end %>
+      </td>
+    </table>
+    
+  </form>
+</body>
+</html>
