@@ -1,10 +1,33 @@
 class Game
 
-attr_reader :player_1, :player_2
+attr_reader :players
 
   def initialize(player_1, player_2)
-    @player_1 = player_1
-    @player_2 = player_2
+    @players = [player_1, player_2]
+  end
+
+  def self.create_new_game(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
+  def player_1
+    @player_1 = @players.first
+  end
+
+  def player_2
+    @player_2 = @players.last
+  end
+
+  def first_move
+    @player_1.move
+  end
+
+  def second_move
+    @player_2.move
   end
 
   def calculate_result(player_1, player_2)

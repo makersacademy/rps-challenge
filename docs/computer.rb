@@ -3,6 +3,7 @@ class Computer
 attr_reader :move
 
   def initialize
+    @name = "the_computer"
     @move = random_choice
   end
 
