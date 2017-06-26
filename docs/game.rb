@@ -9,15 +9,19 @@ attr_reader :player_1, :player_2
 
   def calculate_result(player_1, player_2)
     if @player_1.move == @player_2.move
-      'Result: a draw!'
+      'draw'
     elsif @player_1.move == 'rock' && @player_2.move == 'scissors'
-      'Result: you win!'
+      'win'
     elsif @player_1.move == 'paper' && @player_2.move == 'rock'
-      'Result: you win!'
+      'win'
     elsif @player_1.move == 'scissors' && @player_2.move == 'paper'
-      'Result: you win!'
+      'win'
     else
-      'Result: you lose.'
+      'lose'
     end
+  end
+
+  def result_message
+    "Result: you #{calculate_result(player_1, player_2)}!"
   end
 end

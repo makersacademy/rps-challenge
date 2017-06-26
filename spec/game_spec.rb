@@ -17,35 +17,35 @@ describe Game do
       it "should return a draw" do
         allow(player_1).to receive(:move).and_return("rock")
         allow(player_2).to receive(:move).and_return("rock")
-        expect(game.calculate_result(player_1, player_2)).to eq('Result: a draw!')
+        expect(game.calculate_result(player_1, player_2)).to eq('draw')
       end
     end
     context "when the player has won" do
       it "should show a winning message" do
         allow(player_1).to receive(:move).and_return("rock")
         allow(player_2).to receive(:move).and_return("scissors")
-        expect(game.calculate_result(player_1, player_2)).to eq('Result: you win!')
+        expect(game.calculate_result(player_1, player_2)).to eq('win')
       end
     end
     context "when the player has won" do
       it "should show a winning message" do
         allow(player_1).to receive(:move).and_return("paper")
         allow(player_2).to receive(:move).and_return("rock")
-        expect(game.calculate_result(player_1, player_2)).to eq('Result: you win!')
+        expect(game.calculate_result(player_1, player_2)).to eq('win')
       end
     end
     context "when the player has won" do
       it "should show a winning message" do
         allow(player_1).to receive(:move).and_return("scissors")
         allow(player_2).to receive(:move).and_return("paper")
-        expect(game.calculate_result(player_1, player_2)).to eq('Result: you win!')
+        expect(game.calculate_result(player_1, player_2)).to eq('win')
       end
     end
     context "when the player has lost" do
       it "should show a winning message" do
         allow(player_1).to receive(:move).and_return("paper")
         allow(player_2).to receive(:move).and_return("scissors")
-        expect(game.calculate_result(player_1, player_2)).to eq('Result: you lose.')
+        expect(game.calculate_result(player_1, player_2)).to eq('lose')
       end
     end
   end

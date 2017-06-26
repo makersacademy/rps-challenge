@@ -1,5 +1,11 @@
-<h1>You threw <%= $player_1.move %>!</h1>
+<style>
+body {
+    background-image: url("http://www.theblaze.com/wp-content/uploads/2014/05/shutterstock_122451364.jpg");
+}
+</style>
 
-<h1>Your opponent threw <%= $player_2.move %>!</h1>
+<h1>You threw <%= @game.player_1.move %>!</h1>
 
-<h2> <%= @game.calculate_result(@player_1, @player_2) %></h2>
+<h1>Your opponent threw <%= @game.player_2.move %>!</h1>
+
+<h2> <%= @game.result_message %></h2>
