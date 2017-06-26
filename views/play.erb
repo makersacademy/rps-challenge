@@ -1,0 +1,135 @@
+<style>
+h1 {
+  font-family: monospace;
+  font-size: 40px;
+  float: center;
+}
+div {
+  font-family: monospace;
+  float: center;
+  align: center;
+}
+div1 {
+  font-family: monospace;
+  font-size: 20px;
+  margin: 0 0 10px 10px;
+  float: left;
+}
+
+div2 {
+  font-family: monospace;
+  font-size: 20px;
+  margin: 0 0 10px 10px;
+  float: right;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+}
+
+</style>
+
+<body>
+
+  <div1 class="ascii-art">
+    <%if @game.player.move == :rock %>
+    ______
+---'    ___)
+       (____)
+       (____)
+       (___)
+---.___(_)
+
+    <% end %>
+
+    <%if @game.player.move == :paper %>
+    _____
+---'   __)___
+          ___)
+          ____)
+         ____)
+---._______)
+
+    <% end %>
+
+    <%if @game.player.move == :scissors %>
+    ____
+---'  __)____
+         ____)
+       ______)
+      (__)
+---.__(_)
+
+    <% end %>
+  </div1>
+
+  <div2 align="left" class = "ascii-art">
+    <%if @game.cpu.move == :rock %>
+     ______
+    (____  '---
+  (____)
+  (____)
+   (___)
+     (_)___.---
+
+    <% end %>
+
+    <%if @game.cpu.move == :paper %>
+     ____
+  __(__   '---
+ (____
+(_____
+ (____
+  (_______.---
+    <% end %>
+
+    <%if @game.cpu.move == :scissors %>
+     ______
+  __(___   '---
+ (_____
+ (_______
+      (__)
+       (_)_.---
+
+    <% end %>
+  </div2>
+
+  <h1 align ="center">
+    <%= @game.player.name %> vs CPU
+  </h1>
+
+  <div align="center">
+    <% if @game.game_result == :win %>
+    You won!
+    <% end %>
+
+    <%if @game.game_result == :lose %>
+    You lost!
+    <% end %>
+
+    <%if @game.game_result == :draw %>
+    It's a draw!
+    <% end %>
+  </div>
+
+  <div align= "center">
+    Choose a move:
+  <div>
+
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="rock">
+    <button type="submit" value="submit">Rock</button>
+  </form>
+
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="paper">
+    <button type="submit" value="submit">Paper</button>
+  </form>
+
+  <form align="center" action="/attack" method="post">
+    <input type="hidden" name="move" value="scissors">
+    <button type="submit" value="submit">Scissors</button>
+  </form>
+
+</body>
