@@ -1,0 +1,15 @@
+<h1> Paper vs <%= $battle %> </h1>
+<img src="https://media2.giphy.com/media/zn7OHriyjAtIk/giphy.gif" alt=" capybara GIF" style="width: 480px; height: 295.541px; left: 0px; top: 0px; opacity: 1;">
+
+<h2> <%= if $battle == 'Paper'
+  'You drew, your life is meaningless'
+elsif $battle== 'Rock'
+  'You win. What a waste of your time'
+else 'You lost, you must depart this town immediately'
+end %>
+
+<br>
+<br>
+
+<form action='/' method ='get'>
+<input type="submit" value = "Name a new Capybara Warrior" /> </form>
