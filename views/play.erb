@@ -1,0 +1,63 @@
+<html>
+  <body>
+    <div align="center">
+      <h1 style="color:white;">You chose <%= @game.player.choice %>!</h1>
+      <br></br>
+      <h1 style="color:white;">Your opponent chose <%= @game.opponent_choice %>!</h1>
+    </div>
+
+    <div align="center">
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <% if @game.win? %>
+        <h1 style="color:white;"> Congratulations <%= @game.player.name %>! You win! </h1>
+      <% elsif @game.tie? %>
+         <h1 style="color:white;"> Congratulations <%= @game.player.name %>! You tied! </h1>
+      <% else %>
+        <h1 style="color:white;"> Sorry <%= @game.player.name %>! You lose, try again. </h1>
+      <% end %>
+    </div>
+
+    <div align="center">
+      <form action="/welcome">
+      <input type="submit" class="button buttonblack" value="Play again?">
+      </form>
+    </div>
+
+  </body>
+</html>
+
+
+<style>
+body {
+  background: url(http://allswalls.com/images/rock-paper-scissors-wallpaper-1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+.buttonblack {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.buttonblack:hover {
+    background-color: #555555;
+    color: white;
+}
+</style>
