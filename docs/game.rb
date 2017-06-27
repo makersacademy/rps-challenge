@@ -23,7 +23,7 @@ attr_reader :players
   end
 
   def first_move
-    @player_1.move
+    @player_1.move.to_sym
   end
 
   def second_move
@@ -32,15 +32,15 @@ attr_reader :players
 
   def calculate_result(player_1, player_2)
     if @player_1.move == @player_2.move
-      'draw'
-    elsif @player_1.move == 'rock' && @player_2.move == 'scissors'
-      'win'
-    elsif @player_1.move == 'paper' && @player_2.move == 'rock'
-      'win'
-    elsif @player_1.move == 'scissors' && @player_2.move == 'paper'
-      'win'
+      :draw
+    elsif @player_1.move == :rock && @player_2.move == :scissors
+      :win
+    elsif @player_1.move == :paper && @player_2.move == :rock
+      :win
+    elsif @player_1.move == :scissors && @player_2.move == :paper
+      :win
     else
-      'lose'
+      :lose
     end
   end
 end

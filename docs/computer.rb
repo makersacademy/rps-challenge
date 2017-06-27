@@ -9,6 +9,6 @@ attr_reader :move
 
 private
   def pick_move
-    ["rock", "paper", "scissors"].sample
+    [:rock, :paper, :scissors].sample
   end
 end
