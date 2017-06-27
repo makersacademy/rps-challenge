@@ -1,4 +1,4 @@
-require './docs/game.rb'
+require './models/game.rb'
 
 describe Game do
   let(:game) { described_class.new(player_1, player_2) }

@@ -42,11 +42,7 @@ describe RPS, :type => :feature do
     end
   end
 
-  describe "battle.erb" do
-  let(:computer) { double'computer' }
-  let(:game) { double'game' }
-  let(:player_1) { double(:player) }
-  let(:player_2) { double(:player) }
+  describe "result.erb" do
     before do
       sign_in_and_play
       fill_in 'move', with: 'rock'

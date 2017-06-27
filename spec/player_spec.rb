@@ -1,4 +1,4 @@
-require './docs/player.rb'
+require './models/player.rb'
 
 describe Player do
 let(:player) { Player.new("Andy") }
