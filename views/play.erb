@@ -1,0 +1,12 @@
+<h1>Hi, <%= @game.player_1.name %> </h1>
+
+<h2>Choose what move you want to make (rock, paper or scissors)</h2>
+<style>
+body {
+    background-image: url("http://i.telegraph.co.uk/multimedia/archive/03015/RockPaperScissors_3015010k.jpg");
+}
+</style>
+<form action="/result" method="post">
+  <input type="text" name="move" value="rock">
+  <input type="submit" value="Continue">
+</form>
