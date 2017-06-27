@@ -12,7 +12,7 @@ describe Game do
       expect(game.player_2).to eq player_2
     end
   end
-  describe "#calculate_result" do
+  describe "#result" do
     context "when both players throw the same move" do
       it "should return a draw" do
         allow(game.player_1).to receive(:move).and_return("rock")

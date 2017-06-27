@@ -4,8 +4,8 @@ body {
 }
 </style>
 
-<h1>You threw <%= @player_1.move %>!</h1>
+<h1>You threw <%= @game.first_move %>!</h1>
 
-<h1>Your opponent threw <%= @player_2.move %>!</h1>
+<h1>Your opponent threw <%= @game.second_move %>!</h1>
 
-<h2> <%= @game.result_message %></h2>
+<h2> Result: you <%=@game.calculate_result(@player_1, @player_2)%>!</h2>

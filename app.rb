@@ -22,7 +22,7 @@ enable :sessions
     @game = Game.instance
     @player_1 = @game.player_1
     @player_2 = @game.player_2
-    @player_1.move = (params[:move])
+    @player_1.move = params[:move]
     erb :result
   end
 end
