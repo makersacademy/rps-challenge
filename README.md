@@ -4,6 +4,9 @@ Rock, Paper, Scissors Challenge
 
 Makers Academy week three weekend project to build a web app to let users play games of rock, paper, scissors.
 
+<img width="329" alt="screen shot 2017-06-28 at 22 03 36" src="https://user-images.githubusercontent.com/20523607/27660067-afe449b2-5c4d-11e7-9af1-c6965e80beed.png">
+
+
 Installation & Testing
 --------
 
