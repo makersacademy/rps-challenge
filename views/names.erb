@@ -1,0 +1,19 @@
+<% if session[:gamemode] == "single_player" %>
+<h1> Single Player Mode </h1>
+<p> Enter your name </p>
+<% elsif session[:gamemode] == "multiplayer" %>
+<h1> Multiplayer Mode </h1>
+<p> Enter player names </p>
+<% end %>
+
+<form action="/setnames" method="post">
+  <div>
+    <label for="Player 1">Player 1:</label>
+    <input type="text" name="player_1">
+    <% if session[:gamemode] == "multiplayer" %>
+    <label for="Player 2">Player 2:</label>
+    <input type="text" name="player_2">
+    <% end %>
+    <button type="submit" value="submit">Let's play!</button>
+  </div>
+</form>
