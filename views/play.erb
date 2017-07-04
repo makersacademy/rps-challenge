@@ -1,0 +1,15 @@
+Welcome, <%= @game.player_name %>. Choose your weapon!
+<br><br>
+<form method="POST" action="/play">
+  <input type="submit" name="tool" value="Rock" />
+  <input type="submit" name="tool" value="Paper" />
+  <input type="submit" name="tool" value="Scissors" />
+</form>
+
+<% if @game.win? %>
+   You won!
+ <% elsif @game.lose? %>
+   You lost!
+ <% elsif @game.draw? %>
+   You drew!
+ <% end %>
