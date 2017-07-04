@@ -1,10 +1,10 @@
 # RPS Challenge
 
  My project is organised in the following folders:
- RSpec tests =>  /spec
- Capybara tests =>  spec/features
- Ruby scripts => lib
- HTML pages => lib/views
+  - RSpec tests =>  /spec
+  - Capybara tests =>  spec/features
+  - Ruby scripts => lib
+  - HTML pages => lib/views
 
 # Basic Rules
 
