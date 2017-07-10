@@ -3,23 +3,26 @@
 ### Description
 The game is an expansion on the game Rock, Paper, Scissors. It has a one player or a two player version. Each player picks a weapon choice. The winner is the one who has choses the winning weapon.
 
-Rules:
-Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
+### Rules:
+
+| Rules  | |
+| -- | -- |
+| Scissors | cuts Paper |
+| Scissors | decapitates Lizard |
+| Paper | disproves Spock |
+| Paper| cuts Paper |
+| Rock | crushes Lizard |
+| Rock | crushes Scissors |
+| Lizard | poisons Spock |
+| Lizard | eats Paper |
+| Spock | smashes Scissors |
+| Spock | vaporizes Rock |
 
 ### Configuration
 - Clone this repository
-`$ cd rps-challenge`
-`$ bundle install`
-`$ rackup`
+- `$ cd rps-challenge`
+- `$ bundle install`
+- `$ rackup`
 
 - Navigate to http://localhost:9292
 - From the index page, follow the link buttons to decide which game version you would like to play.
