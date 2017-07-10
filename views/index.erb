@@ -1,0 +1,25 @@
+<div class="row text-center" style="margin-top: 20px">
+  <a href='/two_player' class="btn btn-primary">Go To Two Player Game</a>
+</div>
+
+<%= erb(:single_player) %>
+
+<form name="rps_form" action="/play" method="post" onsubmit="return validateForm()" id="rps_form">
+
+        <p class="text-info">
+          <label for="name1">Enter Your Name</label>
+        <input type="text" name="name1" id="name1" class="form-control" value="<%= session[:name1] %>"></p>
+
+        <p class="text-info">
+          <label for="weapon1">Select a weapon</label>
+        <select name="weapon1" id="weapon1" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+          <option value="spock">Spock</option>
+          <option value="lizard">Lizard</option>
+        </select></p>
+
+        <input type="submit" class="btn btn-primary" value="Play!">
+
+    </form>

@@ -1,0 +1,43 @@
+<div class="row text-center" style="margin-top: 20px">
+  <a href='/' class="btn btn-primary">Go To Single Player Game</a>
+</div>
+
+<div class="header">
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <h1><small>Two Players</small></h1>
+</div>
+
+<form name="rps_form_2" action="/play" method="post" onsubmit="return validateForm2()" id="rps_form_2">
+
+        <p class="text-info">
+        <label for="name1">Player 1 Enter Your Name</label>
+        <input type="text" name="name1" id="name1" class="form-control" value="<%= session[:name1] %>">
+
+        <label >Player 2 Enter Your Name</label>
+        <input type="text" name="name2" id="name2" class="form-control" value="<%= session[:name2] %>">
+        </p>
+
+        <p class="text-info">
+          <label for="weapon1">Player 1 Select a weapon</label>
+        <select name="weapon1" id="weapon1" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+          <option value="spock">Spock</option>
+          <option value="lizard">Lizard</option>
+        </select>
+        </p>
+
+        <p class="text-info">
+          <label for="weapon2">Player 2 Select a weapon</label>
+        <select name="weapon2" id="weapon2" class="form-control">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+          <option value="spock">Spock</option>
+          <option value="lizard">Lizard</option>
+        </select>
+        </p>
+
+        <input type="submit" class="btn btn-primary" value="Play!">
+    </form>
