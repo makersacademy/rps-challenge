@@ -14,19 +14,19 @@ describe Game do
   context 'win, lose draw' do
     it 'should register win for winning combinations of rps' do
       game.choose("rock", "scissors")
-      expect(game.outcome_string).to eq "You win!"
+      expect(game.result).to eq :win
       game.choose("scissors", "paper")
-      expect(game.outcome_string).to eq "You win!"
+      expect(game.result).to eq :win
       game.choose("paper", "rock")
-      expect(game.outcome_string).to eq "You win!"
+      expect(game.result).to eq :win
     end
     it 'should register lose for non-winning combinations of rps' do
       game.choose("scissors", "rock")
-      expect(game.outcome_string).to eq "You lose!"
+      expect(game.result).to eq :lose
     end
     it 'should register a draw for the same choices of rps' do
       game.choose("scissors", "scissors")
-      expect(game.outcome_string).to eq "It's a draw!"
+      expect(game.result).to eq :draw
     end
   end
   describe '#choose' do

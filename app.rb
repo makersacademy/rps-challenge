@@ -1,7 +1,11 @@
 require_relative 'lib/game'
+require_relative 'lib/rps_images'
 require 'sinatra'
 
+
 class RPS < Sinatra::Base
+
+  include RPSImages
 
   before do
     @game = Game.instance
@@ -21,8 +25,12 @@ class RPS < Sinatra::Base
   end
 
   get '/rps' do
-    @game.choose(params[:choice])
     erb :rps
+  end
+
+  get '/result' do
+    @game.choose(params[:choice])
+    erb @game.result
   end
 
   get '/restart' do

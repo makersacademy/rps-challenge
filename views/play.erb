@@ -3,15 +3,15 @@
 <p><%= @game.name %>, make your choice:</p>
 
 <div>
-<form action="/rps" method="get" style="display: inline-block;" >
+<form action="/result" method="get" style="display: inline-block;" >
   <input type="submit" value="rock" name="choice">
 </form>
 
-<form action="/rps" method="get" style="display: inline-block;" >
+<form action="/result" method="get" style="display: inline-block;" >
   <input type="submit" value="paper" name="choice">
 </form>
 
-<form action="/rps" method="get" style="display: inline-block;" >
+<form action="/result" method="get" style="display: inline-block;" >
   <input type="submit" value="scissors" name="choice">
 </form>
 </div>
@@ -22,7 +22,9 @@
 <br>
 
 <div align="center">
-<div><%= @game.log %></div>
+  <div>
+      Rounds: <%=@game.rounds%> Won: <%=@game.win_count%>, Drawn: <%=@game.draw_count%>, Lost: <%=@game.lose_count%>
+  </div>
 </div>
 
 <br>
