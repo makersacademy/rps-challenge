@@ -1,5 +1,25 @@
 # RPS Challenge
 
+## Challenge notes
+
+Completed
+-------
+- [x] Server setup
+- [x] Testing setup
+
+
+Incomplete
+-------
+
+
+Notes
+-------
+
+
+Screenshots
+-------
+
+
 Instructions
 -------
 
