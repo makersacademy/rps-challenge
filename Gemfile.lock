@@ -58,6 +58,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
     rubyzip (1.2.1)
+    sass (3.4.23)
     selenium-webdriver (3.4.4)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
@@ -89,6 +90,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  sass
   selenium-webdriver
   shotgun
   simplecov
