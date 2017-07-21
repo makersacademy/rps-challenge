@@ -32,17 +32,17 @@ describe Game do
   describe '#choose' do
     it 'should set choice' do
       game.choose("rock")
-      expect(game.choice).to eq "rock"
+      expect(game.current_player.weapon).to eq "rock"
     end
     it 'should set opponent_choice to be random "rock", "paper", "scissors"' do
       game.choose("rock")
-      expect(game.opponent_choice).to eq("scissors")
+      expect(game.opponent.weapon).to eq("scissors")
       game.choose("rock")
-      expect(game.opponent_choice).to eq("paper")
+      expect(game.opponent.weapon).to eq("paper")
       game.choose("rock")
-      expect(game.opponent_choice).to eq("paper")
+      expect(game.opponent.weapon).to eq("paper")
       game.choose("rock")
-      expect(game.opponent_choice).to eq("rock")
+      expect(game.opponent.weapon).to eq("rock")
     end
   end
   it 'should store an instance of itself using create' do

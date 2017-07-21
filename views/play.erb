@@ -23,7 +23,9 @@
 
 <div align="center">
   <div>
-      Rounds: <%=@game.rounds%> Won: <%=@game.win_count%>, Drawn: <%=@game.draw_count%>, Lost: <%=@game.lose_count%>
+      <p>Rounds: <%=@game.rounds%> </p>
+      <p><%=@game.player_1.name%>: Won <%=@game.player_1.win_count%>, Drawn <%=@game.player_1.draw_count%>, Lost <%=@game.player_1.lose_count%></p>
+      <p><%=@game.player_2.name%>: Won <%=@game.player_2.win_count%>, Drawn <%=@game.player_2.draw_count%>, Lost <%=@game.player_2.lose_count%></p>
   </div>
 </div>
 
