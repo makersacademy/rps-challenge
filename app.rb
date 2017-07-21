@@ -24,10 +24,6 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/rps' do
-    erb :rps
-  end
-
   get '/result' do
     @game.choose(params[:choice])
     erb @game.result
