@@ -1,18 +1,7 @@
 # RPS Challenge
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
 Task
 ----
-
-Knowing how to build web applications is getting us almost there as web developers!
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
@@ -28,28 +17,18 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+My app has the following functionality to fulfil these user stories
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
+- the marketeer can enter their name before the game
+- the marketeer is presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
+- the game keeps track of the number of rounds played and win/lose/draw of both players
 
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 ## Basic Rules
 
@@ -57,30 +36,91 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## Instructions for playing the game
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+visit: [app-rock-paper-scissors.herokuapp.com](https://app-rock-paper-scissors.herokuapp.com) to play it online!
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+or to play locally on your computer...
 
-Notes on test coverage
-----------------------
+Set up:
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+In the terminal type:
+``` terminal
+git clone git@github.com:ryandav/rps-challenge.git
+bundle
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+To run the game form the terminal:
+``` terminal
+ruby app.rb
+```
+
+In your browser address bar type in the following:
+
+```browser
+localhost:4567
+```
+
+To play:
+
+- Enter your name and click on submit
+- choose an option from 'rock', 'paper' or 'scissors'
+- The computer will choose and option
+- You will be sent to a page that tells you if you win, lose or draw
+- You can then click on `Next Round` to keep playing
+- You can reset the game by clicking `Reset game` on the `/play` page
+
+*Program design*
+
+- Test frameworks: Rspec, Capybara
+- Web app framework: Sinatra
+- Programming language: Ruby
+
+*Controller*
+
+- In app.rb the controllers are kept very thin, and it just has one or two lines per block. Game logic is executed in game and player lib files. This helps to ensure code is testable, maintainable and reusable.
+
+```ruby
+before do
+  @game = Game.instance
+end
+
+get '/' do
+  erb(:index)
+end
+
+post '/name' do
+  @game = Game.create(params[:name])
+  redirect '/play'
+end
+
+get '/play' do
+  erb(:play)
+end
+
+get '/result' do
+  @game.choose(params[:choice])
+  erb @game.result
+end
+
+get '/restart' do
+  @game.set_up_game
+  redirect '/'
+end
+```
+
+*Views*
+- index: show the name of the game, an image of how 'rock, paper, scissors' works, and entry form for the player name, and submit button
+- play: gives the user the options of 'rock, paper and scissors' buttions to select the choice, also shows a running score of rounds, win/lose/draw counts for the players
+- win, lose, draw: these pages show the result of the game, where the player's choice is compared against the computer's choice, with the option to play next round
+
+*Classes*
+
+- Game: this contains the game logic through the choose(weapon) method, which sets the current player and opponent weapons, then increments the tally of rounds, win/lose/draws for each player. It also has a method to set the game to its initial state, for restarting the game. This class uses a variation of the singleton pattern so that it can store an instance of itself in the Game class, which means that it can store data without global variables beyond each Sinatra get / post block.
+- Player: stores a name, current weapon (choice of 'rock', 'paper', or 'scissors'), as well as methods for incrementing and reading the win, lose and draw counts of the player. The choose_weapon method has an option to give a random weapon if none are given, which means there can be a computer controlled opponent.
+
+*Module*
+
+- RPSImages: This is a hash of the images used for the rock, paper and scissors in the win, lose, draw pages. I include it in the app.rb file and reference it in these three views.
+
+Reviewers will potentially be using this [code review rubric](docs/review.md).
