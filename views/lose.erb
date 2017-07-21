@@ -15,15 +15,15 @@ div.container {
 
 <div class = "container">
 <div style="float:left;width:30%;" align="center">
-  <p><%= @game.name %> chose <%= @game.choice %></p>
-  <%= @game.image(@game.choice) %>
+  <p><%= @game.current_player.name %> chose <%= @game.choice %></p>
+  <%= get_image(@game.choice) %>
 </div>
 
 <div class="container"><h2>VS</h2></div>
 
 <div style="float:right;width:30%;" align="center">
   <p>Computer chose <%= @game.opponent_choice %></p>
-  <%= @game.image(@game.opponent_choice) %>
+  <%= get_image(@game.opponent_choice) %>
 </div>
 </div>
 <br>

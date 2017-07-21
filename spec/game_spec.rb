@@ -9,7 +9,7 @@ describe Game do
   end
 
   it 'should store a name for the player' do
-    expect(game.name).to eq name
+    expect(game.current_player.name).to eq name
   end
   context 'win, lose draw' do
     it 'should register win for winning combinations of rps' do

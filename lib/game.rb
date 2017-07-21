@@ -1,16 +1,17 @@
 require_relative 'rps_images'
+require_relative 'player'
 
 class Game
 
   include RPSImages
 
-  attr_reader :name, :choice, :opponent_choice, :rounds, :win_count, :draw_count, :lose_count
+  attr_reader :current_player, :choice, :opponent_choice, :rounds, :win_count, :draw_count, :lose_count
 
-  CHOICES = ['rock', 'paper', 'scissors']
-  WIN = [ ['rock','scissors'], ['paper','rock'], ['scissors','paper'] ]
+  WIN = [['rock', 'scissors'], ['paper', 'rock'], ['scissors', 'paper']]
 
-  def initialize (name)
-    @name = name
+  def initialize(player_name, player_class = Player)
+    @player1 = player_class.new(player_name)
+    @current_player = @player1
     set_up_game
   end
 
@@ -29,17 +30,10 @@ class Game
     @rounds = 0
   end
 
-  def image(rps)
-    get_image(rps)
-  end
-
-  def outcome
-    @history.last
-  end
-
   def choose(player_choice, opponent_choice = nil)
+    @current_player.choose_weapon(player_choice)
     @choice = player_choice
-    @opponent_choice = opponent_choice ||= random_choice
+    @opponent_choice = opponent_choice ||= Player::random_weapon
     win? ? (@win_count += 1) : draw? ? (@draw_count += 1) : (@lose_count += 1)
     @rounds += 1
   end
@@ -50,16 +44,12 @@ class Game
 
   private
 
-  def random_choice
-    CHOICES.sample
-  end
-
   def draw?
     @choice == @opponent_choice
   end
 
   def win?
-    WIN.include? [ @choice, @opponent_choice ]
+    WIN.include? [@choice, @opponent_choice]
   end
 
 end
