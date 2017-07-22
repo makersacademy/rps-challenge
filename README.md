@@ -48,6 +48,7 @@ In the terminal type:
 ``` terminal
 git clone git@github.com:ryandav/rps-challenge.git
 bundle
+cd rps-challenge
 ```
 
 To run the game form the terminal:
