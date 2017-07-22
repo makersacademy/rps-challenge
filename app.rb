@@ -2,7 +2,6 @@ require_relative 'lib/game'
 require_relative 'lib/rps_images'
 require 'sinatra'
 
-
 class RPS < Sinatra::Base
 
   include RPSImages

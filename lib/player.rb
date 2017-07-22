@@ -1,5 +1,7 @@
 class Player
 
+  WEAPONS = ['rock', 'paper', 'scissors']
+
   attr_reader :name, :weapon, :win_count, :draw_count, :lose_count
 
   def initialize(name)
@@ -14,7 +16,7 @@ class Player
   end
 
   def self.random_weapon
-    ['rock', 'paper', 'scissors'].sample
+    WEAPONS.sample
   end
 
   def win
