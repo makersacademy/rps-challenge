@@ -11,7 +11,7 @@ class Game
     @player_2 = player_class.new(player_2_name)
     @current_player = @player_1
     @opponent = @player_2
-    set_up_game
+    @rounds = 0
   end
 
   def self.create(player_1_name, player_2_name = "Computer", player_class = Player)
@@ -20,10 +20,6 @@ class Game
 
   def self.instance
     @game
-  end
-
-  def set_up_game
-    @rounds = 0
   end
 
   def choose(player_choice, opponent_choice = nil)
