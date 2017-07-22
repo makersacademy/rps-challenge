@@ -5,11 +5,6 @@ describe Game do
   let(:player_1) { double(:player) }
   let(:player_2) { double(:player) }
 
-  # before do
-  #   allow(player_1).to receive(:name) { "Holden Caulfield" }
-  #   allow(player_2).to receive(:name) { "HAL" }
-  # end
-
   describe "#player_1" do
     it "returns player 1" do
       expect(game.player_1).to eq player_1
@@ -34,6 +29,12 @@ describe Game do
       allow(player_1).to receive(:weapon) { "rock" }
       allow(player_2).to receive(:weapon) { "scissors" }
       expect(game.winner).to eq player_1
+    end
+
+    it "returns a draw if no player has won" do
+      allow(player_1).to receive(:weapon) { "rock" }
+      allow(player_2).to receive(:weapon) { "rock" }
+      expect(game.winner).to eq :draw
     end
   end
 

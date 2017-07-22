@@ -22,11 +22,11 @@ class Game
   def winner
     return player_1 if WINNERS.include?(match)
     return player_2 if LOSERS.include?(match)
-    "draw"
+    :draw
   end
 
   def loser
-    players.select { |player| player != winner }.first
+    players.reject { |player| player == winner }.first
   end
 
   private

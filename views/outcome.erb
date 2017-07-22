@@ -1,8 +1,12 @@
-<%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %><br>
-<%= @game.player_2.name %> played <%= @game.player_2.weapon.capitalize %>
+<p><%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %></p>
+<p><%= @game.player_2.name %> played <%= @game.player_2.weapon.capitalize %></p>
 
-<% if @game.winner == "draw" %>
-It's a draw!!
+<% if @game.winner == :draw %>
+<p>It's a draw!!</p>
 <% else %>
-<%= @game.winner.weapon.capitalize %> beats <%= @game.loser.weapon.capitalize %>! <%= @game.winner.name %> wins!!
+<p><%= @game.winner.weapon.capitalize %> beats <%= @game.loser.weapon.capitalize %>! <%= @game.winner.name %> wins!!</p>
 <% end %>
+
+<form action="/">
+  <input type="submit" value="Play again?">
+</form>
