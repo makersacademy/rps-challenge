@@ -23,9 +23,6 @@ class Game
   end
 
   def set_up_game
-    @win_count = 0
-    @draw_count = 0
-    @lose_count = 0
     @rounds = 0
   end
 

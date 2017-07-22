@@ -88,31 +88,34 @@ To play:
 - In app.rb the controllers are kept very thin, and it just has one or two lines per block. Game logic is executed in game and player lib files. This helps to ensure code is testable, maintainable and reusable.
 
 ```ruby
-before do
-  @game = Game.instance
-end
+class RPS < Sinatra::Base
 
-get '/' do
-  erb(:index)
-end
+  include RPSImages
 
-post '/name' do
-  @game = Game.create(params[:player_1_name], params[:player_2_name])
-  redirect '/play'
-end
+  before do
+    @game = Game.instance
+  end
 
-get '/play' do
-  erb(:play)
-end
+  get '/' do
+    erb(:index)
+  end
 
-get '/result' do
-  @game.choose(params[:choice])
-  erb(:result)
-end
+  post '/name' do
+    @game = Game.create(params[:player_1_name])
+    redirect '/play'
+  end
 
-get '/restart' do
-  @game.set_up_game
-  redirect '/'
+  get '/play' do
+    erb(:play)
+  end
+
+  get '/result' do
+    @game.choose(params[:choice])
+    erb(:result)
+  end
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
 ```
 
