@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -7,6 +8,7 @@ class RPS < Sinatra::Base
 
   before do
     @game = Game.new(session)
+    @computer = Computer.new
   end
 
   get '/' do
@@ -24,7 +26,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:player_choice] = params[:player_choice]
-    session[:computer_choice] = @game.choose
+    session[:computer_choice] = @computer.choose
     redirect '/play'
   end
 

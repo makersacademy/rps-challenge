@@ -5,5 +5,5 @@ def sign_in_and_play
 end
 
 def messages
-  [:Rock, :Paper, :Scissors].map { |choice| "Comp choice: #{choice.to_s}" }
+  [:Rock, :Paper, :Scissors].map { |choice| "Comp choice: #{choice}" }
 end
