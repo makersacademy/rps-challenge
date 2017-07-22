@@ -6,11 +6,11 @@ describe Game do
   let(:player_2) { double(:computer, name: 'Computer') }
 
   describe 'initialisation' do
-    it 'returns player 1' do
+    it 'sets player 1' do
       expect(game.player_1).to eq player_1
     end
 
-    it 'returns player 2' do
+    it 'sets player 2' do
       expect(game.player_2).to eq player_2
     end
 

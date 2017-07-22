@@ -4,8 +4,12 @@ describe Player do
   subject(:player) { described_class.new("Sheldon") }
 
   describe 'initialisation' do
-    it 'returns a name' do
+    it 'sets a name' do
       expect(player.name).to eq "Sheldon"
+    end
+
+    it 'has no weapon' do
+      expect(player.weapon).to be_nil
     end
   end
 
