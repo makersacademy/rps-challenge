@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   subject(:game) { described_class.new(params) }
 
-  let(:params) { { 'player_name' => 'Coop', 'player_choice' => :paper, 'computer_choice' => :rock } }
+  let(:params) { { 'player_name' => 'Coop', 'player_choice' => :Paper, 'computer_choice' => :Rock } }
 
   describe '#player' do
     it 'player has a name' do
@@ -11,11 +11,11 @@ describe Game do
     end
 
     it 'player has a choice' do
-      expect(game.player_choice).to eq :paper
+      expect(game.player_choice).to eq :Paper
     end
 
     it 'computer has a choice' do
-      expect(game.computer_choice).to eq :rock
+      expect(game.computer_choice).to eq :Rock
     end
   end
 

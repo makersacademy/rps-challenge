@@ -13,17 +13,17 @@ class Game
     while (player == 'Scissors' || player == 'Rock' || player == 'Paper')
       if (player == computer)
         string += 'We have a draw!'
-      elsif (player = 'Rock' && computer == 'Scissors')
+      elsif (player == 'Rock' && computer == 'Scissors')
         string += 'Rock beats Scissors: ' + @player_name + ' wins!'
-      elsif (player = 'Rock' && computer == 'Paper')
+      elsif (player == 'Rock' && computer == 'Paper')
         string += 'Rock loses to Paper: Computer wins!'
-      elsif (player = 'Paper' && computer == 'Rock')
+      elsif (player == 'Paper' && computer == 'Rock')
         string += 'Paper beats Rock: ' + @player_name + ' wins!'
-      elsif (player = 'Paper' && computer == 'Scissors')
+      elsif (player == 'Paper' && computer == 'Scissors')
         string += 'Paper loses to Scissors: Computer wins!'
-      elsif (player = 'Scissors' && computer == 'Paper')
+      elsif (player == 'Scissors' && computer == 'Paper')
         string += 'Scissors beats Paper: ' + @player_name + ' wins!'
-      elsif (player = 'Scissors' && computer == 'Rock')
+      elsif (player == 'Scissors' && computer == 'Rock')
         string += 'Scissors loses to Rock: Computer wins!'
       end
       break

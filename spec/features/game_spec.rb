@@ -26,4 +26,9 @@ feature 'Game play for Paper, Scissors, Rock' do
     response = find(:css, "#comp").text.strip
     expect(messages).to include response
   end
+
+  scenario 'I can see if I have won' do
+    click_button('Rock')
+    expect(page).to have_content 'win'
+  end
 end
