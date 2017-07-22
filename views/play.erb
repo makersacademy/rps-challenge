@@ -1,11 +1,17 @@
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-
+<head>
+<link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+<div class="container4">
+<center><h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 <form action="/weapons" method="post">
-  <label for="options">Choose:</label>
-    <select name="options">
+    <select name="options" required>
+      <option disabled selected value> -- Choose Wisely -- </option>
       <option value="rock">Rock</option>
       <option value="paper">Paper</option>
       <option value="scissors">Scissors</option>
-    </select>
-    <input type="submit" value="Play!">
-</form>
+    </select><br>
+    <button type="submit">Play!</button>
+</form></center>
+</div>
+</body>
