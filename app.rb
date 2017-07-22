@@ -9,11 +9,17 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player_name] = params[:player_name]
-    redirect '/battle'
+    redirect '/weapons'
   end
 
-  get '/battle' do
+  get '/weapons' do
     @player_name = session[:player_name]
+    erb :weapons
+  end
+
+  post '/battle' do
+    @player_name = session[:player_name]
+    @player_weapon = params[:rock] || params[:paper] || params[:scissors]
     erb :battle
   end
 

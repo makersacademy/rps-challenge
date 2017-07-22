@@ -6,9 +6,7 @@ feature 'player can register name' do
   end
 
   scenario 'player can enter their name' do
-    visit '/'
-    fill_in :player_name, with: 'Dave'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content 'OK Dave - choose your weapon!'
   end
 end
