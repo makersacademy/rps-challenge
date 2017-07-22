@@ -1,7 +1,7 @@
 # RPS Challenge
 
 
-![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png "Rock, Paper, Scissors Challenge")
+![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png)
 
 ![](http://cricket.upcomingwiki.com/sites/default/files/styles/large/public/field/image/rising-pune-supergiants-team-players-list-2017-ipl-cricket-upcoming-wiki_0.jpg)
 
