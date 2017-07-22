@@ -5,8 +5,9 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post 'play' do
+  post '/name' do
     @name = params[:name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
