@@ -3,3 +3,7 @@ def sign_in_and_play
   fill_in('player_name', with: 'Player Name')
   click_button 'Submit'
 end
+
+def messages
+  [:Rock, :Paper, :Scissors].map { |choice| "Comp choice: #{choice.to_s}" }
+end

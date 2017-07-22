@@ -25,8 +25,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @computer = Computer.new
-    @comp_choice = @computer.choose
+    @comp_choice = Computer.new.choose
     @choice = session[:choice]
     erb :play
   end
