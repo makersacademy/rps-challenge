@@ -126,7 +126,7 @@ end
 
 *Classes*
 
-- Game: this contains the game logic through the choose(weapon) method, which sets the current player and opponent weapons, then increments the tally of rounds, win/lose/draws for each player. It also has a method to set the game to its initial state, for restarting the game. This class uses a variation of the singleton pattern so that it can store an instance of itself in the Game class, which means that it can store data without global variables beyond each Sinatra get / post block.
+- Game: this contains the game logic through the `choose(weapon)` method, which sets the current player and opponent weapons, then increments the tally of rounds, win/lose/draws for each player. The `result` method returns the last round's win/lose/draw result. It also has a `create` method to set up the game with a player name and `instance` method to retrieve it from within the class. This class uses a variation of the singleton pattern so that it can store an instance of itself in the Game class, which means that it can store data without global variables beyond each Sinatra get / post block.
 - Player: stores a name, current weapon (choice of 'rock', 'paper', or 'scissors'), as well as methods for incrementing and reading the win, lose and draw counts of the player. The choose_weapon method has an option to give a random weapon if none are given, which means there can be a computer controlled opponent.
 
 *Module*
