@@ -7,7 +7,6 @@ describe Computer do
 
   describe '#computers_move' do
     it 'outputs a random move' do
-      # allow(computer_1).to receive(:computers_move).and_return('Scissors')
       expect(computer_1.computers_move).to eq 'Scissors'
     end
   end

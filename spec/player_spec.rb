@@ -9,4 +9,8 @@ describe Player do
       expect(player.name).to eq "Fred"
     end
   end
+
+  # describe '#player_move' do
+  #   it ""
+  # end
 end
