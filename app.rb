@@ -17,9 +17,15 @@ class RPS < Sinatra::Base
     erb :weapons
   end
 
-  post '/battle' do
+  post '/choices' do
+    session[:player_weapon] = params[:rock] || params[:paper] || params[:scissors]
+    redirect '/battle'
+  end
+
+  get '/battle' do
     @player_name = session[:player_name]
-    @player_weapon = params[:rock] || params[:paper] || params[:scissors]
+    @player_weapon = session[:player_weapon]
+    @computer_weapon = ['ROCK','PAPER','SCISSORS'].sample
     erb :battle
   end
 
