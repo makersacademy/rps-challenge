@@ -1,6 +1,9 @@
 # RPS Challenge
 
-![Screenshot](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png?dl=0)
+
+![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png?dl=0 "Rock, Paper, Scissors Challenge")
+
+
 
 Task
 ----
