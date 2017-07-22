@@ -20,9 +20,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    p params[:Rock]
-    p params[:Paper]
+    if params[:Rock]
+      object = params[:Rock]
+    elsif  params[:Paper]
+      object = params[:Paper]
+    else
+      object = params[:Scissors]
+    end
+      Game.instance.human_select(object)
+      erb :result
   end
+
+
 
   run! if app_file == $0
 
