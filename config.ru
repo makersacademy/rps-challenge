@@ -1,2 +1,3 @@
-require_relative './app/rps_web'
-run RPSWeb
+require_relative './app/app'
+
+run RpsWeb.new
