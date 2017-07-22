@@ -5,14 +5,14 @@ feature 'win, lose, draw' do
   end
   scenario 'win' do
     click_on "rock"
-    expect(page).to have_text('You win!')
+    expect(page).to have_text('win')
   end
   scenario 'lose' do
     click_on "paper"
-    expect(page).to have_text('You lose!')
+    expect(page).to have_text('lose')
   end
   scenario 'draw' do
     click_on "scissors"
-    expect(page).to have_text('It\'s a draw')
+    expect(page).to have_text('draw')
   end
 end
