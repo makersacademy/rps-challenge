@@ -1,0 +1,49 @@
+/* CSS
+
+1. Main
+2. Flexbox
+3. Forms
+4. Index page
+*/
+/* Variables */
+/* 1. Main */
+body {
+  background-color: #E1E1E1;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #000000; }
+
+/* 2. Flexbox */
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .container .box {
+    align-self: center;
+    margin: auto;
+    align-content: center;
+    text-align: center; }
+
+/* 3. Forms */
+form .input {
+  width: 18em;
+  height: 2.8em;
+  font-size: 1em;
+  padding-left: 1em;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 2em; }
+
+form .submit {
+  font-size: 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.8em 1.8em 0.8em 1.8em; }
+
+/* 4. /index */
+.rps-hero {
+  width: 60%;
+  margin-bottom: 2em; }

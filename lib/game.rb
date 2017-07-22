@@ -8,7 +8,7 @@ class Game
     @computer_choice = options["computer_choice"]
   end
 
-  def winner(player = @player_choice, computer = @computer_choice)
+  def winner?(player = @player_choice, computer = @computer_choice)
     string = ''
     while (player == 'Scissors' || player == 'Rock' || player == 'Paper')
       if (player == computer)

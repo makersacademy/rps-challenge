@@ -27,8 +27,24 @@ feature 'Game play for Paper, Scissors, Rock' do
     expect(messages).to include response
   end
 
-  scenario 'I can see if I have won' do
-    click_button('Rock')
-    expect(page).to have_content 'win'
+  context 'game close' do
+    before do
+      srand()
+    end
+
+    scenario 'I can see if I have won' do
+      click_button('Paper')
+      expect(page).to have_content 'beats'
+    end
+
+    scenario 'I can see if I have lost' do
+      click_button('Rock')
+      expect(page).to have_content 'lose'
+    end
+
+    scenario 'I can see if I have drawn' do
+      click_button('Scissor')
+      expect(page).to have_content 'draw'
+    end
   end
 end

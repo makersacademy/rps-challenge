@@ -26,12 +26,12 @@ describe Game do
 
     it 'ascertains if there is a draw' do
       message = 'We have a draw!'
-      expect(game.winner(player_one, player_two)).to eq message
+      expect(game.winner?(player_one, player_two)).to eq message
     end
 
     it 'ascertains if a player has won' do
-      message = 'Rock beats Scissors: Coop wins!'
-      expect(game.winner(player_three, player_one)).to eq message
+      message = 'Paper loses to Scissors: Computer wins!'
+      expect(game.winner?(player_three, player_one)).to eq message
     end
   end
 end
