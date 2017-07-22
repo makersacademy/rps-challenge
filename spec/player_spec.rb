@@ -12,4 +12,11 @@ describe Player do
       expect(described_class.new.name).to eq "HAL"
     end
   end
+
+  describe "#play_weapon" do
+    it "sets the player's weapon" do
+      player.play_weapon("rock")
+      expect(player.weapon).to eq "rock"
+    end
+  end
 end

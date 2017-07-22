@@ -1,7 +1,11 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 
-<form action="/outcome">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/weapons" method="post">
+  <label for="options">Choose:</label>
+    <select name="options">
+      <option value="rock">Rock</option>
+      <option value="paper">Paper</option>
+      <option value="scissors">Scissors</option>
+    </select>
+    <input type="submit" value="Play!">
 </form>
