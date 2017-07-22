@@ -91,7 +91,7 @@ get '/' do
 end
 
 post '/name' do
-  @game = Game.create(params[:name])
+  @game = Game.create(params[:player_1_name], params[:player_2_name])
   redirect '/play'
 end
 
@@ -101,7 +101,7 @@ end
 
 get '/result' do
   @game.choose(params[:choice])
-  erb @game.result
+  erb(:result)
 end
 
 get '/restart' do
@@ -112,8 +112,8 @@ end
 
 *Views*
 - index: show the name of the game, an image of how 'rock, paper, scissors' works, and entry form for the player name, and submit button
-- play: gives the user the options of 'rock, paper and scissors' buttions to select the choice, also shows a running score of rounds, win/lose/draw counts for the players
-- win, lose, draw: these pages show the result of the game, where the player's choice is compared against the computer's choice, with the option to play next round
+- play: gives the user the options of 'rock, paper and scissors' buttons to select the choice, also shows a running score of rounds, win/lose/draw counts for the players
+- result: this shows the result of the game, where the player's choice is compared against the computer's choice, with the option to play next round
 
 *Classes*
 
