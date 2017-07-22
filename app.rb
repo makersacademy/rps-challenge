@@ -22,20 +22,20 @@ class RPS < Sinatra::Base
     player_2 = session[:player_2]
 
     player_1_pick = params[:pick]
-    if pick == 'rock'
+    if player_1_pick == 'rock'
       player_1.rock
-    elsif pick == 'paper'
+    elsif player_1_pick == 'paper'
       player_1.paper
-    elsif pick == 'scissors'
+    elsif player_1_pick == 'scissors'
       player_1.scissors
     end
 
     player_2_pick = ['rock', 'paper', 'scissors'].sample
-    if pick == 'rock'
+    if player_2_pick == 'rock'
       player_2.rock
-    elsif pick == 'paper'
+    elsif player_2_pick == 'paper'
       player_2.paper
-    elsif pick == 'scissors'
+    elsif player_2_pick == 'scissors'
       player_2.scissors
     end
 
@@ -43,10 +43,9 @@ class RPS < Sinatra::Base
   end
 
   get '/showdown' do
-    player_1 = session[:player_1]
-    player_1 = session[:player_2]
-    "#{player_1.name} plays #{player_1.pick}!"
-    "#{player_2.name} plays #{player_2.pick}!"
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb :showdown
   end
 
   get '/play' do

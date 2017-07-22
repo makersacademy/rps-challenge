@@ -19,5 +19,5 @@ describe Player do
       player.rock
       expect(player.pick).to eq 'rock'
     end
-  end
+  end  
 end
