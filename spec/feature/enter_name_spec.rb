@@ -1,6 +1,6 @@
 feature "Enter name" do
   scenario "submitting name" do
     sign_in_and_play
-    expect(page).to have_content "Eoin"
+    expect(page).to have_content "Player: Eoin"
   end
 end
