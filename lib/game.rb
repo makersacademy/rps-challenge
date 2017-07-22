@@ -1,9 +1,6 @@
-require_relative 'rps_images'
 require_relative 'player'
 
 class Game
-
-  include RPSImages
 
   attr_reader :player_1, :player_2, :current_player, :opponent, :rounds
 
@@ -39,17 +36,17 @@ class Game
     @rounds += 1
   end
 
-  def win_lose_draw
-    win? ? (@current_player.win; @opponent.lose) :
-    draw? ? (@current_player.draw; @opponent.draw) :
-    (@current_player.lose; @opponent.win)
-  end
-
   def result
     draw? ? :draw : win? ? :win : :lose
   end
 
   private
+
+  def win_lose_draw
+    win? ? (@current_player.win; @opponent.lose) :
+    draw? ? (@current_player.draw; @opponent.draw) :
+    (@current_player.lose; @opponent.win)
+  end
 
   def draw?
     @current_player.weapon == @opponent.weapon

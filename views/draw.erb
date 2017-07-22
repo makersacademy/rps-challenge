@@ -12,7 +12,13 @@ div.container {
   <br>
 <h3>It's a draw!</h3>
 </div>
-
+<br>
+<div align="center">
+  <form action="/play" method="get">
+    <input type="submit" value="Next round">
+  </form>
+</div>
+<br>
 <div class = "container">
 <div style="float:left;width:30%;" align="center">
   <p><%= @game.current_player.name %> chose <%= @game.current_player.weapon %></p>
@@ -25,10 +31,4 @@ div.container {
   <p><%=@game.opponent.name%> chose <%= @game.opponent.weapon %></p>
   <%= get_image(@game.opponent.weapon) %>
 </div>
-</div>
-<br>
-<div align="center">
-  <form action="/play" method="get">
-    <input type="submit" value="Next round">
-  </form>
 </div>
