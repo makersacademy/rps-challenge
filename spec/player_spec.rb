@@ -14,4 +14,19 @@ describe Player do
     expect(player.weapon).to eq "rock"
   end
 
+  it 'should keep track of wins' do
+    player.win
+    expect(player.win_count).to eq 1
+  end
+
+  it 'should keep track of losses' do
+    player.lose
+    expect(player.lose_count).to eq 1
+  end
+
+  it 'should keep track of draws' do
+    player.draw
+    expect(player.draw_count).to eq 1
+  end
+
 end
