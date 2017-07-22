@@ -3,9 +3,12 @@ require 'sinatra/base'
 class RPS < Sinatra::Base
 
   get '/' do
-    'Hello world'
+    erb :homepage
   end
 
-  # start the server if ruby file executed directly
+  post '/enter-name' do
+    erb :enter_name
+  end
+
   run! if app_file == $0
 end

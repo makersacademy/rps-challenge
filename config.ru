@@ -1,2 +1,2 @@
-require_relative "./app"
+require "./lib/app.rb"
 run RPS
