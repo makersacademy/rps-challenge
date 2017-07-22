@@ -73,9 +73,13 @@ To play:
 - You can then click on `Next Round` to keep playing
 - You can reset the game by clicking `Reset game` on the `/play` page
 
+*Test frameworks*
+
+- Rspec, Capybara
+- To run the tests type in `rspec` into the terminal. The unit tests are stored in the `spec` folder, while the feature tests are stored in `spec/features`.
+
 *Program design*
 
-- Test frameworks: Rspec, Capybara
 - Web app framework: Sinatra
 - Programming language: Ruby
 
