@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway">
+    <title>Greeting Page</title>
+  </head>
+  <style>
+
+    body {
+    background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+    font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    }
+  </style>
+
+  <body>
+    <div>
+      <h1>Welcome <%= @player %></h1>
+      <h2> press play to start the game</h2>
+      <form action="/play">
+        <input type="submit" value="Play">
+      </form>
+    </div>
+  </body>
+
+</html>
