@@ -26,10 +26,6 @@ My app has the following functionality to fulfil these user stories
 - a winner will be declared
 - the game keeps track of the number of rounds played and win/lose/draw of both players
 
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
 ## Basic Rules
 
 - Rock beats Scissors
