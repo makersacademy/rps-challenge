@@ -10,4 +10,10 @@ class RPSweb < Sinatra::Base
     erb :index
   end
 
+  post '/play' do
+    p params
+    @name = params[:player_name]
+    erb :play
+  end
+
 end

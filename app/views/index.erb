@@ -1,2 +1,34 @@
-<h1>Rock, Paper, Scissors</h1>
-<h2>Sign in to play</h2>
+<!DOCTYPE html>
+<head>
+<style>
+  body {
+    text-align: center;
+    background: url("http://i.imgur.com/UZa6Hu7.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-family: trebuchet;
+    font-size: 40px;
+   }
+  input[type="submit"] {
+    background: grey;
+    color: white;
+    font-size: 18px;
+   }
+  input[type=text] {
+     font-size: 18px;
+     color: white
+     border: 0;
+   }
+</style>
+</head>
+<body>
+<h1>Rock Paper Scissors</h1>
+<h2>Sign-in to play</h2>
+<form action="/play" method="post">
+    <input type="text" name="player_name" placeholder="Your name">
+  <input type="submit" value="Submit">
+</form>
+</body>
