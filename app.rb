@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
   post '/selection' do
     @player_name = params[:player_name]
     p params
-    @selection = params[:Selection]
+    @selection = params[:selection]
     erb :selection
   end
 
