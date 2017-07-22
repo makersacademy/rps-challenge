@@ -2,7 +2,7 @@
 
 ## Challenge notes
 
-Completed
+Complete
 -------
 - [x] Server setup
 - [x] Testing setup
@@ -11,11 +11,13 @@ Completed
 - [x] User can choose option
 - [x] Computer can choose option
 - [x] Incorporated SASS
-
+- [x] A winner is declared
 
 Incomplete
 -------
-- [ ] A winner is declared
+- [ ] DRY up Paper, Scissors, Rock
+- [ ] 100% testing
+- [ ] Break out messages
 - [ ] Multiplayer functionality
 - [ ] Incorporated 'Special Rules'
 - [ ] Styled app

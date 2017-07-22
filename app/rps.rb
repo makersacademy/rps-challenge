@@ -9,6 +9,7 @@ class RPS < Sinatra::Base
   before do
     @game = Game.new(session)
     @computer = Computer.new
+    session[:computer_choice] = @computer.choose
   end
 
   get '/' do
@@ -25,8 +26,8 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
+    p params
     session[:player_choice] = params[:player_choice]
-    session[:computer_choice] = @computer.choose
     redirect '/play'
   end
 

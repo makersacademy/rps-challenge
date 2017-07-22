@@ -1,3 +1,4 @@
 /**/.DS_Store
 /coverage
-.sass-cache
+.sass-cache/
+*.css.map

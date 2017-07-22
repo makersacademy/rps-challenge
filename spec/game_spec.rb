@@ -18,4 +18,20 @@ describe Game do
       expect(game.computer_choice).to eq :rock
     end
   end
+
+  describe '#judging' do
+    let(:player_one) { 'Scissors' }
+    let(:player_two) { 'Scissors' }
+    let(:player_three) { 'Paper' }
+
+    it 'ascertains if there is a draw' do
+      message = 'We have a draw!'
+      expect(game.winner(player_one, player_two)).to eq message
+    end
+
+    it 'ascertains if a player has won' do
+      message = 'Rock beats Scissors: Coop wins!'
+      expect(game.winner(player_three, player_one)).to eq message
+    end
+  end
 end
