@@ -7,37 +7,38 @@ describe Computer do
     it 'sets a name' do
       expect(computer.name).to eq "Computer"
     end
+
+    it 'has no weapon' do
+      expect(computer.weapon).to be_nil
+    end
   end
 
   describe '#weapon' do
     it 'can choose rock' do
       # Assuming at most 100 tries are sufficient to get rock that has 33% odds
-      weapon = nil
       100.times do
-        weapon = computer.weapon
-        break if weapon == :rock
+        computer.weapon = nil
+        break if computer.weapon == :rock
       end
-      expect(weapon).to eq :rock
+      expect(computer.weapon).to eq :rock
     end
 
     it 'can choose paper' do
       # Assuming at most 100 tries are sufficient to get paper that has 33% odds
-      weapon = nil
       100.times do
-        weapon = computer.weapon
-        break if weapon == :paper
+        computer.weapon = nil
+        break if computer.weapon == :paper
       end
-      expect(weapon).to eq :paper
+      expect(computer.weapon).to eq :paper
     end
 
     it 'can choose scissors' do
       # Assuming at most 100 tries are sufficient to get scissors that has 33% odds
-      weapon = nil
       100.times do
-        weapon = computer.weapon
-        break if weapon == :scissors
+        computer.weapon = nil
+        break if computer.weapon == :scissors
       end
-      expect(weapon).to eq :scissors
+      expect(computer.weapon).to eq :scissors
     end
   end
 

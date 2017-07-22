@@ -30,6 +30,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/select_weapon' do
     @game.player_1.weapon = params[:weapon].to_sym
+    @game.player_2.weapon = nil
     redirect '/result'
   end
 
