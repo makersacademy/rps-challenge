@@ -16,4 +16,8 @@ class Game
     @player.weapon
   end
 
+  def computer_weapon(arg = Computer)
+    arg.weapon
+  end
+
 end

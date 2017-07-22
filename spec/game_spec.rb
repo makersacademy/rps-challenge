@@ -19,4 +19,13 @@ describe Game do
     end
   end
 
+  describe "#computer_weapon" do
+    let(:computer) {double(:computer)}
+    it 'should select pass to Computer class' do
+      allow(computer).to receive(:set_weapon)
+      expect(computer).to receive(:weapon)
+      game.computer_weapon(computer)
+    end
+  end
+
 end
