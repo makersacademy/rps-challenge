@@ -3,7 +3,7 @@
 
 ![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png)
 
-![](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png?dl=0)
+![](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png)
 
 Task
 ----
