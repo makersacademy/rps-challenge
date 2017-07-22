@@ -1,4 +1,5 @@
 require './lib/player.rb'
+require './lib/game.rb'
 require 'sinatra/base'
 
 

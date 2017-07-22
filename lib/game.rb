@@ -9,12 +9,15 @@ class Game
   end
 
   def judge(player_1_pick, player_2_pick)
-    if player_1_pick == 'rock'
-      @winner = ( player_2_pick == 'paper' ? @player_2 : @player_1)
-    elsif player_1_pick == 'paper'
-      @winner = ( player_2_pick == 'scissors' ? @player_2 : @player_1)
-    elsif player_1_pick == 'scissors'
-      @winner = ( player_2_pick == 'rock' ? @player_2 : @player_1)
-    end
+    winhash = { ['rock', 'rock'] => nil,
+                ['rock', 'paper'] => @player_2,
+                ['rock', 'scissors'] => @player_1,
+                ['paper', 'rock'] => @player_1,
+                ['paper', 'paper'] => nil,
+                ['paper', 'scissors'] => @player_2,
+                ['scissors', 'rock'] => @player_2,
+                ['scissors', 'paper'] => @player_1,
+                ['scissors', 'scissors'] => nil }
+    @winner = winhash[ [player_1_pick, player_2_pick] ]
   end
 end
