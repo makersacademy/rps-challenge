@@ -1,23 +1,30 @@
-<table width=100%>
-  <tr>
-    <th>
-      Score: <%= @player_1.name %>: <%= @scorer.score.first %>
-      <%= @player_1.name %> plays <%= @player_1.pick %>!
-    </th>
-    <th>
-      Score: <%= @player_2.name %>: <%= @scorer.score.last %>
-      <%= @player_2.name %> plays <%= @player_2.pick %>!
-    </th>
-  </tr>
-</table>
+<div class="full">
+  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+</div>
+
 <br>
 
-<% if @winner == nil %>
-  Round ended in a draw
-<% else %>
-  <%= @winner.name %> wins the point
-<% end %>
+<div class="one-half">
+  <h3><%= @game.player_1.name %>: <%= @game.scorer.score.first %></h3>
+  <p><%= @game.player_1.name %> plays <%= @game.player_1.pick %>!</p>
+</div>
 
+<div class="one-half">
+  <h3><%= @game.player_2.name %>: <%= @game.scorer.score.last %></h3>
+  <p><%= @game.player_2.name %> plays <%= @game.player_2.pick %>!</p>
+</div>
+
+<br>
+
+<div class='full'>
+<% if @game.winner == nil %>
+  <p>Round ended in a draw</p>
+<% else %>
+  <p><%= @game.winner.name %> wins the point</p>
+<% end %>
 <br>
 <br>
 <a href="/play" class="button">Play another round</a>
+<br>
+<a href="/" class="button">Restart</a>
+</div>

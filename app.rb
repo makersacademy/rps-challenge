@@ -37,15 +37,12 @@ class RPS < Sinatra::Base
   end
 
   get '/showdown' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    @winner = session[:game].winner
-    @scorer = session[:game].scorer
+    @game = session[:game]
     erb :showdown
   end
 
   get '/play' do
-    @player_1_name = session[:player_1].name
+    @game = session[:game]
     erb :play
   end
 end
