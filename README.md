@@ -1,5 +1,14 @@
 # RPS Challenge
 
+## Maker's Academy Week 3 weekend challenge
+
+## How to download and run the app:
+- git clone git@github.com:[USERNAME]/rps-challenge.git
+- cd rps-challenge
+- bundle
+- rackup
+
+
 Instructions
 -------
 
