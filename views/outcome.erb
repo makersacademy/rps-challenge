@@ -1,2 +1,8 @@
-<%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %>
+<%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %><br>
 <%= @game.player_2.name %> played <%= @game.player_2.weapon.capitalize %>
+
+<% if @game.winner == "draw" %>
+It's a draw!!
+<% else %>
+<%= @game.winner.weapon.capitalize %> beats <%= @game.loser.weapon.capitalize %>! <%= @game.winner.name %> wins!!
+<% end %>
