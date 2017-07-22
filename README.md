@@ -1,7 +1,7 @@
 # RPS Challenge
 
 
-![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png?dl=0 "Rock, Paper, Scissors Challenge")
+![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png "Rock, Paper, Scissors Challenge")
 
 
 
