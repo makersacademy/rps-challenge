@@ -12,25 +12,14 @@
   h1, h3 {
     text-shadow: 3px 0 black;
   }
-  label {
-    font-size: 100%;
-  }
-  select {
-    font-size: 75%;
-  }
 </style>
 </head>
 <body>
 <h1> Rock, Paper, Scissors </h1>
 <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
-<form action="/select_weapon" method="post">
-  <label>Take a pick: </label>
-  <select name="weapon">
-    <option value="rock">Rock</option>
-    <option value="paper">Paper</option>
-    <option value="scissors">Scissors</option>
-  </select>
-  <br><br>
-  <input style="font-size: 100%" type='submit' value='Submit'>
+<%= @game.player_1.name %>: <%= @game.player_1.weapon.capitalize %>
+<br><br>
+<form action="/play" method="get">
+  <input style="font-size: 100%" type="submit" value="OK">
 </form>
 </body>

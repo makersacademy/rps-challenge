@@ -14,9 +14,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = @game.player_1
-    @player_2 = @game.player_2
     erb(:play)
+  end
+
+  get '/result' do
+    erb(:win)
   end
 
   post '/enter_name' do
@@ -24,6 +26,11 @@ class RockPaperScissors < Sinatra::Base
     player_2 = Computer.new("Computer")
     Game.create(player_1, player_2)
     redirect '/play'
+  end
+
+  post '/select_weapon' do
+    @game.player_1.weapon = params[:weapon].to_sym
+    redirect '/result'
   end
 
   run! if app_file == $0
