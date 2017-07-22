@@ -20,6 +20,6 @@ class Scorer
 
 private
   def set_score
-    @score = [ @player_1_score, @player_2_score]
+    @score = [@player_1_score, @player_2_score]
   end
 end

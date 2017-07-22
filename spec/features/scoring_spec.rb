@@ -5,6 +5,6 @@ feature 'FEATURE: Keeping score' do
     fill_in :player_1_name, with: "Toby"
     click_button "submit"
     click_button "scissors"
-    expect(page).to have_text("Score: Toby: 1")
+    expect(page).to have_text("Toby: 1")
   end
 end

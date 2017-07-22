@@ -7,6 +7,17 @@ class Game
     @player_2 = player_2
     @winner = nil
     @scorer = scorer
+    build_outcome_hash
+  end
+
+  def judge(player_1_pick, player_2_pick)
+    @winner = @outcomes[[player_1_pick, player_2_pick]]
+    increase_score
+  end
+
+private
+
+  def build_outcome_hash
     @outcomes = { ['rock', 'rock'] => nil,
                   ['rock', 'paper'] => @player_2,
                   ['rock', 'scissors'] => @player_1,
@@ -17,13 +28,6 @@ class Game
                   ['scissors', 'paper'] => @player_1,
                   ['scissors', 'scissors'] => nil }
   end
-
-  def judge(player_1_pick, player_2_pick)
-    @winner = @outcomes[ [player_1_pick, player_2_pick] ]
-    increase_score
-  end
-
-private
 
   def increase_score
     if @winner == @player_1
