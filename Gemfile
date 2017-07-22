@@ -4,8 +4,10 @@ ruby '2.4.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'rake'
 
 group :test do
+  gem 'pry'
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop'
