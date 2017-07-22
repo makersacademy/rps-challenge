@@ -1,6 +1,19 @@
 body {
   background: #87858a;
 }
+body:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 200;
+    background-image: url(http://imgur.com/jYvJhGQ.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity : 0.2;
+    z-index: -1;
+}
 h1 {
   height: auto;
   width: 440px;
@@ -19,6 +32,8 @@ h1 {
   text-shadow: 2px 0px 0px #000000;
 }
 p {
+  margin-top: 40px;
+  margin-bottom: 40px;
   font: normal normal bold 20px/1 "Courier New", Courier, monospace;
 }
 button {
@@ -58,14 +73,20 @@ div.player1 {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    background: #87858a;
     width: 300px;
     position: absolute;
     top: 10%;
     left: 15%;
-    margin: auto;
-    padding: 60px;
+    padding: 20px;
     overflow: hidden;
-    border: none;
+    border-top: 5px;
+    border-left: 5px;
+    border-right: 5px;
+    border-bottom: 5px;
+    border-color: #4c4b4e;
+    border-style: solid;
+    border-radius: 12px 12px 12px 12px;
     font: normal normal bold 16px/1 "Courier New", Courier, monospace;
     color: rgba(0,0,0,1);
     text-align: center;
@@ -76,14 +97,20 @@ div.player2 {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    background: #87858a;
     width: 300px;
     position: absolute;
     top: 10%;
     right: 15%;
-    margin: auto;
-    padding: 60px;
+    padding: 20px;
     overflow: hidden;
-    border: none;
+    border-top: 5px;
+    border-left: 5px;
+    border-right: 5px;
+    border-bottom: 5px;
+    border-color: #4c4b4e;
+    border-style: solid;
+    border-radius: 12px 12px 12px 12px;
     font: normal normal bold 16px/1 "Courier New", Courier, monospace;
     color: rgba(0,0,0,1);
     text-align: center;

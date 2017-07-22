@@ -3,7 +3,7 @@
 </head>
 <body>
 <center>
-<div class="player1"><p><img src="<%= url(@image1) %>" /><%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %></p></div>
+<div class="player1"><p><%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %></p></div>
 <div class="player2"><p><%= @game.player_2.name %> played <%= @game.player_2.weapon.capitalize %></p></div>
 <div class="container4">
 <% if @game.winner == :draw %>

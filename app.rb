@@ -31,8 +31,6 @@ class RockPaperScissors < Sinatra::Base
 
   get "/outcome" do
     @game = $game
-    @image1 = 
-    @image2 = IMAGES[@game.player_2.weapon]
     erb :outcome
   end
 end
