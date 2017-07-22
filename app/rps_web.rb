@@ -19,4 +19,9 @@ class RPSWeb < Sinatra::Application
   get '/play' do
     erb :play
   end
+
+  post '/playing' do
+    @game.play(params[:weapon]) if @game.player_1.valid_weapon?(params[:weapon])
+    redirect '/play'
+  end
 end

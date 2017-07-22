@@ -220,7 +220,7 @@ class Weapon
   end
 
   def beats?(other)
-    RULES[type][other.type]
+    RULES.key(other).equal? type
   end
 end
 

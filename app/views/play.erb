@@ -14,4 +14,18 @@
   <h1>
   <h2>
     <%= @game.player_1.name %> is playing
+  </h2>
+    <div>
+      <%= @game.player_1.weapon.type.to_s %>
+    </div>
+    <div>
+      <%= @game.player_2.weapon.type.to_s %>
+    </div>
+    <div>
+      <%= @game.results %>
+    </div>
+  <form action="/playing" name="attack_2" method="post">
+    <input type="text" name="weapon">
+    <input type="submit" value="Play" >
+  </form>
 </body>
