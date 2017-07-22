@@ -1,10 +1,9 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Raleway">
-    <title>Greeting Page</title>
+    <title>Result</title>
   </head>
   <style>
-
     body {
     background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fffcdc, #d9a7c7);
@@ -14,14 +13,8 @@
   </style>
 
   <body>
-    <div>
-      <h1>Welcome <%= @game.player.name %></h1>
-
-      <h2>Start the game</h2>
-      <form action="/start_game">
-        <input type="submit" value="Start game">
-      </form>
-    </div>
+    <h2> <%= "#{@game.player.name} chose #{@game.player_weapon}" %> </h2>
+    <h2> <%= "#{@game.computer.name} chose #{@game.computer_weapon}" %> </h2>
+    <div> <%= "The result: #{@game.result}" %> </div>
   </body>
-
 </html>

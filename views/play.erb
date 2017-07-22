@@ -2,8 +2,28 @@
   <head>
     <title>Play Game</title>
   </head>
-  <body>
-    <h1> Choose rock, paper, or scissors</h1>
+  <style>
+    body {
+    background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+    font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    }
+  </style>
 
+  <body>
+    <h1> <%= @game.computer.name %> vs <%= @game.player.name %> </h1>
+
+    <h2>The rules of the game are: </h2>
+      <p>Rock beats Scissors</p>
+      <p>Scissors beats Paper</p>
+      <p>Paper beats Rock</p>
+    <h2>Choose your weapon</h2>
+
+    <form action="/choice" method="post">
+      <input type="submit" name="player_choice" value="rock">
+      <input type="submit" name="player_choice" value="paper">
+      <input type="submit" name="player_choice" value="scissors">
+    </form>
   </body>
 </html>

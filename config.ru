@@ -1,2 +1,2 @@
-require_relative "./RPS"
-run RPS
+require_relative "./rps_web"
+run RPSWeb
