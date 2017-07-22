@@ -1,13 +1,10 @@
 # RPS Challenge
 
-<p align="center">
+<p align="left">
   <img src="http://i.imgur.com/Igl71tC.png" width="350"/>
 </p>
 
 ![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png)
-
-![Imgur](http://i.imgur.com/Igl71tC.png)
-
 
 Task
 ----
