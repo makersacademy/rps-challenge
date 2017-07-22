@@ -1,3 +1,19 @@
 <%= @player_name %> has chosen <%= @player_weapon %>
 
 Computer has chosen <%= @computer_weapon %>
+
+<% if @player_weapon == @computer_weapon %>
+  It's a draw!
+<% elsif @player_weapon == 'ROCK' && @computer_weapon == 'SCISSORS' %>
+  You win!
+<% elsif @player_weapon == 'ROCK' && @computer_weapon == 'PAPER' %>
+  You lose!
+<% elsif @player_weapon == "'PAPER'" && @computer_weapon == 'SCISSORS' %>
+  You lose!
+<% elsif @player_weapon == "'PAPER'" && @computer_weapon == 'ROCK' %>
+  You win!
+<% elsif @player_weapon == 'SCISSORS' && @computer_weapon == 'ROCK' %>
+  You lose!
+<% else @player_weapon == 'SCISSORS' && @computer_weapon == 'PAPER' %>
+  You win!
+<% end %>
