@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,7 +9,6 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    p params
     session[:player_name] = params[:player_name]
     session[:player_name]
     redirect '/game'
@@ -19,15 +19,16 @@ class RPS < Sinatra::Base
     erb :game
   end
 
-  post '/choice' do
+  post '/play' do
     session[:choice] = params[:choice]
-    redirect '/result'
+    redirect '/play'
   end
 
-  get '/result' do
-    p params
+  get '/play' do
+    @computer = Computer.new
+    @comp_choice = @computer.choose
     @choice = session[:choice]
-    erb :result
+    erb :play
   end
 
   get '/css/style.css' do
