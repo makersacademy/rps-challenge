@@ -1,5 +1,6 @@
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/scorer.rb'
 require 'sinatra/base'
 
 
@@ -39,6 +40,7 @@ class RPS < Sinatra::Base
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
     @winner = session[:game].winner
+    @scorer = session[:game].scorer
     erb :showdown
   end
 
