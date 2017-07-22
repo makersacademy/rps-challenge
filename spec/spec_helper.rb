@@ -1,6 +1,11 @@
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
+require 'rspec'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = RPS
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,3 +21,24 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+ENV['RACK_ENV'] = 'test'
+
+
+
+# require our Sinatra app file
+
+
+
+# tell Capybara about our app class
+
+#require Sinatra app file
+# require File.join(File.dirname(__FILE__), '..', 'app.rb')
+#
+# require 'capybara'
+# require 'capybara/rspec'
+# require 'rspec'
+# require_relative './features/web_helpers'
+#
+# #tell capyabra about our app class
+# Capybara.app = Battle
