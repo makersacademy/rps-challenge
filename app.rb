@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/weapon'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -30,6 +31,14 @@ class RPS < Sinatra::Base
     @player_1_name = $player_1.name
     @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
     erb :ready
+  end
+
+  get '/fight' do
+    @player_1_name = $player_1.name
+    @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
+    $computer = Computer.new
+    @computer_choice = $computer.weapon
+    erb :fight
   end
 
   run if app_file == $0

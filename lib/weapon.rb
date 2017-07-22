@@ -2,7 +2,7 @@ class Weapon
   attr_reader :weapon
 
   def initialize(weapon)
-    @weapon = weapon
+    @weapon = weapon.capitalize
   end
 
   def weapon=(weapon)
