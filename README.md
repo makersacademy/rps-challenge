@@ -2,6 +2,10 @@
 
 Instructions
 -------
+1. Play online at https://rps-vs-hal.herokuapp.com/
+
+2. Run locally:
+
 ```
 $ rackup
 ```
