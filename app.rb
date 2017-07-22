@@ -14,30 +14,22 @@ class RPS < Sinatra::Base
   post '/names' do
     session[:player_1] = Player.new(params[:player_1_name])
     session[:player_2] = Player.new("the computer")
+    session[:game] = Game.new(session[:player_1], session[:player_2])
     redirect'/play'
   end
 
   post '/submit' do
     player_1 = session[:player_1]
     player_2 = session[:player_2]
+    game = session[:game]
 
     player_1_pick = params[:pick]
-    if player_1_pick == 'rock'
-      player_1.rock
-    elsif player_1_pick == 'paper'
-      player_1.paper
-    elsif player_1_pick == 'scissors'
-      player_1.scissors
-    end
+    player_1.send(player_1_pick)
 
     player_2_pick = ['rock', 'paper', 'scissors'].sample
-    if player_2_pick == 'rock'
-      player_2.rock
-    elsif player_2_pick == 'paper'
-      player_2.paper
-    elsif player_2_pick == 'scissors'
-      player_2.scissors
-    end
+    player_2.send(player_2_pick)
+
+    game.judge(player_1_pick, player_2_pick)
 
     redirect'/showdown'
   end
@@ -45,6 +37,7 @@ class RPS < Sinatra::Base
   get '/showdown' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
+    @winner = session[:game].winner
     erb :showdown
   end
 
