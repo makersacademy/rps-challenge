@@ -1,10 +1,10 @@
-<h2>Player: <%= @name %></h2>
+<h2>Player: <%= @game.player_name %></h2>
 <form action='/play' method="post">
-  <button type="submit" value='Paper' name="choice">Paper</button>
+  <button type="submit" value='Paper' name="player_choice">Paper</button>
 </form>
 <form action='/play' method="post">
-  <button type="submit" value='Scissors' name="choice">Scissors</button>
+  <button type="submit" value='Scissors' name="player_choice">Scissors</button>
 </form>
 <form action='/play' method="post">
-  <button type="submit" value='Rock' name="choice">Rock</button>
+  <button type="submit" value='Rock' name="player_choice">Rock</button>
 </form>
