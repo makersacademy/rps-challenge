@@ -21,13 +21,14 @@ class RPS < Sinatra::Base
 
   post '/weapon-choice' do
     $weapon_choice = Weapon.new(params[:weapon_choice])
+    # $weapon_choice.weapon=($weapon_choice.weapon)
     @player_1_name = $player_1.name
     redirect '/ready'
   end
 
   get '/ready' do
     @player_1_name = $player_1.name
-    @weapon_choice = $weapon_choice.weapon
+    @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
     erb :ready
   end
 
