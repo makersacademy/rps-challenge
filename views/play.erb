@@ -8,13 +8,16 @@
   <body>
     <div class='page'>
       <div class='heading'>
-        <h1><%= @player %> vs. Superhans</h1>
+        <h1><%= @human.name %> vs. <%= @computer.name %></h1>
       </div>
       <form method='post' action='/confirm'>
         <input type='submit' name='choice' value='Rock'/>
         <input type='submit' name='choice' value='Paper'/>
         <input type='submit' name='choice' value='Scissors'/>
       </form>
+
+      <p> <%= @human_choice %></p>
+      <p> <%= @computer_choice %></p>
 
     </div>
   </body>

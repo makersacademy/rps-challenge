@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player'
 
 class ComputerPlayer < Player
   CHOICES = [:rock, :paper, :scissors]
