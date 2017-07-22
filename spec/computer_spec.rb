@@ -3,7 +3,7 @@ require 'computer'
 describe Computer do
   subject(:comp) { described_class.new }
 
-  let(:choices) { [:Paper, :Scissors, :Rock]}
+  let(:choices) { [:Paper, :Scissors, :Rock] }
 
   describe '#initialize' do
     it 'has an array of game options' do

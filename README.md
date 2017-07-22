@@ -6,11 +6,20 @@ Completed
 -------
 - [x] Server setup
 - [x] Testing setup
+- [x] User name entry
+- [x] User presented with game options
+- [x] User can choose option
+- [x] Computer can choose option
+- [x] Incorporated SASS
 
 
 Incomplete
 -------
-
+- [ ] A winner is declared
+- [ ] Multiplayer functionality
+- [ ] Incorporated 'Special Rules'
+- [ ] Styled app
+- [ ] Hosted on Heroku
 
 Notes
 -------
