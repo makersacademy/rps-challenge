@@ -1,1 +1,20 @@
 <%= @player_1_name %> vs. the computer
+<table>
+  <tr>
+    <th>
+      <form action="/submit" method="post">
+        <input type="submit" value="rock" name="pick">
+      </form>
+    </th>
+    <th>
+      <form action="/submit" method="post">
+        <input type="submit" value="paper" name="pick">
+      </form>
+    </th>
+    <th>
+      <form action="/submit" method="post">
+        <input type="submit" value="scissors" name="pick">
+      </form>
+    </th>
+  </tr>
+</table>
