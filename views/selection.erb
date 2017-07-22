@@ -1,0 +1,9 @@
+<h1> Player:<%= @player_name %> </h1>
+<% if @selection %>
+<h2> <%= @selection %> </h2>
+<% end %>
+
+
+<form action='/selection' method='post'>
+  <input type='submit' name='selection' value='Sissors'/>
+</form>

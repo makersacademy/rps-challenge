@@ -4,10 +4,11 @@ class RPS < Sinatra::Base
   get '/' do
     erb :index
   end
-
-  post '/name' do
-    @player_name = params[:name]
-    redirect '/selection'
+  post '/selection' do
+    @player_name = params[:player_name]
+    p params
+    @selection = params[:Selection]
+    erb :selection
   end
 
   get '/selection' do
