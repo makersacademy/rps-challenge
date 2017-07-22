@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require 'pry'
 
 class RPS < Sinatra::Base
 
