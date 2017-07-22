@@ -27,8 +27,15 @@ I would like to be able to play rock/paper/scissors
 
 #### How to run the program
 
+```
+Run with Rackup. Use the port your console outputs and create a URL: localhost:XXXX
+```
 
 #### How to Run the tests
+
+```
+Run with RSpec in the root folder
+```
 
 #### Authors
 Costas Kiteou, **_Makers Academy Student_** - July 2017 Cohort
