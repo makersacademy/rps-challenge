@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -8,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    $game = Game.new(Player.new(params[:player_name]))
     redirect '/weapons'
   end
 
@@ -17,13 +19,12 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
-    $player.set_weapon(params[:rock] || params[:paper] || params[:scissors])
+    $game.set_weapon(params[:rock] || params[:paper] || params[:scissors])
     redirect '/battle'
   end
 
   get '/battle' do
-    @player_weapon = session[:player_weapon]
-    @computer_weapon = ['ROCK','PAPER','SCISSORS'].sample
+    @computer_weapon = Computer.weapon
     erb :battle
   end
 
