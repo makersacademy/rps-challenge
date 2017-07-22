@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class RPS < Sinatra::Base
+  enable :sessions
 
   run! if app_file == $0
 
@@ -9,11 +10,12 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    "#{params[:player_1_name]} vs. the computer"
-    # redirect'/play'
+    session[:player_1_name] = params[:player_1_name]
+    redirect'/play'
   end
 
   get '/play' do
+    @player_1_name = session[:player_1_name]
     erb :play
   end
 end
