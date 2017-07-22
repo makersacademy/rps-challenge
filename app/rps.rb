@@ -8,6 +8,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+    p params
     session[:player_name] = params[:player_name]
     session[:player_name]
     redirect '/game'
@@ -16,6 +17,17 @@ class RPS < Sinatra::Base
   get '/game' do
     @name = session[:player_name]
     erb :game
+  end
+
+  post '/choice' do
+    session[:choice] = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    p params
+    @choice = session[:choice]
+    erb :result
   end
 
   get '/css/style.css' do
