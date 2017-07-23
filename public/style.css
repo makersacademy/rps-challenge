@@ -1,10 +1,10 @@
-#one {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
-  background: #A16B5F;
+.bg-warning{
+  width: 48%;
 }
+
+body {
+  background: url("https://wallpapers.walldevil.com/wallpapers/w02/preview/771994-blue-background-funny-minimalistic-paper-rocks-scissors.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+

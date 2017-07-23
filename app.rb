@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
     erb :getting_started
   end
 
+
   run! if app_file == $0
 
 end
