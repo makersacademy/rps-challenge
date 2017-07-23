@@ -1,7 +1,7 @@
 require "./lib/weapon.rb"
 
 class Player
-  attr_reader :name, :weapon
+  attr_reader :name
 
   def initialize(name)
     @name = name
