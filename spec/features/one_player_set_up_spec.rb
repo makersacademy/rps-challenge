@@ -1,9 +1,4 @@
-feature 'Player Set Up' do
-
-  scenario 'player visits homepage' do
-    visit('/')
-    expect(page).to have_content 'Rock Paper Scissors'
-  end
+feature 'One Player Set Up' do
 
   scenario 'player chooses battle mode' do
     visit('/')

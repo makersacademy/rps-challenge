@@ -7,6 +7,7 @@
 
   <body>
 
+    <% if @play_mode == "1 Player" %>
     <h1>Enter your name</h1>
     <form action="/one-player" method="post" style="display: inline-block;">
       <label for "player_1_name">
@@ -15,6 +16,22 @@
       </label>
       <input type="submit" value="Go!">
     </form>
+    <% end %>
+
+    <% if @play_mode == "2 Player" %>
+    <h1>Enter your names</h1>
+      <form action="/two-player" method="post" style="display: inline-block;">
+      <label for "player_1_name">
+      Player 1 Name
+      <input type="input" name="player_1_name">
+      </label>
+      <label for "player_2_name">
+      Player 2 Name
+      <input type="input" name="player_2_name">
+      </label>
+      <input type="submit" value="Go!">
+      </form>
+    <% end %>
 
   </body>
 </html>

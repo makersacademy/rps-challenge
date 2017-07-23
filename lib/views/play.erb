@@ -2,12 +2,15 @@
 <html>
   <head>
     <!-- <link href="/style.css" rel="stylesheet" type="text/css" /> -->
+    <title>Let Battle Commence!</title>
   </head>
 
   <body>
+    <h1>Let Battle Commence!</h1>
+
+    <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
 
     <h3><%= @game.player_1.name %>, choose your move</h3>
-
     <form action="/result" method="post" style="display: inline-block;">
       <input type="submit" value="Rock" name="move">
       <input type="submit" value="Paper" name="move">
@@ -15,7 +18,6 @@
       <input type="submit" value="Spock" name="move">
       <input type="submit" value="Lizard" name="move">
     </form>
-
 
   </body>
 

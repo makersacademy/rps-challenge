@@ -4,36 +4,43 @@ require_relative 'player'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   before do
     @game = Game.instance
   end
 
   get '/' do
-    p params
     erb :homepage
   end
 
-  post '/enter-name' do
-    p params
-    # (params[:play_mode]).each do
-    # set instance variable for two states here
+  post '/mode' do
+    session[:play_mode] = params[:play_mode]
+    redirect '/enter-name'
+  end
+
+  get '/enter-name' do
+    @play_mode = session[:play_mode]
     erb :enter_name
   end
 
   post '/one-player' do
     @game =
-    Game.add(Player.new(params[:player_1_name]))
-    p params
+    Game.add((Player.new(params[:player_1_name])), (Player.new("Computer")), :one_player)
+    redirect '/play'
+  end
+
+  post '/two-player' do
+    @game =
+    Game.add((Player.new(params[:player_1_name])), (Player.new(params[:player_2_name])), :two_player)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
-  # post '/two-player' do
-  #   @game =
-  #   Game.add((Player.new(params[:player_1_name])),(Player.new(params[:player_2_name])))
-  #   erb :play
-  # end
-
-  post '/result' do
+  get '/result' do
     erb :result
   end
 

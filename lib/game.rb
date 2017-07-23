@@ -1,7 +1,5 @@
 class Game
 
-  DEFAULT_MODE = "1 Player"
-  DEFAULT_PLAYER_2 = "Computer"
   attr_reader :player_1, :player_2, :mode
 
   def initialize(player_1, player_2, mode)
@@ -14,8 +12,10 @@ class Game
     @game
   end
 
-  def self.add(player_1, player_2 = DEFAULT_PLAYER_2, mode = DEFAULT_MODE)
+  def self.add(player_1, player_2, mode)
     @game = Game.new(player_1, player_2, mode)
   end
+
+
 
 end
