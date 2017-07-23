@@ -10,14 +10,14 @@ class Computer
   # Only setter method changes the weapon so that getter method
   # can be used to display the randomly chosen weapon
   def weapon=(weapon)
-    fail "Invalid weapon" unless [:rock, :paper, :scissors, nil].include?(weapon)
+    fail "Invalid weapon" unless [[Game::WEAPONS], nil].flatten.include?(weapon)
     @weapon = weapon || random_weapon
   end
 
   private
 
   def random_weapon
-    [:rock, :paper, :scissors].sample
+    Game::WEAPONS.sample
   end
 
 end

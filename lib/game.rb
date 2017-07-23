@@ -6,7 +6,9 @@ class Game
     scissors: { rock: :lose, paper: :win, scissors: :tie }
   }
 
-  attr_reader :player_1, :player_2, :result
+  WEAPONS = [:rock, :paper, :scissors]
+
+  attr_reader :player_1, :player_2
 
   def self.instance
     @game
