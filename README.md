@@ -9,7 +9,7 @@ Installation Instructions
 2. Change into the directory from the terminal
 3. Run Bundle
 4. Run Rackup
-5. Use your browser to navigate to your local host (default port: 9292)
+5. Paste `http://localhost:9292/` in your browser's address bar to navigate to your local host and run the game!
 
 Example terminal input for above steps:
 
