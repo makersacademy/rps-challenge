@@ -6,12 +6,7 @@ feature 'Computer chooses weapon' do
   #   # cpu = double(:cpu, weapon: "Scissors")
   #   allow(cpu.weapon).to receive(:weapon).and_return("Scissors")
     allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
-    visit('/')
-    fill_in :player_1_name, with: 'Bob'
-    click_button 'Submit'
-    fill_in :weapon_choice, with: 'Rock'
-    click_button 'Submit'
-    click_button 'Fight'
+    sign_in_with_rock_and_play
     expect(page).to have_content "Computer chooses Scissors"
   end
 end

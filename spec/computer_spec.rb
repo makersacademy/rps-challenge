@@ -3,7 +3,7 @@ require 'computer'
 describe Computer do
   subject(:cpu) { described_class.new }
 
-  describe '/fight' do
+  describe '/result' do
     let(:weapon) { double(:weapon) }
     it "shows the computer player's weapon" do
       allow(cpu).to receive(:weapon).and_return(weapon)

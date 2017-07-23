@@ -15,7 +15,7 @@ class Game
   end
 
   def wins?
-    RULES[player_1_weapon.downcase.to_sym]==(computer_choice.downcase.to_sym)
+    RULES[player_1_weapon.downcase.to_sym] == (computer_choice.downcase.to_sym)
   end
 
   def draw?
