@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:player) { double(:player, name: 'Dave', weapon: 'ROCK') }
+  let(:player) { double(:player, name: 'Dave', weapon: 'ROCK', score: 0) }
   let(:computer) { double(:computer) }
   let(:computer_class) { double(:computer_class, new: computer) }
   subject(:game) { described_class.new(player, computer_class) }
@@ -60,21 +60,18 @@ describe Game do
 
   describe '#score' do
     it 'increases the score' do
+      allow(player).to receive(:score_up)
       allow(computer).to receive(:computer_choice)
       allow(computer).to receive(:weapon).and_return('SCISSORS')
       game.computer_choice
-      expect { game.score }.to change { game.player_score }.by(1)
+      expect(player).to receive(:score_up)
+      game.score
     end
   end
 
   describe '#game_over?' do
     it 'determines the game has finished' do
-      2.times do
-        allow(computer).to receive(:computer_choice)
-        allow(computer).to receive(:weapon).and_return('SCISSORS')
-        game.computer_choice
-        game.score
-      end
+      allow(player).to receive(:score).and_return(2)
       expect(game.game_over?).to eq true
     end
   end

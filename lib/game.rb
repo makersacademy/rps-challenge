@@ -6,7 +6,7 @@ class Game
     'SCISSORS' => { 'ROCK' => 'YOU LOSE', 'PAPER' => 'YOU WIN', 'SCISSORS' => 'DRAW' }
   }
 
-  attr_reader :player, :computer, :length, :round, :player_score, :computer_score
+  attr_reader :player, :computer, :length, :round, :computer_score
 
   DEFAULT_LENGTH = 3
 
@@ -15,8 +15,6 @@ class Game
     @computer = computer.new
     @length = DEFAULT_LENGTH
     @round = 1
-    @player_score = 0
-    @computer_score = 0
   end
 
   def player_name
@@ -24,7 +22,7 @@ class Game
   end
 
   def max_rounds(number)
-    length = number
+    @length = number.to_i
   end
 
   def next_round
@@ -39,6 +37,10 @@ class Game
     player.weapon
   end
 
+  def player_score
+    player.score
+  end
+
   def computer_weapon
     computer.weapon
   end
@@ -47,20 +49,24 @@ class Game
     computer.computer_choice
   end
 
+  def computer_score
+    computer.score
+  end
+
   def outcome
     RULES[player.weapon][computer.weapon]
   end
 
   def score
     if outcome == 'YOU WIN'
-      @player_score += 1
-    elsif outcome = 'YOU LOSE'
-      @computer_score += 1
+      player.score_up
+    elsif outcome == 'YOU LOSE'
+      computer.score_up
     end
   end
 
   def game_over?
-    player_score == (length/2) +1 || computer_score == (length/2) +1
+    player.score == (@length / 2) + 1 || computer.score == (@length / 2) + 1
   end
 
 end

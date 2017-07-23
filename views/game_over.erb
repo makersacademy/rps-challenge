@@ -8,4 +8,9 @@ Computer has chosen <%= $game.computer_weapon %>
 
 Game Over<br><br>
 
-<%= $game.player_name %>: <%= $game.player_score %> Computer: <%= $game.computer_score %>
+<%= $game.player_name %>: <%= $game.player_score %><br>
+Computer: <%= $game.computer_score %><br><br>
+
+<form action="/" method="get">
+  <button name="play_again" type="submit">Play again?</button>
+</form>

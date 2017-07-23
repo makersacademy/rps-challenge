@@ -1,10 +1,13 @@
 <%= $game.player_name %> has chosen <%= $game.player_weapon %>
-<br>
-<br>
+<br><br>
 Computer has chosen <%= $game.computer_weapon %>
+<br><br>
+<%= $game.outcome %>
+<br><br>
+<%= $game.player_name %>: <%= $game.player_score %>
 <br>
-<br>
-<%= $game.outcome %><br><br>
+Computer: <%= $game.computer_score %>
+<br><br>
 <form action="/weapons" method="get">
   <button type="submit" value="Submit">NEXT ROUND!!</button>
 </form>
