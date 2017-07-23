@@ -21,6 +21,8 @@ class Game
     random_weapon
   end
 
-
+  def player_weapons(weapons)
+    @weapons = weapons
+  end
 
 end

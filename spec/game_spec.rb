@@ -15,4 +15,10 @@ describe Game do
       expect(game.random_weapon).to eq "rock" # need a random_weapon method to stub random results
     end
   end
+
+  describe '#player_weapons' do
+    it 'returns player_1 weapons' do
+      expect(subject.player_weapons(:weapons)).to eq :weapons
+    end
+  end
 end
