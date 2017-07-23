@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :player_move
+  attr_reader :player, :player_move, :hal_move, :outcome
 
   def initialize(player)
     @player = player
@@ -17,5 +17,18 @@ class Game
   def player_choice(player_choice)
     @player_move = player_choice
   end
+
+  def hal_choice
+    @hal_move = ["rock", "paper", "scissors"].sample
+  end
+
+  def outcome(player_move,hal_move)
+    return "Draw" if @player_move == @hal_move
+    return "You win!" if [['rock', 'scissors'],['scissors','paper'],['paper','rock']].include? [@player_move, @hal_move]
+    "You lose!"
+  end
+
+
+
 
 end
