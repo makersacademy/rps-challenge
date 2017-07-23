@@ -1,6 +1,9 @@
 feature 'Display result' do
-  scenario 'player 1 wins' do
+  before do
     register_and_play
+  end
+  
+  scenario 'player 1 wins' do
     select 'Rock', from: 'weapon'
     allow(Game.instance.player_2).to receive(:weapon).and_return(:scissors)
     click_button 'Submit'
@@ -8,7 +11,6 @@ feature 'Display result' do
   end
 
   scenario 'it is a tie' do
-    register_and_play
     select 'Paper', from: 'weapon'
     allow(Game.instance.player_2).to receive(:weapon).and_return(:paper)
     click_button 'Submit'
@@ -16,7 +18,6 @@ feature 'Display result' do
   end
 
   scenario 'player 2 wins' do
-    register_and_play
     select 'Scissors', from: 'weapon'
     allow(Game.instance.player_2).to receive(:weapon).and_return(:rock)
     click_button 'Submit'
