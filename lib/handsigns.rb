@@ -4,7 +4,6 @@ module Handsigns
   end
 
   def winning_sign(sign1, sign2)
-    # puts "sign1: #{sign1}, sign2: #{sign2}"
     return nil if sign1 == sign2
     i1 = signs.index(sign1)
     i2 = signs.index(sign2)

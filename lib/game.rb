@@ -5,8 +5,8 @@ class Game
   include Handsigns
 
   def initialize(player)
-    @player = player
     @player_name = player.name
+    @player = player
     @computer_name = ['Bender', 'R2D2', 'Terminator'].sample
     @computer = player.class.new(@computer_name)
   end
@@ -20,14 +20,11 @@ class Game
   end
 
   def set_player_sign(sign)
-    puts "Player sign: #{sign}"
     @player_sign = sign.downcase.to_sym
   end
 
   def set_computer_sign
     @computer_sign = signs.sample
-    puts "Computer sign: #{@computer_sign}"
-
   end
 
   def winner_name
