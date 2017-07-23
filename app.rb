@@ -6,13 +6,18 @@ require './lib/computer'
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :home
   end
 
   post '/name' do
-    $game = Game.new(Player.new(params[:player_name]))
-    $game.max_rounds(params[:best_of])
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
+    @game.max_rounds(params[:best_of])
     redirect '/weapons'
   end
 
@@ -21,15 +26,15 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
-    $game.next_round
-    $game.player_choice(params[:rock] || params[:paper] || params[:scissors])
+    @game.next_round
+    @game.player_choice(params[:rock] || params[:paper] || params[:scissors])
     redirect '/battle'
   end
 
   get '/battle' do
-    $game.computer_choice
-    $game.score
-    if $game.game_over?
+    @game.computer_choice
+    @game.score
+    if @game.game_over?
       erb :game_over
     else
       erb :battle

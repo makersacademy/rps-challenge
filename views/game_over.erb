@@ -1,15 +1,15 @@
-<%= $game.player_name %> has chosen <%= $game.player_weapon %>
+<%= @game.player_name %> has chosen <%= @game.player_weapon %>
 <br>
 <br>
-Computer has chosen <%= $game.computer_weapon %>
+Computer has chosen <%= @game.computer_weapon %>
 <br>
 <br>
-<%= $game.outcome %><br><br>
-
-Game Over<br><br>
-
-<%= $game.player_name %>: <%= $game.player_score %><br>
-Computer: <%= $game.computer_score %><br><br>
+<%= @game.outcome %>
+<br><br>
+Game Over
+<br><br>
+<%= @game.player_name %>: <%= @game.player_score %><br>
+Computer: <%= @game.computer_score %><br><br>
 
 <form action="/" method="get">
   <button name="play_again" type="submit">Play again?</button>

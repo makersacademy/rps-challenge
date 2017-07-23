@@ -69,4 +69,12 @@ class Game
     player.score == (@length / 2) + 1 || computer.score == (@length / 2) + 1
   end
 
+  def self.create(player, computer = Computer)
+    @game = Game.new(player, computer = Computer)
+  end
+
+  def self.instance
+    @game
+  end
+
 end
