@@ -51,4 +51,32 @@ describe Game do
     end
   end
 
+  describe "#game_over" do
+    it 'recognises when the game is over' do
+      expect { game.next_round }.to change { game.round }.by(1)
+      game.next_round
+    end
+  end
+
+  describe '#score' do
+    it 'increases the score' do
+      allow(computer).to receive(:computer_choice)
+      allow(computer).to receive(:weapon).and_return('SCISSORS')
+      game.computer_choice
+      expect { game.score }.to change { game.player_score }.by(1)
+    end
+  end
+
+  describe '#game_over?' do
+    it 'determines the game has finished' do
+      2.times do
+        allow(computer).to receive(:computer_choice)
+        allow(computer).to receive(:weapon).and_return('SCISSORS')
+        game.computer_choice
+        game.score
+      end
+      expect(game.game_over?).to eq true
+    end
+  end
+
 end

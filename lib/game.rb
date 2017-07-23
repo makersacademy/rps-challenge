@@ -6,13 +6,17 @@ class Game
     'SCISSORS' => { 'ROCK' => 'YOU LOSE', 'PAPER' => 'YOU WIN', 'SCISSORS' => 'DRAW' }
   }
 
-  attr_reader :player, :computer, :length, :round
+  attr_reader :player, :computer, :length, :round, :player_score, :computer_score
+
+  DEFAULT_LENGTH = 3
 
   def initialize(player, computer = Computer)
     @player = player
     @computer = computer.new
-    @length = 0
+    @length = DEFAULT_LENGTH
     @round = 1
+    @player_score = 0
+    @computer_score = 0
   end
 
   def player_name
@@ -45,6 +49,18 @@ class Game
 
   def outcome
     RULES[player.weapon][computer.weapon]
+  end
+
+  def score
+    if outcome == 'YOU WIN'
+      @player_score += 1
+    elsif outcome = 'YOU LOSE'
+      @computer_score += 1
+    end
+  end
+
+  def game_over?
+    player_score == (length/2) +1 || computer_score == (length/2) +1
   end
 
 end

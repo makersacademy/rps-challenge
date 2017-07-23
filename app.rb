@@ -28,7 +28,12 @@ class RPS < Sinatra::Base
 
   get '/battle' do
     $game.computer_choice
-    erb :battle
+    $game.score
+    if $game.game_over?
+      erb :game_over
+    else
+      erb :battle
+    end
   end
 
   run! if app_file == $0

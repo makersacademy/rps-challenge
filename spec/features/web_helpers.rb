@@ -3,3 +3,8 @@ def sign_in
   fill_in :player_name, with: 'Dave'
   click_button 'Submit'
 end
+
+def play_a_round
+  click_button 'ROCK'
+  click_button 'NEXT ROUND'
+end
