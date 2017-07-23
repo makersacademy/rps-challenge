@@ -1,8 +1,35 @@
-<%= @game.player.name %> vs The Computer
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+* {
+  font-family: Arial;
+}
+h1 {
+  font-size: 80px;
+  text-align: center;
+}
+h2 {
+  font-size: 40px;
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+form {
+  /*width: 250px;
+    margin: 0 auto;*/
+    float:left;
+   margin-right:5px;
+}
+</style>
+</head>
+
+<body>
+<h1><%= @game.player.name %> vs The Computer</h1>
 <br>
-<%= @game.player.name %> has <%= @game.player.points %> points
-<br>
-The Computer has <%= @game.computer_player.points %> points
+<h2><%= @game.player.name %> has <%= @game.player.points %> points </h2>
+<h2>The Computer has <%= @game.computer_player.points %> points </h2>
 <br>
 
 <h3>Enter Rock, Paper or Scissors to make your move</h3>
@@ -16,11 +43,11 @@ The Computer has <%= @game.computer_player.points %> points
 <form action="/rock" method="post">
   <input type="submit" value="Rock">
 </form>
-<br>
 <form action="/scissors" method="post">
   <input type="submit" value="Scissors">
 </form>
-<br>
 <form action="/paper" method="post">
   <input type="submit" value="Paper">
 </form>
+</body>
+</html>

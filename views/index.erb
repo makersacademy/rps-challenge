@@ -1,8 +1,64 @@
-<h1>ROCK, PAPER, SCISSORS</h1>
-<h3>Enter your name to start the game</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <style type="text/css">
+  * {
+    font-family: Arial;
+  }
+  h1 {
+    font-size: 100px;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+  form {
+    text-align: center;
+  }
+  img.hands {
+    width: 900px;
+  height: 600px;
+  display: block;
+  margin: 0px auto;
+  /*mix-blend-mode: multiply;*/
+  }
+  i {
+    font-size: 60px;
+    text-align: center;
+
+  }
+  /**{
+    background: linear-gradient(to right, #f857a6, #ff5858);
+   }*/
+  /*body {
+    background-image:
+    url("https://ichef-1.bbci.co.uk/news/660/media/images/74580000/jpg/_74580127_162317629(1).jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }*/
+  </style>
+</head>
+<body>
+<h1>ROCK.PAPER.SCISSORS</h1>
+<h2>Do you dare take on THE COMPUTER??</h2>
+<p>ROCK beats SCISSORS.....SCISSORS beats PAPER.....PAPER beats ROCK</p>
+<h3>Enter your name to start the best RPS game you will ever play...</h3>
+<i class="em em-fist"></i><i class="em em-newspaper"></i><i class="em em-scissors"></i>
 <form action="/name" method="post">
   <label for="player_name">
-    Player name<input type="text" name="player_name">
+    Player name <input type="text" name="player_name">
   </label>
   <input type="submit" value="May the battle commence!">
 </form>
+<img src="https://ichef-1.bbci.co.uk/news/660/media/images/74580000/jpg/_74580127_162317629(1).jpg" alt="Three hands demonstrating RPS" class="hands"/>
+</body>
+</html>
