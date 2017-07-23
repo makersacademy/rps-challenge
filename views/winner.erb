@@ -9,6 +9,27 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/rps-challenge.webflow.css" rel="stylesheet" type="text/css">
+
+  <!-- Manually overryde stylesheet to load the right animations -->
+  <style media="screen" type="text/css">
+  .left {
+    min-height: 100vh;
+    background-image: url('../images/adamo_<%= @player_sign %>_loop.gif');
+    background-position: 100% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .right {
+    min-height: 100vh;
+    background-image: url('../images/dio_padre_<%= @computer_sign %>_loop.gif');
+    background-position: 0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  </style>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script type="text/javascript">WebFont.load({
   google: {
