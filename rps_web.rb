@@ -44,5 +44,13 @@ class RPSWeb < Sinatra::Base
     erb(:result)
   end
 
+  get '/play_again' do
+    redirect '/start_game'
+  end
+
+  get '/reset_game' do
+    redirect '/'
+  end
+
   run! if app_file == $0
 end

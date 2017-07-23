@@ -29,11 +29,11 @@ class Game
 
   def result
     if @player_weapon == @computer_weapon
-      "It's a tie"
+      "It's a tie!"
     elsif @player_weapon == BEATS[@computer_weapon]
-      "#{@computer.name} wins"
+      "#{@computer.name} wins!!"
     else
-      "#{@player.name} wins"
+      "#{@player.name} wins!!"
     end
   end
 
