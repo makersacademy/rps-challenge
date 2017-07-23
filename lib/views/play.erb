@@ -1,53 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Monoton|Quicksand" rel="stylesheet">
     <title>Let Battle Commence!</title>
   </head>
 
   <body>
-    <h2>Let Battle Commence!</h2>
-
-    <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h3>
+    <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h1>
 
     <% if @game.current_player == @game.player_1 %>
     <div class="container-fluid">
-      <h4><%= @game.current_player.name %>, choose your move</h4>
-      <form action="/switch-turns" method="post">
-        <input type="submit" value="Rock" name="move" class="btn btn-default">
-        <input type="submit" value="Paper" name="move" class="btn btn-default">
-        <input type="submit" value="Scissors" name="move" class="btn btn-default">
-        <input type="submit" value="Spock" name="move" class="btn btn-default">
-        <input type="submit" value="Lizard" name="move" class="btn btn-default">
-      </form>
+      <div class="jumbotron">
+        <div class="container">
+          <h3><%= @game.current_player.name %>, choose your move</h3>
+          <form action="/switch-turns" method="post">
+            <input type="submit" value="Rock" name="move" class="btn btn-default">
+            <input type="submit" value="Paper" name="move" class="btn btn-default">
+            <input type="submit" value="Scissors" name="move" class="btn btn-default">
+            <input type="submit" value="Spock" name="move" class="btn btn-default">
+            <input type="submit" value="Lizard" name="move" class="btn btn-default">
+          </form>
+        </div>
+      </div>
     </div>
     <% end %>
 
     <% if @game.current_player == @game.player_2 && @game.player_2.name != "Computer" %>
     <div class="container-fluid">
-      <h3><%= @game.current_player.name %>, choose your move</h3>
-      <form action="/battle-analysis" method="post" style="display: inline-block;">
-        <input type="submit" value="Rock" name="move">
-        <input type="submit" value="Paper" name="move">
-        <input type="submit" value="Scissors" name="move">
-        <input type="submit" value="Spock" name="move">
-        <input type="submit" value="Lizard" name="move">
-      </form>
+      <div class="jumbotron">
+        <div class="container">
+          <h2><%= @game.current_player.name %>, choose your move</h2>
+          <form action="/battle-analysis" method="post" style="display: inline-block;">
+            <input type="submit" value="Rock" name="move" class="btn btn-default">
+            <input type="submit" value="Paper" name="move" class="btn btn-default">
+            <input type="submit" value="Scissors" name="move" class="btn btn-default">
+            <input type="submit" value="Spock" name="move" class="btn btn-default">
+            <input type="submit" value="Lizard" name="move" class="btn btn-default">
+          </form>
+        </div>
+      </div>
     </div>
     <% end %>
 
     <% if @game.current_player == @game.player_2 && @game.player_2.name == "Computer" %>
     <div class="container-fluid">
-    <h3><%= @game.current_player.name %> has chosen its move</h3>
-      <form action="/battle-analysis" method="post" style="display: inline-block;">
-        <input type="submit" value="Continue" name="move">
-      </form>
-    </div>
+      <div class="jumbotron">
+        <div class="container">
+          <h3><%= @game.current_player.name %> has chosen its move</h3>
+            <form action="/battle-analysis" method="post">
+              <input type="submit" value="Continue" name="move" class="btn btn-default">
+            </form>
+          </div>
+        </div>
+      </div>
     <% end %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

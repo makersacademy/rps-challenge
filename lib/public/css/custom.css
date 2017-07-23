@@ -1,15 +1,38 @@
 body {
-  background-image:url('/img/vertical-waves.png');
-  font-family: 'Cutive Mono', monospace;
+  background-image:url('/img/palms.png');
+  background-color: #ffb3b3;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-h1, h2, h3 {
-  font-family: 'Special Elite', cursive;
+h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 250%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Cutive Mono', monospace;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.jumbotron {
+  background: white;
+  text-align: center;
 }
 
 .btn-default {
-  color: #fff
-  background-color: transparent;
-  border-color: white;
+  color: #black;
+  font-family: 'Quicksand', sans-serif;
+  border-color: black;
 	margin-bottom: 5px;
 }

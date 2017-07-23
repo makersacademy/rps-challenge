@@ -6,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite" rel="stylesheet">
-    <title>Let Battle Commence!</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Monoton|Quicksand" rel="stylesheet">
+    <title>Who Won?</title>
   </head>
   <body>
 
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Who Won?<h1>
+          <h3>Both of you! <%= @game.player_1.move %> is getting a lot of love today</h3>
+          <form action="/" method="get">
+            <input type="submit" value="Play Again" class="btn btn-default">
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
