@@ -20,6 +20,7 @@ class RpsWeb < Sinatra::Base
 
   get '/play' do
     @game = $game
+    params[:weapons]
     erb :play
   end
 
