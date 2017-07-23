@@ -1,12 +1,14 @@
 class Game
-attr_reader :human_selection, :name, :description, :computer_selection, :winner
+attr_reader :player_one_selection, :player_two_selection,
+:name, :name_two, :description, :computer_selection, :winner
 
-  def initialize(name)
+  def initialize(name, name_two="NA")
     @name = name
+    @name_two = name_two
   end
 
-  def self.create(name)
-    @game = Game.new(name)
+  def self.create(name, name_two="NA")
+    @game = Game.new(name, name_two)
   end
 
   def self.instance
@@ -25,11 +27,11 @@ attr_reader :human_selection, :name, :description, :computer_selection, :winner
   end
 
   def calculate_winner
-    if (@computer_selection == "Paper" && @human_selection == "Rock")
+    if (@computer_selection == "Paper" && @player_one_selection == "Rock")
       @winner = "Computer"
-    elsif (@computer_selection == "Scissors" && @human_selection == "Paper")
+    elsif (@computer_selection == "Scissors" && @player_one_selection == "Paper")
       @winner = "Computer"
-    elsif (@computer_selection == "Rock" && @human_selection == "Scissors")
+    elsif (@computer_selection == "Rock" && @player_one_selection == "Scissors")
       @winner = "Computer"
     else
       @winner = @name
@@ -37,17 +39,35 @@ attr_reader :human_selection, :name, :description, :computer_selection, :winner
   end
 
   def human_select(option)
-   @human_selection = option
+   @player_one_selection = option
    fancy_description
   end
 
+  def player_one_select(option)
+   @player_two_selection = option
+  end
+
   def fancy_description
-    if @human_selection == "Rock"
+    if @player_one_selection == "Rock"
       @description = "The Almighty"
-    elsif @human_selection == "Paper"
+    elsif @player_one_selection == "Paper"
       @description = "The Dreaded"
     else
       @description = "The Crafty"
     end
   end
+
+  # def redirect(object)
+  #   if (player_one_selection == nil) && (name_two == "NA")
+  #     human_select(object)
+  #     @redirect = '/result'
+  #   elsif player_one_selection == nil
+  #     human_select(object)
+  #     @name_two = name_two
+  #     @redirect = '/player-two'
+  #   else
+  #     player_one_select(object)
+  #     @redirect = '/end-game'
+  #   end
+  # end
 end
