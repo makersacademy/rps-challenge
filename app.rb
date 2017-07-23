@@ -59,8 +59,9 @@ class Rps < Sinatra::Base
 
   post '/add-comp-points' do
     $game.comp_won
-    redirect('/play')
-  end
+    redirect('/play') if $game.computer_player.points < 50
+    redirect('player-loser') if $game.computer_player.points == 50
+   end
 
   get '/player-wins-round' do
     @game = $game
@@ -70,7 +71,16 @@ class Rps < Sinatra::Base
 
   post '/add-player-points' do
     $game.player_won
-    redirect('/play')
+    redirect('/play') if $game.player.points < 50
+    redirect('player-winner') if $game.player.points == 50
+  end
+
+  get ('/player-winner') do
+    erb :win
+  end
+
+  get ('/player-loser') do
+    erb :lose
   end
 
   run! if app_file == $0
