@@ -17,5 +17,4 @@ feature 'Two Player Mode' do
     click_button "Lizard"
     expect(page).to have_content "Sir R Spec's Rock defeated Lady Capybara's Lizard"
   end
-
 end

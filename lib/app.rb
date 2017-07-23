@@ -56,8 +56,7 @@ class RPS < Sinatra::Base
   end
 
   get '/winner-declared' do
-    @game.calc_winner
-    erb :result
+    erb @game.calc_winner
   end
 
   run! if app_file == $0

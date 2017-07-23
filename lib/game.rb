@@ -38,11 +38,11 @@ class Game
 
   def declare_winner(battle)
     if WINNERS.include? battle
-      "#{player_1.name}'s #{player_1.move} defeated #{player_2.name}'s #{player_2.move}"
+      :win
     elsif LOSERS.include? battle
-      "#{player_2.name}'s #{player_2.move} defeated #{player_1.name}'s #{player_1.move}"
+      :lose
     else
-      "You both chose #{player_1.move} - it's a draw!"
+      :draw
     end
   end
 

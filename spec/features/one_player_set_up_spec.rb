@@ -15,7 +15,7 @@ feature 'One Player Set Up' do
     one_player_battle_setup
     click_button "Rock"
     click_button "Continue"
-    expect(page). to have_content "and the winner is..."
+    expect(page). to have_content "And the winner is..."
   end
 
 end
