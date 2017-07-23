@@ -4,7 +4,7 @@ require 'pry'
 describe Game do
 
   subject(:game) { described_class.new(player) }
-  let(:player) { "Junot"}
+  let(:player) { "Junot" }
   it 'has a player' do
     expect(game.player).to eq "Junot"
   end
@@ -19,9 +19,9 @@ describe Game do
     describe '#outcome' do
       let(:player_move) { "rock" }
       let(:hal_move) { "rock" }
-        it 'declares a draw' do
-          expect(game.outcome("rock","rock")).to eq "Draw"
-        end
+      it 'declares a draw' do
+        expect(game.outcome).to eq "Draw"
+      end
     end
   end
 

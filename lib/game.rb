@@ -24,11 +24,12 @@ class Game
 
   def outcome
     return "Draw" if @player_move == @hal_move
-    return "You win!" if [['rock', 'scissors'],['scissors','paper'],['paper','rock']].include? [@player_move, @hal_move]
+    return "You win!" if [
+      ['rock', 'scissors'],
+      ['scissors', 'paper'],
+      ['paper', 'rock']
+    ].include? [@player_move, @hal_move]
     "You lose!"
   end
-
-
-
 
 end

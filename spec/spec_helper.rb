@@ -10,7 +10,6 @@ require 'simplecov-console'
 
 require 'features/web_helpers.rb'
 
-
 Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
