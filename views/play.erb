@@ -1,11 +1,13 @@
 <body style="background-color:lightgrey;font-family:helvetica;">
-Hello <%= @name %> welcome to the armoury!
+<center><h1 style="text-align:center;">Rock, Paper, or Scissors, you decide!</h1>
 
-<center><form action="/game" method="post">
-  <input type="checkbox" name="weapon_type" value="rock"> Rock<br>
-  <input type="checkbox" name="weapon_type" value="paper"> Paper<br>
-  <input type="checkbox" name="weapon_type" value="scissors"> Scissors<br>
-  <input type="submit" value="Submit">
+
+  <h2>Hello <%= @name %> welcome to the armoury!</h2>
+
+<form action="/game" method="post">
+  <input type="submit" name="weapon_type1" value="Rock"><br>
+  <input type="submit" name="weapon_type2" value="Paper"><br>
+  <input type="submit" name="weapon_type3" value="Scissors"><br>
 </form></center>
 
 </body>

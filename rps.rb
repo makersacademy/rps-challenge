@@ -20,6 +20,15 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/game' do
+    @weapon_type1 = params[:weapon_type1]
+    erb :game
+  end
+
+  post "/result" do
+    erb :result
+  end
+
 
   run! if app_file == $0
 end
