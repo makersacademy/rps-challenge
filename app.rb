@@ -34,12 +34,13 @@ class RPS < Sinatra::Base
     erb :ready
   end
 
-  get '/fight' do
+  get '/result' do
     @player_1_name = $player_1.name
     @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
     $computer = Computer.new
     @computer_choice = $computer.weapon
-    erb :fight
+    @game = Game.new(@weapon_choice, @computer_choice)
+    erb @game.result
   end
 
   run if app_file == $0

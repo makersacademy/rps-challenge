@@ -1,3 +1,5 @@
+# require_relative '../lib/game'
+
 class Weapon
   attr_reader :weapon
 
