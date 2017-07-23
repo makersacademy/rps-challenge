@@ -3,9 +3,10 @@ require 'game'
 describe Game do
 
   let(:player) { double(:player, name: 'Dave', weapon: 'ROCK', score: 0) }
+  let(:length) { 3 }
   let(:computer) { double(:computer) }
   let(:computer_class) { double(:computer_class, new: computer) }
-  subject(:game) { described_class.new(player, computer_class) }
+  subject(:game) { described_class.new(player, length, computer_class) }
 
   describe "player" do
     it "returns the player" do
@@ -25,21 +26,24 @@ describe Game do
     it 'recognises a draw' do
       allow(computer).to receive(:computer_choice)
       allow(computer).to receive(:weapon).and_return('ROCK')
-      game.computer_choice
+      game.battle
       expect(game.outcome).to eq 'DRAW'
     end
 
     it 'recognises a win' do
+      allow(player).to receive(:score_up)
       allow(computer).to receive(:computer_choice)
       allow(computer).to receive(:weapon).and_return('SCISSORS')
-      game.computer_choice
+      game.battle
       expect(game.outcome).to eq 'YOU WIN'
     end
 
     it 'recognises a loss' do
+      allow(player).to receive(:score_up)
       allow(computer).to receive(:computer_choice)
+      allow(computer).to receive(:score_up)
       allow(computer).to receive(:weapon).and_return('PAPER')
-      game.computer_choice
+      game.battle
       expect(game.outcome).to eq 'YOU LOSE'
     end
   end
@@ -51,28 +55,20 @@ describe Game do
     end
   end
 
-  describe "#game_over" do
-    it 'recognises when the game is over' do
-      expect { game.next_round }.to change { game.round }.by(1)
-      game.next_round
-    end
-  end
-
   describe '#score' do
     it 'increases the score' do
       allow(player).to receive(:score_up)
       allow(computer).to receive(:computer_choice)
       allow(computer).to receive(:weapon).and_return('SCISSORS')
-      game.computer_choice
       expect(player).to receive(:score_up)
-      game.score
+      game.battle
     end
   end
 
-  describe '#game_over?' do
+  describe '#over?' do
     it 'determines the game has finished' do
       allow(player).to receive(:score).and_return(2)
-      expect(game.game_over?).to eq true
+      expect(game).to be_over
     end
   end
 

@@ -1,7 +1,7 @@
 def sign_in
   visit '/'
   fill_in :player_name, with: 'Dave'
-  click_button 'Submit'
+  click_button 'BATTLE!!!'
 end
 
 def play_a_round

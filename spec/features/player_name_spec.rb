@@ -2,7 +2,7 @@ feature 'player can register name' do
 
   scenario 'player is prompted to enter name' do
     visit '/'
-    expect(page).to have_content 'Welcome player - please enter your name'
+    expect(page).to have_content 'please enter your name'
   end
 
   scenario 'player can enter their name' do

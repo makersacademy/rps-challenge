@@ -16,4 +16,10 @@ describe Player do
     end
   end
 
+  describe '#score_up' do
+    it 'increases the score' do
+      expect { dave.score_up }.to change { dave.score }.by(1)
+    end
+  end
+
 end

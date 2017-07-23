@@ -15,10 +15,12 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    @game = Game.create(player)
-    @game.max_rounds(params[:best_of])
-    redirect '/weapons'
+    if params[:player_name].empty? || params[:player_name] == 'ENTER A NAME!!!!'
+      erb :enter_name
+    else
+      @game = Game.create(Player.new(params[:player_name]), params[:best_of])
+      redirect '/weapons'
+    end
   end
 
   get '/weapons' do
@@ -32,9 +34,8 @@ class RPS < Sinatra::Base
   end
 
   get '/battle' do
-    @game.computer_choice
-    @game.score
-    if @game.game_over?
+    @game.battle
+    if @game.over?
       erb :game_over
     else
       erb :battle
