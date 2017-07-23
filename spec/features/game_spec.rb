@@ -49,4 +49,12 @@ feature 'Game play for Paper, Scissors, Rock' do
       expect(page).to have_content 'draw'
     end
   end
+
+  scenario 'Play again' do
+    click_button('Rock')
+    click_button('Play again')
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'Rock'
+  end
 end

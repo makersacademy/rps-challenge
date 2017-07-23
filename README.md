@@ -12,11 +12,11 @@ Complete
 - [x] Computer can choose option
 - [x] Incorporated SASS
 - [x] A winner is declared
+- [x] 95% testing
 
 Incomplete
 -------
 - [ ] DRY up Paper, Scissors, Rock
-- [ ] 100% testing
 - [ ] Break out messages
 - [ ] Multiplayer functionality
 - [ ] Incorporated 'Special Rules'

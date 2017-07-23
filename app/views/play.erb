@@ -2,4 +2,7 @@
   <h1>Your choice: <%= @game.player_choice %></h1>
   <h1 id="comp">Comp choice: <%= @game.computer_choice %></h1>
   <h1><%= @game.result %></h1>
+  <form action="/game" method="get">
+    <input class="submit" type="submit" value="Play again">
+  </form>
 </div>
