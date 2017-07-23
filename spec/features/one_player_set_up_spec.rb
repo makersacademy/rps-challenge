@@ -1,16 +1,7 @@
 feature 'One Player Set Up' do
 
-  scenario 'player chooses battle mode' do
-    visit('/')
-    click_button "1 Player"
-    expect(page).to have_content 'Enter your name'
-  end
-
-  scenario 'player enters name' do
-    visit('/')
-    click_button "1 Player"
-    fill_in :player_1_name, with: "Sir R Spec"
-    click_button "Go"
+  scenario 'chooses 1 player mode and enters name' do
+    one_player_battle_setup
     expect(page).to have_content 'Sir R Spec'
   end
 

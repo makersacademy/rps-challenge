@@ -40,6 +40,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/switch-turns' do
+    @game.switch_turns
+    redirect '/play'
+  end
+
   get '/result' do
     erb :result
   end
