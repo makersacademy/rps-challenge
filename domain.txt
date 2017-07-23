@@ -1,0 +1,9 @@
+Game      :initialize(players)
+          :choose(figure)   # => figure
+          :winner           # => winning player name
+
+Player    :initialize(name)
+          :name             # => name
+
+handsigns :signs            # => array of existing signs
+          :winning_sign(sign1, sign2) # => winning sign

@@ -1,1 +1,7 @@
-<%= @player_name %>
+<%= @name %> vs Computer
+
+<form action="/winner" method="get">
+  <input type="submit" value="Rock" name="sign">
+  <input type="submit" value="Paper" name="sign">
+  <input type="submit" value="Scissors" name="sign">
+</form>
