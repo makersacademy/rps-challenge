@@ -1,3 +1,11 @@
 <h1> <%= @player_1_name %> chooses <%= @weapon_choice %></h1>
 <h1> Computer chooses <%= @computer_choice %></h1>
 <h1>It's a draw!!</h1>
+
+<h3>Is that all you got? Wanna try again?</h3>
+<form action="/play">
+  <input type="submit" value="Yes, bring it on">
+</form>
+
+<form action="/">
+  <input type="submit" value="Maybe next time">
