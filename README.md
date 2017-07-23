@@ -10,7 +10,7 @@ How to install
 ----
 
 Download or clone this repository to your computer.
-Open your terminal and navigate to the folder with the game (rps-challenge). Run 'bundle install' to install the required dependencies.
+Open your terminal and navigate to the folder with the game (rps-challenge). Run `bundle install` to install the required dependencies.
 
 
 How to play
@@ -28,7 +28,7 @@ Maximum connections set to 1024
 Listening on localhost:4567, CTRL+C to stop
 ```
 
-Now open your web browser, copy-paste the game address 'localhost:4567' from the code above into the address line and hit enter. Enjoy!
+Now open your web browser, copy-paste the game address `localhost:4567` from the code above into the address line and hit enter. Enjoy!
 
 
 
