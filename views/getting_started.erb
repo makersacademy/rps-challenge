@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head></head>
-<body>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<body id="page_2">
   <div align="center">
-
-     <p> Player 1 name is: <%= @player_1_name %> with <b> <%= @weapon %> </b> as a weapon</p>
-     <p> Computer's weapon is: <%= @computer_weapon%></p> 
-     <p> Winner is: <%= @result %> </p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+         <p> Player: <%= @player_1_name.capitalize %> with weapon <%= @weapon %></p>
+         <p> Computer's weapon is: <%= @computer_weapon%></p> 
+         <p> Winner is: <b> <%= @result %> </b> </p>
+       </div>
+    </div>
   </div>
 </body>
 </html>

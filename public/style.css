@@ -2,9 +2,18 @@
   width: 48%;
 }
 
-body {
+body#page_index {
   background: url("https://wallpapers.walldevil.com/wallpapers/w02/preview/771994-blue-background-funny-minimalistic-paper-rocks-scissors.jpg");
   background-repeat:no-repeat;
   background-size: cover;
 }
 
+body#page_2 {
+  background: url("https://s-media-cache-ak0.pinimg.com/originals/ba/9b/63/ba9b632e481a87800f13d89fb822d4d4.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+#page_2 .panel-default {
+  background-color: cornsilk;
+}
