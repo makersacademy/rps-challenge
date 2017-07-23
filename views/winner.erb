@@ -22,15 +22,15 @@
 </head>
 <body>
   <div class="container overlay">
-    <div class="messageimportant"><%= @winner_name %> won!</div>
-    <div class="messageminor"><%= @player_name %>: <%= @player_sign.capitalize %> | <%= @computer_name %>: <%= @computer_sign.capitalize %></div>
+    <div class="messageimportant" data-ix="delayed-headline"><%= @winner_name %> won!</div>
+    <div class="messageminor" data-ix="delayedtitle"><%= @player_name %>: <%= @player_sign.capitalize %> | <%= @computer_name %>: <%= @computer_sign.capitalize %></div>
   </div>
   <div class="w-clearfix">
     <div class="controlsoverlay">
       <div class="verticallycenteredblock w-form">
 
         <form action="/replay" method="get">
-          <input class="overlaybutton w-button" type="submit" value="Play again">
+          <input class="overlaybutton w-button" data-ix="delayed-button" type="submit" value="Play again">
         </form>
 
       </div>

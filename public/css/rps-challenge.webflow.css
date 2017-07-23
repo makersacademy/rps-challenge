@@ -148,6 +148,27 @@
   letter-spacing: 2px;
 }
 
+html.w-mod-js *[data-ix="delayed-button"] {
+  opacity: 0;
+  -webkit-transform: translate(0px, 10px);
+  -ms-transform: translate(0px, 10px);
+  transform: translate(0px, 10px);
+}
+
+html.w-mod-js *[data-ix="delayedtitle"] {
+  opacity: 0;
+  -webkit-transform: translate(0px, -15px);
+  -ms-transform: translate(0px, -15px);
+  transform: translate(0px, -15px);
+}
+
+html.w-mod-js *[data-ix="delayed-headline"] {
+  opacity: 0;
+  -webkit-transform: translate(0px, -15px);
+  -ms-transform: translate(0px, -15px);
+  transform: translate(0px, -15px);
+}
+
 @media (max-width: 991px) {
   .controlsoverlay {
     padding-top: 50%;
