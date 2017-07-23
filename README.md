@@ -26,7 +26,7 @@ Incomplete
 
 Screenshots
 -------
-
+![Alt text](https://raw.githubusercontent.com/langphil/rps-challenge/master/public/images/app.png "Screenshot")
 
 Instructions
 -------
