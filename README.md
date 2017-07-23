@@ -3,7 +3,7 @@
 About
 -------
 
-This is a Ruby + Sinatra implementation of the "Rock, Paper Scissors" game. You choose your signs while computer makes its choice randomly. Try your luck, beat the computer!
+This is a Ruby + Sinatra implementation of the "Rock, Paper Scissors" game. You choose your signs while the computer makes its choice randomly. Try your luck, beat the computer!
 
 
 How to install
