@@ -14,12 +14,12 @@ class RpsWeb < Sinatra::Base
 
   post '/names' do
     player_1 = Player.new(params[:player_1_name])
-    $game = Game.new(player_1)
+    @game = Game.create(player_1)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     params[:weapons]
     erb :play
   end
