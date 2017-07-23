@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link href="/style.css" rel="stylesheet" type="text/css" /> -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite" rel="stylesheet">
     <title>Let Battle Commence!</title>
   </head>
 
   <body>
     <h2>Let Battle Commence!</h2>
 
-    <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
+    <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h3>
 
     <% if @game.current_player == @game.player_1 %>
-    <h3><%= @game.current_player.name %>, choose your move</h3>
-    <form action="/switch-turns" method="post" style="display: inline-block;">
-      <input type="submit" value="Rock" name="move">
-      <input type="submit" value="Paper" name="move">
-      <input type="submit" value="Scissors" name="move">
-      <input type="submit" value="Spock" name="move">
-      <input type="submit" value="Lizard" name="move">
-    </form>
+    <div class="container-fluid">
+      <h4><%= @game.current_player.name %>, choose your move</h4>
+      <form action="/switch-turns" method="post">
+        <input type="submit" value="Rock" name="move" class="btn btn-default">
+        <input type="submit" value="Paper" name="move" class="btn btn-default">
+        <input type="submit" value="Scissors" name="move" class="btn btn-default">
+        <input type="submit" value="Spock" name="move" class="btn btn-default">
+        <input type="submit" value="Lizard" name="move" class="btn btn-default">
+      </form>
+    </div>
     <% end %>
 
     <% if @game.current_player == @game.player_2 && @game.player_2.name != "Computer" %>
-    <h3><%= @game.current_player.name %>, choose your move</h3>
-    <form action="/battle-analysis" method="post" style="display: inline-block;">
-      <input type="submit" value="Rock" name="move">
-      <input type="submit" value="Paper" name="move">
-      <input type="submit" value="Scissors" name="move">
-      <input type="submit" value="Spock" name="move">
-      <input type="submit" value="Lizard" name="move">
-    </form>
+    <div class="container-fluid">
+      <h3><%= @game.current_player.name %>, choose your move</h3>
+      <form action="/battle-analysis" method="post" style="display: inline-block;">
+        <input type="submit" value="Rock" name="move">
+        <input type="submit" value="Paper" name="move">
+        <input type="submit" value="Scissors" name="move">
+        <input type="submit" value="Spock" name="move">
+        <input type="submit" value="Lizard" name="move">
+      </form>
+    </div>
     <% end %>
 
     <% if @game.current_player == @game.player_2 && @game.player_2.name == "Computer" %>
+    <div class="container-fluid">
     <h3><%= @game.current_player.name %> has chosen its move</h3>
-    <!-- Need to make a post to switch-turns here -->
-    <form action="/battle-analysis" method="post" style="display: inline-block;">
-      <input type="submit" value="Continue" name="move">
-    </form>
+      <form action="/battle-analysis" method="post" style="display: inline-block;">
+        <input type="submit" value="Continue" name="move">
+      </form>
+    </div>
     <% end %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 
 </html>

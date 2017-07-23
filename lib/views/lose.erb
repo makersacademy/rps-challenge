@@ -7,22 +7,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite" rel="stylesheet">
-    <title>Rock Paper Scissors</title>
+    <title>Let Battle Commence!</title>
   </head>
-
   <body>
 
-    <div class="container-fluid">
-    <h1>Rock Paper Scissors</h1>
+    <h2>And the winner is...<h2>
 
-    <form action="/mode" method="post">
-      <input type="submit" value="1 Player" name="play_mode" class="btn btn-default">
-      <input type="submit" value="2 Player" name="play_mode" class="btn btn-default">
-    </form>
-  </div>
+    <p><%= @game.player_2.name %>'s <%= @game.player_2.move %> defeated <%= @game.player_1.name %>'s <%= @game.player_1.move %></p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+  <script src="js/bootstrap.min.js"></script>
+</body>
 
 </html>

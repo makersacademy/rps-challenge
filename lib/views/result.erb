@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- <link href="/style.css" rel="stylesheet" type="text/css" /> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite" rel="stylesheet">
   <title>Battle Results</title>
 </head>
 
 <body>
 
-<h2>and the winner is...</p>
+  <div class="container-fluid">
+  <h2>and the winner is...</p>
+  <p><%= @game.calc_winner %></p>
+  <form action="/" method="get" style="display: inline-block;">
+    <input type="submit" value="Play Again">
+  </form>
+  </div>
 
-<p><%= @game.calc_winner %></p>
-
-<form action="/" method="post" style="display: inline-block;">
-  <input type="submit" value="Play Again">
-</form>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
