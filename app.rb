@@ -1,12 +1,19 @@
 require 'sinatra'
 
 class Rps < Sinatra::Base
+	enable :sessions
+
 	get '/' do
 		erb :index
 	end
 
 	post '/name' do
-		@player = params[:player]
+		session[:player_name] = params[:player]
+		redirect '/play'
+	end
+
+	get '/play' do
+		@player_name = session[:player_name]
 		erb :play
 	end
 
