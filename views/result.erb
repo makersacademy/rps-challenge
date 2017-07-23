@@ -8,17 +8,23 @@
 <body>
   <h1 class="rainbow"> <%= @player_1.name %> </h1>
   <h1 style="text-align:center;"> VS </h1>
-  <h1 style="text-align:center;"> COMPUTER </h1>
+  <h1 style="text-align:center;"> <%= @player_2.name %> </h1>
 
   <br>
   <br>
-  <h1 style="text-align:center;"> [WINNER DECLARATION] </h1>
+  <% if @winner_name == nil %>
+    <h1 style="text-align:center;"> IT'S A DRAW!!! </h1>
+  <% else %>
+    <h1 style="text-align:center;"> <%= @winner_name.upcase %> WINS!!! </h1>
+  <% end %>
   <br>
   <br>
 
   <p> <%= @player_1.name %> attacked with <%= @player_1.weapon %>! </p>
+  <p> <%= @player_2.name %> attacked with <%= @player_2.weapon %>! </p>
 
-
-
+  <form action="/play" method="get">
+    <input type="submit" value="AGAIN AGAIN!!!">
+  </form>
 
 </body>

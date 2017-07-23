@@ -7,6 +7,7 @@ class Player
   end
 
   def select_attack(weapon)
-    @weapon = weapon
+    fail("Illegal weapon detected!") unless Game::WEAPONS.include? weapon.to_sym
+    @weapon = weapon.to_sym
   end
 end

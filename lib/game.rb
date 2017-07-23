@@ -19,16 +19,12 @@ class Game
 
   def take_turn(weapon)
     @player_1_turn ? @players.first.select_attack(weapon) : @players.last.select_attack(weapon)
-    switch_turn
+    # switch_turn
   end
 
-  def get_result
-    return "draw" if @players.first.weapon == @players.last.weapon
-    if RULES[@players.first.weapon] == @players.last.weapon
-      @players.first.name
-    else
-      @players.last.name
-    end
+  def evaluate_result
+    return nil if @players.first.weapon == @players.last.weapon
+    return RULES[@players.first.weapon] == @players.last.weapon ? @players.first.name : @players.last.name
   end
 
   private

@@ -1,9 +1,13 @@
 class Computer
 
-    attr_reader :weapon
+  attr_reader :name, :weapon
 
-    def select_attack
-      @weapon = Game::WEAPONS.sample
-    end
-    
+  def initialize(name)
+    @name = name
+  end
+
+  def select_attack
+    @weapon = Game::WEAPONS.sample
+  end
+
 end

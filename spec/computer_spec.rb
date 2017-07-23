@@ -1,5 +1,6 @@
 describe Computer do
-  subject(:computer) { described_class.new }
+  subject(:computer) { described_class.new(name) }
+  let(:name) { "Computer" }
   let(:random_weapon) { :scissors }
 
   describe '#select_attack' do

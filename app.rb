@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
 
   post '/new_game' do
     player_1 = Player.new(params[:player_1_name])
-    computer_player = Computer.new
+    computer_player = Computer.new("Computer")
     Game.instance.add_player(player_1)
     Game.instance.add_player(computer_player)
     redirect '/play'
@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_1 = Game.instance.players.first
+    @player_2 = Game.instance.players.last
     erb :play
   end
 
@@ -29,8 +30,10 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    Game.instance.players.last.select_attack
     @player_1 = Game.instance.players.first
-    @winner = Game.instance.get_result
+    @player_2 = Game.instance.players.last
+    @winner_name = Game.instance.evaluate_result
     erb :result
   end
 
