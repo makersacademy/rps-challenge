@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :player_move
 
   def initialize(player)
     @player = player
@@ -12,6 +12,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def player_choice(player_choice)
+    @player_move = player_choice
   end
 
 end
