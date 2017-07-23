@@ -31,13 +31,13 @@ Style/IndentationConsistency:
   Enabled: true
 Style/IndentationWidth:
   Enabled: true
-Style/AccessorMethodName:
+Style/AccessorMethodname:
   Enabled: true
 Style/BlockEndNewline:
   Enabled: true
 Style/ClassAndModuleCamelCase:
   Enabled: true
-Style/ConstantName:
+Style/Constantname:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
@@ -55,7 +55,7 @@ Style/InverseMethods:
   Enabled: true
 Style/LeadingCommentSpace:
   Enabled: true
-Style/MethodName:
+Style/Methodname:
   Enabled: true
 Style/NegatedIf:
   Enabled: true
@@ -71,7 +71,7 @@ Style/NumericPredicate:
   Enabled: true
 Style/OneLineConditional:
   Enabled: true
-Style/PredicateName:
+Style/Predicatename:
   Enabled: true
 Style/RedundantParentheses:
   Enabled: true
@@ -85,7 +85,7 @@ Style/SpaceAfterColon:
   Enabled: true
 Style/SpaceAfterComma:
   Enabled: true
-Style/SpaceAfterMethodName:
+Style/SpaceAfterMethodname:
   Enabled: true
 Style/SpaceAfterNot:
   Enabled: true
@@ -133,9 +133,9 @@ Style/TrailingBlankLines:
   Enabled: true
 Style/TrivialAccessors:
   Enabled: true
-Style/VariableName:
+Style/Variablename:
   Enabled: true
-Style/FileName:
+Style/Filename:
   Enabled: true
 
 # Rubocop doesn't make disabling all cops in a given group easy, so we list...

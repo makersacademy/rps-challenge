@@ -1,5 +1,28 @@
 # RPS Challenge
 
+================
+
+What is this?
+
+This challenge required making a simple Sinatra web app to allow the user to play Rock Paper Scissors against a computer. An extension was to add in two-player functionality.
+
+Instructions for use:
+
+```
+bundle install
+rackup
+#visit http://localhost:9292/
+```
+
+Limitations:
+
+- I didn't have time to make all of the code DRY - several methods are very similar to each other
+- Rubocop informs me that the 'Cyclomatic complexity for calculate_winner_multiplayer is too high.' If I had further time to refactor I'd look for ways to remove or at least minimise use of if/else statements
+- The CSS included is very basic
+- Functionality to allow draws hasn't been added
+
+================
+
 Instructions
 -------
 

@@ -1,0 +1,10 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
+
+<h1 class = "center">Your weapon of choice: <%= Game.instance.description %>
+<%=Game.instance.player_one_selection %></h1>
+
+<form action="/gameover" type="get" class = "center_two">
+  <input type="submit" value="Ok">
+</form>

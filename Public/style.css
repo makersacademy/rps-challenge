@@ -1,0 +1,20 @@
+body {
+    background: #c21500;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: navy;
+}
+
+
+.center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+.center_two {
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+}

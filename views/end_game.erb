@@ -1,0 +1,9 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
+
+<h1 class = "center">And the results are in!!!</h1>
+
+<div class = "center"><%= Game.instance.name %> chose <%= Game.instance.player_one_selection %><div>
+<div class = "center"><%= Game.instance.name_two %> chose <%= Game.instance.player_two_selection %></div>
+<h2 class = "center"><%= Game.instance.winner %> WINS!!!</h2>
