@@ -1,33 +1,40 @@
-<div class="full">
-  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
-</div>
+<div class="container text-center">
+  <div class="row">
+    <div>
+        <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+        <h3><%= @game.player_1.name %>: <%= @game.scorer.score.first %></h3>
+    </div>
+
+    <div class="col-lg-6">
+        <h3><%= @game.player_2.name %>: <%= @game.scorer.score.last %></h3>
+    </div>
+  </div>
 
 <br>
-
-<div class="one-half">
-  <h3><%= @game.player_1.name %>: <%= @game.scorer.score.first %></h3>
-</div>
-
-<div class="one-half">
-  <h3><%= @game.player_2.name %>: <%= @game.scorer.score.last %></h3>
-</div>
-
 <br>
 
-<div class="one-third">
-  <form action="/submit" method="post">
-    <input type="image" src="http://picoplex.net/games/rpslp/rock.png" value="rock" name="pick">
-  </form>
-</div>
+  <div class="row">
+    <div class="col-lg-4">
+      <form action="/submit" method="post">
+        <input type="image" src="http://picoplex.net/games/rpslp/rock.png" value="rock" name="pick">
+      </form>
+    </div>
 
-<div class="one-third">
-  <form action="/submit" method="post">
-    <input type="image" src="http://picoplex.net/games/rpslp/paper.png" value="paper" name="pick">
-  </form>
-</div>
+    <div class="col-lg-4">
+      <form action="/submit" method="post">
+        <input type="image" src="http://picoplex.net/games/rpslp/paper.png" value="paper" name="pick">
+      </form>
+    </div>
 
-<div class="one-third">
-  <form action="/submit" method="post">
-    <input type="image" src="http://picoplex.net/games/rpslp/scissors.png" value="scissors" name="pick">
-  </form>
+    <div class="col-lg-4">
+      <form action="/submit" method="post">
+        <input type="image" src="http://picoplex.net/games/rpslp/scissors.png" value="scissors" name="pick">
+      </form>
+    </div>
+  </div>
 </div>
