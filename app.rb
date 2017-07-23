@@ -13,10 +13,14 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $player_1 = Player.new(params[:player_1_name])
+    # player_1 = Player.new(params[:player_1_name])
+    # @game = Game.create(player_1)
     redirect '/play'
   end
 
   get '/play' do
+    # @game = Game.instance
+    # @player_1_name = @game.player_1.name
     @player_1_name = $player_1.name
     erb :play
   end
@@ -25,16 +29,21 @@ class RPS < Sinatra::Base
     $weapon_choice = Weapon.new(params[:weapon_choice])
     # $weapon_choice.weapon=($weapon_choice.weapon)
     @player_1_name = $player_1.name
+    # @game = Game.instance
     redirect '/ready'
   end
 
   get '/ready' do
+    # @game = Game.instance
+    # @player_1_name = @game.player_1.name
     @player_1_name = $player_1.name
     @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
     erb :ready
   end
 
   get '/result' do
+    # @game = Game.instance
+    # @player_1_name = @game.player_1.name
     @player_1_name = $player_1.name
     @weapon_choice = $weapon_choice.weapon=($weapon_choice.weapon)
     $computer = Computer.new

@@ -1,5 +1,5 @@
 require_relative '../lib/weapon'
-
+require_relative '../lib/player'
 class Game
   attr_reader :player_1_weapon, :computer_choice
 
@@ -12,6 +12,14 @@ class Game
   def initialize(player_1_weapon, computer_choice)
     @player_1_weapon = player_1_weapon
     @computer_choice = computer_choice
+  end
+
+  def self.create(player_1)
+    @game = Game.new(player_1)
+  end
+
+  def self.instance
+    @game
   end
 
   def wins?
