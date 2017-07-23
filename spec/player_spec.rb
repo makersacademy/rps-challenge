@@ -17,7 +17,7 @@ describe Player do
 
     it 'returns the players pick' do
       player.rock
-      expect(player.pick).to eq 'rock'
+      expect(player.pick).to eq 'rock ✊'
     end
-  end  
+  end
 end
