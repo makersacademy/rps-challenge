@@ -40,6 +40,10 @@ class RockPaperScissors < Sinatra::Base
       erb :result
   end
 
+  get '/gameover' do
+    Game.instance.computer_select
+  end
+
 
 
   run! if app_file == $0
