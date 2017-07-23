@@ -6,6 +6,8 @@ describe Game do
 
   before do
     game_singleton.add_players([player_1, player_2])
+    allow(player_1).to receive :add_win
+    allow(player_2).to receive :add_win
   end
 
   describe '#add_player' do
@@ -18,13 +20,15 @@ describe Game do
     it 'returns the winner of the round' do
       allow(player_1).to receive :weapon { :paper }
       allow(player_2).to receive :weapon { :rock }
-      expect(game_singleton.evaluate_result).to eq player_1.name
+      game_singleton.evaluate_result
+      expect(game_singleton.round_winner).to eq player_1
     end
 
     it 'returns a draw if both players choose the same weapon' do
       allow(player_1).to receive :weapon { :paper }
       allow(player_2).to receive :weapon { :paper }
-      expect(game_singleton.evaluate_result).to eq nil
+      game_singleton.evaluate_result
+      expect(game_singleton.round_winner).to eq nil
     end
   end
 

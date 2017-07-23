@@ -12,10 +12,10 @@
 
   <br>
   <br>
-  <% if @winner_name == nil %>
+  <% if @winner == nil %>
     <h1 style="text-align:center;"> IT'S A DRAW!!! </h1>
   <% else %>
-    <h1 style="text-align:center;"> <%= @winner_name.upcase %> WINS!!! </h1>
+    <h1 style="text-align:center;"> <%= @winner.name.upcase %> WINS!!! </h1>
   <% end %>
   <br>
   <br>

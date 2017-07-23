@@ -13,6 +13,8 @@
 
   <br>
   <br>
+  <p style="text-align:center;"> Scores: </p>
+  <p style="text-align:center;"> <%= @player_1.name %>: <%= @player_1.score %> | <%= @player_2.name %>: <%= @player_2.score %></p>
 
   <p style="text-align:center;"> Make your choice, <%= @player_1.name %> </p>
   <form style="text-align:center;" action="/play" method="post">

@@ -30,9 +30,10 @@ class RPS < Sinatra::Base
 
   get '/result' do
     Game.instance.player_2.select_attack # select computer attack
+    Game.instance.evaluate_result
     @player_1 = Game.instance.player_1
     @player_2 = Game.instance.player_2
-    @winner_name = Game.instance.evaluate_result
+    @winner = Game.instance.round_winner
     erb :result
   end
 
