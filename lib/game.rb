@@ -1,8 +1,8 @@
 require_relative 'player'
 
 class Game
-  OPTIONS = ['rock', 'paper', 'scissors']
-  attr_reader :weapon, :player
+  OPTIONS = ['ROCK', 'PAPER', 'SCISSORS']
+  attr_reader :player
 
   def initialize(player)
     @player = player
@@ -15,4 +15,9 @@ class Game
   def self.instance
     @game
   end
+
+  def computer_selection
+    OPTIONS.sample
+  end
+
 end
