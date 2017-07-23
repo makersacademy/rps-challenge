@@ -18,7 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    erb(:win)
+    erb(@game.result)
   end
 
   post '/enter_name' do
@@ -30,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/select_weapon' do
     @game.player_1.weapon = params[:weapon].to_sym
-    @game.player_2.weapon = nil # Nil is replaced by random weapon 
+    @game.player_2.weapon = nil # Nil is replaced by random weapon
     redirect '/result'
   end
 
