@@ -1,19 +1,25 @@
-feature 'Choose your figure' do
+feature 'Choose sign' do
   before(:each) { sign_in_and_play }
+  before(:each) { srand(42) }
   let(:name) { 'Oleg' }
 
-  scenario 'choose rock' do
+  scenario 'Choose rock - human' do
     click_button('Rock')
     expect(page).to have_content "#{name}: Rock"
   end
 
-  scenario 'choose paper' do
+  scenario 'Choose paper - human' do
     click_button('Paper')
     expect(page).to have_content "#{name}: Paper"
   end
 
-  scenario 'choose scissors' do
+  scenario 'Choose scissors - human' do
     click_button('Scissors')
     expect(page).to have_content "#{name}: Scissors"
+  end
+
+  scenario 'Choose sign - computer' do
+    click_button('Rock')
+    expect(page).to have_content "Bender: Scissors"
   end
 end

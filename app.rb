@@ -13,7 +13,8 @@ class Rps < Sinatra::Base
     player = Player.new(params[:player_name])
     Game.create(player)
     @game = Game.instance
-    @name = @game.player_name
+    @player_name = @game.player_name
+    @computer_name = @game.computer_name
     erb :play
   end
 
@@ -21,12 +22,14 @@ class Rps < Sinatra::Base
      @game = Game.instance
   end
 
-  get '/winner' do
-    puts "Params:"
-    p params
-    @sign = params[:sign]
-    @name = @game.player_name
-
+  post '/winner' do
+    @game.set_computer_sign
+    @game.set_player_sign(params[:sign])
+    @player_name = @game.player_name
+    @player_sign = @game.player_sign
+    @computer_name = @game.computer_name
+    @computer_sign = @game.computer_sign
+    @winner_name = @game.winner.name
     erb :winner
   end
 
