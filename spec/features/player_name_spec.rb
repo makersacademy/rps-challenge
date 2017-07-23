@@ -7,6 +7,6 @@ feature 'player can register name' do
 
   scenario 'player can enter their name' do
     sign_in
-    expect(page).to have_content 'OK Dave - choose your weapon!'
+    expect(page).to have_content 'Dave - choose your weapon!'
   end
 end

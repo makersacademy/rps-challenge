@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $game = Game.new(Player.new(params[:player_name]))
-    $game.rounds(params[:best_of])
+    $game.max_rounds(params[:best_of])
     redirect '/weapons'
   end
 
@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
+    $game.next_round
     $game.player_choice(params[:rock] || params[:paper] || params[:scissors])
     redirect '/battle'
   end

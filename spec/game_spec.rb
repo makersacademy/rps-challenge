@@ -44,4 +44,11 @@ describe Game do
     end
   end
 
+  describe "#next_round" do
+    it 'increases the round by one' do
+      expect { game.next_round }.to change { game.round }.by(1)
+      game.next_round
+    end
+  end
+
 end

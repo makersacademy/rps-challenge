@@ -23,4 +23,12 @@ feature 'picking rock, paper or scissors' do
     expect(page).to have_content 'Dave has chosen SCISSORS'
   end
 
+  scenario 'the player can move to the next round' do
+    sign_in
+    click_button 'ROCK'
+    click_button 'NEXT ROUND'
+    expect(page).not_to have_content 'Dave has chosen'
+    expect(page).to have_content 'Dave - choose your weapon!'
+  end
+
 end

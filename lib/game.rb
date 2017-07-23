@@ -1,25 +1,30 @@
 class Game
 
-  attr_reader :player, :computer, :length
-
   RULES = {
     'ROCK' => { 'ROCK' => 'DRAW', 'PAPER' => 'YOU LOSE', 'SCISSORS' => 'YOU WIN' },
     'PAPER' => { 'ROCK' => 'YOU WIN', 'PAPER' => 'DRAW', 'SCISSORS' => 'YOU LOSE' },
     'SCISSORS' => { 'ROCK' => 'YOU LOSE', 'PAPER' => 'YOU WIN', 'SCISSORS' => 'DRAW' }
   }
 
+  attr_reader :player, :computer, :length, :round
+
   def initialize(player, computer = Computer)
     @player = player
     @computer = computer.new
     @length = 0
+    @round = 1
   end
 
   def player_name
     player.name
   end
 
-  def rounds(number)
-    @length = number
+  def max_rounds(number)
+    length = number
+  end
+
+  def next_round
+    @round += 1
   end
 
   def player_choice(weapon)
