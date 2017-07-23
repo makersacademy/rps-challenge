@@ -16,6 +16,11 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/play' do
+    @game = Game.instance
+    erb :play
+  end
+
   post '/result' do
     @game = Game.instance
     @game.player_1.weapon = params[:player_weapon]
