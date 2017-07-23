@@ -17,7 +17,8 @@
 <body>
 <h1> Rock, Paper, Scissors </h1>
 <h3><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h3>
-<%= @game.player_1.name %>: <%= @game.player_1.weapon.capitalize %>
+<%= @game.player_1.name %>: <%= @game.player_1.weapon.capitalize %> |
+<%= @game.player_2.name %>: <%= @game.player_2.weapon.capitalize %>
 <br><br>
 <form action="/play" method="get">
   <input style="font-size: 100%" type="submit" value="OK">

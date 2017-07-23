@@ -13,7 +13,7 @@ describe Computer do
     end
   end
 
-  describe '#weapon' do
+  describe '#weapon=' do
     it 'can choose rock' do
       # Assuming at most 100 tries are sufficient to get rock that has 33% odds
       100.times do
@@ -40,6 +40,9 @@ describe Computer do
       end
       expect(computer.weapon).to eq :scissors
     end
-  end
 
+    it 'fails for any other weapon' do
+      expect { computer.weapon = :spock }.to raise_error "Invalid weapon"
+    end
+  end
 end
