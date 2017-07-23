@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/computer_player'
+require './lib/weapon'
 
 class RPS < Sinatra::Base
 
@@ -23,6 +24,16 @@ class RPS < Sinatra::Base
   get '/play' do
     @game = $game
     erb :play
+  end
+
+  post '/weapon' do
+    @weapon_type = Weapon.new(params[:weapon_type])
+    redirect '/weapon'
+  end
+
+  get '/weapon' do
+    @game = $game
+    erb :weapon
   end
 
   run if app_file == $0
