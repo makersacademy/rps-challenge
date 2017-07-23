@@ -19,24 +19,22 @@ class Game
   def computer_select
     pick = rand(3)
     if pick == 1
-      @computer_hash = {"Rock" => 1}
+      @computer_hash = { "Rock" => 1 }
     elsif pick == 2
-      @computer_hash = {"Paper" => 2}
+      @computer_hash = { "Paper" => 2 }
     else
-      @computer_hash = {"Scissors" => 3}
+      @computer_hash = { "Scissors" => 3 }
     end
-    get_computer_object
+    find_computer_object
   end
 
-  def get_computer_object
+  def find_computer_object
     @computer_selection = @computer_hash.keys.join("")
   end
 
-
-
   def calculate_winner
-    if (@computer_hash.values.join().to_i)
-      - (@player_one_hash.values.join().to_i) == 2 || -1
+    if @computer_hash.values.join().to_i
+      - @player_one_hash.values.join().to_i == 2 || -1
       @winner = @name
     else
       @winner = @computer
@@ -45,23 +43,22 @@ class Game
 
   def human_select(option)
     if option == "Rock"
-      @player_one_hash = {"Rock" => 1}
+      @player_one_hash = { "Rock" => 1 }
     elsif option == "Paper"
-      @player_one_hash = {"Paper" => 2}
+      @player_one_hash = { "Paper" => 2 }
     else
-      @player_one_hash = {"Scissors" => 3}
+      @player_one_hash = { "Scissors" => 3 }
     end
-   get_player_one_object
-   fancy_description
+    find_player_one_object
+    fancy_description
   end
 
-
-  def get_player_one_object
+  def find_player_one_object
     @player_one_selection = @player_one_hash.keys.join("")
   end
 
   def player_two_select(option)
-   @player_two_selection = option
+    @player_two_selection = option
   end
 
   def calculate_winner_multiplayer
