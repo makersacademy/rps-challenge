@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RpsWeb < Sinatra::Base
 
@@ -11,12 +13,13 @@ class RpsWeb < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:player_1_name])
+    player_1 = Player.new(params[:player_1_name])
+    $game = Game.new(player_1)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = $player_1.name
+    @game = $game
     erb :play
   end
 
