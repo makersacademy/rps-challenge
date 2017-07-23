@@ -14,7 +14,7 @@ Installation Instructions
 Example terminal input for above steps:
 
 ```
-$ git@github.com:jransome/rps-challenge.git
+$ git clone git@github.com:jransome/rps-challenge.git
 $ cd rps-challenge
 $ bundle
 $ rackup
