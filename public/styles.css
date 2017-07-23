@@ -10,6 +10,13 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
+
+}
+
+.page {
+  overflow: hidden;
+  width: 1100px;
+  margin: 0 auto;
 }
 
 h1, h2 {
@@ -50,12 +57,6 @@ h2 {
   text-align: center;
 }
 
-.page {
-  overflow: hidden;
-  width: 1100px;
-  margin: 0 auto;
-}
-
 .sidebar {
   margin: 0px 20px;
   float: left;
@@ -71,13 +72,13 @@ h2 {
   float: left;
 }
 
-.human-choices {
+.choices {
   height: 150px;
 }
 
 .player-2 {
   float: right;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 
@@ -121,4 +122,18 @@ button {
   text-align: center;
   padding: 20px;
   margin: 20px 300px;
+}
+
+.play-again {
+  font-size: 2em;
+  background-color: #b2d6ff;
+  padding: 40px 140px;
+  margin: 0px 300px 0px 300px;
+  border: 2px solid black;
+  border-radius: 100px;
+  float: center;
+}
+
+.play-again:hover {
+  background-color: #ff0000;
 }

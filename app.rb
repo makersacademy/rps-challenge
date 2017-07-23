@@ -11,20 +11,23 @@ class RockPaperScissors < Sinatra::Base
       "#{player.name} chooses #{choice.to_s.capitalize}!" if choice
     end
 
+    def generic_message(player)
+      "#{player.name} has chosen!"
+    end
+
     def win_message(winner)
-      winner == 0 ? 'Draw!' : "#{winner.name} wins!"
+      winner == 0 ? 'Draw!' : "#{winner.name} wins the round!"
     end
 
-    def pretty_score
-      "#{@game.score[0]}:#{@game.score[1]}"
+    def game_over?
+      @game.over?
     end
 
-    def check_if_game_over
-      if @game.over?
-        @game.confirm_winner
-        redirect '/end_game'
-      end
+    def end_game
+      @game.confirm_winner
+      redirect '/end_game'
     end
+
   end
 
   get '/' do
@@ -33,43 +36,45 @@ class RockPaperScissors < Sinatra::Base
 
   before do
     @game = session[:game]
-    @human_player = session[:human_player]
-    @computer_player = session[:computer_player]
   end
 
   post '/name' do
     session[:game] = Game.create(Player.new(params[:player_name]), ComputerPlayer.new('Superhans'))
-    session[:human_player] = Player.new(params[:player_name])
-    session[:computer_player] = ComputerPlayer.new('Superhans')
     redirect '/play'
   end
 
   get '/play' do
-    check_if_game_over
-    @game
-    @score = pretty_score
+    end_game if game_over?
     @last_play = session[:last_play]
-    @human_choice = session[:human_choice] || "Choose from the above!"
-    @computer_choice = session[:computer_choice]
+    @player_1_choice = session[:player_1_choice] || 'Choose from the above!'
+    @player_2_choice = session[:player_2_choice] || 'Get on with it m8'
     erb :play
   end
 
   post '/choice' do
-    computer_choice = @game.computer_player.choose
-    human_choice = params[:choice].to_sym
-    @game.play(human_choice, computer_choice)
-    session[:last_play] = win_message(@game.last_winner)
-    session[:human_choice] = event_message(@game.human_player, human_choice)
-    session[:computer_choice] = event_message(@game.computer_player, computer_choice)
+    p params
+    player_1_choice = params[:player_1_choice].to_sym
+    if @game.type == :single
+      player_2_choice = @game.player_2.choose
+      @game.play(player_1_choice, player_2_choice)
+      session[:last_play] = win_message(@game.last_winner)
+      session[:player_1_choice] = event_message(@game.player_1, player_1_choice)
+      session[:player_2_choice] = event_message(@game.player_2, player_2_choice)
+    else
+      session[:player_1_choice] = generic_message(@game.player_1)
+    end
     redirect '/play'
   end
 
   get '/end_game' do
-    @game
-    @human_choice = session[:human_choice]
-    @computer_choice = session[:computer_choice]
+    @player_1_choice = session[:player_1_choice]
+    @player_2_choice = session[:player_2_choice]
     erb :end_game
   end
 
+  post '/play_again' do
+    session.clear
+    redirect '/'
+  end
 
 end

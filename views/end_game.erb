@@ -11,21 +11,25 @@
     </div>
     <div class='page'>
       <div class='player-1'>
-        <% if @game.winner == @game.human_player %>
+        <% if @game.winner == @game.player_1 %>
           <img class='avatar win-avatar' src='images/edward.jpeg'/>
         <% else %>
           <img class='avatar' src='images/edward.jpeg'/>
         <% end %>
-        <h2 class='result'> <%= @human_choice %></h2>
+        <h2 class='result'> <%= @player_1_choice %></h2>
       </div>
       <div class='player-2'>
-        <% if @game.winner == @game.computer_player %>
+        <% if @game.winner == @game.player_2 %>
           <img class='avatar win-avatar' src='images/superhans.jpeg'/>
         <% else %>
           <img class='avatar' src='images/superhans.jpeg'/>
         <% end %>
-        <h2 class='result'> <%= @computer_choice %></h2>
+        <h2 class='result'> <%= @player_2_choice %></h2>
       </div>
+      <div class='player-divider'></div>
+      <form method='post' action='/play_again'>
+        <input type='submit' class='play-again' value='Click to Play Again'>
+      </form>
     </div>
   </body>
 </html>

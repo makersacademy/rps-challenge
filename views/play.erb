@@ -7,29 +7,39 @@
   </head>
   <body>
       <div class='heading'>
-        <h1><%= @game.human_player.name %> vs. <%= @game.computer_player.name %></h1>
-        <h2> <%= @score %> </h2>
+        <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+        <h2> <%= @game.pretty_score %> </h2>
       </div>
       <div class='page'>
-        <!-- <div class='sidebar'>Sidebar</div> -->
         <div class='player-1'>
           <img class='avatar' src='images/edward.jpeg'/>
-          <form class='human-choices' method='post' action='/choice'>
-            <button type='submit' name='choice' value='rock'><img class='icon' src='images/rock.png'/></button>
-            <button type='submit' name='choice' value='paper'><img class='icon' src='images/paper.png'/></button>
-            <button type='submit' name='choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
-
+          <form class='choices' method='post' action='/choice'>
+            <button type='submit' name='player_1_choice' value='rock'><img class='icon' src='images/rock.png'/></button>
+            <button type='submit' name='player_1_choice' value='paper'><img class='icon' src='images/paper.png'/></button>
+            <button type='submit' name='player_1_choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
           </form>
-          <h2 class='result'> <%= @human_choice %></h2>
+          <h2 class='result'> <%= @player_1_choice %></h2>
         </div>
         <div class='player-2'>
           <img class='avatar' src='images/superhans.jpeg'/>
-          <h2 class='result'> <%= @computer_choice %></h2>
+
+          <% if @game.type == :multi %>
+            <form class='choices' method='post' action='/choice'>
+              <button type='submit' name='player_2_choice' value='rock'><img class='icon' src='images/rock.png'/></button>
+              <button type='submit' name='player_2_choice' value='paper'><img class='icon' src='images/paper.png'/></button>
+              <button type='submit' name='player_2_choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
+            </form>
+          <% end %>
+
+          <h2 class='result'> <%= @player_2_choice %></h2>
         </div>
         <div class='player-divider'></div>
-        <div class='outcome'>
-          <h3> <%= @last_play %> </h3>
-        </div>
+
+        <% if @last_play %>
+          <div class='outcome'>
+            <h3> <%= @last_play %> </h3>
+          </div>
+        <% end %>
 
       </div>
   </body>

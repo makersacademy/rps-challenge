@@ -1,31 +1,32 @@
 class Game
   CHOICES = [:rock, :paper, :scissors]
-  attr_reader :human_player, :computer_player, :last_winner, :best_of, :winner
+  attr_reader :player_1, :player_2, :last_winner, :best_of, :winner, :type
 
-  def self.create(human_player, computer_player, best_of = 3)
-    @current = Game.new(human_player, computer_player, best_of)
+  def self.create(player_1, player_2, best_of = 3)
+    @current = Game.new(player_1, player_2, best_of)
   end
 
-  def initialize(human_player, computer_player, best_of)
-    @human_player = human_player
-    @computer_player = computer_player
+  def initialize(player_1, player_2, best_of)
+    @player_1 = player_1
+    @player_2 = player_2
     @best_of = best_of
+    @type = :single
   end
 
   def self.current
     @current
   end
 
-  def play(human_choice, computer_choice)
-    update_last_round_winner(result(human_choice, computer_choice))
+  def play(player_1_choice, player_2_choice)
+    update_last_round_winner(result(player_1_choice, player_2_choice))
   end
 
-  def score
-    [human_player.score, computer_player.score]
+  def pretty_score
+    "#{player_1.score}:#{player_2.score}"
   end
 
   def over?
-    points_to_win == human_player.score || points_to_win == computer_player.score
+    points_to_win == player_1.score || points_to_win == player_2.score
   end
 
   def confirm_winner
@@ -35,7 +36,7 @@ class Game
   private
 
   def winning_player
-    human_player.score == points_to_win ? human_player : computer_player
+    player_1.score == points_to_win ? player_1 : player_2
   end
 
   def update_final_winner(player)
@@ -46,14 +47,14 @@ class Game
     @last_winner = player
   end
 
-  def result(human_choice, computer_choice)
-    return 0 if human_choice == computer_choice
-    if human_choice == loses_to(computer_choice)
-      computer_player.update_score
-      computer_player
+  def result(player_1_choice, player_2_choice)
+    return 0 if player_1_choice == player_2_choice
+    if player_1_choice == loses_to(player_2_choice)
+      player_2.update_score
+      player_2
     else
-      human_player.update_score
-      human_player
+      player_1.update_score
+      player_1
     end
   end
 
@@ -66,7 +67,7 @@ class Game
   end
 
   def points_to_win
-    ( best_of + 1 ) / 2
+    (best_of + 1) / 2
   end
 
 end
