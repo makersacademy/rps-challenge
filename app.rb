@@ -43,14 +43,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/win' do
+    @game  = Game.instance
     erb :win
   end
 
   get '/lose' do
+    @game  = Game.instance
     erb :lose
   end
 
   get '/draw' do
+    @game  = Game.instance
     erb :draw
   end
 

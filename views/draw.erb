@@ -1,5 +1,39 @@
-It's a draw!
+<head>
+  <title>Rock Paper Scissors</title>
+  <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' >
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
+    <style>
+      h1 {
+        font-family: 'Bungee Shade', cursive;
+      }
+      h2 {
+        font-family: 'Roboto', sans-serif
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #B7B7B7;
+      }
+    </style>
+</head>
 
-<form action="/play" method="get">
-  <input type="submit" value="Play again?">
-</form>
+<div align='center'>  <h1>It's a draw!</h1>
+  <h2>Hal chose <%= @game.hal_move %></h2>
+
+  <div align='center'>
+    <% if @game.hal_move == "rock" %>
+      <img src= "http://pre07.deviantart.net/7c3e/th/pre/f/2013/335/0/7/the_rock_cartoon_png_by_undertaker02-d6wd2ge.png" width="400" height="200">
+    <% end %>
+
+    <% if @game.hal_move == "paper" %>
+      <img src= "http://img14.deviantart.net/110a/i/2013/108/a/2/looseleaf_by_granturismoboy2-d6277pr.png" width="400" height="200" margin="10px">
+    <% end %>
+
+    <% if @game.hal_move == "scissors" %>
+      <img src= "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-014-512.png" width="400" height="200">
+    <% end %>
+  </div>
+
+  <form action="/play" method="get">
+    <input type="submit" value="Play again?">
+  </form>
+</div>

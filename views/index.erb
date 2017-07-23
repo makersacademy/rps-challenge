@@ -1,7 +1,37 @@
-<h1> Rock Paper Scissors </h1>
-<h2> Enter your name </h2>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' >
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
+      <style>
+        h1 {
+          font-family: 'Bungee Shade', cursive;
+        }
+        h2 {
+          font-family: 'Roboto', sans-serif
+        }
+        body {
+          font-family: 'Roboto', sans-serif;
+          background: #B7B7B7;
+        }
+      </style>
 
-<form name="player" action="/player" method="post">
-  <input type="text" name="player_name">
-  <input type="submit" value="See your name in lights">
-</form>
+
+  </head>
+
+<body>
+  <div style='text-align:center'>
+    <h1> Rock Paper Scissors </h1>
+    <h2> Enter your name </h2>
+
+    <div align='center'>
+      <img src= "http://rockpaperpenandscissors.weebly.com/uploads/5/6/0/7/56077003/6810644_orig.jpg" >
+    </div>
+
+
+    <form name="player" action="/player" method="post">
+      <input type="text" name="player_name"><br>
+      <input type="submit" value="See your name in lights">
+    </form>
+  </div>
+</body>
