@@ -20,6 +20,6 @@ feature 'Choose sign' do
 
   scenario 'Choose sign - computer' do
     click_button('Rock')
-    expect(page).to have_content "Bender: Scissors"
+    expect(page).to have_content "Dio Padre: Scissors"
   end
 end
