@@ -22,6 +22,15 @@ class Game
     switch_turn
   end
 
+  def get_result
+    return "draw" if @players.first.weapon == @players.last.weapon
+    if RULES[@players.first.weapon] == @players.last.weapon
+      @players.first.name
+    else
+      @players.last.name
+    end
+  end
+
   private
 
   def switch_turn

@@ -2,6 +2,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app.rb'
+require './spec/features/test_sign_in_helper.rb'
 
 Capybara.app = RPS
 

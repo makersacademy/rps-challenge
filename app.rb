@@ -12,7 +12,9 @@ class RPS < Sinatra::Base
 
   post '/new_game' do
     player_1 = Player.new(params[:player_1_name])
+    computer_player = Computer.new
     Game.instance.add_player(player_1)
+    Game.instance.add_player(computer_player)
     redirect '/play'
   end
 
@@ -23,7 +25,13 @@ class RPS < Sinatra::Base
 
   post '/play' do
     Game.instance.take_turn(params[:weapon])
-    redirect '/play'
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_1 = Game.instance.players.first
+    @winner = Game.instance.get_result
+    erb :result
   end
 
   run! if app_file == $0
