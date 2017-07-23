@@ -5,13 +5,12 @@ describe Game do
   let(:draw) { "draw" }
 
   before do
-    game_singleton.add_player(player_1)
-    game_singleton.add_player(player_2)
+    game_singleton.add_players([player_1, player_2])
   end
 
   describe '#add_player' do
     it 'stores instances of players' do
-      expect(game_singleton.players).to include player_1
+      expect(game_singleton.player_1).to eq player_1
     end
   end
 

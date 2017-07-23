@@ -6,30 +6,16 @@ class Game
   RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
   include Singleton
-  attr_reader :players, :player_1_turn
+  attr_reader :player_1, :player_2
 
-  def initialize
-    @players = []
-    @player_1_turn = true
-  end
-
-  def add_player(player)
-    @players += [player]
-  end
-
-  def take_turn(weapon)
-    @player_1_turn ? @players.first.select_attack(weapon) : @players.last.select_attack(weapon)
-    # switch_turn
+  def add_players(players)
+    @player_1 = players.first
+    @player_2 = players.last
   end
 
   def evaluate_result
-    return nil if @players.first.weapon == @players.last.weapon
-    return RULES[@players.first.weapon] == @players.last.weapon ? @players.first.name : @players.last.name
+    return nil if @player_1.weapon == @player_2.weapon
+    return RULES[@player_1.weapon] == @player_2.weapon ? @player_1.name : @player_2.name
   end
 
-  private
-
-  def switch_turn
-    @player_1_turn = !@player_1_turn
-  end
 end
