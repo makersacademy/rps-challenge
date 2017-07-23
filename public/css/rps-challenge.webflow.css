@@ -16,11 +16,15 @@
   width: 100%;
 }
 
+.container.tall {
+  padding-top: 350px;
+}
+
 .background {
   height: auto;
   min-height: 100vh;
-  background-image: url('../images/Michelangelo-Creazione-di-Adamo-XL.jpg');
-  background-position: 0px 0px;
+  background-image: url('../images/Michelangelo-Creazione-di-Adamo-XL-centered.jpg');
+  background-position: 50% 0px;
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -180,5 +184,25 @@ html.w-mod-js *[data-ix="delayed-headline"] {
     -webkit-transform: translate(0px, -50vh);
     -ms-transform: translate(0px, -50vh);
     transform: translate(0px, -50vh);
+  }
+  .form {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container.tall {
+    padding-top: 50px;
+  }
+  .messageimportant {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .form {
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }

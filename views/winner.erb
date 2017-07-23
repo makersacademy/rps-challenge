@@ -2,15 +2,15 @@
 <html data-wf-page="5974d82d0f93db3c99393a71" data-wf-site="5974b9cde6ed92540361c389">
 <head>
   <meta charset="utf-8">
-  <title>Rock, Paper, Scissors</title>
-  <meta content="Winner" property="og:title">
+  <title>Sasso Carta Forbici</title>
+  <meta content="Sasso Carta Forbici" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/rps-challenge.webflow.css" rel="stylesheet" type="text/css">
 
-  <!-- Manually overryde stylesheet to load right character animations -->
+  <!-- Manually overryde stylesheet to update character animations -->
   <style media="screen" type="text/css">
   .left {
     min-height: 100vh;
@@ -28,6 +28,7 @@
     background-repeat: no-repeat;
   }
   </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script type="text/javascript">WebFont.load({
   google: {
@@ -43,17 +44,15 @@
   <div class="container overlay">
     <div class="messageimportant" data-ix="delayed-headline"><%= @winner_name %> won!</div>
     <div class="messageminor" data-ix="delayedtitle"><%= @player_name %>: <%= @player_sign.capitalize %> | <%= @computer_name %>: <%= @computer_sign.capitalize %></div>
-  </div>
-  <div class="w-clearfix">
-    <div class="controlsoverlay">
-      <div class="verticallycenteredblock w-form">
+    <div class="container tall w-form">
 
-        <form action="/replay" method="get">
-          <input class="overlaybutton w-button" data-ix="delayed-button" type="submit" value="Play again">
-        </form>
+      <form action="/replay" method="get">
+        <input class="overlaybutton w-button" data-ix="delayed-button" type="submit" value="Play again">
+      </form>
 
-      </div>
     </div>
+  </div>
+  <div>
     <div class="fullheightrow w-row">
       <div class="left w-col w-col-6 w-col-small-6 w-col-tiny-6"></div>
       <div class="right w-col w-col-6 w-col-small-6 w-col-tiny-6"></div>
