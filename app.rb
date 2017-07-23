@@ -6,6 +6,10 @@ require './lib/weapon'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -17,12 +21,12 @@ class RPS < Sinatra::Base
     else
       player_two = Player.new(params[:player_two])
     end
-    $game = Game.new(player_one, player_two)
+    @game = Game.create(player_one, player_two)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game
     erb :play
   end
 
@@ -32,8 +36,13 @@ class RPS < Sinatra::Base
   end
 
   get '/weapon' do
-    @game = $game
+    @game
     erb :weapon
+  end
+
+  post '/switch-turns' do
+    @game.switch_turns
+    redirect '/play'
   end
 
   run if app_file == $0
