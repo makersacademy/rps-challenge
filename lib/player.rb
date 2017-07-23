@@ -8,14 +8,14 @@ class Player
   end
 
   def rock
-    @pick = 'rock'
+    @pick = 'rock ✊'
   end
 
   def paper
-    @pick = 'paper'
+    @pick = 'paper ✋'
   end
 
   def scissors
-    @pick = 'scissors'
+    @pick = 'scissors ✌️'
   end
 end
