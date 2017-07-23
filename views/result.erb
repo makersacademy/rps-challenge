@@ -1,3 +1,4 @@
-<h1><%= @player_weapon%></h1>
-
-<h2> <%= @player_weapon%> wins Scissors</h2>
+<h1><%= @game.player_1.name %></h1>
+<%= @game.return_winner%>
+<h2>Player 1 <%= @game.player_1.weapon%></h2>
+<h2>Player 2 <%= @game.player_2.weapon%></h2>

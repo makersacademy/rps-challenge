@@ -6,6 +6,6 @@ describe Computer do
 
   it 'returns a random weapon' do
     srand(0)
-    expect(computer.get_weapon).to eq weapon
+    expect(computer.generate_weapon).to eq weapon
   end
 end

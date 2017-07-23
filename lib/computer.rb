@@ -2,7 +2,7 @@ class Computer
 
   attr_reader :weapon
 
-  def get_weapon
+  def generate_weapon
     random_number = rand(0..2)
     if random_number.zero?
       @weapon = "Rock"

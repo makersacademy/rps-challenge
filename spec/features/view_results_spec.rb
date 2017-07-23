@@ -1,7 +1,7 @@
 feature 'view results' do
-  scenario 'view the resuslts after choosing weapon' do
+  scenario 'view the results after choosing weapon' do
     sign_in_and_play('Artemis')
     click_button "Rock"
-    expect(page).to have_content('Rock wins Scissors')
+    expect(page).to have_content('Draw')
   end
 end
