@@ -12,7 +12,6 @@ class RPSWeb < Sinatra::Base
 
   post '/name' do
     @game =  Game.create(Player.new(params[:player_name]), Computer.new)
-    p params
     redirect '/welcome'
   end
 

@@ -4,7 +4,7 @@ class Computer
   WEAPONS = [:rock, :paper, :scissors]
 
   def initialize
-    @name = "computer"
+    @name = "Computer"
   end
 
   def random_weapon_chooser

@@ -3,14 +3,12 @@ require_relative 'computer'
 
 class Game
   attr_reader :player, :computer, :player_weapon, :computer_weapon
-  
-  BEATS = {rock: :scissors, scissors: :paper, paper: :rock}
+
+  BEATS = { rock: :scissors, scissors: :paper, paper: :rock }
 
   def initialize(player, computer)
     @player = player
     @computer = computer
-    @player_weapon = nil
-    @computer_weapon = nil
   end
 
   def self.create(player, computer)

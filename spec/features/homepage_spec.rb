@@ -5,7 +5,7 @@ feature 'Entering names' do
     expect(page).to have_content("Please enter your name")
   end
 
-  scenario 'submitting name' do
+  scenario 'registering name to play' do
     sign_in
     expect(page).to have_content("Welcome Sam")
     expect(page).to have_content("Start the game")

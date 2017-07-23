@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'launchy'
   gem 'pry'
   gem 'rspec'
   gem 'rubocop'
