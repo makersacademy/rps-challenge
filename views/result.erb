@@ -20,11 +20,12 @@
   <br>
   <br>
 
-  <p> <%= @player_1.name %> attacked with <%= @player_1.weapon %>! </p>
-  <p> <%= @player_2.name %> attacked with <%= @player_2.weapon %>! </p>
+  <div style="text-align:center;">
+    <p> <%= @player_1.name %> fought gloriously with <%= @player_1.weapon %>! </p>
+    <p> <%= @player_2.name %> sucker punched with <%= @player_2.weapon %>! </p>
 
-  <form action="/play" method="get">
-    <input type="submit" value="AGAIN AGAIN!!!">
-  </form>
-
+    <form action="/play" method="get">
+      <input type="submit" value="AGAIN AGAIN!!!">
+    </form>
+  </div>
 </body>

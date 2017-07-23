@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    Game.instance.player_1.select_attack(params[:weapon])
+    Game.instance.select_player_attack(params[:weapon])
     redirect '/result'
   end
 

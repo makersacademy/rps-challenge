@@ -6,19 +6,19 @@ feature 'FEATURE: see result of a round of rock-paper-scissors against the compu
 
   scenario 'player has chosen a winning weapon' do
     choose("weapon", option: "rock")
-    click_button 'Fight!'
+    click_button 'ATTACK ATTACK!!!'
     expect(page).to have_content "SPOCK WINS!!!"
   end
 
   scenario 'player has chosen a losing weapon' do
     choose("weapon", option: "paper")
-    click_button 'Fight!'
+    click_button 'ATTACK ATTACK!!!'
     expect(page).to have_content "COMPUTER WINS!!!"
   end
 
   scenario 'both players have chosen the same weapon' do
     choose("weapon", option: "scissors")
-    click_button 'Fight!'
+    click_button 'ATTACK ATTACK!!!'
     expect(page).to have_content "IT'S A DRAW!!!"
   end
 end

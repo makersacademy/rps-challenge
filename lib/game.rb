@@ -13,6 +13,10 @@ class Game
     @player_2 = players.last
   end
 
+  def select_player_attack(attack)
+    @player_1.select_attack(attack)
+  end
+
   def evaluate_result
     return nil if @player_1.weapon == @player_2.weapon
     return RULES[@player_1.weapon] == @player_2.weapon ? @player_1.name : @player_2.name

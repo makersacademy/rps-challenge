@@ -6,16 +6,21 @@
 
 
 <body>
+
   <h1 class="rainbow"> <%= @player_1.name %> </h1>
   <h1 style="text-align:center;"> VS </h1>
   <h1 style="text-align:center;"> <%= @player_2.name %> </h1>
 
-  <form action="/play" method="post">
+  <br>
+  <br>
+
+  <p style="text-align:center;"> Make your choice, <%= @player_1.name %> </p>
+  <form style="text-align:center;" action="/play" method="post">
     <input type="radio" name="weapon" value="rock" checked> Rock<br>
     <input type="radio" name="weapon" value="paper"> Paper<br>
-    <input type="radio" name="weapon" value="scissors"> Scissors
-    <input type="submit" value="Fight!">
+    <input type="radio" name="weapon" value="scissors"> Scissors<br>
+    <br>
+    <input type="submit" value="ATTACK ATTACK!!!">
   </form>
-
 
 </body>

@@ -1,9 +1,18 @@
 h1,h2{
   text-align:center;
 }
+
 h1{
   color:rgba(100, 50, 255, .8);
 }
+
+
+.one2 {
+  text-align:center;
+
+      float: center;
+}
+
 .rainbow {
    /* Chrome, Safari, Opera */
   /*-webkit-animation: rainbow 5s infinite;*/
