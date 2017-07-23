@@ -10,7 +10,7 @@ describe Player do
       expect(player.score).to eq 0
     end
   end
-  describe 'update_score' do
+  describe '#update_score' do
     it 'increases player score by one' do
       expect{ player.update_score }.to change{ player.score }.by 1
     end

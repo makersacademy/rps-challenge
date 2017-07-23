@@ -14,6 +14,17 @@ class RockPaperScissors < Sinatra::Base
     def win_message(winner)
       winner == 0 ? 'Draw!' : "#{winner.name} wins!"
     end
+
+    def pretty_score
+      "#{@game.score[0]}:#{@game.score[1]}"
+    end
+
+    def check_if_game_over
+      if @game.over?
+        @game.confirm_winner
+        redirect '/end_game'
+      end
+    end
   end
 
   get '/' do
@@ -34,9 +45,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    check_if_game_over
     @game
+    @score = pretty_score
     @last_play = session[:last_play]
-    @human_choice = session[:human_choice]
+    @human_choice = session[:human_choice] || "Choose from the above!"
     @computer_choice = session[:computer_choice]
     erb :play
   end
@@ -44,11 +57,19 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     computer_choice = @game.computer_player.choose
     human_choice = params[:choice].to_sym
-    p @game.play(human_choice, computer_choice)
+    @game.play(human_choice, computer_choice)
     session[:last_play] = win_message(@game.last_winner)
     session[:human_choice] = event_message(@game.human_player, human_choice)
     session[:computer_choice] = event_message(@game.computer_player, computer_choice)
     redirect '/play'
   end
+
+  get '/end_game' do
+    @game
+    @human_choice = session[:human_choice]
+    @computer_choice = session[:computer_choice]
+    erb :end_game
+  end
+
 
 end

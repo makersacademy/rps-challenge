@@ -4,8 +4,121 @@
   box-sizing: border-box;
 }
 
-.page {
-  width: 900px;
-  margin: 0 auto;
+body {
+  background-image: url('images/background-3.jpg');
+  display: block;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+h1, h2 {
+  text-align: center;
   background-color: #b2d6ff;
+}
+
+h1 {
+  padding: 25px;
+  border-bottom: 2px solid black;
+}
+
+h2 {
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
+.index-heading {
+  padding: 30px;
+  text-align: center;
+  background-color: #b2d6ff;
+  border-bottom: 2px solid black;
+  height: 300px;
+  margin: 100px 10px 100px 10px;
+}
+
+.entry-form {
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text-entry {
+  font-size: 20px;
+  text-align: center;
+}
+
+.page {
+  overflow: hidden;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  margin: 0px 20px;
+  float: left;
+  width: 200px;
+  height: 400px;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #b2d6ff;
+}
+
+.player-1 {
+  float: left;
+}
+
+.human-choices {
+  height: 150px;
+}
+
+.player-2 {
+  float: right;
+  margin-top: 100px;
+}
+
+
+.avatar {
+  height: 180px;
+  border-radius: 100px;
+  border: 2px solid black;
+}
+
+.win-avatar {
+  height: 300px;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.icon {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.result {
+  padding: 10px;
+  background-color: #b2d6ff;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+  width: 350px;
+}
+
+.player-divider {
+  clear: both;
+  height: 20px;
+}
+
+.outcome {
+  background-color: #b2d6ff;
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 300px;
 }

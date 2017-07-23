@@ -6,20 +6,31 @@
     <link rel='stylesheet' href='styles.css'/>
   </head>
   <body>
-    <div class='page'>
       <div class='heading'>
         <h1><%= @game.human_player.name %> vs. <%= @game.computer_player.name %></h1>
+        <h2> <%= @score %> </h2>
       </div>
-      <form method='post' action='/choice'>
-        <input type='submit' name='choice' value='rock'/>
-        <input type='submit' name='choice' value='paper'/>
-        <input type='submit' name='choice' value='scissors'/>
-      </form>
+      <div class='page'>
+        <!-- <div class='sidebar'>Sidebar</div> -->
+        <div class='player-1'>
+          <img class='avatar' src='images/edward.jpeg'/>
+          <form class='human-choices' method='post' action='/choice'>
+            <button type='submit' name='choice' value='rock'><img class='icon' src='images/rock.png'/></button>
+            <button type='submit' name='choice' value='paper'><img class='icon' src='images/paper.png'/></button>
+            <button type='submit' name='choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
 
-      <p> <%= @human_choice %></p>
-      <p> <%= @computer_choice %></p>
-      <p> <%= @last_play %> </p>
+          </form>
+          <h2 class='result'> <%= @human_choice %></h2>
+        </div>
+        <div class='player-2'>
+          <img class='avatar' src='images/superhans.jpeg'/>
+          <h2 class='result'> <%= @computer_choice %></h2>
+        </div>
+        <div class='player-divider'></div>
+        <div class='outcome'>
+          <h3> <%= @last_play %> </h3>
+        </div>
 
-    </div>
+      </div>
   </body>
 </html>
