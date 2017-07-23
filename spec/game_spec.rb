@@ -3,7 +3,9 @@ require 'game'
 describe Game do
 
   let(:player) { double(:player, name: 'Dave', weapon: 'ROCK') }
-  subject(:game) { described_class.new(player) }
+  let(:computer) { double(:computer) }
+  let(:computer_class) { double(:computer_class, new: computer) }
+  subject(:game) { described_class.new(player, computer_class) }
 
   describe "player" do
     it "returns the player" do
@@ -12,19 +14,33 @@ describe Game do
   end
 
   describe "#set_weapon" do
-    it 'should set the player\'s weapon' do
-      allow(player).to receive(:set_weapon).with(any_args)
-      game.set_weapon('ROCK')
-      expect(game.weapon).to eq 'ROCK'
+    it 'sets the player\'s weapon' do
+      allow(player).to receive(:player_choice).with(any_args)
+      game.player_choice('ROCK')
+      expect(game.player_weapon).to eq 'ROCK'
     end
   end
 
-  describe "#computer_weapon" do
-    let(:computer) {double(:computer)}
-    it 'should select pass to Computer class' do
-      allow(computer).to receive(:set_weapon)
-      expect(computer).to receive(:weapon)
-      game.computer_weapon(computer)
+  describe "#outcome" do
+    it 'recognises a draw' do
+      allow(computer).to receive(:computer_choice)
+      allow(computer).to receive(:weapon).and_return('ROCK')
+      game.computer_choice
+      expect(game.outcome).to eq 'DRAW'
+    end
+
+    it 'recognises a win' do
+      allow(computer).to receive(:computer_choice)
+      allow(computer).to receive(:weapon).and_return('SCISSORS')
+      game.computer_choice
+      expect(game.outcome).to eq 'YOU WIN'
+    end
+
+    it 'recognises a loss' do
+      allow(computer).to receive(:computer_choice)
+      allow(computer).to receive(:weapon).and_return('PAPER')
+      game.computer_choice
+      expect(game.outcome).to eq 'YOU LOSE'
     end
   end
 

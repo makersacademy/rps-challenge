@@ -9,9 +9,9 @@ describe Player do
     end
   end
 
-  describe "#set_weapon" do
+  describe "#player_choice" do
     it 'should set the player\'s weapon' do
-      dave.set_weapon('ROCK')
+      dave.player_choice('ROCK')
       expect(dave.weapon).to eq 'ROCK'
     end
   end

@@ -7,7 +7,7 @@ class Player
     @weapon = nil
   end
 
-  def set_weapon(weapon)
+  def player_choice(weapon)
     @weapon = weapon
   end
 

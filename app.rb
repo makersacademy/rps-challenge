@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 require './lib/player'
 require './lib/computer'
 
@@ -19,12 +20,12 @@ class RPS < Sinatra::Base
   end
 
   post '/choices' do
-    $game.set_weapon(params[:rock] || params[:paper] || params[:scissors])
+    $game.player_choice(params[:rock] || params[:paper] || params[:scissors])
     redirect '/battle'
   end
 
   get '/battle' do
-    @computer_weapon = Computer.weapon
+    $game.computer_choice
     erb :battle
   end
 
