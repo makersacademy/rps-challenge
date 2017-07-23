@@ -1,0 +1,20 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/outcome.css">
+</head>
+<body>
+<center>
+<div class="player1"><p><%= @game.player_1.name %> played <%= @game.player_1.weapon.capitalize %></p></div>
+<div class="player2"><p><%= @game.player_2.name %> played <%= @game.player_2.weapon.capitalize %></p></div>
+<div class="container4">
+<% if @game.winner == :draw %>
+<p>It's a draw!!</p>
+<% else %>
+<p><%= @game.winner.weapon.capitalize %> beats <%= @game.loser.weapon.capitalize %>! <%= @game.winner.name %> wins!!</p>
+<% end %>
+
+<form action="/">
+  <button type="submit">Play again?</button>
+</form>
+</center>
+</div>
+</body>
