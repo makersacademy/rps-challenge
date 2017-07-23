@@ -29,7 +29,8 @@ class Rps < Sinatra::Base
     @player_sign = @game.player_sign
     @computer_name = @game.computer_name
     @computer_sign = @game.computer_sign
-    @winner_name = @game.winner_name 
+    @winner_name = @game.winner_name
+    @random_number = rand
     erb :winner
   end
 

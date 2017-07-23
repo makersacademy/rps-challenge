@@ -29,10 +29,3 @@ Listening on localhost:4567, CTRL+C to stop
 ```
 
 Now open your web browser, copy-paste the game address `localhost:4567` from the code above into the address line and hit enter. Enjoy!
-
-
-
-Known bugs
-----
-
-* Character animations don't force reload when reloading the window.
