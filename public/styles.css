@@ -42,8 +42,17 @@ h2 {
   text-align: center;
   background-color: #b2d6ff;
   border-bottom: 2px solid black;
-  height: 300px;
-  margin: 100px 10px 100px 10px;
+  margin: 100px 10px;
+}
+
+.menu input {
+  display: block;
+  margin: 10px 350px;
+  text-align: center;
+}
+
+.divider {
+  height: 20px;
 }
 
 .entry-form {
@@ -102,6 +111,13 @@ button {
   margin-right: 20px;
 }
 
+.start-button {
+  display: block;
+  top: 20px;
+  height: 50px;
+
+}
+
 .result {
   padding: 10px;
   background-color: #b2d6ff;
@@ -121,19 +137,19 @@ button {
   clear: both;
   text-align: center;
   padding: 20px;
-  margin: 20px 300px;
+  margin: 20px 340px;
+  border-radius: 50px;
 }
 
-.play-again {
-  font-size: 2em;
+.custom-button {
+  font-size: 1.5em;
   background-color: #b2d6ff;
   padding: 40px 140px;
-  margin: 0px 300px 0px 300px;
+  margin: 5px 300px auto;
   border: 2px solid black;
   border-radius: 100px;
-  float: center;
 }
 
-.play-again:hover {
+.play-again:hover, .custom-button:hover {
   background-color: #ff0000;
 }

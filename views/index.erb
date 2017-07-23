@@ -9,10 +9,14 @@
     <div class='container'>
       <div class='page'>
         <div class='index-heading'>
-          <h1>Enter your name below to take on Superhans!</h1>
-          <form class='entry-form' action='/name' method='post'>
-            <input class='text-entry' type='text' name='player_name'/>
-            <input type='submit' value='submit'/>
+          <h1>Choose from the options below</h1>
+          <div class='divider'></div>
+          <form class='menu' action='/menu' method='post'>
+            <button type='submit' class='custom-button' name='choice' value='single'>Single Player</button>
+            <button type='submit' class='custom-button' name='choice' value='multi'>Play a Friend</button>
+          </form>
+          <form class='menu' action='/instructions' method='post'>
+            <button type='submit' class='custom-button'>Instructions</button>
           </form>
         </div>
 

@@ -2,15 +2,15 @@ class Game
   CHOICES = [:rock, :paper, :scissors]
   attr_reader :player_1, :player_2, :last_winner, :best_of, :winner, :type
 
-  def self.create(player_1, player_2, best_of = 3)
-    @current = Game.new(player_1, player_2, best_of)
+  def self.create(player_1, player_2, type, best_of = 3)
+    @current = Game.new(player_1, player_2, type, best_of)
   end
 
-  def initialize(player_1, player_2, best_of)
+  def initialize(player_1, player_2, type, best_of)
     @player_1 = player_1
     @player_2 = player_2
     @best_of = best_of
-    @type = :single
+    @type = type
   end
 
   def self.current

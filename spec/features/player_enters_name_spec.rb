@@ -2,6 +2,7 @@ feature 'start game' do
 
   scenario 'marketeer knows to enter name to begin the game' do
     visit '/'
+    click_button 'Single Player'
     expect(page).to have_content('Enter your name below to take on Superhans!')
   end
 
