@@ -1,10 +1,13 @@
-<h2>Player: <%= @game.player_name %></h2>
-<form action='/play' method="post">
-  <button type="submit" value='Paper' name="player_choice">Paper</button>
-</form>
-<form action='/play' method="post">
-  <button type="submit" value='Scissors' name="player_choice">Scissors</button>
-</form>
-<form action='/play' method="post">
-  <button type="submit" value='Rock' name="player_choice">Rock</button>
-</form>
+<h1>Paper | Scissors | Rock</h1>
+<h2><%= @game.player_name %> pick an option</h2>
+<div class="selection">
+  <form action='/play' method="post">
+    <button type="submit" value='Paper' name="player_choice">Paper</button>
+  </form>
+  <form action='/play' method="post">
+    <button type="submit" value='Scissors' name="player_choice">Scissors</button>
+  </form>
+  <form action='/play' method="post">
+    <button type="submit" value='Rock' name="player_choice">Rock</button>
+  </form>
+</div>

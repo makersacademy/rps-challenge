@@ -13,6 +13,8 @@ Complete
 - [x] Incorporated SASS
 - [x] A winner is declared
 - [x] 95% testing
+- [x] All tests passing
+- [x] Styled app
 
 Incomplete
 -------
@@ -20,7 +22,6 @@ Incomplete
 - [ ] Break out messages
 - [ ] Multiplayer functionality
 - [ ] Incorporated 'Special Rules'
-- [ ] Styled app
 - [ ] Hosted on Heroku
 
 Notes
