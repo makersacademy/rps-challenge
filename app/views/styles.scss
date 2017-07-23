@@ -48,8 +48,9 @@ form {
         margin-bottom: 2em;
     }
 
-    .submit {
+    .submit, button {
         font-size: 1em;
+        margin-bottom: 1em;
         border-radius:5px;
         text-decoration: none;
         cursor: pointer;
@@ -63,4 +64,11 @@ form {
 .rps-hero {
     width: 60%;
     margin-bottom: 2em;
+}
+
+/* Result */
+
+.versus {
+    font-size: 0.4em;
+    color: red;
 }

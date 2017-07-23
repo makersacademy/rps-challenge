@@ -1,7 +1,6 @@
 <div>
-  <h1>Your choice: <%= @game.player_choice %></h1>
-  <h1 id="comp">Comp choice: <%= @game.computer_choice %></h1>
-  <h1><%= @game.result %></h1>
+  <h1><%= @game.player_choice %> <span class="versus">Vrs</span> <%= @game.computer_choice %></h1>
+  <h2><%= @game.result %></h2>
   <form action="/game" method="get">
     <input class="submit" type="submit" value="Play again">
   </form>

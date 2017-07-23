@@ -198,10 +198,59 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/public\/css\/styles.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/public\/css\/styles-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/public\/images\/paper.png": {
+		"ft": 32768,
+		"iS": 9201,
+		"oA": 0,
+		"oAP": "\/public\/images\/paper.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/public\/images\/rock.png": {
+		"ft": 32768,
+		"iS": 9538,
+		"oA": 0,
+		"oAP": "\/public\/images\/rock.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/public\/images\/scissors.png": {
+		"ft": 32768,
+		"iS": 12384,
+		"oA": 0,
+		"oAP": "\/public\/images\/scissors.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Rakefile": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/Rakefile",
+		"oF": 0
+		},
+	"\/README.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/README.html",
 		"oF": 0
 		},
 	"\/README.md": {
