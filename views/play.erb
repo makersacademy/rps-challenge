@@ -1,7 +1,20 @@
-<p><%= @game.player.name %>, make your choice!</p>
-<p>and Good Luck</p>
-  <form method="POST" action="/result">
-    <input class="button" type="submit" value="PAPER" name="weapon">
-    <input class="button" type="submit" value="SCISSORS" name="weapon">
-    <input class="button" type="submit" value="ROCK" name="weapon">
-  </form>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Artifika" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <p style="font-size: 40px"><%= @game.player.name.upcase %>, make your choice!</p>
+      <p style="font-size: 40px">and Good Luck</p>
+      <form method="POST" action="/result">
+        <input class="button" type="submit" value="PAPER" name="weapon">
+        <input class="button" type="submit" value="SCISSORS" name="weapon">
+        <input class="button" type="submit" value="ROCK" name="weapon">
+      </form>
+    </div>
+    <div class="image">
+      <img src="http://cs111.wellesley.edu/content/psets/ps03/images/rpscomic.png" width="100%">
+    </div>
+  </body>
+</html>

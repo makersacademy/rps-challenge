@@ -5,7 +5,7 @@ describe Game do
   let(:player) { double :player}
 
   it "returns random weapon" do
-    allow(Array).to receive(:sample) { "ROCK" }
+    allow(Game::OPTIONS).to receive(:sample) { "ROCK" }
     expect(game.computer_selection).to eq "ROCK"
   end
 

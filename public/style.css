@@ -1,0 +1,35 @@
+body {
+  background:
+    linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+  font-family: 'Artifika', serif;
+}
+
+h2 {
+  font-size: 50px;
+  text-shadow: 4px 4px;
+}
+div {
+
+  padding: 40px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 22px;
+}
+
+.field {
+  height: 40px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.button {
+  margin: 15px;
+  font-size: 35px;
+  border: 8px solid #7777D8;
+  color: #0C0C4E;
+  text-decoration: none;
+}
