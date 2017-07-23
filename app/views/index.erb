@@ -1,19 +1,35 @@
 <head>
   <style>
+    h1 {
+      color: white;
+      font-size: 100px;
+      font-family: "Times New Roman body", Times, serif;
+      margin-left: 60px
+    }
     body {
-      background-image: url("http://s3.thingpic.com/images/A6/SDpBWpyNnUauLr8YSVX14xsi.jpeg");
+      background-image: url("http://i.imgur.com/2VlN1Qv.jpg");
       background-repeat: no-repeat;
       background-size: cover;
     }
   </style>
 <head>
-
+  
 <body>
   <h1>
     Divine Battle
   <h1>
+  <h2>
+    Sign in to play
+  <h2>
   <form action="/name" method="post">
-      <input type="text" name="player_1_name">
-      <input class="submit" type="submit" value="Submit">
+      <div class = 'adam_name'>
+        Adam's name
+        <input type="text" name="player_1_name">
+      </div>
+      <div class = 'god_name'>
+        God's name
+        <input type="text" name="player_2_name">
+      </div>
+      <input class="submit" type="image" src="http://i.imgur.com/obkns6T.png" value="Submit">
   </form>
 </body>
