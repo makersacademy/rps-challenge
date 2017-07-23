@@ -8,22 +8,30 @@
     background: linear-gradient(to right, #fffcdc, #d9a7c7);
     font-family: "Raleway", "Helvetica", "Arial", sans-serif;
     text-align: center;
+    margin: 50px;
+    }
+    img {
+      width:400
     }
   </style>
 
   <body>
     <h1> <%= @game.player.name %> vs. <%= @game.computer.name  %> </h1>
 
-    <h2>The rules of the game are: </h2>
+    <h2 style="margin-top:50px;">The rules of the game are: </h2>
       <p>Rock beats Scissors</p>
       <p>Scissors beats Paper</p>
       <p>Paper beats Rock</p>
-    <h2>Choose your weapon</h2>
 
-    <form action="/choice" method="post">
-      <input type="submit" name="player_choice" value="rock">
-      <input type="submit" name="player_choice" value="paper">
-      <input type="submit" name="player_choice" value="scissors">
-    </form>
+    <h2 style="margin-top:50px;">Choose your weapon</h2>
+
+    <div style="margin-top:30px;">
+      <form action="/choice" method="post">
+        <input type="submit" name="player_choice" value="rock">
+        <input type="submit" name="player_choice" value="paper">
+        <input type="submit" name="player_choice" value="scissors">
+      </form>
+      <img src="/rock-paper-scissors.jpg">
+    </div>
   </body>
 </html>
