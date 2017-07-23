@@ -12,6 +12,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     $game = Game.new(Player.new(params[:player_name]))
+    $game.rounds(params[:best_of])
     redirect '/weapons'
   end
 
