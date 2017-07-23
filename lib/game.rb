@@ -22,7 +22,7 @@ class Game
     @hal_move = ["rock", "paper", "scissors"].sample
   end
 
-  def outcome(player_move,hal_move)
+  def outcome
     return "Draw" if @player_move == @hal_move
     return "You win!" if [['rock', 'scissors'],['scissors','paper'],['paper','rock']].include? [@player_move, @hal_move]
     "You lose!"

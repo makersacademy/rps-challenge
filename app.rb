@@ -33,6 +33,27 @@ class RockPaperScissors < Sinatra::Base
     erb :choice
   end
 
+  post '/hal' do
+    @game  = Game.instance
+    @game.hal_choice
+    @game.outcome
+    redirect '/win' if @game.outcome == "You win!"
+    redirect '/lose' if @game.outcome == "You lose!"
+    redirect '/draw' if @game.outcome == "Draw"
+  end
+
+  get '/win' do
+    erb :win
+  end
+
+  get '/lose' do
+    erb :lose
+  end
+
+  get '/draw' do
+    erb :draw
+  end
+
   run! if app_file == $0
 
 end
