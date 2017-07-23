@@ -9,9 +9,9 @@ $ cd rps-challenge
 $ bundle
 ```
 
-`$ rackup` then visit http://localhost:9292/ to play Rock, Paper, Scissors
-`$ rspec` for a summary of tests, checking that all tests are passing and test coverage (100%)
-`$ rubocop` for code style check (no offenses)
+- `$ rackup` then visit http://localhost:9292/ to play Rock, Paper, Scissors
+- `$ rspec` for a summary of tests, checking that all tests are passing and test coverage (100%)
+- `$ rubocop` for code style check (no offenses)
 
 
 User Stories
@@ -64,3 +64,21 @@ Although Game class receives Player as Player 1 and Computer as Player 2 it can 
 * Methods
   * weapon : returns the weapon
   * weapon= : selects one of the WEAPONS at random
+
+Note:
+```
+computer = Computer.new("Computer")
+computer.weapon = nil
+```
+
+Passing nil to weapon= causes nil to be overwritten with a random weapon. The `.sample` is done on the setter method so that Computer's pick can be displayed and reading it doesn't cause it to change.
+
+#### Controller
+
+The controller is app.rb
+* Routes
+  * / : Registers the name
+  * /play : Player 1 selects Rock / Paper / Scissors
+  * /result : Player 1 and Computer's picks are displayed with the result.
+
+  
