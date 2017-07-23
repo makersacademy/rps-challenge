@@ -1,0 +1,15 @@
+body {
+  background-image:url('/img/vertical-waves.png');
+  font-family: 'Cutive Mono', monospace;
+}
+
+h1, h2, h3 {
+  font-family: 'Special Elite', cursive;
+}
+
+.btn-default {
+  color: #fff
+  background-color: transparent;
+  border-color: white;
+	margin-bottom: 5px;
+}
