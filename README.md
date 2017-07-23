@@ -4,7 +4,7 @@ Try your luck playing a game of Rock Paper Scissors against the automated player
 
 Rock Paper Scissors was created in Sinatra, utilising rspec and Capybara for testing.
 
-## Getting Started
+## Getting started
 ```shell
 # Clone this repository
 $ git clone path https://github.com/SaphMB/rps-challenge
@@ -22,6 +22,9 @@ $ rackup
 $ http://localhost:9292
 
 ```
+
+## Getting started (the quick way)
+Play from your browser at https://boiling-everglades-59198.herokuapp.com/
 
 ## Running tests
 
