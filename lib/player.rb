@@ -11,7 +11,7 @@ class Player
   end
 
   def return_selection
-    @selection[0]
+    @selection[-1]
   end
 
 

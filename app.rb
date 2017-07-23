@@ -14,7 +14,6 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    p $player.name
     @player_name = $player.name
     $player.selection(params[:selection])
     @selection = $player.return_selection

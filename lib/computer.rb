@@ -7,12 +7,12 @@ class Computer
     @rps_array = ["Rock", "Paper", "Sissors"]
   end
 
-  def selection(rps)
+  def selection(rps =make_selection)
     @selection << rps
   end
 
   def return_selection
-    @selection[0]
+    @selection[-1]
   end
 
   def make_selection
