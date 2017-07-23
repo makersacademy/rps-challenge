@@ -42,7 +42,7 @@ class RockPaperScissors < Sinatra::Base
     else
       object = params[:Scissors]
     end
-    
+
     if (Game.instance.player_one_selection == nil) && (Game.instance.name_two == "NA")
       Game.instance.human_select(object)
       erb :result
@@ -51,7 +51,7 @@ class RockPaperScissors < Sinatra::Base
       @name_two = Game.instance.name_two
       erb :player_two
     else
-      Game.instance.player_one_select(object)
+      Game.instance.player_two_select(object)
       redirect '/end-game'
     end
   end
@@ -63,7 +63,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/end-game' do
-
+    Game.instance.calculate_winner_multiplayer
+    erb :end_game
   end
 
   get '/result' do

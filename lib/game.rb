@@ -43,8 +43,20 @@ attr_reader :player_one_selection, :player_two_selection,
    fancy_description
   end
 
-  def player_one_select(option)
+  def player_two_select(option)
    @player_two_selection = option
+  end
+
+  def calculate_winner_multiplayer
+    if (@player_two_selection == "Paper" && @player_one_selection == "Rock")
+      @winner = @name_two
+    elsif (@player_two_selection == "Scissors" && @player_one_selection == "Paper")
+      @winner = @name_two
+    elsif (@player_two_selection == "Rock" && @player_one_selection == "Scissors")
+      @winner = @name_two
+    else
+      @winner = @name
+    end
   end
 
   def fancy_description
