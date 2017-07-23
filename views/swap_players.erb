@@ -1,11 +1,15 @@
 <h1> Swap Players </h1>
-<% if @number_of_players == 2 %>
+<% if @number_of_players == 2 && @turn.odd? %>
 <form action='/selection' method='get'>
-  <input type='submit' name='go' value='#{@player_2_name}'/>
+  <input type='submit' name='go' value='Next turn'/>
+</form>
+<% elsif @number_of_players == 2 && @turn.even? %>
+<form action='/selection2' method='get'>
+  <input type='submit' name='go' value='Next turn'/>
 </form>
 <% elsif @number_of_players == 1 %>
 <form action='/computer_selection' method='get'>
-  <input type='submit' name='go' value='#{@player_2_name}'/>
+  <input type='submit' name='go' value='Computers go'/>
 </form>
 
 <% end %>

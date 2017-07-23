@@ -1,11 +1,16 @@
-<% if @selection %>
-<h2> <%= @selection%> </h2>
-<% end %>
-
-<h1> Player: <%= @player_name %> </h1>
-
-
-
+<% if @turn.odd? && @number_of_players == 2 %>
+<h1> Player: <%= @player_2_name %> </h1>
+<form action='/selection2' method='post'>
+  <input type='submit' name='selection' value='Sissors'/>
+</form>
+<form action='/selection2' method='post'>
+  <input type='submit' name='selection' value='Rock'/>
+</form>
+<form action='/selection2' method='post'>
+  <input type='submit' name='selection' value='Paper'/>
+</form>
+<% else %>
+<h1> Player: <%= @player_1_name %> </h1>
 <form action='/selection' method='post'>
   <input type='submit' name='selection' value='Sissors'/>
 </form>
@@ -15,3 +20,4 @@
 <form action='/selection' method='post'>
   <input type='submit' name='selection' value='Paper'/>
 </form>
+<% end %>
