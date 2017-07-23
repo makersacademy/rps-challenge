@@ -1,10 +1,12 @@
-=begin
 class Weapon
+WEAPONS = [:rock, :scissor, :paper]
+
   attr_reader :weapon
 
-  def initialize(weapon = [rock, scissor, paper].sample)
+  def initialize(weapon = WEAPONS.sample)
     @weapon = weapon
   end
 
+
 end
-=end
+

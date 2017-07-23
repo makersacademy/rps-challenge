@@ -1,23 +1,25 @@
+require "./lib/weapon.rb"
+
 class Game
-  
+  RULES = {
+    Weapon::WEAPONS[0] => { :rock => :draw, :paper => :paper, :scissor => :rock }, #=> rock
+    Weapon::WEAPONS[1] => { :rock => :rock, :paper => :scissor, :scissor => :draw }, #=> scissors 
+    Weapon::WEAPONS[2] => { :rock => :paper, :paper => :draw, :scissor => :scissor } #=> paper
+  }
+
   attr_reader :player_choice, :computer_choice
   
-  def initialize(player_choice, computer_choice = [:rock, :paper, :scissor].sample)
-    puts "Player's choice is: #{@player_choice = player_choice}"
-    puts "Computer's choice is: #{@computer_choice = computer_choice}"
+  def initialize(player_choice, computer_choice = Weapon::WEAPONS.sample)
+    player_choice = Weapon::WEAPONS.sample unless Weapon::WEAPONS.include?(player_choice)
+    @player_choice = player_choice
+    @computer_choice = computer_choice
   end 
 
-  RULES = {
-    :rock => { :rock => :draw, :paper => :paper, :scissor => :rock },
-    :paper => { :rock => :paper, :paper => :draw, :scissor => :scissor },
-    :scissor => { :rock => :rock, :paper => :scissor, :scissor => :scissor }
-  }
 
   def lets_play(player_choice, computer_choice)
     RULES[player_choice][computer_choice]
   end
-
+  
 end
 
-#game = Game.new(gets.chomp.to_sym)
-#puts game.lets_play
+
