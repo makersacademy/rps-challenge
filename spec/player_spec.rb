@@ -10,7 +10,15 @@ describe Player do
     end
   end
 
-  # describe '#player_move' do
-  #   it ""
-  # end
+  describe '#points' do
+    it 'outputs the points value' do
+      expect(player.points).to eq Player::STARTING_POINTS
+    end
+  end
+
+  describe '#increase_points' do
+    it 'increases the player points when they win the round' do
+    expect{ player.increase_points }.to change { player.points }.by(+10)
+    end
+  end
 end

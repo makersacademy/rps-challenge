@@ -1,14 +1,26 @@
-<%= @player_name %> vs Computer
+<%= @game.player.name %> vs The Computer
 <br>
-<%= @player_name %> has 0 points
+<%= @game.player.name %> has <%= @game.player.points %> points
 <br>
-The Computer has 0 points
+The Computer has <%= @game.computer_player.points %> points
 <br>
 
 <h3>Enter Rock, Paper or Scissors to make your move</h3>
-<form action="/result" method="get">
+<!-- <form action="/result" method="post">
   <label for="player_move">
     What's your move?<input type="text" name="player_move">
   </label>
   <input type="submit" value="Play">
+</form> -->
+
+<form action="/rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+<br>
+<form action="/scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+<br>
+<form action="/paper" method="post">
+  <input type="submit" value="Paper">
 </form>

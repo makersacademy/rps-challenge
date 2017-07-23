@@ -1,0 +1,9 @@
+<%= @game.player.name %> played <%= @player_move %>
+<br>
+Computer played <%= @game.computer_move.to_s.capitalize %>
+<br>
+<%= @game.player.name %> won! Here's 10 points, hurray!
+
+<form action="/add-player-points" method="post">
+  <input type="submit" value="OK">
+</form>
