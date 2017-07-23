@@ -1,9 +1,9 @@
 require_relative 'player'
+require_relative 'game'
 
 class ComputerPlayer < Player
-  CHOICES = [:rock, :paper, :scissors]
 
   def choose
-    CHOICES.sample
+    Game::CHOICES.sample
   end
 end

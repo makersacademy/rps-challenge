@@ -2,7 +2,7 @@ require 'computer_player'
 
 describe ComputerPlayer do
   subject(:computer) { described_class.new('computer') }
-  let(:choices) { ComputerPlayer::CHOICES }
+  let(:choices) { Game::CHOICES }
 
   describe '#choose' do
     3.times do
