@@ -29,8 +29,14 @@ class Rps < Sinatra::Base
     @player_sign = @game.player_sign
     @computer_name = @game.computer_name
     @computer_sign = @game.computer_sign
-    @winner_name = @game.winner.name
+    @winner_name = @game.winner_name 
     erb :winner
+  end
+
+  get '/replay' do
+    @player_name = @game.player_name
+    @computer_name = @game.computer_name
+    erb :play
   end
 
   run! if app_file == $0

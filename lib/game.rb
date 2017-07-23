@@ -30,8 +30,9 @@ class Game
 
   end
 
-  def winner
-    @player if winning_sign(computer_sign, player_sign) == player_sign
-    @computer
+  def winner_name
+    return "No one" if computer_sign == player_sign
+    return @player_name if winning_sign(computer_sign, player_sign) == player_sign
+    return @computer_name
   end
 end
