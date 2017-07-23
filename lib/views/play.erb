@@ -8,8 +8,9 @@
   <body>
     <h2>Let Battle Commence!</h2>
 
-    <h2><%= @game.current_player.name %> vs. <%= @game.opponent.name %> </h2>
+    <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
 
+    <% if @game.current_player == @game.player_1 %>
     <h3><%= @game.current_player.name %>, choose your move</h3>
     <form action="/switch-turns" method="post" style="display: inline-block;">
       <input type="submit" value="Rock" name="move">
@@ -18,6 +19,22 @@
       <input type="submit" value="Spock" name="move">
       <input type="submit" value="Lizard" name="move">
     </form>
+    <% end %>
+
+    <% if @game.current_player == @game.player_2 && @game.player_2.name != "Computer" %>
+    <h3><%= @game.current_player.name %>, choose your move</h3>
+    <form action="/result" method="post" style="display: inline-block;">
+      <input type="submit" value="Rock" name="move">
+      <input type="submit" value="Paper" name="move">
+      <input type="submit" value="Scissors" name="move">
+      <input type="submit" value="Spock" name="move">
+      <input type="submit" value="Lizard" name="move">
+    </form>
+    <% end %>
+
+    <% if @game.current_player == @game.player_2 && @game.player_2.name == "Computer" %>
+    <h3><%= @game.current_player.name %> has chosen its move</h3>
+    <% end %>
 
   </body>
 
