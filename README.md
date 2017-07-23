@@ -7,9 +7,10 @@ Instructions
 2. Run locally:
 
 ```
+$ bundle install
 $ rackup
 ```
-Navigate to "localhost:9292" to begin the game.
+Go to http://localhost:9292 to begin the game.
 
 Approach
 ----
@@ -49,4 +50,4 @@ So I can continue to procrastinate
 I would like an option to return to the beginning and play again
 ```
 
-I then began to implement these stories one by one using TDD.
+I then began to implement these stories one by one using TDD, first implementing basic functionality of the web app such as the ability to enter one's name and select which option to play, and then building the Ruby model to actually run the game. I chose to implement the computer player and the user via the same class, in order to better allow for possible expansion to multiplayer. Finally I used external CSS sheets to improve the visuals of the game, and deployed the app to Heroku.

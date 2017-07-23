@@ -25,9 +25,21 @@ describe Game do
   end
 
   describe "#winner" do
-    it "returns the winner of the game" do
+    it "knows that rock beats scissors" do
       allow(player_1).to receive(:weapon) { "rock" }
       allow(player_2).to receive(:weapon) { "scissors" }
+      expect(game.winner).to eq player_1
+    end
+
+    it "knows that scissors beats paper" do
+      allow(player_1).to receive(:weapon) { "scissors" }
+      allow(player_2).to receive(:weapon) { "paper" }
+      expect(game.winner).to eq player_1
+    end
+
+    it "knows that paper beats rock" do
+      allow(player_1).to receive(:weapon) { "paper" }
+      allow(player_2).to receive(:weapon) { "rock" }
       expect(game.winner).to eq player_1
     end
 

@@ -14,23 +14,23 @@ class RockPaperScissors < Sinatra::Base
   post "/name" do
     player_1 = Player.new(params[:player_name])
     player_2 = Player.new
-    $game = Game.new(player_1, player_2)
+    Game.create(player_1, player_2)
     redirect "/play"
   end
 
   get "/play" do
-    @game = $game
+    @game = Game.instance
     erb :play
   end
 
   post "/weapons" do
-    $game.player_1.play_weapon(params[:options])
-    $game.computer_weapon
+    Game.instance.player_1.play_weapon(params[:options])
+    Game.instance.computer_weapon
     redirect "/outcome"
   end
 
   get "/outcome" do
-    @game = $game
+    @game = Game.instance
     erb :outcome
   end
 end

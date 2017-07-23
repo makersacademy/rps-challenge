@@ -1,10 +1,18 @@
 class Game
   WINNERS = [["rock", "scissors"], ["scissors", "paper"], ["paper", "rock"]]
   LOSERS = WINNERS.map { |x, y| [y, x] }
+  WEAPONS = ["rock", "paper", "scissors"]
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
-    @weapons = ["rock", "paper", "scissors"]
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
   def player_1
@@ -16,7 +24,7 @@ class Game
   end
 
   def computer_weapon
-    player_2.play_weapon(weapons.sample)
+    player_2.play_weapon(WEAPONS.sample)
   end
 
   def winner
@@ -30,7 +38,7 @@ class Game
   end
 
   private
-  attr_reader :players, :weapons
+  attr_reader :players
 
   def match
     [player_1.weapon, player_2.weapon]
