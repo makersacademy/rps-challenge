@@ -44,7 +44,7 @@
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="container">
-          <h2><%= @game.current_player.name %>, choose your move</h2>
+          <h3><%= @game.current_player.name %>, choose your move</h3>
           <form action="/battle-analysis" method="post" style="display: inline-block;">
             <input type="submit" value="Rock" name="move" class="btn btn-default">
             <input type="submit" value="Paper" name="move" class="btn btn-default">
