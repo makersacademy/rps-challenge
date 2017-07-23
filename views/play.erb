@@ -1,6 +1,10 @@
-<h1>You're up <%= @name %>!</h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
 
-<form action='/choice' method='post'>
+<h1 class = "center_two">You're up <%= @name %>!</h1>
+
+<form action='/choice' method='post' class = "center_two">
   <input type='submit' name='Rock' value='Rock'>
   <input type='submit' name='Paper' value='Paper'>
   <input type='submit' name='Scissors' value='Scissors'>

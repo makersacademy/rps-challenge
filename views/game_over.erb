@@ -1,5 +1,9 @@
-<h1>And the results are in!!!</h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
 
-<div>You chose <%= Game.instance.player_one_selection %><div>
-<div>Our supergenious computer chose <%= Game.instance.computer_selection %></div>
-<h2><%= Game.instance.winner %> WINS!!!</h2>
+<h1 class = "center_two">And the results are in!!!</h1>
+
+<div class = "center_two">You chose <%= Game.instance.player_one_selection %><div>
+<div class = "center_two">Our supergenious computer chose <%= Game.instance.computer_selection %></div>
+<h2 class = "center_two"><%= Game.instance.winner %> WINS!!!</h2>

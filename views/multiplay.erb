@@ -1,8 +1,12 @@
-<h1>It's <%= @name %> vs. <%= @name_two %>!</h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+</head>
 
-<h2> <%= @name %> starts! </h2>
+<h1 class = "center_two">It's <%= @name %> vs. <%= @name_two %>!</h1>
 
-<form action='/choice' method='post'>
+<h2 class = "center_two"> <%= @name %> starts! </h2>
+
+<form action='/choice' method='post' class = "center_two">
   <input type='submit' name='Rock' value='Rock'>
   <input type='submit' name='Paper' value='Paper'>
   <input type='submit' name='Scissors' value='Scissors'>

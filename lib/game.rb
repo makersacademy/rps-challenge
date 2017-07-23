@@ -1,13 +1,14 @@
 class Game
-attr_reader :player_one_selection, :player_two_selection,
-:name, :name_two, :description, :computer_selection, :winner
+  attr_reader :player_one_selection, :player_two_selection,
+  :name, :name_two, :description, :computer_selection, :winner,
+  :computer_hash, :player_one_hash
 
-  def initialize(name, name_two="NA")
+  def initialize(name, name_two = "NA")
     @name = name
     @name_two = name_two
   end
 
-  def self.create(name, name_two="NA")
+  def self.create(name, name_two = "NA")
     @game = Game.new(name, name_two)
   end
 
@@ -18,29 +19,45 @@ attr_reader :player_one_selection, :player_two_selection,
   def computer_select
     pick = rand(3)
     if pick == 1
-      @computer_selection = "Rock"
+      @computer_hash = {"Rock" => 1}
     elsif pick == 2
-      @computer_selection = "Paper"
+      @computer_hash = {"Paper" => 2}
     else
-      @computer_selection = "Scissors"
+      @computer_hash = {"Scissors" => 3}
     end
+    get_computer_object
   end
 
+  def get_computer_object
+    @computer_selection = @computer_hash.keys.join("")
+  end
+
+
+
   def calculate_winner
-    if (@computer_selection == "Paper" && @player_one_selection == "Rock")
-      @winner = "Computer"
-    elsif (@computer_selection == "Scissors" && @player_one_selection == "Paper")
-      @winner = "Computer"
-    elsif (@computer_selection == "Rock" && @player_one_selection == "Scissors")
-      @winner = "Computer"
-    else
+    if (@computer_hash.values.join().to_i)
+      - (@player_one_hash.values.join().to_i) == 2 || -1
       @winner = @name
+    else
+      @winner = @computer
     end
   end
 
   def human_select(option)
-   @player_one_selection = option
+    if option == "Rock"
+      @player_one_hash = {"Rock" => 1}
+    elsif option == "Paper"
+      @player_one_hash = {"Paper" => 2}
+    else
+      @player_one_hash = {"Scissors" => 3}
+    end
+   get_player_one_object
    fancy_description
+  end
+
+
+  def get_player_one_object
+    @player_one_selection = @player_one_hash.keys.join("")
   end
 
   def player_two_select(option)
@@ -69,17 +86,4 @@ attr_reader :player_one_selection, :player_two_selection,
     end
   end
 
-  # def redirect(object)
-  #   if (player_one_selection == nil) && (name_two == "NA")
-  #     human_select(object)
-  #     @redirect = '/result'
-  #   elsif player_one_selection == nil
-  #     human_select(object)
-  #     @name_two = name_two
-  #     @redirect = '/player-two'
-  #   else
-  #     player_one_select(object)
-  #     @redirect = '/end-game'
-  #   end
-  # end
 end

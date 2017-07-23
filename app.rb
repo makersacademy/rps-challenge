@@ -10,7 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/setup' do
-     params[:two_player] ? (erb :names) : (erb :name)
+    params[:two_player] ? (erb :names) : (erb :name)
   end
 
   post '/name' do
@@ -37,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     if params[:Rock]
       object = params[:Rock]
-    elsif  params[:Paper]
+    elsif params[:Paper]
       object = params[:Paper]
     else
       object = params[:Scissors]
@@ -65,14 +65,6 @@ class RockPaperScissors < Sinatra::Base
   get '/end-game' do
     Game.instance.calculate_winner_multiplayer
     erb :end_game
-  end
-
-  get '/result' do
-    erb :result
-  end
-
-  get '/player-two' do
-    erb :player_two
   end
 
   run! if app_file == $0
