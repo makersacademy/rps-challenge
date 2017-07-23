@@ -9,8 +9,17 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/setup' do
+     params[:two_player] ? (erb :names) : (erb :name)
+  end
+
+  post '/name' do
     @game = Game.create(params[:player_name])
+    redirect '/play'
+  end
+
+  post '/names' do
+    @game = Game.create(params[:player_name_one])
     redirect '/play'
   end
 
