@@ -41,11 +41,22 @@ class RPS < Sinatra::Base
   end
 
   post '/switch-turns' do
+    @game.current_player.choose_move(params[:move])
     @game.switch_turns
     redirect '/play'
   end
 
-  get '/result' do
+  post '/battle-analysis' do
+    if params[:move] == "Continue"
+      @game.current_player.computer_move
+    else
+      @game.current_player.choose_move(params[:move])
+    end
+    redirect '/winner-declared'
+  end
+
+  get '/winner-declared' do
+    @game.calc_winner
     erb :result
   end
 

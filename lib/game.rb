@@ -2,6 +2,14 @@ class Game
 
   attr_reader :player_1, :player_2, :current_player, :opponent
 
+  WINNERS = [["Rock", "Scissors"], ["Rock", "Lizard"],
+            ["Paper", "Rock"], ["Paper", "Spock"],
+            ["Scissors", "Paper"], ["Scissors", "Lizard"],
+            ["Spock", "Rock"], ["Spock", "Scissors"],
+            ["Lizard", "Paper"], ["Lizard", "Spock"]]
+
+  LOSERS = WINNERS.map { |a, b| [b, a] }
+
   def initialize(player_1, player_2, mode)
     @player_1 = player_1
     @player_2 = player_2
@@ -19,8 +27,24 @@ class Game
   end
 
   def switch_turns
-  @current_player = (@current_player == @player_1 ? @player_2 : @player_1)
-  @opponent = (@opponent == @player_1 ? @player_2 : @player_1)
+    @current_player = (@current_player == @player_1 ? @player_2 : @player_1)
+    @opponent = (@opponent == @player_1 ? @player_2 : @player_1)
   end
+
+  def calc_winner
+    battle = [player_1.move, player_2.move]
+    declare_winner(battle)
+  end
+
+  def declare_winner(battle)
+    if WINNERS.include? battle
+      "#{player_1.name}'s #{player_1.move} defeated #{player_2.name}'s #{player_2.move}"
+    elsif LOSERS.include? battle
+      "#{player_2.name}'s #{player_2.move} defeated #{player_1.name}'s #{player_1.move}"
+    else
+      "You both chose #{player_1.move} - it's a draw!"
+    end
+  end
+
 
 end

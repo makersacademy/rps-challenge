@@ -5,10 +5,17 @@ feature 'One Player Set Up' do
     expect(page).to have_content 'Sir R Spec'
   end
 
-  scenario 'player 1 picks their move' do
+  scenario 'player 1 picks their move, switches turns with computer' do
     one_player_battle_setup
     click_button "Rock"
     expect(page). to have_content 'Computer has chosen its move'
+  end
+
+  scenario 'player 1 view result' do
+    one_player_battle_setup
+    click_button "Rock"
+    click_button "Continue"
+    expect(page). to have_content "and the winner is..."
   end
 
 end
