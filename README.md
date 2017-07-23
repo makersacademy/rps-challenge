@@ -81,4 +81,7 @@ The controller is app.rb
   * /play : Player 1 selects Rock / Paper / Scissors
   * /result : Player 1 and Computer's picks are displayed with the result.
 
-  
+Screenshot
+---
+
+https://www.dropbox.com/s/f3s03tov3s9ng8p/rps-challenge.png?dl=0
