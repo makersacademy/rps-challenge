@@ -1,0 +1,130 @@
+.h1 {
+  display: block;
+  font-family: 'Droid Serif', serif;
+  color: #000;
+  font-size: 50px;
+  line-height: 100px;
+  font-weight: 400;
+  letter-spacing: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.h1:hover {
+  color: #94c21e;
+}
+
+.div-block {
+  display: block;
+}
+
+.centerdiv {
+  font-family: 'Changa One', Impact, sans-serif;
+  text-align: center;
+}
+
+.section {
+  height: auto;
+  min-height: 100vh;
+  background-image: url('../images/Michelangelo-Creazione-di-Adamo-XL.jpg');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
+
+.left {
+  min-height: 100vh;
+  background-image: url('../images/adamo_rock.gif');
+  background-position: 100% 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right {
+  min-height: 100vh;
+  background-image: url('../images/god_rock.gif');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fullheightrow {
+  min-height: 100vh;
+}
+
+.controlsoverlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  float: left;
+  text-align: center;
+}
+
+.overlaybutton {
+  padding: 24px;
+  box-shadow: 25px 25px 6px 0 rgba(14, 28, 49, .57);
+  font-family: 'Droid Serif', serif;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.verticallycenteredblock {
+  padding-top: 70%;
+  -webkit-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+
+.messageoverlay {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 50vh;
+  padding-top: 96px;
+  text-align: center;
+}
+
+.messageimportant {
+  display: block;
+  font-family: 'Droid Serif', serif;
+  color: #554f0b;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.messageminor {
+  font-family: 'Droid Serif', serif;
+  color: #524f49;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .controlsoverlay {
+    padding-top: 50%;
+  }
+  .verticallycenteredblock {
+    display: block;
+    height: 100vh;
+    min-height: 100vh;
+    -webkit-transform: translate(0px, -50vh);
+    -ms-transform: translate(0px, -50vh);
+    transform: translate(0px, -50vh);
+  }
+}

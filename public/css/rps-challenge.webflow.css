@@ -1,0 +1,163 @@
+.centerdiv {
+  display: inline-block;
+  max-width: 600px;
+  font-family: 'Changa One', Impact, sans-serif;
+  text-align: center;
+}
+
+.container {
+  padding-top: 32px;
+  text-align: center;
+}
+
+.container.overlay {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+
+.background {
+  height: auto;
+  min-height: 100vh;
+  background-image: url('../images/Michelangelo-Creazione-di-Adamo-XL.jpg');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.left {
+  min-height: 100vh;
+  background-image: url('../images/adamo_paper_loop.gif');
+  background-position: 100% 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right {
+  min-height: 100vh;
+  background-image: url('../images/dio_padre_paper_loop.gif');
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fullheightrow {
+  min-height: 100vh;
+}
+
+.controlsoverlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  float: left;
+  text-align: center;
+}
+
+.overlaybutton {
+  width: 160px;
+  height: 56px;
+  margin-right: 16px;
+  margin-bottom: 32px;
+  margin-left: 16px;
+  padding: 5px 24px;
+  border: 2px solid #f1ea9c;
+  border-radius: 2px;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .69), rgba(0, 0, 0, .69));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .69), rgba(0, 0, 0, .69));
+  font-family: Lato, sans-serif;
+  color: #fff;
+  font-size: 13px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.overlaybutton:hover {
+  color: #f1ea9c;
+}
+
+.verticallycenteredblock {
+  padding-top: 70%;
+  -webkit-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+
+.messageoverlay {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+}
+
+.messageimportant {
+  display: inline-block;
+  max-width: 600px;
+  font-family: 'Droid Serif', serif;
+  color: #554f0b;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.messageminor {
+  font-family: 'Droid Serif', serif;
+  color: #524f49;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 48px;
+  border: 1px solid #360808;
+  background-color: rgba(0, 0, 0, .13);
+  font-family: 'Droid Serif', serif;
+  color: #360808;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form {
+  display: inline-block;
+  width: 500px;
+  text-align: center;
+}
+
+.text-field {
+  height: 56px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-family: Lato, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 991px) {
+  .controlsoverlay {
+    padding-top: 50%;
+  }
+  .verticallycenteredblock {
+    display: block;
+    height: 100vh;
+    min-height: 100vh;
+    -webkit-transform: translate(0px, -50vh);
+    -ms-transform: translate(0px, -50vh);
+    transform: translate(0px, -50vh);
+  }
+}
