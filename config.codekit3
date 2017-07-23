@@ -208,6 +208,17 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/public\/images\/app.png": {
+		"ft": 32768,
+		"iS": 88876,
+		"oA": 0,
+		"oAP": "\/public\/images\/app.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/public\/images\/paper.png": {
 		"ft": 32768,
 		"iS": 9201,
@@ -245,12 +256,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/Rakefile",
-		"oF": 0
-		},
-	"\/README.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/README.html",
 		"oF": 0
 		},
 	"\/README.md": {

@@ -24,6 +24,7 @@ feature 'Game play for Paper, Scissors, Rock' do
   end
 
   scenario 'Computer chooses a move' do
+    srand(NUMBER)
     click_button('Paper')
     response = find(:css, "#comp").text.strip
     expect(messages).to include response
@@ -32,7 +33,7 @@ feature 'Game play for Paper, Scissors, Rock' do
   context'Win, Lose, Draw' do
 
     before do
-      srand(NUMBER)
+      srand(2342)
     end
     scenario 'Player wins' do
       click_button('Paper')

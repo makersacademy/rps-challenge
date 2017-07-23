@@ -24,10 +24,6 @@ Incomplete
 - [ ] Incorporated 'Special Rules'
 - [ ] Hosted on Heroku
 
-Notes
--------
-
-
 Screenshots
 -------
 

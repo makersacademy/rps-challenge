@@ -13,7 +13,7 @@ $black: #000000;
 
 /* 1. Main */
 body {
-    background: #E0EAFC;
+    background: #FDCD32;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: $black;
 }
@@ -39,7 +39,7 @@ body {
 
 form {
     .input {
-        width: 18em;
+        width: 12em;
         height: 2.8em;
         font-size: 1em;
         padding-left: 1em;
@@ -49,7 +49,7 @@ form {
     }
 
     .submit, button {
-        background-color: #00b7ff;
+        background-color: #3262FD;
         color: white;
         font-size: 1em;
         margin-bottom: 1em;
@@ -66,10 +66,11 @@ form {
 .rps-hero {
     width: 60%;
     margin-bottom: 2em;
+    margin-top: 1em;
 }
 
 .selection {
-
+  margin-top: 3em;
 }
 
 /* Result */
