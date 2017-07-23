@@ -11,9 +11,12 @@ class RPS < Sinatra::Base
     erb :register
   end
 
-  post '/registered-player' do
-    @player_1_name = params[:player_1_name]
-    @player_hand_side = params[:player_hand_side]
+  post '/registered' do
+    @name = params[:name]
+    erb :registered
+  end
+
+  get '/play' do
     erb :play
   end
 

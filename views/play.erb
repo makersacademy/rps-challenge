@@ -1,8 +1,11 @@
-<body style="background-color:darkgrey;font-family:helvetica;" >
+<body style="background-color:lightgrey;font-family:helvetica;">
+Hello <%= @name %> welcome to the armoury!
 
-
-<h1 style="color:white;text-align:center;"> Welcome to RPS <%= @player_1_name %>!</h1>
-<h2 style="color:white;text-align:center;"> You have chosen to play the <%= @player_hand_side %> hand.</h2>
-<h3 style="color:white;text-align:center;"> You are now registered and ready to start playing... </h3>
+<center><form action="/game" method="post">
+  <input type="checkbox" name="weapon_type" value="rock"> Rock<br>
+  <input type="checkbox" name="weapon_type" value="paper"> Paper<br>
+  <input type="checkbox" name="weapon_type" value="scissors"> Scissors<br>
+  <input type="submit" value="Submit">
+</form></center>
 
 </body>

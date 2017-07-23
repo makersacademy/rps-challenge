@@ -1,16 +1,11 @@
 <body style="background-color:lightgrey;font-family:helvetica;">
 
-  <h1 style="text-align:center;">Rock, or Paper, or Scissors, you choose!</h1>
-  <h2 style="text-align:center;">Sign in to play</h2>
+  <h1 style="text-align:center;">Register your name to play:</h1>
 
-  <center><form action="/registered-player" method="post">
-    <label for="player_1_name">
+  <center><form action="/registered" method="post">
+    <label for="name">
       Name:
-      <input type="text" name="player_1_name">
-    </label>
-    <label for="player_hand_side">
-      The side you'd like to play (Left/Right):
-      <input type="text" name="player_hand_side">
+      <input type="text" name="name" value= "">
     </label>
     <input type="submit" value="Submit">
   </form></center>
