@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+NUMBER = 123
+
 feature 'Game play for Paper, Scissors, Rock' do
 
   before(:each) do
@@ -27,23 +29,23 @@ feature 'Game play for Paper, Scissors, Rock' do
     expect(messages).to include response
   end
 
-  context 'game close' do
+  context'Win, Lose, Draw' do
+
     before do
-      srand()
+      srand(NUMBER)
     end
-
-    scenario 'I can see if I have won' do
+    scenario 'Player wins' do
       click_button('Paper')
-      expect(page).to have_content 'beats'
+      expect(page).to have_content 'win'
     end
 
-    scenario 'I can see if I have lost' do
-      click_button('Rock')
+    scenario 'Player loses' do
+      click_button('Scissors')
       expect(page).to have_content 'lose'
     end
 
-    scenario 'I can see if I have drawn' do
-      click_button('Scissor')
+    scenario 'Players draw' do
+      click_button('Rock')
       expect(page).to have_content 'draw'
     end
   end

@@ -9,12 +9,6 @@
 	],
 "creatorBuild": "25849",
 "files": {
-	"\/.env": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.env",
-		"oF": 0
-		},
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
@@ -193,6 +187,16 @@
 		"oA": 2,
 		"oAP": "\/Procfile",
 		"oF": 0
+		},
+	"\/public\/css\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/public\/css\/style-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/Rakefile": {
 		"ft": 8192,

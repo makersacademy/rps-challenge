@@ -19,19 +19,17 @@ describe Game do
     end
   end
 
-  describe '#judging' do
-    let(:player_one) { 'Scissors' }
-    let(:player_two) { 'Scissors' }
-    let(:player_three) { 'Paper' }
-
-    it 'ascertains if there is a draw' do
-      message = 'We have a draw!'
-      expect(game.winner?(player_one, player_two)).to eq message
+  context '#winner?' do
+    it 'player has won' do
+      expect(game.result).to be_a_kind_of(String)
     end
 
-    it 'ascertains if a player has won' do
-      message = 'Paper loses to Scissors: Computer wins!'
-      expect(game.winner?(player_three, player_one)).to eq message
+    it 'player has lost' do
+      expect(game.result).to be_a_kind_of(String)
+    end
+
+    it 'players have drawn' do
+      expect(game.result).to be_a_kind_of(String)
     end
   end
 end
