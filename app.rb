@@ -19,12 +19,12 @@ class Rps < Sinatra::Base
   end
 
   before do
-     @game = Game.instance
+    @game = Game.instance
   end
 
   post '/winner' do
     @game.set_computer_sign
-    @game.set_player_sign(params[:sign])
+    @game.save_player_sign(params[:sign])
     @player_name = @game.player_name
     @player_sign = @game.player_sign
     @computer_name = @game.computer_name

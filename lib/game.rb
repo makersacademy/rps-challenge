@@ -12,14 +12,14 @@ class Game
   end
 
   def self.create(player)
-    @game = self.new(player)
+    @game = new(player)
   end
 
   def self.instance
     @game
   end
 
-  def set_player_sign(sign)
+  def save_player_sign(sign)
     @player_sign = sign.downcase.to_sym
   end
 
