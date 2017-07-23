@@ -8,4 +8,9 @@ class Game
     @players.first
   end
 
+  def random_weapon
+    random_weapon = ["rock", "paper", "scissors"].sample
+    random_weapon
+  end
+
 end

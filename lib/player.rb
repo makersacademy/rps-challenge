@@ -6,4 +6,7 @@ class Player
     @name = name
   end
 
+  def player_weapons(weapons)
+    weapons  
+  end
 end
