@@ -15,8 +15,8 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    if params[:player_name].empty? || params[:player_name] == 'ENTER A NAME!!!!'
-      erb :enter_name
+    if params[:player_name] == 'ENTER A NAME!!!!'
+      redirect '/'
     else
       @game = Game.create(Player.new(params[:player_name]), params[:best_of])
       redirect '/weapons'
