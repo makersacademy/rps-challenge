@@ -4,7 +4,7 @@ It's an online version of the age-old game, Rock, Paper, Scissors :fist: :hand: 
 
 ## How do you play the game?
 
-You can access the game at https://evening-wave-33267.herokuapp.com/
+You can access the game at https://annalaise-rps.herokuapp.com/
 
 Alternatively, to download it:
 
