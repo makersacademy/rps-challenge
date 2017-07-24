@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway">
+    <title>Result</title>
+  </head>
+  <style>
+    body {
+    background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+    font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    margin: 50px;
+    }
+  </style>
+
+  <body>
+    <h2 style="color:#384D9D;"> <%= "#{@game.player.name} chose #{@game.player_weapon}" %> </h2>
+    <h2 style="color:#19AAD1;"> <%= "#{@game.computer.name} chose #{@game.computer_weapon}" %> </h2>
+    <h2> <%= "The result: #{@game.result}" %> </h2>
+
+    <div style="margin-top:50px;">
+      <form action="/play_again" method="get">
+        <input type="submit"  value="Play Again">
+      </form>
+
+      <form action="/reset_game" method="get">
+        <input type="submit"  value="Reset Game">
+      </form>
+    </div>
+
+  </body>
+</html>
