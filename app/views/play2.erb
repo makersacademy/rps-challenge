@@ -1,31 +1,26 @@
-<head>
-  <style>
-    body {
-      background-image: url("http://i.imgur.com/DPPa1p7.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    h1 {
-      color: white;
-      font-size: 100px;
-      font-family: "Times New Roman body", Times, serif;
-      margin-left: 60px
-    }
-  </style>
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("http://i.imgur.com/uSMV62w.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 15px;
+        color: black
+      }
+    </style>
+  <head>
 
-<body>
-  <h1>
-    God
-  <h1>
-  <h2>
-    <%= @game.player_2.name %> is playing
-  </h2>
-  <div>
-    <%= @game.player_2.weapon.type.to_sym %>
-  </div>
-  <form action="/play_player_2" method="post">
-    <input type="text" name="weapon">
-    <input type="submit" value="Play" >
-  </form>
-</body>
+  <body>
+    <h1>
+      The First Battle
+    </h1>
+      Please choose between rock, paper, scissors
+    <form action="/play_player_2" method="post">
+      God's weapon
+      <input type="text" name="weapon">
+      <input type="submit" value="Play" >
+    </form>
+  </body>
+</html>

@@ -24,7 +24,21 @@ class RPSWeb < Sinatra::Application
   end
 
   get '/results' do
-    erb :results
+    if @game.player_1_win?
+      erb :adam_win
+    elsif @game.nul?
+      erb :nul
+    else
+      erb :god_win
+    end
+  end
+
+  get '/god_win' do
+    erb :adam_win
+  end
+
+  get '/nul' do
+    erb :adam_win
   end
 
   post '/play_player_1' do

@@ -1,28 +1,28 @@
-<head>
-  <style>
-    body {
-      background-image: url("http://i.imgur.com/FHaYy5j.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    h1 {
-      color: white;
-      font-size: 70px;
-      font-family: "Times New Roman body", Times, serif;
-      margin-left: 60px
-    }
-    form {
-      float: center;
-      margin: 20px 20px 20px 400px;
-    }
-  </style>
-<head>
-<body>
-  <h1>
-    <%= @game.player_1.name %> is playing Adam
-  <h1>
-  <form action="/play_player_1" method="post">
-    <input type="text" name="weapon">
-    <input type="submit" value="Play" >
-  </form>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("http://i.imgur.com/uSMV62w.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 15px;
+        color: black
+      }
+    </style>
+  <head>
+  <body>
+    <h1>
+      The First Battle
+    </h1>
+    <h2>
+      <% @game.player_1.name %> is playing adam
+    </h2>
+    Please choose between rock, paper, scissors
+    <form action="/play_player_1" method="post">
+      Adam's weapon
+      <input type="text" name="weapon">
+      <input type="submit" value="Play" >
+    </form>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 class Weapon
   attr_reader :type
 
-  def initialize(type = '')
+  def initialize(type = 'undefined')
     @type = type.to_sym
   end
 
