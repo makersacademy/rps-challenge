@@ -1,0 +1,14 @@
+<h1>Well hello, <%= @name %>!</h1>
+
+<div>
+<p>Your move: pick one.</p>
+</div>
+
+<div>
+  <form action='/player_weapon' method="post">
+    <input name="player_weapon" value="rock" type="radio">rock<br/>
+    <input name="player_weapon" value="paper" type="radio">paper<br/>
+    <input name="player_weapon" value="scissors" type="radio">scissors<br/>
+    <input type="submit" value="Go!">
+  </form>
+</div>
