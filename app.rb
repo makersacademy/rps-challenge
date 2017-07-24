@@ -20,7 +20,8 @@ class RockPaperScissors < Sinatra::Base
 
     def create_game
       create_players
-      session[:game] = Game.create(@player_1, @player_2, session[:type], session[:best_of], GameText.new)
+      session[:game] = Game.create(@player_1, @player_2,
+          session[:type], session[:best_of], GameText.new)
     end
 
     def game_over?

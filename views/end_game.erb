@@ -8,7 +8,7 @@
   <body>
     <div class='heading'>
       <h1><%= @game.winner.name %> is the winner!</h1>
-      <h2> <%= @game.pretty_score %> </h2>
+      <h2> <%= @game.player_1.score %>:<%= @game.player_2.score %> </h2>
     </div>
     <div class='page'>
       <div class='player-1'>

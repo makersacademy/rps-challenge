@@ -48,15 +48,6 @@ describe Game do
         expect(game.current.last_winner).to eq player_1
       end
     end
-    describe '#pretty_score' do
-      after { game.current.pretty_score }
-      it 'requests current player 1 score' do
-        expect(player_1).to receive(:score)
-      end
-      it 'requests current player 2 score' do
-        expect(player_2).to receive(:score)
-      end
-    end
   end
   context 'game over' do
     before do
