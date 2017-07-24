@@ -1,5 +1,5 @@
 feature 'Choose sign' do
-  before(:each) { sign_in_and_play }
+  before { sign_in_and_play }
   before(:each) { srand(42) }
   let(:name) { 'Oleg' }
 

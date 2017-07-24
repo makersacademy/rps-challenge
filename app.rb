@@ -23,12 +23,12 @@ class Rps < Sinatra::Base
   end
 
   post '/winner' do
-    @game.set_computer_sign
     @game.save_player_sign(params[:sign])
     @player_name = @game.player_name
-    @player_sign = @game.player_sign
+    @game.set_computer_sign
     @computer_name = @game.computer_name
     @computer_sign = @game.computer_sign
+    @player_sign = @game.player_sign
     @winner_name = @game.winner_name
     @random_number = rand
     erb :winner

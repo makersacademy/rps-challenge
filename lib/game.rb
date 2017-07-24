@@ -6,9 +6,7 @@ class Game
 
   def initialize(player)
     @player_name = player.name
-    @player = player
     @computer_name = ['Dio Padre', 'Jehovah', 'Yahweh'].sample
-    @computer = player.class.new(@computer_name)
   end
 
   def self.create(player)
