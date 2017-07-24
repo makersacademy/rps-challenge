@@ -20,7 +20,7 @@ feature 'playing rps' do
   end
 
   scenario 'computer aka game chooses an option' do
-    click_button 'Rock'
+    click_button 'Scissors'
 
     message = find(:css, "#opponent").text
 

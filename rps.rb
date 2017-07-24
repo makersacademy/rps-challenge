@@ -25,7 +25,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:weapon_type] = params[:weapon_type]
-    session[:opponent_weapon] = :rock
+    session[:opponent_weapon] = :scissors
     redirect '/play'
   end
 
