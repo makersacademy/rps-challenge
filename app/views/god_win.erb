@@ -1,0 +1,26 @@
+<head>
+  <style>
+  body {
+    background-size: cover;
+  }
+  </style>
+<head>
+
+<%= IMAGES[@game.weapons] %>
+  <h1>
+    Divine Battle
+  <h1>
+  <h2>
+    God wins
+  <h2>
+  <h3>
+    Adam played <%= @game.player_1.weapon.type %>
+  <h3>
+  <h4>
+    God played <%= @game.player_2.weapon.type %>
+  <h4>
+  <div> </div>
+  <form action="/play1" method="get">
+    <input type="submit" value="Play again" >
+  </form>
+</body>
