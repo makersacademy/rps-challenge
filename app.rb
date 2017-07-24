@@ -14,7 +14,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_1_name = session[:player_1_name]
+    @throw = 
     erb :play
+  end
+
+  post '/play' do
+    session[:throw] = params[:throw]
+    redirect '/play'
   end
 
 # start the server if ruby file executed directly
