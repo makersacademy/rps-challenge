@@ -4,10 +4,17 @@
 
   <h2>Hello <%= @name %> welcome to the armoury!</h2>
 
-<form action="/game" method="post">
-  <input type="submit" name="weapon_type1" value="Rock"><br>
-  <input type="submit" name="weapon_type2" value="Paper"><br>
-  <input type="submit" name="weapon_type3" value="Scissors"><br>
-</form></center>
+<form action="/play" method="post">
+  <input type="submit" name="weapon_type" value="Rock"><br>
+  <input type="submit" name="weapon_type" value="Paper"><br>
+  <input type="submit" name="weapon_type" value="Scissors"><br>
+</form>
 
+<h1>You have chosen to play the <%= @weapon_type%></h1>
+
+<div id="opponent">
+  Opponent has played <%= @opponent_weapon.to_s.capitalize%>
+</div>
+
+</center>
 </body>
