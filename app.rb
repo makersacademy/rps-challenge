@@ -48,10 +48,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
+    best_of = params[:best_of]
     if session[:type] == :single
-      session[:game] = Game.create(Player.new(params[:player_1_name]), ComputerPlayer.new('Superhans'), session[:type])
+      session[:game] = Game.create(Player.new(params[:player_1_name]),
+          ComputerPlayer.new('Superhans'), session[:type], best_of)
     else
-      session[:game] = Game.create(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]), session[:type])
+      session[:game] = Game.create(Player.new(params[:player_1_name]),
+          Player.new(params[:player_2_name]), session[:type], best_of)
     end
     redirect '/play'
   end

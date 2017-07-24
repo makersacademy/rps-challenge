@@ -8,7 +8,7 @@
   <body>
       <div class='heading'>
         <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
-        <h2> <%= @game.pretty_score %> </h2>
+        <h2> <%= @game.pretty_score %> (best of <%= @game.best_of %> rounds) </h2>
       </div>
       <div class='page'>
         <div class='player-1'>

@@ -46,10 +46,11 @@ h2 {
 }
 
 .menu input {
-  display: block;
   margin: 10px 350px;
+  display: block;
   text-align: center;
 }
+
 
 .divider {
   height: 20px;
@@ -105,6 +106,12 @@ button {
   background-color: transparent;
   outline: none;
   border: none;
+}
+
+.number {
+  display: inline;
+  margin: 10px 20px;
+  text-align: center;
 }
 .icon {
   height: 100px;

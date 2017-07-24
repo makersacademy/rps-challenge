@@ -3,6 +3,7 @@ class Game
   attr_reader :player_1, :player_2, :last_winner, :best_of, :winner, :type
 
   def self.create(player_1, player_2, type, best_of = 3)
+    best_of = best_of.nil? ? 3 : ( best_of.to_i % 2 != 0 ) ? best_of.to_i : 3
     @current = Game.new(player_1, player_2, type, best_of)
   end
 
