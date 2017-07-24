@@ -25,13 +25,13 @@ class Game
   private
   def compare_weapons(weapon_1, weapon_2)
     if weapon_1 == weapon_2
-      return "Draw"
+      "Draw"
     elsif weapon_1 == "Rock" && weapon_2 == "Scissors" ||
           weapon_1 == "Paper" && weapon_2 == "Rock" ||
           weapon_1 == "Scissors" && weapon_2 == "Paper"
-      return "You win!"
+      "You win!"
     else
-      return "You lose!"
+      "You lose!"
     end
   end
 end
