@@ -1,15 +1,29 @@
-<div align="center">
-<h1>Rock, Paper, Scissors!</h1>
-<h4>Enter your name and click on Play</h4>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <style>
+   </style>
+</head>
 
-<form action="/name" method="post">
-  <label for="player_1_name">
-    Name
-    <input type="text" name="player_1_name">
-  </label>
-  <input type="submit" value="Play">
-</form>
+<div class="container-fluid">
 
-<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/300px-Rock-paper-scissors.svg.png">
+  <div align="center">
+  <h1>Rock, Paper, Scissors!</h1>
+  <h4>Enter your name and click on Play</h4>
+
+  <form action="/name" method="post">
+    <label for="player_1_name">
+      Name
+      <input type="text" name="player_1_name" class="form-control">
+    </label>
+    <input type="submit" value="Play" class="btn-default">
+  </form>
+
+  <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/300px-Rock-paper-scissors.svg.png">
+
+  </div>
 
 </div>

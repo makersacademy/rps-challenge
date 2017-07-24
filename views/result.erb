@@ -1,4 +1,10 @@
 <head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <style>
 <style>
 div.container {
   display: flex;
@@ -8,28 +14,34 @@ div.container {
 </style>
 </head>
 
+<div clss="container-fluid">
+
 <div align="center">
   <br>
-    <h3>You <%= @game.result.to_s %>!</h3>
-
+  <h3>You <%= @game.result.to_s %>!</h3>
 </div>
 <br>
+
 <div align="center">
   <form action="/play" method="get">
-    <input type="submit" value="Next round">
+    <input type="submit" value="Next round" class="btn-default">
   </form>
 </div>
 <br>
-<div class = "container">
-<div style="float:left;width:30%;" align="center">
-  <p><%= @game.current_player.name %> chose <%= @game.current_player.weapon %></p>
-  <%= get_image(@game.current_player.weapon) %>
+
+
+<div align="center" class = "row">
+  <div class="col-xs-5">
+    <p><%= @game.current_player.name %> chose <%= @game.current_player.weapon %></p>
+    <%= get_image(@game.current_player.weapon) %>
+  </div>
+
+<div class="col-xs-2"><h2>VS</h2></div>
+
+  <div class="col-xs-5">
+    <p><%=@game.opponent.name%> chose <%= @game.opponent.weapon %></p>
+    <%= get_image(@game.opponent.weapon) %>
+  </div>
 </div>
 
-<div class="container"><h2>VS</h2></div>
-
-<div style="float:right;width:30%;" align="center">
-  <p><%=@game.opponent.name%> chose <%= @game.opponent.weapon %></p>
-  <%= get_image(@game.opponent.weapon) %>
-</div>
 </div>
