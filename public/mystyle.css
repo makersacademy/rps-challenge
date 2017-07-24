@@ -5,17 +5,37 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
 .myimg {
   width: 200px;
 }
 
-input[type=submit] {
-background-color: #B0AB88;
-width:200px;
+input[type=text] {
+    border: 4px solid #B0AB88;
+    border-radius: 20px;
+    height: 35px;
+    width: 150px;
+}
+
+.weapon_button {
+  font-size: 20px;
+  background-color: #B0AB88;
+  height: 50px;
+  border-radius: 20px;
+  width: 100px;
 
 }
 
-input[type=text] {
-    border: 4px solid #B0AB88;
-    border-radius: 10px;
+.play_button {
+  font-size: 15px;
+  background-color: #B0AB88;
+  height: 40px;
+  border-radius: 20px;
+  width: 100px;
+
 }
