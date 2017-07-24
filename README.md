@@ -36,7 +36,7 @@ I would like to be able to play rock/paper/scissors
 ##App
 
 [GIF](https://g.recordit.co/35FnUMzMwB.gif)
-
+![Alt text](/Users/mutsamunyawiri/Desktop/Projects/rps-challenge/app.gif)
 
 ## Basic Rules Of The Game
 
