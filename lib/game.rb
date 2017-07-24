@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1, :player_2, :current_player, :opponent
+  attr_reader :player_1, :player_2, :current_player, :opponent, :mode
 
   WINNERS = [["Rock", "Scissors"], ["Rock", "Lizard"],
             ["Paper", "Rock"], ["Paper", "Spock"],

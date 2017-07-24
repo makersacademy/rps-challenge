@@ -30,4 +30,11 @@ feature 'Two Player Mode' do
     click_button "Paper"
     expect(page).to have_content "Lady Capybara's Paper defeated Sir R Spec's Rock"
   end
+
+  scenario 'players 1 and 2 pick the same move, resulting in a draw' do
+    two_player_battle_setup
+    click_button "Rock"
+    click_button "Rock"
+    expect(page).to have_content "Both of you! Rock is getting a lot of love today"
+  end
 end

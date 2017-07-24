@@ -40,7 +40,7 @@
     </div>
     <% end %>
 
-    <% if @game.current_player == @game.player_2 && @game.player_2.name != "Computer" %>
+    <% if @game.current_player == @game.player_2 && @game.mode == :two_player %>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="container">
@@ -57,7 +57,7 @@
     </div>
     <% end %>
 
-    <% if @game.current_player == @game.player_2 && @game.player_2.name == "Computer" %>
+    <% if @game.current_player == @game.player_2 && @game.mode == :one_player %>
     <div class="container-fluid">
       <div class="jumbotron">
         <div class="container">
