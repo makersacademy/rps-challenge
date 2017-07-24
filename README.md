@@ -52,10 +52,13 @@ Uncompleted functionality
 - a winner will be declared
 
 Notes on submission:
+- 1 rspec failure at current state
+- No rubocop offenses
+- Overall test coverage at 97.06% -- 33/34 lines in 4 files
 - With more time to complete this challenge, I would have wanted to test and implement the remaining functionality
-- I would have replaced all instance variables within the main app file (rsp.rb) with sessions and stored the instances in separate methods within a Turns test-suite and class.
+- I would have replaced all instance variables within the main app file (rsp.rb) with sessions and stored the instances in separate methods within a Turns test-suite and class
 - Once I would have done that, I would have gone on to refactor the main app file to no longer state any instance variables
-- Following that I would begin to test the game/computer class followed the weapon class which would ultimately complete the app and return a game result.
+- Following that I would begin to test the game/computer class followed the weapon class which would ultimately complete the app and return a game result
 
 Instructions to download and run the app:
 -------
@@ -88,6 +91,10 @@ $ rackup
 
 ```
 You should now be able to interact with the app.
+
+## Solution References:
+
+- Used the following to fix a number of clingy capybara bugs: [Sam Morgans Exemplar](https://www.youtube.com/watch?v=GoHKmartBYo&t=1748s)
 
 ## Code reviewed against the following:
 
