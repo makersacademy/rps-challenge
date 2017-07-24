@@ -35,10 +35,8 @@ I would like to be able to play rock/paper/scissors
 ```
 ##App
 
-```
-[gif](http://g.recordit.co/35FnUMzMwB.gif)
+[GIF](https://g.recordit.co/35FnUMzMwB.gif)
 
-```
 
 ## Basic Rules Of The Game
 
