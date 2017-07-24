@@ -1,0 +1,10 @@
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+  <h1>Let the battle begin!!!</h1>
+  <h2><%= @game.player_one.name %> vs. <%= @game.player_two.name %></h2>
+  <h2><%= @game.current_turn.name %> please choose your weapon (choose wisely!):</h2>
+  <form action="/weapon" method="post">
+    <input type="submit" value="rock" name="weapon_type">
+    <input type="submit" value="paper" name="weapon_type">
+    <input type="submit" value="scissors" name="weapon_type">
+  </form>
+</div>

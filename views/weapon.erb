@@ -1,0 +1,6 @@
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<h2><%= @game.current_turn.name %> has chosen a weapon!</h2>
+  <form action="/switch-turns" method="post">
+  <input type="submit" value="OK">
+  </form>
+</div>

@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<h1>Rock, Paper, Scissors!</h1>
+<h2>Sign in to play</h2>
+<form action="/names" method="post">
+  <label for="player_one">
+    <strong>Player 1 name:</strong>
+    <input type="text" name="player_one"><br>
+  </label>
+  <label for="player_two">
+    <strong>Player 2 name:</strong>
+    <input type="text" name="player_two"><br>
+    <p style="font-size: .7em; color: red;">(If no Player 2 name is entered, you will play against the computer)</p>
+  </label>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+  <input type="submit" value="Submit">
+  </div>
+</form>
+</div>
