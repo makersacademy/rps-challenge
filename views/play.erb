@@ -1,0 +1,8 @@
+<h2>Welcome <%= @game.player.name %>, let's play</h2>
+
+<h2>Choose one of the following options:</h2>
+<form action="/log" method="post">
+  <button name="Rock" value="Rock">Rock</button>
+  <button name="Paper" value="Paper">Paper</button>
+  <button name="Scissors" value="Scissors">Scissors</button>
+</form>
