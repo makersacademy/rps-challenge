@@ -1,5 +1,15 @@
 # RPS Challenge
 
+Progress report
+-------
+This is a partial solution. The player can currently: enter their name, select a weapon, submit it and play against the computer's randomly selected weapon.
+
+However I got stuck on two things:
+- I can't get Capybara to choose a radio button, which precludes subsequent testing that relies on the player's weapon choice
+- I can't seem to display the result of the game on the results screen.
+- Once these two issues are solved, I will have an MVP
+
+
 Instructions
 -------
 
