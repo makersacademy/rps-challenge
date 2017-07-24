@@ -20,4 +20,5 @@ class Game
     OPTIONS.sample
   end
 
+
 end
