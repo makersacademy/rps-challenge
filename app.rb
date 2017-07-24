@@ -11,7 +11,7 @@ class Rps < Sinatra::Base
 
   post '/play' do
     player = Player.new(params[:player_name])
-    Game.create(player)
+    Game.start(player)
     @game = Game.instance
     @player_name = @game.player_name
     @computer_name = @game.computer_name

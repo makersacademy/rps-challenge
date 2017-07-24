@@ -9,7 +9,7 @@ class Game
     @computer_name = ['Dio Padre', 'Jehovah', 'Yahweh'].sample
   end
 
-  def self.create(player)
+  def self.start(player)
     @game = new(player)
   end
 
@@ -28,6 +28,6 @@ class Game
   def winner_name
     return "No one" if computer_sign == player_sign
     return @player_name if winning_sign(computer_sign, player_sign) == player_sign
-    return @computer_name
+    @computer_name
   end
 end
