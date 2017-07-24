@@ -26,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
   get '/showdown' do
     @player_name = $player_name
     @current_choice = $current_choice
+    @winner = $winner
     erb :showdown
   end
 
