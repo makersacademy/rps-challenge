@@ -1,17 +1,18 @@
 class Game
   CHOICES = [:rock, :paper, :scissors]
-  attr_reader :player_1, :player_2, :last_winner, :best_of, :winner, :type
+  attr_reader :player_1, :player_2, :last_winner, :best_of, :winner, :type, :messager
 
-  def self.create(player_1, player_2, type, best_of = 3)
-    best_of = best_of.nil? ? 3 : ( best_of.to_i % 2 != 0 ) ? best_of.to_i : 3
-    @current = Game.new(player_1, player_2, type, best_of)
+  def self.create(player_1, player_2, type, best_of, messager)
+    best_of = best_of.nil? ? 3 : (best_of.to_i % 2 != 0) ? best_of.to_i : 3
+    @current = Game.new(player_1, player_2, type, best_of, messager)
   end
 
-  def initialize(player_1, player_2, type, best_of)
+  def initialize(player_1, player_2, type, best_of, messager)
     @player_1 = player_1
     @player_2 = player_2
     @best_of = best_of
     @type = type
+    @messager = messager
   end
 
   def self.current
@@ -45,6 +46,8 @@ class Game
   end
 
   def update_last_round_winner(player)
+    p player
+    messager.update_round_winner(player)
     @last_winner = player
   end
 

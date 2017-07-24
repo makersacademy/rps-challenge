@@ -1,12 +1,24 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer_player'
+require './lib/game_messager'
 
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
   helpers do
+
+    def create_game
+      if session[:type] == :single
+        session[:game] = Game.create(Player.new(params[:player_1_name]),
+            ComputerPlayer.new('Superhans'), session[:type], session[:best_of], GameMessager.new)
+      else
+        session[:game] = Game.create(Player.new(params[:player_1_name]),
+            Player.new(params[:player_2_name]), session[:type], session[:best_of], GameMessager.new)
+      end
+    end
+
     def event_message(player, choice)
       "#{player.name} chooses #{choice.to_s.capitalize}!" if choice
     end
@@ -48,23 +60,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    best_of = params[:best_of]
-    if session[:type] == :single
-      session[:game] = Game.create(Player.new(params[:player_1_name]),
-          ComputerPlayer.new('Superhans'), session[:type], best_of)
-    else
-      session[:game] = Game.create(Player.new(params[:player_1_name]),
-          Player.new(params[:player_2_name]), session[:type], best_of)
-    end
+    session[:best_of] = params[:best_of]
+    create_game
     redirect '/play'
   end
 
   get '/play' do
-    @last_play = session[:last_play]
     @player_1_message = session[:player_1_message] || 'Choose from the above!'
     @player_2_message = session[:player_2_message] || 'Get on with it m8'
     erb :play
   end
+
+
 
   post '/choice_1' do
     if @game.type == :multi
@@ -75,7 +82,6 @@ class RockPaperScissors < Sinatra::Base
       player_1_choice = params[:player_1_choice].to_sym
       player_2_choice = @game.player_2.choose
       @game.play(player_1_choice, player_2_choice)
-      session[:last_play] = win_message(@game.last_winner)
       session[:player_1_message] = event_message(@game.player_1, player_1_choice)
       session[:player_2_message] = event_message(@game.player_2, player_2_choice)
     end
@@ -85,7 +91,6 @@ class RockPaperScissors < Sinatra::Base
   post '/choice_2' do
     player_2_choice = params[:player_2_choice].to_sym
     @game.play(session[:player_1_choice], player_2_choice)
-    session[:last_play] = win_message(@game.last_winner)
     session[:player_1_message] = event_message(@game.player_1, session[:player_1_choice])
     session[:player_2_message] = event_message(@game.player_2, player_2_choice)
     redirect '/end_round'
@@ -94,7 +99,6 @@ class RockPaperScissors < Sinatra::Base
   get '/end_round' do
     @player_1_message = session[:player_1_message]
     @player_2_message = session[:player_2_message]
-    @last_play = session[:last_play]
     end_game if game_over?
     session[:player_1_message] = "#{@game.player_1.name}'s turn!"
     session[:player_2_message] = "Get on with it m8"

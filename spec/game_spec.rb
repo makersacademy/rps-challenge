@@ -4,19 +4,20 @@ describe Game do
   subject(:game) { described_class }
   let(:player_1) { double('player', update_score: nil, score: nil) }
   let(:player_2) { double('player', update_score: nil, score: nil) }
+  let(:messager) { double('messager', update_round_winner: nil) }
   let(:best_of) { 3 }
 
   context "game not created" do
     describe '#create' do
       it 'initializes a new game' do
         expect(subject).to receive(:new)
-        game.create(player_1, player_2, best_of)
+        game.create(player_1, player_2, :single, best_of, messager)
       end
     end
   end
 
   context 'game created' do
-    before { game.create(player_1, player_2, best_of) }
+    before { game.create(player_1, player_2, :single, best_of, messager) }
     describe '#current' do
       it 'returns the game in progress' do
         expect(game.current).to be_an_instance_of(game)
@@ -34,6 +35,10 @@ describe Game do
       end
       it 'requests winner to update their score' do
         expect(player_1).to receive(:update_score)
+        game.current.play(Game::CHOICES[0], Game::CHOICES[2])
+      end
+      it 'requests messager to update round winner message' do
+        expect(messager).to receive(:update_round_winner)
         game.current.play(Game::CHOICES[0], Game::CHOICES[2])
       end
     end
@@ -55,7 +60,7 @@ describe Game do
   end
   context 'game over' do
     before do
-      game.create(player_1, player_2, best_of)
+      game.create(player_1, player_2, :single, best_of, messager)
       allow(player_1).to receive(:score) { 2 }
     end
     describe '#over?' do
