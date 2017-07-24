@@ -14,8 +14,9 @@ Getting started
 2. cd rps-challenge
 3. Run the command `gem install bundle` (if you don't have bundle already)
 4. When the installation completes, run `bundle`
-5. rackup
-6. open browser at localhost: with relevant port number used by rackup e.g. localhost:9292
+5. Run `rackup`
+6. Open browser at localhost: with relevant port number used by rackup e.g. localhost:9292
+7. View the app here: https://blooming-chamber-39754.herokuapp.com/?
 
 Usage
 
@@ -89,7 +90,7 @@ Further development options
 
 * remove global variables
 
-* add formatting and pictures
+* add CSS styling
 
 * add option for player 2
 
