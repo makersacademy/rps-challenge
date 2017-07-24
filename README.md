@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Welcome to my attempt at the Rock, Paper, Scissors weekend challenge, the game has not been completed and therefore cannot be played, however you can see currently functionality on the link ![GIF](/app.gif?raw=true "Current App").
+Welcome to my attempt at the Rock, Paper, Scissors weekend challenge, the game has not been completed and therefore cannot be played, however you can see currently functionality on the gif below ![GIF](/app.gif?raw=true "Current App").
 
 Task
 ------
