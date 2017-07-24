@@ -2,7 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/computer'
-require 'pry'
+# require 'pry'
 
 class RPSWeb < Sinatra::Base
 
