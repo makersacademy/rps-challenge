@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+
+<body style="background-color:lightyellow;">
+  <div align='center'>
+    <h1>Player 1: <%= @player_1_name %></h1>
+    <font color="red"><h1>Choose your weapon!</h1></font>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTLf5SKXl9bOXYncDrupWc-wueMMNxrIH9pl-v5EBFd-f18dVr">
+    <h4>Enter rock, paper or scissors and click submit</h4>
+    <form action="weapon-choice" method="post">
+      <label for="weapon_choice">
+        Weapon
+      <input type="text" name="weapon_choice">
+      <input type="submit" value="Submit">
+    </form>
+
+  </div>
+</body>
