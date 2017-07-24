@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+<style>
+  body {
+    text-align: center;
+    background: url("http://i.imgur.com/Nht5q9t.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: rgb(253, 210, 23);
+    font-family: trebuchet;
+    font-size: 40px;
+    font-weight: bold;
+   }
+  input[type="submit"] {
+    padding: 5px 5px 5px !important;
+    font-size: 24px !important;
+    font-family: helvetica;
+    background-color: rgb(253, 210, 23);
+    font-weight: bold;
+    text-shadow: 1px 1px grey;
+    color: white;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid grey;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 white inset;
+    -moz-box-shadow: 1px 1px 0 white inset;
+    -webkit-box-shadow: 1px 1px 0 white inset;
+    width: 200px;
+}
+  input[type="text"] {
+    background-color: rgb(253, 229, 146);
+    font-size: 18px;
+    color: black;
+    border: 0;
+    padding: 5px;
+   }
+</style>
+</head>
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <h2> <%= @name %> selected <%= @weapon %></h2>
+  <h2> [Computer] selected [Weapon]</h2>
+  <h2> [] wins!</h2>
+
+  <form action="/play" method="post">
+    <input type="submit" value="Play again">
+  </form>
+
+  <form action="/" method="get">
+    <input type="submit" value="Sign out">
+  </form>
+</body>

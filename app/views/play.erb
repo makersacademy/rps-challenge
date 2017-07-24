@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<style>
+body {
+    text-align: center;
+    background: url("http://i.imgur.com/fg0M4Ol.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: rgb(253, 210, 23);
+    font-family: trebuchet;
+    font-size: 40px;
+   }
+div {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+input[type="submit"] {
+    padding: 10px 20px 11px !important;
+    font-size: 24px !important;
+    font-family: Helvetica;
+    background-color: rgb(253, 210, 23);
+    font-weight: bold;
+    text-shadow: 1px 1px grey;
+    color: white;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid grey;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 white inset;
+    -moz-box-shadow: 1px 1px 0 white inset;
+    -webkit-box-shadow: 1px 1px 0 white inset;
+    width: 200px;
+   }
+  input[type=text] {
+     font-size: 18px;
+     color: white;
+     border: 10;
+   }
+p {
+  color: rgba(255,255,255,1);
+  background: rgba(0,0,0,1);
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  }
+</style>
+</head>
+<body><h1> Rock Paper Scissors
+<h2> Welcome <%= @name %></h2>
+<h2> Select your weapon </h2>
+</body>
+<p>
+<form action="/result" method="post">
+    <input type="submit" value="Rock" name="weapon">
+    <input type="submit" value="Paper" name="weapon">
+    <input type="submit" value="Scissors" name="weapon">
+</form>
+</p>
