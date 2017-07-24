@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer_player'
-require './lib/game_messager'
+require './lib/game_text'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -12,10 +12,10 @@ class RockPaperScissors < Sinatra::Base
     def create_game
       if session[:type] == :single
         session[:game] = Game.create(Player.new(params[:player_1_name]),
-            ComputerPlayer.new('Superhans'), session[:type], session[:best_of], GameMessager.new)
+            ComputerPlayer.new('Superhans'), session[:type], session[:best_of], GameText.new)
       else
         session[:game] = Game.create(Player.new(params[:player_1_name]),
-            Player.new(params[:player_2_name]), session[:type], session[:best_of], GameMessager.new)
+            Player.new(params[:player_2_name]), session[:type], session[:best_of], GameText.new)
       end
     end
 
@@ -66,8 +66,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1_message = session[:player_1_message] || 'Choose from the above!'
-    @player_2_message = session[:player_2_message] || 'Get on with it m8'
+   @player_1_message = session[:player_1_message] || 'Choose from the above!'
+   @player_2_message = session[:player_2_message] || 'Get on with it m8'
     erb :play
   end
 
@@ -78,14 +78,15 @@ class RockPaperScissors < Sinatra::Base
       session[:player_1_choice] = params[:player_1_choice].to_sym
       session[:player_1_message] = generic_message(@game.player_1)
       session[:player_2_message] = "#{@game.player_2.name}'s turn!"
+      redirect '/play'
     else
       player_1_choice = params[:player_1_choice].to_sym
       player_2_choice = @game.player_2.choose
       @game.play(player_1_choice, player_2_choice)
       session[:player_1_message] = event_message(@game.player_1, player_1_choice)
       session[:player_2_message] = event_message(@game.player_2, player_2_choice)
+      redirect '/end_round'
     end
-    redirect '/end_round'
   end
 
   post '/choice_2' do
