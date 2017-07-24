@@ -2,10 +2,20 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :opponent_response, :winner
+  attr_reader :opponent_response, :winner, :player
+
+  def self.instance
+    @game
+  end
+
+  def self.create(player)
+    @game = Game.new(player)
+  end
 
   def initialize(player)
-    @current_choice = player.current_choice
+    @player = player
+    @opponent_response = ""
+    @winner = ""
   end
 
   def generate_response
@@ -13,18 +23,21 @@ class Game
   end
 
   def declare_winner
-    generate_response
-    if @current_choice == "Rock" && @opponent_response == "Scissors"
+    if determine_winner
       @winner = "You win"
-    elsif @current_choice == "Paper" && @opponent_response == "Rock"
-      @winner = "You win"
-    elsif @current_choice == "Scissors" && @opponent_response == "Paper"
-      @winner = "You win"
-    elsif @current_choice == @opponent_response
+    elsif determine_draw
       @winner = "No win. It's a draw"
     else
       @winner = "The Opponent wins"
     end
   end
 
+  private
+  def determine_winner
+    @player.current_choice == "Rock" && @opponent_response == "Scissors" || @player.current_choice == "Paper" && @opponent_response == "Rock" || @player.current_choice == "Scissors" && @opponent_response == "Paper"
+  end
+
+  def determine_draw
+    @player.current_choice == @opponent_response
+  end
 end

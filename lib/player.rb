@@ -5,7 +5,6 @@ class Player
 
   def initialize(name)
     @name = name
-    @current_choice
   end
 
   def choose_option(player_choice)

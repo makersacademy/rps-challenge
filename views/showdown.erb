@@ -1,3 +1,9 @@
-<h2><%= @player_name %> chooses <%= @current_choice %></h2>
+<h2><%= @game.player.name %> chooses <%= @game.player.current_choice %></h2>
+<h2>The Opponent chooses <%= @game.opponent_response %></h2>
 
-<h2><%= @winner %>wins!</h2>
+
+<h2><%= @game.winner %></h2>
+
+<form action="/play">
+  <input type="submit" value="New game">
+</form>
