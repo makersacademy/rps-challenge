@@ -1,0 +1,26 @@
+<% if @turn.odd? && @number_of_players == 2 %>
+<h1> Player: <%= @player_2_name %> </h1>
+<form action='/selection2' method='post'>
+  <input type='submit' name='selection2' value='Sissors'/>
+  <input type='submit' name='selection2' value='Rock'/>
+  <input type='submit' name='selection2' value='Paper'/>
+</form>
+<% elsif @turn.even? && @number_of_players == 2 %>
+<h1> Player: <%= @player_1_name %> </h1>
+<form action='/selection' method='post'>
+  <input type='submit' name='selection' value='Sissors'/>
+  <input type='submit' name='selection' value='Rock'/>
+  <input type='submit' name='selection' value='Paper'/>
+</form>
+<% else %>
+<h1> Player: <%= @player_1_name %> </h1>
+<form action='/selection' method='post'>
+  <input type='submit' name='selection' value='Sissors'/>
+</form>
+<form action='/selection' method='post'>
+  <input type='submit' name='selection' value='Rock'/>
+</form>
+<form action='/selection' method='post'>
+  <input type='submit' name='selection' value='Paper'/>
+</form>
+<% end %>

@@ -1,0 +1,7 @@
+<h1> <%= @result %> </h1>
+<h2> <%= @player_1_name %> selected ==> <%= @player_1_selection %></h2>
+<h2> <%= @player_2_name %> selected ==> <%= @player_2_selection %></h2>
+
+<form action='/selection' method='get'>
+  <input type='submit' name='button' value='Play_again?'/>
+</form>
