@@ -1,6 +1,6 @@
 require 'sinatra'
-require './lib/player'
 require './lib/game'
+
 class RPS < Sinatra::Base
   enable :sessions
 
@@ -40,40 +40,31 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @player_2_selection = $game.computer_selection
+    @player_2_selection = $game.return_selection_2
     @player_1_selection = $game.return_selection
     @player_1_name = $game.player_1_name
     @player_2_name = $game.player_2_name
     @result = $game.declares_a_winner
-
+    $game.increment_count
     erb :result
   end
 
   get '/selection' do
-    @turn = $game.increment_count
+    @turn = $game.count
     @number_of_players = $game.number_of_players
     @player_1_name = $game.player_1_name
     @player_2_name = $game.player_2_name
     erb :selection
   end
-
-  get '/selection2' do
-    @turn = $game.increment_count
-    @number_of_players = $game.number_of_players
-    @player_1_name = $game.player_1_name
-    @player_2_name = $game.player_2_name
-    erb :selection
-  end
-
 
   post '/selection' do
     $game.selection(params[:selection])
-    $game.increment_count
+    $game.count
     redirect '/swap_players'
   end
 
   post '/selection2' do
-    $game.selection_2(params[:selection])
+    $game.selection_2(params[:selection2])
     redirect '/result'
   end
 

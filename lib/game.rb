@@ -9,7 +9,7 @@ class Game
     #@player_1_name = p_1.name
     #@player_2_name = p_2.name
     @rps_array = ["Rock", "Paper", "Sissors"]
-    @count = 1
+    @count = 0
   end
 
   def increment_count
@@ -40,6 +40,13 @@ class Game
     @selection
   end
 
+  def return_selection_2
+    @selection_2
+  end
+
+
+
+
   def rules(player_1, player_2)
     draw = 1
     win = 2
@@ -50,7 +57,7 @@ class Game
   end
 
   def declares_a_winner(player_1 = @selection, player_2 = @selection_2)
-    array = rules(player_1,player_2)
+    array = rules(player_1, player_2)
     return "#{@player_1_name} wins!"  if array[0] > array[1]
     return "#{@player_2_name} wins!"  if array[0] < array[1]
     return "It's a Draw!"  if array[0] == array[1]
