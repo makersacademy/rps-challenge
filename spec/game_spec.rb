@@ -9,4 +9,7 @@ describe Game do
     expect(game.computer_selection).to eq "ROCK"
   end
 
+  it "should declare the winner" do
+    expect(game.summary).to eq "DRAW"
+  end
 end

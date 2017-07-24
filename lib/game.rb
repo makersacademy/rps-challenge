@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
   OPTIONS = ['ROCK', 'PAPER', 'SCISSORS']
-  attr_reader :player
+  attr_reader :player, :winner
 
   def initialize(player)
     @player = player
@@ -20,5 +20,16 @@ class Game
     OPTIONS.sample
   end
 
+  def play(human_choice, computer_choice)
+    @winner = result(human_choice, computer_choice)
+  end
+
+  def result(human_choice, computer_choice)
+    if human_choice == computer_choice
+      "DRAW"
+    else
+      "You or Computer"
+    end
+  end
 
 end

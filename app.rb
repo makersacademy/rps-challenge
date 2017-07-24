@@ -24,13 +24,14 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    @game.player.options(params[:weapon])
-    @random_option = @game.computer_selection
-    #@winner = @game.summary to complete
+    human_choice = @game.player.options(params[:weapon])
+    session[:computer_selection] = @game.computer_selection
+    @game.play(human_choice, session[:computer_selection])
     redirect '/result'
   end
 
   get '/result' do
+    @random_option = session[:computer_selection]
     erb :result
   end
 
