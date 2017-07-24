@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'/>
+    <title>RPS Challenge</title>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <div class='heading'>
+      <h1><%= @game.winner.name %> is the winner!</h1>
+      <h2> <%= @game.player_1.score %>:<%= @game.player_2.score %> </h2>
+    </div>
+    <div class='page'>
+      <div class='player-1'>
+        <% if @game.winner == @game.player_1 %>
+          <img class='avatar win-avatar' src='images/edward.jpeg'/>
+        <% else %>
+          <img class='avatar' src='images/edward.jpeg'/>
+        <% end %>
+        <h2 class='result'> <%= @game.game_text.player_1_text %></h2>
+      </div>
+      <div class='player-2'>
+        <% if @game.winner == @game.player_2 %>
+          <img class='avatar win-avatar' src='images/superhans.jpeg'/>
+        <% else %>
+          <img class='avatar' src='images/superhans.jpeg'/>
+        <% end %>
+        <h2 class='result'> <%= @game.game_text.player_2_text %></h2>
+      </div>
+      <div class='player-divider'></div>
+      <form method='post' action='/play_again'>
+        <input type='submit' class='custom-button' value='Click to Play Again'>
+      </form>
+    </div>
+  </body>
+</html>

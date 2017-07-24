@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Let&lsquo;s Play Rock Paper Scissors!</title>
+    <meta charset='utf-8'/>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+      <div class='heading'>
+        <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+        <h2> <%= @game.player_1.score %>:<%= @game.player_2.score %> (best of <%= @game.best_of %> rounds) </h2>
+      </div>
+      <div class='page'>
+        <div class='player-1'>
+          <img class='avatar' src='images/edward.jpeg'/>
+          <form class='choices' name='player-1' method='post' action='/choice_1'>
+            <button type='submit' name='player_1_choice' value='rock'><img class='icon' src='images/rock.png'/></button>
+            <button type='submit' name='player_1_choice' value='paper'><img class='icon' src='images/paper.png'/></button>
+            <button type='submit' name='player_1_choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
+          </form>
+          <h2 class='result'> <%= @game.game_text.player_1_text %></h2>
+        </div>
+        <div class='player-2'>
+          <img class='avatar' src='images/superhans.jpeg'/>
+
+          <% if @game.type == :multi %>
+            <form class='choices' name='player-2' method='post' action='/choice_2'>
+              <button type='submit' name='player_2_choice' value='rock'><img class='icon' src='images/rock.png'/></button>
+              <button type='submit' name='player_2_choice' value='paper'><img class='icon' src='images/paper.png'/></button>
+              <button type='submit' name='player_2_choice' value='scissors'><img class='icon' src='images/scissors.png'/></button>
+            </form>
+          <% end %>
+
+          <h2 class='result'> <%= @game.game_text.player_2_text %></h2>
+        </div>
+        <div class='player-divider'></div>
+
+        <!-- <% if @last_play %>
+          <div class='outcome'>
+            <h3> <%= @last_play %> </h3>
+          </div>
+        <% end %> -->
+
+      </div>
+  </body>
+</html>

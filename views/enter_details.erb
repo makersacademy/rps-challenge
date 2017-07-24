@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'/>
+    <title>RPS Challenge</title>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <div class='page'>
+      <div class='index-heading'>
+        <% if @type == :multi %>
+          <h1>Enter your names below!</h1>
+        <% else %>
+          <h1>Enter your name below to take on Superhans!</h1>
+        <% end %>
+        <div class='menu'>
+          <form class='entry-form' action='/name' method='post'>
+            Player 1 name:<input class='text-entry' type='text' name='player_1_name'/>
+            <% if @type == :multi %>
+              Player 2 name: <input class='text-entry' type='text' name='player_2_name'/>
+            <% end %>
+            Best of (3 / 5 / 7): <input class='text-entry' type='text' name='best_of' value='3'/>
+            <button type='submit' value='submit'><img class='start-button' src='images/start.png'/></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
