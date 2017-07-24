@@ -1,5 +1,33 @@
 # RPS Challenge
 
+## Challenge notes
+
+Complete
+-------
+- [x] Server setup
+- [x] Testing setup
+- [x] User name entry
+- [x] User presented with game options
+- [x] User can choose option
+- [x] Computer can choose option
+- [x] Incorporated SASS
+- [x] A winner is declared
+- [x] 95% testing
+- [x] All tests passing
+- [x] Styled app
+
+Incomplete
+-------
+- [ ] DRY up Paper, Scissors, Rock
+- [ ] Break out messages
+- [ ] Multiplayer functionality
+- [ ] Incorporated 'Special Rules'
+- [ ] Hosted on Heroku
+
+Screenshots
+-------
+![Alt text](https://raw.githubusercontent.com/langphil/rps-challenge/master/public/images/app.png "Screenshot")
+
 Instructions
 -------
 
