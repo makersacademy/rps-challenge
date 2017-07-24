@@ -27,8 +27,12 @@ class Game
   def result(human_choice, computer_choice)
     if human_choice == computer_choice
       "DRAW"
+    elsif human_choice == 'ROCK' && computer_choice == 'SCISSORS' ||
+       human_choice == 'RAPER' && computer_choice == 'ROCK' ||
+       human_choice == 'SCISSORS' && computer_choice == 'PAPER'
+       'YOU WON!'
     else
-      "You or Computer"
+      "COMPUTER BEAT YOU!"
     end
   end
 

@@ -22,13 +22,13 @@ div {
 
 .field {
   height: 40px;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
 }
 
 .button {
-  margin: 10px;
-  font-size: 10px;
+  margin: 20px;
+  font-size: 25px;
   border: 8px solid #7777D8;
   color: #0C0C4E;
   text-decoration: none;
