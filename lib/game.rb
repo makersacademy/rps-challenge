@@ -20,6 +20,7 @@ class Game
   end
 
   def play(player_1_choice, player_2_choice)
+    game_text.update_choice_messages([player_1.name, player_1_choice], [player_2.name, player_2_choice])
     update_last_round_winner(result(player_1_choice, player_2_choice))
   end
 

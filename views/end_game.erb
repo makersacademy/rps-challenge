@@ -17,7 +17,7 @@
         <% else %>
           <img class='avatar' src='images/edward.jpeg'/>
         <% end %>
-        <h2 class='result'> <%= @player_1_message %></h2>
+        <h2 class='result'> <%= @game.game_text.player_1_text %></h2>
       </div>
       <div class='player-2'>
         <% if @game.winner == @game.player_2 %>
@@ -25,7 +25,7 @@
         <% else %>
           <img class='avatar' src='images/superhans.jpeg'/>
         <% end %>
-        <h2 class='result'> <%= @player_2_message %></h2>
+        <h2 class='result'> <%= @game.game_text.player_2_text %></h2>
       </div>
       <div class='player-divider'></div>
       <form method='post' action='/play_again'>

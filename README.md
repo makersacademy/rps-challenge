@@ -5,8 +5,8 @@ Instructions
 
 * Fork and clone the repo
 * Navigate to the project directory
-* 'bundle install' on command line
-* 'rackup' on command line
+* $ bundle install
+* $ rackup
 * Navigate to:
     localhost:***your_port_number***
 * Choose single player or multiplayer game

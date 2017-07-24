@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class }
-  let(:player_1) { double('player', update_score: nil, score: nil) }
-  let(:player_2) { double('player', update_score: nil, score: nil) }
-  let(:messager) { double('messager', update_round_winner: nil) }
+  let(:player_1) { double('player', update_score: nil, score: nil, name: nil) }
+  let(:player_2) { double('player', update_score: nil, score: nil, name: nil) }
+  let(:messager) { double('messager', update_round_winner: nil, update_choice_messages: nil) }
   let(:best_of) { 3 }
 
   context "game not created" do
