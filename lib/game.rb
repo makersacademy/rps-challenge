@@ -10,8 +10,7 @@ class Game
   def result
     if @player_weapon == @computer_weapon
       draw
-    elsif
-      (@player_weapon == "rock" && @computer_weapon == "scissors") || (@player_weapon == "scissors" && @computer_weapon == "paper") || (@player_weapon == "paper" && computer_weapon == "rock")
+    elsif (@player_weapon == "rock" && @computer_weapon == "scissors") || (@player_weapon == "scissors" && @computer_weapon == "paper") || (@player_weapon == "paper" && computer_weapon == "rock")
       player_wins
     else
       computer_wins
@@ -19,15 +18,15 @@ class Game
   end
 
   def draw
-    puts "Draw!"
+    "Draw!"
   end
 
   def player_wins
-    puts "You win!"
+    "You win!"
   end
 
   def computer_wins
-    puts "You lose!"
+    "You lose!"
   end
 
 end
