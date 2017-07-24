@@ -1,0 +1,21 @@
+
+body {
+  font-family: 'Lobster Two', cursive;
+  background-color: #F6F4E7;
+  text-align: center;
+}
+
+.myimg {
+  width: 200px;
+}
+
+input[type=submit] {
+background-color: #B0AB88;
+width:200px;
+
+}
+
+input[type=text] {
+    border: 4px solid #B0AB88;
+    border-radius: 10px;
+}

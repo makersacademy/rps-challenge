@@ -1,6 +1,20 @@
-<h1><%= @game.player_1.name %></h1>
-<%= @game.return_winner%>
-<h2>Player 1 <%= @game.player_1.weapon%></h2>
-<h2>Player 2 <%= @game.player_2.weapon%></h2>
+<link rel="stylesheet" type="text/css" href="/mystyle.css">
+
+<h1>
+<%= @r = @game.return_winner %>
+<br/>
+<% if @r=="You win!" %>
+    <img class="myimg" src="/win.jpg"/>
+<% elsif @r=="You lose!" %>
+    <img class="myimg" src="/lose.jpg"/>
+<% else %>
+    <img class="myimg" src="/draw.jpg"/>
+<% end %>
+</h1>
+
+<h2><%= @game.player_1.name%>: <%= @game.player_1.weapon%></h2>
+<h2>Computer: <%= @game.player_2.weapon%></h2>
 
 <a href=/play>Play again</a>
+<br/>
+<a href=/>Quit</a>
