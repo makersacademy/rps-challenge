@@ -4,6 +4,8 @@ ruby '2.4.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'shotgun'
+gem 'thin'
 
 group :test do
   gem 'capybara'
