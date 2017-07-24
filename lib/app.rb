@@ -25,14 +25,18 @@ class RPS < Sinatra::Base
   end
 
   post '/one-player' do
+    @player_1 = Player.new(params[:player_1_name])
+    @player_2 = Player.new("Computer")
     @game =
-    Game.add((Player.new(params[:player_1_name])), (Player.new("Computer")), :one_player)
+    Game.add(@player_1, @player_2 :one_player)
     redirect '/play'
   end
 
   post '/two-player' do
+    @player_1 = Player.new(params[:player_1_name])
+    @player_2 = Player.new(params[:player_2_name])
     @game =
-    Game.add((Player.new(params[:player_1_name])), (Player.new(params[:player_2_name])), :two_player)
+    Game.add(@player_1, @player_2 :two_player)
     redirect '/play'
   end
 
