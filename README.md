@@ -35,47 +35,88 @@ Running tests
 User Stories
 ----
 
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+```
+
+```
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
+```
+
+```
 I broke the user stories down further:
 
+```
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
 
+```
+
+```
+
 As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+```
+
+```
 
 As player 1
 So I can start a game of rps
 I want to see the available weapons rock, paper, scissors
 
+```
+
+
+```
 As player 1
 So I can start a game of rps
 I want to select a weapon: rock, paper or scissors
+
+```
+
+```
 
 As player 1
 So I can play
 I only want to be able to select one of the available weapons
 
+```
+
+```
+
 As player 1
 So I can see if I won
 I want to see the computer’s selection
+
+```
+
+```
 
 As a player
 So I can win
 I want to see a confirmation that my selection beat the computers
 
+```
+
+```
+
 As a player
 So i can lose
 I want to see a confirmation that my selection did not beat the computers
+
+```
+
+```
 
 As a player
 So I can play again
@@ -94,7 +135,5 @@ Further development options
 
 * add option for player 2
 
-
-```
 
 ```
