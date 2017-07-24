@@ -10,6 +10,7 @@
   h1 {
     font-size: 100px;
     text-align: center;
+    margin-bottom: 0px;
   }
   h2 {
     text-align: center;
@@ -31,9 +32,20 @@
   /*mix-blend-mode: multiply;*/
   }
   i {
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
-
+    animation-name: slidein;
+    animation-duration: 3s;
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+    to {
+      margin-left: 0%;
+      width: 100%
+    }
   }
   /**{
     background: linear-gradient(to right, #f857a6, #ff5858);
@@ -52,7 +64,7 @@
 <h2>Do you dare take on THE COMPUTER??</h2>
 <p>ROCK beats SCISSORS.....SCISSORS beats PAPER.....PAPER beats ROCK</p>
 <h3>Enter your name to start the best RPS game you will ever play...</h3>
-<i class="em em-fist"></i><i class="em em-newspaper"></i><i class="em em-scissors"></i>
+<div align="center"><i class="em em-fist"></i><i class="em em-newspaper"></i><i class="em em-scissors"></i></div>
 <form action="/name" method="post">
   <label for="player_name">
     Player name <input type="text" name="player_name">
