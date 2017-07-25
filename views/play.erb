@@ -1,0 +1,47 @@
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <style>
+   </style>
+</head>
+
+<div align="center">
+  <br>
+<p><%= @game.current_player.name %>, make your choice:</p>
+
+<div>
+<form action="/result" method="get" style="display: inline-block;" >
+  <input type="submit" value="rock" name="choice" class="btn-default">
+</form>
+
+<form action="/result" method="get" style="display: inline-block;" >
+  <input type="submit" value="paper" name="choice" class="btn-default">
+</form>
+
+<form action="/result" method="get" style="display: inline-block;" >
+  <input type="submit" value="scissors" name="choice" class="btn-default">
+</form>
+</div>
+
+<img src="https://rockpaperscissors.com/wp-content/uploads/2016/12/rps-logo-og.png">
+</div>
+
+<br>
+
+<div align="center">
+  <div>
+      <p>Rounds: <%=@game.rounds%> </p>
+      <p><%=@game.player_1.name%>: Won <%=@game.player_1.win_count%>, Drawn <%=@game.player_1.draw_count%>, Lost <%=@game.player_1.lose_count%></p>
+  </div>
+</div>
+
+<br>
+
+<div align="center">
+  <form action="/" method="get">
+    <input type="submit" value="Restart game" class="btn-default">
+  </form>
+</div>
