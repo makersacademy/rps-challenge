@@ -6,7 +6,7 @@ class Game
     scissors: { rock: :lose, paper: :win, scissors: :tie }
   }
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = RULES.keys
 
   attr_reader :player_1, :player_2
 
