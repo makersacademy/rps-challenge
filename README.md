@@ -66,10 +66,10 @@ To play:
 
 ![RPS index](http://i.imgur.com/Igl71tC.png)
 - Enter your name and click on submit
-[Imgur](http://i.imgur.com/eCfxJb6.png)
+![Imgur](http://i.imgur.com/eCfxJb6.png)
 - choose an option from 'rock', 'paper' or 'scissors'
 - The computer will choose and option
-[Imgur](http://i.imgur.com/hO1B9jP.png)
+![Imgur](http://i.imgur.com/hO1B9jP.png)
 - You will be sent to a page that tells you if you win, lose or draw
 - You can then click on `Next Round` to keep playing
 - You can reset the game by clicking `Reset game` on the `/play` page
