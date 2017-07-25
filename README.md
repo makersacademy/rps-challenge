@@ -4,8 +4,6 @@
   <img src="http://i.imgur.com/Igl71tC.png" width="350"/>
 </p>
 
-![Rock, Paper, Scissors Challenge](https://www.dropbox.com/s/8vw5rk6uratgbsh/RPS_index.png)
-
 Task
 ----
 
@@ -66,9 +64,12 @@ localhost:4567
 
 To play:
 
+![RPS index](http://i.imgur.com/Igl71tC.png)
 - Enter your name and click on submit
+[Imgur](http://i.imgur.com/eCfxJb6.png)
 - choose an option from 'rock', 'paper' or 'scissors'
 - The computer will choose and option
+[Imgur](http://i.imgur.com/hO1B9jP.png)
 - You will be sent to a page that tells you if you win, lose or draw
 - You can then click on `Next Round` to keep playing
 - You can reset the game by clicking `Reset game` on the `/play` page
@@ -131,6 +132,6 @@ end
 
 *Module*
 
-- RPSImages: This is a hash of the images used for the rock, paper and scissors in the win, lose, draw pages. I include it in the app.rb file and reference it in these three views.
+- RPSImages: This is a hash of the images used for the rock, paper and scissors in the win, lose, draw pages. I include it in the `app.rb` file and reference it in these three views.
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).
