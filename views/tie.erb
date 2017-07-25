@@ -1,0 +1,26 @@
+<head>
+<style>
+  body {
+    background-image: url("https://www.urbancontest.com/images/2016/aprile/androidrock1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 150%;
+    color: white;
+    text-align: center;
+  }
+  h1, h3 {
+    text-shadow: 3px 0 black;
+  }
+</style>
+</head>
+<body>
+<h1> Rock, Paper, Scissors </h1>
+<h3> It's a tie! </h3>
+<%= @game.player_1.name %>: <%= @game.player_1.weapon.capitalize %> |
+<%= @game.player_2.name %>: <%= @game.player_2.weapon.capitalize %>
+<br><br>
+<form action="/play" method="get">
+  <input style="font-size: 100%" type="submit" value="OK">
+</form>
+</body>

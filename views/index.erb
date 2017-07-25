@@ -1,0 +1,33 @@
+<head>
+<style>
+  body {
+    background-image: url("https://www.urbancontest.com/images/2016/aprile/androidrock1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 150%;
+    color: white;
+    text-align: center;
+  }
+  h1, h3 {
+    text-shadow: 3px 0 black;
+  }
+  label {
+    font-size: 100%;
+  }
+  input {
+    font-size: 75%;
+  }
+</style>
+</head>
+<body>
+<h1> Rock, Paper, Scissors </h1>
+<h3> Welcome to the game! </h3>
+<form action='/enter_name' method='post'>
+  <label for='player_1_name'> Player name:
+    <input type='text' name='player_1_name'>
+  </label>
+  <br><br>
+  <input style="font-size: 100%" type='submit' value='Submit'>
+</form>
+</body>
