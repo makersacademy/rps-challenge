@@ -25,26 +25,24 @@ describe Game do
     end
   end
 
-  # context 'player wins' do
-  #   describe '#outcome' do
-  #     game = Game.new("Junot")
-  #     game.player_move = "rock"
-  #     game.hal_move = "scissors"
-  #       it 'declares player has won' do
-  #         expect(game.outcome(game.player_move,game.hal_move)).to eq "You win!"
-  #       end
-  #   end
-  # end
-  #
-  # context 'player wins' do
-  #   describe '#outcome' do
-  #     game = Game.new("Junot")
-  #     game.player_move = "rock"
-  #     game.hal_move = "paper"
-  #       it 'declares player has lost' do
-  #         expect(game.outcome(game.player_move,game.hal_move)).to eq "You lose!"
-  #       end
-  #   end
-  # end
+  context 'player wins' do
+    describe '#outcome' do
+      let(:player_move) { "rock" }
+      let(:hal_move) { "scissors" }
+      it 'declares player the winner' do
+        expect(game.outcome).to eq "You win!"
+      end
+    end
+  end
+
+  context 'hal wins' do
+    describe '#outcome' do
+      let(:player_move) { "rock" }
+      let(:hal_move) { "paper" }
+      it 'declares Hal the winner' do
+        expect(game.outcome).to eq "You lose!"
+      end
+    end
+  end
 
 end
