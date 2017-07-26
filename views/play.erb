@@ -1,0 +1,55 @@
+<head>
+  <title>Rock Paper Scissors</title>
+  <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' >
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
+    <style>
+      h1 {
+        font-family: 'Bungee Shade', cursive;
+      }
+      h2 {
+        font-family: 'Roboto', sans-serif
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #B7B7B7;
+      }
+    </style>
+</head>
+
+<h1 style='text-align:center'><%= @game.player.name %> takes on Hal!</h1>
+<h2 style='text-align:center'> Make your choice</h2>
+
+<body>
+
+  <div align='center'>
+
+    <div style='display:inline-block; margin: 15px'>
+      <img src= "http://pre07.deviantart.net/7c3e/th/pre/f/2013/335/0/7/the_rock_cartoon_png_by_undertaker02-d6wd2ge.png" width="300" height="200">
+        <div style='margin: 10px'>
+          <form name="player" action="/choice" method="post">
+            <input type="submit" value="rock" name="player_choice">
+          </form>
+        </div>
+    </div>
+
+    <div style='display:inline-block; margin: 15px'>
+      <img src= "http://img14.deviantart.net/110a/i/2013/108/a/2/looseleaf_by_granturismoboy2-d6277pr.png" width="300" height="200" margin="10px">
+        <div style='margin: 10px'>
+          <form name="player" action="/choice" method="post">
+            <input type="submit" value="paper" name="player_choice">
+          </form>
+        </div>
+    </div>
+
+    <div style='display:inline-block; margin: 15px'>
+      <img src= "https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-014-512.png" width="300" height="200">
+        <div style='margin: 10px'>
+          <form name="player" action="/choice" method="post">
+            <input type="submit" value="scissors" name="player_choice">
+          </form>
+        </div>
+    </div>
+
+  </div>
+
+<body>
