@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Welcome to my attempt at the Rock, Paper, Scissors weekend challenge, the game has not been completed and therefore cannot be played, however you can see currently functionality on the gif below ![GIF](/app.gif?raw=true "Current App").
+Welcome to my attempt at the Rock, Paper, Scissors weekend challenge, the game has not been completed and therefore cannot be played, however you can see currently functionality on the gif below. ![GIF](/app.gif?raw=true "Current App")
 
 Task
 ------
@@ -55,7 +55,8 @@ Notes on submission:
 - 1 rspec failure at current state
 - No rubocop offenses
 - Overall test coverage at 97.06% -- 33/34 lines in 4 files
-- With more time to complete this challenge, I would have wanted to test and implement the remaining functionality
+With more time to complete this challenge; 
+- I would have wanted to test and implement the remaining functionality
 - I would have replaced all instance variables within the main app file (rsp.rb) with sessions and stored the instances in separate methods within a Turns test-suite and class
 - Once I would have done that, I would have gone on to refactor the main app file to no longer state any instance variables
 - Following that I would begin to test the game/computer class followed the weapon class which would ultimately complete the app and return a game result
