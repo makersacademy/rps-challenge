@@ -5,11 +5,10 @@ Welcome to my attempt at the Rock, Paper, Scissors weekend challenge, the game h
 Task
 ------
 
-Knowing how to build web applications is getting us almost there as web developers!
+The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. 
+Their daily grind is pretty tough and they need time to steam a little.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+My task was to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ```
 As a marketeer
