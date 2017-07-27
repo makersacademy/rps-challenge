@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head> </head>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<body style="background-color:lightgrey;font-family:helvetica;">
+<center><h1 style="text-align:center;">Rock, Paper, or Scissors, you decide!</h1>
+
+
+  <h2>Hello <%= @name %> welcome to the armoury!</h2>
+
+<form action="/play" method="post">
+  <input type="submit" name="weapon_type" value="Rock"><br>
+  <input type="submit" name="weapon_type" value="Paper"><br>
+  <input type="submit" name="weapon_type" value="Scissors"><br>
+</form>
+
+<h1>You have chosen to play the <%= @weapon_type%></h1>
+
+<div id="opponent">
+  Opponent has played <%= @opponent_weapon.to_s.capitalize%>
+</div>
+
+</center>
+</body>
+</html>

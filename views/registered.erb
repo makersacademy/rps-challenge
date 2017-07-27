@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head> </head>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<body style="background-color:darkgrey;font-family:helvetica;">
+
+<h2 style="color:white;text-align:center;"> Welcome to RPS <%= @name %>!</h2>
+<h2 style="color:white;text-align:center;"> You are registered and ready to start playing.</h2>
+<h3 style="color:white;text-align:center;"> Now let's head to the armoury to choose your weapon...</h3>
+
+<center><form action="/play" method="get">
+  <input type="submit" value="Choose your Weapon!">
+</form></center>
+
+</body>
+</html>
