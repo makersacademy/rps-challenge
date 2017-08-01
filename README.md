@@ -1,24 +1,28 @@
-# RPS Challenge
-
-Instructions
+# Rock Paper Scissors Game
 -------
+A simple Sinatra-based web app which allow a player to play a game of Rock Paper Scissors against a computer opponent.
 
-Setting up:
-
-In your terminal enter -
+## To run locally:
 
 ```bash
 git clone https://github.com/sblausten/rps-challenge.git
 cd rps-challenge
 gem install bundle
-bundle
+bundle i
 rackup -p 4567
 ```
 
 Then enter 'localhost:4567' in your browser address bar.
+When you've finished with your game, make sure to close the rackup session by using the Ctrl+C command.
 
-
-What it is
+## Basic Rules
 ----
-A simple Rock paper scissors game.
 
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+## To Do
+- Improve styling!
+- Make it multiplayer
+- Extend rules to [Rock Paper Scissors Spock Lizard](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)
