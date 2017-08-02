@@ -1,9 +1,13 @@
 # RPS Challenge
 
+![Image of the game UI]
+(https://c1.staticflickr.com/5/4388/35522099503_4228c493e6_b.jpg)
+
 About
 -------
 
-This is a Ruby + Sinatra implementation of the "Rock, Paper Scissors" game. You choose your signs while the computer makes its choice randomly. Try your luck, beat the computer!
+This is a Ruby + Sinatra implementation of the "Rock, Paper Scissors" game. You choose your signs while the computer makes its choice randomly. Try your luck, beat the allmighty!
+You can play the game on Heroku: https://sasso-carta-forbici.herokuapp.com
 
 
 How to install
