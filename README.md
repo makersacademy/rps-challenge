@@ -1,7 +1,6 @@
 # RPS Challenge
 
-![Image of the game UI]
-(https://c1.staticflickr.com/5/4388/35522099503_4228c493e6_b.jpg)
+![Image of the game UI](https://c1.staticflickr.com/5/4388/35522099503_4228c493e6_b.jpg)
 
 About
 -------
