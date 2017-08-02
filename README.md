@@ -6,7 +6,9 @@ About
 -------
 
 This is a Ruby + Sinatra implementation of the "Rock, Paper Scissors" game. You choose your signs while the computer makes its choice randomly. Try your luck, beat the allmighty!
-You can play the game on Heroku: https://sasso-carta-forbici.herokuapp.com
+
+You can play the game on Heroku: 
+https://sasso-carta-forbici.herokuapp.com
 
 
 How to install
