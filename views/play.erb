@@ -1,0 +1,18 @@
+<%= @game.player_one.name %>: choose your weapon!
+<br>
+
+<form action='/decide_winner' method='post'>
+  <label for='Rock'>
+    <input type='radio' name='player_one_weapon' id='weapon' value='rock' checked='checked'> Rock
+  </label>
+  <br>
+  <label for='Paper'>
+    <input type='radio' name='player_one_weapon' id='weapon' value='paper'> Paper
+  </label>
+  <br>
+  <label for='Scissors'>
+    <input type='radio' name='player_one_weapon' id='weapon' value='scissors'> Scissors
+  </label>
+  <br>
+  <input type='submit' value='Go!'>
+</form>

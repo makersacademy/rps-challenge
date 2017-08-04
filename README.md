@@ -1,86 +1,33 @@
-# RPS Challenge
+# Rock Paper Scissors challenge
 
-Instructions
--------
+## Makers Academy Weekend Challenge #3
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+The aim of this challenge was to make a simple Rock-Paper-Scissors game which could be played against the computer.  The player enters their name and submits a form to choose their weapon, the computer chooses a weapon at random and the app works out who has won, displaying the appropriate message on the page.
 
-Task
-----
+## Instructions
 
-Knowing how to build web applications is getting us almost there as web developers!
+Play with zero effort!  Visit https://kynosaur-rps.herokuapp.com/
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Or...
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+- Clone this repo
+- Install required dependencies: `$ bundle`
+- To run the tests: `$ rspec`
+- To run the app: `$ rackup`
+- Visit `localhost:9292` in your browser
+- (9292 is default, but check your command line in case it's different)
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## What is this made from?
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+- Ruby and Sinatra
+- Tested with RSpec and Capybara
 
-Hints on functionality
+## Tell me more! How did you build this?
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+This is one of my earliest solo projects, completed in week three of Makers Academy.  Each step was driven by RSpec unit tests and Capybara feature tests.
 
+I started by making a very simple page on which the player could fill out a form with their name, submit it and see their name displayed on the page.  This gave me a foundation on which I could build my logic (this could be seen as quite a backwards way to do things, but at this stage I felt more comfortable thinking in terms of what buttons the user would press and which pages would be generated, rather than building logic on its own and then hooking that up to an interface).
 
-As usual please start by
+I made Player and Computer classes, instances of which could have a name and a weapon.  Player weapons were selected by the user filling out a radio-button form; Computer weapons were selected at random by calling .sample on an array.  At this stage I noticed that I was storing the same array in both the Player and the Computer class, so I made Weapon into its own class, which turned out to be a nice place to store the game rules (the weapon 'knows' which other weapons it does and does not beat).
 
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+My careful piecing-together of this app means that if I wanted to expand it (for example, to make it "Rock-Paper-Scissors-Lizard-Spock"), I would only need to make changes to one object (add them to the Weapon class, and update the RULES constant to contain the appropriate combinations).
