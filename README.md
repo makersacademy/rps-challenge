@@ -6,6 +6,10 @@ The aim of this challenge was to make a simple Rock-Paper-Scissors game which co
 
 ## Instructions
 
+Play with zero effort!  Visit https://kynosaur-rps.herokuapp.com/
+
+Or...
+
 - Clone this repo
 - Install required dependencies: `$ bundle`
 - To run the tests: `$ rspec`
