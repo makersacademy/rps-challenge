@@ -41,5 +41,7 @@ Tech Stack
 -Capybara and Rspec for testing
 ```
 ```
-Screenshots
-![alt text](result.png)
+
+![alt text](firstpage.png "Enter player name")
+![alt text](playpage.png "Choose from Rock, paper or scissors")
+![alt text](result.png "Result page")
