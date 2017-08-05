@@ -1,5 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/styles.css">
-<h1><%= @game.player1.name> Choose your weapon %></h1>
+
+
+<h1><%= @game.player1.name%>, Choose your weapon to play!</h1>
+
+
 <form action = "/result" method = "post">
   <input  type = "submit" value ="Rock" name ="player_choice">
   <input  type = "submit" value ="Paper" name ="player_choice">

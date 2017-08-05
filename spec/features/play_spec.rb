@@ -1,9 +1,9 @@
 feature 'choosing weapon' do
-  scenario 'player submits name' do
+  scenario 'player choose weapon' do
     visit('/')
     fill_in :player_name, with: 'Bob'
     click_button 'play'
-    click_button 'rock'
-    expect(page).to have_content( 'Bob chooses rock')
+    click_button 'Rock'
+    expect(page).to have_content( 'Bob chooses Rock')
   end
 end

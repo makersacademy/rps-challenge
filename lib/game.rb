@@ -25,12 +25,14 @@ class Game
 
   def calc_result
     @choices << @player1.weapon
-    @choices <<@player2.generate_weapon
-    return "Draw" if @player1.weapon == @player2.generate_weapon
-    if WIN_COMBINATION.include?@weapon_choices
-      return "#{@player1.name} Wins"
+    player2_choice = @player2.generate_weapon
+    @choices << player2_choice
+    if @choices[0] == @choices[1]
+       "Draw"
+    elsif WIN_COMBINATION.include? @choices
+       "#{@player1.name} Wins!"
     else
-      return "Computer wins"
-    end
-  end
+       "Computer Wins!"
+     end
+  end   
 end
