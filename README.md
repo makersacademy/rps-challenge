@@ -40,8 +40,3 @@ Tech Stack
 - sinatra
 -Capybara and Rspec for testing
 ```
-```
-
-![alt text](firstpage.png "Enter player name")
-![alt text](playpage.png "Choose from Rock, paper or scissors")
-![alt text](result.png "Result page")
