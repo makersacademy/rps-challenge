@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="/style.css">
+<body class = "playpage">
+<h1><%= @game.player1.name%>, Choose your weapon to play!</h1>
+<div class = "playtext">
+<form action = "/result" method = "post">
+  <input  type = "image" src= "rock.jpg"  value ="Rock" name ="player_choice">
+  <input  type = "image" src= "paper.png"   value = "Paper"name ="player_choice">
+  <input  type = "image" src="scissors.png"  value = "Scissors" name ="player_choice">
+</form>
+</div>
+</body>

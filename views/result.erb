@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+<body class = "resultpage">
+  <div class = "resulttext">
+    <h1><%=@game.calc_result%></h1>
+    <h2><%=@game.player1.name%> chooses <%=@game.choices[0] %><h2>
+    <h2>Computer chooses <%=@game.choices[1]%><h2>
+    <a href = '/play'> Play Again? </a>
+  </div>
+</body>
