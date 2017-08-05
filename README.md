@@ -38,3 +38,8 @@ Come on and play Rock Paper and scissors!
 Tech Stack
 - ruby
 - sinatra
+-Capybara and Rspec for testing
+```
+```
+Screenshots
+![alt text](public/firstpage.png)
