@@ -36,7 +36,8 @@ Come on and play Rock Paper and scissors!
 ```
 ```
 Tech Stack
-- ruby
-- sinatra
+- Ruby
+- Sinatra
 -Capybara and Rspec for testing
+-HTML/CSS
 ```
