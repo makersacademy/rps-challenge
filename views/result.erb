@@ -1,5 +1,11 @@
-<h2><%=@game.player1.name%> chooses <%=@game.choices[0] %><h2>
-<h2>Computer chooses <%=@game.choices[1]%><h2>
+<link rel="stylesheet" type="text/css" href="/style.css">
 
-<h1><%= @result%></h1>
-<a href = '/play'> Play Again? </a>
+
+<body class = "resultpage">
+  <div class = "resulttext">
+    <h2><%=@game.player1.name%> chooses <%=@game.choices[0] %><h2>
+    <h2>Computer chooses <%=@game.choices[1]%><h2>
+    <h1><%= @result%></h1>
+    <a href = '/play'> Play Again? </a>
+  </div>
+</body>

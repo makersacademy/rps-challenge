@@ -1,0 +1,36 @@
+.indexpage{
+  background-image: url("rockpaperscissors.jpg")
+}
+
+.indextext {
+  text-align: center;
+  padding: 150px;
+  font-family: 'Lobster Two', cursive;;
+
+}
+
+.button{
+  background-color: #FF3300;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  display: inline-block;
+  padding: 15px 32px;
+}
+
+
+.resultpage{
+  background-image: url("rockpaperscissors.jpg")
+}
+
+.resulttext{
+  text-align: center;
+  padding: 180px;
+  font-family: 'Lobster Two', cursive;
+}
+
+.playpage{
+  text-align: center;
+  padding: 100px;
+  font-family: 'Lobster Two', cursive;
+}

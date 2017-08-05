@@ -26,5 +26,11 @@ I would like to be able to play rock/paper/scissors
 - Paper beats Rock
 
 ```
-Come on and play Rock Paper and scissors! clone the repo.
+Come on and play Rock Paper and scissors!
+- git clone [git repo url]
+- cd rps-challenge
+- Run bundle (if bundle already installed, else gem install bundle, then bundle install)
+- ruby app.rb
+- navigate to localhost:9292
+- start playing the game, enjoy!
 ```

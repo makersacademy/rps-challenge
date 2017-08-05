@@ -12,13 +12,12 @@ require './lib/game'
 
    post '/play' do
      player1 = Player.new(params[:player_name])
-     p player1
-     p player1.name
      player2 = Computer.new
      @game = Game.create(player1,player2)
      redirect '/play'
    end
 
+   
    get '/play' do
      @game = Game.instance
      erb :play
@@ -30,5 +29,10 @@ require './lib/game'
      @result = @game.calc_result
      erb :result
    end
+
+    get '/result' do
+      @game = Game.instance
+      erb :result
+    end
 
   end
