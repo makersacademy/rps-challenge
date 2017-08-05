@@ -3,7 +3,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player1, :player2, :choices
+  attr_reader :player1, :player2, :choices, :player1_weapon, :player2_weapon
 
   WIN_COMBINATION =  [["Rock","Scissors"],["Scissors","Paper"],["Paper","Rock"]]
 
@@ -12,6 +12,8 @@ class Game
     @player1 = player1
     @player2 = player2
     @choices = []
+    @player1_weapon = nil
+    @player2_weapon = nil
   end
 
   def self.create(player1,player2)
@@ -19,13 +21,13 @@ class Game
   end
 
   def self.instance
-    @game ||= Game.new
+    @game||= Game.new
   end
 
   def calc_result
-    @choices << @player1.weapon
-    player2_choice = @player2.generate_weapon
-    @choices << player2_choice
+    @player1_weapon = @player1.weapon
+    @player2_weapon = @player2.generate_weapon
+    @choices = [@player1_weapon,@player2_weapon]
     if @choices[0] == @choices[1]
        "Draw"
     elsif WIN_COMBINATION.include? @choices

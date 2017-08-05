@@ -1,8 +1,13 @@
 class Computer
 
+attr_reader :weapon
+
+  def initialize
+    @weapon = nil
+  end
 
   def generate_weapon
-      ['Rock','Paper','Scissors'].sample
+    @weapon = ['Rock','Paper','Scissors'].sample
   end
 
 end

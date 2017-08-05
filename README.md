@@ -34,3 +34,7 @@ Come on and play Rock Paper and scissors!
 - navigate to localhost:9292
 - start playing the game, enjoy!
 ```
+```
+Tech Stack
+- ruby
+- sinatra
