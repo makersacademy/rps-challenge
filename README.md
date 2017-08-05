@@ -42,4 +42,4 @@ Tech Stack
 ```
 ```
 Screenshots
-![alt text](./public/firstpage.png)
+![alt text](firstpage.png)
