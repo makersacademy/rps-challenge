@@ -1,2 +1,17 @@
 <h2><%= "#{@player}" %>, are you ready to play?</h2>
 <h3>Make your choice!</h3>
+
+<form action= "/turn" method="post">
+	<input type="submit" value="Rock" name="choice">
+	<input type="submit" value="Paper" name="choice">
+	<input type="submit" value="Scissors" name="choice">
+</form>
+
+<form action="/" method="get">
+	<input type="submit" value="Change player">
+</form>
+
+<% if session[:display] %>
+<h3><%= "#{@player}" %>, your choice is <%= "#{@choice}".upcase %>!</h3>
+<% session[:display] = false %>
+<% end %>
