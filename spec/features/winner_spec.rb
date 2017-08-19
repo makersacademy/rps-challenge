@@ -23,4 +23,12 @@ feature "winner page", type: :feature do
     click_button('Scissors')
     expect(page).to have_content("You have chosen Scissors.")
   end
+
+  # scenario "it says the computers choice" do
+  #   visit "/"
+  #   fill_in('name', with: 'Jenny')
+  #   click_button('Submit')
+  #   click_button('Scissors')
+  #   expect(page).to have_content("Computer has chosen.")
+  # end
 end

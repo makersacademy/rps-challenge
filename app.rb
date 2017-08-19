@@ -7,32 +7,29 @@ class MyApp < Sinatra::Base
   end
 
   post '/name' do
-    $name = params[:name]
+    # $name = params[:name]
+    # $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    $game = Game.new(player)
     redirect '/rps'
   end
 
   get '/rps' do
-    @name = $name
+    # @name = $name
+    # @player = $player
+    @game = $game
     erb(:rps)
   end
 
-  post '/rock' do
-    $choice = params[:choice]
-    redirect '/winner'
-  end
-
-  post '/paper' do
-    $choice = params[:choice]
-    redirect '/winner'
-  end
-
-  post '/scissors' do
-    $choice = params[:choice]
+  post '/choice' do
+    $game.choice = params[:choice]
+    # $choice = params[:choice]
     redirect '/winner'
   end
 
   get '/winner' do
-    @choice = $choice
+    @game = $game
+    # @choice = $choice
     erb(:winner)
   end
 
