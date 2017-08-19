@@ -5,4 +5,9 @@ RSpec.feature "Start Game", type: :feature do
     submit_name
     expect(page).to have_text("Hello Monkey!")
   end
+
+  scenario "redirects if no name is provided" do
+    visit('/game')
+    expect(page).to have_text("Welcome")
+  end
 end
