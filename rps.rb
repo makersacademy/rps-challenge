@@ -4,12 +4,12 @@ require 'sinatra'
 class Rps < Sinatra::Base
 
   get '/' do
-    "Hello, Player!"
+    "Hello Player!"
     erb(:index)
   end
 
   post '/name' do
-    @player = params[:player] #|| "Player"
-    #redirect to '/play'
+    @player = params[:player] # || "Player"
+  redirect to '/play'
   end
 end

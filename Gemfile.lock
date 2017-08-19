@@ -79,7 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  rake
+  rack
   rspec
   rubocop
   shotgun

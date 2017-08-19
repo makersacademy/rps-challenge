@@ -4,7 +4,8 @@ require_relative '../../rps.rb'
 feature Rps do
 
   scenario "it says hello Player" do
-    enter_name
-    expect(page).to have_text("Hello, Player!")
+    visit('/')
+    expect(page).to have_text("Hello Player!")
+    # enter_name
   end
 end
