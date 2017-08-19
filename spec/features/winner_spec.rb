@@ -50,4 +50,31 @@ feature "winner page", type: :feature do
     click_button('Rock')
     expect(page).to have_content("Computer has chosen Scissors.")
   end
+
+  scenario "it says if you've won" do
+    allow_any_instance_of(Game).to receive(:outcome).and_return("You win!")
+    visit "/"
+    fill_in('name', with: 'Jenny')
+    click_button('Submit')
+    click_button('Rock')
+    expect(page).to have_content("You win!")
+  end
+
+  scenario "it says if you've lost" do
+    allow_any_instance_of(Game).to receive(:outcome).and_return("You lose!")
+    visit "/"
+    fill_in('name', with: 'Jenny')
+    click_button('Submit')
+    click_button('Paper')
+    expect(page).to have_content("You lose!")
+  end
+
+  scenario "it says it's a draw" do
+    allow_any_instance_of(Game).to receive(:outcome).and_return("It's a draw!")
+    visit "/"
+    fill_in('name', with: 'Jenny')
+    click_button('Submit')
+    click_button('Scissors')
+    expect(page).to have_content("It's a draw!")
+  end
 end
