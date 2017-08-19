@@ -16,7 +16,7 @@ RSpec.feature "Game Page", type: :feature do
     expect(page).to have_button("Rock")
   end
 
-  scenario "Plays rock" do
+  scenario "Informs player they played rock" do
     submit_name
     click_button("Rock")
     expect(page).to have_text("You played rock")
@@ -27,7 +27,7 @@ RSpec.feature "Game Page", type: :feature do
     expect(page).to have_button("Paper")
   end
 
-  scenario "Plays paper" do
+  scenario "Informs player they played paper" do
     submit_name
     click_button("Paper")
     expect(page).to have_text("You played paper")
@@ -38,13 +38,35 @@ RSpec.feature "Game Page", type: :feature do
     expect(page).to have_button("Scissors")
   end
 
-  scenario "Plays scissors" do
+  scenario "Informs player they played scissors" do
     submit_name
     click_button("Scissors")
     expect(page).to have_text("You played scissors")
   end
 
-  scenario "Computer plays" do
+  scenario "Contains lizard" do
+    submit_name
+    expect(page).to have_button("Lizard")
+  end
+
+  scenario "Informs player they played lizard" do
+    submit_name
+    click_button("Lizard")
+    expect(page).to have_text("You played lizard")
+  end
+
+  scenario "Contains spoc" do
+    submit_name
+    expect(page).to have_button("Spoc")
+  end
+
+  scenario "Informs player they played spoc" do
+    submit_name
+    click_button("Spoc")
+    expect(page).to have_text("You played spoc")
+  end
+
+  scenario "Informs player computer played" do
     submit_name
     click_button("Rock")
     expect(page).to have_text("They played")

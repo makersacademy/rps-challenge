@@ -1,11 +1,11 @@
-<h1>
-  <center>
-    Hello <%=@player.name%>!
-  </center>
-</h1>
-
 <div id="message_holder">
-  <% unless @player.action.nil? %>
+  <% if @player.action.nil? %>
+    <h1>
+      <center>
+        Hello <%=@player.name%>!
+      </center>
+    </h1>
+  <% else %>
     <p>
       <center>You played <%= @player.action %></center>
       <center>They played <%= @computer.action %></center>
@@ -14,16 +14,13 @@
 </div>
 
 <center>
-  <div id="game_holder" style="display: inline-block;">
+  <div id="game_holder">
 
     <div id="rock_holder">
       <form action="/play" method="post">
         <input type="hidden", name="action", value="rock" />
         <input type="submit", value="Rock"  />
       </form>
-      <div id="rock_image_holder">
-        <img src='' id="rock_image" />
-      </div>
     </div>
 
     <div id="paper_holder">
@@ -31,9 +28,6 @@
         <input type="hidden", name="action", value="paper" />
         <input type="submit", value="Paper"  />
       </form>
-      <div id="paper_image_holder">
-        <img src='' id="paper_image" />
-      </div>
     </div>
 
     <div id="scissors_holder">
@@ -41,9 +35,20 @@
         <input type="hidden", name="action", value="scissors" />
         <input type="submit", value="Scissors"  />
       </form>
-      <div id="scissors_image_holder">
-        <img src='' id="scissors_image" />
-      </div>
+    </div>
+
+    <div id="lizard_holder">
+      <form action="/play" method="post">
+        <input type="hidden", name="action", value="lizard" />
+        <input type="submit", value="Lizard"  />
+      </form>
+    </div>
+
+    <div id="spoc_holder">
+      <form action="/play" method="post">
+        <input type="hidden", name="action", value="spoc" />
+        <input type="submit", value="Spoc"  />
+      </form>
     </div>
 
   </div>

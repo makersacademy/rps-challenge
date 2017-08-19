@@ -17,7 +17,7 @@ class Player
 
   def self.simulate
     computer = Player.new("computer")
-    computer.action = %w[rock paper scissors][rand(0..2)]
+    computer.action = %w[rock paper scissors lizard spoc][rand(0..4)]
     computer
   end
 end
