@@ -1,0 +1,5 @@
+def enter_name
+  visit('/')
+  fill_in :player, with: 'Sam'
+  click_button 'Submit'
+end
