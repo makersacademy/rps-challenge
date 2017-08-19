@@ -12,24 +12,25 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    @player = params[:Player]
+    $player = params[:Player]
     erb(:play)
     redirect '/play'
   end
 
   get '/play' do
-    @score = $score
+    erb(:play)
+  end
+
+  post '/play' do
     erb(:play)
   end
 
   post '/rock' do
-    @score = $score
     play_game('rock')
     erb(:rock)
   end
 
   post '/paper' do
-    @score = $score
     play_game('paper')
     erb(:paper)
   end

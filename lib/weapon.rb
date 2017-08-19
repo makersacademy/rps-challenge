@@ -9,11 +9,8 @@ class Weapon
   end
 
   def check_weapon(weapon)
-    if VALID_WEAPONS.include? weapon
-      @type = weapon
-    else
-      raise 'invalid weapon'
-    end
+    return @type = weapon if VALID_WEAPONS.include? weapon
+    raise 'invalid weapon'
   end
 
   def randomise

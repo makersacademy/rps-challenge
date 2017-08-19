@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  subject { Game.new(player) }
+  subject { Game.new(player, weapon) }
 
   let(:player) { double :player }
   let(:weapon) { double :weapon }
