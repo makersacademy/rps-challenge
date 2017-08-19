@@ -2,10 +2,10 @@ require 'game'
 
 describe Game do
 
-  subject { Game.new(player, weapon) }
+  subject { Game.new(weapon1, weapon2) }
 
-  let(:player) { double :player }
-  let(:weapon) { double :weapon }
+  let(:weapon1) { double :weapon1 }
+  let(:weapon2) { double :weapon2 }
 
   it 'works' do
     expect(subject.class).to eq described_class
