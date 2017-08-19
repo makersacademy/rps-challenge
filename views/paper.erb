@@ -1,0 +1,23 @@
+<% @game.shoot %>
+
+<h1> Computer chose: <%= @game.weapon2.type %> </h1>
+
+<% if @game.result == 'win' %>
+
+  <h1> You win! </h1>
+    <% $score += 1 %>
+
+
+<% elsif @game.result == 'lose' %>
+
+  <h1> You lose! </h1>
+
+<% elsif @game.result == 'tie' %>
+
+  <h1> You tied! </h1>
+
+<% end %>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play Again?">
+</form>

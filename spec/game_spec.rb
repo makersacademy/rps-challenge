@@ -2,9 +2,10 @@ require 'game'
 
 describe Game do
 
-  subject { Game.new(player)}
+  subject { Game.new(player) }
 
-  let(:player) { double :player}
+  let(:player) { double :player }
+  let(:weapon) { double :weapon }
 
   it 'works' do
     expect(subject.class).to eq described_class
@@ -20,6 +21,11 @@ describe Game do
     end
     it 'returns tie if user ties' do
       expect(subject.shoot('rock', 'rock')).to eq 'tie'
+    end
+
+    it 'result is saved' do
+      subject.shoot('rock', 'paper')
+      expect(subject.result).to eq 'lose'
     end
   end
 

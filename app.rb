@@ -1,27 +1,48 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/weapon'
 
 class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
+    $score = 0
     erb(:index)
   end
 
   post '/names' do
-    $player = params[:Player]
+    @player = params[:Player]
     erb(:play)
     redirect '/play'
   end
 
   get '/play' do
-    # $player = params[:Player]
+    @score = $score
     erb(:play)
   end
 
-  post '/outcome' do
-    erb(:outcome)
+  post '/rock' do
+    @score = $score
+    play_game('rock')
+    erb(:rock)
+  end
+
+  post '/paper' do
+    @score = $score
+    play_game('paper')
+    erb(:paper)
+  end
+
+  post '/scissors' do
+    @score = $score
+    play_game('scissors')
+    erb(:scissors)
+  end
+
+  def play_game(weapon)
+    weapon1 = Weapon.new weapon
+    @game = Game.new(weapon1)
   end
 
   run! if app_file == $PROGRAM_NAME

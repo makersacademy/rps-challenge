@@ -42,16 +42,10 @@ feature RPS do
       sign_in_and_play
     end
 
-    it 'tells you you lose' do
-      click_button('Scissors')
-      expect(page).to have_text 'You lose!'
-      save_and_open_page
+    it 'tells you the outcome' do
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).to have_current_path('/scissors')
     end
-
-
-    it 'tells you you win' do
-      click_button('Scissors')
-    end
-    it 'tells you you tied'
   end
 end

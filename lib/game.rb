@@ -1,17 +1,21 @@
 class Game
 
+  attr_reader :result, :weapon1, :weapon2
+
   RULES = {
-      :rock     => {:rock => 'tie', :paper => 'lose', :scissors => 'win'},
-      :paper    => {:rock => 'win', :paper => 'tie', :scissors => 'lose'},
-      :scissors => {:rock => 'lose', :paper => 'win', :scissors => 'tie'}
+      :rock     => { :rock => 'tie', :paper => 'lose', :scissors => 'win' },
+      :paper    => { :rock => 'win', :paper => 'tie', :scissors => 'lose' },
+      :scissors => { :rock => 'lose', :paper => 'win', :scissors => 'tie' }
   }
 
-  def shoot(p1, p2 = @weapon)
-    RULES[p1.to_sym][p2.to_sym]
+  def initialize(weapon1, weapon2 = Weapon.new)
+    @weapon1 = weapon1
+    @weapon2 = weapon2
+    @result = nil
   end
 
-  def initialize(player, weapon = Weapon.new)
-    @player = player
-    @weapon = weapon
+  def shoot(w1 = @weapon1.type, w2 = @weapon2.type)
+    @result = RULES[w1.to_sym][w2.to_sym]
   end
+
 end
