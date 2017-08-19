@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  let(:type) { Player }
+  let(:type) { described_class }
   subject { type.new('Monkey') }
 
   describe '.initialize' do
