@@ -7,16 +7,41 @@ describe Game do
 
   it 'returns rock if random number is 0' do
     allow(kernel).to receive(:rand).with(2).and_return(0)
-    expect(game.comp_choice(kernel)).to eq "Rock"
+    game.comp_choose(kernel)
+    expect(game.comp_choice).to eq "Rock"
   end
 
   it 'returns paper if random number is 1' do
     allow(kernel).to receive(:rand).with(2).and_return(1)
-    expect(game.comp_choice(kernel)).to eq "Paper"
+    game.comp_choose(kernel)
+    expect(game.comp_choice).to eq "Paper"
   end
 
   it 'returns scissors if random number is 2' do
     allow(kernel).to receive(:rand).with(2).and_return(2)
-    expect(game.comp_choice(kernel)).to eq "Scissors"
+    game.comp_choose(kernel)
+    expect(game.comp_choice).to eq "Scissors"
   end
+
+  it "tells you if you've won" do
+    allow(kernel).to receive(:rand).with(2).and_return(2)
+    game.choice = "Rock"
+    game.comp_choose(kernel)
+    expect(game.outcome).to eq "You win!"
+  end
+
+  it "tells you if you've lost" do
+    allow(kernel).to receive(:rand).with(2).and_return(1)
+    game.choice = "Rock"
+    game.comp_choose(kernel)
+    expect(game.outcome).to eq "You lose!"
+  end
+
+  it "tells you if it's a draw" do
+    allow(kernel).to receive(:rand).with(2).and_return(0)
+    game.choice = "Rock"
+    game.comp_choose(kernel)
+    expect(game.outcome).to eq "It's a draw!"
+  end
+
 end

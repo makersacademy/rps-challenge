@@ -30,6 +30,7 @@ class MyApp < Sinatra::Base
   end
 
   get '/winner' do
+    $game.comp_choose
     @game = $game
     # @choice = $choice
     erb(:winner)
