@@ -13,6 +13,7 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
+    redirect to('/') if session[:name].nil?
     @player_name = session[:name]
     erb(:game)
   end
