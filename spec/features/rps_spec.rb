@@ -3,16 +3,15 @@ require_relative '../../app.rb'
 RSpec.feature "Home page", type: :feature do
   scenario "intro text" do
     visit "/"
-    expect(page).to have_content "Ready to play ROCK PAPER SCISSOR?"
+    expect(page).to have_content "ROCK PAPER SCISSOR"
   end
 end
 
 feature "Enter names" do
   scenario "submitting names" do
     visit "/"
-    fill_in :player1, with: "Nico"
-    fill_in :player2, with: "Pier"
-    click_button "Submit"
-    expect(page).to have_content "Nico VS Pier"
+    fill_in :player, with: "Nico"
+    click_button "Play"
+    expect(page).to have_content "Nico, are you ready to play?\nMake your choice!"
   end
 end
