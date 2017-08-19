@@ -3,3 +3,47 @@
     Hello <%=@player.name%>!
   </center>
 </h1>
+
+<div id="message_holder">
+  <% unless @action.nil? %>
+    <p>
+      <center>You played <%= @action %></center>
+    </p>
+  <% end %>
+</div>
+
+<center>
+  <div id="game_holder">
+
+    <div id="rock_holder">
+      <form action="/play" method="post">
+        <input type="hidden", name="action", value="rock" />
+        <input type="submit", value="Rock"  />
+      </form>
+      <div id="rock_image_holder">
+        <img src='' id="rock_image" />
+      </div>
+    </div>
+
+    <div id="paper_holder">
+      <form action="/play" method="post">
+        <input type="hidden", name="action", value="paper" />
+        <input type="submit", value="Paper"  />
+      </form>
+      <div id="paper_image_holder">
+        <img src='' id="paper_image" />
+      </div>
+    </div>
+
+    <div id="scissors_holder">
+      <form action="/play" method="post">
+        <input type="hidden", name="action", value="scissors" />
+        <input type="submit", value="Scissors"  />
+      </form>
+      <div id="scissors_image_holder">
+        <img src='' id="scissors_image" />
+      </div>
+    </div>
+
+  </div>
+</center>
