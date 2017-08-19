@@ -4,7 +4,7 @@ require 'simplecov-console'
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
-require File.join(File.dirname(__FILE__), '../lib', 'rps.rb')
+require File.join(File.dirname(__FILE__), '../lib', 'app.rb')
 require 'capybara/rspec'
 require 'capybara'
 require 'capybara/rspec'

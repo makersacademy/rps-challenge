@@ -3,14 +3,13 @@ require 'sinatra/base'
 class RPS < Sinatra::Base
   enable :sessions
 
-  post '/' do
+  get '/' do
     erb :index
-    redirect '/result'
-
   end
 
-  post '/result' do
-    erb :result
+  post '/rps' do
+    @player_1_name = params[:player_1_name]
+    erb :rps
   end
-
   run! if app_file == $0
+end
