@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'shotgun'
+require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 class MyApp < Sinatra::Base
   get '/' do
