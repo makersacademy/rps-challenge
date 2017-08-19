@@ -11,5 +11,11 @@ describe Player do
     it 'name is set' do
       expect(subject.name).to eq('Monkey')
     end
+    it 'initializes with action' do
+      expect(subject).to respond_to(:action)
+    end
+    it 'action is nil' do
+      expect(subject.action).to eq(nil)
+    end
   end
 end

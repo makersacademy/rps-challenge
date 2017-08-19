@@ -16,9 +16,8 @@ class RPS < Sinatra::Base
 
   get '/game' do
     redirect to('/') if session[:player].nil?
-    @player = session[:player]
-    @action = session[:action]
-    session[:action] = nil
+    @player = Player.from_session(session)
+    @computer = Player.simulate
     erb(:game)
   end
 

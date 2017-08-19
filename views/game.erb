@@ -5,15 +5,16 @@
 </h1>
 
 <div id="message_holder">
-  <% unless @action.nil? %>
+  <% unless @player.action.nil? %>
     <p>
-      <center>You played <%= @action %></center>
+      <center>You played <%= @player.action %></center>
+      <center>They played <%= @computer.action %></center>
     </p>
   <% end %>
 </div>
 
 <center>
-  <div id="game_holder">
+  <div id="game_holder" style="display: inline-block;">
 
     <div id="rock_holder">
       <form action="/play" method="post">
