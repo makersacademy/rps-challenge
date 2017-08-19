@@ -1,6 +1,6 @@
-RSpec.feature "Home page", type: :feature do
-  scenario "it says Welcome to Rock Paper Sissors" do
+feature "Home page", type: :feature do
+  scenario "Enter your name" do
     visit "/"
-    expect(page).to have_text("Welcome to Rock Paper Sissors")
+    expect(page).to have_text("Enter your name")
   end
 end
