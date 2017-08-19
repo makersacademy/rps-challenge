@@ -4,6 +4,7 @@ ruby '2.4.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'capybara'
@@ -12,3 +13,13 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
+
+### Gemfile from Battle
+# source 'https://rubygems.org'
+#
+# ruby '2.4.0'
+#
+# gem 'capybara'
+# gem 'selenium-webdriver'
+# gem 'rspec'
+# gem 'sinatra'
