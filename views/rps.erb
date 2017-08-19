@@ -1,9 +1,10 @@
-<form action="/rock" method="get">
-  <input type="submit" value="Rock">
+<h1>Hello <%= @name %></h1>
+<form action="/rock" method="post">
+  <input type="submit" name="choice" value="Rock">
 </form>
-<form action="/paper" method="get">
-  <input type="submit" value="Paper">
+<form action="/paper" method="post">
+  <input type="submit" name="choice" value="Paper">
 </form>
-<form action="/scissor" method="get">
-  <input type="submit" value="Scissors">
+<form action="/scissors" method="post">
+  <input type="submit" name="choice" value="Scissors">
 </form>
