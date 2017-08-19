@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'rack'
+require './lib/opponent'
 
 class RPS < Sinatra::Base
 	enable :sessions
@@ -17,6 +18,8 @@ class RPS < Sinatra::Base
 
 	get '/play' do
 		@player = session[:player]
+		@opponent = Opponent.new
+		@opponent_choice = @opponent.opponent_turn
 		@choice = session[:choice]
 		erb :play
 	end

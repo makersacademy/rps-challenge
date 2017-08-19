@@ -13,5 +13,6 @@
 
 <% if session[:display] %>
 <h3><%= "#{@player}" %>, your choice is <%= "#{@choice}".upcase %>!</h3>
+<h3>Your opponent's choice is <%= "#{@enemy_choice}".upcase %>!</h3>
 <% session[:display] = false %>
 <% end %>
