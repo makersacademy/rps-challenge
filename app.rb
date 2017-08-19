@@ -13,7 +13,8 @@ class RPS < Sinatra::Base
   end
 
   get '/game' do
-    "Hello #{session[:name]}!"
+    @player_name = session[:name]
+    erb(:game)
   end
 
   run! if app_file == $PROGRAM_NAME
