@@ -1,7 +1,10 @@
 require 'sinatra/base'
+require 'rack'
 
-class RPS < Sinatra::Base
+class Rps < Sinatra::Base
+  enable :sessions
+
   get '/' do
-    "Hello World"
+    erb :index
   end
 end
