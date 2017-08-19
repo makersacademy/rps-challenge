@@ -45,7 +45,7 @@ feature RPS do
     it 'tells you the outcome' do
       sign_in_and_play
       click_button 'Scissors'
-      expect(page).to have_current_path('/scissors')
+      expect(page).to have_current_path('/outcome')
     end
   end
 end

@@ -3,14 +3,17 @@
 <h2><%= "Welcome  #{$player}!" unless ($player.nil? || $player.empty?) %> </h2>
 
 
-<form action="/rock" method="post">
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="rock" />
   <input type="submit" value="Rock">
 </form>
 
-<form action="/paper" method="post">
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="paper" />
   <input type="submit" value="Paper">
 </form>
 
-<form action="/scissors" method="post">
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="scissors" />
   <input type="submit" value="Scissors">
 </form>
