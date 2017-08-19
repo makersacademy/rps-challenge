@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:player1){ double :player }
-  let(:game){described_class.new(player1)}
-  let(:kernel) { double :kernel}
+  let(:player1) { double :player }
+  let(:game) { described_class.new(player1) }
+  let(:kernel) { double :kernel }
 
   it 'returns rock if random number is 0' do
     allow(kernel).to receive(:rand).with(3).and_return(0)

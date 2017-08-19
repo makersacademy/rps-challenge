@@ -11,6 +11,5 @@ feature "Home page", type: :feature do
   scenario "it has a form to enter a name" do
     visit "/"
     expect(page).to have_field("name")
-    save_and_open_page
   end
 end

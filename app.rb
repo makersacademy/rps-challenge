@@ -12,7 +12,12 @@ class MyApp < Sinatra::Base
     player = Player.new(params[:name])
     $game = Game.new(player)
     redirect '/rps'
+    # redirect '/multi'
   end
+
+  # get '/multi' do
+  #   erb(:multiplayer)
+  # end
 
   get '/rps' do
     @game = $game

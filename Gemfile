@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
+gem 'launchy'
 gem 'rake'
 gem 'shotgun'
 gem 'sinatra'
-gem 'launchy'
 
 group :test do
   gem 'capybara'
