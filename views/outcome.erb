@@ -5,6 +5,7 @@
 <% if @game.result == 'win' %>
 
     <h1> You win! </h1>
+    <% @player.point 1 %>
 
 <% elsif @game.result == 'lose' %>
 
@@ -16,6 +17,22 @@
 
 <% end %>
 
-<form action="/play" method="post">
-  <input type="submit" value="Play Again?">
+<% unless @player.nil? %>
+<h2> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
+<h3> <%= "Score: #{@player.score}" %>  </h3>
+<% end %>
+
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="rock" />
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="paper" />
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="scissors" />
+  <input type="submit" value="Scissors">
 </form>

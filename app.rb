@@ -3,32 +3,28 @@ require './lib/player'
 require './lib/game'
 require './lib/weapon'
 
-
-
 class RPS < Sinatra::Base
   enable :sessions
   set :bind, '192.168.1.111'
 
   get '/' do
-    $score = 0
+    session[:score] = 0
     erb(:index)
   end
 
   post '/names' do
-    $player = params[:Player]
-    erb(:play)
+    session[:player] = Player.new(params[:Player])
     redirect '/play'
   end
 
   get '/play' do
-    erb(:play)
-  end
-
-  post '/play' do
+    @player = session[:player]
     erb(:play)
   end
 
   post '/outcome' do
+    @player = session[:player]
+    @score = session[:score]
     weapon = params[:action]
     play_game(weapon)
     erb(:outcome)

@@ -32,12 +32,11 @@ feature RPS do
       find_button('Paper').click
     end
     it 'can click on scissors' do
-      # save_and_open_page
       find_button('Scissors').click
     end
   end
 
-  context '/choose' do
+  context '/outcome' do
     before do
       sign_in_and_play
     end
@@ -46,6 +45,24 @@ feature RPS do
       sign_in_and_play
       click_button 'Scissors'
       expect(page).to have_current_path('/outcome')
+    end
+
+    it 'tells you what the computer chose' do
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).to have_text('Computer chose')
+    end
+
+    it 'allows you to keep playing' do
+      sign_in_and_play
+      click_button 'Scissors'
+      find_button('Scissors').click
+    end
+
+    it 'keeps track of scores' do
+      sign_in_and_play
+      click_button 'Scissors'
+      expect(page).to have_text('Score: 0' || 'Score: 1')
     end
   end
 end

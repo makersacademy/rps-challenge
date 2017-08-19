@@ -11,4 +11,15 @@ describe Player do
     expect(player.name).to eq 'Stephen'
   end
 
+  it 'stores player scores' do
+    player = Player.new('Stephen')
+    expect(player.score).to eq 0
+  end
+
+  it 'increases player scores' do
+    player = Player.new('Stephen')
+    player.point
+    expect(player.score).to eq 1
+  end
+
 end

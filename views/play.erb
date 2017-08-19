@@ -1,6 +1,6 @@
 <h1> PLAY! </h1>
 
-<h2><%= "Welcome  #{$player}!" unless ($player.nil? || $player.empty?) %> </h2>
+<h2><%= "Welcome  #{@player.name}!" unless @player.nil? || @player.name.empty? %> </h2>
 
 
 <form action="/outcome" method="post">
