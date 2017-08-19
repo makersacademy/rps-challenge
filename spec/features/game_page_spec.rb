@@ -11,6 +11,27 @@ RSpec.feature "Game Page", type: :feature do
     expect(page).to have_text("Welcome")
   end
 
+  scenario "does not show player move before any moves have happened" do
+    submit_name
+    expect(page).to have_no_text("You played paper")
+  end
+
+  scenario "does not show computer move before any moves have happened" do
+    submit_name
+    expect(page).to have_no_text("They played paper")
+  end
+
+  scenario "show default score" do
+    submit_name
+    expect(page).to have_text("0:0")
+  end
+
+  scenario "show score" do
+    submit_name
+    click_button("Rock")
+    expect(page).to have_text(":")
+  end
+
   scenario "Contains rock" do
     submit_name
     expect(page).to have_button("Rock")
@@ -70,5 +91,30 @@ RSpec.feature "Game Page", type: :feature do
     submit_name
     click_button("Rock")
     expect(page).to have_text("They played")
+  end
+
+  scenario "Does not display winner before any moves" do
+    submit_name
+    expect(page).to have_no_text("Winner:")
+  end
+
+  scenario "Displays winner after move" do
+    submit_name
+    click_button("Rock")
+    expect(page).to have_text("Winner:")
+  end
+
+  scenario "can get back to home page" do
+    submit_name
+    click_button("Reset")
+    expect(page).to have_text("Welcome")
+  end
+
+  scenario "can reset scores" do
+    submit_name
+    5.times { click_button("Rock") }
+    click_button("Reset")
+    submit_name
+    expect(page).to have_text("0:0")
   end
 end

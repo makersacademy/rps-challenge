@@ -17,5 +17,11 @@ describe Player do
     it 'action is nil' do
       expect(subject.action).to eq(nil)
     end
+    it 'initializes with score' do
+      expect(subject).to respond_to(:score)
+    end
+    it 'score is 0' do
+      expect(subject.score).to eq(0)
+    end
   end
 end

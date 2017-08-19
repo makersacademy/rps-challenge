@@ -1,16 +1,26 @@
 <div id="message_holder">
-  <% if @player.action.nil? %>
-    <h1>
+  <% if @player.action.nil? || @computer.action.nil? %>
       <center>
-        Hello <%=@player.name%>!
+        <h1>
+          Hello <%=@player.name%>!
+        </h1>
       </center>
-    </h1>
   <% else %>
-    <p>
-      <center>You played <%= @player.action %></center>
-      <center>They played <%= @computer.action %></center>
-    </p>
+    <center>
+      <p>
+        You played <%= @player.action %>
+        <br />
+        They played <%= @computer.action %>
+        <br /><br />
+        Winner: <%= @winner %>
+      </p>
+    </center>
   <% end %>
+  <center>
+    <h4>
+      <%= @player.score %>:<%= @computer.score %>
+    </h4>
+  </center>
 </div>
 
 <center>
@@ -51,5 +61,11 @@
       </form>
     </div>
 
+  </div>
+
+  <div id="reset_holder">
+    <form action="/" method="get">
+      <input type="submit", value="Reset"  />
+    </form>
   </div>
 </center>

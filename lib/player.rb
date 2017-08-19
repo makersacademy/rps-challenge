@@ -2,11 +2,12 @@
 # in lib/player.rb
 class Player
   attr_reader :name
-  attr_accessor :action
+  attr_accessor :action, :score
 
   def initialize(name)
     @name = name
     @action = nil
+    @score = 0
   end
 
   def self.from_session(session)
@@ -15,9 +16,9 @@ class Player
     player
   end
 
-  def self.simulate
-    computer = Player.new("computer")
-    computer.action = %w[rock paper scissors lizard spoc][rand(0..4)]
+  def self.simulate(session)
+    computer = session[:computer]
+    computer.action = %w[rock paper scissors lizard spoc].sample
     computer
   end
 end
