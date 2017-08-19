@@ -28,7 +28,7 @@ feature "winner page", type: :feature do
   #   visit "/"
   #   fill_in('name', with: 'Jenny')
   #   click_button('Submit')
-  #   click_button('Scissors')
+  #   click_button('Rock')
   #   expect(page).to have_content("Computer has chosen.")
   # end
 end
