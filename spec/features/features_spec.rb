@@ -12,7 +12,12 @@ feature "testing forms" do
   end
   it "can select a move" do
     sign_in_and_play
-    expect(page).to have_select "Move", options: ['Rock','Paper','Scissors']
+    expect(page).to have_select "Move", options: ['Rock', 'Paper', 'Scissors']
+  end
+  it "passes move to results page" do
+    sign_in_and_play
+    choose_and_shoot
+    expect(page).to have_content 'You chose Rock'
   end
 
 end
