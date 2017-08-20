@@ -10,11 +10,9 @@ class Match
     when ['rock', 'scissors'], ['scissors', 'paper'], ['paper', 'rock'],
       ['spock', 'rock'], ['spock', 'scissors'], ['lizard', 'spock'], ['paper', 'spock'],
       ['lizard', 'paper'], ['rock', 'lizard'], ['scissors', 'lizard']
-      @p1.wins
-      return @p1.name
+      @p1.wins; return @p1.name
     else
-      @p2.wins
-      return @p2.name
+      @p2.wins; return @p2.name
     end
   end
 end
@@ -26,7 +24,7 @@ class Player
   end
 
   def wins
-    @score +=1
+    @score += 1
   end
   attr_accessor :choice
   attr_reader :name, :score
