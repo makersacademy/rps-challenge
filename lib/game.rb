@@ -1,6 +1,5 @@
 class Game
   attr_reader :player, :comp_choice, :outcome, :player2
-  attr_accessor :choice, :choice2
 
   def initialize(player)
     @player = player
@@ -14,9 +13,9 @@ class Game
   end
 
   def determine_outcome
-    if @choice == @comp_choice
+    if @player.choice == @comp_choice
       @outcome = "It's a draw!"
-    elsif (@choice == "Rock" && @comp_choice == "Scissors") || (@choice == "Paper" && @comp_choice == "Rock") || (@choice == "Scissors" && @comp_choice == "Paper")
+    elsif (@player.choice == "Rock" && @comp_choice == "Scissors") || (@player.choice == "Paper" && @comp_choice == "Rock") || (@player.choice == "Scissors" && @comp_choice == "Paper")
       @outcome = "You win!"
     else
       @outcome = "You lose!"
@@ -28,9 +27,9 @@ class Game
   end
 
   def friend_determine_outcome
-    if @choice == @choice2
+    if @player.choice == @player2.choice
       @outcome = "It's a draw!"
-    elsif (@choice == "Rock" && @choice2 == "Scissors") || (@choice == "Paper" && @choice2 == "Rock") || (@choice == "Scissors" && @choice2 == "Paper")
+    elsif (@player.choice == "Rock" && @player2.choice == "Scissors") || (@player.choice == "Paper" && @player2.choice == "Rock") || (@player.choice == "Scissors" && @player2.choice == "Paper")
       @outcome = "#{@player.name} wins!"
     else
       @outcome = "#{@player2.name} wins!"

@@ -35,7 +35,8 @@ class MyApp < Sinatra::Base
   end
 
   post '/choice1' do
-    $game.choice = params[:choice]
+    # $game.choice = params[:choice]
+    $game.player.choice = params[:choice]
     redirect '/rps_friend2'
   end
 
@@ -45,7 +46,8 @@ class MyApp < Sinatra::Base
   end
 
   post '/choice2' do
-    $game.choice2 = params[:choice2]
+    # $game.choice2 = params[:choice2]
+    $game.player2.choice = params[:choice2]
     redirect '/friend_winner'
   end
 
@@ -61,7 +63,8 @@ class MyApp < Sinatra::Base
   end
 
   post '/choice' do
-    $game.choice = params[:choice]
+    # $game.choice = params[:choice]
+    $game.player.choice = params[:choice]
     redirect '/winner'
   end
 
