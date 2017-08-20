@@ -2,52 +2,36 @@ require 'game'
 
 describe Game do
   let(:player1) { double :player }
-
+  let(:comp) { double :player}
   let(:game) { described_class.new(player1) }
   let(:kernel) { double :kernel }
 
-  it 'returns rock if random number is 0' do
-    allow(kernel).to receive(:rand).with(3).and_return(0)
-    game.comp_choose(kernel)
-    expect(game.comp_choice).to eq "Rock"
-  end
+  context "playing the computer" do
+    it "tells you if you've won" do
+      allow(player1).to receive(:choice).and_return("Rock")
+      allow(player1).to receive(:name).and_return("Jenny")
+      allow(comp).to receive(:choice).and_return("Scissors")
+      game.add_player(comp)
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "Jenny wins!"
+    end
 
-  it 'returns paper if random number is 1' do
-    allow(kernel).to receive(:rand).with(3).and_return(1)
-    game.comp_choose(kernel)
-    expect(game.comp_choice).to eq "Paper"
-  end
+    it "tells you if you've lost" do
+      allow(player1).to receive(:choice).and_return("Rock")
+      allow(comp).to receive(:choice).and_return("Paper")
+      allow(comp).to receive(:name).and_return("Computer")
+      game.add_player(comp)
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "Computer wins!"
+    end
 
-  it 'returns scissors if random number is 2' do
-    allow(kernel).to receive(:rand).with(3).and_return(2)
-    game.comp_choose(kernel)
-    expect(game.comp_choice).to eq "Scissors"
-  end
-
-  it "tells you if you've won" do
-    allow(kernel).to receive(:rand).with(3).and_return(2)
-    allow(player1).to receive(:choice).and_return("Rock")
-    game.comp_choose(kernel)
-    game.determine_outcome
-    expect(game.outcome).to eq "You win!"
-  end
-
-  it "tells you if you've lost" do
-    allow(kernel).to receive(:rand).with(3).and_return(1)
-    allow(player1).to receive(:choice).and_return("Rock")
-    # game.player.choice = "Rock"
-    game.comp_choose(kernel)
-    game.determine_outcome
-    expect(game.outcome).to eq "You lose!"
-  end
-
-  it "tells you if it's a draw" do
-    allow(kernel).to receive(:rand).with(3).and_return(0)
-    allow(player1).to receive(:choice).and_return("Rock")
-    # game.player.choice = "Rock"
-    game.comp_choose(kernel)
-    game.determine_outcome
-    expect(game.outcome).to eq "It's a draw!"
+    it "tells you if it's a draw" do
+      allow(player1).to receive(:choice).and_return("Rock")
+      allow(comp).to receive(:choice).and_return("Rock")
+      game.add_player(comp)
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "It's a draw!"
+    end
   end
 
   context "for 2 player game" do
@@ -55,7 +39,6 @@ describe Game do
     it "tells you if player1 has won" do
       allow(player1).to receive(:name).and_return("Jenny")
       allow(player1).to receive(:choice).and_return("Rock")
-      # game.choice2 = "Scissors"
       allow(player2).to receive(:choice).and_return("Scissors")
       game.add_player(player2)
       game.friend_determine_outcome
@@ -66,7 +49,6 @@ describe Game do
       allow(player2).to receive(:name).and_return("Johnny")
       allow(player1).to receive(:choice).and_return("Scissors")
       allow(player2).to receive(:choice).and_return("Rock")
-      # game.choice2 = "Rock"
       game.add_player(player2)
       game.friend_determine_outcome
       expect(game.outcome).to eq "Johnny wins!"
@@ -74,7 +56,6 @@ describe Game do
 
     it "tells you if it's a draw" do
       allow(player1).to receive(:choice).and_return("Rock")
-      # game.choice2 = "Rock"
       allow(player2).to receive(:choice).and_return("Rock")
       game.add_player(player2)
       game.friend_determine_outcome

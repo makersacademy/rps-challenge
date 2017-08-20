@@ -19,6 +19,9 @@ class MyApp < Sinatra::Base
   end
 
   get '/rps_comp' do
+    player2 = Player.new
+    player2.comp_choose
+    $game.add_player(player2)
     @game = $game
     erb(:rps)
   end
@@ -27,17 +30,25 @@ class MyApp < Sinatra::Base
     erb(:friend_name)
   end
 
+  get '/rps' do
+    @game = $game
+    erb(:rps)
+  end
+
   post '/rps_friend1' do
     player2 = Player.new(params[:name2])
     $game.add_player(player2)
     @game = $game
-    erb(:rps_friend1)
+    erb(:rps)
   end
 
-  post '/choice1' do
-    # $game.choice = params[:choice]
+  post '/choice' do
     $game.player.choice = params[:choice]
-    redirect '/rps_friend2'
+    if $game.player2.name == "Computer"
+      redirect '/friend_winner'
+    else
+      redirect '/rps_friend2'
+    end
   end
 
   get '/rps_friend2' do
@@ -46,7 +57,6 @@ class MyApp < Sinatra::Base
   end
 
   post '/choice2' do
-    # $game.choice2 = params[:choice2]
     $game.player2.choice = params[:choice2]
     redirect '/friend_winner'
   end
@@ -57,23 +67,7 @@ class MyApp < Sinatra::Base
     erb(:friend_winner)
   end
 
-  get '/rps' do
-    @game = $game
-    erb(:rps)
-  end
 
-  post '/choice' do
-    # $game.choice = params[:choice]
-    $game.player.choice = params[:choice]
-    redirect '/winner'
-  end
-
-  get '/winner' do
-    $game.comp_choose
-    $game.determine_outcome
-    @game = $game
-    erb(:winner)
-  end
 
   run! if app_file == $0
 end

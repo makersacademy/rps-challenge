@@ -6,7 +6,7 @@ feature "winner page", type: :feature do
     click_button('Submit')
     click_button('Play Computer')
     click_button('Rock')
-    expect(page).to have_content("You have chosen Rock.")
+    expect(page).to have_content("Jenny has chosen Rock.")
   end
 
   scenario "it says your choice if you choose Paper" do
@@ -15,7 +15,7 @@ feature "winner page", type: :feature do
     click_button('Submit')
     click_button('Play Computer')
     click_button('Paper')
-    expect(page).to have_content("You have chosen Paper.")
+    expect(page).to have_content("Jenny has chosen Paper.")
   end
 
   scenario "it says your choice if you choose Scissors" do
@@ -24,11 +24,12 @@ feature "winner page", type: :feature do
     click_button('Submit')
     click_button('Play Computer')
     click_button('Scissors')
-    expect(page).to have_content("You have chosen Scissors.")
+    expect(page).to have_content("Jenny has chosen Scissors.")
   end
 
   scenario "it says the computers choice is Rock if computer chooses Rock" do
-    allow_any_instance_of(Game).to receive(:comp_choice).and_return("Rock")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :choice).and_return("Rock")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :name).and_return("Computer")
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
@@ -38,7 +39,8 @@ feature "winner page", type: :feature do
   end
 
   scenario "it says the computers choice is Paper if computer chooses Paper" do
-    allow_any_instance_of(Game).to receive(:comp_choice).and_return("Paper")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :choice).and_return("Paper")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :name).and_return("Computer")
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
@@ -48,7 +50,8 @@ feature "winner page", type: :feature do
   end
 
   scenario "it says the computers choice is Scissors if computer chooses Scissors" do
-    allow_any_instance_of(Game).to receive(:comp_choice).and_return("Scissors")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :choice).and_return("Scissors")
+    allow_any_instance_of(Game).to receive_message_chain(:player2, :name).and_return("Computer")
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
