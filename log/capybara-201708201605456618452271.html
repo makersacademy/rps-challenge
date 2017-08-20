@@ -1,14 +1,12 @@
 <body style="background-image:url(http://1.bp.blogspot.com/-b-DQ3ddOJWY/VP8ShjrOmBI/AAAAAAAATJI/RBn7oN2qNBM/s1600/winner-winner-chicken-dinner.png)">
 
-<h1 style="color: white"> Computer chose: <%= @game.weapon2.type.capitalize %> </h1>
+<h1 style="color: white"> Computer chose: Scissors </h1>
 
     <h1 style="color: white"> You win! </h1>
-    <% @player.point 1 %>
+    
 
-<% unless @player.nil? %>
-    <h2 style="color: darkslateblue"> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
-    <h3 style="color: white"> <%= "Score: #{@player.score}" %>  </h3>
-<% end %>
+    <h2 style="color: darkslateblue"> Player: Stephen </h2>
+    <h3 style="color: white"> Score: 1  </h3>
 
 <form action="/outcome" method="post">
   <input type="hidden", name="action", value="rock" />
