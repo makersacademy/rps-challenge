@@ -9,10 +9,10 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
-require File.join(File.dirname(__FILE__), '../lib', 'app.rb')
+#require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require_relative '../app.rb'
 require 'capybara/rspec'
 require 'capybara'
-require 'capybara/rspec'
 require 'rspec'
 
 Capybara.app = RPS
