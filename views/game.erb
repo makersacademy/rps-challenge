@@ -1,0 +1,94 @@
+<style>
+  .side-by-side {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #e6e6e6;
+      margin-right: 10px;
+      vertical-align: top;
+  }
+  .page {
+    width: 600px;
+  }
+</style>
+
+<center>
+
+  <div id="page" class="page">
+
+    <div id="message_holder">
+      <% if @player.action.nil? || @computer.action.nil? %>
+          <center>
+            <h1>
+              Hello <%=@player.name%>!
+            </h1>
+          </center>
+      <% else %>
+        <center>
+          <p>
+            You played <%= @player.action %>
+            <br />
+            They played <%= @computer.action %>
+            <br /><br />
+            Winner: <%= @winner %>
+          </p>
+        </center>
+      <% end %>
+      <center>
+        <h4>
+          <%= @player.score %>:<%= @computer.score %>
+        </h4>
+      </center>
+    </div>
+
+    <center>
+      <div id="game_holder">
+
+        <div id="rock_holder", class="side-by-side">
+          <form action="/play" method="post">
+            <input type="hidden", name="action", value="rock" />
+            <input type="submit", value="Rock"  />
+          </form>
+        </div>
+
+        <div id="paper_holder", class="side-by-side">
+          <form action="/play" method="post">
+            <input type="hidden", name="action", value="paper" />
+            <input type="submit", value="Paper"  />
+          </form>
+        </div>
+
+        <div id="scissors_holder", class="side-by-side">
+          <form action="/play" method="post">
+            <input type="hidden", name="action", value="scissors" />
+            <input type="submit", value="Scissors"  />
+          </form>
+        </div>
+
+        <div id="lizard_holder", class="side-by-side">
+          <form action="/play" method="post">
+            <input type="hidden", name="action", value="lizard" />
+            <input type="submit", value="Lizard"  />
+          </form>
+        </div>
+
+        <div id="spoc_holder", class="side-by-side">
+          <form action="/play" method="post">
+            <input type="hidden", name="action", value="spoc" />
+            <input type="submit", value="Spoc"  />
+          </form>
+        </div>
+      </div>
+       
+      <br />
+      <br />
+
+      <div id="reset_holder">
+        <form action="/" method="get">
+          <input type="submit", value="Reset"  />
+        </form>
+      </div>
+    </center>
+
+  </div>
+</center>
