@@ -41,6 +41,7 @@ Testing Game
   displays a win
   can play again
   can start a new game
+  keeps score
 
 Match
   returns the name of the winner

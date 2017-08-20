@@ -25,7 +25,7 @@ feature "testing Game" do
   it "player 2 can select a move" do
     sign_in_and_play
     choose_and_shoot
-    expect(page).to have_content "#{@player_2} chooses"
+    expect(page).to have_content "#{@player_2} chooses:"
   end
   it "displays a draw" do
     sign_in_and_play
@@ -45,7 +45,7 @@ feature "testing Game" do
     choose_and_shoot
     choose_and_shoot
     click_link 'Play again'
-    expect(page).to have_content "#{@player_1} chooses"
+    expect(page).to have_content "#{@player_1} chooses:"
   end
   it "can start a new game" do
     sign_in_and_play
@@ -53,5 +53,16 @@ feature "testing Game" do
     choose_and_shoot
     click_link 'New game'
     expect(page).to have_field "player_1"
+  end
+  it "keeps score" do
+    sign_in_and_play
+    choose_and_shoot
+    select("Spock", from: "Move")
+    click_button "SHOOT!"
+    click_link 'Play again'
+    choose_and_shoot
+    select("Spock", from: "Move")
+    click_button "SHOOT!"
+    expect(page).to have_content "#{@player_1} : 2"
   end
 end

@@ -31,6 +31,8 @@ class Game < Sinatra::Base
     @player_2_choice = session[:player_2].choice
     match = Match.new(session[:player_1], session[:player_2])
     @winner = match.winner
+    @player_1_score = session[:player_1].score
+    @player_2_score = session[:player_2].score
     erb(:result)
   end
 
