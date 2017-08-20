@@ -22,17 +22,15 @@ class Rps < Sinatra::Base
   end
 
   post '/display' do
-   $game1 = Game.new(params[:choice])
-   p params
-   redirect '/result'
+    $game1 = Game.new(params[:choice])
+    p params
+    redirect '/result'
   end
 
   get '/result' do
     $cpu_choice = ["rock", "paper", "scissors"].sample
     erb :result
   end
-
-
 
   run! if app_file == $PROGRAM_NAME
 end
