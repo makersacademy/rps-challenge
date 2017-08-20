@@ -84,3 +84,18 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+My approach
+-----------
+
+I found this challenge quite interesting since I enjoyed shifting from Ruby to Web this week. At first, when I saw the User Stories (2 in total) I thought that the challenge would have been quite easy and fast but at the end it took me 1 day and a half, so even though there were not many Stories it was still quite intense and hard.
+
+I started creating my infrastructure taking the Battle challenge as a model. I created a test first to check if an introduction string would have appeared and then I proceeded with the rest of the pages. The game allows you to play "Rock, Paper, Scissors" with a NPC so I had to create just one field for the Player name form, I didn't need two of them, as I did for Battle.
+
+After that I created 3 buttons for the 3 possible choices, "Rock", "Paper" and "Scissors", and a fourth button that allows the player to go back to the index page and change name. Everything has been tested properly. Depending on the button chosen, the user will get a message to highlight the choice made. Just underneath this message, another string will appear with the choice of the NPC (a random one taken from an array of choices).
+
+If the two options are the same, the user will get a message explaining that the match is a draw, otherwise the message will declare a winner.
+
+In terms of testing, everything seems like working fine with a coverage of 100% and no Rubocop offences, even though I am quite sure I haven't tested exactly everything.
+
+I am more than satisfied with my result, I definitely had fun trying to find a way to make the NPC choices work and interact with the user ones.
