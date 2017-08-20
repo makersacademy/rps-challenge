@@ -1,25 +1,11 @@
-<% @game.shoot %>
-
 <h1> Computer chose: <%= @game.weapon2.type.capitalize %> </h1>
-
-<% if @game.result == 'win' %>
 
     <h1> You win! </h1>
     <% @player.point 1 %>
 
-<% elsif @game.result == 'lose' %>
-
-    <h1> You lose! </h1>
-
-<% elsif @game.result == 'tie' %>
-
-    <h1> You tied! </h1>
-
-<% end %>
-
 <% unless @player.nil? %>
-<h2> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
-<h3> <%= "Score: #{@player.score}" %>  </h3>
+    <h2 style="color: darkslateblue"> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
+    <h3> <%= "Score: #{@player.score}" %>  </h3>
 <% end %>
 
 <form action="/outcome" method="post">

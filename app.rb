@@ -27,12 +27,13 @@ class RPS < Sinatra::Base
     @score = session[:score]
     weapon = params[:action]
     play_game(weapon)
-    erb(:outcome)
+    @game.shoot
+    erb(@game.result)
   end
 
   def play_game(weapon)
-    weapon1 = Weapon.new weapon
-    @game = Game.new(weapon1)
+    cpu_weapon = Weapon.new weapon
+    @game = Game.new(cpu_weapon)
   end
 
   run! if app_file == $PROGRAM_NAME

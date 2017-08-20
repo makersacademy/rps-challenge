@@ -3,11 +3,11 @@ class Game
   attr_reader :result, :weapon1, :weapon2
 
   RULES = {
-      :rock     => { :rock => 'tie', :paper => 'lose', :scissors => 'win', :spock => 'lose', :lizard => 'win' },
-      :paper    => { :rock => 'win', :paper => 'tie', :scissors => 'lose', :spock => 'win', :lizard => 'lose' },
-      :scissors => { :rock => 'lose', :paper => 'win', :scissors => 'tie', :spock => 'lose', :lizard => 'win' },
-      :spock => { :rock => 'win', :paper => 'lose', :scissors => 'win', :spock => 'tie', :lizard => 'lose' },
-      :lizard => { :rock => 'lose', :paper => 'win', :scissors => 'lose', :spock => 'win', :lizard => 'tie' }
+      :rock     => { :rock => :tie, :paper => :lose, :scissors => :win, :spock => :lose, :lizard => :win },
+      :paper    => { :rock => :win, :paper => :tie, :scissors => :lose, :spock => :win, :lizard => :lose },
+      :scissors => { :rock => :lose, :paper => :win, :scissors => :tie, :spock => :lose, :lizard => :win },
+      :spock => { :rock => :win, :paper => :lose, :scissors => :win, :spock => :tie, :lizard => :lose },
+      :lizard => { :rock => :lose, :paper => :win, :scissors => :lose, :spock => :win, :lizard => :tie }
   }
 
   def initialize(weapon1, weapon2 = Weapon.new)

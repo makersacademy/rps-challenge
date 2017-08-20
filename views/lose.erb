@@ -1,7 +1,12 @@
-<h1> PLAY! </h1>
+<h1> Computer chose: <%= @game.weapon2.type.capitalize %> </h1>
 
-<h2 style="color: darkslateblue"><%= "Welcome  #{@player.name}!" unless @player.nil? || @player.name.empty? %> </h2>
+    <h1> You lose! </h1>
+    <% @player.point -1 %>
 
+<% unless @player.nil? %>
+    <h2 style="color: darkslateblue"> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
+    <h3> <%= "Score: #{@player.score}" %>  </h3>
+<% end %>
 
 <form action="/outcome" method="post">
   <input type="hidden", name="action", value="rock" />

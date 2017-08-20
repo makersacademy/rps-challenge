@@ -13,19 +13,19 @@ describe Game do
 
   describe '#shoot' do
     it 'returns win if user wins' do
-      expect(subject.shoot('rock', 'scissors')).to eq 'win'
+      expect(subject.shoot('rock', 'scissors')).to eq :win
     end
 
     it 'returns lose if user loses' do
-      expect(subject.shoot('rock', 'paper')).to eq 'lose'
+      expect(subject.shoot('rock', 'paper')).to eq :lose
     end
     it 'returns tie if user ties' do
-      expect(subject.shoot('rock', 'rock')).to eq 'tie'
+      expect(subject.shoot('rock', 'rock')).to eq :tie
     end
 
     it 'result is saved' do
       subject.shoot('rock', 'paper')
-      expect(subject.result).to eq 'lose'
+      expect(subject.result).to eq :lose
     end
   end
 

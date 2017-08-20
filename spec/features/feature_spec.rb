@@ -78,7 +78,8 @@ feature RPS do
         allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
         click_button 'Rock'
       end
-      it 'tells me I have won (rock vs scissors)' do
+
+      it 'tells me' do
         expect(page).to have_content 'You win!'
       end
 
@@ -94,17 +95,33 @@ feature RPS do
       end
     end
 
+    describe 'when I lose' do
+      before do
+        allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+        click_button 'Rock'
+      end
+      it 'tells me' do
+        expect(page).to have_content 'You lose!'
+      end
 
-    it 'tells me I lose (rock vs paper)' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('paper')
-      click_button 'Rock'
-      expect(page).to have_content 'You lose!'
+      it 'reduces my score by 1' do
+        expect(page).to have_content 'Score: -1'
+      end
     end
 
-    it 'tells me I tie (rock vs rock)' do
-      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
-      click_button 'Rock'
-      expect(page).to have_content 'You tied!'
+    describe 'when I tie' do
+      before do
+        allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+        click_button 'Rock'
+      end
+
+      it 'tells me' do
+        expect(page).to have_content 'You tied!'
+      end
+
+      it 'keeps my score the same' do
+        expect(page).to have_content 'Score: 0'
+      end
     end
   end
 end
