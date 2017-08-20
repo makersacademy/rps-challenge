@@ -51,6 +51,7 @@ class MyApp < Sinatra::Base
   end
 
   get '/friend_winner' do
+    $game.friend_determine_outcome
     @game = $game
     erb(:friend_winner)
   end

@@ -47,4 +47,15 @@ describe Game do
     expect(game.outcome).to eq "It's a draw!"
   end
 
+  context "for 2 player game" do
+    it "tells you if player1 has won" do
+      allow(player1).to receive(:name).and_return("Jenny")
+      game.choice = "Rock"
+      game.choice2 = "Scissors"
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "Jenny wins!"
+    end
+
+  end
+
 end

@@ -21,11 +21,20 @@ class Game
     else
       @outcome = "You lose!"
     end
-
   end
 
   def add_player(player)
     @player2 = player
+  end
+
+  def friend_determine_outcome
+    if @choice == @choice2
+      @outcome = "It's a draw!"
+    elsif (@choice == "Rock" && @choice2 == "Scissors") || (@choice == "Paper" && @choice2 == "Rock") || (@choice == "Scissors" && @choice2 == "Paper")
+      @outcome = "#{@player.name} wins!"
+    else
+      @outcome = "#{@player2.name} wins!"
+    end
   end
 
 end

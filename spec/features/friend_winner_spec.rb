@@ -13,6 +13,7 @@ feature "friend winner page", type: :feature do
   end
 
   scenario "it says who the winner is" do
+    allow_any_instance_of(Game).to receive(:outcome).and_return("Jenny wins!")
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
