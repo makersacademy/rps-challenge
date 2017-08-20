@@ -12,6 +12,8 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 require File.expand_path '../../app.rb', __FILE__
 
+require_relative './features/web_helpers'
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
