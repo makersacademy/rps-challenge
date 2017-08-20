@@ -1,5 +1,4 @@
 require 'spec_helper'
-# require_relative '../../rps.rb'
 
 feature 'Enter name' do
   scenario 'submitting name' do
