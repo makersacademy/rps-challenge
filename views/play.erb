@@ -1,0 +1,38 @@
+<h2><%= "#{@player}" %>, are you ready to play?</h2>
+<h3>Make your choice!</h3>
+
+<form action= "/turn" method="post">
+	<input type="submit" value="Rock" name="choice">
+	<input type="submit" value="Paper" name="choice">
+	<input type="submit" value="Scissors" name="choice">
+</form>
+
+<form action="/" method="get">
+	<input type="submit" value="Change player">
+</form>
+
+<% if session[:display] %>
+<h3><%= "#{@player}" %>, your choice is <%= "#{@choice}".upcase %>!</h3>
+<h3>Your opponent's choice is <%= "#{@opponent_choice}".upcase %>!</h3>
+
+<% if @choice == @opponent_choice %>
+<h3>It's a DRAW!</h3>
+
+<% elsif @choice == "Rock" && @opponent_choice == "Scissors" %>
+<h3><%= "#{@player}" %>, you WON!</h3>
+<% elsif @choice == "Rock" && @opponent_choice == "Paper" %>
+<h3><%= "#{@player}" %>, you LOST!</h3>
+
+<% elsif @choice == "Paper" && @opponent_choice == "Rock" %>
+<h3><%= "#{@player}" %>, you WON!</h3>
+<% elsif @choice == "Paper" && @opponent_choice == "Scissors" %>
+<h3><%= "#{@player}" %>, you LOST!</h3>
+
+<% elsif @choice == "Scissors" && @opponent_choice == "Paper" %>
+<h3><%= "#{@player}" %>, you WON!</h3>
+<% elsif @choice == "Scissors" && @opponent_choice == "Rock" %>
+<h3><%= "#{@player}" %>, you LOST!</h3>
+
+<% end %>
+<% session[:display] = false %>
+<% end %>

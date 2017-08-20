@@ -9,6 +9,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['RACK_ENV'] = 'test'
+require File.expand_path '../../app.rb', __FILE__
+
+require_relative './features/web_helpers'
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
@@ -16,3 +21,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.app = RPS
