@@ -1,18 +1,29 @@
 class Game
 
-  attr_accessor :player, :choices
+  attr_accessor :player, :choices, :selection, :outcome
+
+  WINNERS = [['Scissors', 'Paper'], ['Paper', 'Rock'], ['Rock', 'Scissors']]
+  LOSERS = [['Paper', 'Scissors'], ['Rock', 'Paper'], ['Scissors', 'Rock']]
 
   def initialize(player)
     @player = player
     @choices = ['Rock', 'Paper', 'Scissors']
+    @selection = selection
+    @outcome = []
   end
 
   def computer_choice
-    choices.sample
+    @outcome << choices.sample
   end
 
-  # def rules(_player_1, _player_2)
-  #   winners = [[:scissors, :paper], [:paper, :rock], [:rock, :scissors]]
-  #   losers = winners.map { |x, y| [y, x] }
-  # end
+  def player_selection
+    @outcome << selection
+  end
+
+  def win?
+    return true if WINNERS.include?(@outcome)
+    return false if LOSERS.include?(@outcome)
+    return "draw"
+  end
+
 end

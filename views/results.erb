@@ -1,0 +1,8 @@
+<h1> Your selection is <%=$game.selection%>, the computer has chosen <%=$game.outcome[-1]%></h1>
+  <% if $game.win? == true%>
+    <h2> Congratulations <%=$game.player.name%> you have won!</h2>
+  <%elsif $game.win? == false%>
+      <h2> YOU LOSE!! </h2>
+  <%else%>
+      <h2> It's a draw! </h2>
+<%end%>

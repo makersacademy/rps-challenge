@@ -21,7 +21,10 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    "Your selection is #{params[:selection]}, The computer has chosen #{$game.computer_choice}"
+    $game.selection = params[:selection]
+    $game.player_selection
+    $game.computer_choice
+    erb(:results)
   end
 
 end

@@ -19,10 +19,10 @@ feature 'Home page', type: :feature do
     expect(page).to have_selector("input[value='Scissors']")
   end
 
-  # scenario 'a game is played' do
-  #   sign_in_and_play
-  #   click_button('Rock')
-  #   'Scissors' = game.computer_choice
-  #   expect(page).to have_content("Congratulations you have won")
-  # end
+  scenario 'a game is played' do
+    sign_in_and_play
+    click_button('Rock')
+    # @outcome = ['Rock','Scissors']
+    expect(page).to have_content("Your selection is Rock")
+  end
 end
