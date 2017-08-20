@@ -1,9 +1,13 @@
 feature 'Enter names' do
-  scenario 'submitting names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Shoto Todoroki'
-    # fill_in :player_2_name, with: 'Mittens'
-    click_button 'Submit'
-    expect(page).to have_content 'Shoto Todoroki'
+  scenario "has a form on the homepage" do
+    visit '/'
+    expect(page). to have_field("player_1")
+  end
+end
+
+feature 'Game title' do
+  scenario "Has the game name on the homepage" do
+    visit '/'
+    expect(page). to have_content("ROCK PAPER SCISSORS")
   end
 end
