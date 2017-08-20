@@ -10,7 +10,7 @@ require 'sinatra'
 require 'capybara'
 require 'rspec'
 
-Capybara.save_and_open_page_path = "./debugging"
+# Capybara.save_and_open_page_path = "./debugging"
 
 Capybara.app = MyApp
 

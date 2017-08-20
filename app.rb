@@ -35,6 +35,26 @@ class MyApp < Sinatra::Base
     erb(:rps_friend1)
   end
 
+  post '/choice1' do
+    $game.choice = params[:choice]
+    redirect '/rps_friend2'
+  end
+
+  get '/rps_friend2' do
+    @game = $game
+    erb(:rps_friend2)
+  end
+
+  post '/choice2' do
+    $game.choice2 = params[:choice2]
+    redirect '/friend_winner'
+  end
+
+  get '/friend_winner' do
+    @game = $game
+    erb(:friend_winner)
+  end
+
   get '/rps' do
     @game = $game
     erb(:rps)

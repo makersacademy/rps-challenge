@@ -1,6 +1,6 @@
 class Game
   attr_reader :player, :comp_choice, :outcome, :player2
-  attr_accessor :choice
+  attr_accessor :choice, :choice2
 
   def initialize(player)
     @player = player
