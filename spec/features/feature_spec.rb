@@ -9,24 +9,36 @@ feature Rps do
     # enter_name
   end
 
-  scenario "choose rock" do
-    enter_name
-    visit('/play')
-    rock
-    expect(page).to have_content "Rock"
+  # scenario "choose rock" do
+  #   enter_name
+  #   visit('/play')
+  #   rock
+  #   expect(page).to have_content "Rock"
+  # end
+  #
+  # scenario "choose paper" do
+  #   enter_name
+  #   visit('/play')
+  #   paper
+  #   expect(page).to have_content "Paper"
+  # end
+  #
+  # scenario "choose scissors" do
+  #   enter_name
+  #   visit('/play')
+  #   scissors
+  #   expect(page).to have_content "Scissors"
+  # end
+
+  scenario "print players choice" do
+    expect { click_button('Rock') }.to eq("Rock")
   end
 
-  scenario "choose paper" do
-    enter_name
-    visit('/play')
-    paper
-    expect(page).to have_content "Paper"
+  scenario "print players choice" do
+    expect { click_button('Paper') }.to eq("Paper")
   end
 
-  scenario "choose scissors" do
-    enter_name
-    visit('/play')
-    scissors
-    expect(page).to have_content "Scissors"
+  scenario "print players choice" do
+    expect { click_button('Scissors') }.to eq("Scissors")
   end
 end
