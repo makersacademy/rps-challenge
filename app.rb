@@ -23,11 +23,15 @@ class Game < Sinatra::Base
     @player_1_choice = session[:player_1].choice
     session[:player_2].choice = ['rock', 'paper', 'scissors'].sample
     @player_2_choice = session[:player_2].choice
-    # Match.new(session[:player_1], session[:player_2])
+    match = Match.new(session[:player_1], session[:player_2])
+    @winner = match.winner
     erb(:result)
   end
 
-
-
+  get '/again' do
+    @player_1_name = session[:player_1].name
+    @player_2_name = session[:player_2].name
+    erb(:play)
+  end
 
 end
