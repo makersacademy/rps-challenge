@@ -17,7 +17,7 @@ feature "testing forms" do
   it "passes move to results page" do
     sign_in_and_play
     choose_and_shoot
-    expect(page).to have_content 'You chose Rock'
+    expect(page).to have_content "#{@player_1} chose rock"
   end
 
 end
