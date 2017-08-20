@@ -28,8 +28,11 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    "hello"
+    $cpu_choice = ["rock", "paper", "scissors"].sample
+    erb :result
   end
+
+
 
   run! if app_file == $PROGRAM_NAME
 end
