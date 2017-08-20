@@ -12,4 +12,5 @@ class RPSWeb < Sinatra::Base
     @player = Player.new(params[:player_name])
     erb :game
   end
+
 end

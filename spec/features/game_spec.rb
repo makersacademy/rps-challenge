@@ -9,4 +9,12 @@ RSpec.feature "Game page", type: :feature do
     expect(page).to have_text "Alfonso"
     save_and_open_page
   end
+  scenario 'displays button choices' do
+    register_name_submit
+    page.should have_selector(:link_or_button, 'ROCK')
+    page.should have_selector(:link_or_button, 'PAPER')
+    page.should have_selector(:link_or_button, 'SCISSORS')
+  end
+  pending 'player can choose a button' do
+  end
 end
