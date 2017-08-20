@@ -14,18 +14,24 @@ feature "testing forms" do
     sign_in_and_play
     expect(page).to have_content 'Aloysius'
   end
-  it "records name of player 1" do
+  it "records name of player 2" do
     sign_in_and_play
     expect(page).to have_content 'Sebastian'
   end
-  it "can select a move" do
+  it "player 1 can select a move" do
     sign_in_and_play
     expect(page).to have_select "Move", options: ['Rock', 'Paper', 'Scissors']
   end
-  it "passes move to results page" do
+  it "player 2 can select a move" do
     sign_in_and_play
     choose_and_shoot
-    expect(page).to have_content "#{@player_1} chose rock"
+    expect(page).to have_content "#{@player_2} chooses"
+  end
+  it "displays a draw" do
+    sign_in_and_play
+    choose_and_shoot
+    choose_and_shoot
+    expect(page).to have_content "No one wins"
   end
 
 end
