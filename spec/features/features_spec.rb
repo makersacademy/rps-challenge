@@ -6,9 +6,17 @@ feature "testing forms" do
     visit '/'
     expect(page).to have_field "player_1"
   end
+  it "has a form on the homepage" do
+    visit '/'
+    expect(page).to have_field "player_2"
+  end
   it "records name of player 1" do
     sign_in_and_play
     expect(page).to have_content 'Aloysius'
+  end
+  it "records name of player 1" do
+    sign_in_and_play
+    expect(page).to have_content 'Sebastian'
   end
   it "can select a move" do
     sign_in_and_play

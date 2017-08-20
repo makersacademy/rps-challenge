@@ -10,7 +10,7 @@ class Game < Sinatra::Base
 
   post '/play' do
     session[:player_1] = Player.new(params[:player_1])
-    session[:player_2] = Player.new("Computer")
+    session[:player_2] = Player.new(params[:player_2])
     @player_1_name = session[:player_1].name
     @player_2_name = session[:player_2].name
     erb(:play)
