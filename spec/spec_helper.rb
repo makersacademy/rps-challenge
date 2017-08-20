@@ -1,6 +1,13 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative '../app.rb'
+
+Capybara.app = Game
+
+Capybara.save_and_open_page_path = './save_and_opens'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

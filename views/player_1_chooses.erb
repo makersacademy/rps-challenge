@@ -1,0 +1,16 @@
+<h1> <%= @player_1_name %> vs <%= @player_2_name %> </h1>
+<br>
+<h2> <%= @player_1_name %> chooses: </h2>
+<form action='/player_2_chooses' method='post'>
+  <select name = "Move">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+    <option value="spock">Spock</option>
+    <option value="lizard">Lizard</option>
+  </select>
+  <input type="submit" value='SHOOT!'>
+</form>
+
+<br>
+<a href="/">New game</a>
