@@ -1,0 +1,15 @@
+<body style="background-color:tan">
+<center><h1 style="color:saddlebrown;"> Your selection is <%=$game.selection%>, the computer has chosen <%=$game.outcome[-1]%></h1>
+  <% if $game.win? == true%>
+    <h2 style="color:saddlebrown;"> Congratulations <%=$game.player.name%> you have won!</h2>
+  <%elsif $game.win? == false%>
+      <h2 style="color:saddlebrown;"> YOU LOSE!! </h2>
+  <%else%>
+      <h2 style="color:saddlebrown;"> It's a draw! </h2>
+<%end%>
+
+<form action='/play' method='post'>
+  <input type='submit' value="Play Again">
+</form>
+</center>
+</body>
