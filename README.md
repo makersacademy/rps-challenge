@@ -13,7 +13,7 @@ $ rackup
 
 Approach to solving the challenge
 ---------
-To complete this, I knew I needed to combine many new tools discovered in the past week. This included using HTML, setting up a server and injecting ruby in erb embedded ruby) files.
+To complete this, I knew I needed to combine many new tools discovered in the past week. This included using HTML, setting up a server and injecting ruby in erb (embedded ruby) files.
 
 I struggled with the new material this week, so decided to focus on the more familiar class-to-class interactions first, then move onto the less-familiar server creation work after. This actually helped to clarify what methods would need to be called to operate the game, and so it just became a case of integrating those methods into the controller and views.
 
