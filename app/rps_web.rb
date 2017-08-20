@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
+require './lib/battle'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
@@ -13,4 +15,9 @@ class RPSWeb < Sinatra::Base
     erb :game
   end
 
+  post '/result' do
+    @computer = Computer.new
+    @battle = Battle.new(params :choice, @computer.choice)
+    erb :result
+  end
 end

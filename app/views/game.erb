@@ -1,8 +1,9 @@
 
-<h1><%=@player.name%>, make your choice!</h2>
+<h1><%=@player.name%></h1>
+<h2>You are against the computer..<h2>
+<h2>ROCK, PAPER, OR SCISSORS?<h2>
 
 <form action="/result" method="post">
-  <button type="submit" value="rock">ROCK</button>
-  <button type="submit" value="paper">PAPER</button>
-  <button type="submit" value="scissors">SCISSORS</button>
+  <input type="text" name="choice">
+  <input type="submit" value="good luck">
 </form>
