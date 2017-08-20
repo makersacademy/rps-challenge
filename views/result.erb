@@ -1,0 +1,22 @@
+<h1>Your choice was <%= $game1.choice %> </h1>
+
+<h1>Computer says <%= $cpu_choice %></h1>
+
+<h2> Result: <%=
+
+case $game1.choice
+  when "rock"
+    "draw" if $cpu_choice == "rock"
+    "you win" if $cpu_choice == "scissors"
+    "you lose" if $cpu_choice == "paper"
+  when "paper"
+    "draw" if $cpu_choice == "paper"
+    "you win" if $cpu_choice == "rock"
+    "you lose" if $cpu_choice == "scissors"
+  when "scissors"
+    "draw" if $cpu_choice == "scissors"
+    "you win" if $cpu_choice == "paper"
+    "you lose" if $cpu_choice == "rock"
+end
+
+ %> </h2>
