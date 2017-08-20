@@ -20,7 +20,7 @@ feature "testing forms" do
   end
   it "player 1 can select a move" do
     sign_in_and_play
-    expect(page).to have_select "Move", options: ['Rock', 'Paper', 'Scissors']
+    expect(page).to have_select "Move", options: ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
   end
   it "player 2 can select a move" do
     sign_in_and_play
@@ -33,5 +33,25 @@ feature "testing forms" do
     choose_and_shoot
     expect(page).to have_content "No one wins"
   end
-
+  it "displays a win" do
+    sign_in_and_play
+    choose_and_shoot
+    select("Spock", from: "Move")
+    click_button "SHOOT!"
+    expect(page).to have_content "#{@player_1} wins"
+  end
+  it "can start a new game" do
+    sign_in_and_play
+    choose_and_shoot
+    choose_and_shoot
+    click_link 'Play again'
+    expect(page).to have_content "#{@player_1} chooses"
+  end
+  it "can start a new game" do
+    sign_in_and_play
+    choose_and_shoot
+    choose_and_shoot
+    click_link 'New game'
+    expect(page).to have_field "player_1"
+  end
 end

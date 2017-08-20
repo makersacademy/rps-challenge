@@ -7,7 +7,9 @@ class Match
   def winner
     return "No one" if @p1.choice == @p2.choice
     case [@p1.choice, @p2.choice]
-    when ['rock', 'scissors'], ['scissors', 'paper'], ['paper', 'rock']
+    when ['rock', 'scissors'], ['scissors', 'paper'], ['paper', 'rock'],
+      ['spock', 'rock'], ['spock', 'scissors'], ['lizard', 'spock'], ['paper', 'spock'],
+      ['lizard', 'paper'], ['rock', 'lizard'], ['scissors', 'lizard']
       return @p1.name
     else
       return @p2.name

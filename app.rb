@@ -37,7 +37,7 @@ class Game < Sinatra::Base
   get '/again' do
     @player_1_name = session[:player_1].name
     @player_2_name = session[:player_2].name
-    erb(:play)
+    erb(:player_1_chooses)
   end
 
 end
