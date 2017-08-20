@@ -1,6 +1,7 @@
 require 'spec_helper'
 require_relative '../../rps.rb'
 require_relative 'web_helpers'
+# require_relative '../../play.erb'
 
 feature Rps do
 
@@ -12,23 +13,17 @@ end
 
 feature "Print weapon of chioce" do
   scenario "choose rock" do
-    enter_name
-    visit('/play')
-    players_choice
+    visit('/play/Rock')
     expect(page).to have_content "Rock"
   end
 
   scenario "choose paper" do
-    enter_name
-    visit('/play')
-    players_choice
+    visit('/play/Paper')
     expect(page).to have_content "Paper"
   end
 
   scenario "choose scissors" do
-    enter_name
-    visit('/play')
-    players_choice
+    visit('/play/Scissors')
     expect(page).to have_content "Scissors"
   end
 end
