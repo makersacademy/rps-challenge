@@ -9,6 +9,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rspec'
+  gem 'shotgun'
   gem 'rubocop'
   gem 'rack'
   gem 'simplecov', require: false
