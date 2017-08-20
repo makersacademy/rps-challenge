@@ -10,21 +10,19 @@ class Rps < Sinatra::Base
 
   post '/name' do
     @player = params[:player] # || "Player"
-  #redirect to '/play'
-  #erb(:play)
-  end
-
-  post '/play' do
     erb(:play)
-    rock
-    paper
-    scissors
+  #post '/play' do
+    #rock
+    #paper
+    #scissors
   end
 
+  
 
 
 
 
 
-  run! if app_file == $0  
+
+  run! if app_file == $0
 end

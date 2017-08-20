@@ -11,18 +11,21 @@ feature Rps do
 
   scenario "choose rock" do
     enter_name
+    visit('/play')
     rock
     expect(page).to have_content "Rock"
   end
 
   scenario "choose paper" do
     enter_name
+    visit('/play')
     paper
     expect(page).to have_content "Paper"
   end
 
   scenario "choose scissors" do
     enter_name
+    visit('/play')
     scissors
     expect(page).to have_content "Scissors"
   end
