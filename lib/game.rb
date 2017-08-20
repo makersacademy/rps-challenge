@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :comp_choice, :outcome
+  attr_reader :player, :comp_choice, :outcome, :player2
   attr_accessor :choice
 
   def initialize(player)
@@ -22,6 +22,10 @@ class Game
       @outcome = "You lose!"
     end
 
+  end
+
+  def add_player(player)
+    @player2 = player
   end
 
 end

@@ -4,6 +4,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Rock')
     expect(page).to have_content("You have chosen Rock.")
   end
@@ -12,6 +13,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Paper')
     expect(page).to have_content("You have chosen Paper.")
   end
@@ -20,6 +22,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Scissors')
     expect(page).to have_content("You have chosen Scissors.")
   end
@@ -29,6 +32,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Rock')
     expect(page).to have_content("Computer has chosen Rock.")
   end
@@ -38,6 +42,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Rock')
     expect(page).to have_content("Computer has chosen Paper.")
   end
@@ -47,6 +52,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Rock')
     expect(page).to have_content("Computer has chosen Scissors.")
   end
@@ -56,6 +62,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Rock')
     expect(page).to have_content("You win!")
   end
@@ -65,6 +72,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Paper')
     expect(page).to have_content("You lose!")
   end
@@ -74,6 +82,7 @@ feature "winner page", type: :feature do
     visit "/"
     fill_in('name', with: 'Jenny')
     click_button('Submit')
+    click_button('Play Computer')
     click_button('Scissors')
     expect(page).to have_content("It's a draw!")
   end

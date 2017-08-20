@@ -11,13 +11,29 @@ class MyApp < Sinatra::Base
   post '/name' do
     player = Player.new(params[:name])
     $game = Game.new(player)
-    redirect '/rps'
-    # redirect '/multi'
+    # redirect '/rps'
+    redirect '/multi'
   end
 
-  # get '/multi' do
-  #   erb(:multiplayer)
-  # end
+  get '/multi' do
+    erb(:multiplayer)
+  end
+
+  get '/rps_comp' do
+    @game = $game
+    erb(:rps)
+  end
+
+  get '/friend_name' do
+    erb(:friend_name)
+  end
+
+  post '/rps_friend1' do
+    player2 = Player.new(params[:name2])
+    $game.add_player(player2)
+    @game = $game
+    erb(:rps_friend1)
+  end
 
   get '/rps' do
     @game = $game

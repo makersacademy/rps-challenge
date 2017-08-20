@@ -5,7 +5,7 @@
 #   end
 # end
 
-require 'launchy'
+# require 'launchy'
 
 feature "Home page", type: :feature do
   scenario "it has a form to enter a name" do
