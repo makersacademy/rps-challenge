@@ -19,8 +19,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 module RSpecMixin
- include Rack::Test::Methods
- def app() Sinatra::Application end
+  include Rack::Test::Methods
+  def app() Sinatra::Application end
 end
 
 RSpec.configure do |config|
