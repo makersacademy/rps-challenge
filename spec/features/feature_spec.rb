@@ -34,6 +34,14 @@ feature RPS do
     it 'can click on scissors' do
       find_button('Scissors').click
     end
+
+    it 'can click on Spock' do
+      find_button('Spock').click
+    end
+
+    it 'can click on Lizard' do
+      find_button('Lizard').click
+    end
   end
 
   context '/outcome' do
@@ -63,6 +71,40 @@ feature RPS do
       sign_in_and_play
       click_button 'Scissors'
       expect(page).to have_text('Score:')
+    end
+
+    describe 'When I win' do
+      before do
+        allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
+        click_button 'Rock'
+      end
+      it 'tells me I have won (rock vs scissors)' do
+        expect(page).to have_content 'You win!'
+      end
+
+      it 'adds to my score' do
+        expect(page).to have_content 'Score: 1'
+        expect(page).to_not have_content 'Score: 0'
+      end
+
+      it 'keeps adding to my score' do
+        click_button 'Rock'
+        expect(page).to have_content 'Score: 2'
+        expect(page).to_not have_content 'Score: 1'
+      end
+    end
+
+
+    it 'tells me I lose (rock vs paper)' do
+      allow_any_instance_of(Array).to receive(:sample).and_return('paper')
+      click_button 'Rock'
+      expect(page).to have_content 'You lose!'
+    end
+
+    it 'tells me I tie (rock vs rock)' do
+      allow_any_instance_of(Array).to receive(:sample).and_return('rock')
+      click_button 'Rock'
+      expect(page).to have_content 'You tied!'
     end
   end
 end

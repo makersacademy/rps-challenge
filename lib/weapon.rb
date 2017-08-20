@@ -1,6 +1,6 @@
 class Weapon
 
-  VALID_WEAPONS = ['rock', 'paper', 'scissors']
+  VALID_WEAPONS = [:rock, :paper, :scissors, :lizard, :spock]
 
   attr_reader :type
 
@@ -9,7 +9,7 @@ class Weapon
   end
 
   def check_weapon(weapon)
-    return @type = weapon if VALID_WEAPONS.include? weapon
+    return @type = weapon if VALID_WEAPONS.include? weapon.to_sym
     raise 'invalid weapon'
   end
 
