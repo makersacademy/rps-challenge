@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/weapon'
+require './lib/game'
 #
 class RockPaperSissors < Sinatra::Base
 # #
@@ -23,14 +24,15 @@ class RockPaperSissors < Sinatra::Base
 
   post '/weapon_picked' do
     p params
-    $p1_weapon = Weapon.new(params[:weapon])
-    $comp_weapon = $p1_weapon.random
+    $weapon = Weapon.new(params[:weapon])
+    $comp_weapon = Weapon.new.weapon
     redirect '/game_on'
   end
 
   get '/game_on' do
-    $comp_weapon.to_s
-    # $comp_weapon
+    @game = Game.new($weapon.weapon, $comp_weapon)
+    @outcome = @game.outcome
+    erb :game_on
   end
 
   run! if app_file == $0

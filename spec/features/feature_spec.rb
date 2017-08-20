@@ -19,14 +19,6 @@ feature 'Testing infrastucture' do
     expect(page).to have_button 'sissors'
   end
 
-  scenario 'The site then randomly picks' do
-    weapon = Weapon.new('rock')
-    weapon.random = :scissors
-    sign_in_and_play
-    visit '/game_on'
-    expect(page).to have_text 'scissors'
-  end
-
 end
 
 # save_and_open_page

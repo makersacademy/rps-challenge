@@ -1,10 +1,10 @@
 class Weapon
 
-  WEAPONS = [:rock, :paper, :scissors]
+  WEAPONS = ["rock", "paper", "scissors"]
 
   attr_accessor :weapon, :random
 
-  def initialize(weapon)
+  def initialize(weapon = random)
     @weapon = weapon
   end
 
