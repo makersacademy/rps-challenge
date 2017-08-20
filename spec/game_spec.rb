@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:player1) { double :player }
-  let(:comp) { double :player}
+  let(:comp) { double :player }
   let(:game) { described_class.new(player1) }
   let(:kernel) { double :kernel }
 

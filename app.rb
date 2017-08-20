@@ -30,11 +30,6 @@ class MyApp < Sinatra::Base
     erb(:friend_name)
   end
 
-  get '/rps' do
-    @game = $game
-    erb(:rps)
-  end
-
   post '/rps_friend1' do
     player2 = Player.new(params[:name2])
     $game.add_player(player2)
@@ -66,8 +61,6 @@ class MyApp < Sinatra::Base
     @game = $game
     erb(:friend_winner)
   end
-
-
 
   run! if app_file == $0
 end

@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :comp_choice, :outcome, :player2
+  attr_reader :player, :outcome, :player2
 
   def initialize(player)
     @player = player
