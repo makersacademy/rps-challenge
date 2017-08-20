@@ -11,7 +11,6 @@ class MyApp < Sinatra::Base
   post '/name' do
     player = Player.new(params[:name])
     $game = Game.new(player)
-    # redirect '/rps'
     redirect '/multi'
   end
 

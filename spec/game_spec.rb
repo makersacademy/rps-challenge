@@ -2,6 +2,7 @@ require 'game'
 
 describe Game do
   let(:player1) { double :player }
+
   let(:game) { described_class.new(player1) }
   let(:kernel) { double :kernel }
 
@@ -48,12 +49,30 @@ describe Game do
   end
 
   context "for 2 player game" do
+    let(:player2) { double :player }
     it "tells you if player1 has won" do
       allow(player1).to receive(:name).and_return("Jenny")
       game.choice = "Rock"
       game.choice2 = "Scissors"
       game.friend_determine_outcome
       expect(game.outcome).to eq "Jenny wins!"
+    end
+
+    it "tells you if player2 has won" do
+      allow(player2).to receive(:name).and_return("Johnny")
+      game.add_player(player2)
+      game.choice = "Scissors"
+      game.choice2 = "Rock"
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "Johnny wins!"
+    end
+
+    it "tells you if it's a draw" do
+      allow(player1).to receive(:name).and_return("Jenny")
+      game.choice = "Rock"
+      game.choice2 = "Rock"
+      game.friend_determine_outcome
+      expect(game.outcome).to eq "It's a draw!"
     end
 
   end
