@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative './web_helper'
 
-feature "testing forms" do
+feature "testing Game" do
   it "has a form on the homepage" do
     visit '/'
     expect(page).to have_field "player_1"
@@ -40,7 +40,7 @@ feature "testing forms" do
     click_button "SHOOT!"
     expect(page).to have_content "#{@player_1} wins"
   end
-  it "can start a new game" do
+  it "can play again" do
     sign_in_and_play
     choose_and_shoot
     choose_and_shoot
