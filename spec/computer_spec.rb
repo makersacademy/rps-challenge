@@ -7,7 +7,7 @@ describe Computer do
     expect(subject.class).to eq described_class
   end
   it 'chooses rock, paper or scissors' do
-    expect{ subject.choice }.to output(String).to_stdout
+    expect { subject.choice }.to output(String).to_stdout
   end
 
 end
