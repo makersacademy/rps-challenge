@@ -25,4 +25,10 @@ feature 'Home page', type: :feature do
     # @outcome = ['Rock','Scissors']
     expect(page).to have_content("Your selection is Rock")
   end
+
+  scenario 'button to play again' do
+    sign_in_and_play
+    click_button('Rock')
+    expect(page).to have_selector("input[value='Play Again']")
+  end
 end

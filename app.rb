@@ -20,6 +20,11 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/play' do
+    $game.outcome = []
+    erb(:play)
+  end
+
   post '/game' do
     $game.selection = params[:selection]
     $game.player_selection
