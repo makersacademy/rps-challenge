@@ -8,12 +8,25 @@ feature 'Testing infrastucture' do
   end
 
   scenario 'The player can enter their name and see it in lights' do
-    visit('/')
-    fill_in('player_1', with: 'David')
-    click_button('Submit')
-    visit('/play')
-    save_and_open_page
+    sign_in_and_play
     expect(page).to have_text 'Contender: David'
   end
 
+  scenario 'The player should be able to click either paper/rock/sissors' do
+    sign_in_and_play
+    expect(page).to have_button 'paper'
+    expect(page).to have_button 'rock'
+    expect(page).to have_button 'sissors'
+  end
+
+  scenario 'The site then randomly picks' do
+    weapon = Weapon.new('rock')
+    weapon.random = :scissors
+    sign_in_and_play
+    visit '/game_on'
+    expect(page).to have_text 'scissors'
+  end
+
 end
+
+# save_and_open_page
