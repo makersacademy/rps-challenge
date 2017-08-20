@@ -1,7 +1,7 @@
 require "player"
 
 describe Player do
-  let(:player) { Player.new("Puyan", "rock") }
+  subject(:player) { Player.new("Puyan", "rock") }
 
   context "#name" do
     it "shows player's name" do
@@ -13,5 +13,4 @@ describe Player do
       expect(player.choice).to eq "rock"
     end
   end
-
 end
