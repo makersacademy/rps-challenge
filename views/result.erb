@@ -1,9 +1,43 @@
-<h2><%=@name1%> picked <%=@outcome.user%>!</h2>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Who is the winner?</title>
+  <style>
+    body {
+      color: #9D5A4B;               /* Dark gray */
+      background-color: #EEEEEE;    /* Light gray */
+      font-size: 18px;
+      font-family: sans-serif;
+    }
 
-<h2><%=@name2%> picked <%=@outcome.computer%>!</h2>
+    h1 {
+      font-size: 2em;
+    }
 
-<h1><%=@name1%> <%=@outcome.winner%></h1>
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      font-style: italic;
+      font-weight: normal;
+    }
+  </style>
+  <!-- <link rel='stylesheet' href='../styles.css' /> -->
+</head>
 
-<form action='/' method='get'>
-  <button type='submit'>Play again</button>
-</form>
+<body>
+  <h2><%=@name1%> picked <%=@outcome.user%>!</h2>
+  <h2><%=@name2%> picked <%=@outcome.computer%>!</h2>
+
+  <h1><%=@name1%> <%=@outcome.winner%></h1>
+
+  <form action='/' method='get'>
+    <button type='submit'>Play again</button>
+  </form>
+
+
+</body>
+</html>
+
+
+<!-- <body style="background-image:url(https://3.bp.blogspot.com/-b3Hw2NVCCgc/V8lpcgiVnRI/AAAAAAAAM-M/q82O0nB-iAIyHIFrRTQ0mNBehIuDFlyFwCLcB/s1600/you-lose-banner-sm-%2540x2.png)"> -->

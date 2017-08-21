@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Who is the winner?</title>
+  <style>
+    body {
+      color: #9D5A4B;               /* Dark gray */
+      background-color: #EEEEEE;    /* Light gray */
+      font-size: 18px;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      font-style: italic;
+      font-weight: normal;
+    }
+  </style>
+  <!-- <link rel='stylesheet' href='../styles.css' /> -->
+</head>
+
+<body>
+
 <h1><%=@name1%> vs <%=@name2%></h1>
 <h2>Hi <%=@name1%>, please choose one option</h2>
 
@@ -25,3 +54,6 @@
   <input type="hidden" name="user1" value="lizard" />
   <input type="submit" value="Lizard">
 </form>
+
+</body>
+</html>
