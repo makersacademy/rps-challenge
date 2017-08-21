@@ -9,13 +9,12 @@ describe Player do
   end
 
   it "allows you to select a weapon" do
-    expect(dave.weapon=(:rock)).to eq :rock
+    expect(dave.weapon = :rock).to eq :rock
   end
 
   it "raises an error if weapon not in array" do
     message = 'not a possible weapon'
-    expect{dave.weapon=("bat")}.to raise_error message
+    expect { dave.weapon = "bat" }.to raise_error message
   end
-
 
 end
