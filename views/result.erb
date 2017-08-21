@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Who is the winner?</title>
+  <style>
+    body {
+      color: #9D5A4B;               /* Dark gray */
+      background-color: #EEEEEE;    /* Light gray */
+      font-size: 18px;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      font-style: italic;
+      font-weight: normal;
+    }
+  </style>
+  <!-- <link rel='stylesheet' href='../styles.css' /> -->
+</head>
+
+<body>
+  <h2><%=@players.player1%> picked <%=@outcome.user%>!</h2>
+  <h2><%=@players.player2%> picked <%=@outcome.user2%>!</h2>
+
+  <h1><%=@players.player1%> <%=@outcome.winner%></h1>
+
+
+
+
+
+  <% if @players.player2 == "RPSSL Master" %>
+    <form action='/pick_one' method='get'>
+      <button type='submit'>Play again, <%=@players.player1%></button>
+    </form>
+  <% else %>
+    <form action='/pick_two' method='get'>
+      <button type='submit'>Play again, <%=@players.player1%> and <%=@players.player2%></button>
+    </form>
+  <% end %>
+
+  <form action='/' method='get'>
+    <button type='submit'>Restart</button>
+  </form>
+
+
+</body>
+</html>
+
+
+<!-- <body style="background-image:url(https://3.bp.blogspot.com/-b3Hw2NVCCgc/V8lpcgiVnRI/AAAAAAAAM-M/q82O0nB-iAIyHIFrRTQ0mNBehIuDFlyFwCLcB/s1600/you-lose-banner-sm-%2540x2.png)"> -->

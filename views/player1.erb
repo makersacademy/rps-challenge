@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Who is the winner?</title>
+  <style>
+    body {
+      color: #9D5A4B;               /* Dark gray */
+      background-color: #EEEEEE;    /* Light gray */
+      font-size: 18px;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      font-style: italic;
+      font-weight: normal;
+    }
+  </style>
+  <!-- <link rel='stylesheet' href='../styles.css' /> -->
+</head>
+
+<body>
+
+<h1><%=@players.player1%> vs <%=@players.player2%></h1>
+<h2>Hi <%=@players.player1%>, please choose one option</h2>
+
+<!-- <form action='/single_result' method='post'>
+  <input type="hidden" name="user1" value="rock" />
+  <input type="submit" value="Rock">
+</form>
+
+<form action='/single_result' method='post'>
+  <input type="hidden" name="user1" value="paper" />
+  <input type="submit" value="Paper">
+</form>
+
+<form action='/single_result' method='post'>
+  <input type="hidden" name="user1" value="scissors" />
+  <input type="submit" value="Scissors">
+</form>
+
+<form action='/single_result' method='post'>
+  <input type="hidden" name="user1" value="spock" />
+  <input type="submit" value="Spock">
+</form>
+
+<form action='/single_result' method='post'>
+  <input type="hidden" name="user1" value="lizard" />
+  <input type="submit" value="Lizard">
+</form> -->
+
+
+<form action='/single_result' method='post'>
+  <button type="submit" name="user1" value="rock">Rock</button>
+  <button type="submit" name="user1" value="paper">Paper</button>
+  <button type="submit" name="user1" value="scissors">Scissors</button>
+  <button type="submit" name="user1" value="spock">Spock</button>
+  <button type="submit" name="user1" value="lizard">Lizard</button>
+</form>
+
+
+
+</body>
+</html>

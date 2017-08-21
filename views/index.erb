@@ -1,0 +1,44 @@
+
+  <style>
+    body {
+      color: #9D5A4B;
+      background-color: #EEEEEE;
+      font-size: 18px;
+      font-family: sans-serif;
+      background-image: url('https://i2.wp.com/www.geeksaresexy.net/wp-content/uploads/2014/02/Rock-Paper-Scissors.jpg');
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    h2, h3 {
+      color: #F32874;
+      font-size: 2em;
+      font-weight: bold;
+      font-style: italic;
+      font-weight: strong;
+    }
+  </style>
+  <!-- <link rel='stylesheet' href='../styles.css' /> -->
+
+
+
+  <!-- <img src="https://i2.wp.com/www.geeksaresexy.net/wp-content/uploads/2014/02/Rock-Paper-Scissors.jpg" alt="Mountain View" style="width:304px;"> -->
+
+<h1>Let's play Rock, Paper, Scissors, Spock, Lizard!</h1>
+
+<form action='/pick_one' method='post'>
+  <h3>Player 1: <input type='text' name='name0'>
+  <input type='submit' value='Play Against Master'>
+</form></h3>
+
+<form action='/pick_two' method='post'>
+  <h3>Player 1: <input type='text' name='name1'>
+  Player 2: <input type='text' name='name2'>
+  <input type='submit' value='Play against each other'></h3>
+</form>
