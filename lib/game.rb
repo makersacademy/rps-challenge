@@ -11,7 +11,7 @@ class Game
 
   def result
     return @winner = "Draw" if draw
-    return @winner = "You win!" if scissors_win || rock_win || paper_win
+    return @winner = "You win!" if win
     @winner = "You lose!"
   end
 
@@ -20,16 +20,28 @@ class Game
     @user == @computer.comp
   end
 
+  def win
+    scissors_win || rock_win || paper_win || lizard_win || spock_win
+  end
+  
   def scissors_win
-    (@user == "scissors" && @computer.comp == "paper")
+    @user == "scissors" && (@computer.comp == "paper" || @computer.comp == "lizard")
   end
 
   def rock_win
-    (@user == "rock" && @computer.comp == "scissors")
+    @user == "rock" && (@computer.comp == "scissors" || @computer.comp == "lizard")
   end
 
   def paper_win
-    (@user == "paper" && @computer.comp == "rock")
+    @user == "paper" && (@computer.comp == "rock" || @computer.comp == "spock")
+  end
+
+  def lizard_win
+    @user == "lizard" && (@computer.comp == "paper" || @computer.comp == "spock")
+  end
+
+  def spock_win
+    @user == "spock" && (@computer.comp == "rock" || @computer.comp == "scissors")
   end
 end
 

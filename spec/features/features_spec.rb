@@ -4,7 +4,7 @@ require_relative './web_helpers'
 RSpec.feature "Home page", type: :feature do
   scenario "it says lets play" do
     visit "/"
-    expect(page).to have_text("Let's play Rock, Paper, Scissors!")
+    expect(page).to have_text("Let's play Rock, Paper, Scissors, Spock, Lizard!")
   end
 end
 

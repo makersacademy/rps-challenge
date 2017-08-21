@@ -5,8 +5,8 @@ class Computer
     @comp = random
   end
 
-private 
+private
   def random
-    ["rock", "paper", "scissors"].sample
+    ["rock", "paper", "scissors", "spock", "lizard"].sample
   end
 end
