@@ -1,9 +1,9 @@
-<h2>You picked <%=@outcome.user%>!</h2>
+<h2><%=@name1%> picked <%=@outcome.user%>!</h2>
 
-<h2>Master picked <%=@outcome.computer.comp%>!</h2>
+<h2><%=@name2%> picked <%=@outcome.computer%>!</h2>
 
-<h1><%=@outcome.winner%></h1>
+<h1><%=@name1%> <%=@outcome.winner%></h1>
 
-<form action='/pick_one' method='get'>
+<form action='/' method='get'>
   <button type='submit'>Play again</button>
 </form>
