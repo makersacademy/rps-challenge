@@ -1,0 +1,21 @@
+<h1> PLAY! </h1>
+
+<h2 style="color: darkslateblue"><%= "Welcome  #{@player.name}!" unless @player.nil? || @player.name.empty? %> </h2>
+
+
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="rock" />
+  <input type="submit" value="Rock">
+
+  <input type="hidden", name="action", value="paper" />
+  <input type="submit" value="Paper">
+
+  <input type="hidden", name="action", value="scissors" />
+  <input type="submit" value="Scissors">
+
+  <input type="hidden", name="action", value="spock" />
+  <input type="submit" value="Spock">
+
+  <input type="hidden", name="action", value="lizard" />
+  <input type="submit" value="Lizard">
+</form>

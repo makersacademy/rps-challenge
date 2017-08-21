@@ -1,13 +1,18 @@
+ENV['RACK_ENV'] = 'test'
+
+require_relative './../app'
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require 'features/web_helpers'
 require 'simplecov'
 require 'simplecov-console'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 SimpleCov.start
+
+Capybara.app = RPS
+Capybara.save_and_open_page_path = '/Users/stephengeller/Projects/makers-academy/week-three/weekend-challenge/rps-challenge/log'
 
 RSpec.configure do |config|
   config.after(:suite) do

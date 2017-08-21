@@ -1,0 +1,30 @@
+<body style="background-image:url(http://1.bp.blogspot.com/-b-DQ3ddOJWY/VP8ShjrOmBI/AAAAAAAATJI/RBn7oN2qNBM/s1600/winner-winner-chicken-dinner.png)">
+
+<h1 style="color: white"> Computer chose: <%= @game.weapon2.type.capitalize %> </h1>
+
+    <h1 style="color: white"> You win! </h1>
+    <% @player.point 1 %>
+
+<% unless @player.nil? %>
+    <h2 style="color: deepskyblue"> <%= "Player: #{@player.name}" unless @player.name.empty? %> </h2>
+    <h3 style="color: lightgreen"> <%= "Score: #{@player.score}" %>  </h3>
+<% end %>
+
+<form action="/outcome" method="post">
+  <input type="hidden", name="action", value="rock" />
+  <input type="submit" value="Rock">
+
+  <input type="hidden", name="action", value="paper" />
+  <input type="submit" value="Paper">
+
+  <input type="hidden", name="action", value="scissors" />
+  <input type="submit" value="Scissors">
+
+  <input type="hidden", name="action", value="spock" />
+  <input type="submit" value="Spock">
+
+  <input type="hidden", name="action", value="lizard" />
+  <input type="submit" value="Lizard">
+</form>
+
+</body>

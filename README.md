@@ -1,86 +1,42 @@
 # RPS Challenge
 
-Instructions
--------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+How to run the app
+-----------------
+All you need to do is clone the repo, install the gems and run the server using rackup! For example:
+````
+$ git clone git@github.com:stephengeller/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+````
 
-Task
-----
+Approach to solving the challenge
+---------
+To complete this, I knew I needed to combine many new tools discovered in the past week. This included using HTML, setting up a server and injecting ruby in erb (embedded ruby) files.
 
-Knowing how to build web applications is getting us almost there as web developers!
+I struggled with the new material this week, so decided to focus on the more familiar class-to-class interactions first, then move onto the less-familiar server creation work after. This actually helped to clarify what methods would need to be called to operate the game, and so it just became a case of integrating those methods into the controller and views.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+Difficulties
+---------
+The difficulties found in this challenge were similar to those experienced earlier in the week - namely setting up a server.
+  1. Sharing variables across views
+  
+  One area I am yet to fully understand is how variables work in a sinatra environment. Some challenges in sharing variables (such as receiving a name on the homepage and rendering it on different pages) were previously circumvented by using global variables, but I was aware that this was not good practice. I ultimately ended up using sessions to store variables and states, and - with plenty of trial and error - got them to behave as intended.
+  
+  2. Testing random behaviour
+  
+  I initially assumed that it would be impossible to test random output, and so I decided not to try and test said impossible task. However, I made eventually aware of a way of doing this after reading through the code review rubric, and so I was eventually able to predict and test randomised functions.  
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Future Developments
+------------------
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+  1. More formatting! Less tacky backgrounds!
+  2. More personal statistics (eg "You have played 'rock' 7 times with a 40% win rate")
+  3. Multiplayer!
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+Learning points
+---------
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+  1. Keeping your controllers skinny doesn't mean you should overload your views.
+  2. Think about which variables need to be where in the controller, and how they behave
