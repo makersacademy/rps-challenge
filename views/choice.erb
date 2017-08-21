@@ -1,0 +1,22 @@
+<h1><%=@name1%> vs RPS Master</h1>
+<h2>Hi <%=@name1%>, please choose one option</h2>
+
+<form action='/result' method='post'>
+  <input type="hidden" name="varname" value="rock" />
+  <input type="submit" value="Rock">
+</form>
+
+<form action='/result' method='post'>
+  <input type="hidden" name="varname" value="paper" />
+  <input type="submit" value="Paper">
+</form>
+
+<form action='/result' method='post'>
+  <input type="hidden" name="varname" value="scissors" />
+  <input type="submit" value="Scissors">
+</form>
+
+
+<!-- <html:link action="getUpdate" paramId="msgId" paramName="teamupdatelist" paramProperty="msg_id" >View</html:link> -->
+
+<!-- <a href="/result" name="rock" class="btn">Rock!</a> -->

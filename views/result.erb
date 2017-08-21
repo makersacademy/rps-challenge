@@ -1,0 +1,9 @@
+<h2>You picked <%=@outcome.user%>!</h2>
+
+<h2>Master picked <%=@outcome.computer.comp%>!</h2>
+
+<h1><%=@outcome.winner%></h1>
+
+<form action='/pick_one' method='get'>
+  <button type='submit'>Play again</button>
+</form>
