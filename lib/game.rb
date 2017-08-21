@@ -12,12 +12,12 @@ class Game
       :scissors => { :rock => :lose, :paper => :win,
                      :scissors => :tie, :spock => :lose,
                      :lizard => :win },
-      :spock => { :rock => :win, :paper => :lose,
-                  :scissors => :win, :spock => :tie,
-                  :lizard => :lose },
-      :lizard => { :rock => :lose, :paper => :win,
-                   :scissors => :lose, :spock => :win,
-                   :lizard => :tie }
+      :spock    => { :rock => :win, :paper => :lose,
+                     :scissors => :win, :spock => :tie,
+                     :lizard => :lose },
+      :lizard   => { :rock => :lose, :paper => :win,
+                     :scissors => :lose, :spock => :win,
+                     :lizard => :tie }
   }
 
   def initialize(weapon1, weapon2 = Weapon.new)
