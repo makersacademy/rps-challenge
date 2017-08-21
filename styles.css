@@ -1,0 +1,39 @@
+body {
+  color: #9D5A4B;               /* Dark gray */
+  background-color: #EEEEEE;    /* Light gray */
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: normal;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Helvetica", "Arial", sans-serif;
+  /*the browser tries to load the left-most one first (Helvetica), falls back to Arial if the user doesn’t have it, and finally chooses the system’s default sans serif font*/
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style-type: lower-roman;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-align: justify; /* left/ right/ center*/
+}

@@ -5,7 +5,7 @@ describe Game do
   subject { described_class.new("rock", comp_instance.comp) }
 
   it "stores the master's choice" do
-    expect(subject.computer).to eq "scissors"
+    expect(subject.user2).to eq "scissors"
   end
 
   it 'declares the winner' do

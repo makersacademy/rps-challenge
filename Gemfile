@@ -7,6 +7,7 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'flog'
   gem 'rspec'
   gem 'rubocop'
   gem 'selenium-webdriver'

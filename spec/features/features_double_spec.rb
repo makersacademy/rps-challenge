@@ -50,6 +50,6 @@ RSpec.feature "return to pick_one page", type: :feature do
     find_button('Scissors').click
     find_button('Play again').click
     # click_button('Play again')
-    expect(page).to have_content("Let's play Rock, Paper, Scissors, Spock, Lizard!")
+    expect(page).to have_content("Hi Eli, please choose one option")
   end
 end

@@ -27,8 +27,8 @@
 
 <body>
 
-  <h1><%=@name1%> vs <%=@name2%></h1>
-<h2>Hi <%=@name2%>, please choose one option</h2>
+  <h1><%=@players.player1%> vs <%=@players.player2%></h1>
+<h2>Hi <%=@players.player2%>, please choose one option</h2>
 
 <form action='/double_result' method='post'>
   <input type="hidden" name="user2" value="rock" />

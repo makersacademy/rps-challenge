@@ -1,12 +1,21 @@
 require_relative './computer'
+require_relative './players'
 
 class Game
-  attr_reader :winner, :computer, :user
+  attr_reader :winner, :user2, :user
 
-  def initialize(user, computer = Computer.new.comp)
+  def initialize(user, user2 = Computer.new.comp)
     @user = user
-    @computer = computer
+    @user2 = user2
     @winner = ""
+  end
+
+  def self.create(user, computer = Computer.new.comp)
+    @game = Game.new(user, computer)
+  end
+
+  def self.instance
+    @game
   end
 
   def result
@@ -17,7 +26,7 @@ class Game
 
   private
   def draw
-    @user == @computer
+    @user == @user2
   end
 
   def win
@@ -25,23 +34,23 @@ class Game
   end
 
   def scissors_win
-    @user == "scissors" && (@computer == "paper" || @computer == "lizard")
+    @user == "scissors" && (@user2 == "paper" || @user2 == "lizard")
   end
 
   def rock_win
-    @user == "rock" && (@computer == "scissors" || @computer == "lizard")
+    @user == "rock" && (@user2 == "scissors" || @user2 == "lizard")
   end
 
   def paper_win
-    @user == "paper" && (@computer == "rock" || @computer == "spock")
+    @user == "paper" && (@user2 == "rock" || @user2 == "spock")
   end
 
   def lizard_win
-    @user == "lizard" && (@computer == "paper" || @computer == "spock")
+    @user == "lizard" && (@user2 == "paper" || @user2 == "spock")
   end
 
   def spock_win
-    @user == "spock" && (@computer == "rock" || @computer == "scissors")
+    @user == "spock" && (@user2 == "rock" || @user2 == "scissors")
   end
 end
 
