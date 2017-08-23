@@ -12,7 +12,6 @@ describe Game do
       allow(player1).to receive(:name).and_return("Jenny")
       allow(comp).to receive(:choice).and_return("Scissors")
       game.add_player(comp)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "Jenny wins!"
     end
 
@@ -21,7 +20,6 @@ describe Game do
       allow(comp).to receive(:choice).and_return("Paper")
       allow(comp).to receive(:name).and_return("Computer")
       game.add_player(comp)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "Computer wins!"
     end
 
@@ -29,7 +27,6 @@ describe Game do
       allow(player1).to receive(:choice).and_return("Rock")
       allow(comp).to receive(:choice).and_return("Rock")
       game.add_player(comp)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "It's a draw!"
     end
   end
@@ -41,7 +38,6 @@ describe Game do
       allow(player1).to receive(:choice).and_return("Rock")
       allow(player2).to receive(:choice).and_return("Scissors")
       game.add_player(player2)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "Jenny wins!"
     end
 
@@ -50,7 +46,6 @@ describe Game do
       allow(player1).to receive(:choice).and_return("Scissors")
       allow(player2).to receive(:choice).and_return("Rock")
       game.add_player(player2)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "Johnny wins!"
     end
 
@@ -58,7 +53,6 @@ describe Game do
       allow(player1).to receive(:choice).and_return("Rock")
       allow(player2).to receive(:choice).and_return("Rock")
       game.add_player(player2)
-      game.friend_determine_outcome
       expect(game.outcome).to eq "It's a draw!"
     end
 

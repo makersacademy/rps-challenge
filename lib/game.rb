@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player, :outcome, :player2
+  attr_reader :player, :player2
 
   def initialize(player)
     @player = player
@@ -9,14 +9,16 @@ class Game
     @player2 = player
   end
 
-  def friend_determine_outcome
-    if @player.choice == @player2.choice
-      @outcome = "It's a draw!"
-    elsif (@player.choice == "Rock" && @player2.choice == "Scissors") || (@player.choice == "Paper" && @player2.choice == "Rock") || (@player.choice == "Scissors" && @player2.choice == "Paper")
-      @outcome = "#{@player.name} wins!"
-    else
-      @outcome = "#{@player2.name} wins!"
-    end
+  def outcome
+    return "#{@player.name} wins!" if @player.choice == what_wins_vs_this(@player2.choice)
+    return "#{@player2.name} wins!" if @player2.choice == what_wins_vs_this(@player.choice)
+    return "It's a draw!"
+  end
+
+  def what_wins_vs_this(choice)
+    return "Paper" if choice == "Rock"
+    return "Scissors" if choice == "Paper"
+    return "Rock" if choice == "Scissors"
   end
 
 end
