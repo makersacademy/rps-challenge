@@ -1,6 +1,18 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+ENV['RACK_ENV'] = 'test'
+
+# require File.join(File.dirname(__FILE__), '..', 'app.rb')
+# require_relative './features/web_helpers.rb'
+require_relative '../app.rb'
+require 'sinatra'
+require 'capybara'
+require 'rspec'
+
+# Capybara.save_and_open_page_path = "./debugging"
+
+Capybara.app = MyApp
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
