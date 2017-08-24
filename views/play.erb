@@ -18,17 +18,17 @@ You're playing against <%= @player_2_name %>
   <input type="submit" value="SCISSORS">
 </form> -->
 <form action="/selection" method="post">
-  <input type="hidden", name="action", value=:rock />
+  <input type="hidden", name="action", value="rock" />
   <input type="submit" value="ROCK">
 </form>
 
 <form action="/selection" method="post">
-  <input type="hidden", name="action", value=:paper />
+  <input type="hidden", name="action", value="paper" />
   <input type="submit" value="PAPER">
 </form>
 
 <form action="/selection" method="post">
-  <input type="hidden", name="action", value=:scissors />
+  <input type="hidden", name="action", value="scissors" />
   <input type="submit" value="SCISSORS">
 </form>
 </div>

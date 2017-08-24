@@ -1,13 +1,3 @@
-
-<%= @player_1_name %> picks <%= @weapon %>
+<%= @player_1_name %> used <%= @player_1_weapon %>
 <br>
-<%= @player_2_name %> picks <%= @weapon %>
-<br>
-
-<%= if @game.result == :win %>
-YOU WIN!!!!
-<%= elsif @game.result == :lose %>
-<%= @player_2_name %> WINS!! Better luck next time!!
-<%= elsif @game.result == :draw %>
-DRAW!!!
-<%end%>
+<%= @player_2_name %> used <%= @player_2_weapon %>

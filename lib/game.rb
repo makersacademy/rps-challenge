@@ -1,5 +1,7 @@
+require_relative 'computer'
+require_relative 'player'
 class Game
-  attr_reader :player_1, :player2, :game, :result
+  attr_reader :player_1, :player_2, :result, :rules #, :weapons
   WEAPONS = [:rock, :paper, :scissors]
 
   RULES = {
@@ -8,13 +10,13 @@ class Game
       scissors: { rock: :lose, paper: :win, scissors: :draw },
     }
 
-  def initalize(player_1 = Player.new, player_2 = Computer.new)
+  def initialize(player_1 = Player.new, player_2 = Computer.new)
     @player_1 = player_1
     @player_2 = player_2
-    @winner = nil
+    @rules = RULES
   end
 
   def result
-    RULES[@player1.weapon][@player_2.weapon]
+    rules[@player_1.weapon][@player_2.weapon]
   end
 end
