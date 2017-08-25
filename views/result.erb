@@ -1,3 +1,24 @@
+<head>
+<style>
+body {background-color: #000000; color: white}
+h1   {color: blue; font-size: 300%;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+  <h1>
+  <%if @result == :win %>
+    <%= @player_1_name %> WINS!
+  <%elsif @result == :lose %>
+    <%= @player_2_name %> WINS!
+  <%elsif @result == :draw %>
+    YOU DRAW!
+  <% end %>
+</h1>
+
 <%= @player_1_name %> used <%= @player_1_weapon %>
 <br>
 <%= @player_2_name %> used <%= @player_2_weapon %>
+
+</body>

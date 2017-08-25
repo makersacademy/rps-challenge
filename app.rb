@@ -41,7 +41,7 @@ class RPS < Sinatra::Base
     p @player_2_weapon = $player_2.weapon
     @player_2_name = $player_2.name
     p @rules = $game.rules
-    p result = @rules[@player_1_weapon][@player_2_weapon]
+    p @result = @rules[@player_1_weapon][@player_2_weapon]
 
     # game = Game.new
     # The WIN!!!!"
