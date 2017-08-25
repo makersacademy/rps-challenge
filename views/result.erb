@@ -1,12 +1,12 @@
 <head>
 <style>
 body {background-color: #000000; color: white}
-h1   {color: blue; font-size: 300%;}
+h1   {color: gold; font-size: 300%;}
 p    {color: red;}
 </style>
 </head>
 <body>
-
+<div align="center">
   <h1>
   <%if @result == :win %>
     <%= @player_1_name %> WINS!
@@ -16,9 +16,11 @@ p    {color: red;}
     YOU DRAW!
   <% end %>
 </h1>
-
-<%= @player_1_name %> used <%= @player_1_weapon %>
+<div align="center">
+<u>Game details</u>
 <br>
-<%= @player_2_name %> used <%= @player_2_weapon %>
-
+<%= @player_1_name %> picked <%= @player_1_weapon %>
+<br>
+<%= @player_2_name %> picked <%= @player_2_weapon %>
+</div>
 </body>

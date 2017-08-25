@@ -1,14 +1,22 @@
 <html>
+<head>
+<style>
+body {background-color: #000000; color: white}
+h1   {color: gold; font-size: 300%;}
+p    {color: red;}
+</style>
+</head>
 <body>
 
-
-<div style='border: 3px dashed gold'>
-<h1 style="color:blue;"> Welcome <%= @player_1_name %> </h1>
+<div align="center">
+<div style='border: 3px solid gold'>
+<h1> Welcome <%= @player_1_name %> </h1>
 </div>
 <br>
-You're playing against <%= @player_2_name %>
+You're playing against <b><%= @player_2_name %></b>
 <h2>Make your selection:</h2>
-<div>
+</div>
+
   <!-- <form action="/result" method="get">
   <br>
   <input type="submit" value="ROCK">
@@ -17,6 +25,7 @@ You're playing against <%= @player_2_name %>
   <br>
   <input type="submit" value="SCISSORS">
 </form> -->
+<div align="center">
 <form action="/selection" method="post">
   <input type="hidden", name="action", value="rock" />
   <input type="submit" value="ROCK">
