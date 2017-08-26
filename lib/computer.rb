@@ -7,13 +7,7 @@ class Computer
 
   def initialize
     @name = RANDOM_NAMES.sample
-    @weapon = weapon
+    @weapon = Game::WEAPONS.sample
   end
 
-  # moved the randomiser into the initialize to stop it creating a new name every
-  # time .name is called
-
-  def weapon
-    Game::WEAPONS.sample
-  end
 end
