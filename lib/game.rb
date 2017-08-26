@@ -1,7 +1,7 @@
 require_relative 'computer'
 require_relative 'player'
 class Game
-  attr_reader :player_1, :player_2, :result, :rules #, :weapons
+  attr_reader :player_1, :player_2, :result, :rules 
   WEAPONS = [:rock, :paper, :scissors]
 
   RULES = {
