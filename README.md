@@ -1,14 +1,19 @@
 # Rock-Paper-Scissors Challenge
 
-Instructions
--------
-- Clone the repository
-- Navigate to the project directory
-- `bundle install`
-- `rspec` to test
-- `rackup`
-- Navigate to: localhost:generated_port_number
-- Enter your name and start to play
+https://mysterious-anchorage-90347.herokuapp.com/
+
+Enter your name and start to play!
+
+**Instructions to run locally:**
+```
+git clone git@github.com:chuk-chuk/rps-challenge.git
+cd rps-challenge
+bundle install
+rspec
+rackup
+localhost:generated_port_number
+
+```
 
 User Stories
 ----
