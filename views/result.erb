@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Artifika" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <p>You selected</p>
+      <p style="color: red; font-size: 40px"><%= @game.player.weapon %></p>
+        <br>
+      <p>Computer selected</p>
+      <p style="color: red; font-size: 40px"><%= @random_option %></p>
+        <br>
+      <p>Result</p>
+      <p style="color: blue; font-size: 40px"><%= @game.winner %></p>
+      <a href="/play-again" class="button">PLAY AGAIN</a>
+      <a href="/" class="button">SWITCH PLAYER</a>
+    </div>
+  </body>
+</html>
