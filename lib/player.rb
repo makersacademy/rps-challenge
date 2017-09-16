@@ -2,11 +2,12 @@
 
 class Player
 
-  attr_reader :name, :points
+  attr_reader :name, :points, :weapon
 
-  def initialize(name = "Roborory", points = 0)
+  def initialize(name = "Roborory", points = 0, weapon = 'My naked fists!')
     @name = name
     @points = points
+    @weapon = weapon
   end
 
   def player_store(location)
