@@ -7,6 +7,7 @@
  require 'capybara'
  require 'capybara/rspec'
  require 'rspec'
+ require 'web_helpers.rb'
 
  module RSpecMixin
   include Rack::Test::Methods

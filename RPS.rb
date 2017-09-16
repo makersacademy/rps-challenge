@@ -1,8 +1,16 @@
 require 'sinatra'
 
 class RPS < Sinatra::Base
+
+  sessions :player_name
+
   get '/' do
-    "Which brave soul wants to challenge me to an RPS battle?????"
+    erb :index
   end
-  run! if app_file == $0
+
+  post '/names' do
+    @player_name = Player.new(params[:player_name])
+    redirect '/play'
+  end
+
 end

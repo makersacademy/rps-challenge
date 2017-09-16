@@ -1,4 +1,4 @@
-feature '#name' do
+feature '#initialize' do
   scenario 'checks link is working' do
     visit('/')
     # fill_in :player_name, with: 'Joe'
