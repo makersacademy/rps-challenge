@@ -7,7 +7,7 @@ feature 'main index page navigation' do
 
   scenario 'when arriving at index, see current players' do
     visit('/')
-    expect(page).to have_content('You are playing against Roborory')
+    expect(page).to have_content('Roborory')
   end
 
 

@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require 'database'
+require './lib/database'
+
+
 
 class RPS < Sinatra::Base
 
@@ -8,7 +10,7 @@ class RPS < Sinatra::Base
   database = PlayerDatabase.new
 
   get '/' do
-    @player_2_name = database[0].name
+    @player_2_name = database.contents[0].name
     erb(:index)
   end
 
