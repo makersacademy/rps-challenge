@@ -22,13 +22,14 @@ enable :sessions
   end
 
   post '/battle' do
-    $selection = params[:name]
+    @player_name = $player_name.player_name
+    @selection = params[:selection]
     redirect '/throwdown'
   end
 
   get '/throwdown' do
     @player_name = $player_name.player_name
-    @selection = $selection
+    @selection = params[:selection] #forced need to set this to :selection
     erb :throwdown
   end
 
