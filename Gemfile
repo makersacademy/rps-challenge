@@ -8,9 +8,9 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
-  gem 'thin'
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'thin'
 end

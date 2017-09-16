@@ -1,9 +1,11 @@
-you chose <%= @player_1_choice %>
+you chose <%= @game.player_1_choice %>
 
-<%= @choice = ["rock","paper","scissors"].sample %>
+<%= @winner %>
 
-<% if @choice == "paper" %>
-YOU LOSE
+<% if @winner == true %>
+YOU WIN
+<%elsif @winner == "draw"%>
+YOU DRAW
 <%else%>
 YOU WIN
 <%end%>
