@@ -4,4 +4,8 @@ class Player
   def initialize(name)
     @name = name
   end
+
+  def attack
+    "Rock"
+  end
 end

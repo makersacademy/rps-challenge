@@ -6,4 +6,8 @@ describe Player do
   it 'has a name' do
     expect(player.name).to eq "Player"
   end
+
+  it 'can attack' do
+    expect(player.attack).to eq 'Rock'
+  end
 end
