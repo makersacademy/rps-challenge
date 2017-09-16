@@ -11,6 +11,12 @@ describe Player do
     end
   end
 
+  describe 'incrementation' do
+    it 'changes points' do
+        expect(player.point_change('minus', 2)).to eq 98
+    end
+  end
+
   describe 'storage and selection for play' do
 
     it 'passes name and points to store' do

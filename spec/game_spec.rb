@@ -14,11 +14,19 @@ describe Game do
 
   describe '#calculating_winner' do
     it 'finds a winner' do
-      allow(player_1).to receive(:weapon) { 'rock' }
-      allow(player_1).to receive(:name) { 'Rory' }
+      player_1 = double :player, :weapon => 'rock', :name => 'Rory', :points => 0
+      # allow(player_1).to receive(:weapon) { 'rock' }
+      # allow(player_1).to receive(:name) { 'Rory' }
       allow(player_2).to receive(:weapon) { 'paper' }
+      # allow(player_1).to receive(:points) { 0 }
+      allow(player_2).to receive(:points) { 0 }
+      allow(player_1).to receive(:point_change).with('add', -1) {-1}
+      allow(player_2).to receive(:point_change).with('subtract', -1) {1}
+      p player_1.points
       game.calculating_winner player_1, player_2
+      p player_1.points
       expect(game.result).to eq ("-1 point for #{player_1.name}!")
+      p player_1.points
     end
   end
 
