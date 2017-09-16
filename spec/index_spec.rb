@@ -5,5 +5,4 @@ feature 'main index page' do
     expect(page).to have_content('Welcome to the most dangerous game')
   end
 
-
 end
