@@ -9,6 +9,6 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
+  gem 'simplecov', require: true
+  gem 'simplecov-console', require: true
 end
