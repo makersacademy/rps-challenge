@@ -6,7 +6,17 @@ class RPSWeb < Sinatra::Application
   set :session_secret, 'super secret'
 
   get '/' do
-    "Let's play!"
+    erb :index
+  end
+
+  post '/name' do
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
+    erb :play
   end
 
   # start the server if ruby file executed directly
