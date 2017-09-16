@@ -11,10 +11,11 @@
 
 feature "Enter name" do
   scenario "submitting name" do
-    visit ("/")
-    fill_in :player_1_name, with: "Rob"
-    # fill_in :player_2_name, with: "Computer"
-    click_button "Submit"
+    # visit ("/")
+    # fill_in :player_1_name, with: "Rob"
+    # # fill_in :player_2_name, with: "Computer"
+    # click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content "Rob vs. Computer"
   end
 end

@@ -9,11 +9,34 @@
 # WHAT DOES THE USER HAVE TO DO?
 # WHAT DOES THE USER EXPECT TO SEE?
 
-feature "Make choice" do
-  scenario "submitting choice" do
-    visit("/play") #is this correct?!
-    fill_in :choice, with: "Rock"
-    click_button "Submit" # "Play"?
+
+feature "Expects the player to make an attack choice" do
+
+  scenario "Rock button accepts data and returns choice confirmation" do
+    sign_in_and_play
+    click_link "Rock" # "Play"?
     expect(page).to have_content "Rob chose Rock"
   end
+
+  # scenario "Paper button accepts data and returns choice confirmation" do
+  #   sign_in_and_play
+  #   click_link "Paper" # "Play"?
+  #   expect(page).to have_content "Rob chose Paper"
+  # end
+  #
+  # scenario "Scissors button accepts data and returns choice confirmation" do
+  #   sign_in_and_play
+  #   click_link "Scissors" # "Play"?
+  #   expect(page).to have_content "Rob chose Scissors"
+  # end
+
 end
+
+
+# scenario "Rock button accepts data and returns choice confirmtaion" do
+#   sign_in_and_play
+#   visit("/play") #is this correct?!
+#   fill_in :choice_1, with: "Rock"
+#   click_button "Submit" # "Play"?
+#   expect(page).to have_content "Rob chose Rock"
+# end
