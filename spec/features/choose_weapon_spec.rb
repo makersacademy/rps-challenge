@@ -10,13 +10,31 @@
 # WHAT DOES THE USER EXPECT TO SEE?
 
 
-feature "Expects the player to make an attack choice" do
+feature "Expects the player to choose a weapon" do
 
-  scenario "Rock button accepts data and returns choice confirmation" do
+  # I want to be able to see my options for weapons
+
+  scenario "See the weapon options" do
+
     sign_in_and_play
-    click_link "Rock" # "Play"?
-    expect(page).to have_content "Rob chose Rock"
+    # visit("/play")
+    expect(page).to have_content "Rock"
+    expect(page).to have_content "Paper"
+    expect(page).to have_content "Scissors"
   end
+
+
+  # I want to be able to choose a weapon to play
+
+  scenario "choose weapon to play and get weapon confirmation" do
+    # visit("/play")
+    sign_in_and_play
+    # visit("/choice")
+    click_button "Rock"
+    expect(page).to have_content "Rob chose Rock!"
+  end
+
+
 
   # scenario "Paper button accepts data and returns choice confirmation" do
   #   sign_in_and_play

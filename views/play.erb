@@ -1,10 +1,25 @@
+<h2>
 <%= @player_1_name %> vs. <%= @player_2_name %>
+</h2>
 </br>
-<a href="/choice">Rock</a>
+<!-- <a href="/choice">"Rock"</a>
 </br>
 <a href="/choice">Paper</a>
 </br>
-<a href="/choice">Scissors</a>
+<a href="/choice">Scissors</a> -->
+<h3>Choose Weapon</h3>
+</br>
+
+Rock
+Paper
+Scissors
+
+<form action="/play" method= "post">
+  <input type="Submit" name="weapon" value="Rock">
+  <input type="Submit" name="weapon" value="Paper">
+  <input type="Submit" name="weapon" value="Scissors">
+</form>
+
 
 
 <!-- Here I want to be able to display three choices:
