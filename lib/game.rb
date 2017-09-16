@@ -23,6 +23,9 @@ class Game
     first_player.point_change('add', scored_point_value)
     second_player.point_change('subtract', scored_point_value)
     @result = "#{scored_point_value} point for #{first_player.name}!"
+    break
+  else
+    @result = "Draw!"
           end
     end
 
