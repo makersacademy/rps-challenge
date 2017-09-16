@@ -1,9 +1,8 @@
-feature 'it displays the players names' do
-  scenario 'players have entered their names' do
+feature 'it displays the players name' do
+  scenario 'player has entered their name' do
     visit '/'
-    fill_in :player1, with: 'James'
-    fill_in :player2, with: 'Charlotte'
+    fill_in :name, with: 'James'
     click_button 'OK'
-    expect(page).to have_content 'James vs. Charlotte'
+    expect(page).to have_content 'James'
   end
 end

@@ -1,17 +1,20 @@
 require 'sinatra/base'
 
-class Battle < Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
-  set :session_secret, 'super secret'
 
   get '/' do
   erb(:index)
   end
 
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/rules'
+  end
+
   get '/rules' do
-    @player1 = session(params[:player1])
-    @player2 = session(params[:player2])
-    erb(:rules)
+      @name = session[:name]
+      erb(:rules)
   end
 
   run! if app_file == $PROGRAM_NAME
