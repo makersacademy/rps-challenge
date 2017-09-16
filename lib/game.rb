@@ -2,11 +2,11 @@ require_relative 'player.rb'
 
 class Game
 
-  attr_reader :players, :weapons, :conditions, :result, :current_scenario, :point_result
+  attr_reader :players, :weapons, :scenarios_v_points, :result, :current_scenario, :point_result
 
   def initialize(players)
     @players = players
-    @conditions = { ['rock', 'paper'] => -1,
+    @scenarios_v_points = { ['rock', 'paper'] => -1,
                    ['rock', 'scissors'] => 1
                   }
     @result = 'default value'
@@ -16,9 +16,9 @@ class Game
 
     @current_scenario = [first_player.weapon, second_player.weapon]
 
-    conditions.keys.each do |potential_scenario| if potential_scenario == current_scenario
+    scenarios_v_points.keys.each do |potential_scenario| if potential_scenario == current_scenario
 
-    scored_point_value = conditions[potential_scenario]
+    scored_point_value = scenarios_v_points[potential_scenario]
 
     first_player.point_change('add', scored_point_value)
     second_player.point_change('subtract', scored_point_value)
