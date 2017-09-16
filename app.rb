@@ -24,6 +24,13 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+
+
+  # get '/attack' do
+  #   "Hello World"
+  # end
+
+
   run! if app_file == $0
 
 
