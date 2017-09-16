@@ -18,8 +18,12 @@ class Player
     game.store(self, weapon)
   end
 
-  def point_change(function,amount)
-   function == 'add' ? @points += amount : @points -= amount
+  def point_change(function, amount)
+    function == 'add' ? @points += amount : @points -= amount
+  end
+
+  def select_weapon(choice)
+    @weapon = (choice)
   end
 
 end

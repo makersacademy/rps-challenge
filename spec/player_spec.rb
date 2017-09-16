@@ -13,7 +13,7 @@ describe Player do
 
   describe 'incrementation' do
     it 'changes points' do
-        expect(player.point_change('minus', 2)).to eq 98
+      expect(player.point_change('minus', 2)).to eq 98
     end
   end
 
@@ -32,6 +32,13 @@ describe Player do
       expect(player.take_a_turn game, fake_weapon).to eq [player => fake_weapon]
     end
 
+  end
+
+  describe 'weapon selection' do
+    it 'selects a weapon' do
+      player.select_weapon('rock')
+      expect(player.weapon).to eq 'rock'
+    end
   end
 
 end

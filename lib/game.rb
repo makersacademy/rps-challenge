@@ -6,13 +6,11 @@ class Game
 
   def initialize(players)
     @players = players
-    @conditions = {['rock', 'paper'] => -1,
+    @conditions = { ['rock', 'paper'] => -1,
                    ['rock', 'scissors'] => 1
                   }
     @result = 'default value'
   end
-
-
 
   def calculating_winner(first_player, second_player)
 
@@ -20,14 +18,14 @@ class Game
 
     conditions.keys.each do |potential_scenario| if potential_scenario == current_scenario
 
-    scored_point = conditions[potential_scenario]
-                                first_player.point_change('add', scored_point)
-                                second_player.point_change('subtract', scored_point)
-                                @result = "#{scored_point} point for #{first_player.name}!"
-                                end
-                         end
+    scored_point_value = conditions[potential_scenario]
+
+    first_player.point_change('add', scored_point_value)
+    second_player.point_change('subtract', scored_point_value)
+    @result = "#{scored_point_value} point for #{first_player.name}!"
+          end
+    end
 
   end
-
 
 end
