@@ -2,3 +2,11 @@
 
 
 <h2>You are playing against <%= @player_2_name %></h2>
+
+<br/><br/>
+
+<form action="/names" method="post">
+  <h2>Player 1: Select your hero name</h2>
+  <input type="text" name="name1">
+  <input type="submit" value="Submit">
+</form>

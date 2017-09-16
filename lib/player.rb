@@ -4,7 +4,7 @@ class Player
 
   attr_reader :name, :points, :weapon
 
-  def initialize(name = "Roborory", points = 0, weapon = 'My naked fists!')
+  def initialize(name = "Roborory", weapon = 'My naked fists!', points = 100)
     @name = name
     @points = points
     @weapon = weapon

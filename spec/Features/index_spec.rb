@@ -10,5 +10,4 @@ feature 'main index page navigation' do
     expect(page).to have_content('Roborory')
   end
 
-
 end
