@@ -3,6 +3,8 @@ require_relative 'lib/player.rb'
 
 class RPS < Sinatra::Base
 
+attr_reader :selection
+
 enable :sessions
 
   get '/' do
@@ -18,5 +20,17 @@ enable :sessions
     @player_name = $player_name.player_name
     erb :play
   end
+
+  post '/battle' do
+    $selection = params[:name]
+    redirect '/throwdown'
+  end
+
+  get '/throwdown' do
+    @player_name = $player_name.player_name
+    @selection = $selection
+    erb :throwdown
+  end
+
   run! if app_file == $0
 end
