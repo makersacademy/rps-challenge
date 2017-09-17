@@ -45,9 +45,6 @@ feature "Expects the players to choose weapons" do
   end
 
 
-
-
-
   # scenario "computer chooses "
 
 
