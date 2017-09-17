@@ -11,6 +11,8 @@
 
 feature "Enter name" do
   scenario "submitting name" do
+    p $test_computer
+    p $test_computer.choice
     # visit ("/")
     # fill_in :player_1_name, with: "Rob"
     # # fill_in :player_2_name, with: "Computer"

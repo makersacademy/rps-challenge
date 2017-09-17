@@ -11,6 +11,8 @@ class Rps < Sinatra::Base
   # end
 
   get "/" do
+    $test_computer = Computer.new
+    $test_computer.choice
     erb :index
   end
 
@@ -18,6 +20,15 @@ class Rps < Sinatra::Base
   # get "/outcome" do
   #   erb @game.result
   # end
+
+
+  post "/outcome" do
+    computer = Computer.new
+    computer.choice
+    erb :outcome
+    # redirect "/play"
+  end
+
 
   post "/names" do
     session[:player_1_name] = params[:player_1_name]
@@ -36,19 +47,23 @@ class Rps < Sinatra::Base
   get "/play" do
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
-    @weapon = session[:weapon]
     erb :play
   end
 
   post "/play" do
+    computer = Computer.new
     session[:weapon] = params[:weapon]
+    session[:computer_choice] = computer.choice
     redirect "/outcome"
   end
 
 
   get "/outcome" do
     @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
     @weapon = session[:weapon]
+    @computer_choice = session[:computer_choice]
+    # @computer_choice.choice
     erb :outcome
   end
 

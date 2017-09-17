@@ -10,7 +10,7 @@
 # WHAT DOES THE USER EXPECT TO SEE?
 
 
-feature "Expects the player to choose a weapon" do
+feature "Expects the players to choose weapons" do
 
   # I want to be able to see my options for weapons
 
@@ -35,13 +35,20 @@ feature "Expects the player to choose a weapon" do
   end
 
 
-  scenario "choose weapon to play and computer chooses its weapon" do
+  # I want the computer to be able to choose a weapon
+
+  scenario "computer chooses Scissors" do
     sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content "Rob chose Rock!"
+    # expect(page).to have_content "Rob chose Rock!"
     expect(page).to have_content "Computer chose Scissors!"
   end
 
+
+
+
+
+  # scenario "computer chooses "
 
 
   # scenario "Paper button accepts data and returns choice confirmation" do
