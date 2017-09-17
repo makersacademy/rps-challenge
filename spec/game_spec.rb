@@ -4,13 +4,8 @@ describe Game do
   let(:player_1) { double :player }
   let(:player_2) { double :player }
   let(:players) { [player_1, player_2] }
-  subject(:game) { described_class.new players }
+  subject(:game) { described_class.new }
 
-  describe '#instantiation' do
-    it 'has players and weapons' do
-      expect(game.players).to eq([player_1, player_2])
-    end
-  end
 
   describe '#calculating_winner' do
     it 'finds a winner' do

@@ -34,15 +34,17 @@ class RPS < Sinatra::Base
   end
 
   get '/combat_page' do
+  game = Game.new
   @computer_opponent_name = database.contents[0].name
   @computer_opponent_weapon = database.contents[0].weapon
 
   @player_1_name = database.contents[1].name
   @player_1_weapon = database.contents[1].weapon
 
-  @computer_opponent = database.contents [0]
-  @player1 = database.contents[1]
-  @winner = Game.new.calculate_winner(player1, computer_opponent)
+  computer_opponent = database.contents[0]
+  player1 = database.contents[1]
+  game.calculating_winner(player1, computer_opponent)
+  @winner = game.result
 
   erb(:combat_page)
   end
