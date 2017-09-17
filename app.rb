@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -17,5 +18,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-
+  post '/attack' do
+    @player = $player
+    @attack = params[:attack]
+    erb :attack
+  end
 end
