@@ -19,20 +19,25 @@ class Game
 
     @current_scenario = [first_player.weapon, second_player.weapon]
 
-    scenarios_v_points.keys.each do |potential_scenario| if potential_scenario == current_scenario
+    @result = 'Draw! Shall we play again?' unless a_possible_scenario?
 
-                                                           scored_point_value = scenarios_v_points[potential_scenario]
+    scenarios_v_points.find do |potential_scenario, point_value| if potential_scenario == current_scenario
 
-                                                           first_player.point_change('add', scored_point_value)
-                                                           second_player.point_change('subtract', scored_point_value)
-                                                           @result = "#{scored_point_value} point for #{first_player.name}! Shall we play again?"
-                                                           break
-      else
-        @result = "Draw! Shall we play again?"
+         first_player.point_change('add', point_value)
+         second_player.point_change('subtract', point_value)
+         @result = "#{point_value} point for #{first_player.name}! Shall we play again?"
+
       end
 
     end
 
   end
+
+  end
+
+private
+
+def a_possible_scenario?
+  @scenarios_v_points.keys.include? @current_scenario
 
 end
