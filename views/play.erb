@@ -1,5 +1,19 @@
-<h1> <%=@player_name%> has entered the fight! </h1>
-<h2> Please select your weapon of choice: </h2>
-<form action="/weapon" method="post">
-    <input type="submit" value="Scissors">
-</form>
+<body>
+  <div>
+  <% if @player.weapon == nil %>
+  <h1> <%= @player.name %> has entered the fight!</h1>
+  <h2> Please select your weapon of choice: </h2>
+    <form action="/rock" method="post">
+      <input type="submit" value="Rock">
+    </form>
+    <form action="/paper" method="post">
+      <input type="submit" value="Paper">
+    </form>
+    <form action="/scissors" method="post">
+      <input type="submit" value="Scissors">
+    </form>
+  <% else %>
+    <p> <%=@player.name%> selected <%= @player.weapon %></p>
+  <% end %>
+  </div>
+</body>

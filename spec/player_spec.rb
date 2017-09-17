@@ -11,8 +11,8 @@ describe Player do
 
   describe '#weapon selected' do
     it 'confirms the weapon selected' do
-      player.weapon_selector("Scissors")
-      expect(player.weapon).to(eq("Scissors"))
+      player.weapon_selector("scissors")
+      expect(player.weapon).to(eq("scissors"))
     end
   end
 end

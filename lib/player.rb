@@ -1,3 +1,4 @@
+
 class Player
   attr_reader :weapon, :name
 
