@@ -1,8 +1,11 @@
 class Player
-  attr_reader :weapon
+  attr_reader :weapon, :name
 
-  def weapon=(weapon)
-    fail 'not a possible weapon' unless [:rock, :paper, :scissors].includes? weapon
-    @weapon = weapon
+  def initialize(name)
+    @name = name
+  end
+
+  def weapon_selector(selected)
+    @weapon = selected
   end
 end
