@@ -14,4 +14,9 @@ describe Game do
     allow(game).to receive(:play).and_return("The computer won")
     expect(game.play).to eq("The computer won")
   end
+
+  it 'can have a draw' do
+    allow(game).to receive(:play).and_return("Draw")
+    expect(game.play).to eq("Draw")
+  end
 end
