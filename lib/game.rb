@@ -6,8 +6,8 @@ class Game
 
   def initialize(players)
     @players = players
-    @scenarios_v_points = { ['rock', 'paper'] => -1,
-                   ['rock', 'scissors'] => 1
+    @scenarios_v_points = { ['Rock', 'Paper'] => -1,
+                   ['Rock', 'Scissors'] => 1
                   }
     @result = 'default value'
   end
@@ -22,10 +22,10 @@ class Game
 
                                                            first_player.point_change('add', scored_point_value)
                                                            second_player.point_change('subtract', scored_point_value)
-                                                           @result = "#{scored_point_value} point for #{first_player.name}!"
+                                                           @result = "#{scored_point_value} point for #{first_player.name}! Shall we play again?"
                                                            break
   else
-    @result = "Draw!"
+    @result = "Draw! Shall we play again?"
           end
     end
 

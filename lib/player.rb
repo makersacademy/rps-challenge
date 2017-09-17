@@ -4,7 +4,7 @@ class Player
 
   attr_reader :name, :points, :weapon
 
-  def initialize(name = "Roborory", weapon = 'My naked fists!', points = 100)
+  def initialize(name = "Roborory", weapon = random_weapon, points = 100)
     @name = name
     @points = points
     @weapon = weapon
@@ -24,6 +24,10 @@ class Player
 
   def select_weapon(choice)
     @weapon = choice
+  end
+
+  def random_weapon
+    @weapon = ['Rock', 'Paper', 'Scissors'].sample
   end
 
 end
