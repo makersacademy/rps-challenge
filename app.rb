@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/database'
+require './lib/DATABASE'
 require './lib/player'
 require './lib/game.rb'
 
@@ -7,45 +7,51 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
-
-    database = PlayerDatabase.new
+    DATABASE = PlayerDatabase.new
+    DATABASE_ENTRIES = [DATABASE.contents[0]]
+    COMPUTER = DATABASE_ENTRIES[0]
 
   get '/' do
-    @player_2_name = database.contents[0].name
+    @player_2_name = COMPUTER.name
     erb(:index)
   end
 
   post '/names' do
-    database.contents << Player.new(params[:name1])
-
+    DATABASE.contents << Player.new(params[:name1])
     redirect '/play'
   end
 
+
+
   get '/play' do
-    @player_1_name = database.contents[1].name
-    @player_2_name = database.contents[0].name
-    $current_db = database
+
+    # DATABASE.contents[1].played_before ? @returning = " back"
+    @player_1_name = DATABASE.contents[1].name
+    @player_2_name = COMPUTER.name
     erb(:play)
   end
 
   post '/combat_selection' do
-    database.contents[1].select_weapon(params[:selection])
-    database.contents[0].random_weapon
+    DATABASE.contents[1].select_weapon(params[:selection])
+    DATABASE.contents[0].random_weapon
     redirect '/combat_page'
   end
 
   get '/combat_page' do
     game = Game.new
-    @computer_opponent_name = database.contents[0].name
-    @computer_opponent_weapon = database.contents[0].weapon
+    @computer_opponent_name = DATABASE.contents[0].name
+    @computer_opponent_weapon = DATABASE.contents[0].weapon
 
-    @player_1_name = database.contents[1].name
-    @player_1_weapon = database.contents[1].weapon
+    @player_1_name = DATABASE.contents[1].name
+    @player_1_weapon = DATABASE.contents[1].weapon
 
-    computer_opponent = database.contents[0]
-    player1 = database.contents[1]
+    computer_opponent = DATABASE.contents[0]
+    player1 = DATABASE.contents[1]
     game.calculating_winner(player1, computer_opponent)
     @winner = game.result
+
+    @player_1_score = player1.points
+    @computer_opponent_score = computer_opponent.points
 
     erb(:combat_page)
   end

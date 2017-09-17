@@ -5,7 +5,7 @@ describe Player do
 
   describe '#instantiation' do
     it 'has name and points' do
-      new_player = Player.new('Rory', 100)
+      new_player = Player.new('Rory', 'Rock', 100)
       expect(new_player.name).to eq('Rory')
       expect(new_player.points).to eq(100)
     end

@@ -2,12 +2,13 @@
 
 class Player
 
-  attr_reader :name, :points, :weapon
+  attr_reader :name, :points, :weapon, :turns
 
-  def initialize(name = "Roborory", weapon = random_weapon, points = 100)
+  def initialize(name = "Roborory", weapon = random_weapon, points = 0, turns = 0)
     @name = name
     @points = points
     @weapon = weapon
+    @turns = turns
   end
 
   def player_store(location)
@@ -28,6 +29,12 @@ class Player
 
   def random_weapon
     @weapon = ['Rock', 'Paper', 'Scissors'].sample
+  end
+
+  private
+
+  def played_before?
+    turns > 0
   end
 
 end
