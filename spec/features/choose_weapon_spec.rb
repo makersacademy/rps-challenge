@@ -18,9 +18,9 @@ feature "Expects the player to choose a weapon" do
 
     sign_in_and_play
     # visit("/play")
-    expect(page).to have_content "Rock"
-    expect(page).to have_content "Paper"
-    expect(page).to have_content "Scissors"
+    expect(page).to have_button "Rock"
+    expect(page).to have_button "Paper"
+    expect(page).to have_button "Scissors"
   end
 
 
@@ -32,6 +32,14 @@ feature "Expects the player to choose a weapon" do
     # visit("/choice")
     click_button "Rock"
     expect(page).to have_content "Rob chose Rock!"
+  end
+
+
+  scenario "choose weapon to play and computer chooses its weapon" do
+    sign_in_and_play
+    click_button "Rock"
+    expect(page).to have_content "Rob chose Rock!"
+    expect(page).to have_content "Computer chose Scissors!"
   end
 
 
