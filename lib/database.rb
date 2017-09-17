@@ -13,6 +13,12 @@ class PlayerDatabase
     array[0..-2].join(", ") + " and " + array[-1]
   end
 
+  def new_player(entry = 'none', name = nil)
+    entry == 'new entry' ? (@contents << Player.new(name)): (    @contents << entry)
+    # unless entry == 'none'
+
+  end
+
 private
 
   def array_of_names

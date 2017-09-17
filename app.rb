@@ -17,7 +17,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    DATABASE.contents << Player.new(params[:name1])
+    DATABASE.new_player('new entry',params[:name1])
     redirect '/play'
   end
 
