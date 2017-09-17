@@ -1,6 +1,6 @@
 require "sinatra/base"
-# require "./lib/player"
-# require "./lib/weapon"
+require "./lib/game"
+require "./lib/computer"
 
 
 class Rps < Sinatra::Base
@@ -14,6 +14,10 @@ class Rps < Sinatra::Base
     erb :index
   end
 
+
+  get "/result" do
+    erb @game.result
+  end
 
   post "/names" do
     session[:player_1_name] = params[:player_1_name]
