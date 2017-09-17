@@ -15,11 +15,11 @@ I would like to be able to play rock/paper/scissors
 ```
 
 ## To run
-$ git clone git@github.com:jameshughes7/rps-challenge.git
-$ cd rps-challenge
-$ bundle install
-$ rackup
-Visit http://localhost:9292
+- git clone git@github.com:jameshughes7/rps-challenge.git
+- cd rps-challenge
+- bundle install
+- rackup
+- Visit http://localhost:9292
 
 ## Technology
 - Ruby
