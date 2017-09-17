@@ -6,7 +6,7 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-  erb(:index)
+    erb(:index)
   end
 
   post '/name' do
@@ -15,12 +15,12 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-      @game = Game.new(session)
+    @game = Game.new(session)
 
       # @name = session[:name]
       # @choice = session[:choice]
       # @computer_choice = session[:computer_choice]
-      erb(:play)
+    erb(:play)
   end
 
   post '/play' do

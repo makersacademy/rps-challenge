@@ -9,3 +9,7 @@
 <div id='computer'>
   Computer chose <%= @game.computer_choice %>
 </div>
+
+<% if @game.win? %>
+<%= @game.name %> wins!
+<% end %>
