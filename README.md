@@ -1,5 +1,7 @@
 # Project: RPS Challenge
 
+https://travis-ci.org/wmcabangon/rps-challenge.svg?branch=master
+
 ## My Approach
 
 I took a TDD approach to building this web application. The first step was to enable the application to accept the player's name, which was received via post request. A Player class was then created to accept this name.
