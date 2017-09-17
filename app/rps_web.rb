@@ -30,7 +30,7 @@ class RPSWeb < Sinatra::Application
     @player_1.weapon_choice(params[:weapon])
     @player_2.weapon_choice
     @game = $game
-    session[:result] = @game.result
+    @result = @game.result
     redirect '/result'
   end
 
@@ -38,8 +38,14 @@ class RPSWeb < Sinatra::Application
     @game = $game
     @player_1 = $player_1
     @player_2 = $player_2
-    @result = session[:result]
+    @result = @game.result
     erb :result
+  end
+
+  post '/reset_game' do
+    @game = $game
+    @game.reset_game
+    redirect params[:action] == "Reset Game" ? '/play' : '/'
   end
 
   # start the server if ruby file executed directly

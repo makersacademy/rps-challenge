@@ -1,7 +1,7 @@
 <%= erb(:play) %>
 <div class="results">
   <h2>Result:</h2>
-  <%= @player_1.name %> chose <%= @player_1.weapon.capitalize %>
+  <%= @game.player_1.name %> chose <%= @game.player_1.weapon.to_s %>
   <%= @player_2.name %> chose <%= @player_2.weapon.capitalize %>
   <% if @result == 'Draw' %>
   It's a draw!
@@ -16,6 +16,7 @@
   <p><%= @game.player_2.name %>: <%= @game.player_2_score %></p>
   <p class="rounds">Round <%= @game.rounds %></p>
 </div>
+
 <div class="reset">
   <%= erb(:reset_game) %>
 </div>
