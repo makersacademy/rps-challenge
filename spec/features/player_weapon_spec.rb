@@ -1,7 +1,6 @@
 feature 'weapon' do
   scenario 'player can choose their weapon' do
-    visit("/")
-    find("option[value='Rock']").click
-    click_button "Fight"
+    sign_in_and_play
+    expect(page).to have_content "Benjamin, you chose the weapon Rock"
   end
 end

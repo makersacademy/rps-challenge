@@ -1,7 +1,7 @@
 class Weapon
-  
+
   def weapon_choice
-    [:rock, :paper, :scissors]
+    ["Rock", "Paper", "Scissors"]
   end
 
 end
