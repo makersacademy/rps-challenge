@@ -1,0 +1,12 @@
+<center>
+  <h2>
+    <%= @game.player_1 %>: <%= @game.player_1_choice %>
+    <br>
+    Computer: <%= @game.computer_choice.to_s %>
+  </h2>
+
+  <h1>You lost!</h1>
+  <form action="/">
+    <input type="submit" value="OK">
+  </form>
+</center>
