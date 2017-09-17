@@ -2,8 +2,8 @@ require 'game'
 
 RSpec.describe Game do
   subject(:game) { described_class.new(player_1) }
-  let(:computer) {double :computer}
-  let(:player) {double :player}
+  let(:computer) { double :computer }
+  let(:player) { double :player }
 
   describe '#result' do
     pending 'returns player 1 as winner if player 1 chooses rock and computer chooses scissors'

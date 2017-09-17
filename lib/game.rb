@@ -5,6 +5,10 @@ class Game
 
   WEAPONS = [:rock, :paper, :scissors]
 
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
+
   attr_reader :winner, :player_1, :player_2
 
   def initialize(player_1, player_2 = Computer.new)
@@ -14,32 +18,8 @@ class Game
   end
 
   def result
-    if @player_1.weapon == :rock
-      if @player_2.weapon == :scissors
-        @winner = @player_1.name
-      elsif @player_2.weapon == :paper
-        @winner = @player_2.name
-      else
-        @winner = 'Draw'
-      end
-    elsif @player_1.weapon == :paper
-      if @player_2.weapon == :rock
-        @winner = @player_1.name
-      elsif @player_2.weapon == :scissors
-        @winner = @player_2.name
-      else
-        @winner = 'Draw'
-      end
-    elsif @player_1.weapon == :scissors
-      if @player_2.weapon == :paper
-        @winner = @player_1.name
-      elsif @player_2.weapon == :rock
-        @winner = @player_2.name
-      else
-        @winner = 'Draw'
-      end
-    end
-    @winner
+    return 'draw' if @player1.weapon == @player2.weapon
+    RULES[@player_1.weapon] == @player_2.weapon ? @player_1 : @player_2
   end
 
 end
