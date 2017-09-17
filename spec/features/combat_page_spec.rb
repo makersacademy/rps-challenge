@@ -1,6 +1,7 @@
 feature 'combat page displays the fight' do
 
   scenario 'see names of combatants and their weapons' do
+    reset_database
     give_name_heraldo
     click_button 'Rock'
     expect(page).to have_content('Heraldo sends Rock in to fight')
@@ -11,12 +12,14 @@ feature 'combat page displays the fight' do
   end
 
   scenario 'sees declaration of winner' do
+    reset_database
     give_name_heraldo
     click_button 'Rock'
     expect(page).to have_content('Shall we play again?')
   end
 
   scenario "cancelling out randomness - making sure right return value" do
+    reset_database
     allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
     visit('/')
     give_name_heraldo

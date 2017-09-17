@@ -7,10 +7,11 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
-    DATABASE = PlayerDatabase.new
-    COMPUTER = DATABASE.contents[0]
+  DATABASE = PlayerDatabase.new
+  COMPUTER = DATABASE.contents[0]
 
   get '/' do
+
     @player_2_name = COMPUTER.name
     erb(:index)
   end
