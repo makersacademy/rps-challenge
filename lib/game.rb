@@ -22,10 +22,8 @@ class Game
 
     @current_scenario = [first_player.weapon, second_player.weapon]
 
-
-
     scenarios_v_points.find do |potential_scenario, point_value|
-
+      if potential_scenario == current_scenario
          first_player.point_change('add', point_value)
          second_player.point_change('subtract', point_value)
          @round_score += point_value
@@ -36,7 +34,7 @@ class Game
            @result = "#{point_value} point for #{first_player.name}! Shall we play again?"
          end
 
-
+      end
 
       end
 
@@ -44,8 +42,8 @@ class Game
 
   def play_over_multiple(array)
     pair_off = []
+    pair_off << [array[-1], array[0]] unless array.count == 2
     array.each_cons(2){|set| pair_off << set}
-    pair_off << [array[-1], array[0]]
     pair_off.each{|x| calculating_winner(*x)}
   end
 

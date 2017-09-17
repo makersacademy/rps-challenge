@@ -5,5 +5,6 @@ def give_name_heraldo
 end
 
 def reset_database
-  RPS::DATABASE.contents.slice!(1..-1)
+  RPS::DATABASE.contents.slice!(0..-1)
+  RPS::DATABASE.contents[0]=Player.new
 end
