@@ -9,19 +9,19 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:player_name])
+    @player = Player.create(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
+    @player = Player.instance
     erb :play
   end
 
   post '/attack' do
     @computer = Player.new
     @computer_attack = @computer.random_attack
-    @player = $player
+    @player = Player.instance
     @attack = params[:attack]
     erb :attack
   end

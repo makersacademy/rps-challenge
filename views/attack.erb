@@ -12,7 +12,7 @@
   <h1 align='center'> <%= @player.name %> WINS! </h1>
 <% elsif (@attack == "Paper" && @computer_attack == 'Rock') %>
   <h1 align='center'> <%= @player.name %> WINS! </h1>
-<% elsif (@attack == "Scissors" && @@computer_attack == 'Paper') %>
+<% elsif (@attack == "Scissors" && @computer_attack == 'Paper') %>
   <h1 align='center'> <%= @player.name %> WINS! </h1>
 <% else %>
   <h1 align='center'> <%= @player.name %> LOST! </h1>
