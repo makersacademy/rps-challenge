@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h1> <%= @player1 %>, Select your oponent </h1>
+  <h2>Play against</h2>
+  <a href="/computer"> Computer </a>
+  <h2> Or</h2>
+  <div class="row">
+    <div class="col-sm-1 col-md-2 col-lg-3" ></div>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+      <form class="begin" action="/player" method="post">
+        <header>another player!</header>
+        <div class ="form-group row">
+          <label for="player1_name" class="col-3 col-form-label">Player 2 :</label>
+          <div class="col-8">
+            <input type="text" name="player2_name" placeholder="Enter your name" class="form-control">
+          </div>
+        </div>
+        <button type="submit" class=btn>Start</button>
+      </form>
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-3"></div>
+  </div>
+</div>
