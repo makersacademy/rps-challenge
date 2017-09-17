@@ -15,6 +15,14 @@ describe PlayerDatabase do
       expect(real_player_database.contents[0].name).to eq('Roborory')
     end
 
+    it 'LIVE: can assign a weapon to a player' do
+      real_player = Player.new("Rory")
+      real_player_database = PlayerDatabase.new
+      real_player_database.contents << real_player
+      real_player_database.contents[1].select_weapon('rock')
+      expect(real_player.weapon).to eq 'rock'
+    end
+
   end
 
 end
