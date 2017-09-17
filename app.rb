@@ -19,6 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/attack' do
+    @computer = Player.new
     @player = $player
     @attack = params[:attack]
     erb :attack
