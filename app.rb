@@ -24,7 +24,6 @@ class RPS < Sinatra::Base
 
 
   get '/play' do
-
     # DATABASE.contents[1].played_before ? @returning = " back"
     @player_1_name = DATABASE.contents[1].name
     @player_2_name = COMPUTER.name
