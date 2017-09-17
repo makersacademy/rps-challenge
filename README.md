@@ -1,10 +1,10 @@
 # ROCK PAPER SCISSORS Challenge
 
+I did not fully complete the challenge. I ran out of time and didn't add the logic for giving a result of the battle.
+
 Task
 ----
 The following user stories were provided to build a web app of the famous 'Rock Paper Scissors' game.
-
-I did not fully complete the challenge. I ran out of time and didn't add the logic for giving a result of the battle.
 
 ```sh
 As a marketeer
