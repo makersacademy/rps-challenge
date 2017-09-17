@@ -13,6 +13,8 @@ class Rps < Sinatra::Base
   get "/" do
     $test_computer = Computer.new
     $test_computer.choice
+    $test_game = Game.new
+    $test_game.result(@weapon, @computer_choice)
     erb :index
   end
 
@@ -24,7 +26,9 @@ class Rps < Sinatra::Base
 
   post "/outcome" do
     computer = Computer.new
+    game = Game.new
     computer.choice
+    game.result(weapon = @weapon, computer_choice = @computer_choice)
     erb :outcome
     # redirect "/play"
   end

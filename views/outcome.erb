@@ -1,8 +1,13 @@
-<%= @player_1_name %> chose <%= @weapon %>!
+
+<h3><%= @player_1_name %> chose <%= @weapon %>!</h3>
 </br>
 
 
-<%= @player_2_name %> chose <%= @computer_choice %>!
+<h3><%= @player_2_name %> chose <%= @computer_choice %>!</h3>
+</br>
+
+
+<h3> Result: You... </h3>
 
 <form action="/play" method= "get">
   <input type="Submit" value="OK">

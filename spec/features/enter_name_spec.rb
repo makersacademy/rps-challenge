@@ -13,6 +13,8 @@ feature "Enter name" do
   scenario "submitting name" do
     p $test_computer
     p $test_computer.choice
+    p $test_game
+    p $test_game.result(@weapon, @computer_choice)
     # visit ("/")
     # fill_in :player_1_name, with: "Rob"
     # # fill_in :player_2_name, with: "Computer"

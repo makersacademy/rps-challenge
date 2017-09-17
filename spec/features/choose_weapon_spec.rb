@@ -41,7 +41,7 @@ feature "Expects the players to choose weapons" do
     sign_in_and_play
     click_button "Rock"
     # expect(page).to have_content "Rob chose Rock!"
-    expect(page).to have_content "Computer chose Scissors!"
+    expect(page).to have_content "Computer chose scissors!"
   end
 
 
