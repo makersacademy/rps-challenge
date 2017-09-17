@@ -29,14 +29,13 @@ class RPSWeb < Sinatra::Application
     @player_2 = $player_2
     @player_1.weapon_choice(params[:weapon])
     @player_2.weapon_choice
-    @player1.weapon
-    @player2.weapon
     @game = $game
     session[:result] = @game.result
     redirect '/result'
   end
 
   get '/result' do
+    @game = $game
     @player_1 = $player_1
     @player_2 = $player_2
     @result = session[:result]
