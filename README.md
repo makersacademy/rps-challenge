@@ -1,4 +1,4 @@
-![RPS Logo](public/img/logo.png)
+![RPS Logo](public/img/logo.jpg)
 
 Rock, Paper, Scissors !
 ----
