@@ -1,7 +1,8 @@
 class Computer
 attr_reader :name, :weapon
-  def name
-    "Robert the Robot"
+
+  def initialize
+    @name = "Robert the Robot"
   end
 
   def weapons
