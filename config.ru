@@ -1,2 +1,2 @@
-require './app'
-run RPSWeb
+require './rbs'
+run RPS
