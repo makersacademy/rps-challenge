@@ -1,9 +1,21 @@
-<h2>Result:</h2>
-<%= @player_1.name %> chose <%= @player_1.weapon.capitalize %>
-<%= @player_2.name %> chose <%= @player_2.weapon.capitalize %>
+<%= erb(:play) %>
+<div class="results">
+  <h2>Result:</h2>
+  <%= @player_1.name %> chose <%= @player_1.weapon.capitalize %>
+  <%= @player_2.name %> chose <%= @player_2.weapon.capitalize %>
+  <% if @result == 'Draw' %>
+  It's a draw!
+  <% else %>
+  Winner: <%= @result.name%>
+  <% end %>
+</div>
 
-<% if @result == 'Draw' %>
-It's a draw!
-<% else %>
-Winner: <%= @result.name%>
-<% end %>
+<div class="scores">
+  <h2>Score:</h2>
+  <p><%= @game.player_1.name %>: <%= @game.player_1_score %></p>
+  <p><%= @game.player_2.name %>: <%= @game.player_2_score %></p>
+  <p class="rounds">Round <%= @game.rounds %></p>
+</div>
+<div class="reset">
+  <%= erb(:reset_game) %>
+</div>
