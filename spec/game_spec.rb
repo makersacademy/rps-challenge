@@ -6,7 +6,6 @@ describe Game do
   let(:players) { [player_1, player_2] }
   subject(:game) { described_class.new }
 
-
   describe '#calculating_winner' do
     it 'finds a winner' do
       player_1 = double :player, :weapon => 'Rock', :name => 'Rory', :points => 0

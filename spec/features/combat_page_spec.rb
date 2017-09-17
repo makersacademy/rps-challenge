@@ -16,4 +16,13 @@ feature 'combat page displays the fight' do
     expect(page).to have_content('Shall we play again?')
   end
 
+  scenario "cancelling out randomness - making sure right return value" do
+    allow_any_instance_of(Array).to receive(:sample).and_return('Scissors')
+    visit('/')
+    p $current_db.contents
+    give_name_heraldo
+    click_button 'Rock'
+    expect(page).to have_content "Heraldo sends Rock in to fight Roborory's Scissors 1 point for Heraldo! Shall we play again?"
+  end
+
 end

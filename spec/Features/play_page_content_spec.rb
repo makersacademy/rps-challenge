@@ -7,5 +7,4 @@ feature 'play page links' do
     expect(page).to have_selector("input[type=submit][value='Scissors']")
   end
 
-
 end
