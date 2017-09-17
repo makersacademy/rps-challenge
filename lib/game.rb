@@ -6,6 +6,10 @@ class Game
 #     @computer = computer
 #   end
 
+  # def initialize
+  #   @weapon = weapon
+  #   @computer_choice = computer_choice
+  # end
 
 WINS = {rock: :scissors,
         paper: :rock,
@@ -13,11 +17,14 @@ WINS = {rock: :scissors,
 
 
   def result(weapon = @weapon, computer_choice = @computer_choice)
-    if weapon == computer_choice
+    if @weapon == @computer_choice
       :draw
-    else WINS.to_enum.include?([arry]) ? win: :Lose
+    else WINS.to_include?([@weapon, @computer_choice]) ? win: :lose
       end
   end
+
+
+
 
 
 end
