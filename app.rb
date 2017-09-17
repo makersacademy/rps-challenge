@@ -4,10 +4,9 @@ require './lib/player'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
 
-enable :sessions
-
-set :session_secret, 'super secret'
+  set :session_secret, 'super secret'
 
   get '/' do
     erb :index
@@ -34,7 +33,5 @@ set :session_secret, 'super secret'
     erb :finish
   end
 
-
-
-run! if app_file == $0
+  run! if app_file == $0
 end

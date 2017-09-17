@@ -1,16 +1,16 @@
 require './lib/game'
 
 describe Game do
-  let(:player) {Player.new("Marcus")}
-  let (:computer_choice) {"Scissors"}
-  subject(:game) {described_class.new(:player, "Rock")}
+  let(:player) { Player.new("Marcus") }
+  let(:computer_choice) { "Scissors" }
+  subject(:game) { described_class.new(:player, "Rock") }
 
   it 'is initialized with the player choice' do
     expect(game.choice).to eq 'Rock'
   end
 
   it 'is initialzed with the cpu choice decided' do
-    allow(game).to receive(:computer_choice) {"Rock"}
+    allow(game).to receive(:computer_choice) { "Rock" }
     expect(game.computer_choice).to eq "Rock"
   end
 
