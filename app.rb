@@ -16,7 +16,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
       @game = Game.new(session)
-      #
+
       # @name = session[:name]
       # @choice = session[:choice]
       # @computer_choice = session[:computer_choice]
