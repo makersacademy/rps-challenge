@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
   get '/' do
     "ROCK PAPER SCISSORS!"
     'Testing infrastructure working'
