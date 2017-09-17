@@ -1,17 +1,18 @@
-You chose <%= @game.player_1_choice.upcase %>
+<font face="futura" color="red" size="5"><h2><center>YOU CHOSE <%= @game.player_1_choice.upcase %></center></h2></font>
+<center>
 
 <% if @winner == true %>
-The computer chose <%= @computer_choice.upcase %>, YOU WIN!
+<font face="futura" color="green" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+  <font face="futura" color="green" size="9"><h2>YOU WIN!</h2></font>
 <% elsif @winner == false %>
-The computer chose <%= @computer_choice.upcase %>, YOU LOSE!
+<font face="futura" color="red" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+    <font face="futura" color="green" size="9"><h2>YOU LOSE!</h2></font>
 <% else %>
-The computer chose <%= @computer_choice.upcase %>, YOU DRAW!
+<font face="futura" color="yellow" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+    <font face="futura" color="yellow" size="9"><h2>YOU DRAW!</h2></font>
 <% end %>
 
-<form action='/'>
+</center>
+<center><form action='/'>
 <input type="submit" value="PLAY AGAIN!"/>
-</form>
-
-<!-- <form action="http://google.com">
-    <input type="submit" value="Go to Google" />
-</form> -->
+</form></center>

@@ -1,0 +1,14 @@
+<font face="futura" color="pink" size="5"><h2><center><%= @game.player_1.name.upcase %> CHOSE <%= @game.player_1_choice.upcase %></center></h2></font>
+<font face="futura" color="grey" size="5"><h2><center><%= @game.player_2.name.upcase %> CHOSE <%= @game.player_2_choice.upcase %></center></h2></font>
+
+<% if @winner == true %>
+<font face="futura" color="green" size="9"><h2><center><%= @game.player_1.name.upcase %> WINS!</center></h2></font>
+<% elsif @winner == false %>
+<font face="futura" color="green" size="9"><h2><center><%= @game.player_2.name.upcase %> WINS!</center></h2></font>
+<% else %>
+<font face="futura" color="yellow" size="9"><h2><center>YOU DRAW!</center></h2></font>
+<% end %>
+
+<center><form action='/'>
+<input type="submit" value="PLAY AGAIN!"/>
+</form></center>
