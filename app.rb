@@ -20,6 +20,7 @@ class RPS < Sinatra::Base
 
   post '/attack' do
     @computer = Player.new
+    @computer_attack = @computer.random_attack
     @player = $player
     @attack = params[:attack]
     erb :attack

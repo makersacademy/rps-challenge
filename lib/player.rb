@@ -5,7 +5,7 @@ class Player
     @attacks = ['Rock', 'Paper', 'Scissors']
   end
 
-  def random_attack
+  def random_attack(attacks = @attacks)
     attacks.sample
   end
 

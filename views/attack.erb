@@ -2,4 +2,18 @@
 
 <h1></h1><h1></h1><h1></h1>
 
-<h1 align='center'><%= @computer.name %> uses <%= @computer.random_attack %>!</h1>
+<h1 align='center'><%= @computer.name %> uses <%= @computer_attack %>!</h1>
+
+<h1></h1><h1></h1><h1></h1>
+
+<% if @attack == @computer_attack %>
+  <h1 align='center'> <%= 'DRAW!' %> </h1>
+<% elsif (@attack == "Rock" && @computer_attack == 'Scissors') %>
+  <h1 align='center'> <%= @player.name %> WINS! </h1>
+<% elsif (@attack == "Paper" && @computer_attack == 'Rock') %>
+  <h1 align='center'> <%= @player.name %> WINS! </h1>
+<% elsif (@attack == "Scissors" && @@computer_attack == 'Paper') %>
+  <h1 align='center'> <%= @player.name %> WINS! </h1>
+<% else %>
+  <h1 align='center'> <%= @player.name %> LOST! </h1>
+<% end %>
