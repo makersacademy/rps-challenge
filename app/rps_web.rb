@@ -1,5 +1,7 @@
 require 'sinatra'
 require './lib/player.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class RPSWeb < Sinatra::Application
 
@@ -12,6 +14,8 @@ class RPSWeb < Sinatra::Application
 
   post '/name' do
     $player_1 = Player.new(params[:player_1_name])
+    $player_2 = Computer.new
+    $game = Game.new($player_1, $player_2)
     redirect '/play'
   end
 
@@ -22,12 +26,20 @@ class RPSWeb < Sinatra::Application
 
   post '/weapons' do
     @player_1 = $player_1
+    @player_2 = $player_2
     @player_1.weapon_choice(params[:weapon])
+    @player_2.weapon_choice
+    @player1.weapon
+    @player2.weapon
+    @game = $game
+    session[:result] = @game.result
     redirect '/result'
   end
 
   get '/result' do
     @player_1 = $player_1
+    @player_2 = $player_2
+    @result = session[:result]
     erb :result
   end
 

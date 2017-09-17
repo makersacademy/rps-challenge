@@ -23,19 +23,19 @@ feature 'weapons' do
     scenario 'chooses rock' do
       sign_in_and_play
       click_on 'Rock'
-      expect(page).to have_content "Zoe chose Rock!"
+      expect(page).to have_content "Zoe chose Rock"
     end
 
     scenario 'chooses paper' do
       sign_in_and_play
       click_on 'Paper'
-      expect(page).to have_content "Zoe chose Paper!"
+      expect(page).to have_content "Zoe chose Paper"
     end
 
     scenario 'chooses scissors' do
       sign_in_and_play
       click_on 'Scissors'
-      expect(page).to have_content "Zoe chose Scissors!"
+      expect(page).to have_content "Zoe chose Scissors"
     end
   end
 end
