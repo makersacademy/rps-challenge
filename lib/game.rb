@@ -11,12 +11,24 @@ class Game
   end
 
   def win?
-    if @choice == 'rock'
-        @computer_choice == 'scissors' ? true : false
-    elsif @choice == 'paper'
-        @computer_choice == 'rock' ? true : false
-    elsif @choice == 'scissors'
-        @computer_choice ==  'paper' ? true : false
-    end
+    result == :win
+    # if @choice == 'rock'
+    #     @computer_choice == 'scissors' ? true : false
+    # elsif @choice == 'paper'
+    #     @computer_choice == 'rock' ? true : false
+    # elsif @choice == 'scissors'
+    #     @computer_choice ==  'paper' ? true : false
+    # end
   end
+
+  def result
+    return if @computer_choice.nil?
+    RPS[@choice][@computer_choice]
+  end
+
+  RPS = {
+    rock: { rock: :draw, paper: :lose, scissors: :win },
+    paper: { rock: :win, paper: :draw, scissors: :lose },
+    scissors: { rock: :lose, paper: :win, scissors: :draw }
+  }
 end

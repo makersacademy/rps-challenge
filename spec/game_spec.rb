@@ -32,7 +32,7 @@ RSpec.describe Game do
     end
     it 'is true when player choice is scissors and computer choice is paper' do
       expect(game.win?).to eq true
-      end
+    end
     it 'is false when player choice is paper and computer choice is scissors' do
       expect(game.win?).to eq false
     end
