@@ -4,7 +4,7 @@ describe Player do
   subject(:player) { described_class.new("Allanon") }
 
   describe '#name' do
-    it 'confirms the name of the player' do
+    it 'confirms the name of player1' do
       expect(player.name).to(eq("Allanon"))
     end
   end

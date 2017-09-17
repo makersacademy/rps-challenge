@@ -11,35 +11,37 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    player1 = Player.new(params[:player_1_name])
+    player2 = Computer.new
+    $game = Game.new(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
-    @player = @game.player
+    @player1 = @game.player1
+    @player2 = @game.player2
     erb :play
   end
 
   post '/rock' do
     @game = $game
-    @player = @game.player
-    @player.weapon_selector('Rock')
+    @player1 = @game.player1
+    @player1.weapon_selector('Rock')
     redirect '/play'
   end
 
   post '/paper' do
     @game = $game
-    @player = @game.player
-    @player.weapon_selector('Paper')
+    @player1 = @game.player1
+    @player1.weapon_selector('Paper')
     redirect '/play'
   end
 
   post '/scissors' do
     @game = $game
-    @player = @game.player
-    @player.weapon_selector('Scissors')
+    @player1 = @game.player1
+    @player1.weapon_selector('Scissors')
     redirect '/play'
   end
 

@@ -1,4 +1,5 @@
 class Computer
+attr_reader :name, :weapon
   def name
     "Robert the Robot"
   end
