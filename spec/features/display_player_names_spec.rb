@@ -36,6 +36,7 @@ end
     feature 'game chooses a random option' do
       scenario 'player chose rock, computer chose scissors at random' do
       sign_in_and_play
+      srand(3)
       click_button 'rock'
       expect(page).to have_content 'Computer chose scissors'
       end
