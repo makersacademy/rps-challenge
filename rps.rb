@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class RPSWeb < Sinatra::Base
+class RPS < Sinatra::Base
   set :sessions, true
   get '/' do
     erb(:index)
