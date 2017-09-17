@@ -1,7 +1,7 @@
 require 'player.rb'
 
 describe Player do
-  subject(:player) { described_class.new 'Example Player','rock' ,100 }
+  subject(:player) { described_class.new 'Example Player', 'rock', 100 }
 
   describe '#instantiation' do
     it 'has name and points' do

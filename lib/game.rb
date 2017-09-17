@@ -18,12 +18,12 @@ class Game
 
     scenarios_v_points.keys.each do |potential_scenario| if potential_scenario == current_scenario
 
-    scored_point_value = scenarios_v_points[potential_scenario]
+                                                           scored_point_value = scenarios_v_points[potential_scenario]
 
-    first_player.point_change('add', scored_point_value)
-    second_player.point_change('subtract', scored_point_value)
-    @result = "#{scored_point_value} point for #{first_player.name}!"
-    break
+                                                           first_player.point_change('add', scored_point_value)
+                                                           second_player.point_change('subtract', scored_point_value)
+                                                           @result = "#{scored_point_value} point for #{first_player.name}!"
+                                                           break
   else
     @result = "Draw!"
           end

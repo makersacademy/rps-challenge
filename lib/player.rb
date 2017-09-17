@@ -23,7 +23,7 @@ class Player
   end
 
   def select_weapon(choice)
-    @weapon = (choice)
+    @weapon = choice
   end
 
 end
