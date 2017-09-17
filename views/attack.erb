@@ -1,10 +1,6 @@
 <h1 align='center'><%= @player.name %> uses <%= @attack %>!</h1>
 
-<h1></h1><h1></h1><h1></h1>
-
 <h1 align='center'><%= @computer.name %> uses <%= @computer_attack %>!</h1>
-
-<h1></h1><h1></h1><h1></h1>
 
 <% if @attack == @computer_attack %>
   <h1 align='center'> <%= 'DRAW!' %> </h1>
@@ -17,3 +13,7 @@
 <% else %>
   <h1 align='center'> <%= @player.name %> LOST! </h1>
 <% end %>
+
+<form align='center' action='/play' method='get'>
+  <input type='submit' value='Play Again?'>
+</form>
