@@ -1,0 +1,14 @@
+<h1>Let's get ready to rumble!</h1>
+
+New player: <%= @player.name %>
+
+<h2>Choose your weapon:</h2>
+
+<form action= "/weapons" method= "post" >
+  <select name = "Weapons">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
