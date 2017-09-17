@@ -28,6 +28,13 @@ end
     scenario 'Computer chooses Rock' do
     sign_in_and_play
     click_button 'rock'
-    expect(page).to have_content 'Computer chose rock'
+    message = find(:css,'#computer').text.strip
+    expect(computer_choices).to include message
+    end
+
+    def computer_choices
+        [:rock, :paper, :scissors].map do |choice|
+          "Computer chose #{choice}"
+        end
     end
   end
