@@ -1,3 +1,9 @@
-<h1><%=@player%> vs Computer</h1>
+<h1><%=@game.player.name%> vs Computer</h1>
 
-Player Weapon: <%=@weapon%>
+Player Weapon: <%=@game.choice%>
+
+Computer Weapon: <%=@game.computer_choice%>
+
+<h2>Outcome</h2>
+
+<%=@game.rps_game%>

@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 
 class RPS < Sinatra::Base
+
 
 enable :sessions
 
@@ -11,23 +14,23 @@ set :session_secret, 'super secret'
   end
 
   post '/names' do
-    session[:Player] = params[:Player]
+    $player = Player.new(params[:Player])
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:Player]
+    @player = $player
     erb :play
   end
 
   post '/weapons' do
-    session[:weapons] = params[:Weapons]
+    @player = $player
+    $game = Game.new($player, params[:Weapons])
     redirect '/finish'
   end
 
   get '/finish' do
-    @weapon = session[:weapons]
-    @player = session[:Player]
+    @game = $game
     erb :finish
   end
 
