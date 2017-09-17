@@ -15,9 +15,9 @@ class Rps < Sinatra::Base
   end
 
 
-  get "/result" do
-    erb @game.result
-  end
+  # get "/outcome" do
+  #   erb @game.result
+  # end
 
   post "/names" do
     session[:player_1_name] = params[:player_1_name]
@@ -42,14 +42,14 @@ class Rps < Sinatra::Base
 
   post "/play" do
     session[:weapon] = params[:weapon]
-    redirect "/choice"
+    redirect "/outcome"
   end
 
 
-  get "/choice" do
+  get "/outcome" do
     @player_1_name = session[:player_1_name]
     @weapon = session[:weapon]
-    erb :choice
+    erb :outcome
   end
 
 
