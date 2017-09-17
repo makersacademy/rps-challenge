@@ -1,11 +1,17 @@
-you chose <%= @game.player_1_choice %>
-
-<%= @winner %>
+You chose <%= @game.player_1_choice.upcase %>
 
 <% if @winner == true %>
-YOU WIN
-<%elsif @winner == "draw"%>
-YOU DRAW
-<%else%>
-YOU WIN
-<%end%>
+The computer chose <%= @computer_choice.upcase %>, YOU WIN!
+<% elsif @winner == false %>
+The computer chose <%= @computer_choice.upcase %>, YOU LOSE!
+<% else %>
+The computer chose <%= @computer_choice.upcase %>, YOU DRAW!
+<% end %>
+
+<form action='/'>
+<input type="submit" value="PLAY AGAIN!"/>
+</form>
+
+<!-- <form action="http://google.com">
+    <input type="submit" value="Go to Google" />
+</form> -->

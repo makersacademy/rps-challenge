@@ -29,7 +29,8 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = $game
-    @winner = @game.win?(@game.computer_choice?,@game.player_1_choice)
+    @computer_choice = @game.computer_choice?
+    @winner = @game.win?(@game.player_1_choice, @computer_choice)
     erb(:result)
   end
 

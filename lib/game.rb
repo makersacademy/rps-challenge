@@ -5,7 +5,6 @@ class Game
 
   WIN = { 'rock' => 'scissors', 'scissors' => 'paper', 'paper' => 'rock' }
 
-
   def initialize(player_1)
     @player_1 = player_1
   end

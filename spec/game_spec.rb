@@ -31,4 +31,16 @@ describe Game do
     game = Game.new(player)
     expect(game.win?('paper','paper')).to eq 'draw'
   end
+
+  it 'checks loss method if you pick paper and scissors' do
+    player = double
+    game = Game.new(player)
+    expect(game.win?('paper','scissors')).to eq false
+  end
+
+  it 'checks loss method if you pick paper and rock' do
+    player = double
+    game = Game.new(player)
+    expect(game.win?('paper','rock')).to eq true
+  end
 end
