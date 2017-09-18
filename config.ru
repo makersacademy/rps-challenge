@@ -1,0 +1,2 @@
+require './rbs'
+run RPS
