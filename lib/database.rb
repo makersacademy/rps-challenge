@@ -14,7 +14,7 @@ class PlayerDatabase
   end
 
   def new_player(entry = 'none', name = nil)
-    entry == 'new entry' ? (@contents << Player.new(name)): (    @contents << entry)
+    entry == 'new entry' ? (@contents << Player.new(name)) : (@contents << entry)
     # unless entry == 'none'
 
   end
@@ -22,7 +22,7 @@ class PlayerDatabase
 private
 
   def array_of_names
-    @names = contents.map{|x| x.name}
+    @names = contents.map { |x| x.name }
   end
 
 end

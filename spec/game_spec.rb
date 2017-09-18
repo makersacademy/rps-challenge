@@ -26,19 +26,17 @@ describe Game do
 
   describe '#play_over_multiple' do
     it 'plays over a even matched group to find a draw' do
-    player_1 = double :player, :weapon => 'Rock', :name => 'Rory', :points => 0
-    player_2 = double :player, :weapon => 'Rock', :name => 'Opponent', :points => 0
-    player_3 = double :player, :weapon => 'Rock', :name => 'Opponent2', :points => 0
-    allow(player_1).to receive(:point_change)
-    allow(player_2).to receive(:point_change)
-    allow(player_3).to receive(:point_change)
+      player_1 = double :player, :weapon => 'Rock', :name => 'Rory', :points => 0
+      player_2 = double :player, :weapon => 'Rock', :name => 'Opponent', :points => 0
+      player_3 = double :player, :weapon => 'Rock', :name => 'Opponent2', :points => 0
+      allow(player_1).to receive(:point_change)
+      allow(player_2).to receive(:point_change)
+      allow(player_3).to receive(:point_change)
 
-    game.play_over_multiple([player_1, player_2, player_3,player_1,player_2])
-    expect(game.result).to eq 'Draw! Shall we play again?'
+      game.play_over_multiple([player_1, player_2, player_3, player_1, player_2])
+      expect(game.result).to eq 'Draw! Shall we play again?'
     end
   end
-
-
 
   # describe 'calculating a winner' do
   #   it 'can look for a winner' do

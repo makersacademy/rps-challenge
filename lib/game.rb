@@ -23,32 +23,31 @@ class Game
     @current_scenario = [first_player.weapon, second_player.weapon]
 
     scenarios_v_points.find do |potential_scenario, point_value|
-      if potential_scenario == current_scenario
-         first_player.point_change('add', point_value)
-         second_player.point_change('subtract', point_value)
-         @round_score += point_value
+        if potential_scenario == current_scenario
 
-         if round_score == 0
-           @result = 'Draw! Shall we play again?'
-         else
-           @result = "#{point_value} point for #{first_player.name}! Shall we play again?"
-         end
+        first_player.point_change('add', point_value)
+        second_player.point_change('subtract', point_value)
+        @round_score += point_value
 
-      end
+        end
 
-      end
+    end
+
+    return @result = 'Draw! Shall we play again?' if round_score == 0
+
+    @result = "#{round_score} point for #{first_player.name}! Shall we play again?"
 
   end
 
   def play_over_multiple(array)
     pair_off = array.combination(2).to_a
-    pair_off.each {|set| calculating_winner(*set)}
+    pair_off.each { |set| calculating_winner(*set) }
   end
 
 private
 
-def a_possible_scenario?
-  @scenarios_v_points.keys.include? @current_scenario
-end
+  def a_possible_scenario?
+    @scenarios_v_points.keys.include? @current_scenario
+  end
 
 end

@@ -21,7 +21,7 @@ describe PlayerDatabase do
 
   describe 'describe players in database' do
     it 'can list the players who are playing' do
-      player_database.contents.push(player_2,player_3)
+      player_database.contents.push(player_2, player_3)
       expect(player_database.list_of_player_names).to eq "Rory, Light Yagami and Misa Misa"
     end
 
@@ -43,7 +43,6 @@ describe PlayerDatabase do
       player_database.new_player('new entry', 'L')
       expect(player_database.list_of_player_names).to eq "Rory and L"
     end
-
 
   end
 

@@ -17,11 +17,9 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    DATABASE.new_player('new entry',params[:name1])
+    DATABASE.new_player('new entry', params[:name1])
     redirect '/play'
   end
-
-
 
   get '/play' do
     # DATABASE.contents[1].played_before ? @returning = " back"
@@ -37,7 +35,6 @@ class RPS < Sinatra::Base
   end
 
   get '/combat_page' do
-
 
     @computer_opponent_name = DATABASE.contents[0].name
     @computer_opponent_weapon = DATABASE.contents[0].weapon
