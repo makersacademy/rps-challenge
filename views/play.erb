@@ -14,5 +14,17 @@
 <body background="https://img00.deviantart.net/4385/i/2014/211/0/0/gon_jajanken_wallpaper_by_mistercharless-d7sxht2.jpg">
 <h1 style="text-align:center; color:#0B0548;">Rock, Paper, Scissors!</h1>
 <h2 style="text-align:center; color:#F4E25E;" id="lights"><%= $player.name.upcase %></h2>
-
+<h3 style="text-align:center; color:white"> Choose your weapon!</h3>
+<form action="/rock" method="post">
+  <div style="float:left"><input type="submit" style="width:400px;height:460px;" value="ROCK">
+  </form>
+</div>
+<div style="float:left"><form action="/paper" method="post">
+  <input type="submit" style="width:400px;height:460px;" value="PAPER">
+</form>
+</div>
+<div style="float:left"><form action="/scissors" method="post">
+  <input type="submit" style="width:400px;height:460px;" value="SCISSORS">
+</div>
+</form>
 </body>

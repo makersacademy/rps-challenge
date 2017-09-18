@@ -1,0 +1,17 @@
+<body background="https://img00.deviantart.net/4385/i/2014/211/0/0/gon_jajanken_wallpaper_by_mistercharless-d7sxht2.jpg">
+<h1 style="text-align:center; color:#0B0548;">Rock, Paper, Scissors!</h1>
+<% if @computer == "Scissors" %>
+  <h1 style="text-align:center; color:#A3FB6A">You picked Rock and Computer picked Scissors <br>YOU WON, <%= $player.name.upcase %>!</h1>
+<% elsif @computer == "Paper" %>
+  <h1 style="text-align:center; color:#D30909">You picked Rock and Computer picked Paper <br>YOU LOST, <%= $player.name.upcase %>!</h1>
+<% elsif @computer == "Rock" %>
+  <h1 style="text-align:center; color:#F5AD09">You picked Rock and Computer picked Rock <br>IT'S A DRAW!</h1>
+  <% end %>
+
+<h2 style="text-align:center; color:white">Play again?</h2>
+<center>
+  <form action='/play' method='get'>
+  <input type="submit" value="Play again">
+</form>
+</center>
+</body>

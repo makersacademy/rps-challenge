@@ -15,8 +15,12 @@ post "/names" do
   redirect '/play'
 end
 
+post '/rock' do
+  @computer = ["Rock", "Paper", "Scissors"].sample
+  erb :rock
+end
+
 get '/play' do
-  @game = $game
   erb :play
 end
 
