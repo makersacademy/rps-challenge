@@ -36,17 +36,15 @@ class RPS < Sinatra::Base
 
   get '/combat_page' do
 
-    @computer_opponent_name = DATABASE.contents[0].name
-    @computer_opponent_weapon = DATABASE.contents[0].weapon
+    @computer_opponent_name = COMPUTER.name
+    @computer_opponent_weapon = COMPUTER.weapon
 
     @player_1_name = DATABASE.contents[1].name
     @player_1_weapon = DATABASE.contents[1].weapon
 
-    computer_opponent = DATABASE.contents[0]
-
     game = Game.new
     player1 = DATABASE.contents[1]
-    game.play_over_multiple([player1, computer_opponent])
+    game.play_over_multiple([player1, COMPUTER])
     @winner = game.result
 
     @player_1_score = player1.points
