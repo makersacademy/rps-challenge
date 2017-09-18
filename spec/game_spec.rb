@@ -33,7 +33,7 @@ describe Game do
       allow(player_2).to receive(:point_change)
       allow(player_3).to receive(:point_change)
 
-      game.play_over_multiple([player_1, player_2, player_3, player_1, player_2])
+      game.play_game([player_1, player_2, player_3, player_1, player_2])
       expect(game.result).to eq 'Draw! Shall we play again?'
     end
   end

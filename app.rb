@@ -44,7 +44,7 @@ class RPS < Sinatra::Base
 
     game = Game.new
     player1 = DATABASE.contents[1]
-    game.play_over_multiple([player1, COMPUTER])
+    game.play_game([player1, COMPUTER])
     @winner = game.result
 
     @player_1_score = player1.points

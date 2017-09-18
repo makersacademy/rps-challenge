@@ -31,7 +31,7 @@ class Game
 
   end
 
-  def play_over_multiple(array)
+  def play_game(array)
     pair_off = array.combination(2).to_a
     pair_off.each { |set| calculating_winner(*set) }
   end
