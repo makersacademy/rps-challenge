@@ -41,10 +41,8 @@ class Game
   end
 
   def play_over_multiple(array)
-    pair_off = []
-    pair_off << [array[-1], array[0]] unless array.count == 2
-    array.each_cons(2){|set| pair_off << set}
-    pair_off.each{|x| calculating_winner(*x)}
+    pair_off = array.combination(2).to_a
+    pair_off.each {|set| calculating_winner(*set)}
   end
 
 private
