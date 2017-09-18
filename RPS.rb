@@ -1,9 +1,11 @@
 require 'sinatra'
 require_relative 'lib/player.rb'
+require_relative 'lib/game.rb'
+
 
 class RPS < Sinatra::Base
 
-attr_reader :selection
+attr_reader :player
 
 enable :sessions
 
@@ -12,24 +14,26 @@ enable :sessions
   end
 
   post '/names' do
-    $player_name = Player.new(params[:player_name])
+    $player = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player_name.player_name
+    @player_name = $player.player_name
     erb :play
   end
 
   post '/battle' do
-    @player_name = $player_name.player_name
-    @selection = params[:selection]
+    $game = Game.new(params[:Weapon])
     redirect '/throwdown'
   end
 
   get '/throwdown' do
-    @player_name = $player_name.player_name
-    @selection = params[:selection] #forced need to set this to :selection
+    @player_name = $player.player_name
+    @weapon = $game.weapon
+    @weapon2 = $game.weapon2
+    @game = $game.result
+    p @game
     erb :throwdown
   end
 
