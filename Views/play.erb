@@ -1,0 +1,30 @@
+
+
+
+<h1>Step in to the arena, <%= DATABASE.list_of_player_names %>. You there, <%= @player_1_name %>, how shall you fight <%= @player_2_name %>? Select your weapon!</h1>
+
+<div>
+
+    <a href="/combat">
+
+  </a>
+
+
+  <form action = "/combat_selection" method = "post">
+
+    <img src="/rock.png" alt="Rock" style="height:325px;border:0" name="rock">
+      <input type="submit" name="selection" value ="Rock"/>
+
+    <img src="/scissors.png" alt="Scissors" style="height:325px;border:0"
+    name="paper">
+      <input type="submit" name="selection" value = "Scissors" />
+
+    <img src="/paper.png" alt="Paper" style="height:325px;border:0" name="scissors">
+      <input type="submit" name="selection" value = "Paper" />
+
+  </form>
+
+
+
+
+</div>

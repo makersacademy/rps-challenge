@@ -1,13 +1,36 @@
 # RPS Challenge
 
-Instructions
--------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Instructions
+
+
+Approach
+----
+I began by mapping out a rough flow-chart of how a user would progress through the various objects involved in the program. I think mapped this out as a box-diagram of all the Models that would go into my MVC.
+
+My next step was to write some tests, on paper, for these individual models. I then wrote these tests in my /spec folder and went about converting each test to green (one Model at a time).
+
+Once all the Models were completed, I went about building the Controller and Views, through which a user's data would passed. I found this very helpful, as I then knew what all the underlying logic was, and I knew that it worked, and the View and Controller components were mostly just a matter of hooking everything together on the front-end.
+
+Once the basic functions were working, I started refactoring things, trying to find a neater way to pass entries from my database Model to the Controller (which involved setting the database to a constant). This raised issues with my tests however, so I had to build a web-helper to make sure the database was cleared at the start of every test (otherwise the next test would carry the database-state of the previous test).
+
+I was aiming to get multiplayer done, but as of writing this it isn't installed yet. The logic is there, and the Model passes tests for taking in multiple players. I just have to set it up on the Controller, as well as edit the Views to take in multiple players.
+
+In order to get data to display properly, I have taken the first step of moving some of the text-display logic back from the View to the Model-side for Play.erb (it requests a list of names, string-interpolated, from a method inside the Database class), although I think maybe this also should be grouped in a new class, 'StringInterpolater'.
+
+The way the game is structured, it should be able to take in any number of new weapons, so long as the win-conditions are entered into the Hash of Winning Scenarios (given that it runs on a point system). To win, a user simply has to finish a round with more win-scenarios than lose-scenarios; and to avoid a draw, the round must end with the total number of points being not-Zero (and no matter how many weapons or players there are, if everyone either draws the same weapon, or everyone makes one victory and one loss, then points are zero).
+
+My computating of who wins is very convoluted, and it is that way because it's trying to do a long-hand version of a much simpler calculation. However, the simpler calculation involves this:
+
+https://artofproblemsolving.com/wiki/index.php/Modular_arithmetic/Introduction
+
+applied in this way
+
+http://paleyontology.com/foop/rpsls.html
+
+And while my computation basically does that in a long-hand way, I don't feel comfortable enough with their solution to apply it for myself.
+
+-------
 
 Task
 ----
@@ -28,21 +51,6 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
@@ -56,31 +64,3 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
