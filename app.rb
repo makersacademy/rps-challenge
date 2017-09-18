@@ -20,6 +20,16 @@ post '/rock' do
   erb :rock
 end
 
+post '/scissors' do
+  @computer = ["Rock", "Paper", "Scissors"].sample
+  erb :scissors
+end
+
+post '/paper' do
+  @computer = ["Rock", "Paper", "Scissors"].sample
+  erb :paper
+end
+
 get '/play' do
   erb :play
 end
