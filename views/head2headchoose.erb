@@ -1,0 +1,11 @@
+<center><font face="futura" color="pink" size="9"><%= @game.player_1.name.upcase %></font></center>
+
+  <center><h2><font face="futura" color="pink" size="5">MAKE YOUR CHOICE</font></h2></center>
+  <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/2000px-Rock-paper-scissors.svg.png" height="400" width="400"></center>
+  <center><h2><font face="futura" color="pink" size="5">Type in "rock", "paper" or "scissors"</font></h2></center>
+  <h2><center><font face="futura" color="pink" size="5">ONLY THESE CHOICES WILL BE ACCEPTED!</font></center></h2>
+
+<center><form action="/head2headchoice1" method="post">
+  <input type="text" name="player_1_choice">
+  <input type="submit" value="ENTER CHOICE">
+</form></center>

@@ -1,0 +1,15 @@
+<font face="futura" color="red" size="5"><h2><center>YOU CHOSE <%= @game.player_1_choice.upcase %></center></h2></font>
+<center>
+
+<% if @winner == true %>
+<font face="futura" color="green" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+  <font face="futura" color="green" size="9"><h2>YOU WIN!</h2></font>
+<% elsif @winner == false %>
+<font face="futura" color="red" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+    <font face="futura" color="green" size="9"><h2>YOU LOSE!</h2></font>
+<% else %>
+<font face="futura" color="yellow" size="5"><h2><center>THE COMPUTER CHOSE <%= @computer_choice.upcase %></h2></font>
+    <font face="futura" color="yellow" size="9"><h2>YOU DRAW!</h2></font>
+<% end %>
+
+<center><a href="/"><img  src="http://www.nomommysperfect.com/wp-content/uploads/2012/02/bigstock_Reset_Button_5801696.jpg" width="200" height="200" ></a></center>

@@ -1,86 +1,37 @@
-# RPS Challenge
+### THOMAS IKIMI
 
-Instructions
--------
+# WEEK 3 - ROCK, PAPER, SCISSORS Challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+To build an interactive game on the web.
 
-Task
-----
+## Getting Started
 
-Knowing how to build web applications is getting us almost there as web developers!
+I finished this challenge and also did the bonus of two player. I have organised all files into their respective folders.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+### Prerequisites
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+You should be able to run it via the config.ru file with rackup. Alternatively you can run it via the app.rb
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+## Running the tests
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+I have separated the tests into the feature and unit test folders. Rspec will run them all and they are passing with full coverage.
+
+### REFLECTION
+
+After initially taking time to figure out my approach to this, I found it to be a very useful challenge in getting a better understanding of the various facets of using the web in development. I am now more comfortable with Sinatra, Capybara and using modules.
+
+
+### WHAT I WOULD LIKE TO IMPROVE
+
+I got everything to work and the program is fairly robust. I would have preferred to have done the selection mechanism with simple clicks as opposed to typing in choices. However I was unable to implement that functionality.
+
+Though I was very happy with the finished product, if I had more time...
+
+```
+1. Clicks to select choice instead of text.
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
 
 
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Author
+* **Thomas Ikimi** - *Initial work* -
