@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @player1 %>, select your weapon</h1>
+  <div class="row">
+    <div class="col">
+      <form class="begin" action="/chosen_weapon" method="post">
+        <header>Weapons</header>
+        <% @possible_weapons.each do |weapon| %>
+        <div class="radio">
+          <label><input type="radio" name="weapon"value="<%= weapon %>"> <%= weapon %></label>
+        </div>
+        <% end %>
+        <button type="submit" class=btn>Enter</button>
+      </form>
+    </div>
+  </div>
+</div>
