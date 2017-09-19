@@ -1,0 +1,13 @@
+<%= erb(:play) %>
+<div style="margin:5px;">
+<div class="results">
+  <h2>Result:</h2>
+  <%= @game.player_1.name %> chose <%= @game.player_1.weapon.capitalize %><br>
+  <%= @game.player_2.name %> chose <%= @game.player_2.weapon.capitalize%><br>
+
+  <% if @game.result == 'draw' %>
+  It's a draw!
+  <% else %>
+  Winner: <%= @game.result.name%>
+  <% end %>
+</div>
