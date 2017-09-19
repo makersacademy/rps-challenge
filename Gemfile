@@ -13,4 +13,5 @@ group :test do
   gem 'shotgun'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'thin'
 end

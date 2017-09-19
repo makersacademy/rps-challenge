@@ -11,7 +11,9 @@
 </div>
 
 <% if @game.win? %>
-<%= @game.name %> wins!
-<% else %>
-Computer wins!
+<%= @game.name %> wins :D
+<% elsif @game.draw?%>
+<%= @game.name %> and computer draw
+<% elsif @game.lose? %>
+   Computer wins :(
 <% end %>
