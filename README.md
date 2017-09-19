@@ -23,10 +23,8 @@ How to run it
 $ git clone https://github.com/diaryofdiscoveries/rps-challenge.git
 $ cd rps-challenge
 $ bundle
-$ ruby app/rps_web.rb
+$ rackup
 ```
-(There are currently issues using rackup)
-
 - Visit app's homepage in a web browser
 
 How to run tests
