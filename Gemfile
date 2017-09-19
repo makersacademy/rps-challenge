@@ -7,8 +7,11 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'rerun'
   gem 'rspec'
   gem 'rubocop'
+  gem 'shotgun'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'thin'
 end
