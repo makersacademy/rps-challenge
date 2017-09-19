@@ -1,9 +1,9 @@
-<h1>Hi <%= @player_1.name %>! Let's play Rock, Paper, Scissors!</h1>
+<h1>Hi <%= @game.player_1.name %>! Let's play Rock, Paper, Scissors!</h1>
 <h2>Choose:</h2>
 <form action="/weapons" method="POST">
   <div class="form-group">
-    <input class="btn btn-default" type="submit" name="weapon" value="Rock">
-    <input class="btn btn-default" type="submit" name="weapon" value="Paper">
-    <input class="btn btn-default" type="submit" name="weapon" value="Scissors">
+    <input class="btn btn-default" type="submit" name="weapon" value="rock">
+    <input class="btn btn-default" type="submit" name="weapon" value="paper">
+    <input class="btn btn-default" type="submit" name="weapon" value="scissors">
   </div>
 </form>

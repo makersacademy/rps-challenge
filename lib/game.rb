@@ -21,7 +21,7 @@ class Game
 
   def result
     @rounds += 1
-    return 'draw' if @player1.weapon == @player2.weapon
+    return 'draw' if @player_1.weapon == @player_2.weapon
     if RULES[@player_1.weapon] == @player_2.weapon
       @player_1_score += 1
       @player_1
