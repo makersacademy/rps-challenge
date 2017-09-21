@@ -5,6 +5,10 @@ require './lib/computer'
 
 class RPS < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -13,18 +17,21 @@ class RPS < Sinatra::Base
     player_1 = Player.new(params[:player_name])
     player_2 = Computer.new
     @game = Game.create(player_1, player_2)
-    erb :play
+    redirect '/play'
   end
 
   get '/play' do
-    @game = Game.instance
     erb :play
   end
 
-  post '/result' do
-    @game = Game.instance
-    @game.player_1.weapon = params[:player_weapon]
+  get '/result' do
+    # erb game.result
     erb :result
+  end
+
+  post '/result' do
+    @game.player_1.weapon = params[:player_weapon]
+    redirect '/result'
   end
 
   run! if app_file == $0

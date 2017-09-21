@@ -1,6 +1,8 @@
 class Game
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :w1, :w2
+
+  RULES = {Rock:"Scissors", Scissors:"Paper", Paper:"Rock"}
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -12,26 +14,49 @@ class Game
   end
 
   def self.instance
-    @game ||= Game.new
+    @game
   end
 
-  def return_winner
-    w1 = @player_1.weapon
+  def return_weapons
+    @w1 = @player_1.weapon
     @player_2.generate_weapon
-    w2 = @player_2.weapon
-    compare_weapons(w1, w2)
+    @w2 = @player_2.weapon
   end
 
-  private
-  def compare_weapons(weapon_1, weapon_2)
-    if weapon_1 == weapon_2
-      "Draw"
-    elsif weapon_1 == "Rock" && weapon_2 == "Scissors" ||
-          weapon_1 == "Paper" && weapon_2 == "Rock" ||
-          weapon_1 == "Scissors" && weapon_2 == "Paper"
-      "You win!"
-    else
-      "You lose!"
-    end
+  def draw?(w1,w2)
+    w1 == w2
   end
+
+  def win?
+    beats?(w1,w2)
+  end
+
+  def lose?
+    !beats?(w1,w2)
+  end
+
+#   class Weapon
+#   attr_reader :type
+#
+#   def initialize(type)
+#     @type = type.to_sym
+#   end
+#
+#   def beats?(other) may need some change
+#     RULES[type] == other.type
+#   end
+# # end
+#
+# rock = Weapon.new(:rock)
+# rock.beats?(Weapon.new(:scissors))
+  #
+  # def rules
+  #   human_weapon.beats?(computer_weapon)
+  # end
+  private
+
+  def beats?(weapon_1, weapon_2)
+    RULES[:weapon_1] == weapon_2
+  end
+
 end
