@@ -25,12 +25,18 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    # erb game.result
-    erb :result
+    if @game.win?
+      erb :win
+    elsif @game.lose?
+      erb :lose
+    else
+      erb :draw
+    end
   end
 
   post '/result' do
-    @game.player_1.weapon = params[:player_weapon]
+    @game.player_1.weapon = params[:player_weapon].to_sym
+    @game.return_weapons
     redirect '/result'
   end
 

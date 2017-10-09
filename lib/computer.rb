@@ -6,7 +6,4 @@ class Computer
     @weapon = ["Rock", "Paper", "Scissors"].sample
   end
 
-  def return_weapon
-    @weapon
-  end
 end

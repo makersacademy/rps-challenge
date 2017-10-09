@@ -23,8 +23,8 @@ class Game
     @w2 = @player_2.weapon
   end
 
-  def draw?(w1,w2)
-    w1 == w2
+  def draw?
+    w1.to_s == w2
   end
 
   def win?
@@ -32,31 +32,13 @@ class Game
   end
 
   def lose?
-    !beats?(w1,w2)
+    !beats?(w1,w2) && !draw?
   end
 
-#   class Weapon
-#   attr_reader :type
-#
-#   def initialize(type)
-#     @type = type.to_sym
-#   end
-#
-#   def beats?(other) may need some change
-#     RULES[type] == other.type
-#   end
-# # end
-#
-# rock = Weapon.new(:rock)
-# rock.beats?(Weapon.new(:scissors))
-  #
-  # def rules
-  #   human_weapon.beats?(computer_weapon)
-  # end
   private
 
   def beats?(weapon_1, weapon_2)
-    RULES[:weapon_1] == weapon_2
+    RULES[weapon_1] == weapon_2
   end
 
 end
