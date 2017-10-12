@@ -12,6 +12,4 @@ class Player
   def increase_points
     @points += 10
   end
-
-
 end

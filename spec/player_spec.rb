@@ -18,7 +18,7 @@ describe Player do
 
   describe '#increase_points' do
     it 'increases the player points when they win the round' do
-    expect{ player.increase_points }.to change { player.points }.by(+10)
+      expect { player.increase_points }.to change { player.points }.by(+10)
     end
   end
 end

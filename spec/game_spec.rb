@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player, computer) }
-  let(:computer) { double :computer, select_random_move: "Scissors"}
+  let(:computer) { double :computer, select_random_move: "Scissors" }
   let(:player) { double :player }
 
   it 'has a player' do
@@ -33,5 +33,5 @@ describe Game do
       game.set_computer_move
       expect(game.computer_move).to eq "Scissors"
     end
-  end  
+  end
 end

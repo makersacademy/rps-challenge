@@ -3,7 +3,7 @@ require 'computer'
 describe Computer do
 
   subject(:computer) { described_class.new }
-  let(:computer_1) { double :computer, select_random_move: 'Scissors'}
+  let(:computer_1) { double :computer, select_random_move: 'Scissors' }
 
   describe '#computers_move' do
     it 'outputs a random move' do
@@ -19,7 +19,7 @@ describe Computer do
 
   describe '#increase_points' do
     it 'increases the computer points when they win the round' do
-    expect{ computer.increase_points }.to change { computer.points }.by(+10)
+      expect { computer.increase_points }.to change { computer.points }.by(+10)
     end
   end
 end
