@@ -1,9 +1,68 @@
-<%= @game.player.name %> played <%= @player_move %>
-<br>
-Computer played <%= @game.computer_move.to_s.capitalize %>
-<br>
-<%= @game.player.name %> won! Here's 10 points, hurray!
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
+  <style type="text/css">
+  * {
+    background-color: #426E86;
+    font-family: 'Freckle Face', cursive;
+  }
 
+  .player {
+    font-size: 40px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    color: #F9BA32;
+  }
+
+  .computer {
+    font-size: 40px;
+    float: right;
+    margin right: 50px;
+    color: #F9BA32;
+    margin-top: 50px;
+  }
+
+  .winner {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 80px;
+    color: #F8F1E5;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  input[type=submit] {
+    color: #2F3131;
+    letter-spacing: 2px;
+    font-size: 40px;
+    background-color: #F9BA32;
+    border: 2px solid #F8F1E5;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="player">
+<%= @game.player.name %> played <%= @player_move %>
+</div>
+<div class="computer">
+Computer played <%= @game.computer_move.to_s.capitalize %>
+</div>
+<br>
+<div class="winner">
+<%= @game.player.name %> won! Here's 10 points, hurray!
+</div>
+<br></br>
 <form action="/add-player-points" method="post">
   <input type="submit" value="OK">
 </form>
+</body>
+</html>
