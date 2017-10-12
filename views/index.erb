@@ -3,74 +3,78 @@
 <head>
   <title>Rock, Paper, Scissors</title>
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
   <style type="text/css">
   * {
-    font-family: Arial;
+    background-color: #426E86;
+    font-family: 'Freckle Face', cursive;
   }
+
   h1 {
-    font-size: 100px;
+    font-size: 140px;
     text-align: center;
     margin-bottom: 0px;
+    color: #F9BA32;
   }
+
   h2 {
     text-align: center;
+    color: #F8F1E5;
+    font-size: 45px;
+    letter-spacing: 2px;
   }
-  p {
-    text-align: center;
-  }
-  h3 {
-    text-align: center;
-  }
+
   form {
     text-align: center;
   }
-  img.hands {
-    width: 900px;
-  height: 600px;
-  display: block;
-  margin: 0px auto;
-  /*mix-blend-mode: multiply;*/
-  }
+
   i {
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     animation-name: slidein;
     animation-duration: 3s;
   }
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-    to {
-      margin-left: 0%;
-      width: 100%
-    }
+
+  input[type=text] {
+    width: 20%;
+    border: 2px solid #F8F1E5;
+   border-radius: 4px;
+   padding: 10px 15px;
+   font-size: 20px;
+   color: #F8F1E5;
+ }
+
+ label {
+  color: #F8F1E5;
+  letter-spacing: 2px;
+  font-size: 25px;
   }
-  /**{
-    background: linear-gradient(to right, #f857a6, #ff5858);
-   }*/
-  /*body {
-    background-image:
-    url("https://ichef-1.bbci.co.uk/news/660/media/images/74580000/jpg/_74580127_162317629(1).jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }*/
+
+input[type=submit] {
+  color: #2F3131;
+  letter-spacing: 2px;
+  font-size: 20px;
+  background-color: #F9BA32;
+  border: 2px solid #F8F1E5;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 14px;
+  }
   </style>
 </head>
 <body>
-<h1>ROCK.PAPER.SCISSORS</h1>
-<h2>Do you dare take on THE COMPUTER??</h2>
-<p>ROCK beats SCISSORS.....SCISSORS beats PAPER.....PAPER beats ROCK</p>
-<h3>Enter your name to start the best RPS game you will ever play...</h3>
+<h1>ROCK.PAPER.SCISSORS.</h1>
+<h2>Do you DARE take on THE COMPUTER??</h2>
 <div align="center"><i class="em em-fist"></i><i class="em em-newspaper"></i><i class="em em-scissors"></i></div>
+<br></br>
+<br></br>
 <form action="/name" method="post">
   <label for="player_name">
-    Player name <input type="text" name="player_name">
+    Enter your name to start <input type="text" name="player_name">
   </label>
+  <br></br>
   <input type="submit" value="May the battle commence!">
 </form>
-<img src="https://ichef-1.bbci.co.uk/news/660/media/images/74580000/jpg/_74580127_162317629(1).jpg" alt="Three hands demonstrating RPS" class="hands"/>
+<!-- <img src="https://ichef-1.bbci.co.uk/news/660/media/images/74580000/jpg/_74580127_162317629(1).jpg" alt="Three hands demonstrating RPS" class="hands"/> -->
 </body>
 </html>
