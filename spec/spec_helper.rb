@@ -1,6 +1,12 @@
+require_relative '../app.rb'
 require 'capybara/rspec'
 require 'simplecov'
+require 'capybara'
+require 'rspec'
 require 'simplecov-console'
+
+Capybara.app = Rocky
+ENV["RACK_ENV"] = "test"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
