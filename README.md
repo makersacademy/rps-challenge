@@ -40,3 +40,9 @@ rspec
 - Sinatra
 - Rspec
 - Capybara
+
+![image](https://user-images.githubusercontent.com/26767598/31539111-86ea06fe-afff-11e7-8e73-7c890d77f44e.png)
+
+![image](https://user-images.githubusercontent.com/26767598/31539477-91c632a4-b000-11e7-99a0-dc68cc7b8205.png)
+
+![image](https://user-images.githubusercontent.com/26767598/31539516-a7af3c64-b000-11e7-92c1-11621654273d.png)
