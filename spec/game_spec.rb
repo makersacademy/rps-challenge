@@ -30,6 +30,21 @@ describe Game do
   end
 
   describe 'RPS logic' do
+    it 'Rock beats Scissors' do
+      allow(game.p1).to receive(:move).and_return("Rock")
+      allow(game.p2).to receive(:move).and_return("Scissors")
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "Rock WINS!"
+    end
+    it 'Scissors beats Paper' do
+      allow(game.p1).to receive(:move).and_return("Scissors")
+      allow(game.p2).to receive(:move).and_return("Paper")
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "Scissors WINS!"
+    end
+    it 'Paper beats Rock' do
+      allow(game.p1).to receive(:move).and_return("Paper")
+      allow(game.p2).to receive(:move).and_return("Rock")
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "Paper WINS!"
+    end
   end
 
 end
