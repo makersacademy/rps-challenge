@@ -8,10 +8,7 @@ RSpec.feature 'testing infrastructure' do
   end
 
   scenario 'can sign up' do
-    visit '/'
-    fill_in :player_1, with: 'Leonard'
-    fill_in :player_2, with: 'Sheldon'
-    click_button 'Submit'
+    sign_up_players
     expect(page).to have_content 'Leonard vs. Sheldon'
   end
 end
