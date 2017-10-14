@@ -38,4 +38,21 @@ describe Game do
 
   end
 
+  describe '#play' do
+
+    it 'returns win if player beats opponent' do
+      allow(game.weapons).to receive (:sample) { :scissors }
+      expect(game.play(:rock)).to eq :win
+    end
+    it 'returns tie if player ties with opponent' do
+      allow(game.weapons).to receive (:sample) { :rock }
+      expect(game.play(:rock)).to eq :tie
+    end
+    it 'returns lose if player loses to oppponent' do
+      allow(game.weapons).to receive (:sample) { :scissors }
+      expect(game.play(:paper)).to eq :lose
+    end
+
+  end
+
 end

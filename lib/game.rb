@@ -15,4 +15,17 @@ class Game
     @game
   end
 
+  def play(weapon)
+    player = weapons.index(weapon)
+    opponent = weapons.index(weapons.sample)
+    if player == opponent
+      :tie
+    elsif (player + opponent).even?
+      player < opponent ? :win : :lose
+    else
+      player < opponent ? :lose : :win
+    end    
+
+  end
+
 end
