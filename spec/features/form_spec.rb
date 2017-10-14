@@ -17,6 +17,6 @@ feature 'Registration' do
     visit '/'
     fill_in :player_name, with: 'Pablo'
     click_button('Save')
-    within('.led-yellow') {expect(page).to have_content('Pablo')}
+    within('.led-yellow') { expect(page).to have_content('Pablo') }
   end
 end
