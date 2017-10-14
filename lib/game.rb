@@ -3,7 +3,7 @@ require_relative 'computer'
 require_relative 'outcome_finder'
 
 class Game
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :computer_selection
 
   def self.create name
     @game = Game.new name
@@ -18,7 +18,8 @@ class Game
     @computer = computer_class.new
   end
   def turn human_selection
-    outcome = OutcomeFinder::OUTCOMES[computer.selection][human_selection]
+    @computer_selection = computer.selection
+    outcome = OutcomeFinder::OUTCOMES[computer_selection][human_selection]
     player.update_score outcome
     return outcome
   end
