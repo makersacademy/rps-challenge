@@ -13,7 +13,6 @@ feature 'Enter names' do
     visit('/')
     fill_in :player_1, with: 'Bob'
     click_button 'Submit'
-    p :player_1
     expect(page).to have_content 'Bob'
   end
 end
