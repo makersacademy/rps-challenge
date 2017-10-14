@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 
 require 'capybara/rspec'
 require_relative '../lib/app'
+require_relative './features/web_helpers'
 require 'sinatra'
 require 'rspec'
 require 'simplecov'
