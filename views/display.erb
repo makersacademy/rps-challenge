@@ -1,3 +1,12 @@
-<h1> Welcome player !</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+<h1 >
+  Welcome player !</h1>
 
-<h2> You are now registered as <%= @player_name %>  </h2>
+<h2>
+  You are now registered as
+  <span class="led-yellow"> <%= @player_name %> </span>
+</h2>
