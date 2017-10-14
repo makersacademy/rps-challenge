@@ -3,6 +3,10 @@ require_relative './lib/game'
 
 class Rocky < Sinatra::Base
 
+  before do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb :index
   end
@@ -13,16 +17,16 @@ class Rocky < Sinatra::Base
   end
 
   get '/play' do
-    erb :play, { locals: { player_name: Game.current_game.player, weapons: Game.current_game.weapons } }
+    erb :play, { locals: { player_name: @game.player, weapons: @game.weapons } }
   end
 
   post '/calculate' do
-    Game.current_game.play(params[:weapon])
+    @game.play(params[:weapon])
     redirect '/result'
   end
     
   get '/result' do
-    erb :result, { locals: { player_name: Game.current_game.player, result: Game.current_game.result } }
+    erb :result, { locals: { player_name: @game.player, result: @game.result } }
   end
 
 end
