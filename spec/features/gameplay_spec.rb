@@ -14,6 +14,11 @@ feature 'Gameplay' do
     click_button 'scissors'
     expect(page.text.scan(/Result: (?:Win|Lose|Draw)/).length).to eq 1
   end
+  scenario 'user is reminded what they picked' do
+    sign_in_and_play
+    click_button 'rock'
+    expect(page).to have_content "You chose rock"
+  end
   scenario 'user can see what computer picked' do
     sign_in_and_play
     click_button 'rock'
