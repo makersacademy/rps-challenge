@@ -16,9 +16,4 @@ class Game
   def self.instance
     @game
   end
-
-  def move
-    @move.sample
-  end
-
 end
