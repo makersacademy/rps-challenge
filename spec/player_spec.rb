@@ -7,7 +7,7 @@ describe Player do
     expect(leonard.wins).to eq 0
   end
 
-  describe '#name' do
+  context '#name' do
     it 'should return a players name' do
       expect(leonard.name).to eq 'Leonard'
     end
