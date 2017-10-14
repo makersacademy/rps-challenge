@@ -9,6 +9,16 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['RACK_ENV'] = 'test'
+
+require_relative '../app'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require_relative './features/test_infrastructure'
+
+Capybara.app = Rockpaperscissors
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
