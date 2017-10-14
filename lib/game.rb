@@ -17,6 +17,7 @@ class Game
     @player = player_class.new player_name
     @computer = computer_class.new
   end
+  
   def turn human_selection
     @computer_selection = computer.selection
     outcome = OutcomeFinder::OUTCOMES[computer_selection][human_selection]
