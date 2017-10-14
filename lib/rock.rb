@@ -1,4 +1,4 @@
-require 'weapon'
+require_relative 'weapon'
 
 class Rock < Weapon
 

@@ -1,6 +1,13 @@
 class Game
 
-  require 'computer'
+  #require_relative 'weapon'
+  require_relative 'computer'
+  require_relative 'player'
+
+  require_relative 'rock'
+  require_relative 'paper'
+  require_relative 'scissors'
+
 
   attr_reader :player_choice, :result, :player, :computer_choice
 
