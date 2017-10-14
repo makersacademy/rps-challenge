@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 
+
 class Rps < Sinatra::Base
   enable :sessions
 
@@ -27,8 +28,15 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @player_selection = session[:response]
-    erb(:result)
-  end
+    @game = Game.new
+    @game.player_choice = session[:response]
+    @player_selection = @game.player_choice
 
+    @game.computer_selection = @game.random_response
+    @computer_selection = @game.computer_selection
+
+
+    # @computer_selection = game.random_response
+    erb @game.result
+  end
 end

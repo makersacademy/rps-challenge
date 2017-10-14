@@ -1,5 +1,3 @@
-
-
 feature 'Registration' do
   scenario 'Say welcome on registration' do
     sign_in_register

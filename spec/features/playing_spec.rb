@@ -1,5 +1,4 @@
 feature 'Playing the game' do
-  let(:test_it) {"test_it"}
 
   scenario 'when RPS option is clicked, a message displays selected option' do
     sign_in_register
@@ -12,4 +11,13 @@ feature 'Playing the game' do
     find('input[value="PAPER"]').click
     expect(page).to have_content 'The computer has selected'
   end
+
+  scenario 'the player wins' do
+    allow_any_instance_of(Array).to receive(:sample) {'SCISSORS'}
+    sign_in_register
+    find('input[value="ROCK"]').click
+    expect(page).to have_content "YOU WIN !!!!"
+  end
+
+
 end
