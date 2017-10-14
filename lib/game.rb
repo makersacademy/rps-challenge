@@ -1,5 +1,7 @@
 class Game
 
+  require 'computer'
+
   attr_reader :player_choice
 
   def self.new_game(choice)
@@ -16,6 +18,10 @@ class Game
 
   def player_choose(choice)
     Object.const_get(choice).new
+  end
+
+  def computer_choose
+    Object.const_get(Computer.new.choose).new
   end
 
   def play

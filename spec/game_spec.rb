@@ -4,6 +4,7 @@ describe Game do
 
 subject(:game) { described_class.new("Lady Macbeth")}
 let(:rock) { double(:rock) }
+let(:computer) { double(:computer, choose: "Rock")}
 
   describe "#play" do
     it "returns win" do
@@ -12,9 +13,17 @@ let(:rock) { double(:rock) }
   end
 
   describe "#player_choose" do
-    it "takes a string and returns a corresponding object" do
+    it "returns a Rock object when passed 'Rock' string" do
       allow(Rock).to receive(:new) { rock }
       expect(game.player_choose("Rock")).to eq rock
+    end
+  end
+
+  describe "#computer_choose" do
+    it "returns corresponding object to string passed" do
+      allow(Computer).to receive (:new) { computer }
+      allow(Rock).to receive(:new) { rock }
+      expect(game.computer_choose).to eq rock
     end
   end
 
