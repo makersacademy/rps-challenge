@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require 'turn'
+require 'opponent'
 
 class RPS < Sinatra::Base
 enable :sessions
@@ -18,7 +20,7 @@ enable :sessions
   end
 
   post '/play' do
-    session[:player_shape] = params[:shape]
+    session[:player_shape] = params[:shape].downcase.to_sym
     session[:opponent_shape] = Opponent.new.shape
     redirect '/play'
   end
