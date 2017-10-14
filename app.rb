@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
+    Player.create(params[:name])
     redirect '/play'
   end
 

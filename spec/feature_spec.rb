@@ -11,3 +11,12 @@ feature 'homepage' do
     expect(page).to have_content "Let's play Rock, Paper, Scissors!"
   end
 end
+
+feature 'play' do
+  scenario 'player submits name and sees it on "/play" view' do
+    visit('/')
+    fill_in "name", with: "Lady Macbeth"
+    click_on "Enter"
+    expect(page).to have_content "Lady Macbeth"
+  end
+end
