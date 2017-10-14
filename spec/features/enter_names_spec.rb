@@ -1,4 +1,4 @@
-# require_relative '../../app.rb'
+require_relative '../../app.rb'
 
 feature 'Enter names' do
   scenario 'submitting names' do

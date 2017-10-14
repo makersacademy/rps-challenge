@@ -5,8 +5,8 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do 
-
+  post '/names' do
+    'Hello Tom'
   end
 
   run! if app_file == $0
