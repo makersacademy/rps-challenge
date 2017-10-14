@@ -21,7 +21,7 @@ enable :sessions
 
   post '/play' do
     session[:shape] = params[:shape]
-    session[:opponent_shape] = :Rock
+    session[:opponent_shape] = Opponent.new.shape
     redirect '/play'
   end
 

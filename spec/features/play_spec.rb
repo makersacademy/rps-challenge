@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+PLAY_SEED = 221563
+
   feature 'playing a game' do
 
   before do
@@ -32,6 +34,18 @@ end
   end
 
   def possible_messages
-    [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s.capitalize}!"}
+    [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s}!"}
   end
+
+  scenario 'game chooses a random option' do
+    srand(PLAY_SEED)
+    click_button "Rock"
+    expect(page).to have_content 'Opponent chose scissors'
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s}!"}
+  end
+
+
 end
