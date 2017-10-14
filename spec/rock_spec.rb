@@ -12,4 +12,11 @@ describe Rock do
       allow(paper).to receive(:is_a?).with(Rock) { false }
       expect(rock.versus(paper)).to eq("Lose")
     end
+
+    it "returns draw against rock" do
+      allow(paper).to receive(:is_a?).with(Paper) { true }
+      allow(paper).to receive(:is_a?).with(Scissors) { false }
+      allow(paper).to receive(:is_a?).with(Rock) { false }
+      expect(rock.versus(rock)).to eq("Draw")
+    end
 end
