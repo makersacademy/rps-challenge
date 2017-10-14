@@ -2,14 +2,26 @@ require 'game'
 
 describe Game do
 
-subject(:game) { described_class.new("Lady Macbeth")}
+subject(:game) { described_class.new("Paper", computer)}
 let(:rock) { double(:rock) }
 let(:computer) { double(:computer, choose: "Rock")}
 
   describe "#play" do
-    it "returns win" do
+
+    it "returns 'Win' when player chooses 'Paper' and computer chooses 'Rock' " do
       expect(game.play).to eq "Win"
     end
+
+    it "returns 'Lose' when player chooses 'Paper' and computer chooses 'Scissors' " do
+      allow(computer).to receive(:choose) { "Scissors" }
+      expect(game.play).to eq "Lose"
+    end
+
+    it "returns 'Draw' when player chooses 'Paper' and computer chooses 'Paper' " do
+      allow(computer).to receive(:choose) { "Paper" }
+      expect(game.play).to eq "Draw"
+    end
+    
   end
 
   describe "#player_choose" do

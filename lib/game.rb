@@ -12,8 +12,9 @@ class Game
     @game
   end
 
-  def initialize(choice)
+  def initialize(choice, computer = Computer.new)
     @player_choice = choice
+    @computer = computer
   end
 
   def player_choose(choice)
@@ -21,10 +22,14 @@ class Game
   end
 
   def computer_choose
-    Object.const_get(Computer.new.choose).new
+    Object.const_get(computer.choose).new
   end
 
   def play
-    "Win"
+    player_choose(player_choice).versus(computer_choose)
   end
+
+  private
+
+  attr_reader :computer
 end
