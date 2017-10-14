@@ -11,11 +11,11 @@ class Game
               "scissors" => "paper" }
   end
 
-  def self.set_current_game(player)
+  def self.create(player)
     @current_game = Game.new(player)
   end
 
-  def self.current_game
+  def self.instance
     @current_game
   end
 

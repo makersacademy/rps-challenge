@@ -13,13 +13,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @game = Game.set_current_game(Player.new(params[:name]))
+    @game = Game.create(Player.new(params[:name]))
     erb(:play)
   end
 
   post '/result' do
-    @choice = (params[:choice]).downcase
-    @result = Game.current_game.result(@choice)
+    @choice = params[:choice].downcase
+    @result = Game.instance.result(@choice)
     erb(:result)
   end
 end
