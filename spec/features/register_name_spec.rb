@@ -1,8 +1,8 @@
+require_relative './web_helpers'
+
 feature 'Register names' do
   scenario 'submitting names' do
-    visit('/')
-    fill_in :player_name, with: 'Alexi'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content "Alexi vs Computer"
   end
 end
