@@ -33,19 +33,13 @@ end
     expect(possible_messages).to include message
   end
 
-  def possible_messages
-    [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s}!"}
-  end
-
   scenario 'game chooses a random option' do
     srand(PLAY_SEED)
     click_button "Rock"
-    expect(page).to have_content 'Opponent chose scissors'
+    expect(page).to have_content 'Opponent chose Scissors'
   end
 
   def possible_messages
-    [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s}!"}
+    [:rock, :paper, :scissors].map{ |shape| "Opponent chose #{shape.to_s.capitalize}!"}
   end
-
-
 end
