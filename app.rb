@@ -2,8 +2,12 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
 
-  get '/' do
+  get '/infastructure' do
     "Testing Infastructure"
   end
-  
+
+  get '/' do
+    erb(:title)
+  end
+
 end
