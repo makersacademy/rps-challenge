@@ -26,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     game = session[:game]
+    @player = game.player
     human_selection = session['selection']
     @outcome = game.turn(human_selection).capitalize
     erb :result
@@ -33,5 +34,5 @@ class RockPaperScissors < Sinatra::Base
 
   post '/go_back' do
     redirect 'play'
-  end 
+  end
 end

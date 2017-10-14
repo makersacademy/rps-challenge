@@ -1,4 +1,8 @@
 <h2>Result: <%= @outcome %></h2>
+<p>Wins: <%= @player.wins %></p>
+<p>Losses: <%= @player.losses %></p>
+<p>Ties: <%= @player.draws %></p>
+<p>Total: <%= @player.tries %></p>
 <form action="/go_back" method="post">
   <input type="submit" value="Play again">
 </form>
