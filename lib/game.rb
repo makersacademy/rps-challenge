@@ -1,10 +1,10 @@
 class Game
 
-  attr_reader :player, :weapons
+  attr_reader :player, :weapons, :result
 
   def initialize(player)
     @player = player
-    @weapons = [:rock,:paper,:scissors]
+    @weapons = [:rock, :paper, :scissors]
   end
 
   def self.create_game(player)
@@ -16,9 +16,9 @@ class Game
   end
 
   def play(weapon)
-    player = weapons.index(weapon)
+    player = weapons.index(weapon.downcase.to_sym)
     opponent = create_opponent
-    calculate_winner(player, opponent)
+    @result = calculate_winner(player, opponent)
   end
 
   private

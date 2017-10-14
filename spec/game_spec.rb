@@ -42,15 +42,15 @@ describe Game do
 
     it 'returns win if player beats opponent' do
       allow(game.weapons).to receive (:sample) { :scissors }
-      expect(game.play(:rock)).to eq :win
+      expect(game.play('Rock')).to eq :win
     end
     it 'returns tie if player ties with opponent' do
       allow(game.weapons).to receive (:sample) { :rock }
-      expect(game.play(:rock)).to eq :tie
+      expect(game.play('Rock')).to eq :tie
     end
     it 'returns lose if player loses to oppponent' do
       allow(game.weapons).to receive (:sample) { :scissors }
-      expect(game.play(:paper)).to eq :lose
+      expect(game.play('Paper')).to eq :lose
     end
 
   end

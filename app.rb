@@ -16,5 +16,10 @@ class Rocky < Sinatra::Base
     erb :play, { locals: { player_name: Game.current_game.player, weapons: Game.current_game.weapons } }
   end
 
+  get '/result' do
+    Game.current_game.play(params[:weapon])
+    erb :result, { locals: { player_name: Game.current_game.player, result: Game.current_game.result } }
+  end
+
 end
   
