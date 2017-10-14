@@ -1,0 +1,67 @@
+body {
+	padding: 0;
+	margin: 0;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  text-align: center;
+  background-color: black;
+}
+
+h2 {
+		font-size: 80px;
+    color: white;
+    margin-left: 20px;
+}
+
+h1 {
+		font-size: 100px;
+    color: white;
+    margin-left: 20px;
+}
+
+input[name="name"] {
+	border:3px solid #ccc;
+	border-radius: 90px;
+	margin: 40px;
+	display:center;
+	width: 400px;
+	height: 50px;
+	font-family: "Arial Rounded", sans-serif;
+	color: violet;
+	font-size: 30px;
+	text-align: center;
+}
+
+input[value="Register"],
+input[value="Rock"],
+input[value="Paper"],
+input[value="Scissors"]{
+    border:4px solid white;
+		background: violet;
+		font-family: "Arial Rounded MT Bold", sans-serif;
+		font-size: 30px;
+    color: white;
+		margin: 20px;
+	  height: 180px;
+	  width: 180px;
+	  border-radius: 50%;
+		display:center;
+	}
+
+	input[value="Play again?"],
+	input[value="New Player"] {
+		border:3px solid white;
+		background: violet;
+		font-family: "Arial Rounded MT Bold", sans-serif;
+		font-size: 20px;
+    color: white;
+		margin: 20px;
+	  height: 130px;
+	  width: 130px;
+	  border-radius: 50%;
+		display:center;
+	}
+
+	input[value="Rock"]:focus {
+		color: white
+		/*content: "https://www.colourbox.com/preview/2390723-vector-icon-of-scissors-all-layers-are-grouped.jpg";*/
+	}

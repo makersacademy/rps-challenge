@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/marketeer'
+require_relative './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -8,14 +10,24 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/register' do
-    session[:marketeer_name] = params[:marketeer_name]
+  post '/play' do
+    session[:name] = (params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @marketeer_name = session[:marketeer_name]
+    @marketeer = Marketeer.new(session)
     erb :play
+  end
+
+  post '/play' do
+    p session[:marketeer_choice] = params[:object].downcase.to_sym
+    p session[:opponent_choice] = Opponent.new.opponent_choice
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   run! if app_file == $0
