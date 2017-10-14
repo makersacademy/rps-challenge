@@ -7,8 +7,21 @@ describe Game do
   it 'starts with a player' do 
     expect(game.player).to eq player
   end
-  it 'can receive a computers choice' do
+  before do
     allow(computer).to receive(:choice).and_return "rock"
+  end
+  it 'can receive a computers choice' do
     expect(game.computer.choice).to eq "rock"
+  end
+  context '#result' do
+    it 'returns a draw if both choices are the same' do
+      expect(game.result("rock")).to eq "Draw"
+    end
+    it 'returns a win if player wins' do
+      expect(game.result("paper")).to eq "Won"
+    end
+    it 'returns a loss if computer wins' do
+      expect(game.result("scissors")).to eq "Lost"
+    end
   end
 end
