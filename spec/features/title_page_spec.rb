@@ -3,6 +3,10 @@ feature 'Title screen' do
     visit '/'
     expect(page).to have_content "Rock Paper Scissors"
   end
+  scenario 'there is a field for a player to sign in' do
+    visit '/'
+    expect(page).to have_field 'name'
+  end
   scenario 'there is a button that starts the game' do
     ready_to_play
     expect(page).to have_current_path '/play'

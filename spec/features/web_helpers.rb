@@ -1,4 +1,5 @@
 def ready_to_play
   visit '/'
-  click_button 'Yes'
+  fill_in :name, with: 'David'
+  click_button 'Submit'
 end
