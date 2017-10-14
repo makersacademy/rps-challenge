@@ -15,7 +15,7 @@ describe Game do
   end
   context '#result' do
     it 'returns a draw if both choices are the same' do
-      expect(game.result("rock")).to eq "Draw"
+      expect(game.result("rock")).to eq "Drew"
     end
     it 'returns a win if player wins' do
       expect(game.result("paper")).to eq "Won"
