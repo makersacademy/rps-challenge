@@ -1,7 +1,13 @@
 class Computer
 
+WEAPONS = ["Rock", "Paper", "Scissors"]
+
+  def initialize(weapons =  WEAPONS)
+    @weapons = weapons
+  end
+
   def choose
-    ["Rock", "Paper", "Scissors"].sample
+    @weapons.sample
   end
 
 end

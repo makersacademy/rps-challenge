@@ -6,7 +6,7 @@ describe Computer do
 
   describe "#choose" do
     it "returns either Rock, Paper or Scissors" do
-      expect(["Rock","Paper","Scissors"]).to include subject.choose
+      expect(Computer::WEAPONS).to include subject.choose
     end
   end
 end
