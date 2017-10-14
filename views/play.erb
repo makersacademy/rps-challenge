@@ -1,7 +1,11 @@
-<h2><%=@name%>'s turn</h2>
+<h2><span class="name"><%=@name%></span>'s turn</h2>
 <h1>Please make a choice</h2>
-<form method="POST" action="/results">
-<input type="submit" name="rps_choice" value="rock">
-<input type="submit" name="rps_choice" value="paper">
-<input type="submit" name="rps_choice" value="scissors">
+ <div id="page-wrap">
+<form method="POST" action="/save_choice">
+<input class="btn" type="submit" name="rps_choice" value="rock">
+<input class="btn" type="submit" name="rps_choice" value="paper">
+<input class="btn" type="submit" name="rps_choice" value="scissors">
+<input class="btn" type="submit" name="rps_choice" value="spock">
+<input class="btn" type="submit" name="rps_choice" value="lizard">
 </form>
+</div>

@@ -1,10 +1,21 @@
+require_relative "./artificial_player"
 class RpsGame
-  attr_reader :players, :choices
+  attr_reader :players, :choices, :round
 
   def initialize(player1, player2)
     @players = [player1, player2]
-    @choices = {:rock => [:scissors], :scissors => [:paper], :paper => [:rock]}
-    @rounds = 0
+    @choices = { :rock =>     [:scissors, :lizard], 
+                 :scissors => [:paper, :lizard], 
+                 :paper =>    [:rock, :spock],
+                 :spock =>    [:rock, :scissors],
+                 :lizard =>   [:spock, :paper] }
+    @choices.default = []
+    @round = 0
+    
+  end
+
+  def multiplayer?
+    !player2.instance_of?(ArtificialPlayer)
   end
 
   def self.create_game(player1, player2)
@@ -30,10 +41,6 @@ class RpsGame
     return set_round_results
   end
   
-  def end_turn
-    @players.reverse!
-  end
-
   def display_final_results
     "#{player1.name}: #{player1.win_counts} wins <br> #{player2.name}: #{player2.win_counts} wins"
   end
@@ -46,25 +53,35 @@ class RpsGame
     players.last
   end
 
-  private
   def increase_round_counter
-    @rounds += 1
+    @round += 1
   end
 
-  def player1_choise 
+  def reset_round_counter
+    @round = 0
+  end
+
+  def multiplayer_link
+    return multiplayer? && round % 2 == 1 ? "/play" : "/results"
+  end
+
+  private
+
+
+  def player1_choice 
     players.first.turn_choice
   end
 
-  def player2_choise
+  def player2_choice
     players.last.turn_choice
   end
 
   def player1_wins?
-    choices[player1_choise].include?(player2_choise)
+    choices[player1_choice].include?(player2_choice)
   end
 
   def player2_wins?
-    choices[player2_choise].include?(player1_choise) 
+    choices[player2_choice].include?(player1_choice) 
   end
 
   def set_round_results(winner = nil, looser = nil)
