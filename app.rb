@@ -13,12 +13,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    @game = Game.new(Player.new(params[:name]))
+    $game = Game.new(Player.new(params[:name]))
+    @game = $game
     erb(:play)
   end
 
   post '/result' do
-    @choice = params[:choice]
+    @choice = (params[:choice]).downcase
+    @game = $game
+    @result = @game.result(@choice)
     erb(:result)
   end
 end

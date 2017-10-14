@@ -1,3 +1,5 @@
+require_relative './computer.rb'
+
 class Game
   attr_reader :player, :computer
 
@@ -9,8 +11,16 @@ class Game
               "scissors" => "paper" }
   end
 
+  def self.set_current_game(player)
+    @current_game = Game.new(player)
+  end
+
+  def self.current_game
+    @current_game
+  end
+
   def result(player_choice, choice = computer.choice)
-    return "Draw" if player_choice == choice 
+    return "Drew" if player_choice == choice 
     return "Won" if @rules[player_choice] == choice 
     return "Lost" if @rules[choice] == player_choice
   end
