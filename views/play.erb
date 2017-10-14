@@ -1,5 +1,9 @@
-<h1><%=@player_name%></h1>
+<%= @name %>
 
-<h2> Rock </h2>
-<h2> Paper </h2>
-<h2> Scissors </h2>
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+</form>
+
+You selected <%= @shape %>!
