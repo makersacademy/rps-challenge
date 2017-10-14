@@ -9,7 +9,7 @@ feature 'homepage' do
     visit('/')
     fill_in "name", with: "Lady Macbeth"
     click_on "Enter"
-    expect(page).to have_content "Let's play Rock, Paper, Scissors!"
+    expect(page).to have_content "Let's play Rock, Paper, Scissors ft. Spocks and Lizards)!"
   end
 end
 

@@ -1,6 +1,6 @@
 class Computer
 
-WEAPONS = ["Rock", "Paper", "Scissors"]
+WEAPONS = ["Rock", "Paper", "Scissors", "Spock", "Lizard"]
 
   def initialize(weapons =  WEAPONS)
     @weapons = weapons
