@@ -10,4 +10,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:title)
   end
 
+  post '/play' do
+  end
+
 end
