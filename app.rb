@@ -16,4 +16,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/result' do
+    @choice = params[:choice]
+    erb(:result)
+  end
+
 end
