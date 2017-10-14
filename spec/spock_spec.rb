@@ -1,11 +1,11 @@
-require 'rock'
+require 'spock'
 
-describe Rock do
+describe Spock do
 
-  subject(:rock) { described_class.new }
+  subject(:spock) { described_class.new }
   let(:paper) { double(:paper) }
   let(:scissors) { double(:scissors) }
-  let(:spock) { double(:spock) }
+  let(:rock) { double(:rock) }
   let(:lizard) { double(:lizard) }
 
   describe "#versus"
@@ -15,7 +15,16 @@ describe Rock do
       allow(paper).to receive(:is_a?).with(Rock) { false }
       allow(paper).to receive(:is_a?).with(Spock) { false }
       allow(paper).to receive(:is_a?).with(Lizard) { false }
-      expect(rock.versus(paper)).to eq("Loses")
+      expect(spock.versus(paper)).to eq("Loses")
+    end
+
+    it "returns lose against lizard" do
+      allow(lizard).to receive(:is_a?).with(Paper) { false }
+      allow(lizard).to receive(:is_a?).with(Scissors) { false }
+      allow(lizard).to receive(:is_a?).with(Rock) { false }
+      allow(lizard).to receive(:is_a?).with(Spock) { false }
+      allow(lizard).to receive(:is_a?).with(Lizard) { true }
+      expect(spock.versus(lizard)).to eq("Loses")
     end
 
     it "returns win against scissors" do
@@ -24,33 +33,24 @@ describe Rock do
       allow(scissors).to receive(:is_a?).with(Rock) { false }
       allow(scissors).to receive(:is_a?).with(Spock) { false }
       allow(scissors).to receive(:is_a?).with(Lizard) { false }
-      expect(rock.versus(scissors)).to eq("Wins")
+      expect(spock.versus(scissors)).to eq("Wins")
     end
 
-    it "returns draw against rock" do
-      allow(paper).to receive(:is_a?).with(Paper) { true }
-      allow(paper).to receive(:is_a?).with(Scissors) { false }
-      allow(paper).to receive(:is_a?).with(Rock) { false }
-      allow(paper).to receive(:is_a?).with(Spock) { false }
-      allow(paper).to receive(:is_a?).with(Lizard) { false }
-      expect(rock.versus(rock)).to eq("Draw")
+    it "returns win against rock" do
+      allow(rock).to receive(:is_a?).with(Paper) { false }
+      allow(rock).to receive(:is_a?).with(Scissors) { false }
+      allow(rock).to receive(:is_a?).with(Rock) { true }
+      allow(rock).to receive(:is_a?).with(Spock) { false }
+      allow(rock).to receive(:is_a?).with(Lizard) { false }
+      expect(spock.versus(rock)).to eq("Wins")
     end
 
-    it "returns win against lizard" do
-      allow(lizard).to receive(:is_a?).with(Paper) { false }
-      allow(lizard).to receive(:is_a?).with(Scissors) { false }
-      allow(lizard).to receive(:is_a?).with(Rock) { false }
-      allow(lizard).to receive(:is_a?).with(Spock) { false }
-      allow(lizard).to receive(:is_a?).with(Lizard) { true }
-      expect(rock.versus(lizard)).to eq("Wins")
-    end
-
-    it "returns lose against spock" do
+    it "returns draw against spock" do
       allow(spock).to receive(:is_a?).with(Paper) { false }
       allow(spock).to receive(:is_a?).with(Scissors) { false }
       allow(spock).to receive(:is_a?).with(Rock) { false }
       allow(spock).to receive(:is_a?).with(Spock) { true }
       allow(spock).to receive(:is_a?).with(Lizard) { false }
-      expect(rock.versus(spock)).to eq("Loses")
+      expect(spock.versus(spock)).to eq("Draw")
     end
 end
