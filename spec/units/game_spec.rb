@@ -1,4 +1,5 @@
 require 'game'
+require 'outcome_finder'
 
 describe Game do
   player_name = 'Ed'
@@ -6,7 +7,8 @@ describe Game do
   let(:player_class) { double(:player_class, :new => player) }
   let(:player) { double(:player, :update_score => true) }
   let(:computer_class) { double(:computer_class, :new => computer) }
-  let(:computer) { double(:computer, :selection => true) }
+  let(:computer) { double(:computer, :selection => 'rock') }
+  outcomes = OutcomeFinder::OUTCOMES
   describe '#initialize' do
     it 'creates a new player instance' do
       expect(player_class).to receive(:new).with player_name
@@ -22,49 +24,16 @@ describe Game do
       expect(computer).to receive(:selection)
       game.turn 'rock'
     end
-    context 'computer chooses rock' do
-      before(:each) { allow(computer).to receive(:selection).and_return('rock') }
-      it 'calls update_score with draw if the player has chosen rock' do
-        expect(player).to receive(:update_score).with 'draw'
-        game.turn 'rock'
-      end
-      it 'calls update_score with win if the player has chosen paper' do
-        expect(player).to receive(:update_score).with 'win'
-        game.turn 'paper'
-      end
-      it 'calls update_score with lose if the player has chosen scissors' do
-        expect(player).to receive(:update_score).with 'lose'
-        game.turn 'scissors'
-      end
-    end
-    context 'computer chooses paper' do
-      before(:each) { allow(computer).to receive(:selection).and_return('paper') }
-      it 'calls update_score with lose if the player has chosen rock' do
-        expect(player).to receive(:update_score).with 'lose'
-        game.turn 'rock'
-      end
-      it 'calls update_score with draw if the player has chosen paper' do
-        expect(player).to receive(:update_score).with 'draw'
-        game.turn 'paper'
-      end
-      it 'calls update_score with win if the player has chosen scissors' do
-        expect(player).to receive(:update_score).with 'win'
-        game.turn 'scissors'
-      end
-    end
-    context 'computer chooses scissors' do
-      before(:each) { allow(computer).to receive(:selection).and_return('scissors') }
-      it 'calls update_score with win if the player has chosen rock' do
-        expect(player).to receive(:update_score).with 'win'
-        game.turn 'rock'
-      end
-      it 'calls update_score with lose if the player has chosen paper' do
-        expect(player).to receive(:update_score).with 'lose'
-        game.turn 'paper'
-      end
-      it 'calls update_score with draw if the player has chosen scissors' do
-        expect(player).to receive(:update_score).with 'draw'
-        game.turn 'scissors'
+
+    outcomes.each do |computer_selection, human_selections|
+      context "computer chooses #{computer_selection}" do
+        before(:each) { allow(computer).to receive(:selection).and_return(computer_selection) }
+        human_selections.each do |human_selection, outcome|
+          it "calls update_score with #{outcome} if the player has chosen #{human_selection}" do
+            expect(player).to receive(:update_score).with outcome
+            game.turn human_selection
+          end
+        end
       end
     end
   end
