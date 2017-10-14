@@ -14,7 +14,25 @@ h1 {
   text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
 }
 
+div.img_holder {
+  display: flex;
+	justify-content: space-around;
+}
+
+.img{
+  border-radius: 15%;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 15%;
+  margin: 5px;
+}
+
 </style>
 </head>
 
  <h1> <%= @player_1 %> your choice was <%= @player_choice %></h1>
+
+ <div class = "img_holder">
+   <img class = "img" src= 'https://images.sciencedaily.com/2013/02/130219161246-large.jpg'>
+ </div>
