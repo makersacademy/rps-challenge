@@ -30,4 +30,8 @@ class RockPaperScissors < Sinatra::Base
     @outcome = game.turn(human_selection).capitalize
     erb :result
   end
+
+  post '/go_back' do
+    redirect 'play'
+  end 
 end

@@ -14,4 +14,10 @@ feature 'Gameplay' do
     click_button 'scissors'
     expect(page.text.scan(/Result: Win|Lose|Draw/).length).to eq 1
   end
+  scenario 'user can return to play screen from result screen' do
+    sign_in_and_play
+    click_button 'rock'
+    click_button 'Play again'
+    expect(page).to have_content "Make your selection:"
+  end
 end
