@@ -19,4 +19,12 @@ feature 'play' do
     click_on "Enter"
     expect(page).to have_content "Lady Macbeth"
   end
+
+  scenario 'player chooses "Rock"' do
+    visit('/')
+    fill_in "name", with: "Lady Macbeth"
+    click_on "Enter"
+    click_on "Rock"
+    expect(page).to have_content "Lady Macbeth chose Rock"
+  end
 end
