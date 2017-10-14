@@ -14,7 +14,7 @@ feature RockPaperScissors do
     fill_in :p1, with: p1
     fill_in :p2, with: p2
     click_button 'Submit'
-    expect(page).to have_content "#{p1} & #{p2} playing ROCK - PAPER - SCICCORS!"
+    expect(page).to have_content "#{p1} & #{p2} playing ROCK - PAPER - SCISSORS!"
   end
 
 end

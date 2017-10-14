@@ -29,4 +29,19 @@ describe Game do
     end
   end
 
+  describe 'RPS logic' do
+    it 'containts Rock' do
+      allow(game).to receive(:move).and_return("Rock")
+      expect(game.move).to eq 'Rock'
+    end
+    it 'containts Paper' do
+      allow(game).to receive(:move).and_return("Paper")
+      expect(game.move).to eq 'Paper'
+    end
+    it 'containts Scissors' do
+      allow(game).to receive(:move).and_return("Scissors")
+      expect(game.move).to eq 'Scissors'
+    end
+  end
+
 end

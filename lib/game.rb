@@ -5,6 +5,8 @@ class Game
   def initialize(p1 = Player.new, p2 = Player.new)
     @p1 = p1
     @p2 = p2
+    @move = %w(Rock Paper Scissors)
+
   end
 
   def self.create(p1, p2)
@@ -13,6 +15,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def move
+    @move.sample
   end
 
 end
