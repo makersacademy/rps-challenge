@@ -1,7 +1,7 @@
 <%= player_name %>
 
-<form>
+<form action="/result">
 <% weapons.each do |weapon| %>
-  <input type="button" name="weapon" value="<%= weapon.capitalize %>">
+  <a href="/result"><input type="submit" name="weapon" value="<%= weapon.capitalize %>"></a>
 <% end %>
 </form>

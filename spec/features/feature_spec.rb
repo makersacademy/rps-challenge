@@ -34,15 +34,34 @@ feature 'choosing a weapon' do
 
 end
 
-# feature 'playing the game' do
+feature 'showing the game result' do
 
-#   scenario 'winning the game' do
-#     visit('/')
-#     fill_in :player_name, with: 'Ainsley'
-#     click_button 'play'
-#     click_button 'Rock'
-#     expect(page).to have_content 'You'
-#   end
+  scenario 'winning the game' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    allow(Game.current_game).to receive(:result) { "win" }
+    click_button 'Rock'
+    expect(page).to have_content 'You win'
+  end
 
-# end
+  scenario 'losing the game' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    allow(Game.current_game).to receive(:result) { "lose" }
+    click_button 'Rock'
+    expect(page).to have_content 'You lose'
+  end
+
+  scenario 'the game is a tie' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    allow(Game.current_game).to receive(:result) { "tie" }
+    click_button 'Rock'
+    expect(page).to have_content 'You tie'
+  end
+
+end
 
