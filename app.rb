@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/registration.rb'
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
