@@ -14,6 +14,10 @@ class Game
     @player_choice = choice
   end
 
+  def player_choose(choice)
+    Object.const_get(choice).new
+  end
+
   def play
     "Win"
   end
