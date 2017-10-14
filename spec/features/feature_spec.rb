@@ -65,3 +65,14 @@ feature 'showing the game result' do
 
 end
 
+feature 'player can play again' do
+
+  scenario 'Play again button is visible' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    click_button 'Rock'
+    expect(page).to have_button 'Play again'
+  end
+
+end
