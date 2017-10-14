@@ -10,9 +10,16 @@ require_relative "../../lib/app"
 
 feature 'Enter names' do
   scenario 'Players can enter their names' do
-    visit('/')
-    fill_in :player_1, with: 'Bob'
-    click_button 'Submit'
+  sign_in_and_play
     expect(page).to have_content 'Bob'
+  end
+end
+
+feature 'Pick rock paper or scissors' do
+  scenario 'Players can enter their choice' do
+  sign_in_and_play
+  fill_in :player_choice, with: 'rock'
+  click_button 'Submit'
+    expect(page).to have_content 'rock'
   end
 end
