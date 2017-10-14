@@ -1,7 +1,10 @@
+ENV['RACK_ENV'] = 'test'
+
+require './app'
+require './spec/features/web_helpers.rb'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require './app'
 
 Capybara.app = Rps
 

@@ -17,7 +17,20 @@ class Rps < Sinatra::Base
 
   get '/name' do
     @player_name = session[:player_name]
-
+  p params
     erb(:display)
   end
+
+  post '/receive_RPS' do
+   p params
+   session[:response] = params[:response]
+   redirect '/result'
+
+  end
+
+  get '/result' do
+    @player_selection = session[:response]
+    erb(:result)
+  end
+
 end
