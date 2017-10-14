@@ -3,9 +3,11 @@ require 'sinatra/base'
 class Rockpaperscissors < Sinatra::Base
 
   get '/' do
-    "Testing infrastructure working!"
+    erb :enter_name
   end
 
-  run! if app_file == $0
+  post '/present_choices' do
+    erb :present_choices
+  end
 
 end

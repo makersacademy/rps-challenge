@@ -11,11 +11,11 @@ SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 
-require_relative '../app'
+require_relative '../lib/app'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require_relative './features/test_infrastructure'
+require_relative './features/enter_name_spec.rb'
 
 Capybara.app = Rockpaperscissors
 
