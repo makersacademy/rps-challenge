@@ -1,14 +1,23 @@
 feature 'Register names' do
   scenario 'submitting names' do
-    visit '/register'
-    fill_in('Player Name', with: 'Alexi')
+    visit('/')
+    fill_in :player_name, with: 'Alexi'
+    click_button 'Submit'
     expect(page).to have_content "Alexi vs Computer"
   end
-end 
+end
 
 
+# visit('/')
+# fill_in :player_1_name, with: 'Tom'
+# fill_in :player_2_name, with: 'Alexi'
+# click_button 'Submit'
 
 
+# visit('/')
+# fill_in :player_1_name, with: 'Tom'
+# fill_in :player_2_name, with: 'Alexi'
+# click_button 'Submit'
 # feature 'Enter names' do
 #   scenario 'submitting names' do
 #     sign_in_and_play

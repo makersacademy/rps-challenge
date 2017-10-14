@@ -3,11 +3,12 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    redirect '/register'
+    erb :register
   end
 
-  get '/register' do
-    erb :register
+  post '/play' do
+    @player = params[:player_name]
+    erb :play
   end
 
   run! if app_file == $0
