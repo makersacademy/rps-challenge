@@ -28,6 +28,7 @@ class RockPaperScissors < Sinatra::Base
     game = Game.instance
     @player = game.player
     @outcome = game.turn(session['selection']).capitalize
+    @computer_selection = game.computer_selection
     erb :result
   end
 
