@@ -1,4 +1,4 @@
-
+require 'spec_helper'
 
 feature 'Enter name' do
   scenario 'The player can enter their name' do
