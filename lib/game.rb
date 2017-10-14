@@ -1,10 +1,17 @@
+require_relative './calculator'
+
 class Game
 
-  attr_reader :player, :weapons, :result
+  attr_reader :player, :weapons, :result, :opponent
 
-  def initialize(player)
+  def initialize(player, calculator = nil)
+    @calc = calculator || Calculator.new
     @player = player
-    @weapons = [:rock, :paper, :scissors]
+    @weapons = { 
+      rock: 1, 
+      paper: 2, 
+      scissors: 3 
+    }
   end
 
   def self.create_game(player)
@@ -16,29 +23,20 @@ class Game
   end
 
   def play(weapon)
-    player = weapons.index(weapon.downcase.to_sym)
-    opponent = create_opponent
-    @result = calculate_winner(player, opponent)
+    create_opponent
+    @result = calc.compare(value(weapon), value(opponent))
   end
 
   private
 
-  def calculate_winner(player, opponent)
-    return :tie if player == opponent
-    order = player_first?(player, opponent)
-    (player + opponent).even? ? translate(order) : translate(!order)
-  end
-
-  def translate(value)
-    value ? :win : :lose
-  end
-
-  def player_first?(player, opponent)
-    player < opponent
-  end
+  attr_reader :calc
 
   def create_opponent
-    weapons.index(weapons.sample)
+    @opponent = weapons.keys.sample
+  end
+
+  def value(weapon)
+    weapons[weapon.downcase.to_sym]
   end
 
 end
