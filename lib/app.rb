@@ -9,12 +9,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:game] = Game.new params[:name]
+    @game = Game.create params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    game = session[:game]
+    game = Game.instance
     @name = game.player.name
     erb :play
   end
@@ -25,10 +25,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    game = session[:game]
+    game = Game.instance
     @player = game.player
-    human_selection = session['selection']
-    @outcome = game.turn(human_selection).capitalize
+    @outcome = game.turn(session['selection']).capitalize
     erb :result
   end
 
