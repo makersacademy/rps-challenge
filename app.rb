@@ -17,7 +17,12 @@ class Rocky < Sinatra::Base
   end
 
   get '/play' do
-    erb :play, { locals: { player_name: @game.player, weapons: @game.weapons } }
+    erb :play, {
+      locals: {
+        player_name: @game.player, 
+        weapons: @game.weapons 
+        } 
+      }
   end
 
   post '/calculate' do
@@ -26,7 +31,13 @@ class Rocky < Sinatra::Base
   end
     
   get '/result' do
-    erb :result, { locals: { player_name: @game.player, result: @game.result } }
+    erb :result, { 
+      locals: {
+        player_name: @game.player, 
+        result: @game.result, 
+        opponent: @game.opponent
+        } 
+      }
   end
 
 end
