@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    Player.create(params[:name])
+    Game.new_game(Player.create(params[:name]))
     redirect '/play'
   end
 
@@ -20,7 +20,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    Game.new_game(params[:choice])
+    Game.current.play(params[:choice])
     redirect '/result'
   end
 

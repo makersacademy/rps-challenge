@@ -10,14 +10,14 @@ describe Scissors do
       allow(rock).to receive(:is_a?).with(Paper) { false }
       allow(rock).to receive(:is_a?).with(Scissors) { false }
       allow(rock).to receive(:is_a?).with(Rock) { true }
-      expect(scissors.versus(rock)).to eq("Lose")
+      expect(scissors.versus(rock)).to eq("Loses")
     end
 
     it "returns win against paper" do
       allow(paper).to receive(:is_a?).with(Paper) { true }
       allow(paper).to receive(:is_a?).with(Scissors) { false }
       allow(paper).to receive(:is_a?).with(Rock) { false }
-      expect(scissors.versus(paper)).to eq("Win")
+      expect(scissors.versus(paper)).to eq("Wins")
     end
 
     it "returns draw against scissors" do

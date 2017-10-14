@@ -1,4 +1,5 @@
 feature 'homepage' do
+
   scenario 'player visits homepage' do
     visit('/')
     expect(page).to have_content "Please enter your name:"
@@ -26,5 +27,19 @@ feature 'play' do
     click_on "Enter"
     click_on "Rock"
     expect(page).to have_content "Lady Macbeth chose Rock"
+  end
+end
+
+feature 'result' do
+
+  let(:computer) { double(:computer, choose: "Paper")}
+
+  scenario 'Player picks rock, computer picks paper' do
+    allow(Computer).to receive(:new) { computer }
+    visit('/')
+    fill_in "name", with: "Lady Macbeth"
+    click_on "Enter"
+    click_on "Rock"
+    expect(page).to have_content "Lady Macbeth Loses!"
   end
 end

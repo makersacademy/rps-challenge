@@ -11,14 +11,14 @@ describe Paper do
       allow(scissors).to receive(:is_a?).with(Paper) { false }
       allow(scissors).to receive(:is_a?).with(Scissors) { true }
       allow(scissors).to receive(:is_a?).with(Rock) { false }
-      expect(paper.versus(scissors)).to eq("Lose")
+      expect(paper.versus(scissors)).to eq("Loses")
     end
 
     it "returns win against rock" do
       allow(rock).to receive(:is_a?).with(Paper) { false }
       allow(rock).to receive(:is_a?).with(Scissors) { false }
       allow(rock).to receive(:is_a?).with(Rock) { true }
-      expect(paper.versus(rock)).to eq("Win")
+      expect(paper.versus(rock)).to eq("Wins")
     end
 
     it "returns draw against paper" do

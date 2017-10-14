@@ -2,41 +2,41 @@ require 'game'
 
 describe Game do
 
-subject(:game) { described_class.new("Paper", computer)}
+
 let(:rock) { double(:rock) }
 let(:computer) { double(:computer, choose: "Rock")}
+let(:player) { double(:player, name: "Lady Macbeth") }
+subject(:game) { described_class.new(player, computer) }
 
   describe "#play" do
 
-    it "returns 'Win' when player chooses 'Paper' and computer chooses 'Rock' " do
-      expect(game.play).to eq "Win"
+      it "returns 'Wins' when player chooses 'Paper' and computer chooses 'Rock'" do
+        expect(game.play("Paper")).to eq "Wins"
+      end
+
+      it "returns 'Loses' when player chooses 'Scissors' and computer chooses 'Rock'" do
+        expect(game.play("Scissors")).to eq "Loses"
+      end
+
+      it "returns 'Draw' when player chooses 'Rock' and computer chooses 'Rock' " do
+        expect(game.play("Rock")).to eq "Draw"
+      end
+
     end
 
-    it "returns 'Lose' when player chooses 'Paper' and computer chooses 'Scissors' " do
-      allow(computer).to receive(:choose) { "Scissors" }
-      expect(game.play).to eq "Lose"
-    end
+  describe "#result_string" do
 
-    it "returns 'Draw' when player chooses 'Paper' and computer chooses 'Paper' " do
-      allow(computer).to receive(:choose) { "Paper" }
-      expect(game.play).to eq "Draw"
+    it "returns string for draw" do
+      allow(game).to receive(:result) { "Draw" }
+      expect(game.result_string).to eq("It's a draw!")
     end
-    
+    it "returns string for win" do
+      allow(game).to receive(:result) { "Wins" }
+      expect(game.result_string).to eq("Lady Macbeth Wins!")
+    end
+    it "returns string for lose" do
+      allow(game).to receive(:result) { "Loses" }
+      expect(game.result_string).to eq("Lady Macbeth Loses!")
+    end
   end
-
-  describe "#player_choose" do
-    it "returns a Rock object when passed 'Rock' string" do
-      allow(Rock).to receive(:new) { rock }
-      expect(game.player_choose("Rock")).to eq rock
-    end
-  end
-
-  describe "#computer_choose" do
-    it "returns corresponding object to string passed" do
-      allow(Computer).to receive (:new) { computer }
-      allow(Rock).to receive(:new) { rock }
-      expect(game.computer_choose).to eq rock
-    end
-  end
-
 end

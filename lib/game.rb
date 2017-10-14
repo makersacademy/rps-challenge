@@ -2,7 +2,7 @@ class Game
 
   require 'computer'
 
-  attr_reader :player_choice
+  attr_reader :player_choice, :result, :player, :computer_choice
 
   def self.new_game(choice)
     @game = Game.new(choice)
@@ -12,24 +12,31 @@ class Game
     @game
   end
 
-  def initialize(choice, computer = Computer.new)
-    @player_choice = choice
+  def initialize(player, computer = Computer.new)
     @computer = computer
+    @player = player
   end
 
-  def player_choose(choice)
-    Object.const_get(choice).new
+  def play(choice)
+    player_choose(choice)
+    computer_choose
+    @result = player_choice.versus(computer_choice)
   end
 
-  def computer_choose
-    Object.const_get(computer.choose).new
-  end
-
-  def play
-    player_choose(player_choice).versus(computer_choose)
+  def result_string
+    result == "Draw" ? ("It's a draw!") : ("#{player.name} #{result}!")
   end
 
   private
 
   attr_reader :computer
+
+  def player_choose(choice)
+    @player_choice = Object.const_get(choice).new
+  end
+
+  def computer_choose
+    @computer_choice = Object.const_get(computer.choose).new
+  end
+
 end
