@@ -13,4 +13,8 @@ class Game
   def initialize(choice)
     @player_choice = choice
   end
+
+  def play
+    "Win"
+  end
 end
