@@ -25,13 +25,13 @@ end
 
 
 
-  scenario 'game chooses "Rock"' do
-    click_button "Rock"
-
-    message = find(:css, "#opponent").text
-
-    expect(possible_messages).to include message
-  end
+  # scenario 'game chooses "Rock"' do
+  #   click_button "Rock"
+  #
+  #   message = find(:css, "#opponent").text
+  #
+  #   expect(possible_messages).to include message
+  # end
 
   scenario 'game chooses a random option' do
     srand(PLAY_SEED)
@@ -49,15 +49,15 @@ end
     expect(page).to have_content 'You win!'
   end
 
-  scenario 'I lose' do
-  click_button 'Paper'
-  expect(page).to have_content 'You lose!'
-end
+    scenario 'I lose' do
+    click_button 'Paper'
+    expect(page).to have_content 'You lose!'
+  end
 
-scenario 'I draw' do
-click_button 'Scissors'
-expect(page).to have_content 'You draw!'
-end
+  scenario 'I draw' do
+  click_button 'Scissors'
+  expect(page).to have_content 'You draw!'
+  end
 
 end
 
