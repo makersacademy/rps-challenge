@@ -2,7 +2,9 @@ require 'game'
 
 describe Game do
 
-  subject(:game) { Game.new('Ainsley') }
+  let(:calc) { double('Calculator', compare: :win) }
+  subject(:game) { Game.new('Ainsley', calc) }
+
   player = 'Ainsley'
 
   describe '#player' do
@@ -40,17 +42,24 @@ describe Game do
 
   describe '#play' do
 
-    it 'returns win if player beats opponent' do
-      allow(game).to receive (:opponent) { :scissors }
-      expect(game.play('Rock')).to eq :win
+    before { allow(game).to receive(:opponent) { :rock } }
+
+    it 'creates a new opponent' do    
+      expect(game).to receive(:create_opponent)
+      game.play('Rock')
     end
-    it 'returns tie if player ties with opponent' do
-      allow(game).to receive (:opponent) { :rock }
-      expect(game.play('Rock')).to eq :tie
+    it 'calculates the game result' do
+      expect(calc).to receive(:compare)
+      game.play('Paper')
     end
-    it 'returns lose if player loses to oppponent' do
-      allow(game).to receive (:opponent) { :scissors }
-      expect(game.play('Paper')).to eq :lose
+
+  end
+
+  describe '#result' do
+
+    it 'returns the result' do
+      game.play('Rock')
+      expect(game.result).to eq :win
     end
 
   end
