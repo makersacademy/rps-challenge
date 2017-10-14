@@ -20,5 +20,4 @@ class RockPaperScissors < Sinatra::Base
     @choice = params[:choice]
     erb(:result)
   end
-
 end
