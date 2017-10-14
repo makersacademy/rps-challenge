@@ -1,5 +1,3 @@
-require_relative './web_helpers'
-
 feature 'Register names' do
   scenario 'submitting names' do
     sign_in

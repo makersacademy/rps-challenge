@@ -1,5 +1,3 @@
-require_relative './web_helpers'
-
 feature 'Shows move options' do
   scenario 'Displayes Paper option' do
     sign_in
