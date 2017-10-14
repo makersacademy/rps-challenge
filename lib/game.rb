@@ -1,9 +1,8 @@
 class Game
   RULES = { "ROCK" => 'SCISSORS',
             "PAPER" => 'ROCK',
-            "SCISSORS" =>'PAPER' }
+            "SCISSORS" => 'PAPER' }
   attr_accessor :player_choice, :computer_selection
-
 
   def random_response
     ['ROCK', 'SCISSORS', 'PAPER'].sample

@@ -22,8 +22,8 @@ class Rps < Sinatra::Base
   end
 
   post '/receive_RPS' do
-   session[:response] = params[:response]
-   redirect '/result'
+    session[:response] = params[:response]
+    redirect '/result'
 
   end
 
