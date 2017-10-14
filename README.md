@@ -1,4 +1,24 @@
 # RPS Challenge
+Ideas
+-----
+
+My first impulse was to implement a if/elsif but it became apparent that this could turn into a very complicated if/elsif chain. This theory was researched and confirmed.
+My next idea was to map out the rules of the game to possibly use this as a reference, assigning the subordinate value to their dominant key pair.
+
+```ruby
+game_rules = {
+  rock: 'scissors',
+  paper: 'rock',
+  scissors: 'paper'
+}
+```
+This felt like a better option for referencing the rules of the game.
+
+Next I worked on the structure of the application and my first draft came up as follows:
+
+![Alt text](./images/first_draft.png?raw=true)
+
+This gave me a good starting point.
 
 Instructions
 -------
