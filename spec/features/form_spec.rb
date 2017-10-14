@@ -20,10 +20,4 @@ feature 'Registration' do
     sign_in_register
     expect(page).to have_content 'ROCK, PAPER, or SCISSORS?'
   end
-
-  scenario 'when RPS option is clicked, a message displays selected option' do
-    sign_in_register
-    find('input[value="ROCK"]').click
-    expect(page).to have_content 'You have selected ROCK'
-  end
 end

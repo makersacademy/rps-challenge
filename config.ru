@@ -1,4 +1,4 @@
 require_relative './app'
-require './lib/registration.rb'
+require './lib/game.rb'
 
 run Rps
