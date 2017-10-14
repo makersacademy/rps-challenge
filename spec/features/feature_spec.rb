@@ -11,13 +11,38 @@ end
 
 feature 'choosing a weapon' do
 
-  scenario 'see a choice of weapons on the play page' do
+  scenario 'allows rock to be chosen' do
     visit('/')
     fill_in :player_name, with: 'Ainsley'
     click_button 'play'
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+  end
+
+  scenario 'allows paper to be chosen' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    expect(page).to have_button 'Paper'
+  end
+
+  scenario 'allows scissors to be chosen' do
+    visit('/')
+    fill_in :player_name, with: 'Ainsley'
+    click_button 'play'
+    expect(page).to have_button 'Scissors'
   end
 
 end
+
+# feature 'playing the game' do
+
+#   scenario 'winning the game' do
+#     visit('/')
+#     fill_in :player_name, with: 'Ainsley'
+#     click_button 'play'
+#     click_button 'Rock'
+#     expect(page).to have_content 'You'
+#   end
+
+# end
+
