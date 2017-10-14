@@ -4,6 +4,7 @@ require 'simplecov'
 require 'capybara'
 require 'rspec'
 require 'simplecov-console'
+require_relative '../spec/features/web_helpers.rb'
 
 Capybara.app = Rocky
 ENV["RACK_ENV"] = "test"
