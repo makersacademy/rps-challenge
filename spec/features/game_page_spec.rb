@@ -1,7 +1,6 @@
 feature 'Game screen' do
   scenario 'there is an option for rock' do
-    visit '/'
-    click_button 'Yes'
+    ready_to_play
     expect(page).to have_button 'Rock'
   end
 end
