@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :p1, :p2
+  attr_reader :p1, :p2, :move
 
   def initialize(p1 = Player.new, p2 = Player.new)
     @p1 = p1
     @p2 = p2
+    @move = %w(Rock Paper Scissors).sample
   end
 
   def self.create(p1, p2)

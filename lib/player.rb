@@ -1,14 +1,13 @@
 class Player
 
-  attr_accessor :name
+  attr_reader :name, :move
 
   def initialize(name)
     @name = name
-    @move = %w(Rock Paper Scissors)
   end
 
-  def move
-    @move.sample
+  def move(move)
+    @move = move
   end
 
 end
