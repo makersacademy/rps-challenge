@@ -1,13 +1,13 @@
 class Game
 
-attr_reader :player
+attr_reader :move
 
-  def initialize(player)
-    @player = player
+  def initialize(move)
+    @move = move
   end
 
   def random_counter_move
-    ["rock", "paper", "scissors"].sample
+    ["Rock", "Paper", "Scissors"].sample
   end
 
 end

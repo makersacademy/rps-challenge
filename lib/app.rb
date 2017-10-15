@@ -11,7 +11,6 @@ attr_reader :player
 
   post '/present_choices' do
     @player = params[:player_name]
-    Game.new(player)
     erb :present_choices
   end
 
