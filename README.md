@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hugosykes/rps-challenge.svg?branch=master)](https://travis-ci.org/hugosykes/rps-challenge)
+
 # RPS Challenge
 
 Instructions
