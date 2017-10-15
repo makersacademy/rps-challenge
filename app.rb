@@ -13,6 +13,10 @@ class RockPaperScissors < Sinatra::Base
     "Testing Infastructure"
   end
 
+  get '/rules' do
+    erb(:rules)
+  end
+
   get '/' do
     erb(:version)
   end
