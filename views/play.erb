@@ -1,8 +1,8 @@
-<%= Player.current.name %> Let's play Rock, Paper, Scissors ft. Spocks and Lizards!<br>
+<%= Game.current.current_player.name %> Let's play Rock, Paper, Scissors ft. Spocks and Lizards!<br>
 <form action="/choice" method="post">
-<input type="submit" name="choice" value="Rock">
-<input type="submit" name="choice" value="Paper">
-<input type="submit" name="choice" value="Scissors">
-<input type="submit" name="choice" value="Spock">
-<input type="submit" name="choice" value="Lizard">
+<button type="submit" name="weapon" value="Rock">Rock</button>
+<button type="submit" name="weapon" value="Paper">Paper</button>
+<button type="submit" name="weapon" value="Scissors">Scissors</button>
+<button type="submit" name="weapon" value="Spock">Spock</button>
+<button type="submit" name="weapon" value="Lizard">Lizard</button>
 </form>

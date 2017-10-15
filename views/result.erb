@@ -1,4 +1,4 @@
-<%= Player.current.name %> chose <%= Game.current.player_choice.class %><br>
-The Computer chose <%= Game.current.computer_choice.class %><br>
+<%= Game.current.players[0].name %> chose <%= Game.current.players[0].weapon_choice.class %><br>
+<%= Game.current.players[1].name %> chose <%= Game.current.players[1].weapon_choice.class %><br>
 <%= Game.current.result_string %><br>
 <a href="/play">Play again?</a>
