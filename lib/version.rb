@@ -1,11 +1,8 @@
 class Version
 
   def version_path(opponent)
-    if opponent == "Computer"
-      return '/one_player'
-    else
-      return '/two_player'
-    end
+    return '/one_player' if opponent == "Computer"
+    return '/two_player' if opponent == "Human"
   end
 
 end
