@@ -25,6 +25,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:one_player)
   end
 
+  get '/two_player' do
+    "Rock Paper Scissors Lizard Spock"
+  end
+
   post '/name' do
     @game = Game.create(Player.new(params[:name]))
     redirect '/play'
