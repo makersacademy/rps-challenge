@@ -1,7 +1,17 @@
-<h1>Choose wisely <%= @game.player.name %>!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="css/styling.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<title>Rock Paper Scissors</title>
+  </head>
+  <body>
+      <center><h2>Choose wisely <%= @game.player.name %>!</h2></center>
+      <center><form action="/result" method="post">
+      <input type="submit" name="choice" value="Rock" class="button">
+      <input type="submit" name="choice" value="Paper" class="button">
+      <input type="submit" name="choice" value="Scissors" class="button">
+      </form></center>
+  </body>
+</html>
 
-<form action="/result" method="post">
-  <input type="submit" name="choice" value="Rock">
-  <input type="submit" name="choice" value="Paper">
-  <input type="submit" name="choice" value="Scissors">
-</form>
