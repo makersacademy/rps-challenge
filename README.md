@@ -17,7 +17,7 @@ Instructions are for Terminal on Mac OS
 
 You should see the page below. Instructions for playing are self explanatory. You will be given the option to play against the computer or against another human player sharing your computer.
 
-(picture)
+![Alt text](/images/homepage.png?raw=true "Homepage")
 
 ## Running tests
 
