@@ -7,7 +7,7 @@ class Game
   def initialize(player, computer = Computer.new)
     @player_1 = player
     @computer = computer
-    @rules = {  "rock" => 'scissors',
+    @wins = {  "rock" => 'scissors',
                 "paper" => "rock",
                 "scissors" => "paper"}
   end
@@ -22,8 +22,8 @@ class Game
 
   def results(player_choice, opponent = computer.choice)
     return 'You drew!' if player_choice == opponent
-    return 'You won!'  if @rules[player_choice] == opponent
-    return 'You lose!' if @rules[opponent] == player_choice
+    return 'You won!'  if @wins[player_choice] == opponent
+    return 'You lose!' if @wins[opponent] == player_choice
   end
 
 end
