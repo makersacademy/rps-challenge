@@ -1,3 +1,16 @@
-<p>You <%= result %> to <%= opponent %> </p>
-
-<a href="/play"><button name="Restart">Play again</button></a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
+    <title>RPS-Result</title>
+  </head>
+  <body>
+    <div>
+    <%= result %>
+    </div>
+    <div id="submit-container">
+      <a href="/play"><button name="Restart" class="round-box button">Play again</button></a>
+    </div>
+  </body>
+</html>

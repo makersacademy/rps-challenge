@@ -6,6 +6,9 @@ body {
   text-align: center;
   background-color: #aed1fd;
   color: white;
+  margin-top: 5%;
+  font-size: 35px;
+  letter-spacing: 0.03em;
 }
 
 #home_page_header {
@@ -26,7 +29,7 @@ form {
   text-align: center;
 }
 
-input {
+.round-box {
   display: inline-block;
   border: 3px solid white;
   border-radius: 15px;
@@ -34,9 +37,6 @@ input {
   font-size: 30px;
   padding: 0;
   margin: 10px;
-}
-
-input[type="submit"] {
   background-color: #7cb6ff;
   color: white;
   text-decoration: none;
@@ -46,7 +46,7 @@ input[type="submit"] {
   border-color: #7cb6ff;
 }
 
-input[type="submit"]:hover {
+.button:hover {
   background-color: white;
   color: #7cb6ff;
   border-color: white;
@@ -73,58 +73,67 @@ input[type="text"]:focus::-webkit-input-placeholder {
   color:transparent; 
 }
 
-#choice {
-  margin-top: 5%;
-  font-size: 35px;
-  letter-spacing: 0.03em;
-}
-
 input[type="radio"] {
   display: none;
 }
 
-label div {
+label {
   display: inline-block;
+  font-size: 15px;
   height: 100px;
   width: 100px;
   border: 3px solid white;
-  border-radius: 50%;
   margin: 1%;
   line-height: 100px;
   margin-top: 40px;
+  background-repeat: no-repeat;
+	border-radius: 50%;
+	background-size: 120px 120px;
+  background-position: 50% 50%;
+  color:transparent; 
 }
 
-label div:hover {
+label:hover {
   background-color: white;
   color: #7cb6ff;
   border-color: #7cb6ff;
+  background-position: -999%;
 }
 
-input[type="radio"]:checked+label > div {
+input[type="radio"]:checked+label {
   background-color: white;
   color: #7cb6ff;
+  background-position: -999%;
 }
 
-#go {
+#submit-container {
   margin-top: 40px;
 }
 
-div #rock {
-
+#rock-icon {
+  background-image: url(../images/rock.png);
 }
 
-div #paper {
-  
+#paper-icon {
+  background-image: url(../images/paper.png);
 }
 
-div #scissors {
-  
+#scissors-icon {
+  background-image: url(../images/scissors.png);
 }
 
-div #spock {
-  
+#spock-icon {
+  background-image: url(../images/spock.png);
 }
 
-div #lizard {
-  
+#lizard-icon {
+  background-image: url(../images/lizard.png);
+}
+
+div p:first-child {
+  font-size: 30px;
+}
+
+div p {
+  font-size: 50px;
 }

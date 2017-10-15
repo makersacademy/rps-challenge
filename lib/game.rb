@@ -49,11 +49,11 @@ class Game
 
   def result_string
     if game_result == :tie
-      "<p id='first'>The game was a tie</p>"
+      "<p>The game was a tie</p>"
     elsif game_result == :win
-      "<p id='first'>#{player_weapon} beats #{opponent}!<br>You won!</p>"
+      "<p>#{player_weapon.capitalize} beats #{opponent.capitalize}!</p><p>You won!</p>"
     else 
-      "<p id='first'>#{opponent} beats #{player_weapon}.<br>You lose, #{player}.</p>"
+      "<p>#{opponent.capitalize} beats #{player_weapon.capitalize}.</p><p>You lose, #{player}.</p>"
     end
   end
 

@@ -6,18 +6,16 @@
     <title>RPS-Play</title>
   </head>
   <body>
-    <p id="choice">Choose your weapon, <%= player_name %>:</p>
+    <p>Choose your weapon, <%= player_name %>:</p>
     <form action="/calculate" method="post">
       <% weapons.each do |weapon, value| %>
-        <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>">
+        <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>" required>
         <label for="<%= weapon %>" id="<%= weapon %>-icon">
-          <div>
           <%= weapon.capitalize %>
-          </div>
         </label>
       <% end %>
-      <div id="go">
-        <input type="submit" value="Go!">
+      <div id="submit-container">
+        <input type="submit" value="Go!" class="round-box button">
       </div>
     </form>
   </body>

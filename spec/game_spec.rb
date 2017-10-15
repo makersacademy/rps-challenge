@@ -60,7 +60,7 @@ describe Game do
     it 'returns the result' do
       allow(game).to receive(:opponent) { :paper }
       game.play('Rock')
-      expect(game.result).to eq "<p id='first'>Rock beats paper<br>You won!</p>"
+      expect(game.result).to eq "<p>Rock beats Paper!</p><p>You won!</p>"
     end
 
   end
