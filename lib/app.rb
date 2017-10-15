@@ -30,9 +30,15 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/comp_result'do
-    @game = Game.new(session[:player_choice])
-    @comp_choice = @game.rand_choice
+    $game = Game.new(session[:player_choice])
+    @comp_choice = $game.rand_choice
     erb(:comp_result)
+  end
+
+  get '/winner'do
+    @game = $game
+    @result = $game.play
+    erb(:winner)
   end
 
   run! if app_file == $0

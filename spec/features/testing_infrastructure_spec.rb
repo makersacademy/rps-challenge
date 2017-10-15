@@ -27,6 +27,14 @@ feature 'The computer picks' do
     choose_pick
     click_link 'Ok! Now the computer picks'
     expect(page).to have_content('rock')
+  end
+end
 
+feature 'The winnder is decided' do
+  scenario 'the winner is presented' do
+    choose_pick
+    click_link 'Ok! Now the computer picks'
+    click_link 'See who wins'
+    expect(page).to have_content("It is a draw!")
   end
 end
