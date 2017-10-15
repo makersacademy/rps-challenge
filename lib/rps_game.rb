@@ -13,13 +13,12 @@ class RpsGame
     @players = [player1, player2]
     @round = 0
   end
-
-  def self.create_game(player1, player2)
-    @current_game = RpsGame.new(player1, player2)
-  end
-
-  def self.current_game
-    @current_game
+  
+  class << self
+    attr_reader :current_game
+    def create_game(player1, player2)
+        @current_game = RpsGame.new(player1, player2)
+    end
   end
 
   def multiplayer? # should I require artificial player class for that?
