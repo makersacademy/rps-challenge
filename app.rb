@@ -18,9 +18,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  get '/choice_rock' do
+  get '/choice' do
     # @player_1 = session[:name]
-    erb :choice_rock
+    erb :choice
   end
 
 
