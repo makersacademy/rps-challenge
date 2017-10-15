@@ -20,9 +20,18 @@ feature 'Playing the game' do
     end
   end
 
-
-
-
-
-
+  context 'Player vs Player' do
+      scenario 'players click vs_player, they are prompted with two RPS options' do
+        sign_in_register_two
+        expect(page).to have_content "Please enter Pablo choice"
+        expect(page).to have_content "Please enter Sonia choice"
+      end
+      scenario 'Player 1 and Player 2 options are displayed on screen' do
+        sign_in_register_two
+        find('.first_response input[value="ROCK"]').click
+        find('.second_response input[value="ROCK"]').click
+      expect(page).to have_content "Pablo has selected ROCK"
+      expect(page).to have_content "Sonia has selected ROCK"
+      end
+  end
 end

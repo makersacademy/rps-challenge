@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <head>
+      <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css"/>
+    </head>
+    <h1 >
+      Welcome player !</h1>
+
+    <h2>
+      You are now registered as
+      <span class="led-yellow two_player">
+        <%= @player_name_one if !!@player_name_one %> and <%= @player_name_two if !!@player_name_two %>
+      </span>
+    </h2>
+
+    <h2>
+      Please enter <%= @player_name_one %> choice :
+      ROCK, PAPER, or SCISSORS?
+    </h2>
+    <form action="/receive_one" method="post" class = "first_response">
+      <input type="submit" value="ROCK" name="response_one">
+      <input type="submit" value="PAPER" name="response_one">
+      <input type="submit" value="SCISSORS" name="response_one">
+    </form>
+
+    <h2>
+      Please enter <%= @player_name_two %> choice :
+      ROCK, PAPER, or SCISSORS?
+    </h2>
+
+    <form action="/receive_two" method="post" class = "second_response">
+      <input type="submit" value="ROCK" name="response_two">
+      <input type="submit" value="PAPER" name="response_two">
+      <input type="submit" value="SCISSORS" name="response_two">
+    </form>
+
+  </body>
+</html>

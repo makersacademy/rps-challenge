@@ -54,6 +54,42 @@ end
     erb(:form_two)
   end
 
+  post '/name_two' do
+    session[:player_name_one] = params[:player_name_one]
+    session[:player_name_two] = params[:player_name_two]
+    redirect '/name_two'
+
+  end
+
+  get '/name_two' do
+    p params
+    @player_name_one = session[:player_name_one]
+    @player_name_two = session[:player_name_two]
+    session[:response_one] = params[:response_one]
+    session[:response_two] = params[:response_two]
+    @player_choice_one = session[:response_one]
+    @player_choice_two = session[:response_two]
+    erb(:display_two)
+  end
+
+  post '/receive_one' do
+        p params
+    @player_name_one = session[:player_name_one]
+    @player_name_two = session[:player_name_two]
+    session[:response_one] = params[:response_one]
+    @player_choice_one = session[:response_one]
+    erb(:display_two)
+  end
+
+  post '/receive_two' do
+        p session
+    @player_name_one = session[:player_name_one]
+    @player_name_two = session[:player_name_two]
+    session[:response_two] = params[:response_two]
+    @player_choice_two = session[:response_two]
+    @player_choice_one = session[:response_one]
+    erb(:display_result_two)
+  end
 
 
 end
