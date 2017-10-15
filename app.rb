@@ -33,10 +33,8 @@ class Rocky < Sinatra::Base
   get '/result' do
     erb :result, { 
       locals: {
-        player_name: @game.player, 
-        weapon: @game.weapon,
-        result: @game.result, 
-        opponent: @game.opponent
+        player_name: @game.player,
+        result: @game.result
         } 
       }
   end

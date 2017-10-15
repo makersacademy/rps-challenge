@@ -15,15 +15,6 @@ describe Game do
 
   end
 
-  describe '#weapon' do
-
-    it 'returns the players weapon choice' do
-      game.play('rock')
-      expect(game.weapon).to eq 'rock'
-    end
-
-  end
-
   describe '#self.create_game' do
 
     it 'creates a new game instance' do
@@ -67,8 +58,9 @@ describe Game do
   describe '#result' do
 
     it 'returns the result' do
+      allow(game).to receive(:opponent) { :paper }
       game.play('Rock')
-      expect(game.result).to eq :win
+      expect(game.result).to eq "<p id='first'>Rock beats paper<br>You won!</p>"
     end
 
   end
