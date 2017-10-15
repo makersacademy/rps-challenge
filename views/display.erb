@@ -9,8 +9,11 @@
 
     <h2>
       You are now registered as
-      <span class="led-yellow">
-        <%= @player_name %>
+      <span class="led-yellow one_player">
+        <%= @player_name if !!@player_name %>
+      </span>
+      <span class="led-yellow two_player">
+        <%= @player_name_one if !!@player_name_one %> and <%= @player_name_two if !!@player_name_two %>
       </span>
     </h2>
 

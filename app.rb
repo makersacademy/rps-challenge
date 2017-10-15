@@ -18,14 +18,16 @@ end
   end
 
   post '/name' do
-    # p params
-
     session[:player_name] = params[:player_name]
+    session[:player_name_one] = params[:player_name_one]
+    session[:player_name_two] = params[:player_name_two]
     redirect '/name'
   end
 
   get '/name' do
     @player_name = session[:player_name]
+    @player_name_one = session[:player_name_one]
+    @player_name_two = session[:player_name_two]
     erb(:display)
   end
 
@@ -47,4 +49,11 @@ end
     # @computer_selection = game.random_response
     erb @game.result
   end
+
+  post '/versus_player' do
+    erb(:form_two)
+  end
+
+
+
 end
