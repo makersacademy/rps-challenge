@@ -1,0 +1,12 @@
+<p>Welcome <%= $player_1.name %> to Rock, Paper, Scissors :)</p>
+
+<% $rock = 'Rock' %>
+<% $paper = 'Paper' %>
+<% $scissors = 'Scissors' %>
+
+<form action="/choice" method="get">
+  <input type="submit" value=<%= $rock %>>
+<br>
+<input type="submit" value=<%= $paper %>>
+<br>
+<input type="submit" value=<%= $scissors %>>
