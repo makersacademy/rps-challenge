@@ -7,7 +7,7 @@ class Player
     @turn_choice = nil
   end
 
-  def chooses(choice = "")
+  def chooses(choice)
     @turn_choice = choice.to_sym
   end
 

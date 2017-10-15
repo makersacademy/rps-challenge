@@ -35,28 +35,25 @@ class Rps < Sinatra::Base
   end
 
   post "/set_players_multiplayer" do
-    p player1 = Player.new(params[:players1_name])
-    p player2 = Player.new(params[:players2_name])
+    player1 = Player.new(params[:players1_name])
+    player2 = Player.new(params[:players2_name])
     @game = RpsGame.create_game(player1, player2)
     redirect "/play", 307
   end
 
   post "/play" do
     @name = @game.players[@game.round % 2].name 
-    @game.increase_round_counter
     erb(:header) + erb(:play) + erb(:footer)
   end
 
   post "/save_choice" do
-    @game.players[@game.round % 2 - 1].chooses(params[:rps_choice])
+    @game.players[@game.round % 2].chooses(params[:rps_choice])
+    @game.increase_round_counter
     redirect "#{@game.multiplayer_link}", 307
   end
 
   post "/results" do
-    unless @game.multiplayer?
-      @game.player1_chooses(params[:rps_choice])
-      @game.player2_chooses(params[:rps_choice]) 
-    end
+    @game.make_bot_choose unless @game.multiplayer?
     @results = @game.decide_winner
     erb(:header) + erb(:results) + erb(:footer)
   end
