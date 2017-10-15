@@ -1,6 +1,6 @@
 feature 'Game screen' do
   before do
-    ready_to_play
+    one_player_version
   end
   scenario 'the players name is displayed' do
     expect(page).to have_content "Choose wisely David!"

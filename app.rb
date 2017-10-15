@@ -13,7 +13,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    erb(:title)
+    erb(:version)
+  end
+
+  post '/opponent' do
+    if params[:opponent] == "Computer"
+      redirect '/one_player'
+    else
+      redirect '/two_player'
+    end
+  end
+
+  get '/one_player' do
+    erb(:one_player)
   end
 
   post '/name' do
