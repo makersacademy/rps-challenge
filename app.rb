@@ -34,10 +34,23 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/names' do
+    @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
+    redirect '/two_play'
+  end
+
   get '/play' do
     erb(:play)
   end
 
+  get '/two_play' do
+    erb(:two_play)
+  end
+
+  post '/store_choice' do
+    redirect @game.store_choice(params[:choice].downcase)
+  end
+  
   post '/result' do
     @player_choice = params[:choice].downcase
     @result = @game.result(@player_choice)
