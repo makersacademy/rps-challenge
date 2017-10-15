@@ -1,5 +1,5 @@
 feature 'takes users name and returns new route displaying their name and move options' do
-  scenario 'user chooses a move' do
+  scenario 'user views a moves' do
     visit '/'
     fill_in :player_name, with: "Edward"
     click_button "Submit"

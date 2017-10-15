@@ -16,7 +16,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require_relative './features/enter_name_spec.rb'
-require_relative './features/choose_move_spec.rb'
+require_relative './features/present_moves_spec.rb'
+require_relative './features/result_spec.rb'
 
 Capybara.app = Rockpaperscissors
 
