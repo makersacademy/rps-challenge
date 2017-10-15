@@ -1,21 +1,9 @@
-<h1>Here are the players</h1>
+<h1>Matchup:</h1>
 <%= @player %> vs Computer
 
-<h2>Choose your move</h2>
-<form action='/choose'>
-<input type='submit' value='Paper'>
-<input type='submit' value='Scissors'>
-<input type='submit' value='Rock'>
+<h2> <%= @player %>, Choose your move</h2>
+<form action='/result' method='post'>
+  <input type='submit' name='rps_choice' value='Rock'>
+  <input type='submit' name='rps_choice' value='Paper'>
+  <input type='submit' name='rps_choice' value='Scissors'>
 </form>
-
-
-
-<!-- <h1>Rock Paper Scissors!</h1>
-<h2>Sign in to play</h2>
-<form action="/name" method="post">
-  <label for="player_name">
-    Player Name
-  <input type="text" name="player_name">
-  <input type="submit" value="Submit"
-  </label>
-</form> -->
