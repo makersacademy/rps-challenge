@@ -2,10 +2,19 @@ require_relative 'player'
 require_relative 'computer_player'
 class Game
 
-WEAPON_OPTIONS = [:rock, :paper, :scissors]
 GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
 
   attr_reader :player1, :computer_player
+
+  def self.instance
+    @instance
+  end
+
+  def self.create(player1, computer_player)
+    fail if @instance != nil
+    @instance = Game.new(player1, computer_player)
+  end
+
 
   def initialize(player1, computer_player)
     @player1 = player1
