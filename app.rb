@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -13,7 +14,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    $player_1_name = $player_1.name 
+    $player_1_name = $player_1.name
     erb :play
   end
 
