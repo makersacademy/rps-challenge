@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/computer_player.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -15,13 +16,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
-    session[:move] = params[:rps_choice]
     erb :play
     # redirect '/paper'
   end
 
   post '/result' do
-    session[:move]
+    @player_move = params[:rps_choice]
+    @computer = ComputerPlayer.new
+    erb :result
   end
 
 
