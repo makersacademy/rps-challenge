@@ -1,5 +1,5 @@
-feature 'takes users name and return new route displaying them' do
-  scenario 'user types in two names to form' do
+feature 'takes users name and returns new route displaying their name' do
+  scenario 'user types name into form' do
     visit '/'
     fill_in :player_name, with: "Edward"
     click_button "Submit"

@@ -7,6 +7,7 @@ class Rockpaperscissors < Sinatra::Base
   end
 
   post '/present_choices' do
+    @player = params[:player_name]
     erb :present_choices
   end
 

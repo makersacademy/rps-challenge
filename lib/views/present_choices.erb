@@ -1,1 +1,8 @@
-<h1>Edward is now in the game</h1>
+<h1>
+  <%=@player%>
+  is now in the game</h1>
+<form method="POST" action="/result">
+  <input type="submit" value="Rock">
+  <input type="submit" value="Paper">
+  <input type="submit" value="Scissors">
+</form>
