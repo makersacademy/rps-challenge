@@ -9,4 +9,10 @@ describe Game do
     end
   end
 
+  describe '#random_counter_move' do
+    it "returns a random rock, paper, scissors move" do
+      expect(["rock", "paper", "scissors"]).to include(game.random_counter_move)
+    end
+  end
+
 end
