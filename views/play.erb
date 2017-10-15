@@ -1,6 +1,15 @@
-<h1> <%= @game.p1.name %> & <%= @game.p2.name %> playing ROCK - PAPER - SCISSORS! </h1>
-
-<form action="" method="post" >
-  <!-- <label> P1: </label> -->
-   <input type="submit" value="Rock">
+<h1> <%= @game.p1.name %> & <%= @game.p2.name %>, welcome to your game of
+   <br />ROCK - PAPER - SCISSORS! </h1>
+<h2>Type in your move...</h2>
+<% if %w(Rock Paper Scissors).include? @game.p1.move %>
+<h2> You chose <%= @game.p1.move %>
+<br /> Computer chose <%= @game.move %>
+</h2>
+<% end %>
+<h2>
+<%= @game.result %>
+<%=  %></h2>
+<form action="/move" method="post" >
+  <input type="text" name="move">
+   <input type="submit" value="Submit move">
  </form>

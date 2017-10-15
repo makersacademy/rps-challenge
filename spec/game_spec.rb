@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(p1, p2) }
-  let(:p1) { double(:player) }
-  let(:p2) { double(:player) }
+  let(:p1) { double(:player, name: "Quentin") }
+  let(:p2) { double(:player, name: "Lucas") }
 
   describe 'initializing players' do
     it 'returns p1 name' do
@@ -33,17 +33,17 @@ describe Game do
     it 'Rock beats Scissors' do
       allow(game.p1).to receive(:move).and_return("Rock")
       allow(game.p2).to receive(:move).and_return("Scissors")
-      expect(game.clash(game.p1.move, game.p2.move)).to eq "Rock WINS!"
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "#{p1.name} WINS!"
     end
     it 'Scissors beats Paper' do
       allow(game.p1).to receive(:move).and_return("Scissors")
       allow(game.p2).to receive(:move).and_return("Paper")
-      expect(game.clash(game.p1.move, game.p2.move)).to eq "Scissors WINS!"
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "#{p1.name} WINS!"
     end
     it 'Paper beats Rock' do
       allow(game.p1).to receive(:move).and_return("Paper")
       allow(game.p2).to receive(:move).and_return("Rock")
-      expect(game.clash(game.p1.move, game.p2.move)).to eq "Paper WINS!"
+      expect(game.clash(game.p1.move, game.p2.move)).to eq "#{p1.name} WINS!"
     end
   end
 

@@ -6,8 +6,8 @@ class Player
     @name = name
   end
 
-  def move(move)
-    @move = move
+  def set_move(move)
+    @move = move.capitalize
   end
 
 end

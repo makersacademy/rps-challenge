@@ -20,5 +20,14 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    @game = Game.instance
+    @game.p1.set_move(params[:move])
+    @p1_move = @game.p1.move
+    @comp_move = @game.move
+    @game.clash(@p1_move, @comp_move)
+    redirect '/play'
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
