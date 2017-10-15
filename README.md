@@ -1,5 +1,6 @@
 # RPS Challenge
 
+![RPS](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/f253915f-ee7c-4abc-a26a-7295edc367ce/00000005.png)
 
 Rock-Paper-Scissors game
 ----
@@ -16,6 +17,15 @@ Techology
 ----
 
 Game written in Ruby using the Sinatra framework. Code built using Test-Driven Development. SimpleCov shows that more than 95% of the code is covered by tests. Unit tests are run with Rspec, Features tests with Capybara.
+
+To get started, clone the repo..
+
+```
+git clone git@github.com:Pablo123GitHub/rps-challenge.git
+
+```
+
+... and run ```bundle``` in order to install the gems that come with the repo.
 
 
 
