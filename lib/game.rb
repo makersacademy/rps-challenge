@@ -19,7 +19,6 @@ class Game
   end
 
   def result(player_choice, choice = computer.choice)
-    p Rules::RULES[player_choice]
     return "Drew" if player_choice == choice 
     return "Won" if Rules::RULES[player_choice].include?(choice)
     return "Lost" if Rules::RULES[choice].include?(player_choice)
