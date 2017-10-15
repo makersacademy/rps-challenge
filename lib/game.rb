@@ -2,7 +2,7 @@ require_relative 'computer'
 require_relative 'rules'
 
 class Game
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :choice
   include Rules
 
   def initialize(player, computer = Computer.new)
@@ -19,6 +19,7 @@ class Game
   end
 
   def result(player_choice, choice = computer.choice)
+    @choice = choice
     return "Drew" if player_choice == choice 
     return "Won" if Rules::RULES[player_choice].include?(choice)
     return "Lost" if Rules::RULES[choice].include?(player_choice)

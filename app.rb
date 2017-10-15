@@ -4,6 +4,10 @@ require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/infastructure' do
     "Testing Infastructure"
   end
@@ -18,8 +22,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    @choice = params[:choice].downcase
-    @result = Game.instance.result(@choice)
+    @player_choice = params[:choice].downcase
+    @result = @game.result(@player_choice)
     erb(:result)
   end
 end
