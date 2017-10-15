@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @choice = params[:opponent]
+    @opponent = params[:opponent]
     @result = Game.instance.results(@opponent)
     erb(:result)
   end
