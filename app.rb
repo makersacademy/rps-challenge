@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
 
@@ -19,9 +21,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @opponent = params[:opponents]
-    @result = Game.instance.result(@opponent)
+
     erb(:result)
   end
-
 end
