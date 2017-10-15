@@ -25,13 +25,14 @@ class Game
   end
 
   def play(weapon)
+    @player_weapon = weapon
     create_opponent
-    play_game(weapon)
+    play_game
   end
 
   private
 
-  attr_reader :calc, :opponent
+  attr_reader :calc, :opponent, :player_weapon, :game_result
 
   def create_opponent
     @opponent = weapons.keys.sample
@@ -41,18 +42,18 @@ class Game
     weapons[weapon.downcase.to_sym]
   end
 
-  def play_game(weapon)
-    game_result = calc.compare(value(weapon), value(opponent))
-    @result = result_string(game_result, weapon)
+  def play_game
+    @game_result = calc.compare(value(player_weapon), value(opponent))
+    @result = result_string
   end
 
-  def result_string(game_result, weapon)
+  def result_string
     if game_result == :tie
       "<p id='first'>The game was a tie</p>"
     elsif game_result == :win
-      "<p id='first'>#{weapon} beats #{opponent}<br>You won!</p>"
+      "<p id='first'>#{player_weapon} beats #{opponent}<br>You won!</p>"
     else 
-      "<p id='first'>#{opponent} beats #{weapon}<br>You lose, #{player}.</p>"
+      "<p id='first'>#{opponent} beats #{player_weapon}<br>You lose, #{player}.</p>"
     end
   end
 
