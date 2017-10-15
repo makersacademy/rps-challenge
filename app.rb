@@ -1,17 +1,16 @@
 require 'sinatra/base'
 require './lib/game.rb'
 
-
 class Rps < Sinatra::Base
   enable :sessions
 
-get '/' do
-erb(:choice_game)
-end
+  get '/' do
+    erb(:choice_game)
+  end
 
-post '/versus_computer' do
-redirect '/versus_computer'
-end
+  post '/versus_computer' do
+    redirect '/versus_computer'
+  end
 
   get '/versus_computer' do
     erb(:form)
@@ -41,12 +40,8 @@ end
     @game = Game.new
     @game.player_choice = session[:response]
     @player_selection = @game.player_choice
-
     @game.computer_selection = @game.random_response
     @computer_selection = @game.computer_selection
-
-
-    # @computer_selection = game.random_response
     erb @game.result
   end
 
@@ -58,11 +53,9 @@ end
     session[:player_name_one] = params[:player_name_one]
     session[:player_name_two] = params[:player_name_two]
     redirect '/name_two'
-
   end
 
-  get '/name_two' do
-    p params
+  get '/name_two' do    
     @player_name_one = session[:player_name_one]
     @player_name_two = session[:player_name_two]
     session[:response_one] = params[:response_one]

@@ -6,11 +6,13 @@
 Techology
 ----
 
-Game written in Ruby using the Sinatra framework. Code built using Test-Driven Development. SimpleCov shows that more than 95% of the code is covered by tests (close to 100%). Unit tests are run with Rspec, Features tests with Capybara.
+Game written in Ruby using the Sinatra framework. Code built using Test-Driven Development. SimpleCov shows 100% of the code is covered by tests. Unit tests are run with Rspec, Features tests with Capybara.
 
 
 How to get the game started
 ----
+
+You will need to go to your terminal and clone the repository, then you will need to go to the cloned folder and run 'bundle' in order to install the gems used to run the program. In order to launch the program you will need to type 'rackup'
 
 ```
 $ git clone git@github.com:Pablo123GitHub/rps-challenge.git

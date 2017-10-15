@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  subject {Game.new}
+  subject { Game.new }
   describe 'Play versus computer  ' do
     context 'Ends in a draw' do
       it 'outputs randomly selected response by computer' do
@@ -24,36 +24,36 @@ describe Game do
 
     context 'Player wins' do
       it 'Player has Rock, computer has Scissors' do
-        allow(subject).to receive(:player_choice) {'ROCK'}
-        allow(subject).to receive(:computer_selection) {'SCISSORS'}
+        allow(subject).to receive(:player_choice) { 'ROCK' }
+        allow(subject).to receive(:computer_selection) { 'SCISSORS' }
         expect(subject.result).to eq :win
       end
       it 'Player has Scissors, computer has Paper' do
-        allow(subject).to receive(:player_choice) {'SCISSORS'}
-        allow(subject).to receive(:computer_selection) {'PAPER'}
+        allow(subject).to receive(:player_choice) { 'SCISSORS' }
+        allow(subject).to receive(:computer_selection) { 'PAPER' }
         expect(subject.result).to eq :win
       end
       it 'Player has Paper, computer has Rock' do
-        allow(subject).to receive(:player_choice) {'PAPER'}
-        allow(subject).to receive(:computer_selection) {'ROCK'}
+        allow(subject).to receive(:player_choice) { 'PAPER' }
+        allow(subject).to receive(:computer_selection) { 'ROCK' }
         expect(subject.result).to eq :win
       end
     end
 
     context 'Player loses' do
       it 'Computer has Rock, player has Scissors' do
-        allow(subject).to receive(:player_choice) {'ROCK'}
-        allow(subject).to receive(:computer_selection) {'PAPER'}
+        allow(subject).to receive(:player_choice) { 'ROCK' }
+        allow(subject).to receive(:computer_selection) { 'PAPER' }
         expect(subject.result).to eq :loss
       end
       it 'Computer has Scissors, player has Paper' do
-        allow(subject).to receive(:player_choice) {'SCISSORS'}
-        allow(subject).to receive(:computer_selection) {'ROCK'}
+        allow(subject).to receive(:player_choice) { 'SCISSORS' }
+        allow(subject).to receive(:computer_selection) { 'ROCK' }
         expect(subject.result).to eq :loss
       end
       it 'Computer has Paper, player has Rock' do
-        allow(subject).to receive(:player_choice) {'PAPER'}
-        allow(subject).to receive(:computer_selection) {'SCISSORS'}
+        allow(subject).to receive(:player_choice) { 'PAPER' }
+        allow(subject).to receive(:computer_selection) { 'SCISSORS' }
         expect(subject.result).to eq :loss
       end
     end
@@ -73,5 +73,5 @@ describe Game do
         subject.player_one_choice = "ROCK"
         expect(subject.result_two_player).to eq :win_player_two
       end
-    end
+ end
 end

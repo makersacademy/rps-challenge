@@ -9,27 +9,17 @@ class Game
   end
 
   def result
-    RULES.each do |key, value |
-      if (key == player_choice && value == computer_selection)
-        return :win
-        break
-      elsif (key == computer_selection && value == player_choice)
-        return :loss
-        break
-      end
+    RULES.each do |key, value|
+      return :win if (key == player_choice && value == computer_selection)
+      return :loss if (key == computer_selection && value == player_choice)
     end
     return :draw
   end
 
   def result_two_player
     RULES.each do |key, value|
-       if (key == player_one_choice && value == player_two_choice)
-         return :win_player_one
-         break
-       elsif (key == player_two_choice && value == player_one_choice)
-      return :win_player_two
-        break
-      end
+      return :win_player_one if (key == player_one_choice && value == player_two_choice)
+      return :win_player_two if (key == player_two_choice && value == player_one_choice)
     end
     return :draw_two_player
   end

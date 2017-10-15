@@ -13,7 +13,7 @@ feature 'Playing the game' do
     end
 
     scenario 'the player wins' do
-      allow_any_instance_of(Array).to receive(:sample) {'SCISSORS'}
+      allow_any_instance_of(Array).to receive(:sample) { 'SCISSORS' }
       sign_in_register
       find('input[value="ROCK"]').click
       expect(page).to have_content "YOU WIN !!!!"
@@ -43,7 +43,4 @@ feature 'Playing the game' do
         expect(page).to have_content "Pablo is the WINNER !!!!"
       end
   end
-
-
-
 end
