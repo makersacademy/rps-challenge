@@ -1,15 +1,16 @@
 # require_relative "./artificial_player"
 class RpsGame
-  attr_reader :players, :choices, :round
+  attr_reader :players, :round
 
+  CHOICES = { :rock =>     [:scissors, :lizard], 
+              :scissors => [:paper, :lizard], 
+              :paper =>    [:rock, :spock],
+              :spock =>    [:rock, :scissors],
+              :lizard =>   [:spock, :paper] }
+  CHOICES.default = []
+  
   def initialize(player1, player2)
     @players = [player1, player2]
-    @choices = { :rock =>     [:scissors, :lizard], 
-                 :scissors => [:paper, :lizard], 
-                 :paper =>    [:rock, :spock],
-                 :spock =>    [:rock, :scissors],
-                 :lizard =>   [:spock, :paper] }
-    @choices.default = []
     @round = 0
   end
 
@@ -21,7 +22,7 @@ class RpsGame
     @current_game
   end
 
-  def multiplayer? #should I require artificial player class for that?
+  def multiplayer? # should I require artificial player class for that?
     !player2.instance_of?(ArtificialPlayer)
   end
 
@@ -69,11 +70,11 @@ class RpsGame
   end
 
   def player1_wins?
-    choices[player1_choice].include?(player2_choice)
+    CHOICES[player1_choice].include?(player2_choice)
   end
 
   def player2_wins?
-    choices[player2_choice].include?(player1_choice) 
+    CHOICES[player2_choice].include?(player1_choice) 
   end
 
   def set_round_results(winner = nil, looser = nil)

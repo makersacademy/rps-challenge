@@ -1,15 +1,12 @@
 require_relative "./player"
 
 class ArtificialPlayer < Player
+  CHOICES = [:rock, :paper, :scissors, :spock, :lizard]
   def initialize(name = "S1llyb0t")
     super(name)
-    @choices = [:rock, :paper, :scissors, :spock, :lizard]
   end
 
-  def chooses(nothing)
-    @turn_choice = choices.sample
+  def chooses(*)
+    @turn_choice = CHOICES.sample
   end
-
-  private
-  attr_reader :choices
 end

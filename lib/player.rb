@@ -4,7 +4,6 @@ class Player
   def initialize(name)
     @name = name
     @win_counts = 0
-    @turn_choice = nil
   end
 
   def chooses(choice)
