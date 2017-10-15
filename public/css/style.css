@@ -5,6 +5,7 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
   text-align: center;
   background-color: #aed1fd;
+  color: white;
 }
 
 #home_page_header {
@@ -22,6 +23,7 @@ body {
 
 form {
   margin-top: 30px;
+  text-align: center;
 }
 
 input {
@@ -69,4 +71,60 @@ input[type="text"]:focus {
 
 input[type="text"]:focus::-webkit-input-placeholder {         
   color:transparent; 
+}
+
+#choice {
+  margin-top: 5%;
+  font-size: 35px;
+  letter-spacing: 0.03em;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label div {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin: 1%;
+  line-height: 100px;
+  margin-top: 40px;
+}
+
+label div:hover {
+  background-color: white;
+  color: #7cb6ff;
+  border-color: #7cb6ff;
+}
+
+input[type="radio"]:checked+label > div {
+  background-color: white;
+  color: #7cb6ff;
+}
+
+#go {
+  margin-top: 40px;
+}
+
+div #rock {
+
+}
+
+div #paper {
+  
+}
+
+div #scissors {
+  
+}
+
+div #spock {
+  
+}
+
+div #lizard {
+  
 }
