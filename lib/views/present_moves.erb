@@ -1,8 +1,8 @@
 <h1>
-  <%=@name%>
+  <%=@player.name%>
   is now in the game</h1>
 <form method="POST" action="/result">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
 </form>
