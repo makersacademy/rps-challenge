@@ -9,10 +9,4 @@ describe Player do
     end
   end
 
-  describe '#choice' do
-    it 'returns choice' do
-      expect(subject).to respond_to(:choice)
-    end
-  end
-
 end
