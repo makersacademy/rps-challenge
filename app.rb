@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/two_player' do
-    "Rock Paper Scissors Lizard Spock"
+    erb(:two_player)
   end
 
   post '/name' do
