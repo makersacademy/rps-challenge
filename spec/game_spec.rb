@@ -16,9 +16,5 @@ describe Game do
   it "compares player's choice and the opponent's choice" do
   end
 
-  #describe '#attack' do
-    #it 'initiates an attack on the player given' do
-      #expect(player_2).to receive(:receive_damage)
-      #game.attack(player_2)
-    #end
+
   end

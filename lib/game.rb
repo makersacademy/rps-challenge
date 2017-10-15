@@ -14,5 +14,8 @@ class Game
     @game_choice = [:rock, :paper, :scissors].sample
   end
 
+  def compete
+    competition = [@player, @game_choice]
+  end
 
 end
