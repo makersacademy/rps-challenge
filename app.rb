@@ -23,6 +23,10 @@ class RPS < Sinatra::Base
     erb :choice
   end
 
+  get '/computer_choice' do
+    erb :computer_choice
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
