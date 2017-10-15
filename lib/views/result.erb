@@ -1,0 +1,60 @@
+<head>
+<style>
+
+body {
+  background: linear-gradient(#009999, #00ffff)
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+div.img_holder {
+  display: flex;
+	justify-content: space-around;
+}
+
+.img{
+  border-radius: 15%;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 15%;
+  margin: 5px;
+}
+
+div.button_holder{
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  background-color: white;
+  color: #009999;
+  text-align: center;
+  font-size: 36px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #009999;
+  color: white;
+}
+
+</style>
+</head>
+
+ <h1> <%= @player_1 %> your choice was <%= @player_choice %></h1>
+
+ <div class = "img_holder">
+   <img class = "img" src= 'https://images.sciencedaily.com/2013/02/130219161246-large.jpg'>
+ </div>
+
+<div class = "button_holder">
+  <a href='/comp_result'><button type="button">Ok! Now the computer picks</button></a>
+</div>

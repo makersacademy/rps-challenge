@@ -1,0 +1,63 @@
+<head>
+<style>
+
+body {
+  background: linear-gradient(#009999, #00ffff)
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+h2 {
+  font-family: 'Helvetica';
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+ul {
+  font-family: 'Helvetica';
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+form {
+  font-family: 'Helvetica';
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+</style>
+</head>
+
+
+<h1> Welcome to the game <%= @player_1 %>! </h1>
+
+<h2> You can choose from:</h2>
+<ul>
+  <li>rock</li>
+  <li>paper</li>
+  <li>scissors</li>
+</ul>
+
+<form action="/choice" method= "post">
+  <label for="player_choice">
+    Type what you choose:
+    <input type= "text" name= "player_choice">
+  </label>
+  <input type= "submit" value= "Submit">
+</form>
