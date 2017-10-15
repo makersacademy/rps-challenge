@@ -2,14 +2,6 @@ body {
 	background:rgb(73, 121, 241);
 	color:transparent;
 }
-h1 {
-	margin:50px 0;
-	font-family: 'Press Start 2P', cursive;
-	color:#FFF;
-}
-header h1 {
-	font-size:50px;
-}
 
 h2 {
   margin:50px 0;
@@ -17,18 +9,6 @@ h2 {
   font-size:60px;
   font-family: 'Press Start 2P', cursive;
 	color:#FFF
-}
-
-h3 {
-  margin:50px 0;
-  text-align: center;
-  font-size:30px;
-  font-family: 'Press Start 2P', cursive;
-	color:#FFF
-}
-
-h3.inline {
-  display: inline;
 }
 
 .button {
