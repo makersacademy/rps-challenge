@@ -1,1 +1,53 @@
+<head>
+<style>
+
+body {
+  background: linear-gradient(#009999, #00ffff)
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+div.img_holder {
+  display: flex;
+	justify-content: space-around;
+}
+
+.img{
+  border-radius: 15%;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 15%;
+  margin: 5px;
+}
+
+div.button_holder{
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  background-color: white;
+  color: #009999;
+  text-align: center;
+  font-size: 36px
+}
+
+</style>
+</head>
   <h1> The result is ....... <%= @result %></h1>
+
+  <div class = "img_holder">
+    <img class = "img" src= 'https://www.sciencedaily.com/images/2013/02/130211104526_1_900x600.jpg'>
+  </div>
+
+<div class = "button_holder">
+  <a href='/play'><button type="button">Play again?</button></a>
+</div>

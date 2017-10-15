@@ -25,7 +25,7 @@ end
 feature 'The computer picks' do
   scenario '#rand_choice returns the comp_choice' do
     choose_pick
-    click_link 'Ok! Now the computer picks'
+    click_button 'Ok! Now the computer picks'
     expect(page).to have_content('rock')
   end
 end
@@ -33,8 +33,8 @@ end
 feature 'The winnder is decided' do
   scenario 'the winner is presented' do
     choose_pick
-    click_link 'Ok! Now the computer picks'
-    click_link 'See who wins'
+    click_button 'Ok! Now the computer picks'
+    click_button 'See who wins'
     expect(page).to have_content("It is a draw!")
   end
 end

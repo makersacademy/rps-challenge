@@ -36,7 +36,6 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/winner'do
-    @game = $game
     @result = $game.play
     erb(:winner)
   end

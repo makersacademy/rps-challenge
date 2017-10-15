@@ -1,4 +1,54 @@
+<head>
+<style>
+
+body {
+  background: linear-gradient(#009999, #00ffff)
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px #0099e6, 0 0 8px #0099e6
+}
+
+div.img_holder {
+  display: flex;
+	justify-content: space-around;
+}
+
+.img{
+  border-radius: 15%;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 15%;
+  margin: 5px;
+}
+
+div.button_holder{
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  background-color: white;
+  color: #009999;
+  text-align: center;
+  font-size: 36px
+}
+
+</style>
+</head>
 
  <h1> The computer's choice was <%= @comp_choice %></h1>
 
-  <a href='/winner'> See who wins</a>
+ <div class = "img_holder">
+   <img class = "img" src= 'https://i.pinimg.com/originals/ca/eb/6c/caeb6c1350700f40ecacc67bf4dfeec4.jpg'>
+ </div>
+
+<div class = "button_holder">
+  <a href='/winner'><button type="button">See who wins</button></a>
+</div>
