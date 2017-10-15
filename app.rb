@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/version'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -17,11 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/opponent' do
-    if params[:opponent] == "Computer"
-      redirect '/one_player'
-    else
-      redirect '/two_player'
-    end
+    redirect Version.new.version_path(params[:opponent])
   end
 
   get '/one_player' do

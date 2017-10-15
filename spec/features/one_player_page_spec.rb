@@ -10,10 +10,7 @@ feature 'One player screen' do
     expect(page).to have_field 'name'
   end
   scenario 'there is a button that starts the game' do
-    visit '/'
-    click_button "Computer"
-    fill_in :name, with: 'David'
-    click_button 'Submit'
+    one_player_version
     expect(page).to have_current_path '/play'
   end
 end
