@@ -30,7 +30,7 @@ feature 'The computer picks' do
   end
 end
 
-feature 'The winnder is decided' do
+feature 'The winner is decided' do
   scenario 'the winner is presented' do
     choose_pick
     click_button 'Ok! Now the computer picks'
