@@ -5,14 +5,26 @@ html, body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 .pad20 {
     padding: 20px !important;
+}
+
+.w3-padding-0 {
+    padding: 0 !important;
+}
+
+.player-box {
+    border: 1px solid #2196f3;
+}
+
+.players-list {
+    list-style: none;
 }

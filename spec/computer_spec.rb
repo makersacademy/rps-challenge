@@ -1,7 +1,7 @@
 require './lib/computer'
 
 describe Computer do
-  subject(:computer) { Computer.new('Sheldon') }
+  subject(:computer) { described_class.new }
 
   context '#initialization' do
     it 'should initialize with 0 wins' do

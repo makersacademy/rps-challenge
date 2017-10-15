@@ -2,7 +2,8 @@
 Ideas
 -----
 
-My first impulse was to implement a if/elsif but it became apparent that this could turn into a very complicated if/elsif chain. This theory was researched and confirmed.
+My first impulse was to implement a if/elsif statement but it became apparent that this could turn into a very complicated and messy piece of code. 
+This theory was researched and confirmed.
 My next idea was to map out the rules of the game to possibly use this as a reference, assigning the subordinate value to their dominant key pair.
 
 ```ruby
@@ -19,6 +20,17 @@ Next I worked on the structure of the application and my first draft came up as 
 ![Alt text](./images/first_draft.png?raw=true)
 
 This gave me a good starting point.
+
+###Stage 1
+
+My first attempt at the `Player` class was unsuccessful as I attempted to make a player either computer or human. 
+This could have worked but I decided that I didn't want the computers random logic in the `Player` class. 
+
+Below is my revised diagram: 
+
+![Alt text](./images/second_draft.png?raw=true)
+
+
 
 Instructions
 -------

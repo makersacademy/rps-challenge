@@ -1,29 +1,39 @@
-<div class="content">
-  <div class="w3-card-4">
+
     <header class="w3-container w3-blue">
-      <h1>Welcome to Rock/Paper/Scissors</h1>
+      <h1>Welcome</h1>
     </header>
 
     <div class="w3-container pad20">
       <form action="/players" method="post">
         Please enter the player names:<br>
         <br>
-        <label class="w3-text-blue" for="player_1">
-          Player 1:
-          <input class="w3-input w3-border" type="text" name="player_1">
-        </label><br>
-        <br>
-        <label class="w3-text-blue" for="player_2">
-          Player 2:
-          <input class="w3-input w3-border" type="text" name="player_2">
-        </label><br>
-        <br>
-        <input class="w3-btn w3-ripple w3-blue" type="submit" value="Submit">
+        <ul id="players" class="players-list">
+          <li id="player_1">
+            <label class="w3-text-blue" for="player_1">Player 1: </label>
+            <input class="w3-input w3-border" type="text" name="player_1">
+            <label class="w3-text-blue">Human: </label>
+            <input id="player_1_human" type="radio" name="player_1_type" value="human" checked=true/>
+            <label class="w3-text-blue">Computer: </label>
+            <input id="player_1_computer" type="radio" name="player_1_type" value="computer" />
+          </li>
+          <br>
+          <li id="player_2">
+            <label class="w3-text-blue" for="player_2">Player 2: </label>
+            <input class="w3-input w3-border" type="text" name="player_2">
+            <label class="w3-text-blue">Human: </label>
+            <input id="player_2_human" type="radio" name="player_2_type" value="human" checked=true/>
+            <label class="w3-text-blue">Computer: </label>
+            <input id="player_2_computer" type="radio" name="player_2_type" value="computer" />
+            <br>
+          </li>
+        </ul>
+        <input class="w3-button w3-blue pull-right" type="submit" value="Play">
       </form>
     </div>
-
-    <!--<footer class="w3-container w3-blue">-->
-      <!--<h5>Footer</h5>-->
-    <!--</footer>-->
-  </div>
-</div>
+    <footer class="w3-container w3-blue">
+      <% if flash[:error] %>
+        <p><%= flash[:error] %></p>
+      <% else %>
+        <p><%= "Players: #{@player_count}" %></p>
+      <% end %>
+    </footer>

@@ -1,1 +1,24 @@
-<h1> <%= @player_1.name %> vs. <%= @player_2.name %></h1>
+
+<header class="w3-container w3-blue">
+  <h1>Welcome to Rock/Paper/Scissors</h1>
+</header>
+
+<div class="w3-container w3-padding-0">
+  <div class="w3-row">
+    <% @players[0].each_with_index do |player, index| %>
+        <div id="<%= "player_#{index + 1}" %>" class="w3-half w3-container player-box">
+          <label class="w3-text-blue">
+            <h3>Player <%= "#{index + 1}: #{player[:player].name} (#{player[:type]})" %></h3>
+          </label>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<footer class="w3-container w3-blue">
+  <% if flash[:error] %>
+      <p><%= flash[:error] %></p>
+  <% else %>
+      <p><%= "Turn: #{@players[0].count}" %></p>
+  <% end %>
+</footer>
