@@ -32,10 +32,6 @@ class Game
   end
 
   def play
-    p "P2"
-    p players[1]
-    p "P2 Weapon Choice"
-    p players[1].weapon_choice
     @result = players[0].weapon_choice.versus(players[1].weapon_choice)
   end
 

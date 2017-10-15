@@ -20,23 +20,27 @@ end
 
 feature "players' names shown throughout game" do
   scenario 'player selects one-player' do
+    # one_player_p1_chooses_rock
     visit ('/')
     click_on "Computer"
     fill_in "p1_name", with: "Lady Macbeth"
     click_on "Enter"
     expect(page).to have_content "Lady Macbeth"
     click_on "Rock"
+    #
     expect(page).to have_content "Lady Macbeth"
     expect(page).to have_content "#{Computer::COMPUTER_NAME}"
   end
   scenario 'player selects two-player' do
+    #two_players_p1_chooses_spock
     visit ('/')
     click_on "Human"
     fill_in "p1_name", with: "Lady Macbeth"
     fill_in "p2_name", with: "Queen Gertrude"
     click_on "Enter"
     expect(page).to have_content "Lady Macbeth"
-    click_on "Rock"
+    click_on "Spock"
+    #
     expect(page).to have_content "Queen Gertrude"
     click_on "Rock"
     expect(page).to have_content "Lady Macbeth"
@@ -59,60 +63,72 @@ feature 'presents results of the game' do
   scenario "single-player mode, player chooses rock, computer chooses paper" do
     allow(Computer).to receive(:new) { computer }
     allow(computer).to receive(:weapon_choice) { Paper.new }
+    #one_player_p1_chooses_rock
     visit ('/')
     click_on "Computer"
     fill_in "p1_name", with: "Lady Macbeth"
     click_on "Enter"
     click_on "Rock"
+    #
     expect(page).to have_content "#{Computer::COMPUTER_NAME} wins!"
   end
   scenario "single-player mode, player chooses rock, computer chooses scissors" do
     allow(Computer).to receive(:new) { computer }
     allow(computer).to receive(:weapon_choice) { Scissors.new }
+    #one_player_p1_chooses_rock
     visit ('/')
     click_on "Computer"
     fill_in "p1_name", with: "Lady Macbeth"
     click_on "Enter"
     click_on "Rock"
+    #
     expect(page).to have_content "Lady Macbeth wins!"
   end
   scenario "single-player mode, player chooses rock, computer chooses rock" do
     allow(Computer).to receive(:new) { computer }
     allow(computer).to receive(:weapon_choice) { Rock.new }
+    #one_player_p1_chooses_rock
     visit ('/')
     click_on "Computer"
     fill_in "p1_name", with: "Lady Macbeth"
     click_on "Enter"
     click_on "Rock"
+    #
     expect(page).to have_content "It's a draw!"
   end
   scenario "two-player mode, player 1 chooses spock, player 2 chooses spock" do
+    #two_players_p1_chooses_spock
     visit ('/')
     click_on "Human"
     fill_in "p1_name", with: "Lady Macbeth"
     fill_in "p2_name", with: "Queen Gertrude"
     click_on "Enter"
     click_on "Spock"
+    #
     click_on "Spock"
     expect(page).to have_content "It's a draw!"
   end
   scenario "two-player mode, player 1 chooses spock, player 2 chooses lizard" do
+    #two_players_p1_chooses_spock
     visit ('/')
     click_on "Human"
     fill_in "p1_name", with: "Lady Macbeth"
     fill_in "p2_name", with: "Queen Gertrude"
     click_on "Enter"
     click_on "Spock"
+    #
     click_on "Lizard"
     expect(page).to have_content "Queen Gertrude wins!"
   end
   scenario "two-player mode, player 1 chooses spock, player 2 chooses scissors" do
+    #two_players_p1_chooses_spock
     visit ('/')
     click_on "Human"
     fill_in "p1_name", with: "Lady Macbeth"
     fill_in "p2_name", with: "Queen Gertrude"
     click_on "Enter"
     click_on "Spock"
+    #
     click_on "Scissors"
     expect(page).to have_content "Lady Macbeth wins!"
   end
