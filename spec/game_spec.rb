@@ -15,6 +15,15 @@ describe Game do
 
   end
 
+  describe '#weapon' do
+
+    it 'returns the players weapon choice' do
+      game.play('rock')
+      expect(game.weapon).to eq 'rock'
+    end
+
+  end
+
   describe '#self.create_game' do
 
     it 'creates a new game instance' do

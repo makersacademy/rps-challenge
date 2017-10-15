@@ -2,7 +2,7 @@ require_relative './calculator'
 
 class Game
 
-  attr_reader :player, :weapons, :result, :opponent
+  attr_reader :player, :weapons, :result, :opponent, :weapon
 
   def initialize(player, calculator = nil)
     @calc = calculator || Calculator.new
@@ -25,6 +25,7 @@ class Game
   end
 
   def play(weapon)
+    @weapon = weapon
     create_opponent
     @result = calc.compare(value(weapon), value(opponent))
   end
