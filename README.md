@@ -1,6 +1,4 @@
-# RPS Challenge
-
-# TAKEAWAY CHALLENGE
+# RPS CHALLENGE
 
 This is my response to the 'weekend challenge' of Week 3 of Makers Academy. For full details of what the challenge involved, see 'APPENDIX' below.
 
