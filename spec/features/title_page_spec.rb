@@ -1,7 +1,7 @@
 feature 'Title screen' do
   scenario 'the title page loads' do
     visit '/'
-    expect(page).to have_content "Rock Paper Scissors"
+    expect(page).to have_content "Rock Paper Scissors Lizard Spock"
   end
   scenario 'there is a field for a player to sign in' do
     visit '/'
