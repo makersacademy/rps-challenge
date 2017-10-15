@@ -3,15 +3,17 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
-    <title>RPS-Home</title>
+    <title>RPS-Play</title>
   </head>
   <body>
     <p id="choice">Choose your weapon, <%= player_name %>:</p>
     <form action="/calculate" method="post">
       <% weapons.each do |weapon, value| %>
         <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>">
-        <label for="<%= weapon %>">
-          <div id="<%= weapon %>"><%= weapon.capitalize %></div>
+        <label for="<%= weapon %>" id="<%= weapon %>-icon">
+          <div>
+          <%= weapon.capitalize %>
+          </div>
         </label>
       <% end %>
       <div id="go">

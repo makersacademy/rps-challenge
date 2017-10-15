@@ -13,15 +13,15 @@ feature 'playing rock paper scissors' do
   feature 'choosing a weapon' do
 
     scenario 'allows rock to be chosen' do
-      expect(page).to have_button 'Rock'
+      expect(page).to have_css '#rock-icon'
     end
 
     scenario 'allows paper to be chosen' do
-      expect(page).to have_button 'Paper'
+      expect(page).to have_css '#paper-icon'
     end
 
     scenario 'allows scissors to be chosen' do
-      expect(page).to have_button 'Scissors'
+      expect(page).to have_css '#scissors-icon'
     end
 
   end
@@ -30,19 +30,22 @@ feature 'playing rock paper scissors' do
 
     scenario 'winning the game' do
       allow(Game.current_game).to receive(:result) { "win" }
-      click_button 'Rock'
+      find("#rock-icon").click
+      click_button "Go!"
       expect(page).to have_content 'You win'
     end
 
     scenario 'losing the game' do
       allow(Game.current_game).to receive(:result) { "lose" }
-      click_button 'Rock'
+      find("#rock-icon").click
+      click_button "Go!"
       expect(page).to have_content 'You lose'
     end
 
     scenario 'the game is a tie' do
       allow(Game.current_game).to receive(:result) { "tie" }
-      click_button 'Rock'
+      find("#rock-icon").click
+      click_button "Go!"
       expect(page).to have_content 'You tie'
     end
 
@@ -51,7 +54,8 @@ feature 'playing rock paper scissors' do
   feature 'player can play again' do
 
     scenario 'Play again button is visible' do
-      click_button 'Rock'
+      find("#rock-icon").click
+      click_button "Go!"
       expect(page).to have_button 'Play again'
     end
 
