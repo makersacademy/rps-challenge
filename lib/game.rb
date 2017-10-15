@@ -32,6 +32,10 @@ class Game
   end
 
   def play
+    p "P2"
+    p players[1]
+    p "P2 Weapon Choice"
+    p players[1].weapon_choice
     @result = players[0].weapon_choice.versus(players[1].weapon_choice)
   end
 
@@ -50,18 +54,6 @@ class Game
     @ask_second = @multiplayer_mode
     @current_turn = 0
     @current_player = players[current_turn]
-  end
-
-  private
-
-  attr_reader :computer
-
-  def player_choose(choice)
-    @player_choice = Object.const_get(choice).new
-  end
-
-  def computer_choose
-    @computer_choice = Object.const_get(computer.choose).new
   end
 
 end

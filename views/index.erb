@@ -1,7 +1,14 @@
-Would you like to play against a human or against Ms. Autoplay?
-<form action="/multiplayer" method="get">
-<input type="submit" value="Human">
-</form>
-<form action="/singleplayer" method="get">
-<input type="submit" value="Ms. Autoplay">
-</form>
+Welcome to the <br>
+Rocks 'n' Spocks 'n'<br>
+Scissors 'n' Lizards 'n'<br>
+Paper Caper!<br>
+<br>
+Rules of the Caper:<br>
+1) Rocks smash Lizards 'n' Scissors<br>
+3) Scissors snip Paper 'n' Lizards<br>
+2) Spocks vaporize Scissors 'n' Rocks<br>
+4) Lizards munch Paper 'n' Spocks<br>
+5) Everything draws against itself.<br>
+ <br>
+Would you like to play against a human or against our computer, <%= Computer::COMPUTER_NAME %>?
+<form action="/multiplayer" method="get"><input type="submit" value="Human"></form><form action="/singleplayer" method="get"><input type="submit" value="Computer"></form>

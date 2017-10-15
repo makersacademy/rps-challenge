@@ -1,4 +1,6 @@
-<%= Game.current.current_player.name %> Let's play Rock, Paper, Scissors ft. Spocks and Lizards!<br>
+Let's play Rock, Paper, Scissors ft. Spocks and Lizards!<br>
+<%= Game.current.current_player.name %>, it's your turn.<br>
+Choose your weapon: <br>
 <form action="/choice" method="post">
 <button type="submit" name="weapon" value="Rock">Rock</button>
 <button type="submit" name="weapon" value="Paper">Paper</button>
