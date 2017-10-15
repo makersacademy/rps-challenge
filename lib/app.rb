@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class Rock_Paper_Scissors < Sinatra::Base
   enable :sessions
@@ -26,6 +27,12 @@ class Rock_Paper_Scissors < Sinatra::Base
     @player_1 = session[:player_1]
     @player_choice = session[:player_choice]
     erb(:result)
+  end
+
+  get '/comp_result'do
+    @game = Game.new(session[:player_choice])
+    @comp_choice = @game.rand_choice
+    erb(:comp_result)
   end
 
   run! if app_file == $0

@@ -17,9 +17,16 @@ end
 
 feature 'Pick rock paper or scissors' do
   scenario 'Players can enter their choice' do
-  sign_in_and_play
-  fill_in :player_choice, with: 'rock'
-  click_button 'Submit'
+    choose_pick
     expect(page).to have_content 'rock'
+  end
+end
+
+feature 'The computer picks' do
+  scenario '#rand_choice returns the comp_choice' do
+    choose_pick
+    click_link 'Ok! Now the computer picks'
+    expect(page).to have_content('rock')
+
   end
 end
