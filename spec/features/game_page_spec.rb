@@ -14,4 +14,10 @@ feature 'Game screen' do
   scenario 'there is an option for scissors' do
     expect(page).to have_button 'Scissors'
   end
+  scenario 'there is an option for lizard' do
+    expect(page).to have_button 'Lizard'
+  end
+  scenario 'there is an option for spock' do
+    expect(page).to have_button 'Spock'
+  end
 end
