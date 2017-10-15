@@ -1,7 +1,7 @@
 feature 'Game screen' do
   context 'one player' do
     before do
-    one_player_version
+      one_player_version
     end
     scenario 'the players name is displayed' do
       expect(page).to have_content "Choose wisely David!"
@@ -25,7 +25,7 @@ feature 'Game screen' do
 
   context 'two player, first player' do
     before do
-    two_player_version
+      two_player_version
     end
     scenario 'the players name is displayed' do
       expect(page).to have_content "Choose wisely David!"
@@ -49,8 +49,8 @@ feature 'Game screen' do
 
   context 'two player, second player' do
     before do
-    two_player_version
-    click_button "Spock"
+      two_player_version
+      click_button "Spock"
     end
     scenario 'the players name is displayed' do
       expect(page).to have_content "Choose wisely Scotty!"
