@@ -40,7 +40,15 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @players = $game.players
+    @player = $game.current_player
+    erb :play, :layout => :'/layout'
+  end
+
+  get '/turn' do
+    @game = $game
+    p params[:selection]
+    @game.turn(params[:selection])
+    @player = $game.current_player
     erb :play, :layout => :'/layout'
   end
 end
