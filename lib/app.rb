@@ -29,13 +29,13 @@ class Rock_Paper_Scissors < Sinatra::Base
     erb(:result)
   end
 
-  get '/comp_result'do
+  get '/comp_result' do
     $game = Game.new(session[:player_choice].downcase)
     @comp_choice = $game.rand_choice
     erb(:comp_result)
   end
 
-  get '/winner'do
+  get '/winner' do
     @result = $game.play
     erb(:winner)
   end

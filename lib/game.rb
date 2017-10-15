@@ -1,16 +1,16 @@
 
- class Game
-   attr_reader :comp_choice
+class Game
+  attr_reader :comp_choice
 
-   def initialize(player_choice)
-     @player_choice = player_choice
-     @comp_choice = 'rock'
-   end
+  def initialize(player_choice)
+   @player_choice = player_choice
+   @comp_choice = 'rock'
+  end
 
-   def rand_choice
-     arr = ['rock', 'paper', 'scissors'].shuffle
-     @comp_choice = arr[0]
-   end
+  def rand_choice
+   arr = ['rock', 'paper', 'scissors'].shuffle
+   @comp_choice = arr[0]
+  end
 
   def play
     if @player_choice == @comp_choice
@@ -30,4 +30,4 @@
     end
   end
 
- end
+end
