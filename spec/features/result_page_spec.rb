@@ -14,4 +14,9 @@ feature 'Result page' do
     click_button 'Paper'
     expect(page).to have_content(/Won|Lost|Drew/)
   end
+  scenario 'the player can choose to play again' do
+    ready_to_play
+    click_button 'Lizard'
+    expect(page).to have_button "Again?"
+  end
 end
