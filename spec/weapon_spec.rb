@@ -6,6 +6,12 @@ describe Weapon do
   let(:weapon_2) { :paper }
   let(:weapon_3) { :scissors }
 
+  describe '#random_weapon' do
+    it 'returns a value' do
+      expect(Weapon.random_weapon.to_s).not_to be_nil
+    end
+  end
+
   describe '#calc_winning_weapon' do
     it 'returns a draw' do
       expect(Weapon.calc_winning_weapon(weapon_1, weapon_1)).to be_nil

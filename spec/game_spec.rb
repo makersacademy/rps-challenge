@@ -16,4 +16,10 @@ describe Game do
       expect(game.player_2.name).to eq(player_2.name)
     end
   end
+
+  describe 'returns an instance of game' do
+    it 'returns an instance of Game' do
+      expect(Game.instance).to be_an_instance_of Game
+    end
+  end
 end

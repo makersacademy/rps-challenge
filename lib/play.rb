@@ -1,4 +1,5 @@
 require 'weapon'
+
 class Play
   def initialize(weapon_1, weapon_2)
     @weapon_1 = weapon_1
