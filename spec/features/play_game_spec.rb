@@ -3,7 +3,7 @@ require_relative '../../app.rb'
 feature 'Select options' do
 
   scenario 'Player1 selects rock' do
-    visit('/game_intro')
+    visit('/play_game')
     click_button 'rock'
     expect(page).to have_content("The results are:")
   end

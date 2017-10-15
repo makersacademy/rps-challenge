@@ -10,19 +10,31 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/choose_players' do
+    @player2 = params[:multi_player]
+    erb :names
+  end
+
+
+  post '/single_player_game' do
     player1 = Player.new(params[:player1])
-    computer_player = ComputerPlayer.new
-    Game.create(player1, computer_player)
-    redirect '/game_intro'
+    Game.create(player1)
+    redirect '/play_game'
+  end
+
+  post '/multi_player_game' do
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    Game.create(player1, player2)
+    redirect '/play_game'
   end
 
   before do
     @game = Game.instance
   end
 
-  get '/game_intro' do
-    erb :game_intro
+  get '/play_game' do
+    erb :play_game
   end
 
 

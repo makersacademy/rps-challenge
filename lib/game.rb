@@ -10,15 +10,15 @@ GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
     @instance
   end
 
-  def self.create(player1, computer_player)
+  def self.create(player1, player2 = ComputerPlayer.new)
     fail if @instance != nil
-    @instance = Game.new(player1, computer_player)
+    @instance = Game.new(player1, player2)
   end
 
 
-  def initialize(player1, computer_player)
+  def initialize(player1, player2 = ComputerPlayer.new)
     @player1 = player1
-    @computer_player = computer_player
+    @player2 = player2
   end
 
   def player_choose_weapon(weapon)
@@ -26,15 +26,15 @@ GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
   end
 
   def computer_choose_weapon
-    @computer_player.choose_weapon
+    @player2.choose_weapon
   end
 
   def draw?
-    @player1.weapon_choice == @computer_player.weapon_choice
+    @player1.weapon_choice == @player2.weapon_choice
   end
 
   def winner
-    GAME_RULES[@player1.weapon_choice] == @computer_player.weapon_choice ? @player1 : @computer_player
+    GAME_RULES[@player1.weapon_choice] == @player2.weapon_choice ? @player1 : @player2
   end
 
 end

@@ -1,4 +1,4 @@
 Your choice: <%= @game.player1.weapon_choice %>. <br>
-Computer choice: <%= @game.computer_player.weapon_choice %>. <br>
+Computer choice: <%= @game.player2.weapon_choice %>. <br>
 
 The results are: <%= @game.draw? ? "Draw!" : "#{@game.winner.name} is the winner!" %>
