@@ -30,7 +30,7 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/comp_result'do
-    $game = Game.new(session[:player_choice])
+    $game = Game.new(session[:player_choice].downcase)
     @comp_choice = $game.rand_choice
     erb(:comp_result)
   end
