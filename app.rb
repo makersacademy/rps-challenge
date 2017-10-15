@@ -31,10 +31,12 @@ class Rocky < Sinatra::Base
   end
     
   get '/result' do
-    erb :result, { 
+    erb @game.result, { 
       locals: {
         player_name: @game.player,
-        result: @game.result
+        result: @game.result,
+        player_choice: @game.player_choice,
+        comp_choice: @game.comp_choice
         } 
       }
   end

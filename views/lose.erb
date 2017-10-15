@@ -3,11 +3,12 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
-    <title>RPS-Result</title>
+    <title>RPS-Lose</title>
   </head>
   <body>
     <div>
-    <%= result %>
+    <p><%= comp_choice.capitalize %> beats <%= player_choice.capitalize %></p>
+    <p>You lose, <%= player_name %>.</p>
     </div>
     <div id="submit-container">
       <a href="/play"><button name="Restart" class="round-box button">Play again</button></a>

@@ -2,7 +2,7 @@ require_relative './calculator'
 
 class Game
 
-  attr_reader :player, :weapons, :result
+  attr_reader :player, :weapons, :result, :player_choice, :comp_choice
 
   def initialize(player, calculator = nil)
     @calc = calculator || Calculator.new
@@ -25,17 +25,17 @@ class Game
   end
 
   def play(weapon)
-    @player_weapon = weapon
-    create_opponent
+    @player_choice = weapon
+    generate_comp_choice
     play_game
   end
 
   private
 
-  attr_reader :calc, :opponent, :player_weapon, :game_result
+  attr_reader :calc
 
-  def create_opponent
-    @opponent = weapons.keys.sample
+  def generate_comp_choice
+    @comp_choice = weapons.keys.sample
   end
 
   def value(weapon)
@@ -43,18 +43,7 @@ class Game
   end
 
   def play_game
-    @game_result = calc.compare(value(player_weapon), value(opponent))
-    @result = result_string
-  end
-
-  def result_string
-    if game_result == :tie
-      "<p>The game was a tie</p>"
-    elsif game_result == :win
-      "<p>#{player_weapon.capitalize} beats #{opponent.capitalize}!</p><p>You won!</p>"
-    else 
-      "<p>#{opponent.capitalize} beats #{player_weapon.capitalize}.</p><p>You lose, #{player}.</p>"
-    end
+    @result = calc.compare(value(player_choice), value(comp_choice))
   end
 
 end

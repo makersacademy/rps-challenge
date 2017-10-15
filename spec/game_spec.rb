@@ -15,6 +15,26 @@ describe Game do
 
   end
 
+  describe '#player_choice' do
+
+    it "returns the player's weapon choice" do
+      allow(game).to receive(:comp_choice) { :rock } 
+      game.play('rock')
+      expect(game.player_choice).to eq 'rock'
+    end
+
+  end
+
+  describe '#comp_choice' do
+    
+    it "returns the player's weapon choice" do
+      allow(game).to receive(:comp_choice) { :rock } 
+      game.play('rock')
+      expect(game.comp_choice).to eq :rock
+    end
+
+  end
+
   describe '#self.create_game' do
 
     it 'creates a new game instance' do
@@ -42,10 +62,10 @@ describe Game do
 
   describe '#play' do
 
-    before { allow(game).to receive(:opponent) { :rock } }
+    before { allow(game).to receive(:comp_choice) { :rock } }
 
-    it 'creates a new opponent' do    
-      expect(game).to receive(:create_opponent)
+    it 'creates a new comp_choice' do    
+      expect(game).to receive(:generate_comp_choice)
       game.play('Rock')
     end
     it 'calculates the game result' do
@@ -58,9 +78,9 @@ describe Game do
   describe '#result' do
 
     it 'returns the result' do
-      allow(game).to receive(:opponent) { :paper }
+      allow(game).to receive(:comp_choice) { :paper }
       game.play('Rock')
-      expect(game.result).to eq "<p>Rock beats Paper!</p><p>You won!</p>"
+      expect(game.result).to eq :win
     end
 
   end

@@ -29,21 +29,21 @@ feature 'playing rock paper scissors' do
   feature 'showing the game result' do
 
     scenario 'winning the game' do
-      allow(Game.current_game).to receive(:opponent) { :scissors }
+      allow(Game.current_game).to receive(:comp_choice) { :scissors }
       find("#rock-icon").click
       click_button "Go!"
       expect(page).to have_content 'won'
     end
 
     scenario 'losing the game' do
-      allow(Game.current_game).to receive(:opponent) { :paper }
+      allow(Game.current_game).to receive(:comp_choice) { :paper }
       find("#rock-icon").click
       click_button "Go!"
       expect(page).to have_content 'lose'
     end
 
     scenario 'the game is a tie' do
-      allow(Game.current_game).to receive(:opponent) { :rock }
+      allow(Game.current_game).to receive(:comp_choice) { :rock }
       find("#rock-icon").click
       click_button "Go!"
       expect(page).to have_content 'tie'
