@@ -18,6 +18,7 @@ require 'rspec'
 require_relative './features/enter_name_spec.rb'
 require_relative './features/present_moves_spec.rb'
 require_relative './features/result_spec.rb'
+require_relative './features/web_helpers'
 
 Capybara.app = Rockpaperscissors
 
