@@ -16,6 +16,9 @@ describe Game do
     before do
       allow(computer).to receive(:choice).and_return "scissors"
     end
+    it 'can read the computers choice' do
+      expect(game.computer.choice).to eq 'scissors'
+    end
     it 'returns draw if both choose the same' do
       expect(game.results("scissors")).to eq "You drew!"
     end

@@ -1,6 +1,6 @@
 class Computer
-  
-  OPTIONS = ['rock', 'paper', 'scissors']
+
+  OPTIONS = [:rock, :paper, :scissors]
 
   def choice
     OPTIONS.sample
