@@ -18,8 +18,8 @@ Screenshots
 
 Home Page:
 
-![Screenshot](https://www.dropbox.com/s/3md7vc34vzt0yxq/Homepage.png?dl=0)
+![HomePage](https://www.dropbox.com/s/3md7vc34vzt0yxq/Homepage.png?dl=0)
 
 Play Page:
 
-![Screenshot] (https://www.dropbox.com/s/90b37vsik358g4m/Play_page.png?dl=0)
+![PlayPage](https://www.dropbox.com/s/90b37vsik358g4m/Play_page.png?dl=0)
