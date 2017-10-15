@@ -40,7 +40,7 @@ h3 {
 }
  
 .spockbutton {
-  background:url('https://vignette2.wikia.nocookie.net/vsbattles/images/4/49/Spocks.png/revision/latest/window-crop/width/200/x-offset/0/y-offset/39/window-width/300/window-height/150?cb=20160501151337') no-repeat;
+  background:url('../Spock.png') no-repeat;
   color: white;
   font-family: 'Press Start 2P', cursive;
   border: 4px solid white;
