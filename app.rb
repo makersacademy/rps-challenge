@@ -73,7 +73,6 @@ end
   end
 
   post '/receive_one' do
-        p params
     @player_name_one = session[:player_name_one]
     @player_name_two = session[:player_name_two]
     session[:response_one] = params[:response_one]
@@ -82,7 +81,6 @@ end
   end
 
   post '/receive_two' do
-        p session
     @player_name_one = session[:player_name_one]
     @player_name_two = session[:player_name_two]
     session[:response_two] = params[:response_two]

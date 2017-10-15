@@ -2,102 +2,56 @@
 
 ![RPS](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/f253915f-ee7c-4abc-a26a-7295edc367ce/00000005.png)
 
-Rock-Paper-Scissors game
-----
-How to start a game :
-
-The player registers through a form. He is then prompted to choose Rock, Scissors or Paper. The computer generates his own random selection and the winner is decided based on the following rules :
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
 
 Techology
 ----
 
-Game written in Ruby using the Sinatra framework. Code built using Test-Driven Development. SimpleCov shows that more than 95% of the code is covered by tests. Unit tests are run with Rspec, Features tests with Capybara.
+Game written in Ruby using the Sinatra framework. Code built using Test-Driven Development. SimpleCov shows that more than 95% of the code is covered by tests (close to 100%). Unit tests are run with Rspec, Features tests with Capybara.
 
-To get started, clone the repo..
+
+How to get the game started
+----
 
 ```
-git clone git@github.com:Pablo123GitHub/rps-challenge.git
+$ git clone git@github.com:Pablo123GitHub/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
 
 ```
 
-... and run ```bundle``` in order to install the gems that come with the repo.
+How to play the game
+----
 
+You have two options right at the start: you can play against the computer or against another player.
 
+#### if you play against the computer
 
-Knowing how to build web applications is getting us almost there as web developers!
+You click on the "vs_computer" button; you then have to register through a form
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+![](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/380f19bf-ed4e-4ce5-99e1-9461935f7e04/00000010.png)
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+You then click on the Save button, which prompts you to choose Rock, Scissors, or Paper :
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+![](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/b5e52217-972b-4a9b-bd14-8271e78b52e3/00000011.png)
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
+Upon selecting an option, the computer generates its own random choice and the winner is decided based on the following rules :
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+#### if you play against another human player
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+You click on the "vs_player" button; you then have to register both players' names
 
-Notes on test coverage
-----------------------
+![](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/3dc185a9-3319-45cb-8e44-32b85370a1aa/00000007.png)
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Click on the Save button. You then have to select the choice for each player :
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+![](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/4b6b2112-2685-4846-9bed-0d36b8fe478b/00000008.png)
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+Upon selecting the option for the second player : a winner is decided
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+![](https://content.screencast.com/users/Pablo_Zendesk/folders/Jing/media/b529a387-839e-4f91-a7a8-9f214eb886ab/00000009.png)
