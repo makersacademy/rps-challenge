@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styling.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Rock Paper Scissors Lizard Spock</title>
+  </head>
+  <body>
+    <br>
+    <br>
+    <h2><%= @game.player_1_choice %> Vs. <%= @player_2_choice %></h1>
+    <br>
+    <h2><%= @result %></h1>
+    <br>
+    <br>
+    <center><form action="/two_play">
+    <input type="submit" value="Again?" class="button">
+    </form></center>
+  </body>
+</html>

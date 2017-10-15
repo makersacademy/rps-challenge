@@ -8,12 +8,12 @@
   <body>
       <br>
       <br>
-      <center><h2>Choose wisely <%= @game.player.name %>!</h2></center>
+      <center><h2>Choose wisely <%= @game.opponent.name %>!</h2></center>
       <br>
       <br>
-      <center><h2><%= @game.opponent.name %>, look away!</h2></center>
+      <center><h2><%= @game.player.name %>, look away!</h2></center>
       <br>
-      <center><form action="/store_choice" method="post">
+      <center><form action="/two_player_result" method="post">
       <input type="submit" name="choice" value="Rock" class="button">
       <input type="submit" name="choice" value="Paper" class="button">
       <input type="submit" name="choice" value="Scissors" class="button">

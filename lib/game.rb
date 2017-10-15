@@ -29,4 +29,10 @@ class Game
     return "Won" if Rules::RULES[player_choice].include?(choice)
     return "Lost" if Rules::RULES[choice].include?(player_choice)
   end
+
+  def two_player_result(player_1_choice, player_2_choice)
+    return "It's a Draw!" if player_1_choice == player_2_choice
+    return "#{@player.name} Won!" if Rules::RULES[player_1_choice].include?(player_2_choice)
+    return "#{@opponent.name} Won!" if Rules::RULES[player_2_choice].include?(player_1_choice)
+  end
 end

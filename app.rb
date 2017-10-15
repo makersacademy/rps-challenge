@@ -50,10 +50,20 @@ class RockPaperScissors < Sinatra::Base
   post '/store_choice' do
     redirect @game.store_choice(params[:choice].downcase)
   end
+
+  get '/two_play_too' do
+    erb(:two_play_too)
+  end
   
   post '/result' do
     @player_choice = params[:choice].downcase
     @result = @game.result(@player_choice)
     erb(:result)
+  end
+
+  post '/two_player_result' do
+    @player_2_choice = params[:choice].downcase
+    @result = @game.two_player_result(@game.player_1_choice, @player_2_choice)
+    erb(:two_player_result)
   end
 end
