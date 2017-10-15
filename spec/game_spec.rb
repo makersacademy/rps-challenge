@@ -35,7 +35,7 @@ describe Game do
   describe '#weapons' do
 
     it 'has a choice of weapons' do
-      expect(game.weapons).to include(:rock,:paper,:scissors)
+      expect(game.weapons).to include(:rock, :paper, :scissors)
     end
 
   end
