@@ -21,6 +21,7 @@ feature 'Playing the game' do
   end
 
   context 'Player vs Player' do
+    context 'Display features'
       scenario 'players click vs_player, they are prompted with two RPS options' do
         sign_in_register_two
         expect(page).to have_content "Please enter Pablo choice"
@@ -33,5 +34,16 @@ feature 'Playing the game' do
       expect(page).to have_content "Pablo has selected ROCK"
       expect(page).to have_content "Sonia has selected ROCK"
       end
+    end
+    context 'Player 1 wins' do
+      scenario 'Player 1 wins the game ' do
+        sign_in_register_two
+        find('.first_response input[value="ROCK"]').click
+        find('.second_response input[value="SCISSORS"]').click
+        expect(page).to have_content "Pablo is the WINNER !!!!"
+      end
   end
+
+
+
 end

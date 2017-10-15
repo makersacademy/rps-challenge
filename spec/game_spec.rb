@@ -57,5 +57,21 @@ describe Game do
         expect(subject.result).to eq :loss
       end
     end
-  end 
+  end
+  describe 'Player versus player' do
+      it 'shows the option selected by player one ' do
+        subject.player_one_choice = "ROCK"
+        expect(subject.player_one_choice).to eq "ROCK"
+      end
+      it 'Player one selects ROCK versus SCISSORS and wins' do
+        subject.player_one_choice = "ROCK"
+        subject.player_two_choice = "SCISSORS"
+        expect(subject.result_two_player).to eq :win_player_one
+      end
+      it 'Player two selects PAPER versus ROCK and wins' do
+        subject.player_two_choice = "PAPER"
+        subject.player_one_choice = "ROCK"
+        expect(subject.result_two_player).to eq :win_player_two
+      end
+    end
 end

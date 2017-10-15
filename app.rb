@@ -88,8 +88,10 @@ end
     session[:response_two] = params[:response_two]
     @player_choice_two = session[:response_two]
     @player_choice_one = session[:response_one]
-    erb(:display_result_two)
+    game_two_players = Game.new
+    game_two_players.player_one_choice = @player_choice_one
+    game_two_players.player_two_choice = @player_choice_two
+
+    erb game_two_players.result_two_player
   end
-
-
 end
