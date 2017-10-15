@@ -1,3 +1,9 @@
 <link rel="stylesheet" type="text/css" href="play.css">
 
 <h1><%= @player_name %> VS. Computer</h1>
+
+<form action="/choice" method="post">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+</form>
