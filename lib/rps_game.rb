@@ -78,7 +78,7 @@ class RpsGame
   end
 
   def set_round_results(winner = nil, looser = nil)
-    return "It's a DRAW..." if winner == nil
+    return "It's a DRAW..." if winner.nil?
     winner.wins
     "#{winner.name} with #{winner.turn_choice} won #{looser.name} with #{looser.turn_choice}"
   end

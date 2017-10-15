@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  let(:player) { Player.new("name")}
+  let(:player) { Player.new("name") }
   describe "::new" do
     it "instanciates a player with the name name" do
       expect(player.name).to eq "name"

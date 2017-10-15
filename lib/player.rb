@@ -10,9 +10,7 @@ class Player
     @turn_choice = choice.to_sym
   end
 
-
   def wins
-    @win_counts +=1
+    @win_counts += 1
   end
-
 end

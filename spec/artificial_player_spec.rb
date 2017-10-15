@@ -18,6 +18,4 @@ describe ArtificialPlayer do
       expect(a_player.turn_choice).to eq :paper
     end
   end
-
-
 end

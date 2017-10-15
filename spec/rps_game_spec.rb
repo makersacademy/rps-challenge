@@ -71,7 +71,7 @@ describe RpsGame do
 
   describe "#increase_round_counter" do
     it "increases round by 1" do
-      expect { game.increase_round_counter}.to change { game.round}.by 1
+      expect { game.increase_round_counter }.to change { game.round }.by 1
     end
   end
 

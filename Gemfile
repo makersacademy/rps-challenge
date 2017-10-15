@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 gem 'rake'
-gem 'sinatra'
 gem 'selenium-webdriver'
+gem 'sinatra'
 
 group :test do
   gem 'capybara'

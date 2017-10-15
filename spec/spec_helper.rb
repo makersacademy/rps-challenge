@@ -7,8 +7,6 @@ require_relative './features/spec_helper.rb'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # require File.join(File.dirname(__FILE__), '/features', 'index_spec.rb')
 
-
-
 ENV['RACK_ENV'] = 'test'
 
 Capybara.app = Rps
@@ -19,9 +17,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-
-
-
 
 RSpec.configure do |config|
   config.after(:suite) do
