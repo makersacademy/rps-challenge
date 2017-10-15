@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
     <title>RPS-Home</title>
   </head>
+  <body>
     <p id="choice">Choose your weapon, <%= player_name %>:</p>
     <form action="/calculate" method="post">
       <% weapons.each do |weapon, value| %>
