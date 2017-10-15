@@ -8,14 +8,15 @@ body {
 }
 
 #home_page_header {
-  background-image: url(../images/RPSLS.png);
+  background-image: url(../images/RPSLS.svg);
   background-repeat: no-repeat;
-	border-radius: 50%;
-	background-size: cover;
-  min-height: 250px;
-  width: 10%;
+  background-size: cover;
+  height: 40vh;
+  width: 40vh;
   min-width: 250px;
   max-width: 500px;
+  min-height: 250px;
+  max-height: 500px;
   margin: auto;
 }
 
@@ -39,7 +40,7 @@ input[type="submit"] {
   text-decoration: none;
   outline: none;
   height: 56px;
-  width: 206px;
+  width: 256px;
   border-color: #7cb6ff;
 }
 
@@ -55,7 +56,7 @@ input[type="text"] {
   border-color: #7cb6ff;
   color: #7cb6ff;
   height: 50px;
-  width: 200px;
+  width: 250px;
 }
 
 input[type="text"]:focus {
