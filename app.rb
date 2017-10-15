@@ -5,7 +5,15 @@ require './lib/game.rb'
 class Rps < Sinatra::Base
   enable :sessions
 
-  get '/' do
+get '/' do
+erb(:choice_game)
+end
+
+post '/versus_computer' do
+redirect '/versus_computer'
+end
+
+  get '/versus_computer' do
     erb(:form)
   end
 
