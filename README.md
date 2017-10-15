@@ -1,4 +1,47 @@
-# RPS Challenge
+# Rock, Paper Scissors (Spock, Lizard) CHALLENGE
+
+This is my response to the 'weekend challenge' of Week 3 of Makers Academy. For full details of what the challenge involved, see 'APPENDIX' below.
+
+## Getting started
+
+Instructions are for Terminal on Mac OS
+
+1) `git clone github.com:jonsanders101/rps-challenge.git`
+2) `gem install bundle`
+3) Navigate to `rps-challenge`
+4) `ruby app.rb`
+5) Open any web browser
+6) Enter 'localhost:4567' into the address bar
+
+## Usage
+
+You should see the page below. Instructions for playing are self explanatory. You will be given the option to play against the computer or against another human player sharing your computer.
+
+(picture)
+
+## Running tests
+
+Run `rspec`
+
+100% test coverage.
+
+
+## Main Issues
+
+* The methods in ‘spec/features/web_helpers.rb’ are not recognised by ‘spec/features/web_helpers.rb’. I have indicated in comments where these methods should replace repetitious code.
+* Result string should be handled in a different class
+* The '/choice' controller in '/app.rb' is too large
+
+## Ways I Would Extend this project
+
+* Use HTML and CSS to make the pages presentable
+* Keep a score count to allow players to keep track of their score
+* Add a hard reset method which would take the user back to the homepage
+* Allow the user to customise the name and game logic for any odd number of weapons to extend it even beyond Spock and Lizard
+
+
+
+## APPENDIX
 
 Instructions
 -------
