@@ -61,11 +61,11 @@ class RpsGame
 
   private
   def player1_choice 
-    players.first.turn_choice
+    player1.turn_choice
   end
 
   def player2_choice
-    players.last.turn_choice
+    player2.turn_choice
   end
 
   def player1_wins?
