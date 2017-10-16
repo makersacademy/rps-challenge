@@ -4,14 +4,13 @@ class Game
 
 GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
 
-  attr_reader :player1, :computer_player
+  attr_reader :player1, :player2
 
   def self.instance
     @instance
   end
 
   def self.create(player1, player2 = ComputerPlayer.new)
-    fail if @instance != nil
     @instance = Game.new(player1, player2)
   end
 
@@ -27,6 +26,10 @@ GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
 
   def computer_choose_weapon
     @player2.choose_weapon
+  end
+
+  def player_2_choose_weapon(weapon)
+    @player2.choose_weapon(weapon)
   end
 
   def draw?

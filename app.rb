@@ -18,14 +18,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/single_player_game' do
     player1 = Player.new(params[:player1])
-    Game.create(player1)
+    @game = Game.create(player1)
     redirect '/play_game'
   end
 
   post '/multi_player_game' do
     player1 = Player.new(params[:player1])
     player2 = Player.new(params[:player2])
-    Game.create(player1, player2)
+    @game = Game.create(player1, player2)
     redirect '/play_game'
   end
 
@@ -37,16 +37,31 @@ class RockPaperScissors < Sinatra::Base
     erb :play_game
   end
 
-
-  post '/results' do
+  post '/second_player_turn' do
     weapon = params[:weapon].to_sym
     @game.player_choose_weapon(weapon)
-    redirect '/results'
+    erb :second_player_turn
   end
 
-  get '/results' do
+  post '/single_player_results' do
+    weapon = params[:weapon].to_sym
+    @game.player_choose_weapon(weapon)
+    redirect '/single_player_results'
+  end
+
+  get '/single_player_results' do
     @game.computer_choose_weapon
-    erb :results
+    erb :single_player_results
+  end
+
+  post '/multi_player_results' do
+    weapon = params[:weapon].to_sym
+    @game.player_2_choose_weapon(weapon)
+    redirect 'multi_player_results'
+  end
+
+  get '/multi_player_results' do
+    erb :multi_player_results
   end
 
   run! if app_file == $0

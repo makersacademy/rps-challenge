@@ -1,7 +1,20 @@
-Hello <%= @game.player1.name %>
-
-<form action='/results' method = "post">
+<% if @game.player2.instance_of?(ComputerPlayer) %>
+Hello <%= @game.player1.name %> <br>
+Choose your weapon...
+<form action='/single_player_results' method = "post">
 <input type='submit' name="weapon" value='rock'>
 <input type='submit' name="weapon" value='paper'>
 <input type='submit' name="weapon" value='scissors'>
 </form>
+
+<% else %>
+
+Hello <%= @game.player1.name %> <br>
+Choose your weapon...
+<form action='/second_player_turn' method = "post">
+<input type='submit' name="weapon" value='rock'>
+<input type='submit' name="weapon" value='paper'>
+<input type='submit' name="weapon" value='scissors'>
+</form>
+
+<% end %>
