@@ -20,18 +20,6 @@ GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
     @player2 = player2
   end
 
-  def player_choose_weapon(weapon)
-    @player1.choose_weapon(weapon)
-  end
-
-  def computer_choose_weapon
-    @player2.choose_weapon
-  end
-
-  def player_2_choose_weapon(weapon)
-    @player2.choose_weapon(weapon)
-  end
-
   def draw?
     @player1.weapon_choice == @player2.weapon_choice
   end

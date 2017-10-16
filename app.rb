@@ -39,24 +39,24 @@ class RockPaperScissors < Sinatra::Base
 
   post '/second_player_turn' do
     weapon = params[:weapon].to_sym
-    @game.player_choose_weapon(weapon)
+    @game.player1.choose_weapon(weapon)
     erb :second_player_turn
   end
 
   post '/single_player_results' do
     weapon = params[:weapon].to_sym
-    @game.player_choose_weapon(weapon)
+    @game.player1.choose_weapon(weapon)
     redirect '/single_player_results'
   end
 
   get '/single_player_results' do
-    @game.computer_choose_weapon
+    @game.player2.choose_weapon
     erb :single_player_results
   end
 
   post '/multi_player_results' do
     weapon = params[:weapon].to_sym
-    @game.player_2_choose_weapon(weapon)
+    @game.player2.choose_weapon(weapon)
     redirect 'multi_player_results'
   end
 

@@ -1,4 +1,9 @@
+<head>
+  <link rel="stylesheet" href = "css/styles.css">
+</head>
+
 <% if @player2 == nil %>
+Please enter your name
 <form action='/single_player_game' method='post'>
   <label for='player1'>
     Player 1
@@ -8,7 +13,7 @@
   </form>
 
 <% else %>
-
+Please enter your names
 <form action='/multi_player_game' method='post'>
   <label for='player1'>
     Player 1
