@@ -21,11 +21,11 @@ class Game
       @result = "That's not right! Give it a proper go.."
     elsif p1_move == p2_move
       @result = "Draw! Try again!"
-    elsif p1_move == "Rock" && p2_move == "Scissors" # || p1_move == "Scissors" && p2_move == "Rock"
+    elsif p1_move == "Rock" && p2_move == "Scissors"
       @result = "#{@p1.name} WINS!"
-    elsif p1_move == "Scissors" && p2_move == "Paper" # || p1_move == "Paper" && p2_move == "Scissors"
+    elsif p1_move == "Scissors" && p2_move == "Paper"
       @result = "#{@p1.name} WINS!"
-    elsif p1_move == "Paper" && p2_move == "Rock" # || p1_move == "Rock" && p2_move == "Paper"
+    elsif p1_move == "Paper" && p2_move == "Rock"
       @result = "#{@p1.name} WINS!"
     else
       @result = "#{@p1.name} loses :("
