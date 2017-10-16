@@ -10,23 +10,23 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/names' do
     session[:name] = (params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @marketeer = Marketeer.new(session)
     erb :play
   end
 
-  post '/play' do
-    p session[:marketeer_choice] = params[:object].downcase.to_sym
-    p session[:opponent_choice] = Opponent.new.opponent_choice
+  post '/result' do
+    session[:marketeer_choice] = params[:object].downcase.to_sym
+    session[:opponent_choice] = Opponent.new.opponent_choice
     redirect '/result'
   end
 
   get '/result' do
+    @marketeer = Marketeer.new(session)
     erb :result
   end
 
