@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     @game = Game.instance
-    @game.p1.set_move(params[:move])
+    @game.p1.move = params[:move]
     @p1_move = @game.p1.move
     @comp_move = @game.move
     @game.clash(@p1_move, @comp_move)
