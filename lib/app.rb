@@ -4,14 +4,21 @@ require './lib/player.rb'
 
 class Rockpaperscissors < Sinatra::Base
 
+enable :sessions
+
 attr_reader :player, :game
 
   get '/' do
     erb :enter_name
   end
 
-  post '/present_moves' do
-    @player = Player.new(params[:player_name])
+  post '/name' do
+    session[:player] = Player.new(params[:player_name])
+    redirect '/present_moves'
+  end
+
+  get '/present_moves' do
+    @player = session[:player]
     erb :present_moves
   end
 
