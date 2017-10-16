@@ -1,0 +1,21 @@
+
+.led-yellow {
+  margin: 0 auto;
+  width: 100px;
+  height: auto;
+  background-color: #FF0;
+/*   border-radius: 50%; */
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+  animation: blinkYellow 1s infinite;
+}
+
+
+@keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+
+span {
+  font-size: 20px;
+}
