@@ -17,7 +17,7 @@ class RpsGame
   class << self
     attr_reader :current_game
     def create_game(player1, player2)
-        @current_game = RpsGame.new(player1, player2)
+      @current_game = RpsGame.new(player1, player2)
     end
   end
 
