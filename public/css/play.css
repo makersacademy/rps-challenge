@@ -37,15 +37,15 @@ h2 {
 }
 
 
-.myButton{
-    background:url(https://thetomatos.com/wp-content/uploads/2016/02/cartoon-scissors-clipart.png) no-repeat;
+/*.myButton{
+    background:url(http://www.how-to-draw-funny-cartoons.com/image-files/cartoon-scissors-6.gif) no-repeat;
     cursor:pointer;
     border:none;
     width:100px;
     height:100px;
 }
 
-.myButton:active  /* use Dot here */
+.myButton:active
 {
-    background:url(https://thetomatos.com/wp-content/uploads/2016/02/cartoon-scissors-clipart.png) no-repeat;
-}
+    background:url(http://www.how-to-draw-funny-cartoons.com/image-files/cartoon-scissors-6.gif) no-repeat;
+}*/

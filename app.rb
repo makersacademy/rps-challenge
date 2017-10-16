@@ -28,7 +28,6 @@ class RPS < Sinatra::Base
 
   get '/game-over' do
     # @choice = params[:choice]
-    p session[:choice]
     @result = Game.instance.result(session[:choice])
 
     erb(:result)

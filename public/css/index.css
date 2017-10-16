@@ -1,7 +1,8 @@
 body {
-  padding: 15px;
+  padding: 50px;
   font-family: courier;
   background-color: #ff6600;
+  text-align: center;
 }
 
 #header {
