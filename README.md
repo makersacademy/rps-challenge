@@ -3,11 +3,29 @@
 Instructions
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+```
+$ git clone git@github.com:cdunham1989/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+```
+
+Outline
+-----
+
+Unfortunately I been unwell during this weekend which has hindered my ability to complete this
+weekend challenge. I made as much progress as I could but it is currently incomplete.
+
+I have managed to complete the first user story. The game allows the user to enter their name and it
+displays this to them afterwards.
+
+I began to implement some of the basic features I would need to succesfully complete the game of rock
+paper scissors. I created a player class which would be used to store the players selection for the
+current turn. I created a computer class that effectively chooses out of the three options and I have
+just begun to create a game class to work as a mediator between the two components.
+
+I did manage to have a play around with some CSS and created css files for each of the three pages I
+would need to play the game. This is something I would like to develop more when I am feeling better.
 
 Task
 ----
