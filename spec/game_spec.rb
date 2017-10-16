@@ -28,12 +28,12 @@ describe Game do
     end
   end
 
-  context '#calculate win' do
-    it 'should calculate winner' do
-      subject.turn('rock')
-      subject.turn('paper')
-      allow(players).to receive(:[]).and_return(players[1])
-      expect(subject.calculate_win).to eq players[1]
-    end
-  end
+  # context '#calculate win' do
+  #   it 'should calculate winner' do
+  #     subject.turn('rock')
+  #     subject.turn('paper')
+  #     allow(players).to receive(:[]).and_return(players[1])
+  #     expect(subject.calculate_win).to eq players[1]
+  #   end
+  # end
 end
