@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/haletothewood/RetroRockPaperScissorsLizardSpock.svg?branch=master)](https://travis-ci.org/haletothewood/RetroRockPaperScissorsLizardSpock)
+
 # Retro Rock Paper Scissors Lizard Spock
 
 The Brief
