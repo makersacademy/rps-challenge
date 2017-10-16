@@ -21,7 +21,7 @@ I would like to be able to play rock/paper/scissors
 
 ## How To Get The Game
 
-The game is available at https://retro-rpsls.herokuapp.com to play alternatively you can follow the steps below:
+The game is available at https://retro-rpsls.herokuapp.com to play, alternatively you can follow the steps below:
 
 * Fork this repo
 * Load dependencies with `$ gem install bundle` and `$ bundle install`
