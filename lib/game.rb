@@ -1,17 +1,25 @@
-require_relative 'computer'
 require_relative 'rules'
 
 class Game
-  attr_reader :player, :opponent, :choice, :player_1_choice
+  attr_reader :choice, :player_1_choice
   include Rules
 
-  def initialize(player, opponent = Computer.new)
-    @player = player
-    @opponent = opponent
+  WEAPONS = %w(rock paper scissors lizard spock)
+
+  def initialize(players)
+    @players = players
   end
 
-  def self.create(player, opponent = Computer.new)
-    @current_game = Game.new(player, opponent)
+  def player_1
+    @players.first
+  end
+
+  def player_2
+    @players.last
+  end
+
+  def self.create(players)
+    @current_game = Game.new(players)
   end
 
   def self.instance
@@ -20,10 +28,11 @@ class Game
 
   def store_choice(player_1_choice)
     @player_1_choice = player_1_choice
-    return '/two_play_too'
+    '/two_play_too'
   end
 
-  def result(player_choice, choice = opponent.choice)
+  def result(player_choice, choice = WEAPONS[rand(4)])
+    #return symbol for the right view
     @choice = choice
     return "Drew" if player_choice == choice 
     return "Won" if Rules::RULES[player_choice].include?(choice)
@@ -32,7 +41,7 @@ class Game
 
   def two_player_result(player_1_choice, player_2_choice)
     return "It's a Draw!" if player_1_choice == player_2_choice
-    return "#{@player.name} Won!" if Rules::RULES[player_1_choice].include?(player_2_choice)
-    return "#{@opponent.name} Won!" if Rules::RULES[player_2_choice].include?(player_1_choice)
+    return "#{player_1.name} Won!" if Rules::RULES[player_1_choice].include?(player_2_choice)
+    return "#{player_2.name} Won!" if Rules::RULES[player_2_choice].include?(player_1_choice)
   end
 end

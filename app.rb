@@ -12,7 +12,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/opponent' do
+  post '/choose_opponent' do
     redirect params[:opponent]
   end
 
@@ -25,12 +25,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create(Player.new(params[:name]))
+    @game = Game.create([Player.new(params[:name])])
     redirect '/play'
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:player1]), Player.new(params[:player2]))
+    @game = Game.create([Player.new(params[:player1]), Player.new(params[:player2])])
     redirect '/two_play'
   end
 
@@ -42,10 +42,11 @@ class RockPaperScissors < Sinatra::Base
     erb(:two_play)
   end
 
-  post '/store_choice' do
-    #use session and redirect
-    redirect @game.store_choice(params[:choice].downcase)
-    #redirect /two+_paly_too
+  enable :sessions
+
+  post '/player_1_choice' do
+    session[:player_1_choice] = params[:choice].downcase
+    redirect '/two_play_too'
   end
 
   get '/two_play_too' do
@@ -59,8 +60,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/two_player_result' do
-    @player_2_choice = params[:choice].downcase
-    @result = @game.two_player_result(@game.player_1_choice, @player_2_choice)
+    @player_1_choice = session[:player_1_choice]
+    @player_2_choice = params[:player_2_choice].downcase
+    @result = @game.two_player_result(@player_1_choice, @player_2_choice)
     erb(:two_player_result)
   end
 
