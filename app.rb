@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/game'
-require_relative './lib/version'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,20 +8,12 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.instance
   end
 
-  get '/infastructure' do
-    "Testing Infastructure"
-  end
-
-  get '/rules' do
-    erb(:rules)
-  end
-
   get '/' do
-    erb(:version)
+    erb(:index)
   end
 
   post '/opponent' do
-    redirect Version.new.version_path(params[:opponent])
+    redirect params[:opponent]
   end
 
   get '/one_player' do
@@ -52,7 +43,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/store_choice' do
+    #use session and redirect
     redirect @game.store_choice(params[:choice].downcase)
+    #redirect /two+_paly_too
   end
 
   get '/two_play_too' do
@@ -69,6 +62,10 @@ class RockPaperScissors < Sinatra::Base
     @player_2_choice = params[:choice].downcase
     @result = @game.two_player_result(@game.player_1_choice, @player_2_choice)
     erb(:two_player_result)
+  end
+
+  get '/rules' do
+    erb(:rules)
   end
 
   run! if app_file == $0
