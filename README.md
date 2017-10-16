@@ -1,15 +1,6 @@
-# RPS Challenge
+# Retro Rock Paper Scissors Lizard Spock
 
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+The Brief
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -28,59 +19,32 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+## How To Get The Game
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+The game is available at https://retro-rpsls.herokuapp.com to play, alternatively you can follow the steps below:
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
+* Fork this repo
+* Load dependencies with `$ gem install bundle` and `$ bundle install`
+* To run the game type `ruby app.rb` in your terminal
+* Type 'localhost:4567' into your browswer address bar
+* Enjoy!
 
 
-## Bonus level 1: Multiplayer
+## Functionality
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+The rules for the game are available from the start screen. You can select to play the computer or a human using the same computer. The game currently relies on trust and each player looking away whilst the other makes their choice. There are unlimited attempts per game with the option to restart with different players.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+## Test Coverage
 
-## Basic Rules
+100% test coverage.
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
 
-In code review we'll be hoping to see:
+## Further Developments
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+* I wish my knowledge of how to best use HTML and CSS was extended as I felt quite limited to using the resources [W3Schools](https://www.w3schools.com/)
+* I would have liked to have implemented the two player game with the same controllers and routes as the one player but for the sake of time and completion I decided to create two separate paths
+* Create a counter for the score and possibly make it a best 2/3 or 3/5 
+* Separate out the choice for player 1 in the two player game from the game class for single responsibility purposes
+* Add sound effects
+* Add the ability for two players to play from two separate computers using a waiting method
