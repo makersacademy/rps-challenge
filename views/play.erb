@@ -1,0 +1,22 @@
+<div style="margin:auto;width:50%;padding: 50px;text-align: center;">
+
+<h1 style="">
+
+<%= @game.p1.name %>, welcome to your game of
+   <br />ROCK - PAPER - SCISSORS! </h1>
+<h2>Type in your move...</h2>
+
+<% if %w(Rock Paper Scissors).include? @game.p1.move %>
+  <h2> You chose <%= @game.p1.move %>
+  <br /> Computer chose <%= @game.move %>
+  </h2>
+<% end %>
+
+<h2> <%= @game.result %> <%=  %></h2>
+
+<form action="/move" method="post" >
+  <input type="text" name="move">
+   <input type="submit" value="Submit move">
+ </form>
+ <img src="http://images.sciencedaily.com/2013/02/130219161246-large.jpg" style="display:block;margin:auto;width:80%" />
+</div>
