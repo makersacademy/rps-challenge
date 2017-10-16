@@ -1,5 +1,13 @@
 # RPS Challenge
 
+I got quite far with this, going back and revising my model a number of times until I was comfortable with it.
+I was able to implement the Ruby side of it, but struggled with the webby side.  I did have some rough diagrams
+of HTML pages that I was trying to create, but ultimately ran out of time.
+
+I was able to borrow from the Battle challenge from week 3.
+
+****************************
+
 Instructions
 -------
 
