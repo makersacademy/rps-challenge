@@ -3,6 +3,7 @@ require 'sinatra/flash'
 require './lib/player'
 require './lib/computer'
 require './lib/game'
+require './lib/rps_rules'
 
 class RPS < Sinatra::Base
 
@@ -35,7 +36,7 @@ class RPS < Sinatra::Base
       @players.push(player_hash)
     end
 
-    $game = Game.new(@players)
+    $game = Game.new(@players, RPSRules.rules)
     redirect '/play'
   end
 
@@ -45,10 +46,15 @@ class RPS < Sinatra::Base
   end
 
   get '/turn' do
-    @game = $game
-    p params[:selection]
-    @game.turn(params[:selection])
-    @player = $game.current_player
-    erb :play, :layout => :'/layout'
+    $game.turn_counter += 1
+    $game.turn(params[:selection])
+    if $game.turn_counter < PLAYER_COUNT
+      @player = $game.current_player
+      erb :play, :layout => :'/layout'
+    else
+      @winner = $game.calculate_win
+      erb(:winner, :layout => :'/layout')
+    end
+
   end
 end
