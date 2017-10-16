@@ -1,4 +1,5 @@
 require_relative 'computer'
+require_relative 'player'
 
 class Game
 
@@ -7,9 +8,9 @@ class Game
   def initialize(player, computer = Computer.new)
     @player_1 = player
     @computer = computer
-    @wins = {  "rock" => 'scissors',
-                "paper" => "rock",
-                "scissors" => "paper"}
+    @moves = {  "Rock" => 'Scissors',
+                "Paper" => "Rock",
+                "Scissors" => "Paper" }
   end
 
   def self.create(player)
@@ -20,10 +21,10 @@ class Game
     @game
   end
 
-  def results(player_choice, opponent = computer.choice)
+  def result(player_choice, opponent = computer.choice)
     return 'You drew!' if player_choice == opponent
-    return 'You won!'  if @wins[player_choice] == opponent
-    return 'You lose!' if @wins[opponent] == player_choice
+    return 'You won!'  if @moves[player_choice] == opponent
+    return 'You lose!' if @moves[opponent] == player_choice
   end
 
 end
