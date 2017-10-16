@@ -7,7 +7,7 @@ class Game
   attr_reader :player, :computer, :computer_selection
 
   def self.create name, player_class = Human, computer_class = Computer
-    @game = Game.new name, player_class = Human, computer_class = Computer
+    @game = Game.new name, player_class, computer_class
   end
 
   def self.instance
