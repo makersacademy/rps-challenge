@@ -44,6 +44,7 @@ The rules for the game are available from the start screen. You can select to pl
 
 * I wish my knowledge of how to best use HTML and CSS was extended as I felt quite limited to using the resources [W3Schools](https://www.w3schools.com/)
 * I would have liked to have implemented the two player game with the same controllers and routes as the one player but for the sake of time and completion I decided to create two separate paths
-* I would like to create a counter for the score and possibly make it a best 2/3 or 3/5 
-* I would like to separate out the choice for player 1 in the two player game from the game class for single responsibility purposes
-* I would like to add sound effects
+* Create a counter for the score and possibly make it a best 2/3 or 3/5 
+* Separate out the choice for player 1 in the two player game from the game class for single responsibility purposes
+* Add sound effects
+* Add the ability for two players to play from two separate computers using a waiting method
