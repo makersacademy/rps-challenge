@@ -12,7 +12,7 @@ feature RockPaperScissors do
 
   scenario 'p1 can enter name' do
     sign_in_and_play
-    expect(page).to have_content "Quentin & Lucas, welcome to your game of ROCK - PAPER - SCISSORS!"
+    expect(page).to have_content "Quentin, welcome to your game of ROCK - PAPER - SCISSORS!"
   end
 
   # scenario 'rock button sets player move to Rock' do
