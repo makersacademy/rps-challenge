@@ -20,4 +20,6 @@ class RpsChallenge < Sinatra::Base
     @game = Game.create(player_1, player_2)
     redirect '/play'
   end
+
+  
 end
