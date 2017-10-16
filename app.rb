@@ -29,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   get '/results' do
     @game = Game.instance
     @choice = session[:choice]
+    @game.logic(@choice)
     erb :results
   end
 

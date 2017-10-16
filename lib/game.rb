@@ -2,7 +2,7 @@ require './lib/computer'
 
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :result
 
   def initialize(player = Player.new, computer = Computer.new)
     @player = player
@@ -17,13 +17,13 @@ class Game
     @game
   end
 
-  def logic
-    'Draw, Try again!' if @choice == computer.choice
-    'You Win!' if @choice == 'Scissors' && computer.choice == 'Paper'
-    'You Win!' if @choice == 'Rock' && computer.choice == 'Scissors'
-    'You Win!' if @choice == 'Paper' && computer.choice == 'Rock'
-    'You Lose!' if @choice == 'Scissors' && computer.choice == 'Rock'
-    'You Lose!' if @choice == 'Rock' && computer.choice == 'Paper'
-    'You Lose!' if @choice == 'Paper' && computer.choice == 'Scissors'
+  def logic(choice)
+    @result = 'Draw, Try again!' if choice == @computer.choice
+    @result = 'You Win!' if choice == 'Scissors' && @computer.choice == 'Paper'
+    @result = 'You Win!' if choice == 'Rock' && @computer.choice == 'Scissors'
+    @result = 'You Win!' if choice == 'Paper' && @computer.choice == 'Rock'
+    @result = 'You Lose!' if choice == 'Scissors' && @computer.choice == 'Rock'
+    @result = 'You Lose!' if choice == 'Rock' && @computer.choice == 'Paper'
+    @result = 'You Lose!' if choice == 'Paper' && @computer.choice == 'Scissors'
   end
 end

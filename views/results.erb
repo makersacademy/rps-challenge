@@ -5,7 +5,7 @@
 <h3>You Chose: <%= @choice.capitalize %></h3>
 <h3>The Computer Chose: <%= @game.computer.choice.capitalize %></h3>
 <h3>The result is:</h3>
-<h3><%= %></h3>
+<h3><%= @game.result %></h3>
 
 <form action="/play">
   <input type="submit" value="Re-match">
