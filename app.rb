@@ -70,4 +70,6 @@ class RockPaperScissors < Sinatra::Base
     @result = @game.two_player_result(@game.player_1_choice, @player_2_choice)
     erb(:two_player_result)
   end
+
+  run! if app_file == $0
 end
