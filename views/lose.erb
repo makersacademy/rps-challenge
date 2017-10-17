@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
+    <title>RPS-Lose</title>
+  </head>
+  <body>
+    <div>
+    <p><%= player_2.choice.capitalize %> beats <%= player_1.choice.capitalize %></p>
+    <p>You lose, <%= player_2.name %>.</p>
+    </div>
+    <div id="submit-container">
+      <a href="/"><button name="Restart" class="round-box button">Play again</button></a>
+    </div>
+  </body>
+</html>

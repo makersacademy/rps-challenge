@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
+    <title>RPS-Play</title>
+  </head>
+  <body>
+    <p>Choose your weapon, <%= player_name %>:</p>
+    <form action="/turn" method="post">
+      <% weapons.each do |weapon| %>
+        <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>" required>
+        <label for="<%= weapon %>" id="<%= weapon %>-icon">
+          <%= weapon.capitalize %>
+        </label>
+      <% end %>
+      <div id="submit-container">
+        <input type="submit" value="Go!" class="round-box button">
+      </div>
+    </form>
+  </body>
+</html>

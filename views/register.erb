@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">
+    <title>RPS-Home</title>
+  </head>
+  <body>
+    <div id="home_page_header"></div>
+    <form action='/names' method='post'>
+      <input type="text" name="player_1" placeholder="Player 1" class="round-box" required>
+      <% if type == :multiplayer %>
+        <input type="text" name="player_2" placeholder="Player 2" class="round-box" required>
+      <% end %>
+      <input type="submit" value="play" class="round-box button">
+    </form>
+  </body>
+<html>
