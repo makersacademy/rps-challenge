@@ -1,8 +1,8 @@
 <h1>Matchup:</h1>
-<%= $game.player_1 %> vs Computer
+<%= $game.player_1.name %> vs <%= $game.player_2.name %>
 
-<h2> <%= $game.player_1 %>, Choose your move</h2>
-<form action='/result' method='post'>
+<h2> <%= $game.player_1.name %>, Choose your move</h2>
+<form action='/move' method='post'>
   <input type='submit' name='rps_choice' value='Rock'>
   <input type='submit' name='rps_choice' value='Paper'>
   <input type='submit' name='rps_choice' value='Scissors'>

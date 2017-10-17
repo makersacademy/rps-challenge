@@ -1,6 +1,8 @@
-<%= @player_move %> vs <%= @computer.choose_move %>
+<%= $game.player_1.choose_move($move).type %> vs <%= $game.player_2.move %>
+
+
 
 
 <form action="/play" >
-  <input type="submit" value="Play Again">
+ <input type="submit" value="Play Again">
 </form>

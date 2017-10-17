@@ -1,7 +1,10 @@
 class ComputerPlayer
 
-  def choose_move
+  def move
     ['Rock', 'Paper', 'Scissors'].sample
   end
 
-end 
+  def name
+    "Computer"
+  end
+end

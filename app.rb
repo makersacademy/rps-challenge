@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require_relative './lib/computer_player.rb'
 require_relative './lib/game.rb'
+require_relative './lib/player.rb'
+require_relative './lib/move.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -11,8 +13,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $game = Game.new(params[:player_name], ComputerPlayer.new)
-    # session[:player] = params[:player_name]
+    player_1 = Player.new(params[:player_name])
+    player_2 = ComputerPlayer.new
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 
@@ -20,9 +23,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
-    @player_move = params[:rps_choice]
-    @computer = ComputerPlayer.new
+  post '/move' do
+    $move = Move.new(params[:rps_choice])
+    redirect '/result'
+  end
+
+  get '/result' do
     erb :result
   end
 
