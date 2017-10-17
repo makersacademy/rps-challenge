@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="css/styling.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<title>Rock Paper Scissors Lizard Spock</title>
+  </head>
+  <body>
+      <br>
+      <br>
+      <center><h2>Choose wisely <%= @game.player_2 %>!</h2></center>
+      <br>
+      <br>
+      <center><h2><%= @game.player_1 %>, look away!</h2></center>
+      <br>
+      <center><form action="/two_player_result" method="post">
+      <input type="submit" name="player_2_choice" value="Rock" class="button">
+      <input type="submit" name="player_2_choice" value="Paper" class="button">
+      <input type="submit" name="player_2_choice" value="Scissors" class="button">
+      <input type="submit" name="player_2_choice" value="Lizard" class="button">
+      <input type="submit" name="player_2_choice" value="Spock" class="spockbutton">
+      </form></center>
+  </body>
+</html>
