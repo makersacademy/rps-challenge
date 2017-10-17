@@ -1,0 +1,12 @@
+<head>
+  <link rel="stylesheet" href = "css/styles.css">
+</head>
+
+Your choice: <%= @game.player1.weapon_choice %>. <br>
+Computer choice: <%= @game.player2.weapon_choice %>. <br>
+
+The results are: <%= @game.draw? ? "Draw!" : "#{@game.winner.name} is the winner!" %>
+
+<form action='/' method='get'>
+  <input class='button' type='submit' value='Restart'>
+</form>
