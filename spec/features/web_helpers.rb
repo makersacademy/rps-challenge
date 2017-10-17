@@ -12,4 +12,3 @@ def multiplayer_start
   fill_in :player_2, with: 'TestPlayer'
   click_button 'play'
 end
-
