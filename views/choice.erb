@@ -7,8 +7,8 @@
   </head>
   <body>
     <p>Choose your weapon, <%= player_name %>:</p>
-    <form action="/calculate" method="post">
-      <% weapons.each do |weapon, value| %>
+    <form action="/turn" method="post">
+      <% weapons.each do |weapon| %>
         <input type="radio" name="weapon" value="<%= weapon %>" id="<%= weapon %>" required>
         <label for="<%= weapon %>" id="<%= weapon %>-icon">
           <%= weapon.capitalize %>

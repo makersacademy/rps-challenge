@@ -1,49 +1,39 @@
 require_relative './calculator'
+require_relative './player'
 
 class Game
 
-  attr_reader :player, :weapons, :result, :player_choice, :comp_choice
+  attr_reader :weapons, :result, :type
 
-  def initialize(player, calculator = nil)
+  WEAPONS = [:rock, :paper, :scissors, :spock, :lizard]
+
+  def initialize(type, calculator = nil)
     @calc = calculator || Calculator.new
-    @player = player
-    @weapons = { 
-      rock: 1, 
-      paper: 2, 
-      scissors: 3,
-      spock: 4,
-      lizard: 5
-    }
+    @weapons = WEAPONS
+    @type = type.to_sym
   end
 
-  def self.create_game(player)
-    @game = Game.new(player)
-  end
-
-  def self.current_game
-    @game
-  end
-
-  def play(weapon)
-    @player_choice = weapon
-    generate_comp_choice
+  def play(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
+    player_2.choose(computer_choice) if player_2.name.nil?
     play_game
   end
 
   private
 
-  attr_reader :calc
+  attr_reader :calc, :player_1, :player_2
 
-  def generate_comp_choice
-    @comp_choice = weapons.keys.sample
+  def computer_choice
+    weapons.sample
   end
 
-  def value(weapon)
-    weapons[weapon.downcase.to_sym]
+  def get_index(weapon)
+    weapons.index(weapon.downcase.to_sym)
   end
 
   def play_game
-    @result = calc.compare(value(player_choice), value(comp_choice))
+    @result = calc.compare(get_index(player_1.choice), get_index(player_2.choice))
   end
 
 end
