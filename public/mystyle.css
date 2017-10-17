@@ -1,7 +1,5 @@
-
-
 body {
-  font-family: "Rye", cursive;
+font-family: 'Baloo Chettan', cursive;
   background-color: #F6F4E7;
   text-align: center;
   font-size: 20px;
@@ -25,7 +23,7 @@ input[type=text] {
 }
 
 .weapon_button {
-  font-family: "Rye", cursive;
+  font-family: 'Baloo Chettan', cursive;
   font-size: 20px;
   background-color: #B0AB88;
   height: 50px;
@@ -35,10 +33,10 @@ input[type=text] {
 }
 
 .play_button {
-  font-family: "Rye", cursive;
+  font-family: 'Baloo Chettan', cursive;
   font-size: 20px;
   background-color: #B0AB88;
-  height: 35px;
+  height: 45px;
   border-radius: 20px;
   width: 100px;
 
@@ -47,4 +45,5 @@ input[type=text] {
 a:link {
     font-size: 30px;
     text-decoration: none;
+    color: black
 }
