@@ -14,14 +14,12 @@ let(:competition) { double :competition }
   describe '#player_win?' do
     it 'tells if the player wins' do
       expect(rules.player_win?([:rock, :scissors])).to eq(true)
-      expect(rules.player_win?([:rock, :paper])).to eq(false)
+      expect(rules.player_win?([:paper, :rock])).to eq(true)
     end
-  end
 
-  describe '#player_lose?' do
     it 'tells if the player loses' do
-      expect(rules.player_lose?([:scissors, :rock])).to eq(true)
-      expect(rules.player_lose?([:paper, :rock])).to eq(false)
+      expect(rules.player_win?([:scissors, :rock])).to eq(false)
+      expect(rules.player_win?([:rock, :paper])).to eq(false)
     end
   end
 

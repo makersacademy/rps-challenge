@@ -16,14 +16,12 @@ class Rules
     end
   end
 
-  #def player_lose?(competition)
-    #if competition == [:scissors, :rock] || competition == [:paper, :scissors] || competition == [:rock, :paper]
-      #true
-    #else
-      #false
-    #end
-end
-
-
+  def player_lose?(competition)
+    if even? || player_win?
+      false
+    else
+      true
+    end
+  end
 
 end
