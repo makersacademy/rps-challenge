@@ -8,36 +8,34 @@ describe Game do
       expect(game.player1).to eq(player1)
     end
 
-  context 'draw' do
-    before do
-      allow(player2).to receive(:weapon_choice).and_return(:rock)
-    end
-
-    it 'shows a draw if computer and player choose the same weapon' do
-      game.player1.choose_weapon(:rock)
-      expect(game.draw?).to eq(true)
-    end
-  end
-
-  context 'player wins' do
+  context 'computer chooses scissors' do
     before do
       allow(player2).to receive(:weapon_choice).and_return(:scissors)
     end
 
-    it 'shows the result if the player wins' do
+    it 'player wins if he chooses rock' do
       game.player1.choose_weapon(:rock)
       expect(game.winner).to eq(player1)
     end
-  end
 
-  context 'computer wins' do
-    before do
-      allow(player2).to receive(:weapon_choice).and_return(:rock)
+    it 'player wins if he chooses spock' do
+      game.player1.choose_weapon(:spock)
+      expect(game.winner).to eq(player1)
     end
 
-    it 'shows the result if the computer wins' do
-      game.player1.choose_weapon(:scissors)
+    it 'player loses if he chooses paper' do
+      game.player1.choose_weapon(:paper)
       expect(game.winner).to eq(player2)
+    end
+
+    it 'player loses if he chooses lizard' do
+      game.player1.choose_weapon(:lizard)
+      expect(game.winner).to eq(player2)
+    end
+
+    it 'player draws if he chooses scissors' do
+      game.player1.choose_weapon(:scissors)
+      expect(game.draw?).to eq(true)
     end
   end
 end

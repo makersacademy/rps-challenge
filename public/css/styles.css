@@ -1,3 +1,26 @@
 body {
-  background-color: yellow 
+  background-color: yellow
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #44A7ED;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #85CCFF}
+
+.button:active {
+  background-color: #335369;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

@@ -6,3 +6,7 @@
 <%= @game.player2.name %>'s choice was: <%= @game.player2.weapon_choice %>. <br>
 
 The results are: <%= @game.draw? ? "Draw!" : "#{@game.winner.name} is the winner!" %>
+
+<form action='/' method='get'>
+  <input class='button' type='submit' value='Restart'>
+</form>

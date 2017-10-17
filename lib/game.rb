@@ -2,7 +2,11 @@ require_relative 'player'
 require_relative 'computer_player'
 class Game
 
-GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
+GAME_RULES = {:rock => [:scissors, :lizard],
+              :paper => [:rock, :spock],
+              :scissors => [:paper, :lizard],
+              :spock => [:scissors, :rock],
+              :lizard => [:spock, :paper]}
 
   attr_reader :player1, :player2
 
@@ -25,7 +29,7 @@ GAME_RULES = {rock: :scissors, paper: :rock, scissors: :paper}
   end
 
   def winner
-    GAME_RULES[@player1.weapon_choice] == @player2.weapon_choice ? @player1 : @player2
+    GAME_RULES[@player1.weapon_choice].include?(@player2.weapon_choice) ? @player1 : @player2
   end
 
 end

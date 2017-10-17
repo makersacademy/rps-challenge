@@ -5,9 +5,5 @@ feature 'Player chooses number of players' do
     visit('/')
     click_button 'single_player'
     expect(page).to have_content('Please enter your name')
-
-    # fill_in :player1, with: 'Tom'
-    # click_button 'Submit'
-    # expect(page).to have_content('Hello Tom')
   end
 end
