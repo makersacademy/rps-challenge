@@ -26,11 +26,6 @@ class Game
     @current_game
   end
 
-  def store_choice(player_1_choice)
-    @player_1_choice = player_1_choice
-    '/two_play_too'
-  end
-
   def result(player_choice, choice = WEAPONS[rand(4)])
     #return symbol for the right view
     @choice = choice
@@ -41,7 +36,7 @@ class Game
 
   def two_player_result(player_1_choice, player_2_choice)
     return "It's a Draw!" if player_1_choice == player_2_choice
-    return "#{player_1.name} Won!" if Rules::RULES[player_1_choice].include?(player_2_choice)
-    return "#{player_2.name} Won!" if Rules::RULES[player_2_choice].include?(player_1_choice)
+    return "#{player_1} Won!" if Rules::RULES[player_1_choice].include?(player_2_choice)
+    return "#{player_2} Won!" if Rules::RULES[player_2_choice].include?(player_1_choice)
   end
 end

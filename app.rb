@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require_relative './lib/player'
 require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
@@ -25,12 +24,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @game = Game.create([Player.new(params[:name])])
+    @game = Game.create([params[:name]])
     redirect '/play'
   end
 
   post '/names' do
-    @game = Game.create([Player.new(params[:player1]), Player.new(params[:player2])])
+    @game = Game.create([params[:player1], params[:player2]])
     redirect '/two_play'
   end
 

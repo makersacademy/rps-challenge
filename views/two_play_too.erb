@@ -8,10 +8,10 @@
   <body>
       <br>
       <br>
-      <center><h2>Choose wisely <%= @game.player_2.name %>!</h2></center>
+      <center><h2>Choose wisely <%= @game.player_2 %>!</h2></center>
       <br>
       <br>
-      <center><h2><%= @game.player_1.name %>, look away!</h2></center>
+      <center><h2><%= @game.player_1 %>, look away!</h2></center>
       <br>
       <center><form action="/two_player_result" method="post">
       <input type="submit" name="player_2_choice" value="Rock" class="button">

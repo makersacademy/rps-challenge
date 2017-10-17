@@ -47,14 +47,5 @@ describe Game do
         expect(two_player_game.result("scissors", "rock")).to eq "Lost"
       end
     end
-    context '#store_choice' do
-      it 'stores player 1\'s choice' do
-        two_player_game.store_choice("rock")
-        expect(two_player_game.player_1_choice).to eq "rock"
-      end
-      it 'returns the next path' do
-        expect(two_player_game.store_choice("rock")).to eq '/two_play_too'
-      end
-    end
   end
 end
