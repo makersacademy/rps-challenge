@@ -1,13 +1,21 @@
 # RPS Challenge
 
 ### Instructions
+To play visit https://artemis-rps.herokuapp.com/
 
 ```sh
-- git clone https://github.com/artemisxen/rps-challenge.git
-- bundle
-- rackup
-- visit http://localhost:9292/
+$ git clone https://github.com/artemisxen/rps-challenge.git
+$ cd rps-challenge
+$ bundle install
+$ rackup
 ```
+Visit http://localhost:9292/
+
+For tests run:
+```sh
+$ rspec
+```
+
 
 ### Features
 
