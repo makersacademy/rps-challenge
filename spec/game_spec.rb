@@ -16,13 +16,13 @@ describe Game do
     context '#result' do
       srand(1)
       it 'returns a draw if both choices are the same' do
-        expect(game.result("paper")).to eq "Drew"
+        expect(game.result("paper")).to eq :Drew
       end
       it 'returns a win if player wins' do
-        expect(game.result("rock")).to eq "Won"
+        expect(game.result("rock")).to eq :Won
       end
       it 'returns a loss if computer wins' do
-        expect(game.result("scissors")).to eq "Lost"
+        expect(game.result("scissors")).to eq :Lost
       end
     end
   end
@@ -38,13 +38,13 @@ describe Game do
     context '#result' do
       srand(1)
       it 'returns a draw if both choices are the same' do
-        expect(two_player_game.result("rock", "rock")).to eq "Drew"
+        expect(two_player_game.result("rock", "rock")).to eq :Drew
       end
       it 'returns a win if player 1 wins' do
-        expect(two_player_game.result("paper", "rock")).to eq "Won"
+        expect(two_player_game.result("paper", "rock")).to eq :Won
       end
       it 'returns a loss if player 2 wins' do
-        expect(two_player_game.result("scissors", "rock")).to eq "Lost"
+        expect(two_player_game.result("scissors", "rock")).to eq :Lost
       end
     end
   end

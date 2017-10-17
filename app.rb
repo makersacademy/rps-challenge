@@ -54,14 +54,14 @@ class RockPaperScissors < Sinatra::Base
   
   post '/result' do
     @player_choice = params[:choice].downcase
-    @result = @game.result(@player_choice)
+    @result = @game.result_view(@player_choice)
     erb(:result)
   end
 
   post '/two_player_result' do
     @player_1_choice = session[:player_1_choice]
     @player_2_choice = params[:player_2_choice].downcase
-    @result = @game.two_player_result(@player_1_choice, @player_2_choice)
+    @result = @game.result_view(@player_1_choice, @player_2_choice)
     erb(:two_player_result)
   end
 
