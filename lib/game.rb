@@ -27,7 +27,7 @@ class Game
   end
 
   def result(player_choice, choice = WEAPONS[rand(4)])
-    #return symbol for the right view
+    # return symbol for the right view
     @choice = choice
     return "Drew" if player_choice == choice 
     return "Won" if Rules::RULES[player_choice].include?(choice)
