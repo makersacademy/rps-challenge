@@ -18,7 +18,7 @@ class Game
       "#{player_1} wins!"
     elsif player_2.move.beats?(player_1.move)
       "#{player_2} wins!"
-    else# player_1.move == player_2.move
+    else
       "It's a draw!"
     end
   end
