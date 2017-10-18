@@ -13,5 +13,14 @@ class Game
     @competition.first == @competition.last ? true : false
   end
 
+  def player_win?
+    rules.each do |wining_vs_losing|
+      wining_vs_losing == @competition ? (return true) : (return false)
+    end
+  end
+
+  def result
+  end 
+
 
 end
