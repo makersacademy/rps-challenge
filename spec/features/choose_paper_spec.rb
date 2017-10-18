@@ -5,13 +5,13 @@ feature 'Player chooses move' do
     expect(page).to have_content 'Paper'
   end
 
-  scenario 'Paper button is clicked' do
+  scenario 'Scissors button is clicked' do
     sign_in
     click_button 'Scissors'
     expect(page).to have_content 'Scissors'
   end
 
-  scenario 'Paper button is clicked' do
+  scenario 'Rock button is clicked' do
     sign_in
     click_button 'Rock'
     expect(page).to have_content 'Rock'

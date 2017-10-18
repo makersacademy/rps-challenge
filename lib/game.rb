@@ -15,9 +15,9 @@ class Game
 
   def result
     if player_1.move.beats?(player_2.move)
-      "#{player_1} wins!"
+      "#{player_1.name} wins!"
     elsif player_2.move.beats?(player_1.move)
-      "#{player_2} wins!"
+      "#{player_2.name} wins!"
     else
       "It's a draw!"
     end

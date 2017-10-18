@@ -24,7 +24,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    $move = Move.new(params[:rps_choice])
+    $game.player_1.choose_move(Move.new(params[:rps_choice]))
+    $game.player_2.choose_move(Move.new(ComputerPlayer.new.random_move))
+    #need a way so that the computer doesnt have to distinguish beetween computer and human players
     redirect '/result'
   end
 

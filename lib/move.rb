@@ -7,7 +7,7 @@ class Move
 
   attr_reader :type
 
-  def initialize(type)
+  def initialize(type="Random")
     @type = type
   end
 
@@ -15,4 +15,7 @@ class Move
     RULES[@type]==other_move.type
   end
 
+  def random
+    ["Rock", "Paper", "Scissors"].sample
+  end
 end
