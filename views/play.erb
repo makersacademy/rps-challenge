@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/index.css">
+Let's play Rock, Paper, Scissors ft. Spocks and Lizards!<br>
+<h1 class="flashit"><%= Game.current.current_player.name %></h1>...it's your turn.<br>
+Choose your weapon: <br>
+<form action="/choice" method="post">
+<button type="submit" name="weapon" value="Rock">Rock</button>
+<button type="submit" name="weapon" value="Paper">Paper</button>
+<button type="submit" name="weapon" value="Scissors">Scissors</button>
+<button type="submit" name="weapon" value="Spock">Spock</button>
+<button type="submit" name="weapon" value="Lizard">Lizard</button>
+</form>
