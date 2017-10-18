@@ -9,6 +9,18 @@ class Game
     [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']]
   end
 
+  def result
+    if player_win?
+      :win
+    elsif draw?
+      :draw
+    else
+      :lose
+    end
+  end
+
+private
+
   def draw?
     @competition.first == @competition.last ? true : false
   end
@@ -18,9 +30,6 @@ class Game
       wining_vs_losing == @competition ? (return true) : (return false)
     end
   end
-
-  def result
-  end 
 
 
 end
