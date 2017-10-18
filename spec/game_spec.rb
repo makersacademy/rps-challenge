@@ -1,20 +1,29 @@
 require 'game'
 
+class Fakeplayer
+  def choice
+    'Rock'
+  end
+end
+
+class FakeComputer
+  def choice
+    'Paper'
+  end
+end
+
 describe Game do
-  let(:player_choice) { double :player_choice }
-  let(:player) { double :player }
-  let(:game) { described_class.new(player, player_choice) }
+  let(:game) { described_class.new(Fakeplayer.new, FakeComputer.new) }
 
-  #it "remembers the player's choice" do
-    #expect(game.player_choice).to eq player_choice
-  #end
-
-  it "generates a random result from opponent player" do
-    expect(game).to respond_to(:game_choice)
+  it "have a set of pre-defined game rules" do
+    expect(game.rules).to eq([['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']])
   end
 
-  it "compares player's choice and the opponent's choice" do
+  it "tells if the game is a draw" do
+    #allow(game).to receive(:competition) {['Rock', 'Rock']}
+    game.instance_variable_set(:@competition, ['Rock', 'Rock'])
+    expect(game.draw?).to eq true
   end
 
 
-  end
+end

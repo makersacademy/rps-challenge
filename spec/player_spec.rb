@@ -7,7 +7,7 @@ describe Player do
   let(:player_choice) { double :player_choice }
 
   it "retains player's choice" do
-    expect(player.player_choice).to eq(player_choice)
+    expect(player.choice).to eq(player_choice)
   end
 
 end

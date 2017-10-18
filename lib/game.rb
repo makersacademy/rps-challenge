@@ -1,21 +1,17 @@
 
 class Game
 
-  def initialize(player, player_choice)
-    @player = player
-    @player_choice = player_choice
+  def initialize(player, computer = Computer.new)
+    @competition = [player.choice, computer.choice]
   end
 
-  #def player_choice
-    #@player_choice
-  #end
-
-  def game_choice
-    @game_choice = [:rock, :paper, :scissors].sample
+  def rules
+    [['Rock', 'Scissors'], ['Scissors', 'Paper'], ['Paper', 'Rock']]
   end
 
-  def compete
-    competition = [@player, @game_choice]
+  def draw?
+    @competition.first == @competition.last ? true : false
   end
+
 
 end

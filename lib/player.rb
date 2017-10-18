@@ -8,7 +8,7 @@ attr_reader :player_name
     @player_choice = player_choice
   end
 
-  def player_choice
+  def choice
     @player_choice
   end
 

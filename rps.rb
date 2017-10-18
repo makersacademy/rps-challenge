@@ -13,12 +13,15 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @player = session[:name]
+    @player_name = session[:name]
     erb(:play)
   end
 
-
-
+  post '/game' do
+    player = session[:name]
+    player_choice = params[:weapons]
+    @player = Player.new(player, player_choice)
+  end
 
   run! if app_file == $0
 end
