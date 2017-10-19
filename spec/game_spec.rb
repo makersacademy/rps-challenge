@@ -26,7 +26,7 @@ describe Game do
       allow(player_1).to receive(:move).and_return(Move.new('Scissors'))
       allow(player_2).to receive(:move).and_return(Move.new('Rock'))
       expect(game.result).to eq "#{player_2} wins!"
-    end 
+    end
 
     it 'makes Paper tie with Paper' do
       allow(player_1).to receive(:move).and_return(Move.new('Paper'))
