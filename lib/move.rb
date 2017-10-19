@@ -8,7 +8,7 @@ class Move
 
   attr_reader :type
 
-  def initialize(type=random)
+  def initialize(type = random)
     @type = type
   end
 

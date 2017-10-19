@@ -24,14 +24,12 @@ class RockPaperScissors < Sinatra::Base
   post '/move' do
     Game.instance.player_1.choose_move(Move.new(params[:rps_choice]))
     Game.instance.player_2.choose_move(Move.new)
-    #need a way so that the computer doesnt have to distinguish beetween computer and human players
     redirect '/result'
   end
 
   get '/result' do
     erb :result
   end
-
 
   run! if app_file == $0
 end
