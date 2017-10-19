@@ -1,6 +1,8 @@
 require 'game'
 require 'move'
 
+#I don't like these tests because I haven't doubled move. But it was taking me too long
+#to get it working.
 describe Game do
   let(:player_1) { double(:player_1, name: "name_1") }
   let(:player_2) { double(:player_2, name: "name_2") }
@@ -23,6 +25,18 @@ describe Game do
       allow(player_1).to receive(:move).and_return(Move.new('Scissors'))
       allow(player_2).to receive(:move).and_return(Move.new('Rock'))
       expect(game.result).to eq "name_2 wins!"
+    end
+
+    it 'makes Scissors beat Lizard' do
+      allow(player_1).to receive(:move).and_return(Move.new('Lizard'))
+      allow(player_2).to receive(:move).and_return(Move.new('Scissors'))
+      expect(game.result).to eq "name_2 wins!"
+    end
+
+    it 'makes Spock beat Lizard' do
+      allow(player_1).to receive(:move).and_return(Move.new('Lizard'))
+      allow(player_2).to receive(:move).and_return(Move.new('Spock'))
+      expect(game.result).to eq "name_1 wins!"
     end
 
     it 'makes Paper tie with Paper' do

@@ -9,15 +9,16 @@ class Game
   end
 
   def initialize(player_1, player_2)
-    @players = [player_1, player_2]
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def player_1
-    @players.first
+    @player_1
   end
 
   def player_2
-    @players.last
+    @player_2
   end
 
   def result
