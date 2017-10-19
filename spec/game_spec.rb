@@ -1,8 +1,8 @@
 require 'game'
 require 'move'
 
-#I don't like these tests because I haven't doubled move. But it was taking me too long
-#to get it working.
+# I don't like these tests because I haven't doubled Move.new. But it
+# was taking me too long to get it working.
 describe Game do
   let(:player_1) { double(:player_1, name: "name_1") }
   let(:player_2) { double(:player_2, name: "name_2") }
