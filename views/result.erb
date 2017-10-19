@@ -1,6 +1,6 @@
 
-<%= $game.player_1.move.type %> vs <%= $game.player_2.move.type %>
-<%= $game.result %>
+<%= Game.instance.player_1.move.type %> vs <%= Game.instance.player_2.move.type %>
+<%= Game.instance.result %>
 
 
 <form action="/play" >

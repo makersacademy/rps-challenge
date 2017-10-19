@@ -6,8 +6,6 @@ require_relative './lib/move.rb'
 
 class RockPaperScissors < Sinatra::Base
 
-  enable :sessions
-
   get '/' do
     erb :register
   end
@@ -15,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     player_1 = Player.new(params[:player_name])
     player_2 = ComputerPlayer.new
-    $game = Game.new(player_1, player_2)
+    Game.create(player_1, player_2)
     redirect '/play'
   end
 
@@ -24,8 +22,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    $game.player_1.choose_move(Move.new(params[:rps_choice]))
-    $game.player_2.choose_move(Move.new(ComputerPlayer.new.random_move))
+    Game.instance.player_1.choose_move(Move.new(params[:rps_choice]))
+    Game.instance.player_2.choose_move(Move.new(ComputerPlayer.new.random_move))
     #need a way so that the computer doesnt have to distinguish beetween computer and human players
     redirect '/result'
   end

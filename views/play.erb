@@ -1,7 +1,7 @@
 <h1>Matchup:</h1>
-<%= $game.player_1.name %> vs <%= $game.player_2.name %>
+<%= Game.instance.player_1.name %> vs <%= Game.instance.player_2.name %>
 
-<h2> <%= $game.player_1.name %>, Choose your move</h2>
+<h2> <%= Game.instance.player_1.name %>, Choose your move</h2>
 <form action='/move' method='post'>
   <input type='submit' name='rps_choice' value='Rock'>
   <input type='submit' name='rps_choice' value='Paper'>
