@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     Game.instance.player_1.choose_move(Move.new(params[:rps_choice]))
-    Game.instance.player_2.choose_move(Move.new(ComputerPlayer.new.random_move))
+    Game.instance.player_2.choose_move(Move.new)
     #need a way so that the computer doesnt have to distinguish beetween computer and human players
     redirect '/result'
   end
