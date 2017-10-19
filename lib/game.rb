@@ -1,4 +1,3 @@
-
 class Game
 
   def self.create(player_1, player_2)

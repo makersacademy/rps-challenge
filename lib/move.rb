@@ -1,4 +1,3 @@
-
 class Move
 
   MOVE_DOMINANCE = { "Rock" => ["Scissors", "Lizard"],
