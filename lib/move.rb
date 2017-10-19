@@ -1,11 +1,11 @@
 
 class Move
 
-  RULES = { "Rock" => ["Scissors", "Lizard"],
-            "Paper" => ["Rock", "Spock"],
-            "Scissors" => ["Paper", "Lizard"],
-            "Lizard" => ["Spock", "Paper"],
-            "Spock" => ["Scissors", "Rock"] }
+  MOVE_DOMINANCE = { "Rock" => ["Scissors", "Lizard"],
+                    "Paper" => ["Rock", "Spock"],
+                    "Scissors" => ["Paper", "Lizard"],
+                    "Lizard" => ["Spock", "Paper"],
+                    "Spock" => ["Scissors", "Rock"] }
 
   attr_reader :type
 
@@ -14,7 +14,7 @@ class Move
   end
 
   def beats?(other_move)
-    RULES[type].include?(other_move.type)
+    MOVE_DOMINANCE[type].include?(other_move.type)
   end
 
   private
