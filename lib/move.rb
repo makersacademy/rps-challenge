@@ -1,9 +1,11 @@
 
 class Move
 
-  RULES = { "Rock" => "Scissors",
-            "Paper" => "Rock",
-            "Scissors" => "Paper" }
+  RULES = { "Rock" => ["Scissors", "Lizard"],
+            "Paper" => ["Rock", "Spock"],
+            "Scissors" => ["Paper", "Lizard"],
+            "Lizard" => ["Spock", "Paper"],
+            "Spock" => ["Scissors", "Rock"] }
 
   attr_reader :type
 
@@ -12,12 +14,12 @@ class Move
   end
 
   def beats?(other_move)
-    RULES[@type]==other_move.type
+    RULES[type].include?(other_move.type)
   end
 
   private
 
   def random
-    ["Rock", "Paper", "Scissors"].sample
+    ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
   end
 end
