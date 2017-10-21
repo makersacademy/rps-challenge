@@ -29,11 +29,10 @@ Instructions are for Terminal on Mac OS
 
 Run `rspec`
 
-100%% test coverage.
+100% test coverage.
 
 ## Notes and To-dos
 
-* The game goes back to the name registration page in order to play again. It would be better if the player was taken back to the select move page.
 * The game doesn't tally the player's score. It would be better if each game displayed a running total of games won by the computer vs player.
 
 ## APPENDIX
