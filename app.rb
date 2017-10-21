@@ -1,12 +1,13 @@
 require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
+require './lib/computer_player.rb'
 
 class Rockpaperscissors < Sinatra::Base
 
 enable :sessions
 
-attr_reader :player, :game
+attr_reader :counter
 
   get '/' do
     erb :enter_name
@@ -23,9 +24,10 @@ attr_reader :player, :game
   end
 
   post '/result' do
-    @game = Game.new(params[:move])
-    game.result(@game.move, @game.random_counter_move)
-    erb :result
+    playermove = params[:playermove]
+    @counter = ComputerPlayer.new.random_counter_move
+    result = Game.new.beats_computer?(playermove, @counter)
+    erb result
   end
 
 end

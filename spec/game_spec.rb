@@ -2,59 +2,48 @@ require 'game.rb'
 
 describe Game do
 
-  subject(:game) { Game.new('Rock') }
-  describe '#move' do
-    it "returns the player's move" do
-      expect(game.move).to eq 'Rock'
+  describe '#beats_computer?' do
+    context 'When 1st move is Rock' do
+      it 'knows when the player has lost' do
+        game = Game.new
+        expect(game.beats_computer?('Rock','Paper')).to eq :lose
+      end
+      it 'knows when the player has won' do
+        game = Game.new
+        expect(game.beats_computer?('Rock','Scissors')).to eq :win
+      end
+      it 'knows when the player has drawn' do
+        game = Game.new
+        expect(game.beats_computer?('Rock','Rock')).to eq :draw
+      end
     end
   end
-
-  describe '#random_counter_move' do
-    it "returns a random rock, paper, scissors move" do
-      expect(["Rock", "Paper", "Scissors"]).to include(game.random_counter_move)
+    context 'When 1st move is Paper' do
+      it 'knows when the player has lost' do
+        game = Game.new
+        expect(game.beats_computer?('Paper','Scissors')).to eq :lose
+      end
+      it 'knows when the player has won' do
+        game = Game.new
+        expect(game.beats_computer?('Paper','Rock')).to eq :win
+      end
+      it 'knows when the player has drawn' do
+        game = Game.new
+        expect(game.beats_computer?('Paper','Paper')).to eq :draw
+      end
     end
-  end
-
-  describe '#result' do
-    it "calculates whether player has lost the game" do
-      move = "Rock"
-      counter = "Paper"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", computer wins :("
+    context 'When 1st move is Scissors' do
+      it 'knows when the player has lost' do
+        game = Game.new
+        expect(game.beats_computer?('Scissors','Rock')).to eq :lose
+      end
+      it 'knows when the player has won' do
+        game = Game.new
+        expect(game.beats_computer?('Scissors','Paper')).to eq :win
+      end
+      it 'knows when the player has drawn' do
+        game = Game.new
+        expect(game.beats_computer?('Scissors','Scissors')).to eq :draw
+      end
     end
-    it "calculates whether player has lost the game" do
-      move = "Paper"
-      counter = "Scissors"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", computer wins :("
-    end
-    it "calculates whether player has lost the game" do
-      move = "Scissors"
-      counter = "Rock"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", computer wins :("
-    end
-
-
-    it "calculates whether player has won the game" do
-      move = "Rock"
-      counter = "Scissors"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", you win! :)"
-    end
-    it "calculates whether player has won the game" do
-      move = "Scissors"
-      counter = "Paper"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", you win! :)"
-    end
-    it "calculates whether player has won the game" do
-      move = "Paper"
-      counter = "Rock"
-      expect(game.result(move, counter)).to eq "computer choice is: " + counter + ", you win! :)"
-    end
-
-
-    it "calculates whether player has drawn the game" do
-      move = "Rock"
-      counter = "Rock"
-      expect(game.result(move, counter)).to eq "It's a draw"
-    end
-  end
-
 end
