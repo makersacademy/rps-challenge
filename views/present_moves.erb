@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+<h1>
+  <%=@player.name%>
+  is now in the game</h1>
+<form method="POST" action="/result">
+  <input type="submit" name="playermove" value="Rock">
+  <input type="submit" name="playermove" value="Paper">
+  <input type="submit" name="playermove" value="Scissors">
+</form>
+</body>
+</html>

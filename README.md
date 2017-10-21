@@ -1,4 +1,41 @@
-# RPS Challenge
+[![Build Status](https://travis-ci.org/makersacademy/rps-challenge.svg?branch=master)](https://travis-ci.org/makersacademy/rps-challenge)
+
+# RPS CHALLENGE
+
+This is my response to the 'weekend challenge' of Week 3 of Makers Academy. For full details of what the challenge involved, see 'APPENDIX' below.
+
+## Getting started
+
+Instructions are for Terminal on Mac OS
+
+1) `git clone git@github.com:oliverpople/rps-challenge.git`
+2) `gem install bundle`
+3) `bundle`
+
+## Usage
+
+Instructions are for Terminal on Mac OS
+
+1) Run `rackup` within project directory.
+2) Open Chrome browser and type `localhost:` followed by the port number `xxxx` shown on your command line.
+
+* On the home page type and submit your name to register as a player.
+* This will automatically redirected you to the second page where you can select the move you'd like to use ('Rock'/'Paper'/'Scissors').  Select a move by clicking one of the buttons.
+* This will automatically tell you whether you have won the game or not.
+* Click the `Play again` link to start game all over again.
+
+
+## Running tests
+
+Run `rspec`
+
+100% test coverage.
+
+## Notes and To-dos
+
+* The game doesn't tally the player's score. It would be better if each game displayed a running total of games won by the computer vs player.
+
+## APPENDIX
 
 Instructions
 -------
