@@ -1,6 +1,15 @@
+
+ENV['RACK_ENV'] = 'test'
+
 require 'capybara/rspec'
+require_relative '../lib/app'
+require_relative './features/web_helpers'
+require 'sinatra'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = RockPaperScissors
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -11,8 +20,8 @@ SimpleCov.start
 
 RSpec.configure do |config|
   config.after(:suite) do
-    puts
-    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
-    puts "\e[33mTry it now! Just run: rubocop\e[0m"
+    # puts
+    # puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
+    # puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end

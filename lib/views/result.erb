@@ -1,0 +1,12 @@
+<h1>Rock, paper scissors!</h1>
+<h3>Player name: <%= @player.name %></h3>
+<h3>You chose <%= @player_selection %></h3>
+<h3>Computer chose <%= @computer_selection %></h3>
+<h3>Result: <%= @outcome %></h3>
+<p>Wins: <%= @player.wins %></p>
+<p>Losses: <%= @player.losses %></p>
+<p>Ties: <%= @player.draws %></p>
+<p>Total: <%= @player.tries %></p>
+<form action="/go_back" method="post">
+  <input type="submit" value="Play again">
+</form>

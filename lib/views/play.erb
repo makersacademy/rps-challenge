@@ -1,0 +1,8 @@
+<h1>Rock, paper scissors!</h1>
+<h3>Player name: <%= @name %></h3>
+<h3>Make your selection:</h3>
+<form action="/selection" method="post">
+  <input type="submit" name="selection" value="rock">
+  <input type="submit" name="selection" value="paper">
+  <input type="submit" name="selection" value="scissors">
+</form>
