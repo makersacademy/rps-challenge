@@ -6,6 +6,7 @@ require './lib/game.rb'
 class RPS < Sinatra::Base
   enable :sessions
   @@game = nil
+  @@player2 = nil
 
   get '/' do
     erb(:index)
@@ -18,8 +19,8 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player_1_name = @@game.player_1.name
-    $player_2 = Computer.new
-    @player_2_name = $player_2.name
+    @@player_2 = Computer.new
+    @player_2_name = @@player_2.name
     erb(:play)
   end
 
@@ -31,8 +32,8 @@ class RPS < Sinatra::Base
   get '/result' do
     @player_1_name = @@game.player_1.name
     @player_1_weapon = @@game.player_1.weapon
-    @player_2_weapon = $player_2.weapon
-    @player_2_name = $player_2.name
+    @player_2_weapon = @@player_2.weapon
+    @player_2_name = @@player_2.name
     @rules = @@game.rules
     @result = @rules[@player_1_weapon][@player_2_weapon]
     erb(:result)
