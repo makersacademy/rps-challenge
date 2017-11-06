@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :weapons, :chosen_weapon
+  attr_reader :weapons, :chosen_weapon, :choose_weapon
 
   def initialize
     @weapons = ['rock', 'paper', 'scissors']
