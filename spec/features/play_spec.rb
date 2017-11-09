@@ -1,8 +1,10 @@
 feature 'Play Area' do
 
   scenario 'Shows player name' do
-    sign_in_and_play
-    expect(page).to have_content @name
+    enter
+    sign_in
+    expect(page).to have_content "#{@name} vs Ricky Martin"
+    expect(page).to have_content "Choose your move, #{@name}:"
   end
 
 end

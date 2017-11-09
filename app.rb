@@ -21,5 +21,11 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/move' do
+    @player_choice = params[:move]
+    @game.play(params[:move])
+    erb :result
+  end
+
   run! if app_file == $0
 end
