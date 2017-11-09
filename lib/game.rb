@@ -14,7 +14,7 @@ class Game
   end
 
   def print_log
-    return "#{get_totals(:win)} wins, #{get_totals(:lose)} losses, and #{get_totals(:draw)} draws"
+    return "#{wins} wins, #{losses} losses, and #{draws} draws"
   end
 
   def self.new_game(player_1 = 'Player 1')
@@ -26,6 +26,18 @@ class Game
   end
 
 private
+
+  def wins
+    get_totals(:win)
+  end
+
+  def losses
+    get_totals(:lose)
+  end
+
+  def draws
+    get_totals(:draw)
+  end
 
   def get_totals(result)
     @log.count { |i| i[0] == result }
