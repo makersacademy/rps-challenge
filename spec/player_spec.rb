@@ -34,6 +34,4 @@ let(:rock) {'rock'}
       end
     end
   end
-
-
 end

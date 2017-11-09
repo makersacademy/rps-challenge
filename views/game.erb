@@ -1,0 +1,20 @@
+<%= @player_1_name %> you chose <%= @player_1_weapon %>! <br/>
+Computer chose <%= @computer_weapon %>! <br/>
+
+<%= if ( @player_1_weapon == "rock" || @player_1_weapon  == "paper" || @player_1_weapon == "scissors")
+  if (@player_1_weapon == @computer_weapon)
+      "Draw!"
+  elsif (@player_1_weapon == "rock" && @computer_weapon == "scissors")
+      "You win!"
+  elsif (@player_1_weapon == "rock" && @computer_weapon == "paper")
+      "Computer wins!"
+  elsif (@player_1_weapon == "paper" && @computer_weapon == "scissors")
+      "Computer wins!"
+  elsif (@player_1_weapon == "paper" && @computer_weapon == "rock")
+      "You win!"
+  elsif (@player_1_weapon == "scissors" && @computer_weapon == "rock")
+      "Computer wins!"
+  elsif (@player_1_weapon == "scissors" && @computer_weapon == "paper")
+      "You win!"
+  end
+end %>

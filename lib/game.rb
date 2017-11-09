@@ -3,34 +3,33 @@ require './lib/computer.rb'
 
 class Game
 
+attr_reader :player, :computer
 
 def initialize(player = Player.new, computer = Computer.new)
   @player = player
   @computer = computer
 end
 
-def play
-  puts "What's your choice?"
-  user_input = gets.chomp.downcase
+def computer_choice
+  @computer.choose_weapon
+end
 
-  user_input = @player.choose_weapon(user_input)
-  computer_choice = @computer.choose_weapon
-
-    if (user_input == "rock" || user_input == "paper" || user_input == "scissors")
-      if (user_input == computer_choice)
-        puts "We got the same, let's keep playing!"
-      elsif (user_input == "rock" && computer_choice == "scissors")
-        puts "computer choice is: " + computer_choice + " , you win! :)"
-      elsif (user_input == "rock" && computer_choice == "paper")
-        puts "computer choice is: " + computer_choice + " ,computer wins :("
-      elsif (user_input == "paper" && computer_choice == "scissors")
-        puts "computer choice is: " + computer_choice + " ,computer wins :("
-      elsif (user_input == "paper" && computer_choice == "rock")
-        puts "computer choice is: " + computer_choice + " , you win! :)"
-      elsif (user_input == "scissors" && computer_choice == "rock")
-        puts "computer choice is: " + computer_choice + " ,computer wins :("
-      elsif (user_input == "scissors" && computer_choice == "paper")
-        puts "computer choice is: " + computer_choice + " , you win! :)"
+def play(player_a, player_b)
+    if (player_a == "rock" || player_a == "paper" || player_a == "scissors")
+      if (player_a == player_b)
+         "We got the same, let's keep playing!"
+      elsif (player_a == "rock" && player_b == "scissors")
+         "computer choice is: " + player_b + " , you win! :)"
+      elsif (player_a == "rock" && player_b == "paper")
+          "computer choice is: " + player_b + " ,computer wins :("
+      elsif (player_a == "paper" && player_b == "scissors")
+         "computer choice is: " + player_b + " ,computer wins :("
+      elsif (player_a == "paper" && player_b == "rock")
+         "computer choice is: " + player_b + " , you win! :)"
+      elsif (player_a == "scissors" && player_b == "rock")
+         "computer choice is: " + player_b + " ,computer wins :("
+      elsif (player_a == "scissors" && player_b == "paper")
+         "computer choice is: " + player_b + " , you win! :)"
       end
     end
   end
