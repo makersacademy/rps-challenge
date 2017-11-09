@@ -3,11 +3,19 @@ require 'engine'
 describe Engine do
 
   subject(:engine) { Engine.new }
-
+ 
   context 'Draw' do
+    before do
+      @plays = ["rock", "paper", "scissors"]
+      @play = ""
+      allow_any_instance_of(Array).to receive(:sample) { @play.to_sym }
+    end
+    
     it 'Evaluates as a draw when both plays have the same value' do
-      allow_any_instance_of(Array).to receive(:sample) { :rock }
-      expect(engine.new_play("rock")).to eq [:draw, :rock]
+      @plays.each do |play|
+        @play = play
+        expect(engine.new_play(@play)).to eq [:draw, @play.to_sym]
+      end
     end
   end
 

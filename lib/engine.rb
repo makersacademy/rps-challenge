@@ -1,9 +1,9 @@
 class Engine
 
   @@moves = [:rock, :paper, :scissors]
-  @@winning_pairs = [ [:rock, :scissors],
-                      [:paper, :rock],
-                      [:scissors, :paper] ]
+  @@winning_pairs = [[:rock, :scissors],
+                    [:paper, :rock],
+                    [:scissors, :paper]]
 
   def new_play(choice)
     evaluate(choice.to_sym, @@moves.sample)
