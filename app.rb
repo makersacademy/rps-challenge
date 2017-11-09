@@ -10,4 +10,6 @@ class Rps < Sinatra::Base
   post 'sign_in_player' do
   end
 
+  run! if app_file == $0
+  
 end
