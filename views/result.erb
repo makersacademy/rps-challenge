@@ -5,3 +5,8 @@ Ricky chose: <%= @game.log[-1][1] %>
 Result: <%= @game.log[-1][0] %>
 <br>
 Accumulated: <%= @game.print_log %>
+<br>
+<br>
+<form  action="/play" method="get">
+  <input type="submit" value="Again">
+</form>

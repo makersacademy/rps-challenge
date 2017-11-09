@@ -18,3 +18,7 @@ def play
   page.choose('rock')
   click_button('Go')
 end
+
+def play_again
+  click_button('Again')
+end
