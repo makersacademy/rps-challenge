@@ -5,10 +5,9 @@ class Player
   def initialize(name)
     @name = name
     @weapons = ['rock', 'paper', 'scissors']
-
   end
 
-  
+
   def choose_weapon(choice)
     fail 'Pick rock, paper or scissors!' unless includes_weapon?(choice)
     @chosen_weapon = choice

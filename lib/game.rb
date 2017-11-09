@@ -10,6 +10,14 @@ def initialize(player = Player.new, computer = Computer.new)
   @computer = computer
 end
 
+def self.create(player, computer)
+  @game = Game.new(player, computer)
+end
+
+def self.instance
+  @game
+end
+
 def computer_choice
   @computer.choose_weapon
 end
