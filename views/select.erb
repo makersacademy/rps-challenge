@@ -1,4 +1,12 @@
-<h1>Hi  <%= @game.player_1.name %> ! </h1>
+<style> body {
+    background-color: red;
+    background-image: url("http://pngimg.com/uploads/paper_sheet/paper_sheet_PNG7233.png");
+    background-size: 100% 100%;
+}
+</style>
+
+
+<h1>Hi  <%= @game.player_1.name %>! </h1>
 <h1>Please type 'rock', 'paper', or 'scissors'! </h1>
 
 <form action="/select" >
