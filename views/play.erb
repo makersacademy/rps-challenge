@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock, paper, scissors!</title>
+</head>
+<body>
+	<%= "Hello, #{@player}" %>
+	<form action="/move" method="post">
+		<button name="choice" type="submit" value="rock">rock</button>
+		<button name="choice" type="submit" value="paper">paper</button>
+		<button name="choice" type="submit" value="scissors">scissors</button>
+	</form>
+	Computer's move: <%= @computer_move if @computer_move %> <br>
+	Win count: <%= @wins %> <br>
+	<%= @confirmation if @confirmation %>
+</body>
+</html>
