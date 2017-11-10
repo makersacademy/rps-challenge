@@ -1,5 +1,5 @@
-<%= @player_1_name %> you chose <%= @player_1_weapon %>! <br/>
-Computer chose <%= @computer_weapon %>! <br/>
+<h1> You chose <%= @player_1_weapon %>! <br/> </h1>
+<h1> Computer chose <%= @computer_weapon %>! <br/> </h1>
 
 <%= if ( @player_1_weapon == "rock" || @player_1_weapon  == "paper" || @player_1_weapon == "scissors")
   if (@player_1_weapon == @computer_weapon)
@@ -18,3 +18,7 @@ Computer chose <%= @computer_weapon %>! <br/>
       "You win!"
   end
 end %>
+
+<form action="/name" >
+  <input type="submit" value="Play Again">
+</form>

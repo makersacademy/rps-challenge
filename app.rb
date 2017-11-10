@@ -1,5 +1,5 @@
 require 'sinatra'
-require './lib/game.rb'
+require './lib/computer.rb'
 require './lib/player.rb'
 
 class RockPaperScissors < Sinatra::Base
@@ -8,29 +8,24 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  before do
-    @game = Game.instance
-    @computer = Computer.new
-  end
-
-  # get '/name' do
-  #   $game = Game.new(Player.new(params[:player_1]))
-  #   @player_1 = $game.player
-  #   @player_1_name = @player_1.name.capitalize!
-  #   erb :select
-  # end
-
   get '/name' do
-    @player_1 = Player.new(params[:player_1_name])
-    # @game = Game.create(@player_1, @computer)
+
+    $player_1 = Player.new((params[:player_1_name]))
+    @player_1_name = $player_1.name
+
     erb :select
   end
 
   get '/select' do
-    @player_1_weapon = (params[:weapon])
-    @computer_weapon = @computer.choose_weapon
-    # @game.play(@player_1_weapon, @computer_weapon)
+
+    @player_1_weapon = $player_1.choose_weapon(params[:weapon]  )
+    p $player_1
+    @computer_weapon = Computer.new.choose_weapon
     erb :game
+  end
+
+  get '/play again' do
+    erb :index
   end
 
 
