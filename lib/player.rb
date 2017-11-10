@@ -1,22 +1,13 @@
 class Player
 
-  attr_reader :weapons, :chosen_weapon, :choose_weapon, :name
+  attr_reader :name, :weapon
 
   def initialize(name)
     @name = name
-    @weapons = ['rock', 'paper', 'scissors']
   end
 
-
-  def choose_weapon(choice)
-    fail 'Pick rock, paper or scissors!' unless includes_weapon?(choice)
-    @chosen_weapon = choice
+  def weapon(weapon)
+    # fail 'Pick rock, paper or scissors!' unless Game::WEAPONS.include?(weapon)
+    @weapon = weapon
   end
-
-private
-
-  def includes_weapon?(choice)
-    @weapons.include?(choice)
-  end
-
 end
