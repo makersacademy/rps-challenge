@@ -5,7 +5,7 @@ describe Player do
 let(:player) { double :player }
 let(:subject) { described_class.new(player) }
 let(:weapons) { [:rock, :paper, :scissors] }
-let(:double_rock) { :rock }
+let(:double_rock) { 'rock' }
 
   describe '#Game' do
     it 'should respond to weapon' do
@@ -22,7 +22,7 @@ let(:double_rock) { :rock }
 
     context 'when given the choice' do
       it 'should set weapon' do
-        expect(subject.weapon(:rock)).to eq(:rock)
+        expect(subject.weapon('rock')).to eq('rock')
       end
     end
   end

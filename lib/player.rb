@@ -7,7 +7,7 @@ class Player
   end
 
   def weapon(weapon)
-    # fail 'Pick rock, paper or scissors!' unless Game::WEAPONS.include?(weapon)
+    fail 'Pick rock, paper or scissors!' unless ['rock', 'paper', 'scissors'].include?(weapon)
     @weapon = weapon
   end
 end
