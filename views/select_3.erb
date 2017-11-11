@@ -9,7 +9,6 @@ h1 {
     font-family: helvetica;
     font-size: 80px;
 }
-
 input[type=text] {
     width: 20%;
     font-size: 40px;
@@ -17,14 +16,36 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
 }
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 10px 20px;
+    font-size: 80px;
+    cursor: pointer;
+    text-decoration-color: green;
+    font-size: 80px;
+    float: left;
+    align: center;
+}
 </style>
 
-<div align="center">
-<h1>Hi <%= @game.player_2.name.capitalize %>! </h1>
-<h1>Please type 'rock', 'paper', or 'scissors'! </h1>
 
-<form action="/select_3" >
-  <input type="text" name="player_2_weapon">
-  <input type="submit" value="Submit">
-</form>
+<h1>Hi <%= @game.player_2.name.capitalize %>! </h1>
+<h1>Choose your weapon! </h1>
+<div align="center">
+<div align="center">
+  <form action="/player_2_rock_2p" >
+    <input type="submit" value="Rock">
+  </form>
+  <form action="/player_2_paper_2p" >
+    <input type="submit" value="Paper">
+  </form>
+  <form action="/player_2_scissors_2p" >
+    <input type="submit" value="Scissors">
+  </form>
+</div>
 </div>

@@ -35,18 +35,48 @@ class RockPaperScissors < Sinatra::Base
     erb :select_2
   end
 
-  get '/select' do
-    @game.player_1.choose_weapon(params[:weapon])
+  get '/player_1_rock' do
+    @game.player_1.choose_weapon(:rock)
     erb :game
   end
 
-  get '/select_2' do
-    @game.player_1.choose_weapon(params[:player_1_weapon])
+  get '/player_1_paper' do
+    @game.player_1.choose_weapon(:paper)
+    erb :game
+  end
+
+  get '/player_1_scissors_' do
+    @game.player_1.choose_weapon(:scissors)
+    erb :game
+  end
+
+  get '/player_1_rock_2p' do
+    @game.player_1.choose_weapon(:rock)
     erb :select_3
   end
 
-  get '/select_3' do
-    @game.player_2.choose_weapon(params[:player_2_weapon])
+  get '/player_1_paper_2p' do
+    @game.player_1.choose_weapon(:paper)
+    erb :select_3
+  end
+
+  get '/player_1_scissors_2p' do
+    @game.player_1.choose_weapon(:scissors)
+    erb :select_3
+  end
+
+  get '/player_2_rock_2p' do
+    @game.player_2.choose_weapon(:rock)
+    erb :game
+  end
+
+  get '/player_2_paper_2p' do
+    @game.player_2.choose_weapon(:paper)
+    erb :game
+  end
+
+  get '/player_2_scissors_2p' do
+    @game.player_2.choose_weapon(:scissors)
     erb :game
   end
 
