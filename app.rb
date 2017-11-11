@@ -8,13 +8,13 @@ class App < Sinatra::Base
   set :session_secret, 'key'
 
   get '/' do
+    session[:message] = nil
     erb :index
   end
 
   get '/play' do
     @player = session[:player]
     @confirmation = session[:message]
-    @computer_move = Game.show.computer_move
     @wins = Game.show.wins
     erb :play
   end

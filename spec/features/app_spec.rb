@@ -13,7 +13,7 @@ end
 feature 'when signed in' do
   scenario 'shows buttons rock paper scissor' do
     sign_in_and_play
-    expect(page).to have_content 'rock paper scissors'
+    expect(page).to have_content 'rock paper scissors spock lizard'
   end
 end
 
@@ -27,20 +27,27 @@ feature 'when playing' do
     sign_in_and_play
     allow(Game).to receive(:random_move).and_return(:scissors)
     click_button('rock')
-    expect(page).to have_content 'You won!'
+    expect(page).to have_content "Your rock crushed computer's scissors!"
   end
 
-  scenario 'says what the computer played' do
+  scenario 'playing rock and computer playing scissors results in win' do
     sign_in_and_play
     allow(Game).to receive(:random_move).and_return(:scissors)
-    click_button('rock')
-    expect(page).to have_content "Computer's move: scissors"
+    click_button('lizard')
+    expect(page).to have_content "Your lizard was decapitated by computer's scissors!"
+  end
+
+  scenario 'playing rock and computer playing scissors results in win' do
+    sign_in_and_play
+    allow(Game).to receive(:random_move).and_return(:spock)
+    click_button('spock')
+    expect(page).to have_content "Your spock clashed with computer's spock!"
   end
 
   scenario 'says win count is 6 when player wins 6 times' do
     sign_in_and_play
     allow(Game).to receive(:random_move).and_return(:scissors)
     6.times { click_button('rock') }
-    expect(page).to have_content "Computer's move: scissors"
+    expect(page).to have_content "Win count: 6"
   end
 end

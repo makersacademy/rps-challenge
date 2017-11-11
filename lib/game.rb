@@ -1,3 +1,5 @@
+require './game_rules'
+
 class Game
 
   attr_reader :computer_move, :wins
@@ -11,22 +13,22 @@ class Game
   end
 
   def initialize
-    @move = [:rock, :paper, :scissors].sample
-    @rules = {
-      rock: {rock: 'tied', paper: 'lost', scissors: 'won'},
-      paper: {rock: 'won', paper: 'tied', scissors: 'lost'},
-      scissors: {rock: 'lost', paper: 'won', scissors: 'tied'}
-    }
+    @rules = rules
     @wins = 0
   end
 
   def play(user_move)
     @computer_move = random_move
-    verdict = @rules[user_move.to_sym][@computer_move]
+    verdict = @rules[user_move.to_sym][@computer_move][:verdict]
+    phrase = @rules[user_move.to_sym][@computer_move][:phrase]
     count_wins if verdict == 'won'
-    "You #{verdict}!"
+    "Your #{user_move} #{phrase} computer's #{@computer_move}!"
   end
 
+  def self.random_move
+    [:rock, :paper, :scissors, :spock, :lizard].sample
+  end
+  
   private
 
   def count_wins
@@ -35,10 +37,6 @@ class Game
 
   def random_move
     Game.random_move
-  end
-
-  def self.random_move
-    [:rock, :paper, :scissors].sample
   end
 
 end
