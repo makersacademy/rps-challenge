@@ -13,7 +13,7 @@ describe Game do
     end
 
     it 'should create only one instance of itself' do
-      expect(Game.create(game)).to eq game
+      expect(Game.create=(game)).to eq game
     end
     context 'without player2' do
       it ' should set computer as default player 2 if none provided' do

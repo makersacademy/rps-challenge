@@ -10,11 +10,11 @@ class Game
     @player2 = player2
   end
 
+  def self.create=(value)
+    @instance = value
+  end
+  
   def self.instance
     @instance
-  end
-
-  def self.create(value)
-    @instance = value
   end
 end

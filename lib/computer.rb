@@ -8,5 +8,4 @@ class Computer
   def self.create(value)
     @pc_player = value
   end
-  
 end
