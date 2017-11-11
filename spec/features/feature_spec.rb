@@ -27,14 +27,14 @@ end
 feature "game scenarios" do
   scenario "player picks ROCK" do
     pick_rock
-    expect(page).to have_content("rock")
+    expect(page).to have_content("ROCK")
   end
   scenario "player picks PAPER" do
     pick_paper
-    expect(page).to have_content("paper")
+    expect(page).to have_content("PAPER")
   end
   scenario "player picks scissors" do
     pick_scissors
-    expect(page).to have_content("scissors")
+    expect(page).to have_content("SCISSORS")
   end
 end

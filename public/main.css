@@ -1,8 +1,32 @@
 h1 {
   font-family: 'Give You Glory', cursive;
   font-size: 50px;
+  font-weight: bold;
 }
 
 h2 {
   font-family: 'Give You Glory', cursive;
+}
+
+h3 {
+  font-family: 'Give You Glory', cursive;
+}
+
+.img {
+  max-height: 400px;
+}
+
+.text-input {
+  border: none;
+  background-color: white;
+  font-family: 'Give You Glory', cursive;
+  text-align: center;
+  font-size: 30px;
+}
+.button {
+  background-color: white;
+  font-family: 'Give You Glory', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  border: none;
 }

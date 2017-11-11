@@ -26,66 +26,66 @@ describe Game do
   describe "#winner" do
     context "when player picks rock and comp picks scissors" do
       it "should return 1" do
-        allow(player1).to receive(:choice).and_return("rock")
-        allow(computer).to receive(:choice).and_return("scissors")
+        allow(player1).to receive(:choice).and_return("ROCK")
+        allow(computer).to receive(:choice).and_return("SCISSORS")
         expect(new_game.result).to eq(1)
       end
     end
     context "when player picks paper and comp picks rock" do
       it "should return 1" do
-        allow(player1).to receive(:choice).and_return("paper")
-        allow(computer).to receive(:choice).and_return("rock")
+        allow(player1).to receive(:choice).and_return("PAPER")
+        allow(computer).to receive(:choice).and_return("ROCK")
         expect(new_game.result).to eq(1)
       end
     end
     context "when player picks scissors and comp picks paper" do
       it "should return 1" do
-        allow(player1).to receive(:choice).and_return("scissors")
-        allow(computer).to receive(:choice).and_return("paper")
+        allow(player1).to receive(:choice).and_return("SCISSORS")
+        allow(computer).to receive(:choice).and_return("PAPER")
         expect(new_game.result).to eq(1)
       end
     end
 
     context "when player picks rock and comp picks paper" do
       it "should return -1" do
-        allow(player1).to receive(:choice).and_return("rock")
-        allow(computer).to receive(:choice).and_return("paper")
+        allow(player1).to receive(:choice).and_return("ROCK")
+        allow(computer).to receive(:choice).and_return("PAPER")
         expect(new_game.result).to eq(-1)
       end
     end
     context "when player picks paper and comp picks scissors" do
       it "should return -1" do
-        allow(player1).to receive(:choice).and_return("paper")
-        allow(computer).to receive(:choice).and_return("scissors")
+        allow(player1).to receive(:choice).and_return("PAPER")
+        allow(computer).to receive(:choice).and_return("SCISSORS")
         expect(new_game.result).to eq(-1)
       end
     end
     context "when player picks scissors and comp picks rock" do
       it "should return -1" do
-        allow(player1).to receive(:choice).and_return("scissors")
-        allow(computer).to receive(:choice).and_return("rock")
+        allow(player1).to receive(:choice).and_return("SCISSORS")
+        allow(computer).to receive(:choice).and_return("ROCK")
         expect(new_game.result).to eq(-1)
       end
     end
 
     context "when both pick rock" do
       it "should return 0" do
-        allow(player1).to receive(:choice).and_return("rock")
-        allow(computer).to receive(:choice).and_return("rock")
+        allow(player1).to receive(:choice).and_return("ROCK")
+        allow(computer).to receive(:choice).and_return("ROCK")
         expect(new_game.result).to eq(0)
       end
     end
     context "when both pick paper" do
       it "should return 0" do
-        allow(player1).to receive(:choice).and_return("paper")
-        allow(computer).to receive(:choice).and_return("paper")
+        allow(player1).to receive(:choice).and_return("PAPER")
+        allow(computer).to receive(:choice).and_return("PAPER")
         expect(new_game.result).to eq(0)
       end
     end
     context "when both pick scissors" do
       it "should return 0" do
-        allow(player1).to receive(:choice).and_return("scissors")
-        allow(computer).to receive(:choice).and_return("scissors")
+        allow(player1).to receive(:choice).and_return("SCISSORS")
+        allow(computer).to receive(:choice).and_return("SCISSORS")
         expect(new_game.result).to eq(0)
       end
     end

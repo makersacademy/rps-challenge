@@ -6,15 +6,15 @@ end
 
 def pick_rock
   sign_in_and_play
-  click_button("rock")
+  click_button("ROCK")
 end
 
 def pick_paper
   sign_in_and_play
-  click_button("paper")
+  click_button("PAPER")
 end
 
 def pick_scissors
   sign_in_and_play
-  click_button("scissors")
+  click_button("SCISSORS")
 end

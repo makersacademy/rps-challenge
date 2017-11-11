@@ -1,12 +1,42 @@
-<% if @result == 1 %>
-  <h1> You win! <%= @p1choice %> beats <%= @comchoice %>! </h1>
-<% end %>
-<% if @result == -1 %>
-  <h1> You lose! <%= @p1choice %> gets beaten by <%= @comchoice %>! </h1>
-<% end %>
-<% if @result == 0 %>
-  <%= @result %>
-  <%= @p1choice %> player
-  <%= @comchoice %> com
-  <h1> It's a draw, you both picked <%= @p1choice %>! </h1>
-<% end %>
+<head>
+
+  <meta name="referrer" content="origin">
+  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+
+<!-- Styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css" type="text/css">
+
+<!-- Font -->
+
+  <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container-fluid text-center">
+    <% if @result == 1 %>
+      <br>
+      <br>
+      <h1> You win! <%= @p1choice %> beats <%= @comchoice %>! </h1>
+      <img class="img" src="http://images.clipartpanda.com/smiley-face-thumbs-up-clipart-black-and-white-white-thumbs-up.svg">
+    <% end %>
+    <% if @result == -1 %>
+      <br>
+      <br>
+      <h1> You lose! <%= @p1choice %> gets beaten by <%= @comchoice %>! </h1>
+      <img class="img" src="https://www.shareicon.net/data/512x512/2015/09/09/98135_grid_512x512.png">
+    <% end %>
+    <% if @result == 0 %>
+      <br>
+      <br>
+      <%= @result %>
+      <%= @p1choice %> player
+      <%= @comchoice %> com
+      <h1> It's a draw, you both picked <%= @p1choice %>! </h1>
+      <img class="img" src="http://3.bp.blogspot.com/-cM3q0gZNqvY/UZZTKSzaOnI/AAAAAAAAAOA/9eEPRffSSv0/s1600/img038.jpg">
+    <% end %>
+  </div>
+
+</body>

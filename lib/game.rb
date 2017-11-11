@@ -21,9 +21,9 @@ class Game
   private
 
   def calculate
-    if (@player1.choice == "rock" && @player2.choice == "scissors") || (@player1.choice == "paper" && @player2.choice == "rock") || (@player1.choice == "scissors" && @player2.choice == "paper")
+    if (@player1.choice == "ROCK" && @player2.choice == "SCISSORS") || (@player1.choice == "PAPER" && @player2.choice == "ROCK") || (@player1.choice == "SCISSORS" && @player2.choice == "PAPER")
       1
-    elsif (@player1.choice == "rock" && @player2.choice == "paper") || (@player1.choice == "paper" && @player2.choice == "scissors") || (@player1.choice == "scissors" && @player2.choice == "rock")
+    elsif (@player1.choice == "ROCK" && @player2.choice == "PAPER") || (@player1.choice == "PAPER" && @player2.choice == "SCISSORS") || (@player1.choice == "SCISSORS" && @player2.choice == "ROCK")
       -1
     else
       0
