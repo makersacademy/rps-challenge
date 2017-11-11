@@ -1,4 +1,4 @@
-feature 'starting games' do
+feature 'Feature: registering' do
   feature 'permits registering with a name' do
     before(:each) { register }
 
@@ -10,8 +10,8 @@ feature 'starting games' do
   feature 'does not permit registering with blank name' do
     before(:each) { register('') }
 
-    scenario 'users cannot log in without a name' do
-      expect(page.current_path).to eq '/'
+    scenario 'users cannot move on without giving a name' do
+      expect(page.current_path).to eq '/register'
     end
   end
 end

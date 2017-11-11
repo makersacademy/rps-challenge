@@ -4,6 +4,6 @@ end
 
 def register(name = default_name)
   visit('/')
-  fill_in('name', with: name)
+  fill_in('p1', with: name)
   click_button('Begin!')
 end
