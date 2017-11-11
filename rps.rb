@@ -21,4 +21,14 @@ class Rps < Sinatra::Base
     erb(:play)
   end
 
+  post '/choice' do
+    Game.read.player1.select(params[:choice])
+    redirect '/result'
+  end
+
+  get '/result' do
+    @p1choice = Game.read.player1.choice
+    erb(:result)
+  end
+
 end

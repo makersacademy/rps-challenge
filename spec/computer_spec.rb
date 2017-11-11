@@ -12,4 +12,6 @@ describe Computer do
     end
   end
 
+  describe "#choice"
+
 end

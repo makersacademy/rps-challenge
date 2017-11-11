@@ -12,4 +12,13 @@ describe Player do
     end
   end
 
+  describe "#select" do
+    context "when selecting either r/p/s" do
+      it "should set @choice to be option chosen" do
+        new_player.select("rock")
+        expect(new_player.choice).to eq("rock")
+      end
+    end
+  end
+
 end

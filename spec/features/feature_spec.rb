@@ -23,3 +23,10 @@ feature "having entered name we go to play page" do
     expect(page).to have_content("ROCK PAPER SCISSORS")
   end
 end
+
+feature "game scenarios" do
+  scenario "player picks ROCK" do
+    pick_rock
+    expect(page).to have_content("rock")
+  end
+end
