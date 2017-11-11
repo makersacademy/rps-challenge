@@ -31,7 +31,8 @@ describe 'RockPaperScissors', :type => :feature do
     click_button('Submit')
     fill_in('weapon', with: 'rock')
     click_button('Submit')
-    expect(page).to have_content "win!"
+    # click_button('S')
+
   end
 
 

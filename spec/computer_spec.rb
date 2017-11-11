@@ -2,7 +2,7 @@ require 'computer'
 
 describe Computer do
 
-  subject(:subject) { described_class.new('rock') }
+  subject(:subject) { described_class.new(['rock']) }
 
   describe 'initialize' do
     it 'should select weapon from array' do

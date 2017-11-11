@@ -1,8 +1,11 @@
 class Computer
+
   attr_reader :weapon
 
-  def initialize(weapon = ['rock', 'paper', 'scissors'].sample)
-    @weapon = weapon
+  WEAPONS = ['rock', 'paper', 'scissors']
+
+  def initialize(weapons = WEAPONS)
+    @weapon = weapons.sample
   end
 
   def self.create
