@@ -50,4 +50,12 @@ feature 'when playing' do
     6.times { click_button('rock') }
     expect(page).to have_content "Win count: 6"
   end
+
+  scenario 'says win count is 0 when player resets win count' do
+    sign_in_and_play
+    allow(Game).to receive(:random_move).and_return(:scissors)
+    6.times { click_button('rock') }
+    click_button('reset')
+    expect(page).to have_content "Win count: 0"
+  end
 end

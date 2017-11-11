@@ -28,7 +28,11 @@ class Game
   def self.random_move
     [:rock, :paper, :scissors, :spock, :lizard].sample
   end
-  
+
+  def reset 
+    @wins = 0
+  end
+
   private
 
   def count_wins
