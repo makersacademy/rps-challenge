@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/gameitem'
 
 class RPSGame < Sinatra::Base
 
@@ -7,12 +9,14 @@ class RPSGame < Sinatra::Base
   end
 
   post '/play' do
-    @player = params[:name]
+    player = params[:name]
+    Game.new(player)
     erb :play
   end
 
   post '/results' do
-    @choice = params[:choice]
+    player_choice = Game.instance.select_player_choice(params[:choice])
+    @result = Game.instance.decide_winner(player_choice)
     erb :results
   end
 

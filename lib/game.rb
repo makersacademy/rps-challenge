@@ -1,7 +1,7 @@
 require_relative 'gameitem'
 
 class Game
-  attr_reader :player
+  attr_reader :player_name, :player_choice, :ai_choice
 
   def self.instance
     @@instance
@@ -12,17 +12,23 @@ class Game
     GameItem.new('paper'),
     GameItem.new('scissors')])
 
-    @player     = player_name
-    @options    = options
-    @@instance  = self
+    @player_name = player_name
+    @options     = options
+    @@instance   = self
   end
 
   def select_player_choice(choice)
-    @options.select { |rps| rps.name == choice }.pop
+    @player_choice = @options.select { |rps| rps.name == choice }.pop
   end
 
-  def ai_choice
+  def set_ai_choice
     @options.sample
+  end
+
+  def decide_winner(player_choice)
+    @ai_choice = set_ai_choice
+    return 0 if player_choice.name == ai_choice.name
+    player_choice.beats == ai_choice.name
   end
 
 end

@@ -13,9 +13,9 @@ describe Game do
     end
   end
 
-  describe '#player' do
+  describe '#player_name' do
     it 'returns the name of the player' do
-      expect(subject.player).to eq('Tom')
+      expect(subject.player_name).to eq('Tom')
     end
   end
 
@@ -27,11 +27,52 @@ describe Game do
     end
   end
 
-  describe '#ai_choice' do
+  describe '#set_ai_choice' do
     context 'when the AI needs to choose' do
       it 'returns a random GameItem from the options' do
         allow_any_instance_of(Array).to receive(:sample) { rock }
-        expect(subject.ai_choice).to eq(rock)
+        expect(subject.set_ai_choice).to eq(rock)
+      end
+    end
+  end
+
+  describe '#decide_winner' do
+    context 'when player beats the AI' do
+      it 'returns true' do
+        allow(subject).to receive(:set_ai_choice) { scissors }
+        expect(subject.decide_winner(rock)).to be(true)
+
+        allow(subject).to receive(:set_ai_choice) { rock }
+        expect(subject.decide_winner(paper)).to be(true)
+
+        allow(subject).to receive(:set_ai_choice) { paper }
+        expect(subject.decide_winner(scissors)).to be(true)
+      end
+    end
+
+    context 'when AI beats the player' do
+      it 'returns false' do
+        allow(subject).to receive(:set_ai_choice) { paper }
+        expect(subject.decide_winner(rock)).to be(false)
+
+        allow(subject).to receive(:set_ai_choice) { scissors }
+        expect(subject.decide_winner(paper)).to be(false)
+
+        allow(subject).to receive(:set_ai_choice) { rock }
+        expect(subject.decide_winner(scissors)).to be(false)
+      end
+    end
+
+    context 'when it results in a draw' do
+      it 'returns 0' do
+        allow(subject).to receive(:set_ai_choice) { rock }
+        expect(subject.decide_winner(rock)).to be(0)
+
+        allow(subject).to receive(:set_ai_choice) { paper }
+        expect(subject.decide_winner(paper)).to be(0)
+
+        allow(subject).to receive(:set_ai_choice) { scissors }
+        expect(subject.decide_winner(scissors)).to be(0)
       end
     end
   end
