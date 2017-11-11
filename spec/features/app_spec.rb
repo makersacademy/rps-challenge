@@ -58,4 +58,9 @@ feature 'when playing' do
     click_button('reset')
     expect(page).to have_content "Win count: 0"
   end
+
+  scenario 'can sign in with multiplayer players' do
+    multi_sign_in_and_play
+    expect(page).to have_content "Allan vs. Timothy"
+  end
 end

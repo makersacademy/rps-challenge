@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplayer</title>
+  </head>
+  <body>
+    this is the multiplayer page!
+      <form id="myForm" action="/test" method="post">
+        <input id="player1" type="hidden" name="player1" value="">
+        <input id="player2" type="hidden" name="player2" value="">
+      </form>
+      <%= "#{@player1name} vs. #{@player2name}" %>
+      <%= @player1move %>
+      <%= @player2move %>
+    <script type="text/javascript" src="js.js"></script>
+  </body>
+</html>
