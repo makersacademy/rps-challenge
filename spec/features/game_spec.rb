@@ -1,19 +1,10 @@
-feature "tests working" do
-  scenario "testing tests" do
+feature "index page allows you to regsiter name" do
+  scenario "prompts entering of name" do
     visit "/"
-    expect(page).to have_content "Working"
+    expect(page).to have_content "Name:"
+  end
+  scenario "allows you to submit a form" do
+    visit "/"
+    expect(page).to have_button("Submit")
   end
 end
-
-
-
-# feature "index page allows you to regsiter name" do
-#   scenario "prompts entering of name" do
-#     visit "/"
-#     expect(page).to have_content "name:"
-#   end
-#   scenario "allows you to submit a form" do
-#     visit "/"
-#     expect(page).to have_content "Submit"
-#   end
-# end

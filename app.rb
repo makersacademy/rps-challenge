@@ -2,7 +2,7 @@ require "sinatra/base"
 
 class Game < Sinatra::Base
   get "/" do
-    "Testing Working"
+    erb:index
   end
   run! if app_file == $0
 end
