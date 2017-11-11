@@ -1,14 +1,8 @@
-require 'spec_helper'
+require_relative './web_helper'
 
-# feature "Load index page" do
-#   scenario "Apper the test text" do
-#     expect(page).to have_content "Hello world!"
-#   end
-# end
-feature "Play name form" do
-  scenario "submit names and see them on following screen" do
-    visit("/")
-    expect(page).to have_content "Hello world!"
-
+feature "Fill in name to start the game" do
+  scenario "submit name and see them on following screen" do
+    sign_in_and_play
+    expect(page).to have_content "Oleg"
   end
 end
