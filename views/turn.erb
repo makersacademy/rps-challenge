@@ -4,6 +4,10 @@ Your opponents play : <%= @opponents_choice %>
 
 <% if @win == true %>
   YOU WIN !!
+<% elsif @win == nil %>
+  Tied 
+<% else %>
+  You lose ..
 <% end %>
 <% end %>
 

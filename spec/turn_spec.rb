@@ -71,7 +71,7 @@ describe Turn do
       stub_const('Opponent', MockRock)
       turn.rock
       turn.opponents_play
-      expect(turn.win?).to eq false
+      expect(turn.win?).to eq nil
     end
   end
 end
