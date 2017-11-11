@@ -16,17 +16,23 @@
 <body>
 
 <br>
+
 <div class="container-fluid text-center">
-  <h1><strong>ROCK - PAPER - SCISSORS!</strong></h1>
+  <h1><strong> WELCOME <%= @p1name %>! </strong></h1>
+  <h2> Make your selection! </h2>
+
   <br>
-  <form name='input' action="/name" method="post">
-    <input type="text" name="name" placeholder="Name">
-  <br>
-  <h2>Enter your name</h2>
-  <h2>and click <strong>START</strong> to begin</h2>
-  <br>
-    <input type='submit' value="START">
-  </form>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <h2> ROCK </h2>
+    </div>
+    <div class="col-md-4 text-center">
+      <h2> PAPER </h2>
+    </div>
+    <div class="col-md-4 text-center">
+      <h2> SCISSORS </h2>
+    </div>
+  </div>
 </div>
 
 </body>
