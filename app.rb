@@ -1,28 +1,55 @@
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @player1 = params[:player_1]
-    @player2 = params[:player_2]
-    @singleplayer = true if @player2 == ""
-    if @singleplayer == true
-      erb :game
-    else
-      erb :multi_game
-    end
+    session[:player_1] = params[:player_1]
+    session[:player_2] = params[:player_2]
+    @singleplayer = true if session[:player_2] == ""
+    @singleplayer ? redirect('/game') : redirect('/multiplayer')
+  end
+
+  get '/game' do
+    @player1 = session[:player_1]
+    erb :game
+  end
+
+  get '/multiplayer' do
+    @player1 = session[:player_1]
+    @player2 = session[:player_2]
+    erb :multi_game
   end
 
   post '/result' do
-    @rock = params[:Rock]
-    @paper = params[:Paper]
-    @scissors = params[:Scissors]
-    @lizard = params[:Lizard]
-    @spock = params[:Spock]
+    @choice = params[:Rock] unless params[:Rock] == nil
+    @choice = params[:Paper] unless params[:Paper] == nil
+    @choice = params[:Scissors] unless params[:Scissors] == nil
+    @choice = params[:Lizard] unless params[:Lizard] == nil
+    @choice = params[:Spock] unless params[:Spock] == nil
+
+    computer_random = [:Rock, :Paper, :Scissors, :Lizard, :Spock]
+    @computer_choice = computer_random[rand(4)]
+
+    result = Hash.new
+    result['Rock'] = {Rock: nil, Paper: false, Scissors: true, Lizard: true, Spock: false}
+    result['Paper'] = {Rock: true, Paper: nil, Scissors: false, Lizard: false, Spock: true}
+    result['Scissors'] = {Rock: false, Paper: true, Scissors: nil, Lizard: true, Spock: false}
+    result['Lizard'] = {Rock: false, Paper: true, Scissors: false, Lizard: nil, Spock: true}
+    result['Spock'] = {Rock: true, Paper: false, Scissors: true, Lizard: false, Spock: nil}
+
+    if result[@choice][@computer_choice] == true
+      @match_result = 'won'
+    elsif result[@choice][@computer_choice] == false
+      @match_result = 'lost'
+    else result[@choice][@computer_choice] == nil
+      @match_result = 'drew'
+    end
+
     erb :result
   end
 end
