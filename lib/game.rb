@@ -3,6 +3,14 @@ require_relative 'computer'
 
 class Game
 
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
   attr_reader :player1, :player2
 
   def initialize(player1, player2)
