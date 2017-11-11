@@ -2,9 +2,7 @@ describe Rps, :type => :feature do
 
 feature 'sign in' do
    scenario 'User can sign in' do
-     visit '/'
-     fill_in 'name', with: 'Flooba'
-     click_button 'Play'
+     sign_in_and_play
      expect(page).to have_text('Flooba')
    end
   end
