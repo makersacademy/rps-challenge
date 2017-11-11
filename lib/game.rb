@@ -1,8 +1,8 @@
 class Game
   attr_reader :player
 
-  def self.create
-    @game = Game.new(@player)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.access
