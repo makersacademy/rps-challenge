@@ -1,19 +1,12 @@
 class Computer
 
-  attr_reader :weapon
+  attr_reader :weapon, :name
 
-  WEAPONS = ['rock', 'paper', 'scissors']
+  WEAPONS = [:rock, :paper, :scissors]
 
-  def initialize(weapons = WEAPONS)
+  def initialize(weapons = WEAPONS, name = 'computer')
     @weapon = weapons.sample
+    @name = name
   end
-
-  def self.create
-    @computer = Computer.new
-  end
-
-  def self.instance
-    @computer
-  end
-
+  
 end

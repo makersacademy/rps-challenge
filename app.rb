@@ -21,8 +21,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/select' do
-    @player_1_weapon = @game.player_1.weapon(params[:weapon])
-    @computer_weapon = @game.player_2.weapon
+    @game.player_1.choose_weapon(params[:weapon])
     erb :game
   end
 

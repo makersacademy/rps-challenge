@@ -6,8 +6,8 @@ class Player
     @name = name
   end
 
-  def weapon(weapon)
-    fail 'Pick rock, paper or scissors!' unless ['rock', 'paper', 'scissors'].include?(weapon)
-    @weapon = weapon
+  def choose_weapon(weapon)
+    fail 'Pick rock, paper or scissors!' unless [:rock, :paper, :scissors].include?(weapon.to_sym)
+    @weapon = weapon.to_sym
   end
 end
