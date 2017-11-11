@@ -15,8 +15,8 @@ describe Turn do
       'scissors'
     end
   end
-  let (:turn) { described_class.new }
-  before(:each) { stub_const('Opponent', MockRock)}
+  let(:turn) { described_class.new }
+  before(:each) { stub_const('Opponent', MockRock) } 
   describe '#rock' do
     it 'should set a variable to value rock' do
       turn.rock

@@ -3,15 +3,15 @@ require 'capybara/rspec'
 describe RockPaperScissor do
   describe 'Homepage', :type => :feature do
     it "should say let's play" do
-    visit '/'
-    expect(page).to have_content "Let's play"
+      visit '/'
+      expect(page).to have_content "Relax Play a game of rock, paper, scissors!"
     end
   end
 
   describe '/play', :type => :feature do
     it 'should say Hello Marie' do
       signing_in
-    expect(page).to have_content "Hello Marie"
+      expect(page).to have_content "Hello Marie"
     end
     it 'should have a button rock' do
       signing_in
@@ -47,7 +47,7 @@ describe RockPaperScissor do
       expect(page).to have_content "Your score : "
     end
   end
-  describe '/turn', :type => :feature  do
+  describe '/turn', :type => :feature do
     it 'should be possible to go back to the play page' do
       signing_in
       click_button 'Paper!'

@@ -8,7 +8,6 @@ require 'simplecov-console'
 require 'rspec'
 require 'features/web_helpers.rb'
 
-
 Capybara.app = RockPaperScissor
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

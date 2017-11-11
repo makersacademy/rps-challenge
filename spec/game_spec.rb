@@ -6,9 +6,9 @@ describe Game do
     end
   end
 
-  let(:game) { described_class.new('Marie')}
-  let(:player) { double 'fake player', name: 'Marie'}
-  before(:each) { stub_const('Turn', FakeTurn)}
+  let(:game) { described_class.new('Marie') }
+  let(:player) { double 'fake player', name: 'Marie' }
+  before(:each) { stub_const('Turn', FakeTurn) }
 
   describe '#initialize' do
     it 'should initialize with a player' do
@@ -23,7 +23,7 @@ describe Game do
   describe '#finish_turn' do
     it 'should add a point to the score if a player wins the turn' do
       game.play
-      expect{ game.finish_turn }.to change{ game.score }.by (1)
+      expect { game.finish_turn }.to change { game.score }.by Game::POINT
     end
   end
 end

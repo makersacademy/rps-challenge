@@ -31,17 +31,20 @@ attr_reader :opponents_play, :choice, :score
   end
 
   def win?
-   if @choice == 'rock' && @opponents_play == 'scissors'
-     true
-   elsif  @choice == 'scissors' && @opponents_play == 'paper'
-     true
-   elsif @choice == 'paper' && @opponents_play == 'rock'
-     true
-   elsif @choice == @opponents_play
-     nil
-   else
-     false
-   end
+    if @choice == @opponents_play
+      nil
+    else
+    @wins = @choice && @opponents_play
+    case @wins
+    when 'rock', 'scissors'
+      true
+    when 'scissors', 'paper'
+      true
+    when 'paper', 'rock'
+      true
+    else
+      false
+    end
   end
 
   def finish
