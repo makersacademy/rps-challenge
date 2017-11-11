@@ -17,28 +17,33 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/play' do
+    @game.play
     @player1 = @game.player.name
-    @choice = @game.choice
-    @win = @game.win?
-    @opponents_choice = @game.opponents_play
     erb(:play)
   end
 
   post '/rock' do
-    @game.rock
-    @game.opponents_play
-    redirect '/play'
+    @game.turn.rock
+    @game.turn.opponents_play
+    redirect('/turn')
   end
 
   post '/paper' do
-    @game.paper
-    @game.opponents_play
-    redirect '/play'
+    @game.turn.paper
+    @game.turn.opponents_play
+    redirect('/turn')
   end
 
   post '/scissors' do
-    @game.scissors
-    @game.opponents_play
-    redirect '/play'
+    @game.turn.scissors
+    @game.turn.opponents_play
+    redirect('/turn')
+  end
+
+  get '/turn' do
+    @choice = @game.turn.choice
+    @opponents_choice = @game.turn.opponents_play
+    @win = @game.turn.win?
+    erb(:turn)
   end
 end

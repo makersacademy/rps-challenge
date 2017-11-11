@@ -9,12 +9,3 @@
 <form action='/scissors' method='post'>
   <input type='submit' value='Scissors!'>
 </form>
-
-<% if !@choice.empty? %>
-Your choice : <%= @choice %>
-Your opponents play : <%= @opponents_choice %>
-
-<% if @win == true %>
-  YOU WIN !!
-<% end %>
-<% end %>

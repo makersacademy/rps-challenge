@@ -1,18 +1,12 @@
 require './lib/players.rb'
-require './lib/opponent.rb'
+require './lib/turn.rb'
 
 class Game
 
-  ROCK = 'rock'
-  PAPER = 'paper'
-  SCISSORS = 'scissors'
-
-  attr_reader :player, :choice, :opponents_play
+  attr_reader :player, :turn
 
   def initialize(name)
     @player = Player.new(name)
-    @choice = ''
-    @opponent = Opponent.new
   end
 
   def self.game(name)
@@ -23,31 +17,8 @@ class Game
     @game
   end
 
-  def rock
-    @choice = ROCK
-  end
-
-  def paper
-    @choice = PAPER
-  end
-
-  def scissors
-    @choice = SCISSORS
-  end
-
-  def opponents_play
-    @opponents_play = @opponent.random_generator
-  end
-
-  def win?
-   if @choice == 'rock' && @opponents_play == 'scissors'
-     true
-   elsif  @choice == 'scissors' && @opponents_play == 'paper'
-     true
-   elsif @choice == 'paper' && @opponents_play == 'rock'
-     true
-   else
-     false
-   end
+  def play
+    @turn = Turn.new
+    'Play!'
   end
 end
