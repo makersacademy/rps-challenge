@@ -8,5 +8,9 @@ describe Game do
     it 'should be an instance of game class' do
       expect(game).to be_an_instance_of(Game)
     end
+
+    it 'should create only one instance of itself' do
+      expect(Game.create(game)).to eq game
+    end
   end
 end
