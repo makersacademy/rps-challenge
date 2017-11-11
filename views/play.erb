@@ -1,1 +1,53 @@
-<%= @player %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h1 align='right'>Computer</h1> <h1 align='left'> <%= @name %></h1>
+    </div>
+
+   <div align='left'>
+    <form action='/rock' method='post'>
+      Choose Rock:
+    <input type='submit' value='Rock'>
+    </form>
+
+    <form action='/paper' method='post'>
+      Choose Paper:
+    <input type='submit' value='Paper'>
+    </form>
+
+    <form action='/scissor' method='post'>
+      Choose Scissor:
+    <input type='submit' value='Scissor'>
+    </form>
+
+    <h1 align='center'>VS</h1>
+
+  </div>
+  <div align='center'>
+   <% if @game.player.sign == :rock && @game.computer.choice == :rock %>
+     <h2>TIE!</h2>
+  <% elsif @game.player.sign == :rock && @game.computer.choice == :paper%>
+    <h2>Computer WON!</h2>
+  <% elsif @game.player.sign == :rock && @game.computer.choice == :scissor%>
+    <h2><%=@game.player.name %> WON!</h2>
+  <% elsif @game.player.sign == :paper && @game.computer.choice == :rock%>
+    <h2><%=@game.player.name %> WON!</h2>
+  <% elsif @game.player.sign == :paper && @game.computer.choice == :paper%>
+    <h2>TIE!</h2>
+  <% elsif @game.player.sign == :paper && @game.computer.choice == :scissor%>
+    <h2>Computer WON!</h2>
+    <% elsif @game.player.sign == :scissor && @game.computer.choice == :rock%>
+      <h2>Computer WON!</h2>
+    <% elsif @game.player.sign == :scissor && @game.computer.choice == :paper%>
+      <h2><%=@game.player.name %> WON!</h2>
+    <% elsif @game.player.sign == :scissor && @game.computer.choice == :scissor%>
+      <h2>TIE!</h2>
+   <% end %>
+ </div>
+  </body>
+</html>
