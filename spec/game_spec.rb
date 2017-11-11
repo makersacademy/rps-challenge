@@ -12,4 +12,10 @@ describe Game do
       expect(Game.access).to eq game
     end
   end
+  describe '#player' do
+    it "Should return Peter" do
+      game = Game.new('Peter')
+      expect(game.player).to eq 'Peter'
+    end
+  end
 end
