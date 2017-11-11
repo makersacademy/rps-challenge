@@ -1,10 +1,14 @@
 class Game
 
-  attr_reader :player, :computer, :rulebook
+  attr_reader :player, :computer, :judge
 
-  def initialize(player = Player.new, computer = Computer.new, rulebook = Rulebook.new)
+  def initialize(player, computer = Computer.new, judge = Judge.new)
     @player = player
     @computer = computer
-    @rulebook = rulebook
+    @judge = judge
+  end
+
+  def result(p_weapon, c_weapon)
+    @judge.call(p_weapon, c_weapon)
   end
 end
