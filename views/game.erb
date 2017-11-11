@@ -5,5 +5,14 @@
   </head>
   <body>
     <p><%= @player1 %> VS CPU</p>
+
+    <form action="/result" method="post">
+      <button name="Rock" type="submit" value="Rock">Rock</button>
+      <button name="Paper" type="submit" value="Paper">Paper</button>
+      <button name="Scissors" type="submit" value="Scissors">Scissors</button>
+      <button name="Lizard" type="submit" value="Lizard">Lizard</button>
+      <button name="Spock" type="submit" value="Spock">Spock</button>
+    </form>
+    
   </body>
 </html>
