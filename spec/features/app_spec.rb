@@ -63,4 +63,13 @@ feature 'when playing' do
     multi_sign_in_and_play
     expect(page).to have_content "Allan vs. Timothy"
   end
+
+  # scenario 'can play with two players' do
+  #   multi_sign_in_and_play
+  #   keypress_script = "var e = $.Event('keydown', { keyCode: 115 }); $('body').trigger(e);"
+  #   page.execute_script(keypress_script)
+  #   # find("body").native.send_keys 'a'
+  #   # find("body").native.send_keys 'k'
+  #   expect(page).to have_content "Allan's rock was covered by Timothy's paper!"
+  # end
 end

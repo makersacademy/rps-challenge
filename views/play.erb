@@ -4,7 +4,7 @@
 	<title>Rock, paper, scissors!</title>
 </head>
 <body>
-	<%= "Hello, #{@player}" %>
+	<%= "Hello, #{@game.players[0].name}" %>
 	<form action="/move" method="post">
 		<button name="choice" type="submit" value="rock">rock</button>
 		<button name="choice" type="submit" value="paper">paper</button>
@@ -12,7 +12,7 @@
 		<button name="choice" type="submit" value="spock">spock</button>
 		<button name="choice" type="submit" value="lizard">lizard</button>
 	</form>
-	Win count: <%= @wins %> <br><form action="/reset" method="post"><button type="submit" value="reset">reset</button></form>
+	Win count: <%= @game.players[0].score %> <br><form action="/reset" method="post"><button type="submit" value="reset">reset</button></form>
 	<%= @confirmation if @confirmation %>
 </body>
 </html>

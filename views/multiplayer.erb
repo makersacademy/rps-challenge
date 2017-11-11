@@ -4,15 +4,34 @@
     <meta charset="utf-8">
     <title>Multiplayer</title>
   </head>
-  <body>
-    this is the multiplayer page!
-      <form id="myForm" action="/test" method="post">
+  <body class="#entire-body">
+      <form id="myForm" action="/multimove" method="post">
         <input id="player1" type="hidden" name="player1" value="">
         <input id="player2" type="hidden" name="player2" value="">
       </form>
-      <%= "#{@player1name} vs. #{@player2name}" %>
-      <%= @player1move %>
-      <%= @player2move %>
+      <%= "#{@game.players[0].name} vs. #{@game.players[1].name}" %>
+      <br>
+      <%= @confirmation %>
+      <br>
+      <%= "#{@game.players[0].name}'s score: #{@game.players[0].score}" %>
+      <br>
+      <%= "#{@game.players[1].name}'s score: #{@game.players[1].score}" %>
+      <div class="">
+        Player 1 controls:
+        A: rock,
+        S: paper,
+        D: scissors,
+        Q: spock,
+        W: lizard
+      </div>
+      <div class="">
+        Player 2 controls:
+        L: rock,
+        K: paper,
+        J: scissors,
+        P: spock,
+        O: lizard
+      </div>
     <script type="text/javascript" src="js.js"></script>
   </body>
 </html>
