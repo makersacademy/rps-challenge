@@ -46,6 +46,7 @@ attr_reader :opponents_play, :choice, :score
       false
     end
   end
+end
 
   def finish
     if win?

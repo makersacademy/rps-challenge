@@ -23,7 +23,7 @@ describe Game do
   describe '#finish_turn' do
     it 'should add a point to the score if a player wins the turn' do
       game.play
-      expect { game.finish_turn }.to change { game.score }.by Game::POINT
+      expect { game.finish_turn }.to change { game.score }.by 1
     end
   end
 end
