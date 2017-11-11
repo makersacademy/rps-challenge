@@ -1,7 +1,9 @@
 feature 'Testing home page' do
-  scenario 'run app and check page content' do
+  scenario 'display player name after submission' do
     visit('/')
-    expect(page).to have_content 'Welcome to Maker R-P-S app!'
+    fill_in(:Player_name, :with => 'Jo')
+    click_button 'Play'
+    expect(page).to have_content 'Jo'
   end
 
 end
