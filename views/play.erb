@@ -1,7 +1,11 @@
 <%= @player %>
 
-<form>
-  <button type='submit' value='Rock'>
-  <button type='submit' value='Paper'>
-  <button type='submit' value='Scissor'>
+<form action='/select' method='get'>
+  <input type='submit' name='choose' value='Rock'>
+  <input type='submit' name='choose' value='Paper'>
+  <input type='submit' name='choose' value='Scissor'>
 </form>
+
+<% if @choose %>
+  <%= @choose %>
+<% end %>
