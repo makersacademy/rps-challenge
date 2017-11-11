@@ -12,7 +12,12 @@
 <%else%>
 <p><%= @player1%> selected <%= @pl1_choice %></p>
 <p><%= @player2%> selected <%= @pl2_choice %></p>
+
+<%if @winner==0%>
+<p> Draw </p>
+<%else%>
 <p> <%= @winner %> won!!!</p>
+<%end%>
 
 <h2><%=@name%> Play again!</h2>
 <form method="post" action="/game-on">
