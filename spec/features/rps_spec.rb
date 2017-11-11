@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+require './spec/features/web_helper.rb'
 
 describe Rps do
   describe 'Homepage', :type => :feature do
@@ -9,6 +10,10 @@ describe Rps do
     it "Should show the name of the game" do
       visit '/'
       expect(page).to have_content("Rock-Paper-Scissor GAME")
+    end
+    it "Should show the name of the player, in the /play route" do
+      sign_in_and_play
+      expect(page).to have_content("Marco")
     end
   end
 end
