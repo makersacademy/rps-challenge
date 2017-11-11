@@ -7,10 +7,9 @@ gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'rack'
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'rack'
-  gem 'sinatra'
 end
