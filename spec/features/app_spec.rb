@@ -28,17 +28,17 @@ describe RockPaperScissor do
     it 'should say Your choice: rock if button rock is pressed' do
       signing_in
       click_button 'Rock!'
-      expect(page).to have_content "Your choice : rock"
+      expect(page).to have_content "You chose rock"
     end
     it 'should say Your choice: scissors if button scissors is pressed' do
       signing_in
       click_button 'Scissors!'
-      expect(page).to have_content "Your choice : scissors"
+      expect(page).to have_content "You chose scissors"
     end
     it 'should say Your choice: rpaper if button paper is pressed' do
       signing_in
       click_button 'Paper!'
-      expect(page).to have_content "Your choice : paper"
+      expect(page).to have_content "You chose paper"
     end
     it 'should show the score' do
       signing_in
