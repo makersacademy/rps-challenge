@@ -11,5 +11,10 @@ class RPSGame < Sinatra::Base
     erb :play
   end
 
+  post '/results' do
+    @choice = params[:choice]
+    erb :results
+  end
+
   run! if app_file == $0
 end

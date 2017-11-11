@@ -9,5 +9,11 @@
 
   <body>
     <h3> <%= @player %> </h3>
+    <h6> Please select an option: </h6>
+    <form action="/results" method="post">
+      <button class="game_button" name="choice" value="rock"> Rock </button>
+      <button class="game_button" name="choice" value="paper"> Paper </button>
+      <button class="game_button" name="choice" value="scissors"> Scissors </button>
+    </form>
   </body>
 </html>
