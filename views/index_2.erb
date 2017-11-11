@@ -1,20 +1,20 @@
 <style> body {
-    background-color: red;
-    background-image: url("http://pngimg.com/uploads/paper_sheet/paper_sheet_PNG7233.png");
+    background-color: blue;
+    background-image: url("http://images.clipartpanda.com/scissors-clip-art-1388423321.png");
     background-size: 100% 100%;
 }
 
 h1 {
-    color: blue;
+    color: red;
     font-family: helvetica;
     font-size: 80px;
 }
-
 input[type=text] {
     width: 20%;
     padding: 20px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-size: 40px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -27,15 +27,16 @@ input[type=button], input[type=submit], input[type=reset] {
     font-size: 100px;
     cursor: pointer;
     text-decoration-color: green;
-    font-size: 10 0px;
+    font-size: 40px;
 }
 
 </style>
+<div align="center">
+<h1> Please enter your names! </h1>
 
-<h1>Hi <%= @game.player_1.name.capitalize %>! </h1>
-<h1>Please type 'rock', 'paper', or 'scissors'! </h1>
-
-<form action="/select" >
-  <input type="text" name="weapon">
+<form action="/two_player" >
+  <input type="text" name="player_1_name">
+  <input type="text" name="player_2_name">
   <input type="submit" value="Submit">
 </form>
+</div>

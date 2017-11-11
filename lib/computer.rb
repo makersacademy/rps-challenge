@@ -4,9 +4,9 @@ class Computer
 
   WEAPONS = [:rock, :paper, :scissors]
 
-  def initialize(weapons = WEAPONS, name = 'computer')
+  def initialize(weapons = WEAPONS, name = 'Computer')
     @weapon = weapons.sample
     @name = name
   end
-  
+
 end

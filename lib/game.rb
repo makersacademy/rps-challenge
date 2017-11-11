@@ -22,9 +22,9 @@ class Game
     if player_1_choice == player_2_choice
       "draw!"
     elsif @weapons[player_1_choice] == player_2_choice
-      "#{@player_1.name} wins!"
+      "#{@player_1.name.capitalize} wins!"
     else
-      "#{@player_2.name} wins!"
+      "#{@player_2.name.capitalize} wins!"
     end
   end
 
