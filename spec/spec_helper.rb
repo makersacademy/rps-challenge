@@ -1,6 +1,13 @@
+ENV['RACK_ENV'] = 'TEST' # hat is it? what does it do?
+
+require './rps.rb'
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = Rps # What is it? what does it do?
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
