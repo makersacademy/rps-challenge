@@ -8,7 +8,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-
+    Game.start(Game.new(Player.new(params[:name]), Computer.new))
   end
 
 end
