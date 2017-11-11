@@ -1,18 +1,14 @@
 class Computer
 
-  def self.options
-    @@options = ['Rock', 'Paper', 'Scissors']
-  end
-
   attr_reader :name, :choice
 
   def initialize(name = "Siri")
     @name = name
-    @choice = nil
+    @choice = {}
   end
 
   def randomizer
-    @choice = Computer.options.sample
+    @choice = Game.options.sample
   end
 
 end

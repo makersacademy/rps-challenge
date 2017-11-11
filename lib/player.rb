@@ -4,7 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @choice = nil
+    @choice = {}
   end
 
   def receive_choice(choice)
