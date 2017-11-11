@@ -21,8 +21,7 @@ class Rps < Sinatra::Base
   end
 
   get '/select' do
-    @choose = params[:choose]
-    session[:choose] = @choose
+    session[:choose] = params[:choose]
     redirect '/play'
   end
   # start the server if ruby file executed directly
