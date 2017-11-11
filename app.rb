@@ -9,12 +9,13 @@ class RSPgame < Sinatra::Base
   end
 
   post '/name' do
-    
+    Game.create(Game.new(Player.new(params[:player_name]), Player.new(Computer.new)))
     erb(:name)
     redirect '/play'
   end
 
   get '/play' do
+
     erb(:play)
   end
 end
