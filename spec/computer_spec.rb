@@ -16,7 +16,7 @@ describe Computer do
     context "when choice is called" do
       it "should return 'rock'" do
         allow_any_instance_of(Array).to receive(:sample).and_return("rock")
-        expect(computer_1.choice).to eq('rock')
+        expect(computer_1.select).to eq('rock')
       end
     end
   end

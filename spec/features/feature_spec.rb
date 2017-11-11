@@ -29,4 +29,12 @@ feature "game scenarios" do
     pick_rock
     expect(page).to have_content("rock")
   end
+  scenario "player picks PAPER" do
+    pick_paper
+    expect(page).to have_content("paper")
+  end
+  scenario "player picks scissors" do
+    pick_scissors
+    expect(page).to have_content("scissors")
+  end
 end

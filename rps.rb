@@ -27,7 +27,10 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
+    Game.read.player2.select
     @p1choice = Game.read.player1.choice
+    @comchoice = Game.read.player2.choice
+    @result = Game.read.result
     erb(:result)
   end
 
