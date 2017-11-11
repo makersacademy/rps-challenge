@@ -1,0 +1,20 @@
+<h1>Hello <%= @player1 %></h1>
+
+<form action='/rock' method='post'>
+  <input type='submit' value='Rock!'>
+</form>
+<form action='/paper' method='post'>
+  <input type='submit' value='Paper!'>
+</form>
+<form action='/scissors' method='post'>
+  <input type='submit' value='Scissors!'>
+</form>
+
+<% if !@choice.empty? %>
+Your choice : <%= @choice %>
+Your opponents play : <%= @opponents_choice %>
+
+<% if @win == true %>
+  YOU WIN !!
+<% end %>
+<% end %>
