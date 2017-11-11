@@ -17,6 +17,7 @@ class RockPaperScissor < Sinatra::Base
   end
 
   get '/play' do
+    @score = @game.score
     @game.play
     @player1 = @game.player.name
     erb(:play)
@@ -44,6 +45,7 @@ class RockPaperScissor < Sinatra::Base
     @choice = @game.turn.choice
     @opponents_choice = @game.turn.opponents_play
     @win = @game.turn.win?
+    @game.finish_turn
     erb(:turn)
   end
 end

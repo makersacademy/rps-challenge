@@ -40,6 +40,12 @@ describe RockPaperScissor do
       click_button 'Paper!'
       expect(page).to have_content "Your choice : paper"
     end
+    it 'should show the score' do
+      signing_in
+      click_button 'Paper!'
+      click_button 'Play again!'
+      expect(page).to have_content "Your score : "
+    end
   end
   describe '/turn', :type => :feature  do
     it 'should be possible to go back to the play page' do
