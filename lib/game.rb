@@ -8,37 +8,51 @@ class Game
   end
 
   def play(parameter)
-    if parameter == 'rock'
-      if randomised_options == 'scissor'
-        "#{@name} wins!"
-      elsif randomised_options == 'paper'
-        "#{@name} loses!"
-      elsif randomised_options == parameter
-        "Draw!"
-      end
-    elsif parameter == 'paper'
-      if randomised_options == 'rock'
-        "#{@name} wins!"
-      elsif randomised_options == 'scissor'
-        "#{@name} loses!"
-      elsif randomised_options == parameter
-        "Draw!"
-      end
-    else
-      if randomised_options == 'paper'
-        "#{@name} wins!"
-      elsif randomised_options == 'rock'
-        "#{@name} loses!"
-      elsif randomised_options == parameter
-        "Draw!"
-      end
+    draw?(parameter)
+    return rock(parameter) if parameter == 'rock'
+    return scissor(parameter) if parameter == 'scissor'
+    return paper(parameter) if parameter == 'paper'
+  end
+
+  def rock(parameter)
+    if randomised_options == 'scissor'
+      "#{@name} wins!"
+    elsif randomised_options == 'paper'
+      "#{@name} loses!"
     end
   end
+
+  def scissor(parameter)
+    if randomised_options == 'paper'
+      "#{@name} wins!"
+    elsif randomised_options == 'rock'
+      "#{@name} loses!"
+    end
+  end
+
+  def paper(parameter)
+    if randomised_options == 'rock'
+      "#{@name} wins!"
+    elsif randomised_options == 'scissor'
+      "#{@name} loses!"
+    end
+  end
+
+  def draw?(parameter)
+    'Draw!' if randomised_options == parameter
+  end
+
+  private
+  def randomised_options
+    @options.sample
+  end
+
+
+  # if 'rock' > 'scissor'
   #
-  # def randomised_options
-  #   @options.sample
-  # end
-  #
+  # if randomised_options == 'scissor' && parameter == 'rock'
+  #   "#{@name} wins!"
+
   # def win?(parameter)
   #
   # end

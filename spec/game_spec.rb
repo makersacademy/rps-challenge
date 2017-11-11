@@ -18,11 +18,6 @@ describe Game do
         game.stub(:randomised_options) { 'paper' }
         expect(game.play(rock)).to eq 'Flooba loses!'
       end
-      it 'returns draw with rock response' do
-        game.stub(:randomised_options) { 'rock' }
-        allow(player).to receive(:parameter).and_return 'rock'
-        expect(game.play(rock)).to eq 'Draw!'
-      end
     end
 
     context 'when paper is selected by user' do
@@ -33,10 +28,6 @@ describe Game do
       it 'returns loss with scissor response' do
         game.stub(:randomised_options) { 'scissor' }
         expect(game.play(paper)).to eq 'Flooba loses!'
-      end
-      it 'returns draw with paper response' do
-        game.stub(:randomised_options) { 'paper' }
-        expect(game.play(paper)).to eq 'Draw!'
       end
     end
 
@@ -49,10 +40,13 @@ describe Game do
         game.stub(:randomised_options) { 'rock' }
         expect(game.play(scissor)).to eq 'Flooba loses!'
       end
-      it 'returns draw with scissor response' do
-        game.stub(:randomised_options) { 'scissor' }
-        expect(game.play(scissor)).to eq 'Draw!'
-      end
+    end
+  end
+
+  describe '#draw?' do
+    it 'returns draw when parameter equals random selection' do
+      game.stub(:randomised_options) { 'scissor' }
+      expect(game.draw?(scissor)).to eq 'Draw!'
     end
   end
 
