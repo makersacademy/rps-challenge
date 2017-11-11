@@ -7,4 +7,8 @@ describe Player do
   it '.name return player name' do
     expect(player.name).to eq('Jo')
   end
+
+  it '.score return a default value' do
+    expect(player.score).to eq(0)
+  end
 end
