@@ -7,6 +7,7 @@ class Rps < Sinatra::Base
 
   get '/' do
     session[:choose] = nil
+    session[:result] = nil
     erb(:index)
   end
 
