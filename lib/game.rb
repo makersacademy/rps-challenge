@@ -5,6 +5,8 @@ require './lib/player'
 class Game
   attr_reader :player, :player2, :option
 
+  WIN_OPTIONS = { rock: :scissors, paper: :rock, scissors: :paper }
+
   def initialize(player, player2 = Computer.new)
     @option = nil
     @player = player
@@ -19,12 +21,10 @@ class Game
     @instance
   end
 
-  WIN_OPTIONS = { rock: :scissors, paper: :rock, scissors: :paper }
-
   def choice(option)
     @option = option.to_sym # returns OPTIONS value
   end
-  
+
   def random_pick
     key_range = []
     WIN_OPTIONS.keys.each do |key| # returns OPTIONS key

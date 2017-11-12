@@ -18,9 +18,7 @@ describe 'RSPgame', :type => :feature do
         expect(page).to have_content "Please enter your name"
       end
       it 'should show player1 name' do
-        visit '/'
-        fill_in :player_name, with: 'name'
-        click_button 'Start'
+        sign_up_start
         expect(page).to have_content 'name'
       end
     end

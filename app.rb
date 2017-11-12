@@ -19,4 +19,19 @@ class RSPgame < Sinatra::Base
     @instance = Game.instance
     erb(:play)
   end
+
+  post '/play' do
+    @instance = Game.instance
+    @instance.choice(params[:option])
+    erb(:play)
+    redirect '/game'
+  end
+
+  get '/game' do
+    @instance = Game.instance
+    erb(:game)
+  end
+
+
+
 end
