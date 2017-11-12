@@ -4,7 +4,6 @@ require_relative 'lib/player'
 require_relative 'lib/cpu'
 
 class RPS < Sinatra::Base
-  enable :sessions
   before do
     @game = Game.access
   end

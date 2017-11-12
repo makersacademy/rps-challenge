@@ -18,4 +18,24 @@ describe Game do
       expect(game.player).to eq 'Peter'
     end
   end
+  describe '#result' do
+    it "Should return :player_win" do
+      Game.create('Peter', 'cpu')
+      allow(Game.access.player).to receive(:selection).and_return(:rock)
+      allow(Game.access.cpu).to receive(:selection).and_return(:scissors)
+      expect(Game.access.result).to eq(:player_win)
+    end
+    it "Should return :cpu_win" do
+      Game.create('Peter', 'cpu')
+      allow(Game.access.player).to receive(:selection).and_return(:rock)
+      allow(Game.access.cpu).to receive(:selection).and_return(:paper)
+      expect(Game.access.result).to eq(:cpu_win)
+    end
+    it "Should return :draw" do
+      Game.create('Peter', 'cpu')
+      allow(Game.access.player).to receive(:selection).and_return(:rock)
+      allow(Game.access.cpu).to receive(:selection).and_return(:rock)
+      expect(Game.access.result).to eq(:draw)
+    end
+  end
 end

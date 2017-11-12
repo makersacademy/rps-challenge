@@ -13,4 +13,25 @@ class Game
     @player = player
     @cpu = cpu
   end
+
+  def result
+    case @player.selection
+    when :rock
+      rock_calculator
+    when :paper
+      paper_calculator
+    when :scissors
+      scissors
+    end
+  end
+
+  def rock_calculator
+    if @cpu.selection == :scissors
+      :player_win
+    elsif @cpu.selection == :paper
+      :cpu_win
+    else
+      :draw
+    end
+  end
 end
