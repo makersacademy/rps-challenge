@@ -24,4 +24,7 @@ class Result
     "Computer selected paper, you win!"
   end
 
+  def draw
+    "Draw!"
+  end
 end

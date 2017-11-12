@@ -1,23 +1,37 @@
-<%= @player %>
+<html>
+<head>
+  <link rel="stylesheet" href="play.css" type="text/css"  >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body >
 
-<form action='/select' method='get'>
-  <input type='submit' name='choose' value='rock'>
-  <input type='submit' name='choose' value='paper'>
-  <input type='submit' name='choose' value='scissor'>
-</form>
+  <div class='container'>
+    <div class='box text-center'>
+      <h1 class='h1'><%= "#{@player} vs. Computer"  %></h1>
 
-<% if @choose %>
-  <%= "#{@player} chose #{@choose}" %>
-<% end %>
+      <form action='/select' method='get'>
+        <input class='btn btn-warning' type='submit' name='choose' value='rock'>
+        <input class='btn btn-warning' type='submit' name='choose' value='paper'>
+        <input class='btn btn-warning' type='submit' name='choose' value='scissor'>
+      </form>
 
-<br>
+      <br>
 
-<% if @computer %>
-  <%= "Computer chose #{@computer}" %>
-<% end %>
+      <h3>
+        <% if @choose %>
+          <%= "#{@player} chose #{@choose}" %>
+        <% end %>
+      </h3>
 
-<br>
+      <br>
 
-<% if @result %>
-  <%= @result %>
-<% end %>
+      <h3 color='red'>
+        <% if @result %>
+          <%= @result %>
+        <% end %>
+      </h3>
+
+    </div>
+  </div>
+</body>
+</html>

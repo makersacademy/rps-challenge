@@ -2,9 +2,10 @@ require_relative 'result'
 
 class Game
 
+  OPTIONS = ['scissor', 'rock', 'paper']
+
   def initialize(name, parameter)
     @name = name
-    @options = ['scissor', 'rock', 'paper']
     @parameter = parameter
     @result = Result.new
   end
@@ -49,11 +50,11 @@ class Game
   end
 
   def draw?
-    'Draw!'
+    @result.draw
   end
 
   private
   def randomised_options
-    @options.sample
+    OPTIONS.sample
   end
 end

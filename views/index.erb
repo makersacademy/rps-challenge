@@ -1,4 +1,19 @@
-<form action='/name' method ='post'>
-  <input type='text' name='name' </input>
-  <input type='submit' value='Play'</input>
-</form>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" type="text/css"  >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class='container ' >
+    <div class='box text-center'>
+      <h2 class='h2'>Rock-Paper-Scissors</h2>
+      <form action='/name' method ='post' display='inline-block'>
+        <div class="form-group">
+          <input class='text-center'type='text' name='name' placeholder='Enter Name'</input>
+        </div>
+          <input class='btn btn-primary' type='submit' value='Play'</input>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
