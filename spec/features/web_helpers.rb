@@ -1,8 +1,5 @@
 @@welcome_messages = ["Welcome to Rock, Paper, Scissors",
-                      "Did I hear Linguini?",
-                      "Please enter your name",
-                      "Don't worry if you are a bot.",
-                      "No need to make up a silly name, just use your regular devilish sounding one - we don't usually discriminate."]
+                      "Please enter your name"]
 
 def enter
   @name = 'Messi'
@@ -20,5 +17,9 @@ def play
 end
 
 def play_again
-  click_button('Again')
+  click_button('Play Again')
+end
+
+def restart
+  click_button('Restart')
 end

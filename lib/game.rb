@@ -1,7 +1,7 @@
 require_relative 'engine'
 
 class Game
-  attr_reader :player_1, :log
+  attr_reader :player_1, :log, :engine
 
   def initialize(player_1_name)
     @player_1 = player_1_name

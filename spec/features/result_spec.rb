@@ -17,4 +17,11 @@ feature 'Play result' do
     expect(page).to have_content "#{@name} vs Ricky Martin"
     expect(page).to have_content "Choose your move, #{@name}:"
   end
+
+  scenario 'Restart button redirects to main page' do
+    restart
+    @@welcome_messages.each do |message|
+      expect(page).to have_content message
+    end
+  end
 end

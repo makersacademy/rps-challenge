@@ -27,5 +27,10 @@ class Rps < Sinatra::Base
     erb :result
   end
 
+  get '/restart' do
+    session.clear
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
