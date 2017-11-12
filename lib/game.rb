@@ -21,12 +21,12 @@ DRAW = 0
     @game
   end
 
-  attr_reader :player1, :player2, :winner, :in_progress
+  attr_reader :player1, :player2, :winner
 
   def initialize(player1, player2)
     @player1     = player1
     @player2     = player2
-    @winner      = nil
+    @winner      = false
   end
 
   def set_choice(player, choice)
@@ -47,10 +47,17 @@ DRAW = 0
     end
   end
 
+  def reset
+    player1.receive_choice({})
+    player2.receive_choice({})
+    @winner = false
+  end
+
     private
 
     def champion(player)
       @winner = player.name
+      player.wins += 1
     end
 
     def draw

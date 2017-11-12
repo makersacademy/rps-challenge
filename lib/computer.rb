@@ -7,6 +7,10 @@ class Computer
     @choice = {}
   end
 
+  def receive_choice(choice)
+      randomizer
+  end    
+
   def randomizer
     @choice = Game.options.sample
   end
