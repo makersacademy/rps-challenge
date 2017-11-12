@@ -32,51 +32,21 @@ class RockPaperScissors < Sinatra::Base
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     @game = Game.create(player_1, player_2)
-    erb :select_2
+    erb :select2
   end
 
-  get '/player_1_rock' do
-    @game.player_1.choose_weapon(:rock)
+  get '/p1_vs_cpu' do
+    @game.player_1.choose_weapon(params[:weapon])
     erb :game
   end
 
-  get '/player_1_paper' do
-    @game.player_1.choose_weapon(:paper)
-    erb :game
+  get '/p1_vs_p2' do
+    @game.player_1.choose_weapon(params[:weapon])
+    erb :select3
   end
 
-  get '/player_1_scissors_' do
-    @game.player_1.choose_weapon(:scissors)
-    erb :game
-  end
-
-  get '/player_1_rock_2p' do
-    @game.player_1.choose_weapon(:rock)
-    erb :select_3
-  end
-
-  get '/player_1_paper_2p' do
-    @game.player_1.choose_weapon(:paper)
-    erb :select_3
-  end
-
-  get '/player_1_scissors_2p' do
-    @game.player_1.choose_weapon(:scissors)
-    erb :select_3
-  end
-
-  get '/player_2_rock_2p' do
-    @game.player_2.choose_weapon(:rock)
-    erb :game
-  end
-
-  get '/player_2_paper_2p' do
-    @game.player_2.choose_weapon(:paper)
-    erb :game
-  end
-
-  get '/player_2_scissors_2p' do
-    @game.player_2.choose_weapon(:scissors)
+  get '/p2_vs_p1' do
+    @game.player_2.choose_weapon(params[:weapon])
     erb :game
   end
 

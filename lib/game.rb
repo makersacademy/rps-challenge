@@ -7,7 +7,8 @@ class Game
     @player_2 = player_2
     @weapons = {  rock: :scissors,
                   paper: :rock,
-                  scissors: :paper}
+                  scissors: :paper
+                }
   end
 
   def player_1_choice

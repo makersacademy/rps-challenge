@@ -43,6 +43,7 @@ input[type=text] {
 <h1> <%= @game.player_1.name.capitalize %> chose <%= @game.player_1.weapon %>! <br/> </h1>
 <h1> <%= @game.player_2.name.capitalize %> chose <%= @game.player_2.weapon %>! <br/> </h1>
 <h1> Result = <%= @game.result %>! </h1>
+
 <div align="center">
 <form action="/" >
   <input type="submit" value="Play Again">

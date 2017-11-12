@@ -35,16 +35,13 @@ input[type=button], input[type=submit], input[type=reset] {
 
 
 <h1>Hi <%= @game.player_1.name.capitalize %>! </h1>
+
 <h1>Choose your weapon! </h1>
 
 <div align="center">
-  <form action="/player_1_rock_2p" >
-    <input type="submit" value="Rock">
-  </form>
-  <form action="/player_1_paper_2p" >
-    <input type="submit" value="Paper">
-  </form>
-  <form action="/player_1_scissors_2p" >
-    <input type="submit" value="Scissors">
+  <form action="/p1_vs_p2" >
+    <input type="submit" name="weapon" value="rock">
+    <input type="submit" name ="weapon" value="paper">
+    <input type="submit" name="weapon" value="scissors">
   </form>
 </div>

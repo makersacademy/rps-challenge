@@ -33,19 +33,16 @@ input[type=button], input[type=submit], input[type=reset] {
     align: center;
 }
 
-
 </style>
 
 <h1>Hi <%= @game.player_1.name.capitalize %>! </h1>
+
 <h1>Choose your weapon! </h1>
+
 <div align="center">
-<form action="/player_1_rock" >
-  <input type="submit" value="Rock">
-</form>
-<form action="/player_1_paper" >
-  <input type="submit" value="Paper">
-</form>
-<form action="/player_1_scissors" >
-  <input type="submit" value="Scissors">
-</form>
+  <form action="/p1_vs_cpu" >
+    <input type="submit" name="weapon" value="rock">
+    <input type="submit" name ="weapon" value="paper">
+    <input type="submit" name="weapon" value="scissors">
+  </form>
 </div>
