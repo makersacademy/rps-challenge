@@ -1,6 +1,7 @@
 class Computer
   DEFAULT_SCORE = 0
-  attr_reader :name, :score, :choice
+  attr_reader :name, :choice
+  attr_accessor :score
 
   def initialize(name = 'computer')
     @name = name.capitalize

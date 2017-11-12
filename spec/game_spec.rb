@@ -7,5 +7,5 @@ describe Game do
 
   it '#result return draw if both choices are the same' do
     expect(game.result).to eq('Draw')
-  end
+  end  
 end

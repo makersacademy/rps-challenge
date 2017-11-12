@@ -25,15 +25,15 @@ class Rps < Sinatra::Base
 
   post '/play' do
     $player.choice = params[:Player_choice]
-    redirect '/attack'
+    redirect '/result'
   end
 
-  get '/attack' do
+  get '/result' do
     @player = $player
     @computer = $computer
     @computer.randomizer
     @game = $game
-    erb :attack
+    erb :result
   end
 
   run! if app_file == $0
