@@ -3,12 +3,13 @@ require './lib/computer'
 require './lib/player'
 
 class Game
-  attr_reader :player, :player2, :option
+  attr_reader :player, :player2, :option, :at_option, :at_random
 
   WIN_OPTIONS = { rock: :scissors, paper: :rock, scissors: :paper }
 
   def initialize(player, player2 = Computer.new)
-    @option = nil
+    @at_option = nil
+    @at_random = nil
     @player = player
     @player2 = player2
   end
@@ -22,7 +23,7 @@ class Game
   end
 
   def choice(option)
-    @option = option.to_sym # returns OPTIONS value
+    @at_option = option.to_sym # returns OPTIONS value
   end
 
   def random_pick
@@ -30,21 +31,16 @@ class Game
     WIN_OPTIONS.keys.each do |key| # returns OPTIONS key
       key_range << key.to_s
     end
-    key_range.sample.to_sym
+    @at_random = key_range.sample.to_sym
   end
 
   def result?
-    if WIN_OPTIONS[random_pick] == @option
+    if WIN_OPTIONS[random_pick] == @at_option
       :loss
-    elsif random_pick == @option
+    elsif random_pick == @at_option
       :draw
     else
       :win
     end
   end
-
-  def reset_choice
-    @option = nil
-  end
-
 end

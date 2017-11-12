@@ -23,12 +23,14 @@ class RSPgame < Sinatra::Base
   post '/play' do
     @instance = Game.instance
     @instance.choice(params[:option])
+    @instance.random_pick
     erb(:play)
     redirect '/game'
   end
 
   get '/game' do
     @instance = Game.instance
+    @instance.result?
     erb(:game)
   end
 

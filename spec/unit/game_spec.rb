@@ -26,6 +26,10 @@ describe Game do
     it 'should allow player choose an option ' do
       expect(game.choice('rock')).to eq(:rock)
     end
+    it 'should store chosen option' do
+      game.choice('rock')
+      expect(game.at_option).to eq :rock
+    end
   end
 
   describe '#random' do

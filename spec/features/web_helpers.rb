@@ -8,3 +8,8 @@ def choose_rock
   fill_in :option, with: 'rock'
   click_button 'Enter'
 end
+
+def choose_scissors
+  ill_in :option, with: 'scissors'
+  click_button 'Enter'
+end

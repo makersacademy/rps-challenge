@@ -10,7 +10,7 @@ describe 'RSPgame', :type => :feature do
       it 'should display option rock message' do
         sign_up_start
         choose_rock
-        expect(page).to have_content "You chose rock, now see Computer's choice"
+        expect(page).to have_content 'You chose rock'
       end
     end
   end
