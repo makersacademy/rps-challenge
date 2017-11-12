@@ -4,9 +4,9 @@ describe Engine do
   subject(:engine) { Engine.new }
 
   before do
-  @pairs = [["rock", "scissors"],
-            ["paper", "rock"],
-            ["scissors", "paper"]]
+    @pairs = [["rock", "scissors"],
+              ["paper", "rock"],
+              ["scissors", "paper"]]
   end
 
   context 'Draw' do
@@ -36,4 +36,3 @@ describe Engine do
     end
   end
 end
-
