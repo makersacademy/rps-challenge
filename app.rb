@@ -10,13 +10,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = params[:player]
+    session[:player] = Game.new(params[:player])
     redirect "/play"
   end
 
   get '/play' do
     @value = session[:choice]
-    @player = session[:player]
+    @player = session[:player].player
     erb(:play)
   end
 
