@@ -25,6 +25,7 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     @game.player.selection = :rock
+    redirect '/result'
   end
 
   post '/paper' do
@@ -33,6 +34,11 @@ class RPS < Sinatra::Base
 
   post '/scissors' do
     @game.player.selection = :scissors
+  end
+
+  get '/result' do
+    @player = @game.player
+    erb :result
   end
 
   run! if app_file == $PROGRAM_NAME
