@@ -8,9 +8,7 @@ feature 'Allowing a user to enter their name to play RPS' do
     expect(page).to have_button('Let\'s play!')
   end
   scenario 'Displaying the player\'s name in the game view' do
-    visit '/'
-    fill_in 'name', with: 'Peter'
-    click_button 'Let\'s play!'
+    sign_in_and_play
     expect(page).to have_content('Peter, let\'s play Rock Paper Scissors!')
   end
 end
