@@ -1,6 +1,10 @@
 require_relative 'choice'
 
+# ChoiceSet provides all classes required for Rock, Paper, Scissors, Lizard
+# Spock. It collects instances of each into a hash for ease of reference.
 module ChoiceSet
+
+  # Paper covers rock, disproves Spock.
   class Paper
     def initialize
       @name = :paper
@@ -10,6 +14,7 @@ module ChoiceSet
     include Choice
   end
 
+  # Scissors cuts paper, decapacitates lizard.
   class Scissors
     def initialize
       @name = :scissors
@@ -19,6 +24,7 @@ module ChoiceSet
     include Choice
   end
 
+  # Rock smashes scissors, crushes lizard.
   class Rock
     def initialize
       @name = :rock
@@ -28,6 +34,7 @@ module ChoiceSet
     include Choice
   end
 
+  # Lizard eats paper, poisons Spock.
   class Lizard
     def initialize
       @name = :lizard
@@ -37,6 +44,7 @@ module ChoiceSet
     include Choice
   end
 
+  # Spock smashes scissors, vapourises rock.
   class Spock
     def initialize
       @name = :spock

@@ -1,3 +1,4 @@
+# Choice lets other classes behave like Rock, Paper Scissors choices.
 module Choice
   attr_reader :kills, :name
 
