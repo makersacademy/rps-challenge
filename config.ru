@@ -1,3 +1,3 @@
-require 'sinatra/base'
+require './app'
 
 run Rps
