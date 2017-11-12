@@ -30,10 +30,12 @@ class RPS < Sinatra::Base
 
   post '/paper' do
     @game.player.selection = :paper
+    redirect '/result'
   end
 
   post '/scissors' do
     @game.player.selection = :scissors
+    redirect '/result'
   end
 
   get '/result' do
