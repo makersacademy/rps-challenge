@@ -12,18 +12,21 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player] = Game.new(params[:player])
+    Game.save(Game.new(params[:player]))
     redirect "/play"
   end
 
+  before do
+    @game = Game.show
+  end
+
   get '/play' do
-    @game = session[:player]
-    @display_winner = @game.start_game(session[:choice])
+    @display_winner = session[:choice]
     erb(:play)
   end
 
   post '/game' do
-    p session[:choice] = params[:choice]
+    session[:choice] = @game.start_game(params[:choice])
     redirect "/play"
   end
 

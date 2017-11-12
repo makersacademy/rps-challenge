@@ -1,7 +1,9 @@
 Welcome <%= @game.player %>, please choose an option <br><br>
 
-<% if @display_winner %>
-And the winner is: <%= @display_winner %>
+<% if @game.cpu_choice %>
+<%= @game.player %> used <%= @game.player_choice %> <br>
+The computer used <%= @game.cpu_choice %> <br>
+And the winner is: <%= @display_winner %>  <br>
 <%end %>
 
 <form action='/game' method=post>

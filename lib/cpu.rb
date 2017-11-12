@@ -1,11 +1,5 @@
 class Cpu
 
-  attr_reader :choosen
-
-  def initialize
-    @choosen = nil
-  end
-
   def choose_sign
     @choosen = ['rock', 'paper', 'scissor'].sample
   end
