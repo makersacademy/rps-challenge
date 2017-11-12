@@ -21,5 +21,15 @@ class Rps < Sinatra::Base
     erb :play
   end
 
+  post '/play' do
+    $player.choice = params[:Player_choice]
+    redirect '/attack'
+  end
+
+  get '/attack' do
+    @player = $player
+    erb :attack
+  end
+
   run! if app_file == $0
 end

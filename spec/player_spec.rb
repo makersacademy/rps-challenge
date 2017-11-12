@@ -11,4 +11,9 @@ describe Player do
   it '.score return a default value' do
     expect(player.score).to eq(0)
   end
+
+  it 'allow read and write for .choice' do
+    player.choice = 'Rock'
+    expect(player.choice).to eq('Rock')
+  end
 end
