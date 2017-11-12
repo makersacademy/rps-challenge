@@ -14,6 +14,16 @@ class Game
     @cpu = cpu
   end
 
+  def result_message(player)
+    if result == :player_win
+      "Congratulations, #{player}, you won Rock-Paper-Scissors!"
+    elsif result == :cpu_win
+      "Sorry, #{player}, looks like you lost the game. Better luck next time!"
+    elsif result == :draw
+      "You both chose the same thing - the game is a draw!"
+    end
+  end
+
   def result
     case @player.selection
     when :rock
