@@ -27,9 +27,14 @@ end
 
 feature "submiting a choice sends us to a results page" do
   before { sign_in_and_play }
-  scenario "user selects rock" do
+  scenario "any selection takes us to results page" do
     choose("choice_rock")
     click_button("Submit")
-    expect(page).to have_content("result")
+    expect(page).to have_content("Thanks for playing a round of Rock-Paper-Scissors!")
+  end
+  scenario "choice rock shows rock on the results page" do
+    choose("choice_rock")
+    click_button("Submit")
+    expect(page).to have_content("rock")
   end
 end

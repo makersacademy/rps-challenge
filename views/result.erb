@@ -1,6 +1,12 @@
-result
-<%= @result %>
-<%= @p1_name %>
-<%= @p2_name %>
-<%= @p1_choice %>
-<%= @p2_choice %>
+<h1> Thanks for playing a round of Rock-Paper-Scissors! </h1>
+
+<h3> <%= @p1_name %> selected  <%= @p1_choice %> </h3>
+<h3> <%= @p2_name %> selected  <%= @p2_choice %> </h3>
+
+<%if @result == "T" %>
+<h3> It's a tie! </h3>
+<%elsif @result =="W"%>
+<h3> <%=@p1_name%> wins! </h3>
+<%else%>
+<h3> <%=@p2_name%> wins! </h3>
+<%end%>
