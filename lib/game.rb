@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player
+  attr_reader :player, :cpu
 
   def self.create(player, cpu)
     @game = Game.new(player, cpu)

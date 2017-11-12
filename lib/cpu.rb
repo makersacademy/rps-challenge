@@ -1,4 +1,6 @@
 class Cpu
+  attr_reader :selection
+
   def initialize
     @selection = cpu_choice
   end

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/game'
 require_relative 'lib/player'
+require_relative 'lib/cpu'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -40,6 +41,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @player = @game.player
+    @cpu = @game.cpu
     erb :result
   end
 
