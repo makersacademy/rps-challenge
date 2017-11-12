@@ -53,12 +53,13 @@ DRAW = 0
     @winner = false
   end
 
-    private
+  private
 
-    def champion(player)
-      @winner = player.name
-      player.wins += 1
-    end
+  def champion(player)
+    @winner = player.name
+    player.receive_reward
+  end
+
 
     def draw
       @winner = DRAW

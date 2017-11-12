@@ -23,12 +23,8 @@ end
     end
 
   get '/play' do
-    @choice1 = @game.player1.choice
-    @choice2 = @game.player2.choice
-    @player1 = @game.player1.name
-    @player2 = @game.player2.name
-    @pl1_choice = @game.player1.choice[:item]
-    @pl2_choice = @game.player2.choice[:item]
+    @player1 = @game.player1
+    @player2 = @game.player2
     @winner = @game.winner
     erb(:play)
   end
