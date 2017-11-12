@@ -41,6 +41,13 @@ class RPS < Sinatra::Base
   get '/result' do
     @player = @game.player
     @cpu = @game.cpu
+    if @game.result == :player_win
+      @result = "Congratulations, #{player}, you won Rock-Paper-Scissors!"
+    elsif @game == :cpu_win
+      @result = "Sorry, #{player}, looks like you lost the game. Better luck next time!"
+    else
+      @result = "You both chose the same thing - the game is a draw!"
+    end
     erb :result
   end
 

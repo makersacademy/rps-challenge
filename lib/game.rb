@@ -21,7 +21,7 @@ class Game
     when :paper
       paper_calculator
     when :scissors
-      scissors
+      scissors_calculator
     end
   end
 
@@ -29,6 +29,26 @@ class Game
     if @cpu.selection == :scissors
       :player_win
     elsif @cpu.selection == :paper
+      :cpu_win
+    else
+      :draw
+    end
+  end
+
+  def paper_calculator
+    if @cpu.selection == :rock
+      :player_win
+    elsif @cpu.selection == :scissors
+      :cpu_win
+    else
+      :draw
+    end
+  end
+
+  def scissors_calculator
+    if @cpu.selection == :paper
+      :player_win
+    elsif @cpu.selection == :rock
       :cpu_win
     else
       :draw
