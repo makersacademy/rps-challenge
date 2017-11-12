@@ -1,14 +1,22 @@
 <%= @player %>
 
 <form action='/select' method='get'>
-  <input type='submit' name='choose' value='Rock'>
-  <input type='submit' name='choose' value='Paper'>
-  <input type='submit' name='choose' value='Scissor'>
+  <input type='submit' name='choose' value='rock'>
+  <input type='submit' name='choose' value='paper'>
+  <input type='submit' name='choose' value='scissor'>
 </form>
 
 <% if @choose %>
-  <%= @choose %>
+  <%= "#{@player} chose #{@choose}" %>
 <% end %>
+
+<br>
+
+<% if @computer %>
+  <%= "Computer chose #{@computer}" %>
+<% end %>
+
+<br>
 
 <% if @result %>
   <%= @result %>

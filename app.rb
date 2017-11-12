@@ -11,14 +11,12 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    # session[:name] = params[:name]
-    Game.store(Game.new(params[:name]))
+    session[:name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    # @player = session[:name]
-    @player = Game.read.name
+    @player = session[:name]
     @choose = session[:choose]
     @result = session[:result]
     erb(:play)
@@ -26,10 +24,11 @@ class Rps < Sinatra::Base
 
   get '/select' do
     session[:choose] = params[:choose]
-    session[:result] = Game.read.play(params[:choose])
+    Game.store(Game.new(session[:name], params[:choose]))
+    session[:result] = Game.read.play
     redirect '/play'
   end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
-
 end

@@ -2,9 +2,10 @@ class Game
 
   attr_reader :name
 
-  def initialize(name)
+  def initialize(name, parameter)
     @name = name
     @options = ['scissor', 'rock', 'paper']
+    @parameter = parameter
   end
 
   def self.store(game)
@@ -15,60 +16,43 @@ class Game
     @game
   end
 
-  def play(parameter)
-    draw?(parameter)
-    return rock(parameter) if parameter == 'rock'
-    return scissor(parameter) if parameter == 'scissor'
-    return paper(parameter) if parameter == 'paper'
+  def play
+    return draw? if randomised_options == @parameter
+    return rock if @parameter == 'rock'
+    return scissor if @parameter == 'scissor'
+    return paper if @parameter == 'paper'
   end
 
-  def rock(parameter)
+  def rock
     if randomised_options == 'scissor'
-      "#{@name} wins!"
+      "Computer selected scissor, #{@name} wins!"
     elsif randomised_options == 'paper'
-      "#{@name} loses!"
+      "Computer selected paper, #{@name} loses!"
     end
   end
 
-  def scissor(parameter)
+  def scissor
     if randomised_options == 'paper'
-      "#{@name} wins!"
+      "Computer selected paper, #{@name} wins!"
     elsif randomised_options == 'rock'
-      "#{@name} loses!"
+      "Computer selected rock, #{@name} loses!"
     end
   end
 
-  def paper(parameter)
+  def paper
     if randomised_options == 'rock'
-      "#{@name} wins!"
+      "Computer selected rock, #{@name} wins!"
     elsif randomised_options == 'scissor'
-      "#{@name} loses!"
+      "Computer selected scissor, #{@name} loses!"
     end
   end
 
-  def draw?(parameter)
-    'Draw!' if randomised_options == parameter
+  def draw?
+    'Draw!'
   end
 
   private
   def randomised_options
     @options.sample
   end
-
-
-  # if 'rock' > 'scissor'
-  #
-  # if randomised_options == 'scissor' && parameter == 'rock'
-  #   "#{@name} wins!"
-
-  # def win?(parameter)
-  #
-  # end
-  #
-  # def draw?
-  #   randomised_options == parameter
-  # end
-  #
-  # def lose?
-  # end
 end

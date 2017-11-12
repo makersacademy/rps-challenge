@@ -10,33 +10,33 @@ describe Rps, :type => :feature do
   feature 'play options' do
     scenario 'User can choose rock' do
       sign_in_and_play
-      expect(page).to have_button('Rock')
+      expect(page).to have_button('rock')
     end
     scenario 'User can choose paper' do
       sign_in_and_play
-      expect(page).to have_button('Paper')
+      expect(page).to have_button('paper')
     end
     scenario 'User can choose scissor' do
       sign_in_and_play
-      expect(page).to have_button('Scissor')
+      expect(page).to have_button('scissor')
     end
   end
 
   feature 'clicking options' do
     scenario 'User chooses rock' do
       sign_in_and_play
-      click_button('Rock')
-      expect(page).to have_text('Rock')
+      click_button('rock')
+      expect(page).to have_text('rock')
     end
     scenario 'User chooses paper' do
       sign_in_and_play
-      click_button('Paper')
-      expect(page).to have_text('Paper')
+      click_button('paper')
+      expect(page).to have_text('paper')
     end
     scenario 'User chooses scissor' do
       sign_in_and_play
-      click_button('Scissor')
-      expect(page).to have_text('Scissor')
+      click_button('scissor')
+      expect(page).to have_text('scissor')
     end
   end
 end
