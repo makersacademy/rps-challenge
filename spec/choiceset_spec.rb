@@ -1,5 +1,4 @@
 require 'choiceset'
-require_relative 'choice_spec'
 
 describe ChoiceSet::Paper do
   describe '#initialize' do
