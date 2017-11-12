@@ -19,17 +19,88 @@
     margin-right: -50%;
     transform: translate(-50%, -50%); }
 
+    .rock {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
+
+    .scissors {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
+
+    .paper {
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
+
+    .rimage {
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);  }
+
+    .pimage {
+      position: absolute;
+      top: 50%;
+      left: 75%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)  }
+    .simage{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)  }
   </style>
 </head>
 
 <body>
 
   <div class="gamestart">
-    <h2> Welcome <%= @player %>!</h2>
+    <h2> Welcome <%= @player %></h2>
   </div>
 
   <div class="start">
     <h4> Are you ready to rumble? Pick your choice! </h4>
   </div>
+
+<div class="rimage">
+  <img src="https://media.giphy.com/media/xtAP7Us20PlDi/giphy.gif" style="width:250px;height:170px;" />
+</div>
+
+<div class="simage">
+  <img src="https://media.giphy.com/media/277qtNfJNNCGk/giphy.gif" style="width:250px;height:170px;" />
+</div>
+
+<div class="pimage">
+  <img src="https://media.giphy.com/media/yUrUb9fYz6x7a/giphy.gif" style="width:250px;height:170px;" />
+</div>
+
+
+<div class="rock">
+  <form action = '/rock' method = 'post' >
+    <input type='submit' value='Rock'>
+  </form>
+</div>
+
+<div class="scissors">
+  <form action = '/scissors' method = 'post' >
+    <input type='submit' value='Scissors'>
+  </form>
+</div>
+
+<div class="paper">
+  <form action = '/paper' method = 'post' >
+    <input type='submit' value='Paper'>
+  </form>
+</div>
 
 </body>
