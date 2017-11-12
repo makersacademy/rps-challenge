@@ -4,8 +4,8 @@ require 'sinatra/base'
 class Rps < Sinatra::Base
   enable :sessions
   before do
-  @game = Game.instance
-end
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
@@ -15,12 +15,12 @@ end
     player1 = Player.new(params[:player1])
     player2 = Player.new(params[:player2])
     if params[:player2] == ''
-      @game = Game.create(player1,Computer.new)
+      @game = Game.create(player1, Computer.new)
     else
-      @game = Game.create(player1,player2)
+      @game = Game.create(player1, player2)
     end
-      redirect '/play'
-    end
+    redirect '/play'
+  end
 
   get '/play' do
     @player1 = @game.player1
@@ -41,14 +41,12 @@ end
   end
 
   post '/game-on' do
-     @game.set_choice(@game.player1, params[:choice1])
-     if @game.player2.name == 'Siri'
-       @game.player2.randomizer
-       @game.decider
-       redirect '/play'
-     else
-       redirect '/play'
-     end
+    @game.set_choice(@game.player1, params[:choice1])
+    if @game.player2.name == 'Siri'
+      @game.player2.randomizer
+      @game.decider
+    end
+    redirect '/play'
   end
 
   run! if app_file == $0

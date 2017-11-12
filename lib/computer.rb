@@ -13,7 +13,7 @@ class Computer
   end
 
   def receive_choice(choice)
-      @choice = choice
+    @choice = choice
   end
 
   def randomizer

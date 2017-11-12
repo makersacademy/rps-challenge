@@ -3,13 +3,13 @@ require_relative 'computer'
 
 class Game
 
-DRAW = 0
+  DRAW = 0
 
   def self.options
     @@options = [
-                  { option: 3, item: :Rock     },
-                  { option: 2, item: :Scissors },
-                  { option: 1, item: :Paper    }
+                { option: 3, item: :Rock     },
+                { option: 2, item: :Scissors },
+                { option: 1, item: :Paper    }
     ]
   end
 
@@ -60,7 +60,6 @@ DRAW = 0
     @winner = player.name
     player.receive_reward
   end
-
 
   def draw
     @winner = DRAW
