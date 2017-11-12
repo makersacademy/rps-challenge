@@ -1,5 +1,5 @@
-<h1 style = "text-align:left;float:left;"><%= @player.name %> Score : <%= @player.score %> </h1>
-<h1 style = "text-align:right;float:right;"><%= @computer.name %> Score : <%= @computer.score %> </h1>
+<h1 style = "text-align:left;float:left;"><%= @game.player_1.name %> Score : <%= @game.player_1.score %> </h1>
+<h1 style = "text-align:right;float:right;"><%= @game.player_2.name %> Score : <%= @game.player_2.score %> </h1>
 <form style = "text-align: center;" action = "/play" method = "post">
   <input type="submit" value= "Rock" name ="Player_choice">
   <input type="submit" value= "Paper" name ="Player_choice">

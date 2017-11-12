@@ -4,35 +4,33 @@ require './lib/computer'
 require './lib/game'
 
 class Rps < Sinatra::Base
-  enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
   end
 
   post '/name' do
-    $player = Player.new(params[:Player_name])
-    $computer = Computer.new
-    $game = Game.new($player, $computer)
+    player = Player.new(params[:Player_name])
+    computer = Computer.new
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player = $player
-    @computer = $computer
     erb :play
   end
 
   post '/play' do
-    $player.choice = params[:Player_choice]
+    @game.player_1.choice = params[:Player_choice]
     redirect '/result'
   end
 
   get '/result' do
-    @player = $player
-    @computer = $computer
-    @computer.randomizer
-    @game = $game
+    @game.player_2.randomizer
     erb :result
   end
 
