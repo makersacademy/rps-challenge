@@ -34,14 +34,20 @@ class Game
 
   def one_user_play(user_move)
     @computer_move = random_move
-    @players[0].score_up if verdict(user_move) == 'won'
+    player_score_up(user_move)
     "Your #{user_move[0]} #{phrase(user_move)} computer's #{@computer_move}!"
   end
 
   def two_user_play(user_move)
+    player_score_up(user_move)
+    "#{@players[0].name}'s #{user_move[0]} #{phrase(user_move)}"\
+    " #{@players[1].name}'s #{user_move[1]}!"
+  end
+
+  def player_score_up(user_move)
+    p 'here', @players
     @players[0].score_up if verdict(user_move) == 'won'
-    @players[1].score_up if verdict(user_move) == 'lost'
-    "#{@players[0].name}'s #{user_move[0]} #{phrase(user_move)} #{@players[1].name}'s #{user_move[1]}!"
+    @players[1].score_up if @players[1] && verdict(user_move) == 'lost'
   end
 
   def phrase(user_move)

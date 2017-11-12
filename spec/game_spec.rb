@@ -38,11 +38,11 @@ describe Game do
 
   context 'reseting the score' do
     describe '#reset' do
-      xit 'resets the score to zero after 6 wins' do
+      it 'resets the score to zero after 6 wins' do
         allow_any_instance_of(Array).to receive(:sample).and_return(:lizard)
         6.times { subject.play(['scissors']) }
         subject.reset
-        expect(subject.play.score).to eq 0
+        expect(subject.players[0].score).to eq 0
       end
     end
   end
