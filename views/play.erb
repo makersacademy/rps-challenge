@@ -1,8 +1,11 @@
 Welcome <%= @player %>, please choose an option <br><br>
 
-<button type="button" name="button" value="rock">Rock</button>
-<br><br>
-<button type="button" name="button" value="paper">Paper</button>
-<br><br>
-<button type="button" name="button" value="scissor">Scissor</button>
-<br><br>
+<% if @value %>
+And the winner is:
+<%end %>
+
+<form action='/game' method=post>
+<button name=choice type=submit value=rock>Rock</button>
+<button name=choice type=submit value=paper>Paper</button>
+<button name=choice type=submit value=scissors>Scissors</button>
+</form>

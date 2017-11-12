@@ -22,15 +22,22 @@ describe 'Rps', :type => :feature do
     end
     it 'should have a rock button' do
       sign_in_and_play
-      expect(page).to have_button('rock')
+      expect(page).to have_button('Rock')
     end
     it 'should have a paper button' do
       sign_in_and_play
-      expect(page).to have_button('paper')
+      expect(page).to have_button('Paper')
     end
     it 'should have a scissor button' do
       sign_in_and_play
-      expect(page).to have_button('scissor')
+      expect(page).to have_button('Scissor')
+    end
+  end
+  context 'When pressing a button' do
+    it 'Should have a winner' do
+      sign_in_and_play
+      click_button('Rock')
+      expect(page).to have_content('And the winner is: ')
     end
   end
 end
