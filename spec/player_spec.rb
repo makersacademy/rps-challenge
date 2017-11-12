@@ -1,7 +1,7 @@
 require './lib/player.rb'
 
 describe Player do
-  let(:subject) {Player.new('Marco')}
+  let(:subject) { Player.new('Marco') }
   describe '#choose_rock' do
     it "Check if after calling choose_rock the @sign instance variable change its value to :rock" do
       subject.choose_rock
