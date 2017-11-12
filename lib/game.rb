@@ -10,7 +10,7 @@ DRAW = 0
                   { option: 3, item: :Rock     },
                   { option: 2, item: :Scissors },
                   { option: 1, item: :Paper    }
-                ]
+    ]
   end
 
   def self.create(player1, player2)
@@ -35,15 +35,15 @@ DRAW = 0
 
   def decider
     if player1.choice[:option] == 3 && player2.choice[:option] == 1
-       champion(player2)
+      champion(player2)
     elsif player1.choice[:option] == 1 && player2.choice[:option] == 3
-       champion(player1)
+      champion(player1)
     elsif player1.choice[:option] > player2.choice[:option]
-       champion(player1)
+      champion(player1)
     elsif player1.choice[:option] < player2.choice[:option]
-        champion(player2)
+      champion(player2)
     else
-       draw
+      draw
     end
   end
 
@@ -61,11 +61,12 @@ DRAW = 0
   end
 
 
-    def draw
-      @winner = DRAW
-    end
+  def draw
+    @winner = DRAW
+  end
 
   #  Using strings insted of numbers
+
   #   case
   #     when player1.choice == "Rock" && player2.choice == "Scissors"
   #       player1.name

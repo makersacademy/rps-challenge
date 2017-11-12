@@ -1,6 +1,6 @@
 class Computer
 
-  attr_reader   :name, :choice, :wins
+  attr_reader :name, :choice, :wins
 
   def initialize(name = "Siri")
     @name = name
@@ -9,11 +9,11 @@ class Computer
   end
 
   def receive_reward
-      @wins += 1
+    @wins += 1
   end
 
   def receive_choice(choice)
-      randomizer
+      @choice = choice
   end
 
   def randomizer

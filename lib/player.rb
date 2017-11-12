@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader  :name, :choice, :wins
+  attr_reader :name, :choice, :wins
 
   def initialize(name)
     @name = name
@@ -9,11 +9,11 @@ class Player
   end
 
   def receive_reward
-      @wins += 1
+    @wins += 1
   end
 
   def receive_choice(choice)
-      @choice = choice
+    @choice = choice
   end
 
 end

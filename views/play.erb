@@ -23,17 +23,17 @@
     </form>
    <%end%>
 <%else%>
-  <p><%= @player1.name%> selected <%= @player1.choice[:item]%></p>
-  <p><%= @player2.name%> selected <%= @player2.choice[:item]%></p>
-    <%if @winner==0%>
-    <p> Draw </p>
-    <%else%>
-    <p> <%= @winner %> won!!!</p>
-    <p>Score <%=@player1.wins%>:<%=@player2.wins %></p>
-    <%end%>
+    <p><%= @player1.name%> selected <%= @player1.choice[:item]%></p>
+    <p><%= @player2.name%> selected <%= @player2.choice[:item]%></p>
+      <%if @winner==0%>
+      <p> Draw </p>
+      <%else%>
+      <p> <%= @winner %> won!!!</p>
+      <p>Score <%=@player1.wins%>:<%=@player2.wins %></p>
+      <%end%>
 
-  <h2>Do it again...</h2>
-  <form method="get" action="/reset">
-      <button type="submit">Play!</button>
-  </form>
+    <h2>Do it again...</h2>
+    <form method="get" action="/reset">
+        <button type="submit">Play!</button>
+    </form>
 <%end%>
