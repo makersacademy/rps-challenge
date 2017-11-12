@@ -1,6 +1,6 @@
-#Rock - Paper - Scissor GAME
+# Rock - Paper - Scissor GAME
 
-####Task
+#### Task
 ----
 
 Knowing how to build web applications is getting us almost there as web developers!
@@ -19,13 +19,17 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-#Instruction
+# Instruction
 
-$ git clone git@github.com:[USERNAME]/rps-challenge.git
-$ cd rps-challenge
-$ bundle
-$ rackup -p [PORT_NUMBER]
+$ git clone git@github.com:[USERNAME]/rps-challenge.git . <br>
+$ cd rps-challenge <br>
+$ bundle <br>
+$ rackup -p [PORT_NUMBER] <br>
 
-PICTURE HOME PAGE
+![alt text](https://i.imgur.com/qg7kvt6.png)
 
-PICTURE GAME
+![alt text](https://i.imgur.com/C3qq1eU.png)
+
+![alt text](https://i.imgur.com/s3lJp33.png)
+
+
