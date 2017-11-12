@@ -9,7 +9,7 @@ describe Player do
   end
   describe '#selection' do
     it "Should return the player's choice of rock/paper/scissors" do
-      Game.create(Player.new('Peter'))
+      Game.create(Player.new('Peter'), 'cpu')
       Game.access.player.selection = :rock
       expect(Game.access.player.selection).to eq :rock
     end
