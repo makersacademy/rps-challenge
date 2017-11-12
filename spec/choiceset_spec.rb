@@ -101,8 +101,8 @@ describe ChoiceSet::Spock do
   include_examples 'choice'
 end
 
-describe 'ChoiceSet::Set' do
-  subject { ChoiceSet::Set }
+describe 'ChoiceSet::SET' do
+  subject { ChoiceSet::SET }
 
   describe 'has correct members' do
     it { is_expected.to include :paper }

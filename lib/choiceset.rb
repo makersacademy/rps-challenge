@@ -46,7 +46,7 @@ module ChoiceSet
     include Choice
   end
 
-  Set = {
+  SET = {
     paper: Paper.new,
     scissors: Scissors.new,
     rock: Rock.new,

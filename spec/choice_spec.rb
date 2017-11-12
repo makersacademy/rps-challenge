@@ -18,7 +18,7 @@ shared_examples 'choice' do
 
     context 'when facing a choice that kills it' do
       it 'returns -1' do
-        expect(subject <=> strong).to eq -1
+        expect(subject <=> strong).to eq(-1)
       end
     end
   end
