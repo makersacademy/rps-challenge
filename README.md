@@ -1,4 +1,4 @@
-# RPS Challenge
+# RPS Challenge [![Build Status](https://travis-ci.org/cristhiandas/rps-challenge.svg?branch=master)](https://travis-ci.org/cristhiandas/rps-challenge)
 
 Instructions
 -------
