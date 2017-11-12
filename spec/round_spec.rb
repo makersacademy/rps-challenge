@@ -35,15 +35,15 @@ describe Round do
     end
     it "returns tie if there is a tie " do
       allow(player2).to receive(:choice).and_return(:rock)
-      expect(subject.result).to eq("T")
+      expect(subject.result).to eq(:T)
     end
     it "returns p1 wins if p1 wins" do
       allow(player2).to receive(:choice).and_return(:scissors)
-      expect(subject.result).to eq("W")
+      expect(subject.result).to eq(:W)
     end
     it "returns p1 loses if p1 loses" do
       allow(player2).to receive(:choice).and_return(:paper)
-      expect(subject.result).to eq("L")
+      expect(subject.result).to eq(:L)
     end
   end
 
