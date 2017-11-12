@@ -1,10 +1,9 @@
 require 'capybara/rspec'
 require './spec/features/web_helper.rb'
 require './lib/game.rb'
-require './lib/computer.rb'
 
-describe Rps , :type => :feature do
-  describe 'Homepage'do
+describe Rps, :type => :feature do
+  describe 'Homepage' do
     it "Should contain a form to let login the player" do
       visit '/'
       expect(page).to have_selector("input")
@@ -47,8 +46,3 @@ describe Rps , :type => :feature do
     end
   end
 end
-
-# -what :type => :feature Allow us to use methods such visit ('/')
-#  to test the web site.
-# -should i test each tag, each content?  I don't think so.
-# Then.. in base of what i decide what to test?
