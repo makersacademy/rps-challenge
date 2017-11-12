@@ -6,7 +6,7 @@ class Computer
   end
 
   def select
-    @choice = ['ROCK', 'PAPER', 'SCISSORS'].sample
+    @choice = [:rock, :paper, :scissors].sample
   end
 
 end

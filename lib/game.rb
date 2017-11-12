@@ -1,6 +1,12 @@
 class Game
   attr_reader :player1, :player2
 
+  OPTIONS = {
+    rock: :scissors,
+    paper: :rock,
+    scissors: :paper
+  }
+
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
@@ -21,9 +27,9 @@ class Game
   private
 
   def calculate
-    if (@player1.choice == "ROCK" && @player2.choice == "SCISSORS") || (@player1.choice == "PAPER" && @player2.choice == "ROCK") || (@player1.choice == "SCISSORS" && @player2.choice == "PAPER")
+    if OPTIONS[@player1.choice] == @player2.choice
       1
-    elsif (@player1.choice == "ROCK" && @player2.choice == "PAPER") || (@player1.choice == "PAPER" && @player2.choice == "SCISSORS") || (@player1.choice == "SCISSORS" && @player2.choice == "ROCK")
+    elsif OPTIONS[@player2.choice] == @player1.choice
       -1
     else
       0

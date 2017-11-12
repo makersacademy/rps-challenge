@@ -7,10 +7,6 @@ feature "visiting the index/home page" do
     visit('/')
     expect(page).to have_content("ROCK - PAPER - SCISSORS!")
   end
-  scenario "user wants to enter their name" do
-    visit('/')
-    expect(page).to have_content("Enter your name and click START to begin")
-  end
 end
 
 feature "having entered name we go to play page" do
@@ -20,21 +16,21 @@ feature "having entered name we go to play page" do
   end
   scenario "user enters their name and options are displayed" do
     sign_in_and_play
-    expect(page).to have_content("ROCK PAPER SCISSORS")
+    expect(page).to have_content("Make your selection!")
   end
 end
 
 feature "game scenarios" do
   scenario "player picks ROCK" do
     pick_rock
-    expect(page).to have_content("ROCK")
+    expect(page).to have_content(:rock)
   end
   scenario "player picks PAPER" do
     pick_paper
-    expect(page).to have_content("PAPER")
+    expect(page).to have_content(:paper)
   end
   scenario "player picks scissors" do
     pick_scissors
-    expect(page).to have_content("SCISSORS")
+    expect(page).to have_content(:scissors)
   end
 end
