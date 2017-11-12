@@ -34,16 +34,17 @@ DRAW = 0
   end
 
   def decider
-    if player1.choice[:option] == 3 && player2.choice[:option] == 1
-      champion(player2)
-    elsif player1.choice[:option] == 1 && player2.choice[:option] == 3
-      champion(player1)
-    elsif player1.choice[:option] > player2.choice[:option]
-      champion(player1)
-    elsif player1.choice[:option] < player2.choice[:option]
-      champion(player2)
-    else
-      draw
+    case
+      when player1.choice[:option] == 3 && player2.choice[:option] == 1
+        champion(player2)
+      when player1.choice[:option] == 1 && player2.choice[:option] == 3
+        champion(player1)
+      when player1.choice[:option] > player2.choice[:option]
+        champion(player1)
+      when player1.choice[:option] < player2.choice[:option]
+        champion(player2)
+      else
+        draw
     end
   end
 
