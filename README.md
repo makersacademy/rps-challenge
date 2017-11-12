@@ -2,13 +2,12 @@
 
 Downloading the app:
 
-- $ git clone
-- https://github.com/gabrielabud/rps-challenge.git
+- $ git clone https://github.com/gabrielabud/rps-challenge.git
 - $ cd rps-challenge
 - $ bundle
 - $ rackup
 
-App simulation
+APP simulation
 
 ![](images/login.png)
 ![](images/play.png)
