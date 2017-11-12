@@ -1,0 +1,35 @@
+<head>
+  <style>
+
+    .titles{
+    font-family: "Futura", serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;}
+
+    .button {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)}
+  </style>
+
+</head>
+<body>
+  <div class="titles">
+    <h1> Welcome To Rock, Paper and Scissors!
+    <br>Register your name below</h1>
+</div>
+
+<div class="button">
+<form action ='/startpage' method ='post'>
+  <input type='text' name='player_name'>
+  <input type='submit' value='Start Game'>
+</form>
+</div>
+
+</body>
