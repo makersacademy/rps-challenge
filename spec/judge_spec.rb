@@ -21,12 +21,12 @@ describe Judge do
     end
     it 'returns the name of the player when he wins' do
       allow(enemies).to receive(:pair).and_return({ paper: :scissors })
-      expect(subject.call(:paper, :stone)).to eq 'Player wins'
+      expect(subject.call(:paper, :rock)).to eq 'You win!'
     end
 
     it 'returns the name of the computer when she wins' do
-      allow(enemies).to receive(:pair).and_return({ stone: :paper })
-      expect(subject.call(:stone, :paper)).to eq 'Zoe 5.1 wins'
+      allow(enemies).to receive(:pair).and_return({ rock: :paper })
+      expect(subject.call(:rock, :paper)).to eq 'Zoe 5.1 wins'
     end
 
     it 'returns "tie" if both weapons are equal' do

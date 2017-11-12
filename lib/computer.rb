@@ -7,12 +7,16 @@ class Computer
   end
 
   def pick_weapon
-    @weapon_cabinet.release(random_weapon)
+    @weapon_cabinet.release(weapon)
+  end
+
+  def self.random_weapon
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 
   private
 
-  def random_weapon
-    ['rock', 'paper', 'scissors'].sample
+  def weapon
+    Computer.random_weapon
   end
 end

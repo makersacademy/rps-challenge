@@ -29,7 +29,14 @@ describe Game do
   describe '#result' do
     it 'asks the result to the judge' do
       expect(subject.judge).to receive(:call)
-      subject.result(:stone, :paper)
+      subject.result(:rock, :paper)
+    end
+  end
+
+  describe '#self.store' do
+    it 'stores an instance of Game' do
+      Game.store(subject)
+      expect(Game.show).to eq subject
     end
   end
 end

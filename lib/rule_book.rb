@@ -3,9 +3,9 @@ class RuleBook
 
   def initialize(enemies_class = Enemies)
     @rules = [
-      enemies_class.new(:stone, :paper),
-      enemies_class.new(:paper, :scissors),
-      enemies_class.new(:scissors, :stone)
+      enemies_class.new(:Rock, :Paper),
+      enemies_class.new(:Paper, :Scissors),
+      enemies_class.new(:Scissors, :Rock)
     ]
   end
 end

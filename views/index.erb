@@ -1,4 +1,62 @@
-<form action = '/play' method = 'post'>
-  <input type = 'text' name = 'player_name'>
-  <input type = 'submit' value = 'Play'>
-</form>
+<!DOCTYPE html>
+<html>
+  <style>
+    h1 {
+      color: tomato;
+      font-family: "Brush Script MT", cursive;
+	    font-size: 150px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 500;
+	    line-height: 26.4px;
+      text-align: center;
+    }
+
+    body {
+      background-color: DARKSLATEGREY;
+      background-image: url(https://fictionmachine.files.wordpress.com/2015/12/bttf3_21.jpg);
+    }
+
+    input[type=text], select {
+      font-family: "Impact";
+      font-size: 30px;
+      color: dimgray;
+      background-color: antiquewhite;
+      width: 30%;
+      padding: 3px 5px;
+      margin: 4px 0;
+      display: inline-block;
+      border: 1px solid antiquewhite;
+      border-radius: 2px;
+      box-sizing: border-box;
+      text-align: center;
+      }
+
+    input[type=submit] {
+      color: antiquewhite;
+      font-family: "Brush Script MT", cursive;
+      font-size: 30px;
+      width: 15%;
+      background-color: tomato;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form {
+      text-align: center;
+      vertical-align: baseline;
+    }
+
+  </style>
+
+  <body>
+    <h1> RPS CHALLENGE </h1><br>
+    <form action = '/names' method = 'post' >
+      <input type = 'text' name = 'player_name' placeholder="ENTER NAME" class="name_entry"><br>
+      <input type = 'submit' value = 'Play' class="button">
+    </form>
+  </body>
+
+</html>

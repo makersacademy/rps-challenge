@@ -1,7 +1,7 @@
 class Judge
   attr_reader :rulebook
 
-  def initialize(rulebook = Rulebook.new)
+  def initialize(rulebook = RuleBook.new)
     @rulebook = rulebook
   end
 
@@ -9,7 +9,7 @@ class Judge
     @p_weapon = player_weapon
     @c_weapon = computer_weapon
     return 'Tie' if tie?
-    computer_wins ? 'Zoe 5.1 wins' : 'Player wins'
+    computer_wins ? 'Zoe 5.1 wins' : 'You win!'
   end
 
   private
