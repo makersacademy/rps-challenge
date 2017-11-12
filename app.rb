@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -12,6 +13,7 @@ class Rps < Sinatra::Base
   post '/name' do
     $player = Player.new(params[:Player_name])
     $computer = Computer.new
+    $game = Game.new($player, $computer)
     redirect '/play'
   end
 
@@ -29,6 +31,8 @@ class Rps < Sinatra::Base
   get '/attack' do
     @player = $player
     @computer = $computer
+    @computer.randomizer
+    @game = $game
     erb :attack
   end
 

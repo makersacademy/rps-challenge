@@ -14,6 +14,7 @@ describe Computer do
 
   it '#choice return Rock' do
     srand(0)
+    computer.randomizer
     expect(computer.choice).to eq('Rock')
   end
 end

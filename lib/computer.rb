@@ -1,6 +1,6 @@
 class Computer
   DEFAULT_SCORE = 0
-  attr_reader :name, :score
+  attr_reader :name, :score, :choice
 
   def initialize(name = 'computer')
     @name = name.capitalize
@@ -8,8 +8,8 @@ class Computer
     @choices = ['Rock', 'Paper', 'Scissor']
   end
 
-  def choice
-    @choices[rand(3)]
+  def randomizer
+    @choice = @choices[rand(3)]
   end
 
 end
