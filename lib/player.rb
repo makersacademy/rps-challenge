@@ -18,4 +18,8 @@ class Player
   def choose_paper
     @sign = :paper
   end
+
+  def refresh
+    @sign = ""
+  end
 end

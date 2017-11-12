@@ -11,7 +11,7 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    Game.game(params[:player])
+    Game.game(params[:player_1],params[:player_2])
     redirect '/play'
   end
 
@@ -20,25 +20,44 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @name = @game.player.name
+    @name_1 = @game.player_1.name
+    @name_2 = @game.player_2.name
     erb(:play)
   end
 
-  post '/rock' do
-    @game.player.choose_rock
-    @game.computer.random_choice
+  post '/rock_1' do
+    @game.player_1.choose_rock
     redirect '/play'
   end
 
-  post '/scissor' do
-    @game.player.choose_scissor
-    @game.computer.random_choice
+  post '/scissor_1' do
+    @game.player_1.choose_scissor
     redirect '/play'
   end
 
-  post '/paper' do
-    @game.player.choose_paper
-    @game.computer.random_choice
+  post '/paper_1' do
+    @game.player_1.choose_paper
+    redirect '/play'
+  end
+
+  post '/rock_2' do
+    @game.player_2.choose_rock
+    redirect '/play'
+  end
+
+  post '/scissor_2' do
+    @game.player_2.choose_scissor
+    redirect '/play'
+  end
+
+  post '/paper_2' do
+    @game.player_2.choose_paper
+    redirect '/play'
+  end
+
+  get '/refresh' do
+    @game.player_1.refresh
+    @game.player_2.refresh
     redirect '/play'
   end
 end

@@ -7,6 +7,7 @@
     body
     {
       background-image: url("https://goo.gl/46sKdN");
+      background-position: -180px 0px;
     }
     input[type=text]
     {
@@ -36,62 +37,97 @@
     <h1 style="text-align:center;">Rock-Paper-Scissor GAME</h1>
 
     <div style="height: auto; overflow: hidden">
-      <h1 style="float:right;">Computer</h1>
-      <h1 style="float:left;"> <%= @name %></h1>
+      <h1 style="float:right;"> <%= @name_2 %></h1>
+      <h1 style="float:left;"> <%= @name_1 %></h1>
     </div>
 
-   <div align='left'>
-     <form action='/rock' method='post'>
+  <div>
+   <div style="height: auto; overflow: hidden">
+     <div style="float:left;">
+     <form  action='/rock_1' method='post'>
         Choose Rock:
-        <input type='submit' value='Rock'>
+        <input type='submit' value='Rock1'>
       </form>
 
-      <form action='/paper' method='post'>
+      <form  action='/paper_1' method='post'>
         Choose Paper:
-        <input type='submit' value='Paper'>
+        <input type='submit' value='Paper1'>
       </form>
 
-      <form action='/scissor' method='post'>
+      <form   action='/scissor_1' method='post'>
         Choose Scissor:
-        <input type='submit' value='Scissor'>
+        <input type='submit' value='Scissor1'>
       </form>
-
-      <h1 style="text-align:center;">VS</h1>
     </div>
+
+     <div style="float:right;">
+      <form  action='/rock_2' method='post'>
+         Choose Rock:
+         <input type='submit' value='Rock2'>
+       </form>
+
+       <form  action='/paper_2' method='post'>
+         Choose Paper:
+         <input type='submit' value='Paper2'>
+       </form>
+
+       <form  action='/scissor_2' method='post'>
+         Choose Scissor:
+         <input type='submit' value='Scissor2'>
+       </form>
+     </div>
+     <% if @game.player_1.sign && @game.player_2.sign%>
+     <form align='center' action="/refresh" method="get">
+       <input type='submit' value='Start next Match'>
+     </form>
+     <% end %>
+    </div>
+
+  <h1 style="text-align:center;">VS</h1>
 
   <div align='center'>
-    <% if @game.player.sign == :rock && @game.computer.choice == :rock %>
+
+
+    <% if @game.player_1.sign == :rock && @game.player_2.sign == :rock %>
       <h2>TIE!</h2>
-    <% elsif @game.player.sign == :rock && @game.computer.choice == :paper%>
-      <h2>Computer WON!</h2>
+
+    <% elsif @game.player_1.sign == :rock && @game.player_2.sign == :paper%>
+      <h2> <%= @game.player_2.name %> WON! </h2>
       <% @game.increase_computer_points %>
-    <% elsif @game.player.sign == :rock && @game.computer.choice == :scissor%>
-      <h2><%=@game.player.name %> WON!</h2>
+    <% elsif @game.player_1.sign == :rock && @game.player_2.sign == :scissor%>
+      <h2><%=@game.player_1.name %> WON!</h2>
       <% @game.increase_player_points %>
-    <% elsif @game.player.sign == :paper && @game.computer.choice == :rock%>
-      <h2><%=@game.player.name %> WON!</h2>
+
+    <% elsif @game.player_1.sign == :paper && @game.player_2.sign == :rock%>
+      <h2><%=@game.player_1.name %> WON!</h2>
       <% @game.increase_player_points %>
-    <% elsif @game.player.sign == :paper && @game.computer.choice == :paper%>
+
+    <% elsif @game.player_1.sign == :paper && @game.player_2.sign == :paper%>
       <h2>TIE!</h2>
-    <% elsif @game.player.sign == :paper && @game.computer.choice == :scissor%>
-      <h2>Computer WON!</h2>
+
+    <% elsif @game.player_1.sign == :paper && @game.player_2.sign == :scissor%>
+      <h2> <%= @game.player_2.name %> WON! </h2>
       <% @game.increase_computer_points %>
-      <% elsif @game.player.sign == :scissor && @game.computer.choice == :rock%>
-        <h2>Computer WON!</h2>
+
+      <% elsif @game.player_1.sign == :scissor && @game.player_2.sign == :rock%>
+        <h2> <%= @game.player_2.name %> WON! </h2>
         <% @game.increase_computer_points %>
-      <% elsif @game.player.sign == :scissor && @game.computer.choice == :paper%>
-        <h2><%=@game.player.name %> WON!</h2>
+
+      <% elsif @game.player_1.sign == :scissor && @game.player_2.sign == :paper%>
+        <h2><%=@game.player_1.name %> WON!</h2>
         <% @game.increase_player_points %>
-      <% elsif @game.player.sign == :scissor && @game.computer.choice == :scissor%>
+
+      <% elsif @game.player_1.sign == :scissor && @game.player_2.sign == :scissor%>
         <h2>TIE!</h2>
+
       <% end %>
     </div>
 
     <div style="height: auto; overflow: hidden">
-      <h3 style="float:left;"><%= @game.player.name %> chose <%= @game.player.sign
+      <h3 style="float:left;"><%= @game.player_1.name %> chose <%= @game.player_1.sign
       %> <br> PT: <%= @game.pt_player %> </h3>
 
-      <h3 style="float:right;">Computer chose <%= @game.computer.choice %>
+      <h3 style="float:right;"><%= @game.player_2.name %> <%= @game.player_2.sign %>
         <br>PT: <%= @game.pt_computer %></h3>
 
     </div>

@@ -3,8 +3,8 @@ require './spec/features/web_helper.rb'
 require './lib/game.rb'
 require './lib/computer.rb'
 
-describe Rps do
-  describe 'Homepage', :type => :feature do
+describe Rps , :type => :feature do
+  describe 'Homepage'do
     it "Should contain a form to let login the player" do
       visit '/'
       expect(page).to have_selector("input")
@@ -13,33 +13,37 @@ describe Rps do
       visit '/'
       expect(page).to have_content("Rock-Paper-Scissor GAME")
     end
-    it "Should show the name of the player, in the /play route" do
+    it "Should show the name of the player_1, in the /play route" do
       sign_in_and_play
       expect(page).to have_content("Marco")
     end
-  end
-  describe '/play', :type => :feature do
-    it "Check if clicking the button Rock the player win" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:scissor)
+    it "Should show the name of the player_2, in the /play route" do
       sign_in_and_play
-      click_rock
+      expect(page).to have_content("Queen Elizabeth")
+    end
+  end
+  describe '/play' do
+    it "Check if player 1 win using scissor and Queen lose using Rock." do
+      sign_in_and_play
+      click_scissor(1)
+      click_rock(2)
+      expect(page).to have_content("Queen Elizabeth WON!")
+    end
+  end
+  describe '/play' do
+    it "Check if player 1 win using Rock and Queen lose using Scissor." do
+      sign_in_and_play
+      click_scissor(2)
+      click_rock(1)
       expect(page).to have_content("Marco WON!")
     end
   end
-  describe '/play', :type => :feature do
-    it "Check if clicking the button Paper the player win" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+  describe '/play' do
+    it "Check if player 1 win using Paper and Queen lose using Paper" do
       sign_in_and_play
-      click_paper
-      expect(page).to have_content("Marco WON!")
-    end
-  end
-  describe '/play', :type => :feature do
-    it "Check if clicking the button Scissor the player win" do
-      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
-      sign_in_and_play
-      click_scissor
-      expect(page).to have_content("Computer WON!")
+      click_paper(1)
+      click_paper(2)
+      expect(page).to have_content("TIE!")
     end
   end
 end
