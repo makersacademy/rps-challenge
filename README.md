@@ -26,9 +26,9 @@ http://localhost:4567/
 ```
 ## Method
 
-The app allows two variations of the classic game 'Rock, Paper Scissors': one player versus a randomised computer response, or two player head to head.
+The app allows two variations of the classic game 'Rock, Paper Scissors': one-player versus a randomised computer response, or two-player head to head.
 
-In the first instance the player chooses a weapon and a '.sample' function selects a weapon at random from an array of weapons. In two player mode the weapon chosing process is split over two screens allowing users to pick without the opposition seeing their choice.
+In the first instance the player chooses a weapon and a '.sample' function selects a weapon at random from an array of weapons. In two-player mode the weapon chosing process is split over two screens allowing users to pick without the opposition seeing their choice.
 
 Once weapons are selected they're passed to a Game class which uses an array of key-value pairs to compare weapons and deduce a winner.
 
