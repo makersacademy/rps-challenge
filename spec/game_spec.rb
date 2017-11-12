@@ -13,32 +13,47 @@ describe Game do
 
     it 'returns player as the winner' do
       srand(0)
-      expect(game.winner('paper')).to eq('Player')
+      expect(game.start_game('paper')).to eq('Player')
     end
 
     it 'returns player as the winner' do
       srand(1)
-      expect(game.winner('scissor')).to eq('Player')
+      expect(game.start_game('scissor')).to eq('Player')
     end
 
     it 'returns player as the winner' do
       srand(67809)
-      expect(game.winner('rock')).to eq('Player')
+      expect(game.start_game('rock')).to eq('Player')
     end
 
     it 'returns the computer as the winner' do
       srand(0)
-      expect(game.winner('rock')).to eq('The Computer')
+      expect(game.start_game('scissor')).to eq('The Computer')
     end
 
     it 'returns the computer as the winner' do
       srand(1)
-      expect(game.winner('paper')).to eq('The Computer')
+      expect(game.start_game('rock')).to eq('The Computer')
     end
 
     it 'returns the computer as the winner' do
       srand(67809)
-      expect(game.winner('paper')).to eq('The Computer')
+      expect(game.start_game('paper')).to eq('The Computer')
+    end
+
+    it 'returns no one as the winner if draw' do
+      srand(0)
+      expect(game.start_game('rock')).to eq('No one')
+    end
+
+    it 'returns no one as the winner if draw' do
+      srand(1)
+      expect(game.start_game('paper')).to eq('No one')
+    end
+
+    it 'returns no one as the winner if draw' do
+      srand(67809)
+      expect(game.start_game('scissor')).to eq('No one')
     end
   end
 
