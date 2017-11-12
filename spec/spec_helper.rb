@@ -2,9 +2,11 @@ ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
+require 'selenium-webdriver'
 require 'simplecov'
 require 'simplecov-console'
 require "./app.rb"
+require_relative "./features/web_helpers.rb"
 Capybara.app = Game
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -21,3 +23,9 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+# Capybara.default_driver = :selenium
