@@ -23,5 +23,9 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/rock' do
+    Game.access.player.selection = :rock
+  end
+
   run! if app_file == $PROGRAM_NAME
 end

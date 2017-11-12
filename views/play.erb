@@ -5,6 +5,8 @@
 <body>
   <h1><%= @player %>, let's play Rock Paper Scissors!</h1>
   <h2>Which will you choose? Please make your selection below...</h2>
-  <a href="/result">Rock</a>
+  <form method="post" action="/rock">
+    <input type="submit" value="Rock">
+  </form>
 </body>
 </html>
