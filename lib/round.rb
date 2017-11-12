@@ -18,11 +18,16 @@ class Round
   end
 
   def self.create_instance(player1, player2 = Player.new("Computer"))
-    @round = self.new(player1, player2 = Player.new("Computer"))
+    @round = self.new(player1, player2)
   end
 
-  def self.get_instance
+  def self.instance
     @round
+  end
+
+  def reset_choices
+    @player1.reset_choice
+    @player2.reset_choice
   end
 
   private

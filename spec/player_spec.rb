@@ -30,4 +30,12 @@ describe Player do
       expect { subject.increase_wins }.to change { subject.win_count }.by(1)
     end
   end
+
+  describe "#reset_choice" do
+    it "ensures @choice is nil after running it" do
+      subject.add_choice("test")
+      subject.reset_choice
+      expect(subject.choice).to eq nil
+    end
+  end
 end
