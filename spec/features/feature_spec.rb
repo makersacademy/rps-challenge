@@ -33,4 +33,9 @@ feature "game scenarios" do
     pick_scissors
     expect(page).to have_content(:scissors)
   end
+  scenario "player picks rock and comp picks scissors" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    pick_rock
+    expect(page).to have_content("You win! rock beats scissors!")
+  end
 end

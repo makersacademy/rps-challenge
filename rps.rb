@@ -6,12 +6,14 @@ require './lib/computer'
 class Rps < Sinatra::Base
 
   enable :sessions
+  
   get '/' do
     "Rock, Paper, Scissors!"
     erb(:index)
   end
 
   post '/name' do
+    redirect '/' if params[:name].empty?
     Game.start(Game.new(Player.new(params[:name]), Computer.new))
     redirect '/play'
   end
