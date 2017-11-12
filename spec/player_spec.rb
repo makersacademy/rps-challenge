@@ -10,6 +10,9 @@ describe Player do
     it "ensures a player is initialized with a choice" do
       expect(subject.choice).to eq(nil)
     end
+    it "ensures a player is initialized with a number of wins" do
+      expect(subject.win_count).to eq(0)
+    end
   end
 
   describe "#add_choice" do
@@ -19,6 +22,12 @@ describe Player do
     end
     it "returns @choice" do
       expect(subject.add_choice("rock")).to eq(:rock)
+    end
+  end
+
+  describe "#update_score" do
+    it "increases the wins count by 1" do
+      expect { subject.increase_wins }.to change { subject.win_count }.by(1)
     end
   end
 end

@@ -24,3 +24,12 @@ feature "play page allows player to make a choice" do
     expect(page).to have_button("Submit")
   end
 end
+
+feature "submiting a choice sends us to a results page" do
+  before { sign_in_and_play }
+  scenario "user selects rock" do
+    choose("choice_rock")
+    click_button("Submit")
+    expect(page).to have_content("result")
+  end
+end

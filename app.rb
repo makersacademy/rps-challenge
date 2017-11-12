@@ -24,6 +24,11 @@ class Game < Sinatra::Base
   end
 
   get "/result" do
+    @result = $round.result
+    @p1_name = $round.player1.name
+    @p2_name = $round.player2.name
+    @p1_choice = $round.player1.choice
+    @p2_choice = $round.player2.choice
     erb:result
   end
 

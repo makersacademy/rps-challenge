@@ -5,18 +5,24 @@ class Round
     @player1 = player1
     @player2 = player2
     @controller = {
-      rock: { rock: "tie", paper: "p1 loses", scissors: "p1 wins" },
-      paper: { rock: "p1 wins", paper: "tie", scissors: "p1 loses" },
-      scissors: { rock: "p1 loses", paper: "p1 wins", scissors: "tie" }
+      rock: { rock: "T", paper: "L", scissors: "W" },
+      paper: { rock: "W", paper: "T", scissors: "L" },
+      scissors: { rock: "L", paper: "W", scissors: "T" }
       }
   end
 
   def result
     check_choices
+    update_tally
     check_result
   end
 
   private
+
+  def update_tally
+    @player1.increase_wins if check_result == "W"
+    @player2.increase_wins if check_result == "L"
+  end
 
   def check_result
     @controller[@player1.choice][@player2.choice]

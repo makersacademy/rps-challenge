@@ -2,8 +2,8 @@ require "round"
 
 describe Round do
 
-  let(:player1) { double(:player, name: "Antonio", choice: :rock, add_choice: "rock") }
-  let(:player2) { double(:player, name: "Nick", add_choice: "rock") }
+  let(:player1) { double(:player, name: "Antonio", choice: :rock, add_choice: "rock", increase_wins: "ok") }
+  let(:player2) { double(:player, name: "Nick", add_choice: "rock", increase_wins: "ok") }
   subject(:round) { described_class.new(player1, player2) }
 
   describe "#intiialize" do
@@ -24,7 +24,7 @@ describe Round do
     end
     it "calls method check result" do
       allow(player2).to receive(:choice).and_return(:rock)
-      expect(subject).to receive(:check_result)
+      expect(subject).to receive(:check_result).exactly(3).times
       subject.result
     end
     it "ensures add_choices gets called on a player if player.choice is nil" do
@@ -35,17 +35,28 @@ describe Round do
     end
     it "returns tie if there is a tie " do
       allow(player2).to receive(:choice).and_return(:rock)
-      expect(subject.result).to eq("tie")
+      expect(subject.result).to eq("T")
     end
     it "returns p1 wins if p1 wins" do
       allow(player2).to receive(:choice).and_return(:scissors)
-      expect(subject.result).to eq("p1 wins")
+      expect(subject.result).to eq("W")
     end
     it "returns p1 loses if p1 loses" do
       allow(player2).to receive(:choice).and_return(:paper)
-      expect(subject.result).to eq("p1 loses")
+      expect(subject.result).to eq("L")
     end
-
   end
 
+  describe "#update_tally" do
+    it "calls increase_wins on player1 when player 1 wins" do
+      allow(player2).to receive(:choice).and_return(:scissors)
+      expect(player1).to receive(:increase_wins)
+      subject.result
+    end
+    it "calls increase_wins on player2 when player 1 wins" do
+      allow(player2).to receive(:choice).and_return(:paper)
+      expect(player2).to receive(:increase_wins)
+      subject.result
+    end
+  end
 end
