@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <style>
+      body
+      {
+        background-image: url("https://goo.gl/1NNgjF");
+      }
       img
       {
         width: 30%;
@@ -12,11 +16,33 @@
       }
       form
       {
-           text-align: center;
+        text-align: center;
+        color: #000;
+        font-family: Sans-serif;
+        font-size: 150%;
       }
       h1
       {
-           text-align: center;
+        font-family: Sans-serif;
+        font-size: 200%;
+        text-align: center;
+        color: #000;
+      }
+      input[type=text]
+      {
+        width: 218px;
+      }
+      input[type=submit]
+      {
+        background: #000;
+        color: #fff;
+      }
+
+      input[type=submit], input[type=text]
+      {
+        padding: 9px;
+        font-size: 18px;
+        line-height: 18px;
       }
     </style>
   </head>
@@ -24,11 +50,13 @@
 
     <h1>Rock-Paper-Scissor GAME</h1>
 
-    <form action='/name' method='post'>
-      Name:
-    <input type='text' name='player'> <br>
-    <input type='submit' value='Play'>
-    </form>
+      <form action='/name' method='post'>
+        NAME:
+      <input type='text' name='player'> <br>
+      <input type='submit' value='Play'>
+      </form>
+
+    <br><br>
     <img align='left' src="https://goo.gl/q1K3im" alt="Rock" />
     <img align='center' src="https://goo.gl/nJ9VYr" alt="Paper" />
     <img align='center' src="https://goo.gl/tvjRsa" alt="Scissor" />

@@ -19,14 +19,29 @@ describe Rps do
     end
   end
   describe '/play', :type => :feature do
-    xit "Check if clicking the button Rock the player win" do
-      allow(Game.access_game.computer).to receive(:random_choice).and_return(:scissor)
+    it "Check if clicking the button Rock the player win" do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissor)
       sign_in_and_play
       click_rock
+      expect(page).to have_content("Marco WON!")
+    end
+  end
+  describe '/play', :type => :feature do
+    it "Check if clicking the button Paper the player win" do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      sign_in_and_play
+      click_paper
+      expect(page).to have_content("Marco WON!")
+    end
+  end
+  describe '/play', :type => :feature do
+    it "Check if clicking the button Scissor the player win" do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      sign_in_and_play
+      click_scissor
       expect(page).to have_content("Computer WON!")
     end
   end
-  #one for each button, how can i stub the compute choice?
 end
 
 # -what :type => :feature Allow us to use methods such visit ('/')
