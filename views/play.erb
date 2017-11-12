@@ -1,8 +1,8 @@
 <h3> <%= @player_name %>, it's time to make your choice: </h3>
 
-<form>
-  <input type="radio" name="choice" value="rock" checked> Rock <br />
-  <input type="radio" name="choice" value="paper"> Paper <br />
-  <input type="radio" name="choice" value="scissors"> Scissors <br />
+<form action = "/choice" method = "post" >
+  <input type="radio" name="choice" value=rock> Rock <br />
+  <input type="radio" name="choice" value=paper> Paper <br />
+  <input type="radio" name="choice" value=scissors> Scissors <br />
   <input type="submit" value="Submit" />
 </form>
