@@ -23,4 +23,24 @@ describe Cpu do
     end
   end
 
+  context "When asking for the sign" do
+    it 'Should return rock' do
+      srand(0)
+      subject.choose_sign
+      expect(subject.rock?).to eq(true)
+    end
+
+    it 'Should return paper' do
+      srand(1)
+      subject.choose_sign
+      expect(subject.paper?).to eq(true)
+    end
+
+    it 'Should return scissor' do
+      srand(67809)
+      subject.choose_sign
+      expect(subject.scissor?).to eq(true)
+    end
+  end
+
 end

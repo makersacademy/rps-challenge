@@ -33,11 +33,28 @@ describe 'Rps', :type => :feature do
       expect(page).to have_button('Scissor')
     end
   end
+
   context 'When pressing a button' do
-    it 'Should have a winner' do
+    it 'Should have a the player as winner if paper vs rock' do
       sign_in_and_play
+      srand(0)
+      click_button('Paper')
+      expect(page).to have_content('And the winner is: ')
+    end
+
+    it 'Should have a the player as winner if scissor vs paper' do
+      sign_in_and_play
+      srand(1)
+      click_button('Scissor')
+      expect(page).to have_content('And the winner is: ')
+    end
+
+    it 'Should have a the player as winner if rock vs scissor' do
+      sign_in_and_play
+      srand(67809)
       click_button('Rock')
       expect(page).to have_content('And the winner is: ')
     end
+
   end
 end

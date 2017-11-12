@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'game'
 
 class Rps < Sinatra::Base
 
@@ -15,8 +16,8 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @value = session[:choice]
-    @player = session[:player].player
+    @game = session[:player]
+    @display_winner = @game.player_wins?(session[:choice])
     erb(:play)
   end
 
