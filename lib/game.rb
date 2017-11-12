@@ -1,11 +1,12 @@
-class Game
+require_relative 'result'
 
-  attr_reader :name
+class Game
 
   def initialize(name, parameter)
     @name = name
     @options = ['scissor', 'rock', 'paper']
     @parameter = parameter
+    @result = Result.new
   end
 
   def self.store(game)
@@ -25,25 +26,25 @@ class Game
 
   def rock
     if randomised_options == 'scissor'
-      "Computer selected scissor, #{@name} wins!"
+      @result.comp_lose_scissor
     elsif randomised_options == 'paper'
-      "Computer selected paper, #{@name} loses!"
+      @result.comp_win_paper
     end
   end
 
   def scissor
     if randomised_options == 'paper'
-      "Computer selected paper, #{@name} wins!"
+      @result.comp_lose_paper
     elsif randomised_options == 'rock'
-      "Computer selected rock, #{@name} loses!"
+      @result.comp_win_rock
     end
   end
 
   def paper
     if randomised_options == 'rock'
-      "Computer selected rock, #{@name} wins!"
+      @result.comp_lose_rock
     elsif randomised_options == 'scissor'
-      "Computer selected scissor, #{@name} loses!"
+      @result.comp_win_scissor
     end
   end
 
