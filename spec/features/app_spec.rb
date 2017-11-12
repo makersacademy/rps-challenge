@@ -51,7 +51,7 @@ describe 'Rps', :type => :feature do
 
     it 'Should have a the player as winner if rock vs scissor' do
       sign_in_and_play
-      srand(67809)
+      srand(678_09)
       click_button('Rock')
       expect(page).to have_content('And the winner is: Cristhian')
     end

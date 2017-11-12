@@ -1,8 +1,7 @@
 require 'game'
 
 describe Game do
-
-  let(:game){ described_class.new('Player')}
+  let(:game) { described_class.new('Player') }
   context "When starting a new game" do
     it 'Should have a player' do
       expect(game.player).to eq('Player')
@@ -22,7 +21,7 @@ describe Game do
     end
 
     it 'returns player as the winner' do
-      srand(67809)
+      srand(678_09)
       expect(game.start_game('rock')).to eq('Player')
     end
 
@@ -37,7 +36,7 @@ describe Game do
     end
 
     it 'returns the computer as the winner' do
-      srand(67809)
+      srand(678_09)
       expect(game.start_game('paper')).to eq('The Computer')
     end
 
@@ -52,7 +51,7 @@ describe Game do
     end
 
     it 'returns no one as the winner if draw' do
-      srand(67809)
+      srand(678_09)
       expect(game.start_game('scissor')).to eq('No one')
     end
   end

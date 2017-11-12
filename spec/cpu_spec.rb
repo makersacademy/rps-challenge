@@ -14,12 +14,12 @@ describe Cpu do
     end
 
     it 'Should return scissor' do
-      srand(67809)
+      srand(678_09)
       expect(subject.choose_sign).to eq('scissor')
     end
 
     it "chooses a random sign" do
-      expect(['rock','paper','scissor']).to include(subject.choose_sign)
+      expect(['rock', 'paper', 'scissor']).to include(subject.choose_sign)
     end
   end
 
@@ -37,7 +37,7 @@ describe Cpu do
     end
 
     it 'Should return scissor' do
-      srand(67809)
+      srand(678_09)
       subject.choose_sign
       expect(subject.scissor?).to eq(true)
     end
