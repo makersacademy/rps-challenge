@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+require_relative 'spec_helpers'
 
 describe 'Rps', :type => :feature do
 
@@ -14,4 +15,10 @@ describe 'Rps', :type => :feature do
     end
   end
 
+  context 'When starting a new game' do
+    it 'should have the player name' do
+      sign_in_and_play
+      expect(page).to have_content('Welcome Cristhian, please choose an option')
+    end
+  end
 end
