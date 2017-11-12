@@ -5,9 +5,11 @@ class Round
     @player1 = player1
     @player2 = player2
     @controller = {
-      rock: { rock: "T", paper: "L", scissors: "W" },
-      paper: { rock: "W", paper: "T", scissors: "L" },
-      scissors: { rock: "L", paper: "W", scissors: "T" }
+      rock: { rock: "T", paper: "L", scissors: "W", spock: "L", lizard: "W" },
+      paper: { rock: "W", paper: "T", scissors: "L", spock: "W", lizard: "L" },
+      scissors: { rock: "L", paper: "W", scissors: "T", spock: "L", lizard: "W" },
+      spock: { rock: "W", paper: "L", scissors: "W", spock: "T", lizard: "L" },
+      lizard: { rock: "L", paper: "W", scissors: "L", spock: "W", lizard: "T" }
       }
   end
 
@@ -47,7 +49,7 @@ class Round
   end
 
   def randomiser
-    @controller.keys[rand(3)]
+    @controller.keys[rand(5)]
   end
 
   def no_choice_p1

@@ -50,6 +50,12 @@ feature "single play page allows player to make a choice" do
   scenario "allows user to select scissors" do
     expect(page).to have_content "Scissors"
   end
+  scenario "allows user to select spock" do
+    expect(page).to have_content "Spock"
+  end
+  scenario "allows user to select lizard" do
+    expect(page).to have_content "Lizard"
+  end
   scenario "allows user to submit the choice" do
     expect(page).to have_button("Submit")
   end
@@ -80,6 +86,12 @@ feature "multi-play page allows player1 to make a choice" do
   scenario "allows p1 to select scissors" do
     expect(page).to have_content "Scissors"
   end
+  scenario "allows p1 to select spock" do
+    expect(page).to have_content "Spock"
+  end
+  scenario "allows p1 to select lizardr" do
+    expect(page).to have_content "Lizard"
+  end
   scenario "allows p1 to submit the choice" do
     expect(page).to have_button("Submit")
   end
@@ -96,6 +108,12 @@ feature "multi-play page allows player2 to make a choice" do
   end
   scenario "allows p2 to select scissors" do
     expect(page).to have_content "Scissors"
+  end
+  scenario "allows p2 to select spock" do
+    expect(page).to have_content "Spock"
+  end
+  scenario "allows p2 to select lizard" do
+    expect(page).to have_content "Lizard"
   end
   scenario "allows p2 to submit the choice" do
     expect(page).to have_button("Submit")
