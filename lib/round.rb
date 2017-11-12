@@ -17,6 +17,14 @@ class Round
     check_result
   end
 
+  def self.create_instance(player1, player2 = Player.new("Computer"))
+    @round = self.new(player1, player2 = Player.new("Computer"))
+  end
+
+  def self.get_instance
+    @round
+  end
+
   private
 
   def update_tally

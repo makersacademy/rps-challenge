@@ -9,26 +9,26 @@ class Game < Sinatra::Base
 
   post "/names" do
     player1 = Player.new(params[:player_name])
-    $round = Round.new(player1)
+    Round.create_instance(player1)
     redirect "/play"
   end
 
   get "/play" do
-    @player_name = $round.player1.name
+    @player_name = Round.get_instance.player1.name
     erb:play
   end
 
   post "/choice" do
-    $round.player1.add_choice(params[:choice])
+    Round.get_instance.player1.add_choice(params[:choice])
     redirect "/result"
   end
 
   get "/result" do
-    @result = $round.result
-    @p1_name = $round.player1.name
-    @p2_name = $round.player2.name
-    @p1_choice = $round.player1.choice
-    @p2_choice = $round.player2.choice
+    @result = Round.get_instance.result
+    @p1_name = Round.get_instance.player1.name
+    @p2_name = Round.get_instance.player2.name
+    @p1_choice = Round.get_instance.player1.choice
+    @p2_choice = Round.get_instance.player2.choice
     erb:result
   end
 
