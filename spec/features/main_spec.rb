@@ -21,6 +21,4 @@ feature 'User can register name' do
   end
 end
 
-
-
 end
