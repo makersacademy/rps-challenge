@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer'
 
 class RPS < Sinatra::Base
 
@@ -9,19 +11,36 @@ class RPS < Sinatra::Base
  end
 
  post '/startpage' do
-  session[:player_name] = params[:player_name]
+  $player = Player.new(params[:player_name])
+  $computer = Computer.new
   redirect '/play'
  end
 
  get '/play' do
-   @player = session[:player_name]
+   @player = $player.playername
    erb :play
  end
 
 post '/rock' do
-  @player = session[:player_name]
-  erb :rock
+  $player.rock
+  redirect '/outcome'
 end
+
+post '/scissors' do
+  $player.scissors
+  redirect '/outcome'
+end
+
+post '/paper' do
+  $player.paper
+  redirect '/outcome'
+end
+
+get '/outcome' do
+  $computer.enemy
+  erb :outcome
+end
+
 
 run! if app_file == $0
 end
