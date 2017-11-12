@@ -1,7 +1,7 @@
 Welcome <%= @game.player %>, please choose an option <br><br>
 
 <% if @display_winner %>
-And the winner is: <%= @game.player %>
+And the winner is: <%= @display_winner %>
 <%end %>
 
 <form action='/game' method=post>

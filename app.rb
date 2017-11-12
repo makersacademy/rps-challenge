@@ -17,7 +17,7 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @game = session[:player]
-    @display_winner = @game.player_wins?(session[:choice])
+    @display_winner = @game.winner(session[:choice])
     erb(:play)
   end
 

@@ -10,19 +10,35 @@ describe Game do
   end
 
   context 'when playing' do
-    it "Player wins if chooses paper vs rock" do
+
+    it 'returns player as the winner' do
       srand(0)
-      expect(game.player_wins?('paper')).to eq(true)
+      expect(game.winner('paper')).to eq('Player')
     end
 
-    it "Player wins if chooses scissor vs paper" do
+    it 'returns player as the winner' do
       srand(1)
-      expect(game.player_wins?('scissor')).to eq(true)
+      expect(game.winner('scissor')).to eq('Player')
     end
 
-    it "Player wins if chooses rock vs scissor" do
+    it 'returns player as the winner' do
       srand(67809)
-      expect(game.player_wins?('rock')).to eq(true)
+      expect(game.winner('rock')).to eq('Player')
+    end
+
+    it 'returns the computer as the winner' do
+      srand(0)
+      expect(game.winner('rock')).to eq('The Computer')
+    end
+
+    it 'returns the computer as the winner' do
+      srand(1)
+      expect(game.winner('paper')).to eq('The Computer')
+    end
+
+    it 'returns the computer as the winner' do
+      srand(67809)
+      expect(game.winner('paper')).to eq('The Computer')
     end
   end
 

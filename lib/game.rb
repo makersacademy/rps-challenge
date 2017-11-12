@@ -7,12 +7,16 @@ class Game
     @cpu = Cpu.new
   end
 
-  def player_wins?(player_choice)
-    @cpu.choose_sign
-    paper_won(player_choice) || scissor_won(player_choice) || rock_won(player_choice)
+  def winner(player_choice)
+    return @player if player_won(player_choice)
+    'The Computer'
   end
 
   private
+  def player_won(player_choice)
+    @cpu.choose_sign
+    paper_won(player_choice) || scissor_won(player_choice) || rock_won(player_choice)
+  end
 
   def paper_won(player_choice)
     @cpu.rock? && choose_paper?(player_choice)
