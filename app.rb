@@ -11,7 +11,7 @@ class RSPgame < Sinatra::Base
   post '/name' do
     player = Player.new(params[:player_name])
     player2 = Computer.new
-    Game.create=(Game.new(player, player2))
+    Game.create=Game.new(player, player2)
     redirect '/play'
   end
 

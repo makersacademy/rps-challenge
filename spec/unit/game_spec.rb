@@ -22,4 +22,33 @@ describe Game do
     end
   end
 
+  describe '#choice' do
+    it 'should allow player choose an option ' do
+      expect(game.choice('rock')).to eq(:rock)
+    end
+  end
+
+  describe '#random' do
+    it 'should return a random option' do
+      expect(3.times { game.random_pick }).to_not eq(:rock)
+    end
+  end
+
+  describe '#result?' do
+    it 'should win' do
+      game.choice('rock')
+      allow(game).to receive(:random_pick).and_return(:scissors)
+      expect(game.result?).to eq :win
+    end
+    it 'should draw' do
+      game.choice('rock')
+      allow(game).to receive(:random_pick).and_return(:rock)
+      expect(game.result?).to eq :draw
+    end
+    it 'should loose' do
+      game.choice('rock')
+      allow(game).to receive(:random_pick).and_return(:paper)
+      expect(game.result?).to eq :loss
+    end
+  end
 end

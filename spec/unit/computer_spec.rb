@@ -4,6 +4,7 @@ require 'computer'
 describe Computer do
 
   subject(:computer) { described_class.new }
+  let(:options) { double :options }
 
   describe 'initialization' do
     it 'should be an instance of computer class' do
@@ -13,6 +14,6 @@ describe Computer do
     it 'should create only one instance of itself' do
       expect(Computer.create(computer)).to eq computer
     end
-
   end
+
 end
