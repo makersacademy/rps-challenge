@@ -24,7 +24,15 @@ class RPS < Sinatra::Base
   end
 
   post '/rock' do
-    Game.access.player.selection = :rock
+    @game.player.selection = :rock
+  end
+
+  post '/paper' do
+    @game.player.selection = :paper
+  end
+
+  post '/scissors' do
+    @game.player.selection = :scissors
   end
 
   run! if app_file == $PROGRAM_NAME
