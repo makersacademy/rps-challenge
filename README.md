@@ -1,5 +1,12 @@
 # RPS Challenge
 
+Model Layer functionality:
+![alt text](https://jjas.smugmug.com/My-First-Gallery/i-5rg9QMv/A)
+
+View Layer - index page:
+![alt text]https://jjas.smugmug.com/My-First-Gallery/i-mNqj5k5/A
+
+
 Instructions
 -------
 
