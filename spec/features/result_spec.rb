@@ -8,7 +8,7 @@ feature 'Playing the game' do
     fill_in('name', with: 'Gabriela')
     visit '/play'
     srand(1)
-    select 'rock', from: "choices", visible:false
+    select 'rock', from: "choices", visible: false
     click_button('Play')
     expect(page).to have_content "Gabriela rock vs Computer paper You lose!"
   end

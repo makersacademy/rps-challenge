@@ -3,8 +3,7 @@ require 'game'
 describe Game do
   let(:player) { double(:player, name: 'Gabriela') }
   let(:rock) { double(:rock) }
-  let(:game) { described_class = Game.new(player) }
-
+  let(:game) { Game.new(player) }
 
   describe 'Attributes' do
     it 'has a player by default' do
@@ -55,5 +54,4 @@ describe Game do
       expect(game.result).to eq :even
     end
   end
-
 end

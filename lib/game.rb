@@ -17,10 +17,6 @@ class Game
     @game
   end
 
-  def player
-    @player
-  end
-
   def player_choice(weapon)
     @player_choice = weapon
   end
@@ -39,11 +35,7 @@ class Game
           i += 1
         end
       end
-      if i > 0
-        return :win
-      else
-        return :lose
-      end
+      i > 0 ? :win : :lose
     end
   end
 
