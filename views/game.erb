@@ -17,6 +17,19 @@
     <p><%= @player1 %>: <%= @choice %></p>
     <p>CPU: <%= @computer_choice %></p>
     <p><%= @result_message %></p>
+    </br>
+    <h2>Score:</h2>
+    <h3><%= @player1 %>: <%= @player_1_score %> - CPU: <%= @player_2_score %></h3>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+    <form action="/reset" method="post">
+      <button name="Rest" type="submit">Reset</button>
+    </form>
 
   </body>
 </html>
