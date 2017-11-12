@@ -3,11 +3,6 @@ feature 'Enter names' do
     sign_in_and_play
     expect(page).to have_content('Robert VS CPU')
   end
-
-  scenario 'Multiple players can enter their names and see them on the screen' do
-    multi_in_and_play
-    expect(page).to have_content('Robert VS Evelina')
-  end
 end
 
 feature 'Make a choice' do
@@ -37,15 +32,6 @@ feature 'Make a choice' do
     expect(page).to have_content('Robert: Spock')
   end
 end
-
-# feature 'Computer makes a choice' do
-# end
-
-# feature 'Displays who won the match' do
-# end
-
-# feature 'Displays the score' do
-# end
 
 feature 'Player can reset the game' do
   scenario 'Player can click button and reset the score' do

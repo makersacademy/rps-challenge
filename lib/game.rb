@@ -4,7 +4,7 @@ class Game
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
-    @answers = {'Rock' => { Rock: nil, Paper: false, Scissors: true, Lizard: true, Spock: false },
+    @answers = { 'Rock' => { Rock: nil, Paper: false, Scissors: true, Lizard: true, Spock: false },
       'Paper' => { Rock: true, Paper: nil, Scissors: false, Lizard: false, Spock: true },
       'Scissors' => { Rock: false, Paper: true, Scissors: nil, Lizard: true, Spock: false },
       'Lizard' => { Rock: false, Paper: true, Scissors: false, Lizard: nil, Spock: true },

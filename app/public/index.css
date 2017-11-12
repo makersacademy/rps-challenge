@@ -9,7 +9,7 @@ body {
 }
 .container {
   width: 300px;
-  height: 205px;
+  height: 120px;
   text-align: center;
   background-color: rgba(52, 73, 94, 0.7);
   border-radius: 15px;
@@ -35,14 +35,4 @@ input {
   background-color: #2ECC71;
   border-bottom: 4px solid #27AE60;
   outline: none;
-}
-p {
-  font-family: Verdana;
-  color: white;
-  font: Verdana;
-  font-size: 14px;
-}
-
-p.Verdana {
-    font-family: Verdana, Geneva, sans-serif;
 }

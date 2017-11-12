@@ -1,4 +1,4 @@
-require_relative '../app.rb'
+require_relative '../app/app.rb'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
