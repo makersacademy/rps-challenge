@@ -7,6 +7,14 @@ class Game
     @options = ['scissor', 'rock', 'paper']
   end
 
+  def self.store(game)
+    @game = game
+  end
+
+  def self.read
+    @game
+  end
+
   def play(parameter)
     draw?(parameter)
     return rock(parameter) if parameter == 'rock'
