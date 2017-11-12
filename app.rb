@@ -28,6 +28,7 @@ class Rps < Sinatra::Base
 
   get '/attack' do
     @player = $player
+    @computer = $computer
     erb :attack
   end
 
