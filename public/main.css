@@ -23,10 +23,23 @@ h3 {
   text-align: center;
   font-size: 30px;
 }
+
 .button {
   background-color: white;
   font-family: 'Give You Glory', cursive;
   font-size: 40px;
   font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #f9ebc5;
+}
+
+.small-button {
+  background-color: white;
+  font-family: 'Give You Glory', cursive;
+  font-size: 30px;
   border: none;
 }

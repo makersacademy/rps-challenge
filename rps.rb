@@ -6,15 +6,20 @@ require './lib/computer'
 class Rps < Sinatra::Base
 
   enable :sessions
-  
+
+  helpers do
+    def new_game
+      Game.start(Game.new(Player.new(params[:name]), Computer.new))
+    end
+  end
+
   get '/' do
-    "Rock, Paper, Scissors!"
     erb(:index)
   end
 
   post '/name' do
     redirect '/' if params[:name].empty?
-    Game.start(Game.new(Player.new(params[:name]), Computer.new))
+    new_game
     redirect '/play'
   end
 
@@ -34,6 +39,10 @@ class Rps < Sinatra::Base
     @comchoice = Game.read.player2.choice
     @result = Game.read.result
     erb(:result)
+  end
+
+  get '/multiplayer' do
+    "Multiplayer! It's on!"
   end
 
 end

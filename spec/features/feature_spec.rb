@@ -20,6 +20,14 @@ feature "having entered name we go to play page" do
   end
 end
 
+feature "multiplayer" do
+  scenario "user selects multiplayer" do
+    visit('/')
+    click_button("MULTIPLAYER")
+    expect(page).to have_content("Multiplayer! It's on!")
+  end
+end
+
 feature "game scenarios" do
   scenario "player picks ROCK" do
     pick_rock
@@ -37,5 +45,15 @@ feature "game scenarios" do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     pick_rock
     expect(page).to have_content("You win! rock beats scissors!")
+  end
+  scenario "player picks scissors `and comp picks scissors" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+    pick_scissors
+    expect(page).to have_content("It's a draw, you both picked scissors!")
+  end
+  scenario "player picks scissors `and comp picks scissors" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+    pick_rock
+    expect(page).to have_content("You lose! rock gets beaten by paper!")
   end
 end
