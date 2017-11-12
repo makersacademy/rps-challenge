@@ -9,7 +9,7 @@
         <input id="player1" type="hidden" name="player1" value="">
         <input id="player2" type="hidden" name="player2" value="">
       </form>
-      <%= "#{@game.players[0].name} vs. #{@game.players[1].name}" %>
+      <span id="player1name"><%= @game.players[0].name %></span> vs. <span id="player2name"><%= @game.players[1].name %></span>
       <br>
       <%= @confirmation %>
       <br>
