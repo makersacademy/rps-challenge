@@ -27,9 +27,9 @@ Metrics/BlockLength:
 # annoying to fix so a good opportunity to turn devs off of the utility of
 # linting. Hopefully they pick them up later :)
 
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   Enabled: true
-Style/IndentationWidth:
+Layout/IndentationWidth:
   Enabled: true
 Style/AccessorMethodName:
   Enabled: true
@@ -41,11 +41,11 @@ Style/ConstantName:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
-Style/EmptyLineBetweenDefs:
+Layout/EmptyLineBetweenDefs:
   Enabled: true
 Style/EmptyLines:
   Enabled: true
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Enabled: true
 Style/GuardClause:
   Enabled: true
@@ -53,7 +53,7 @@ Style/IdenticalConditionalBranches:
   Enabled: true
 Style/InverseMethods:
   Enabled: true
-Style/LeadingCommentSpace:
+Layout/LeadingCommentSpace:
   Enabled: true
 Style/MethodName:
   Enabled: true
@@ -83,7 +83,7 @@ Style/SelfAssignment:
   Enabled: true
 Style/SpaceAfterColon:
   Enabled: true
-Style/SpaceAfterComma:
+Layout/SpaceAfterComma:
   Enabled: true
 Style/SpaceAfterMethodName:
   Enabled: true
@@ -93,15 +93,15 @@ Style/SpaceAfterSemicolon:
   Enabled: true
 Style/SpaceAroundBlockParameters:
   Enabled: true
-Style/SpaceAroundEqualsInParameterDefault:
+Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 Style/SpaceAroundKeyword:
   Enabled: true
-Style/SpaceAroundOperators:
+Layout/SpaceAroundOperators:
   Enabled: true
-Style/SpaceBeforeBlockBraces:
+Layout/SpaceBeforeBlockBraces:
   Enabled: true
-Style/SpaceBeforeComma:
+Layout/SpaceBeforeComma:
   Enabled: true
 Style/SpaceBeforeComment:
   Enabled: true
@@ -113,23 +113,23 @@ Style/SpaceInLambdaLiteral:
   Enabled: true
 Style/SpaceInsideArrayPercentLiteral:
   Enabled: true
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideBlockBraces:
   Enabled: true
-Style/SpaceInsideBrackets:
+Layout/SpaceInsideBrackets:
   Enabled: true
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: true
-Style/SpaceInsideParens:
+Layout/SpaceInsideParens:
   Enabled: true
 Style/SpaceInsidePercentLiteralDelimiters:
   Enabled: true
 Style/SpaceInsideRangeLiteral:
   Enabled: true
-Style/SpaceInsideStringInterpolation:
+Layout/SpaceInsideStringInterpolation:
   Enabled: true
 Style/SymbolLiteral:
   Enabled: true
-Style/TrailingBlankLines:
+Layout/TrailingBlankLines:
   Enabled: true
 Style/TrivialAccessors:
   Enabled: true
@@ -139,15 +139,15 @@ Style/FileName:
   Enabled: true
 
 # Rubocop doesn't make disabling all cops in a given group easy, so we list...
-Style/AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   Enabled: false
 Style/Alias:
   Enabled: false
-Style/AlignArray:
+Layout/AlignArray:
   Enabled: false
-Style/AlignHash:
+Layout/AlignHash:
   Enabled: false
-Style/AlignParameters:
+Layout/AlignParameters:
   Enabled: false
 Style/AndOr:
   Enabled: false
@@ -185,7 +185,7 @@ Style/ClassMethods:
   Enabled: false
 Style/ClassVars:
   Enabled: false
-Style/ClosingParenthesisIndentation:
+Layout/ClosingParenthesisIndentation:
   Enabled: false
 Style/CollectionMethods:
   Enabled: false
@@ -195,7 +195,7 @@ Style/CommandLiteral:
   Enabled: false
 Style/CommentAnnotation:
   Enabled: false
-Style/CommentIndentation:
+Layout/CommentIndentation:
   Enabled: false
 Style/ConditionalAssignment:
   Enabled: false
@@ -205,7 +205,7 @@ Style/Documentation:
   Enabled: false
 Style/DocumentationMethod:
   Enabled: false
-Style/DotPosition:
+Layout/DotPosition:
   Enabled: false
 Style/DoubleNegation:
   Enabled: false
@@ -225,15 +225,15 @@ Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 Style/EmptyLinesAroundBeginBody:
   Enabled: false
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Style/EmptyLinesAroundExceptionHandlingKeywords:
   Enabled: false
 Style/EmptyLinesAroundMethodBody:
   Enabled: false
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 Style/EmptyLiteral:
   Enabled: false
@@ -255,7 +255,7 @@ Style/FirstMethodArgumentLineBreak:
   Enabled: false
 Style/FirstMethodParameterLineBreak:
   Enabled: false
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   Enabled: false
 Style/FlipFlop:
   Enabled: false
@@ -279,11 +279,11 @@ Style/IfWithSemicolon:
   Enabled: false
 Style/ImplicitRuntimeError:
   Enabled: false
-Style/IndentArray:
+Layout/IndentArray:
   Enabled: false
 Style/IndentAssignment:
   Enabled: false
-Style/IndentHash:
+Layout/IndentHash:
   Enabled: false
 Style/IndentHeredoc:
   Enabled: false
@@ -333,11 +333,11 @@ Style/MultilineMemoization:
   Enabled: false
 Style/MultilineMethodCallBraceLayout:
   Enabled: false
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Enabled: false
 Style/MultilineMethodDefinitionBraceLayout:
   Enabled: false
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: false
 Style/MultilineTernaryOperator:
   Enabled: false
