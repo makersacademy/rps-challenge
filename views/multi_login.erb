@@ -3,12 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Multiplayer sign in</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  	<link rel="stylesheet" href="/master.css">
   </head>
   <body>
-    <form action="/multi_login" method="post">
-      <input type="text" name="player1" placeholder="player1">
-      <input type="text" name="player2" placeholder="player2">
-      <input type="submit" name="" value="Play!">
-    </form>
+    <div class="all-items-centered">
+      <div class="container">
+        <div class="text-center">
+          <h1 class="display-4">Fun with a friend!</h1>
+        </div>
+        <div class="text-center col-lg-4 offset-lg-4">
+          <form action="/multi_login" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="player1" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="player2" placeholder="Friend's name">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-secondary" value="Play!">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

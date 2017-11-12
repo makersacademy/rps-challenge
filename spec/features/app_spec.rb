@@ -1,19 +1,7 @@
 feature 'index' do
-  scenario 'visiting index sign up form' do
-    visit '/'
-    expect(page).to have_content 'Your name:'
-  end
-
   scenario 'enter name and go to play page' do
     sign_in_and_play
     expect(page).to have_content "Hello, Allan"
-  end
-end
-
-feature 'when signed in' do
-  scenario 'shows buttons rock paper scissor' do
-    sign_in_and_play
-    expect(page).to have_content 'rock paper scissors spock lizard'
   end
 end
 

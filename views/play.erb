@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rock, paper, scissors!</title>
+	<title>Rock, paper, scissors, spock, lizard!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/master.css">
 </head>
 <body>
-	<%= "Hello, #{@game.players[0].name}" %>
-	<form action="/move" method="post">
-		<button name="choice" type="submit" value="rock">rock</button>
-		<button name="choice" type="submit" value="paper">paper</button>
-		<button name="choice" type="submit" value="scissors">scissors</button>
-		<button name="choice" type="submit" value="spock">spock</button>
-		<button name="choice" type="submit" value="lizard">lizard</button>
-	</form>
-	Win count: <%= @game.players[0].score %> <br><form action="/reset" method="post"><button type="submit" value="reset">reset</button></form>
-	<%= @confirmation if @confirmation %>
+	<div class="all-items-centered">
+		<div class="container">
+			<div class="text-center">
+				<div class="col-lg-8 offset-lg-2">
+					<h1 class="display-3"><%= "Hello, #{@game.players[0].name}" %></h1>
+					<h4><%= @confirmation if @confirmation %></h4>
+					<form action="/move" method="post">
+						<button class="btn btn-default" name="choice" type="submit" value="rock"><i class="fa fa-hand-rock-o fa-3x" aria-hidden="true"></i></button>
+						<button class="btn btn-default" name="choice" type="submit" value="paper"><i class="fa fa-hand-paper-o fa-3x" aria-hidden="true"></i></button>
+						<button class="btn btn-default" name="choice" type="submit" value="scissors"><i class="fa fa-hand-scissors-o fa-3x" aria-hidden="true"></i></button>
+						<button class="btn btn-default" name="choice" type="submit" value="spock"><i class="fa fa-hand-spock-o fa-3x" aria-hidden="true"></i></button>
+						<button class="btn btn-default" name="choice" type="submit" value="lizard"><i class="fa fa-hand-lizard-o fa-3x" aria-hidden="true"></i></button>
+					</form>
+					<h4>Win count: <%= @game.players[0].score %></h1><form action="/reset" method="post"><button class="btn btn-default" type="submit" value="reset">reset</button></form>
+						<a href="/"><button id="home_button" type="button" class="btn btn-default" name="button">home</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

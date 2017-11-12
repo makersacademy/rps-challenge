@@ -11,7 +11,7 @@ class App < Sinatra::Base
   get '/' do
     session[:player1move] = nil
     session[:player2move] = nil
-    session[:message] = nil
+    session[:message] = 'Awaiting your first move...'
     erb :index
   end
 
@@ -53,7 +53,11 @@ class App < Sinatra::Base
 
   post '/reset' do
     Game.show.reset
-    redirect '/play'
+    if Game.show.players.length == 1
+      redirect '/play'
+    else
+      redirect '/multiplayer'
+    end
   end
 
   run! if app_file == $0
