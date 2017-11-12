@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="game.css">
   </head>
   <body>
-    <p><%= @player1 %> VS CPU</p>
+    <h1><%= @player1 %> VS CPU</h1>
 
     <form action="/result" method="post">
       <button name="Rock" type="submit" value="Rock">Rock</button>
@@ -13,6 +13,10 @@
       <button name="Lizard" type="submit" value="Lizard">Lizard</button>
       <button name="Spock" type="submit" value="Spock">Spock</button>
     </form>
-    
+
+    <p><%= @player1 %>: <%= @choice %></p>
+    <p>CPU: <%= @computer_choice %></p>
+    <p><%= @result_message %></p>
+
   </body>
 </html>
