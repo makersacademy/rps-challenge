@@ -6,5 +6,9 @@
   <h1><%= @player.name %>, you have chosen '<%= @player.selection.to_s.capitalize %>'</h1>
   <h1> The computer's selection is... <%= @cpu.selection.to_s.capitalize %></h1>
   <h1><%= @result %></h1>
+  <h2>Want to play again?</h2>
+  <form action="/play" method="get">
+    <input type="submit" value="Let's go!">
+  </form>
 </body>
 </html>

@@ -5,6 +5,7 @@ require_relative 'lib/cpu'
 
 class RPS < Sinatra::Base
   before do
+    @player = Player.access
     @game = Game.access
   end
 
@@ -13,13 +14,13 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:name])
-    @game = Game.create(player, Cpu.new)
+    @player = Player.create(params[:name])
     redirect '/play'
   end
 
   get '/play' do
-    @player = @game.player.name
+    @game = Game.create(Player.access, Cpu.new)
+    @current_player = @game.player.name
     erb :play
   end
 
@@ -39,9 +40,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @player = @game.player
+    @current_player = @game.player
     @cpu = @game.cpu
-    @result = @game.result_message(@player.name)
+    @result = @game.result_message(@current_player.name)
     erb :result
   end
 
