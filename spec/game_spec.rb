@@ -39,7 +39,7 @@ describe Game do
   describe '#decide_winner' do
     it 'sets the AI Choice' do
       allow(rock).to receive(:beats?)
-      expect { subject.decide_winner(rock) }.to change { subject.ai_choice }
+      expect { subject.decide_winner(rock) }.to(change { subject.ai_choice })
     end
 
     it 'calls beats? on the player choice to decide result' do

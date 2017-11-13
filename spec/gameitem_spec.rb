@@ -35,12 +35,4 @@ describe GameItem do
       expect(scissors.beats?(scissors)).to be(0)
     end
   end
-
-  # describe '#beats' do
-  #   it 'returns the name of the item it beats in RPS' do
-  #     expect(rock.beats).to eq('scissors')
-  #     expect(paper.beats).to eq('rock')
-  #     expect(scissors.beats).to eq('paper')
-  #   end
-  # end
 end

@@ -8,8 +8,11 @@ describe 'results.erb' do
 
   feature 'decides the result' do
     scenario 'page displays which option the player and AI played' do
+      scissors = double(:scissors, name: 'scissors')
+      allow_any_instance_of(Array).to receive(:sample) { scissors }
       play_rock
       expect(page).to have_content('Tom played rock')
+      expect(page).to have_content('Tom wins!')
     end
   end
 end
