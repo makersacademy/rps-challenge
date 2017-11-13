@@ -1,0 +1,12 @@
+<%= Game.instance.player_1.move.type %> vs <%= Game.instance.player_2.move.type %>
+<br> </br>
+<%= Game.instance.result %>
+
+
+<form action="/play" >
+ <input type="submit" value="Play Again">
+</form>
+or
+<form action="/" >
+ <input type="submit" value="Change Player">
+</form>

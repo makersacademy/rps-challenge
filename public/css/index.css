@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font-family: times;
+  background-color: #8B0000;
+  text-align: center;
+}
+
+#header {
+  font-size: 50px;
+  color: #8B4513;
+}
+
+h2 {
+  font-size: 30px;
+  color: #8B4513;
+}
