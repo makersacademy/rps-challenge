@@ -1,6 +1,13 @@
 require 'game'
 
 describe Game do
+  let(:player_rock) { allow(Game.access.player).to receive(:selection).and_return(:rock) }
+  let(:player_paper) { allow(Game.access.player).to receive(:selection).and_return(:paper) }
+  let(:player_scissors) { allow(Game.access.player).to receive(:selection).and_return(:scissors) }
+  let(:cpu_rock) { allow(Game.access.cpu).to receive(:selection).and_return(:rock) }
+  let(:cpu_paper) { allow(Game.access.cpu).to receive(:selection).and_return(:paper) }
+  let(:cpu_scissors) { allow(Game.access.cpu).to receive(:selection).and_return(:scissors) }
+  
   describe '.create' do
     it "Should create a new instance of Game" do
       expect(Game.create('Peter', 'cpu')).to be_an_instance_of(Game)
@@ -21,52 +28,52 @@ describe Game do
   Game.create('Peter', 'cpu')
   describe '#rock_calculator' do
     it "Should return :player_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:rock)
-      allow(Game.access.cpu).to receive(:selection).and_return(:scissors)
+      player_rock
+      cpu_scissors
       expect(Game.access.result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:rock)
-      allow(Game.access.cpu).to receive(:selection).and_return(:paper)
+      player_rock
+      cpu_paper
       expect(Game.access.result).to eq(:cpu_win)
     end
     it "Should return :draw" do
-      allow(Game.access.player).to receive(:selection).and_return(:rock)
-      allow(Game.access.cpu).to receive(:selection).and_return(:rock)
+      player_rock
+      cpu_rock
       expect(Game.access.result).to eq(:draw)
     end
   end
   describe '#paper_calculator' do
     it "Should return :player_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:paper)
-      allow(Game.access.cpu).to receive(:selection).and_return(:rock)
+      player_paper
+      cpu_rock
       expect(Game.access.result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:paper)
-      allow(Game.access.cpu).to receive(:selection).and_return(:scissors)
+      player_paper
+      cpu_scissors
       expect(Game.access.result).to eq(:cpu_win)
     end
     it "Should return :draw" do
-      allow(Game.access.player).to receive(:selection).and_return(:paper)
-      allow(Game.access.cpu).to receive(:selection).and_return(:paper)
+      player_paper
+      cpu_paper
       expect(Game.access.result).to eq(:draw)
     end
   end
   describe '#scissors_calculator' do
     it "Should return :player_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:scissors)
-      allow(Game.access.cpu).to receive(:selection).and_return(:paper)
+      player_scissors
+      cpu_paper
       expect(Game.access.result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
-      allow(Game.access.player).to receive(:selection).and_return(:scissors)
-      allow(Game.access.cpu).to receive(:selection).and_return(:rock)
+      player_scissors
+      cpu_rock
       expect(Game.access.result).to eq :cpu_win
     end
     it "Should return :draw" do
-      allow(Game.access.player).to receive(:selection).and_return(:scissors)
-      allow(Game.access.cpu).to receive(:selection).and_return(:scissors)
+      player_scissors
+      cpu_scissors
       expect(Game.access.result).to eq :draw
     end
   end
