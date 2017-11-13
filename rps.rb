@@ -13,6 +13,10 @@ class Rps < Sinatra::Base
     end
   end
 
+  before do
+    @game = Game.read
+  end
+
   get '/' do
     erb(:index)
   end
@@ -24,20 +28,20 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @p1name = Game.read.player1.name.upcase
+    @p1name = @game.player1.name.upcase
     erb(:play)
   end
 
   post '/choice' do
-    Game.read.player1.select(params[:choice])
+    @game.player1.select(params[:choice])
     redirect '/result'
   end
 
   get '/result' do
-    Game.read.player2.select
-    @p1choice = Game.read.player1.choice
-    @comchoice = Game.read.player2.choice
-    @result = Game.read.result
+    @game.player2.select
+    @p1choice = @game.player1.choice
+    @comchoice = @game.player2.choice
+    @result = @game.result
     erb(:result)
   end
 
