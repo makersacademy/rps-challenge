@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title> RPS Challenge </title>
   </head>
 
   <h1> Rock, Paper, Scissors Game </h1>
 
   <body>
-    <h3> <%= Game.instance.player_name %> </h3>
+    <h3> <%= @player_name %> </h3>
     <h6> Please select an option: </h6>
     <form action="/results" method="post">
       <button class="game_button" name="choice" value="rock"> Rock </button>

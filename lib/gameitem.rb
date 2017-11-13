@@ -1,9 +1,14 @@
 class GameItem
-  attr_reader :name, :beats
+  attr_reader :name
 
   def initialize(name)
     @name   = name
     @beats  = define_beats
+  end
+
+  def beats?(opponent)
+    return 0 if @name == opponent.name
+    @beats == opponent.name
   end
 
   private

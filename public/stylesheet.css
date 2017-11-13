@@ -1,3 +1,7 @@
 .game_button {
   width: 100px;
 }
+
+body {
+  font-family: sans-serif;
+}

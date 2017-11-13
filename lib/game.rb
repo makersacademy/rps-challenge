@@ -27,8 +27,7 @@ class Game
 
   def decide_winner(player_choice)
     @ai_choice = set_ai_choice
-    return 0 if player_choice.name == ai_choice.name
-    player_choice.beats == ai_choice.name
+    player_choice.beats?(@ai_choice)
   end
 
 end

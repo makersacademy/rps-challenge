@@ -3,20 +3,16 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title> RPS Challenge </title>
   </head>
 
   <h1> Rock, Paper, Scissors Game </h1>
 
   <body>
-    <text> <%= Game.instance.player_name %> played
-    <%= Game.instance.player_choice.name %> and the computer played
-    <%= Game.instance.ai_choice.name %> </text>
-    <% if @result == true %>
-    <h3> <%= Game.instance.player_name %> wins! </h3>
-    <% elsif @result == false %>
-    <h3> <%= Game.instance.player_name %> loses... </h3>
-    <% else %>
-    <h3> It's a draw! </h3>
-    <% end %>
+    <p> <%= @player_name %> played <%= @player_choice.name %> and the
+      computer played <%= @ai_choice.name %> </p>
+
+    <p> <%= @result_string %> </p>
+
   </body>
 </html>

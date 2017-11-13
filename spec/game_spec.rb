@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:rock) { double(:rock, name: 'rock', beats: 'scissors') }
-  let(:paper) { double(:paper, name: 'paper', beats: 'rock') }
-  let(:scissors) { double(:scissors, name: 'scissors', beats: 'paper') }
+  let(:rock) { double(:rock, name: 'rock') }
+  let(:paper) { double(:paper, name: 'paper') }
+  let(:scissors) { double(:scissors, name: 'scissors') }
   subject { described_class.new('Tom', [rock, paper, scissors]) }
 
   describe '.instance' do
@@ -37,43 +37,14 @@ describe Game do
   end
 
   describe '#decide_winner' do
-    context 'when player beats the AI' do
-      it 'returns true' do
-        allow(subject).to receive(:set_ai_choice) { scissors }
-        expect(subject.decide_winner(rock)).to be(true)
-
-        allow(subject).to receive(:set_ai_choice) { rock }
-        expect(subject.decide_winner(paper)).to be(true)
-
-        allow(subject).to receive(:set_ai_choice) { paper }
-        expect(subject.decide_winner(scissors)).to be(true)
-      end
+    it 'sets the AI Choice' do
+      allow(rock).to receive(:beats?)
+      expect { subject.decide_winner(rock) }.to change { subject.ai_choice }
     end
 
-    context 'when AI beats the player' do
-      it 'returns false' do
-        allow(subject).to receive(:set_ai_choice) { paper }
-        expect(subject.decide_winner(rock)).to be(false)
-
-        allow(subject).to receive(:set_ai_choice) { scissors }
-        expect(subject.decide_winner(paper)).to be(false)
-
-        allow(subject).to receive(:set_ai_choice) { rock }
-        expect(subject.decide_winner(scissors)).to be(false)
-      end
-    end
-
-    context 'when it results in a draw' do
-      it 'returns 0' do
-        allow(subject).to receive(:set_ai_choice) { rock }
-        expect(subject.decide_winner(rock)).to be(0)
-
-        allow(subject).to receive(:set_ai_choice) { paper }
-        expect(subject.decide_winner(paper)).to be(0)
-
-        allow(subject).to receive(:set_ai_choice) { scissors }
-        expect(subject.decide_winner(scissors)).to be(0)
-      end
+    it 'calls beats? on the player choice to decide result' do
+      expect(rock).to receive(:beats?)
+      subject.decide_winner(rock)
     end
   end
 end
