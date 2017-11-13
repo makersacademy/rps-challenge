@@ -4,8 +4,7 @@ feature 'Allowing the user to choose rock' do
     expect(page).to have_button 'Rock'
   end
   scenario 'Clicking the button assigns the user\'s choice to rock' do
-    sign_in_and_play
-    click_button 'Rock'
+    play_game
     expect(Game.access.player.selection).to eq :rock
   end
 end
