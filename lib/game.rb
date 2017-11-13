@@ -35,9 +35,9 @@ class Game
   end
 
   def result?
-    if WIN_OPTIONS[random_pick] == @at_option
+    if WIN_OPTIONS[@at_random] == @at_option
       :loss
-    elsif random_pick == @at_option
+    elsif @at_random == @at_option
       :draw
     else
       :win

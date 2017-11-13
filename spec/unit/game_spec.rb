@@ -41,17 +41,20 @@ describe Game do
   describe '#result?' do
     it 'should win' do
       game.choice('rock')
-      allow(game).to receive(:random_pick).and_return(:scissors)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+      game.random_pick
       expect(game.result?).to eq :win
     end
     it 'should draw' do
       game.choice('rock')
-      allow(game).to receive(:random_pick).and_return(:rock)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      game.random_pick
       expect(game.result?).to eq :draw
     end
     it 'should loose' do
       game.choice('rock')
-      allow(game).to receive(:random_pick).and_return(:paper)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+      game.random_pick
       expect(game.result?).to eq :loss
     end
   end
