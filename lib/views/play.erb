@@ -1,0 +1,44 @@
+
+<header class="w3-container w3-blue">
+  <h2>Rock/Paper/Scissors</h2>
+</header>
+
+<div class="w3-container w3-padding-0">
+  <div class="w3-row">
+    <div class="w3-container player-box">
+      <label class="w3-text-blue">
+        <h3><%= "#{@player[:player].name} (#{@player[:type]})" %></h3>
+      </label>
+      <div id="game_pieces">
+        <div class="w3-row-padding img-container">
+          <a id="rock" href="/turn?selection=rock">
+            <figure>
+              <img src="/img/Rock.png" width="100px" height="100px" />
+              <figcaption>Rock</figcaption>
+            </figure>
+          </a>
+          <a id="paper" href="/turn?selection=paper">
+            <figure>
+              <img src="/img/Paper.png" width="100px" height="100px" />
+              <figcaption>Paper</figcaption>
+            </figure>
+          </a>
+          <a id="scissors" href="/turn?selection=scissors">
+            <figure>
+              <img src="/img/Scissors.png" width="100px" height="100px" />
+              <figcaption>Scissors</figcaption>
+            </figure>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="w3-container w3-blue">
+  <% if flash[:error] %>
+      <p><%= flash[:error] %></p>
+  <% else %>
+      <p><%= "Turn: #{@player[:player].name}" %></p>
+  <% end %>
+</footer>
