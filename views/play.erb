@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/styling.css">
+<h1>Get ready to play <%= @marketeer.name.capitalize %>!</h1>
+
+<h2>Choose: Rock, Paper or Scissors</h2>
+<form action="/play" method="post">
+   <input type="submit" name="object" value="Rock">
+   <input type="submit" name="object" value="Paper">
+   <input type="submit" name="object" value="Scissors">
+ </form>
+</html>
