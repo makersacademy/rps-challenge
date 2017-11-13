@@ -42,6 +42,8 @@ Feature testing of the pages is achieved through the use of Capybara and Seleniu
 
 ## <a name="demo">Demo</a>
 
+Change into the required directory and run `bundle install`. You can then run `rackup` to start the local server and Following this navigate to your browser of choice and enter your the port on which you are hosting. Now get battling!
+
 <div width="600px">
 	<a>
 		<img src="./public/images/rpsgif.gif" width="600px" height="420px" />
@@ -51,4 +53,4 @@ Feature testing of the pages is achieved through the use of Capybara and Seleniu
 
 # <a name="technologies">Technologies</a>
 
-Development was entirely test driven using Ruby 2.4.1 and RSpec testing framework. Rubocop was used to ensure standardised code formatting. To facilitate the sending of texts following the completion of an order the Twilio API and ruby gems were used.
+Development was entirely test driven using Ruby 2.4.1 and RSpec testing framework. Rubocop was used to ensure standardised code formatting. To facilitate the sending of texts following the completion of an order the Twilio API and ruby gems were used. The Sinatra web framework along with ERB was used to develop the web application. Capybara and Selenium-WebDriver were used to automate browser feature tests.
