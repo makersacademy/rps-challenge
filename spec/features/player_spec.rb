@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:dania) { Player.new('Dania')}
+  subject(:dania) { Player.new('Dania') }
 
   describe '#name' do
     it 'returns the name' do
@@ -11,22 +11,22 @@ describe Player do
 
   describe '#rock' do
     it '@sign will equal to rock' do
-    subject.rock
-    expect(subject.sign).to eq("rock")
-   end
+      subject.rock
+      expect(subject.sign).to eq("rock")
+    end
   end
 
   describe '#scissors' do
     it '@sign will equal to scissors' do
-    subject.scissors
-    expect(subject.sign).to eq("scissors")
-   end
+      subject.scissors
+      expect(subject.sign).to eq("scissors")
+    end
   end
 
   describe '#paper' do
     it '@sign will equal to paper' do
-    subject.paper
-    expect(subject.sign).to eq("paper")
-   end
+      subject.paper
+      expect(subject.sign).to eq("paper")
+    end
   end
 end

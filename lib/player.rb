@@ -1,6 +1,5 @@
 class Player
-
- attr_reader :playername, :sign
+  attr_reader :playername, :sign
 
   def initialize(playername)
     @playername = playername
@@ -18,5 +17,4 @@ class Player
   def paper
     @sign = "paper"
   end
-
 end
