@@ -11,7 +11,7 @@ class WeaponCabinet
 
   def release(wanted_weapon)
     @arsenal.each do |stored_weapon|
-      return stored_weapon if stored_weapon.name == wanted_weapon.to_sym 
+      return stored_weapon if stored_weapon.name == wanted_weapon.to_sym
     end
   end
 end

@@ -16,7 +16,6 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    session[:result] = nil
     player = Player.new(params[:player_name])
     Game.store(Game.new(player))
     redirect('/play')
