@@ -21,6 +21,6 @@ $ rackup
 - Scissors beats Paper
 - Paper beats Rock
 
-![](https://imgur.com/zltGcBU)
-![](https://imgur.com/KAbAgJk)
-![](https://imgur.com/LgcD3ab)
+![](https://i.imgur.com/KAbAgJk.png)
+![](https://i.imgur.com/zltGcBU.png)
+![](https://i.imgur.com/zltGcBU.png)
