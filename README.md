@@ -28,4 +28,29 @@ or
 ```
 rackup
 ```
+5. Then simply go to http://localhost/PORT (replace PORT by the relevant port in your server)
+
 ## Gameplay
+
+1. Decide weather you want to play alone or with a friend:
+
+![Initial Menu](screenshots/SP1)
+
+2. If you select single player you will be prompted to enter your name
+
+![SP Name Submission](screenshots/SP2)
+
+3. If you selected multi-player, the process is similar except you see two fields to populate:
+
+![MP Names Submission](screenshots/MP1)
+
+4. You can then select a weapon for the first combat of the round:
+
+![Select Weapon](screenshots/SP3)
+
+5. If you are playing by yourself, once you submit the results page will automatically be loaded. Otherwise, you should allow the other player to enter their choice and submit it.
+
+6. Once all is submitted you will be prompted to the results page which will let you know the outcome of the combat and allows you to play again in the same round:
+
+![Results](screenshots/SP4)
+
