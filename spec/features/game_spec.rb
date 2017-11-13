@@ -134,6 +134,6 @@ feature "submiting a choice sends us to a results page in multi-player mode" do
     expect(page).to have_content("rock")
   end
   scenario "choice p2 is paper, paper shows on the results page" do
-    expect(page).to have_content("rock")
+    expect(page).to have_content("paper")
   end
 end
