@@ -1,0 +1,26 @@
+body {
+  font-family: helvetica;
+  text-align: center;
+  background-color: black;
+}
+
+input[type="Submit"] {
+  font-family: helvetica;
+  font-size: 30px;
+}
+
+h1 {
+  color: white;
+  margin: 2em 0 1em 0;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px;
+  color: white;
+}
+
+a {
+  font-size: 20px;
+  color: white;
+}
