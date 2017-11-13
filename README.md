@@ -22,5 +22,5 @@ $ rackup
 - Paper beats Rock
 
 ![](https://i.imgur.com/KAbAgJk.png)
-![](https://i.imgur.com/zltGcBU.png)
+![](https://i.imgur.com/LgcD3ab.png)
 ![](https://i.imgur.com/zltGcBU.png)
