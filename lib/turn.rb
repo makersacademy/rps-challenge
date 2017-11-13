@@ -7,7 +7,7 @@ class Turn
   SCISSORS = 'scissors'
   POINT = 1
 
-attr_reader :opponents_play, :choice, :score
+  attr_reader :opponents_play, :choice, :score
 
   def initialize
     @choice = ''
@@ -31,22 +31,18 @@ attr_reader :opponents_play, :choice, :score
   end
 
   def win?
-    if @choice == @opponents_play
+    if @choice == 'rock' && @opponents_play == 'scissors'
+      true
+    elsif @choice == 'paper' && @opponents_play == 'rock'
+      true
+    elsif @choice == 'scissors' && @opponents_play == 'paper'
+      true
+    elsif @choice == @opponents_play
       nil
-    else
-    @wins = @choice && @opponents_play
-    case @wins
-    when 'rock', 'scissors'
-      true
-    when 'scissors', 'paper'
-      true
-    when 'paper', 'rock'
-      true
     else
       false
     end
   end
-end
 
   def finish
     if win?

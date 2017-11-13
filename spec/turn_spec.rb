@@ -16,7 +16,7 @@ describe Turn do
     end
   end
   let(:turn) { described_class.new }
-  before(:each) { stub_const('Opponent', MockRock) } 
+  before(:each) { stub_const('Opponent', MockRock) }
   describe '#rock' do
     it 'should set a variable to value rock' do
       turn.rock
@@ -72,6 +72,12 @@ describe Turn do
       turn.rock
       turn.opponents_play
       expect(turn.win?).to eq nil
+    end
+    it 'should return false if player chooses rock and opponent generates scissors' do
+      stub_const('Opponent', MockScissors)
+      turn.paper
+      turn.opponents_play
+      expect(turn.win?).to eq false
     end
   end
 end
