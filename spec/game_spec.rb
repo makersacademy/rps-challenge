@@ -7,7 +7,8 @@ describe Game do
   let(:cpu_rock) { allow(Game.access.cpu).to receive(:selection).and_return(:rock) }
   let(:cpu_paper) { allow(Game.access.cpu).to receive(:selection).and_return(:paper) }
   let(:cpu_scissors) { allow(Game.access.cpu).to receive(:selection).and_return(:scissors) }
-  
+  let(:result) { Game.access.result }
+
   describe '.create' do
     it "Should create a new instance of Game" do
       expect(Game.create('Peter', 'cpu')).to be_an_instance_of(Game)
@@ -30,51 +31,51 @@ describe Game do
     it "Should return :player_win" do
       player_rock
       cpu_scissors
-      expect(Game.access.result).to eq(:player_win)
+      expect(result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
       player_rock
       cpu_paper
-      expect(Game.access.result).to eq(:cpu_win)
+      expect(result).to eq(:cpu_win)
     end
     it "Should return :draw" do
       player_rock
       cpu_rock
-      expect(Game.access.result).to eq(:draw)
+      expect(result).to eq(:draw)
     end
   end
   describe '#paper_calculator' do
     it "Should return :player_win" do
       player_paper
       cpu_rock
-      expect(Game.access.result).to eq(:player_win)
+      expect(result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
       player_paper
       cpu_scissors
-      expect(Game.access.result).to eq(:cpu_win)
+      expect(result).to eq(:cpu_win)
     end
     it "Should return :draw" do
       player_paper
       cpu_paper
-      expect(Game.access.result).to eq(:draw)
+      expect(result).to eq(:draw)
     end
   end
   describe '#scissors_calculator' do
     it "Should return :player_win" do
       player_scissors
       cpu_paper
-      expect(Game.access.result).to eq(:player_win)
+      expect(result).to eq(:player_win)
     end
     it "Should return :cpu_win" do
       player_scissors
       cpu_rock
-      expect(Game.access.result).to eq :cpu_win
+      expect(result).to eq :cpu_win
     end
     it "Should return :draw" do
       player_scissors
       cpu_scissors
-      expect(Game.access.result).to eq :draw
+      expect(result).to eq :draw
     end
   end
 end
