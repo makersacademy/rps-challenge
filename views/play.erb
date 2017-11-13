@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/play.css">
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div>
+      <h1> Hello <div id="name"> <%=@player1%> </div> Let's play rock paper scissors!</h1>
+    </div>
+    <div>
+      <h2> Click a button: </h2>
+    </div>
+    <div>
+      <form action="/result" method="post">
+        <input type="submit" value="Rock" name="choice">
+        <input type="submit" value="Paper" name="choice">
+        <input type="submit" value="Scissors" name="choice">
+      </form>
+    </div>
+  </body>
+</html>
