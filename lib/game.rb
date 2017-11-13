@@ -15,11 +15,12 @@ class Game
   end
 
   def result_message(player)
-    if result == :player_win
+    case result
+    when :player_win
       "Congratulations, #{player}, you won Rock-Paper-Scissors!"
-    elsif result == :cpu_win
+    when :cpu_win
       "Sorry, #{player}, looks like you lost the game. Better luck next time!"
-    elsif result == :draw
+    when :draw
       "You both chose the same thing - the game is a draw!"
     end
   end
@@ -36,31 +37,34 @@ class Game
   end
 
   def rock_calculator
-    if @cpu.selection == :scissors
+    case @cpu.selection
+    when :scissors
       :player_win
-    elsif @cpu.selection == :paper
+    when :paper
       :cpu_win
-    else
+    when :rock
       :draw
     end
   end
 
   def paper_calculator
-    if @cpu.selection == :rock
+    case @cpu.selection
+    when :rock
       :player_win
-    elsif @cpu.selection == :scissors
+    when :scissors
       :cpu_win
-    else
+    when :paper
       :draw
     end
   end
 
   def scissors_calculator
-    if @cpu.selection == :paper
+    case @cpu.selection
+    when :paper
       :player_win
-    elsif @cpu.selection == :rock
+    when :rock
       :cpu_win
-    else
+    when :scissors
       :draw
     end
   end
