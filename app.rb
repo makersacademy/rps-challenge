@@ -22,7 +22,8 @@ class RPS < Sinatra::Base
   end
 
   post '/chosen' do
-    
+    @game.choice = params[:choice]
+    @game.computer_choice
     redirect '/play'
   end
 

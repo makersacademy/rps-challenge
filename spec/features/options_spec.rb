@@ -12,4 +12,11 @@ feature 'game display page' do
     click_button "Rock"
     expect(page).to have_content "You chose Rock"
   end
+
+  scenario 'displays the computers choice of R/P/S' do
+    name_and_play
+    srand(2)
+    click_button "Rock"
+    expect(page).to have_content "Computer chose Paper"
+  end
 end

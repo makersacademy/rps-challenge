@@ -1,6 +1,7 @@
 class Game
 
   attr_reader :player1
+  attr_accessor :choice
 
   def initialize(player1)
     @player1 = player1
@@ -19,5 +20,12 @@ class Game
     "You chose #{choice}"
   end
 
+  def computer_choice
+    @options.sample.to_s.capitalize
+  end
+
+  def computer_choice_message(choice)
+    "Computer chose #{choice}"
+  end
 
 end

@@ -15,5 +15,18 @@ describe Game do
     end
   end
 
+  describe "#computer_choice_message" do
+    it "should print which option the computer chose" do
+      srand(1)
+      expect(game.computer_choice_message(game.computer_choice)).to eq "Computer chose Paper"
+    end
+  end
+
+  describe "#computer_choice" do
+    it "should choose a random option" do
+      srand(1)
+      expect(game.computer_choice).to eq "Paper"
+    end
+  end
 
 end
