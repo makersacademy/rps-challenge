@@ -11,6 +11,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+    @player_name = params[:player_name]
     erb :result
   end
 
