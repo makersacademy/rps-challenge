@@ -11,7 +11,7 @@ describe Player do
   end
   describe '#choose' do
     it "raises an error if an unavailable choice is made" do
-      expect{ mortimer.choose(axe) }.to raise_error "You can't use an axe you oaf! Try again"
+      expect{ mortimer.choose('axe') }.to raise_error "You can't use axe you oaf! Try again"
     end
   end
 end

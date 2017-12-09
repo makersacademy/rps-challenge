@@ -6,8 +6,9 @@ class Player
     @name = name.capitalize
   end
 
-  def choose(choice)
-    Choice.new(choice)
+  def choose(weapon)
+    @choice = Choice.new(weapon)
+    raise "You can't use #{@choice.weapon} you oaf! Try again" if !@choice.available?
   end
 
 end
