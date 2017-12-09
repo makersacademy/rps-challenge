@@ -7,11 +7,11 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @player_name = params[:player_name]
-    erb :game
+    erb :play
   end
 
   post '/result' do
-    'Rock vs'
+    erb :result
   end
 
   run! if app_file == $0
