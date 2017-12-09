@@ -4,7 +4,7 @@ require_relative '../../app'
 Capybara.app = RpsApp
 
 feature 'Welcome page' do
-  scenario 'click start game buttun' do
+  scenario 'click start game button' do
     visit('/')
     click_link 'Start Game'
 

@@ -1,1 +1,10 @@
 <h1>Start the game!</h1>
+<h2>Player 1: <%= @player_1.name %>  </h2>
+<br>
+  <form action="/show_down" method="post">
+    <button type="submit" value="paper" name="choice">Paper</button>
+    <button type="submit" value="rock" name="choice">Rock</button>
+    <button type="submit" value="scissor" name="choice">Scissor</button>
+  </form>
+<br>
+<h2>Player 2: <%= @player_2.name %>  </h2>
