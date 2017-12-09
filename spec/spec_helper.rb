@@ -1,6 +1,9 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './app'
+require 'capybara'
+require 'rspec'
 
 Capybara.app = RPS
 
