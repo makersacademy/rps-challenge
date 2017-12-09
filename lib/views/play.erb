@@ -2,18 +2,18 @@
 
 <h2><%= @player %> has joined a game of Rock Paper Scissors<h2>
 
-<form action="/result" method="post">
+<form action="/choice" method="post">
   <div>
-    <label for="choice">
+    <label for="player_choice">
       Please choose one<br>
       <input type="radio" id="choiceRock"
-             name="choice" value="rock">
+             name="player_choice" value="Rock">
       <label for="choiceRock">Rock</label>
       <input type="radio" id="choicePaper"
-             name="choice" value="paper">
+             name="player_choice" value="Paper">
       <label for="choicePaper">Paper</label>
       <input type="radio" id="choiceScissors"
-             name="choice" value="scissors">
+             name="player_choice" value="Scissors">
       <label for="choiceScissors">Scissors</label>
     </label>
   </div>

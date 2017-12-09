@@ -3,5 +3,6 @@ feature "play buttons" do
     sign_in_and_play
 
     expect(page).to have_content("Rock Paper Scissors")
+    expect(page).to have_button("Go")
   end
 end
