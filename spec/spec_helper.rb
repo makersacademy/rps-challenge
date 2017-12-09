@@ -1,6 +1,10 @@
+ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
+require 'rspec'
+require 'capybara'
 require 'simplecov'
 require 'simplecov-console'
+require File.expand_path '../../app.rb', __FILE__
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,3 +20,5 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+Capybara.app = RPS
