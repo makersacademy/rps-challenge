@@ -11,4 +11,9 @@ class Player
     raise "You can't use #{@choice.weapon} you oaf! Try again" if !@choice.available?
   end
 
+  def random_weapon
+    randomiser = [:rock, :paper, :scissors, :spock, :lizard].sample
+    choose(randomiser)
+  end
+
 end

@@ -3,15 +3,14 @@ require_relative 'choice'
 
 class Game
 
-  attr_reader :P1, :P2
+  attr_reader :P1
 
-  def initialize(args)
-    @P1 = Player.new(args[:name1])
-    @P2 = Player.new(args[:name2])
+  def initialize(player_name)
+    @P1 = Player.new(player_name)
   end
 
-  def self.create(args)
-    @game = Game.new({ :name1 => args[:name1], :name2 => args[:name2] })
+  def self.create(player_name)
+    @game = Game.new(player_name)
   end
 
   def self.instance

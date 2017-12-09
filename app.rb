@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/player.rb'
+require_relative './lib/game.rb'
+require_relative './lib/choice.rb'
 
 class Battle < Sinatra::Base
   set :session_secret, 'supersecret'
@@ -8,7 +11,7 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    @current_game = Game.create({ :name1 => params[:P1], :name2 => params[:P2] })
+    @current_game = Game.create(params[:Challenger])
     erb(:play)
   end
 
@@ -16,7 +19,8 @@ class Battle < Sinatra::Base
     @current_game = Game.instance
   end
 
-  post '/fight' do
-
+  post '/fight_ralph' do
+    @p1_weapon = @current_game.p1.choose(params[weapon])
+    erb(:fight_ralph)
   end
 end

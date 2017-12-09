@@ -14,4 +14,9 @@ describe Player do
       expect{ mortimer.choose('axe') }.to raise_error "You can't use axe you oaf! Try again"
     end
   end
+  describe "#random_weapon" do
+    it "should return an available weapon" do
+      expect{ mortimer.random_weapon }.not_to raise_error
+    end
+  end
 end
