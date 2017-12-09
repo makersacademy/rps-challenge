@@ -5,4 +5,9 @@ class Player
   def initialize(name)
     @name = name.capitalize
   end
+
+  def choose(choice)
+    Choice.new(choice)
+  end
+
 end
