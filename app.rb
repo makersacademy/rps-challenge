@@ -16,9 +16,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = params[:player_name]
-    'Alan, are you ready to play Rock Paper Scissors?'
+    @player_name = session[:player_name]
     erb(:play)
+  end
+
+  post '/result' do
+    @player_name = session[:player_name]
+
+
   end
 
   run! if app_file == $0
