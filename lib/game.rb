@@ -46,14 +46,14 @@ class Game
   end
 
   def tie_message
-    puts "It's a tie!"
+    "It's a tie!"
   end
 
   def ralph_winner
-    puts "Ralph has vanquished his puny foe"
+    "Ralph has vanquished his puny foe"
   end
 
   def player_winner
-    puts "You defeated Ralph! For now..."
+    "You defeated Ralph! For now..."
   end
 end
