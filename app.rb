@@ -5,7 +5,7 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
+  post '/challenge' do
     @player_name = params[:player_name]
     erb(:play)
   end
