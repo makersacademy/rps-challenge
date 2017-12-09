@@ -28,4 +28,7 @@ class Game
     "Computer chose #{choice}"
   end
 
+  def game_started?
+    !self.choice.nil?
+  end
 end

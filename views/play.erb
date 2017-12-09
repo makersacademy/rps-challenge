@@ -5,4 +5,4 @@
  <input type="submit" value="Paper!" name="choice">
  <input type="submit" value="Scissors!" name="choice">
 </form>
-<%= @game.choice_message(@game.choice) %> <%= @game.computer_choice_message(@game.computer_choice) %>
+<%= @game.choice_message(@game.choice) if @game.game_started? %> <%= @game.computer_choice_message(@game.computer_choice) if @game.game_started? %>

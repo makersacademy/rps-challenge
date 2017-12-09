@@ -29,4 +29,15 @@ describe Game do
     end
   end
 
+  describe "#game_started" do
+    it "returns false if you havent chosen R/P/S" do
+      expect(game.game_started?).to eq false
+    end
+
+    it "returns true if you have played a round" do
+      game.choice = :rock
+      expect(game.game_started?).to eq true
+    end
+  end
+
 end
