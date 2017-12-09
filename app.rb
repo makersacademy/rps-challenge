@@ -9,6 +9,7 @@ class RpsApp < Sinatra::Base
   end
 
   get '/names' do
+    $game = Game.new
     erb :names
   end
 
@@ -28,12 +29,11 @@ class RpsApp < Sinatra::Base
   end
 
   post '/show_down' do
-    $game = Game.new
     @game = $game
     @player_1 =$player_1
     @player_2 = $player_2
     @game.record_player_1_choice(params[:choice])
-  
+
     erb :show_down
   end
 

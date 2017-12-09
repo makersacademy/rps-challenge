@@ -30,7 +30,7 @@ describe Game do
       subject.record_player_1_choice('paper')
       subject.record_automatic_player_choice
 
-      expect(subject.result).to eq('win')
+      expect(subject.result).to eq('you have won')
     end
    end
 
@@ -43,7 +43,7 @@ describe Game do
        subject.record_player_1_choice('scissor')
        subject.record_automatic_player_choice
 
-       expect(subject.result).to eq('lost')
+       expect(subject.result).to eq('you have lost')
      end
     end
 
@@ -56,7 +56,7 @@ describe Game do
         subject.record_player_1_choice('rock')
         subject.record_automatic_player_choice
 
-        expect(subject.result).to eq('draw')
+        expect(subject.result).to eq('you have drew')
       end
      end
 

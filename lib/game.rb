@@ -10,12 +10,12 @@ class Game
   end
 
   def result
-    return "draw" if @automatic_choice == @choice
+    return "you have drew" if @automatic_choice == @choice
 
     case @choice
-    when "paper" then @automatic_choice == 'rock' ? 'win' : 'lost'
-    when "rock" then @automatic_choice == 'scissor' ? 'win' : 'lost'
-    when "scissor" then @automatic_choice == 'paper' ? 'win' : 'lost'
+    when "paper" then @automatic_choice == 'rock' ? 'you have won' : 'you have lost'
+    when "rock" then @automatic_choice == 'scissor' ? 'you have won' : 'you have lost'
+    when "scissor" then @automatic_choice == 'paper' ? 'you have won' : 'you have lost'
     end
   end
 
