@@ -1,4 +1,5 @@
-<%= @current_game.fight_ralph %>
+You chose <%=@current_game.P1.choice.weapon%>, Ralph chose <%=@current_game.ralph.choice.weapon%>
+<%= @result %>
 
 Fight again?
 <form align="center" action='/fight_ralph' method='post'>
