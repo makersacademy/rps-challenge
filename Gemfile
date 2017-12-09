@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.4.2'
 
 gem 'rake'
 gem 'sinatra'
 
 group :test do
   gem 'capybara'
+  gem 'pry'
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov', require: false
