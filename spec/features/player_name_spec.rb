@@ -1,8 +1,6 @@
 feature 'Player name' do
   scenario 'player 1 has a name' do
-    visit '/'
-    fill_in :player1, with: "George"
-    click_button "Start Game"
+    name_and_play
     expect(page).to have_content "George vs Computer"
   end
 end

@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/game'
+require_relative './lib/player'
 
 class RPS < Sinatra::Base
 
@@ -18,6 +19,11 @@ class RPS < Sinatra::Base
 
   get '/play' do
     erb :play
+  end
+
+  post '/chosen' do
+    
+    redirect '/play'
   end
 
   run! if app_file == $0

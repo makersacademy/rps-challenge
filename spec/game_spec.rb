@@ -9,4 +9,11 @@ describe Game do
     end
   end
 
+  describe "#choice_message" do
+    it "should print which option you chose" do
+      expect(game.choice_message("Rock")).to eq "You chose Rock"
+    end
+  end
+
+
 end

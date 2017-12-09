@@ -6,6 +6,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative '../lib/game'
 require_relative '../lib/player'
+require_relative './features/web_helpers'
 require File.expand_path '../../app.rb', __FILE__
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
