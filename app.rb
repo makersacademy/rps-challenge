@@ -8,8 +8,15 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    @p1 = Player.new(params[:Challenger])
-    @p1_name = @p1.name
+    @current_game = Game.create({ :name1 => params[:P1], :name2 => params[:P2] })
     erb(:play)
+  end
+
+  before do
+    @current_game = Game.instance
+  end
+
+  post '/fight' do
+
   end
 end

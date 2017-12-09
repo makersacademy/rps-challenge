@@ -1,1 +1,10 @@
 Welcome, young <%=@p1_name%>!
+Choose your weapon!
+<form align="center" action='/fight' method='post'>
+  <label for= 'Weapon'>Name:<label>
+    <input type= 'text'  name= 'Weapon'>
+  </label>
+  <div align="center">
+    <input type= 'submit' value= 'Equip'>
+  </div>
+</form>
