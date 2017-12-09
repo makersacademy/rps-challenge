@@ -1,0 +1,25 @@
+require 'sinatra/base'
+
+class RPS < Sinatra::Base
+
+  enable :sessions
+
+
+  get '/' do
+    'Welcome to Rock Paper Scissors'
+    erb(:index)
+  end
+
+  post '/play' do
+    session[:player_name] = params[:player_name]
+    redirect "/play"
+  end
+
+  get '/play' do
+    @player_name = params[:player_name]
+    'Alan, are you ready to play Rock Paper Scissors?'
+    erb(:play)
+  end
+
+  run! if app_file == $0
+end
