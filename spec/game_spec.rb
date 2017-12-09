@@ -44,7 +44,7 @@ describe Game do
     it "decides which person won" do
       srand(3)
       game.choice = :rock
-      expect(game.who_won(game.choice, game.computer_choice)).to eq "name1"
+      expect(game.who_won(game.choice, game.computer_choice)).to eq "name1 wins!"
     end
   end
 

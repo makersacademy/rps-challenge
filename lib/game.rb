@@ -33,13 +33,14 @@ class Game
   end
 
   def who_won(choice1, choice2)
+    return "Draw!" if choice1 == choice2
     case
       when choice1 == :rock
-        choice2 == :scissors ? @player1.name : "Computer"
+        choice2 == :scissors ? "#{@player1.name} wins!" : "Computer wins!"
       when choice1 == :paper
-        choice2 == :rock ? @player1.name : "Computer"
+        choice2 == :rock ? "#{@player1.name} wins!" : "Computer wins!"
       when choice1 == :scissors
-        choice2 == :paper ? @player1.name : "Computer"
+        choice2 == :paper ? "#{@player1.name} wins!" : "Computer wins!"
     end
   end
 end

@@ -6,4 +6,4 @@
  <input type="submit" value="scissors" name="choice">
 </form>
 <%= @game.choice_message(@game.choice) if @game.game_started? %> <%= @game.computer_choice_message(@game.c_choice) if @game.game_started? %><br>
-<%= "#{@game.who_won(@game.choice, @game.c_choice)} wins!" if @game.game_started? %>
+<%= "#{@game.who_won(@game.choice, @game.c_choice)}" if @game.game_started? %>
