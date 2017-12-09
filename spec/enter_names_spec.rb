@@ -7,8 +7,8 @@ feature 'name entry' do
   end
   scenario 'Submitting names' do
     visit '/'
-    fill_in 'Challenger', with: "Mortimer"
+    fill_in 'Challenger', with: "Gerald"
     click_button "Battle!"
-    expect(page).to have_content "Welcome, young Mortimer!"
+    expect(page).to have_content "Welcome, young Gerald!"
   end
 end
