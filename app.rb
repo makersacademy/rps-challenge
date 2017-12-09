@@ -21,6 +21,7 @@ class Battle < Sinatra::Base
 
   post '/fight_ralph' do
     @p1_weapon = @current_game.p1.choose(params[weapon])
+    @ralph_weapon = @current_game.ralph.random_weapon
     erb(:fight_ralph)
   end
 end

@@ -3,7 +3,7 @@ class Choice
   attr_reader :weapon
 
   def initialize(weapon)
-    @weapon = weapon
+    @weapon = weapon.to_sym
   end
 
   def available?(weapon = @weapon)
