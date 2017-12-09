@@ -12,4 +12,12 @@
 
   <body style="color: #e0bb16">
     <h1 ><%= @game.player.name %> vs. <%= @game.computer.name %>  </h1>
+    <h2 style="margin-top:50px;">Choose your weapon</h2>
+     <div style="margin-top:30px;">
+       <form action="/choice" method="post">
+         <input type="submit" name="player_choice" value="rock">
+         <input type="submit" name="player_choice" value="paper">
+         <input type="submit" name="player_choice" value="scissors">
+       </form>
+     </div>
   </body>

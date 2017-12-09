@@ -22,6 +22,17 @@ post '/game' do
   erb(:game)
 end
 
+post '/choice' do
+  weapon = params[:player_choice].to_sym
+  @game.player_choice(weapon)
+  redirect '/choice'
+end
+
+get '/choice' do
+  @game.computer_weapon
+  erb(:game)
+end
+
 
 run! if app_file == $0
 end

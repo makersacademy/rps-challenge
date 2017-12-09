@@ -22,7 +22,6 @@ class Game
   end
 
   def player_choice(weapon)
-    p weapon
     raise "not a possible weapon" unless WEAPONS.include? weapon
     @player_weapon = weapon
   end
@@ -30,9 +29,6 @@ class Game
   def computer_weapon
     @computer_weapon = @computer.weapon
   end
-
-
-
 
   # def result
   #   RULES[player_choice][computer.choice()]? :win : :lose
