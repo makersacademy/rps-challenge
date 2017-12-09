@@ -11,21 +11,21 @@ describe Game do
 
   describe "#choice_message" do
     it "should print which option you chose" do
-      expect(game.choice_message("Rock")).to eq "You chose Rock"
+      expect(game.choice_message("rock")).to eq "You chose rock"
     end
   end
 
   describe "#computer_choice_message" do
     it "should print which option the computer chose" do
       srand(1)
-      expect(game.computer_choice_message(game.computer_choice)).to eq "Computer chose Paper"
+      expect(game.computer_choice_message(game.computer_choice)).to eq "Computer chose paper"
     end
   end
 
   describe "#computer_choice" do
     it "should choose a random option" do
       srand(1)
-      expect(game.computer_choice).to eq "Paper"
+      expect(game.computer_choice).to eq :paper
     end
   end
 
@@ -37,6 +37,14 @@ describe Game do
     it "returns true if you have played a round" do
       game.choice = :rock
       expect(game.game_started?).to eq true
+    end
+  end
+
+  describe "#who_won" do
+    it "decides which person won" do
+      srand(3)
+      game.choice = :rock
+      expect(game.who_won(game.choice, game.computer_choice)).to eq "name1"
     end
   end
 

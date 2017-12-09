@@ -1,7 +1,7 @@
 class Game
 
   attr_reader :player1
-  attr_accessor :choice
+  attr_accessor :choice, :c_choice
 
   def initialize(player1)
     @player1 = player1
@@ -21,14 +21,25 @@ class Game
   end
 
   def computer_choice
-    @options.sample.to_s.capitalize
+    @options.sample
   end
 
   def computer_choice_message(choice)
-    "Computer chose #{choice}"
+    "Computer chose #{choice.to_s}"
   end
 
   def game_started?
     !self.choice.nil?
+  end
+
+  def who_won(choice1, choice2)
+    case
+      when choice1 == :rock
+        choice2 == :scissors ? @player1.name : "Computer"
+      when choice1 == :paper
+        choice2 == :rock ? @player1.name : "Computer"
+      when choice1 == :scissors
+        choice2 == :paper ? @player1.name : "Computer"
+    end
   end
 end

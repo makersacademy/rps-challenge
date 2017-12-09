@@ -1,8 +1,9 @@
 <%= @game.player1.name %> vs Computer <br> <br>
 <%= @game.player1.name %>. Rock, Paper, or Scissors? <br><br>
 <form action="/chosen" method="post">
- <input type="submit" value="Rock!" name="choice">
- <input type="submit" value="Paper!" name="choice">
- <input type="submit" value="Scissors!" name="choice">
+ <input type="submit" value="rock" name="choice">
+ <input type="submit" value="paper" name="choice">
+ <input type="submit" value="scissors" name="choice">
 </form>
-<%= @game.choice_message(@game.choice) if @game.game_started? %> <%= @game.computer_choice_message(@game.computer_choice) if @game.game_started? %>
+<%= @game.choice_message(@game.choice) if @game.game_started? %> <%= @game.computer_choice_message(@game.c_choice) if @game.game_started? %><br>
+<%= "#{@game.who_won(@game.choice, @game.c_choice)} wins!" if @game.game_started? %>
