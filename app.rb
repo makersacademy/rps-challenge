@@ -10,5 +10,9 @@ class RPS < Sinatra::Base
     erb :game
   end
 
+  post '/result' do
+    'Rock vs'
+  end
+
   run! if app_file == $0
 end
