@@ -1,1 +1,11 @@
 <%= @current_game.fight_ralph %>
+
+Fight again?
+<form align="center" action='/fight_ralph' method='post'>
+  <label for= 'weapon'>Weapon:<label>
+    <input type= 'text'  name= 'weapon'>
+  </label>
+  <div align="center">
+    <input type= 'submit' value= 'Fight Ralph!'>
+  </div>
+</form>
