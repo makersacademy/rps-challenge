@@ -10,8 +10,8 @@ class Player
     @choice = Choice.new(weapon)
   end
 
-  def random_weapon
-    randomiser = [:rock, :paper, :scissors, :spock, :lizard].sample
+  def random_weapon(randomiser = nil)
+    randomiser ||= [:rock, :paper, :scissors, :spock, :lizard].sample
     choose(randomiser)
   end
 end

@@ -18,12 +18,15 @@ class Game
     @game
   end
 
-  def fight_ralph
+  def fight_ralph(ralph_weapon = nil)
     @ralph.random_weapon
+    ralph_weapon ||= @ralph.choice.weapon
     player_num = name_to_number(@P1.choice.weapon)
-    ralph_num = name_to_number(@ralph.choice.weapon)
-    ralph_num == player_num ? ( puts "It's a tie!" ) : (((ralph_num - player_num) % 5) < 3 ? (puts "Ralph has vanquished his puny foe") : (puts "You defeated Ralph!" ))
+    ralph_num = name_to_number(ralph_weapon)
+    ralph_num == player_num ? ( tie_message ) : (((ralph_num - player_num) % 5) < 3 ? (ralph_winner) : (player_winner))
   end
+
+  private
 
   def name_to_number(weapon)
     case weapon
@@ -40,5 +43,17 @@ class Game
       else
         return "Not defined"
     end
+  end
+
+  def tie_message
+    puts "It's a tie!"
+  end
+
+  def ralph_winner
+    puts "Ralph has vanquished his puny foe"
+  end
+
+  def player_winner
+    puts "You defeated Ralph! For now..."
   end
 end
