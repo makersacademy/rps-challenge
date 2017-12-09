@@ -1,8 +1,6 @@
 feature 'enter name' do
   scenario 'player enters name and receives confirmation' do
-    visit('/')
-    fill_in :player_name, with: 'Jim'
-    click_button 'Submit'
+    sign_up_and_play
     expect(page).to have_content('Jim vs. Machine')
   end
 end
