@@ -10,5 +10,4 @@ feature "Sign up" do
     expect(page).to have_content("Welcome Xin")
     find_button("Ready to play!").click
   end
-
 end

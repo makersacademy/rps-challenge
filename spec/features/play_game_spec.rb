@@ -7,5 +7,6 @@ feature "play game" do
     click_button("Ready to play!")
     expect(page).to have_content ("Xin vs. Computer")
   end
-  
+
+
 end

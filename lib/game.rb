@@ -21,13 +21,19 @@ class Game
     @game
   end
 
+  def player_choice(weapon)
+    p weapon
+    raise "not a possible weapon" unless WEAPONS.include? weapon
+    @player_weapon = weapon
+  end
+
+  def computer_weapon
+    @computer_weapon = @computer.weapon
+  end
 
 
-  # def player_choice=(weapon)
-  #   fail 'not a possible weapon' unless WEAPONS.includes? weapon
-  #   @player_choice = weapon
-  # end
-  #
+
+
   # def result
   #   RULES[player_choice][computer.choice()]? :win : :lose
   # end
