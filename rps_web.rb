@@ -9,14 +9,19 @@ get '/' do
   erb(:index)
 end
 
-post '/name' do
-  @player_name = params[:player_name]
-  redirect '/welcome'
+post '/player' do
+  @game = Game.create(Player.new(params[:player_name]), Computer.new)
+  erb(:player)
 end
 
-get '/welcome' do
-  erb(:welcome)
+before do
+  @game = Game.instance
 end
+
+post '/game' do
+  erb(:game)
+end
+
 
 run! if app_file == $0
 end

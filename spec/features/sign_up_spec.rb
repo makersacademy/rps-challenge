@@ -8,6 +8,7 @@ feature "Sign up" do
   scenario "Sign up and play" do
     sign_in
     expect(page).to have_content("Welcome Xin")
+    find_button("Ready to play!").click
   end
 
 end
