@@ -1,0 +1,18 @@
+<body>
+  <style> body {
+    background-image: url(paper.jpg);
+  }
+  </style>
+  <h1 style="font-family:courier;">Player - <%= @name %></h1>
+  <h1 style="font-family:courier;">Computer - <%= @ai_name %></h1>
+  <h2 style="font-family:courier;">Which will you go for?</h2>
+  <form action='/battle' method='post'>
+    <label for="ROCK" style="font-family:courier;"=>ROCK</label>
+    <input type="radio" name="pick" value="ROCK" checked> <br>
+    <label for="PAPER" style="font-family:courier;"=>PAPER</label>
+    <input type="radio" name="pick" value="PAPER"> <br>
+    <label for="SCISSORS" style="font-family:courier;"=>SCISSORS</label>
+    <input type="radio" name="pick" value="SCISSORS"> <br>
+    <input type='submit' value='GO' method='post'>
+  </form>
+</body>
