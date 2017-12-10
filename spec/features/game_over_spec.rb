@@ -8,4 +8,11 @@ feature 'Game over' do
     expect(page).to have_content 'You win. Great show!... you champion you!'
   end
 
+  scenario 'player has the option to play again' do
+    sign_in_and_play_solo
+    win_game
+    click_button 'Play Again?'
+    expect(page).to have_current_path '/'
+  end
+
 end
