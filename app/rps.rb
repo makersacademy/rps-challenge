@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.get_game
-    @choices = @game.player_choices
+    @choices = @game.get_choices
     erb(:play)
   end
 
@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
 
   get '/choice' do
     @game = Game.get_game
-    @game.players[0].choice = params[:choice]
+    @game.set_choices(params[:choice])
     redirect '/play'
   end
 
