@@ -1,6 +1,4 @@
-# RPS Challenge
-
-## RPS Challenge
+# RPS Challenge [![Build Status](https://travis-ci.org/thatdania/rps-challenge.svg?branch=master)](https://travis-ci.org/thatdania/rps-challenge) ✂️📃⛰
 
 The aim of this challenge is to create an online game of rock, paper, scissors
 
