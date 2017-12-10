@@ -27,7 +27,7 @@ Select your weapon and click submit:
 
 ![Imgur](https://i.imgur.com/6uToOow.png?1)
 
-Lastly, find out if you win!
+Lastly, find out if you won, lost or tied!
 
 ![Imgur](https://i.imgur.com/ETZz3R9.png?1)
 
