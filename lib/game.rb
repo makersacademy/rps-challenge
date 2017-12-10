@@ -16,6 +16,14 @@ class Game
     @game
   end
 
+  def print_winner
+    return "Draw!" if winner == :draw
+    return @computer.name + " won!" if winner == @computer
+    return @player.name + " won!" if winner == @player
+  end
+
+  private
+
   def initialize(player, computer)
     @player = player
     @computer = computer
@@ -29,12 +37,6 @@ class Game
     return :draw if result == :draw
     return @player if result == @player.choice
     return @computer if result == @computer.choice
-  end
-
-  def print_winner
-    return "Draw!" if winner == :draw
-    return @computer.name + " won!" if winner == @computer
-    return @player.name + " won!" if winner == @player
   end
 
 end

@@ -16,53 +16,52 @@ describe Game do
     end
   end
 
-  describe "#result" do
-    it "plays the choices against each other and returns the winning choice" do
-      allow(computer).to receive(:choice).and_return(:rock)
-      allow(player).to receive(:choice).and_return(:scissors)
-      expect(game.result).to eq :rock
-    end
-  end
-
-  describe "#winner" do
-    it "returns the winner as the computer" do
-      allow(computer).to receive(:choice).and_return(:rock)
-      allow(player).to receive(:choice).and_return(:scissors)
-      game.result
-      expect(game.winner).to eq computer
-    end
-    it "returns the winner as the player" do
-      allow(computer).to receive(:choice).and_return(:paper)
-      allow(player).to receive(:choice).and_return(:scissors)
-      game.result
-      expect(game.winner).to eq player
-    end
-    it "returns :draw if there is a draw" do
-      allow(computer).to receive(:choice).and_return(:rock)
-      allow(player).to receive(:choice).and_return(:rock)
-      game.result
-      expect(game.winner).to eq :draw
-    end
-  end
-
   describe "#print_winner" do
-    it "returns the name of the winner if the computer won" do
+    it "returns the name of the computer if the computer won with rock" do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:scissors)
-      game.result
       expect(game.print_winner).to eq("Computer won!")
     end
-    it "returns the name of the winner if the player won" do
+    it "returns the name of the computer if the computer won with scissors" do
+      allow(computer).to receive(:choice).and_return(:scissors)
+      allow(player).to receive(:choice).and_return(:paper)
+      expect(game.print_winner).to eq("Computer won!")
+    end
+    it "returns the name of the computer if the computer won with paper" do
+      allow(computer).to receive(:choice).and_return(:paper)
+      allow(player).to receive(:choice).and_return(:rock)
+      expect(game.print_winner).to eq("Computer won!")
+    end
+    it "returns the name of the player if the player won with paper" do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:paper)
-      game.result
       expect(game.print_winner).to eq("Ellie won!")
     end
-    it "returns 'Draw!' if no one wins" do
+    it "returns the name of the player if the player won with rock" do
+      allow(computer).to receive(:choice).and_return(:scissors)
+      allow(player).to receive(:choice).and_return(:rock)
+      expect(game.print_winner).to eq("Ellie won!")
+    end
+    it "returns the name of the player if the player won with scissors" do
+      allow(computer).to receive(:choice).and_return(:paper)
+      allow(player).to receive(:choice).and_return(:scissors)
+      expect(game.print_winner).to eq("Ellie won!")
+    end
+    it "returns 'Draw!' if no one wins with rock" do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:rock)
-      game.result
+      expect(game.print_winner).to eq("Draw!")
+    end
+    it "returns 'Draw!' if no one wins with paper" do
+      allow(computer).to receive(:choice).and_return(:paper)
+      allow(player).to receive(:choice).and_return(:paper)
+      expect(game.print_winner).to eq("Draw!")
+    end
+    it "returns 'Draw!' if no one wins with scissors" do
+      allow(computer).to receive(:choice).and_return(:scissors)
+      allow(player).to receive(:choice).and_return(:scissors)
       expect(game.print_winner).to eq("Draw!")
     end
   end
+  
 end

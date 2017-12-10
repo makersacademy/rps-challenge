@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'pry'
 require_relative './computer'
 require_relative './game'
 require_relative './player'
@@ -41,4 +40,5 @@ class RPS < Sinatra::Base
   end
 
   run! if app_file == $0
+
 end
