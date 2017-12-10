@@ -20,11 +20,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @p1_name, @p2_name = session[:p1_name], session[:p2_name]
-    # player_1 = Player.new(@p1_name)
-    # player_2 = session[:p2_name].nil? ? nil : Player.new(@p2_name)
-    # Game.create_new({player_1: player_1,
-    #                  player_2: player_2})
-    p Game.instance
+
     erb(:play)
   end
 end

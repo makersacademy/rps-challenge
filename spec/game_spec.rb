@@ -14,5 +14,14 @@ describe Game do
       game = Game.new({player_1: player_1})
       expect(game.player_2).to be_a(Player)
     end
+
+    it 'should initialize multiplayer to false if only 1 player provided' do
+      game = Game.new({player_1: player_1})
+      expect(game.multiplayer).to be false
+    end
+    it 'should initialize multiplayer to true if both players proivded' do
+      game = Game.new({player_1: player_1, player_2: player_2})
+      expect(game.multiplayer).to be true
+    end
   end
 end
