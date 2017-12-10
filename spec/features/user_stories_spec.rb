@@ -12,16 +12,12 @@ end
 
 feature "User enters name and chooses hand" do
   scenario "Player has entered their name" do
-    visit ("/")
-    fill_in :player_one_name, with: "Nikolaos"
-    click_button ("Start the game")
+    log_in
     expect(page).to have_text "Welcome Nikolaos!"
   end
 
   scenario "Player needs to choose their hand" do
-    visit ("/")
-    fill_in :player_one_name, with: "Nikolaos"
-    click_button ("Start the game")
+    log_in
     expect(page).to have_text ("Please select your hand.")
   end
 
