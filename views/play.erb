@@ -4,10 +4,20 @@
     <h1>Rock, Paper, Scissors</h1>
     <h2><%=@player_name%> vs. Machine</h2>
     <p>Select your weapon:</p>
-    <form action='/challenge' method='post'>
-      <button type='submit'>Rock</button>
-      <button type='submit'>Paper</button>
-      <button type='submit'>Scissors</button>
+    <form action="/winner" method="post">
+      <label>
+        <input type="radio" value="rock" name="weapon_choice">
+        Rock
+      </label>
+      <label>
+        <input type="radio" value="paper" name="weapon_choice">
+        Paper
+      </label>
+      <label>
+        <input type="radio" value="scissors" name="weapon_choice">
+        Scissors
+      </label>
+      <button type="submit">Submit</button>
     </form>
   </body>
 
