@@ -6,7 +6,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    Game.game = Game.new(Player)
+    Game.game = Game.new
     erb :home_page
   end
 

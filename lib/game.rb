@@ -1,4 +1,5 @@
 require_relative 'player'
+require_relative 'text_maker'
 class Game
   attr_accessor :player1, :player2
   class << self
@@ -11,8 +12,9 @@ class Game
     scissors: { scissors: :draw, paper: :win, rock: :lose }
   }
 
-  def initialize(player_class = Player)
+  def initialize(text_maker = TextMaker.new, player_class = Player)
     @playerclass = player_class
+    @text_maker = text_maker
   end
 
   def play
@@ -26,11 +28,11 @@ class Game
   end
 
   def title
-    "#{player1.name} VS #{player2.name}"
+    text_maker.title(player1, player2)
   end
 
   private
-  attr_reader :playerclass
+  attr_reader :playerclass, :text_maker
   def computer_player
     @player2 = playerclass.new(:Computer)
   end
@@ -40,11 +42,7 @@ class Game
   end
 
   def play_text
-    "#{choice_text(player1)},<br>#{choice_text(player2)},<br>#{resolve(player1, player2)} Wins!"
-  end
-
-  def choice_text(player)
-    "#{player.name} chooses #{player.choice}"
+    text_maker.play_text(player1, player2, resolve(player1, player2))
   end
 
   def resolve(player1, player2)

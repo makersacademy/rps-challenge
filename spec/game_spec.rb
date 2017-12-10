@@ -3,6 +3,9 @@ require 'game'
 describe Game do
   let(:player1) { double(:player1, name: 'Bill Kerman', choice: :rock) }
   let(:player2) { double(:player2, name: 'Bob Kerman', choice: :paper) }
+  let(:text_maker) { double(:text_maker) }
+
+  subject { described_class.new(text_maker) }
 
   describe '#players' do
     it "should allow access to the player1 object" do
@@ -19,7 +22,8 @@ describe Game do
     it "should return a string showing the winner between the players" do
       subject.player1 = player1
       subject.player2 = player2
-      expect(subject.play).to eq "Bill Kerman chooses rock,<br>Bob Kerman chooses paper,<br>Bob Kerman Wins!"
+      expect(text_maker).to receive(:play_text).with(player1, player2, player2.name)
+      subject.play
     end
   end
 end
