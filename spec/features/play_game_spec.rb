@@ -27,4 +27,9 @@ feature 'playing the game' do
     expect(page).to have_content 'Draw!'
   end
 
+  scenario 'player scores are displayed' do
+    sign_in_and_play_solo
+    expect(page).to have_content 'Player wins: 0/10 Computer wins: 0/10'
+  end
+
 end
