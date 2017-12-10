@@ -17,4 +17,16 @@ feature 'gameover' do
     click_on "Paper"
     expect(page).to have_content("Mary wins")
   end
+  scenario 'Offers new game' do
+    sign_in_and_submit
+    click_on "Rock"
+    click_on "Paper"
+    expect(page).to have_button "New Game"
+  end
+  scenario 'Offers to play again' do
+    sign_in_and_submit
+    click_on "Rock"
+    click_on "Paper"
+    expect(page).to have_button "Play again"
+  end
 end

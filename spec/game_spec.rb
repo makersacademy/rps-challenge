@@ -39,4 +39,31 @@ describe Game do
       expect(player_1).to respond_to(:choice)
     end
   end
+
+  describe '#get_winner' do
+    it 'should return draw when both choices are the same' do
+      allow(player_1).to receive(:choice).and_return "Rock"
+      allow(player_2).to receive(:choice).and_return "Rock"
+      game = Game.new({player_1: player_1, player_2: player_2})
+      expect(game.get_winner).to eq "Draw!"
+    end
+    it 'should return James wins! when p1 wins' do
+      allow(player_1).to receive(:choice).and_return "Rock"
+      allow(player_2).to receive(:choice).and_return "Scissors"
+      game = Game.new({player_1: player_1, player_2: player_2})
+      expect(game.get_winner).to eq "James wins!"
+    end
+    it 'should return Mary wins! when p2 wins' do
+      allow(player_1).to receive(:choice).and_return "Scissors"
+      allow(player_2).to receive(:choice).and_return "Rock"
+      game = Game.new({player_1: player_1, player_2: player_2})
+      expect(game.get_winner).to eq "Mary wins!"
+    end
+    it 'should return James wins! when p1 wins with paper' do
+      allow(player_1).to receive(:choice).and_return "Paper"
+      allow(player_2).to receive(:choice).and_return "Rock"
+      game = Game.new({player_1: player_1, player_2: player_2})
+      expect(game.get_winner).to eq "James wins!"
+    end
+  end
 end
