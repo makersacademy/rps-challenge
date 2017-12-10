@@ -1,6 +1,5 @@
 require 'sinatra/base'
-require './lib/player.rb'
-require './lib/computer.rb'
+require './lib/game.rb'
 
 class RPS < Sinatra::Base
 
@@ -24,11 +23,11 @@ class RPS < Sinatra::Base
 
   post '/battle' do
     @game.player1.choice = params[:pick]
+    @game.player2.choose
     redirect '/round_over'
   end
 
   get '/round_over' do
-    @game.player2.choose
     @choice, @ai_name, @ai_choice = @game.p1_choice, @game.p2_name, @game.p2_choice
     erb(:round_over)
   end

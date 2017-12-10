@@ -47,4 +47,9 @@ feature 'Testing infrastructure' do
     expect(page).to have_content('Donnie finga-slinga chose ROCK!')
   end
 
+  scenario "Shoud have a button 'Ok'" do
+    choose_paper
+    expect(page).to have_button('Ok')
+  end
+
 end

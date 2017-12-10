@@ -5,4 +5,7 @@
   </style>
   <h2 style="font-family:courier;">You chose <%= @choice %>!</h2>
   <h2 style="font-family:courier;"><%= @ai_name %> chose <%= @ai_choice %>!</h2>
+  <form action="/battle" method="get">
+    <input type="submit" value="Ok" name="Ok">
+  </form>
 </body>
