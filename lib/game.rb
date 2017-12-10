@@ -5,8 +5,9 @@ class Game
 
   attr_reader :P1, :ralph
 
-  def initialize(player_name)
+  def initialize(player_name, player2_name = "Gerald")
     @P1 = Player.new(player_name)
+    @P2 = Player.new(player2_name)
     @ralph = Player.new("Ralph")
   end
 

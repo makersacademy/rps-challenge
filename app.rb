@@ -7,12 +7,16 @@ class Battle < Sinatra::Base
   set :session_secret, 'supersecret'
 
   get '/' do
-    erb(:menu)
+    erb(:main_menu)
   end
 
-  post '/names' do
+  get '/p1_name_entry' do
+     erb(:p1_name_entry)
+  end
+
+  post '/p1_weapon_select' do
     @current_game = Game.create(params[:Challenger])
-    erb(:play)
+    erb(:p1_weapon_select)
   end
 
   before do
