@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'pry'
 require_relative './computer'
 require_relative './game'
 require_relative './player'
@@ -16,18 +17,19 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = $game.player.name
+    @player = $game.player
     erb(:play)
   end
 
   post '/choice' do
-    $choice = $game.player.choose(params[:player_choice])
+    $game.player.choose(params[:player_choice])
     redirect to('/result')
   end
 
   get '/result' do
-    @player = $game.player.name
-    @choice = $game.player.choice
+    @player = $game.player
+    @computer = $game.computer
+    @computer_choice = @computer.choose
     erb(:result)
   end
 

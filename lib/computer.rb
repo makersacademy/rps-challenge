@@ -8,4 +8,8 @@ class Computer
     @choice = OPTIONS.sample
   end
 
+  def name
+    @name = "Computer"
+  end
+
 end
