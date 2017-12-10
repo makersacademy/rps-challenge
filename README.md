@@ -2,9 +2,11 @@
 
 The aim of this challenge is to create an online game of rock, paper, scissors
 
-## Approach
+
 
 ![](images/Screen%20Shot%202017-11-12%20at%2022.07.51.png)
+
+## Approach
 
 I first sketched out the way the pages were going to interact with each other. My
 result showed there was a loop between the start page of the game and the outcome, as a player would play more than one round on this. I think I did manage to follow the single responsibility principle for methods and divided the tasks into classes (game, player and computer). Structuring the tests of which test goes where was difficult at first, but it was then easy to section them.
