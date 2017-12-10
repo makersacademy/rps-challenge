@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/computer_selection.rb'
 require './lib/result.rb'
+require 'pry'
 
 class RPS < Sinatra::Base
 
@@ -43,23 +44,9 @@ class RPS < Sinatra::Base
     @computer_selection = ComputerSelection.new.computer_selection
     @player_selection = session[:player_selection]
     @player_name = session[:player_name]
-
-    if @player_selection == @computer_selection
-      @result = 'Draw'
-    elsif (@player_selection == "Rock" && @computer_selection == "Scissors")
-      @result = "#{@player_name} wins"
-    elsif @player_selection == "Paper" && @computer_selection == "Rock"
-      @result = "#{@player_name} wins"
-    elsif @player_selection == "Scissors" && @computer_selection == "Paper"
-      @result = "#{@player_name} wins"
-    elsif @player_selection == "Rock" && @computer_selection == "Paper"
-      @result = "Computer wins"
-    elsif @player_selection == "Paper" && @computer_selection == "Scissors"
-      @result = "Computuer wins"
-    elsif @player_selection == "Scissors" && @computer_selection == "Rock"
-      @result = "Computuer wins"
-    end
-
+    the_result = Result.new(@player_selection, @computer_selection)
+    the_result.calc_result
+    @result = the_result.result
 
 
     erb(:result)
