@@ -1,0 +1,22 @@
+<% if @choice == @bot_choice %>
+
+<h1><%="#{@name} chose #{@choice}" %></h1><br>
+<h1><%="Rpsbot chose #{@bot_choice}" %></h1>
+
+<h3>The game was a draw</h3>
+
+<% elsif (@choice == 'Scissors' && @bot_choice == 'Rock') || (@choice == 'Rock' && @bot_choice == 'Paper') || (@choice == 'Paper' && @bot_choice == 'Scissors')%>
+
+<h1><%="#{@name} chose #{@choice}" %></h1><br>
+<h1><%="Rpsbot chose #{@bot_choice}" %></h1>
+
+<h3>Rpsbot wins the game!</h3>
+
+<% elsif (@choice == 'Scissors' && @bot_choice == 'Paper') || (@choice == 'Rock' && @bot_choice == 'Scissors') || (@choice == 'Paper' && @bot_choice == 'Rock')%>
+
+<h1><%="#{@name} chose #{@choice}" %></h1><br>
+<h1><%="Rpsbot chose #{@bot_choice}" %></h1>
+
+<h3><%="#{@name}"%> wins the game!</h3>
+
+<%end%>

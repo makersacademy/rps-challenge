@@ -1,0 +1,13 @@
+<head>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<h1><%= "#{@name}" %> vs RpsBot</h1>
+
+<form action="/play" method="post">
+  <input type="radio" name="choice" value="Rock"> Rock
+  <input type="radio" name="choice" value="Paper"> Paper
+  <input type="radio" name="choice" value="Scissors"> Scissors
+  <input type="submit" value="Fight!">
+</form>
