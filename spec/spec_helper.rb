@@ -16,3 +16,8 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+require 'capybara'
+require_relative '../app.rb'
+require_relative './features/web_helpers'
+Capybara.app = RPS

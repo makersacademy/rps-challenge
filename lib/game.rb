@@ -1,0 +1,54 @@
+require_relative 'player'
+
+class Game
+  def self.create_new args
+    @@game = Game.new args
+  end
+
+  def self.instance
+    @@game
+  end
+
+  attr_reader :player_1, :player_2, :multiplayer, :curr_turn
+
+  def initialize args
+    @player_1 = args[:player_1]
+    @player_2 = args[:player_2] || Player.new("AI", true)
+    @multiplayer = !!args[:player_1] && !!args[:player_2]
+    @curr_turn = @player_1
+  end
+
+  def make_move(choice)
+    curr_turn.make_choice choice
+    switch_turns
+  end
+
+  def switch_turns
+    @curr_turn = (@curr_turn == player_1 ? player_2 : player_1)
+  end
+
+  def complete?
+    !player_1.choice.nil? && !player_2.choice.nil?
+  end
+
+  def reset_choices
+    player_1.choice = nil
+    player_2.choice = nil
+  end
+
+  def get_winner
+    winner = {
+      Rock: [:Scissors, :Lizard],
+      Paper: [:Spock, :Rock],
+      Scissors: [:Paper, :Lizard],
+      Lizard: [:Spock, :Paper],
+      Spock: [:Scissors, :Rock],
+    }
+    return "Draw!" if player_1.choice == player_2.choice
+    if winner[player_1.choice.to_sym].include? player_2.choice.to_sym
+       "#{player_1.name} wins!"
+    else
+      "#{player_2.name} wins!"
+    end
+  end
+end
