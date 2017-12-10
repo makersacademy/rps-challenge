@@ -14,6 +14,10 @@ class Battle < Sinatra::Base
      erb(:p1_name_entry)
   end
 
+  get '/multiplayer_name_entry' do
+    erb(:multiplayer_name_entry)
+  end
+
   post '/p1_weapon_select' do
     @current_game = Game.create(params[:Challenger])
     erb(:p1_weapon_select)
