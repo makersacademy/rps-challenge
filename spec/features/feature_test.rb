@@ -1,6 +1,7 @@
+
 Capybara.app = RPSApp
 
-require_relative 'spec_helper'
+require_relative 'web_helper'
 
 feature 'Entering player name' do
   scenario 'Allows users to input their name' do
