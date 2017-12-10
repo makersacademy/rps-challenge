@@ -1,3 +1,8 @@
+This is the third Makers weekend challenge. Unfortuanley I came down with a cold this weekend, so wasn't able to finish off the app. I hoped to implement a score keeper.
+
+The challenge Instructions are below.
+
+
 # RPS Challenge
 
 Instructions

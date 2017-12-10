@@ -20,4 +20,12 @@ feature 'Testing result screen' do
     find_button("Play Again").visible?
   end
 
+  # scenario 'if it is a draw, page displys draw' do
+  #   sign_in
+  #   click_button('Rock')
+  #   computer_result = double('computer_result', computer_result: 'Rock')
+  #   visit('/result')
+  #   expect(page).to have_content("Draw")
+  # end
+
 end

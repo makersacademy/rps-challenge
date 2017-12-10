@@ -41,8 +41,27 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @computer_selection = ComputerSelection.new.computer_selection
-    @player_name = session[:player_name]
     @player_selection = session[:player_selection]
+    @player_name = session[:player_name]
+
+    if @player_selection == @computer_selection
+      @result = 'Draw'
+    elsif (@player_selection == "Rock" && @computer_selection == "Scissors")
+      @result = "#{@player_name} wins"
+    elsif @player_selection == "Paper" && @computer_selection == "Rock"
+      @result = "#{@player_name} wins"
+    elsif @player_selection == "Scissors" && @computer_selection == "Paper"
+      @result = "#{@player_name} wins"
+    elsif @player_selection == "Rock" && @computer_selection == "Paper"
+      @result = "Computer wins"
+    elsif @player_selection == "Paper" && @computer_selection == "Scissors"
+      @result = "Computuer wins"
+    elsif @player_selection == "Scissors" && @computer_selection == "Rock"
+      @result = "Computuer wins"
+    end
+
+
+
     erb(:result)
   end
 

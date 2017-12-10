@@ -1,4 +1,0 @@
-class result
-  if
-
-end
