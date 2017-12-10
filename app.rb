@@ -23,6 +23,11 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/gameover' do
+    @winner = Game.instance.get_winner
+    erb(:gameover)
+  end
+
   post '/make_choice' do
     Game.instance.make_move(params[:choice])
     Game.instance.make_move(["Rock", "Paper", "Scissors"].sample) if Game.instance.curr_turn.ai

@@ -30,4 +30,18 @@ class Game
   def complete?
     !player_1.choice.nil? && !player_2.choice.nil?
   end
+
+  def get_winner
+    return "Draw!" if player_1.choice == player_2.choice
+    if player_1.choice == "Rock"
+      return "#{player_1.name} wins!" if player_2.choice == "Scissors"
+      return "#{player_2.name} wins!"
+    elsif player_1.choice == "Scissors"
+      return "#{player_1.name} wins!" if player_2.choice == "Paper"
+      return "#{player_2.name} wins!"
+    elsif player_1.choice == "Paper"
+      return "#{player_1.name} wins!" if player_2.choice == "Rock"
+      return "#{player_2.name} wins!"
+    end
+  end
 end
