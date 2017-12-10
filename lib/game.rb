@@ -1,14 +1,11 @@
-require_relative 'computer'
-
 class Game
+  attr_reader :player_name, :computer_weapon, :outcome
 
   OUTCOMES = {
     rock: { paper: :lose, rock: :tied, scissors: :win },
     paper: { paper: :tied, rock: :win, scissors: :lose },
     scissors: { paper: :win, rock: :lose, scissors: :tied }
   }
-
-  attr_reader :player_name, :computer_weapon, :outcome
 
   def initialize(player_name)
     @player_name = player_name
