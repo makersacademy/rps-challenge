@@ -3,7 +3,7 @@ require_relative 'choice'
 
 class Game
 
-  attr_reader :P1, :ralph
+  attr_reader :P1, :P2, :ralph
 
   def initialize(player_name, player2_name = "Gerald")
     @P1 = Player.new(player_name)
@@ -11,8 +11,8 @@ class Game
     @ralph = Player.new("Ralph")
   end
 
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player_name, player2_name = 'Gerald')
+    @game = Game.new(player_name, player2_name)
   end
 
   def self.instance

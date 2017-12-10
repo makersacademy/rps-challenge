@@ -9,12 +9,12 @@
 
 
 <h1 align="center">WEAPONS</h1>
-<h2 align="center">You choose first, <%=@current_game.P1.name%></h2>
+<h2 align="center">Now you, <%=@current_game.P2.name%></h2>
 <form align="center" action='/multiplayer_weapon_p2' method='post'>
   <label for= 'weapon'>Weapon:<label>
     <input type= 'text'  name= 'weapon'>
   </label>
   <div align="center">
-    <input type= 'submit' value= 'Equip'>
+    <input type= 'submit' value= 'Fight Ralph!'>
   </div>
 </form>
