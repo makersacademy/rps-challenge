@@ -6,9 +6,7 @@ class Player
   attr_accessor :name, :score, :choice
 
   def initialize(name)
-    @name = name
-    @score = DEFAULT_SCORE
-    @choice = DEFAULT_CHOICE
+    @name, @score, @choice = name, DEFAULT_SCORE, DEFAULT_CHOICE
   end
 
   def win

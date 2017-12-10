@@ -7,8 +7,7 @@ class Computer
 
   def initialize
     @name = ['Donnie finga-slinga', 'Smoking Frog', 'Edward Scissorhands', 'Paper boy'].sample
-    @score = DEFAULT_SCORE
-    @choice = DEFAULT_CHOICE
+    @score, @choice = DEFAULT_SCORE, DEFAULT_CHOICE
   end
 
   def win
