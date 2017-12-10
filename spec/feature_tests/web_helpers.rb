@@ -12,3 +12,9 @@ def choose_paper
   choose("pick", option: "PAPER")
   click_button('GO')
 end
+
+def choose_rock
+  srand(1000)
+  choose("pick", option: "ROCK")
+  click_button('GO')
+end

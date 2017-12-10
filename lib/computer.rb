@@ -16,6 +16,7 @@ class Computer
 
   def choose
     @choice = ['ROCK', 'PAPER', 'SCISSORS'].sample
+    @choice = 'SCISSORS' if @name == 'Edward Scissorhands'
   end
 
 end

@@ -17,7 +17,8 @@ class RPS < Sinatra::Base
   end
 
   get '/battle' do
-    @name, @ai_name = @game.p1_name, @game.p2_name
+    @name, @score = @game.p1_name, @game.p1_score
+    @ai_name, @ai_score = @game.p2_name, @game.p2_score
     erb(:battle)
   end
 
@@ -28,7 +29,10 @@ class RPS < Sinatra::Base
   end
 
   get '/round_over' do
-    @choice, @ai_name, @ai_choice = @game.p1_choice, @game.p2_name, @game.p2_choice
+    @winner_name = @game.determine_winner.name if @game.determine_winner
+    @game.win_point
+    @name, @choice, @score = @game.p1_name, @game.p1_choice, @game.p1_score
+    @ai_name, @ai_choice, @ai_score = @game.p2_name, @game.p2_choice, @game.p2_score
     erb(:round_over)
   end
 
