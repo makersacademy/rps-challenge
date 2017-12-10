@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Game</title>
+  </head>
+  <style>
+    body {
+      font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+
+  <body style="color: #130101c4">
+    <h1 ><%= @game.player.name %>
+      vs.
+      <%= @game.computer.name %>
+    </h1>
+    <h2 style="margin-top:50px;">Choose your weapon</h2>
+    <div style="margin-top:30px;">
+      <form action="/choice" method="post">
+        <input type="image" src="/rock.png" name="player_choice" value="rock" height="60" width="90">
+        <input type="image" src="/paper.png" name="player_choice" value="paper" height="60" width="90">
+        <input type="image" src="/scissors.png" name="player_choice" value="scissors" height="60" width="90">
+      </form>
+    </div>
+  </body>

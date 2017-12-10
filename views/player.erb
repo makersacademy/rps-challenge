@@ -1,0 +1,23 @@
+
+<html>
+  <head>
+    <title>Welcome page</title>
+  </head>
+  <style>
+   body {
+   font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+   text-align: center;
+   font-size: 2em;
+   margin: 100px;
+   }
+ </style>
+
+  <body>
+   <h1 style="color: #130101c4">Welcome <%=@game.player.name%>!</h1>
+     <div style="margin-top:50px;">
+       <form action="/game" method="POST">
+         <input type="submit" value="Ready to play!">
+       </form>
+     </div>
+  </body>
+</html>
