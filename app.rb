@@ -13,10 +13,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    p session
-    @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name]
-    @test = "This is a test string"
+    @p1_name, @p2_name = session[:p1_name], session[:p2_name]
     erb(:play)
   end
 end
