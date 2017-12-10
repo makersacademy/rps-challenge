@@ -19,7 +19,17 @@ $ rackup
 
 ## How to Use
 
-![Imgur](https://i.imgur.com/qryniRZ.png)
+Enter your name and click submit:
+
+![Imgur](https://i.imgur.com/qryniRZ.png?1)
+
+Select your weapon and click submit:
+
+![Imgur](https://i.imgur.com/6uToOow.png?1)
+
+Lastly, find out if you win!
+
+![Imgur](https://i.imgur.com/ETZz3R9.png?1)
 
 ## Final Thoughts
 
