@@ -1,3 +1,11 @@
-<h1><%= @player_name %> vs. Computer</h1>
+<html>
 
-<h1><%= @player_name %> vs. Computer</h1>
+<body>
+  <h1><%= @player_name %> vs. Computer</h1>
+  <h2>Please choose your weapon</h2>
+  <form action='/choice' method='post'>
+    <button type='submit' name='weapon_choice' value='Rock'>Rock</button>
+    <button type='submit' name='weapon_choice' value='Paper'>Paper</button>
+    <button type='submit' name='weapon_choice' value='Scissors'>Scissors</button>
+</body>
+</html>
