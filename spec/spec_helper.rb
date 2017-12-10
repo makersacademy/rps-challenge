@@ -7,6 +7,7 @@ require 'features/web_helpers'
 require './app'
 require_relative '../lib/game'
 require_relative '../lib/player'
+require_relative '../lib/player'
 
 Capybara.app = RPS
 

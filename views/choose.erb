@@ -3,13 +3,25 @@
 </h1>
 
 <h2>
-  <%=@current_game.the_player.name%> choose:
+  <%=@current_game.the_player.name%> Choose:
 </h2>
 
-<form action="/result" method= 'post'>
-  <input type="submit" value= "Rock">
-  <input type="submit" value= "Paper">
-  <input type="submit" value= "Scissors">
-  <input type="submit" value= "spock">
-  <input type="submit" value= "Lizzard">
+<form action='/result' method=post>
+  <input type= "text" name= "choose" placeholder= "Item">
+  <input type= "submit" value = "Play">
+ <!-- <button name="choose" type="submit" value="rock">
+   Rock
+ </button>
+ <button name="choose" type="submit" value="paper">
+   Paper
+ </button>
+ <button name="choose" type="submit" value="scissor">
+   Scissor
+ </button>
+ <button name="choose" type="submit" value="spock">
+   Spock
+ </button>
+ <button name="choose" type="submit" value="lizard">
+   Lizard
+ </button> -->
 </form>

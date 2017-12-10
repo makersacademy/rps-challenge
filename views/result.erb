@@ -3,20 +3,14 @@
 </h1>
 
 <h2>
-  <%=@current_game.the_player.name%>  went for
+  <%=@current_game.the_player.name%>went for<%=@current_game.the_player.choice.item%>
 </h2>
 
 <h3>
-  Rock vs
+  <!-- Bot went for<%=@current_game.computer.choice.item%> -->
 </h3>
 
-<h3>
-  Paper vs
-</h3>
 
-<h3>
-  Scissors vs
-</h3>
 
 <form action="/choose" method= "post">
   <input type= "submit" value = "Play again">
