@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/computer_selection.rb'
+require './lib/result.rb'
 
 class RPS < Sinatra::Base
 
@@ -21,9 +23,27 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+
     @player_name = session[:player_name]
 
+    if params[:rock]
+      session[:player_selection] = 'Rock'
+    elsif params[:paper]
+      session[:player_selection] = 'Paper'
+    elsif params[:scissors]
+      session[:player_selection] = 'Scissors'
+    end
 
+    @player_selection = session[:player_selection]
+    redirect '/result'
+
+  end
+
+  get '/result' do
+    @computer_selection = ComputerSelection.new.computer_selection
+    @player_name = session[:player_name]
+    @player_selection = session[:player_selection]
+    erb(:result)
   end
 
   run! if app_file == $0

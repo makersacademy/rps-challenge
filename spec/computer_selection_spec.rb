@@ -15,5 +15,4 @@ describe ComputerSelection do
     end
   end
 
-
 end

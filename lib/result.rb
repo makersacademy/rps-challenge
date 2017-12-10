@@ -1,4 +1,4 @@
-class Result
-
+class result
+  if
 
 end
