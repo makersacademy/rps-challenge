@@ -22,6 +22,14 @@ get ('/play') do
   erb(:play)
 end
 
+post ('/play/new') do
+  redirect '/attack'
+end
+
+get ('/attack') do
+  
+end
+
 
 run! if app_file == $0
 end
