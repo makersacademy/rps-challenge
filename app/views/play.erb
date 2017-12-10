@@ -1,4 +1,10 @@
 <h2> <%=@game.players[0].name%> vs. <%=@game.players[1].name%> </h2> <br>
+
+<br>
+<%=@game.players[0].name%> wins: <%=@game.players[0].score%>/10<br>
+<%=@game.players[1].name%> wins: <%=@game.players[1].score%>/10<br>
+<br>
+
 <form action='/choice'>
   <button type='submit' value='Rock' name='choice'>Rock</button>
 </form>
@@ -9,14 +15,12 @@
   <button type='submit' value='Scissors' name='choice'>Scissors</button>
 </form> <br>
 
-<%=@game.players[0].name%> wins: <%=@game.players[0].score%>/10<br>
-<%=@game.players[1].name%> wins: <%=@game.players[1].score%>/10<br>
-
 <% unless @game.choices.include? nil %>
   <%=@game.players[0].name%> chose <%=@game.choices[0]%>! <br>
   <%=@game.players[1].name%> chose <%=@game.choices[1]%>! <br>
 <% end %>
 
+<br>
 <% if !!@game.result %>
   <%=@game.result%>
 <% end %>

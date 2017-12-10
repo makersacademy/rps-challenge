@@ -14,6 +14,7 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @game = Game.show_game
+    redirect '/game-over' if @game.game_won?
     erb(:play)
   end
 
@@ -27,6 +28,11 @@ class RPS < Sinatra::Base
     @game.set_choices(params[:choice])
     @game.results
     redirect '/play'
+  end
+
+  get '/game-over' do
+    @game = Game.show_game
+    erb(:game_over)
   end
 
   run! if app_file == $0

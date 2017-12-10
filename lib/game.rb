@@ -39,6 +39,10 @@ class Game
     @rps[rand(3)]
   end
 
+  def game_won?
+    players[0].winner? || players[1].winner?
+  end
+
   def self.create_game(player1, player2 = Player.new('Computer'))
     @game = Game.new(player1, player2)
   end

@@ -5,6 +5,7 @@ class Player
     @name = name
     @choice = nil
     @score = 0
+    @winner = false
   end
 
   def record_win
@@ -13,6 +14,10 @@ class Player
 
   def record_choice(choice)
     @choice = choice
+  end
+
+  def winner?
+    @score > 9
   end
 
 end
