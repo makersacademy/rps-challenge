@@ -19,7 +19,7 @@ $ rackup
 
 ## How to Use
 
-![screenshot of home page](https://imgur.com/qryniRZ)
+[Imgur](https://i.imgur.com/qryniRZ.png)
 
 ## Final Thoughts
 
