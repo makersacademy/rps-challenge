@@ -80,4 +80,14 @@ feature "results" do
     expect(page).to have_content "Draw!"
   end
 
+  scenario "the 'Play again' and 'New player' buttons are visible" do
+    allow_any_instance_of(Computer).to receive(:choice).and_return(:scissors)
+    sign_in_and_play
+    choose("Scissors")
+    click_button("Go")
+
+    expect(page).to have_button "Play again"
+    expect(page).to have_button "New player"
+  end
+
 end
