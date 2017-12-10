@@ -19,9 +19,11 @@ $ rackup
 
 ## How to Use
 
-## Built with
+![screenshot of home page](https://imgur.com/qryniRZ)
 
 ## Final Thoughts
+
+I was happy to finish the program however, given more time, I would have made it look prettier using CSS. Also, I would have spent more time on separating out some responsibilities of the Game class into another class to abide by the Single Responsibility Principle.
 
 ## Author
 
