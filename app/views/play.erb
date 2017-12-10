@@ -1,4 +1,4 @@
-<h2> <%= @player_name %> vs. Computer </h2> <br>
+<h2> <%=@game.players[0].name%> vs. <%=@game.players[1].name%> </h2> <br>
 <form action='/choice'>
   <button type='submit' value='Rock' name='choice'>Rock</button>
 </form>
@@ -10,6 +10,6 @@
 </form> <br>
 
 <% if !!@choices %>
-  <%=@player_name%> chose <%=@choices[0]%>! <br>
-  The opponent chose <%=@choices[1]%>! <br>
+  <%=@game.players[0].name%> chose <%=@choices[0]%>! <br>
+  <%=@game.players[0].name%> chose <%=@choices[1]%>! <br>
 <% end %>

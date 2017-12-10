@@ -18,7 +18,7 @@ feature 'playing the game' do
   scenario 'the computer makes a choice following the player choice' do
     sign_in_and_play_solo
     click_button 'Rock'
-    expect(page).to have_content 'The opponent chose Rock!'
+    expect(page).to have_content 'Computer chose Rock!'
   end
 
 end
