@@ -1,26 +1,34 @@
 <head>
-    <title>
-        Rock, Paper, Scissors, Lizard, Spock!
-      </title>
+  <title>
+    Rock, Paper, Scissors, Lizard, Spock!
+  </title>
 </head>
-  <body style="background-color:thistle;text-align:center">
-    <h1> Rock, Paper, Scissors, Lizard, Spock! </h1>
-  <h2>  <%= @game.player1.name %> vs Computer </h2> <br>
+<body style="background-color:thistle;text-align:center">
+  <h1>
+    Rock, Paper, Scissors, Lizard, Spock!
+  </h1>
+  <h2>
+    <%= @game.player1.name %>
+    vs Computer
+  </h2>
+  <br>
 
-    <form action="/chosen" method="post">
-     <input type="submit" value="rock" name="choice">
-     <input type="submit" value="paper" name="choice">
-     <input type="submit" value="scissors" name="choice">
-     <input type="submit" value="lizard" name="choice">
-     <input type="submit" value="spock" name="choice">
-    </form>
-    <%= @game.choice_message(@game.choice) if @game.game_started? %>&ensp; <%= @game.computer_choice_message(@game.c_choice) if @game.game_started? %><br>
-    <%= "#{@game.who_won(@game.choice, @game.c_choice)}" if @game.game_started? %> <br>
-    <br><%= "#{@game.player1.name} has won #{@game.win_count} out of #{@game.total_games} games (#{@game.percentage_wins}%)" %>
-    <br>
-    <br>
-    <form action="/reset" method="post">
-      <input type="submit" value="Reset Scores">
-    </form>
+  <form action="/chosen" method="post">
+    <input type="submit" value="rock" name="choice">
+    <input type="submit" value="paper" name="choice">
+    <input type="submit" value="scissors" name="choice">
+    <input type="submit" value="lizard" name="choice">
+    <input type="submit" value="spock" name="choice">
+  </form>
+  <%= @game.choice_message(@game.choice) if @game.game_started? %>&ensp;
+  <%= @game.computer_choice_message(@game.c_choice) if @game.game_started? %><br>
+  <%= "#{@game.who_won(@game.choice, @game.c_choice)}" if @game.game_started? %>
+  <br>
+  <br><%= "#{@game.player1.name} has won #{@game.win_count} out of #{@game.total_games} games (#{@game.percentage_wins}%)" %>
+  <br>
+  <br>
+  <form action="/reset" method="post">
+    <input type="submit" value="Reset Scores">
+  </form>
 
-    </body>
+</body>

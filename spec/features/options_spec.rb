@@ -1,7 +1,6 @@
 feature 'game display page' do
   scenario 'displays buttons for rock, paper, and scissors' do
     name_and_play
-    expect(page).to have_content "George. Rock, Paper, or Scissors?"
     expect(page).to have_selector("input[type=submit][value='rock']")
     expect(page).to have_selector("input[type=submit][value='paper']")
     expect(page).to have_selector("input[type=submit][value='scissors']")

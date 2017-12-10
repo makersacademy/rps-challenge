@@ -1,5 +1,5 @@
 describe Player do
-  subject(:player1) {described_class.new("George")}
+  subject(:player1) { described_class.new("George") }
 
   describe "#name" do
     it "should return the players name" do

@@ -27,11 +27,11 @@ class Game
   end
 
   def computer_choice_message(choice)
-    "Computer chose #{choice.to_s}"
+    "Computer chose #{choice}"
   end
 
   def game_started?
-    !self.choice.nil?
+    !choice.nil?
   end
 
   def computer_wins
@@ -43,8 +43,8 @@ class Game
   end
 
   def percentage_wins
-    return 0 if @total_games == 0
-    (100*(@win_count / @total_games.to_f)).round(2)
+    return 0 if @total_games.zero?
+    (100 * (@win_count / @total_games.to_f)).round(2)
   end
 
   def reset
