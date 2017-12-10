@@ -3,13 +3,16 @@
 </h1>
 
 <h2>
-  <%=@current_game.the_player.name%>went for<%=@current_game.the_player.choice.item%>
+  <%=@current_game.the_player.name%>went for <%=@current_game.the_player.choice.item%>
 </h2>
 
 <h3>
-  <!-- Bot went for<%=@current_game.computer.choice.item%> -->
+  Bot went for <%=@current_game.computer.choice.item%>
 </h3>
 
+<h4>
+  <%=@result%>
+</h4>
 
 
 <form action="/choose" method= "post">

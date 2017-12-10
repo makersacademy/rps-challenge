@@ -30,7 +30,7 @@ class Game
     case name
       when :rock
         return 0
-      when :Spock
+      when :spock
         return 1
       when :paper
         return 2
