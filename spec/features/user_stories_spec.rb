@@ -22,19 +22,19 @@ feature "User enters name and chooses hand" do
   end
 
   context "User has 3 options" do
-    scenario "use can choose Rock" do
+    scenario "user can choose Rock" do
       log_in
-      expect(page).to have_button('rock')
+      expect(page).to have_button("rock")
     end
 
-    scenario "use can choose Paper" do
+    scenario "user can choose Paper" do
       log_in
-      expect(page).to have_button('paper')
+      expect(page).to have_button("paper")
     end
 
-    scenario "use can choose Scissors" do
+    scenario "user can choose Scissors" do
       log_in
-      expect(page).to have_button('scissor')
+      expect(page).to have_button("scissors")
     end
 
   end
