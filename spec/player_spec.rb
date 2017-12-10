@@ -7,6 +7,10 @@ describe Player do
     it "shows the name of the player" do
       expect(player.name).to eq "Ellie"
     end
+    it "shows the default name if none is entered" do
+      player = Player.new()
+      expect(player.name).to eq "Player"
+    end
   end
 
   describe "#choice" do

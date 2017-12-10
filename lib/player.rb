@@ -2,7 +2,7 @@ class Player
 
   attr_reader :name, :choice
 
-  def initialize(name)
+  def initialize(name = "Player")
     @name = name
   end
 

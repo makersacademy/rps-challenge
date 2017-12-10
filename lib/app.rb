@@ -8,11 +8,13 @@ class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-     erb(:index)
-   end
+    erb(:index)
+  end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:player_name]), Computer.new)
+    name = params[:player_name]
+    name = "Player" if name == ""
+    @game = Game.create(Player.new(name), Computer.new)
     redirect to('/play')
   end
 
@@ -38,5 +40,5 @@ class RPS < Sinatra::Base
     erb(:result)
   end
 
-   run! if app_file == $0
+  run! if app_file == $0
 end

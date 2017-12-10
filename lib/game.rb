@@ -3,9 +3,9 @@ class Game
   attr_reader :player, :computer
 
   RULES = {
-    :rock => {:paper => :paper, :scissors => :rock, :rock => :draw},
-    :paper => {:rock => :paper, :scissors => :scissors, :paper => :draw},
-    :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
+    :rock => { :paper => :paper, :scissors => :rock, :rock => :draw },
+    :paper => { :rock => :paper, :scissors => :scissors, :paper => :draw },
+    :scissors => { :rock => :rock, :paper => :scissors, :scissors => :draw }
     }
 
   def self.create(player, computer)
