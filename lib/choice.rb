@@ -8,6 +8,6 @@ class Choice
 
   def available?(weapon = @weapon)
     weapons = [:rock, :paper, :scissors, :spock, :lizard]
-    weapons.include?(weapon.downcase.to_sym)
+    weapons.include?(weapon.downcase)
   end
 end
