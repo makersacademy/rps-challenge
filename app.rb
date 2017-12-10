@@ -32,7 +32,7 @@ class RPS < Sinatra::Base
 
   post '/make_choice' do
     Game.instance.make_move(params[:choice])
-    Game.instance.make_move(["Rock", "Paper", "Scissors"].sample) if Game.instance.curr_turn.ai
+    Game.instance.make_move(["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample) if Game.instance.curr_turn.ai
     Game.instance.complete? ? redirect('/gameover') : redirect('/play')
   end
 
