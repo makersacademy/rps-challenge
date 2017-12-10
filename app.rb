@@ -1,12 +1,13 @@
 require "sinatra/base"
 
+
 class RPS < Sinatra::Base
 
   get "/" do
     erb(:index)
   end
 
-  get "/name" do
+  post "/name" do
     "name entered"
   end
 
