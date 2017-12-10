@@ -47,8 +47,11 @@ Visit: http://localhost:9292/
 ## Screenshots
 ----
 ![Home Page](https://imgur.com/nyYYzXp.png)
+----
 ![Player page](https://imgur.com/p8b1Ky0.png)
+----
 ![Game page](https://imgur.com/5YqYgd4.png)
+----
 ![Result page](https://imgur.com/snNKUzk.png)
 
 ## Extra functionality 1: Multiplayer
