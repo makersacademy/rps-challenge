@@ -1,1 +1,14 @@
-<h2> <%= @player_name %> vs. Computer </h2>
+<h2> <%= @player_name %> vs. Computer </h2> <br>
+<form action='/choice'>
+  <button type='submit' value='Rock' name='choice'>Rock</button>
+</form>
+<form action='/choice'>
+  <button type='submit' value='Paper' name='choice'>Paper</button>
+</form>
+<form action='/choice'>
+  <button type='submit' value='Scissors' name='choice'>Scissors</button>
+</form> <br>
+
+<% if !!@choice %>
+  <%=@player_name%> chose <%=@choice%>!
+<% end %>
