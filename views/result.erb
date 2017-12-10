@@ -1,17 +1,33 @@
+<head>
+  <title>Result</title>
+</head>
+<style>
+  body {
+    font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+    text-align: center;
+    margin: 50px;
+  }
+</style>
 
-  <head>
-    <title>Result</title>
-  </head>
-  <style>
-   body {
-   font-family: "Raleway", "Helvetica", "Arial", sans-serif;
-   text-align: center;
-   margin: 50px;
-   }
-  </style>
+<body style="color:#130101c4">
+  <h2 style="color:#130101c4;">
+    <%= "#{@game.player.name} chose #{@game.player_weapon}" %>
+  </h2>
+  <h2 style="color:#130101c4;">
+    <%= "#{@game.computer.name} chose #{@game.computer_weapon}" %>
+  </h2>
+  <h2>
+    <%= @game.result %>
+  </h2>
+  <br><br>
+  <div style="margin-top:50px;">
+    <form action="/play_again" method="get">
+      <input type="submit" value="Play again!">
+    </form>
 
-  <body style="color: #e0bb16">
-    <h1> <%= @game.result %> </h1>
-    <br>
+    <form action="/sign_up_again" method="get">
+      <input type="submit" value="Homepage">
+    </form>
+  </div>
 
-  </body>
+</body>

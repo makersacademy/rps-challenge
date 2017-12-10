@@ -3,9 +3,9 @@ require './lib/player'
 require './lib/computer'
 
 describe Game do
-  subject(:game){described_class.new(xin, xinmac)}
-  let(:xin) {double(:player, name: "Xin")}
-  let(:xinmac) {double(:computer, name: "XinMac", weapon: :rock)}
+  subject(:game) { described_class.new(xin, xinmac) }
+  let(:xin) { double(:player, name: "Xin") }
+  let(:xinmac) { double(:computer, name: "XinMac", weapon: :rock) }
   let(:weapon) { :rock }
   let(:weapon2) { :banana }
 
@@ -32,9 +32,8 @@ describe Game do
 
   context "the chosen weapon is not available" do
     it "gives the human player a weapon" do
-      expect{ game.player_choice(weapon2) }.to raise_error "not a possible weapon"
+      expect { game.player_choice(weapon2) }.to raise_error "not a possible weapon"
     end
   end
-
 
 end
