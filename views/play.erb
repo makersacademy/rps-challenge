@@ -8,19 +8,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <div>
-<h1><%= @p1_name %> Vs. <%= @p2_name %></h1>
-
-<form action="/make_choice" method="post">
-  <input type="submit" name="choice" value="Rock">
-  <input type="submit" name="choice" value="Paper">
-  <input type="submit" name="choice" value="Scissors">
-</form>
+<center>
+  <h1><%= @p1_name %> Vs. <%= @p2_name %></h1>
+  <h2><%= @current_player %>'s turn</h2>
+  <form action="/make_choice" method="post">
+    <input type="submit" name="choice" value="Rock">
+    <input type="submit" name="choice" value="Paper">
+    <input type="submit" name="choice" value="Scissors">
+  </form>
+<center>
 </div>
 
 <style>
-  div{
-    top: 46%;
-    left: 46%;
+div {
+    width: 300px;
+    height: 100px;
+
     position: absolute;
-  }
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
 </style>

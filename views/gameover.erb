@@ -10,6 +10,8 @@
 
 
 <div>
+  <center>
+  <h3> <%= @p1_name %> picked: <%= @p1_choice %> <br> <%= @p2_name %> picked: <%= @p2_choice %></h3>
 <%= @winner %>
 <form action="play_again" method="post">
   <input type="submit" name="play_again" value="Play again">
@@ -17,13 +19,21 @@
 <form action="/" method="get">
   <input type="submit" value="New Game">
 </form>
+</center>
 </div>
 
 
 <style>
-  div{
-    top: 50%;
-    left: 46%;
+div {
+    width: 300px;
+    height: 100px;
+
     position: absolute;
-  }
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
 </style>

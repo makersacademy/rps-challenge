@@ -19,12 +19,14 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @p1_name, @p2_name = session[:p1_name], session[:p2_name]
+    @p1_name, @p2_name = session[:p1_name], session[:p2_name] || "AI"
+    @current_player = Game.instance.curr_turn.name
     erb(:play)
   end
 
   get '/gameover' do
-    @winner = Game.instance.get_winner
+    @p1_name, @p2_name = session[:p1_name], session[:p2_name] || "AI"
+    @winner, @p1_choice, @p2_choice = Game.instance.get_winner, Game.instance.player_1.choice, Game.instance.player_2.choice
     erb(:gameover)
   end
 

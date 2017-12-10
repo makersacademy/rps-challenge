@@ -8,6 +8,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <div>
+<center>
+  <p>Rock Paper Scissors</p>
 <% if params[:game_mode].nil? %>
   <form action='/' method="get">
     <input type="submit" name="game_mode" value="Singleplayer">
@@ -27,12 +29,23 @@
     <input type="submit" value="Submit">
   </form>
 <% end %>
+</center>
 </div>
 
 <style>
-  div{
-    top: 50%;
-    left: 46%;
+div {
+    width: 300px;
+    height: 100px;
+
     position: absolute;
-  }
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+p {
+  font-size: 300%;
+}
 </style>
