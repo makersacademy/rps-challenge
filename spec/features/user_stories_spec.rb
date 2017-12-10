@@ -69,4 +69,27 @@ feature "Deciding on the winner" do
     expect(page).to have_text ("The winner is:")
   end
 
+  context "And the winner is..... (player vs computer)" do
+    scenario "paper vs rock"  do
+      log_in
+      click_button ("paper")
+      expect(page).to have_text ("The winner is: Nikolaos")
+    end
+
+    scenario "scissors vs paper"  do
+      log_in
+      click_button ("scissors")
+      expect(page).to have_text ("The winner is: Nikolaos")
+    end
+
+    scenario "rock vs scissors"  do
+      log_in
+      click_button ("rock")
+      expect(page).to have_text ("The winner is: Nikolaos")
+    end
+  end
+
+
+
+
 end

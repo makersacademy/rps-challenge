@@ -1,6 +1,6 @@
 require_relative "../lib/computer_player"
 
-describe Computer do
+describe ComputerPlayer do
   subject(:computer) {described_class.new}
 
  it "should return a random hand" do
