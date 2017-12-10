@@ -10,3 +10,7 @@
 <%= @game.choice_message(@game.choice) if @game.game_started? %> <%= @game.computer_choice_message(@game.c_choice) if @game.game_started? %><br>
 <%= "#{@game.who_won(@game.choice, @game.c_choice)}" if @game.game_started? %> <br>
 <%= "#{@game.player1.name} has won #{@game.win_count} out of #{@game.total_games} games (#{@game.percentage_wins}%)" %>
+<br>
+<form action="/reset" method="post">
+  <input type="submit" value="Reset Scores">
+</form>

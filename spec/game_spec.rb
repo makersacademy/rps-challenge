@@ -87,4 +87,13 @@ describe Game do
     end
   end
 
+  describe "#reset" do
+    it "resets wins and total games" do
+      game.choice = :rock
+      game.who_won(game.choice, game.computer_choice)
+      game.reset
+      expect(game.total_games).to eq 0
+    end
+  end
+
 end

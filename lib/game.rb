@@ -47,6 +47,12 @@ class Game
     (100*(@win_count / @total_games.to_f)).round(2)
   end
 
+  def reset
+    @choice = nil
+    @win_count = 0
+    @total_games = 0
+  end
+
   def who_won(choice1, choice2)
     @total_games += 1
     return "Draw!" if choice1 == choice2
