@@ -28,6 +28,7 @@ set :session_secret, "sessionkey"
 
   post "/challenge" do
     session[:choice] = params[:choice]
+    
     erb(:challenge)
   end
 

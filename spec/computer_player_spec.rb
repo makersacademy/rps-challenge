@@ -18,7 +18,7 @@ describe ComputerPlayer do
   end
 
   it 'should return scissor' do
-    srand(67809)
+    srand(3)
     expect(subject.select_hand).to eq("scissors")
   end
 
