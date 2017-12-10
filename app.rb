@@ -1,4 +1,5 @@
 require "sinatra/base"
+require_relative "./lib/game.rb"
 
 
 class RPS < Sinatra::Base
@@ -10,18 +11,18 @@ set :session_secret, "sessionkey"
   end
 
   post "/name" do
-    session[:player_one_name] = params[:player_one_name]
+    session[:player_one_name] = Game.new(params[:player_one_name])
     redirect "/play"
 
   end
 
   get "/play" do
-    @player_one_name = session[:player_one_name]
+    @player_one_name = session[:player_one_name].player
     erb(:play)
   end
 
   get "/play_again" do
-    @player_one_name = session[:player_one_name]
+    @player_one_name = session[:player_one_name].player
     erb(:play_again)
   end
 

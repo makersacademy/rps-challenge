@@ -1,13 +1,14 @@
 class ComputerPlayer
 
-  attr_reader :hands
+  attr_reader :c_hands
 
   def initialize
-   @hands = ["rock", "paper", "scissors"]
+   @c_hands = ["rock", "paper", "scissors"]
   end
 
   def select_hand
-    @hands.sample
+    @c_hands.sample
   end
-  
+
+
 end
