@@ -30,7 +30,13 @@ class Game
     @computer_weapon = @computer.weapon
   end
 
-  # def result
-  #   RULES[player_choice][computer.choice()]? :win : :lose
-  # end
+  def result
+    if @player_weapon == @computer_weapon
+      "It's a tie"
+    elsif RULES[@player_weapon] == @computer_weapon
+      "Congratulation! #{@player.name} won!"
+    else
+      "Computer won!"
+    end
+  end
 end

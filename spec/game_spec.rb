@@ -25,7 +25,7 @@ describe Game do
       expect(game.player_weapon).to eq :rock
     end
 
-    it "gives the computer player a weapon" do
+    it "gives the computer a weapon" do
       expect(game.computer_weapon).to eq :rock
     end
   end
@@ -35,4 +35,6 @@ describe Game do
       expect{ game.player_choice(weapon2) }.to raise_error "not a possible weapon"
     end
   end
+
+
 end

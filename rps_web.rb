@@ -4,6 +4,8 @@ require './lib/computer'
 require './lib/game'
 
 class RPSWeb < Sinatra::Base
+  enable :sessions
+
 
 get '/' do
   erb(:index)
@@ -25,14 +27,19 @@ end
 post '/choice' do
   weapon = params[:player_choice].to_sym
   @game.player_choice(weapon)
+  erb(:game)
   redirect '/choice'
 end
 
 get '/choice' do
   @game.computer_weapon
   erb(:game)
+  redirect '/result'
 end
 
+get '/result' do
+  erb(:result)
+end
 
 run! if app_file == $0
 end
