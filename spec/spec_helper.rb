@@ -2,6 +2,7 @@ require './app'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './spec/feature.rb/web_helpers.rb'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -13,7 +14,6 @@ SimpleCov.start
 
 RSpec.configure do |config|
   ENV['RACK_ENV'] = 'test'
-  set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
 
   Capybara.app = RPS
   config.after(:suite) do
