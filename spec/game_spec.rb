@@ -60,4 +60,31 @@ describe Game do
     end
   end
 
+  describe "#win_count" do
+    it "returns how many wins you have" do
+      srand(3)
+      game.choice = :rock
+      game.who_won(game.choice, game.computer_choice)
+      expect(game.win_count).to eq 1
+    end
+  end
+
+  describe "#total_games" do
+    it "returns how many games have been played" do
+      game.choice = :rock
+      game.who_won(game.choice, game.computer_choice)
+      game.who_won(game.choice, game.computer_choice)
+      expect(game.total_games).to eq 2
+    end
+  end
+
+  describe "#percentage_wins" do
+    it "returns wins as a percentage of total games" do
+      srand(3)
+      game.choice = :rock
+      game.who_won(game.choice, game.computer_choice)
+      expect(game.percentage_wins).to eq 100
+    end
+  end
+
 end

@@ -11,4 +11,11 @@ feature 'win conditions' do
     click_button "scissors"
     expect(page).to have_content "Draw!"
   end
+  scenario 'counts the number of wins and losses' do
+    name_and_play
+    srand(1)
+    click_button "scissors"
+    expect(page).to have_content "George has won 1 out of 1 games"
+    expect(page).to have_content "(100.0%)"
+  end
 end
