@@ -5,6 +5,8 @@ feature 'game display page' do
     expect(page).to have_selector("input[type=submit][value='rock']")
     expect(page).to have_selector("input[type=submit][value='paper']")
     expect(page).to have_selector("input[type=submit][value='scissors']")
+    expect(page).to have_selector("input[type=submit][value='lizard']")
+    expect(page).to have_selector("input[type=submit][value='spock']")
   end
 
   scenario 'displays your choice of R/P/S' do
@@ -15,7 +17,7 @@ feature 'game display page' do
 
   scenario 'displays the computers choice of R/P/S' do
     name_and_play
-    srand(1)
+    srand(10)
     click_button "rock"
     expect(page).to have_content "Computer chose paper"
   end
