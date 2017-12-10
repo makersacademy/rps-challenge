@@ -4,16 +4,19 @@ feature 'playing the game' do
     sign_up_and_play
   end
   scenario 'when player selects rock, they are told they won' do
-    click_button 'Rock'
+    choose('Rock')
+    click_button('Submit')
     expect(page).to have_content('The Machine chose scissors...you won!')
   end
   scenario 'when player selects paper, they are told they lost' do
-    click_button 'Paper'
+    choose('Paper')
+    click_button('Submit')
     message = 'The Machine chose scissors...sorry, you lost.'
     expect(page).to have_content(message)
   end
   scenario 'when player selects scissors, they are told it is a draw' do
-    click_button 'Scissors'
+    choose('Scissors')
+    click_button('Submit')
     expect(page).to have_content('The Machine also chose scissors...draw!')
   end
 end
