@@ -21,4 +21,10 @@ feature 'playing the game' do
     expect(page).to have_content 'Computer chose Rock!'
   end
 
+  scenario 'the result (win/draw) of the round is displayed' do
+    sign_in_and_play_solo
+    click_button 'Rock'
+    expect(page).to have_content 'Draw!'
+  end
+
 end
