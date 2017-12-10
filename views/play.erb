@@ -1,1 +1,10 @@
-<%= @player_name %> vs. Computer
+<form action="/play/new" method='post'>
+  <h1>Rock, Paper, Scissors</h1>
+  <h2><%= @player_name %>, please choose your weapon:</h2>
+  <ul>
+    <li>
+      <input type='text' name='weapon'> </input>
+    </li>
+    <input type='submit' value='Submit'>
+  </ul>
+</form>

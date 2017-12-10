@@ -9,7 +9,12 @@ end
 
 post ('/name') do
   session[:player_name] = params[:player_name]
-  redirect '/play'
+  redirect '/begin'
+end
+
+get ('/begin') do
+  @player_name = session[:player_name]
+  erb(:begin)
 end
 
 get ('/play') do

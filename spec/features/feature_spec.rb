@@ -5,6 +5,6 @@ feature 'Entering player name' do
     visit('/')
     fill_in :player_name, with: 'player_name'
     click_button('Submit')
-    expect(page).to have_content('player_name')
+    expect(page).to have_content('player_name Vs. Computer')
   end
 end
