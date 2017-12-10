@@ -63,7 +63,7 @@ feature "User enters name and chooses hand" do
 end
 
 feature "Deciding on the winner" do
-  scenario "And the winner is....." do
+  scenario "And the winner is..... (text)" do
     log_in
     click_button ("scissors")
     expect(page).to have_text ("The winner is:")
