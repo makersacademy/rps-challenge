@@ -9,6 +9,18 @@ describe Result do
       result = Result.new('Paper', 'Rock')
       expect(result.player_selection).to eq 'Paper'
     end
+
+    it 'should initialize with computer score = 0' do
+      result = Result.new('Paper', 'Rock')
+      expect(result.computer_score).to eq 0
+    end
+
+    it 'should initialize with player score = 0' do
+      result = Result.new('Paper', 'Rock')
+      expect(result.player_score).to eq 0
+    end
+
+
   end
 
   context '#calc_result' do
@@ -54,5 +66,4 @@ describe Result do
       expect(result.result).to eq 'Draw'
     end
   end
-
 end

@@ -34,4 +34,9 @@ feature 'There are buttons for each of the three options' do
     visit('/result')
     expect(page).to have_content('Alan selected Scissors')
   end
+
+  scenario 'page should display the score' do
+    sign_in
+    expect(page).to have_content('Alan 0:0 Computuer')
+  end
 end
