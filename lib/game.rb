@@ -13,7 +13,7 @@ class Game
 
   def initialize args
     @player_1 = args[:player_1]
-    @player_2 = args[:player_2] || Player.new("AI")
+    @player_2 = args[:player_2] || Player.new("AI", true)
     @multiplayer = !!args[:player_1] && !!args[:player_2]
     @curr_turn = @player_1
   end
@@ -25,5 +25,9 @@ class Game
 
   def switch_turns
     @curr_turn = (@curr_turn == player_1 ? player_2 : player_1)
+  end
+
+  def complete?
+    !player_1.choice.nil? && !player_2.choice.nil?
   end
 end

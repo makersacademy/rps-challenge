@@ -10,4 +10,13 @@ describe Player do
     subject.make_choice("Paper")
     expect(subject.choice).to eq "Paper"
   end
+
+  it 'should initialize ai to false' do
+    expect(subject.ai).to be false
+  end
+
+  it 'should be able to be designated as an ai' do
+    player = Player.new("James", true)
+    expect(player.ai).to be true
+  end
 end
