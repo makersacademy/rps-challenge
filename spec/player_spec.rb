@@ -1,20 +1,16 @@
 describe Player do
-  subject(:jim) { Player.new('Jim') }
+  subject(:name) { Player.new('name') }
 
   describe '#name' do
     it 'returns the name' do
-      expect(jim.name).to eq 'Jim'
+      expect(name.name).to eq 'name'
     end
   end
 
-
-
-
-
-end
-
-describe Game do
-  it 'should be able to select scissors' do
-    expect
+  describe '#random_item' do
+    it 'should choose a random item' do
+      srand(1)
+      expect(name.random_item.item).to eq :spock
+    end
   end
 end

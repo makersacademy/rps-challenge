@@ -26,6 +26,8 @@ class Game
     bot_number == player_number ? ( draw ) : (((bot_number - player_number) % 5) < 3 ? (bot_wins) : (player_wins))
   end
 
+private
+
   def name_to_number(name)
     case name
       when :rock
