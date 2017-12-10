@@ -2,7 +2,7 @@ describe Game do
 
   subject(:game) { described_class.new(player, computer) }
   let(:player)   { double :player, name: "Ellie" }
-  let(:computer)  { double :computer, name: "Computer" }
+  let(:computer) { double :computer, name: "Computer" }
 
   describe "#player" do
     it "shows the player object" do
@@ -16,7 +16,7 @@ describe Game do
     end
   end
 
-  describe "#play" do
+  describe "#result" do
     it "plays the choices against each other and returns the winning choice" do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:scissors)
@@ -50,13 +50,13 @@ describe Game do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:scissors)
       game.result
-      expect(game.print_winner).to eq("Computer")
+      expect(game.print_winner).to eq("Computer won!")
     end
     it "returns the name of the winner if the player won" do
       allow(computer).to receive(:choice).and_return(:rock)
       allow(player).to receive(:choice).and_return(:paper)
       game.result
-      expect(game.print_winner).to eq("Ellie")
+      expect(game.print_winner).to eq("Ellie won!")
     end
     it "returns 'Draw!' if no one wins" do
       allow(computer).to receive(:choice).and_return(:rock)
