@@ -1,6 +1,6 @@
 <h1> Rock, Paper, Scissors! </h1>
 <br>
-<h2> <%= @name %> VS Computer </h2>
+<h2> <%= @title %> </h2>
 
 <form action = '/choose' method = post>
   <input type = 'image' value = 'Rock' src = '/Rock.jpg' name = 'choice'>
@@ -8,6 +8,6 @@
   <input type = 'image' value = 'Scissors' src = '/Scissors.jpg' name = 'choice'>
 </form>
 
-<% if @choice %>
-<h2> <%= @name %> chooses <%= @choice %>! </h2>
+<% if @play_text %>
+<h2> <%= @play_text %> </h2>
 <% end %>
