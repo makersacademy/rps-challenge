@@ -26,8 +26,6 @@ class Game
   end
 
   def title
-    p player1
-    p player2
     "#{player1.name} VS #{player2.name}"
   end
 
@@ -50,8 +48,6 @@ class Game
   end
 
   def resolve(player1, player2)
-    p player1.choice
-    p player2.choice
     case RESOLVE[player1.choice][player2.choice]
     when :win then player1.name
     when :lose then player2.name
