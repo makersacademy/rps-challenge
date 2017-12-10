@@ -1,28 +1,19 @@
 require 'pry'
 
 feature 'fighting ralph' do
-  scenario 'there is a form to enter weapon' do
+  scenario 'there is a selection of weapon buttons' do
     visit '/'
     click_button "1 Player"
     fill_in 'Challenger', with: "Gerald"
     click_button "Battle!"
-    fill_in 'weapon', with: "rock"
-  end
-  scenario 'there is a button to enter the fight' do
-    visit '/'
-    click_button "1 Player"
-    fill_in 'Challenger', with: "Gerald"
-    click_button "Battle!"
-    fill_in 'weapon', with: "rock"
-    click_button "Fight Ralph!"
+    expect(page).to have_content "Rock"
   end
   scenario 'the fight page loads' do
     visit '/'
     click_button "1 Player"
     fill_in 'Challenger', with: "Gerald"
     click_button "Battle!"
-    fill_in 'weapon', with: "rock"
-    click_button "Fight Ralph!"
+    click_button "paper"
     expect(page).to have_content
   end
 end

@@ -30,8 +30,7 @@ feature 'name entry' do
     fill_in 'Player1', with: "Maude"
     fill_in 'Player2', with: "Dorothy"
     click_button "Choose weapons"
-    fill_in 'weapon', with: "rock"
-    click_button "Equip"
+    click_button "Rock"
     expect(page).to have_content "Now you, Dorothy"
   end
 end
