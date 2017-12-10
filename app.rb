@@ -1,4 +1,4 @@
-arequire 'sinatra/base'
+require 'sinatra/base'
 require './lib/game.rb'
 
 class RPS < Sinatra::Base
