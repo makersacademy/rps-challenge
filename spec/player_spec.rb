@@ -10,8 +10,10 @@ describe Player do
     end
   end
   describe "#random_weapon" do
-    it "should return an available weapon" do
-      expect{ mortimer.random_weapon }.not_to raise_error
+    it "should return a weapon" do
+      srand(1)
+      mortimer.random_weapon
+      expect(mortimer.choice.weapon).to eq :spock
     end
   end
 end
