@@ -9,6 +9,7 @@
   <button type='submit' value='Scissors' name='choice'>Scissors</button>
 </form> <br>
 
-<% if !!@choice %>
-  <%=@player_name%> chose <%=@choice%>!
+<% if !!@choices %>
+  <%=@player_name%> chose <%=@choices[0]%>! <br>
+  The opponent chose <%=@choices[1]%>! <br>
 <% end %>
