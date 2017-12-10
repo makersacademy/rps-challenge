@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/computer'
+require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -9,18 +12,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    Game.create(Player.new(params[:player_name]), Computer.new)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    @weapon_choice = session[:weapon_choice]
+    @player_name = Game.instance.player.name
+    @player_choice = session[:player_choice]
+    @computer_choice = session[:computer_choice]
     erb :play
   end
 
   post '/choice' do
-    session[:weapon_choice] = "You have chosen #{params[:weapon_choice]}"
+    session[:player_choice] = params[:player_choice].downcase.to_sym
+    session[:computer_choice] = Computer.new.weapon_choice
     redirect '/play'
   end
 

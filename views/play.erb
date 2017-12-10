@@ -3,12 +3,15 @@
     <h1><%= @player_name %> vs. Computer</h1>
     <h2>Please choose your weapon</h2>
     <form action='/choice' method='post'>
-      <button type='submit' name='weapon_choice' value='Rock'>Rock</button>
-      <button type='submit' name='weapon_choice' value='Paper'>Paper</button>
-      <button type='submit' name='weapon_choice' value='Scissors'>Scissors</button>
+      <button type='submit' name='player_choice' value='Rock'>Rock</button>
+      <button type='submit' name='player_choice' value='Paper'>Paper</button>
+      <button type='submit' name='player_choice' value='Scissors'>Scissors</button>
     </form>
-    <% if !!@weapon_choice %>
-      <h2><%= @weapon_choice %></h2>
+    <% if !!@player_choice %>
+      <h2>You have chosen <%= @player_choice %></h2>
+    <% end %>
+    <% if !!@computer_choice %>
+    <h2>The computer has chosen <%= @computer_choice %></h2>
     <% end %>
   </body>
 </html>
