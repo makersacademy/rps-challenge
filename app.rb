@@ -15,7 +15,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
+    @weapon_choice = session[:weapon_choice]
     erb :play
+  end
+
+  post '/choice' do
+    session[:weapon_choice] = "You have chosen #{params[:weapon_choice]}"
+    redirect '/play'
   end
 
   run! if app_file == $0
