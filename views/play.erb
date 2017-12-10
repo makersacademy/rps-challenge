@@ -1,0 +1,13 @@
+<h1> Rock, Paper, Scissors! </h1>
+<br>
+<h2> <%= @title %> </h2>
+
+<form action = '/choose' method = post>
+  <input type = 'image' value = 'Rock' src = '/Rock.jpg' name = 'choice'>
+  <input type = 'image' value = 'Paper' src = '/Paper.jpg' name = 'choice'>
+  <input type = 'image' value = 'Scissors' src = '/Scissors.jpg' name = 'choice'>
+</form>
+
+<% if @play_text %>
+<h2> <%= @play_text %> </h2>
+<% end %>
