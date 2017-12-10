@@ -17,7 +17,31 @@ that the player would know how many rounds he or she would have scored in the
 time he spent during the game. Also, an exit button with a result page would be
 useful as well.
 
-Thanks to Jamie, Marco and Eva for help and moral support to accomplish this.
+## How To Use 
+
+1. Open the program terminal or an equivalent and enter:
+```
+https://github.com/thatdania/rps-challenge.git
+```
+2. Change to the directory of the project 
+```
+$ cd rps-challenge/
+```
+3. Install the apps dependencies
+```
+$ bundle install
+```
+4. Use terminal to host a server to play the game.
+```
+$ rackup config.ru
+```
+5. Go to a web browser and play the game at the following address:
+```
+http://localhost:9292/
+```
+6. Enter the player's name.
+7. Pick a rock, scissors or paper to go against the computer! 
+
 
 ## Domain Models
 
