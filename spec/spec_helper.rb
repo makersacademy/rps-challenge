@@ -1,7 +1,6 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require_relative '../app.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -19,4 +18,6 @@ RSpec.configure do |config|
 end
 
 require 'capybara'
+require_relative '../app.rb'
+require_relative './features/web_helpers'
 Capybara.app = RPS
