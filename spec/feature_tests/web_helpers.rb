@@ -12,5 +12,7 @@ def sign_in
 end
 
 def choose_paper
-  
+  srand(1000)
+  choose("pick", option: "PAPER")
+  click_button('GO')
 end

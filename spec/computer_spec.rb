@@ -30,4 +30,19 @@ describe Computer do
 
   end
 
+  describe '#choice' do
+    it 'Should return the choice the computer has made' do
+      expect(cpu.choice).to eq Computer::DEFAULT_CHOICE
+    end
+
+  end
+
+  describe '#choose' do
+    it 'Should potentially change the choice of the computer' do
+      srand(1002)
+      expect { cpu.choose }.to change { cpu.choice }.from(Computer::DEFAULT_CHOICE).to('PAPER')
+    end
+
+  end
+
 end

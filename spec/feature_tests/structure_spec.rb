@@ -33,9 +33,18 @@ feature 'Testing infrastructure' do
     expect(page).to have_content("ROCK") and have_content("PAPER") and have_content("SCISSORS")
   end
 
+  scenario 'Battle page should have a button to submit choice' do
+    expect(page).to have_button('GO')
+  end
+
   scenario 'Should be able to select an option and see your choice on the next page' do
     choose_paper
-    expect(page).to have_content('You chose PAPER')
+    expect(page).to have_content('You chose PAPER!')
+  end
+
+  scenario 'Should be able to see the choice that the computer player made' do
+    choose_paper
+    expect(page).to have_content('Donnie finga-slinga chose ROCK!')
   end
 
 end
