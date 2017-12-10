@@ -53,3 +53,5 @@ http://localhost:9292/
 | r,p,s         | play              | Play rock paper scissors against com. |
 | r,p,s (bonus) | play (bonus)      | Instead of com, make two multiplayers |
 | r,p,s (bonus) | play (bonus)      | Adapt to the actual rules of the game |
+
+Having built this domain model was part of my progress, as it allowed me to note what functions were required for the program to work. It's a great technique I use to map out the need of the program to suit the needs of the project's objective. 
