@@ -39,4 +39,34 @@ feature "User enters name and chooses hand" do
 
   end
 
+    context "User selects one of the options" do
+      scenario "user clicks Rock" do
+        log_in
+        click_button ("rock")
+        expect(page).to have_text ("You have chosen \"Rock\"")
+      end
+
+      scenario "user clicks Papes" do
+        log_in
+        click_button ("paper")
+        expect(page).to have_text ("You have chosen \"Paper\"")
+      end
+
+      scenario "user clicks Scissors" do
+        log_in
+        click_button ("scissors")
+        expect(page).to have_text ("You have chosen \"Scissors\"")
+      end
+
+    end
+
+end
+
+feature "Deciding on the winner" do
+  scenario "And the winner is....." do
+    log_in
+    click_button ("scissors")
+    expect(page).to have_text ("The winner is:")
+  end
+
 end
