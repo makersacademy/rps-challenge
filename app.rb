@@ -25,8 +25,8 @@ class RPS < Sinatra::Base
 
   post '/results' do
     @game = Game.game
-    @test = @game.player1.select_wep(params[:player1_select])
-    @test2 = @game.player2.select_wep(params[:player2_select])
+    @game.player1.select_wep(params[:player1_select])
+    @game.player2.select_wep(params[:player2_select])
     erb(:results)
   end
 
