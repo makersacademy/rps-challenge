@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      <h1>Rock Paper Scissors</h1>
+    <div>
+      <h2><%= @player.name %> has joined a game of Rock Paper Scissors<h2>
+    </div>
+    <div>
+      <form action="/choice" method="post">
+        <div>
+          <label for="player_choice">
+            Please choose one
+            <div>
+              <input type="radio" id="choiceRock"
+                     name="player_choice" value="rock">
+              <label for="choiceRock">Rock</label>
+              <input type="radio" id="choicePaper"
+                     name="player_choice" value="paper">
+              <label for="choicePaper">Paper</label>
+              <input type="radio" id="choiceScissors"
+                     name="player_choice" value="scissors">
+              <label for="choiceScissors">Scissors</label>
+            </div>
+          </label>
+        </div>
+        <input type="submit" value="Go">
+      </form>
+    </div>
+  </body>
+</html>
