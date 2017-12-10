@@ -1,6 +1,7 @@
 describe Player do
 
-  subject(:player) { described_class.new("Ellie") }
+  subject(:player) { described_class.new(name) }
+  let(:name)       { "Ellie" }
 
   describe "#name" do
     it "shows the name of the player" do
