@@ -1,3 +1,5 @@
+require_relative 'computer'
+
 class Game
   attr_reader :player_name, :computer_weapon, :outcome
 
