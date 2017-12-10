@@ -2,7 +2,7 @@ require 'game'
 require 'computer'
 
 describe Game do
-  subject(:game) { described_class.new("Jim") }
+  subject(:game) { described_class.new('Jim') }
   context '#self.instance' do
     it 'should create a instance of game with a new player' do
       Game.create('Jim')
