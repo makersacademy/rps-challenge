@@ -13,10 +13,10 @@
 <%=@game.players[1].name%> wins: <%=@game.players[1].score%>/10<br>
 
 <% unless @game.choices.include? nil %>
-  <%=@game.players[0].name%> chose <%=@choices[0]%>! <br>
-  <%=@game.players[1].name%> chose <%=@choices[1]%>! <br>
+  <%=@game.players[0].name%> chose <%=@game.choices[0]%>! <br>
+  <%=@game.players[1].name%> chose <%=@game.choices[1]%>! <br>
 <% end %>
 
-<% if !!@results %>
-  <%=@results%>
+<% if !!@game.result %>
+  <%=@game.result%>
 <% end %>
