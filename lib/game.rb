@@ -37,16 +37,18 @@ class Game
   end
 
   def get_winner
+    winner = {
+      Rock: [:Scissors, :Lizard],
+      Paper: [:Spock, :Rock],
+      Scissors: [:Paper, :Lizard],
+      Lizard: [:Spock, :Paper],
+      Spock: [:Scissors, :Rock],
+    }
     return "Draw!" if player_1.choice == player_2.choice
-    if player_1.choice == "Rock"
-      return "#{player_1.name} wins!" if player_2.choice == "Scissors"
-      return "#{player_2.name} wins!"
-    elsif player_1.choice == "Scissors"
-      return "#{player_1.name} wins!" if player_2.choice == "Paper"
-      return "#{player_2.name} wins!"
-    elsif player_1.choice == "Paper"
-      return "#{player_1.name} wins!" if player_2.choice == "Rock"
-      return "#{player_2.name} wins!"
+    if winner[player_1.choice.to_sym].include? player_2.choice.to_sym
+       "#{player_1.name} wins!"
+    else
+      "#{player_2.name} wins!"
     end
   end
 end
