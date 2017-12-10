@@ -3,7 +3,7 @@
 </h1>
 
 <h2>
-  <%= @player_name %> went for
+  <%=@current_game.the_player.name%>  went for
 </h2>
 
 <h3>
@@ -18,6 +18,10 @@
   Scissors vs
 </h3>
 
-<form action="/play" method= post>
+<form action="/choose" method= "post">
   <input type= "submit" value = "Play again">
+</form>
+
+<form action="/" method="get">
+  <input type= "submit" value = "Home Page">
 </form>

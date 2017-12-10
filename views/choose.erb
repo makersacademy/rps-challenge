@@ -3,11 +3,13 @@
 </h1>
 
 <h2>
-  <%= @player_name %> choose:
+  <%=@current_game.the_player.name%> choose:
 </h2>
 
-<form action="/result" method= post>
+<form action="/result" method= 'post'>
   <input type="submit" value= "Rock">
   <input type="submit" value= "Paper">
   <input type="submit" value= "Scissors">
+  <input type="submit" value= "spock">
+  <input type="submit" value= "Lizzard">
 </form>

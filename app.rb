@@ -1,17 +1,21 @@
-require 'sinatra'
+require 'sinatra/base'
+require_relative './lib/player'
+require_relative './lib/game'
 
 class RPS < Sinatra::Base
+  enable :sessions
+
   get '/' do
-    erb :name_entry
+    erb :home_page
   end
 
-  post '/play' do
-    @player_name = params[:player_name]
-    erb :play
+  post '/choose' do
+    @current_game = Game.create(params[:Player])
+    erb :choose
   end
 
   post '/result' do
-    @player_name = params[:player_name]
+    @current_game = Game.instance
     erb :result
   end
 

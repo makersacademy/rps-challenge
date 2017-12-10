@@ -1,10 +1,12 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require './app'
 require 'capybara'
 require 'rspec'
 require 'features/web_helpers'
+require './app'
+require_relative '../lib/game'
+require_relative '../lib/player'
 
 Capybara.app = RPS
 

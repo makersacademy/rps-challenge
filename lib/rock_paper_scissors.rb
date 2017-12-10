@@ -1,3 +1,0 @@
-class RockPaperScissors
-  
-end
