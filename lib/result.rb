@@ -18,12 +18,12 @@ class Result
     elsif @player_selection == "Rock" && @computer_selection == "Paper"
       @result = "Computer wins"
     elsif @player_selection == "Paper" && @computer_selection == "Scissors"
-      @result = "Computuer wins"
+      @result = "Computer wins"
     elsif @player_selection == "Scissors" && @computer_selection == "Rock"
-      @result = "Computuer wins"
+      @result = "Computer wins"
     end
   end
 
-  attr_reader :result
+  attr_reader :result, :player_selection, :computer_selection
 
 end

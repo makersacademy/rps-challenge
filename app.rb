@@ -47,8 +47,6 @@ class RPS < Sinatra::Base
     the_result = Result.new(@player_selection, @computer_selection)
     the_result.calc_result
     @result = the_result.result
-
-
     erb(:result)
   end
 
