@@ -9,7 +9,7 @@ describe Game do
     end
     it 'sometimes calls a win for ralph' do
       game.P1.choose(:rock)
-      expect(game.fight_ralph(:paper)).to eq "Ralph has vanquished his puny foe"
+      expect(game.fight_ralph(:paper)).to eq "RALPH HAS VANQUISHED HIS PUNY FOE"
     end
     it 'sometimes calls a win for the player' do
       game.P1.choose(:scissors)

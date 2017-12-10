@@ -50,7 +50,7 @@ class Game
   end
 
   def ralph_winner
-    "Ralph has vanquished his puny foe"
+    "RALPH HAS VANQUISHED HIS PUNY FOE"
   end
 
   def player_winner

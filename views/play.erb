@@ -1,5 +1,15 @@
-Welcome, young <%=@current_game.P1.name%>!
-Choose your weapon!
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<h1 align="center">Welcome, young <%=@current_game.P1.name%>!</h1>
+<h2 align="center">Choose your weapon!</h2>
 <form align="center" action='/fight_ralph' method='post'>
   <label for= 'weapon'>Weapon:<label>
     <input type= 'text'  name= 'weapon'>
@@ -8,3 +18,15 @@ Choose your weapon!
     <input type= 'submit' value= 'Fight Ralph!'>
   </div>
 </form>
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a weapon
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Rock</a></li>
+    <li><a href="#">Paper</a></li>
+    <li><a href="#">Scissors</a></li>
+    <li><a href="#">Spock</a></li>
+    <li><a href="#">HTML</a></li>
+  </ul>
+</div>

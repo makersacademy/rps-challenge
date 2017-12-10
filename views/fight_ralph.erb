@@ -1,7 +1,9 @@
-You chose <%=@current_game.P1.choice.weapon%>, Ralph chose <%=@current_game.ralph.choice.weapon%>
-<%= @result %>
+<h2 align= "center">You chose <%=@current_game.P1.choice.weapon%>, Ralph chose <%=@current_game.ralph.choice.weapon%></h2>
+<br />
+<h2 align= "center" style="color:red;"><%= @result %></h2>
+<br />
 
-Fight again?
+<h3 align= "center">Fight again?</h3>
 <form align="center" action='/fight_ralph' method='post'>
   <label for= 'weapon'>Weapon:<label>
     <input type= 'text'  name= 'weapon'>
