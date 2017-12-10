@@ -33,4 +33,9 @@ class RPS < Sinatra::Base
     Game.instance.make_move(["Rock", "Paper", "Scissors"].sample) if Game.instance.curr_turn.ai
     Game.instance.complete? ? redirect('/gameover') : redirect('/play')
   end
+
+  post '/play_again' do
+    Game.instance.reset_choices
+    redirect '/play'
+  end
 end

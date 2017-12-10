@@ -2,7 +2,7 @@ require 'game'
 require 'player'
 
 describe Game do
-  let(:player_1) { double(:player, name: "James", make_choice: "Rock") }
+  let(:player_1) { double(:player, name: "James", make_choice: "Rock", choice: nil) }
   let(:player_2) { double(:player, name: "Mary") }
   describe 'initialize' do
     it 'should initialize a game with two players when two names are provided' do
@@ -31,6 +31,12 @@ describe Game do
       #allow(:player_1).to receive(:make_choice)
       game.make_move("Rock")
       expect(game.curr_turn).to eq player_2
+    end
+  end
+
+  describe '#reset_choices' do
+    it 'should reset player choices' do
+      expect(player_1).to respond_to(:choice)
     end
   end
 end

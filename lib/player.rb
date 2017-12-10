@@ -1,5 +1,6 @@
 class Player
-  attr_reader :name, :choice, :ai
+  attr_reader :name, :ai
+  attr_accessor :choice
   def initialize(name, ai = false)
     @name = name
     @ai = ai
