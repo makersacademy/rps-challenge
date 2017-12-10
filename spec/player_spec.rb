@@ -3,10 +3,14 @@ require './lib/game.rb'
 require './lib/player.rb'
 
 describe Player do
-  let(:player1) { Player.new('Player1') }
-  let(:player2) { Player.new('Player2') }
+  let(:player) { Player.new('Player1') }
 
-  it 'should should initialize a player with name' do
-    expect(player1.name).to eq('Player1')
+  it 'should initialize a player with name' do
+    expect(player.name).to eq('Player1')
+  end
+
+  it 'should store player choice from param' do
+    allow(player).to receive(:choice).and_return('Rock')
+    expect(player.choice).to eq('Rock')
   end
 end

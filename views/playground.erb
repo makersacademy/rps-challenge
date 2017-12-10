@@ -1,18 +1,24 @@
 <body>
-<form>
-<input type=checkbox name=checkbox value=Rock>Rock
-<input type=checkbox name=checkbox value=Paper>Paper
-<input type=checkbox name=checkbox value=Scissors>Scissors
-</form>
-<br>
-<%=@game.player1.name%>
-<br>
 
-<form>
-<input type=checkbox name=checkbox value=Rock>Rock
-<input type=checkbox name=checkbox value=Paper>Paper
-<input type=checkbox name=checkbox value=Scissors>Scissors
-</form>
+
+<form action='/results' method='post' >
+<select id="player1_select" name=player1_select>
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value=Scissors>Scissors</option>
+</select>
 <br>
-<%=@game.player2.name%>
+  <%=@game.player1.name%>
+<br>
+<select id="player2_select" name=player2_select>
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value=Scissors>Scissors</option>
+</select>
+<br>
+  <%=@game.player2.name%>
+
+<input type=submit value='results'>
+</form>
+
 </body>
