@@ -1,8 +1,8 @@
 require 'computer'
 
 describe Computer do
-  subject(:computer) {described_class.new}
-  let(:computer) {double(:computer, computer_choice: :Rock)}
+  subject(:computer) { described_class.new }
+  let(:computer) { double(:computer, computer_choice: :Rock) }
 
   describe '#computer_choice' do
     it 'should return Rock' do

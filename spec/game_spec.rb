@@ -1,9 +1,9 @@
 require 'game'
 
 describe Game do
-  let(:game) {described_class.new(player, computer)}
-  let(:player) {double(:player)}
-  let(:computer) {double(:computer, weapon_choice: :rock) }
+  let(:game) { described_class.new(player, computer) }
+  let(:player) { double(:player) }
+  let(:computer) { double(:computer, weapon_choice: :rock) }
 
   describe "#initalize" do
     it "should initalize with a new player" do
