@@ -10,12 +10,19 @@ class RPS < Sinatra::Base
 
   post '/names' do
     @game = Game.create_game(params[:player1], params[:player2])
-    redirect '/players'
+    redirect '/lobby'
   end
 
-  get '/players' do
+  get '/lobby' do
     @game = Game.game
     erb(:lobby)
   end
+
+  get '/playground' do
+    @game = Game.game
+    erb(:playground)
+  end
+
+
 
 end
