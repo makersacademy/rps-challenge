@@ -27,6 +27,12 @@ class Game
     ralph_num == player_num ? ( tie_message ) : (((ralph_num - player_num) % 5) < 3 ? (ralph_winner) : (player_winner))
   end
 
+  def multiplayer_fight
+    player_num = name_to_number(@P1.choice.weapon)
+    player2_num = name_to_number(@P2.choice.weapon)
+    player_num == player2_num ? ( tie_message ) : (((player_num - player2_num) % 5) < 3 ? ("#{@P1.name} wins!") : ("#{@P2.name} wins!"))
+  end
+
   private
 
   def name_to_number(weapon)
