@@ -20,7 +20,6 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @p1_name, @p2_name = session[:p1_name], session[:p2_name]
-
     erb(:play)
   end
 end

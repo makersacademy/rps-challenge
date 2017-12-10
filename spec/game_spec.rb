@@ -2,7 +2,7 @@ require 'game'
 require 'player'
 
 describe Game do
-  let(:player_1) { double(:player, name: "James") }
+  let(:player_1) { double(:player, name: "James", make_choice: "Rock") }
   let(:player_2) { double(:player, name: "Mary") }
   describe 'initialize' do
     it 'should initialize a game with two players when two names are provided' do
@@ -22,6 +22,15 @@ describe Game do
     it 'should initialize multiplayer to true if both players proivded' do
       game = Game.new({player_1: player_1, player_2: player_2})
       expect(game.multiplayer).to be true
+    end
+  end
+
+  describe '#switch_turns' do
+    it 'should be player2s turn after player1s' do
+      game = Game.new({player_1: player_1, player_2: player_2})
+      #allow(:player_1).to receive(:make_choice)
+      game.make_move("Rock")
+      expect(game.curr_turn).to eq player_2
     end
   end
 end
