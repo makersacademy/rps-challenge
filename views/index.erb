@@ -1,6 +1,19 @@
+<% if params[:game_mode].nil? %>
+  <form action='/' method="get">
+    <input type="submit" name="game_mode" value="Singleplayer">
+    <input type="submit" name="game_mode" value="Multiplayer">
+  </form>
+<% elsif params[:game_mode] == "Singleplayer"%>
+  <form action='/play' method="post">
+    <b> Player 1 </b> <br>
+     Name <input type="text" name="p1_name"><br>
+    <input type="submit" value="Submit">
+  </form>
+<% else %>
 <form action='/play' method="post">
-  <b> Player 1 </b> <br>
-   Name <input type="text" name="p1_name"><br> <b> Player 2 </b> <br>
-   Name <input type="text" name="p2_name"><br>
-  <input type="submit" value="Submit">
-</form>
+    <b> Player 1 </b> <br>
+     Name <input type="text" name="p1_name"><br> <b> Player 2 </b> <br>
+     Name <input type="text" name="p2_name"><br>
+    <input type="submit" value="Submit">
+  </form>
+<% end %>
