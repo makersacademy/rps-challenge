@@ -1,0 +1,15 @@
+<html>
+<div style='text-align: center; margin-top: 10em;'>
+<h1> Welcome <%= @player_one_name %>!</h1>
+<br/>
+<br/>
+<h2>Please select your hand.</h2>
+<br/>
+
+<form action="/challenge" method="post">
+<button type="submit" name="choice" value="rock">Rock</button>
+<button type="submit" name="choice" value="paper">Paper</button>
+<button type="submit" name="choice" value="scissors">Scissors</button>
+</form>
+</div>
+</html>
