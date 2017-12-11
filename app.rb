@@ -7,6 +7,10 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -17,17 +21,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_name = Game.instance.player.name
-    @player_choice = session[:player_choice]
-    @computer_choice = session[:computer_choice]
     @result = session[:result]
     erb :play
   end
 
   post '/choice' do
-    session[:player_choice] = params[:player_choice].downcase.to_sym
-    session[:computer_choice] = Computer.new.weapon_choice
-    session[:result] = Game.instance.result(session[:player_choice], session[:computer_choice])
+    @game.choice = params[:player_choice].downcase.to_sym
+    @game.computer_choice = Computer.new.weapon_choice
+    session[:result] = @game.result(@game.choice, @game.computer_choice)
     redirect '/play'
   end
 

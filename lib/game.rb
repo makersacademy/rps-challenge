@@ -4,6 +4,7 @@ require_relative 'player'
 class Game
 
   attr_reader :player, :computer
+  attr_accessor :choice, :computer_choice
 
   RULES = { rock: :scissors,
            paper: :rock,

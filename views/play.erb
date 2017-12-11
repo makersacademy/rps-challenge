@@ -2,23 +2,24 @@
 
   <style>
     body {
-      text-align: center
+      text-align: center;
+      background-color: #50AE54
     }
   </style>
 
   <body>
-    <h1><%= @player_name %> vs. Computer</h1>
+    <h1><%= @game.player.name %> vs. Computer</h1>
     <h2>Please choose your weapon:</h2>
     <form action='/choice' method='post'>
       <button type='submit' name='player_choice' value='Rock'>Rock</button>
       <button type='submit' name='player_choice' value='Paper'>Paper</button>
       <button type='submit' name='player_choice' value='Scissors'>Scissors</button>
     </form>
-    <% if !!@player_choice %>
-      <h3>You have chosen <%= @player_choice %></h3>
+    <% if !!@game.choice %>
+      <h3>You have chosen <%= @game.choice %></h3>
     <% end %>
-    <% if !!@computer_choice %>
-      <h3>The computer has chosen <%= @computer_choice %></h3>
+    <% if !!@game.computer_choice %>
+      <h3>The computer has chosen <%= @game.computer_choice %></h3>
     <% end %>
     <% if !!@result %>
       <h1><%= @result %></h1>
