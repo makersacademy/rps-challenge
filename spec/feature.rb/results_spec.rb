@@ -4,7 +4,7 @@ feature 'Winner' do
     click_button('Lets Rock!')
     select 'Rock', from: 'player1_select'
     select 'Rock', from: 'player2_select'
-    click_button('results')
+    click_button('FIGHT!')
     expect(page).to have_content("IT'S A DRAW!")
   end
 
@@ -13,7 +13,7 @@ feature 'Winner' do
     click_button('Lets Rock!')
     select 'Paper', from: 'player1_select'
     select 'Rock', from: 'player2_select'
-    click_button('results')
+    click_button('FIGHT!')
     expect(page).to have_content("PLAYER 1 WINS!")
   end
 
@@ -22,10 +22,8 @@ feature 'Winner' do
     click_button('Lets Rock!')
     select 'Scissors', from: 'player1_select'
     select 'Rock', from: 'player2_select'
-    click_button('results')
+    click_button('FIGHT!')
     expect(page).to have_content("PLAYER 2 WINS!")
   end
-
-
 
 end

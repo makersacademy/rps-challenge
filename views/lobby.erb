@@ -3,14 +3,45 @@
   body {
     background-image:url('http://js.itivy.com/jiaoben1104/images/escheresque_ste.png');
     }
+
+  div {
+    position: fixed;
+    width: 30em;
+    top: 30%;
+    left: 20%;
+    border: 5px solid gray;
+    padding: 1em;
+    padding-top: 0em;
+    align-text: center;
+    font-size: 1.5em;
+    border-radius: 25px;
+    box-shadow: 5px 5px black;
+    background-color: white;
+    }
+
+  h1 {
+    display: inline;
+    padding: 1em;
+  }
+
+  #btn {
+    margin-top: 0.5em;
+    font-size: 5em;
+    width: 1em;
+    height: 1em;
+  }
 </style>
 
+<div>
+<center>
+  <h1><%=@game.player1.name%></h1>
+  
+  <h1><%=@game.player2.name%></h1>
+  <h2>VS.</h2>
+  <form action='/playground'>
+  <input id=btn type=submit value='Lets Rock!'>
+  </form>
+  </center>
+</div>
 
-<%=@game.player1.name%>
-<%=@game.player2.name%>
-
-
-<form action='/playground'>
-<input type=submit value='Lets Rock!'>
-</form>
 </body>
