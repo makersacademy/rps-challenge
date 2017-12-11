@@ -1,6 +1,8 @@
 
 class Computer
 
+  attr_reader :comp_weapon
+
 
   def chosen_weapon
     @comp_weapon = ['rock', 'paper', 'scissors'].sample
@@ -16,6 +18,6 @@ class Computer
 
   def comp_scissors?
     @comp_weapon = 'scissors'
-  end 
+  end
 
 end

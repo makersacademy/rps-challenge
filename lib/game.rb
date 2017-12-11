@@ -2,7 +2,7 @@ require_relative 'computer'
 
 class Game
 
-  attr_accessor :player
+  attr_reader :player
 
   def initialize(player_name)
     @player = player_name
@@ -25,7 +25,7 @@ class Game
 
   def player_scissors?
     @player_weapon == 'scissors'
-  end 
+  end
 
 
 

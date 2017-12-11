@@ -2,22 +2,22 @@ require 'computer'
 
 describe Computer do
 
-  subject(:game) {described_class.new}
+  subject(:computer) {described_class.new}
 
   describe '#chosen_weapon' do
     it 'randomly selects rock' do
       srand(0)
-      expect(game.comp_weapon).to eq('rock')
+      expect(computer.chosen_weapon).to eq('rock')
     end
 
     it 'randomly selects paper' do
       srand(1)
-      expect(game.comp_weapon).to eq('paper')
+      expect(computer.chosen_weapon).to eq('paper')
     end
 
     it 'randomly selects scissors' do
       srand(3)
-      expect(game.comp_weapon).to eq('scissors')
+      expect(computer.chosen_weapon).to eq('scissors')
     end
   end
 
