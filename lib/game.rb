@@ -24,13 +24,15 @@ class Game
     ralph_weapon ||= @ralph.choice.weapon
     player_num = name_to_number(@p1.choice.weapon)
     ralph_num = name_to_number(ralph_weapon)
-    ralph_num == player_num ? ( tie_message ) : (((player_num - ralph_num) % 5) < 3 ? (p1_winner) : (p2_winner))
+    ralph_num == player_num ? tie_message :
+      (((player_num - ralph_num) % 5) < 3 ? p1_winner : p2_winner)
   end
 
   def multiplayer_fight
     player_num = name_to_number(@p1.choice.weapon)
     player2_num = name_to_number(@p2.choice.weapon)
-    player_num == player2_num ? ( tie_message ) : (((player_num - player2_num) % 5) < 3 ? (p1_winner) : (p2_winner))
+    player_num == player2_num ? tie_message :
+      (((player_num - player2_num) % 5) < 3 ? p1_winner : p2_winner)
   end
 
   private

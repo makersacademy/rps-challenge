@@ -11,7 +11,7 @@ class Battle < Sinatra::Base
   end
 
   get '/p1_name_entry' do
-     erb(:p1_name_entry)
+    erb(:p1_name_entry)
   end
 
   post '/p1_weapon_select' do
@@ -26,7 +26,7 @@ class Battle < Sinatra::Base
     erb(:fight_ralph)
   end
 
-  #Multiplayer pages
+  # Multiplayer pages
 
   get '/multiplayer_name_entry' do
     erb(:multiplayer_name_entry)
