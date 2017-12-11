@@ -17,6 +17,10 @@
 - Scissors beats Paper
 - Paper beats Rock
 
+## Diagrams
+
+![Flow Chart Diagram](./00_Notes/diagrams.JPG)
+
 ## Further Work
 - Apply the Singleton Pattern & Refactor
 - Change the game so that two marketeers can play against each other
