@@ -1,17 +1,22 @@
 <html>
-<h1> You have chosen "<%= session[:choice].capitalize %>" </h1>
+<div style='text-align: center; margin-top: 10em;'>
+<h1> <%=@name %> has chosen "<%= session[:choice].capitalize %>" </h1>
 <h1> The computer has chosen "<%= @computer_choice.capitalize%>" </h1>
-
-
+<br/><br/>
+<hr>
+<br/>
 <h1>The winner is: <%= @winner %> </h1>
-
+<br/>
+<br/>
 <form action="/play_again">
 <input type="submit" value="Play again!">
 </form>
-<br />
+<br/>
 OR
-<br />
-<br />
+<br/>
+<br/>
 <form action="/">
 <input type="submit" value="Start a New Game">
 </form>
+</div>
+</html>
