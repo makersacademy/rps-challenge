@@ -1,0 +1,106 @@
+<head>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+
+<% if @choice == @bot_choice %>
+<div class="jumbotron vertical-center">
+  <div class="container"  align="center">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="#{@name} chose #{@choice}" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Rpsbot chose #{@bot_choice}" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="Points: #{@score}"%></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Points: #{@bot_score}"%></p>
+      </div>
+    </div>
+
+    <div class="container" align="center">
+      <h1>The game was a draw</h1>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<% elsif (@choice == 'Scissors' && @bot_choice == 'Rock') || (@choice == 'Rock' && @bot_choice == 'Paper') || (@choice == 'Paper' && @bot_choice == 'Scissors')%>
+<% @bot_score += 1 %>
+
+<div class="jumbotron vertical-center">
+  <div class="container"  align="center">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="#{@name} chose #{@choice}" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Rpsbot chose #{@bot_choice}" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="Points: #{@score}"%></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Points: #{@bot_score}"%></p>
+      </div>
+    </div>
+
+    <div class="container" align="center">
+      <h3>Rpsbot wins the round!</h3>
+    </div>
+  </div>
+</div>
+
+
+
+<% elsif (@choice == 'Scissors' && @bot_choice == 'Paper') || (@choice == 'Rock' && @bot_choice == 'Scissors') || (@choice == 'Paper' && @bot_choice == 'Rock')%>
+<% @score += 1 %>
+
+<div class="jumbotron vertical-center">
+  <div class="container"  align="center">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="#{@name} chose #{@choice}" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Rpsbot chose #{@bot_choice}" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%="Points: #{@score}"%></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%="Points: #{@bot_score}"%></p>
+      </div>
+    </div>
+
+    <div class="container" align="center">
+      <h3><%="#{@name}"%> wins the round!</h3>
+    </div>
+  </div>
+</div>
+
+<%end%>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-6" align="center">
+      <a href="/play" class= "p1button">Do you want to play another round?</a>
+    </div>
+    <div class="col-sm-6" align="center">
+      <a href="/" class= "p1button" >I quit</a>
+    </div>
+  </div>
+</div>
