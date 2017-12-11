@@ -19,7 +19,7 @@
 
 ## Diagrams
 
-![Flow Chart Diagram](./00_Notes/diagrams.JPG)
+![Flow Chart Diagram](./00_notes/diagrams.JPG)
 
 ## Further Work
 - Apply the Singleton Pattern & Refactor
