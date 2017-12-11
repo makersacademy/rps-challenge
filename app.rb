@@ -21,7 +21,7 @@ class Battle < Sinatra::Base
 
   post '/fight_ralph' do
     @current_game = Game.instance
-    @current_game.P1.choose(params[:weapon])
+    @current_game.p1.choose(params[:weapon])
     @result = @current_game.fight_ralph
     erb(:fight_ralph)
   end
@@ -42,12 +42,12 @@ class Battle < Sinatra::Base
   end
 
   post '/multiplayer_weapon_p2' do
-    @current_game.P1.choose(params[:weapon])
+    @current_game.p1.choose(params[:weapon])
     erb(:multiplayer_weapon_p2)
   end
 
   post '/multiplayer_fight' do
-    @current_game.P2.choose(params[:weapon])
+    @current_game.p2.choose(params[:weapon])
     erb(:multiplayer_fight)
   end
 end
