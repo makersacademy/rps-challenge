@@ -1,0 +1,32 @@
+<h1>Start the game!</h1>
+<% if  @game.option == "single"  %>
+  <h2>Player 1: <%= @player_1.name %>  </h2>
+  <br>
+    <form action="/show_down" method="post">
+      <button type="submit" value="paper" name="choice_1">Paper</button>
+      <button type="submit" value="rock" name="choice_1">Rock</button>
+      <button type="submit" value="scissor" name="choice_1">Scissor</button>
+    </form>
+  <br>
+<% else %>
+  <% if @player_1.choice == nil %>
+    <h2>Player 1: <%= @player_1.name %>  </h2>
+    <br>
+      <form action="/save_choice" method="post">
+        <button type="submit" value="paper" name="choice_1">Paper</button>
+        <button type="submit" value="rock" name="choice_1">Rock</button>
+        <button type="submit" value="scissor" name="choice_1">Scissor</button>
+      </form>
+    <br>
+  <% else %>
+    <h2>Player 2: <%= @player_2.name %>  </h2>
+    <br>
+      <form action="/show_down_players" method="post">
+        <button type="submit" value="paper" name="choice_2">Paper</button>
+        <button type="submit" value="rock" name="choice_2">Rock</button>
+        <button type="submit" value="scissor" name="choice_2">Scissor</button>
+      </form>
+    <br>
+  <% end %>
+
+<% end %>

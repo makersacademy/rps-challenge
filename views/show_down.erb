@@ -1,0 +1,14 @@
+<h2>Player 1: <%= @player_1.name %></h2>
+<h3>Choice: <%= @player_1.choice %></h3>
+
+<br>
+
+<h2>Player 2: R2D2  </h2>
+<h3>Choice: <%= @game.record_automatic_player_choice %></h3>
+<% if @game.result == "drew" %>
+   You have drew, play again!
+   <button> <a href="/">Play again</a></button>
+<% else %>
+  <h3>The winner is <%= @game.result %> </h3>
+  <button> <a href="/">Play again</a></button>
+<% end%>
