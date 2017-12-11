@@ -11,24 +11,26 @@ set :session_secret, "sessionkey"
   end
 
   post "/name" do
-    session[:player_one_name] = Game.new(params[:player_one_name])
+    session[:game] = Game.new(params[:player_one_name])
     redirect "/play"
 
   end
 
   get "/play" do
-    @player_one_name = session[:player_one_name].player
+    @player_one_name = session[:game].player
     erb(:play)
   end
 
   get "/play_again" do
-    @player_one_name = session[:player_one_name].player
+    @player_one_name = session[:game].player
     erb(:play_again)
   end
 
   post "/challenge" do
+    @game = session[:game]
     session[:choice] = params[:choice]
-    
+    @computer_choice = @game.computer.select_hand
+    @winner = @game.winner(params[:choice])
     erb(:challenge)
   end
 

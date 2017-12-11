@@ -1,8 +1,9 @@
 <html>
 <h1> You have chosen "<%= session[:choice].capitalize %>" </h1>
+<h1> The computer has chosen "<%= @computer_choice.capitalize%>" </h1>
 
 
-<h1>The winner is: </h1>
+<h1>The winner is: <%= @winner %> </h1>
 
 <form action="/play_again">
 <input type="submit" value="Play again!">

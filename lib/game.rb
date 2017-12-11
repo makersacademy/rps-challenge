@@ -2,7 +2,7 @@ require_relative "./computer_player"
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer
 
    def initialize(player)
      @player = player
@@ -10,25 +10,29 @@ class Game
    end
 
    def winner(player_choice)
-    if player_choice == "rock" && @computer.select_hand == "scissors"
-      @player.name
-      elsif @computer.select_hand == "rock" && player_choice == "scissors"
-      "Computer"
-      elsif player_choice == "scissors" && @computer.select_hand == "paper"
-      @player.name
-      elsif @computer.select_hand == "scissors" && player_choice == "paper"
-      "Computer"
-      elsif player_choice == "paper" && @computer.select_hand == "rock"
-      @player.name
-      elsif @computer.select_hand == "paper" && player_choice == "rock"
-      "Computer"
-      elsif @computer.select_hand == "paper" && player_choice == "paper"
-      "No one wins - Draw"
-      elsif @computer.select_hand == "scissors" && player_choice == "scissors"
-      "No one wins - Draw"
-      elsif @computer.select_hand == "rock" && player_choice == "rock"
-      "No one wins - Draw"
-    end
+      if player_choice == "rock" && @computer.c_hand == "rock"
+          return "No one wins - Draw"
+        elsif player_choice == "rock" && @computer.c_hand == "paper"
+          return "Computer"
+        elsif player_choice == "rock" && @computer.c_hand == "scissors"
+          return @player
+
+
+        elsif player_choice == "paper" && @computer.c_hand == "paper"
+          return "No one wins - Draw"
+        elsif player_choice == "paper" && @computer.c_hand == "rock"
+          return @player
+        elsif player_choice == "paper" && @computer.c_hand == "scissors"
+          return "Computer"
+
+
+        elsif player_choice == "scissors" && @computer.c_hand == "paper"
+          return @player
+        elsif player_choice == "scissors" && @computer.c_hand == "scissors"
+          return "No one wins - Draw"
+        else player_choice == "scissors" && @computer.c_hand == "rock"
+          return "Computer"
+      end
 
    end
 end
