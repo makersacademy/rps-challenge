@@ -1,0 +1,9 @@
+<% if @game.result == "drew" %>
+   You have drew, play again!
+   <button> <a href="/">Play again</a></button>
+<% else %>
+  <h1>The winner is</h1>
+
+  <h2><%= @game.result %> </h2>
+  <button> <a href="/">Play again</a></button>
+<% end %>
