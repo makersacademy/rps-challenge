@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require 'computer'
-require 'game'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class RPSApp < Sinatra::Base
   enable :sessions
@@ -31,6 +31,7 @@ end
 
 get ('/result') do
   @player_weapon = session[:player_weapon]
+  
 
 end
 
