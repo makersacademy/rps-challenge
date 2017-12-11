@@ -15,6 +15,18 @@ class Game
     @player_weapon = player_weapon
   end
 
+  def player_rock?
+    @player_weapon == 'rock'
+  end
+
+  def player_paper?
+    @player_weapon == 'paper'
+  end
+
+  def player_scissors?
+    @player_weapon == 'scissors'
+  end 
+
 
 
 end
