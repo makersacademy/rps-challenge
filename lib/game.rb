@@ -5,13 +5,13 @@ class Game
 
   attr_reader :P1, :P2, :ralph
 
-  def initialize(player_name, player2_name = "dummy")
+  def initialize(player_name, player2_name = "Dummy")
     @P1 = Player.new(player_name)
     @P2 = Player.new(player2_name)
     @ralph = Player.new("Ralph")
   end
 
-  def self.create(player_name, player2_name = 'Gerald')
+  def self.create(player_name, player2_name = 'Dummy')
     @game = Game.new(player_name, player2_name)
   end
 

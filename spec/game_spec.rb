@@ -29,7 +29,7 @@ describe Game do
       game2.P2.choose(:scissors)
       expect(game2.multiplayer_fight).to eq "Roy wins!"
     end
-    it 'sometimes calls a win for player 1' do
+    it 'sometimes calls a tie' do
       game2.P1.choose(:paper)
       game2.P2.choose(:paper)
       expect(game2.multiplayer_fight).to eq "It's a tie!"
