@@ -23,5 +23,6 @@
 
 ## Further Work
 - Apply the Singleton Pattern & Refactor
+- Make methods a bit shorter
 - Change the game so that two marketeers can play against each other
 - Rock, Paper, Scissors, Spock, Lizard Update (more complex rules)
