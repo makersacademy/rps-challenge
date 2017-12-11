@@ -28,7 +28,6 @@ set :session_secret, "sessionkey"
 
   post "/challenge" do
     @game = session[:game]
-    session[:choice] = params[:choice]
     @name = @game.player
     @computer_choice = @game.computer.select_hand
     @winner = @game.winner(params[:choice])
