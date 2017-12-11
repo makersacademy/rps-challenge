@@ -7,17 +7,17 @@ describe Computer do
   describe '#chosen_weapon' do
     it 'randomly selects rock' do
       srand(0)
-      expect(game.weapon).to eq('rock')
+      expect(game.comp_weapon).to eq('rock')
     end
 
     it 'randomly selects paper' do
       srand(1)
-      expect(game.weapon).to eq('paper')
+      expect(game.comp_weapon).to eq('paper')
     end
 
     it 'randomly selects scissors' do
       srand(3)
-      expect(game.weapon).to eq('scissors')
+      expect(game.comp_weapon).to eq('scissors')
     end
   end
 

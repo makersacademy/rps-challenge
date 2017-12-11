@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require 'computer'
+require 'game'
 
 class RPSApp < Sinatra::Base
   enable :sessions
@@ -23,11 +25,13 @@ get ('/play') do
 end
 
 post ('/play/new') do
+  session[:player_weapon] = params[:player_weapon]
   redirect '/result'
 end
 
 get ('/result') do
-  
+  @player_weapon = session[:player_weapon]
+
 end
 
 

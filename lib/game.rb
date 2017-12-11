@@ -1,8 +1,11 @@
 require_relative 'computer'
 
 class Game
-  def initialize(player)
-    @player = player
+
+  attr_accessor :player
+
+  def initialize(player_name)
+    @player = player_name
     @computer = Computer.new
     @player_choice = nil
     @comp_choice = @computer.weapon
@@ -10,7 +13,7 @@ class Game
 
   def player_choice(player_weapon)
     @player_weapon = player_weapon
-  end 
+  end
 
 
 
