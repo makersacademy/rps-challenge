@@ -1,0 +1,17 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<h1 align="center">Welcome, young <%=@current_game.p1.name%>!</h1>
+<h2 align="center">Choose your weapon!</h2>
+<form align="center" action='/fight_ralph' method='post'>
+  <button name="weapon" type="submit" value="rock">Rock</button>
+  <button name="weapon" type="submit" value="paper">Paper</button>
+  <button name="weapon" type="submit" value="scissors">Scissors</button>
+  <button name="weapon" type="submit" value="spock">Spock</button>
+  <button name="weapon" type="submit" value="lizard">Lizard</button>
+</form>
