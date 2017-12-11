@@ -1,0 +1,17 @@
+<body>
+<center>
+  <style> body {
+    background-image: url(paper.jpg);
+  }
+  </style>
+  <h2 style="font-family:courier;">You chose <%= @choice %>!</h2>
+  <h2 style="font-family:courier;"><%= @ai_name %> chose <%= @ai_choice %>!</h2>
+  <h2 style="font-family:courier;"><%= "The winner of this round is #{@winner_name}!" if @winner_name %></h2>
+  <h2 style="font-family:courier;"><%= "This round is a draw" if !@winner_name %></h2>
+  <h3 style="font-family:courier;"><%= @name %> - Score - <%= @score %></h3>
+  <h3 style="font-family:courier;"><%= @ai_name %> - Score - <%= @ai_score %></h3>
+  <form action="/battle" method="get">
+    <input type="submit" value="Ok">
+  </form>
+</center>
+</body>
