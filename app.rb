@@ -23,10 +23,10 @@ get ('/play') do
 end
 
 post ('/play/new') do
-  redirect '/attack'
+  redirect '/result'
 end
 
-get ('/attack') do
+get ('/result') do
   
 end
 
