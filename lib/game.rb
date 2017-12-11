@@ -20,7 +20,7 @@ class Game
 
   def play_computer(bot_item = nil)
     @computer.random_item
-    bot_item ||= @computer.choice.item
+    !bot_item ||= @computer.choice.item
     player_number = name_to_number(@the_player.choice.item)
     bot_number = name_to_number(bot_item)
     bot_number == player_number ? ( draw ) : (((bot_number - player_number) % 5) < 3 ? (bot_wins) : (player_wins))
