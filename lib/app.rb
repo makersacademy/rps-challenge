@@ -25,10 +25,12 @@ class Rps < Sinatra::Base
   end
 
   get '/botsturn' do
-    rps = Rps_Logic.new(session[:choice])
+    rps = RpsLogic.new(session[:choice])
     @choice = session[:choice]
     @bot_choice = rps.bot_choice
     @name = session[:name]
+    @score = 0
+    @bot_score = 0
     erb(:botsturn)
   end
 

@@ -1,4 +1,4 @@
-class Rps_Logic
+class RpsLogic
 
   attr_reader :bot_choice, :choice
   def initialize(choice)
