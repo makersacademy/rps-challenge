@@ -1,0 +1,18 @@
+
+Hello <%= @take_turn.player_name %>
+
+<form action="/play" method="post">
+  <input type="submit" name="option" value="Rock" />
+  <input type="submit" name="option" value="Paper" />
+  <input type="submit" name="option" value="Scissors" />
+</form>
+
+You chose <%= @take_turn.player_option.to_s.capitalize %>!
+
+<div id="computer">
+  Computer chose <%= @take_turn.computer_option.to_s.capitalize %>!
+</div>
+
+<% if @taketurn.win? %>
+  Player wins!
+<% end %>
