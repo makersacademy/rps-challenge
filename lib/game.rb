@@ -3,6 +3,12 @@ class Game
   attr_reader :player1, :win_count, :total_games
   attr_accessor :choice, :c_choice
 
+  RULES = { rock: [:scissors, :lizard],
+            scissors: [:paper, :lizard],
+            paper: [:rock, :spock],
+            lizard: [:paper, :spock],
+            spock: [:scissors, :rock] }
+
   def initialize(player1)
     @player1 = player1
     @options = [:rock, :paper, :scissors, :lizard, :spock]
@@ -56,17 +62,6 @@ class Game
   def who_won(choice1, choice2)
     @total_games += 1
     return "Draw!" if choice1 == choice2
-    case
-      when choice1 == :rock
-        (choice2 == :scissors || choice2 == :lizard) ? (@win_count += 1; player_wins) : computer_wins
-      when choice1 == :paper
-        (choice2 == :rock || choice2 == :spock) ? (@win_count += 1; player_wins) : computer_wins
-      when choice1 == :scissors
-        (choice2 == :paper || choice2 == :lizard) ? (@win_count += 1; player_wins) : computer_wins
-      when choice1 == :lizard
-        (choice2 == :paper || choice2 == :spock) ? (@win_count += 1; player_wins) : computer_wins
-      when choice1 == :spock
-        (choice2 == :rock || choice2 == :scissors) ? (@win_count += 1; player_wins) : computer_wins
-    end
+    RULES[choice1].include?(choice2) ? (@win_count += 1; player_wins) : computer_wins 
   end
 end
