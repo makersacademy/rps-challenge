@@ -1,3 +1,8 @@
+This is the third Makers weekend challenge. Unfortuanley I came down with a cold this weekend, so wasn't able to finish off the app. I hoped to implement a score keeper.
+
+The challenge Instructions are below.
+
+
 # RPS Challenge
 
 Instructions
@@ -29,7 +34,7 @@ I would like to be able to play rock/paper/scissors
 ```
 
 Hints on functionality
-
+  at
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option

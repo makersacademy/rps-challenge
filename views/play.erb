@@ -1,0 +1,10 @@
+<h1> <%= @player_name %>, are you ready to play Rock Paper Scissors?</h1>
+<br />
+<br />
+<h3>Choose one</h3>
+<form method="post" action="/result">
+  <input type="submit" value="Rock" name="rock" />
+  <input type="submit" value="Paper" name="paper" />
+  <input type="submit" value="Scissors" name="scissors" />
+</form>
+<h3><%= @player_name %> 0:0 Computuer</h3>
