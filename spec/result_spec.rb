@@ -19,7 +19,7 @@ describe Result do
       result = Result.new('Paper', 'Rock')
       expect(result.player_score).to eq 0
     end
-
+# nothing 
 
   end
 
