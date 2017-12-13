@@ -1,0 +1,10 @@
+<h1><%= @game.player_1 %> vs Ricky Martin</h1>
+
+<h3>Choose your move, <%= @game.player_1 %>:</h3>
+
+<form action="/move" method="post">
+    <input id="rock" type="radio" name="move" value="rock"> Rock<br>
+    <input id="paper" type="radio" name="move" value="paper"> Paper<br>
+    <input id="scissors" type="radio" name="move" value="scissors"> Scissors<br>
+    <input type="submit" value="Go">
+</form>
