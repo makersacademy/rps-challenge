@@ -1,0 +1,10 @@
+.box {
+	margin-top: 200px;
+}
+
+body {
+    background-image: url('http://www.publicdomainpictures.net/pictures/70000/velka/background-1391195045FbC.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
