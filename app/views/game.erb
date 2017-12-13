@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="game.css">
+  </head>
+  <body>
+    <h1><%= @player1.name %> VS CPU</h1>
+
+    <form action="/result" method="post">
+      <button name="Rock" type="submit" value="Rock">Rock</button>
+      <button name="Paper" type="submit" value="Paper">Paper</button>
+      <button name="Scissors" type="submit" value="Scissors">Scissors</button>
+      <button name="Lizard" type="submit" value="Lizard">Lizard</button>
+      <button name="Spock" type="submit" value="Spock">Spock</button>
+    </form>
+
+    <p><%= @player1.name %>: <%= @player1.choice %></p>
+    <p>CPU: <%= @player2.choice %></p>
+    <p><%= @game.result_message %></p>
+    </br>
+    <h2>Score:</h2>
+    <h3><%= @player1.name %>: <%= @player1.score %> - CPU: <%= @player2.score %></h3>
+
+    </br>
+    </br>
+    </br>
+
+    <form action="/reset" method="post">
+      <button name="Reset" type="submit" value="Reset">Reset</button>
+    </form>
+  </body>
+</html>

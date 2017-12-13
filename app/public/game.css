@@ -1,0 +1,10 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("rpsls.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+  background-position: center center;
+  background-color: rgb(255, 237, 243)
+}
