@@ -1,0 +1,53 @@
+<head>
+
+  <meta name="referrer" content="origin">
+  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+
+<!-- Styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css" type="text/css">
+
+<!-- Font -->
+
+  <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+
+</head>
+
+<body>
+
+<br>
+
+<div class="container-fluid text-center">
+  <h1><strong> WELCOME <%= @p1name %>! </strong></h1>
+  <h2> Make your selection! </h2>
+
+  <br>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img class="img" src="./images/rock.jpg">
+      <br>
+      <br>
+      <form action="/choice" method="post">
+        <input class="button" type='submit' name="choice" value="ROCK">
+      </form>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img" src="/images/paper.png">
+      <br>
+      <br>
+      <form action="/choice" method="post">
+        <input class="button" type='submit' name="choice" value="PAPER">
+      </form>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img" src="./images/scissors.jpg">
+      <br>
+      <br>
+      <form action="/choice" method="post">
+        <input class="button" type='submit' name="choice" value="SCISSORS">
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
