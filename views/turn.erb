@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p
+  { font-family: times;
+    font-size: 40px;
+    font-stretch: semi-expanded;
+    text-align: center;
+    font-style: italic;
+    border-style: double;
+    border-width: medium;
+    border-length: 10cm;
+  }
+  form
+  { width: 6cm;
+    text-align:center;
+    padding-left: 9cm;
+  }
+  button
+  { background-image: url('http://themerrythought.com/wp-content/uploads/27-18274-post/RPS5(pp_w730_h184).jpg');
+    font-size: 40px;
+    font-style:italic;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+<% if !@choice.empty? %>
+<p>You chose <%= @choice %></p>
+<p>Your opponent chose <%= @opponents_choice %></p>
+
+<p><% if @win == true %>
+  You win !!
+<% elsif @win == nil %>
+  Tied
+<% else %>
+  You lose ..
+<% end %>
+<% end %></p>
+
+
+<form action='/play'>
+  <button type='submit' value='Play again!' style='width:20cm; height:5cm;'>Play again!</button>
+</form>
+</body>
+</html>

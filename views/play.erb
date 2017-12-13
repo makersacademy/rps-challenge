@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body
+    {background-image:url("http://78.media.tumblr.com/fac79c83b96d6b6a3792ce06e9a159d9/tumblr_n37ep8mC6I1r1r78ao1_1280.gif");
+     background-repeat: no-repeat;
+     background-position: center;
+    }
+    h1
+    {font-family: times;
+      font-size: 40px;
+      font-stretch: semi-expanded;
+      text-align: center;
+      top:100px;
+    }
+    button
+    {position: bottom;
+      width:70px;
+      height:30px;
+      border-color: black;
+      background-color: white;
+      font-style: oblique;
+      font-family: sans-serif;
+      font-family: times;
+      font-size:15px;
+    }
+    form
+    {padding-bottom:1cm;
+    }
+    div
+    {padding-top: 3cm;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Hello <%= @player1 %></h1>
+<div style='text-align:center'>
+<form action='/rock' method='post'>
+  <button type='submit' value='Rock!'>Rock!</button>
+</form>
+<form action='/paper' method='post'>
+  <button type='submit' value='Paper!'>Paper!</button>
+</form>
+<form action='/scissors' method='post'>
+  <button type='submit' value='Scissors!'>Scissors!</button>
+</form>
+</div>
+<h1> Your score : <%= @score %></h1>
+</body>
+</html>
