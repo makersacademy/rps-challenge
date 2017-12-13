@@ -1,86 +1,56 @@
-# RPS Challenge
+## Description
 
-Instructions
--------
+This repo creates a web app to play a Rock-Paper-Scissors kind of game (with a slight variation as it includes two extra weapons: Spock and Lizard).
+Please refer to [this link](http://www.samkass.com/theories/RPSSL.html) for instructions.
+The game allows you to play against a Computer or together with a friend and can keep track of scores so that you can play multiple rounds. In order to start, please follow the set-up steps below.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Set-up
 
-Task
-----
+In order to play you should:
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+1. Clone this repository 
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+git clone https://github.com/antoniobelmar/rps-challenge.git
 ```
+2. In your command line, change your directory to the cloned one:
+```
+cd rps-challenge
+```
+3. Run bundle in order to install dependencies
+```
+bundle
+```
+4. In order to launch the server you can either execute the controller file or just use rackup:
+```
+ruby app.rb
+```
+or
+```
+rackup
+```
+5. Then simply go to http://localhost/PORT (replace PORT by the relevant port in your server)
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## Gameplay
+
+1. Decide weather you want to play alone or with a friend:
+
+![Initial Menu](screenshots/SP1.png)
+
+2. If you select single player you will be prompted to enter your name
+
+![SP Name Submission](screenshots/SP2.png)
+
+3. If you selected multi-player, the process is similar except you see two fields to populate:
+
+![MP Names Submission](screenshots/MP1.png)
+
+4. You can then select a weapon for the first combat of the round:
+
+![Select Weapon](screenshots/SP3.png)
+
+5. If you are playing by yourself, once you submit the results page will automatically be loaded. Otherwise, you should allow the other player to enter their choice and submit it.
+
+6. Once all is submitted you will be prompted to the results page which will let you know the outcome of the combat and allows you to play again in the same round:
+
+![Results](screenshots/SP4.png)
+

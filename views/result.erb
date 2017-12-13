@@ -1,0 +1,27 @@
+<h1> Thanks for playing a round of Rock-Paper-Scissors! </h1>
+
+<h3> <%= @p1_name %> selected  <%= @p1_choice %> </h3>
+<h3> <%= @p2_name %> selected  <%= @p2_choice %> </h3>
+
+<% if @result == :T %>
+<h3> It's a tie! </h3>
+<% elsif @result == :W %>
+<h3> <%=@p1_name%> wins! </h3>
+<% else %>
+<h3> <%=@p2_name%> wins! </h3>
+<% end %>
+
+<h4> Current score: </h4>
+<h5> <%=@p1_name%>: <%=@p1_wins%> </h5>
+<h5> <%=@p2_name%>: <%=@p2_wins%> </h5>
+
+
+<% if @p2_name == "Computer" %>
+<form action = "/play_single">
+  <input type="submit" value="Play Again" />
+</form>
+<% else %>
+<form action = "/play_multi1">
+  <input type="submit" value="Play Again" />
+</form>
+<% end %>
