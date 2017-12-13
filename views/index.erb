@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<body>
+
+<h3>Submit your name to start Rock, Paper, Scissors game!</h3>
+
+<div>
+  <form action="/name" method="post">
+    <label for="name">Player 1</label>
+    <input type="name" id="fname" name="player1">
+    <label for="name1">Player 2</label>
+    <input type="name" id="fname" name="player2">
+    <label for="name1"> Leave blank to play against Siri(computer)</label>
+    <input type="submit" value="Start">
+  </form>
+</div>
+
+</body>
+</html>

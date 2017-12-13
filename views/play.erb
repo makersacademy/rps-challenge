@@ -1,0 +1,39 @@
+<% unless @winner %>
+  <%if @player1.choice.empty?%>
+    <h2><%=@player1.name%> please make a choice!</h2>
+    <form method="post" action="/game-on">
+        <button type="submit" name="choice1" value="0">Rock</button>
+    </form>
+    <form method="post" action="/game-on">
+        <button type="submit" name="choice1" value="1">Scissors</button>
+    </form>
+    <form method="post" action="/game-on">
+        <button type="submit" name="choice1" value="2">Paper</button>
+    </form>
+  <%else @player2.choice.empty?%>
+    <h2><%=@player2.name%> please make a choice!</h2>
+    <form method="post" action="/player-2">
+        <button type="submit" name="choice2" value="0">Rock</button>
+    </form>
+    <form method="post" action="/player-2">
+        <button type="submit" name="choice2" value="1">Scissors</button>
+    </form>
+    <form method="post" action="/player-2">
+        <button type="submit" name="choice2" value="2">Paper</button>
+    </form>
+   <%end%>
+<%else%>
+    <p><%= @player1.name%> selected <%= @player1.choice[:item]%></p>
+    <p><%= @player2.name%> selected <%= @player2.choice[:item]%></p>
+      <%if @winner==0%>
+      <p> Draw </p>
+      <%else%>
+      <p> <%= @winner %> won!!!</p>
+      <p>Score <%=@player1.wins%>:<%=@player2.wins %></p>
+      <%end%>
+
+    <h2>Do it again...</h2>
+    <form method="get" action="/reset">
+        <button type="submit">Play!</button>
+    </form>
+<%end%>
