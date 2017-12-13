@@ -1,13 +1,9 @@
-# RPS Challenge
+# RPS Challenge [![Build Status](https://travis-ci.org/cristhiandas/rps-challenge.svg?branch=master)](https://travis-ci.org/cristhiandas/rps-challenge)
 
 Instructions
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This is the Makers Academy 3rd Weekend Challenge, here you will find the task they asked us to do and how I solved it.
 
 Task
 ----
@@ -36,51 +32,26 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## How I solved it
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+- First, I did a diagram with all the classes and possible methods that I considered important at the moment.
+- Created a CPU class that returned R-P-S randomly.
+- Settled the TEST environment for Capybara.
+- Created a index, and added a form on it in which a player could add its name.
+- Created a play path that shown the name of the player.
+- Created a form with 3 buttons R-S-P, that way the player could choose what to play.
+- Created all the game logic in a game file.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+once all my test where passing I started refactoring the code as much as I could, finally I used rubocop to fix all the syntax.
 
-Notes on test coverage
-----------------------
+## What made me struggle
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- Finding a way to save the values of the buttons, I had to research for it and figured out that adding a name to my buttons would fix my problem.
+- Finding a way to not show the winning message while no winners (I forgot to create the attr_reader that i needed). took me half an hour to catch that.
+- Implementing the logic of the game in the simplest way. tried to avoid using if/else statements. I did it just to push my self a little.

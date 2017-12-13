@@ -1,0 +1,13 @@
+Welcome <%= @game.player %>, please choose an option <br><br>
+
+<% if @game.cpu_choice %>
+<%= @game.player %> used <%= @game.player_choice %> <br>
+The computer used <%= @game.cpu_choice %> <br>
+And the winner is: <%= @display_winner %>  <br>
+<%end %>
+
+<form action='/game' method=post>
+<button name=choice type=submit value=rock>Rock</button>
+<button name=choice type=submit value=paper>Paper</button>
+<button name=choice type=submit value=scissor>Scissor</button>
+</form>
