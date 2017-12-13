@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-color: DARKSLATEGREY;
+      background-image: url(https://fictionmachine.files.wordpress.com/2015/12/bttf3_08.jpg);
+    }
+
+		h1 {
+			color: tomato;
+			font-family: "Brush Script MT", cursive;
+			font-size: 150px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 500;
+			line-height: 26.4px;
+			text-align: center;
+		}
+
+		h2 {
+			color: antiquewhite;
+			font-family: "Impact", cursive;
+			font-size: 75px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 500;
+			line-height: 26.4px;
+			text-align: center;
+		}
+
+		form {
+      text-align: center;
+      vertical-align: baseline;
+    }
+
+		button[type=submit] {
+      color: antiquewhite;
+      font-family: "Brush Script MT", cursive;
+      font-size: 30px;
+      width: 15%;
+      background-color: tomato;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+
+	<body>
+		<% if @result == nil %>
+			<h1>Welcome <%= @player.name %></h1>
+			<h2>Please select a weapon</h2>
+
+			<form action= "/rock" method='post'>
+				  <button type="submit">Rock</button>
+			</form>
+
+			<form action= "/paper" method='post'>
+				  <button type="submit">Paper</button>
+			</form>
+
+			<form action= "/scissors" method='post'>
+				  <button type="submit">Scissors</button>
+			</form>
+		<% else %>
+			<h1> <%= @result %> </h1><br>
+			<form action= "/play_again" method='post'>
+					<button type="submit">Play again</button>
+			</form>
+		<% end %>
+	</body>
+</html>
