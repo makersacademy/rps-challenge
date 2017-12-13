@@ -1,0 +1,51 @@
+<style> body {
+    background-color: yellow;
+    background-image: url("https://phosphorusfive.files.wordpress.com/2017/08/rock.png");
+    background-size: 100% 100%;
+}
+
+h1 {
+    color: red;
+    font-family: helvetica;
+    font-size: 80px;
+}
+
+input[type=text] {
+    width: 20%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: blue;
+    justify-content: center;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 10px 20px;
+    font-size: 100px;
+    cursor: pointer;
+    text-decoration-color: green;
+    font-size: 10 0px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+</style>
+
+<h1> <%= @game.player_1.name.capitalize %> chose <%= @game.player_1.weapon %>! <br/> </h1>
+<h1> <%= @game.player_2.name.capitalize %> chose <%= @game.player_2.weapon %>! <br/> </h1>
+<h1> Result = <%= @game.result %>! </h1>
+
+<div align="center">
+<form action="/" >
+  <input type="submit" value="Play Again">
+</form>
+</div>

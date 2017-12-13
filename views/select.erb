@@ -1,0 +1,47 @@
+<style> body {
+    background-color: red;
+    /*background-image: url("http://pngimg.com/uploads/paper_sheet/paper_sheet_PNG7233.png");*/
+    background-size: 100% 100%;
+}
+
+h1 {
+    color: blue;
+    font-family: helvetica;
+    font-size: 80px;
+}
+
+input[type=text] {
+    width: 20%;
+    font-size: 40px;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 10px 20px;
+    font-size: 80px;
+    cursor: pointer;
+    text-decoration-color: green;
+    font-size: 80px;
+    float: left;
+    align: center;
+}
+</style>
+
+<h1>Hi <%= @game.player_1.name.capitalize %>! </h1>
+
+<h1>Choose your weapon! </h1>
+
+<div align="center">
+  <form action="/p1_vs_cpu" >
+    <input type="submit" name="weapon" value="rock">
+    <input type="submit" name ="weapon" value="paper">
+    <input type="submit" name="weapon" value="scissors">
+  </form>
+</div>
