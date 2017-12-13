@@ -16,6 +16,10 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Lint/UselessComparison:
+  Exclude:
+    - 'spec/**/*'
+
 # I've been quite careful about which style cops I've enabled
 # Why? My feeling is that style cops can create lots of linter noise that
 # is hard for a beginner to handle. This focuses the linting onto:
