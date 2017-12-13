@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body
+      {
+        background-image: url("https://preview.ibb.co/hG01vw/Screen_Shot_2017_11_12_at_15_34_14.png");
+      }
+      img
+      {
+        width: 30%;
+        height: auto;
+        border: 3px solid black;
+      }
+      form
+      {
+        text-align: center;
+        color: #000;
+        font-family: Sans-serif;
+        font-size: 150%;
+      }
+      h1
+      {
+        font-family: Sans-serif;
+        font-size: 200%;
+        text-align: center;
+        color: #000;
+      }
+      input[type=text]
+      {
+        width: 218px;
+      }
+      input[type=submit]
+      {
+        background: #000;
+        color: #fff;
+      }
+
+      input[type=submit], input[type=text]
+      {
+        padding: 9px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Rock-Paper-Scissor GAME</h1>
+
+      <form action='/name' method='post'>
+        NAME Player 1:
+      <input type='text' name='player_1'> <br>
+        NAME Player 2:
+      <input type='text' name='player_2'> <br>
+      <input type='submit' value='Play'>
+      </form>
+
+    <br><br>
+    <img align='left' src="https://goo.gl/q1K3im" alt="Rock" />
+    <img align='center' src="https://goo.gl/nJ9VYr" alt="Paper" />
+    <img align='center' src="https://goo.gl/tvjRsa" alt="Scissor" />
+
+  </body>
+</html>
