@@ -1,0 +1,5 @@
+<h1 style = "text-align: center;"><%= @game.player_1.choice %> VS <%= @game.player_2.choice%> </h1>
+<h1 style = "text-align: center;">Result: <%= @game.result %></h1>
+<form style = "text-align: center;" action = '/play'>
+  <input type="submit" value= "Play">
+</form>
