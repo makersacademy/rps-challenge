@@ -1,0 +1,59 @@
+.gamestart {
+  font-family: "Futura", serif;
+  font-size: 25px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.start {
+  font-family: "Futura", serif;
+  font-size: 15px;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+
+  .rock {
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+
+  .scissors {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+
+  .paper {
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+
+  .rimage {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);  }
+
+  .pimage {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)  }
+  .simage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)  }

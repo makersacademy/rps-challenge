@@ -1,0 +1,73 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="outcome.css">
+</head>
+
+ <body>
+  <% if $player.sign == "rock" && $computer.enemy == "scissors" %>
+    <div class = "Fonts">
+     <h1> You crushed me! </h1>
+      <font color = "#48CF8C"> You won! </font>
+        <font-size ="70"> You were just lucky </font>
+        </div>
+        <div class = "Image">
+          <img src="https://media.giphy.com/media/naXyAp2VYMR4k/giphy.gif" style="width:250px;height:170px;" />
+        </div>
+  <% elsif $player.sign == "rock" && $computer.enemy == "paper" %>
+    <div class = "Fonts">
+      <h1> Srunch! </h1>
+      <font color = "red"> You've lost. </font>
+      <font-size ="70">  Guess your luck is out for this one, mate. </font>
+    </div>
+    <div class = "Image">
+      <img src="https://media.giphy.com/media/VuG7FeHnMjhTy/giphy.gif" style="width:250px;height:170px;" />
+    </div>
+  <% elsif $player.sign == "scissors" && $computer.enemy == "paper" %>
+    <div class = "Fonts" >
+     <h1> You shredded me! </h1>
+     <font color = "#48CF8C"> You won! </font
+     <font-size ="70"> You were just lucky </font>
+    </div>
+    <div class = "Image">
+      <img src="https://media.giphy.com/media/C9zv86BzPEQCI/giphy.gif" style="width:250px;height:170px;" />
+    </div>
+  <% elsif $player.sign == "scissors" && $computer.enemy == "rock" %>
+   <div class = "Fonts">
+      <h1> Smashed! </h1>
+      <font color = "red"> You've lost. </font>
+      <font-size ="70">  Guess your luck is out for this one, mate. </font>
+   </div>
+   <div class = "Image">
+     <img src="https://media.giphy.com/media/4brdMHfqmLyLK/giphy.gif" style="width:250px;height:170px;" />
+   </div>
+  <% elsif $player.sign == "paper" && $computer.enemy == "rock" %>
+   <div class = "Fonts">
+     <h1> You wrapped me!</h1>
+      <font color = "#48CF8C"> You won! </font>
+      <font-size ="70">  You were just lucky </font>
+  </div>
+  <div class = "Image">
+    <img src="https://media.giphy.com/media/HUeE6FU2Ih0LC/giphy.gif" style="width:250px;height:170px;" />
+  </div>
+  <% elsif $player.sign == "paper" && $computer.enemy == "scissors" %>
+    <div class = "Fonts">
+       <h1> Snip-Snip </h1>
+       <font color = "red"> You've lost. </font>
+       <font-size ="70">  Guess your luck is out for this one, mate. </font>
+    </div>
+    <div class = "Image">
+      <img src="https://media.giphy.com/media/qoaLzghOaobwQ/giphy.gif" style="width:250px;height:170px;" />
+    </div>
+  <% else %>
+    <div class = "Draw">
+     <h1> Damn, its a draw </h1>
+     <img src="https://media.giphy.com/media/uSYQsJQWEv6O4/giphy.gif" style="width:250px;height:170px;" />
+    <div>
+  <% end %>
+
+<div class= "playagain">
+  <form action = '/play' >
+    <input type='submit' value='Play Again'>
+  </form>
+</div>
+
+</body>

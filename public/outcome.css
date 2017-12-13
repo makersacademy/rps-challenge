@@ -1,0 +1,24 @@
+.playagain {
+  position: absolute;
+  top: 65%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+.Fonts {
+  font-family: "Futura", serif;
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  transform: translate(-50%, -50%)
+}
+.Draw {
+  font-family: "Futura", serif;
+  position: relative;
+  top: 250px;
+  text-align: center;
+}
+.Image {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+}
