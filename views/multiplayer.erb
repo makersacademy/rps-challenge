@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  	<link rel="stylesheet" href="/master.css">
+  </head>
+  <body>
+    <div class="all-items-centered">
+      <div class="container">
+        <form id="myForm" action="/multimove" method="post">
+          <input id="player1" type="hidden" name="player1" value="">
+          <input id="player2" type="hidden" name="player2" value="">
+        </form>
+        <div class="text-center col-lg-8 offset-lg-2">
+          <div class="row">
+            <div class="col-lg-4">
+              <h1 class="display-3"><span id="player1name"><%= @game.players[0].name %></span></h1>
+            </div>
+            <div class="col-lg-4 versus">
+              <h1 class="display-4">vs.</h1>
+            </div>
+            <div class="col-lg-4">
+              <h1 class="display-3"><span id="player2name"><%= @game.players[1].name %></span></h1>
+            </div>
+            <div class="col-lg-4">
+              <h1><%= "score: #{@game.players[0].score}" %></h1>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+              <h1><%= "score: #{@game.players[1].score}" %></h1>
+            </div>
+          </div>
+          <h4><%= @confirmation %></h4>
+            <p class="lead">
+              Player 1 controls:
+              A: rock,
+              S: paper,
+              D: scissors,
+              Q: spock,
+              W: lizard
+            </p>
+            <p class="lead">
+              Player 2 controls:
+              L: rock,
+              K: paper,
+              J: scissors,
+              P: spock,
+              O: lizard
+            </p>
+          <form action="/reset" method="post"><button class="btn btn-default" type="submit" value="reset">reset</button></form>
+          <a href="/"><button id="home_button" type="button" class="btn btn-default" name="button">home</button></a>
+
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js.js"></script>
+  </body>
+</html>
