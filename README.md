@@ -1,86 +1,21 @@
-# RPS Challenge
+# Rock-Paper-Scissors Challenge
+## Week 3 Weekend Challenge
 
-Instructions
--------
+#### Introduction
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Building on the week three challenge, this weekend's task was to create a simple Rock-Paper-Scissors game, allowing a user to enter their name, make a selection, be informed of the result of the game, and play again if they wish to.
 
-Task
-----
+The goal of the challenge was to get students used to using the Sinatra framework to build simple web applications, following on from the [battle application](https://github.com/peterwdj/Battle) we had built during the week, with clearly defined responsibilities between classes, and encapsulation of business logic within models rather than views or controllers.
 
-Knowing how to build web applications is getting us almost there as web developers!
+This was built using TDD, with the testing frameworks Capybara and RSpec for the feature and unit tests respectively.
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+#### Running the application
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+To run this application, start a local server using a tool such as Rackup, and visit that server to play the game. Good luck!
 
 
-As usual please start by
+#### Challenges
 
-* Forking this repo
-* TEST driving development of your app
+One of the problems I encountered during this task was that it became apparent that I was not 100% clear on the difference between unit tests and feature tests, and so ended up testing some of the logic within feature tests. This came out during the group code review, and I now feel comfortable on the differences between the two.
 
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+For the most part, the rest of the challenge was simple enough, being a more basic version of the week's Battle task (see above). The one part that caused a brief headache was giving the user the option to play again, and persisting their name rather than resetting their name without an option to add another one, and without keeping the computer's choice the same. I solved this by reorganising when certain actions took place in my controller file, and using class variable and methods to persist data across different routes in the application. 
