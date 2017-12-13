@@ -1,0 +1,8 @@
+<!-- play view page for Rock Paper Scizors Web App -->
+<h1><%= @instance.player.name %> VS. Computer! <h1>
+<h3> Choose your play Option: </h3>
+
+<form name='input' action='/play' method='post'>
+Your Choice <input type="text" name="option"> </br>
+<input type='submit' value="Enter">
+</form><br>

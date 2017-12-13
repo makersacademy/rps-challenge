@@ -1,0 +1,15 @@
+<!-- win, loose or draw, for game view page; Rock Paper Scizors Web App -->
+You chose <%=@instance.at_option %>
+and Computer chose <%=@instance.at_random%>.
+
+<% if @instance.result? == :win %>
+<%= @instance.player.name %>, you won!
+<% elsif @instance.result? == :draw %>
+<%= @instance.player.name %> draws with Computer
+<% else @instance.result? == :loss %>
+<%= @instance.player.name %>, you lost...
+<% end %><br>
+
+<form name='input' action='/play' method='get'>
+<input type='submit' value="Back">
+</form><br>
