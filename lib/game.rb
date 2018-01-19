@@ -19,7 +19,7 @@ class Game
     @player_move = move
   end
 
-  def computer_move
+  def make_computer_move
     @computer_move = @computer.choose_move
   end
 
