@@ -1,1 +1,5 @@
 <p><%= @game.player.name %> chose <%= @player_move %>! </p>
+
+<p><form action="/play" method="get">
+  <input type="submit" value="Play again">
+</form></p>
