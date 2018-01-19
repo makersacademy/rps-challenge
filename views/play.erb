@@ -1,1 +1,13 @@
-Welcome to Rock, Paper, Scissors <%= @player_name %>!
+<h2>Welcome to Rock, Paper, Scissors <%= @player_name %>!</h2>
+
+<p>Make your move:</p>
+
+<p><form action='/move' method='post'>
+  <input type='submit' value='Rock'>
+</form></p>
+<p><form action='/move' method='post'>
+  <input type='submit' value='Paper'>
+</form></p>
+<p><form action='/move' method='post'>
+  <input type='submit' value='Scissors'>
+</form></p>
