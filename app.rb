@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'pry'
 require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -22,9 +23,17 @@ class RockPaperScissors < Sinatra::Base
   before { @game = Game.instance }
   
   get '/play' do
-    @player_name = @game.player.name
     erb(:play)
   end
-   
+
+  post '/move' do
+    session[:player_move] = params[:move]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player_move = session[:player_move]
+    erb(:result)
+  end
    
 end

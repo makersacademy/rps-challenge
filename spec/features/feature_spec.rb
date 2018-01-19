@@ -22,7 +22,7 @@ feature 'Making a selection' do
     fill_in 'player_name', with: "Ed"
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content("Ed chose Rock!")
+    expect(page).to have_content("Ed chose rock!")
   end
 end
 
