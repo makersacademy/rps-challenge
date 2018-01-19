@@ -16,4 +16,13 @@ feature 'Making a selection' do
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")
   end
+
+  scenario 'Player chooses move and gets confirmation' do
+    visit('/')
+    fill_in 'player_name', with: "Ed"
+    click_button 'Submit'
+    click_button 'Rock'
+    expect(page).to have_content("Ed chose Rock!")
+  end
 end
+
