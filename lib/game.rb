@@ -8,14 +8,19 @@ class Game
     @game_state
   end
 
-  attr_reader :player, :player_move
+  attr_reader :player, :player_move, :computer_move
 
   def initialize(player)
     @player = player
+    @computer = Computer.new
   end
 
   def make_move(move)
     @player_move = move
+  end
+
+  def computer_move
+    @computer_move = @computer.choose_move
   end
 
 end

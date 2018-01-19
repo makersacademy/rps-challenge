@@ -2,6 +2,7 @@ require 'sinatra'
 require 'pry'
 require './lib/game'
 require './lib/player'
+require './lib/computer'
 
 class RockPaperScissors < Sinatra::Base
 

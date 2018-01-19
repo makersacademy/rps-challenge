@@ -1,5 +1,7 @@
 <p><%= @game.player.name %> chose <%= @game.player_move %>! </p>
 
+<p>Computer chose <%= @game.computer_move %>! </p>
+
 <p><form action="/play" method="get">
   <input type="submit" value="Play again">
 </form></p>
