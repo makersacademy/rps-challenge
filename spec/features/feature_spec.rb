@@ -18,5 +18,12 @@ feature 'Making a move' do
     click_button 'Rock'
     expect(page).to have_content("Ed chose rock!")
   end
+
+  scenario 'Computer makes a choice and player sees its selection' do
+    enter_name_and_submit 
+    click_button 'Rock'
+    allow_any_instance_of(Computer).to receive(:choose_move).and_return(:paper)
+    expect(page).to have_content("Computer chose paper!")
+  end
 end
 
