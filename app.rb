@@ -27,12 +27,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    session[:player_move] = params[:move]
+    @game.make_move(params[:move])
     redirect '/result'
   end
 
   get '/result' do
-    @player_move = session[:player_move]
     erb(:result)
   end
    

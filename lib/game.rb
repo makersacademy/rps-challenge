@@ -8,10 +8,14 @@ class Game
     @game_state
   end
 
-  attr_reader :player
+  attr_reader :player, :player_move
 
   def initialize(player)
     @player = player
+  end
+
+  def make_move(move)
+    @player_move = move
   end
 
 end
