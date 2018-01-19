@@ -1,5 +1,4 @@
 require 'sinatra'
-require './lib/game'
 require 'pry'
 
 class RockPaperScissors < Sinatra::Base
@@ -10,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
    run! if app_file == $0
 
    get '/' do
-    erb :index
+    erb(:index)
    end
 
 end
