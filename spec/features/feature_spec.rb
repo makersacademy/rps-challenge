@@ -27,3 +27,18 @@ feature 'Making a move' do
   end
 end
 
+feature 'Determining winner' do
+  scenario 'Computer chooses winning move' do
+    allow_any_instance_of(Computer).to receive(:choose_move).and_return(:paper)
+    enter_name_and_submit 
+    click_button 'Rock'
+    expect(page).to have_content("Computer won!")
+  end
+
+  scenario 'Player chooses winning move' do
+    allow_any_instance_of(Computer).to receive(:choose_move).and_return(:scissors)
+    enter_name_and_submit 
+    click_button 'Rock'
+    expect(page).to have_content("Computer won!")
+  end
+end
