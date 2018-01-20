@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 
-class RpsGame < Sinatra::Base
+class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
@@ -10,13 +10,24 @@ class RpsGame < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1_name] = params[:player_1_name]
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_1_name = session[:player_1_name]
+    @player_name = session[:player_name]
     erb(:play)
+  end
+
+  post '/attack' do
+    session[:weapon] = params[:weapon]
+    redirect ('/outcome')
+  end
+
+  get '/outcome' do
+    @player_name = session[:player_name]
+    @weapon = session[:weapon]
+    erb(:outcome)
   end
 
   run! if app_file == $0
