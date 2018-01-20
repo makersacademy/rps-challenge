@@ -14,6 +14,13 @@ describe Game do
     end
   end
 
+  describe '#set_player_weapon' do
+    it 'calls weapon_choice on player' do
+      expect(player).to receive(:weapon_choice).with('Rock')
+      game.set_player_weapon('Rock')
+    end
+  end
+
   describe '#result' do
     context 'Player beats computer' do
       it 'returns player when player has rock, computer has scissors' do

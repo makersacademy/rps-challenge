@@ -21,6 +21,10 @@ class Game
     draw? ? :draw : winner
   end
 
+  def set_player_weapon(weapon)
+    player.weapon_choice(weapon)
+  end
+
   private
 
   RULES = { rock: :scissors,
