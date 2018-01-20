@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=”stylesheet” type=”text/css” href=”/public/cat.css” />
+</head>
+<body style="font-family:verdana;">
+  <h1 style="text-align:center;"> CHOOSE ROCK, PAPER or SCISSOR <%=@name %></h1>
+  <!-- <div>
+    <img style = "border: 4px dashed red;" src="http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png">
+  </div> -->
+  <!-- <% if !@name %> -->
+  <form method="POST" action="/named-cat">
+    Put your name:<br>
+    <input type="text" name = "name">
+    <input type="submit" value="Submit">
+  </form>
+  <% end %>
+</body>
+</html>
