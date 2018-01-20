@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/result" do
-    @result = params["attack"]
+     @result = params["attack"]
     "Derek chose #{@result}"
   end
 
