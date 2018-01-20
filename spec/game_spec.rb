@@ -16,4 +16,22 @@ describe Game do
       expect(game.player).to be player
     end
   end
+
+  describe '#compare' do
+    before do
+      allow_any_instance_of(Array).to receive(:sample).and_return 'scissors'
+    end
+
+    it 'outputs a win' do
+      expect(game.compare('rock')).to eq :win
+    end
+
+    it 'outputs a draw' do
+      expect(game.compare('scissors')).to eq :draw
+    end
+
+    it 'outputs a loss' do
+      expect(game.compare('paper')).to eq :lose
+    end
+  end
 end
