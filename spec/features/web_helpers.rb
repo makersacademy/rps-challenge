@@ -10,3 +10,10 @@ def player_weapon_choice(weapon)
   select weapon, :from => "player_weapon"
   click_button "Lets get started!"
 end
+
+def multi_player_names_and_confirm
+  visit('/')
+  fill_in 'player_1_name', :with => 'Leigh-ann'
+  fill_in 'player_2_name', :with => 'Andy'
+  click_button "Let's go"
+end
