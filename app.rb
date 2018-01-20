@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require './lib/game.rb'
+require './lib/game'
+require './lib/computer'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -20,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/attack' do
     session[:weapon] = params[:weapon]
-    redirect ('/outcome')
+    redirect('/outcome')
   end
 
   get '/outcome' do
