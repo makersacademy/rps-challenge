@@ -1,42 +1,33 @@
 
 feature "after signing in, you choose attack" do
-  scenario "after choosing rock it should confirm your choice" do
-    visit "/"
-    fill_in "Enter name", with: "Derek"
-    click_button "Begin..."
-    choose("rock")
-    click_button "Ready to go"
-    expect(page).not_to have_content("AABBYkjahskdh987289")
-    expect(page).to have_content("Derek chose rock")
-  end
 
-  scenario "rock is default" do
-    visit "/"
-    fill_in "Enter name", with: "Derek"
-    click_button "Begin..."
-    click_button "Ready to go"
-    expect(page).not_to have_content("AABBYkjahskdh987289")
-    expect(page).to have_content("Derek chose rock")
+   def make_attack_and_check_it_matched_message(attack)
+     choose(attack)
+     click_button "Attack your opponent"
+     check_its_not_error_page
+     expect(page).to have_content("Derek chose #{attack}")
+   end
+
+   background do
+     login_with_derek
+    end
+
+  scenario "after choosing rock it should confirm your choice" do
+      make_attack_and_check_it_matched_message("rock")
   end
 
   scenario "after choosing paper it should confirm your choice" do
-    visit "/"
-    fill_in "Enter name", with: "Derek"
-    click_button "Begin..."
-    choose("paper")
-    click_button "Ready to go"
-    expect(page).not_to have_content("AABBYkjahskdh987289")
-    expect(page).to have_content("Derek chose paper")
+      make_attack_and_check_it_matched_message("paper")
   end
 
   scenario "after choosing scissors it should confirm your choice" do
-    visit "/"
-    fill_in "Enter name", with: "Derek"
-    click_button "Begin..."
-    choose("scissors")
-    click_button "Ready to go"
-    expect(page).not_to have_content("AABBYkjahskdh987289")
-    expect(page).to have_content("Derek chose scissors")
+      make_attack_and_check_it_matched_message("scissors")
+  end
+
+  scenario "rock is default" do
+    click_button "Attack your opponent"
+    check_its_not_error_page
+    expect(page).to have_content("Derek chose rock")
   end
 
 end
