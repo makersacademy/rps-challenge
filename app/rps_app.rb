@@ -12,16 +12,15 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/names' do
     player_1 = params[:player_1]
     Game.create(player_1)
 
-    redirect '/play'
+    redirect '/names'
   end
 
-  get '/play' do
-    @player = $player
-    erb :play
+  get '/names' do
+    erb :names
   end
 
   post '/game' do
@@ -30,6 +29,15 @@ class RPSWeb < Sinatra::Base
 
   get '/game' do
     erb :game
+  end
+
+  post '/result' do
+
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
   end
 
   # start the server if ruby file executed directly
