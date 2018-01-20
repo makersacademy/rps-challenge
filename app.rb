@@ -27,6 +27,8 @@ class RockPaperScissors < Sinatra::Base
   get '/outcome' do
     @player_name = session[:player_name]
     @weapon = session[:weapon]
+    computer = Computer.new
+    @computer_weapon = computer.choose_weapon
     erb(:outcome)
   end
 
