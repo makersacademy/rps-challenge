@@ -28,8 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    @game.make_move(params[:move])
-    @game.make_computer_move
+    @game.player.move=(params[:move])
     redirect '/result'
   end
 

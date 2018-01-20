@@ -8,4 +8,11 @@ describe Player do
       expect(player.name).to eq("Ed")
     end
   end
+
+  describe "#move" do
+    it 'stores player move' do
+      player.move=("rock")
+      expect(player.move).to eq :rock
+    end
+  end
 end

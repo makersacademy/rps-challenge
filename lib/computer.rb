@@ -1,5 +1,7 @@
 class Computer
-  def choose_move
+
+  def move
     Game::MOVES.sample
   end
+  
 end

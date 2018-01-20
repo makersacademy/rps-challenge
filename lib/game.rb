@@ -8,28 +8,25 @@ class Game
     @game_state
   end
 
-  attr_reader :player, :player_move, :computer_move
+  attr_reader :player, :computer_move
 
   MOVES = [:rock, :paper, :scissors]
   WINNING_PAIRS = {rock: :scissors, paper: :rock, scissors: :paper}
 
-  def initialize(player)
+  def initialize(player, computer = Computer.new)
     @player = player
-    @computer = Computer.new
-  end
-
-  def make_move(move)
-    @player_move = move.to_sym
+    @computer = computer
   end
 
   def make_computer_move
-    @computer_move = @computer.choose_move
+    @computer_move = @computer.move
   end
 
   def winner
-    if @computer_move == @player_move
+    make_computer_move
+    if @computer_move == @player.move
       return "No one"
-    elsif WINNING_PAIRS[@player_move] == @computer_move
+    elsif WINNING_PAIRS[@player.move] == @computer_move
       return :player
     else
       return :computer
