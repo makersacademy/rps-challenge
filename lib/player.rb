@@ -5,7 +5,7 @@ class Player
     @name = name
   end
 
-  def weapon_choice(choice)
+  def weapon_choice(choice = '')
     choice = choice.downcase.to_sym
     fail "Not a allowed weapon choice" unless WEAPONS.include?(choice)
     @weapon = choice
