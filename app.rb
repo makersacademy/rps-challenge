@@ -12,8 +12,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    p1 = Player.new(params[:player_1_name])
-    p2 = Player.new(params[:player_2_name])
+    p1,p2 = Player.new(params[:player_1_name]),Player.new(params[:player_2_name])
     params[:player_2_name].empty? ? Game.build(p1) : Game.build(p1,p2)
     redirect '/play'
   end
@@ -31,7 +30,6 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     erb :result
   end
-
 
 run! if app_file == $0
 end
