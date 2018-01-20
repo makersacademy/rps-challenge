@@ -1,5 +1,9 @@
 <h1> <%= @game.player_1.name%> vs <%= @game.player_2.name%>!! Lets play Rock!Paper!Scissors! </h1>
 
+<% if @result_log.rounds > 0 %>
+  <h1> Round <%= @result_log.rounds + 1 %> </h1>
+<% end %>
+
  <form action="/weapon_choice" method="post">
   <label for ="player_1_weapon"> <%= @game.player_1.name%>'s Weapon Choice
     <select name ="player_1_weapon">
@@ -27,7 +31,3 @@
     <input type="submit" value = "Lets get started!">
   </div>
 </form>
-
-<% if @result_log.rounds > 0 %>
-  <h1> Round <%= @result_log.rounds + 1 %>
-<% end %>
