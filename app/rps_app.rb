@@ -18,6 +18,14 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
+  post '/game' do
+    redirect '/game'
+  end
+
+  get '/game' do
+    erb :game
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
