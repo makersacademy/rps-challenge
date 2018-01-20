@@ -9,13 +9,17 @@ class RockPaperScissors < Sinatra::Base
 
   run! if app_file == $0
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $player = Player.new(params[:player_name])
-    $game = Game.new($player)
+    player = Player.new(params[:player_name])
+    @game = Game.create(player)
     redirect '/play'
   end
 
@@ -24,9 +28,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/attack' do
-    $game.choose_weapon(params[:weapon])
-    $game.computer_choose_weapon
-    $result = $game.result
+    @game.choose_weapon(params[:weapon])
+    @game.computer_choose_weapon
+    @result = @game.result
     redirect('/outcome')
   end
 

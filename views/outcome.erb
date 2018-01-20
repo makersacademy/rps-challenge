@@ -1,4 +1,8 @@
-<h1><%= $game.player.name %> chose <%= $game.player_weapon %></h>
-<h1>Computer chose <%= $game.computer_weapon %></h>
+<h1><%= @game.player.name %> chose <%= @game.player_weapon %></h>
+<h1>Computer chose <%= @game.computer_weapon %></h>
 
-<h1> You <%= $result %>! </h1>
+<h1> You <%= @result %>! </h1>
+
+<form action="/play" method="get">
+  <input type="submit" value="Play again">
+</form>

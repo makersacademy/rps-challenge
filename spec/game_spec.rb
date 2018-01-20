@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   let(:player) { double :player }
-  let(:computer) { double :computer}
+  let(:computer) { double :computer }
   subject(:game) { described_class.new(player) }
 
   describe "#initialize" do
@@ -24,7 +24,7 @@ describe Game do
         allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:scissors)
         game.choose_weapon("rock")
         game.computer_choose_weapon
-        expect(game.result).to eq :win
+        expect(game.result).to eq :won
       end
     end
 
@@ -33,14 +33,16 @@ describe Game do
         allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:scissors)
         game.choose_weapon("paper")
         game.computer_choose_weapon
-        expect(game.result).to eq :lose
+        expect(game.result).to eq :lost
       end
     end
 
     context "game is a draw" do
       it "should return 'draw'" do
-        allow(computer).to receive(:choose_weapon).and_return(:rock)
-        expect(game.result).to eq :draw
+        allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:rock)
+        game.choose_weapon("rock")
+        game.computer_choose_weapon
+        expect(game.result).to eq :tied
       end
     end
   end

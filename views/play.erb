@@ -1,5 +1,5 @@
 <h1>Rock, Paper or Scissors?</h1>
-<h2><%= $player.name %>, please choose your weapon:</h2>
+<h2><%= @game.player.name %>, please choose your weapon:</h2>
 
 <p><form action='/attack' method='post'>
   <input type="hidden" name="weapon" value="rock">

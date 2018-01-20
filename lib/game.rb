@@ -8,6 +8,14 @@ class Game
             paper: :rock,
             scissors: :paper }
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def initialize(player)
     @player = player
     @computer = Computer.new
@@ -25,11 +33,10 @@ class Game
 
   def result
     if @computer_weapon == @player_weapon
-      :draw
+      :tied
     else
-      RULES[@player_weapon] == @computer_weapon ? :win : :lose
+      RULES[@player_weapon] == @computer_weapon ? :won : :lost
     end
   end
-
 
 end
