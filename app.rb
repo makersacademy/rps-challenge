@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/computer_player'
+require './lib/result_log'
 
 class RockPaperScissors < Sinatra::Base
   before do
