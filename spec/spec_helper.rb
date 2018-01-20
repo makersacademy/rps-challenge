@@ -23,6 +23,6 @@ require './app.rb'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-# require 'feature_tests/web_helpers.rb'
+require 'features/web_helpers'
 
 Capybara.app = RPS
