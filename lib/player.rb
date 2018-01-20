@@ -3,16 +3,17 @@ class Player
 
   def initialize(name)
     @name = name
+    @moves = [:rock, :paper, :scissors]
   end
 
   def choose(move)
-    validate(move)
+    raise "Invalid move" unless valid?(move)
     @move = move
   end
 
   private
 
-  def validate(move)
-    raise "Invalid move" unless [:rock, :paper, :scissors].include? move
+  def valid?(move)
+    @moves.include? move
   end
 end

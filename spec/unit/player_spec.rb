@@ -7,12 +7,24 @@ describe Player do
     expect(player.name).to eq "Test name"
   end
 
-  it 'can make a move' do
-    player.choose(:rock)
-    expect(player.move). to eq :rock
-  end
+  describe '#choose' do
+    it 'chooses rock' do
+      player.choose(:rock)
+      expect(player.move).to eq :rock
+    end
 
-  it 'fails when making an invalid move' do
-    expect { player.choose(:bird) }.to raise_error "Invalid move"
+    it 'chooses paper' do
+      player.choose(:paper)
+      expect(player.move).to eq :paper
+    end
+
+    it 'chooses scissors' do
+      player.choose(:scissors)
+      expect(player.move).to eq :scissors
+    end
+
+    it 'fails when making an invalid move' do
+      expect { player.choose(:bird) }.to raise_error "Invalid move"
+    end
   end
 end
