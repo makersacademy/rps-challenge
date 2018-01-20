@@ -19,9 +19,8 @@ feature 'Player Wins with Rock vs Scissors' do
     visit('/')
     fill_in 'player_name', with: 'Jennifer'
     click_button "Let's play!!"
-    fill_in 'player_choice', with: 'ROCK'
     allow_any_instance_of(Game).to receive(:computer_chooses).and_return("SCISSORS")
-    click_button "GO"
+    click_button "ROCK"
     expect(page).to have_content "You chose:  ROCK The computer chose:  SCISSORS YOU WON!"
   end
 end
@@ -31,9 +30,8 @@ feature 'Player Loses with Rock vs Paper' do
     visit('/')
     fill_in 'player_name', with: 'Jennifer'
     click_button "Let's play!!"
-    fill_in 'player_choice', with: 'ROCK'
     allow_any_instance_of(Game).to receive(:computer_chooses).and_return("PAPER")
-    click_button "GO"
+    click_button "ROCK"
     expect(page).to have_content "You chose:  ROCK The computer chose:  PAPER YOU LOST!"
   end
 end
@@ -43,9 +41,8 @@ feature 'Player Draws with Rock vs Rock' do
     visit('/')
     fill_in 'player_name', with: 'Jennifer'
     click_button "Let's play!!"
-    fill_in 'player_choice', with: 'ROCK'
     allow_any_instance_of(Game).to receive(:computer_chooses).and_return("ROCK")
-    click_button "GO"
+    click_button "ROCK"
     expect(page).to have_content "You chose:  ROCK The computer chose:  ROCK YOU DREW!"
   end
 end
