@@ -20,16 +20,25 @@ describe Game do
   describe "#results" do
     context 'when both players choose Paper' do
       it "results in a draw" do
-        allow(player1).to receive(:choice).and_return 'Paper'
-        allow(player2).to receive(:choice).and_return 'Paper'
-        game.moves(player1,player2)
+        expect(game.moves('Paper', 'Paper')).to include "It's a draw!"
+      end
+    end
+    context 'when both players choose Rock' do
+      it "results in a draw" do
+        expect(game.moves('Rock', 'Rock')).to include "It's a draw!"
+      end
+    end
+    context 'when both players choose Scissors' do
+      it "results in a draw" do
+        expect(game.moves('Scissors', 'Scissors')).to include "It's a draw!"
       end
     end
     context 'when player 1 chooses Rock and player 2 chooses Paper' do
       it "results in player 2 winnning" do
         allow(player1).to receive(:choice).and_return 'Rock'
         allow(player2).to receive(:choice).and_return 'Paper'
-        game.moves(player1,player2)
+        allow(player2).to receive(:name).and_return 'Eagle Claw'
+        game.moves(player1, player2)
       end
     end
   end

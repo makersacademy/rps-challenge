@@ -25,11 +25,3 @@ feature 'player1 makes a selection' do
     expect(page).to have_text('Dragon Eyes chose Scissors')
   end
 end
-#
-# feature 'reduce player2 hit points' do
-#   scenario 'player2 hit points reduced by 10 when attacked' do
-#     sign_in_and_play
-#     click_button 'Attack'
-#     expect(page).to have_text(90)
-#   end
-# end

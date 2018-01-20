@@ -8,12 +8,8 @@ describe Player do
     it 'returns player1 name' do
       expect(player1.name).to eq 'Dragon Eyes'
     end
+    it 'returns player2 name' do
+      expect(player2.name).to eq 'Eagle Claw'
+    end
   end
-
-  # describe "#damage" do
-  #   it "shows new hit points value" do
-  #     expect{ player2.damage }.to change{ player2.hitpoints }.by(-10)
-  #   end
-  # end
-
 end
