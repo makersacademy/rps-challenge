@@ -1,1 +1,6 @@
 <h1> <%= @game.player.name%> you chose <%= @game.player.weapon_to_s%>!!  <%= @game.computer_player.name%> chose <%= @game.computer_player.weapon_to_s%>!!</h1>
+<% if @game.result == :draw %>
+<h1> IT'S A DRAW!! </h2>
+  <% else %>
+  <h1> <%= @game.result.name.upcase%> WON!!! </h1>
+<% end %>
