@@ -1,9 +1,11 @@
 require 'Sinatra/base'
 
 class RPSWeb < Sinatra::Base
+  enable :sessions
 
   get '/' do
-    "Hello"
+    erb :index
+
   end
 
   # start the server if ruby file executed directly
