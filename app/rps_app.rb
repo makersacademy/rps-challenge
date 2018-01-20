@@ -1,14 +1,20 @@
 require 'sinatra/base'
+require './lib/game'
 
 class RPSWeb < Sinatra::Base
   enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
   end
 
   post '/play' do
-    $player = params[:player_1]
+    player_1 = params[:player_1]
+    Game.create(player_1)
 
     redirect '/play'
   end
