@@ -7,4 +7,5 @@ end
 def player_weapon_choice(weapon)
   enter_name_and_confirm
   select weapon, :from => "player_weapon"
+  click_button "Lets get started!"
 end
