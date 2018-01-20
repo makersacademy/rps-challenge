@@ -42,10 +42,3 @@ feature 'Determining winner' do
     expect(page).to have_content("Player won!")
   end
 end
-
-feature 'Multiplayer' do
-  scenario 'Player enter their names and this is displayed on-screen' do
-    enter_two_players_and_submit
-    expect(page).to have_content("Welcome to Rock, Paper, Scissors Ed and Ted")
-  end
-end
