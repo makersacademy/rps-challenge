@@ -10,4 +10,13 @@ feature "after signing in, you choose attack" do
     expect(page).to have_content("Derek chose rock")
   end
 
+  scenario "rock is default" do
+    visit "/"
+    fill_in "Enter name", with: "Derek"
+    click_button "Begin..."
+    click_button "Ready to go"
+    expect(page).not_to have_content("AABBYkjahskdh987289")
+    expect(page).to have_content("Derek chose rock")
+  end
+
 end
