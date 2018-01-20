@@ -1,14 +1,22 @@
-<h1> <%= @game.player.name%> vs <%= @game.computer_player.name%>!! Lets play Rock!Paper!Scissors! </h1>
+<h1> <%= @game.player_1.name%> vs <%= @game.player_2.name%>!! Lets play Rock!Paper!Scissors! </h1>
 
  <form action="/weapon_choice" method="post">
-  </label>
-  <label for ="player_weapon"> Weapon Choice
-    <select name ="player_weapon">
+  <label for ="player_1_weapon"> <%= @game.player_1.name%>'s Weapon Choice
+    <select name ="player_1_weapon">
       <option value="Rock">Rock</option>
       <option value="Paper">Paper</option>
       <option value="Scissors">Scissors</option>
     </select>
   </label>
+  <% unless @game.player_2.is_a?(ComputerPlayer) %>
+    <label for ="player_2_weapon"> <%= @game.player_2.name%>'s Weapon Choice
+      <select name ="player_2_weapon">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+    </label>
+  <%end%>
   <div>
   </label>
   <div class ="button">

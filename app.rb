@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/weapon_choice' do
-     @game.set_player_weapon(params[:player_weapon])
+     @game.set_player_1_weapon(params[:player_1_weapon])
      redirect :result
   end
 
