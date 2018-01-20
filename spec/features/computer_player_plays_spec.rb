@@ -13,6 +13,7 @@ feature 'Computer choses random weapon choice' do
     expect(page).to have_content "Computer chose ROCK!"
   end
 end
+
 feature 'When playing against computer - no option for player_2 weapon choice' do
   scenario 'One player signs in, game defaults to player vs computer' do
     enter_name_and_confirm
