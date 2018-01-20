@@ -27,8 +27,8 @@ class Game
   end
 
   RULES = {
-    rock: :scissors,
-    paper: :rock,
-    scissors: :paper
+    Rock: :Scissors,
+    Paper: :Rock,
+    Scissors: :Paper
   }
 end
