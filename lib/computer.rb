@@ -6,12 +6,12 @@ class Computer
   end
 
   def choose
-    @move = @moves[random]
+    @move = random
   end
 
   private
 
   def random
-    rand(@moves.length)
+    @moves.sample
   end
 end
