@@ -38,7 +38,7 @@ class Rps < Sinatra::Base
   get '/result' do
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
-    erb(:win)
+    erb(:result)
   end
 
 end
