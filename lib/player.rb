@@ -11,6 +11,10 @@ class Player
     @weapon = choice
   end
 
+  def weapon_to_s
+    weapon.to_s.upcase
+  end
+
   private
 
   WEAPONS = [:rock,:paper,:scissors]

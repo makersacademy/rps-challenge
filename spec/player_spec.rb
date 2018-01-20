@@ -20,4 +20,10 @@ describe Player do
       expect { player.weapon_choice('gun') }.to raise_error "Not a allowed weapon choice"
     end
   end
+  describe '#weapon_to_s' do
+    it 'returns weapon as upcase string' do
+      player.weapon_choice('Scissors')
+      expect(player.weapon_to_s).to eq 'SCISSORS'
+    end
+  end
 end
