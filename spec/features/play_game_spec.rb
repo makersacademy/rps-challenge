@@ -1,16 +1,23 @@
 feature 'play the game' do
 
-  scenario 'the signs (rock, paper, scissors) are presented' do
+  scenario 'the weapons (rock, paper, scissors) are presented' do
     register_and_play
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'rock'
+    expect(page).to have_button 'paper'
+    expect(page).to have_button 'scissors'
   end
 
-  scenario 'one of the signs is chosen' do
+  scenario 'the player chooses a weapon' do
     register_and_play
-    click_button 'Paper'
-    expect(page).to have_content 'You have chosen Paper!'
+    click_button 'paper'
+    expect(page).to have_content 'You have chosen paper!'
+  end
+
+  scenario 'the computer chooses a random weapon' do
+    register_and_play
+    srand(22671)
+    click_button 'rock'
+    expect(page).to have_content 'The computer has chosen scissors!'
   end
 
 end
