@@ -1,6 +1,6 @@
 class Opponent
 
-  HAND = [:rock, :paper, :scissors]
+  HAND = [:Rock, :Paper, :Scissors]
 
   def hand
     HAND.sample

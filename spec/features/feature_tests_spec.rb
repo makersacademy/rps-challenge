@@ -11,6 +11,6 @@ feature 'Choosing a move' do
     start_game
     select('Rock', :from => 'move')
     click_button('Submit')
-    expect(page).to have_content "Lewis: Rock"
+    expect(page).to have_content "You chose: Rock"
   end
 end
