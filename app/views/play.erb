@@ -8,4 +8,12 @@
   <%= @game.player.name %>, choose your attack:
 </h1>
 
+<br><br>
+
+<form action='/check' method='post'>
+  <input type="submit" name="attack" value="Rock">
+  <input type="submit" name="attack" value="Paper">
+  <input type="submit" name="attack" value="Scissors">
+</form>
+
 </html>

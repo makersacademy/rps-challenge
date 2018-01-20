@@ -6,6 +6,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 require './app/main.rb'
+require 'features/helpers'
 
 Capybara.app = RPS
 
