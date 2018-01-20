@@ -8,6 +8,6 @@ feature "Player can enter name " do
     visit('/')
     fill_in 'player_name', :with => 'Leigh-ann'
     click_button "Let's go"
-    expect(page).to have_content 'Leigh-ann, lets play Rock!Paper!Scissors!'
+    expect(page).to have_content 'Leigh-ann vs Computer!! Lets play Rock!Paper!Scissors!'
   end
 end
