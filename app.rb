@@ -10,8 +10,14 @@ class RockPaperScissors < Sinatra::Base
 
   post "/play" do
     @name = params["Enter name"]
-    "Welcome to the game, #{@name}"
+    erb :play
   end
+
+  post "/result" do
+    @result = params["attack"]
+    "Derek chose #{@result}"
+  end
+
   run! if app_file == $0
 
 end
