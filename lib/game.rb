@@ -2,7 +2,7 @@
 class Game
 
   def computer_chooses
-    ["ROCK","PAPER","SCISSORS"].sample
+    ["ROCK", "PAPER", "SCISSORS"].sample
   end
 
   def rps(player_choice, computer)
