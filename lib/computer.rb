@@ -6,9 +6,8 @@ class Computer
     @name = "computer"
   end
 
-  def move=(move = Game::MOVES.sample)
-    @move = move
-    
+  def make_move
+    @move = Game::MOVES.sample
   end
 
 end
