@@ -84,3 +84,17 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+Gems installed
+ruby '2.4.0'
+
+gem 'rake'
+gem 'sinatra'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end

@@ -1,0 +1,24 @@
+body {
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+.jumbotron {
+
+}
+.container {
+  border: 2px grey dashed;
+  width: 75%;
+  margin: auto;
+}
+.head {
+  text-align: center;
+}
+input.play {
+  font-size: 3em;
+  padding: 20px;
+}
+form {
+  display: flex;
+}
+form input {
+  flex-direction: end
+}

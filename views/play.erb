@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @player1_name %> vs. <%= @player2_name %></h1>
+
+  <h2>Start your game!</h2>
+
+  <form action="/results" method="get">
+    <select name="player1_choice">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+    <select name="player2_choice">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</div>
