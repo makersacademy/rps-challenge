@@ -1,41 +1,42 @@
 require_relative 'player'
+require_relative 'ai'
 
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :ai, :player
 
-  def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
+  def initialize(ai, player)
+    @ai = ai
+    @player = player
   end
-# def rock_paper_scissors
-#
-#   if choose_1 == "rock"
-#     if choose_pc_input == "rock"
-#       puts "It's a draw"
-#     elsif choose_pc_pc_input == "scissors"
-#       puts "Player wins"
-#     elsif choose_pc_input == "paper"
-#       puts "Pc wins"
-#     end
-#
-#   elsif choose_1 == "scissors"
-#     if choose_pc == "rock"
-#       puts "Pc wins"
-#     elsif player2 == "scissors"
-#       puts "It's a draw"
-#     elsif player2 == "paper"
-#       puts "Player wins"
-#     end
-#
-#   elsif choose_1 == "paper"
-#     if choose_pc == "rock"
-#       puts "Player wins"
-#     elsif choose_pc == "scissors"
-#       puts "Pc wins"
-#     elsif choose_pc == "paper"
-#       puts "It's a draw"
-#     end
-#   end
-# end
+
+  def play_match(ai_choice, player_choice)
+    if player_choice == "rock"
+      if ai_choice == "rock"
+        "it's a draw!"
+      elsif ai_choice == "paper"
+        "you lose!"
+      else
+        "you win!"
+      end
+    elsif player_choice == "paper"
+      if ai_choice == "rock"
+        "you win!"
+      elsif ai_choice == "paper"
+        "it's a draw!"
+      else
+        "you lose!"
+      end
+    elsif player_choice == "scissors"
+      if ai_choice == "rock"
+        "you lose!"
+      elsif ai_choice == "paper"
+        "you win!"
+      else
+        "it's a draw!"
+      end
+    else
+    end
+  end
+  
 end
