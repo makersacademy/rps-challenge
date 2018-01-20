@@ -1,4 +1,4 @@
-require 'resut_log'
+require 'result_log'
 
 describe ResultLog do
   let(:player_1) { double :player_1 }
@@ -25,4 +25,5 @@ describe ResultLog do
     it 'returns 0 if arg not found in results log' do
       expect(result_log.player_wins(player_1)).to eq 0
     end
+  end
 end
