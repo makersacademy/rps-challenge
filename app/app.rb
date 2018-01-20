@@ -8,8 +8,13 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/choice' do
-    @player = Player.new(params[:player_name])
+  post '/name' do
+    session[:player] = Player.new(params[:player_name])
+    redirect to '/choice'
+  end
+
+  get '/choice' do
+    @player = session[:player]
     erb :choice
   end
 end
