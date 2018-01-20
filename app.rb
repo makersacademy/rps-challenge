@@ -21,5 +21,14 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/weapon_choice' do
+     @game.player.weapon_choice(params[:player_weapon])
+     redirect :result
+  end
+
+  get '/result' do
+    erb :result
+  end
+
 run! if app_file == $0
 end

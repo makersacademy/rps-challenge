@@ -1,1 +1,17 @@
 <h1> <%= @game.player.name%>, lets play Rock!Paper!Scissors! </h1>
+
+ <form action="/weapon_choice" method="post">
+  </label>
+  <label for ="player_weapon"> Weapon Choice
+    <select name ="player_weapon">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+  </label>
+  <div>
+  </label>
+  <div class ="button">
+    <input type="submit" value = "Lets get started!">
+  </div>
+</form>
