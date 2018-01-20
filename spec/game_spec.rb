@@ -19,19 +19,19 @@ describe Game do
 
   describe '#compare' do
     before do
-      allow_any_instance_of(Array).to receive(:sample).and_return 'scissors'
+      allow_any_instance_of(Array).to receive(:sample).and_return 'Scissors'
     end
 
     it 'outputs a win' do
-      expect(game.compare('rock')).to eq :win
+      expect(game.compare('Rock')).to eq :win
     end
 
     it 'outputs a draw' do
-      expect(game.compare('scissors')).to eq :draw
+      expect(game.compare('Scissors')).to eq :draw
     end
 
     it 'outputs a loss' do
-      expect(game.compare('paper')).to eq :lose
+      expect(game.compare('Paper')).to eq :lose
     end
   end
 end
