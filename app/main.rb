@@ -21,5 +21,14 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  post '/check' do
+    @game.compare(params[:attack])
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb(@game.result)
+  end
+
   run! if app_file == $0
 end
