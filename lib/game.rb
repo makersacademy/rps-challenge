@@ -16,7 +16,7 @@ class Game
   end
 
   def print_moves
-    "Bot picked #{bot.move} & #{player.name} picked #{player.move}"
+    "Mojo picked #{bot.move} & #{player.name} picked #{player.move}"
   end
 
   def winner
