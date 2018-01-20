@@ -1,25 +1,23 @@
 require 'sinatra/base'
 require './lib/opponent.rb'
 
+
 class RPS < Sinatra::Base
   enable :sessions
 
-  before do
-    @opponent = Opponent.new
-  end
 
-  get '/' do
-    erb(:index)
+  get "/" do
+    erb :index
   end
 
   post '/play' do
     @name = params[:name]
-    erb(:play)
+    erb :play
   end
 
-  post '/result' do
+  post '/move' do
     @move = params[:move]
-    erb(:result)
+    @opponent = Opponent.new
+    erb :move
   end
-
 end

@@ -1,8 +1,7 @@
 class Opponent
+  MOVES = [:Rock, :Paper, :Scissors]
 
-  HAND = [:Rock, :Paper, :Scissors]
-
-  def hand
-    HAND.sample
+  def move
+    MOVES.sample
   end
 end
