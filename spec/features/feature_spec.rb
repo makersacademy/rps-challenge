@@ -1,7 +1,7 @@
 feature 'Sign-in' do
   scenario 'Player enters their name and this is displayed on-screen' do
     enter_name_and_submit 
-    expect(page).to have_content("Welcome to Rock, Paper, Scissors Ed!")
+    expect(page).to have_content("Welcome to Rock, Paper, Scissors Ed")
   end
 end
 
@@ -40,5 +40,12 @@ feature 'Determining winner' do
     enter_name_and_submit 
     click_button 'Rock'
     expect(page).to have_content("Player won!")
+  end
+end
+
+feature 'Multiplayer' do
+  scenario 'Player enter their names and this is displayed on-screen' do
+    enter_two_players_and_submit
+    expect(page).to have_content("Welcome to Rock, Paper, Scissors Ed and Ted")
   end
 end

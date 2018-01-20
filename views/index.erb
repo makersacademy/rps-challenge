@@ -1,7 +1,17 @@
 <h2> Welcome to Rock, Paper, Scissors. Enter your name to continue!</h2>
 
 <form action="/names" method="post">
-  <label for="player_name">Player name:</label>
-  <input type="text" name="player_name">
+  <p>
+    <label for="player_name">Player name:</label>
+    <input type="text" name="player_name">
+  </p>
+  <p>
+    <label for="multiplayer">Multiplayer?</label>
+    <input type="checkbox" name="multiplayer" class="control">  
+  </p>
+  <p>
+    <label for="player2_name">Player 2 name:</label>
+    <input type="text" name="player2_name">
+  </p>
   <input type="submit" value="Submit">
 </form>
