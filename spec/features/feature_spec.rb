@@ -39,6 +39,6 @@ feature 'Determining winner' do
     allow_any_instance_of(Computer).to receive(:move).and_return(:scissors)
     enter_name_and_submit 
     click_button 'Rock'
-    expect(page).to have_content("Player won!")
+    expect(page).to have_content("Ed won!")
   end
 end
