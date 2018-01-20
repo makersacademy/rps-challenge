@@ -17,4 +17,32 @@ class Game
     @computer_player = computer_player
   end
 
+  def result
+    draw? ? :draw : winner
+  end
+
+  private
+
+  RULES = { rock: :scissors,
+	   paper: :rock,
+     scissors: :paper }
+
+  def beats?
+    RULES[player.weapon]==computer_player.weapon
+  end
+
+  def draw?
+   player.weapon == computer_player.weapon
+  end
+
+  def winner
+    beats? ? @player : @computer_player
+  end
 end
+
+# require './lib/game'
+# p1 = Player.new('l')
+# p2 = Player.new('s')
+# p2.weapon_choice('rock')
+# p1.weapon_choice('paper')
+# game = Game.new(p1,p2)
