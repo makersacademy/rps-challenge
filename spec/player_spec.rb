@@ -8,4 +8,11 @@ describe Player do
       expect(player.name).to eq 'Dom'
     end
   end
+
+  describe '#move' do
+    it 'gets/sets the move' do
+      player.move = :Paper
+      expect(player.move).to eq :Paper
+    end
+  end
 end

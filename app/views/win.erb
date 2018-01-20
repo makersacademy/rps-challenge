@@ -1,10 +1,16 @@
 <html>
 
 <head>
-  <title>Rock, Paper, Scissors!</title>
+  <title>Rock-Paper-Scissors-Lizard-Spock</title>
 </head>
 
-<h1>YOU WIN!</h1>
+<h1><%= @game.player1.name %> WINS!</h1>
+
+<br><br>
+
+<%= @game.player1.name %> chose: <%= @game.player1.move %>
+<br>
+<%= @game.computer.name %> chose: <%= @game.computer.move %>
 
 <br><br>
 

@@ -4,4 +4,8 @@ class Computer
   def initialize
     @move = Game::RULES.keys.sample
   end
+
+  def name
+    "Computer"
+  end
 end

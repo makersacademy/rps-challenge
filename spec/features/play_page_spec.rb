@@ -11,5 +11,7 @@ feature 'Main game page' do
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
+    expect(page).to have_button 'Lizard'
+    expect(page).to have_button 'Spock'
   end
 end

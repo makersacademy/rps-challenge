@@ -23,7 +23,8 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @game.compare(params[:attack])
+    @game.player1.move = params[:attack]
+    @game.compare(@game.player1.move)
     redirect '/result'
   end
 
