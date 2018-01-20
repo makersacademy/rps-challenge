@@ -1,6 +1,14 @@
+ENV["RACK-ENV"] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
 require 'capybara/rspec'
+require 'rspec'
+require './spec/features/web_helpers.rb'
 require 'simplecov'
 require 'simplecov-console'
+
+
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,3 +24,6 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+
+Capybara.app = Rps

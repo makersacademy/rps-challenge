@@ -6,15 +6,17 @@
 </head>
 <body style="font-family:verdana;">
   <h1 style="text-align:center;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
-  <!-- <div>
-    <img style = "border: 4px dashed red;" src="http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png">
-  </div> -->
-  <!-- <% if !@name %> -->
-  <form method="POST" action="/name">
-    <label for="player"> Put your name:</label>
-    <input type="text" name = "player">
+
+  <h2 style="text-align:center;"> Hi <%= @player %></h2>
+  <h2>Now choose ROCK, PAPER or SCISSOR</h2>
+
+    <!-- <img style = "border: 4px dashed red;" src="http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png"> -->
+
+  <form method="GET" action="/play">
+    Put your choice:<br>
+    <input type="text" name = "choice">
     <input type="submit" value="Submit">
   </form>
-  <% end %>
+
 </body>
 </html>
