@@ -20,5 +20,6 @@ RSpec.configure do |config|
   end
 end
 
+require_relative '../app/app'
 ENV['RACK_ENV'] = 'test'
 Capybara.app = RPS
