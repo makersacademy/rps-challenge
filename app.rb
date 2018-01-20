@@ -10,13 +10,14 @@ class Rps < Sinatra::Base
   end
 
   post "/name" do
-    @player = params[:player]
+    @player = Player.new(params[:player])
     # redirect "/play"
     erb :play
   end
 
   get '/play' do
-    erb :play
+    @choice = params[:choice]
+    erb :result
   end
 
   run! if app_file == $0

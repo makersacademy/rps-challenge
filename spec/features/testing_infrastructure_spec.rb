@@ -1,11 +1,17 @@
 # require "pry"
 
 feature "Entering player name" do
-  scenario "Player enter name at the start of the game" do
-    # visit('/')
-    # fill_in "player_name", with: "Fran"
-    # click_button("Submit")
+  scenario "Player can enter a name at the start of the game" do
     sign_in_and_play
     expect(page).to have_content("Fran")
+  end
+end
+
+feature "Making a choice" do
+  scenario  "Player can choose a move" do
+    sign_in_and_play
+    choose('scissors')
+    click_button("yes!")
+    expect(page).to have_content("scissors")
   end
 end
