@@ -12,4 +12,9 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/result' do
+    @move = params[:move]
+    erb(:result)
+  end
+
 end

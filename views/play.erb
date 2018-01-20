@@ -1,1 +1,12 @@
 <p> <%= @name %> vs. SuperAI! <p>
+
+  <p> Choose a move: </p>
+
+<form action="/result" method="post">
+  <select name="move">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
