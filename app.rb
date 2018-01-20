@@ -1,29 +1,38 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
+require './lib/bot.rb'
+
 
 class RPS < Sinatra::Base
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :start
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    bot = Bot.new
+    @game = Game.create(player, bot)
     redirect '/play'
   end
 
   get '/play' do
-    $player
+    @game.player.name
     erb :play
   end
 
   post '/move' do
-    $player.selection(params[:move])
+    @game.player.selection(params[:move])
     redirect '/result'
   end
 
   get '/result' do
-    $player
+    @game
     erb :result
   end
 

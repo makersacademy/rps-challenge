@@ -13,9 +13,7 @@ describe Bot do
   describe 'move' do
     it 'bot randomly selects from moves' do
       expect(bot2.move).to eq :rock
+    end
   end
-
-end
-
 
 end
