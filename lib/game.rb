@@ -15,10 +15,11 @@ class Game
   end
 
   def choose_weapon(weapon)
-    @player_weapon = weapon
+    @player_weapon = weapon.to_sym
+
   end
 
-  def make_computer_choose
+  def computer_choose_weapon
     @computer_weapon = @computer.choose_weapon
   end
 
@@ -26,7 +27,7 @@ class Game
     if @computer_weapon == @player_weapon
       :draw
     else
-      RULES[@player_weapon]==@computer_weapon ? :win : :lose
+      RULES[@player_weapon] == @computer_weapon ? :win : :lose
     end
   end
 

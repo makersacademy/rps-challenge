@@ -1,8 +1,7 @@
 require 'game'
 
 describe Game do
-
-  let (:player) { double :player, move: :rock, name: :player }
+  let(:player) { double :player }
   let(:computer) { double :computer}
   subject(:game) { described_class.new(player) }
 
@@ -15,15 +14,33 @@ describe Game do
   describe "#choose_weapon" do
     it 'stores player weapon choice' do
       game.choose_weapon("rock")
-      expect(game.player_weapon).to eq "rock"
+      expect(game.player_weapon).to eq :rock
     end
   end
 
   describe "#result" do
-    context "when player beats computer" do
+    context "player wins" do
       it "should return 'win'" do
-        allow(computer).to receive(:choose_weapon).and_return(:scissors)
+        allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:scissors)
+        game.choose_weapon("rock")
+        game.computer_choose_weapon
         expect(game.result).to eq :win
+      end
+    end
+
+    context "player loses" do
+      it "should return 'lose'" do
+        allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:scissors)
+        game.choose_weapon("paper")
+        game.computer_choose_weapon
+        expect(game.result).to eq :lose
+      end
+    end
+
+    context "game is a draw" do
+      it "should return 'draw'" do
+        allow(computer).to receive(:choose_weapon).and_return(:rock)
+        expect(game.result).to eq :draw
       end
     end
   end
