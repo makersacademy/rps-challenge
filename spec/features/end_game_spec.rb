@@ -1,6 +1,6 @@
 feature 'When the user chooses an attack' do
   before do
-    allow_any_instance_of(Array).to receive(:sample).and_return 'Scissors'
+    allow_any_instance_of(Computer).to receive(:move).and_return :Scissors
     submit_name
   end
 

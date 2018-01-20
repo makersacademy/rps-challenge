@@ -1,25 +1,26 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player) }
-  let(:player) { double :player }
+  subject(:game) { described_class.new(player1, computer) }
+  let(:player1) { double :player }
+  let(:computer) { double :computer }
 
   describe '.create' do
     it 'stores game instance in class instance variable' do
-      Game.start player
+      Game.start(player1, computer)
       expect(Game.current_game).to be_a Game
     end
   end
 
   describe '#player' do
     it 'returns the player object' do
-      expect(game.player).to be player
+      expect(game.player1).to be player1
     end
   end
 
   describe '#compare' do
     before do
-      allow_any_instance_of(Array).to receive(:sample).and_return 'Scissors'
+      allow(computer).to receive(:move).and_return :Scissors
     end
 
     it 'outputs a win' do
@@ -35,10 +36,10 @@ describe Game do
     end
   end
 
-  describe '#outcome' do
-    it 'should be a symbol' do
-      game.compare('Paper')
-      expect(game.result).to be_a Symbol
-    end
-  end
+  # describe '#result' do
+  #   it 'should be a symbol' do
+  #     game.compare('Paper')
+  #     expect(game.result).to be_a Symbol
+  #   end
+  # end
 end
