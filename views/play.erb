@@ -1,5 +1,7 @@
-<%= @name %>, welcome to rock, paper, scissors!
+<h2>Welcome <%= @name %>! Click on Rock, Paper or Scissors!</h2>
 
-Rock
-Paper
-Scissors
+<form action="/play" method="post">
+    <input type="submit" name="choice" value="Rock">
+    <input type="submit" name="choice" value="Paper">
+    <input type="submit" name="choice" value="Scissors">
+</form>
