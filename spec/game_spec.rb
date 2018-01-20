@@ -35,11 +35,4 @@ describe Game do
       expect(game.compare('Paper')).to eq :lose
     end
   end
-
-  # describe '#result' do
-  #   it 'should be a symbol' do
-  #     game.compare('Paper')
-  #     expect(game.result).to be_a Symbol
-  #   end
-  # end
 end

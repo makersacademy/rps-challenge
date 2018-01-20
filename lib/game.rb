@@ -14,12 +14,12 @@ class Game
     @computer = player2
   end
 
-  attr_reader :player1, :player2, :result
+  attr_reader :player1, :computer, :result
 
   def compare(player_choice)
     if player_choice.to_sym == @computer.move
       @result = :draw
-    elsif RULES[player_choice.to_sym] == @computer.move
+    elsif RULES[player_choice.to_sym].include? @computer.move
       @result = :win
     else
       @result = :lose
@@ -27,8 +27,10 @@ class Game
   end
 
   RULES = {
-    Rock: :Scissors,
-    Paper: :Rock,
-    Scissors: :Paper
+    Rock: [:Scissors, :Lizard],
+    Paper: [:Rock, :Spock],
+    Scissors: [:Paper, :Lizard],
+    Lizard: [:Paper, :Spock],
+    Spock: [:Rock, :Scissors]
   }
 end
