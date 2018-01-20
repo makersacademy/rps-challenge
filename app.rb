@@ -11,6 +11,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:how_to)
   end
 
+  post '/name' do
+    redirect to 'play'
+  end
+
+  get '/play' do
+    erb(:play)
+  end
+
   run! if app_file == $0
 
 end
