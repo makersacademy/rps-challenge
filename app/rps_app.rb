@@ -7,7 +7,14 @@ class RPSWeb < Sinatra::Base
     erb :index
   end
 
+  post '/play' do
+    $player = params[:player_1]
+
+    redirect '/play'
+  end
+
   get '/play' do
+    @player = $player
     erb :play
   end
 
