@@ -19,7 +19,6 @@ def multi_player_names_and_confirm
 end
 
 def multi_player_pick_weapons_and_confirm(weapon_1, weapon_2)
-  multi_player_names_and_confirm
   select weapon_1, :from => "player_1_weapon"
   select weapon_2, :from => "player_2_weapon"
   click_button "Lets get started!"
