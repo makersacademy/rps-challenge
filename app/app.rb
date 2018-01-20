@@ -17,4 +17,16 @@ class RPS < Sinatra::Base
     @player = session[:player]
     erb :choice
   end
+
+  post '/moved' do
+    @player = session[:player]
+    @player.choose(params[:choice].to_sym)
+    session[:player] = @player
+    redirect to '/outcome'
+  end
+
+  get '/outcome' do
+    @player = session[:player]
+    erb :outcome
+  end
 end
