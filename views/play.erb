@@ -1,12 +1,25 @@
+<h1>Rock * Paper * Scissors</h1>
+
 <h1>Welcome, <%=@player%>!  What's your move?</h1>
 
 <form action="/selection" method="post">
   <label for="choice">Your selection is:</label>
-  <input type="submit" value="GO">
+  <input type="submit" name="player_choice" value="ROCK">
+  <input type="submit" name="player_choice" value="PAPER">
+  <input type="submit" name="player_choice" value="SCISSORS">
 </form>
+
 
 
 <!-- <input type="submit" value="ROCK"> -->
 
 <!-- <input type="submit" value="PAPER">
 <input type="submit" value="SCISSORS"> -->
+
+
+<!--
+<form action="/selection" method="post">
+  <label for="choice">Your selection is:</label>
+  <input type="text" name="player_choice">
+  <input type="submit" value="GO">
+</form> -->
