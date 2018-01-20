@@ -1,8 +1,8 @@
 
 class Game
 
-  def initialize
-    # @computer = ["ROCK","PAPER","SCISSORS"].sample
+  def computer_chooses
+    ["ROCK","PAPER","SCISSORS"].sample
   end
 
   def rps(player_choice, computer)
