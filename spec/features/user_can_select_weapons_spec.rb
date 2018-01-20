@@ -32,9 +32,8 @@ end
 feature 'Mutliplayers can both enter weapons' do
   scenario 'Player 1 chooses rock, player 2 choses paper' do
     multi_player_names_and_confirm
-    select 'Rock', :from => "player_1_weapon"
-    select 'Paper', :from => "player_2_weapon"
+    multi_player_pick_weapons_and_confirm("Rock", "Paper")
     expect(page).to have_content "Leigh-ann you chose ROCK!"
-    expect(page).not_to have_content "Andy you chose PAPER!"
+    expect(page).to have_content "Andy chose PAPER!!"
   end
 end

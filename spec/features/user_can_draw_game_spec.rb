@@ -4,4 +4,8 @@ feature 'Player wins game against computer' do
     player_weapon_choice('Rock')
     expect(page).to have_content "IT'S A DRAW!!"
   end
+  scenario 'Player 1 draws with player_2' do
+    multi_player_pick_weapons_and_confirm('Rock', "Rock")
+    expect(page).to have_content "IT'S A DRAW!!"
+  end
 end
