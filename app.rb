@@ -9,7 +9,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/play" do
-    @name = Sessions["Enter name"]
+    @name = params["Enter name"]
+    "Welcome to the game, #{@name}"
   end
   run! if app_file == $0
 
