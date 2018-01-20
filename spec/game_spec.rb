@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-  let (:player) { double :player, move: :rock }
-  let (:computer) { double :computer }
+  let (:player) { double :player, move: :rock, name: :player }
+  let (:computer) { double :computer, name: :computer}
   subject(:game) { described_class.new(player, computer) }
 
   describe "#initialize" do

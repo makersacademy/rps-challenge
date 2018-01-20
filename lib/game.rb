@@ -1,7 +1,7 @@
 class Game
 
-  def self.create(player)
-    @game_state = Game.new(player)
+  def self.create(player, player2 = Computer.new)
+    @game_state = Game.new(player, player2)
   end
 
   def self.instance
@@ -13,23 +13,18 @@ class Game
   MOVES = [:rock, :paper, :scissors]
   WINNING_PAIRS = {rock: :scissors, paper: :rock, scissors: :paper}
 
-  def initialize(player, computer = Computer.new)
+  def initialize(player, player2)
     @player = player
-    @computer = computer
-  end
-
-  def make_computer_move
-    @computer_move = @computer.move
+    @player2 = player2
   end
 
   def winner
-    make_computer_move
-    if @computer_move == @player.move
+    if @player2.move == @player.move
       return "No one"
-    elsif WINNING_PAIRS[@player.move] == @computer_move
-      return :player
+    elsif WINNING_PAIRS[@player.move] == @player2.move
+      return @player.name
     else
-      return :computer
+      return @player2.name
     end 
   end
 end
