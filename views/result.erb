@@ -2,6 +2,8 @@
 
 <p>Computer chose <%= @game.computer_move %>! </p>
 
+<p><%= @winner.to_s.capitalize %> won!</p>
+
 <p><form action="/play" method="get">
   <input type="submit" value="Play again">
 </form></p>
