@@ -23,8 +23,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/result" do
-     @result = params["attack"]
-    "Derek chose #{@result}"
+    @result = params["attack"]
+    "#{@game.player} chose #{@result}"
   end
 
   run! if app_file == $0
