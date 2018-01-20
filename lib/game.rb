@@ -10,19 +10,19 @@ class Game
     @game
   end
 
-  attr_reader :player, :computer_player
+  attr_reader :player_1, :player_2
 
-  def initialize(player, computer_player)
-    @player = player
-    @computer_player = computer_player
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def result
     draw? ? :draw : winner
   end
 
-  def set_player_weapon(weapon)
-    player.weapon_choice(weapon)
+  def set_player_1_weapon(weapon)
+    player_1.weapon_choice(weapon)
   end
 
   private
@@ -32,21 +32,21 @@ class Game
      scissors: :paper }
 
   def beats?
-    RULES[player.weapon]==computer_player.weapon
+    RULES[player_1.weapon]==player_2.weapon
   end
 
   def draw?
-   player.weapon == computer_player.weapon
+   player_1.weapon == player_2.weapon
   end
 
   def winner
-    beats? ? @player : @computer_player
+    beats? ? @player_1 : @player_2
   end
 end
 
 # require './lib/game'
-# p1 = Player.new('l')
-# p2 = Player.new('s')
+# p1 = player_1.new('l')
+# p2 = player_1.new('s')
 # p2.weapon_choice('rock')
 # p1.weapon_choice('paper')
 # game = Game.new(p1,p2)

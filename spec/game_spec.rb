@@ -1,65 +1,65 @@
 require 'game'
 
 describe Game do
-  let(:player) { double :player }
-  let(:computer) { double :computer_player }
-  subject(:game) { described_class.new(player, computer)}
+  let(:player_1) { double :player_1 }
+  let(:player_2) { double :player_2 }
+  subject(:game) { described_class.new(player_1, player_2)}
 
   describe 'initialize' do
     it 'initializes with a player and stores player as player' do
-      expect(game.player).to eq player
+      expect(game.player_1).to eq player_1
     end
-    it 'initializes with computer player as default and stores' do
-      expect(game.computer_player).to eq computer
+    it 'initializes with player_2 player as default and stores' do
+      expect(game.player_2).to eq player_2
     end
   end
 
-  describe '#set_player_weapon' do
+  describe '#set_player_1_weapon' do
     it 'calls weapon_choice on player' do
-      expect(player).to receive(:weapon_choice).with('Rock')
-      game.set_player_weapon('Rock')
+      expect(player_1).to receive(:weapon_choice).with('Rock')
+      game.set_player_1_weapon('Rock')
     end
   end
 
   describe '#result' do
-    context 'Player beats computer' do
-      it 'returns player when player has rock, computer has scissors' do
-        allow(player).to receive(:weapon).and_return(:rock)
-				allow(computer).to receive(:weapon).and_return(:scissors)
-				expect(game.result).to eq player
+    context 'Player_1 beats player_2' do
+      it 'returns player_1 when player has rock, player_2 has scissors' do
+        allow(player_1).to receive(:weapon).and_return(:rock)
+				allow(player_2).to receive(:weapon).and_return(:scissors)
+				expect(game.result).to eq player_1
 			end
-			it 'returns player when player has scissors computer has paper' do
-				allow(player).to receive(:weapon).and_return(:scissors)
-				allow(computer).to receive(:weapon).and_return(:paper)
-				expect(game.result).to eq player
+			it 'returns player_1 when player has scissors player_2 has paper' do
+				allow(player_1).to receive(:weapon).and_return(:scissors)
+				allow(player_2).to receive(:weapon).and_return(:paper)
+				expect(game.result).to eq player_1
 			end
-			it 'returns player when player has paper beats computer has rock' do
-				allow(player).to receive(:weapon).and_return(:paper)
-				allow(computer).to receive(:weapon).and_return(:rock)
-				expect(game.result).to eq player
-			end
-		end
-		context 'computer beats player' do
-			it 'returns computer when computer has rock, player has scissors' do
-				allow(player).to receive(:weapon).and_return(:scissors)
-				allow(computer).to receive(:weapon).and_return(:rock)
-				expect(game.result).to eq computer
-			end
-			it 'returns computer when computer has paper player has rock' do
-				allow(player).to receive(:weapon).and_return(:rock)
-				allow(computer).to receive(:weapon).and_return(:paper)
-				expect(game.result).to eq computer
-			end
-			it 'returns computer when computer has scissors player has paper' do
-				allow(player).to receive(:weapon).and_return(:paper)
-				allow(computer).to receive(:weapon).and_return(:scissors)
-				expect(game.result).to eq computer
+			it 'returns player_1 when player_1 has paper beats player_2 has rock' do
+				allow(player_1).to receive(:weapon).and_return(:paper)
+				allow(player_2).to receive(:weapon).and_return(:rock)
+				expect(game.result).to eq player_1
 			end
 		end
-		context 'Player and computer draw' do
-			it 'returns true if player_1 and computer have picked same weapon' do
-				allow(player).to receive(:weapon).and_return(:paper)
-				allow(computer).to receive(:weapon).and_return(:paper)
+		context 'player_2 beats player_1' do
+			it 'returns player_2 when player_2 has rock, player_1 has scissors' do
+				allow(player_1).to receive(:weapon).and_return(:scissors)
+				allow(player_2).to receive(:weapon).and_return(:rock)
+				expect(game.result).to eq player_2
+			end
+			it 'returns player_2 when player_2 has paper player_1 has rock' do
+				allow(player_1).to receive(:weapon).and_return(:rock)
+				allow(player_2).to receive(:weapon).and_return(:paper)
+				expect(game.result).to eq player_2
+			end
+			it 'returns player_2 when player_2 has scissors player_1 has paper' do
+				allow(player_1).to receive(:weapon).and_return(:paper)
+				allow(player_2).to receive(:weapon).and_return(:scissors)
+				expect(game.result).to eq player_2
+			end
+		end
+		context 'Player and player_2 draw' do
+			it 'returns true if player_1 and player_2 have picked same weapon' do
+				allow(player_1).to receive(:weapon).and_return(:paper)
+				allow(player_2).to receive(:weapon).and_return(:paper)
 				expect(game.result).to eq :draw
 			end
 		end
