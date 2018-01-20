@@ -19,6 +19,12 @@ describe Game do
       expect(player_1).to receive(:weapon_choice).with('Rock')
       game.set_player_1_weapon('Rock')
     end
+    describe '#set_player_2_weapon' do
+      it 'calls weapon_choice on player' do
+        expect(player_2).to receive(:weapon_choice).with('Rock')
+        game.set_player_2_weapon('Rock')
+      end
+    end
   end
 
   describe '#result' do

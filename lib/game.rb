@@ -25,6 +25,10 @@ class Game
     player_1.weapon_choice(weapon)
   end
 
+  def set_player_2_weapon(weapon = nil)
+    player_2.weapon_choice(weapon)
+  end
+
   private
 
   RULES = { rock: :scissors,
