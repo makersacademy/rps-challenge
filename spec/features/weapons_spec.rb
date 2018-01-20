@@ -1,5 +1,5 @@
 feature 'Select weapon' do
-  scenario 'player can view weapon Rock' do
+  scenario 'Player can view weapons' do
     sign_in_and_play
     expect(page).to have_content 'Rock'
     expect(page).to have_content 'Paper'

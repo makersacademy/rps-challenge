@@ -19,12 +19,10 @@ class Game
   def initialize(player)
     @player = player
     @computer = Computer.new
-
   end
 
   def choose_weapon(weapon)
     @player_weapon = weapon.to_sym
-
   end
 
   def computer_choose_weapon

@@ -30,7 +30,6 @@ class RockPaperScissors < Sinatra::Base
   post '/attack' do
     @game.choose_weapon(params[:weapon])
     @game.computer_choose_weapon
-    @result = @game.result
     redirect('/outcome')
   end
 
