@@ -1,13 +1,10 @@
 class Bot
 
-  attr_reader :moves
+  attr_reader :moves, :move
 
   def initialize(moves = [:rock, :paper, :scissors])
     @moves = moves
-  end
-
-  def move
-    @moves.sample
+    @move = @moves.sample
   end
 
 end

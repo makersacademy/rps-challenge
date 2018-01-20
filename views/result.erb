@@ -1,4 +1,12 @@
-<h1> result </h1>
+<div style="width: 50%; margin: 10% auto; text-align: center">
 
-<%= @game.print_moves %> </br>
-<%= @game.winner %>
+
+<h1> <%= @game.winner %></h1>
+<br>
+<h3> <%= @game.print_moves %> </br> </h3>
+
+<form action='/' method='get'>
+  <input type='submit' value='Wanna play again?'>
+</form>
+
+</div>
