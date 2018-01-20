@@ -1,33 +1,29 @@
 # def rock_paper_scissors
-#   puts "Player 1: "
-#   player1_input = gets.chomp
-#   puts "Player 2: "
-#   player2_input = gets.chomp
 #
-#   if player1_input == "rock"
-#     if player2_input == "rock"
+#   if choose_1 == "rock"
+#     if choose_pc_input == "rock"
 #       puts "It's a draw"
-#     elsif player2_input == "scissors"
-#       puts "Player 1 wins"
-#     elsif player2_input == "paper"
-#       puts "Player 2 wins"
+#     elsif choose_pc_pc_input == "scissors"
+#       puts "Player wins"
+#     elsif choose_pc_input == "paper"
+#       puts "Pc wins"
 #     end
 #
-#   elsif player1_input == "scissors"
-#     if player2_input == "rock"
-#       puts "Player 2 wins"
-#     elsif player2_input == "scissors"
+#   elsif choose_1 == "scissors"
+#     if choose_pc == "rock"
+#       puts "Pc wins"
+#     elsif player2 == "scissors"
 #       puts "It's a draw"
-#     elsif player2_input == "paper"
-#       puts "Player 1 wins"
+#     elsif player2 == "paper"
+#       puts "Player wins"
 #     end
 #
-#   elsif player1_input == "paper"
-#     if player2_input == "rock"
-#       puts "Player 1 wins"
-#     elsif player2_input == "scissors"
-#       puts "Player 2 wins"
-#     elsif player2_input == "paper"
+#   elsif choose_1 == "paper"
+#     if choose_pc == "rock"
+#       puts "Player wins"
+#     elsif choose_pc == "scissors"
+#       puts "Pc wins"
+#     elsif choose_pc == "paper"
 #       puts "It's a draw"
 #     end
 #   end
