@@ -11,4 +11,7 @@ class Game
     return computer_win.include?([player_choice, computer]) ? "Computer wins" : "Player wins"
   end
 
+  # def result
+  #   "WIN"
+
 end

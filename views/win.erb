@@ -3,7 +3,16 @@
 <h2>You chose:  <%=@player_choice%></h2>
 <h2>The computer chose:  <%=@computer_choice%></h2>
 
+
+<% if $result == "Player wins" %>
 <h1>YOU WON!</h1>
+<% elsif $result == "Computer wins" %>
+<h1>YOU LOST!</h1>
+<% elsif $result == "DRAW" %>
+<h1>YOU DREW!</h1>
+<% end %>
+
+
 
 <form action="/play" method="GET">
   <input type="submit" value="PLAY AGAIN?">

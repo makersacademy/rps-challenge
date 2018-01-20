@@ -31,29 +31,14 @@ class Rps < Sinatra::Base
     session[:computer_choice] = @game.computer_chooses
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
-    result = @game.rps(@player_choice,@computer_choice)
-    p @computer_choice
-    redirect '/win' if result == "Player wins"
-    redirect '/lose' if result == "Computer wins"
-    redirect '/draw' if result == "DRAW"
+    $result = @game.rps(@player_choice, @computer_choice)
+    redirect '/result'
   end
 
-  get '/win' do
+  get '/result' do
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
     erb(:win)
-  end
-
-  get '/lose' do
-    @player_choice = session[:player_choice]
-    @computer_choice = session[:computer_choice]
-    erb(:lose)
-  end
-
-  get '/draw' do
-    @player_choice = session[:player_choice]
-    @computer_choice = session[:computer_choice]
-    erb(:draw)
   end
 
 end
