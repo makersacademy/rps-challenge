@@ -12,7 +12,7 @@ describe ResultLog do
   describe '#add(result)' do
     it 'adds given argument to result log' do
        result_log.add(player_1)
-       expect(resut_log.results).to eq :player_1
+       expect(result_log.results).to eq [player_1]
     end
   end
 
