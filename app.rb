@@ -7,12 +7,15 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
+  run! if app_file == $0
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
     $player = Player.new(params[:player_name])
+    $game = Game.new($player)
     redirect '/play'
   end
 
@@ -21,16 +24,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/attack' do
-    session[:weapon] = params[:weapon]
+    $game.choose_weapon(params[:weapon])
+    $game.make_computer_choose
+    $result = $game.result
     redirect('/outcome')
   end
 
   get '/outcome' do
-    @weapon = session[:weapon]
-    computer = Computer.new
-    @computer_weapon = computer.choose_weapon
     erb(:outcome)
   end
 
-  run! if app_file == $0
 end
