@@ -6,7 +6,9 @@ class ComputerPlayer < Player
 
   def initialize(name = "Computer")
     super(name)
-    @weapon = WEAPONS.sample
   end
 
+  def weapon_choice(*)
+    @weapon = WEAPONS.sample
+  end
 end

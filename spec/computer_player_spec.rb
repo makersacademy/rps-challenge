@@ -7,8 +7,11 @@ describe ComputerPlayer do
     it 'initializes with default name of computer' do
       expect(computer.name).to eq 'Computer'
     end
-    it 'initializes with a weapon at random' do
+  end
+  describe '#weapon_choice' do
+    it 'selects with a weapon at random' do
       allow(Player::WEAPONS).to receive(:sample).and_return(:rock)
+      computer.weapon_choice
       expect(computer.weapon).to eq :rock
     end
   end
