@@ -39,26 +39,46 @@ describe Game do
 				allow(player_2).to receive(:weapon).and_return(:paper)
 				expect(game.result).to eq player_1
 			end
-			it 'returns player_1 when player_1 has paper beats player_2 has rock' do
+			it 'returns player_1 when player_1 has paper beats player_2 has spock' do
+				allow(player_1).to receive(:weapon).and_return(:paper)
+				allow(player_2).to receive(:weapon).and_return(:spock)
+				expect(game.result).to eq player_1
+			end
+      it 'returns player_1 when player_1 has paper beats player_2 has rock' do
 				allow(player_1).to receive(:weapon).and_return(:paper)
 				allow(player_2).to receive(:weapon).and_return(:rock)
 				expect(game.result).to eq player_1
 			end
+      it 'returns player_1 when player_1 has lizard beats player_2 has lizard' do
+				allow(player_1).to receive(:weapon).and_return(:lizard)
+				allow(player_2).to receive(:weapon).and_return(:spock)
+				expect(game.result).to eq player_1
+			end
 		end
 		context 'player_2 beats player_1' do
-			it 'returns player_2 when player_2 has rock, player_1 has scissors' do
-				allow(player_1).to receive(:weapon).and_return(:scissors)
-				allow(player_2).to receive(:weapon).and_return(:rock)
+			it 'returns player_2 when player_2 has scissors, player_1 has lizard' do
+				allow(player_1).to receive(:weapon).and_return(:lizard)
+				allow(player_2).to receive(:weapon).and_return(:scissors)
 				expect(game.result).to eq player_2
 			end
-			it 'returns player_2 when player_2 has paper player_1 has rock' do
-				allow(player_1).to receive(:weapon).and_return(:rock)
-				allow(player_2).to receive(:weapon).and_return(:paper)
+			it 'returns player_2 when player_2 has rock player_1 has lizard' do
+				allow(player_1).to receive(:weapon).and_return(:lizard)
+				allow(player_2).to receive(:weapon).and_return(:rock)
 				expect(game.result).to eq player_2
 			end
 			it 'returns player_2 when player_2 has scissors player_1 has paper' do
 				allow(player_1).to receive(:weapon).and_return(:paper)
 				allow(player_2).to receive(:weapon).and_return(:scissors)
+				expect(game.result).to eq player_2
+			end
+      it 'returns player_2 when player_2 has lizard player_1 has paper' do
+				allow(player_1).to receive(:weapon).and_return(:paper)
+				allow(player_2).to receive(:weapon).and_return(:lizard)
+				expect(game.result).to eq player_2
+			end
+      it 'returns player_2 when player_2 has spock player_1 has scissors' do
+				allow(player_1).to receive(:weapon).and_return(:scissors)
+				allow(player_2).to receive(:weapon).and_return(:spock)
 				expect(game.result).to eq player_2
 			end
 		end
