@@ -1,7 +1,7 @@
 class Game
 
   def self.create(player)
-    @running = Game.new(player)
+    @running ||= Game.new(player)
   end
 
   def self.current

@@ -6,22 +6,23 @@ describe Game do
     it "should store a players name" do
       game = Game.new("Derek")
       expect(game.player).to eq "Derek"
+      p Game.current
     end
   end
 end
 
 describe Game do
 
-  describe "#current" do
-    it "start with current game being nil" do
-      expect(Game.current).to be nil
-    end
-  end
+  subject(:game_class) { described_class }
 
   describe "#create" do
     it "should create a new game" do
-      Game.create("Derek")
-      expect(Game.current).to be_a(Game)
+      game_class.create("Derek")
+      expect(game_class.current).to be_a(Game)
+    end
+
+    it "should have a game with player name Derek" do
+      expect(game_class.current.player).to eq "Derek"
     end
   end
 
