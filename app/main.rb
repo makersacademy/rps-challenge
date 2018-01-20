@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/options' do
+  post '/' do
     player = Player.new(params[:player_name])
     Game.start(player)
     redirect '/play'
@@ -22,7 +22,7 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/check' do
+  post '/play' do
     @game.compare(params[:attack])
     redirect '/result'
   end
