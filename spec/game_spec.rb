@@ -15,7 +15,7 @@ describe Game do
   describe "#make_move" do
     it 'stores player move' do
       game.make_move("rock")
-      expect(game.player_move).to eq "rock"
+      expect(game.player_move).to eq :rock
     end
   end
 
@@ -23,18 +23,27 @@ describe Game do
     context "when computer chooses the winning move" do
       it "should return computer" do
         allow_any_instance_of(Computer).to receive(:choose_move).and_return(:paper)
-        allow_any_instance_of(Game).to receive(:make_move).and_return(:rock)
+        game.make_move(:rock)
+        game.make_computer_move
         expect(game.winner).to eq :computer
       end
     end
     context "when player chooses the winning move" do
       it "should return player" do
         allow_any_instance_of(Computer).to receive(:choose_move).and_return(:paper)
-        allow_any_instance_of(Game).to receive(:make_move).and_return(:scissor)
+        game.make_move(:scissors)
+        game.make_computer_move
         expect(game.winner).to eq :player
       end
     end
-    
+    context "when both choose the same move" do
+      it "should return draw" do
+        allow_any_instance_of(Computer).to receive(:choose_move).and_return(:paper)
+        game.make_move(:paper)
+        game.make_computer_move
+        expect(game.winner).to eq :draw
+      end
+    end
   end
 end
 
