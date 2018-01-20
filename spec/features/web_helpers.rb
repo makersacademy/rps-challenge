@@ -1,7 +1,7 @@
 def enter_name_and_confirm
   visit('/')
   allow(Player::WEAPONS).to receive(:sample).and_return(:rock)
-  fill_in 'player_name', :with => 'Leigh-ann'
+  fill_in 'player_1_name', :with => 'Leigh-ann'
   click_button "Let's go"
 end
 

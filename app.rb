@@ -3,7 +3,6 @@ require './lib/game'
 require './lib/computer_player'
 
 class RockPaperScissors < Sinatra::Base
-
   before do
     @game = Game.instance
   end
@@ -13,8 +12,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    player = Player.new(params[:player_name])
-    Game.build(player)
+    p1 = Player.new(params[:player_1_name])
+    p2 = Player.new(params[:player_2_name])
+    params[:player_2_name].empty? ? Game.build(p1) : Game.build(p1,p2)
     redirect '/play'
   end
 

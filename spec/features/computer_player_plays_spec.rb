@@ -1,4 +1,4 @@
-feature 'computer player has it own name' do
+feature 'Game defaults to computer player if only one name entered' do
   scenario "Player enters name and continues" do
     enter_name_and_confirm
     expect(page).to have_content "Leigh-ann vs Computer"
