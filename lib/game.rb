@@ -16,10 +16,10 @@ class Game
 
   attr_reader :player1, :computer, :result
 
-  def compare(player_choice)
-    if player_choice.to_sym == @computer.move
+  def compare
+    if player1.move == computer.move
       @result = :draw
-    elsif RULES[player_choice.to_sym].include? @computer.move
+    elsif RULES[player1.move].include? computer.move
       @result = :win
     else
       @result = :lose
