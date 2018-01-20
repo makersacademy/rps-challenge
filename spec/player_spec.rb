@@ -7,4 +7,11 @@ describe Player do
       expect(player.name).to eq("Fran")
     end
   end
+
+  describe "#save_choice" do
+    it "stores the player schoice" do
+      player.save_choice("paper")
+      expect(player.choice).to eq("paper")
+    end
+  end
 end

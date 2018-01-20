@@ -18,7 +18,7 @@ class Rps < Sinatra::Base
   end
 
   get '/play' do
-    @choice = params[:choice]
+    @player.save_choice(params[:choice]) 
     erb :result
   end
 
