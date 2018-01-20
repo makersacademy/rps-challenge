@@ -5,6 +5,7 @@ require './lib/computer_player'
 class RockPaperScissors < Sinatra::Base
   before do
     @game = Game.instance
+    @result_log = ResultLog.instance
   end
 
   get '/' do
@@ -14,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     p1,p2 = Player.new(params[:player_1_name]),Player.new(params[:player_2_name])
     params[:player_2_name].empty? ? Game.build(p1) : Game.build(p1,p2)
+    ResultLog.build
     redirect '/play'
   end
 
@@ -24,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
   post '/weapon_choice' do
      @game.set_player_1_weapon(params[:player_1_weapon])
      @game.set_player_2_weapon(params[:player_2_weapon])
+     @result_log.add(@game.result)
      redirect :result
   end
 

@@ -5,7 +5,7 @@ class ResultLog
   def self.instance
     @result_log
   end
-  
+
   attr_reader :results
 
   def initialize
@@ -17,7 +17,11 @@ class ResultLog
   end
 
   def player_wins(player)
-    @results.count(player)
+    results.count(player)
+  end
+
+  def rounds
+    results.length
   end
 
 end

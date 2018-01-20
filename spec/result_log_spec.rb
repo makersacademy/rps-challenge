@@ -26,4 +26,10 @@ describe ResultLog do
       expect(result_log.player_wins(player_1)).to eq 0
     end
   end
+  describe '#rounds' do
+    it 'returns number of results within log' do
+     2.times { result_log.add(player_1) }
+     expect(result_log.rounds).to eq 2
+    end
+  end 
 end
