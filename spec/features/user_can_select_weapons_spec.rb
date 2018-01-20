@@ -19,12 +19,26 @@ feature 'User can select weapon' do
     expect(page).to have_content "Leigh-ann you chose SCISSORS!"
     expect(page).not_to have_content "Leigh-ann you chose PAPER!"
   end
+  scenario 'User selects spock' do
+    enter_name_and_confirm
+    select 'Spock', :from => "player_1_weapon"
+    click_button "Lets get started!"
+    expect(page).to have_content "Leigh-ann you chose SPOCK!"
+    expect(page).not_to have_content "Leigh-ann you chose PAPER!"
+  end
+  scenario 'User selects lizard' do
+    enter_name_and_confirm
+    select 'Lizard', :from => "player_1_weapon"
+    click_button "Lets get started!"
+    expect(page).to have_content "Leigh-ann you chose LIZARD!"
+    expect(page).not_to have_content "Leigh-ann you chose PAPER!"
+  end
 end
 
 feature 'User can cannot select a weapon other than RockPaperScissors' do
   scenario 'User picks an option from list ' do
     enter_name_and_confirm
-		expect(page).to have_select("player_1_weapon", :with_options => ["Rock", "Scissors", "Paper"])
+		expect(page).to have_select("player_1_weapon", :with_options => ["Rock", "Scissors", "Paper","Spock","Lizard"])
 		expect(page).not_to have_select("player_1_weapon", options: ["gun"])
 	end
 end
