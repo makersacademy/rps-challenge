@@ -18,10 +18,10 @@ feature 'playing rps' do
     expect(page).to have_content 'You selected rock!'
   end
 
-  scenario 'game selects shape' do
+  scenario 'game selects random shape' do
     click_button 'rock'
     message = find(:css, "#opponent").text
-    expect(possible_messages).to include message
+    expect(page).to have_content "Opponent selected scissors!"
   end
 
   def possible_messages
