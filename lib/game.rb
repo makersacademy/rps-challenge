@@ -9,7 +9,7 @@ class Game
     @game
   end
 
-  def initialize(player1, player2 = Player.new('Computer'))
+  def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
     @players = [player1, player2]
@@ -18,15 +18,12 @@ class Game
   def result
     win_condition
   end
-
+private
   def win_condition
-    p '---------------'
-    p player2.weapon
-    p '---------------'
     if rules[player1.weapon].include?(player2.weapon)
-      return "#{player1} Won!"
-    elsif rules[player1.weapon].include?(player2.weapon)
-      return "#{player2} Won!"
+      return "#{player1.name} Won!"
+    elsif rules[player2.weapon].include?(player1.weapon)
+      return "#{player2.name} Won!"
     elsif player1.weapon == player2.weapon
       return 'You drew!'
      end

@@ -1,3 +1,7 @@
 <h1> Welcome <%= @game.player1.name %>! </h1>
 <p>You have chosen <%= @game.player1.weapon %> </p>
 <p>Opponent has chosen <%= @game.player2.weapon %>
+<h1> <%= @game.result %>  </h1>
+<form action="/play" method="get">
+  <input type="submit" value="Restartrr">
+</form>

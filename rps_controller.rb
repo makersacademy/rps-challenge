@@ -13,7 +13,6 @@ class RPS < Sinatra::Base
 
   post '/play' do
     game = Game.create(Player.new(params[:player_name]))
-    p game.players
     redirect '/play'
   end
 
@@ -23,25 +22,17 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    @game.player1.weapon_choice(params[:weapon])
+    @game.player1.weapon_choice((params[:weapon]).to_sym)
     redirect '/game'
   end
 
   get '/game' do
     @action = @game.player1.weapon
     @player_name = @game.player1.name
-    p @game.players
-    p @game.player2.weapon
-    p @game.result
+    @game.result
     erb :game
   end
 
-  get '/results' do
-    @results = @game.result
-    p '---'*10
-    p @results
-    p '---'*10
-  end
 
   run! if app_file == $0
 end
