@@ -4,7 +4,7 @@ feature 'Playing the game' do
     sign_in_and_play
     choose('choice', option: 'rock')
     click_button('Submit')
-    expect(page).to have_content "Reena win"
+    expect(page).to have_content "Reena:Congratulations - you won"
   end
 
   scenario "When I submit 'Scissors' I am told if I have lost" do
@@ -12,7 +12,7 @@ feature 'Playing the game' do
     sign_in_and_play
     choose('choice', option: 'scissors')
     click_button('Submit')
-    expect(page).to have_content "Reena lose"
+    expect(page).to have_content "Reena:Sorry - you lose"
   end
 
   scenario "When both submit 'Paper' I am told if it is a draw" do
@@ -20,6 +20,6 @@ feature 'Playing the game' do
     sign_in_and_play
     choose('choice', option: 'paper')
     click_button('Submit')
-    expect(page).to have_content "Reena draw"
+    expect(page).to have_content "Reena:Its a draw!"
   end
 end

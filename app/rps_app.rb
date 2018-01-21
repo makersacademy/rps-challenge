@@ -6,9 +6,10 @@ require './lib/game'
 class Rps < Sinatra::Base
   enable :sessions
 
-before do
-  @game = Play.instance
-end
+  before do
+    @game = Play.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -24,9 +25,7 @@ end
   end
 
   get '/result' do
-    choice = params[:choice]
-    @game.play(choice)
-    erb :result
+    erb @game.play(params[:choice])
   end
 
 # run! if app_file == $0
