@@ -1,0 +1,14 @@
+Welcome, <%= @turn.player_name %>
+
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="rock" />
+  <input type="submit" name="shape" value="paper" />
+  <input type="submit" name="shape" value="scissors" />
+</form>
+
+
+You selected <%= @turn.player_shape %>!
+
+<div id="opponent">
+Opponent selected <%= @turn.opponent_shape %>!
+</div>
