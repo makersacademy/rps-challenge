@@ -16,7 +16,5 @@ class Player
   end
 
   private
-
-  WEAPONS = [:rock,:paper,:scissors,:spock,:lizard]
-
+  WEAPONS = [:rock, :paper, :scissors, :spock, :lizard]
 end

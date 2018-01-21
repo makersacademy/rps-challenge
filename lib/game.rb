@@ -2,8 +2,8 @@ require_relative 'player'
 
 class Game
 
-  def self.build(player_1,player_2 = ComputerPlayer.new)
-    @game = self.new(player_1,player_2)
+  def self.build(player_1, player_2 = ComputerPlayer.new)
+    @game = self.new(player_1, player_2)
   end
 
   def self.instance
@@ -21,11 +21,11 @@ class Game
     draw? ? :draw : winner
   end
 
-  def set_player_1_weapon(weapon)
+  def select_player_1_weapon(weapon)
     player_1.weapon_choice(weapon)
   end
 
-  def set_player_2_weapon(weapon = nil)
+  def select_player_2_weapon(weapon = nil)
     player_2.weapon_choice(weapon)
   end
 
@@ -41,7 +41,7 @@ class Game
   end
 
   def draw?
-   player_1.weapon == player_2.weapon
+    player_1.weapon == player_2.weapon
   end
 
   def winner

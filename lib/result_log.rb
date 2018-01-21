@@ -2,6 +2,7 @@ class ResultLog
   def self.build
     @result_log = ResultLog.new
   end
+  
   def self.instance
     @result_log
   end

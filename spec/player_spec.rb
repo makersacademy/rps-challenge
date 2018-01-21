@@ -5,9 +5,10 @@ describe Player do
 
   describe 'initialize' do
     it 'initializes with a name parameter and stores user name' do
-       expect(player.name).to eq 'Leigh-ann'
+      expect(player.name).to eq 'Leigh-ann'
     end
   end
+  
   describe '#weapon_choice(choice)' do
     it 'returns player weapon choice' do
       expect(player.weapon_choice('Rock')).to eq :rock
