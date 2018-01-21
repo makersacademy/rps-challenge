@@ -13,8 +13,8 @@ feature "you choose rock, and it gives the result.." do
 
   scenario "lose, when the game picks paper" do
     attack_with_rock
-    allow(Game).to receive(:choice) { "Paper" }
-    expect(page).to have_content("Derek loses!")
+    allow(Game).to receive(:choice) { "paper" }
+    expect(page).to have_content("You lose!")
   end
 
   # scenario "win, when the game picks paper" do

@@ -8,7 +8,7 @@ class Game
     @running
   end
 
-  WEAPONS = ["Rock", "Paper", "Scissors"]
+  WEAPONS = ["rock", "paper", "scissors"]
 
   attr_reader :player
 
@@ -21,9 +21,9 @@ class Game
   end
 
   def winner(answer_1, answer_2)
-    return "Draw" if answer_1 == answer_2
+    return "draw" if answer_1 == answer_2
     results = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
-    results[answer_1] == answer_2 ? answer_2 : answer_1
+    results[answer_1] == answer_2 ? "lose" : "win"
   end
 
 end
