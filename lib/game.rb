@@ -48,10 +48,3 @@ class Game
     beats? ? @player_1 : @player_2
   end
 end
-
-# require './lib/game'
-# p1 = player_1.new('l')
-# p2 = player_1.new('s')
-# p2.weapon_choice('rock')
-# p1.weapon_choice('paper')
-# game = Game.new(p1,p2)
