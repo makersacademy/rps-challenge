@@ -1,19 +1,24 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 class RPS < Sinatra::Base
+
+  before do
+    @game = Game.current_game
+  end
 
   get '/' do
     erb :index
   end
 
   post '/play' do
-    $player1 = Player.new(params[:player_name]).name
-    $player2 = Player.new('Computer').name
+    game = Game.create(Player.new(params[:player_name]))
+    p game.players
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player1
+    @player_name = @game.player1.name
     erb :play
   end
 
@@ -25,7 +30,7 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @action = $action
-    @player_name = $player1
+    @player_name = @game.player1.name
     erb :game
   end
 
