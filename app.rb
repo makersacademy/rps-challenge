@@ -19,9 +19,9 @@ class Rps < Sinatra::Base
 
   get '/play' do
     $player.save_choice(params[:choice])
-    @ai = Ai.new
+    @ai_choice = Ai.new.choice
     game = Game.new(@ai, $player)
-    @result = game.play_match(@ai.choice, $player.choice)
+    @result = game.play_match(@ai_choice, $player.choice)
     erb :result
   end
 

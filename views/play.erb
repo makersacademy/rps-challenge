@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>rock-paper-scissors game</title>
   <script src="https://use.fontawesome.com/5d80a0eb69.js"></script>
+  <link rel="stylesheet" type="text/css" href="/rps.css">
 
 </head>
-<body style="font-family:verdana;">
-  <h1 style="text-align:center;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
+<body>
+  <h1><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
 
-  <h2 style="text-align:center;"> Hi <%= $player.name %></h2>
+  <h2> Hi <%= $player.name %></h2>
   <h2>Now choose ROCK, PAPER or SCISSOR</h2>
 
 
   <form method="GET" action="/play">
   <label for="choices"> Make your choice: </label>
   <br>
-  <input type="radio" name="choice" value="rock" id="rock"> <i class="fa fa-hand-rock-o" aria-hidden="true"></i> Rock
+  <input type="radio" name="choice" value="rock" id="rock"> <i class="fa fa-hand-rock-o" aria-hidden="true"></i> rock
   <br>
-  <input type="radio" name="choice" value="paper" id="paper"> <i class="fa fa-hand-paper-o" aria-hidden="true"></i> Paper
+  <input type="radio" name="choice" value="paper" id="paper"> <i class="fa fa-hand-paper-o" aria-hidden="true"></i> paper
   <br>
-  <input type="radio" name="choice" value="scissors" id="scissors"> <i class="fa fa-hand-scissors-o" aria-hidden="true"></i> Scissors
+  <input type="radio" name="choice" value="scissors" id="scissors"> <i class="fa fa-hand-scissors-o" aria-hidden="true"></i> scissors
   <br>
   <br>
   <input type="submit" value="Play!">

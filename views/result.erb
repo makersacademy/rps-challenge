@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>rock-paper-scissors game</title>
   <script src="https://use.fontawesome.com/5d80a0eb69.js"></script>
+  <link rel="stylesheet" type="text/css" href="/rps.css">
 
 </head>
-<body style="font-family:verdana;">
-  <h1 style="text-align:center;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
+<body>
+  <h1><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
 
-  <h2 style="text-align:center;"> Hi <%= $player.name %></h2>
+  <h2> Hi, <strong><%= $player.name %></strong></h2>
 
-  <p>You played: <%= $player.choice %></p>
-  <p>The computer played: <%= @ai.choice %> </p>
+  <p>You played: <strong><%= $player.choice %> </strong></p>
+  <p>The computer played: <strong><%= @ai_choice %> </strong></p>
   <h3><%= @result %></h3>
 
   <h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Good Match!</h3>

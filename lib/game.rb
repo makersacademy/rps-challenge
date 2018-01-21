@@ -13,30 +13,30 @@ class Game
   def play_match(ai_choice, player_choice)
     if player_choice == "rock"
       if ai_choice == "rock"
-        "it's a draw!"
+        "It's a draw!"
       elsif ai_choice == "paper"
-        "you lose!"
+        "You lose!"
       else
-        "you win!"
+        "You win!"
       end
     elsif player_choice == "paper"
       if ai_choice == "rock"
-        "you win!"
+        "You win!"
       elsif ai_choice == "paper"
-        "it's a draw!"
+        "It's a draw!"
       else
-        "you lose!"
+        "You lose!"
       end
     elsif player_choice == "scissors"
       if ai_choice == "rock"
-        "you lose!"
+        "You lose!"
       elsif ai_choice == "paper"
-        "you win!"
+        "You win!"
       else
-        "it's a draw!"
+        "It's a draw!"
       end
     else
     end
   end
-  
+
 end
