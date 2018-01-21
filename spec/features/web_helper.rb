@@ -7,3 +7,9 @@ end
 def check_its_not_error_page
   expect(page).not_to have_content("AABBYkjahskdh987289")
 end
+
+def attack_with_rock
+  login_with_derek
+  click_button "Attack your opponent"
+  check_its_not_error_page
+end
