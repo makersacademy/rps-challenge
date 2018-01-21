@@ -10,4 +10,9 @@ class RockPaperScissors < Sinatra::Base
     @name = params[:player]
     erb :play
   end
+
+  post '/result' do
+    @option = params[:option]
+    erb :result
+  end
 end

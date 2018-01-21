@@ -3,6 +3,6 @@ feature 'user can play rock paper scissors' do
     visit('/')
     fill_in 'player', with: 'Alex'
     click_button 'Submit'
-    expect(page).to have_button('Rock' && 'Paper' && 'Scissors')
+    expect(page).to have_button('rock' && 'paper' && 'scissors')
   end
 end

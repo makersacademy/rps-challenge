@@ -1,11 +1,7 @@
 Hello <%= @name %>! What move would you like to make?
 <br>
-<form>
-  <input type='submit' value="Rock">
-</form>
-<form>
-  <input type='submit' value="Paper">
-</form>
-<form>
-  <input type='submit' value="Scissors">
+<form action="/result" method="post">
+  <input type='submit' name="option" value="rock">
+  <input type='submit' name="option" value="paper">
+  <input type='submit' name="option" value="scissors">
 </form>
