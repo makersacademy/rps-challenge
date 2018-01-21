@@ -8,13 +8,14 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'rspec'
 require 'features/web_helpers.rb'
 
-Capybara.app = Rps
+Capybara.app = RPS
 
 RSpec.configure do |config|
   config.after(:suite) do

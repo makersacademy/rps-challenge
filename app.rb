@@ -1,8 +1,8 @@
-require 'sinatra'
+require 'sinatra/base'
 require './lib/game'
 require './lib/player'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
 
   attr_reader :player_choice, :computer_choice
 
