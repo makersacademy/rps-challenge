@@ -1,12 +1,12 @@
 require "game"
 
 describe Game do
-
-  let(:game) { described_class.new("Derek") }
+  let(:player) { double :player }
+  let(:game) { described_class.new(player) }
 
   describe "#initialize" do
-    it "should store a players name" do
-      expect(game.player).to eq "Derek"
+    it "should store a player" do
+      expect(game.player_1).to eq player
     end
   end
 
@@ -52,18 +52,11 @@ describe Game do
 end
 
 describe Game do
-
+  let(:player) { double :player }
   subject(:game_class) { described_class }
 
-  describe "#create" do
-    it "should create a new game" do
-      game_class.create("Derek")
-      expect(game_class.current).to be_a(Game)
-    end
-
-    it "should have a game with player name Derek" do
-      expect(game_class.current.player).to eq "Derek"
-    end
+  it "should create a new game" do
+    game_class.create(player)
+    expect(game_class.current).to be_a(Game)
   end
-
 end
