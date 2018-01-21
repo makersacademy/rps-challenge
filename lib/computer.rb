@@ -1,13 +1,13 @@
 class Computer
 
-  attr_reader :move
+  attr_reader :name
 
   def initialize
-    @name = "computer"
+    @name = "Computer"
   end
 
-  def make_move
-    @move = Game::MOVES.sample
+  def move
+    @move ||= Game::MOVES.sample
   end
 
 end
