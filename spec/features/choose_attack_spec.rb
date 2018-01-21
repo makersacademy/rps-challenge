@@ -5,7 +5,7 @@ feature "after signing in, you choose attack" do
     choose(attack = "rock")
     click_button "Attack your opponent"
     check_its_not_error_page
-    expect(page).to have_content("Derek chose #{attack}")
+    expect(page).to have_content("Derek choses #{attack}")
   end
 
   background do
@@ -27,6 +27,6 @@ feature "after signing in, you choose attack" do
   scenario "rock is default" do
     click_button "Attack your opponent"
     check_its_not_error_page
-    expect(page).to have_content("Derek chose rock")
+    expect(page).to have_content("Derek choses rock")
   end
 end
