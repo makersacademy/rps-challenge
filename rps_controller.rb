@@ -12,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    @player = $player_name
+    @player_name = $player_name
     erb :play
   end
 

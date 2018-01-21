@@ -1,8 +1,8 @@
 feature 'Input/Store player name' do
   scenario 'returns player name' do
     visit('/')
-    fill_in :player_name, with: 'Simon'
+    fill_in :player_name, with: 'John'
     click_button 'Submit'
-    expect(page).to have_content 'Simon'
+    expect(page).to have_content 'John!'
   end
 end
