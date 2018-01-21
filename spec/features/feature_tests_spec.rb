@@ -28,7 +28,7 @@ feature 'Game results displayed on page' do
     select('Rock', :from => 'player1_move')
     select('Rock', :from => 'player2_move')
     click_button('Submit')
-    expect(page).to have_content "It's a draw!"
+    expect(page).to have_content "You both suck!"
   end
 
   scenario 'Players both choose Paper' do
@@ -36,7 +36,7 @@ feature 'Game results displayed on page' do
     select('Paper', :from => 'player1_move')
     select('Paper', :from => 'player2_move')
     click_button('Submit')
-    expect(page).to have_content "It's a draw!"
+    expect(page).to have_content "You both suck!"
   end
 
   scenario 'Players both choose Scissors' do
@@ -44,7 +44,7 @@ feature 'Game results displayed on page' do
     select('Scissors', :from => 'player1_move')
     select('Scissors', :from => 'player2_move')
     click_button('Submit')
-    expect(page).to have_content "It's a draw!"
+    expect(page).to have_content "You both suck!"
   end
 
   scenario 'Player 1 choose rock, player 2 chooses paper' do
@@ -52,7 +52,7 @@ feature 'Game results displayed on page' do
     select 'Rock', from: 'player1_move'
     select 'Paper', from: 'player2_move'
     click_button 'Submit'
-    expect(page).to have_content ("Frank wins!")
+    expect(page).to have_content ("Frank wins! Lewis you suck!")
   end
 
   scenario 'Player 1 chooses rock, player 2 chooses scissors' do
@@ -60,7 +60,7 @@ feature 'Game results displayed on page' do
     select 'Rock', from: 'player1_move'
     select 'Scissors', from: 'player2_move'
     click_button 'Submit'
-    expect(page).to have_text("Lewis wins!")
+    expect(page).to have_text("Lewis wins! Frank you suck!")
   end
 
   scenario 'Player 1 chooses Scissors, player 2 chooses Paper' do
@@ -68,6 +68,6 @@ feature 'Game results displayed on page' do
     select 'Scissors', from: 'player1_move'
     select 'Paper', from: 'player2_move'
     click_button 'Submit'
-    expect(page).to have_text("Lewis wins!")
+    expect(page).to have_text("Lewis wins! Frank you suck!")
   end
 end

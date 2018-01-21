@@ -1,17 +1,40 @@
+<html>
+<body>
+<center>
+  <div class="header">
+  <h1>Lets play!</h1>
+</div>
+
 <%= @game.player1.name %> vs. <%= @game.player2.name %>
 
-<p> Choose a move!</p>
+<br></br>
 
 <form action='/results' method='get'>
+  <label for="player1_move">
+    <%= @game.player1.name %> what's your move?
   <select name="player1_move">
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
+  </label>
   </select>
+
+  <br></br>
+
+  <label for="player2_move">
+    <%= @game.player2.name %> what's your move?
   <select name="player2_move">
     <option value="Rock">Rock</option>
     <option value="Paper">Paper</option>
     <option value="Scissors">Scissors</option>
+  </label>
   </select>
+  <br></br>
   <input type='submit' value='Submit'>
 </form>
+<br></br>
+
+<img src="https://media.giphy.com/media/lMeTYJiZo9CAo/giphy.gif">
+</center>
+</body>
+</html>

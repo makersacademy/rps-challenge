@@ -21,18 +21,18 @@ describe Game do
   describe '#moves' do
     context 'when players both choose paper' do
       it 'Is a draw' do
-        expect(game.moves('Paper', 'Paper')).to eq "It's a draw!"
+        expect(game.moves('Paper', 'Paper')).to eq "You both suck!"
       end
 
     context 'when players both choose rock' do
       it 'Is a draw' do
-        expect(game.moves('Rock', 'Rock')).to eq "It's a draw!"
+        expect(game.moves('Rock', 'Rock')).to eq "You both suck!"
       end
     end
 
     context 'When players both choose scissors' do
       it 'Is a draw' do
-        expect(game.moves('Scissors', 'Scissors')).to eq "It's a draw!"
+        expect(game.moves('Scissors', 'Scissors')).to eq "You both suck!"
       end
     end
     end
