@@ -1,0 +1,16 @@
+<h2>Welcome to Rock, Paper, Scissors <%= @game.player.name %>!</h2>
+
+<p>Make your move:</p>
+
+<p><form action='/move' method='post'>
+  <input type="hidden" name="move" value="rock">
+  <input type='submit' value='Rock'>
+</form></p>
+<p><form action='/move' method='post'>
+  <input type="hidden" name="move" value="paper">
+  <input type='submit' value='Paper'>
+</form></p>
+<p><form action='/move' method='post'>
+  <input type="hidden" name="move" value="scissors">
+  <input type='submit' value='Scissors'>
+</form></p>
