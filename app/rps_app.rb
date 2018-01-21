@@ -26,7 +26,6 @@ class RPSWeb < Sinatra::Base
     weapon = params[:weapon]
     @game.weapon_selected(weapon)
     @game.outcome = @game.result
-    @game.outcome
     redirect '/game'
   end
 

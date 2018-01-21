@@ -36,12 +36,6 @@ class Game
     @player_weapon = weapon.to_sym
   end
 
-  def calculate_score
-    score_human if self.outcome == 'won'
-    score_machine if  self.outcome == 'lose'
-    score_machine && score_human if self.outcome == 'tied'
-  end
-
   def score_human
     @human_score += 1
   end
