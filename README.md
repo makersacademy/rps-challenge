@@ -19,6 +19,22 @@ Open a browser and navigate to localhost:9292 or the given port on the rack star
 
 On running the game you will be greeted with the following page;
 
-[Imgur](https://i.imgur.com/7wdBo5o.png)
+### Home page
 
 ![Screenshot](https://i.imgur.com/7wdBo5o.png)
+
+Enter your character name and submit.
+
+
+### Confirmation page:
+
+![Screenshot](https://i.imgur.com/QtkTYHn.png)
+
+Confirms your name and lays out the game rules. Press start game to proceed.
+
+### Game page
+
+![Screenshot](https://i.imgur.com/31RB8pZ.png)
+
+This is a typical game page. You can keep an eye on how many times you have
+lost the game and what hand your opponent played.
