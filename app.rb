@@ -18,9 +18,9 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     player = Player.new(params[:player_name])
     if params[:multiplayer] == "on"
-      session[:first_turn] = true
       player2 = Player.new(params[:player2_name]) 
       Game.create(player, player2)
+      session[:first_turn] = true
       redirect '/multiplayer'
     else
       Game.create(player)
@@ -41,17 +41,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     @game.player.move=(params[:move])
-    @game.player2.make_move
-    redirect '/result'
-  end
-
-  post 'move-mp' do
-    @game.player.move=(params[:move])
-    # if first turn
-    #   first turn = false
-    #   game.swap_players
-    #   redirect multiplayer
-    # end
+    if session[:first_turn] == true
+      session[:first_turn] = false
+      @game.swap_players
+      redirect '/multiplayer'
+    end
     redirect '/result'
   end
 
