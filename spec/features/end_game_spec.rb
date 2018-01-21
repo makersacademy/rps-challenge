@@ -1,7 +1,7 @@
 feature 'When the user chooses an attack' do
   before do
     allow_any_instance_of(Computer).to receive(:move).and_return :Scissors
-    submit_name
+    submit_single_name
   end
 
   scenario 'The player can win against the computer' do

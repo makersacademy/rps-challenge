@@ -1,6 +1,6 @@
 feature 'Main game page' do
   before do
-    submit_name
+    submit_single_name
   end
 
   scenario 'Displays the player name' do

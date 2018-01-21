@@ -12,9 +12,24 @@ class RPS < Sinatra::Base
     erb :index
   end
 
-  post '/' do
-    player = Player.new(params[:player_name])
+  get '/single-player' do
+    erb :single_player
+  end
+
+  post '/single-player' do
+    player = Player.new(params[:player1_name])
     Game.start(player)
+    redirect '/play'
+  end
+
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  post '/multiplayer' do
+    player1 = Player.new(params[:player1_name])
+    player2 = Player.new(params[:player2_name])
+    Game.start(player1, player2)
     redirect '/play'
   end
 
@@ -23,7 +38,18 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    @game.player1.move = params[:attack]
+    @game.player1.move = params[:player1_attack]
+    redirect '/play2' unless @game.player2.move
+    @game.compare
+    redirect '/result'
+  end
+
+  get '/play2' do
+    erb :play2
+  end
+
+  post '/play2' do
+    @game.player2.move = params[:player2_attack]
     @game.compare
     redirect '/result'
   end

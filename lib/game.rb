@@ -11,15 +11,15 @@ class Game
 
   def initialize(player1, player2)
     @player1 = player1
-    @computer = player2
+    @player2 = player2
   end
 
-  attr_reader :player1, :computer, :result
+  attr_reader :player1, :player2, :result
 
   def compare
-    if player1.move == computer.move
+    if player1.move == player2.move
       @result = :draw
-    elsif RULES[player1.move].include? computer.move
+    elsif RULES[player1.move].include? player2.move
       @result = :win
     else
       @result = :lose

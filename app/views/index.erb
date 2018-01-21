@@ -1,20 +1,38 @@
 <html>
+  <head>
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
+    <style>
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d8/Rock_Paper_Scissors_Lizard_Spock.JPG");
+        background-repeat: no-repeat;
+        background-position: right;
+        justify-content: center
+      }
+      .container {
+        align-items: center;
+        display: flex;
+        justify-content: left;
+        height: 100%;
+        width: 100%;
+      }
+      form {
+        display: inline;
+      }
+    </style>
+  </head>
 
-<head>
-  <title>Rock-Paper-Scissors-Lizard-Spock</title>
-</head>
-
-<h1>Rock-Paper-Scissors-Lizard-Spock<h1>
-
-<h3>Enter your name to begin</h3>
-
-<form action='/' method='post'>
-  <label for="player_name">
-    Player name:
-    <input type="text" name="player_name">
-  </label>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
-
+  <div class="container">
+    <body style="font-family: Comic Sans MS">
+      <font color="black">
+        <h1>Rock-Paper-Scissors-Lizard-Spock<h1>
+        <h2>Single player or multiplayer?</h2>
+        <form action='/single-player' method='get'>
+          <input type="submit" value="Single Player">
+        </form>
+        <form action='/multiplayer' method='get'>
+          <input type="submit" value="Multiplayer">
+        </form>
+      </font>
+    </body>
+  </div>
 </html>
