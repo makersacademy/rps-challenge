@@ -13,10 +13,15 @@ describe Player do
     end
   end
 
-  describe "#choice" do
-    it "should set to rock" do
+  describe "#move" do
+    it "should set choice to rock" do
       player.move("rock")
       expect(player.choice).to eq "rock"
+    end
+
+    it "should set choice to paper" do
+      player.move("paper")
+      expect(player.choice).to eq "paper"
     end
   end
 

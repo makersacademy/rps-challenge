@@ -2,6 +2,8 @@ class Player
 
   attr_reader :name, :choice
 
+  WEAPONS = ["rock", "paper", "scissors"]
+
   def initialize(name)
     @name = name
   end
@@ -9,4 +11,5 @@ class Player
   def move(move)
     @choice = move
   end
+
 end
