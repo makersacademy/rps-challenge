@@ -7,4 +7,3 @@ feature 'select move' do
     expect(page).to have_content 'rock'
   end
 end
-    

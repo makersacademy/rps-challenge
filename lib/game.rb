@@ -20,15 +20,19 @@ class Game
   end
 
   def winner
-    if (player.move == :rock && bot.move == :scissors) ||
-       (player.move == :paper && bot.move == :rock) ||
-       (player.move == :scissors && bot.move == :paper)
+    if player_wins
       "#{player.name} wins, Sorry Mojo"
-    elsif ((player.move) == (bot.move))
-        "Draw. I'll get you next time"
+    elsif (player.move == bot.move)
+      "Draw. I'll get you next time"
     else
-       "Mojo wins, Sorry #{player.name}"
+      "Mojo wins, Sorry #{player.name}"
     end
+  end
+
+  def player_wins
+    (player.move == :rock && bot.move == :scissors) ||
+    (player.move == :paper && bot.move == :rock) ||
+    (player.move == :scissors && bot.move == :paper)
   end
 
 end

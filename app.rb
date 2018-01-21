@@ -3,7 +3,6 @@ require './lib/player.rb'
 require './lib/game.rb'
 require './lib/bot.rb'
 
-
 class RPS < Sinatra::Base
 
   before do
@@ -32,7 +31,8 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game
+    @game_winner = @game.winner
+    @game_moves = @game.print_moves
     erb :result
   end
 

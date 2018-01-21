@@ -1,8 +1,8 @@
 require 'bot'
 
 describe Bot do
-    let(:bot) { described_class.new }
-    let(:bot2) { described_class.new([:rock, :rock, :rock])}
+  let(:bot) { described_class.new }
+  let(:bot2) { described_class.new([:rock, :rock, :rock]) }
 
   describe 'bot player' do
     it 'bot has an array of moves: rock, paper and scissors' do
