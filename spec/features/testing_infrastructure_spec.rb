@@ -11,7 +11,7 @@ feature "Making a choice" do
   scenario  "Player can choose a move" do
     sign_in_and_play
     choose('scissors')
-    click_button("yes!")
+    click_button("Play!")
     expect(page).to have_content("scissors")
   end
 end

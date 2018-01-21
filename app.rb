@@ -12,15 +12,23 @@ class Rps < Sinatra::Base
   end
 
   post "/name" do
-    @player = Player.new(params[:player])
+    $player = Player.new(params[:player])
     # redirect "/play"
     erb :play
   end
 
   get '/play' do
-    @player.save_choice(params[:choice]) 
+    $player.save_choice(params[:choice])
+    @ai = Ai.new
+    game = Game.new(@ai, $player)
+    @result = game.play_match(@ai.choice, $player.choice)
     erb :result
   end
+
+  # get '/result' do
+  #   @ai.choice
+  #   erb :result
+  # end
 
   run! if app_file == $0
 end

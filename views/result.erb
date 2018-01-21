@@ -7,9 +7,15 @@
 <body style="font-family:verdana;">
   <h1 style="text-align:center;"><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
 
-  <h2 style="text-align:center;"> Hi <%= @player.name %></h2>
-  <h2>Now choose ROCK, PAPER or SCISSOR</h2>
-<p><result pagep>
+  <h2 style="text-align:center;"> Hi <%= $player.name %></h2>
+
+  <p>You played: <%= $player.choice %></p>
+  <p>The computer played: <%= @ai.choice %> </p>
+  <h3><%= @result %></h3>
+
+  <h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Good Match!</h3>
+
+  <!-- <button>Play again!</button> -->
 
 </body>
 </html>
