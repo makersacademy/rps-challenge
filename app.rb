@@ -31,11 +31,6 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-
-  # post '/play' do
-  #
-  # end
-
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 

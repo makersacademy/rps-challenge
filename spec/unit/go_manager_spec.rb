@@ -33,12 +33,6 @@ describe GoManager do
     expect(subject.winner(player1, player2)).to eq :Draw
   end
 
-  it "should raise an error for invalid input" do
-    allow(player1).to receive(:go).and_return(:banana)
-    allow(player2).to receive(:go).and_return(:paper)
-    expect { subject.winner(player1, player2) }.to raise_error("invalid game: Bob: banana Ted: paper")
-  end
-
   it "should randomly return a valid go" do
     random_go = subject.random_go
     expect(subject.valid_goes).to include(random_go)

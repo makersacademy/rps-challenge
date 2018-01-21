@@ -14,7 +14,6 @@ class GoManager
     return player1.name if @rules[player1.go] == player2.go
     return player2.name if @rules[player2.go] == player1.go
     return :Draw if player2.go == player1.go
-    raise "invalid game: #{player1.name}: #{player1.go} #{player2.name}: #{player2.go}"
   end
 
   def random_go
