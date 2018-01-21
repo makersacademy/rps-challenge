@@ -31,10 +31,10 @@ class Game
 
   private
   RULES = { rock: [:scissors, :lizard],
-  			    paper: [:rock, :spock],
-      			scissors: [:paper, :lizard],
-      			spock: [:scissors, :rock],
-      			lizard: [:paper, :spock] }
+    paper: [:rock, :spock],
+    scissors: [:paper, :lizard],
+    spock: [:scissors, :rock],
+    lizard: [:paper, :spock] }
 
   def beats?
     RULES[player_1.weapon].include?(player_2.weapon)
