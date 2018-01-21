@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'playing rps' do
+  RANDOM = 1312323
   before do
     visit '/'
     fill_in 'name', with: 'Alex'
@@ -19,7 +20,7 @@ feature 'playing rps' do
   end
 
   scenario 'game selects random shape' do
-    srand(324345)
+    srand(RANDOM)
     click_button 'rock'
     message = find(:css, "#opponent").text
     expect(page).to have_content "Opponent selected scissors!"
