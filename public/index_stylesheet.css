@@ -1,0 +1,59 @@
+.title {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  padding-top: 14rem;
+  font-family: 'Bad Script', cursive;
+  font-size: 5em;
+}
+
+.button {
+  margin-top: 5em;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 93%);
+  border: none;
+  text-align: center;
+  width: 120px;
+  height: 29px;
+  transition: background-color 1s ease;
+}
+
+.button:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.button:active {
+  transform: translateY(1.5px);
+}
+
+.button:focus {
+  outline:0;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer span {
+  color: hsl(0, 0%, 70%);
+  font-family: 'Caveat', cursive;
+  letter-spacing: 0.15rem
+}

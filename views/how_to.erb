@@ -1,9 +1,25 @@
-<h1>How to Play</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <link href="./how_to_stylesheet.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
 
+    <div class="container">
+      <div class="howto">
+        <h1>How to Play</h1>
+      </div>
+      <div class="ready">
+        <form action="/name" method="post">
+          <label for="name">Name
+            <input type="text" name="name">
+          </label>
+          <button type="submit" value="submit">Start</button>
+        </form>
+      </div>
+    </div>
 
-<form action="/name" method="post">
-  <label for="name">Name
-    <input type="text" name="name">
-  </label>
-  <button type="submit" value="submit">Start</button>
-</form>
+</body>
