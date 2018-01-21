@@ -98,7 +98,7 @@ DEPENDENCIES
   rake
   rspec
   rspec-sinatra
-  rubocop (~> 0.52.1)
+  rubocop
   selenium-webdriver
   shotgun
   simplecov
