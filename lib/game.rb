@@ -2,8 +2,11 @@ require_relative "player"
 require_relative "computer"
 
 class Game
-  def self.create(player_1)
-    @running ||= Game.new(player_1)
+
+  RESULTS = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
+
+  def self.create(player_1, player_2 = Computer.new)
+    @running = Game.new(player_1, player_2)
   end
 
   def self.current
@@ -18,9 +21,10 @@ class Game
   end
 
   def winner
-    return "draw" if player_1.choice == player_2.choice
-    results = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
-    results[player_1.choice] == player_2.choice ? "lose" : "win"
+    first = player_1.choice
+    second = player_2.choice
+    return "You drew" if first == second
+    RESULTS[first] == second ? "#{player_2.name} won!" : "#{player_1.name} won!"
   end
 
 end
