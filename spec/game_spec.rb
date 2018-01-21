@@ -7,5 +7,8 @@ describe Game do
     expect(game.computer).to eq('Computer')
   end
 
-  
+  it 'respond to method moves' do
+    expect(game).to respond_to(:moves).with(2).arguments
+  end
+
 end
