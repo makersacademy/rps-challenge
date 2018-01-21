@@ -26,7 +26,6 @@ class Rps < Sinatra::Base
 
   post '/selection' do
     @game = $game
-    p @game
     session[:player_choice] = params[:player_choice]
     session[:computer_choice] = @game.computer_chooses
     @player_choice = session[:player_choice]
