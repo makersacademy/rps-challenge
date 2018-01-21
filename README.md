@@ -1,5 +1,9 @@
 # RPS Challenge
 
+
+[![Build Status](https://travis-ci.org/domvernon/rps-challenge.svg?branch=master)](https://travis-ci.org/domvernon/rps-challenge)
+
+
 Summary
 -------
 I implemented this by test-driving features to get functionality first, and then refactored responsibility out into game, computer and player classes.  This required both further testing and adjustment of pre-existing tests to ensure that the coverage remained 100%.  I avoided the use of global variables by creating and storing one instance of the game.
