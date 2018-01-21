@@ -1,19 +1,8 @@
 describe Game do
 
-  subject(:game) { described_class.new(ai, player) }
+  subject(:game) { described_class.new }
   let(:ai) { double("ai") }
   let(:player) { double("player") }
-
-
-  describe "#Initialize" do
-    it "checks the attribute reader player1" do
-      expect(game.ai).to eq(ai)
-    end
-
-    it "checks the attribute reader player" do
-      expect(game.player).to eq(player)
-    end
-  end
 
   describe "#play_match" do
 

@@ -3,13 +3,6 @@ require_relative 'ai'
 
 class Game
 
-  attr_reader :ai, :player
-
-  def initialize(ai, player)
-    @ai = ai
-    @player = player
-  end
-
   def play_match(ai_choice, player_choice)
     if player_choice == "rock"
       if ai_choice == "rock"
