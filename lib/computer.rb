@@ -1,9 +1,11 @@
 class Computer
 
+  CHOICES = ["rock", "paper", "scissors"]
+
   attr_reader :wins
 
   def initialize
-    @choices = ["rock", "paper", "scissors"]
+    @choices = CHOICES
     @wins = 0
   end
 
