@@ -1,7 +1,10 @@
-<h1> <%= @game.player_1.name%> you chose <%= @game.player_1.weapon_to_s%>!!  <%= @game.player_2.name%> chose <%= @game.player_2.weapon_to_s%>!!</h1>
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+
+<h1> <%= @game.player_1.name%> you chose <%= @game.player_1.weapon_to_s%>!! </h1>
+<h1> <%= @game.player_2.name%> chose <%= @game.player_2.weapon_to_s%>!!</h1>
 <% if @game.result == :draw %>
 <h1> IT'S A DRAW!! </h2>
-  <% else %>
+  <% else %>ß
   <h1> <%= @game.result.name.upcase%> WON!!! </h1>
 <% end %>
 
@@ -10,5 +13,6 @@
 <h1> <%= @game.player_2.name%> - <%= @result_log.player_wins(@game.player_2) %> wins </h1>
 <%end%>
 
-<a href="/"> Click here for a new game!</a>
 <a href="/play"> Click for another round </a>
+<br/>
+<a href="/"> Click here for a new game!</a>

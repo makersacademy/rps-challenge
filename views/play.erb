@@ -1,4 +1,7 @@
-<h1> <%= @game.player_1.name%> vs <%= @game.player_2.name%>!! Lets play Rock!Paper!Scissors! </h1>
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+
+<h1> <%= @game.player_1.name%> vs <%= @game.player_2.name%>!!</h1>
+<h1>Lets play Rock!Paper!Scissors! </h1>
 
 <% if @result_log.rounds > 0 %>
   <h1> Round <%= @result_log.rounds + 1 %> </h1>

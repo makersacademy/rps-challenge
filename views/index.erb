@@ -1,21 +1,18 @@
-<html>
-<head>
-</head>
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+
 <body>
   <h1> Welcome to Rock!Paper!Scissors! </h1>
   <h1> Please enter your name to play </h1>
-  <h1> To play against computer leave player 2 name blank! </h1>
-  <div>
-    <img style = "border: 4px dashed red;" src="https://i.ytimg.com/vi/5jZ8OjJHLTw/maxresdefault.jpg">
-  </div>
+  <h2> To play against computer leave player 2 name blank! </h2>
+
   <form method="POST" action="/name">
     <div>
-       Player one name:<br>
+       <label for ="player_1_name"> Player one name:
       <input type="text" name= "player_1_name">
     </div>
   <div>
     <div>
-       Player two name:<br>
+       <label for ="player_2_name"> Player two name:
       <input type="text" name= "player_2_name">
     </div>
   <div>
@@ -23,4 +20,3 @@
   </div>
   </form>
 </body>
-</html>
