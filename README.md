@@ -24,11 +24,13 @@ Setup Instructions
 ----
 
 To play:
-1. Clone this repo to your local machine
-2. cd rps-challenge
-3. run bundle
-4. run rackup (this is set as 9292 by default)
-5. Navigate to [localhost:9292](http://localhost:9292) in your choice of browser
+```
+$ git clone git@github.com:maireadjenn/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup (this is set as 9292 by default)
+```
+Navigate to [localhost:9292](http://localhost:9292) in your choice of browser
 
 To run tests:
 1. Run rspec
