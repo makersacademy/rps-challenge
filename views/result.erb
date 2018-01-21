@@ -4,9 +4,9 @@
 <h2>The computer chose:  <%=@game.computer.choice%></h2>
 
 
-<% if @game.result == "Player wins" %>
+<% if @game.result == "PLAYER" %>
 <h1>YOU WON!</h1>
-<% elsif @game.result == "Computer wins" %>
+<% elsif @game.result == "COMPUTER" %>
 <h1>YOU LOST!</h1>
 <% elsif @game.result == "DRAW" %>
 <h1>YOU DREW!</h1>

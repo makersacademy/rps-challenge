@@ -7,17 +7,17 @@ describe Game do
 
   describe '#rps' do
     it 'returns a player win' do
-      allow(computer).to receive(:makes_choice).and_return("ROCK")
-      allow(computer).to receive(:choice).and_return("ROCK")
-      allow(player).to receive(:choice).and_return("PAPER")
-      expect(game.rps).to eq "Player wins"
+      allow(computer).to receive(:makes_choice).and_return(:ROCK)
+      allow(computer).to receive(:choice).and_return(:ROCK)
+      allow(player).to receive(:choice).and_return(:PAPER)
+      expect(game.rps).to eq "PLAYER"
     end
 
     it 'returns a computer win' do
       allow(computer).to receive(:makes_choice).and_return("ROCK")
       allow(computer).to receive(:choice).and_return("ROCK")
       allow(player).to receive(:choice).and_return("SCISSORS")
-      expect(game.rps).to eq "Computer wins"
+      expect(game.rps).to eq "COMPUTER"
     end
 
     it 'returns a draw' do

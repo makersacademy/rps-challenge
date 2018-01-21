@@ -20,9 +20,9 @@ class Game
 
   def rps
     computer.makes_choice
+    win = {ROCK: :SCISSORS, PAPER: :ROCK, SCISSORS: :PAPER}
     return @result = "DRAW" if player.choice == computer.choice
-    c_win = [["ROCK", "PAPER"], ["PAPER", "SCISSORS"], ["SCISSORS", "ROCK"]]
-    @result = c_win.include?([player.choice, computer.choice]) ? "Computer wins" : "Player wins"
+    @result = win[player.choice] == computer.choice ? "PLAYER" : "COMPUTER"
   end
 
 end

@@ -6,7 +6,7 @@ describe Computer do
 
   describe '#makes_choice' do
     it 'provides one of 3 options' do
-      options = ["ROCK", "PAPER", "SCISSORS"]
+      options = [:ROCK, :PAPER, :SCISSORS]
       computer.makes_choice
       expect(options).to include(computer.choice)
     end
