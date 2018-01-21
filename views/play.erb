@@ -1,0 +1,10 @@
+<html> <body style="background-color:lightyellow;">
+<h1><font color="red"> <%= @game.player.name %> </font> vs. <font color="blue">Computer</font>!</h1>
+<h2><font color="red"> <%= @game.player.name %> </font>, please choose and option:</h2>
+<form action="/selection" method="post">
+  <input type="image"  src="https://outdoordesignbylucas.files.wordpress.com/2011/01/1-10-11-charcter-rocks.jpg" width="200" height="200" name ="option" value="Rock" style="border-radius:50px;" alt="Rock" />
+  <input type="image"  src="https://cdn.dick-blick.com/items/102/06/10206-0006-2ww-m.jpg" width="200" height="200" name ="option" value="Paper" style="border-radius:50px;" alt="Paper" />
+  <input type="image"  src="http://www.thetherapystore.com.au/wp-content/uploads/2015/06/CBB1.jpg" width="200" height="200" name ="option" value="Scissors" style="border-radius:50px;" alt="Scissors" />
+</form>
+</body>
+</html>

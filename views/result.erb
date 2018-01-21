@@ -1,0 +1,14 @@
+<html> <body style="background-color:lightyellow;">
+
+<h1><font color="purple"><%= @game.result %></font> is the winner! </h1>
+
+<h2><font color="red"> <%= @game.player.name %></font> chose <%=@game.player.player_selection%>!</h2>
+<h2><font color="blue"> Computer </font> chose <%=@game.computer.computer_selection%>!</h2>
+<h3>If you want, you can play again!</h3>
+
+<form action="/" method="get">
+    <input type="submit" value="Let's Play Again!">
+</form>
+
+</body>
+</html>
