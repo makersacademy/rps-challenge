@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+
+<h1> <%= @game.player_1.name%> vs <%= @game.player_2.name%>!!</h1>
+<h1>Lets play Rock!Paper!Scissors! </h1>
+
+<% if @result_log.rounds > 0 %>
+  <h1> Round <%= @result_log.rounds + 1 %> </h1>
+<% end %>
+
+ <form action="/weapon_choice" method="post">
+  <label for ="player_1_weapon"> <%= @game.player_1.name%>'s Weapon Choice </label>
+    <select name ="player_1_weapon">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+      <option value="Spock">Spock</option>
+      <option value="Lizard">Lizard</option>
+    </select>
+  <% unless @game.player_2.is_a?(ComputerPlayer) %>
+    <label for ="player_2_weapon"> <%= @game.player_2.name%>'s Weapon Choice </label>
+      <select name ="player_2_weapon">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+        <option value="Spock">Spock</option>
+        <option value="Lizard">Lizard</option>
+      </select>
+  <%end%>
+  <div>
+  </label>
+  <div class ="button">
+    <input type="submit" value = "Lets get started!">
+  </div>
+</form>
