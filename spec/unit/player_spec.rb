@@ -9,7 +9,7 @@ describe Player do
     end
   end
 
-  describe '#choice' do
+  describe '#move_choice' do
     it 'stores a player\'s move choice' do
       player.move_choice('rock')
       expect(player.choice).to eq :rock
