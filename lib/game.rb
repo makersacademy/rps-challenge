@@ -1,8 +1,8 @@
 require "player"
 
 class Game
-  def self.create(player)
-    @running ||= Game.new(player)
+  def self.create(player_1)
+    @running ||= Game.new(player_1)
   end
 
   def self.current
@@ -10,20 +10,21 @@ class Game
   end
 
   WEAPONS = ["rock", "paper", "scissors"]
-  attr_reader :player_1
+  attr_reader :player_1, :player_2
 
-  def initialize(player)
-    @player_1 = player
+  def initialize(player_1, player_2 = Player.new("computer"))
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   def choice
     WEAPONS.sample
   end
 
-  def winner(answer_1, answer_2)
-    return "draw" if answer_1 == answer_2
+  def winner
+    return "draw" if player_1.choice == player_2.choice
     results = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
-    results[answer_1] == answer_2 ? "lose" : "win"
+    results[player_1.choice] == player_2.choice ? "lose" : "win"
   end
 
 end
