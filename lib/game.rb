@@ -1,7 +1,6 @@
 #
 class Game
   attr_reader :players, :player1, :player2
-
   def self.create(player1, player2 = Player.new('Computer'))
     @game = Game.new(player1, player2)
   end
@@ -16,11 +15,23 @@ class Game
     @players = [player1, player2]
   end
 
-  def winner
-    win_condition[player1.weapon].include?(player2.weapon) ? player1 : player2
+  def result
+    win_condition
   end
 
   def win_condition
+    if rules[player1.weapon].include?(player2.weapon)
+      return "#{player1} Won!"
+    elsif rules[player1.weapon].include?(player2.weapon)
+      return "#{player2} Won!"
+    elsif player1.weapon == player2.weapon
+      return 'You drew!'
+     end
+
+    # rules[player1.weapon].include?(player2.weapon) ? "#{player1} Won!" : "#{player2} Won!"
+  end
+
+  def rules
     rulebook = {
       rock: [:scissors, :lizard],
       paper: [:rock, :spock],
@@ -30,17 +41,4 @@ class Game
     }
   end
 
-#   player1
-#   player2
-#
-#   player1 weapon
-#   player2 weapon
-#
-#   player1 weapon > player2 weapon
-#
-#   result
-#
-#   def initialize(player1, player2 = Player.new('Computer'))
-#
-#   end
 end

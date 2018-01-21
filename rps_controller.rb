@@ -33,5 +33,12 @@ class RPS < Sinatra::Base
     erb :game
   end
 
+  get '/results' do
+    @results = @game.result
+    p '---'*10
+    p @results
+    p '---'*10
+  end
+
   run! if app_file == $0
 end
