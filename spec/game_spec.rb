@@ -11,4 +11,29 @@ describe Game do
     end
   end
 
+  describe '#choice selection' do
+    it 'selects rock' do
+      game.rock
+      expect(game.selection).to eq 'Rock'
+    end
+
+    it 'selects paper' do
+      game.paper
+      expect(game.selection).to eq 'Paper'
+    end
+
+    it 'selects scissors' do
+      game.scissors
+      expect(game.selection).to eq 'Scissors'
+    end
+  end
+
+  describe '#computer' do
+    srand(3)
+    it 'makes a selection' do
+      game.computer
+      expect(game.computer_selection).to eq 'Rock'
+    end
+  end
+
 end

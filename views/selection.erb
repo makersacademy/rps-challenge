@@ -1,1 +1,13 @@
-<p> <%= @game.player.name %>: <%= @game.selection %> </p>
+<div>
+  <p> <%= @game.selection %> </p>
+  <p class="white"> VS. </p>
+  <p> <%= @game.computer_selection %> </p>
+</div>
+
+<div>
+  <form action="/play">
+    <input class="button" type="submit" value="PLAY AGAIN">
+  </form>
+</div>
+
+<div class="large outline"> You <%= @game.end_result %>!</div>

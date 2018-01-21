@@ -26,20 +26,24 @@ class RockPaperScissors < Sinatra::Base
 
   post '/rock' do
     @game.rock
+    @game.computer
     redirect '/selection'
   end
 
   post '/paper' do
     @game.paper
+    @game.computer
     redirect '/selection'
   end
 
   post '/scissors' do
     @game.scissors
+    @game.computer
     redirect '/selection'
   end
 
   get '/selection' do
+    @game.result
     erb :selection
   end
 

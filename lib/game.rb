@@ -1,22 +1,38 @@
 class Game
 
-  attr_reader :player, :selection
+  attr_reader :player, :selection, :computer_selection, :end_result
+
+  CHOICE = ['Rock', 'Paper', 'Scissors']
+
+  BEATS = { 'Rock'     => 'Paper',
+            'Paper'    => 'Scissors',
+            'Scissors' => 'Rock'
+          }
 
   def initialize(player)
     @player = player
-    @selection = nil
   end
 
   def rock
-    @selection = 'rock'
+    @selection = CHOICE[0]
   end
 
   def paper
-    @selection = 'paper'
+    @selection = CHOICE[1]
   end
 
   def scissors
-    @selection = 'scissors'
+    @selection = CHOICE[2]
+  end
+
+  def computer
+    @computer_selection = CHOICE[rand(3)]
+  end
+
+  def result
+    @end_result = 'lost'
+    @end_result = 'tied' if @selection == @computer_selection
+    @end_result = 'won' if @selection == BEATS[@computer_selection]
   end
 
   def self.create(player)
