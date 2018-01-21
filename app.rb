@@ -23,9 +23,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/result" do
-    @result = params["attack"]
-    @comp = @game.choice
-    @winner = @game.winner(@result, @comp)
+    @player_choice = params["attack"]
+    comp_choice = @game.choice
+    @winner = @game.winner(@player_choice, comp_choice)
     erb :result
   end
 

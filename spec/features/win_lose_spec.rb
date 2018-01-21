@@ -12,8 +12,8 @@ feature "you choose rock, and it gives the result.." do
   end
 
   scenario "lose, when the game picks paper" do
+    allow_any_instance_of(Game).to receive(:choice).and_return("paper")
     attack_with_rock
-    allow(Game).to receive(:choice) { "paper" }
     expect(page).to have_content("You lose!")
   end
 
