@@ -1,19 +1,27 @@
 feature 'Enter the name of the player' do
   scenario 'Submitting name of the player' do
-    visit('/')
-    fill_in :player, with: 'Agata'
-    click_button "PLAY"
-    expect(page).to have_content "Rock Paper Scissors"
+    sign_in_and_play
+    expect(page).to have_content "Rock Paper Scissors Player name: Agata"
   end
 end
 
 feature "Selection" do
   scenario 'Rock' do
-    visit('/')
-    fill_in :player, with: 'Agata'
-    click_button "PLAY"
+    sign_in_and_play
     click_button "Rock"
-    expect(page).to have_content "Agata: Rock"
+    expect(page).to have_content "Agata: rock"
   end
-  
+
+  scenario 'Paper' do
+    sign_in_and_play
+    click_button "Paper"
+    expect(page).to have_content "Agata: paper"
+  end
+
+  scenario 'Scissors' do
+    sign_in_and_play
+    click_button "Scissors"
+    expect(page).to have_content "Agata: scissors"
+  end
+
 end

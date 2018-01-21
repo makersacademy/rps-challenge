@@ -1,25 +1,26 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :selection
 
-  def initialize(player_name)
-    @player = Player.new(player_name)
+  def initialize(player)
+    @player = player
+    @selection = nil
   end
 
   def rock
-
+    @selection = 'rock'
   end
 
   def paper
-
+    @selection = 'paper'
   end
 
   def scissors
-
+    @selection = 'scissors'
   end
 
-  def self.create(player_name)
-    @game = Game.new(player_name)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
