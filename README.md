@@ -27,7 +27,7 @@ In case you don't want to do that
 Here are two videos showing a win and a lose. (My laptop really hated screen recording and running the programme at the same time, sorry for the lag).
 
 <a href="https://youtu.be/tRXEF5BzXAw
-" target="_blank"><img src="http://img.youtube.com/vi/tRXEF5BzXAw/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/tRXEF5BzXAw/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 <a href="https://youtu.be/J36VoLHBmxE
