@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require './lib/player'
 class RPS < Sinatra::Base
 
   get '/' do
@@ -7,7 +7,7 @@ class RPS < Sinatra::Base
   end
 
   post '/play' do
-    $player_name = params[:player_name]
+    $player_name = Player.new(params[:player_name]).name
     redirect '/play'
   end
 
