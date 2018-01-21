@@ -11,4 +11,7 @@ describe Game do
     expect(game).to respond_to(:moves).with(2).arguments
   end
 
+  it 'respond to method result' do
+    expect(game).to respond_to(:result)
+  end
 end

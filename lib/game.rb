@@ -33,4 +33,14 @@ end
   @game_array << computer_option
   end
 
+  def result
+  if WIN_MOVES.include?(@game_array)
+    @player.name
+  elsif DRAW_MOVES.include?(@game_array)
+    "No one"
+  else
+    @computer.name
+  end
+ end
+
 end
