@@ -20,5 +20,10 @@ before do
   @game = Game.instance
 end
 
+get '/selection' do
+  
+end
+
+
   run! if app_file == $0
 end
