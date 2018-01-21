@@ -32,13 +32,4 @@ feature "you choose rock, and it gives the result.." do
     expect(page).to have_content("You draw!")
   end
 
-  # scenario "win, when the game picks paper" do
-  #
-  #   expect(page).to have_content("Derek loses!")
-  # end
-  #
-  # scenario "draw when the game picks rock" do
-  #   make_attack_and_check_it_matched_message("scissors")
-  # end
-
 end
