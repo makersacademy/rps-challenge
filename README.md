@@ -4,15 +4,15 @@ The adventures of Lewis & Frank - RPS Edition.
 
 You start at the index page where you are prompted to enter your name and aassured that the rules are simple.
 
-<img src="https://ibb.co/kT8veG.png">
+![Screenshot](https://ibb.co/kT8veG.png)
 
 Then, once both players have entered their names, you are swiftly prompted to choose a move.
 
-<img src="https://ibb.co/nb2z6w.png">
+![Screenshot](https://ibb.co/nb2z6w.png)
 
 Once both players have selected a move, upon clicking Submit, you are taken to a results page that displays the result.
 
-<img src="https://ibb.co/gsuqDb.png>
+![Screenshot](https://ibb.co/gsuqDb.png)
 
 
 
