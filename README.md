@@ -1,6 +1,23 @@
 [![Build Status](https://travis-ci.org/Tagrand/rps-challenge.svg?branch=master)](https://travis-ci.org/Tagrand/rps-challenge)
 
-# RPS Challenge
+# Rock Paper Scissors
+
+# Scenario
+
+You are one spec in what feels like a large infinitely large universe, inhabiting a mere fraction of the Earths history, which in itself is only a tiny segment of the lifespan of the Universe. It can feel pretty daunting can't it?
+
+Well take your mind off it by playing a game that is essentially a game of chance (especially if you play the computer...)
+
+# Approach
+
+I've focused alot on TDD and BDD. In particular making sure I plan my structure more carefully, and make sure that whenever I add a new feature, I make sure its fully tested before building it. Following what some senior's at Makers suggested, I've been trying to build one feature at a time, so I started with a site that could hold your name, then a site where you could pick rock, then one with three options, then one which told you win or lose. I found this helped structure my thoughts, and focus on just passing my tests. 
+
+# Extention
+
+If I'd have had more time, then I would have refactored my tests further and put the multiplayer part on a separate page. I would also would have liked to add a bit of advice on second playing based on research from MIT (see [here](https://www.technologyreview.com/s/527026/how-to-win-at-rock-paper-scissors/)).  
+
+I would also be interested to see if there are better ways of structing my classes, adding a printer class for my results and a gamebook class so you could plug in lots of different games into the programme. 
+
 
 Instructions
 -------
