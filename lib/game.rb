@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-  attr_reader :player_1, :player_weapon
+  attr_reader :player_1, :player_weapon, :machine_weapon
   attr_accessor :outcome, :human_score, :machine_score
 
   OPPONENT = 'Machine'
@@ -29,7 +29,7 @@ class Game
   end
 
   def machine_select_weapon
-    WEAPONS.sample
+    @machine_weapon = WEAPONS.sample
   end
 
   def weapon_selected(weapon)
@@ -45,14 +45,14 @@ class Game
   end
 
   def result
-    if machine_select_weapon == @player_weapon
+    if @machine_weapon == @player_weapon
       score_human
       score_machine
       :tied
-    elsif RULES[@player_weapon] == machine_select_weapon
+    elsif RULES[@player_weapon] == @machine_weapon
       score_human
       :won
-    else RULES[@player_weapon] != machine_select_weapon
+    else RULES[@player_weapon] != @machine_weapon
       score_machine
       :lost
     end
