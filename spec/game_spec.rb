@@ -1,7 +1,8 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new }
+  let(:computer) { double :computer}
+  subject(:game) { described_class.new("Jennifer", computer) }
 
   describe '#rps' do
     it 'returns a player win' do
