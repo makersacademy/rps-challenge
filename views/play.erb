@@ -9,12 +9,17 @@
         <h3> This game is Rock-Paper-Scissors-Lizard-Spock! </h3>
       </header>
       <main>
-        <form action '/game' method = 'post'>
-          <input type = "button" name = "rock" value = "Rock" >
-          <input type = "button" name = "paper" value = "Paper" >
-          <input type = "button" name = "scissors" value = "Scissors" >
-          <input type = "button" name = "lizard" value = "Lizard" >
-          <input type = "button" name = "Spock" value = "Spock" >
+        <form action = '/game' method = 'post'>
+          <input type = "radio" id = 'rock' name = "weapon" value = "Rock" >
+          <label for= 'rock'> Rock </label>
+          <input type = "radio" id = 'paper' name = "weapon" value = "Paper" >
+          <label for = 'paper'> Paper </label>
+          <input type = "radio" id = 'scissors' name = "weapon" value = "Scissors" >
+          <label for = 'scissors'> Scissors </label>
+          <input type = "radio" id = 'lizard' name = "weapon" value = "Lizard" >
+          <label for = 'lizard'> Lizard </label>
+          <input type = "radio" id = 'spock' name = "weapon" value = "Spock" >
+          <label for = 'spock'> Spock </label>
           <input type = "submit" value = "Submit" >
         </form>
       </main>

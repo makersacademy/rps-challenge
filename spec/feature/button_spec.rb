@@ -1,32 +1,32 @@
-feature 'Buttons' do
-
-  scenario 'button rock' do
+feature 'Radio Buttons' do
+  scenario 'radio rock chosen' do
     sign_in
-    expect(page).to have_button('Rock')
+    choose('rock')
+    expect(page).to have_checked_field('rock')
   end
 
-  scenario 'button paper' do
+  scenario 'radio paper' do
     sign_in
-    expect(page).to have_button('Paper')
+    expect(page).to have_unchecked_field('paper')
   end
 
-  scenario 'button scissors' do
+  scenario 'radio scissors' do
     sign_in
-    expect(page).to have_button('Scissors')
+    expect(page).to have_unchecked_field('scissors')
   end
 
-  scenario 'button liazard' do
+  scenario 'radio liazard' do
     sign_in
-    expect(page).to have_button('Lizard')
+    expect(page).to have_unchecked_field('lizard')
   end
 
-  scenario 'button Spock' do
+  scenario 'radio Spock' do
     sign_in
-    expect(page).to have_button('Spock')
+    expect(page).to have_unchecked_field('spock')
   end
 
-  scenario 'button submit' do
+  scenario 'radio submit' do
     sign_in
-    expect(page).to have_button('Submit')
+    expect(page).to have_unchecked_field('submit')
   end
 end
