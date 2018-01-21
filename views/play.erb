@@ -1,14 +1,8 @@
 
-<p> Player: <%= $name %> vs. Computer </p>
+<p> Player: <%= (session[:game]).player.name %> vs. Computer </p>
 
-<form action="/result">
-  <input type="submit" id="rock" value="Rock">
-</form>
-
-<form action="/result">
-  <input type="submit" id="paper" value="Paper">
-</form>
-
-<form action="/result">
-  <input type="submit" id="scissors" value="Scissors">
+<form action="/weapon" method="post">
+  <label for="weapon"> <%= (session[:game]).player.name %> - rock / paper / scissors - please select your weapon</label>
+ <input type="text" name="weapon">
+ <input type="submit" value="Submit">
 </form>

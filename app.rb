@@ -1,7 +1,6 @@
 require 'sinatra/base'
-# require './lib/player'
-# require './lib/game'
-# require 'pry'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class RPSWeb < Sinatra::Base
 
@@ -12,7 +11,7 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/names' do
-    $name = params[:player]
+    session[:game] = Game.new(Player.new(params[:player]))
     redirect '/play'
   end
 
@@ -20,8 +19,15 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
-  get 'result' do
+  post '/weapon' do
+    session[:game].player.selection(params[:weapon])
+    session[:game].computer
+    redirect '/winner'
+  end
 
+  get '/winner' do
+    session[:winner] = session[:game].winner
+    erb :winner
   end
 
 run! if app_file == $0

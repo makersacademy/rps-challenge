@@ -1,14 +1,14 @@
 
-class Player 
+class Player
 
-  attr_reader
+  attr_reader :name, :weapon
 
-  def initialize
-
+  def initialize(name)
+    @name = name
   end
 
-  def method_name
-
+  def selection(weapon)
+    fail "not a possible weapon" unless [:rock, :paper, :scissors].include?(weapon.to_sym)
+    @weapon = weapon
   end
-
 end

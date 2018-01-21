@@ -1,26 +1,24 @@
-# require 'pry'
+require 'pry'
 
   feature 'Entering player names' do
     scenario 'Player enters name at start and has name displayed against opponent/computer' do
       sign_in_and_play
       expect(page).to have_content("Teddy")
-      expect(page).to have_content("Computer")
     end
   end
 
   feature 'Taking a turn' do
-    scenario 'Player is able to select Rock' do
+    scenario 'The player selects one of Rock / Paper / Scissors as a weapon' do
       sign_in_and_play
-      expect(page).to have_selector(:link_or_button, 'Rock')
+      expect(page).to have_field("weapon")
     end
+  end
 
-    scenario 'Player is able to select Paper' do
+  feature 'Winner declared' do
+    scenario 'A player wins the round' do
       sign_in_and_play
-      expect(page).to have_selector(:link_or_button, 'Paper')
-    end
-
-    scenario 'Player is able to select Scissors' do
-      sign_in_and_play
-      expect(page).to have_selector(:link_or_button, 'Scissors')
+      fill_in("weapon", :with => :rock)
+      click_button("Submit")
+      expect(page).to have_content("WINNER DECLARED")
     end
   end
