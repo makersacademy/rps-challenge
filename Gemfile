@@ -11,7 +11,7 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
-  gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
