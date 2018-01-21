@@ -23,13 +23,12 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    $action = params[:weapon]
-    p $action
+    @game.player1.weapon_choice(params[:weapon])
     redirect '/game'
   end
 
   get '/game' do
-    @action = $action
+    @action = @game.player1.weapon
     @player_name = @game.player1.name
     erb :game
   end

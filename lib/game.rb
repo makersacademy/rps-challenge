@@ -16,8 +16,18 @@ class Game
     @players = [player1, player2]
   end
 
-  def results
+  def winner
+    win_condition[player1.weapon].include?(player2.weapon) ? player1 : player2
+  end
 
+  def win_condition
+    rulebook = {
+      rock: [:scissors, :lizard],
+      paper: [:rock, :spock],
+      scissors: [:paper, :lizard],
+      spock: [:rock, :scissors],
+      lizard: [:spock, :paper]
+    }
   end
 
 #   player1
