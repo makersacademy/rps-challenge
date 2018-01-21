@@ -7,15 +7,22 @@ feature 'playing rps' do
     click_button 'Submit'
   end
 
-  scenario 'see the options of the game' do
-    expect(page).to have_button 'ROCK'
-    expect(page).to have_button 'PAPER'
-    expect(page).to have_button 'SCISSORS'
+  scenario 'see what shapes we have' do
+    expect(page).to have_button 'rock'
+    expect(page).to have_button 'paper'
+    expect(page).to have_button 'scissors'
   end
 
   scenario 'choose a shape' do
-    click_button 'ROCK'
-    expect(page).to have_content 'You selected ROCK!'
+    click_button 'rock'
+    expect(page).to have_content 'You selected rock!'
   end
+
+  scenario 'game chooses "rock"' do
+    click_button 'rock'
+    expect(page).to have_content "Your opponent selected rock!"
+  end
+
+
 
 end

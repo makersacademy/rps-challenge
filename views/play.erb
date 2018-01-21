@@ -1,10 +1,11 @@
 Welcome, <%= @name %>
 
 <form method="POST" action="/play">
-  <input type="submit" name="shape" value="ROCK" />
-  <input type="submit" name="shape" value="PAPER" />
-  <input type="submit" name="shape" value="SCISSORS" />
+  <input type="submit" name="shape" value="rock" />
+  <input type="submit" name="shape" value="paper" />
+  <input type="submit" name="shape" value="scissors" />
 </form>
 
 
 You selected <%= @shape %>!
+Your opponent selected <%= @opponent_shape %>!
