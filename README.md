@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Tagrand/rps-challenge.svg?branch=master)](https://travis-ci.org/Tagrand/rps-challenge)
+
 # RPS Challenge
 
 Instructions
