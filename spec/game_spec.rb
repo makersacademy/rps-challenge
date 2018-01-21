@@ -21,6 +21,13 @@ describe Game do
   #     expect(Game::WEAPONS).to include("Rock")
   #   end
   # end
+
+  describe "#choice" do
+    it "should return a weapon" do
+      expect(Game::WEAPONS).to include(game.choice)
+    end
+  end
+
   describe "#winnner" do
     it "should return draw when paper and paper is given" do
       expect(game.winner("paper", "paper")).to eq "Draw"

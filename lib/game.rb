@@ -16,6 +16,10 @@ class Game
     @player = player
   end
 
+  def choice
+    WEAPONS.sample
+  end
+
   def winner(answer_1, answer_2)
     return "Draw" if answer_1 == answer_2
     results = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
