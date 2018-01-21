@@ -10,63 +10,63 @@ describe Game do
       allow(computer).to receive(:makes_choice).and_return(:SCISSORS)
       allow(computer).to receive(:choice).and_return(:SCISSORS)
       allow(player).to receive(:choice).and_return(:ROCK)
-      expect(game.rps).to eq "PLAYER"
+      expect(game.rps).to eq :win
     end
 
     it 'returns a player win' do
       allow(computer).to receive(:makes_choice).and_return(:PAPER)
       allow(computer).to receive(:choice).and_return(:PAPER)
       allow(player).to receive(:choice).and_return(:SCISSORS)
-      expect(game.rps).to eq "PLAYER"
+      expect(game.rps).to eq :win
     end
 
     it 'returns a player win' do
       allow(computer).to receive(:makes_choice).and_return(:ROCK)
       allow(computer).to receive(:choice).and_return(:ROCK)
       allow(player).to receive(:choice).and_return(:PAPER)
-      expect(game.rps).to eq "PLAYER"
+      expect(game.rps).to eq :win
     end
 
     it 'returns a computer win' do
       allow(computer).to receive(:makes_choice).and_return(:ROCK)
       allow(computer).to receive(:choice).and_return(:ROCK)
       allow(player).to receive(:choice).and_return(:SCISSORS)
-      expect(game.rps).to eq "COMPUTER"
+      expect(game.rps).to eq :lose
     end
 
     it 'returns a computer win' do
       allow(computer).to receive(:makes_choice).and_return(:SCISSORS)
       allow(computer).to receive(:choice).and_return(:SCISSORS)
       allow(player).to receive(:choice).and_return(:PAPER)
-      expect(game.rps).to eq "COMPUTER"
+      expect(game.rps).to eq :lose
     end
 
     it 'returns a computer win' do
       allow(computer).to receive(:makes_choice).and_return(:PAPER)
       allow(computer).to receive(:choice).and_return(:PAPER)
       allow(player).to receive(:choice).and_return(:ROCK)
-      expect(game.rps).to eq "COMPUTER"
+      expect(game.rps).to eq :lose
     end
 
     it 'returns a draw' do
       allow(computer).to receive(:makes_choice).and_return(:ROCK)
       allow(computer).to receive(:choice).and_return(:ROCK)
       allow(player).to receive(:choice).and_return(:ROCK)
-      expect(game.rps).to eq "DRAW"
+      expect(game.rps).to eq :draw
     end
 
     it 'returns a draw' do
       allow(computer).to receive(:makes_choice).and_return(:SCISSORS)
       allow(computer).to receive(:choice).and_return(:SCISSORS)
       allow(player).to receive(:choice).and_return(:SCISSORS)
-      expect(game.rps).to eq "DRAW"
+      expect(game.rps).to eq :draw
     end
 
     it 'returns a draw' do
       allow(computer).to receive(:makes_choice).and_return(:PAPER)
       allow(computer).to receive(:choice).and_return(:PAPER)
       allow(player).to receive(:choice).and_return(:PAPER)
-      expect(game.rps).to eq "DRAW"
+      expect(game.rps).to eq :draw
     end
   end
 
