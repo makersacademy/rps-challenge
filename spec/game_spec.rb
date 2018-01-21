@@ -10,18 +10,6 @@ describe Game do
     end
   end
 
-  # describe "#WEAPONS" do
-  #   it "should include rock" do
-  #     expect(Game::WEAPONS).to include("Rock")
-  #   end
-  #   it "should include rock" do
-  #     expect(Game::WEAPONS).to include("Paper")
-  #   end
-  #   it "should include rock" do
-  #     expect(Game::WEAPONS).to include("Rock")
-  #   end
-  # end
-
   describe "#choice" do
     it "should return a weapon" do
       expect(Game::WEAPONS).to include(game.choice)

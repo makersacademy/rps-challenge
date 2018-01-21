@@ -2,7 +2,7 @@
 feature "after signing in, you choose attack" do
 
   def make_attack_and_check_it_matched_message(attack)
-    choose(attack)
+    choose(attack = "rock")
     click_button "Attack your opponent"
     check_its_not_error_page
     expect(page).to have_content("Derek chose #{attack}")
