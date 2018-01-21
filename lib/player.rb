@@ -7,6 +7,6 @@ class Player
   end
 
   def my_go(go)
-    @go = go
+    @go = go 
   end
 end
