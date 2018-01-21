@@ -10,5 +10,28 @@
 }
 
 .ready  {
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 4em;
+  padding-top: 1em;
+  padding-left: 1.4em;
+  letter-spacing: 1rem;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: hsl(0, 0%, 60%);
+  letter-spacing: 0.2em;
+  padding: 2em 2.4em 4em 6em;
+  line-height: 200%;
+}
+
+.ready h1 {
+  padding-top: 6.5em;
+  margin-left: -2.5em;
 }
