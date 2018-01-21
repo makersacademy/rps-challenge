@@ -23,18 +23,18 @@ On running the game you will be greeted with the following page;
 
 ![Screenshot](https://i.imgur.com/7wdBo5o.png)
 
-Enter your character name and submit.
+_Enter your character name and submit._
 
 
 ### Confirmation page:
 
 ![Screenshot](https://i.imgur.com/QtkTYHn.png)
 
-Confirms your name and lays out the game rules. Press start game to proceed.
+_Confirms your name and lays out the game rules. Press start game to proceed._
 
 ### Game page
 
 ![Screenshot](https://i.imgur.com/31RB8pZ.png)
 
-This is a typical game page. You can keep an eye on how many times you have
-lost the game and what hand your opponent played.
+_This is a typical game page. You can keep an eye on how many times you have
+lost the game and what hand your opponent played._
