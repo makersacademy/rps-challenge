@@ -18,10 +18,11 @@ class Game
     @computer = computer
   end
 
-  def rps(p_choice, c_choice)
-    return @result = "DRAW" if player_choice == computer_choice
+  def rps
+    computer.makes_choice
+    return @result = "DRAW" if player.choice == computer.choice
     c_win = [["ROCK", "PAPER"], ["PAPER", "SCISSORS"], ["SCISSORS", "ROCK"]]
-    @result = c_win.include?([p_choice, c_choice]) ? "Computer wins" : "Player wins"
+    @result = c_win.include?([player.choice, computer.choice]) ? "Computer wins" : "Player wins"
   end
 
 end

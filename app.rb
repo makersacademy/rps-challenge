@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/game'
 require './lib/player'
+require 'pry'
 
 class Rps < Sinatra::Base
 
@@ -26,9 +27,8 @@ class Rps < Sinatra::Base
   end
 
   post '/selection' do
-    player_choice = @game.player.makes_choice(params[:player_choice])
-    computer_choice = @game.computer.makes_choice
-    @game.rps(player_choice, computer_choice)
+    @game.player.makes_choice(params[:player_choice])
+    @game.rps
     redirect '/result'
   end
 
