@@ -19,6 +19,7 @@ feature 'playing rps' do
   end
 
   scenario 'game selects random shape' do
+    srand(324345)
     click_button 'rock'
     message = find(:css, "#opponent").text
     expect(page).to have_content "Opponent selected scissors!"
