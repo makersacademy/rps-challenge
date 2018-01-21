@@ -1,8 +1,12 @@
 # Rock, Paper, Scissors
 
-This is the classic _Rock, Paper, Scissors_ game. In this version you play against the 'Machine'. This project is built with test driven development (TDD) approach.
+This is the classic _Rock, Paper, Scissors_ game. In this version you play against the 'Machine'. This project was built with test driven development (TDD) approach.
 
 The site is built in Sinatra, Ruby, HTML and tested with RSpec, Capybara.  
+
+One of the challenges I faced whilst working on this project was that refreshing the page whilst in play caused the players to have a turn. This was because all the code for the player moves were taking place in the '_get_' part of my route/control. By creating a separate '_post_' route and moving the '_Ruby_' code across to it. This meant that every time the client clicked an action button they were making a '_POST_' request first. The server side dealt with this '_POST_' request by running the code and sending back a '_303_' redirect for the client to make a '_GET_' request to display the result.
+
+So, on refresh the client was only getting back what they already received on the previous '_GET_' request and no critical code was being actioned on.
 
 ## Setup
 
