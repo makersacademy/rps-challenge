@@ -20,13 +20,14 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/weapon' do
-    session[:game].player.selection(params[:weapon])
+    session[:game].player.selection(params[:weapon].to_sym)
     session[:game].computer
     redirect '/winner'
   end
 
   get '/winner' do
-    session[:winner] = session[:game].winner
+    # session[:game].winner
+    # binding.pry
     erb :winner
   end
 

@@ -1,8 +1,5 @@
+WINNER DECLARED:
 
-<h1> <%= session[:winner] %> </h1>
-
-<!-- <p> <%= session[:game].player.name %> chooses <%= session[:game].player.weapon %> </p>
-<p> Computer chooses <%= session[:game].opposition %> </p>
-<%= puts session[:game].winner %>
-<p><form action="/play"> <input type="submit" id="redirect_play" value="continue"> </form></p>
-<br> -->
+<p> <%= (session[:game]).player.name %> chooses <%= (session[:game]).player.weapon %> </p>
+<p> Computer chooses <%= (session[:game]).opposition %> </p>
+    <%= session[:game].winner %>

@@ -7,7 +7,7 @@ class Game
   RULES = { rock: :scissors, paper: :rock, scissors: :paper }
 
   attr_reader :player
-  attr_accessor :opposition
+  attr_accessor :opposition, :result
 
   def initialize(player = Player)
     @player = player
@@ -16,11 +16,11 @@ class Game
 
   def winner
     if RULES[self.player.weapon] == @opposition
-      return "Player Wins!"
+      "Player Wins!"
     elsif RULES[@opposition] == self.player.weapon
-      return "Player Loses!"
+      "Player Loses!"
     elsif @opposition == self.player.weapon
-      return "A draw..."
+      "A draw..."
     end
   end
 
