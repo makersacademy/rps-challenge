@@ -1,8 +1,28 @@
-You drew!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <link href="./draw_lose_win_stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+  </head>
 
-<form action="/play">
-  <button type="submit" value="back">Back</button>
-</form>
+  <body>
 
-Score <%= @game.player.name %> : <%= @game.player.wins %>
-Computer : <%= @game.computer.wins %>
+    <h1>You drew!</h1>
+    <p>You both picked <%= @game.choices[0] %></p>
+
+    <div class="container">
+      <span><%= @game.player.name %> : <%= @game.player.wins %>  </span>
+      <span>  Computer : <%= @game.computer.wins %></span>
+    </div>
+
+    <form action="/play">
+      <button type="submit" value="back"><span>Back</span></button>
+    </form>
+
+  </body>
+  </html>

@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  padding-top: 10rem;
+  letter-spacing: 0.4rem;
+  font-family: 'Bad Script', cursive;
+  font-size: 5em;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.2rem;
+  color: hsl(0, 0%, 50%);
+  padding-top: 1em;
+  background-color: white;
+  z-index: 5;
+}
+
+span {
+  padding-top: 3.5em;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
+
+.container {
+  margin-top: -0.1em;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1em;
+  padding: 0.5em;
+  border: 1px solid hsl(0, 0%, 80%);
+  z-index: 0;
+  border-radius: 10px;
+  letter-spacing: 0.2em;
+}
+
+button[type=submit] {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 93%);
+  border: none;
+  text-align: center;
+  height: 29px;
+  transition: background-color 1s ease;
+  margin-top: 5em;
+}
+
+button[type=submit]:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+button[type=submit]:active {
+  transform: translateY(1.5px);
+}
+
+button[type=submit]:focus {
+  outline:0;
+}
+
+button[type=submit] span {
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  font-size: 1.2em;
+  padding-left: 0.4em;
+}

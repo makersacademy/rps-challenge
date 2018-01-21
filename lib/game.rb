@@ -2,7 +2,7 @@ require_relative './computer.rb'
 
 class Game
 
-  attr_reader :player, :rounds, :winner, :computer
+  attr_reader :player, :rounds, :winner, :computer, :choices
 
   def initialize(player, computer = Computer.new)
     @player = player
@@ -20,6 +20,7 @@ class Game
   end
 
   def calculate(player, computer = @computer.choice)
+    @choices = [player, computer]
     if player_win?(player, computer)
       win
     elsif player_lose?(player, computer)
