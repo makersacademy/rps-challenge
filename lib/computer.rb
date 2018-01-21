@@ -9,7 +9,8 @@ class Computer < Player
     @weapons = weapons
   end
 
-  def choice
-    @weapons.sample
+  def move(*)
+    @choice =  @weapons.sample
   end
+
 end

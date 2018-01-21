@@ -16,10 +16,22 @@ describe Computer do
     end
   end
 
-  describe "#choice" do
+  describe "#move" do
     it "should choose a random weapon" do
       expect(weapons).to receive(:sample)
-      computer.choice
+      computer.move
+    end
+
+    it "should set choice to weapon a random weapon" do
+      allow(weapons).to receive(:sample).and_return("paper")
+      computer.move
+      expect(computer.choice).to eq "paper"
+    end
+
+    it "should accept one arguement but not affect its process" do
+      allow(weapons).to receive(:sample).and_return("paper")
+      expect(computer).to respond_to(:move).with(1).argument
+      computer.move("idea")
     end
   end
 
