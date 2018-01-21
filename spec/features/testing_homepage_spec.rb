@@ -11,7 +11,7 @@ feature 'Testing homepage content' do
 
   scenario 'Run the app and check page content - third line' do
     visit('/')
-    expect(page).to have_content 'Each turn you choose between Rock, Paper, Scissors!'
+    expect(page).to have_content 'You can choose between Rock, Paper, Scissors!'
   end
 
 end

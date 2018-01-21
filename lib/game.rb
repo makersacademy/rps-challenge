@@ -8,4 +8,13 @@ class Game
     @computer = computer
 
   end
-end 
+
+  def self.start(player, computer)
+  @game = Game.new(player, computer)
+end
+
+def self.instance
+  @game
+end
+
+end

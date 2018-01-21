@@ -5,4 +5,5 @@ feature 'Enter name' do
     click_button 'Let\'s Play!'
     expect(page).to have_content 'Tiana vs. Computer!'
   end
+
 end

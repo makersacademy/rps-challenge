@@ -6,4 +6,6 @@ describe Game do
     expect(game.player).to eq('Tiana')
     expect(game.computer).to eq('Computer')
   end
+
+  
 end
