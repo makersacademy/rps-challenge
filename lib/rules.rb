@@ -1,4 +1,4 @@
-class GoManager
+class Rules
   # understands the rules of a go
   #   rock blunts scissors
   #   scissors cut paper

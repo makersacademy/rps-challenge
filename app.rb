@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
-require './lib/go_manager'
+require './lib/rules'
 require './lib/player'
 
 class Rps < Sinatra::Base
@@ -13,8 +13,8 @@ class Rps < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:player1_name])
     player2 = Player.new
-    go_manager = GoManager.new
-    Game.new_game(player1, player2, go_manager)
+    rules = Rules.new
+    Game.new_game(player1, player2, rules)
     redirect '/play'
   end
 

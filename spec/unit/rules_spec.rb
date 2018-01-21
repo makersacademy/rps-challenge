@@ -1,9 +1,9 @@
-require 'go_manager'
-describe GoManager do
+require 'rules'
+describe Rules do
   let(:player1)          { double :player_1, name: :Bob }
   let(:player2)          { double :player_2, name: :Ted }
   # let(:name)              { 'Ben' }
-  subject(:go_manager) { described_class.new }
+  subject(:rules) { described_class.new }
 
   it "should have a array with all of the goes in" do
     expect(subject.valid_goes).to eq [:rock, :paper, :scissors]
@@ -38,23 +38,4 @@ describe GoManager do
     expect(subject.valid_goes).to include(random_go)
   end
 
-  # describe '#player_1' do
-  #   it 'retrieves the first player' do
-  #     expect(game.player_1).to eq player_1
-  #   end
-  # end
-  #
-  # describe '#player_2' do
-  #   it 'retrieves the second player' do
-  #     expect(game.player_2).to eq player_2
-  #   end
-  # end
-  #
-  # describe '#switch_turns' do
-  #   it "Should switch players" do
-  #     game.switch_turns
-  #     expect(game.current_turn).to eq player_2
-  #   end
-  #
-  # end
 end
