@@ -4,11 +4,6 @@ feature 'How_to page' do
     expect(page).to have_content 'How to Play'
   end
 
-  scenario 'the page has a place to enter name' do
-    visit_how_to
-    expect(page).to have_content 'Name'
-  end
-
   scenario 'the page has a submit button' do
     visit_how_to
     expect(page).to have_content 'Start'
