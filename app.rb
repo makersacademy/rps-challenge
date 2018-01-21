@@ -30,7 +30,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/choices" do
     @game.player_1.move(params["attack"])
-    @game.player_2.move
+    @game.player_2.move(params["attack_2"])
     redirect "/result"
   end
 
