@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: 80%;
+  flex-wrap: nowrap;
+  padding-top: 10em;
+}
+
+img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(40%);
+  height: 180px;
+  width: 180px;
+}
+
+.formcontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: 80%;
+  flex-wrap: nowrap;
+  padding-top: 1.5em;
+}
+
+button[type=submit] {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 93%);
+  border: none;
+  text-align: center;
+  height: 29px;
+  transition: background-color 1s ease;
+  margin-left: 2em;
+}
+
+button[type=submit]:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+button[type=submit]:active {
+  transform: translateY(1.5px);
+}
+
+button[type=submit]:focus {
+  outline:0;
+}
+
+span {
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  font-size: 1.2em;
+  padding-left: 0.4em;
+}
