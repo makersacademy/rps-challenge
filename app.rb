@@ -23,8 +23,13 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post "/result" do
+  post "/choices" do
     @game.player_1.move(params["attack"])
+    @game.player_2.move
+    redirect "/result"
+  end
+
+  get "/result" do
     @result = @game.winner
     erb :result
   end
