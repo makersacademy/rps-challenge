@@ -11,6 +11,14 @@ class RPS < Sinatra::Base
     erb :index
   end
 
+  get '/singleplayer' do
+    erb :singleplayer
+  end
+
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
   post '/play' do
     Game.create(Player.new(params[:player_name]))
     redirect '/play'
