@@ -13,3 +13,9 @@ def attack_with_rock
   click_button "Attack your opponent"
   check_its_not_error_page
 end
+
+def make_attack_with_different_objects(attack)
+  login_with_derek
+  choose(attack)
+  click_button "Attack your opponent"
+end
