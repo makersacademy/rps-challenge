@@ -1,0 +1,12 @@
+<div style="width: 50%; margin: 10% auto; text-align: center">
+
+<h2> Pshttt. I've already beat <%= rand(1000) %> humans called <%= @game.player.name%></h2>
+<br>
+
+<p>Ready to get beat? Pick below</p>
+<form action='/move' method='post'>
+  <input type="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/477918-200.png" name="move" value="rock">
+  <input type="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/477922-200.png" name="move" value="paper">
+  <input type="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/477919-200.png" name="move" value="scissors">
+</form>
+</div>

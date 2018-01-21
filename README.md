@@ -2,12 +2,21 @@
 
 Instructions
 -------
+```
+clone this repository
+$ rackup 
+visit localhost:9292 
+```
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Step 1.) Enter Name
+![homepage](https://i.imgur.com/6v1hWvn.png)
+
+Step 2.) Select your move 
+![play](https://i.imgur.com/l6CedSt.png)
+
+Step 3.) Result
+![result](https://i.imgur.com/jbfgFwS.png)
+
 
 Task
 ----
