@@ -13,17 +13,18 @@ h1 { text-align: center;
 }
 
 input[type="submit"]:hover {
-	border: none;
-	background-color: yellow;
-    padding: 50px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 12px;
-    font-size: 20px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
+      border: none;
+      background-color: yellow;
+      color: green;
+      padding: 50px 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 12px;
+      font-size: 20px;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+  }
 
 h2 {  text-align: center;
       font-family: "Lucida Console", Monaco, monospace;
@@ -35,7 +36,7 @@ h2 {  text-align: center;
 
 form {
     margin: 0 auto;
-    width: 400px;
+    width: 500px;
 
 }
 
@@ -43,24 +44,29 @@ select {
         font-family: "Lucida Console", Monaco, monospace;;
         width: 400px;
         box-sizing: border-box;
+        font-size: 30px;
         border: 1px solid #999;
         color: green;
+        margin-right: 50px;
 }
 
 label {
     font-family: "Lucida Console", Monaco, monospace;
     color: yellow;
     text-align: center;
+    font-size: 25px;
     word-spacing: 10px;
     text-shadow: 3px 5px green;
 }
 
 input {
   font-family: "Lucida Console", Monaco, monospace;
+  color: green !important;
   width: 400px;
+  font-size: 30px;
   box-sizing: border-box;
   border: 1px solid #999;
-  color: green;
+  margin-right: 50px;
 }
 
 a:link, a:visited {

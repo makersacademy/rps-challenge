@@ -8,7 +8,7 @@
 <% end %>
 
  <form action="/weapon_choice" method="post">
-  <label for ="player_1_weapon"> <%= @game.player_1.name%>'s Weapon Choice
+  <label for ="player_1_weapon"> <%= @game.player_1.name%>'s Weapon Choice </label>
     <select name ="player_1_weapon">
       <option value="Rock">Rock</option>
       <option value="Paper">Paper</option>
@@ -16,9 +16,8 @@
       <option value="Spock">Spock</option>
       <option value="Lizard">Lizard</option>
     </select>
-  </label>
   <% unless @game.player_2.is_a?(ComputerPlayer) %>
-    <label for ="player_2_weapon"> <%= @game.player_2.name%>'s Weapon Choice
+    <label for ="player_2_weapon"> <%= @game.player_2.name%>'s Weapon Choice </label>
       <select name ="player_2_weapon">
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
@@ -26,7 +25,6 @@
         <option value="Spock">Spock</option>
         <option value="Lizard">Lizard</option>
       </select>
-    </label>
   <%end%>
   <div>
   </label>
