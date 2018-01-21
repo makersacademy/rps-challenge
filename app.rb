@@ -15,7 +15,12 @@ class RockPaperScissors < Sinatra::Base
 
   post "/start" do
     player_1 = Player.new(params["Enter name"])
-    Game.create(player_1)
+    if params["Player two"] == ""
+      Game.create(player_1)
+    else
+      player_2 = Player.new(params["Player two"])
+      Game.create(player_1, player_2)
+    end
     redirect "/play"
   end
 
