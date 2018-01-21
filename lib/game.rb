@@ -20,6 +20,9 @@ class Game
   end
 
   def win_condition
+    p '---------------'
+    p player2.weapon
+    p '---------------'
     if rules[player1.weapon].include?(player2.weapon)
       return "#{player1} Won!"
     elsif rules[player1.weapon].include?(player2.weapon)
@@ -28,7 +31,6 @@ class Game
       return 'You drew!'
      end
 
-    # rules[player1.weapon].include?(player2.weapon) ? "#{player1} Won!" : "#{player2} Won!"
   end
 
   def rules

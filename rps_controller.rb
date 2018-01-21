@@ -30,6 +30,9 @@ class RPS < Sinatra::Base
   get '/game' do
     @action = @game.player1.weapon
     @player_name = @game.player1.name
+    p @game.players
+    p @game.player2.weapon
+    p @game.result
     erb :game
   end
 
