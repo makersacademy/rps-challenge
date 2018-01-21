@@ -20,3 +20,5 @@ Open a browser and navigate to localhost:9292 or the given port on the rack star
 On running the game you will be greeted with the following page;
 
 [Imgur](https://i.imgur.com/7wdBo5o.png)
+
+![Screenshot](https://i.imgur.com/7wdBo5o.png)
