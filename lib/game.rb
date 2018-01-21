@@ -26,6 +26,3 @@ class Game
   end
 
 end
-
-
-# win_extras = { ROCK: :LIZARD, PAPER: :SPOCK, SCISSORS: :LIZARD, LIZARD: :PAPER, LIZARD: :SPOCK, SPOCK: :ROCK, SPOCK: :SCISSORS }
