@@ -20,8 +20,8 @@ before do
   @game = Game.instance
 end
 
-get '/selection' do
-  
+post '/selection' do
+
 end
 
 

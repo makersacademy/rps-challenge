@@ -6,4 +6,8 @@ attr_reader :name
   @name = name
   end
 
+  def option(player_selection)
+    @player_selection = player_selection
+  end
+
 end
