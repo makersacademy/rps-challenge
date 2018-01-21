@@ -18,9 +18,9 @@ feature 'playing rps' do
     expect(page).to have_content 'You selected rock!'
   end
 
-  scenario 'game chooses "rock"' do
+  scenario 'game selects shape' do
     click_button 'rock'
-    expect(page).to have_content "Your opponent selected rock!"
+    expect(page).to have_content 'Opponent selected rock!'
   end
 
 
