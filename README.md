@@ -1,7 +1,6 @@
 # RPS Challenge
 
 [![Build Status](https://travis-ci.org/Leigan0/rps-challenge.svg?branch=master)](https://travis-ci.org/Leigan0/rps-challenge)
-[![Coverage Status](https://coveralls.io/repos/github/Leigan0/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Leigan0/rps-challenge?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/69372f7fd256677db6ca/maintainability)](https://codeclimate.com/github/Leigan0/rps-challenge/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/69372f7fd256677db6ca/test_coverage)](https://codeclimate.com/github/Leigan0/rps-challenge/test_coverage)
 
