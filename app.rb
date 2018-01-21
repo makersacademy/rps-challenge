@@ -13,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post "/play" do
+  post "/start" do
     Game.create(params["Enter name"])
     redirect "/play"
   end

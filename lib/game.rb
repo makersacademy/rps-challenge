@@ -1,5 +1,4 @@
 class Game
-
   def self.create(player)
     @running ||= Game.new(player)
   end
@@ -9,7 +8,6 @@ class Game
   end
 
   WEAPONS = ["rock", "paper", "scissors"]
-
   attr_reader :player
 
   def initialize(player)
