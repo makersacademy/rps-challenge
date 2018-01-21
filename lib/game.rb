@@ -2,6 +2,17 @@ class Game
 
   attr_reader :player, :computer
 
+  WIN_MOVES = [
+    ["Rock", "Scissors"],
+    ["Paper", "Rock"],
+    ["Scissors", "Paper"]
+  ]
+
+  DRAW_MOVES = [
+    ["Rock", "Rock"],
+    ["Paper", "Paper"],
+    ["Scissors", "Scissors"]
+  ]
 
   def initialize(player, computer)
     @player = player
