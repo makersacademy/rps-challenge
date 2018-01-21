@@ -36,6 +36,7 @@ class Game
         "It's a draw!"
       end
     else
+      "Error! Try again!"
     end
   end
 

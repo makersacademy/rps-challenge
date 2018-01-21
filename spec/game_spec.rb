@@ -70,5 +70,13 @@ describe Game do
         expect(game.play_match("scissors", "scissors")).to eq("It's a draw!")
       end
     end
+
+    context "blank player choice" do
+      it "returns an appropriate message" do
+        expect(game.play_match(["rock", "paper", "scissors"].sample, ""))
+          .to eq("Error! Try again!")
+      end
+    end
+
   end
 end

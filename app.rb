@@ -5,15 +5,17 @@ require './lib/ai'
 
 class Rps < Sinatra::Base
 
-  # enable :sessions
-
   get "/" do
     erb :index
   end
 
   post "/name" do
     $player = Player.new(params[:player])
-    # redirect "/play"
+    redirect "/start"
+  end
+
+  get "/start" do
+    @player = $player
     erb :play
   end
 
@@ -24,11 +26,6 @@ class Rps < Sinatra::Base
     @result = game.play_match(@ai_choice, $player.choice)
     erb :result
   end
-
-  # get '/result' do
-  #   @ai.choice
-  #   erb :result
-  # end
 
   run! if app_file == $0
 end

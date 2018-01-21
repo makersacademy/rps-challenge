@@ -1,14 +1,56 @@
 body {
-  background-color: #1f263b;
+  background: #FC354C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% top;
+  background-attachment: fixed;
+
   color: white;
   font-family: verdana;
-  font-size: 14px;
+  font-size: 20px;
+  line-height: 200%;
+  margin: 100px, auto;
 }
 
 h1 {
+  margin-top: 70px;
+  margin-bottom: 100px;
   text-align: center;
+   text-shadow: 2px 2px 4px #000000;
 }
 
 h2 {
   text-align: center;
+}
+
+#page-wrap {
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+form {
+  /* padding-left: 180px; */
+}
+
+#rock, #paper, #scissors {
+  /* padding-left: 250px; */
+  font-size: 14px;
+}
+
+.button {
+    background-color: #0ABFBC;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -9,15 +9,18 @@
 <body>
   <h1><i class="fa fa-hand-o-right" aria-hidden="true"></i> ROCK - PAPER - SCISSOR <i class="fa fa-hand-o-left" aria-hidden="true"></i></h1>
 
-  <h2> Hi, <strong><%= $player.name %></strong></h2>
+  <div id="page-wrap">
+    <h2> Hi, <strong><%= $player.name %></strong></h2>
 
-  <p>You played: <strong><%= $player.choice %> </strong></p>
-  <p>The computer played: <strong><%= @ai_choice %> </strong></p>
-  <h3><%= @result %></h3>
+    <p>You played: <strong><%= $player.choice %> </strong></p>
+    <p>The computer played: <strong><%= @ai_choice %> </strong></p>
+    <h3><%= @result %></h3>
 
-  <h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Good Match!</h3>
+    <h3><i class="fa fa-handshake-o" aria-hidden="true"></i> Good Match!</h3>
 
-  <!-- <button>Play again!</button> -->
-
+    <form action="/start">
+      <input class="button" type="submit" value="Play again!">
+    </form>
+  </div>
 </body>
 </html>
