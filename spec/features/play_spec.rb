@@ -20,7 +20,7 @@ feature 'playing rps' do
 
   scenario 'game selects shape' do
     click_button 'rock'
-    message = find(:css, "#opponent").text.strip
+    message = find(:css, "#opponent").text
     expect(possible_messages).to include message
   end
 
