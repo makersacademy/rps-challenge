@@ -27,6 +27,6 @@ feature 'Radio Buttons' do
 
   scenario 'radio submit' do
     sign_in
-    expect(page).to have_unchecked_field('submit')
+    expect(page).to have_button('Submit')
   end
 end

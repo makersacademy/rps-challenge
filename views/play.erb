@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-      <title>RPSLS</title>
-    </head>
-    <body>
-      <header>
+
         <h1> Welcome <%= @player_name %>! </h1>
-        <h3> This game is Rock-Paper-Scissors-Lizard-Spock! </h3>
-      </header>
-      <main>
+
         <form action = '/game' method = 'post'>
           <input type = "radio" id = 'rock' name = "weapon" value = "Rock" >
           <label for= 'rock'> Rock </label>
@@ -21,7 +13,3 @@
           <input type = "radio" id = 'spock' name = "weapon" value = "Spock" >
           <label for = 'spock'> Spock </label>
           <input type = "submit" value = "Submit" >
-        </form>
-      </main>
-    </body>
-  </html>

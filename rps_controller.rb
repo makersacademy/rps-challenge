@@ -25,8 +25,7 @@ class RPS < Sinatra::Base
 
   get '/game' do
     @action = $action
-    p $action
-    p @action
+    @player_name = $player1
     erb :game
   end
 
