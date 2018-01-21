@@ -26,12 +26,13 @@ class RPSWeb < Sinatra::Base
   post '/game' do
     weapon = params[:weapon]
     @game.weapon_selected(weapon)
-    @outcome = @game.result
+    @game.outcome = @game.result
 
     redirect '/game'
   end
 
   get '/game' do
+
     erb :game
   end
 
