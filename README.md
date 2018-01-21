@@ -1,5 +1,8 @@
 # RPS Challenge
 
+[![Build Status](https://travis-ci.org/Leigan0/rps-challenge.svg?branch=master)](https://travis-ci.org/Leigan0/rps-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/Leigan0/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Leigan0/rps-challenge?branch=master)
+
 I have written this code to complete the challenge below to meet the user stories provided.
 
 I have aimed to solve this challenge using the BDD cycle, with a test driven approach.
