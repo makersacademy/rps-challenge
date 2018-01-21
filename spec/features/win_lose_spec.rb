@@ -13,6 +13,7 @@ feature "you choose rock, and it gives the result.." do
     attack_with_rock
     expect(page).to have_content("computer choses scissors")
     expect(page).to have_content("Derek won!")
+    expect(page).not_to have_content("computer won!")
   end
 
   scenario "draw, when the game picks rock" do
