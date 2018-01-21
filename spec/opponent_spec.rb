@@ -5,7 +5,7 @@ describe Opponent do
 
   describe '#shape' do
     it 'returns a random shape' do
-      expect([:rock, :paper, :scissors]).to include opponent.shape 
+      expect(Opponent::SHAPES).to include opponent.shape
     end
   end
 end

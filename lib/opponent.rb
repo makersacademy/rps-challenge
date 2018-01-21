@@ -1,5 +1,7 @@
 class Opponent
+  SHAPES = [:rock, :paper, :scissors]
+
   def shape
-    [:rock, :paper, :scissors].sample
+    SHAPES.sample
   end
 end
