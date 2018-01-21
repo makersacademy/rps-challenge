@@ -38,7 +38,7 @@ end
 feature 'User can cannot select a weapon other than RockPaperScissors' do
   scenario 'User picks an option from list ' do
     enter_name_and_confirm
-		expect(page).to have_select("player_1_weapon", :with_options => ["Rock", "Scissors", "Paper", "Spock", "Lizard"])
+    expect(page).to have_select("player_1_weapon", :with_options => ["Rock", "Scissors", "Paper", "Spock", "Lizard"])
     expect(page).not_to have_select("player_1_weapon", options: ["gun"])
   end
 end
