@@ -21,7 +21,15 @@ before do
 end
 
 post '/selection' do
+  player_option = @game.player.option(params[:option])
+  computer_option = @game.computer.option
+  @game.moves(player_option, computer_option)
+  @game.result
+  redirect '/result'
+end
 
+get '/result' do
+  erb :result
 end
 
 

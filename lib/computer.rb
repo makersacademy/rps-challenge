@@ -1,6 +1,6 @@
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :computer_selection
 
   def initialize
     @name = "Computer"
