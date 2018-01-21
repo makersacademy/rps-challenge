@@ -69,3 +69,8 @@ button[type=submit] span {
   font-size: 1.2em;
   padding-left: 0.4em;
 }
+
+img {
+  height: 400px;
+  width: 860px;
+}

@@ -1,1 +1,34 @@
-You are the winner!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <link href="./draw_lose_win_stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="imagecontainer">
+      <img src="./resources/success.jpg">
+    </div>
+
+    <p><%= @game.choices[0] %> beat <%= @game.choices[1] %></p>
+
+    <div class="container">
+      <span><%= @game.player.name %> : <%= @game.player.wins %>  </span>
+      <span>  Computer : <%= @game.computer.wins %></span>
+    </div>
+
+    <br>
+
+    <p>If you're half as good at marketing as you are at this game, you must be a pretty good marketeer</p>
+
+    <form action="/how_to">
+      <button type="submit" value="again"><span>Again?</span></button>
+    </form>
+  </body>
+  </html>
