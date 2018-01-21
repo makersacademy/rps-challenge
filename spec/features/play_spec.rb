@@ -15,7 +15,7 @@ feature 'playing rps' do
 
   scenario 'choose a shape' do
     click_button 'ROCK'
-    expect(page).to have_content 'You selected Rock!'
+    expect(page).to have_content 'You selected ROCK!'
   end
 
 end
