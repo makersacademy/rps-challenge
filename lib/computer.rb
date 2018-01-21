@@ -2,13 +2,14 @@ require_relative "player"
 
 class Computer < Player
 
-    WEAPONS = ["rock", "paper", "scissors"]
+  WEAPONS = ["rock", "paper", "scissors"]
 
-   def initialize(name = "computer")
-     @name = name
-   end
+  def initialize(name = "computer", weapons = WEAPONS)
+    @name = name
+    @weapons = weapons
+  end
 
-   def choice(options = WEAPONS)
-     options.sample
-   end
+  def choice
+    @weapons.sample
+  end
 end

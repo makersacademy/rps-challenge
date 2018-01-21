@@ -9,16 +9,11 @@ class Game
     @running
   end
 
-  WEAPONS = ["rock", "paper", "scissors"]
   attr_reader :player_1, :player_2
 
-  def initialize(player_1, player_2 = Player.new("computer"))
+  def initialize(player_1, player_2 = Computer.new)
     @player_1 = player_1
     @player_2 = player_2
-  end
-
-  def choice
-    WEAPONS.sample
   end
 
   def winner

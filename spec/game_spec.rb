@@ -20,12 +20,6 @@ describe Game do
     end
   end
 
-  describe "#choice" do
-    it "should return a weapon" do
-      expect(Game::WEAPONS).to include(game.choice)
-    end
-  end
-
   describe "#winnner" do
     let(:win) { "win" }
     let(:lose) { "lose" }

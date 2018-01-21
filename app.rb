@@ -25,7 +25,6 @@ class RockPaperScissors < Sinatra::Base
 
   post "/result" do
     @game.player_1.move(params["attack"])
-    @game.player_2.move(@game.choice)
     @result = @game.winner
     erb :result
   end
