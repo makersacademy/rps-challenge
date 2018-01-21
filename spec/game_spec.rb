@@ -1,8 +1,8 @@
 require "game"
 
 describe Game do
-  let(:player) { double :player }
-  let(:computer) { double :player }
+  let(:player) { double :player, name: "Derek" }
+  let(:computer) { double :player, name: "Clement" }
   let(:game) { described_class.new(player, computer) }
 
   def set_choice(a, b)
@@ -21,9 +21,9 @@ describe Game do
   end
 
   describe "#winnner" do
-    let(:win) { "win" }
-    let(:lose) { "lose" }
-    let(:draw) { "draw" }
+    let(:win) { "Derek won!" }
+    let(:lose) { "Clement won!" }
+    let(:draw) { "You drew" }
 
     it "should return draw when paper and paper is given" do
       set_choice("paper", "paper")
