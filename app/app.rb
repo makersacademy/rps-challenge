@@ -1,35 +1,42 @@
 require 'sinatra/base'
 require_relative '../lib/player'
 require_relative '../lib/computer'
+require_relative '../lib/game'
 
 class RPS < Sinatra::Base
+  attr_reader :game
+
   enable :sessions
+
+  attr_reader :game
 
   get '/' do
     erb :index
   end
 
   post '/name' do
-    session[:player] = Player.new(params[:player_name])
+    @player1 = Player.new(params[:player_name])
+    @player2 = Computer.new
+    @game = Game.new(@player1, @player2)
+    session[:game] = @game
     redirect to '/choice'
   end
 
   get '/choice' do
-    @player = session[:player]
+    @game = session[:game]
     erb :choice
   end
 
   post '/moved' do
-    @player = session[:player]
-    @player.choose(params[:choice].to_sym)
-    session[:player] = @player
+    @game = session[:game]
+    @game.player1.choose(params[:choice].to_sym)
+    @game.player2.choose(params[:choice].to_sym)
+    session[:game] = @game
     redirect to '/outcome'
   end
 
   get '/outcome' do
-    @player = session[:player]
-    @computer = Computer.new
-    @computer.choose
+    @game = session[:game]
     erb :outcome
   end
 end

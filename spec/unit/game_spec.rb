@@ -19,19 +19,17 @@ describe Game do
 
       it 'player 1 wins if player 2 picked scissors' do
         allow(player2).to receive(:move).and_return(:scissors)
-        game.determine_outcome
         expect(game.winner).to eq player1
       end
 
       it 'player 1 loses if player 2 picked paper' do
         allow(player2).to receive(:move).and_return(:paper)
-        game.determine_outcome
         expect(game.winner).to eq player2
       end
 
       it 'ties if player 2 picked rock' do
         allow(player2).to receive(:move).and_return(:rock)
-        expect(game.determine_outcome).to eq :tie
+        expect(game.winner).to eq :tie
       end
     end
 
@@ -40,19 +38,17 @@ describe Game do
 
       it 'player 1 wins if player 2 picked rock' do
         allow(player2).to receive(:move).and_return(:rock)
-        game.determine_outcome
         expect(game.winner).to eq player1
       end
 
       it 'player 1 loses if player 2 picked scissors' do
         allow(player2).to receive(:move).and_return(:scissors)
-        game.determine_outcome
         expect(game.winner).to eq player2
       end
 
       it 'ties if player 2 picked paper' do
         allow(player2).to receive(:move).and_return(:paper)
-        expect(game.determine_outcome).to eq :tie
+        expect(game.winner).to eq :tie
       end
     end
 
@@ -61,19 +57,17 @@ describe Game do
 
       it 'player 1 wins if player 2 picked paper' do
         allow(player2).to receive(:move).and_return(:paper)
-        game.determine_outcome
         expect(game.winner).to eq player1
       end
 
       it 'player 1 loses if player 2 picked rock' do
         allow(player2).to receive(:move).and_return(:rock)
-        game.determine_outcome
         expect(game.winner).to eq player2
       end
 
       it 'ties if player 2 picked scissors' do
         allow(player2).to receive(:move).and_return(:scissors)
-        expect(game.determine_outcome).to eq :tie
+        expect(game.winner).to eq :tie
       end
     end
 

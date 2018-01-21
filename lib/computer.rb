@@ -1,11 +1,12 @@
 class Computer
-  attr_reader :move
+  attr_reader :move, :name
 
   def initialize
     @moves = [:rock, :paper, :scissors]
+    @name = "Computer"
   end
 
-  def choose
+  def choose(opt = 0)
     @move = random
   end
 
