@@ -28,12 +28,7 @@ class Game
   end
 
   def winner
-    if player2.move == player.move
-      return "No one"
-    elsif WINNING_PAIRS[player.move] == player2.move
-      return player.name
-    else
-      return player2.name
-    end 
+    return "No one" if player2.move == player.move
+    WINNING_PAIRS[player.move] == player2.move ? player.name : player2.name
   end
 end
