@@ -2,7 +2,7 @@ require 'computer'
 
 describe Computer do
 
-  subject(:computer) {described_class.new}
+  subject(:computer) { described_class.new }
 
   describe '#makes_choice' do
     it 'provides one of 3 options' do
