@@ -1,15 +1,15 @@
-body {
-	background-image: url('https://i.ytimg.com/vi/5jZ8OjJHLTw/maxresdefault.jpg');
-	background-size: 100%
+body {  background-image: url('https://i.ytimg.com/vi/5jZ8OjJHLTw/maxresdefault.jpg');
+background-size: 100%
 }
 
 
-h1 { text-align: center;
-    font-family: "Lucida Console", Monaco, monospace;
-    color: yellow;
-    word-spacing: 10px;
-    text-shadow: 3px 5px green;
-    font-size: 70px;
+h1 {
+  text-align: center;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: yellow;
+  word-spacing: 10px;
+  text-shadow: 3px 5px green;
+  font-size: 70px;
 }
 
 input[type="submit"]:hover {
@@ -26,37 +26,38 @@ input[type="submit"]:hover {
       transition-duration: 0.4s;
   }
 
-h2 {  text-align: center;
-      font-family: "Lucida Console", Monaco, monospace;
-	    color: yellow;
-      word-spacing: 10px;
-      text-shadow: 3px 5px green;
-      font-size: 40px;
+h2 {
+  text-align: center;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: yellow;
+  word-spacing: 10px;
+  text-shadow: 3px 5px green;
+  font-size: 40px;
 }
 
 form {
-    margin: 0 auto;
-    width: 500px;
+  margin: 0 auto;
+  width: 500px;
 
 }
 
 select {
-        font-family: "Lucida Console", Monaco, monospace;;
-        width: 400px;
-        box-sizing: border-box;
-        font-size: 30px;
-        border: 1px solid #999;
-        color: green;
-        margin-right: 50px;
+  font-family: "Lucida Console", Monaco, monospace;;
+  width: 400px;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 1px solid #999;
+  color: green;
+  margin-right: 50px;
 }
 
 label {
-    font-family: "Lucida Console", Monaco, monospace;
-    color: yellow;
-    text-align: center;
-    font-size: 25px;
-    word-spacing: 10px;
-    text-shadow: 3px 5px green;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: yellow;
+  text-align: center;
+  font-size: 25px;
+  word-spacing: 10px;
+  text-shadow: 3px 5px green;
 }
 
 input {
@@ -70,7 +71,7 @@ input {
 }
 
 a:link, a:visited {
-    color: green;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 25px;
+  color: green;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 25px;
 }
