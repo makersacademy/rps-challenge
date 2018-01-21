@@ -12,4 +12,11 @@ feature 'Winning and Losing' do
     click_button 'Rock'
     expect(page).to have_content("You won!")
   end
+
+  scenario 'Player and computer tie' do
+    allow_any_instance_of(Computer).to receive(:choose_weapon).and_return(:rock)
+    sign_in_and_play
+    click_button 'Rock'
+    expect(page).to have_content("You tied!")
+  end
 end
