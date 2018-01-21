@@ -18,4 +18,9 @@ feature '#Game Page' do
     sign_in_and_play
     expect(page).to have_selector("input[type=submit][value='SCISSORS']")
   end
+
+  # scenario 'Should display results' do
+  #   sign_in_play_select_rock
+  #   expect(page).to have_text 'Felix won'
+  # end
 end

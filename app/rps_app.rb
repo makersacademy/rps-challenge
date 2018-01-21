@@ -24,20 +24,15 @@ class RPSWeb < Sinatra::Base
   end
 
   post '/game' do
+    weapon = params[:weapon]
+    @game.weapon_selected(weapon)
+    @outcome = @game.result
+
     redirect '/game'
   end
 
   get '/game' do
     erb :game
-  end
-
-  post '/result' do
-
-    redirect '/result'
-  end
-
-  get '/result' do
-    erb :result
   end
 
   # start the server if ruby file executed directly

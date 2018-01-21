@@ -7,11 +7,26 @@
 </div>
 
 <div>
-  <form action="/result" method="post">
-    <h2><input type="submit" name='rock' value="ROCK"><input type="submit" name='paper' value="PAPER"><input type="submit" name='scissors' value="SCISSORS"></h2>
+  <form action="/game" method="post">
+    <input type="hidden" name="weapon" value="rock">
+    <h2><input type="submit" name='rock' value="ROCK"></h2>
+  </form>
+  <form action="/game" method="post">
+    <input type="hidden" name="weapon" value="paper">
+    <h2><input type="submit" name='paper' value="PAPER"></h2>
+  </form>
+  <form action="/game" method="post">
+    <input type="hidden" name="weapon" value="scissors">
+    <h2><input type="submit" name='scissors' value="SCISSORS"></h2>
   </form>
 </div>
 
 <div>
-  <label for="result">Result:</label> <output name="result">VARIABLE_HERE</output>
+  <h2><label for="result">Result:</label> <output name="result"><%=@outcome%></output></h2>
+</div>
+<div>
+  <label for="result"><%=@game.player_1.name%>'s' score:</label> <output name="result"><%=@game.human_score%></output>
+</div>
+<div>
+  <label for="result"><%=Game::OPPONENT%>'s' score:</label> <output name="result"><%=@game.machine_score%></output>
 </div>
