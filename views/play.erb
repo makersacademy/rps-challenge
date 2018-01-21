@@ -1,5 +1,10 @@
 Welcome, <%= @name %>
 
-ROCK
-PAPER
-SCISSORS
+<form method="POST" action="/play">
+  <input type="submit" name="shape" value="ROCK" />
+  <input type="submit" name="shape" value="PAPER" />
+  <input type="submit" name="shape" value="SCISSORS" />
+</form>
+
+
+You selected Rock!

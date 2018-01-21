@@ -8,8 +8,14 @@ feature 'playing rps' do
   end
 
   scenario 'see the options of the game' do
-    expect(page).to have_content 'ROCK'
-    expect(page).to have_content 'PAPER'
-    expect(page).to have_content 'SCISSORS'
+    expect(page).to have_button 'ROCK'
+    expect(page).to have_button 'PAPER'
+    expect(page).to have_button 'SCISSORS'
   end
+
+  scenario 'choose a shape' do
+    click_button 'ROCK'
+    expect(page).to have_content 'You selected Rock!'
+  end
+
 end
