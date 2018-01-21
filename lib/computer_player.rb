@@ -1,4 +1,4 @@
-require_relative 'Player'
+require_relative 'player'
 
 class ComputerPlayer < Player
 
