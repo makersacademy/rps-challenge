@@ -12,7 +12,7 @@ Then, once both players have entered their names, you are swiftly prompted to ch
 
 Once both players have selected a move, upon clicking Submit, you are taken to a results page that displays the result.
 
-![Screenshot](https://imgur.com/a/nejur)
+![Screenshot](https://imgur.com/yB2Xb6K)
 
 
 
