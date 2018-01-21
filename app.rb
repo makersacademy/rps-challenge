@@ -14,7 +14,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/start" do
-    Game.create(params["Enter name"])
+    player_1 = Player.new(params["Enter name"])
+    Game.create(player_1)
     redirect "/play"
   end
 
@@ -23,9 +24,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/result" do
-    @player_choice = params["attack"]
+    @game.player_1.move(params["attack"])
     @comp_choice = @game.choice
-    @winner = @game.winner(@player_choice, @comp_choice)
+    @result = @game.winner(@game.player_1.choice, @comp_choice)
     erb :result
   end
 

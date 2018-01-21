@@ -1,5 +1,5 @@
 <body>
- <h1> Welcome to the game, <%=@game.player_1%><h1>
+ <h1> Welcome to the game, <%=@game.player_1.name%><h1>
    <form action = "/result" method = "POST" >
      <input type= "radio" id= "rock" name="attack" value = "rock" checked = "checked"> Rock
      <input type= "radio" id= "paper" name="attack" value = "paper"> Paper
