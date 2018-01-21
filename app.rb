@@ -6,8 +6,8 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/play' do
     @name = params[:player]
-    erb :name
+    erb :play
   end
 end
