@@ -28,5 +28,5 @@ class Rps < Sinatra::Base
     erb @game.play(params[:choice])
   end
 
-# run! if app_file == $0
+  run! if app_file == $0
 end
