@@ -16,18 +16,37 @@ class Game
   end
 
   def result
-    win_condition
+    check_win_condition
   end
-private
-  def win_condition
-    if rules[player1.weapon].include?(player2.weapon)
-      return "#{player1.name} Won!"
-    elsif rules[player2.weapon].include?(player1.weapon)
-      return "#{player2.name} Won!"
-    elsif player1.weapon == player2.weapon
-      return 'You drew!'
-     end
 
+private
+
+  # def win_condition
+  #   if rules[player1.weapon].include?(player2.weapon)
+  #     return "#{player1.name} Won!"
+  #   elsif rules[player2.weapon].include?(player1.weapon)
+  #     return "#{player2.name} Won!"
+  #   elsif player1.weapon == player2.weapon
+  #     return 'You drew!'
+  #    end
+  #
+  # end
+
+  def check_win_condition
+    [check_win, check_draw, check_lose].select { |x| x.is_a?String }.join
+
+  end
+
+  def check_lose
+    return "#{player2.name} Won!" if rules[player2.weapon].include?(player1.weapon)
+  end
+
+  def check_draw
+    return 'You drew!' if player1.weapon == player2.weapon
+  end
+
+  def check_win
+    return "#{player1.name} Won!" if rules[player1.weapon].include?(player2.weapon)
   end
 
   def rules
