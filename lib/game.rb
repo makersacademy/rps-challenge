@@ -19,7 +19,8 @@ class Game
   end
 
   def rps
-    computer.makes_choice
+    p computer.choice
+    # computer.makes_choice
     win = { ROCK: :SCISSORS, PAPER: :ROCK, SCISSORS: :PAPER }
     return @result = :draw if player.choice == computer.choice
     @result = win[player.choice] == computer.choice ? :win : :lose

@@ -10,7 +10,7 @@ SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 require 'capybara/rspec'
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '..', 'app/rps_web.rb')
 require 'capybara'
 require 'rspec'
 require 'features/web_helpers.rb'
