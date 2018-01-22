@@ -4,8 +4,6 @@ require './lib/player'
 
 class RPS < Sinatra::Base
 
-  # attr_reader :player_choice, :computer_choice
-
   run! if app_file == $0
 
   get '/' do
