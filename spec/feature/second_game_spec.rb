@@ -12,6 +12,6 @@ feature 'Restart' do
     choose 'lizard'
     expect(page).to have_checked_field('lizard')
     click_button 'Submit'
-    expect(page).to have_content('You have chosen lizard')
+    expect(page).to have_content('You have chosen Lizard')
   end
 end

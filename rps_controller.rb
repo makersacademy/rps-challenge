@@ -8,7 +8,7 @@ class RPS < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    erb :singleplayer
   end
 
   get '/singleplayer' do
@@ -29,7 +29,7 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-    @game.player1.weapon_choice((params[:weapon]).to_sym)
+    @game.player1.weapon_choice(params[:weapon].to_sym)
     redirect '/game'
   end
 

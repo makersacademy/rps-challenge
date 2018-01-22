@@ -1,4 +1,4 @@
-#Game class
+# Game class
 class Game
   attr_reader :players, :player1, :player2
   def self.create(player1, player2 = Player.new('Computer'))
@@ -31,7 +31,7 @@ private
   end
 
   def rules
-    rulebook = {
+    {
       rock: [:scissors, :lizard],
       paper: [:rock, :spock],
       scissors: [:paper, :lizard],

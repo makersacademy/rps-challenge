@@ -22,7 +22,7 @@ feature 'Radio Buttons' do
 
   scenario 'radio Spock' do
     sign_in
-    expect(page).to have_unchecked_field('spock')
+    expect(page).to have_checked_field('spock')
   end
 
   scenario 'radio submit' do
