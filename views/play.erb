@@ -1,0 +1,19 @@
+<div><%= @game.player1.name %> vs. <%= @game.player2.name %></div>
+<br>
+<form action="/play">
+  <input type="radio" name="go" value="rock" id="rock" >rock<br>
+  <input type="radio" name="go" value="paper" id="paper" >paper<br>
+  <input type="radio" name="go" value="scissors" id="scissors" >scissors<br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<% if @game.player1.go %>
+  <%= @game.player1.name %> played <%= @game.player1.go %><br>
+  <%= @game.player2.name %> played <%= @game.player2.go %><br>
+  <% if @game.winner != :Draw %>
+    <b><%= @game.winner %> wins</b>
+  <% else %>
+    <b>It's a draw<b>
+  <% end %>
+<% end %>

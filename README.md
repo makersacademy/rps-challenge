@@ -1,5 +1,27 @@
 # RPS Challenge
 
+
+Solution
+-------
+
+I have implemented my version using the following classes:
+
+* Rules - understands the rules of Rock Paper Scissors 
+* Game - understands how to play the game, taking turns etc
+* Player - understands the player - keeps track of player name and their most recent go
+* Rps - contains all routing and basic logic for each page
+
+
+How to run
+-------
+
+$ git clone git@github.com:philb56/rps-challenge.git
+$ cd rps-challenge
+$ bundle
+$ rackup
+
+
+
 Instructions
 -------
 
