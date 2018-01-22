@@ -39,9 +39,7 @@ If I'd have had more time, then I would have done 4 things
 I would also be interested to see if there are better ways of structing my classes e.g. adding a printer class for my results.
 
 
-##
-
-## Instructions
+## Setup
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
