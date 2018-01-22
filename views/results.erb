@@ -1,7 +1,14 @@
 <div class="results">
-  <h3><%= @game.player1.name %> chose <%= @player1_choice %></h3>
-  <h3><%= @game.player2.name %> chose <%= @player2_choice %></h3>
+  <div class="choice">
+    <h3><%= @game.player1.name %> chose <%= @player1_choice %></h3>
+  </div>
+  <div class="choice">
+    <h3><%= @game.player2.name %> chose <%= @player2_choice %></h3>
+  </div>
 </div>
-<div>
+<div class="results win">
   <%= @msg %>
+</div>
+<div class="results">
+  <a href="/play">Play again</a>
 </div>

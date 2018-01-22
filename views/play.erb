@@ -4,11 +4,13 @@
   <h2>Start your game!</h2>
 
   <form action="/results" method="get">
+    <h3><%= @game.player1.name %></h3>
     <select name="player1_choice">
       <option value="Rock">Rock</option>
       <option value="Paper">Paper</option>
       <option value="Scissors">Scissors</option>
     </select>
+    <h3><%= @game.player2.name %></h3>
     <select name="player2_choice">
       <option value="Rock">Rock</option>
       <option value="Paper">Paper</option>

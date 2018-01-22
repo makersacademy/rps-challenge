@@ -43,3 +43,5 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
+
+# Assistance with choosing fonts and some colours provided by Isla, 8
