@@ -5,8 +5,8 @@ class Game
 
   RESULTS = { "rock" => "paper", "paper" => "scissors", "scissors" => "rock" }
 
-  def self.create(player_1, player_2 = Computer.new)
-    @running = Game.new(player_1, player_2)
+  def self.create(player_1, player_2 = Computer.new, two_player = false)
+    @running = Game.new(player_1, player_2, two_player)
   end
 
   def self.current
