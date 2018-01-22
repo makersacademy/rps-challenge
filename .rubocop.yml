@@ -27,7 +27,7 @@ Metrics/BlockLength:
 # annoying to fix so a good opportunity to turn devs off of the utility of
 # linting. Hopefully they pick them up later :)
 
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   Enabled: true
 Style/IndentationWidth:
   Enabled: true

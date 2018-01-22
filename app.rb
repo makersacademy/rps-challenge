@@ -27,6 +27,7 @@ class RPSWeb < Sinatra::Base
 
   get '/winner' do
     erb :winner
+    redirect 'play'
   end
 
 run! if app_file == $0
