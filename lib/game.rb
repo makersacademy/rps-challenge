@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :player_weapon, :computer_weapon
+  attr_reader :player, :player_weapon, :computer_weapon, :result
 
   WEAPONS = [:rock, :paper, :scissors]
 
@@ -30,11 +30,19 @@ class Game
   end
 
   def result
+    @result = determine_winner
+  end
+
+  private
+
+  def determine_winner
     if @computer_weapon == @player_weapon
       :tied
     else
       RULES[@player_weapon] == @computer_weapon ? :won : :lost
     end
   end
+
+
 
 end
