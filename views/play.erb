@@ -1,5 +1,8 @@
 <head>
    <link rel="stylesheet" type="text/css" href="/style.css">
+   <style>
+     .player_2 {display: <%= @game.two_player ? "visible" : "none" %>}
+   </style>
 </head>
 
 <body>
@@ -13,11 +16,13 @@
      <input type= "radio" id= "paper" name="attack" value = "paper"> Paper
      <input type= "radio" id= "scissors" name="attack" value = "scissors"> Scissors
      <br>
+     <div class = "player_2">
      <p> Player 2 </p>
 
      <input type= "radio" id= "rock_2" name="attack_2" value = "rock" checked = "checked"> Rock
      <input type= "radio" id= "paper_2" name="attack_2" value = "paper"> Paper
      <input type= "radio" id= "scissors_2" name="attack_2" value = "scissors"> Scissors
+   </div>
      <input type= "submit" value= "Attack your opponent">
    </form>
 </body>
