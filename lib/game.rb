@@ -1,25 +1,25 @@
 class Game
-  attr_reader :go_manager
+  attr_reader :rules
 
-  def self.new_game(player1, player2, go_manager)
-    @game_instance = Game.new(player1, player2, go_manager)
+  def self.new_game(player1, player2, rules)
+    @game_instance = Game.new(player1, player2, rules)
   end
 
   def self.game_instance
     @game_instance
   end
 
-  def initialize(player1, player2, go_manager)
+  def initialize(player1, player2, rules)
     @players = [player1, player2]
-    @go_manager = go_manager
+    @rules = rules
   end
 
   def random_go
-    go_manager.random_go
+    rules.random_go
   end
 
   def winner
-    go_manager.winner(player1, player2)
+    rules.winner(player1, player2)
   end
 
   def player1
