@@ -1,25 +1,46 @@
+[Scenario](#scenario) | [Approach](#approach) | [Experience](#experience)  |  [Education](#education)
+| [Interests](#interests) 
+
+
 [![Build Status](https://travis-ci.org/Tagrand/rps-challenge.svg?branch=master)](https://travis-ci.org/Tagrand/rps-challenge)
+
+
 
 # Rock Paper Scissors
 
-# Scenario
+
+## Scenario <a name= "scenario"></a>
 
 You are one spec in what feels like a large infinitely large universe, inhabiting a mere fraction of the Earths history, which in itself is only a tiny segment of the lifespan of the Universe. It can feel pretty daunting can't it?
 
 Well take your mind off it by playing a game that is essentially a game of chance (especially if you play the computer...)
 
-# Approach
+## Approach
 
-I've focused alot on TDD and BDD. In particular making sure I plan my structure more carefully, and make sure that whenever I add a new feature, I make sure its fully tested before building it. Following what some senior's at Makers suggested, I've been trying to build one feature at a time, so I started with a site that could hold your name, then a site where you could pick rock, then one with three options, then one which told you win or lose. I found this helped structure my thoughts, and focus on just passing my tests. 
+I set myself 4 targets starting this challenge 
+  
+   - *Never* use a global variable 
+   - Build one feature at a time 
+   - After passing tests, make sure they also fail for the **right reasons** 
+   - Focus on extendability in design.
+   
+I've focused alot on TDD and BDD over the past few weeks, and this week I found it much more natural. I've started seeing the benefits - debugging is easier as I'm working in smaller cycles, theres less issues to spot and naming tests carefully indicates clearly whats gone wrong. I also found doing one feature at a time helped structure my appraoch and keep my focus tight. I started with a site that could hold your name, then a site where you could pick rock, then one with three options, then one which told you win or lose. I found this helped structure my thoughts, and focus on just passing my tests. 
 
-# Extention
+Keeping the design extendable was the biggest challenge. Over the weekend the more I worked, the more useful I found it though. For example, you can do some pretty fun solutions to deciding who wins rps which are heavily tied to 3 inputs, but its much harder to debug. I found extendable functions/programmes are much easier to debug (as responsibilities are clearer so faults can be found more easily) and push you minimise over dependency between classes. 
 
-If I'd have had more time, then I would have refactored my tests further and put the multiplayer part on a separate page. I would also would have liked to add a bit of advice on second playing based on research from MIT (see [here](https://www.technologyreview.com/s/527026/how-to-win-at-rock-paper-scissors/)).  
+## Extention
+
+If I'd have had more time, then I would have done 4 things 
+1) Created a game pack class (which works out winners with its rule book) to make it more extendable as you could just bolt in different game packs into the programme and have lots of variations of RPS.
+2) Added a second page for player 2 to input choices in. As, it seems silly to have the same page. 
+3) 
 
 I would also be interested to see if there are better ways of structing my classes, adding a printer class for my results and a gamebook class so you could plug in lots of different games into the programme. 
 
 
-Instructions
+##
+
+## Instructions
 -------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
