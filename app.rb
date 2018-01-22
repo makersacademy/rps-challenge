@@ -19,7 +19,7 @@ class RockPaperScissors < Sinatra::Base
       Game.create(player_1)
     else
       player_2 = Player.new(params["Player two"])
-      Game.create(player_1, player_2)
+      Game.create(player_1, player_2, true)
     end
     redirect "/play"
   end

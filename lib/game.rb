@@ -13,11 +13,12 @@ class Game
     @running
   end
 
-  attr_reader :player_1, :player_2
+  attr_reader :player_1, :player_2, :two_player
 
-  def initialize(player_1, player_2 = Computer.new)
+  def initialize(player_1, player_2 = Computer.new, two_player = false)
     @player_1 = player_1
     @player_2 = player_2
+    @two_player = two_player
   end
 
   def winner
