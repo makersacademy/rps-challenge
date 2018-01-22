@@ -1,4 +1,4 @@
-[Scenario](#scenario) | [Approach](#approach) | [Experience](#experience)  |  [Education](#education)
+[Scenario](#scenario) | [Approach](#approach) | [Extention](#experience)  |  [Education](#education)
 | [Interests](#interests) 
 
 
@@ -33,9 +33,10 @@ Keeping the design extendable was the biggest challenge. Over the weekend the mo
 If I'd have had more time, then I would have done 4 things 
 1) Created a game pack class (which works out winners with its rule book) to make it more extendable as you could just bolt in different game packs into the programme and have lots of variations of RPS.
 2) Added a second page for player 2 to input choices in. As, it seems silly to have the same page. 
-3) 
+3) Refactor more, and make sure there's no gaps in my testing
+4) Make a class that builds a question page (so you could give it the name of 5 or 3 or 6 attacks and it would make that many buttons) so you could add loads of different game packs and not have to build special pages for each.
 
-I would also be interested to see if there are better ways of structing my classes, adding a printer class for my results and a gamebook class so you could plug in lots of different games into the programme. 
+I would also be interested to see if there are better ways of structing my classes e.g. adding a printer class for my results.
 
 
 ##
