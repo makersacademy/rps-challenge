@@ -1,0 +1,15 @@
+<h1> Welcome <%= @game.player1.name %>! </h1>
+
+<form action = '/game' method = 'post'>
+  <input type = "radio" id = 'rock' name = "weapon" value = "rock" >
+  <label for= 'rock'> Rock </label>
+  <input type = "radio" id = 'paper' name = "weapon" value = "paper" >
+  <label for = 'paper'> Paper </label>
+  <input type = "radio" id = 'scissors' name = "weapon" value = "scissors" >
+  <label for = 'scissors'> Scissors </label>
+  <input type = "radio" id = 'lizard' name = "weapon" value = "lizard" >
+  <label for = 'lizard'> Lizard </label>
+  <input type = "radio" id = 'spock' name = "weapon" value = "spock" checked = "checked">
+  <label for = 'spock'> Spock </label>
+  <input type = "submit" value = "Submit" >
+</form>

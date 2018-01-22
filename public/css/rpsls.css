@@ -1,0 +1,24 @@
+body {
+  background-image: url(https://d3qdvvkm3r2z1i.cloudfront.net/media/catalog/product/cache/1/image/1800x/6b9ffbf72458f4fd2d3cb995d92e8889/r/o/rockpaperscissorslizardspock_newthumb.png);
+}
+
+h1, h2, h3, p {
+  color: white
+}
+
+html {
+    text-align: center;
+}
+
+label {
+  color : white
+}
+
+.singleplayer_img {
+  width: 20%
+  height: 20px
+}
+
+#multiplayer_img {
+  width: 45%
+}

@@ -1,0 +1,7 @@
+<h1> Welcome <%= @game.player1.name.capitalize %>! </h1>
+<p>You have chosen <%= @game.player1.weapon.capitalize %> </p>
+<p>Opponent has chosen <%= @game.player2.weapon.capitalize %>
+<h1 style = "color:purple"> <%= @game.result %>  </h1>
+<form action="/play" method="get">
+  <input type="submit" value="Restart">
+</form>
