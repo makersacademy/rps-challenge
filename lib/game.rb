@@ -18,11 +18,6 @@ class Game
     @beats[@player1.move] == @player2.move ? @player2 : @player1
   end
 
-  def print_outcome
-    return "Tie! Both chose #{@player1.move}!" if tie?
-    "#{winner.move} beats #{loser.move}. #{winner.name} wins!"
-  end
-
   private
 
   def tie?

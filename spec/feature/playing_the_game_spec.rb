@@ -16,6 +16,6 @@ feature 'Playing the game' do
 
   scenario 'players can tie' do
     click_button 'scissors'
-    expect(page).to have_content 'This test really should not pass'
+    expect(page).to have_content 'This test should really not pass!'
   end
 end
