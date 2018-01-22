@@ -11,6 +11,12 @@ class Game
     @game
   end
 
+  RULES = { ROCK: [:SCISSORS, :LIZARD],
+            PAPER: [:ROCK, :SPOCK],
+            SCISSORS: [:PAPER, :LIZARD],
+            LIZARD: [:PAPER, :SPOCK],
+            SPOCK: [:ROCK, :SCISSORS] }
+
   attr_reader :player, :computer, :result
 
   def initialize(player, computer)
@@ -19,18 +25,9 @@ class Game
   end
 
   def rps
-    p computer.choice
-    # computer.makes_choice
-    win = { ROCK: :SCISSORS, PAPER: :ROCK, SCISSORS: :PAPER }
+    computer.makes_choice
     return @result = :draw if player.choice == computer.choice
-    @result = win[player.choice] == computer.choice ? :win : :lose
+    @result = (RULES[player.choice].include? computer.choice) ? :win : :lose
   end
 
 end
-
-#
-# RULES = { rock: [scissors, lizard],
-#           paper: [:rock, :spock],
-#           scissors: [:paper, :lizard],
-#           lizard: [:paper, :spock],
-#           spock: [:rock, :scissors] }
