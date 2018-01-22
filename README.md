@@ -1,5 +1,4 @@
-[Scenario](#scenario) | [Approach](#approach) | [Extention](#experience)  |  [Education](#education)
-| [Interests](#interests) 
+[Scenario](#scenario) | [Approach](#approach) | [Extention](#extention) | [Setup](#Setup)| [Play](#Play) | [Technologies](#Technologies)
 
 
 [![Build Status](https://travis-ci.org/Tagrand/rps-challenge.svg?branch=master)](https://travis-ci.org/Tagrand/rps-challenge)
@@ -26,7 +25,7 @@ I set myself 4 targets starting this challenge
    
 I've focused alot on TDD and BDD over the past few weeks, and this week I found it much more natural. I've started seeing the benefits - debugging is easier as I'm working in smaller cycles, theres less issues to spot and naming tests carefully indicates clearly whats gone wrong. I also found doing one feature at a time helped structure my appraoch and keep my focus tight. I started with a site that could hold your name, then a site where you could pick rock, then one with three options, then one which told you win or lose. I found this helped structure my thoughts, and focus on just passing my tests. 
 
-Keeping the design extendable was the biggest challenge. Over the weekend the more I worked, the more useful I found it though. For example, you can do some pretty fun solutions to deciding who wins rps which are heavily tied to 3 inputs, but its much harder to debug. I found extendable functions/programmes are much easier to debug (as responsibilities are clearer so faults can be found more easily) and push you minimise over dependency between classes. 
+Keeping the design extendable was the biggest challenge. Over the weekend the more I worked, the more useful I found it though. For example, you can do some pretty fun solutions to deciding who wins rps which are heavily tied to those specific 3 inputs, but its much harder to debug. I found extendable functions/programmes are much easier to debug (as responsibilities are clearer so faults can be found more easily) and push you minimise over dependency between classes. 
 
 ## Extention <a name= "extention"></a>
 
