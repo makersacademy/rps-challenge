@@ -26,8 +26,6 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/winner' do
-    # session[:game].winner
-    # binding.pry
     erb :winner
   end
 
