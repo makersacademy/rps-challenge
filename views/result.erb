@@ -1,0 +1,8 @@
+<h2> <%= @game.player1.name %> chose <%= @game.player1.choice %> and
+  <%= @game.player2.name %> chose <%= @game.player2.choice %> </h2>
+<br>
+<% if @game.result == :draw %>
+  <h2> The game is a draw! </h2>
+<% else %>
+  <h2> <%= @game.player1.name %>, you <%= @game.result.to_s %>! </h2>
+<% end %>

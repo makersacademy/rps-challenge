@@ -1,0 +1,7 @@
+<h2> Hello <%= @game.player1.name %>! What move would you like to make? </h2>
+<br>
+<form action="/moves" method="post">
+  <input type='submit' name="option" value="rock">
+  <input type='submit' name="option" value="paper">
+  <input type='submit' name="option" value="scissors">
+</form>
