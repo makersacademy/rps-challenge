@@ -1,0 +1,13 @@
+<h3><%= @game.player1.name %> chose <%= @game.player1.move %>!</h3>
+<h3><%= @game.player2.name %> chose <%= @game.player2.move %>!</h3>
+
+<h2><%= @game.winner.move %> beats <%= @game.loser.move %>!</h2>
+<h1><%= @game.winner.name %> wins!</h1>
+
+<form action="/">
+  <button type="submit" value="submit">Menu</button>
+</form>
+
+<form action="/choice">
+  <button type="submit" value="submit">Replay</button>
+</form>

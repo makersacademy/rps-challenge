@@ -32,11 +32,17 @@ class RPS < Sinatra::Base
     @game.player1.choose(params[:choice].to_sym)
     @game.player2.choose(params[:choice].to_sym)
     session[:game] = @game
-    redirect to '/outcome'
+    redirect to '/draw' if @game.player1.move == @game.player2.move
+    redirect to '/winner'
   end
 
-  get '/outcome' do
+  get '/winner' do
     @game = session[:game]
-    erb :outcome
+    erb :winner
+  end
+
+  get '/draw' do
+    @game = session[:game]
+    erb :draw
   end
 end

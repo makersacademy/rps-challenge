@@ -16,6 +16,6 @@ feature 'Playing the game' do
 
   scenario 'players can tie' do
     click_button 'scissors'
-    expect(page).to have_content 'Tie! Both chose scissors!'
+    expect(page).to have_content 'This test really should not pass'
   end
 end
