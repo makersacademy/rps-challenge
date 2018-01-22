@@ -2,18 +2,17 @@ require_relative 'computer'
 
 class Game
   attr_reader :player, :choice, :outcome
-  WEAPON = [:rock, :paper, :scissors]
+  WEAPON = [:rock, :paper, :scissors, :spock , :lizard]
 
-  RULES = {
-    rock: [:scissors],
-    paper: [:rock],
-    scissors: [:paper]
-  }
+  RULES = { rock: [:scissors, :lizard],
+          paper: [:rock, :spock],
+          scissors: [:paper, :lizard],
+          lizard: [:paper, :spock],
+          spock: [:rock, :scissors] }
 
   def initialize(player)
     @player = player
     @rules = RULES
-    @outcome = nil
     @computer = Computer.new
   end
 
