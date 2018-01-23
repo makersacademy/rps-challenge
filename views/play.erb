@@ -1,0 +1,14 @@
+<p> Rock Paper Scissors! </p>
+<p> <%= @game.player.name %> VS. Computer </p>
+
+<form action="/rock" method="POST">
+  <input class="rock" type="submit" value="Rock">
+</form>
+
+<form action="/paper" method="POST">
+  <input class="paper" type="submit" value="Paper">
+</form>
+
+<form action="/scissors" method="POST">
+  <input class="scissors" type="submit" value="Scissors">
+</form>
