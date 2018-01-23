@@ -1,0 +1,25 @@
+body {
+	background-color: #f98b60;
+	color: black;
+	font-family: 'kelly slab', monospace;
+  text-align: center
+}
+
+.wrapper {
+	width: 90%;
+	background-color: #6163d0;
+  margin-left: 5%;
+	color: white;
+	font-size: 20px;
+}
+
+h1{
+	font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+	height: 10%;
+}
+
+input[type="text"]  {
+
+}

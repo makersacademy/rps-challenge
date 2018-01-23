@@ -1,0 +1,28 @@
+<head>
+   <link rel="stylesheet" type="text/css" href="/style.css">
+   <style>
+     .player_2 {display: <%= @game.two_player ? "visible" : "none" %>}
+   </style>
+</head>
+
+<body>
+ <h1> Welcome to the game, <%=@game.player_1.name%><h1>
+ <h2> Player 1 is the great  <%=@game.player_1.name%>  </h2>
+ <h2> Player 2 is the mighty  <%=@game.player_2.name%> </h2>
+   <form action = "/choices" method = "POST" >
+     <p> Player 1 </p>
+
+     <input type= "radio" id= "rock" name="attack" value = "rock" checked = "checked"> Rock
+     <input type= "radio" id= "paper" name="attack" value = "paper"> Paper
+     <input type= "radio" id= "scissors" name="attack" value = "scissors"> Scissors
+     <br>
+     <div class = "player_2">
+     <p> Player 2 </p>
+
+     <input type= "radio" id= "rock_2" name="attack_2" value = "rock" checked = "checked"> Rock
+     <input type= "radio" id= "paper_2" name="attack_2" value = "paper"> Paper
+     <input type= "radio" id= "scissors_2" name="attack_2" value = "scissors"> Scissors
+   </div>
+     <input type= "submit" value= "Attack your opponent">
+   </form>
+</body>
