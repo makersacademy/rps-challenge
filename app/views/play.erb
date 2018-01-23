@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <title>Rock-Paper-Scissors-Lizard-Spock</title>
+</head>
+
+<h1>
+  <%= @game.player1.name %>, choose your attack:
+</h1>
+
+<br><br>
+
+<form action='/play' method='post'>
+  <input type="submit" name="player1_attack" value="Rock">
+  <input type="submit" name="player1_attack" value="Paper">
+  <input type="submit" name="player1_attack" value="Scissors">
+  <input type="submit" name="player1_attack" value="Lizard">
+  <input type="submit" name="player1_attack" value="Spock">
+</form>
+
+</html>

@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <title>Rock-Paper-Scissors-Lizard-Spock</title>
+</head>
+
+<h1><%= @game.player2.name %> WINS!</h1>
+
+<br><br>
+
+<%= @game.player1.name %> chose: <%= @game.player1.move %>
+<br>
+<%= @game.player2.name %> chose: <%= @game.player2.move %>
+
+<br><br>
+
+<form action='/' method='get'>
+  <input type="submit" value="Play again?">
+</form>
+
+</html>
