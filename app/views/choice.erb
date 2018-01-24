@@ -1,0 +1,12 @@
+<h1>Welcome, <%= @game.player1.name %>!</h1>
+
+<h2>Choose your move:</h2>
+
+<form action="/moved" method="post">
+  <input type="image" name="choice" value="rock" width="150" height="150"
+  src="http://www.oasisamor.org/wp-content/uploads/2017/06/images-of-rock-republic-jeans-rock-.jpg" />
+  <input type="image" name="choice" value="paper" width="150" height="150"
+  src="http://www.dick-blick.com/items/102/40/10240-1009-1-2ww-m.jpg" />
+  <input type="image" name="choice" value="scissors" width="150" height="150"
+  src="https://images-eu.ssl-images-amazon.com/images/I/31L3uGvmTsL.jpg" />
+</form>
