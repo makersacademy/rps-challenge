@@ -1,0 +1,11 @@
+<h2>Welcome <%= @game.player_name %>! Click on rock, paper or scissors!</h2>
+
+<form action="/play" method="post">
+    <input type="submit" name="weapon" value="rock"/>
+    <input type="submit" name="weapon" value="paper"/>
+    <input type="submit" name="weapon" value="scissors"/>
+</form>
+
+<h3>You have chosen <%= @game.player_weapon.to_s %>!</h3>
+
+<h3>The computer has chosen <%= @game.computer_weapon.to_s %>!</h3>
