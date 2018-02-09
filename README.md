@@ -1,5 +1,27 @@
 # RPS Challenge
 
+### Description
+
+TBC
+
+### Development Process
+
+TBC
+
+### Installation
+
+TBC
+
+### Example
+
+TBC
+
+### Author
+
+Terence Allitt
+
+-------
+
 Instructions
 -------
 
