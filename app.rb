@@ -10,8 +10,7 @@ class Rps < Sinatra::Base
  end
 
  post '/names' do 
-  $player_1_name = params[:name_1] 
-  $player_2_name = params[:name_2]
+  $player_name = params[:name] 
   redirect '/play'
  end
 
