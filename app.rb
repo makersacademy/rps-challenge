@@ -6,7 +6,8 @@ class RpsGame < Sinatra::Base
     erb(:index)
   end
 
-  get '/play' do
+  post '/play' do
+    @player_name = params[:name]
     erb(:play)
   end
 
