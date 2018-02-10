@@ -10,4 +10,11 @@ describe Player do
     end
   end
 
+  describe '#move' do
+    it 'allows player one to select rock' do
+      allow(player_1).to receive(:select_move).and_return(:rock)
+      expect(player_1.move).to eq :rock
+    end
+  end
+
 end
