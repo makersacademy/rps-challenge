@@ -4,7 +4,7 @@ require_relative 'lib/game'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    "Hello"
+    erb :index
   end
 
   run! if app_file == $0
