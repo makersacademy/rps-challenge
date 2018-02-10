@@ -11,8 +11,8 @@ class Rps < Sinatra::Base
   end
 
   post '/player' do
-    player = Player.new(params[:player]).name
-    bot = Player.new('bot').name
+    player = Player.new(params[:player])
+    bot = Player.new('bot')
     $game = Game.new(player, bot)
     redirect '/round'
   end
@@ -22,12 +22,12 @@ class Rps < Sinatra::Base
   end
 
   post '/option' do
-    session[:option] = params[:option]
+    $player_option = $game.player.choose_option(params[:option])
+    $bot_option = $game.bot.random_option
     redirect '/result'
   end
 
   get '/result' do
-    @option = session[:option]
     erb(:result)
   end
 
