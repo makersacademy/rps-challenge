@@ -1,13 +1,6 @@
 <html>
-<% if @paper != nil then %>
-  <%= @player1.name %> picked <%= @paper %>.
-<% end %>
 
-<% if @rock != nil then %>
-  <%= @player1.name %> picked <%= @rock %>.
-<% end %>
+<% @weapon = @weapons.select { |weapon| weapon != nil }  %>
+<%= @player1.name %> picked <%= @weapon[0] %>.
 
-<% if @scissors != nil then %>
-  <%= @player1.name %> picked <%= @scissors %>.
-<% end %>
 </html>

@@ -21,9 +21,7 @@ enable :sessions
 
   get "/attack" do
     @player1 = $player1
-    @rock = params[:rock]
-    @paper = params[:paper]
-    @scissors = params[:scissors]
+    @weapons = [params[:rock],params[:paper], params[:scissors]]
     erb(:attack)
   end
 
