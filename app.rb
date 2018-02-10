@@ -4,7 +4,8 @@ get '/' do
   erb(:index)
 end
 
-get '/game' do
+post '/' do
+  @name = params[:player]
   erb(:game)
 end
 
