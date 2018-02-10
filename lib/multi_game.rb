@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class MultiGame
 
     attr_accessor :players, :player_1_weapon, :player_2_weapon
@@ -29,11 +31,11 @@ class MultiGame
     end
 
     def calculate_result(pl1, pl2)
-      return 'Player 1 won' if pl1 == 'scissors' && pl2 == 'paper'
-      return 'Player 1 won' if pl1 == 'paper' && pl2 == 'rock'
-      return 'Player 1 won' if pl1 == 'rock' && pl2 == 'scissors'
+      return "#{player_one.name} won" if pl1 == 'scissors' && pl2 == 'paper'
+      return "#{player_one.name} won" if pl1 == 'paper' && pl2 == 'rock'
+      return "#{player_one.name} won" if pl1 == 'rock' && pl2 == 'scissors'
       return 'Draw!' if pl1 == pl2
-      'Player 2 won!'
+        "#{player_two.name} won"
     end
 
 end
