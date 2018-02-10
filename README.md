@@ -4,16 +4,19 @@ README Edit: My approach and code review
 My approach
 ------
 * First, I read through the User Stories and functionality hints and drew the Domain Models in tables in order to have a clear idea about the main objects and messages of the app.
-* Then, I drew a sequence diagram focusing on what happens after every step in the app, e.g.: the user enters a name, then the options (Rock, Paper & Scissors) are shown. After that, the user chooses one of the three options, the computer also chooses one and, finally, the winner is displayed on the screen.
+* Then, I drew a sequence diagram focusing on what happens after every step in the app, e.g.: the user enters a name, then the options (Rock, Paper & Scissors) are shown. After that, the user chooses one of the three options, the computer also chooses one at random and, finally, the winner is displayed on the screen.
 
 Regarding tests, I first created the following feature tests:
-1. Infrastructure test: to make sure everything was set up correctly
-2. Player name test: to allow the player to enter a username before the game
-3. Choices test: to allow the player to choose among the different game options and to make sure the option is displayed on the screen
+1. *Infrastructure test*: to make sure everything was set up correctly
+2. *Player name test*: to allow the player to enter the name before the game
+3. *Choices test*: to allow the player to choose among the different game options and to make sure the option is displayed on the screen
 
 Up to this point, I stored user input (name and choice) in sessions (enabled in controller file for Sinatra).
 
-[TBC] Next: once app is working as intended, introduce new classes, delegate responsibilities and refactor controller sessions to allow variables and instances to hold data in between requests.
+Next: after making sure these features work as intended, it was time to *introduce new classes* (player and game), *delegate responsibilities* from the Rps class to them and *refactor controller sessions*, allowing variables and instances to hold data in between requests.
+
+4. *Random choice* [TBC]
+5. *Winner declared* [TBC]
 
 Next focus
 ------

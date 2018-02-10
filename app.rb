@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class Rps < Sinatra::Base
 
@@ -9,7 +10,7 @@ class Rps < Sinatra::Base
   end
 
   post '/player' do
-    session[:player] = params[:player]
+    session[:player] = Player.new(params[:player]).name
     redirect '/round'
   end
 
