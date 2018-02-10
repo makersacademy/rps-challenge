@@ -8,12 +8,10 @@ class Player
     @name = name
   end
 
-  # def select_move
-  #   puts "Pick a Move: "
-  #   @move = gets.chomp.downcase.to_sym
-  #   if @move == :rock
-  #     "You have selected Rock."
-  #   end
-  # end
+  def select_move
+    puts "Pick a Move: "
+    move = gets.chomp.downcase.to_sym
+    @move = :rock if move == :rock
+  end
 
 end
