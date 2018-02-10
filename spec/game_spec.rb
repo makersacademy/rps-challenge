@@ -34,6 +34,14 @@ describe Game do
       expect(first_player).to receive(:set_move).with 'rock'
       game.choose_move(first_player, 'rock')
     end
+
+      describe '#random_move' do
+        it 'assigns a random move if none is given' do
+          allow(first_player).to receive(:set_move)
+          expect(game).to receive(:random_move)
+          game.choose_move(first_player)
+        end
+      end
   end
 
   describe '#calculate_winner' do
@@ -53,12 +61,5 @@ describe Game do
     end
 
   end
-
-  # describe '#random_move' do
-  #   it 'randomly assigns a move if one is not given' do
-  #     allow(game).to receive(:random_move).and_return()
-  #     expect(game.random_move).to eq 'rock'
-  #   end
-  # end
 
 end

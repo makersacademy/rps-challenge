@@ -18,13 +18,12 @@ class Game
     @game
   end
 
-  def choose_move(player, move)
+  def choose_move(player, move = random_move)
     player.set_move(move)
   end
 
   def calculate_winner
     if player_1.move == player_2.move
-      @winner = nil
     elsif (player_1.move == 'rock' && player_2.move == 'scissors') ||
         (player_1.move == 'scissors' && player_2.move == 'paper') ||
         (player_1.move == 'paper' && player_2.move == 'rock')
@@ -32,6 +31,12 @@ class Game
     else
       @winner = player_2
     end
+  end
+
+  private
+
+  def random_move
+    ['rock', 'paper', 'scissors'].sample
   end
 
 end
