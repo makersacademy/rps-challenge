@@ -4,6 +4,10 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
+  before '/game' do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb :index
   end
@@ -15,7 +19,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/game' do
-    @player = Game.current_game.player
     erb :game
   end
 

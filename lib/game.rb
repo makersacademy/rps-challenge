@@ -5,6 +5,7 @@ class Game
   end
 
   def self.current_game
+    raise "No current game" if !@current_game
     @current_game
   end
 

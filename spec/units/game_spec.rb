@@ -33,5 +33,12 @@ describe Game do
         expect(described_class.current_game).to eq existing_game
       end
     end
+
+    context "when game not in progress" do
+      it "raises an error" do
+        described_class.instance_variable_set(:@current_game, nil)
+        expect { described_class.current_game }.to raise_error "No current game"
+      end
+    end
   end
 end
