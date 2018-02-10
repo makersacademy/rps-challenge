@@ -1,13 +1,13 @@
-class Game
+class SingleGame
 
   attr_reader :player
 
   def self.create(player)
-    @game = Game.new(player)
+    @single_game = SingleGame.new(player)
   end
 
   def self.instance
-    @game
+    @single_game
   end
 
   def initialize(player)

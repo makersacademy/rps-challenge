@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player'
-require_relative './lib/game'
+require_relative './lib/single_game'
 
 class RockPaperScissors < Sinatra::Base
 enable :sessions
@@ -11,18 +11,18 @@ enable :sessions
 
   post '/name' do
     player = Player.new(params[:player_1_name])
-    @game = Game.create(player)
-    redirect "/play"
+    @single_game = SingleGame.create(player)
+    redirect '/play'
   end
 
-  get "/play" do
-    @game = Game.instance
+  get '/play' do
+    @single_game = SingleGame.instance
     erb(:play)
   end
 
-  get "/attack" do
-    @game = Game.instance
-    @weapon = [params[:rock],params[:paper], params[:scissors]].select { |weapon| weapon != nil }[0]
+  get '/attack' do
+    @single_game = SingleGame.instance
+    @weapon = params[:weapon]
     erb(:attack)
   end
 
