@@ -6,7 +6,14 @@ My approach
 * First, I read through the User Stories and functionality hints and drew the Domain Models in tables in order to have a clear idea about the main objects and messages of the app.
 * Then, I drew a sequence diagram focusing on what happens after every step in the app, e.g.: the user enters a name, then the options (Rock, Paper & Scissors) are shown. After that, the user chooses one of the three options, the computer also chooses one and, finally, the winner is displayed on the screen.
 
-* [TESTS]
+* Regarding the tests, I first created the following feature tests:
+- Infrastructure test: to make sure everything was set up correctly
+- Player name test: to allow the player to enter a username before the game
+- Choices test: to allow the player to choose among the different game options and to make sure the option is displayed on the screen
+
+* Up to this point, I stored user input (name and choice) in sessions (enabled in controller file for Sinatra).
+
+[TBC] Next: once app is working as intended, introduce new classes, delegate responsibilities and refactor controller sessions to allow variables and instances to hold data in between requests.
 
 Next focus
 ------
