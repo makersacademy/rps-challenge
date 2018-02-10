@@ -3,6 +3,18 @@
 <head>
 </head>
 <body>
-  <h1> Hello <%= @name %> !! You are ready to start the game.</h1>
+  <h1> Hello <%= $player_name.name %> !! You are ready to start the game.</h1>
+  <h1> <%= $player_name.name %> vs the computer
+  <h2> Select one of the following options: </h2>
+  <h2> Rock  Paper  Scissors </h2>
+  <form action="/play" method="post">
+    <div>
+      <label for="Player 1"> </label>
+       <input type="text" name="name">
+    </div>
+    <div class="button">
+      <input type="submit" value="ATTACK">
+    </div>
+  </form>
 </body>
 </html>
