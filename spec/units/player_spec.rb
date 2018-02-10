@@ -1,6 +1,6 @@
-require 'player'
+require 'human_player'
 
-describe Player do
+describe HumanPlayer do
 
   example_name = "Matt"
   subject(:player) { described_class.new(example_name)}
