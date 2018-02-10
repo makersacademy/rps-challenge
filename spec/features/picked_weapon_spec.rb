@@ -1,6 +1,6 @@
 feature 'Picked weapon rb' do
   scenario 'player picked weapon' do
-    sign_in_and_play
+    sign_in_and_play_single
     click_button 'rock'
     expect(page).to have_content 'Justyna picked rock.'
   end

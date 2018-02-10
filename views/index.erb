@@ -2,11 +2,13 @@
   <head></head>
   <body>
     <div class="title">
-      Ultimate Rock Paper Scissors Game
+      Pick your mode
     </div>
-    <form action="/name" method="post">
-      <input type="text" name="player_1_name" class="putnamebutton" placeholder="enter your name">
-      <input type="submit" value="submit" class="submit-player">
+    <form action="/single" method="get">
+      <input type="submit" value="Single Player" class="submit-player" name="single">
+    </form>
+    <form action="/multi" method="get">
+      <input type="submit" value="Multi Player" class="submit-player" name="multi">
     </form>
   <body>
 </html>

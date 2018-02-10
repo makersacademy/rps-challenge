@@ -9,6 +9,14 @@ enable :sessions
     erb(:index)
   end
 
+  get '/single' do
+    erb(:single)
+  end
+
+  # get '/multi' do
+  #   erb(:multi)
+  # end
+
   post '/name' do
     player = Player.new(params[:player_1_name])
     @single_game = SingleGame.create(player)
