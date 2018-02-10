@@ -8,9 +8,14 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-  'Testing infrastructure working!'
-    # erb(:index)
+    erb(:index)
   end
+
+  post '/name' do
+    @player_name = params[:player_name]
+    erb :play
+  end
+
 
 
 
