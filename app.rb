@@ -5,8 +5,11 @@ require './lib/player.rb'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
-    'Hello world'
     erb(:name)
   end
 
@@ -17,12 +20,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player = Game.instance.player
+    @player = @game.player
     erb(:play)
   end
 
   post '/calculate' do
-    
+    @game.set_player_weapon(params[:player_weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    p erb(:result)
+    erb(:result)
   end
 
   run! if app_file == $0
