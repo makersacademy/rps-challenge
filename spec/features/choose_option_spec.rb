@@ -1,19 +1,19 @@
 feature 'choose RPS option' do
-  scenario 'choose rock option, WIN' do
+  scenario 'Player 1 chose rock option' do
     sign_in_and_play
-    click_button 'I wanna rock, ROCK!'
-    expect(page).to have_content 'You win Marcus! \ (•◡•) /'
+    click_button 'rock'
+    expect(page).to have_content 'Marcus chose rock'
   end
 
-  scenario 'choose rock option, LOSE' do
+  scenario 'Player 1 chose paper option' do
     sign_in_and_play
-    click_button 'I wanna rock, ROCK!'
-    expect(page).to have_content 'You lose Marcus! ಠ╭╮ಠ'
+    click_button 'paper'
+    expect(page).to have_content 'Marcus chose paper'
   end
 
-  scenario 'choose rock option, DRAW' do
+  scenario 'Player 1 chose scissors option' do
     sign_in_and_play
-    click_button 'I wanna rock, ROCK!'
-    expect(page).to have_content 'Tie Game! (╯°□°）╯︵ ┻━┻'
+    click_button 'scissors'
+    expect(page).to have_content 'Marcus chose scissors'
   end
 end

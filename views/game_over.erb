@@ -1,5 +1,18 @@
 <html>
+<h2>
+  <div>
+    <%= @game.player_1.name %> chose
+      <%= @game.player_1.move %>
+  </div>
+  <div>
+    <%= @game.player_2.name %> chose
+      <%= @game.player_2.move %>
+  </div>
+</h2>
 <h1>
-You win <%= @game.player_1.name %>! \ (•◡•) /
+  <div>
+    <%= @game.winner.name %> wins! \ (•◡•) /
+  </div>
 </h1>
+
 </html>
