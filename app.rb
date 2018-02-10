@@ -10,17 +10,17 @@ enable :sessions
   end
 
   post '/name' do
-    session[:player_1_name] = params[:player_1_name]
+    $player1 = Player.new(params[:player_1_name])
     redirect "/play"
   end
 
   get "/play" do
-    @player1 = session[:player_1_name]
+    @player1 = $player1
     erb(:play)
   end
 
   get "/attack" do
-    @player1 = session[:player_1_name]
+    @player1 = $player1
     @rock = params[:rock]
     @paper = params[:paper]
     @scissors = params[:scissors]

@@ -1,13 +1,13 @@
 <html>
 <% if @paper != nil then %>
-  <%= @player1 %> picked <%= @paper %>.
+  <%= @player1.name %> picked <%= @paper %>.
 <% end %>
 
 <% if @rock != nil then %>
-  <%= @player1 %> picked <%= @rock %>.
+  <%= @player1.name %> picked <%= @rock %>.
 <% end %>
 
 <% if @scissors != nil then %>
-  <%= @player1 %> picked <%= @scissors %>.
+  <%= @player1.name %> picked <%= @scissors %>.
 <% end %>
 </html>
