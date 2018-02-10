@@ -5,4 +5,8 @@ class Game
     @player = player
     @bot = bot
   end
+
+  def output_winner
+    
+  end
 end

@@ -1,4 +1,5 @@
 feature 'a winner is declared' do
+  
   let(:game) { Game.new(player, bot) }
   let(:player) { double('Josu') }
   let(:bot) { double('bot') }
