@@ -6,7 +6,7 @@ feature "Gameplay" do
     expect(page).to have_button('Scissors')
   end
 
-  describe "Announcing the result" do
+  describe "Announcing player's option" do
 
     let(:player_rock)  { "You have played rock" }
     let(:player_paper) { "You have played paper" }
@@ -29,6 +29,9 @@ feature "Gameplay" do
       click_on('Scissors')
       expect(page).to have_content(player_scissors)
     end
+  end
+
+  describe "Announcing the computer's option" do
 
 
     let(:computer_rock)  { "Computer has played rock" }
@@ -42,5 +45,5 @@ feature "Gameplay" do
         page.has_content?(computer_rock || computer_paper || computer_scissors)
       end
     end
-end
+  end
 end
