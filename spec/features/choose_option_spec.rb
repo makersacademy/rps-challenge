@@ -10,4 +10,10 @@ feature 'choose RPS option' do
     click_button 'I wanna rock, ROCK!'
     expect(page).to have_content 'You lose Marcus! ಠ╭╮ಠ'
   end
+
+  scenario 'choose rock option, DRAW' do
+    sign_in_and_play
+    click_button 'I wanna rock, ROCK!'
+    expect(page).to have_content 'Tie Game! (╯°□°）╯︵ ┻━┻'
+  end
 end
