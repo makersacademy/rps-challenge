@@ -14,6 +14,8 @@ EDIT: Realised simplest way to build game would be to make player 2 computerised
 
 2. Create a `Game` class to control the flow of the game. Another post request is used to ask player 1 to start the game. This will redirect them to where they can make their move.
 
+3. The Player class will be responsible for selecting moves and storing those moves. In order to pass the feature tests, each move selection redirects to a different route so now I will need to consolidate all move selections to one route called '/outcome'
+
 ### Installation
 
 Install Bundler and the relevant gems with the below commands:
