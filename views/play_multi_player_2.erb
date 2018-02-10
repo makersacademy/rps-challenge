@@ -12,7 +12,7 @@
         <%= @multi_game.player_two.name %>, pick your weapon.
       </div>
       <div class="options">
-        <form action="/attack_multi" method="get">
+        <form action="/attack_multi" method="post">
           <input type="submit" value="rock" class="weapon rock" name="weapon2">
           <input type="submit" value="paper" class="weapon paper" name="weapon2">
           <input type="submit" value="scissors" class="weapon scissors" name="weapon2">

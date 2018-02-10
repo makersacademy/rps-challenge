@@ -28,7 +28,7 @@ enable :sessions
     erb(:play)
   end
 
-  get '/attack' do
+  post '/attack' do
     @single_game = SingleGame.instance
     @weapon = params[:weapon]
     erb(:attack)
@@ -51,13 +51,13 @@ enable :sessions
     erb(:play_multi_player_1)
   end
 
-  get '/take_first_weapon' do
+  post '/take_first_weapon' do
     @multi_game = MultiGame.instance
     @multi_game.player_1_weapon = params[:weapon1]
     erb(:play_multi_player_2)
   end
 
-  get '/attack_multi' do
+  post '/attack_multi' do
     @multi_game = MultiGame.instance
     @multi_game.player_2_weapon = params[:weapon2]
     erb(:attack_multi)
