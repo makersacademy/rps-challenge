@@ -20,7 +20,7 @@ describe Game do
     # It's in buttons in the view... passed as param
 
     it 'chooses a random option for the computer' do
-      allow(bot).to receive(:random_option).with no_args { 'Scissors' }
+      allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
 
       game.bot.random_option
     end
@@ -28,13 +28,13 @@ describe Game do
 
   describe '#output_winner' do
     it "returns winner's name" do
-      allow(bot).to receive(:random_option).with no_args { 'Scissors' }
-      allow(player).to receive(:choose_option).with('Rock').and_return('Rock')
+      allow(player).to receive(:choose_option).with('Rock') { 'Rock' }
+      allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
 
-      game.bot.random_option
-      game.player.choose_option('Rock')
-
-      expect(game.output_winner).to eq game.player
+      player.choose_option('Rock')
+      bot.random_option
+      
+      expect(game.output_winner).to eq player
     end
   end
 end

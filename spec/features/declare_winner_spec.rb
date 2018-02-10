@@ -6,7 +6,7 @@ feature 'a winner is declared' do
 
   scenario 'player declared winner after beating bot' do
     allow(bot).to receive(:random_option)
-    srand(3) ; bot.random_option
+    srand(3); bot.random_option
 
     sign_in_and_play
     click_button('Rock')
