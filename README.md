@@ -1,3 +1,23 @@
+README Edit: My approach and code review
+=================
+
+My approach
+------
+* First, I read through the User Stories and functionality hints and drew the Domain Models in tables in order to have a clear idea about the main objects and messages of the app.
+* Then, I drew a sequence diagram focusing on what happens after every step in the app, e.g.: the user enters a name, then the options (Rock, Paper & Scissors) are shown. After that, the user chooses one of the three options, the computer also chooses one and, finally, the winner is displayed on the screen.
+
+* [TESTS]
+
+Next focus
+------
+
+[TBC]
+
+Personal code review
+------
+
+[TBC]
+
 # RPS Challenge
 
 Instructions
