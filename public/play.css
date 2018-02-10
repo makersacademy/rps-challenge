@@ -1,0 +1,51 @@
+html {
+  background-color: #e5e5e5eb;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  margin-bottom: 1.3em;
+  margin-top: 1em;
+  font-family: Barlow Condensed;
+  letter-spacing: 0.7;
+}
+
+.information {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 2em;
+  font-family: Barlow Condensed;
+  letter-spacing: 0.3;
+}
+
+.options {
+  margin-left: 20%;
+  display: flex;
+  width: 60%;
+}
+
+.weapon {
+  height: 45em;
+  width: 45em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  font-size: 0.0001em;
+}
+
+.weapon:hover {
+  background-color: #ffd707d1;
+}
+
+.scissors {
+  background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/10005-200.png");
+}
+
+.paper {
+  background-image: url("http://www.clker.com/cliparts/8/z/m/2/l/G/paper-stacks-hi.png");
+}
+
+.rock {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Comet_P67_Mark.svg/2400px-Comet_P67_Mark.svg.png");
+}

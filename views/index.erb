@@ -1,14 +1,23 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+  </head>
   <body>
     <div class="title">
       Pick your mode
     </div>
-    <form action="/single" method="get">
-      <input type="submit" value="Single Player" class="submit-player" name="single">
-    </form>
-    <form action="/multi" method="get">
-      <input type="submit" value="Multi Player" class="submit-player" name="multi">
-    </form>
+    <div class="modes">
+      <div class="mode1 mode">
+        <form action="/single" method="get">
+          <input type="submit" value="Single Player" class="submit-player" name="single">
+        </form>
+      </div>
+      <div class="mode2 mode">
+        <form action="/multi" method="get">
+          <input type="submit" value="Multi Player" class="submit-player" name="multi">
+        </form>
+      </div>
+    </div>
   <body>
 </html>

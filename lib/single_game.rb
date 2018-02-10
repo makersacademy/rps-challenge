@@ -23,7 +23,7 @@ class SingleGame
     return 'Computer won' if cw == 'paper' && pw == 'rock'
     return 'Computer won' if cw == 'rock' && pw == 'scissors'
     return 'Draw!' if cw == pw
-    'Player won!'
+    "#{player.name} won!"
   end
 
 end
