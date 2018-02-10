@@ -1,5 +1,9 @@
 <h1><%= @player_1 %>: Take your Pick...</h1>
 
-<form action="/outcome" method="post">
-  <input type="submit" value="Rock">
+<form action="/rock" method="post">
+  <input type="submit" name="rock" value="Rock">
+</form>
+
+<form action="/paper" method="post">
+  <input type="submit" name="paper" value="Paper">
 </form>

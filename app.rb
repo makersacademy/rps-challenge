@@ -23,9 +23,14 @@ class RPS < Sinatra::Base
     erb(:move)
   end
 
-  post '/outcome' do
+  post '/rock' do
     @player_1 = session[:player_1]
-    erb(:outcome)
+    erb(:rock)
+  end
+
+  post '/paper' do
+    @player_1 = session[:player_1]
+    erb(:paper)
   end
 
   run! if app_file == $0
