@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -10,12 +11,13 @@ class Rps < Sinatra::Base
   end
 
   post '/player' do
-    session[:player] = Player.new(params[:player]).name
+    player = Player.new(params[:player]).name
+    bot = Player.new('bot').name
+    $game = Game.new(player, bot)
     redirect '/round'
   end
 
   get '/round' do
-    @player = session[:player]
     erb(:round)
   end
 
