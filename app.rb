@@ -9,9 +9,15 @@ class Rps < Sinatra::Base
   erb(:index)
  end
 
+ post '/names' do 
+  $player_1_name = params[:name_1] 
+  $player_2_name = params[:name_2]
+  redirect '/play'
+ end
 
-
-
+ get '/play' do 
+  erb(:play)
+ end
 
   run! if app_file == $0
 end
