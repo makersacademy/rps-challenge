@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player, bot) }
-  let(:player) { double('Josu') }
-  let(:bot) { double('bot') }
+  let(:player) { double('Josu', name: 'Josu', choice: 'Rock') }
+  let(:bot) { double('bot', name: 'bot', choice: 'Scissors') }
 
   describe '#initialize' do
     # Check again
@@ -28,13 +28,13 @@ describe Game do
 
   describe '#output_winner' do
     it "returns winner's name" do
-      allow(player).to receive(:choose_option).with('Rock') { 'Rock' }
-      allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
+      allow(player).to receive(:choose_option)#.with('Rock') { 'Rock' }
+      allow(bot).to receive(:random_option)#.with(no_args { 'Scissors' })
 
-      player.choose_option('Rock')
-      bot.random_option
+      # player.choose_option('Rock')
+      # bot.random_option
       
-      expect(game.output_winner).to eq player
+      expect(game.output_winner).to eq player.name
     end
   end
 end
