@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/player'
+
 
 class RockPaperScissors < Sinatra::Base
 enable :sessions
