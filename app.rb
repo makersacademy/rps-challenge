@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -25,10 +26,11 @@ class Rps < Sinatra::Base
 
   get '/battle' do
     @computer = Computer.new
+    @game = Game.new
     @player = session[:player]
     @choice = session[:choice]
-    @computer.rand_choice
-    @outcome = @computer.choose_winner(@choice)
+    # @computer.rand_choice
+    @outcome = @game.choose_winner(@choice, @computer.rand_choice)
     erb :battle
   end
 
