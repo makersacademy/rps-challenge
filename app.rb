@@ -3,7 +3,11 @@ require 'sinatra/base'
 class RpsGame < Sinatra::Base
 
   get '/' do
-    'Testing Infrastructure Working!'
+    erb(:index)
+  end
+
+  get '/play' do
+    erb(:play)
   end
 
 end
