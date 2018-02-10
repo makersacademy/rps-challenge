@@ -19,6 +19,7 @@ html {
   height: 2.8em;
   font-size: 1.7em;
   font-family: Barlow Condensed;
+  padding-left: 0.5em;
 }
 
 .submit-player-name {
