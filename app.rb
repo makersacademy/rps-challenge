@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RpsGame < Sinatra::Base
 
@@ -26,6 +27,9 @@ class RpsGame < Sinatra::Base
   get '/result' do
     @player_name = session[:name]
     @player_weapon = session[:weapon]
+    @computer = Computer.new
+    @computer.choose_weapon
+    @computer_weapon = @computer.weapon
     erb(:result)
   end
 
