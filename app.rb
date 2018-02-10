@@ -8,7 +8,8 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb(:index)
+  'Testing infrastructure working!'
+    # erb(:index)
   end
 
 
