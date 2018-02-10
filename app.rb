@@ -23,6 +23,11 @@ class RPS < Sinatra::Base
     erb(:move)
   end
 
+  post '/outcome' do
+    @player_1 = session[:player_1]
+    erb(:outcome)
+  end
+
   run! if app_file == $0
 
 end
