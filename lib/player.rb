@@ -2,16 +2,14 @@ class Player
 
   MOVES = [:rock, :paper, :scissors]
 
-  attr_reader :name
+  attr_reader :name, :move
 
   def initialize(name)
     @name = name
   end
 
-  def select_move
-    puts "Pick a Move: "
-    move = gets.chomp.downcase.to_sym
-    @move = :rock if move == :rock
+  def choose(move)
+    @move = move.downcase.to_sym
   end
 
 end

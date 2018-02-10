@@ -12,8 +12,8 @@ describe Player do
 
   describe 'select_move' do
     it 'allows player one to select rock' do
-      allow(STDIN).to receive(:gets).and_return('Rock')
-      expect(player_1.select_move).to eq :rock
+      player_1.choose("Rock")
+      expect(player_1.move).to eq :rock
     end
   end
 
