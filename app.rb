@@ -1,19 +1,18 @@
 require 'sinatra/base'
-
+require './lib/game'
 
 class Game < Sinatra::Base
-
-set :public_folder, File.dirname(__FILE__) + '/static'
 
   get "/" do
     erb :index
   end
 
+  post "/name" do
+    @name=params[:name]
+    erb :player
+  end
 
+  run! if app_file == $0
 
-
-
-
-run! if app_file == $0
 
 end
