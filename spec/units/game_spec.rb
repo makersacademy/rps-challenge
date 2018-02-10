@@ -51,4 +51,49 @@ describe Game do
       end
     end
   end
+
+  describe "#result" do
+    context "when player_1 move is rock" do
+      it "wins when player_2_move is scissors" do
+        expect(game.result('rock', 'scissors')).to eq :win
+      end
+
+      it "draws when player_2_move is rock" do
+        expect(game.result('rock', 'rock')).to eq :draw
+      end
+
+      it "loses when player_2_move is paper" do
+        expect(game.result('rock', 'paper')).to eq :loss
+      end
+    end
+
+    context "when player_1 move is paper" do
+      it "wins when player_2_move is rock" do
+        expect(game.result('paper', 'rock')).to eq :win
+      end
+
+      it "draws when player_2_move is paper" do
+        expect(game.result('paper', 'paper')).to eq :draw
+      end
+
+      it "loses when player_2_move is scissors" do
+        expect(game.result('paper', 'scissors')).to eq :loss
+      end
+    end
+
+    context "when player_1 move is scissors" do
+      it "wins when player_2_move is paper" do
+        expect(game.result('scissors', 'paper')).to eq :win
+      end
+
+      it "draws when player_2_move is scissors" do
+        expect(game.result('scissors', 'scissors')).to eq :draw
+      end
+
+      it "loses when player_2_move is rock" do
+        expect(game.result('scissors', 'rock')).to eq :loss
+      end
+    end
+
+  end
 end

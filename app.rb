@@ -25,11 +25,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    redirect to '/result'
+    player_1_move = params[:rockpaperscissors]
+    player_2_move = Game.current_game.player_2.move
+    result = Game.current_game.result(player_1_move, player_2_move)
+    redirect to "/#{result}"
   end
 
-  get '/result' do
-    erb :result
+  get '/win' do
+    erb :win
   end
 
+  get '/draw' do
+    erb :draw
+  end
+
+  get '/loss' do
+    erb :loss
+  end
 end
