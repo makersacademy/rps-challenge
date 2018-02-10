@@ -4,6 +4,10 @@ feature 'choose RPS option' do
     click_button 'I wanna rock, ROCK!'
     expect(page).to have_content 'You win Marcus! \ (•◡•) /'
   end
-end
 
-#  ಠ╭╮ಠ
+  scenario 'choose rock option, LOSE' do
+    sign_in_and_play
+    click_button 'I wanna rock, ROCK!'
+    expect(page).to have_content 'You lose Marcus! ಠ╭╮ಠ'
+  end
+end
