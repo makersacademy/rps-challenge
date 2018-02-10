@@ -16,3 +16,12 @@
   <h1><%= @player %> wins this round!</h1>
 
 <% end %>
+
+<h1>Scoreboard:</h1>
+<br>
+<h1><%= @player %>'s score: <%= @scoreboard.players_score %></h1>
+<h1>Computer's score: <%= @scoreboard.computers_score %></h1>
+
+<form action="/play">
+  <input type="submit" value="Next Round">
+</form>

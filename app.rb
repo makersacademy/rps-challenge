@@ -27,10 +27,11 @@ class Rps < Sinatra::Base
   get '/battle' do
     @computer = Computer.new
     @game = Game.new
+    @scoreboard = Scoreboard.new
     @player = session[:player]
     @choice = session[:choice]
-    # @computer.rand_choice
     @outcome = @game.choose_winner(@choice, @computer.rand_choice)
+    @scoreboard.update_score(@outcome) 
     erb :battle
   end
 
