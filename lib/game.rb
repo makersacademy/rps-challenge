@@ -7,6 +7,14 @@ class Game
     @computers_score = 0
   end
 
+  def self.instance
+    @game
+  end
+
+  def self.create
+    @game = Game.new
+  end
+
   def choose_winner(players_choice, computers_choice)
     if computers_choice == 'Rock'
       players_choice == 'Paper' ? @winner = 'player' : @winner = 'computer'

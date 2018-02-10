@@ -6,11 +6,16 @@ require './lib/scoreboard'
 class Rps < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
 
   post '/player' do
+    @game = Game.create
     session[:player] = params[:player]
     redirect '/play'
   end
@@ -27,7 +32,6 @@ class Rps < Sinatra::Base
 
   get '/battle' do
     @computer = Computer.new
-    @game = Game.new
     @scoreboard = Scoreboard.new
     @player = session[:player]
     @choice = session[:choice]
