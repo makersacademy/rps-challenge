@@ -1,7 +1,7 @@
 <html>
 
-<%= @game.player.name %> picked <%= @weapon[0] %>.<br>
-Computer picked <%= @game.computer_weapon %>.
-Final score: <%= @game.calculate_result(@game.computer_weapon, @weapon[0]) %>.
+<%= @game.player.name %> picked <%= @weapon %>.<br>
+Computer picked <%= computer_pick = @game.computer_weapon %>.
+Final score: <%= @game.calculate_result(computer_pick, @weapon) %>.
 
 </html>

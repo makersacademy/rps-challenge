@@ -15,17 +15,15 @@ class Game
   end
 
   def computer_weapon
-    ["scissors", "paper", "rock"].sample
+    ['scissors', 'paper', 'rock'].sample
   end
 
   def calculate_result(cw, pw)
-    if cw == "paper" && pw == "rock" || cw == "rock" && pw == "scissors" || cw == "scissors" && pw == "paper" then
-      "Computer won"
-    elsif pw == "paper" && cw == "rock" || pw == "rock" && cw == "scissors" || pw == "scissors" && cw == "paper" then
-      "Player won"
-    else
-      "It's a draw"
-    end
+    return 'Computer won' if cw == 'scissors' && pw == 'paper'
+    return 'Computer won' if cw == 'paper' && pw == 'rock'
+    return 'Computer won' if cw == 'rock' && pw == 'scissors'
+    return 'Draw!' if cw == pw
+    'Player won!'
   end
 
 end
