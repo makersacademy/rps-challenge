@@ -1,1 +1,13 @@
-<%= @player1 %> vs. Computer
+<html>
+  <head></head>
+  <body>
+    <div class="title">
+      <%= @player1 %> vs. Computer
+    </div>
+    <form action="/attack" method="get">
+      <input type="submit" value="rock" class="weapon" name="rock">
+      <input type="submit" value="paper" class="weapon" name="paper">
+      <input type="submit" value="scissors" class="weapon" name="scissors">
+    </form>
+  <body>
+</html>

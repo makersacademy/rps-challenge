@@ -17,6 +17,14 @@ enable :sessions
     erb(:play)
   end
 
+  get "/attack" do
+    @player1 = session[:player_1_name]
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
+    erb(:attack)
+  end
+
   run! if app_file == $0
 
 end
