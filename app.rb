@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/game'
+require './lib/player'
 
 class Game < Sinatra::Base
 
