@@ -7,11 +7,11 @@ feature "Choose weapon" do
   scenario "player chooses paper" do
     submit_name
     click_button 'Paper'
-    expect(page).to have_content 'Noel: chose paper'
+    expect(page).to have_content 'Noel: chose Paper'
   end
   scenario "player chooses scissors" do
     submit_name
     click_button 'Scissors'
-    expect(page).to have_content 'Noel: chose scissors'
+    expect(page).to have_content 'Noel: chose Scissors'
   end
 end
