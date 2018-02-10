@@ -10,7 +10,9 @@
 
 1) Make root route for entering names. Upon submission, a post request is sent to take the players to the '/play' arena.
 
-EDIT: Realised simplest way to build game would be to make player 2 computerised with randomised selections.
+EDIT: Realised simplest way to build game would be to make player 2 computerised with randomised selections. Made changes accordingly.
+
+2. Create a `Game` class to control the flow of the game. Another post request is used to ask player 1 to start the game. This will redirect them to where they can make their move.
 
 ### Installation
 
@@ -31,6 +33,10 @@ TBC
 ### Author
 
 Terence Allitt
+
+### Time spent on project
+
+2 hours 55 minutes
 
 -------
 
