@@ -25,20 +25,31 @@ class Game
   def player_win?
     case @player_weapon
     when 'rock'
-      return true if pc_weapon == 'scissors'
-      return false if pc_weapon == 'paper'
+      rock_win?
     when 'paper'
-      return true if pc_weapon == 'rock'
-      return false if pc_weapon == 'scissors'
+      paper_win?
     when 'scissors'
-      return true if pc_weapon == 'paper'
-      return false if pc_weapon == 'rock'
+      scissor_win?
     else
       return nil
     end
   end
 
+  private
 
+  def rock_win?
+    return true if pc_weapon == 'scissors'
+    return false if pc_weapon == 'paper'
+  end
 
+  def paper_win?
+    return true if pc_weapon == 'rock'
+    return false if pc_weapon == 'scissors'
+  end
+
+  def scissor_win?
+    return true if pc_weapon == 'paper'
+    return false if pc_weapon == 'rock'
+  end
 
 end

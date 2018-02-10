@@ -1,4 +1,5 @@
 feature "Gameplay" do
+
   it "gives player options of rock, paper and scissors" do
     sign_in_and_play
     expect(page).to have_button('Rock')
@@ -31,8 +32,8 @@ feature "Gameplay" do
     end
   end
 
-  describe "Announcing the computer's option" do
-
+  describe "Announcing the computer's weapon" do
+    
     let(:computer_rock)  { "Computer chose rock" }
     let(:computer_paper) { "Computer chose paper" }
     let(:computer_scissors)  { "Computer chose scissors" }
@@ -40,9 +41,7 @@ feature "Gameplay" do
     it "shows the computer's randomly chosen option" do
       sign_in_and_play
       click_on('Rock')
-      expect(page).to satisfy do |page|
-        page.has_content?(computer_rock) or page.has_content?(computer_paper) or page.has_content?(computer_scissors)
-      end
+      expect(page).to satisfy { |page| possible_computer_weapon(page) }
     end
   end
 end
