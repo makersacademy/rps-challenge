@@ -24,7 +24,7 @@ enable :sessions
 
   get "/attack" do
     @game = Game.instance
-    @weapons = [params[:rock],params[:paper], params[:scissors]]
+    @weapon = [params[:rock],params[:paper], params[:scissors]].select { |weapon| weapon != nil }
     erb(:attack)
   end
 
