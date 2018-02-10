@@ -1,7 +1,14 @@
 <h1> Welcome <%= @player_name %>!</h1>
 <p> Please select your weapon </p>
-<form action="/result">
-  <input type="submit" value="Rock">
-  <input type="submit" value="Paper">
-  <input type="submit" value="Scissors">
+<form action="/weapon" method="post">
+  <input type="hidden" name="weapon" value="Rock">
+  <input type="submit" value="Rock" style="background-color: blue">
+</form>
+<form action="/weapon" method="post">
+  <input type="hidden" name="weapon" value="Paper">
+  <input type="submit" value="Paper" style="background-color: yellow">
+</form>
+<form action="/weapon" method="post">
+  <input type="hidden" name="weapon" value="Scissors">
+  <input type="submit" value="Scissors" style="background-color: red">
 </form>
