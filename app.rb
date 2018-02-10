@@ -33,6 +33,11 @@ class RPS < Sinatra::Base
     erb(:paper)
   end
 
+  post '/scissors' do
+    @player_1 = session[:player_1]
+    erb(:scissors)
+  end
+
   run! if app_file == $0
 
 end
