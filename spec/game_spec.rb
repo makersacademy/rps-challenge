@@ -34,11 +34,11 @@ describe Game do
     end
   end
 
-  describe '#random_move' do
-    it 'randomly assigns a move if one is not given' do
-      # allow(game).to receive(random_move).and return
-      expect(game.random_move).to eq 'rock'
-    end
-  end
+  # describe '#random_move' do
+  #   it 'randomly assigns a move if one is not given' do
+  #     allow(game).to receive(:random_move).and_return()
+  #     expect(game.random_move).to eq 'rock'
+  #   end
+  # end
 
 end
