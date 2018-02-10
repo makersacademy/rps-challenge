@@ -1,5 +1,5 @@
 feature "Choose weapon" do
-  scenario "choose from rock, paper or scissors" do
+  scenario "player chooses rock" do
     visit('/')
     fill_in :player_name, with: 'Noel'
     click_button 'Submit'

@@ -16,6 +16,15 @@ class RPS < Sinatra::Base
     erb :game
   end
 
+  post '/result' do
+    session[:player_weapon] = params[:player_weapon]
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
+
   # start the server is file executed directly
   run! if app_file == $0
 
