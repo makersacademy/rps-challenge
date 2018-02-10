@@ -2,14 +2,15 @@
 
 ### Description
 
-* This software is designed for two players to play a simple game of 'rock, paper, scissors'.
-* The players must be able to enter their names before being sent to the 'play' arena where they will make their CRUCIAL selections in a conventional game of 'RPS'.
+* This software is designed for one player to play a simple game of 'rock, paper, scissors' against a computer.
+* Player one must be able to enter their name before being sent to the 'play' arena where they will make their CRUCIAL selections in a conventional game of 'RPS'.
 * The outcome is whoever reaches 2 wins first.
-* A quick, fun way to decide who takes the bin out or does the dishes tonight :)
 
 ### Development Process
 
 1) Make root route for entering names. Upon submission, a post request is sent to take the players to the '/play' arena.
+
+EDIT: Realised simplest way to build game would be to make player 2 computerised with randomised selections.
 
 ### Installation
 
