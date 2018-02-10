@@ -14,8 +14,4 @@ class Game
     @player = player
   end
 
-  def player
-    @player
-  end
-
 end

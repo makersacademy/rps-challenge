@@ -12,17 +12,18 @@ enable :sessions
   end
 
   post '/name' do
-    $player1 = Player.new(params[:player_1_name])
+    player = Player.new(params[:player_1_name])
+    @game = Game.create(player)
     redirect "/play"
   end
 
   get "/play" do
-    @player1 = $player1
+    @game = Game.instance
     erb(:play)
   end
 
   get "/attack" do
-    @player1 = $player1
+    @game = Game.instance
     @weapons = [params[:rock],params[:paper], params[:scissors]]
     erb(:attack)
   end

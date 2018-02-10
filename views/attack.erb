@@ -1,6 +1,6 @@
 <html>
 
 <% @weapon = @weapons.select { |weapon| weapon != nil }  %>
-<%= @player1.name %> picked <%= @weapon[0] %>.
+<%= @game.player.name %> picked <%= @weapon[0] %>.
 
 </html>
