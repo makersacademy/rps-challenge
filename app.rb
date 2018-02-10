@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   # end
 
   get '/' do
-    "my page is fine the test suite is not"
+    erb(:index)
   end
 
   #  run! if app_file == $0

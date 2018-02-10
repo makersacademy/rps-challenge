@@ -17,7 +17,7 @@ SimpleCov.start
 RSpec.configure do |config|
   config.after(:suite) do
     puts
-    puts "\e[33mHave you considered meditation? It will help everyon and probably make you a better person, and maybe you'll never have to do rubocop again!\e[0m"
+    puts "\e[33mHave you considered meditation? It will help everyone and probably make you a better person, and maybe you'll never have to do rubocop again!\e[0m"
     puts "\e[33mTry it now! Just find yourself and start breathing!\e[0m"
   end
 end
