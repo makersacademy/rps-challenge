@@ -1,3 +1,6 @@
+Hunor RPS game
+
+
 # RPS Challenge
 
 Instructions
