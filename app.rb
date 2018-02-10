@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/computer'
 require './lib/game'
+require './lib/scoreboard'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -31,7 +32,7 @@ class Rps < Sinatra::Base
     @player = session[:player]
     @choice = session[:choice]
     @outcome = @game.choose_winner(@choice, @computer.rand_choice)
-    @scoreboard.update_score(@outcome) 
+    @scoreboard.update_score(@outcome)
     erb :battle
   end
 
