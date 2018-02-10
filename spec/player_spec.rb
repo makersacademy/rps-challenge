@@ -12,7 +12,7 @@ describe Player do
 
   describe '#set_move' do
     it 'sets a players move' do
-      player.move = 'rock'
+      player.set_move('rock')
       expect(player.move).to eql('rock')
     end
   end

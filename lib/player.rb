@@ -7,4 +7,8 @@ class Player
     @name = name
   end
 
+  def set_move(move)
+    @move = move
+  end
+
 end

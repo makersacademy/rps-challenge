@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   let(:game_class) {Game}
-  let(:game) {game_class.create(first_player)}
+  let(:game) {game_class.create(first_player, second_player)}
   let(:first_player) {double('Player 1', name: 'Marcus', move: 'rock')}
   let(:second_player) {double('Player 2', name: 'Gamblore', move: 'scissors')}
 
@@ -22,8 +22,8 @@ describe Game do
 
   describe '#choose_move' do
     it 'allows player 1 to choose a move' do
+      expect(first_player).to receive(:set_move).with 'rock'
       game.choose_move(first_player, 'rock')
-      expect(first_player).to receive(:move=).with 'rock'
     end
   end
 
