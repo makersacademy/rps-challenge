@@ -1,7 +1,7 @@
 describe Player do
 
   subject(:player_1) { described_class.new("Telgi") }
-  subject(:default_player) { described_class.new() }
+  subject(:default_player) { described_class.new("") }
 
   describe '#name' do
     it 'returns the name of the player' do
@@ -9,7 +9,7 @@ describe Player do
     end
 
     it 'returns default name if nothing is entered' do
-      expect(default_player.name).to eq "Player"
+      expect(default_player.name).to eq "Human"
     end
   end
 

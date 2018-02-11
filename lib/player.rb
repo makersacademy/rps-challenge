@@ -2,8 +2,9 @@ class Player
 
   attr_reader :name, :move
 
-  def initialize(name = "Player")
+  def initialize(name)
     @name = name
+    @name = "Human" if @name == ""
   end
 
   def choose(move)
