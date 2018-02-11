@@ -8,6 +8,18 @@ describe Computer do
       computer.choose
       expect(computer.move).to eq :rock
     end
+
+    it 'computer can randomise paper as a move' do
+      srand(1)
+      computer.choose
+      expect(computer.move).to eq :paper
+    end
+
+    it 'computer can randomise scissors as a move' do
+      srand(3)
+      computer.choose
+      expect(computer.move).to eq :scissors
+    end
   end
 
 end
