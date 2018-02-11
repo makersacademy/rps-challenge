@@ -30,15 +30,15 @@ Playing the game
 
 * Enter your name before the game begins
 
-![image](https://user-images.githubusercontent.com/29439776/36079155-deb14db6-0f77-11e8-9e74-a36424ca0c91.png)
+![image](https://user-images.githubusercontent.com/29439776/36079715-05f4ba1a-0f7e-11e8-81e6-263346794613.png)
 
 * Begin playing by selecting either rock, paper or scissors. Meanwhile, the virtual opponent also selects an option at random
 
-![image](https://user-images.githubusercontent.com/29439776/36079118-7cbdb072-0f77-11e8-8609-b9a762471772.png)
+![image](https://user-images.githubusercontent.com/29439776/36079724-185f8be4-0f7e-11e8-93c7-c4b018e0391f.png)
 
 * A winner is declared
 
-![image](https://user-images.githubusercontent.com/29439776/36079132-a0f4f5ea-0f77-11e8-9744-5131e7eba0c2.png)
+![image](https://user-images.githubusercontent.com/29439776/36079732-2d5c41f4-0f7e-11e8-8b39-f182506a0e6b.png)
 
 
 User stories
