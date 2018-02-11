@@ -6,6 +6,7 @@
   <h1> Hello <%= $videogame.player_1.name %> !! You are ready to start the game.</h1>
   <h1> <%= $videogame.player_1.name %> vs <%= $videogame.player_2.name %>
   <h2> Select one of the following options: </h2>
+  <form action="/play" method="post">
   <div class="button">
   <input type="submit" value="Rock"> <input type="submit" value="Scissors">  <input type="submit" value="Paper">
 </div>

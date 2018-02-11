@@ -16,10 +16,15 @@ class Videogame
     elsif(player_1.move == "rock" && player_2.computer_move == "scissors") ||
           (player_1.move == "scissors" && player_2.computer_move == "paper") ||
           (player_1.move == "paper" && player_2.computer_move == "rock")
-          @player_1.increase_points
+          @points = @player_1.increase_points
+          "You Win!!"
     else
-     "#{player_2} wins!"
+     "Matrix wins!"
    end
+  end
+
+  def end_game
+    @points
   end
 
 end

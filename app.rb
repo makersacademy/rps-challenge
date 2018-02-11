@@ -19,7 +19,7 @@ class Game < Sinatra::Base
   end
 
   post "/play" do
-    "you win"
+    erb :move
   end
 
 
