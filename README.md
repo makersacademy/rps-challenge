@@ -39,30 +39,6 @@ $ bundle
 $ rackup
 ```
 
-Playing the game
----
-</br>
-Sign in:
-</br>
-![Sign In](https://dl.dropboxusercontent.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
-</br>
-Play:
-</br>
-
-![Play](https://dl.dropboxusercontent.com/s/jcro3hj06kye6hy/rps_play.png?dl=0)
-</br>
-Win:
-</br>
-![Win](https://dl.dropboxusercontent.com/s/ez26z0fzkxnvlkh/rsp_win.png?dl=0)
-</br>
-Draw:
-</br>
-![Draw](https://dl.dropboxusercontent.com/s/n5usdohxbus9tnw/rps_draw.png?dl=0)
-</br>
-Lose:
-</br>
-![Lose](https://dl.dropboxusercontent.com/s/fg2hryxfqo561if/rps_lose.png?dl=0)
-
 Approach
 ---
 I decided that in order to have a MVP I wanted to have as much as possible of the logic and testing in place in both the back end and the front end before working on the user interface.
