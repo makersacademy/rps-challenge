@@ -15,17 +15,17 @@ class Game
   private
 
   def declare_winner
-    return "It's a draw!" if player.choice == bot.choice
+    return "It's a draw!" if player.weapon == bot.weapon
 
-    if player.choice == 'Rock' && bot.choice == 'Scissors'
+    if player.weapon == 'Rock' && bot.weapon == 'Scissors'
       player.name
-    elsif player.choice == 'Paper' && bot.choice == 'Rock'
+    elsif player.weapon == 'Paper' && bot.weapon == 'Rock'
       player.name
-    elsif player.choice == 'Scissors' && bot.choice == 'Paper'
+    elsif player.weapon == 'Scissors' && bot.weapon == 'Paper'
       player.name
-    elsif player.choice == 'Lizard' && (bot.choice == 'Spock' || bot.choice == 'Paper')
+    elsif player.weapon == 'Lizard' && (bot.weapon == 'Spock' || bot.weapon == 'Paper')
       player.name
-    elsif player.choice == 'Spock' && (bot.choice == 'Scissors' || bot.choice == 'Rock')
+    elsif player.weapon == 'Spock' && (bot.weapon == 'Scissors' || bot.weapon == 'Rock')
       player.name
     else
       bot.name

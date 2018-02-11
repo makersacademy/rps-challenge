@@ -15,7 +15,7 @@
       <h3><%= $game.bot.name %> chose <%= $bot_option %></h2>
       
       <div id="winner">
-        <% if $game.player.choice == $game.bot.choice %>
+        <% if $game.player.weapon == $game.bot.weapon %>
           It's a draw!
         <% elsif $game.output_winner == $game.player.name %>
           <%= $game.player.name %> wins!

@@ -1,5 +1,5 @@
 class Bot < Player
   def random_option
-    @choice = @options.sample
+    @weapon = @options.sample
   end
 end

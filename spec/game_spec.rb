@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player, bot) }
-  let(:player) { double('Josu', name: 'Josu', choice: 'Rock') }
-  let(:bot) { double('bot', name: 'bot', choice: 'Scissors') }
+  let(:player) { double('Josu', name: 'Josu', weapon: 'Rock') }
+  let(:bot) { double('bot', name: 'bot', weapon: 'Scissors') }
 
   describe '#initialize' do
     it 'initializes the game with two players' do

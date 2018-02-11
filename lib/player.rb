@@ -1,16 +1,16 @@
 class Player
-  attr_reader :name, :choice, :options
+  attr_reader :name, :weapon, :options
 
   def initialize(name)
     @name = name
-    @choice = ""
+    @weapon = ""
     @options = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
   end
 
   def choose_option(option)
     option_check(option)
 
-    @choice = option
+    @weapon = option
   end
 
   private
