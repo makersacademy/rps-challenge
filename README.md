@@ -13,11 +13,13 @@ Regarding tests, I first created the following feature tests:
 
 Up to this point, I stored user input (name and choice) in sessions (enabled in controller file for Sinatra).
 
-Next: after making sure these features work as intended, it was time to *introduce new classes* (player and game), *delegate responsibilities* from the Rps class to them and *refactor controller sessions*, allowing variables and instances to hold data in between requests.
+Next: after making sure these features work as intended, it was time to *introduce new classes* (Game, Player and, eventually, Bot), *delegate responsibilities* from the Rps class to them and *refactor controller sessions*, allowing variables and instances to hold data in between requests.
 
 4. **Random choice**: used .srand Ruby method to return the same play every time and be able to output computer's choice in the test, but in the browser it changes every time.
 
-5. **Winner declared**: displaying the winner on the browser based on who won the round. Again, used the .srand Ruby method to return *Scissors* as the computer's choice and be able to display the player as the winner (choice: *Rock*) 
+5. **Winner declared**: displaying the winner on the browser based on who won the round. Again, used the .srand Ruby method to return *Scissors* as the computer's choice and be able to display the player as the winner (choice: *Rock*)
+
+6. **Bonuses**: I added the multiplayer option and, rather than getting rid of the solo game mode, I decided to split the views and controllers and allow the player to choose. Finally, two more weapons were added to the game: *Lizard* and *Spock*, to make it more interesting.
 
 Next focus
 ------
@@ -25,11 +27,14 @@ Next focus
 * I started to include some more CSS in my project, but definitely I would have worked on styling it better if I had more time.
 
 [TBC]
+* Killing global variables, though I am aware that they are very dangerous, I am reassured all the parameters/sessions will be stored in databases next week :)
+
+* Refactoring the game logic for weapon options into hashes, in order to get rid of so many branches in the if expression within the *declare_winner* method for the Game class. I had the feeling this was not really practical and could be improved.
 
 Personal code review
 ------
 
-* I have the feeling that I have improved a lot in the technical part, but I still struggle to organise my train of thoughts.
+* I have the feeling that I have improved a lot in the technical part over the last few weeks, but I still struggle to organise my train of thoughts.
 * I find myself going over and over again the same things and jumping between tests, writing code first, or realising that my tests were not really useful.
 * I try to let myself be driven by TDD, but sometimes I realise my tests are driven by my code.
 This happened especially after changing the game mode to allow two players to play, when I had to change tests and the controller.

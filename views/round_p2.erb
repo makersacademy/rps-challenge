@@ -11,7 +11,7 @@
   
   <body>
     <div class="main">
-      <h4>Now, <%= $game.bot.name %>, choose one: <i>Rock - Paper - Scissor</i></h4>
+      <h4>Now, <%= $game.bot.name %>, choose one: <i>Rock - Paper - Scissor - Lizard - Spock</i></h4>
 
       <form action="/PvP_option2" method="POST">
         <button type="submit" name="option" value="Rock">
@@ -24,6 +24,14 @@
 
         <button type="submit" name="option" value="Scissors">
           <i class="far fa-hand-scissors fa-5x"></i>
+        </button>
+
+        <button type="submit" name="option" value="Lizard">
+          <i class="far fa-hand-lizard fa-5x"></i>
+        </button>
+
+        <button type="submit" name="option" value="Spock">
+          <i class="far fa-hand-spock fa-5x"></i>
         </button>
       </form>
     </div>
