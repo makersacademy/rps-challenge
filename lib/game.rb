@@ -19,6 +19,14 @@ class Game
     'draw'
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   private
 
   def player_wins(player_weapon, computer_weapon)
