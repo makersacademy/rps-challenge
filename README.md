@@ -20,6 +20,8 @@ EDIT: Realised simplest way to build game would be to make player 2 computerised
 
 5. Use constant variable to hold hash of possible outcomes to render winner of each game.
 
+6. Add tally_score method to Player and Computer class so that it's possible to track how many games have been won by the players.
+
 ### Installation
 
 Install Bundler and the relevant gems with the below commands:
