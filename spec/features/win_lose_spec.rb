@@ -4,7 +4,7 @@ feature 'choose RPS option' do
     sign_in_and_play
     click_button 'I wanna rock, ROCK!'
     expect(page).to have_content 'Marcus wins! \ (•◡•) /'
-    expect(page).not_to have_content 'Your enemy wins! ಠ╭╮ಠ' && 'Tie Game! (╯°□°）╯︵ ┻━┻'
+    expect(page).not_to have_ content 'Your enemy wins! ಠ╭╮ಠ' && 'Tie Game! (╯°□°）╯︵ ┻━┻'
   end
 
   scenario 'choose rock option, LOSE' do
