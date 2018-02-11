@@ -18,7 +18,6 @@ require 'capybara/rspec'
 require 'rspec'
 Capybara.app = RPS
 
-
 RSpec.configure do |config|
   config.after(:suite) do
     puts
