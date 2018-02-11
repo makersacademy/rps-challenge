@@ -7,6 +7,6 @@ class Bot
 
   def initialize
     @name = "A Harmless Bot"
-    @choice = Player::OPTIONS.sample.to_s
+    @choice = Player::OPTIONS.sample
   end
 end
