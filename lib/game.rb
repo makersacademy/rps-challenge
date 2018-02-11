@@ -7,11 +7,11 @@ class Game
     if player_choice == computer_choice
      "It's a draw"
    elsif computer_choice == "Paper" && player_choice == "Scissors"
-      "#{player.name} wins"
+      "You win"
     elsif computer_choice == "Scissors" && player_choice == "Rock"
-      "#{player.name} wins"
+      "You win"
     elsif computer_choice == "Rock" && player_choice == "Paper"
-      "#{player.name} wins"
+      "You win"
     else
      "Computer wins"
     end

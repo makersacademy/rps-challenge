@@ -1,4 +1,6 @@
 require "game"
+require "player"
+
 
 describe Game do
 
@@ -7,6 +9,11 @@ describe Game do
   describe "#match" do
     it "returns a draw" do
       expect(game.match("Rock", "Rock")).to eq "It's a draw"
+    end
+
+    it "returns player wins" do
+      expect(game.match("Rock", "Scissors")).to eq "You win"
+
     end
   end
 
