@@ -5,7 +5,7 @@ describe Bot do
 
   context '#initialize' do
     it "initializes with a default name" do 
-      expect(bot.name).to eq "I am a harmless bot"
+      expect(bot.name).to eq "A Harmless Bot"
     end
   end
 end

@@ -1,9 +1,11 @@
+require_relative 'player'
 
-class Bot < Player
+class Bot
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   def initialize
-    @name = "I am a harmless bot"
+    @name = "A Harmless Bot"
+    @choice = Player::OPTIONS.sample
   end
 end
