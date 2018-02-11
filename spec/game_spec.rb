@@ -12,7 +12,7 @@ describe Game do
   describe '#initialize' do
     it 'initializes the game with two players' do
       expect(game.player.name).to eq 'Josu'
-      expect(game.bot.name).to eq 'bot'
+      expect(game.player2.name).to eq 'bot'
     end
   end
 
@@ -20,7 +20,7 @@ describe Game do
     it 'chooses a random option for the computer' do
       allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
 
-      game.bot.random_option
+      game.player2.random_option
     end
   end
 

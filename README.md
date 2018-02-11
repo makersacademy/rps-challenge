@@ -29,14 +29,14 @@ Next focus
 * Killing global variables, though I am aware that they are very dangerous, I am reassured all the parameters/sessions will be stored in databases next week :)
 
 * Refactoring the game logic for weapon options into a hash, in order to get rid of so many branches in the if expression within the *declare_winner* method for the Game class. I had the feeling this was not really practical and could be improved. This could have been something like this, e.g.:
-{ 'Lizard': ['Spock', 'Paper'] } and... if param from player 2 == elem in Array, then we know the hash key (param from player 1) wins.
+```{ 'Lizard': ['Spock', 'Paper'] }``` and... ```if param from player 2 == elem in Array```, then we know the ```hash key (param from player 1)``` wins.
 
 Personal code review
 ------
 
 * I have the feeling that I have improved a lot in the technical part over the last few weeks, but I still struggle to organise my train of thoughts.
 
-* I find myself going over and over again the same things and jumping between tests, writing code first, or realising that my tests were not really useful.
+* I find myself going over and over again the same things and jumping between tests, writing code first, or realising that my tests were not really useful/testing what they were meant to test.
 
 * I try to let myself be driven by TDD, but sometimes I realise my tests are driven by my code.
 This happened especially after changing the game mode to allow two players to play, when I had to change tests and controllers.

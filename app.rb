@@ -17,8 +17,8 @@ class Rps < Sinatra::Base
 
   post '/PvC' do
     player = Player.new(params[:player])
-    bot = Bot.new('Computer')
-    $game = Game.new(player, bot)
+    player2 = Bot.new('Computer')
+    $game = Game.new(player, player2)
     redirect '/round'
   end
 
@@ -28,7 +28,7 @@ class Rps < Sinatra::Base
 
   post '/PvC_option' do
     $player_option = $game.player.choose_option(params[:option])
-    $bot_option = $game.bot.random_option
+    $player2_option = $game.player2.random_option
     redirect '/result'
   end
 
@@ -38,8 +38,8 @@ class Rps < Sinatra::Base
 
   post '/PvP' do
     player = Player.new(params[:player])
-    bot = Player.new(params[:player2])
-    $game = Game.new(player, bot)
+    player2 = Player.new(params[:player2])
+    $game = Game.new(player, player2)
     redirect '/round_p1'
   end
 
@@ -57,7 +57,7 @@ class Rps < Sinatra::Base
   end
 
   post '/PvP_option2' do
-    $bot_option = $game.bot.choose_option(params[:option])
+    $player2_option = $game.player2.choose_option(params[:option])
     redirect '/result'
   end
 

@@ -10,22 +10,22 @@
 
   <body>
     <div class="main">
-      <h3><%= $game.player.name %> chose <%= $player_option %></h2>
+      <h2><%= $game.player.name %> chose <%= $player_option %></h2>
 
-      <h3><%= $game.bot.name %> chose <%= $bot_option %></h2>
+      <h3><%= $game.player2.name %> chose <%= $player2_option %></h3>
       
       <div id="winner">
-        <% if $game.player.weapon == $game.bot.weapon %>
+        <% if $game.player.weapon == $game.player2.weapon %>
           It's a draw!
         <% elsif $game.output_winner == $game.player.name %>
           <%= $game.player.name %> wins!
         <% else %>
-          <%= $game.bot.name %> wins!
+          <%= $game.player2.name %> wins!
         <% end %>
       </div>
 
       <div class="play_again">
-        <% if $game.bot.name == 'Computer' %>
+        <% if $game.player2.name == 'Computer' %>
           <form action="/round">
         <% end %>
           <form action="/round_p1">
