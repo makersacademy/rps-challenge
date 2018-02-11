@@ -1,4 +1,13 @@
 <h1>Congratulations</h1>
+
+<h3>
+You chose <%= @game.results[:winner] %>.
+</h3>
+<h3>
+The computer chose <%= @game.results[:loser] %>.
+</h3>
+<h1>You win!!</h1>
+
 <form action="/game" method="get">
   <button type="submit" name="play again">Play again!</button>
 </form>

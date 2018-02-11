@@ -9,12 +9,12 @@ class Game
     @current_game
   end
 
-  attr_reader :player_1, :player_2, :moves
+  attr_reader :player_1, :player_2, :moves, :results
 
   DEFAULT_MOVE_LIST = %w(rock paper scissors)
   DEFAULT_RULES = { rock: 'scissors',
-                      scissors: 'paper',
-                      paper: 'rock'}
+                    scissors: 'paper',
+                    paper: 'rock'}
 
   def initialize(player_1, player_2, moves = DEFAULT_MOVE_LIST, rules = DEFAULT_RULES)
     @player_1 = player_1
@@ -25,6 +25,7 @@ class Game
   end
 
   def result(player_1_move, player_2_move)
+    raise "You must choose a move" unless player_1_move
     draw_result(player_1_move, player_2_move) if player_1_move == player_2_move
     win_result(player_1_move, player_2_move) if @rules[player_1_move.to_sym] == player_2_move
     loss_result(player_1_move, player_2_move) if @rules[player_2_move.to_sym] == player_1_move

@@ -1,4 +1,11 @@
-<h1>It's a draw. Boring.</h1>
+<h1>It's a draw.</h1>
+
+<h3>
+You both chose <%= @game.results[:move] %>.
+</h3>
+
+<h1>Boring!</h1>
+
 <form action="/game" method="get">
   <button type="submit" name="play again">Play again!</button>
 </form>

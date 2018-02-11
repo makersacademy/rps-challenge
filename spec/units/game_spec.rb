@@ -53,6 +53,12 @@ describe Game do
   end
 
   describe "#result" do
+    context "when player_1_move not provided" do
+      it 'raises "You must choose a move" error' do
+        expect { game.result( nil, 'rock') }.to raise_error "You must choose a move"
+      end
+    end
+
     context "when game is a draw" do
       it 'calls #draw_result' do
         expect(game).to receive(:draw_result).with('rock', 'rock')

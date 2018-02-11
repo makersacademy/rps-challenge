@@ -5,7 +5,7 @@ require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
-  before '/game' do
+  before(/(\/game)\/?\w*/) do
     @game = Game.current_game
   end
 
@@ -27,19 +27,20 @@ class RockPaperScissors < Sinatra::Base
   post '/play' do
     player_1_move = params[:rockpaperscissors]
     player_2_move = Game.current_game.player_2.move
-    result = Game.current_game.result(player_1_move, player_2_move)
-    redirect to "/#{result}"
+    Game.current_game.result(player_1_move, player_2_move)
+    results = Game.current_game.results
+    redirect to "/game/#{results[:result]}"
   end
 
-  get '/win' do
+  get '/game/win' do
     erb :win
   end
 
-  get '/draw' do
+  get '/game/draw' do
     erb :draw
   end
 
-  get '/loss' do
+  get '/game/loss' do
     erb :loss
   end
 end
