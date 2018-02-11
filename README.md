@@ -28,6 +28,8 @@ Hints on functionality
 - Scissors beats Paper
 - Paper beats Rock
 
+___
+
 Installation
 ---
 
@@ -41,12 +43,27 @@ $ rackup
 Play
 ---
 Sign in:
-![Sign In](https://www.dropbox.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
+![Sign In](https://dl.dropboxusercontent.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
 
+Play:
+![Play](https://dl.dropboxusercontent.com/s/jcro3hj06kye6hy/rps_play.png?dl=0)
+
+Win:
+![Win](https://dl.dropboxusercontent.com/s/ez26z0fzkxnvlkh/rsp_win.png?dl=0)
+
+
+Draw:
+![Draw](https://dl.dropboxusercontent.com/s/n5usdohxbus9tnw/rps_draw.png?dl=0)
+
+Lose:
+![Lose](https://dl.dropboxusercontent.com/s/fg2hryxfqo561if/rps_lose.png?dl=0)
 
 Approach
 ---
-I decided that in order to have a MVP I wanted to have as much as possible of the logic and testing in place in both the back end and the front end before beautifying the user interface.
-I followed the usual BDD/TDD approach to creating the logic behind the app, and tried to give as much thought to testing edge cases as I could.
+I decided that in order to have a MVP I wanted to have as much as possible of the logic and testing in place in both the back end and the front end before working on the user interface.
+
+I followed the usual BDD/TDD approach to creating the logic behind the app, and tried to be as thorough as possible in testing edge cases.
+
 My design decisions were in part made with a view that the app might be extensible as, given more time it would interesting to consider similar games with different rule sets.
+
 While I was able to implement the required core functionality, I have not been able to add to the HTML and CSS in the timeframe allowed. This is certainly something I would look to improve were I to continue working on the app.
