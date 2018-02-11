@@ -1,7 +1,5 @@
 class Player
 
-  MOVES = [:rock, :paper, :scissors]
-
   attr_reader :name, :move
 
   def initialize(name = "Player")
