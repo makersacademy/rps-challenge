@@ -1,0 +1,47 @@
+body {
+  background-image: url("/images/battle_arena.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  color: #FFF;
+  font-family: 'Ravi Prakash', cursive;
+  text-align: center;
+  text-shadow: -2px 1px 1px black;
+  color: #e8e4b2;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: -6px 8px 11px 1px black;
+}
+
+.center {
+  font-size: 1em;
+}
+
+.battle_display {
+  display: grid;
+  grid-template-columns: repeat(2);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.header {
+  grid-row: 1;
+  text-align: center;
+}
+
+.p1_display {
+  grid-row: 2 / 5;
+  grid-column: 1 / 2;
+}
+
+.p2_display {
+  grid-row: 2 / 5;
+  grid-column: 3 / 4;
+}
+
+.footer {
+  grid-row: 6;
+}

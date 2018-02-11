@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
   </head>
   <body>
-    <div class="form">
+    <div class="form center">
       <form action="/play" method="post">
         <label for="name">Enter your name:</label>
-        <input type="text" name="player_one[name]" required><br>
-        <label for="rps">Choose your weapon!</label>
+        <input type="text" name="player_one[name]" value="   " required><br>
+        <label for="rps">Choose your weapon!</label><br>
         <select name="player_one[rps]" required>
           <option value="rock">Rock</option>
           <option value="paper">Paper</option>
@@ -18,9 +20,11 @@
           <option value="lizard">Lizard</option>
         </select><br>
         <label for="two_player">Single or two player game?</label><br>
-        <input type="radio" name="one_player" value="false">Single<br>
-        <input type="radio" name="two_player" value="true">Two player
-        <input type="submit" value="Submit">
+        <select name="two_player">
+          <option value="false">Single player</option>
+          <option value="true">Two players</option>
+        </select><br><br>
+        <button type="submit" value="Submit">Submit</button>
       </form>
     </div>
   </body>

@@ -1,0 +1,38 @@
+body {
+  background-image: url("/images/rpsls.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+  font-family: 'Ravi Prakash', cursive;
+}
+
+img {
+  width: 200px;
+}
+
+.center {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 30px;
+  right: 0;
+  padding: 15px;
+  width: 500px;
+  height: 550px;
+  font-size: 2.5em;
+  text-align: center;
+  background-color: rgba(173, 216, 230, 0.5);
+  border-radius: 20px;
+  font-family: 'Ravi Prakash', cursive;
+}
+
+select, input, button {
+  font-family: 'Ravi Prakash', cursive;
+  font-size: 0.7em;
+  transition: 0.5s;
+  box-shadow: 0px 7px 17px 6px #395584;
+}
+
+button:hover {
+  box-shadow: 0px 7px 17px 6px #7b3c3c;
+}

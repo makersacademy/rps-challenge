@@ -2,19 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="/css/play.css">
   </head>
   <body>
-    <% if @game.player_two != nil %>
-      <h1>Welcome to the arena <%= @game.player_one %> and <%= @game.player_two %></h1>
-      <h1><%= @game.player_one %> chose <%= @game.p1_choice %>!</h1>
-      <h1><%= @game.player_two %> chose <%= @game.p2_choice%>!</h1>
-      <h1><%= @game.winner %></h1>
-    <% else %>
-      <h1>Welcome to the arena <%= @game.player_one %></h1>
-      <h1>You chose <%= @game.p1_choice %>!</h1>
-      <h1>CPU chose <%= @game.cpu_choice%>!</h1>
-      <h1><%= @game.winner %></h1>
-    <% end %>
+    <div class="center">
+      <% if @game.player_two != nil %>
+        <h1>Welcome to the arena <%= @game.player_one %> and <%= @game.player_two %></h1>
+        <div class="battle_display">
+          <div class="p1_display">
+            <h1><%= @game.player_one %> chose <%= @game.p1_choice %>!</h1><br>
+            <img src="/<%= @game.p1_image %>">
+          </div>
+          <div class="p2_display">
+            <h1><%= @game.player_two %> chose <%= @game.p2_choice%>!</h1><br>
+            <img src="/<%= @game.p2_image %>" alt="">
+          </div>
+        </div>
+        <h1><%= @game.winner %></h1>
+      <% else %>
+        <h1>Welcome to the arena <%= @game.player_one %></h1>
+        <h1>You chose <%= @game.p1_choice %>!</h1>
+        <h1>CPU chose <%= @game.cpu_choice%>!</h1>
+        <h1><%= @game.winner %></h1>
+      <% end %>
+    </div>
   </body>
 </html>
