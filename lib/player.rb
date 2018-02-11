@@ -4,7 +4,7 @@ class Player
   def initialize(name)
     @name = name
     @choice = ""
-    @options = ['Rock', 'Paper', 'Scissors']
+    @options = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
   end
 
   def choose_option(option)

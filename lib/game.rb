@@ -23,6 +23,10 @@ class Game
       player.name
     elsif player.choice == 'Scissors' && bot.choice == 'Paper'
       player.name
+    elsif player.choice == 'Lizard' && (bot.choice == 'Spock' || bot.choice == 'Paper')
+      player.name
+    elsif player.choice == 'Spock' && (bot.choice == 'Scissors' || bot.choice == 'Rock')
+      player.name
     else
       bot.name
     end
