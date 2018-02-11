@@ -9,13 +9,13 @@ body {
 
 h1 {
   font-size: 50px;
-
+  margin: 1px;
 }
 
 h2 {
   font-size: 30px;
+  padding-bottom: 5px;
 }
-
 
 input[type=text] {
   font-size: 15px;
@@ -33,6 +33,6 @@ input[type=submit] {
   border-radius: 4px;
   color: white;
   padding: 12px 20px;
-  margin: 4px 8px;
+  margin: 30px 8px;
   cursor: pointer;
 }
