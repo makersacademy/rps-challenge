@@ -1,5 +1,5 @@
 <h2>It's the match we've all been waiting for!</h2>
-<h1><%= @game.player_1.name %> VS Computer</h1>
+<h1><%= @game.player_1.name %> VS <%= @game.computer.name %></h1>
 
 <form action="/move" method="POST">
   <input type="submit" value="Start to Play">
