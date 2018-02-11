@@ -1,0 +1,9 @@
+<% if @game.outcome == :win %>
+<h1>You win!</h1>
+<% end %>
+<% if @game.outcome == :draw %>
+<h1>Draw!</h1>
+<% end %>
+<% if @game.outcome == :lose %>
+<h1>You lose!</h1>
+<% end %>

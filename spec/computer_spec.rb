@@ -10,13 +10,10 @@ describe Computer do
       expect(computer.name).to eq("RPSbot")
     end
 
-  end
-
-  context "#choose_move" do
-
-    it "gets a random move" do
+    it "initializes with a random move" do
       srand(356)
-      expect(computer.computer_move).to eq(:rock)
+      expect(computer.move).to eq(:rock)
     end
+    
   end
 end

@@ -4,10 +4,7 @@ class Computer
 
   def initialize
     @name = "RPSbot"
-  end
-
-  def computer_move
-    @move = [:rock, :paper, :scissors].sample
+    @move = [:rock, :paper, :scissors, :spock, :lizard].sample
   end
 
 end
