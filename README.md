@@ -22,6 +22,8 @@ Next: after making sure these features work as intended, it was time to *introdu
 Next focus
 ------
 
+* I started to include some more CSS in my project, but definitely I would have worked on styling it better if I had more time.
+
 [TBC]
 
 Personal code review

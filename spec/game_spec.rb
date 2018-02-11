@@ -7,17 +7,13 @@ describe Game do
   let(:bot) { double('bot', name: 'bot', choice: 'Scissors') }
 
   describe '#initialize' do
-    # Check again
     it 'initializes the game with two players' do
-      expect(Game).to receive(:new).with(player, bot)
-
-      subject
+      expect(game.player.name).to eq 'Josu'
+      expect(game.bot.name).to eq 'bot'
     end
   end
 
   describe '#choose_option' do
-    # Test for player to choose option?
-    # It's in buttons in the view... passed as param
 
     it 'chooses a random option for the computer' do
       allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
@@ -28,11 +24,8 @@ describe Game do
 
   describe '#output_winner' do
     it "returns winner's name" do
-      allow(player).to receive(:choose_option)#.with('Rock') { 'Rock' }
-      allow(bot).to receive(:random_option)#.with(no_args { 'Scissors' })
-
-      # player.choose_option('Rock')
-      # bot.random_option
+      allow(player).to receive(:choose_option)
+      allow(bot).to receive(:random_option)
       
       expect(game.output_winner).to eq player.name
     end

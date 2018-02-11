@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/bot'
 
 class Rps < Sinatra::Base
 
@@ -12,7 +13,7 @@ class Rps < Sinatra::Base
 
   post '/player' do
     player = Player.new(params[:player])
-    bot = Player.new('bot')
+    bot = Bot.new('Computer')
     $game = Game.new(player, bot)
     redirect '/round'
   end

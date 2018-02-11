@@ -1,0 +1,21 @@
+/* GENERAL */
+
+h2, h3, h4 {
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: Impact;
+}
+
+/* REST */
+
+.main {
+  text-align: center;
+}
+
+#winner {
+  color: red;
+  margin-top: 40px;
+  font-size: 2em;
+}
