@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="index.css">
 <link href="https://fonts.googleapis.com/css?family=Sumana" rel="stylesheet">
 
-<h1>Welcome, <%=@player%></h1>
+<h1>Welcome, <%=@game.player.name%></h1>
 <h2>Please select an option</h2>
 <img src="http://bit.ly/2AKs6dk" height="120" width="320">
 <form action="/option" method="post">
