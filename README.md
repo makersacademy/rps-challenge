@@ -42,18 +42,22 @@ $ rackup
 
 Playing the game
 ---
+</br>
 Sign in:
 ![Sign In](https://dl.dropboxusercontent.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
+</br>
 
 Play:
 ![Play](https://dl.dropboxusercontent.com/s/jcro3hj06kye6hy/rps_play.png?dl=0)
+</br>
 
 Win:
 ![Win](https://dl.dropboxusercontent.com/s/ez26z0fzkxnvlkh/rsp_win.png?dl=0)
-
+</br>
 
 Draw:
 ![Draw](https://dl.dropboxusercontent.com/s/n5usdohxbus9tnw/rps_draw.png?dl=0)
+</br>
 
 Lose:
 ![Lose](https://dl.dropboxusercontent.com/s/fg2hryxfqo561if/rps_lose.png?dl=0)
