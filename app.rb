@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/game'
 
 class RpsGame < Sinatra::Base
 
@@ -30,6 +31,7 @@ class RpsGame < Sinatra::Base
     @computer = Computer.new
     @computer.choose_weapon
     @computer_weapon = @computer.weapon
+    @game = Game.new
     erb(:result)
   end
 

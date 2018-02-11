@@ -1,3 +1,11 @@
 <h1>The results are in...</h1>
 <h3><%= @player_name %> chose: <%= @player_weapon %></h3>
 <h3>Computer chose: <%= @computer_weapon %></h3>
+
+<% if @game.result(@player_weapon, @computer_weapon) == 'draw' %>
+  <h2>It's a draw</h2>
+<% elsif @game.result(@player_weapon, @computer_weapon) == 'win' %>
+  <h2>You won!</h2>
+<% elsif @game.result(@player_weapon, @computer_weapon) == 'lose' %>
+  <h2>You lost...better luck next time!</h2>
+<% end %>
