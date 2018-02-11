@@ -54,3 +54,23 @@ feature 'Result confirmation' do
     expect(page).to have_content "It's a Draw"
   end
 end
+
+feature 'Game Score' do
+  scenario 'Human player\'s score increases by 1 if they win' do
+    srand(3)
+    choose_rock
+    expect(page).to have_content "Telgi 1 : 0 Computer"
+  end
+
+  scenario 'Computer\'s score increases by 1 if they win' do
+    srand(1)
+    choose_rock
+    expect(page).to have_content "Telgi 0 : 1 Computer"
+  end
+
+  scenario 'Scores remain the same if the outcome is a draw' do
+    srand(2)
+    choose_rock
+    expect(page).to have_content "Telgi 0 : 0 Computer"
+  end
+end
