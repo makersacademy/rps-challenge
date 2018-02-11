@@ -1,16 +1,23 @@
 # RPS Challenge
 
-Instructions
--------
+Completed this as third weekend challenge at Makers Academy
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+This program lets you play Rock, Paper, Scissors against a computer in your browser.
 
-Task
-----
+## How to use
+
+1. Use Ruby 2.5.0
+2. Clone this repo
+3. Install bundle gem with ```gem install bundler``` in the console (skip this if already installed)
+4. Run ```bundle install``` to install the required gems
+5. Run ```rackup```
+6. In a web browser, visit the localhost port displayed in the console. Follow the instructions in the web browser
+
+### To test code
+
+* Run ```rspec``` in terminal
+
+## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -27,60 +34,24 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## My approach
 
-Hints on functionality
+1. With the user stories, I wrote the necessary feature tests which satisfied the user stories.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+2. Having written and failed these initial tests, I proceeded to write the least code possible to pass these tests.
 
+3. Once it was clear that the program needed some Ruby objects to keep the views and controller as skinny as possible, I wrote some unit tests for namely for the game and player classes. I then wrote the code to pass these tests.
 
-As usual please start by
+4. Following this, I further test-drove feature which reset the game.
 
-* Forking this repo
-* TEST driving development of your app
+## Key learnings
 
+* Using Sinatra to set up a web framework
+* Structuring the code for apps which have user interaction and visual output
+* Testing apps that have user interaction and visual output - namely with Capybara
+* Tracing data between the browser and server
+* Basics of RESTful APIs
 
-## Bonus level 1: Multiplayer
+## To complete
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+* Implement CSS style sheets
