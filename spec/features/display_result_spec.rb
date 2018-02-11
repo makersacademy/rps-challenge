@@ -11,13 +11,13 @@ feature 'displays result' do
     scenario 'computer chooses paper' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Paper'
       sign_in_and_choose_rock
-      expect(page).to have_content("You lost")
+      expect(page).to have_content("Computer wins")
     end
 
     scenario 'computer chooses scissors' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Scissors'
       sign_in_and_choose_rock
-      expect(page).to have_content("You won!")
+      expect(page).to have_content("Hannah wins!")
     end
 
   end
@@ -27,7 +27,7 @@ feature 'displays result' do
     scenario 'computer chooses rock' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Rock'
       sign_in_and_choose_paper
-      expect(page).to have_content("You won!")
+      expect(page).to have_content("Hannah wins!")
     end
 
     scenario 'computer also chooses paper' do
@@ -39,7 +39,7 @@ feature 'displays result' do
     scenario 'computer chooses scissors' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Scissors'
       sign_in_and_choose_paper
-      expect(page).to have_content("You lost")
+      expect(page).to have_content("Computer wins")
     end
 
   end
@@ -49,13 +49,13 @@ feature 'displays result' do
     scenario 'computer chooses rock' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Rock'
       sign_in_and_choose_scissors
-      expect(page).to have_content("You lost")
+      expect(page).to have_content("Computer wins")
     end
 
     scenario 'computer chooses paper' do
       allow_any_instance_of(Array).to receive(:sample).and_return 'Paper'
       sign_in_and_choose_scissors
-      expect(page).to have_content("You won!")
+      expect(page).to have_content("Hannah wins!")
     end
 
     scenario 'computer also chooses scissors' do

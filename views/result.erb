@@ -5,7 +5,19 @@
 <% if @game.result(@player_weapon, @computer_weapon) == 'draw' %>
   <h2>It's a draw</h2>
 <% elsif @game.result(@player_weapon, @computer_weapon) == 'win' %>
-  <h2>You won!</h2>
+  <h2><%= @player_name %> wins!</h2>
 <% elsif @game.result(@player_weapon, @computer_weapon) == 'lose' %>
-  <h2>You lost...better luck next time!</h2>
+  <h2>Computer wins...better luck next time!</h2>
 <% end %>
+
+<form action="/play">
+  <input type="submit" value="Play again as <%= @player_name %>">
+</form>
+
+<form action="/">
+  <input type="submit" value="Play again as new player">
+</form>
+
+<form action="/thanks">
+  <input type="submit" value="Leave game">
+</form>

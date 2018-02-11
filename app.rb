@@ -35,4 +35,9 @@ class RpsGame < Sinatra::Base
     erb(:result)
   end
 
+  get '/thanks' do
+    @player_name = session[:name]
+    erb(:thanks)
+  end
+
 end
