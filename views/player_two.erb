@@ -6,20 +6,19 @@
   </head>
   <body>
     <div class="form">
-      <form action="/play" method="post">
-        <label for="name">Enter your name:</label>
-        <input type="text" name="player_one[name]" required><br>
+      <form action="/play_two" method="post">
+        <label for="name">Enter your name player two:</label>
+        <input type="text" name="player_two[name]" required><br>
         <label for="rps">Choose your weapon!</label>
-        <select name="player_one[rps]" required>
+        <select name="player_two[rps]" required>
           <option value="rock">Rock</option>
           <option value="paper">Paper</option>
           <option value="scissors">Scissors</option>
         </select><br>
-        <label for="two_player">Single or two player game?</label><br>
-        <input type="radio" name="one_player" value="false">Single<br>
-        <input type="radio" name="two_player" value="true">Two player
+        <input type="hidden" name="player_one" value="">
         <input type="submit" value="Submit">
       </form>
+      <%= @player_one %>
     </div>
   </body>
 </html>
