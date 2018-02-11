@@ -11,7 +11,6 @@ class Game
     @game = Game.new(player, opponent)
   end
 
-# Creates a new game instance and stores it in a class instance variable
   def self.instance
     @game
   end
