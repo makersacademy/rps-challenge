@@ -13,3 +13,21 @@ def start_game
   sign_in_and_play
   click_button "Start Game"
 end
+
+def choose_rock
+  start_game
+  choose("Rock")
+  click_button "Ching-Up"
+end
+
+def choose_paper
+  start_game
+  choose("Paper")
+  click_button "Ching-Up"
+end
+
+def choose_scissors
+  start_game
+  choose("Scissors")
+  click_button "Ching-Up"
+end

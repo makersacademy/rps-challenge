@@ -29,7 +29,7 @@ class RPS < Sinatra::Base
   end
 
   post '/selection' do
-    @game.player.choose(params[:move])
+    @game.player_1.choose(params[:move])
     erb(:selection)
   end
 
