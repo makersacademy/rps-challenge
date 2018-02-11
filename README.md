@@ -30,8 +30,7 @@ Playing the game
 
 * Enter your name before the game begins
 
-![image](https://user-images.githubusercontent.com/29439776/36079105-6b78c4a0-0f77-11e8-9d90-0aeb302cbf5c.png)
-
+![image](https://user-images.githubusercontent.com/29439776/36079155-deb14db6-0f77-11e8-9e74-a36424ca0c91.png)
 
 * Begin playing by selecting either rock, paper or scissors. Meanwhile, the virtual opponent also selects an option at random
 
