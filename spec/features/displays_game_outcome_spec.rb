@@ -1,23 +1,24 @@
 feature "Outcome page" do
 
+  before(:each) do
+    allow_any_instance_of(Computer).to receive(:move).and_return(:scissors)
+  end
+
   scenario "Shows the outcome of a winning game" do
-    srand(65)
     sign_in_and_play
     click_button "spock"
     expect(page).to have_content("You win!")
   end
 
   scenario "Shows the outcome of a drawing game" do
-    srand(321)
     sign_in_and_play
-    click_button "lizard"
+    click_button "scissors"
     expect(page).to have_content("Draw!")
   end
 
   scenario "Shows the outcome of a winning game" do
-    srand(723)
     sign_in_and_play
-    click_button "rock"
+    click_button "paper"
     expect(page).to have_content("You lose!")
   end
 
