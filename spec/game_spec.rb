@@ -24,8 +24,8 @@ describe Game do
     end
   end
 
-  # game has already chosen weapon when initialized - so srands before
-  # 'game' fixes the weapon
+  # Game has already chosen weapon when initialized - so srands before
+  # 'game' fixes the weapon for each test
 
   describe '#player_win?' do
     context 'when player chooses rock' do
