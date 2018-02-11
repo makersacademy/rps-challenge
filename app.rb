@@ -30,9 +30,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    p @game.player_win?
-    p 'player ' + @game.player_weapon
-    p 'pc ' + @game.pc_weapon
     erb(:result)
   end
 
