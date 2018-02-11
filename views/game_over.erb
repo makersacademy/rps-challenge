@@ -11,8 +11,13 @@
 </h2>
 <h1>
   <div>
-    <%= @game.winner.name %> wins! \ (•◡•) /
+    <% if @game.winner == nil %>
+      Tie Game! (╯°□°）╯︵ ┻━┻
+    <% elsif @game.winner == @game.player_1 %>
+      <%= @game.winner.name %> wins! \ (•◡•) /
+    <% else %>
+      <%= @game.winner.name %> wins! ಠ╭╮ಠ
+    <% end %>
   </div>
 </h1>
-
 </html>
