@@ -10,5 +10,5 @@ feature 'a winner is declared' do
     click_button('Rock')
 
     expect(page).to have_content('Josu wins!')
-  end
+  end 
 end
