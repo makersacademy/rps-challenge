@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  font-family: 'Kavivanar', cursive;
+}
+.box {
+  width: 500px;
+  height: 100px;
+  background-color: #d9d9d9;
+  position: fixed;
+  margin-left: -250px; /* half of width */
+  top: 40%;
+  left: 50%;
+  margin-top: -20px;
+}
+
+#score td,
+#score th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#score tr:hover {
+  background-color: #ddd;
+}
+
+#score th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+#next-btn {
+  margin-top: 150px;
+}
+
+input[type='submit'] {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}

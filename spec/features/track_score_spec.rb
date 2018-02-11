@@ -8,6 +8,6 @@ feature 'Shows who won the round' do
   scenario 'shows score' do
     sign_in
     click_button 'Rock'
-    expect(page).to have_content "Daniel's score: 1 Computer's score: 0"
+    expect(page).to have_content "Player Daniel Computer Score 1 0"
   end
 end
