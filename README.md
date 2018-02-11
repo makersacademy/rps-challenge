@@ -1,6 +1,6 @@
 # RPS Challenge
 
-Instructions
+Summary
 -------
 
 * This application allows a player to take part in a game of Rock, Paper, Scissors against a virtual opponent.
@@ -12,32 +12,35 @@ Instructions
 
 Installation
 -------
-To play the application online, visit https://rock-paper-scissors-makers.herokuapp.com/
+To play the application online:
+* Visit https://rock-paper-scissors-makers.herokuapp.com/
 
 To play the application locally:
 
-Clone the repository
+* Clone the repository
 
-Run `gem list` in the project directory to check whether `bundler` is installed. If it is not, run `gem install bundler`
+* Run `gem list` in the project directory to check whether `bundler` is installed. If it is not, run `gem install bundler`
 
-Run `bundle` in the project directory to ensure all necessary gems are installed
+* Run `bundle` in the project directory to ensure all necessary gems are installed
 
-Run `rackup` and visit `localhost:9292`
+* Run `rackup` and visit `localhost:9292`
 
 Playing the game
 -------
 
 * Enter your name before the game begins
 
-![Screenshot](https://imgur.com/a/hcfEn)
+![image](https://user-images.githubusercontent.com/29439776/36079105-6b78c4a0-0f77-11e8-9d90-0aeb302cbf5c.png)
+
 
 * Begin playing by selecting either rock, paper or scissors. Meanwhile, the virtual opponent also selects an option at random
 
-![Screenshot](https://imgur.com/a/sJ6mT)
+![image](https://user-images.githubusercontent.com/29439776/36079118-7cbdb072-0f77-11e8-8609-b9a762471772.png)
 
 * A winner is declared
 
-![Screenshot](https://imgur.com/a/JN615)
+![image](https://user-images.githubusercontent.com/29439776/36079132-a0f4f5ea-0f77-11e8-9744-5131e7eba0c2.png)
+
 
 User stories
 ----
@@ -51,12 +54,3 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 
 ```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
