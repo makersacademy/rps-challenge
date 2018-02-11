@@ -13,7 +13,7 @@ describe Player do
     end
   end
 
-  describe '#select_move' do
+  describe '#choose' do
     it 'allows player one to select rock' do
       player_1.choose("Rock")
       expect(player_1.move).to eq :rock
