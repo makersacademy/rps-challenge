@@ -1,25 +1,25 @@
-<h1><%= @player %> chooses <%= @choice %>!</h1>
+<h1><%= @game.player.name %> chooses <%= @game.player.choice %>!</h1>
 <h1>Computer chooses <%= @computer.choice %>!</h1>
 
-<% if @choice == @computer.choice %>
+<% if @game.player.choice == @computer.choice %>
 
   <h1>It's a draw!</h1>
 
 <% elsif @game.winner == 'computer' %>
 
-  <h1>Computer's <%= @computer.choice %> beats <%= @player %>'s <%= @choice %>!</h1>
+  <h1>Computer's <%= @computer.choice %> beats <%= @game.player.name %>'s <%= @game.player.choice %>!</h1>
   <h1>Computer wins this round!</h1>
 
 <% else %>
 
-  <h1><%= @player %>'s <%= @choice %> beats Computer's <%= @computer.choice %>!</h1>
-  <h1><%= @player %> wins this round!</h1>
+  <h1><%= @game.player.name %>'s <%= @game.player.choice %> beats Computer's <%= @computer.choice %>!</h1>
+  <h1><%= @game.player.name %> wins this round!</h1>
 
 <% end %>
 
 <h1>Scoreboard:</h1>
 <br>
-<h1><%= @player %>'s score: <%= @scoreboard.players_score %></h1>
+<h1><%= @game.player.name %>'s score: <%= @scoreboard.players_score %></h1>
 <h1>Computer's score: <%= @scoreboard.computers_score %></h1>
 
 <form action="/play">

@@ -2,9 +2,9 @@ require 'sinatra/base'
 require './lib/computer'
 require './lib/game'
 require './lib/scoreboard'
+require './lib/player'
 
 class Rps < Sinatra::Base
-  enable :sessions
 
   before do
     @game = Game.instance
@@ -15,27 +15,24 @@ class Rps < Sinatra::Base
   end
 
   post '/player' do
-    @game = Game.create
-    session[:player] = params[:player]
+    player = Player.new(params[:player])
+    @game = Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
-    @player = session[:player]
     erb :play
   end
 
   post '/choice' do
-    session[:choice] = params[:choice]
+    @game.player.choose(params[:choice])
     redirect '/battle'
   end
 
   get '/battle' do
     @computer = Computer.new
     @scoreboard = Scoreboard.new
-    @player = session[:player]
-    @choice = session[:choice]
-    @outcome = @game.choose_winner(@choice, @computer.rand_choice)
+    @outcome = @game.choose_winner(@game.player.choice, @computer.rand_choice)
     @scoreboard.update_score(@outcome)
     erb :battle
   end
