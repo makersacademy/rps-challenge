@@ -21,27 +21,32 @@ class Game
     @player_2 = player_2
     @moves = moves
     @rules = rules
+    @results = {}
   end
 
   def result(player_1_move, player_2_move)
-    @results = {}
-    case
-    when player_1_move == player_2_move
-      @results[:result] = 'draw'
-      @results[:move] = player_1_move
-    when @rules[player_1_move.to_sym] == player_2_move
-      @results[:result] = 'win'
-      @results[:winner] = player_1_move
-      @results[:loser] = player_2_move
-    else
-      @results[:result] = 'loss'
-      @results[:winner] = player_2_move
-      @results[:loser] = player_1_move
-    end
+    draw_result(player_1_move, player_2_move) if player_1_move == player_2_move
+    win_result(player_1_move, player_2_move) if @rules[player_1_move.to_sym] == player_2_move
+    loss_result(player_1_move, player_2_move) if @rules[player_2_move.to_sym] == player_1_move
     @results
-    # return :draw if player_1_move == player_2_move
-    # return :win if @rules[player_1_move.to_sym] == player_2_move
-    # return :loss if @rules[player_2_move.to_sym] == player_1_move
   end
 
+  private
+
+  def draw_result(player_1_move, player_2_move)
+    @results[:result] = 'draw'
+    @results[:move] = player_1_move
+  end
+
+  def win_result(player_1_move, player_2_move)
+    @results[:result] = 'win'
+    @results[:winner] = player_1_move
+    @results[:loser] = player_2_move
+  end
+
+  def loss_result(player_1_move, player_2_move)
+    @results[:result] = 'loss'
+    @results[:winner] = player_2_move
+    @results[:loser] = player_1_move
+  end
 end

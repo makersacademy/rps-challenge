@@ -53,56 +53,76 @@ describe Game do
   end
 
   describe "#result" do
-    context "when player_1 move is rock" do
-      it "wins when player_2_move is scissors" do
-        outcome = { result: 'win', winner: 'rock', loser: 'scissors' }
-        expect(game.result('rock', 'scissors')).to include outcome
+    context "when game is a draw" do
+      it 'calls #draw_result' do
+        expect(game).to receive(:draw_result).with('rock', 'rock')
+        game.result('rock', 'rock')
       end
 
-      it "draws when player_2_move is rock" do
-        outcome = { result: 'draw', move: 'rock'}
-        expect(game.result('rock', 'rock')).to eq outcome
-      end
+      context 'testing specific values' do
+        it 'draws when both players play rock' do
+          outcome = { result: 'draw', move: 'rock'}
+          expect(game.result('rock', 'rock')).to eq outcome
+        end
 
-      it "loses when player_2_move is paper" do
-        outcome = { result: 'loss', winner: 'paper', loser: 'rock' }
-        expect(game.result('rock', 'paper')).to eq outcome
-      end
-    end
+        it 'draws when both players pay paper' do
+          outcome = { result: 'draw', move: 'paper' }
+          expect(game.result('paper', 'paper')).to eq outcome
+        end
 
-    context "when player_1 move is paper" do
-      it "wins when player_2_move is rock" do
-        outcome = { result: 'win', winner: 'paper', loser: 'rock' }
-        expect(game.result('paper', 'rock')).to eq outcome
-      end
-
-      it "draws when player_2_move is paper" do
-        outcome = { result: 'draw', move: 'paper' }
-        expect(game.result('paper', 'paper')).to eq outcome
-      end
-
-      it "loses when player_2_move is scissors" do
-        outcome = { result: 'loss', winner: 'scissors', loser: 'paper' }
-        expect(game.result('paper', 'scissors')).to eq outcome
+        it 'draws when both players play scissors' do
+          outcome = { result: 'draw', move: 'scissors' }
+          expect(game.result('scissors', 'scissors')).to eq outcome
+        end
       end
     end
 
-    context "when player_1 move is scissors" do
-      it "wins when player_2_move is paper" do
-        outcome = { result: 'win', winner: 'scissors', loser: 'paper' }
-        expect(game.result('scissors', 'paper')).to eq outcome
+    context "when player 1 wins" do
+      it 'calls win_result' do
+        expect(game).to receive(:win_result).with('rock', 'scissors')
+        game.result('rock', 'scissors')
       end
 
-      it "draws when player_2_move is scissors" do
-        outcome = { result: 'draw', move: 'scissors' }
-        expect(game.result('scissors', 'scissors')).to eq outcome
-      end
+      context 'testing specific values' do
+        it 'wins when player_1: rock, and player_2: scissors' do
+          outcome = { result: 'win', winner: 'rock', loser: 'scissors' }
+          expect(game.result('rock', 'scissors')).to include outcome
+        end
 
-      it "loses when player_2_move is rock" do
-        outcome = { result: 'loss', winner: 'rock', loser: 'scissors' }
-        expect(game.result('scissors', 'rock')).to eq outcome
+        it 'wins when player_1: paper, and player_2: rock' do
+          outcome = { result: 'win', winner: 'paper', loser: 'rock' }
+          expect(game.result('paper', 'rock')).to eq outcome
+        end
+
+        it 'wins when player_1: scissors, and player_2: paper' do
+          outcome = { result: 'win', winner: 'scissors', loser: 'paper' }
+          expect(game.result('scissors', 'paper')).to eq outcome
+        end
       end
     end
 
+    context "when player 2 wins" do
+      it 'calls loss_result' do
+        expect(game).to receive(:loss_result).with('rock', 'paper')
+        game.result('rock', 'paper')
+      end
+
+      context 'testing specific values' do
+        it 'loses when player_1: rock, and player_2: paper' do
+          outcome = { result: 'loss', winner: 'paper', loser: 'rock' }
+          expect(game.result('rock', 'paper')).to eq outcome
+        end
+
+        it 'loses when player_1: paper, and player_2: scissors' do
+          outcome = { result: 'loss', winner: 'scissors', loser: 'paper' }
+          expect(game.result('paper', 'scissors')).to eq outcome
+        end
+
+        it 'loses when player_1: scissors, and player_2: rock' do
+          outcome = { result: 'loss', winner: 'rock', loser: 'scissors' }
+          expect(game.result('scissors', 'rock')).to eq outcome
+        end
+      end
+    end
   end
 end
