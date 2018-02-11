@@ -8,8 +8,8 @@ class Player
     @points = 50
   end
 
-  def reduce_points
-    @points -= 10
+  def increase_points
+    @points += 10
   end
 
 end

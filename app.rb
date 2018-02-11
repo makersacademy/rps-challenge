@@ -1,8 +1,8 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/videogame'
 
 class Game < Sinatra::Base
-  set :public_folder, File.dirname(__FILE__) + '/static'
 
 
   get "/" do
@@ -19,13 +19,8 @@ class Game < Sinatra::Base
   end
 
   post "/play" do
-
     "you win"
   end
-
-
-
-
 
 
   run! if app_file == $0

@@ -14,7 +14,7 @@ describe Player do
 
   context "#reduce_points" do
     it "reduces player points" do
-      expect{player.reduce_points}.to change{player.points}.by (-10)
+      expect{player.increase_points}.to change{player.points}.by (+10)
     end
   end
 
