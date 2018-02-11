@@ -4,16 +4,17 @@
 <% if @game.result == :draw %>
 
   <h1>It's a Draw</h1>
-  <h1><%= @game.player_1.name %> 0 : 0 <%= @game.computer.name %></h1>
 
 <% elsif @game.result == :p1_win %>
 
+  <% @game.player_1.tally_score %>
   <h1><%= @game.player_1.name %> Wins!</h1>
-  <h1><%= @game.player_1.name %> 1 : 0 <%= @game.computer.name %></h1>
 
 <% else %>
 
+  <% @game.computer.tally_score %>
   <h1><%= @game.computer.name %> Wins!</h1>
-  <h1><%= @game.player_1.name %> 0 : 1 <%= @game.computer.name %></h1>
 
 <% end %>
+
+<h1><%= @game.player_1.name %> <%= @game.player_1.score %> : <%= @game.computer.score %> <%= @game.computer.name %></h1>
