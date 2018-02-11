@@ -10,7 +10,6 @@ feature "It knows the user's choice of weapon" do
 end
 
 feature "Two player game mode" do
-
   scenario "User wants a two player game" do
     sign_in_as_john_choose_paper_and_two_player_mode
     expect(page).to have_content "Enter your name player two"
@@ -21,7 +20,6 @@ feature "Two player game mode" do
     sign_in_as_fred_and_choose_scissors
     expect(page).to have_content "Fred wins"
   end
-
 end
 
 feature "Add lizard and Spock" do
