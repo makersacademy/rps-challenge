@@ -6,7 +6,7 @@ class Player
     @name = name
   end
 
-  def player_option(option)
+  def move(option)
     @option = option
   end
 

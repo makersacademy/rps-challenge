@@ -20,4 +20,18 @@ class Game
     @player = player
     @opponent = opponent
   end
+
+  def winner
+    if @player.option == @opponent.opponent_option
+      "It's a draw"
+    elsif @player.option == "Rock" && @opponent.opponent_option == "Scissors"
+      "#{@player.name} wins"
+    elsif @player.option == "Scissors" && @opponent.opponent_option == "Paper"
+      "#{@player.name} wins"
+    elsif @player.option == "Paper" && @opponent.opponent_option == "Rock"
+      "#{@player.name} wins"
+    else
+      "Opponent wins"
+    end
+  end
 end

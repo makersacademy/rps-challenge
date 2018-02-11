@@ -1,19 +1,19 @@
-feature "Selecting an option" do
-  scenario "The user is able to select Rock" do
-    register_and_play
+feature "Player's option" do
+  scenario "The player is able to select Rock" do
+    register_name
     click_button("Rock")
-    expect(page).to have_content "You chose Rock"
+    expect(page).to have_content "Serena chose Rock"
   end
 
-  scenario "The user is able to select Paper" do
-    register_and_play
+  scenario "The player is able to select Paper" do
+    register_name
     click_button("Paper")
-    expect(page).to have_content "You chose Paper"
+    expect(page).to have_content "Serena chose Paper"
   end
 
-  scenario "The user is able to select Scissors" do
-    register_and_play
+  scenario "The player is able to select Scissors" do
+    register_name
     click_button("Scissors")
-    expect(page).to have_content "You chose Scissors"
+    expect(page).to have_content "Serena chose Scissors"
   end
 end
