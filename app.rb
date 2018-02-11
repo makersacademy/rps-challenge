@@ -18,7 +18,6 @@ class Rps < Sinatra::Base
 
     post '/name' do
       @player = Player.new(params[:player_name])
-      $game = Game.new
       redirect '/play'
     end
 
@@ -27,6 +26,9 @@ class Rps < Sinatra::Base
     end
 
     post '/result' do
+      # @computer_choice = Computer.new.computer_choice
+      # @player_choice = Player.new.choice
+      # @result = Game.new.match(@computer_choice, @player_choice)
       erb(:result)
     end
 

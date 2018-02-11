@@ -26,3 +26,11 @@ feature "Play again?" do
     expect(page).to have_selector(:link_or_button, "Play again?")
   end
 end
+
+feature 'Result page' do
+  scenario 'Playes name appears' do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Ben'
+  end
+end
