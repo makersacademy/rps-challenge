@@ -9,10 +9,15 @@ class Game
   end
 
   def output_winner
+    check_fairness
     declare_winner
   end
 
   private
+
+  def check_fairness
+    raise 'You both must choose a weapon!' if player.weapon == nil || bot.weapon == nil
+  end
 
   def declare_winner
     return "It's a draw!" if player.weapon == bot.weapon
