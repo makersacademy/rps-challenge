@@ -40,7 +40,7 @@ $ bundle
 $ rackup
 ```
 
-Play
+Playing the game
 ---
 Sign in:
 ![Sign In](https://dl.dropboxusercontent.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
