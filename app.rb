@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -18,7 +19,9 @@ class RPS < Sinatra::Base
 
   post '/result' do
     session[:player_weapon] = params[:player_weapon]
+    session[:computer] = Computer.new
     redirect '/result'
+
   end
 
   get '/result' do
