@@ -4,7 +4,6 @@
 
 * This software is designed for one player to play a simple game of 'rock, paper, scissors' against a computer.
 * Player one must be able to enter their name before being sent to the 'play' arena where they will make their CRUCIAL selections in a conventional game of 'RPS'.
-* The outcome is whoever reaches 2 wins first.
 
 ### Development Process
 
@@ -34,17 +33,13 @@ Run 'rackup' to launch the web app
 
 `rackup`
 
-### Example
-
-TBC
-
 ### Author
 
 Terence Allitt
 
 ### Time spent on project
 
-2 hours 55 minutes
+8 hours
 
 -------
 
