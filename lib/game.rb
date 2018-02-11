@@ -16,7 +16,7 @@ class Game
   private
 
   def check_fairness
-    raise 'You both must choose a weapon!' if player.weapon == nil || bot.weapon == nil
+    raise 'You both, choose a weapon!' if player.weapon.nil? || bot.weapon.nil?
   end
 
   def declare_winner

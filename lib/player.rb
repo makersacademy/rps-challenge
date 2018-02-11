@@ -3,7 +3,7 @@ class Player
 
   def initialize(name)
     @name = name
-    @weapon = ""
+    @weapon = nil
     @options = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
   end
 

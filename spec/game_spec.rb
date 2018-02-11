@@ -30,7 +30,7 @@ describe Game do
       allow(sleepy_player).to receive(:choose_option).with no_args
 
       unfair_game = Game.new(another_player, sleepy_player)
-      expect {unfair_game.output_winner}.to raise_error('You both must choose a weapon!')
+      expect { unfair_game.output_winner }.to raise_error('You both, choose a weapon!')
     end
 
     it "returns winner's name" do
