@@ -38,6 +38,12 @@ $ bundle
 $ rackup
 ```
 
+Play
+---
+Sign in:
+![Sign In](https://www.dropbox.com/s/f7qwpr02zflrv0j/rps_sign_in.png?dl=0)
+
+
 Approach
 ---
 I decided that in order to have a MVP I wanted to have as much as possible of the logic and testing in place in both the back end and the front end before beautifying the user interface.
