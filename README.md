@@ -12,6 +12,11 @@ How to run
 How to play
 ----------
 
+![alt text](images/1.png "Starting a new game")
+![alt text](images/2.png "Player 1 move")
+![alt text](images/3.png "Player 2 move")
+![alt text](images/4.png "Winner display")
+
 My approach
 ----------
 
