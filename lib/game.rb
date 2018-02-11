@@ -16,16 +16,16 @@ class Game
   end
 
   def set_player_weapon(weapon)
-    @player_weapon = weapon
+    @player_weapon = weapon.to_sym
   end
 
   def player_win?
     case @player_weapon
-    when 'rock'
+    when :rock
       rock_win?
-    when 'paper'
+    when :paper
       paper_win?
-    when 'scissors'
+    when :scissors
       scissors_win?
     when @pc_weapon
       nil
@@ -35,22 +35,22 @@ class Game
   private
 
   def random_weapon
-    @pc_weapon = ['rock', 'paper', 'scissors'].sample
+    @pc_weapon = [:rock, :paper, :scissors].sample
   end
 
   def rock_win?
-    return true if @pc_weapon == 'scissors'
-    return false if @pc_weapon == 'paper'
+    return true if @pc_weapon == :scissors
+    return false if @pc_weapon == :paper
   end
 
   def paper_win?
-    return true if @pc_weapon == 'rock'
-    return false if @pc_weapon == 'scissors'
+    return true if @pc_weapon == :rock
+    return false if @pc_weapon == :scissors
   end
 
   def scissors_win?
-    return true if @pc_weapon == 'paper'
-    return false if @pc_weapon == 'rock'
+    return true if @pc_weapon == :paper
+    return false if @pc_weapon == :rock
   end
 
 end

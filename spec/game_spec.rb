@@ -20,7 +20,7 @@ describe Game do
 
   describe '#set_pc_weapon' do
     it 'returns rock, paper, or scissors' do
-      expect(game.pc_weapon).to satisfy { 'rock' || 'paper' || 'scissors' }
+      expect(game.pc_weapon).to satisfy { :rock || :paper || :scissors }
     end
   end
 
@@ -31,17 +31,17 @@ describe Game do
     context 'when player chooses rock' do
       it 'returns true when pc chooses scissors' do
         srand(3) # Fixes randomly chosen weapon to scissors
-        game.set_player_weapon('rock')
+        game.set_player_weapon(:rock)
         expect(game.player_win?).to eq true
       end
       it 'returns false when pc chooses paper' do
         srand(1) # Fixes randomly chosen weapon to paper
-        game.set_player_weapon('rock')
+        game.set_player_weapon(:rock)
         expect(game.player_win?).to eq false
       end
       it 'returns nil when pc chooses rock' do
         srand(33) # Fixes randomly chosen weapon to rock
-        game.set_player_weapon('rock')
+        game.set_player_weapon(:rock)
         expect(game.player_win?).to eq nil
       end
     end
@@ -49,17 +49,17 @@ describe Game do
     context 'when player chooses paper' do
       it 'returns true when pc chooses rock' do
         srand(33) # Fixes randomly chosen weapon to rock
-        game.set_player_weapon('paper')
+        game.set_player_weapon(:paper)
         expect(game.player_win?).to eq true
       end
       it 'returns false when pc chooses scissors' do
         srand(3) # Fixes randomly chosen weapon to scissors
-        game.set_player_weapon('paper')
+        game.set_player_weapon(:paper)
         expect(game.player_win?).to eq false
       end
       it 'returns nil when pc chooses paper' do
         srand(1) # Fixes randomly chosen weapon to paper
-        game.set_player_weapon('paper')
+        game.set_player_weapon(:paper)
         expect(game.player_win?).to eq nil
       end
     end
@@ -67,17 +67,17 @@ describe Game do
     context 'when player chooses scissors' do
       it 'returns true when pc chooses paper' do
         srand(1) # Fixes randomly chosen weapon to paper
-        game.set_player_weapon('scissors')
+        game.set_player_weapon(:scissors)
         expect(game.player_win?).to eq true
       end
       it 'returns false when pc chooses rock' do
         srand(33) # Fixes randomly chosen weapon to rock
-        game.set_player_weapon('scissors')
+        game.set_player_weapon(:scissors)
         expect(game.player_win?).to eq false
       end
       it 'returns nil when pc chooses scissors' do
         srand(3) # Fixes randomly chosen weapon to scissors
-        game.set_player_weapon('scissors')
+        game.set_player_weapon(:scissors)
         expect(game.player_win?).to eq nil
       end
     end
