@@ -1,11 +1,21 @@
-<h2>You chose <%= $player_option %></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+</head>
+<body>
+  <h2>You chose <%= $player_option %></h2>
 
-<h2>Computer chose <%= $bot_option %></h2>
+  <h2>Computer chose <%= $bot_option %></h2>
 
-<% if $game.player.choice == $game.bot.choice %>
-  It's a draw!
-<% elsif $game.output_winner == $game.player.name %>
-  <%= $game.player.name %> wins!
-<% else %>
-  <%= $game.bot.name %> wins!
-<% end %>
+  <% if $game.player.choice == $game.bot.choice %>
+    It's a draw!
+  <% elsif $game.output_winner == $game.player.name %>
+    <%= $game.player.name %> wins!
+  <% else %>
+    <%= $game.bot.name %> wins!
+  <% end %> 
+</body>
+</html>
+

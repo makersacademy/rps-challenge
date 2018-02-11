@@ -1,9 +1,18 @@
-<h2>Welcome, <%= $game.player.name %>!</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Round</title>
+</head>
+<body>
+  <h2>Welcome, <%= $game.player.name %>!</h3>
 
-<h4>Please, choose one:</h4>
+  <h4>Please, choose one:</h4>
 
-<form action="/option" method="POST">
-  <input type="submit" name="option" value="Rock">
-  <input type="submit" name="option" value="Paper">
-  <input type="submit" name="option" value="Scissors">
-</form>
+  <form action="/option" method="POST">
+    <input type="submit" name="option" value="Rock">
+    <input type="submit" name="option" value="Paper">
+    <input type="submit" name="option" value="Scissors">
+  </form>
+</body>
+</html>
