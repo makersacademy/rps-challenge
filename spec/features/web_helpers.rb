@@ -17,3 +17,9 @@ def weapons_chosen
   select('Scissors', from: 'player_2_weapon')
   click_button "Fire!"
 end
+
+def weapons_player_and_bot
+  sign_in_one_player
+  select('Rock', from: 'player_1_weapon')
+  click_button "Fire!"
+end

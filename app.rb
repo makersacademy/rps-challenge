@@ -25,6 +25,8 @@ class Rps < Sinatra::Base
   end
 
   post '/outcome' do 
+    $game.player_1.choice = params[:player_1_weapon]
+    $game.player_2.choice = params[:player_2_weapon] unless $game.player_2.is_a?(Bot)
     erb(:outcome)
   end
 

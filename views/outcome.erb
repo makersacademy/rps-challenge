@@ -5,7 +5,8 @@
 </head>
 <body>
   <h1>Your fate has been decided</h1>
-  <p><%= $game.player_1.name %> has chosen rock</p>
-
+  <p><%= $game.player_1.name %> has chosen <%= $game.player_1.choice %></p>
+  <p><%= $game.player_2.name %> has chosen <%= $game.player_2.choice %></p>
+<!-- currently the bot choice is being returned as empty -->
 </body>
 </html>
