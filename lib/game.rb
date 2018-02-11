@@ -4,7 +4,7 @@ class Game
 
   def initialize(player)
     @player = player
-    @pc_weapon = set_pc_weapon
+    @pc_weapon = random_weapon
   end
 
   def self.create(player)
@@ -19,22 +19,24 @@ class Game
     @player_weapon = weapon
   end
 
-  def set_pc_weapon
-    @pc_weapon = ['rock', 'paper', 'scissors'].sample
-  end
-
   def player_win?
-    nil if @player_weapon == @pc_weapon
-    if @player_weapon =='rock'
+    case @player_weapon
+    when 'rock'
       rock_win?
-    elsif @player_weapon == 'paper'
+    when 'paper'
       paper_win?
-    elsif @player_weapon == 'scissors'
+    when 'scissors'
       scissors_win?
+    when @pc_weapon
+      nil
     end
   end
 
   private
+
+  def random_weapon
+    @pc_weapon = ['rock', 'paper', 'scissors'].sample
+  end
 
   def rock_win?
     return true if @pc_weapon == 'scissors'
