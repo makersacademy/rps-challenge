@@ -10,6 +10,8 @@ body {
 h1 {
   font-size: 50px;
   margin: 1px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 h2 {
@@ -35,4 +37,27 @@ input[type=submit] {
   padding: 12px 20px;
   margin: 30px 8px;
   cursor: pointer;
+}
+
+#title {
+  margin-bottom: -10px;
+}
+
+#paper {
+  background-color: #63BEB9;
+  border: 1px solid #2b99a5;
+}
+
+#rock {
+  background-color: #F26551;
+  border: 1px solid #f2430d;
+}
+
+#scissors {
+  background-color: #F8BD49;
+  border: 1px solid #f4ce35c1;
+} 
+
+#divider {
+  margin: 20px;
 }
