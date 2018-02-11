@@ -1,7 +1,7 @@
 require 'game'
 
 describe Game do
-  
+
   subject(:game) { described_class.new(player) }
   let(:player) { double('player') }
   let(:player_option) { ['rock','paper','scissors'].sample }
@@ -25,7 +25,7 @@ describe Game do
     end
   end
 
-  describe '#play' do
+  describe '#player_win?' do
     it 'returns a boolean saying wheather the player has won' do
       expect(game.player_win?).to satisfy { |return_val| true || false || nil }
     end
