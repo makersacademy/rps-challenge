@@ -13,9 +13,9 @@ describe Videogame do
     end
   end
 
-  context "#play_round" do
+  context "#move" do
     it "playes the round" do
-      expect(game.play_round(player_1)).to eq "20"#change {player_1.points}.by (10)
+      expect(game.move).to eq 60 #change {player_1.points}.by (10)
     end
   end
 
