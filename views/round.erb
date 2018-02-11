@@ -5,16 +5,26 @@
   <title>Round</title>
 
   <link rel="stylesheet" href="/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 <body>
   <div class="main">
-    <h2>Welcome, <%= $game.player.name %>!</h3>
+    <h2>Hi, <%= $game.player.name %>!</h3>
 
-    <h4>Please, choose one:</h4>
+    <h4>Please, choose one: <i>Rock - Paper - Scissor</i></h4>
     <form action="/option" method="POST">
-      <input type="submit" name="option" value="Rock">
-      <input type="submit" name="option" value="Paper">
-      <input type="submit" name="option" value="Scissors">
+      
+      <button type="submit" name="option" value="Rock">
+        <i class="far fa-hand-rock fa-5x"></i>
+      </button>
+      
+      <button type="submit" name="option" value="Paper">
+        <i class="far fa-hand-paper fa-5x"></i>
+      </button>
+
+      <button type="submit" name="option" value="Scissors">
+        <i class="far fa-hand-scissors fa-5x"></i>
+      </button>
     </form>
   </div>
 </body>

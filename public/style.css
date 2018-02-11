@@ -8,6 +8,10 @@ body {
   font-family: Impact;
 }
 
+i {
+  color: blue;
+}
+
 /* SPEC */
 
 .main {
@@ -15,7 +19,7 @@ body {
 }
 
 #winner {
-  color: red;
+  color: blue;
   margin-top: 40px;
   font-size: 2em;
 }
