@@ -8,7 +8,7 @@ describe Player do
     expect(hunor.name).to eq 'Hunor'
   end
 
-  subject(:computer) { described_class.new }
+  subject(:computer) { described_class.new('Computer') }
 
   it 'has default name' do
     expect(computer.name).to eq 'Computer'
