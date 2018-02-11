@@ -55,43 +55,52 @@ describe Game do
   describe "#result" do
     context "when player_1 move is rock" do
       it "wins when player_2_move is scissors" do
-        expect(game.result('rock', 'scissors')).to eq :win
+        outcome = { result: 'win', winner: 'rock', loser: 'scissors' }
+        expect(game.result('rock', 'scissors')).to include outcome
       end
 
       it "draws when player_2_move is rock" do
-        expect(game.result('rock', 'rock')).to eq :draw
+        outcome = { result: 'draw', move: 'rock'}
+        expect(game.result('rock', 'rock')).to eq outcome
       end
 
       it "loses when player_2_move is paper" do
-        expect(game.result('rock', 'paper')).to eq :loss
+        outcome = { result: 'loss', winner: 'paper', loser: 'rock' }
+        expect(game.result('rock', 'paper')).to eq outcome
       end
     end
 
     context "when player_1 move is paper" do
       it "wins when player_2_move is rock" do
-        expect(game.result('paper', 'rock')).to eq :win
+        outcome = { result: 'win', winner: 'paper', loser: 'rock' }
+        expect(game.result('paper', 'rock')).to eq outcome
       end
 
       it "draws when player_2_move is paper" do
-        expect(game.result('paper', 'paper')).to eq :draw
+        outcome = { result: 'draw', move: 'paper' }
+        expect(game.result('paper', 'paper')).to eq outcome
       end
 
       it "loses when player_2_move is scissors" do
-        expect(game.result('paper', 'scissors')).to eq :loss
+        outcome = { result: 'loss', winner: 'scissors', loser: 'paper' }
+        expect(game.result('paper', 'scissors')).to eq outcome
       end
     end
 
     context "when player_1 move is scissors" do
       it "wins when player_2_move is paper" do
-        expect(game.result('scissors', 'paper')).to eq :win
+        outcome = { result: 'win', winner: 'scissors', loser: 'paper' }
+        expect(game.result('scissors', 'paper')).to eq outcome
       end
 
       it "draws when player_2_move is scissors" do
-        expect(game.result('scissors', 'scissors')).to eq :draw
+        outcome = { result: 'draw', move: 'scissors' }
+        expect(game.result('scissors', 'scissors')).to eq outcome
       end
 
       it "loses when player_2_move is rock" do
-        expect(game.result('scissors', 'rock')).to eq :loss
+        outcome = { result: 'loss', winner: 'rock', loser: 'scissors' }
+        expect(game.result('scissors', 'rock')).to eq outcome
       end
     end
 

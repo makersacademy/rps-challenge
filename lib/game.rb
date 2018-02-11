@@ -24,9 +24,24 @@ class Game
   end
 
   def result(player_1_move, player_2_move)
-    return :draw if player_1_move == player_2_move
-    return :win if @rules[player_1_move.to_sym] == player_2_move
-    return :loss if @rules[player_2_move.to_sym] == player_1_move
+    @results = {}
+    case
+    when player_1_move == player_2_move
+      @results[:result] = 'draw'
+      @results[:move] = player_1_move
+    when @rules[player_1_move.to_sym] == player_2_move
+      @results[:result] = 'win'
+      @results[:winner] = player_1_move
+      @results[:loser] = player_2_move
+    else
+      @results[:result] = 'loss'
+      @results[:winner] = player_2_move
+      @results[:loser] = player_1_move
+    end
+    @results
+    # return :draw if player_1_move == player_2_move
+    # return :win if @rules[player_1_move.to_sym] == player_2_move
+    # return :loss if @rules[player_2_move.to_sym] == player_1_move
   end
 
 end
