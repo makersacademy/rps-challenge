@@ -27,9 +27,12 @@ class Rps < Sinatra::Base
   post '/outcome' do 
     $game.player_1.choice = params[:player_1_weapon]
     $game.player_2.choice = params[:player_2_weapon] unless $game.player_2.is_a?(Bot)
+    redirect '/result'
+  end
+
+  get '/result' do 
     erb(:outcome)
   end
 
   run! if app_file == $0
 end
-

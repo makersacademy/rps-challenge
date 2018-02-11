@@ -2,9 +2,12 @@ require 'game'
 require 'player'
 
 describe Game do 
-  let(:player_1) { double 'player_1' }
-  let(:player_2) { double 'player_2' }
-  subject(:game) { described_class.new(player_1, player_2) }
+  let(:player_1) { double('player_1', name: 'Spock', choice: 'rock') }
+  let(:player_2) { double('player_2', name: 'Kirk', choice: 'rock') }
+  let(:player1) { Player.new("Spock") }
+  let(:player2) { Player.new("Kirk") }
+
+  subject(:game) { described_class.new(player1, player2) }
 
   context '#initialize' do 
     it "initializes with Player as an argument" do 
@@ -14,15 +17,15 @@ describe Game do
 
   context '#result' do 
     it "returns true if it's a draw" do 
-      allow(player_1).to receive(:choice).and_return(:rock)
-      allow(player_2).to receive(:choice).and_return(:rock)
-      expect(game.result).to eq "It's a draw!"
+      player1.choice = :rock
+      player2.choice = :rock
+      expect(game.draw?).to eq true
     end
 
     it "returns winner" do 
-      allow(player_1).to receive(:choice).and_return(:rock)
-      allow(player_2).to receive(:choice).and_return(:scissors)
-      expect(game.result).to eq "#{game.player_1.name} wins!"
+      player1.choice = :rock
+      player2.choice = :scissors
+      expect(game.result).to eq game.player_1.name
     end
   end
 end
