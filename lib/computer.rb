@@ -1,6 +1,6 @@
 class Computer
 
-attr_reader :computer
+  attr_reader :computer
 
   def initialize
     @computer = Computer.new
