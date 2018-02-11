@@ -2,6 +2,11 @@ require 'sinatra/base'
 require './lib/computer'
 
 class RPS < Sinatra::Base
+
+  RULES = { rock: :scissors,
+            paper: :rock,
+            scissors: :paper }
+
   enable :sessions
 
   get '/' do
