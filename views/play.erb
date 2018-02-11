@@ -1,12 +1,20 @@
-
-<% if @game.player_two != nil %>
-  <h1>Welcome to the arena <%= @game.player_one %> and <%= @game.player_two %></h1>
-  <h1><%= @game.player_one %> chose <%= @game.p1_rps %>!</h1>
-  <h1><%= @game.player_two %> chose <%= @game.p2_rps%>!</h1>
-  <h1><%= @game.winner %></h1>
-<% else %>
-  <h1>Welcome to the arena <%= @game.player_one %></h1>
-  <h1>You chose <%= @game.p1_rps %>!</h1>
-  <h1>CPU chose <%= @game.cpu_choice%>!</h1>
-  <h1><%= @game.winner %></h1>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if @game.player_two != nil %>
+      <h1>Welcome to the arena <%= @game.player_one %> and <%= @game.player_two %></h1>
+      <h1><%= @game.player_one %> chose <%= @game.p1_choice %>!</h1>
+      <h1><%= @game.player_two %> chose <%= @game.p2_choice%>!</h1>
+      <h1><%= @game.winner %></h1>
+    <% else %>
+      <h1>Welcome to the arena <%= @game.player_one %></h1>
+      <h1>You chose <%= @game.p1_choice %>!</h1>
+      <h1>CPU chose <%= @game.cpu_choice%>!</h1>
+      <h1><%= @game.winner %></h1>
+    <% end %>
+  </body>
+</html>
