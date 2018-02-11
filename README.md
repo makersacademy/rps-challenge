@@ -18,6 +18,8 @@ EDIT: Realised simplest way to build game would be to make player 2 computerised
 
 4. Create a Computer class for the human player to play against. Computer player's move will be randomised using #sample.
 
+5. Use constant variable to hold hash of possible outcomes to render winner of each game.
+
 ### Installation
 
 Install Bundler and the relevant gems with the below commands:
