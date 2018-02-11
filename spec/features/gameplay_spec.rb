@@ -33,7 +33,7 @@ feature "Gameplay" do
   end
 
   describe "Announcing the computer's weapon" do
-    
+
     let(:computer_rock)  { "Computer chose rock" }
     let(:computer_paper) { "Computer chose paper" }
     let(:computer_scissors)  { "Computer chose scissors" }
@@ -44,4 +44,7 @@ feature "Gameplay" do
       expect(page).to satisfy { |page| possible_computer_weapon(page) }
     end
   end
+
+  
+
 end

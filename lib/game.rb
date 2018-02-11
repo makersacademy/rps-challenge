@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :pc_weapon, :player_weapon
+  attr_reader :player, :player_weapon
 
   def initialize(player)
     @player = player
@@ -19,7 +19,7 @@ class Game
   end
 
   def pc_weapon
-    @pc_weapon = ['rock','paper','scissors'].sample
+    @pc_weapon = ['rock', 'paper', 'scissors'].sample
   end
 
   def player_win?
@@ -30,9 +30,8 @@ class Game
       paper_win?
     when 'scissors'
       scissor_win?
-    else
-      return nil
     end
+      return nil
   end
 
   private
