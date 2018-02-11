@@ -74,3 +74,11 @@ feature 'Game Score' do
     expect(page).to have_content "Telgi 0 : 0 Computer"
   end
 end
+
+feature 'Option to play again' do
+  scenario 'Human player gets to choose if they want a rematch' do
+    srand(1)
+    choose_rock
+    expect(page).to have_button "Play Again?"
+  end
+end
