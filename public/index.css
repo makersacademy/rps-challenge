@@ -1,0 +1,63 @@
+body {
+  font-family: 'Sumana', serif;
+  color: #0E1717;
+  text-align: center;
+  background: #FFAFBD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+h1 {
+  font-size: 50px;
+  margin: 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h2 {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+input[type=text] {
+  font-size: 15px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #555;
+}
+
+input[type=submit] {
+  font-size: 15px;
+  background-color: grey;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: white;
+  padding: 12px 20px;
+  margin: 30px 8px;
+  cursor: pointer;
+}
+
+#title {
+  margin-bottom: -10px;
+}
+
+#paper {
+  background-color: #63BEB9;
+  border: 1px solid #2b99a5;
+}
+
+#rock {
+  background-color: #F26551;
+  border: 1px solid #f2430d;
+}
+
+#scissors {
+  background-color: #F8BD49;
+  border: 1px solid #f4ce35c1;
+} 
+
+#divider {
+  margin: 20px;
+}
