@@ -17,6 +17,24 @@
 
 <% end %>
 
+<% if @game.score.players_score == 2 %>
+
+<h1><%= @game.player.name %> wins <%= @game.score.players_score %> <%= @game.score.computers_score %>!</h1>
+
+<form action="/">
+  <input type="submit" value="New Game?">
+</form>
+
+<% elsif @game.score.computers_score == 2 %>
+
+<h1>Computer wins <%= @game.score.computers_score %> <%= @game.score.players_score %>!</h1>
+
+<form action="/">
+  <input type="submit" value="New Game?">
+</form>
+
+<% else %>
+
 <h1>Scoreboard:</h1>
 <br>
 <h1><%= @game.player.name %>'s score: <%= @game.score.players_score %></h1>
@@ -25,3 +43,5 @@
 <form action="/play">
   <input type="submit" value="Next Round">
 </form>
+
+<% end %>

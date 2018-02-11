@@ -32,7 +32,6 @@ class Rps < Sinatra::Base
   end
 
   get '/battle' do
-    # @scoreboard = Scoreboard.new
     @outcome = @game.choose_winner(@game.player.choice, @game.computer.rand_choice)
     @game.score.update_score(@outcome)
     erb :battle
