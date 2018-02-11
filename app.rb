@@ -1,14 +1,20 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  erb(:index)
-end
+class Battle < Sinatra::Base
 
-post '/' do
-  @name = params[:player]
-  erb(:game)
-end
+  get '/' do
+    erb(:index)
+  end
 
-get '/winner' do
-  erb(:winner)
+  post '/' do
+    @name = params[:player]
+    erb(:game)
+  end
+
+  post '/game' do
+    @choice = params[:choice]
+    erb(:winner)
+  end
+
+  run! if app_file == $0
 end

@@ -1,5 +1,11 @@
 <div>
-  Player choose X vs Computer choose X <br>
-  Player/Computer wins <br>
-  ex ROCK beats SCISSORS
+  __@name__ choose <%= @choice%><br>
+  Computer  choose _something_ <br>
+  <%= @choice %> beat <%= @choice %>
+</div>
+
+<div>
+  <form action="/" method="get">
+    <input type="submit" value="Play again!">
+  <form>
 </div>
