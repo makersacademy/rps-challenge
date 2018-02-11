@@ -14,7 +14,6 @@ describe Game do
   end
 
   describe '#choose_option' do
-
     it 'chooses a random option for the computer' do
       allow(bot).to receive(:random_option).with(no_args { 'Scissors' })
 
