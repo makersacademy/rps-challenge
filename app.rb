@@ -1,5 +1,4 @@
 require 'sinatra/base'
-# require_relative './lib/player'
 require_relative './lib/game'
 require_relative './lib/player'
 
@@ -20,7 +19,7 @@ class RockPaperScissors < Sinatra::Base
       redirect '/player_two'
     else
       @game = Game.create(@@player_one)
-      redirect '/play'
+      erb @game.result
     end
   end
 
@@ -31,11 +30,7 @@ class RockPaperScissors < Sinatra::Base
   post '/play_two' do
     @player_two = params[:player_two]
     @game = Game.create(@@player_one, @player_two)
-    redirect '/play'
-  end
-
-  get '/play' do
-    erb(:play)
+    erb @game.result
   end
 
   # run! if app_file == $0

@@ -19,7 +19,7 @@ feature "Two player game mode" do
   scenario "Fred beats John" do
     sign_in_as_john_choose_paper_and_two_player_mode
     sign_in_as_fred_and_choose_scissors
-    expect(page).to have_content "Sorry John, Fred wins"
+    expect(page).to have_content "Fred wins"
   end
 
 end
@@ -28,12 +28,12 @@ feature "Add lizard and Spock" do
   scenario "lizard poisons Spock" do
     sign_in_as_john_choose_spock_and_two_player_mode
     sign_in_as_fred_and_choose_lizard
-    expect(page).to have_content "Sorry John, Fred wins"
+    expect(page).to have_content "Fred wins"
   end
 
   scenario "Spock vaporises rock" do
     sign_in_as_john_choose_spock_and_two_player_mode
     sign_in_as_fred_and_choose_rock
-    expect(page).to have_content "Sorry Fred, John wins"
+    expect(page).to have_content "John wins"
   end
 end

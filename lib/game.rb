@@ -11,13 +11,11 @@ class Game
   attr_reader :cpu, :player_one, :player_two
 
   def initialize(player_1, player_2 = nil)
-    p player_1
     @player_one = Player.new(player_1)
-    p player_one
     player_2 ? two_player_game(player_2) : one_player_game
   end
 
-  def winner
+  def result
     @player_two ? two_player_result : one_player_result
   end
 
@@ -31,8 +29,8 @@ class Game
 
   def one_player_result
     return "It's a draw" if @cpu_choice == @p1_choice
-    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr].include?(@choices) ?
-    "You win" : "You lose"
+    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr]
+    .include?(@choices) ? :win : :lose
   end
 
   def two_player_game(player)
@@ -42,10 +40,8 @@ class Game
 
   def two_player_result
     return "It's a draw" if @player_one.choice == @player_two.choice
-    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr].include?(@choices) ?
-    "Sorry #{@player_two.name}, #{@player_one.name} wins!"
-    : "Sorry #{@player_one.name}, #{@player_two.name} wins!"
+    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr]
+    .include?(@choices) ? :p1win : :p2win
   end
-
 
 end
