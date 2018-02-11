@@ -1,11 +1,14 @@
 require 'sinatra/base'
 require './lib/computer'
+require './lib/weapon'
 
 class RPS < Sinatra::Base
 
-  RULES = { rock: :scissors,
-            paper: :rock,
-            scissors: :paper }
+  RULES = {
+  :rock     => {:rock => :draw, :paper => :paper, :scissors => :rock},
+  :paper    => {:rock => :paper, :paper => :draw, :scissors => :scissors},
+  :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
+}
 
   enable :sessions
 
