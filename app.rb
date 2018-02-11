@@ -33,6 +33,12 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
+  post '/reset' do
+    player = @game.player
+    Game.create(player)
+    redirect '/play'
+  end
+
   run! if app_file == $0
 
 end
