@@ -25,8 +25,10 @@ class Rps < Sinatra::Base
   end
 
   post '/outcome' do 
-    $game.player_1.choice = params[:player_1_weapon]
-    $game.player_2.choice = params[:player_2_weapon] unless $game.player_2.is_a?(Bot)
+    weapon1 = params[:player_1_weapon]
+    weapon2 = params[:player_2_weapon]
+    $game.player_1.choice = weapon1
+    $game.player_2.choice = weapon2 unless $game.player_2.is_a?(Bot)
     redirect '/result'
   end
 

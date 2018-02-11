@@ -1,13 +1,45 @@
 # RPS Challenge
 
-Instructions
+Approach
 -------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+* With the amount of diagram modelling done in the past few weeks, setting up the diagram for this particular challenge was surprisingly easy and quick.
+I paid special attention to routing, since it's something relatively new for me. In the end I decided to include extra GET routes to clean up the controller.
+
+* I tried following the TDD/BDD principle, but it turned out to be quite difficult for the following reasons:
+- The fact that Capybara/Sinatra are technologies I learned in the last few days, so I'm not as comfortable with them as with vanilla RSpec
+- The amount of files we are dealing with, paired with wanting to implement most features from the very beginning (the MVP was reached at a quite late stage)
+Overall I'm pleased with my TDD approach, but I feel like I could have done a bit better with more time
+
+
+Personal review
+-------
+* Overall I am pleased with the outcome of my program, considering the scope of the project and the time I had to complete it.
+* I managed to implement all the user stories and bonus challenges:
+- The players can input their names
+- If no name is given, the player will default to a Bot.
+- If 2 names are entered, the game will run in multiplayer mode.
+- The players can select their weapon of choice, including Spock and Lizard
+- The result is calculated and the winner is shown on screen, along with the players' weapon of choice
+
+* One of the most challenging aspects was to follow the TDD approach and I definitely believe that there is room for improvement there.
+* I am also quite pleased with my debugging approach and speed. RSpec and the error messages have sped up the time it takes me to locate and fix bugs.
+
+* Given more time I would like to spend time adding CSS and HTML features that I thought of, but unfortunately didn't have time to implement.
+Although I managed to cover most edge cases, I would also add a few additional tests
+
+
+Instructions to run the program
+-----
+
+* Fork this repo and clone it to your local files
+* run ```bundle install``` inside the directory
+* run ```rackup```
+* visit ```localhost:9292``` in your browser
+
+Author
+-----
+Carlos Trapet
 
 Task
 ----
