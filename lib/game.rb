@@ -12,21 +12,21 @@ class Game
   attr_reader :player_1, :player_2, :moves
 
   DEFAULT_MOVE_LIST = %w(rock paper scissors)
-  DEFAULT_RESULTS = { rock: 'scissors',
+  DEFAULT_RULES = { rock: 'scissors',
                       scissors: 'paper',
                       paper: 'rock'}
 
-  def initialize(player_1, player_2, moves = DEFAULT_MOVE_LIST, results = DEFAULT_RESULTS)
+  def initialize(player_1, player_2, moves = DEFAULT_MOVE_LIST, rules = DEFAULT_RULES)
     @player_1 = player_1
     @player_2 = player_2
     @moves = moves
-    @results = results
+    @rules = rules
   end
 
   def result(player_1_move, player_2_move)
     return :draw if player_1_move == player_2_move
-    return :win if @results[player_1_move.to_sym] == player_2_move
-    return :loss if @results[player_2_move.to_sym] == player_1_move
+    return :win if @rules[player_1_move.to_sym] == player_2_move
+    return :loss if @rules[player_2_move.to_sym] == player_1_move
   end
 
 end
