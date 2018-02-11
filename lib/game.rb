@@ -26,7 +26,8 @@ class Game
   end
 
   def print_score
-    "#{@player_1.name} #{@player_1.score} : #{@computer.score} #{@computer.name}"
+    "#{@player_1.name} #{@player_1.score} :
+    #{@computer.score} #{@computer.name}"
   end
 
 end
