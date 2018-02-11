@@ -1,9 +1,7 @@
 feature "play a game and draw" do
   before :each do
     allow_any_instance_of(ComputerPlayer).to receive(:move).and_return('rock')
-    sign_in_and_play
-    choose "Rock"
-    click_button "submit"
+    sign_in_and_play('Rock')
   end
 
   scenario "says it's a draw" do
