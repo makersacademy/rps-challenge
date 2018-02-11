@@ -26,10 +26,6 @@ class Game
     elsif computers_choice == 'Scissors'
       players_choice == 'Rock' ? @winner = 'player' : @winner = 'computer'
     end
-    # @winner = 'player' if computers_choice == 'Rock' && players_choice == 'Paper'
-    # @winner = 'player' if computers_choice == 'Paper' && players_choice == 'Scissors'
-    # @winner = 'player' if computers_choice == 'Scissors'
-
   end
 
 end

@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+  font-family: 'Kavivanar', cursive;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  font-family: 'Kavivanar', cursive;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+#rock {
+  background-color: #ffb600;
+}
+
+#rock:hover {
+  background-color: #f7be3b;
+}
+
+#scissors {
+  background-color: #fd2700;
+}
+
+#scissors:hover {
+  background-color: #f85500;
+}
+
+#paper {
+  background-color: #009dec;
+}
+
+#paper:hover {
+  background-color: #00bdf3;
+}
