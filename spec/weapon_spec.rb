@@ -9,7 +9,7 @@ describe Weapon do
   end
   describe "#winner" do
     it "returns :rock if second weapon is :scissors" do
-      expect(weapon.winner(Weapon.new(:scissors))).to eq :rock
+      expect(weapon.winner(Weapon.new(:scissors))).to eq true
     end
   end
 end

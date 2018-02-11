@@ -1,3 +1,18 @@
+<% session[:weapons] = Weapon.new(session[:player_weapon]) %>
+<% session[:weapons2] = Weapon.new(session[:computer].weapon) %>
+
 <p><%= session[:player_name] %>: chose <%= session[:player_weapon] %></p>
 <p>Computer chose: <%= session[:computer].weapon %></p>
 <p>Noel won</p>
+<p>Player name: <%= session[:player_name] %></p>
+<p>Player weapon: <%= session[:player_weapon] %></p>
+<p>Computer weapon: <%= session[:computer].weapon %></p>
+
+<p>Result:<% if session[:weapons].winner(session[:weapons2]) == :draw %>
+It was a draw
+<% elsif session[:weapons].winner(session[:weapons2]) == false %>
+Noel lost
+<% else %>
+<p>Noel won</p>
+<% end %>
+<p><a href="/">Click here to play again</a></p>

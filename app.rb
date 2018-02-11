@@ -5,9 +5,9 @@ require './lib/weapon'
 class RPS < Sinatra::Base
 
   RULES = {
-  :rock     => {:rock => :draw, :paper => :paper, :scissors => :rock},
-  :paper    => {:rock => :paper, :paper => :draw, :scissors => :scissors},
-  :scissors => {:rock => :rock, :paper => :scissors, :scissors => :draw}
+  :rock     => {:rock => :draw, :paper => false, :scissors => true},
+  :paper    => {:rock => true, :paper => :draw, :scissors => false},
+  :scissors => {:rock => false, :paper => true, :scissors => :draw}
 }
 
   enable :sessions
