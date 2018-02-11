@@ -22,4 +22,10 @@ describe Computer do
     end
   end
 
+  describe '#tally_score' do
+    it 'increases computer\'s score by 1 after victory' do
+      expect{ computer.tally_score }.to change { computer.score }.by(1)
+    end
+  end
+
 end

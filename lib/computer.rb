@@ -2,18 +2,19 @@ class Computer
 
   MOVES = [:rock, :paper, :scissors]
 
-  attr_reader :move
+  attr_reader :name, :move, :score
 
-  def name
+  def initialize(score = 0)
     @name = "Computer"
-  end
-
-  def score
-    @score = 0
+    @score = score
   end
 
   def choose
     @move = MOVES.sample
+  end
+
+  def tally_score
+    @score += 1
   end
 
 end
