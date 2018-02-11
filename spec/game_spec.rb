@@ -4,7 +4,6 @@ describe Game do
 
   subject(:game) { described_class.new(player) }
   let(:player) { double('player') }
-  let(:player_option) { ['rock','paper','scissors'].sample }
 
   context 'when instantiated' do
     it 'takes a parameter and passes it to the @player attribute' do
@@ -25,10 +24,62 @@ describe Game do
     end
   end
 
+  # game has already chosen weapon when initialized - so srands before
+  # 'game' fixes the weapon
+
   describe '#player_win?' do
-    it 'returns a boolean saying wheather the player has won' do
-      expect(game.player_win?).to satisfy { |return_val| true || false || nil }
+    context 'when player chooses rock' do
+      it 'returns true when pc chooses scissors' do
+        srand(3) #fixes randomly chosen weapon to scissors
+        game.set_player_weapon('rock')
+        expect(game.player_win?).to eq true
+      end
+      it 'returns false when pc chooses paper' do
+        srand(1) #fixes randomly chosen weapon to paper
+        game.set_player_weapon('rock')
+        expect(game.player_win?).to eq false
+      end
+      it 'returns nil when pc chooses rock' do
+        srand(33) #fixes randomly chosen weapon to rock
+        game.set_player_weapon('rock')
+        expect(game.player_win?).to eq nil
+      end
+    end
+
+    context 'when player chooses paper' do
+      it 'returns true when pc chooses rock' do
+        srand(33) #fixes randomly chosen weapon to rock
+        game.set_player_weapon('paper')
+        expect(game.player_win?).to eq true
+      end
+      it 'returns false when pc chooses scissors' do
+        srand(3) #fixes randomly chosen weapon to scissors
+        game.set_player_weapon('paper')
+        expect(game.player_win?).to eq false
+      end
+      it 'returns nil when pc chooses paper' do
+        srand(1) #fixes randomly chosen weapon to paper
+        game.set_player_weapon('paper')
+        expect(game.player_win?).to eq nil
+      end
+    end
+
+    context 'when player chooses scissors' do
+      it 'returns true when pc chooses paper' do
+        srand(1) #fixes randomly chosen weapon to paper
+        game.set_player_weapon('scissors')
+        expect(game.player_win?).to eq true
+      end
+      it 'returns false when pc chooses rock' do
+        srand(33) #fixes randomly chosen weapon to rock
+        game.set_player_weapon('scissors')
+        expect(game.player_win?).to eq false
+      end
+      it 'returns nil when pc chooses scissors' do
+        srand(3) #fixes randomly chosen weapon to scissors
+        game.set_player_weapon('scissors')
+        expect(game.player_win?).to eq nil
+      end
     end
   end
-
 end
