@@ -12,9 +12,19 @@ How to run
 How to play
 ----------
 
+1. Enter your names and hit submit (if you don't have any friends leave the player 2 box empty and you will play against the computer)
 ![alt text](images/1.png "Starting a new game")
+
+
+2. Click a button to choose your move.
 ![alt text](images/2.png "Player 1 move")
+
+
+3. If you are playing a 2 player game it's now player 2s turn.
 ![alt text](images/3.png "Player 2 move")
+
+
+4. The outcome of the game will be revealed! Hit play again if you want to play again.
 ![alt text](images/4.png "Winner display")
 
 My approach
