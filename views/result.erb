@@ -1,0 +1,16 @@
+<h2><%= @game.player_1.name %>: you have selected <%= @game.player_1.move %></h2>
+<h2><%= @game.computer.name %>: you have selected <%= @game.computer.move %></h2>
+
+<% if @game.result == :draw %>
+
+  <h1>It's a Draw</h1>
+
+<% elsif @game.result == :p1_win %>
+
+  <h1><%= @game.player_1.name %> Wins!</h1>
+
+<% else %>
+
+  <h1><%= @game.computer.name %> Wins!</h1>
+
+<% end %>

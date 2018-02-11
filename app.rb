@@ -28,10 +28,10 @@ class RPS < Sinatra::Base
     erb(:move)
   end
 
-  post '/selection' do
+  post '/result' do
     @game.player_1.choose(params[:move])
     @game.computer.choose
-    erb(:selection)
+    erb(:result)
   end
 
   run! if app_file == $0
