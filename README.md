@@ -31,6 +31,7 @@ Questions from the exercise:
 * Confirm whether stubbing should definitely NOT be done as part of feature tests (I used srand to fix a variable outcome)
 * Check whether git repo clones work with images saved to public folder - do the images download and work on someone else's computer?
 * In label tag, what does 'for' attribute do?
+* Why does continous integration not pass on pull request - error is that ruby version is not correct - gemfile correctly specifies ruby version to use. 
 
 
 
