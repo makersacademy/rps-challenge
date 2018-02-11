@@ -1,8 +1,5 @@
 feature "Outcome page" do
 
-  let(:player_1) { double("Jim", name: "Jim") }
-  let(:player_2) { double("Bob", name: "Bob") }
-
   before(:each) do
     allow_any_instance_of(Computer).to receive(:move).and_return(:scissors)
   end
