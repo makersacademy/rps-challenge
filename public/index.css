@@ -1,0 +1,46 @@
+body {
+  background-image: url("https://image.ibb.co/neRUmS/sss_index_enter.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 10em;
+  line-height: 50px;
+}
+
+h1 {
+  font-family: 'Luminari', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-size: 4.0em;
+  color: #A9A9A9;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: 'Chalkduster', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-size: 1.5em;
+  color: #A9A9A9;
+}
+
+.playername {
+  font-family: 'Luminari', fantasy;
+  background-color: rgba(50, 50, 50, 0.7) !important;
+  font-size: 1.0em;
+  height: auto;
+  width: auto;
+  border-color: #000000;
+  border-radius: 20px
+}
+
+.submit-player_name {
+  font-family: 'Chalkduster', fantasy;
+  background-color: rgba(70, 60, 50, 0) !important;
+  font-size: 1.5em;
+  color: #A9A9A9;
+  border-color: #000000;
+  border-radius: 20px;
+}
+
+.submit-player_name:hover {
+  box-shadow: #B8860B 0px 0px 35px;
+}
