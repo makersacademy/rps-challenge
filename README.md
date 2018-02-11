@@ -1,13 +1,27 @@
 # RPS Challenge
 
-Instructions
--------
+How to run
+--------------
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+1. `git clone`
+2. `gem install bundle` (if you don't have bundle already)
+3. `bundle`
+4. `rackup`
+5. In your browser go to localhost:9292
+
+How to play
+----------
+
+My approach
+----------
+
+I began by modelling how I wanted my site to work and diagramming what I needed to do. I decided I would need 3 separate classes in order to adhere to the single responsibility principle. I choose to have a classes for the Player and Computer which would store values unique to them (their names and their choice of move) and a Game class which would handle all game logic.
+
+As usual I went through the challenge using TDD and BDD methodologies, first creating, failing and passing unit tests, then feature tests and finally testing the live site itself.
+
+I avoided the need to use a global variable by implementing a class method on Game using a class instance variable to store a game instance.
+
+Overall I am happy with my app in its current form, but would like to pretty it up a bit.
 
 Task
 ----
