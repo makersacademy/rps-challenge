@@ -16,6 +16,6 @@ class Player
   private
 
   def option_check(option)
-    raise "Invalid option" if !@options.include?(option)
+    raise "Invalid option" unless @options.include?(option)
   end
 end

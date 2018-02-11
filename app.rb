@@ -47,14 +47,13 @@ class Rps < Sinatra::Base
     erb(:round_p1)
   end
 
-  get '/round_p2' do
-    erb(:round_p2)
-  end
-
   post '/PvP_option' do
     $player_option = $game.player.choose_option(params[:option])
     redirect '/round_p2'
+  end
 
+  get '/round_p2' do
+    erb(:round_p2)
   end
 
   post '/PvP_option2' do

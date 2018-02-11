@@ -12,11 +12,11 @@ describe Player do
 
   context 'when user chooses option' do
     it 'raises error if chosen option does not exist' do
-      expect{ player.choose_option('Fire') }.to raise_error { "Invalid option" }
+      expect { player.choose_option('Fire') }.to(raise_error { "Invalid option" })
     end
 
     it 'does not raise an error when choosing a new weapon' do
-      expect{ player.choose_option('Lizard') }.not_to raise_error('Invalid option')
+      expect { player.choose_option('Lizard') }.not_to raise_error('Invalid option')
     end
   end
 end
