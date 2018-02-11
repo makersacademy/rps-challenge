@@ -1,13 +1,17 @@
 <h1><%= @game.player_1.name %>: Take your Pick...</h1>
 
-<form action="/rock" method="post">
-  <input type="submit" value="Rock">
-</form>
-
-<form action="/paper" method="post">
-  <input type="submit" value="Paper">
-</form>
-
-<form action="/scissors" method="post">
-  <input type="submit" value="Scissors">
+<form action="/selection" method="post">
+  <label for="chooseRock">
+    Rock
+      <input type="radio" name="move" value="Rock">
+  </label>
+  <label for="choosePaper">
+    Paper
+      <input type="radio" name="move" value="Paper">
+  </label>
+  <label for="chooseScissors">
+    Scissors
+      <input type="radio" name="move" value="Scissors">
+  </label>
+    <input type="submit" value="Ching-Up">
 </form>

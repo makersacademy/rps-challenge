@@ -4,12 +4,12 @@ require_relative 'lib/player'
 
 class RPS < Sinatra::Base
 
-  before do
-    @game = Game.instance
-  end
-
   get '/' do
     erb(:index)
+  end
+
+  before do
+    @game = Game.instance
   end
 
   post '/name' do
@@ -26,16 +26,9 @@ class RPS < Sinatra::Base
     erb(:move)
   end
 
-  post '/rock' do
-    erb(:rock)
-  end
-
-  post '/paper' do
-    erb(:paper)
-  end
-
-  post '/scissors' do
-    erb(:scissors)
+  post '/selection' do
+    @game.player.choose(params[:move])
+    erb(:selection)
   end
 
   run! if app_file == $0

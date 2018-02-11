@@ -1,19 +1,6 @@
 feature 'Player move selection' do
-  scenario 'Player one selects rock' do
+  scenario 'Player one can select rock, paper, or scissors' do
     start_game
-    click_button "Rock"
-    expect(page).to have_content "Telgi: You have selected Rock."
-  end
-
-  scenario 'Player one selects paper' do
-    start_game
-    click_button "Paper"
-    expect(page).to have_content "Telgi: You have selected Paper."
-  end
-
-  scenario 'Player one selects scissors' do
-    start_game
-    click_button "Scissors"
-    expect(page).to have_content "Telgi: You have selected Scissors."
+    expect(page).to have_content "Rock Paper Scissors"
   end
 end
