@@ -12,6 +12,11 @@ describe Player do
     end
   end
 
+  context "#move" do
+    it "playes the round" do
+      expect(player.move).to eq "rock"
+    end
+  end
   context "#reduce_points" do
     it "reduces player points" do
       expect{player.increase_points}.to change{player.points}.by (+10)

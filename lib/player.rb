@@ -8,6 +8,10 @@ class Player
     @points = 50
   end
 
+  def move
+     "rock" || "paper" || "scissors"
+  end
+
   def increase_points
     @points += 10
   end

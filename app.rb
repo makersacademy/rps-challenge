@@ -10,7 +10,7 @@ class Game < Sinatra::Base
   end
 
   post "/name" do
-    $player_name=Player.new(params[:name])
+    $videogame=Videogame.new(params[:name], "Matrix")
     redirect "/play"
   end
 

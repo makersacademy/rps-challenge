@@ -4,8 +4,8 @@ require 'player'
 describe Videogame do
 
   subject(:game) {described_class.new("jenny", "computer")}
-  let(:player_1) {double("jenny")}
-  let(:player_2) {Player.new("computer")}
+  let(:player_1) {Player.new("jenny")}
+  let(:player_2) {Computer.new("Matrix")}
 
   context "#initialize" do
     it '#initializes player name' do
@@ -13,9 +13,11 @@ describe Videogame do
     end
   end
 
-  context "#move" do
-    it "playes the round" do
-      expect(game.move).to eq 60 #change {player_1.points}.by (10)
+  context "#play" do
+    it "returns winner" do
+    player_1.move
+    player_2.computer_move
+    expect(game.play).to eq "TIE!!"
     end
   end
 
