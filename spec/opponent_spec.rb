@@ -7,7 +7,6 @@ describe Opponent do
   describe "#option" do
     it "returns a random option" do
       expect(Opponent::OPTIONS).to include opponent.option
+    end
   end
-end
-
 end

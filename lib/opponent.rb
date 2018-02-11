@@ -7,4 +7,3 @@ class Opponent
   end
 
 end
-
