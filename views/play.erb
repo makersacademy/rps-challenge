@@ -8,23 +8,32 @@
   <body>
     <div class="center">
       <% if @game.player_two != nil %>
-        <h1>Welcome to the arena <%= @game.player_one %> and <%= @game.player_two %></h1>
+        <h1>Welcome to the arena <%= @game.player_one.name %> and <%= @game.player_two.name %></h1>
+        <br><br>
         <div class="battle_display">
           <div class="p1_display">
-            <h1><%= @game.player_one %> chose <%= @game.p1_choice %>!</h1><br>
-            <img src="/<%= @game.p1_image %>">
+            <h1><%= @game.player_one.name %> chose <%= @game.player_one.choice %>!</h1><br>
+            <img src="/<%= @game.player_one.image %>">
           </div>
           <div class="p2_display">
-            <h1><%= @game.player_two %> chose <%= @game.p2_choice%>!</h1><br>
-            <img src="/<%= @game.p2_image %>" alt="">
+            <h1><%= @game.player_two.name %> chose <%= @game.player_two.choice%>!</h1><br>
+            <img src="/<%= @game.player_two.image %>" alt="">
           </div>
         </div>
-        <h1><%= @game.winner %></h1>
+        <span class="winner"><%= @game.winner %></h1>
       <% else %>
-        <h1>Welcome to the arena <%= @game.player_one %></h1>
-        <h1>You chose <%= @game.p1_choice %>!</h1>
-        <h1>CPU chose <%= @game.cpu_choice%>!</h1>
-        <h1><%= @game.winner %></h1>
+        <h1>Welcome to the arena <%= @game.player_one.name %></h1>
+        <div class="battle_display">
+          <div class="p1_display">
+            <h1><%= @game.player_one.name %>, you chose <%= @game.player_one.choice %>!</h1>
+            <img src="/<%= @game.player_one.image %>">
+          </div>
+          <div class="p2_display">
+            <h1>CPU chose <%= @game.cpu.choice%>!</h1>
+            <img src="/<%= @game.cpu.image %>" alt="">
+          </div>
+        </div>
+        <span class="winner"><%= @game.winner %></h1>
       <% end %>
     </div>
   </body>

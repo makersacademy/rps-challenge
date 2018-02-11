@@ -1,13 +1,5 @@
 class Game
 
-  @images = {
-    Spock: "images/spock.jpg",
-    lizard: "images/lizard.jpg",
-    paper: "images/paper.jpg",
-    rock: "images/rock.jpg",
-    scissors: "images/scissors.jpg",
-    }
-
   def self.create(player_1, *args)
     @game = Game.new(player_1, *args)
   end
@@ -16,20 +8,12 @@ class Game
     @game
   end
 
-  attr_reader :p1_choice, :p2_choice, :cpu_choice, :player_one, :player_two,
-    :p1_image, :p2_image
+  attr_reader :cpu, :player_one, :player_two
 
   def initialize(player_1, player_2 = nil)
-    @images = {
-      Spock: "images/spock.jpg",
-      lizard: "images/lizard.jpg",
-      paper: "images/paper.jpg",
-      rock: "images/rock.jpg",
-      scissors: "images/scissors.jpg",
-      }
-    @player_one, @p1_choice = player_1[:name], player_1[:rps]
-    @p1_image =  @images[@p1_choice.to_sym]
-    p @p1_image
+    p player_1
+    @player_one = Player.new(player_1)
+    p player_one
     player_2 ? two_player_game(player_2) : one_player_game
   end
 
@@ -39,22 +23,10 @@ class Game
 
   private
 
-  def two_player_game(player)
-    @player_two, @p2_choice = player[:name], player[:rps]
-    @p2_image =  @images[@p2_choice.to_sym]
-    @choices = (@p1_choice[0] + p2_choice[0]).to_sym
-  end
-
   def one_player_game
     @cpu_choice = [:rock, :paper, :scissors, :Spock, :lizard].sample.to_s
-    @choices = (@p1_choice[0] + cpu_choice[0]).to_sym
-  end
-
-  def two_player_result
-    return "It's a draw" if @p1_choice == @p2_choice
-    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr].include?(@choices) ?
-    "Sorry #{@player_two}, #{@player_one} wins!"
-    : "Sorry #{@player_one}, #{@player_two} wins!"
+    @cpu = Player.new({ name: "CPU", rps: @cpu_choice })
+    @choices = (@player_one.choice[0] + cpu.choice[0]).to_sym
   end
 
   def one_player_result
@@ -62,4 +34,18 @@ class Game
     [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr].include?(@choices) ?
     "You win" : "You lose"
   end
+
+  def two_player_game(player)
+    @player_two = Player.new(player)
+    @choices = (@player_one.choice[0] + @player_two.choice[0]).to_sym
+  end
+
+  def two_player_result
+    return "It's a draw" if @player_one.choice == @player_two.choice
+    [:pr, :rs, :sp, :rl, :lS, :Ss, :sl, :lp, :pS, :Sr].include?(@choices) ?
+    "Sorry #{@player_two.name}, #{@player_one.name} wins!"
+    : "Sorry #{@player_one.name}, #{@player_two.name} wins!"
+  end
+
+
 end

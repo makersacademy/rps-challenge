@@ -21,27 +21,22 @@ img {
   font-size: 1em;
 }
 
+.winner {
+  font-size: 3em;
+}
+
 .battle_display {
   display: grid;
   grid-template-columns: repeat(2);
   grid-auto-rows: minmax(100px, auto);
 }
 
-.header {
-  grid-row: 1;
-  text-align: center;
-}
-
 .p1_display {
-  grid-row: 2 / 5;
+  grid-row: 1 / 5;
   grid-column: 1 / 2;
 }
 
 .p2_display {
-  grid-row: 2 / 5;
+  grid-row: 1 / 5;
   grid-column: 3 / 4;
-}
-
-.footer {
-  grid-row: 6;
 }
