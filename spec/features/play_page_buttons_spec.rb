@@ -1,9 +1,7 @@
 feature "Play page" do
 
   scenario "Has buttons for each move" do
-    visit('/')
-    fill_in :player_1, with: "Jim"
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_button("rock")
     expect(page).to have_button("paper")
     expect(page).to have_button("scissor")
