@@ -13,8 +13,12 @@ describe Game do
 
     it "returns player wins" do
       expect(game.match("Rock", "Scissors")).to eq "You win"
-
     end
+
+      it "returns computer wins" do
+        expect(game.match("Paper", "Scissors")).to eq "Computer wins"
+      end
   end
+
 
 end
