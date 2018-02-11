@@ -1,4 +1,8 @@
 <h1>The Result:</h1>
-<h2><%= @player.name %> chose: <%= player choice %></h2>
-<h2>Computer chose: <%= computer choice %></h2>
-<h1><%= result %></h1>
+<h2><%= @player_name %> chose: <%= @choice %></h2>
+<h2>Computer chose: <%= @computer_choice %></h2>
+<h1><%= @result %></h1>
+
+<form action="/">
+  <input type="submit" value="Play again?">
+</form>

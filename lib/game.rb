@@ -5,15 +5,15 @@ class Game
 
   def match(player_choice, computer_choice)
     if player_choice == computer_choice
-     "It's a draw"
+     @result = "It's a draw"
    elsif computer_choice == "Paper" && player_choice == "Scissors"
-      "You win"
+      @result = "You win"
     elsif computer_choice == "Scissors" && player_choice == "Rock"
-      "You win"
+      @result = "You win"
     elsif computer_choice == "Rock" && player_choice == "Paper"
-      "You win"
+      @result = "You win"
     else
-     "Computer wins"
+      @result = "Computer wins"
     end
   end
 

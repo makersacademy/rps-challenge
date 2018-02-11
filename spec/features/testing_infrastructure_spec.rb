@@ -18,3 +18,11 @@ feature "Rock, Paper, Scissor buttons" do
     expect(page).to have_selector(:link_or_button, "Rock")
   end
 end
+
+feature "Play again?" do
+  scenario "Play again button exists" do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_selector(:link_or_button, "Play again?")
+  end
+end
