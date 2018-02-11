@@ -8,7 +8,7 @@ body {
   font-family: Impact;
 }
 
-/* REST */
+/* SPEC */
 
 .main {
   text-align: center;
@@ -18,4 +18,8 @@ body {
   color: red;
   margin-top: 40px;
   font-size: 2em;
+}
+
+.play_again {
+  margin-top: 40px;
 }
