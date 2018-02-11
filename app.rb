@@ -28,9 +28,8 @@ class RpsGame < Sinatra::Base
   end
 
   get '/result' do
-    @computer = Computer.new
-    @computer.choose_weapon
     @game = $game
+    @game.computer.choose_weapon
     erb(:result)
   end
 

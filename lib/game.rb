@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer
 
   WIN_LOGIC = {
     'Rock' => 'Scissors',
@@ -8,8 +8,9 @@ class Game
     'Scissors' => 'Paper'
   }
 
-  def initialize(player)
+  def initialize(player, computer = Computer.new)
     @player = player
+    @computer = computer
   end
 
   def result(player_weapon, computer_weapon)
