@@ -2,7 +2,7 @@ class Computer
 
   MOVES = [:rock, :paper, :scissors]
 
-  attr_reader :move, :score
+  attr_reader :move
 
   def name
     @name = "Computer"

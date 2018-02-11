@@ -20,4 +20,10 @@ describe Player do
     end
   end
 
+  describe '#tally_score' do
+    it 'increases player\'s score by 1 after victory' do
+      expect{ player_1.tally_score }.to change { player_1.score }.by(1)
+    end
+  end
+
 end

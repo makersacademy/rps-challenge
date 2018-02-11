@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player_1, computer) }
-  let(:player_1) { double 'Player 1'}
-  let(:computer) { double 'Computer'}
+  let(:player_1) { double 'Player 1' }
+  let(:computer) { double 'Computer' }
 
   describe '#initialize' do
     it 'creates a human player' do
