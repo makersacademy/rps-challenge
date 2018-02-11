@@ -10,6 +10,20 @@ Instructions
   - Scissors beats Paper
   - Paper beats Rock
 
+Installation
+-------
+To play the application online, visit https://rock-paper-scissors-makers.herokuapp.com/
+
+To play the application locally:
+
+Clone the repository
+
+Run `gem list` in the project directory to check whether `bundler` is installed. If it is not, run `gem install bundler`
+
+Run `bundle` in the project directory to ensure all necessary gems are installed
+
+Run `rackup` and visit `localhost:9292`
+
 Playing the game
 -------
 
@@ -18,10 +32,12 @@ Playing the game
 ![Screenshot](https://imgur.com/a/hcfEn)
 
 * Begin playing by selecting either rock, paper or scissors. Meanwhile, the virtual opponent also selects an option at random
-![Screenshot]https://imgur.com/a/zVLIm
+
+![Screenshot](https://imgur.com/a/sJ6mT)
 
 * A winner is declared
-![Screenshot]https://imgur.com/a/JN615
+
+![Screenshot](https://imgur.com/a/JN615)
 
 User stories
 ----
