@@ -2,18 +2,16 @@ require 'game'
 
 describe Game do
 
-  let(:game_class) {Game}
-  let(:game) {game_class.create(first_player, second_player)}
-  let(:first_player) {double('Player 1', name: 'Marcus', move: 'rock')}
-  let(:second_player) {double('Player 2', name: 'Gamblore', move: 'scissors')}
+  let(:game_class) { Game }
+  let(:game) { game_class.create(first_player, second_player) }
+  let(:first_player) { double('Player 1', name: 'Marcus', move: 'rock') }
+  let(:second_player) { double('Player 2', name: 'Gamblore', move: 'scissors') }
 
-  let(:alternate_game) {game_class.create(first_player_loses, second_player)}
-  let(:first_player_loses) {double('Player 1', name: 'Marcus', move: 'paper')}
+  let(:alternate_game) { game_class.create(first_player_loses, second_player) }
+  let(:first_player_loses) { double('Player 1', name: 'Marcus', move: 'paper') }
 
-
-  let(:first_player_draw) {double('Player 1', name: 'Marcus', move: 'rock')}
-  let(:draw_game) {game_class.create(first_player_draw, second_player)}
-
+  let(:first_player_draw) { double('Player 1', name: 'Marcus', move: 'rock') }
+  let(:draw_game) { game_class.create(first_player_draw, second_player) }
 
   describe '#initialize' do
     it 'Instantiates game with player' do
@@ -35,13 +33,13 @@ describe Game do
       game.choose_move(first_player, 'rock')
     end
 
-      describe '#random_move' do
-        it 'assigns a random move if none is given' do
-          allow(first_player).to receive(:set_move)
-          expect(game).to receive(:random_move)
-          game.choose_move(first_player)
-        end
+    describe '#random_move' do
+      it 'assigns a random move if none is given' do
+        allow(first_player).to receive(:set_move)
+        expect(game).to receive(:random_move)
+        game.choose_move(first_player)
       end
+    end
   end
 
   describe '#calculate_winner' do
