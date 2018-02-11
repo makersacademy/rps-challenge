@@ -16,6 +16,8 @@ EDIT: Realised simplest way to build game would be to make player 2 computerised
 
 3. The Player class will be responsible for selecting moves and storing those moves. In order to pass the feature tests, each move selection redirects to a different route so now I will need to consolidate all move selections to one route called '/outcome'
 
+4. Create a Computer class for the human player to play against. Computer player's move will be randomised using #sample.
+
 ### Installation
 
 Install Bundler and the relevant gems with the below commands:
