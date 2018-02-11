@@ -1,15 +1,13 @@
 class Player
 
-  DEF_POINTS = 0
-  attr_accessor :name, :image, :points
+  attr_accessor :name, :image, :move
 
-  def initialize(player, points = DEF_POINTS)
+  def initialize(player)
     @name = player[:name]
     @image = player[:img]
-    @points = points
   end
 
-  def receive_point
-    @points += 1
+  def chosen_move(move)
+    @move = move
   end
 end

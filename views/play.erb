@@ -10,9 +10,9 @@
       <div class="header">
           <% game = @game %>
           <%= game.player.name %>
-          vs Tavern Wench!
+          vs... a tavern Wench!
       </div>
-      <h2><%= game.current_player.name %>, make your move!</h2>
+      <h2><%= game.current_player.name %>, do something!</h2>
 
       <div class="grid">
           <div class="players_image">
@@ -22,8 +22,10 @@
       </div>
       <div class="footer">
         <form action="/defeat">
-          <input type="submit" value="Rock" class="choice">
-          <input type="submit" value="Paper" class="choice">
-          <input type="submit" value="Scissors" class="choice">
+          <input type="submit" value="Rock?" class="choice">
+        <form action="/defeat">
+          <input type="submit" value="Paper?" class="choice">
+        <form action="/defeat">
+          <input type="submit" value="Scissors?" class="choice">
         </form>
       </div>

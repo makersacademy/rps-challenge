@@ -22,11 +22,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  # get '/move' do
-  #   redirect "/defeat" if @game.current_player.points == 3
-  #   @game.make_move
-  #   erb(:move)
-  # end
+  get '/move' do
+    @game.player.chosen_move(params[:player_move])
+    erb(:move)
+  end
 
   get '/defeat' do
     erb(:defeat)

@@ -1,4 +1,8 @@
+require_relative 'player'
+
 class Game
+
+  attr_reader :player, :current_player
 
   def self.create(player)
     @game = Game.new(player)
@@ -8,24 +12,8 @@ class Game
     @game
   end
 
-  attr_reader :player, :current_player
-
   def initialize(player)
     @player = Player.new(player)
     @current_player = @player
   end
 end
-
-#   def make_move
-#   @current_player.receive_point
-#   switch_turns
-#   end
-#
-#   def current_turn?
-#     current_player == player1
-#   end
-#
-#   def switch_turns
-#     @current_player = current_turn? ? player2 : player1
-#   end
-# end
