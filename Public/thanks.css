@@ -1,0 +1,20 @@
+body {
+  background-color: lightblue;
+}
+
+div {
+  width: 550px;
+  padding: 25px 30px 40px 30px;
+  background-color: white;
+  border: solid lightblue 5px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 100px auto;
+  color: grey
+}
+
+h1 {
+	font-family: Georgia;
+	font-size: 30px;
+	font-weight: 500;
+}

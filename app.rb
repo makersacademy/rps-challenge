@@ -12,7 +12,6 @@ class RpsGame < Sinatra::Base
   end
 
   get '/' do
-    @game
     erb(:index)
   end
 
@@ -23,7 +22,6 @@ class RpsGame < Sinatra::Base
   end
 
   get '/play' do
-    @game
     erb(:play)
   end
 

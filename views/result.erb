@@ -1,23 +1,59 @@
-<h1>The results are in...</h1>
-<h3><%= @game.player.name %> chose: <%= @game.player.weapon %></h3>
-<h3>Computer chose: <%= @game.computer.weapon %></h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/result.css" />
+  </head>
 
-<% if @game.result(@game.player.weapon, @game.computer.weapon) == 'draw' %>
-  <h2>It's a draw. Want to try again?</h2>
-<% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'win' %>
-  <h2><%= @game.player.name %> wins!</h2>
-<% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'lose' %>
-  <h2>Computer wins...better luck next time!</h2>
-<% end %>
+  <body>
+    <div class="main">
+      <h2>The results are in...</h1>
+      <div class="weapon">
+        <% if @game.player.weapon == 'Rock' %>
+          <img src="http://picoplex.net/games/rpslp/rock.png">
+        <% elsif @game.player.weapon == 'Paper' %>
+          <img src="http://picoplex.net/games/rpslp/paper.png">
+        <% elsif @game.player.weapon == 'Scissors' %>
+         <img src="http://picoplex.net/games/rpslp/scissors.png">
+        <% end %>
+        <p><%= @game.player.name %> chose: <br><br>
+        <b><%= @game.player.weapon %></b></p>
+      </div>
+      <div class="weapon">
+        <% if @game.computer.weapon == 'Rock' %>
+          <img src="http://picoplex.net/games/rpslp/rock.png">
+        <% elsif @game.computer.weapon == 'Paper' %>
+          <img src="http://picoplex.net/games/rpslp/paper.png">
+        <% elsif @game.computer.weapon == 'Scissors' %>
+         <img src="http://picoplex.net/games/rpslp/scissors.png">
+        <% end %>
+        <p>Computer chose: <br><br>
+        <b><%= @game.computer.weapon %></b></p>
+      </div>
 
-<form action="/play">
-  <input type="submit" value="Play again as <%= @game.player.name %>">
-</form>
+      <% if @game.result(@game.player.weapon, @game.computer.weapon) == 'draw' %>
+        <h1>It's a draw. Want to try again?</h1>
+      <% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'win' %>
+        <h1><%= @game.player.name %> wins!</h1>
+      <% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'lose' %>
+        <h1>Computer wins...better luck next time!</h1>
+      <% end %>
 
-<form action="/">
-  <input type="submit" value="Play again as new player">
-</form>
+      <div class="button">
+        <form action="/play">
+          <input type="submit" value="Play again as <%= @game.player.name %>">
+        </form>
+      </div>
+      <div class="button">
+        <form action="/">
+          <input type="submit" value="Play again as new player">
+        </form>
+      </div>
+      <div class="exit">
+        <form action="/thanks">
+          <input type="submit" value="Leave game">
+        </form>
+      </div>
+    </div>
 
-<form action="/thanks">
-  <input type="submit" value="Leave game">
-</form>
+  </body>
+</html>

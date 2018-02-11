@@ -1,0 +1,55 @@
+body {
+  background-color: lightblue;
+}
+
+div {
+  width: 550px;
+  padding: 25px 30px 40px 30px;
+  background-color: white;
+  border: solid lightblue 5px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 100px auto;
+  color: grey
+}
+
+h1 {
+	font-family: Georgia;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+p {
+	font-family: Georgia;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+input::placeholder {
+  color: lightgrey;
+  font-size:22px
+}
+
+input[type=text] {
+  color: black;
+  font-size: 26px;
+  font-family: Georgia;
+  text-align: center;
+  border: 3px solid lightblue;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+input[type=submit] {
+  background-color: teal;
+  color: white;
+  font-family: Georgia;
+  font-size: 22px;
+  padding: 5px 30px;
+  margin: 30px 0 0 0;
+  border-color: teal;
+  border-radius: 10px;
+  height: 50px;
+  width: 150px;
+}

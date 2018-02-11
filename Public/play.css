@@ -1,0 +1,60 @@
+body {
+  background-color: lightblue;
+}
+
+.main {
+  width: 550px;
+  padding: 25px 30px 40px 30px;
+  background-color: white;
+  border: solid lightblue 5px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 100px auto;
+  color: grey
+}
+
+h1 {
+	font-family: Georgia;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+p {
+	font-family: Georgia;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.button {
+  display: inline-block;
+  width: 180px;
+}
+
+input[type=submit] {
+  color: white;
+  font-family: Georgia;
+  font-size: 22px;
+  padding: 0px 30px;
+  margin: 20px 0 0 0;
+  border-color: white;
+  border-radius: 10px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  background-color: teal;
+}
+
+input[value=Rock] {
+  background-color: teal;
+  font-size: 22px;
+}
+
+input[value=Paper] {
+  background-color: teal;
+  font-size: 22px;
+}
+
+input[value=Scissors] {
+  background-color: teal;
+  font-size: 22px;
+}
