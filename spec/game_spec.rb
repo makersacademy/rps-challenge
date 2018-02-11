@@ -1,9 +1,10 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player, computer) }
+  subject(:game) { described_class.new(player, computer, scoreboard) }
   let(:computer) { double 'A computer', rand_choice: 'Rock' }
   let(:player) { double 'A player' }
+  let(:scoreboard) { double 'A scoreboard' }
 
   describe '#choose_winner' do
     it 'chooses a winner depending on choices made' do
@@ -20,6 +21,12 @@ describe Game do
   describe '#computer' do
     it 'takes a computer class' do
       expect(game.computer).to eq computer
+    end
+  end
+
+  describe '#score' do
+    it 'takes a scoreboard class' do
+      expect(game.score).to eq scoreboard
     end
   end
 end

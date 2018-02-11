@@ -19,8 +19,8 @@
 
 <h1>Scoreboard:</h1>
 <br>
-<h1><%= @game.player.name %>'s score: <%= @scoreboard.players_score %></h1>
-<h1>Computer's score: <%= @scoreboard.computers_score %></h1>
+<h1><%= @game.player.name %>'s score: <%= @game.score.players_score %></h1>
+<h1>Computer's score: <%= @game.score.computers_score %></h1>
 
 <form action="/play">
   <input type="submit" value="Next Round">

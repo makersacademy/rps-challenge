@@ -7,7 +7,8 @@ class Scoreboard
   end
 
   def update_score(winner)
-    winner == 'player' ? @players_score += 1 : @computers_score += 1
+    @players_score += 1 if winner == 'player'
+    @computers_score += 1 if winner == 'computer'
   end
 
 end

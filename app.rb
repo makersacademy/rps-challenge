@@ -17,7 +17,8 @@ class Rps < Sinatra::Base
   post '/player' do
     player = Player.new(params[:player])
     computer = Computer.new
-    @game = Game.create(player, computer)
+    scoreboard = Scoreboard.new
+    @game = Game.create(player, computer, scoreboard)
     redirect '/play'
   end
 
@@ -31,10 +32,9 @@ class Rps < Sinatra::Base
   end
 
   get '/battle' do
-    # @computer = Computer.new
-    @scoreboard = Scoreboard.new
+    # @scoreboard = Scoreboard.new
     @outcome = @game.choose_winner(@game.player.choice, @game.computer.rand_choice)
-    @scoreboard.update_score(@outcome)
+    @game.score.update_score(@outcome)
     erb :battle
   end
 
