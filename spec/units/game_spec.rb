@@ -5,7 +5,7 @@ describe Game do
   subject(:game)  { described_class.new(player_1, player_2, move_list) }
   let(:player_1)  { double 'player 1' }
   let(:player_2)  { double 'player 2' }
-  let(:move_list) { double 'an array of moves'}
+  let(:move_list) { double 'an array of moves' }
 
   describe "#new" do
     it "sets @player_1 using the first passed argument" do
@@ -55,19 +55,19 @@ describe Game do
   describe "#result" do
     context "when player_1_move not provided" do
       it 'raises "You must choose a move" error' do
-        expect { game.result( nil, 'rock') }.to raise_error "You must choose a move"
+        expect { game.result(nil, 'rock') }.to raise_error "You must choose a move"
       end
     end
 
     context "when game is a draw" do
       it 'calls #draw_result' do
-        expect(game).to receive(:draw_result).with('rock', 'rock')
+        expect(game).to receive(:draw_result).with('rock')
         game.result('rock', 'rock')
       end
 
       context 'testing specific values' do
         it 'draws when both players play rock' do
-          outcome = { result: 'draw', move: 'rock'}
+          outcome = { result: 'draw', move: 'rock' }
           expect(game.result('rock', 'rock')).to eq outcome
         end
 
@@ -84,7 +84,7 @@ describe Game do
     end
 
     context "when player 1 wins" do
-      it 'calls win_result' do
+      it 'calls #win_result' do
         expect(game).to receive(:win_result).with('rock', 'scissors')
         game.result('rock', 'scissors')
       end
@@ -108,7 +108,7 @@ describe Game do
     end
 
     context "when player 2 wins" do
-      it 'calls loss_result' do
+      it 'calls #loss_result' do
         expect(game).to receive(:loss_result).with('rock', 'paper')
         game.result('rock', 'paper')
       end

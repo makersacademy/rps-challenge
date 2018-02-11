@@ -9,6 +9,6 @@ feature "play a game and win" do
   end
 
   scenario "displays the moves" do
-      expect(page).to have_content("rock") && have_content('scissors')
+    expect(page).to have_content("rock") && have_content('scissors')
   end
 end

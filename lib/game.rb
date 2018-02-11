@@ -5,7 +5,7 @@ class Game
   end
 
   def self.current_game
-    raise "No current game" if !@current_game
+    raise "No current game" unless @current_game
     @current_game
   end
 
@@ -14,7 +14,8 @@ class Game
   DEFAULT_MOVE_LIST = %w(rock paper scissors)
   DEFAULT_RULES = { rock: 'scissors',
                     scissors: 'paper',
-                    paper: 'rock'}
+                    paper: 'rock'
+                  }
 
   def initialize(player_1, player_2, moves = DEFAULT_MOVE_LIST, rules = DEFAULT_RULES)
     @player_1 = player_1
@@ -26,7 +27,7 @@ class Game
 
   def result(player_1_move, player_2_move)
     raise "You must choose a move" unless player_1_move
-    draw_result(player_1_move, player_2_move) if player_1_move == player_2_move
+    draw_result(player_1_move) if player_1_move == player_2_move
     win_result(player_1_move, player_2_move) if @rules[player_1_move.to_sym] == player_2_move
     loss_result(player_1_move, player_2_move) if @rules[player_2_move.to_sym] == player_1_move
     @results
@@ -34,7 +35,7 @@ class Game
 
   private
 
-  def draw_result(player_1_move, player_2_move)
+  def draw_result(player_1_move)
     @results[:result] = 'draw'
     @results[:move] = player_1_move
   end
