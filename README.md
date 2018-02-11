@@ -3,11 +3,7 @@
 Task
 ----
 
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+Your task is to create a _Rock, Paper, Scissors_ game which can be played on the web with the following user stories:
 
 ```sh
 As a marketeer
@@ -33,4 +29,4 @@ To run program
 1. Clone this repo
 2. Run `bundle` in the terminal
 3. Run `rackup` in the terminal
-4. In a browser, go to http://localhost:9292/
+4. In a browser, go to http://localhost:9292/ and start playing!
