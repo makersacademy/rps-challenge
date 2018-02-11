@@ -1,18 +1,18 @@
 <h1><%= @game.player.name %> chooses <%= @game.player.choice %>!</h1>
-<h1>Computer chooses <%= @computer.choice %>!</h1>
+<h1>Computer chooses <%= @game.computer.choice %>!</h1>
 
-<% if @game.player.choice == @computer.choice %>
+<% if @game.player.choice == @game.computer.choice %>
 
   <h1>It's a draw!</h1>
 
 <% elsif @game.winner == 'computer' %>
 
-  <h1>Computer's <%= @computer.choice %> beats <%= @game.player.name %>'s <%= @game.player.choice %>!</h1>
+  <h1>Computer's <%= @game.computer.choice %> beats <%= @game.player.name %>'s <%= @game.player.choice %>!</h1>
   <h1>Computer wins this round!</h1>
 
 <% else %>
 
-  <h1><%= @game.player.name %>'s <%= @game.player.choice %> beats Computer's <%= @computer.choice %>!</h1>
+  <h1><%= @game.player.name %>'s <%= @game.player.choice %> beats Computer's <%= @game.computer.choice %>!</h1>
   <h1><%= @game.player.name %> wins this round!</h1>
 
 <% end %>

@@ -1,9 +1,10 @@
 class Game
 
-  attr_reader :player, :winner, :players_score, :computers_score
+  attr_reader :player, :computer, :winner, :players_score, :computers_score
 
-  def initialize(player)
+  def initialize(player, computer)
     @player = player
+    @computer = computer
     @players_score = 0
     @computers_score = 0
   end
@@ -12,8 +13,8 @@ class Game
     @game
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def choose_winner(players_choice, computers_choice)
