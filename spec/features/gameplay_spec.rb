@@ -7,44 +7,48 @@ feature "Gameplay" do
     expect(page).to have_button('Scissors')
   end
 
-  describe "Announcing player's option" do
+  describe "Announcing player's chosen weapon" do
 
-    let(:player_rock)  { "You chose rock" }
-    let(:player_paper) { "You chose paper" }
-    let(:player_scissors)  { "You chose scissors" }
-
-    it "shows if the player has chosen the rock option" do
+    it "chooses rock" do
       sign_in_and_play
       click_on('Rock')
-      expect(page).to have_content(player_rock)
+      expect(page).to have_content("You chose rock")
     end
 
-    it "shows if the player has chosen the paper option" do
+    it "chooses paper" do
       sign_in_and_play
       click_on('Paper')
-      expect(page).to have_content(player_paper)
+      expect(page).to have_content("You chose paper")
     end
 
-    it "shows if the player has chosen the scissors option" do
+    it "chooses scissors" do
       sign_in_and_play
       click_on('Scissors')
-      expect(page).to have_content(player_scissors)
+      expect(page).to have_content("You chose scissors" )
     end
   end
 
-  describe "Announcing the computer's weapon" do
+  describe "Announcing the computer's chosen weapon" do
 
-    let(:computer_rock)  { "Computer chose rock" }
-    let(:computer_paper) { "Computer chose paper" }
-    let(:computer_scissors)  { "Computer chose scissors" }
-
-    it "shows the computer's randomly chosen option" do
+    it "chooses rock" do
       sign_in_and_play
+      allow_any_instance_of(Game).to receive(:pc_weapon).and_return('rock')
       click_on('Rock')
-      expect(page).to satisfy { |page| possible_computer_weapon(page) }
+      expect(page).to have_content ("Computer chose rock" )
+    end
+
+    it "chooses paper" do
+      sign_in_and_play
+      allow_any_instance_of(Game).to receive(:pc_weapon).and_return('paper')
+      click_on('Rock')
+      expect(page).to have_content ("Computer chose paper" )
+    end
+
+    it "chooses scissors" do
+      sign_in_and_play
+      allow_any_instance_of(Game).to receive(:pc_weapon).and_return('scissors')
+      click_on('Rock')
+      expect(page).to have_content ("Computer chose scissors" )
     end
   end
-
-  
-
 end
