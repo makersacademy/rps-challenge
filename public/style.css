@@ -8,6 +8,10 @@ body {
   font-family: Impact;
 }
 
+button {
+  border: none;
+}
+
 i {
   color: blue;
 }
@@ -16,6 +20,14 @@ i {
 
 .main {
   text-align: center;
+}
+
+#game_modes {
+  text-align: center;
+}
+
+#game_modes button {
+  margin-top: 20px;
 }
 
 #winner {

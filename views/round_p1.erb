@@ -11,11 +11,11 @@
   
   <body>
     <div class="main">
-      <h2>Hi, <%= $game.player.name %>!</h2>
+      <h2>Hi, <%= $game.player.name %> & <%= $game.bot.name %>!</h2>
 
-      <h4>Choose one: <i>Rock - Paper - Scissor</i></h4>
+      <h4><%= $game.player.name %>, choose one: <i>Rock - Paper - Scissor</i></h4>
 
-      <form action="/PvC_option" method="POST">
+      <form action="/PvP_option" method="POST">
         <button type="submit" name="option" value="Rock">
           <i class="far fa-hand-rock fa-5x"></i>
         </button>

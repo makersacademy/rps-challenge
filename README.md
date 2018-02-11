@@ -32,6 +32,7 @@ Personal code review
 * I have the feeling that I have improved a lot in the technical part, but I still struggle to organise my train of thoughts.
 * I find myself going over and over again the same things and jumping between tests, writing code first, or realising that my tests were not really useful.
 * I try to let myself be driven by TDD, but sometimes I realise my tests are driven by my code.
+This happened especially after changing the game mode to allow two players to play, when I had to change tests and the controller.
 
 # RPS Challenge
 

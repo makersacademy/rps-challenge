@@ -1,32 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Result</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Result</title>
 
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <div class="main">
-    <h3>You chose <%= $player_option %></h2>
+    <link rel="stylesheet" href="/style.css">
+  </head>
 
-    <h3>Computer chose <%= $bot_option %></h2>
-    
-    <div id="winner">
-      <% if $game.player.choice == $game.bot.choice %>
-        It's a draw!
-      <% elsif $game.output_winner == $game.player.name %>
-        <%= $game.player.name %> wins!
-      <% else %>
-        <%= $game.bot.name %> wins!
-      <% end %>
+  <body>
+    <div class="main">
+      <h3><%= $game.player.name %> chose <%= $player_option %></h2>
+
+      <h3><%= $game.bot.name %> chose <%= $bot_option %></h2>
+      
+      <div id="winner">
+        <% if $game.player.choice == $game.bot.choice %>
+          It's a draw!
+        <% elsif $game.output_winner == $game.player.name %>
+          <%= $game.player.name %> wins!
+        <% else %>
+          <%= $game.bot.name %> wins!
+        <% end %>
+      </div>
+
+      <div class="play_again">
+        <% if $game.bot.name == 'Computer' %>
+          <form action="/round">
+        <% end %>
+          <form action="/round_p1">
+          <input type="submit" value="Play again!">
+        </form>
+      </div>
     </div>
-
-    <div class="play_again">
-      <form action="/round">
-        <input type="submit" value="Play again!">
-      </form>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
