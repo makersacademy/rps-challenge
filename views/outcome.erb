@@ -1,6 +1,6 @@
 <% if @game.outcome == :win %>
 <h1><%= @game.player_1.move %> beats <%= @game.player_2.move %></h1>
-<h1>You win!</h1>
+<h1><%= @game.player_1.name %> wins!</h1>
 <% end %>
 <% if @game.outcome == :draw %>
 <h1><%= @game.player_1.move %> ties with <%= @game.player_1.move %></h1>
@@ -8,7 +8,7 @@
 <% end %>
 <% if @game.outcome == :lose %>
 <h1><%= @game.player_1.move %> is beaten by <%= @game.player_2.move %></h1>
-<h1>You lose!</h1>
+<h1><%= @game.player_2.name %> wins!</h1>
 <% end %>
 <form action="/">
   <input type="submit" value="Play again?">

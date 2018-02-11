@@ -14,7 +14,11 @@ class RPS < Sinatra::Base
   end
 
   post "/name" do
-    @game = Game.create(Player.new(params[:player_1]))
+    if params[:player_2] != ""
+      @game = Game.create(Player.new(params[:player_1]), Player.new(params[:player_2]))
+    else
+      @game = Game.create(Player.new(params[:player_1]))
+    end
     redirect to('/play')
   end
 
@@ -24,6 +28,15 @@ class RPS < Sinatra::Base
 
   post '/play' do
     @game.player_1.choose_move(params[:player_1_move])
+    @game.player_2.name == "RPSbot" ? redirect('/outcome') : redirect('/play2')
+  end
+
+  get '/play2' do
+    erb(:play2)
+  end
+
+  post '/play2' do
+    @game.player_2.choose_move(params[:player_2_move])
     redirect('/outcome')
   end
 
