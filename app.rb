@@ -12,6 +12,13 @@ class RPS < Sinatra::Base
 
   enable :sessions
 
+  get '/cache_max_age' do
+  cache_control max_age: 1
+  # Specifies the maximum amount of time that a response will be considered fresh.
+  # Similar to expires
+  send_file('stylesheets/main.css')
+end
+
   get '/' do
     erb :index
   end

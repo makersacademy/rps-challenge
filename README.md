@@ -14,6 +14,7 @@ Then navigate to local host with the port shown after rackup.
 
 Screenshots
 -------
+![Screenshot](https://path_to_your_image)
 
 
 Challenge Instructions
