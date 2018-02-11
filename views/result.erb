@@ -1,17 +1,17 @@
 <h1>The results are in...</h1>
-<h3><%= @player.name %> chose: <%= @player.weapon %></h3>
+<h3><%= @game.player.name %> chose: <%= @game.player.weapon %></h3>
 <h3>Computer chose: <%= @computer.weapon %></h3>
 
-<% if @game.result(@player.weapon, @computer.weapon) == 'draw' %>
+<% if @game.result(@game.player.weapon, @computer.weapon) == 'draw' %>
   <h2>It's a draw. Want to try again?</h2>
-<% elsif @game.result(@player.weapon, @computer.weapon) == 'win' %>
-  <h2><%= @player.name %> wins!</h2>
-<% elsif @game.result(@player.weapon, @computer.weapon) == 'lose' %>
+<% elsif @game.result(@game.player.weapon, @computer.weapon) == 'win' %>
+  <h2><%= @game.player.name %> wins!</h2>
+<% elsif @game.result(@game.player.weapon, @computer.weapon) == 'lose' %>
   <h2>Computer wins...better luck next time!</h2>
 <% end %>
 
 <form action="/play">
-  <input type="submit" value="Play again as <%= @player.name %>">
+  <input type="submit" value="Play again as <%= @game.player.name %>">
 </form>
 
 <form action="/">

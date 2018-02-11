@@ -1,10 +1,16 @@
 class Game
 
+  attr_reader :player
+
   WIN_LOGIC = {
     'Rock' => 'Scissors',
     'Paper' => 'Rock',
     'Scissors' => 'Paper'
   }
+
+  def initialize(player)
+    @player = player
+  end
 
   def result(player_weapon, computer_weapon)
     return 'win' if player_wins(player_weapon, computer_weapon)
