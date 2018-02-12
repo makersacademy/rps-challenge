@@ -31,6 +31,8 @@ enable :sessions
   post '/attack' do
     @single_game = SingleGame.instance
     @weapon = params[:weapon]
+    @computer_weapon = @single_game.computer_weapon
+    @result = @single_game.calculate_result(@computer_weapon, @weapon)
     erb(:attack)
   end
 

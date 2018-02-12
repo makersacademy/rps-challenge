@@ -9,6 +9,10 @@ describe MultiGame do
     it 'calculates the draw' do
       expect(multi_game.calculate_result("rock", "rock")).to eq "Draw!"
     end
+    it 'calculates the win' do
+      expect(multi_game.calculate_result("rock", "rock")).to eq "Draw!"
+    end
 
   end
+
 end

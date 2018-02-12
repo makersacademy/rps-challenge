@@ -1,6 +1,6 @@
 describe SingleGame do
   subject(:single_game) { described_class.new(player_1) }
-  let(:player_1) { double :player }
+  let(:player_1) { double :player, name: "Justyna" }
 
 
   describe "#player" do
@@ -17,8 +17,11 @@ describe SingleGame do
   end
 
   describe "#calculate_result" do
-    it 'calculates the result' do
+    it 'calculates the draw' do
       expect(single_game.calculate_result("rock", "rock")).to eq "Draw!"
+    end
+    it 'calculates the win' do
+      expect(single_game.calculate_result("rock", "paper")).to eq "Justyna won"
     end
   end
 
