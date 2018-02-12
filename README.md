@@ -24,7 +24,7 @@ What I would do next
 Questions from the exercise:
 ---------
 * More research/ clarity into how to decide whether to use a new page or use an 'if' within a page for displaying different content based on user choices
-* Is there a better way of doing the 'if' tree in the game_over page. Is there a way of moving the logic out of the page itself? Can you do 'if' -> 'render form' => could refer to a form and have the if logic itself be more streamlined. 
+* Is there a better way of doing the 'if' tree in the game_over page. Is there a way of moving the logic out of the page itself? Can you do 'if' -> 'render form' => could refer to a form and have the if logic itself be more streamlined. You can have the return value of the blocks in sinatra come from the game as a symbol (and this symbol would refer to different web pages, based on the result of the game)
 * in the model: Research a better way to calculate RPS winner (or statement very long). Could a hash of potential choices be used?
 * Did I need to use a post/redirect/get loop for the 3 RPS button choices? Was there another way/ best practice way of doing this?
 * Research how you know which part of array is returned by srand
