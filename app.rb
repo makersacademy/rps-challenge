@@ -15,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   post '/player_names' do
-    @game = Game.create(params[:player])
+    @game = Game.create(params[:player]) # creates new hashes
     redirect '/new_game'
   end
 
@@ -23,13 +23,14 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/move' do
-    @game.player.chosen_move(params[:player_move])
-    erb(:move)
-  end
+  # get '/move' do
+  #   @game.player.chosen_move(params[:player_move])
+  #   @game.computer.random_move(params[:computer_move])
+  #   erb(:move)
+  # end
 
-  get '/defeat' do
-    erb(:defeat)
+  get '/outcome' do
+    erb(:outcome)
   end
 
   run! if app_file == $0

@@ -7,7 +7,7 @@ class Player
     @image = player[:img]
   end
 
-  def chosen_move(move)
+  def chosen_move(player_move)
     @move = move
   end
 end

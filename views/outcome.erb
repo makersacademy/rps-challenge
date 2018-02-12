@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/outcome.css">
+      <title>DEFEAT!</title>
+  </head>
+  <body>
+    <center>
+  <div class="result">
+      <div class="header">
+        <% game = @game %>
+        <h2><%= game.current_player.name %> played <%= game.player.move %>!</h2>
+        <h2>Tavern wench played <%= game.computer.random_move %>!</h2>
+        <% if game.player.move == game.computer.random_move %>
+          <img src="https://image.ibb.co/gCbp5n/sss_round.jpg" alt="draw">
+          <h1> It's a draw! </h1>
+        <% elsif game.player.move == "rock" && game.computer.random_move == "scissors" %>
+        <% elsif game.player.move == "paper" && game.computer.random_move == "rock" %>
+        <% elsif game.player.move == "scissors" && game.computer.random_move == "paper" %>
+          <img src="https://image.ibb.co/mjswkn/bard_char_win.png" alt="draw">
+          <h1> VICTORY!!!! </h1>
+        <% else %>
+          <h1> You've been thrown in the cellar. </h1>
+          <h2> ...sucks to be you! </h2>
+        <% end %>
+          <form action="/new_game">
+          <input type="submit" value="try again!" class="continue">
+      </div>
+  </div>
