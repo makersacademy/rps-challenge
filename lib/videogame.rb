@@ -7,19 +7,18 @@ class Videogame
 
   def initialize(player_1, player_2)
     @player_1 = Player.new(player_1)
-    @player_2 = Computer.new(player_2)
+    @player_2 = Computer.new
   end
 
-  def play
-    if player_1.move == player_2.computer_move
-      "TIE!!"
-    elsif(player_1.move == "rock" && player_2.computer_move == "scissors") ||
-          (player_1.move == "scissors" && player_2.computer_move == "paper") ||
-          (player_1.move == "paper" && player_2.computer_move == "rock")
-          @points = @player_1.increase_points
-          "You Win!!"
-    else
-     "Matrix wins!"
+  def player
+    if player_1.move == "rock" && player_2.computer_move == "scissors"
+      "WIN!"
+    elsif player_1.move == "scissors" && player_2.computer_move == "paper"
+      "WIN!"
+    elsif player_1.move == "paper" && player_2.computer_move == "rock"
+      "WIN!!"
+    elsif player_1.move == player_2.computer_move
+      "TIE!"
    end
   end
 

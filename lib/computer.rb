@@ -8,7 +8,7 @@ class Computer
   end
 
   def computer_move
-    options=["rock","scissors","paper"].sample
+    ["rock","scissors","paper"].sample
   end
 
 end

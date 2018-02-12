@@ -9,7 +9,7 @@ class Player
   end
 
   def move
-     "rock" || "paper" || "scissors"
+     "rock" || "scissors" || "paper"
   end
 
   def increase_points

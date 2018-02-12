@@ -10,7 +10,7 @@ class Game < Sinatra::Base
   end
 
   post "/name" do
-    $videogame=Videogame.new(params[:name], "Matrix")
+    $videogame=Videogame.new(params[:name], "Matrix") #I have to kill the global variable
     redirect "/play"
   end
 
@@ -19,11 +19,10 @@ class Game < Sinatra::Base
   end
 
   post "/play" do
-    erb :move
+  erb :move
   end
 
 
   run! if app_file == $0
-
 
 end
