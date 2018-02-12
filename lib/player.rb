@@ -5,9 +5,10 @@ class Player
   def initialize(player)
     @name = player[:name]
     @image = player[:img]
+    @move = player[:move]
   end
 
-  def chosen_move(player_move)
+  def chosen_move(move)
     @move = move
   end
 end

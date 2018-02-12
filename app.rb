@@ -23,11 +23,10 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  # get '/move' do
-  #   @game.player.chosen_move(params[:player_move])
-  #   @game.computer.random_move(params[:computer_move])
-  #   erb(:move)
-  # end
+  post '/move' do
+    @game.player.chosen_move(params[:move])
+    redirect '/outcome'
+  end
 
   get '/outcome' do
     erb(:outcome)

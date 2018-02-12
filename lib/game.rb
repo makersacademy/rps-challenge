@@ -16,6 +16,5 @@ class Game
   def initialize(player)
     @player = Player.new(player)
     @computer = Computer.new
-    @current_player = @player
   end
 end
