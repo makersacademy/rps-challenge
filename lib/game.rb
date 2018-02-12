@@ -3,6 +3,13 @@ require_relative 'computer'
 
 class Game
 
+attr_reader :player, :computer
+
+  def initialize(name)
+    @player = Player.new(name)
+    @computer = Computer.new
+  end
+
   def match(player_choice, computer_choice)
     if player_choice == computer_choice
      @result = "It's a draw"
