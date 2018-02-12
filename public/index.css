@@ -1,0 +1,49 @@
+html {
+  background-color: #e5e5e5eb;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  margin-bottom: 3em;
+  margin-top: 1em;
+  font-family: Barlow Condensed;
+  letter-spacing: 0.7;
+}
+
+.modes {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 60%;
+  margin-left: 18%;
+  grid-gap: 1.3em;
+}
+
+.mode1 {
+  background-color: #469cdb;
+  height: 22em;
+}
+
+.mode2 {
+  background-color: #519560;
+  height: 22em;
+}
+
+.mode {
+  transition: all .2s ease-in-out;
+}
+
+.mode:hover {
+  transform: scale(1.1)
+}
+
+.submit-player {
+  background-color: #ff000000;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: Barlow Condensed;
+  font-size: 3em;
+  padding: 3em 1.5em 3em 1.5em;
+}

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/play.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+  </head>
+  <body>
+    <div class="player1action">
+      <div class="title">
+        <%= @multi_game.player_one.name %> vs. <%= @multi_game.player_two.name %>
+      </div>
+      <div class="information">
+        <%= @multi_game.player_one.name %>, pick your weapon.
+      </div>
+      <div class="options">
+        <form action="/take_first_weapon" method="post">
+          <input type="submit" value="rock" class="weapon rock" name="weapon1">
+          <input type="submit" value="paper" class="weapon paper" name="weapon1">
+          <input type="submit" value="scissors" class="weapon scissors" name="weapon1">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
