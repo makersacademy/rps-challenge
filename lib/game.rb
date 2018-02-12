@@ -24,7 +24,7 @@ class Game
 
   def winner
     return "It's a draw" if @p1_rps == @p2_rps
-    ["pr", "rs", "sp"].include?(@choices) ? "#{@player_one} wins!" : "#{@player_two} wins!"
+    [:pr, :rs, :sp].include?(@choices) ? "#{@player_one} wins!" : "#{@player_two} wins!"
   end
 
 end
