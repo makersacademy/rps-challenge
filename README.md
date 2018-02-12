@@ -1,4 +1,37 @@
 Hunor RPS game
+===========
+Update
+-----
+
+* just before sending the pull request, I managed to get computer's random choice to the winner screen and print it, not really working the way it should but definetely progress
+
+Aproach
+------
+* On this weekend challenge I tried to think much more before doing anything else. I sat down and draw a simple Domain Model to see and have an idea how I'm gonna work
+* I built up the skeleton of my web app, by first building the view and controller part without any model/functionality.
+* I went back to the weekend challenges to have another look how to solve most of my steps
+
+Stuck and struggle
+------
+
+* I got stuck on not fully understanding how get/post show and send information back and forth to the views also have to understand how sessions work
+
+* I had some bad tests trying to mock Player model in Game tests, which I sorted out on checking older challenge tests to write my new ones
+
+* I still need to focus on understanding the problem, breaking it down to the smallest parts and putting things in order how to actually build up the project. I have confidence in writing code and seeing the big picture but there is a little gap in between as mentioned above
+
+Ruby, sinatra, spec, capybara, rake, HTML
+
+### Installation
+
+Clone repository:
+```
+$ https://github.com/tamasmagyarhunor88/rps-challenge.git
+$ cd rps-challenge
+$ bundle install
+$ rackup
+```
+
 
 
 # RPS Challenge

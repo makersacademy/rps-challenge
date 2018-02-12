@@ -8,4 +8,5 @@ class Game
     @player = Player.new(player)
     @computer = Player.new
   end
+
 end
