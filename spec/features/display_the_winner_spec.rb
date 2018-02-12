@@ -2,9 +2,10 @@ feature 'announcing the winner of single game' do
   let(:game) { double('a game')}
   scenario 'shows the winner in single game' do
     allow(game).to receive(:computer_weapon).and_return("scissors")
+    srand(2); game.computer_weapon
     sign_in_and_play_single
     click_button('rock')
-    expect(page).to have_content('Final score: Justyna won')
+    expect(page).to have_content('Justyna picked rock. Computer picked scissors. Final score: Justyna won')
   end
 end
 

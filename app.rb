@@ -62,6 +62,7 @@ enable :sessions
   post '/attack_multi' do
     @multi_game = MultiGame.instance
     @multi_game.player_2_weapon = params[:weapon2]
+    @result = @multi_game.calculate_result(@multi_game.player_1_weapon, @multi_game.player_2_weapon)
     erb(:attack_multi)
   end
 
