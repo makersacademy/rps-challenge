@@ -31,6 +31,11 @@ $ cd rps-challenge
 $ bundle install
 $ rackup
 ```
+Run it:
+```
+$ rackup
+$ open http://localhost:9292
+```
 
 
 
