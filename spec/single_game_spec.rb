@@ -9,4 +9,10 @@ describe SingleGame do
     end
   end
 
+  describe "#computer_weapon" do
+    it 'gets a weapon at random' do
+      allow(single_game).to receive(:computer_weapon).and_return("scissors")
+      expect(single_game.computer_weapon).to eq "scissors"
+    end
+  end
 end

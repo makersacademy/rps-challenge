@@ -26,10 +26,6 @@ class MultiGame
       @players.last
     end
 
-    def player_weapon
-      ['scissors', 'paper', 'rock'].sample
-    end
-
     def calculate_result(pl1, pl2)
       return "#{player_one.name} won" if pl1 == 'scissors' && pl2 == 'paper'
       return "#{player_one.name} won" if pl1 == 'paper' && pl2 == 'rock'
