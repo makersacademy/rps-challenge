@@ -14,7 +14,19 @@ Then navigate to local host with the port shown after rackup.
 
 Screenshots
 -------
-![Screenshot](https://path_to_your_image)
+Enter your name:
+![Screenshot](https://i.imgur.com/yg21hU1.png)
+
+Choose your move:
+![Screenshot](https://i.imgur.com/92bHHvs.png)
+
+View the result:
+![Screenshot](https://i.imgur.com/xrlXtrP.png)
+
+
+
+
+
 
 
 Challenge Instructions
