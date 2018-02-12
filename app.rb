@@ -1,6 +1,7 @@
 require 'sinatra/base' # research base
 require_relative './lib/player'
 require_relative './lib/game'
+require_relative './lib/computer'
 
 class RPS < Sinatra::Base
   enable :sessions # research :sessions
@@ -14,7 +15,7 @@ class RPS < Sinatra::Base
   end
 
   post '/player_names' do
-    @game = Game.create(params[:player])
+    @game = Game.create(params[:player], params[:computer])
     redirect '/new_game'
   end
 
@@ -31,5 +32,5 @@ class RPS < Sinatra::Base
     erb(:defeat)
   end
 
-  # run! if app_file == $0
+  run! if app_file == $0
 end
