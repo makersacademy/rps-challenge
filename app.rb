@@ -19,7 +19,7 @@ class RockPaperScissors < Sinatra::Base
       redirect '/player_two'
     else
       @game = Game.create(@@player_one)
-      erb :one_player
+      erb :one_player_game
     end
   end
 
@@ -30,8 +30,8 @@ class RockPaperScissors < Sinatra::Base
   post '/play_two' do
     @player_two = params[:player_two]
     @game = Game.create(@@player_one, @player_two)
-    erb :two_player
-  end
+    erb :two_player_game
+  end  
 
   # run! if app_file == $0
 end
