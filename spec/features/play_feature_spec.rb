@@ -34,4 +34,7 @@ feature "Add lizard and Spock" do
     sign_in_as_fred_and_choose_rock
     expect(page).to have_content "John wins"
   end
+  
+  # TODO:
+  # write a test for a draw scenario
 end

@@ -18,7 +18,13 @@
           <img src="/<%= @game.cpu.image %>" alt="">
         </div>
       </div>
+      <% if @game.result == :win %>
+      <span class="winner"><%= @game.cpu.name %> wins!!</span>
+      <% elsif @game.result == :lose %>
       <span class="winner"><%= @game.player_one.name %> wins!!</span>
+      <% else %>
+      <span class="winner">Its a draw!!</span>
+      <% end %>
     </div>
   </body>
 </html>
