@@ -15,4 +15,11 @@ describe SingleGame do
       expect(single_game.computer_weapon).to eq "scissors"
     end
   end
+
+  describe "#calculate_result" do
+    it 'calculates the result' do
+      expect(single_game.calculate_result("rock", "rock")).to eq "Draw!"
+    end
+  end
+
 end
