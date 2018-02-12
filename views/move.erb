@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/move.css">
+    <title>ATTACK!</title>
+  </head>
+  <body>
+    <center>
+    <div class="attack_field">
+    <%
+    game = @game
+    if game.current_player == game.player1
+    %>
+    <h1> <%= game.player1.name %> attacked <%= game.player2.name %>! </h1>
+    <h2> <%= game.player2.name %> now has <%= game.player2.points %> </h2>
+    <% end %>
+    <% if game.current_player == game.player2 %>
+    <h1> <%= game.player2.name %> attacked <%= game.player1.name %>! </h1>
+    <h2> <%= game.player1.name %> now has <%= game.player1.points %> </h2>
+    <% end %>
+    <form action="/new_game">
+    <input type="submit" value="try again!" class="continue">
+    </div>
+    </form>
+  </center>
+  </body>
+</html>

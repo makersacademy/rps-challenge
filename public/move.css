@@ -1,0 +1,53 @@
+body {
+  background-image: url("https://image.ibb.co/eSLYrH/cthulu_victory.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: 'Trattatello', fantasy;
+  text-align: center;
+  margin: 5em;
+  line-height: 100px;
+}
+
+.attack_field {
+  margin: auto;
+  width: 800px;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+h1 {
+  font-family: 'Trattatello', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  font-size: 4.5em;
+  color: #A9A9A9;
+}
+
+h2 {
+  font-family: 'Trattatello', fantasy;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 2.0em;
+  color: #A9A9A9;
+}
+
+p1 {
+  font-size: 1.2em;
+}
+
+form {
+  padding: 1.5em;
+}
+
+.gobackbutton {
+  font-family: 'Trattatello', fantasy;
+  background-color: rgba(70, 60, 50, 0.2) !important;
+  font-size: 1.75em;
+  color: #A9A9A9;
+  border: 0 !important;
+  border-radius: 20px;
+}
+
+.gobackbutton:hover {
+  box-shadow: #B8860B 0px 0px 35px;
+}
