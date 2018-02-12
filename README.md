@@ -24,7 +24,7 @@ Next: after making sure these features work as intended, it was time to *introdu
 Next focus
 ------
 
-* I started to include some more CSS in my project, but definitely I would have worked on styling it better if I had more time.
+* I started to include some more CSS in my project, but definitely I would have worked on styling it better if I had more time. Also using a layout for the views could have been great.
 
 * Killing global variables, though I am aware that they are very dangerous, I am reassured all the parameters/sessions will be stored in databases next week :)
 
