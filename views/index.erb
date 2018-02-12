@@ -1,0 +1,27 @@
+<h1>Welcome to two player Rock, Paper, Scissors!</h1>
+<h2>If you have a friend, grab them and challenge them to a thrilling game!</h2>
+<h3>Please can both players enter their names if they would like to play</h3>
+
+<form action="/play" method="POST">
+  <label for="player_one"</label>
+    Player one enter your name here !
+    <input type="text" name="player_one[name]">
+  <label for="rps">Choose your weapon !</label>
+  <select name="player_one[rps]" required>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  <label for="player_two"</label>
+    Player two enter your name here !
+    <input type="text" name="player_two[name]">
+  <input type="submit" value="Submit">
+  <label for="rps">Choose your weapon !</label>
+  <select name="player_two[rps]" required>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+</form>
+
+<h1><%= @game.player_one.name %> VS <%= @game.player_two.name %></h1>
