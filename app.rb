@@ -3,6 +3,10 @@ require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb :index
   end
@@ -13,18 +17,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb :play
   end
 
   post '/make_choice' do
-    @game = Game.instance
     @game.player_1.set_move(params[:choice])
     redirect 'game_over'
   end
 
   get '/game_over' do
-    @game = Game.instance
     @game.choose_move(@game.player_2)
     @game.calculate_winner
     erb :game_over
