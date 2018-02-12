@@ -4,17 +4,16 @@ class Game
 
   attr_reader :player, :current_player
 
-  def self.create(player, computer)
-    @game = Game.new(player, computer)
+  def self.create(player)
+    @game = Game.new(player)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player, computer)
+  def initialize(player)
     @player = Player.new(player)
-    @compter = Computer.new(computer)
     @current_player = @player
   end
 end
