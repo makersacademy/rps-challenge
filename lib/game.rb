@@ -8,20 +8,19 @@ class Game
     @game
   end
 
-  attr_reader :cpu, :player_one, :player_two, :result
+  attr_reader :cpu, :player_one, :player_two
 
   def initialize(player_1, player_2 = nil)
     @player_one = Player.new(player_1)
     player_2 ? two_player_game(player_2) : one_player_game
   end
 
-  def get_result
+  def calculate_result
     @player_two ? two_player_result : one_player_result
   end
 
   def result
-    @result = get_result
-    p @result
+    @result = calculate_result
   end
 
   private

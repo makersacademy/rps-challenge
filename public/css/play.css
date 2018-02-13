@@ -3,8 +3,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
-  color: #FFF;
-  font-family: 'Ravi Prakash', cursive;
+  font-style: cursive;
   text-align: center;
   text-shadow: -2px 1px 1px black;
   color: #e8e4b2;
@@ -39,4 +38,10 @@ img {
 .p2_display {
   grid-row: 1 / 5;
   grid-column: 3 / 4;
+}
+
+#play_again {
+  background-color: #e8e4b2;
+  color: #000;
+  text-decoration: none;
 }
