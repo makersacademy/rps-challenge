@@ -10,7 +10,16 @@
         <% game = @game %>
         <h2><%= game.player.name %> played <%= game.player.move %>!</h2>
         <h2>Tavern wench played <%= game.computer.computer_move %>!</h2>
-        </div>
+
+        <% if game.player.move == game.computer.computer_move %>
+            <h1>DRAW!</h1>
+        <% elsif game.player.move == "rock" && game.computer.computer_move == "scissors" ||
+            game.player.move == "paper" && game.computer.computer_move == "rock" ||
+            game.player.move == "scissors" && game.computer.computer_move == "paper" %>
+            <h1> VICTORY! </h1>
+        <% else %>
+            <h1> DEFEAT! </h1>
+        <% end %>
       </div>
         <form action="/new_game">
       <input type="submit" value="try again!" class="continue">
