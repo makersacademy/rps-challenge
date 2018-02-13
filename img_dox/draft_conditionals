@@ -1,0 +1,8 @@
+<% elsif game.player.move == "rock" && game.computer.random_move == "scissors" %>
+<% elsif game.player.move == "paper" && game.computer.random_move == "rock" %>
+<% elsif game.player.move == "scissors" && game.computer.random_move == "paper" %>
+  <img src="https://image.ibb.co/mjswkn/bard_char_win.png" alt="draw">
+  <h1> VICTORY!!!! </h1>
+<% else %>
+  <h1> You've been thrown in the cellar. </h1>
+  <h2> ...sucks to be you! </h2>
