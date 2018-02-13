@@ -20,9 +20,9 @@
         </div>
       </div>
       <% if @game.result == :p1win %>
-      <span class="winner"><%= @game.cpu.name %> wins!!</span>
-      <% elsif @game.result == :p2win %>
       <span class="winner"><%= @game.player_one.name %> wins!!</span>
+      <% elsif @game.result == :p2win %>
+      <span class="winner"><%= @game.player_two.name %> wins!!</span>
       <% else %>
       <span class="winner">Its a draw!!</span>
       <% end %>
