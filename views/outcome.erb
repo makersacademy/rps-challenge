@@ -10,8 +10,6 @@
         <% game = @game %>
         <h2><%= game.player.name %> played <%= game.player.move %>!</h2>
         <h2>Tavern wench played <%= game.computer.computer_move %>!</h2>
-        <div class="<%= @div_class %>">
-        <%= @div_content %>
         </div>
       </div>
         <form action="/new_game">
