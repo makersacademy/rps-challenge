@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :player, :player_weapon, :player_win, :pc_weapon
+  attr_reader :player, :player_weapon, :pc_weapon
 
   def initialize(player)
     @player = player
     @pc_weapon = random_weapon
+    @result = result
   end
 
   def self.create(player)
@@ -19,6 +20,19 @@ class Game
     @player_weapon = weapon.to_sym
   end
 
+  def result
+    case player_win?
+    when true
+      "#{@player.name} wins this game"
+    when false
+      "Computer wins this game"
+    when nil
+      "It's a draw"
+    end
+  end
+
+  private
+
   def player_win?
     case @player_weapon
     when :rock
@@ -31,8 +45,6 @@ class Game
       nil
     end
   end
-
-  private
 
   def random_weapon
     @pc_weapon = [:rock, :paper, :scissors].sample
