@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player1, player2) }
-  let(:player1) { double('player1', name: "Player1") }
-  let(:player2) { double('player2', name: "Player2") }
+  let(:player1) { double('player1', name: "Player1", weapon: 'weapon') }
+  let(:player2) { double('player2', name: "Player2", weapon: 'weapon') }
 
   context 'when initialized' do
     it 'takes two parameters and passes them to @player1 and @player2 attributes' do

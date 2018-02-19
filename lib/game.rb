@@ -4,12 +4,11 @@ class Game
           paper: :rock,
           scissors: :paper }
 
-  attr_reader :player1, :player2, :player_weapon, :pc_weapon
+  attr_reader :player1, :player2
 
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @pc_weapon = random_weapon
     @result = result
   end
 

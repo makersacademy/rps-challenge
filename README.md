@@ -55,7 +55,7 @@ I would like to be able to play rock/paper/scissors
 ## To complete
 
 * Implement CSS style sheets
-* Extract 'computer' to a different class from Game to so that classes have single responsibility
+* ~~Extract 'computer' to a different class from Game to so that classes have single responsibility~~
 * Add screenshots to README
-* Change to store weapons in a constant - with winning conditions being symbolised in a hash.
+* ~~Change to store weapons in a constant - with winning conditions being symbolised in a hash.~~
 * ~~Refactor result.erb - moving logic from there to Game class~~
