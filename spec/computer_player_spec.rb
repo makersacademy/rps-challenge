@@ -1,7 +1,13 @@
 require 'computer_player'
 describe ComputerPlayer do
 
-  subject(:computer_player) { described_class.new }
+  subject(:computer_player) { described_class.new('name') }
+
+  context 'when initialized' do
+    it 'takes a string as a parameter and passes it to a name attribute' do
+      expect(computer_player.name).to eq 'name'
+    end
+  end
 
   describe '#weapon' do
     it 'returns "rock" randomly' do

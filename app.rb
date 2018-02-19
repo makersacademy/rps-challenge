@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game.rb'
 require './lib/player.rb'
+require './lib/computer_player.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -15,17 +16,18 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    Game.create(player)
+    computer = ComputerPlayer.new('Computer')
+    Game.create(player, computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player = @game.player
+    @player = @game.player1
     erb(:play)
   end
 
   post '/calculate' do
-    @game.set_player_weapon(params[:player_weapon])
+    @game.player1.weapon=(params[:player_weapon].to_sym)
     redirect '/result'
   end
 
@@ -34,8 +36,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/reset' do
-    player = @game.player
-    Game.create(player)
+    player = @game.player1
+    computer = ComputerPlayer.new('Computer')
+    Game.create(player, computer)
     redirect '/play'
   end
 

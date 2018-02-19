@@ -1,9 +1,10 @@
   class ComputerPlayer
 
-  attr_reader :weapon
+  attr_reader :weapon, :name
 
-  def initialize
+  def initialize(name)
     @weapon = random_weapon
+    @name = name
   end
 
 private

@@ -32,21 +32,21 @@ feature "Gameplay" do
 
     it "chooses rock" do
       sign_in_and_play
-      allow_any_instance_of(Game).to receive(:pc_weapon).and_return(:rock)
+      allow_any_instance_of(ComputerPlayer).to receive(:weapon).and_return(:rock)
       click_on('Rock')
       expect(page).to have_content "Computer chose rock"
     end
 
     it "chooses paper" do
       sign_in_and_play
-      allow_any_instance_of(Game).to receive(:pc_weapon).and_return(:paper)
+      allow_any_instance_of(ComputerPlayer).to receive(:weapon).and_return(:paper)
       click_on('Rock')
       expect(page).to have_content "Computer chose paper"
     end
 
     it "chooses scissors" do
       sign_in_and_play
-      allow_any_instance_of(Game).to receive(:pc_weapon).and_return(:scissors)
+      allow_any_instance_of(ComputerPlayer).to receive(:weapon).and_return(:scissors)
       click_on('Rock')
       expect(page).to have_content "Computer chose scissors"
     end
