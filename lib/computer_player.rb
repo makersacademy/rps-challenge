@@ -1,4 +1,4 @@
-class ComputerPlayer
+  class ComputerPlayer
 
   attr_reader :weapon
 
