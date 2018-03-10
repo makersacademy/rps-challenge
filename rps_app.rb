@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
-#require_relative class_file.rb
+require_relative './lib/calc_result.rb'
 
 
 class RPS < Sinatra::Base
@@ -37,8 +37,11 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
+    @p1_name = session[:p1_name]
+    @p2_name = session[:p2_name]
     @p1_move = session[:p1_move]
     @p2_move = session[:p2_move]
+    @result = Result.new(@p1_name, @p1_move, @p2_name, @p2_move).calculate
     erb(:result)
   end
 
