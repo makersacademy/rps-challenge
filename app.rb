@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -9,12 +10,13 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:player_name])
+    player = Player.new(params[:player_name])
+    Game.create(player)
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+    @player = Game.instance.player
     erb :play
   end
 
