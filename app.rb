@@ -14,12 +14,12 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player1 = $player1
     @move = $move
+    
     erb :play
   end
 
   post '/move' do
     $move = params[:submit];
-    
     redirect '/play'
   end
   # start the server if ruby file executed directly
