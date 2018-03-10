@@ -1,0 +1,22 @@
+<h><%= $game.player_1.name %> vs. <%= $game.player_2.name %></h>
+<form action="/play" method="post">
+  <label for="player_1_weapon">
+    Player 1 move
+    <!--input type="text" name="player_1_weapon"-->
+    <select name="player_1_weapon">
+      <option value="rock">rock</option>
+	  <option value="scissors">scissors</option>
+	  <option value="paper">paper</option>
+    </select>
+  </label>
+  <label for="player_2.weapon(weapon)">
+    Player 2 move
+    <!--input type="text" name="player_2.weapon(weapon)"-->
+    <select name="player_2_weapon">
+      <option value="rock">rock</option>
+      <option value="scissors">scissors</option>
+      <option value="paper">paper</option>
+    </select>
+  </label>
+  <input type="submit" value="submit">
+</form>
