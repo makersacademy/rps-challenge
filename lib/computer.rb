@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Computer
 
   attr_reader :name
@@ -7,7 +9,7 @@ class Computer
   end
 
   def option
-    @computer_selections = ["Rock", "Paper", "Scissors"].sample
+    @computer_selections = GAME::COMPUTER_OPTIONS.sample
   end
 
 end

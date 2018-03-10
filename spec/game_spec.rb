@@ -20,4 +20,10 @@ describe Game do
     end
   end
 
+  describe "#result" do
+    it 'responds to method result' do
+      expect(game).to respond_to(:result)
+    end
+  end
+
 end
