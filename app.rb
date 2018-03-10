@@ -3,7 +3,7 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    "Test"
+    erb :index
   end
 
   # start the server if ruby file executed directly
