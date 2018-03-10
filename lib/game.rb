@@ -5,6 +5,7 @@ class Game
   def initialize(player, computer)
     @player = player
     @computer = computer
+    @game_array = []
   end
 
   def self.create(player, computer)
@@ -13,6 +14,11 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def move(player_option, computer_option)
+    @game_array << player_option
+    @game_array << computer_option
   end
 
 end

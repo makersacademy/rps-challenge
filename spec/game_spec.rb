@@ -14,4 +14,10 @@ describe Game do
     end
   end
 
+  describe "#move" do
+    it 'responds to method move' do
+      expect(game).to respond_to(:move).with(2).arguments
+    end
+  end
+
 end
