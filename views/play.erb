@@ -2,15 +2,15 @@
 <br>
 <h3>Please pick one <%= @game.player1.name %><h3>
   <form action="/record" method="post">
-    <input type="submit" name="choice" value="Rock">
-    <input type="submit" name="choice" value="Paper">
-    <input type="submit" name="choice" value="Scissors">
+    <input type="submit" name="choice" id="p1r" value="Rock">
+    <input type="submit" name="choice" id="p1p" value="Paper">
+    <input type="submit" name="choice" id="p1s" value="Scissors">
   </form>
   <% if @game.player2.name != 'Computer' %>
   <h3>Please pick one <%= @game.player2.name %></h3>
   <form action="/record2" method="post">
-    <input type="submit" name="choice" value="Rock">
-    <input type="submit" name="choice" value="Paper">
-    <input type="submit" name="choice" value="Scissors">
+    <input type="submit" name="choice" id="p2r" value="Rock">
+    <input type="submit" name="choice" id="p2p" value="Paper">
+    <input type="submit" name="choice" id="p2s" value="Scissors">
   </form>
   <% end %>
