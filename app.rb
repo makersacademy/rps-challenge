@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class Rps < Sinatra::Base
 
@@ -9,8 +12,18 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    @player_name = params[:player_name]
+    player = Player.new(params[:player_name])
+    computer = Computer.new
+    @game = Game.create(player, computer)
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
+  end
+
+  before do
+    @game = Game.instance
   end
 
   run! if app_file == $0
