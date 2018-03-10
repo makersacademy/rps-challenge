@@ -1,11 +1,14 @@
-require "sinatra/base"
+require "sinatra"
+require 'sinatra/base'
 
-class Game < Sinatra::Base
-  enable :sessions
 
+class RPS < Sinatra::Base
   get '/' do
     erb(:index)
   end
 
-  run! if app_file == $PROGRAM_NAME
+  post '/names' do
+    redirect('/play')
+  end
+
 end
