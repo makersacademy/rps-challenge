@@ -6,4 +6,8 @@ class Computer
     @name = "Computer"
   end
 
+  def option
+    @computer_selections = ["Rock", "Paper", "Scissors"].sample
+  end
+
 end

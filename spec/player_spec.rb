@@ -9,4 +9,10 @@ describe Player do
     end
   end
 
+  describe "#option" do
+    it 'responds to method option' do
+      expect(player).to respond_to(:option).with(1).argument
+    end
+  end
+
 end

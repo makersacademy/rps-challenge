@@ -8,4 +8,10 @@ describe Computer do
     end
   end
 
+  describe "#option" do
+    it 'responds to method option' do
+      expect(computer).to respond_to(:option)
+    end
+  end
+
 end
