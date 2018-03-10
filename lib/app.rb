@@ -6,4 +6,8 @@ class RPS < Sinatra::Base
     erb(:register)
   end
 
+  post '/user_registered' do
+    @username = params[:username]
+    erb(:user_registered)
+  end
 end
