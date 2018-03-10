@@ -6,7 +6,6 @@ gem 'rake'
 gem 'sinatra'
 gem 'wdm', '>= 0.1.0'
 
-
 group :test do
   gem 'capybara'
   gem 'rspec'

@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Enter Name' do
   scenario 'Can enter name in form' do
     sign_in_and_play

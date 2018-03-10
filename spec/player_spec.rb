@@ -1,8 +1,8 @@
 require "player.rb"
 
 describe Player do
-  sign_in_and_play
   it 'retuns Dave as a username' do
-    expect(player.username).to eq 'Dave'
+    player = Player.new('Dave')
+    expect(player.name).to eq 'Dave'
   end
 end
