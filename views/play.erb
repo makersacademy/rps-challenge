@@ -1,1 +1,12 @@
-<%= @game.player1.name %>
+<h1><%= @game.player1.name %> vs. Computer</h1>
+
+Please select a option below to continue
+
+<form action="/action" method="post">
+  <input id="paper" type="radio" name="action" value="paper"> Paper
+  <input id="scissors" type="radio" name="action" value="scissors"> Scissors
+  <input id="rock" type="radio" name="action" value="rocks"> Rock
+  <div>
+    <button type="submit">Play</button>
+  </div>
+</form>

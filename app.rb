@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    @game = Game.create(Player.new(params[:name]))
+    @game = Game.create(Player.new(params[:name]), Player.new())
     redirect '/play'
   end
 
