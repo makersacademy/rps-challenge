@@ -1,19 +1,25 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   set :sessions, true
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $player1 = Player.new(params[:name])
+    @game = Game.create(Player.new(params[:name]))
     redirect '/play'
   end
 
   get '/play' do
+    @game = Game.instance
     erb(:play)
   end
 
