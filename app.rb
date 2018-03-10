@@ -15,7 +15,7 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    player1 = Player.new(params[:name])
+    player1 = Player.new(params[:name].capitalize)
     player2 = Computer.new
     @game = Game.create(player1, player2)
     redirect '/play'
