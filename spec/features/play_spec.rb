@@ -13,7 +13,6 @@ feature 'Register Name Page' do
     visit('/')
     fill_in :player_1_name, with: 'katie'
     click_button 'PLAY'
-    click_button 'ROCK'
-    expect(page).to have_content 'PLAYER // KATIE        SCORE // 1'
+    expect(page).to have_content 'PLAYER // KATIE        SCORE // 0'
   end
 end
