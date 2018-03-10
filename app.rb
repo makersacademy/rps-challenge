@@ -26,5 +26,9 @@ class Rps < Sinatra::Base
     @game = Game.instance
   end
 
+  post '/select' do
+
+  end
+
   run! if app_file == $0
 end
