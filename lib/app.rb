@@ -10,4 +10,9 @@ class RPS < Sinatra::Base
     @username = params[:username]
     erb(:user_registered)
   end
+
+  get '/play' do
+    erb(:play)
+  end
+
 end
