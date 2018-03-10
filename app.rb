@@ -56,7 +56,7 @@ class Rps < Sinatra::Base
   end
 
   get '/results' do
-    results = Results.new(@game.choice1, @game.choice2)
+    results = Results.new(@game.player1.name, @game.player2.name, @game.choice1, @game.choice2)
     @game.get_results(results)
     erb :results
   end
