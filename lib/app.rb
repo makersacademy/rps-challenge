@@ -16,22 +16,30 @@ class RPS < Sinatra::Base
   end
 
   get '/game_rock' do
-    @choice = 'rock'
+    @option = 1
     redirect('/game')
   end
 
   get '/game_paper' do
-    @choice = 'paper'
+    @option = 2
     redirect('/game')
   end
 
   get '/game_scissors' do
-    @choice = 'scissors'
+    @option = 3
     redirect('/game')
   end
 
   get '/game' do
-    @choice = 'my choice'
+    if @option == 1
+      @choice = 'rock'
+    elsif @option == 2
+      @choice = 'paper'
+    elsif @option == 3
+      @choice = 'scissors'
+    else
+      @choice = 'something is wrong'
+    end
     erb(:game)
   end
 
