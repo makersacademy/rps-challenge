@@ -41,6 +41,8 @@ class Rps < Sinatra::Base
     choice1 = Choice.new(params[:choice])
     @game.record(choice1)
     if @game.player2.name == 'Computer'
+      choice2 = @game.player2
+      @game.record_second_player(choice2)
       redirect '/results'
     else
       redirect '/play'
@@ -54,16 +56,9 @@ class Rps < Sinatra::Base
   end
 
   get '/results' do
-    if @game.player2.name == 'Computer'
-      choice2 = @game.player2.decide
-      results = Results.new(@game.choice1, choice2)
-      @game.get_results(results)
-      erb :results
-    else
-      results = Results.new(@game.choice1, @game.choice2)
-      @game.get_results(results)
-      erb :results
-    end
+    results = Results.new(@game.choice1, @game.choice2)
+    @game.get_results(results)
+    erb :results
   end
 
   run! if app_file == $0
