@@ -8,5 +8,11 @@ describe Player do
     it 'returns the name' do
       expect(rob.name).to eq 'Rob'
     end
-  end	  	
+  end
+
+  describe '#weapon' do
+    it 'returns nil' do
+      expect(rob.weapon).to eq nil
+    end
+  end    	  	
 end 	

@@ -1,11 +1,11 @@
-require './lib/choices'
-
 class Game
-	attr_reader :current_turn, :weapon
+	
+    RULES = { rock: 'scissors',
+        paper: 'rock',
+        scissors: 'paper' }
 
 	def initialize(player_1, player_2)
 		@players = [player_1, player_2]
-		@current_turn = player_1
 	end
 	
 	def player_1
@@ -15,20 +15,25 @@ class Game
 	def player_2
 		@players.last
 	end
+    
+	def rules
+		RULES
+	end	
 
-	def weapon(weapon)
-      fail 'That weapon is not available!' unless Choices::WEAPONS.include? weapon
-      @weapon = weapon
-    end 
-
-    def switch_turns
-      @current_turn = opponent_of(current_turn)
+    def beats?(weapon1, weapon2)
+      RULES[weapon1.to_sym] == weapon2
     end
-
-    private
-
-    def opponent_of(the_player)
-      @players.select { |player| player != the_player }.first
+    
+    def result
+      if beats?(player_1.weapon, player_2.weapon)
+        return :player_1_won
+      elsif player_1.weapon == player_2.weapon
+        return :draw
+      elsif beats?(player_2.weapon, player_1.weapon)
+        return :player_2_won 
+      else
+      	return "banananananaaaaaaaas"
+      end
     end
 
 end 

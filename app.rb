@@ -7,9 +7,9 @@ class MyRackApp < Sinatra::Base
   	erb :index
   end 	
   post '/names' do  
-    @player_1 = Player.new(params[:player_1_name])
-    @player_2 = Player.new(params[:player_2_name])
-    $game = Game.new(@player_1, @player_2) 
+    player_1 = Player.new(params[:player_1_name])
+    player_2 = Player.new(params[:player_2_name])
+    $game = Game.new(player_1, player_2) 
     redirect '/play'
   end
  
@@ -18,19 +18,18 @@ class MyRackApp < Sinatra::Base
     erb :play
   end
 
-  # post '/play' do
-  #   "<marquee> Heloooooooo</marquee>"
-  # end
-
   post '/play' do
     @game = $game
-    @player_1_weapon = params[:player_1_weapon]
-    @player_2_weapon = params[:player_2_weapon]
+    @game.player_1.weapon = params[:player_1_weapon]
+    @game.player_2.weapon = params[:player_2_weapon]
     redirect './result'
   end    
     
   get '/result' do
-    '<blink>' + $game.player_1.name #+ 'wins with' + @player_1_weapon 
-  end   
+    @game = $game
+    puts "the result is"
+    puts @game.result
+    erb @game.result
+  end    
   run! if app_file == $0
 end
