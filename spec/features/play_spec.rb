@@ -3,27 +3,27 @@ require 'app'
 describe RPS do
 
   before do
-    visit '/'
+    visit '/play'
   end
 
   feature 'Present choices' do
     scenario 'slects rock' do
-      click_button 'Rock'
-      expect(page).to have_content 'You chose rock'
+      click_on 'rock'
+      expect(page).to have_content 'You chose'
     end
   end
 
   feature 'Present choices' do
     scenario 'slects paper' do
-      click_button 'Paper'
-      expect(page).to have_content 'You chose paper'
+      click_on "paper"
+      expect(page).to have_content 'You chose'
     end
   end
 
   feature 'Present choices' do
     scenario 'slects scissors' do
-      click_button 'Scissors'
-      expect(page).to have_content 'You chose scissors'
+      click_on "scissors"
+      expect(page).to have_content 'You chose'
     end
   end
 
