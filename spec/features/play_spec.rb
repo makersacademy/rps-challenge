@@ -12,9 +12,19 @@ feature 'testing player can pick Rock, Paper or Scissors' do
     expect(page).to have_selector("input[type=submit][value='Scissors']")
   end
 
-  scenario 'player can see their choice' do
+  scenario 'player chooses Rock, sees confirmation' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content 'Rock'
+  end
+  scenario 'player chooses Paper, sees confirmation' do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Paper'
+  end
+  scenario 'player chooses Scissors, sees confirmation' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content 'Scissors'
   end
 end

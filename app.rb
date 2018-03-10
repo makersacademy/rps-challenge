@@ -22,9 +22,14 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-  post '/results' do
+  post '/record' do
     results = Results.new(params[:choice])
     @game.record(results)
+    redirect '/results'
+  end
+
+  get '/results' do
+    @game.results.winner
     erb :results
   end
 
