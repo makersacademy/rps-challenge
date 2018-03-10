@@ -1,12 +1,12 @@
 class Results
-  attr_reader :choice, :ai, :decide
+  attr_reader :choice, :computer, :decide, :player2
 
   def initialize(choice)
     @choice = choice
   end
 
-  def computer
-    @ai = %w(Rock Paper Scissors).sample
+  def opponent(player2)
+    @player2 = player2
   end
 
   def winner
@@ -17,6 +17,6 @@ class Results
   end
 
   def declare
-    @decide[@choice.to_sym][@ai.to_sym]
+    @decide[@choice.to_sym][@player2.ai.to_sym]
   end
 end

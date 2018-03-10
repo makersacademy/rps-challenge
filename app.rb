@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 require './lib/results'
+require './lib/computer'
 
 class Rps < Sinatra::Base
   before do
@@ -29,7 +30,8 @@ class Rps < Sinatra::Base
   end
 
   get '/results' do
-    
+    computer = Computer.new
+    @game.results.opponent(computer)
     erb :results
   end
 
