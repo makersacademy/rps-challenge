@@ -1,5 +1,5 @@
-<h2><%= @game.player1.name %> chose <%= @game.results.choice %></h2>
-<h2>The Computer chose <%= @game.results.player2.ai%></h2>
+<h2><%= @game.player1.name %> chose <%= @game.choice1.turn %></h2>
+<h2><%= @game.player2.name %> chose <%= @game.choice2.turn %></h2>
 <br>
 <% @game.results.winner %>
 <h3><%= @game.results.declare %><h3>

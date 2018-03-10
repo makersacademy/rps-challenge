@@ -1,13 +1,11 @@
 class Results
-  attr_reader :choice, :computer, :decide, :player2
+  attr_reader :choice1, :choice2
 
-  def initialize(choice)
-    @choice = choice
+  def initialize(choice1, choice2)
+    @choice1 = choice1
+    @choice2 = choice2
   end
 
-  def opponent(player2)
-    @player2 = player2
-  end
 
   def winner
     @decide = {
@@ -17,6 +15,7 @@ class Results
   end
 
   def declare
-    @decide[@choice.to_sym][@player2.ai.to_sym]
+    @decide[@choice1.turn.to_sym][@choice2.turn.to_sym]
   end
+
 end

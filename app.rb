@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/game'
 require './lib/results'
 require './lib/computer'
+require './lib/choice'
 
 class Rps < Sinatra::Base
   before do
@@ -37,15 +38,32 @@ class Rps < Sinatra::Base
   end
 
   post '/record' do
-    results = Results.new(params[:choice])
-    @game.record(results)
+    choice1 = Choice.new(params[:choice])
+    @game.record(choice1)
+    if @game.player2.name == 'Computer'
+      redirect '/results'
+    else
+      redirect '/play'
+    end
+  end
+
+  post '/record2' do
+    choice2 = Choice.new(params[:choice])
+    @game.record_second_player(choice2)
     redirect '/results'
   end
 
   get '/results' do
-    computer = Computer.new
-    @game.results.opponent(computer)
-    erb :results
+    if @game.player2.name == 'Computer'
+      choice2 = @game.player2.decide
+      results = Results.new(@game.choice1, choice2)
+      @game.get_results(results)
+      erb :results
+    else
+      results = Results.new(@game.choice1, @game.choice2)
+      @game.get_results(results)
+      erb :results
+    end
   end
 
   run! if app_file == $0
