@@ -1,0 +1,76 @@
+p {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-color: #eceeef;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+table, tr, td {
+  border: none;
+  font-family: 'Nunito', sans-serif;
+}
+
+.fineprint {
+  font-size: 6px;
+}
+
+.rock {
+  font-family: 'Krona One', sans-serif;
+  color: #333333;
+}
+
+.paper {
+  font-family: 'Lobster', cursive;
+  color: #68c7c1;
+}
+
+.scissors {
+  font-family: 'Quicksand', sans-serif;
+	color: #ffce00;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.home {
+  width: 1000px;
+}
+
+.img_center {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game_space {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn {
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 5px 5px;
+  font-size: 12px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.purple {
+  border-color: #2b1b5c;
+  color: #21255e;
+}
+.purple:hover {
+  background: #2b1b5c;
+  color: white;
+}
