@@ -1,8 +1,11 @@
 class Game
-  attr_reader :player
 
-  def initialize(player)
+  WEAPONS = [:rock, :paper, :scissors]
+  attr_reader :player, :computer
+
+  def initialize(player, computer = Computer.new)
     @player = player
+    @computer = computer
   end
 
   def self.create(player)

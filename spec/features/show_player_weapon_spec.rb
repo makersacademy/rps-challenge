@@ -16,7 +16,7 @@ feature 'Play RockPaperScissors' do
       expect(page).to have_content 'Cleopatra, you picked rock!'
     end
 
-    it 'returns whether player picked paper as their weapon!' do
+    it 'returns whether player picked paper as their weapon' do
       sign_in_and_play
       click_button 'paper'
       expect(page).to have_content 'Cleopatra, you picked paper!'
