@@ -22,14 +22,14 @@ class Rps < Sinatra::Base
   end
 
   post '/multiplayer' do
-    player1 = Player.new(params[:name])
+    player1 = Player.new(params[:name].capitalize)
     player2 = Player.new('player 2')
     @game = Game.create(player1, player2)
     erb :multiplayer
   end
 
   post '/enter' do
-    @game.player2.name = params[:name2]
+    @game.player2.name = params[:name2].capitalize
     redirect '/play'
   end
 
