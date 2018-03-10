@@ -3,4 +3,9 @@ feature 'Register Name Page' do
     visit('/')
     expect(page).to have_content "ROCK PAPER SCISSORS"
   end
+
+  scenario 'has subtitle below title' do
+    visit('/')
+    expect(page).to have_content "THE TIMELESS CLASSIC"
+  end
 end
