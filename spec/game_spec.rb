@@ -1,11 +1,12 @@
 require "./lib/game"
 
 describe Game do
-  context '.create' do
-    it "creates a new game" do
-      player1 = double("player1")
+   let(:player1) { double 'player1'}
 
-      expect(Game.create(player1).to eq (Game.new))
+  context '.create' do
+    it "creates a new instance of a game" do
+      game = Game.create(player1)
+      expect(game).to be_an_instance_of (Game)
     end
   end
 end
