@@ -1,4 +1,4 @@
-<h2>Charlene chose <%= @game.results.choice %></h2>
+<h2><%= @game.player1.name %> chose <%= @game.results.choice %></h2>
 <h2>The Computer chose <%= @game.results.player2.ai%></h2>
 <br>
 <% @game.results.winner %>

@@ -14,8 +14,21 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    player = Player.new(params[:name])
-    @game = Game.create(player)
+    player1 = Player.new(params[:name])
+    player2 = Computer.new
+    @game = Game.create(player1, player2)
+    redirect '/play'
+  end
+
+  post '/multiplayer' do
+    player1 = Player.new(params[:name])
+    player2 = Player.new('player 2')
+    @game = Game.create(player1, player2)
+    erb :multiplayer
+  end
+
+  post '/enter' do
+    @game.player2.name = params[:name2]
     redirect '/play'
   end
 
