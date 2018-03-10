@@ -10,7 +10,7 @@ describe Player do
   end
 
   describe '#weapon' do
-    it 'initializes player with an nil weapon variable' do
+    it 'initializes player with a nil weapon variable' do
       expect(player.weapon).to eq nil
     end
   end

@@ -16,7 +16,8 @@ class RPS < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    @game = Game.create(player)
+    computer = Computer.new("Computer")
+    @game = Game.create(player, computer)
     redirect '/play'
   end
 
@@ -25,7 +26,7 @@ class RPS < Sinatra::Base
   end
 
   post '/weapon' do
-    @game.player.weapon = params[:weapon]
+    @game.player.weapon = params[:weapon].to_sym
     redirect '/result'
   end
 
