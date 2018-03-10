@@ -1,13 +1,22 @@
-p {
-  font-family: 'Nunito', sans-serif;
-}
-
 body {
   background-color: #eceeef;
 }
 
 h1 {
   font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  margin: 20px 0px 0px 0px
+}
+
+p {
+  font-size: 30px;
+  font-family: 'Dosis', sans-serif;
+  color: 	#f7882f;
+  margin: 10px 0px 10px 0px
 }
 
 table, tr, td {
@@ -34,6 +43,11 @@ table, tr, td {
 	color: #ffce00;
 }
 
+.subheader {
+  font-family: 'Dosis', sans-serif;
+  color: #dd6262;
+}
+
 .center {
   text-align: center;
   margin: auto;
@@ -47,6 +61,11 @@ table, tr, td {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+}
+
+img#rock, #paper, #scissors {
+  width: 250px;
+  padding: 0px 10px 0px 10px;
 }
 
 .game_space {

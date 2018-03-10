@@ -1,5 +1,35 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis" rel="stylesheet">
+</head>
+
 <html>
   <body>
-    <h1><%= @p1_name %> vs. <%= @p2_name %></h1>
+
+    <h1 class="center">
+      <span class="rock">ROCK  </span>
+      <span class="paper">PAPER  </span>
+      <span class="scissors">SCISSORS</span>
+    </h1>
+
+    <div class="game_space">
+      <h2 class="subheader"><%= @p1_name %> vs. <%= @p2_name %></h2>
+      <br/>
+      <p><%= @turn %> - select your move!</p>
+      <% if @turn == @p1_name %>
+        <form action="/p1_move" method"post">
+          <input type="image" name="p1_move" value="rock" id="p1_rock" src="https://image.ibb.co/hqk9f7/jan_ken_pon_rock.png">
+          <input type="image" name="p1_move" value="paper" id="p1_paper" src="https://image.ibb.co/it1RSn/jan_ken_pon_paper.png">
+          <input type="image" name="p1_move" value="scissors" id="p1_scissors" src="https://image.ibb.co/khpD7n/jan_ken_pon_scissors.png">
+        </form>
+      <% else %>
+        <form action="/p2_move" method"post">
+          <input type="image" name="p2_move" value="rock" id="p2_rock" src="https://image.ibb.co/hqk9f7/jan_ken_pon_rock.png">
+          <input type="image" name="p2_move" value="paper" id="p2_paper" src="https://image.ibb.co/it1RSn/jan_ken_pon_paper.png">
+          <input type="image" name="p2_move" value="scissors" id="p2_scissors" src="https://image.ibb.co/khpD7n/jan_ken_pon_scissors.png">
+        </form>
+      <% end %>
+    </div>
+
   </body>
 </html>
