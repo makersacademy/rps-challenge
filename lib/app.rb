@@ -2,6 +2,8 @@ require 'sinatra'
 
 class RPS < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
     erb(:register)
   end
@@ -15,32 +17,13 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/game_rock' do
-    @option = 1
-    redirect('/game')
+  post '/game' do
+    session[:choice] = params[:choice]
+    redirect('/redirected')
   end
 
-  get '/game_paper' do
-    @option = 2
-    redirect('/game')
-  end
-
-  get '/game_scissors' do
-    @option = 3
-    redirect('/game')
-  end
-
-  get '/game' do
-    if @option == 1
-      @choice = 'rock'
-    elsif @option == 2
-      @choice = 'paper'
-    elsif @option == 3
-      @choice = 'scissors'
-    else
-      @choice = 'something is wrong'
-    end
+  get '/redirected' do
+    @choice = session[:choice]
     erb(:game)
   end
-
 end
