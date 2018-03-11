@@ -19,6 +19,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
+    puts params[:rps]
     # "Result displayed here"
     erb(:result)
   end

@@ -48,23 +48,26 @@
       <div class="col-lg-6 col-md-12 col-sm-12"> <!-- middle row to take care of all -->
         <form class="" action="/result" method="post">
           <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary choice col-lg-4 col-md-4 active">
+            <label for="rock" class="btn btn-primary choice col-lg-4 col-md-4 active">
               <input type="radio" value = 'rock' name="rps" id="rock" checked>
               <img class="card-img-top img-fluid image-responsive" src="/img/rock.png" alt="Rock">
+              </input>
 
             </label>
-            <label class="btn btn-primary choice col-lg-4 col-md-4">
-              <input type="radio" value = 'paper' name="rps" id="paper">
+            <label for="paper" id="paper" class="btn btn-primary choice col-lg-4 col-md-4">
+              <input type="radio" value = "paper" name="rps" id="paper">
               <img class="card-img-top img-fluid image-responsive" src="/img/paper.png" alt="Paper">
+              </input>
 
             </label>
-            <label class="btn btn-primary choice col-lg-4 col-md-4">
-              <input type="radio" value = 'scissors' name="rps" id="scissors">
+            <label for="scissors" class="btn btn-primary choice col-lg-4 col-md-4">
+              <input type="radio" value = "scissors" name="rps" id="scissors">
               <img class="card-img-top img-fluid image-responsive" src="/img/scissors.png" alt="Scissors">
+              </input>
 
             </label>
           </div>
-          <input class = "btn-primary btn-lg btn-block" type="submit" name="submit" value="Play">
+          <input class = "btn-primary btn-lg btn-block" type="submit" name="submit" value="Play"> </input>
 
         </form>
 

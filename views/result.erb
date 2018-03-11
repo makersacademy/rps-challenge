@@ -7,10 +7,9 @@
     <title>Rock | Paper | Scissors</title>
   </head>
   <style>
-    .b {background-color: blue}
-    .g {background-color: green}
+    /* .g {background-color: green}
     .r {background-color: red}
-    .y {background-color: yellow}
+    .y {background-color: yellow} */
   </style>
 
   <body>
@@ -26,16 +25,32 @@
 
     <div class="row">
 
-      <div class="col-lg-3 col-md-3 col-sm-2 b"> </div> <!-- padding cell left -->
-      <div class="col-lg-6 col-md-6 col-sm-8 g">Result displayed here</div> <!-- result cell -->
+      <div class="col-lg-3 col-md-3 col-sm-2 b r"> </div> <!-- padding cell left -->
+      <div class="col-lg-6 col-md-6 col-sm-8 g"> <!-- result cell -->
+        <h1 class=" text-info"> You won! </h1>
+        <p class="lead text-info"><%=params[:rps]%> selected</p>
+      </div>
       <div class="col-lg-3 col-md-3 col-sm-2 r"> </div> <!-- padding cell right -->
     </div>
 
     <div class="row">
-      <div class="col-lg-2 col-md-2 y"> </div> <!-- empty cell -->
-      <div class="col-lg-4 col-md-4 col-sm-6 g">Option to play again</div> <!-- result cell -->
-      <div class="col-lg-4 col-md-4 col-sm-6 b">Option to start over</div> <!-- result cell -->
-      <div class="col-lg-2 col-md-2 r"> </div> <!-- empty cell -->
+      <div class="col-lg-3 col-md-3"> </div> <!-- empty cell -->
+
+        <div class="col-lg-2 col-md-2 col-sm-5 text-center btn btn-primary"> <!-- option Startover -->
+            <a href = "/">
+              <img class="img-fluid " src="/img/start_over.png">
+            </a>
+        </div> <!-- Startover cell ends -->
+
+        <div class="col-lg-2 col-md-2 col-sm-2"> </div> <!-- empty cell -->
+
+        <div class="col-lg-2 col-md-2 col-sm-5 text-center btn btn-primary"> <!-- option Play Again -->
+            <a href = "/play">
+              <img class="img-fluid " src="/img/play_again.png">
+            </a>
+        </div> <!-- Play Again cell ends -->
+
+      <div class="col-lg-3 col-md-3"> </div> <!-- empty cell -->
 
     </div> <!-- row ends here -->
 
