@@ -1,15 +1,15 @@
 require_relative './rps_mod.rb'
-require_relative './hand_shape.rb'
 
 class Game
 
   attr_reader :whos_turn, :whos_waiting, :shapes, :player1, :player2
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, mod_path='./rps_mod.rb')
     @player1 = player1
     @player2 = player2
     @whos_turn = @player1
     @whos_waiting = @player2
+    require_relative mod_path
     @shapes = GameMod::SHAPES_ARY
   end
 

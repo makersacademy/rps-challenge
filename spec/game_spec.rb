@@ -1,5 +1,4 @@
 require 'game'
-require 'rps_mod'
 
 describe Game do
 
