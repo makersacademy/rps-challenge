@@ -30,8 +30,8 @@ class Game
     @player2.play(nil)
   end
 
-  def self.create_instance(player1, player2)
-    @game = Game.new(player1, player2)
+  def self.create_instance(player1, player2, mod_path='./rps_mod.rb')
+    @game = Game.new(player1, player2, mod_path)
   end
 
   def self.return_instance
