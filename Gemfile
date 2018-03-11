@@ -12,4 +12,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'sinatra'
   gem 'shotgun'
+  gem 'rubrowser'
 end

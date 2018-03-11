@@ -9,10 +9,6 @@ class Game
     @players = []
   end
 
-  def ai_hand
-    @players[1].receive_hand(['Rock', 'Paper', 'Scissors'].sample)
-  end
-
   def evaluate
     @gamemode == 'ai' ? evaluate_ai : evaluate_multi
   end
@@ -82,5 +78,13 @@ class Game
     
   def self.instance
     @game
+  end
+
+  def ai_hand
+    @players[1].receive_hand(random)
+  end
+
+  def random
+    ['Rock', 'Paper', 'Scissors'].sample
   end
 end
