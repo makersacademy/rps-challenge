@@ -1,30 +1,25 @@
-feature "after signing in, you choose RPS" do
-  def choose_rps(attack)
-     choose(attack)
-     click_button "Attack your opponent"
-     expect(page).to have_content("Reena choose #{attack}")
-  end
-
-  background do
+feature 'Playing the game' do
+  scenario "When I submit 'Rock' I am told if I have won" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     sign_in_and_play
+    choose('choice', option: 'rock')
+    click_button('Submit')
+    expect(page).to have_content "Reena:Congratulations - you won"
   end
 
-feature 'Choose RPS' do
-  scenario 'Choosing Rock' do
-    choose_rps("Rock")
-  end
-end
-
-  scenario 'Rock is default' do
-    click_button "Attack your opponent"
-    expect(page).to have_content "Reena choose Rock"
+  scenario "When I submit 'Scissors' I am told if I have lost" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+    sign_in_and_play
+    choose('choice', option: 'scissors')
+    click_button('Submit')
+    expect(page).to have_content "Reena:Sorry - you lose"
   end
 
-  scenario 'Choosing Paper' do
-    choose_rps("Paper")
-  end
-
-  scenario 'Choosing Scissors' do
-    choose_rps("Scissors")
+  scenario "When both submit 'Paper' I am told if it is a draw" do
+    allow_any_instance_of(Array).to receive(:sample).and_return(:paper)
+    sign_in_and_play
+    choose('choice', option: 'paper')
+    click_button('Submit')
+    expect(page).to have_content "Reena:Its a draw!"
   end
 end
