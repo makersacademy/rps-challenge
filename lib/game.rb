@@ -1,8 +1,10 @@
 class Game
-	
-    RULES = { rock: 'scissors',
-        paper: 'rock',
-        scissors: 'paper' }
+
+    RULES = { rock: ['scissors','lizard'],
+        paper: ['rock', 'spock'],
+        scissors: ['paper', 'lizard'],
+        lizard: ['paper', 'spock'],
+        spock: ['rock', 'scissors'] }
 
 	def initialize(player_1, player_2)
 		@players = [player_1, player_2]
@@ -21,7 +23,7 @@ class Game
 	end	
 
     def beats?(weapon1, weapon2)
-      RULES[weapon1.to_sym] == weapon2
+      RULES[weapon1.to_sym].include? weapon2
     end
     
     def result
