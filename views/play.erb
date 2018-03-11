@@ -1,12 +1,6 @@
 <!DOCTYPE html>
-<html>
+<hmtl>
   <body>
-    <h1><%=@game.whos_turn.name%>'s turn!'</h1>
-    <form action='/results' method='get'>
-      <input type="radio" name="shape_choice" value="0">Pick <%=@game.shapes[0].name%><br>
-      <input type="radio" name="shape_choice" value="1">Pick <%=@game.shapes[1].name%><br>
-      <input type="radio" name="shape_choice" value="2">Pick <%=@game.shapes[2].name%><br>
-      <button type='submit'>Play</button>
-    </form>
+    <h1><%=@just_went.name%> picked <%=@just_went.shape.name%></h1>
   </body>
 </html>

@@ -21,17 +21,17 @@ class HandShapeGame < Sinatra::Base
     player1 = Player.new(params[:player_1_name])
     player2 = Player.new(session[:robot_name])
     Game.create_instance(player1, player2)
-    redirect '/play'
+    redirect '/start'
+  end
+
+  get '/start' do
+    erb :start
   end
 
   get '/play' do
-    erb :play
-  end
-
-  get '/results' do
     @just_went = @game.whos_turn
     @game.play(params[:shape_choice].to_i)
-    erb :results
+    erb :play
   end
 
   run! if app_file == $0
