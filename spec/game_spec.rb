@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
 
-  let(:player1) { double() }
-  let(:player2) { double() }
+  let(:player1) { double(name: 'George') }
+  let(:player2) { double(name: 'Charles') }
+
   subject(:game) { described_class.new(player1, player2) }
 
   describe '#new' do
@@ -25,16 +26,16 @@ describe Game do
   describe '#choose' do
 
     it 'sets player1_choice' do
-      expect(subject.player1).to receive(:choose).with("rock")
+      expect(subject.player1).to receive(:choose).with("Rock")
 
-      subject.choose("rock")
+      subject.choose("r")
     end
 
     it 'sets player2_choice' do
-      expect(subject.player2).to receive(:choose).with("rock")
+      expect(subject.player2).to receive(:choose).with("Rock")
 
       subject.switch
-      subject.choose("rock")
+      subject.choose("r")
     end
 
   end
@@ -49,7 +50,50 @@ describe Game do
 
   end
 
+  describe '#result' do
 
+    it "Rock beats scissors" do
+      allow(subject.player1).to receive(:choice).and_return 'Rock'
+      allow(subject.player2).to receive(:choice).and_return 'Scissors'
 
+      expect(subject.result).to eq('George won!')
+    end
+
+    it "Paper beats rock" do
+      allow(subject.player1).to receive(:choice).and_return 'Rock'
+      allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('Charles won!')
+    end
+
+    it "Scissors beats paper" do
+      allow(subject.player1).to receive(:choice).and_return 'Scissors'
+      allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('George won!')
+    end
+
+    it "should say draw" do
+      allow(subject.player1).to receive(:choice).and_return 'Rock'
+      allow(subject.player2).to receive(:choice).and_return 'Rock'
+
+      expect(subject.result).to eq("DRAW")
+    end
+
+    it "should say draw" do
+      allow(subject.player1).to receive(:choice).and_return 'Paper'
+      allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq("DRAW")
+    end
+
+    it "should say draw" do
+      allow(subject.player1).to receive(:choice).and_return 'Scissors'
+      allow(subject.player2).to receive(:choice).and_return 'Scissors'
+
+      expect(subject.result).to eq("DRAW")
+    end
+
+  end
 
 end

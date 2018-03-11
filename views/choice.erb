@@ -1,14 +1,27 @@
-    <h1>Choose your weapon, <%= @game.turn.name %> </h1>
+<!DOCTYPE html>
+  <html>
 
-    <form action='/save' method="post">
-      <label for="Rock">
-      Rock: <input type="radio" name="type" value='Rock'>
-      </label>
-      <label for="Paper">
-      Paper:<input type="radio" name="type" value='Paper'>
-      </label>
-      <label for="Scissors">
-      Scissors:<input type="radio" name="type" value='Scissors'>
-      </label>
-      <input type="submit" value="Confirm">
-    <form>
+    <head>
+    </head>
+
+    <style>
+      /* body {
+        background-image: url('rps.png');
+      } */
+    </style>
+
+
+    <body>
+
+      <h1>Choose your weapon, <%= @game.turn.name %> </h1>
+
+      <form action='/save' method="post">
+        <label for="choice">
+          <input type="password" placeholder="Enter choice" name="choice" required>
+        </label>
+        <input type="submit" value="Confirm">
+      <form>
+
+    </body>
+
+  </html>

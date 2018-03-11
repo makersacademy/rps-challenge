@@ -10,6 +10,5 @@ feature "Adding choice" do
     choose_options
     choose_options
     expect(page).to have_content('Choices have been decided')
-
   end
 end

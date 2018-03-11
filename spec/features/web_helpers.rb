@@ -6,6 +6,6 @@ def sign_in_and_play
 end
 
 def choose_options
-  choose('Rock')
+  fill_in(:choice, with: 'r')
   click_button('Confirm')
 end

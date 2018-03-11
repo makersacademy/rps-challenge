@@ -24,7 +24,7 @@ class RPS < Sinatra::Base
 
   post '/save' do
     @game = Game.return_instance
-    @game.choose(params[:type])
+    @game.choose(params[:choice])
     redirect to('/switch')
   end
 
