@@ -11,5 +11,10 @@ describe Game do
       expect(subject).to receive :computer_move
       subject.new_move(player_move)
     end
+
+    it 'calls calc_winner method' do
+		  expect(subject).to receive :calc_winner
+		  subject.new_move(player_move)
+		end
   end
 end

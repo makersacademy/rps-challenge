@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Winner</title>
+    <style>
+
+    h1 {font: 72px didot; text-align: center;}
+    h2 {
+      font: 30px;
+      font-family: helvetica ;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 10px;
+    }
+    h3 {
+      font: 20px;
+      font-family: helvetica ;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 10px;
+    }
+
+    p {
+      font: 18px;
+      font-family: helvetica;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+
+   hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 100;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <h3>THE TIMELESS CLASSIC</h3>
+    <br>
+    <hr />
+    <br>
+    <h2><%=@game.winner.upcase%> WON</h2>
+    <br>
+    <br>
+    <h3><%=@game.player.name.upcase%>  PLAYED  <%=@game.player_move.upcase%></h3>
+    <br>
+    <br>
+    <h3><%=@game.computer%>  PLAYED  <%=@game.comp_move.upcase%></h3>
+    <br>
+    <br>
+    <p><%=@game.player.name%>:  <%=@game.player.score%></p>
+    <br>
+    <p><%=@game.computer%>: <%=@game.comp_score%></p>
+  </body>
+</html>

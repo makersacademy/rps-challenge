@@ -64,7 +64,6 @@
     <br>
     <hr />
     <br>
-    <p>PLAYER // <%=@player1.name.upcase%>        SCORE // <%=@player1.score%></p>
     <br>
     <br>
     <div class="centerbutton">
@@ -74,5 +73,10 @@
          <span><input id='scissors' type="submit" name="submit" value="SCISSORS" class="movebutton"></span>
        </form>
     </div>
+    <br>
+    <br>
+    <p><%=@game.player.name.upcase%>:  <%=@game.player.score%></p>
+    <br>
+    <p><%=@game.computer%>: <%=@game.comp_score%></p>
   </body>
 </html>

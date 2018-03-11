@@ -14,15 +14,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player1 = $game.player
+    @game = $game
     @move = $move
-    @winner = $game.new_move(@move)
     erb :play
   end
 
   post '/move' do
     $move = params[:submit]
-    redirect '/play'
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    @game = $game
+    @move = $move
+    @game.new_move(@move)
+    erb :winner
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
