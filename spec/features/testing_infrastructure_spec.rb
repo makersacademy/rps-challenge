@@ -1,8 +1,10 @@
-feature 'Testing infrastructure' do
+feature 'Testing infrastructure and setup' do
 
   scenario 'Running the app to see if it displays the page content' do
     visit('/')
-    expect(page).to have_content 'Hello World'
+    expect(page).to have_content "Rock Paper Scissors Makers Academy, Week 3
+    (Weekend assignment) Irfan Durrani, Feb '18 Player Name Please enter the
+     name and click play to continue. Play"
   end
 
 end
