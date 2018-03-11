@@ -7,13 +7,14 @@ describe Game do
     shape: nil,
     play: nil }
   let(:dbl_player_rock) { double :player,
-    shape: dbl_rock}
+    shape: dbl_rock,
+    name: 'Dave'}
   let(:dbl_player_paper) { double :player,
-    shape: dbl_paper}
+    shape: dbl_paper,
+    name: 'Dave'}
   let(:dbl_player_scissors) { double :player,
-    shape: dbl_scissors}
-  let(:dbl_robot_player) { double :robo_player,
-      bot: true }
+    shape: dbl_scissors,
+    name: 'Dave'}
 
   let(:dbl_rock) { double :hand_shape, name: 'Rock', weaknesses: 'Paper' }
   let(:dbl_paper) { double :hand_shape, name: 'Paper', weaknesses: 'Scissors' }
@@ -43,15 +44,19 @@ describe Game do
   context 'winning a round' do
     it 'knows rock beats scissors' do
       game = described_class.new(dbl_player_rock, dbl_player_scissors)
-      expect(game.winner).to eq dbl_player_rock
+      expect(game.winner).to eq "#{dbl_player_rock.name} is the WINNER!"
     end
     it 'knows paper beats rock' do
       game = described_class.new(dbl_player_paper, dbl_player_rock)
-      expect(game.winner).to eq dbl_player_paper
+      expect(game.winner).to eq "#{dbl_player_paper.name} is the WINNER!"
     end
     it 'knows scissors beats paper' do
       game = described_class.new(dbl_player_paper, dbl_player_scissors)
-      expect(game.winner).to eq dbl_player_scissors
+      expect(game.winner).to eq "#{dbl_player_scissors.name} is the WINNER!"
+    end
+    it 'knows when there is a tie' do
+      game = described_class.new(dbl_player_paper, dbl_player_paper)
+      expect(game.winner).to eq "It's a tie!"
     end
     it "doesn't return a winner for an unfinished game" do
       game = described_class.new(dbl_player, dbl_player)

@@ -3,7 +3,7 @@ require_relative './hand_shape.rb'
 
 class Game
 
-  attr_reader :whos_turn, :shapes, :player1, :player2
+  attr_reader :whos_turn, :whos_waiting, :shapes, :player1, :player2
 
   def initialize(player1, player2)
     @player1 = player1
@@ -22,7 +22,7 @@ class Game
 
   def winner
     raise Exception.new("Game is not finished yet!") unless finished?
-    @player1.shape.weaknesses.include?(@player2.shape.name) ? @player2 : @player1
+    winstring
   end
 
   def reset
@@ -38,14 +38,26 @@ class Game
     @game
   end
 
+  def finished?
+    !!@player1.shape && !!@player2.shape
+  end
 
   private
 
-  def switch_players
-    @whos_turn, @whos_waiting = @whos_waiting, @whos_turn
+  def winning_player
+    return false if @player1.shape == @player2.shape
+    @player1.shape.weaknesses.include?(@player2.shape.name) ? @player2 : @player1
   end
 
-  def finished?
-    !!@player1.shape && !!@player2.shape
+  def winstring
+    if winning_player
+      "#{winning_player.name} is the WINNER!"
+    else
+      "It's a tie!"
+    end
+  end
+
+  def switch_players
+    @whos_turn, @whos_waiting = @whos_waiting, @whos_turn
   end
 end

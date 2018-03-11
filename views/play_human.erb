@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<hmtl>
   <body>
-    <h1><%=@game.whos_turn.name%>'s turn!'</h1>
+    <h1><%=@game.whos_waiting.name%> picked <%=@game.whos_waiting.shape.name%></h1>
+    <h2><%=@game.whos_turn.name%>'s turn!'</h2>
     <form action='/apply_and_redirect' method='post'>
       <input type="radio" name="shape_choice" value="0">Pick <%=@game.shapes[0].name%><br>
       <input type="radio" name="shape_choice" value="1">Pick <%=@game.shapes[1].name%><br>

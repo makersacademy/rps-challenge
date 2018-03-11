@@ -9,17 +9,17 @@ class HandShapeGame < Sinatra::Base
   enable :sessions
 
   before do
-    session[:robot_name] = "ROBOHANDS UNIT #{rand * 100}"
     @game = Game.return_instance
   end
 
   get '/' do
+    session[:bot_name] = "ROBOHANDS UNIT ##{rand(1..100)}"
     erb :index
   end
 
   post '/names' do
     player1 = Player.new(params[:player_1_name])
-    player2 = Player.new(session[:robot_name])
+    player2 = Player.new(session[:bot_name])
     Game.create_instance(player1, player2)
     redirect '/start'
   end
@@ -28,10 +28,27 @@ class HandShapeGame < Sinatra::Base
     erb :start
   end
 
-  get '/play' do
-    @just_went = @game.whos_turn
+  post '/apply_and_redirect' do
     @game.play(params[:shape_choice].to_i)
-    erb :play
+    redirect './game_over' if @game.finished?
+    if @game.whos_turn.name == session[:bot_name]
+      redirect '/play_bot'
+    else
+      redirect '/play_human'
+    end
+  end
+
+  get '/play_human' do
+    erb :play_human
+  end
+
+  get '/play_bot' do
+    @choice = rand(0..@game.shapes.count - 1).to_s
+    erb :play_bot
+  end
+
+  get '/game_over' do
+    erb :game_over
   end
 
   run! if app_file == $0
