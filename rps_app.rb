@@ -21,5 +21,22 @@ class Game < Sinatra::Base
   get '/options' do
     erb :options
   end
+
+  get '/options' do
+    session[:option] = params[:option]
+    redirect '/options'
+  end
+
+  get '/confirm_option' do
+    erb :confirm_option
+  end
+
+  # get '/confirm_option' do
+  #   erb :confirm_paper
+  # end
+
+  # get '/confirm_paper' do
+  #   erb :confirm_paper
+  # end
   run! if app_file == $0
 end
