@@ -5,12 +5,11 @@ class Game
 
   attr_reader :whos_turn, :shapes, :player1, :player2
 
-  def initialize(player1, player2, gamemod = 'rps_mod')
+  def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
     @whos_turn = @player1
     @whos_waiting = @player2
-    require gamemod
     @shapes = GameMod::SHAPES_ARY
   end
 
@@ -31,8 +30,8 @@ class Game
     @player2.play(nil)
   end
 
-  def self.create_instance(player1, player2, gamemod = 'rps_mod')
-    @game = Game.new(player1, player2, gamemod)
+  def self.create_instance(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.return_instance
