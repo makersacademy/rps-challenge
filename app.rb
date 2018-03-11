@@ -19,7 +19,7 @@ class HandShapeGame < Sinatra::Base
 
   post '/names' do
     session[:player_1_name] = params[:player_1_name]
-    session[:game_choice] = params[:game_choice]
+    session[:modpath] = params[:game_choice]=='RPS' ? './rps_mod.rb'  : './rpsls_mod.rb'
     if params[:player2_choice] == 'Bot'
       redirect '/bot_setup'
     else
@@ -30,11 +30,7 @@ class HandShapeGame < Sinatra::Base
   get '/bot_setup' do
     player1 = Player.new(session[:player_1_name])
     player2 = Player.new(session[:bot_name])
-    if session[:game_choice] == 'RPS'
-      Game.create_instance(player1, player2)
-    else
-      Game.create_instance(player1, player2, './rpsls_mod.rb')
-    end
+    Game.create_instance(player1, player2, session[:modpath])
     redirect '/start'
   end
 
@@ -46,11 +42,7 @@ class HandShapeGame < Sinatra::Base
   post '/human_setup' do
     player1 = Player.new(session[:player_1_name])
     player2 = Player.new(params[:player_2_name])
-    if session[:game_choice] == 'RPS'
-      Game.create_instance(player1, player2)
-    else
-      Game.create_instance(player1, player2, './rpsls_mod.rb')
-    end
+    Game.create_instance(player1, player2, session[:modpath])
     redirect '/start'
   end
 
