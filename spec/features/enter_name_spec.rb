@@ -1,15 +1,37 @@
 feature 'Entering names' do
-  scenario 'User is able to enter name' do
+  scenario 'Player 1 enters name and displays name on play page' do
     visit('/')
-    # test is a bit vague > could also check for input field
-    expect(page).to have_content('Please enter your name')
-  end
+    choose('single-player')
+    choose('normal')
+    click_on('Start game')
 
-  scenario 'User enters name and displays their name' do
-    visit('/')
-    fill_in 'name', with: 'Player 1'
+    fill_in 'player1_name', with: 'Player 1'
     click_on 'Start game'
 
     expect(page).to have_content('Player 1')
+  end
+
+  scenario 'Player 2 enters name and displays name on play page' do
+    visit('/')
+    choose('two-player')
+    choose('normal')
+    click_on('Start game')
+
+    fill_in 'player1_name', with: 'Player 1'
+    fill_in 'player2_name', with: 'Player 2'
+    click_on 'Start game'
+
+    expect(page).to have_content('Player 2')
+  end
+
+  scenario 'Player 2 does not enter name, therefore name should equal Computer' do
+    visit('/')
+    choose('single-player')
+    choose('normal')
+    click_on('Start game')
+
+    fill_in 'player1_name', with: 'Player 1'
+    click_on 'Start game'
+    expect(page).to have_content('Computer')
   end
 end

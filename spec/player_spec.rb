@@ -1,18 +1,13 @@
 require 'player'
 
 describe Player do
-  subject(:fake_player1) { double('player', name: "Fake Player 1") }
-  subject(:fake_nil_player) { described_class.new }
+  subject(:fake_player) { double('player', name: "Fake Player") }
 
-  subject(:player) { described_class.new(fake_player1.name) }
+  subject(:player) { described_class.new(fake_player.name) }
 
   context '.initialize' do
     it 'on initialize it should store a name' do
-      expect(player.name).to eq(fake_player1.name)
-    end
-
-    it 'sets player 2 name as Computer if name is not entered' do
-      expect(fake_nil_player.name).to eq('Computer')
+      expect(player.name).to eq(fake_player.name)
     end
 
     it 'on initialize action should be nil' do
@@ -21,19 +16,11 @@ describe Player do
   end
 
   context 'set action' do
-    it 'should be able to set action to paper' do
-      player.action = 'paper'
-      expect(player.action).to eq('paper')
-    end
-
-    it 'should be able to set action to rock' do
-      player.action = 'rock'
-      expect(player.action).to eq('rock')
-    end
-
-    it 'should be able to set action to scissors' do
-      player.action = 'scissors'
-      expect(player.action).to eq('scissors')
+    ['paper', 'rock', 'scissors'].each do |action|
+      it "should be able to set action to #{action}" do
+        player.action = "#{action}"
+        expect(player.action).to eq("#{action}")
+      end
     end
   end
 end

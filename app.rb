@@ -1,10 +1,9 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer_opponent'
 require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
-  set :sessions, true
-
   before do
     @game = Game.instance
   end
@@ -13,14 +12,34 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
+  post '/new-game' do
+    @game = Game.create(params[:game_opponent], params[:game_type])
+    redirect '/enter-names'
+  end
+
+  get '/enter-names' do
+    erb(:names)
+  end
+
   post '/names' do
-    @game = Game.create(Player.new(params[:name]), Player.new())
+    @game.player1 = Player.new(params[:player1_name])
+    @game.player2 = params[:player2_name].nil? ? ComputerOpponent.new : Player.new(params[:player2_name])
     redirect '/play'
   end
 
   get '/play' do
-    @game = Game.instance
     erb(:play)
+  end
+
+  post '/action' do
+    @game.player1.action = params[:player1_action]
+    @game.player2.action = params[:player2_action]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @game.result = @game.return_result(@game.player1, @game.player2)
+    erb(:result)
   end
 
   # start the server if ruby file executed directly

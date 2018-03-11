@@ -1,31 +1,20 @@
 feature 'Player selects action' do
   # should I test for individual cases?
-  scenario 'User is able to select paper' do
-    visit('/')
-    fill_in 'name', with: 'Player 1'
-    click_on 'Start game'
-    choose 'paper'
+  ['paper', 'scissors', 'rock'].each do |action|
 
-    expect(page).to have_checked_field('paper')
+    scenario "Player 1 selection of #{action} appears on play page" do
+      visit('/')
+      choose('single-player')
+      choose('normal')
+      click_on('Start game')
+
+      fill_in 'player1_name', with: 'Player 1'
+      click_on 'Start game'
+
+      choose "#{action}"
+
+      click_on 'Play'
+      expect(page).to have_content("#{action}")
+    end
   end
-
-  scenario 'User is able to select scissors' do
-    visit('/')
-    fill_in 'name', with: 'Player 1'
-    click_on 'Start game'
-    choose 'scissors'
-
-    expect(page).to have_checked_field('scissors')
-  end
-
-  scenario 'User is able to select rock' do
-    visit('/')
-    fill_in 'name', with: 'Player 1'
-    click_on 'Start game'
-    choose 'rock'
-
-    expect(page).to have_checked_field('rock')
-  end
-
-  
 end

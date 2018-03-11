@@ -1,0 +1,16 @@
+<h1><%= "#{@game.player1.name} vs. #{@game.player2.name}" %></h1>
+
+<div>
+  Player 1: <%= @game.player1.action %><br>
+  Player 2: <%= @game.player2.action %><br>
+</div>
+
+<div>
+  <%= @game.result %> Wins!
+</div>
+
+<div>
+  <form action="/">
+       <input type="submit" value="Play again">
+   </form>
+</div>

@@ -1,11 +1,11 @@
-<h1><%= @game.player1.name %> vs. Computer</h1>
+<h1><%= "#{@game.player1.name} vs. #{@game.player2.name}" %></h1>
 
 Please select a option below to continue
 
 <form action="/action" method="post">
-  <input id="paper" type="radio" name="action" value="paper"> Paper
-  <input id="scissors" type="radio" name="action" value="scissors"> Scissors
-  <input id="rock" type="radio" name="action" value="rocks"> Rock
+  <input id="paper" type="radio" name="player1_action" value="paper"> Paper
+  <input id="scissors" type="radio" name="player1_action" value="scissors"> Scissors
+  <input id="rock" type="radio" name="player1_action" value="rock"> Rock
   <div>
     <button type="submit">Play</button>
   </div>
