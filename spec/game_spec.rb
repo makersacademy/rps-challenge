@@ -66,9 +66,17 @@ describe Game do
   describe '#reset' do
     it 'resets the game' do
       game = described_class.new(dbl_player_rock, dbl_player_scissors)
-      expect(dbl_player_rock).to receive(:play_shape).with(nil)
-      expect(dbl_player_scissors).to receive(:play_shape).with(nil)
+      expect(dbl_player_rock).to receive(:play).with(nil)
+      expect(dbl_player_scissors).to receive(:play).with(nil)
       game.reset
+    end
+  end
+
+  context 'storing and returning instances of itself' do
+    it 'stores and returns an instance of itself' do
+      Game.create_instance(dbl_player_rock, dbl_player)
+      game = Game.return_instance
+      expect(game.player1.shape).to eq dbl_rock
     end
   end
 
