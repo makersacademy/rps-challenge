@@ -1,0 +1,103 @@
+body {
+  background-color: #ECF1FF;
+  font-family: Helvetica;
+  font-color: #0F1C40;
+}
+
+#home_title_box {
+  position:relative;
+  width:40%;
+  left:30%;
+  text-align:center;
+  margin-top:100px;
+}
+
+#title_box {
+  position:relative;
+  width:30%;
+  left:35%;
+  text-align:center;
+  margin-top:100px;
+}
+
+#blink_box {
+  position:relative;
+  width:30%;
+  left:35%;
+  text-align:center;
+  margin-top:50px;
+  background-color:#6B6B6B;
+  border-style: dotted;
+}
+
+
+#results_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align:center;
+}
+
+#image_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top:50px;
+}
+
+.image_div > img {
+  height:18vw;
+  width:18vw;
+}
+
+.submit_button {
+  position:relative;
+  width: 10%;
+  left:45%;
+  margin-top:50px;
+}
+
+.text_input {
+  position:relative;
+  text-align:center;
+  font-size:25px;
+  width: 20%;
+  left:40%;
+  margin-top:50px;
+}
+
+.blink_me {
+    font-size:40;
+    color:#FFFFDF;
+
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

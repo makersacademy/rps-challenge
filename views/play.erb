@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<div id="blink_box">
+  <h1 class="blink_me"><%= @controller.player_name.upcase %></h1>
+</div>
+
+<div id="title_box">
+  <h2>Choose your move!</h2>
+  <hr></hr>
+</div>
+
+
+
+<div id="image_grid">
+  <div class="image_div" id="0" onclick="select(0)">
+    <img src="http://picoplex.net/games/rpslp/lizard.png"/>
+  </div>
+  <div class="image_div" id="1" onclick="select(1)">
+    <img src="http://picoplex.net/games/rpslp/spock.png"/>
+  </div>
+  <div class="image_div" id="2" onclick="select(2)">
+    <img src="http://picoplex.net/games/rpslp/scissors.png"/>
+  </div>
+  <div class="image_div" id="3" onclick="select(3)">
+    <img src="http://picoplex.net/games/rpslp/paper.png"/>
+  </div>
+  <div class="image_div" id="4" onclick="select(4)">
+    <img src="http://picoplex.net/games/rpslp/rock.png"/>
+  </div>
+</div>
+
+<form class="image_div" id="submit_choice" method="post" action="/outcome" style="visibility:hidden;">
+  <input class="submit_button" type="submit" value="Submit">
+<form>
+
+<script>
+
+function select(number) {
+  setBorders(number)
+  postRequest(number)
+  revealSubmit()
+}
+
+function setBorders(number) {
+  for(var index=0;index<5;index++) {
+    document.getElementById(index).style['border-style'] = 'none'
+  }
+  document.getElementById(number).style['border-style'] = 'solid'
+}
+
+function postRequest(number) {
+  fetch(`/select?number=${number}`,
+  {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "GET"
+  });
+}
+
+function revealSubmit() {
+  document.getElementById('submit_choice').style.visibility = 'visible'
+}
+
+</script>

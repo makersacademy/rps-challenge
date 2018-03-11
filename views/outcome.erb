@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<div  id="title_box">
+  <h1>You <%= @controller.match_outcome %>!</h1>
+  <hr></hr>
+</div>
+
+<div id="results_grid">
+  <div class="image_div">
+  <h1>You choose</h1>
+  <img src="http://picoplex.net/games/rpslp/<%=
+  GameController::CHOICES[@controller.player_num]
+  %>.png"/>
+  </div>
+  <div  class="image_div">
+  <h1>Opponent choose</h1>
+  <img src="http://picoplex.net/games/rpslp/<%=
+  GameController::CHOICES[@controller.opponent_num]
+  %>.png"/>
+  </div>
+</div>
+
+
+<form method="get" action="/play">
+  <input class="submit_button" type="submit" value="Play Again">
+<form>
