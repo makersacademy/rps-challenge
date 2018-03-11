@@ -12,7 +12,7 @@ This web application allows a player to play *Rock, Paper, Scissors* against a c
 Functionalities
 ----
 - A player is able to enter their name before the game
-![screenshot](https://github.com/antcin/rps-challenge/screenshots/enter_player_name_rps.jpeg)
+![screenshot](https://github.com/antcin/rps-challenge/screenshots/enter_player_name_rps.png)
 - A player is presented the choices (rock, paper and scissors)
 ![screenshot](https://github.com/antcin/rps-challenge/blob/master/screenshots/presented_with_choices.jpeg)
 - A player can pick one option
