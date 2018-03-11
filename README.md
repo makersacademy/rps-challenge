@@ -18,6 +18,13 @@ I found that I was really comfortable this time around with what I was creating,
 - [ ] Refactor code and tests as required
 - [ ] In 2 player mode add a separate page so player 2 can enter there selection separately
 
+## Screenshots
+
+![screen shot 2018-03-11 at 7 56 53 pm](https://user-images.githubusercontent.com/12001682/37258789-dd72aca2-2574-11e8-977a-7f410e6a2ee7.png)
+![screen shot 2018-03-11 at 7 57 06 pm](https://user-images.githubusercontent.com/12001682/37258790-dd8be41a-2574-11e8-89a7-ca02a1cfb9b6.png)
+![screen shot 2018-03-11 at 7 57 21 pm](https://user-images.githubusercontent.com/12001682/37258791-dda4f4f0-2574-11e8-83e4-52c1baa5cd33.png)
+![screen shot 2018-03-11 at 7 57 31 pm](https://user-images.githubusercontent.com/12001682/37258792-ddbca8f2-2574-11e8-96eb-f6069d0c46a7.png)
+
 ## Task
 
 The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
