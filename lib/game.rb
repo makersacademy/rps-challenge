@@ -1,12 +1,16 @@
 class Game
-attr_reader :rules
-
-  def initilize(rules)
-    @rules = rules
-    @
+  def initialize(beats)
+    @beats = beats
   end
 
-  def beats(weapon)
-    if @rules[player_choice] == computer_
+  def round(player_choice, computer_choice)
+    if @beats[player_choice] == computer_choice
+      :won
+    elsif @beats[computer_choice] == player_choice
+      :lost
+    elsif player_choice == computer_choice
+      :draw
+    end
   end
+
 end
