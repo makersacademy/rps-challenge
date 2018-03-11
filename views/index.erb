@@ -1,13 +1,35 @@
-<h1>Rock paper scissors challenge</h1>
+<link rel="stylesheet" href="/spectre.min.css">
 
-<div>
-  <form action="/new-game" method="post">
-    <input id="single-player" type="radio" name="game_opponent" value="1"> Single player
-    <input id="two-player" type="radio" name="game_opponent" value="2"> Two player
+<div class="container" style="padding-top:200px">
+  <div class="columns">
+    <div class="column col-5 centered text-center" >
+        <h1>Paper Scissors Rock Game</h1>
+        <div class="form-group">
+          <form action="/new-game" method="post">
+            <label class="form-label"><h4>Players</h4></label>
+            <label class="form-radio">
+              <input id="single-player" type="radio" name="game_opponent" value="1" checked>
+                <i class="form-icon"></i> Single Player
+            </label>
+            <label class="form-radio">
+              <input id="two-player" type="radio" name="game_opponent" value="2">
+              <i class="form-icon"></i> Two Player
+            </label>
 
-    <h5>Game type</h5>
-    <input id="normal" type="radio" name="game_type" value="normal"> Rock, paper, scissors
-    <input id="advanced" type="radio" name="game_type" value="advanced" disabled> Rock, paper, scissors, spock, lizard
-    <button type="submit">Start game</button>
-  </form>
+            <label class="form-label"><h4>Game Type</h4></label>
+            <label class="form-radio">
+              <input id="normal" type="radio" name="game_type" value="normal" checked>
+              <i class="form-icon"></i> Normal: Rock, paper, scissors
+            </label>
+            <label class="form-radio">
+              <input id="advanced" type="radio" name="game_type" value="advanced" disabled>
+              <i class="form-icon"></i> Advanced: Rock, paper, scissors, spock, lizard
+            </label>
+            <div style="padding-top: 20">
+              <button class="btn btn-lg" type="submit">Start game</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
 </div>

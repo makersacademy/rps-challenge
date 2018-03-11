@@ -69,4 +69,10 @@ describe Game do
       end
     end
   end
+
+  describe '#two_player?' do
+    it 'returns true if current game is a two player game' do
+      expect(game.two_player?).to eq(nil)
+    end
+  end
 end

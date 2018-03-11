@@ -1,16 +1,29 @@
-<h1><%= "#{@game.player1.name} vs. #{@game.player2.name}" %></h1>
+<link rel="stylesheet" href="/spectre.min.css">
 
-<div>
-  Player 1: <%= @game.player1.action %><br>
-  Player 2: <%= @game.player2.action %><br>
-</div>
+<div class="container" style="padding-top:200px">
+  <div class="columns">
+    <div class="column col-5 centered text-center" >
+      <h1>Results</h1>
+      <h3><%= "#{@game.player1.name.capitalize} vs. #{@game.player2.name.capitalize}" %></h3>
 
-<div>
-  <%= @game.result %> Wins!
-</div>
+      <div style="padding-top:20px">
+        <h4><%="#{@game.player1.name} : #{@game.player1.action} "%></h4>
+        <h4><%="#{@game.player2.name} : #{@game.player2.action} "%></h4>
+      </div>
 
-<div>
-  <form action="/">
-       <input type="submit" value="Play again">
-   </form>
+      <div style="padding-top:20px">
+        <% if @game.result == 'tie' %>
+          <h1>It's A Tie!<h1>
+        <% else %>
+          <h1><mark><%= @game.result.upcase %> Wins!</mark><h1>
+        <% end %>
+      </div>
+
+      <form action="/">
+        <div style="padding-top: 20">
+          <button class="btn btn-lg" type="submit">Play Again</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

@@ -6,7 +6,7 @@ feature 'Select gametype' do
     choose('normal')
     click_on('Start game')
 
-    expect(page).to have_content('normal')
+    expect(page).to have_content('Normal Game')
   end
 
   scenario 'User can select a multiplayer/regular game' do
@@ -15,7 +15,7 @@ feature 'Select gametype' do
     choose('normal')
     click_on('Start game')
 
-    expect(page).to have_content('normal')
+    expect(page).to have_content('Normal Game')
   end
 
   # scenario 'User can select a single player and advanced game' do

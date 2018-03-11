@@ -1,4 +1,4 @@
-class ComputerOpponent
+class Computer
   DEFAULT_ACTIONS = ['paper', 'scissors', 'rock']
 
   attr_reader :name, :action

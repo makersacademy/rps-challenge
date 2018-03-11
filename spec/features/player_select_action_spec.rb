@@ -11,7 +11,7 @@ feature 'Player selects action' do
       fill_in 'player1_name', with: 'Player 1'
       click_on 'Start game'
 
-      choose "#{action}"
+      choose "p1-#{action}"
 
       click_on 'Play'
       expect(page).to have_content("#{action}")

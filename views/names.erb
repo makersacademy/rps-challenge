@@ -1,24 +1,40 @@
-<%= @game.game_type %>
+<link rel="stylesheet" href="/spectre.min.css">
 
-<% if @game.number_of_players == '2' %>
-  <div>
-    <h5>Please enter your names</h5>
-    <form action="/names" method="post">
-      <div>
-        <input type="text" placeholder="Player 1 name" id="player1_name" name="player1_name">
-        <input type="text" placeholder="Player 2 name" id="player2_name" name="player2_name">
-        <button type="submit">Start game</button>
-      </div>
-    </form>
+<div class="container" style="padding-top:200px">
+  <div class="columns">
+    <div class="column col-5 centered text-center" >
+      <h1><%= @game.game_type.capitalize %> Game</h1>
+
+      <% if @game.two_player? %>
+        <label class="form-label"><h4>Please enter your names</h4></label>
+
+        <form action="/names" method="post">
+          <div class="form-group">
+            <input class="form-input" type="text" id="player1_name" placeholder="Player 1 Name" name="player1_name">
+          </div>
+
+          <div class="form-group">
+            <input class="form-input" type="text" id="player2_name" placeholder="Player 2 Name" name="player2_name">
+          </div>
+
+          <div style="padding-top: 20">
+            <button class="btn btn-lg" type="submit">Start game</button>
+          </div>
+        </form>
+
+      <% else %>
+        <label class="form-label"><h4>Please enter your name</h4></label>
+
+        <form action="/names" method="post">
+          <div class="form-group">
+            <input class="form-input" type="text" id="player1_name" placeholder="Player 1 Name" name="player1_name">
+          </div>
+
+          <div style="padding-top: 20">
+            <button class="btn btn-lg" type="submit">Start game</button>
+          </div>
+        </form>
+      <% end %>
+    </div>
   </div>
-<% else %>
-  <div>
-    <h5>Please enter your name</h5>
-    <form action="/names" method="post">
-      <div>
-        <input type="text" placeholder="Player 1 name" id="player1_name" name="player1_name">
-        <button type="submit">Start game</button>
-      </div>
-    </form>
-  </div>
-<% end %>
+</div>

@@ -1,6 +1,6 @@
-require 'computer_opponent'
+require 'computer'
 
-describe ComputerOpponent do
+describe Computer do
   subject(:computer) { described_class.new }
 
   context '.initialize' do
@@ -16,7 +16,7 @@ describe ComputerOpponent do
 
   describe '#random_action' do
     it 'receives a random valid action' do
-      expect(ComputerOpponent::DEFAULT_ACTIONS).to include(computer.random_action)
+      expect(Computer::DEFAULT_ACTIONS).to include(computer.random_action)
     end
   end
 end

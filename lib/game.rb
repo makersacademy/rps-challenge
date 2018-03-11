@@ -19,6 +19,10 @@ class Game
     @game
   end
 
+  def two_player?
+    return true if @number_of_players == '2'
+  end
+
   # can be written cleaner / rubocop going nuts
   def return_result(player1, player2)
     return player1.name if player1.action == 'rock' && player2.action == 'scissors'

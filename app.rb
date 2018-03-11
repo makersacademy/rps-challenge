@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/computer_opponent'
+require './lib/computer'
 require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
@@ -23,7 +23,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     @game.player1 = Player.new(params[:player1_name])
-    @game.player2 = params[:player2_name].nil? ? ComputerOpponent.new : Player.new(params[:player2_name])
+    @game.player2 = params[:player2_name].nil? ? Computer.new : Player.new(params[:player2_name])
+
     redirect '/play'
   end
 
@@ -33,7 +34,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/action' do
     @game.player1.action = params[:player1_action]
-    @game.player2.action = params[:player2_action]
+    @game.player2.action = params[:player2_action] if @game.two_player? == true
     redirect '/result'
   end
 
