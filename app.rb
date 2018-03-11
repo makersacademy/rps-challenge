@@ -26,9 +26,16 @@ class Rps < Sinatra::Base
     @game = Game.instance
   end
 
-  post '/select' do
-    
+  post '/selection' do
+    player_option = @game.player.option(params[:option])
+    computer_option = @game.computer.option
+    @game.move(player_option, computer_option)
+    @game.result
+    redirect '/result'
+  end
 
+  get '/result' do
+    erb :result
   end
 
   run! if app_file == $0

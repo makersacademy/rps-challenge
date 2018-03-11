@@ -38,6 +38,8 @@ class Game
   def result
     if WIN_MOVES.include? @game_array
       @player.name
+    elsif DRAW_MOVES.include? @game_array
+      "NO one"
     else
       @computer.name
     end

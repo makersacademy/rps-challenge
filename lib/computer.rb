@@ -2,14 +2,14 @@ require_relative 'game'
 
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :computer_selection
 
   def initialize
     @name = "Computer"
   end
 
   def option
-    @computer_selections = GAME::COMPUTER_OPTIONS.sample
+    @computer_selection = Game::COMPUTER_OPTIONS.sample
   end
 
 end
