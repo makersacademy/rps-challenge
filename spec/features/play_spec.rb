@@ -9,7 +9,7 @@ feature 'Play Page' do
     expect(page).to have_content "THE TIMELESS CLASSIC"
   end
 
-  scenario 'has player name below divider line' do
+  scenario 'has player name and score below buttons' do
     visit('/')
     fill_in :player_1_name, with: 'katie'
     click_button 'PLAY'
