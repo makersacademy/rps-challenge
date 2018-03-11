@@ -1,7 +1,7 @@
 class Game
 
-  attr_reader :player, :comp_move, :computer, :player_move, :comp_score
-  attr_accessor :winner
+  attr_reader :player, :comp_move, :computer, :player_move
+  attr_accessor :winner, :comp_score
   def initialize(player)
     @player = player
     @computer = "COMPUTER"
@@ -25,17 +25,23 @@ class Game
 
     def calc_winner
       if (@comp_move == "ROCK") && (@player_move == "SCISSORS")
-        @winner = @computer
+        @comp_score += 1
+        @winner = @computer + " WON"
       elsif (@comp_move == 'ROCK') && (@player_move == 'PAPER')
-        @winner = @player.name
+        @player.score += 1
+        @winner = @player.name + " WON"
       elsif @comp_move == 'PAPER' && (@player_move == 'SCISSORS')
-        @winner = @player.name
+        @player.score += 1
+        @winner = @player.name + " WON"
       elsif (@comp_move == 'PAPER') && (@player_move == 'ROCK')
-        @winner = @computer
+        @comp_score += 1
+        @winner = @computer + " WON"
       elsif (@comp_move == 'SCISSORS') && (@player_move == 'ROCK')
-        @winner = @player.name
+        @player.score += 1
+        @winner = @player.name + " WON"
       elsif (@comp_move == 'SCISSORS') && (@player_move == 'PAPER')
-        @winner = @computer
+        @comp_score += 1
+        @winner = @computer + " WON"
       else @comp_move == @player_move
         @winner = "TIE"
       end

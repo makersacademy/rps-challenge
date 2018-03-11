@@ -40,17 +40,40 @@
       text-align: center;
       margin: 20px
     }
+    input[type="submit"] {
+      background-color: white;
+      color: #404040; /* Dark Grey */
+      font-size: 20px;
+      font-family: helvetica;
+      font-weight: 150;
+      letter-spacing: 3px;
+      border: 2px solid #D3D3D3; /* Light Grey */
+      border-radius: 12px;
+      padding: 12px 28px;
+    }
+    input:focus {outline:0;}
+    div.centerbutton {
+      text-align: center;
+      table-layout: fixed;
+    }
+    div.centerbutton span {
+      padding: 50px
+    }
     </style>
   </head>
   <body>
-    <h1>ROCK PAPER SCISSORS</h1>
-    <h3>THE TIMELESS CLASSIC</h3>
-    <br>
-    <hr />
-    <form action="/register_names" method="post">
-      <br>
-      <p>ENTER PLAYER NAME<input type="text" name="player_1_name" style="text-transform:uppercase"></p>
-      <p><input type="submit" value="PLAY"></p>
-    </form>
-  </body>
+	  <h1>ROCK PAPER SCISSORS</h1>
+	  <h3>THE TIMELESS CLASSIC</h3>
+	  <br>
+	  <hr />
+	  <form action="/register_names" method="post">
+	    <br>
+	    <br>
+	    <p>ENTER PLAYER NAME<input type="text" name="player_1_name" style="text-transform:uppercase"></p>
+	    <br>
+	    <br>
+	    <br>
+	    <p><input type="submit" value="PLAY"></p>
+	  </form>
+	</body>
 </html>
