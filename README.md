@@ -1,4 +1,33 @@
 # RPS Challenge
+Developer(Alex)'s approach:
+
+Note: All the written code, that I will refer to, have been written following a TDD methodology. Hence, when a step is described, it is implicit that the corresponding rspec have been coded prior to that.
+
+Functionality:
+
+- the marketeer should be able to enter their name before the game:
+Create the controller app.rb.
+Create class responsibility.
+Create a register view to allow registration of the user via the Register button.
+Create a get in the controller to access the register view.
+Create a user_registered view to display the user name and access the game via the Start button.
+Create a post in the controller to access the user_registered view.
+
+- the marketeer will be presented the choices (rock, paper and scissors):
+Create a play view to show the different choices.
+Create a get in the controller to access the play view.
+
+- the marketeer can choose one option:
+Add 3 different buttons in the play view for the 3 options available.
+Create a post in the controller to redirect the user from game to redirected allowing the creation of sessions.
+Create a game view to show the option chosen.
+Create a get in the controller to access the game in an open session.
+
+- the game will choose a random option:
+Add a sample array in the game view to allow the game to choose an option too.
+
+- a winner will be declared:
+Add conditionals in the game view to announce the winner of the game.
 
 Instructions
 -------
