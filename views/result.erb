@@ -6,11 +6,11 @@
 <html>
   <body>
 
-        <h1 class="center">
-          <span class="rock">ROCK  </span>
-          <span class="paper">PAPER  </span>
-          <span class="scissors">SCISSORS</span>
-        </h1>
+    <h1 class="center">
+      <span class="rock">ROCK  </span>
+      <span class="paper">PAPER  </span>
+      <span class="scissors">SCISSORS</span>
+    </h1>
 
         <div class="game_space">
           <br/>
@@ -20,9 +20,12 @@
           <h1 class="subheader"><%= @result %>!</h1>
         </div>
         <div class="center">
-          <form action='/'>
-            <button class="btn purple" id="restart">Play Again!</button>
+          <form action='/rematch'>
+            <button class="btn purple" id="restart">Rematch!</button>
           </form>
-
+          <form action='/'>
+            <button class="btn purple" id="restart">Start Again!</button>
+          </form>
+        </div>
   </body>
 </html>

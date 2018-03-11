@@ -15,9 +15,9 @@
     <div class="game_space">
       <img class="img_center home" src="https://image.ibb.co/iAO0L7/jan_ken_pon_by_tinsil.png">
 
-        <table class="home center">
+      <form action="/names" method="post">
+        <table class="home center" id="setup_table">
 
-          <form action="/names" method="post">
             <tr>
               <td>
                 <label for="p1_name">Player 1 Name:</label>
@@ -28,23 +28,25 @@
                 <input type="text" id="p2_name_box" name="p2_name">
               </td>
               <td>
-                <button type="submit" class="btn purple" id="submit_names">Submit Names</button>
+                <label for="play_comp" id="comp_label">Play against computer: </label>
+                <input type="checkbox" id="play_comp" name="computer" value="COMP">
               </td>
             </tr>
-          </form>
 
-          <tr>
-            <td>
-              <button class="btn purple" id="random_name" onclick="randomP1Name()">Random P1 Name</button>
-            </td>
-            <td>
-              <button class="btn purple" id="random_name" onclick="randomP2Name()">Random P2 Name</button>
-            </td>
-            <td>
-              <input type="checkbox" name="computer" value="COMP">Play against computer?
-            </td>
-        </tr>
+            <tr>
+              <td>
+                <button type="button" class="btn purple" id="random_name" onclick="randomP1Name()">Random P1 Name</button>
+              </td>
+              <td>
+                <button type="button" class="btn purple" id="random_name" onclick="randomP2Name()">Random P2 Name</button>
+              </td>
+              <td>
+                <button type="submit" class="btn purple" id="submit_names">Submit Names</button>
+              </td>
+          </tr>
+
       </table>
+    </form>
     </div>
   </body>
 

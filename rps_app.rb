@@ -14,20 +14,23 @@ class RPS < Sinatra::Base
   post '/names' do
     session[:p1_name] = params[:p1_name]
     session[:p2_name] = params[:p2_name]
+    session[:computer] = params[:computer]
     session[:turn] = session[:p1_name]
     redirect '/game'
   end
 
   get '/game' do
     @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name]
+    @comp = " (COMP)" if session[:computer]
+    @p2_name = ([session[:p2_name]] << @comp).join()
     @turn = session[:turn]
     erb(:game)
   end
 
   get '/p1_move' do
     session[:p1_move] = params[:p1_move]
-    session[:turn] = session[:p2_name]
+    @comp = " (COMP)" if session[:computer]
+    session[:turn] = ([session[:p2_name]] << @comp).join()
     redirect '/game'
   end
 
@@ -38,11 +41,17 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @p1_name = session[:p1_name]
-    @p2_name = session[:p2_name]
+    @comp = " (COMP)" if session[:computer]
+    @p2_name = ([session[:p2_name]] << @comp).join()
     @p1_move = session[:p1_move]
     @p2_move = session[:p2_move]
     @result = Result.new(@p1_name, @p1_move, @p2_name, @p2_move).calculate
     erb(:result)
+  end
+
+  get '/rematch' do
+    session[:turn] = session[:p1_name]
+    redirect '/game'
   end
 
   run! if app_file == $0
