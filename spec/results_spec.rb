@@ -6,7 +6,7 @@ describe 'Result' do
   end
 
 
-  describe '#add_result' do
+  describe '#add_result' do # need two more tests on this method 
     subject(:result) { Result.new }
     it "adds new result in the results array" do
       new_result = :won
