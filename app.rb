@@ -23,7 +23,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     @game.player1 = Player.new(params[:player1_name])
-    @game.player2 = params[:player2_name].nil? ? Computer.new : Player.new(params[:player2_name])
+
+    if params[:player2_name].nil?
+      @game.player2 = Computer.new
+    else
+      @game.player2 = Player.new(params[:player2_name])
+    end
 
     redirect '/play'
   end
