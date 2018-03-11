@@ -3,6 +3,6 @@ feature 'Testing if we divert to play after entering name' do
     visit('/')
     fill_in(:name, with: 'Adam')
     click_button('Play')
-    expect(page).to have_content('Here we play the game')
+    expect(page).to have_content('Adam, Welcome to RPS')
   end
 end
