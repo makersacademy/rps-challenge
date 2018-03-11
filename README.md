@@ -14,6 +14,7 @@ I found that I was really comfortable this time around with what I was creating,
 - [ ] Tidy up README
 - [ ] Add domain modeling breakdown in readme
 - [ ] Refactor code and tests as required
+- [ ] In 2 player mode add a separate page so player 2 can enter there selection separately
 
 ## Task
 
