@@ -3,9 +3,9 @@
   <body>
     <h1><%=@game.whos_turn.name%>'s turn!'</h1>
     <form action='/apply_and_redirect' method='post'>
-      <input type="radio" name="shape_choice" value="0">Pick <%=@game.shapes[0].name%><br>
-      <input type="radio" name="shape_choice" value="1">Pick <%=@game.shapes[1].name%><br>
-      <input type="radio" name="shape_choice" value="2">Pick <%=@game.shapes[2].name%><br>
+      <% @game.shapes.each_with_index do |shape, i| %>
+      <input type="radio" name="shape_choice" value="<%=i.to_s%>">Pick <%=shape.name%><br>
+      <%end%>
       <button type='submit'>Play!</button>
     </form>
   </body>
