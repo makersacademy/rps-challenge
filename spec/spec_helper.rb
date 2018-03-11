@@ -20,5 +20,5 @@ end
 require_relative '../rps_app.rb'
 # or whatever your controller app file is called
 ENV['RACK_ENV'] = 'test'
-Capybara.app = RPS
+Capybara.app = Game
 #  or whatever your class is called in your controller

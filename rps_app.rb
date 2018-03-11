@@ -1,7 +1,7 @@
 require 'sinatra/base'
 #require_relative './lib/RPS.rb'
 
-class RPS < Sinatra::Base
+class Game < Sinatra::Base
 
   enable :sessions
   get '/' do
@@ -18,5 +18,8 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/options' do
+    erb :options
+  end
   run! if app_file == $0
 end

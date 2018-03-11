@@ -1,7 +1,7 @@
-# require 'RPS'
+# require 'Game'
 #
-# describe RPS do
-#   subject(:paola) { RPS.new('Paola') }
+# describe Game do
+#   subject(:paola) { Game.new('Paola') }
 #
 #   describe '#name' do
 #     it 'returns the name' do

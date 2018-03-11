@@ -28,13 +28,6 @@ Hints on functionality
 - a winner will be declared
 
 
-## Rules of the game
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-
 Gems and ruby version used
 -------
 - ruby '2.5.0'
