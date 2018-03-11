@@ -9,7 +9,7 @@ class Game
   end
 
   def self.instance
-    @game ||= Game.new
+    @game
   end
 
 
