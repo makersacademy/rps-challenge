@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/githubschool/on-demand-github-pages.svg?branch=master)](https://travis-ci.org/githubschool/on-demand-github-pages)
 
-#RPS Challenge
+# RPS Challenge
 Week 3 - Weekend challenge
 
 Summary
@@ -12,7 +12,7 @@ This web application allows a player to play *Rock, Paper, Scissors* against a c
 Functionalities
 ----
 - A player is able to enter their name before the game
-![screenshot](rps-challenge/screenshots/enter_player_name_rps.jpeg )
+![screenshot](rps-challenge/screenshots/enter_player_name_rps.jpeg)
 - A player is presented the choices (rock, paper and scissors)
 ![screenshot](https://github.com/antcin/rps-challenge/blob/master/screenshots/presented_with_choices.jpeg)
 - A player can pick one option
