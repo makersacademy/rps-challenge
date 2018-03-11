@@ -16,15 +16,33 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
-          Rock
-        </div>
-        <div class="col-sm-4">
-          Paper
-        </div>
-        <div class="col-sm-4">
-          Sciccors
-        </div>
+        <form class="" action="/move" method="post">
+          <div class="col-sm-4 rock">
+
+            <input type="radio" class="Rock" name="hand" value="Rock">
+            Rock<br>
+
+          </div>
+          <div class="col-sm-4">
+
+            <input type="radio" class="Paper" name="hand" value="Paper">
+            Paper<br>
+
+          </div>
+          <div class="col-sm-4">
+
+            <input type="radio" name="hand" value="Sciccors">
+            Sciccors<br>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button type="submit" name="button">submit move</button>
+            </div>
+          </div>
+
+        </form>
       </div>
     </div>
   </body>
