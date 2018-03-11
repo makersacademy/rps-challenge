@@ -1,3 +1,6 @@
+require_relative './rps_mod.rb'
+require_relative './hand_shape.rb'
+
 class Game
 
   attr_reader :whos_turn, :shapes, :player1, :player2
