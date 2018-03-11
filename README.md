@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/githubschool/on-demand-github-pages.svg?branch=master)](https://travis-ci.org/githubschool/on-demand-github-pages)
+[![Build Status](https://travis-ci.org/githubschool/on-demand-github-pages.svg?branch=master)](https://travis-ci.org/githubschool/on-demand-github-pages) [![Coverage Status](https://coveralls.io/repos/github/antcin/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/antcin/rps-challenge?branch=master)
 
 # RPS Challenge
 Week 3 - Weekend challenge
@@ -12,7 +12,7 @@ This web application allows a player to play *Rock, Paper, Scissors* against a c
 Functionalities
 ----
 - A player is able to enter their name before the game
-![screenshot](rps-challenge/screenshots/enter_player_name_rps.jpeg)
+![screenshot](https://github.com/antcin/rps-challenge/screenshots/enter_player_name_rps.jpeg)
 - A player is presented the choices (rock, paper and scissors)
 ![screenshot](https://github.com/antcin/rps-challenge/blob/master/screenshots/presented_with_choices.jpeg)
 - A player can pick one option
@@ -27,7 +27,7 @@ Interface
 -------
 
 Link to play the game online:
-https://rock-paper-scissors-ac.herokuapp.com/play
+https://rock-paper-scissors-ac.herokuapp.com/
 
 Instructions to play the web application locally, from the command line:
 ```sh
