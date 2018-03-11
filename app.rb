@@ -22,7 +22,7 @@ class HandShapeGame < Sinatra::Base
     if params[:player2_choice] == 'Bot'
       redirect '/bot_setup'
     else
-      redirect '/human_setup'
+      redirect '/player_2_login'
     end
   end
 
@@ -33,8 +33,16 @@ class HandShapeGame < Sinatra::Base
     redirect '/start'
   end
 
-  get '/human_setup' do
+  get '/player_2_login' do
+    @player1_name = session[:player_1_name]
     erb :player_2_login
+  end
+
+  post '/human_setup' do
+    player1 = Player.new(session[:player_1_name])
+    player2 = Player.new(params[:player_2_name])
+    Game.create_instance(player1, player2)
+    redirect '/start'
   end
 
   get '/start' do
