@@ -1,23 +1,20 @@
-require 'computer'
+require_relative 'computer.rb'
 
 class Game
 
-  attr_reader :beatmap
+  attr_reader :beatmap, :ai_choice
 
-  def intialize
-    @beatmap = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
-
-  def random_choice_generator
+  def initialize
     computer = Computer.new
-    computer.selection
+    @ai_choice = computer.selection
+    @beatmap = { 'scissors' => 'paper', 'paper' => 'rock', 'rock' => 'scissors' }
   end
 
-  def finish?
-    player1_input != random_choice_generator
+  def draw?(player1_input)
+    player1_input == ai_choice
   end
 
-  def win?
-    beatmap[player1_input] == random_choice_generator
-    #if true player 1 wins
+  def win?(player1_input)
+    beatmap[player1_input] == ai_choice
   end
 end

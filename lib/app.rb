@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './game.rb'
 
 class Rps < Sinatra::Base
 
@@ -22,13 +23,32 @@ class Rps < Sinatra::Base
 
   post '/selection' do
     session[:selection] = params[:Player_1_selection]
-    @player_1_selection = session[:selection]
-
     redirect('result')
   end
 
   get '/result' do
+    @player_1_selection = session[:selection]
+    game = Game.new
+    redirect('/draw') if game.draw?(@player_1_selection)
+    if game.win?(@player_1_selection)
+      redirect('/win')
+    else
+      redirect('/loss')
+    end
+  end
 
+  get '/draw' do
+    erb(:draw)
+  end
+
+  get '/loss' do
+    @player_1_name = session[:player_1_name]
+    erb(:loss)
+  end
+
+  get '/win' do
+    @player_1_name = session[:player_1_name]
+    erb(:win)
   end
 
 

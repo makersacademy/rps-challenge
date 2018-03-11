@@ -3,7 +3,7 @@ class Computer
   attr_reader :converter
 
   def initialize
-    @converter = ["rock", "paper", "scissors"]
+    @converter = ["rock", "paper", "scissors",]
   end
 
   def selection
