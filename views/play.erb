@@ -1,7 +1,7 @@
-<h><%= $game.player_1.name %> vs. <%= $game.player_2.name %></h>
-<form action="/play" method="post">
+<center><font size="12" color="pink"><%= $game.player_1.name %> vs. <%= $game.player_2.name %></font>
+<font size="5" color="purple"><form action="/play" method="post">
   <label for="player_1_weapon">
-    Player 1 move
+    <%= $game.player_1.name %>'s move
     <select name="player_1_weapon">
       <% $game.rules.each do |weapon, x| %>
       <option value="<%= weapon %>"><%= weapon %></option>
@@ -9,7 +9,7 @@
     </select>
   </label>
   <label for="player_2.weapon(weapon)">
-    Player 2 move
+    <%= $game.player_2.name %>'s move
     <select name="player_2_weapon">
       <% $game.rules.each do |weapon, x| %>
       <option value="<%= weapon %>"><%= weapon %></option>
@@ -17,4 +17,4 @@
     </select>
   </label>
   <input type="submit" value="submit">
-</form>
+</form></font></center>
