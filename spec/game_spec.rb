@@ -10,8 +10,9 @@ describe Game do
     end
   end
 
-  describe '#create' do
+  describe '#start' do
     it 'starts a new game' do
+      described_class.create(player)
       expect(described_class.instance).to be_an_instance_of described_class
     end
   end
