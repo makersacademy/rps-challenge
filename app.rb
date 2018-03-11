@@ -20,11 +20,8 @@ class HandShapeGame < Sinatra::Base
   post '/names' do
     session[:player_1_name] = params[:player_1_name]
     session[:modpath] = params[:game_choice]=='RPS' ? './rps_mod.rb'  : './rpsls_mod.rb'
-    if params[:player2_choice] == 'Bot'
-      redirect '/bot_setup'
-    else
-      redirect '/player_2_login'
-    end
+    redirect_path = params[:player2_choice] == 'Bot' ? '/bot_setup' : '/player_2_login'
+    redirect redirect_path
   end
 
   get '/bot_setup' do
@@ -53,11 +50,8 @@ class HandShapeGame < Sinatra::Base
   post '/apply_and_redirect' do
     @game.play(params[:shape_choice].to_i)
     redirect './game_over' if @game.finished?
-    if @game.whos_turn.name == session[:bot_name]
-      redirect '/play_bot'
-    else
-      redirect '/play_human'
-    end
+    redirect_path = @game.whos_turn.name == session[:bot_name] ? '/play_bot' : '/play_human'
+    redirect redirect_path
   end
 
   get '/play_human' do
