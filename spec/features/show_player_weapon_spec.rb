@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
 
-feature 'Play RockPaperScissors' do
+feature 'Play Rock Paper Scissors' do
   scenario 'player can pick rock, paper or scissors' do
     sign_in_and_play
     expect(page).to have_button 'rock'

@@ -1,6 +1,7 @@
-<%= "Welcome to RockPaperScissors, #{@game.player.name.capitalize}!" %>
+<link rel="stylesheet" type="text/css" href="style.css">
+<h1><%= "Welcome to Rock Paper Scissors, #{@game.player.name.capitalize}!" %></h1>
 <br>
-Please choose your weapon
+<h2>Please pick your weapon</h2>
 <form action="/weapon" method="post">
   <input type="submit" name="weapon" value="rock">
   <input type="submit" name="weapon" value="paper">

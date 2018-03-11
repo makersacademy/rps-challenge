@@ -15,6 +15,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
+    puts params[:player_name]
     player = Player.new(params[:player_name])
     computer = Computer.new("Computer")
     @game = Game.create(player, computer)
@@ -22,6 +23,7 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @player = @game.player
     erb :play
   end
 
@@ -31,8 +33,7 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    @game.computer.weapon
-    erb :result
+    erb(:result)
   end
 
   run! if app_file == $0

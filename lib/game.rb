@@ -15,7 +15,7 @@ class Game
   end
 
   def self.create(player, computer)
-    @game ||= Game.new(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance
@@ -25,9 +25,9 @@ class Game
   def result
     player_weapon, computer_weapon = @player.weapon, @computer.weapon
     if RULES[player_weapon] == computer_weapon
-      "#{@player.name}, you win!"
+      "#{@player.name.capitalize}, you win!"
     elsif RULES[computer_weapon] == player_weapon
-      "#{@player.name}, you lose!"
+      "#{@player.name.capitalize}, you lose!"
     else
       "It's a draw!"
     end

@@ -1,9 +1,10 @@
-<%= "#{@game.player.name}, you picked #{@game.player.weapon}!"%>
+<link rel="stylesheet" type="text/css" href="style.css">
+<h1><%= "#{@game.player.name.capitalize}, you picked #{@game.player.weapon}!"%></h1>
 <br>
-<%= "Computer picked #{@game.computer.weapon}!"%>
+<h1><%= "Computer picked #{@game.computer.weapon}!"%></h1>
 <br>
-<%= @game.result %>
+<h1><%= @game.result.capitalize %></h2>
 
-<form action="/">
-<input type="submit" name="weapon" value="Play again">
+<form action="/" method="get">
+<input type="submit" value="Play again">
 </form>
