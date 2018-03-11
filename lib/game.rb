@@ -25,9 +25,9 @@ class Game
   def result
     player_weapon, computer_weapon = @player.weapon, @computer.weapon
     if RULES[player_weapon] == computer_weapon
-      "#{@player.name.capitalize}, you win!"
+      "#{@player.name}, you win!"
     elsif RULES[computer_weapon] == player_weapon
-      "#{@player.name.capitalize}, you lose!"
+      "#{@player.name}, you lose!"
     else
       "It's a draw!"
     end
