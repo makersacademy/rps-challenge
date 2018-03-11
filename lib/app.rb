@@ -29,6 +29,7 @@ class Rps < Sinatra::Base
   get '/result' do
     @player_1_selection = session[:selection]
     game = Game.new
+    session[:ai_choice] = game.ai_choice
     redirect('/draw') if game.draw?(@player_1_selection)
     if game.win?(@player_1_selection)
       redirect('/win')
@@ -43,11 +44,15 @@ class Rps < Sinatra::Base
 
   get '/loss' do
     @player_1_name = session[:player_1_name]
+    @ai_selection = session[:ai_choice].capitalize!
+    @player_1_selection = session[:selection].capitalize!
     erb(:loss)
   end
 
   get '/win' do
     @player_1_name = session[:player_1_name]
+    @ai_selection = session[:ai_choice].capitalize!
+    @player_1_selection = session[:selection].capitalize!
     erb(:win)
   end
 

@@ -1,9 +1,29 @@
-<p>
-<%= @player_1_name %> vs. Computer
-</p>
+<html>
+<body bgcolor="#F38181">
 
 
+<style>
+#choice{
+  position: absolute;
+  top: 250px;
+  left: 565px;
+  width: 400px;
+  height: 300px;
+  border: solid 0px;
+}
+</style>
+
+<div id="choice">
+  <p>
+  <%= @player_1_name %> vs. Computer
+  </p>
+  <p>
+    Choose wisely
+  </p>
 <form action="/selection" method="post">
  <input type="text" name="Player_1_selection">
  <input type="submit" value="Submit">
-</form>
+</form></div>
+
+</body>
+</html>

@@ -1,1 +1,21 @@
-Unlucky <%=@player_1_name%>, you lost
+<style>
+#loss{
+  position: absolute;
+  top: 250px;
+  left: 565px;
+  width: 400px;
+  height: 300px;
+  border: solid 0px;
+}
+</style>
+
+<html>
+<body bgcolor="#F38181">
+<div id="loss">
+  <p> Computer chose <%=@ai_selection%>!</p>
+  <p> <%= @player_1_selection%> loses to <%=@ai_selection%></p>
+Unlucky <%=@player_1_name%>, you got shredded
+</div>
+
+</body>
+</html>
