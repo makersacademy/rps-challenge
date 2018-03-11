@@ -4,6 +4,6 @@ feature 'Testing if we divert to /result chosing an option and play' do
     click_button('Play')
     # choose("#paper")
     # choose("paper")
-    expect(page).to have_content("Result displayed here")
+    expect(page).to have_content("You won! rock selected")
   end
 end

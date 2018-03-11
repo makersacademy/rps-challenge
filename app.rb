@@ -10,7 +10,7 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:name]))
+    $game = Game.new(Player.new(params[:name]), Player.new(:computer))
     redirect('/play')
   end
 
@@ -19,8 +19,9 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    puts params[:rps]
-    # "Result displayed here"
+    puts "is params[rps] actually a string? #{params[:rps].is_a?(String)}"
+    $game.p1.choice = params[:rps]
+    $game.p2.choice = $game.defend
     erb(:result)
   end
 

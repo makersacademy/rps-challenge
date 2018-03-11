@@ -25,12 +25,14 @@
 
     <div class="row">
 
-      <div class="col-lg-3 col-md-3 col-sm-2 b r"> </div> <!-- padding cell left -->
-      <div class="col-lg-6 col-md-6 col-sm-8 g"> <!-- result cell -->
-        <h1 class=" text-info"> You won! </h1>
-        <p class="lead text-info"><%=params[:rps]%> selected</p>
+      <div class="col-lg-3 col-md-3 col-sm-2 b"> </div> <!-- padding cell left -->
+      <%= "<div class='alert " + $game.alert_type + " col-lg-6 col-md-6 col-sm-8'>" %>
+
+      <!-- <div class="alert alert-success col-lg-6 col-md-6 col-sm-8"> <!-- result cell -->
+        <h4 class="alert-heading" role="alert"> <%=$game.result%> </h4>
+        <p>You chose: <%=$game.p1.choice.capitalize%> | Computer chose: <%=$game.p2.choice.capitalize%></p>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-2 r"> </div> <!-- padding cell right -->
+      <div class="col-lg-3 col-md-3 col-sm-2"> </div> <!-- padding cell right -->
     </div>
 
     <div class="row">
