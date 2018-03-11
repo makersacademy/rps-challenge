@@ -5,12 +5,16 @@ require './lib/game'
 class RPS < Sinatra::Base
   enable :sessions
 
+  before do
+  @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:name]), Player.new(:computer))
+    @game = Game.create(Player.new(params[:name]), Player.new(:computer))
     redirect('/play')
   end
 
@@ -20,8 +24,8 @@ class RPS < Sinatra::Base
 
   post '/result' do
     puts "is params[rps] actually a string? #{params[:rps].is_a?(String)}"
-    $game.p1.choice = params[:rps]
-    $game.p2.choice = $game.defend
+    @game.p1.choice = params[:rps]
+    @game.p2.choice = @game.p2.defend # computer weapon randomly generated
     erb(:result)
   end
 
