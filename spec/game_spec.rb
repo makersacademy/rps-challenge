@@ -1,22 +1,23 @@
-require 'game'
-
 describe Game do
-  subject(:game_class) { described_class }
+  subject(:game) { described_class.new(Player.new('Reena')) }
 
-  it 'Store player name' do
-    game = game_class.new("Reena")
-    expect(game.player).to eq "Reena"
-    p game_class.current
-  end
+  describe '#play' do
 
-  describe "#create" do
-    it "should create a new game" do
-      game_class.create("Reena")
-      expect(game_class.current).to be_a(Game)
+    it 'tells if you have won' do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
+      expect(game.play("rock")).to eq :win
+    end
+
+    it 'tells if you have lost' do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      expect(game.play("scissors")).to eq :lose
+    end
+
+    it 'tells if it is a draw situation' do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
+      expect(game.play("rock")).to eq :draw
     end
   end
-
-  it "should have a game with player name Reena" do
-    expect(game_class.current.player).to eq "Reena"
-  end
 end
+
+  
