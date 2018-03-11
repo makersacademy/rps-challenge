@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <htmL>
   <body>
-    <h1>Sign in to play!</h1>
+    <h1>Welcome to a game of competitive handshapes!</h2>
+    <h2>Sign in to play!</h2>
     <form action='/names' method=post>
       <label for='player_1_name'>
-        Enter your name here!
+        Player 1 enter your name here!
         <input type='text' name='player_1_name'>
-      </label>
+      </label>  <br>
+      <h3>Choose your opponent</h3>
+      <input type="radio" name="player2_choice" value='Bot' checked="checked">Play against a machine<br>
+      <input type="radio" name="player2_choice" value='Human'>Play against a fellow human<br>
+      <br>
       <button type='submit'>Play!</button>
+    </form>
   </body>
 </html>

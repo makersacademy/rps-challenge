@@ -11,6 +11,6 @@ feature 'playing a game against computer' do
     click_on 'Play!'
     expect(page).to have_content 'calculating'
     click_on 'What is that robot up to??'
-    expect(page).to have_content 'WINNER!'
+    expect(page).to have_content 'GAME OVER!'
   end
 end
