@@ -1,39 +1,30 @@
-feature 'Choose RPS' do
-  scenario 'Choosing Rock' do
-    visit '/' do
-      fill_in :name, with: 'Reena'
-      click_button "Start Game"
-      choose("Rock")
-      click_button "Ready to go"
-      expect(page).to have_content "Reena choose Rock"
-    end
+feature "after signing in, you choose RPS" do
+  def choose_rps(attack)
+     choose(attack)
+     click_button "Attack your opponent"
+     expect(page).to have_content("Reena choose #{attack}")
   end
 
+  background do
+    sign_in_and_play
+  end
+
+feature 'Choose RPS' do
+  scenario 'Choosing Rock' do
+    choose_rps("Rock")
+  end
+end
+
   scenario 'Rock is default' do
-    visit '/'
-    fill_in :name, with: 'Reena'
-    click_button "Start Game"
-    click_button "Ready to go"
+    click_button "Attack your opponent"
     expect(page).to have_content "Reena choose Rock"
   end
 
   scenario 'Choosing Paper' do
-    visit '/' do
-      fill_in :name, with: 'Reena'
-      click_button "Start Game"
-      choose("Paper")
-      click_button "Ready to go"
-      expect(page).to have_content "Reena choose Paper"
-    end
+    choose_rps("Paper")
   end
 
   scenario 'Choosing Scissors' do
-    visit '/' do
-      fill_in :name, with: 'Reena'
-      click_button "Start Game"
-      choose("Scissors")
-      click_button "Ready to go"
-      expect(page).to have_content "Reena choose Scissors"
-    end
+    choose_rps("Scissors")
   end
 end
