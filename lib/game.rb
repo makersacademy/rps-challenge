@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player1
+  attr_reader :player1, :move
   def initialize(player1)
     @player1 = player1
   end
@@ -12,5 +12,7 @@ class Game
     @game
   end
 
-
+  def select_move(move)
+    @move = move
+  end
 end
