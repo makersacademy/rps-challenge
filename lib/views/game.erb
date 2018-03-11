@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style type="text/css">
+      body{
+        background-color: #e0e0e0;
+      }
+      .X {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%)
+        text-align: center;
+        font-family: Pacifico, Calibri;
+        font-size: 3em,
+      }
+  </style>
+  </head>
+  <body>
+    <h3 class ='X' style='left: 43%; top: 20%;'>The game chose <%= @com=['rock','paper','scissors'].sample %></h3>
+    <h3 class ='X' style='left: 45%; top: 80%;'>You chose <%= @choice %></h3>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'rock' && @com == 'rock'
+    %></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'rock' && @com == 'paper'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'rock' && @com == 'scissors'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'paper' && @com == 'rock'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'paper' && @com == 'paper'
+    %></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'paper' && @com == 'scissors'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'scissors' && @com == 'rock'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'scissors' && @com == 'paper'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'scissors' && @com == 'scissors'
+    %></h1>
+  </body>
+</html>
