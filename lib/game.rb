@@ -50,11 +50,7 @@ class Game
   end
 
   def winstring
-    if winning_player
-      "#{winning_player.name} is the WINNER!"
-    else
-      "It's a tie!"
-    end
+    winning_player ? "#{winning_player.name} is the WINNER!" :   "It's a tie!"
   end
 
   def switch_players
