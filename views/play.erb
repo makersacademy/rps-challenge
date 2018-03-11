@@ -1,16 +1,26 @@
-<form action="/play" method="post">
-  <input type="submit" name="move" value="rock" />
-  <input type="submit" name="move" value="paper" />
-  <input type="submit" name="move" value="scissors" />
-</form>
+<% if @game_model.game_finished %>
+  <p>Last round: <%= @game_model.player1.name %>: <%= @game_model.player1_move %> vs. <%= @game_model.player2.name %>: <%= @player_move %></p>
 
+  <p><%= @game_model.player1.name %> <%= @game_model.round_result %> at previous round!</p>
+  <p><%= {
+    :won => "Congratulations, #{@game_model.player1.name} won!",
+    :lost => "Congratulations, #{@game_model.player2.name} won!",
+    :draw => "It's a draw"
+    }[@game_model.final_result] %>
+  </p>
+  <a href="/">Start a new game</a>
+<% else %>
+  <form action="/play" method="post">
+    <input type="submit" name="move" value="rock" />
+    <input type="submit" name="move" value="paper" />
+    <input type="submit" name="move" value="scissors" />
+  </form>
 <p><%= @next_player.name %>'s turn</p>
+  <% if @game_model.turn == :player1 && @game_model.results_history != nil %>
+  <p>Last round: <%= @game_model.player1.name %>: <%= @game_model.player1_move %> vs. <%= @game_model.player2.name %>: <%= @player_move %></p>
 
+  <p><%= @game_model.player1.name %> <%= @game_model.round_result %> at previous round!</p>
 
-<% if @game_model.turn == :player1 %>
-<p><%= @game_model.player1.name %>: <%= @game_model.player1_move %> vs. <%= @game_model.player2.name %>: <%= @player_move %></p>
-
-<p>You <%= @game_model.round_result %> at this round!</p>
-
-<p>You <%= @game_model.final_result %> so far!</p>
+  <p><%= @game_model.player1.name %> <%= @game_model.final_result %> so far!</p>
+  <% end %>
 <% end %>

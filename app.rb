@@ -26,12 +26,11 @@ class Rps < Sinatra::Base
     if @game_model.turn == :player1
       @next_player = @game_model.player2
       @game_model.move1(@player_move)
-      erb :play
     else
       @next_player = @game_model.player1
       @game_model.move2(@player_move)
-      @game_model.game_finished ? (redirect to('/end_game')) : (erb :play)
     end
+    erb :play
   end
 
   get '/end_game' do
