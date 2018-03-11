@@ -4,7 +4,7 @@ require "./lib/player"
 
 class MyRackApp < Sinatra::Base
   get '/' do
-  	erb :index
+    erb :index
   end 	
   post '/names' do  
     player_1 = Player.new(params[:player_1_name])
