@@ -1,0 +1,14 @@
+    <h1>Choose your weapon, <%= @game.turn.name %> </h1>
+
+    <form action='/save' method="post">
+      <label for="Rock">
+      Rock: <input type="radio" name="type" value='Rock'>
+      </label>
+      <label for="Paper">
+      Paper:<input type="radio" name="type" value='Paper'>
+      </label>
+      <label for="Scissors">
+      Scissors:<input type="radio" name="type" value='Scissors'>
+      </label>
+      <input type="submit" value="Confirm">
+    <form>
