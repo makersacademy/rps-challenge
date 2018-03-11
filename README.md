@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/githubschool/on-demand-github-pages.svg?branch=master)](https://travis-ci.org/githubschool/on-demand-github-pages) [![Coverage Status](https://coveralls.io/repos/github/antcin/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/antcin/rps-challenge?branch=master)
+[![Build Status](https://travis-ci.org/antcin/rps-challenge.svg?branch=master)](https://travis-ci.org/antcin/rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/antcin/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/antcin/rps-challenge?branch=master)
 
 # RPS Challenge
 Week 3 - Weekend challenge
@@ -50,6 +50,7 @@ I have started reading Sandi Metz's [POODR](http://www.poodr.com/), which turned
 I still rely on walkthroughs and code written by students from previous cohorts (@lwkchan and @serenahathi's code provided me with several interesting inputs); however, I am beginning to feel slightly less like a _knob_ and understand concepts that where pretty much obscure to me in the previous two weeks (e.g. mocks and stubs). It's still a long way to go, but I feel much more confident. Also, my domain modelling skills still require further improvement.
 
 To do (someday)
+-------
 - Allow two players to play the Game
 - Implement _Rock, Paper, Scissors, Spock, Lizard_
 - Improve CSS design
