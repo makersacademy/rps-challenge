@@ -14,7 +14,34 @@
   </style>
   </head>
   <body>
-    <h1 class ='X' style='left: 38%; top: 20%;'>The game chose <%= ['rock','paper','scissors'].sample %></h1>    
-    <h1 class ='X' style='left: 42%; top: 50%;'>You chose <%= @choice %></h1>
+    <h3 class ='X' style='left: 43%; top: 20%;'>The game chose <%= @com=['rock','paper','scissors'].sample %></h3>
+    <h3 class ='X' style='left: 45%; top: 80%;'>You chose <%= @choice %></h3>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'rock' && @com == 'rock'
+    %></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'rock' && @com == 'paper'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'rock' && @com == 'scissors'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'paper' && @com == 'rock'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'paper' && @com == 'paper'
+    %></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'paper' && @com == 'scissors'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='red'><%=
+    'You lose' if @choice == 'scissors' && @com == 'rock'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><font color='green'><%=
+    'You win' if @choice == 'scissors' && @com == 'paper'
+    %></font></h1>
+    <h1 class ='X' style='left: 45%; top: 50%;'><%=
+    'You draw' if @choice == 'scissors' && @com == 'scissors'
+    %></h1>
   </body>
 </html>
