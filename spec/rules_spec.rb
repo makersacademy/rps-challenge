@@ -1,16 +1,18 @@
 require 'rules'
+describe 'Rules' do
 
-describe '#beats' do
+  describe '#beats' do
+    it 'rock beats scissors' do
+      expect(Rules.beats[:rock]).to eq :scissors
+    end
 
-  it 'rock beats scissors' do
-    expect(Rules.beats[:rock]).to eq :scissors
+    it 'scissors beats paper' do
+      expect(Rules.beats[:scissors]).to eq :paper
+    end
+
+    it 'paper beats rock' do
+      expect(Rules.beats[:paper]).to eq :rock
+    end
   end
-
-  it 'scissors beats paper' do
-    expect(Rules.beats[:scissors]).to eq :paper
-  end
-
-  it 'paper beats rock' do
-    expect(Rules.beats[:paper]).to eq :rock
-  end
+  
 end
