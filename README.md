@@ -1,3 +1,14 @@
+This is my first web application.
+Just a simple program that lets you play rock, paper, scissors, spock, lizard. This program would accept two players, they can enter their names, and then they select their move, you'd get to see the result in the end.
+Honestly this is super boring as a game, I thought it would be much better to play against a computer but accepting two players and play towards each other has got more potential as a game template, so I did that. 
+The other thing is that I've never watched star treck so I wasn't super keen on it but I did it anyway. I think it could've been better if there . 
+It's very basic and there's nothing fancy, but my program works fine and tests cover all, so I'm happy with it. 
+
+Got a green tick on Travis!
+
+
+
+
 # RPS Challenge
 
 Instructions
