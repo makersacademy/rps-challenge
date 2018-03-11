@@ -1,5 +1,11 @@
 class Game
-  attr_reader :player
+  attr_reader :player, :computer
+  CHOICES = [:rock, :paper, :scissors]
+  RULES = {
+    rock: :scissors,
+    paper: :rock,
+    scissors: :paper
+  }
 
   def initialize(player)
     @player = player
