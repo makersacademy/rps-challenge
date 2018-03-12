@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Rock | Paper | Scissors</title>
+  </head>
+  <style>
+    /* .g {background-color: green}
+    .r {background-color: red}
+    .y {background-color: yellow} */
+  </style>
+
+  <body>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Rock Paper Scissors</h1>
+        <p class="lead">Makers Academy, Week 3 (Weekend assignment)</p>
+        <hr class="my-4">
+        <p>Irfan Durrani, Feb '18 Cohort</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-3 col-md-3 col-sm-2 b"> </div> <!-- padding cell left -->
+      <%= "<div class='alert " + @game.alert_type + " col-lg-6 col-md-6 col-sm-8'>" %>
+
+        <h4 class="alert-heading" role="alert"> <%=@game.result%> </h4>
+        <p>You chose: <b><%=@game.p1.choice.capitalize%></b> | Computer chose: <b><%=@game.p2.choice.capitalize%></b></p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-2"> </div> <!-- padding cell right -->
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-3"> </div> <!-- empty cell -->
+
+        <div class="col-lg-2 col-md-2 col-sm-5 text-center btn btn-primary"> <!-- option Startover -->
+            <a href = "/">
+              <img class="img-fluid " src="/img/start_over.png">
+            </a>
+        </div> <!-- Startover cell ends -->
+
+        <div class="col-lg-2 col-md-2 col-sm-2"> </div> <!-- empty cell -->
+
+        <div class="col-lg-2 col-md-2 col-sm-5 text-center btn btn-primary"> <!-- option Play Again -->
+            <a href = "/play">
+              <img class="img-fluid " src="/img/play_again.png">
+            </a>
+        </div> <!-- Play Again cell ends -->
+
+      <div class="col-lg-3 col-md-3"> </div> <!-- empty cell -->
+
+    </div> <!-- row ends here -->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
