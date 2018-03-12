@@ -9,4 +9,11 @@ describe Computer do
       expect(computer.name).to eq 'Computer'
     end
   end
+
+  describe '#random_choice' do
+    it 'picks an available random choice' do
+      computer.random_choice
+      expect(choices).to include computer.choice
+    end
+  end
 end
