@@ -1,19 +1,19 @@
-feature 'checking the chosen options' do
-  scenario 'check for Rock button' do
+feature "Player's options" do
+  scenario 'Player is able to selecr Rock' do
     sign_in_and_play
     expect(page).to have_content 'Alex vs. Computer!'
     click_button 'Rock'
     expect(page).to have_content 'Alex chose Rock'
   end
 
-  scenario 'check for Paper button' do
+  scenario 'Player is able to selecr Paper' do
     sign_in_and_play
     expect(page).to have_content 'Alex vs. Computer!'
     click_button 'Paper'
     expect(page).to have_content 'Alex chose Paper'
   end
 
-  scenario 'check for Scissors button' do
+  scenario 'Player is able to selecr Scissors' do
     sign_in_and_play
     expect(page).to have_content 'Alex vs. Computer!'
     click_button 'Scissors'
