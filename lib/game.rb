@@ -26,7 +26,7 @@ class Game
     elsif ans.include?(computer_choice)
       :win
     else
-      :lose
+      :loose
     end
   end
 end

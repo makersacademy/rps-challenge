@@ -10,7 +10,7 @@ describe Game do
 
     it 'tells if you have lost' do
       allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
-      expect(game.play("scissors")).to eq :lose
+      expect(game.play("scissors")).to eq :loose
     end
 
     it 'tells if it is a draw situation' do
@@ -19,5 +19,3 @@ describe Game do
     end
   end
 end
-
-  
