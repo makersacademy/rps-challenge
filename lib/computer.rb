@@ -1,7 +1,13 @@
+require 'game'
+
 class Computer
-  attr_reader :name
+  attr_reader :name, :choice
   def initialize(name)
     @name = name
-    @choice = nil
+    @choice = random_choice
+  end
+
+  def random_choice
+    Game::CHOICES.sample
   end
 end
