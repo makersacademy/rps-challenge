@@ -1,4 +1,4 @@
-<center><h1>Greetings <%= @player_name %>!</h1>
+<center><h1>Greetings <%= @game.player.name %>!</h1>
 <p>Select your move to see if you can defeat Doris, the reigning RPS champion of the Capybaras!
 <form action="/result" method="post">
   <button type="submit" value="rock" name="player_move">Rock</button>
