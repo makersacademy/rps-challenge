@@ -1,9 +1,48 @@
-<form action='/names' method="post">
-  <label for="player1">
-    Player 1 name: <input type="text" name="player1">
-  </label>
-  <label for="player2">
-    Player 2 name: <input type="text" name="player2">
-  </label>
-  <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    </head>
+
+    <style>
+    body {
+      background-color: #EE5050;
+      text-align: center;
+      padding-top: 100px;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+    }
+
+    #player1 {
+      padding-bottom: 100px;
+    }
+
+    #player2 {
+
+    }
+
+    </style>
+
+
+    <body>
+
+    <h1> WELCOME TO ROCK, PAPER, SCISSORS, LIZARD, SPOCK </H1>
+
+    <form action='/names' method="post">
+      <label for="player1" id="player1">
+        Player 1 name: <input type="text" name="player1">
+      </label>
+      <br>
+      <label for="player2" id="player2">
+        Player 2 name: <input type="text" name="player2">
+      </label>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+    </body>
+
+  </html>

@@ -23,9 +23,11 @@ class Game
 
   def choose(choice)
     value = {
-      'r' => 'Rock',
-      'p' => 'Paper',
-      's' => 'Scissors'
+      'ro' => 'Rock',
+      'pa' => 'Paper',
+      'sc' => 'Scissors',
+      'li' => 'Lizard',
+      'sp' => 'Spock'
     }
     @turn.choose(value[choice.downcase])
   end
@@ -35,12 +37,28 @@ class Game
       ["Rock", "Rock"] => "DRAW",
       ["Paper", "Paper"] => "DRAW",
       ["Scissors", "Scissors"] => "DRAW",
+      ["Lizard", "Lizard"] => "DRAW",
+      ["Spock", "Spock"] => "DRAW",
       ["Rock", "Paper"] => "#{@player2.name} won!",
       ["Rock", "Scissors"] => "#{@player1.name} won!",
+      ["Rock", "Lizard"] => "#{@player1.name} won!",
+      ["Rock", "Spock"] => "#{@player2.name} won!",
       ["Paper", "Rock"] => "#{@player1.name} won!",
       ["Paper", "Scissors"] => "#{@player2.name} won!",
+      ["Paper", "Lizard"] => "#{@player2.name} won!",
+      ["Paper", "Spock"] => "#{@player1.name} won!",
       ["Scissors", "Paper"] => "#{@player1.name} won!",
-      ["Scissors", "Rock"] => "#{@player2.name} won!"
+      ["Scissors", "Rock"] => "#{@player2.name} won!",
+      ["Scissors", "Lizard"] => "#{@player1.name} won!",
+      ["Scissors", "Spock"] => "#{@player2.name} won!",
+      ["Lizard", "Rock"] => "#{@player2.name} won!",
+      ["Lizard", "Paper"] => "#{@player1.name} won!",
+      ["Lizard", "Scissors"] => "#{@player2.name} won!",
+      ["Lizard", "Spock"] => "#{@player1.name} won!",
+      ["Spock", "Rock"] => "#{@player1.name} won!",
+      ["Spock", "Paper"] => "#{@player2.name} won!",
+      ["Spock", "Scissors"] => "#{@player1.name} won!",
+      ["Spock", "Lizard"] => "#{@player2.name} won!"
     }
     array = []
     array.push(@player1.choice)

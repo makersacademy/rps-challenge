@@ -28,14 +28,14 @@ describe Game do
     it 'sets player1_choice' do
       expect(subject.player1).to receive(:choose).with("Rock")
 
-      subject.choose("r")
+      subject.choose("ro")
     end
 
     it 'sets player2_choice' do
       expect(subject.player2).to receive(:choose).with("Rock")
 
       subject.switch
-      subject.choose("r")
+      subject.choose("ro")
     end
 
   end
@@ -59,9 +59,44 @@ describe Game do
       expect(subject.result).to eq('George won!')
     end
 
-    it "Paper beats rock" do
+    it "Rock beats Lizard" do
+      allow(subject.player1).to receive(:choice).and_return 'Rock'
+      allow(subject.player2).to receive(:choice).and_return 'Lizard'
+
+      expect(subject.result).to eq('George won!')
+    end
+
+    it "Spock beats Rock" do
+      allow(subject.player1).to receive(:choice).and_return 'Rock'
+      allow(subject.player2).to receive(:choice).and_return 'Spock'
+
+      expect(subject.result).to eq('Charles won!')
+    end
+
+    it "Paper beats Rock" do
       allow(subject.player1).to receive(:choice).and_return 'Rock'
       allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('Charles won!')
+    end
+
+    it "Paper beats Spock" do
+      allow(subject.player1).to receive(:choice).and_return 'Spock'
+      allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('Charles won!')
+    end
+
+    it "Lizard beats Paper" do
+      allow(subject.player1).to receive(:choice).and_return 'Lizard'
+      allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('George won!')
+    end
+
+    it "Lizard beats Spock" do
+      allow(subject.player1).to receive(:choice).and_return 'Spock'
+      allow(subject.player2).to receive(:choice).and_return 'Lizard'
 
       expect(subject.result).to eq('Charles won!')
     end
@@ -69,6 +104,20 @@ describe Game do
     it "Scissors beats paper" do
       allow(subject.player1).to receive(:choice).and_return 'Scissors'
       allow(subject.player2).to receive(:choice).and_return 'Paper'
+
+      expect(subject.result).to eq('George won!')
+    end
+
+    it "Spock beats Scissors" do
+      allow(subject.player1).to receive(:choice).and_return 'Scissors'
+      allow(subject.player2).to receive(:choice).and_return 'Spock'
+
+      expect(subject.result).to eq('Charles won!')
+    end
+
+    it "Scissors beats Lizard" do
+      allow(subject.player1).to receive(:choice).and_return 'Scissors'
+      allow(subject.player2).to receive(:choice).and_return 'Lizard'
 
       expect(subject.result).to eq('George won!')
     end
@@ -90,6 +139,20 @@ describe Game do
     it "should say draw" do
       allow(subject.player1).to receive(:choice).and_return 'Scissors'
       allow(subject.player2).to receive(:choice).and_return 'Scissors'
+
+      expect(subject.result).to eq("DRAW")
+    end
+
+    it "should say draw" do
+      allow(subject.player1).to receive(:choice).and_return 'Lizard'
+      allow(subject.player2).to receive(:choice).and_return 'Lizard'
+
+      expect(subject.result).to eq("DRAW")
+    end
+
+    it "should say draw" do
+      allow(subject.player1).to receive(:choice).and_return 'Spock'
+      allow(subject.player2).to receive(:choice).and_return 'Spock'
 
       expect(subject.result).to eq("DRAW")
     end
