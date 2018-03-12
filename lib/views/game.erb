@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<title>Rock, Paper, Scissors</title>
+<style>
+form{
+  text-align: center;
+  position: relative;
+  top: 80px;
+  outline: none;
+}
+body{
+    background-image:url('https://image.ibb.co/jeHQ57/Swirly.gif');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "courier";
+}
+
+input[type=submit]{
+    background-color:white;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family : inherit;
+    font-size: 1em;
+outline: none;}
+
+h1{
+  font-family: "courier";
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  top: 100px;
+
+}
+
+p {
+  font-family: "courier";
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  top: 70px;
+}
+
+h2 {
+  font-family: "courier";
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  top: -30px;
+}
+
+</style>
+<body>
+  <h1> Select Rock, Paper or Scissors </h1>
+
+<h2> It is <%= @game.current_player.name %>'s turn </h2>
+
+
+<p class='score'> <%= @game.players[0].name %> score: <%= @game.players[0].score %> </p>
+<p class='score'> <%= @game.players[1].name %> score: <%= @game.players[1].score %> </p>
+
+<form action="/action" method="post">
+ <input class='btn btn-primary' name='action' type='submit' value='Rock'>
+ <input class='btn btn-primary' name='action' type='submit' value='Paper'>
+ <input class='btn btn-primary' name='action' type='submit' value='Scissors'>
+</form>
+
+<% if @game.players[0].hand != nil && @game.gamemode == 'ai' %>
+  <p> AI threw <%=@game.players[1].hand %> </p>
+<%end%>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <title>Rubrowser</title>
+    <link media='all' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>html, body, .dependency_graph, .dependency_graph svg{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+circle {
+    fill: #fff;
+    stroke: #333;
+    stroke-width: 1.5px;
+}
+
+.circular {
+    stroke: #FF0000;
+}
+
+.fixed circle {
+    stroke-width: 3px;
+}
+
+text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+text.type{
+    font: 7px sans-serif;
+}
+
+.downlighted {
+    opacity: 0.1;
+}
+
+.ignored{
+    display: none;
+}
+
+.running circle{
+    stroke: #18b738;
+    fill: #7dea93;
+}
+
+.highlighted,
+.highlighted_by_namespace,
+.highlighted_by_path,
+.highlighted_by_type{
+    fill: #008ef3;
+}
+
+.highlighted circle,
+.highlighted_by_namespace circle,
+.highlighted_by_path circle,
+.highlighted_by_type circle{
+    stroke: #008ef3;
+}
+
+.hide_namespace .namespace, .link.hide_relation{
+    display: none;
+}
+
+/* ============================ */
+/* Toolbox style */
+/* ============================ */
+
+.toolbox{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    max-height: 100%;
+    width: 250px;
+    background: white;
+    overflow: auto;
+}
+
+ul, ol{
+    list-style-position: inside;
+    white-space: nowrap;
+    margin: 0px;
+    padding-left: 0px;
+    overflow: auto;
+}
+
+#information_panel{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 5rem;
+    background: rgba(255,255,255,0.8);
+    width: 100%;
+    margin-left: 250px;
+    padding-right: 250px;
+}
+
+#information_panel div{
+    margin: 1rem;
+    display: inline-block;
+}
+
+#information_panel:hover{
+    height: 33%;
+    overflow: auto;
+}
+</style>
+  </head>
+  <body>
+    <div class='dependency_graph'>
+      <svg></svg>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://unpkg.com/lodash@4.17.4/lodash.min.js' type='text/javascript'></script>
+    <script src='https://unpkg.com/d3@4.13.0/build/d3.min.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+     var data = {"definitions":[{"type":"Class","namespace":"RPS","circular":false,"file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/app.rb","line":5,"lines":38},{"type":"Class","namespace":"Game","circular":false,"file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/game.rb","line":3,"lines":88},{"type":"Class","namespace":"Player","circular":false,"file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/player.rb","line":1,"lines":30}],"relations":[{"type":"Base","namespace":"Sinatra::Base","resolved_namespace":"Sinatra::Base","caller":"RPS","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/app.rb","circular":false,"line":5},{"type":"Base","namespace":"Game","resolved_namespace":"Game","caller":"RPS","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/app.rb","circular":false,"line":8},{"type":"Base","namespace":"Game","resolved_namespace":"Game","caller":"RPS","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/app.rb","circular":false,"line":16},{"type":"Base","namespace":"Player","resolved_namespace":"Player","caller":"Game","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/game.rb","circular":false,"line":64},{"type":"Base","namespace":"Player","resolved_namespace":"Player","caller":"Game","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/game.rb","circular":false,"line":64},{"type":"Base","namespace":"Game","resolved_namespace":"Game","caller":"Game","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/lib/game.rb","circular":false,"line":76},{"type":"Base","namespace":"Player","resolved_namespace":"Player","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/features/feature_spec.rb","circular":false,"line":3},{"type":"Base","namespace":"Capybara","resolved_namespace":"Capybara","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":10},{"type":"Base","namespace":"RPS","resolved_namespace":"RPS","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":10},{"type":"Base","namespace":"ENV","resolved_namespace":"ENV","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":11},{"type":"Base","namespace":"SimpleCov","resolved_namespace":"SimpleCov","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":13},{"type":"Base","namespace":"SimpleCov::Formatter::MultiFormatter","resolved_namespace":"SimpleCov::Formatter::MultiFormatter","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":13},{"type":"Base","namespace":"SimpleCov::Formatter::Console","resolved_namespace":"SimpleCov::Formatter::Console","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":14},{"type":"Base","namespace":"SimpleCov","resolved_namespace":"SimpleCov","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":18},{"type":"Base","namespace":"RSpec","resolved_namespace":"RSpec","caller":"","file":"/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects/rps-challenge/spec/spec_helper.rb","circular":false,"line":20}]};
+     var layout = null;
+    </script>
+    <script type='text/javascript'>var classForCircular = function(d) {
+  return d.circular ? 'circular' : '';
+};
+
+var svg = d3.select(".dependency_graph svg"),
+    $svg = $('.dependency_graph svg'),
+    width = $svg.width(),
+    height = $svg.height(),
+    drag = d3.drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended),
+    dup_definitions = data.definitions.map(function(d){
+      return {
+        id: d.namespace,
+        file: d.file,
+        type: d.type,
+        lines: d.lines,
+        circular: d.circular
+      };
+    }),
+    definitions = _(dup_definitions).groupBy('id').map(function(group) {
+      return {
+        id: group[0].id,
+        type: group[0].type,
+        lines: _(group).sumBy('lines'),
+        circular: group[0].circular,
+        files: group.map(function(d){ return d.file; })
+      };
+    }).value(),
+    namespaces = definitions.map(function(d){ return d.id; }),
+    relations = data.relations.map(function(d){ return {source: d.caller, target: d.resolved_namespace, circular: d.circular}; }),
+    max_lines = _.maxBy(definitions, 'lines').lines,
+    max_circle_r = 50;
+
+relations = relations.filter(function(d){
+  return namespaces.indexOf(d.source) >= 0 && namespaces.indexOf(d.target) >= 0;
+});
+relations = _.uniqWith(relations, _.isEqual);
+
+var zoom = d3.zoom()
+    .on("zoom", function () {
+      container.attr("transform", d3.event.transform);
+    });
+
+svg.call(zoom)
+  .on("dblclick.zoom", null);
+
+var container = svg.append('g'),
+    simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("forceCollide", d3.forceCollide(80));
+
+simulation
+  .nodes(definitions)
+  .on("tick", ticked);
+
+simulation.force("link")
+  .links(relations);
+
+var link = container.append("g")
+    .attr("class", "links")
+    .selectAll("path")
+    .data(relations)
+    .enter().append("path")
+    .attr("class", function(d) { return 'link ' + classForCircular(d); })
+    .attr("marker-end", function(d){ return "url(#" + d.target.id + ")"; }),
+    node = container.append("g")
+    .attr("class", "nodes")
+    .selectAll("g")
+    .data(definitions)
+    .enter().append("g")
+    .call(drag)
+    .on("dblclick", dblclick),
+    circle = node
+    .append("circle")
+    .attr("r", function(d) { return d.lines / max_lines * max_circle_r + 6; })
+    .attr("class", function (d) { return classForCircular(d) ; }),
+    type = node
+    .append("text")
+    .attr("class", "type")
+    .attr("x", "-0.4em")
+    .attr("y", "0.4em")
+    .text(function(d) { return d.type[0]; }),
+    text = node
+    .append("text")
+    .attr("class", "namespace")
+    .attr("x", function(d) { return d.lines / max_lines * max_circle_r + 8; })
+    .attr("y", ".31em")
+    .text(function(d) { return d.id; });
+
+container.append("defs").selectAll("marker")
+  .data(definitions)
+  .enter().append("marker")
+  .attr("id", function(d) { return d.id; })
+  .attr("viewBox", "0 -5 10 10")
+  .attr("refX", function(d){ return d.lines / max_lines * max_circle_r + 20; })
+  .attr("refY", 0)
+  .attr("markerWidth", 6)
+  .attr("markerHeight", 6)
+  .attr("orient", "auto")
+  .append("path")
+  .attr("d", "M0,-5L10,0L0,5");
+
+function ticked() {
+  link.attr("d", linkArc);
+  node.attr("transform", transform);
+}
+
+function linkArc(d) {
+  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr =  0;
+  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+}
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d3.select(this).classed("fixed", true);
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+}
+
+function dblclick(d) {
+  d3.select(this).classed("fixed", false);
+  d.fx = null;
+  d.fy = null;
+}
+
+function transform(d) {
+  return "translate(" + d.x + "," + d.y + ")";
+}
+
+var state = {
+  get: function(){
+    var positions = [];
+    rubrowser.definitions.forEach(function(elem){
+      if( elem.fx !== undefined && elem.fy !== undefined) {
+        positions.push({
+          id: elem.id,
+          x: elem.fx,
+          y: elem.fy
+        });
+      }
+    });
+    return positions;
+  },
+
+  set: function(layout){
+    if ( !layout ) { return; }
+    layout.forEach(function(pos) {
+      var definition = node.filter(function(e) { return e.id == pos.id; })
+      definition.classed("fixed", true);
+
+      var datum = definition.data()[0]
+      if( datum ) {
+        datum.fx = pos.x
+        datum.fy = pos.y
+      }
+    });
+  }
+}
+
+node.on('mouseover', function(d) {
+  var relatives = [];
+  link.classed('downlighted', function(l) {
+    if (d === l.source || d === l.target){
+      relatives.push(l.source);
+      relatives.push(l.target);
+      return false;
+    }else{
+      return true;
+    }
+  });
+  node.classed('downlighted', function(n) {
+    return !(n == d || relatives.indexOf(n) > -1);
+  });
+});
+
+node.on('mouseout', function() {
+  link.classed('downlighted', false);
+  node.classed('downlighted', false);
+});
+
+window.rubrowser = {
+  data: data,
+  definitions: definitions,
+  relations: relations,
+  simulation: simulation,
+  node: node,
+  link: link,
+  state: state
+};
+
+rubrowser.state.set(layout);
+</script>
+
+    
+      <div class="toolbox">
+  <div class="card ml-2 mt-2">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <label class="form-label">Namespace</label>
+      <textarea id="highlight_by_namespace" class="form-control" rows="5"></textarea>
+    </div>
+    <div class="card-body">
+      <label class="form-label">File Path</label>
+      <textarea id="highlight_by_file_path" class="form-control" rows="5"></textarea>
+    </div>
+    <div class="card-body">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="highlight_modules"/>
+        <label class="form-check-label">Modules</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="highlight_classes"/>
+        <label class="form-check-label">Classes</label>
+      </div>
+    </div>
+  </div>
+  <div class="card ml-2 mt-2">
+    <div class="card-header">Ignore</div>
+    <div class="card-body">
+      <label>Namespace</label>
+      <textarea id="ignore_by_namespace" class="form-control" rows="5"></textarea>
+    </div>
+    <div class="card-body">
+      <label>File Path</label>
+      <textarea id="ignore_by_file_path" class="form-control" rows="5"></textarea>
+    </div>
+    <div class="card-body">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="ignore_modules"/>
+        <label class="form-check-label">Modules</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="ignore_classes"/>
+        <label class="form-check-label">Classes</label>
+      </div>
+    </div>
+  </div>
+  <div class="card ml-2 mt-2">
+    <div class="card-header">Display</div>
+    <div class="card-body">
+      <button type="button" id="download_layout" class="btn btn-secondary btn-block">Download layout</button>
+      <button type="button" id="pause_simulation" class="btn btn-secondary btn-block">Pause animation</button>
+      <button type="button" id="fix_all" class="btn btn-secondary btn-block">Fix all</button>
+      <button type="button" id="release_all" class="btn btn-secondary btn-block">Release all</button>
+    </div>
+    <div class="card-body">
+      <label class="form-label">Force Collide</label>
+      <input id="force_collide" class="form-control" type="range" value="80" min="0" max="500"/>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="hide_namespaces"/>
+        <label class="form-check-label">Hide namespaces</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="hide_relations"/>
+        <label class="form-check-label">Hide relations</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="information_panel" class="card"></div>
+
+      <script type='text/javascript'>$(document).on('click', '.card-header', function(){
+  $(this).siblings().toggle();
+});
+
+// --------------------------------
+// Details Panel
+// --------------------------------
+rubrowser.node.on('click', function(d){
+  var namespace = d.id;
+  var lines = d.lines;
+  var dependents = rubrowser.relations.filter(function(i){ return i.target.id == namespace; });
+  var dependencies = rubrowser.relations.filter(function(i){ return i.source.id == namespace; });
+  var definitions = rubrowser.data.definitions.filter(function(i){ return i.namespace == namespace; });
+  var relations = rubrowser.data.relations.filter(function(i){ return i.resolved_namespace == namespace || i.caller == namespace; });
+
+  var content = $('<div>');
+  content.append('<label><strong>'+namespace+' ('+d.lines+' Lines)</strong></label>');
+
+  content.append('<strong>Defined in:</strong>');
+  var definitions_ol = $("<ol>");
+  for(var i=0; i<definitions.length; i++){
+    definitions_ol.append("<li>"+definitions[i].file+":"+definitions[i].line.toString()+"</li>");
+  }
+  content.append(definitions_ol);
+
+  if( dependents.length > 0 ){
+    content.append('<strong>Dependents:</strong>');
+    var dependents_ol = $("<ol>");
+    for(var i=0; i<dependents.length; i++){
+      dependents_ol.append("<li>"+dependents[i].source.id+"</li>");
+    }
+    content.append(dependents_ol);
+  }
+
+  if( dependencies.length > 0 ){
+    content.append('<strong>Dependencies:</strong>');
+    var dependencies_ol = $("<ol>");
+    for(var i=0; i<dependencies.length; i++){
+      dependencies_ol.append("<li>"+dependencies[i].target.id+"</li>");
+    }
+    content.append(dependencies_ol);
+  }
+
+  $('#information_panel').html(content);
+  return true;
+});
+
+
+// --------------------------------
+// Search Panel
+// --------------------------------
+$(document).on('change', '#highlight_by_namespace', function(){
+  var highlights_entries = $(this).val().trim();
+  var highlights = _(highlights_entries.split("\n"));
+
+  rubrowser.node.classed('highlighted_by_namespace', function(d){
+    if(highlights_entries.length == 0){ return false; }
+    return highlights.some(function(i){ return d.id.indexOf(i) > -1; });
+  });
+});
+
+$(document).on('change', '#highlight_by_file_path', function(){
+  var highlights_entries = $(this).val().trim();
+  var highlights = _(highlights_entries.split("\n"));
+
+  rubrowser.node.classed('highlighted_by_path', function(d){
+    if(highlights_entries.length == 0){ return false; }
+    return highlights.some(function(i){
+      return _(d.files).some(function(f) {
+        return f.indexOf(i) > -1;
+      });
+    });
+  });
+});
+
+$(document).on('change', '#highlight_modules, #highlight_classes', function(){
+  var modules_highlighted = $('#highlight_modules').is(':checked'),
+      classes_highlighted = $('#highlight_classes').is(':checked');
+
+  rubrowser.node.classed('highlighted_by_type', function(d){
+    return (d.type == 'Module' && modules_highlighted) || (d.type == 'Class' && classes_highlighted);
+  });
+});
+
+// --------------------------------
+// Ignore Panel
+// --------------------------------
+var ignoring_functions = {};
+
+function updateNodes() {
+
+  function ignoreNode(d) {
+    return _(ignoring_functions).some(function(ignoring_function) {
+      return ignoring_function(d);
+    });
+  }
+
+  function notIgnoreNode(d){
+    return !ignoreNode(d);
+  }
+  function ignoreRelation(r){
+    return ignoreNode(r.source) || ignoreNode(r.target);
+  }
+
+  function notIgnoreRelation(r){
+    return !ignoreRelation(r);
+  }
+
+  var filtered_definitions = rubrowser.definitions.filter(notIgnoreNode);
+  rubrowser.simulation.nodes(filtered_definitions);
+  rubrowser.node.classed('ignored', ignoreNode);
+
+  var filtered_relations = rubrowser.relations.filter(notIgnoreRelation);
+  rubrowser.simulation.force("link").links(filtered_relations);
+  rubrowser.link.classed('ignored', ignoreRelation);
+}
+
+$(document).on('change', '#ignore_by_namespace', function(){
+  var ignores_entries = $(this).val().trim();
+  var ignores = ignores_entries.split("\n");
+
+  if(ignores_entries.length == 0){
+    delete ignoring_functions["ignore_by_name"];
+  }else{
+    ignoring_functions["ignore_by_name"] = function(d){
+      return ignores.some(function(i){ return d.id.indexOf(i) > -1; });
+    }
+  }
+
+  updateNodes();
+});
+
+$(document).on('change', '#ignore_by_file_path', function(){
+  var ignores_entries = $(this).val().trim();
+  var ignores = ignores_entries.split("\n");
+
+  if(ignores_entries.length == 0){
+    delete ignoring_functions["ignore_by_file_path"];
+  }else{
+    ignoring_functions["ignore_by_file_path"] = function(d){
+      return ignores.some(function(i){
+        return _(d.files).every(function(f){
+          return f.indexOf(i) > -1;
+        });
+      });
+    }
+  }
+
+  updateNodes();
+});
+
+$(document).on('change', '#ignore_modules, #ignore_classes', function(){
+  var modules_ignored = $('#ignore_modules').is(':checked'),
+      classes_ignored = $('#ignore_classes').is(':checked');
+
+  if( modules_ignored ){
+    ignoring_functions["ignore_modules"] = function(d) {
+      return d.type == 'Module';
+    }
+  }else{
+    delete ignoring_functions["ignore_modules"];
+  }
+
+  if( classes_ignored ){
+    ignoring_functions["ignore_classes"] = function(d) {
+      return d.type == 'Class';
+    }
+  }else{
+    delete ignoring_functions["ignore_classes"];
+  }
+
+  updateNodes();
+});
+
+// --------------------------------
+// Display Panel
+// --------------------------------
+$(document).on('change', "#force_collide", function(){
+  var new_value = $(this).val();
+  rubrowser.simulation.force("forceCollide", d3.forceCollide(new_value));
+});
+
+$(document).on('change', "#hide_relations", function(){
+  var hide_relations = $('#hide_relations').is(':checked');
+  rubrowser.link.classed("hide_relation", hide_relations);
+});
+
+$(document).on('change', "#hide_namespaces", function(){
+  var hide_namespaces = $('#hide_namespaces').is(':checked');
+  rubrowser.node.classed("hide_namespace", hide_namespaces);
+});
+
+$(document).on('click', "#pause_simulation", function(){
+    rubrowser.simulation.stop();
+});
+
+$(document).on('click', "#fix_all", function(){
+  rubrowser.node.classed("fixed", true);
+  rubrowser.node.each(function(d){
+    d.fx = d.x;
+    d.fy = d.y;
+  });
+});
+
+$(document).on('click', "#release_all", function(){
+  rubrowser.node.classed("fixed", false);
+  rubrowser.node.each(function(d){
+    delete d["fx"];
+    delete d["fy"];
+  });
+});
+
+$(document).on('click', "#download_layout", function(){
+  var json = JSON.stringify(rubrowser.state.get());
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(json));
+  element.setAttribute('download', 'layout.json');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+});
+</script>
+    
+
+    
+  </body>
+</html>
