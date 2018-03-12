@@ -1,1 +1,9 @@
-You have chosen to play <b><%= @player_move %></b>!
+<center>You have chosen to play <b><%= @game.player.choice %></b>!
+<br>
+Computer has chosen to play <b><%= @game.computer.choice %></b>!
+<br>
+<b><%= @game.result %></b>
+<br>
+<form action="/" method="get">
+<input type="submit" value="Play again?">
+</form></center>
