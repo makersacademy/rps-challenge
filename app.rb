@@ -15,7 +15,6 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    puts params[:player_name]
     player = Player.new(params[:player_name])
     computer = Computer.new("Computer")
     @game = Game.create(player, computer)
