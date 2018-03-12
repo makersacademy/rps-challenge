@@ -21,16 +21,17 @@ class Game < Sinatra::Base
     erb(:play)
   end
 
-  post '/move' do
+  post '/moves' do
     @player = session[:player1]
+    session[:move] = params[:move]
     redirect to('/confirmation')
   end
 
   get '/confirmation' do
     @player = session[:player1]
-    @player.choice(params[:move])
+    @player.choice(session[:move])
     @computer_choice = Computer.new.choice
-    @confirmation = Play.new.winner(@computer_choice, @player.move)
+    @confirmation = Play.new.winner(@computer_choice, @player.player_choice)
     erb(:confirmation)
   end
 

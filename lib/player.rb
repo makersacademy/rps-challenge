@@ -7,7 +7,7 @@ class Player
   end
 
   def choice(player_choice)
-    @player_selection = player_choice
+    @player_choice = player_choice
   end
 
 end
