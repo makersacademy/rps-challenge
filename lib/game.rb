@@ -19,4 +19,17 @@ class Game
   def self.instance
     @game
   end
+
+  def result
+    player_choice, computer_choice = @player.choice, @computer.choice
+    if RULES[player_choice] == computer_choice
+      "#{@player.name}, you win!"
+    elsif RULES[computer_choice] == player_choice
+      "#{@player.name}, you lose!"
+    else
+      "Draw game!"
+    end
+  end
+
+  
 end

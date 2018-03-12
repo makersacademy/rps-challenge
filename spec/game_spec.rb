@@ -27,21 +27,21 @@ describe Game do
   describe '#result' do
     context 'when player picks rock' do
 
-      before(:each) { allow(player).to receive(:weapon) { :rock } }
+      before(:each) { allow(player).to receive(:choice) { :rock } }
 
       it 'returns win if computer picks scissors' do
-        allow(computer).to receive(:weapon) { :scissors }
-        expect(game.result).to eq 'Cleopatra, you win!'
+        allow(computer).to receive(:choice) { :scissors }
+        expect(game.result).to eq 'Frank, you win!'
       end
 
       it 'returns lose if computer picks paper' do
-        allow(computer).to receive(:weapon) { :paper }
-        expect(game.result).to eq 'Cleopatra, you lose!'
+        allow(computer).to receive(:choice) { :paper }
+        expect(game.result).to eq 'Frank, you lose!'
       end
 
       it 'returns draw if computer picks rock' do
-        allow(computer).to receive(:weapon) { :rock }
-        expect(game.result).to eq "It's a draw!"
+        allow(computer).to receive(:choice) { :rock }
+        expect(game.result).to eq "Draw game!"
       end
     end
   end
