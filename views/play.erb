@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center>
 <% if @game_model.game_finished %>
   <p>Last round: <%= @game_model.player1.name %>: <%= @game_model.player1_move %> vs. <%= @game_model.player2.name %>: <%= @player_move %></p>
 
@@ -24,3 +29,7 @@
   <p><%= @game_model.player1.name %> <%= @game_model.final_result %> so far!</p>
   <% end %>
 <% end %>
+</center>
+
+</body>
+</html>
