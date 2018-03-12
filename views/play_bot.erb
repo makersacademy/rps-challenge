@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<hmtl>
+  <body>
+      <h2><%=@game.whos_waiting.name%> picked <%=@game.whos_waiting.shape.name%></h2>
+      <br>
+      <h1><%=@game.whos_turn.name%> is calculating...</h1>
+      <form action='/apply_and_redirect' method='post'>
+        <input type="hidden" name="shape_choice" value="<%=@choice%>">
+        <button type='submit'>What is that robot up to??</button>
+      </form>
+  </body>
+</html>

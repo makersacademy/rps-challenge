@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<hmtl>
+  <body>
+    <h1><%=@game.whos_waiting.name%> picked <%=@game.whos_waiting.shape.name%></h1>
+    <h2><%=@game.whos_turn.name%>'s turn!'</h2>
+    <form action='/apply_and_redirect' method='post'>
+      <%@game.shapes.each_with_index do |shape, i| %>
+      <input type="radio" name="shape_choice" value="<%=i.to_s%>"> Pick <%=shape.name%><br>
+      <%end%>
+      <button type='submit'>Play!</button>
+    </form>
+  </body>
+</html>

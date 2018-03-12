@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1><%=@game.whos_turn.name%>'s turn!'</h1>
+    <form action='/apply_and_redirect' method='post'>
+      <% @game.shapes.each_with_index do |shape, i| %>
+      <input type="radio" name="shape_choice" value="<%=i.to_s%>">Pick <%=shape.name%><br>
+      <%end%>
+      <button type='submit'>Play!</button>
+    </form>
+  </body>
+</html>

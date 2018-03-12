@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<htmL>
+  <body>
+    <h1>Who will challenge Player 1, AKA <%= @player1_name %>?</h2>
+    <form action='/human_setup' method=post>
+      <label for='player_2_name'>
+        Player 2 enter your name here!
+        <input type='text' name='player_2_name'>
+      </label>
+      <button type='submit'>Play!</button>
+    </form>
+  </body>
+</html>
