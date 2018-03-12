@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    </head>
+
+    <style>
+    body {
+      background-color: #EE5050;
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+    }
+
+    </style>
+
+
+    <body>
+    <h1>Choices have been decided</h1>
+
+    <h3> <%= @game.player1.name %>: <%= @game.player1.choice %> </h3>
+    <h3> <%= @game.player2.name %>: <%= @game.player2.choice %> </h3>
+
+    <h1> <%= @game.result %> </h1>
+
+    <h2> Play again? </h2>
+
+    <form action='/'>
+      <input type="submit" value="Play again">
+    </form>
+
+
+    </body>
+
+  </html>

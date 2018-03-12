@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    </head>
+
+    <style>
+      body {
+        background-color: #EE5050;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        color: white;
+      }
+    </style>
+
+
+     <body>
+      <h1>Choose your weapon, <%= @game.turn.name %> </h1>
+
+      <h3> ro (Rock), pa (Paper), sc (Scissors), li (Lizard), sp (Spock) </h3>
+
+      <form action='/save' method="post">
+        <label for="choice">
+          <input type="password" placeholder="Enter choice" name="choice" required>
+        </label>
+        <input type="submit" value="Confirm">
+      <form>
+
+    </body>
+
+  </html>

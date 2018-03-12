@@ -1,24 +1,47 @@
 # RPS Challenge
 
-Instructions
--------
+Here you will find my completed weekend challenge project for week 3 of Makers Academy. It is a simple game of Rock, Paper, Scissors, Lizard, Spock for two players. The players first enter their names and then take it in turns to choose their move. I first used radio buttons but didn't like the fact that players would have to close their eyes so they wouldn't see the other player's move. Consequently, I replaced the radio buttons with a password field that they would type their choice into. As there is a variation in the lengths of the choices, I made a key:
+```
+ro (Rock), pa (Paper), sc (Scissors), li (Lizard), sp (Spock)  
+```
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+## Getting Started ##
 
-Task
-----
+Ruby version:
+```
+2.5.0
+```
+Run:
+```
+bundle install
+```
+To see the web app in your browser, run:
+```
+rackup -p 4567
+```
+Then type this in the url field of your browser:
+```
+http://localhost:4567
+```
+## Running the tests ##
+The tests are separated by classes.
+To run them all at once, type:
+```
+rspec
+```
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Built with ##
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+- [Atom](https://atom.io/) - Text editor
+- [Ruby](https://www.ruby-lang.org/en/) - Language
+- [Rspec](http://rspec.info/) - Testing suite
+- [Sinatra](http://sinatrarb.com/)
+- Capybara
+- HTML & CSS
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## User stories ##
 
-```sh
+```
 As a marketeer
 So that I can see my name in lights
 I would like to register my name before playing an online game
@@ -28,59 +51,8 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
 - the marketeer should be able to enter their name before the game
 - the marketeer will be presented the choices (rock, paper and scissors)
 - the marketeer can choose one option
 - the game will choose a random option
 - a winner will be declared
-
-
-As usual please start by
-
-* Forking this repo
-* TEST driving development of your app
-
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
