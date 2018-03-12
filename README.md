@@ -8,7 +8,7 @@ Our third weekend challenge. We were tasked to build a small web application to 
 ## Aim
 After having trouble completing last weeks challenge, I wanted to keep this application as simple as possible. That meant doing tests first, coding and refactoring accordingly
 
-I found that I was really comfortable this time around with what I was creating, and managed to achieve my goal of having a working solution before introducing styling.
+I found that I was really comfortable this time around with what I was creating, and managed to achieve my goal of having a working solution before
 
 #### To Do
 - [ ] Implement Rock, Paper, Scissors, Spock, Lizard gameplay

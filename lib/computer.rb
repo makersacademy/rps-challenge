@@ -1,5 +1,5 @@
 class Computer
-  DEFAULT_ACTIONS = ['paper', 'scissors', 'rock']
+  DEFAULT_ACTIONS = [:paper, :scissors, :rock]
 
   attr_reader :name, :action
 

@@ -2,17 +2,17 @@ require 'game'
 
 describe Game do
   subject(:fake_normal_game) { double(game_type: 'normal') }
-  # subject(:fake_advanced_game) { double('advanced game', game_type: 'advanced') }
+  subject(:fake_advanced_game) { double('advanced game', game_type: 'advanced') }
 
-  subject(:fake_single_player_game) { double(number_of_players: '1') }
-  subject(:fake_two_player_game) { double(number_of_players: '2') }
+  subject(:fake_1P_game) { double(number_of_players: '1') }
+  subject(:fake_2P_game) { double(number_of_players: '2') }
 
-  subject(:game) { described_class.new(fake_single_player_game, fake_normal_game) }
+  subject(:game) { described_class.new(fake_1P_game, fake_normal_game) }
 
   # could argue I am just checking it initalizes rspec fakes?
   describe '.initialize' do
     it 'receives the number of players on initialize' do
-      expect(game.number_of_players).to eq(fake_single_player_game)
+      expect(game.number_of_players).to eq(fake_1P_game)
     end
 
     it 'receives gametype on initialize' do
