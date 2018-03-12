@@ -19,7 +19,7 @@ class Game
   end
 
   def evaluate_ai
-    ai_hand
+    ai_hand(@players[1])
     compare_hands
   end
 
@@ -80,8 +80,8 @@ class Game
     @game
   end
 
-  def ai_hand
-    @players[1].receive_hand(random)
+  def ai_hand(ai)
+    ai.receive_hand(random)
   end
 
   def random
