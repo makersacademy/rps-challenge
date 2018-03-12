@@ -1,7 +1,14 @@
 # RPS Challenge
 
+Sourced From Makers Academy:
+https://github.com/makersacademy/rps-challenge
+
+CSS Style Templates from:
+www.w3schools.com/
+
+
 Instructions
--------
+------------
 
 * Challenge time: rest of the day and weekend, until Monday 9am
 * Feel free to use google, your notes, books, etc. but work on your own
@@ -41,6 +48,18 @@ As usual please start by
 
 * Forking this repo
 * TEST driving development of your app
+
+
+
+## GAME NOTES
+Simple game of Rock, Paper, Scissors where one player plays against the computer in a first to three competition. Computer moves are selected at random using sample method.
+
+Install gems using bundle and use rackup from terminal to run program.
+
+
+## TEST COVERAGE
+100% test coverage over 5 files.
+
 
 
 ## Bonus level 1: Multiplayer

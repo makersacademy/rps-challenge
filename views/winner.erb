@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Winner</title>
+    <style>
+
+    h1 {font: 72px didot; text-align: center;}
+    h2 {
+      font: 40px;
+      font-family: helvetica ;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 10px;
+    }
+    h3 {
+      font: 20px;
+      font-family: helvetica ;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 10px;
+    }
+
+    p {
+      font: 18px;
+      font-family: helvetica;
+      text-align: center;
+      font-weight: 200;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+
+   hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 100;
+    }
+    input[type="submit"] {
+      background-color: white;
+      color: #404040; /* Dark Grey */
+      font-size: 20px;
+      font-family: helvetica;
+      font-weight: 150;
+      letter-spacing: 3px;
+      border: 2px solid #D3D3D3; /* Light Grey */
+      border-radius: 12px;
+      padding: 12px 28px;
+    }
+    input:hover {
+      background-color: #D3D3D3; /* Medium Grey */
+      color: white;
+    }
+    input:focus {outline:0;}
+    div.centerbutton {
+      text-align: center;
+      table-layout: fixed;
+    }
+    div.centerbutton span {
+      padding: 50px
+    }
+    </style>
+  </head>
+  <body>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <h3>THE TIMELESS CLASSIC</h3>
+    <br>
+    <hr />
+    <br>
+    <% if @game.comp_score >=3 || @game.player.score >=3 %>
+      <h2><%=@game.winner.upcase%> THE GAME</h2>
+      <br>
+      <br>
+      <h3><%=@game.player.name.upcase%>  PLAYED  <%=@game.player_move.upcase%></h3>
+      <h3><%=@game.computer%>  PLAYED  <%=@game.comp_move.upcase%></h3>
+      <br>
+      <br>
+      <p><%=@game.player.name%>:  <%=@game.player.score%></p>
+      <p><%=@game.computer%>: <%=@game.comp_score%></p>
+      <br>
+      <br>
+      <div class="centerbutton">
+         <form action="/" method="get">
+           <span><input id='newgame' type="submit" name="submit" value="PLAY A NEW GAME" class="movebutton"></span>
+         </form>
+      </div>
+    <%else%>
+      <h2><%=@game.winner.upcase%></h2>
+      <br>
+      <br>
+      <h3><%=@game.player.name.upcase%>  PLAYED  <%=@game.player_move.upcase%></h3>
+      <h3><%=@game.computer%>  PLAYED  <%=@game.comp_move.upcase%></h3>
+      <br>
+      <br>
+      <br>
+      <div class="centerbutton">
+         <form action="/play" method="get">
+           <span><input id='nextround' type="submit" name="submit" value="NEXT ROUND" class="movebutton"></span>
+         </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p><%=@game.player.name%>:  <%=@game.player.score%></p>
+      <p><%=@game.computer%>: <%=@game.comp_score%></p>
+    <%end%>
+  </body>
+</html>
