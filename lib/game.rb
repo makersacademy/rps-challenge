@@ -7,12 +7,13 @@ class Game
     scissors: :paper
   }
 
-  def initialize(player)
+  def initialize(player, computer = Computer.new)
     @player = player
+    @computer = computer
   end
 
-  def self.create(player)
-    @game = Game.new(player)
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
   end
 
   def self.instance
