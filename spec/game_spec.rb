@@ -3,8 +3,8 @@ require_relative '../lib/game.rb'
 describe Game do
   subject(:game_ai) { Game.new('ai') }
   subject(:game_multi) { Game.new('multiplayer') }
-  let(:player_handless) { double :player, hand: nil }
-  let(:player_hand) { double :player, hand: 'Rock' }
+  let(:player_handless) { double :player, hand: nil, add_victory: nil, add_played: nil }
+  let(:player_hand) { double :player, hand: 'Rock', add_victory: nil, add_played: nil }
 
   describe '#create_player' do
     it 'a player is created and set as the current player if name is not nil' do
@@ -53,6 +53,24 @@ describe Game do
       expect(game_ai).to receive(:ai_hand)
       expect(game_ai).to receive(:compare_hands)
       game_ai.evaluate_ai
+    end
+  end
+
+  describe '#compare_hands' do
+    it 'calls the method logic' do
+      game_multi.instance_variable_set(:@current_player, player_hand)
+      game_multi.instance_variable_set(:@waiting_player, player_hand)
+      expect(game_multi).to receive(:logic)
+      game_multi.compare_hands
+    end
+  end
+
+  describe '#logic' do
+    it 'if game mode is multiplayer it resets hand after compared' do
+      game_multi.instance_variable_set(:@current_player, player_hand)
+      game_multi.instance_variable_set(:@waiting_player, player_hand)
+      expect(game_multi).to receive(:reset)
+      game_multi.logic('Rock', 'Scissors')
     end
   end
 end
