@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-
-
 feature 'playning a game' do
   before do
     visit '/'
@@ -23,4 +21,5 @@ feature 'playning a game' do
     # click_button 'Scissors'
     # expect(page).to have_content 'You chose Scissors'
   end
+  
 end
