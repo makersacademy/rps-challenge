@@ -1,4 +1,6 @@
 rvm:
-  - 2.4.0
+  - 2.5.0
 script:
   - bundle exec rspec spec
+
+after_success: coveralls
