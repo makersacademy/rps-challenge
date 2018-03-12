@@ -5,10 +5,11 @@
     <title></title>
   </head>
   <body>
-    You picked <%=@player.player_choice%>
-    <br>
-    The computer picked <%=@computer_choice%>
-    <br>
-    <%=@confirmation%>
+    <h2>You picked <%=@player.player_choice%></h2>
+    <h2>The computer picked <%=@computer_choice%>
+    <h2><%=@confirmation%></h2>
+    <form action="/play" method="get">
+      <input type="submit" value="Replay">
+    </form>
   </body>
 </html>
