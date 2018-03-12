@@ -44,5 +44,25 @@ describe Game do
         expect(game.result).to eq "Draw game!"
       end
     end
+
+    context 'when player picks paper'
+
+    before(:each) { allow(player).to receive(:choice) { :paper } }
+
+    it 'returns win if computer picks scissors' do
+      allow(computer).to receive(:choice) { :rock }
+      expect(game.result).to eq 'Frank, you win!'
+    end
+
+    it 'returns lose if computer picks paper' do
+      allow(computer).to receive(:choice) { :scissors }
+      expect(game.result).to eq 'Frank, you lose!'
+    end
+
+    it 'returns draw if computer picks rock' do
+      allow(computer).to receive(:choice) { :paper }
+      expect(game.result).to eq "Draw game!"
+    end
   end
+
 end
