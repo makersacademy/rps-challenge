@@ -4,11 +4,11 @@ module GameMod
 
   SHAPES_ARY =
     [
-      HandShape.new('Rock', ['Paper', 'Spock']),
-      HandShape.new('Paper', ['Scissors', 'Lizard']),
-      HandShape.new('Scissors', ['Rock', 'Spock']),
-      HandShape.new('Lizard', ['Rock', 'Scissors']),
-      HandShape.new('Spock', ['Paper', 'Lizard']),
+      HandShape.new('Rock', ['Scissors', 'Lizard'], ['crushes', 'crushes']),
+      HandShape.new('Paper', ['Rock', 'Spock'], ['covers', 'disproves']),
+      HandShape.new('Scissors', ['Paper', 'Lizard'], ['cuts', 'decapitates']),
+      HandShape.new('Lizard', ['Paper', 'Spock'], ['eats', 'poisons']),
+      HandShape.new('Spock', ['Scissors', 'Rock'], ['smashes', 'vaporizes']),
     ]
 
 end

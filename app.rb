@@ -63,7 +63,7 @@ class HandShapeGame < Sinatra::Base
     erb :play_bot
   end
 
-  get '/game_over' do
+  get '/game_over' do 
     erb :game_over
   end
 

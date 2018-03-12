@@ -42,11 +42,29 @@ class Game
     !!@player1.shape && !!@player2.shape
   end
 
+  def verbstring
+    return "#{@player1.shape.name} #{tieverb} #{@player2.shape.name}" unless !!winning_player
+    "#{winning_player.shape.name} #{winverb} #{losing_player.shape.name}"
+  end
+
   private
+
+  def tieverb
+    'is friends with'
+  end
+
+  def winverb
+    winning_player.shape.verbs[winning_player.shape.beats.index(losing_player.shape.name)]
+  end
 
   def winning_player
     return false if @player1.shape == @player2.shape
     @player1.shape.beats.include?(@player2.shape.name) ? @player1 : @player2
+  end
+
+  def losing_player
+    return nil unless winning_player
+    winning_player == @player1 ? @player2 : @player1
   end
 
   def winstring
