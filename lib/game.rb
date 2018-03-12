@@ -1,8 +1,17 @@
-class Game
+     class Game
   attr_reader :player1, :move, :cpu_move
   def initialize(player1)
     @player1 = player1
   end
+
+  scoreboard = { :cpu => 0, :user => 0, :draws => 0}
+
+  game_logic = {
+   'Rock' => { 'Rock' => 'Draw', 'Paper' => 'Lose', 'Sciccors' => 'Win'},
+   'Paper' => { 'Rock' => 'Win', 'Paper' => 'Draw', 'Scissors' => 'Lose'},
+   'Sciccors' => { 'Rock' => 'Lose', 'Paper' => 'Win', 'Sciccors' => 'Draw'}
+ }
+
 
   def self.create(player1)
     @game = Game.new(player1)
@@ -20,9 +29,18 @@ class Game
       @cpu_move = ['Rock', 'Paper', 'Scissors'].sample
   end
 
-   game_logic = {
-    'Rock' => { 'Rock' => 'Draw', 'Paper' => 'Lose', 'Sciccors' => 'Win'}
-  }
+def compare(outcome)
+  if outcome == 'Win'
+    scoreboard[:user] += 1
+    'You win!'
 
+  elsif outcome == 'Lose'
+    scoreboard[:cpu] += 1
+    'You Lose'
+
+  else
+    scoreboard[:draw] += 1
+    "Its a draw"
+end
 
 end
