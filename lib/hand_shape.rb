@@ -1,9 +1,10 @@
 class HandShape
 
-  attr_reader :name, :weaknesses
+  attr_reader :name, :beats
 
-  def initialize(name=nil, weaknesses=nil)
+  def initialize(name=nil, beats=nil, verbs=nil)
     @name = name
-    @weaknesses = weaknesses
+    @beats = beats
+    @verbs = verbs
   end
 end

@@ -15,9 +15,9 @@ describe Game do
     shape: dbl_scissors,
     name: 'Dave'}
 
-  let(:dbl_rock) { double :hand_shape, name: 'Rock', weaknesses: 'Paper' }
-  let(:dbl_paper) { double :hand_shape, name: 'Paper', weaknesses: 'Scissors' }
-  let(:dbl_scissors) { double :hand_shape, name: 'Scissors', weaknesses: 'Rock' }
+  let(:dbl_rock) { double :hand_shape, name: 'Rock', beats: 'Scissors' }
+  let(:dbl_paper) { double :hand_shape, name: 'Paper', beats: 'Rock' }
+  let(:dbl_scissors) { double :hand_shape, name: 'Scissors', beats: 'Paper' }
 
   context 'playing a round' do
     it 'lists the possible shapes' do

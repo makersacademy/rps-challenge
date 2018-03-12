@@ -4,9 +4,9 @@ module GameMod
 
   SHAPES_ARY =
     [
-      HandShape.new('Rock', ['Paper']),
-      HandShape.new('Paper', ['Scissors']),
-      HandShape.new('Scissors', ['Rock'])
+      HandShape.new('Rock', ['Scissors']),
+      HandShape.new('Paper', ['Rock']),
+      HandShape.new('Scissors', ['Paper'])
     ]
 
 end

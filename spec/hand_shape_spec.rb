@@ -7,9 +7,9 @@ describe HandShape do
     expect(handshape.name).to eq 'Rock'
   end
 
-  it 'initializes with and returns a list of weaknesses' do
-    handshape = described_class.new('Rock', ['Paper'])
-    expect(handshape.weaknesses).to eq ['Paper']
+  it 'initializes with and returns a list of shapes it beats' do
+    handshape = described_class.new('Rock', ['Scissors'])
+    expect(handshape.beats).to eq ['Scissors']
   end
 
 end

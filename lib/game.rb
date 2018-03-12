@@ -46,7 +46,7 @@ class Game
 
   def winning_player
     return false if @player1.shape == @player2.shape
-    @player1.shape.weaknesses.include?(@player2.shape.name) ? @player2 : @player1
+    @player1.shape.beats.include?(@player2.shape.name) ? @player1 : @player2
   end
 
   def winstring
