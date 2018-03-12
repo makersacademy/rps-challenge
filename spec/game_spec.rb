@@ -15,8 +15,8 @@ describe Game do
     shape: dbl_scissors,
     name: 'Dave'}
 
-  let(:dbl_rock) { double :hand_shape, name: 'Rock', beats: 'Scissors' }
-  let(:dbl_paper) { double :hand_shape, name: 'Paper', beats: 'Rock' }
+  let(:dbl_rock) { double :hand_shape, name: 'Rock', beats: 'Scissors'}
+  let(:dbl_paper) { double :hand_shape, name: 'Paper', beats: 'Rock' , verbs: ['covers']}
   let(:dbl_scissors) { double :hand_shape, name: 'Scissors', beats: 'Paper' }
 
   context 'playing a round' do
@@ -64,6 +64,10 @@ describe Game do
     it "doesn't allow play if the game is finished" do
       game = described_class.new(dbl_player_paper, dbl_player_scissors)
       expect{ game.play(0) }.to raise_error "Game is finished!"
+    end
+    it 'returns a winning string' do
+      game = described_class.new(dbl_player_rock, dbl_player_paper)
+      expect(game.verbstring).to eq "Paper covers Rock"
     end
   end
 
