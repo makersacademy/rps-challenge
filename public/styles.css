@@ -2,6 +2,10 @@ body {
   background-color: #eceeef;
 }
 
+body#moon {
+  cursor: url("https://image.ibb.co/mc1eHn/cursor_moon.png"), auto;
+}
+
 h1 {
   font-size: 70px;
 }

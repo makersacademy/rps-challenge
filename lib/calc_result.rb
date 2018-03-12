@@ -18,6 +18,8 @@ class Result
       ["scissors", "paper"] => 1,
       ["scissors", "scissors"] => 0
     }
+    # Can create a "beatmap" which is a hash of each move with a
+    # value of arrays of the moves it beats.
   end
 
   def calculate
