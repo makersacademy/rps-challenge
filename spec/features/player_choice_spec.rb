@@ -2,7 +2,7 @@ feature "Player's options" do
   scenario 'Player is able to selecr Rock' do
     sign_in_and_play
     expect(page).to have_content 'Alex vs. Computer!'
-    click_button 'Rock'
+    find("#rock").click 
     expect(page).to have_content 'Alex chose Rock'
   end
 

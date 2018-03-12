@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :computer
+  attr_reader :player, :computer, :game_array
 
   COMPUTER_OPTIONS = ["Rock", "Paper", "Scissors"]
 
@@ -35,13 +35,13 @@ class Game
     @game_array << computer_option
   end
 
-  def result
-    if WIN_MOVES.include? @game_array
+  def result(game_array = @game_array)
+    if WIN_MOVES.include? game_array
       @player.name
-    elsif DRAW_MOVES.include? @game_array
+    elsif DRAW_MOVES.include? game_array
       "No one"
     else
-      @computer.name 
+      @computer.name
     end
   end
 
