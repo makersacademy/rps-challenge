@@ -9,5 +9,17 @@
   <body>
     you have selected
     <%= @game.move %>
+
+    <br>
+    CPU has selected
+    <%= @game.cpu_move %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= @result %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

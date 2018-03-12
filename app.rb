@@ -10,18 +10,15 @@ class RPS < Sinatra::Base
     @game = Game.instance
   end
 
-
   get '/' do
     erb(:index)
   end
-
 
   post '/names' do
     player1 = Player.new(params[:player_1_name])
     @game = Game.create(player1)
     redirect('/play')
   end
-
 
   get '/play' do
     @game = Game.instance
@@ -36,7 +33,7 @@ class RPS < Sinatra::Base
 
   get '/result' do
     @game = Game.instance
-
+    @result = @game.compare(@game.game_logic[@game.move][@game.cpu_move])
     erb(:result)
   end
 
