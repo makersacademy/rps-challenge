@@ -12,7 +12,7 @@ I found that I was really comfortable this time around with what I was creating,
 
 #### To Do
 - [ ] Implement Rock, Paper, Scissors, Spock, Lizard gameplay
-- [ ] Fix RuboCop offenses with my code (5 offenses)
+- [x] Fix RuboCop offenses with my code (5 offenses)
 - [ ] Tidy up README
 - [ ] Add domain modeling breakdown in readme
 - [ ] Refactor code and tests as required
