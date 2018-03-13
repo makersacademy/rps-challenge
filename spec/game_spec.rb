@@ -40,33 +40,48 @@ describe Game do
     end
   end
 
+  describe '#tie?' do
+    it 'returns tie if player actions are the same' do
+      game.player1 = double(action: :rock)
+      game.player2 = double(action: :rock)
+      expect(game.tie?).to eq(true)
+    end
+
+    it 'returns nil if players actions are not the same' do
+      game.player1 = double(action: :rock)
+      game.player2 = double(action: :scissors)
+      expect(game.tie?).to eq(nil)
+    end
+  end
+
+  describe '#winner' do
+    it 'returns player 1 if they win' do
+      game.player1 = double(action: :scissors)
+      game.player2 = double(action: :paper)
+
+      expect(game.winner?).to eq(game.player1)
+    end
+
+    it 'returns player 2 if player 1 does not win' do
+      game.player1 = double(action: :rock)
+      game.player2 = double(action: :scissors)
+
+      expect(game.winner?).to eq(game.player2)
+    end
+  end
+
   describe '#return_result' do
-    context 'returns winning player depending on result' do
-      it 'return player 1 if rock against scissors' do
-        fake_player1 = double(name: 'Fake Player 1', :action => 'rock')
-        fake_player2 = double(name: 'Fake Player 2', :action => 'scissors')
+    it 'returns true if game is a tie' do
+      game.player1 = double(action: :rock)
+      game.player2 = double(action: :rock)
+      expect(game.return_result).to eq(true)
+    end
 
-        expect(game.return_result(fake_player1, fake_player2)).to eq(fake_player1.name)
-      end
-      it 'return player 1 if paper against rock' do
-        fake_player1 = double(name: 'Fake Player 1', :action => 'paper')
-        fake_player2 = double(name: 'Fake Player 2', :action => 'rock')
+    it 'returns a winning player depending on actions' do
+      game.player1 = double(action: :scissors)
+      game.player2 = double(action: :paper)
 
-        expect(game.return_result(fake_player1, fake_player2)).to eq(fake_player1.name)
-      end
-      it 'return player 1 if scissors against paper' do
-        fake_player1 = double(name: 'Fake Player 1', :action => 'scissors')
-        fake_player2 = double(name: 'Fake Player 2', :action => 'paper')
-
-        expect(game.return_result(fake_player1, fake_player2)).to eq(fake_player1.name)
-      end
-
-      it 'return tie if paper == paper' do
-        fake_player1 = double(name: 'Fake Player 1', :action => 'paper')
-        fake_player2 = double(name: 'Fake Player 2', :action => 'paper')
-
-        expect(game.return_result(fake_player1, fake_player2)).to eq('tie')
-      end
+      expect(game.return_result).to eq(game.player1)
     end
   end
 

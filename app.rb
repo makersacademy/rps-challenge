@@ -38,13 +38,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/action' do
-    @game.player1.action = params[:player1_action]
-    @game.player2.action = params[:player2_action] if @game.two_player? == true
+    @game.player1.action = params[:player1_action].to_sym
+    @game.player2.action = params[:player2_action].to_sym if @game.two_player?
     redirect '/result'
   end
 
   get '/result' do
-    @game.result = @game.return_result(@game.player1, @game.player2)
+    @game.result = @game.return_result
     erb(:result)
   end
 

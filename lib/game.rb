@@ -1,4 +1,10 @@
 class Game
+  RULES = {
+    scissors: [:paper],
+    paper: [:rock],
+    rock: [:paper]
+  }
+
   attr_reader :game_type, :number_of_players
   attr_accessor :result, :player1, :player2
 
@@ -23,12 +29,19 @@ class Game
     return true if @number_of_players == '2'
   end
 
-  # can be written cleaner / rubocop going nuts
-  def return_result(player1, player2)
-    return player1.name if player1.action == 'rock' && player2.action == 'scissors'
-    return player1.name if player1.action == 'scissors' && player2.action == 'paper'
-    return player1.name if player1.action == 'paper' && player2.action == 'rock'
-    return 'tie' if player1.action == player2.action
-    player2.name
+  def winner?
+    if RULES[@player1.action].include?(@player2.action)
+      @player1
+    else
+      @player2
+    end
+  end
+
+  def tie?
+    return true if @player1.action == @player2.action
+  end
+
+  def return_result
+    tie?.nil? ? winner? : true
   end
 end

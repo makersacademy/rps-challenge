@@ -7,15 +7,15 @@
       <h3><%= "#{@game.player1.name.capitalize} vs. #{@game.player2.name.capitalize}" %></h3>
 
       <div style="padding-top:20px">
-        <h4><%="#{@game.player1.name} : #{@game.player1.action} "%></h4>
-        <h4><%="#{@game.player2.name} : #{@game.player2.action} "%></h4>
+        <h4><%="#{@game.player1.name} : #{@game.player1.action.to_s} "%></h4>
+        <h4><%="#{@game.player2.name} : #{@game.player2.action.to_s} "%></h4>
       </div>
 
       <div style="padding-top:20px">
-        <% if @game.result == 'tie' %>
+        <% if @game.result == true %>
           <h1>It's A Tie!<h1>
         <% else %>
-          <h1><mark><%= @game.result.upcase %> Wins!</mark><h1>
+          <h1><mark><%= @game.result.name.upcase %> Wins!</mark><h1>
         <% end %>
       </div>
 
