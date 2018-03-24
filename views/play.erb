@@ -8,5 +8,6 @@
 </form>
 
 You chose <%= @shape %>!
-<!-- You chose Paper
-You chose Scissors -->
+<div id='opponent'>
+  Opponent chose <%= @opponent_shape.to_s.capitalize %>!
+</div>
