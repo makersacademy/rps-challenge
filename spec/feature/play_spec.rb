@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'playning a game' do
+  PLAY_SEED = 221563
   before do
     visit '/'
     fill_in :name, with: 'Giacomo'
@@ -18,11 +19,17 @@ feature 'playning a game' do
     expect(page).to have_content 'You chose Rock'
   end
 
-  scenario 'game chosen "rock"' do
+  scenario 'game choses "rock"' do
     click_button 'Rock'
     message = find(:css, '#opponent').text
     expect(possible_messages).to include message
   end
+
+    scenario 'game choses random option' do
+      srand(PLAY_SEED)
+      click_button 'Rock'
+      expect(page).to have_content 'Opponent chose Scissors!'
+    end
 
   def possible_messages
     [:rock, :paper, :scissors].map {|shape| "Opponent chose #{shape.to_s.capitalize}!"}
