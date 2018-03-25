@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="style.css">
-<h1 style="text-align:center;">"Hello, <%= @name %>, now we can play!"</h1>
+<h1 style="text-align:center;">"Hello, <%= @turn.player_name %>, now we can play!"</h1>
 
 <form action="/play" method="post">
   <input type="submit" name="shape" value="Rock">
@@ -7,7 +7,7 @@
   <input type="submit" name="shape" value="Scissors">
 </form>
 
-You chose <%= @shape %>!
+You chose <%= @turn.player_shape.to_s.capitalize %>!
 <div id='opponent'>
-  Opponent chose <%= @opponent_shape.to_s.capitalize %>!
+  Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
