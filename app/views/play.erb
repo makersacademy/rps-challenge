@@ -1,3 +1,10 @@
-<h1>Hi <%=@player_name%>, let's play!</h1>
-
-<h2>Rock, Paper, Scissors</h2>
+<h1>Hi <%=@player.name%>, let's play!</h1>
+<form name="input" action="/selection" method="post" >
+  <p>Please make your move selection:
+    <br />
+      <input type="radio" name="selection" value="Rock">Rock
+      <input type="radio" name="selection" value="Paper">Paper
+      <input type="radio" name="selection" value="Scissors">Scissors
+  </p>
+  <input type="submit" value="Play">
+</form>
