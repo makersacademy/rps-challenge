@@ -1,7 +1,8 @@
 feature 'Selection' do
   scenario 'Can go back and change selection' do
     sign_in_and_play
-    click_link 'Rock'
+    fill_in 'choice', with: 'rock'
+    click_button 'Go!'
     click_button 'Change selection'
     expect(page).to have_content 'Hi Andrew, let\'s play!'
   end

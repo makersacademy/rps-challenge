@@ -15,10 +15,12 @@ class RPS < Sinatra::Base
 
   get '/play' do
     @player = session[:player]
+    @selection = params[:choice]
     erb(:play)
   end
 
   get '/selection' do
+    @selection = params[:choice]
     erb(:selection)
   end
 
