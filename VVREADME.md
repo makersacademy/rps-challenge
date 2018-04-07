@@ -51,12 +51,15 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 - 2 - Start working on the first user story:
 	- First user story asks "- the marketeer should be able to enter their name before the game":
 	- enter_name_spec created, alongside with app.rb and files and view folder(index.erb and play.erb).
-- 3 - Moving to the second UT element:
+- 3 - Moving to the second user story element:
 	- Establishing POST/redirect/GET pattern.
 	- "the marketeer will be presented the choices (rock, paper and scissors)" - which is implemented via:
 	- Putting content "Please select rock, paper or scissors".
 	- Establishing web_helpers to make feature testing more efficient.
-	- Putting actual buttons with rock, paper or scissors. 	
+	- Putting actual buttons with rock, paper or scissors.
+	- Creating player.rb (model) for the game code; testing #name.
+- 4 - Development of game code, connecting it with app.rb, implementation of the following:
+	- "can choose one option", "the game will choose a random option", "a winner will be declared".	  	
 
  
 
