@@ -30,6 +30,8 @@ end
 
 get '/playrps' do
 
+  @player = Player.new(session[:playername])
+
   erb :rps
 
 

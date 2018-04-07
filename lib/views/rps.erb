@@ -1,2 +1,12 @@
 <h1>HERE WE GO!!</h1>
-<font size="80"><%= "Ralph" %></font>
+<font size="80"><%= @player.name %></font>
+
+<form action="/pick" method="post">
+
+  Please enter your name:
+  <input type="text" name="playername">
+  <input type="submit" value="Submit name">
+
+</form>
+
+<form action="/"
