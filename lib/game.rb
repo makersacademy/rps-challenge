@@ -3,7 +3,11 @@ require_relative "computer"
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer, :result
+
+  RULES = { :rock => :scissors,
+            :paper => :rock,
+            :scissors => :paper }
 
   def self.create(player)
     @game = Game.new(player)
@@ -13,10 +17,23 @@ class Game
     @game
   end
 
-  def initialize(player)
+  def initialize(player, computer = Computer.new)
     @player = Player.new(player)
-    @computer = Computer.new
+    @computer = computer
+    @result = nil
   end
+
+  def play
+    if @computer.weapon == RULES[@player.weapon]
+      @result = :win
+    elsif @player.weapon == @computer.weapon
+      @result = :draw
+    else
+      @result = :lose
+    end
+  end
+
+
 
 
 
