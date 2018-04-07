@@ -45,7 +45,12 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 ## Steps Completed
 
 - 1 - Setting up project:
-	- Canvasing ideas, sketching, googling, running various app versions, learning Twilio.
+	- Canvasing ideas, sketching, googling, running various app versions.
+	- Checking if required gems are installed, setting up app.rb, running rackup.
+	- Setting up testing environment.
+- 2 - Start working on the first user story:
+	- First user story asks "- the marketeer should be able to enter their name before the game":
+		- 
  
 
 ## ToDo
