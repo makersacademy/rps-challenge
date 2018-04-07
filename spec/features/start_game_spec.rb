@@ -5,5 +5,6 @@ feature 'Start the game' do
     sign_in_and_play
     click_button 'Start'
     expect(page).to have_content 'choose first!'
+    click_button 'Choose'
   end
 end

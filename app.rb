@@ -23,9 +23,28 @@ class RPS < Sinatra::Base
     erb :play
   end
 
+  get '/finish' do
+    erb :play
+  end
+
   post '/first_shot' do
     @game.first_turn
     erb :first_shot
+  end
+
+  get '/choice' do
+    erb :choice
+  end
+
+  post '/submit_choice' do
+    selected_choice = params[:choice]
+    @game.active_player.select_option(selected_choice)
+    if @game.all_players_selected_choice?
+      redirect('/finish')
+    else
+      @game.switch_turn
+      redirect('/choice')
+    end
   end
 
   # start the server if ruby file executed directly
