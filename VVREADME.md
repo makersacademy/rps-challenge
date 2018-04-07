@@ -54,7 +54,9 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 - 3 - Moving to the second UT element:
 	- Establishing POST/redirect/GET pattern.
 	- "the marketeer will be presented the choices (rock, paper and scissors)" - which is implemented via:
-	- 	
+	- Putting content "Please select rock, paper or scissors".
+	- Establishing web_helpers to make feature testing more efficient.
+	- Putting actual buttons with ock, paper or scissors. 	
 
  
 
