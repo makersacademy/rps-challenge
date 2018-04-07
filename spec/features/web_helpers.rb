@@ -1,4 +1,5 @@
 def sign_in_and_play
   visit("/")
-  fill in :playername, with: "Testplayer"
+  fill_in :player1, with: "Testplayer"
   click_button "Submit"
+end
