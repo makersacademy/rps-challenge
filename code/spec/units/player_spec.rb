@@ -8,5 +8,10 @@ describe 'Player' do
     expect(player.name).to eq "Rob"
   end
 
+  it "the player chooses rock, paper or scissors" do
+    player.choice = "rock"
+    expect(player.choice).to eq "rock"
+  end
+
 end
   
