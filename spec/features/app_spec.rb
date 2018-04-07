@@ -10,9 +10,7 @@ feature "Entering player name" do
   end
 
   scenario "Enter player names into the form" do
-    visit ('/')
-    fill_in :player1, with: "Testplayer"
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content "Welcome, Testplayer!"
   end
 end

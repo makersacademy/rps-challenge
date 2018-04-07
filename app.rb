@@ -18,4 +18,9 @@ class RPS < Sinatra::Base
     @player1 = session[:player1]
     erb(:play)
   end
+
+  get '/roshambo' do
+    @player1 = session[:player1]
+    erb(:roshambo)
+  end
 end
