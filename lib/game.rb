@@ -20,4 +20,12 @@ class Game
   def self.instance
     @game
   end
+
+  def first_turn(active_player = nil)
+    if active_player == nil
+      @active_player = @players_array.sample
+    else
+      @active_player = active_player
+    end
+  end
 end

@@ -5,3 +5,8 @@
   <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
 </h2>
 <p>
+<form
+  action="/first_shot"
+  method="post">
+  <input type="submit" value="Start" class="sign_in_button">
+</form>

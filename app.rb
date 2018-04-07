@@ -20,7 +20,12 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-      erb :play
+    erb :play
+  end
+
+  post '/first_shot' do
+    @game.first_turn
+    erb :first_shot
   end
 
   # start the server if ruby file executed directly
