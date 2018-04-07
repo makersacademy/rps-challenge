@@ -1,0 +1,6 @@
+<h1>You Lose!</h1>
+<p> You chose <%= @game.player.weapon.to_s %> and the computer
+   chose <%= @game.computer.weapon.to_s %></p>
+   <form method="post" action="/back">
+     <input type="submit" value="Play Again">
+   </form>

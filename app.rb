@@ -21,7 +21,29 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  
+  post '/rock' do
+    @game.player.set_weapon(:rock)
+    redirect to('/result')
+  end
+
+  post '/paper' do
+    @game.player.set_weapon(:paper)
+    redirect to('/result')
+  end
+
+  post '/scissors' do
+    @game.player.set_weapon(:scissors)
+    redirect to('/result')
+  end
+
+  get '/result' do
+    @game.play
+    erb(@game.result)
+  end
+
+  post '/back' do
+    redirect to('/')
+  end
 
 
 
