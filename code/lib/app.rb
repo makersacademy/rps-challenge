@@ -1,9 +1,10 @@
 require 'sinatra/base'
 require_relative 'player'
+require_relative 'game'
 
 class RPS < Sinatra::Base 
 
-  $player = Player.new
+  $game = Game.new
 
   get '/' do
     "Test page working"
@@ -15,12 +16,12 @@ class RPS < Sinatra::Base
 
   post '/login' do
     p params
-    $player.name = params[:player]
+    $game.player.name = params[:player]
     redirect('/play')
   end
 
   get '/play' do
-    "#{$player.name}, pick your choice"
+   erb :play
   end
 
   run! if app_file == $0

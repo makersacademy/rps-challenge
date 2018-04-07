@@ -17,7 +17,8 @@ end
 feature 'Welcome Page' do
   scenario 'user logs in and enters their name' do
     login
-    expect(page).to have_content('Daniel, pick your choice')
+    expect(page).to have_content("Daniel, pick your choice")
+    expect(page).to have_content("\nRock Paper Scissors")
   end
 end
-   
+
