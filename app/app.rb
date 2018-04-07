@@ -14,6 +14,10 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+    @name = session[:name]
+    @computer_choice = ["rock", "paper", "scissors"].sample
+    erb :play2
+  end
 
   post '/names' do
     p session[:name] = params[:name]
@@ -21,17 +25,17 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
+  post '/rock' do
     @name = session[:name]
     erb :rock
   end
 
-  get '/paper' do
+  post '/paper' do
     @name = session[:name]
     erb :paper
   end
 
-  get '/scissors' do
+  post '/scissors' do
     @name = session[:name]
     erb :scissors
   end
