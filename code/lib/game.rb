@@ -4,7 +4,7 @@ class Game
   def initialize
     @player = Player.new
     @comp = Comp.new
-    @values = {:rock => :scissors, :paper => :rock, :scissors => :paper}
+    @values = {":rock" => ":scissors", ":paper" => ":rock", ":scissors" => ":paper"}
   end
 
   def result
