@@ -16,7 +16,22 @@ class RPS < Sinatra::Base
 	get '/play' do
 		@player_name = session[:player_name]
 		erb :play
-	end		
+	end
+
+	get '/buttons_rock' do
+		@player_name = session[:player_name]
+		erb :buttons_rock
+	end
+	
+	get '/buttons_paper' do
+		@player_name = session[:player_name]
+		erb :buttons_paper
+	end	
+
+	get '/buttons_scissors' do
+		@player_name = session[:player_name]
+		erb :buttons_scissors
+	end						
 
 	run! if app_file == $0
 end

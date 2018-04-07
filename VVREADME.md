@@ -56,7 +56,7 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 	- "the marketeer will be presented the choices (rock, paper and scissors)" - which is implemented via:
 	- Putting content "Please select rock, paper or scissors".
 	- Establishing web_helpers to make feature testing more efficient.
-	- Putting actual buttons with ock, paper or scissors. 	
+	- Putting actual buttons with rock, paper or scissors. 	
 
  
 
