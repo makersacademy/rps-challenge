@@ -52,6 +52,7 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 	- First user story asks "- the marketeer should be able to enter their name before the game":
 	- enter_name_spec created, alongside with app.rb and files and view folder(index.erb and play.erb).
 - 3 - Moving to the second UT element:
+	- Establishing POST/redirect/GET pattern.
 	- "the marketeer will be presented the choices (rock, paper and scissors)" - which is implemented via:
 	- 	
 
