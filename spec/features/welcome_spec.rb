@@ -13,6 +13,6 @@ feature 'Ask the player\'s name' do
 
   scenario 'Name can be submitted' do
     visit ('/')
-    expect(page).to have_button 'Submit'
+    expect(page).to have_button('Submit')
   end
 end
