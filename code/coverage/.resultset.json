@@ -1,0 +1,61 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/danielwork/Documents/GitHub/makers/week3/rps-challenge/code/spec/features/features_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/danielwork/Documents/GitHub/makers/week3/rps-challenge/code/spec/features/web_helper.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/danielwork/Documents/GitHub/makers/week3/rps-challenge/code/spec/units/player_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1523101373
+  }
+}
