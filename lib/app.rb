@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/player'
+require './lib/game'
 
 
 class App < Sinatra::Base
@@ -34,6 +35,23 @@ get '/playrps' do
 
   erb :rps
 
+
+end
+
+post '/pick' do
+
+  session[:playerchoice] = params[:'playerchoice']
+
+  redirect '/pick'
+
+end
+
+get '/pick' do
+
+  @player = Player.new(session[:playername])
+
+
+  erb :choice
 
 end
 
