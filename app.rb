@@ -19,8 +19,24 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  post '/rock' do
+    session[:P1RPS] = "Rock"
+    redirect('/result')
+  end
+
+  post '/paper' do
+    session[:P1RPS] = "Paper"
+    redirect('/result')
+  end
+
+  post '/scissors' do
+    session[:P1RPS] = "Scissors"
+    redirect('/result')
+  end
+
   get '/result' do
-    @player1 = session[:player1]
+    p @player1 = session[:player1]
+    p @P1RPS = session[:P1RPS]
     erb(:result)
   end
 end

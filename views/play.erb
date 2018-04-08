@@ -1,9 +1,13 @@
 <h1> Welcome, <%=@player1%>!</h1>
 
-<form action="/result" method="get">
-<input type="submit" value="Rock!" style="width:400px;height:250px;""/>
-</a>
+<form action="/rock" method="post">
+<input type="submit" value="Rock!" style="width:350px;height:180px;"/>
+</form>
 
-<a href="/roshambo">
-<img src="https://images-eu.ssl-images-amazon.com/images/I/61OorFhm6SL._SY355_.jpg" style="width:400;height:250px; border:thick dashed black"/>
-</a>
+<form action="/paper" method="post">
+<input type="submit" value="Paper!" style="width:350px;height:180px;"/>
+</form>
+
+<form action="/scissors" method="post">
+<input type="submit" value="Scissors!" style="width:350px;height:180px;"/>
+</form>
