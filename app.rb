@@ -66,11 +66,9 @@ class RPS < Sinatra::Base
     result = resolver.resolve(@game.player_1.choice, @game.player_2.choice)
     if result == Resolver::DRAW
       redirect('/draw')
-    elsif
-      result == Resolver::WIN
+    elsif result == Resolver::WIN
       @winner = @game.player_1
-    elsif
-      result == Resolver::LOOSE
+    elsif result == Resolver::LOOSE
       @winner = @game.player_2
     end
     erb :finish
