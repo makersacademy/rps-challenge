@@ -8,9 +8,9 @@ class Game
   end
 
   def result
-    return :draw if is_draw?
-    return :win if is_win?
-    :loss
+    return "drew" if is_draw?
+    return "won" if is_win?
+    "lost"
   end
 
   private 

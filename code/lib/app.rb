@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative 'player'
 require_relative 'game'
 require_relative 'comp'
-require 'html_to_plain_text'
 
 class RPS < Sinatra::Base 
 
@@ -28,16 +27,14 @@ class RPS < Sinatra::Base
 
   post '/result' do
     p params
-    choice = params[:value]
-    choice = HtmlToPlainText.plain_text(choice)
-    $game.player.choice = choice
+    $game.player.choice = params[:value]
     p $game.player.choice
     p $game.comp.choice
     redirect('/final')
   end
 
   get '/final' do
-   'Blsbs'
+   "#{$game.player.name} #{$game.result}!"
   end
 
   run! if app_file == $0
