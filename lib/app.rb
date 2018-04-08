@@ -32,7 +32,9 @@ end
 get '/playrps' do
 
   @player = Player.new(session[:playername])
-  @player.choice = params[:'playerchoice']
+  @player.choice = session[:playerchoice]
+
+
 
   erb :rps
 

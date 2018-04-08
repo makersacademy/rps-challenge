@@ -1,4 +1,4 @@
-require 'player'
+
 class Game
 
   attr_reader :rock

@@ -49,7 +49,7 @@ feature "on signing in to the game of RPS" do
       click_button("Submit name")
       visit("/playrps")
       click_button("Rock")
-      visit("/pick")
+      visit("/playrps")
       # game = Game.new
       expect(page).to have_content("You went with Rock!")
 
