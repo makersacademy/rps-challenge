@@ -2,9 +2,9 @@
 <h1>Takeshi chose <%= @computer_choice %>!</h1>
 
 <% if @computer_choice == "scissors" %>
-<h1>You lose</h1>
+<h1><%= @name %> loses</h1>
 <% elsif @computer_choice == "paper" %>
-<h1>You Draw</h1>
+<h1>Draw</h1>
 <% else %>
-<h1>You win</h1>
+<h1><%= @name %> wins</h1>
 <% end %>

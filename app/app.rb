@@ -13,12 +13,6 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  # get '/play' do
-  #   @name = session[:name]
-  #   @computer_choice = ["rock", "paper", "scissors"].sample
-  #   erb :play2
-  # end
-
   get '/play_rock' do
     @name = session[:name]
     @computer_choice = ["rock", "paper", "scissors"].sample
@@ -36,7 +30,6 @@ class RPS < Sinatra::Base
     @computer_choice = ["rock", "paper", "scissors"].sample
     erb :play_scissors
   end
-
 
   post '/names' do
     p session[:name] = params[:name]
