@@ -1,8 +1,9 @@
-require 'sinatra'
+require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'Start RockPaperScissors!'
+    @name = params[:name]
+    erb :index
   end
 
   run! if app_file == $0
