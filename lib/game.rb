@@ -13,14 +13,12 @@ class Game
   end
 
   def win?(player_1_weapon, player_2_weapon)
-    if
-    RULES.values_at(player_1_weapon.downcase.to_sym).flatten.include?(player_2_weapon.downcase.to_sym)
-    @player_1.name
-    elsif
-    RULES.values_at(player_2_weapon.downcase.to_sym).flatten.include?(player_1_weapon.downcase.to_sym)
-    @player_2.name
+    if RULES.values_at(player_1_weapon.downcase.to_sym).flatten.include?(player_2_weapon.downcase.to_sym)
+      @player_1.name
+    elsif RULES.values_at(player_2_weapon.downcase.to_sym).flatten.include?(player_1_weapon.downcase.to_sym)
+      @player_2.name
     else
-    "No winners :)"
+      "No winners :)"
     end
   end
 end
