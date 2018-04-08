@@ -2,11 +2,13 @@
 
 <h3> <%= 'Please select rock, paper or scissors' %> </h3>
 
-<a href="/buttons_rock">Rock</a>
+<form method="POST" action="/play">
+	<input type="submit" name="shape" value="Rock"/>
+	<input type="submit" name="shape" value="Paper"/>
+	<input type="submit" name="shape" value="Scissors"/>
+</form>
 
-<a href="/buttons_paper">Paper</a>
-
-<a href="/buttons_scissors">Scissors</a>
+<h4> <%= "#{@player_name} is showing #{@shape}" %> </h4>	
 
 <style>
 
@@ -17,4 +19,4 @@ body {
     	background-position: center; 
 }
 
-</style> 
+</style>  

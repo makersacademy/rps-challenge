@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require './lib/player.rb'
 
 class RPS < Sinatra::Base
 
@@ -10,29 +9,20 @@ class RPS < Sinatra::Base
 	end
 
 	post '/name' do
-		$player_user = Player.new(params[:player_name])
+		session[:player_name] = params[:player_name]
 		redirect '/play'
 	end
 
 	get '/play' do
-		@player_name = $player_user.name
+		@player_name = session[:player_name]
+		@shape = session[:shape]
 		erb :play
 	end
 
-	get '/buttons_rock' do
-		@player_name = $player_user.name
-		erb :buttons_rock
-	end
-	
-	get '/buttons_paper' do
-		@player_name = $player_user.name
-		erb :buttons_paper
-	end	
-
-	get '/buttons_scissors' do
-		@player_name = $player_user.name
-		erb :buttons_scissors
-	end						
+	post '/play' do
+		session[:shape] = params[:shape]
+		redirect '/play'
+	end					
 
 	run! if app_file == $0
 end

@@ -2,7 +2,7 @@
 
 Link to the task source with detailed instructions regarding the challenge itself is available [here](https://github.com/makersacademy/rps-challenge). For quick reference regarding challange tasks, the original readme file produced by Makers Academy is available in the root directory with the name README.md.
 
-I used RPS example to establish suitable testing environment for the game using Ruby language on [Youtube_link](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1). 
+I used RPS example to establish better understanding of testing environment for the game using Ruby language on [Youtube_link](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1). And RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). 
 
 Unfinished code or other missing elements will be highlighted, and plan will be provided how to finalise the challenge in [ToDo](#todo).
 
@@ -14,8 +14,10 @@ These instructions will help to follow the steps of the project.
 
 - Fork this repo, and clone to your local machine.
 - Run the command gem install bundle (if you don't have bundle already).
-- Open terminal and in IRB and require the followiong files:
-	- 
+- Open terminal:
+	- rspec
+	- rackup -p 4567
+	- In your browser go to http://localhost:4567/ to play!
 
 ## Running the tests
 
@@ -37,6 +39,8 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Sublime Text](https://www.sublimetext.com/)
 * [iterm2](https://www.iterm2.com/)
+* [Capybara](https://capybaraworkout.herokuapp.com/)
+* [Sinatra](http://sinatrarb.com/)
 
 ## Authors
 
@@ -57,9 +61,10 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 	- Putting content "Please select rock, paper or scissors".
 	- Establishing web_helpers to make feature testing more efficient.
 	- Putting actual buttons with rock, paper or scissors.
-	- Creating player.rb (model) for the game code; testing #name.
-- 4 - Development of game code, connecting it with app.rb, implementation of the following:
-	- "can choose one option", "the game will choose a random option", "a winner will be declared".	  	
+	- DRY'ing the code and removing certain erb's; 
+	- Disabling most of the feature test, since the main feture test now is play_spec.rb.
+- 4 - Working on user story "the game will choose a random option":
+	- 	  	
 
  
 
