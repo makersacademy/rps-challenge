@@ -2,7 +2,7 @@ require 'turn'
 
 describe Turn do
   subject(:turn) { described_class.new(options) }
-  let(:options) { {"player_name" => "Vytis", "player_shape" => :rock, "computer_shape" => :rock} }
+  let(:options) { {"player_name" => "Vytis", "player_shape" => :rock, "computer_shape" => :scissors} }
 
   describe "#player_name" do
   	it "return player name" do
@@ -18,7 +18,34 @@ describe Turn do
 
   describe "#computer_shape" do
   	it "return computer shape" do
-  		expect(turn.computer_shape).to eq :rock
+  		expect(turn.computer_shape).to eq :scissors
   	end	
-  end    	
+  end
+
+  context 'end of game' do
+    subject(:win_turn) { turn }
+    subject(:lose_turn) { described_class.new(lose_options) }
+    subject(:draw_turn) { described_class.new(draw_options) }
+
+    let(:lose_options) { {"player_name" => "Vytis", "player_shape" => :rock, "computer_shape" => :paper} }
+    let(:draw_options) { {"player_name" => "Vytis", "player_shape" => :rock, "computer_shape" => :rock} }
+
+    describe '#win?' do
+      it 'returns true if player_shape is :rock and computer_shape is :scissors' do
+        expect(win_turn.win?).to eq true
+      end
+    end
+
+    describe '#lose?' do
+      it 'returns true if player_shape is :rock and computer_shape is :paper' do
+        expect(lose_turn.lose?).to eq true
+      end
+    end
+
+    describe '#draw?' do
+      it 'returns true if player_shape is :rock and computer_shape is :rock' do
+        expect(draw_turn.draw?).to eq true
+      end
+    end        
+  end          	
 end

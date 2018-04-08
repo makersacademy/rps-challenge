@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/turn.rb'
+require './lib/skynet.rb'
+
 
 class RPS < Sinatra::Base
 
@@ -19,7 +22,7 @@ class RPS < Sinatra::Base
 	end
 
 	post '/play' do
-		session[:player_shape] = params[:shape]
+		session[:player_shape] = params[:shape].downcase.to_sym
 		session[:computer_shape] = Skynet.new.shape
 		redirect '/play'
 	end					

@@ -2,7 +2,7 @@
 
 Link to the task source with detailed instructions regarding the challenge itself is available [here](https://github.com/makersacademy/rps-challenge). For quick reference regarding challange tasks, the original readme file produced by Makers Academy is available in the root directory with the name README.md.
 
-I used RPS example to establish better understanding of testing environment for the game using Ruby language on [Youtube_link](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1). And RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). Also, explored ideas from [catherinestevenson/rps-challenge](https://github.com/catherinestevenson/rps-challenge) repository. 
+I used RPS [example](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1)to establish better understanding of testing environment for the game using Ruby language. Also, used RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). Also, explored ideas from [catherinestevenson/rps-challenge](https://github.com/catherinestevenson/rps-challenge) repository. 
 
 Unfinished code or other missing elements will be highlighted, and plan will be provided how to finalise the challenge in [ToDo](#todo).
 
@@ -21,18 +21,7 @@ These instructions will help to follow the steps of the project.
 
 ## Running the tests
 
-Run the automated tests for this challenge via RSpec -fd or rubocop.
-
-### Break down of end to end tests
-
-- 1st user story test:
-
-![FT]()
-
-- 2nd user story test failure:
-
-![UT]()
-
+Run the automated tests for this challenge via RSpec -fd.
 
 ## Built With  
 
@@ -67,9 +56,8 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 	- Made test pass when computer selects "Rock" option; Controller refactoring.
 	- Made test to pass when computer selects random option.
 - 5 - Working on "a winner will be declared":
-	- 		  	
-
- 
+	- Establishing testing frameworks for turn_spec.rb and play_spec.
+	- Added some CSS. 		  	
 
 ## ToDo
 
