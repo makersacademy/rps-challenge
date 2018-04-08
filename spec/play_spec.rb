@@ -10,7 +10,6 @@ describe RPS do
       allow_any_instance_of(Array).to receive(:sample).and_return('paper')
       sign_in_and_play
       rock
-      continue
       expect(page).to have_content "Takeshi chose paper!"
     end
   end
@@ -20,7 +19,6 @@ describe RPS do
       allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
       sign_in_and_play
       rock
-      continue
       expect(page).to have_content "Miriam Bancroft wins"
     end
   end
@@ -30,7 +28,6 @@ describe RPS do
       allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
       sign_in_and_play
       rock
-      continue
       expect(page).to have_content "Miriam Bancroft wins"
     end
   end
@@ -40,7 +37,6 @@ describe RPS do
       allow_any_instance_of(Array).to receive(:sample).and_return('paper')
       sign_in_and_play
       rock
-      continue
       expect(page).to have_content "Miriam Bancroft loses"
     end
   end
@@ -50,27 +46,24 @@ describe RPS do
       allow_any_instance_of(Array).to receive(:sample).and_return('rock')
       sign_in_and_play
       rock
-      continue
       expect(page).to have_content "Draw"
     end
   end
 
-  feature "Shows the player drawing: " do
+  feature "Shows the player winning: " do
     scenario "player choses paper and computer choses rock" do
       allow_any_instance_of(Array).to receive(:sample).and_return('rock')
       sign_in_and_play
       paper
-      continue
       expect(page).to have_content "Miriam Bancroft wins"
     end
   end
 
-  feature "Shows the player drawing: " do
+  feature "Shows the player losing: " do
     scenario "player choses scissors and computer choses rock" do
       allow_any_instance_of(Array).to receive(:sample).and_return('rock')
       sign_in_and_play
       scissors
-      continue
       expect(page).to have_content "Miriam Bancroft loses"
     end
   end

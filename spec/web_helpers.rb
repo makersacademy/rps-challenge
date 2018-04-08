@@ -15,7 +15,3 @@ end
 def scissors
   click_button('SCISSORS')
 end
-
-def continue
-  click_button('Continue')
-end

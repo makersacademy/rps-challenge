@@ -14,21 +14,21 @@ class RPS < Sinatra::Base
     erb(:index)
   end
 
-  get '/play_rock' do
+  post '/play_rock' do
     p @name = session[:name]
     computer = Computer.new
     p @computer_choice = computer.computer_choice_method
     erb :play_rock
   end
 
-  get '/play_paper' do
+  post '/play_paper' do
     @name = session[:name]
     computer = Computer.new
     p @computer_choice = computer.computer_choice_method
     erb :play_paper
   end
 
-  get '/play_scissors' do
+  post '/play_scissors' do
     @name = session[:name]
     computer = Computer.new
     p @computer_choice = computer.computer_choice_method
@@ -39,24 +39,6 @@ class RPS < Sinatra::Base
     p session[:name] = params[:name]
     @name = session[:name]
     erb(:play)
-  end
-
-  post '/rock' do
-    @name = session[:name]
-    @player_choice = session[:player_choice]
-    erb :rock
-  end
-
-  post '/paper' do
-    @name = session[:name]
-    @player_choice = session[:player_choice]
-    erb :paper
-  end
-
-  post '/scissors' do
-    @name = session[:name]
-    @player_choice = session[:player_choice]
-    erb :scissors
   end
 
 end
