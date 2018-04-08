@@ -7,4 +7,7 @@ class Game
     @players = []
 
   end
+
+  def who_wins(player, player2)
+  end
 end

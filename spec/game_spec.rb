@@ -15,4 +15,15 @@ RSpec.describe Game do
 
  end
 
+ describe "#who_wins" do
+   let (:player) { double('player', :choice => 'Rock') }
+   let (:player2) { double('player2', :choice => 'Paper', :name => 'John') }
+   it "determines which player wins" do
+    expect(game.who_wins(player, player2)).to eq 'John'
+
+
+
+   end
+ end
+
 end

@@ -24,6 +24,7 @@ feature "on signing in to the game of RPS" do
   end
 
   feature "on playing the game" do
+    let(:computer) { double('player', :choice => 'Rock')}
     before do
       visit("/signin")
       fill_in 'playername', with: "Ralph"
@@ -63,11 +64,25 @@ feature "on signing in to the game of RPS" do
       click_button("Rock")
       visit("/playrps")
       expect(page).to have_content("You chose Rock!")
-      ['Rock!', 'Paper!', 'Scissors!'].map { |choice| "The computer chose " + choice}
+      messages = ["Rock!", "Paper!", "Scissors!"].map {|choice| "The computer chose " + choice}
+      message = find(:css, "#opponent").text
+      expect(messages).to include(message)
 
-      expect(page).to have_content("The computer chose Rock!")
 
 
+
+
+    end
+
+    scenario "the game prints out who won" do
+
+      visit("/signin")
+      fill_in 'playername', with: "Ralph"
+      click_button("Submit name")
+      visit("/play")
+      click_button("Paper")
+      visit("/playrps")
+      expect(page).to have_content("The winner is Ralph!")
 
     end
   end

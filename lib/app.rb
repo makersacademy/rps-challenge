@@ -21,7 +21,7 @@ get '/signin' do
 
 end
 
-post '/playrps' do
+post '/play' do
 
 
   session[:playername] = params[:'playername']
@@ -34,20 +34,12 @@ get '/play' do
   @player = Player.new(session[:playername])
   @player2 = Player.new('The computer')
 
-
-
-
-
-
-
-
-
-  erb :rps
+   erb :rps
 
 
 end
 
-post '/play' do
+post '/playrps' do
 
   session[:playerchoice] = params[:'playerchoice']
   redirect '/playrps'
@@ -55,6 +47,10 @@ post '/play' do
 end
 
 get '/playrps' do
+
+  @player = Player.new(session[:playername])
+  @player2 = Player.new('The computer')
+
 
   @player.choice = session[:playerchoice]
   @player2.choice = ['Rock', 'Paper', 'Scissors'].sample
