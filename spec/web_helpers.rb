@@ -1,5 +1,5 @@
 def sign_in_and_play
-  visit ("/")
+  visit "/"
   fill_in :name, with: "Miriam Bancroft"
   click_button "Enter name"
 end

@@ -15,20 +15,23 @@ class RPS < Sinatra::Base
   end
 
   get '/play_rock' do
-    @name = session[:name]
-    @computer_choice = ["rock", "paper", "scissors"].sample
+    p @name = session[:name]
+    computer = Computer.new
+    p @computer_choice = computer.computer_choice_method
     erb :play_rock
   end
 
   get '/play_paper' do
     @name = session[:name]
-    @computer_choice = ["rock", "paper", "scissors"].sample
+    computer = Computer.new
+    p @computer_choice = computer.computer_choice_method
     erb :play_paper
   end
 
   get '/play_scissors' do
     @name = session[:name]
-    @computer_choice = ["rock", "paper", "scissors"].sample
+    computer = Computer.new
+    p @computer_choice = computer.computer_choice_method
     erb :play_scissors
   end
 

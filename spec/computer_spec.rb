@@ -1,4 +1,7 @@
-require 'computer'
+require "capybara/rspec"
+require_relative "../app/app"
+
+Capybara.app = RPS
 
 describe Computer do
 
