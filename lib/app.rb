@@ -59,6 +59,8 @@ get '/playrps' do
   @player.choice = session[:playerchoice]
   @player2.choice = ['Rock', 'Paper', 'Scissors'].sample
 
+  erb :result
+
 end
 
 

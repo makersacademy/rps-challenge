@@ -49,7 +49,7 @@ feature "on signing in to the game of RPS" do
       click_button("Submit name")
       visit("/play")
       click_button("Rock")
-      visit("/play")
+      visit("/playrps")
       # game = Game.new
       expect(page).to have_content("You chose Rock!")
 
@@ -61,8 +61,9 @@ feature "on signing in to the game of RPS" do
       click_button("Submit name")
       visit("/play")
       click_button("Rock")
-      visit("/result")
+      visit("/playrps")
       expect(page).to have_content("You chose Rock!")
+      ['Rock!', 'Paper!', 'Scissors!'].map { |choice| "The computer chose " + choice}
 
       expect(page).to have_content("The computer chose Rock!")
 

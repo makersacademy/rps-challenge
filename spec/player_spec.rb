@@ -16,11 +16,10 @@ RSpec.describe Player do
 
   describe "#choice" do
 
-    it 'returns the choice of the user when playing the game' do
+    it 'returns a random choice of the opponent' do
 
-        player.choice = "Rock"
 
-        expect(player.choice).to eq("Rock")
+        expect(['Rock!', 'Paper!', 'Scissors!']).to include(player.rand_choice)
 
 
 

@@ -9,4 +9,8 @@ class Player
 
   end
 
+  def rand_choice
+    ['Rock!', 'Paper!', 'Scissors!'].sample
+  end
+
 end
