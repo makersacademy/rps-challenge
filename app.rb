@@ -19,8 +19,8 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
-  get '/roshambo' do
+  get '/result' do
     @player1 = session[:player1]
-    erb(:roshambo)
+    erb(:result)
   end
 end
