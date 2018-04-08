@@ -1,23 +1,23 @@
 class Player
-attr_reader :name
+attr_reader :name, :player_move
 
 MOVES = [:rock, :paper, :scissors]
 
   def initialize(name)
     @name = name
-    # @selection = selection
+    @move = nil
+  end
+
+  def move
+    @move
   end
 
   def move_check?(selection)
-    selection = downcase_text_to_sym(selection)
-    MOVES.include?(selection)
+    @move = downcase_text_to_sym(selection)
+    MOVES.include?(@move)
   end
 
   def downcase_text_to_sym(selection)
     selection.downcase.to_sym
   end
-
-  # def valid_move?
-  #   @selection
-  # end
 end

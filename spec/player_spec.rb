@@ -3,6 +3,17 @@ require 'player'
 describe Player do
   subject(:player) { described_class.new("Andrew") }
 
+  describe '#move' do
+    it 'starts as nil' do
+      expect(player.move).to eq nil
+    end
+
+    it 'returns the move' do
+      player.move_check?("rock")
+      expect(player.move).to eq :rock
+    end
+  end
+
   describe '#name' do
     it 'returns a players name' do
       expect(player.name).to eq 'Andrew'

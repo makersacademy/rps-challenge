@@ -12,5 +12,12 @@ describe Game do
     end
   end
 
+  describe '#player_move' do
+    it 'gets the player move' do
+      allow(player).to receive(:move).and_return :rock
+      expect(game.player_move).to eq :rock
+    end
+  end
+
 
 end

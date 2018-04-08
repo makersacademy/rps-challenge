@@ -14,6 +14,9 @@ class Game
     computer_move = computer.move
   end
 
+  def player_move
+    player_move = player.move
+  end
 
 
 end
