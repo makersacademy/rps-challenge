@@ -23,5 +23,23 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/choice' do
+    params
+    if params[:choice] == 'Rock' then redirect '/rock'
+    elsif params[:choice] == 'Paper' then redirect '/paper'
+    elsif params[:choice] == 'Scissors' then redirect '/scissors'
+  end
+
+  end
+  get '/rock' do
+    erb :rock
+  end
+  get '/paper' do
+    erb :paper
+  end
+  get 'scissors' do
+    erb :scissors
+  end
+
   run! if app_file == $0
 end
