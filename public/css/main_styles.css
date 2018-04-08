@@ -22,7 +22,24 @@ h1, h2, h3, h4 {
   margin-left: 12;
 }
 
+.sign_in_button:hover {
+  background-color: black;
+}
+
 .sign_in_button {
+  /* transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); */
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
   margin:0px auto;
   display:block;
+}
+
+.colored_body {
+  background-color:  #aa76ff;
 }
