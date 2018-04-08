@@ -1,0 +1,15 @@
+<h1 style='margin:auto; text-align:center;'>
+  Looks like we know who is a lucky kitty today!
+</h1>
+<p style='margin-top:30; text-align:center;'>
+    <%= @game.active_player.name  %> choose first!
+</p>
+<p style='margin-top:30; text-align:center;'>
+  Psssst! Do not show your move to your opponent
+</p>
+<form
+  style='margin-top:30;'
+  action="/choice_options"
+  method="get">
+  <input type="submit" value="Choose" class="sign_in_button">
+</form>

@@ -1,0 +1,15 @@
+<p style='margin-top:30; text-align:center;'>
+  <p>
+    <%= @game.player_1.name %> has chosen <%= @game.player_1.choice %> vs <%= @game.player_2.name %> has chosen <%= @game.player_2.choice %>
+  </p>
+  <p style='margin-top:30; text-align:center;'>
+    <%= @winner.name %> WON THE GAME!
+  </p>
+</p>
+
+<form
+  style='margin-top:30;'
+  action="/"
+  method="get">
+  <input type="submit" value="Finish" class="sign_in_button">
+</form>

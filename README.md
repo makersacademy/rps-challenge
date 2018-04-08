@@ -1,13 +1,8 @@
+[![Build Status](https://travis-ci.org/MaryDomashneva/rps-challenge.svg?branch=master)](https://travis-ci.org/MaryDomashneva/rps-challenge)
+
+[![codebeat badge](https://codebeat.co/badges/e05fdbdc-2617-44ec-b489-d9b47be2f088)](https://codebeat.co/projects/github-com-marydomashneva-rps-challenge-master)
+
 # RPS Challenge
-
-Instructions
--------
-
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
 
 Task
 ----
@@ -27,60 +22,27 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+Result
+-----
 
-Hints on functionality
+## Screen #1 ```/names```
+<img src="https://monosnap.com/file/GBjqNPmG2lhWqjrT5X0HnXpfq7qqd4.png" height="200" width="350" />
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Screen #2 ```/play```
+<img src="https://monosnap.com/file/wghBKnxvHRXLvx8TyEUfT2R0sc36bT.png" height="200" width="350" />
 
+## Screen #3 ```/first_shot```
+<img src="https://monosnap.com/file/g7GHJ83VpIrHhsSZj554MZQGYZJiVC.png" height="200" width="350" />
 
-As usual please start by
+## Screen #4 ```/second_shot```
+<img src="https://monosnap.com/file/KGlYwNrsVceqz1koOrrLfGzekgU4pi.png" height="200" width="350" />
 
-* Forking this repo
-* TEST driving development of your app
+## Screen #5 ```/choice_options```
+<img src="https://monosnap.com/file/MU0clb01RPM4VTY9ZlzIlUBsTMScXY.png" height="200" width="350" />
 
+## Screen #6 ```/draw```
+<img src="https://monosnap.com/file/bitq2RgKis0ukkbRzOQljXuTHPlajY.png" height="200" width="350" />
 
-## Bonus level 1: Multiplayer
+## Screen #7 ```/finish```
+<img src="https://monosnap.com/file/tXCCOGVX4YTIsjbydfnzG0VKeKST6b.png" height="200" width="350" />
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!

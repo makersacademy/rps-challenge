@@ -1,0 +1,10 @@
+<p style='margin-top:30; text-align:center;'>
+    Now <%= @game.active_player.name %> choose
+</p>
+<p style='margin-top:30; text-align:center;'> Psssst! Do not show your move to your opponent </p>
+<form
+  style='margin-top:30;'
+  action="/choice_options"
+  method="get">
+  <input type="submit" value="Choose" class="sign_in_button">
+</form>

@@ -1,0 +1,12 @@
+<h1 style='margin:auto; text-align:center;'>
+  Rock, Paper, Scissors!
+</h1>
+<h2 style='margin-bottom:10; text-align:center;'>
+  <%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+</h2>
+<p>
+<form
+  action="/first_shot"
+  method="get">
+  <input type="submit" value="Start" class="sign_in_button">
+</form>
