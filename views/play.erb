@@ -3,4 +3,22 @@
 
 <h1><%= @player.name.upcase %> VS. <%= @computer.name.upcase %></h1>
 
+<form method="post" action="/playing">
+
+  <input type="submit" name="rps" value="<%= @rps[0].upcase%>"/>
+
+</form>
+
+<form method="post" action="/playing">
+
+  <input type="submit" name="rps" value="<%= @rps[1].upcase%>"/>
+
+</form>
+
+<form method="post" action="/playing">
+
+  <input type="submit" name="rps" value="<%= @rps[2].upcase%>"/>
+
+</form>
+
 </html>

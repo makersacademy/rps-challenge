@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<h1><%= @winner %></h1>
+
+<h2>PLAYER: <%= @player_input %> VS. COMPUTER: <%= @computer_output %></h2>
+
+<form action='/tryagain' method='post'>
+  <input type='submit' name= 'try_again' value='Try Again'>
+</form>
+
+</html>

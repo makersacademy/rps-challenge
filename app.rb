@@ -19,7 +19,25 @@ class Rps < Sinatra::Base
   get '/play' do
     @player = session[:game].player
     @computer = session[:game].computer
+    @rps = session[:game].computer.rps
     erb :play
+  end
+
+  post '/playing' do
+    session[:game].player_turn(params[:rps])
+    redirect to ('/result')
+  end
+
+  get '/result' do
+    @player_input = session[:game].player.choice
+    @computer_output = session[:game].computer_turn
+    @winner = session[:game].winner(@player_input, @computer_output)
+    erb :result
+  end
+
+  post '/tryagain' do
+    params[:try_again]
+    redirect to ('/play')
   end
 
 
