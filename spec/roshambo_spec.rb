@@ -1,5 +1,18 @@
 require './app.rb'
 require 'capybara/rspec'
-require './roshambo.rb'
+require './lib/roshambo.rb'
 
-Capybara.app = 'RPS'
+describe Roshambo do
+
+  it 'initialises to take a user input' do
+    newgame = Roshambo.new("Rock")
+    expect(newgame.input).to eq("Rock")
+  end
+
+  # describe '#randomiser' do
+  #   it 'randomises between 3 things in an array' do
+  #
+  #
+  # end
+
+end

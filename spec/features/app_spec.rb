@@ -5,7 +5,7 @@ Capybara.app = RPS
 
 feature "Entering player name" do
   scenario "Expect the homepage to have welcome header" do
-    visit '/'
+    visit ('/')
     expect(page).to have_content "Rock Paper Scissors!"
   end
 
