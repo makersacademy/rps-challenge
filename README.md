@@ -1,86 +1,67 @@
-# RPS Challenge
+# RPS-challenge
 
-Instructions
--------
+Link to the task source with detailed instructions regarding the challenge itself is available [here](https://github.com/makersacademy/rps-challenge).
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+I used RPS [example](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1)to establish better understanding of testing environment for the game using Ruby language. Also, used RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). Also, explored ideas from [catherinestevenson/rps-challenge](https://github.com/catherinestevenson/rps-challenge) repository. 
 
-Task
-----
+Unfinished code or other missing elements will be highlighted, and plan will be provided how to finalise the challenge in [ToDo](#todo).
 
-Knowing how to build web applications is getting us almost there as web developers!
+## Getting Started
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+These instructions will help to follow the steps of the project.
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+### Prerequisites & Installing
 
-```sh
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+- Fork this repo, and clone to your local machine.
+- Run the command gem install bundle (if you don't have bundle already).
+- Open terminal:
+	- rspec
+	- rackup -p 4567
+	- In your browser go to http://localhost:4567/ to play!
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Running the tests
 
-Hints on functionality
+Run the automated tests for this challenge via RSpec -fd.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+## Built With  
 
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Sublime Text](https://www.sublimetext.com/)
+* [iterm2](https://www.iterm2.com/)
+* [Capybara](https://capybaraworkout.herokuapp.com/)
+* [Sinatra](http://sinatrarb.com/)
 
-As usual please start by
+## Authors
 
-* Forking this repo
-* TEST driving development of your app
+* [Vytis Vadoklis](https://github.com/VytisVA)
 
+## Steps Completed
 
-## Bonus level 1: Multiplayer
+- 1 - Setting up project:
+	- Canvasing ideas, sketching, googling, running various app versions.
+	- Checking if required gems are installed, setting up app.rb, running rackup.
+	- Setting up testing environment.
+- 2 - Start working on the first user story:
+	- First user story asks "- the marketeer should be able to enter their name before the game":
+	- enter_name_spec created, alongside with app.rb and files and view folder(index.erb and play.erb).
+- 3 - Moving to the second user story element:
+	- Establishing POST/redirect/GET pattern.
+	- "the marketeer will be presented the choices (rock, paper and scissors)" - which is implemented via:
+	- Putting content "Please select rock, paper or scissors".
+	- Establishing web_helpers to make feature testing more efficient.
+	- Putting actual buttons with rock, paper or scissors.
+	- DRY'ing the code and removing certain erb's; 
+	- Disabling most of the feature test, since the main feture test now is play_spec.rb.
+- 4 - Working on user story "the game will choose a random option":
+	- Made test pass when computer selects "Rock" option; Controller refactoring.
+	- Made test to pass when computer selects random option.
+- 5 - Working on "a winner will be declared":
+	- Establishing testing frameworks for turn_spec.rb and play_spec.
+	- Added some CSS. 		  	
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+## ToDo
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Notes on test coverage
-----------------------
-
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+- 1 - Bonus level 1: Multiplayer:
+	- Change the game so that two marketeers can play against each other ( yes there are two of them ).
+- 2 - Bonus level 2: Rock, Paper, Scissors, Spock, Lizard:
+	- Use the special rules ( you can find them [here](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock ) 	
