@@ -6,8 +6,8 @@ describe Game do
   it { expect(subject).to respond_to(:switch_turn) }
   it { expect(subject).to respond_to(:all_players_selected_choice?) }
 
-  let (:player_1) { double :player}
-  let (:player_2) { double :player}
+  let(:player_1) { double :player }
+  let(:player_2) { double :player }
 
   before {
     allow(player_1).to receive(:choice).and_return('Scissors')
