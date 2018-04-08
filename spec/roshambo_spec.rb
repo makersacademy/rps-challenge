@@ -29,4 +29,13 @@ describe Roshambo do
     end
   end
 
+  describe "#evaluate" do
+    # it "rock beats scissors" do
+    #   newgame = Roshambo.new("Rock")
+    #   allow(Kernel).to receive(:rand).with(0..2).and_return(0)
+    #   newgame.roll
+    #   expect(newgame.evaluate("Scissors")).to eq("You win!")
+    # end
+  end
+
 end

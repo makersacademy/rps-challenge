@@ -1,5 +1,5 @@
 require 'sinatra'
-# require './lib/player.rb'
+require './lib/roshambo.rb'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -21,6 +21,7 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     session[:P1RPS] = "Rock"
+    session[:newroll] = roshamboroll
     redirect('/result')
   end
 
@@ -35,8 +36,9 @@ class RPS < Sinatra::Base
   end
 
   get '/result' do
-    p @player1 = session[:player1]
-    p @P1RPS = session[:P1RPS]
+    @player1 = session[:player1]
+    @P1RPS = session[:P1RPS]
+    @newroll = session[:newroll]
     erb(:result)
   end
 end

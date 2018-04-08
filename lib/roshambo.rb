@@ -10,4 +10,10 @@ class Roshambo
     data = ["Rock", "Paper", "Scissors"]
     data[Kernel.rand(0..2)]
   end
+
+  def evaluate(roll)
+    # rock > scissors > paper
+
+
+  end
 end
