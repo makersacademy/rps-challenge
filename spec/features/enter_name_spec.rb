@@ -1,5 +1,4 @@
-require 'capybara/rspec'
-require_relative '../../app'
+
 
 feature "Enter name" do
   scenario "Ask player to enter their name" do
