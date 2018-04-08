@@ -24,6 +24,12 @@ feature "on signing in to the game of RPS" do
   end
 
   feature "on playing the game" do
+    before do
+      visit("/signin")
+      fill_in 'playername', with: "Ralph"
+      click_button("Submit name")
+      visit("/playrps")
+    end
 
     scenario "the user has three options for rock paper and scissors" do
       visit("/signin")

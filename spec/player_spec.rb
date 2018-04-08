@@ -3,7 +3,7 @@ require 'player'
 RSpec.describe Player do
 
   let (:player) { described_class.new('Ralph') }
-  let(:game) { double('game', :choice => 'rock') }
+  let(:game) { double('game') }
 
   describe '#name' do
 
@@ -17,6 +17,12 @@ RSpec.describe Player do
   describe "#choice" do
 
     it 'returns the choice of the user when playing the game' do
+
+        player.choice = "Rock"
+
+        expect(player.choice).to eq("Rock")
+
+
 
     end
   end

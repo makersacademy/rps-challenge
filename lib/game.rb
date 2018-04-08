@@ -1,3 +1,4 @@
+require 'player'
 class Game
 
   attr_reader :rock
@@ -7,9 +8,10 @@ class Game
 
   def initialize
 
-    @rock = "rock"
-    @paper = "paper"
-    @scissors = "scissors"
+    @rock = 'rock'
+    @paper = 'paper'
+    @scissors = 'scissors'
+    @player = Player.new('Josh')
 
   end
 end

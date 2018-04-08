@@ -32,6 +32,7 @@ end
 get '/playrps' do
 
   @player = Player.new(session[:playername])
+  @player.choice = params[:'playerchoice']
 
   erb :rps
 
@@ -42,18 +43,18 @@ post '/pick' do
 
   session[:playerchoice] = params[:'playerchoice']
 
-  redirect '/pick'
+  redirect '/playrps'
 
 end
 
-get '/pick' do
-
-  @player = Player.new(session[:playername])
-
-
-  erb :choice
-
-end
+# get '/pick' do
+#
+#   @player = Player.new(session[:playername])
+#
+#
+#   erb :choice
+#
+# end
 
 
 
