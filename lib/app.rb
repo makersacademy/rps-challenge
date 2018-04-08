@@ -41,12 +41,13 @@ get '/play' do
 
 
 
+
   erb :rps
 
 
 end
 
-post '/pick' do
+post '/play' do
 
   session[:playerchoice] = params[:'playerchoice']
   # session[:opponentchoice] = ['Rock', 'Paper', 'Scissors'].sample

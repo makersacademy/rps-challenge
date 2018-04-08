@@ -1,9 +1,14 @@
 <h1>HERE WE GO!!</h1>
-Hello, <font size="80"><%= @player.name %></font> Choose your option of Rock, paper or scissors!
+<font size="80"> Hello, <%= @player.name %></font> Choose your option of Rock, paper or scissors!
 
-<form action="/pick" method="post">
+<form action="/result" method="post">
 
   <input type="submit" name="playerchoice" value="Rock">  <input type="submit" name="playerchoice" value="Paper">
   <input type="submit" name="playerchoice" value="Scissors">
 
 </form>
+
+You chose <%= @player.choice %>!
+<div id="opponent">
+The computer chose <%= @player2.choice %>!
+</div>

@@ -6,12 +6,11 @@ RSpec.describe Game do
 
 
  describe "#rock" do
-
-   it "returns the string rock" do
-
-     expect(game.rock).to eq('rock')
+   #
+   # it "returns the string rock" do
+   #
+   #   expect(game.rock).to eq('rock')
 
    end
- end
 
 end
