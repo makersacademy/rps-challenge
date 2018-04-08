@@ -1,0 +1,17 @@
+<html>
+<body bgcolor="#F5F5F5">
+<div align="center">
+<img src=https://bit.ly/2JvCEOO>
+<p style="color:gold;font-size:50px;"><%=@player1%> vs <%=@player2%></p>
+<h2> It is time for <%=@player2%></h2>
+<h2> Write one of the following "rock, paper, scissors, lizard, spock" </h2>
+<form action="/result">
+  <label for="player_2_weapon">
+    It is <%=@player2%> turn
+    <input type="text" name="player_2_weapon">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
