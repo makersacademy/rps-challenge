@@ -28,13 +28,14 @@ class RPS < Sinatra::Base
   post '/result' do
     p params
     $game.player.choice = params[:value]
+    $game.player.parse
     p $game.player.choice
     p $game.comp.choice
     redirect('/final')
   end
 
   get '/final' do
-   "#{$game.player.name} #{$game.result}!"
+    erb :result
   end
 
   run! if app_file == $0
