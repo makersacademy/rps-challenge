@@ -27,13 +27,18 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/first_shot' do
+  get '/first_shot' do
     @game.first_turn
     erb :first_shot
   end
 
-  get '/choice' do
-    erb :choice
+  get '/second_shot' do
+    @game.switch_turn
+    erb :second_shot
+  end
+
+  get '/choice_options' do
+    erb :choice_options
   end
 
   post '/submit_choice' do
@@ -42,8 +47,7 @@ class RPS < Sinatra::Base
     if @game.all_players_selected_choice?
       redirect('/finish')
     else
-      @game.switch_turn
-      redirect('/choice')
+      redirect('/second_shot')
     end
   end
 
