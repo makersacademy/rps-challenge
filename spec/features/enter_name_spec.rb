@@ -1,5 +1,3 @@
-
-
 feature "Enter name" do
   scenario "Ask player to enter their name" do
     sign_in_and_play
