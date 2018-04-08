@@ -1,0 +1,52 @@
+<h2> <%= "#{@turn.player_name} against the Computer" %> </h2>
+
+<h3> <%= 'Please select rock, paper or scissors' %> </h3>
+
+<form method="POST" action="/play">
+	<input type="submit" name="shape" value="Rock" style="color:DodgerBlue;height:100px; width:100px"/>
+	<input type="submit" name="shape" value="Paper" style="color:DodgerBlue;height:100px; width:100px"/>
+	<input type="submit" name="shape" value="Scissors" style="color:DodgerBlue;height:100px; width:100px"/>
+</form>
+
+You 
+
+<br>
+
+<%= "#{@turn.player_shape.to_s.capitalize}" %>
+
+<br>
+<br>
+
+<div id="computer">
+The Computer 
+
+<br>	
+
+<%= "#{@turn.computer_shape.to_s.capitalize}" %>
+
+</div>
+
+<br>
+
+<div style="color:Tomato;font-size: 150%"> 
+
+<% if @turn.win? %>
+	You win!
+<% elsif @turn.lose? %>
+	You lose!
+<% elsif @turn.draw? %>
+	Draw!		
+<% end %>
+
+</div>			
+
+<style>
+
+body {
+        background-image: url("https://static.interestingengineering.com/images/uploads/sizes/RPS_resize_md.jpg");
+        background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	background-position: center; 
+}
+
+</style> 
