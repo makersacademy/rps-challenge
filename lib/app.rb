@@ -25,14 +25,19 @@ post '/playrps' do
 
 
   session[:playername] = params[:'playername']
-  redirect '/playrps'
+  redirect '/play'
 
 end
 
-get '/playrps' do
+get '/play' do
 
   @player = Player.new(session[:playername])
-  @player.choice = session[:playerchoice]
+  @player2 = Player.new('The computer')
+
+
+
+
+
 
 
 
@@ -44,8 +49,25 @@ end
 post '/pick' do
 
   session[:playerchoice] = params[:'playerchoice']
+  # session[:opponentchoice] = ['Rock', 'Paper', 'Scissors'].sample
+  session[:opponentchoice] = 'Rock'
 
-  redirect '/playrps'
+
+
+  redirect '/result'
+
+end
+
+get '/result' do
+
+  @player = Player.new(session[:playername])
+  @player2 = Player.new('The computer')
+
+
+  @player.choice = session[:playerchoice]
+  @player2.choice = session[:opponentchoice]
+
+    erb :result
 
 end
 

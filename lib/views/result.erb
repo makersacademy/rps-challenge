@@ -7,3 +7,8 @@ Hello, <font size="80"><%= @player.name %></font> Choose your option of Rock, pa
   <input type="submit" name="playerchoice" value="Scissors">
 
 </form>
+
+You chose <%= @player.choice %>!
+<div id="opponent">
+The computer chose <%= @player2.choice %>!
+</div>

@@ -18,7 +18,7 @@ feature "on signing in to the game of RPS" do
     visit("/signin")
     fill_in 'playername', with: "Ralph"
     click_button("Submit name")
-    visit("/playrps")
+    visit("/play")
     expect(page).to have_content "Ralph"
 
   end
@@ -35,7 +35,7 @@ feature "on signing in to the game of RPS" do
       visit("/signin")
       fill_in 'playername', with: "Ralph"
       click_button("Submit name")
-      visit("/playrps")
+      visit("/play")
       expect(page).to have_content "Ralph"
       expect(page).to have_button("Rock")
       expect(page).to have_button("Paper")
@@ -47,11 +47,26 @@ feature "on signing in to the game of RPS" do
       visit("/signin")
       fill_in 'playername', with: "Ralph"
       click_button("Submit name")
-      visit("/playrps")
+      visit("/play")
       click_button("Rock")
-      visit("/playrps")
+      visit("/result")
       # game = Game.new
-      expect(page).to have_content("You went with Rock!")
+      expect(page).to have_content("You chose Rock!")
+
+    end
+
+    scenario "after clicking choice user is presented with their choice and the choice of computer" do
+      visit("/signin")
+      fill_in 'playername', with: "Ralph"
+      click_button("Submit name")
+      visit("/play")
+      click_button("Rock")
+      visit("/result")
+      expect(page).to have_content("You chose Rock!")
+
+      expect(page).to have_content("The computer chose Rock!")
+
+
 
     end
   end

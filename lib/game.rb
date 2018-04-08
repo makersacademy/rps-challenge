@@ -1,16 +1,11 @@
 
 class Game
 
-  attr_reader :rock
-  attr_reader :paper
-  attr_reader :scissors
+  attr_reader :choice
 
 
   def initialize
 
-    @rock = 'rock'
-    @paper = 'paper'
-    @scissors = 'scissors'
     @player = Player.new('Josh')
 
   end
