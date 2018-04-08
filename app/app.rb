@@ -20,7 +20,9 @@ class RPS < Sinatra::Base
   end
 
   get '/selection' do
+    @player = session[:player]
     @selection = params[:choice]
+
     erb(:selection)
   end
 

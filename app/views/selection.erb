@@ -1,3 +1,9 @@
+<% if @player.move_check?(@selection) == false %>
+<h1>You've made an invalid selection, please choose again</h1>
+<form name="input" action="/play" method="get" >
+  <input type="submit" value="Back">
+</form>
+<% else %>
 <h1>You selected <%=@selection.capitalize%></h1>
 
 <form name="input" action="/result" method="post" >
@@ -7,3 +13,4 @@
 <form name="input" action="/play" method="get" >
   <input type="submit" value="Change selection">
 </form>
+<% end %>

@@ -17,4 +17,10 @@ feature 'Play' do
     click_button 'Go!'
     expect(page).to have_content 'You selected Scissors'
   end
+  scenario 'Can\'t make an invalid selection' do
+    sign_in_and_play
+    fill_in 'choice', with: 'apple'
+    click_button 'Go!'
+    expect(page).to have_content 'You\'ve made an invalid selection, please choose again'
+  end
 end
