@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative '../lib/player'
+require_relative '../lib/computer'
 
 class RPS < Sinatra::Base
   configure do

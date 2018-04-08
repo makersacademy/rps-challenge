@@ -12,8 +12,17 @@ describe RPS do
       sign_in_and_play
       rock
       continue
-
       expect(page).to have_content "Takeshi chose paper!"
+    end
+  end
+
+  feature "Shows the player winning" do
+    scenario "player choses rock and computer choses scissors" do
+      variable = double(:computer_choice => "scissors")
+      sign_in_and_play
+      rock
+      continue
+      expect(page).to have_content "Miriam Bancroft wins"
     end
   end
 
