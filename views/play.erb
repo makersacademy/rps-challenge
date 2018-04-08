@@ -1,4 +1,4 @@
-<h2> <%= "#{@player_name} against the Computer" %> </h2>
+<h2> <%= "#{@turn.player_name} against the Computer" %> </h2>
 
 <h3> <%= 'Please select rock, paper or scissors' %> </h3>
 
@@ -8,13 +8,13 @@
 	<input type="submit" name="shape" value="Scissors"/>
 </form>
 
-<%= "You chose #{@shape}" %>
+<%= "You chose #{@turn.player_shape.to_s.capitalize}" %>
 
 <br>
 <br>
 
 <div id="computer">
-	<%= "The Computer chose #{@computer_shape.to_s.capitalize}" %>
+	<%= "The Computer chose #{@turn.computer_shape.to_s.capitalize}" %>
 </div>		
 
 <style>

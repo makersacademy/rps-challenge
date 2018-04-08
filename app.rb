@@ -14,14 +14,12 @@ class RPS < Sinatra::Base
 	end
 
 	get '/play' do
-		@player_name = session[:player_name]
-		@shape = session[:shape]
-		@computer_shape = session[:computer_shape]
+		@turn = Turn.new(session)
 		erb :play
 	end
 
 	post '/play' do
-		session[:shape] = params[:shape]
+		session[:player_shape] = params[:shape]
 		session[:computer_shape] = :rock
 		redirect '/play'
 	end					

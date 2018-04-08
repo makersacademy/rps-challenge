@@ -64,7 +64,8 @@ Run the automated tests for this challenge via RSpec -fd or rubocop.
 	- DRY'ing the code and removing certain erb's; 
 	- Disabling most of the feature test, since the main feture test now is play_spec.rb.
 - 4 - Working on user story "the game will choose a random option":
-	- 	  	
+	- Made test pass when computer selects "Rock" option; Controller refactoring.
+	- Made test to pass when computer selects random option.	  	
 
  
 
