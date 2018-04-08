@@ -1,5 +1,5 @@
  <h1> 
-  The computer picked <%= $game.comp.choice%>.
+  The computer picked <%= $comp.choice%>.
   <br>
-  <%= $game.player.name%> <%= $game.result %>!
+  <%= $player.name%> <%= $game.result($player.choice, $comp.choice) %>!
  </h1>

@@ -6,6 +6,8 @@ require_relative 'comp'
 class RPS < Sinatra::Base 
 
   $game = Game.new
+  $player = Player.new
+  $comp = Comp.new
 
   get '/' do
     "Test page working"
@@ -16,8 +18,7 @@ class RPS < Sinatra::Base
   end
 
   post '/login' do
-    p params
-    $game.player.name = params[:player]
+    $player.name = params[:player]
     redirect('/play')
   end
 
@@ -26,11 +27,7 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    p params
-    $game.player.choice = params[:value]
-    $game.player.parse
-    p $game.player.choice
-    p $game.comp.choice
+    $game.player.choice = params[:value].delete(":")
     redirect('/final')
   end
 

@@ -11,3 +11,9 @@ def login
   fill_in('player', with: 'Daniel')
   click_button('Submit')
 end
+
+
+def play
+  click_button("scissors")
+end
+

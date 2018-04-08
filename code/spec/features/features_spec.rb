@@ -22,3 +22,15 @@ feature 'Welcome Page' do
   end
 end
 
+#want to know how to feature test for dynamic content
+=begin
+feature 'Play Game' do
+  scenario "the user picks rock and the computer picks scissors" do
+    login
+    play
+    page.find('#player.name')
+  end
+end
+=end   
+
+
