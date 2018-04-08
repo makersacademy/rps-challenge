@@ -10,4 +10,8 @@ class Player
     @choice = option
   end
 
+  def reset_choice
+    @choice = nil
+  end
+
 end

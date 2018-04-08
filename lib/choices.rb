@@ -1,5 +1,5 @@
 class Choices
-  SCISSORS = 'scissors'
-  ROCK = 'rock'
-  PAPER = 'paper'
+  SCISSORS = 'Scissors'
+  ROCK = 'Rock'
+  PAPER = 'Paper'
 end

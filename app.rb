@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/resolver'
 
 class RPS < Sinatra::Base
 
@@ -9,8 +10,10 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player_1 = Player.new(params[:player_1])
-    player_2 = Player.new(params[:player_2])
+    player_1 = @game != nil ? @game.player_1 : Player.new(params[:player_1])
+    player_2 = @game != nil ? @game.player_2 : Player.new(params[:player_2])
+    player_1.reset_choice
+    player_2.reset_choice
     @game = Game.create(player_1, player_2)
     redirect '/play'
   end
@@ -20,10 +23,6 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
-    erb :play
-  end
-
-  get '/finish' do
     erb :play
   end
 
@@ -51,6 +50,24 @@ class RPS < Sinatra::Base
     end
   end
 
-  # start the server if ruby file executed directly
+  get '/draw' do
+    erb :draw
+  end
+
+  get '/finish' do
+    resolver = Resolver.new
+    result = resolver.resolve(@game.player_1.choice, @game.player_2.choice)
+    if result == Resolver::DRAW
+      redirect('/draw')
+    elsif
+      result == Resolver::WIN
+      @winner = @game.player_1
+    elsif
+      result == Resolver::LOOSE
+      @winner = @game.player_2
+    end
+    erb :finish
+  end
+
   run! if app_file == $0
 end
