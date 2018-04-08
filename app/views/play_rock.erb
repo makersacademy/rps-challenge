@@ -1,0 +1,11 @@
+<h1><%= @name %> chose rock!</h1>
+<img src="https://www.greatestphysiques.com/wp-content/uploads/2017/02/Dwayne-Johnson-THe-Rock.18.jpg" height="250" width="200" />
+<h1>Takeshi chose <%= @computer_choice %>!</h1>
+
+<% if @computer_choice == "scissors" %>
+<h1><%= @name %> wins</h1>
+<% elsif @computer_choice == "paper" %>
+<h1><%= @name %> loses</h1>
+<% else %>
+<h1>Draw</h1>
+<% end %>

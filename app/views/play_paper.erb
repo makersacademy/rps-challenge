@@ -1,0 +1,11 @@
+<h1><%= @name %> chose paper!</h1>
+<h1>Takeshi chose <%= @computer_choice %>!</h1>
+
+<% if @computer_choice == "scissors" %>
+<h1><%= @name %> loses</h1>
+<% elsif @computer_choice == "paper" %>
+<h1>Draw</h1>
+<% else %>
+<h1><%= @name %> wins</h1>
+<img src="https://i.redditmedia.com/kFELTukAM5Sn5OPg2VD8pHlhwpH1IGqhYH0oSCM_i30.jpg?w=623&s=87080f5e612fa3a6092f7a5034cf1b73" height="350" width="250" />
+<% end %>
