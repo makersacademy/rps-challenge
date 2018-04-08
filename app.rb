@@ -10,8 +10,15 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    player_1 = @game != nil ? @game.player_1 : Player.new(params[:player_1])
-    player_2 = @game != nil ? @game.player_2 : Player.new(params[:player_2])
+    player_1 = Player.new(params[:player_1])
+    player_2 = Player.new(params[:player_2])
+    @game = Game.create(player_1, player_2)
+    redirect '/play'
+  end
+
+  post '/continue' do
+    player_1 = @game.player_1
+    player_2 = @game.player_2
     player_1.reset_choice
     player_2.reset_choice
     @game = Game.create(player_1, player_2)
