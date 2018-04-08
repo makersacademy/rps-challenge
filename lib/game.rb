@@ -11,23 +11,40 @@ class Game
     @game = Game.new(player1)
   end
 
-  def choice(_weapon)
-
-    if computer_choice == 'Rock'
-      puts "It's a draw!"
-    elsif computer_choice == 'Paper'
-      puts "You Loose!"
-    elsif computer_choice == 'Scissors'
-      puts "You Win!"
-  end
-end
-
   def self.instance
     @game
   end
 
+  def player_move(choice)
+    @choice = choice
+   end
+
   def computer_choice
     @computer_draw = @computer_pick.sample
   end
+
+  def result
+    if @choice == @computer_draw
+      "It's a Draw!"
+     elsif @computer_draw == "Rock"
+       if @choice == "Paper"
+         "You Win!"
+        else
+          "You Lose"
+        end
+     elsif @computer_draw == "Paper"
+       if @choice == "Rock"
+         "You Lose!"
+        else
+          "You Win!"
+        end
+     else
+       if @choice == "Paper"
+         "You lose"
+        else
+          "You Win!"
+        end
+     end
+end
 
 end

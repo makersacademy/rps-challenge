@@ -6,10 +6,6 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  before do
-    @game = Game.instance
-  end
-
   get '/' do
     erb :index
   end
@@ -20,26 +16,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    @game = Game.instance
     erb :play
   end
 
-  post '/choice' do
-    params
-    if params[:choice] == 'Rock' then redirect '/rock'
-    elsif params[:choice] == 'Paper' then redirect '/paper'
-    elsif params[:choice] == 'Scissors' then redirect '/scissors'
+  post '/result' do
+    @game = Game.instance
+    @player_choice = @game.player_move(params[:choice])
+    @computer_choice = @game.computer_choice
+    erb :result
   end
 
-  end
-  get '/rock' do
-    erb :rock
-  end
-  get '/paper' do
-    erb :paper
-  end
-  get 'scissors' do
-    erb :scissors
-  end
-
-  run! if app_file == $0
+  # run! if app_file == $0
 end
