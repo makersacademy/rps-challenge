@@ -1,12 +1,10 @@
-
 class Game
-
-  attr_reader :choice
+  attr_reader :players
 
 
   def initialize
 
-    @player = Player.new('Josh')
+    @players = []
 
   end
 end

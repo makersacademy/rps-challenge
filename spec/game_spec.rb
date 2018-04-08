@@ -2,15 +2,17 @@ require 'game'
 
 
 RSpec.describe Game do
+
   subject(:game) { described_class.new }
 
 
- describe "#rock" do
-   #
-   # it "returns the string rock" do
-   #
-   #   expect(game.rock).to eq('rock')
+ describe "#initialize" do
 
+   it "has an empty array of players on intialization" do
+
+     expect(game.players).to eq []
    end
+
+ end
 
 end
