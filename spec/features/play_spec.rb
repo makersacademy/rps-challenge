@@ -1,4 +1,4 @@
-feature 'Enter your name' do
+feature 'Gameplay' do
 	scenario 'submitting name' do
 		enter_name_play
 		expect(page).to have_content 'Vytis against the Computer'
@@ -14,6 +14,19 @@ feature 'Enter your name' do
 	scenario 'choose one option' do
 		enter_name_play
 		click_button 'Rock'
-		expect(page).to have_content "Vytis is showing Rock"
-	end	
-end	
+		expect(page).to have_content "You chose Rock"
+	end
+
+	scenario 'computer chooses an option' do
+		enter_name_play
+		click_button 'Rock'
+
+		message = find(:css, "#computer").text
+
+		expect(possible_msgs).to include message
+	end
+
+	def possible_msgs
+		[:rock, :paper, :scissors].map { |shape| "The Computer chose #{shape.to_s.capitalize}" }
+	end				
+end	 

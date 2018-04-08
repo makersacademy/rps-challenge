@@ -2,7 +2,7 @@
 
 Link to the task source with detailed instructions regarding the challenge itself is available [here](https://github.com/makersacademy/rps-challenge). For quick reference regarding challange tasks, the original readme file produced by Makers Academy is available in the root directory with the name README.md.
 
-I used RPS example to establish better understanding of testing environment for the game using Ruby language on [Youtube_link](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1). And RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). 
+I used RPS example to establish better understanding of testing environment for the game using Ruby language on [Youtube_link](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1). And RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). Also, explored ideas from [catherinestevenson/rps-challenge](https://github.com/catherinestevenson/rps-challenge) repository. 
 
 Unfinished code or other missing elements will be highlighted, and plan will be provided how to finalise the challenge in [ToDo](#todo).
 

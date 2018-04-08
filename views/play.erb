@@ -8,7 +8,14 @@
 	<input type="submit" name="shape" value="Scissors"/>
 </form>
 
-<h4> <%= "#{@player_name} is showing #{@shape}" %> </h4>	
+<%= "You chose #{@shape}" %>
+
+<br>
+<br>
+
+<div id="computer">
+	<%= "The Computer chose #{@computer_shape.to_s.capitalize}" %>
+</div>		
 
 <style>
 
