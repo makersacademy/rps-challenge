@@ -2,7 +2,7 @@
 
 Link to the task source with detailed instructions regarding the challenge itself is available [here](https://github.com/makersacademy/rps-challenge).
 
-I used RPS [example](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1)to establish better understanding of testing environment for the game using Ruby language. Also, used RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo). Also, explored ideas from [catherinestevenson/rps-challenge](https://github.com/catherinestevenson/rps-challenge) repository. 
+To solve this challange I used RPS [example](https://www.youtube.com/watch?v=ovwjH64ZGOs&t=670s&list=LLVfF8s5P2mxj3OYyaW6x2rg&index=1)to establish better understanding of testing environment for the game using Ruby language. Also, used RPS Week 3 Challenge [Exemplar](https://youtu.be/GoHKmartBYo).
 
 Unfinished code or other missing elements will be highlighted, and plan will be provided how to finalise the challenge in [ToDo](#todo).
 
