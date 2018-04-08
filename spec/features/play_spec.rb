@@ -1,4 +1,7 @@
 feature 'Gameplay' do
+
+	PLAY_SEED = 210823351
+
 	scenario 'submitting name' do
 		enter_name_play
 		expect(page).to have_content 'Vytis against the Computer'
@@ -17,13 +20,11 @@ feature 'Gameplay' do
 		expect(page).to have_content "You chose Rock"
 	end
 
-	scenario 'computer chooses an option' do
+	scenario 'computer chooses a random option' do
 		enter_name_play
+		srand(PLAY_SEED)
 		click_button 'Rock'
-
-		message = find(:css, "#computer").text
-
-		expect(possible_msgs).to include message
+		expect(page).to have_content 'The Computer chose Scissors'
 	end
 
 	def possible_msgs

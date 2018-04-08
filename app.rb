@@ -20,7 +20,7 @@ class RPS < Sinatra::Base
 
 	post '/play' do
 		session[:player_shape] = params[:shape]
-		session[:computer_shape] = :rock
+		session[:computer_shape] = Skynet.new.shape
 		redirect '/play'
 	end					
 
