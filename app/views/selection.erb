@@ -6,11 +6,7 @@
 <% else %>
 <h1>You selected <%=@selection.capitalize%></h1>
 
-<form name="input" action="/result" method="post" >
+<form name="input" action="/result" method="get" >
   <input type="submit" value="Proceed">
-</form>
-
-<form name="input" action="/play" method="get" >
-  <input type="submit" value="Change selection">
 </form>
 <% end %>

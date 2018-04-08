@@ -1,5 +1,5 @@
 class Player
-attr_reader :name, :player_move
+attr_reader :name, :move
 
 MOVES = [:rock, :paper, :scissors]
 

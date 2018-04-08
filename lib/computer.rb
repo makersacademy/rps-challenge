@@ -1,8 +1,12 @@
 class Computer
 
-  MOVES = [:rock, :paper, :scissors]
+  attr_reader :move
 
-  def move
-    MOVES.sample
+  def initialize
+    @move = [:rock, :paper, :scissors]
+  end
+
+  def computer_move
+    move.sample
   end
 end
