@@ -1,8 +1,66 @@
-<h1>Hello <%=@game.player1.name %> </h1>
-<h2>Let's Play!</h2>
+<body>
+  <div class="upper">
+    <h1>
+      <p>Hello <%=@game.player1.name %> </p>
+    </h1>
+  </dive>
 
+  <div class="middle">
+<h2>
+  <p>Let's Play!</p>
+</h2>
+</div>
+<div class ="lower">
 <form action="/result" method="post">
   <input type="submit" name="choice" value="Rock">
   <input type="submit" name="choice" value="Paper">
   <input type="submit" name="choice" value="Scissors">
 </form>
+</div>
+
+</body>
+
+<style>
+
+body {
+  background-image: url("https://beacon-center.org/wp-content/uploads/2013/04/Figure2_Jesse.Kruger.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.upper {
+  color: #e67300;
+  text-align: center;
+  font-family: 'Monaco', monospace;
+  font-size: 10px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 36.3px;
+}
+
+.middle {
+   color: #e67300;
+    text-align: center;
+    font-family: 'Monaco', monospace;
+   font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 36.3px
+  }
+
+.lower {
+      text-align: center;
+  }
+
+  input[type="text"] {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #16647F;
+    justify-content: center
+  }
+
+  input[type="submit"] {
+
+  }

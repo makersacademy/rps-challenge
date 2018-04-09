@@ -26,25 +26,16 @@ class Game
   def result
     if @choice == @computer_draw
       "It's a Draw!"
-     elsif @computer_draw == "Rock"
-       if @choice == "Paper"
-         "You Win!"
-        else
-          "You Lose"
-        end
-     elsif @computer_draw == "Paper"
-       if @choice == "Rock"
-         "You Lose!"
-        else
-          "You Win!"
-        end
-     else
-       if @choice == "Paper"
-         "You lose"
-        else
-          "You Win!"
-        end
+    else
+      case @computer_draw
+      when "Rock"
+        @choice == "Paper" ? "Paper beats Rock, You Win!" : "Rock beats Scissors, You Lose!"
+      when "Paper"
+        @choice == "Rock" ? "Paper beats Rock, You Lose!" : "Scissors beats Paper, You Win!"
+      when "Scissors"
+        @choice == "Paper" ? "Scissors beats Paper, you Lose!" : "Rock beats Scissors, you Win!"
+      end
      end
-end
+  end
 
 end
