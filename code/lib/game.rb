@@ -1,6 +1,5 @@
 class Game
 
-  attr_reader :game, :comp, :player
   def initialize
     @values = {"rock" => "scissors", "paper" => "rock", "scissors" => "paper"}
   end

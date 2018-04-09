@@ -2,7 +2,7 @@ class Comp
 
   attr_reader :choice
   
-  def initialize
+  def self.choice
     @choice = ["rock", "paper", "scissors"].sample
   end
 

@@ -5,9 +5,7 @@ require_relative 'comp'
 
 class RPS < Sinatra::Base 
 
-  $game = Game.new
   $player = Player.new
-  $comp = Comp.new
 
   get '/' do
     "Test page working"
@@ -27,11 +25,13 @@ class RPS < Sinatra::Base
   end
 
   post '/result' do
-    $game.player.choice = params[:value].delete(":")
+    $player.choice = params[:value].delete(":")
     redirect('/final')
   end
 
   get '/final' do
+    @comp = Comp.choice
+    @result = Game.new.result($player.choice, @comp)
     erb :result
   end
 
