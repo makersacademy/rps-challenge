@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-<h1><%= @winner %></h1>
+<body style="background: rgb(0, 0, 0)">
+<h1 style="color: rgb(143, 97, 210); text-align: center">
+<%= @winner %>
+</h1>
 
-<h2>PLAYER: <%= @player_input %> VS. COMPUTER: <%= @computer_output %></h2>
+<h4 style="color: rgb(255, 255, 255); text-align: center">
+  PLAYER: <%= @player_input %> VS. COMPUTER: <%= @computer_output %>
+</h4>
 
+<div style="text-align: center">
 <form action='/tryagain' method='post'>
   <input type='submit' name= 'try_again' value='Try Again'>
 </form>
+</div>
+
+
+</body>
 
 </html>

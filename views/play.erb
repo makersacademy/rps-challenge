@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<h1><%= @player.name.upcase %> VS. <%= @computer.name.upcase %></h1>
+<body style="background: rgb(0, 0, 0)">
 
+<h1 style="color: rgb(96, 29, 207); text-align: center; font-size: 40px">
+<%= @player.name.upcase %> VS. <%= @computer.name.upcase %>
+</h1>
+
+
+<h2 style="color: rgb(205, 52, 4); text-align: center; font-size: 28px">
 <form method="post" action="/playing">
 
   <input type="submit" name="rps" value="<%= @rps[0].upcase%>"/>
@@ -20,5 +26,6 @@
   <input type="submit" name="rps" value="<%= @rps[2].upcase%>"/>
 
 </form>
+</h2>
 
 </html>
