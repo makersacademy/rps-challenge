@@ -9,7 +9,7 @@ describe Computer do
 
   it 'Should return the rock, paper, scissors by randen' do
     allow(Kernel).to receive(:rand).with(0..2).and_return(0)
-    expect(subject.choose).to eq :rock
+    expect(subject.choose).to eq "ROCK"
   end
 
 end
