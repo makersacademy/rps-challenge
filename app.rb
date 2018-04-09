@@ -29,6 +29,7 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
+    p params
     @player_input = session[:game].player.choice
     @computer_output = session[:game].computer_turn
     @winner = session[:game].winner(@player_input, @computer_output)

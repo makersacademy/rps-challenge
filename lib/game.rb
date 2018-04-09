@@ -24,7 +24,7 @@ attr_accessor :player, :computer, :result
     result = [player.upcase, computer.upcase]
     p result
     if @winners.include?(result)
-      "#{@player.name} WIN!"
+      "#{@player.name.upcase} WIN!"
     elsif @losers.include?(result)
       "#{@computer.name} WIN!"
     else

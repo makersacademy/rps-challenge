@@ -6,7 +6,7 @@ class Computer
 
   def initialize(name = DEFAULT_NAME)
     @name = name
-    @rps = [:rock, :paper, :scissors]
+    @rps = ["ROCK", "PAPER", "SCISSORS"]
   end
 
   def choose
