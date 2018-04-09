@@ -11,6 +11,7 @@ class Game
 
   def add_player name
     @players[name] = nil
+    self
   end
 
   def n_of_players
@@ -20,6 +21,7 @@ class Game
   def set_choice input
    player, choice = input.scan /\w+/ 
    @players[player] = choice
+    self
   end
 
   def choices_complete?
@@ -29,9 +31,8 @@ class Game
   def finalize
     p1, p2 = @players.keys
     choices = ['rock','scissors','paper','rock']
-    return @winner = nil if @players[p1] == @players[p2]
-    return @winner = p1 if choices[choices.index(@players[p1]) + 1] == @players[p2]
-    @winner = p2
+    @winner = make_winner choices, p1, p2
+    self
   end
      
   def message_for player
@@ -39,6 +40,12 @@ class Game
   end
 
   private
+  def make_winner choices, p1, p2
+    return nil if @players[p1] == @players[p2]
+    return p1 if choices[choices.index(@players[p1]) + 1] == @players[p2]
+    p2
+  end
+    
   def other player
     @players.keys.find { |p| p != player }
   end
