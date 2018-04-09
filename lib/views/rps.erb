@@ -1,0 +1,15 @@
+<h1>HERE WE GO!!</h1>
+<font size="80"> Hello, <%= @player.name %></font><br>
+<font size="80"> Choose your option of Rock, paper or scissors! </font><br>
+
+<form action="/playrps" method="post">
+
+  <input type="submit" name="playerchoice" value="Rock">  <input type="submit" name="playerchoice" value="Paper">
+  <input type="submit" name="playerchoice" value="Scissors">
+
+</form>
+
+You chose <%= @player.choice %>!
+<div id="opponent">
+The computer chose <%= @player2.choice %>!
+</div>

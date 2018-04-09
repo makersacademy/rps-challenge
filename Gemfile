@@ -4,6 +4,9 @@ ruby '2.5.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'capybara'
+gem 'selenium-webdriver'
+gem 'rspec'
 
 group :test do
   gem 'capybara'

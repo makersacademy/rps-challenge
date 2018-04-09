@@ -1,0 +1,16 @@
+<h1>And the winner is!</h1>
+Hello, <font size="80"><%= @player.name %></font> Choose your option of Rock, paper or scissors!
+
+<form action="/pick" method="post">
+
+  <input type="submit" name="playerchoice" value="Rock">  <input type="submit" name="playerchoice" value="Paper">
+  <input type="submit" name="playerchoice" value="Scissors">
+
+</form>
+
+You chose <%= @player.choice %>!
+<div id="opponent">
+The computer chose <%= @player2.choice %>!
+</div>
+
+The winner is <%= @player.name %>!
