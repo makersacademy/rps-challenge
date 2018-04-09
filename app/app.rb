@@ -34,8 +34,7 @@ class RPS < Sinatra::Base
     @game = session[:game]
     @computer_move = @game.computer_move
     @player_move = @game.player.move
-
-    erb(:result)
+    erb(@game.result(@player_move, @computer_move))
   end
 
 
