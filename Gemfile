@@ -11,4 +11,6 @@ group :test do
   gem 'rubocop'
   gem 'simplecov' 
   gem 'simplecov-console', require: false
+  gem 'wait_until', '~> 0.3.0'
+  gem 'watir'
 end

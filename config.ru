@@ -1,3 +1,3 @@
 require_relative './app'
 
-run App
+App.run! :port => 4567, :bind => '0.0.0.0'
