@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     session[:P1RPS] = "Rock"
-    session[:newroll] = newroll
+
     redirect('/result')
   end
 
@@ -38,7 +38,8 @@ class RPS < Sinatra::Base
   get '/result' do
     @player1 = session[:player1]
     @P1RPS = session[:P1RPS]
-    @newroll = session[:newroll]
+    newgame = Roshambo.new(@P1RPS)
+    @newroll = newgame.roll
     erb(:result)
   end
 end

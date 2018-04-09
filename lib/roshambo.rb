@@ -1,14 +1,16 @@
+require './lib/randomise.rb'
+
 class Roshambo
 
   attr_reader :input
 
-  def initialize(input)
-    @input = input
+  def initialize(userchoice)
+    @input = userchoice
   end
 
   def roll
     data = ["Rock", "Paper", "Scissors"]
-    data[Kernel.rand(0..2)]
+    data[Randomise.new.roll]
   end
 
   def evaluate(roll)

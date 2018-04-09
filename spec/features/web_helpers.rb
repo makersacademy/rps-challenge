@@ -5,13 +5,3 @@ def sign_in_and_play
   fill_in :player1, with: "Testplayer"
   click_button "Submit"
 end
-
-def newroll
-  p @newgame = Roshambo.new(session[:P1RPS])
-  p @newgame.roll
-end
-
-def evaluroll
-  # @newgame.evaluate
-
-end
