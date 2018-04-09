@@ -1,0 +1,7 @@
+<% if @game.computer_choice == 'Rock' %>
+<h1>Rock beats Scissors! You Lose!</h1>
+<% elsif @game.computer_choice == 'Paper' %>
+<h1>Scissors beats Paper! You Win!</h1>
+<% elsif @game.computer_choice == 'Scissors' %>
+<h1>Scissors against Scissors! It's a Draw!</h1>
+<%end %>
