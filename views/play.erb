@@ -1,0 +1,15 @@
+<div>Welcome to the game, <%=name%></div>
+
+<form action='/winner' method='post'>
+  <p>Select one:</p>
+  <input type='radio' name='choice'value=<%="#{name}:rock"%> id='rock'>
+  <label for='rock'>ROCK</label>
+  
+  <input type='radio' name='choice' value=<%="#{name}:paper"%> id='paper'>
+  <label for='paper'>PAPER</label>
+
+  <input type='radio' name='choice'value=<%="#{name}:scissors"%> id='scissors'>
+  <label for='scissors'>SCISSORS</label>
+
+  <input type='submit' value='Submit'>
+</form>
