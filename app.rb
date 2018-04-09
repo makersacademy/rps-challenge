@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/rock' do
     session[:P1RPS] = "Rock"
-    session[:newroll] = roshamboroll
+    session[:newroll] = newroll
     redirect('/result')
   end
 

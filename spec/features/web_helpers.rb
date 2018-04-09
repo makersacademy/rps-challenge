@@ -6,7 +6,12 @@ def sign_in_and_play
   click_button "Submit"
 end
 
-def roshamboroll
-  p newgame = Roshambo.new(session[:P1RPS])
-  p newgame.roll
+def newroll
+  p @newgame = Roshambo.new(session[:P1RPS])
+  p @newgame.roll
+end
+
+def evaluroll
+  # @newgame.evaluate
+
 end
