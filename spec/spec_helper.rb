@@ -1,6 +1,9 @@
+RACK_ENV = 'test'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require './spec/features/web_helpers.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -8,6 +11,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+Capybara.app = 'rackup'
 
 RSpec.configure do |config|
   config.after(:suite) do
