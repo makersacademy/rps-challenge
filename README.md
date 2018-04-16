@@ -31,6 +31,11 @@ I want to see who wins
 ```
 ```
 As a player
+So I have a fair chance of winning
+My computer opponent should choose their weapon at random
+```
+```
+As a player
 So I can get on a winning streak
 I want to be able to play again
 ```
