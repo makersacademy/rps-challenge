@@ -18,20 +18,15 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-##### Additional User Stories
-```
-As a player  
-So I can who's playing  
-I want to enter my name
-```
+#### Additional User Stories
 ```
 As a player  
 So I can make my move
-I want to choose my weapon
+I want to be able to choose my weapon
 ```
 ```
 As a player
-So I can claim victory
+So I can claim victory over my opponents
 I want to see who wins
 ```
 ```
@@ -53,7 +48,7 @@ Approach
 
 - I began by creating additional user stories (see above) for the features I wanted my RPS game to have
 
-- I then worked through the stories, creating feature tests for each one
+- I then worked through the stories, creating feature tests for each one, ensuring I used TDD to write my code
 
 - I tried to follow Separation of Concerns as much as possible, which led me to create separate classes for Game, Player and Computer
 
