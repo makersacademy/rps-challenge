@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
+# git_source(:github) { |repo| actual repo }
 
-ruby '2.5.0'
+ruby "2.5.0"
 
+gem 'rack'
 gem 'rake'
+gem 'shotgun'
 gem 'sinatra'
 
 group :test do
