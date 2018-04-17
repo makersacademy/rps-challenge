@@ -18,32 +18,24 @@ class Rps < Sinatra::Base
     erb :play
   end
 
-    post '/name' do
-      # @player = Player.new(params[:player_name])
-      @player = $game.player.name
-      redirect '/play'
-    end
+  post '/name' do
+    @player = $game.player.name
+    redirect '/play'
+  end
 
-    get '/play' do
-      @choice = params[:choice]
-      @player = $game.player.name
+  get '/play' do
+    @choice = params[:choice]
+    @player = $game.player.name
+    erb(:result)
+  end
 
-      erb(:result)
-    end
-
-    post '/result' do
-      @choice = params[:choice]
-      @player = $game.player.name
-      @computer = $game.computer.computer_choice
-      @result = $game.match(@choice, @computer)
-      # p params
-      # p @choice
-      # @computer_choice = Computer.new.computer_choice
-      # @player_choice = Player.new.choice
-      # @result = Game.new.match(@computer_choice, @player_choice)
-      erb(:result)
-    end
-
+  post '/result' do
+    @choice = params[:choice]
+    @player = $game.player.name
+    @computer = $game.computer.computer_choice
+    @result = $game.match(@choice, @computer)
+    erb(:result)
+  end
 
   run! if app_file == $0
 
