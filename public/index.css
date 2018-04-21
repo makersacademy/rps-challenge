@@ -1,6 +1,27 @@
 body {
-  background-color:  #66ffff;
+  background-color: #66ffff;
   text-align: center;
   font-family: 'Amatic SC', cursive;
-font-weight: normal;
+  font-weight: normal;
+}
+
+#box {
+  border: 2px solid #456879;
+  border-radius: 10px;
+  height: 22px;
+  width: 230px;
+}
+
+#button {
+  border-radius: 12px;
+}
+
+.left {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  float: right;
+  width: 50%;
 }

@@ -1,27 +1,34 @@
 <div class="">
 
-<link rel="stylesheet" href="index.css">
-<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
-<h1>The Result:</h1>
-<h2><%= @player %> chose: <%= @choice %></h2>
-<% if @choice == 'Rock' %>
-<img src="images/rock.png" alt="" style="width:200px">
-<% elsif @choice == 'Paper' %>
-<img src="images/paper.png" alt="" style="width:200px">
-<% else %>
-<img src="images/scissors.png" alt="" style="width:350px">
-<% end %>
-<h2>Computer chose: <%= @computer %></h2>
-<% if @computer == 'Rock' %>
-<img src="images/rock.png" alt="" style="width:200px">
-<% elsif @computer == 'Paper' %>
-<img src="images/paper.png" alt="" style="width:200px">
-<% else %>
-<img src="images/scissors.png" alt="" style="width:350px">
-<% end %>
-<h1><%= @result %></h1>
+  <h1>The Result:</h1>
 
-<a id="play-again" href="/">Play again!</a>
+  <div class="left">
+    <h2><%= @player %>chose:<%= @choice %></h2>
+    <% if @choice == 'Rock' %>
+      <img src="images/rock.png" alt="" style="width:200px">
+      <% elsif @choice == 'Paper' %>
+        <img src="images/paper.png" alt="" style="width:200px">
+      <% else %>
+        <img src="images/scissors.png" alt="" style="width:350px">
+      <% end %>
+    </div>
 
-</div>
+    <div class="right">
+      <h2>Computer chose:<%= @computer %></h2>
+      <% if @computer == 'Rock' %>
+        <img src="images/rock.png" alt="" style="width:200px">
+        <% elsif @computer == 'Paper' %>
+          <img src="images/paper.png" alt="" style="width:200px">
+        <% else %>
+          <img src="images/scissors.png" alt="" style="width:350px">
+        <% end %>
+      </div>
+
+      <h1><%= @result %></h1>
+
+      <a id="play-again" href="/">Play again!</a>
+
+    </div>
