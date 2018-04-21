@@ -5,10 +5,23 @@
 
 <h1>The Result:</h1>
 <h2><%= @player %> chose: <%= @choice %></h2>
+<% if @choice == 'Rock' %>
+<img src="images/rock.png" alt="" style="width:200px">
+<% elsif @choice == 'Paper' %>
+<img src="images/paper.png" alt="" style="width:200px">
+<% else %>
+<img src="images/scissors.png" alt="" style="width:350px">
+<% end %>
 <h2>Computer chose: <%= @computer %></h2>
+<% if @computer == 'Rock' %>
+<img src="images/rock.png" alt="" style="width:200px">
+<% elsif @computer == 'Paper' %>
+<img src="images/paper.png" alt="" style="width:200px">
+<% else %>
+<img src="images/scissors.png" alt="" style="width:350px">
+<% end %>
 <h1><%= @result %></h1>
 
-<form action="/">
-  <input type="submit" value="Play again?">
-</form>
+<a id="play-again" href="/">Play again!</a>
+
 </div>
