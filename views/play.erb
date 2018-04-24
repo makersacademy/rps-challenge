@@ -15,11 +15,7 @@
   </p>
   <a href="/">Start a new game</a>
 <% else %>
-  <form action="/play" method="post">
-    <input type="submit" name="move" value="rock" />
-    <input type="submit" name="move" value="paper" />
-    <input type="submit" name="move" value="scissors" />
-  </form>
+<%= erb :shapes %>
 <p><%= @next_player.name %>'s turn</p>
   <% if @game_model.turn == :player1 && @game_model.results_history != nil %>
   <p>Last round: <%= @game_model.player1.name %>: <%= @game_model.player1_move %> vs. <%= @game_model.player2.name %>: <%= @player_move %></p>
