@@ -3,6 +3,7 @@ class Result
   def initialize(p1_name, p1_move, p2_name, p2_move)
 
     @moves = [p1_move, p2_move]
+
     @names = ["It\'s a draw!",
       "#{p1_name} is the winner!",
       "#{p2_name} is the winner!"]
@@ -20,6 +21,7 @@ class Result
     }
     # Can create a "beatmap" which is a hash of each move with a
     # value of arrays of the moves it beats.
+
   end
 
   def calculate
