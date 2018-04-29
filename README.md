@@ -7,13 +7,13 @@ This app was made using Ruby for the server-side (with Sinatra for the web frame
 
 ## Screenshots
 **Home Screen**<br>
-<img src="assets/images/RPS_Home.png" width="300"><br><br>
+<img src="assets/images/RPS_Home.png" width="500"><br><br>
 **P1 Move Select**<br>
-<img src="assets/images/RPS_P1.png" width="300"><br><br>
+<img src="assets/images/RPS_P1.png" width="500"><br><br>
 **P2 Move Select**<br>
-<img src="assets/images/RPS_P2.png" width="300"><br><br>
+<img src="assets/images/RPS_P2.png" width="500"><br><br>
 **Result Screen**<br>
-<img src="assets/images/RPS_Result.png" width="300">
+<img src="assets/images/RPS_Result.png" width="500">
 
 ## Features
 * Player name entry - manual input or random name generator
