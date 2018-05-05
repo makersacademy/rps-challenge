@@ -11,19 +11,39 @@ class Fight
   end
 
   def battle(p1, p2)
-    x = [p1.decision, p2.decision]
-    if x[0] == "rock" && x[1] == "scissors"
+    array = [p1.decision, p2.decision]
+    if p1_wins(array)
       p1.score_point
-    elsif x[0] == "scissors" && x[1] == "paper"
-      p1.score_point
-    elsif x[0] == "paper" && x[1] == "rock"
-      p1.score_point
-    elsif x[1] == "rock" && x[0] == "scissors"
+      p1.name
+    elsif p2_wins(array)
       p2.score_point
-    elsif x[1] == "scissors" && x[0] == "paper"
-      p2.score_point
-    elsif x[1] == "paper" && x[0] == "rock"
-      p2.score_point
+      p2.name
+    end
+  end
+
+  private
+
+  def p1_wins(array)
+    if array[0] == "rock" && array[1] == "scissors"
+      true
+    elsif array[0] == "scissors" && array[1] == "paper"
+      true
+    elsif array[0] == "paper" && array[1] == "rock"
+      true
+    else
+      false
+    end
+  end
+
+  def p2_wins(array)
+    if array[1] == "rock" && array[0] == "scissors"
+      true
+    elsif array[1] == "scissors" && array[0] == "paper"
+      true
+    elsif array[1] == "paper" && array[0] == "rock"
+      true
+    else
+      false
     end
   end
 end

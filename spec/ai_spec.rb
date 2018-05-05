@@ -46,4 +46,15 @@ describe Ai do
       expect(subject.decision).to eq "scissors"
     end
   end
+
+  it 'has a score' do
+    expect(subject.score).to eq 0
+  end
+
+  describe '#score_point' do
+    it 'adds 1 to score' do
+      subject.score_point
+      expect(subject.score).to eq 1
+    end
+  end
 end

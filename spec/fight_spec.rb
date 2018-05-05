@@ -22,31 +22,37 @@ describe Fight do
   describe '#battle' do
     it 'returns scores point for player' do
       expect(player_rock).to receive(:score_point)
+      expect(player_rock).to receive(:name)
       fight.battle(player_rock, ai_scissors)
     end
 
     it 'returns scores point for player' do
       expect(player_scissors).to receive(:score_point)
+      expect(player_scissors).to receive(:name)
       fight.battle(player_scissors, ai_paper)
     end
 
     it 'returns scores point for player' do
       expect(player_paper).to receive(:score_point)
+      expect(player_paper).to receive(:name)
       fight.battle(player_paper, ai_rock)
     end
 
     it 'returns scores point for ai' do
       expect(ai_rock).to receive(:score_point)
+      expect(ai_rock).to receive(:name)
       fight.battle(player_scissors, ai_rock)
     end
 
     it 'returns scores point for ai' do
       expect(ai_scissors).to receive(:score_point)
+      expect(ai_scissors).to receive(:name)
       fight.battle(player_paper, ai_scissors)
     end
 
     it 'returns scores point for ai' do
       expect(ai_paper).to receive(:score_point)
+      expect(ai_paper).to receive(:name)
       fight.battle(player_rock, ai_paper)
     end
   end

@@ -11,5 +11,14 @@ describe Player do
     expect(player.decision).to eq "rock"
   end
 
+  it 'has a score' do
+    expect(player.score).to eq 0
+  end
 
+  describe '#score_point' do
+    it 'adds 1 to score' do
+      player.score_point
+      expect(player.score).to eq 1
+    end
+  end
 end
