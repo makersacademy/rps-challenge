@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/choice' do
     @game = $game
-    @game.player_choice = params[:choice]
+    @game.player_choice(params[:choice])
     redirect '/result'
   end
 
