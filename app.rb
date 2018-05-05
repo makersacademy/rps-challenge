@@ -22,11 +22,15 @@ class RPSWeb < Sinatra::Base
 
   post '/weapons' do
     session[:rock] = params[:rock]
+    session[:paper] = params[:paper]
+    session[:scissors] = params[:scissors]
     redirect '/choice-display'
   end
 
   get '/choice-display' do
     @rock = session[:rock]
+    @paper = session[:paper]
+    @scissors = session[:scissors]
     erb :choice_display
   end
 
