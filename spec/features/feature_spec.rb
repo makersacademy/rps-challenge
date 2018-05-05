@@ -1,5 +1,3 @@
-require_relative '../app'
-
 feature 'Allows user to enter name' do
   scenario 'Displays name' do
     visit('/')
