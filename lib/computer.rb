@@ -1,7 +1,9 @@
 class Computer
 
+  CHOICE_OPTIONS = ["Rock", "Paper", "Scissors"]
+
   def choice
-    "Paper"
+    CHOICE_OPTIONS.sample
   end
 
 end
