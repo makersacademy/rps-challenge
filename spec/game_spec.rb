@@ -69,11 +69,12 @@ describe Game do
           game.play
         end
         it 'sets a winner' do
-          expect(game.result[:winner]).to be player2
+          expect(game.winner).to be player2
         end
 
         it 'updates the score' do
-          expect(game.score).to eq [0, 1]
+          expect(game.player2_score).to eq 1
+          expect(game.player1_score).to eq 0
         end
       end
 
@@ -84,11 +85,12 @@ describe Game do
           game.play
         end
         it 'sets the result' do
-          expect(game.result[:result]).to be :draw
+          expect(game.result).to be :draw
         end
 
         it 'does not update the score' do
-          expect(game.score).to eq [0, 0]
+          expect(game.player2_score).to eq 0
+          expect(game.player1_score).to eq 0
         end
       end
     end

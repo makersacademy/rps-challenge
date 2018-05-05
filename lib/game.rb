@@ -17,8 +17,6 @@ class Game
     @game = self.new(player1, player2, weapon_class)
   end
 
-  attr_reader :score, :result
-
   def initialize(player1, player2, weapon_class = Weapon)
     @player1 = player1.id.to_sym
     @player2 = player2.id.to_sym
@@ -42,13 +40,15 @@ class Game
     if draw?
       draw
     else
-      @result[:winner] = :result
+      @result[:result] = :result
       player1.weapon.beats?(player2.weapon) ? set_winner(@player1) : set_winner(@player2)
     end
   end
 
   def reset
     @players.each { |id, player| player.remove_weapon }
+    @result[:winner] = nil
+    @result[:result] = nil
   end
 
   def player1
@@ -57,6 +57,22 @@ class Game
 
   def player2
     @players[@player2]
+  end
+
+  def player1_score
+    @score[0]
+  end
+
+  def player2_score
+    @score[1]
+  end
+
+  def result
+    @result[:result]
+  end
+
+  def winner
+    @result[:winner]
   end
 
   private
@@ -79,7 +95,7 @@ class Game
   end
 
   def set_winner(player_id)
-    @result[:winner] = @players[player_id].name
+    @result[:winner] = @players[player_id]
     player_id == @player1 ? @score[0] += 1 : @score[1] += 1
   end
 

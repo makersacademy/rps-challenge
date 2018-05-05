@@ -7,31 +7,16 @@
         <link rel="stylesheet" type="text/css" href="css/game.css">
     </head>
     <body>
-        <div class="grid-container">
-          <div id="left-well" class="<%= @game.current_player == @game.player1 ? "selected" : "unselected" %>">
-              <div class="img-container">
-                  <img src="/player1.png" alt="player1">
-              </div>
-              <div class="player_details">
-                  <p>Avatar: Scorpion</p>
-                  <p>Player: <%= @game.player1.name %></p>
-                  <p id="p1_health"><%= @game.player1.health %>HP</p>
-              </div>
-          </div>
-          <div id="right-well" class="<%= @game.current_player == @game.player2 ? "selected" : "unselected" %>">
-              <div class="img-container">
-                  <img src="/nigel.png" alt="player2">
-              </div>
-              <div class="player_details">
-                  <p>Avatar: Nigel</p>
-                  <p>Player: <%= @game.player2.name %></p>
-                  <p id="p2_health"><%= @game.player2.health %>HP</p>
-              </div>
-          </div>
-          <% if !@game.over? && !@game.current_player.is_a?(Ai) %>
+      <div class="game_info_container">
+        <div class="player1_info">
+          <h1><%= @game.player1.name %>:   <%= @game.score[0] %></h1>
+        </div>
+        <div class="player2_info">
+          <h1><%= @game.player2.name %>:   <%= @game.score[1] %></h1>
+        </div>
+      </div>
+          <% if !@game.over? %>
               <div class="controls">
-                <h2><%= @game.attack_message %></h2>
-                <h2>Player Controls</h2>
                 <form action='/attack' method='post'>
                   <input class="control_button" type='submit' id='attack' value='Attack'>
                 </form>
