@@ -19,4 +19,7 @@ class RPS < Sinatra::Base
   get '/play' do
     erb(:play)
   end
+
+  get '/attack' do
+  end
 end
