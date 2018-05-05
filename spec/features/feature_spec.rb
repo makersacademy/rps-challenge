@@ -9,10 +9,7 @@ end
 
 feature 'Displays options' do
   scenario 'Gives user the choice of rock, paper, or scissors' do
-    visit('/')
-    fill_in 'player_name', with: 'Sam'
-    click_button('Submit')
-    click_button('Start Game')
+    start_game
     expect(page).to have_button 'Rock'
     expect(page).to have_button 'Paper'
     expect(page).to have_button 'Scissors'
@@ -21,11 +18,20 @@ end
 
 feature 'Attack screen shows the winner' do
   scenario 'The game ends' do
-    visit('/')
-    fill_in 'player_name', with: 'Sam'
-    click_button('Submit')
-    click_button('Start Game')
+    start_game
     click_button('Rock')
+    expect(page).to have_content "!"
+  end
+
+  scenario 'The game ends' do
+    start_game
+    click_button('Paper')
+    expect(page).to have_content "!"
+  end
+
+  scenario 'The game ends' do
+    start_game
+    click_button('Scissors')
     expect(page).to have_content "!"
   end
 end
