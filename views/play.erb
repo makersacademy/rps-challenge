@@ -1,0 +1,11 @@
+<h1 style="color:blue;">Rock, Paper, Scissors Game </h1>
+
+<h2 style="color:red;">Welcome, <%= @game.player.name %>
+
+<form action="/choice" method="post">
+  <label for="choice">
+    Please enter 'Rock', 'Paper', or 'Scissors':
+    <input type="text" name="choice">
+  </label>
+  <input type="submit" value="Submit Choice">
+</form>

@@ -1,11 +1,19 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 
-class Rps < Sinatra::Base
+class RPS < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Rock, Paper, Scissors'
+    erb :index
+  end
+
+  post '/names' do
+    $game = Game.new(Player.new(params[:player]))
+    redirect '/play'
   end
 
   run! if app_file == $0
+
 end
