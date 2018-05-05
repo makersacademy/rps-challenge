@@ -5,6 +5,6 @@ feature 'Weapon Choice' do
     click_button 'Submit'
     fill_in :choice, with: "Rock"
     click_button "Submit Choice"
-    expect(page).to have_content "Rock"
+    expect(page).to have_content "BMO chose"
   end
 end
