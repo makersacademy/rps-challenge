@@ -15,4 +15,8 @@ class RPS < Sinatra::Base
     erb(:play)
   end
 
+  get '/winner' do
+    erb(:winner)
+  end
+
 end
