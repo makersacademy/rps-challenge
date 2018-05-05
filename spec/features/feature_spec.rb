@@ -18,3 +18,14 @@ feature 'Displays options' do
     expect(page).to have_button 'Scissors'
   end
 end
+
+feature 'Attack screen shows the winner' do
+  scenario 'The player wins' do
+    visit('/')
+    fill_in 'player_name', with: 'Sam'
+    click_button('Submit')
+    click_button('Start Game')
+    click_button('Rock')
+    expect(page).to have_content "!"
+  end
+end

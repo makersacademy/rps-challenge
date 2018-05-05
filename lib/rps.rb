@@ -15,8 +15,8 @@ class Rps
   def outcome
     @moves.each_with_index do |choice, i|
       if player_move == choice
-        return player if computer_move == @moves[i - 1]
-        return computer if computer_move == @moves[i + 1]
+        return "#{player} wins!" if computer_move == @moves[i - 1]
+        return "#{computer} wins!" if computer_move == @moves[i + 1]
         return "Draw!"
       end
     end

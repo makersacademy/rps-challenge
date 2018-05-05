@@ -26,13 +26,13 @@ describe Rps, :rps do
     it 'returns the player as the winner' do
       allow(subject).to receive(:computer_move) { scissors }
       subject.select_move(rock)
-      expect(subject.outcome).to eq player
+      expect(subject.outcome).to eq "sam wins!"
     end
 
     it 'returns the computer as the winner' do
       allow(subject).to receive(:computer_move) { scissors }
       subject.select_move(paper)
-      expect(subject.outcome).to eq 'computer'
+      expect(subject.outcome).to eq "computer wins!"
     end
 
     it 'returns a draw' do
