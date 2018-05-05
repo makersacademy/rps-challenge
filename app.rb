@@ -17,5 +17,9 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
+  get '/choose' do
+    erb :choose
+  end
+
   run! if app_file == $0
 end
