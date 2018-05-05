@@ -35,3 +35,12 @@ feature 'Attack screen shows the winner' do
     expect(page).to have_content "!"
   end
 end
+
+feature 'Restarts the game' do
+  scenario 'Gives the player the options again' do
+    start_game
+    click_button('Rock')
+    click_button('Play Again')
+    expect(page).to have_button 'Rock'
+  end
+end
