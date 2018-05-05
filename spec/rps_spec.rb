@@ -3,8 +3,9 @@ require 'rps'
 describe Rps, :rps do
   let(:subject) { Rps.new(player) }
   let(:player) { 'sam' }
-  let(:choice) { 'rock' }
-  let(:cp_choice) { 'scissors' }
+  let(:rock) { 'rock' }
+  let(:paper) { 'paper' }
+  let(:scissors) { 'scissors' }
 
   describe '#player' do
     it 'Returns the player name' do
@@ -14,20 +15,30 @@ describe Rps, :rps do
 
   describe '#select_move' do
     it 'returns the players choice' do
-      allow(subject).to receive(:computer_move) { cp_choice }
-      subject.select_move(choice)
-      expect(subject.player_move).to eq choice
-      expect(subject.computer_move).to eq cp_choice
+      allow(subject).to receive(:computer_move) { scissors }
+      subject.select_move(rock)
+      expect(subject.player_move).to eq rock
+      expect(subject.computer_move).to eq scissors
     end
   end
 
   describe '#outcome' do
     it 'returns the player as the winner' do
-      allow(subject).to receive(:computer_move) { cp_choice }
-      subject.select_move(choice)
-      p subject.player_move
-      p subject.computer_move
+      allow(subject).to receive(:computer_move) { scissors }
+      subject.select_move(rock)
       expect(subject.outcome).to eq player
+    end
+
+    it 'returns the computer as the winner' do
+      allow(subject).to receive(:computer_move) { scissors }
+      subject.select_move(paper)
+      expect(subject.outcome).to eq 'computer'
+    end
+
+    it 'returns a draw' do
+      allow(subject).to receive(:computer_move) { scissors }
+      subject.select_move(scissors)
+      expect(subject.outcome).to eq "Draw!"
     end
   end
 end
