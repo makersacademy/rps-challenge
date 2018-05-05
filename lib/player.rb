@@ -2,7 +2,7 @@ class Player
 
   attr_reader :name, :weapon
 
-  def initialize(name)
+  def initialize(name = "anon")
     @name = name
     @weapon = nil
   end
