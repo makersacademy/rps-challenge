@@ -27,17 +27,17 @@
       </div>
       <div class="row">
         <div class="col-3">
-          <h1>Score: 0</h1>
+          <h1><%= @name %>: 0</h1>
         </div>
         <div class="col-3 offset-6">
-          <h1 class="text-right">Score: 0</h1>
+          <h1 class="text-right">Computer: 0</h1>
         </div>
 
 
       </div>
       <div class="row middle">
         <div class="col-4">
-          <a href="/load?action=rock"><img src="/rock.png" class="img-fluid rock" alt="rock"></a>
+          <a id="rock" href="/load?action=rock"><img src="/rock.png" class="img-fluid rock" alt="rock"></a>
         </div>
         <div class="col-4">
           <a href="/load?action=paper"><img src="/paper.png" class="img-fluid paper" alt="paper"></a>
