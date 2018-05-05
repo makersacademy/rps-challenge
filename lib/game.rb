@@ -45,6 +45,10 @@ class Game
     end
   end
 
+  def reset
+    @players.each { |id, player| player.remove_weapon }
+  end
+
   private
 
   def one_player?

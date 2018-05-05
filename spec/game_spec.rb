@@ -71,7 +71,14 @@ describe Game do
           expect(game.score).to eq [0, 0]
         end
       end
+    end
 
+    describe '#reset' do
+      it 'resets the players' do
+        game.reset
+        expect(player1).to have_received(:remove_weapon)
+        expect(player2).to have_received(:remove_weapon)
+      end
     end
   end
 
