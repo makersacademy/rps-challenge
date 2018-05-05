@@ -15,5 +15,4 @@ feature 'player can see a choice of three weapons' do
     expect(page).to have_content 'Your choice: scissors'
   end
 
-
 end
