@@ -8,4 +8,8 @@ class Game
     @player = player
   end
 
+  def player_choice(choice)
+    @choice = choice
+  end
+
 end
