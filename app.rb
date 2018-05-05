@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
+require_relative './lib/ai.rb'
 
 class RockPaper < Sinatra::Base
   enable :sessions
@@ -10,6 +11,7 @@ class RockPaper < Sinatra::Base
 
   post '/setup' do
     $name = Player.new(params[:player1])
+    $ai = Ai.new
     redirect('/play')
   end
 
@@ -24,6 +26,8 @@ class RockPaper < Sinatra::Base
   end
 
   get '/result' do
+    $ai.play_turn
+    @image2 = $ai.decision
     @image = $name.decision
     erb(:result)
   end
