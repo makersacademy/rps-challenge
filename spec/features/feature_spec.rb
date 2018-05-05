@@ -20,7 +20,7 @@ feature 'Displays options' do
 end
 
 feature 'Attack screen shows the winner' do
-  scenario 'The player wins' do
+  scenario 'The game ends' do
     visit('/')
     fill_in 'player_name', with: 'Sam'
     click_button('Submit')

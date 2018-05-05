@@ -1,6 +1,14 @@
 class Rps
   attr_reader :player, :computer, :player_move, :computer_move
 
+  def self.start(player_name, computer = 'computer')
+    @rps = self.new(player_name, computer = 'computer')
+  end
+
+  def self.rps
+    @rps
+  end
+
   def initialize(player_name, computer = 'computer')
     @player = player_name
     @computer = computer

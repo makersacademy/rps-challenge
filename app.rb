@@ -2,6 +2,10 @@ require 'sinatra/base'
 require_relative './lib/rps.rb'
 
 class RPS < Sinatra::Base
+  before do
+    @rps = Rps.rps
+  end
+
   enable :sessions
 
   get '/' do
@@ -10,7 +14,7 @@ class RPS < Sinatra::Base
 
   post '/name' do
     session[:player_name] = params[:player_name]
-    $game = Rps.new(session[:player_name])
+    @rps = Rps.start(session[:player_name])
     redirect '/name2'
   end
 
@@ -23,8 +27,20 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do
-    $game.select_move('rock')
-    @winner = $game.outcome
+    @rps.select_move('rock')
+    @winner = @rps.outcome
+    erb(:end)
+  end
+
+  get '/paper' do
+    @rps.select_move('paper')
+    @winner = @rps.outcome
+    erb(:end)
+  end
+
+  get '/scissors' do
+    @rps.select_move('scissors')
+    @winner = @rps.outcome
     erb(:end)
   end
 end
