@@ -15,4 +15,13 @@ class RockPaper < Sinatra::Base
   get '/play' do
     erb(:play)
   end
+
+  get '/load' do
+    puts params
+    erb(:load)
+  end
+
+  get '/result' do
+    "hello world"
+  end
 end
