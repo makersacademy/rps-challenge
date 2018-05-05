@@ -17,7 +17,7 @@ feature 'The Score' do
 
   scenario 'expect scores to be 3 : 0' do
     single_player_game
-    3.times { player_win ; click_button('Play Again') }
+    3.times { player_win; click_button('Play Again') }
     expect(page).to have_content("John: 3")
     expect(page).to have_content("Computer: 0")
   end

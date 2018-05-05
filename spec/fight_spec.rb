@@ -1,13 +1,13 @@
 require 'fight'
 
 describe Fight do
-  let(:player_rock) {double(:player, decision: "rock")}
-  let(:player_scissors) {double(:player, decision: "scissors")}
-  let(:player_paper) {double(:player, decision: "paper")}
-  let(:ai_rock) {double(:ai, decision: "rock")}
-  let(:ai_scissors) {double(:ai, decision: "scissors")}
-  let(:ai_paper) {double(:ai, decision: "paper")}
-  let(:fight) {described_class.new(player_rock, ai_rock)}
+  let(:player_rock) { double(:player, decision: "rock") }
+  let(:player_scissors) { double(:player, decision: "scissors") }
+  let(:player_paper) { double(:player, decision: "paper") }
+  let(:ai_rock) { double(:ai, decision: "rock") }
+  let(:ai_scissors) { double(:ai, decision: "scissors") }
+  let(:ai_paper) { double(:ai, decision: "paper") }
+  let(:fight) { described_class.new(player_rock, ai_rock) }
   it 'initiates with two players' do
     expect(fight.player1).to eq player_rock
     expect(fight.player2).to eq ai_rock

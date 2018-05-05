@@ -32,26 +32,14 @@ class Fight
   private
 
   def p1_wins(array)
-    if array[0] == "rock" && array[1] == "scissors"
-      true
-    elsif array[0] == "scissors" && array[1] == "paper"
-      true
-    elsif array[0] == "paper" && array[1] == "rock"
-      true
-    else
-      false
-    end
+    array[0] == "rock" && array[1] == "scissors" ||
+    array[0] == "scissors" && array[1] == "paper" ||
+    array[0] == "paper" && array[1] == "rock"
   end
 
   def p2_wins(array)
-    if array[1] == "rock" && array[0] == "scissors"
-      true
-    elsif array[1] == "scissors" && array[0] == "paper"
-      true
-    elsif array[1] == "paper" && array[0] == "rock"
-      true
-    else
-      false
-    end
+    array[1] == "rock" && array[0] == "scissors" ||
+    array[1] == "scissors" && array[0] == "paper" ||
+    array[1] == "paper" && array[0] == "rock"
   end
 end

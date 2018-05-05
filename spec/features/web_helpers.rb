@@ -7,17 +7,17 @@ end
 def player_win
   srand(2)
   click_link('paper')
-  visit ('/result')
+  visit('/result')
 end
 
 def ai_win
   srand(2)
   click_link('scissors')
-  visit ('/result')
+  visit('/result')
 end
 
 def draw
   srand(2)
   click_link('rock')
-  visit ('/result')
+  visit('/result')
 end

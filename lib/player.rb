@@ -12,6 +12,4 @@ class Player
   def score_point
     @score += 1
   end
-
-
 end

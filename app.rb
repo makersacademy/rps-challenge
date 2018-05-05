@@ -5,7 +5,7 @@ require_relative './lib/fight.rb'
 
 class RockPaper < Sinatra::Base
   before do
-  @fight = Fight.instance
+    @fight = Fight.instance
   end
 
   enable :sessions

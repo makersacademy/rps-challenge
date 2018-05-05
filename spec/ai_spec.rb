@@ -27,7 +27,7 @@ describe Ai do
 
   describe '#rock_hash' do
     it 'has rock paper scissors' do
-      expect(subject.rock_hash).to eq({1 => "rock", 2 => "paper", 3 => "scissors"})
+      expect(subject.rock_hash).to eq({ 1 => "rock", 2 => "paper", 3 => "scissors" })
     end
   end
 
