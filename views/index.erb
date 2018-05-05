@@ -26,19 +26,18 @@
   </div>
   <div class="row">
     <div class="col-3 offset-4">
-      <form>
+      <form action="/setup" method="post">
   <div class="form-group">
     <label class = "lab" for="formGroupExampleInput">Player One</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter name">
+    <input type="text" name="player1" class="form-control" id="formGroupExampleInput" placeholder="Enter name">
   </div>
   <div class="form-group" id="input2">
     <label class = "lab" for="formGroupExampleInput2">Player Two</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Name">
+    <input type="text" class="form-control" name="player2" id="formGroupExampleInput2" placeholder="Enter Name">
   </div>
-  <select class="custom-select" id="mode">
-    <option selected>Game Mode</option>
-    <option value="1">Single Player </option>
-    <option value="2">Two Player</option>
+  <select class="custom-select" id="mode" name="mode">
+    <option selected value="1" name="1">Single Player </option>
+    <option value="2" name="2">Two Player</option>
   </select>
 
 <button type="submit" class="btn btn-success" id="sub">Submit</button>
