@@ -1,7 +1,6 @@
 require './lib/player.rb'
 require './lib/computer.rb'
 
-
 class Game
 
   attr_reader :player
