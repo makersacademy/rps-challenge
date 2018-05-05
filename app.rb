@@ -28,19 +28,23 @@ class RPS < Sinatra::Base
 
   get '/rock' do
     @rps.select_move('rock')
-    @winner = @rps.outcome
+    calculate_winner
     erb(:end)
   end
 
   get '/paper' do
     @rps.select_move('paper')
-    @winner = @rps.outcome
+    calculate_winner
     erb(:end)
   end
 
   get '/scissors' do
     @rps.select_move('scissors')
-    @winner = @rps.outcome
+    calculate_winner
     erb(:end)
+  end
+
+  def calculate_winner
+    @winner = @rps.outcome
   end
 end
