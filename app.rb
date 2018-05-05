@@ -22,6 +22,6 @@ class RockPaper < Sinatra::Base
   end
 
   get '/result' do
-    "hello world"
+    erb(:result)
   end
 end
