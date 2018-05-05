@@ -1,0 +1,3 @@
+describe Computer do
+  
+end

@@ -1,0 +1,3 @@
+describe Weapon do
+  
+end
