@@ -6,6 +6,14 @@ class Fight
     @player2 = player2
   end
 
+  def self.game_start(player1, player2)
+    @fight = Fight.new(player1, player2)
+  end
+
+  def self.instance
+    @fight
+  end
+
   def draw?
     player1.decision == player2.decision
   end

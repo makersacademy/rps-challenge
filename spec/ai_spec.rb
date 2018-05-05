@@ -1,6 +1,10 @@
 require 'ai'
 
 describe Ai do
+
+  it 'name should equal John' do
+    expect(subject.name).to eq("Computer")
+  end
   it 'responds to decision' do
     expect(subject).to respond_to(:decision)
   end

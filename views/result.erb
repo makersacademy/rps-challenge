@@ -23,40 +23,44 @@
     <div class="container">
       <div class="row top">
         <div class="col-12">
-          <h1 class="text-center" id="title">YOU WIN</h1>
+          <% if @fight.draw? %>
+          <h1 class="text-center" id="title">It's a Draw</h1>
+          <% else %>
+          <h1 class="text-center" id="title"><%=@winner%> Wins</h1>
+          <% end %>
         </div>
       </div>
       <div class="row">
         <div class="col-3">
-          <h1>Score: 0</h1>
+          <h1><%= @fight.player1.name %>: <%= @fight.player1.score %></h1>
         </div>
         <div class="col-3 offset-6">
-          <h1 class="text-right">Score: 0</h1>
+          <h1 class="text-right">Computer: <%= @fight.player2.score %></h1>
         </div>
 
 
       </div>
       <div class="row middle">
         <div class="col-4">
-          <img src=<%="/#{@image}.png"%> class="img-fluid rock" alt="rock">
+          <img src=<%="/#{@fight.player1.decision}.png"%> class="img-fluid rock" alt="rock">
         </div>
         <div class="col-4">
            <h1 class="vs text-center">vs.</h1>
         </div>
         <div class="col-4">
-          <img src=<%="/#{@image2}.png"%> class="img-fluid scissors" alt="scissors">
+          <img src=<%="/#{@fight.player2.decision}.png"%> class="img-fluid scissors" alt="scissors">
         </div>
 
       </div>
       <div class="row">
         <div class="col-1 offset-3">
           <form action="/play" method="get">
-          <button type="submit" class="btn btn-success" id="sub">Play Again</button>
+          <button type="submit" class="btn btn-primary" id="sub">Play Again</button>
           </form>
         </div>
         <div class="col-1 offset-3">
           <form action="/" method="get">
-          <button type="submit" class="btn btn-success" id="sub">&nbsp;&nbsp;&nbsp;Setup&nbsp;&nbsp;&nbsp;</button>
+          <button type="submit" class="btn btn-primary" id="sub">&nbsp;&nbsp;&nbsp;Setup&nbsp;&nbsp;&nbsp;</button>
           </form>
         </div>
       </div>

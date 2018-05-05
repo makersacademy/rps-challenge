@@ -1,8 +1,13 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/ai.rb'
+require_relative './lib/fight.rb'
 
 class RockPaper < Sinatra::Base
+  before do
+  @fight = Fight.instance
+  end
+
   enable :sessions
 
   get '/' do
@@ -10,25 +15,22 @@ class RockPaper < Sinatra::Base
   end
 
   post '/setup' do
-    $name = Player.new(params[:player1])
-    $ai = Ai.new
+    Fight.game_start(Player.new(params[:player1]), Ai.new)
     redirect('/play')
   end
 
   get '/play' do
-    @name = $name.name
     erb(:play)
   end
 
   get '/load' do
-    $name.decision = params[:action]
+    @fight.player1.decision = params[:action]
     erb(:load)
   end
 
   get '/result' do
-    $ai.play_turn
-    @image2 = $ai.decision
-    @image = $name.decision
+    @fight.player2.play_turn
+    @winner = @fight.battle(@fight.player1, @fight.player2)
     erb(:result)
   end
 end

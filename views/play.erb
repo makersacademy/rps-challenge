@@ -27,10 +27,10 @@
       </div>
       <div class="row">
         <div class="col-3">
-          <h1><%= @name %>: 0</h1>
+          <h1><%= @fight.player1.name %>: <%= @fight.player1.score %></h1>
         </div>
         <div class="col-3 offset-6">
-          <h1 class="text-right">Computer: 0</h1>
+          <h1 class="text-right">Computer: <%= @fight.player2.score %></h1>
         </div>
 
 
