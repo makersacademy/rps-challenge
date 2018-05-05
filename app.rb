@@ -23,6 +23,7 @@ class RPS < Sinatra::Base
     player_one = session[:player_one]
     hand = params[:hand]
     @game = Game.new(player_one, hand)
+    @game.play
     erb(:winner)
   end
 
