@@ -1,17 +1,16 @@
 class Rps
-  attr_reader :player, :computer, :player_move, :computer_move
+  attr_reader :player, :player_move, :computer_move
 
-  def self.start(player_name, computer = 'computer')
-    @rps = self.new(player_name, computer = 'computer')
+  class << self
+    attr_reader :rps
   end
 
-  def self.rps
-    @rps
+  def self.start(player_name)
+    @rps = new(player_name)
   end
 
-  def initialize(player_name, computer = 'computer')
+  def initialize(player_name)
     @player = player_name
-    @computer = computer
     @moves = ['rock', 'paper', 'scissors']
   end
 
@@ -24,7 +23,7 @@ class Rps
     @moves.each_with_index do |choice, i|
       if player_move == choice
         return "#{player} wins!" if computer_move == @moves[i - 1]
-        return "#{computer} wins!" if computer_move == @moves[i + 1]
+        return "computer wins!" if computer_move == @moves[i + 1]
         return "Draw!"
       end
     end
