@@ -1,4 +1,5 @@
 require_relative './computer'
+require_relative './weapon'
 
 class Game
 
@@ -12,18 +13,19 @@ class Game
     @game
   end
 
-  def self.start_game(player1, player2)
-    @game = self.new(player1, player2)
+  def self.start_game(player1, player2, weapon_class = Weapon)
+    @game = self.new(player1, player2, weapon_class)
   end
 
   attr_reader :score, :result
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, weapon_class = Weapon)
     @player1 = player1.id.to_sym
     @player2 = player2.id.to_sym
     @players = { @player1 => player1, @player2 => player2 }
     @score = [0,0]
     @result = {winner: nil, result: nil}
+    @weapon_class = weapon_class
   end
 
   def ready?
@@ -32,7 +34,7 @@ class Game
 
   def add_weapon(player_id, weapon)
     raise "Player already has a weapon" if @players[player_id].has_weapon?
-    @players[player_id].set_weapon(weapon.to_sym)
+    @players[player_id].set_weapon(weaponize(weapon.to_sym))
     set_computer_weapon if one_player?
   end
 
@@ -65,12 +67,16 @@ class Game
   end
 
   def draw?
-    @players[@player1].weapon == @players[@player2].weapon
+    @players[@player1].weapon.type == @players[@player2].weapon.type
   end
 
   def set_winner(player_id)
     @result[:winner] = @players[player_id].name
     player_id == @player1 ? @score[0] += 1 : @score[1] += 1
+  end
+
+  def weaponize(weapon)
+    @weapon_class.new(weapon)
   end
 
 end
