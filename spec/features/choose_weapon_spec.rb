@@ -3,7 +3,22 @@ feature 'Choosing a weapon' do
     visit('/')
     fill_in :player_name, with: 'Dione'
     click_button 'Submit'
-    click_link('Rock')
+    click_button 'Rock'
     expect(page).to have_text('You chose Rock!')
+  end
+  scenario 'choosing "Paper" and getting confirmation' do
+    visit('/')
+    fill_in :player_name, with: 'Dione'
+    click_button 'Submit'
+    click_button 'Paper'
+    expect(page).to have_text('You chose Paper!')
+  end
+
+  scenario 'choosing "Scissors" and getting confirmation' do
+    visit('/')
+    fill_in :player_name, with: 'Dione'
+    click_button 'Submit'
+    click_button 'Scissors'
+    expect(page).to have_text('You chose Scissors!')
   end
 end

@@ -17,8 +17,14 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
-  get '/choose' do
-    erb :choose
+  post '/choice' do
+    session[:move] = params[:move]
+    redirect '/confirm'
+  end
+
+  get '/confirm' do
+    @move = session[:move]
+    erb :confirm
   end
 
   run! if app_file == $0
