@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :name
+  attr_reader :name, :weapon
 
   def initialize(name)
     @name = name
@@ -8,10 +8,15 @@ class Player
   end
 
   def has_weapon?
-    @weapon
+    !!@weapon
   end
 
   def set_weapon(weapon)
+    @weapon = weapon
+  end
+
+  def remove_weapon
+    @weapon = nil
   end
 
 end
