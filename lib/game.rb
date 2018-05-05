@@ -12,4 +12,8 @@ class Game
     @choice = choice
   end
 
+  def computer_choice
+    @computer_choice = Computer.new.choice
+  end
+
 end

@@ -3,6 +3,7 @@ require 'game'
 describe Game do
   subject(:game) { described_class.new(monty) }
   let(:monty) { double :player, name: "Monty" }
+  let(:computer) { double :computer, choice: "Paper" }
 
   describe '#initalize' do
     it 'should pass arguments to instance of Player' do
@@ -16,5 +17,12 @@ describe Game do
     end
   end
 
+  describe '#computer_choice' do
+    it 'should return the computer\'s random choice' do
+      expect(game.computer_choice).to eq "Paper"
+    end
+  end
+
+  # it { is_expected.to respond_to :computer_choice }
 
 end
