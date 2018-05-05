@@ -20,4 +20,14 @@ describe Rps, :rps do
       expect(subject.computer_move).to eq cp_choice
     end
   end
+
+  describe '#outcome' do
+    it 'returns the player as the winner' do
+      allow(subject).to receive(:computer_move) { cp_choice }
+      subject.select_move(choice)
+      p subject.player_move
+      p subject.computer_move
+      expect(subject.outcome).to eq player
+    end
+  end
 end
