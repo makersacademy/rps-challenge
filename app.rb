@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/move'
 
 class RPS < Sinatra::Base
 
@@ -7,6 +8,16 @@ class RPS < Sinatra::Base
 
   get '/' do
     erb(:index)
+  end
+
+  post '/rps' do
+    @player = params[:name]
+    erb(:rps)
+  end
+
+  get '/rock' do
+    @robo_move = Move.new.random
+    erb(:rock)
   end
 
 end
