@@ -24,6 +24,18 @@ describe Game do
   end
 
   context '2 player game' do
+    describe '#player1' do
+      it 'returns the player' do
+        expect(game.player1).to be player1
+      end
+    end
+
+    describe '#player2' do
+      it 'returns the player' do
+        expect(game.player2).to be player2
+      end
+    end
+
     describe '#add_weapon' do
       it 'adds a weapon to a player' do
         game.add_weapon(:player1, :rock)

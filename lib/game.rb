@@ -43,12 +43,20 @@ class Game
       draw
     else
       @result[:winner] = :result
-      @players[@player1].weapon.beats?(@players[@player2].weapon) ? set_winner(@player1) : set_winner(@player2)
+      player1.weapon.beats?(player2.weapon) ? set_winner(@player1) : set_winner(@player2)
     end
   end
 
   def reset
     @players.each { |id, player| player.remove_weapon }
+  end
+
+  def player1
+    @players[@player1]
+  end
+
+  def player2
+    @players[@player2]
   end
 
   private
