@@ -20,5 +20,15 @@ class RPSWeb < Sinatra::Base
     erb :play
   end
 
+  post '/weapons' do
+    session[:rock] = params[:rock]
+    redirect '/choice-display'
+  end
+
+  get '/choice-display' do
+    @rock = session[:rock]
+    erb :choice_display
+  end
+
   run! if app_file == $0
 end
