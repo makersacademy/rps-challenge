@@ -1,7 +1,7 @@
 <h1>You picked <%= @rps.player_move %></h1>
 <h1>The computer picked <%= @rps.computer_move %></h1>
 
-<h1><%= @winner %></h1>
+<h1><%= @rps.outcome %></h1>
 
 <form action='play' method='get'>
   <input type="submit" value="Play Again">
