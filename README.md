@@ -29,6 +29,25 @@ I would like to be able to play rock/paper/scissors
 
 ## Getting Started
 
+Ruby Version:
+```sh
+2.5.0
+```
+
+Run:
+```sh
+bundle install
+```
+
+To see the app in your web browser:
+```sh
+rackup
+```
+
+Then go to:
+```sh
+http://localhost:9292
+```
 
 
 ## Built with
