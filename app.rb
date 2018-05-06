@@ -13,8 +13,8 @@ class Game < Sinatra::Base
   end
 
   post '/login' do
-    session[:player_name_1] = params[:player_name_1]
-    session[:player_name_2] = 'Deep Thought'
+    add_names(params[:player_name_1], params[:player_name_2])
+
     session[:the_game] = Play.new(session[:player_name_1], session[:player_name_2])
     redirect '/play_game'
   end
@@ -30,8 +30,18 @@ class Game < Sinatra::Base
   end
 
   post '/shoot' do
-    @the_game.play(params[:player_choice_1], 'random')
+    @the_game.play(params[:player_choice_1], params[:player_choice_2])
     redirect '/play_game'
+  end
+
+  def add_names(name_1, name_2)
+    session[:player_name_1] = name_1
+
+    if name_2 != ''
+      session[:player_name_2] = name_2
+    else
+      session[:player_name_2] = 'Deep Thought'
+    end
   end
 
   run! if app_file == $0
