@@ -3,7 +3,12 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 
   get '/' do
-    'All working!'
+    erb(:index)
+  end
+
+  post '/name' do
+    @player_one = params[:player_name]
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
