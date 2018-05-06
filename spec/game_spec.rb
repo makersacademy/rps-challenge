@@ -13,8 +13,8 @@ describe Game do
 
 
   before do
-    allow(weapon_class).to receive(:new).with(:rock).and_return(rock)
-    allow(weapon_class).to receive(:new).with(:paper).and_return(paper)
+    allow(weapon_class).to receive(:new).with(:rock, described_class::RULES).and_return(rock)
+    allow(weapon_class).to receive(:new).with(:paper, described_class::RULES).and_return(paper)
   end
 
   describe '#self.start_game & self.game' do
@@ -38,13 +38,17 @@ describe Game do
 
     describe '#add_weapon' do
       it 'adds a weapon to a player' do
-        game.add_weapon(:player1, :rock)
-        expect(player1).to have_received(:set_weapon).with(rock)
+        game.add_weapon(player1.object_id, "rock")
+        expect(player1).to have_received(:set_weapon).with(:rock)
+      end
+
+      it 'raises error for invalid weapons' do
+        expect { game.add_weapon(player1.object_id, "stone") }.to raise_error("Not a valid weapon")
       end
 
       it 'fails if the player already has a weapon' do
         allow(player1).to receive(:has_weapon?).and_return(true)
-        expect { game.add_weapon(:player1, :rock) }.to raise_error("Player already has a weapon")
+        expect { game.add_weapon(player1.object_id, "rock") }.to raise_error("Player already has a weapon")
       end
     end
 
@@ -63,8 +67,8 @@ describe Game do
     describe '#play' do
       context 'different weapons' do
         before do
-          allow(player1).to receive(:weapon).and_return(rock)
-          allow(player2).to receive(:weapon).and_return(paper)
+          allow(player1).to receive(:weapon).and_return(:rock)
+          allow(player2).to receive(:weapon).and_return(:paper)
           allow(rock).to receive(:beats?).with(paper).and_return(false)
           game.play
         end
@@ -112,7 +116,7 @@ describe Game do
 
     describe '#add_weapon' do
       it 'asks the computer to set its own weapon' do
-        described_class.game.add_weapon(:player1, :rock)
+        described_class.game.add_weapon(player1.object_id, "rock")
         expect(computer).to have_received(:set_weapon).with(no_args)
       end
     end

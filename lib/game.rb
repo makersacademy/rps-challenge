@@ -18,8 +18,8 @@ class Game
   end
 
   def initialize(player1, player2, weapon_class = Weapon)
-    @player1 = player1.id.to_sym
-    @player2 = player2.id.to_sym
+    @player1 = player1.object_id
+    @player2 = player2.object_id
     @players = { @player1 => player1, @player2 => player2 }
     @score = [0,0]
     @result = {winner: nil, result: nil}
@@ -31,8 +31,9 @@ class Game
   end
 
   def add_weapon(player_id, weapon)
+    raise "Not a valid weapon" unless valid_weapon?(weapon)
     raise "Player already has a weapon" if @players[player_id].has_weapon?
-    @players[player_id].set_weapon(weaponize(weapon.to_sym))
+    @players[player_id].set_weapon(weapon.to_sym)
     set_computer_weapon if one_player?
   end
 
@@ -41,7 +42,7 @@ class Game
       draw
     else
       @result[:result] = :result
-      player1.weapon.beats?(player2.weapon) ? set_winner(@player1) : set_winner(@player2)
+      weaponize(player1.weapon).beats?(weaponize(player2.weapon)) ? set_winner(@player1) : set_winner(@player2)
     end
   end
 
@@ -91,7 +92,7 @@ class Game
   end
 
   def draw?
-    @players[@player1].weapon.type == @players[@player2].weapon.type
+    @players[@player1].weapon == @players[@player2].weapon
   end
 
   def set_winner(player_id)
@@ -100,7 +101,11 @@ class Game
   end
 
   def weaponize(weapon)
-    @weapon_class.new(weapon)
+    @weapon_class.new(weapon, RULES)
+  end
+
+  def valid_weapon?(weapon)
+    RULES.any? { |type, beats| type == weapon.to_sym }
   end
 
 end
