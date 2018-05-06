@@ -1,7 +1,7 @@
 class Rps
   attr_reader :player, :player_move, :computer_move
   MOVES = [:rock, :paper, :scissors]
-  RULES = {:rock => :scissors, :paper => :rock, :scissors => :paper}
+  RULES = { :rock => :scissors, :paper => :rock, :scissors => :paper }
 
   class << self
     attr_reader :rps
