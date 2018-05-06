@@ -7,7 +7,20 @@ describe Game do
 
   subject(:game) { described_class.new(player, computer) }
   let(:player) { double :player, name: "Asia" }
-  let(:computer) { double :computer }
+  let(:computer) { double :computer, name: "The Computer" }
+
+
+  describe "#player_name" do
+    it 'returns player name' do
+      expect(subject.player).to eq 'Asia'
+    end
+  end
+
+  describe "#computer_name" do
+    it 'returns computer name' do
+      expect(subject.computer).to eq 'The Computer'
+    end
+  end
 
   describe "#add_player_weapon" do
     it 'sets weapon for the player' do

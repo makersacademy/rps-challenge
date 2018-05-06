@@ -1,0 +1,11 @@
+<h2>Your choice: rock!</h2>
+<h2>Computer choice <%= @game.computer_weapon.to_s %></h2>
+</br>
+
+<% if @game.result == :win %>
+<h1>The winner is YOU</h1>
+<% elsif @game.result == :lose %>
+<h1>The winner is COMPUTER</h1>
+<% else %>
+<h1>it is a draw!</h1>
+<% end %>
