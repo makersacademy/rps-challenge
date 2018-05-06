@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/move'
+require './lib/result'
 
 class RPS < Sinatra::Base
 
@@ -17,6 +18,8 @@ class RPS < Sinatra::Base
 
   get '/rock' do
     @robo_move = Move.new.random
+    @win_or_lose = Result.new.rock_verdict(@robo_move)
+    
     erb(:rock)
   end
 

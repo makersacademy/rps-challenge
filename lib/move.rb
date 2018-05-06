@@ -1,5 +1,4 @@
 class Move
-
   attr_reader :random
 
   def initialize
