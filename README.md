@@ -1,5 +1,10 @@
 # RPS Challenge
 
+MY COMMENT
+----------------------------------------------------------------------------------------------------
+Unfortunately it is not working. Something is wrong with class method I created to store game class behaviour in controller, so I do not have to use global vars (deadly sin of dev!). I will look at it asap and fix it, promise!
+----------------------------------------------------------------------------------------------------
+
 Instructions
 -------
 

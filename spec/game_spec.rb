@@ -2,13 +2,11 @@ require 'game'
 require_relative '../lib/player'
 require_relative '../lib/computer'
 
-
 describe Game do
 
   subject(:game) { described_class.new(player, computer) }
   let(:player) { double :player, name: "Asia" }
   let(:computer) { double :computer, name: "The Computer" }
-
 
   describe "#player_name" do
     it 'returns player name' do

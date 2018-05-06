@@ -24,7 +24,6 @@ class Game
     @result = nil
   end
 
-
   def add_player_weapon(choice)
     @player_weapon = choice
   end
@@ -38,5 +37,4 @@ class Game
     @result = :lose if RULES[computer_weapon] == player_weapon
     @result = :draw if computer_weapon == player_weapon
   end
-
 end
