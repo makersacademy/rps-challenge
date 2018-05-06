@@ -2,11 +2,11 @@ class Player
 
   attr_reader :name, :weapon
 
-  def set_name(name)
+  def define_name(name)
     @name = name
   end
 
-  def set_weapon(weapon)
+  def define_weapon(weapon)
     @weapon = weapon
   end
 
