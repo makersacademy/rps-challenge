@@ -9,7 +9,7 @@ feature RPS do
       visit "/"
       fill_in :name, with: player
       click_button('Enter Game')
-      expect(page).to have_content "#{player} Vs Robotion"
+      expect(page).to have_content "#{player} Vs Robot"
     end
   end
 
