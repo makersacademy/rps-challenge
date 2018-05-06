@@ -1,8 +1,8 @@
-<h1>Hey there <%= @player_name %>!</h1>
+<h1>Hey there <%= current_player.name %>!</h1>
 <h2>Pick either single or multiplayer</h2>
 <form action='/single' method='post'>
   <input type='submit' value='1 player'>
 </form>
-<form action='/double' method='post'>
+<form action='/multi' method='post'>
   <input type='submit' value='2 player'>
 </form>

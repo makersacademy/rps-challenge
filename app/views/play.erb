@@ -15,30 +15,22 @@
           <h1><%= @game.player2.name %>:   <%= @game.score[1] %></h1>
         </div>
       </div>
-          <% if !@game.over? %>
+          <% if !@game.result %>
               <div class="controls">
-                <form action='/attack' method='post'>
-                  <input class="control_button" type='submit' id='attack' value='Attack'>
-                </form>
+                <button type="button" class="selector" name="button">Rock</button>
+                <button type="button" class="selector" name="button">Paper</button>
+                <button type="button" class="selector" name="button">Scissors</button>
+                <button type="button" class="selector" name="button">Lizard</button>
+                <button type="button" class="selector" name="button">Spock</button>
               </div>
-              <div class="gif-container">
-                  <img src="https://media.giphy.com/media/CatCCFZa6U8nK/giphy.gif">
-              </div>
-          <% elsif !@game.over? %>
-            <h2>The computer is playing now</h2>
           <% else %>
-          <h2>GAME OVER!</h2>
-          <div class="gif-container">
-              <img src="https://media.giphy.com/media/6drjXn0BgRaaQ/giphy.gif">
-          </div>
+            <% if @game.result.to_s == "draw" %>
+                <h2>It's a draw</h2>
+            <% else %>
+                <h2><%= @game.winner.name %> wins!</h2>
           <% end %>
+          <form action='/play_again' method='post'>
+            <input type='submit' value='Play again'>
+          </form>
         </div>
     </body>
-</html>
-
-<form action='/single' method='post'>
-  <input type='submit' value='1 player'>
-</form>
-<form action='/double' method='post'>
-  <input type='submit' value='2 player'>
-</form>

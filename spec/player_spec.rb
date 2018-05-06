@@ -1,6 +1,19 @@
 describe Player do
   subject(:player) { described_class.new("George")}
 
+  describe '#self.add player and self.player' do
+    before { described_class.add(player.object_id, player) }
+
+    it 'adds a players' do
+      expect(described_class.players).not_to be_empty
+    end
+
+    it 'finds the player' do
+      expect(described_class.find(player.object_id)).to be player
+    end
+
+  end
+
   describe '#name' do
     it 'returns the name' do
       expect(player.name).to eq "George"
