@@ -7,4 +7,5 @@
    def random_move
      @available_moves.sample
    end
+   
  end

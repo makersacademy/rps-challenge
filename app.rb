@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/bot'
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -23,7 +25,8 @@ class RPS < Sinatra::Base
   end
 
   get '/results' do
-    @move = $player.move
+    @player_move = $player.move
+    @bot_move = Bot.new.random_move
     erb(:results)
   end
 
