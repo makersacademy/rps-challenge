@@ -8,7 +8,7 @@ class Player
 
   def weapon=(weapon)
     raise "Invalid weapon" unless Game::WEAPONS.include? weapon
-    @weapon = weapon
+    @weapon = weapon.to_sym
   end
 
 end
