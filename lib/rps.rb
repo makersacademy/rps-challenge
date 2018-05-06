@@ -1,6 +1,7 @@
 class Rps
   attr_reader :player, :player_move, :computer_move
   MOVES = [:rock, :paper, :scissors]
+  RULES = {:rock => :scissors, :paper => :rock, :scissors => :paper}
 
   class << self
     attr_reader :rps
@@ -20,12 +21,8 @@ class Rps
   end
 
   def outcome
-    MOVES.each_with_index do |choice, i|
-      if player_move == choice
-        return :win if computer_move == MOVES[i - 1]
-        return :lose if computer_move == MOVES[i + 1]
-        return :draw
-      end
-    end
+    return :win if RULES[player_move] == computer_move
+    return :lose if RULES[computer_move] == player_move
+    return :draw
   end
 end
