@@ -1,1 +1,8 @@
 <h2> Welcome, <%= @name %>! </h2>
+<br>
+<h3> Make your move: </h3>
+<form action='/move' method='post'>
+  <input type='submit' name='move' value='rock'>
+  <input type='submit' name='move' value='paper'>
+  <input type='submit' name='move' value='scissors'>
+</form>
