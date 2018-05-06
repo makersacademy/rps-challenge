@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Hemesh-Unka/rps-challenge.svg?branch=master)](https://travis-ci.org/Hemesh-Unka/rps-challenge)
 
-# RPS Challenge :fist::raised_hand::v:
+# RPS Challenge
 **Makers Academy - Weekend Challenge 3**
 
 Our third weekend challenge. We were tasked to build a small web application to simulate the game of Rock, Paper, Scissors.
