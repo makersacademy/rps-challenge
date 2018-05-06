@@ -7,7 +7,12 @@
   </head>
   <body>
 
-<h1>Welcome, <%= @player_one %><h2>
+  <div class='text'>
+    <h1>Welcome, <%= @player_one %>.</h1>
+  </div>
+  <div class='text'>
+    <h2>What would you like to play?</h2>
+  </div>
 
 <form action='/winner' method='get'>
   <button type="submit" name="hand" value="rock">ROCK</button>

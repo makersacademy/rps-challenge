@@ -1,3 +1,18 @@
-body {
-  color: red;
+header {
+  font-family: courier;
+  text-align: center;
+  margin: 150px;
+}
+form input {
+  font-family: courier;
+}
+.photos {
+  display: flex;
+  justify-content: center;
+}
+.photo {
+  margin: 30px;
+}
+.photo img {
+  height: 300px;
 }
