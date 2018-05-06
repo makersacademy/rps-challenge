@@ -24,17 +24,17 @@ class RPS < Sinatra::Base
   end
 
   get '/rock' do
-    @rps.select_move('rock')
+    @rps.select_move(:rock)
     erb(:end)
   end
 
   get '/paper' do
-    @rps.select_move('paper')
+    @rps.select_move(:paper)
     erb(:end)
   end
 
   get '/scissors' do
-    @rps.select_move('scissors')
+    @rps.select_move(:scissors)
     erb(:end)
   end
 end

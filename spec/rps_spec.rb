@@ -3,9 +3,9 @@ require 'rps'
 describe Rps, :rps do
   let(:subject) { Rps.new(player) }
   let(:player) { 'sam' }
-  let(:rock) { 'rock' }
-  let(:paper) { 'paper' }
-  let(:scissors) { 'scissors' }
+  let(:rock) { :rock }
+  let(:paper) { :paper }
+  let(:scissors) { :scissors }
 
   describe '#player' do
     it 'Returns the player name' do
