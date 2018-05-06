@@ -8,22 +8,24 @@ class RPC < Sinatra::Base
     haml(:index)
   end
 
-  get '/game' do
+  get '/weapon_choice' do
     @name = session[:name]
-    @choice = session[:choice] || 'None'
-    haml(:game)
+    haml(:weapon_choice)
+  end
+
+  get '/result' do
+    @choice = session[:choice]
+    haml(:result)
   end
 
   post '/game' do
     session[:choice] = params[:name]
-    p params
-    redirect '/game'
+    redirect '/result'
   end
 
   post '/name' do
     session[:name] = params[:name]
-    p session[:name]
-    redirect '/game'
+    redirect '/weapon_choice'
   end
 
 end
