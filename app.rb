@@ -19,8 +19,22 @@ class RPS < Sinatra::Base
   get '/rock' do
     @robo_move = Move.new.random
     @win_or_lose = Result.new.rock_verdict(@robo_move)
-    
+
     erb(:rock)
+  end
+
+  get '/paper' do
+    @robo_move = Move.new.random
+    @win_or_lose = Result.new.paper_verdict(@robo_move)
+
+    erb(:paper)
+  end
+
+  get '/scissors' do
+    @robo_move = Move.new.random
+    @win_or_lose = Result.new.scissors_verdict(@robo_move)
+
+    erb(:scissors)
   end
 
 end
