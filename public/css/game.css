@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background:
+}
+
+img {
+  max-height: 20em;
+  max-width: 20em;
+}
+
+.game_info_container div {
+  text-align: center;
+}
+
+#weapon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.selector {
+  border: 0;
+  background: transparent;
+  width: 30%;
+}
+
+.selector:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 5px grey;
+}
