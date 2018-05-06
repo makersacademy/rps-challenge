@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/play'
+require './lib/add_names'
 
 class Game < Sinatra::Base
 
@@ -32,16 +33,6 @@ class Game < Sinatra::Base
   post '/shoot' do
     @the_game.play(params[:player_choice_1], params[:player_choice_2])
     redirect '/play_game'
-  end
-
-  def add_names(name_1, name_2)
-    session[:player_name_1] = name_1
-
-    if name_2 != ''
-      session[:player_name_2] = name_2
-    else
-      session[:player_name_2] = 'Deep Thought'
-    end
   end
 
   run! if app_file == $0
