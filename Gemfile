@@ -13,4 +13,5 @@ group :test do
   gem 'simplecov-console', require: false
   gem 'pry', require: false
   gem 'pry-byebug', require: false
+  gem 'selenium-webdriver'
 end
