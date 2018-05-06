@@ -17,22 +17,23 @@ feature 'Displays options' do
 end
 
 feature 'Attack screen shows the winner' do
-  scenario 'The game ends' do
+  before { allow_any_instance_of(Array).to receive(:sample).and_return('scissors') }
+  scenario 'The player wins' do
     start_game
     click_button('Rock')
-    expect(page).to have_content "!"
+    expect(page).to have_content "Sam wins!"
   end
 
-  scenario 'The game ends' do
+  scenario 'The computer wins' do
     start_game
     click_button('Paper')
-    expect(page).to have_content "!"
+    expect(page).to have_content "computer wins!"
   end
 
   scenario 'The game ends' do
     start_game
     click_button('Scissors')
-    expect(page).to have_content "!"
+    expect(page).to have_content "Draw!"
   end
 end
 
