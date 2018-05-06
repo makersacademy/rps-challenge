@@ -4,6 +4,11 @@ describe Game do
   let(:second_player) { double :player }
   let(:computer) { double :computer }
 
+  before do
+    subject.instance_variable_set(:@player_1, nil)
+    subject.instance_variable_set(:@player_2, nil)
+  end
+
   it 'should be a singleton' do
     expect(described_class.instance).to be_an_instance_of(described_class)
     expect { described_class.new }.to raise_error("private method `new' called for Game:Class")

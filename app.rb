@@ -22,4 +22,8 @@ class Rps < Sinatra::Base
 
     redirect('/game')
   end
+
+  get '/game' do
+    erb(:game)
+  end
 end
