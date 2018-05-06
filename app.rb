@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
+require './lib/player'
+require './lib/game'
 
 set :public_folder, File.dirname(__FILE__)
 
@@ -10,8 +12,12 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    # player.name = params[:player]
+    Game.save_instance(Player.new(params[:player]))
     redirect('/game')
+  end
+
+  before do
+    @game = Game.instance
   end
 
   get '/game' do

@@ -8,6 +8,8 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './spec/features/web_helpers'
+require './lib/player'
+require './lib/game'
 
 Capybara.app = Rps
 
