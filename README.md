@@ -100,7 +100,7 @@ Run `rspec` from the project directory to run the entire suite.
 
 Each class within the model layer (GameEngine, Player, Computer) is testing in isolation. Mocking is utilised in tests for the GameEngine class to imitate players and player choices.
 
-##### Basic Usage
+#### Basic Usage
 
 1. Clone the repo
 2. Run `bundle install`
