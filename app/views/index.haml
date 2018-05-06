@@ -2,7 +2,7 @@
 .centre
   %h1.title Welcome to Rock, Paper, Scissors!
 
-  %form{ action: '/name', method: 'POST', class: 'form' }
+  %form.form{ action: '/name', method: 'POST' }
     %label Please enter your name:
-    %input{ type: 'text', class: 'form_inputfield', name: 'name' }
-    %input{ type: 'submit', class: 'button button_submit', value: 'Let\' play!' }
+    %input.form_inputfield{ type: 'text', name: 'name' }
+    %input.button.button_submit{ type: 'submit', value: 'Let\' play!' }
