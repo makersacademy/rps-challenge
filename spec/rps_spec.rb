@@ -2,14 +2,14 @@ require 'rps'
 
 describe Rps, :rps do
   let(:subject) { Rps.new(player) }
-  let(:player) { 'sam' }
+  let(:player) { double :player, name: 'Sam' }
   let(:rock) { :rock }
   let(:paper) { :paper }
   let(:scissors) { :scissors }
 
   describe '#player' do
     it 'Returns the player name' do
-      expect(subject.player).to eq player
+      expect(subject.player).to eq 'Sam'
     end
   end
 

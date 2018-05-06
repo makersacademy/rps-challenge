@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/rps.rb'
+require_relative './lib/player.rb'
 
 class RPS < Sinatra::Base
   before do
@@ -11,7 +12,7 @@ class RPS < Sinatra::Base
   end
 
   post '/name' do
-    @rps = Rps.start(params[:player_name])
+    @rps = Rps.start(Player.new(params[:player_name]))
     redirect '/name2'
   end
 
