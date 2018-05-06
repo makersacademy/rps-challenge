@@ -16,7 +16,7 @@ describe Turn do
       expect(subject.the_options).to include possible_moves[1]
     end
 
-    it 'Has scissors is one option' do
+    it 'Has scissors as one option' do
       expect(subject.the_options).to include possible_moves[2]
     end
   end

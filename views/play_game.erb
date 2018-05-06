@@ -1,0 +1,9 @@
+<h1>Ready to play <%= @player_name_1 %>?</h1>
+
+<% if @the_game.victory_message != '' %>
+<%= @the_game.victory_message %>
+<% end %>
+
+<form action='/shoot' method='post'>
+  <input type='submit' value='Shoot!'>
+</form>
