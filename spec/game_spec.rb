@@ -1,16 +1,15 @@
 describe Game do
-  let(:player1) { spy :player, id: "player1", has_weapon?: false }
-  let(:player2) { spy :player, id: "player2", has_weapon?: false }
+  let(:player1) { spy :player, id: "player1", weapon?: false }
+  let(:player2) { spy :player, id: "player2", weapon?: false }
   let(:computer) { spy :computer, id: "Computer" }
   let(:rock) { double :rock, type: :rock }
   let(:paper) { double :paper, type: :paper }
-  let(:weapon_class) { double :weapon_class}
+  let(:weapon_class) { double :weapon_class }
 
   let(:game) do
     described_class.start_game(player1, player2, weapon_class)
     described_class.game
   end
-
 
   before do
     allow(weapon_class).to receive(:new).with(:rock, described_class::RULES).and_return(rock)
@@ -39,7 +38,7 @@ describe Game do
     describe '#add_weapon' do
       it 'adds a weapon to a player' do
         game.add_weapon(player1.object_id, "rock")
-        expect(player1).to have_received(:set_weapon).with(:rock)
+        expect(player1).to have_received(:give_weapon).with(:rock)
       end
 
       it 'raises error for invalid weapons' do
@@ -47,15 +46,15 @@ describe Game do
       end
 
       it 'fails if the player already has a weapon' do
-        allow(player1).to receive(:has_weapon?).and_return(true)
+        allow(player1).to receive(:weapon?).and_return(true)
         expect { game.add_weapon(player1.object_id, "rock") }.to raise_error("Player already has a weapon")
       end
     end
 
     describe '#ready?' do
       it 'returns true when players have their weapons' do
-        allow(player1).to receive(:has_weapon?).and_return(true)
-        allow(player2).to receive(:has_weapon?).and_return(true)
+        allow(player1).to receive(:weapon?).and_return(true)
+        allow(player2).to receive(:weapon?).and_return(true)
         expect(game.ready?).to be true
       end
 
@@ -117,7 +116,7 @@ describe Game do
     describe '#add_weapon' do
       it 'asks the computer to set its own weapon' do
         described_class.game.add_weapon(player1.object_id, "rock")
-        expect(computer).to have_received(:set_weapon).with(no_args)
+        expect(computer).to have_received(:give_weapon).with(no_args)
       end
     end
   end

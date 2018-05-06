@@ -19,11 +19,11 @@ class Player
     @weapon = nil
   end
 
-  def has_weapon?
+  def weapon?
     !!@weapon
   end
 
-  def set_weapon(weapon)
+  def give_weapon(weapon)
     @weapon = weapon
   end
 

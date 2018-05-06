@@ -12,7 +12,6 @@ class RPSLSWeb < Sinatra::Base
     set :public_folder, File.expand_path('../public', __FILE__)
   end
 
-
   helpers do
     def current_player
       Player.find(session[:player_id])
@@ -42,7 +41,7 @@ class RPSLSWeb < Sinatra::Base
   end
 
   get '/welcome' do
-    redirect '/' if !current_player
+    redirect '/' unless current_player
     erb :welcome
   end
 
@@ -52,11 +51,11 @@ class RPSLSWeb < Sinatra::Base
   end
 
   post '/multi' do
-    #tbd
+    # tbd
   end
 
   get '/play' do
-    redirect '/' if !current_player
+    redirect '/' unless current_player
     @game.play if @game.ready?
     erb :play
   end

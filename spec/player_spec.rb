@@ -1,5 +1,5 @@
 describe Player do
-  subject(:player) { described_class.new("George")}
+  subject(:player) { described_class.new("George") }
 
   describe '#self.add player and self.player' do
     before { described_class.add(player.object_id, player) }
@@ -20,13 +20,13 @@ describe Player do
     end
   end
 
-  describe '#has_weapon?' do
+  describe '#weapon?' do
     it 'returns the false when not set' do
-      expect(player.has_weapon?).to be false
+      expect(player.weapon?).to be false
     end
 
     it 'returns true when set' do
-      player.set_weapon(:rock)
+      player.give_weapon(:rock)
       expect(player.weapon).to be :rock
     end
   end
@@ -34,7 +34,7 @@ describe Player do
   describe '#remove_weapon' do
     it 'removes the weapon' do
       player.remove_weapon
-      expect(player.has_weapon?).to be false
+      expect(player.weapon?).to be false
     end
   end
 

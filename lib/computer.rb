@@ -9,7 +9,7 @@ class Computer < Player
     @name = "The Computer"
   end
 
-  def set_weapon
+  def give_weapon
     @weapon = WEAPONS.sample
   end
 

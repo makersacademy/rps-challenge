@@ -19,11 +19,11 @@
           <% if !@game.result %>
               <div class="controls">
                   <form id="weapon" action="/weapon" method="post">
-                      <button type="button" class="selector" name="rock">Rock</button>
-                      <button type="button" class="selector" name="paper">Paper</button>
-                      <button type="button" class="selector" name="scissors">Scissors</button>
-                      <button type="button" class="selector" name="lizard">Lizard</button>
-                      <button type="button" class="selector" name="spock">Spock</button>
+                      <button type="button" class="selector" id="rock" name="rock" ><img src="/images/rock.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="paper" name="paper"><img src="/images/paper.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="scissors" name="scissors"><img src="/images/scissors.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="lizard" name="lizard"><img src="/images/lizard.png" width="100%"  alt="submit" /></button>
+                      <button type="button" class="selector" id="spock" name="spock"><img src="/images/spock.png" width="100%"  alt="submit" /></button>
                   </form>
               </div>
           <% else %>
