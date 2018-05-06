@@ -8,4 +8,11 @@ describe Player do
       expect(player.name).to eq('Bob')
     end
   end
-end 
+
+  describe '#move' do
+    it 'saves the players move as an instance variable' do
+      player.input_move('rock')
+      expect(player.move).to eq('rock')
+    end
+  end
+end
