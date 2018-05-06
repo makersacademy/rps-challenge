@@ -5,7 +5,7 @@ class Computer
     @name = 'RNG God'
   end
 
-  def weapon_choice(weapon)
+  def weapon_choice(*)
     @weapon = [:rock, :paper, :scissors].sample
   end
 end

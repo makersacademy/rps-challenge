@@ -9,7 +9,6 @@ class RPC < Sinatra::Base
 
   before do
     @game = GameEngine.create_game
-
   end
 
   get '/' do
@@ -32,7 +31,7 @@ class RPC < Sinatra::Base
 
   post '/game' do
     @game.players.first.weapon_choice(params[:name])
-    @game.players.last.weapon_choice(nil)
+    @game.players.last.weapon_choice
     redirect '/result'
   end
 
