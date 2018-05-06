@@ -2,7 +2,7 @@ require 'player'
 
 describe Player do
   let(:name) { 'Bob' }
-  subject {described_class.new(name) }
+  subject { described_class.new(name) }
   let(:weapon) { :paper }
 
   it 'should respond to #name' do
