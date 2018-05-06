@@ -5,9 +5,12 @@ class Rps < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Rock, paper, scissors'
+    erb(:index)
   end
 
-  # run! if app_file == $0
+  post'/names' do
+    @player_one_name = params[:p1_name]
+    erb(:play)
+  end
 
 end
