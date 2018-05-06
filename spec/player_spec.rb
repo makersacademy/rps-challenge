@@ -3,8 +3,8 @@ require './lib/player.rb'
 describe Player do
 
   subject(:player) { described_class.new}
-  let(:name) { double :name }
-  let(:weapon) { double :weapon }
+  let(:name) { double(:name) }
+  let(:weapon) { double(:weapon) }
 
 
   describe '#set_name' do
