@@ -2,22 +2,22 @@ require_relative 'rules'
 require_relative 'opponent'
 
 class Game
-  attr_reader :player_two, :player_one, :name, :hand, :player_two_hand
-  def initialize(player_one, hand, opponent = Opponent.new, rules = Rules.new)
+  attr_reader :opponent, :player_one, :name, :hand, :opponent_hand, :rules
+  def initialize(player_one, hand, opponent_class = Opponent.new)
     @player_one = player_one
-    @player_two = opponent
-    @hand = hand
-    @rules = rules.rules
+    @opponent = opponent_class
+    @hand = hand.to_sym
+    @rules = Rules.new.rules
   end
 
   def play
-    @player_two_hand = @player_two.hand
+    @opponent_hand = @opponent.hand
   end
 
   def result
-    if @rules[@hand] == @player_two_hand
+    if @opponent_hand == @rules[@hand]
       'You win!'
-    elsif @hand == @player_two_hand
+    elsif @hand == @opponent_hand
       "It's a tie!"
     else
       "You lose!"
