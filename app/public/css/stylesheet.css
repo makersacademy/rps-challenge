@@ -1,0 +1,12 @@
+.title {
+    color: red;
+}
+
+.form {
+    position: center;
+}
+.button {
+    border: 0.5px solid black;
+    border-radius: 15rem 15rem 15rem 15rem ;
+    background-color: aqua;
+}
