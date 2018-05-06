@@ -24,6 +24,7 @@ class Game
   def results
     @result = :win if RULES[player_weapon] == computer_weapon
     @result = :lose if RULES[computer_weapon] == player_weapon
+    @result = :draw if computer_weapon == player_weapon
   end
 
 end
