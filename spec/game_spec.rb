@@ -1,4 +1,5 @@
 require 'game'
+require 'computer'
 
 describe Game do
   subject(:game) { described_class.new(monty) }
@@ -19,7 +20,7 @@ describe Game do
 
   describe '#computer_choice' do
     it 'should return the computer\'s random choice' do
-      expect(["Rock", "Paper", "Scissors"]).to include game.computer_choice
+      expect(Computer::CHOICE_OPTIONS).to include game.computer_choice
     end
   end
 
