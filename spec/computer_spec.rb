@@ -12,7 +12,7 @@ describe Computer do
     expect(subject.name).to eq 'RNG God'
   end
   it 'should choose weapon' do
-    subject.weapon
+    subject.weapon_choice(nil)
     expect(subject.weapon).to eq(:paper).or eq(:scissors).or eq(:rock)
   end
 end

@@ -1,5 +1,5 @@
 class GameEngine
-  attr_reader :players
+  attr_accessor :players
 
   RULES = { rock: :scissors,
             paper: :rock,
@@ -21,7 +21,15 @@ class GameEngine
   end
 
   def beats?
-    RULES[@players[0].weapon] == @players[1].weapon
+    RULES[@players.first.weapon] == @players.last.weapon ? :win : :lose
+  end
+
+  def draw?
+    @players.first.weapon == @players.last.weapon ? :draw : beats?
+  end
+
+  def reset
+    @players = []
   end
 
   private_class_method :new

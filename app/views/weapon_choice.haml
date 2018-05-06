@@ -1,7 +1,8 @@
 !!!
 =haml :header_partial
 .centre
-  %h1= @name + ', choose your weapon'
+  %h1= "#{@player1_name} vs. #{@player2_name}"
+  %h1= "#{@player1_name}, choose your weapon"
   %form{ class: 'form', action: '/game', method: 'POST'}
     %button{ class: 'button button_rock', name: :name, value: 'rock' }
       %span.fa-stack.fa-10x
