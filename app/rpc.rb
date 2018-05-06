@@ -1,11 +1,8 @@
 require 'sinatra/base'
 require 'haml'
 
-
 class RPC < Sinatra::Base
   enable :sessions
-
-
 
   get '/' do
     haml(:index)

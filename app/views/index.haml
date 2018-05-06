@@ -1,10 +1,10 @@
 !!!
 %head
-  %link{:rel => :stylesheet, :type => :"text/css", :href => "/css/stylesheet.css"}
+=haml :header_partial
 
 %h1.title Welcome to Rock, Paper, Scissors!
 
-%form{action: '/name', method: 'POST', class: 'form'}
+%form{ action: '/name', method: 'POST', class: 'form' }
   %label Please enter your name:
-  %input{type: 'text', class: 'form_inputfield', name: 'name'}
-  %input{type: 'submit', class: 'button button_submit', value: 'Let\' play!'}
+  %input{ type: 'text', class: 'form_inputfield', name: 'name' }
+  %input{ type: 'submit', class: 'button button_submit', value: 'Let\' play!' }
