@@ -22,9 +22,9 @@ class Rps
   def outcome
     MOVES.each_with_index do |choice, i|
       if player_move == choice
-        return "#{player} wins!" if computer_move == MOVES[i - 1]
-        return "computer wins!" if computer_move == MOVES[i + 1]
-        return "Draw!"
+        return :win if computer_move == MOVES[i - 1]
+        return :lose if computer_move == MOVES[i + 1]
+        return :draw
       end
     end
   end

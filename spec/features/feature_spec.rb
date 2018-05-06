@@ -27,7 +27,7 @@ feature 'Attack screen shows the winner' do
   scenario 'The computer wins' do
     start_game
     click_button('Paper')
-    expect(page).to have_content "computer wins!"
+    expect(page).to have_content "Computer wins!"
   end
 
   scenario 'The player and the computer draw' do
