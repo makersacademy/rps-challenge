@@ -29,6 +29,10 @@ class Fight
     end
   end
 
+  def computer?
+    @player2.instance_of? Ai
+  end
+
   private
 
   def p1_wins(array)

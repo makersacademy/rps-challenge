@@ -4,6 +4,14 @@ def single_player_game
   click_button 'Submit'
 end
 
+def two_player_game
+  visit('/')
+  fill_in :player1, with: 'Harry'
+  select('Two Player', :from => 'mode')
+  fill_in :player2, with: 'Kitty'
+  click_button 'Submit'
+end
+
 def player_win
   srand(2)
   click_link('paper')

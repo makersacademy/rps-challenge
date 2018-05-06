@@ -15,12 +15,26 @@ class RockPaper < Sinatra::Base
   end
 
   post '/setup' do
-    Fight.game_start(Player.new(params[:player1]), Ai.new)
-    redirect('/play')
+    player = Player.new(params[:player1])
+    one = Ai.new
+    two = Player.new(params[:player2])
+    mode = params[:mode] == "2"
+    mode ? Fight.game_start(player, two) : Fight.game_start(player, one)
+    page = mode ? '/play2' : '/play'
+    redirect(page)
   end
 
   get '/play' do
     erb(:play)
+  end
+
+  get '/play2' do
+    erb(:play2)
+  end
+
+  get '/play3' do
+    @fight.player1.decision = params[:action]
+    erb(:play3)
   end
 
   get '/load' do
@@ -28,8 +42,13 @@ class RockPaper < Sinatra::Base
     erb(:load)
   end
 
+  get '/load2' do
+    @fight.player2.decision = params[:action]
+    erb(:load)
+  end
+
   get '/result' do
-    @fight.player2.play_turn
+    @fight.player2.play_turn if @fight.computer? 
     @winner = @fight.battle(@fight.player1, @fight.player2)
     erb(:result)
   end
