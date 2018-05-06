@@ -22,12 +22,16 @@ describe Turn do
   end
 
   context '#run' do
+    let(:move) { possible_moves[0] }
 
-    it 'Can run a turn' do
-      allow(subject).to receive(:rand) { 0 }
-      allow(subject).to receive(:the_options) { possible_moves }
-      expect(subject.run).to eq possible_moves[0]
+    it 'Can run a turn by choosing a move' do
+      expect(subject.run(move)).to eq move
+    end
+
+    it 'Can run a turn with a random move' do
+      allow(subject).to receive(:random_move) { move }
+
+      expect(subject.run).to eq move
     end
   end
-
 end

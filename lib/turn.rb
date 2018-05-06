@@ -5,17 +5,14 @@ class Turn
     @the_options = ['rock', 'paper', 'scissors']
   end
 
-  def run
-    the_move(random_number)
+  def run(move = random_move)
+    move
   end
 
   private
 
-  def random_number
-    rand(3)
+  def random_move
+    the_options.sample
   end
 
-  def the_move(number)
-    the_options[number]
-  end
 end
