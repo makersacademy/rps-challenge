@@ -29,7 +29,7 @@ class RPSLSWeb < Sinatra::Base
   end
 
   get '/' do
-    redirect '/' if current_player
+    redirect '/welcome' if current_player
     erb :name
   end
 
@@ -66,6 +66,7 @@ class RPSLSWeb < Sinatra::Base
 
   post '/play_again' do
     @game.reset
+    redirect :play
   end
 
   post '/logout' do

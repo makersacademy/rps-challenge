@@ -1,10 +1,13 @@
+require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require_relative '../lib/game'
-require_relative '../lib/player'
-require_relative '../lib/computer'
-require_relative '../lib/weapon'
+require File.join(File.dirname(__FILE__), '..', 'rpsls_web.rb')
+require 'rspec'
+require_relative './features/web_helpers'
+
+Capybara.app = RPSLSWeb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
