@@ -33,19 +33,41 @@ describe Play do
     before do
       allow(play).to receive(:players) { [player_1, player_2] }
       allow(play).to receive(:turn) { play }
-      allow(play).to receive(:run) { player_1_result }
+      allow(play).to receive(:run)
+    end
+
+    it 'Playing populates the result hash' do
       allow(play).to receive(:result) {
         { player_1 => player_1_result, player_2 => player_2_result }
       }
-    end
 
-    it 'playing populates the result hash' do
       play.play
       expect(play.result).to include(player_1 => player_1_result)
     end
-    
-    it 'plays each turn' do
+
+    it 'Player 1 can win' do
+      allow(play).to receive(:result) {
+        { player_1 => 'rock', player_2 => 'scissors' }
+      }
+
+      expect(play.play).to eq "#{player_1} won!"
+    end
+
+    it 'Player 2 can win' do
+      allow(play).to receive(:result) {
+        { player_1 => player_1_result, player_2 => player_2_result }
+      }
+
       expect(play.play).to eq "#{player_2} won!"
+    end
+
+    it 'Can be a draw' do
+      allow(play).to receive(:result) {
+        { player_1 => player_1_result, player_2 => player_1_result }
+      }
+      play.play
+
+      expect(play.victory_message).to eq "It's a draw"
     end
   end
 end

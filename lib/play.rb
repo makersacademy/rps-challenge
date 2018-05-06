@@ -10,8 +10,6 @@ class Play
     @victory_message = ''
   end
 
-
-
   def play
     run_turn
     add_message
@@ -31,7 +29,7 @@ class Play
 
   def victory_calculator
     calculator = {
-      'rock' => { 'rock' => 'tie', 'paper' => 'lose', 'scissors' => 'win' },
+      'rock' => { 'rock' => 'draw', 'paper' => 'lose', 'scissors' => 'win' },
       'paper' => { 'rock' => 'win', 'paper' => 'draw', 'scissors' => 'lose' },
       'scissors' => { 'rock' => 'lose', 'paper' => 'win', 'scissors' => 'draw' }
     }
