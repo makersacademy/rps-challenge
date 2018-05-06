@@ -7,23 +7,26 @@ class Game
     @player_two = player2
   end
 
-  def calculate_win(player1, player2)
-    p1_move = player1.move
-    p2_move = player2.move
+  def results_message
+    calculate_winner
+    @winner == nil ? 'It was a draw!' : "#{@winner.name} is the winner!"
+  end
+
+  def calculate_winner
+    p1_move = @player_one.move
+    p2_move = @player_two.move
     if p1_move == 'rock' && p2_move == 'scissors'
-      player1
+      @winner = @player_one
     elsif p1_move == 'scissors' && p2_move == 'paper'
-      player1
+      @winner = @player_one
     elsif p1_move == 'paper' && p2_move == 'rock'
-      player1
+      @winner = @player_one
     elsif p1_move == 'scissors' && p2_move == 'rock'
-      player2
+      @winner = @player_two
     elsif p1_move == 'paper' && p2_move == 'scissors'
-      player2
+      @winner = @player_two
     elsif p1_move == 'rock' && p2_move == 'paper'
-      player2
-    else
-      'draw'
+      @winner = @player_two
     end
   end
 

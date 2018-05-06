@@ -5,10 +5,13 @@
   </head>
   <body>
 
-    <h2> Welcome, <%= @name %>! </h2>
+    <h2> Welcome, <%= @game.player_one.name %>! </h2>
     <br>
     <h3> Make your move: </h3>
-    <form action='/move' method='post'>
+    <form action='/move' method='post' id='form'>
+      <!-- <button type="submit" form="form" value=0>Rock</button>
+      <button type="submit" form="form" value=1>Paper</button>
+      <button type="submit" form="form" value=2>Scissors</button> -->
       <input type='submit' name='move' value='rock'>
       <input type='submit' name='move' value='paper'>
       <input type='submit' name='move' value='scissors'>

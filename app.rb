@@ -1,6 +1,8 @@
 require 'sinatra/base'
-require './lib/player'
+require './lib/game'
 require './lib/bot'
+require './lib/player'
+
 
 class RPS < Sinatra::Base
   enable :sessions
@@ -10,25 +12,25 @@ class RPS < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:player_name])
+    $game = Game.new(Player.new(params[:player_name]), Bot.new)
     redirect '/play'
   end
 
   get '/play' do
-    @name = $player.name
+    @game = $game
     erb(:play)
   end
 
   post '/move' do
-    $player.input_move(params[:move])
+    $game.player_one.input_move(params[:move])
     redirect '/results'
   end
 
   get '/results' do
-    @player_move = $player.move
-    @bot_move = Bot.new.move
+    @game = $game
     erb(:results)
   end
 
   run! if app_file == $0
+
 end

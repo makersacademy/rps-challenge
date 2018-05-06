@@ -5,9 +5,11 @@
   </head>
   <body>
 
-    You chose: <%= @player_move %>
+    You chose: <%= @game.player_one.move %>
     <br>
-    Bot chose: <%= @bot_move %>
+    Bot chose: <%= @game.player_two.move %>
+    <br>
+    <%= @game.results_message %>
 
   </body>
 </html>
