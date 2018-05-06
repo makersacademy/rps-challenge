@@ -12,8 +12,14 @@ describe Result do
   end
 
   describe '#paper_verdict' do
-    it 'should return "you win"' do
+    it 'should return "you lose"' do
       expect(result.paper_verdict(move)).to eq 'You lose!'
+    end
+  end
+
+  describe '#scissors_verdict' do
+    it 'should return "draw"' do
+      expect(result.scissors_verdict(move)).to eq 'Draw!'
     end
   end
 

@@ -12,4 +12,10 @@ class Result
     return 'You win!' if move == 'ROCK'
   end
 
+  def scissors_verdict(move)
+    return 'Draw!' if move == 'SCISSORS'
+    return 'You win!' if move == 'PAPER'
+    return 'You lose!' if move == 'ROCK'
+  end
+
 end
