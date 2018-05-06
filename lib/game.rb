@@ -21,8 +21,9 @@ class Game
     @computer_weapon = WEAPON.sample
   end
 
-  def win
+  def results
     @result = :win if RULES[player_weapon] == computer_weapon
+    @result = :lose if RULES[computer_weapon] == player_weapon
   end
 
 end
