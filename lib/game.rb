@@ -24,6 +24,8 @@ class Game
     end
   end
 
+  private
+
   def player_win?
     if @choice == "Rock" && @computer_choice == "Scissors"
       true
