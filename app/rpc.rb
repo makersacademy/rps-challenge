@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require 'haml'
+require 'game_engine'
+require 'player'
+require 'computer'
 
 class RPC < Sinatra::Base
   enable :sessions
