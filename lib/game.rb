@@ -7,6 +7,14 @@ class Game
     @computer = computer
   end
 
+  def self.save_instance(player, computer)
+    @instance = Game.new(player, computer)
+  end
+
+  def self.instance
+    @instance
+  end
+
   def result
     tie? ? 'tie' : (computer_wins? ? 'Computer wins' : 'Player wins')
   end
