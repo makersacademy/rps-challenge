@@ -14,7 +14,7 @@ Our task this week was to implement the skills and knowledge gained over week 3 
 Approach
 --------
 
-My approach was to initially build the sinatra framework, organising where and when get and post requests would occur, and the views that corresponded with the routes. I created feature tests before implementing ant html forms in my view files to take a TDD approach. I decided that the three button choices (rock, paper, scissors) would correspond with three separate routes that would implement the choice into the Rps methods created in Ruby. The outcome of this choice would then determine the final view.
+My approach was to initially build the sinatra framework, organising where and when get and post requests would occur, and the views that corresponded with the routes. I created feature tests before implementing any html forms in my view files to take a TDD approach. I decided that the three button choices (rock, paper, scissors) would correspond with three separate routes that would implement the choice into the Rps methods created in Ruby. The outcome of this choice would then determine the final view.
 
 I battled with the idea of making multiple classes throughout this challenge. Initially I felt it was simpler to only have a Rps class which knew the possible moves, which moves beat which, and could calculate the outcome of a match between a choice and a random move. This meant that my Rps class only comprised of two short methods, so I did not think it was necessary to extract classes. However, I decided at the end of the challenge to at least extract a Player class that would be responsible for knowing its own name.
 
@@ -43,7 +43,7 @@ Run
 bundle install
 ```
 
-Use rackup to view open the app in the web browser
+Use rackup to open the app in the web browser
 ```sh
 rackup config.ru
 ```
