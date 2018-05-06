@@ -23,4 +23,15 @@ describe Game do
       expect(game.computer_weapon).to eq :rock
     end
   end
+
+  describe "#result" do
+    context "#win" do
+      it "returns the result 'win' if player wins" do
+        game.add_player_weapon(:paper)
+        allow(game).to receive(:computer_weapon) { :rock }
+        game.win
+        expect(game.result).to eq :win
+      end
+    end
+  end
 end
