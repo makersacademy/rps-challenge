@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rock, Paper, Scissors</title>
+<style>
+h1, h2, h3, body {
+  font-family: georgia;
+  color: white;
+  text-align: center;
+  background-color: navy;
+}
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</style>
+  <head>
+    <title>Rock, Paper, Scissors</title>
     <h1>Welcome to Rock, Paper, Scissors!</h1>
     <h2>Please enter your name to start the game</h2>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <h3><form action="/names" method="post">
+      Player name: <input type="text" name="p1_name" >
+      <input type="submit" value="Enter"></h3>
   </head>
   <body>
-  <form action="/names" method="post">
-    Player name<input type="text" name="p1_name">
-    <input type="submit" value="Enter">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <iframe src="https://giphy.com/embed/rfp9Znzj0NyWk" width="1160" height="552" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
   </body>
 </html>
