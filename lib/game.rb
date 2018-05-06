@@ -1,6 +1,9 @@
 class Game
 
-  attr_reader :player_weapon
+  WEAPON = [:rock, :paper, :scissors]
+
+
+  attr_reader :player_weapon, :computer_weapon
 
   def initialize(player = Player.new, computer = Computer.new)
     @player = player
@@ -8,8 +11,12 @@ class Game
     @result = nil
   end
 
-  def add_weapon(choice)
+  def add_player_weapon(choice)
     @player_weapon = choice
+  end
+
+  def add_computer_weapon
+    @computer_weapon = WEAPON.sample
   end
 
 end
