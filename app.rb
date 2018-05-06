@@ -26,7 +26,7 @@ class RPS < Sinatra::Base
 
   get '/results' do
     @player_move = $player.move
-    @bot_move = Bot.new.random_move
+    @bot_move = Bot.new.move
     erb(:results)
   end
 

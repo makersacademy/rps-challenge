@@ -4,8 +4,8 @@
      @available_moves = ['rock', 'paper', 'scissors']
    end
 
-   def random_move
+   def move
      @available_moves.sample
    end
-   
+
  end

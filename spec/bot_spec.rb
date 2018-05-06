@@ -8,10 +8,10 @@ describe Bot do
     end
   end
 
-  describe 'random_move' do
+  describe '#move' do
     it 'returns a move at random from available_moves' do
       allow_any_instance_of(Array).to receive(:sample).and_return('scissors')
-      expect(subject.random_move).to eq('scissors')
+      expect(subject.move).to eq('scissors')
     end
   end
 end
