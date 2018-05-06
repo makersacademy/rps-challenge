@@ -3,7 +3,7 @@
 Task
 ----
 
-The task was to build a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The task was to build a _Rock, Paper, Scissors_ game so that a user can play on the web with the following user stories:
 
 ```sh
 As a marketeer
