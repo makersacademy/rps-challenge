@@ -1,4 +1,5 @@
 require 'player'
+require 'game'
 
 describe Player do
   subject(:player_one) { described_class.new('Mark') }
