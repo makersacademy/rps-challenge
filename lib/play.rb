@@ -10,17 +10,16 @@ class Play
     @victory_message = ''
   end
 
-  def play
-    run_turn
+  def play(choice_1, choice_2)
+    run_turn(choice_1, choice_2)
     add_message
   end
 
   private
 
-  def run_turn
-    players.each do |x|
-      result[x] = turn.run
-    end
+  def run_turn(choice_1, choice_2)
+    result[players[0]] = turn.run(choice_1)
+    result[players[1]] = turn.run(choice_2)
   end
 
   def add_message

@@ -31,7 +31,7 @@ describe Turn do
     it 'Can run a turn with a random move' do
       allow(subject).to receive(:random_move) { move }
 
-      expect(subject.run).to eq move
+      expect(subject.run('random')).to eq move
     end
   end
 end

@@ -5,14 +5,14 @@ class Turn
     @the_options = ['rock', 'paper', 'scissors']
   end
 
-  def run(move = random_move)
-    move
+  def run(move)
+    the_options.include?(move) ? move : random_move
   end
 
   private
 
   def random_move
-    the_options.sample
+    @the_options.sample
   end
 
 end

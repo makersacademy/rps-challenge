@@ -30,7 +30,7 @@ class Game < Sinatra::Base
   end
 
   post '/shoot' do
-    @the_game.play
+    @the_game.play(params[:player_choice_1], 'random')
     redirect '/play_game'
   end
 

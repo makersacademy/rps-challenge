@@ -1,9 +1,29 @@
 <h1>Ready to play <%= @player_name_1 %>?</h1>
 
 <% if @the_game.victory_message != '' %>
-<%= @the_game.victory_message %>
+  <div class="notification">
+    <p><strong><%= @the_game.victory_message %></strong></p>
+    <p>
+      <%= @player_name_1 %> picked: <br/>
+      <%= @the_game.result[@player_name_1].capitalize %>
+    </p>
+    <p>
+      <%= @player_name_2 %> picked: <br/>
+      <%= @the_game.result[@player_name_2].capitalize %>
+    </p>
+  </div>
 <% end %>
 
 <form action='/shoot' method='post'>
+  <input type='radio' name='player_choice_1' value='rock' id='rock_1'>
+  <label for='rock'>Rock</label>
+  <input type='radio' name='player_choice_1' value='paper' id='paper_1'>
+  <label for='paper'>Paper</label>
+  <input type='radio' name='player_choice_1' value='scissors' id='scissors_1'>
+  <label for='scissors'>Scissors</label>
+  <input type='radio' name='player_choice_1' value='random' id='random_1'>
+  <label for='random'>RANDOM!!!!!</label>
+
+  <br/>
   <input type='submit' value='Shoot!'>
 </form>

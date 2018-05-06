@@ -11,8 +11,9 @@ feature 'The whole game' do
     vist_index_add_name(player_name)
     expect(page).to have_content("Ready to play #{player_name}?")
   end
-  scenario 'Gets to main game page' do
+  scenario 'Can play the game' do
     vist_index_add_name(player_name)
+    choose('paper_1')
     click_button('Shoot!')
     expect(page).to have_content("Ready to play #{player_name}?")
   end

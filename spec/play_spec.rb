@@ -41,16 +41,16 @@ describe Play do
         { player_1 => player_1_result, player_2 => player_2_result }
       }
 
-      play.play
+      play.play(player_1_result, player_2_result)
       expect(play.result).to include(player_1 => player_1_result)
     end
 
     it 'Player 1 can win' do
       allow(play).to receive(:result) {
-        { player_1 => 'rock', player_2 => 'scissors' }
+        { player_1 => player_2_result, player_2 => player_1_result }
       }
 
-      expect(play.play).to eq "#{player_1} won!"
+      expect(play.play(player_2_result, player_1_result)).to eq "#{player_1} won!"
     end
 
     it 'Player 2 can win' do
@@ -58,14 +58,14 @@ describe Play do
         { player_1 => player_1_result, player_2 => player_2_result }
       }
 
-      expect(play.play).to eq "#{player_2} won!"
+      expect(play.play(player_1_result, player_2_result)).to eq "#{player_2} won!"
     end
 
     it 'Can be a draw' do
       allow(play).to receive(:result) {
         { player_1 => player_1_result, player_2 => player_1_result }
       }
-      play.play
+      play.play(player_1_result, player_1_result)
 
       expect(play.victory_message).to eq "It's a draw"
     end
