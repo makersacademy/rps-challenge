@@ -4,7 +4,7 @@ describe Game do
 
   subject(:game) { described_class.new(player, computer) }
   let(:player) { double(:player) }
-  let(:computer) { double(:computer)  }
+  let(:computer) { double(:computer) }
 
   describe '#initialize' do
     it 'should initialize an instance of player' do
@@ -16,19 +16,19 @@ describe Game do
   end
 
   describe '#result' do
+    before do
+      allow(player).to receive(:weapon).and_return(:rock)
+    end
     it 'should return a tie if weapons are the same' do
-      allow(game.player).to receive(:weapon).and_return('Rock')
-      allow(game.computer).to receive(:weapon).and_return('Rock')
+      allow(computer).to receive(:weapon).and_return(:rock)
       expect(game.result).to eq 'tie'
     end
     it 'should return computer wins if computer wins' do
-      allow(game.player).to receive(:weapon).and_return('Rock')
-      allow(game.computer).to receive(:weapon).and_return('Paper')
+      allow(computer).to receive(:weapon).and_return(:paper)
       expect(game.result).to eq 'Computer wins'
     end
     it 'should return player wins if player wins' do
-      allow(game.player).to receive(:weapon).and_return('Scissors')
-      allow(game.computer).to receive(:weapon).and_return('Paper')
+      allow(computer).to receive(:weapon).and_return(:scissors)
       expect(game.result).to eq 'Player wins'
     end
   end

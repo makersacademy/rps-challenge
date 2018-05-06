@@ -8,13 +8,29 @@ class Game
   end
 
   def result
-    if player.weapon == computer.weapon
-      'tie'
-    elsif player.weapon == 'Rock' && computer.weapon == 'Paper'
-      'Computer wins'
-    elsif player.weapon == 'Scissors' && computer.weapon == 'Paper'
-      'Player wins'
-    end
+    tie? ? 'tie' : (computer_wins? ? 'Computer wins' : 'Player wins')
+  end
+
+  private
+
+  def tie?
+    player.weapon == computer.weapon
+  end
+
+  def computer_wins?
+    rock_vs_paper || paper_vs_scissors || scissors_vs_rock
+  end
+
+  def rock_vs_paper
+    player.weapon == :rock && computer.weapon == :paper
+  end
+
+  def paper_vs_scissors
+    player.weapon == :paper && computer.weapon == :scissors
+  end
+
+  def scissors_vs_rock
+    player.weapon == :scissors && computer.weapon == :rock
   end
 
 end
