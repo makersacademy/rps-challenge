@@ -5,29 +5,24 @@ class Game
   def initialize(player1, player2)
     @player_one = player1
     @player_two = player2
+    @results_matrix = [
+      ['draw', 'lose', 'win'],
+      ['win', 'draw', 'lose'],
+      ['lose', 'win', 'draw']
+    ]
   end
 
-  def results_message
-    calculate_winner
-    @winner == nil ? 'It was a draw!' : "#{@winner.name} is the winner!"
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
-  def calculate_winner
-    p1_move = @player_one.move
-    p2_move = @player_two.move
-    if p1_move == 'rock' && p2_move == 'scissors'
-      @winner = @player_one
-    elsif p1_move == 'scissors' && p2_move == 'paper'
-      @winner = @player_one
-    elsif p1_move == 'paper' && p2_move == 'rock'
-      @winner = @player_one
-    elsif p1_move == 'scissors' && p2_move == 'rock'
-      @winner = @player_two
-    elsif p1_move == 'paper' && p2_move == 'scissors'
-      @winner = @player_two
-    elsif p1_move == 'rock' && p2_move == 'paper'
-      @winner = @player_two
-    end
+  def self.instance
+    @game
   end
+
+  def outcome
+    @outcome = @results_matrix[@player_one.move.to_i][@player_two.move.to_i]
+  end
+
 
 end

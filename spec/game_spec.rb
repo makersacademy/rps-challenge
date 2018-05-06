@@ -1,9 +1,14 @@
 require 'game'
 
+# rock = 0
+# paper = 1
+# scissors = 2
+
 describe Game do
-  let(:bot) { double :bot, name: 'RPS_Bot', move: 'rock' }
-  let(:player) { double :player, name: 'Bob' }
+  let(:bot) { double :bot, name: 'RPS_Bot', move: 0 }
+  let(:player) { double :player, name: 'Bob', move: "1" }
   subject(:game) { described_class.new(player, bot) }
+
 
   describe '#initialize' do
     it 'saves first argument as player_one attribute' do
@@ -14,70 +19,11 @@ describe Game do
     end
   end
 
-  describe '#results_message' do
-    it 'returns a message if player wins' do
-      allow(player).to receive(:move).and_return('paper')
-      expect(game.results_message).to eq('Bob is the winner!')
-    end
-
-    it 'returns a message if bot wins' do
-      allow(player).to receive(:move).and_return('scissors')
-      expect(game.results_message).to eq('RPS_Bot is the winner!')
+  describe '#outcome' do
+    it 'returns win when player selects paper and bot selects rock' do
+      expect(game.outcome).to eq('win')
     end
   end
+  
 
-  # describe '#calculate_win' do
-  #   context 'player one wins' do
-  #
-  #     it 'returns player when player selects rock and bot selects scissors' do
-  #       allow(bot).to receive(:move).and_return('scissors')
-  #       allow(player).to receive(:move).and_return('rock')
-  #       expect(game.calculate_winner).to eq(player)
-  #     end
-  #
-  #     it 'returns player when player selects scissors and bot selects paper' do
-  #       allow(bot).to receive(:move).and_return('paper')
-  #       allow(player).to receive(:move).and_return('scissors')
-  #       expect(game.calculate_winner).to eq(player)
-  #     end
-  #
-  #     it 'returns player when player selects paper and bot selects rock' do
-  #       allow(bot).to receive(:move).and_return('rock')
-  #       allow(player).to receive(:move).and_return('paper')
-  #       expect(game.calculate_winner).to eq(player)
-  #     end
-  #
-  #   end
-  #
-  #   context 'player two wins' do
-  #
-  #     it 'returns bot when bot selects rock and player selects scissors' do
-  #       allow(bot).to receive(:move).and_return('rock')
-  #       allow(player).to receive(:move).and_return('scissors')
-  #       expect(game.calculate_winner).to eq(bot)
-  #     end
-  #
-  #     it 'returns bot when bot selects scissors and player selects paper' do
-  #       allow(bot).to receive(:move).and_return('scissors')
-  #       allow(player).to receive(:move).and_return('paper')
-  #       expect(game.calculate_winner).to eq(bot)
-  #     end
-  #
-  #     it 'returns bot when bot selects paper and player selects rock' do
-  #       allow(bot).to receive(:move).and_return('paper')
-  #       allow(player).to receive(:move).and_return('rock')
-  #       expect(game.calculate_winner).to eq(bot)
-  #     end
-  #
-  #   end
-  #
-  #   context 'draw' do
-  #     it 'returns nil if player and bot select same move' do
-  #       allow(bot).to receive(:move).and_return('rock')
-  #       allow(player).to receive(:move).and_return('rock')
-  #       expect(game.calculate_winner).to eq(nil)
-  #     end
-  #   end
-  #
-  # end
-end
+  end
