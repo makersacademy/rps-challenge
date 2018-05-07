@@ -17,19 +17,19 @@ describe Game do
 
   describe '#result' do
     before do
-      allow(player).to receive(:weapon).and_return(:rock)
+      allow(player).to receive(:weapon).and_return('Rock')
     end
     it 'should return a tie if weapons are the same' do
-      allow(computer).to receive(:weapon).and_return(:rock)
-      expect(game.result).to eq 'tie'
+      allow(computer).to receive(:weapon).and_return('Rock')
+      expect(game.result).to eq :tie
     end
     it 'should return computer wins if computer wins' do
-      allow(computer).to receive(:weapon).and_return(:paper)
-      expect(game.result).to eq 'Computer wins'
+      allow(computer).to receive(:weapon).and_return('Paper')
+      expect(game.result).to eq :lose
     end
     it 'should return player wins if player wins' do
-      allow(computer).to receive(:weapon).and_return(:scissors)
-      expect(game.result).to eq 'Player wins'
+      allow(computer).to receive(:weapon).and_return('Scissors')
+      expect(game.result).to eq :win
     end
   end
 end

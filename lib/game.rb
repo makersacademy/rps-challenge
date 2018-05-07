@@ -16,7 +16,7 @@ class Game
   end
 
   def result
-    tie? ? 'tie' : (computer_wins? ? 'Computer wins' : 'Player wins')
+    tie? ? :tie : (computer_wins? ? :lose : :win)
   end
 
   private
@@ -30,15 +30,15 @@ class Game
   end
 
   def rock_vs_paper
-    player.weapon == :rock && computer.weapon == :paper
+    player.weapon == 'Rock' && computer.weapon == 'Paper'
   end
 
   def paper_vs_scissors
-    player.weapon == :paper && computer.weapon == :scissors
+    player.weapon == 'Paper' && computer.weapon == 'Scissors'
   end
 
   def scissors_vs_rock
-    player.weapon == :scissors && computer.weapon == :rock
+    player.weapon == 'Scissors' && computer.weapon == 'Rock'
   end
 
 end

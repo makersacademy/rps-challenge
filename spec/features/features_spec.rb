@@ -1,10 +1,11 @@
-require 'capybara/rspec'
+# require 'capybara/rspec'
+# require 'web_helpers.rb'
 
 feature 'See name in lights' do
   scenario 'Player can enter their name' do
-    visit('/')
-    fill_in :player, with: 'Mickey'
-    click_button 'Submit'
+    enter_name
     expect(page).to have_text 'Mickey'
   end
+
+  feature ''
 end

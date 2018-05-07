@@ -16,11 +16,24 @@ class RPS < Sinatra::Base
 
   post '/name' do
     @game.player.define_name(params[:player])
-    redirect ('/play')
+    redirect '/play'
   end
 
   get '/play' do
     erb :play
+  end
+
+  post '/attack' do
+    @game.player.define_weapon(params[:weapon])
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb @game.result
+  end
+
+  post '/restart' do
+    redirect '/'
   end
 
 end

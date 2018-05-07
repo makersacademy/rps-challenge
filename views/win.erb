@@ -1,0 +1,7 @@
+
+<h1> You Win! :) </h1>
+<h2> You chose <%= @game.player.weapon %> The computer chose <%= @game.computer.weapon %>
+
+<form action="/restart" method="post">
+  <input type="submit" value="Play again?">
+</form>
