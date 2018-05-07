@@ -11,7 +11,6 @@ feature 'testing the result of the game' do
     allow(Kernel).to receive(:rand).and_return(1)
     select 'Rock', from: 'move'
     click_button 'submit'
-
     expect(page).to have_content("You lose!")
   end
   scenario 'page shows a draw' do

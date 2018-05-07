@@ -1,24 +1,18 @@
 class Game
 
-  attr_accessor :choice
-  attr_reader :moves, :player_one
-  DEFAULT_MOVES = ["Rock", "Paper", "Scissors"]
+  attr_reader :moves, :player_one, :computer
 
-  def initialize(player_one)
+  def initialize(player_one, computer)
     @player_one = player_one
-    @moves = DEFAULT_MOVES
-  end
-
-  def cpu_move
-    @choice = @moves[random_move]
+    @computer = computer
   end
 
   def result
     draw? ? "It's a draw!" : (player_wins? ? "You win!" : "You lose!")
   end
 
-  def self.create(player_one)
-    @game = Game.new(player_one)
+  def self.create(player_one, computer)
+    @game = Game.new(player_one, computer)
   end
 
   def self.instance
@@ -27,18 +21,14 @@ class Game
 
   private
 
-  def random_move
-    Kernel.rand(3)
-  end
-
   def draw?
-    @choice == @player_one.choice
+    @computer.choice == @player_one.choice
   end
 
   def player_wins?
-    @choice == "Scissors" && @player_one.choice == "Rock" ||
-    @choice == "Rock" && @player_one.choice == "Paper" ||
-    @choice == "Paper" && @player_one.choice == "Scissors"
+    @computer.choice == "Scissors" && @player_one.choice == "Rock" ||
+    @computer.choice == "Rock" && @player_one.choice == "Paper" ||
+    @computer.choice == "Paper" && @player_one.choice == "Scissors"
   end
 
 end
