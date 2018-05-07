@@ -49,10 +49,6 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    p @game.player_1.move
-    p @game.player_2.move
-    p @game
-
     erb(:result)
   end
 end
