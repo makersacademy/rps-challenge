@@ -1,14 +1,26 @@
 <style>
-body {
+body, h2 {
   font-family: georgia;
   color: white;
   text-align: center;
   background-color: navy;
 }
-h1 {
+h1, {
   font-family: georgia;
   color: red;
   text-align: center;
 }
 </style>
-<h1><%= @player_one_name %></h1>
+<h1><%= @player_one_name %> choose you move:</h1>
+<h2><form action="/move" method="post">
+  <select name="move" onchange="this.form.submit">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<input type="submit" value="submit">
+</h2>
+<h3>
+
+
+</h3>
