@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<body>
-<center>
-<h1>Hello, <%= @player_name %>!</h1>
 
-<h2>Choose a weapon to play.</h2>
+  <center>
+  <h1><%= @player %></h1>
+  <h1>vs.</h1>
+  <h1>The Enemy</h1>
 
-<form action='/choice' method='post'>
-  <button name='move' type='submit' value='Rock' />ROCK</button>
-  <button name='move' type='submit' value='Paper' />PAPER</button>
-  <button name='move' type='submit' value='Scissors' />SCISSORS</button>
-</form>
+  <h2>Select a weapon to play</h2>
 
-</center>
+  <a href="/rock">ROCK</a>
+
+  <a href="/paper">PAPER</a>
+
+  <a href="/scissors">SCISSORS</a>
+
+  </center>
+
 </body>
 </html>

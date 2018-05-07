@@ -1,31 +1,34 @@
 require 'sinatra/base'
+require './lib/computer'
+require './lib/result'
 
 class RPSWeb < Sinatra::Base
-  enable :sessions
 
   get '/' do
-    erb :index
+    erb(:index)
   end
 
-  post '/name' do
-    session[:player_name] = params[:player_name]
-    redirect '/play'
+  post '/play' do
+    @player = params[:name]
+    erb(:play)
   end
 
-  get '/play' do
-    @player_name = session[:player_name]
-    erb :play
+  get '/rock' do
+    @computer = Computer.new.random_move
+    @outcome = Result.new.rock_decision(@computer)
+    erb(:rock)
   end
 
-  post '/choice' do
-    session[:move] = params[:move]
-    redirect '/confirm'
+  get '/paper' do
+    @computer = Computer.new.random_move
+    @outcome = Result.new.paper_decision(@computer)
+    erb(:paper)
   end
 
-  get '/confirm' do
-    @move = session[:move]
-    erb :confirm
+  get '/scissors' do
+    @computer = Computer.new.random_move
+    @outcome = Result.new.scissors_decision(@computer)
+    erb(:scissors)
   end
 
-  run! if app_file == $0
 end
