@@ -11,7 +11,6 @@ feature 'a winner is chosen' do
   scenario 'player wins' do
     allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
     click_button('Rock')
-    save_and_open_page
     expect(page).to have_text("#{name} wins!")
   end
 end
