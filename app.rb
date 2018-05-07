@@ -31,7 +31,7 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @game.result 
+    @game.result
     erb :result
   end
 

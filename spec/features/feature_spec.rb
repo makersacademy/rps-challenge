@@ -25,4 +25,11 @@ feature "Playing Game" do
     click_button 'Rock'
     expect(page).to have_text 'It\'s a Win!'
   end
+
+  scenario "Player wants to play again" do
+    sign_in
+    click_button 'Rock'
+    click_button 'Play again'
+    expect(page).to have_text 'Rock, Paper or Scissors, Charlene?'
+  end
 end
