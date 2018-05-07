@@ -10,7 +10,7 @@ describe Game do
 
   describe '#move' do
     it 'selects a random move' do
-      allow(subject.moves).to receive(:sample).and_return("Rock")
+      allow(Kernel).to receive(:rand).and_return(0)
       expect(subject.cpu_move).to eq("Rock")
     end
   end

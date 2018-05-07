@@ -7,7 +7,7 @@ class Game
   end
 
   def cpu_move
-    @moves.sample
+    @moves[Kernel.rand(2)]
   end
 
   def self.create

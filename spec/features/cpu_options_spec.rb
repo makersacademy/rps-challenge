@@ -5,6 +5,7 @@ feature 'Testing the random cpu move' do
     click_button 'Enter'
     select 'Rock', from: 'move'
     visit('/result')
-    expect(page).to have_content("The computer's move was")
+    allow(Kernel).to receive(:rand).and_return(0)
+    expect(page).to have_content("The computer's move was Rock")
   end
 end
