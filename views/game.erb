@@ -9,5 +9,11 @@
 
 <p>Rock, Paper or Scissors, <%= @game.player.name%>?</p>
 
+<form action = "/choice" method = "post">
+  <input type="submit" value="Rock" name = "choice">
+  <input type="submit" value="Paper" name = "choice">
+  <input type="submit" value="Scissors" name = "choice">
+</form>
+
 </body>
 </html>
