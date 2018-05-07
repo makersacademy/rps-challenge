@@ -6,4 +6,11 @@ describe Player do
       expect(subject.name).to eq 'Will'
     end
   end
+
+  describe '#move' do
+    it 'should be able to store a move' do
+      subject.move = :rock
+      expect(subject.move).to eq :rock
+    end
+  end
 end

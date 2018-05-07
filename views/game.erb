@@ -7,5 +7,14 @@
   <div>
     <p class='centre'><%= @game.player_1.name %> vs Computer</p>
   </div>
+  <form action='/rock' method='post'>
+    <button type='submit'>Rock</button>
+  </form>
+  <form action='/paper' method='post'>
+    <button type='submit'>Paper</button>
+  </form>
+  <form action='/scissors' method='post'>
+    <button type='submit'>Scissors</button>
+  </form>
 </body>
 </html>

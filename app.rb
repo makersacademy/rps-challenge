@@ -26,4 +26,29 @@ class Rps < Sinatra::Base
   get '/game' do
     erb(:game)
   end
+
+  post '/rock' do
+    @game.player_1.move = :rock
+    @game.player_2.make_move
+
+    redirect('/result')
+  end
+
+  post '/paper' do
+    @game.player_1.move = :paper
+    @game.player_2.make_move
+
+    redirect('/result')
+  end
+
+  post '/scissors' do
+    @game.player_1.move = :scissors
+    @game.player_2.make_move
+
+    redirect('/result')
+  end
+
+  get '/result' do
+    erb(:result)
+  end
 end
