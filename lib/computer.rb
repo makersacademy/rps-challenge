@@ -1,9 +1,14 @@
 class Computer
 
-  attr_reader :weapon
+  attr_accessor :weapon, :random_weapon
 
   def initialize(weapon = ['Rock', 'Paper', 'Scissors'])
-    @weapon = weapon.sample
+    @weapon = weapon
+    select_weapon
+  end
+
+  def select_weapon
+    @random_weapon = weapon.sample
   end
 
 end

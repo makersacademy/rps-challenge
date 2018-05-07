@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player, :computer
+  attr_accessor :player, :computer
 
   def initialize(player, computer)
     @player = player
@@ -22,7 +22,7 @@ class Game
   private
 
   def tie?
-    player.weapon == computer.weapon
+    player.weapon == computer.random_weapon
   end
 
   def computer_wins?
@@ -30,15 +30,15 @@ class Game
   end
 
   def rock_vs_paper
-    player.weapon == 'Rock' && computer.weapon == 'Paper'
+    player.weapon == 'Rock' && computer.random_weapon == 'Paper'
   end
 
   def paper_vs_scissors
-    player.weapon == 'Paper' && computer.weapon == 'Scissors'
+    player.weapon == 'Paper' && computer.random_weapon == 'Scissors'
   end
 
   def scissors_vs_rock
-    player.weapon == 'Scissors' && computer.weapon == 'Rock'
+    player.weapon == 'Scissors' && computer.random_weapon == 'Rock'
   end
 
 end

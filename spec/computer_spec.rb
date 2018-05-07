@@ -12,11 +12,11 @@ describe Computer do
     end
   end
 
-  # describe '#random_weapon' do
-  #   it 'should return a random weapon' do
-  #     allow(computer.weapon).to receive(:sample).and_return(weapon)
-  #     expect(computer.random_weapon).to eq weapon
-  #   end
-  # end
+  describe '#select_weapon' do
+    it 'should return a random weapon' do
+      allow(weapon).to receive(:sample).and_return(weapon)
+      expect(computer.random_weapon).to eq weapon
+    end
+  end
 
 end

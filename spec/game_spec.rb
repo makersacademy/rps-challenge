@@ -16,20 +16,58 @@ describe Game do
   end
 
   describe '#result' do
-    before do
-      allow(player).to receive(:weapon).and_return('Rock')
+    context 'Player chooses Rock' do
+      before do
+        allow(player).to receive(:weapon).and_return('Rock')
+      end
+      it 'should return a tie if weapons are the same' do
+        allow(computer).to receive(:random_weapon).and_return('Rock')
+        expect(game.result).to eq :tie
+      end
+      it 'should return computer wins if computer wins' do
+        allow(computer).to receive(:random_weapon).and_return('Paper')
+        expect(game.result).to eq :lose
+      end
+      it 'should return player wins if player wins' do
+        allow(computer).to receive(:random_weapon).and_return('Scissors')
+        expect(game.result).to eq :win
+      end
     end
-    it 'should return a tie if weapons are the same' do
-      allow(computer).to receive(:weapon).and_return('Rock')
-      expect(game.result).to eq :tie
+
+    context 'Player chooses Scissors' do
+      before do
+        allow(player).to receive(:weapon).and_return('Scissors')
+      end
+      it 'should return a tie if weapons are the same' do
+        allow(computer).to receive(:random_weapon).and_return('Scissors')
+        expect(game.result).to eq :tie
+      end
+      it 'should return computer wins if computer wins' do
+        allow(computer).to receive(:random_weapon).and_return('Rock')
+        expect(game.result).to eq :lose
+      end
+      it 'should return player wins if player wins' do
+        allow(computer).to receive(:random_weapon).and_return('Paper')
+        expect(game.result).to eq :win
+      end
     end
-    it 'should return computer wins if computer wins' do
-      allow(computer).to receive(:weapon).and_return('Paper')
-      expect(game.result).to eq :lose
-    end
-    it 'should return player wins if player wins' do
-      allow(computer).to receive(:weapon).and_return('Scissors')
-      expect(game.result).to eq :win
+
+    context 'Player chooses Paper' do
+      before do
+        allow(player).to receive(:weapon).and_return('Paper')
+      end
+      it 'should return a tie if weapons are the same' do
+        allow(computer).to receive(:random_weapon).and_return('Paper')
+        expect(game.result).to eq :tie
+      end
+      it 'should return computer wins if computer wins' do
+        allow(computer).to receive(:random_weapon).and_return('Scissors')
+        expect(game.result).to eq :lose
+      end
+      it 'should return player wins if player wins' do
+        allow(computer).to receive(:random_weapon).and_return('Rock')
+        expect(game.result).to eq :win
+      end
     end
   end
 end
