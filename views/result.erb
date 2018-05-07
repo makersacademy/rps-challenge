@@ -1,0 +1,19 @@
+<!DOCTYPE erb>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+<body>
+
+<h3> It's a <%= @game.result%>! </h3>
+<h3> You chose <%= @game.choice%>. </h3>
+<h3> Bot chose <%= @game.bot.choice%>. </h3>
+
+<form action = "/game" method = "get">
+  <input type="submit" value="Play again">
+</form>
+
+</body>
+</html>

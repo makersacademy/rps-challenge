@@ -1,0 +1,19 @@
+<!DOCTYPE erb>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RPS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+<body>
+
+<p>Rock, Paper or Scissors, <%= @game.player.name%>?</p>
+
+<form action = "/choice" method = "post">
+  <input type="submit" value="Rock" name = "choice">
+  <input type="submit" value="Paper" name = "choice">
+  <input type="submit" value="Scissors" name = "choice">
+</form>
+
+</body>
+</html>
