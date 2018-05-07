@@ -30,4 +30,4 @@ This app was built using Test Driven Development
  ``` rspec ```
  from the project directory
 
- ## Big thanks to [William Powell](https://github.com/williampowell92) for the help DRYing up the logic method.
+ #### Big thanks to [William Powell](https://github.com/williampowell92) for the help DRYing up the logic method. ####
