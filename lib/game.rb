@@ -9,15 +9,27 @@ class Game
           lizard: [:paper, :spock],
           spock: [:rock, :scissors] }
 
-  def self.game
-    @game
+  def self.games(id)
+    @games[id]
   end
 
-  def self.start_game(player1, player2, weapon_class = Weapon)
-    @game = Game.new(player1, player2, weapon_class)
+  def self.multi_games(player_id)
+    @games.select { |id, game| !game.one_player? }
   end
 
-  def initialize(player1, player2, weapon_class = Weapon)
+  def self.start_game(player1, player2 = :pending, weapon_class = Weapon)
+    @games ||= {}
+    game = Game.new(player1, player2, weapon_class)
+    game_id = game.object_id
+    @games[game_id] = game
+    return game_id
+  end
+
+  def self.delete_game(id)
+    @games.delete(id)
+  end
+
+  def initialize(player1, player2 , weapon_class = Weapon)
     @player1 = player1.object_id
     @player2 = player2.object_id
     @players = { @player1 => player1, @player2 => player2 }
@@ -26,11 +38,19 @@ class Game
     @weapon_class = weapon_class
   end
 
+  def add_second_player(game_id, player)
+    raise "Player already set" unless @players[@player2] == :pending
+    @players.delete(@player2)
+    @player2 = player.object_id
+    @players[@player2] = player
+  end
+
   def ready?
-    @players.all? { |_id, player| player.weapon? }
+    @players.all? { |_id, player| player != :pending && player.weapon? }
   end
 
   def add_weapon(player_id, weapon)
+    raise "Player not set" if @players[player_id] == :pending
     raise "Not a valid weapon" unless valid_weapon?(weapon)
     raise "Player already has a weapon" if @players[player_id].weapon?
     @players[player_id].give_weapon(weapon.to_sym)
@@ -57,7 +77,7 @@ class Game
   end
 
   def player2
-    @players[@player2]
+    @players[@player2] == :pending ? "Pending" : @players[@player2]
   end
 
   def player1_score
@@ -76,11 +96,19 @@ class Game
     @result[:winner]
   end
 
-  private
+  def player_set?(player_id)
+    @players.any? { |id, _player| id == player_id }
+  end
 
   def one_player?
     @players.any? { |_id, player| player.is_a?(Computer) }
   end
+
+  def opponent(player_id)
+    @players.select { |id, _player| id != player_id }.first.last
+  end
+
+  private
 
   def set_computer_weapon
     @players.each_value { |player| player.give_weapon if player.is_a?(Computer) }

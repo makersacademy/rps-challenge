@@ -5,7 +5,7 @@
         <title>RPSLS</title>
         <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/game.css">
-        <script type="text/javascript" src="/js/game.js"></script>
+        <script type="text/javascript" src="/js/multiplay.js"></script>
     </head>
     <body>
       <div class="game_info_container">
@@ -16,9 +16,9 @@
           <h1><%= @game.player2 == "Pending" ? "Pending" : @game.player2.name %>:   <%= @game.player2_score %></h1>
         </div>
       </div>
-          <% if !@game.result %>
+          <% if !@game.result && !current_player.weapon? %>
               <div class="controls">
-                  <form id="weapon" action="/weapon" method="post">
+                  <form id="weapon" action="/mp_weapon" method="post">
                       <input type="hidden" name="game_id" value="<%= @game_id %>">
                       <button type="button" class="selector" id="rock" name="rock" ><img src="/images/rock.png" width="100%"  alt="submit" /></button>
                       <button type="button" class="selector" id="paper" name="paper"><img src="/images/paper.png" width="100%"  alt="submit" /></button>
@@ -27,6 +27,8 @@
                       <button type="button" class="selector" id="spock" name="spock"><img src="/images/spock.png" width="100%"  alt="submit" /></button>
                   </form>
               </div>
+          <% elsif !opponent.weapon? %>
+            <h2>Waiting for other player</h2>
           <% else %>
             <% if @game.result.to_s == "draw" %>
                 <h2>It's a draw</h2>
@@ -34,7 +36,7 @@
                 <h2><%= @game.winner.name %> wins!</h2>
             <% end %>
           <% end %>
-          <form action='/play_again' method='post'>
+          <form action='/multiplay_again' method='post'>
             <input type="hidden" name="game_id" value="<%= @game_id %>">
             <input type='submit' value='Play again'>
           </form>

@@ -1,6 +1,9 @@
 <h1>Welcome to RPSLS!</h1>
 <form action='/names' method='post'>
   <h3>Enter name:</h3>
+  <% if @game_id %>
+    <input type="hidden" name="game_id" value="<%= @game_id %>">
+  <% end %>  
   <input type='text' name='name'>
   <br>
   <input type='submit' value='Submit'>

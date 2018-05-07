@@ -7,8 +7,8 @@ describe Game do
   let(:weapon_class) { double :weapon_class }
 
   let(:game) do
-    described_class.start_game(player1, player2, weapon_class)
-    described_class.game
+    id = described_class.start_game(player1, player2, weapon_class)
+    described_class.games[id]
   end
 
   before do

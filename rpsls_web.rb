@@ -17,16 +17,40 @@ class RPSLSWeb < Sinatra::Base
       Player.find(session[:player_id])
     end
 
+    def opponent
+      @game.opponent(session[:player_id])
+    end
+
     def add_player(player)
       id = player.object_id
       Player.add(id, player)
       session[:player_id] = id
     end
 
-  end
+    def set_game
+      @game_id = params[:game_id].to_i
+      @game = Game.games(@game_id)
+    end
 
-  before do
-    @game = Game.game
+    def set_second_player
+      id = session[:player_id]
+      @game.add_second_player(id, current_player)
+    end
+
+    def player_registered?
+      @game.player_set?(session[:player_id])
+    end
+
+    def no_player2?
+      @game.player2 == "Pending"
+    end
+
+    def check_game
+      redirect '/' unless current_player
+      redirect '/welcome' unless !!params[:game_id]
+      redirect '/multi' unless Game.games(params[:game_id].to_i)
+    end
+
   end
 
   get '/' do
@@ -46,33 +70,76 @@ class RPSLSWeb < Sinatra::Base
   end
 
   post '/single' do
-    Game.start_game(current_player, Computer.new)
-    redirect '/play'
+    game_id = Game.start_game(current_player, Computer.new)
+    redirect to("/play?game_id=#{game_id}")
   end
 
   post '/multi' do
-    # tbd
+    Game.start_game(current_player)
+    redirect to("/multi")
+  end
+
+  get '/multi' do
+    @games = Game.multi_games(session[:player_id])
+    erb :multi
+  end
+
+  post '/multiplay' do
+    set_game
+    redirect "/multi" if (player_registered? && no_player2?)
+    set_second_player if !player_registered?
+    game_id = params[:game_id]
+    redirect to("/multiplay?game_id=#{game_id}")
   end
 
   get '/play' do
-    redirect '/' unless current_player
-    @game.play if @game.ready?
+    check_game
+    set_game
+    @game.play if (@game.ready? && !@game.result)
     erb :play
   end
 
+  get '/multiplay' do
+    check_game
+    set_game
+    @game.play if (@game.ready? && !@game.result)
+    erb :multiplay
+  end
+
   post '/weapon' do
+    set_game
     @game.add_weapon(session[:player_id], params[:weapon])
-    redirect :play
+    redirect to("/play?game_id=#{@game_id}")
+  end
+
+  post '/mp_weapon' do
+    set_game
+    p @game
+    @game.add_weapon(session[:player_id], params[:weapon])
+    redirect to("/multiplay?game_id=#{@game_id}")
   end
 
   post '/play_again' do
+    set_game
     @game.reset
-    redirect :play
+    redirect to("/play?game_id=#{@game_id}")
+  end
+
+  post '/multiplay_again' do
+    set_game
+    @game.reset
+    redirect to("/multiplay?game_id=#{@game_id}")
   end
 
   post '/logout' do
     session.clear
     redirect '/'
+  end
+
+  post '/new_game' do
+    set_game
+    Game.delete_game(@game_id) if (@game.one_player? || current_player == @game.player1)
+    redirect '/welcome'
   end
 
   run! if __FILE__ == $0
