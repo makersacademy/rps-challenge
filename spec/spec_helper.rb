@@ -1,4 +1,5 @@
-require 'capybara/rspec'
+ENV['RACK_ENV'] = 'test'
+
 require 'simplecov'
 require 'simplecov-console'
 
@@ -8,6 +9,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require 'capybara/rspec'
+require './app'
+
+Capybara.app = Game
 
 RSpec.configure do |config|
   config.after(:suite) do

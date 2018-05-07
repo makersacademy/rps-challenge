@@ -1,0 +1,46 @@
+<% if @player_name_2 != 'Deep Thought' %>
+  <h1>Ready to play <%= @player_name_1 %> and <%= @player_name_2 %>?</h1>
+<% else %>
+  <h1>Ready to play <%= @player_name_1 %>?</h1>
+<% end %>
+
+<% if @the_game.victory_message != '' %>
+  <div class="notification">
+    <p><strong><%= @the_game.victory_message %></strong></p>
+    <p>
+      <%= @player_name_1 %> picked: <br/>
+      <%= @the_game.result[@player_name_1].capitalize %>
+    </p>
+    <p>
+      <%= @player_name_2 %> picked: <br/>
+      <%= @the_game.result[@player_name_2].capitalize %>
+    </p>
+  </div>
+<% end %>
+
+<form action='/shoot' method='post'>
+  <p><strong><%= @player_name_1 %> move:</strong></p>
+  <input type='radio' name='player_choice_1' value='rock' id='rock_1'>
+  <label for='rock'>Rock</label><br/>
+  <input type='radio' name='player_choice_1' value='paper' id='paper_1'>
+  <label for='paper'>Paper</label><br/>
+  <input type='radio' name='player_choice_1' value='scissors' id='scissors_1'>
+  <label for='scissors'>Scissors</label><br/>
+  <input type='radio' name='player_choice_1' value='random' id='random_1' checked>
+  <label for='random'>RANDOM!!!!!</label><br/><br/>
+
+  <% if @player_name_2 != 'Deep Thought' %>
+    <p><strong><%= @player_name_2 %> move:</strong></p>
+    <input type='radio' name='player_choice_2' value='rock' id='rock_2'>
+    <label for='rock'>Rock</label><br/>
+    <input type='radio' name='player_choice_2' value='paper' id='paper_2'>
+    <label for='paper'>Paper</label><br/>
+    <input type='radio' name='player_choice_2' value='scissors' id='scissors_2'>
+    <label for='scissors'>Scissors</label><br/>
+    <input type='radio' name='player_choice_2' value='random' id='random_2' checked>
+    <label for='random'>RANDOM!!!!!</label><br/>
+  <% end %>
+
+  <br/>
+  <input type='submit' value='Shoot!'>
+</form>
