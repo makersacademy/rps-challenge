@@ -1,9 +1,5 @@
 require 'game'
 
-# rock = 0
-# paper = 1
-# scissors = 2
-
 describe Game do
   let(:bot) { double :bot, name: 'RPS_Bot', move: 0 }
   let(:player) { double :player, name: 'Bob', move: "1" }
@@ -24,6 +20,6 @@ describe Game do
       expect(game.outcome).to eq('win')
     end
   end
-  
+
 
   end

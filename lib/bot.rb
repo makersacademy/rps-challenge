@@ -4,7 +4,6 @@
 
    def initialize
      @name = 'RPS_Bot'
-     # @move = rand(3)
    end
 
    def move
