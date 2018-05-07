@@ -14,6 +14,17 @@ class RPS < Sinatra::Base
   end
 
   get '/play' do
+
     erb :play
   end
+
+  post '/weapon' do
+    @weapon = params[:weapon]
+    erb :weapon_confirm
+  end
+
+  get '/weapon_confirm' do
+    erb :weapon_confirm
+  end
+
 end

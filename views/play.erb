@@ -1,1 +1,12 @@
 <h1> <%= @player_name %> is playing Rock, Paper, Scissors!</h1>
+
+<p> <strong>To play the game, select your weapon of choice:</strong></p>
+
+<form method="post" action="/weapon">
+  <select name='weapon'>
+    <option selected value="ROCK">Rock</option>
+    <option value="PAPER">Paper</option>
+     <option value="SCISSORS">Scissors</option>
+     <input type="submit" value="Submit">
+  </select>
+</form>
