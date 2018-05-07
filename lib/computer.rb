@@ -6,6 +6,6 @@ class Computer
   end
 
   def make_move
-    @move = ['rock', 'paper', 'scissors'].sample
+    @move = [:rock, :paper, :scissors].sample
   end
 end

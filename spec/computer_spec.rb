@@ -1,8 +1,9 @@
 describe Computer do
   describe '#make_move' do
-    it 'makes a move' do
+    it 'stores a move' do
+      allow_any_instance_of(Array).to receive(:sample).and_return(:rock)
       subject.make_move
-      expect(['rock', 'paper', 'scissors']).to include subject.move
+      expect(subject.move).to eq :rock
     end
   end
 
