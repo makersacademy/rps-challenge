@@ -1,4 +1,6 @@
 class Computer
+  WEAPONS = [:rock, :paper, :scissors]
+
   attr_reader :move, :name
 
   def initialize
@@ -6,6 +8,6 @@ class Computer
   end
 
   def make_move
-    @move = [:rock, :paper, :scissors].sample
+    @move = WEAPONS.sample
   end
 end
