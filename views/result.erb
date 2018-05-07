@@ -6,7 +6,13 @@
 <body>
   <p><%= @game.player_1.name %> chose <%= @game.player_1.move %></p>
   <p><%= @game.player_2.name %> chose <%= @game.player_2.move %></p>
-  <p><%= @game.result %></p>
+  <% if @game.result == :win %>
+    <p><%= @game.player_1.name %> wins!</p>
+  <% elsif @game.result == :draw %>
+    <p>It's a draw!</p>
+  <% elsif @game.result == :lose %>
+    <p><%= @game.player_2.name %> wins!</p>
+  <% end %>
   <a href='/game'>Play again</a>
 </body>
 </html>

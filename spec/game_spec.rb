@@ -42,55 +42,55 @@ describe Game do
     it 'selects winner for rock/scissors' do
       allow(player).to receive(:move).and_return(:rock)
       allow(computer).to receive(:move).and_return(:scissors)
-      expect(subject.result).to eq 'Will wins!'
+      expect(subject.result).to eq :win
     end
 
     it 'selects winner for paper/rock' do
       allow(player).to receive(:move).and_return(:paper)
       allow(computer).to receive(:move).and_return(:rock)
-      expect(subject.result).to eq 'Will wins!'
+      expect(subject.result).to eq :win
     end
 
     it 'selects winner for scissors/paper' do
       allow(player).to receive(:move).and_return(:scissors)
       allow(computer).to receive(:move).and_return(:paper)
-      expect(subject.result).to eq 'Will wins!'
+      expect(subject.result).to eq :win
     end
 
     it 'selects winner for rock/rock' do
       allow(player).to receive(:move).and_return(:rock)
       allow(computer).to receive(:move).and_return(:rock)
-      expect(subject.result).to eq "It's a draw!"
+      expect(subject.result).to eq :draw
     end
 
     it 'selects winner for paper/paper' do
       allow(player).to receive(:move).and_return(:paper)
       allow(computer).to receive(:move).and_return(:paper)
-      expect(subject.result).to eq "It's a draw!"
+      expect(subject.result).to eq :draw
     end
 
     it 'selects winner for scissors/scissors' do
       allow(player).to receive(:move).and_return(:scissors)
       allow(computer).to receive(:move).and_return(:scissors)
-      expect(subject.result).to eq "It's a draw!"
+      expect(subject.result).to eq :draw
     end
 
     it 'selects winner for rock/paper' do
       allow(player).to receive(:move).and_return(:rock)
       allow(computer).to receive(:move).and_return(:paper)
-      expect(subject.result).to eq 'Computer wins!'
+      expect(subject.result).to eq :lose
     end
 
     it 'selects winner for paper/scissors' do
       allow(player).to receive(:move).and_return(:paper)
       allow(computer).to receive(:move).and_return(:scissors)
-      expect(subject.result).to eq 'Computer wins!'
+      expect(subject.result).to eq :lose
     end
 
     it 'selects winner for scissors/rock' do
       allow(player).to receive(:move).and_return(:scissors)
       allow(computer).to receive(:move).and_return(:rock)
-      expect(subject.result).to eq 'Computer wins!'
+      expect(subject.result).to eq :lose
     end
   end
 end
