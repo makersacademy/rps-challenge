@@ -34,19 +34,19 @@ describe Game do
     it 'returns if player is winner based on RPS rules' do
       game.choice = "Rock"
       allow(bot).to receive(:choice).and_return("Scissors")
-      expect(game.determine_winner).to eq "Winner"
+      expect(game.result).to eq "Win"
     end
 
     it 'returns if player lost based on RPS rules' do
       game.choice = "Paper"
       allow(bot).to receive(:choice).and_return("Scissors")
-      expect(game.determine_winner).to eq "Loser"
+      expect(game.result).to eq "Loss"
     end
 
     it 'returns a draw based on RPS rules' do
       game.choice = "Rock"
       allow(bot).to receive(:choice).and_return("Rock")
-      expect(game.determine_winner).to eq "Draw"
+      expect(game.result).to eq "Draw"
     end
 
   end

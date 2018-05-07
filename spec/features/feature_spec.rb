@@ -23,6 +23,6 @@ feature "Playing Game" do
     allow(Kernel).to receive(:rand).and_return(2)
     sign_in
     click_button 'Rock'
-    expect(page).to have_text 'Player wins!'
+    expect(page).to have_text 'It\'s a Win!'
   end
 end

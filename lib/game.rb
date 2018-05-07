@@ -17,10 +17,16 @@ class Game
     @instance
   end
 
+  def result
+    determine_winner
+  end
+
+  private
+
   def determine_winner
     return "Draw" if draw
-    return "Winner" if winning_combination
-    return "Loser"
+    return "Win" if winning_combination
+    return "Loss"
   end
 
   def draw
