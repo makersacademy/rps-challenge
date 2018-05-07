@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Results</title>
+  </head>
+  <body>
+    Result of the game: <%= @game.outcome %>
+    <br>
+    <%= @game.player_one.name %> chose: <%= @game.player_one.print_move %>
+    <br>
+    <%= @game.player_two.name %> chose: <%= @game.player_two.print_move %>
+
+    <a href="/play">Play Again?</a>
+
+  </body>
+</html>
