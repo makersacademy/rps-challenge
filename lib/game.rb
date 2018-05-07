@@ -17,4 +17,20 @@ class Game
     @instance
   end
 
+  def determine_winner
+    return "Draw" if draw
+    return "Winner" if winning_combination
+    return "Loser"
+  end
+
+  def draw
+    @bot.choice == @choice
+  end
+
+  def winning_combination
+    (@bot.choice == "Rock" && @choice == "Paper") ||
+    (@bot.choice == "Paper" && @choice == "Scissors") ||
+    (@bot.choice == "Scissors" && @choice == "Rock")
+  end
+
 end

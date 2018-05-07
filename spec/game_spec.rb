@@ -31,10 +31,24 @@ describe Game do
 
   describe '#determine_winner' do
 
-    it 'returns winner based on RPS rules' do
-      expect(game.determine_winner(player, bot)).to be "player"
+    it 'returns if player is winner based on RPS rules' do
+      game.choice = "Rock"
+      allow(bot).to receive(:choice).and_return("Scissors")
+      expect(game.determine_winner).to eq "Winner"
     end
-    
+
+    it 'returns if player lost based on RPS rules' do
+      game.choice = "Paper"
+      allow(bot).to receive(:choice).and_return("Scissors")
+      expect(game.determine_winner).to eq "Loser"
+    end
+
+    it 'returns a draw based on RPS rules' do
+      game.choice = "Rock"
+      allow(bot).to receive(:choice).and_return("Rock")
+      expect(game.determine_winner).to eq "Draw"
+    end
+
   end
 
 end
