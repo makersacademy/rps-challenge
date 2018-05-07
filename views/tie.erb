@@ -1,0 +1,7 @@
+
+<h1> It's a tie! </h1>
+<h2> You chose <%= @game.player.weapon %> Godzilla chose <%= @game.computer.random_weapon %>
+
+<form action="/restart" method="post">
+  <input type="submit" value="Play again?">
+</form>

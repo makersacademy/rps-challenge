@@ -1,0 +1,7 @@
+<h1> <%= @game.player.name %> VS Godzilla! </h1>
+<h2> Choose your weapon </h2>
+<form action="/attack" method="post">
+  <button type="submit" name="weapon" value='Rock'> Rock </button>
+  <button type="submit" name="weapon" value='Scissors'> Scissors </button>
+  <button type="submit" name="weapon" value='Paper'> Paper </button>
+</form>
