@@ -11,7 +11,7 @@ h1, {
   text-align: center;
 }
 </style>
-<h1><%= @player_one_name %> choose you move:</h1>
+<h1><%= @game.player_one.name %> choose you move:</h1>
 <h2><form action="/move" method="post">
   <select name="move" onchange="this.form.submit">
   <option value="Rock">Rock</option>

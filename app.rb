@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/game'
+require_relative 'lib/player'
 
 class Rps < Sinatra::Base
 
@@ -10,27 +11,25 @@ class Rps < Sinatra::Base
   end
 
   post '/names' do
-    $player_one_name = params[:p1_name]
-    @player_one_name = $player_one_name
+    p1 = Player.new(params[:p1_name])
+    @game = Game.create(p1)
     redirect '/play'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    @player_one_name = $player_one_name
     erb(:play)
   end
 
   post '/move' do
-    $move = params[:move]
-    @move = $move
+    @game.player_one.choice = params[:move]
     redirect '/result'
   end
 
   get '/result' do
-    @game = Game.create
-    @game.cpu_move
-    @player_one_name = $player_one_name
-    @move = $move
     erb(:result)
   end
 

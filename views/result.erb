@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-h1, h2, h3, body {
+body {
   font-family: georgia;
   color: white;
   text-align: center;
   background-color: navy;
+  font-size: 80px
 }
 </style>
-<head>
-<h1><%= @player_one_name %>, your move was <%= @move %>.</h1>
-  <h2>The computer's move was <%= @game.cpu_move %>.</h2>
-</head>
-<body>
+<body><%= @game.player_one.name %>, your move was <%= @game.player_one.choice %>.<br/>
+  The computer's move was <%= @game.cpu_move %>.<br/>
+  <%= @game.result %>
 </body>
 </html>
