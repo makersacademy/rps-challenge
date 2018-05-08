@@ -46,9 +46,26 @@ class RPSLSWeb < Sinatra::Base
     end
 
     def check_game
+      game = Game.games(params[:game_id].to_i)
       redirect '/' unless current_player
       redirect '/welcome' unless !!params[:game_id]
-      redirect '/multi' unless Game.games(params[:game_id].to_i)
+      redirect '/multi' unless (game && game.player2 != "Pending")
+    end
+
+    def exit_game
+      set_game
+      @game.reset
+      @game.reset_score
+      Game.delete_game(@game_id) if (@game.one_player? || current_player == @game.player1)
+      @game.remove_second_player
+    end
+
+    def delete_games
+      Game.delete_games(current_player)
+    end
+
+    def current_game?
+      Game.exisiting_multiplayer_game?(current_player)
     end
 
   end
@@ -75,7 +92,7 @@ class RPSLSWeb < Sinatra::Base
   end
 
   post '/multi' do
-    Game.start_game(current_player)
+    Game.start_game(current_player) unless current_game?
     redirect to("/multi")
   end
 
@@ -132,13 +149,14 @@ class RPSLSWeb < Sinatra::Base
   end
 
   post '/logout' do
+    exit_game
+    delete_games
     session.clear
     redirect '/'
   end
 
   post '/new_game' do
-    set_game
-    Game.delete_game(@game_id) if (@game.one_player? || current_player == @game.player1)
+    exit_game if params[:game_id]
     redirect '/welcome'
   end
 

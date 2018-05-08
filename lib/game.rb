@@ -25,8 +25,17 @@ class Game
     return game_id
   end
 
+  def self.exisiting_multiplayer_game?(player)
+    return false unless !!@games
+    @games.any? { |_id, game| game.player1 == player && game.player2 == "Pending" }
+  end
+
   def self.delete_game(id)
     @games.delete(id)
+  end
+
+  def self.delete_games(current_player)
+    @games.delete_if { |_id, game| game.player1 == current_player }
   end
 
   def initialize(player1, player2 , weapon_class = Weapon)
@@ -43,6 +52,13 @@ class Game
     @players.delete(@player2)
     @player2 = player.object_id
     @players[@player2] = player
+  end
+
+  def remove_second_player
+    @players.delete(@player2)
+    player2 = :pending
+    @player2 = player2.object_id
+    @players[@player2] = player2
   end
 
   def ready?
@@ -70,6 +86,10 @@ class Game
     @players.each_value { |player| player.remove_weapon }
     @result[:winner] = nil
     @result[:result] = nil
+  end
+
+  def reset_score
+    @score = [0, 0]
   end
 
   def player1
