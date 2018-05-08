@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+  font-family: georgia;
+  color: white;
+  text-align: center;
+  background-color: navy;
+  font-size: 80px
+}
+</style>
+<body><%= @game.player_one.name %>, your move was <%= @game.player_one.choice %>.<br/>
+  The computer's move was <%= @game.computer.choice %>.<br/>
+  <%= @game.result %>
+</body>
+</html>
